@@ -10,20 +10,12 @@ pub mod describe_group_input {
         pub(crate) group_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_store_id = Some(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -58,7 +50,7 @@ pub mod describe_group_input {
 #[doc(hidden)]
 pub type DescribeGroupInputOperationOutputAlias = crate::operation::DescribeGroup;
 #[doc(hidden)]
-pub type DescribeGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGroup`](crate::operation::DescribeGroup)>
     #[allow(clippy::let_and_return)]
@@ -69,7 +61,7 @@ impl DescribeGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -153,7 +145,7 @@ impl DescribeGroupInput {
             "DescribeGroup",
             "identitystore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -186,20 +178,12 @@ pub mod describe_user_input {
         pub(crate) user_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_store_id = Some(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -234,7 +218,7 @@ pub mod describe_user_input {
 #[doc(hidden)]
 pub type DescribeUserInputOperationOutputAlias = crate::operation::DescribeUser;
 #[doc(hidden)]
-pub type DescribeUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUser`](crate::operation::DescribeUser)>
     #[allow(clippy::let_and_return)]
@@ -245,7 +229,7 @@ impl DescribeUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -329,7 +313,7 @@ impl DescribeUserInput {
             "DescribeUser",
             "identitystore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -364,20 +348,12 @@ pub mod list_groups_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_store_id = Some(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -385,32 +361,22 @@ pub mod list_groups_input {
             self.identity_store_id = input;
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the
-        /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-        /// to return in one page. The length limit is 50 characters.</p>
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the
-        /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-        /// to return in one page. The length limit is 50 characters.</p>
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-        /// operations. This value is generated by the identity store service. It is returned in the
-        /// API response if the total results are more than the size of one page. This token is also
-        /// returned when it is used in the API request to search for the next page.</p>
+        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-        /// operations. This value is generated by the identity store service. It is returned in the
-        /// API response if the total results are more than the size of one page. This token is also
-        /// returned when it is used in the API request to search for the next page.</p>
+        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -420,9 +386,9 @@ pub mod list_groups_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -453,7 +419,7 @@ pub mod list_groups_input {
 #[doc(hidden)]
 pub type ListGroupsInputOperationOutputAlias = crate::operation::ListGroups;
 #[doc(hidden)]
-pub type ListGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListGroups`](crate::operation::ListGroups)>
     #[allow(clippy::let_and_return)]
@@ -464,7 +430,7 @@ impl ListGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -548,7 +514,7 @@ impl ListGroupsInput {
             "ListGroups",
             "identitystore",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -583,20 +549,12 @@ pub mod list_users_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_store_id = Some(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -604,32 +562,22 @@ pub mod list_users_input {
             self.identity_store_id = input;
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the
-        /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-        /// to return in one page. The length limit is 50 characters.</p>
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the
-        /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-        /// to return in one page. The length limit is 50 characters.</p>
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-        /// operations. This value is generated by the identity store service. It is returned in the
-        /// API response if the total results are more than the size of one page. This token is also
-        /// returned when it is used in the API request to search for the next page.</p>
+        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-        /// operations. This value is generated by the identity store service. It is returned in the
-        /// API response if the total results are more than the size of one page. This token is also
-        /// returned when it is used in the API request to search for the next page.</p>
+        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -639,9 +587,9 @@ pub mod list_users_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -670,7 +618,7 @@ pub mod list_users_input {
 #[doc(hidden)]
 pub type ListUsersInputOperationOutputAlias = crate::operation::ListUsers;
 #[doc(hidden)]
-pub type ListUsersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsersInput {
     /// Consumes the builder and constructs an Operation<[`ListUsers`](crate::operation::ListUsers)>
     #[allow(clippy::let_and_return)]
@@ -681,7 +629,7 @@ impl ListUsersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUsers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -763,7 +711,7 @@ impl ListUsersInput {
                     "ListUsers",
                     "identitystore",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -790,43 +738,25 @@ impl ListUsersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
-    /// <p>The globally unique identifier for the identity store, such as
-    /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-    /// <code>1234567890</code> is a randomly generated string that contains number and lower
-    /// case letters. This value is generated at the time that a new identity store is
-    /// created.</p>
+    /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
     pub identity_store_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per request. This parameter is used in the
-    /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-    /// to return in one page. The length limit is 50 characters.</p>
+    /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-    /// operations. This value is generated by the identity store service. It is returned in the
-    /// API response if the total results are more than the size of one page. This token is also
-    /// returned when it is used in the API request to search for the next page.</p>
+    /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListUsersInput {
-    /// <p>The globally unique identifier for the identity store, such as
-    /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-    /// <code>1234567890</code> is a randomly generated string that contains number and lower
-    /// case letters. This value is generated at the time that a new identity store is
-    /// created.</p>
+    /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
     pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
-    /// <p>The maximum number of results to be returned per request. This parameter is used in the
-    /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-    /// to return in one page. The length limit is 50 characters.</p>
+    /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-    /// operations. This value is generated by the identity store service. It is returned in the
-    /// API response if the total results are more than the size of one page. This token is also
-    /// returned when it is used in the API request to search for the next page.</p>
+    /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -850,43 +780,25 @@ impl std::fmt::Debug for ListUsersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGroupsInput {
-    /// <p>The globally unique identifier for the identity store, such as
-    /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-    /// <code>1234567890</code> is a randomly generated string that contains number and lower
-    /// case letters. This value is generated at the time that a new identity store is
-    /// created.</p>
+    /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
     pub identity_store_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per request. This parameter is used in the
-    /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-    /// to return in one page. The length limit is 50 characters.</p>
+    /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-    /// operations. This value is generated by the identity store service. It is returned in the
-    /// API response if the total results are more than the size of one page. This token is also
-    /// returned when it is used in the API request to search for the next page.</p>
+    /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListGroupsInput {
-    /// <p>The globally unique identifier for the identity store, such as
-    /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-    /// <code>1234567890</code> is a randomly generated string that contains number and lower
-    /// case letters. This value is generated at the time that a new identity store is
-    /// created.</p>
+    /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
     pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
-    /// <p>The maximum number of results to be returned per request. This parameter is used in the
-    /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-    /// to return in one page. The length limit is 50 characters.</p>
+    /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-    /// operations. This value is generated by the identity store service. It is returned in the
-    /// API response if the total results are more than the size of one page. This token is also
-    /// returned when it is used in the API request to search for the next page.</p>
+    /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -910,21 +822,13 @@ impl std::fmt::Debug for ListGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserInput {
-    /// <p>The globally unique identifier for the identity store, such as
-    /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-    /// <code>1234567890</code> is a randomly generated string that contains number and lower
-    /// case letters. This value is generated at the time that a new identity store is
-    /// created.</p>
+    /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
     pub identity_store_id: std::option::Option<std::string::String>,
     /// <p>The identifier for a user in the identity store.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DescribeUserInput {
-    /// <p>The globally unique identifier for the identity store, such as
-    /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-    /// <code>1234567890</code> is a randomly generated string that contains number and lower
-    /// case letters. This value is generated at the time that a new identity store is
-    /// created.</p>
+    /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
     pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
@@ -946,21 +850,13 @@ impl std::fmt::Debug for DescribeUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGroupInput {
-    /// <p>The globally unique identifier for the identity store, such as
-    /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-    /// <code>1234567890</code> is a randomly generated string that contains number and lower
-    /// case letters. This value is generated at the time that a new identity store is
-    /// created.</p>
+    /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
     pub identity_store_id: std::option::Option<std::string::String>,
     /// <p>The identifier for a group in the identity store.</p>
     pub group_id: std::option::Option<std::string::String>,
 }
 impl DescribeGroupInput {
-    /// <p>The globally unique identifier for the identity store, such as
-    /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-    /// <code>1234567890</code> is a randomly generated string that contains number and lower
-    /// case letters. This value is generated at the time that a new identity store is
-    /// created.</p>
+    /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
     pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }

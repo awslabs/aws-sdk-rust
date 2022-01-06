@@ -9,15 +9,13 @@ pub mod accept_invitation_input {
         pub(crate) graph_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the behavior graph that the member account is accepting the invitation
-        /// for.</p>
+        /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
         /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.graph_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the behavior graph that the member account is accepting the invitation
-        /// for.</p>
+        /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
         /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.graph_arn = input;
@@ -39,7 +37,7 @@ pub mod accept_invitation_input {
 #[doc(hidden)]
 pub type AcceptInvitationInputOperationOutputAlias = crate::operation::AcceptInvitation;
 #[doc(hidden)]
-pub type AcceptInvitationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptInvitationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptInvitationInput {
     /// Consumes the builder and constructs an Operation<[`AcceptInvitation`](crate::operation::AcceptInvitation)>
     #[allow(clippy::let_and_return)]
@@ -50,7 +48,7 @@ impl AcceptInvitationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptInvitation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -130,7 +128,7 @@ impl AcceptInvitationInput {
             "AcceptInvitation",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -168,9 +166,7 @@ pub mod create_graph_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag,
-        /// you provide the tag key and the tag value. Each tag key can contain up to 128 characters.
-        /// Each tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -181,9 +177,7 @@ pub mod create_graph_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag,
-        /// you provide the tag key and the tag value. Each tag key can contain up to 128 characters.
-        /// Each tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -207,7 +201,7 @@ pub mod create_graph_input {
 #[doc(hidden)]
 pub type CreateGraphInputOperationOutputAlias = crate::operation::CreateGraph;
 #[doc(hidden)]
-pub type CreateGraphInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGraphInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGraphInput {
     /// Consumes the builder and constructs an Operation<[`CreateGraph`](crate::operation::CreateGraph)>
     #[allow(clippy::let_and_return)]
@@ -218,7 +212,7 @@ impl CreateGraphInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGraph,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -297,7 +291,7 @@ impl CreateGraphInput {
             "CreateGraph",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -332,40 +326,34 @@ pub mod create_members_input {
         pub(crate) accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
     }
     impl Builder {
-        /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
-        /// to.</p>
+        /// <p>The ARN of the behavior graph.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.graph_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
-        /// to.</p>
+        /// <p>The ARN of the behavior graph.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.graph_arn = input;
             self
         }
-        /// <p>Customized message text to include in the invitation email message to the invited member
-        /// accounts.</p>
+        /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Customized message text to include in the invitation email message to the invited member
-        /// accounts.</p>
+        /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
-        /// <p>if set to <code>true</code>, then the member accounts do not receive email
-        /// notifications. By default, this is set to <code>false</code>, and the member accounts
-        /// receive email notifications.</p>
+        /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
+        /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
         pub fn disable_email_notification(mut self, input: bool) -> Self {
             self.disable_email_notification = Some(input);
             self
         }
-        /// <p>if set to <code>true</code>, then the member accounts do not receive email
-        /// notifications. By default, this is set to <code>false</code>, and the member accounts
-        /// receive email notifications.</p>
+        /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
+        /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
         pub fn set_disable_email_notification(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_email_notification = input;
             self
@@ -374,18 +362,14 @@ pub mod create_members_input {
         ///
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
-        /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
-        /// You can invite up to 50 accounts at a time. For each invited account, the account list
-        /// contains the account identifier and the AWS account root user email address.</p>
-        pub fn accounts(mut self, input: impl Into<crate::model::Account>) -> Self {
+        /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
+        pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accounts = Some(v);
             self
         }
-        /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
-        /// You can invite up to 50 accounts at a time. For each invited account, the account list
-        /// contains the account identifier and the AWS account root user email address.</p>
+        /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Account>>,
@@ -412,7 +396,7 @@ pub mod create_members_input {
 #[doc(hidden)]
 pub type CreateMembersInputOperationOutputAlias = crate::operation::CreateMembers;
 #[doc(hidden)]
-pub type CreateMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMembersInput {
     /// Consumes the builder and constructs an Operation<[`CreateMembers`](crate::operation::CreateMembers)>
     #[allow(clippy::let_and_return)]
@@ -423,7 +407,7 @@ impl CreateMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -502,7 +486,7 @@ impl CreateMembersInput {
             "CreateMembers",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -560,7 +544,7 @@ pub mod delete_graph_input {
 #[doc(hidden)]
 pub type DeleteGraphInputOperationOutputAlias = crate::operation::DeleteGraph;
 #[doc(hidden)]
-pub type DeleteGraphInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteGraphInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGraphInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGraph`](crate::operation::DeleteGraph)>
     #[allow(clippy::let_and_return)]
@@ -571,7 +555,7 @@ impl DeleteGraphInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGraph,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -650,7 +634,7 @@ impl DeleteGraphInput {
             "DeleteGraph",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -683,12 +667,12 @@ pub mod delete_members_input {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ARN of the behavior graph to delete members from.</p>
+        /// <p>The ARN of the behavior graph to remove members from.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.graph_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the behavior graph to delete members from.</p>
+        /// <p>The ARN of the behavior graph to remove members from.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.graph_arn = input;
             self
@@ -697,16 +681,14 @@ pub mod delete_members_input {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of AWS account identifiers for the member accounts to delete from the
-        /// behavior graph. You can delete up to 50 member accounts at a time.</p>
+        /// <p>The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>The list of AWS account identifiers for the member accounts to delete from the
-        /// behavior graph. You can delete up to 50 member accounts at a time.</p>
+        /// <p>The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -731,7 +713,7 @@ pub mod delete_members_input {
 #[doc(hidden)]
 pub type DeleteMembersInputOperationOutputAlias = crate::operation::DeleteMembers;
 #[doc(hidden)]
-pub type DeleteMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMembersInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMembers`](crate::operation::DeleteMembers)>
     #[allow(clippy::let_and_return)]
@@ -742,7 +724,7 @@ impl DeleteMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -821,7 +803,7 @@ impl DeleteMembersInput {
             "DeleteMembers",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -844,6 +826,282 @@ impl DeleteMembersInput {
     }
 }
 
+/// See [`DescribeOrganizationConfigurationInput`](crate::input::DescribeOrganizationConfigurationInput)
+pub mod describe_organization_configuration_input {
+    /// A builder for [`DescribeOrganizationConfigurationInput`](crate::input::DescribeOrganizationConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) graph_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN of the organization behavior graph.</p>
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.graph_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the organization behavior graph.</p>
+        pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.graph_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationInput`](crate::input::DescribeOrganizationConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeOrganizationConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeOrganizationConfigurationInput {
+                graph_arn: self.graph_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeOrganizationConfigurationInputOperationOutputAlias =
+    crate::operation::DescribeOrganizationConfiguration;
+#[doc(hidden)]
+pub type DescribeOrganizationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeOrganizationConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeOrganizationConfiguration`](crate::operation::DescribeOrganizationConfiguration)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeOrganizationConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeOrganizationConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/orgs/describeOrganizationConfiguration")
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeOrganizationConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeOrganizationConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_organization_configuration(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeOrganizationConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeOrganizationConfiguration",
+            "detective",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationInput`](crate::input::DescribeOrganizationConfigurationInput)
+    pub fn builder() -> crate::input::describe_organization_configuration_input::Builder {
+        crate::input::describe_organization_configuration_input::Builder::default()
+    }
+}
+
+/// See [`DisableOrganizationAdminAccountInput`](crate::input::DisableOrganizationAdminAccountInput)
+pub mod disable_organization_admin_account_input {
+    /// A builder for [`DisableOrganizationAdminAccountInput`](crate::input::DisableOrganizationAdminAccountInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DisableOrganizationAdminAccountInput`](crate::input::DisableOrganizationAdminAccountInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DisableOrganizationAdminAccountInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DisableOrganizationAdminAccountInput {})
+        }
+    }
+}
+#[doc(hidden)]
+pub type DisableOrganizationAdminAccountInputOperationOutputAlias =
+    crate::operation::DisableOrganizationAdminAccount;
+#[doc(hidden)]
+pub type DisableOrganizationAdminAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DisableOrganizationAdminAccountInput {
+    /// Consumes the builder and constructs an Operation<[`DisableOrganizationAdminAccount`](crate::operation::DisableOrganizationAdminAccount)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisableOrganizationAdminAccount,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DisableOrganizationAdminAccountInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/orgs/disableAdminAccount").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DisableOrganizationAdminAccountInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DisableOrganizationAdminAccountInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = aws_smithy_http::body::SdkBody::from("");
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisableOrganizationAdminAccount::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisableOrganizationAdminAccount",
+            "detective",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DisableOrganizationAdminAccountInput`](crate::input::DisableOrganizationAdminAccountInput)
+    pub fn builder() -> crate::input::disable_organization_admin_account_input::Builder {
+        crate::input::disable_organization_admin_account_input::Builder::default()
+    }
+}
+
 /// See [`DisassociateMembershipInput`](crate::input::DisassociateMembershipInput)
 pub mod disassociate_membership_input {
     /// A builder for [`DisassociateMembershipInput`](crate::input::DisassociateMembershipInput)
@@ -854,15 +1112,13 @@ pub mod disassociate_membership_input {
     }
     impl Builder {
         /// <p>The ARN of the behavior graph to remove the member account from.</p>
-        /// <p>The member account's member status in the behavior graph must be
-        /// <code>ENABLED</code>.</p>
+        /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.graph_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the behavior graph to remove the member account from.</p>
-        /// <p>The member account's member status in the behavior graph must be
-        /// <code>ENABLED</code>.</p>
+        /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.graph_arn = input;
             self
@@ -883,7 +1139,7 @@ pub mod disassociate_membership_input {
 #[doc(hidden)]
 pub type DisassociateMembershipInputOperationOutputAlias = crate::operation::DisassociateMembership;
 #[doc(hidden)]
-pub type DisassociateMembershipInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateMembershipInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateMembership`](crate::operation::DisassociateMembership)>
     #[allow(clippy::let_and_return)]
@@ -894,7 +1150,7 @@ impl DisassociateMembershipInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateMembership,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -976,7 +1232,7 @@ impl DisassociateMembershipInput {
             "DisassociateMembership",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -996,6 +1252,158 @@ impl DisassociateMembershipInput {
     /// Creates a new builder-style object to manufacture [`DisassociateMembershipInput`](crate::input::DisassociateMembershipInput)
     pub fn builder() -> crate::input::disassociate_membership_input::Builder {
         crate::input::disassociate_membership_input::Builder::default()
+    }
+}
+
+/// See [`EnableOrganizationAdminAccountInput`](crate::input::EnableOrganizationAdminAccountInput)
+pub mod enable_organization_admin_account_input {
+    /// A builder for [`EnableOrganizationAdminAccountInput`](crate::input::EnableOrganizationAdminAccountInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) account_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.</p>
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EnableOrganizationAdminAccountInput`](crate::input::EnableOrganizationAdminAccountInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::EnableOrganizationAdminAccountInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::EnableOrganizationAdminAccountInput {
+                account_id: self.account_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type EnableOrganizationAdminAccountInputOperationOutputAlias =
+    crate::operation::EnableOrganizationAdminAccount;
+#[doc(hidden)]
+pub type EnableOrganizationAdminAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl EnableOrganizationAdminAccountInput {
+    /// Consumes the builder and constructs an Operation<[`EnableOrganizationAdminAccount`](crate::operation::EnableOrganizationAdminAccount)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::EnableOrganizationAdminAccount,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::EnableOrganizationAdminAccountInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/orgs/enableAdminAccount").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::EnableOrganizationAdminAccountInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::EnableOrganizationAdminAccountInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_enable_organization_admin_account(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::EnableOrganizationAdminAccount::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "EnableOrganizationAdminAccount",
+            "detective",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`EnableOrganizationAdminAccountInput`](crate::input::EnableOrganizationAdminAccountInput)
+    pub fn builder() -> crate::input::enable_organization_admin_account_input::Builder {
+        crate::input::enable_organization_admin_account_input::Builder::default()
     }
 }
 
@@ -1023,20 +1431,16 @@ pub mod get_members_input {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of AWS account identifiers for the member account for which to return member
-        /// details. You can request details for up to 50 member accounts at a time.</p>
-        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts
-        /// that were removed from the behavior graph.</p>
+        /// <p>The list of Amazon Web Services account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>
+        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>The list of AWS account identifiers for the member account for which to return member
-        /// details. You can request details for up to 50 member accounts at a time.</p>
-        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts
-        /// that were removed from the behavior graph.</p>
+        /// <p>The list of Amazon Web Services account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>
+        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1061,7 +1465,7 @@ pub mod get_members_input {
 #[doc(hidden)]
 pub type GetMembersInputOperationOutputAlias = crate::operation::GetMembers;
 #[doc(hidden)]
-pub type GetMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMembersInput {
     /// Consumes the builder and constructs an Operation<[`GetMembers`](crate::operation::GetMembers)>
     #[allow(clippy::let_and_return)]
@@ -1072,7 +1476,7 @@ impl GetMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1151,7 +1555,7 @@ impl GetMembersInput {
             "GetMembers",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1184,28 +1588,22 @@ pub mod list_graphs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>For requests to get the next page of results, the pagination token that was returned
-        /// with the previous set of results. The initial request does not include a pagination
-        /// token.</p>
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>For requests to get the next page of results, the pagination token that was returned
-        /// with the previous set of results. The initial request does not include a pagination
-        /// token.</p>
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of graphs to return at a time. The total must be less than the
-        /// overall limit on the number of results to return, which is currently 200.</p>
+        /// <p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of graphs to return at a time. The total must be less than the
-        /// overall limit on the number of results to return, which is currently 200.</p>
+        /// <p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1227,7 +1625,7 @@ pub mod list_graphs_input {
 #[doc(hidden)]
 pub type ListGraphsInputOperationOutputAlias = crate::operation::ListGraphs;
 #[doc(hidden)]
-pub type ListGraphsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGraphsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGraphsInput {
     /// Consumes the builder and constructs an Operation<[`ListGraphs`](crate::operation::ListGraphs)>
     #[allow(clippy::let_and_return)]
@@ -1238,7 +1636,7 @@ impl ListGraphsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGraphs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1317,7 +1715,7 @@ impl ListGraphsInput {
             "ListGraphs",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1350,30 +1748,22 @@ pub mod list_invitations_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>For requests to retrieve the next page of results, the pagination token that was
-        /// returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
+        /// <p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>For requests to retrieve the next page of results, the pagination token that was
-        /// returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
+        /// <p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of behavior graph invitations to return in the response. The total
-        /// must be less than the overall limit on the number of results to return, which is currently
-        /// 200.</p>
+        /// <p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of behavior graph invitations to return in the response. The total
-        /// must be less than the overall limit on the number of results to return, which is currently
-        /// 200.</p>
+        /// <p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1395,7 +1785,7 @@ pub mod list_invitations_input {
 #[doc(hidden)]
 pub type ListInvitationsInputOperationOutputAlias = crate::operation::ListInvitations;
 #[doc(hidden)]
-pub type ListInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`ListInvitations`](crate::operation::ListInvitations)>
     #[allow(clippy::let_and_return)]
@@ -1406,7 +1796,7 @@ impl ListInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1486,7 +1876,7 @@ impl ListInvitationsInput {
             "ListInvitations",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1530,28 +1920,22 @@ pub mod list_members_input {
             self.graph_arn = input;
             self
         }
-        /// <p>For requests to retrieve the next page of member account results, the pagination token
-        /// that was returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
+        /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>For requests to retrieve the next page of member account results, the pagination token
-        /// that was returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
+        /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of member accounts to include in the response. The total must be less
-        /// than the overall limit on the number of results to return, which is currently 200.</p>
+        /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of member accounts to include in the response. The total must be less
-        /// than the overall limit on the number of results to return, which is currently 200.</p>
+        /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1574,7 +1958,7 @@ pub mod list_members_input {
 #[doc(hidden)]
 pub type ListMembersInputOperationOutputAlias = crate::operation::ListMembers;
 #[doc(hidden)]
-pub type ListMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListMembers`](crate::operation::ListMembers)>
     #[allow(clippy::let_and_return)]
@@ -1585,7 +1969,7 @@ impl ListMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1664,7 +2048,7 @@ impl ListMembersInput {
             "ListMembers",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1684,6 +2068,170 @@ impl ListMembersInput {
     /// Creates a new builder-style object to manufacture [`ListMembersInput`](crate::input::ListMembersInput)
     pub fn builder() -> crate::input::list_members_input::Builder {
         crate::input::list_members_input::Builder::default()
+    }
+}
+
+/// See [`ListOrganizationAdminAccountsInput`](crate::input::ListOrganizationAdminAccountsInput)
+pub mod list_organization_admin_accounts_input {
+    /// A builder for [`ListOrganizationAdminAccountsInput`](crate::input::ListOrganizationAdminAccountsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of results to return.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListOrganizationAdminAccountsInput`](crate::input::ListOrganizationAdminAccountsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListOrganizationAdminAccountsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListOrganizationAdminAccountsInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListOrganizationAdminAccountsInputOperationOutputAlias =
+    crate::operation::ListOrganizationAdminAccounts;
+#[doc(hidden)]
+pub type ListOrganizationAdminAccountsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl ListOrganizationAdminAccountsInput {
+    /// Consumes the builder and constructs an Operation<[`ListOrganizationAdminAccounts`](crate::operation::ListOrganizationAdminAccounts)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListOrganizationAdminAccounts,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListOrganizationAdminAccountsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/orgs/adminAccountslist").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListOrganizationAdminAccountsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListOrganizationAdminAccountsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_organization_admin_accounts(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListOrganizationAdminAccounts::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListOrganizationAdminAccounts",
+            "detective",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListOrganizationAdminAccountsInput`](crate::input::ListOrganizationAdminAccountsInput)
+    pub fn builder() -> crate::input::list_organization_admin_accounts_input::Builder {
+        crate::input::list_organization_admin_accounts_input::Builder::default()
     }
 }
 
@@ -1722,7 +2270,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1733,7 +2281,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1823,7 +2371,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1848,15 +2396,13 @@ pub mod reject_invitation_input {
     }
     impl Builder {
         /// <p>The ARN of the behavior graph to reject the invitation to.</p>
-        /// <p>The member account's current member status in the behavior graph must be
-        /// <code>INVITED</code>.</p>
+        /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.graph_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the behavior graph to reject the invitation to.</p>
-        /// <p>The member account's current member status in the behavior graph must be
-        /// <code>INVITED</code>.</p>
+        /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.graph_arn = input;
             self
@@ -1877,7 +2423,7 @@ pub mod reject_invitation_input {
 #[doc(hidden)]
 pub type RejectInvitationInputOperationOutputAlias = crate::operation::RejectInvitation;
 #[doc(hidden)]
-pub type RejectInvitationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RejectInvitationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectInvitationInput {
     /// Consumes the builder and constructs an Operation<[`RejectInvitation`](crate::operation::RejectInvitation)>
     #[allow(clippy::let_and_return)]
@@ -1888,7 +2434,7 @@ impl RejectInvitationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectInvitation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1968,7 +2514,7 @@ impl RejectInvitationInput {
             "RejectInvitation",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2012,15 +2558,13 @@ pub mod start_monitoring_member_input {
             self
         }
         /// <p>The account ID of the member account to try to enable.</p>
-        /// <p>The account must be an invited member account with a status of
-        /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
+        /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
         /// <p>The account ID of the member account to try to enable.</p>
-        /// <p>The account must be an invited member account with a status of
-        /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
+        /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2042,7 +2586,7 @@ pub mod start_monitoring_member_input {
 #[doc(hidden)]
 pub type StartMonitoringMemberInputOperationOutputAlias = crate::operation::StartMonitoringMember;
 #[doc(hidden)]
-pub type StartMonitoringMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartMonitoringMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMonitoringMemberInput {
     /// Consumes the builder and constructs an Operation<[`StartMonitoringMember`](crate::operation::StartMonitoringMember)>
     #[allow(clippy::let_and_return)]
@@ -2053,7 +2597,7 @@ impl StartMonitoringMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMonitoringMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2135,7 +2679,7 @@ impl StartMonitoringMemberInput {
             "StartMonitoringMember",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2184,9 +2728,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you
-        /// provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each
-        /// tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2197,9 +2739,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you
-        /// provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each
-        /// tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2226,7 +2766,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2237,7 +2777,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2332,7 +2872,7 @@ impl TagResourceInput {
             "TagResource",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2379,16 +2919,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags
-        /// at a time.</p>
+        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags
-        /// at a time.</p>
+        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2413,7 +2951,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2424,7 +2962,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2527,7 +3065,7 @@ impl UntagResourceInput {
             "UntagResource",
             "detective",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2542,14 +3080,206 @@ impl UntagResourceInput {
     }
 }
 
+/// See [`UpdateOrganizationConfigurationInput`](crate::input::UpdateOrganizationConfigurationInput)
+pub mod update_organization_configuration_input {
+    /// A builder for [`UpdateOrganizationConfigurationInput`](crate::input::UpdateOrganizationConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) graph_arn: std::option::Option<std::string::String>,
+        pub(crate) auto_enable: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The ARN of the organization behavior graph.</p>
+        pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.graph_arn = Some(input.into());
+            self
+        }
+        /// <p>The ARN of the organization behavior graph.</p>
+        pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.graph_arn = input;
+            self
+        }
+        /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
+        pub fn auto_enable(mut self, input: bool) -> Self {
+            self.auto_enable = Some(input);
+            self
+        }
+        /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
+        pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_enable = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationInput`](crate::input::UpdateOrganizationConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateOrganizationConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateOrganizationConfigurationInput {
+                graph_arn: self.graph_arn,
+                auto_enable: self.auto_enable.unwrap_or_default(),
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateOrganizationConfigurationInputOperationOutputAlias =
+    crate::operation::UpdateOrganizationConfiguration;
+#[doc(hidden)]
+pub type UpdateOrganizationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateOrganizationConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateOrganizationConfiguration`](crate::operation::UpdateOrganizationConfiguration)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateOrganizationConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateOrganizationConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/orgs/updateOrganizationConfiguration")
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateOrganizationConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateOrganizationConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_organization_configuration(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateOrganizationConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateOrganizationConfiguration",
+            "detective",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateOrganizationConfigurationInput`](crate::input::UpdateOrganizationConfigurationInput)
+    pub fn builder() -> crate::input::update_organization_configuration_input::Builder {
+        crate::input::update_organization_configuration_input::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateOrganizationConfigurationInput {
+    /// <p>The ARN of the organization behavior graph.</p>
+    pub graph_arn: std::option::Option<std::string::String>,
+    /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
+    pub auto_enable: bool,
+}
+impl UpdateOrganizationConfigurationInput {
+    /// <p>The ARN of the organization behavior graph.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
+    /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
+    pub fn auto_enable(&self) -> bool {
+        self.auto_enable
+    }
+}
+impl std::fmt::Debug for UpdateOrganizationConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateOrganizationConfigurationInput");
+        formatter.field("graph_arn", &self.graph_arn);
+        formatter.field("auto_enable", &self.auto_enable);
+        formatter.finish()
+    }
+}
+
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The ARN of the behavior graph to remove the tags from.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags
-    /// at a time.</p>
+    /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2557,8 +3287,7 @@ impl UntagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags
-    /// at a time.</p>
+    /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -2578,9 +3307,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The ARN of the behavior graph to assign the tags to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you
-    /// provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each
-    /// tag value can contain up to 256 characters.</p>
+    /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2589,9 +3316,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you
-    /// provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each
-    /// tag value can contain up to 256 characters.</p>
+    /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2615,8 +3340,7 @@ pub struct StartMonitoringMemberInput {
     /// <p>The ARN of the behavior graph.</p>
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>The account ID of the member account to try to enable.</p>
-    /// <p>The account must be an invited member account with a status of
-    /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
+    /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
     pub account_id: std::option::Option<std::string::String>,
 }
 impl StartMonitoringMemberInput {
@@ -2625,8 +3349,7 @@ impl StartMonitoringMemberInput {
         self.graph_arn.as_deref()
     }
     /// <p>The account ID of the member account to try to enable.</p>
-    /// <p>The account must be an invited member account with a status of
-    /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
+    /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -2645,14 +3368,12 @@ impl std::fmt::Debug for StartMonitoringMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectInvitationInput {
     /// <p>The ARN of the behavior graph to reject the invitation to.</p>
-    /// <p>The member account's current member status in the behavior graph must be
-    /// <code>INVITED</code>.</p>
+    /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
     pub graph_arn: std::option::Option<std::string::String>,
 }
 impl RejectInvitationInput {
     /// <p>The ARN of the behavior graph to reject the invitation to.</p>
-    /// <p>The member account's current member status in the behavior graph must be
-    /// <code>INVITED</code>.</p>
+    /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
     pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
@@ -2689,15 +3410,40 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListOrganizationAdminAccountsInput {
+    /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of results to return.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListOrganizationAdminAccountsInput {
+    /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListOrganizationAdminAccountsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListOrganizationAdminAccountsInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersInput {
     /// <p>The ARN of the behavior graph for which to retrieve the list of member accounts.</p>
     pub graph_arn: std::option::Option<std::string::String>,
-    /// <p>For requests to retrieve the next page of member account results, the pagination token
-    /// that was returned with the previous page of results. The initial request does not include a
-    /// pagination token.</p>
+    /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of member accounts to include in the response. The total must be less
-    /// than the overall limit on the number of results to return, which is currently 200.</p>
+    /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListMembersInput {
@@ -2705,14 +3451,11 @@ impl ListMembersInput {
     pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
-    /// <p>For requests to retrieve the next page of member account results, the pagination token
-    /// that was returned with the previous page of results. The initial request does not include a
-    /// pagination token.</p>
+    /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of member accounts to include in the response. The total must be less
-    /// than the overall limit on the number of results to return, which is currently 200.</p>
+    /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -2731,25 +3474,17 @@ impl std::fmt::Debug for ListMembersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsInput {
-    /// <p>For requests to retrieve the next page of results, the pagination token that was
-    /// returned with the previous page of results. The initial request does not include a
-    /// pagination token.</p>
+    /// <p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of behavior graph invitations to return in the response. The total
-    /// must be less than the overall limit on the number of results to return, which is currently
-    /// 200.</p>
+    /// <p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListInvitationsInput {
-    /// <p>For requests to retrieve the next page of results, the pagination token that was
-    /// returned with the previous page of results. The initial request does not include a
-    /// pagination token.</p>
+    /// <p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of behavior graph invitations to return in the response. The total
-    /// must be less than the overall limit on the number of results to return, which is currently
-    /// 200.</p>
+    /// <p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -2767,23 +3502,17 @@ impl std::fmt::Debug for ListInvitationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGraphsInput {
-    /// <p>For requests to get the next page of results, the pagination token that was returned
-    /// with the previous set of results. The initial request does not include a pagination
-    /// token.</p>
+    /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of graphs to return at a time. The total must be less than the
-    /// overall limit on the number of results to return, which is currently 200.</p>
+    /// <p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListGraphsInput {
-    /// <p>For requests to get the next page of results, the pagination token that was returned
-    /// with the previous set of results. The initial request does not include a pagination
-    /// token.</p>
+    /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of graphs to return at a time. The total must be less than the
-    /// overall limit on the number of results to return, which is currently 200.</p>
+    /// <p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -2803,10 +3532,8 @@ impl std::fmt::Debug for ListGraphsInput {
 pub struct GetMembersInput {
     /// <p>The ARN of the behavior graph for which to request the member details.</p>
     pub graph_arn: std::option::Option<std::string::String>,
-    /// <p>The list of AWS account identifiers for the member account for which to return member
-    /// details. You can request details for up to 50 member accounts at a time.</p>
-    /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts
-    /// that were removed from the behavior graph.</p>
+    /// <p>The list of Amazon Web Services account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>
+    /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetMembersInput {
@@ -2814,10 +3541,8 @@ impl GetMembersInput {
     pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
-    /// <p>The list of AWS account identifiers for the member account for which to return member
-    /// details. You can request details for up to 50 member accounts at a time.</p>
-    /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts
-    /// that were removed from the behavior graph.</p>
+    /// <p>The list of Amazon Web Services account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>
+    /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -2834,16 +3559,35 @@ impl std::fmt::Debug for GetMembersInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EnableOrganizationAdminAccountInput {
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.</p>
+    pub account_id: std::option::Option<std::string::String>,
+}
+impl EnableOrganizationAdminAccountInput {
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.</p>
+    pub fn account_id(&self) -> std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
+}
+impl std::fmt::Debug for EnableOrganizationAdminAccountInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EnableOrganizationAdminAccountInput");
+        formatter.field("account_id", &self.account_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateMembershipInput {
     /// <p>The ARN of the behavior graph to remove the member account from.</p>
-    /// <p>The member account's member status in the behavior graph must be
-    /// <code>ENABLED</code>.</p>
+    /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
     pub graph_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateMembershipInput {
     /// <p>The ARN of the behavior graph to remove the member account from.</p>
-    /// <p>The member account's member status in the behavior graph must be
-    /// <code>ENABLED</code>.</p>
+    /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
     pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
@@ -2859,20 +3603,50 @@ impl std::fmt::Debug for DisassociateMembershipInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteMembersInput {
-    /// <p>The ARN of the behavior graph to delete members from.</p>
-    pub graph_arn: std::option::Option<std::string::String>,
-    /// <p>The list of AWS account identifiers for the member accounts to delete from the
-    /// behavior graph. You can delete up to 50 member accounts at a time.</p>
-    pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+pub struct DisableOrganizationAdminAccountInput {}
+impl std::fmt::Debug for DisableOrganizationAdminAccountInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisableOrganizationAdminAccountInput");
+        formatter.finish()
+    }
 }
-impl DeleteMembersInput {
-    /// <p>The ARN of the behavior graph to delete members from.</p>
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeOrganizationConfigurationInput {
+    /// <p>The ARN of the organization behavior graph.</p>
+    pub graph_arn: std::option::Option<std::string::String>,
+}
+impl DescribeOrganizationConfigurationInput {
+    /// <p>The ARN of the organization behavior graph.</p>
     pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
-    /// <p>The list of AWS account identifiers for the member accounts to delete from the
-    /// behavior graph. You can delete up to 50 member accounts at a time.</p>
+}
+impl std::fmt::Debug for DescribeOrganizationConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeOrganizationConfigurationInput");
+        formatter.field("graph_arn", &self.graph_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteMembersInput {
+    /// <p>The ARN of the behavior graph to remove members from.</p>
+    pub graph_arn: std::option::Option<std::string::String>,
+    /// <p>The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.</p>
+    pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl DeleteMembersInput {
+    /// <p>The ARN of the behavior graph to remove members from.</p>
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
+        self.graph_arn.as_deref()
+    }
+    /// <p>The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -2911,41 +3685,31 @@ impl std::fmt::Debug for DeleteGraphInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersInput {
-    /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
-    /// to.</p>
+    /// <p>The ARN of the behavior graph.</p>
     pub graph_arn: std::option::Option<std::string::String>,
-    /// <p>Customized message text to include in the invitation email message to the invited member
-    /// accounts.</p>
+    /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>if set to <code>true</code>, then the member accounts do not receive email
-    /// notifications. By default, this is set to <code>false</code>, and the member accounts
-    /// receive email notifications.</p>
+    /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
+    /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
     pub disable_email_notification: bool,
-    /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
-    /// You can invite up to 50 accounts at a time. For each invited account, the account list
-    /// contains the account identifier and the AWS account root user email address.</p>
+    /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
 }
 impl CreateMembersInput {
-    /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
-    /// to.</p>
+    /// <p>The ARN of the behavior graph.</p>
     pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
-    /// <p>Customized message text to include in the invitation email message to the invited member
-    /// accounts.</p>
+    /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>if set to <code>true</code>, then the member accounts do not receive email
-    /// notifications. By default, this is set to <code>false</code>, and the member accounts
-    /// receive email notifications.</p>
+    /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
+    /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
     pub fn disable_email_notification(&self) -> bool {
         self.disable_email_notification
     }
-    /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
-    /// You can invite up to 50 accounts at a time. For each invited account, the account list
-    /// contains the account identifier and the AWS account root user email address.</p>
+    /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
     pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
         self.accounts.as_deref()
     }
@@ -2968,16 +3732,12 @@ impl std::fmt::Debug for CreateMembersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGraphInput {
-    /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag,
-    /// you provide the tag key and the tag value. Each tag key can contain up to 128 characters.
-    /// Each tag value can contain up to 256 characters.</p>
+    /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateGraphInput {
-    /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag,
-    /// you provide the tag key and the tag value. Each tag key can contain up to 128 characters.
-    /// Each tag value can contain up to 256 characters.</p>
+    /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2997,14 +3757,12 @@ impl std::fmt::Debug for CreateGraphInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptInvitationInput {
-    /// <p>The ARN of the behavior graph that the member account is accepting the invitation
-    /// for.</p>
+    /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
     /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
     pub graph_arn: std::option::Option<std::string::String>,
 }
 impl AcceptInvitationInput {
-    /// <p>The ARN of the behavior graph that the member account is accepting the invitation
-    /// for.</p>
+    /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
     /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
     pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()

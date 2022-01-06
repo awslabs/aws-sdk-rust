@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS EC2 Instance Connect
@@ -110,11 +110,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `SendSerialConsoleSSHPublicKey`.
     ///
-    /// <p>Pushes an SSH public key to the specified EC2 instance. The key remains for 60
-    /// seconds, which gives you 60 seconds to establish a serial console connection to the
-    /// instance using SSH. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-serial-console.html">EC2 Serial Console</a> in
-    /// the <i>Amazon EC2 User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Pushes an SSH public key to the specified EC2 instance. The key remains for 60 seconds, which gives you 60 seconds to establish a serial console connection to the instance using SSH. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-serial-console.html">EC2 Serial Console</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendSerialConsoleSSHPublicKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -159,10 +156,10 @@ pub mod fluent_builders {
                 crate::input::SendSerialConsoleSshPublicKeyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -171,8 +168,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the EC2 instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The ID of the EC2 instance.</p>
@@ -182,8 +179,8 @@ pub mod fluent_builders {
         }
         /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
         /// <p>Default: 0</p>
-        pub fn serial_port(mut self, inp: i32) -> Self {
-            self.inner = self.inner.serial_port(inp);
+        pub fn serial_port(mut self, input: i32) -> Self {
+            self.inner = self.inner.serial_port(input);
             self
         }
         /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
@@ -192,16 +189,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_serial_port(input);
             self
         }
-        /// <p>The public key material. To use the public key, you must have the matching private
-        /// key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User
-        /// Guide</i>.</p>
-        pub fn ssh_public_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(inp);
+        /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
-        /// <p>The public key material. To use the public key, you must have the matching private
-        /// key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User
-        /// Guide</i>.</p>
+        /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -212,11 +205,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendSSHPublicKey`.
     ///
-    /// <p>Pushes an SSH public key to the specified EC2 instance for use by the specified user.
-    /// The key remains for 60 seconds. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html">Connect to
-    /// your Linux instance using EC2 Instance Connect</a> in the <i>Amazon EC2
-    /// User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Pushes an SSH public key to the specified EC2 instance for use by the specified user. The key remains for 60 seconds. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html">Connect to your Linux instance using EC2 Instance Connect</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendSSHPublicKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -261,10 +251,10 @@ pub mod fluent_builders {
                 crate::input::SendSshPublicKeyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -273,8 +263,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the EC2 instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The ID of the EC2 instance.</p>
@@ -283,8 +273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
-        pub fn instance_os_user(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_os_user(inp);
+        pub fn instance_os_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_os_user(input.into());
             self
         }
         /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
@@ -296,8 +286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The public key material. To use the public key, you must have the matching private key.</p>
-        pub fn ssh_public_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(inp);
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
         /// <p>The public key material. To use the public key, you must have the matching private key.</p>
@@ -309,8 +299,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Availability Zone in which the EC2 instance was launched.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
         /// <p>The Availability Zone in which the EC2 instance was launched.</p>
@@ -323,6 +313,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

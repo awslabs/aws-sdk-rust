@@ -95,9 +95,9 @@ pub mod list_tasks_output {
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
         /// <p>A list of task structures containing details about each task.</p>
-        pub fn tasks(mut self, input: impl Into<crate::model::TaskSummary>) -> Self {
+        pub fn tasks(mut self, input: crate::model::TaskSummary) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tasks = Some(v);
             self
         }
@@ -228,8 +228,7 @@ pub struct DescribeTaskOutput {
     pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description provided of the task and managed devices.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -266,8 +265,7 @@ impl DescribeTaskOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -411,8 +409,7 @@ pub mod describe_task_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -423,8 +420,7 @@ pub mod describe_task_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -461,15 +457,13 @@ impl DescribeTaskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExecutionsOutput {
-    /// <p>A list of executions. Each execution contains the task ID, the device that the task is
-    /// executing on, the execution ID, and the status of the execution.</p>
+    /// <p>A list of executions. Each execution contains the task ID, the device that the task is executing on, the execution ID, and the status of the execution.</p>
     pub executions: std::option::Option<std::vec::Vec<crate::model::ExecutionSummary>>,
     /// <p>A pagination token to continue to the next page of executions.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExecutionsOutput {
-    /// <p>A list of executions. Each execution contains the task ID, the device that the task is
-    /// executing on, the execution ID, and the status of the execution.</p>
+    /// <p>A list of executions. Each execution contains the task ID, the device that the task is executing on, the execution ID, and the status of the execution.</p>
     pub fn executions(&self) -> std::option::Option<&[crate::model::ExecutionSummary]> {
         self.executions.as_deref()
     }
@@ -500,16 +494,14 @@ pub mod list_executions_output {
         ///
         /// To override the contents of this collection use [`set_executions`](Self::set_executions).
         ///
-        /// <p>A list of executions. Each execution contains the task ID, the device that the task is
-        /// executing on, the execution ID, and the status of the execution.</p>
-        pub fn executions(mut self, input: impl Into<crate::model::ExecutionSummary>) -> Self {
+        /// <p>A list of executions. Each execution contains the task ID, the device that the task is executing on, the execution ID, and the status of the execution.</p>
+        pub fn executions(mut self, input: crate::model::ExecutionSummary) -> Self {
             let mut v = self.executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.executions = Some(v);
             self
         }
-        /// <p>A list of executions. Each execution contains the task ID, the device that the task is
-        /// executing on, the execution ID, and the status of the execution.</p>
+        /// <p>A list of executions. Each execution contains the task ID, the device that the task is executing on, the execution ID, and the status of the execution.</p>
         pub fn set_executions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExecutionSummary>>,
@@ -746,9 +738,9 @@ pub mod list_device_resources_output {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// <p>A structure defining the resource's type, Amazon Resource Name (ARN), and ID.</p>
-        pub fn resources(mut self, input: impl Into<crate::model::ResourceSummary>) -> Self {
+        pub fn resources(mut self, input: crate::model::ResourceSummary) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -820,9 +812,9 @@ pub mod describe_device_ec2_instances_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>A list of structures containing information about each instance. </p>
-        pub fn instances(mut self, input: impl Into<crate::model::InstanceSummary>) -> Self {
+        pub fn instances(mut self, input: crate::model::InstanceSummary) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -891,9 +883,9 @@ pub mod list_devices_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>A list of device structures that contain information about the device.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::DeviceSummary>) -> Self {
+        pub fn devices(mut self, input: crate::model::DeviceSummary) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -935,14 +927,11 @@ impl ListDevicesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDeviceOutput {
-    /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is
-    /// online.</p>
+    /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is online.</p>
     pub last_reached_out_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache
-    /// was refreshed.</p>
+    /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache was refreshed.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment. </p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ID of the device that you checked the information for.</p>
@@ -964,18 +953,15 @@ pub struct DescribeDeviceOutput {
     pub software: std::option::Option<crate::model::SoftwareInformation>,
 }
 impl DescribeDeviceOutput {
-    /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is
-    /// online.</p>
+    /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is online.</p>
     pub fn last_reached_out_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_reached_out_at.as_ref()
     }
-    /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache
-    /// was refreshed.</p>
+    /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache was refreshed.</p>
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment. </p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1059,14 +1045,12 @@ pub mod describe_device_output {
         pub(crate) software: std::option::Option<crate::model::SoftwareInformation>,
     }
     impl Builder {
-        /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is
-        /// online.</p>
+        /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is online.</p>
         pub fn last_reached_out_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_reached_out_at = Some(input);
             self
         }
-        /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is
-        /// online.</p>
+        /// <p>When the device last contacted the Amazon Web Services Cloud. Indicates that the device is online.</p>
         pub fn set_last_reached_out_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1074,14 +1058,12 @@ pub mod describe_device_output {
             self.last_reached_out_at = input;
             self
         }
-        /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache
-        /// was refreshed.</p>
+        /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache was refreshed.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_at = Some(input);
             self
         }
-        /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache
-        /// was refreshed.</p>
+        /// <p>When the device last pushed an update to the Amazon Web Services Cloud. Indicates when the device cache was refreshed.</p>
         pub fn set_last_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1093,8 +1075,7 @@ pub mod describe_device_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment. </p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1105,8 +1086,7 @@ pub mod describe_device_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment. </p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1185,10 +1165,10 @@ pub mod describe_device_output {
         /// <p>The network interfaces available on the device.</p>
         pub fn physical_network_interfaces(
             mut self,
-            input: impl Into<crate::model::PhysicalNetworkInterface>,
+            input: crate::model::PhysicalNetworkInterface,
         ) -> Self {
             let mut v = self.physical_network_interfaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.physical_network_interfaces = Some(v);
             self
         }
@@ -1205,9 +1185,9 @@ pub mod describe_device_output {
         /// To override the contents of this collection use [`set_device_capacities`](Self::set_device_capacities).
         ///
         /// <p>The hardware specifications of the device. </p>
-        pub fn device_capacities(mut self, input: impl Into<crate::model::Capacity>) -> Self {
+        pub fn device_capacities(mut self, input: crate::model::Capacity) -> Self {
             let mut v = self.device_capacities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_capacities = Some(v);
             self
         }

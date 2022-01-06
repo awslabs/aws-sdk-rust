@@ -411,7 +411,7 @@ mod tests {
             TimeSource::manual(&time),
             Arc::new(TokioSleep::new()),
             Arc::new(provide_credentials_fn(|| async {
-                tokio::time::sleep(Duration::from_millis(10)).await;
+                aws_smithy_async::future::never::Never::new().await;
                 Ok(credentials(1000))
             })),
             Duration::from_millis(5),

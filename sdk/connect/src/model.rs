@@ -183,29 +183,23 @@ impl AsRef<str> for PhoneType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserIdentityInfo {
-    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity
-    /// management.</p>
+    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
     pub first_name: std::option::Option<std::string::String>,
-    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity
-    /// management.</p>
+    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
     pub last_name: std::option::Option<std::string::String>,
-    /// <p>The email address. If you are using SAML for identity management and include this parameter,
-    /// an error is returned.</p>
+    /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
     pub email: std::option::Option<std::string::String>,
 }
 impl UserIdentityInfo {
-    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity
-    /// management.</p>
+    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
     pub fn first_name(&self) -> std::option::Option<&str> {
         self.first_name.as_deref()
     }
-    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity
-    /// management.</p>
+    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
     pub fn last_name(&self) -> std::option::Option<&str> {
         self.last_name.as_deref()
     }
-    /// <p>The email address. If you are using SAML for identity management and include this parameter,
-    /// an error is returned.</p>
+    /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
     pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
@@ -230,38 +224,32 @@ pub mod user_identity_info {
         pub(crate) email: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity
-        /// management.</p>
+        /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
         pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.first_name = Some(input.into());
             self
         }
-        /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity
-        /// management.</p>
+        /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.first_name = input;
             self
         }
-        /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity
-        /// management.</p>
+        /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
         pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_name = Some(input.into());
             self
         }
-        /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity
-        /// management.</p>
+        /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_name = input;
             self
         }
-        /// <p>The email address. If you are using SAML for identity management and include this parameter,
-        /// an error is returned.</p>
+        /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
             self.email = Some(input.into());
             self
         }
-        /// <p>The email address. If you are using SAML for identity management and include this parameter,
-        /// an error is returned.</p>
+        /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
@@ -370,9 +358,7 @@ impl AsRef<str> for ResourceType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HierarchyStructureUpdate {
-    /// <p>The
-    /// update
-    /// for level one.</p>
+    /// <p>The update for level one.</p>
     pub level_one: std::option::Option<crate::model::HierarchyLevelUpdate>,
     /// <p>The update for level two.</p>
     pub level_two: std::option::Option<crate::model::HierarchyLevelUpdate>,
@@ -384,9 +370,7 @@ pub struct HierarchyStructureUpdate {
     pub level_five: std::option::Option<crate::model::HierarchyLevelUpdate>,
 }
 impl HierarchyStructureUpdate {
-    /// <p>The
-    /// update
-    /// for level one.</p>
+    /// <p>The update for level one.</p>
     pub fn level_one(&self) -> std::option::Option<&crate::model::HierarchyLevelUpdate> {
         self.level_one.as_ref()
     }
@@ -431,16 +415,12 @@ pub mod hierarchy_structure_update {
         pub(crate) level_five: std::option::Option<crate::model::HierarchyLevelUpdate>,
     }
     impl Builder {
-        /// <p>The
-        /// update
-        /// for level one.</p>
+        /// <p>The update for level one.</p>
         pub fn level_one(mut self, input: crate::model::HierarchyLevelUpdate) -> Self {
             self.level_one = Some(input);
             self
         }
-        /// <p>The
-        /// update
-        /// for level one.</p>
+        /// <p>The update for level one.</p>
         pub fn set_level_one(
             mut self,
             input: std::option::Option<crate::model::HierarchyLevelUpdate>,
@@ -571,20 +551,15 @@ impl HierarchyLevelUpdate {
     }
 }
 
-/// <p>Contains information about the queue and channel for which priority and delay can be
-/// set.</p>
+/// <p>Contains information about the queue and channel for which priority and delay can be set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoutingProfileQueueConfig {
     /// <p>Contains information about a queue resource.</p>
     pub queue_reference: std::option::Option<crate::model::RoutingProfileQueueReference>,
-    /// <p>The order in which contacts are to be handled for the queue. For more information, see
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-    /// delay</a>.</p>
+    /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
     pub priority: std::option::Option<i32>,
-    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an
-    /// available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-    /// delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub delay: std::option::Option<i32>,
 }
 impl RoutingProfileQueueConfig {
@@ -594,15 +569,11 @@ impl RoutingProfileQueueConfig {
     ) -> std::option::Option<&crate::model::RoutingProfileQueueReference> {
         self.queue_reference.as_ref()
     }
-    /// <p>The order in which contacts are to be handled for the queue. For more information, see
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-    /// delay</a>.</p>
+    /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
     pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
-    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an
-    /// available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-    /// delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn delay(&self) -> std::option::Option<i32> {
         self.delay
     }
@@ -643,30 +614,22 @@ pub mod routing_profile_queue_config {
             self.queue_reference = input;
             self
         }
-        /// <p>The order in which contacts are to be handled for the queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-        /// delay</a>.</p>
+        /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.priority = Some(input);
             self
         }
-        /// <p>The order in which contacts are to be handled for the queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-        /// delay</a>.</p>
+        /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
         }
-        /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an
-        /// available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-        /// delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn delay(mut self, input: i32) -> Self {
             self.delay = Some(input);
             self
         }
-        /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an
-        /// available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-        /// delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn set_delay(mut self, input: std::option::Option<i32>) -> Self {
             self.delay = input;
             self
@@ -694,8 +657,7 @@ impl RoutingProfileQueueConfig {
 pub struct RoutingProfileQueueReference {
     /// <p>The identifier for the queue.</p>
     pub queue_id: std::option::Option<std::string::String>,
-    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
-    /// profile.</p>
+    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl RoutingProfileQueueReference {
@@ -703,8 +665,7 @@ impl RoutingProfileQueueReference {
     pub fn queue_id(&self) -> std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
-    /// profile.</p>
+    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
         self.channel.as_ref()
     }
@@ -737,14 +698,12 @@ pub mod routing_profile_queue_reference {
             self.queue_id = input;
             self
         }
-        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
-        /// profile.</p>
+        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
         pub fn channel(mut self, input: crate::model::Channel) -> Self {
             self.channel = Some(input);
             self
         }
-        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
-        /// profile.</p>
+        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
             self.channel = input;
             self
@@ -824,8 +783,7 @@ impl AsRef<str> for Channel {
     }
 }
 
-/// <p>Contains information about which channels are supported, and how many contacts an agent can
-/// have on a channel simultaneously.</p>
+/// <p>Contains information about which channels are supported, and how many contacts an agent can have on a channel simultaneously.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MediaConcurrency {
@@ -914,8 +872,7 @@ impl MediaConcurrency {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuickConnectConfig {
-    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
-    /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
+    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
     pub quick_connect_type: std::option::Option<crate::model::QuickConnectType>,
     /// <p>The user configuration. This is required only if QuickConnectType is USER.</p>
     pub user_config: std::option::Option<crate::model::UserQuickConnectConfig>,
@@ -925,8 +882,7 @@ pub struct QuickConnectConfig {
     pub phone_config: std::option::Option<crate::model::PhoneNumberQuickConnectConfig>,
 }
 impl QuickConnectConfig {
-    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
-    /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
+    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
     pub fn quick_connect_type(&self) -> std::option::Option<&crate::model::QuickConnectType> {
         self.quick_connect_type.as_ref()
     }
@@ -967,14 +923,12 @@ pub mod quick_connect_config {
         pub(crate) phone_config: std::option::Option<crate::model::PhoneNumberQuickConnectConfig>,
     }
     impl Builder {
-        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
-        /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
+        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
         pub fn quick_connect_type(mut self, input: crate::model::QuickConnectType) -> Self {
             self.quick_connect_type = Some(input);
             self
         }
-        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
-        /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
+        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE). </p>
         pub fn set_quick_connect_type(
             mut self,
             input: std::option::Option<crate::model::QuickConnectType>,
@@ -1093,8 +1047,7 @@ impl PhoneNumberQuickConnectConfig {
     }
 }
 
-/// <p>Contains information about a queue for a quick connect. The contact flow must be of type
-/// Transfer to Queue.</p>
+/// <p>Contains information about a queue for a quick connect. The contact flow must be of type Transfer to Queue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueueQuickConnectConfig {
@@ -1170,8 +1123,7 @@ impl QueueQuickConnectConfig {
     }
 }
 
-/// <p>Contains information about the quick connect configuration settings for a user. The contact
-/// flow must be of type Transfer to Agent.</p>
+/// <p>Contains information about the quick connect configuration settings for a user. The contact flow must be of type Transfer to Agent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserQuickConnectConfig {
@@ -1476,8 +1428,7 @@ pub struct InstanceStorageConfig {
     pub association_id: std::option::Option<std::string::String>,
     /// <p>A valid storage type.</p>
     pub storage_type: std::option::Option<crate::model::StorageType>,
-    /// <p>The S3 bucket
-    /// configuration.</p>
+    /// <p>The S3 bucket configuration.</p>
     pub s3_config: std::option::Option<crate::model::S3Config>,
     /// <p>The configuration of the Kinesis video stream.</p>
     pub kinesis_video_stream_config: std::option::Option<crate::model::KinesisVideoStreamConfig>,
@@ -1495,8 +1446,7 @@ impl InstanceStorageConfig {
     pub fn storage_type(&self) -> std::option::Option<&crate::model::StorageType> {
         self.storage_type.as_ref()
     }
-    /// <p>The S3 bucket
-    /// configuration.</p>
+    /// <p>The S3 bucket configuration.</p>
     pub fn s3_config(&self) -> std::option::Option<&crate::model::S3Config> {
         self.s3_config.as_ref()
     }
@@ -1574,14 +1524,12 @@ pub mod instance_storage_config {
             self.storage_type = input;
             self
         }
-        /// <p>The S3 bucket
-        /// configuration.</p>
+        /// <p>The S3 bucket configuration.</p>
         pub fn s3_config(mut self, input: crate::model::S3Config) -> Self {
             self.s3_config = Some(input);
             self
         }
-        /// <p>The S3 bucket
-        /// configuration.</p>
+        /// <p>The S3 bucket configuration.</p>
         pub fn set_s3_config(mut self, input: std::option::Option<crate::model::S3Config>) -> Self {
             self.s3_config = input;
             self
@@ -1765,8 +1713,7 @@ impl KinesisStreamConfig {
 pub struct KinesisVideoStreamConfig {
     /// <p>The prefix of the video stream.</p>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data
-    /// in a data store that is associated with the stream.</p>
+    /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
     pub retention_period_hours: i32,
     /// <p>The encryption configuration.</p>
@@ -1777,8 +1724,7 @@ impl KinesisVideoStreamConfig {
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data
-    /// in a data store that is associated with the stream.</p>
+    /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
     pub fn retention_period_hours(&self) -> i32 {
         self.retention_period_hours
@@ -1818,15 +1764,13 @@ pub mod kinesis_video_stream_config {
             self.prefix = input;
             self
         }
-        /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data
-        /// in a data store that is associated with the stream.</p>
+        /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
         /// <p>The default value is 0, indicating that the stream does not persist data.</p>
         pub fn retention_period_hours(mut self, input: i32) -> Self {
             self.retention_period_hours = Some(input);
             self
         }
-        /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data
-        /// in a data store that is associated with the stream.</p>
+        /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
         /// <p>The default value is 0, indicating that the stream does not persist data.</p>
         pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
             self.retention_period_hours = input;
@@ -1868,8 +1812,7 @@ impl KinesisVideoStreamConfig {
 pub struct EncryptionConfig {
     /// <p>The type of encryption.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The full ARN of the encryption key. </p>
-    /// <note>
+    /// <p>The full ARN of the encryption key. </p> <note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// </note>
     pub key_id: std::option::Option<std::string::String>,
@@ -1879,8 +1822,7 @@ impl EncryptionConfig {
     pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
-    /// <p>The full ARN of the encryption key. </p>
-    /// <note>
+    /// <p>The full ARN of the encryption key. </p> <note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// </note>
     pub fn key_id(&self) -> std::option::Option<&str> {
@@ -1918,16 +1860,14 @@ pub mod encryption_config {
             self.encryption_type = input;
             self
         }
-        /// <p>The full ARN of the encryption key. </p>
-        /// <note>
+        /// <p>The full ARN of the encryption key. </p> <note>
         /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
         /// </note>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
         }
-        /// <p>The full ARN of the encryption key. </p>
-        /// <note>
+        /// <p>The full ARN of the encryption key. </p> <note>
         /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
         /// </note>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2749,8 +2689,7 @@ impl AsRef<str> for ContactFlowState {
     }
 }
 
-/// <p>A link that an agent selects to complete a given task. You can have up to 4,096 UTF-8 bytes
-/// across all references for a contact.</p>
+/// <p>A link that an agent selects to complete a given task. You can have up to 4,096 UTF-8 bytes across all references for a contact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Reference {
@@ -2992,17 +2931,13 @@ impl AsRef<str> for TrafficType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnswerMachineDetectionConfig {
-    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice
-    /// call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>.
-    /// </p>
+    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>. </p>
     pub enable_answer_machine_detection: bool,
     /// <p>Wait for the answering machine prompt.</p>
     pub await_answer_machine_prompt: bool,
 }
 impl AnswerMachineDetectionConfig {
-    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice
-    /// call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>.
-    /// </p>
+    /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>. </p>
     pub fn enable_answer_machine_detection(&self) -> bool {
         self.enable_answer_machine_detection
     }
@@ -3035,16 +2970,12 @@ pub mod answer_machine_detection_config {
         pub(crate) await_answer_machine_prompt: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice
-        /// call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>.
-        /// </p>
+        /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>. </p>
         pub fn enable_answer_machine_detection(mut self, input: bool) -> Self {
             self.enable_answer_machine_detection = Some(input);
             self
         }
-        /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice
-        /// call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>.
-        /// </p>
+        /// <p>The flag to indicate if answer machine detection analysis needs to be performed for a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as <code>CAMPAIGN</code>. </p>
         pub fn set_enable_answer_machine_detection(
             mut self,
             input: std::option::Option<bool>,
@@ -3084,13 +3015,11 @@ impl AnswerMachineDetectionConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChatStreamingConfiguration {
-    /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used
-    /// to publish real-time message streaming for chat conversations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
     pub streaming_endpoint_arn: std::option::Option<std::string::String>,
 }
 impl ChatStreamingConfiguration {
-    /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used
-    /// to publish real-time message streaming for chat conversations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
     pub fn streaming_endpoint_arn(&self) -> std::option::Option<&str> {
         self.streaming_endpoint_arn.as_deref()
     }
@@ -3111,14 +3040,12 @@ pub mod chat_streaming_configuration {
         pub(crate) streaming_endpoint_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used
-        /// to publish real-time message streaming for chat conversations.</p>
+        /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
         pub fn streaming_endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.streaming_endpoint_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used
-        /// to publish real-time message streaming for chat conversations.</p>
+        /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
         pub fn set_streaming_endpoint_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3568,9 +3495,7 @@ impl HierarchyGroupSummary {
     }
 }
 
-/// <p>Contains the
-/// use
-/// case.</p>
+/// <p>Contains the use case.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UseCase {
@@ -3578,8 +3503,7 @@ pub struct UseCase {
     pub use_case_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the use case.</p>
     pub use_case_arn: std::option::Option<std::string::String>,
-    /// <p>The type of use case to associate to the integration association. Each integration
-    /// association can have only one of each use case type.</p>
+    /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
     pub use_case_type: std::option::Option<crate::model::UseCaseType>,
 }
 impl UseCase {
@@ -3591,8 +3515,7 @@ impl UseCase {
     pub fn use_case_arn(&self) -> std::option::Option<&str> {
         self.use_case_arn.as_deref()
     }
-    /// <p>The type of use case to associate to the integration association. Each integration
-    /// association can have only one of each use case type.</p>
+    /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
     pub fn use_case_type(&self) -> std::option::Option<&crate::model::UseCaseType> {
         self.use_case_type.as_ref()
     }
@@ -3637,14 +3560,12 @@ pub mod use_case {
             self.use_case_arn = input;
             self
         }
-        /// <p>The type of use case to associate to the integration association. Each integration
-        /// association can have only one of each use case type.</p>
+        /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
         pub fn use_case_type(mut self, input: crate::model::UseCaseType) -> Self {
             self.use_case_type = Some(input);
             self
         }
-        /// <p>The type of use case to associate to the integration association. Each integration
-        /// association can have only one of each use case type.</p>
+        /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
         pub fn set_use_case_type(
             mut self,
             input: std::option::Option<crate::model::UseCaseType>,
@@ -4016,13 +3937,9 @@ pub struct RoutingProfileQueueConfigSummary {
     pub queue_arn: std::option::Option<std::string::String>,
     /// <p>The name of the queue.</p>
     pub queue_name: std::option::Option<std::string::String>,
-    /// <p>The order in which contacts are to be handled for the queue. For more information, see
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-    /// delay</a>.</p>
+    /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
     pub priority: i32,
-    /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an
-    /// available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-    /// delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub delay: i32,
     /// <p>The channels this queue supports.</p>
     pub channel: std::option::Option<crate::model::Channel>,
@@ -4040,15 +3957,11 @@ impl RoutingProfileQueueConfigSummary {
     pub fn queue_name(&self) -> std::option::Option<&str> {
         self.queue_name.as_deref()
     }
-    /// <p>The order in which contacts are to be handled for the queue. For more information, see
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-    /// delay</a>.</p>
+    /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
-    /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an
-    /// available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-    /// delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn delay(&self) -> i32 {
         self.delay
     }
@@ -4113,30 +4026,22 @@ pub mod routing_profile_queue_config_summary {
             self.queue_name = input;
             self
         }
-        /// <p>The order in which contacts are to be handled for the queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-        /// delay</a>.</p>
+        /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.priority = Some(input);
             self
         }
-        /// <p>The order in which contacts are to be handled for the queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-        /// delay</a>.</p>
+        /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
         }
-        /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an
-        /// available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-        /// delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn delay(mut self, input: i32) -> Self {
             self.delay = Some(input);
             self
         }
-        /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an
-        /// available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and
-        /// delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+        /// <p>The delay, in seconds, that a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn set_delay(mut self, input: std::option::Option<i32>) -> Self {
             self.delay = input;
             self
@@ -4181,8 +4086,7 @@ pub struct QuickConnectSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the quick connect.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
-    /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub quick_connect_type: std::option::Option<crate::model::QuickConnectType>,
 }
 impl QuickConnectSummary {
@@ -4198,8 +4102,7 @@ impl QuickConnectSummary {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
-    /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub fn quick_connect_type(&self) -> std::option::Option<&crate::model::QuickConnectType> {
         self.quick_connect_type.as_ref()
     }
@@ -4256,14 +4159,12 @@ pub mod quick_connect_summary {
             self.name = input;
             self
         }
-        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
-        /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
         pub fn quick_connect_type(mut self, input: crate::model::QuickConnectType) -> Self {
             self.quick_connect_type = Some(input);
             self
         }
-        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
-        /// prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+        /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
         pub fn set_quick_connect_type(
             mut self,
             input: std::option::Option<crate::model::QuickConnectType>,
@@ -6688,8 +6589,7 @@ impl HoursOfOperationSummary {
 pub enum ReferenceSummary {
     /// <p>Information about the attachment reference if the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.</p>
     Attachment(crate::model::AttachmentReference),
-    /// <p>Information about the URL reference if the <code>referenceType</code> is <code>URL</code>.
-    /// Otherwise, null.</p>
+    /// <p>Information about the URL reference if the <code>referenceType</code> is <code>URL</code>. Otherwise, null.</p>
     Url(crate::model::UrlReference),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -6958,8 +6858,7 @@ impl UrlReference {
 }
 
 /// <p>Contains summary information about a contact flow.</p>
-/// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect
-/// Flow language</a>.</p>
+/// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactFlowSummary {
@@ -7716,9 +7615,9 @@ pub mod historical_metric_result {
         /// To override the contents of this collection use [`set_collections`](Self::set_collections).
         ///
         /// <p>The set of metrics.</p>
-        pub fn collections(mut self, input: impl Into<crate::model::HistoricalMetricData>) -> Self {
+        pub fn collections(mut self, input: crate::model::HistoricalMetricData) -> Self {
             let mut v = self.collections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.collections = Some(v);
             self
         }
@@ -7822,8 +7721,7 @@ impl HistoricalMetricData {
     }
 }
 
-/// <p>Contains information about a historical metric. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator
-/// Guide</i>.</p>
+/// <p>Contains information about a historical metric. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HistoricalMetric {
@@ -8577,15 +8475,13 @@ impl AsRef<str> for Grouping {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filters {
-    /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per
-    /// request.</p>
+    /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per request.</p>
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The channel to use to filter the metrics.</p>
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
 }
 impl Filters {
-    /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per
-    /// request.</p>
+    /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per request.</p>
     pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
         self.queues.as_deref()
     }
@@ -8616,16 +8512,14 @@ pub mod filters {
         ///
         /// To override the contents of this collection use [`set_queues`](Self::set_queues).
         ///
-        /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per
-        /// request.</p>
+        /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per request.</p>
         pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queues.unwrap_or_default();
             v.push(input.into());
             self.queues = Some(v);
             self
         }
-        /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per
-        /// request.</p>
+        /// <p>The queues to use to filter the metrics. You can specify up to 100 queues per request.</p>
         pub fn set_queues(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8638,9 +8532,9 @@ pub mod filters {
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
         /// <p>The channel to use to filter the metrics.</p>
-        pub fn channels(mut self, input: impl Into<crate::model::Channel>) -> Self {
+        pub fn channels(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channels = Some(v);
             self
         }
@@ -8674,8 +8568,7 @@ impl Filters {
 pub struct Credentials {
     /// <p>An access token generated for a federated user to access Amazon Connect.</p>
     pub access_token: std::option::Option<std::string::String>,
-    /// <p>A token generated with an expiration time for the session a user is logged in to
-    /// Amazon Connect.</p>
+    /// <p>A token generated with an expiration time for the session a user is logged in to Amazon Connect.</p>
     pub access_token_expiration: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Renews a token generated for a user to access the Amazon Connect instance.</p>
     pub refresh_token: std::option::Option<std::string::String>,
@@ -8687,8 +8580,7 @@ impl Credentials {
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p>A token generated with an expiration time for the session a user is logged in to
-    /// Amazon Connect.</p>
+    /// <p>A token generated with an expiration time for the session a user is logged in to Amazon Connect.</p>
     pub fn access_token_expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.access_token_expiration.as_ref()
     }
@@ -8733,14 +8625,12 @@ pub mod credentials {
             self.access_token = input;
             self
         }
-        /// <p>A token generated with an expiration time for the session a user is logged in to
-        /// Amazon Connect.</p>
+        /// <p>A token generated with an expiration time for the session a user is logged in to Amazon Connect.</p>
         pub fn access_token_expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.access_token_expiration = Some(input);
             self
         }
-        /// <p>A token generated with an expiration time for the session a user is logged in to
-        /// Amazon Connect.</p>
+        /// <p>A token generated with an expiration time for the session a user is logged in to Amazon Connect.</p>
         pub fn set_access_token_expiration(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -8847,9 +8737,9 @@ pub mod current_metric_result {
         /// To override the contents of this collection use [`set_collections`](Self::set_collections).
         ///
         /// <p>The set of metrics.</p>
-        pub fn collections(mut self, input: impl Into<crate::model::CurrentMetricData>) -> Self {
+        pub fn collections(mut self, input: crate::model::CurrentMetricData) -> Self {
             let mut v = self.collections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.collections = Some(v);
             self
         }
@@ -8953,8 +8843,7 @@ impl CurrentMetricData {
     }
 }
 
-/// <p>Contains information about a real-time metric. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator
-/// Guide</i>.</p>
+/// <p>Contains information about a real-time metric. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CurrentMetric {
@@ -9680,8 +9569,7 @@ pub struct User {
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the hierarchy group for the user.</p>
     pub hierarchy_group_id: std::option::Option<std::string::String>,
-    /// <p>The
-    /// tags.</p>
+    /// <p>The tags.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9722,8 +9610,7 @@ impl User {
     pub fn hierarchy_group_id(&self) -> std::option::Option<&str> {
         self.hierarchy_group_id.as_deref()
     }
-    /// <p>The
-    /// tags.</p>
+    /// <p>The tags.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9885,8 +9772,7 @@ pub mod user {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The
-        /// tags.</p>
+        /// <p>The tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -9897,8 +9783,7 @@ pub mod user {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The
-        /// tags.</p>
+        /// <p>The tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -10122,8 +10007,7 @@ pub struct RoutingProfile {
     pub routing_profile_id: std::option::Option<std::string::String>,
     /// <p>The description of the routing profile.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
-    /// profile.</p>
+    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     pub media_concurrencies: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
     /// <p>The identifier of the default outbound queue for this routing profile.</p>
     pub default_outbound_queue_id: std::option::Option<std::string::String>,
@@ -10152,8 +10036,7 @@ impl RoutingProfile {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
-    /// profile.</p>
+    /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     pub fn media_concurrencies(&self) -> std::option::Option<&[crate::model::MediaConcurrency]> {
         self.media_concurrencies.as_deref()
     }
@@ -10262,19 +10145,14 @@ pub mod routing_profile {
         ///
         /// To override the contents of this collection use [`set_media_concurrencies`](Self::set_media_concurrencies).
         ///
-        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
-        /// profile.</p>
-        pub fn media_concurrencies(
-            mut self,
-            input: impl Into<crate::model::MediaConcurrency>,
-        ) -> Self {
+        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
+        pub fn media_concurrencies(mut self, input: crate::model::MediaConcurrency) -> Self {
             let mut v = self.media_concurrencies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.media_concurrencies = Some(v);
             self
         }
-        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing
-        /// profile.</p>
+        /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
         pub fn set_media_concurrencies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MediaConcurrency>>,
@@ -10774,8 +10652,7 @@ pub struct Instance {
     pub service_role: std::option::Option<std::string::String>,
     /// <p>The state of the instance.</p>
     pub instance_status: std::option::Option<crate::model::InstanceStatus>,
-    /// <p>Relevant
-    /// details why the instance was not successfully created. </p>
+    /// <p>Relevant details why the instance was not successfully created. </p>
     pub status_reason: std::option::Option<crate::model::InstanceStatusReason>,
     /// <p>Whether inbound calls are enabled.</p>
     pub inbound_calls_enabled: std::option::Option<bool>,
@@ -10811,8 +10688,7 @@ impl Instance {
     pub fn instance_status(&self) -> std::option::Option<&crate::model::InstanceStatus> {
         self.instance_status.as_ref()
     }
-    /// <p>Relevant
-    /// details why the instance was not successfully created. </p>
+    /// <p>Relevant details why the instance was not successfully created. </p>
     pub fn status_reason(&self) -> std::option::Option<&crate::model::InstanceStatusReason> {
         self.status_reason.as_ref()
     }
@@ -10941,14 +10817,12 @@ pub mod instance {
             self.instance_status = input;
             self
         }
-        /// <p>Relevant
-        /// details why the instance was not successfully created. </p>
+        /// <p>Relevant details why the instance was not successfully created. </p>
         pub fn status_reason(mut self, input: crate::model::InstanceStatusReason) -> Self {
             self.status_reason = Some(input);
             self
         }
-        /// <p>Relevant
-        /// details why the instance was not successfully created. </p>
+        /// <p>Relevant details why the instance was not successfully created. </p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<crate::model::InstanceStatusReason>,
@@ -11000,8 +10874,7 @@ impl Instance {
     }
 }
 
-/// <p>Relevant
-/// details why the instance was not successfully created.</p>
+/// <p>Relevant details why the instance was not successfully created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceStatusReason {
@@ -11199,9 +11072,9 @@ pub mod hours_of_operation {
         /// To override the contents of this collection use [`set_config`](Self::set_config).
         ///
         /// <p>Configuration information for the hours of operation.</p>
-        pub fn config(mut self, input: impl Into<crate::model::HoursOfOperationConfig>) -> Self {
+        pub fn config(mut self, input: crate::model::HoursOfOperationConfig) -> Self {
             let mut v = self.config.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.config = Some(v);
             self
         }
@@ -11538,8 +11411,7 @@ pub struct ContactFlow {
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the contact flow.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
-    /// Guide</i>.</p>
+    /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub r#type: std::option::Option<crate::model::ContactFlowType>,
     /// <p>The type of contact flow.</p>
     pub state: std::option::Option<crate::model::ContactFlowState>,
@@ -11564,8 +11436,7 @@ impl ContactFlow {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
-    /// Guide</i>.</p>
+    /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ContactFlowType> {
         self.r#type.as_ref()
     }
@@ -11651,14 +11522,12 @@ pub mod contact_flow {
             self.name = input;
             self
         }
-        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.</p>
+        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn r#type(mut self, input: crate::model::ContactFlowType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
-        /// Guide</i>.</p>
+        /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ContactFlowType>,
@@ -11770,10 +11639,7 @@ pub struct Contact {
     pub queue_info: std::option::Option<crate::model::QueueInfo>,
     /// <p>Information about the agent who accepted the contact.</p>
     pub agent_info: std::option::Option<crate::model::AgentInfo>,
-    /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the
-    /// contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when
-    /// the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was
-    /// initiated. For <code>API</code>, this is when the request arrived.</p>
+    /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when the request arrived.</p>
     pub initiation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
     pub disconnect_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -11823,10 +11689,7 @@ impl Contact {
     pub fn agent_info(&self) -> std::option::Option<&crate::model::AgentInfo> {
         self.agent_info.as_ref()
     }
-    /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the
-    /// contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when
-    /// the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was
-    /// initiated. For <code>API</code>, this is when the request arrived.</p>
+    /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when the request arrived.</p>
     pub fn initiation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.initiation_timestamp.as_ref()
     }
@@ -12000,18 +11863,12 @@ pub mod contact {
             self.agent_info = input;
             self
         }
-        /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the
-        /// contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when
-        /// the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was
-        /// initiated. For <code>API</code>, this is when the request arrived.</p>
+        /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when the request arrived.</p>
         pub fn initiation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.initiation_timestamp = Some(input);
             self
         }
-        /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the
-        /// contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when
-        /// the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was
-        /// initiated. For <code>API</code>, this is when the request arrived.</p>
+        /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when the request arrived.</p>
         pub fn set_initiation_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

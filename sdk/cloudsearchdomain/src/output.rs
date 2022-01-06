@@ -88,9 +88,9 @@ pub mod upload_documents_output {
         /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
         ///
         /// <p>Any warnings returned by the document service about the documents being uploaded.</p>
-        pub fn warnings(mut self, input: impl Into<crate::model::DocumentServiceWarning>) -> Self {
+        pub fn warnings(mut self, input: crate::model::DocumentServiceWarning) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.warnings = Some(v);
             self
         }
@@ -299,10 +299,10 @@ pub mod search_output {
         pub fn facets(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::BucketInfo>,
+            v: crate::model::BucketInfo,
         ) -> Self {
             let mut hash_map = self.facets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.facets = Some(hash_map);
             self
         }
@@ -324,10 +324,10 @@ pub mod search_output {
         pub fn stats(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FieldStats>,
+            v: crate::model::FieldStats,
         ) -> Self {
             let mut hash_map = self.stats.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.stats = Some(hash_map);
             self
         }

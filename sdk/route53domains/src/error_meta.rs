@@ -7,9 +7,7 @@ pub enum Error {
     DomainLimitExceeded(crate::error::DomainLimitExceeded),
     /// <p>The request is already in progress for the domain.</p>
     DuplicateRequest(crate::error::DuplicateRequest),
-    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name
-    /// that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>,
-    /// the password might be invalid.</p>
+    /// <p>The requested item is not acceptable. For example, for APIs that accept a domain name, the request might specify a domain name that doesn't belong to the account that submitted the request. For <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.</p>
     InvalidInput(crate::error::InvalidInput),
     /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
     OperationLimitExceeded(crate::error::OperationLimitExceeded),
@@ -54,6 +52,7 @@ where
                 crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::DomainLimitExceeded(inner) => Error::DomainLimitExceeded(inner),
                 crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+                crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
                 crate::error::AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -80,6 +79,7 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+                crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
                 crate::error::CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -129,6 +129,31 @@ where
                 crate::error::CheckDomainTransferabilityErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDomainError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteDomainErrorKind::DuplicateRequest(inner) => {
+                    Error::DuplicateRequest(inner)
+                }
+                crate::error::DeleteDomainErrorKind::InvalidInput(inner) => {
+                    Error::InvalidInput(inner)
+                }
+                crate::error::DeleteDomainErrorKind::TldRulesViolation(inner) => {
+                    Error::TldRulesViolation(inner)
+                }
+                crate::error::DeleteDomainErrorKind::UnsupportedTld(inner) => {
+                    Error::UnsupportedTld(inner)
+                }
+                crate::error::DeleteDomainErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -399,6 +424,25 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPricesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPricesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListPricesErrorKind::InvalidInput(inner) => {
+                    Error::InvalidInput(inner)
+                }
+                crate::error::ListPricesErrorKind::UnsupportedTld(inner) => {
+                    Error::UnsupportedTld(inner)
+                }
+                crate::error::ListPricesErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForDomainError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -476,6 +520,7 @@ where
             aws_smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+                crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
                 crate::error::RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),
@@ -613,6 +658,7 @@ where
                 crate::error::TransferDomainToAnotherAwsAccountErrorKind::DuplicateRequest(inner) => Error::DuplicateRequest(inner),
                 crate::error::TransferDomainToAnotherAwsAccountErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
                 crate::error::TransferDomainToAnotherAwsAccountErrorKind::OperationLimitExceeded(inner) => Error::OperationLimitExceeded(inner),
+                crate::error::TransferDomainToAnotherAwsAccountErrorKind::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
                 crate::error::TransferDomainToAnotherAwsAccountErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
             _ => Error::Unhandled(err.into()),

@@ -755,9 +755,7 @@ impl PutFirewallRuleGroupPolicyOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>The tags that are associated with the resource that you specified in the <code>ListTagsForResource</code> request.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another
-    /// <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of
-    /// <code>NextToken</code> from the previous response. </p>
+    /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -765,9 +763,7 @@ impl ListTagsForResourceOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another
-    /// <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of
-    /// <code>NextToken</code> from the previous response. </p>
+    /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -795,9 +791,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that are associated with the resource that you specified in the <code>ListTagsForResource</code> request.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -809,16 +805,12 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another
-        /// <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of
-        /// <code>NextToken</code> from the previous response. </p>
+        /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another
-        /// <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of
-        /// <code>NextToken</code> from the previous response. </p>
+        /// <p>If more than <code>MaxResults</code> tags match the specified criteria, you can submit another <code>ListTagsForResource</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -843,9 +835,7 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverRulesOutput {
-    /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another
-    /// <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of
-    /// <code>NextToken</code> from the previous response. </p>
+    /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub max_results: std::option::Option<i32>,
@@ -853,9 +843,7 @@ pub struct ListResolverRulesOutput {
     pub resolver_rules: std::option::Option<std::vec::Vec<crate::model::ResolverRule>>,
 }
 impl ListResolverRulesOutput {
-    /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another
-    /// <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of
-    /// <code>NextToken</code> from the previous response. </p>
+    /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -888,16 +876,12 @@ pub mod list_resolver_rules_output {
         pub(crate) resolver_rules: std::option::Option<std::vec::Vec<crate::model::ResolverRule>>,
     }
     impl Builder {
-        /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another
-        /// <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of
-        /// <code>NextToken</code> from the previous response. </p>
+        /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another
-        /// <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of
-        /// <code>NextToken</code> from the previous response. </p>
+        /// <p>If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -917,9 +901,9 @@ pub mod list_resolver_rules_output {
         /// To override the contents of this collection use [`set_resolver_rules`](Self::set_resolver_rules).
         ///
         /// <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
-        pub fn resolver_rules(mut self, input: impl Into<crate::model::ResolverRule>) -> Self {
+        pub fn resolver_rules(mut self, input: crate::model::ResolverRule) -> Self {
             let mut v = self.resolver_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolver_rules = Some(v);
             self
         }
@@ -952,21 +936,16 @@ impl ListResolverRulesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverRuleAssociationsOutput {
-    /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another
-    /// <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of
-    /// <code>NextToken</code> from the previous response. </p>
+    /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the
-    /// specified filters, if any.</p>
+    /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
     pub resolver_rule_associations:
         std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>,
 }
 impl ListResolverRuleAssociationsOutput {
-    /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another
-    /// <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of
-    /// <code>NextToken</code> from the previous response. </p>
+    /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -974,8 +953,7 @@ impl ListResolverRuleAssociationsOutput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the
-    /// specified filters, if any.</p>
+    /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
     pub fn resolver_rule_associations(
         &self,
     ) -> std::option::Option<&[crate::model::ResolverRuleAssociation]> {
@@ -1006,16 +984,12 @@ pub mod list_resolver_rule_associations_output {
             std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>,
     }
     impl Builder {
-        /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another
-        /// <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of
-        /// <code>NextToken</code> from the previous response. </p>
+        /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another
-        /// <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of
-        /// <code>NextToken</code> from the previous response. </p>
+        /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1034,19 +1008,17 @@ pub mod list_resolver_rule_associations_output {
         ///
         /// To override the contents of this collection use [`set_resolver_rule_associations`](Self::set_resolver_rule_associations).
         ///
-        /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the
-        /// specified filters, if any.</p>
+        /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
         pub fn resolver_rule_associations(
             mut self,
-            input: impl Into<crate::model::ResolverRuleAssociation>,
+            input: crate::model::ResolverRuleAssociation,
         ) -> Self {
             let mut v = self.resolver_rule_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolver_rule_associations = Some(v);
             self
         }
-        /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the
-        /// specified filters, if any.</p>
+        /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
         pub fn set_resolver_rule_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>,
@@ -1075,42 +1047,30 @@ impl ListResolverRuleAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverQueryLogConfigsOutput {
-    /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request
-    /// to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the
-    /// number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify
-    /// in the request.</p>
+    /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify in the request.</p>
     pub total_count: i32,
-    /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters
-    /// that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the
-    /// current account in the specified Region, see <code>TotalCount</code>.</p>
+    /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
     pub total_filtered_count: i32,
-    /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the
-    /// values that you specified for <code>Filter</code>.</p>
+    /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
     pub resolver_query_log_configs:
         std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>,
 }
 impl ListResolverQueryLogConfigsOutput {
-    /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request
-    /// to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the
-    /// number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify
-    /// in the request.</p>
+    /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify in the request.</p>
     pub fn total_count(&self) -> i32 {
         self.total_count
     }
-    /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters
-    /// that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the
-    /// current account in the specified Region, see <code>TotalCount</code>.</p>
+    /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
     pub fn total_filtered_count(&self) -> i32 {
         self.total_filtered_count
     }
-    /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the
-    /// values that you specified for <code>Filter</code>.</p>
+    /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
     pub fn resolver_query_log_configs(
         &self,
     ) -> std::option::Option<&[crate::model::ResolverQueryLogConfig]> {
@@ -1143,42 +1103,32 @@ pub mod list_resolver_query_log_configs_output {
             std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>,
     }
     impl Builder {
-        /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request
-        /// to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request
-        /// to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the
-        /// number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify
-        /// in the request.</p>
+        /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify in the request.</p>
         pub fn total_count(mut self, input: i32) -> Self {
             self.total_count = Some(input);
             self
         }
-        /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the
-        /// number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify
-        /// in the request.</p>
+        /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify in the request.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
             self.total_count = input;
             self
         }
-        /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters
-        /// that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the
-        /// current account in the specified Region, see <code>TotalCount</code>.</p>
+        /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
         pub fn total_filtered_count(mut self, input: i32) -> Self {
             self.total_filtered_count = Some(input);
             self
         }
-        /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters
-        /// that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the
-        /// current account in the specified Region, see <code>TotalCount</code>.</p>
+        /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
         pub fn set_total_filtered_count(mut self, input: std::option::Option<i32>) -> Self {
             self.total_filtered_count = input;
             self
@@ -1187,19 +1137,17 @@ pub mod list_resolver_query_log_configs_output {
         ///
         /// To override the contents of this collection use [`set_resolver_query_log_configs`](Self::set_resolver_query_log_configs).
         ///
-        /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the
-        /// values that you specified for <code>Filter</code>.</p>
+        /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
         pub fn resolver_query_log_configs(
             mut self,
-            input: impl Into<crate::model::ResolverQueryLogConfig>,
+            input: crate::model::ResolverQueryLogConfig,
         ) -> Self {
             let mut v = self.resolver_query_log_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolver_query_log_configs = Some(v);
             self
         }
-        /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the
-        /// values that you specified for <code>Filter</code>.</p>
+        /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
         pub fn set_resolver_query_log_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfig>>,
@@ -1229,42 +1177,30 @@ impl ListResolverQueryLogConfigsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverQueryLogConfigAssociationsOutput {
-    /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request
-    /// to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The total number of query logging associations that were created by the current account in the specified Region. This count can differ from the
-    /// number of associations that are returned in a <code>ListResolverQueryLogConfigAssociations</code> response, depending on the values that you specify
-    /// in the request.</p>
+    /// <p>The total number of query logging associations that were created by the current account in the specified Region. This count can differ from the number of associations that are returned in a <code>ListResolverQueryLogConfigAssociations</code> response, depending on the values that you specify in the request.</p>
     pub total_count: i32,
-    /// <p>The total number of query logging associations that were created by the current account in the specified Region and that match the filters
-    /// that were specified in the <code>ListResolverQueryLogConfigAssociations</code> request. For the total number of associations that were created by the
-    /// current account in the specified Region, see <code>TotalCount</code>.</p>
+    /// <p>The total number of query logging associations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigAssociations</code> request. For the total number of associations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
     pub total_filtered_count: i32,
-    /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the
-    /// values that you specified for <code>Filter</code>.</p>
+    /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
     pub resolver_query_log_config_associations:
         std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfigAssociation>>,
 }
 impl ListResolverQueryLogConfigAssociationsOutput {
-    /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request
-    /// to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The total number of query logging associations that were created by the current account in the specified Region. This count can differ from the
-    /// number of associations that are returned in a <code>ListResolverQueryLogConfigAssociations</code> response, depending on the values that you specify
-    /// in the request.</p>
+    /// <p>The total number of query logging associations that were created by the current account in the specified Region. This count can differ from the number of associations that are returned in a <code>ListResolverQueryLogConfigAssociations</code> response, depending on the values that you specify in the request.</p>
     pub fn total_count(&self) -> i32 {
         self.total_count
     }
-    /// <p>The total number of query logging associations that were created by the current account in the specified Region and that match the filters
-    /// that were specified in the <code>ListResolverQueryLogConfigAssociations</code> request. For the total number of associations that were created by the
-    /// current account in the specified Region, see <code>TotalCount</code>.</p>
+    /// <p>The total number of query logging associations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigAssociations</code> request. For the total number of associations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
     pub fn total_filtered_count(&self) -> i32 {
         self.total_filtered_count
     }
-    /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the
-    /// values that you specified for <code>Filter</code>.</p>
+    /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
     pub fn resolver_query_log_config_associations(
         &self,
     ) -> std::option::Option<&[crate::model::ResolverQueryLogConfigAssociation]> {
@@ -1297,42 +1233,32 @@ pub mod list_resolver_query_log_config_associations_output {
             std::option::Option<std::vec::Vec<crate::model::ResolverQueryLogConfigAssociation>>,
     }
     impl Builder {
-        /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request
-        /// to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request
-        /// to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If there are more than <code>MaxResults</code> query logging associations, you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The total number of query logging associations that were created by the current account in the specified Region. This count can differ from the
-        /// number of associations that are returned in a <code>ListResolverQueryLogConfigAssociations</code> response, depending on the values that you specify
-        /// in the request.</p>
+        /// <p>The total number of query logging associations that were created by the current account in the specified Region. This count can differ from the number of associations that are returned in a <code>ListResolverQueryLogConfigAssociations</code> response, depending on the values that you specify in the request.</p>
         pub fn total_count(mut self, input: i32) -> Self {
             self.total_count = Some(input);
             self
         }
-        /// <p>The total number of query logging associations that were created by the current account in the specified Region. This count can differ from the
-        /// number of associations that are returned in a <code>ListResolverQueryLogConfigAssociations</code> response, depending on the values that you specify
-        /// in the request.</p>
+        /// <p>The total number of query logging associations that were created by the current account in the specified Region. This count can differ from the number of associations that are returned in a <code>ListResolverQueryLogConfigAssociations</code> response, depending on the values that you specify in the request.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
             self.total_count = input;
             self
         }
-        /// <p>The total number of query logging associations that were created by the current account in the specified Region and that match the filters
-        /// that were specified in the <code>ListResolverQueryLogConfigAssociations</code> request. For the total number of associations that were created by the
-        /// current account in the specified Region, see <code>TotalCount</code>.</p>
+        /// <p>The total number of query logging associations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigAssociations</code> request. For the total number of associations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
         pub fn total_filtered_count(mut self, input: i32) -> Self {
             self.total_filtered_count = Some(input);
             self
         }
-        /// <p>The total number of query logging associations that were created by the current account in the specified Region and that match the filters
-        /// that were specified in the <code>ListResolverQueryLogConfigAssociations</code> request. For the total number of associations that were created by the
-        /// current account in the specified Region, see <code>TotalCount</code>.</p>
+        /// <p>The total number of query logging associations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigAssociations</code> request. For the total number of associations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
         pub fn set_total_filtered_count(mut self, input: std::option::Option<i32>) -> Self {
             self.total_filtered_count = input;
             self
@@ -1341,21 +1267,19 @@ pub mod list_resolver_query_log_config_associations_output {
         ///
         /// To override the contents of this collection use [`set_resolver_query_log_config_associations`](Self::set_resolver_query_log_config_associations).
         ///
-        /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the
-        /// values that you specified for <code>Filter</code>.</p>
+        /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
         pub fn resolver_query_log_config_associations(
             mut self,
-            input: impl Into<crate::model::ResolverQueryLogConfigAssociation>,
+            input: crate::model::ResolverQueryLogConfigAssociation,
         ) -> Self {
             let mut v = self
                 .resolver_query_log_config_associations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolver_query_log_config_associations = Some(v);
             self
         }
-        /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the
-        /// values that you specified for <code>Filter</code>.</p>
+        /// <p>A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for each query logging association that matches the values that you specified for <code>Filter</code>.</p>
         pub fn set_resolver_query_log_config_associations(
             mut self,
             input: std::option::Option<
@@ -1387,8 +1311,7 @@ impl ListResolverQueryLogConfigAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverEndpointsOutput {
-    /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request
-    /// to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub max_results: std::option::Option<i32>,
@@ -1396,8 +1319,7 @@ pub struct ListResolverEndpointsOutput {
     pub resolver_endpoints: std::option::Option<std::vec::Vec<crate::model::ResolverEndpoint>>,
 }
 impl ListResolverEndpointsOutput {
-    /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request
-    /// to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1431,14 +1353,12 @@ pub mod list_resolver_endpoints_output {
             std::option::Option<std::vec::Vec<crate::model::ResolverEndpoint>>,
     }
     impl Builder {
-        /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request
-        /// to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request
-        /// to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If more than <code>MaxResults</code> IP addresses match the specified criteria, you can submit another <code>ListResolverEndpoint</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1458,12 +1378,9 @@ pub mod list_resolver_endpoints_output {
         /// To override the contents of this collection use [`set_resolver_endpoints`](Self::set_resolver_endpoints).
         ///
         /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
-        pub fn resolver_endpoints(
-            mut self,
-            input: impl Into<crate::model::ResolverEndpoint>,
-        ) -> Self {
+        pub fn resolver_endpoints(mut self, input: crate::model::ResolverEndpoint) -> Self {
             let mut v = self.resolver_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolver_endpoints = Some(v);
             self
         }
@@ -1496,20 +1413,15 @@ impl ListResolverEndpointsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverEndpointIpAddressesOutput {
-    /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
-    /// <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request,
-    /// specify the value of <code>NextToken</code> from the previous response. </p>
+    /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward
-    /// DNS queries to (for inbound endpoints).</p>
+    /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
     pub ip_addresses: std::option::Option<std::vec::Vec<crate::model::IpAddressResponse>>,
 }
 impl ListResolverEndpointIpAddressesOutput {
-    /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
-    /// <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request,
-    /// specify the value of <code>NextToken</code> from the previous response. </p>
+    /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1517,8 +1429,7 @@ impl ListResolverEndpointIpAddressesOutput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward
-    /// DNS queries to (for inbound endpoints).</p>
+    /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
     pub fn ip_addresses(&self) -> std::option::Option<&[crate::model::IpAddressResponse]> {
         self.ip_addresses.as_deref()
     }
@@ -1544,16 +1455,12 @@ pub mod list_resolver_endpoint_ip_addresses_output {
             std::option::Option<std::vec::Vec<crate::model::IpAddressResponse>>,
     }
     impl Builder {
-        /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
-        /// <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request,
-        /// specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
-        /// <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request,
-        /// specify the value of <code>NextToken</code> from the previous response. </p>
+        /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1572,16 +1479,14 @@ pub mod list_resolver_endpoint_ip_addresses_output {
         ///
         /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
         ///
-        /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward
-        /// DNS queries to (for inbound endpoints).</p>
-        pub fn ip_addresses(mut self, input: impl Into<crate::model::IpAddressResponse>) -> Self {
+        /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
+        pub fn ip_addresses(mut self, input: crate::model::IpAddressResponse) -> Self {
             let mut v = self.ip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ip_addresses = Some(v);
             self
         }
-        /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward
-        /// DNS queries to (for inbound endpoints).</p>
+        /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
         pub fn set_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpAddressResponse>>,
@@ -1610,32 +1515,20 @@ impl ListResolverEndpointIpAddressesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverDnssecConfigsOutput {
-    /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account,
-    /// <code>NextToken</code> doesn't appear in the response.</p>
-    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>
-    /// request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in
-    /// <code>NextToken</code> in the next request.</p>
+    /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An array that contains one
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element
-    /// for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
+    /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
     pub resolver_dnssec_configs:
         std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
 }
 impl ListResolverDnssecConfigsOutput {
-    /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account,
-    /// <code>NextToken</code> doesn't appear in the response.</p>
-    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>
-    /// request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in
-    /// <code>NextToken</code> in the next request.</p>
+    /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array that contains one
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element
-    /// for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
+    /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
     pub fn resolver_dnssec_configs(
         &self,
     ) -> std::option::Option<&[crate::model::ResolverDnssecConfig]> {
@@ -1661,22 +1554,14 @@ pub mod list_resolver_dnssec_configs_output {
             std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
     }
     impl Builder {
-        /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account,
-        /// <code>NextToken</code> doesn't appear in the response.</p>
-        /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>
-        /// request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in
-        /// <code>NextToken</code> in the next request.</p>
+        /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+        /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account,
-        /// <code>NextToken</code> doesn't appear in the response.</p>
-        /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>
-        /// request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in
-        /// <code>NextToken</code> in the next request.</p>
+        /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+        /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1685,21 +1570,17 @@ pub mod list_resolver_dnssec_configs_output {
         ///
         /// To override the contents of this collection use [`set_resolver_dnssec_configs`](Self::set_resolver_dnssec_configs).
         ///
-        /// <p>An array that contains one
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element
-        /// for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
+        /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
         pub fn resolver_dnssec_configs(
             mut self,
-            input: impl Into<crate::model::ResolverDnssecConfig>,
+            input: crate::model::ResolverDnssecConfig,
         ) -> Self {
             let mut v = self.resolver_dnssec_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolver_dnssec_configs = Some(v);
             self
         }
-        /// <p>An array that contains one
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element
-        /// for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
+        /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
         pub fn set_resolver_dnssec_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
@@ -1727,31 +1608,19 @@ impl ListResolverDnssecConfigsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverConfigsOutput {
-    /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account,
-    /// <code>NextToken</code> doesn't appear in the response.</p>
-    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
-    /// <code>ListResolverConfigs</code> request.
-    /// Get the value of <code>NextToken</code> that Amazon Route 53
-    /// returned in the previous response and include it in
-    /// <code>NextToken</code> in the next request.</p>
+    /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated
-    /// with the current Amazon Web Services account.</p>
+    /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
     pub resolver_configs: std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>,
 }
 impl ListResolverConfigsOutput {
-    /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account,
-    /// <code>NextToken</code> doesn't appear in the response.</p>
-    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
-    /// <code>ListResolverConfigs</code> request.
-    /// Get the value of <code>NextToken</code> that Amazon Route 53
-    /// returned in the previous response and include it in
-    /// <code>NextToken</code> in the next request.</p>
+    /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated
-    /// with the current Amazon Web Services account.</p>
+    /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
     pub fn resolver_configs(&self) -> std::option::Option<&[crate::model::ResolverConfig]> {
         self.resolver_configs.as_deref()
     }
@@ -1775,24 +1644,14 @@ pub mod list_resolver_configs_output {
             std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>,
     }
     impl Builder {
-        /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account,
-        /// <code>NextToken</code> doesn't appear in the response.</p>
-        /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
-        /// <code>ListResolverConfigs</code> request.
-        /// Get the value of <code>NextToken</code> that Amazon Route 53
-        /// returned in the previous response and include it in
-        /// <code>NextToken</code> in the next request.</p>
+        /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+        /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account,
-        /// <code>NextToken</code> doesn't appear in the response.</p>
-        /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
-        /// <code>ListResolverConfigs</code> request.
-        /// Get the value of <code>NextToken</code> that Amazon Route 53
-        /// returned in the previous response and include it in
-        /// <code>NextToken</code> in the next request.</p>
+        /// <p>If a response includes the last of the Resolver configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+        /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1801,16 +1660,14 @@ pub mod list_resolver_configs_output {
         ///
         /// To override the contents of this collection use [`set_resolver_configs`](Self::set_resolver_configs).
         ///
-        /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated
-        /// with the current Amazon Web Services account.</p>
-        pub fn resolver_configs(mut self, input: impl Into<crate::model::ResolverConfig>) -> Self {
+        /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
+        pub fn resolver_configs(mut self, input: crate::model::ResolverConfig) -> Self {
             let mut v = self.resolver_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resolver_configs = Some(v);
             self
         }
-        /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated
-        /// with the current Amazon Web Services account.</p>
+        /// <p>An array that contains one <code>ResolverConfigs</code> element for each Resolver configuration that is associated with the current Amazon Web Services account.</p>
         pub fn set_resolver_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResolverConfig>>,
@@ -1838,23 +1695,19 @@ impl ListResolverConfigsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallRulesOutput {
-    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of the rules that you have defined.  </p>
-    /// <p>This might be a partial list of the firewall rules that you've defined. For information,
-    /// see <code>MaxResults</code>. </p>
+    /// <p>A list of the rules that you have defined. </p>
+    /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
     pub firewall_rules: std::option::Option<std::vec::Vec<crate::model::FirewallRule>>,
 }
 impl ListFirewallRulesOutput {
-    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of the rules that you have defined.  </p>
-    /// <p>This might be a partial list of the firewall rules that you've defined. For information,
-    /// see <code>MaxResults</code>. </p>
+    /// <p>A list of the rules that you have defined. </p>
+    /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
     pub fn firewall_rules(&self) -> std::option::Option<&[crate::model::FirewallRule]> {
         self.firewall_rules.as_deref()
     }
@@ -1877,14 +1730,12 @@ pub mod list_firewall_rules_output {
         pub(crate) firewall_rules: std::option::Option<std::vec::Vec<crate::model::FirewallRule>>,
     }
     impl Builder {
-        /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-        /// To retrieve the next batch of objects, provide this token in your next request.</p>
+        /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-        /// To retrieve the next batch of objects, provide this token in your next request.</p>
+        /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1893,18 +1744,16 @@ pub mod list_firewall_rules_output {
         ///
         /// To override the contents of this collection use [`set_firewall_rules`](Self::set_firewall_rules).
         ///
-        /// <p>A list of the rules that you have defined.  </p>
-        /// <p>This might be a partial list of the firewall rules that you've defined. For information,
-        /// see <code>MaxResults</code>. </p>
-        pub fn firewall_rules(mut self, input: impl Into<crate::model::FirewallRule>) -> Self {
+        /// <p>A list of the rules that you have defined. </p>
+        /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
+        pub fn firewall_rules(mut self, input: crate::model::FirewallRule) -> Self {
             let mut v = self.firewall_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.firewall_rules = Some(v);
             self
         }
-        /// <p>A list of the rules that you have defined.  </p>
-        /// <p>This might be a partial list of the firewall rules that you've defined. For information,
-        /// see <code>MaxResults</code>. </p>
+        /// <p>A list of the rules that you have defined. </p>
+        /// <p>This might be a partial list of the firewall rules that you've defined. For information, see <code>MaxResults</code>. </p>
         pub fn set_firewall_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FirewallRule>>,
@@ -1932,8 +1781,7 @@ impl ListFirewallRulesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallRuleGroupsOutput {
-    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of your firewall rule groups.</p>
     /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
@@ -1941,8 +1789,7 @@ pub struct ListFirewallRuleGroupsOutput {
         std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>,
 }
 impl ListFirewallRuleGroupsOutput {
-    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1973,14 +1820,12 @@ pub mod list_firewall_rule_groups_output {
             std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>,
     }
     impl Builder {
-        /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-        /// To retrieve the next batch of objects, provide this token in your next request.</p>
+        /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-        /// To retrieve the next batch of objects, provide this token in your next request.</p>
+        /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1993,10 +1838,10 @@ pub mod list_firewall_rule_groups_output {
         /// <p>This might be a partial list of the rule groups that you have defined. For information, see <code>MaxResults</code>. </p>
         pub fn firewall_rule_groups(
             mut self,
-            input: impl Into<crate::model::FirewallRuleGroupMetadata>,
+            input: crate::model::FirewallRuleGroupMetadata,
         ) -> Self {
             let mut v = self.firewall_rule_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.firewall_rule_groups = Some(v);
             self
         }
@@ -2029,8 +1874,7 @@ impl ListFirewallRuleGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallRuleGroupAssociationsOutput {
-    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of your firewall rule group associations.</p>
     /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
@@ -2038,8 +1882,7 @@ pub struct ListFirewallRuleGroupAssociationsOutput {
         std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>,
 }
 impl ListFirewallRuleGroupAssociationsOutput {
-    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2073,14 +1916,12 @@ pub mod list_firewall_rule_group_associations_output {
             std::option::Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>,
     }
     impl Builder {
-        /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-        /// To retrieve the next batch of objects, provide this token in your next request.</p>
+        /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-        /// To retrieve the next batch of objects, provide this token in your next request.</p>
+        /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2093,10 +1934,10 @@ pub mod list_firewall_rule_group_associations_output {
         /// <p>This might be a partial list of the associations that you have defined. For information, see <code>MaxResults</code>. </p>
         pub fn firewall_rule_group_associations(
             mut self,
-            input: impl Into<crate::model::FirewallRuleGroupAssociation>,
+            input: crate::model::FirewallRuleGroupAssociation,
         ) -> Self {
             let mut v = self.firewall_rule_group_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.firewall_rule_group_associations = Some(v);
             self
         }
@@ -2129,23 +1970,19 @@ impl ListFirewallRuleGroupAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallDomainsOutput {
-    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of the domains in the firewall domain list.  </p>
-    /// <p>This might be a partial list of the domains that you've defined in the domain list. For
-    /// information, see <code>MaxResults</code>. </p>
+    /// <p>A list of the domains in the firewall domain list. </p>
+    /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>. </p>
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListFirewallDomainsOutput {
-    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of the domains in the firewall domain list.  </p>
-    /// <p>This might be a partial list of the domains that you've defined in the domain list. For
-    /// information, see <code>MaxResults</code>. </p>
+    /// <p>A list of the domains in the firewall domain list. </p>
+    /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>. </p>
     pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
         self.domains.as_deref()
     }
@@ -2168,14 +2005,12 @@ pub mod list_firewall_domains_output {
         pub(crate) domains: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-        /// To retrieve the next batch of objects, provide this token in your next request.</p>
+        /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-        /// To retrieve the next batch of objects, provide this token in your next request.</p>
+        /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2184,18 +2019,16 @@ pub mod list_firewall_domains_output {
         ///
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
-        /// <p>A list of the domains in the firewall domain list.  </p>
-        /// <p>This might be a partial list of the domains that you've defined in the domain list. For
-        /// information, see <code>MaxResults</code>. </p>
+        /// <p>A list of the domains in the firewall domain list. </p>
+        /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>. </p>
         pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.domains.unwrap_or_default();
             v.push(input.into());
             self.domains = Some(v);
             self
         }
-        /// <p>A list of the domains in the firewall domain list.  </p>
-        /// <p>This might be a partial list of the domains that you've defined in the domain list. For
-        /// information, see <code>MaxResults</code>. </p>
+        /// <p>A list of the domains in the firewall domain list. </p>
+        /// <p>This might be a partial list of the domains that you've defined in the domain list. For information, see <code>MaxResults</code>. </p>
         pub fn set_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2223,24 +2056,20 @@ impl ListFirewallDomainsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallDomainListsOutput {
-    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of the domain lists that you have defined.   </p>
-    /// <p>This might be a partial list of the domain lists that you've defined. For information,
-    /// see <code>MaxResults</code>. </p>
+    /// <p>A list of the domain lists that you have defined. </p>
+    /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
     pub firewall_domain_lists:
         std::option::Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>,
 }
 impl ListFirewallDomainListsOutput {
-    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A list of the domain lists that you have defined.   </p>
-    /// <p>This might be a partial list of the domain lists that you've defined. For information,
-    /// see <code>MaxResults</code>. </p>
+    /// <p>A list of the domain lists that you have defined. </p>
+    /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
     pub fn firewall_domain_lists(
         &self,
     ) -> std::option::Option<&[crate::model::FirewallDomainListMetadata]> {
@@ -2266,14 +2095,12 @@ pub mod list_firewall_domain_lists_output {
             std::option::Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>,
     }
     impl Builder {
-        /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-        /// To retrieve the next batch of objects, provide this token in your next request.</p>
+        /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-        /// To retrieve the next batch of objects, provide this token in your next request.</p>
+        /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2282,21 +2109,19 @@ pub mod list_firewall_domain_lists_output {
         ///
         /// To override the contents of this collection use [`set_firewall_domain_lists`](Self::set_firewall_domain_lists).
         ///
-        /// <p>A list of the domain lists that you have defined.   </p>
-        /// <p>This might be a partial list of the domain lists that you've defined. For information,
-        /// see <code>MaxResults</code>. </p>
+        /// <p>A list of the domain lists that you have defined. </p>
+        /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
         pub fn firewall_domain_lists(
             mut self,
-            input: impl Into<crate::model::FirewallDomainListMetadata>,
+            input: crate::model::FirewallDomainListMetadata,
         ) -> Self {
             let mut v = self.firewall_domain_lists.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.firewall_domain_lists = Some(v);
             self
         }
-        /// <p>A list of the domain lists that you have defined.   </p>
-        /// <p>This might be a partial list of the domain lists that you've defined. For information,
-        /// see <code>MaxResults</code>. </p>
+        /// <p>A list of the domain lists that you have defined. </p>
+        /// <p>This might be a partial list of the domain lists that you've defined. For information, see <code>MaxResults</code>. </p>
         pub fn set_firewall_domain_lists(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>,
@@ -2324,21 +2149,17 @@ impl ListFirewallDomainListsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFirewallConfigsOutput {
-    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from
-    /// Amazon Virtual Private Cloud (Amazon VPC). </p>
+    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
     pub firewall_configs: std::option::Option<std::vec::Vec<crate::model::FirewallConfig>>,
 }
 impl ListFirewallConfigsOutput {
-    /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-    /// To retrieve the next batch of objects, provide this token in your next request.</p>
+    /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from
-    /// Amazon Virtual Private Cloud (Amazon VPC). </p>
+    /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
     pub fn firewall_configs(&self) -> std::option::Option<&[crate::model::FirewallConfig]> {
         self.firewall_configs.as_deref()
     }
@@ -2362,14 +2183,12 @@ pub mod list_firewall_configs_output {
             std::option::Option<std::vec::Vec<crate::model::FirewallConfig>>,
     }
     impl Builder {
-        /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-        /// To retrieve the next batch of objects, provide this token in your next request.</p>
+        /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If objects are still available for retrieval, Resolver returns this token in the response.
-        /// To retrieve the next batch of objects, provide this token in your next request.</p>
+        /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2378,16 +2197,14 @@ pub mod list_firewall_configs_output {
         ///
         /// To override the contents of this collection use [`set_firewall_configs`](Self::set_firewall_configs).
         ///
-        /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from
-        /// Amazon Virtual Private Cloud (Amazon VPC). </p>
-        pub fn firewall_configs(mut self, input: impl Into<crate::model::FirewallConfig>) -> Self {
+        /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
+        pub fn firewall_configs(mut self, input: crate::model::FirewallConfig) -> Self {
             let mut v = self.firewall_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.firewall_configs = Some(v);
             self
         }
-        /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from
-        /// Amazon Virtual Private Cloud (Amazon VPC). </p>
+        /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
         pub fn set_firewall_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FirewallConfig>>,
@@ -2709,13 +2526,11 @@ impl GetResolverRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverQueryLogConfigPolicyOutput {
-    /// <p>Information about the query logging policy for the query logging configuration that you specified in a
-    /// <code>GetResolverQueryLogConfigPolicy</code> request.</p>
+    /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
     pub resolver_query_log_config_policy: std::option::Option<std::string::String>,
 }
 impl GetResolverQueryLogConfigPolicyOutput {
-    /// <p>Information about the query logging policy for the query logging configuration that you specified in a
-    /// <code>GetResolverQueryLogConfigPolicy</code> request.</p>
+    /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
     pub fn resolver_query_log_config_policy(&self) -> std::option::Option<&str> {
         self.resolver_query_log_config_policy.as_deref()
     }
@@ -2739,8 +2554,7 @@ pub mod get_resolver_query_log_config_policy_output {
         pub(crate) resolver_query_log_config_policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about the query logging policy for the query logging configuration that you specified in a
-        /// <code>GetResolverQueryLogConfigPolicy</code> request.</p>
+        /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
         pub fn resolver_query_log_config_policy(
             mut self,
             input: impl Into<std::string::String>,
@@ -2748,8 +2562,7 @@ pub mod get_resolver_query_log_config_policy_output {
             self.resolver_query_log_config_policy = Some(input.into());
             self
         }
-        /// <p>Information about the query logging policy for the query logging configuration that you specified in a
-        /// <code>GetResolverQueryLogConfigPolicy</code> request.</p>
+        /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
         pub fn set_resolver_query_log_config_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3022,13 +2835,11 @@ impl GetResolverDnssecConfigOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResolverConfigOutput {
-    /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you
-    /// specified in the <code>GetResolverConfig</code> request.</p>
+    /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
     pub resolver_config: std::option::Option<crate::model::ResolverConfig>,
 }
 impl GetResolverConfigOutput {
-    /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you
-    /// specified in the <code>GetResolverConfig</code> request.</p>
+    /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
     pub fn resolver_config(&self) -> std::option::Option<&crate::model::ResolverConfig> {
         self.resolver_config.as_ref()
     }
@@ -3049,14 +2860,12 @@ pub mod get_resolver_config_output {
         pub(crate) resolver_config: std::option::Option<crate::model::ResolverConfig>,
     }
     impl Builder {
-        /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you
-        /// specified in the <code>GetResolverConfig</code> request.</p>
+        /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
         pub fn resolver_config(mut self, input: crate::model::ResolverConfig) -> Self {
             self.resolver_config = Some(input);
             self
         }
-        /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you
-        /// specified in the <code>GetResolverConfig</code> request.</p>
+        /// <p>Information about the behavior configuration of Route 53 Resolver behavior for the VPC you specified in the <code>GetResolverConfig</code> request.</p>
         pub fn set_resolver_config(
             mut self,
             input: std::option::Option<crate::model::ResolverConfig>,
@@ -3083,15 +2892,11 @@ impl GetResolverConfigOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFirewallRuleGroupPolicyOutput {
-    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule
-    /// group. You can use the policy to share the rule group using Resource Access Manager
-    /// (RAM). </p>
+    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
     pub firewall_rule_group_policy: std::option::Option<std::string::String>,
 }
 impl GetFirewallRuleGroupPolicyOutput {
-    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule
-    /// group. You can use the policy to share the rule group using Resource Access Manager
-    /// (RAM). </p>
+    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
     pub fn firewall_rule_group_policy(&self) -> std::option::Option<&str> {
         self.firewall_rule_group_policy.as_deref()
     }
@@ -3115,16 +2920,12 @@ pub mod get_firewall_rule_group_policy_output {
         pub(crate) firewall_rule_group_policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule
-        /// group. You can use the policy to share the rule group using Resource Access Manager
-        /// (RAM). </p>
+        /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
         pub fn firewall_rule_group_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_rule_group_policy = Some(input.into());
             self
         }
-        /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule
-        /// group. You can use the policy to share the rule group using Resource Access Manager
-        /// (RAM). </p>
+        /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
         pub fn set_firewall_rule_group_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3275,11 +3076,11 @@ impl GetFirewallRuleGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFirewallDomainListOutput {
-    /// <p>The domain list that you requested.  </p>
+    /// <p>The domain list that you requested. </p>
     pub firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
 }
 impl GetFirewallDomainListOutput {
-    /// <p>The domain list that you requested.  </p>
+    /// <p>The domain list that you requested. </p>
     pub fn firewall_domain_list(&self) -> std::option::Option<&crate::model::FirewallDomainList> {
         self.firewall_domain_list.as_ref()
     }
@@ -3300,12 +3101,12 @@ pub mod get_firewall_domain_list_output {
         pub(crate) firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
     }
     impl Builder {
-        /// <p>The domain list that you requested.  </p>
+        /// <p>The domain list that you requested. </p>
         pub fn firewall_domain_list(mut self, input: crate::model::FirewallDomainList) -> Self {
             self.firewall_domain_list = Some(input);
             self
         }
-        /// <p>The domain list that you requested.  </p>
+        /// <p>The domain list that you requested. </p>
         pub fn set_firewall_domain_list(
             mut self,
             input: std::option::Option<crate::model::FirewallDomainList>,
@@ -3332,13 +3133,11 @@ impl GetFirewallDomainListOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFirewallConfigOutput {
-    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from
-    /// AmazonVPC. </p>
+    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
     pub firewall_config: std::option::Option<crate::model::FirewallConfig>,
 }
 impl GetFirewallConfigOutput {
-    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from
-    /// AmazonVPC. </p>
+    /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
     pub fn firewall_config(&self) -> std::option::Option<&crate::model::FirewallConfig> {
         self.firewall_config.as_ref()
     }
@@ -3359,14 +3158,12 @@ pub mod get_firewall_config_output {
         pub(crate) firewall_config: std::option::Option<crate::model::FirewallConfig>,
     }
     impl Builder {
-        /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from
-        /// AmazonVPC. </p>
+        /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
         pub fn firewall_config(mut self, input: crate::model::FirewallConfig) -> Self {
             self.firewall_config = Some(input);
             self
         }
-        /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from
-        /// AmazonVPC. </p>
+        /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
         pub fn set_firewall_config(
             mut self,
             input: std::option::Option<crate::model::FirewallConfig>,
@@ -4229,13 +4026,11 @@ impl CreateFirewallRuleGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFirewallRuleOutput {
-    /// <p>The
-    /// firewall rule that you just created. </p>
+    /// <p>The firewall rule that you just created. </p>
     pub firewall_rule: std::option::Option<crate::model::FirewallRule>,
 }
 impl CreateFirewallRuleOutput {
-    /// <p>The
-    /// firewall rule that you just created. </p>
+    /// <p>The firewall rule that you just created. </p>
     pub fn firewall_rule(&self) -> std::option::Option<&crate::model::FirewallRule> {
         self.firewall_rule.as_ref()
     }
@@ -4256,14 +4051,12 @@ pub mod create_firewall_rule_output {
         pub(crate) firewall_rule: std::option::Option<crate::model::FirewallRule>,
     }
     impl Builder {
-        /// <p>The
-        /// firewall rule that you just created. </p>
+        /// <p>The firewall rule that you just created. </p>
         pub fn firewall_rule(mut self, input: crate::model::FirewallRule) -> Self {
             self.firewall_rule = Some(input);
             self
         }
-        /// <p>The
-        /// firewall rule that you just created. </p>
+        /// <p>The firewall rule that you just created. </p>
         pub fn set_firewall_rule(
             mut self,
             input: std::option::Option<crate::model::FirewallRule>,
@@ -4290,13 +4083,11 @@ impl CreateFirewallRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFirewallDomainListOutput {
-    /// <p>The
-    /// domain list that you just created.</p>
+    /// <p>The domain list that you just created.</p>
     pub firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
 }
 impl CreateFirewallDomainListOutput {
-    /// <p>The
-    /// domain list that you just created.</p>
+    /// <p>The domain list that you just created.</p>
     pub fn firewall_domain_list(&self) -> std::option::Option<&crate::model::FirewallDomainList> {
         self.firewall_domain_list.as_ref()
     }
@@ -4317,14 +4108,12 @@ pub mod create_firewall_domain_list_output {
         pub(crate) firewall_domain_list: std::option::Option<crate::model::FirewallDomainList>,
     }
     impl Builder {
-        /// <p>The
-        /// domain list that you just created.</p>
+        /// <p>The domain list that you just created.</p>
         pub fn firewall_domain_list(mut self, input: crate::model::FirewallDomainList) -> Self {
             self.firewall_domain_list = Some(input);
             self
         }
-        /// <p>The
-        /// domain list that you just created.</p>
+        /// <p>The domain list that you just created.</p>
         pub fn set_firewall_domain_list(
             mut self,
             input: std::option::Option<crate::model::FirewallDomainList>,
@@ -4538,14 +4327,12 @@ impl AssociateResolverEndpointIpAddressOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateFirewallRuleGroupOutput {
-    /// <p>The association that you just created. The association has an ID that you can use to
-    /// identify it in other requests, like update and delete.</p>
+    /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
     pub firewall_rule_group_association:
         std::option::Option<crate::model::FirewallRuleGroupAssociation>,
 }
 impl AssociateFirewallRuleGroupOutput {
-    /// <p>The association that you just created. The association has an ID that you can use to
-    /// identify it in other requests, like update and delete.</p>
+    /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
     pub fn firewall_rule_group_association(
         &self,
     ) -> std::option::Option<&crate::model::FirewallRuleGroupAssociation> {
@@ -4572,8 +4359,7 @@ pub mod associate_firewall_rule_group_output {
             std::option::Option<crate::model::FirewallRuleGroupAssociation>,
     }
     impl Builder {
-        /// <p>The association that you just created. The association has an ID that you can use to
-        /// identify it in other requests, like update and delete.</p>
+        /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
         pub fn firewall_rule_group_association(
             mut self,
             input: crate::model::FirewallRuleGroupAssociation,
@@ -4581,8 +4367,7 @@ pub mod associate_firewall_rule_group_output {
             self.firewall_rule_group_association = Some(input);
             self
         }
-        /// <p>The association that you just created. The association has an ID that you can use to
-        /// identify it in other requests, like update and delete.</p>
+        /// <p>The association that you just created. The association has an ID that you can use to identify it in other requests, like update and delete.</p>
         pub fn set_firewall_rule_group_association(
             mut self,
             input: std::option::Option<crate::model::FirewallRuleGroupAssociation>,

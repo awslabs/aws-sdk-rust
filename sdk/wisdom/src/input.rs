@@ -17,14 +17,12 @@ pub mod create_assistant_input {
             std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     }
     impl Builder {
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -121,7 +119,7 @@ pub mod create_assistant_input {
 #[doc(hidden)]
 pub type CreateAssistantInputOperationOutputAlias = crate::operation::CreateAssistant;
 #[doc(hidden)]
-pub type CreateAssistantInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAssistantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAssistantInput {
     /// Consumes the builder and constructs an Operation<[`CreateAssistant`](crate::operation::CreateAssistant)>
     #[allow(clippy::let_and_return)]
@@ -132,7 +130,7 @@ impl CreateAssistantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAssistant,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -215,7 +213,7 @@ impl CreateAssistantInput {
             "CreateAssistant",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -289,14 +287,12 @@ pub mod create_assistant_association_input {
             self.association = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -347,7 +343,7 @@ pub mod create_assistant_association_input {
 pub type CreateAssistantAssociationInputOperationOutputAlias =
     crate::operation::CreateAssistantAssociation;
 #[doc(hidden)]
-pub type CreateAssistantAssociationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAssistantAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAssistantAssociationInput {
     /// Consumes the builder and constructs an Operation<[`CreateAssistantAssociation`](crate::operation::CreateAssistantAssociation)>
     #[allow(clippy::let_and_return)]
@@ -358,7 +354,7 @@ impl CreateAssistantAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAssistantAssociation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -463,7 +459,7 @@ impl CreateAssistantAssociationInput {
             "CreateAssistantAssociation",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -519,16 +515,12 @@ pub mod create_content_input {
             self.knowledge_base_id = input;
             self
         }
-        /// <p>The name of the content. Each piece of content in a knowledge base must have a unique
-        /// name. You can retrieve a piece of content using only its knowledge base and its name with the
-        /// <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
+        /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the content. Each piece of content in a knowledge base must have a unique
-        /// name. You can retrieve a piece of content using only its knowledge base and its name with the
-        /// <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
+        /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -543,14 +535,12 @@ pub mod create_content_input {
             self.title = input;
             self
         }
-        /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting
-        /// this argument overrides it for this piece of content.</p>
+        /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
         pub fn override_link_out_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.override_link_out_uri = Some(input.into());
             self
         }
-        /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting
-        /// this argument overrides it for this piece of content.</p>
+        /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
         pub fn set_override_link_out_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -562,8 +552,7 @@ pub mod create_content_input {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-        /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -574,8 +563,7 @@ pub mod create_content_input {
             self.metadata = Some(hash_map);
             self
         }
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-        /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<
@@ -595,14 +583,12 @@ pub mod create_content_input {
             self.upload_id = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -655,7 +641,7 @@ pub mod create_content_input {
 #[doc(hidden)]
 pub type CreateContentInputOperationOutputAlias = crate::operation::CreateContent;
 #[doc(hidden)]
-pub type CreateContentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateContentInput {
     /// Consumes the builder and constructs an Operation<[`CreateContent`](crate::operation::CreateContent)>
     #[allow(clippy::let_and_return)]
@@ -666,7 +652,7 @@ impl CreateContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateContent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -768,7 +754,7 @@ impl CreateContentInput {
             "CreateContent",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -811,14 +797,12 @@ pub mod create_knowledge_base_input {
         >,
     }
     impl Builder {
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -833,16 +817,12 @@ pub mod create_knowledge_base_input {
             self.name = input;
             self
         }
-        /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content.
-        /// EXTERNAL knowledge bases support integrations with third-party systems whose content is
-        /// synchronized automatically. </p>
+        /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
         pub fn knowledge_base_type(mut self, input: crate::model::KnowledgeBaseType) -> Self {
             self.knowledge_base_type = Some(input);
             self
         }
-        /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content.
-        /// EXTERNAL knowledge bases support integrations with third-party systems whose content is
-        /// synchronized automatically. </p>
+        /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
         pub fn set_knowledge_base_type(
             mut self,
             input: std::option::Option<crate::model::KnowledgeBaseType>,
@@ -850,14 +830,12 @@ pub mod create_knowledge_base_input {
             self.knowledge_base_type = input;
             self
         }
-        /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge
-        /// bases.</p>
+        /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
         pub fn source_configuration(mut self, input: crate::model::SourceConfiguration) -> Self {
             self.source_configuration = Some(input);
             self
         }
-        /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge
-        /// bases.</p>
+        /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
         pub fn set_source_configuration(
             mut self,
             input: std::option::Option<crate::model::SourceConfiguration>,
@@ -955,7 +933,7 @@ pub mod create_knowledge_base_input {
 #[doc(hidden)]
 pub type CreateKnowledgeBaseInputOperationOutputAlias = crate::operation::CreateKnowledgeBase;
 #[doc(hidden)]
-pub type CreateKnowledgeBaseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateKnowledgeBaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateKnowledgeBaseInput {
     /// Consumes the builder and constructs an Operation<[`CreateKnowledgeBase`](crate::operation::CreateKnowledgeBase)>
     #[allow(clippy::let_and_return)]
@@ -966,7 +944,7 @@ impl CreateKnowledgeBaseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateKnowledgeBase,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1049,7 +1027,7 @@ impl CreateKnowledgeBaseInput {
             "CreateKnowledgeBase",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1087,14 +1065,12 @@ pub mod create_session_input {
         >,
     }
     impl Builder {
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1174,7 +1150,7 @@ pub mod create_session_input {
 #[doc(hidden)]
 pub type CreateSessionInputOperationOutputAlias = crate::operation::CreateSession;
 #[doc(hidden)]
-pub type CreateSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSessionInput {
     /// Consumes the builder and constructs an Operation<[`CreateSession`](crate::operation::CreateSession)>
     #[allow(clippy::let_and_return)]
@@ -1185,7 +1161,7 @@ impl CreateSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1287,7 +1263,7 @@ impl CreateSessionInput {
             "CreateSession",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1345,7 +1321,7 @@ pub mod delete_assistant_input {
 #[doc(hidden)]
 pub type DeleteAssistantInputOperationOutputAlias = crate::operation::DeleteAssistant;
 #[doc(hidden)]
-pub type DeleteAssistantInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAssistantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAssistantInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAssistant`](crate::operation::DeleteAssistant)>
     #[allow(clippy::let_and_return)]
@@ -1356,7 +1332,7 @@ impl DeleteAssistantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAssistant,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1450,7 +1426,7 @@ impl DeleteAssistantInput {
             "DeleteAssistant",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1516,7 +1492,7 @@ pub mod delete_assistant_association_input {
 pub type DeleteAssistantAssociationInputOperationOutputAlias =
     crate::operation::DeleteAssistantAssociation;
 #[doc(hidden)]
-pub type DeleteAssistantAssociationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAssistantAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAssistantAssociationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAssistantAssociation`](crate::operation::DeleteAssistantAssociation)>
     #[allow(clippy::let_and_return)]
@@ -1527,7 +1503,7 @@ impl DeleteAssistantAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAssistantAssociation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1637,7 +1613,7 @@ impl DeleteAssistantAssociationInput {
             "DeleteAssistantAssociation",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1702,7 +1678,7 @@ pub mod delete_content_input {
 #[doc(hidden)]
 pub type DeleteContentInputOperationOutputAlias = crate::operation::DeleteContent;
 #[doc(hidden)]
-pub type DeleteContentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContent`](crate::operation::DeleteContent)>
     #[allow(clippy::let_and_return)]
@@ -1713,7 +1689,7 @@ impl DeleteContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteContent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1823,7 +1799,7 @@ impl DeleteContentInput {
             "DeleteContent",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1876,7 +1852,7 @@ pub mod delete_knowledge_base_input {
 #[doc(hidden)]
 pub type DeleteKnowledgeBaseInputOperationOutputAlias = crate::operation::DeleteKnowledgeBase;
 #[doc(hidden)]
-pub type DeleteKnowledgeBaseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteKnowledgeBaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteKnowledgeBaseInput {
     /// Consumes the builder and constructs an Operation<[`DeleteKnowledgeBase`](crate::operation::DeleteKnowledgeBase)>
     #[allow(clippy::let_and_return)]
@@ -1887,7 +1863,7 @@ impl DeleteKnowledgeBaseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteKnowledgeBase,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1981,7 +1957,7 @@ impl DeleteKnowledgeBaseInput {
             "DeleteKnowledgeBase",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2031,7 +2007,7 @@ pub mod get_assistant_input {
 #[doc(hidden)]
 pub type GetAssistantInputOperationOutputAlias = crate::operation::GetAssistant;
 #[doc(hidden)]
-pub type GetAssistantInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAssistantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssistantInput {
     /// Consumes the builder and constructs an Operation<[`GetAssistant`](crate::operation::GetAssistant)>
     #[allow(clippy::let_and_return)]
@@ -2042,7 +2018,7 @@ impl GetAssistantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAssistant,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2136,7 +2112,7 @@ impl GetAssistantInput {
             "GetAssistant",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2202,7 +2178,7 @@ pub mod get_assistant_association_input {
 pub type GetAssistantAssociationInputOperationOutputAlias =
     crate::operation::GetAssistantAssociation;
 #[doc(hidden)]
-pub type GetAssistantAssociationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAssistantAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssistantAssociationInput {
     /// Consumes the builder and constructs an Operation<[`GetAssistantAssociation`](crate::operation::GetAssistantAssociation)>
     #[allow(clippy::let_and_return)]
@@ -2213,7 +2189,7 @@ impl GetAssistantAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAssistantAssociation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2323,7 +2299,7 @@ impl GetAssistantAssociationInput {
             "GetAssistantAssociation",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2388,7 +2364,7 @@ pub mod get_content_input {
 #[doc(hidden)]
 pub type GetContentInputOperationOutputAlias = crate::operation::GetContent;
 #[doc(hidden)]
-pub type GetContentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContentInput {
     /// Consumes the builder and constructs an Operation<[`GetContent`](crate::operation::GetContent)>
     #[allow(clippy::let_and_return)]
@@ -2399,7 +2375,7 @@ impl GetContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2509,7 +2485,7 @@ impl GetContentInput {
             "GetContent",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2574,7 +2550,7 @@ pub mod get_content_summary_input {
 #[doc(hidden)]
 pub type GetContentSummaryInputOperationOutputAlias = crate::operation::GetContentSummary;
 #[doc(hidden)]
-pub type GetContentSummaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetContentSummaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContentSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetContentSummary`](crate::operation::GetContentSummary)>
     #[allow(clippy::let_and_return)]
@@ -2585,7 +2561,7 @@ impl GetContentSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContentSummary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2695,7 +2671,7 @@ impl GetContentSummaryInput {
             "GetContentSummary",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2748,7 +2724,7 @@ pub mod get_knowledge_base_input {
 #[doc(hidden)]
 pub type GetKnowledgeBaseInputOperationOutputAlias = crate::operation::GetKnowledgeBase;
 #[doc(hidden)]
-pub type GetKnowledgeBaseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetKnowledgeBaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetKnowledgeBaseInput {
     /// Consumes the builder and constructs an Operation<[`GetKnowledgeBase`](crate::operation::GetKnowledgeBase)>
     #[allow(clippy::let_and_return)]
@@ -2759,7 +2735,7 @@ impl GetKnowledgeBaseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetKnowledgeBase,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2853,7 +2829,7 @@ impl GetKnowledgeBaseInput {
             "GetKnowledgeBase",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2910,18 +2886,12 @@ pub mod get_recommendations_input {
             self.max_results = input;
             self
         }
-        /// <p>The duration (in seconds) for which the call waits for a recommendation to be made
-        /// available before returning. If a recommendation is available, the call returns sooner than
-        /// <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the
-        /// call returns successfully with an empty list.</p>
+        /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
         pub fn wait_time_seconds(mut self, input: i32) -> Self {
             self.wait_time_seconds = Some(input);
             self
         }
-        /// <p>The duration (in seconds) for which the call waits for a recommendation to be made
-        /// available before returning. If a recommendation is available, the call returns sooner than
-        /// <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the
-        /// call returns successfully with an empty list.</p>
+        /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
         pub fn set_wait_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.wait_time_seconds = input;
             self
@@ -2945,7 +2915,7 @@ pub mod get_recommendations_input {
 #[doc(hidden)]
 pub type GetRecommendationsInputOperationOutputAlias = crate::operation::GetRecommendations;
 #[doc(hidden)]
-pub type GetRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendations`](crate::operation::GetRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -2956,7 +2926,7 @@ impl GetRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3086,7 +3056,7 @@ impl GetRecommendationsInput {
             "GetRecommendations",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3148,7 +3118,7 @@ pub mod get_session_input {
 #[doc(hidden)]
 pub type GetSessionInputOperationOutputAlias = crate::operation::GetSession;
 #[doc(hidden)]
-pub type GetSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSessionInput {
     /// Consumes the builder and constructs an Operation<[`GetSession`](crate::operation::GetSession)>
     #[allow(clippy::let_and_return)]
@@ -3159,7 +3129,7 @@ impl GetSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3269,7 +3239,7 @@ impl GetSessionInput {
             "GetSession",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3295,14 +3265,12 @@ pub mod list_assistant_associations_input {
         pub(crate) assistant_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3346,7 +3314,7 @@ pub mod list_assistant_associations_input {
 pub type ListAssistantAssociationsInputOperationOutputAlias =
     crate::operation::ListAssistantAssociations;
 #[doc(hidden)]
-pub type ListAssistantAssociationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssistantAssociationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssistantAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssistantAssociations`](crate::operation::ListAssistantAssociations)>
     #[allow(clippy::let_and_return)]
@@ -3357,7 +3325,7 @@ impl ListAssistantAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssistantAssociations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3468,7 +3436,7 @@ impl ListAssistantAssociationsInput {
             "ListAssistantAssociations",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3493,14 +3461,12 @@ pub mod list_assistants_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3532,7 +3498,7 @@ pub mod list_assistants_input {
 #[doc(hidden)]
 pub type ListAssistantsInputOperationOutputAlias = crate::operation::ListAssistants;
 #[doc(hidden)]
-pub type ListAssistantsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssistantsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssistantsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssistants`](crate::operation::ListAssistants)>
     #[allow(clippy::let_and_return)]
@@ -3543,7 +3509,7 @@ impl ListAssistantsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssistants,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3634,7 +3600,7 @@ impl ListAssistantsInput {
             "ListAssistants",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3660,14 +3626,12 @@ pub mod list_contents_input {
         pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3713,7 +3677,7 @@ pub mod list_contents_input {
 #[doc(hidden)]
 pub type ListContentsInputOperationOutputAlias = crate::operation::ListContents;
 #[doc(hidden)]
-pub type ListContentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListContentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContentsInput {
     /// Consumes the builder and constructs an Operation<[`ListContents`](crate::operation::ListContents)>
     #[allow(clippy::let_and_return)]
@@ -3724,7 +3688,7 @@ impl ListContentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListContents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3835,7 +3799,7 @@ impl ListContentsInput {
             "ListContents",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3860,14 +3824,12 @@ pub mod list_knowledge_bases_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3899,7 +3861,7 @@ pub mod list_knowledge_bases_input {
 #[doc(hidden)]
 pub type ListKnowledgeBasesInputOperationOutputAlias = crate::operation::ListKnowledgeBases;
 #[doc(hidden)]
-pub type ListKnowledgeBasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListKnowledgeBasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListKnowledgeBasesInput {
     /// Consumes the builder and constructs an Operation<[`ListKnowledgeBases`](crate::operation::ListKnowledgeBases)>
     #[allow(clippy::let_and_return)]
@@ -3910,7 +3872,7 @@ impl ListKnowledgeBasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListKnowledgeBases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4001,7 +3963,7 @@ impl ListKnowledgeBasesInput {
             "ListKnowledgeBases",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4051,7 +4013,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -4062,7 +4024,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4152,7 +4114,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4236,7 +4198,8 @@ pub mod notify_recommendations_received_input {
 pub type NotifyRecommendationsReceivedInputOperationOutputAlias =
     crate::operation::NotifyRecommendationsReceived;
 #[doc(hidden)]
-pub type NotifyRecommendationsReceivedInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type NotifyRecommendationsReceivedInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl NotifyRecommendationsReceivedInput {
     /// Consumes the builder and constructs an Operation<[`NotifyRecommendationsReceived`](crate::operation::NotifyRecommendationsReceived)>
     #[allow(clippy::let_and_return)]
@@ -4247,7 +4210,7 @@ impl NotifyRecommendationsReceivedInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::NotifyRecommendationsReceived,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4364,7 +4327,7 @@ impl NotifyRecommendationsReceivedInput {
             "NotifyRecommendationsReceived",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4419,14 +4382,12 @@ pub mod query_assistant_input {
             self.query_text = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4460,7 +4421,7 @@ pub mod query_assistant_input {
 #[doc(hidden)]
 pub type QueryAssistantInputOperationOutputAlias = crate::operation::QueryAssistant;
 #[doc(hidden)]
-pub type QueryAssistantInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type QueryAssistantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl QueryAssistantInput {
     /// Consumes the builder and constructs an Operation<[`QueryAssistant`](crate::operation::QueryAssistant)>
     #[allow(clippy::let_and_return)]
@@ -4471,7 +4432,7 @@ impl QueryAssistantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::QueryAssistant,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4571,7 +4532,7 @@ impl QueryAssistantInput {
             "QueryAssistant",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4633,7 +4594,8 @@ pub mod remove_knowledge_base_template_uri_input {
 pub type RemoveKnowledgeBaseTemplateUriInputOperationOutputAlias =
     crate::operation::RemoveKnowledgeBaseTemplateUri;
 #[doc(hidden)]
-pub type RemoveKnowledgeBaseTemplateUriInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveKnowledgeBaseTemplateUriInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveKnowledgeBaseTemplateUriInput {
     /// Consumes the builder and constructs an Operation<[`RemoveKnowledgeBaseTemplateUri`](crate::operation::RemoveKnowledgeBaseTemplateUri)>
     #[allow(clippy::let_and_return)]
@@ -4644,7 +4606,7 @@ impl RemoveKnowledgeBaseTemplateUriInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveKnowledgeBaseTemplateUri,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4738,7 +4700,7 @@ impl RemoveKnowledgeBaseTemplateUriInput {
             "RemoveKnowledgeBaseTemplateUri",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4765,14 +4727,12 @@ pub mod search_content_input {
         pub(crate) search_expression: std::option::Option<crate::model::SearchExpression>,
     }
     impl Builder {
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4832,7 +4792,7 @@ pub mod search_content_input {
 #[doc(hidden)]
 pub type SearchContentInputOperationOutputAlias = crate::operation::SearchContent;
 #[doc(hidden)]
-pub type SearchContentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchContentInput {
     /// Consumes the builder and constructs an Operation<[`SearchContent`](crate::operation::SearchContent)>
     #[allow(clippy::let_and_return)]
@@ -4843,7 +4803,7 @@ impl SearchContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchContent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4959,7 +4919,7 @@ impl SearchContentInput {
             "SearchContent",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4994,14 +4954,12 @@ pub mod search_sessions_input {
         pub(crate) search_expression: std::option::Option<crate::model::SearchExpression>,
     }
     impl Builder {
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5058,7 +5016,7 @@ pub mod search_sessions_input {
 #[doc(hidden)]
 pub type SearchSessionsInputOperationOutputAlias = crate::operation::SearchSessions;
 #[doc(hidden)]
-pub type SearchSessionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchSessionsInput {
     /// Consumes the builder and constructs an Operation<[`SearchSessions`](crate::operation::SearchSessions)>
     #[allow(clippy::let_and_return)]
@@ -5069,7 +5027,7 @@ impl SearchSessionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchSessions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5186,7 +5144,7 @@ impl SearchSessionsInput {
             "SearchSessions",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5259,7 +5217,7 @@ pub mod start_content_upload_input {
 #[doc(hidden)]
 pub type StartContentUploadInputOperationOutputAlias = crate::operation::StartContentUpload;
 #[doc(hidden)]
-pub type StartContentUploadInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartContentUploadInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartContentUploadInput {
     /// Consumes the builder and constructs an Operation<[`StartContentUpload`](crate::operation::StartContentUpload)>
     #[allow(clippy::let_and_return)]
@@ -5270,7 +5228,7 @@ impl StartContentUploadInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartContentUpload,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5370,7 +5328,7 @@ impl StartContentUploadInput {
             "StartContentUpload",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5457,7 +5415,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -5468,7 +5426,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5563,7 +5521,7 @@ impl TagResourceInput {
             "TagResource",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5642,7 +5600,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -5653,7 +5611,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5756,7 +5714,7 @@ impl UntagResourceInput {
             "UntagResource",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5812,20 +5770,12 @@ pub mod update_content_input {
             self.content_id = input;
             self
         }
-        /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call
-        /// to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or
-        /// <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure
-        /// content was not modified since it was last read. If it has been modified, this API throws a
-        /// <code>PreconditionFailedException</code>.</p>
+        /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.revision_id = Some(input.into());
             self
         }
-        /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call
-        /// to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or
-        /// <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure
-        /// content was not modified since it was last read. If it has been modified, this API throws a
-        /// <code>PreconditionFailedException</code>.</p>
+        /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -5840,16 +5790,12 @@ pub mod update_content_input {
             self.title = input;
             self
         }
-        /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument
-        /// overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>,
-        /// exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
+        /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
         pub fn override_link_out_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.override_link_out_uri = Some(input.into());
             self
         }
-        /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument
-        /// overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>,
-        /// exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
+        /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
         pub fn set_override_link_out_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5874,9 +5820,7 @@ pub mod update_content_input {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For
-        /// example, when synchronizing data between an external system and Wisdom, you can store an
-        /// external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -5887,9 +5831,7 @@ pub mod update_content_input {
             self.metadata = Some(hash_map);
             self
         }
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For
-        /// example, when synchronizing data between an external system and Wisdom, you can store an
-        /// external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<
@@ -5899,14 +5841,12 @@ pub mod update_content_input {
             self.metadata = input;
             self
         }
-        /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
-        /// </p>
+        /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>. </p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.upload_id = Some(input.into());
             self
         }
-        /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
-        /// </p>
+        /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>. </p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upload_id = input;
             self
@@ -5934,7 +5874,7 @@ pub mod update_content_input {
 #[doc(hidden)]
 pub type UpdateContentInputOperationOutputAlias = crate::operation::UpdateContent;
 #[doc(hidden)]
-pub type UpdateContentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateContentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContent`](crate::operation::UpdateContent)>
     #[allow(clippy::let_and_return)]
@@ -5945,7 +5885,7 @@ impl UpdateContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateContent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6060,7 +6000,7 @@ impl UpdateContentInput {
             "UpdateContent",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6134,7 +6074,8 @@ pub mod update_knowledge_base_template_uri_input {
 pub type UpdateKnowledgeBaseTemplateUriInputOperationOutputAlias =
     crate::operation::UpdateKnowledgeBaseTemplateUri;
 #[doc(hidden)]
-pub type UpdateKnowledgeBaseTemplateUriInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateKnowledgeBaseTemplateUriInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateKnowledgeBaseTemplateUriInput {
     /// Consumes the builder and constructs an Operation<[`UpdateKnowledgeBaseTemplateUri`](crate::operation::UpdateKnowledgeBaseTemplateUri)>
     #[allow(clippy::let_and_return)]
@@ -6145,7 +6086,7 @@ impl UpdateKnowledgeBaseTemplateUriInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateKnowledgeBaseTemplateUri,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6246,7 +6187,7 @@ impl UpdateKnowledgeBaseTemplateUriInput {
             "UpdateKnowledgeBaseTemplateUri",
             "wisdom",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6329,8 +6270,7 @@ impl std::fmt::Debug for StartContentUploadInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchContentInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -6340,8 +6280,7 @@ pub struct SearchContentInput {
     pub search_expression: std::option::Option<crate::model::SearchExpression>,
 }
 impl SearchContentInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6394,15 +6333,13 @@ impl std::fmt::Debug for RemoveKnowledgeBaseTemplateUriInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKnowledgeBasesInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListKnowledgeBasesInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6424,17 +6361,13 @@ impl std::fmt::Debug for ListKnowledgeBasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKnowledgeBaseInput {
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the knowledge base.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content.
-    /// EXTERNAL knowledge bases support integrations with third-party systems whose content is
-    /// synchronized automatically. </p>
+    /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
     pub knowledge_base_type: std::option::Option<crate::model::KnowledgeBaseType>,
-    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge
-    /// bases.</p>
+    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>Information about how to render the content.</p>
     pub rendering_configuration: std::option::Option<crate::model::RenderingConfiguration>,
@@ -6448,8 +6381,7 @@ pub struct CreateKnowledgeBaseInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateKnowledgeBaseInput {
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -6457,14 +6389,11 @@ impl CreateKnowledgeBaseInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content.
-    /// EXTERNAL knowledge bases support integrations with third-party systems whose content is
-    /// synchronized automatically. </p>
+    /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
     pub fn knowledge_base_type(&self) -> std::option::Option<&crate::model::KnowledgeBaseType> {
         self.knowledge_base_type.as_ref()
     }
-    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge
-    /// bases.</p>
+    /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
     pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
@@ -6584,8 +6513,7 @@ impl std::fmt::Debug for GetContentSummaryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContentsInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -6593,8 +6521,7 @@ pub struct ListContentsInput {
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
 impl ListContentsInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6623,23 +6550,18 @@ impl std::fmt::Debug for ListContentsInput {
 pub struct CreateContentInput {
     /// <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: std::option::Option<std::string::String>,
-    /// <p>The name of the content. Each piece of content in a knowledge base must have a unique
-    /// name. You can retrieve a piece of content using only its knowledge base and its name with the
-    /// <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
+    /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The title of the content. If not set, the title is equal to the name.</p>
     pub title: std::option::Option<std::string::String>,
-    /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting
-    /// this argument overrides it for this piece of content.</p>
+    /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
     pub override_link_out_uri: std::option::Option<std::string::String>,
-    /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-    /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
     pub upload_id: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
@@ -6650,9 +6572,7 @@ impl CreateContentInput {
     pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
-    /// <p>The name of the content. Each piece of content in a knowledge base must have a unique
-    /// name. You can retrieve a piece of content using only its knowledge base and its name with the
-    /// <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
+    /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -6660,13 +6580,11 @@ impl CreateContentInput {
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting
-    /// this argument overrides it for this piece of content.</p>
+    /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
     pub fn override_link_out_uri(&self) -> std::option::Option<&str> {
         self.override_link_out_uri.as_deref()
     }
-    /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-    /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub fn metadata(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -6677,8 +6595,7 @@ impl CreateContentInput {
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -6741,27 +6658,18 @@ pub struct UpdateContentInput {
     pub knowledge_base_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub content_id: std::option::Option<std::string::String>,
-    /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call
-    /// to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or
-    /// <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure
-    /// content was not modified since it was last read. If it has been modified, this API throws a
-    /// <code>PreconditionFailedException</code>.</p>
+    /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
     pub revision_id: std::option::Option<std::string::String>,
     /// <p>The title of the content.</p>
     pub title: std::option::Option<std::string::String>,
-    /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument
-    /// overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>,
-    /// exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
+    /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
     pub override_link_out_uri: std::option::Option<std::string::String>,
     /// <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
     pub remove_override_link_out_uri: std::option::Option<bool>,
-    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For
-    /// example, when synchronizing data between an external system and Wisdom, you can store an
-    /// external version identifier as metadata to utilize for determining drift.</p>
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
-    /// </p>
+    /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>. </p>
     pub upload_id: std::option::Option<std::string::String>,
 }
 impl UpdateContentInput {
@@ -6773,11 +6681,7 @@ impl UpdateContentInput {
     pub fn content_id(&self) -> std::option::Option<&str> {
         self.content_id.as_deref()
     }
-    /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call
-    /// to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or
-    /// <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure
-    /// content was not modified since it was last read. If it has been modified, this API throws a
-    /// <code>PreconditionFailedException</code>.</p>
+    /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
@@ -6785,9 +6689,7 @@ impl UpdateContentInput {
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument
-    /// overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>,
-    /// exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
+    /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
     pub fn override_link_out_uri(&self) -> std::option::Option<&str> {
         self.override_link_out_uri.as_deref()
     }
@@ -6795,17 +6697,14 @@ impl UpdateContentInput {
     pub fn remove_override_link_out_uri(&self) -> std::option::Option<bool> {
         self.remove_override_link_out_uri
     }
-    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For
-    /// example, when synchronizing data between an external system and Wisdom, you can store an
-    /// external version identifier as metadata to utilize for determining drift.</p>
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub fn metadata(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.metadata.as_ref()
     }
-    /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
-    /// </p>
+    /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>. </p>
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
@@ -6860,8 +6759,7 @@ impl std::fmt::Debug for GetContentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchSessionsInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -6871,8 +6769,7 @@ pub struct SearchSessionsInput {
     pub search_expression: std::option::Option<crate::model::SearchExpression>,
 }
 impl SearchSessionsInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6908,8 +6805,7 @@ pub struct QueryAssistantInput {
     pub assistant_id: std::option::Option<std::string::String>,
     /// <p>The text to search for.</p>
     pub query_text: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -6923,8 +6819,7 @@ impl QueryAssistantInput {
     pub fn query_text(&self) -> std::option::Option<&str> {
         self.query_text.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6989,10 +6884,7 @@ pub struct GetRecommendationsInput {
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The duration (in seconds) for which the call waits for a recommendation to be made
-    /// available before returning. If a recommendation is available, the call returns sooner than
-    /// <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the
-    /// call returns successfully with an empty list.</p>
+    /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
     pub wait_time_seconds: i32,
 }
 impl GetRecommendationsInput {
@@ -7008,10 +6900,7 @@ impl GetRecommendationsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The duration (in seconds) for which the call waits for a recommendation to be made
-    /// available before returning. If a recommendation is available, the call returns sooner than
-    /// <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the
-    /// call returns successfully with an empty list.</p>
+    /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
     pub fn wait_time_seconds(&self) -> i32 {
         self.wait_time_seconds
     }
@@ -7031,15 +6920,13 @@ impl std::fmt::Debug for GetRecommendationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssistantsInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssistantsInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7061,8 +6948,7 @@ impl std::fmt::Debug for ListAssistantsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssistantInput {
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the assistant.</p>
     pub name: std::option::Option<std::string::String>,
@@ -7078,8 +6964,7 @@ pub struct CreateAssistantInput {
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
 }
 impl CreateAssistantInput {
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -7171,8 +7056,7 @@ impl std::fmt::Debug for GetAssistantInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSessionInput {
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub assistant_id: std::option::Option<std::string::String>,
@@ -7185,8 +7069,7 @@ pub struct CreateSessionInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateSessionInput {
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -7254,8 +7137,7 @@ impl std::fmt::Debug for GetSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssistantAssociationsInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -7263,8 +7145,7 @@ pub struct ListAssistantAssociationsInput {
     pub assistant_id: std::option::Option<std::string::String>,
 }
 impl ListAssistantAssociationsInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7297,8 +7178,7 @@ pub struct CreateAssistantAssociationInput {
     pub association_type: std::option::Option<crate::model::AssociationType>,
     /// <p>The identifier of the associated resource.</p>
     pub association: std::option::Option<crate::model::AssistantAssociationInputData>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
@@ -7317,8 +7197,7 @@ impl CreateAssistantAssociationInput {
     pub fn association(&self) -> std::option::Option<&crate::model::AssistantAssociationInputData> {
         self.association.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }

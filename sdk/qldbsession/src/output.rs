@@ -3,9 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendCommandOutput {
-    /// <p>Contains the details of the started session that includes a session token. This
-    /// <code>SessionToken</code> is required for every subsequent command that is issued during
-    /// the current session.</p>
+    /// <p>Contains the details of the started session that includes a session token. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
     pub start_session: std::option::Option<crate::model::StartSessionResult>,
     /// <p>Contains the details of the started transaction.</p>
     pub start_transaction: std::option::Option<crate::model::StartTransactionResult>,
@@ -21,9 +19,7 @@ pub struct SendCommandOutput {
     pub fetch_page: std::option::Option<crate::model::FetchPageResult>,
 }
 impl SendCommandOutput {
-    /// <p>Contains the details of the started session that includes a session token. This
-    /// <code>SessionToken</code> is required for every subsequent command that is issued during
-    /// the current session.</p>
+    /// <p>Contains the details of the started session that includes a session token. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
     pub fn start_session(&self) -> std::option::Option<&crate::model::StartSessionResult> {
         self.start_session.as_ref()
     }
@@ -82,16 +78,12 @@ pub mod send_command_output {
         pub(crate) fetch_page: std::option::Option<crate::model::FetchPageResult>,
     }
     impl Builder {
-        /// <p>Contains the details of the started session that includes a session token. This
-        /// <code>SessionToken</code> is required for every subsequent command that is issued during
-        /// the current session.</p>
+        /// <p>Contains the details of the started session that includes a session token. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
         pub fn start_session(mut self, input: crate::model::StartSessionResult) -> Self {
             self.start_session = Some(input);
             self
         }
-        /// <p>Contains the details of the started session that includes a session token. This
-        /// <code>SessionToken</code> is required for every subsequent command that is issued during
-        /// the current session.</p>
+        /// <p>Contains the details of the started session that includes a session token. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
         pub fn set_start_session(
             mut self,
             input: std::option::Option<crate::model::StartSessionResult>,

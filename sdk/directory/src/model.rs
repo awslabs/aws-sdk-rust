@@ -54,22 +54,17 @@ impl AsRef<str> for SelectiveAuth {
     }
 }
 
-/// <p>Contains information about a Remote Authentication Dial In User Service (RADIUS)
-/// server.</p>
+/// <p>Contains information about a Remote Authentication Dial In User Service (RADIUS) server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RadiusSettings {
-    /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP
-    /// addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server
-    /// load balancer.</p>
+    /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
     pub radius_servers: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The port that your RADIUS server is using for communications. Your self-managed
-    /// network must allow inbound traffic over this port from the Directory Service servers.</p>
+    /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
     pub radius_port: i32,
     /// <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
     pub radius_timeout: i32,
-    /// <p>The maximum number of times that communication with the RADIUS server is
-    /// attempted.</p>
+    /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
     pub radius_retries: i32,
     /// <p>Required for enabling RADIUS on the directory.</p>
     pub shared_secret: std::option::Option<std::string::String>,
@@ -81,14 +76,11 @@ pub struct RadiusSettings {
     pub use_same_username: bool,
 }
 impl RadiusSettings {
-    /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP
-    /// addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server
-    /// load balancer.</p>
+    /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
     pub fn radius_servers(&self) -> std::option::Option<&[std::string::String]> {
         self.radius_servers.as_deref()
     }
-    /// <p>The port that your RADIUS server is using for communications. Your self-managed
-    /// network must allow inbound traffic over this port from the Directory Service servers.</p>
+    /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
     pub fn radius_port(&self) -> i32 {
         self.radius_port
     }
@@ -96,8 +88,7 @@ impl RadiusSettings {
     pub fn radius_timeout(&self) -> i32 {
         self.radius_timeout
     }
-    /// <p>The maximum number of times that communication with the RADIUS server is
-    /// attempted.</p>
+    /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
     pub fn radius_retries(&self) -> i32 {
         self.radius_retries
     }
@@ -155,18 +146,14 @@ pub mod radius_settings {
         ///
         /// To override the contents of this collection use [`set_radius_servers`](Self::set_radius_servers).
         ///
-        /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP
-        /// addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server
-        /// load balancer.</p>
+        /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
         pub fn radius_servers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.radius_servers.unwrap_or_default();
             v.push(input.into());
             self.radius_servers = Some(v);
             self
         }
-        /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP
-        /// addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server
-        /// load balancer.</p>
+        /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
         pub fn set_radius_servers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -174,14 +161,12 @@ pub mod radius_settings {
             self.radius_servers = input;
             self
         }
-        /// <p>The port that your RADIUS server is using for communications. Your self-managed
-        /// network must allow inbound traffic over this port from the Directory Service servers.</p>
+        /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
         pub fn radius_port(mut self, input: i32) -> Self {
             self.radius_port = Some(input);
             self
         }
-        /// <p>The port that your RADIUS server is using for communications. Your self-managed
-        /// network must allow inbound traffic over this port from the Directory Service servers.</p>
+        /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
         pub fn set_radius_port(mut self, input: std::option::Option<i32>) -> Self {
             self.radius_port = input;
             self
@@ -196,14 +181,12 @@ pub mod radius_settings {
             self.radius_timeout = input;
             self
         }
-        /// <p>The maximum number of times that communication with the RADIUS server is
-        /// attempted.</p>
+        /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
         pub fn radius_retries(mut self, input: i32) -> Self {
             self.radius_retries = Some(input);
             self
         }
-        /// <p>The maximum number of times that communication with the RADIUS server is
-        /// attempted.</p>
+        /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
         pub fn set_radius_retries(mut self, input: std::option::Option<i32>) -> Self {
             self.radius_retries = input;
             self
@@ -345,8 +328,7 @@ impl AsRef<str> for RadiusAuthenticationProtocol {
     }
 }
 
-/// <p>Identifier that contains details about the directory consumer account with whom the
-/// directory is being unshared.</p>
+/// <p>Identifier that contains details about the directory consumer account with whom the directory is being unshared.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnshareTarget {
@@ -711,27 +693,17 @@ impl AsRef<str> for CertificateType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be
-    /// prefixed with "aws:". The string can contain only the set of Unicode letters, digits,
-    /// white-space, '_', '.', '/', '=', '+', '-' (Java regex:
-    /// "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The optional value of the tag. The string value can be Unicode characters. The string
-    /// can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-'
-    /// (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be
-    /// prefixed with "aws:". The string can contain only the set of Unicode letters, digits,
-    /// white-space, '_', '.', '/', '=', '+', '-' (Java regex:
-    /// "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The optional value of the tag. The string value can be Unicode characters. The string
-    /// can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-'
-    /// (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -754,32 +726,22 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Required name of the tag. The string value can be Unicode characters and cannot be
-        /// prefixed with "aws:". The string can contain only the set of Unicode letters, digits,
-        /// white-space, '_', '.', '/', '=', '+', '-' (Java regex:
-        /// "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+        /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>Required name of the tag. The string value can be Unicode characters and cannot be
-        /// prefixed with "aws:". The string can contain only the set of Unicode letters, digits,
-        /// white-space, '_', '.', '/', '=', '+', '-' (Java regex:
-        /// "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+        /// <p>Required name of the tag. The string value can be Unicode characters and cannot be prefixed with "aws:". The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>The optional value of the tag. The string value can be Unicode characters. The string
-        /// can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-'
-        /// (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+        /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The optional value of the tag. The string value can be Unicode characters. The string
-        /// can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-'
-        /// (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+        /// <p>The optional value of the tag. The string value can be Unicode characters. The string can contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -814,8 +776,7 @@ pub struct SchemaExtensionInfo {
     pub schema_extension_status: std::option::Option<crate::model::SchemaExtensionStatus>,
     /// <p>The reason for the <code>SchemaExtensionStatus</code>.</p>
     pub schema_extension_status_reason: std::option::Option<std::string::String>,
-    /// <p>The date and time that the schema extension started being applied to the
-    /// directory.</p>
+    /// <p>The date and time that the schema extension started being applied to the directory.</p>
     pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the schema extension was completed.</p>
     pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -843,8 +804,7 @@ impl SchemaExtensionInfo {
     pub fn schema_extension_status_reason(&self) -> std::option::Option<&str> {
         self.schema_extension_status_reason.as_deref()
     }
-    /// <p>The date and time that the schema extension started being applied to the
-    /// directory.</p>
+    /// <p>The date and time that the schema extension started being applied to the directory.</p>
     pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
@@ -950,14 +910,12 @@ pub mod schema_extension_info {
             self.schema_extension_status_reason = input;
             self
         }
-        /// <p>The date and time that the schema extension started being applied to the
-        /// directory.</p>
+        /// <p>The date and time that the schema extension started being applied to the directory.</p>
         pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_date_time = Some(input);
             self
         }
-        /// <p>The date and time that the schema extension started being applied to the
-        /// directory.</p>
+        /// <p>The date and time that the schema extension started being applied to the directory.</p>
         pub fn set_start_date_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1092,13 +1050,11 @@ impl AsRef<str> for SchemaExtensionStatus {
     }
 }
 
-/// <p>Represents a log subscription, which tracks real-time data from a chosen log group to a
-/// specified destination.</p>
+/// <p>Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogSubscription {
-    /// <p>Identifier (ID) of the directory that you want to associate with the log
-    /// subscription.</p>
+    /// <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
@@ -1106,8 +1062,7 @@ pub struct LogSubscription {
     pub subscription_created_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LogSubscription {
-    /// <p>Identifier (ID) of the directory that you want to associate with the log
-    /// subscription.</p>
+    /// <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
@@ -1145,14 +1100,12 @@ pub mod log_subscription {
         pub(crate) subscription_created_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Identifier (ID) of the directory that you want to associate with the log
-        /// subscription.</p>
+        /// <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>Identifier (ID) of the directory that you want to associate with the log
-        /// subscription.</p>
+        /// <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -1206,7 +1159,7 @@ impl LogSubscription {
 pub struct IpRouteInfo {
     /// <p>Identifier (ID) of the directory associated with the IP addresses.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>IP address block in the <a>IpRoute</a>.</p>
+    /// <p>IP address block in the <code>IpRoute</code>.</p>
     pub cidr_ip: std::option::Option<std::string::String>,
     /// <p>The status of the IP address block.</p>
     pub ip_route_status_msg: std::option::Option<crate::model::IpRouteStatusMsg>,
@@ -1214,7 +1167,7 @@ pub struct IpRouteInfo {
     pub added_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The reason for the IpRouteStatusMsg.</p>
     pub ip_route_status_reason: std::option::Option<std::string::String>,
-    /// <p>Description of the <a>IpRouteInfo</a>.</p>
+    /// <p>Description of the <code>IpRouteInfo</code>.</p>
     pub description: std::option::Option<std::string::String>,
 }
 impl IpRouteInfo {
@@ -1222,7 +1175,7 @@ impl IpRouteInfo {
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>IP address block in the <a>IpRoute</a>.</p>
+    /// <p>IP address block in the <code>IpRoute</code>.</p>
     pub fn cidr_ip(&self) -> std::option::Option<&str> {
         self.cidr_ip.as_deref()
     }
@@ -1238,7 +1191,7 @@ impl IpRouteInfo {
     pub fn ip_route_status_reason(&self) -> std::option::Option<&str> {
         self.ip_route_status_reason.as_deref()
     }
-    /// <p>Description of the <a>IpRouteInfo</a>.</p>
+    /// <p>Description of the <code>IpRouteInfo</code>.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -1279,12 +1232,12 @@ pub mod ip_route_info {
             self.directory_id = input;
             self
         }
-        /// <p>IP address block in the <a>IpRoute</a>.</p>
+        /// <p>IP address block in the <code>IpRoute</code>.</p>
         pub fn cidr_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.cidr_ip = Some(input.into());
             self
         }
-        /// <p>IP address block in the <a>IpRoute</a>.</p>
+        /// <p>IP address block in the <code>IpRoute</code>.</p>
         pub fn set_cidr_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cidr_ip = input;
             self
@@ -1328,12 +1281,12 @@ pub mod ip_route_info {
             self.ip_route_status_reason = input;
             self
         }
-        /// <p>Description of the <a>IpRouteInfo</a>.</p>
+        /// <p>Description of the <code>IpRouteInfo</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>Description of the <a>IpRouteInfo</a>.</p>
+        /// <p>Description of the <code>IpRouteInfo</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2124,8 +2077,7 @@ impl AsRef<str> for ClientAuthenticationType {
     }
 }
 
-/// <p>Describes a trust relationship between an Managed Microsoft AD directory and an external
-/// domain.</p>
+/// <p>Describes a trust relationship between an Managed Microsoft AD directory and an external domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Trust {
@@ -2133,8 +2085,7 @@ pub struct Trust {
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The unique ID of the trust relationship.</p>
     pub trust_id: std::option::Option<std::string::String>,
-    /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust
-    /// relationship.</p>
+    /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
     pub remote_domain_name: std::option::Option<std::string::String>,
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
     pub trust_type: std::option::Option<crate::model::TrustType>,
@@ -2162,8 +2113,7 @@ impl Trust {
     pub fn trust_id(&self) -> std::option::Option<&str> {
         self.trust_id.as_deref()
     }
-    /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust
-    /// relationship.</p>
+    /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
     pub fn remote_domain_name(&self) -> std::option::Option<&str> {
         self.remote_domain_name.as_deref()
     }
@@ -2259,14 +2209,12 @@ pub mod trust {
             self.trust_id = input;
             self
         }
-        /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust
-        /// relationship.</p>
+        /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
         pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.remote_domain_name = Some(input.into());
             self
         }
-        /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust
-        /// relationship.</p>
+        /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
         pub fn set_remote_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2889,31 +2837,23 @@ impl AsRef<str> for SnapshotType {
     }
 }
 
-/// <p>Details about the shared directory in the directory owner account for which the share
-/// request in the directory consumer account has been accepted.</p>
+/// <p>Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SharedDirectory {
-    /// <p>Identifier of the directory owner account, which contains the directory that has been
-    /// shared to the consumer account.</p>
+    /// <p>Identifier of the directory owner account, which contains the directory that has been shared to the consumer account.</p>
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>Identifier of the directory in the directory owner account. </p>
     pub owner_directory_id: std::option::Option<std::string::String>,
-    /// <p>The method used when sharing a directory to determine whether the directory should be
-    /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
-    /// sending a shared directory request (<code>HANDSHAKE</code>).</p>
+    /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
     pub share_method: std::option::Option<crate::model::ShareMethod>,
-    /// <p>Identifier of the directory consumer account that has access to the shared directory
-    /// (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
+    /// <p>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
     pub shared_account_id: std::option::Option<std::string::String>,
-    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
-    /// different for each directory owner account.</p>
+    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
     pub shared_directory_id: std::option::Option<std::string::String>,
     /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
     pub share_status: std::option::Option<crate::model::ShareStatus>,
-    /// <p>A directory share request that is sent by the directory owner to the directory consumer.
-    /// The request includes a typed message to help the directory consumer administrator determine
-    /// whether to approve or reject the share invitation.</p>
+    /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
     pub share_notes: std::option::Option<std::string::String>,
     /// <p>The date and time that the shared directory was created.</p>
     pub created_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2921,8 +2861,7 @@ pub struct SharedDirectory {
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SharedDirectory {
-    /// <p>Identifier of the directory owner account, which contains the directory that has been
-    /// shared to the consumer account.</p>
+    /// <p>Identifier of the directory owner account, which contains the directory that has been shared to the consumer account.</p>
     pub fn owner_account_id(&self) -> std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
@@ -2930,19 +2869,15 @@ impl SharedDirectory {
     pub fn owner_directory_id(&self) -> std::option::Option<&str> {
         self.owner_directory_id.as_deref()
     }
-    /// <p>The method used when sharing a directory to determine whether the directory should be
-    /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
-    /// sending a shared directory request (<code>HANDSHAKE</code>).</p>
+    /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
     pub fn share_method(&self) -> std::option::Option<&crate::model::ShareMethod> {
         self.share_method.as_ref()
     }
-    /// <p>Identifier of the directory consumer account that has access to the shared directory
-    /// (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
+    /// <p>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
     pub fn shared_account_id(&self) -> std::option::Option<&str> {
         self.shared_account_id.as_deref()
     }
-    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
-    /// different for each directory owner account.</p>
+    /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
     pub fn shared_directory_id(&self) -> std::option::Option<&str> {
         self.shared_directory_id.as_deref()
     }
@@ -2950,9 +2885,7 @@ impl SharedDirectory {
     pub fn share_status(&self) -> std::option::Option<&crate::model::ShareStatus> {
         self.share_status.as_ref()
     }
-    /// <p>A directory share request that is sent by the directory owner to the directory consumer.
-    /// The request includes a typed message to help the directory consumer administrator determine
-    /// whether to approve or reject the share invitation.</p>
+    /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
     pub fn share_notes(&self) -> std::option::Option<&str> {
         self.share_notes.as_deref()
     }
@@ -2997,14 +2930,12 @@ pub mod shared_directory {
         pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>Identifier of the directory owner account, which contains the directory that has been
-        /// shared to the consumer account.</p>
+        /// <p>Identifier of the directory owner account, which contains the directory that has been shared to the consumer account.</p>
         pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_account_id = Some(input.into());
             self
         }
-        /// <p>Identifier of the directory owner account, which contains the directory that has been
-        /// shared to the consumer account.</p>
+        /// <p>Identifier of the directory owner account, which contains the directory that has been shared to the consumer account.</p>
         pub fn set_owner_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3025,16 +2956,12 @@ pub mod shared_directory {
             self.owner_directory_id = input;
             self
         }
-        /// <p>The method used when sharing a directory to determine whether the directory should be
-        /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
-        /// sending a shared directory request (<code>HANDSHAKE</code>).</p>
+        /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
         pub fn share_method(mut self, input: crate::model::ShareMethod) -> Self {
             self.share_method = Some(input);
             self
         }
-        /// <p>The method used when sharing a directory to determine whether the directory should be
-        /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
-        /// sending a shared directory request (<code>HANDSHAKE</code>).</p>
+        /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
         pub fn set_share_method(
             mut self,
             input: std::option::Option<crate::model::ShareMethod>,
@@ -3042,14 +2969,12 @@ pub mod shared_directory {
             self.share_method = input;
             self
         }
-        /// <p>Identifier of the directory consumer account that has access to the shared directory
-        /// (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
+        /// <p>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
         pub fn shared_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_account_id = Some(input.into());
             self
         }
-        /// <p>Identifier of the directory consumer account that has access to the shared directory
-        /// (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
+        /// <p>Identifier of the directory consumer account that has access to the shared directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
         pub fn set_shared_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3057,14 +2982,12 @@ pub mod shared_directory {
             self.shared_account_id = input;
             self
         }
-        /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
-        /// different for each directory owner account.</p>
+        /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
         pub fn shared_directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_directory_id = Some(input.into());
             self
         }
-        /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
-        /// different for each directory owner account.</p>
+        /// <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.</p>
         pub fn set_shared_directory_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3085,16 +3008,12 @@ pub mod shared_directory {
             self.share_status = input;
             self
         }
-        /// <p>A directory share request that is sent by the directory owner to the directory consumer.
-        /// The request includes a typed message to help the directory consumer administrator determine
-        /// whether to approve or reject the share invitation.</p>
+        /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
         pub fn share_notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.share_notes = Some(input.into());
             self
         }
-        /// <p>A directory share request that is sent by the directory owner to the directory consumer.
-        /// The request includes a typed message to help the directory consumer administrator determine
-        /// whether to approve or reject the share invitation.</p>
+        /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
         pub fn set_share_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.share_notes = input;
             self
@@ -3253,10 +3172,9 @@ pub struct RegionDescription {
     pub region_type: std::option::Option<crate::model::RegionType>,
     /// <p>The status of the replication process for the specified Region.</p>
     pub status: std::option::Option<crate::model::DirectoryStage>,
-    /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
     pub vpc_settings: std::option::Option<crate::model::DirectoryVpcSettings>,
-    /// <p>The desired number of domain controllers in the specified Region for the specified
-    /// directory.</p>
+    /// <p>The desired number of domain controllers in the specified Region for the specified directory.</p>
     pub desired_number_of_domain_controllers: i32,
     /// <p>Specifies when the Region replication began.</p>
     pub launch_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3282,12 +3200,11 @@ impl RegionDescription {
     pub fn status(&self) -> std::option::Option<&crate::model::DirectoryStage> {
         self.status.as_ref()
     }
-    /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
     pub fn vpc_settings(&self) -> std::option::Option<&crate::model::DirectoryVpcSettings> {
         self.vpc_settings.as_ref()
     }
-    /// <p>The desired number of domain controllers in the specified Region for the specified
-    /// directory.</p>
+    /// <p>The desired number of domain controllers in the specified Region for the specified directory.</p>
     pub fn desired_number_of_domain_controllers(&self) -> i32 {
         self.desired_number_of_domain_controllers
     }
@@ -3390,12 +3307,12 @@ pub mod region_description {
             self.status = input;
             self
         }
-        /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+        /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
         pub fn vpc_settings(mut self, input: crate::model::DirectoryVpcSettings) -> Self {
             self.vpc_settings = Some(input);
             self
         }
-        /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+        /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
         pub fn set_vpc_settings(
             mut self,
             input: std::option::Option<crate::model::DirectoryVpcSettings>,
@@ -3403,14 +3320,12 @@ pub mod region_description {
             self.vpc_settings = input;
             self
         }
-        /// <p>The desired number of domain controllers in the specified Region for the specified
-        /// directory.</p>
+        /// <p>The desired number of domain controllers in the specified Region for the specified directory.</p>
         pub fn desired_number_of_domain_controllers(mut self, input: i32) -> Self {
             self.desired_number_of_domain_controllers = Some(input);
             self
         }
-        /// <p>The desired number of domain controllers in the specified Region for the specified
-        /// directory.</p>
+        /// <p>The desired number of domain controllers in the specified Region for the specified directory.</p>
         pub fn set_desired_number_of_domain_controllers(
             mut self,
             input: std::option::Option<i32>,
@@ -3482,15 +3397,13 @@ impl RegionDescription {
     }
 }
 
-/// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
+/// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryVpcSettings {
     /// <p>The identifier of the VPC in which to create the directory.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in
-    /// different Availability Zones. Directory Service creates a directory server and a DNS
-    /// server in each of these subnets.</p>
+    /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DirectoryVpcSettings {
@@ -3498,9 +3411,7 @@ impl DirectoryVpcSettings {
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in
-    /// different Availability Zones. Directory Service creates a directory server and a DNS
-    /// server in each of these subnets.</p>
+    /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
@@ -3537,18 +3448,14 @@ pub mod directory_vpc_settings {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in
-        /// different Availability Zones. Directory Service creates a directory server and a DNS
-        /// server in each of these subnets.</p>
+        /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
-        /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in
-        /// different Availability Zones. Directory Service creates a directory server and a DNS
-        /// server in each of these subnets.</p>
+        /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3898,8 +3805,7 @@ impl AsRef<str> for LdapsStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventTopic {
-    /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS
-    /// topic.</p>
+    /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The name of an Amazon SNS topic the receives status messages from the directory.</p>
     pub topic_name: std::option::Option<std::string::String>,
@@ -3911,8 +3817,7 @@ pub struct EventTopic {
     pub status: std::option::Option<crate::model::TopicStatus>,
 }
 impl EventTopic {
-    /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS
-    /// topic.</p>
+    /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
@@ -3957,14 +3862,12 @@ pub mod event_topic {
         pub(crate) status: std::option::Option<crate::model::TopicStatus>,
     }
     impl Builder {
-        /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS
-        /// topic.</p>
+        /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS
-        /// topic.</p>
+        /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -4439,32 +4342,25 @@ pub struct DirectoryDescription {
     pub size: std::option::Option<crate::model::DirectorySize>,
     /// <p>The edition associated with this directory.</p>
     pub edition: std::option::Option<crate::model::DirectoryEdition>,
-    /// <p>The alias for the directory. If no alias has been created for the directory, the alias is
-    /// the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub alias: std::option::Option<std::string::String>,
-    /// <p>The access URL for the directory, such as
-    /// <code>http://<alias>.awsapps.com</code>. If no alias has been created for the
-    /// directory, <code><alias></code> is the directory identifier, such as
-    /// <code>d-XXXXXXXXXX</code>.</p>
+    /// <p>The access URL for the directory, such as <code>http://
+    /// <alias>
+    /// .awsapps.com
+    /// </alias></code>. If no alias has been created for the directory, <code>
+    /// <alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub access_url: std::option::Option<std::string::String>,
     /// <p>The description for the directory.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD
-    /// directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For
-    /// an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers
-    /// in your self-managed directory to which the AD Connector is connected.</p>
+    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
     pub dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The current stage of the directory.</p>
     pub stage: std::option::Option<crate::model::DirectoryStage>,
     /// <p>Current directory status of the shared Managed Microsoft AD directory.</p>
     pub share_status: std::option::Option<crate::model::ShareStatus>,
-    /// <p>The method used when sharing a directory to determine whether the directory should be
-    /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
-    /// sending a shared directory request (<code>HANDSHAKE</code>).</p>
+    /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
     pub share_method: std::option::Option<crate::model::ShareMethod>,
-    /// <p>A directory share request that is sent by the directory owner to the directory consumer.
-    /// The request includes a typed message to help the directory consumer administrator determine
-    /// whether to approve or reject the share invitation.</p>
+    /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
     pub share_notes: std::option::Option<std::string::String>,
     /// <p>Specifies when the directory was created.</p>
     pub launch_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4472,25 +4368,19 @@ pub struct DirectoryDescription {
     pub stage_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The directory size.</p>
     pub r#type: std::option::Option<crate::model::DirectoryType>,
-    /// <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
-    /// information about a directory. This member is only present if the directory is a Simple AD or
-    /// Managed Microsoft AD directory.</p>
+    /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
     pub vpc_settings: std::option::Option<crate::model::DirectoryVpcSettingsDescription>,
-    /// <p>A <a>DirectoryConnectSettingsDescription</a> object that contains additional
-    /// information about an AD Connector directory. This member is only present if the directory is
-    /// an AD Connector directory.</p>
+    /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
     pub connect_settings: std::option::Option<crate::model::DirectoryConnectSettingsDescription>,
-    /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-    /// server configured for this directory.</p>
+    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
     pub radius_settings: std::option::Option<crate::model::RadiusSettings>,
     /// <p>The status of the RADIUS MFA server connection.</p>
     pub radius_status: std::option::Option<crate::model::RadiusStatus>,
     /// <p>Additional information about the directory stage.</p>
     pub stage_reason: std::option::Option<std::string::String>,
-    /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <a>EnableSso</a> and <a>DisableSso</a>.</p>
+    /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
     pub sso_enabled: bool,
-    /// <p>The desired number of domain controllers in the directory if the directory is Microsoft
-    /// AD.</p>
+    /// <p>The desired number of domain controllers in the directory if the directory is Microsoft AD.</p>
     pub desired_number_of_domain_controllers: i32,
     /// <p>Describes the Managed Microsoft AD directory in the directory owner account.</p>
     pub owner_directory_description: std::option::Option<crate::model::OwnerDirectoryDescription>,
@@ -4518,15 +4408,15 @@ impl DirectoryDescription {
     pub fn edition(&self) -> std::option::Option<&crate::model::DirectoryEdition> {
         self.edition.as_ref()
     }
-    /// <p>The alias for the directory. If no alias has been created for the directory, the alias is
-    /// the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+    /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>The access URL for the directory, such as
-    /// <code>http://<alias>.awsapps.com</code>. If no alias has been created for the
-    /// directory, <code><alias></code> is the directory identifier, such as
-    /// <code>d-XXXXXXXXXX</code>.</p>
+    /// <p>The access URL for the directory, such as <code>http://
+    /// <alias>
+    /// .awsapps.com
+    /// </alias></code>. If no alias has been created for the directory, <code>
+    /// <alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
     pub fn access_url(&self) -> std::option::Option<&str> {
         self.access_url.as_deref()
     }
@@ -4534,10 +4424,7 @@ impl DirectoryDescription {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD
-    /// directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For
-    /// an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers
-    /// in your self-managed directory to which the AD Connector is connected.</p>
+    /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
     pub fn dns_ip_addrs(&self) -> std::option::Option<&[std::string::String]> {
         self.dns_ip_addrs.as_deref()
     }
@@ -4549,15 +4436,11 @@ impl DirectoryDescription {
     pub fn share_status(&self) -> std::option::Option<&crate::model::ShareStatus> {
         self.share_status.as_ref()
     }
-    /// <p>The method used when sharing a directory to determine whether the directory should be
-    /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
-    /// sending a shared directory request (<code>HANDSHAKE</code>).</p>
+    /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
     pub fn share_method(&self) -> std::option::Option<&crate::model::ShareMethod> {
         self.share_method.as_ref()
     }
-    /// <p>A directory share request that is sent by the directory owner to the directory consumer.
-    /// The request includes a typed message to help the directory consumer administrator determine
-    /// whether to approve or reject the share invitation.</p>
+    /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
     pub fn share_notes(&self) -> std::option::Option<&str> {
         self.share_notes.as_deref()
     }
@@ -4573,24 +4456,19 @@ impl DirectoryDescription {
     pub fn r#type(&self) -> std::option::Option<&crate::model::DirectoryType> {
         self.r#type.as_ref()
     }
-    /// <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
-    /// information about a directory. This member is only present if the directory is a Simple AD or
-    /// Managed Microsoft AD directory.</p>
+    /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
     pub fn vpc_settings(
         &self,
     ) -> std::option::Option<&crate::model::DirectoryVpcSettingsDescription> {
         self.vpc_settings.as_ref()
     }
-    /// <p>A <a>DirectoryConnectSettingsDescription</a> object that contains additional
-    /// information about an AD Connector directory. This member is only present if the directory is
-    /// an AD Connector directory.</p>
+    /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
     pub fn connect_settings(
         &self,
     ) -> std::option::Option<&crate::model::DirectoryConnectSettingsDescription> {
         self.connect_settings.as_ref()
     }
-    /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-    /// server configured for this directory.</p>
+    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
     pub fn radius_settings(&self) -> std::option::Option<&crate::model::RadiusSettings> {
         self.radius_settings.as_ref()
     }
@@ -4602,12 +4480,11 @@ impl DirectoryDescription {
     pub fn stage_reason(&self) -> std::option::Option<&str> {
         self.stage_reason.as_deref()
     }
-    /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <a>EnableSso</a> and <a>DisableSso</a>.</p>
+    /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
     pub fn sso_enabled(&self) -> bool {
         self.sso_enabled
     }
-    /// <p>The desired number of domain controllers in the directory if the directory is Microsoft
-    /// AD.</p>
+    /// <p>The desired number of domain controllers in the directory if the directory is Microsoft AD.</p>
     pub fn desired_number_of_domain_controllers(&self) -> i32 {
         self.desired_number_of_domain_controllers
     }
@@ -4750,30 +4627,30 @@ pub mod directory_description {
             self.edition = input;
             self
         }
-        /// <p>The alias for the directory. If no alias has been created for the directory, the alias is
-        /// the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+        /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias = Some(input.into());
             self
         }
-        /// <p>The alias for the directory. If no alias has been created for the directory, the alias is
-        /// the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+        /// <p>The alias for the directory. If no alias has been created for the directory, the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
         }
-        /// <p>The access URL for the directory, such as
-        /// <code>http://<alias>.awsapps.com</code>. If no alias has been created for the
-        /// directory, <code><alias></code> is the directory identifier, such as
-        /// <code>d-XXXXXXXXXX</code>.</p>
+        /// <p>The access URL for the directory, such as <code>http://
+        /// <alias>
+        /// .awsapps.com
+        /// </alias></code>. If no alias has been created for the directory, <code>
+        /// <alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
         pub fn access_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_url = Some(input.into());
             self
         }
-        /// <p>The access URL for the directory, such as
-        /// <code>http://<alias>.awsapps.com</code>. If no alias has been created for the
-        /// directory, <code><alias></code> is the directory identifier, such as
-        /// <code>d-XXXXXXXXXX</code>.</p>
+        /// <p>The access URL for the directory, such as <code>http://
+        /// <alias>
+        /// .awsapps.com
+        /// </alias></code>. If no alias has been created for the directory, <code>
+        /// <alias></alias></code> is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
         pub fn set_access_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_url = input;
             self
@@ -4792,20 +4669,14 @@ pub mod directory_description {
         ///
         /// To override the contents of this collection use [`set_dns_ip_addrs`](Self::set_dns_ip_addrs).
         ///
-        /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD
-        /// directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For
-        /// an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers
-        /// in your self-managed directory to which the AD Connector is connected.</p>
+        /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
         pub fn dns_ip_addrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_ip_addrs.unwrap_or_default();
             v.push(input.into());
             self.dns_ip_addrs = Some(v);
             self
         }
-        /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD
-        /// directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For
-        /// an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers
-        /// in your self-managed directory to which the AD Connector is connected.</p>
+        /// <p>The IP addresses of the DNS servers for the directory. For a Simple AD or Microsoft AD directory, these are the IP addresses of the Simple AD or Microsoft AD directory servers. For an AD Connector directory, these are the IP addresses of the DNS servers or domain controllers in your self-managed directory to which the AD Connector is connected.</p>
         pub fn set_dns_ip_addrs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4839,16 +4710,12 @@ pub mod directory_description {
             self.share_status = input;
             self
         }
-        /// <p>The method used when sharing a directory to determine whether the directory should be
-        /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
-        /// sending a shared directory request (<code>HANDSHAKE</code>).</p>
+        /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
         pub fn share_method(mut self, input: crate::model::ShareMethod) -> Self {
             self.share_method = Some(input);
             self
         }
-        /// <p>The method used when sharing a directory to determine whether the directory should be
-        /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
-        /// sending a shared directory request (<code>HANDSHAKE</code>).</p>
+        /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a shared directory request (<code>HANDSHAKE</code>).</p>
         pub fn set_share_method(
             mut self,
             input: std::option::Option<crate::model::ShareMethod>,
@@ -4856,16 +4723,12 @@ pub mod directory_description {
             self.share_method = input;
             self
         }
-        /// <p>A directory share request that is sent by the directory owner to the directory consumer.
-        /// The request includes a typed message to help the directory consumer administrator determine
-        /// whether to approve or reject the share invitation.</p>
+        /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
         pub fn share_notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.share_notes = Some(input.into());
             self
         }
-        /// <p>A directory share request that is sent by the directory owner to the directory consumer.
-        /// The request includes a typed message to help the directory consumer administrator determine
-        /// whether to approve or reject the share invitation.</p>
+        /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
         pub fn set_share_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.share_notes = input;
             self
@@ -4906,9 +4769,7 @@ pub mod directory_description {
             self.r#type = input;
             self
         }
-        /// <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
-        /// information about a directory. This member is only present if the directory is a Simple AD or
-        /// Managed Microsoft AD directory.</p>
+        /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
         pub fn vpc_settings(
             mut self,
             input: crate::model::DirectoryVpcSettingsDescription,
@@ -4916,9 +4777,7 @@ pub mod directory_description {
             self.vpc_settings = Some(input);
             self
         }
-        /// <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
-        /// information about a directory. This member is only present if the directory is a Simple AD or
-        /// Managed Microsoft AD directory.</p>
+        /// <p>A <code>DirectoryVpcSettingsDescription</code> object that contains additional information about a directory. This member is only present if the directory is a Simple AD or Managed Microsoft AD directory.</p>
         pub fn set_vpc_settings(
             mut self,
             input: std::option::Option<crate::model::DirectoryVpcSettingsDescription>,
@@ -4926,9 +4785,7 @@ pub mod directory_description {
             self.vpc_settings = input;
             self
         }
-        /// <p>A <a>DirectoryConnectSettingsDescription</a> object that contains additional
-        /// information about an AD Connector directory. This member is only present if the directory is
-        /// an AD Connector directory.</p>
+        /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
         pub fn connect_settings(
             mut self,
             input: crate::model::DirectoryConnectSettingsDescription,
@@ -4936,9 +4793,7 @@ pub mod directory_description {
             self.connect_settings = Some(input);
             self
         }
-        /// <p>A <a>DirectoryConnectSettingsDescription</a> object that contains additional
-        /// information about an AD Connector directory. This member is only present if the directory is
-        /// an AD Connector directory.</p>
+        /// <p>A <code>DirectoryConnectSettingsDescription</code> object that contains additional information about an AD Connector directory. This member is only present if the directory is an AD Connector directory.</p>
         pub fn set_connect_settings(
             mut self,
             input: std::option::Option<crate::model::DirectoryConnectSettingsDescription>,
@@ -4946,14 +4801,12 @@ pub mod directory_description {
             self.connect_settings = input;
             self
         }
-        /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-        /// server configured for this directory.</p>
+        /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
         pub fn radius_settings(mut self, input: crate::model::RadiusSettings) -> Self {
             self.radius_settings = Some(input);
             self
         }
-        /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-        /// server configured for this directory.</p>
+        /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server configured for this directory.</p>
         pub fn set_radius_settings(
             mut self,
             input: std::option::Option<crate::model::RadiusSettings>,
@@ -4984,24 +4837,22 @@ pub mod directory_description {
             self.stage_reason = input;
             self
         }
-        /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <a>EnableSso</a> and <a>DisableSso</a>.</p>
+        /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
         pub fn sso_enabled(mut self, input: bool) -> Self {
             self.sso_enabled = Some(input);
             self
         }
-        /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <a>EnableSso</a> and <a>DisableSso</a>.</p>
+        /// <p>Indicates if single sign-on is enabled for the directory. For more information, see <code>EnableSso</code> and <code>DisableSso</code>.</p>
         pub fn set_sso_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.sso_enabled = input;
             self
         }
-        /// <p>The desired number of domain controllers in the directory if the directory is Microsoft
-        /// AD.</p>
+        /// <p>The desired number of domain controllers in the directory if the directory is Microsoft AD.</p>
         pub fn desired_number_of_domain_controllers(mut self, input: i32) -> Self {
             self.desired_number_of_domain_controllers = Some(input);
             self
         }
-        /// <p>The desired number of domain controllers in the directory if the directory is Microsoft
-        /// AD.</p>
+        /// <p>The desired number of domain controllers in the directory if the directory is Microsoft AD.</p>
         pub fn set_desired_number_of_domain_controllers(
             mut self,
             input: std::option::Option<i32>,
@@ -5079,15 +4930,13 @@ impl DirectoryDescription {
     }
 }
 
-/// <p>Provides information about the Regions that are configured for multi-Region
-/// replication.</p>
+/// <p>Provides information about the Regions that are configured for multi-Region replication.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionsInfo {
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
     pub primary_region: std::option::Option<std::string::String>,
-    /// <p>Lists the Regions where the directory has been replicated, excluding the primary
-    /// Region.</p>
+    /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
     pub additional_regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RegionsInfo {
@@ -5095,8 +4944,7 @@ impl RegionsInfo {
     pub fn primary_region(&self) -> std::option::Option<&str> {
         self.primary_region.as_deref()
     }
-    /// <p>Lists the Regions where the directory has been replicated, excluding the primary
-    /// Region.</p>
+    /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
     pub fn additional_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_regions.as_deref()
     }
@@ -5136,16 +4984,14 @@ pub mod regions_info {
         ///
         /// To override the contents of this collection use [`set_additional_regions`](Self::set_additional_regions).
         ///
-        /// <p>Lists the Regions where the directory has been replicated, excluding the primary
-        /// Region.</p>
+        /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
         pub fn additional_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.additional_regions.unwrap_or_default();
             v.push(input.into());
             self.additional_regions = Some(v);
             self
         }
-        /// <p>Lists the Regions where the directory has been replicated, excluding the primary
-        /// Region.</p>
+        /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
         pub fn set_additional_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5169,13 +5015,11 @@ impl RegionsInfo {
     }
 }
 
-/// <p>Describes the directory owner account details that have been shared to the directory
-/// consumer account.</p>
+/// <p>Describes the directory owner account details that have been shared to the directory consumer account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OwnerDirectoryDescription {
-    /// <p>Identifier of the Managed Microsoft AD directory in the directory owner
-    /// account.</p>
+    /// <p>Identifier of the Managed Microsoft AD directory in the directory owner account.</p>
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>Identifier of the directory owner account.</p>
     pub account_id: std::option::Option<std::string::String>,
@@ -5183,15 +5027,13 @@ pub struct OwnerDirectoryDescription {
     pub dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Information about the VPC settings for the directory.</p>
     pub vpc_settings: std::option::Option<crate::model::DirectoryVpcSettingsDescription>,
-    /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-    /// server.</p>
+    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub radius_settings: std::option::Option<crate::model::RadiusSettings>,
     /// <p>Information about the status of the RADIUS server.</p>
     pub radius_status: std::option::Option<crate::model::RadiusStatus>,
 }
 impl OwnerDirectoryDescription {
-    /// <p>Identifier of the Managed Microsoft AD directory in the directory owner
-    /// account.</p>
+    /// <p>Identifier of the Managed Microsoft AD directory in the directory owner account.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
@@ -5209,8 +5051,7 @@ impl OwnerDirectoryDescription {
     ) -> std::option::Option<&crate::model::DirectoryVpcSettingsDescription> {
         self.vpc_settings.as_ref()
     }
-    /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-    /// server.</p>
+    /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub fn radius_settings(&self) -> std::option::Option<&crate::model::RadiusSettings> {
         self.radius_settings.as_ref()
     }
@@ -5245,14 +5086,12 @@ pub mod owner_directory_description {
         pub(crate) radius_status: std::option::Option<crate::model::RadiusStatus>,
     }
     impl Builder {
-        /// <p>Identifier of the Managed Microsoft AD directory in the directory owner
-        /// account.</p>
+        /// <p>Identifier of the Managed Microsoft AD directory in the directory owner account.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>Identifier of the Managed Microsoft AD directory in the directory owner
-        /// account.</p>
+        /// <p>Identifier of the Managed Microsoft AD directory in the directory owner account.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -5302,14 +5141,12 @@ pub mod owner_directory_description {
             self.vpc_settings = input;
             self
         }
-        /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-        /// server.</p>
+        /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
         pub fn radius_settings(mut self, input: crate::model::RadiusSettings) -> Self {
             self.radius_settings = Some(input);
             self
         }
-        /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
-        /// server.</p>
+        /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
         pub fn set_radius_settings(
             mut self,
             input: std::option::Option<crate::model::RadiusSettings>,
@@ -5901,37 +5738,27 @@ impl AsRef<str> for DirectorySize {
     }
 }
 
-/// <p>Points to a remote domain with which you are setting up a trust relationship.
-/// Conditional forwarders are required in order to set up a trust relationship with another
-/// domain.</p>
+/// <p>Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConditionalForwarder {
-    /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the
-    /// conditional forwarder.</p>
+    /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
     pub remote_domain_name: std::option::Option<std::string::String>,
-    /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the
-    /// IP address of the DNS server that your conditional forwarder points to.</p>
+    /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
     pub dns_ip_addrs: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The replication scope of the conditional forwarder. The only allowed value is
-    /// <code>Domain</code>, which will replicate the conditional forwarder to all of the domain
-    /// controllers for your Amazon Web Services directory.</p>
+    /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
     pub replication_scope: std::option::Option<crate::model::ReplicationScope>,
 }
 impl ConditionalForwarder {
-    /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the
-    /// conditional forwarder.</p>
+    /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
     pub fn remote_domain_name(&self) -> std::option::Option<&str> {
         self.remote_domain_name.as_deref()
     }
-    /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the
-    /// IP address of the DNS server that your conditional forwarder points to.</p>
+    /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
     pub fn dns_ip_addrs(&self) -> std::option::Option<&[std::string::String]> {
         self.dns_ip_addrs.as_deref()
     }
-    /// <p>The replication scope of the conditional forwarder. The only allowed value is
-    /// <code>Domain</code>, which will replicate the conditional forwarder to all of the domain
-    /// controllers for your Amazon Web Services directory.</p>
+    /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
     pub fn replication_scope(&self) -> std::option::Option<&crate::model::ReplicationScope> {
         self.replication_scope.as_ref()
     }
@@ -5956,14 +5783,12 @@ pub mod conditional_forwarder {
         pub(crate) replication_scope: std::option::Option<crate::model::ReplicationScope>,
     }
     impl Builder {
-        /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the
-        /// conditional forwarder.</p>
+        /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
         pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.remote_domain_name = Some(input.into());
             self
         }
-        /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the
-        /// conditional forwarder.</p>
+        /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
         pub fn set_remote_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5975,16 +5800,14 @@ pub mod conditional_forwarder {
         ///
         /// To override the contents of this collection use [`set_dns_ip_addrs`](Self::set_dns_ip_addrs).
         ///
-        /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the
-        /// IP address of the DNS server that your conditional forwarder points to.</p>
+        /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
         pub fn dns_ip_addrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_ip_addrs.unwrap_or_default();
             v.push(input.into());
             self.dns_ip_addrs = Some(v);
             self
         }
-        /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the
-        /// IP address of the DNS server that your conditional forwarder points to.</p>
+        /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
         pub fn set_dns_ip_addrs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5992,16 +5815,12 @@ pub mod conditional_forwarder {
             self.dns_ip_addrs = input;
             self
         }
-        /// <p>The replication scope of the conditional forwarder. The only allowed value is
-        /// <code>Domain</code>, which will replicate the conditional forwarder to all of the domain
-        /// controllers for your Amazon Web Services directory.</p>
+        /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
         pub fn replication_scope(mut self, input: crate::model::ReplicationScope) -> Self {
             self.replication_scope = Some(input);
             self
         }
-        /// <p>The replication scope of the conditional forwarder. The only allowed value is
-        /// <code>Domain</code>, which will replicate the conditional forwarder to all of the domain
-        /// controllers for your Amazon Web Services directory.</p>
+        /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
         pub fn set_replication_scope(
             mut self,
             input: std::option::Option<crate::model::ReplicationScope>,
@@ -6452,8 +6271,7 @@ pub struct Computer {
     pub computer_id: std::option::Option<std::string::String>,
     /// <p>The computer name.</p>
     pub computer_name: std::option::Option<std::string::String>,
-    /// <p>An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the
-    /// computer account.</p>
+    /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
     pub computer_attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl Computer {
@@ -6465,8 +6283,7 @@ impl Computer {
     pub fn computer_name(&self) -> std::option::Option<&str> {
         self.computer_name.as_deref()
     }
-    /// <p>An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the
-    /// computer account.</p>
+    /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
     pub fn computer_attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.computer_attributes.as_deref()
     }
@@ -6518,16 +6335,14 @@ pub mod computer {
         ///
         /// To override the contents of this collection use [`set_computer_attributes`](Self::set_computer_attributes).
         ///
-        /// <p>An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the
-        /// computer account.</p>
-        pub fn computer_attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
+        pub fn computer_attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.computer_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.computer_attributes = Some(v);
             self
         }
-        /// <p>An array of <a>Attribute</a> objects containing the LDAP attributes that belong to the
-        /// computer account.</p>
+        /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
         pub fn set_computer_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -6625,8 +6440,7 @@ impl Attribute {
     }
 }
 
-/// <p>Contains information for the <a>ConnectDirectory</a> operation when an AD
-/// Connector directory is being created.</p>
+/// <p>Contains information for the <code>ConnectDirectory</code> operation when an AD Connector directory is being created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryConnectSettings {
@@ -6634,21 +6448,13 @@ pub struct DirectoryConnectSettings {
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>A list of subnet identifiers in the VPC in which the AD Connector is created.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed
-    /// directory.</p>
+    /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
     pub customer_dns_ips: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The user name of an account in your self-managed directory that is used to connect to the
-    /// directory. This account must have the following permissions:</p>
+    /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Read users and groups</p>
-    /// </li>
-    /// <li>
-    /// <p>Create computer objects</p>
-    /// </li>
-    /// <li>
-    /// <p>Join computers to the domain</p>
-    /// </li>
+    /// <li> <p>Read users and groups</p> </li>
+    /// <li> <p>Create computer objects</p> </li>
+    /// <li> <p>Join computers to the domain</p> </li>
     /// </ul>
     pub customer_user_name: std::option::Option<std::string::String>,
 }
@@ -6661,23 +6467,15 @@ impl DirectoryConnectSettings {
     pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed
-    /// directory.</p>
+    /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
     pub fn customer_dns_ips(&self) -> std::option::Option<&[std::string::String]> {
         self.customer_dns_ips.as_deref()
     }
-    /// <p>The user name of an account in your self-managed directory that is used to connect to the
-    /// directory. This account must have the following permissions:</p>
+    /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Read users and groups</p>
-    /// </li>
-    /// <li>
-    /// <p>Create computer objects</p>
-    /// </li>
-    /// <li>
-    /// <p>Join computers to the domain</p>
-    /// </li>
+    /// <li> <p>Read users and groups</p> </li>
+    /// <li> <p>Create computer objects</p> </li>
+    /// <li> <p>Join computers to the domain</p> </li>
     /// </ul>
     pub fn customer_user_name(&self) -> std::option::Option<&str> {
         self.customer_user_name.as_deref()
@@ -6738,16 +6536,14 @@ pub mod directory_connect_settings {
         ///
         /// To override the contents of this collection use [`set_customer_dns_ips`](Self::set_customer_dns_ips).
         ///
-        /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed
-        /// directory.</p>
+        /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
         pub fn customer_dns_ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.customer_dns_ips.unwrap_or_default();
             v.push(input.into());
             self.customer_dns_ips = Some(v);
             self
         }
-        /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed
-        /// directory.</p>
+        /// <p>A list of one or more IP addresses of DNS servers or domain controllers in your self-managed directory.</p>
         pub fn set_customer_dns_ips(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6755,35 +6551,21 @@ pub mod directory_connect_settings {
             self.customer_dns_ips = input;
             self
         }
-        /// <p>The user name of an account in your self-managed directory that is used to connect to the
-        /// directory. This account must have the following permissions:</p>
+        /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Read users and groups</p>
-        /// </li>
-        /// <li>
-        /// <p>Create computer objects</p>
-        /// </li>
-        /// <li>
-        /// <p>Join computers to the domain</p>
-        /// </li>
+        /// <li> <p>Read users and groups</p> </li>
+        /// <li> <p>Create computer objects</p> </li>
+        /// <li> <p>Join computers to the domain</p> </li>
         /// </ul>
         pub fn customer_user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.customer_user_name = Some(input.into());
             self
         }
-        /// <p>The user name of an account in your self-managed directory that is used to connect to the
-        /// directory. This account must have the following permissions:</p>
+        /// <p>The user name of an account in your self-managed directory that is used to connect to the directory. This account must have the following permissions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Read users and groups</p>
-        /// </li>
-        /// <li>
-        /// <p>Create computer objects</p>
-        /// </li>
-        /// <li>
-        /// <p>Join computers to the domain</p>
-        /// </li>
+        /// <li> <p>Read users and groups</p> </li>
+        /// <li> <p>Create computer objects</p> </li>
+        /// <li> <p>Join computers to the domain</p> </li>
         /// </ul>
         pub fn set_customer_user_name(
             mut self,
@@ -6810,22 +6592,17 @@ impl DirectoryConnectSettings {
     }
 }
 
-/// <p>IP address block. This is often the address block of the DNS server used for your
-/// self-managed domain. </p>
+/// <p>IP address block. This is often the address block of the DNS server used for your self-managed domain. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpRoute {
-    /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the
-    /// address block of the DNS server used for your self-managed domain. For a single IP address
-    /// use a CIDR address block with /32. For example 10.0.0.0/32.</p>
+    /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the address block of the DNS server used for your self-managed domain. For a single IP address use a CIDR address block with /32. For example 10.0.0.0/32.</p>
     pub cidr_ip: std::option::Option<std::string::String>,
     /// <p>Description of the address block.</p>
     pub description: std::option::Option<std::string::String>,
 }
 impl IpRoute {
-    /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the
-    /// address block of the DNS server used for your self-managed domain. For a single IP address
-    /// use a CIDR address block with /32. For example 10.0.0.0/32.</p>
+    /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the address block of the DNS server used for your self-managed domain. For a single IP address use a CIDR address block with /32. For example 10.0.0.0/32.</p>
     pub fn cidr_ip(&self) -> std::option::Option<&str> {
         self.cidr_ip.as_deref()
     }
@@ -6852,16 +6629,12 @@ pub mod ip_route {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the
-        /// address block of the DNS server used for your self-managed domain. For a single IP address
-        /// use a CIDR address block with /32. For example 10.0.0.0/32.</p>
+        /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the address block of the DNS server used for your self-managed domain. For a single IP address use a CIDR address block with /32. For example 10.0.0.0/32.</p>
         pub fn cidr_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.cidr_ip = Some(input.into());
             self
         }
-        /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the
-        /// address block of the DNS server used for your self-managed domain. For a single IP address
-        /// use a CIDR address block with /32. For example 10.0.0.0/32.</p>
+        /// <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often the address block of the DNS server used for your self-managed domain. For a single IP address use a CIDR address block with /32. For example 10.0.0.0/32.</p>
         pub fn set_cidr_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cidr_ip = input;
             self

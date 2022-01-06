@@ -1528,6 +1528,86 @@ pub fn parse_delete_alias_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_email_monitoring_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteEmailMonitoringConfigurationOutput,
+    crate::error::DeleteEmailMonitoringConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteEmailMonitoringConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteEmailMonitoringConfigurationError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::DeleteEmailMonitoringConfigurationError { meta: generic, kind: crate::error::DeleteEmailMonitoringConfigurationErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEmailMonitoringConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationNotFoundException" => crate::error::DeleteEmailMonitoringConfigurationError { meta: generic, kind: crate::error::DeleteEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEmailMonitoringConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationStateException" => crate::error::DeleteEmailMonitoringConfigurationError { meta: generic, kind: crate::error::DeleteEmailMonitoringConfigurationErrorKind::OrganizationStateException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEmailMonitoringConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DeleteEmailMonitoringConfigurationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_email_monitoring_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteEmailMonitoringConfigurationOutput,
+    crate::error::DeleteEmailMonitoringConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::delete_email_monitoring_configuration_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError> {
@@ -2668,6 +2748,101 @@ pub fn parse_deregister_mail_domain_response(
         #[allow(unused_mut)]
         let mut output = crate::output::deregister_mail_domain_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_email_monitoring_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeEmailMonitoringConfigurationOutput,
+    crate::error::DescribeEmailMonitoringConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeEmailMonitoringConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeEmailMonitoringConfigurationError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::DescribeEmailMonitoringConfigurationError { meta: generic, kind: crate::error::DescribeEmailMonitoringConfigurationErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEmailMonitoringConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationNotFoundException" => crate::error::DescribeEmailMonitoringConfigurationError { meta: generic, kind: crate::error::DescribeEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEmailMonitoringConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationStateException" => crate::error::DescribeEmailMonitoringConfigurationError { meta: generic, kind: crate::error::DescribeEmailMonitoringConfigurationErrorKind::OrganizationStateException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEmailMonitoringConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::DescribeEmailMonitoringConfigurationError { meta: generic, kind: crate::error::DescribeEmailMonitoringConfigurationErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEmailMonitoringConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DescribeEmailMonitoringConfigurationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_email_monitoring_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeEmailMonitoringConfigurationOutput,
+    crate::error::DescribeEmailMonitoringConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_email_monitoring_configuration_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_describe_email_monitoring_configuration(response.body().as_ref(), output).map_err(crate::error::DescribeEmailMonitoringConfigurationError::unhandled)?;
         output.build()
     })
 }
@@ -5615,6 +5790,98 @@ pub fn parse_put_access_control_rule_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_access_control_rule_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_email_monitoring_configuration_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutEmailMonitoringConfigurationOutput,
+    crate::error::PutEmailMonitoringConfigurationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::PutEmailMonitoringConfigurationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::PutEmailMonitoringConfigurationError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterException" => crate::error::PutEmailMonitoringConfigurationError { meta: generic, kind: crate::error::PutEmailMonitoringConfigurationErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEmailMonitoringConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationNotFoundException" => crate::error::PutEmailMonitoringConfigurationError { meta: generic, kind: crate::error::PutEmailMonitoringConfigurationErrorKind::OrganizationNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEmailMonitoringConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "OrganizationStateException" => crate::error::PutEmailMonitoringConfigurationError { meta: generic, kind: crate::error::PutEmailMonitoringConfigurationErrorKind::OrganizationStateException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::organization_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_organization_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEmailMonitoringConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceNotFoundException" => crate::error::PutEmailMonitoringConfigurationError { meta: generic, kind: crate::error::PutEmailMonitoringConfigurationErrorKind::ResourceNotFoundException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutEmailMonitoringConfigurationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::PutEmailMonitoringConfigurationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_email_monitoring_configuration_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutEmailMonitoringConfigurationOutput,
+    crate::error::PutEmailMonitoringConfigurationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::put_email_monitoring_configuration_output::Builder::default();
         let _ = response;
         output.build()
     })

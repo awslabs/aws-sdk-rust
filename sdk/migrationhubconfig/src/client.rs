@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Migration Hub Config
@@ -94,6 +94,7 @@ where
     ///
     /// See [`DescribeHomeRegionControls`](crate::client::fluent_builders::DescribeHomeRegionControls) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeHomeRegionControls::into_paginator).
     pub fn describe_home_region_controls(
         &self,
     ) -> fluent_builders::DescribeHomeRegionControls<C, M, R> {
@@ -118,7 +119,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateHomeRegionControl`.
     ///
     /// <p>This API sets up the home region for the calling account only.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHomeRegionControl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -163,10 +164,10 @@ pub mod fluent_builders {
                 crate::input::CreateHomeRegionControlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -175,8 +176,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the home region of the calling account.</p>
-        pub fn home_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_region(inp);
+        pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_region(input.into());
             self
         }
         /// <p>The name of the home region of the calling account.</p>
@@ -184,26 +185,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_home_region(input);
             self
         }
-        /// <p>The account for which this command sets up a home region control. The <code>Target</code>
-        /// is always of type <code>ACCOUNT</code>.</p>
-        pub fn target(mut self, inp: crate::model::Target) -> Self {
-            self.inner = self.inner.target(inp);
+        /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
+        pub fn target(mut self, input: crate::model::Target) -> Self {
+            self.inner = self.inner.target(input);
             self
         }
-        /// <p>The account for which this command sets up a home region control. The <code>Target</code>
-        /// is always of type <code>ACCOUNT</code>.</p>
+        /// <p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>
         pub fn set_target(mut self, input: std::option::Option<crate::model::Target>) -> Self {
             self.inner = self.inner.set_target(input);
             self
         }
-        /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether
-        /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether
-        /// the caller has permission to make the call.</p>
+        /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
@@ -211,9 +208,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeHomeRegionControls`.
     ///
-    /// <p>This API permits filtering on the <code>ControlId</code> and <code>HomeRegion</code>
-    /// fields.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This API permits filtering on the <code>ControlId</code> and <code>HomeRegion</code> fields.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHomeRegionControls<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -258,10 +254,10 @@ pub mod fluent_builders {
                 crate::input::DescribeHomeRegionControlsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -269,21 +265,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>ControlID</code> is a unique identifier string of your
-        /// <code>HomeRegionControl</code> object.</p>
-        pub fn control_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeHomeRegionControlsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeHomeRegionControlsPaginator<C, M, R> {
+            crate::paginator::DescribeHomeRegionControlsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
-        /// <p>The <code>ControlID</code> is a unique identifier string of your
-        /// <code>HomeRegionControl</code> object.</p>
+        /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
         pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_control_id(input);
             self
         }
         /// <p>The name of the home region you'd like to view.</p>
-        pub fn home_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_region(inp);
+        pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_region(input.into());
             self
         }
         /// <p>The name of the home region you'd like to view.</p>
@@ -291,23 +293,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_home_region(input);
             self
         }
-        /// <p>The target parameter specifies the identifier to which the home region is applied, which
-        /// is always of type <code>ACCOUNT</code>. It applies the home region to the current
-        /// <code>ACCOUNT</code>.</p>
-        pub fn target(mut self, inp: crate::model::Target) -> Self {
-            self.inner = self.inner.target(inp);
+        /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
+        pub fn target(mut self, input: crate::model::Target) -> Self {
+            self.inner = self.inner.target(input);
             self
         }
-        /// <p>The target parameter specifies the identifier to which the home region is applied, which
-        /// is always of type <code>ACCOUNT</code>. It applies the home region to the current
-        /// <code>ACCOUNT</code>.</p>
+        /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
         pub fn set_target(mut self, input: std::option::Option<crate::model::Target>) -> Self {
             self.inner = self.inner.set_target(input);
             self
         }
         /// <p>The maximum number of filtering results to display per page. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of filtering results to display per page. </p>
@@ -315,16 +313,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.
-        /// To retrieve the next page of results, make the call again using the returned token in
-        /// <code>NextToken</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.
-        /// To retrieve the next page of results, make the call again using the returned token in
-        /// <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -332,12 +326,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetHomeRegion`.
     ///
-    /// <p>Returns the calling account’s home region, if configured. This API is used by other AWS
-    /// services to determine the regional endpoint for calling AWS Application Discovery Service and
-    /// Migration Hub. You must call <code>GetHomeRegion</code> at least once before you call any
-    /// other AWS Application Discovery Service and AWS Migration Hub APIs, to obtain the account's
-    /// Migration Hub home region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the calling account’s home region, if configured. This API is used by other AWS services to determine the regional endpoint for calling AWS Application Discovery Service and Migration Hub. You must call <code>GetHomeRegion</code> at least once before you call any other AWS Application Discovery Service and AWS Migration Hub APIs, to obtain the account's Migration Hub home region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHomeRegion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -382,10 +372,10 @@ pub mod fluent_builders {
                 crate::input::GetHomeRegionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -395,6 +385,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS CodeCommit
@@ -242,6 +242,7 @@ where
     ///
     /// See [`DescribeMergeConflicts`](crate::client::fluent_builders::DescribeMergeConflicts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMergeConflicts::into_paginator).
     pub fn describe_merge_conflicts(&self) -> fluent_builders::DescribeMergeConflicts<C, M, R> {
         fluent_builders::DescribeMergeConflicts::new(self.handle.clone())
     }
@@ -249,6 +250,7 @@ where
     ///
     /// See [`DescribePullRequestEvents`](crate::client::fluent_builders::DescribePullRequestEvents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePullRequestEvents::into_paginator).
     pub fn describe_pull_request_events(
         &self,
     ) -> fluent_builders::DescribePullRequestEvents<C, M, R> {
@@ -304,6 +306,7 @@ where
     ///
     /// See [`GetCommentReactions`](crate::client::fluent_builders::GetCommentReactions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCommentReactions::into_paginator).
     pub fn get_comment_reactions(&self) -> fluent_builders::GetCommentReactions<C, M, R> {
         fluent_builders::GetCommentReactions::new(self.handle.clone())
     }
@@ -311,6 +314,7 @@ where
     ///
     /// See [`GetCommentsForComparedCommit`](crate::client::fluent_builders::GetCommentsForComparedCommit) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCommentsForComparedCommit::into_paginator).
     pub fn get_comments_for_compared_commit(
         &self,
     ) -> fluent_builders::GetCommentsForComparedCommit<C, M, R> {
@@ -320,6 +324,7 @@ where
     ///
     /// See [`GetCommentsForPullRequest`](crate::client::fluent_builders::GetCommentsForPullRequest) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCommentsForPullRequest::into_paginator).
     pub fn get_comments_for_pull_request(
         &self,
     ) -> fluent_builders::GetCommentsForPullRequest<C, M, R> {
@@ -336,6 +341,7 @@ where
     ///
     /// See [`GetDifferences`](crate::client::fluent_builders::GetDifferences) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDifferences::into_paginator).
     pub fn get_differences(&self) -> fluent_builders::GetDifferences<C, M, R> {
         fluent_builders::GetDifferences::new(self.handle.clone())
     }
@@ -364,6 +370,7 @@ where
     ///
     /// See [`GetMergeConflicts`](crate::client::fluent_builders::GetMergeConflicts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetMergeConflicts::into_paginator).
     pub fn get_merge_conflicts(&self) -> fluent_builders::GetMergeConflicts<C, M, R> {
         fluent_builders::GetMergeConflicts::new(self.handle.clone())
     }
@@ -417,6 +424,7 @@ where
     ///
     /// See [`ListApprovalRuleTemplates`](crate::client::fluent_builders::ListApprovalRuleTemplates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApprovalRuleTemplates::into_paginator).
     pub fn list_approval_rule_templates(
         &self,
     ) -> fluent_builders::ListApprovalRuleTemplates<C, M, R> {
@@ -426,6 +434,7 @@ where
     ///
     /// See [`ListAssociatedApprovalRuleTemplatesForRepository`](crate::client::fluent_builders::ListAssociatedApprovalRuleTemplatesForRepository) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssociatedApprovalRuleTemplatesForRepository::into_paginator).
     pub fn list_associated_approval_rule_templates_for_repository(
         &self,
     ) -> fluent_builders::ListAssociatedApprovalRuleTemplatesForRepository<C, M, R> {
@@ -435,6 +444,7 @@ where
     ///
     /// See [`ListBranches`](crate::client::fluent_builders::ListBranches) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBranches::into_paginator).
     pub fn list_branches(&self) -> fluent_builders::ListBranches<C, M, R> {
         fluent_builders::ListBranches::new(self.handle.clone())
     }
@@ -442,6 +452,7 @@ where
     ///
     /// See [`ListPullRequests`](crate::client::fluent_builders::ListPullRequests) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPullRequests::into_paginator).
     pub fn list_pull_requests(&self) -> fluent_builders::ListPullRequests<C, M, R> {
         fluent_builders::ListPullRequests::new(self.handle.clone())
     }
@@ -449,6 +460,7 @@ where
     ///
     /// See [`ListRepositories`](crate::client::fluent_builders::ListRepositories) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRepositories::into_paginator).
     pub fn list_repositories(&self) -> fluent_builders::ListRepositories<C, M, R> {
         fluent_builders::ListRepositories::new(self.handle.clone())
     }
@@ -456,6 +468,7 @@ where
     ///
     /// See [`ListRepositoriesForApprovalRuleTemplate`](crate::client::fluent_builders::ListRepositoriesForApprovalRuleTemplate) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRepositoriesForApprovalRuleTemplate::into_paginator).
     pub fn list_repositories_for_approval_rule_template(
         &self,
     ) -> fluent_builders::ListRepositoriesForApprovalRuleTemplate<C, M, R> {
@@ -703,14 +716,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateApprovalRuleTemplateWithRepository`.
     ///
-    /// <p>Creates an association between an approval rule template and a specified repository.
-    /// Then, the next time a pull request is created in the repository where the destination
-    /// reference (if specified) matches the destination reference (branch) for the pull
-    /// request, an approval rule that matches the template conditions is automatically created
-    /// for that pull request. If no destination references are specified in the template, an
-    /// approval rule that matches the template contents is created for all pull requests in
-    /// that repository.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an association between an approval rule template and a specified repository. Then, the next time a pull request is created in the repository where the destination reference (if specified) matches the destination reference (branch) for the pull request, an approval rule that matches the template conditions is automatically created for that pull request. If no destination references are specified in the template, an approval rule that matches the template contents is created for all pull requests in that repository.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateApprovalRuleTemplateWithRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -757,10 +764,10 @@ pub mod fluent_builders {
                 crate::input::AssociateApprovalRuleTemplateWithRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -769,8 +776,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the approval rule template. </p>
-        pub fn approval_rule_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_template_name(inp);
+        pub fn approval_rule_template_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name for the approval rule template. </p>
@@ -782,8 +792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository that you want to associate with the template.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that you want to associate with the template.</p>
@@ -798,7 +808,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchAssociateApprovalRuleTemplateWithRepositories`.
     ///
     /// <p>Creates an association between an approval rule template and one or more specified repositories. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAssociateApprovalRuleTemplateWithRepositories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -837,10 +847,10 @@ pub mod fluent_builders {
                                     crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError,
                                     crate::input::BatchAssociateApprovalRuleTemplateWithRepositoriesInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -849,8 +859,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template you want to associate with one or more repositories.</p>
-        pub fn approval_rule_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_template_name(inp);
+        pub fn approval_rule_template_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the template you want to associate with one or more repositories.</p>
@@ -865,16 +878,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
         ///
-        /// <p>The names of the repositories you want to associate with the template.</p>
-        /// <note>
+        /// <p>The names of the repositories you want to associate with the template.</p> <note>
         /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
         /// </note>
-        pub fn repository_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_names(inp);
+        pub fn repository_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_names(input.into());
             self
         }
-        /// <p>The names of the repositories you want to associate with the template.</p>
-        /// <note>
+        /// <p>The names of the repositories you want to associate with the template.</p> <note>
         /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
         /// </note>
         pub fn set_repository_names(
@@ -888,7 +899,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDescribeMergeConflicts`.
     ///
     /// <p>Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the squash or three-way merge strategy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDescribeMergeConflicts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -933,10 +944,10 @@ pub mod fluent_builders {
                 crate::input::BatchDescribeMergeConflictsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -945,8 +956,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the merge conflicts you want to review.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the merge conflicts you want to review.</p>
@@ -957,14 +968,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn destination_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn destination_commit_specifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_destination_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -972,14 +984,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_commit_specifier(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_source_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -988,8 +998,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The merge option or strategy you want to use to merge the code.</p>
-        pub fn merge_option(mut self, inp: crate::model::MergeOptionTypeEnum) -> Self {
-            self.inner = self.inner.merge_option(inp);
+        pub fn merge_option(mut self, input: crate::model::MergeOptionTypeEnum) -> Self {
+            self.inner = self.inner.merge_option(input);
             self
         }
         /// <p>The merge option or strategy you want to use to merge the code.</p>
@@ -1001,8 +1011,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of merge hunks to include in the output.</p>
-        pub fn max_merge_hunks(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_merge_hunks(inp);
+        pub fn max_merge_hunks(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_merge_hunks(input);
             self
         }
         /// <p>The maximum number of merge hunks to include in the output.</p>
@@ -1011,8 +1021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of files to include in the output.</p>
-        pub fn max_conflict_files(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_conflict_files(inp);
+        pub fn max_conflict_files(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_conflict_files(input);
             self
         }
         /// <p>The maximum number of files to include in the output.</p>
@@ -1025,8 +1035,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_file_paths`](Self::set_file_paths).
         ///
         /// <p>The path of the target files used to describe the conflicts. If not specified, the default is all conflict files.</p>
-        pub fn file_paths(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_paths(inp);
+        pub fn file_paths(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_paths(input.into());
             self
         }
         /// <p>The path of the target files used to describe the conflicts. If not specified, the default is all conflict files.</p>
@@ -1037,21 +1047,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_paths(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            inp: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(inp);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn set_conflict_detail_level(
             mut self,
             input: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
@@ -1059,19 +1063,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_detail_level(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            inp: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(inp);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn set_conflict_resolution_strategy(
             mut self,
             input: std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
@@ -1079,14 +1079,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_resolution_strategy(input);
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1095,7 +1093,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDisassociateApprovalRuleTemplateFromRepositories`.
     ///
     /// <p>Removes the association between an approval rule template and one or more specified repositories. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisassociateApprovalRuleTemplateFromRepositories<C = aws_smithy_client::erase::DynConnector, M= crate::middleware::DefaultMiddleware, R= aws_smithy_client::retry::Standard> {
                             handle: std::sync::Arc<super::Handle<C, M, R>>,
                             inner: crate::input::batch_disassociate_approval_rule_template_from_repositories_input::Builder
@@ -1129,10 +1127,10 @@ pub mod fluent_builders {
                                     crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError,
                                     crate::input::BatchDisassociateApprovalRuleTemplateFromRepositoriesInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1141,8 +1139,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template that you want to disassociate from one or more repositories.</p>
-        pub fn approval_rule_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_template_name(inp);
+        pub fn approval_rule_template_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the template that you want to disassociate from one or more repositories.</p>
@@ -1157,18 +1158,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
         ///
-        /// <p>The repository names that you want to disassociate from the approval rule
-        /// template.</p>
-        /// <note>
+        /// <p>The repository names that you want to disassociate from the approval rule template.</p> <note>
         /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
         /// </note>
-        pub fn repository_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_names(inp);
+        pub fn repository_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_names(input.into());
             self
         }
-        /// <p>The repository names that you want to disassociate from the approval rule
-        /// template.</p>
-        /// <note>
+        /// <p>The repository names that you want to disassociate from the approval rule template.</p> <note>
         /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
         /// </note>
         pub fn set_repository_names(
@@ -1182,7 +1179,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetCommits`.
     ///
     /// <p>Returns information about the contents of one or more commits in a repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetCommits<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1227,10 +1224,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetCommitsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1242,19 +1239,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_commit_ids`](Self::set_commit_ids).
         ///
-        /// <p>The full commit IDs of the commits to get information about.</p>
-        /// <note>
-        /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA
-        /// IDs.</p>
+        /// <p>The full commit IDs of the commits to get information about.</p> <note>
+        /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
         /// </note>
-        pub fn commit_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_ids(inp);
+        pub fn commit_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_ids(input.into());
             self
         }
-        /// <p>The full commit IDs of the commits to get information about.</p>
-        /// <note>
-        /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA
-        /// IDs.</p>
+        /// <p>The full commit IDs of the commits to get information about.</p> <note>
+        /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
         /// </note>
         pub fn set_commit_ids(
             mut self,
@@ -1264,8 +1257,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository that contains the commits.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the commits.</p>
@@ -1279,15 +1272,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetRepositories`.
     ///
-    /// <p>Returns information about one or more repositories.</p>
-    /// <note>
-    /// <p>The description field for a repository accepts all HTML characters and all valid
-    /// Unicode characters. Applications that do not HTML-encode the description and display
-    /// it in a webpage can expose users to potentially malicious code. Make sure that you
-    /// HTML-encode the description field in any application that uses this API to display
-    /// the repository description on a webpage.</p>
+    /// <p>Returns information about one or more repositories.</p> <note>
+    /// <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetRepositories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1332,10 +1320,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetRepositoriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1347,16 +1335,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
         ///
-        /// <p>The names of the repositories to get information about.</p>
-        /// <note>
+        /// <p>The names of the repositories to get information about.</p> <note>
         /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
         /// </note>
-        pub fn repository_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_names(inp);
+        pub fn repository_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_names(input.into());
             self
         }
-        /// <p>The names of the repositories to get information about.</p>
-        /// <note>
+        /// <p>The names of the repositories to get information about.</p> <note>
         /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
         /// </note>
         pub fn set_repository_names(
@@ -1369,12 +1355,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateApprovalRuleTemplate`.
     ///
-    /// <p>Creates a template for approval rules that can then be associated with one or more
-    /// repositories in your AWS account. When you associate a template with a repository, AWS
-    /// CodeCommit creates an approval rule that matches the conditions of the template for all
-    /// pull requests that meet the conditions of the template. For more information, see
-    /// <a>AssociateApprovalRuleTemplateWithRepository</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a template for approval rules that can then be associated with one or more repositories in your AWS account. When you associate a template with a repository, AWS CodeCommit creates an approval rule that matches the conditions of the template for all pull requests that meet the conditions of the template. For more information, see <code>AssociateApprovalRuleTemplateWithRepository</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApprovalRuleTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1419,10 +1401,10 @@ pub mod fluent_builders {
                 crate::input::CreateApprovalRuleTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1430,16 +1412,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the approval rule template. Provide descriptive names, because this name
-        /// is applied to the approval rules created automatically in associated
-        /// repositories.</p>
-        pub fn approval_rule_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_template_name(inp);
+        /// <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
+        pub fn approval_rule_template_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
-        /// <p>The name of the approval rule template. Provide descriptive names, because this name
-        /// is applied to the approval rules created automatically in associated
-        /// repositories.</p>
+        /// <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
         pub fn set_approval_rule_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1447,100 +1428,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_approval_rule_template_name(input);
             self
         }
-        /// <p>The content of the approval rule that is created on pull requests in associated
-        /// repositories. If you specify one or more destination references (branches), approval
-        /// rules are created in an associated repository only if their destination references
-        /// (branches) match those specified in the template.</p>
-        /// <note>
-        /// <p>When you create the content of the approval rule template, you can specify
-        /// approvers in an approval pool in one of two ways:</p>
+        /// <p>The content of the approval rule that is created on pull requests in associated repositories. If you specify one or more destination references (branches), approval rules are created in an associated repository only if their destination references (branches) match those specified in the template.</p> <note>
+        /// <p>When you create the content of the approval rule template, you can specify approvers in an approval pool in one of two ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>CodeCommitApprovers</b>: This option only
-        /// requires an AWS account and a resource. It can be used for both IAM users
-        /// and federated access users whose name matches the provided resource name.
-        /// This is a very powerful option that offers a great deal of flexibility. For
-        /// example, if you specify the AWS account <i>123456789012</i>
-        /// and <i>Mary_Major</i>, all of the following are counted as
-        /// approvals coming from that user:</p>
+        /// <li> <p> <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM users and federated access users whose name matches the provided resource name. This is a very powerful option that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals coming from that user:</p>
         /// <ul>
-        /// <li>
-        /// <p>An IAM user in the account
-        /// (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p>
-        /// </li>
-        /// <li>
-        /// <p>A federated user identified in IAM as Mary_Major
-        /// (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p>
-        /// </li>
+        /// <li> <p>An IAM user in the account (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p> </li>
+        /// <li> <p>A federated user identified in IAM as Mary_Major (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p> </li>
+        /// </ul> <p>This option does not recognize an active session of someone assuming the role of CodeCommitReview with a role session name of <i>Mary_Major</i> (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>) unless you include a wildcard (*Mary_Major).</p> </li>
+        /// <li> <p> <b>Fully qualified ARN</b>: This option allows you to specify the fully qualified Amazon Resource Name (ARN) of the IAM user or role. </p> </li>
         /// </ul>
-        /// <p>This option does not recognize an active session of someone assuming the
-        /// role of CodeCommitReview with a role session name of
-        /// <i>Mary_Major</i>
-        /// (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>)
-        /// unless you include a wildcard (*Mary_Major).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Fully qualified ARN</b>: This option allows
-        /// you to specify the fully qualified Amazon Resource Name (ARN) of the IAM
-        /// user or role. </p>
-        /// </li>
-        /// </ul>
-        /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.</p>
-        ///
+        /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn approval_rule_template_content(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.approval_rule_template_content(inp);
+            self.inner = self.inner.approval_rule_template_content(input.into());
             self
         }
-        /// <p>The content of the approval rule that is created on pull requests in associated
-        /// repositories. If you specify one or more destination references (branches), approval
-        /// rules are created in an associated repository only if their destination references
-        /// (branches) match those specified in the template.</p>
-        /// <note>
-        /// <p>When you create the content of the approval rule template, you can specify
-        /// approvers in an approval pool in one of two ways:</p>
+        /// <p>The content of the approval rule that is created on pull requests in associated repositories. If you specify one or more destination references (branches), approval rules are created in an associated repository only if their destination references (branches) match those specified in the template.</p> <note>
+        /// <p>When you create the content of the approval rule template, you can specify approvers in an approval pool in one of two ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>CodeCommitApprovers</b>: This option only
-        /// requires an AWS account and a resource. It can be used for both IAM users
-        /// and federated access users whose name matches the provided resource name.
-        /// This is a very powerful option that offers a great deal of flexibility. For
-        /// example, if you specify the AWS account <i>123456789012</i>
-        /// and <i>Mary_Major</i>, all of the following are counted as
-        /// approvals coming from that user:</p>
+        /// <li> <p> <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM users and federated access users whose name matches the provided resource name. This is a very powerful option that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals coming from that user:</p>
         /// <ul>
-        /// <li>
-        /// <p>An IAM user in the account
-        /// (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p>
-        /// </li>
-        /// <li>
-        /// <p>A federated user identified in IAM as Mary_Major
-        /// (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p>
-        /// </li>
+        /// <li> <p>An IAM user in the account (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p> </li>
+        /// <li> <p>A federated user identified in IAM as Mary_Major (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p> </li>
+        /// </ul> <p>This option does not recognize an active session of someone assuming the role of CodeCommitReview with a role session name of <i>Mary_Major</i> (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>) unless you include a wildcard (*Mary_Major).</p> </li>
+        /// <li> <p> <b>Fully qualified ARN</b>: This option allows you to specify the fully qualified Amazon Resource Name (ARN) of the IAM user or role. </p> </li>
         /// </ul>
-        /// <p>This option does not recognize an active session of someone assuming the
-        /// role of CodeCommitReview with a role session name of
-        /// <i>Mary_Major</i>
-        /// (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>)
-        /// unless you include a wildcard (*Mary_Major).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Fully qualified ARN</b>: This option allows
-        /// you to specify the fully qualified Amazon Resource Name (ARN) of the IAM
-        /// user or role. </p>
-        /// </li>
-        /// </ul>
-        /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.</p>
-        ///
+        /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn set_approval_rule_template_content(
             mut self,
@@ -1549,19 +1466,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_approval_rule_template_content(input);
             self
         }
-        /// <p>The description of the approval rule template. Consider providing a description that
-        /// explains what this template does and when it might be appropriate to associate it with
-        /// repositories.</p>
+        /// <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
         pub fn approval_rule_template_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.approval_rule_template_description(inp);
+            self.inner = self.inner.approval_rule_template_description(input.into());
             self
         }
-        /// <p>The description of the approval rule template. Consider providing a description that
-        /// explains what this template does and when it might be appropriate to associate it with
-        /// repositories.</p>
+        /// <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
         pub fn set_approval_rule_template_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1572,11 +1485,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBranch`.
     ///
-    /// <p>Creates a branch in a repository and points the branch to a commit.</p>
-    /// <note>
+    /// <p>Creates a branch in a repository and points the branch to a commit.</p> <note>
     /// <p>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBranch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1621,10 +1533,10 @@ pub mod fluent_builders {
                 crate::input::CreateBranchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1633,8 +1545,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository in which you want to create the new branch.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository in which you want to create the new branch.</p>
@@ -1646,8 +1558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new branch to create.</p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p>The name of the new branch to create.</p>
@@ -1656,8 +1568,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the commit to point the new branch to.</p>
-        pub fn commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_id(inp);
+        pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_id(input.into());
             self
         }
         /// <p>The ID of the commit to point the new branch to.</p>
@@ -1669,7 +1581,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCommit`.
     ///
     /// <p>Creates a commit for a repository on the tip of a specified branch.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCommit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1714,10 +1626,10 @@ pub mod fluent_builders {
                 crate::input::CreateCommitInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1726,8 +1638,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you create the commit.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you create the commit.</p>
@@ -1739,8 +1651,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the branch where you create the commit.</p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p>The name of the branch where you create the commit.</p>
@@ -1748,14 +1660,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_branch_name(input);
             self
         }
-        /// <p>The ID of the commit that is the parent of the commit you create. Not required if this
-        /// is an empty repository.</p>
-        pub fn parent_commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_commit_id(inp);
+        /// <p>The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.</p>
+        pub fn parent_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_commit_id(input.into());
             self
         }
-        /// <p>The ID of the commit that is the parent of the commit you create. Not required if this
-        /// is an empty repository.</p>
+        /// <p>The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.</p>
         pub fn set_parent_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1763,21 +1673,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parent_commit_id(input);
             self
         }
-        /// <p>The name of the author who created the commit. This information is used as both the
-        /// author and committer for the commit.</p>
-        pub fn author_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author_name(inp);
+        /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+        pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_name(input.into());
             self
         }
-        /// <p>The name of the author who created the commit. This information is used as both the
-        /// author and committer for the commit.</p>
+        /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
         pub fn set_author_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_author_name(input);
             self
         }
         /// <p>The email address of the person who created the commit.</p>
-        pub fn email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(inp);
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email address of the person who created the commit.</p>
@@ -1785,14 +1693,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_email(input);
             self
         }
-        /// <p>The commit message you want to include in the commit. Commit messages are limited to
-        /// 256 KB. If no message is specified, a default message is used.</p>
-        pub fn commit_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(inp);
+        /// <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
-        /// <p>The commit message you want to include in the commit. Commit messages are limited to
-        /// 256 KB. If no message is specified, a default message is used.</p>
+        /// <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
         pub fn set_commit_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1800,16 +1706,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_commit_message(input);
             self
         }
-        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
-        /// changes leave the folders empty. If true, a ..gitkeep file is created for empty folders.
-        /// The default is false.</p>
-        pub fn keep_empty_folders(mut self, inp: bool) -> Self {
-            self.inner = self.inner.keep_empty_folders(inp);
+        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.</p>
+        pub fn keep_empty_folders(mut self, input: bool) -> Self {
+            self.inner = self.inner.keep_empty_folders(input);
             self
         }
-        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
-        /// changes leave the folders empty. If true, a ..gitkeep file is created for empty folders.
-        /// The default is false.</p>
+        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.</p>
         pub fn set_keep_empty_folders(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_keep_empty_folders(input);
             self
@@ -1819,8 +1721,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_put_files`](Self::set_put_files).
         ///
         /// <p>The files to add or update in this commit.</p>
-        pub fn put_files(mut self, inp: impl Into<crate::model::PutFileEntry>) -> Self {
-            self.inner = self.inner.put_files(inp);
+        pub fn put_files(mut self, input: crate::model::PutFileEntry) -> Self {
+            self.inner = self.inner.put_files(input);
             self
         }
         /// <p>The files to add or update in this commit.</p>
@@ -1836,8 +1738,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_delete_files`](Self::set_delete_files).
         ///
         /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
-        pub fn delete_files(mut self, inp: impl Into<crate::model::DeleteFileEntry>) -> Self {
-            self.inner = self.inner.delete_files(inp);
+        pub fn delete_files(mut self, input: crate::model::DeleteFileEntry) -> Self {
+            self.inner = self.inner.delete_files(input);
             self
         }
         /// <p>The files to delete in this commit. These files still exist in earlier commits.</p>
@@ -1853,8 +1755,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_set_file_modes`](Self::set_set_file_modes).
         ///
         /// <p>The file modes to update for files in this commit.</p>
-        pub fn set_file_modes(mut self, inp: impl Into<crate::model::SetFileModeEntry>) -> Self {
-            self.inner = self.inner.set_file_modes(inp);
+        pub fn set_file_modes(mut self, input: crate::model::SetFileModeEntry) -> Self {
+            self.inner = self.inner.set_file_modes(input);
             self
         }
         /// <p>The file modes to update for files in this commit.</p>
@@ -1869,7 +1771,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePullRequest`.
     ///
     /// <p>Creates a pull request in the specified repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePullRequest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1914,10 +1816,10 @@ pub mod fluent_builders {
                 crate::input::CreatePullRequestInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1925,21 +1827,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The title of the pull request. This title is used to identify the pull request to
-        /// other users in the repository.</p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(inp);
+        /// <p>The title of the pull request. This title is used to identify the pull request to other users in the repository.</p>
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(input.into());
             self
         }
-        /// <p>The title of the pull request. This title is used to identify the pull request to
-        /// other users in the repository.</p>
+        /// <p>The title of the pull request. This title is used to identify the pull request to other users in the repository.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_title(input);
             self
         }
         /// <p>A description of the pull request.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the pull request.</p>
@@ -1951,16 +1851,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The targets for the pull request, including the source of the code to be reviewed (the
-        /// source branch) and the destination where the creator of the pull request intends the
-        /// code to be merged after the pull request is closed (the destination branch).</p>
-        pub fn targets(mut self, inp: impl Into<crate::model::Target>) -> Self {
-            self.inner = self.inner.targets(inp);
+        /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
+            self.inner = self.inner.targets(input);
             self
         }
-        /// <p>The targets for the pull request, including the source of the code to be reviewed (the
-        /// source branch) and the destination where the creator of the pull request intends the
-        /// code to be merged after the pull request is closed (the destination branch).</p>
+        /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -1968,25 +1864,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_targets(input);
             self
         }
-        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-        /// the request cannot be repeated with a changed parameter. If a request is received with
-        /// the same parameters and a token is included, the request returns information about the
-        /// initial request that used that token.</p>
-        /// <note>
-        /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an
-        /// idempotency token is created for you.</p>
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
+        /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
         /// </note>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-        /// the request cannot be repeated with a changed parameter. If a request is received with
-        /// the same parameters and a token is included, the request returns information about the
-        /// initial request that used that token.</p>
-        /// <note>
-        /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an
-        /// idempotency token is created for you.</p>
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
+        /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
         /// </note>
         pub fn set_client_request_token(
             mut self,
@@ -1999,7 +1885,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePullRequestApprovalRule`.
     ///
     /// <p>Creates an approval rule for a pull request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePullRequestApprovalRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2044,10 +1930,10 @@ pub mod fluent_builders {
                 crate::input::CreatePullRequestApprovalRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2056,8 +1942,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
@@ -2069,8 +1955,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the approval rule.</p>
-        pub fn approval_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_name(inp);
+        pub fn approval_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.approval_rule_name(input.into());
             self
         }
         /// <p>The name for the approval rule.</p>
@@ -2081,95 +1967,33 @@ pub mod fluent_builders {
             self.inner = self.inner.set_approval_rule_name(input);
             self
         }
-        /// <p>The content of the approval rule, including the number of approvals needed and the structure of an approval pool defined for approvals, if any. For more information
-        /// about approval pools, see the AWS CodeCommit User Guide.</p>
-        /// <note>
-        /// <p>When you create the content of the approval rule, you can specify approvers in an
-        /// approval pool in one of two ways:</p>
+        /// <p>The content of the approval rule, including the number of approvals needed and the structure of an approval pool defined for approvals, if any. For more information about approval pools, see the AWS CodeCommit User Guide.</p> <note>
+        /// <p>When you create the content of the approval rule, you can specify approvers in an approval pool in one of two ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>CodeCommitApprovers</b>: This option only
-        /// requires an AWS account and a resource. It can be used for both IAM users
-        /// and federated access users whose name matches the provided resource name.
-        /// This is a very powerful option that offers a great deal of flexibility. For
-        /// example, if you specify the AWS account <i>123456789012</i>
-        /// and <i>Mary_Major</i>, all of the following would be counted
-        /// as approvals coming from that user:</p>
+        /// <li> <p> <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM users and federated access users whose name matches the provided resource name. This is a very powerful option that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and <i>Mary_Major</i>, all of the following would be counted as approvals coming from that user:</p>
         /// <ul>
-        /// <li>
-        /// <p>An IAM user in the account
-        /// (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p>
-        /// </li>
-        /// <li>
-        /// <p>A federated user identified in IAM as Mary_Major
-        /// (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p>
-        /// </li>
+        /// <li> <p>An IAM user in the account (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p> </li>
+        /// <li> <p>A federated user identified in IAM as Mary_Major (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p> </li>
+        /// </ul> <p>This option does not recognize an active session of someone assuming the role of CodeCommitReview with a role session name of <i>Mary_Major</i> (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>) unless you include a wildcard (*Mary_Major).</p> </li>
+        /// <li> <p> <b>Fully qualified ARN</b>: This option allows you to specify the fully qualified Amazon Resource Name (ARN) of the IAM user or role. </p> </li>
         /// </ul>
-        /// <p>This option does not recognize an active session of someone assuming the
-        /// role of CodeCommitReview with a role session name of
-        /// <i>Mary_Major</i>
-        /// (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>)
-        /// unless you include a wildcard (*Mary_Major).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Fully qualified ARN</b>: This option allows
-        /// you to specify the fully qualified Amazon Resource Name (ARN) of the IAM
-        /// user or role. </p>
-        /// </li>
-        /// </ul>
-        /// <p>For more information about IAM ARNs, wildcards, and formats, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.</p>
-        ///
+        /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
         /// </note>
-        pub fn approval_rule_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_content(inp);
+        pub fn approval_rule_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.approval_rule_content(input.into());
             self
         }
-        /// <p>The content of the approval rule, including the number of approvals needed and the structure of an approval pool defined for approvals, if any. For more information
-        /// about approval pools, see the AWS CodeCommit User Guide.</p>
-        /// <note>
-        /// <p>When you create the content of the approval rule, you can specify approvers in an
-        /// approval pool in one of two ways:</p>
+        /// <p>The content of the approval rule, including the number of approvals needed and the structure of an approval pool defined for approvals, if any. For more information about approval pools, see the AWS CodeCommit User Guide.</p> <note>
+        /// <p>When you create the content of the approval rule, you can specify approvers in an approval pool in one of two ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>CodeCommitApprovers</b>: This option only
-        /// requires an AWS account and a resource. It can be used for both IAM users
-        /// and federated access users whose name matches the provided resource name.
-        /// This is a very powerful option that offers a great deal of flexibility. For
-        /// example, if you specify the AWS account <i>123456789012</i>
-        /// and <i>Mary_Major</i>, all of the following would be counted
-        /// as approvals coming from that user:</p>
+        /// <li> <p> <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM users and federated access users whose name matches the provided resource name. This is a very powerful option that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and <i>Mary_Major</i>, all of the following would be counted as approvals coming from that user:</p>
         /// <ul>
-        /// <li>
-        /// <p>An IAM user in the account
-        /// (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p>
-        /// </li>
-        /// <li>
-        /// <p>A federated user identified in IAM as Mary_Major
-        /// (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p>
-        /// </li>
+        /// <li> <p>An IAM user in the account (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p> </li>
+        /// <li> <p>A federated user identified in IAM as Mary_Major (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p> </li>
+        /// </ul> <p>This option does not recognize an active session of someone assuming the role of CodeCommitReview with a role session name of <i>Mary_Major</i> (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>) unless you include a wildcard (*Mary_Major).</p> </li>
+        /// <li> <p> <b>Fully qualified ARN</b>: This option allows you to specify the fully qualified Amazon Resource Name (ARN) of the IAM user or role. </p> </li>
         /// </ul>
-        /// <p>This option does not recognize an active session of someone assuming the
-        /// role of CodeCommitReview with a role session name of
-        /// <i>Mary_Major</i>
-        /// (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>)
-        /// unless you include a wildcard (*Mary_Major).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Fully qualified ARN</b>: This option allows
-        /// you to specify the fully qualified Amazon Resource Name (ARN) of the IAM
-        /// user or role. </p>
-        /// </li>
-        /// </ul>
-        /// <p>For more information about IAM ARNs, wildcards, and formats, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.</p>
-        ///
+        /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn set_approval_rule_content(
             mut self,
@@ -2182,7 +2006,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRepository`.
     ///
     /// <p>Creates a new, empty repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2227,10 +2051,10 @@ pub mod fluent_builders {
                 crate::input::CreateRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2238,25 +2062,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the new repository to be created.</p>
-        /// <note>
-        /// <p>The repository name must be unique across the calling AWS account. Repository names
-        /// are limited to 100 alphanumeric, dash, and underscore characters, and cannot include
-        /// certain characters. For more information about the limits on repository names, see
-        /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the <i>AWS CodeCommit User Guide</i>. The
-        /// suffix .git is prohibited.</p>
+        /// <p>The name of the new repository to be created.</p> <note>
+        /// <p>The repository name must be unique across the calling AWS account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For more information about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the <i>AWS CodeCommit User Guide</i>. The suffix .git is prohibited.</p>
         /// </note>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
-        /// <p>The name of the new repository to be created.</p>
-        /// <note>
-        /// <p>The repository name must be unique across the calling AWS account. Repository names
-        /// are limited to 100 alphanumeric, dash, and underscore characters, and cannot include
-        /// certain characters. For more information about the limits on repository names, see
-        /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the <i>AWS CodeCommit User Guide</i>. The
-        /// suffix .git is prohibited.</p>
+        /// <p>The name of the new repository to be created.</p> <note>
+        /// <p>The repository name must be unique across the calling AWS account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For more information about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the <i>AWS CodeCommit User Guide</i>. The suffix .git is prohibited.</p>
         /// </note>
         pub fn set_repository_name(
             mut self,
@@ -2265,25 +2079,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>A comment or description about the new repository.</p>
-        /// <note>
-        /// <p>The description field for a repository accepts all HTML characters and all valid
-        /// Unicode characters. Applications that do not HTML-encode the description and display
-        /// it in a webpage can expose users to potentially malicious code. Make sure that you
-        /// HTML-encode the description field in any application that uses this API to display
-        /// the repository description on a webpage.</p>
+        /// <p>A comment or description about the new repository.</p> <note>
+        /// <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage.</p>
         /// </note>
-        pub fn repository_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_description(inp);
+        pub fn repository_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_description(input.into());
             self
         }
-        /// <p>A comment or description about the new repository.</p>
-        /// <note>
-        /// <p>The description field for a repository accepts all HTML characters and all valid
-        /// Unicode characters. Applications that do not HTML-encode the description and display
-        /// it in a webpage can expose users to potentially malicious code. Make sure that you
-        /// HTML-encode the description field in any application that uses this API to display
-        /// the repository description on a webpage.</p>
+        /// <p>A comment or description about the new repository.</p> <note>
+        /// <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage.</p>
         /// </note>
         pub fn set_repository_description(
             mut self,
@@ -2302,7 +2106,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>One or more tag key-value pairs to use when tagging this repository.</p>
@@ -2318,15 +2122,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateUnreferencedMergeCommit`.
     ///
-    /// <p>Creates an unreferenced commit that represents the result of merging two branches
-    /// using a specified merge strategy. This can help you determine the outcome of a potential
-    /// merge. This API cannot be used with the fast-forward merge strategy because that
-    /// strategy does not create a merge commit.</p>
-    /// <note>
-    /// <p>This unreferenced merge commit
-    /// can only be accessed using the GetCommit API or through git commands such as git fetch. To retrieve this commit, you must specify its commit ID or otherwise reference it.</p>
+    /// <p>Creates an unreferenced commit that represents the result of merging two branches using a specified merge strategy. This can help you determine the outcome of a potential merge. This API cannot be used with the fast-forward merge strategy because that strategy does not create a merge commit.</p> <note>
+    /// <p>This unreferenced merge commit can only be accessed using the GetCommit API or through git commands such as git fetch. To retrieve this commit, you must specify its commit ID or otherwise reference it.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUnreferencedMergeCommit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2371,10 +2170,10 @@ pub mod fluent_builders {
                 crate::input::CreateUnreferencedMergeCommitInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2383,8 +2182,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to create the unreferenced merge commit.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to create the unreferenced merge commit.</p>
@@ -2395,14 +2194,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_source_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2410,14 +2207,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_commit_specifier(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn destination_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn destination_commit_specifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_destination_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2426,8 +2224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The merge option or strategy you want to use to merge the code.</p>
-        pub fn merge_option(mut self, inp: crate::model::MergeOptionTypeEnum) -> Self {
-            self.inner = self.inner.merge_option(inp);
+        pub fn merge_option(mut self, input: crate::model::MergeOptionTypeEnum) -> Self {
+            self.inner = self.inner.merge_option(input);
             self
         }
         /// <p>The merge option or strategy you want to use to merge the code.</p>
@@ -2438,21 +2236,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_merge_option(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            inp: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(inp);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn set_conflict_detail_level(
             mut self,
             input: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
@@ -2460,19 +2252,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_detail_level(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            inp: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(inp);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn set_conflict_resolution_strategy(
             mut self,
             input: std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
@@ -2480,21 +2268,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_resolution_strategy(input);
             self
         }
-        /// <p>The name of the author who created the unreferenced commit. This information is used
-        /// as both the author and committer for the commit.</p>
-        pub fn author_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author_name(inp);
+        /// <p>The name of the author who created the unreferenced commit. This information is used as both the author and committer for the commit.</p>
+        pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_name(input.into());
             self
         }
-        /// <p>The name of the author who created the unreferenced commit. This information is used
-        /// as both the author and committer for the commit.</p>
+        /// <p>The name of the author who created the unreferenced commit. This information is used as both the author and committer for the commit.</p>
         pub fn set_author_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_author_name(input);
             self
         }
         /// <p>The email address for the person who created the unreferenced commit.</p>
-        pub fn email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(inp);
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email address for the person who created the unreferenced commit.</p>
@@ -2503,8 +2289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The commit message for the unreferenced commit.</p>
-        pub fn commit_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(inp);
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p>The commit message for the unreferenced commit.</p>
@@ -2515,28 +2301,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_commit_message(input);
             self
         }
-        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
-        /// changes leave the folders empty. If this is specified as true, a .gitkeep file is
-        /// created for empty folders. The default is false.</p>
-        pub fn keep_empty_folders(mut self, inp: bool) -> Self {
-            self.inner = self.inner.keep_empty_folders(inp);
+        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
+        pub fn keep_empty_folders(mut self, input: bool) -> Self {
+            self.inner = self.inner.keep_empty_folders(input);
             self
         }
-        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
-        /// changes leave the folders empty. If this is specified as true, a .gitkeep file is
-        /// created for empty folders. The default is false.</p>
+        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
         pub fn set_keep_empty_folders(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_keep_empty_folders(input);
             self
         }
-        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
-        /// resolving conflicts during a merge.</p>
-        pub fn conflict_resolution(mut self, inp: crate::model::ConflictResolution) -> Self {
-            self.inner = self.inner.conflict_resolution(inp);
+        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+        pub fn conflict_resolution(mut self, input: crate::model::ConflictResolution) -> Self {
+            self.inner = self.inner.conflict_resolution(input);
             self
         }
-        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
-        /// resolving conflicts during a merge.</p>
+        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
         pub fn set_conflict_resolution(
             mut self,
             input: std::option::Option<crate::model::ConflictResolution>,
@@ -2548,7 +2328,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApprovalRuleTemplate`.
     ///
     /// <p>Deletes a specified approval rule template. Deleting a template does not remove approval rules on pull requests already created with the template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApprovalRuleTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2593,10 +2373,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApprovalRuleTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2605,8 +2385,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the approval rule template to delete.</p>
-        pub fn approval_rule_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_template_name(inp);
+        pub fn approval_rule_template_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the approval rule template to delete.</p>
@@ -2621,7 +2404,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBranch`.
     ///
     /// <p>Deletes a branch from a repository, unless that branch is the default branch for the repository. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBranch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2666,10 +2449,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBranchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2678,8 +2461,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the branch to be deleted.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the branch to be deleted.</p>
@@ -2691,8 +2474,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the branch to delete.</p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p>The name of the branch to delete.</p>
@@ -2704,7 +2487,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCommentContent`.
     ///
     /// <p>Deletes the content of a comment made on a change, file, or commit in a repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCommentContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2749,10 +2532,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCommentContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2760,14 +2543,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique, system-generated ID of the comment. To get this ID, use  <a>GetCommentsForComparedCommit</a>
-        /// or <a>GetCommentsForPullRequest</a>.</p>
-        pub fn comment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment_id(inp);
+        /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+        pub fn comment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment_id(input.into());
             self
         }
-        /// <p>The unique, system-generated ID of the comment. To get this ID, use  <a>GetCommentsForComparedCommit</a>
-        /// or <a>GetCommentsForPullRequest</a>.</p>
+        /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
         pub fn set_comment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_comment_id(input);
             self
@@ -2775,10 +2556,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteFile`.
     ///
-    /// <p>Deletes a specified file from a specified branch. A commit is created on the branch
-    /// that contains the revision. The file still exists in the commits earlier to the commit
-    /// that contains the deletion.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a specified file from a specified branch. A commit is created on the branch that contains the revision. The file still exists in the commits earlier to the commit that contains the deletion.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2823,10 +2602,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2835,8 +2614,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the file to delete.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the file to delete.</p>
@@ -2848,8 +2627,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the branch where the commit that deletes the file is made.</p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p>The name of the branch where the commit that deletes the file is made.</p>
@@ -2857,30 +2636,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_branch_name(input);
             self
         }
-        /// <p>The fully qualified path to the file that to be deleted, including the full name and
-        /// extension of that file. For example, /examples/file.md is a fully qualified path to a
-        /// file named file.md in a folder named examples.</p>
-        pub fn file_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_path(inp);
+        /// <p>The fully qualified path to the file that to be deleted, including the full name and extension of that file. For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.</p>
+        pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_path(input.into());
             self
         }
-        /// <p>The fully qualified path to the file that to be deleted, including the full name and
-        /// extension of that file. For example, /examples/file.md is a fully qualified path to a
-        /// file named file.md in a folder named examples.</p>
+        /// <p>The fully qualified path to the file that to be deleted, including the full name and extension of that file. For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_file_path(input);
             self
         }
-        /// <p>The ID of the commit that is the tip of the branch where you want to create the commit
-        /// that deletes the file. This must be the HEAD commit for the branch. The commit that
-        /// deletes the file is created from this commit ID.</p>
-        pub fn parent_commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_commit_id(inp);
+        /// <p>The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.</p>
+        pub fn parent_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_commit_id(input.into());
             self
         }
-        /// <p>The ID of the commit that is the tip of the branch where you want to create the commit
-        /// that deletes the file. This must be the HEAD commit for the branch. The commit that
-        /// deletes the file is created from this commit ID.</p>
+        /// <p>The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.</p>
         pub fn set_parent_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2888,32 +2659,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parent_commit_id(input);
             self
         }
-        /// <p>If a file is the only object in the folder or directory, specifies whether to delete
-        /// the folder or directory that contains the file. By default, empty folders are deleted.
-        /// This includes empty folders that are part of the directory structure. For example, if
-        /// the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the
-        /// last file in dir4 also deletes the empty folders dir4, dir3, and dir2.</p>
-        pub fn keep_empty_folders(mut self, inp: bool) -> Self {
-            self.inner = self.inner.keep_empty_folders(inp);
+        /// <p>If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that contains the file. By default, empty folders are deleted. This includes empty folders that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.</p>
+        pub fn keep_empty_folders(mut self, input: bool) -> Self {
+            self.inner = self.inner.keep_empty_folders(input);
             self
         }
-        /// <p>If a file is the only object in the folder or directory, specifies whether to delete
-        /// the folder or directory that contains the file. By default, empty folders are deleted.
-        /// This includes empty folders that are part of the directory structure. For example, if
-        /// the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the
-        /// last file in dir4 also deletes the empty folders dir4, dir3, and dir2.</p>
+        /// <p>If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that contains the file. By default, empty folders are deleted. This includes empty folders that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.</p>
         pub fn set_keep_empty_folders(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_keep_empty_folders(input);
             self
         }
-        /// <p>The commit message you want to include as part of deleting the file. Commit messages
-        /// are limited to 256 KB. If no message is specified, a default message is used.</p>
-        pub fn commit_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(inp);
+        /// <p>The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
-        /// <p>The commit message you want to include as part of deleting the file. Commit messages
-        /// are limited to 256 KB. If no message is specified, a default message is used.</p>
+        /// <p>The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
         pub fn set_commit_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2921,26 +2682,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_commit_message(input);
             self
         }
-        /// <p>The name of the author of the commit that deletes the file. If no name is specified,
-        /// the user's ARN is used as the author name and committer name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is used as the author name and committer name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the author of the commit that deletes the file. If no name is specified,
-        /// the user's ARN is used as the author name and committer name.</p>
+        /// <p>The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is used as the author name and committer name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The email address for the commit that deletes the file. If no email address is
-        /// specified, the email address is left blank.</p>
-        pub fn email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(inp);
+        /// <p>The email address for the commit that deletes the file. If no email address is specified, the email address is left blank.</p>
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
-        /// <p>The email address for the commit that deletes the file. If no email address is
-        /// specified, the email address is left blank.</p>
+        /// <p>The email address for the commit that deletes the file. If no email address is specified, the email address is left blank.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_email(input);
             self
@@ -2948,10 +2705,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePullRequestApprovalRule`.
     ///
-    /// <p>Deletes an approval rule from a specified pull request. Approval rules can be deleted from a pull request only if the pull request is open, and if the
-    /// approval rule was created specifically for a pull request and not generated from an approval rule template associated with the repository where the
-    /// pull request was created. You cannot delete an approval rule from a merged or closed pull request.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an approval rule from a specified pull request. Approval rules can be deleted from a pull request only if the pull request is open, and if the approval rule was created specifically for a pull request and not generated from an approval rule template associated with the repository where the pull request was created. You cannot delete an approval rule from a merged or closed pull request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePullRequestApprovalRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2996,10 +2751,10 @@ pub mod fluent_builders {
                 crate::input::DeletePullRequestApprovalRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3008,8 +2763,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
@@ -3021,8 +2776,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the approval rule you want to delete.</p>
-        pub fn approval_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_name(inp);
+        pub fn approval_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.approval_rule_name(input.into());
             self
         }
         /// <p>The name of the approval rule you want to delete.</p>
@@ -3036,13 +2791,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRepository`.
     ///
-    /// <p>Deletes a repository. If a specified repository was already deleted, a null repository
-    /// ID is returned.</p>
-    /// <important>
-    /// <p>Deleting a repository also deletes all associated objects and metadata. After a repository is
-    /// deleted, all future push calls to the deleted repository fail.</p>
+    /// <p>Deletes a repository. If a specified repository was already deleted, a null repository ID is returned.</p> <important>
+    /// <p>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository fail.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3087,10 +2839,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3099,8 +2851,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository to delete.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository to delete.</p>
@@ -3114,10 +2866,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeMergeConflicts`.
     ///
-    /// <p>Returns information about one or more merge conflicts in the attempted merge of two
-    /// commit specifiers using the squash or three-way merge strategy. If the merge option for
-    /// the attempted merge is specified as FAST_FORWARD_MERGE, an exception is thrown.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the squash or three-way merge strategy. If the merge option for the attempted merge is specified as FAST_FORWARD_MERGE, an exception is thrown.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMergeConflicts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3162,10 +2912,10 @@ pub mod fluent_builders {
                 crate::input::DescribeMergeConflictsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3173,9 +2923,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeMergeConflictsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeMergeConflictsPaginator<C, M, R> {
+            crate::paginator::DescribeMergeConflictsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the repository where you want to get information about a merge conflict.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to get information about a merge conflict.</p>
@@ -3186,14 +2942,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn destination_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn destination_commit_specifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_destination_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3201,14 +2958,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_commit_specifier(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_source_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3217,8 +2972,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The merge option or strategy you want to use to merge the code.</p>
-        pub fn merge_option(mut self, inp: crate::model::MergeOptionTypeEnum) -> Self {
-            self.inner = self.inner.merge_option(inp);
+        pub fn merge_option(mut self, input: crate::model::MergeOptionTypeEnum) -> Self {
+            self.inner = self.inner.merge_option(input);
             self
         }
         /// <p>The merge option or strategy you want to use to merge the code.</p>
@@ -3230,8 +2985,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of merge hunks to include in the output.</p>
-        pub fn max_merge_hunks(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_merge_hunks(inp);
+        pub fn max_merge_hunks(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_merge_hunks(input);
             self
         }
         /// <p>The maximum number of merge hunks to include in the output.</p>
@@ -3240,8 +2995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The path of the target files used to describe the conflicts. </p>
-        pub fn file_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_path(inp);
+        pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_path(input.into());
             self
         }
         /// <p>The path of the target files used to describe the conflicts. </p>
@@ -3249,21 +3004,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_path(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            inp: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(inp);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn set_conflict_detail_level(
             mut self,
             input: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
@@ -3271,19 +3020,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_detail_level(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            inp: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(inp);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn set_conflict_resolution_strategy(
             mut self,
             input: std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
@@ -3291,14 +3036,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_resolution_strategy(input);
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3307,7 +3050,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePullRequestEvents`.
     ///
     /// <p>Returns information about one or more pull request events.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePullRequestEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3352,10 +3095,10 @@ pub mod fluent_builders {
                 crate::input::DescribePullRequestEventsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3363,12 +3106,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribePullRequestEventsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribePullRequestEventsPaginator<C, M, R> {
+            crate::paginator::DescribePullRequestEventsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3377,8 +3128,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional. The pull request event type about which you want to return information.</p>
-        pub fn pull_request_event_type(mut self, inp: crate::model::PullRequestEventType) -> Self {
-            self.inner = self.inner.pull_request_event_type(inp);
+        pub fn pull_request_event_type(
+            mut self,
+            input: crate::model::PullRequestEventType,
+        ) -> Self {
+            self.inner = self.inner.pull_request_event_type(input);
             self
         }
         /// <p>Optional. The pull request event type about which you want to return information.</p>
@@ -3389,40 +3143,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pull_request_event_type(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event.
-        /// Examples include updating the pull request with more commits or changing the status of a
-        /// pull request.</p>
-        pub fn actor_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.actor_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
+        pub fn actor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.actor_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event.
-        /// Examples include updating the pull request with more commits or changing the status of a
-        /// pull request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
         pub fn set_actor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_actor_arn(input);
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>A non-zero, non-negative integer used to limit the number of returned results.
-        /// The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>A non-zero, non-negative integer used to limit the number of returned results.
-        /// The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
+        /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3430,11 +3176,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateApprovalRuleTemplateFromRepository`.
     ///
-    /// <p>Removes the association between a template and a repository so that approval rules
-    /// based on the template are not automatically created when pull requests are created in
-    /// the specified repository. This does not delete any approval rules previously created for
-    /// pull requests through the template association.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes the association between a template and a repository so that approval rules based on the template are not automatically created when pull requests are created in the specified repository. This does not delete any approval rules previously created for pull requests through the template association.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateApprovalRuleTemplateFromRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3472,10 +3215,10 @@ pub mod fluent_builders {
                                     crate::error::DisassociateApprovalRuleTemplateFromRepositoryError,
                                     crate::input::DisassociateApprovalRuleTemplateFromRepositoryInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3484,8 +3227,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
-        pub fn approval_rule_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_template_name(inp);
+        pub fn approval_rule_template_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
@@ -3497,8 +3243,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository you want to disassociate from the template.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository you want to disassociate from the template.</p>
@@ -3513,7 +3259,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EvaluatePullRequestApprovalRules`.
     ///
     /// <p>Evaluates whether a pull request has met all the conditions specified in its associated approval rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EvaluatePullRequestApprovalRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3558,10 +3304,10 @@ pub mod fluent_builders {
                 crate::input::EvaluatePullRequestApprovalRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3570,8 +3316,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request you want to evaluate.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request you want to evaluate.</p>
@@ -3582,16 +3328,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pull_request_id(input);
             self
         }
-        /// <p>The system-generated ID for the pull request revision. To retrieve the most recent
-        /// revision ID for a pull request, use
-        /// <a>GetPullRequest</a>.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        /// <p>The system-generated ID for the pull request revision. To retrieve the most recent revision ID for a pull request, use <code>GetPullRequest</code>.</p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
-        /// <p>The system-generated ID for the pull request revision. To retrieve the most recent
-        /// revision ID for a pull request, use
-        /// <a>GetPullRequest</a>.</p>
+        /// <p>The system-generated ID for the pull request revision. To retrieve the most recent revision ID for a pull request, use <code>GetPullRequest</code>.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_revision_id(input);
             self
@@ -3600,7 +3342,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApprovalRuleTemplate`.
     ///
     /// <p>Returns information about a specified approval rule template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApprovalRuleTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3645,10 +3387,10 @@ pub mod fluent_builders {
                 crate::input::GetApprovalRuleTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3657,8 +3399,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the approval rule template for which you want to get information.</p>
-        pub fn approval_rule_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_template_name(inp);
+        pub fn approval_rule_template_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the approval rule template for which you want to get information.</p>
@@ -3673,7 +3418,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBlob`.
     ///
     /// <p>Returns the base-64 encoded content of an individual blob in a repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3718,10 +3463,10 @@ pub mod fluent_builders {
                 crate::input::GetBlobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3730,8 +3475,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the blob.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the blob.</p>
@@ -3743,8 +3488,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
-        pub fn blob_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.blob_id(inp);
+        pub fn blob_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blob_id(input.into());
             self
         }
         /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
@@ -3756,7 +3501,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBranch`.
     ///
     /// <p>Returns information about a repository branch, including its name and the last commit ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBranch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3801,10 +3546,10 @@ pub mod fluent_builders {
                 crate::input::GetBranchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3813,8 +3558,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
@@ -3826,8 +3571,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the branch for which you want to retrieve information.</p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p>The name of the branch for which you want to retrieve information.</p>
@@ -3838,12 +3583,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetComment`.
     ///
-    /// <p>Returns the content of a comment made on a change, file, or commit in a repository. </p>
-    /// <note>
-    /// <p>Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a count of
-    /// reactions from active identities, use GetCommentReactions.</p>
+    /// <p>Returns the content of a comment made on a change, file, or commit in a repository. </p> <note>
+    /// <p>Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a count of reactions from active identities, use GetCommentReactions.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3888,10 +3631,10 @@ pub mod fluent_builders {
                 crate::input::GetCommentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3899,14 +3642,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique, system-generated ID of the comment. To get this ID, use  <a>GetCommentsForComparedCommit</a>
-        /// or <a>GetCommentsForPullRequest</a>.</p>
-        pub fn comment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment_id(inp);
+        /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+        pub fn comment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment_id(input.into());
             self
         }
-        /// <p>The unique, system-generated ID of the comment. To get this ID, use  <a>GetCommentsForComparedCommit</a>
-        /// or <a>GetCommentsForPullRequest</a>.</p>
+        /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
         pub fn set_comment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_comment_id(input);
             self
@@ -3915,7 +3656,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCommentReactions`.
     ///
     /// <p>Returns information about reactions to a specified comment ID. Reactions from users who have been deleted will not be included in the count.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCommentReactions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3960,10 +3701,10 @@ pub mod fluent_builders {
                 crate::input::GetCommentReactionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3971,9 +3712,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetCommentReactionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetCommentReactionsPaginator<C, M, R> {
+            crate::paginator::GetCommentReactionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the comment for which you want to get reactions information.</p>
-        pub fn comment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment_id(inp);
+        pub fn comment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment_id(input.into());
             self
         }
         /// <p>The ID of the comment for which you want to get reactions information.</p>
@@ -3982,8 +3729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p>
-        pub fn reaction_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reaction_user_arn(inp);
+        pub fn reaction_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reaction_user_arn(input.into());
             self
         }
         /// <p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p>
@@ -3995,8 +3742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the results. </p>
@@ -4004,12 +3751,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>A non-zero, non-negative integer used to limit the number of returned results.  The default is the same as the allowed maximum, 1,000.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is the same as the allowed maximum, 1,000.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>A non-zero, non-negative integer used to limit the number of returned results.  The default is the same as the allowed maximum, 1,000.</p>
+        /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is the same as the allowed maximum, 1,000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4017,12 +3764,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCommentsForComparedCommit`.
     ///
-    /// <p>Returns information about comments made on the comparison between two commits.</p>
-    /// <note>
-    /// <p>Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a count of
-    /// reactions from active identities, use GetCommentReactions.</p>
+    /// <p>Returns information about comments made on the comparison between two commits.</p> <note>
+    /// <p>Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a count of reactions from active identities, use GetCommentReactions.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCommentsForComparedCommit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4067,10 +3812,10 @@ pub mod fluent_builders {
                 crate::input::GetCommentsForComparedCommitInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4078,9 +3823,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetCommentsForComparedCommitPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetCommentsForComparedCommitPaginator<C, M, R> {
+            crate::paginator::GetCommentsForComparedCommitPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the repository where you want to compare commits.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to compare commits.</p>
@@ -4091,14 +3844,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>To establish the directionality of the comparison, the full commit ID of the before
-        /// commit.</p>
-        pub fn before_commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.before_commit_id(inp);
+        /// <p>To establish the directionality of the comparison, the full commit ID of the before commit.</p>
+        pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.before_commit_id(input.into());
             self
         }
-        /// <p>To establish the directionality of the comparison, the full commit ID of the before
-        /// commit.</p>
+        /// <p>To establish the directionality of the comparison, the full commit ID of the before commit.</p>
         pub fn set_before_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4106,14 +3857,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_before_commit_id(input);
             self
         }
-        /// <p>To establish the directionality of the comparison, the full commit ID of the after
-        /// commit.</p>
-        pub fn after_commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after_commit_id(inp);
+        /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
+        pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after_commit_id(input.into());
             self
         }
-        /// <p>To establish the directionality of the comparison, the full commit ID of the after
-        /// commit.</p>
+        /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
         pub fn set_after_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4122,8 +3871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
@@ -4131,14 +3880,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>A non-zero, non-negative integer used to limit the number of returned results. The
-        /// default is 100 comments, but you can configure up to 500.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but you can configure up to 500.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>A non-zero, non-negative integer used to limit the number of returned results. The
-        /// default is 100 comments, but you can configure up to 500.</p>
+        /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but you can configure up to 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4146,12 +3893,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCommentsForPullRequest`.
     ///
-    /// <p>Returns comments made on a pull request.</p>
-    /// <note>
-    /// <p>Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a count of
-    /// reactions from active identities, use GetCommentReactions.</p>
+    /// <p>Returns comments made on a pull request.</p> <note>
+    /// <p>Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a count of reactions from active identities, use GetCommentReactions.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCommentsForPullRequest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4196,10 +3941,10 @@ pub mod fluent_builders {
                 crate::input::GetCommentsForPullRequestInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4207,12 +3952,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetCommentsForPullRequestPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetCommentsForPullRequestPaginator<C, M, R> {
+            crate::paginator::GetCommentsForPullRequestPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4221,8 +3974,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository that contains the pull request.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the pull request.</p>
@@ -4234,8 +3987,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
-        pub fn before_commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.before_commit_id(inp);
+        pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.before_commit_id(input.into());
             self
         }
         /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
@@ -4247,8 +4000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
-        pub fn after_commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after_commit_id(inp);
+        pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after_commit_id(input.into());
             self
         }
         /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
@@ -4259,26 +4012,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_after_commit_id(input);
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments.
-        /// You can return up to 500 comments with a single request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You can return up to 500 comments with a single request.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments.
-        /// You can return up to 500 comments with a single request.</p>
+        /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You can return up to 500 comments with a single request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4287,7 +4036,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCommit`.
     ///
     /// <p>Returns information about a commit, including commit message and committer information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCommit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4332,10 +4081,10 @@ pub mod fluent_builders {
                 crate::input::GetCommitInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4344,8 +4093,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository to which the commit was made.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository to which the commit was made.</p>
@@ -4357,8 +4106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
-        pub fn commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_id(inp);
+        pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_id(input.into());
             self
         }
         /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
@@ -4369,10 +4118,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDifferences`.
     ///
-    /// <p>Returns information about the differences in a valid commit specifier (such as a
-    /// branch, tag, HEAD, commit ID, or other fully qualified reference). Results can be
-    /// limited to a specified path.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID, or other fully qualified reference). Results can be limited to a specified path.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDifferences<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4417,10 +4164,10 @@ pub mod fluent_builders {
                 crate::input::GetDifferencesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4428,9 +4175,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetDifferencesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetDifferencesPaginator<C, M, R> {
+            crate::paginator::GetDifferencesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the repository where you want to get differences.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to get differences.</p>
@@ -4441,20 +4194,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, the full commit ID). Optional. If not specified, all changes before the
-        /// <code>afterCommitSpecifier</code> value are shown. If you do not use
-        /// <code>beforeCommitSpecifier</code> in your request, consider limiting the results
-        /// with <code>maxResults</code>.</p>
-        pub fn before_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.before_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
+        pub fn before_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.before_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, the full commit ID). Optional. If not specified, all changes before the
-        /// <code>afterCommitSpecifier</code> value are shown. If you do not use
-        /// <code>beforeCommitSpecifier</code> in your request, consider limiting the results
-        /// with <code>maxResults</code>.</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
         pub fn set_before_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4463,8 +4208,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
-        pub fn after_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after_commit_specifier(inp);
+        pub fn after_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
@@ -4475,39 +4220,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_after_commit_specifier(input);
             self
         }
-        /// <p>The file path in which to check for differences. Limits the results to this path. Can
-        /// also be used to specify the previous name of a directory or folder. If
-        /// <code>beforePath</code> and <code>afterPath</code> are not specified, differences
-        /// are shown for all paths.</p>
-        pub fn before_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.before_path(inp);
+        /// <p>The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences are shown for all paths.</p>
+        pub fn before_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.before_path(input.into());
             self
         }
-        /// <p>The file path in which to check for differences. Limits the results to this path. Can
-        /// also be used to specify the previous name of a directory or folder. If
-        /// <code>beforePath</code> and <code>afterPath</code> are not specified, differences
-        /// are shown for all paths.</p>
+        /// <p>The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences are shown for all paths.</p>
         pub fn set_before_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_before_path(input);
             self
         }
-        /// <p>The file path in which to check differences. Limits the results to this path. Can also
-        /// be used to specify the changed name of a directory or folder, if it has changed. If not
-        /// specified, differences are shown for all paths.</p>
-        pub fn after_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after_path(inp);
+        /// <p>The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.</p>
+        pub fn after_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after_path(input.into());
             self
         }
-        /// <p>The file path in which to check differences. Limits the results to this path. Can also
-        /// be used to specify the changed name of a directory or folder, if it has changed. If not
-        /// specified, differences are shown for all paths.</p>
+        /// <p>The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.</p>
         pub fn set_after_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_after_path(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -4515,14 +4250,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4531,7 +4264,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFile`.
     ///
     /// <p>Returns the base-64 encoded contents of a specified file and its metadata.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4576,10 +4309,10 @@ pub mod fluent_builders {
                 crate::input::GetFileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4588,8 +4321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the file.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the file.</p>
@@ -4600,16 +4333,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The fully quaified reference that identifies the commit that contains the file. For
-        /// example, you can specify a full commit ID, a tag, a branch name, or a reference such as
-        /// refs/heads/master. If none is provided, the head commit is used.</p>
-        pub fn commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_specifier(inp);
+        /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
+        pub fn commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_specifier(input.into());
             self
         }
-        /// <p>The fully quaified reference that identifies the commit that contains the file. For
-        /// example, you can specify a full commit ID, a tag, a branch name, or a reference such as
-        /// refs/heads/master. If none is provided, the head commit is used.</p>
+        /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
         pub fn set_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4617,16 +4346,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_commit_specifier(input);
             self
         }
-        /// <p>The fully qualified path to the file, including the full name and extension of the
-        /// file. For example, /examples/file.md is the fully qualified path to a file named file.md
-        /// in a folder named examples.</p>
-        pub fn file_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_path(inp);
+        /// <p>The fully qualified path to the file, including the full name and extension of the file. For example, /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.</p>
+        pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_path(input.into());
             self
         }
-        /// <p>The fully qualified path to the file, including the full name and extension of the
-        /// file. For example, /examples/file.md is the fully qualified path to a file named file.md
-        /// in a folder named examples.</p>
+        /// <p>The fully qualified path to the file, including the full name and extension of the file. For example, /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_file_path(input);
             self
@@ -4635,7 +4360,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFolder`.
     ///
     /// <p>Returns the contents of a specified folder in a repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFolder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4680,10 +4405,10 @@ pub mod fluent_builders {
                 crate::input::GetFolderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4692,8 +4417,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository.</p>
@@ -4704,18 +4429,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>A fully qualified reference used to identify a commit that contains the version of the
-        /// folder's content to return. A fully qualified reference can be a commit ID, branch name,
-        /// tag, or reference such as HEAD. If no specifier is provided, the folder content is
-        /// returned as it exists in the HEAD commit.</p>
-        pub fn commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_specifier(inp);
+        /// <p>A fully qualified reference used to identify a commit that contains the version of the folder's content to return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no specifier is provided, the folder content is returned as it exists in the HEAD commit.</p>
+        pub fn commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_specifier(input.into());
             self
         }
-        /// <p>A fully qualified reference used to identify a commit that contains the version of the
-        /// folder's content to return. A fully qualified reference can be a commit ID, branch name,
-        /// tag, or reference such as HEAD. If no specifier is provided, the folder content is
-        /// returned as it exists in the HEAD commit.</p>
+        /// <p>A fully qualified reference used to identify a commit that contains the version of the folder's content to return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no specifier is provided, the folder content is returned as it exists in the HEAD commit.</p>
         pub fn set_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4723,16 +4442,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_commit_specifier(input);
             self
         }
-        /// <p>The fully qualified path to the folder whose contents are returned, including the
-        /// folder name. For example, /examples is a fully-qualified path to a folder named examples
-        /// that was created off of the root directory (/) of a repository. </p>
-        pub fn folder_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_path(inp);
+        /// <p>The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository. </p>
+        pub fn folder_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_path(input.into());
             self
         }
-        /// <p>The fully qualified path to the folder whose contents are returned, including the
-        /// folder name. For example, /examples is a fully-qualified path to a folder named examples
-        /// that was created off of the root directory (/) of a repository. </p>
+        /// <p>The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository. </p>
         pub fn set_folder_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_folder_path(input);
             self
@@ -4741,7 +4456,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMergeCommit`.
     ///
     /// <p>Returns information about a specified merge commit.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMergeCommit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4786,10 +4501,10 @@ pub mod fluent_builders {
                 crate::input::GetMergeCommitInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4798,8 +4513,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the merge commit about which you want to get information.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the merge commit about which you want to get information.</p>
@@ -4810,14 +4525,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_source_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4825,14 +4538,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_commit_specifier(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn destination_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn destination_commit_specifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_destination_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4840,21 +4554,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_commit_specifier(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            inp: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(inp);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn set_conflict_detail_level(
             mut self,
             input: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
@@ -4862,19 +4570,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_detail_level(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            inp: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(inp);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn set_conflict_resolution_strategy(
             mut self,
             input: std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
@@ -4886,7 +4590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMergeConflicts`.
     ///
     /// <p>Returns information about merge conflicts between the before and after commit IDs for a pull request in a repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMergeConflicts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4931,10 +4635,10 @@ pub mod fluent_builders {
                 crate::input::GetMergeConflictsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4942,9 +4646,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetMergeConflictsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetMergeConflictsPaginator<C, M, R> {
+            crate::paginator::GetMergeConflictsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the repository where the pull request was created.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
@@ -4955,14 +4665,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn destination_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn destination_commit_specifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_destination_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4970,14 +4681,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_commit_specifier(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_source_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4985,12 +4694,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_commit_specifier(input);
             self
         }
-        /// <p>The merge option or strategy you want to use to merge the code.  </p>
-        pub fn merge_option(mut self, inp: crate::model::MergeOptionTypeEnum) -> Self {
-            self.inner = self.inner.merge_option(inp);
+        /// <p>The merge option or strategy you want to use to merge the code. </p>
+        pub fn merge_option(mut self, input: crate::model::MergeOptionTypeEnum) -> Self {
+            self.inner = self.inner.merge_option(input);
             self
         }
-        /// <p>The merge option or strategy you want to use to merge the code.  </p>
+        /// <p>The merge option or strategy you want to use to merge the code. </p>
         pub fn set_merge_option(
             mut self,
             input: std::option::Option<crate::model::MergeOptionTypeEnum>,
@@ -4998,21 +4707,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_merge_option(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            inp: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(inp);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn set_conflict_detail_level(
             mut self,
             input: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
@@ -5021,8 +4724,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of files to include in the output.</p>
-        pub fn max_conflict_files(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_conflict_files(inp);
+        pub fn max_conflict_files(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_conflict_files(input);
             self
         }
         /// <p>The maximum number of files to include in the output.</p>
@@ -5030,19 +4733,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_conflict_files(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            inp: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(inp);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn set_conflict_resolution_strategy(
             mut self,
             input: std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
@@ -5050,14 +4749,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_resolution_strategy(input);
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5065,10 +4762,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMergeOptions`.
     ///
-    /// <p>Returns information about the merge options available for merging two specified
-    /// branches. For details about why a merge option is not available, use GetMergeConflicts
-    /// or DescribeMergeConflicts.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about the merge options available for merging two specified branches. For details about why a merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMergeOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5113,10 +4808,10 @@ pub mod fluent_builders {
                 crate::input::GetMergeOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5125,8 +4820,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the commits about which you want to get merge options.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the commits about which you want to get merge options.</p>
@@ -5137,14 +4832,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_source_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5152,14 +4845,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_commit_specifier(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn destination_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn destination_commit_specifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_destination_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5167,21 +4861,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_commit_specifier(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            inp: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(inp);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn set_conflict_detail_level(
             mut self,
             input: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
@@ -5189,19 +4877,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_detail_level(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            inp: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(inp);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn set_conflict_resolution_strategy(
             mut self,
             input: std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
@@ -5213,7 +4897,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPullRequest`.
     ///
     /// <p>Gets information about a pull request in a specified repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPullRequest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5258,10 +4942,10 @@ pub mod fluent_builders {
                 crate::input::GetPullRequestInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5269,12 +4953,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5285,9 +4969,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPullRequestApprovalStates`.
     ///
-    /// <p>Gets information about the approval states for a specified pull request. Approval states only apply to pull requests that have one or more
-    /// approval rules applied to them.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets information about the approval states for a specified pull request. Approval states only apply to pull requests that have one or more approval rules applied to them.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPullRequestApprovalStates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5332,10 +5015,10 @@ pub mod fluent_builders {
                 crate::input::GetPullRequestApprovalStatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5344,8 +5027,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID for the pull request.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID for the pull request.</p>
@@ -5357,8 +5040,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The system-generated ID for the pull request revision.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The system-generated ID for the pull request revision.</p>
@@ -5369,9 +5052,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPullRequestOverrideState`.
     ///
-    /// <p>Returns information about whether approval rules have been set aside (overridden) for a
-    /// pull request, and if so, the Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about whether approval rules have been set aside (overridden) for a pull request, and if so, the Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPullRequestOverrideState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5416,10 +5098,10 @@ pub mod fluent_builders {
                 crate::input::GetPullRequestOverrideStateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5428,8 +5110,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
@@ -5440,16 +5122,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pull_request_id(input);
             self
         }
-        /// <p>The system-generated ID of the revision for the pull request. To retrieve the most
-        /// recent revision ID, use
-        /// <a>GetPullRequest</a>.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        /// <p>The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use <code>GetPullRequest</code>.</p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
-        /// <p>The system-generated ID of the revision for the pull request. To retrieve the most
-        /// recent revision ID, use
-        /// <a>GetPullRequest</a>.</p>
+        /// <p>The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use <code>GetPullRequest</code>.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_revision_id(input);
             self
@@ -5457,16 +5135,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRepository`.
     ///
-    /// <p>Returns information about a repository.</p>
-    ///
-    /// <note>
-    /// <p>The description field for a repository accepts all HTML characters and all valid
-    /// Unicode characters. Applications that do not HTML-encode the description and display
-    /// it in a webpage can expose users to potentially malicious code. Make sure that you
-    /// HTML-encode the description field in any application that uses this API to display
-    /// the repository description on a webpage.</p>
+    /// <p>Returns information about a repository.</p> <note>
+    /// <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5511,10 +5183,10 @@ pub mod fluent_builders {
                 crate::input::GetRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5523,8 +5195,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository to get information about.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository to get information about.</p>
@@ -5539,7 +5211,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRepositoryTriggers`.
     ///
     /// <p>Gets information about triggers configured for a repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRepositoryTriggers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5584,10 +5256,10 @@ pub mod fluent_builders {
                 crate::input::GetRepositoryTriggersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5596,8 +5268,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository for which the trigger is configured.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository for which the trigger is configured.</p>
@@ -5611,9 +5283,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListApprovalRuleTemplates`.
     ///
-    /// <p>Lists all approval rule templates in the specified AWS Region in your AWS account. If
-    /// an AWS Region is not specified, the AWS Region where you are signed in is used.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all approval rule templates in the specified AWS Region in your AWS account. If an AWS Region is not specified, the AWS Region where you are signed in is used.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApprovalRuleTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5658,10 +5329,10 @@ pub mod fluent_builders {
                 crate::input::ListApprovalRuleTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5669,21 +5340,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListApprovalRuleTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListApprovalRuleTemplatesPaginator<C, M, R> {
+            crate::paginator::ListApprovalRuleTemplatesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -5695,7 +5372,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssociatedApprovalRuleTemplatesForRepository`.
     ///
     /// <p>Lists all approval rule templates that are associated with a specified repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociatedApprovalRuleTemplatesForRepository<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5733,10 +5410,10 @@ pub mod fluent_builders {
                                     crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError,
                                     crate::input::ListAssociatedApprovalRuleTemplatesForRepositoryInputOperationRetryAlias>,
                                 {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5744,9 +5421,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssociatedApprovalRuleTemplatesForRepositoryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAssociatedApprovalRuleTemplatesForRepositoryPaginator<C, M, R>
+        {
+            crate::paginator::ListAssociatedApprovalRuleTemplatesForRepositoryPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The name of the repository for which you want to list all associated approval rule templates.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository for which you want to list all associated approval rule templates.</p>
@@ -5757,21 +5446,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -5783,7 +5470,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBranches`.
     ///
     /// <p>Gets information about one or more branches in a repository.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBranches<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5828,10 +5515,10 @@ pub mod fluent_builders {
                 crate::input::ListBranchesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5839,9 +5526,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBranchesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBranchesPaginator<C, M, R> {
+            crate::paginator::ListBranchesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the repository that contains the branches.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the branches.</p>
@@ -5853,8 +5546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An enumeration token that allows the operation to batch the results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that allows the operation to batch the results.</p>
@@ -5865,9 +5558,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPullRequests`.
     ///
-    /// <p>Returns a list of pull requests for a specified repository. The return list can be refined by pull request
-    /// status or pull request author ARN.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of pull requests for a specified repository. The return list can be refined by pull request status or pull request author ARN.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPullRequests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5912,10 +5604,10 @@ pub mod fluent_builders {
                 crate::input::ListPullRequestsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5923,9 +5615,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPullRequestsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPullRequestsPaginator<C, M, R> {
+            crate::paginator::ListPullRequestsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the repository for which you want to list pull requests.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository for which you want to list pull requests.</p>
@@ -5936,21 +5634,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results
-        /// to pull requests created by that user.</p>
-        pub fn author_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author_arn(inp);
+        /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results to pull requests created by that user.</p>
+        pub fn author_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_arn(input.into());
             self
         }
-        /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results
-        /// to pull requests created by that user.</p>
+        /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results to pull requests created by that user.</p>
         pub fn set_author_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_author_arn(input);
             self
         }
         /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
-        pub fn pull_request_status(mut self, inp: crate::model::PullRequestStatusEnum) -> Self {
-            self.inner = self.inner.pull_request_status(inp);
+        pub fn pull_request_status(mut self, input: crate::model::PullRequestStatusEnum) -> Self {
+            self.inner = self.inner.pull_request_status(input);
             self
         }
         /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
@@ -5961,21 +5657,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pull_request_status(input);
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -5987,7 +5681,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRepositories`.
     ///
     /// <p>Gets information about one or more repositories.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRepositories<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6032,10 +5726,10 @@ pub mod fluent_builders {
                 crate::input::ListRepositoriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6043,23 +5737,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An enumeration token that allows the operation to batch the results of the operation.
-        /// Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit,
-        /// another page of 1,000 records is retrieved.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRepositoriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRepositoriesPaginator<C, M, R> {
+            crate::paginator::ListRepositoriesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An enumeration token that allows the operation to batch the results of the operation.
-        /// Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit,
-        /// another page of 1,000 records is retrieved.</p>
+        /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The criteria used to sort the results of a list repositories operation.</p>
-        pub fn sort_by(mut self, inp: crate::model::SortByEnum) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SortByEnum) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The criteria used to sort the results of a list repositories operation.</p>
@@ -6068,8 +5764,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The order in which to sort the results of a list repositories operation.</p>
-        pub fn order(mut self, inp: crate::model::OrderEnum) -> Self {
-            self.inner = self.inner.order(inp);
+        pub fn order(mut self, input: crate::model::OrderEnum) -> Self {
+            self.inner = self.inner.order(input);
             self
         }
         /// <p>The order in which to sort the results of a list repositories operation.</p>
@@ -6081,7 +5777,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRepositoriesForApprovalRuleTemplate`.
     ///
     /// <p>Lists all repositories associated with the specified approval rule template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRepositoriesForApprovalRuleTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6128,10 +5824,10 @@ pub mod fluent_builders {
                 crate::input::ListRepositoriesForApprovalRuleTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6139,9 +5835,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRepositoriesForApprovalRuleTemplatePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListRepositoriesForApprovalRuleTemplatePaginator<C, M, R> {
+            crate::paginator::ListRepositoriesForApprovalRuleTemplatePaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
-        pub fn approval_rule_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_template_name(inp);
+        pub fn approval_rule_template_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
@@ -6152,21 +5862,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_approval_rule_template_name(input);
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -6177,10 +5885,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
-    /// CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the<i> AWS CodeCommit User
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the<i> AWS CodeCommit User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6225,10 +5931,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6236,26 +5942,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information
-        /// about tags, if any.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information
-        /// about tags, if any.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6264,7 +5966,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `MergeBranchesByFastForward`.
     ///
     /// <p>Merges two branches using the fast-forward merge strategy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MergeBranchesByFastForward<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6309,10 +6011,10 @@ pub mod fluent_builders {
                 crate::input::MergeBranchesByFastForwardInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6321,8 +6023,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to merge two branches.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to merge two branches.</p>
@@ -6333,14 +6035,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_source_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6348,14 +6048,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_commit_specifier(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn destination_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn destination_commit_specifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_destination_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6364,8 +6065,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The branch where the merge is applied.</p>
-        pub fn target_branch(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_branch(inp);
+        pub fn target_branch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_branch(input.into());
             self
         }
         /// <p>The branch where the merge is applied.</p>
@@ -6380,7 +6081,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `MergeBranchesBySquash`.
     ///
     /// <p>Merges two branches using the squash merge strategy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MergeBranchesBySquash<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6425,10 +6126,10 @@ pub mod fluent_builders {
                 crate::input::MergeBranchesBySquashInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6437,8 +6138,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to merge two branches.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to merge two branches.</p>
@@ -6449,14 +6150,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_source_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6464,14 +6163,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_commit_specifier(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn destination_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn destination_commit_specifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_destination_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6480,8 +6180,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The branch where the merge is applied. </p>
-        pub fn target_branch(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_branch(inp);
+        pub fn target_branch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_branch(input.into());
             self
         }
         /// <p>The branch where the merge is applied. </p>
@@ -6492,21 +6192,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_branch(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            inp: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(inp);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn set_conflict_detail_level(
             mut self,
             input: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
@@ -6514,19 +6208,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_detail_level(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            inp: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(inp);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn set_conflict_resolution_strategy(
             mut self,
             input: std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
@@ -6534,33 +6224,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_resolution_strategy(input);
             self
         }
-        /// <p>The name of the author who created the commit. This information is used as both the
-        /// author and committer for the commit.</p>
-        pub fn author_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author_name(inp);
+        /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+        pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_name(input.into());
             self
         }
-        /// <p>The name of the author who created the commit. This information is used as both the
-        /// author and committer for the commit.</p>
+        /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
         pub fn set_author_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_author_name(input);
             self
         }
-        /// <p>The email address of the person merging the branches. This information is used in the
-        /// commit information for the merge.</p>
-        pub fn email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(inp);
+        /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
-        /// <p>The email address of the person merging the branches. This information is used in the
-        /// commit information for the merge.</p>
+        /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_email(input);
             self
         }
         /// <p>The commit message for the merge.</p>
-        pub fn commit_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(inp);
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p>The commit message for the merge.</p>
@@ -6571,28 +6257,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_commit_message(input);
             self
         }
-        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
-        /// changes leave the folders empty. If this is specified as true, a .gitkeep file is
-        /// created for empty folders. The default is false.</p>
-        pub fn keep_empty_folders(mut self, inp: bool) -> Self {
-            self.inner = self.inner.keep_empty_folders(inp);
+        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
+        pub fn keep_empty_folders(mut self, input: bool) -> Self {
+            self.inner = self.inner.keep_empty_folders(input);
             self
         }
-        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
-        /// changes leave the folders empty. If this is specified as true, a .gitkeep file is
-        /// created for empty folders. The default is false.</p>
+        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
         pub fn set_keep_empty_folders(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_keep_empty_folders(input);
             self
         }
-        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
-        /// resolving conflicts during a merge.</p>
-        pub fn conflict_resolution(mut self, inp: crate::model::ConflictResolution) -> Self {
-            self.inner = self.inner.conflict_resolution(inp);
+        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+        pub fn conflict_resolution(mut self, input: crate::model::ConflictResolution) -> Self {
+            self.inner = self.inner.conflict_resolution(input);
             self
         }
-        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
-        /// resolving conflicts during a merge.</p>
+        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
         pub fn set_conflict_resolution(
             mut self,
             input: std::option::Option<crate::model::ConflictResolution>,
@@ -6604,7 +6284,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `MergeBranchesByThreeWay`.
     ///
     /// <p>Merges two specified branches using the three-way merge strategy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MergeBranchesByThreeWay<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6649,10 +6329,10 @@ pub mod fluent_builders {
                 crate::input::MergeBranchesByThreeWayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6661,8 +6341,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to merge two branches.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to merge two branches.</p>
@@ -6673,14 +6353,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_source_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6688,14 +6366,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_commit_specifier(input);
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
-        pub fn destination_commit_specifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_commit_specifier(inp);
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+        pub fn destination_commit_specifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
-        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
-        /// (for example, a branch name or a full commit ID).</p>
+        /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
         pub fn set_destination_commit_specifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6704,8 +6383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The branch where the merge is applied. </p>
-        pub fn target_branch(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_branch(inp);
+        pub fn target_branch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_branch(input.into());
             self
         }
         /// <p>The branch where the merge is applied. </p>
@@ -6716,21 +6395,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_branch(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            inp: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(inp);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn set_conflict_detail_level(
             mut self,
             input: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
@@ -6738,19 +6411,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_detail_level(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            inp: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(inp);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn set_conflict_resolution_strategy(
             mut self,
             input: std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
@@ -6758,33 +6427,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_resolution_strategy(input);
             self
         }
-        /// <p>The name of the author who created the commit. This information is used as both the
-        /// author and committer for the commit.</p>
-        pub fn author_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author_name(inp);
+        /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+        pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_name(input.into());
             self
         }
-        /// <p>The name of the author who created the commit. This information is used as both the
-        /// author and committer for the commit.</p>
+        /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
         pub fn set_author_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_author_name(input);
             self
         }
-        /// <p>The email address of the person merging the branches. This information is used in the
-        /// commit information for the merge.</p>
-        pub fn email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(inp);
+        /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
-        /// <p>The email address of the person merging the branches. This information is used in the
-        /// commit information for the merge.</p>
+        /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_email(input);
             self
         }
         /// <p>The commit message to include in the commit information for the merge.</p>
-        pub fn commit_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(inp);
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p>The commit message to include in the commit information for the merge.</p>
@@ -6795,28 +6460,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_commit_message(input);
             self
         }
-        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
-        /// changes leave the folders empty. If true, a .gitkeep file is created for empty folders.
-        /// The default is false.</p>
-        pub fn keep_empty_folders(mut self, inp: bool) -> Self {
-            self.inner = self.inner.keep_empty_folders(inp);
+        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
+        pub fn keep_empty_folders(mut self, input: bool) -> Self {
+            self.inner = self.inner.keep_empty_folders(input);
             self
         }
-        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
-        /// changes leave the folders empty. If true, a .gitkeep file is created for empty folders.
-        /// The default is false.</p>
+        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
         pub fn set_keep_empty_folders(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_keep_empty_folders(input);
             self
         }
-        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
-        /// resolving conflicts during a merge.</p>
-        pub fn conflict_resolution(mut self, inp: crate::model::ConflictResolution) -> Self {
-            self.inner = self.inner.conflict_resolution(inp);
+        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+        pub fn conflict_resolution(mut self, input: crate::model::ConflictResolution) -> Self {
+            self.inner = self.inner.conflict_resolution(input);
             self
         }
-        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
-        /// resolving conflicts during a merge.</p>
+        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
         pub fn set_conflict_resolution(
             mut self,
             input: std::option::Option<crate::model::ConflictResolution>,
@@ -6827,9 +6486,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `MergePullRequestByFastForward`.
     ///
-    /// <p>Attempts to merge the source commit of a pull request into the specified destination
-    /// branch for that pull request at the specified commit using the fast-forward merge strategy. If the merge is successful, it closes the pull request.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Attempts to merge the source commit of a pull request into the specified destination branch for that pull request at the specified commit using the fast-forward merge strategy. If the merge is successful, it closes the pull request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MergePullRequestByFastForward<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6874,10 +6532,10 @@ pub mod fluent_builders {
                 crate::input::MergePullRequestByFastForwardInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6885,12 +6543,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6899,8 +6557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
@@ -6911,14 +6569,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
-        /// exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-        pub fn source_commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_id(inp);
+        /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+        pub fn source_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_id(input.into());
             self
         }
-        /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
-        /// exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+        /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
         pub fn set_source_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6929,9 +6585,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `MergePullRequestBySquash`.
     ///
-    /// <p>Attempts to merge the source commit of a pull request into the specified destination
-    /// branch for that pull request at the specified commit using the squash merge strategy. If the merge is successful, it closes the pull request.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Attempts to merge the source commit of a pull request into the specified destination branch for that pull request at the specified commit using the squash merge strategy. If the merge is successful, it closes the pull request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MergePullRequestBySquash<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6976,10 +6631,10 @@ pub mod fluent_builders {
                 crate::input::MergePullRequestBySquashInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6987,12 +6642,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7001,8 +6656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
@@ -7013,14 +6668,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
-        /// exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-        pub fn source_commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_id(inp);
+        /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+        pub fn source_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_id(input.into());
             self
         }
-        /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
-        /// exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+        /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
         pub fn set_source_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7028,21 +6681,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_commit_id(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            inp: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(inp);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn set_conflict_detail_level(
             mut self,
             input: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
@@ -7050,19 +6697,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_detail_level(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            inp: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(inp);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn set_conflict_resolution_strategy(
             mut self,
             input: std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
@@ -7071,8 +6714,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The commit message to include in the commit information for the merge.</p>
-        pub fn commit_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(inp);
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p>The commit message to include in the commit information for the merge.</p>
@@ -7083,52 +6726,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_commit_message(input);
             self
         }
-        /// <p>The name of the author who created the commit. This information is used as both the
-        /// author and committer for the commit.</p>
-        pub fn author_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author_name(inp);
+        /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+        pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_name(input.into());
             self
         }
-        /// <p>The name of the author who created the commit. This information is used as both the
-        /// author and committer for the commit.</p>
+        /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
         pub fn set_author_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_author_name(input);
             self
         }
-        /// <p>The email address of the person merging the branches. This information is used in the
-        /// commit information for the merge.</p>
-        pub fn email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(inp);
+        /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
-        /// <p>The email address of the person merging the branches. This information is used in the
-        /// commit information for the merge.</p>
+        /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_email(input);
             self
         }
-        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
-        /// changes leave the folders empty. If true, a .gitkeep file is created for empty folders.
-        /// The default is false.</p>
-        pub fn keep_empty_folders(mut self, inp: bool) -> Self {
-            self.inner = self.inner.keep_empty_folders(inp);
+        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
+        pub fn keep_empty_folders(mut self, input: bool) -> Self {
+            self.inner = self.inner.keep_empty_folders(input);
             self
         }
-        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
-        /// changes leave the folders empty. If true, a .gitkeep file is created for empty folders.
-        /// The default is false.</p>
+        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
         pub fn set_keep_empty_folders(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_keep_empty_folders(input);
             self
         }
-        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
-        /// resolving conflicts during a merge.</p>
-        pub fn conflict_resolution(mut self, inp: crate::model::ConflictResolution) -> Self {
-            self.inner = self.inner.conflict_resolution(inp);
+        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+        pub fn conflict_resolution(mut self, input: crate::model::ConflictResolution) -> Self {
+            self.inner = self.inner.conflict_resolution(input);
             self
         }
-        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
-        /// resolving conflicts during a merge.</p>
+        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
         pub fn set_conflict_resolution(
             mut self,
             input: std::option::Option<crate::model::ConflictResolution>,
@@ -7139,9 +6772,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `MergePullRequestByThreeWay`.
     ///
-    /// <p>Attempts to merge the source commit of a pull request into the specified destination
-    /// branch for that pull request at the specified commit using the three-way merge strategy. If the merge is successful, it closes the pull request.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Attempts to merge the source commit of a pull request into the specified destination branch for that pull request at the specified commit using the three-way merge strategy. If the merge is successful, it closes the pull request.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MergePullRequestByThreeWay<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7186,10 +6818,10 @@ pub mod fluent_builders {
                 crate::input::MergePullRequestByThreeWayInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7197,12 +6829,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7211,8 +6843,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
@@ -7223,14 +6855,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
-        /// exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-        pub fn source_commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_id(inp);
+        /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+        pub fn source_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_id(input.into());
             self
         }
-        /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
-        /// exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+        /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
         pub fn set_source_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7238,21 +6868,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_commit_id(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            inp: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(inp);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
-        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
-        /// which returns a not-mergeable result if the same file has differences in both branches.
-        /// If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in
-        /// both branches has differences on the same line.</p>
+        /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
         pub fn set_conflict_detail_level(
             mut self,
             input: std::option::Option<crate::model::ConflictDetailLevelTypeEnum>,
@@ -7260,19 +6884,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conflict_detail_level(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            inp: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(inp);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
-        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
-        /// automatically merging two versions of a file. The default is NONE, which requires any
-        /// conflicts to be resolved manually before the merge operation is successful.</p>
+        /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn set_conflict_resolution_strategy(
             mut self,
             input: std::option::Option<crate::model::ConflictResolutionStrategyTypeEnum>,
@@ -7281,8 +6901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The commit message to include in the commit information for the merge.</p>
-        pub fn commit_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(inp);
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p>The commit message to include in the commit information for the merge.</p>
@@ -7293,52 +6913,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_commit_message(input);
             self
         }
-        /// <p>The name of the author who created the commit. This information is used as both the
-        /// author and committer for the commit.</p>
-        pub fn author_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author_name(inp);
+        /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+        pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_name(input.into());
             self
         }
-        /// <p>The name of the author who created the commit. This information is used as both the
-        /// author and committer for the commit.</p>
+        /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
         pub fn set_author_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_author_name(input);
             self
         }
-        /// <p>The email address of the person merging the branches. This information is used in the
-        /// commit information for the merge.</p>
-        pub fn email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(inp);
+        /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
-        /// <p>The email address of the person merging the branches. This information is used in the
-        /// commit information for the merge.</p>
+        /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_email(input);
             self
         }
-        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
-        /// changes leave the folders empty. If true, a .gitkeep file is created for empty folders.
-        /// The default is false.</p>
-        pub fn keep_empty_folders(mut self, inp: bool) -> Self {
-            self.inner = self.inner.keep_empty_folders(inp);
+        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
+        pub fn keep_empty_folders(mut self, input: bool) -> Self {
+            self.inner = self.inner.keep_empty_folders(input);
             self
         }
-        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
-        /// changes leave the folders empty. If true, a .gitkeep file is created for empty folders.
-        /// The default is false.</p>
+        /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
         pub fn set_keep_empty_folders(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_keep_empty_folders(input);
             self
         }
-        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
-        /// resolving conflicts during a merge.</p>
-        pub fn conflict_resolution(mut self, inp: crate::model::ConflictResolution) -> Self {
-            self.inner = self.inner.conflict_resolution(inp);
+        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+        pub fn conflict_resolution(mut self, input: crate::model::ConflictResolution) -> Self {
+            self.inner = self.inner.conflict_resolution(input);
             self
         }
-        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
-        /// resolving conflicts during a merge.</p>
+        /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
         pub fn set_conflict_resolution(
             mut self,
             input: std::option::Option<crate::model::ConflictResolution>,
@@ -7350,7 +6960,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `OverridePullRequestApprovalRules`.
     ///
     /// <p>Sets aside (overrides) all approval rule requirements for a specified pull request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct OverridePullRequestApprovalRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7395,10 +7005,10 @@ pub mod fluent_builders {
                 crate::input::OverridePullRequestApprovalRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7406,16 +7016,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The system-generated ID of the pull request for which you want to override all
-        /// approval rule requirements. To get this information, use
-        /// <a>GetPullRequest</a>.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        /// <p>The system-generated ID of the pull request for which you want to override all approval rule requirements. To get this information, use <code>GetPullRequest</code>.</p>
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
-        /// <p>The system-generated ID of the pull request for which you want to override all
-        /// approval rule requirements. To get this information, use
-        /// <a>GetPullRequest</a>.</p>
+        /// <p>The system-generated ID of the pull request for which you want to override all approval rule requirements. To get this information, use <code>GetPullRequest</code>.</p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7423,26 +7029,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pull_request_id(input);
             self
         }
-        /// <p>The system-generated ID of the most recent revision of the pull request. You cannot override approval rules for anything but the most recent revision of a pull request.
-        /// To get the revision ID, use GetPullRequest.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        /// <p>The system-generated ID of the most recent revision of the pull request. You cannot override approval rules for anything but the most recent revision of a pull request. To get the revision ID, use GetPullRequest.</p>
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
-        /// <p>The system-generated ID of the most recent revision of the pull request. You cannot override approval rules for anything but the most recent revision of a pull request.
-        /// To get the revision ID, use GetPullRequest.</p>
+        /// <p>The system-generated ID of the most recent revision of the pull request. You cannot override approval rules for anything but the most recent revision of a pull request. To get the revision ID, use GetPullRequest.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_revision_id(input);
             self
         }
-        /// <p>Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply
-        /// approval rule requirements (REVOKE). REVOKE status is not stored.</p>
-        pub fn override_status(mut self, inp: crate::model::OverrideStatus) -> Self {
-            self.inner = self.inner.override_status(inp);
+        /// <p>Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply approval rule requirements (REVOKE). REVOKE status is not stored.</p>
+        pub fn override_status(mut self, input: crate::model::OverrideStatus) -> Self {
+            self.inner = self.inner.override_status(input);
             self
         }
-        /// <p>Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply
-        /// approval rule requirements (REVOKE). REVOKE status is not stored.</p>
+        /// <p>Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply approval rule requirements (REVOKE). REVOKE status is not stored.</p>
         pub fn set_override_status(
             mut self,
             input: std::option::Option<crate::model::OverrideStatus>,
@@ -7454,7 +7056,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PostCommentForComparedCommit`.
     ///
     /// <p>Posts a comment on the comparison between two commits.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PostCommentForComparedCommit<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7499,10 +7101,10 @@ pub mod fluent_builders {
                 crate::input::PostCommentForComparedCommitInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7511,8 +7113,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
@@ -7523,16 +7125,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>To establish the directionality of the comparison, the full commit ID of the before
-        /// commit. Required for commenting on any commit unless that commit is the initial
-        /// commit.</p>
-        pub fn before_commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.before_commit_id(inp);
+        /// <p>To establish the directionality of the comparison, the full commit ID of the before commit. Required for commenting on any commit unless that commit is the initial commit.</p>
+        pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.before_commit_id(input.into());
             self
         }
-        /// <p>To establish the directionality of the comparison, the full commit ID of the before
-        /// commit. Required for commenting on any commit unless that commit is the initial
-        /// commit.</p>
+        /// <p>To establish the directionality of the comparison, the full commit ID of the before commit. Required for commenting on any commit unless that commit is the initial commit.</p>
         pub fn set_before_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7540,14 +7138,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_before_commit_id(input);
             self
         }
-        /// <p>To establish the directionality of the comparison, the full commit ID of the after
-        /// commit.</p>
-        pub fn after_commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after_commit_id(inp);
+        /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
+        pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after_commit_id(input.into());
             self
         }
-        /// <p>To establish the directionality of the comparison, the full commit ID of the after
-        /// commit.</p>
+        /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
         pub fn set_after_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7556,8 +7152,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location of the comparison where you want to comment.</p>
-        pub fn location(mut self, inp: crate::model::Location) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>The location of the comparison where you want to comment.</p>
@@ -7566,8 +7162,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the comment you want to make.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the comment you want to make.</p>
@@ -7575,18 +7171,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content(input);
             self
         }
-        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-        /// the request cannot be repeated with a changed parameter. If a request is received with
-        /// the same parameters and a token is included, the request returns information about the
-        /// initial request that used that token.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-        /// the request cannot be repeated with a changed parameter. If a request is received with
-        /// the same parameters and a token is included, the request returns information about the
-        /// initial request that used that token.</p>
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7598,7 +7188,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PostCommentForPullRequest`.
     ///
     /// <p>Posts a comment on a pull request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PostCommentForPullRequest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7643,10 +7233,10 @@ pub mod fluent_builders {
                 crate::input::PostCommentForPullRequestInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7654,12 +7244,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7668,8 +7258,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository where you want to post a comment on a pull request.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to post a comment on a pull request.</p>
@@ -7681,8 +7271,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
-        pub fn before_commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.before_commit_id(inp);
+        pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.before_commit_id(input.into());
             self
         }
         /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
@@ -7694,8 +7284,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.</p>
-        pub fn after_commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after_commit_id(inp);
+        pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after_commit_id(input.into());
             self
         }
         /// <p>The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.</p>
@@ -7706,23 +7296,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_after_commit_id(input);
             self
         }
-        /// <p>The location of the change where you want to post your comment. If no location is
-        /// provided, the comment is posted as a general comment on the pull request difference
-        /// between the before commit ID and the after commit ID.</p>
-        pub fn location(mut self, inp: crate::model::Location) -> Self {
-            self.inner = self.inner.location(inp);
+        /// <p>The location of the change where you want to post your comment. If no location is provided, the comment is posted as a general comment on the pull request difference between the before commit ID and the after commit ID.</p>
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
-        /// <p>The location of the change where you want to post your comment. If no location is
-        /// provided, the comment is posted as a general comment on the pull request difference
-        /// between the before commit ID and the after commit ID.</p>
+        /// <p>The location of the change where you want to post your comment. If no location is provided, the comment is posted as a general comment on the pull request difference between the before commit ID and the after commit ID.</p>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.inner = self.inner.set_location(input);
             self
         }
         /// <p>The content of your comment on the change.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of your comment on the change.</p>
@@ -7730,18 +7316,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content(input);
             self
         }
-        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-        /// the request cannot be repeated with a changed parameter. If a request is received with
-        /// the same parameters and a token is included, the request returns information about the
-        /// initial request that used that token.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-        /// the request cannot be repeated with a changed parameter. If a request is received with
-        /// the same parameters and a token is included, the request returns information about the
-        /// initial request that used that token.</p>
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7753,7 +7333,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PostCommentReply`.
     ///
     /// <p>Posts a comment in reply to an existing comment on a comparison between commits or a pull request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PostCommentReply<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7798,10 +7378,10 @@ pub mod fluent_builders {
                 crate::input::PostCommentReplyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7809,30 +7389,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <a>GetCommentsForComparedCommit</a>
-        /// or <a>GetCommentsForPullRequest</a>.</p>
-        pub fn in_reply_to(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.in_reply_to(inp);
+        /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+        pub fn in_reply_to(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.in_reply_to(input.into());
             self
         }
-        /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <a>GetCommentsForComparedCommit</a>
-        /// or <a>GetCommentsForPullRequest</a>.</p>
+        /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
         pub fn set_in_reply_to(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_in_reply_to(input);
             self
         }
-        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-        /// the request cannot be repeated with a changed parameter. If a request is received with
-        /// the same parameters and a token is included, the request returns information about the
-        /// initial request that used that token.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-        /// the request cannot be repeated with a changed parameter. If a request is received with
-        /// the same parameters and a token is included, the request returns information about the
-        /// initial request that used that token.</p>
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7841,8 +7413,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contents of your reply to a comment.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The contents of your reply to a comment.</p>
@@ -7853,9 +7425,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutCommentReaction`.
     ///
-    /// <p>Adds or updates a reaction to a specified comment for the user whose identity is used to make the request. You can only add or
-    /// update a reaction for yourself. You cannot add, modify, or delete a reaction for another user.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds or updates a reaction to a specified comment for the user whose identity is used to make the request. You can only add or update a reaction for yourself. You cannot add, modify, or delete a reaction for another user.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutCommentReaction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7900,10 +7471,10 @@ pub mod fluent_builders {
                 crate::input::PutCommentReactionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7912,8 +7483,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the comment to which you want to add or update a reaction.</p>
-        pub fn comment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment_id(inp);
+        pub fn comment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment_id(input.into());
             self
         }
         /// <p>The ID of the comment to which you want to add or update a reaction.</p>
@@ -7921,14 +7492,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_comment_id(input);
             self
         }
-        /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none.
-        /// For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
-        pub fn reaction_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reaction_value(inp);
+        /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
+        pub fn reaction_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reaction_value(input.into());
             self
         }
-        /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none.
-        /// For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
+        /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
         pub fn set_reaction_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7940,7 +7509,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutFile`.
     ///
     /// <p>Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the addition in the specified branch.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutFile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7985,10 +7554,10 @@ pub mod fluent_builders {
                 crate::input::PutFileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7997,8 +7566,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to add or update the file.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to add or update the file.</p>
@@ -8009,21 +7578,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The name of the branch where you want to add or update the file. If this is an empty
-        /// repository, this branch is created.</p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        /// <p>The name of the branch where you want to add or update the file. If this is an empty repository, this branch is created.</p>
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
-        /// <p>The name of the branch where you want to add or update the file. If this is an empty
-        /// repository, this branch is created.</p>
+        /// <p>The name of the branch where you want to add or update the file. If this is an empty repository, this branch is created.</p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_branch_name(input);
             self
         }
         /// <p>The content of the file, in binary object format. </p>
-        pub fn file_content(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.file_content(inp);
+        pub fn file_content(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.file_content(input);
             self
         }
         /// <p>The content of the file, in binary object format. </p>
@@ -8034,32 +7601,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_content(input);
             self
         }
-        /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p>
-        /// <note>
-        /// <p>If the path does not currently exist in the repository, the path is created as part of adding
-        /// the file.</p>
+        /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+        /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
         /// </note>
-        pub fn file_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_path(inp);
+        pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_path(input.into());
             self
         }
-        /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p>
-        /// <note>
-        /// <p>If the path does not currently exist in the repository, the path is created as part of adding
-        /// the file.</p>
+        /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+        /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
         /// </note>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_file_path(input);
             self
         }
-        /// <p>The file mode permissions of the blob. Valid file mode permissions are listed
-        /// here.</p>
-        pub fn file_mode(mut self, inp: crate::model::FileModeTypeEnum) -> Self {
-            self.inner = self.inner.file_mode(inp);
+        /// <p>The file mode permissions of the blob. Valid file mode permissions are listed here.</p>
+        pub fn file_mode(mut self, input: crate::model::FileModeTypeEnum) -> Self {
+            self.inner = self.inner.file_mode(input);
             self
         }
-        /// <p>The file mode permissions of the blob. Valid file mode permissions are listed
-        /// here.</p>
+        /// <p>The file mode permissions of the blob. Valid file mode permissions are listed here.</p>
         pub fn set_file_mode(
             mut self,
             input: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -8067,18 +7628,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_mode(input);
             self
         }
-        /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository,
-        /// no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
-        /// <p>The commit ID must match the ID of the head commit at the time of the operation.
-        /// Otherwise, an error occurs, and the file is not added or updated.</p>
-        pub fn parent_commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_commit_id(inp);
+        /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
+        /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
+        pub fn parent_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_commit_id(input.into());
             self
         }
-        /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository,
-        /// no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
-        /// <p>The commit ID must match the ID of the head commit at the time of the operation.
-        /// Otherwise, an error occurs, and the file is not added or updated.</p>
+        /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
+        /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
         pub fn set_parent_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8086,14 +7643,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parent_commit_id(input);
             self
         }
-        /// <p>A message about why this file was added or updated. Although it is optional, a message
-        /// makes the commit history for your repository more useful.</p>
-        pub fn commit_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(inp);
+        /// <p>A message about why this file was added or updated. Although it is optional, a message makes the commit history for your repository more useful.</p>
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
-        /// <p>A message about why this file was added or updated. Although it is optional, a message
-        /// makes the commit history for your repository more useful.</p>
+        /// <p>A message about why this file was added or updated. Although it is optional, a message makes the commit history for your repository more useful.</p>
         pub fn set_commit_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8101,21 +7656,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_commit_message(input);
             self
         }
-        /// <p>The name of the person adding or updating the file. Although it is optional, a name
-        /// makes the commit history for your repository more useful.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the person adding or updating the file. Although it is optional, a name makes the commit history for your repository more useful.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the person adding or updating the file. Although it is optional, a name
-        /// makes the commit history for your repository more useful.</p>
+        /// <p>The name of the person adding or updating the file. Although it is optional, a name makes the commit history for your repository more useful.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>An email address for the person adding or updating the file.</p>
-        pub fn email(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(inp);
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>An email address for the person adding or updating the file.</p>
@@ -8127,7 +7680,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutRepositoryTriggers`.
     ///
     /// <p>Replaces all triggers for a repository. Used to create or delete triggers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRepositoryTriggers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8172,10 +7725,10 @@ pub mod fluent_builders {
                 crate::input::PutRepositoryTriggersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8184,8 +7737,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to create or update the trigger.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to create or update the trigger.</p>
@@ -8201,8 +7754,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
         /// <p>The JSON block of configuration information for each trigger.</p>
-        pub fn triggers(mut self, inp: impl Into<crate::model::RepositoryTrigger>) -> Self {
-            self.inner = self.inner.triggers(inp);
+        pub fn triggers(mut self, input: crate::model::RepositoryTrigger) -> Self {
+            self.inner = self.inner.triggers(input);
             self
         }
         /// <p>The JSON block of configuration information for each trigger.</p>
@@ -8216,10 +7769,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources
-    /// in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8264,10 +7815,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8276,8 +7827,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
@@ -8295,7 +7846,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The key-value pair to use when tagging this repository.</p>
@@ -8311,10 +7862,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TestRepositoryTriggers`.
     ///
-    /// <p>Tests the functionality of repository triggers by sending information to the trigger
-    /// target. If real data is available in the repository, the test sends data from the last
-    /// commit. If no data is available, sample data is generated.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Tests the functionality of repository triggers by sending information to the trigger target. If real data is available in the repository, the test sends data from the last commit. If no data is available, sample data is generated.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestRepositoryTriggers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8359,10 +7908,10 @@ pub mod fluent_builders {
                 crate::input::TestRepositoryTriggersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8371,8 +7920,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository in which to test the triggers.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository in which to test the triggers.</p>
@@ -8388,8 +7937,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
         /// <p>The list of triggers to test.</p>
-        pub fn triggers(mut self, inp: impl Into<crate::model::RepositoryTrigger>) -> Self {
-            self.inner = self.inner.triggers(inp);
+        pub fn triggers(mut self, input: crate::model::RepositoryTrigger) -> Self {
+            self.inner = self.inner.triggers(input);
             self
         }
         /// <p>The list of triggers to test.</p>
@@ -8403,10 +7952,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS
-    /// CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the <i>AWS CodeCommit User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8451,10 +7998,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8463,8 +8010,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to remove tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to remove tags.</p>
@@ -8477,8 +8024,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag key for each tag that you want to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag key for each tag that you want to remove from the resource.</p>
@@ -8492,10 +8039,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateApprovalRuleTemplateContent`.
     ///
-    /// <p>Updates the content of an approval rule template. You can change the number of
-    /// required approvals, the membership of the approval rule, and whether an approval pool is
-    /// defined.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the content of an approval rule template. You can change the number of required approvals, the membership of the approval rule, and whether an approval pool is defined.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApprovalRuleTemplateContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8540,10 +8085,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApprovalRuleTemplateContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8552,8 +8097,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
-        pub fn approval_rule_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_template_name(inp);
+        pub fn approval_rule_template_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
@@ -8564,14 +8112,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_approval_rule_template_name(input);
             self
         }
-        /// <p>The content that replaces the existing content of the rule. Content statements must be
-        /// complete. You cannot provide only the changes.</p>
-        pub fn new_rule_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_rule_content(inp);
+        /// <p>The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.</p>
+        pub fn new_rule_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_rule_content(input.into());
             self
         }
-        /// <p>The content that replaces the existing content of the rule. Content statements must be
-        /// complete. You cannot provide only the changes.</p>
+        /// <p>The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.</p>
         pub fn set_new_rule_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8579,16 +8125,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_new_rule_content(input);
             self
         }
-        /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this
-        /// information by using
-        /// <a>GetPullRequest</a>.</p>
-        pub fn existing_rule_content_sha256(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.existing_rule_content_sha256(inp);
+        /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
+        pub fn existing_rule_content_sha256(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.existing_rule_content_sha256(input.into());
             self
         }
-        /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this
-        /// information by using
-        /// <a>GetPullRequest</a>.</p>
+        /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
         pub fn set_existing_rule_content_sha256(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8600,7 +8145,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApprovalRuleTemplateDescription`.
     ///
     /// <p>Updates the description for a specified approval rule template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApprovalRuleTemplateDescription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8647,10 +8192,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApprovalRuleTemplateDescriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8659,8 +8204,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the template for which you want to update the description.</p>
-        pub fn approval_rule_template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_template_name(inp);
+        pub fn approval_rule_template_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the template for which you want to update the description.</p>
@@ -8674,9 +8222,9 @@ pub mod fluent_builders {
         /// <p>The updated description of the approval rule template.</p>
         pub fn approval_rule_template_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.approval_rule_template_description(inp);
+            self.inner = self.inner.approval_rule_template_description(input.into());
             self
         }
         /// <p>The updated description of the approval rule template.</p>
@@ -8691,7 +8239,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApprovalRuleTemplateName`.
     ///
     /// <p>Updates the name of a specified approval rule template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApprovalRuleTemplateName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8736,10 +8284,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApprovalRuleTemplateNameInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8750,9 +8298,9 @@ pub mod fluent_builders {
         /// <p>The current name of the approval rule template.</p>
         pub fn old_approval_rule_template_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.old_approval_rule_template_name(inp);
+            self.inner = self.inner.old_approval_rule_template_name(input.into());
             self
         }
         /// <p>The current name of the approval rule template.</p>
@@ -8766,9 +8314,9 @@ pub mod fluent_builders {
         /// <p>The new name you want to apply to the approval rule template.</p>
         pub fn new_approval_rule_template_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.new_approval_rule_template_name(inp);
+            self.inner = self.inner.new_approval_rule_template_name(input.into());
             self
         }
         /// <p>The new name you want to apply to the approval rule template.</p>
@@ -8783,7 +8331,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateComment`.
     ///
     /// <p>Replaces the contents of a comment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateComment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8828,10 +8376,10 @@ pub mod fluent_builders {
                 crate::input::UpdateCommentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8839,21 +8387,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The system-generated ID of the comment you want to update. To get this ID, use <a>GetCommentsForComparedCommit</a>
-        /// or <a>GetCommentsForPullRequest</a>.</p>
-        pub fn comment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment_id(inp);
+        /// <p>The system-generated ID of the comment you want to update. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+        pub fn comment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment_id(input.into());
             self
         }
-        /// <p>The system-generated ID of the comment you want to update. To get this ID, use <a>GetCommentsForComparedCommit</a>
-        /// or <a>GetCommentsForPullRequest</a>.</p>
+        /// <p>The system-generated ID of the comment you want to update. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
         pub fn set_comment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_comment_id(input);
             self
         }
         /// <p>The updated content to replace the existing content of the comment.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The updated content to replace the existing content of the comment.</p>
@@ -8864,11 +8410,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDefaultBranch`.
     ///
-    /// <p>Sets or changes the default branch name for the specified repository.</p>
-    /// <note>
+    /// <p>Sets or changes the default branch name for the specified repository.</p> <note>
     /// <p>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDefaultBranch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8913,10 +8458,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDefaultBranchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8925,8 +8470,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository to set or change the default branch for.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository to set or change the default branch for.</p>
@@ -8938,8 +8483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the branch to set as the default.</p>
-        pub fn default_branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_branch_name(inp);
+        pub fn default_branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_branch_name(input.into());
             self
         }
         /// <p>The name of the branch to set as the default.</p>
@@ -8953,9 +8498,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePullRequestApprovalRuleContent`.
     ///
-    /// <p>Updates the structure of an approval rule created specifically for a pull request. For example, you can change the number of required approvers and
-    /// the approval pool for approvers. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the structure of an approval rule created specifically for a pull request. For example, you can change the number of required approvers and the approval pool for approvers. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePullRequestApprovalRuleContent<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9002,10 +8546,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePullRequestApprovalRuleContentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9014,8 +8558,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request.</p>
@@ -9027,8 +8571,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the approval rule you want to update.</p>
-        pub fn approval_rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_name(inp);
+        pub fn approval_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.approval_rule_name(input.into());
             self
         }
         /// <p>The name of the approval rule you want to update.</p>
@@ -9039,16 +8583,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_approval_rule_name(input);
             self
         }
-        /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this
-        /// information by using
-        /// <a>GetPullRequest</a>.</p>
-        pub fn existing_rule_content_sha256(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.existing_rule_content_sha256(inp);
+        /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
+        pub fn existing_rule_content_sha256(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.existing_rule_content_sha256(input.into());
             self
         }
-        /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this
-        /// information by using
-        /// <a>GetPullRequest</a>.</p>
+        /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
         pub fn set_existing_rule_content_sha256(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9056,91 +8599,33 @@ pub mod fluent_builders {
             self.inner = self.inner.set_existing_rule_content_sha256(input);
             self
         }
-        /// <p>The updated content for the approval rule.</p>
-        /// <note>
-        /// <p>When you update the content of the approval rule, you can specify approvers in an
-        /// approval pool in one of two ways:</p>
+        /// <p>The updated content for the approval rule.</p> <note>
+        /// <p>When you update the content of the approval rule, you can specify approvers in an approval pool in one of two ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>CodeCommitApprovers</b>: This option only
-        /// requires an AWS account and a resource. It can be used for both IAM users
-        /// and federated access users whose name matches the provided resource name.
-        /// This is a very powerful option that offers a great deal of flexibility. For
-        /// example, if you specify the AWS account <i>123456789012</i>
-        /// and <i>Mary_Major</i>, all of the following are counted as
-        /// approvals coming from that user:</p>
+        /// <li> <p> <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM users and federated access users whose name matches the provided resource name. This is a very powerful option that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals coming from that user:</p>
         /// <ul>
-        /// <li>
-        /// <p>An IAM user in the account
-        /// (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p>
-        /// </li>
-        /// <li>
-        /// <p>A federated user identified in IAM as Mary_Major
-        /// (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p>
-        /// </li>
+        /// <li> <p>An IAM user in the account (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p> </li>
+        /// <li> <p>A federated user identified in IAM as Mary_Major (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p> </li>
+        /// </ul> <p>This option does not recognize an active session of someone assuming the role of CodeCommitReview with a role session name of <i>Mary_Major</i> (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>) unless you include a wildcard (*Mary_Major).</p> </li>
+        /// <li> <p> <b>Fully qualified ARN</b>: This option allows you to specify the fully qualified Amazon Resource Name (ARN) of the IAM user or role. </p> </li>
         /// </ul>
-        /// <p>This option does not recognize an active session of someone assuming the
-        /// role of CodeCommitReview with a role session name of
-        /// <i>Mary_Major</i>
-        /// (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>)
-        /// unless you include a wildcard (*Mary_Major).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Fully qualified ARN</b>: This option allows
-        /// you to specify the fully qualified Amazon Resource Name (ARN) of the IAM
-        /// user or role. </p>
-        /// </li>
-        /// </ul>
-        /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.</p>
-        ///
+        /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
         /// </note>
-        pub fn new_rule_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_rule_content(inp);
+        pub fn new_rule_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_rule_content(input.into());
             self
         }
-        /// <p>The updated content for the approval rule.</p>
-        /// <note>
-        /// <p>When you update the content of the approval rule, you can specify approvers in an
-        /// approval pool in one of two ways:</p>
+        /// <p>The updated content for the approval rule.</p> <note>
+        /// <p>When you update the content of the approval rule, you can specify approvers in an approval pool in one of two ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>CodeCommitApprovers</b>: This option only
-        /// requires an AWS account and a resource. It can be used for both IAM users
-        /// and federated access users whose name matches the provided resource name.
-        /// This is a very powerful option that offers a great deal of flexibility. For
-        /// example, if you specify the AWS account <i>123456789012</i>
-        /// and <i>Mary_Major</i>, all of the following are counted as
-        /// approvals coming from that user:</p>
+        /// <li> <p> <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM users and federated access users whose name matches the provided resource name. This is a very powerful option that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals coming from that user:</p>
         /// <ul>
-        /// <li>
-        /// <p>An IAM user in the account
-        /// (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p>
-        /// </li>
-        /// <li>
-        /// <p>A federated user identified in IAM as Mary_Major
-        /// (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p>
-        /// </li>
+        /// <li> <p>An IAM user in the account (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p> </li>
+        /// <li> <p>A federated user identified in IAM as Mary_Major (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p> </li>
+        /// </ul> <p>This option does not recognize an active session of someone assuming the role of CodeCommitReview with a role session name of <i>Mary_Major</i> (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>) unless you include a wildcard (*Mary_Major).</p> </li>
+        /// <li> <p> <b>Fully qualified ARN</b>: This option allows you to specify the fully qualified Amazon Resource Name (ARN) of the IAM user or role. </p> </li>
         /// </ul>
-        /// <p>This option does not recognize an active session of someone assuming the
-        /// role of CodeCommitReview with a role session name of
-        /// <i>Mary_Major</i>
-        /// (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>)
-        /// unless you include a wildcard (*Mary_Major).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Fully qualified ARN</b>: This option allows
-        /// you to specify the fully qualified Amazon Resource Name (ARN) of the IAM
-        /// user or role. </p>
-        /// </li>
-        /// </ul>
-        /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>.</p>
-        ///
+        /// <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn set_new_rule_content(
             mut self,
@@ -9153,7 +8638,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePullRequestApprovalState`.
     ///
     /// <p>Updates the state of a user's approval on a pull request. The user is derived from the signed-in account when the request is made.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePullRequestApprovalState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9198,10 +8683,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePullRequestApprovalStateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9210,8 +8695,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request.</p>
@@ -9223,8 +8708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The system-generated ID of the revision.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The system-generated ID of the revision.</p>
@@ -9233,8 +8718,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The approval state to associate with the user on the pull request.</p>
-        pub fn approval_state(mut self, inp: crate::model::ApprovalState) -> Self {
-            self.inner = self.inner.approval_state(inp);
+        pub fn approval_state(mut self, input: crate::model::ApprovalState) -> Self {
+            self.inner = self.inner.approval_state(input);
             self
         }
         /// <p>The approval state to associate with the user on the pull request.</p>
@@ -9249,7 +8734,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePullRequestDescription`.
     ///
     /// <p>Replaces the contents of the description of a pull request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePullRequestDescription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9294,10 +8779,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePullRequestDescriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9305,12 +8790,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9318,14 +8803,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pull_request_id(input);
             self
         }
-        /// <p>The updated content of the description for the pull request. This content replaces the
-        /// existing description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>The updated content of the description for the pull request. This content replaces the existing description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The updated content of the description for the pull request. This content replaces the
-        /// existing description.</p>
+        /// <p>The updated content of the description for the pull request. This content replaces the existing description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -9334,7 +8817,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePullRequestStatus`.
     ///
     /// <p>Updates the status of a pull request. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePullRequestStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9379,10 +8862,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePullRequestStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9390,12 +8873,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9403,16 +8886,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pull_request_id(input);
             self
         }
-        /// <p>The status of the pull request. The only valid operations are to update the status
-        /// from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or
-        /// from <code>CLOSED</code> to <code>CLOSED</code>.</p>
-        pub fn pull_request_status(mut self, inp: crate::model::PullRequestStatusEnum) -> Self {
-            self.inner = self.inner.pull_request_status(inp);
+        /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
+        pub fn pull_request_status(mut self, input: crate::model::PullRequestStatusEnum) -> Self {
+            self.inner = self.inner.pull_request_status(input);
             self
         }
-        /// <p>The status of the pull request. The only valid operations are to update the status
-        /// from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or
-        /// from <code>CLOSED</code> to <code>CLOSED</code>.</p>
+        /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
         pub fn set_pull_request_status(
             mut self,
             input: std::option::Option<crate::model::PullRequestStatusEnum>,
@@ -9424,7 +8903,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePullRequestTitle`.
     ///
     /// <p>Replaces the title of a pull request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePullRequestTitle<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9469,10 +8948,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePullRequestTitleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9480,12 +8959,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(inp);
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
-        /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
+        /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9494,8 +8973,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated title of the pull request. This replaces the existing title.</p>
-        pub fn title(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(inp);
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(input.into());
             self
         }
         /// <p>The updated title of the pull request. This replaces the existing title.</p>
@@ -9506,15 +8985,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRepositoryDescription`.
     ///
-    /// <p>Sets or changes the comment or description for a repository.</p>
-    /// <note>
-    /// <p>The description field for a repository accepts all HTML characters and all valid
-    /// Unicode characters. Applications that do not HTML-encode the description and display
-    /// it in a webpage can expose users to potentially malicious code. Make sure that you
-    /// HTML-encode the description field in any application that uses this API to display
-    /// the repository description on a webpage.</p>
+    /// <p>Sets or changes the comment or description for a repository.</p> <note>
+    /// <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRepositoryDescription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9559,10 +9033,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRepositoryDescriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9571,8 +9045,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository to set or change the comment or description for.</p>
-        pub fn repository_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(inp);
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository to set or change the comment or description for.</p>
@@ -9584,8 +9058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
-        pub fn repository_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_description(inp);
+        pub fn repository_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_description(input.into());
             self
         }
         /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
@@ -9599,12 +9073,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRepositoryName`.
     ///
-    /// <p>Renames a repository. The repository name must be unique across the calling AWS
-    /// account. Repository names are limited to 100 alphanumeric, dash, and underscore
-    /// characters, and cannot include certain characters. The suffix .git is prohibited. For
-    /// more information about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit
-    /// User Guide.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Renames a repository. The repository name must be unique across the calling AWS account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix .git is prohibited. For more information about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User Guide.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRepositoryName<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9649,10 +9119,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRepositoryNameInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9661,8 +9131,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current name of the repository.</p>
-        pub fn old_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.old_name(inp);
+        pub fn old_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.old_name(input.into());
             self
         }
         /// <p>The current name of the repository.</p>
@@ -9671,8 +9141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name for the repository.</p>
-        pub fn new_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_name(inp);
+        pub fn new_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_name(input.into());
             self
         }
         /// <p>The new name for the repository.</p>
@@ -9682,6 +9152,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

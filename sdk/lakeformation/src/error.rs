@@ -70,8 +70,6 @@ impl AddLFTagsToResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -208,8 +206,6 @@ impl BatchGrantPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -314,8 +310,6 @@ impl BatchRevokePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -437,8 +431,6 @@ impl CancelTransactionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -597,8 +589,6 @@ impl CommitTransactionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -752,8 +742,6 @@ impl CreateDataCellsFilterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -912,8 +900,6 @@ impl CreateLFTagError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1050,8 +1036,6 @@ impl DeleteDataCellsFilterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1189,8 +1173,6 @@ impl DeleteLFTagError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1330,8 +1312,6 @@ impl DeleteObjectsOnCancelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1490,8 +1470,6 @@ impl DeregisterResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1618,8 +1596,6 @@ impl DescribeResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1746,8 +1722,6 @@ impl DescribeTransactionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1885,8 +1859,6 @@ impl ExtendTransactionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2036,8 +2008,6 @@ impl GetDataLakeSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2165,8 +2135,6 @@ impl GetEffectivePermissionsForPathError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2302,8 +2270,6 @@ impl GetLFTagError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2420,8 +2386,6 @@ impl GetQueryStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2545,8 +2509,6 @@ impl GetQueryStatisticsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2692,8 +2654,6 @@ impl GetResourceLFTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2845,8 +2805,6 @@ impl GetTableObjectsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2932,6 +2890,358 @@ impl std::error::Error for GetTableObjectsError {
     }
 }
 
+/// Error type for the `GetTemporaryGluePartitionCredentials` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetTemporaryGluePartitionCredentialsError {
+    /// Kind of error that occurred.
+    pub kind: GetTemporaryGluePartitionCredentialsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetTemporaryGluePartitionCredentials` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetTemporaryGluePartitionCredentialsErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>The engine does not support filtering data based on the enforced permissions. For example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level permissions exist on the table, this exception is thrown.</p>
+    PermissionTypeMismatchException(crate::error::PermissionTypeMismatchException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetTemporaryGluePartitionCredentialsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetTemporaryGluePartitionCredentialsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetTemporaryGluePartitionCredentialsErrorKind::EntityNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetTemporaryGluePartitionCredentialsErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetTemporaryGluePartitionCredentialsErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetTemporaryGluePartitionCredentialsErrorKind::OperationTimeoutException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetTemporaryGluePartitionCredentialsErrorKind::PermissionTypeMismatchException(
+                _inner,
+            ) => _inner.fmt(f),
+            GetTemporaryGluePartitionCredentialsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetTemporaryGluePartitionCredentialsError {
+    fn code(&self) -> Option<&str> {
+        GetTemporaryGluePartitionCredentialsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetTemporaryGluePartitionCredentialsError {
+    /// Creates a new `GetTemporaryGluePartitionCredentialsError`.
+    pub fn new(
+        kind: GetTemporaryGluePartitionCredentialsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetTemporaryGluePartitionCredentialsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetTemporaryGluePartitionCredentialsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetTemporaryGluePartitionCredentialsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetTemporaryGluePartitionCredentialsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetTemporaryGluePartitionCredentialsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTemporaryGluePartitionCredentialsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTemporaryGluePartitionCredentialsErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTemporaryGluePartitionCredentialsErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTemporaryGluePartitionCredentialsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTemporaryGluePartitionCredentialsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTemporaryGluePartitionCredentialsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTemporaryGluePartitionCredentialsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTemporaryGluePartitionCredentialsErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTemporaryGluePartitionCredentialsErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTemporaryGluePartitionCredentialsErrorKind::PermissionTypeMismatchException`.
+    pub fn is_permission_type_mismatch_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTemporaryGluePartitionCredentialsErrorKind::PermissionTypeMismatchException(_)
+        )
+    }
+}
+impl std::error::Error for GetTemporaryGluePartitionCredentialsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetTemporaryGluePartitionCredentialsErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            GetTemporaryGluePartitionCredentialsErrorKind::EntityNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetTemporaryGluePartitionCredentialsErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            GetTemporaryGluePartitionCredentialsErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            GetTemporaryGluePartitionCredentialsErrorKind::OperationTimeoutException(_inner) => {
+                Some(_inner)
+            }
+            GetTemporaryGluePartitionCredentialsErrorKind::PermissionTypeMismatchException(
+                _inner,
+            ) => Some(_inner),
+            GetTemporaryGluePartitionCredentialsErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+/// Error type for the `GetTemporaryGlueTableCredentials` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetTemporaryGlueTableCredentialsError {
+    /// Kind of error that occurred.
+    pub kind: GetTemporaryGlueTableCredentialsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetTemporaryGlueTableCredentials` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetTemporaryGlueTableCredentialsErrorKind {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::error::AccessDeniedException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    /// <p>The engine does not support filtering data based on the enforced permissions. For example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level permissions exist on the table, this exception is thrown.</p>
+    PermissionTypeMismatchException(crate::error::PermissionTypeMismatchException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetTemporaryGlueTableCredentialsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetTemporaryGlueTableCredentialsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetTemporaryGlueTableCredentialsErrorKind::EntityNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetTemporaryGlueTableCredentialsErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetTemporaryGlueTableCredentialsErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetTemporaryGlueTableCredentialsErrorKind::OperationTimeoutException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetTemporaryGlueTableCredentialsErrorKind::PermissionTypeMismatchException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetTemporaryGlueTableCredentialsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetTemporaryGlueTableCredentialsError {
+    fn code(&self) -> Option<&str> {
+        GetTemporaryGlueTableCredentialsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetTemporaryGlueTableCredentialsError {
+    /// Creates a new `GetTemporaryGlueTableCredentialsError`.
+    pub fn new(
+        kind: GetTemporaryGlueTableCredentialsErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetTemporaryGlueTableCredentialsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetTemporaryGlueTableCredentialsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetTemporaryGlueTableCredentialsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetTemporaryGlueTableCredentialsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetTemporaryGlueTableCredentialsErrorKind::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTemporaryGlueTableCredentialsErrorKind::AccessDeniedException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTemporaryGlueTableCredentialsErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTemporaryGlueTableCredentialsErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTemporaryGlueTableCredentialsErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTemporaryGlueTableCredentialsErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTemporaryGlueTableCredentialsErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTemporaryGlueTableCredentialsErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTemporaryGlueTableCredentialsErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTemporaryGlueTableCredentialsErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetTemporaryGlueTableCredentialsErrorKind::PermissionTypeMismatchException`.
+    pub fn is_permission_type_mismatch_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTemporaryGlueTableCredentialsErrorKind::PermissionTypeMismatchException(_)
+        )
+    }
+}
+impl std::error::Error for GetTemporaryGlueTableCredentialsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetTemporaryGlueTableCredentialsErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            GetTemporaryGlueTableCredentialsErrorKind::EntityNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetTemporaryGlueTableCredentialsErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            GetTemporaryGlueTableCredentialsErrorKind::InvalidInputException(_inner) => {
+                Some(_inner)
+            }
+            GetTemporaryGlueTableCredentialsErrorKind::OperationTimeoutException(_inner) => {
+                Some(_inner)
+            }
+            GetTemporaryGlueTableCredentialsErrorKind::PermissionTypeMismatchException(_inner) => {
+                Some(_inner)
+            }
+            GetTemporaryGlueTableCredentialsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `GetWorkUnitResults` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3005,8 +3315,6 @@ impl GetWorkUnitResultsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3141,8 +3449,6 @@ impl GetWorkUnitsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3265,8 +3571,6 @@ impl GrantPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3385,8 +3689,6 @@ impl ListDataCellsFilterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3516,8 +3818,6 @@ impl ListLFTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3637,8 +3937,6 @@ impl ListPermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3754,8 +4052,6 @@ impl ListResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3871,8 +4167,6 @@ impl ListTableStorageOptimizersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3996,8 +4290,6 @@ impl ListTransactionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4110,8 +4402,6 @@ impl PutDataLakeSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4233,8 +4523,6 @@ impl RegisterResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4396,8 +4684,6 @@ impl RemoveLFTagsFromResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4547,8 +4833,6 @@ impl RevokePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4673,8 +4957,6 @@ impl SearchDatabasesByLFTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4823,8 +5105,6 @@ impl SearchTablesByLFTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4972,8 +5252,6 @@ impl StartQueryPlanningError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5094,8 +5372,6 @@ impl StartTransactionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5212,8 +5488,6 @@ impl UpdateLFTagError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5347,8 +5621,6 @@ impl UpdateResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5492,8 +5764,6 @@ impl UpdateTableObjectsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5662,8 +5932,6 @@ impl UpdateTableStorageOptimizerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6753,6 +7021,70 @@ impl ExpiredException {
     }
 }
 
+/// <p>The engine does not support filtering data based on the enforced permissions. For example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level permissions exist on the table, this exception is thrown.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PermissionTypeMismatchException {
+    /// <p>A message describing the problem.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for PermissionTypeMismatchException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PermissionTypeMismatchException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl PermissionTypeMismatchException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for PermissionTypeMismatchException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "PermissionTypeMismatchException")?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for PermissionTypeMismatchException {}
+/// See [`PermissionTypeMismatchException`](crate::error::PermissionTypeMismatchException)
+pub mod permission_type_mismatch_exception {
+    /// A builder for [`PermissionTypeMismatchException`](crate::error::PermissionTypeMismatchException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message describing the problem.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        /// <p>A message describing the problem.</p>
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PermissionTypeMismatchException`](crate::error::PermissionTypeMismatchException)
+        pub fn build(self) -> crate::error::PermissionTypeMismatchException {
+            crate::error::PermissionTypeMismatchException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl PermissionTypeMismatchException {
+    /// Creates a new builder-style object to manufacture [`PermissionTypeMismatchException`](crate::error::PermissionTypeMismatchException)
+    pub fn builder() -> crate::error::permission_type_mismatch_exception::Builder {
+        crate::error::permission_type_mismatch_exception::Builder::default()
+    }
+}
+
 /// <p>Contains details about an error related to statistics not being ready.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6776,8 +7108,8 @@ impl StatisticsNotReadyYetException {
 impl std::fmt::Display for StatisticsNotReadyYetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StatisticsNotReadyYetException")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }

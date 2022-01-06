@@ -7,11 +7,9 @@ pub enum Error {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter. </p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter. </p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current
-    /// AWS account limits. The error code describes the limit exceeded. </p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

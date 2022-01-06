@@ -161,9 +161,9 @@ pub mod create_connector_input {
         /// To override the contents of this collection use [`set_plugins`](Self::set_plugins).
         ///
         /// <p>Specifies which plugins to use for the connector.</p>
-        pub fn plugins(mut self, input: impl Into<crate::model::Plugin>) -> Self {
+        pub fn plugins(mut self, input: crate::model::Plugin) -> Self {
             let mut v = self.plugins.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.plugins = Some(v);
             self
         }
@@ -228,7 +228,7 @@ pub mod create_connector_input {
 #[doc(hidden)]
 pub type CreateConnectorInputOperationOutputAlias = crate::operation::CreateConnector;
 #[doc(hidden)]
-pub type CreateConnectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConnectorInput {
     /// Consumes the builder and constructs an Operation<[`CreateConnector`](crate::operation::CreateConnector)>
     #[allow(clippy::let_and_return)]
@@ -239,7 +239,7 @@ impl CreateConnectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConnector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -319,7 +319,7 @@ impl CreateConnectorInput {
             "CreateConnector",
             "kafkaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -419,7 +419,7 @@ pub mod create_custom_plugin_input {
 #[doc(hidden)]
 pub type CreateCustomPluginInputOperationOutputAlias = crate::operation::CreateCustomPlugin;
 #[doc(hidden)]
-pub type CreateCustomPluginInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCustomPluginInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomPluginInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomPlugin`](crate::operation::CreateCustomPlugin)>
     #[allow(clippy::let_and_return)]
@@ -430,7 +430,7 @@ impl CreateCustomPluginInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomPlugin,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -510,7 +510,7 @@ impl CreateCustomPluginInput {
             "CreateCustomPlugin",
             "kafkaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -596,7 +596,7 @@ pub mod create_worker_configuration_input {
 pub type CreateWorkerConfigurationInputOperationOutputAlias =
     crate::operation::CreateWorkerConfiguration;
 #[doc(hidden)]
-pub type CreateWorkerConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWorkerConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkerConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkerConfiguration`](crate::operation::CreateWorkerConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -607,7 +607,7 @@ impl CreateWorkerConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkerConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -689,7 +689,7 @@ impl CreateWorkerConfigurationInput {
             "CreateWorkerConfiguration",
             "kafkaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -765,7 +765,7 @@ pub mod delete_connector_input {
 #[doc(hidden)]
 pub type DeleteConnectorInputOperationOutputAlias = crate::operation::DeleteConnector;
 #[doc(hidden)]
-pub type DeleteConnectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnector`](crate::operation::DeleteConnector)>
     #[allow(clippy::let_and_return)]
@@ -776,7 +776,7 @@ impl DeleteConnectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConnector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -884,7 +884,7 @@ impl DeleteConnectorInput {
             "DeleteConnector",
             "kafkaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -937,7 +937,7 @@ pub mod describe_connector_input {
 #[doc(hidden)]
 pub type DescribeConnectorInputOperationOutputAlias = crate::operation::DescribeConnector;
 #[doc(hidden)]
-pub type DescribeConnectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnector`](crate::operation::DescribeConnector)>
     #[allow(clippy::let_and_return)]
@@ -948,7 +948,7 @@ impl DescribeConnectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConnector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1042,7 +1042,7 @@ impl DescribeConnectorInput {
             "DescribeConnector",
             "kafkaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1095,7 +1095,7 @@ pub mod describe_custom_plugin_input {
 #[doc(hidden)]
 pub type DescribeCustomPluginInputOperationOutputAlias = crate::operation::DescribeCustomPlugin;
 #[doc(hidden)]
-pub type DescribeCustomPluginInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCustomPluginInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCustomPluginInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCustomPlugin`](crate::operation::DescribeCustomPlugin)>
     #[allow(clippy::let_and_return)]
@@ -1106,7 +1106,7 @@ impl DescribeCustomPluginInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomPlugin,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1200,7 +1200,7 @@ impl DescribeCustomPluginInput {
             "DescribeCustomPlugin",
             "kafkaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1254,7 +1254,7 @@ pub mod describe_worker_configuration_input {
 pub type DescribeWorkerConfigurationInputOperationOutputAlias =
     crate::operation::DescribeWorkerConfiguration;
 #[doc(hidden)]
-pub type DescribeWorkerConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorkerConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkerConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkerConfiguration`](crate::operation::DescribeWorkerConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1265,7 +1265,7 @@ impl DescribeWorkerConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkerConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1359,7 +1359,7 @@ impl DescribeWorkerConfigurationInput {
             "DescribeWorkerConfiguration",
             "kafkaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1436,7 +1436,7 @@ pub mod list_connectors_input {
 #[doc(hidden)]
 pub type ListConnectorsInputOperationOutputAlias = crate::operation::ListConnectors;
 #[doc(hidden)]
-pub type ListConnectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListConnectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConnectorsInput {
     /// Consumes the builder and constructs an Operation<[`ListConnectors`](crate::operation::ListConnectors)>
     #[allow(clippy::let_and_return)]
@@ -1447,7 +1447,7 @@ impl ListConnectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListConnectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1544,7 +1544,7 @@ impl ListConnectorsInput {
             "ListConnectors",
             "kafkaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1606,7 +1606,7 @@ pub mod list_custom_plugins_input {
 #[doc(hidden)]
 pub type ListCustomPluginsInputOperationOutputAlias = crate::operation::ListCustomPlugins;
 #[doc(hidden)]
-pub type ListCustomPluginsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCustomPluginsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomPluginsInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomPlugins`](crate::operation::ListCustomPlugins)>
     #[allow(clippy::let_and_return)]
@@ -1617,7 +1617,7 @@ impl ListCustomPluginsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomPlugins,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1708,7 +1708,7 @@ impl ListCustomPluginsInput {
             "ListCustomPlugins",
             "kafkaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1771,7 +1771,7 @@ pub mod list_worker_configurations_input {
 pub type ListWorkerConfigurationsInputOperationOutputAlias =
     crate::operation::ListWorkerConfigurations;
 #[doc(hidden)]
-pub type ListWorkerConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorkerConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkerConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkerConfigurations`](crate::operation::ListWorkerConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -1782,7 +1782,7 @@ impl ListWorkerConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorkerConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1873,7 +1873,7 @@ impl ListWorkerConfigurationsInput {
             "ListWorkerConfigurations",
             "kafkaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1956,7 +1956,7 @@ pub mod update_connector_input {
 #[doc(hidden)]
 pub type UpdateConnectorInputOperationOutputAlias = crate::operation::UpdateConnector;
 #[doc(hidden)]
-pub type UpdateConnectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConnectorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConnector`](crate::operation::UpdateConnector)>
     #[allow(clippy::let_and_return)]
@@ -1967,7 +1967,7 @@ impl UpdateConnectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConnector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2081,7 +2081,7 @@ impl UpdateConnectorInput {
             "UpdateConnector",
             "kafkaconnect",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS X-Ray
@@ -87,6 +87,7 @@ where
     ///
     /// See [`BatchGetTraces`](crate::client::fluent_builders::BatchGetTraces) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::BatchGetTraces::into_paginator).
     pub fn batch_get_traces(&self) -> fluent_builders::BatchGetTraces<C, M, R> {
         fluent_builders::BatchGetTraces::new(self.handle.clone())
     }
@@ -136,6 +137,7 @@ where
     ///
     /// See [`GetGroups`](crate::client::fluent_builders::GetGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetGroups::into_paginator).
     pub fn get_groups(&self) -> fluent_builders::GetGroups<C, M, R> {
         fluent_builders::GetGroups::new(self.handle.clone())
     }
@@ -150,6 +152,7 @@ where
     ///
     /// See [`GetInsightEvents`](crate::client::fluent_builders::GetInsightEvents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetInsightEvents::into_paginator).
     pub fn get_insight_events(&self) -> fluent_builders::GetInsightEvents<C, M, R> {
         fluent_builders::GetInsightEvents::new(self.handle.clone())
     }
@@ -164,6 +167,7 @@ where
     ///
     /// See [`GetInsightSummaries`](crate::client::fluent_builders::GetInsightSummaries) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetInsightSummaries::into_paginator).
     pub fn get_insight_summaries(&self) -> fluent_builders::GetInsightSummaries<C, M, R> {
         fluent_builders::GetInsightSummaries::new(self.handle.clone())
     }
@@ -171,6 +175,7 @@ where
     ///
     /// See [`GetSamplingRules`](crate::client::fluent_builders::GetSamplingRules) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSamplingRules::into_paginator).
     pub fn get_sampling_rules(&self) -> fluent_builders::GetSamplingRules<C, M, R> {
         fluent_builders::GetSamplingRules::new(self.handle.clone())
     }
@@ -178,6 +183,7 @@ where
     ///
     /// See [`GetSamplingStatisticSummaries`](crate::client::fluent_builders::GetSamplingStatisticSummaries) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSamplingStatisticSummaries::into_paginator).
     pub fn get_sampling_statistic_summaries(
         &self,
     ) -> fluent_builders::GetSamplingStatisticSummaries<C, M, R> {
@@ -194,6 +200,7 @@ where
     ///
     /// See [`GetServiceGraph`](crate::client::fluent_builders::GetServiceGraph) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetServiceGraph::into_paginator).
     pub fn get_service_graph(&self) -> fluent_builders::GetServiceGraph<C, M, R> {
         fluent_builders::GetServiceGraph::new(self.handle.clone())
     }
@@ -201,6 +208,7 @@ where
     ///
     /// See [`GetTimeSeriesServiceStatistics`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTimeSeriesServiceStatistics::into_paginator).
     pub fn get_time_series_service_statistics(
         &self,
     ) -> fluent_builders::GetTimeSeriesServiceStatistics<C, M, R> {
@@ -210,6 +218,7 @@ where
     ///
     /// See [`GetTraceGraph`](crate::client::fluent_builders::GetTraceGraph) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTraceGraph::into_paginator).
     pub fn get_trace_graph(&self) -> fluent_builders::GetTraceGraph<C, M, R> {
         fluent_builders::GetTraceGraph::new(self.handle.clone())
     }
@@ -217,6 +226,7 @@ where
     ///
     /// See [`GetTraceSummaries`](crate::client::fluent_builders::GetTraceSummaries) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTraceSummaries::into_paginator).
     pub fn get_trace_summaries(&self) -> fluent_builders::GetTraceSummaries<C, M, R> {
         fluent_builders::GetTraceSummaries::new(self.handle.clone())
     }
@@ -287,10 +297,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BatchGetTraces`.
     ///
-    /// <p>Retrieves a list of traces specified by ID. Each trace is a collection of segment
-    /// documents that originates from a single request. Use <code>GetTraceSummaries</code> to get a
-    /// list of trace IDs.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list of traces specified by ID. Each trace is a collection of segment documents that originates from a single request. Use <code>GetTraceSummaries</code> to get a list of trace IDs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetTraces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -335,10 +343,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetTracesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -346,13 +354,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::BatchGetTracesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::BatchGetTracesPaginator<C, M, R> {
+            crate::paginator::BatchGetTracesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `TraceIds`.
         ///
         /// To override the contents of this collection use [`set_trace_ids`](Self::set_trace_ids).
         ///
         /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
-        pub fn trace_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trace_ids(inp);
+        pub fn trace_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trace_ids(input.into());
             self
         }
         /// <p>Specify the trace IDs of requests for which to retrieve segments.</p>
@@ -364,8 +378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -377,7 +391,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGroup`.
     ///
     /// <p>Creates a group resource with a name and a filter expression. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -422,10 +436,10 @@ pub mod fluent_builders {
                 crate::input::CreateGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -433,21 +447,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The case-sensitive name of the new group. Default is a reserved name and names must
-        /// be unique.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
-        /// <p>The case-sensitive name of the new group. Default is a reserved name and names must
-        /// be unique.</p>
+        /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group_name(input);
             self
         }
         /// <p>The filter expression defining criteria by which to group traces.</p>
-        pub fn filter_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_expression(inp);
+        pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_expression(input.into());
             self
         }
         /// <p>The filter expression defining criteria by which to group traces.</p>
@@ -460,31 +472,20 @@ pub mod fluent_builders {
         }
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
-        /// <li>
-        /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-        /// new group or false to disable insights for the new group.</p>
-        /// </li>
-        /// <li>
-        /// <p>The NotifcationsEnabled boolean can be set to true to enable insights
-        /// notifications for the new group. Notifications may only be enabled on a group
-        /// with InsightsEnabled set to true.</p>
-        /// </li>
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>
+        /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
         /// </ul>
-        pub fn insights_configuration(mut self, inp: crate::model::InsightsConfiguration) -> Self {
-            self.inner = self.inner.insights_configuration(inp);
+        pub fn insights_configuration(
+            mut self,
+            input: crate::model::InsightsConfiguration,
+        ) -> Self {
+            self.inner = self.inner.insights_configuration(input);
             self
         }
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
-        /// <li>
-        /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-        /// new group or false to disable insights for the new group.</p>
-        /// </li>
-        /// <li>
-        /// <p>The NotifcationsEnabled boolean can be set to true to enable insights
-        /// notifications for the new group. Notifications may only be enabled on a group
-        /// with InsightsEnabled set to true.</p>
-        /// </li>
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.</p> </li>
+        /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.</p> </li>
         /// </ul>
         pub fn set_insights_configuration(
             mut self,
@@ -497,61 +498,29 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group.
-        /// For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of user-applied tags per resource: 50</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag key length: 128 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag value length: 256 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-        /// / = + - and @</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
-        /// use.</p>
-        /// </li>
+        /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+        /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+        /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+        /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group.
-        /// For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of user-applied tags per resource: 50</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag key length: 128 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag value length: 256 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-        /// / = + - and @</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
-        /// use.</p>
-        /// </li>
+        /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+        /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+        /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+        /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -563,14 +532,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSamplingRule`.
     ///
-    /// <p>Creates a rule to control sampling behavior for instrumented applications. Services
-    /// retrieve rules with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a>, and evaluate each rule in ascending
-    /// order of <i>priority</i> for each request. If a rule matches, the service
-    /// records a trace, borrowing it from the reservoir size. After 10 seconds, the service
-    /// reports back to X-Ray with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a> to get updated versions of
-    /// each in-use rule. The updated rule contains a trace quota that the service can use instead
-    /// of borrowing from the reservoir.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a rule to control sampling behavior for instrumented applications. Services retrieve rules with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a>, and evaluate each rule in ascending order of <i>priority</i> for each request. If a rule matches, the service records a trace, borrowing it from the reservoir size. After 10 seconds, the service reports back to X-Ray with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a> to get updated versions of each in-use rule. The updated rule contains a trace quota that the service can use instead of borrowing from the reservoir.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSamplingRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -615,10 +578,10 @@ pub mod fluent_builders {
                 crate::input::CreateSamplingRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -627,8 +590,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The rule definition.</p>
-        pub fn sampling_rule(mut self, inp: crate::model::SamplingRule) -> Self {
-            self.inner = self.inner.sampling_rule(inp);
+        pub fn sampling_rule(mut self, input: crate::model::SamplingRule) -> Self {
+            self.inner = self.inner.sampling_rule(input);
             self
         }
         /// <p>The rule definition.</p>
@@ -643,61 +606,29 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling
-        /// rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of user-applied tags per resource: 50</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag key length: 128 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag value length: 256 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-        /// / = + - and @</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
-        /// use.</p>
-        /// </li>
+        /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+        /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+        /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+        /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling
-        /// rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of user-applied tags per resource: 50</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag key length: 128 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag value length: 256 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-        /// / = + - and @</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
-        /// use.</p>
-        /// </li>
+        /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+        /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+        /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+        /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -710,7 +641,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGroup`.
     ///
     /// <p>Deletes a group resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -755,10 +686,10 @@ pub mod fluent_builders {
                 crate::input::DeleteGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -767,8 +698,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The case-sensitive name of the group.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The case-sensitive name of the group.</p>
@@ -777,8 +708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the group that was generated on creation.</p>
-        pub fn group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_arn(inp);
+        pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_arn(input.into());
             self
         }
         /// <p>The ARN of the group that was generated on creation.</p>
@@ -790,7 +721,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSamplingRule`.
     ///
     /// <p>Deletes a sampling rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSamplingRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -835,10 +766,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSamplingRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -847,8 +778,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(input.into());
             self
         }
         /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
@@ -857,8 +788,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-        pub fn rule_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_arn(inp);
+        pub fn rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_arn(input.into());
             self
         }
         /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
@@ -870,7 +801,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEncryptionConfig`.
     ///
     /// <p>Retrieves the current encryption configuration for X-Ray data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEncryptionConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -915,10 +846,10 @@ pub mod fluent_builders {
                 crate::input::GetEncryptionConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -930,7 +861,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGroup`.
     ///
     /// <p>Retrieves group resource details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -975,10 +906,10 @@ pub mod fluent_builders {
                 crate::input::GetGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -987,8 +918,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The case-sensitive name of the group.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The case-sensitive name of the group.</p>
@@ -997,8 +928,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the group that was generated on creation.</p>
-        pub fn group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_arn(inp);
+        pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_arn(input.into());
             self
         }
         /// <p>The ARN of the group that was generated on creation.</p>
@@ -1010,7 +941,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGroups`.
     ///
     /// <p>Retrieves all active group details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1055,10 +986,10 @@ pub mod fluent_builders {
                 crate::input::GetGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1066,9 +997,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetGroupsPaginator<C, M, R> {
+            crate::paginator::GetGroupsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -1079,10 +1016,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInsight`.
     ///
-    /// <p>Retrieves the summary information of an insight. This includes impact to clients and
-    /// root cause services, the top anomalous services, the category, the state of the insight,
-    /// and the start and end time of the insight.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the summary information of an insight. This includes impact to clients and root cause services, the top anomalous services, the category, the state of the insight, and the start and end time of the insight.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsight<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1127,10 +1062,10 @@ pub mod fluent_builders {
                 crate::input::GetInsightInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1139,8 +1074,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
-        pub fn insight_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_id(inp);
+        pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_id(input.into());
             self
         }
         /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
@@ -1151,10 +1086,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInsightEvents`.
     ///
-    /// <p>X-Ray reevaluates insights periodically until they're resolved, and records each intermediate state as an
-    /// event. You can review an insight's events in the Impact Timeline on the Inspect page in the X-Ray
-    /// console.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>X-Ray reevaluates insights periodically until they're resolved, and records each intermediate state as an event. You can review an insight's events in the Impact Timeline on the Inspect page in the X-Ray console.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsightEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1199,10 +1132,10 @@ pub mod fluent_builders {
                 crate::input::GetInsightEventsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1210,9 +1143,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetInsightEventsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetInsightEventsPaginator<C, M, R> {
+            crate::paginator::GetInsightEventsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
-        pub fn insight_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_id(inp);
+        pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_id(input.into());
             self
         }
         /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
@@ -1221,8 +1160,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Used to retrieve at most the specified value of events.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Used to retrieve at most the specified value of events.</p>
@@ -1231,8 +1170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
@@ -1243,9 +1182,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInsightImpactGraph`.
     ///
-    /// <p>Retrieves a service graph structure filtered by the specified insight. The service graph is limited to only
-    /// structural information. For a complete service graph, use this API with the GetServiceGraph API.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a service graph structure filtered by the specified insight. The service graph is limited to only structural information. For a complete service graph, use this API with the GetServiceGraph API.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsightImpactGraph<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1290,10 +1228,10 @@ pub mod fluent_builders {
                 crate::input::GetInsightImpactGraphInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1302,8 +1240,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
-        pub fn insight_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_id(inp);
+        pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_id(input.into());
             self
         }
         /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
@@ -1311,14 +1249,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_insight_id(input);
             self
         }
-        /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value
-        /// provided and can't be more than 30 days old.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value
-        /// provided and can't be more than 30 days old.</p>
+        /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1326,14 +1262,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided.
-        /// The time range between the start time and end time can't be more than six hours. </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided.
-        /// The time range between the start time and end time can't be more than six hours. </p>
+        /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1342,8 +1276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
@@ -1355,7 +1289,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInsightSummaries`.
     ///
     /// <p>Retrieves the summaries of all insights in the specified group matching the provided filter values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInsightSummaries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1400,10 +1334,10 @@ pub mod fluent_builders {
                 crate::input::GetInsightSummariesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1411,13 +1345,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetInsightSummariesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetInsightSummariesPaginator<C, M, R> {
+            crate::paginator::GetInsightSummariesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `States`.
         ///
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
         /// <p>The list of insight states. </p>
-        pub fn states(mut self, inp: impl Into<crate::model::InsightState>) -> Self {
-            self.inner = self.inner.states(inp);
+        pub fn states(mut self, input: crate::model::InsightState) -> Self {
+            self.inner = self.inner.states(input);
             self
         }
         /// <p>The list of insight states. </p>
@@ -1429,8 +1369,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
-        pub fn group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_arn(inp);
+        pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
@@ -1439,8 +1379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the group. Required if the GroupARN isn't provided.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group. Required if the GroupARN isn't provided.</p>
@@ -1448,14 +1388,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_name(input);
             self
         }
-        /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days
-        /// old.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days
-        /// old.</p>
+        /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1464,8 +1402,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
@@ -1477,8 +1415,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to display.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to display.</p>
@@ -1487,8 +1425,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -1500,7 +1438,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSamplingRules`.
     ///
     /// <p>Retrieves all sampling rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSamplingRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1545,10 +1483,10 @@ pub mod fluent_builders {
                 crate::input::GetSamplingRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1556,9 +1494,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetSamplingRulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetSamplingRulesPaginator<C, M, R> {
+            crate::paginator::GetSamplingRulesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -1570,7 +1514,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSamplingStatisticSummaries`.
     ///
     /// <p>Retrieves information about recent sampling results for all sampling rules.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSamplingStatisticSummaries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1615,10 +1559,10 @@ pub mod fluent_builders {
                 crate::input::GetSamplingStatisticSummariesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1626,9 +1570,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetSamplingStatisticSummariesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetSamplingStatisticSummariesPaginator<C, M, R> {
+            crate::paginator::GetSamplingStatisticSummariesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -1639,9 +1591,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSamplingTargets`.
     ///
-    /// <p>Requests a sampling quota for rules that the service is using to sample requests.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Requests a sampling quota for rules that the service is using to sample requests. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSamplingTargets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1686,10 +1637,10 @@ pub mod fluent_builders {
                 crate::input::GetSamplingTargetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1704,9 +1655,9 @@ pub mod fluent_builders {
         /// <p>Information about rules that the service is using to sample requests.</p>
         pub fn sampling_statistics_documents(
             mut self,
-            inp: impl Into<crate::model::SamplingStatisticsDocument>,
+            input: crate::model::SamplingStatisticsDocument,
         ) -> Self {
-            self.inner = self.inner.sampling_statistics_documents(inp);
+            self.inner = self.inner.sampling_statistics_documents(input);
             self
         }
         /// <p>Information about rules that the service is using to sample requests.</p>
@@ -1720,12 +1671,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetServiceGraph`.
     ///
-    /// <p>Retrieves a document that describes services that process incoming requests, and
-    /// downstream services that they call as a result. Root services process incoming requests and
-    /// make calls to downstream services. Root services are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">Amazon Web Services X-Ray SDK</a>.
-    /// Downstream services can be other applications, Amazon Web Services resources, HTTP web APIs, or SQL
-    /// databases.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a document that describes services that process incoming requests, and downstream services that they call as a result. Root services process incoming requests and make calls to downstream services. Root services are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">Amazon Web Services X-Ray SDK</a>. Downstream services can be other applications, Amazon Web Services resources, HTTP web APIs, or SQL databases.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceGraph<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1770,10 +1717,10 @@ pub mod fluent_builders {
                 crate::input::GetServiceGraphInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1781,9 +1728,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetServiceGraphPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetServiceGraphPaginator<C, M, R> {
+            crate::paginator::GetServiceGraphPaginator::new(self.handle, self.inner)
+        }
         /// <p>The start of the time frame for which to generate a graph.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start of the time frame for which to generate a graph.</p>
@@ -1795,8 +1748,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end of the timeframe for which to generate a graph.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end of the timeframe for which to generate a graph.</p>
@@ -1808,8 +1761,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a group based on which you want to generate a graph.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of a group based on which you want to generate a graph.</p>
@@ -1818,8 +1771,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</p>
-        pub fn group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_arn(inp);
+        pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</p>
@@ -1828,8 +1781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -1840,9 +1793,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTimeSeriesServiceStatistics`.
     ///
-    /// <p>Get an aggregation of service statistics defined by a specific time
-    /// range.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Get an aggregation of service statistics defined by a specific time range.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTimeSeriesServiceStatistics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1887,10 +1839,10 @@ pub mod fluent_builders {
                 crate::input::GetTimeSeriesServiceStatisticsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1898,9 +1850,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetTimeSeriesServiceStatisticsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetTimeSeriesServiceStatisticsPaginator<C, M, R> {
+            crate::paginator::GetTimeSeriesServiceStatisticsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The start of the time frame for which to aggregate statistics.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start of the time frame for which to aggregate statistics.</p>
@@ -1912,8 +1872,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end of the time frame for which to aggregate statistics.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end of the time frame for which to aggregate statistics.</p>
@@ -1925,8 +1885,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The case-sensitive name of the group for which to pull statistics from.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The case-sensitive name of the group for which to pull statistics from.</p>
@@ -1935,8 +1895,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
-        pub fn group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_arn(inp);
+        pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
@@ -1944,16 +1904,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_arn(input);
             self
         }
-        /// <p>A filter expression defining entities that will be aggregated for statistics.
-        /// Supports ID, service, and edge functions. If no selector expression is specified, edge
-        /// statistics are returned. </p>
-        pub fn entity_selector_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_selector_expression(inp);
+        /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
+        pub fn entity_selector_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_selector_expression(input.into());
             self
         }
-        /// <p>A filter expression defining entities that will be aggregated for statistics.
-        /// Supports ID, service, and edge functions. If no selector expression is specified, edge
-        /// statistics are returned. </p>
+        /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
         pub fn set_entity_selector_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1962,8 +1918,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Aggregation period in seconds.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.inner = self.inner.period(inp);
+        pub fn period(mut self, input: i32) -> Self {
+            self.inner = self.inner.period(input);
             self
         }
         /// <p>Aggregation period in seconds.</p>
@@ -1971,21 +1927,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_period(input);
             self
         }
-        /// <p>The forecasted high and low fault count values. Forecast enabled requests require the
-        /// EntitySelectorExpression ID be provided.</p>
-        pub fn forecast_statistics(mut self, inp: bool) -> Self {
-            self.inner = self.inner.forecast_statistics(inp);
+        /// <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
+        pub fn forecast_statistics(mut self, input: bool) -> Self {
+            self.inner = self.inner.forecast_statistics(input);
             self
         }
-        /// <p>The forecasted high and low fault count values. Forecast enabled requests require the
-        /// EntitySelectorExpression ID be provided.</p>
+        /// <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
         pub fn set_forecast_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_forecast_statistics(input);
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -1997,7 +1951,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTraceGraph`.
     ///
     /// <p>Retrieves a service graph for one or more specific trace IDs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTraceGraph<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2042,10 +1996,10 @@ pub mod fluent_builders {
                 crate::input::GetTraceGraphInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2053,13 +2007,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetTraceGraphPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetTraceGraphPaginator<C, M, R> {
+            crate::paginator::GetTraceGraphPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `TraceIds`.
         ///
         /// To override the contents of this collection use [`set_trace_ids`](Self::set_trace_ids).
         ///
         /// <p>Trace IDs of requests for which to generate a service graph.</p>
-        pub fn trace_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trace_ids(inp);
+        pub fn trace_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trace_ids(input.into());
             self
         }
         /// <p>Trace IDs of requests for which to generate a service graph.</p>
@@ -2071,8 +2031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -2083,24 +2043,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTraceSummaries`.
     ///
-    /// <p>Retrieves IDs and annotations for traces available for a specified time frame using an
-    /// optional filter. To get the full traces, pass the trace IDs to
-    /// <code>BatchGetTraces</code>.</p>
-    /// <p>A filter expression can target traced requests that hit specific service nodes or
-    /// edges, have errors, or come from a known user. For example, the following filter expression
-    /// targets traces that pass through <code>api.example.com</code>:</p>
-    /// <p>
-    /// <code>service("api.example.com")</code>
-    /// </p>
-    /// <p>This filter expression finds traces that have an annotation named <code>account</code>
-    /// with the value <code>12345</code>:</p>
-    /// <p>
-    /// <code>annotation.account = "12345"</code>
-    /// </p>
-    /// <p>For a full list of indexed fields and keywords that you can use in filter expressions,
-    /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter
-    /// Expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves IDs and annotations for traces available for a specified time frame using an optional filter. To get the full traces, pass the trace IDs to <code>BatchGetTraces</code>.</p>
+    /// <p>A filter expression can target traced requests that hit specific service nodes or edges, have errors, or come from a known user. For example, the following filter expression targets traces that pass through <code>api.example.com</code>:</p>
+    /// <p> <code>service("api.example.com")</code> </p>
+    /// <p>This filter expression finds traces that have an annotation named <code>account</code> with the value <code>12345</code>:</p>
+    /// <p> <code>annotation.account = "12345"</code> </p>
+    /// <p>For a full list of indexed fields and keywords that you can use in filter expressions, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTraceSummaries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2145,10 +2094,10 @@ pub mod fluent_builders {
                 crate::input::GetTraceSummariesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2156,9 +2105,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetTraceSummariesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetTraceSummariesPaginator<C, M, R> {
+            crate::paginator::GetTraceSummariesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The start of the time frame for which to retrieve traces.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start of the time frame for which to retrieve traces.</p>
@@ -2170,8 +2125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end of the time frame for which to retrieve traces.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end of the time frame for which to retrieve traces.</p>
@@ -2183,8 +2138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
-        pub fn time_range_type(mut self, inp: crate::model::TimeRangeType) -> Self {
-            self.inner = self.inner.time_range_type(inp);
+        pub fn time_range_type(mut self, input: crate::model::TimeRangeType) -> Self {
+            self.inner = self.inner.time_range_type(input);
             self
         }
         /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
@@ -2195,26 +2150,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_time_range_type(input);
             self
         }
-        /// <p>Set to <code>true</code> to get summaries for only a subset of available
-        /// traces.</p>
-        pub fn sampling(mut self, inp: bool) -> Self {
-            self.inner = self.inner.sampling(inp);
+        /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
+        pub fn sampling(mut self, input: bool) -> Self {
+            self.inner = self.inner.sampling(input);
             self
         }
-        /// <p>Set to <code>true</code> to get summaries for only a subset of available
-        /// traces.</p>
+        /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
         pub fn set_sampling(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_sampling(input);
             self
         }
-        /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and
-        /// Value.</p>
-        pub fn sampling_strategy(mut self, inp: crate::model::SamplingStrategy) -> Self {
-            self.inner = self.inner.sampling_strategy(inp);
+        /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
+        pub fn sampling_strategy(mut self, input: crate::model::SamplingStrategy) -> Self {
+            self.inner = self.inner.sampling_strategy(input);
             self
         }
-        /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and
-        /// Value.</p>
+        /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
         pub fn set_sampling_strategy(
             mut self,
             input: std::option::Option<crate::model::SamplingStrategy>,
@@ -2222,14 +2173,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sampling_strategy(input);
             self
         }
-        /// <p>Specify a filter expression to retrieve trace summaries for services or requests that
-        /// meet certain requirements.</p>
-        pub fn filter_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_expression(inp);
+        /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
+        pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_expression(input.into());
             self
         }
-        /// <p>Specify a filter expression to retrieve trace summaries for services or requests that
-        /// meet certain requirements.</p>
+        /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
         pub fn set_filter_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2237,14 +2186,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_expression(input);
             self
         }
-        /// <p>Specify the pagination token returned by a previous request to retrieve the next page
-        /// of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Specify the pagination token returned by a previous request to retrieve the next page
-        /// of results.</p>
+        /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2253,7 +2200,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of tags that are applied to the specified Amazon Web Services X-Ray group or sampling rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2298,10 +2245,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2310,8 +2257,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
@@ -2319,14 +2266,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
-        /// the current page of results as the value of this parameter to get the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results as the value of this parameter to get the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
-        /// the current page of results as the value of this parameter to get the next page of results.</p>
+        /// <p>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with the current page of results as the value of this parameter to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2335,7 +2280,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutEncryptionConfig`.
     ///
     /// <p>Updates the encryption configuration for X-Ray data.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEncryptionConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2380,10 +2325,10 @@ pub mod fluent_builders {
                 crate::input::PutEncryptionConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2393,62 +2338,32 @@ pub mod fluent_builders {
         }
         /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Alias</b> - The name of the key. For example,
-        /// <code>alias/MyKey</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Key ID</b> - The KMS key ID of the key. For example,
-        /// <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ARN</b> - The full Amazon Resource Name of the key ID or alias.
-        /// For example,
-        /// <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
-        /// Use this format to specify a key in a different account.</p>
-        /// </li>
+        /// <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li>
+        /// <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li>
+        /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li>
         /// </ul>
         /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input.into());
             self
         }
         /// <p>An Amazon Web Services KMS key in one of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Alias</b> - The name of the key. For example,
-        /// <code>alias/MyKey</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Key ID</b> - The KMS key ID of the key. For example,
-        /// <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>ARN</b> - The full Amazon Resource Name of the key ID or alias.
-        /// For example,
-        /// <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
-        /// Use this format to specify a key in a different account.</p>
-        /// </li>
+        /// <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li>
+        /// <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li>
+        /// <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li>
         /// </ul>
         /// <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key_id(input);
             self
         }
-        /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set
-        /// to <code>NONE</code> for default encryption.</p>
-        pub fn r#type(mut self, inp: crate::model::EncryptionType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
+        pub fn r#type(mut self, input: crate::model::EncryptionType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set
-        /// to <code>NONE</code> for default encryption.</p>
+        /// <p>The type of encryption. Set to <code>KMS</code> to use your own key for encryption. Set to <code>NONE</code> for default encryption.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::EncryptionType>,
@@ -2460,7 +2375,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutTelemetryRecords`.
     ///
     /// <p>Used by the Amazon Web Services X-Ray daemon to upload telemetry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutTelemetryRecords<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2505,10 +2420,10 @@ pub mod fluent_builders {
                 crate::input::PutTelemetryRecordsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2521,8 +2436,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_telemetry_records`](Self::set_telemetry_records).
         ///
         /// <p></p>
-        pub fn telemetry_records(mut self, inp: impl Into<crate::model::TelemetryRecord>) -> Self {
-            self.inner = self.inner.telemetry_records(inp);
+        pub fn telemetry_records(mut self, input: crate::model::TelemetryRecord) -> Self {
+            self.inner = self.inner.telemetry_records(input);
             self
         }
         /// <p></p>
@@ -2534,8 +2449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p></p>
-        pub fn ec2_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_instance_id(inp);
+        pub fn ec2_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_instance_id(input.into());
             self
         }
         /// <p></p>
@@ -2547,8 +2462,8 @@ pub mod fluent_builders {
             self
         }
         /// <p></p>
-        pub fn hostname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname(inp);
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname(input.into());
             self
         }
         /// <p></p>
@@ -2557,8 +2472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p></p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p></p>
@@ -2569,70 +2484,25 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutTraceSegments`.
     ///
-    /// <p>Uploads segment documents to Amazon Web Services X-Ray. The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray SDK</a> generates segment documents and sends them to the X-Ray daemon, which uploads them in
-    /// batches. A segment document can be a completed segment, an in-progress segment, or an array of
-    /// subsegments.</p>
-    /// <p>Segments must include the following fields. For the full segment document schema, see
-    /// <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon Web Services X-Ray
-    /// Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
-    /// <p class="title">
-    /// <b>Required segment document fields</b>
-    /// </p>
+    /// <p>Uploads segment documents to Amazon Web Services X-Ray. The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray SDK</a> generates segment documents and sends them to the X-Ray daemon, which uploads them in batches. A segment document can be a completed segment, an in-progress segment, or an array of subsegments.</p>
+    /// <p>Segments must include the following fields. For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
+    /// <p class="title"> <b>Required segment document fields</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>name</code> - The name of the service that handled the request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>id</code> - A 64-bit identifier for the segment, unique among segments in the same trace, in 16
-    /// hexadecimal digits.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>trace_id</code> - A unique identifier that connects all segments and subsegments originating from
-    /// a single client request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>start_time</code> - Time the segment or subsegment was created, in floating point seconds in
-    /// epoch time, accurate to milliseconds. For example, <code>1480615200.010</code> or
-    /// <code>1.480615200010E9</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>end_time</code> - Time the segment or subsegment was closed. For example,
-    /// <code>1480615200.090</code> or <code>1.480615200090E9</code>. Specify either an <code>end_time</code> or
-    /// <code>in_progress</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>in_progress</code> - Set to <code>true</code> instead of specifying an <code>end_time</code> to
-    /// record that a segment has been started, but is not complete. Send an in-progress segment when your application
-    /// receives a request that will take a long time to serve, to trace that the request was received. When the
-    /// response is sent, send the complete segment to overwrite the in-progress segment.</p>
-    /// </li>
+    /// <li> <p> <code>name</code> - The name of the service that handled the request.</p> </li>
+    /// <li> <p> <code>id</code> - A 64-bit identifier for the segment, unique among segments in the same trace, in 16 hexadecimal digits.</p> </li>
+    /// <li> <p> <code>trace_id</code> - A unique identifier that connects all segments and subsegments originating from a single client request.</p> </li>
+    /// <li> <p> <code>start_time</code> - Time the segment or subsegment was created, in floating point seconds in epoch time, accurate to milliseconds. For example, <code>1480615200.010</code> or <code>1.480615200010E9</code>.</p> </li>
+    /// <li> <p> <code>end_time</code> - Time the segment or subsegment was closed. For example, <code>1480615200.090</code> or <code>1.480615200090E9</code>. Specify either an <code>end_time</code> or <code>in_progress</code>.</p> </li>
+    /// <li> <p> <code>in_progress</code> - Set to <code>true</code> instead of specifying an <code>end_time</code> to record that a segment has been started, but is not complete. Send an in-progress segment when your application receives a request that will take a long time to serve, to trace that the request was received. When the response is sent, send the complete segment to overwrite the in-progress segment.</p> </li>
     /// </ul>
-    /// <p>A <code>trace_id</code> consists of three numbers separated by hyphens. For example,
-    /// 1-58406520-a006649127e371903a2de979. This includes:</p>
-    /// <p class="title">
-    /// <b>Trace ID Format</b>
-    /// </p>
+    /// <p>A <code>trace_id</code> consists of three numbers separated by hyphens. For example, 1-58406520-a006649127e371903a2de979. This includes:</p>
+    /// <p class="title"> <b>Trace ID Format</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>The version number, for instance, <code>1</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The time of the original request, in Unix epoch time, in 8 hexadecimal digits. For
-    /// example, 10:00AM December 2nd, 2016 PST in epoch time is <code>1480615200</code> seconds,
-    /// or <code>58406520</code> in hexadecimal.</p>
-    /// </li>
-    /// <li>
-    /// <p>A 96-bit identifier for the trace, globally unique, in 24 hexadecimal
-    /// digits.</p>
-    /// </li>
+    /// <li> <p>The version number, for instance, <code>1</code>.</p> </li>
+    /// <li> <p>The time of the original request, in Unix epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd, 2016 PST in epoch time is <code>1480615200</code> seconds, or <code>58406520</code> in hexadecimal.</p> </li>
+    /// <li> <p>A 96-bit identifier for the trace, globally unique, in 24 hexadecimal digits.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutTraceSegments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2677,10 +2547,10 @@ pub mod fluent_builders {
                 crate::input::PutTraceSegmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2692,14 +2562,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_trace_segment_documents`](Self::set_trace_segment_documents).
         ///
-        /// <p>A string containing a JSON document defining one or more segments or
-        /// subsegments.</p>
-        pub fn trace_segment_documents(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trace_segment_documents(inp);
+        /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
+        pub fn trace_segment_documents(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trace_segment_documents(input.into());
             self
         }
-        /// <p>A string containing a JSON document defining one or more segments or
-        /// subsegments.</p>
+        /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
         pub fn set_trace_segment_documents(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2711,7 +2579,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Applies tags to an existing Amazon Web Services X-Ray group or sampling rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2756,10 +2624,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2768,8 +2636,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
@@ -2781,61 +2649,29 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or
-        /// sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-        /// in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of user-applied tags per resource: 50</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag key length: 128 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag value length: 256 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-        /// / = + - and @</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You
-        /// cannot edit or delete system tags.</p>
-        /// </li>
+        /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+        /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+        /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+        /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.</p> </li>
         /// </ul>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or
-        /// sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-        /// in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
         /// <p>The following restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of user-applied tags per resource: 50</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag key length: 128 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum tag value length: 256 Unicode characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . :
-        /// / = + - and @</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You
-        /// cannot edit or delete system tags.</p>
-        /// </li>
+        /// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+        /// <li> <p>Maximum tag key length: 128 Unicode characters</p> </li>
+        /// <li> <p>Maximum tag value length: 256 Unicode characters</p> </li>
+        /// <li> <p>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @</p> </li>
+        /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+        /// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -2847,9 +2683,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes tags from an Amazon Web Services X-Ray group or sampling rule. You cannot edit or delete system
-    /// tags (those with an <code>aws:</code> prefix).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes tags from an Amazon Web Services X-Ray group or sampling rule. You cannot edit or delete system tags (those with an <code>aws:</code> prefix).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2894,10 +2729,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2906,8 +2741,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</p>
@@ -2920,8 +2755,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.</p>
@@ -2936,7 +2771,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGroup`.
     ///
     /// <p>Updates a group resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2981,10 +2816,10 @@ pub mod fluent_builders {
                 crate::input::UpdateGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2993,8 +2828,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The case-sensitive name of the group.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(inp);
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The case-sensitive name of the group.</p>
@@ -3003,8 +2838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN that was generated upon creation.</p>
-        pub fn group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_arn(inp);
+        pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_arn(input.into());
             self
         }
         /// <p>The ARN that was generated upon creation.</p>
@@ -3013,8 +2848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated filter expression defining criteria by which to group traces.</p>
-        pub fn filter_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_expression(inp);
+        pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_expression(input.into());
             self
         }
         /// <p>The updated filter expression defining criteria by which to group traces.</p>
@@ -3027,29 +2862,20 @@ pub mod fluent_builders {
         }
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
-        /// <li>
-        /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-        /// group or false to disable insights for the group.</p>
-        /// </li>
-        /// <li>
-        /// <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group.
-        /// Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
-        /// </li>
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+        /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
         /// </ul>
-        pub fn insights_configuration(mut self, inp: crate::model::InsightsConfiguration) -> Self {
-            self.inner = self.inner.insights_configuration(inp);
+        pub fn insights_configuration(
+            mut self,
+            input: crate::model::InsightsConfiguration,
+        ) -> Self {
+            self.inner = self.inner.insights_configuration(input);
             self
         }
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
-        /// <li>
-        /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-        /// group or false to disable insights for the group.</p>
-        /// </li>
-        /// <li>
-        /// <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group.
-        /// Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
-        /// </li>
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+        /// <li> <p>The NotifcationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
         /// </ul>
         pub fn set_insights_configuration(
             mut self,
@@ -3062,7 +2888,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSamplingRule`.
     ///
     /// <p>Modifies a sampling rule's configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSamplingRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3107,10 +2933,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSamplingRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3119,8 +2945,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The rule and fields to change.</p>
-        pub fn sampling_rule_update(mut self, inp: crate::model::SamplingRuleUpdate) -> Self {
-            self.inner = self.inner.sampling_rule_update(inp);
+        pub fn sampling_rule_update(mut self, input: crate::model::SamplingRuleUpdate) -> Self {
+            self.inner = self.inner.sampling_rule_update(input);
             self
         }
         /// <p>The rule and fields to change.</p>
@@ -3133,6 +2959,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

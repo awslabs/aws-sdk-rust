@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Access Analyzer
@@ -178,6 +178,7 @@ where
     ///
     /// See [`ListAccessPreviewFindings`](crate::client::fluent_builders::ListAccessPreviewFindings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccessPreviewFindings::into_paginator).
     pub fn list_access_preview_findings(
         &self,
     ) -> fluent_builders::ListAccessPreviewFindings<C, M, R> {
@@ -187,6 +188,7 @@ where
     ///
     /// See [`ListAccessPreviews`](crate::client::fluent_builders::ListAccessPreviews) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccessPreviews::into_paginator).
     pub fn list_access_previews(&self) -> fluent_builders::ListAccessPreviews<C, M, R> {
         fluent_builders::ListAccessPreviews::new(self.handle.clone())
     }
@@ -194,6 +196,7 @@ where
     ///
     /// See [`ListAnalyzedResources`](crate::client::fluent_builders::ListAnalyzedResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnalyzedResources::into_paginator).
     pub fn list_analyzed_resources(&self) -> fluent_builders::ListAnalyzedResources<C, M, R> {
         fluent_builders::ListAnalyzedResources::new(self.handle.clone())
     }
@@ -201,6 +204,7 @@ where
     ///
     /// See [`ListAnalyzers`](crate::client::fluent_builders::ListAnalyzers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnalyzers::into_paginator).
     pub fn list_analyzers(&self) -> fluent_builders::ListAnalyzers<C, M, R> {
         fluent_builders::ListAnalyzers::new(self.handle.clone())
     }
@@ -208,6 +212,7 @@ where
     ///
     /// See [`ListArchiveRules`](crate::client::fluent_builders::ListArchiveRules) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListArchiveRules::into_paginator).
     pub fn list_archive_rules(&self) -> fluent_builders::ListArchiveRules<C, M, R> {
         fluent_builders::ListArchiveRules::new(self.handle.clone())
     }
@@ -215,6 +220,7 @@ where
     ///
     /// See [`ListFindings`](crate::client::fluent_builders::ListFindings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
     pub fn list_findings(&self) -> fluent_builders::ListFindings<C, M, R> {
         fluent_builders::ListFindings::new(self.handle.clone())
     }
@@ -222,6 +228,7 @@ where
     ///
     /// See [`ListPolicyGenerations`](crate::client::fluent_builders::ListPolicyGenerations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPolicyGenerations::into_paginator).
     pub fn list_policy_generations(&self) -> fluent_builders::ListPolicyGenerations<C, M, R> {
         fluent_builders::ListPolicyGenerations::new(self.handle.clone())
     }
@@ -278,6 +285,7 @@ where
     ///
     /// See [`ValidatePolicy`](crate::client::fluent_builders::ValidatePolicy) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ValidatePolicy::into_paginator).
     pub fn validate_policy(&self) -> fluent_builders::ValidatePolicy<C, M, R> {
         fluent_builders::ValidatePolicy::new(self.handle.clone())
     }
@@ -292,9 +300,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `ApplyArchiveRule`.
     ///
-    /// <p>Retroactively applies the archive rule to existing findings that meet the archive rule
-    /// criteria.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retroactively applies the archive rule to existing findings that meet the archive rule criteria.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApplyArchiveRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -339,10 +346,10 @@ pub mod fluent_builders {
                 crate::input::ApplyArchiveRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -351,8 +358,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon resource name (ARN) of the analyzer.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(input.into());
             self
         }
         /// <p>The Amazon resource name (ARN) of the analyzer.</p>
@@ -361,8 +368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rule to apply.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(input.into());
             self
         }
         /// <p>The name of the rule to apply.</p>
@@ -371,8 +378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A client token.</p>
@@ -384,7 +391,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelPolicyGeneration`.
     ///
     /// <p>Cancels the requested policy generation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelPolicyGeneration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -429,10 +436,10 @@ pub mod fluent_builders {
                 crate::input::CancelPolicyGenerationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -440,18 +447,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -459,9 +460,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAccessPreview`.
     ///
-    /// <p>Creates an access preview that allows you to preview IAM Access Analyzer findings for your
-    /// resource before deploying resource permissions.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an access preview that allows you to preview IAM Access Analyzer findings for your resource before deploying resource permissions.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccessPreview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -506,10 +506,10 @@ pub mod fluent_builders {
                 crate::input::CreateAccessPreviewInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -517,18 +517,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the account analyzer</a> used to generate the access preview. You can only create an
-        /// access preview for analyzers with an <code>Account</code> type and <code>Active</code>
-        /// status.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
+        pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the account analyzer</a> used to generate the access preview. You can only create an
-        /// access preview for analyzers with an <code>Account</code> type and <code>Active</code>
-        /// status.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
@@ -537,22 +531,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
-        /// <p>Access control configuration for your resource that is used to generate the access
-        /// preview. The access preview includes findings for external access allowed to the resource
-        /// with the proposed access control configuration. The configuration must contain exactly one
-        /// element.</p>
+        /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
         pub fn configurations(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Configuration>,
+            v: crate::model::Configuration,
         ) -> Self {
-            self.inner = self.inner.configurations(k, v);
+            self.inner = self.inner.configurations(k.into(), v);
             self
         }
-        /// <p>Access control configuration for your resource that is used to generate the access
-        /// preview. The access preview includes findings for external access allowed to the resource
-        /// with the proposed access control configuration. The configuration must contain exactly one
-        /// element.</p>
+        /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
         pub fn set_configurations(
             mut self,
             input: std::option::Option<
@@ -563,8 +551,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A client token.</p>
@@ -576,7 +564,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAnalyzer`.
     ///
     /// <p>Creates an analyzer for your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAnalyzer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -621,10 +609,10 @@ pub mod fluent_builders {
                 crate::input::CreateAnalyzerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -633,8 +621,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the analyzer to create.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(input.into());
             self
         }
         /// <p>The name of the analyzer to create.</p>
@@ -645,16 +633,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_analyzer_name(input);
             self
         }
-        /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported.
-        /// You can create only one analyzer per account per Region. You can create up to 5 analyzers
-        /// per organization per Region.</p>
-        pub fn r#type(mut self, inp: crate::model::Type) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+        pub fn r#type(mut self, input: crate::model::Type) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported.
-        /// You can create only one analyzer per account per Region. You can create up to 5 analyzers
-        /// per organization per Region.</p>
+        /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -663,14 +647,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_archive_rules`](Self::set_archive_rules).
         ///
-        /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive
-        /// findings that meet the criteria you define for the rule.</p>
-        pub fn archive_rules(mut self, inp: impl Into<crate::model::InlineArchiveRule>) -> Self {
-            self.inner = self.inner.archive_rules(inp);
+        /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
+        pub fn archive_rules(mut self, input: crate::model::InlineArchiveRule) -> Self {
+            self.inner = self.inner.archive_rules(input);
             self
         }
-        /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive
-        /// findings that meet the criteria you define for the rule.</p>
+        /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
         pub fn set_archive_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InlineArchiveRule>>,
@@ -688,7 +670,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to apply to the analyzer.</p>
@@ -702,8 +684,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A client token.</p>
@@ -714,10 +696,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateArchiveRule`.
     ///
-    /// <p>Creates an archive rule for the specified analyzer. Archive rules automatically archive
-    /// new findings that meet the criteria you define when you create the rule.</p>
+    /// <p>Creates an archive rule for the specified analyzer. Archive rules automatically archive new findings that meet the criteria you define when you create the rule.</p>
     /// <p>To learn about filter keys that you can use to create an archive rule, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateArchiveRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -762,10 +743,10 @@ pub mod fluent_builders {
                 crate::input::CreateArchiveRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -774,8 +755,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the created analyzer.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(input.into());
             self
         }
         /// <p>The name of the created analyzer.</p>
@@ -787,8 +768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rule to create.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(input.into());
             self
         }
         /// <p>The name of the rule to create.</p>
@@ -804,9 +785,9 @@ pub mod fluent_builders {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
-            self.inner = self.inner.filter(k, v);
+            self.inner = self.inner.filter(k.into(), v);
             self
         }
         /// <p>The criteria for the rule.</p>
@@ -820,8 +801,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A client token.</p>
@@ -832,10 +813,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAnalyzer`.
     ///
-    /// <p>Deletes the specified analyzer. When you delete an analyzer, IAM Access Analyzer is disabled
-    /// for the account or organization in the current or specific Region. All findings that were
-    /// generated by the analyzer are deleted. You cannot undo this action.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified analyzer. When you delete an analyzer, IAM Access Analyzer is disabled for the account or organization in the current or specific Region. All findings that were generated by the analyzer are deleted. You cannot undo this action.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAnalyzer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -880,10 +859,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAnalyzerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -892,8 +871,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the analyzer to delete.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(input.into());
             self
         }
         /// <p>The name of the analyzer to delete.</p>
@@ -905,8 +884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A client token.</p>
@@ -918,7 +897,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteArchiveRule`.
     ///
     /// <p>Deletes the specified archive rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteArchiveRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -963,10 +942,10 @@ pub mod fluent_builders {
                 crate::input::DeleteArchiveRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -975,8 +954,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the analyzer that associated with the archive rule to delete.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(input.into());
             self
         }
         /// <p>The name of the analyzer that associated with the archive rule to delete.</p>
@@ -988,8 +967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rule to delete.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(input.into());
             self
         }
         /// <p>The name of the rule to delete.</p>
@@ -998,8 +977,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A client token.</p>
@@ -1011,7 +990,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAccessPreview`.
     ///
     /// <p>Retrieves information about an access preview for the specified analyzer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccessPreview<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1056,10 +1035,10 @@ pub mod fluent_builders {
                 crate::input::GetAccessPreviewInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1068,8 +1047,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID for the access preview.</p>
-        pub fn access_preview_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_preview_id(inp);
+        pub fn access_preview_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_preview_id(input.into());
             self
         }
         /// <p>The unique ID for the access preview.</p>
@@ -1080,14 +1059,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_access_preview_id(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access preview.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
+        pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access preview.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
@@ -1096,7 +1073,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAnalyzedResource`.
     ///
     /// <p>Retrieves information about a resource that was analyzed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAnalyzedResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1141,10 +1118,10 @@ pub mod fluent_builders {
                 crate::input::GetAnalyzedResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1152,21 +1129,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve information from.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
+        pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve information from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
         }
         /// <p>The ARN of the resource to retrieve information about.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource to retrieve information about.</p>
@@ -1178,7 +1153,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAnalyzer`.
     ///
     /// <p>Retrieves information about the specified analyzer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAnalyzer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1223,10 +1198,10 @@ pub mod fluent_builders {
                 crate::input::GetAnalyzerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1235,8 +1210,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the analyzer retrieved.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(input.into());
             self
         }
         /// <p>The name of the analyzer retrieved.</p>
@@ -1252,7 +1227,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves information about an archive rule.</p>
     /// <p>To learn about filter keys that you can use to create an archive rule, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetArchiveRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1297,10 +1272,10 @@ pub mod fluent_builders {
                 crate::input::GetArchiveRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1309,8 +1284,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the analyzer to retrieve rules from.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(input.into());
             self
         }
         /// <p>The name of the analyzer to retrieve rules from.</p>
@@ -1322,8 +1297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rule to retrieve.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(input.into());
             self
         }
         /// <p>The name of the rule to retrieve.</p>
@@ -1335,7 +1310,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetFinding`.
     ///
     /// <p>Retrieves information about the specified finding.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFinding<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1380,10 +1355,10 @@ pub mod fluent_builders {
                 crate::input::GetFindingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1391,21 +1366,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> that generated the finding.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
+        pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> that generated the finding.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
         }
         /// <p>The ID of the finding to retrieve.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the finding to retrieve.</p>
@@ -1416,9 +1389,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetGeneratedPolicy`.
     ///
-    /// <p>Retrieves the policy that was generated using <code>StartPolicyGeneration</code>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the policy that was generated using <code>StartPolicyGeneration</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGeneratedPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1463,10 +1435,10 @@ pub mod fluent_builders {
                 crate::input::GetGeneratedPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1474,36 +1446,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p>The level of detail that you want to generate. You can specify whether to generate
-        /// policies with placeholders for resource ARNs for actions that support resource level
-        /// granularity in policies.</p>
-        /// <p>For example, in the resource section of a policy, you can receive a placeholder such as
-        /// <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
-        pub fn include_resource_placeholders(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_resource_placeholders(inp);
+        /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
+        /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
+        pub fn include_resource_placeholders(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_resource_placeholders(input);
             self
         }
-        /// <p>The level of detail that you want to generate. You can specify whether to generate
-        /// policies with placeholders for resource ARNs for actions that support resource level
-        /// granularity in policies.</p>
-        /// <p>For example, in the resource section of a policy, you can receive a placeholder such as
-        /// <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
+        /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
+        /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
         pub fn set_include_resource_placeholders(
             mut self,
             input: std::option::Option<bool>,
@@ -1511,18 +1471,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_include_resource_placeholders(input);
             self
         }
-        /// <p>The level of detail that you want to generate. You can specify whether to generate
-        /// service-level policies. </p>
-        /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have
-        /// been used recently to create this service-level template.</p>
-        pub fn include_service_level_template(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_service_level_template(inp);
+        /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
+        /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
+        pub fn include_service_level_template(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_service_level_template(input);
             self
         }
-        /// <p>The level of detail that you want to generate. You can specify whether to generate
-        /// service-level policies. </p>
-        /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have
-        /// been used recently to create this service-level template.</p>
+        /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
+        /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
         pub fn set_include_service_level_template(
             mut self,
             input: std::option::Option<bool>,
@@ -1533,9 +1489,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccessPreviewFindings`.
     ///
-    /// <p>Retrieves a list of access preview findings generated by the specified access
-    /// preview.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list of access preview findings generated by the specified access preview.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccessPreviewFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1580,10 +1535,10 @@ pub mod fluent_builders {
                 crate::input::ListAccessPreviewFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1591,9 +1546,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccessPreviewFindingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListAccessPreviewFindingsPaginator<C, M, R> {
+            crate::paginator::ListAccessPreviewFindingsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique ID for the access preview.</p>
-        pub fn access_preview_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_preview_id(inp);
+        pub fn access_preview_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_preview_id(input.into());
             self
         }
         /// <p>The unique ID for the access preview.</p>
@@ -1604,14 +1567,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_access_preview_id(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
+        pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
@@ -1624,9 +1585,9 @@ pub mod fluent_builders {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
-            self.inner = self.inner.filter(k, v);
+            self.inner = self.inner.filter(k.into(), v);
             self
         }
         /// <p>Criteria to filter the returned findings.</p>
@@ -1640,8 +1601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -1650,8 +1611,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1663,7 +1624,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccessPreviews`.
     ///
     /// <p>Retrieves a list of access previews for the specified analyzer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccessPreviews<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1708,10 +1669,10 @@ pub mod fluent_builders {
                 crate::input::ListAccessPreviewsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1719,21 +1680,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access preview.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccessPreviewsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAccessPreviewsPaginator<C, M, R> {
+            crate::paginator::ListAccessPreviewsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
+        pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access preview.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -1742,8 +1707,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1754,9 +1719,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAnalyzedResources`.
     ///
-    /// <p>Retrieves a list of resources of the specified type that have been analyzed by the
-    /// specified analyzer..</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list of resources of the specified type that have been analyzed by the specified analyzer..</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnalyzedResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1801,10 +1765,10 @@ pub mod fluent_builders {
                 crate::input::ListAnalyzedResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1812,21 +1776,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve a list of analyzed resources from.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAnalyzedResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAnalyzedResourcesPaginator<C, M, R> {
+            crate::paginator::ListAnalyzedResourcesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
+        pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve a list of analyzed resources from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
         }
         /// <p>The type of resource.</p>
-        pub fn resource_type(mut self, inp: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(inp);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of resource.</p>
@@ -1838,8 +1806,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -1848,8 +1816,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1861,7 +1829,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAnalyzers`.
     ///
     /// <p>Retrieves a list of analyzers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnalyzers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1906,10 +1874,10 @@ pub mod fluent_builders {
                 crate::input::ListAnalyzersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1917,9 +1885,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAnalyzersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAnalyzersPaginator<C, M, R> {
+            crate::paginator::ListAnalyzersPaginator::new(self.handle, self.inner)
+        }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -1928,8 +1902,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1938,8 +1912,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of analyzer.</p>
-        pub fn r#type(mut self, inp: crate::model::Type) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::Type) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of analyzer.</p>
@@ -1951,7 +1925,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListArchiveRules`.
     ///
     /// <p>Retrieves a list of archive rules created for the specified analyzer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListArchiveRules<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1996,10 +1970,10 @@ pub mod fluent_builders {
                 crate::input::ListArchiveRulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2007,9 +1981,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListArchiveRulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListArchiveRulesPaginator<C, M, R> {
+            crate::paginator::ListArchiveRulesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the analyzer to retrieve rules from.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(input.into());
             self
         }
         /// <p>The name of the analyzer to retrieve rules from.</p>
@@ -2021,8 +2001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -2031,8 +2011,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the request.</p>
@@ -2045,7 +2025,7 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list of findings generated by the specified analyzer.</p>
     /// <p>To learn about filter keys that you can use to retrieve a list of findings, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2090,10 +2070,10 @@ pub mod fluent_builders {
                 crate::input::ListFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2101,14 +2081,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve findings from.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFindingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFindingsPaginator<C, M, R> {
+            crate::paginator::ListFindingsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
+        pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve findings from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
@@ -2121,9 +2105,9 @@ pub mod fluent_builders {
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
-            self.inner = self.inner.filter(k, v);
+            self.inner = self.inner.filter(k.into(), v);
             self
         }
         /// <p>A filter to match for the findings to return.</p>
@@ -2137,8 +2121,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for the findings returned.</p>
-        pub fn sort(mut self, inp: crate::model::SortCriteria) -> Self {
-            self.inner = self.inner.sort(inp);
+        pub fn sort(mut self, input: crate::model::SortCriteria) -> Self {
+            self.inner = self.inner.sort(input);
             self
         }
         /// <p>The sort order for the findings returned.</p>
@@ -2147,8 +2131,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -2157,8 +2141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2170,7 +2154,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPolicyGenerations`.
     ///
     /// <p>Lists all of the policy generations requested in the last seven days.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPolicyGenerations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2215,10 +2199,10 @@ pub mod fluent_builders {
                 crate::input::ListPolicyGenerationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2226,16 +2210,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use
-        /// this with <code>ListGeneratedPolicies</code> to filter the results to only include results
-        /// for a specific principal.</p>
-        pub fn principal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPolicyGenerationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPolicyGenerationsPaginator<C, M, R> {
+            crate::paginator::ListPolicyGenerationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
+        pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_arn(input.into());
             self
         }
-        /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use
-        /// this with <code>ListGeneratedPolicies</code> to filter the results to only include results
-        /// for a specific principal.</p>
+        /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2244,8 +2230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2254,8 +2240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -2267,7 +2253,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves a list of tags applied to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2312,10 +2298,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2324,8 +2310,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to retrieve tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource to retrieve tags from.</p>
@@ -2337,7 +2323,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartPolicyGeneration`.
     ///
     /// <p>Starts the policy generation request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartPolicyGeneration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2382,10 +2368,10 @@ pub mod fluent_builders {
                 crate::input::StartPolicyGenerationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2393,17 +2379,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a
-        /// policy.</p>
+        /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
         pub fn policy_generation_details(
             mut self,
-            inp: crate::model::PolicyGenerationDetails,
+            input: crate::model::PolicyGenerationDetails,
         ) -> Self {
-            self.inner = self.inner.policy_generation_details(inp);
+            self.inner = self.inner.policy_generation_details(input);
             self
         }
-        /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a
-        /// policy.</p>
+        /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
         pub fn set_policy_generation_details(
             mut self,
             input: std::option::Option<crate::model::PolicyGenerationDetails>,
@@ -2411,14 +2395,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_generation_details(input);
             self
         }
-        /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code>
-        /// that you want to analyze to generate policies.</p>
-        pub fn cloud_trail_details(mut self, inp: crate::model::CloudTrailDetails) -> Self {
-            self.inner = self.inner.cloud_trail_details(inp);
+        /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
+        pub fn cloud_trail_details(mut self, input: crate::model::CloudTrailDetails) -> Self {
+            self.inner = self.inner.cloud_trail_details(input);
             self
         }
-        /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code>
-        /// that you want to analyze to generate policies.</p>
+        /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
         pub fn set_cloud_trail_details(
             mut self,
             input: std::option::Option<crate::model::CloudTrailDetails>,
@@ -2426,24 +2408,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cloud_trail_details(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, the subsequent retries with the
-        /// same client token return the result from the original successful request and they have no
-        /// additional effect.</p>
-        /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services
-        /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
+        /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, the subsequent retries with the
-        /// same client token return the result from the original successful request and they have no
-        /// additional effect.</p>
-        /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
+        /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2452,7 +2424,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartResourceScan`.
     ///
     /// <p>Immediately starts a scan of the policies applied to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartResourceScan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2497,10 +2469,10 @@ pub mod fluent_builders {
                 crate::input::StartResourceScanInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2508,23 +2480,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to use to scan the policies applied to the specified
-        /// resource.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
+        pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to use to scan the policies applied to the specified
-        /// resource.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
         }
         /// <p>The ARN of the resource to scan.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource to scan.</p>
@@ -2536,7 +2504,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds a tag to the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2581,10 +2549,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2593,8 +2561,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to add the tag to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource to add the tag to.</p>
@@ -2612,7 +2580,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to add to the resource.</p>
@@ -2629,7 +2597,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes a tag from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2674,10 +2642,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2686,8 +2654,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to remove the tag from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource to remove the tag from.</p>
@@ -2700,8 +2668,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The key for the tag to add.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The key for the tag to add.</p>
@@ -2716,7 +2684,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateArchiveRule`.
     ///
     /// <p>Updates the criteria and values for the specified archive rule.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateArchiveRule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2761,10 +2729,10 @@ pub mod fluent_builders {
                 crate::input::UpdateArchiveRuleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2773,8 +2741,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the analyzer to update the archive rules for.</p>
-        pub fn analyzer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_name(inp);
+        pub fn analyzer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_name(input.into());
             self
         }
         /// <p>The name of the analyzer to update the archive rules for.</p>
@@ -2786,8 +2754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rule to update.</p>
-        pub fn rule_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_name(inp);
+        pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_name(input.into());
             self
         }
         /// <p>The name of the rule to update.</p>
@@ -2799,18 +2767,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filter`](Self::set_filter).
         ///
-        /// <p>A filter to match for the rules to update. Only rules that match the filter are
-        /// updated.</p>
+        /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::Criterion>,
+            v: crate::model::Criterion,
         ) -> Self {
-            self.inner = self.inner.filter(k, v);
+            self.inner = self.inner.filter(k.into(), v);
             self
         }
-        /// <p>A filter to match for the rules to update. Only rules that match the filter are
-        /// updated.</p>
+        /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<
@@ -2821,8 +2787,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A client token.</p>
@@ -2834,7 +2800,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFindings`.
     ///
     /// <p>Updates the status for the specified findings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFindings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2879,10 +2845,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFindingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2890,28 +2856,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> that generated the findings to update.</p>
-        pub fn analyzer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analyzer_arn(inp);
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
+        pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> that generated the findings to update.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
         }
-        /// <p>The state represents the action to take to update the finding Status. Use
-        /// <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
-        /// <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
-        pub fn status(mut self, inp: crate::model::FindingStatusUpdate) -> Self {
-            self.inner = self.inner.status(inp);
+        /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+        pub fn status(mut self, input: crate::model::FindingStatusUpdate) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        /// <p>The state represents the action to take to update the finding Status. Use
-        /// <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
-        /// <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+        /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::FindingStatusUpdate>,
@@ -2924,8 +2884,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ids`](Self::set_ids).
         ///
         /// <p>The IDs of the findings to update.</p>
-        pub fn ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ids(inp);
+        pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ids(input.into());
             self
         }
         /// <p>The IDs of the findings to update.</p>
@@ -2937,8 +2897,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource identified in the finding.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource identified in the finding.</p>
@@ -2947,8 +2907,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A client token.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A client token.</p>
@@ -2959,10 +2919,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ValidatePolicy`.
     ///
-    /// <p>Requests the validation of a policy and returns a list of findings. The findings help
-    /// you identify issues and provide actionable recommendations to resolve the issue and enable
-    /// you to author functional policies that meet security best practices. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Requests the validation of a policy and returns a list of findings. The findings help you identify issues and provide actionable recommendations to resolve the issue and enable you to author functional policies that meet security best practices. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ValidatePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3007,10 +2965,10 @@ pub mod fluent_builders {
                 crate::input::ValidatePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3018,9 +2976,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ValidatePolicyPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ValidatePolicyPaginator<C, M, R> {
+            crate::paginator::ValidatePolicyPaginator::new(self.handle, self.inner)
+        }
         /// <p>The locale to use for localizing the findings.</p>
-        pub fn locale(mut self, inp: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(inp);
+        pub fn locale(mut self, input: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(input);
             self
         }
         /// <p>The locale to use for localizing the findings.</p>
@@ -3029,8 +2993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -3039,8 +3003,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used for pagination of results returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used for pagination of results returned.</p>
@@ -3049,8 +3013,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The JSON policy document to use as the content for the policy.</p>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(inp);
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
             self
         }
         /// <p>The JSON policy document to use as the content for the policy.</p>
@@ -3061,26 +3025,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_document(input);
             self
         }
-        /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals.
-        /// Identity policies include managed and inline policies for IAM roles, users, and groups.
-        /// They also include service-control policies (SCPs) that are attached to an Amazon Web Services
-        /// organization, organizational unit (OU), or an account.</p>
-        /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust
-        /// policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic
-        /// input such as identity policy or resource policy or a specific input such as managed policy
-        /// or Amazon S3 bucket policy. </p>
-        pub fn policy_type(mut self, inp: crate::model::PolicyType) -> Self {
-            self.inner = self.inner.policy_type(inp);
+        /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
+        /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
+        pub fn policy_type(mut self, input: crate::model::PolicyType) -> Self {
+            self.inner = self.inner.policy_type(input);
             self
         }
-        /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals.
-        /// Identity policies include managed and inline policies for IAM roles, users, and groups.
-        /// They also include service-control policies (SCPs) that are attached to an Amazon Web Services
-        /// organization, organizational unit (OU), or an account.</p>
-        /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust
-        /// policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic
-        /// input such as identity policy or resource policy or a specific input such as managed policy
-        /// or Amazon S3 bucket policy. </p>
+        /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
+        /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
         pub fn set_policy_type(
             mut self,
             input: std::option::Option<crate::model::PolicyType>,
@@ -3088,29 +3040,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_type(input);
             self
         }
-        /// <p>The type of resource to attach to your resource policy. Specify a value for the policy
-        /// validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For
-        /// example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose
-        /// <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
-        /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that
-        /// apply to all resource policies. For example, to validate a resource policy to attach to a
-        /// KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer
-        /// will run policy checks that apply to all resource policies.</p>
+        /// <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
+        /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
         pub fn validate_policy_resource_type(
             mut self,
-            inp: crate::model::ValidatePolicyResourceType,
+            input: crate::model::ValidatePolicyResourceType,
         ) -> Self {
-            self.inner = self.inner.validate_policy_resource_type(inp);
+            self.inner = self.inner.validate_policy_resource_type(input);
             self
         }
-        /// <p>The type of resource to attach to your resource policy. Specify a value for the policy
-        /// validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For
-        /// example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose
-        /// <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
-        /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that
-        /// apply to all resource policies. For example, to validate a resource policy to attach to a
-        /// KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer
-        /// will run policy checks that apply to all resource policies.</p>
+        /// <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
+        /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
         pub fn set_validate_policy_resource_type(
             mut self,
             input: std::option::Option<crate::model::ValidatePolicyResourceType>,
@@ -3120,6 +3060,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -63,14 +63,12 @@ pub mod create_application_input {
             self.proxy_type = input;
             self
         }
-        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-        /// proxy. </p>
+        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
         pub fn api_gateway_proxy(mut self, input: crate::model::ApiGatewayProxyInput) -> Self {
             self.api_gateway_proxy = Some(input);
             self
         }
-        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-        /// proxy. </p>
+        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
         pub fn set_api_gateway_proxy(
             mut self,
             input: std::option::Option<crate::model::ApiGatewayProxyInput>,
@@ -103,14 +101,12 @@ pub mod create_application_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -137,7 +133,7 @@ pub mod create_application_input {
 #[doc(hidden)]
 pub type CreateApplicationInputOperationOutputAlias = crate::operation::CreateApplication;
 #[doc(hidden)]
-pub type CreateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplication`](crate::operation::CreateApplication)>
     #[allow(clippy::let_and_return)]
@@ -148,7 +144,7 @@ impl CreateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -251,7 +247,7 @@ impl CreateApplicationInput {
             "CreateApplication",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -347,14 +343,12 @@ pub mod create_environment_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -379,7 +373,7 @@ pub mod create_environment_input {
 #[doc(hidden)]
 pub type CreateEnvironmentInputOperationOutputAlias = crate::operation::CreateEnvironment;
 #[doc(hidden)]
-pub type CreateEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateEnvironment`](crate::operation::CreateEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -390,7 +384,7 @@ impl CreateEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -473,7 +467,7 @@ impl CreateEnvironmentInput {
             "CreateEnvironment",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -539,14 +533,12 @@ pub mod create_route_input {
             self.application_identifier = input;
             self
         }
-        /// <p>The ID of the service in which the route is created. Traffic that matches this route is
-        /// forwarded to this service.</p>
+        /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
         pub fn service_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_identifier = Some(input.into());
             self
         }
-        /// <p>The ID of the service in which the route is created. Traffic that matches this route is
-        /// forwarded to this service.</p>
+        /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
         pub fn set_service_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -554,18 +546,12 @@ pub mod create_route_input {
             self.service_identifier = input;
             self
         }
-        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not
-        /// match another route is forwarded to the default route. Applications must have a default route
-        /// before any other routes can be created. <code>URI_PATH</code> indicates a route that is based
-        /// on a URI path.</p>
+        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
         pub fn route_type(mut self, input: crate::model::RouteType) -> Self {
             self.route_type = Some(input);
             self
         }
-        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not
-        /// match another route is forwarded to the default route. Applications must have a default route
-        /// before any other routes can be created. <code>URI_PATH</code> indicates a route that is based
-        /// on a URI path.</p>
+        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
         pub fn set_route_type(
             mut self,
             input: std::option::Option<crate::model::RouteType>,
@@ -611,14 +597,12 @@ pub mod create_route_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -645,7 +629,7 @@ pub mod create_route_input {
 #[doc(hidden)]
 pub type CreateRouteInputOperationOutputAlias = crate::operation::CreateRoute;
 #[doc(hidden)]
-pub type CreateRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRouteInput {
     /// Consumes the builder and constructs an Operation<[`CreateRoute`](crate::operation::CreateRoute)>
     #[allow(clippy::let_and_return)]
@@ -656,7 +640,7 @@ impl CreateRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -774,7 +758,7 @@ impl CreateRouteInput {
             "CreateRoute",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -937,14 +921,12 @@ pub mod create_service_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -974,7 +956,7 @@ pub mod create_service_input {
 #[doc(hidden)]
 pub type CreateServiceInputOperationOutputAlias = crate::operation::CreateService;
 #[doc(hidden)]
-pub type CreateServiceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateServiceInput {
     /// Consumes the builder and constructs an Operation<[`CreateService`](crate::operation::CreateService)>
     #[allow(clippy::let_and_return)]
@@ -985,7 +967,7 @@ impl CreateServiceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateService,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1097,7 +1079,7 @@ impl CreateServiceInput {
             "CreateService",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1173,7 +1155,7 @@ pub mod delete_application_input {
 #[doc(hidden)]
 pub type DeleteApplicationInputOperationOutputAlias = crate::operation::DeleteApplication;
 #[doc(hidden)]
-pub type DeleteApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplication`](crate::operation::DeleteApplication)>
     #[allow(clippy::let_and_return)]
@@ -1184,7 +1166,7 @@ impl DeleteApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1294,7 +1276,7 @@ impl DeleteApplicationInput {
             "DeleteApplication",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1347,7 +1329,7 @@ pub mod delete_environment_input {
 #[doc(hidden)]
 pub type DeleteEnvironmentInputOperationOutputAlias = crate::operation::DeleteEnvironment;
 #[doc(hidden)]
-pub type DeleteEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEnvironment`](crate::operation::DeleteEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -1358,7 +1340,7 @@ impl DeleteEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1452,7 +1434,7 @@ impl DeleteEnvironmentInput {
             "DeleteEnvironment",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1502,7 +1484,7 @@ pub mod delete_resource_policy_input {
 #[doc(hidden)]
 pub type DeleteResourcePolicyInputOperationOutputAlias = crate::operation::DeleteResourcePolicy;
 #[doc(hidden)]
-pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourcePolicy`](crate::operation::DeleteResourcePolicy)>
     #[allow(clippy::let_and_return)]
@@ -1513,7 +1495,7 @@ impl DeleteResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourcePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1607,7 +1589,7 @@ impl DeleteResourcePolicyInput {
             "DeleteResourcePolicy",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1690,7 +1672,7 @@ pub mod delete_route_input {
 #[doc(hidden)]
 pub type DeleteRouteInputOperationOutputAlias = crate::operation::DeleteRoute;
 #[doc(hidden)]
-pub type DeleteRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRouteInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRoute`](crate::operation::DeleteRoute)>
     #[allow(clippy::let_and_return)]
@@ -1701,7 +1683,7 @@ impl DeleteRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1820,7 +1802,7 @@ impl DeleteRouteInput {
             "DeleteRoute",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1859,21 +1841,15 @@ pub mod delete_service_input {
             self.environment_identifier = input;
             self
         }
-        /// <p>Deletes a Refactor Spaces service.</p>
-        /// <note>
-        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all
-        /// Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL
-        /// endpoint in a VPC.</p>
+        /// <p>Deletes a Refactor Spaces service.</p> <note>
+        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
         /// </note>
         pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_identifier = Some(input.into());
             self
         }
-        /// <p>Deletes a Refactor Spaces service.</p>
-        /// <note>
-        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all
-        /// Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL
-        /// endpoint in a VPC.</p>
+        /// <p>Deletes a Refactor Spaces service.</p> <note>
+        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
         /// </note>
         pub fn set_application_identifier(
             mut self,
@@ -1913,7 +1889,7 @@ pub mod delete_service_input {
 #[doc(hidden)]
 pub type DeleteServiceInputOperationOutputAlias = crate::operation::DeleteService;
 #[doc(hidden)]
-pub type DeleteServiceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServiceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteService`](crate::operation::DeleteService)>
     #[allow(clippy::let_and_return)]
@@ -1924,7 +1900,7 @@ impl DeleteServiceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteService,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2043,7 +2019,7 @@ impl DeleteServiceInput {
             "DeleteService",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2111,7 +2087,7 @@ pub mod get_application_input {
 #[doc(hidden)]
 pub type GetApplicationInputOperationOutputAlias = crate::operation::GetApplication;
 #[doc(hidden)]
-pub type GetApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetApplicationInput {
     /// Consumes the builder and constructs an Operation<[`GetApplication`](crate::operation::GetApplication)>
     #[allow(clippy::let_and_return)]
@@ -2122,7 +2098,7 @@ impl GetApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2232,7 +2208,7 @@ impl GetApplicationInput {
             "GetApplication",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2285,7 +2261,7 @@ pub mod get_environment_input {
 #[doc(hidden)]
 pub type GetEnvironmentInputOperationOutputAlias = crate::operation::GetEnvironment;
 #[doc(hidden)]
-pub type GetEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`GetEnvironment`](crate::operation::GetEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -2296,7 +2272,7 @@ impl GetEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2390,7 +2366,7 @@ impl GetEnvironmentInput {
             "GetEnvironment",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2440,7 +2416,7 @@ pub mod get_resource_policy_input {
 #[doc(hidden)]
 pub type GetResourcePolicyInputOperationOutputAlias = crate::operation::GetResourcePolicy;
 #[doc(hidden)]
-pub type GetResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetResourcePolicy`](crate::operation::GetResourcePolicy)>
     #[allow(clippy::let_and_return)]
@@ -2451,7 +2427,7 @@ impl GetResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourcePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2545,7 +2521,7 @@ impl GetResourcePolicyInput {
             "GetResourcePolicy",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2626,7 +2602,7 @@ pub mod get_route_input {
 #[doc(hidden)]
 pub type GetRouteInputOperationOutputAlias = crate::operation::GetRoute;
 #[doc(hidden)]
-pub type GetRouteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRouteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRouteInput {
     /// Consumes the builder and constructs an Operation<[`GetRoute`](crate::operation::GetRoute)>
     #[allow(clippy::let_and_return)]
@@ -2637,7 +2613,7 @@ impl GetRouteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRoute,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2754,7 +2730,7 @@ impl GetRouteInput {
                     "GetRoute",
                     "migrationhubrefactorspaces",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2837,7 +2813,7 @@ pub mod get_service_input {
 #[doc(hidden)]
 pub type GetServiceInputOperationOutputAlias = crate::operation::GetService;
 #[doc(hidden)]
-pub type GetServiceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetServiceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceInput {
     /// Consumes the builder and constructs an Operation<[`GetService`](crate::operation::GetService)>
     #[allow(clippy::let_and_return)]
@@ -2848,7 +2824,7 @@ impl GetServiceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetService,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2967,7 +2943,7 @@ impl GetServiceInput {
             "GetService",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3016,14 +2992,12 @@ pub mod list_applications_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3046,7 +3020,7 @@ pub mod list_applications_input {
 #[doc(hidden)]
 pub type ListApplicationsInputOperationOutputAlias = crate::operation::ListApplications;
 #[doc(hidden)]
-pub type ListApplicationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`ListApplications`](crate::operation::ListApplications)>
     #[allow(clippy::let_and_return)]
@@ -3057,7 +3031,7 @@ impl ListApplicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApplications,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3168,7 +3142,7 @@ impl ListApplicationsInput {
             "ListApplications",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3203,14 +3177,12 @@ pub mod list_environments_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3232,7 +3204,7 @@ pub mod list_environments_input {
 #[doc(hidden)]
 pub type ListEnvironmentsInputOperationOutputAlias = crate::operation::ListEnvironments;
 #[doc(hidden)]
-pub type ListEnvironmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEnvironmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListEnvironments`](crate::operation::ListEnvironments)>
     #[allow(clippy::let_and_return)]
@@ -3243,7 +3215,7 @@ impl ListEnvironmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEnvironments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3334,7 +3306,7 @@ impl ListEnvironmentsInput {
             "ListEnvironments",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3383,14 +3355,12 @@ pub mod list_environment_vpcs_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3413,7 +3383,7 @@ pub mod list_environment_vpcs_input {
 #[doc(hidden)]
 pub type ListEnvironmentVpcsInputOperationOutputAlias = crate::operation::ListEnvironmentVpcs;
 #[doc(hidden)]
-pub type ListEnvironmentVpcsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEnvironmentVpcsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEnvironmentVpcsInput {
     /// Consumes the builder and constructs an Operation<[`ListEnvironmentVpcs`](crate::operation::ListEnvironmentVpcs)>
     #[allow(clippy::let_and_return)]
@@ -3424,7 +3394,7 @@ impl ListEnvironmentVpcsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEnvironmentVpcs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3535,7 +3505,7 @@ impl ListEnvironmentVpcsInput {
             "ListEnvironmentVpcs",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3598,14 +3568,12 @@ pub mod list_routes_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3629,7 +3597,7 @@ pub mod list_routes_input {
 #[doc(hidden)]
 pub type ListRoutesInputOperationOutputAlias = crate::operation::ListRoutes;
 #[doc(hidden)]
-pub type ListRoutesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRoutesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRoutesInput {
     /// Consumes the builder and constructs an Operation<[`ListRoutes`](crate::operation::ListRoutes)>
     #[allow(clippy::let_and_return)]
@@ -3640,7 +3608,7 @@ impl ListRoutesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRoutes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3767,7 +3735,7 @@ impl ListRoutesInput {
             "ListRoutes",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3830,14 +3798,12 @@ pub mod list_services_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3861,7 +3827,7 @@ pub mod list_services_input {
 #[doc(hidden)]
 pub type ListServicesInputOperationOutputAlias = crate::operation::ListServices;
 #[doc(hidden)]
-pub type ListServicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListServicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServicesInput {
     /// Consumes the builder and constructs an Operation<[`ListServices`](crate::operation::ListServices)>
     #[allow(clippy::let_and_return)]
@@ -3872,7 +3838,7 @@ impl ListServicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3993,7 +3959,7 @@ impl ListServicesInput {
             "ListServices",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4043,7 +4009,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -4054,7 +4020,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4144,7 +4110,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4169,14 +4135,12 @@ pub mod put_resource_policy_input {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4208,7 +4172,7 @@ pub mod put_resource_policy_input {
 #[doc(hidden)]
 pub type PutResourcePolicyInputOperationOutputAlias = crate::operation::PutResourcePolicy;
 #[doc(hidden)]
-pub type PutResourcePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutResourcePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutResourcePolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutResourcePolicy`](crate::operation::PutResourcePolicy)>
     #[allow(clippy::let_and_return)]
@@ -4219,7 +4183,7 @@ impl PutResourcePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutResourcePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4299,7 +4263,7 @@ impl PutResourcePolicyInput {
             "PutResourcePolicy",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4386,7 +4350,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4397,7 +4361,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4492,7 +4456,7 @@ impl TagResourceInput {
             "TagResource",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4571,7 +4535,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4582,7 +4546,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4685,7 +4649,7 @@ impl UntagResourceInput {
             "UntagResource",
             "migrationhubrefactorspaces",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4764,15 +4728,13 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -4821,8 +4783,7 @@ pub struct ListServicesInput {
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListServicesInput {
@@ -4838,8 +4799,7 @@ impl ListServicesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4865,8 +4825,7 @@ pub struct ListRoutesInput {
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListRoutesInput {
@@ -4882,8 +4841,7 @@ impl ListRoutesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4907,8 +4865,7 @@ pub struct ListEnvironmentVpcsInput {
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListEnvironmentVpcsInput {
@@ -4920,8 +4877,7 @@ impl ListEnvironmentVpcsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4942,8 +4898,7 @@ impl std::fmt::Debug for ListEnvironmentVpcsInput {
 pub struct ListEnvironmentsInput {
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListEnvironmentsInput {
@@ -4951,8 +4906,7 @@ impl ListEnvironmentsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -4974,8 +4928,7 @@ pub struct ListApplicationsInput {
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListApplicationsInput {
@@ -4987,8 +4940,7 @@ impl ListApplicationsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5149,11 +5101,8 @@ impl std::fmt::Debug for GetApplicationInput {
 pub struct DeleteServiceInput {
     /// <p>The ID of the environment that the service is in.</p>
     pub environment_identifier: std::option::Option<std::string::String>,
-    /// <p>Deletes a Refactor Spaces service.</p>
-    /// <note>
-    /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all
-    /// Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL
-    /// endpoint in a VPC.</p>
+    /// <p>Deletes a Refactor Spaces service.</p> <note>
+    /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
     pub application_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the service to delete.</p>
@@ -5164,11 +5113,8 @@ impl DeleteServiceInput {
     pub fn environment_identifier(&self) -> std::option::Option<&str> {
         self.environment_identifier.as_deref()
     }
-    /// <p>Deletes a Refactor Spaces service.</p>
-    /// <note>
-    /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all
-    /// Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL
-    /// endpoint in a VPC.</p>
+    /// <p>Deletes a Refactor Spaces service.</p> <note>
+    /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
     pub fn application_identifier(&self) -> std::option::Option<&str> {
         self.application_identifier.as_deref()
@@ -5316,8 +5262,7 @@ pub struct CreateServiceInput {
     /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateServiceInput {
@@ -5360,8 +5305,7 @@ impl CreateServiceInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5391,21 +5335,16 @@ pub struct CreateRouteInput {
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The ID of the application within which the route is being created.</p>
     pub application_identifier: std::option::Option<std::string::String>,
-    /// <p>The ID of the service in which the route is created. Traffic that matches this route is
-    /// forwarded to this service.</p>
+    /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
     pub service_identifier: std::option::Option<std::string::String>,
-    /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not
-    /// match another route is forwarded to the default route. Applications must have a default route
-    /// before any other routes can be created. <code>URI_PATH</code> indicates a route that is based
-    /// on a URI path.</p>
+    /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
     pub route_type: std::option::Option<crate::model::RouteType>,
     /// <p>The configuration for the URI path route type. </p>
     pub uri_path_route: std::option::Option<crate::model::UriPathRouteInput>,
     /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateRouteInput {
@@ -5417,15 +5356,11 @@ impl CreateRouteInput {
     pub fn application_identifier(&self) -> std::option::Option<&str> {
         self.application_identifier.as_deref()
     }
-    /// <p>The ID of the service in which the route is created. Traffic that matches this route is
-    /// forwarded to this service.</p>
+    /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
     pub fn service_identifier(&self) -> std::option::Option<&str> {
         self.service_identifier.as_deref()
     }
-    /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not
-    /// match another route is forwarded to the default route. Applications must have a default route
-    /// before any other routes can be created. <code>URI_PATH</code> indicates a route that is based
-    /// on a URI path.</p>
+    /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
     pub fn route_type(&self) -> std::option::Option<&crate::model::RouteType> {
         self.route_type.as_ref()
     }
@@ -5440,8 +5375,7 @@ impl CreateRouteInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5473,8 +5407,7 @@ pub struct CreateEnvironmentInput {
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentInput {
@@ -5497,8 +5430,7 @@ impl CreateEnvironmentInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5527,14 +5459,12 @@ pub struct CreateApplicationInput {
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The proxy type of the proxy created within the application. </p>
     pub proxy_type: std::option::Option<crate::model::ProxyType>,
-    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-    /// proxy. </p>
+    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
     pub api_gateway_proxy: std::option::Option<crate::model::ApiGatewayProxyInput>,
     /// <p>The tags to assign to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateApplicationInput {
@@ -5554,8 +5484,7 @@ impl CreateApplicationInput {
     pub fn proxy_type(&self) -> std::option::Option<&crate::model::ProxyType> {
         self.proxy_type.as_ref()
     }
-    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-    /// proxy. </p>
+    /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
     pub fn api_gateway_proxy(&self) -> std::option::Option<&crate::model::ApiGatewayProxyInput> {
         self.api_gateway_proxy.as_ref()
     }
@@ -5566,8 +5495,7 @@ impl CreateApplicationInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }

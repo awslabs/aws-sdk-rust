@@ -245,6 +245,16 @@ impl Builder {
         self
     }
     /// Sets the AWS region to use when making requests.
+    ///
+    /// # Examples
+    /// ```no_run
+    /// use aws_types::region::Region;
+    /// use aws_sdk_firehose::config::{Builder, Config};
+    ///
+    /// let config = aws_sdk_firehose::Config::builder()
+    ///     .region(Region::new("us-east-1"))
+    ///     .build();
+    /// ```
     pub fn region(mut self, region: impl Into<Option<aws_types::region::Region>>) -> Self {
         self.region = region.into();
         self

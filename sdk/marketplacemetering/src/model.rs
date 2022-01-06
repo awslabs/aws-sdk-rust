@@ -6,8 +6,7 @@
 pub struct UsageAllocation {
     /// <p>The total quantity allocated to this bucket of usage.</p>
     pub allocated_usage_quantity: std::option::Option<i32>,
-    /// <p>The set of tags that define the bucket of usage. For the bucket of items with no
-    /// tags, this parameter can be left out.</p>
+    /// <p>The set of tags that define the bucket of usage. For the bucket of items with no tags, this parameter can be left out.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UsageAllocation {
@@ -15,8 +14,7 @@ impl UsageAllocation {
     pub fn allocated_usage_quantity(&self) -> std::option::Option<i32> {
         self.allocated_usage_quantity
     }
-    /// <p>The set of tags that define the bucket of usage. For the bucket of items with no
-    /// tags, this parameter can be left out.</p>
+    /// <p>The set of tags that define the bucket of usage. For the bucket of items with no tags, this parameter can be left out.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -53,16 +51,14 @@ pub mod usage_allocation {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The set of tags that define the bucket of usage. For the bucket of items with no
-        /// tags, this parameter can be left out.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>The set of tags that define the bucket of usage. For the bucket of items with no tags, this parameter can be left out.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The set of tags that define the bucket of usage. For the bucket of items with no
-        /// tags, this parameter can be left out.</p>
+        /// <p>The set of tags that define the bucket of usage. For the bucket of items with no tags, this parameter can be left out.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -90,21 +86,17 @@ impl UsageAllocation {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>One part of a key-value pair that makes up a tag. A key is a label that acts like a
-    /// category for the specific tag values.</p>
+    /// <p>One part of a key-value pair that makes up a tag. A key is a label that acts like a category for the specific tag values.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>One part of a key-value pair that makes up a tag. A value acts as a descriptor within
-    /// a tag category (key). The value can be empty or null.</p>
+    /// <p>One part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>One part of a key-value pair that makes up a tag. A key is a label that acts like a
-    /// category for the specific tag values.</p>
+    /// <p>One part of a key-value pair that makes up a tag. A key is a label that acts like a category for the specific tag values.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>One part of a key-value pair that makes up a tag. A value acts as a descriptor within
-    /// a tag category (key). The value can be empty or null.</p>
+    /// <p>One part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -127,26 +119,22 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>One part of a key-value pair that makes up a tag. A key is a label that acts like a
-        /// category for the specific tag values.</p>
+        /// <p>One part of a key-value pair that makes up a tag. A key is a label that acts like a category for the specific tag values.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>One part of a key-value pair that makes up a tag. A key is a label that acts like a
-        /// category for the specific tag values.</p>
+        /// <p>One part of a key-value pair that makes up a tag. A key is a label that acts like a category for the specific tag values.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>One part of a key-value pair that makes up a tag. A value acts as a descriptor within
-        /// a tag category (key). The value can be empty or null.</p>
+        /// <p>One part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>One part of a key-value pair that makes up a tag. A value acts as a descriptor within
-        /// a tag category (key). The value can be empty or null.</p>
+        /// <p>One part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -167,56 +155,42 @@ impl Tag {
     }
 }
 
-/// <p>A UsageRecord indicates a quantity of usage for a given product, customer,
-/// dimension and time.</p>
-/// <p>Multiple requests with the same UsageRecords as input will be deduplicated to
-/// prevent double charges.</p>
+/// <p>A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time.</p>
+/// <p>Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageRecord {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
-    /// <p>Your application can meter usage for up to one hour in the past. Make sure the
-    /// timestamp value is not before the start of the software usage.</p>
+    /// <p>Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the start of the software usage.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The CustomerIdentifier is obtained through the ResolveCustomer operation and
-    /// represents an individual buyer in your application.</p>
+    /// <p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>
     pub customer_identifier: std::option::Option<std::string::String>,
-    /// <p>During the process of registering a product on AWS Marketplace, up to eight
-    /// dimensions are specified. These represent different units of value in your
-    /// application.</p>
+    /// <p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>
     pub dimension: std::option::Option<std::string::String>,
-    /// <p>The quantity of usage consumed by the customer for the given dimension and time.
-    /// Defaults to <code>0</code> if not specified.</p>
+    /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
     pub quantity: std::option::Option<i32>,
-    /// <p>The set of UsageAllocations to submit. The sum of all UsageAllocation quantities
-    /// must equal the Quantity of the UsageRecord.</p>
+    /// <p>The set of UsageAllocations to submit. The sum of all UsageAllocation quantities must equal the Quantity of the UsageRecord.</p>
     pub usage_allocations: std::option::Option<std::vec::Vec<crate::model::UsageAllocation>>,
 }
 impl UsageRecord {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
-    /// <p>Your application can meter usage for up to one hour in the past. Make sure the
-    /// timestamp value is not before the start of the software usage.</p>
+    /// <p>Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the start of the software usage.</p>
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
-    /// <p>The CustomerIdentifier is obtained through the ResolveCustomer operation and
-    /// represents an individual buyer in your application.</p>
+    /// <p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>
     pub fn customer_identifier(&self) -> std::option::Option<&str> {
         self.customer_identifier.as_deref()
     }
-    /// <p>During the process of registering a product on AWS Marketplace, up to eight
-    /// dimensions are specified. These represent different units of value in your
-    /// application.</p>
+    /// <p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>
     pub fn dimension(&self) -> std::option::Option<&str> {
         self.dimension.as_deref()
     }
-    /// <p>The quantity of usage consumed by the customer for the given dimension and time.
-    /// Defaults to <code>0</code> if not specified.</p>
+    /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
     pub fn quantity(&self) -> std::option::Option<i32> {
         self.quantity
     }
-    /// <p>The set of UsageAllocations to submit. The sum of all UsageAllocation quantities
-    /// must equal the Quantity of the UsageRecord.</p>
+    /// <p>The set of UsageAllocations to submit. The sum of all UsageAllocation quantities must equal the Quantity of the UsageRecord.</p>
     pub fn usage_allocations(&self) -> std::option::Option<&[crate::model::UsageAllocation]> {
         self.usage_allocations.as_deref()
     }
@@ -247,15 +221,13 @@ pub mod usage_record {
     }
     impl Builder {
         /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
-        /// <p>Your application can meter usage for up to one hour in the past. Make sure the
-        /// timestamp value is not before the start of the software usage.</p>
+        /// <p>Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the start of the software usage.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.timestamp = Some(input);
             self
         }
         /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
-        /// <p>Your application can meter usage for up to one hour in the past. Make sure the
-        /// timestamp value is not before the start of the software usage.</p>
+        /// <p>Your application can meter usage for up to one hour in the past. Make sure the timestamp value is not before the start of the software usage.</p>
         pub fn set_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -263,14 +235,12 @@ pub mod usage_record {
             self.timestamp = input;
             self
         }
-        /// <p>The CustomerIdentifier is obtained through the ResolveCustomer operation and
-        /// represents an individual buyer in your application.</p>
+        /// <p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>
         pub fn customer_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.customer_identifier = Some(input.into());
             self
         }
-        /// <p>The CustomerIdentifier is obtained through the ResolveCustomer operation and
-        /// represents an individual buyer in your application.</p>
+        /// <p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>
         pub fn set_customer_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -278,28 +248,22 @@ pub mod usage_record {
             self.customer_identifier = input;
             self
         }
-        /// <p>During the process of registering a product on AWS Marketplace, up to eight
-        /// dimensions are specified. These represent different units of value in your
-        /// application.</p>
+        /// <p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>
         pub fn dimension(mut self, input: impl Into<std::string::String>) -> Self {
             self.dimension = Some(input.into());
             self
         }
-        /// <p>During the process of registering a product on AWS Marketplace, up to eight
-        /// dimensions are specified. These represent different units of value in your
-        /// application.</p>
+        /// <p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>
         pub fn set_dimension(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dimension = input;
             self
         }
-        /// <p>The quantity of usage consumed by the customer for the given dimension and time.
-        /// Defaults to <code>0</code> if not specified.</p>
+        /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
         pub fn quantity(mut self, input: i32) -> Self {
             self.quantity = Some(input);
             self
         }
-        /// <p>The quantity of usage consumed by the customer for the given dimension and time.
-        /// Defaults to <code>0</code> if not specified.</p>
+        /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
@@ -308,19 +272,14 @@ pub mod usage_record {
         ///
         /// To override the contents of this collection use [`set_usage_allocations`](Self::set_usage_allocations).
         ///
-        /// <p>The set of UsageAllocations to submit. The sum of all UsageAllocation quantities
-        /// must equal the Quantity of the UsageRecord.</p>
-        pub fn usage_allocations(
-            mut self,
-            input: impl Into<crate::model::UsageAllocation>,
-        ) -> Self {
+        /// <p>The set of UsageAllocations to submit. The sum of all UsageAllocation quantities must equal the Quantity of the UsageRecord.</p>
+        pub fn usage_allocations(mut self, input: crate::model::UsageAllocation) -> Self {
             let mut v = self.usage_allocations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.usage_allocations = Some(v);
             self
         }
-        /// <p>The set of UsageAllocations to submit. The sum of all UsageAllocation quantities
-        /// must equal the Quantity of the UsageRecord.</p>
+        /// <p>The set of UsageAllocations to submit. The sum of all UsageAllocation quantities must equal the Quantity of the UsageRecord.</p>
         pub fn set_usage_allocations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageAllocation>>,
@@ -347,8 +306,7 @@ impl UsageRecord {
     }
 }
 
-/// <p>A UsageRecordResult indicates the status of a given UsageRecord processed by
-/// BatchMeterUsage.</p>
+/// <p>A UsageRecordResult indicates the status of a given UsageRecord processed by BatchMeterUsage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageRecordResult {
@@ -356,27 +314,11 @@ pub struct UsageRecordResult {
     pub usage_record: std::option::Option<crate::model::UsageRecord>,
     /// <p>The MeteringRecordId is a unique identifier for this metering event.</p>
     pub metering_record_id: std::option::Option<std::string::String>,
-    /// <p>The UsageRecordResult Status indicates the status of an individual UsageRecord
-    /// processed by BatchMeterUsage.</p>
+    /// <p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Success</i>- The UsageRecord was accepted and honored by
-    /// BatchMeterUsage.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is
-    /// not subscribed to your product. The UsageRecord was not honored. Future
-    /// UsageRecords for this customer will fail until the customer subscribes to your
-    /// product.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid
-    /// and not honored. A previously metered UsageRecord had the same customer,
-    /// dimension, and time, but a different quantity.</p>
-    /// </li>
+    /// <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li>
+    /// <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li>
+    /// <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::UsageRecordResultStatus>,
 }
@@ -389,27 +331,11 @@ impl UsageRecordResult {
     pub fn metering_record_id(&self) -> std::option::Option<&str> {
         self.metering_record_id.as_deref()
     }
-    /// <p>The UsageRecordResult Status indicates the status of an individual UsageRecord
-    /// processed by BatchMeterUsage.</p>
+    /// <p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Success</i>- The UsageRecord was accepted and honored by
-    /// BatchMeterUsage.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is
-    /// not subscribed to your product. The UsageRecord was not honored. Future
-    /// UsageRecords for this customer will fail until the customer subscribes to your
-    /// product.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid
-    /// and not honored. A previously metered UsageRecord had the same customer,
-    /// dimension, and time, but a different quantity.</p>
-    /// </li>
+    /// <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li>
+    /// <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li>
+    /// <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::UsageRecordResultStatus> {
         self.status.as_ref()
@@ -461,53 +387,21 @@ pub mod usage_record_result {
             self.metering_record_id = input;
             self
         }
-        /// <p>The UsageRecordResult Status indicates the status of an individual UsageRecord
-        /// processed by BatchMeterUsage.</p>
+        /// <p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Success</i>- The UsageRecord was accepted and honored by
-        /// BatchMeterUsage.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is
-        /// not subscribed to your product. The UsageRecord was not honored. Future
-        /// UsageRecords for this customer will fail until the customer subscribes to your
-        /// product.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid
-        /// and not honored. A previously metered UsageRecord had the same customer,
-        /// dimension, and time, but a different quantity.</p>
-        /// </li>
+        /// <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li>
+        /// <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li>
+        /// <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::UsageRecordResultStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The UsageRecordResult Status indicates the status of an individual UsageRecord
-        /// processed by BatchMeterUsage.</p>
+        /// <p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Success</i>- The UsageRecord was accepted and honored by
-        /// BatchMeterUsage.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is
-        /// not subscribed to your product. The UsageRecord was not honored. Future
-        /// UsageRecords for this customer will fail until the customer subscribes to your
-        /// product.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid
-        /// and not honored. A previously metered UsageRecord had the same customer,
-        /// dimension, and time, but a different quantity.</p>
-        /// </li>
+        /// <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li>
+        /// <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li>
+        /// <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,

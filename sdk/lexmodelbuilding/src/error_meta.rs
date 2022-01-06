@@ -3,43 +3,25 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Your IAM user or role does not have permission to call the Amazon Lex V2 APIs
-    /// required to migrate your bot.</p>
+    /// <p>Your IAM user or role does not have permission to call the Amazon Lex V2 APIs required to migrate your bot.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request is not well formed. For example, a value is invalid or
-    /// a required field is missing. Check the field values, and try
-    /// again.</p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and try again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p> There was a conflict processing the request. Try your request
-    /// again. </p>
+    /// <p> There was a conflict processing the request. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal Amazon Lex error occurred. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the
-    /// resource and try again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource and try again.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The checksum of the resource that you are trying to change does
-    /// not match the checksum in the request. Check the resource's checksum and
-    /// try again.</p>
+    /// <p> The checksum of the resource that you are trying to change does not match the checksum in the request. Check the resource's checksum and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>The resource that you are attempting to delete is referred to by
-    /// another resource. Use this information to remove references to the
-    /// resource that you are trying to delete.</p>
-    /// <p>The body of the exception contains a JSON object that describes the
-    /// resource.</p>
-    /// <p>
-    /// <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL |
-    /// INTENT,</code>
-    /// </p>
-    /// <p>
-    /// <code>"resourceReference": {</code>
-    /// </p>
-    /// <p>
-    /// <code>"name": <i>string</i>, "version":
-    /// <i>string</i> } }</code>
-    /// </p>
+    /// <p>The resource that you are attempting to delete is referred to by another resource. Use this information to remove references to the resource that you are trying to delete.</p>
+    /// <p>The body of the exception contains a JSON object that describes the resource.</p>
+    /// <p> <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> </p>
+    /// <p> <code>"resourceReference": {</code> </p>
+    /// <p> <code>"name": <i>string</i>, "version": <i>string</i> } }</code> </p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

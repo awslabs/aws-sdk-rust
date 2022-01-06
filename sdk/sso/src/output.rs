@@ -81,9 +81,9 @@ pub mod list_accounts_output {
         /// To override the contents of this collection use [`set_account_list`](Self::set_account_list).
         ///
         /// <p>A paginated response with the list of account information and the next token if more results are available.</p>
-        pub fn account_list(mut self, input: impl Into<crate::model::AccountInfo>) -> Self {
+        pub fn account_list(mut self, input: crate::model::AccountInfo) -> Self {
             let mut v = self.account_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.account_list = Some(v);
             self
         }
@@ -163,9 +163,9 @@ pub mod list_account_roles_output {
         /// To override the contents of this collection use [`set_role_list`](Self::set_role_list).
         ///
         /// <p>A paginated response with the list of roles and the next token if more results are available.</p>
-        pub fn role_list(mut self, input: impl Into<crate::model::RoleInfo>) -> Self {
+        pub fn role_list(mut self, input: crate::model::RoleInfo) -> Self {
             let mut v = self.role_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.role_list = Some(v);
             self
         }

@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Indicates that a problem occurred with the input to the request. For example, a required
-    /// parameter might be missing or out of range.</p>
+    /// <p>Indicates that a problem occurred with the input to the request. For example, a required parameter might be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),

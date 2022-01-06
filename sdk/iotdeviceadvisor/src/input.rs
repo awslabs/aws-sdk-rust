@@ -71,7 +71,7 @@ pub mod create_suite_definition_input {
 #[doc(hidden)]
 pub type CreateSuiteDefinitionInputOperationOutputAlias = crate::operation::CreateSuiteDefinition;
 #[doc(hidden)]
-pub type CreateSuiteDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSuiteDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSuiteDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateSuiteDefinition`](crate::operation::CreateSuiteDefinition)>
     #[allow(clippy::let_and_return)]
@@ -82,7 +82,7 @@ impl CreateSuiteDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSuiteDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -164,7 +164,7 @@ impl CreateSuiteDefinitionInput {
             "CreateSuiteDefinition",
             "iotdeviceadvisor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -225,7 +225,7 @@ pub mod delete_suite_definition_input {
 #[doc(hidden)]
 pub type DeleteSuiteDefinitionInputOperationOutputAlias = crate::operation::DeleteSuiteDefinition;
 #[doc(hidden)]
-pub type DeleteSuiteDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSuiteDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSuiteDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSuiteDefinition`](crate::operation::DeleteSuiteDefinition)>
     #[allow(clippy::let_and_return)]
@@ -236,7 +236,7 @@ impl DeleteSuiteDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSuiteDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -330,7 +330,7 @@ impl DeleteSuiteDefinitionInput {
             "DeleteSuiteDefinition",
             "iotdeviceadvisor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -395,7 +395,7 @@ pub mod get_endpoint_input {
 #[doc(hidden)]
 pub type GetEndpointInputOperationOutputAlias = crate::operation::GetEndpoint;
 #[doc(hidden)]
-pub type GetEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetEndpoint`](crate::operation::GetEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -406,7 +406,7 @@ impl GetEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -497,7 +497,7 @@ impl GetEndpointInput {
             "GetEndpoint",
             "iotdeviceadvisor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -565,7 +565,7 @@ pub mod get_suite_definition_input {
 #[doc(hidden)]
 pub type GetSuiteDefinitionInputOperationOutputAlias = crate::operation::GetSuiteDefinition;
 #[doc(hidden)]
-pub type GetSuiteDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSuiteDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSuiteDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`GetSuiteDefinition`](crate::operation::GetSuiteDefinition)>
     #[allow(clippy::let_and_return)]
@@ -576,7 +576,7 @@ impl GetSuiteDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSuiteDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -684,7 +684,7 @@ impl GetSuiteDefinitionInput {
             "GetSuiteDefinition",
             "iotdeviceadvisor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -749,7 +749,7 @@ pub mod get_suite_run_input {
 #[doc(hidden)]
 pub type GetSuiteRunInputOperationOutputAlias = crate::operation::GetSuiteRun;
 #[doc(hidden)]
-pub type GetSuiteRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSuiteRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSuiteRunInput {
     /// Consumes the builder and constructs an Operation<[`GetSuiteRun`](crate::operation::GetSuiteRun)>
     #[allow(clippy::let_and_return)]
@@ -760,7 +760,7 @@ impl GetSuiteRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSuiteRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -870,7 +870,7 @@ impl GetSuiteRunInput {
             "GetSuiteRun",
             "iotdeviceadvisor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -935,7 +935,7 @@ pub mod get_suite_run_report_input {
 #[doc(hidden)]
 pub type GetSuiteRunReportInputOperationOutputAlias = crate::operation::GetSuiteRunReport;
 #[doc(hidden)]
-pub type GetSuiteRunReportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSuiteRunReportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSuiteRunReportInput {
     /// Consumes the builder and constructs an Operation<[`GetSuiteRunReport`](crate::operation::GetSuiteRunReport)>
     #[allow(clippy::let_and_return)]
@@ -946,7 +946,7 @@ impl GetSuiteRunReportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSuiteRunReport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1056,7 +1056,7 @@ impl GetSuiteRunReportInput {
             "GetSuiteRunReport",
             "iotdeviceadvisor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1118,7 +1118,7 @@ pub mod list_suite_definitions_input {
 #[doc(hidden)]
 pub type ListSuiteDefinitionsInputOperationOutputAlias = crate::operation::ListSuiteDefinitions;
 #[doc(hidden)]
-pub type ListSuiteDefinitionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSuiteDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSuiteDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`ListSuiteDefinitions`](crate::operation::ListSuiteDefinitions)>
     #[allow(clippy::let_and_return)]
@@ -1129,7 +1129,7 @@ impl ListSuiteDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSuiteDefinitions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1220,7 +1220,7 @@ impl ListSuiteDefinitionsInput {
             "ListSuiteDefinitions",
             "iotdeviceadvisor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1247,14 +1247,12 @@ pub mod list_suite_runs_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Lists the test suite runs of the specified test suite based on suite definition
-        /// ID.</p>
+        /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_id = Some(input.into());
             self
         }
-        /// <p>Lists the test suite runs of the specified test suite based on suite definition
-        /// ID.</p>
+        /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1262,14 +1260,12 @@ pub mod list_suite_runs_input {
             self.suite_definition_id = input;
             self
         }
-        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
-        /// the specified test suite based on suite definition version.</p>
+        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
         pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.suite_definition_version = Some(input.into());
             self
         }
-        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
-        /// the specified test suite based on suite definition version.</p>
+        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
         pub fn set_suite_definition_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1316,7 +1312,7 @@ pub mod list_suite_runs_input {
 #[doc(hidden)]
 pub type ListSuiteRunsInputOperationOutputAlias = crate::operation::ListSuiteRuns;
 #[doc(hidden)]
-pub type ListSuiteRunsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSuiteRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSuiteRunsInput {
     /// Consumes the builder and constructs an Operation<[`ListSuiteRuns`](crate::operation::ListSuiteRuns)>
     #[allow(clippy::let_and_return)]
@@ -1327,7 +1323,7 @@ impl ListSuiteRunsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSuiteRuns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1430,7 +1426,7 @@ impl ListSuiteRunsInput {
             "ListSuiteRuns",
             "iotdeviceadvisor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1480,7 +1476,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1491,7 +1487,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1581,7 +1577,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iotdeviceadvisor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1697,7 +1693,7 @@ pub mod start_suite_run_input {
 #[doc(hidden)]
 pub type StartSuiteRunInputOperationOutputAlias = crate::operation::StartSuiteRun;
 #[doc(hidden)]
-pub type StartSuiteRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartSuiteRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSuiteRunInput {
     /// Consumes the builder and constructs an Operation<[`StartSuiteRun`](crate::operation::StartSuiteRun)>
     #[allow(clippy::let_and_return)]
@@ -1708,7 +1704,7 @@ impl StartSuiteRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSuiteRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1808,7 +1804,7 @@ impl StartSuiteRunInput {
             "StartSuiteRun",
             "iotdeviceadvisor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1881,7 +1877,7 @@ pub mod stop_suite_run_input {
 #[doc(hidden)]
 pub type StopSuiteRunInputOperationOutputAlias = crate::operation::StopSuiteRun;
 #[doc(hidden)]
-pub type StopSuiteRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopSuiteRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopSuiteRunInput {
     /// Consumes the builder and constructs an Operation<[`StopSuiteRun`](crate::operation::StopSuiteRun)>
     #[allow(clippy::let_and_return)]
@@ -1892,7 +1888,7 @@ impl StopSuiteRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopSuiteRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2002,7 +1998,7 @@ impl StopSuiteRunInput {
             "StopSuiteRun",
             "iotdeviceadvisor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2081,7 +2077,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2092,7 +2088,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2187,7 +2183,7 @@ impl TagResourceInput {
             "TagResource",
             "iotdeviceadvisor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2266,7 +2262,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2277,7 +2273,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2380,7 +2376,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iotdeviceadvisor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2452,7 +2448,7 @@ pub mod update_suite_definition_input {
 #[doc(hidden)]
 pub type UpdateSuiteDefinitionInputOperationOutputAlias = crate::operation::UpdateSuiteDefinition;
 #[doc(hidden)]
-pub type UpdateSuiteDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSuiteDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSuiteDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSuiteDefinition`](crate::operation::UpdateSuiteDefinition)>
     #[allow(clippy::let_and_return)]
@@ -2463,7 +2459,7 @@ impl UpdateSuiteDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSuiteDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2565,7 +2561,7 @@ impl UpdateSuiteDefinitionInput {
             "UpdateSuiteDefinition",
             "iotdeviceadvisor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2783,11 +2779,9 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSuiteRunsInput {
-    /// <p>Lists the test suite runs of the specified test suite based on suite definition
-    /// ID.</p>
+    /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
     pub suite_definition_id: std::option::Option<std::string::String>,
-    /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
-    /// the specified test suite based on suite definition version.</p>
+    /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
     pub suite_definition_version: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at once.</p>
     pub max_results: i32,
@@ -2795,13 +2789,11 @@ pub struct ListSuiteRunsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSuiteRunsInput {
-    /// <p>Lists the test suite runs of the specified test suite based on suite definition
-    /// ID.</p>
+    /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
     pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
-    /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
-    /// the specified test suite based on suite definition version.</p>
+    /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
     pub fn suite_definition_version(&self) -> std::option::Option<&str> {
         self.suite_definition_version.as_deref()
     }

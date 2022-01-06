@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS IoT Fleet Hub
@@ -108,6 +108,7 @@ where
     ///
     /// See [`ListApplications`](crate::client::fluent_builders::ListApplications) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
     pub fn list_applications(&self) -> fluent_builders::ListApplications<C, M, R> {
         fluent_builders::ListApplications::new(self.handle.clone())
     }
@@ -150,11 +151,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
-    /// <p>Creates a Fleet Hub for AWS IoT Device Management web application.</p>
-    /// <note>
+    /// <p>Creates a Fleet Hub for AWS IoT Device Management web application.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -199,10 +199,10 @@ pub mod fluent_builders {
                 crate::input::CreateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -211,8 +211,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the web application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the web application.</p>
@@ -224,8 +224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the web application.</p>
-        pub fn application_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_description(inp);
+        pub fn application_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_description(input.into());
             self
         }
         /// <p>An optional description of the web application.</p>
@@ -236,31 +236,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_description(input);
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-        /// <note>
-        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
-        /// </code>.</p>
+        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
         /// </note>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
-        /// <note>
-        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
-        /// </code>.</p>
+        /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+        /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
         /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
@@ -276,7 +270,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A set of key/value pairs that you can use to manage the web application resource.</p>
@@ -292,11 +286,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
-    /// <p>Deletes a Fleet Hub for AWS IoT Device Management web application.</p>
-    /// <note>
+    /// <p>Deletes a Fleet Hub for AWS IoT Device Management web application.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -341,10 +334,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -353,8 +346,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique Id of the web application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique Id of the web application.</p>
@@ -365,14 +358,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -380,11 +371,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeApplication`.
     ///
-    /// <p>Gets information about a Fleet Hub for AWS IoT Device Management web application.</p>
-    /// <note>
+    /// <p>Gets information about a Fleet Hub for AWS IoT Device Management web application.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -429,10 +419,10 @@ pub mod fluent_builders {
                 crate::input::DescribeApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -441,8 +431,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique Id of the web application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique Id of the web application.</p>
@@ -456,11 +446,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListApplications`.
     ///
-    /// <p>Gets a list of Fleet Hub for AWS IoT Device Management web applications for the current account.</p>
-    /// <note>
+    /// <p>Gets a list of Fleet Hub for AWS IoT Device Management web applications for the current account.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -505,10 +494,10 @@ pub mod fluent_builders {
                 crate::input::ListApplicationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -516,9 +505,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListApplicationsPaginator<C, M, R> {
+            crate::paginator::ListApplicationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A token used to get the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used to get the next set of results.</p>
@@ -529,11 +524,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists the tags for the specified resource.</p>
-    /// <note>
+    /// <p>Lists the tags for the specified resource.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -578,10 +572,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -590,8 +584,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -602,11 +596,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds to or modifies the tags of the specified resource. Tags are metadata which can be used to manage a resource.</p>
-    /// <note>
+    /// <p>Adds to or modifies the tags of the specified resource. Tags are metadata which can be used to manage a resource.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -651,10 +644,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -663,8 +656,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -682,7 +675,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The new or modified tags for the resource.</p>
@@ -698,11 +691,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes the specified tags (metadata) from the resource.</p>
-    /// <note>
+    /// <p>Removes the specified tags (metadata) from the resource.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -747,10 +739,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -759,8 +751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -773,8 +765,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of the keys of the tags to be removed from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of the keys of the tags to be removed from the resource.</p>
@@ -788,11 +780,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateApplication`.
     ///
-    /// <p>Updates information about a Fleet Hub for a AWS IoT Device Management web application.</p>
-    /// <note>
+    /// <p>Updates information about a Fleet Hub for a AWS IoT Device Management web application.</p> <note>
     /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -837,10 +828,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -849,8 +840,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique Id of the web application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique Id of the web application.</p>
@@ -862,8 +853,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the web application.</p>
-        pub fn application_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(inp);
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the web application.</p>
@@ -875,8 +866,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the web application.</p>
-        pub fn application_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_description(inp);
+        pub fn application_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_description(input.into());
             self
         }
         /// <p>An optional description of the web application.</p>
@@ -887,20 +878,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_description(input);
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
-        /// Don't reuse this client token if a new idempotent request is required.</p>
+        /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

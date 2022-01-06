@@ -62,7 +62,7 @@ pub mod associate_channel_flow_input {
 #[doc(hidden)]
 pub type AssociateChannelFlowInputOperationOutputAlias = crate::operation::AssociateChannelFlow;
 #[doc(hidden)]
-pub type AssociateChannelFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateChannelFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateChannelFlowInput {
     /// Consumes the builder and constructs an Operation<[`AssociateChannelFlow`](crate::operation::AssociateChannelFlow)>
     #[allow(clippy::let_and_return)]
@@ -73,7 +73,7 @@ impl AssociateChannelFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateChannelFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -199,7 +199,7 @@ impl AssociateChannelFlowInput {
             "AssociateChannelFlow",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -244,20 +244,12 @@ pub mod batch_create_channel_membership_input {
             self.channel_arn = input;
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -314,7 +306,8 @@ pub mod batch_create_channel_membership_input {
 pub type BatchCreateChannelMembershipInputOperationOutputAlias =
     crate::operation::BatchCreateChannelMembership;
 #[doc(hidden)]
-pub type BatchCreateChannelMembershipInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchCreateChannelMembershipInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl BatchCreateChannelMembershipInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreateChannelMembership`](crate::operation::BatchCreateChannelMembership)>
     #[allow(clippy::let_and_return)]
@@ -325,7 +318,7 @@ impl BatchCreateChannelMembershipInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchCreateChannelMembership,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -459,7 +452,7 @@ impl BatchCreateChannelMembershipInput {
             "BatchCreateChannelMembership",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -556,7 +549,7 @@ pub mod channel_flow_callback_input {
 #[doc(hidden)]
 pub type ChannelFlowCallbackInputOperationOutputAlias = crate::operation::ChannelFlowCallback;
 #[doc(hidden)]
-pub type ChannelFlowCallbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ChannelFlowCallbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ChannelFlowCallbackInput {
     /// Consumes the builder and constructs an Operation<[`ChannelFlowCallback`](crate::operation::ChannelFlowCallback)>
     #[allow(clippy::let_and_return)]
@@ -567,7 +560,7 @@ impl ChannelFlowCallbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ChannelFlowCallback,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -675,7 +668,7 @@ impl ChannelFlowCallbackInput {
             "ChannelFlowCallback",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -737,30 +730,22 @@ pub mod create_channel_input {
             self.name = input;
             self
         }
-        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-        /// moderators, and channel members can add themselves and other members to unrestricted
-        /// channels. Only administrators and moderators can add members to restricted channels.</p>
+        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
         pub fn mode(mut self, input: crate::model::ChannelMode) -> Self {
             self.mode = Some(input);
             self
         }
-        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-        /// moderators, and channel members can add themselves and other members to unrestricted
-        /// channels. Only administrators and moderators can add members to restricted channels.</p>
+        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::ChannelMode>) -> Self {
             self.mode = input;
             self
         }
-        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-        /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-        /// by anyone in the <code>AppInstance</code>.</p>
+        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
         pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
             self.privacy = Some(input);
             self
         }
-        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-        /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-        /// by anyone in the <code>AppInstance</code>.</p>
+        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
         pub fn set_privacy(
             mut self,
             input: std::option::Option<crate::model::ChannelPrivacy>,
@@ -796,9 +781,9 @@ pub mod create_channel_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the creation request.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -843,7 +828,7 @@ pub mod create_channel_input {
 #[doc(hidden)]
 pub type CreateChannelInputOperationOutputAlias = crate::operation::CreateChannel;
 #[doc(hidden)]
-pub type CreateChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannel`](crate::operation::CreateChannel)>
     #[allow(clippy::let_and_return)]
@@ -854,7 +839,7 @@ impl CreateChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -960,7 +945,7 @@ impl CreateChannelInput {
             "CreateChannel",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1042,7 +1027,7 @@ pub mod create_channel_ban_input {
 #[doc(hidden)]
 pub type CreateChannelBanInputOperationOutputAlias = crate::operation::CreateChannelBan;
 #[doc(hidden)]
-pub type CreateChannelBanInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelBanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelBanInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannelBan`](crate::operation::CreateChannelBan)>
     #[allow(clippy::let_and_return)]
@@ -1053,7 +1038,7 @@ impl CreateChannelBanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannelBan,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1177,7 +1162,7 @@ impl CreateChannelBanInput {
             "CreateChannelBan",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1231,9 +1216,9 @@ pub mod create_channel_flow_input {
         /// To override the contents of this collection use [`set_processors`](Self::set_processors).
         ///
         /// <p>Information about the processor Lambda functions.</p>
-        pub fn processors(mut self, input: impl Into<crate::model::Processor>) -> Self {
+        pub fn processors(mut self, input: crate::model::Processor) -> Self {
             let mut v = self.processors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processors = Some(v);
             self
         }
@@ -1260,9 +1245,9 @@ pub mod create_channel_flow_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the creation request.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1307,7 +1292,7 @@ pub mod create_channel_flow_input {
 #[doc(hidden)]
 pub type CreateChannelFlowInputOperationOutputAlias = crate::operation::CreateChannelFlow;
 #[doc(hidden)]
-pub type CreateChannelFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelFlowInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannelFlow`](crate::operation::CreateChannelFlow)>
     #[allow(clippy::let_and_return)]
@@ -1318,7 +1303,7 @@ impl CreateChannelFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannelFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1398,7 +1383,7 @@ impl CreateChannelFlowInput {
             "CreateChannelFlow",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1453,20 +1438,12 @@ pub mod create_channel_membership_input {
             self.member_arn = input;
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -1504,7 +1481,7 @@ pub mod create_channel_membership_input {
 pub type CreateChannelMembershipInputOperationOutputAlias =
     crate::operation::CreateChannelMembership;
 #[doc(hidden)]
-pub type CreateChannelMembershipInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelMembershipInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannelMembership`](crate::operation::CreateChannelMembership)>
     #[allow(clippy::let_and_return)]
@@ -1515,7 +1492,7 @@ impl CreateChannelMembershipInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannelMembership,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1641,7 +1618,7 @@ impl CreateChannelMembershipInput {
             "CreateChannelMembership",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1726,7 +1703,7 @@ pub mod create_channel_moderator_input {
 #[doc(hidden)]
 pub type CreateChannelModeratorInputOperationOutputAlias = crate::operation::CreateChannelModerator;
 #[doc(hidden)]
-pub type CreateChannelModeratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelModeratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelModeratorInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannelModerator`](crate::operation::CreateChannelModerator)>
     #[allow(clippy::let_and_return)]
@@ -1737,7 +1714,7 @@ impl CreateChannelModeratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannelModerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1863,7 +1840,7 @@ impl CreateChannelModeratorInput {
             "CreateChannelModerator",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1933,7 +1910,7 @@ pub mod delete_channel_input {
 #[doc(hidden)]
 pub type DeleteChannelInputOperationOutputAlias = crate::operation::DeleteChannel;
 #[doc(hidden)]
-pub type DeleteChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannel`](crate::operation::DeleteChannel)>
     #[allow(clippy::let_and_return)]
@@ -1944,7 +1921,7 @@ impl DeleteChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2058,7 +2035,7 @@ impl DeleteChannelInput {
             "DeleteChannel",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2132,7 +2109,7 @@ pub mod delete_channel_ban_input {
 #[doc(hidden)]
 pub type DeleteChannelBanInputOperationOutputAlias = crate::operation::DeleteChannelBan;
 #[doc(hidden)]
-pub type DeleteChannelBanInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelBanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelBanInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelBan`](crate::operation::DeleteChannelBan)>
     #[allow(clippy::let_and_return)]
@@ -2143,7 +2120,7 @@ impl DeleteChannelBanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannelBan,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2277,7 +2254,7 @@ impl DeleteChannelBanInput {
             "DeleteChannelBan",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2330,7 +2307,7 @@ pub mod delete_channel_flow_input {
 #[doc(hidden)]
 pub type DeleteChannelFlowInputOperationOutputAlias = crate::operation::DeleteChannelFlow;
 #[doc(hidden)]
-pub type DeleteChannelFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelFlowInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelFlow`](crate::operation::DeleteChannelFlow)>
     #[allow(clippy::let_and_return)]
@@ -2341,7 +2318,7 @@ impl DeleteChannelFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannelFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2435,7 +2412,7 @@ impl DeleteChannelFlowInput {
             "DeleteChannelFlow",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2510,7 +2487,7 @@ pub mod delete_channel_membership_input {
 pub type DeleteChannelMembershipInputOperationOutputAlias =
     crate::operation::DeleteChannelMembership;
 #[doc(hidden)]
-pub type DeleteChannelMembershipInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelMembershipInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelMembership`](crate::operation::DeleteChannelMembership)>
     #[allow(clippy::let_and_return)]
@@ -2521,7 +2498,7 @@ impl DeleteChannelMembershipInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannelMembership,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2655,7 +2632,7 @@ impl DeleteChannelMembershipInput {
             "DeleteChannelMembership",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2729,7 +2706,7 @@ pub mod delete_channel_message_input {
 #[doc(hidden)]
 pub type DeleteChannelMessageInputOperationOutputAlias = crate::operation::DeleteChannelMessage;
 #[doc(hidden)]
-pub type DeleteChannelMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelMessage`](crate::operation::DeleteChannelMessage)>
     #[allow(clippy::let_and_return)]
@@ -2740,7 +2717,7 @@ impl DeleteChannelMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannelMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2874,7 +2851,7 @@ impl DeleteChannelMessageInput {
             "DeleteChannelMessage",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2951,7 +2928,7 @@ pub mod delete_channel_moderator_input {
 #[doc(hidden)]
 pub type DeleteChannelModeratorInputOperationOutputAlias = crate::operation::DeleteChannelModerator;
 #[doc(hidden)]
-pub type DeleteChannelModeratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelModeratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelModeratorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelModerator`](crate::operation::DeleteChannelModerator)>
     #[allow(clippy::let_and_return)]
@@ -2962,7 +2939,7 @@ impl DeleteChannelModeratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannelModerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3096,7 +3073,7 @@ impl DeleteChannelModeratorInput {
             "DeleteChannelModerator",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3158,7 +3135,7 @@ pub mod describe_channel_input {
 #[doc(hidden)]
 pub type DescribeChannelInputOperationOutputAlias = crate::operation::DescribeChannel;
 #[doc(hidden)]
-pub type DescribeChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannel`](crate::operation::DescribeChannel)>
     #[allow(clippy::let_and_return)]
@@ -3169,7 +3146,7 @@ impl DescribeChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3283,7 +3260,7 @@ impl DescribeChannelInput {
             "DescribeChannel",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3357,7 +3334,7 @@ pub mod describe_channel_ban_input {
 #[doc(hidden)]
 pub type DescribeChannelBanInputOperationOutputAlias = crate::operation::DescribeChannelBan;
 #[doc(hidden)]
-pub type DescribeChannelBanInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChannelBanInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelBanInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelBan`](crate::operation::DescribeChannelBan)>
     #[allow(clippy::let_and_return)]
@@ -3368,7 +3345,7 @@ impl DescribeChannelBanInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannelBan,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3502,7 +3479,7 @@ impl DescribeChannelBanInput {
             "DescribeChannelBan",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3555,7 +3532,7 @@ pub mod describe_channel_flow_input {
 #[doc(hidden)]
 pub type DescribeChannelFlowInputOperationOutputAlias = crate::operation::DescribeChannelFlow;
 #[doc(hidden)]
-pub type DescribeChannelFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChannelFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelFlowInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelFlow`](crate::operation::DescribeChannelFlow)>
     #[allow(clippy::let_and_return)]
@@ -3566,7 +3543,7 @@ impl DescribeChannelFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannelFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3660,7 +3637,7 @@ impl DescribeChannelFlowInput {
             "DescribeChannelFlow",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3735,7 +3712,7 @@ pub mod describe_channel_membership_input {
 pub type DescribeChannelMembershipInputOperationOutputAlias =
     crate::operation::DescribeChannelMembership;
 #[doc(hidden)]
-pub type DescribeChannelMembershipInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChannelMembershipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelMembershipInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelMembership`](crate::operation::DescribeChannelMembership)>
     #[allow(clippy::let_and_return)]
@@ -3746,7 +3723,7 @@ impl DescribeChannelMembershipInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannelMembership,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3880,7 +3857,7 @@ impl DescribeChannelMembershipInput {
             "DescribeChannelMembership",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3961,7 +3938,7 @@ pub type DescribeChannelMembershipForAppInstanceUserInputOperationOutputAlias =
     crate::operation::DescribeChannelMembershipForAppInstanceUser;
 #[doc(hidden)]
 pub type DescribeChannelMembershipForAppInstanceUserInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelMembershipForAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelMembershipForAppInstanceUser`](crate::operation::DescribeChannelMembershipForAppInstanceUser)>
     #[allow(clippy::let_and_return)]
@@ -3972,7 +3949,7 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannelMembershipForAppInstanceUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4101,7 +4078,7 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
             "DescribeChannelMembershipForAppInstanceUser",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4183,7 +4160,7 @@ pub type DescribeChannelModeratedByAppInstanceUserInputOperationOutputAlias =
     crate::operation::DescribeChannelModeratedByAppInstanceUser;
 #[doc(hidden)]
 pub type DescribeChannelModeratedByAppInstanceUserInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelModeratedByAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelModeratedByAppInstanceUser`](crate::operation::DescribeChannelModeratedByAppInstanceUser)>
     #[allow(clippy::let_and_return)]
@@ -4194,7 +4171,7 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannelModeratedByAppInstanceUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4323,7 +4300,7 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
             "DescribeChannelModeratedByAppInstanceUser",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4402,7 +4379,7 @@ pub mod describe_channel_moderator_input {
 pub type DescribeChannelModeratorInputOperationOutputAlias =
     crate::operation::DescribeChannelModerator;
 #[doc(hidden)]
-pub type DescribeChannelModeratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChannelModeratorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelModeratorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannelModerator`](crate::operation::DescribeChannelModerator)>
     #[allow(clippy::let_and_return)]
@@ -4413,7 +4390,7 @@ impl DescribeChannelModeratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannelModerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4547,7 +4524,7 @@ impl DescribeChannelModeratorInput {
             "DescribeChannelModerator",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4625,7 +4602,7 @@ pub mod disassociate_channel_flow_input {
 pub type DisassociateChannelFlowInputOperationOutputAlias =
     crate::operation::DisassociateChannelFlow;
 #[doc(hidden)]
-pub type DisassociateChannelFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateChannelFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateChannelFlowInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateChannelFlow`](crate::operation::DisassociateChannelFlow)>
     #[allow(clippy::let_and_return)]
@@ -4636,7 +4613,7 @@ impl DisassociateChannelFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateChannelFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4770,7 +4747,7 @@ impl DisassociateChannelFlowInput {
             "DisassociateChannelFlow",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4845,7 +4822,8 @@ pub mod get_channel_membership_preferences_input {
 pub type GetChannelMembershipPreferencesInputOperationOutputAlias =
     crate::operation::GetChannelMembershipPreferences;
 #[doc(hidden)]
-pub type GetChannelMembershipPreferencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetChannelMembershipPreferencesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetChannelMembershipPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`GetChannelMembershipPreferences`](crate::operation::GetChannelMembershipPreferences)>
     #[allow(clippy::let_and_return)]
@@ -4856,7 +4834,7 @@ impl GetChannelMembershipPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChannelMembershipPreferences,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4990,7 +4968,7 @@ impl GetChannelMembershipPreferencesInput {
             "GetChannelMembershipPreferences",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5064,7 +5042,7 @@ pub mod get_channel_message_input {
 #[doc(hidden)]
 pub type GetChannelMessageInputOperationOutputAlias = crate::operation::GetChannelMessage;
 #[doc(hidden)]
-pub type GetChannelMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`GetChannelMessage`](crate::operation::GetChannelMessage)>
     #[allow(clippy::let_and_return)]
@@ -5075,7 +5053,7 @@ impl GetChannelMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChannelMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5209,7 +5187,7 @@ impl GetChannelMessageInput {
             "GetChannelMessage",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5284,7 +5262,7 @@ pub mod get_channel_message_status_input {
 pub type GetChannelMessageStatusInputOperationOutputAlias =
     crate::operation::GetChannelMessageStatus;
 #[doc(hidden)]
-pub type GetChannelMessageStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetChannelMessageStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChannelMessageStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetChannelMessageStatus`](crate::operation::GetChannelMessageStatus)>
     #[allow(clippy::let_and_return)]
@@ -5295,7 +5273,7 @@ impl GetChannelMessageStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChannelMessageStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5438,7 +5416,7 @@ impl GetChannelMessageStatusInput {
             "GetChannelMessageStatus",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5475,7 +5453,7 @@ pub mod get_messaging_session_endpoint_input {
 pub type GetMessagingSessionEndpointInputOperationOutputAlias =
     crate::operation::GetMessagingSessionEndpoint;
 #[doc(hidden)]
-pub type GetMessagingSessionEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMessagingSessionEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMessagingSessionEndpointInput {
     /// Consumes the builder and constructs an Operation<[`GetMessagingSessionEndpoint`](crate::operation::GetMessagingSessionEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -5486,7 +5464,7 @@ impl GetMessagingSessionEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMessagingSessionEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5560,7 +5538,7 @@ impl GetMessagingSessionEndpointInput {
             "GetMessagingSessionEndpoint",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5646,7 +5624,7 @@ pub mod list_channel_bans_input {
 #[doc(hidden)]
 pub type ListChannelBansInputOperationOutputAlias = crate::operation::ListChannelBans;
 #[doc(hidden)]
-pub type ListChannelBansInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelBansInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelBansInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelBans`](crate::operation::ListChannelBans)>
     #[allow(clippy::let_and_return)]
@@ -5657,7 +5635,7 @@ impl ListChannelBansInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelBans,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5792,7 +5770,7 @@ impl ListChannelBansInput {
             "ListChannelBans",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5869,7 +5847,7 @@ pub mod list_channel_flows_input {
 #[doc(hidden)]
 pub type ListChannelFlowsInputOperationOutputAlias = crate::operation::ListChannelFlows;
 #[doc(hidden)]
-pub type ListChannelFlowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelFlowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelFlowsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelFlows`](crate::operation::ListChannelFlows)>
     #[allow(clippy::let_and_return)]
@@ -5880,7 +5858,7 @@ impl ListChannelFlowsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelFlows,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5977,7 +5955,7 @@ impl ListChannelFlowsInput {
             "ListChannelFlows",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6015,18 +5993,12 @@ pub mod list_channel_memberships_input {
             self.channel_arn = input;
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are returned as part of <code>ListChannelMemberships</code> if no type is specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are returned as part of <code>ListChannelMemberships</code> if no type is specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -6044,14 +6016,12 @@ pub mod list_channel_memberships_input {
             self.max_results = input;
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6086,7 +6056,7 @@ pub mod list_channel_memberships_input {
 #[doc(hidden)]
 pub type ListChannelMembershipsInputOperationOutputAlias = crate::operation::ListChannelMemberships;
 #[doc(hidden)]
-pub type ListChannelMembershipsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelMembershipsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelMembershipsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelMemberships`](crate::operation::ListChannelMemberships)>
     #[allow(clippy::let_and_return)]
@@ -6097,7 +6067,7 @@ impl ListChannelMembershipsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelMemberships,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6235,7 +6205,7 @@ impl ListChannelMembershipsInput {
             "ListChannelMemberships",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6285,14 +6255,12 @@ pub mod list_channel_memberships_for_app_instance_user_input {
             self.max_results = input;
             self
         }
-        /// <p>The token returned from previous API requests until the number of channel memberships is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of channel memberships is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6330,7 +6298,7 @@ pub type ListChannelMembershipsForAppInstanceUserInputOperationOutputAlias =
     crate::operation::ListChannelMembershipsForAppInstanceUser;
 #[doc(hidden)]
 pub type ListChannelMembershipsForAppInstanceUserInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelMembershipsForAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelMembershipsForAppInstanceUser`](crate::operation::ListChannelMembershipsForAppInstanceUser)>
     #[allow(clippy::let_and_return)]
@@ -6341,7 +6309,7 @@ impl ListChannelMembershipsForAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelMembershipsForAppInstanceUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6463,7 +6431,7 @@ impl ListChannelMembershipsForAppInstanceUserInput {
             "ListChannelMembershipsForAppInstanceUser",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6504,14 +6472,12 @@ pub mod list_channel_messages_input {
             self.channel_arn = input;
             self
         }
-        /// <p>The order in which you want messages sorted. Default is Descending, based on time
-        /// created.</p>
+        /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>The order in which you want messages sorted. Default is Descending, based on time
-        /// created.</p>
+        /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -6597,7 +6563,7 @@ pub mod list_channel_messages_input {
 #[doc(hidden)]
 pub type ListChannelMessagesInputOperationOutputAlias = crate::operation::ListChannelMessages;
 #[doc(hidden)]
-pub type ListChannelMessagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelMessagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelMessagesInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelMessages`](crate::operation::ListChannelMessages)>
     #[allow(clippy::let_and_return)]
@@ -6608,7 +6574,7 @@ impl ListChannelMessagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelMessages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6770,7 +6736,7 @@ impl ListChannelMessagesInput {
             "ListChannelMessages",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6817,14 +6783,12 @@ pub mod list_channel_moderators_input {
             self.max_results = input;
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6858,7 +6822,7 @@ pub mod list_channel_moderators_input {
 #[doc(hidden)]
 pub type ListChannelModeratorsInputOperationOutputAlias = crate::operation::ListChannelModerators;
 #[doc(hidden)]
-pub type ListChannelModeratorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelModeratorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelModeratorsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelModerators`](crate::operation::ListChannelModerators)>
     #[allow(clippy::let_and_return)]
@@ -6869,7 +6833,7 @@ impl ListChannelModeratorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelModerators,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7007,7 +6971,7 @@ impl ListChannelModeratorsInput {
             "ListChannelModerators",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7048,16 +7012,12 @@ pub mod list_channels_input {
             self.app_instance_arn = input;
             self
         }
-        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-        /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
-        /// can retrieve private channels. </p>
+        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
         pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
             self.privacy = Some(input);
             self
         }
-        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-        /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
-        /// can retrieve private channels. </p>
+        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
         pub fn set_privacy(
             mut self,
             input: std::option::Option<crate::model::ChannelPrivacy>,
@@ -7115,7 +7075,7 @@ pub mod list_channels_input {
 #[doc(hidden)]
 pub type ListChannelsInputOperationOutputAlias = crate::operation::ListChannels;
 #[doc(hidden)]
-pub type ListChannelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannels`](crate::operation::ListChannels)>
     #[allow(clippy::let_and_return)]
@@ -7126,7 +7086,7 @@ impl ListChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7253,7 +7213,7 @@ impl ListChannelsInput {
             "ListChannels",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7332,7 +7292,7 @@ pub type ListChannelsAssociatedWithChannelFlowInputOperationOutputAlias =
     crate::operation::ListChannelsAssociatedWithChannelFlow;
 #[doc(hidden)]
 pub type ListChannelsAssociatedWithChannelFlowInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsAssociatedWithChannelFlowInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelsAssociatedWithChannelFlow`](crate::operation::ListChannelsAssociatedWithChannelFlow)>
     #[allow(clippy::let_and_return)]
@@ -7343,7 +7303,7 @@ impl ListChannelsAssociatedWithChannelFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelsAssociatedWithChannelFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7444,7 +7404,7 @@ impl ListChannelsAssociatedWithChannelFlowInput {
             "ListChannelsAssociatedWithChannelFlow",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7494,14 +7454,12 @@ pub mod list_channels_moderated_by_app_instance_user_input {
             self.max_results = input;
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by
-        /// the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by
-        /// the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7537,7 +7495,7 @@ pub type ListChannelsModeratedByAppInstanceUserInputOperationOutputAlias =
     crate::operation::ListChannelsModeratedByAppInstanceUser;
 #[doc(hidden)]
 pub type ListChannelsModeratedByAppInstanceUserInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsModeratedByAppInstanceUserInput {
     /// Consumes the builder and constructs an Operation<[`ListChannelsModeratedByAppInstanceUser`](crate::operation::ListChannelsModeratedByAppInstanceUser)>
     #[allow(clippy::let_and_return)]
@@ -7548,7 +7506,7 @@ impl ListChannelsModeratedByAppInstanceUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannelsModeratedByAppInstanceUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7673,7 +7631,7 @@ impl ListChannelsModeratedByAppInstanceUserInput {
             "ListChannelsModeratedByAppInstanceUser",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7723,7 +7681,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -7734,7 +7692,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7819,7 +7777,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7866,12 +7824,12 @@ pub mod put_channel_membership_preferences_input {
             self.member_arn = input;
             self
         }
-        /// <p>The <code>AppInstanceUserARN</code>  of the user making the API call.</p>
+        /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
         pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
             self.chime_bearer = Some(input.into());
             self
         }
-        /// <p>The <code>AppInstanceUserARN</code>  of the user making the API call.</p>
+        /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
         pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.chime_bearer = input;
             self
@@ -7909,7 +7867,8 @@ pub mod put_channel_membership_preferences_input {
 pub type PutChannelMembershipPreferencesInputOperationOutputAlias =
     crate::operation::PutChannelMembershipPreferences;
 #[doc(hidden)]
-pub type PutChannelMembershipPreferencesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutChannelMembershipPreferencesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutChannelMembershipPreferencesInput {
     /// Consumes the builder and constructs an Operation<[`PutChannelMembershipPreferences`](crate::operation::PutChannelMembershipPreferences)>
     #[allow(clippy::let_and_return)]
@@ -7920,7 +7879,7 @@ impl PutChannelMembershipPreferencesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutChannelMembershipPreferences,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8061,7 +8020,7 @@ impl PutChannelMembershipPreferencesInput {
             "PutChannelMembershipPreferences",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8143,7 +8102,7 @@ pub mod redact_channel_message_input {
 #[doc(hidden)]
 pub type RedactChannelMessageInputOperationOutputAlias = crate::operation::RedactChannelMessage;
 #[doc(hidden)]
-pub type RedactChannelMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RedactChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RedactChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`RedactChannelMessage`](crate::operation::RedactChannelMessage)>
     #[allow(clippy::let_and_return)]
@@ -8154,7 +8113,7 @@ impl RedactChannelMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RedactChannelMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8297,7 +8256,7 @@ impl RedactChannelMessageInput {
             "RedactChannelMessage",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8435,10 +8394,10 @@ pub mod send_channel_message_input {
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MessageAttributeValue>,
+            v: crate::model::MessageAttributeValue,
         ) -> Self {
             let mut hash_map = self.message_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.message_attributes = Some(hash_map);
             self
         }
@@ -8476,7 +8435,7 @@ pub mod send_channel_message_input {
 #[doc(hidden)]
 pub type SendChannelMessageInputOperationOutputAlias = crate::operation::SendChannelMessage;
 #[doc(hidden)]
-pub type SendChannelMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`SendChannelMessage`](crate::operation::SendChannelMessage)>
     #[allow(clippy::let_and_return)]
@@ -8487,7 +8446,7 @@ impl SendChannelMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendChannelMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8614,7 +8573,7 @@ impl SendChannelMessageInput {
             "SendChannelMessage",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8662,9 +8621,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8693,7 +8652,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -8704,7 +8663,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8792,7 +8751,7 @@ impl TagResourceInput {
             "TagResource",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8871,7 +8830,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -8882,7 +8841,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8970,7 +8929,7 @@ impl UntagResourceInput {
             "UntagResource",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9076,7 +9035,7 @@ pub mod update_channel_input {
 #[doc(hidden)]
 pub type UpdateChannelInputOperationOutputAlias = crate::operation::UpdateChannel;
 #[doc(hidden)]
-pub type UpdateChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannel`](crate::operation::UpdateChannel)>
     #[allow(clippy::let_and_return)]
@@ -9087,7 +9046,7 @@ impl UpdateChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9206,7 +9165,7 @@ impl UpdateChannelInput {
             "UpdateChannel",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9258,9 +9217,9 @@ pub mod update_channel_flow_input {
         /// To override the contents of this collection use [`set_processors`](Self::set_processors).
         ///
         /// <p>Information about the processor Lambda functions </p>
-        pub fn processors(mut self, input: impl Into<crate::model::Processor>) -> Self {
+        pub fn processors(mut self, input: crate::model::Processor) -> Self {
             let mut v = self.processors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processors = Some(v);
             self
         }
@@ -9300,7 +9259,7 @@ pub mod update_channel_flow_input {
 #[doc(hidden)]
 pub type UpdateChannelFlowInputOperationOutputAlias = crate::operation::UpdateChannelFlow;
 #[doc(hidden)]
-pub type UpdateChannelFlowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChannelFlowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelFlowInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannelFlow`](crate::operation::UpdateChannelFlow)>
     #[allow(clippy::let_and_return)]
@@ -9311,7 +9270,7 @@ impl UpdateChannelFlowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChannelFlow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9411,7 +9370,7 @@ impl UpdateChannelFlowInput {
             "UpdateChannelFlow",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9517,7 +9476,7 @@ pub mod update_channel_message_input {
 #[doc(hidden)]
 pub type UpdateChannelMessageInputOperationOutputAlias = crate::operation::UpdateChannelMessage;
 #[doc(hidden)]
-pub type UpdateChannelMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChannelMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelMessageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannelMessage`](crate::operation::UpdateChannelMessage)>
     #[allow(clippy::let_and_return)]
@@ -9528,7 +9487,7 @@ impl UpdateChannelMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChannelMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9670,7 +9629,7 @@ impl UpdateChannelMessageInput {
             "UpdateChannelMessage",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9741,7 +9700,7 @@ pub mod update_channel_read_marker_input {
 pub type UpdateChannelReadMarkerInputOperationOutputAlias =
     crate::operation::UpdateChannelReadMarker;
 #[doc(hidden)]
-pub type UpdateChannelReadMarkerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChannelReadMarkerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelReadMarkerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannelReadMarker`](crate::operation::UpdateChannelReadMarker)>
     #[allow(clippy::let_and_return)]
@@ -9752,7 +9711,7 @@ impl UpdateChannelReadMarkerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChannelReadMarker,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9870,7 +9829,7 @@ impl UpdateChannelReadMarkerInput {
             "UpdateChannelReadMarker",
             "chimesdkmessaging",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10230,7 +10189,7 @@ pub struct PutChannelMembershipPreferencesInput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
     pub member_arn: std::option::Option<std::string::String>,
-    /// <p>The <code>AppInstanceUserARN</code>  of the user making the API call.</p>
+    /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
     /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
     pub preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
@@ -10244,7 +10203,7 @@ impl PutChannelMembershipPreferencesInput {
     pub fn member_arn(&self) -> std::option::Option<&str> {
         self.member_arn.as_deref()
     }
-    /// <p>The <code>AppInstanceUserARN</code>  of the user making the API call.</p>
+    /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
     pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
@@ -10293,8 +10252,7 @@ pub struct ListChannelsModeratedByAppInstanceUserInput {
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of channels in the request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token returned from previous API requests until the number of channels moderated by
-    /// the user is reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
@@ -10308,8 +10266,7 @@ impl ListChannelsModeratedByAppInstanceUserInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token returned from previous API requests until the number of channels moderated by
-    /// the user is reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10370,9 +10327,7 @@ impl std::fmt::Debug for ListChannelsAssociatedWithChannelFlowInput {
 pub struct ListChannelsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
-    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-    /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
-    /// can retrieve private channels. </p>
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The maximum number of channels that you want to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10386,9 +10341,7 @@ impl ListChannelsInput {
     pub fn app_instance_arn(&self) -> std::option::Option<&str> {
         self.app_instance_arn.as_deref()
     }
-    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-    /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
-    /// can retrieve private channels. </p>
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
     pub fn privacy(&self) -> std::option::Option<&crate::model::ChannelPrivacy> {
         self.privacy.as_ref()
     }
@@ -10425,8 +10378,7 @@ pub struct ListChannelModeratorsInput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of moderators that you want returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token passed by previous API calls until all requested moderators are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
@@ -10440,8 +10392,7 @@ impl ListChannelModeratorsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token passed by previous API calls until all requested moderators are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10467,8 +10418,7 @@ impl std::fmt::Debug for ListChannelModeratorsInput {
 pub struct ListChannelMessagesInput {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The order in which you want messages sorted. Default is Descending, based on time
-    /// created.</p>
+    /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The initial or starting time stamp for your requested messages.</p>
     pub not_before: std::option::Option<aws_smithy_types::DateTime>,
@@ -10486,8 +10436,7 @@ impl ListChannelMessagesInput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The order in which you want messages sorted. Default is Descending, based on time
-    /// created.</p>
+    /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
@@ -10534,8 +10483,7 @@ pub struct ListChannelMembershipsForAppInstanceUserInput {
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of users that you want returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token returned from previous API requests until the number of channel memberships is
-    /// reached.</p>
+    /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
@@ -10549,8 +10497,7 @@ impl ListChannelMembershipsForAppInstanceUserInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token returned from previous API requests until the number of channel memberships is
-    /// reached.</p>
+    /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10576,15 +10523,11 @@ impl std::fmt::Debug for ListChannelMembershipsForAppInstanceUserInput {
 pub struct ListChannelMembershipsInput {
     /// <p>The maximum number of channel memberships that you want returned.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-    /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are returned as part of <code>ListChannelMemberships</code> if no type is specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The maximum number of channel memberships that you want returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token passed by previous API calls until all requested channel memberships are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
@@ -10594,10 +10537,7 @@ impl ListChannelMembershipsInput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-    /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are returned as part of <code>ListChannelMemberships</code> if no type is specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
         self.r#type.as_ref()
     }
@@ -10605,8 +10545,7 @@ impl ListChannelMembershipsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token passed by previous API calls until all requested channel memberships are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11311,11 +11250,7 @@ pub struct CreateChannelMembershipInput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the member you want to add to the channel.</p>
     pub member_arn: std::option::Option<std::string::String>,
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-    /// by moderators.</p>
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
@@ -11329,11 +11264,7 @@ impl CreateChannelMembershipInput {
     pub fn member_arn(&self) -> std::option::Option<&str> {
         self.member_arn.as_deref()
     }
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-    /// by moderators.</p>
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
         self.r#type.as_ref()
     }
@@ -11445,13 +11376,9 @@ pub struct CreateChannelInput {
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-    /// moderators, and channel members can add themselves and other members to unrestricted
-    /// channels. Only administrators and moderators can add members to restricted channels.</p>
+    /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
     pub mode: std::option::Option<crate::model::ChannelMode>,
-    /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-    /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-    /// by anyone in the <code>AppInstance</code>.</p>
+    /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
     pub metadata: std::option::Option<std::string::String>,
@@ -11471,15 +11398,11 @@ impl CreateChannelInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-    /// moderators, and channel members can add themselves and other members to unrestricted
-    /// channels. Only administrators and moderators can add members to restricted channels.</p>
+    /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
     pub fn mode(&self) -> std::option::Option<&crate::model::ChannelMode> {
         self.mode.as_ref()
     }
-    /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-    /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-    /// by anyone in the <code>AppInstance</code>.</p>
+    /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
     pub fn privacy(&self) -> std::option::Option<&crate::model::ChannelPrivacy> {
         self.privacy.as_ref()
     }
@@ -11563,11 +11486,7 @@ impl std::fmt::Debug for ChannelFlowCallbackInput {
 pub struct BatchCreateChannelMembershipInput {
     /// <p>The ARN of the channel to which you're adding users.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-    /// by moderators.</p>
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.</p>
     pub member_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11579,11 +11498,7 @@ impl BatchCreateChannelMembershipInput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-    /// by moderators.</p>
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelMembershipType> {
         self.r#type.as_ref()
     }

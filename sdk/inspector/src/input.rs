@@ -34,9 +34,9 @@ pub mod add_attributes_to_findings_input {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The array of attributes that you want to assign to specified findings.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -66,7 +66,7 @@ pub mod add_attributes_to_findings_input {
 pub type AddAttributesToFindingsInputOperationOutputAlias =
     crate::operation::AddAttributesToFindings;
 #[doc(hidden)]
-pub type AddAttributesToFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddAttributesToFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddAttributesToFindingsInput {
     /// Consumes the builder and constructs an Operation<[`AddAttributesToFindings`](crate::operation::AddAttributesToFindings)>
     #[allow(clippy::let_and_return)]
@@ -77,7 +77,7 @@ impl AddAttributesToFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddAttributesToFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -164,7 +164,7 @@ impl AddAttributesToFindingsInput {
             "AddAttributesToFindings",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -197,14 +197,12 @@ pub mod create_assessment_target_input {
         pub(crate) resource_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The user-defined name that identifies the assessment target that you want to create.
-        /// The name must be unique within the AWS account.</p>
+        /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
         pub fn assessment_target_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_target_name = Some(input.into());
             self
         }
-        /// <p>The user-defined name that identifies the assessment target that you want to create.
-        /// The name must be unique within the AWS account.</p>
+        /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
         pub fn set_assessment_target_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -212,16 +210,12 @@ pub mod create_assessment_target_input {
             self.assessment_target_name = input;
             self
         }
-        /// <p>The ARN that specifies the resource group that is used to create the assessment
-        /// target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account
-        /// and region are included in the assessment target.</p>
+        /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
         pub fn resource_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_group_arn = Some(input.into());
             self
         }
-        /// <p>The ARN that specifies the resource group that is used to create the assessment
-        /// target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account
-        /// and region are included in the assessment target.</p>
+        /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
         pub fn set_resource_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -246,7 +240,7 @@ pub mod create_assessment_target_input {
 #[doc(hidden)]
 pub type CreateAssessmentTargetInputOperationOutputAlias = crate::operation::CreateAssessmentTarget;
 #[doc(hidden)]
-pub type CreateAssessmentTargetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAssessmentTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAssessmentTargetInput {
     /// Consumes the builder and constructs an Operation<[`CreateAssessmentTarget`](crate::operation::CreateAssessmentTarget)>
     #[allow(clippy::let_and_return)]
@@ -257,7 +251,7 @@ impl CreateAssessmentTargetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAssessmentTarget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -344,7 +338,7 @@ impl CreateAssessmentTargetInput {
             "CreateAssessmentTarget",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -381,14 +375,12 @@ pub mod create_assessment_template_input {
             std::option::Option<std::vec::Vec<crate::model::Attribute>>,
     }
     impl Builder {
-        /// <p>The ARN that specifies the assessment target for which you want to create the
-        /// assessment template.</p>
+        /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
         pub fn assessment_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_target_arn = Some(input.into());
             self
         }
-        /// <p>The ARN that specifies the assessment target for which you want to create the
-        /// assessment template.</p>
+        /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
         pub fn set_assessment_target_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -396,18 +388,12 @@ pub mod create_assessment_template_input {
             self.assessment_target_arn = input;
             self
         }
-        /// <p>The user-defined name that identifies the assessment template that you want to
-        /// create. You can create several assessment templates for an assessment target. The names of
-        /// the assessment templates that correspond to a particular assessment target must be
-        /// unique.</p>
+        /// <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
         pub fn assessment_template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_template_name = Some(input.into());
             self
         }
-        /// <p>The user-defined name that identifies the assessment template that you want to
-        /// create. You can create several assessment templates for an assessment target. The names of
-        /// the assessment templates that correspond to a particular assessment target must be
-        /// unique.</p>
+        /// <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
         pub fn set_assessment_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -429,16 +415,14 @@ pub mod create_assessment_template_input {
         ///
         /// To override the contents of this collection use [`set_rules_package_arns`](Self::set_rules_package_arns).
         ///
-        /// <p>The ARNs that specify the rules packages that you want to attach to the assessment
-        /// template.</p>
+        /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
         pub fn rules_package_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rules_package_arns.unwrap_or_default();
             v.push(input.into());
             self.rules_package_arns = Some(v);
             self
         }
-        /// <p>The ARNs that specify the rules packages that you want to attach to the assessment
-        /// template.</p>
+        /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
         pub fn set_rules_package_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -450,23 +434,14 @@ pub mod create_assessment_template_input {
         ///
         /// To override the contents of this collection use [`set_user_attributes_for_findings`](Self::set_user_attributes_for_findings).
         ///
-        /// <p>The user-defined attributes that are assigned to every finding that is generated by
-        /// the assessment run that uses this assessment template. An attribute is a key and value pair
-        /// (an <a>Attribute</a> object). Within an assessment template, each key must be
-        /// unique.</p>
-        pub fn user_attributes_for_findings(
-            mut self,
-            input: impl Into<crate::model::Attribute>,
-        ) -> Self {
+        /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
+        pub fn user_attributes_for_findings(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.user_attributes_for_findings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_attributes_for_findings = Some(v);
             self
         }
-        /// <p>The user-defined attributes that are assigned to every finding that is generated by
-        /// the assessment run that uses this assessment template. An attribute is a key and value pair
-        /// (an <a>Attribute</a> object). Within an assessment template, each key must be
-        /// unique.</p>
+        /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
         pub fn set_user_attributes_for_findings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -495,7 +470,7 @@ pub mod create_assessment_template_input {
 pub type CreateAssessmentTemplateInputOperationOutputAlias =
     crate::operation::CreateAssessmentTemplate;
 #[doc(hidden)]
-pub type CreateAssessmentTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAssessmentTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAssessmentTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateAssessmentTemplate`](crate::operation::CreateAssessmentTemplate)>
     #[allow(clippy::let_and_return)]
@@ -506,7 +481,7 @@ impl CreateAssessmentTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAssessmentTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -593,7 +568,7 @@ impl CreateAssessmentTemplateInput {
             "CreateAssessmentTemplate",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -625,14 +600,12 @@ pub mod create_exclusions_preview_input {
         pub(crate) assessment_template_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN that specifies the assessment template for which you want to create an
-        /// exclusions preview.</p>
+        /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
         pub fn assessment_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_template_arn = Some(input.into());
             self
         }
-        /// <p>The ARN that specifies the assessment template for which you want to create an
-        /// exclusions preview.</p>
+        /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
         pub fn set_assessment_template_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -657,7 +630,7 @@ pub mod create_exclusions_preview_input {
 pub type CreateExclusionsPreviewInputOperationOutputAlias =
     crate::operation::CreateExclusionsPreview;
 #[doc(hidden)]
-pub type CreateExclusionsPreviewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateExclusionsPreviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateExclusionsPreviewInput {
     /// Consumes the builder and constructs an Operation<[`CreateExclusionsPreview`](crate::operation::CreateExclusionsPreview)>
     #[allow(clippy::let_and_return)]
@@ -668,7 +641,7 @@ impl CreateExclusionsPreviewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateExclusionsPreview,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -755,7 +728,7 @@ impl CreateExclusionsPreviewInput {
             "CreateExclusionsPreview",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -792,20 +765,15 @@ pub mod create_resource_group_input {
         ///
         /// To override the contents of this collection use [`set_resource_group_tags`](Self::set_resource_group_tags).
         ///
-        /// <p>A collection of keys and an array of possible values,
-        /// '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
+        /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
         /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
-        pub fn resource_group_tags(
-            mut self,
-            input: impl Into<crate::model::ResourceGroupTag>,
-        ) -> Self {
+        pub fn resource_group_tags(mut self, input: crate::model::ResourceGroupTag) -> Self {
             let mut v = self.resource_group_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_group_tags = Some(v);
             self
         }
-        /// <p>A collection of keys and an array of possible values,
-        /// '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
+        /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
         /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
         pub fn set_resource_group_tags(
             mut self,
@@ -830,7 +798,7 @@ pub mod create_resource_group_input {
 #[doc(hidden)]
 pub type CreateResourceGroupInputOperationOutputAlias = crate::operation::CreateResourceGroup;
 #[doc(hidden)]
-pub type CreateResourceGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateResourceGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResourceGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateResourceGroup`](crate::operation::CreateResourceGroup)>
     #[allow(clippy::let_and_return)]
@@ -841,7 +809,7 @@ impl CreateResourceGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResourceGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -926,7 +894,7 @@ impl CreateResourceGroupInput {
             "CreateResourceGroup",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -987,7 +955,7 @@ pub mod delete_assessment_run_input {
 #[doc(hidden)]
 pub type DeleteAssessmentRunInputOperationOutputAlias = crate::operation::DeleteAssessmentRun;
 #[doc(hidden)]
-pub type DeleteAssessmentRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAssessmentRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAssessmentRunInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAssessmentRun`](crate::operation::DeleteAssessmentRun)>
     #[allow(clippy::let_and_return)]
@@ -998,7 +966,7 @@ impl DeleteAssessmentRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAssessmentRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1083,7 +1051,7 @@ impl DeleteAssessmentRunInput {
             "DeleteAssessmentRun",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1144,7 +1112,7 @@ pub mod delete_assessment_target_input {
 #[doc(hidden)]
 pub type DeleteAssessmentTargetInputOperationOutputAlias = crate::operation::DeleteAssessmentTarget;
 #[doc(hidden)]
-pub type DeleteAssessmentTargetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAssessmentTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAssessmentTargetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAssessmentTarget`](crate::operation::DeleteAssessmentTarget)>
     #[allow(clippy::let_and_return)]
@@ -1155,7 +1123,7 @@ impl DeleteAssessmentTargetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAssessmentTarget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1242,7 +1210,7 @@ impl DeleteAssessmentTargetInput {
             "DeleteAssessmentTarget",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1304,7 +1272,7 @@ pub mod delete_assessment_template_input {
 pub type DeleteAssessmentTemplateInputOperationOutputAlias =
     crate::operation::DeleteAssessmentTemplate;
 #[doc(hidden)]
-pub type DeleteAssessmentTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAssessmentTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAssessmentTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAssessmentTemplate`](crate::operation::DeleteAssessmentTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1315,7 +1283,7 @@ impl DeleteAssessmentTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAssessmentTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1402,7 +1370,7 @@ impl DeleteAssessmentTemplateInput {
             "DeleteAssessmentTemplate",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1469,7 +1437,7 @@ pub mod describe_assessment_runs_input {
 #[doc(hidden)]
 pub type DescribeAssessmentRunsInputOperationOutputAlias = crate::operation::DescribeAssessmentRuns;
 #[doc(hidden)]
-pub type DescribeAssessmentRunsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAssessmentRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAssessmentRunsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAssessmentRuns`](crate::operation::DescribeAssessmentRuns)>
     #[allow(clippy::let_and_return)]
@@ -1480,7 +1448,7 @@ impl DescribeAssessmentRunsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAssessmentRuns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1567,7 +1535,7 @@ impl DescribeAssessmentRunsInput {
             "DescribeAssessmentRuns",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1635,7 +1603,7 @@ pub mod describe_assessment_targets_input {
 pub type DescribeAssessmentTargetsInputOperationOutputAlias =
     crate::operation::DescribeAssessmentTargets;
 #[doc(hidden)]
-pub type DescribeAssessmentTargetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAssessmentTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAssessmentTargetsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAssessmentTargets`](crate::operation::DescribeAssessmentTargets)>
     #[allow(clippy::let_and_return)]
@@ -1646,7 +1614,7 @@ impl DescribeAssessmentTargetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAssessmentTargets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1733,7 +1701,7 @@ impl DescribeAssessmentTargetsInput {
             "DescribeAssessmentTargets",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1801,7 +1769,7 @@ pub mod describe_assessment_templates_input {
 pub type DescribeAssessmentTemplatesInputOperationOutputAlias =
     crate::operation::DescribeAssessmentTemplates;
 #[doc(hidden)]
-pub type DescribeAssessmentTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAssessmentTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAssessmentTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAssessmentTemplates`](crate::operation::DescribeAssessmentTemplates)>
     #[allow(clippy::let_and_return)]
@@ -1812,7 +1780,7 @@ impl DescribeAssessmentTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAssessmentTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1898,7 +1866,7 @@ impl DescribeAssessmentTemplatesInput {
             "DescribeAssessmentTemplates",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1943,7 +1911,8 @@ pub mod describe_cross_account_access_role_input {
 pub type DescribeCrossAccountAccessRoleInputOperationOutputAlias =
     crate::operation::DescribeCrossAccountAccessRole;
 #[doc(hidden)]
-pub type DescribeCrossAccountAccessRoleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCrossAccountAccessRoleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCrossAccountAccessRoleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCrossAccountAccessRole`](crate::operation::DescribeCrossAccountAccessRole)>
     #[allow(clippy::let_and_return)]
@@ -1954,7 +1923,7 @@ impl DescribeCrossAccountAccessRoleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCrossAccountAccessRole,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2040,7 +2009,7 @@ impl DescribeCrossAccountAccessRoleInput {
             "DescribeCrossAccountAccessRole",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2084,14 +2053,12 @@ pub mod describe_exclusions_input {
             self.exclusion_arns = input;
             self
         }
-        /// <p>The locale into which you want to translate the exclusion's title, description, and
-        /// recommendation.</p>
+        /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
         pub fn locale(mut self, input: crate::model::Locale) -> Self {
             self.locale = Some(input);
             self
         }
-        /// <p>The locale into which you want to translate the exclusion's title, description, and
-        /// recommendation.</p>
+        /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
             self.locale = input;
             self
@@ -2113,7 +2080,7 @@ pub mod describe_exclusions_input {
 #[doc(hidden)]
 pub type DescribeExclusionsInputOperationOutputAlias = crate::operation::DescribeExclusions;
 #[doc(hidden)]
-pub type DescribeExclusionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeExclusionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExclusionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExclusions`](crate::operation::DescribeExclusions)>
     #[allow(clippy::let_and_return)]
@@ -2124,7 +2091,7 @@ impl DescribeExclusionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExclusions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2209,7 +2176,7 @@ impl DescribeExclusionsInput {
             "DescribeExclusions",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2261,14 +2228,12 @@ pub mod describe_findings_input {
             self.finding_arns = input;
             self
         }
-        /// <p>The locale into which you want to translate a finding description, recommendation,
-        /// and the short description that identifies the finding.</p>
+        /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
         pub fn locale(mut self, input: crate::model::Locale) -> Self {
             self.locale = Some(input);
             self
         }
-        /// <p>The locale into which you want to translate a finding description, recommendation,
-        /// and the short description that identifies the finding.</p>
+        /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
             self.locale = input;
             self
@@ -2290,7 +2255,7 @@ pub mod describe_findings_input {
 #[doc(hidden)]
 pub type DescribeFindingsInputOperationOutputAlias = crate::operation::DescribeFindings;
 #[doc(hidden)]
-pub type DescribeFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFindingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFindings`](crate::operation::DescribeFindings)>
     #[allow(clippy::let_and_return)]
@@ -2301,7 +2266,7 @@ impl DescribeFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2386,7 +2351,7 @@ impl DescribeFindingsInput {
             "DescribeFindings",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2453,7 +2418,7 @@ pub mod describe_resource_groups_input {
 #[doc(hidden)]
 pub type DescribeResourceGroupsInputOperationOutputAlias = crate::operation::DescribeResourceGroups;
 #[doc(hidden)]
-pub type DescribeResourceGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeResourceGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeResourceGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResourceGroups`](crate::operation::DescribeResourceGroups)>
     #[allow(clippy::let_and_return)]
@@ -2464,7 +2429,7 @@ impl DescribeResourceGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeResourceGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2551,7 +2516,7 @@ impl DescribeResourceGroupsInput {
             "DescribeResourceGroups",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2630,7 +2595,7 @@ pub mod describe_rules_packages_input {
 #[doc(hidden)]
 pub type DescribeRulesPackagesInputOperationOutputAlias = crate::operation::DescribeRulesPackages;
 #[doc(hidden)]
-pub type DescribeRulesPackagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRulesPackagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRulesPackagesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRulesPackages`](crate::operation::DescribeRulesPackages)>
     #[allow(clippy::let_and_return)]
@@ -2641,7 +2606,7 @@ impl DescribeRulesPackagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRulesPackages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2728,7 +2693,7 @@ impl DescribeRulesPackagesInput {
             "DescribeRulesPackages",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2762,14 +2727,12 @@ pub mod get_assessment_report_input {
         pub(crate) report_type: std::option::Option<crate::model::ReportType>,
     }
     impl Builder {
-        /// <p>The ARN that specifies the assessment run for which you want to generate a
-        /// report.</p>
+        /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
         pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_run_arn = Some(input.into());
             self
         }
-        /// <p>The ARN that specifies the assessment run for which you want to generate a
-        /// report.</p>
+        /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
         pub fn set_assessment_run_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2777,14 +2740,12 @@ pub mod get_assessment_report_input {
             self.assessment_run_arn = input;
             self
         }
-        /// <p>Specifies the file format (html or pdf) of the assessment report that you want to
-        /// generate.</p>
+        /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
         pub fn report_file_format(mut self, input: crate::model::ReportFileFormat) -> Self {
             self.report_file_format = Some(input);
             self
         }
-        /// <p>Specifies the file format (html or pdf) of the assessment report that you want to
-        /// generate.</p>
+        /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
         pub fn set_report_file_format(
             mut self,
             input: std::option::Option<crate::model::ReportFileFormat>,
@@ -2792,16 +2753,12 @@ pub mod get_assessment_report_input {
             self.report_file_format = input;
             self
         }
-        /// <p>Specifies the type of the assessment report that you want to generate. There are two
-        /// types of assessment reports: a finding report and a full report. For more information, see
-        /// <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
+        /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
         pub fn report_type(mut self, input: crate::model::ReportType) -> Self {
             self.report_type = Some(input);
             self
         }
-        /// <p>Specifies the type of the assessment report that you want to generate. There are two
-        /// types of assessment reports: a finding report and a full report. For more information, see
-        /// <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
+        /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
         pub fn set_report_type(
             mut self,
             input: std::option::Option<crate::model::ReportType>,
@@ -2827,7 +2784,7 @@ pub mod get_assessment_report_input {
 #[doc(hidden)]
 pub type GetAssessmentReportInputOperationOutputAlias = crate::operation::GetAssessmentReport;
 #[doc(hidden)]
-pub type GetAssessmentReportInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAssessmentReportInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAssessmentReportInput {
     /// Consumes the builder and constructs an Operation<[`GetAssessmentReport`](crate::operation::GetAssessmentReport)>
     #[allow(clippy::let_and_return)]
@@ -2838,7 +2795,7 @@ impl GetAssessmentReportInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAssessmentReport,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2923,7 +2880,7 @@ impl GetAssessmentReportInput {
             "GetAssessmentReport",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2959,14 +2916,12 @@ pub mod get_exclusions_preview_input {
         pub(crate) locale: std::option::Option<crate::model::Locale>,
     }
     impl Builder {
-        /// <p>The ARN that specifies the assessment template for which the exclusions preview was
-        /// requested.</p>
+        /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
         pub fn assessment_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_template_arn = Some(input.into());
             self
         }
-        /// <p>The ARN that specifies the assessment template for which the exclusions preview was
-        /// requested.</p>
+        /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
         pub fn set_assessment_template_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2987,42 +2942,32 @@ pub mod get_exclusions_preview_input {
             self.preview_token = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to
-        /// the action fill nextToken in the request with the value of nextToken from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to
-        /// the action fill nextToken in the request with the value of nextToken from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 100. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 100. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The locale into which you want to translate the exclusion's title, description, and
-        /// recommendation.</p>
+        /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
         pub fn locale(mut self, input: crate::model::Locale) -> Self {
             self.locale = Some(input);
             self
         }
-        /// <p>The locale into which you want to translate the exclusion's title, description, and
-        /// recommendation.</p>
+        /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
             self.locale = input;
             self
@@ -3047,7 +2992,7 @@ pub mod get_exclusions_preview_input {
 #[doc(hidden)]
 pub type GetExclusionsPreviewInputOperationOutputAlias = crate::operation::GetExclusionsPreview;
 #[doc(hidden)]
-pub type GetExclusionsPreviewInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetExclusionsPreviewInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetExclusionsPreviewInput {
     /// Consumes the builder and constructs an Operation<[`GetExclusionsPreview`](crate::operation::GetExclusionsPreview)>
     #[allow(clippy::let_and_return)]
@@ -3058,7 +3003,7 @@ impl GetExclusionsPreviewInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetExclusionsPreview,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3145,7 +3090,7 @@ impl GetExclusionsPreviewInput {
             "GetExclusionsPreview",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3177,14 +3122,12 @@ pub mod get_telemetry_metadata_input {
         pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN that specifies the assessment run that has the telemetry data that you want
-        /// to obtain.</p>
+        /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
         pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_run_arn = Some(input.into());
             self
         }
-        /// <p>The ARN that specifies the assessment run that has the telemetry data that you want
-        /// to obtain.</p>
+        /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
         pub fn set_assessment_run_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3208,7 +3151,7 @@ pub mod get_telemetry_metadata_input {
 #[doc(hidden)]
 pub type GetTelemetryMetadataInputOperationOutputAlias = crate::operation::GetTelemetryMetadata;
 #[doc(hidden)]
-pub type GetTelemetryMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTelemetryMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTelemetryMetadataInput {
     /// Consumes the builder and constructs an Operation<[`GetTelemetryMetadata`](crate::operation::GetTelemetryMetadata)>
     #[allow(clippy::let_and_return)]
@@ -3219,7 +3162,7 @@ impl GetTelemetryMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTelemetryMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3306,7 +3249,7 @@ impl GetTelemetryMetadataInput {
             "GetTelemetryMetadata",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3354,50 +3297,34 @@ pub mod list_assessment_run_agents_input {
             self.assessment_run_arn = input;
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn filter(mut self, input: crate::model::AgentFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::AgentFilter>) -> Self {
             self.filter = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentRunAgents</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentRunAgents</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in
-        /// the response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in
-        /// the response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3422,7 +3349,7 @@ pub mod list_assessment_run_agents_input {
 pub type ListAssessmentRunAgentsInputOperationOutputAlias =
     crate::operation::ListAssessmentRunAgents;
 #[doc(hidden)]
-pub type ListAssessmentRunAgentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssessmentRunAgentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssessmentRunAgentsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssessmentRunAgents`](crate::operation::ListAssessmentRunAgents)>
     #[allow(clippy::let_and_return)]
@@ -3433,7 +3360,7 @@ impl ListAssessmentRunAgentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssessmentRunAgents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3520,7 +3447,7 @@ impl ListAssessmentRunAgentsInput {
             "ListAssessmentRunAgents",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3560,16 +3487,14 @@ pub mod list_assessment_runs_input {
         ///
         /// To override the contents of this collection use [`set_assessment_template_arns`](Self::set_assessment_template_arns).
         ///
-        /// <p>The ARNs that specify the assessment templates whose assessment runs you want to
-        /// list.</p>
+        /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
         pub fn assessment_template_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assessment_template_arns.unwrap_or_default();
             v.push(input.into());
             self.assessment_template_arns = Some(v);
             self
         }
-        /// <p>The ARNs that specify the assessment templates whose assessment runs you want to
-        /// list.</p>
+        /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
         pub fn set_assessment_template_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3577,20 +3502,14 @@ pub mod list_assessment_runs_input {
             self.assessment_template_arns = input;
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn filter(mut self, input: crate::model::AssessmentRunFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::AssessmentRunFilter>,
@@ -3598,32 +3517,22 @@ pub mod list_assessment_runs_input {
             self.filter = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentRuns</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentRuns</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in
-        /// the response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items that you want in
-        /// the response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3647,7 +3556,7 @@ pub mod list_assessment_runs_input {
 #[doc(hidden)]
 pub type ListAssessmentRunsInputOperationOutputAlias = crate::operation::ListAssessmentRuns;
 #[doc(hidden)]
-pub type ListAssessmentRunsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssessmentRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssessmentRunsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssessmentRuns`](crate::operation::ListAssessmentRuns)>
     #[allow(clippy::let_and_return)]
@@ -3658,7 +3567,7 @@ impl ListAssessmentRunsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssessmentRuns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3743,7 +3652,7 @@ impl ListAssessmentRunsInput {
             "ListAssessmentRuns",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3777,20 +3686,14 @@ pub mod list_assessment_targets_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn filter(mut self, input: crate::model::AssessmentTargetFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::AssessmentTargetFilter>,
@@ -3798,32 +3701,22 @@ pub mod list_assessment_targets_input {
             self.filter = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentTargets</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentTargets</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3846,7 +3739,7 @@ pub mod list_assessment_targets_input {
 #[doc(hidden)]
 pub type ListAssessmentTargetsInputOperationOutputAlias = crate::operation::ListAssessmentTargets;
 #[doc(hidden)]
-pub type ListAssessmentTargetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssessmentTargetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssessmentTargetsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssessmentTargets`](crate::operation::ListAssessmentTargets)>
     #[allow(clippy::let_and_return)]
@@ -3857,7 +3750,7 @@ impl ListAssessmentTargetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssessmentTargets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3944,7 +3837,7 @@ impl ListAssessmentTargetsInput {
             "ListAssessmentTargets",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3983,16 +3876,14 @@ pub mod list_assessment_templates_input {
         ///
         /// To override the contents of this collection use [`set_assessment_target_arns`](Self::set_assessment_target_arns).
         ///
-        /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you
-        /// want to list.</p>
+        /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
         pub fn assessment_target_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assessment_target_arns.unwrap_or_default();
             v.push(input.into());
             self.assessment_target_arns = Some(v);
             self
         }
-        /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you
-        /// want to list.</p>
+        /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
         pub fn set_assessment_target_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4000,20 +3891,14 @@ pub mod list_assessment_templates_input {
             self.assessment_target_arns = input;
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn filter(mut self, input: crate::model::AssessmentTemplateFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::AssessmentTemplateFilter>,
@@ -4021,32 +3906,22 @@ pub mod list_assessment_templates_input {
             self.filter = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentTemplates</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListAssessmentTemplates</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4071,7 +3946,7 @@ pub mod list_assessment_templates_input {
 pub type ListAssessmentTemplatesInputOperationOutputAlias =
     crate::operation::ListAssessmentTemplates;
 #[doc(hidden)]
-pub type ListAssessmentTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssessmentTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssessmentTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListAssessmentTemplates`](crate::operation::ListAssessmentTemplates)>
     #[allow(clippy::let_and_return)]
@@ -4082,7 +3957,7 @@ impl ListAssessmentTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssessmentTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4169,7 +4044,7 @@ impl ListAssessmentTemplatesInput {
             "ListAssessmentTemplates",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4203,44 +4078,32 @@ pub mod list_event_subscriptions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ARN of the assessment template for which you want to list the existing event
-        /// subscriptions.</p>
+        /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the assessment template for which you want to list the existing event
-        /// subscriptions.</p>
+        /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListEventSubscriptions</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListEventSubscriptions</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4263,7 +4126,7 @@ pub mod list_event_subscriptions_input {
 #[doc(hidden)]
 pub type ListEventSubscriptionsInputOperationOutputAlias = crate::operation::ListEventSubscriptions;
 #[doc(hidden)]
-pub type ListEventSubscriptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEventSubscriptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEventSubscriptionsInput {
     /// Consumes the builder and constructs an Operation<[`ListEventSubscriptions`](crate::operation::ListEventSubscriptions)>
     #[allow(clippy::let_and_return)]
@@ -4274,7 +4137,7 @@ impl ListEventSubscriptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEventSubscriptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4361,7 +4224,7 @@ impl ListEventSubscriptionsInput {
             "ListEventSubscriptions",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4395,14 +4258,12 @@ pub mod list_exclusions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ARN of the assessment run that generated the exclusions that you want to
-        /// list.</p>
+        /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
         pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_run_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the assessment run that generated the exclusions that you want to
-        /// list.</p>
+        /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
         pub fn set_assessment_run_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4410,30 +4271,22 @@ pub mod list_exclusions_input {
             self.assessment_run_arn = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the ListExclusionsRequest action. Subsequent calls to the
-        /// action fill nextToken in the request with the value of nextToken from the previous response
-        /// to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the ListExclusionsRequest action. Subsequent calls to the
-        /// action fill nextToken in the request with the value of nextToken from the previous response
-        /// to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 100. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 100. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4456,7 +4309,7 @@ pub mod list_exclusions_input {
 #[doc(hidden)]
 pub type ListExclusionsInputOperationOutputAlias = crate::operation::ListExclusions;
 #[doc(hidden)]
-pub type ListExclusionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListExclusionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExclusionsInput {
     /// Consumes the builder and constructs an Operation<[`ListExclusions`](crate::operation::ListExclusions)>
     #[allow(clippy::let_and_return)]
@@ -4467,7 +4320,7 @@ impl ListExclusionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListExclusions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4552,7 +4405,7 @@ impl ListExclusionsInput {
             "ListExclusions",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4591,16 +4444,14 @@ pub mod list_findings_input {
         ///
         /// To override the contents of this collection use [`set_assessment_run_arns`](Self::set_assessment_run_arns).
         ///
-        /// <p>The ARNs of the assessment runs that generate the findings that you want to
-        /// list.</p>
+        /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
         pub fn assessment_run_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assessment_run_arns.unwrap_or_default();
             v.push(input.into());
             self.assessment_run_arns = Some(v);
             self
         }
-        /// <p>The ARNs of the assessment runs that generate the findings that you want to
-        /// list.</p>
+        /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
         pub fn set_assessment_run_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4608,20 +4459,14 @@ pub mod list_findings_input {
             self.assessment_run_arns = input;
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn filter(mut self, input: crate::model::FindingFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>You can use this parameter to specify a subset of data to be included in the action's
-        /// response.</p>
-        /// <p>For a record to match a filter, all specified filter attributes must match. When
-        /// multiple values are specified for a filter attribute, any of the values can
-        /// match.</p>
+        /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+        /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::FindingFilter>,
@@ -4629,32 +4474,22 @@ pub mod list_findings_input {
             self.filter = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListFindings</b> action.
-        /// Subsequent calls to the action fill <b>nextToken</b> in the
-        /// request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListFindings</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListFindings</b> action.
-        /// Subsequent calls to the action fill <b>nextToken</b> in the
-        /// request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListFindings</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4678,7 +4513,7 @@ pub mod list_findings_input {
 #[doc(hidden)]
 pub type ListFindingsInputOperationOutputAlias = crate::operation::ListFindings;
 #[doc(hidden)]
-pub type ListFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFindingsInput {
     /// Consumes the builder and constructs an Operation<[`ListFindings`](crate::operation::ListFindings)>
     #[allow(clippy::let_and_return)]
@@ -4689,7 +4524,7 @@ impl ListFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4773,7 +4608,7 @@ impl ListFindingsInput {
             "ListFindings",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4806,32 +4641,22 @@ pub mod list_rules_packages_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListRulesPackages</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>ListRulesPackages</b>
-        /// action. Subsequent calls to the action fill <b>nextToken</b> in
-        /// the request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4853,7 +4678,7 @@ pub mod list_rules_packages_input {
 #[doc(hidden)]
 pub type ListRulesPackagesInputOperationOutputAlias = crate::operation::ListRulesPackages;
 #[doc(hidden)]
-pub type ListRulesPackagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRulesPackagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRulesPackagesInput {
     /// Consumes the builder and constructs an Operation<[`ListRulesPackages`](crate::operation::ListRulesPackages)>
     #[allow(clippy::let_and_return)]
@@ -4864,7 +4689,7 @@ impl ListRulesPackagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRulesPackages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4949,7 +4774,7 @@ impl ListRulesPackagesInput {
             "ListRulesPackages",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5007,7 +4832,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -5018,7 +4843,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5105,7 +4930,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5152,32 +4977,22 @@ pub mod preview_agents_input {
             self.preview_agents_arn = input;
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>PreviewAgents</b> action.
-        /// Subsequent calls to the action fill <b>nextToken</b> in the
-        /// request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>You can use this parameter when paginating results. Set the value of this parameter
-        /// to null on your first call to the <b>PreviewAgents</b> action.
-        /// Subsequent calls to the action fill <b>nextToken</b> in the
-        /// request with the value of <b>NextToken</b> from the previous
-        /// response to continue listing data.</p>
+        /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>You can use this parameter to indicate the maximum number of items you want in the
-        /// response. The default value is 10. The maximum value is 500.</p>
+        /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5200,7 +5015,7 @@ pub mod preview_agents_input {
 #[doc(hidden)]
 pub type PreviewAgentsInputOperationOutputAlias = crate::operation::PreviewAgents;
 #[doc(hidden)]
-pub type PreviewAgentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PreviewAgentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PreviewAgentsInput {
     /// Consumes the builder and constructs an Operation<[`PreviewAgents`](crate::operation::PreviewAgents)>
     #[allow(clippy::let_and_return)]
@@ -5211,7 +5026,7 @@ impl PreviewAgentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PreviewAgents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5295,7 +5110,7 @@ impl PreviewAgentsInput {
             "PreviewAgents",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5327,14 +5142,12 @@ pub mod register_cross_account_access_role_input {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to
-        /// perform security assessments. </p>
+        /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to
-        /// perform security assessments. </p>
+        /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -5356,7 +5169,8 @@ pub mod register_cross_account_access_role_input {
 pub type RegisterCrossAccountAccessRoleInputOperationOutputAlias =
     crate::operation::RegisterCrossAccountAccessRole;
 #[doc(hidden)]
-pub type RegisterCrossAccountAccessRoleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterCrossAccountAccessRoleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterCrossAccountAccessRoleInput {
     /// Consumes the builder and constructs an Operation<[`RegisterCrossAccountAccessRole`](crate::operation::RegisterCrossAccountAccessRole)>
     #[allow(clippy::let_and_return)]
@@ -5367,7 +5181,7 @@ impl RegisterCrossAccountAccessRoleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterCrossAccountAccessRole,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5453,7 +5267,7 @@ impl RegisterCrossAccountAccessRoleInput {
             "RegisterCrossAccountAccessRole",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5509,16 +5323,14 @@ pub mod remove_attributes_from_findings_input {
         ///
         /// To override the contents of this collection use [`set_attribute_keys`](Self::set_attribute_keys).
         ///
-        /// <p>The array of attribute keys that you want to remove from specified
-        /// findings.</p>
+        /// <p>The array of attribute keys that you want to remove from specified findings.</p>
         pub fn attribute_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attribute_keys.unwrap_or_default();
             v.push(input.into());
             self.attribute_keys = Some(v);
             self
         }
-        /// <p>The array of attribute keys that you want to remove from specified
-        /// findings.</p>
+        /// <p>The array of attribute keys that you want to remove from specified findings.</p>
         pub fn set_attribute_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5544,7 +5356,8 @@ pub mod remove_attributes_from_findings_input {
 pub type RemoveAttributesFromFindingsInputOperationOutputAlias =
     crate::operation::RemoveAttributesFromFindings;
 #[doc(hidden)]
-pub type RemoveAttributesFromFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveAttributesFromFindingsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveAttributesFromFindingsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveAttributesFromFindings`](crate::operation::RemoveAttributesFromFindings)>
     #[allow(clippy::let_and_return)]
@@ -5555,7 +5368,7 @@ impl RemoveAttributesFromFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveAttributesFromFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5641,7 +5454,7 @@ impl RemoveAttributesFromFindingsInput {
             "RemoveAttributesFromFindings",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5688,16 +5501,14 @@ pub mod set_tags_for_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of key and value pairs that you want to set to the assessment
-        /// template.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A collection of key and value pairs that you want to set to the assessment
-        /// template.</p>
+        /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5722,7 +5533,7 @@ pub mod set_tags_for_resource_input {
 #[doc(hidden)]
 pub type SetTagsForResourceInputOperationOutputAlias = crate::operation::SetTagsForResource;
 #[doc(hidden)]
-pub type SetTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`SetTagsForResource`](crate::operation::SetTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -5733,7 +5544,7 @@ impl SetTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5818,7 +5629,7 @@ impl SetTagsForResourceInput {
             "SetTagsForResource",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5851,14 +5662,12 @@ pub mod start_assessment_run_input {
         pub(crate) assessment_run_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the assessment template of the assessment run that you want to
-        /// start.</p>
+        /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
         pub fn assessment_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_template_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the assessment template of the assessment run that you want to
-        /// start.</p>
+        /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
         pub fn set_assessment_template_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5866,14 +5675,12 @@ pub mod start_assessment_run_input {
             self.assessment_template_arn = input;
             self
         }
-        /// <p>You can specify the name for the assessment run. The name must be unique for the
-        /// assessment template whose ARN is used to start the assessment run.</p>
+        /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
         pub fn assessment_run_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_run_name = Some(input.into());
             self
         }
-        /// <p>You can specify the name for the assessment run. The name must be unique for the
-        /// assessment template whose ARN is used to start the assessment run.</p>
+        /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
         pub fn set_assessment_run_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5898,7 +5705,7 @@ pub mod start_assessment_run_input {
 #[doc(hidden)]
 pub type StartAssessmentRunInputOperationOutputAlias = crate::operation::StartAssessmentRun;
 #[doc(hidden)]
-pub type StartAssessmentRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartAssessmentRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartAssessmentRunInput {
     /// Consumes the builder and constructs an Operation<[`StartAssessmentRun`](crate::operation::StartAssessmentRun)>
     #[allow(clippy::let_and_return)]
@@ -5909,7 +5716,7 @@ impl StartAssessmentRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartAssessmentRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5994,7 +5801,7 @@ impl StartAssessmentRunInput {
             "StartAssessmentRun",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6040,18 +5847,12 @@ pub mod stop_assessment_run_input {
             self.assessment_run_arn = input;
             self
         }
-        /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION.
-        /// START_EVALUATION (the default value), stops the AWS agent from collecting data and begins
-        /// the results evaluation and the findings generation process. SKIP_EVALUATION cancels the
-        /// assessment run immediately, after which no findings are generated.</p>
+        /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
         pub fn stop_action(mut self, input: crate::model::StopAction) -> Self {
             self.stop_action = Some(input);
             self
         }
-        /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION.
-        /// START_EVALUATION (the default value), stops the AWS agent from collecting data and begins
-        /// the results evaluation and the findings generation process. SKIP_EVALUATION cancels the
-        /// assessment run immediately, after which no findings are generated.</p>
+        /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
         pub fn set_stop_action(
             mut self,
             input: std::option::Option<crate::model::StopAction>,
@@ -6076,7 +5877,7 @@ pub mod stop_assessment_run_input {
 #[doc(hidden)]
 pub type StopAssessmentRunInputOperationOutputAlias = crate::operation::StopAssessmentRun;
 #[doc(hidden)]
-pub type StopAssessmentRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopAssessmentRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopAssessmentRunInput {
     /// Consumes the builder and constructs an Operation<[`StopAssessmentRun`](crate::operation::StopAssessmentRun)>
     #[allow(clippy::let_and_return)]
@@ -6087,7 +5888,7 @@ impl StopAssessmentRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopAssessmentRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6172,7 +5973,7 @@ impl StopAssessmentRunInput {
             "StopAssessmentRun",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6206,14 +6007,12 @@ pub mod subscribe_to_event_input {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the assessment template that is used during the event for which you want
-        /// to receive SNS notifications.</p>
+        /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the assessment template that is used during the event for which you want
-        /// to receive SNS notifications.</p>
+        /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6259,7 +6058,7 @@ pub mod subscribe_to_event_input {
 #[doc(hidden)]
 pub type SubscribeToEventInputOperationOutputAlias = crate::operation::SubscribeToEvent;
 #[doc(hidden)]
-pub type SubscribeToEventInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SubscribeToEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SubscribeToEventInput {
     /// Consumes the builder and constructs an Operation<[`SubscribeToEvent`](crate::operation::SubscribeToEvent)>
     #[allow(clippy::let_and_return)]
@@ -6270,7 +6069,7 @@ impl SubscribeToEventInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SubscribeToEvent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6355,7 +6154,7 @@ impl SubscribeToEventInput {
             "SubscribeToEvent",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6389,14 +6188,12 @@ pub mod unsubscribe_from_event_input {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the assessment template that is used during the event for which you want
-        /// to stop receiving SNS notifications.</p>
+        /// <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the assessment template that is used during the event for which you want
-        /// to stop receiving SNS notifications.</p>
+        /// <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6442,7 +6239,7 @@ pub mod unsubscribe_from_event_input {
 #[doc(hidden)]
 pub type UnsubscribeFromEventInputOperationOutputAlias = crate::operation::UnsubscribeFromEvent;
 #[doc(hidden)]
-pub type UnsubscribeFromEventInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UnsubscribeFromEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UnsubscribeFromEventInput {
     /// Consumes the builder and constructs an Operation<[`UnsubscribeFromEvent`](crate::operation::UnsubscribeFromEvent)>
     #[allow(clippy::let_and_return)]
@@ -6453,7 +6250,7 @@ impl UnsubscribeFromEventInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UnsubscribeFromEvent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6540,7 +6337,7 @@ impl UnsubscribeFromEventInput {
             "UnsubscribeFromEvent",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6600,14 +6397,12 @@ pub mod update_assessment_target_input {
             self.assessment_target_name = input;
             self
         }
-        /// <p>The ARN of the resource group that is used to specify the new resource group to
-        /// associate with the assessment target.</p>
+        /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
         pub fn resource_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_group_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the resource group that is used to specify the new resource group to
-        /// associate with the assessment target.</p>
+        /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
         pub fn set_resource_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6633,7 +6428,7 @@ pub mod update_assessment_target_input {
 #[doc(hidden)]
 pub type UpdateAssessmentTargetInputOperationOutputAlias = crate::operation::UpdateAssessmentTarget;
 #[doc(hidden)]
-pub type UpdateAssessmentTargetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAssessmentTargetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAssessmentTargetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAssessmentTarget`](crate::operation::UpdateAssessmentTarget)>
     #[allow(clippy::let_and_return)]
@@ -6644,7 +6439,7 @@ impl UpdateAssessmentTargetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAssessmentTarget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6731,7 +6526,7 @@ impl UpdateAssessmentTargetInput {
             "UpdateAssessmentTarget",
             "inspector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6762,8 +6557,7 @@ pub struct UpdateAssessmentTargetInput {
     pub assessment_target_arn: std::option::Option<std::string::String>,
     /// <p>The name of the assessment target that you want to update.</p>
     pub assessment_target_name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the resource group that is used to specify the new resource group to
-    /// associate with the assessment target.</p>
+    /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
     pub resource_group_arn: std::option::Option<std::string::String>,
 }
 impl UpdateAssessmentTargetInput {
@@ -6775,8 +6569,7 @@ impl UpdateAssessmentTargetInput {
     pub fn assessment_target_name(&self) -> std::option::Option<&str> {
         self.assessment_target_name.as_deref()
     }
-    /// <p>The ARN of the resource group that is used to specify the new resource group to
-    /// associate with the assessment target.</p>
+    /// <p>The ARN of the resource group that is used to specify the new resource group to associate with the assessment target.</p>
     pub fn resource_group_arn(&self) -> std::option::Option<&str> {
         self.resource_group_arn.as_deref()
     }
@@ -6795,8 +6588,7 @@ impl std::fmt::Debug for UpdateAssessmentTargetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsubscribeFromEventInput {
-    /// <p>The ARN of the assessment template that is used during the event for which you want
-    /// to stop receiving SNS notifications.</p>
+    /// <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The event for which you want to stop receiving SNS notifications.</p>
     pub event: std::option::Option<crate::model::InspectorEvent>,
@@ -6804,8 +6596,7 @@ pub struct UnsubscribeFromEventInput {
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl UnsubscribeFromEventInput {
-    /// <p>The ARN of the assessment template that is used during the event for which you want
-    /// to stop receiving SNS notifications.</p>
+    /// <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -6832,8 +6623,7 @@ impl std::fmt::Debug for UnsubscribeFromEventInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscribeToEventInput {
-    /// <p>The ARN of the assessment template that is used during the event for which you want
-    /// to receive SNS notifications.</p>
+    /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The event for which you want to receive SNS notifications.</p>
     pub event: std::option::Option<crate::model::InspectorEvent>,
@@ -6841,8 +6631,7 @@ pub struct SubscribeToEventInput {
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl SubscribeToEventInput {
-    /// <p>The ARN of the assessment template that is used during the event for which you want
-    /// to receive SNS notifications.</p>
+    /// <p>The ARN of the assessment template that is used during the event for which you want to receive SNS notifications.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -6871,10 +6660,7 @@ impl std::fmt::Debug for SubscribeToEventInput {
 pub struct StopAssessmentRunInput {
     /// <p>The ARN of the assessment run that you want to stop.</p>
     pub assessment_run_arn: std::option::Option<std::string::String>,
-    /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION.
-    /// START_EVALUATION (the default value), stops the AWS agent from collecting data and begins
-    /// the results evaluation and the findings generation process. SKIP_EVALUATION cancels the
-    /// assessment run immediately, after which no findings are generated.</p>
+    /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
     pub stop_action: std::option::Option<crate::model::StopAction>,
 }
 impl StopAssessmentRunInput {
@@ -6882,10 +6668,7 @@ impl StopAssessmentRunInput {
     pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
     }
-    /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION.
-    /// START_EVALUATION (the default value), stops the AWS agent from collecting data and begins
-    /// the results evaluation and the findings generation process. SKIP_EVALUATION cancels the
-    /// assessment run immediately, after which no findings are generated.</p>
+    /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.</p>
     pub fn stop_action(&self) -> std::option::Option<&crate::model::StopAction> {
         self.stop_action.as_ref()
     }
@@ -6903,21 +6686,17 @@ impl std::fmt::Debug for StopAssessmentRunInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAssessmentRunInput {
-    /// <p>The ARN of the assessment template of the assessment run that you want to
-    /// start.</p>
+    /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
     pub assessment_template_arn: std::option::Option<std::string::String>,
-    /// <p>You can specify the name for the assessment run. The name must be unique for the
-    /// assessment template whose ARN is used to start the assessment run.</p>
+    /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
     pub assessment_run_name: std::option::Option<std::string::String>,
 }
 impl StartAssessmentRunInput {
-    /// <p>The ARN of the assessment template of the assessment run that you want to
-    /// start.</p>
+    /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
     pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
         self.assessment_template_arn.as_deref()
     }
-    /// <p>You can specify the name for the assessment run. The name must be unique for the
-    /// assessment template whose ARN is used to start the assessment run.</p>
+    /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
     pub fn assessment_run_name(&self) -> std::option::Option<&str> {
         self.assessment_run_name.as_deref()
     }
@@ -6937,8 +6716,7 @@ impl std::fmt::Debug for StartAssessmentRunInput {
 pub struct SetTagsForResourceInput {
     /// <p>The ARN of the assessment template that you want to set tags to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A collection of key and value pairs that you want to set to the assessment
-    /// template.</p>
+    /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl SetTagsForResourceInput {
@@ -6946,8 +6724,7 @@ impl SetTagsForResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A collection of key and value pairs that you want to set to the assessment
-    /// template.</p>
+    /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -6967,8 +6744,7 @@ impl std::fmt::Debug for SetTagsForResourceInput {
 pub struct RemoveAttributesFromFindingsInput {
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
     pub finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The array of attribute keys that you want to remove from specified
-    /// findings.</p>
+    /// <p>The array of attribute keys that you want to remove from specified findings.</p>
     pub attribute_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveAttributesFromFindingsInput {
@@ -6976,8 +6752,7 @@ impl RemoveAttributesFromFindingsInput {
     pub fn finding_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.finding_arns.as_deref()
     }
-    /// <p>The array of attribute keys that you want to remove from specified
-    /// findings.</p>
+    /// <p>The array of attribute keys that you want to remove from specified findings.</p>
     pub fn attribute_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.attribute_keys.as_deref()
     }
@@ -6995,13 +6770,11 @@ impl std::fmt::Debug for RemoveAttributesFromFindingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterCrossAccountAccessRoleInput {
-    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to
-    /// perform security assessments. </p>
+    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl RegisterCrossAccountAccessRoleInput {
-    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to
-    /// perform security assessments. </p>
+    /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -7020,14 +6793,9 @@ impl std::fmt::Debug for RegisterCrossAccountAccessRoleInput {
 pub struct PreviewAgentsInput {
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
     pub preview_agents_arn: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>PreviewAgents</b> action.
-    /// Subsequent calls to the action fill <b>nextToken</b> in the
-    /// request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl PreviewAgentsInput {
@@ -7035,16 +6803,11 @@ impl PreviewAgentsInput {
     pub fn preview_agents_arn(&self) -> std::option::Option<&str> {
         self.preview_agents_arn.as_deref()
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>PreviewAgents</b> action.
-    /// Subsequent calls to the action fill <b>nextToken</b> in the
-    /// request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7084,27 +6847,17 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesPackagesInput {
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>ListRulesPackages</b>
-    /// action. Subsequent calls to the action fill <b>nextToken</b> in
-    /// the request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListRulesPackagesInput {
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>ListRulesPackages</b>
-    /// action. Subsequent calls to the action fill <b>nextToken</b> in
-    /// the request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7122,49 +6875,31 @@ impl std::fmt::Debug for ListRulesPackagesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFindingsInput {
-    /// <p>The ARNs of the assessment runs that generate the findings that you want to
-    /// list.</p>
+    /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
     pub assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's
-    /// response.</p>
-    /// <p>For a record to match a filter, all specified filter attributes must match. When
-    /// multiple values are specified for a filter attribute, any of the values can
-    /// match.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub filter: std::option::Option<crate::model::FindingFilter>,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>ListFindings</b> action.
-    /// Subsequent calls to the action fill <b>nextToken</b> in the
-    /// request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListFindings</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListFindingsInput {
-    /// <p>The ARNs of the assessment runs that generate the findings that you want to
-    /// list.</p>
+    /// <p>The ARNs of the assessment runs that generate the findings that you want to list.</p>
     pub fn assessment_run_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_run_arns.as_deref()
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's
-    /// response.</p>
-    /// <p>For a record to match a filter, all specified filter attributes must match. When
-    /// multiple values are specified for a filter attribute, any of the values can
-    /// match.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::FindingFilter> {
         self.filter.as_ref()
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>ListFindings</b> action.
-    /// Subsequent calls to the action fill <b>nextToken</b> in the
-    /// request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListFindings</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7184,33 +6919,23 @@ impl std::fmt::Debug for ListFindingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExclusionsInput {
-    /// <p>The ARN of the assessment run that generated the exclusions that you want to
-    /// list.</p>
+    /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
     pub assessment_run_arn: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the ListExclusionsRequest action. Subsequent calls to the
-    /// action fill nextToken in the request with the value of nextToken from the previous response
-    /// to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 100. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListExclusionsInput {
-    /// <p>The ARN of the assessment run that generated the exclusions that you want to
-    /// list.</p>
+    /// <p>The ARN of the assessment run that generated the exclusions that you want to list.</p>
     pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the ListExclusionsRequest action. Subsequent calls to the
-    /// action fill nextToken in the request with the value of nextToken from the previous response
-    /// to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListExclusionsRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 100. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7229,35 +6954,23 @@ impl std::fmt::Debug for ListExclusionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventSubscriptionsInput {
-    /// <p>The ARN of the assessment template for which you want to list the existing event
-    /// subscriptions.</p>
+    /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>ListEventSubscriptions</b>
-    /// action. Subsequent calls to the action fill <b>nextToken</b> in
-    /// the request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListEventSubscriptionsInput {
-    /// <p>The ARN of the assessment template for which you want to list the existing event
-    /// subscriptions.</p>
+    /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>ListEventSubscriptions</b>
-    /// action. Subsequent calls to the action fill <b>nextToken</b> in
-    /// the request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7276,49 +6989,31 @@ impl std::fmt::Debug for ListEventSubscriptionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentTemplatesInput {
-    /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you
-    /// want to list.</p>
+    /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
     pub assessment_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's
-    /// response.</p>
-    /// <p>For a record to match a filter, all specified filter attributes must match. When
-    /// multiple values are specified for a filter attribute, any of the values can
-    /// match.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub filter: std::option::Option<crate::model::AssessmentTemplateFilter>,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>ListAssessmentTemplates</b>
-    /// action. Subsequent calls to the action fill <b>nextToken</b> in
-    /// the request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentTemplatesInput {
-    /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you
-    /// want to list.</p>
+    /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
     pub fn assessment_target_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_target_arns.as_deref()
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's
-    /// response.</p>
-    /// <p>For a record to match a filter, all specified filter attributes must match. When
-    /// multiple values are specified for a filter attribute, any of the values can
-    /// match.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::AssessmentTemplateFilter> {
         self.filter.as_ref()
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>ListAssessmentTemplates</b>
-    /// action. Subsequent calls to the action fill <b>nextToken</b> in
-    /// the request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7338,41 +7033,25 @@ impl std::fmt::Debug for ListAssessmentTemplatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentTargetsInput {
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's
-    /// response.</p>
-    /// <p>For a record to match a filter, all specified filter attributes must match. When
-    /// multiple values are specified for a filter attribute, any of the values can
-    /// match.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub filter: std::option::Option<crate::model::AssessmentTargetFilter>,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>ListAssessmentTargets</b>
-    /// action. Subsequent calls to the action fill <b>nextToken</b> in
-    /// the request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentTargetsInput {
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's
-    /// response.</p>
-    /// <p>For a record to match a filter, all specified filter attributes must match. When
-    /// multiple values are specified for a filter attribute, any of the values can
-    /// match.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::AssessmentTargetFilter> {
         self.filter.as_ref()
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>ListAssessmentTargets</b>
-    /// action. Subsequent calls to the action fill <b>nextToken</b> in
-    /// the request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7391,49 +7070,31 @@ impl std::fmt::Debug for ListAssessmentTargetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssessmentRunsInput {
-    /// <p>The ARNs that specify the assessment templates whose assessment runs you want to
-    /// list.</p>
+    /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
     pub assessment_template_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's
-    /// response.</p>
-    /// <p>For a record to match a filter, all specified filter attributes must match. When
-    /// multiple values are specified for a filter attribute, any of the values can
-    /// match.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub filter: std::option::Option<crate::model::AssessmentRunFilter>,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>ListAssessmentRuns</b>
-    /// action. Subsequent calls to the action fill <b>nextToken</b> in
-    /// the request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to indicate the maximum number of items that you want in
-    /// the response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentRunsInput {
-    /// <p>The ARNs that specify the assessment templates whose assessment runs you want to
-    /// list.</p>
+    /// <p>The ARNs that specify the assessment templates whose assessment runs you want to list.</p>
     pub fn assessment_template_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_template_arns.as_deref()
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's
-    /// response.</p>
-    /// <p>For a record to match a filter, all specified filter attributes must match. When
-    /// multiple values are specified for a filter attribute, any of the values can
-    /// match.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::AssessmentRunFilter> {
         self.filter.as_ref()
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>ListAssessmentRuns</b>
-    /// action. Subsequent calls to the action fill <b>nextToken</b> in
-    /// the request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items that you want in
-    /// the response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7455,20 +7116,12 @@ impl std::fmt::Debug for ListAssessmentRunsInput {
 pub struct ListAssessmentRunAgentsInput {
     /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
     pub assessment_run_arn: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's
-    /// response.</p>
-    /// <p>For a record to match a filter, all specified filter attributes must match. When
-    /// multiple values are specified for a filter attribute, any of the values can
-    /// match.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub filter: std::option::Option<crate::model::AgentFilter>,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>ListAssessmentRunAgents</b>
-    /// action. Subsequent calls to the action fill <b>nextToken</b> in
-    /// the request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to indicate the maximum number of items that you want in
-    /// the response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAssessmentRunAgentsInput {
@@ -7476,24 +7129,16 @@ impl ListAssessmentRunAgentsInput {
     pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's
-    /// response.</p>
-    /// <p>For a record to match a filter, all specified filter attributes must match. When
-    /// multiple values are specified for a filter attribute, any of the values can
-    /// match.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::AgentFilter> {
         self.filter.as_ref()
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the <b>ListAssessmentRunAgents</b>
-    /// action. Subsequent calls to the action fill <b>nextToken</b> in
-    /// the request with the value of <b>NextToken</b> from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items that you want in
-    /// the response. The default value is 10. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7513,13 +7158,11 @@ impl std::fmt::Debug for ListAssessmentRunAgentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTelemetryMetadataInput {
-    /// <p>The ARN that specifies the assessment run that has the telemetry data that you want
-    /// to obtain.</p>
+    /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
     pub assessment_run_arn: std::option::Option<std::string::String>,
 }
 impl GetTelemetryMetadataInput {
-    /// <p>The ARN that specifies the assessment run that has the telemetry data that you want
-    /// to obtain.</p>
+    /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
     pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
     }
@@ -7536,26 +7179,19 @@ impl std::fmt::Debug for GetTelemetryMetadataInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetExclusionsPreviewInput {
-    /// <p>The ARN that specifies the assessment template for which the exclusions preview was
-    /// requested.</p>
+    /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
     pub assessment_template_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier associated of the exclusions preview.</p>
     pub preview_token: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to
-    /// the action fill nextToken in the request with the value of nextToken from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 100. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The locale into which you want to translate the exclusion's title, description, and
-    /// recommendation.</p>
+    /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     pub locale: std::option::Option<crate::model::Locale>,
 }
 impl GetExclusionsPreviewInput {
-    /// <p>The ARN that specifies the assessment template for which the exclusions preview was
-    /// requested.</p>
+    /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
     pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
         self.assessment_template_arn.as_deref()
     }
@@ -7563,20 +7199,15 @@ impl GetExclusionsPreviewInput {
     pub fn preview_token(&self) -> std::option::Option<&str> {
         self.preview_token.as_deref()
     }
-    /// <p>You can use this parameter when paginating results. Set the value of this parameter
-    /// to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to
-    /// the action fill nextToken in the request with the value of nextToken from the previous
-    /// response to continue listing data.</p>
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>You can use this parameter to indicate the maximum number of items you want in the
-    /// response. The default value is 100. The maximum value is 500.</p>
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The locale into which you want to translate the exclusion's title, description, and
-    /// recommendation.</p>
+    /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
         self.locale.as_ref()
     }
@@ -7597,31 +7228,23 @@ impl std::fmt::Debug for GetExclusionsPreviewInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssessmentReportInput {
-    /// <p>The ARN that specifies the assessment run for which you want to generate a
-    /// report.</p>
+    /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
     pub assessment_run_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the file format (html or pdf) of the assessment report that you want to
-    /// generate.</p>
+    /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
     pub report_file_format: std::option::Option<crate::model::ReportFileFormat>,
-    /// <p>Specifies the type of the assessment report that you want to generate. There are two
-    /// types of assessment reports: a finding report and a full report. For more information, see
-    /// <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
+    /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
     pub report_type: std::option::Option<crate::model::ReportType>,
 }
 impl GetAssessmentReportInput {
-    /// <p>The ARN that specifies the assessment run for which you want to generate a
-    /// report.</p>
+    /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
     pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
     }
-    /// <p>Specifies the file format (html or pdf) of the assessment report that you want to
-    /// generate.</p>
+    /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
     pub fn report_file_format(&self) -> std::option::Option<&crate::model::ReportFileFormat> {
         self.report_file_format.as_ref()
     }
-    /// <p>Specifies the type of the assessment report that you want to generate. There are two
-    /// types of assessment reports: a finding report and a full report. For more information, see
-    /// <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
+    /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
     pub fn report_type(&self) -> std::option::Option<&crate::model::ReportType> {
         self.report_type.as_ref()
     }
@@ -7691,8 +7314,7 @@ impl std::fmt::Debug for DescribeResourceGroupsInput {
 pub struct DescribeFindingsInput {
     /// <p>The ARN that specifies the finding that you want to describe.</p>
     pub finding_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The locale into which you want to translate a finding description, recommendation,
-    /// and the short description that identifies the finding.</p>
+    /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
     pub locale: std::option::Option<crate::model::Locale>,
 }
 impl DescribeFindingsInput {
@@ -7700,8 +7322,7 @@ impl DescribeFindingsInput {
     pub fn finding_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.finding_arns.as_deref()
     }
-    /// <p>The locale into which you want to translate a finding description, recommendation,
-    /// and the short description that identifies the finding.</p>
+    /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
     pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
         self.locale.as_ref()
     }
@@ -7721,8 +7342,7 @@ impl std::fmt::Debug for DescribeFindingsInput {
 pub struct DescribeExclusionsInput {
     /// <p>The list of ARNs that specify the exclusions that you want to describe.</p>
     pub exclusion_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The locale into which you want to translate the exclusion's title, description, and
-    /// recommendation.</p>
+    /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     pub locale: std::option::Option<crate::model::Locale>,
 }
 impl DescribeExclusionsInput {
@@ -7730,8 +7350,7 @@ impl DescribeExclusionsInput {
     pub fn exclusion_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.exclusion_arns.as_deref()
     }
-    /// <p>The locale into which you want to translate the exclusion's title, description, and
-    /// recommendation.</p>
+    /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
         self.locale.as_ref()
     }
@@ -7886,14 +7505,12 @@ impl std::fmt::Debug for DeleteAssessmentRunInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceGroupInput {
-    /// <p>A collection of keys and an array of possible values,
-    /// '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
+    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
     /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
     pub resource_group_tags: std::option::Option<std::vec::Vec<crate::model::ResourceGroupTag>>,
 }
 impl CreateResourceGroupInput {
-    /// <p>A collection of keys and an array of possible values,
-    /// '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
+    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
     /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
     pub fn resource_group_tags(&self) -> std::option::Option<&[crate::model::ResourceGroupTag]> {
         self.resource_group_tags.as_deref()
@@ -7911,13 +7528,11 @@ impl std::fmt::Debug for CreateResourceGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExclusionsPreviewInput {
-    /// <p>The ARN that specifies the assessment template for which you want to create an
-    /// exclusions preview.</p>
+    /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
     pub assessment_template_arn: std::option::Option<std::string::String>,
 }
 impl CreateExclusionsPreviewInput {
-    /// <p>The ARN that specifies the assessment template for which you want to create an
-    /// exclusions preview.</p>
+    /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
     pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
         self.assessment_template_arn.as_deref()
     }
@@ -7934,35 +7549,23 @@ impl std::fmt::Debug for CreateExclusionsPreviewInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentTemplateInput {
-    /// <p>The ARN that specifies the assessment target for which you want to create the
-    /// assessment template.</p>
+    /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
     pub assessment_target_arn: std::option::Option<std::string::String>,
-    /// <p>The user-defined name that identifies the assessment template that you want to
-    /// create. You can create several assessment templates for an assessment target. The names of
-    /// the assessment templates that correspond to a particular assessment target must be
-    /// unique.</p>
+    /// <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
     pub assessment_template_name: std::option::Option<std::string::String>,
     /// <p>The duration of the assessment run in seconds.</p>
     pub duration_in_seconds: i32,
-    /// <p>The ARNs that specify the rules packages that you want to attach to the assessment
-    /// template.</p>
+    /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
     pub rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The user-defined attributes that are assigned to every finding that is generated by
-    /// the assessment run that uses this assessment template. An attribute is a key and value pair
-    /// (an <a>Attribute</a> object). Within an assessment template, each key must be
-    /// unique.</p>
+    /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
     pub user_attributes_for_findings: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
 }
 impl CreateAssessmentTemplateInput {
-    /// <p>The ARN that specifies the assessment target for which you want to create the
-    /// assessment template.</p>
+    /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
     pub fn assessment_target_arn(&self) -> std::option::Option<&str> {
         self.assessment_target_arn.as_deref()
     }
-    /// <p>The user-defined name that identifies the assessment template that you want to
-    /// create. You can create several assessment templates for an assessment target. The names of
-    /// the assessment templates that correspond to a particular assessment target must be
-    /// unique.</p>
+    /// <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
     pub fn assessment_template_name(&self) -> std::option::Option<&str> {
         self.assessment_template_name.as_deref()
     }
@@ -7970,15 +7573,11 @@ impl CreateAssessmentTemplateInput {
     pub fn duration_in_seconds(&self) -> i32 {
         self.duration_in_seconds
     }
-    /// <p>The ARNs that specify the rules packages that you want to attach to the assessment
-    /// template.</p>
+    /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
     pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.rules_package_arns.as_deref()
     }
-    /// <p>The user-defined attributes that are assigned to every finding that is generated by
-    /// the assessment run that uses this assessment template. An attribute is a key and value pair
-    /// (an <a>Attribute</a> object). Within an assessment template, each key must be
-    /// unique.</p>
+    /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
     pub fn user_attributes_for_findings(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.user_attributes_for_findings.as_deref()
     }
@@ -8002,23 +7601,17 @@ impl std::fmt::Debug for CreateAssessmentTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssessmentTargetInput {
-    /// <p>The user-defined name that identifies the assessment target that you want to create.
-    /// The name must be unique within the AWS account.</p>
+    /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
     pub assessment_target_name: std::option::Option<std::string::String>,
-    /// <p>The ARN that specifies the resource group that is used to create the assessment
-    /// target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account
-    /// and region are included in the assessment target.</p>
+    /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
     pub resource_group_arn: std::option::Option<std::string::String>,
 }
 impl CreateAssessmentTargetInput {
-    /// <p>The user-defined name that identifies the assessment target that you want to create.
-    /// The name must be unique within the AWS account.</p>
+    /// <p>The user-defined name that identifies the assessment target that you want to create. The name must be unique within the AWS account.</p>
     pub fn assessment_target_name(&self) -> std::option::Option<&str> {
         self.assessment_target_name.as_deref()
     }
-    /// <p>The ARN that specifies the resource group that is used to create the assessment
-    /// target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account
-    /// and region are included in the assessment target.</p>
+    /// <p>The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
     pub fn resource_group_arn(&self) -> std::option::Option<&str> {
         self.resource_group_arn.as_deref()
     }

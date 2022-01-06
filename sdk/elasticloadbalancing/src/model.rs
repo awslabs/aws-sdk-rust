@@ -110,21 +110,16 @@ impl Instance {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancerAttributes {
     /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub cross_zone_load_balancing: std::option::Option<crate::model::CrossZoneLoadBalancing>,
     /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub access_log: std::option::Option<crate::model::AccessLog>,
     /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub connection_draining: std::option::Option<crate::model::ConnectionDraining>,
     /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p>
-    /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer.
-    /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub connection_settings: std::option::Option<crate::model::ConnectionSettings>,
     /// <p>Any additional attributes.</p>
     pub additional_attributes:
@@ -132,29 +127,24 @@ pub struct LoadBalancerAttributes {
 }
 impl LoadBalancerAttributes {
     /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub fn cross_zone_load_balancing(
         &self,
     ) -> std::option::Option<&crate::model::CrossZoneLoadBalancing> {
         self.cross_zone_load_balancing.as_ref()
     }
     /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub fn access_log(&self) -> std::option::Option<&crate::model::AccessLog> {
         self.access_log.as_ref()
     }
     /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub fn connection_draining(&self) -> std::option::Option<&crate::model::ConnectionDraining> {
         self.connection_draining.as_ref()
     }
     /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p>
-    /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer.
-    /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub fn connection_settings(&self) -> std::option::Option<&crate::model::ConnectionSettings> {
         self.connection_settings.as_ref()
     }
@@ -192,8 +182,7 @@ pub mod load_balancer_attributes {
     }
     impl Builder {
         /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn cross_zone_load_balancing(
             mut self,
             input: crate::model::CrossZoneLoadBalancing,
@@ -202,8 +191,7 @@ pub mod load_balancer_attributes {
             self
         }
         /// <p>If enabled, the load balancer routes the request traffic evenly across all instances regardless of the Availability Zones.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn set_cross_zone_load_balancing(
             mut self,
             input: std::option::Option<crate::model::CrossZoneLoadBalancing>,
@@ -212,15 +200,13 @@ pub mod load_balancer_attributes {
             self
         }
         /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn access_log(mut self, input: crate::model::AccessLog) -> Self {
             self.access_log = Some(input);
             self
         }
         /// <p>If enabled, the load balancer captures detailed information of all requests and delivers the information to the Amazon S3 bucket that you specify.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access Logs</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn set_access_log(
             mut self,
             input: std::option::Option<crate::model::AccessLog>,
@@ -229,15 +215,13 @@ pub mod load_balancer_attributes {
             self
         }
         /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn connection_draining(mut self, input: crate::model::ConnectionDraining) -> Self {
             self.connection_draining = Some(input);
             self
         }
         /// <p>If enabled, the load balancer allows existing requests to complete before the load balancer shifts traffic away from a deregistered or unhealthy instance.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn set_connection_draining(
             mut self,
             input: std::option::Option<crate::model::ConnectionDraining>,
@@ -246,17 +230,13 @@ pub mod load_balancer_attributes {
             self
         }
         /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p>
-        /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer.
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn connection_settings(mut self, input: crate::model::ConnectionSettings) -> Self {
             self.connection_settings = Some(input);
             self
         }
         /// <p>If enabled, the load balancer allows the connections to remain idle (no data is sent over the connection) for the specified duration.</p>
-        /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer.
-        /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end connections of your load balancer. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn set_connection_settings(
             mut self,
             input: std::option::Option<crate::model::ConnectionSettings>,
@@ -269,12 +249,9 @@ pub mod load_balancer_attributes {
         /// To override the contents of this collection use [`set_additional_attributes`](Self::set_additional_attributes).
         ///
         /// <p>Any additional attributes.</p>
-        pub fn additional_attributes(
-            mut self,
-            input: impl Into<crate::model::AdditionalAttribute>,
-        ) -> Self {
+        pub fn additional_attributes(mut self, input: crate::model::AdditionalAttribute) -> Self {
             let mut v = self.additional_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_attributes = Some(v);
             self
         }
@@ -312,12 +289,7 @@ pub struct AdditionalAttribute {
     /// <p>The name of the attribute.</p>
     /// <p>The following attribute is supported.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that  
-    /// might pose a security risk to your application. The possible values are <code>monitor</code>,
-    /// <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p>
-    /// </li>
+    /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
     /// </ul>
     pub key: std::option::Option<std::string::String>,
     /// <p>This value of the attribute.</p>
@@ -327,12 +299,7 @@ impl AdditionalAttribute {
     /// <p>The name of the attribute.</p>
     /// <p>The following attribute is supported.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that  
-    /// might pose a security risk to your application. The possible values are <code>monitor</code>,
-    /// <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p>
-    /// </li>
+    /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
     /// </ul>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
@@ -363,12 +330,7 @@ pub mod additional_attribute {
         /// <p>The name of the attribute.</p>
         /// <p>The following attribute is supported.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that  
-        /// might pose a security risk to your application. The possible values are <code>monitor</code>,
-        /// <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p>
-        /// </li>
+        /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
         /// </ul>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
@@ -377,12 +339,7 @@ pub mod additional_attribute {
         /// <p>The name of the attribute.</p>
         /// <p>The following attribute is supported.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that  
-        /// might pose a security risk to your application. The possible values are <code>monitor</code>,
-        /// <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p>
-        /// </li>
+        /// <li> <p> <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
         /// </ul>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
@@ -552,8 +509,7 @@ pub struct AccessLog {
     /// <p>The interval for publishing the access logs. You can specify an interval of either 5 minutes or 60 minutes.</p>
     /// <p>Default: 60 minutes</p>
     pub emit_interval: std::option::Option<i32>,
-    /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>.  
-    /// If the prefix is not provided, the log is placed at the root level of the bucket.</p>
+    /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of the bucket.</p>
     pub s3_bucket_prefix: std::option::Option<std::string::String>,
 }
 impl AccessLog {
@@ -570,8 +526,7 @@ impl AccessLog {
     pub fn emit_interval(&self) -> std::option::Option<i32> {
         self.emit_interval
     }
-    /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>.  
-    /// If the prefix is not provided, the log is placed at the root level of the bucket.</p>
+    /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of the bucket.</p>
     pub fn s3_bucket_prefix(&self) -> std::option::Option<&str> {
         self.s3_bucket_prefix.as_deref()
     }
@@ -633,14 +588,12 @@ pub mod access_log {
             self.emit_interval = input;
             self
         }
-        /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>.  
-        /// If the prefix is not provided, the log is placed at the root level of the bucket.</p>
+        /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of the bucket.</p>
         pub fn s3_bucket_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_prefix = Some(input.into());
             self
         }
-        /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>.  
-        /// If the prefix is not provided, the log is placed at the root level of the bucket.</p>
+        /// <p>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is placed at the root level of the bucket.</p>
         pub fn set_s3_bucket_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -775,9 +728,9 @@ pub mod tag_description {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -887,8 +840,7 @@ pub struct LoadBalancerDescription {
     /// <p>The DNS name of the load balancer.</p>
     pub dns_name: std::option::Option<std::string::String>,
     /// <p>The DNS name of the load balancer.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub canonical_hosted_zone_name: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
     pub canonical_hosted_zone_name_id: std::option::Option<std::string::String>,
@@ -910,18 +862,15 @@ pub struct LoadBalancerDescription {
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>Information about the health checks conducted on the load balancer.</p>
     pub health_check: std::option::Option<crate::model::HealthCheck>,
-    /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances.
-    /// To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
+    /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
     pub source_security_group: std::option::Option<crate::model::SourceSecurityGroup>,
     /// <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time the load balancer was created.</p>
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
-    /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer
-    /// has a public DNS name that resolves to a public IP address.</p>
-    /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public
-    /// DNS name that resolves to a private IP address.</p>
+    /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
+    /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
     pub scheme: std::option::Option<std::string::String>,
 }
 impl LoadBalancerDescription {
@@ -934,8 +883,7 @@ impl LoadBalancerDescription {
         self.dns_name.as_deref()
     }
     /// <p>The DNS name of the load balancer.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub fn canonical_hosted_zone_name(&self) -> std::option::Option<&str> {
         self.canonical_hosted_zone_name.as_deref()
     }
@@ -979,8 +927,7 @@ impl LoadBalancerDescription {
     pub fn health_check(&self) -> std::option::Option<&crate::model::HealthCheck> {
         self.health_check.as_ref()
     }
-    /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances.
-    /// To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
+    /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
     pub fn source_security_group(&self) -> std::option::Option<&crate::model::SourceSecurityGroup> {
         self.source_security_group.as_ref()
     }
@@ -993,10 +940,8 @@ impl LoadBalancerDescription {
         self.created_time.as_ref()
     }
     /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
-    /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer
-    /// has a public DNS name that resolves to a public IP address.</p>
-    /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public
-    /// DNS name that resolves to a private IP address.</p>
+    /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
+    /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
     pub fn scheme(&self) -> std::option::Option<&str> {
         self.scheme.as_deref()
     }
@@ -1082,15 +1027,13 @@ pub mod load_balancer_description {
             self
         }
         /// <p>The DNS name of the load balancer.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn canonical_hosted_zone_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.canonical_hosted_zone_name = Some(input.into());
             self
         }
         /// <p>The DNS name of the load balancer.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn set_canonical_hosted_zone_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1119,12 +1062,9 @@ pub mod load_balancer_description {
         /// To override the contents of this collection use [`set_listener_descriptions`](Self::set_listener_descriptions).
         ///
         /// <p>The listeners for the load balancer.</p>
-        pub fn listener_descriptions(
-            mut self,
-            input: impl Into<crate::model::ListenerDescription>,
-        ) -> Self {
+        pub fn listener_descriptions(mut self, input: crate::model::ListenerDescription) -> Self {
             let mut v = self.listener_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listener_descriptions = Some(v);
             self
         }
@@ -1153,10 +1093,10 @@ pub mod load_balancer_description {
         /// <p>Information about your EC2 instances.</p>
         pub fn backend_server_descriptions(
             mut self,
-            input: impl Into<crate::model::BackendServerDescription>,
+            input: crate::model::BackendServerDescription,
         ) -> Self {
             let mut v = self.backend_server_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backend_server_descriptions = Some(v);
             self
         }
@@ -1221,9 +1161,9 @@ pub mod load_balancer_description {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>The IDs of the instances for the load balancer.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -1248,14 +1188,12 @@ pub mod load_balancer_description {
             self.health_check = input;
             self
         }
-        /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances.
-        /// To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
+        /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
         pub fn source_security_group(mut self, input: crate::model::SourceSecurityGroup) -> Self {
             self.source_security_group = Some(input);
             self
         }
-        /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances.
-        /// To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
+        /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
         pub fn set_source_security_group(
             mut self,
             input: std::option::Option<crate::model::SourceSecurityGroup>,
@@ -1296,19 +1234,15 @@ pub mod load_balancer_description {
             self
         }
         /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
-        /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer
-        /// has a public DNS name that resolves to a public IP address.</p>
-        /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public
-        /// DNS name that resolves to a private IP address.</p>
+        /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
+        /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
         pub fn scheme(mut self, input: impl Into<std::string::String>) -> Self {
             self.scheme = Some(input.into());
             self
         }
         /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
-        /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer
-        /// has a public DNS name that resolves to a public IP address.</p>
-        /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public
-        /// DNS name that resolves to a private IP address.</p>
+        /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
+        /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
         pub fn set_scheme(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.scheme = input;
             self
@@ -1652,23 +1586,23 @@ impl BackendServerDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Policies {
-    /// <p>The stickiness policies created using <a>CreateAppCookieStickinessPolicy</a>.</p>
+    /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
     pub app_cookie_stickiness_policies:
         std::option::Option<std::vec::Vec<crate::model::AppCookieStickinessPolicy>>,
-    /// <p>The stickiness policies created using <a>CreateLBCookieStickinessPolicy</a>.</p>
+    /// <p>The stickiness policies created using <code>CreateLBCookieStickinessPolicy</code>.</p>
     pub lb_cookie_stickiness_policies:
         std::option::Option<std::vec::Vec<crate::model::LbCookieStickinessPolicy>>,
     /// <p>The policies other than the stickiness policies.</p>
     pub other_policies: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Policies {
-    /// <p>The stickiness policies created using <a>CreateAppCookieStickinessPolicy</a>.</p>
+    /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
     pub fn app_cookie_stickiness_policies(
         &self,
     ) -> std::option::Option<&[crate::model::AppCookieStickinessPolicy]> {
         self.app_cookie_stickiness_policies.as_deref()
     }
-    /// <p>The stickiness policies created using <a>CreateLBCookieStickinessPolicy</a>.</p>
+    /// <p>The stickiness policies created using <code>CreateLBCookieStickinessPolicy</code>.</p>
     pub fn lb_cookie_stickiness_policies(
         &self,
     ) -> std::option::Option<&[crate::model::LbCookieStickinessPolicy]> {
@@ -1711,17 +1645,17 @@ pub mod policies {
         ///
         /// To override the contents of this collection use [`set_app_cookie_stickiness_policies`](Self::set_app_cookie_stickiness_policies).
         ///
-        /// <p>The stickiness policies created using <a>CreateAppCookieStickinessPolicy</a>.</p>
+        /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
         pub fn app_cookie_stickiness_policies(
             mut self,
-            input: impl Into<crate::model::AppCookieStickinessPolicy>,
+            input: crate::model::AppCookieStickinessPolicy,
         ) -> Self {
             let mut v = self.app_cookie_stickiness_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_cookie_stickiness_policies = Some(v);
             self
         }
-        /// <p>The stickiness policies created using <a>CreateAppCookieStickinessPolicy</a>.</p>
+        /// <p>The stickiness policies created using <code>CreateAppCookieStickinessPolicy</code>.</p>
         pub fn set_app_cookie_stickiness_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AppCookieStickinessPolicy>>,
@@ -1733,17 +1667,17 @@ pub mod policies {
         ///
         /// To override the contents of this collection use [`set_lb_cookie_stickiness_policies`](Self::set_lb_cookie_stickiness_policies).
         ///
-        /// <p>The stickiness policies created using <a>CreateLBCookieStickinessPolicy</a>.</p>
+        /// <p>The stickiness policies created using <code>CreateLBCookieStickinessPolicy</code>.</p>
         pub fn lb_cookie_stickiness_policies(
             mut self,
-            input: impl Into<crate::model::LbCookieStickinessPolicy>,
+            input: crate::model::LbCookieStickinessPolicy,
         ) -> Self {
             let mut v = self.lb_cookie_stickiness_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lb_cookie_stickiness_policies = Some(v);
             self
         }
-        /// <p>The stickiness policies created using <a>CreateLBCookieStickinessPolicy</a>.</p>
+        /// <p>The stickiness policies created using <code>CreateLBCookieStickinessPolicy</code>.</p>
         pub fn set_lb_cookie_stickiness_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LbCookieStickinessPolicy>>,
@@ -2016,8 +1950,7 @@ impl ListenerDescription {
 }
 
 /// <p>Information about a listener.</p>
-/// <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a>
-/// in the <i>Classic Load Balancers Guide</i>.</p>
+/// <p>For information about the protocols and the ports supported by Elastic Load Balancing, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Listener {
@@ -2026,12 +1959,9 @@ pub struct Listener {
     /// <p>The port on which the load balancer is listening. On EC2-VPC, you can specify any port from the range 1-65535. On EC2-Classic, you can specify any port from the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
     pub load_balancer_port: i32,
     /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
-    /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL.
-    /// If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
-    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure,
-    /// (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
-    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP,
-    /// the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
+    /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
+    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
     pub instance_protocol: std::option::Option<std::string::String>,
     /// <p>The port on which the instance is listening.</p>
     pub instance_port: i32,
@@ -2048,12 +1978,9 @@ impl Listener {
         self.load_balancer_port
     }
     /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
-    /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL.
-    /// If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
-    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure,
-    /// (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
-    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP,
-    /// the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
+    /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
+    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+    /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
     pub fn instance_protocol(&self) -> std::option::Option<&str> {
         self.instance_protocol.as_deref()
     }
@@ -2111,23 +2038,17 @@ pub mod listener {
             self
         }
         /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
-        /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL.
-        /// If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
-        /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure,
-        /// (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
-        /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP,
-        /// the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
+        /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
+        /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+        /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
         pub fn instance_protocol(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_protocol = Some(input.into());
             self
         }
         /// <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
-        /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL.
-        /// If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
-        /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure,
-        /// (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
-        /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP,
-        /// the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
+        /// <p>If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.</p>
+        /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also be secure.</p>
+        /// <p>If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.</p>
         pub fn set_instance_protocol(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2259,10 +2180,10 @@ pub mod policy_type_description {
         /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
         pub fn policy_attribute_type_descriptions(
             mut self,
-            input: impl Into<crate::model::PolicyAttributeTypeDescription>,
+            input: crate::model::PolicyAttributeTypeDescription,
         ) -> Self {
             let mut v = self.policy_attribute_type_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_attribute_type_descriptions = Some(v);
             self
         }
@@ -2306,18 +2227,10 @@ pub struct PolicyAttributeTypeDescription {
     /// <p>The cardinality of the attribute.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>ONE(1) : Single value required</p>
-    /// </li>
-    /// <li>
-    /// <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p>
-    /// </li>
-    /// <li>
-    /// <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p>
-    /// </li>
-    /// <li>
-    /// <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p>
-    /// </li>
+    /// <li> <p>ONE(1) : Single value required</p> </li>
+    /// <li> <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p> </li>
+    /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li>
+    /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
     /// </ul>
     pub cardinality: std::option::Option<std::string::String>,
 }
@@ -2341,18 +2254,10 @@ impl PolicyAttributeTypeDescription {
     /// <p>The cardinality of the attribute.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>ONE(1) : Single value required</p>
-    /// </li>
-    /// <li>
-    /// <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p>
-    /// </li>
-    /// <li>
-    /// <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p>
-    /// </li>
-    /// <li>
-    /// <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p>
-    /// </li>
+    /// <li> <p>ONE(1) : Single value required</p> </li>
+    /// <li> <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p> </li>
+    /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li>
+    /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
     /// </ul>
     pub fn cardinality(&self) -> std::option::Option<&str> {
         self.cardinality.as_deref()
@@ -2434,18 +2339,10 @@ pub mod policy_attribute_type_description {
         /// <p>The cardinality of the attribute.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ONE(1) : Single value required</p>
-        /// </li>
-        /// <li>
-        /// <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p>
-        /// </li>
-        /// <li>
-        /// <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p>
-        /// </li>
-        /// <li>
-        /// <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p>
-        /// </li>
+        /// <li> <p>ONE(1) : Single value required</p> </li>
+        /// <li> <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p> </li>
+        /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li>
+        /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
         /// </ul>
         pub fn cardinality(mut self, input: impl Into<std::string::String>) -> Self {
             self.cardinality = Some(input.into());
@@ -2454,18 +2351,10 @@ pub mod policy_attribute_type_description {
         /// <p>The cardinality of the attribute.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ONE(1) : Single value required</p>
-        /// </li>
-        /// <li>
-        /// <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p>
-        /// </li>
-        /// <li>
-        /// <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p>
-        /// </li>
-        /// <li>
-        /// <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p>
-        /// </li>
+        /// <li> <p>ONE(1) : Single value required</p> </li>
+        /// <li> <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p> </li>
+        /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li>
+        /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
         /// </ul>
         pub fn set_cardinality(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cardinality = input;
@@ -2572,10 +2461,10 @@ pub mod policy_description {
         /// <p>The policy attributes.</p>
         pub fn policy_attribute_descriptions(
             mut self,
-            input: impl Into<crate::model::PolicyAttributeDescription>,
+            input: crate::model::PolicyAttributeDescription,
         ) -> Self {
             let mut v = self.policy_attribute_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_attribute_descriptions = Some(v);
             self
         }
@@ -2690,76 +2579,25 @@ pub struct InstanceState {
     /// <p>The ID of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The current state of the instance.</p>
-    /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code>
-    /// </p>
+    /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
     pub state: std::option::Option<std::string::String>,
-    /// <p>Information about the cause of <code>OutOfService</code> instances.
-    /// Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
-    /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code>
-    /// </p>
+    /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
+    /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code> </p>
     pub reason_code: std::option::Option<std::string::String>,
     /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>N/A</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>A transient error occurred. Please try again later.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance registration is still in progress.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance is not currently registered with the LoadBalancer.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance deregistration currently in progress.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Disable Availability Zone is currently in progress.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance is in pending state.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance is in stopped state.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance is in terminated state.</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>N/A</code> </p> </li>
+    /// <li> <p> <code>A transient error occurred. Please try again later.</code> </p> </li>
+    /// <li> <p> <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code> </p> </li>
+    /// <li> <p> <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code> </p> </li>
+    /// <li> <p> <code>Instance registration is still in progress.</code> </p> </li>
+    /// <li> <p> <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code> </p> </li>
+    /// <li> <p> <code>Instance is not currently registered with the LoadBalancer.</code> </p> </li>
+    /// <li> <p> <code>Instance deregistration currently in progress.</code> </p> </li>
+    /// <li> <p> <code>Disable Availability Zone is currently in progress.</code> </p> </li>
+    /// <li> <p> <code>Instance is in pending state.</code> </p> </li>
+    /// <li> <p> <code>Instance is in stopped state.</code> </p> </li>
+    /// <li> <p> <code>Instance is in terminated state.</code> </p> </li>
     /// </ul>
     pub description: std::option::Option<std::string::String>,
 }
@@ -2769,80 +2607,29 @@ impl InstanceState {
         self.instance_id.as_deref()
     }
     /// <p>The current state of the instance.</p>
-    /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code>
-    /// </p>
+    /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
     pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
-    /// <p>Information about the cause of <code>OutOfService</code> instances.
-    /// Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
-    /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code>
-    /// </p>
+    /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
+    /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code> </p>
     pub fn reason_code(&self) -> std::option::Option<&str> {
         self.reason_code.as_deref()
     }
     /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>N/A</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>A transient error occurred. Please try again later.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance registration is still in progress.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance is not currently registered with the LoadBalancer.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance deregistration currently in progress.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Disable Availability Zone is currently in progress.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance is in pending state.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance is in stopped state.</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instance is in terminated state.</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>N/A</code> </p> </li>
+    /// <li> <p> <code>A transient error occurred. Please try again later.</code> </p> </li>
+    /// <li> <p> <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code> </p> </li>
+    /// <li> <p> <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code> </p> </li>
+    /// <li> <p> <code>Instance registration is still in progress.</code> </p> </li>
+    /// <li> <p> <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code> </p> </li>
+    /// <li> <p> <code>Instance is not currently registered with the LoadBalancer.</code> </p> </li>
+    /// <li> <p> <code>Instance deregistration currently in progress.</code> </p> </li>
+    /// <li> <p> <code>Disable Availability Zone is currently in progress.</code> </p> </li>
+    /// <li> <p> <code>Instance is in pending state.</code> </p> </li>
+    /// <li> <p> <code>Instance is in stopped state.</code> </p> </li>
+    /// <li> <p> <code>Instance is in terminated state.</code> </p> </li>
     /// </ul>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
@@ -2881,97 +2668,43 @@ pub mod instance_state {
             self
         }
         /// <p>The current state of the instance.</p>
-        /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code>
-        /// </p>
+        /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
         }
         /// <p>The current state of the instance.</p>
-        /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code>
-        /// </p>
+        /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
         }
-        /// <p>Information about the cause of <code>OutOfService</code> instances.
-        /// Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
-        /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code>
-        /// </p>
+        /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
+        /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code> </p>
         pub fn reason_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason_code = Some(input.into());
             self
         }
-        /// <p>Information about the cause of <code>OutOfService</code> instances.
-        /// Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
-        /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code>
-        /// </p>
+        /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
+        /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code> </p>
         pub fn set_reason_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason_code = input;
             self
         }
         /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>N/A</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>A transient error occurred. Please try again later.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance registration is still in progress.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance is not currently registered with the LoadBalancer.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance deregistration currently in progress.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Disable Availability Zone is currently in progress.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance is in pending state.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance is in stopped state.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance is in terminated state.</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>N/A</code> </p> </li>
+        /// <li> <p> <code>A transient error occurred. Please try again later.</code> </p> </li>
+        /// <li> <p> <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code> </p> </li>
+        /// <li> <p> <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code> </p> </li>
+        /// <li> <p> <code>Instance registration is still in progress.</code> </p> </li>
+        /// <li> <p> <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code> </p> </li>
+        /// <li> <p> <code>Instance is not currently registered with the LoadBalancer.</code> </p> </li>
+        /// <li> <p> <code>Instance deregistration currently in progress.</code> </p> </li>
+        /// <li> <p> <code>Disable Availability Zone is currently in progress.</code> </p> </li>
+        /// <li> <p> <code>Instance is in pending state.</code> </p> </li>
+        /// <li> <p> <code>Instance is in stopped state.</code> </p> </li>
+        /// <li> <p> <code>Instance is in terminated state.</code> </p> </li>
         /// </ul>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
@@ -2979,66 +2712,18 @@ pub mod instance_state {
         }
         /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>N/A</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>A transient error occurred. Please try again later.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance registration is still in progress.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance is not currently registered with the LoadBalancer.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance deregistration currently in progress.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Disable Availability Zone is currently in progress.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance is in pending state.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance is in stopped state.</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instance is in terminated state.</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>N/A</code> </p> </li>
+        /// <li> <p> <code>A transient error occurred. Please try again later.</code> </p> </li>
+        /// <li> <p> <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code> </p> </li>
+        /// <li> <p> <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code> </p> </li>
+        /// <li> <p> <code>Instance registration is still in progress.</code> </p> </li>
+        /// <li> <p> <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code> </p> </li>
+        /// <li> <p> <code>Instance is not currently registered with the LoadBalancer.</code> </p> </li>
+        /// <li> <p> <code>Instance deregistration currently in progress.</code> </p> </li>
+        /// <li> <p> <code>Disable Availability Zone is currently in progress.</code> </p> </li>
+        /// <li> <p> <code>Instance is in pending state.</code> </p> </li>
+        /// <li> <p> <code>Instance is in stopped state.</code> </p> </li>
+        /// <li> <p> <code>Instance is in terminated state.</code> </p> </li>
         /// </ul>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
@@ -3068,15 +2753,9 @@ impl InstanceState {
 pub struct Limit {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>classic-listeners</p>
-    /// </li>
-    /// <li>
-    /// <p>classic-load-balancers</p>
-    /// </li>
-    /// <li>
-    /// <p>classic-registered-instances</p>
-    /// </li>
+    /// <li> <p>classic-listeners</p> </li>
+    /// <li> <p>classic-load-balancers</p> </li>
+    /// <li> <p>classic-registered-instances</p> </li>
     /// </ul>
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum value of the limit.</p>
@@ -3085,15 +2764,9 @@ pub struct Limit {
 impl Limit {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>classic-listeners</p>
-    /// </li>
-    /// <li>
-    /// <p>classic-load-balancers</p>
-    /// </li>
-    /// <li>
-    /// <p>classic-registered-instances</p>
-    /// </li>
+    /// <li> <p>classic-listeners</p> </li>
+    /// <li> <p>classic-load-balancers</p> </li>
+    /// <li> <p>classic-registered-instances</p> </li>
     /// </ul>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
@@ -3123,15 +2796,9 @@ pub mod limit {
     impl Builder {
         /// <p>The name of the limit. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>classic-listeners</p>
-        /// </li>
-        /// <li>
-        /// <p>classic-load-balancers</p>
-        /// </li>
-        /// <li>
-        /// <p>classic-registered-instances</p>
-        /// </li>
+        /// <li> <p>classic-listeners</p> </li>
+        /// <li> <p>classic-load-balancers</p> </li>
+        /// <li> <p>classic-registered-instances</p> </li>
         /// </ul>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -3139,15 +2806,9 @@ pub mod limit {
         }
         /// <p>The name of the limit. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>classic-listeners</p>
-        /// </li>
-        /// <li>
-        /// <p>classic-load-balancers</p>
-        /// </li>
-        /// <li>
-        /// <p>classic-registered-instances</p>
-        /// </li>
+        /// <li> <p>classic-listeners</p> </li>
+        /// <li> <p>classic-load-balancers</p> </li>
+        /// <li> <p>classic-registered-instances</p> </li>
         /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;

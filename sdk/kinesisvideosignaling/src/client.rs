@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Kinesis Video Signaling Channels
@@ -108,21 +108,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `GetIceServerConfig`.
     ///
-    /// <p>Gets the Interactive Connectivity Establishment (ICE) server configuration
-    /// information, including URIs, username, and password which can be used to configure the
-    /// WebRTC connection. The ICE component uses this configuration information to setup the
-    /// WebRTC connection, including authenticating with the Traversal Using Relays around NAT
-    /// (TURN) relay server. </p>
-    /// <p>TURN is a protocol that is used to improve the connectivity of peer-to-peer
-    /// applications. By providing a cloud-based relay service, TURN ensures that a connection
-    /// can be established even when one or more peers are incapable of a direct peer-to-peer
-    /// connection. For more information, see <a href="https://tools.ietf.org/html/draft-uberti-rtcweb-turn-rest-00">A REST API For
-    /// Access To TURN Services</a>.</p>
-    /// <p> You can invoke this API to establish a fallback mechanism in case either of the peers
-    /// is unable to establish a direct peer-to-peer connection over a signaling channel. You
-    /// must specify either a signaling channel ARN or the client ID in order to invoke this
-    /// API.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the Interactive Connectivity Establishment (ICE) server configuration information, including URIs, username, and password which can be used to configure the WebRTC connection. The ICE component uses this configuration information to setup the WebRTC connection, including authenticating with the Traversal Using Relays around NAT (TURN) relay server. </p>
+    /// <p>TURN is a protocol that is used to improve the connectivity of peer-to-peer applications. By providing a cloud-based relay service, TURN ensures that a connection can be established even when one or more peers are incapable of a direct peer-to-peer connection. For more information, see <a href="https://tools.ietf.org/html/draft-uberti-rtcweb-turn-rest-00">A REST API For Access To TURN Services</a>.</p>
+    /// <p> You can invoke this API to establish a fallback mechanism in case either of the peers is unable to establish a direct peer-to-peer connection over a signaling channel. You must specify either a signaling channel ARN or the client ID in order to invoke this API.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIceServerConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -167,10 +156,10 @@ pub mod fluent_builders {
                 crate::input::GetIceServerConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -178,21 +167,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between
-        /// configured peers. </p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
-        /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between
-        /// configured peers. </p>
+        /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
         /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
-        pub fn client_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(inp);
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
@@ -200,21 +187,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_id(input);
             self
         }
-        /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid
-        /// value.</p>
-        pub fn service(mut self, inp: crate::model::Service) -> Self {
-            self.inner = self.inner.service(inp);
+        /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
+        pub fn service(mut self, input: crate::model::Service) -> Self {
+            self.inner = self.inner.service(input);
             self
         }
-        /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid
-        /// value.</p>
+        /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
         pub fn set_service(mut self, input: std::option::Option<crate::model::Service>) -> Self {
             self.inner = self.inner.set_service(input);
             self
         }
         /// <p>An optional user ID to be associated with the credentials.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>An optional user ID to be associated with the credentials.</p>
@@ -225,13 +210,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendAlexaOfferToMaster`.
     ///
-    /// <p>This API allows you to connect WebRTC-enabled devices with Alexa display devices. When
-    /// invoked, it sends the Alexa Session Description Protocol (SDP) offer to the master peer.
-    /// The offer is delivered as soon as the master is connected to the specified signaling
-    /// channel. This API returns the SDP answer from the connected master. If the master is not
-    /// connected to the signaling channel, redelivery requests are made until the message
-    /// expires.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This API allows you to connect WebRTC-enabled devices with Alexa display devices. When invoked, it sends the Alexa Session Description Protocol (SDP) offer to the master peer. The offer is delivered as soon as the master is connected to the specified signaling channel. This API returns the SDP answer from the connected master. If the master is not connected to the signaling channel, redelivery requests are made until the message expires.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendAlexaOfferToMaster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -276,10 +256,10 @@ pub mod fluent_builders {
                 crate::input::SendAlexaOfferToMasterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -287,21 +267,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the signaling channel by which Alexa and the master peer
-        /// communicate.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
-        /// <p>The ARN of the signaling channel by which Alexa and the master peer
-        /// communicate.</p>
+        /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
         /// <p>The unique identifier for the sender client.</p>
-        pub fn sender_client_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sender_client_id(inp);
+        pub fn sender_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sender_client_id(input.into());
             self
         }
         /// <p>The unique identifier for the sender client.</p>
@@ -313,8 +291,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The base64-encoded SDP offer content.</p>
-        pub fn message_payload(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_payload(inp);
+        pub fn message_payload(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_payload(input.into());
             self
         }
         /// <p>The base64-encoded SDP offer content.</p>
@@ -327,6 +305,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

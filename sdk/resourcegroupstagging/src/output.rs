@@ -3,19 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourcesOutput {
-    /// <p>A map containing a key-value pair for each failed item that couldn't be untagged. The
-    /// key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object
-    /// that contains an error code, a status code, and an error message. If there are no
-    /// errors, the <code>FailedResourcesMap</code> is empty.</p>
+    /// <p>A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
     pub failed_resources_map: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailureInfo>,
     >,
 }
 impl UntagResourcesOutput {
-    /// <p>A map containing a key-value pair for each failed item that couldn't be untagged. The
-    /// key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object
-    /// that contains an error code, a status code, and an error message. If there are no
-    /// errors, the <code>FailedResourcesMap</code> is empty.</p>
+    /// <p>A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
     pub fn failed_resources_map(
         &self,
     ) -> std::option::Option<
@@ -46,24 +40,18 @@ pub mod untag_resources_output {
         ///
         /// To override the contents of this collection use [`set_failed_resources_map`](Self::set_failed_resources_map).
         ///
-        /// <p>A map containing a key-value pair for each failed item that couldn't be untagged. The
-        /// key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object
-        /// that contains an error code, a status code, and an error message. If there are no
-        /// errors, the <code>FailedResourcesMap</code> is empty.</p>
+        /// <p>A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
         pub fn failed_resources_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FailureInfo>,
+            v: crate::model::FailureInfo,
         ) -> Self {
             let mut hash_map = self.failed_resources_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_resources_map = Some(hash_map);
             self
         }
-        /// <p>A map containing a key-value pair for each failed item that couldn't be untagged. The
-        /// key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object
-        /// that contains an error code, a status code, and an error message. If there are no
-        /// errors, the <code>FailedResourcesMap</code> is empty.</p>
+        /// <p>A map containing a key-value pair for each failed item that couldn't be untagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
         pub fn set_failed_resources_map(
             mut self,
             input: std::option::Option<
@@ -92,19 +80,13 @@ impl UntagResourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourcesOutput {
-    /// <p>A map containing a key-value pair for each failed item that couldn't be tagged. The
-    /// key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object
-    /// that contains an error code, a status code, and an error message. If there are no
-    /// errors, the <code>FailedResourcesMap</code> is empty.</p>
+    /// <p>A map containing a key-value pair for each failed item that couldn't be tagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
     pub failed_resources_map: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FailureInfo>,
     >,
 }
 impl TagResourcesOutput {
-    /// <p>A map containing a key-value pair for each failed item that couldn't be tagged. The
-    /// key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object
-    /// that contains an error code, a status code, and an error message. If there are no
-    /// errors, the <code>FailedResourcesMap</code> is empty.</p>
+    /// <p>A map containing a key-value pair for each failed item that couldn't be tagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
     pub fn failed_resources_map(
         &self,
     ) -> std::option::Option<
@@ -135,24 +117,18 @@ pub mod tag_resources_output {
         ///
         /// To override the contents of this collection use [`set_failed_resources_map`](Self::set_failed_resources_map).
         ///
-        /// <p>A map containing a key-value pair for each failed item that couldn't be tagged. The
-        /// key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object
-        /// that contains an error code, a status code, and an error message. If there are no
-        /// errors, the <code>FailedResourcesMap</code> is empty.</p>
+        /// <p>A map containing a key-value pair for each failed item that couldn't be tagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
         pub fn failed_resources_map(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::FailureInfo>,
+            v: crate::model::FailureInfo,
         ) -> Self {
             let mut hash_map = self.failed_resources_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.failed_resources_map = Some(hash_map);
             self
         }
-        /// <p>A map containing a key-value pair for each failed item that couldn't be tagged. The
-        /// key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object
-        /// that contains an error code, a status code, and an error message. If there are no
-        /// errors, the <code>FailedResourcesMap</code> is empty.</p>
+        /// <p>A map containing a key-value pair for each failed item that couldn't be tagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
         pub fn set_failed_resources_map(
             mut self,
             input: std::option::Option<
@@ -211,23 +187,17 @@ impl StartReportCreationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagValuesOutput {
-    /// <p>A string that indicates that there is more data available than this
-    /// response contains. To receive the next part of the response, specify this response value
-    /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+    /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub pagination_token: std::option::Option<std::string::String>,
-    /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services
-    /// Region for the calling account.</p>
+    /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services Region for the calling account.</p>
     pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetTagValuesOutput {
-    /// <p>A string that indicates that there is more data available than this
-    /// response contains. To receive the next part of the response, specify this response value
-    /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+    /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
-    /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services
-    /// Region for the calling account.</p>
+    /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services Region for the calling account.</p>
     pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_values.as_deref()
     }
@@ -250,16 +220,12 @@ pub mod get_tag_values_output {
         pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>A string that indicates that there is more data available than this
-        /// response contains. To receive the next part of the response, specify this response value
-        /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+        /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.pagination_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that there is more data available than this
-        /// response contains. To receive the next part of the response, specify this response value
-        /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+        /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -271,16 +237,14 @@ pub mod get_tag_values_output {
         ///
         /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
         ///
-        /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services
-        /// Region for the calling account.</p>
+        /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services Region for the calling account.</p>
         pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_values.unwrap_or_default();
             v.push(input.into());
             self.tag_values = Some(v);
             self
         }
-        /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services
-        /// Region for the calling account.</p>
+        /// <p>A list of all tag values for the specified key currently used in the specified Amazon Web Services Region for the calling account.</p>
         pub fn set_tag_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -308,17 +272,13 @@ impl GetTagValuesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagKeysOutput {
-    /// <p>A string that indicates that there is more data available than this
-    /// response contains. To receive the next part of the response, specify this response value
-    /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+    /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub pagination_token: std::option::Option<std::string::String>,
     /// <p>A list of all tag keys in the Amazon Web Services account.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetTagKeysOutput {
-    /// <p>A string that indicates that there is more data available than this
-    /// response contains. To receive the next part of the response, specify this response value
-    /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+    /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
@@ -345,16 +305,12 @@ pub mod get_tag_keys_output {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>A string that indicates that there is more data available than this
-        /// response contains. To receive the next part of the response, specify this response value
-        /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+        /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.pagination_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that there is more data available than this
-        /// response contains. To receive the next part of the response, specify this response value
-        /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+        /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -401,24 +357,18 @@ impl GetTagKeysOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcesOutput {
-    /// <p>A string that indicates that there is more data available than this
-    /// response contains. To receive the next part of the response, specify this response value
-    /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+    /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub pagination_token: std::option::Option<std::string::String>,
-    /// <p>A list of resource ARNs and the tags (keys and values) associated with
-    /// each.</p>
+    /// <p>A list of resource ARNs and the tags (keys and values) associated with each.</p>
     pub resource_tag_mapping_list:
         std::option::Option<std::vec::Vec<crate::model::ResourceTagMapping>>,
 }
 impl GetResourcesOutput {
-    /// <p>A string that indicates that there is more data available than this
-    /// response contains. To receive the next part of the response, specify this response value
-    /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+    /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
-    /// <p>A list of resource ARNs and the tags (keys and values) associated with
-    /// each.</p>
+    /// <p>A list of resource ARNs and the tags (keys and values) associated with each.</p>
     pub fn resource_tag_mapping_list(
         &self,
     ) -> std::option::Option<&[crate::model::ResourceTagMapping]> {
@@ -444,16 +394,12 @@ pub mod get_resources_output {
             std::option::Option<std::vec::Vec<crate::model::ResourceTagMapping>>,
     }
     impl Builder {
-        /// <p>A string that indicates that there is more data available than this
-        /// response contains. To receive the next part of the response, specify this response value
-        /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+        /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.pagination_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that there is more data available than this
-        /// response contains. To receive the next part of the response, specify this response value
-        /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+        /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -465,19 +411,17 @@ pub mod get_resources_output {
         ///
         /// To override the contents of this collection use [`set_resource_tag_mapping_list`](Self::set_resource_tag_mapping_list).
         ///
-        /// <p>A list of resource ARNs and the tags (keys and values) associated with
-        /// each.</p>
+        /// <p>A list of resource ARNs and the tags (keys and values) associated with each.</p>
         pub fn resource_tag_mapping_list(
             mut self,
-            input: impl Into<crate::model::ResourceTagMapping>,
+            input: crate::model::ResourceTagMapping,
         ) -> Self {
             let mut v = self.resource_tag_mapping_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tag_mapping_list = Some(v);
             self
         }
-        /// <p>A list of resource ARNs and the tags (keys and values) associated with
-        /// each.</p>
+        /// <p>A list of resource ARNs and the tags (keys and values) associated with each.</p>
         pub fn set_resource_tag_mapping_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTagMapping>>,
@@ -507,9 +451,7 @@ impl GetResourcesOutput {
 pub struct GetComplianceSummaryOutput {
     /// <p>A table that shows counts of noncompliant resources.</p>
     pub summary_list: std::option::Option<std::vec::Vec<crate::model::Summary>>,
-    /// <p>A string that indicates that there is more data available than this
-    /// response contains. To receive the next part of the response, specify this response value
-    /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+    /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub pagination_token: std::option::Option<std::string::String>,
 }
 impl GetComplianceSummaryOutput {
@@ -517,9 +459,7 @@ impl GetComplianceSummaryOutput {
     pub fn summary_list(&self) -> std::option::Option<&[crate::model::Summary]> {
         self.summary_list.as_deref()
     }
-    /// <p>A string that indicates that there is more data available than this
-    /// response contains. To receive the next part of the response, specify this response value
-    /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+    /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
@@ -547,9 +487,9 @@ pub mod get_compliance_summary_output {
         /// To override the contents of this collection use [`set_summary_list`](Self::set_summary_list).
         ///
         /// <p>A table that shows counts of noncompliant resources.</p>
-        pub fn summary_list(mut self, input: impl Into<crate::model::Summary>) -> Self {
+        pub fn summary_list(mut self, input: crate::model::Summary) -> Self {
             let mut v = self.summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summary_list = Some(v);
             self
         }
@@ -561,16 +501,12 @@ pub mod get_compliance_summary_output {
             self.summary_list = input;
             self
         }
-        /// <p>A string that indicates that there is more data available than this
-        /// response contains. To receive the next part of the response, specify this response value
-        /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+        /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.pagination_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that there is more data available than this
-        /// response contains. To receive the next part of the response, specify this response value
-        /// as the <code>PaginationToken</code> value in the request for the next page.</p>
+        /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -601,25 +537,10 @@ pub struct DescribeReportCreationOutput {
     /// <p>Reports the status of the operation.</p>
     /// <p>The operation status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code> - Report creation is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCEEDED</code> - Report creation is complete. You can open the report
-    /// from the Amazon S3 bucket that you specified when you ran
-    /// <code>StartReportCreation</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not
-    /// accessible. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NO REPORT</code> - No report was generated in the last 90 days.</p>
-    /// </li>
+    /// <li> <p> <code>RUNNING</code> - Report creation is in progress.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible. </p> </li>
+    /// <li> <p> <code>NO REPORT</code> - No report was generated in the last 90 days.</p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>The path to the Amazon S3 bucket where the report was stored on creation.</p>
@@ -633,25 +554,10 @@ impl DescribeReportCreationOutput {
     /// <p>Reports the status of the operation.</p>
     /// <p>The operation status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code> - Report creation is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCEEDED</code> - Report creation is complete. You can open the report
-    /// from the Amazon S3 bucket that you specified when you ran
-    /// <code>StartReportCreation</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not
-    /// accessible. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NO REPORT</code> - No report was generated in the last 90 days.</p>
-    /// </li>
+    /// <li> <p> <code>RUNNING</code> - Report creation is in progress.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible. </p> </li>
+    /// <li> <p> <code>NO REPORT</code> - No report was generated in the last 90 days.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -694,25 +600,10 @@ pub mod describe_report_creation_output {
         /// <p>Reports the status of the operation.</p>
         /// <p>The operation status can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> - Report creation is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCEEDED</code> - Report creation is complete. You can open the report
-        /// from the Amazon S3 bucket that you specified when you ran
-        /// <code>StartReportCreation</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not
-        /// accessible. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NO REPORT</code> - No report was generated in the last 90 days.</p>
-        /// </li>
+        /// <li> <p> <code>RUNNING</code> - Report creation is in progress.</p> </li>
+        /// <li> <p> <code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p> </li>
+        /// <li> <p> <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible. </p> </li>
+        /// <li> <p> <code>NO REPORT</code> - No report was generated in the last 90 days.</p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -721,25 +612,10 @@ pub mod describe_report_creation_output {
         /// <p>Reports the status of the operation.</p>
         /// <p>The operation status can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> - Report creation is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCEEDED</code> - Report creation is complete. You can open the report
-        /// from the Amazon S3 bucket that you specified when you ran
-        /// <code>StartReportCreation</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not
-        /// accessible. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NO REPORT</code> - No report was generated in the last 90 days.</p>
-        /// </li>
+        /// <li> <p> <code>RUNNING</code> - Report creation is in progress.</p> </li>
+        /// <li> <p> <code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p> </li>
+        /// <li> <p> <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible. </p> </li>
+        /// <li> <p> <code>NO REPORT</code> - No report was generated in the last 90 days.</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;

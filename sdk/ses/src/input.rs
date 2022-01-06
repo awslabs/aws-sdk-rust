@@ -12,16 +12,9 @@ pub mod clone_receipt_rule_set_input {
     impl Builder {
         /// <p>The name of the rule set to create. The name must:</p>
         /// <ul>
-        /// <li>
-        /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
-        /// underscores (_), or dashes (-).</p>
-        /// </li>
-        /// <li>
-        /// <p>Start and end with a letter or number.</p>
-        /// </li>
-        /// <li>
-        /// <p>Contain less than 64 characters.</p>
-        /// </li>
+        /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+        /// <li> <p>Start and end with a letter or number.</p> </li>
+        /// <li> <p>Contain less than 64 characters.</p> </li>
         /// </ul>
         pub fn rule_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_set_name = Some(input.into());
@@ -29,16 +22,9 @@ pub mod clone_receipt_rule_set_input {
         }
         /// <p>The name of the rule set to create. The name must:</p>
         /// <ul>
-        /// <li>
-        /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
-        /// underscores (_), or dashes (-).</p>
-        /// </li>
-        /// <li>
-        /// <p>Start and end with a letter or number.</p>
-        /// </li>
-        /// <li>
-        /// <p>Contain less than 64 characters.</p>
-        /// </li>
+        /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+        /// <li> <p>Start and end with a letter or number.</p> </li>
+        /// <li> <p>Contain less than 64 characters.</p> </li>
         /// </ul>
         pub fn set_rule_set_name(
             mut self,
@@ -77,7 +63,7 @@ pub mod clone_receipt_rule_set_input {
 #[doc(hidden)]
 pub type CloneReceiptRuleSetInputOperationOutputAlias = crate::operation::CloneReceiptRuleSet;
 #[doc(hidden)]
-pub type CloneReceiptRuleSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CloneReceiptRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CloneReceiptRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`CloneReceiptRuleSet`](crate::operation::CloneReceiptRuleSet)>
     #[allow(clippy::let_and_return)]
@@ -88,7 +74,7 @@ impl CloneReceiptRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CloneReceiptRuleSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -170,7 +156,7 @@ impl CloneReceiptRuleSetInput {
             "CloneReceiptRuleSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -231,7 +217,7 @@ pub mod create_configuration_set_input {
 #[doc(hidden)]
 pub type CreateConfigurationSetInputOperationOutputAlias = crate::operation::CreateConfigurationSet;
 #[doc(hidden)]
-pub type CreateConfigurationSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateConfigurationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSet`](crate::operation::CreateConfigurationSet)>
     #[allow(clippy::let_and_return)]
@@ -242,7 +228,7 @@ impl CreateConfigurationSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConfigurationSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -324,7 +310,7 @@ impl CreateConfigurationSetInput {
             "CreateConfigurationSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -357,14 +343,12 @@ pub mod create_configuration_set_event_destination_input {
         pub(crate) event_destination: std::option::Option<crate::model::EventDestination>,
     }
     impl Builder {
-        /// <p>The name of the configuration set that the event destination should be associated
-        /// with.</p>
+        /// <p>The name of the configuration set that the event destination should be associated with.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration set that the event destination should be associated
-        /// with.</p>
+        /// <p>The name of the configuration set that the event destination should be associated with.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -372,14 +356,12 @@ pub mod create_configuration_set_event_destination_input {
             self.configuration_set_name = input;
             self
         }
-        /// <p>An object that describes the AWS service that email sending event information will
-        /// be published to.</p>
+        /// <p>An object that describes the AWS service that email sending event information will be published to.</p>
         pub fn event_destination(mut self, input: crate::model::EventDestination) -> Self {
             self.event_destination = Some(input);
             self
         }
-        /// <p>An object that describes the AWS service that email sending event information will
-        /// be published to.</p>
+        /// <p>An object that describes the AWS service that email sending event information will be published to.</p>
         pub fn set_event_destination(
             mut self,
             input: std::option::Option<crate::model::EventDestination>,
@@ -406,7 +388,7 @@ pub type CreateConfigurationSetEventDestinationInputOperationOutputAlias =
     crate::operation::CreateConfigurationSetEventDestination;
 #[doc(hidden)]
 pub type CreateConfigurationSetEventDestinationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSetEventDestination`](crate::operation::CreateConfigurationSetEventDestination)>
     #[allow(clippy::let_and_return)]
@@ -417,7 +399,7 @@ impl CreateConfigurationSetEventDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConfigurationSetEventDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -498,7 +480,7 @@ impl CreateConfigurationSetEventDestinationInput {
             "CreateConfigurationSetEventDestination",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -531,14 +513,12 @@ pub mod create_configuration_set_tracking_options_input {
         pub(crate) tracking_options: std::option::Option<crate::model::TrackingOptions>,
     }
     impl Builder {
-        /// <p>The name of the configuration set that the tracking options should be associated
-        /// with.</p>
+        /// <p>The name of the configuration set that the tracking options should be associated with.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration set that the tracking options should be associated
-        /// with.</p>
+        /// <p>The name of the configuration set that the tracking options should be associated with.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -546,20 +526,14 @@ pub mod create_configuration_set_tracking_options_input {
             self.configuration_set_name = input;
             self
         }
-        /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This
-        /// domain captures open and click events generated by Amazon SES emails.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-        /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
+        /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This domain captures open and click events generated by Amazon SES emails.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn tracking_options(mut self, input: crate::model::TrackingOptions) -> Self {
             self.tracking_options = Some(input);
             self
         }
-        /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This
-        /// domain captures open and click events generated by Amazon SES emails.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-        /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
+        /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This domain captures open and click events generated by Amazon SES emails.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn set_tracking_options(
             mut self,
             input: std::option::Option<crate::model::TrackingOptions>,
@@ -586,7 +560,7 @@ pub type CreateConfigurationSetTrackingOptionsInputOperationOutputAlias =
     crate::operation::CreateConfigurationSetTrackingOptions;
 #[doc(hidden)]
 pub type CreateConfigurationSetTrackingOptionsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateConfigurationSetTrackingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`CreateConfigurationSetTrackingOptions`](crate::operation::CreateConfigurationSetTrackingOptions)>
     #[allow(clippy::let_and_return)]
@@ -597,7 +571,7 @@ impl CreateConfigurationSetTrackingOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateConfigurationSetTrackingOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -678,7 +652,7 @@ impl CreateConfigurationSetTrackingOptionsInput {
             "CreateConfigurationSetTrackingOptions",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -754,18 +728,12 @@ pub mod create_custom_verification_email_template_input {
             self.template_subject = input;
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less
-        /// than 10 MB. The message body may contain HTML, with some limitations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn template_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_content = Some(input.into());
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less
-        /// than 10 MB. The message body may contain HTML, with some limitations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn set_template_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -773,14 +741,12 @@ pub mod create_custom_verification_email_template_input {
             self.template_content = input;
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
         pub fn success_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.success_redirection_url = Some(input.into());
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
         pub fn set_success_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -788,14 +754,12 @@ pub mod create_custom_verification_email_template_input {
             self.success_redirection_url = input;
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is not successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
         pub fn failure_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_redirection_url = Some(input.into());
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is not successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
         pub fn set_failure_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -826,7 +790,7 @@ pub type CreateCustomVerificationEmailTemplateInputOperationOutputAlias =
     crate::operation::CreateCustomVerificationEmailTemplate;
 #[doc(hidden)]
 pub type CreateCustomVerificationEmailTemplateInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomVerificationEmailTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomVerificationEmailTemplate`](crate::operation::CreateCustomVerificationEmailTemplate)>
     #[allow(clippy::let_and_return)]
@@ -837,7 +801,7 @@ impl CreateCustomVerificationEmailTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomVerificationEmailTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -918,7 +882,7 @@ impl CreateCustomVerificationEmailTemplateInput {
             "CreateCustomVerificationEmailTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -950,14 +914,12 @@ pub mod create_receipt_filter_input {
         pub(crate) filter: std::option::Option<crate::model::ReceiptFilter>,
     }
     impl Builder {
-        /// <p>A data structure that describes the IP address filter to create, which consists of a
-        /// name, an IP address range, and whether to allow or block mail from it.</p>
+        /// <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
         pub fn filter(mut self, input: crate::model::ReceiptFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>A data structure that describes the IP address filter to create, which consists of a
-        /// name, an IP address range, and whether to allow or block mail from it.</p>
+        /// <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ReceiptFilter>,
@@ -981,7 +943,7 @@ pub mod create_receipt_filter_input {
 #[doc(hidden)]
 pub type CreateReceiptFilterInputOperationOutputAlias = crate::operation::CreateReceiptFilter;
 #[doc(hidden)]
-pub type CreateReceiptFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateReceiptFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReceiptFilterInput {
     /// Consumes the builder and constructs an Operation<[`CreateReceiptFilter`](crate::operation::CreateReceiptFilter)>
     #[allow(clippy::let_and_return)]
@@ -992,7 +954,7 @@ impl CreateReceiptFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateReceiptFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1072,7 +1034,7 @@ impl CreateReceiptFilterInput {
             "CreateReceiptFilter",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1119,28 +1081,22 @@ pub mod create_receipt_rule_input {
             self.rule_set_name = input;
             self
         }
-        /// <p>The name of an existing rule after which the new rule will be placed. If this
-        /// parameter is null, the new rule will be inserted at the beginning of the rule
-        /// list.</p>
+        /// <p>The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule will be inserted at the beginning of the rule list.</p>
         pub fn after(mut self, input: impl Into<std::string::String>) -> Self {
             self.after = Some(input.into());
             self
         }
-        /// <p>The name of an existing rule after which the new rule will be placed. If this
-        /// parameter is null, the new rule will be inserted at the beginning of the rule
-        /// list.</p>
+        /// <p>The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule will be inserted at the beginning of the rule list.</p>
         pub fn set_after(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.after = input;
             self
         }
-        /// <p>A data structure that contains the specified rule's name, actions, recipients,
-        /// domains, enabled status, scan status, and TLS policy.</p>
+        /// <p>A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.</p>
         pub fn rule(mut self, input: crate::model::ReceiptRule) -> Self {
             self.rule = Some(input);
             self
         }
-        /// <p>A data structure that contains the specified rule's name, actions, recipients,
-        /// domains, enabled status, scan status, and TLS policy.</p>
+        /// <p>A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.</p>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::ReceiptRule>) -> Self {
             self.rule = input;
             self
@@ -1163,7 +1119,7 @@ pub mod create_receipt_rule_input {
 #[doc(hidden)]
 pub type CreateReceiptRuleInputOperationOutputAlias = crate::operation::CreateReceiptRule;
 #[doc(hidden)]
-pub type CreateReceiptRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateReceiptRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReceiptRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateReceiptRule`](crate::operation::CreateReceiptRule)>
     #[allow(clippy::let_and_return)]
@@ -1174,7 +1130,7 @@ impl CreateReceiptRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateReceiptRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1254,7 +1210,7 @@ impl CreateReceiptRuleInput {
             "CreateReceiptRule",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1288,16 +1244,9 @@ pub mod create_receipt_rule_set_input {
     impl Builder {
         /// <p>The name of the rule set to create. The name must:</p>
         /// <ul>
-        /// <li>
-        /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
-        /// underscores (_), or dashes (-).</p>
-        /// </li>
-        /// <li>
-        /// <p>Start and end with a letter or number.</p>
-        /// </li>
-        /// <li>
-        /// <p>Contain less than 64 characters.</p>
-        /// </li>
+        /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+        /// <li> <p>Start and end with a letter or number.</p> </li>
+        /// <li> <p>Contain less than 64 characters.</p> </li>
         /// </ul>
         pub fn rule_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_set_name = Some(input.into());
@@ -1305,16 +1254,9 @@ pub mod create_receipt_rule_set_input {
         }
         /// <p>The name of the rule set to create. The name must:</p>
         /// <ul>
-        /// <li>
-        /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
-        /// underscores (_), or dashes (-).</p>
-        /// </li>
-        /// <li>
-        /// <p>Start and end with a letter or number.</p>
-        /// </li>
-        /// <li>
-        /// <p>Contain less than 64 characters.</p>
-        /// </li>
+        /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+        /// <li> <p>Start and end with a letter or number.</p> </li>
+        /// <li> <p>Contain less than 64 characters.</p> </li>
         /// </ul>
         pub fn set_rule_set_name(
             mut self,
@@ -1339,7 +1281,7 @@ pub mod create_receipt_rule_set_input {
 #[doc(hidden)]
 pub type CreateReceiptRuleSetInputOperationOutputAlias = crate::operation::CreateReceiptRuleSet;
 #[doc(hidden)]
-pub type CreateReceiptRuleSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateReceiptRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReceiptRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`CreateReceiptRuleSet`](crate::operation::CreateReceiptRuleSet)>
     #[allow(clippy::let_and_return)]
@@ -1350,7 +1292,7 @@ impl CreateReceiptRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateReceiptRuleSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1432,7 +1374,7 @@ impl CreateReceiptRuleSetInput {
             "CreateReceiptRuleSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1464,14 +1406,12 @@ pub mod create_template_input {
         pub(crate) template: std::option::Option<crate::model::Template>,
     }
     impl Builder {
-        /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
-        /// part.</p>
+        /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
         pub fn template(mut self, input: crate::model::Template) -> Self {
             self.template = Some(input);
             self
         }
-        /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
-        /// part.</p>
+        /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
         pub fn set_template(mut self, input: std::option::Option<crate::model::Template>) -> Self {
             self.template = input;
             self
@@ -1492,7 +1432,7 @@ pub mod create_template_input {
 #[doc(hidden)]
 pub type CreateTemplateInputOperationOutputAlias = crate::operation::CreateTemplate;
 #[doc(hidden)]
-pub type CreateTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateTemplate`](crate::operation::CreateTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1503,7 +1443,7 @@ impl CreateTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1583,7 +1523,7 @@ impl CreateTemplateInput {
             "CreateTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1644,7 +1584,7 @@ pub mod delete_configuration_set_input {
 #[doc(hidden)]
 pub type DeleteConfigurationSetInputOperationOutputAlias = crate::operation::DeleteConfigurationSet;
 #[doc(hidden)]
-pub type DeleteConfigurationSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConfigurationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSet`](crate::operation::DeleteConfigurationSet)>
     #[allow(clippy::let_and_return)]
@@ -1655,7 +1595,7 @@ impl DeleteConfigurationSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1737,7 +1677,7 @@ impl DeleteConfigurationSetInput {
             "DeleteConfigurationSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1815,7 +1755,7 @@ pub type DeleteConfigurationSetEventDestinationInputOperationOutputAlias =
     crate::operation::DeleteConfigurationSetEventDestination;
 #[doc(hidden)]
 pub type DeleteConfigurationSetEventDestinationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSetEventDestination`](crate::operation::DeleteConfigurationSetEventDestination)>
     #[allow(clippy::let_and_return)]
@@ -1826,7 +1766,7 @@ impl DeleteConfigurationSetEventDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationSetEventDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1907,7 +1847,7 @@ impl DeleteConfigurationSetEventDestinationInput {
             "DeleteConfigurationSetEventDestination",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1939,14 +1879,12 @@ pub mod delete_configuration_set_tracking_options_input {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the configuration set from which you want to delete the tracking
-        /// options.</p>
+        /// <p>The name of the configuration set from which you want to delete the tracking options.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration set from which you want to delete the tracking
-        /// options.</p>
+        /// <p>The name of the configuration set from which you want to delete the tracking options.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1972,7 +1910,7 @@ pub type DeleteConfigurationSetTrackingOptionsInputOperationOutputAlias =
     crate::operation::DeleteConfigurationSetTrackingOptions;
 #[doc(hidden)]
 pub type DeleteConfigurationSetTrackingOptionsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConfigurationSetTrackingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConfigurationSetTrackingOptions`](crate::operation::DeleteConfigurationSetTrackingOptions)>
     #[allow(clippy::let_and_return)]
@@ -1983,7 +1921,7 @@ impl DeleteConfigurationSetTrackingOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationSetTrackingOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2064,7 +2002,7 @@ impl DeleteConfigurationSetTrackingOptionsInput {
             "DeleteConfigurationSetTrackingOptions",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2127,7 +2065,7 @@ pub type DeleteCustomVerificationEmailTemplateInputOperationOutputAlias =
     crate::operation::DeleteCustomVerificationEmailTemplate;
 #[doc(hidden)]
 pub type DeleteCustomVerificationEmailTemplateInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomVerificationEmailTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomVerificationEmailTemplate`](crate::operation::DeleteCustomVerificationEmailTemplate)>
     #[allow(clippy::let_and_return)]
@@ -2138,7 +2076,7 @@ impl DeleteCustomVerificationEmailTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomVerificationEmailTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2219,7 +2157,7 @@ impl DeleteCustomVerificationEmailTemplateInput {
             "DeleteCustomVerificationEmailTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2277,7 +2215,7 @@ pub mod delete_identity_input {
 #[doc(hidden)]
 pub type DeleteIdentityInputOperationOutputAlias = crate::operation::DeleteIdentity;
 #[doc(hidden)]
-pub type DeleteIdentityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteIdentityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIdentityInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIdentity`](crate::operation::DeleteIdentity)>
     #[allow(clippy::let_and_return)]
@@ -2288,7 +2226,7 @@ impl DeleteIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIdentity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2368,7 +2306,7 @@ impl DeleteIdentityInput {
             "DeleteIdentity",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2401,19 +2339,13 @@ pub mod delete_identity_policy_input {
         pub(crate) policy_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identity that is associated with the policy that you want to delete. You can
-        /// specify the identity by using its name or by using its Amazon Resource Name (ARN).
-        /// Examples: <code>user@example.com</code>, <code>example.com</code>,
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         /// <p>To successfully call this API, you must own the identity.</p>
         pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity = Some(input.into());
             self
         }
-        /// <p>The identity that is associated with the policy that you want to delete. You can
-        /// specify the identity by using its name or by using its Amazon Resource Name (ARN).
-        /// Examples: <code>user@example.com</code>, <code>example.com</code>,
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         /// <p>To successfully call this API, you must own the identity.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
@@ -2446,7 +2378,7 @@ pub mod delete_identity_policy_input {
 #[doc(hidden)]
 pub type DeleteIdentityPolicyInputOperationOutputAlias = crate::operation::DeleteIdentityPolicy;
 #[doc(hidden)]
-pub type DeleteIdentityPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteIdentityPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIdentityPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIdentityPolicy`](crate::operation::DeleteIdentityPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2457,7 +2389,7 @@ impl DeleteIdentityPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIdentityPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2539,7 +2471,7 @@ impl DeleteIdentityPolicyInput {
             "DeleteIdentityPolicy",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2597,7 +2529,7 @@ pub mod delete_receipt_filter_input {
 #[doc(hidden)]
 pub type DeleteReceiptFilterInputOperationOutputAlias = crate::operation::DeleteReceiptFilter;
 #[doc(hidden)]
-pub type DeleteReceiptFilterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteReceiptFilterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReceiptFilterInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReceiptFilter`](crate::operation::DeleteReceiptFilter)>
     #[allow(clippy::let_and_return)]
@@ -2608,7 +2540,7 @@ impl DeleteReceiptFilterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReceiptFilter,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2688,7 +2620,7 @@ impl DeleteReceiptFilterInput {
             "DeleteReceiptFilter",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2761,7 +2693,7 @@ pub mod delete_receipt_rule_input {
 #[doc(hidden)]
 pub type DeleteReceiptRuleInputOperationOutputAlias = crate::operation::DeleteReceiptRule;
 #[doc(hidden)]
-pub type DeleteReceiptRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteReceiptRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReceiptRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReceiptRule`](crate::operation::DeleteReceiptRule)>
     #[allow(clippy::let_and_return)]
@@ -2772,7 +2704,7 @@ impl DeleteReceiptRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReceiptRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2852,7 +2784,7 @@ impl DeleteReceiptRuleInput {
             "DeleteReceiptRule",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2913,7 +2845,7 @@ pub mod delete_receipt_rule_set_input {
 #[doc(hidden)]
 pub type DeleteReceiptRuleSetInputOperationOutputAlias = crate::operation::DeleteReceiptRuleSet;
 #[doc(hidden)]
-pub type DeleteReceiptRuleSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteReceiptRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReceiptRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReceiptRuleSet`](crate::operation::DeleteReceiptRuleSet)>
     #[allow(clippy::let_and_return)]
@@ -2924,7 +2856,7 @@ impl DeleteReceiptRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReceiptRuleSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3006,7 +2938,7 @@ impl DeleteReceiptRuleSetInput {
             "DeleteReceiptRuleSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3067,7 +2999,7 @@ pub mod delete_template_input {
 #[doc(hidden)]
 pub type DeleteTemplateInputOperationOutputAlias = crate::operation::DeleteTemplate;
 #[doc(hidden)]
-pub type DeleteTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTemplate`](crate::operation::DeleteTemplate)>
     #[allow(clippy::let_and_return)]
@@ -3078,7 +3010,7 @@ impl DeleteTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3158,7 +3090,7 @@ impl DeleteTemplateInput {
             "DeleteTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3220,7 +3152,7 @@ pub mod delete_verified_email_address_input {
 pub type DeleteVerifiedEmailAddressInputOperationOutputAlias =
     crate::operation::DeleteVerifiedEmailAddress;
 #[doc(hidden)]
-pub type DeleteVerifiedEmailAddressInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVerifiedEmailAddressInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVerifiedEmailAddressInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVerifiedEmailAddress`](crate::operation::DeleteVerifiedEmailAddress)>
     #[allow(clippy::let_and_return)]
@@ -3231,7 +3163,7 @@ impl DeleteVerifiedEmailAddressInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVerifiedEmailAddress,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3312,7 +3244,7 @@ impl DeleteVerifiedEmailAddressInput {
             "DeleteVerifiedEmailAddress",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3357,7 +3289,8 @@ pub mod describe_active_receipt_rule_set_input {
 pub type DescribeActiveReceiptRuleSetInputOperationOutputAlias =
     crate::operation::DescribeActiveReceiptRuleSet;
 #[doc(hidden)]
-pub type DescribeActiveReceiptRuleSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeActiveReceiptRuleSetInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeActiveReceiptRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeActiveReceiptRuleSet`](crate::operation::DescribeActiveReceiptRuleSet)>
     #[allow(clippy::let_and_return)]
@@ -3368,7 +3301,7 @@ impl DescribeActiveReceiptRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeActiveReceiptRuleSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3449,7 +3382,7 @@ impl DescribeActiveReceiptRuleSetInput {
             "DescribeActiveReceiptRuleSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3495,10 +3428,10 @@ pub mod describe_configuration_set_input {
         /// <p>A list of configuration set attributes to return.</p>
         pub fn configuration_set_attribute_names(
             mut self,
-            input: impl Into<crate::model::ConfigurationSetAttribute>,
+            input: crate::model::ConfigurationSetAttribute,
         ) -> Self {
             let mut v = self.configuration_set_attribute_names.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.configuration_set_attribute_names = Some(v);
             self
         }
@@ -3528,7 +3461,7 @@ pub mod describe_configuration_set_input {
 pub type DescribeConfigurationSetInputOperationOutputAlias =
     crate::operation::DescribeConfigurationSet;
 #[doc(hidden)]
-pub type DescribeConfigurationSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConfigurationSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConfigurationSetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConfigurationSet`](crate::operation::DescribeConfigurationSet)>
     #[allow(clippy::let_and_return)]
@@ -3539,7 +3472,7 @@ impl DescribeConfigurationSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConfigurationSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3621,7 +3554,7 @@ impl DescribeConfigurationSetInput {
             "DescribeConfigurationSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3694,7 +3627,7 @@ pub mod describe_receipt_rule_input {
 #[doc(hidden)]
 pub type DescribeReceiptRuleInputOperationOutputAlias = crate::operation::DescribeReceiptRule;
 #[doc(hidden)]
-pub type DescribeReceiptRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeReceiptRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReceiptRuleInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReceiptRule`](crate::operation::DescribeReceiptRule)>
     #[allow(clippy::let_and_return)]
@@ -3705,7 +3638,7 @@ impl DescribeReceiptRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReceiptRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3785,7 +3718,7 @@ impl DescribeReceiptRuleInput {
             "DescribeReceiptRule",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3846,7 +3779,7 @@ pub mod describe_receipt_rule_set_input {
 #[doc(hidden)]
 pub type DescribeReceiptRuleSetInputOperationOutputAlias = crate::operation::DescribeReceiptRuleSet;
 #[doc(hidden)]
-pub type DescribeReceiptRuleSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeReceiptRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReceiptRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReceiptRuleSet`](crate::operation::DescribeReceiptRuleSet)>
     #[allow(clippy::let_and_return)]
@@ -3857,7 +3790,7 @@ impl DescribeReceiptRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReceiptRuleSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3939,7 +3872,7 @@ impl DescribeReceiptRuleSetInput {
             "DescribeReceiptRuleSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3984,7 +3917,7 @@ pub mod get_account_sending_enabled_input {
 pub type GetAccountSendingEnabledInputOperationOutputAlias =
     crate::operation::GetAccountSendingEnabled;
 #[doc(hidden)]
-pub type GetAccountSendingEnabledInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAccountSendingEnabledInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccountSendingEnabledInput {
     /// Consumes the builder and constructs an Operation<[`GetAccountSendingEnabled`](crate::operation::GetAccountSendingEnabled)>
     #[allow(clippy::let_and_return)]
@@ -3995,7 +3928,7 @@ impl GetAccountSendingEnabledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccountSendingEnabled,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4077,7 +4010,7 @@ impl GetAccountSendingEnabledInput {
             "GetAccountSendingEnabled",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4131,7 +4064,8 @@ pub mod get_custom_verification_email_template_input {
 pub type GetCustomVerificationEmailTemplateInputOperationOutputAlias =
     crate::operation::GetCustomVerificationEmailTemplate;
 #[doc(hidden)]
-pub type GetCustomVerificationEmailTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCustomVerificationEmailTemplateInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetCustomVerificationEmailTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetCustomVerificationEmailTemplate`](crate::operation::GetCustomVerificationEmailTemplate)>
     #[allow(clippy::let_and_return)]
@@ -4142,7 +4076,7 @@ impl GetCustomVerificationEmailTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCustomVerificationEmailTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4223,7 +4157,7 @@ impl GetCustomVerificationEmailTemplateInput {
             "GetCustomVerificationEmailTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4291,7 +4225,7 @@ pub mod get_identity_dkim_attributes_input {
 pub type GetIdentityDkimAttributesInputOperationOutputAlias =
     crate::operation::GetIdentityDkimAttributes;
 #[doc(hidden)]
-pub type GetIdentityDkimAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIdentityDkimAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityDkimAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityDkimAttributes`](crate::operation::GetIdentityDkimAttributes)>
     #[allow(clippy::let_and_return)]
@@ -4302,7 +4236,7 @@ impl GetIdentityDkimAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityDkimAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4384,7 +4318,7 @@ impl GetIdentityDkimAttributesInput {
             "GetIdentityDkimAttributes",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4453,7 +4387,7 @@ pub type GetIdentityMailFromDomainAttributesInputOperationOutputAlias =
     crate::operation::GetIdentityMailFromDomainAttributes;
 #[doc(hidden)]
 pub type GetIdentityMailFromDomainAttributesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityMailFromDomainAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityMailFromDomainAttributes`](crate::operation::GetIdentityMailFromDomainAttributes)>
     #[allow(clippy::let_and_return)]
@@ -4464,7 +4398,7 @@ impl GetIdentityMailFromDomainAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityMailFromDomainAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4545,7 +4479,7 @@ impl GetIdentityMailFromDomainAttributesInput {
             "GetIdentityMailFromDomainAttributes",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4581,20 +4515,14 @@ pub mod get_identity_notification_attributes_input {
         ///
         /// To override the contents of this collection use [`set_identities`](Self::set_identities).
         ///
-        /// <p>A list of one or more identities. You can specify an identity by using its name or by
-        /// using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
-        /// <code>example.com</code>,
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         pub fn identities(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identities.unwrap_or_default();
             v.push(input.into());
             self.identities = Some(v);
             self
         }
-        /// <p>A list of one or more identities. You can specify an identity by using its name or by
-        /// using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
-        /// <code>example.com</code>,
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         pub fn set_identities(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4619,7 +4547,8 @@ pub mod get_identity_notification_attributes_input {
 pub type GetIdentityNotificationAttributesInputOperationOutputAlias =
     crate::operation::GetIdentityNotificationAttributes;
 #[doc(hidden)]
-pub type GetIdentityNotificationAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIdentityNotificationAttributesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityNotificationAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityNotificationAttributes`](crate::operation::GetIdentityNotificationAttributes)>
     #[allow(clippy::let_and_return)]
@@ -4630,7 +4559,7 @@ impl GetIdentityNotificationAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityNotificationAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4711,7 +4640,7 @@ impl GetIdentityNotificationAttributesInput {
             "GetIdentityNotificationAttributes",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4744,19 +4673,13 @@ pub mod get_identity_policies_input {
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The identity for which the policies will be retrieved. You can specify an identity by
-        /// using its name or by using its Amazon Resource Name (ARN). Examples:
-        /// <code>user@example.com</code>, <code>example.com</code>,
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>The identity for which the policies will be retrieved. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         /// <p>To successfully call this API, you must own the identity.</p>
         pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity = Some(input.into());
             self
         }
-        /// <p>The identity for which the policies will be retrieved. You can specify an identity by
-        /// using its name or by using its Amazon Resource Name (ARN). Examples:
-        /// <code>user@example.com</code>, <code>example.com</code>,
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>The identity for which the policies will be retrieved. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         /// <p>To successfully call this API, you must own the identity.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
@@ -4766,18 +4689,14 @@ pub mod get_identity_policies_input {
         ///
         /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
         ///
-        /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20
-        /// policies at a time. If you do not know the names of the policies that are attached to
-        /// the identity, you can use <code>ListIdentityPolicies</code>.</p>
+        /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
             v.push(input.into());
             self.policy_names = Some(v);
             self
         }
-        /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20
-        /// policies at a time. If you do not know the names of the policies that are attached to
-        /// the identity, you can use <code>ListIdentityPolicies</code>.</p>
+        /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
         pub fn set_policy_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4802,7 +4721,7 @@ pub mod get_identity_policies_input {
 #[doc(hidden)]
 pub type GetIdentityPoliciesInputOperationOutputAlias = crate::operation::GetIdentityPolicies;
 #[doc(hidden)]
-pub type GetIdentityPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIdentityPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityPolicies`](crate::operation::GetIdentityPolicies)>
     #[allow(clippy::let_and_return)]
@@ -4813,7 +4732,7 @@ impl GetIdentityPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4893,7 +4812,7 @@ impl GetIdentityPoliciesInput {
             "GetIdentityPolicies",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4961,7 +4880,8 @@ pub mod get_identity_verification_attributes_input {
 pub type GetIdentityVerificationAttributesInputOperationOutputAlias =
     crate::operation::GetIdentityVerificationAttributes;
 #[doc(hidden)]
-pub type GetIdentityVerificationAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIdentityVerificationAttributesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityVerificationAttributesInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityVerificationAttributes`](crate::operation::GetIdentityVerificationAttributes)>
     #[allow(clippy::let_and_return)]
@@ -4972,7 +4892,7 @@ impl GetIdentityVerificationAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityVerificationAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5053,7 +4973,7 @@ impl GetIdentityVerificationAttributesInput {
             "GetIdentityVerificationAttributes",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5097,7 +5017,7 @@ pub mod get_send_quota_input {
 #[doc(hidden)]
 pub type GetSendQuotaInputOperationOutputAlias = crate::operation::GetSendQuota;
 #[doc(hidden)]
-pub type GetSendQuotaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSendQuotaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSendQuotaInput {
     /// Consumes the builder and constructs an Operation<[`GetSendQuota`](crate::operation::GetSendQuota)>
     #[allow(clippy::let_and_return)]
@@ -5108,7 +5028,7 @@ impl GetSendQuotaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSendQuota,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5187,7 +5107,7 @@ impl GetSendQuotaInput {
             "GetSendQuota",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5223,7 +5143,7 @@ pub mod get_send_statistics_input {
 #[doc(hidden)]
 pub type GetSendStatisticsInputOperationOutputAlias = crate::operation::GetSendStatistics;
 #[doc(hidden)]
-pub type GetSendStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSendStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSendStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetSendStatistics`](crate::operation::GetSendStatistics)>
     #[allow(clippy::let_and_return)]
@@ -5234,7 +5154,7 @@ impl GetSendStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSendStatistics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5314,7 +5234,7 @@ impl GetSendStatisticsInput {
             "GetSendStatistics",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5367,7 +5287,7 @@ pub mod get_template_input {
 #[doc(hidden)]
 pub type GetTemplateInputOperationOutputAlias = crate::operation::GetTemplate;
 #[doc(hidden)]
-pub type GetTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetTemplate`](crate::operation::GetTemplate)>
     #[allow(clippy::let_and_return)]
@@ -5378,7 +5298,7 @@ impl GetTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5457,7 +5377,7 @@ impl GetTemplateInput {
             "GetTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5490,14 +5410,12 @@ pub mod list_configuration_sets_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
-        /// indicate the position of the configuration set in the configuration set list.</p>
+        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position of the configuration set in the configuration set list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
-        /// indicate the position of the configuration set in the configuration set list.</p>
+        /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position of the configuration set in the configuration set list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5529,7 +5447,7 @@ pub mod list_configuration_sets_input {
 #[doc(hidden)]
 pub type ListConfigurationSetsInputOperationOutputAlias = crate::operation::ListConfigurationSets;
 #[doc(hidden)]
-pub type ListConfigurationSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListConfigurationSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListConfigurationSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListConfigurationSets`](crate::operation::ListConfigurationSets)>
     #[allow(clippy::let_and_return)]
@@ -5540,7 +5458,7 @@ impl ListConfigurationSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListConfigurationSets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5622,7 +5540,7 @@ impl ListConfigurationSetsInput {
             "ListConfigurationSets",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5655,30 +5573,22 @@ pub mod list_custom_verification_email_templates_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
-        /// account.</p>
+        /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
-        /// account.</p>
+        /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of custom verification email templates to return. This value must
-        /// be at least 1 and less than or equal to 50. If you do not specify a value, or if you
-        /// specify a value less than 1 or greater than 50, the operation will return up to 50
-        /// results.</p>
+        /// <p>The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation will return up to 50 results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of custom verification email templates to return. This value must
-        /// be at least 1 and less than or equal to 50. If you do not specify a value, or if you
-        /// specify a value less than 1 or greater than 50, the operation will return up to 50
-        /// results.</p>
+        /// <p>The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation will return up to 50 results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5702,7 +5612,7 @@ pub type ListCustomVerificationEmailTemplatesInputOperationOutputAlias =
     crate::operation::ListCustomVerificationEmailTemplates;
 #[doc(hidden)]
 pub type ListCustomVerificationEmailTemplatesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomVerificationEmailTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomVerificationEmailTemplates`](crate::operation::ListCustomVerificationEmailTemplates)>
     #[allow(clippy::let_and_return)]
@@ -5713,7 +5623,7 @@ impl ListCustomVerificationEmailTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomVerificationEmailTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5794,7 +5704,7 @@ impl ListCustomVerificationEmailTemplatesInput {
             "ListCustomVerificationEmailTemplates",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5828,14 +5738,12 @@ pub mod list_identities_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain".
-        /// If this parameter is omitted, then all identities will be listed.</p>
+        /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
         pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
             self.identity_type = Some(input);
             self
         }
-        /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain".
-        /// If this parameter is omitted, then all identities will be listed.</p>
+        /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -5853,14 +5761,12 @@ pub mod list_identities_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of identities per page. Possible values are 1-1000
-        /// inclusive.</p>
+        /// <p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>The maximum number of identities per page. Possible values are 1-1000
-        /// inclusive.</p>
+        /// <p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -5883,7 +5789,7 @@ pub mod list_identities_input {
 #[doc(hidden)]
 pub type ListIdentitiesInputOperationOutputAlias = crate::operation::ListIdentities;
 #[doc(hidden)]
-pub type ListIdentitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIdentitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentitiesInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentities`](crate::operation::ListIdentities)>
     #[allow(clippy::let_and_return)]
@@ -5894,7 +5800,7 @@ impl ListIdentitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIdentities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5974,7 +5880,7 @@ impl ListIdentitiesInput {
             "ListIdentities",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6006,19 +5912,13 @@ pub mod list_identity_policies_input {
         pub(crate) identity: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identity that is associated with the policy for which the policies will be listed.
-        /// You can specify an identity by using its name or by using its Amazon Resource Name
-        /// (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>The identity that is associated with the policy for which the policies will be listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         /// <p>To successfully call this API, you must own the identity.</p>
         pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity = Some(input.into());
             self
         }
-        /// <p>The identity that is associated with the policy for which the policies will be listed.
-        /// You can specify an identity by using its name or by using its Amazon Resource Name
-        /// (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>The identity that is associated with the policy for which the policies will be listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         /// <p>To successfully call this API, you must own the identity.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
@@ -6040,7 +5940,7 @@ pub mod list_identity_policies_input {
 #[doc(hidden)]
 pub type ListIdentityPoliciesInputOperationOutputAlias = crate::operation::ListIdentityPolicies;
 #[doc(hidden)]
-pub type ListIdentityPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIdentityPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentityPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentityPolicies`](crate::operation::ListIdentityPolicies)>
     #[allow(clippy::let_and_return)]
@@ -6051,7 +5951,7 @@ impl ListIdentityPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIdentityPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6133,7 +6033,7 @@ impl ListIdentityPoliciesInput {
             "ListIdentityPolicies",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6177,7 +6077,7 @@ pub mod list_receipt_filters_input {
 #[doc(hidden)]
 pub type ListReceiptFiltersInputOperationOutputAlias = crate::operation::ListReceiptFilters;
 #[doc(hidden)]
-pub type ListReceiptFiltersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListReceiptFiltersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReceiptFiltersInput {
     /// Consumes the builder and constructs an Operation<[`ListReceiptFilters`](crate::operation::ListReceiptFilters)>
     #[allow(clippy::let_and_return)]
@@ -6188,7 +6088,7 @@ impl ListReceiptFiltersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReceiptFilters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6268,7 +6168,7 @@ impl ListReceiptFiltersInput {
             "ListReceiptFilters",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6292,14 +6192,12 @@ pub mod list_receipt_rule_sets_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate
-        /// the position in the receipt rule set list.</p>
+        /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate the position in the receipt rule set list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate
-        /// the position in the receipt rule set list.</p>
+        /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate the position in the receipt rule set list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6320,7 +6218,7 @@ pub mod list_receipt_rule_sets_input {
 #[doc(hidden)]
 pub type ListReceiptRuleSetsInputOperationOutputAlias = crate::operation::ListReceiptRuleSets;
 #[doc(hidden)]
-pub type ListReceiptRuleSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListReceiptRuleSetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReceiptRuleSetsInput {
     /// Consumes the builder and constructs an Operation<[`ListReceiptRuleSets`](crate::operation::ListReceiptRuleSets)>
     #[allow(clippy::let_and_return)]
@@ -6331,7 +6229,7 @@ impl ListReceiptRuleSetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReceiptRuleSets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6413,7 +6311,7 @@ impl ListReceiptRuleSetsInput {
             "ListReceiptRuleSets",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6446,28 +6344,22 @@ pub mod list_templates_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token returned from a previous call to <code>ListTemplates</code> to indicate the
-        /// position in the list of email templates.</p>
+        /// <p>A token returned from a previous call to <code>ListTemplates</code> to indicate the position in the list of email templates.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from a previous call to <code>ListTemplates</code> to indicate the
-        /// position in the list of email templates.</p>
+        /// <p>A token returned from a previous call to <code>ListTemplates</code> to indicate the position in the list of email templates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of templates to return. This value must be at least 1 and less than
-        /// or equal to 10. If you do not specify a value, or if you specify a value less than 1 or
-        /// greater than 10, the operation will return up to 10 results.</p>
+        /// <p>The maximum number of templates to return. This value must be at least 1 and less than or equal to 10. If you do not specify a value, or if you specify a value less than 1 or greater than 10, the operation will return up to 10 results.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>The maximum number of templates to return. This value must be at least 1 and less than
-        /// or equal to 10. If you do not specify a value, or if you specify a value less than 1 or
-        /// greater than 10, the operation will return up to 10 results.</p>
+        /// <p>The maximum number of templates to return. This value must be at least 1 and less than or equal to 10. If you do not specify a value, or if you specify a value less than 1 or greater than 10, the operation will return up to 10 results.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -6489,7 +6381,7 @@ pub mod list_templates_input {
 #[doc(hidden)]
 pub type ListTemplatesInputOperationOutputAlias = crate::operation::ListTemplates;
 #[doc(hidden)]
-pub type ListTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListTemplates`](crate::operation::ListTemplates)>
     #[allow(clippy::let_and_return)]
@@ -6500,7 +6392,7 @@ impl ListTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6579,7 +6471,7 @@ impl ListTemplatesInput {
             "ListTemplates",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6624,7 +6516,7 @@ pub mod list_verified_email_addresses_input {
 pub type ListVerifiedEmailAddressesInputOperationOutputAlias =
     crate::operation::ListVerifiedEmailAddresses;
 #[doc(hidden)]
-pub type ListVerifiedEmailAddressesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListVerifiedEmailAddressesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVerifiedEmailAddressesInput {
     /// Consumes the builder and constructs an Operation<[`ListVerifiedEmailAddresses`](crate::operation::ListVerifiedEmailAddresses)>
     #[allow(clippy::let_and_return)]
@@ -6635,7 +6527,7 @@ impl ListVerifiedEmailAddressesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVerifiedEmailAddresses,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6716,7 +6608,7 @@ impl ListVerifiedEmailAddressesInput {
             "ListVerifiedEmailAddresses",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6741,14 +6633,12 @@ pub mod put_configuration_set_delivery_options_input {
         pub(crate) delivery_options: std::option::Option<crate::model::DeliveryOptions>,
     }
     impl Builder {
-        /// <p>The name of the configuration set that you want to specify the delivery options
-        /// for.</p>
+        /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration set that you want to specify the delivery options
-        /// for.</p>
+        /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6756,14 +6646,12 @@ pub mod put_configuration_set_delivery_options_input {
             self.configuration_set_name = input;
             self
         }
-        /// <p>Specifies whether messages that use the configuration set are required to use
-        /// Transport Layer Security (TLS).</p>
+        /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
         pub fn delivery_options(mut self, input: crate::model::DeliveryOptions) -> Self {
             self.delivery_options = Some(input);
             self
         }
-        /// <p>Specifies whether messages that use the configuration set are required to use
-        /// Transport Layer Security (TLS).</p>
+        /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
         pub fn set_delivery_options(
             mut self,
             input: std::option::Option<crate::model::DeliveryOptions>,
@@ -6789,7 +6677,8 @@ pub mod put_configuration_set_delivery_options_input {
 pub type PutConfigurationSetDeliveryOptionsInputOperationOutputAlias =
     crate::operation::PutConfigurationSetDeliveryOptions;
 #[doc(hidden)]
-pub type PutConfigurationSetDeliveryOptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutConfigurationSetDeliveryOptionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutConfigurationSetDeliveryOptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutConfigurationSetDeliveryOptions`](crate::operation::PutConfigurationSetDeliveryOptions)>
     #[allow(clippy::let_and_return)]
@@ -6800,7 +6689,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutConfigurationSetDeliveryOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6881,7 +6770,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
             "PutConfigurationSetDeliveryOptions",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6915,48 +6804,38 @@ pub mod put_identity_policy_input {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identity that the policy will apply to. You can specify an identity by using its
-        /// name or by using its Amazon Resource Name (ARN). Examples:
-        /// <code>user@example.com</code>, <code>example.com</code>,
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         /// <p>To successfully call this API, you must own the identity.</p>
         pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity = Some(input.into());
             self
         }
-        /// <p>The identity that the policy will apply to. You can specify an identity by using its
-        /// name or by using its Amazon Resource Name (ARN). Examples:
-        /// <code>user@example.com</code>, <code>example.com</code>,
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         /// <p>To successfully call this API, you must own the identity.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
         }
         /// <p>The name of the policy.</p>
-        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-        /// characters, dashes, and underscores.</p>
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
         pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_name = Some(input.into());
             self
         }
         /// <p>The name of the policy.</p>
-        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-        /// characters, dashes, and underscores.</p>
+        /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-        /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-        /// Guide</a>. </p>
+        /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-        /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-        /// Guide</a>. </p>
+        /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -6979,7 +6858,7 @@ pub mod put_identity_policy_input {
 #[doc(hidden)]
 pub type PutIdentityPolicyInputOperationOutputAlias = crate::operation::PutIdentityPolicy;
 #[doc(hidden)]
-pub type PutIdentityPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutIdentityPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutIdentityPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutIdentityPolicy`](crate::operation::PutIdentityPolicy)>
     #[allow(clippy::let_and_return)]
@@ -6990,7 +6869,7 @@ impl PutIdentityPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutIdentityPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7070,7 +6949,7 @@ impl PutIdentityPolicyInput {
             "PutIdentityPolicy",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7120,16 +6999,14 @@ pub mod reorder_receipt_rule_set_input {
         ///
         /// To override the contents of this collection use [`set_rule_names`](Self::set_rule_names).
         ///
-        /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to
-        /// put them.</p>
+        /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
         pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rule_names.unwrap_or_default();
             v.push(input.into());
             self.rule_names = Some(v);
             self
         }
-        /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to
-        /// put them.</p>
+        /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
         pub fn set_rule_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7154,7 +7031,7 @@ pub mod reorder_receipt_rule_set_input {
 #[doc(hidden)]
 pub type ReorderReceiptRuleSetInputOperationOutputAlias = crate::operation::ReorderReceiptRuleSet;
 #[doc(hidden)]
-pub type ReorderReceiptRuleSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ReorderReceiptRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ReorderReceiptRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`ReorderReceiptRuleSet`](crate::operation::ReorderReceiptRuleSet)>
     #[allow(clippy::let_and_return)]
@@ -7165,7 +7042,7 @@ impl ReorderReceiptRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ReorderReceiptRuleSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7247,7 +7124,7 @@ impl ReorderReceiptRuleSetInput {
             "ReorderReceiptRuleSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7298,14 +7175,12 @@ pub mod send_bounce_input {
             self.original_message_id = input;
             self
         }
-        /// <p>The address to use in the "From" header of the bounce message. This must be an
-        /// identity that you have verified with Amazon SES.</p>
+        /// <p>The address to use in the "From" header of the bounce message. This must be an identity that you have verified with Amazon SES.</p>
         pub fn bounce_sender(mut self, input: impl Into<std::string::String>) -> Self {
             self.bounce_sender = Some(input.into());
             self
         }
-        /// <p>The address to use in the "From" header of the bounce message. This must be an
-        /// identity that you have verified with Amazon SES.</p>
+        /// <p>The address to use in the "From" header of the bounce message. This must be an identity that you have verified with Amazon SES.</p>
         pub fn set_bounce_sender(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7313,14 +7188,12 @@ pub mod send_bounce_input {
             self.bounce_sender = input;
             self
         }
-        /// <p>Human-readable text for the bounce message to explain the failure. If not specified,
-        /// the text will be auto-generated based on the bounced recipient information.</p>
+        /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text will be auto-generated based on the bounced recipient information.</p>
         pub fn explanation(mut self, input: impl Into<std::string::String>) -> Self {
             self.explanation = Some(input.into());
             self
         }
-        /// <p>Human-readable text for the bounce message to explain the failure. If not specified,
-        /// the text will be auto-generated based on the bounced recipient information.</p>
+        /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text will be auto-generated based on the bounced recipient information.</p>
         pub fn set_explanation(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.explanation = input;
             self
@@ -7342,21 +7215,17 @@ pub mod send_bounce_input {
         ///
         /// To override the contents of this collection use [`set_bounced_recipient_info_list`](Self::set_bounced_recipient_info_list).
         ///
-        /// <p>A list of recipients of the bounced message, including the information required to
-        /// create the Delivery Status Notifications (DSNs) for the recipients. You must specify at
-        /// least one <code>BouncedRecipientInfo</code> in the list.</p>
+        /// <p>A list of recipients of the bounced message, including the information required to create the Delivery Status Notifications (DSNs) for the recipients. You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
         pub fn bounced_recipient_info_list(
             mut self,
-            input: impl Into<crate::model::BouncedRecipientInfo>,
+            input: crate::model::BouncedRecipientInfo,
         ) -> Self {
             let mut v = self.bounced_recipient_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bounced_recipient_info_list = Some(v);
             self
         }
-        /// <p>A list of recipients of the bounced message, including the information required to
-        /// create the Delivery Status Notifications (DSNs) for the recipients. You must specify at
-        /// least one <code>BouncedRecipientInfo</code> in the list.</p>
+        /// <p>A list of recipients of the bounced message, including the information required to create the Delivery Status Notifications (DSNs) for the recipients. You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
         pub fn set_bounced_recipient_info_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BouncedRecipientInfo>>,
@@ -7364,20 +7233,12 @@ pub mod send_bounce_input {
             self.bounced_recipient_info_list = input;
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// address in the "From" header of the bounce. For more information about sending
-        /// authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn bounce_sender_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.bounce_sender_arn = Some(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// address in the "From" header of the bounce. For more information about sending
-        /// authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_bounce_sender_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7406,7 +7267,7 @@ pub mod send_bounce_input {
 #[doc(hidden)]
 pub type SendBounceInputOperationOutputAlias = crate::operation::SendBounce;
 #[doc(hidden)]
-pub type SendBounceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendBounceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendBounceInput {
     /// Consumes the builder and constructs an Operation<[`SendBounce`](crate::operation::SendBounce)>
     #[allow(clippy::let_and_return)]
@@ -7417,7 +7278,7 @@ impl SendBounceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendBounce,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7496,7 +7357,7 @@ impl SendBounceInput {
             "SendBounce",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7539,78 +7400,32 @@ pub mod send_bulk_templated_email_input {
             std::option::Option<std::vec::Vec<crate::model::BulkEmailDestination>>,
     }
     impl Builder {
-        /// <p>The email address that is sending the email. This email address must be either
-        /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
-        /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
-        /// Guide</a>.</p>
-        /// <p>If you are sending on behalf of another user and have been permitted to do so by a
-        /// sending authorization policy, then you must also specify the <code>SourceArn</code>
-        /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-        /// <note>
-        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-        /// <i>local part</i> of a source email address (the part of the email
-        /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-        /// characters</a>. If the <i>domain part</i> of an address (the
-        /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-        /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-        /// name</i>) may contain non-ASCII characters. These characters must be
-        /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-        /// syntax uses the following form:
-        /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+        /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
+        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
         /// </note>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
         }
-        /// <p>The email address that is sending the email. This email address must be either
-        /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
-        /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
-        /// Guide</a>.</p>
-        /// <p>If you are sending on behalf of another user and have been permitted to do so by a
-        /// sending authorization policy, then you must also specify the <code>SourceArn</code>
-        /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-        /// <note>
-        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-        /// <i>local part</i> of a source email address (the part of the email
-        /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-        /// characters</a>. If the <i>domain part</i> of an address (the
-        /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-        /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-        /// name</i>) may contain non-ASCII characters. These characters must be
-        /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-        /// syntax uses the following form:
-        /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+        /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
+        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
         /// </note>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to send for
-        /// the email address specified in the <code>Source</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-        /// would specify the <code>SourceArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>Source</code> to be <code>user@example.com</code>.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_arn = Some(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to send for
-        /// the email address specified in the <code>Source</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-        /// would specify the <code>SourceArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>Source</code> to be <code>user@example.com</code>.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_arn = input;
             self
@@ -7619,16 +7434,14 @@ pub mod send_bulk_templated_email_input {
         ///
         /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
         ///
-        /// <p>The reply-to email address(es) for the message. If the recipient replies to the
-        /// message, each reply-to address will receive the reply.</p>
+        /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
         pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reply_to_addresses.unwrap_or_default();
             v.push(input.into());
             self.reply_to_addresses = Some(v);
             self
         }
-        /// <p>The reply-to email address(es) for the message. If the recipient replies to the
-        /// message, each reply-to address will receive the reply.</p>
+        /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
         pub fn set_reply_to_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7636,54 +7449,26 @@ pub mod send_bulk_templated_email_input {
             self.reply_to_addresses = input;
             self
         }
-        /// <p>The email address that bounces and complaints will be forwarded to when feedback
-        /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
-        /// error message will be returned from the recipient's ISP; this message will then be
-        /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
-        /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
-        /// either individually verified with Amazon SES, or from a domain that has been verified with
-        /// Amazon SES. </p>
+        /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
         pub fn return_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.return_path = Some(input.into());
             self
         }
-        /// <p>The email address that bounces and complaints will be forwarded to when feedback
-        /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
-        /// error message will be returned from the recipient's ISP; this message will then be
-        /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
-        /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
-        /// either individually verified with Amazon SES, or from a domain that has been verified with
-        /// Amazon SES. </p>
+        /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
         pub fn set_return_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.return_path = input;
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>ReturnPath</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-        /// would specify the <code>ReturnPathArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn return_path_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.return_path_arn = Some(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>ReturnPath</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-        /// would specify the <code>ReturnPathArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_return_path_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7691,14 +7476,12 @@ pub mod send_bulk_templated_email_input {
             self.return_path_arn = input;
             self
         }
-        /// <p>The name of the configuration set to use when you send an email using
-        /// <code>SendBulkTemplatedEmail</code>.</p>
+        /// <p>The name of the configuration set to use when you send an email using <code>SendBulkTemplatedEmail</code>.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration set to use when you send an email using
-        /// <code>SendBulkTemplatedEmail</code>.</p>
+        /// <p>The name of the configuration set to use when you send an email using <code>SendBulkTemplatedEmail</code>.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7710,16 +7493,14 @@ pub mod send_bulk_templated_email_input {
         ///
         /// To override the contents of this collection use [`set_default_tags`](Self::set_default_tags).
         ///
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to
-        /// a destination using <code>SendBulkTemplatedEmail</code>.</p>
-        pub fn default_tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to a destination using <code>SendBulkTemplatedEmail</code>.</p>
+        pub fn default_tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.default_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_tags = Some(v);
             self
         }
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to
-        /// a destination using <code>SendBulkTemplatedEmail</code>.</p>
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to a destination using <code>SendBulkTemplatedEmail</code>.</p>
         pub fn set_default_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -7747,20 +7528,14 @@ pub mod send_bulk_templated_email_input {
             self.template_arn = input;
             self
         }
-        /// <p>A list of replacement values to apply to the template when replacement data is not
-        /// specified in a Destination object. These values act as a default or fallback option when
-        /// no other data is available.</p>
-        /// <p>The template data is a JSON object, typically consisting of key-value pairs in which
-        /// the keys correspond to replacement tags in the email template.</p>
+        /// <p>A list of replacement values to apply to the template when replacement data is not specified in a Destination object. These values act as a default or fallback option when no other data is available.</p>
+        /// <p>The template data is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
         pub fn default_template_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_template_data = Some(input.into());
             self
         }
-        /// <p>A list of replacement values to apply to the template when replacement data is not
-        /// specified in a Destination object. These values act as a default or fallback option when
-        /// no other data is available.</p>
-        /// <p>The template data is a JSON object, typically consisting of key-value pairs in which
-        /// the keys correspond to replacement tags in the email template.</p>
+        /// <p>A list of replacement values to apply to the template when replacement data is not specified in a Destination object. These values act as a default or fallback option when no other data is available.</p>
+        /// <p>The template data is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
         pub fn set_default_template_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7772,23 +7547,14 @@ pub mod send_bulk_templated_email_input {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p>One or more <code>Destination</code> objects. All of the recipients in a
-        /// <code>Destination</code> will receive the same version of the email. You can specify
-        /// up to 50 <code>Destination</code> objects within a <code>Destinations</code>
-        /// array.</p>
-        pub fn destinations(
-            mut self,
-            input: impl Into<crate::model::BulkEmailDestination>,
-        ) -> Self {
+        /// <p>One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive the same version of the email. You can specify up to 50 <code>Destination</code> objects within a <code>Destinations</code> array.</p>
+        pub fn destinations(mut self, input: crate::model::BulkEmailDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.destinations = Some(v);
             self
         }
-        /// <p>One or more <code>Destination</code> objects. All of the recipients in a
-        /// <code>Destination</code> will receive the same version of the email. You can specify
-        /// up to 50 <code>Destination</code> objects within a <code>Destinations</code>
-        /// array.</p>
+        /// <p>One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive the same version of the email. You can specify up to 50 <code>Destination</code> objects within a <code>Destinations</code> array.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BulkEmailDestination>>,
@@ -7822,7 +7588,7 @@ pub mod send_bulk_templated_email_input {
 #[doc(hidden)]
 pub type SendBulkTemplatedEmailInputOperationOutputAlias = crate::operation::SendBulkTemplatedEmail;
 #[doc(hidden)]
-pub type SendBulkTemplatedEmailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendBulkTemplatedEmailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendBulkTemplatedEmailInput {
     /// Consumes the builder and constructs an Operation<[`SendBulkTemplatedEmail`](crate::operation::SendBulkTemplatedEmail)>
     #[allow(clippy::let_and_return)]
@@ -7833,7 +7599,7 @@ impl SendBulkTemplatedEmailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendBulkTemplatedEmail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7915,7 +7681,7 @@ impl SendBulkTemplatedEmailInput {
             "SendBulkTemplatedEmail",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7962,14 +7728,12 @@ pub mod send_custom_verification_email_input {
             self.email_address = input;
             self
         }
-        /// <p>The name of the custom verification email template to use when sending the
-        /// verification email.</p>
+        /// <p>The name of the custom verification email template to use when sending the verification email.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the custom verification email template to use when sending the
-        /// verification email.</p>
+        /// <p>The name of the custom verification email template to use when sending the verification email.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8009,7 +7773,7 @@ pub mod send_custom_verification_email_input {
 pub type SendCustomVerificationEmailInputOperationOutputAlias =
     crate::operation::SendCustomVerificationEmail;
 #[doc(hidden)]
-pub type SendCustomVerificationEmailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendCustomVerificationEmailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendCustomVerificationEmailInput {
     /// Consumes the builder and constructs an Operation<[`SendCustomVerificationEmail`](crate::operation::SendCustomVerificationEmail)>
     #[allow(clippy::let_and_return)]
@@ -8020,7 +7784,7 @@ impl SendCustomVerificationEmailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendCustomVerificationEmail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8101,7 +7865,7 @@ impl SendCustomVerificationEmailInput {
             "SendCustomVerificationEmail",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8141,47 +7905,17 @@ pub mod send_email_input {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The email address that is sending the email. This email address must be either
-        /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
-        /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
-        /// Guide</a>.</p>
-        /// <p>If you are sending on behalf of another user and have been permitted to do so by a
-        /// sending authorization policy, then you must also specify the <code>SourceArn</code>
-        /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-        /// <note>
-        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-        /// <i>local part</i> of a source email address (the part of the email
-        /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-        /// characters</a>. If the <i>domain part</i> of an address (the
-        /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-        /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-        /// name</i>) may contain non-ASCII characters. These characters must be
-        /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-        /// syntax uses the following form:
-        /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+        /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
+        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
         /// </note>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
         }
-        /// <p>The email address that is sending the email. This email address must be either
-        /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
-        /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
-        /// Guide</a>.</p>
-        /// <p>If you are sending on behalf of another user and have been permitted to do so by a
-        /// sending authorization policy, then you must also specify the <code>SourceArn</code>
-        /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-        /// <note>
-        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-        /// <i>local part</i> of a source email address (the part of the email
-        /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-        /// characters</a>. If the <i>domain part</i> of an address (the
-        /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-        /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-        /// name</i>) may contain non-ASCII characters. These characters must be
-        /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-        /// syntax uses the following form:
-        /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+        /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
+        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
         /// </note>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
@@ -8214,16 +7948,14 @@ pub mod send_email_input {
         ///
         /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
         ///
-        /// <p>The reply-to email address(es) for the message. If the recipient replies to the
-        /// message, each reply-to address will receive the reply.</p>
+        /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
         pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reply_to_addresses.unwrap_or_default();
             v.push(input.into());
             self.reply_to_addresses = Some(v);
             self
         }
-        /// <p>The reply-to email address(es) for the message. If the recipient replies to the
-        /// message, each reply-to address will receive the reply.</p>
+        /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
         pub fn set_reply_to_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8231,84 +7963,40 @@ pub mod send_email_input {
             self.reply_to_addresses = input;
             self
         }
-        /// <p>The email address that bounces and complaints will be forwarded to when feedback
-        /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
-        /// error message will be returned from the recipient's ISP; this message will then be
-        /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
-        /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
-        /// either individually verified with Amazon SES, or from a domain that has been verified with
-        /// Amazon SES. </p>
+        /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
         pub fn return_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.return_path = Some(input.into());
             self
         }
-        /// <p>The email address that bounces and complaints will be forwarded to when feedback
-        /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
-        /// error message will be returned from the recipient's ISP; this message will then be
-        /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
-        /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
-        /// either individually verified with Amazon SES, or from a domain that has been verified with
-        /// Amazon SES. </p>
+        /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
         pub fn set_return_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.return_path = input;
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to send for
-        /// the email address specified in the <code>Source</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-        /// would specify the <code>SourceArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>Source</code> to be <code>user@example.com</code>.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_arn = Some(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to send for
-        /// the email address specified in the <code>Source</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-        /// would specify the <code>SourceArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>Source</code> to be <code>user@example.com</code>.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_arn = input;
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>ReturnPath</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-        /// would specify the <code>ReturnPathArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn return_path_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.return_path_arn = Some(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>ReturnPath</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-        /// would specify the <code>ReturnPathArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_return_path_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8320,18 +8008,14 @@ pub mod send_email_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using <code>SendEmail</code>. Tags correspond to characteristics of the email that you
-        /// define, so that you can publish email sending events.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+        pub fn tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using <code>SendEmail</code>. Tags correspond to characteristics of the email that you
-        /// define, so that you can publish email sending events.</p>
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -8339,14 +8023,12 @@ pub mod send_email_input {
             self.tags = input;
             self
         }
-        /// <p>The name of the configuration set to use when you send an email using
-        /// <code>SendEmail</code>.</p>
+        /// <p>The name of the configuration set to use when you send an email using <code>SendEmail</code>.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration set to use when you send an email using
-        /// <code>SendEmail</code>.</p>
+        /// <p>The name of the configuration set to use when you send an email using <code>SendEmail</code>.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8376,7 +8058,7 @@ pub mod send_email_input {
 #[doc(hidden)]
 pub type SendEmailInputOperationOutputAlias = crate::operation::SendEmail;
 #[doc(hidden)]
-pub type SendEmailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendEmailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendEmailInput {
     /// Consumes the builder and constructs an Operation<[`SendEmail`](crate::operation::SendEmail)>
     #[allow(clippy::let_and_return)]
@@ -8387,7 +8069,7 @@ impl SendEmailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendEmail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8464,7 +8146,7 @@ impl SendEmailInput {
                     "SendEmail",
                     "ses",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8503,50 +8185,18 @@ pub mod send_raw_email_input {
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identity's email address. If you do not provide a value for this parameter, you
-        /// must specify a "From" address in the raw text of the message. (You can also specify
-        /// both.)</p>
-        /// <note>
-        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in<a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-        /// <i>local part</i> of a source email address (the part of the email
-        /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-        /// characters</a>. If the <i>domain part</i> of an address (the
-        /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-        /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-        /// name</i>) may contain non-ASCII characters. These characters must be
-        /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-        /// syntax uses the following form:
-        /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+        /// <p>The identity's email address. If you do not provide a value for this parameter, you must specify a "From" address in the raw text of the message. (You can also specify both.)</p> <note>
+        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in<a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
         /// </note>
-        ///
-        /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled,
-        /// then bounces and complaints will be sent to this email address. This takes precedence
-        /// over any Return-Path header that you might include in the raw text of the
-        /// message.</p>
+        /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled, then bounces and complaints will be sent to this email address. This takes precedence over any Return-Path header that you might include in the raw text of the message.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
         }
-        /// <p>The identity's email address. If you do not provide a value for this parameter, you
-        /// must specify a "From" address in the raw text of the message. (You can also specify
-        /// both.)</p>
-        /// <note>
-        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in<a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-        /// <i>local part</i> of a source email address (the part of the email
-        /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-        /// characters</a>. If the <i>domain part</i> of an address (the
-        /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-        /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-        /// name</i>) may contain non-ASCII characters. These characters must be
-        /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-        /// syntax uses the following form:
-        /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+        /// <p>The identity's email address. If you do not provide a value for this parameter, you must specify a "From" address in the raw text of the message. (You can also specify both.)</p> <note>
+        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in<a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
         /// </note>
-        ///
-        /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled,
-        /// then bounces and complaints will be sent to this email address. This takes precedence
-        /// over any Return-Path header that you might include in the raw text of the
-        /// message.</p>
+        /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled, then bounces and complaints will be sent to this email address. This takes precedence over any Return-Path header that you might include in the raw text of the message.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -8555,16 +8205,14 @@ pub mod send_raw_email_input {
         ///
         /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
         ///
-        /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
-        /// addresses.</p>
+        /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.</p>
         pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
-        /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
-        /// addresses.</p>
+        /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8574,35 +8222,15 @@ pub mod send_raw_email_input {
         }
         /// <p>The raw email message itself. The message has to meet the following criteria:</p>
         /// <ul>
-        /// <li>
-        /// <p>The message has to contain a header and a body, separated by a blank
-        /// line.</p>
-        /// </li>
-        /// <li>
-        /// <p>All of the required header fields must be present in the message.</p>
-        /// </li>
-        /// <li>
-        /// <p>Each part of a multipart MIME message must be formatted properly.</p>
-        /// </li>
-        /// <li>
-        /// <p>Attachments must be of a content type that Amazon SES supports. For a list on
-        /// unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment
-        /// Types</a> in the <i>Amazon SES Developer Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>The entire message must be base64-encoded.</p>
-        /// </li>
-        /// <li>
-        /// <p>If any of the MIME parts in your message contain content that is outside of
-        /// the 7-bit ASCII character range, we highly recommend that you encode that
-        /// content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer
-        /// Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC
-        /// 5321</a>, the maximum length of each line of text, including the
-        /// <CRLF>, must not exceed 1,000 characters.</p>
-        /// </li>
+        /// <li> <p>The message has to contain a header and a body, separated by a blank line.</p> </li>
+        /// <li> <p>All of the required header fields must be present in the message.</p> </li>
+        /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
+        /// <li> <p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
+        /// <li> <p>The entire message must be base64-encoded.</p> </li>
+        /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
+        /// <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
+        /// , must not exceed 1,000 characters.
+        /// </crlf></p> </li>
         /// </ul>
         pub fn raw_message(mut self, input: crate::model::RawMessage) -> Self {
             self.raw_message = Some(input);
@@ -8610,35 +8238,15 @@ pub mod send_raw_email_input {
         }
         /// <p>The raw email message itself. The message has to meet the following criteria:</p>
         /// <ul>
-        /// <li>
-        /// <p>The message has to contain a header and a body, separated by a blank
-        /// line.</p>
-        /// </li>
-        /// <li>
-        /// <p>All of the required header fields must be present in the message.</p>
-        /// </li>
-        /// <li>
-        /// <p>Each part of a multipart MIME message must be formatted properly.</p>
-        /// </li>
-        /// <li>
-        /// <p>Attachments must be of a content type that Amazon SES supports. For a list on
-        /// unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment
-        /// Types</a> in the <i>Amazon SES Developer Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>The entire message must be base64-encoded.</p>
-        /// </li>
-        /// <li>
-        /// <p>If any of the MIME parts in your message contain content that is outside of
-        /// the 7-bit ASCII character range, we highly recommend that you encode that
-        /// content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer
-        /// Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC
-        /// 5321</a>, the maximum length of each line of text, including the
-        /// <CRLF>, must not exceed 1,000 characters.</p>
-        /// </li>
+        /// <li> <p>The message has to contain a header and a body, separated by a blank line.</p> </li>
+        /// <li> <p>All of the required header fields must be present in the message.</p> </li>
+        /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
+        /// <li> <p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
+        /// <li> <p>The entire message must be base64-encoded.</p> </li>
+        /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
+        /// <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
+        /// , must not exceed 1,000 characters.
+        /// </crlf></p> </li>
         /// </ul>
         pub fn set_raw_message(
             mut self,
@@ -8647,115 +8255,53 @@ pub mod send_raw_email_input {
             self.raw_message = input;
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to specify a
-        /// particular "From" address in the header of the raw email.</p>
-        /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-FROM-ARN</code>
-        /// in the raw message of the email. If you use both the <code>FromArn</code> parameter and
-        /// the corresponding X-header, Amazon SES uses the value of the <code>FromArn</code>
-        /// parameter.</p>
-        /// <note>
-        /// <p>For information about when to use this parameter, see the description of
-        /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to specify a particular "From" address in the header of the raw email.</p>
+        /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-FROM-ARN</code> in the raw message of the email. If you use both the <code>FromArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>FromArn</code> parameter.</p> <note>
+        /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
         /// </note>
         pub fn from_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.from_arn = Some(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to specify a
-        /// particular "From" address in the header of the raw email.</p>
-        /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-FROM-ARN</code>
-        /// in the raw message of the email. If you use both the <code>FromArn</code> parameter and
-        /// the corresponding X-header, Amazon SES uses the value of the <code>FromArn</code>
-        /// parameter.</p>
-        /// <note>
-        /// <p>For information about when to use this parameter, see the description of
-        /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to specify a particular "From" address in the header of the raw email.</p>
+        /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-FROM-ARN</code> in the raw message of the email. If you use both the <code>FromArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>FromArn</code> parameter.</p> <note>
+        /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
         /// </note>
         pub fn set_from_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.from_arn = input;
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to send for
-        /// the email address specified in the <code>Source</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-        /// would specify the <code>SourceArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>Source</code> to be <code>user@example.com</code>.</p>
-        /// <p>Instead of using this parameter, you can use the X-header
-        /// <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you use both the
-        /// <code>SourceArn</code> parameter and the corresponding X-header, Amazon SES uses the
-        /// value of the <code>SourceArn</code> parameter.</p>
-        /// <note>
-        /// <p>For information about when to use this parameter, see the description of
-        /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+        /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you use both the <code>SourceArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>SourceArn</code> parameter.</p> <note>
+        /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
         /// </note>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_arn = Some(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to send for
-        /// the email address specified in the <code>Source</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-        /// would specify the <code>SourceArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>Source</code> to be <code>user@example.com</code>.</p>
-        /// <p>Instead of using this parameter, you can use the X-header
-        /// <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you use both the
-        /// <code>SourceArn</code> parameter and the corresponding X-header, Amazon SES uses the
-        /// value of the <code>SourceArn</code> parameter.</p>
-        /// <note>
-        /// <p>For information about when to use this parameter, see the description of
-        /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+        /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you use both the <code>SourceArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>SourceArn</code> parameter.</p> <note>
+        /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
         /// </note>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_arn = input;
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>ReturnPath</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-        /// would specify the <code>ReturnPathArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-        /// <p>Instead of using this parameter, you can use the X-header
-        /// <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both
-        /// the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the
-        /// value of the <code>ReturnPathArn</code> parameter.</p>
-        /// <note>
-        /// <p>For information about when to use this parameter, see the description of
-        /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+        /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p> <note>
+        /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
         /// </note>
         pub fn return_path_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.return_path_arn = Some(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>ReturnPath</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-        /// would specify the <code>ReturnPathArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-        /// <p>Instead of using this parameter, you can use the X-header
-        /// <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both
-        /// the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the
-        /// value of the <code>ReturnPathArn</code> parameter.</p>
-        /// <note>
-        /// <p>For information about when to use this parameter, see the description of
-        /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+        /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p> <note>
+        /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
         /// </note>
         pub fn set_return_path_arn(
             mut self,
@@ -8768,18 +8314,14 @@ pub mod send_raw_email_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that
-        /// you define, so that you can publish email sending events.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+        pub fn tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that
-        /// you define, so that you can publish email sending events.</p>
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -8787,14 +8329,12 @@ pub mod send_raw_email_input {
             self.tags = input;
             self
         }
-        /// <p>The name of the configuration set to use when you send an email using
-        /// <code>SendRawEmail</code>.</p>
+        /// <p>The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration set to use when you send an email using
-        /// <code>SendRawEmail</code>.</p>
+        /// <p>The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8825,7 +8365,7 @@ pub mod send_raw_email_input {
 #[doc(hidden)]
 pub type SendRawEmailInputOperationOutputAlias = crate::operation::SendRawEmail;
 #[doc(hidden)]
-pub type SendRawEmailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendRawEmailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendRawEmailInput {
     /// Consumes the builder and constructs an Operation<[`SendRawEmail`](crate::operation::SendRawEmail)>
     #[allow(clippy::let_and_return)]
@@ -8836,7 +8376,7 @@ impl SendRawEmailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendRawEmail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8915,7 +8455,7 @@ impl SendRawEmailInput {
             "SendRawEmail",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8957,60 +8497,28 @@ pub mod send_templated_email_input {
         pub(crate) template_data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The email address that is sending the email. This email address must be either
-        /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
-        /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
-        /// Guide</a>.</p>
-        /// <p>If you are sending on behalf of another user and have been permitted to do so by a
-        /// sending authorization policy, then you must also specify the <code>SourceArn</code>
-        /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-        /// <note>
-        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-        /// <i>local part</i> of a source email address (the part of the email
-        /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-        /// characters</a>. If the <i>domain part</i> of an address (the
-        /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-        /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-        /// name</i>) may contain non-ASCII characters. These characters must be
-        /// encoded using MIME encoded-word syntax, as described in<a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-        /// syntax uses the following form:
-        /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+        /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
+        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in<a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
         /// </note>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
         }
-        /// <p>The email address that is sending the email. This email address must be either
-        /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
-        /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
-        /// Guide</a>.</p>
-        /// <p>If you are sending on behalf of another user and have been permitted to do so by a
-        /// sending authorization policy, then you must also specify the <code>SourceArn</code>
-        /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-        /// <note>
-        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-        /// <i>local part</i> of a source email address (the part of the email
-        /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-        /// characters</a>. If the <i>domain part</i> of an address (the
-        /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-        /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-        /// name</i>) may contain non-ASCII characters. These characters must be
-        /// encoded using MIME encoded-word syntax, as described in<a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-        /// syntax uses the following form:
-        /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+        /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
+        /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
+        /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in<a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
         /// </note>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
         }
-        /// <p>The destination for this email, composed of To:, CC:, and BCC: fields. A Destination
-        /// can include up to 50 recipients across these three fields.</p>
+        /// <p>The destination for this email, composed of To:, CC:, and BCC: fields. A Destination can include up to 50 recipients across these three fields.</p>
         pub fn destination(mut self, input: crate::model::Destination) -> Self {
             self.destination = Some(input);
             self
         }
-        /// <p>The destination for this email, composed of To:, CC:, and BCC: fields. A Destination
-        /// can include up to 50 recipients across these three fields.</p>
+        /// <p>The destination for this email, composed of To:, CC:, and BCC: fields. A Destination can include up to 50 recipients across these three fields.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::Destination>,
@@ -9022,16 +8530,14 @@ pub mod send_templated_email_input {
         ///
         /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
         ///
-        /// <p>The reply-to email address(es) for the message. If the recipient replies to the
-        /// message, each reply-to address will receive the reply.</p>
+        /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
         pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reply_to_addresses.unwrap_or_default();
             v.push(input.into());
             self.reply_to_addresses = Some(v);
             self
         }
-        /// <p>The reply-to email address(es) for the message. If the recipient replies to the
-        /// message, each reply-to address will receive the reply.</p>
+        /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
         pub fn set_reply_to_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9039,84 +8545,40 @@ pub mod send_templated_email_input {
             self.reply_to_addresses = input;
             self
         }
-        /// <p>The email address that bounces and complaints will be forwarded to when feedback
-        /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
-        /// error message will be returned from the recipient's ISP; this message will then be
-        /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
-        /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
-        /// either individually verified with Amazon SES, or from a domain that has been verified with
-        /// Amazon SES. </p>
+        /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
         pub fn return_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.return_path = Some(input.into());
             self
         }
-        /// <p>The email address that bounces and complaints will be forwarded to when feedback
-        /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
-        /// error message will be returned from the recipient's ISP; this message will then be
-        /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
-        /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
-        /// either individually verified with Amazon SES, or from a domain that has been verified with
-        /// Amazon SES. </p>
+        /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
         pub fn set_return_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.return_path = input;
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to send for
-        /// the email address specified in the <code>Source</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-        /// would specify the <code>SourceArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>Source</code> to be <code>user@example.com</code>.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_arn = Some(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to send for
-        /// the email address specified in the <code>Source</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-        /// would specify the <code>SourceArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>Source</code> to be <code>user@example.com</code>.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_arn = input;
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>ReturnPath</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-        /// would specify the <code>ReturnPathArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn return_path_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.return_path_arn = Some(input.into());
             self
         }
-        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-        /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>ReturnPath</code> parameter.</p>
-        /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-        /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-        /// would specify the <code>ReturnPathArn</code> to be
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-        /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+        /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+        /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_return_path_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9128,18 +8590,14 @@ pub mod send_templated_email_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using <code>SendTemplatedEmail</code>. Tags correspond to characteristics of the email
-        /// that you define, so that you can publish email sending events.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+        pub fn tags(mut self, input: crate::model::MessageTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using <code>SendTemplatedEmail</code>. Tags correspond to characteristics of the email
-        /// that you define, so that you can publish email sending events.</p>
+        /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
@@ -9147,14 +8605,12 @@ pub mod send_templated_email_input {
             self.tags = input;
             self
         }
-        /// <p>The name of the configuration set to use when you send an email using
-        /// <code>SendTemplatedEmail</code>.</p>
+        /// <p>The name of the configuration set to use when you send an email using <code>SendTemplatedEmail</code>.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration set to use when you send an email using
-        /// <code>SendTemplatedEmail</code>.</p>
+        /// <p>The name of the configuration set to use when you send an email using <code>SendTemplatedEmail</code>.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9182,16 +8638,12 @@ pub mod send_templated_email_input {
             self.template_arn = input;
             self
         }
-        /// <p>A list of replacement values to apply to the template. This parameter is a JSON
-        /// object, typically consisting of key-value pairs in which the keys correspond to
-        /// replacement tags in the email template.</p>
+        /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
         pub fn template_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_data = Some(input.into());
             self
         }
-        /// <p>A list of replacement values to apply to the template. This parameter is a JSON
-        /// object, typically consisting of key-value pairs in which the keys correspond to
-        /// replacement tags in the email template.</p>
+        /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
         pub fn set_template_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9225,7 +8677,7 @@ pub mod send_templated_email_input {
 #[doc(hidden)]
 pub type SendTemplatedEmailInputOperationOutputAlias = crate::operation::SendTemplatedEmail;
 #[doc(hidden)]
-pub type SendTemplatedEmailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendTemplatedEmailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendTemplatedEmailInput {
     /// Consumes the builder and constructs an Operation<[`SendTemplatedEmail`](crate::operation::SendTemplatedEmail)>
     #[allow(clippy::let_and_return)]
@@ -9236,7 +8688,7 @@ impl SendTemplatedEmailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendTemplatedEmail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9316,7 +8768,7 @@ impl SendTemplatedEmailInput {
             "SendTemplatedEmail",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9348,14 +8800,12 @@ pub mod set_active_receipt_rule_set_input {
         pub(crate) rule_set_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the receipt rule set to make active. Setting this value to null disables
-        /// all email receiving.</p>
+        /// <p>The name of the receipt rule set to make active. Setting this value to null disables all email receiving.</p>
         pub fn rule_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the receipt rule set to make active. Setting this value to null disables
-        /// all email receiving.</p>
+        /// <p>The name of the receipt rule set to make active. Setting this value to null disables all email receiving.</p>
         pub fn set_rule_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9380,7 +8830,7 @@ pub mod set_active_receipt_rule_set_input {
 pub type SetActiveReceiptRuleSetInputOperationOutputAlias =
     crate::operation::SetActiveReceiptRuleSet;
 #[doc(hidden)]
-pub type SetActiveReceiptRuleSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetActiveReceiptRuleSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetActiveReceiptRuleSetInput {
     /// Consumes the builder and constructs an Operation<[`SetActiveReceiptRuleSet`](crate::operation::SetActiveReceiptRuleSet)>
     #[allow(clippy::let_and_return)]
@@ -9391,7 +8841,7 @@ impl SetActiveReceiptRuleSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetActiveReceiptRuleSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9473,7 +8923,7 @@ impl SetActiveReceiptRuleSetInput {
             "SetActiveReceiptRuleSet",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9516,14 +8966,12 @@ pub mod set_identity_dkim_enabled_input {
             self.identity = input;
             self
         }
-        /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to
-        /// enable DKIM signing for this identity; <code>false</code> to disable it. </p>
+        /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
         pub fn dkim_enabled(mut self, input: bool) -> Self {
             self.dkim_enabled = Some(input);
             self
         }
-        /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to
-        /// enable DKIM signing for this identity; <code>false</code> to disable it. </p>
+        /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
         pub fn set_dkim_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.dkim_enabled = input;
             self
@@ -9545,7 +8993,7 @@ pub mod set_identity_dkim_enabled_input {
 #[doc(hidden)]
 pub type SetIdentityDkimEnabledInputOperationOutputAlias = crate::operation::SetIdentityDkimEnabled;
 #[doc(hidden)]
-pub type SetIdentityDkimEnabledInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetIdentityDkimEnabledInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetIdentityDkimEnabledInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityDkimEnabled`](crate::operation::SetIdentityDkimEnabled)>
     #[allow(clippy::let_and_return)]
@@ -9556,7 +9004,7 @@ impl SetIdentityDkimEnabledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityDkimEnabled,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9638,7 +9086,7 @@ impl SetIdentityDkimEnabledInput {
             "SetIdentityDkimEnabled",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9671,36 +9119,22 @@ pub mod set_identity_feedback_forwarding_enabled_input {
         pub(crate) forwarding_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The identity for which to set bounce and complaint notification forwarding. Examples:
-        /// <code>user@example.com</code>, <code>example.com</code>.</p>
+        /// <p>The identity for which to set bounce and complaint notification forwarding. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
         pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity = Some(input.into());
             self
         }
-        /// <p>The identity for which to set bounce and complaint notification forwarding. Examples:
-        /// <code>user@example.com</code>, <code>example.com</code>.</p>
+        /// <p>The identity for which to set bounce and complaint notification forwarding. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
         }
-        /// <p>Sets whether Amazon SES will forward bounce and complaint notifications as email.
-        /// <code>true</code> specifies that Amazon SES will forward bounce and complaint
-        /// notifications as email, in addition to any Amazon SNS topic publishing otherwise specified.
-        /// <code>false</code> specifies that Amazon SES will publish bounce and complaint
-        /// notifications only through Amazon SNS. This value can only be set to <code>false</code> when
-        /// Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code>
-        /// notification types.</p>
+        /// <p>Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> specifies that Amazon SES will forward bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES will publish bounce and complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.</p>
         pub fn forwarding_enabled(mut self, input: bool) -> Self {
             self.forwarding_enabled = Some(input);
             self
         }
-        /// <p>Sets whether Amazon SES will forward bounce and complaint notifications as email.
-        /// <code>true</code> specifies that Amazon SES will forward bounce and complaint
-        /// notifications as email, in addition to any Amazon SNS topic publishing otherwise specified.
-        /// <code>false</code> specifies that Amazon SES will publish bounce and complaint
-        /// notifications only through Amazon SNS. This value can only be set to <code>false</code> when
-        /// Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code>
-        /// notification types.</p>
+        /// <p>Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> specifies that Amazon SES will forward bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES will publish bounce and complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.</p>
         pub fn set_forwarding_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.forwarding_enabled = input;
             self
@@ -9724,7 +9158,7 @@ pub type SetIdentityFeedbackForwardingEnabledInputOperationOutputAlias =
     crate::operation::SetIdentityFeedbackForwardingEnabled;
 #[doc(hidden)]
 pub type SetIdentityFeedbackForwardingEnabledInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl SetIdentityFeedbackForwardingEnabledInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityFeedbackForwardingEnabled`](crate::operation::SetIdentityFeedbackForwardingEnabled)>
     #[allow(clippy::let_and_return)]
@@ -9735,7 +9169,7 @@ impl SetIdentityFeedbackForwardingEnabledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityFeedbackForwardingEnabled,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9816,7 +9250,7 @@ impl SetIdentityFeedbackForwardingEnabledInput {
             "SetIdentityFeedbackForwardingEnabled",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9850,14 +9284,12 @@ pub mod set_identity_headers_in_notifications_enabled_input {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The identity for which to enable or disable headers in notifications. Examples:
-        /// <code>user@example.com</code>, <code>example.com</code>.</p>
+        /// <p>The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
         pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity = Some(input.into());
             self
         }
-        /// <p>The identity for which to enable or disable headers in notifications. Examples:
-        /// <code>user@example.com</code>, <code>example.com</code>.</p>
+        /// <p>The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -9875,22 +9307,14 @@ pub mod set_identity_headers_in_notifications_enabled_input {
             self.notification_type = input;
             self
         }
-        /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the
-        /// specified notification type. A value of <code>true</code> specifies that Amazon SES will
-        /// include headers in notifications, and a value of <code>false</code> specifies that Amazon SES
-        /// will not include headers in notifications.</p>
-        /// <p>This value can only be set when <code>NotificationType</code> is already set to use a
-        /// particular Amazon SNS topic.</p>
+        /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.</p>
+        /// <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the
-        /// specified notification type. A value of <code>true</code> specifies that Amazon SES will
-        /// include headers in notifications, and a value of <code>false</code> specifies that Amazon SES
-        /// will not include headers in notifications.</p>
-        /// <p>This value can only be set when <code>NotificationType</code> is already set to use a
-        /// particular Amazon SNS topic.</p>
+        /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.</p>
+        /// <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -9917,7 +9341,7 @@ pub type SetIdentityHeadersInNotificationsEnabledInputOperationOutputAlias =
     crate::operation::SetIdentityHeadersInNotificationsEnabled;
 #[doc(hidden)]
 pub type SetIdentityHeadersInNotificationsEnabledInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl SetIdentityHeadersInNotificationsEnabledInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityHeadersInNotificationsEnabled`](crate::operation::SetIdentityHeadersInNotificationsEnabled)>
     #[allow(clippy::let_and_return)]
@@ -9928,7 +9352,7 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityHeadersInNotificationsEnabled,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10009,7 +9433,7 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
             "SetIdentityHeadersInNotificationsEnabled",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10043,34 +9467,22 @@ pub mod set_identity_mail_from_domain_input {
         pub(crate) behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
     }
     impl Builder {
-        /// <p>The verified identity for which you want to enable or disable the specified custom
-        /// MAIL FROM domain.</p>
+        /// <p>The verified identity for which you want to enable or disable the specified custom MAIL FROM domain.</p>
         pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity = Some(input.into());
             self
         }
-        /// <p>The verified identity for which you want to enable or disable the specified custom
-        /// MAIL FROM domain.</p>
+        /// <p>The verified identity for which you want to enable or disable the specified custom MAIL FROM domain.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
         }
-        /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
-        /// domain must 1) be a subdomain of the verified identity, 2) not be used in a "From"
-        /// address if the MAIL FROM domain is the destination of email feedback forwarding (for
-        /// more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
-        /// 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL
-        /// FROM setting for the identity.</p>
+        /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination of email feedback forwarding (for more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
         pub fn mail_from_domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.mail_from_domain = Some(input.into());
             self
         }
-        /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
-        /// domain must 1) be a subdomain of the verified identity, 2) not be used in a "From"
-        /// address if the MAIL FROM domain is the destination of email feedback forwarding (for
-        /// more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
-        /// 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL
-        /// FROM setting for the identity.</p>
+        /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination of email feedback forwarding (for more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
         pub fn set_mail_from_domain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10078,26 +9490,14 @@ pub mod set_identity_mail_from_domain_input {
             self.mail_from_domain = input;
             self
         }
-        /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX
-        /// record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will
-        /// use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose
-        /// <code>RejectMessage</code>, Amazon SES will return a
-        /// <code>MailFromDomainNotVerified</code> error and not send the email.</p>
-        /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL
-        /// FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and
-        /// <code>TemporaryFailure</code> states.</p>
+        /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES will return a <code>MailFromDomainNotVerified</code> error and not send the email.</p>
+        /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
         pub fn behavior_on_mx_failure(mut self, input: crate::model::BehaviorOnMxFailure) -> Self {
             self.behavior_on_mx_failure = Some(input);
             self
         }
-        /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX
-        /// record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will
-        /// use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose
-        /// <code>RejectMessage</code>, Amazon SES will return a
-        /// <code>MailFromDomainNotVerified</code> error and not send the email.</p>
-        /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL
-        /// FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and
-        /// <code>TemporaryFailure</code> states.</p>
+        /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES will return a <code>MailFromDomainNotVerified</code> error and not send the email.</p>
+        /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
         pub fn set_behavior_on_mx_failure(
             mut self,
             input: std::option::Option<crate::model::BehaviorOnMxFailure>,
@@ -10124,7 +9524,7 @@ pub mod set_identity_mail_from_domain_input {
 pub type SetIdentityMailFromDomainInputOperationOutputAlias =
     crate::operation::SetIdentityMailFromDomain;
 #[doc(hidden)]
-pub type SetIdentityMailFromDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetIdentityMailFromDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetIdentityMailFromDomainInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityMailFromDomain`](crate::operation::SetIdentityMailFromDomain)>
     #[allow(clippy::let_and_return)]
@@ -10135,7 +9535,7 @@ impl SetIdentityMailFromDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityMailFromDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10216,7 +9616,7 @@ impl SetIdentityMailFromDomainInput {
             "SetIdentityMailFromDomain",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10250,28 +9650,18 @@ pub mod set_identity_notification_topic_input {
         pub(crate) sns_topic: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic
-        /// for.</p>
-        /// <important>
+        /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
         /// <p>You can only specify a verified identity for this parameter.</p>
         /// </important>
-        /// <p>You can specify an identity by using its name or by using its Amazon Resource Name
-        /// (ARN). The following examples are all valid identities: <code>sender@example.com</code>,
-        /// <code>example.com</code>,
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity = Some(input.into());
             self
         }
-        /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic
-        /// for.</p>
-        /// <important>
+        /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
         /// <p>You can only specify a verified identity for this parameter.</p>
         /// </important>
-        /// <p>You can specify an identity by using its name or by using its Amazon Resource Name
-        /// (ARN). The following examples are all valid identities: <code>sender@example.com</code>,
-        /// <code>example.com</code>,
-        /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+        /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -10289,16 +9679,12 @@ pub mod set_identity_notification_topic_input {
             self.notification_type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from
-        /// the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing
-        /// is disabled.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing is disabled.</p>
         pub fn sns_topic(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from
-        /// the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing
-        /// is disabled.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing is disabled.</p>
         pub fn set_sns_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sns_topic = input;
             self
@@ -10322,7 +9708,8 @@ pub mod set_identity_notification_topic_input {
 pub type SetIdentityNotificationTopicInputOperationOutputAlias =
     crate::operation::SetIdentityNotificationTopic;
 #[doc(hidden)]
-pub type SetIdentityNotificationTopicInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetIdentityNotificationTopicInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl SetIdentityNotificationTopicInput {
     /// Consumes the builder and constructs an Operation<[`SetIdentityNotificationTopic`](crate::operation::SetIdentityNotificationTopic)>
     #[allow(clippy::let_and_return)]
@@ -10333,7 +9720,7 @@ impl SetIdentityNotificationTopicInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetIdentityNotificationTopic,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10414,7 +9801,7 @@ impl SetIdentityNotificationTopicInput {
             "SetIdentityNotificationTopic",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10499,7 +9886,7 @@ pub mod set_receipt_rule_position_input {
 #[doc(hidden)]
 pub type SetReceiptRulePositionInputOperationOutputAlias = crate::operation::SetReceiptRulePosition;
 #[doc(hidden)]
-pub type SetReceiptRulePositionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetReceiptRulePositionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetReceiptRulePositionInput {
     /// Consumes the builder and constructs an Operation<[`SetReceiptRulePosition`](crate::operation::SetReceiptRulePosition)>
     #[allow(clippy::let_and_return)]
@@ -10510,7 +9897,7 @@ impl SetReceiptRulePositionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetReceiptRulePosition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10592,7 +9979,7 @@ impl SetReceiptRulePositionInput {
             "SetReceiptRulePosition",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10638,16 +10025,12 @@ pub mod test_render_template_input {
             self.template_name = input;
             self
         }
-        /// <p>A list of replacement values to apply to the template. This parameter is a JSON
-        /// object, typically consisting of key-value pairs in which the keys correspond to
-        /// replacement tags in the email template.</p>
+        /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
         pub fn template_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_data = Some(input.into());
             self
         }
-        /// <p>A list of replacement values to apply to the template. This parameter is a JSON
-        /// object, typically consisting of key-value pairs in which the keys correspond to
-        /// replacement tags in the email template.</p>
+        /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
         pub fn set_template_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10672,7 +10055,7 @@ pub mod test_render_template_input {
 #[doc(hidden)]
 pub type TestRenderTemplateInputOperationOutputAlias = crate::operation::TestRenderTemplate;
 #[doc(hidden)]
-pub type TestRenderTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TestRenderTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TestRenderTemplateInput {
     /// Consumes the builder and constructs an Operation<[`TestRenderTemplate`](crate::operation::TestRenderTemplate)>
     #[allow(clippy::let_and_return)]
@@ -10683,7 +10066,7 @@ impl TestRenderTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestRenderTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10763,7 +10146,7 @@ impl TestRenderTemplateInput {
             "TestRenderTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10795,14 +10178,12 @@ pub mod update_account_sending_enabled_input {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the
-        /// current AWS Region.</p>
+        /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the
-        /// current AWS Region.</p>
+        /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -10824,7 +10205,7 @@ pub mod update_account_sending_enabled_input {
 pub type UpdateAccountSendingEnabledInputOperationOutputAlias =
     crate::operation::UpdateAccountSendingEnabled;
 #[doc(hidden)]
-pub type UpdateAccountSendingEnabledInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAccountSendingEnabledInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAccountSendingEnabledInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAccountSendingEnabled`](crate::operation::UpdateAccountSendingEnabled)>
     #[allow(clippy::let_and_return)]
@@ -10835,7 +10216,7 @@ impl UpdateAccountSendingEnabledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAccountSendingEnabled,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10916,7 +10297,7 @@ impl UpdateAccountSendingEnabledInput {
             "UpdateAccountSendingEnabled",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10949,14 +10330,12 @@ pub mod update_configuration_set_event_destination_input {
         pub(crate) event_destination: std::option::Option<crate::model::EventDestination>,
     }
     impl Builder {
-        /// <p>The name of the configuration set that contains the event destination that you want to
-        /// update.</p>
+        /// <p>The name of the configuration set that contains the event destination that you want to update.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration set that contains the event destination that you want to
-        /// update.</p>
+        /// <p>The name of the configuration set that contains the event destination that you want to update.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10964,14 +10343,12 @@ pub mod update_configuration_set_event_destination_input {
             self.configuration_set_name = input;
             self
         }
-        /// <p>The event destination object that you want to apply to the specified configuration
-        /// set.</p>
+        /// <p>The event destination object that you want to apply to the specified configuration set.</p>
         pub fn event_destination(mut self, input: crate::model::EventDestination) -> Self {
             self.event_destination = Some(input);
             self
         }
-        /// <p>The event destination object that you want to apply to the specified configuration
-        /// set.</p>
+        /// <p>The event destination object that you want to apply to the specified configuration set.</p>
         pub fn set_event_destination(
             mut self,
             input: std::option::Option<crate::model::EventDestination>,
@@ -10998,7 +10375,7 @@ pub type UpdateConfigurationSetEventDestinationInputOperationOutputAlias =
     crate::operation::UpdateConfigurationSetEventDestination;
 #[doc(hidden)]
 pub type UpdateConfigurationSetEventDestinationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConfigurationSetEventDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfigurationSetEventDestination`](crate::operation::UpdateConfigurationSetEventDestination)>
     #[allow(clippy::let_and_return)]
@@ -11009,7 +10386,7 @@ impl UpdateConfigurationSetEventDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationSetEventDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11090,7 +10467,7 @@ impl UpdateConfigurationSetEventDestinationInput {
             "UpdateConfigurationSetEventDestination",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11136,14 +10513,12 @@ pub mod update_configuration_set_reputation_metrics_enabled_input {
             self.configuration_set_name = input;
             self
         }
-        /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration
-        /// set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
+        /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration
-        /// set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
+        /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -11169,7 +10544,7 @@ pub type UpdateConfigurationSetReputationMetricsEnabledInputOperationOutputAlias
     crate::operation::UpdateConfigurationSetReputationMetricsEnabled;
 #[doc(hidden)]
 pub type UpdateConfigurationSetReputationMetricsEnabledInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConfigurationSetReputationMetricsEnabledInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfigurationSetReputationMetricsEnabled`](crate::operation::UpdateConfigurationSetReputationMetricsEnabled)>
     #[allow(clippy::let_and_return)]
@@ -11180,7 +10555,7 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationSetReputationMetricsEnabled,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11261,7 +10636,7 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
             "UpdateConfigurationSetReputationMetricsEnabled",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11308,14 +10683,12 @@ pub mod update_configuration_set_sending_enabled_input {
             self.configuration_set_name = input;
             self
         }
-        /// <p>Describes whether email sending is enabled or disabled for the configuration set.
-        /// </p>
+        /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Describes whether email sending is enabled or disabled for the configuration set.
-        /// </p>
+        /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -11339,7 +10712,7 @@ pub type UpdateConfigurationSetSendingEnabledInputOperationOutputAlias =
     crate::operation::UpdateConfigurationSetSendingEnabled;
 #[doc(hidden)]
 pub type UpdateConfigurationSetSendingEnabledInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConfigurationSetSendingEnabledInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfigurationSetSendingEnabled`](crate::operation::UpdateConfigurationSetSendingEnabled)>
     #[allow(clippy::let_and_return)]
@@ -11350,7 +10723,7 @@ impl UpdateConfigurationSetSendingEnabledInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationSetSendingEnabled,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11431,7 +10804,7 @@ impl UpdateConfigurationSetSendingEnabledInput {
             "UpdateConfigurationSetSendingEnabled",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11464,14 +10837,12 @@ pub mod update_configuration_set_tracking_options_input {
         pub(crate) tracking_options: std::option::Option<crate::model::TrackingOptions>,
     }
     impl Builder {
-        /// <p>The name of the configuration set for which you want to update the custom tracking
-        /// domain.</p>
+        /// <p>The name of the configuration set for which you want to update the custom tracking domain.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_set_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration set for which you want to update the custom tracking
-        /// domain.</p>
+        /// <p>The name of the configuration set for which you want to update the custom tracking domain.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11479,20 +10850,14 @@ pub mod update_configuration_set_tracking_options_input {
             self.configuration_set_name = input;
             self
         }
-        /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This
-        /// domain captures open and click events generated by Amazon SES emails.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-        /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
+        /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This domain captures open and click events generated by Amazon SES emails.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn tracking_options(mut self, input: crate::model::TrackingOptions) -> Self {
             self.tracking_options = Some(input);
             self
         }
-        /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This
-        /// domain captures open and click events generated by Amazon SES emails.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-        /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
+        /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This domain captures open and click events generated by Amazon SES emails.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn set_tracking_options(
             mut self,
             input: std::option::Option<crate::model::TrackingOptions>,
@@ -11519,7 +10884,7 @@ pub type UpdateConfigurationSetTrackingOptionsInputOperationOutputAlias =
     crate::operation::UpdateConfigurationSetTrackingOptions;
 #[doc(hidden)]
 pub type UpdateConfigurationSetTrackingOptionsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateConfigurationSetTrackingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateConfigurationSetTrackingOptions`](crate::operation::UpdateConfigurationSetTrackingOptions)>
     #[allow(clippy::let_and_return)]
@@ -11530,7 +10895,7 @@ impl UpdateConfigurationSetTrackingOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationSetTrackingOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11611,7 +10976,7 @@ impl UpdateConfigurationSetTrackingOptionsInput {
             "UpdateConfigurationSetTrackingOptions",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11687,18 +11052,12 @@ pub mod update_custom_verification_email_template_input {
             self.template_subject = input;
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less
-        /// than 10 MB. The message body may contain HTML, with some limitations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn template_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_content = Some(input.into());
             self
         }
-        /// <p>The content of the custom verification email. The total size of the email must be less
-        /// than 10 MB. The message body may contain HTML, with some limitations. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-        /// Developer Guide</i>.</p>
+        /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
         pub fn set_template_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11706,14 +11065,12 @@ pub mod update_custom_verification_email_template_input {
             self.template_content = input;
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
         pub fn success_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.success_redirection_url = Some(input.into());
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
         pub fn set_success_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11721,14 +11078,12 @@ pub mod update_custom_verification_email_template_input {
             self.success_redirection_url = input;
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is not successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
         pub fn failure_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_redirection_url = Some(input.into());
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is not successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
         pub fn set_failure_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11759,7 +11114,7 @@ pub type UpdateCustomVerificationEmailTemplateInputOperationOutputAlias =
     crate::operation::UpdateCustomVerificationEmailTemplate;
 #[doc(hidden)]
 pub type UpdateCustomVerificationEmailTemplateInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCustomVerificationEmailTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCustomVerificationEmailTemplate`](crate::operation::UpdateCustomVerificationEmailTemplate)>
     #[allow(clippy::let_and_return)]
@@ -11770,7 +11125,7 @@ impl UpdateCustomVerificationEmailTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCustomVerificationEmailTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11851,7 +11206,7 @@ impl UpdateCustomVerificationEmailTemplateInput {
             "UpdateCustomVerificationEmailTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11924,7 +11279,7 @@ pub mod update_receipt_rule_input {
 #[doc(hidden)]
 pub type UpdateReceiptRuleInputOperationOutputAlias = crate::operation::UpdateReceiptRule;
 #[doc(hidden)]
-pub type UpdateReceiptRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateReceiptRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateReceiptRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateReceiptRule`](crate::operation::UpdateReceiptRule)>
     #[allow(clippy::let_and_return)]
@@ -11935,7 +11290,7 @@ impl UpdateReceiptRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateReceiptRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12015,7 +11370,7 @@ impl UpdateReceiptRuleInput {
             "UpdateReceiptRule",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12047,14 +11402,12 @@ pub mod update_template_input {
         pub(crate) template: std::option::Option<crate::model::Template>,
     }
     impl Builder {
-        /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
-        /// part.</p>
+        /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
         pub fn template(mut self, input: crate::model::Template) -> Self {
             self.template = Some(input);
             self
         }
-        /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
-        /// part.</p>
+        /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
         pub fn set_template(mut self, input: std::option::Option<crate::model::Template>) -> Self {
             self.template = input;
             self
@@ -12075,7 +11428,7 @@ pub mod update_template_input {
 #[doc(hidden)]
 pub type UpdateTemplateInputOperationOutputAlias = crate::operation::UpdateTemplate;
 #[doc(hidden)]
-pub type UpdateTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTemplate`](crate::operation::UpdateTemplate)>
     #[allow(clippy::let_and_return)]
@@ -12086,7 +11439,7 @@ impl UpdateTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12166,7 +11519,7 @@ impl UpdateTemplateInput {
             "UpdateTemplate",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12224,7 +11577,7 @@ pub mod verify_domain_dkim_input {
 #[doc(hidden)]
 pub type VerifyDomainDkimInputOperationOutputAlias = crate::operation::VerifyDomainDkim;
 #[doc(hidden)]
-pub type VerifyDomainDkimInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type VerifyDomainDkimInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VerifyDomainDkimInput {
     /// Consumes the builder and constructs an Operation<[`VerifyDomainDkim`](crate::operation::VerifyDomainDkim)>
     #[allow(clippy::let_and_return)]
@@ -12235,7 +11588,7 @@ impl VerifyDomainDkimInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VerifyDomainDkim,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12315,7 +11668,7 @@ impl VerifyDomainDkimInput {
             "VerifyDomainDkim",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12373,7 +11726,7 @@ pub mod verify_domain_identity_input {
 #[doc(hidden)]
 pub type VerifyDomainIdentityInputOperationOutputAlias = crate::operation::VerifyDomainIdentity;
 #[doc(hidden)]
-pub type VerifyDomainIdentityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type VerifyDomainIdentityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VerifyDomainIdentityInput {
     /// Consumes the builder and constructs an Operation<[`VerifyDomainIdentity`](crate::operation::VerifyDomainIdentity)>
     #[allow(clippy::let_and_return)]
@@ -12384,7 +11737,7 @@ impl VerifyDomainIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VerifyDomainIdentity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12466,7 +11819,7 @@ impl VerifyDomainIdentityInput {
             "VerifyDomainIdentity",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12527,7 +11880,7 @@ pub mod verify_email_address_input {
 #[doc(hidden)]
 pub type VerifyEmailAddressInputOperationOutputAlias = crate::operation::VerifyEmailAddress;
 #[doc(hidden)]
-pub type VerifyEmailAddressInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type VerifyEmailAddressInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VerifyEmailAddressInput {
     /// Consumes the builder and constructs an Operation<[`VerifyEmailAddress`](crate::operation::VerifyEmailAddress)>
     #[allow(clippy::let_and_return)]
@@ -12538,7 +11891,7 @@ impl VerifyEmailAddressInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VerifyEmailAddress,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12618,7 +11971,7 @@ impl VerifyEmailAddressInput {
             "VerifyEmailAddress",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12679,7 +12032,7 @@ pub mod verify_email_identity_input {
 #[doc(hidden)]
 pub type VerifyEmailIdentityInputOperationOutputAlias = crate::operation::VerifyEmailIdentity;
 #[doc(hidden)]
-pub type VerifyEmailIdentityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type VerifyEmailIdentityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl VerifyEmailIdentityInput {
     /// Consumes the builder and constructs an Operation<[`VerifyEmailIdentity`](crate::operation::VerifyEmailIdentity)>
     #[allow(clippy::let_and_return)]
@@ -12690,7 +12043,7 @@ impl VerifyEmailIdentityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::VerifyEmailIdentity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12770,7 +12123,7 @@ impl VerifyEmailIdentityInput {
             "VerifyEmailIdentity",
             "ses",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12793,9 +12146,7 @@ impl VerifyEmailIdentityInput {
     }
 }
 
-/// <p>Represents a request to begin email address verification with Amazon SES. For information
-/// about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to begin email address verification with Amazon SES. For information about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyEmailIdentityInput {
@@ -12816,9 +12167,7 @@ impl std::fmt::Debug for VerifyEmailIdentityInput {
     }
 }
 
-/// <p>Represents a request to begin email address verification with Amazon SES. For information
-/// about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to begin email address verification with Amazon SES. For information about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyEmailAddressInput {
@@ -12839,10 +12188,7 @@ impl std::fmt::Debug for VerifyEmailAddressInput {
     }
 }
 
-/// <p>Represents a request to begin Amazon SES domain verification and to generate the TXT
-/// records that you must publish to the DNS server of your domain to complete the
-/// verification. For information about domain verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domains.html">Amazon SES
-/// Developer Guide</a>.</p>
+/// <p>Represents a request to begin Amazon SES domain verification and to generate the TXT records that you must publish to the DNS server of your domain to complete the verification. For information about domain verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domains.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyDomainIdentityInput {
@@ -12863,9 +12209,7 @@ impl std::fmt::Debug for VerifyDomainIdentityInput {
     }
 }
 
-/// <p>Represents a request to generate the CNAME records needed to set up Easy DKIM with
-/// Amazon SES. For more information about setting up Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to generate the CNAME records needed to set up Easy DKIM with Amazon SES. For more information about setting up Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyDomainDkimInput {
@@ -12890,13 +12234,11 @@ impl std::fmt::Debug for VerifyDomainDkimInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTemplateInput {
-    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
-    /// part.</p>
+    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     pub template: std::option::Option<crate::model::Template>,
 }
 impl UpdateTemplateInput {
-    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
-    /// part.</p>
+    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     pub fn template(&self) -> std::option::Option<&crate::model::Template> {
         self.template.as_ref()
     }
@@ -12909,9 +12251,7 @@ impl std::fmt::Debug for UpdateTemplateInput {
     }
 }
 
-/// <p>Represents a request to update a receipt rule. You use receipt rules to receive email
-/// with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to update a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReceiptRuleInput {
@@ -12949,16 +12289,11 @@ pub struct UpdateCustomVerificationEmailTemplateInput {
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The subject line of the custom verification email.</p>
     pub template_subject: std::option::Option<std::string::String>,
-    /// <p>The content of the custom verification email. The total size of the email must be less
-    /// than 10 MB. The message body may contain HTML, with some limitations. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-    /// Developer Guide</i>.</p>
+    /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
     pub template_content: std::option::Option<std::string::String>,
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     pub success_redirection_url: std::option::Option<std::string::String>,
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is not successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     pub failure_redirection_url: std::option::Option<std::string::String>,
 }
 impl UpdateCustomVerificationEmailTemplateInput {
@@ -12974,20 +12309,15 @@ impl UpdateCustomVerificationEmailTemplateInput {
     pub fn template_subject(&self) -> std::option::Option<&str> {
         self.template_subject.as_deref()
     }
-    /// <p>The content of the custom verification email. The total size of the email must be less
-    /// than 10 MB. The message body may contain HTML, with some limitations. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-    /// Developer Guide</i>.</p>
+    /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
     pub fn template_content(&self) -> std::option::Option<&str> {
         self.template_content.as_deref()
     }
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     pub fn success_redirection_url(&self) -> std::option::Option<&str> {
         self.success_redirection_url.as_deref()
     }
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is not successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     pub fn failure_redirection_url(&self) -> std::option::Option<&str> {
         self.failure_redirection_url.as_deref()
     }
@@ -13009,27 +12339,19 @@ impl std::fmt::Debug for UpdateCustomVerificationEmailTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationSetTrackingOptionsInput {
-    /// <p>The name of the configuration set for which you want to update the custom tracking
-    /// domain.</p>
+    /// <p>The name of the configuration set for which you want to update the custom tracking domain.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This
-    /// domain captures open and click events generated by Amazon SES emails.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-    /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES
-    /// Developer Guide</i>.</p>
+    /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This domain captures open and click events generated by Amazon SES emails.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES Developer Guide</i>.</p>
     pub tracking_options: std::option::Option<crate::model::TrackingOptions>,
 }
 impl UpdateConfigurationSetTrackingOptionsInput {
-    /// <p>The name of the configuration set for which you want to update the custom tracking
-    /// domain.</p>
+    /// <p>The name of the configuration set for which you want to update the custom tracking domain.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This
-    /// domain captures open and click events generated by Amazon SES emails.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-    /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES
-    /// Developer Guide</i>.</p>
+    /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This domain captures open and click events generated by Amazon SES emails.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES Developer Guide</i>.</p>
     pub fn tracking_options(&self) -> std::option::Option<&crate::model::TrackingOptions> {
         self.tracking_options.as_ref()
     }
@@ -13043,15 +12365,13 @@ impl std::fmt::Debug for UpdateConfigurationSetTrackingOptionsInput {
     }
 }
 
-/// <p>Represents a request to enable or disable the email sending capabilities for a
-/// specific configuration set.</p>
+/// <p>Represents a request to enable or disable the email sending capabilities for a specific configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationSetSendingEnabledInput {
     /// <p>The name of the configuration set that you want to update.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>Describes whether email sending is enabled or disabled for the configuration set.
-    /// </p>
+    /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
     pub enabled: bool,
 }
 impl UpdateConfigurationSetSendingEnabledInput {
@@ -13059,8 +12379,7 @@ impl UpdateConfigurationSetSendingEnabledInput {
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>Describes whether email sending is enabled or disabled for the configuration set.
-    /// </p>
+    /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -13074,15 +12393,13 @@ impl std::fmt::Debug for UpdateConfigurationSetSendingEnabledInput {
     }
 }
 
-/// <p>Represents a request to modify the reputation metric publishing settings for a
-/// configuration set.</p>
+/// <p>Represents a request to modify the reputation metric publishing settings for a configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationSetReputationMetricsEnabledInput {
     /// <p>The name of the configuration set that you want to update.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration
-    /// set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
+    /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
     pub enabled: bool,
 }
 impl UpdateConfigurationSetReputationMetricsEnabledInput {
@@ -13090,8 +12407,7 @@ impl UpdateConfigurationSetReputationMetricsEnabledInput {
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration
-    /// set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
+    /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -13105,28 +12421,21 @@ impl std::fmt::Debug for UpdateConfigurationSetReputationMetricsEnabledInput {
     }
 }
 
-/// <p>Represents a request to update the event destination of a configuration set.
-/// Configuration sets enable you to publish email sending events. For information about
-/// using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to update the event destination of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConfigurationSetEventDestinationInput {
-    /// <p>The name of the configuration set that contains the event destination that you want to
-    /// update.</p>
+    /// <p>The name of the configuration set that contains the event destination that you want to update.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>The event destination object that you want to apply to the specified configuration
-    /// set.</p>
+    /// <p>The event destination object that you want to apply to the specified configuration set.</p>
     pub event_destination: std::option::Option<crate::model::EventDestination>,
 }
 impl UpdateConfigurationSetEventDestinationInput {
-    /// <p>The name of the configuration set that contains the event destination that you want to
-    /// update.</p>
+    /// <p>The name of the configuration set that contains the event destination that you want to update.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>The event destination object that you want to apply to the specified configuration
-    /// set.</p>
+    /// <p>The event destination object that you want to apply to the specified configuration set.</p>
     pub fn event_destination(&self) -> std::option::Option<&crate::model::EventDestination> {
         self.event_destination.as_ref()
     }
@@ -13140,18 +12449,15 @@ impl std::fmt::Debug for UpdateConfigurationSetEventDestinationInput {
     }
 }
 
-/// <p>Represents a request to enable or disable the email sending capabilities for your
-/// entire Amazon SES account.</p>
+/// <p>Represents a request to enable or disable the email sending capabilities for your entire Amazon SES account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountSendingEnabledInput {
-    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the
-    /// current AWS Region.</p>
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
     pub enabled: bool,
 }
 impl UpdateAccountSendingEnabledInput {
-    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the
-    /// current AWS Region.</p>
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -13170,9 +12476,7 @@ impl std::fmt::Debug for UpdateAccountSendingEnabledInput {
 pub struct TestRenderTemplateInput {
     /// <p>The name of the template that you want to render.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>A list of replacement values to apply to the template. This parameter is a JSON
-    /// object, typically consisting of key-value pairs in which the keys correspond to
-    /// replacement tags in the email template.</p>
+    /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub template_data: std::option::Option<std::string::String>,
 }
 impl TestRenderTemplateInput {
@@ -13180,9 +12484,7 @@ impl TestRenderTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>A list of replacement values to apply to the template. This parameter is a JSON
-    /// object, typically consisting of key-value pairs in which the keys correspond to
-    /// replacement tags in the email template.</p>
+    /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub fn template_data(&self) -> std::option::Option<&str> {
         self.template_data.as_deref()
     }
@@ -13196,8 +12498,7 @@ impl std::fmt::Debug for TestRenderTemplateInput {
     }
 }
 
-/// <p>Represents a request to set the position of a receipt rule in a receipt rule set. You
-/// use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Represents a request to set the position of a receipt rule in a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetReceiptRulePositionInput {
@@ -13232,40 +12533,25 @@ impl std::fmt::Debug for SetReceiptRulePositionInput {
     }
 }
 
-/// <p>Represents a request to specify the Amazon SNS topic to which Amazon SES will publish bounce,
-/// complaint, or delivery notifications for emails sent with that identity as the Source.
-/// For information about Amazon SES notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to specify the Amazon SNS topic to which Amazon SES will publish bounce, complaint, or delivery notifications for emails sent with that identity as the Source. For information about Amazon SES notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetIdentityNotificationTopicInput {
-    /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic
-    /// for.</p>
-    /// <important>
+    /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
-    /// <p>You can specify an identity by using its name or by using its Amazon Resource Name
-    /// (ARN). The following examples are all valid identities: <code>sender@example.com</code>,
-    /// <code>example.com</code>,
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     pub identity: std::option::Option<std::string::String>,
     /// <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
     pub notification_type: std::option::Option<crate::model::NotificationType>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from
-    /// the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing
-    /// is disabled.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing is disabled.</p>
     pub sns_topic: std::option::Option<std::string::String>,
 }
 impl SetIdentityNotificationTopicInput {
-    /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic
-    /// for.</p>
-    /// <important>
+    /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
     /// <p>You can only specify a verified identity for this parameter.</p>
     /// </important>
-    /// <p>You can specify an identity by using its name or by using its Amazon Resource Name
-    /// (ARN). The following examples are all valid identities: <code>sender@example.com</code>,
-    /// <code>example.com</code>,
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     pub fn identity(&self) -> std::option::Option<&str> {
         self.identity.as_deref()
     }
@@ -13273,9 +12559,7 @@ impl SetIdentityNotificationTopicInput {
     pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
         self.notification_type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from
-    /// the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing
-    /// is disabled.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing is disabled.</p>
     pub fn sns_topic(&self) -> std::option::Option<&str> {
         self.sns_topic.as_deref()
     }
@@ -13290,56 +12574,29 @@ impl std::fmt::Debug for SetIdentityNotificationTopicInput {
     }
 }
 
-/// <p>Represents a request to enable or disable the Amazon SES custom MAIL FROM domain setup for
-/// a verified identity. For information about using a custom MAIL FROM domain, see the
-/// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES
-/// Developer Guide</a>.</p>
+/// <p>Represents a request to enable or disable the Amazon SES custom MAIL FROM domain setup for a verified identity. For information about using a custom MAIL FROM domain, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetIdentityMailFromDomainInput {
-    /// <p>The verified identity for which you want to enable or disable the specified custom
-    /// MAIL FROM domain.</p>
+    /// <p>The verified identity for which you want to enable or disable the specified custom MAIL FROM domain.</p>
     pub identity: std::option::Option<std::string::String>,
-    /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
-    /// domain must 1) be a subdomain of the verified identity, 2) not be used in a "From"
-    /// address if the MAIL FROM domain is the destination of email feedback forwarding (for
-    /// more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
-    /// 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL
-    /// FROM setting for the identity.</p>
+    /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination of email feedback forwarding (for more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
     pub mail_from_domain: std::option::Option<std::string::String>,
-    /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX
-    /// record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will
-    /// use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose
-    /// <code>RejectMessage</code>, Amazon SES will return a
-    /// <code>MailFromDomainNotVerified</code> error and not send the email.</p>
-    /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL
-    /// FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and
-    /// <code>TemporaryFailure</code> states.</p>
+    /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES will return a <code>MailFromDomainNotVerified</code> error and not send the email.</p>
+    /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     pub behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
 }
 impl SetIdentityMailFromDomainInput {
-    /// <p>The verified identity for which you want to enable or disable the specified custom
-    /// MAIL FROM domain.</p>
+    /// <p>The verified identity for which you want to enable or disable the specified custom MAIL FROM domain.</p>
     pub fn identity(&self) -> std::option::Option<&str> {
         self.identity.as_deref()
     }
-    /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
-    /// domain must 1) be a subdomain of the verified identity, 2) not be used in a "From"
-    /// address if the MAIL FROM domain is the destination of email feedback forwarding (for
-    /// more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
-    /// 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL
-    /// FROM setting for the identity.</p>
+    /// <p>The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination of email feedback forwarding (for more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the identity.</p>
     pub fn mail_from_domain(&self) -> std::option::Option<&str> {
         self.mail_from_domain.as_deref()
     }
-    /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX
-    /// record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will
-    /// use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose
-    /// <code>RejectMessage</code>, Amazon SES will return a
-    /// <code>MailFromDomainNotVerified</code> error and not send the email.</p>
-    /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL
-    /// FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and
-    /// <code>TemporaryFailure</code> states.</p>
+    /// <p>The action that you want Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose <code>UseDefaultValue</code>, Amazon SES will use amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose <code>RejectMessage</code>, Amazon SES will return a <code>MailFromDomainNotVerified</code> error and not send the email.</p>
+    /// <p>The action specified in <code>BehaviorOnMXFailure</code> is taken when the custom MAIL FROM domain setup is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     pub fn behavior_on_mx_failure(
         &self,
     ) -> std::option::Option<&crate::model::BehaviorOnMxFailure> {
@@ -13356,29 +12613,20 @@ impl std::fmt::Debug for SetIdentityMailFromDomainInput {
     }
 }
 
-/// <p>Represents a request to set whether Amazon SES includes the original email headers in the
-/// Amazon SNS notifications of a specified type. For information about notifications, see the
-/// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to set whether Amazon SES includes the original email headers in the Amazon SNS notifications of a specified type. For information about notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetIdentityHeadersInNotificationsEnabledInput {
-    /// <p>The identity for which to enable or disable headers in notifications. Examples:
-    /// <code>user@example.com</code>, <code>example.com</code>.</p>
+    /// <p>The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     pub identity: std::option::Option<std::string::String>,
     /// <p>The notification type for which to enable or disable headers in notifications. </p>
     pub notification_type: std::option::Option<crate::model::NotificationType>,
-    /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the
-    /// specified notification type. A value of <code>true</code> specifies that Amazon SES will
-    /// include headers in notifications, and a value of <code>false</code> specifies that Amazon SES
-    /// will not include headers in notifications.</p>
-    /// <p>This value can only be set when <code>NotificationType</code> is already set to use a
-    /// particular Amazon SNS topic.</p>
+    /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.</p>
+    /// <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
     pub enabled: bool,
 }
 impl SetIdentityHeadersInNotificationsEnabledInput {
-    /// <p>The identity for which to enable or disable headers in notifications. Examples:
-    /// <code>user@example.com</code>, <code>example.com</code>.</p>
+    /// <p>The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     pub fn identity(&self) -> std::option::Option<&str> {
         self.identity.as_deref()
     }
@@ -13386,12 +12634,8 @@ impl SetIdentityHeadersInNotificationsEnabledInput {
     pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
         self.notification_type.as_ref()
     }
-    /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the
-    /// specified notification type. A value of <code>true</code> specifies that Amazon SES will
-    /// include headers in notifications, and a value of <code>false</code> specifies that Amazon SES
-    /// will not include headers in notifications.</p>
-    /// <p>This value can only be set when <code>NotificationType</code> is already set to use a
-    /// particular Amazon SNS topic.</p>
+    /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.</p>
+    /// <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -13406,38 +12650,21 @@ impl std::fmt::Debug for SetIdentityHeadersInNotificationsEnabledInput {
     }
 }
 
-/// <p>Represents a request to enable or disable whether Amazon SES forwards you bounce and
-/// complaint notifications through email. For information about email feedback forwarding,
-/// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-email.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to enable or disable whether Amazon SES forwards you bounce and complaint notifications through email. For information about email feedback forwarding, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-email.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetIdentityFeedbackForwardingEnabledInput {
-    /// <p>The identity for which to set bounce and complaint notification forwarding. Examples:
-    /// <code>user@example.com</code>, <code>example.com</code>.</p>
+    /// <p>The identity for which to set bounce and complaint notification forwarding. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     pub identity: std::option::Option<std::string::String>,
-    /// <p>Sets whether Amazon SES will forward bounce and complaint notifications as email.
-    /// <code>true</code> specifies that Amazon SES will forward bounce and complaint
-    /// notifications as email, in addition to any Amazon SNS topic publishing otherwise specified.
-    /// <code>false</code> specifies that Amazon SES will publish bounce and complaint
-    /// notifications only through Amazon SNS. This value can only be set to <code>false</code> when
-    /// Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code>
-    /// notification types.</p>
+    /// <p>Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> specifies that Amazon SES will forward bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES will publish bounce and complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.</p>
     pub forwarding_enabled: bool,
 }
 impl SetIdentityFeedbackForwardingEnabledInput {
-    /// <p>The identity for which to set bounce and complaint notification forwarding. Examples:
-    /// <code>user@example.com</code>, <code>example.com</code>.</p>
+    /// <p>The identity for which to set bounce and complaint notification forwarding. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
     pub fn identity(&self) -> std::option::Option<&str> {
         self.identity.as_deref()
     }
-    /// <p>Sets whether Amazon SES will forward bounce and complaint notifications as email.
-    /// <code>true</code> specifies that Amazon SES will forward bounce and complaint
-    /// notifications as email, in addition to any Amazon SNS topic publishing otherwise specified.
-    /// <code>false</code> specifies that Amazon SES will publish bounce and complaint
-    /// notifications only through Amazon SNS. This value can only be set to <code>false</code> when
-    /// Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code>
-    /// notification types.</p>
+    /// <p>Sets whether Amazon SES will forward bounce and complaint notifications as email. <code>true</code> specifies that Amazon SES will forward bounce and complaint notifications as email, in addition to any Amazon SNS topic publishing otherwise specified. <code>false</code> specifies that Amazon SES will publish bounce and complaint notifications only through Amazon SNS. This value can only be set to <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code> and <code>Complaint</code> notification types.</p>
     pub fn forwarding_enabled(&self) -> bool {
         self.forwarding_enabled
     }
@@ -13451,15 +12678,13 @@ impl std::fmt::Debug for SetIdentityFeedbackForwardingEnabledInput {
     }
 }
 
-/// <p>Represents a request to enable or disable Amazon SES Easy DKIM signing for an identity. For
-/// more information about setting up Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Represents a request to enable or disable Amazon SES Easy DKIM signing for an identity. For more information about setting up Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetIdentityDkimEnabledInput {
     /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
     pub identity: std::option::Option<std::string::String>,
-    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to
-    /// enable DKIM signing for this identity; <code>false</code> to disable it. </p>
+    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     pub dkim_enabled: bool,
 }
 impl SetIdentityDkimEnabledInput {
@@ -13467,8 +12692,7 @@ impl SetIdentityDkimEnabledInput {
     pub fn identity(&self) -> std::option::Option<&str> {
         self.identity.as_deref()
     }
-    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to
-    /// enable DKIM signing for this identity; <code>false</code> to disable it. </p>
+    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     pub fn dkim_enabled(&self) -> bool {
         self.dkim_enabled
     }
@@ -13482,18 +12706,15 @@ impl std::fmt::Debug for SetIdentityDkimEnabledInput {
     }
 }
 
-/// <p>Represents a request to set a receipt rule set as the active receipt rule set. You use
-/// receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Represents a request to set a receipt rule set as the active receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetActiveReceiptRuleSetInput {
-    /// <p>The name of the receipt rule set to make active. Setting this value to null disables
-    /// all email receiving.</p>
+    /// <p>The name of the receipt rule set to make active. Setting this value to null disables all email receiving.</p>
     pub rule_set_name: std::option::Option<std::string::String>,
 }
 impl SetActiveReceiptRuleSetInput {
-    /// <p>The name of the receipt rule set to make active. Setting this value to null disables
-    /// all email receiving.</p>
+    /// <p>The name of the receipt rule set to make active. Setting this value to null disables all email receiving.</p>
     pub fn rule_set_name(&self) -> std::option::Option<&str> {
         self.rule_set_name.as_deref()
     }
@@ -13506,165 +12727,77 @@ impl std::fmt::Debug for SetActiveReceiptRuleSetInput {
     }
 }
 
-/// <p>Represents a request to send a templated email using Amazon SES. For more information, see
-/// the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to send a templated email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendTemplatedEmailInput {
-    /// <p>The email address that is sending the email. This email address must be either
-    /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
-    /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
-    /// Guide</a>.</p>
-    /// <p>If you are sending on behalf of another user and have been permitted to do so by a
-    /// sending authorization policy, then you must also specify the <code>SourceArn</code>
-    /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    /// <note>
-    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-    /// <i>local part</i> of a source email address (the part of the email
-    /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-    /// characters</a>. If the <i>domain part</i> of an address (the
-    /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-    /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-    /// name</i>) may contain non-ASCII characters. These characters must be
-    /// encoded using MIME encoded-word syntax, as described in<a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-    /// syntax uses the following form:
-    /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+    /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
+    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in<a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
     /// </note>
     pub source: std::option::Option<std::string::String>,
-    /// <p>The destination for this email, composed of To:, CC:, and BCC: fields. A Destination
-    /// can include up to 50 recipients across these three fields.</p>
+    /// <p>The destination for this email, composed of To:, CC:, and BCC: fields. A Destination can include up to 50 recipients across these three fields.</p>
     pub destination: std::option::Option<crate::model::Destination>,
-    /// <p>The reply-to email address(es) for the message. If the recipient replies to the
-    /// message, each reply-to address will receive the reply.</p>
+    /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
     pub reply_to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The email address that bounces and complaints will be forwarded to when feedback
-    /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
-    /// error message will be returned from the recipient's ISP; this message will then be
-    /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
-    /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
-    /// either individually verified with Amazon SES, or from a domain that has been verified with
-    /// Amazon SES. </p>
+    /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
     pub return_path: std::option::Option<std::string::String>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to send for
-    /// the email address specified in the <code>Source</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-    /// would specify the <code>SourceArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>Source</code> to be <code>user@example.com</code>.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub source_arn: std::option::Option<std::string::String>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>ReturnPath</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-    /// would specify the <code>ReturnPathArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub return_path_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-    /// using <code>SendTemplatedEmail</code>. Tags correspond to characteristics of the email
-    /// that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
-    /// <p>The name of the configuration set to use when you send an email using
-    /// <code>SendTemplatedEmail</code>.</p>
+    /// <p>The name of the configuration set to use when you send an email using <code>SendTemplatedEmail</code>.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
     /// <p>The template to use when sending this email.</p>
     pub template: std::option::Option<std::string::String>,
     /// <p>The ARN of the template to use when sending this email.</p>
     pub template_arn: std::option::Option<std::string::String>,
-    /// <p>A list of replacement values to apply to the template. This parameter is a JSON
-    /// object, typically consisting of key-value pairs in which the keys correspond to
-    /// replacement tags in the email template.</p>
+    /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub template_data: std::option::Option<std::string::String>,
 }
 impl SendTemplatedEmailInput {
-    /// <p>The email address that is sending the email. This email address must be either
-    /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
-    /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
-    /// Guide</a>.</p>
-    /// <p>If you are sending on behalf of another user and have been permitted to do so by a
-    /// sending authorization policy, then you must also specify the <code>SourceArn</code>
-    /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    /// <note>
-    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-    /// <i>local part</i> of a source email address (the part of the email
-    /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-    /// characters</a>. If the <i>domain part</i> of an address (the
-    /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-    /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-    /// name</i>) may contain non-ASCII characters. These characters must be
-    /// encoded using MIME encoded-word syntax, as described in<a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-    /// syntax uses the following form:
-    /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+    /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
+    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in<a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
     /// </note>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>The destination for this email, composed of To:, CC:, and BCC: fields. A Destination
-    /// can include up to 50 recipients across these three fields.</p>
+    /// <p>The destination for this email, composed of To:, CC:, and BCC: fields. A Destination can include up to 50 recipients across these three fields.</p>
     pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
         self.destination.as_ref()
     }
-    /// <p>The reply-to email address(es) for the message. If the recipient replies to the
-    /// message, each reply-to address will receive the reply.</p>
+    /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
     pub fn reply_to_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.reply_to_addresses.as_deref()
     }
-    /// <p>The email address that bounces and complaints will be forwarded to when feedback
-    /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
-    /// error message will be returned from the recipient's ISP; this message will then be
-    /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
-    /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
-    /// either individually verified with Amazon SES, or from a domain that has been verified with
-    /// Amazon SES. </p>
+    /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
     pub fn return_path(&self) -> std::option::Option<&str> {
         self.return_path.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to send for
-    /// the email address specified in the <code>Source</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-    /// would specify the <code>SourceArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>Source</code> to be <code>user@example.com</code>.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>ReturnPath</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-    /// would specify the <code>ReturnPathArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn return_path_arn(&self) -> std::option::Option<&str> {
         self.return_path_arn.as_deref()
     }
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-    /// using <code>SendTemplatedEmail</code>. Tags correspond to characteristics of the email
-    /// that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::MessageTag]> {
         self.tags.as_deref()
     }
-    /// <p>The name of the configuration set to use when you send an email using
-    /// <code>SendTemplatedEmail</code>.</p>
+    /// <p>The name of the configuration set to use when you send an email using <code>SendTemplatedEmail</code>.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
@@ -13676,9 +12809,7 @@ impl SendTemplatedEmailInput {
     pub fn template_arn(&self) -> std::option::Option<&str> {
         self.template_arn.as_deref()
     }
-    /// <p>A list of replacement values to apply to the template. This parameter is a JSON
-    /// object, typically consisting of key-value pairs in which the keys correspond to
-    /// replacement tags in the email template.</p>
+    /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub fn template_data(&self) -> std::option::Option<&str> {
         self.template_data.as_deref()
     }
@@ -13701,250 +12832,107 @@ impl std::fmt::Debug for SendTemplatedEmailInput {
     }
 }
 
-/// <p>Represents a request to send a single raw email using Amazon SES. For more information, see
-/// the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Represents a request to send a single raw email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendRawEmailInput {
-    /// <p>The identity's email address. If you do not provide a value for this parameter, you
-    /// must specify a "From" address in the raw text of the message. (You can also specify
-    /// both.)</p>
-    /// <note>
-    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in<a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-    /// <i>local part</i> of a source email address (the part of the email
-    /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-    /// characters</a>. If the <i>domain part</i> of an address (the
-    /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-    /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-    /// name</i>) may contain non-ASCII characters. These characters must be
-    /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-    /// syntax uses the following form:
-    /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+    /// <p>The identity's email address. If you do not provide a value for this parameter, you must specify a "From" address in the raw text of the message. (You can also specify both.)</p> <note>
+    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in<a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
     /// </note>
-    ///
-    /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled,
-    /// then bounces and complaints will be sent to this email address. This takes precedence
-    /// over any Return-Path header that you might include in the raw text of the
-    /// message.</p>
+    /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled, then bounces and complaints will be sent to this email address. This takes precedence over any Return-Path header that you might include in the raw text of the message.</p>
     pub source: std::option::Option<std::string::String>,
-    /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
-    /// addresses.</p>
+    /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.</p>
     pub destinations: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p>The message has to contain a header and a body, separated by a blank
-    /// line.</p>
-    /// </li>
-    /// <li>
-    /// <p>All of the required header fields must be present in the message.</p>
-    /// </li>
-    /// <li>
-    /// <p>Each part of a multipart MIME message must be formatted properly.</p>
-    /// </li>
-    /// <li>
-    /// <p>Attachments must be of a content type that Amazon SES supports. For a list on
-    /// unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment
-    /// Types</a> in the <i>Amazon SES Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The entire message must be base64-encoded.</p>
-    /// </li>
-    /// <li>
-    /// <p>If any of the MIME parts in your message contain content that is outside of
-    /// the 7-bit ASCII character range, we highly recommend that you encode that
-    /// content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer
-    /// Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC
-    /// 5321</a>, the maximum length of each line of text, including the
-    /// <CRLF>, must not exceed 1,000 characters.</p>
-    /// </li>
+    /// <li> <p>The message has to contain a header and a body, separated by a blank line.</p> </li>
+    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
+    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
+    /// <li> <p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
+    /// <li> <p>The entire message must be base64-encoded.</p> </li>
+    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
+    /// <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
+    /// , must not exceed 1,000 characters.
+    /// </crlf></p> </li>
     /// </ul>
     pub raw_message: std::option::Option<crate::model::RawMessage>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to specify a
-    /// particular "From" address in the header of the raw email.</p>
-    /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-FROM-ARN</code>
-    /// in the raw message of the email. If you use both the <code>FromArn</code> parameter and
-    /// the corresponding X-header, Amazon SES uses the value of the <code>FromArn</code>
-    /// parameter.</p>
-    /// <note>
-    /// <p>For information about when to use this parameter, see the description of
-    /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to specify a particular "From" address in the header of the raw email.</p>
+    /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-FROM-ARN</code> in the raw message of the email. If you use both the <code>FromArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>FromArn</code> parameter.</p> <note>
+    /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
     pub from_arn: std::option::Option<std::string::String>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to send for
-    /// the email address specified in the <code>Source</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-    /// would specify the <code>SourceArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>Source</code> to be <code>user@example.com</code>.</p>
-    /// <p>Instead of using this parameter, you can use the X-header
-    /// <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you use both the
-    /// <code>SourceArn</code> parameter and the corresponding X-header, Amazon SES uses the
-    /// value of the <code>SourceArn</code> parameter.</p>
-    /// <note>
-    /// <p>For information about when to use this parameter, see the description of
-    /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+    /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you use both the <code>SourceArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>SourceArn</code> parameter.</p> <note>
+    /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
     pub source_arn: std::option::Option<std::string::String>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>ReturnPath</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-    /// would specify the <code>ReturnPathArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-    /// <p>Instead of using this parameter, you can use the X-header
-    /// <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both
-    /// the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the
-    /// value of the <code>ReturnPathArn</code> parameter.</p>
-    /// <note>
-    /// <p>For information about when to use this parameter, see the description of
-    /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+    /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p> <note>
+    /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
     pub return_path_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-    /// using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that
-    /// you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
-    /// <p>The name of the configuration set to use when you send an email using
-    /// <code>SendRawEmail</code>.</p>
+    /// <p>The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl SendRawEmailInput {
-    /// <p>The identity's email address. If you do not provide a value for this parameter, you
-    /// must specify a "From" address in the raw text of the message. (You can also specify
-    /// both.)</p>
-    /// <note>
-    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in<a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-    /// <i>local part</i> of a source email address (the part of the email
-    /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-    /// characters</a>. If the <i>domain part</i> of an address (the
-    /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-    /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-    /// name</i>) may contain non-ASCII characters. These characters must be
-    /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-    /// syntax uses the following form:
-    /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+    /// <p>The identity's email address. If you do not provide a value for this parameter, you must specify a "From" address in the raw text of the message. (You can also specify both.)</p> <note>
+    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in<a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
     /// </note>
-    ///
-    /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled,
-    /// then bounces and complaints will be sent to this email address. This takes precedence
-    /// over any Return-Path header that you might include in the raw text of the
-    /// message.</p>
+    /// <p>If you specify the <code>Source</code> parameter and have feedback forwarding enabled, then bounces and complaints will be sent to this email address. This takes precedence over any Return-Path header that you might include in the raw text of the message.</p>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
-    /// addresses.</p>
+    /// <p>A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.</p>
     pub fn destinations(&self) -> std::option::Option<&[std::string::String]> {
         self.destinations.as_deref()
     }
     /// <p>The raw email message itself. The message has to meet the following criteria:</p>
     /// <ul>
-    /// <li>
-    /// <p>The message has to contain a header and a body, separated by a blank
-    /// line.</p>
-    /// </li>
-    /// <li>
-    /// <p>All of the required header fields must be present in the message.</p>
-    /// </li>
-    /// <li>
-    /// <p>Each part of a multipart MIME message must be formatted properly.</p>
-    /// </li>
-    /// <li>
-    /// <p>Attachments must be of a content type that Amazon SES supports. For a list on
-    /// unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment
-    /// Types</a> in the <i>Amazon SES Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The entire message must be base64-encoded.</p>
-    /// </li>
-    /// <li>
-    /// <p>If any of the MIME parts in your message contain content that is outside of
-    /// the 7-bit ASCII character range, we highly recommend that you encode that
-    /// content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer
-    /// Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC
-    /// 5321</a>, the maximum length of each line of text, including the
-    /// <CRLF>, must not exceed 1,000 characters.</p>
-    /// </li>
+    /// <li> <p>The message has to contain a header and a body, separated by a blank line.</p> </li>
+    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
+    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
+    /// <li> <p>Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Unsupported Attachment Types</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
+    /// <li> <p>The entire message must be base64-encoded.</p> </li>
+    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Sending Raw Email</a> in the <i>Amazon SES Developer Guide</i>.</p> </li>
+    /// <li> <p>Per <a href="https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6">RFC 5321</a>, the maximum length of each line of text, including the <crlf>
+    /// , must not exceed 1,000 characters.
+    /// </crlf></p> </li>
     /// </ul>
     pub fn raw_message(&self) -> std::option::Option<&crate::model::RawMessage> {
         self.raw_message.as_ref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to specify a
-    /// particular "From" address in the header of the raw email.</p>
-    /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-FROM-ARN</code>
-    /// in the raw message of the email. If you use both the <code>FromArn</code> parameter and
-    /// the corresponding X-header, Amazon SES uses the value of the <code>FromArn</code>
-    /// parameter.</p>
-    /// <note>
-    /// <p>For information about when to use this parameter, see the description of
-    /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to specify a particular "From" address in the header of the raw email.</p>
+    /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-FROM-ARN</code> in the raw message of the email. If you use both the <code>FromArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>FromArn</code> parameter.</p> <note>
+    /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
     pub fn from_arn(&self) -> std::option::Option<&str> {
         self.from_arn.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to send for
-    /// the email address specified in the <code>Source</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-    /// would specify the <code>SourceArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>Source</code> to be <code>user@example.com</code>.</p>
-    /// <p>Instead of using this parameter, you can use the X-header
-    /// <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you use both the
-    /// <code>SourceArn</code> parameter and the corresponding X-header, Amazon SES uses the
-    /// value of the <code>SourceArn</code> parameter.</p>
-    /// <note>
-    /// <p>For information about when to use this parameter, see the description of
-    /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+    /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-SOURCE-ARN</code> in the raw message of the email. If you use both the <code>SourceArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>SourceArn</code> parameter.</p> <note>
+    /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
     pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>ReturnPath</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-    /// would specify the <code>ReturnPathArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-    /// <p>Instead of using this parameter, you can use the X-header
-    /// <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both
-    /// the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the
-    /// value of the <code>ReturnPathArn</code> parameter.</p>
-    /// <note>
-    /// <p>For information about when to use this parameter, see the description of
-    /// <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+    /// <p>Instead of using this parameter, you can use the X-header <code>X-SES-RETURN-PATH-ARN</code> in the raw message of the email. If you use both the <code>ReturnPathArn</code> parameter and the corresponding X-header, Amazon SES uses the value of the <code>ReturnPathArn</code> parameter.</p> <note>
+    /// <p>For information about when to use this parameter, see the description of <code>SendRawEmail</code> in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html">Amazon SES Developer Guide</a>.</p>
     /// </note>
     pub fn return_path_arn(&self) -> std::option::Option<&str> {
         self.return_path_arn.as_deref()
     }
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-    /// using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that
-    /// you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::MessageTag]> {
         self.tags.as_deref()
     }
-    /// <p>The name of the configuration set to use when you send an email using
-    /// <code>SendRawEmail</code>.</p>
+    /// <p>The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
@@ -13964,98 +12952,40 @@ impl std::fmt::Debug for SendRawEmailInput {
     }
 }
 
-/// <p>Represents a request to send a single formatted email using Amazon SES. For more
-/// information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to send a single formatted email using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendEmailInput {
-    /// <p>The email address that is sending the email. This email address must be either
-    /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
-    /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
-    /// Guide</a>.</p>
-    /// <p>If you are sending on behalf of another user and have been permitted to do so by a
-    /// sending authorization policy, then you must also specify the <code>SourceArn</code>
-    /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    /// <note>
-    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-    /// <i>local part</i> of a source email address (the part of the email
-    /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-    /// characters</a>. If the <i>domain part</i> of an address (the
-    /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-    /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-    /// name</i>) may contain non-ASCII characters. These characters must be
-    /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-    /// syntax uses the following form:
-    /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+    /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
+    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
     /// </note>
     pub source: std::option::Option<std::string::String>,
     /// <p>The destination for this email, composed of To:, CC:, and BCC: fields.</p>
     pub destination: std::option::Option<crate::model::Destination>,
     /// <p>The message to be sent.</p>
     pub message: std::option::Option<crate::model::Message>,
-    /// <p>The reply-to email address(es) for the message. If the recipient replies to the
-    /// message, each reply-to address will receive the reply.</p>
+    /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
     pub reply_to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The email address that bounces and complaints will be forwarded to when feedback
-    /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
-    /// error message will be returned from the recipient's ISP; this message will then be
-    /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
-    /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
-    /// either individually verified with Amazon SES, or from a domain that has been verified with
-    /// Amazon SES. </p>
+    /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
     pub return_path: std::option::Option<std::string::String>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to send for
-    /// the email address specified in the <code>Source</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-    /// would specify the <code>SourceArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>Source</code> to be <code>user@example.com</code>.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub source_arn: std::option::Option<std::string::String>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>ReturnPath</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-    /// would specify the <code>ReturnPathArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub return_path_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-    /// using <code>SendEmail</code>. Tags correspond to characteristics of the email that you
-    /// define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
-    /// <p>The name of the configuration set to use when you send an email using
-    /// <code>SendEmail</code>.</p>
+    /// <p>The name of the configuration set to use when you send an email using <code>SendEmail</code>.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl SendEmailInput {
-    /// <p>The email address that is sending the email. This email address must be either
-    /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
-    /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
-    /// Guide</a>.</p>
-    /// <p>If you are sending on behalf of another user and have been permitted to do so by a
-    /// sending authorization policy, then you must also specify the <code>SourceArn</code>
-    /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    /// <note>
-    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-    /// <i>local part</i> of a source email address (the part of the email
-    /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-    /// characters</a>. If the <i>domain part</i> of an address (the
-    /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-    /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-    /// name</i>) may contain non-ASCII characters. These characters must be
-    /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-    /// syntax uses the following form:
-    /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+    /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
+    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
     /// </note>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
@@ -14068,57 +12998,31 @@ impl SendEmailInput {
     pub fn message(&self) -> std::option::Option<&crate::model::Message> {
         self.message.as_ref()
     }
-    /// <p>The reply-to email address(es) for the message. If the recipient replies to the
-    /// message, each reply-to address will receive the reply.</p>
+    /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
     pub fn reply_to_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.reply_to_addresses.as_deref()
     }
-    /// <p>The email address that bounces and complaints will be forwarded to when feedback
-    /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
-    /// error message will be returned from the recipient's ISP; this message will then be
-    /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
-    /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
-    /// either individually verified with Amazon SES, or from a domain that has been verified with
-    /// Amazon SES. </p>
+    /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
     pub fn return_path(&self) -> std::option::Option<&str> {
         self.return_path.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to send for
-    /// the email address specified in the <code>Source</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-    /// would specify the <code>SourceArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>Source</code> to be <code>user@example.com</code>.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>ReturnPath</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-    /// would specify the <code>ReturnPathArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn return_path_arn(&self) -> std::option::Option<&str> {
         self.return_path_arn.as_deref()
     }
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send
-    /// using <code>SendEmail</code>. Tags correspond to characteristics of the email that you
-    /// define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::MessageTag]> {
         self.tags.as_deref()
     }
-    /// <p>The name of the configuration set to use when you send an email using
-    /// <code>SendEmail</code>.</p>
+    /// <p>The name of the configuration set to use when you send an email using <code>SendEmail</code>.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
@@ -14139,15 +13043,13 @@ impl std::fmt::Debug for SendEmailInput {
     }
 }
 
-/// <p>Represents a request to send a custom verification email to a specified
-/// recipient.</p>
+/// <p>Represents a request to send a custom verification email to a specified recipient.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendCustomVerificationEmailInput {
     /// <p>The email address to verify.</p>
     pub email_address: std::option::Option<std::string::String>,
-    /// <p>The name of the custom verification email template to use when sending the
-    /// verification email.</p>
+    /// <p>The name of the custom verification email template to use when sending the verification email.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Name of a configuration set to use when sending the verification email.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
@@ -14157,8 +13059,7 @@ impl SendCustomVerificationEmailInput {
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
-    /// <p>The name of the custom verification email template to use when sending the
-    /// verification email.</p>
+    /// <p>The name of the custom verification email template to use when sending the verification email.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -14177,162 +13078,74 @@ impl std::fmt::Debug for SendCustomVerificationEmailInput {
     }
 }
 
-/// <p>Represents a request to send a templated email to multiple destinations using Amazon SES.
-/// For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to send a templated email to multiple destinations using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendBulkTemplatedEmailInput {
-    /// <p>The email address that is sending the email. This email address must be either
-    /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
-    /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
-    /// Guide</a>.</p>
-    /// <p>If you are sending on behalf of another user and have been permitted to do so by a
-    /// sending authorization policy, then you must also specify the <code>SourceArn</code>
-    /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    /// <note>
-    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-    /// <i>local part</i> of a source email address (the part of the email
-    /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-    /// characters</a>. If the <i>domain part</i> of an address (the
-    /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-    /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-    /// name</i>) may contain non-ASCII characters. These characters must be
-    /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-    /// syntax uses the following form:
-    /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+    /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
+    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
     /// </note>
     pub source: std::option::Option<std::string::String>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to send for
-    /// the email address specified in the <code>Source</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-    /// would specify the <code>SourceArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>Source</code> to be <code>user@example.com</code>.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub source_arn: std::option::Option<std::string::String>,
-    /// <p>The reply-to email address(es) for the message. If the recipient replies to the
-    /// message, each reply-to address will receive the reply.</p>
+    /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
     pub reply_to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The email address that bounces and complaints will be forwarded to when feedback
-    /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
-    /// error message will be returned from the recipient's ISP; this message will then be
-    /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
-    /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
-    /// either individually verified with Amazon SES, or from a domain that has been verified with
-    /// Amazon SES. </p>
+    /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
     pub return_path: std::option::Option<std::string::String>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>ReturnPath</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-    /// would specify the <code>ReturnPathArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub return_path_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the configuration set to use when you send an email using
-    /// <code>SendBulkTemplatedEmail</code>.</p>
+    /// <p>The name of the configuration set to use when you send an email using <code>SendBulkTemplatedEmail</code>.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to
-    /// a destination using <code>SendBulkTemplatedEmail</code>.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to a destination using <code>SendBulkTemplatedEmail</code>.</p>
     pub default_tags: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
     /// <p>The template to use when sending this email.</p>
     pub template: std::option::Option<std::string::String>,
     /// <p>The ARN of the template to use when sending this email.</p>
     pub template_arn: std::option::Option<std::string::String>,
-    /// <p>A list of replacement values to apply to the template when replacement data is not
-    /// specified in a Destination object. These values act as a default or fallback option when
-    /// no other data is available.</p>
-    /// <p>The template data is a JSON object, typically consisting of key-value pairs in which
-    /// the keys correspond to replacement tags in the email template.</p>
+    /// <p>A list of replacement values to apply to the template when replacement data is not specified in a Destination object. These values act as a default or fallback option when no other data is available.</p>
+    /// <p>The template data is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub default_template_data: std::option::Option<std::string::String>,
-    /// <p>One or more <code>Destination</code> objects. All of the recipients in a
-    /// <code>Destination</code> will receive the same version of the email. You can specify
-    /// up to 50 <code>Destination</code> objects within a <code>Destinations</code>
-    /// array.</p>
+    /// <p>One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive the same version of the email. You can specify up to 50 <code>Destination</code> objects within a <code>Destinations</code> array.</p>
     pub destinations: std::option::Option<std::vec::Vec<crate::model::BulkEmailDestination>>,
 }
 impl SendBulkTemplatedEmailInput {
-    /// <p>The email address that is sending the email. This email address must be either
-    /// individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
-    /// For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
-    /// Guide</a>.</p>
-    /// <p>If you are sending on behalf of another user and have been permitted to do so by a
-    /// sending authorization policy, then you must also specify the <code>SourceArn</code>
-    /// parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    /// <note>
-    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-    /// <i>local part</i> of a source email address (the part of the email
-    /// address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-    /// characters</a>. If the <i>domain part</i> of an address (the
-    /// part after the @ sign) contains non-ASCII characters, they must be encoded using
-    /// Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly
-    /// name</i>) may contain non-ASCII characters. These characters must be
-    /// encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word
-    /// syntax uses the following form:
-    /// <code>=?charset?encoding?encoded-text?=</code>.</p>
+    /// <p>The email address that is sending the email. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
+    /// <p>If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy, then you must also specify the <code>SourceArn</code> parameter. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p> <note>
+    /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.</p>
     /// </note>
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to send for
-    /// the email address specified in the <code>Source</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to send from <code>user@example.com</code>, then you
-    /// would specify the <code>SourceArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>Source</code> to be <code>user@example.com</code>.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the <code>Source</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to send from <code>user@example.com</code>, then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>Source</code> to be <code>user@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
-    /// <p>The reply-to email address(es) for the message. If the recipient replies to the
-    /// message, each reply-to address will receive the reply.</p>
+    /// <p>The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address will receive the reply.</p>
     pub fn reply_to_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.reply_to_addresses.as_deref()
     }
-    /// <p>The email address that bounces and complaints will be forwarded to when feedback
-    /// forwarding is enabled. If the message cannot be delivered to the recipient, then an
-    /// error message will be returned from the recipient's ISP; this message will then be
-    /// forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
-    /// <code>ReturnPath</code> parameter is never overwritten. This email address must be
-    /// either individually verified with Amazon SES, or from a domain that has been verified with
-    /// Amazon SES. </p>
+    /// <p>The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP; this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES. </p>
     pub fn return_path(&self) -> std::option::Option<&str> {
         self.return_path.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// email address specified in the <code>ReturnPath</code> parameter.</p>
-    /// <p>For example, if the owner of <code>example.com</code> (which has ARN
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a
-    /// policy to it that authorizes you to use <code>feedback@example.com</code>, then you
-    /// would specify the <code>ReturnPathArn</code> to be
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
-    /// <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
-    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>ReturnPath</code> parameter.</p>
+    /// <p>For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>) attaches a policy to it that authorizes you to use <code>feedback@example.com</code>, then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p>
+    /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn return_path_arn(&self) -> std::option::Option<&str> {
         self.return_path_arn.as_deref()
     }
-    /// <p>The name of the configuration set to use when you send an email using
-    /// <code>SendBulkTemplatedEmail</code>.</p>
+    /// <p>The name of the configuration set to use when you send an email using <code>SendBulkTemplatedEmail</code>.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to
-    /// a destination using <code>SendBulkTemplatedEmail</code>.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send to a destination using <code>SendBulkTemplatedEmail</code>.</p>
     pub fn default_tags(&self) -> std::option::Option<&[crate::model::MessageTag]> {
         self.default_tags.as_deref()
     }
@@ -14344,18 +13157,12 @@ impl SendBulkTemplatedEmailInput {
     pub fn template_arn(&self) -> std::option::Option<&str> {
         self.template_arn.as_deref()
     }
-    /// <p>A list of replacement values to apply to the template when replacement data is not
-    /// specified in a Destination object. These values act as a default or fallback option when
-    /// no other data is available.</p>
-    /// <p>The template data is a JSON object, typically consisting of key-value pairs in which
-    /// the keys correspond to replacement tags in the email template.</p>
+    /// <p>A list of replacement values to apply to the template when replacement data is not specified in a Destination object. These values act as a default or fallback option when no other data is available.</p>
+    /// <p>The template data is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub fn default_template_data(&self) -> std::option::Option<&str> {
         self.default_template_data.as_deref()
     }
-    /// <p>One or more <code>Destination</code> objects. All of the recipients in a
-    /// <code>Destination</code> will receive the same version of the email. You can specify
-    /// up to 50 <code>Destination</code> objects within a <code>Destinations</code>
-    /// array.</p>
+    /// <p>One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive the same version of the email. You can specify up to 50 <code>Destination</code> objects within a <code>Destinations</code> array.</p>
     pub fn destinations(&self) -> std::option::Option<&[crate::model::BulkEmailDestination]> {
         self.destinations.as_deref()
     }
@@ -14378,31 +13185,22 @@ impl std::fmt::Debug for SendBulkTemplatedEmailInput {
     }
 }
 
-/// <p>Represents a request to send a bounce message to the sender of an email you received
-/// through Amazon SES.</p>
+/// <p>Represents a request to send a bounce message to the sender of an email you received through Amazon SES.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendBounceInput {
     /// <p>The message ID of the message to be bounced.</p>
     pub original_message_id: std::option::Option<std::string::String>,
-    /// <p>The address to use in the "From" header of the bounce message. This must be an
-    /// identity that you have verified with Amazon SES.</p>
+    /// <p>The address to use in the "From" header of the bounce message. This must be an identity that you have verified with Amazon SES.</p>
     pub bounce_sender: std::option::Option<std::string::String>,
-    /// <p>Human-readable text for the bounce message to explain the failure. If not specified,
-    /// the text will be auto-generated based on the bounced recipient information.</p>
+    /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text will be auto-generated based on the bounced recipient information.</p>
     pub explanation: std::option::Option<std::string::String>,
     /// <p>Message-related DSN fields. If not specified, Amazon SES will choose the values.</p>
     pub message_dsn: std::option::Option<crate::model::MessageDsn>,
-    /// <p>A list of recipients of the bounced message, including the information required to
-    /// create the Delivery Status Notifications (DSNs) for the recipients. You must specify at
-    /// least one <code>BouncedRecipientInfo</code> in the list.</p>
+    /// <p>A list of recipients of the bounced message, including the information required to create the Delivery Status Notifications (DSNs) for the recipients. You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
     pub bounced_recipient_info_list:
         std::option::Option<std::vec::Vec<crate::model::BouncedRecipientInfo>>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// address in the "From" header of the bounce. For more information about sending
-    /// authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub bounce_sender_arn: std::option::Option<std::string::String>,
 }
 impl SendBounceInput {
@@ -14410,13 +13208,11 @@ impl SendBounceInput {
     pub fn original_message_id(&self) -> std::option::Option<&str> {
         self.original_message_id.as_deref()
     }
-    /// <p>The address to use in the "From" header of the bounce message. This must be an
-    /// identity that you have verified with Amazon SES.</p>
+    /// <p>The address to use in the "From" header of the bounce message. This must be an identity that you have verified with Amazon SES.</p>
     pub fn bounce_sender(&self) -> std::option::Option<&str> {
         self.bounce_sender.as_deref()
     }
-    /// <p>Human-readable text for the bounce message to explain the failure. If not specified,
-    /// the text will be auto-generated based on the bounced recipient information.</p>
+    /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text will be auto-generated based on the bounced recipient information.</p>
     pub fn explanation(&self) -> std::option::Option<&str> {
         self.explanation.as_deref()
     }
@@ -14424,19 +13220,13 @@ impl SendBounceInput {
     pub fn message_dsn(&self) -> std::option::Option<&crate::model::MessageDsn> {
         self.message_dsn.as_ref()
     }
-    /// <p>A list of recipients of the bounced message, including the information required to
-    /// create the Delivery Status Notifications (DSNs) for the recipients. You must specify at
-    /// least one <code>BouncedRecipientInfo</code> in the list.</p>
+    /// <p>A list of recipients of the bounced message, including the information required to create the Delivery Status Notifications (DSNs) for the recipients. You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
     pub fn bounced_recipient_info_list(
         &self,
     ) -> std::option::Option<&[crate::model::BouncedRecipientInfo]> {
         self.bounced_recipient_info_list.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
-    /// that is associated with the sending authorization policy that permits you to use the
-    /// address in the "From" header of the bounce. For more information about sending
-    /// authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn bounce_sender_arn(&self) -> std::option::Option<&str> {
         self.bounce_sender_arn.as_deref()
     }
@@ -14457,15 +13247,13 @@ impl std::fmt::Debug for SendBounceInput {
     }
 }
 
-/// <p>Represents a request to reorder the receipt rules within a receipt rule set. You use
-/// receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Represents a request to reorder the receipt rules within a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReorderReceiptRuleSetInput {
     /// <p>The name of the receipt rule set to reorder.</p>
     pub rule_set_name: std::option::Option<std::string::String>,
-    /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to
-    /// put them.</p>
+    /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
     pub rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ReorderReceiptRuleSetInput {
@@ -14473,8 +13261,7 @@ impl ReorderReceiptRuleSetInput {
     pub fn rule_set_name(&self) -> std::option::Option<&str> {
         self.rule_set_name.as_deref()
     }
-    /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to
-    /// put them.</p>
+    /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
     pub fn rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.rule_names.as_deref()
     }
@@ -14488,46 +13275,33 @@ impl std::fmt::Debug for ReorderReceiptRuleSetInput {
     }
 }
 
-/// <p>Represents a request to add or update a sending authorization policy for an identity.
-/// Sending authorization is an Amazon SES feature that enables you to authorize other senders to
-/// use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to add or update a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutIdentityPolicyInput {
-    /// <p>The identity that the policy will apply to. You can specify an identity by using its
-    /// name or by using its Amazon Resource Name (ARN). Examples:
-    /// <code>user@example.com</code>, <code>example.com</code>,
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
     pub identity: std::option::Option<std::string::String>,
     /// <p>The name of the policy.</p>
-    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-    /// characters, dashes, and underscores.</p>
+    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-    /// Guide</a>. </p>
+    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutIdentityPolicyInput {
-    /// <p>The identity that the policy will apply to. You can specify an identity by using its
-    /// name or by using its Amazon Resource Name (ARN). Examples:
-    /// <code>user@example.com</code>, <code>example.com</code>,
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
     pub fn identity(&self) -> std::option::Option<&str> {
         self.identity.as_deref()
     }
     /// <p>The name of the policy.</p>
-    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
-    /// characters, dashes, and underscores.</p>
+    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
-    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
-    /// Guide</a>. </p>
+    /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>. </p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -14546,21 +13320,17 @@ impl std::fmt::Debug for PutIdentityPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationSetDeliveryOptionsInput {
-    /// <p>The name of the configuration set that you want to specify the delivery options
-    /// for.</p>
+    /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>Specifies whether messages that use the configuration set are required to use
-    /// Transport Layer Security (TLS).</p>
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     pub delivery_options: std::option::Option<crate::model::DeliveryOptions>,
 }
 impl PutConfigurationSetDeliveryOptionsInput {
-    /// <p>The name of the configuration set that you want to specify the delivery options
-    /// for.</p>
+    /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>Specifies whether messages that use the configuration set are required to use
-    /// Transport Layer Security (TLS).</p>
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     pub fn delivery_options(&self) -> std::option::Option<&crate::model::DeliveryOptions> {
         self.delivery_options.as_ref()
     }
@@ -14589,23 +13359,17 @@ impl std::fmt::Debug for ListVerifiedEmailAddressesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplatesInput {
-    /// <p>A token returned from a previous call to <code>ListTemplates</code> to indicate the
-    /// position in the list of email templates.</p>
+    /// <p>A token returned from a previous call to <code>ListTemplates</code> to indicate the position in the list of email templates.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of templates to return. This value must be at least 1 and less than
-    /// or equal to 10. If you do not specify a value, or if you specify a value less than 1 or
-    /// greater than 10, the operation will return up to 10 results.</p>
+    /// <p>The maximum number of templates to return. This value must be at least 1 and less than or equal to 10. If you do not specify a value, or if you specify a value less than 1 or greater than 10, the operation will return up to 10 results.</p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListTemplatesInput {
-    /// <p>A token returned from a previous call to <code>ListTemplates</code> to indicate the
-    /// position in the list of email templates.</p>
+    /// <p>A token returned from a previous call to <code>ListTemplates</code> to indicate the position in the list of email templates.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of templates to return. This value must be at least 1 and less than
-    /// or equal to 10. If you do not specify a value, or if you specify a value less than 1 or
-    /// greater than 10, the operation will return up to 10 results.</p>
+    /// <p>The maximum number of templates to return. This value must be at least 1 and less than or equal to 10. If you do not specify a value, or if you specify a value less than 1 or greater than 10, the operation will return up to 10 results.</p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
@@ -14619,20 +13383,15 @@ impl std::fmt::Debug for ListTemplatesInput {
     }
 }
 
-/// <p>Represents a request to list the receipt rule sets that exist under your AWS account.
-/// You use receipt rule sets to receive email with Amazon SES. For more information, see the
-/// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to list the receipt rule sets that exist under your AWS account. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReceiptRuleSetsInput {
-    /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate
-    /// the position in the receipt rule set list.</p>
+    /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate the position in the receipt rule set list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReceiptRuleSetsInput {
-    /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate
-    /// the position in the receipt rule set list.</p>
+    /// <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to indicate the position in the receipt rule set list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14645,10 +13404,7 @@ impl std::fmt::Debug for ListReceiptRuleSetsInput {
     }
 }
 
-/// <p>Represents a request to list the IP address filters that exist under your AWS account.
-/// You use IP address filters when you receive email with Amazon SES. For more information, see
-/// the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to list the IP address filters that exist under your AWS account. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReceiptFiltersInput {}
@@ -14659,24 +13415,16 @@ impl std::fmt::Debug for ListReceiptFiltersInput {
     }
 }
 
-/// <p>Represents a request to return a list of sending authorization policies that are
-/// attached to an identity. Sending authorization is an Amazon SES feature that enables you to
-/// authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Represents a request to return a list of sending authorization policies that are attached to an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentityPoliciesInput {
-    /// <p>The identity that is associated with the policy for which the policies will be listed.
-    /// You can specify an identity by using its name or by using its Amazon Resource Name
-    /// (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>The identity that is associated with the policy for which the policies will be listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
     pub identity: std::option::Option<std::string::String>,
 }
 impl ListIdentityPoliciesInput {
-    /// <p>The identity that is associated with the policy for which the policies will be listed.
-    /// You can specify an identity by using its name or by using its Amazon Resource Name
-    /// (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>The identity that is associated with the policy for which the policies will be listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
     pub fn identity(&self) -> std::option::Option<&str> {
         self.identity.as_deref()
@@ -14690,24 +13438,19 @@ impl std::fmt::Debug for ListIdentityPoliciesInput {
     }
 }
 
-/// <p>Represents a request to return a list of all identities (email addresses and domains)
-/// that you have attempted to verify under your AWS account, regardless of verification
-/// status.</p>
+/// <p>Represents a request to return a list of all identities (email addresses and domains) that you have attempted to verify under your AWS account, regardless of verification status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentitiesInput {
-    /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain".
-    /// If this parameter is omitted, then all identities will be listed.</p>
+    /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The token to use for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of identities per page. Possible values are 1-1000
-    /// inclusive.</p>
+    /// <p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListIdentitiesInput {
-    /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain".
-    /// If this parameter is omitted, then all identities will be listed.</p>
+    /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
     pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
         self.identity_type.as_ref()
     }
@@ -14715,8 +13458,7 @@ impl ListIdentitiesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of identities per page. Possible values are 1-1000
-    /// inclusive.</p>
+    /// <p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
@@ -14731,33 +13473,22 @@ impl std::fmt::Debug for ListIdentitiesInput {
     }
 }
 
-/// <p>Represents a request to list the existing custom verification email templates for your
-/// account.</p>
-/// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
-/// Verification Email Templates</a> in the <i>Amazon SES Developer
-/// Guide</i>.</p>
+/// <p>Represents a request to list the existing custom verification email templates for your account.</p>
+/// <p>For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomVerificationEmailTemplatesInput {
-    /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
-    /// account.</p>
+    /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of custom verification email templates to return. This value must
-    /// be at least 1 and less than or equal to 50. If you do not specify a value, or if you
-    /// specify a value less than 1 or greater than 50, the operation will return up to 50
-    /// results.</p>
+    /// <p>The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation will return up to 50 results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListCustomVerificationEmailTemplatesInput {
-    /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
-    /// account.</p>
+    /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of custom verification email templates to return. This value must
-    /// be at least 1 and less than or equal to 50. If you do not specify a value, or if you
-    /// specify a value less than 1 or greater than 50, the operation will return up to 50
-    /// results.</p>
+    /// <p>The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation will return up to 50 results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -14771,22 +13502,17 @@ impl std::fmt::Debug for ListCustomVerificationEmailTemplatesInput {
     }
 }
 
-/// <p>Represents a request to list the configuration sets associated with your AWS account.
-/// Configuration sets enable you to publish email sending events. For information about
-/// using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to list the configuration sets associated with your AWS account. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationSetsInput {
-    /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
-    /// indicate the position of the configuration set in the configuration set list.</p>
+    /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position of the configuration set in the configuration set list.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of configuration sets to return.</p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListConfigurationSetsInput {
-    /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
-    /// indicate the position of the configuration set in the configuration set list.</p>
+    /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position of the configuration set in the configuration set list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14847,10 +13573,7 @@ impl std::fmt::Debug for GetSendQuotaInput {
     }
 }
 
-/// <p>Represents a request to return the Amazon SES verification status of a list of identities.
-/// For domain identities, this request also returns the verification token. For information
-/// about verifying identities with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to return the Amazon SES verification status of a list of identities. For domain identities, this request also returns the verification token. For information about verifying identities with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityVerificationAttributesInput {
@@ -14871,36 +13594,23 @@ impl std::fmt::Debug for GetIdentityVerificationAttributesInput {
     }
 }
 
-/// <p>Represents a request to return the requested sending authorization policies for an
-/// identity. Sending authorization is an Amazon SES feature that enables you to authorize other
-/// senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to return the requested sending authorization policies for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityPoliciesInput {
-    /// <p>The identity for which the policies will be retrieved. You can specify an identity by
-    /// using its name or by using its Amazon Resource Name (ARN). Examples:
-    /// <code>user@example.com</code>, <code>example.com</code>,
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>The identity for which the policies will be retrieved. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
     pub identity: std::option::Option<std::string::String>,
-    /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20
-    /// policies at a time. If you do not know the names of the policies that are attached to
-    /// the identity, you can use <code>ListIdentityPolicies</code>.</p>
+    /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetIdentityPoliciesInput {
-    /// <p>The identity for which the policies will be retrieved. You can specify an identity by
-    /// using its name or by using its Amazon Resource Name (ARN). Examples:
-    /// <code>user@example.com</code>, <code>example.com</code>,
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>The identity for which the policies will be retrieved. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
     pub fn identity(&self) -> std::option::Option<&str> {
         self.identity.as_deref()
     }
-    /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20
-    /// policies at a time. If you do not know the names of the policies that are attached to
-    /// the identity, you can use <code>ListIdentityPolicies</code>.</p>
+    /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
     pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
         self.policy_names.as_deref()
     }
@@ -14914,23 +13624,15 @@ impl std::fmt::Debug for GetIdentityPoliciesInput {
     }
 }
 
-/// <p>Represents a request to return the notification attributes for a list of identities
-/// you verified with Amazon SES. For information about Amazon SES notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES
-/// Developer Guide</a>.</p>
+/// <p>Represents a request to return the notification attributes for a list of identities you verified with Amazon SES. For information about Amazon SES notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityNotificationAttributesInput {
-    /// <p>A list of one or more identities. You can specify an identity by using its name or by
-    /// using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
-    /// <code>example.com</code>,
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     pub identities: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetIdentityNotificationAttributesInput {
-    /// <p>A list of one or more identities. You can specify an identity by using its name or by
-    /// using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
-    /// <code>example.com</code>,
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     pub fn identities(&self) -> std::option::Option<&[std::string::String]> {
         self.identities.as_deref()
     }
@@ -14943,9 +13645,7 @@ impl std::fmt::Debug for GetIdentityNotificationAttributesInput {
     }
 }
 
-/// <p>Represents a request to return the Amazon SES custom MAIL FROM attributes for a list of
-/// identities. For information about using a custom MAIL FROM domain, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to return the Amazon SES custom MAIL FROM attributes for a list of identities. For information about using a custom MAIL FROM domain, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityMailFromDomainAttributesInput {
@@ -14966,10 +13666,7 @@ impl std::fmt::Debug for GetIdentityMailFromDomainAttributesInput {
     }
 }
 
-/// <p>Represents a request for the status of Amazon SES Easy DKIM signing for an identity. For
-/// domain identities, this request also returns the DKIM tokens that are required for Easy
-/// DKIM signing, and whether Amazon SES successfully verified that these tokens were published.
-/// For more information about Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Represents a request for the status of Amazon SES Easy DKIM signing for an identity. For domain identities, this request also returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES successfully verified that these tokens were published. For more information about Easy DKIM, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityDkimAttributesInput {
@@ -14990,8 +13687,7 @@ impl std::fmt::Debug for GetIdentityDkimAttributesInput {
     }
 }
 
-/// <p>Represents a request to retrieve an existing custom verification email
-/// template.</p>
+/// <p>Represents a request to retrieve an existing custom verification email template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCustomVerificationEmailTemplateInput {
@@ -15023,8 +13719,7 @@ impl std::fmt::Debug for GetAccountSendingEnabledInput {
     }
 }
 
-/// <p>Represents a request to return the details of a receipt rule set. You use receipt rule
-/// sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Represents a request to return the details of a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReceiptRuleSetInput {
@@ -15045,9 +13740,7 @@ impl std::fmt::Debug for DescribeReceiptRuleSetInput {
     }
 }
 
-/// <p>Represents a request to return the details of a receipt rule. You use receipt rules to
-/// receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to return the details of a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReceiptRuleInput {
@@ -15075,10 +13768,7 @@ impl std::fmt::Debug for DescribeReceiptRuleInput {
     }
 }
 
-/// <p>Represents a request to return the details of a configuration set. Configuration sets
-/// enable you to publish email sending events. For information about using configuration
-/// sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to return the details of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationSetInput {
@@ -15112,10 +13802,7 @@ impl std::fmt::Debug for DescribeConfigurationSetInput {
     }
 }
 
-/// <p>Represents a request to return the metadata and receipt rules for the receipt rule set
-/// that is currently active. You use receipt rule sets to receive email with Amazon SES. For
-/// more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to return the metadata and receipt rules for the receipt rule set that is currently active. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActiveReceiptRuleSetInput {}
@@ -15126,8 +13813,7 @@ impl std::fmt::Debug for DescribeActiveReceiptRuleSetInput {
     }
 }
 
-/// <p>Represents a request to delete an email address from the list of email addresses you
-/// have attempted to verify under your AWS account.</p>
+/// <p>Represents a request to delete an email address from the list of email addresses you have attempted to verify under your AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVerifiedEmailAddressInput {
@@ -15148,8 +13834,7 @@ impl std::fmt::Debug for DeleteVerifiedEmailAddressInput {
     }
 }
 
-/// <p>Represents a request to delete an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to delete an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTemplateInput {
@@ -15170,10 +13855,7 @@ impl std::fmt::Debug for DeleteTemplateInput {
     }
 }
 
-/// <p>Represents a request to delete a receipt rule set and all of the receipt rules it
-/// contains. You use receipt rule sets to receive email with Amazon SES. For more information,
-/// see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to delete a receipt rule set and all of the receipt rules it contains. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReceiptRuleSetInput {
@@ -15194,9 +13876,7 @@ impl std::fmt::Debug for DeleteReceiptRuleSetInput {
     }
 }
 
-/// <p>Represents a request to delete a receipt rule. You use receipt rules to receive email
-/// with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to delete a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReceiptRuleInput {
@@ -15224,9 +13904,7 @@ impl std::fmt::Debug for DeleteReceiptRuleInput {
     }
 }
 
-/// <p>Represents a request to delete an IP address filter. You use IP address filters when
-/// you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to delete an IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReceiptFilterInput {
@@ -15247,27 +13925,18 @@ impl std::fmt::Debug for DeleteReceiptFilterInput {
     }
 }
 
-/// <p>Represents a request to delete a sending authorization policy for an identity. Sending
-/// authorization is an Amazon SES feature that enables you to authorize other senders to use
-/// your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to delete a sending authorization policy for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIdentityPolicyInput {
-    /// <p>The identity that is associated with the policy that you want to delete. You can
-    /// specify the identity by using its name or by using its Amazon Resource Name (ARN).
-    /// Examples: <code>user@example.com</code>, <code>example.com</code>,
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
     pub identity: std::option::Option<std::string::String>,
     /// <p>The name of the policy to be deleted.</p>
     pub policy_name: std::option::Option<std::string::String>,
 }
 impl DeleteIdentityPolicyInput {
-    /// <p>The identity that is associated with the policy that you want to delete. You can
-    /// specify the identity by using its name or by using its Amazon Resource Name (ARN).
-    /// Examples: <code>user@example.com</code>, <code>example.com</code>,
-    /// <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>The identity that is associated with the policy that you want to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
     pub fn identity(&self) -> std::option::Option<&str> {
         self.identity.as_deref()
@@ -15286,8 +13955,7 @@ impl std::fmt::Debug for DeleteIdentityPolicyInput {
     }
 }
 
-/// <p>Represents a request to delete one of your Amazon SES identities (an email address or
-/// domain).</p>
+/// <p>Represents a request to delete one of your Amazon SES identities (an email address or domain).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIdentityInput {
@@ -15329,18 +13997,15 @@ impl std::fmt::Debug for DeleteCustomVerificationEmailTemplateInput {
     }
 }
 
-/// <p>Represents a request to delete open and click tracking options in a configuration set.
-/// </p>
+/// <p>Represents a request to delete open and click tracking options in a configuration set. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationSetTrackingOptionsInput {
-    /// <p>The name of the configuration set from which you want to delete the tracking
-    /// options.</p>
+    /// <p>The name of the configuration set from which you want to delete the tracking options.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationSetTrackingOptionsInput {
-    /// <p>The name of the configuration set from which you want to delete the tracking
-    /// options.</p>
+    /// <p>The name of the configuration set from which you want to delete the tracking options.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
@@ -15353,11 +14018,7 @@ impl std::fmt::Debug for DeleteConfigurationSetTrackingOptionsInput {
     }
 }
 
-/// <p>Represents a request to delete a configuration set event destination. Configuration
-/// set event destinations are associated with configuration sets, which enable you to
-/// publish email sending events. For information about using configuration sets, see the
-/// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to delete a configuration set event destination. Configuration set event destinations are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationSetEventDestinationInput {
@@ -15385,10 +14046,7 @@ impl std::fmt::Debug for DeleteConfigurationSetEventDestinationInput {
     }
 }
 
-/// <p>Represents a request to delete a configuration set. Configuration sets enable you to
-/// publish email sending events. For information about using configuration sets, see the
-/// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to delete a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationSetInput {
@@ -15409,18 +14067,15 @@ impl std::fmt::Debug for DeleteConfigurationSetInput {
     }
 }
 
-/// <p>Represents a request to create an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to create an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTemplateInput {
-    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
-    /// part.</p>
+    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     pub template: std::option::Option<crate::model::Template>,
 }
 impl CreateTemplateInput {
-    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
-    /// part.</p>
+    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     pub fn template(&self) -> std::option::Option<&crate::model::Template> {
         self.template.as_ref()
     }
@@ -15433,40 +14088,24 @@ impl std::fmt::Debug for CreateTemplateInput {
     }
 }
 
-/// <p>Represents a request to create an empty receipt rule set. You use receipt rule sets to
-/// receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to create an empty receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReceiptRuleSetInput {
     /// <p>The name of the rule set to create. The name must:</p>
     /// <ul>
-    /// <li>
-    /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
-    /// underscores (_), or dashes (-).</p>
-    /// </li>
-    /// <li>
-    /// <p>Start and end with a letter or number.</p>
-    /// </li>
-    /// <li>
-    /// <p>Contain less than 64 characters.</p>
-    /// </li>
+    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Start and end with a letter or number.</p> </li>
+    /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
     pub rule_set_name: std::option::Option<std::string::String>,
 }
 impl CreateReceiptRuleSetInput {
     /// <p>The name of the rule set to create. The name must:</p>
     /// <ul>
-    /// <li>
-    /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
-    /// underscores (_), or dashes (-).</p>
-    /// </li>
-    /// <li>
-    /// <p>Start and end with a letter or number.</p>
-    /// </li>
-    /// <li>
-    /// <p>Contain less than 64 characters.</p>
-    /// </li>
+    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Start and end with a letter or number.</p> </li>
+    /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
     pub fn rule_set_name(&self) -> std::option::Option<&str> {
         self.rule_set_name.as_deref()
@@ -15480,20 +14119,15 @@ impl std::fmt::Debug for CreateReceiptRuleSetInput {
     }
 }
 
-/// <p>Represents a request to create a receipt rule. You use receipt rules to receive email
-/// with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to create a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReceiptRuleInput {
     /// <p>The name of the rule set that the receipt rule will be added to.</p>
     pub rule_set_name: std::option::Option<std::string::String>,
-    /// <p>The name of an existing rule after which the new rule will be placed. If this
-    /// parameter is null, the new rule will be inserted at the beginning of the rule
-    /// list.</p>
+    /// <p>The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule will be inserted at the beginning of the rule list.</p>
     pub after: std::option::Option<std::string::String>,
-    /// <p>A data structure that contains the specified rule's name, actions, recipients,
-    /// domains, enabled status, scan status, and TLS policy.</p>
+    /// <p>A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.</p>
     pub rule: std::option::Option<crate::model::ReceiptRule>,
 }
 impl CreateReceiptRuleInput {
@@ -15501,14 +14135,11 @@ impl CreateReceiptRuleInput {
     pub fn rule_set_name(&self) -> std::option::Option<&str> {
         self.rule_set_name.as_deref()
     }
-    /// <p>The name of an existing rule after which the new rule will be placed. If this
-    /// parameter is null, the new rule will be inserted at the beginning of the rule
-    /// list.</p>
+    /// <p>The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule will be inserted at the beginning of the rule list.</p>
     pub fn after(&self) -> std::option::Option<&str> {
         self.after.as_deref()
     }
-    /// <p>A data structure that contains the specified rule's name, actions, recipients,
-    /// domains, enabled status, scan status, and TLS policy.</p>
+    /// <p>A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.</p>
     pub fn rule(&self) -> std::option::Option<&crate::model::ReceiptRule> {
         self.rule.as_ref()
     }
@@ -15523,18 +14154,15 @@ impl std::fmt::Debug for CreateReceiptRuleInput {
     }
 }
 
-/// <p>Represents a request to create a new IP address filter. You use IP address filters
-/// when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Represents a request to create a new IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReceiptFilterInput {
-    /// <p>A data structure that describes the IP address filter to create, which consists of a
-    /// name, an IP address range, and whether to allow or block mail from it.</p>
+    /// <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
     pub filter: std::option::Option<crate::model::ReceiptFilter>,
 }
 impl CreateReceiptFilterInput {
-    /// <p>A data structure that describes the IP address filter to create, which consists of a
-    /// name, an IP address range, and whether to allow or block mail from it.</p>
+    /// <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::ReceiptFilter> {
         self.filter.as_ref()
     }
@@ -15557,16 +14185,11 @@ pub struct CreateCustomVerificationEmailTemplateInput {
     pub from_email_address: std::option::Option<std::string::String>,
     /// <p>The subject line of the custom verification email.</p>
     pub template_subject: std::option::Option<std::string::String>,
-    /// <p>The content of the custom verification email. The total size of the email must be less
-    /// than 10 MB. The message body may contain HTML, with some limitations. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-    /// Developer Guide</i>.</p>
+    /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
     pub template_content: std::option::Option<std::string::String>,
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     pub success_redirection_url: std::option::Option<std::string::String>,
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is not successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     pub failure_redirection_url: std::option::Option<std::string::String>,
 }
 impl CreateCustomVerificationEmailTemplateInput {
@@ -15582,20 +14205,15 @@ impl CreateCustomVerificationEmailTemplateInput {
     pub fn template_subject(&self) -> std::option::Option<&str> {
         self.template_subject.as_deref()
     }
-    /// <p>The content of the custom verification email. The total size of the email must be less
-    /// than 10 MB. The message body may contain HTML, with some limitations. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
-    /// Developer Guide</i>.</p>
+    /// <p>The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer Guide</i>.</p>
     pub fn template_content(&self) -> std::option::Option<&str> {
         self.template_content.as_deref()
     }
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     pub fn success_redirection_url(&self) -> std::option::Option<&str> {
         self.success_redirection_url.as_deref()
     }
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is not successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     pub fn failure_redirection_url(&self) -> std::option::Option<&str> {
         self.failure_redirection_url.as_deref()
     }
@@ -15613,32 +14231,23 @@ impl std::fmt::Debug for CreateCustomVerificationEmailTemplateInput {
     }
 }
 
-/// <p>Represents a request to create an open and click tracking option object in a
-/// configuration set. </p>
+/// <p>Represents a request to create an open and click tracking option object in a configuration set. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationSetTrackingOptionsInput {
-    /// <p>The name of the configuration set that the tracking options should be associated
-    /// with.</p>
+    /// <p>The name of the configuration set that the tracking options should be associated with.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This
-    /// domain captures open and click events generated by Amazon SES emails.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-    /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES
-    /// Developer Guide</i>.</p>
+    /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This domain captures open and click events generated by Amazon SES emails.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES Developer Guide</i>.</p>
     pub tracking_options: std::option::Option<crate::model::TrackingOptions>,
 }
 impl CreateConfigurationSetTrackingOptionsInput {
-    /// <p>The name of the configuration set that the tracking options should be associated
-    /// with.</p>
+    /// <p>The name of the configuration set that the tracking options should be associated with.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This
-    /// domain captures open and click events generated by Amazon SES emails.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-    /// Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES
-    /// Developer Guide</i>.</p>
+    /// <p>A domain that is used to redirect email recipients to an Amazon SES-operated domain. This domain captures open and click events generated by Amazon SES emails.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring Custom Domains to Handle Open and Click Tracking</a> in the <i>Amazon SES Developer Guide</i>.</p>
     pub fn tracking_options(&self) -> std::option::Option<&crate::model::TrackingOptions> {
         self.tracking_options.as_ref()
     }
@@ -15652,29 +14261,21 @@ impl std::fmt::Debug for CreateConfigurationSetTrackingOptionsInput {
     }
 }
 
-/// <p>Represents a request to create a configuration set event destination. A configuration
-/// set event destination, which can be either Amazon CloudWatch or Amazon Kinesis Firehose, describes an AWS service
-/// in which Amazon SES publishes the email sending events associated with a configuration set.
-/// For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to create a configuration set event destination. A configuration set event destination, which can be either Amazon CloudWatch or Amazon Kinesis Firehose, describes an AWS service in which Amazon SES publishes the email sending events associated with a configuration set. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationSetEventDestinationInput {
-    /// <p>The name of the configuration set that the event destination should be associated
-    /// with.</p>
+    /// <p>The name of the configuration set that the event destination should be associated with.</p>
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>An object that describes the AWS service that email sending event information will
-    /// be published to.</p>
+    /// <p>An object that describes the AWS service that email sending event information will be published to.</p>
     pub event_destination: std::option::Option<crate::model::EventDestination>,
 }
 impl CreateConfigurationSetEventDestinationInput {
-    /// <p>The name of the configuration set that the event destination should be associated
-    /// with.</p>
+    /// <p>The name of the configuration set that the event destination should be associated with.</p>
     pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>An object that describes the AWS service that email sending event information will
-    /// be published to.</p>
+    /// <p>An object that describes the AWS service that email sending event information will be published to.</p>
     pub fn event_destination(&self) -> std::option::Option<&crate::model::EventDestination> {
         self.event_destination.as_ref()
     }
@@ -15688,10 +14289,7 @@ impl std::fmt::Debug for CreateConfigurationSetEventDestinationInput {
     }
 }
 
-/// <p>Represents a request to create a configuration set. Configuration sets enable you to
-/// publish email sending events. For information about using configuration sets, see the
-/// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents a request to create a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConfigurationSetInput {
@@ -15712,23 +14310,15 @@ impl std::fmt::Debug for CreateConfigurationSetInput {
     }
 }
 
-/// <p>Represents a request to create a receipt rule set by cloning an existing one. You use
-/// receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
+/// <p>Represents a request to create a receipt rule set by cloning an existing one. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloneReceiptRuleSetInput {
     /// <p>The name of the rule set to create. The name must:</p>
     /// <ul>
-    /// <li>
-    /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
-    /// underscores (_), or dashes (-).</p>
-    /// </li>
-    /// <li>
-    /// <p>Start and end with a letter or number.</p>
-    /// </li>
-    /// <li>
-    /// <p>Contain less than 64 characters.</p>
-    /// </li>
+    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Start and end with a letter or number.</p> </li>
+    /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
     pub rule_set_name: std::option::Option<std::string::String>,
     /// <p>The name of the rule set to clone.</p>
@@ -15737,16 +14327,9 @@ pub struct CloneReceiptRuleSetInput {
 impl CloneReceiptRuleSetInput {
     /// <p>The name of the rule set to create. The name must:</p>
     /// <ul>
-    /// <li>
-    /// <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
-    /// underscores (_), or dashes (-).</p>
-    /// </li>
-    /// <li>
-    /// <p>Start and end with a letter or number.</p>
-    /// </li>
-    /// <li>
-    /// <p>Contain less than 64 characters.</p>
-    /// </li>
+    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Start and end with a letter or number.</p> </li>
+    /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
     pub fn rule_set_name(&self) -> std::option::Option<&str> {
         self.rule_set_name.as_deref()

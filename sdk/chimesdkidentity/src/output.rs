@@ -451,9 +451,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -545,12 +545,9 @@ pub mod list_app_instance_users_output {
         /// To override the contents of this collection use [`set_app_instance_users`](Self::set_app_instance_users).
         ///
         /// <p>The information for each requested <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_users(
-            mut self,
-            input: impl Into<crate::model::AppInstanceUserSummary>,
-        ) -> Self {
+        pub fn app_instance_users(mut self, input: crate::model::AppInstanceUserSummary) -> Self {
             let mut v = self.app_instance_users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_instance_users = Some(v);
             self
         }
@@ -640,10 +637,10 @@ pub mod list_app_instance_user_endpoints_output {
         /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
         pub fn app_instance_user_endpoints(
             mut self,
-            input: impl Into<crate::model::AppInstanceUserEndpointSummary>,
+            input: crate::model::AppInstanceUserEndpointSummary,
         ) -> Self {
             let mut v = self.app_instance_user_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_instance_user_endpoints = Some(v);
             self
         }
@@ -687,8 +684,7 @@ impl ListAppInstanceUserEndpointsOutput {
 pub struct ListAppInstancesOutput {
     /// <p>The information for each <code>AppInstance</code>.</p>
     pub app_instances: std::option::Option<std::vec::Vec<crate::model::AppInstanceSummary>>,
-    /// <p>The token passed by previous API requests until the maximum number of
-    /// <code>AppInstance</code>s is reached.</p>
+    /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstancesOutput {
@@ -696,8 +692,7 @@ impl ListAppInstancesOutput {
     pub fn app_instances(&self) -> std::option::Option<&[crate::model::AppInstanceSummary]> {
         self.app_instances.as_deref()
     }
-    /// <p>The token passed by previous API requests until the maximum number of
-    /// <code>AppInstance</code>s is reached.</p>
+    /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -726,9 +721,9 @@ pub mod list_app_instances_output {
         /// To override the contents of this collection use [`set_app_instances`](Self::set_app_instances).
         ///
         /// <p>The information for each <code>AppInstance</code>.</p>
-        pub fn app_instances(mut self, input: impl Into<crate::model::AppInstanceSummary>) -> Self {
+        pub fn app_instances(mut self, input: crate::model::AppInstanceSummary) -> Self {
             let mut v = self.app_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_instances = Some(v);
             self
         }
@@ -740,14 +735,12 @@ pub mod list_app_instances_output {
             self.app_instances = input;
             self
         }
-        /// <p>The token passed by previous API requests until the maximum number of
-        /// <code>AppInstance</code>s is reached.</p>
+        /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token passed by previous API requests until the maximum number of
-        /// <code>AppInstance</code>s is reached.</p>
+        /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -777,8 +770,7 @@ pub struct ListAppInstanceAdminsOutput {
     /// <p>The information for each administrator.</p>
     pub app_instance_admins:
         std::option::Option<std::vec::Vec<crate::model::AppInstanceAdminSummary>>,
-    /// <p>The token returned from previous API requests until the number of administrators is
-    /// reached.</p>
+    /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstanceAdminsOutput {
@@ -792,8 +784,7 @@ impl ListAppInstanceAdminsOutput {
     ) -> std::option::Option<&[crate::model::AppInstanceAdminSummary]> {
         self.app_instance_admins.as_deref()
     }
-    /// <p>The token returned from previous API requests until the number of administrators is
-    /// reached.</p>
+    /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -837,12 +828,9 @@ pub mod list_app_instance_admins_output {
         /// To override the contents of this collection use [`set_app_instance_admins`](Self::set_app_instance_admins).
         ///
         /// <p>The information for each administrator.</p>
-        pub fn app_instance_admins(
-            mut self,
-            input: impl Into<crate::model::AppInstanceAdminSummary>,
-        ) -> Self {
+        pub fn app_instance_admins(mut self, input: crate::model::AppInstanceAdminSummary) -> Self {
             let mut v = self.app_instance_admins.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_instance_admins = Some(v);
             self
         }
@@ -854,14 +842,12 @@ pub mod list_app_instance_admins_output {
             self.app_instance_admins = input;
             self
         }
-        /// <p>The token returned from previous API requests until the number of administrators is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of administrators is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -890,8 +876,7 @@ pub struct GetAppInstanceRetentionSettingsOutput {
     /// <p>The retention settings for the <code>AppInstance</code>.</p>
     pub app_instance_retention_settings:
         std::option::Option<crate::model::AppInstanceRetentionSettings>,
-    /// <p>The timestamp representing the time at which the specified items are retained, in Epoch
-    /// Seconds.</p>
+    /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetAppInstanceRetentionSettingsOutput {
@@ -901,8 +886,7 @@ impl GetAppInstanceRetentionSettingsOutput {
     ) -> std::option::Option<&crate::model::AppInstanceRetentionSettings> {
         self.app_instance_retention_settings.as_ref()
     }
-    /// <p>The timestamp representing the time at which the specified items are retained, in Epoch
-    /// Seconds.</p>
+    /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
     pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.initiate_deletion_timestamp.as_ref()
     }
@@ -948,14 +932,12 @@ pub mod get_app_instance_retention_settings_output {
             self.app_instance_retention_settings = input;
             self
         }
-        /// <p>The timestamp representing the time at which the specified items are retained, in Epoch
-        /// Seconds.</p>
+        /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
         pub fn initiate_deletion_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.initiate_deletion_timestamp = Some(input);
             self
         }
-        /// <p>The timestamp representing the time at which the specified items are retained, in Epoch
-        /// Seconds.</p>
+        /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
         pub fn set_initiate_deletion_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -983,13 +965,11 @@ impl GetAppInstanceRetentionSettingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceUserEndpointOutput {
-    /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes,
-    /// allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
+    /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
     pub app_instance_user_endpoint: std::option::Option<crate::model::AppInstanceUserEndpoint>,
 }
 impl DescribeAppInstanceUserEndpointOutput {
-    /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes,
-    /// allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
+    /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
     pub fn app_instance_user_endpoint(
         &self,
     ) -> std::option::Option<&crate::model::AppInstanceUserEndpoint> {
@@ -1016,8 +996,7 @@ pub mod describe_app_instance_user_endpoint_output {
             std::option::Option<crate::model::AppInstanceUserEndpoint>,
     }
     impl Builder {
-        /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes,
-        /// allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
+        /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
         pub fn app_instance_user_endpoint(
             mut self,
             input: crate::model::AppInstanceUserEndpoint,
@@ -1025,8 +1004,7 @@ pub mod describe_app_instance_user_endpoint_output {
             self.app_instance_user_endpoint = Some(input);
             self
         }
-        /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes,
-        /// allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
+        /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
         pub fn set_app_instance_user_endpoint(
             mut self,
             input: std::option::Option<crate::model::AppInstanceUserEndpoint>,
@@ -1110,15 +1088,11 @@ impl DescribeAppInstanceUserOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceAdminOutput {
-    /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the
-    /// <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps
-    /// use epoch milliseconds.</p>
+    /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub app_instance_admin: std::option::Option<crate::model::AppInstanceAdmin>,
 }
 impl DescribeAppInstanceAdminOutput {
-    /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the
-    /// <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps
-    /// use epoch milliseconds.</p>
+    /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub fn app_instance_admin(&self) -> std::option::Option<&crate::model::AppInstanceAdmin> {
         self.app_instance_admin.as_ref()
     }
@@ -1139,16 +1113,12 @@ pub mod describe_app_instance_admin_output {
         pub(crate) app_instance_admin: std::option::Option<crate::model::AppInstanceAdmin>,
     }
     impl Builder {
-        /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the
-        /// <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps
-        /// use epoch milliseconds.</p>
+        /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
         pub fn app_instance_admin(mut self, input: crate::model::AppInstanceAdmin) -> Self {
             self.app_instance_admin = Some(input);
             self
         }
-        /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the
-        /// <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps
-        /// use epoch milliseconds.</p>
+        /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
         pub fn set_app_instance_admin(
             mut self,
             input: std::option::Option<crate::model::AppInstanceAdmin>,
@@ -1175,13 +1145,11 @@ impl DescribeAppInstanceAdminOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceOutput {
-    /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the
-    /// <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
+    /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
     pub app_instance: std::option::Option<crate::model::AppInstance>,
 }
 impl DescribeAppInstanceOutput {
-    /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the
-    /// <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
+    /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
     pub fn app_instance(&self) -> std::option::Option<&crate::model::AppInstance> {
         self.app_instance.as_ref()
     }
@@ -1202,14 +1170,12 @@ pub mod describe_app_instance_output {
         pub(crate) app_instance: std::option::Option<crate::model::AppInstance>,
     }
     impl Builder {
-        /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the
-        /// <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
+        /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
         pub fn app_instance(mut self, input: crate::model::AppInstance) -> Self {
             self.app_instance = Some(input);
             self
         }
-        /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the
-        /// <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
+        /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
         pub fn set_app_instance(
             mut self,
             input: std::option::Option<crate::model::AppInstance>,

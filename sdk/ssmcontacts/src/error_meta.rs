@@ -9,8 +9,7 @@ pub enum Error {
     ConflictException(crate::error::ConflictException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -18,8 +17,7 @@ pub enum Error {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

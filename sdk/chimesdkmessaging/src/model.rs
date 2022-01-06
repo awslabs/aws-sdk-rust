@@ -273,12 +273,9 @@ pub struct Processor {
     pub name: std::option::Option<std::string::String>,
     /// <p>The information about the type of processor and its identifier.</p>
     pub configuration: std::option::Option<crate::model::ProcessorConfiguration>,
-    /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence.
-    /// At this point, we support only 1 processor within a flow.</p>
+    /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence. At this point, we support only 1 processor within a flow.</p>
     pub execution_order: std::option::Option<i32>,
-    /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and
-    /// communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence
-    /// has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
+    /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
     pub fallback_action: std::option::Option<crate::model::FallbackAction>,
 }
 impl Processor {
@@ -290,14 +287,11 @@ impl Processor {
     pub fn configuration(&self) -> std::option::Option<&crate::model::ProcessorConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence.
-    /// At this point, we support only 1 processor within a flow.</p>
+    /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence. At this point, we support only 1 processor within a flow.</p>
     pub fn execution_order(&self) -> std::option::Option<i32> {
         self.execution_order
     }
-    /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and
-    /// communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence
-    /// has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
+    /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
     pub fn fallback_action(&self) -> std::option::Option<&crate::model::FallbackAction> {
         self.fallback_action.as_ref()
     }
@@ -347,28 +341,22 @@ pub mod processor {
             self.configuration = input;
             self
         }
-        /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence.
-        /// At this point, we support only 1 processor within a flow.</p>
+        /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence. At this point, we support only 1 processor within a flow.</p>
         pub fn execution_order(mut self, input: i32) -> Self {
             self.execution_order = Some(input);
             self
         }
-        /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence.
-        /// At this point, we support only 1 processor within a flow.</p>
+        /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence. At this point, we support only 1 processor within a flow.</p>
         pub fn set_execution_order(mut self, input: std::option::Option<i32>) -> Self {
             self.execution_order = input;
             self
         }
-        /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and
-        /// communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence
-        /// has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
+        /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
         pub fn fallback_action(mut self, input: crate::model::FallbackAction) -> Self {
             self.fallback_action = Some(input);
             self
         }
-        /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and
-        /// communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence
-        /// has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
+        /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
         pub fn set_fallback_action(
             mut self,
             input: std::option::Option<crate::model::FallbackAction>,
@@ -832,9 +820,7 @@ pub struct PushNotificationConfiguration {
     pub title: std::option::Option<std::string::String>,
     /// <p>The body of the push notification.</p>
     pub body: std::option::Option<std::string::String>,
-    /// <p>Enum value that indicates the type of the push notification for a message.
-    /// <code>DEFAULT</code>: Normal mobile push notification.
-    /// <code>VOIP</code>: VOIP mobile push notification.</p>
+    /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
     pub r#type: std::option::Option<crate::model::PushNotificationType>,
 }
 impl PushNotificationConfiguration {
@@ -846,9 +832,7 @@ impl PushNotificationConfiguration {
     pub fn body(&self) -> std::option::Option<&str> {
         self.body.as_deref()
     }
-    /// <p>Enum value that indicates the type of the push notification for a message.
-    /// <code>DEFAULT</code>: Normal mobile push notification.
-    /// <code>VOIP</code>: VOIP mobile push notification.</p>
+    /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::PushNotificationType> {
         self.r#type.as_ref()
     }
@@ -893,16 +877,12 @@ pub mod push_notification_configuration {
             self.body = input;
             self
         }
-        /// <p>Enum value that indicates the type of the push notification for a message.
-        /// <code>DEFAULT</code>: Normal mobile push notification.
-        /// <code>VOIP</code>: VOIP mobile push notification.</p>
+        /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
         pub fn r#type(mut self, input: crate::model::PushNotificationType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Enum value that indicates the type of the push notification for a message.
-        /// <code>DEFAULT</code>: Normal mobile push notification.
-        /// <code>VOIP</code>: VOIP mobile push notification.</p>
+        /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::PushNotificationType>,
@@ -1159,17 +1139,13 @@ impl ChannelMembershipPreferences {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PushNotificationPreferences {
-    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel.
-    /// <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications.
-    /// </p>
+    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
     pub allow_notifications: std::option::Option<crate::model::AllowNotifications>,
     /// <p>The simple JSON object used to send a subset of a push notification to the requsted member.</p>
     pub filter_rule: std::option::Option<std::string::String>,
 }
 impl PushNotificationPreferences {
-    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel.
-    /// <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications.
-    /// </p>
+    /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
     pub fn allow_notifications(&self) -> std::option::Option<&crate::model::AllowNotifications> {
         self.allow_notifications.as_ref()
     }
@@ -1196,16 +1172,12 @@ pub mod push_notification_preferences {
         pub(crate) filter_rule: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Enum value that indicates which push notifications to send to the requested member of a channel.
-        /// <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications.
-        /// </p>
+        /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
         pub fn allow_notifications(mut self, input: crate::model::AllowNotifications) -> Self {
             self.allow_notifications = Some(input);
             self
         }
-        /// <p>Enum value that indicates which push notifications to send to the requested member of a channel.
-        /// <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications.
-        /// </p>
+        /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
         pub fn set_allow_notifications(
             mut self,
             input: std::option::Option<crate::model::AllowNotifications>,
@@ -1847,8 +1819,7 @@ pub struct ChannelMessageSummary {
     pub sender: std::option::Option<crate::model::Identity>,
     /// <p>Indicates whether a message was redacted.</p>
     pub redacted: bool,
-    /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the
-    /// processing stage.</p>
+    /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the processing stage.</p>
     pub status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
     /// <p>The message attribues listed in a the summary of a channel message.</p>
     pub message_attributes: std::option::Option<
@@ -1892,8 +1863,7 @@ impl ChannelMessageSummary {
     pub fn redacted(&self) -> bool {
         self.redacted
     }
-    /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the
-    /// processing stage.</p>
+    /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the processing stage.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ChannelMessageStatusStructure> {
         self.status.as_ref()
     }
@@ -2046,14 +2016,12 @@ pub mod channel_message_summary {
             self.redacted = input;
             self
         }
-        /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the
-        /// processing stage.</p>
+        /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the processing stage.</p>
         pub fn status(mut self, input: crate::model::ChannelMessageStatusStructure) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the
-        /// processing stage.</p>
+        /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the processing stage.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ChannelMessageStatusStructure>,
@@ -2069,10 +2037,10 @@ pub mod channel_message_summary {
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MessageAttributeValue>,
+            v: crate::model::MessageAttributeValue,
         ) -> Self {
             let mut hash_map = self.message_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.message_attributes = Some(hash_map);
             self
         }
@@ -2516,9 +2484,9 @@ pub mod channel_flow_summary {
         /// To override the contents of this collection use [`set_processors`](Self::set_processors).
         ///
         /// <p>Information about the processor Lambda functions.</p>
-        pub fn processors(mut self, input: impl Into<crate::model::Processor>) -> Self {
+        pub fn processors(mut self, input: crate::model::Processor) -> Self {
             let mut v = self.processors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processors = Some(v);
             self
         }
@@ -2932,10 +2900,10 @@ pub mod channel_message {
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::MessageAttributeValue>,
+            v: crate::model::MessageAttributeValue,
         ) -> Self {
             let mut hash_map = self.message_attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.message_attributes = Some(hash_map);
             self
         }
@@ -3333,9 +3301,9 @@ pub mod channel_flow {
         /// To override the contents of this collection use [`set_processors`](Self::set_processors).
         ///
         /// <p>Information about the processor Lambda functions.</p>
-        pub fn processors(mut self, input: impl Into<crate::model::Processor>) -> Self {
+        pub fn processors(mut self, input: crate::model::Processor) -> Self {
             let mut v = self.processors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processors = Some(v);
             self
         }
@@ -3772,6 +3740,12 @@ pub struct ChannelMessageCallback {
     pub content: std::option::Option<std::string::String>,
     /// <p>The message metadata.</p>
     pub metadata: std::option::Option<std::string::String>,
+    /// <p>The push notification configuration of the message.</p>
+    pub push_notification: std::option::Option<crate::model::PushNotificationConfiguration>,
+    /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>. </p>
+    pub message_attributes: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+    >,
 }
 impl ChannelMessageCallback {
     /// <p>The message ID.</p>
@@ -3786,6 +3760,20 @@ impl ChannelMessageCallback {
     pub fn metadata(&self) -> std::option::Option<&str> {
         self.metadata.as_deref()
     }
+    /// <p>The push notification configuration of the message.</p>
+    pub fn push_notification(
+        &self,
+    ) -> std::option::Option<&crate::model::PushNotificationConfiguration> {
+        self.push_notification.as_ref()
+    }
+    /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>. </p>
+    pub fn message_attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+    > {
+        self.message_attributes.as_ref()
+    }
 }
 impl std::fmt::Debug for ChannelMessageCallback {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3793,6 +3781,8 @@ impl std::fmt::Debug for ChannelMessageCallback {
         formatter.field("message_id", &self.message_id);
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("push_notification", &self.push_notification);
+        formatter.field("message_attributes", &self.message_attributes);
         formatter.finish()
     }
 }
@@ -3805,6 +3795,11 @@ pub mod channel_message_callback {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
         pub(crate) metadata: std::option::Option<std::string::String>,
+        pub(crate) push_notification:
+            std::option::Option<crate::model::PushNotificationConfiguration>,
+        pub(crate) message_attributes: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+        >,
     }
     impl Builder {
         /// <p>The message ID.</p>
@@ -3837,12 +3832,55 @@ pub mod channel_message_callback {
             self.metadata = input;
             self
         }
+        /// <p>The push notification configuration of the message.</p>
+        pub fn push_notification(
+            mut self,
+            input: crate::model::PushNotificationConfiguration,
+        ) -> Self {
+            self.push_notification = Some(input);
+            self
+        }
+        /// <p>The push notification configuration of the message.</p>
+        pub fn set_push_notification(
+            mut self,
+            input: std::option::Option<crate::model::PushNotificationConfiguration>,
+        ) -> Self {
+            self.push_notification = input;
+            self
+        }
+        /// Adds a key-value pair to `message_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
+        ///
+        /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>. </p>
+        pub fn message_attributes(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: crate::model::MessageAttributeValue,
+        ) -> Self {
+            let mut hash_map = self.message_attributes.unwrap_or_default();
+            hash_map.insert(k.into(), v);
+            self.message_attributes = Some(hash_map);
+            self
+        }
+        /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>. </p>
+        pub fn set_message_attributes(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
+            >,
+        ) -> Self {
+            self.message_attributes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ChannelMessageCallback`](crate::model::ChannelMessageCallback)
         pub fn build(self) -> crate::model::ChannelMessageCallback {
             crate::model::ChannelMessageCallback {
                 message_id: self.message_id,
                 content: self.content,
                 metadata: self.metadata,
+                push_notification: self.push_notification,
+                message_attributes: self.message_attributes,
             }
         }
     }
@@ -3952,8 +3990,7 @@ impl BatchCreateChannelMembershipError {
     }
 }
 
-/// <p>The membership information, including member ARNs, the channel ARN, and membership
-/// types.</p>
+/// <p>The membership information, including member ARNs, the channel ARN, and membership types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchChannelMemberships {
@@ -4037,9 +4074,9 @@ pub mod batch_channel_memberships {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>The users successfully added to the request.</p>
-        pub fn members(mut self, input: impl Into<crate::model::Identity>) -> Self {
+        pub fn members(mut self, input: crate::model::Identity) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }

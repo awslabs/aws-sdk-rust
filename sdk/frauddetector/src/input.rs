@@ -16,9 +16,9 @@ pub mod batch_create_variable_input {
         /// To override the contents of this collection use [`set_variable_entries`](Self::set_variable_entries).
         ///
         /// <p>The list of variables for the batch create variable request.</p>
-        pub fn variable_entries(mut self, input: impl Into<crate::model::VariableEntry>) -> Self {
+        pub fn variable_entries(mut self, input: crate::model::VariableEntry) -> Self {
             let mut v = self.variable_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variable_entries = Some(v);
             self
         }
@@ -35,9 +35,9 @@ pub mod batch_create_variable_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -66,7 +66,7 @@ pub mod batch_create_variable_input {
 #[doc(hidden)]
 pub type BatchCreateVariableInputOperationOutputAlias = crate::operation::BatchCreateVariable;
 #[doc(hidden)]
-pub type BatchCreateVariableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchCreateVariableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchCreateVariableInput {
     /// Consumes the builder and constructs an Operation<[`BatchCreateVariable`](crate::operation::BatchCreateVariable)>
     #[allow(clippy::let_and_return)]
@@ -77,7 +77,7 @@ impl BatchCreateVariableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchCreateVariable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -162,7 +162,7 @@ impl BatchCreateVariableInput {
             "BatchCreateVariable",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -227,7 +227,7 @@ pub mod batch_get_variable_input {
 #[doc(hidden)]
 pub type BatchGetVariableInputOperationOutputAlias = crate::operation::BatchGetVariable;
 #[doc(hidden)]
-pub type BatchGetVariableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetVariableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetVariableInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetVariable`](crate::operation::BatchGetVariable)>
     #[allow(clippy::let_and_return)]
@@ -238,7 +238,7 @@ impl BatchGetVariableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetVariable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -323,7 +323,7 @@ impl BatchGetVariableInput {
             "BatchGetVariable",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -356,13 +356,13 @@ pub mod cancel_batch_import_job_input {
     }
     impl Builder {
         /// <p> The ID of an in-progress batch import job to cancel. </p>
-        /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
+        /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
         /// <p> The ID of an in-progress batch import job to cancel. </p>
-        /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
+        /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -383,7 +383,7 @@ pub mod cancel_batch_import_job_input {
 #[doc(hidden)]
 pub type CancelBatchImportJobInputOperationOutputAlias = crate::operation::CancelBatchImportJob;
 #[doc(hidden)]
-pub type CancelBatchImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelBatchImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelBatchImportJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelBatchImportJob`](crate::operation::CancelBatchImportJob)>
     #[allow(clippy::let_and_return)]
@@ -394,7 +394,7 @@ impl CancelBatchImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelBatchImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -481,7 +481,7 @@ impl CancelBatchImportJobInput {
             "CancelBatchImportJob",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -540,7 +540,7 @@ pub mod cancel_batch_prediction_job_input {
 pub type CancelBatchPredictionJobInputOperationOutputAlias =
     crate::operation::CancelBatchPredictionJob;
 #[doc(hidden)]
-pub type CancelBatchPredictionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelBatchPredictionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelBatchPredictionJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelBatchPredictionJob`](crate::operation::CancelBatchPredictionJob)>
     #[allow(clippy::let_and_return)]
@@ -551,7 +551,7 @@ impl CancelBatchPredictionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelBatchPredictionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -638,7 +638,7 @@ impl CancelBatchPredictionJobInput {
             "CancelBatchPredictionJob",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -718,14 +718,12 @@ pub mod create_batch_import_job_input {
             self.event_type_name = input;
             self
         }
-        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
-        /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
-        /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -734,14 +732,14 @@ pub mod create_batch_import_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of key-value pairs associated with this request.  </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>A collection of key-value pairs associated with this request. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A collection of key-value pairs associated with this request.  </p>
+        /// <p>A collection of key-value pairs associated with this request. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -770,7 +768,7 @@ pub mod create_batch_import_job_input {
 #[doc(hidden)]
 pub type CreateBatchImportJobInputOperationOutputAlias = crate::operation::CreateBatchImportJob;
 #[doc(hidden)]
-pub type CreateBatchImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBatchImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBatchImportJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateBatchImportJob`](crate::operation::CreateBatchImportJob)>
     #[allow(clippy::let_and_return)]
@@ -781,7 +779,7 @@ impl CreateBatchImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBatchImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -868,7 +866,7 @@ impl CreateBatchImportJobInput {
             "CreateBatchImportJob",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -991,9 +989,9 @@ pub mod create_batch_prediction_job_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1029,7 +1027,7 @@ pub mod create_batch_prediction_job_input {
 pub type CreateBatchPredictionJobInputOperationOutputAlias =
     crate::operation::CreateBatchPredictionJob;
 #[doc(hidden)]
-pub type CreateBatchPredictionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBatchPredictionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBatchPredictionJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateBatchPredictionJob`](crate::operation::CreateBatchPredictionJob)>
     #[allow(clippy::let_and_return)]
@@ -1040,7 +1038,7 @@ impl CreateBatchPredictionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBatchPredictionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1127,7 +1125,7 @@ impl CreateBatchPredictionJobInput {
             "CreateBatchPredictionJob",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1210,9 +1208,9 @@ pub mod create_detector_version_input {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The rules to include in the detector version.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1229,9 +1227,9 @@ pub mod create_detector_version_input {
         /// To override the contents of this collection use [`set_model_versions`](Self::set_model_versions).
         ///
         /// <p>The model versions to include in the detector version.</p>
-        pub fn model_versions(mut self, input: impl Into<crate::model::ModelVersion>) -> Self {
+        pub fn model_versions(mut self, input: crate::model::ModelVersion) -> Self {
             let mut v = self.model_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.model_versions = Some(v);
             self
         }
@@ -1269,9 +1267,9 @@ pub mod create_detector_version_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1305,7 +1303,7 @@ pub mod create_detector_version_input {
 #[doc(hidden)]
 pub type CreateDetectorVersionInputOperationOutputAlias = crate::operation::CreateDetectorVersion;
 #[doc(hidden)]
-pub type CreateDetectorVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDetectorVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDetectorVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateDetectorVersion`](crate::operation::CreateDetectorVersion)>
     #[allow(clippy::let_and_return)]
@@ -1316,7 +1314,7 @@ impl CreateDetectorVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDetectorVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1403,7 +1401,7 @@ impl CreateDetectorVersionInput {
             "CreateDetectorVersion",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1490,9 +1488,9 @@ pub mod create_model_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1524,7 +1522,7 @@ pub mod create_model_input {
 #[doc(hidden)]
 pub type CreateModelInputOperationOutputAlias = crate::operation::CreateModel;
 #[doc(hidden)]
-pub type CreateModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateModelInput {
     /// Consumes the builder and constructs an Operation<[`CreateModel`](crate::operation::CreateModel)>
     #[allow(clippy::let_and_return)]
@@ -1535,7 +1533,7 @@ impl CreateModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1619,7 +1617,7 @@ impl CreateModelInput {
             "CreateModel",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1737,9 +1735,9 @@ pub mod create_model_version_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1773,7 +1771,7 @@ pub mod create_model_version_input {
 #[doc(hidden)]
 pub type CreateModelVersionInputOperationOutputAlias = crate::operation::CreateModelVersion;
 #[doc(hidden)]
-pub type CreateModelVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateModelVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateModelVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateModelVersion`](crate::operation::CreateModelVersion)>
     #[allow(clippy::let_and_return)]
@@ -1784,7 +1782,7 @@ impl CreateModelVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateModelVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1869,7 +1867,7 @@ impl CreateModelVersionInput {
             "CreateModelVersion",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1981,9 +1979,9 @@ pub mod create_rule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2017,7 +2015,7 @@ pub mod create_rule_input {
 #[doc(hidden)]
 pub type CreateRuleInputOperationOutputAlias = crate::operation::CreateRule;
 #[doc(hidden)]
-pub type CreateRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateRule`](crate::operation::CreateRule)>
     #[allow(clippy::let_and_return)]
@@ -2028,7 +2026,7 @@ impl CreateRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2112,7 +2110,7 @@ impl CreateRuleInput {
             "CreateRule",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2206,18 +2204,14 @@ pub mod create_variable_input {
             self.description = input;
             self
         }
-        /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.
-        /// </p>
-        /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code>
-        /// </p>
+        /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
+        /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code> </p>
         pub fn variable_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.variable_type = Some(input.into());
             self
         }
-        /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.
-        /// </p>
-        /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code>
-        /// </p>
+        /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
+        /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code> </p>
         pub fn set_variable_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2230,9 +2224,9 @@ pub mod create_variable_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2266,7 +2260,7 @@ pub mod create_variable_input {
 #[doc(hidden)]
 pub type CreateVariableInputOperationOutputAlias = crate::operation::CreateVariable;
 #[doc(hidden)]
-pub type CreateVariableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVariableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVariableInput {
     /// Consumes the builder and constructs an Operation<[`CreateVariable`](crate::operation::CreateVariable)>
     #[allow(clippy::let_and_return)]
@@ -2277,7 +2271,7 @@ impl CreateVariableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVariable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2362,7 +2356,7 @@ impl CreateVariableInput {
             "CreateVariable",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2420,7 +2414,7 @@ pub mod delete_batch_import_job_input {
 #[doc(hidden)]
 pub type DeleteBatchImportJobInputOperationOutputAlias = crate::operation::DeleteBatchImportJob;
 #[doc(hidden)]
-pub type DeleteBatchImportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBatchImportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBatchImportJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBatchImportJob`](crate::operation::DeleteBatchImportJob)>
     #[allow(clippy::let_and_return)]
@@ -2431,7 +2425,7 @@ impl DeleteBatchImportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBatchImportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2518,7 +2512,7 @@ impl DeleteBatchImportJobInput {
             "DeleteBatchImportJob",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2577,7 +2571,7 @@ pub mod delete_batch_prediction_job_input {
 pub type DeleteBatchPredictionJobInputOperationOutputAlias =
     crate::operation::DeleteBatchPredictionJob;
 #[doc(hidden)]
-pub type DeleteBatchPredictionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBatchPredictionJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBatchPredictionJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBatchPredictionJob`](crate::operation::DeleteBatchPredictionJob)>
     #[allow(clippy::let_and_return)]
@@ -2588,7 +2582,7 @@ impl DeleteBatchPredictionJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBatchPredictionJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2675,7 +2669,7 @@ impl DeleteBatchPredictionJobInput {
             "DeleteBatchPredictionJob",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2733,7 +2727,7 @@ pub mod delete_detector_input {
 #[doc(hidden)]
 pub type DeleteDetectorInputOperationOutputAlias = crate::operation::DeleteDetector;
 #[doc(hidden)]
-pub type DeleteDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDetector`](crate::operation::DeleteDetector)>
     #[allow(clippy::let_and_return)]
@@ -2744,7 +2738,7 @@ impl DeleteDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2829,7 +2823,7 @@ impl DeleteDetectorInput {
             "DeleteDetector",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2902,7 +2896,7 @@ pub mod delete_detector_version_input {
 #[doc(hidden)]
 pub type DeleteDetectorVersionInputOperationOutputAlias = crate::operation::DeleteDetectorVersion;
 #[doc(hidden)]
-pub type DeleteDetectorVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDetectorVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDetectorVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDetectorVersion`](crate::operation::DeleteDetectorVersion)>
     #[allow(clippy::let_and_return)]
@@ -2913,7 +2907,7 @@ impl DeleteDetectorVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDetectorVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3000,7 +2994,7 @@ impl DeleteDetectorVersionInput {
             "DeleteDetectorVersion",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3056,7 +3050,7 @@ pub mod delete_entity_type_input {
 #[doc(hidden)]
 pub type DeleteEntityTypeInputOperationOutputAlias = crate::operation::DeleteEntityType;
 #[doc(hidden)]
-pub type DeleteEntityTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEntityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEntityTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEntityType`](crate::operation::DeleteEntityType)>
     #[allow(clippy::let_and_return)]
@@ -3067,7 +3061,7 @@ impl DeleteEntityTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEntityType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3152,7 +3146,7 @@ impl DeleteEntityTypeInput {
             "DeleteEntityType",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3237,7 +3231,7 @@ pub mod delete_event_input {
 #[doc(hidden)]
 pub type DeleteEventInputOperationOutputAlias = crate::operation::DeleteEvent;
 #[doc(hidden)]
-pub type DeleteEventInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEvent`](crate::operation::DeleteEvent)>
     #[allow(clippy::let_and_return)]
@@ -3248,7 +3242,7 @@ impl DeleteEventInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEvent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3332,7 +3326,7 @@ impl DeleteEventInput {
             "DeleteEvent",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3394,7 +3388,7 @@ pub mod delete_events_by_event_type_input {
 pub type DeleteEventsByEventTypeInputOperationOutputAlias =
     crate::operation::DeleteEventsByEventType;
 #[doc(hidden)]
-pub type DeleteEventsByEventTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEventsByEventTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventsByEventTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventsByEventType`](crate::operation::DeleteEventsByEventType)>
     #[allow(clippy::let_and_return)]
@@ -3405,7 +3399,7 @@ impl DeleteEventsByEventTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEventsByEventType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3492,7 +3486,7 @@ impl DeleteEventsByEventTypeInput {
             "DeleteEventsByEventType",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3548,7 +3542,7 @@ pub mod delete_event_type_input {
 #[doc(hidden)]
 pub type DeleteEventTypeInputOperationOutputAlias = crate::operation::DeleteEventType;
 #[doc(hidden)]
-pub type DeleteEventTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEventTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventType`](crate::operation::DeleteEventType)>
     #[allow(clippy::let_and_return)]
@@ -3559,7 +3553,7 @@ impl DeleteEventTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEventType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3644,7 +3638,7 @@ impl DeleteEventTypeInput {
             "DeleteEventType",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3705,7 +3699,7 @@ pub mod delete_external_model_input {
 #[doc(hidden)]
 pub type DeleteExternalModelInputOperationOutputAlias = crate::operation::DeleteExternalModel;
 #[doc(hidden)]
-pub type DeleteExternalModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteExternalModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteExternalModelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteExternalModel`](crate::operation::DeleteExternalModel)>
     #[allow(clippy::let_and_return)]
@@ -3716,7 +3710,7 @@ impl DeleteExternalModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteExternalModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3801,7 +3795,7 @@ impl DeleteExternalModelInput {
             "DeleteExternalModel",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3857,7 +3851,7 @@ pub mod delete_label_input {
 #[doc(hidden)]
 pub type DeleteLabelInputOperationOutputAlias = crate::operation::DeleteLabel;
 #[doc(hidden)]
-pub type DeleteLabelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLabelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLabelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLabel`](crate::operation::DeleteLabel)>
     #[allow(clippy::let_and_return)]
@@ -3868,7 +3862,7 @@ impl DeleteLabelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLabel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3952,7 +3946,7 @@ impl DeleteLabelInput {
             "DeleteLabel",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4025,7 +4019,7 @@ pub mod delete_model_input {
 #[doc(hidden)]
 pub type DeleteModelInputOperationOutputAlias = crate::operation::DeleteModel;
 #[doc(hidden)]
-pub type DeleteModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteModelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteModel`](crate::operation::DeleteModel)>
     #[allow(clippy::let_and_return)]
@@ -4036,7 +4030,7 @@ impl DeleteModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4120,7 +4114,7 @@ impl DeleteModelInput {
             "DeleteModel",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4208,7 +4202,7 @@ pub mod delete_model_version_input {
 #[doc(hidden)]
 pub type DeleteModelVersionInputOperationOutputAlias = crate::operation::DeleteModelVersion;
 #[doc(hidden)]
-pub type DeleteModelVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteModelVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteModelVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteModelVersion`](crate::operation::DeleteModelVersion)>
     #[allow(clippy::let_and_return)]
@@ -4219,7 +4213,7 @@ impl DeleteModelVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteModelVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4304,7 +4298,7 @@ impl DeleteModelVersionInput {
             "DeleteModelVersion",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4360,7 +4354,7 @@ pub mod delete_outcome_input {
 #[doc(hidden)]
 pub type DeleteOutcomeInputOperationOutputAlias = crate::operation::DeleteOutcome;
 #[doc(hidden)]
-pub type DeleteOutcomeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteOutcomeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOutcomeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOutcome`](crate::operation::DeleteOutcome)>
     #[allow(clippy::let_and_return)]
@@ -4371,7 +4365,7 @@ impl DeleteOutcomeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOutcome,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4455,7 +4449,7 @@ impl DeleteOutcomeInput {
             "DeleteOutcome",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4511,7 +4505,7 @@ pub mod delete_rule_input {
 #[doc(hidden)]
 pub type DeleteRuleInputOperationOutputAlias = crate::operation::DeleteRule;
 #[doc(hidden)]
-pub type DeleteRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRule`](crate::operation::DeleteRule)>
     #[allow(clippy::let_and_return)]
@@ -4522,7 +4516,7 @@ impl DeleteRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4606,7 +4600,7 @@ impl DeleteRuleInput {
             "DeleteRule",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4662,7 +4656,7 @@ pub mod delete_variable_input {
 #[doc(hidden)]
 pub type DeleteVariableInputOperationOutputAlias = crate::operation::DeleteVariable;
 #[doc(hidden)]
-pub type DeleteVariableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVariableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVariableInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVariable`](crate::operation::DeleteVariable)>
     #[allow(clippy::let_and_return)]
@@ -4673,7 +4667,7 @@ impl DeleteVariableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVariable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4758,7 +4752,7 @@ impl DeleteVariableInput {
             "DeleteVariable",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4840,7 +4834,7 @@ pub mod describe_detector_input {
 #[doc(hidden)]
 pub type DescribeDetectorInputOperationOutputAlias = crate::operation::DescribeDetector;
 #[doc(hidden)]
-pub type DescribeDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDetector`](crate::operation::DescribeDetector)>
     #[allow(clippy::let_and_return)]
@@ -4851,7 +4845,7 @@ impl DescribeDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4936,7 +4930,7 @@ impl DescribeDetectorInput {
             "DescribeDetector",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5048,7 +5042,7 @@ pub mod describe_model_versions_input {
 #[doc(hidden)]
 pub type DescribeModelVersionsInputOperationOutputAlias = crate::operation::DescribeModelVersions;
 #[doc(hidden)]
-pub type DescribeModelVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeModelVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeModelVersionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeModelVersions`](crate::operation::DescribeModelVersions)>
     #[allow(clippy::let_and_return)]
@@ -5059,7 +5053,7 @@ impl DescribeModelVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeModelVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5146,7 +5140,7 @@ impl DescribeModelVersionsInput {
             "DescribeModelVersions",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5228,7 +5222,7 @@ pub mod get_batch_import_jobs_input {
 #[doc(hidden)]
 pub type GetBatchImportJobsInputOperationOutputAlias = crate::operation::GetBatchImportJobs;
 #[doc(hidden)]
-pub type GetBatchImportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBatchImportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBatchImportJobsInput {
     /// Consumes the builder and constructs an Operation<[`GetBatchImportJobs`](crate::operation::GetBatchImportJobs)>
     #[allow(clippy::let_and_return)]
@@ -5239,7 +5233,7 @@ impl GetBatchImportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBatchImportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5324,7 +5318,7 @@ impl GetBatchImportJobsInput {
             "GetBatchImportJobs",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5406,7 +5400,7 @@ pub mod get_batch_prediction_jobs_input {
 #[doc(hidden)]
 pub type GetBatchPredictionJobsInputOperationOutputAlias = crate::operation::GetBatchPredictionJobs;
 #[doc(hidden)]
-pub type GetBatchPredictionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBatchPredictionJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBatchPredictionJobsInput {
     /// Consumes the builder and constructs an Operation<[`GetBatchPredictionJobs`](crate::operation::GetBatchPredictionJobs)>
     #[allow(clippy::let_and_return)]
@@ -5417,7 +5411,7 @@ impl GetBatchPredictionJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBatchPredictionJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5504,7 +5498,7 @@ impl GetBatchPredictionJobsInput {
             "GetBatchPredictionJobs",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5566,7 +5560,8 @@ pub mod get_delete_events_by_event_type_status_input {
 pub type GetDeleteEventsByEventTypeStatusInputOperationOutputAlias =
     crate::operation::GetDeleteEventsByEventTypeStatus;
 #[doc(hidden)]
-pub type GetDeleteEventsByEventTypeStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDeleteEventsByEventTypeStatusInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetDeleteEventsByEventTypeStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetDeleteEventsByEventTypeStatus`](crate::operation::GetDeleteEventsByEventTypeStatus)>
     #[allow(clippy::let_and_return)]
@@ -5577,7 +5572,7 @@ impl GetDeleteEventsByEventTypeStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDeleteEventsByEventTypeStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5663,7 +5658,7 @@ impl GetDeleteEventsByEventTypeStatusInput {
             "GetDeleteEventsByEventTypeStatus",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5745,7 +5740,7 @@ pub mod get_detectors_input {
 #[doc(hidden)]
 pub type GetDetectorsInputOperationOutputAlias = crate::operation::GetDetectors;
 #[doc(hidden)]
-pub type GetDetectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDetectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDetectorsInput {
     /// Consumes the builder and constructs an Operation<[`GetDetectors`](crate::operation::GetDetectors)>
     #[allow(clippy::let_and_return)]
@@ -5756,7 +5751,7 @@ impl GetDetectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDetectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5840,7 +5835,7 @@ impl GetDetectorsInput {
             "GetDetectors",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5913,7 +5908,7 @@ pub mod get_detector_version_input {
 #[doc(hidden)]
 pub type GetDetectorVersionInputOperationOutputAlias = crate::operation::GetDetectorVersion;
 #[doc(hidden)]
-pub type GetDetectorVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDetectorVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDetectorVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetDetectorVersion`](crate::operation::GetDetectorVersion)>
     #[allow(clippy::let_and_return)]
@@ -5924,7 +5919,7 @@ impl GetDetectorVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDetectorVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6009,7 +6004,7 @@ impl GetDetectorVersionInput {
             "GetDetectorVersion",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6091,7 +6086,7 @@ pub mod get_entity_types_input {
 #[doc(hidden)]
 pub type GetEntityTypesInputOperationOutputAlias = crate::operation::GetEntityTypes;
 #[doc(hidden)]
-pub type GetEntityTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEntityTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEntityTypesInput {
     /// Consumes the builder and constructs an Operation<[`GetEntityTypes`](crate::operation::GetEntityTypes)>
     #[allow(clippy::let_and_return)]
@@ -6102,7 +6097,7 @@ impl GetEntityTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEntityTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6187,7 +6182,7 @@ impl GetEntityTypesInput {
             "GetEntityTypes",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6258,7 +6253,7 @@ pub mod get_event_input {
 #[doc(hidden)]
 pub type GetEventInputOperationOutputAlias = crate::operation::GetEvent;
 #[doc(hidden)]
-pub type GetEventInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventInput {
     /// Consumes the builder and constructs an Operation<[`GetEvent`](crate::operation::GetEvent)>
     #[allow(clippy::let_and_return)]
@@ -6269,7 +6264,7 @@ impl GetEventInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEvent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6351,7 +6346,7 @@ impl GetEventInput {
                     "GetEvent",
                     "frauddetector",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6445,9 +6440,9 @@ pub mod get_event_prediction_input {
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
         /// <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
-        pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
+        pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -6476,25 +6471,14 @@ pub mod get_event_prediction_input {
         ///
         /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
         ///
-        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
-        /// their corresponding values for the event you are sending for evaluation.</p>
-        /// <important>         
-        /// <p>You must provide at least one eventVariable</p>        
+        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+        /// <p>You must provide at least one eventVariable</p>
         /// </important>
-        ///
         /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-        ///
-        /// <p>
-        /// <b>For Amazon Fraud Detector trained models:</b>
-        /// </p>
-        /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map)
-        /// with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-        ///
-        /// <p>
-        /// <b>For imported SageMaker models:</b>
-        /// </p>
-        /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules
-        /// will use the default value that is provided for the variable. </p>
+        /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
+        /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
+        /// <p> <b>For imported SageMaker models:</b> </p>
+        /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
         pub fn event_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -6505,25 +6489,14 @@ pub mod get_event_prediction_input {
             self.event_variables = Some(hash_map);
             self
         }
-        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
-        /// their corresponding values for the event you are sending for evaluation.</p>
-        /// <important>         
-        /// <p>You must provide at least one eventVariable</p>        
+        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+        /// <p>You must provide at least one eventVariable</p>
         /// </important>
-        ///
         /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-        ///
-        /// <p>
-        /// <b>For Amazon Fraud Detector trained models:</b>
-        /// </p>
-        /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map)
-        /// with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-        ///
-        /// <p>
-        /// <b>For imported SageMaker models:</b>
-        /// </p>
-        /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules
-        /// will use the default value that is provided for the variable. </p>
+        /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
+        /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
+        /// <p> <b>For imported SageMaker models:</b> </p>
+        /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
         pub fn set_event_variables(
             mut self,
             input: std::option::Option<
@@ -6541,10 +6514,10 @@ pub mod get_event_prediction_input {
         pub fn external_model_endpoint_data_blobs(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::ModelEndpointDataBlob>,
+            v: crate::model::ModelEndpointDataBlob,
         ) -> Self {
             let mut hash_map = self.external_model_endpoint_data_blobs.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.external_model_endpoint_data_blobs = Some(hash_map);
             self
         }
@@ -6581,7 +6554,7 @@ pub mod get_event_prediction_input {
 #[doc(hidden)]
 pub type GetEventPredictionInputOperationOutputAlias = crate::operation::GetEventPrediction;
 #[doc(hidden)]
-pub type GetEventPredictionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEventPredictionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventPredictionInput {
     /// Consumes the builder and constructs an Operation<[`GetEventPrediction`](crate::operation::GetEventPrediction)>
     #[allow(clippy::let_and_return)]
@@ -6592,7 +6565,7 @@ impl GetEventPredictionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEventPrediction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6677,7 +6650,7 @@ impl GetEventPredictionInput {
             "GetEventPrediction",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6759,7 +6732,7 @@ pub mod get_event_types_input {
 #[doc(hidden)]
 pub type GetEventTypesInputOperationOutputAlias = crate::operation::GetEventTypes;
 #[doc(hidden)]
-pub type GetEventTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEventTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventTypesInput {
     /// Consumes the builder and constructs an Operation<[`GetEventTypes`](crate::operation::GetEventTypes)>
     #[allow(clippy::let_and_return)]
@@ -6770,7 +6743,7 @@ impl GetEventTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEventTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6855,7 +6828,7 @@ impl GetEventTypesInput {
             "GetEventTypes",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6940,7 +6913,7 @@ pub mod get_external_models_input {
 #[doc(hidden)]
 pub type GetExternalModelsInputOperationOutputAlias = crate::operation::GetExternalModels;
 #[doc(hidden)]
-pub type GetExternalModelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetExternalModelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetExternalModelsInput {
     /// Consumes the builder and constructs an Operation<[`GetExternalModels`](crate::operation::GetExternalModels)>
     #[allow(clippy::let_and_return)]
@@ -6951,7 +6924,7 @@ impl GetExternalModelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetExternalModels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7036,7 +7009,7 @@ impl GetExternalModelsInput {
             "GetExternalModels",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7080,7 +7053,7 @@ pub mod get_kms_encryption_key_input {
 #[doc(hidden)]
 pub type GetKmsEncryptionKeyInputOperationOutputAlias = crate::operation::GetKMSEncryptionKey;
 #[doc(hidden)]
-pub type GetKmsEncryptionKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetKmsEncryptionKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetKmsEncryptionKeyInput {
     /// Consumes the builder and constructs an Operation<[`GetKMSEncryptionKey`](crate::operation::GetKMSEncryptionKey)>
     #[allow(clippy::let_and_return)]
@@ -7091,7 +7064,7 @@ impl GetKmsEncryptionKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetKMSEncryptionKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7178,7 +7151,7 @@ impl GetKmsEncryptionKeyInput {
             "GetKMSEncryptionKey",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7250,7 +7223,7 @@ pub mod get_labels_input {
 #[doc(hidden)]
 pub type GetLabelsInputOperationOutputAlias = crate::operation::GetLabels;
 #[doc(hidden)]
-pub type GetLabelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLabelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLabelsInput {
     /// Consumes the builder and constructs an Operation<[`GetLabels`](crate::operation::GetLabels)>
     #[allow(clippy::let_and_return)]
@@ -7261,7 +7234,7 @@ impl GetLabelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLabels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7343,7 +7316,7 @@ impl GetLabelsInput {
                     "GetLabels",
                     "frauddetector",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7438,7 +7411,7 @@ pub mod get_models_input {
 #[doc(hidden)]
 pub type GetModelsInputOperationOutputAlias = crate::operation::GetModels;
 #[doc(hidden)]
-pub type GetModelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetModelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetModelsInput {
     /// Consumes the builder and constructs an Operation<[`GetModels`](crate::operation::GetModels)>
     #[allow(clippy::let_and_return)]
@@ -7449,7 +7422,7 @@ impl GetModelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetModels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7531,7 +7504,7 @@ impl GetModelsInput {
                     "GetModels",
                     "frauddetector",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7619,7 +7592,7 @@ pub mod get_model_version_input {
 #[doc(hidden)]
 pub type GetModelVersionInputOperationOutputAlias = crate::operation::GetModelVersion;
 #[doc(hidden)]
-pub type GetModelVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetModelVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetModelVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetModelVersion`](crate::operation::GetModelVersion)>
     #[allow(clippy::let_and_return)]
@@ -7630,7 +7603,7 @@ impl GetModelVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetModelVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7715,7 +7688,7 @@ impl GetModelVersionInput {
             "GetModelVersion",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7797,7 +7770,7 @@ pub mod get_outcomes_input {
 #[doc(hidden)]
 pub type GetOutcomesInputOperationOutputAlias = crate::operation::GetOutcomes;
 #[doc(hidden)]
-pub type GetOutcomesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetOutcomesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOutcomesInput {
     /// Consumes the builder and constructs an Operation<[`GetOutcomes`](crate::operation::GetOutcomes)>
     #[allow(clippy::let_and_return)]
@@ -7808,7 +7781,7 @@ impl GetOutcomesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOutcomes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7892,7 +7865,7 @@ impl GetOutcomesInput {
             "GetOutcomes",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7996,7 +7969,7 @@ pub mod get_rules_input {
 #[doc(hidden)]
 pub type GetRulesInputOperationOutputAlias = crate::operation::GetRules;
 #[doc(hidden)]
-pub type GetRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRulesInput {
     /// Consumes the builder and constructs an Operation<[`GetRules`](crate::operation::GetRules)>
     #[allow(clippy::let_and_return)]
@@ -8007,7 +7980,7 @@ impl GetRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8089,7 +8062,7 @@ impl GetRulesInput {
                     "GetRules",
                     "frauddetector",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8171,7 +8144,7 @@ pub mod get_variables_input {
 #[doc(hidden)]
 pub type GetVariablesInputOperationOutputAlias = crate::operation::GetVariables;
 #[doc(hidden)]
-pub type GetVariablesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetVariablesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetVariablesInput {
     /// Consumes the builder and constructs an Operation<[`GetVariables`](crate::operation::GetVariables)>
     #[allow(clippy::let_and_return)]
@@ -8182,7 +8155,7 @@ impl GetVariablesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetVariables,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8266,7 +8239,7 @@ impl GetVariablesInput {
             "GetVariables",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8348,7 +8321,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -8359,7 +8332,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8446,7 +8419,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8519,9 +8492,9 @@ pub mod put_detector_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8552,7 +8525,7 @@ pub mod put_detector_input {
 #[doc(hidden)]
 pub type PutDetectorInputOperationOutputAlias = crate::operation::PutDetector;
 #[doc(hidden)]
-pub type PutDetectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutDetectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutDetectorInput {
     /// Consumes the builder and constructs an Operation<[`PutDetector`](crate::operation::PutDetector)>
     #[allow(clippy::let_and_return)]
@@ -8563,7 +8536,7 @@ impl PutDetectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutDetector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8647,7 +8620,7 @@ impl PutDetectorInput {
             "PutDetector",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8706,9 +8679,9 @@ pub mod put_entity_type_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8738,7 +8711,7 @@ pub mod put_entity_type_input {
 #[doc(hidden)]
 pub type PutEntityTypeInputOperationOutputAlias = crate::operation::PutEntityType;
 #[doc(hidden)]
-pub type PutEntityTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutEntityTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEntityTypeInput {
     /// Consumes the builder and constructs an Operation<[`PutEntityType`](crate::operation::PutEntityType)>
     #[allow(clippy::let_and_return)]
@@ -8749,7 +8722,7 @@ impl PutEntityTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutEntityType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8834,7 +8807,7 @@ impl PutEntityTypeInput {
             "PutEntityType",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8967,9 +8940,9 @@ pub mod put_event_type_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9003,7 +8976,7 @@ pub mod put_event_type_input {
 #[doc(hidden)]
 pub type PutEventTypeInputOperationOutputAlias = crate::operation::PutEventType;
 #[doc(hidden)]
-pub type PutEventTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutEventTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEventTypeInput {
     /// Consumes the builder and constructs an Operation<[`PutEventType`](crate::operation::PutEventType)>
     #[allow(clippy::let_and_return)]
@@ -9014,7 +8987,7 @@ impl PutEventTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutEventType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9098,7 +9071,7 @@ impl PutEventTypeInput {
             "PutEventType",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9226,9 +9199,9 @@ pub mod put_external_model_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9262,7 +9235,7 @@ pub mod put_external_model_input {
 #[doc(hidden)]
 pub type PutExternalModelInputOperationOutputAlias = crate::operation::PutExternalModel;
 #[doc(hidden)]
-pub type PutExternalModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutExternalModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutExternalModelInput {
     /// Consumes the builder and constructs an Operation<[`PutExternalModel`](crate::operation::PutExternalModel)>
     #[allow(clippy::let_and_return)]
@@ -9273,7 +9246,7 @@ impl PutExternalModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutExternalModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9358,7 +9331,7 @@ impl PutExternalModelInput {
             "PutExternalModel",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9419,7 +9392,7 @@ pub mod put_kms_encryption_key_input {
 #[doc(hidden)]
 pub type PutKmsEncryptionKeyInputOperationOutputAlias = crate::operation::PutKMSEncryptionKey;
 #[doc(hidden)]
-pub type PutKmsEncryptionKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutKmsEncryptionKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutKmsEncryptionKeyInput {
     /// Consumes the builder and constructs an Operation<[`PutKMSEncryptionKey`](crate::operation::PutKMSEncryptionKey)>
     #[allow(clippy::let_and_return)]
@@ -9430,7 +9403,7 @@ impl PutKmsEncryptionKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutKMSEncryptionKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9517,7 +9490,7 @@ impl PutKmsEncryptionKeyInput {
             "PutKMSEncryptionKey",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9576,9 +9549,9 @@ pub mod put_label_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9606,7 +9579,7 @@ pub mod put_label_input {
 #[doc(hidden)]
 pub type PutLabelInputOperationOutputAlias = crate::operation::PutLabel;
 #[doc(hidden)]
-pub type PutLabelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutLabelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLabelInput {
     /// Consumes the builder and constructs an Operation<[`PutLabel`](crate::operation::PutLabel)>
     #[allow(clippy::let_and_return)]
@@ -9617,7 +9590,7 @@ impl PutLabelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutLabel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9699,7 +9672,7 @@ impl PutLabelInput {
                     "PutLabel",
                     "frauddetector",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9758,9 +9731,9 @@ pub mod put_outcome_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9790,7 +9763,7 @@ pub mod put_outcome_input {
 #[doc(hidden)]
 pub type PutOutcomeInputOperationOutputAlias = crate::operation::PutOutcome;
 #[doc(hidden)]
-pub type PutOutcomeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutOutcomeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutOutcomeInput {
     /// Consumes the builder and constructs an Operation<[`PutOutcome`](crate::operation::PutOutcome)>
     #[allow(clippy::let_and_return)]
@@ -9801,7 +9774,7 @@ impl PutOutcomeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutOutcome,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9885,7 +9858,7 @@ impl PutOutcomeInput {
             "PutOutcome",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10017,9 +9990,9 @@ pub mod send_event_input {
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
         /// <p>An array of entities.</p>
-        pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
+        pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entities = Some(v);
             self
         }
@@ -10051,7 +10024,7 @@ pub mod send_event_input {
 #[doc(hidden)]
 pub type SendEventInputOperationOutputAlias = crate::operation::SendEvent;
 #[doc(hidden)]
-pub type SendEventInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendEventInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendEventInput {
     /// Consumes the builder and constructs an Operation<[`SendEvent`](crate::operation::SendEvent)>
     #[allow(clippy::let_and_return)]
@@ -10062,7 +10035,7 @@ impl SendEventInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendEvent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10144,7 +10117,7 @@ impl SendEventInput {
                     "SendEvent",
                     "frauddetector",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10192,9 +10165,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -10223,7 +10196,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -10234,7 +10207,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10318,7 +10291,7 @@ impl TagResourceInput {
             "TagResource",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10397,7 +10370,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -10408,7 +10381,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10492,7 +10465,7 @@ impl UntagResourceInput {
             "UntagResource",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10578,9 +10551,9 @@ pub mod update_detector_version_input {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The rules to include in the detector version.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -10607,9 +10580,9 @@ pub mod update_detector_version_input {
         /// To override the contents of this collection use [`set_model_versions`](Self::set_model_versions).
         ///
         /// <p>The model versions to include in the detector version.</p>
-        pub fn model_versions(mut self, input: impl Into<crate::model::ModelVersion>) -> Self {
+        pub fn model_versions(mut self, input: crate::model::ModelVersion) -> Self {
             let mut v = self.model_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.model_versions = Some(v);
             self
         }
@@ -10662,7 +10635,7 @@ pub mod update_detector_version_input {
 #[doc(hidden)]
 pub type UpdateDetectorVersionInputOperationOutputAlias = crate::operation::UpdateDetectorVersion;
 #[doc(hidden)]
-pub type UpdateDetectorVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDetectorVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDetectorVersionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDetectorVersion`](crate::operation::UpdateDetectorVersion)>
     #[allow(clippy::let_and_return)]
@@ -10673,7 +10646,7 @@ impl UpdateDetectorVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDetectorVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10760,7 +10733,7 @@ impl UpdateDetectorVersionInput {
             "UpdateDetectorVersion",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10846,7 +10819,8 @@ pub mod update_detector_version_metadata_input {
 pub type UpdateDetectorVersionMetadataInputOperationOutputAlias =
     crate::operation::UpdateDetectorVersionMetadata;
 #[doc(hidden)]
-pub type UpdateDetectorVersionMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDetectorVersionMetadataInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDetectorVersionMetadataInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDetectorVersionMetadata`](crate::operation::UpdateDetectorVersionMetadata)>
     #[allow(clippy::let_and_return)]
@@ -10857,7 +10831,7 @@ impl UpdateDetectorVersionMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDetectorVersionMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10943,7 +10917,7 @@ impl UpdateDetectorVersionMetadataInput {
             "UpdateDetectorVersionMetadata",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11032,7 +11006,7 @@ pub mod update_detector_version_status_input {
 pub type UpdateDetectorVersionStatusInputOperationOutputAlias =
     crate::operation::UpdateDetectorVersionStatus;
 #[doc(hidden)]
-pub type UpdateDetectorVersionStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDetectorVersionStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDetectorVersionStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDetectorVersionStatus`](crate::operation::UpdateDetectorVersionStatus)>
     #[allow(clippy::let_and_return)]
@@ -11043,7 +11017,7 @@ impl UpdateDetectorVersionStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDetectorVersionStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11129,7 +11103,7 @@ impl UpdateDetectorVersionStatusInput {
             "UpdateDetectorVersionStatus",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11232,7 +11206,7 @@ pub mod update_event_label_input {
 #[doc(hidden)]
 pub type UpdateEventLabelInputOperationOutputAlias = crate::operation::UpdateEventLabel;
 #[doc(hidden)]
-pub type UpdateEventLabelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEventLabelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEventLabelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEventLabel`](crate::operation::UpdateEventLabel)>
     #[allow(clippy::let_and_return)]
@@ -11243,7 +11217,7 @@ impl UpdateEventLabelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEventLabel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11328,7 +11302,7 @@ impl UpdateEventLabelInput {
             "UpdateEventLabel",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11413,7 +11387,7 @@ pub mod update_model_input {
 #[doc(hidden)]
 pub type UpdateModelInputOperationOutputAlias = crate::operation::UpdateModel;
 #[doc(hidden)]
-pub type UpdateModelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateModelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateModelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateModel`](crate::operation::UpdateModel)>
     #[allow(clippy::let_and_return)]
@@ -11424,7 +11398,7 @@ impl UpdateModelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateModel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11508,7 +11482,7 @@ impl UpdateModelInput {
             "UpdateModel",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11612,9 +11586,9 @@ pub mod update_model_version_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11647,7 +11621,7 @@ pub mod update_model_version_input {
 #[doc(hidden)]
 pub type UpdateModelVersionInputOperationOutputAlias = crate::operation::UpdateModelVersion;
 #[doc(hidden)]
-pub type UpdateModelVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateModelVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateModelVersionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateModelVersion`](crate::operation::UpdateModelVersion)>
     #[allow(clippy::let_and_return)]
@@ -11658,7 +11632,7 @@ impl UpdateModelVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateModelVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11743,7 +11717,7 @@ impl UpdateModelVersionInput {
             "UpdateModelVersion",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11847,7 +11821,7 @@ pub mod update_model_version_status_input {
 pub type UpdateModelVersionStatusInputOperationOutputAlias =
     crate::operation::UpdateModelVersionStatus;
 #[doc(hidden)]
-pub type UpdateModelVersionStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateModelVersionStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateModelVersionStatusInput {
     /// Consumes the builder and constructs an Operation<[`UpdateModelVersionStatus`](crate::operation::UpdateModelVersionStatus)>
     #[allow(clippy::let_and_return)]
@@ -11858,7 +11832,7 @@ impl UpdateModelVersionStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateModelVersionStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11945,7 +11919,7 @@ impl UpdateModelVersionStatusInput {
             "UpdateModelVersionStatus",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12015,7 +11989,7 @@ pub mod update_rule_metadata_input {
 #[doc(hidden)]
 pub type UpdateRuleMetadataInputOperationOutputAlias = crate::operation::UpdateRuleMetadata;
 #[doc(hidden)]
-pub type UpdateRuleMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRuleMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRuleMetadataInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRuleMetadata`](crate::operation::UpdateRuleMetadata)>
     #[allow(clippy::let_and_return)]
@@ -12026,7 +12000,7 @@ impl UpdateRuleMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRuleMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12111,7 +12085,7 @@ impl UpdateRuleMetadataInput {
             "UpdateRuleMetadata",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12212,9 +12186,9 @@ pub mod update_rule_version_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to assign to the rule version.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -12247,7 +12221,7 @@ pub mod update_rule_version_input {
 #[doc(hidden)]
 pub type UpdateRuleVersionInputOperationOutputAlias = crate::operation::UpdateRuleVersion;
 #[doc(hidden)]
-pub type UpdateRuleVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRuleVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRuleVersionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRuleVersion`](crate::operation::UpdateRuleVersion)>
     #[allow(clippy::let_and_return)]
@@ -12258,7 +12232,7 @@ impl UpdateRuleVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRuleVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12343,7 +12317,7 @@ impl UpdateRuleVersionInput {
             "UpdateRuleVersion",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12443,7 +12417,7 @@ pub mod update_variable_input {
 #[doc(hidden)]
 pub type UpdateVariableInputOperationOutputAlias = crate::operation::UpdateVariable;
 #[doc(hidden)]
-pub type UpdateVariableInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateVariableInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVariableInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVariable`](crate::operation::UpdateVariable)>
     #[allow(clippy::let_and_return)]
@@ -12454,7 +12428,7 @@ impl UpdateVariableInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVariable,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12539,7 +12513,7 @@ impl UpdateVariableInput {
             "UpdateVariable",
             "frauddetector",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13793,25 +13767,14 @@ pub struct GetEventPredictionInput {
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
     /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     pub event_timestamp: std::option::Option<std::string::String>,
-    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
-    /// their corresponding values for the event you are sending for evaluation.</p>
-    /// <important>         
-    /// <p>You must provide at least one eventVariable</p>        
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+    /// <p>You must provide at least one eventVariable</p>
     /// </important>
-    ///
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-    ///
-    /// <p>
-    /// <b>For Amazon Fraud Detector trained models:</b>
-    /// </p>
-    /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map)
-    /// with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-    ///
-    /// <p>
-    /// <b>For imported SageMaker models:</b>
-    /// </p>
-    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules
-    /// will use the default value that is provided for the variable. </p>
+    /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
+    /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
+    /// <p> <b>For imported SageMaker models:</b> </p>
+    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
     pub event_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
@@ -13844,25 +13807,14 @@ impl GetEventPredictionInput {
     pub fn event_timestamp(&self) -> std::option::Option<&str> {
         self.event_timestamp.as_deref()
     }
-    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
-    /// their corresponding values for the event you are sending for evaluation.</p>
-    /// <important>         
-    /// <p>You must provide at least one eventVariable</p>        
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+    /// <p>You must provide at least one eventVariable</p>
     /// </important>
-    ///
     /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-    ///
-    /// <p>
-    /// <b>For Amazon Fraud Detector trained models:</b>
-    /// </p>
-    /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map)
-    /// with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-    ///
-    /// <p>
-    /// <b>For imported SageMaker models:</b>
-    /// </p>
-    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules
-    /// will use the default value that is provided for the variable. </p>
+    /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
+    /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
+    /// <p> <b>For imported SageMaker models:</b> </p>
+    /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
     pub fn event_variables(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -14568,10 +14520,8 @@ pub struct CreateVariableInput {
     pub default_value: std::option::Option<std::string::String>,
     /// <p>The description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.
-    /// </p>
-    /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code>
-    /// </p>
+    /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
+    /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code> </p>
     pub variable_type: std::option::Option<std::string::String>,
     /// <p>A collection of key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -14597,10 +14547,8 @@ impl CreateVariableInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.
-    /// </p>
-    /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code>
-    /// </p>
+    /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
+    /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code> </p>
     pub fn variable_type(&self) -> std::option::Option<&str> {
         self.variable_type.as_deref()
     }
@@ -14957,10 +14905,9 @@ pub struct CreateBatchImportJobInput {
     pub output_path: std::option::Option<std::string::String>,
     /// <p>The name of the event type.</p>
     pub event_type_name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
-    /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+    /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>A collection of key-value pairs associated with this request.  </p>
+    /// <p>A collection of key-value pairs associated with this request. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateBatchImportJobInput {
@@ -14980,12 +14927,11 @@ impl CreateBatchImportJobInput {
     pub fn event_type_name(&self) -> std::option::Option<&str> {
         self.event_type_name.as_deref()
     }
-    /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
-    /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+    /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>A collection of key-value pairs associated with this request.  </p>
+    /// <p>A collection of key-value pairs associated with this request. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -15029,12 +14975,12 @@ impl std::fmt::Debug for CancelBatchPredictionJobInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelBatchImportJobInput {
     /// <p> The ID of an in-progress batch import job to cancel. </p>
-    /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
+    /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CancelBatchImportJobInput {
     /// <p> The ID of an in-progress batch import job to cancel. </p>
-    /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
+    /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }

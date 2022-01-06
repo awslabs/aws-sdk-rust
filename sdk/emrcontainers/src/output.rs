@@ -216,9 +216,9 @@ pub mod list_virtual_clusters_output {
         /// To override the contents of this collection use [`set_virtual_clusters`](Self::set_virtual_clusters).
         ///
         /// <p>This output lists the specified virtual clusters.</p>
-        pub fn virtual_clusters(mut self, input: impl Into<crate::model::VirtualCluster>) -> Self {
+        pub fn virtual_clusters(mut self, input: crate::model::VirtualCluster) -> Self {
             let mut v = self.virtual_clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_clusters = Some(v);
             self
         }
@@ -371,9 +371,9 @@ pub mod list_managed_endpoints_output {
         /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
         ///
         /// <p>The managed endpoints to be listed.</p>
-        pub fn endpoints(mut self, input: impl Into<crate::model::Endpoint>) -> Self {
+        pub fn endpoints(mut self, input: crate::model::Endpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.endpoints = Some(v);
             self
         }
@@ -453,9 +453,9 @@ pub mod list_job_runs_output {
         /// To override the contents of this collection use [`set_job_runs`](Self::set_job_runs).
         ///
         /// <p>This output lists information about the specified job runs.</p>
-        pub fn job_runs(mut self, input: impl Into<crate::model::JobRun>) -> Self {
+        pub fn job_runs(mut self, input: crate::model::JobRun) -> Self {
             let mut v = self.job_runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.job_runs = Some(v);
             self
         }

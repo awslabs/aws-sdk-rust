@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Elemental MediaStore
@@ -164,6 +164,7 @@ where
     ///
     /// See [`ListContainers`](crate::client::fluent_builders::ListContainers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContainers::into_paginator).
     pub fn list_containers(&self) -> fluent_builders::ListContainers<C, M, R> {
         fluent_builders::ListContainers::new(self.handle.clone())
     }
@@ -241,9 +242,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateContainer`.
     ///
-    /// <p>Creates a storage container to hold objects. A container is similar to a bucket in
-    /// the Amazon S3 service.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a storage container to hold objects. A container is similar to a bucket in the Amazon S3 service.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContainer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -288,10 +288,10 @@ pub mod fluent_builders {
                 crate::input::CreateContainerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -299,18 +299,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name for the container. The name must be from 1 to 255 characters. Container
-        /// names must be unique to your AWS account within a specific region. As an example, you could
-        /// create a container named <code>movies</code> in every region, as long as you don’t have an
-        /// existing container with that name.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
-        /// <p>The name for the container. The name must be from 1 to 255 characters. Container
-        /// names must be unique to your AWS account within a specific region. As an example, you could
-        /// create a container named <code>movies</code> in every region, as long as you don’t have an
-        /// existing container with that name.</p>
+        /// <p>The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named <code>movies</code> in every region, as long as you don’t have an existing container with that name.</p>
         pub fn set_container_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -322,16 +316,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
-        /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
-        /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as
-        /// "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50
-        /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+        /// <p>An array of key:value pairs that you define. These values can be anything that you want. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -342,10 +332,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteContainer`.
     ///
-    /// <p>Deletes the specified container. Before you make a <code>DeleteContainer</code>
-    /// request, delete any objects in the container or in any folders in the container. You can
-    /// delete only empty containers. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified container. Before you make a <code>DeleteContainer</code> request, delete any objects in the container or in any folders in the container. You can delete only empty containers. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContainer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -390,10 +378,10 @@ pub mod fluent_builders {
                 crate::input::DeleteContainerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -402,8 +390,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container to delete. </p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container to delete. </p>
@@ -418,7 +406,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteContainerPolicy`.
     ///
     /// <p>Deletes the access policy that is associated with the specified container.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContainerPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -463,10 +451,10 @@ pub mod fluent_builders {
                 crate::input::DeleteContainerPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -475,8 +463,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that holds the policy.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container that holds the policy.</p>
@@ -490,12 +478,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCorsPolicy`.
     ///
-    /// <p>Deletes the cross-origin resource sharing (CORS) configuration information that is
-    /// set for the container.</p>
-    /// <p>To use this operation, you must have permission to perform the
-    /// <code>MediaStore:DeleteCorsPolicy</code> action. The container owner has this permission
-    /// by default and can grant this permission to others.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the cross-origin resource sharing (CORS) configuration information that is set for the container.</p>
+    /// <p>To use this operation, you must have permission to perform the <code>MediaStore:DeleteCorsPolicy</code> action. The container owner has this permission by default and can grant this permission to others.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCorsPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -540,10 +525,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCorsPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -552,8 +537,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container to remove the policy from.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container to remove the policy from.</p>
@@ -568,7 +553,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLifecyclePolicy`.
     ///
     /// <p>Removes an object lifecycle policy from a container. It takes up to 20 minutes for the change to take effect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLifecyclePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -613,10 +598,10 @@ pub mod fluent_builders {
                 crate::input::DeleteLifecyclePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -625,8 +610,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that holds the object lifecycle policy.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container that holds the object lifecycle policy.</p>
@@ -641,7 +626,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMetricPolicy`.
     ///
     /// <p>Deletes the metric policy that is associated with the specified container. If there is no metric policy associated with the container, MediaStore doesn't send metrics to CloudWatch.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMetricPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -686,10 +671,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMetricPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -698,8 +683,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
@@ -713,14 +698,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeContainer`.
     ///
-    /// <p>Retrieves the properties of the requested container. This request is commonly used to
-    /// retrieve the endpoint of a container. An endpoint is a value assigned by the service when a
-    /// new container is created. A container's endpoint does not change after it has been
-    /// assigned. The <code>DescribeContainer</code> request returns a single
-    /// <code>Container</code> object based on <code>ContainerName</code>. To return all
-    /// <code>Container</code> objects that are associated with a specified AWS account, use
-    /// <a>ListContainers</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the properties of the requested container. This request is commonly used to retrieve the endpoint of a container. An endpoint is a value assigned by the service when a new container is created. A container's endpoint does not change after it has been assigned. The <code>DescribeContainer</code> request returns a single <code>Container</code> object based on <code>ContainerName</code>. To return all <code>Container</code> objects that are associated with a specified AWS account, use <code>ListContainers</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContainer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -765,10 +744,10 @@ pub mod fluent_builders {
                 crate::input::DescribeContainerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -777,8 +756,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container to query.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container to query.</p>
@@ -792,10 +771,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetContainerPolicy`.
     ///
-    /// <p>Retrieves the access policy for the specified container. For information about the
-    /// data that is included in an access policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User
-    /// Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the access policy for the specified container. For information about the data that is included in an access policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User Guide</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContainerPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -840,10 +817,10 @@ pub mod fluent_builders {
                 crate::input::GetContainerPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -852,8 +829,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container. </p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container. </p>
@@ -867,12 +844,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCorsPolicy`.
     ///
-    /// <p>Returns the cross-origin resource sharing (CORS) configuration information that is
-    /// set for the container.</p>
-    /// <p>To use this operation, you must have permission to perform the
-    /// <code>MediaStore:GetCorsPolicy</code> action. By default, the container owner has this
-    /// permission and can grant it to others.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the cross-origin resource sharing (CORS) configuration information that is set for the container.</p>
+    /// <p>To use this operation, you must have permission to perform the <code>MediaStore:GetCorsPolicy</code> action. By default, the container owner has this permission and can grant it to others.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCorsPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -917,10 +891,10 @@ pub mod fluent_builders {
                 crate::input::GetCorsPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -929,8 +903,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that the policy is assigned to.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container that the policy is assigned to.</p>
@@ -945,7 +919,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetLifecyclePolicy`.
     ///
     /// <p>Retrieves the object lifecycle policy that is assigned to a container.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLifecyclePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -990,10 +964,10 @@ pub mod fluent_builders {
                 crate::input::GetLifecyclePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1002,8 +976,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that the object lifecycle policy is assigned to.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container that the object lifecycle policy is assigned to.</p>
@@ -1018,7 +992,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMetricPolicy`.
     ///
     /// <p>Returns the metric policy for the specified container. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMetricPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1063,10 +1037,10 @@ pub mod fluent_builders {
                 crate::input::GetMetricPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1075,8 +1049,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that is associated with the metric policy.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container that is associated with the metric policy.</p>
@@ -1091,15 +1065,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContainers`.
     ///
     /// <p>Lists the properties of all containers in AWS Elemental MediaStore. </p>
-    /// <p>You can query to receive all the containers in one response. Or you can include the
-    /// <code>MaxResults</code> parameter to receive a limited number of containers in each
-    /// response. In this case, the response includes a token. To get the next set of containers,
-    /// send the command again, this time with the <code>NextToken</code> parameter (with the
-    /// returned token as its value). The next set of responses appears, with a token if there are
-    /// still more containers to receive. </p>
-    /// <p>See also <a>DescribeContainer</a>, which gets the properties of one
-    /// container. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can query to receive all the containers in one response. Or you can include the <code>MaxResults</code> parameter to receive a limited number of containers in each response. In this case, the response includes a token. To get the next set of containers, send the command again, this time with the <code>NextToken</code> parameter (with the returned token as its value). The next set of responses appears, with a token if there are still more containers to receive. </p>
+    /// <p>See also <code>DescribeContainer</code>, which gets the properties of one container. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContainers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1144,10 +1112,10 @@ pub mod fluent_builders {
                 crate::input::ListContainersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1155,28 +1123,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
-        /// was included in the previous response) to obtain the next set of containers. This token is
-        /// included in a response only if there actually are more containers to list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListContainersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListContainersPaginator<C, M, R> {
+            crate::paginator::ListContainersPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which
-        /// was included in the previous response) to obtain the next set of containers. This token is
-        /// included in a response only if there actually are more containers to list.</p>
+        /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
-        /// </p>
+        /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1185,7 +1153,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of the tags assigned to the specified container. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1230,10 +1198,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1242,8 +1210,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the container.</p>
-        pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the container.</p>
@@ -1254,14 +1222,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutContainerPolicy`.
     ///
-    /// <p>Creates an access policy for the specified container to restrict the users and
-    /// clients that can access it. For information about the data that is included in an access
-    /// policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and
-    /// Access Management User Guide</a>.</p>
-    /// <p>For this release of the REST API, you can create only one policy for a container. If
-    /// you enter <code>PutContainerPolicy</code> twice, the second command modifies the existing
-    /// policy. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an access policy for the specified container to restrict the users and clients that can access it. For information about the data that is included in an access policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User Guide</a>.</p>
+    /// <p>For this release of the REST API, you can create only one policy for a container. If you enter <code>PutContainerPolicy</code> twice, the second command modifies the existing policy. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutContainerPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1306,10 +1269,10 @@ pub mod fluent_builders {
                 crate::input::PutContainerPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1318,8 +1281,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container.</p>
@@ -1332,27 +1295,17 @@ pub mod fluent_builders {
         }
         /// <p>The contents of the policy, which includes the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>One <code>Version</code> tag</p>
-        /// </li>
-        /// <li>
-        /// <p>One <code>Statement</code> tag that contains the standard tags for the
-        /// policy.</p>
-        /// </li>
+        /// <li> <p>One <code>Version</code> tag</p> </li>
+        /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
         /// </ul>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>The contents of the policy, which includes the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>One <code>Version</code> tag</p>
-        /// </li>
-        /// <li>
-        /// <p>One <code>Statement</code> tag that contains the standard tags for the
-        /// policy.</p>
-        /// </li>
+        /// <li> <p>One <code>Version</code> tag</p> </li>
+        /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
         /// </ul>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy(input);
@@ -1361,18 +1314,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutCorsPolicy`.
     ///
-    /// <p>Sets the cross-origin resource sharing (CORS) configuration on a container so that
-    /// the container can service cross-origin requests. For example, you might want to enable a
-    /// request whose origin is http://www.example.com to access your AWS Elemental MediaStore
-    /// container at my.example.container.com by using the browser's XMLHttpRequest
-    /// capability.</p>
-    /// <p>To enable CORS on a container, you attach a CORS policy to the container. In the CORS
-    /// policy, you configure rules that identify origins and the HTTP methods that can be executed
-    /// on your container. The policy can contain up to 398,000 characters. You can add up to 100
-    /// rules to a CORS policy. If more than one rule applies, the service uses the first
-    /// applicable rule listed.</p>
+    /// <p>Sets the cross-origin resource sharing (CORS) configuration on a container so that the container can service cross-origin requests. For example, you might want to enable a request whose origin is http://www.example.com to access your AWS Elemental MediaStore container at my.example.container.com by using the browser's XMLHttpRequest capability.</p>
+    /// <p>To enable CORS on a container, you attach a CORS policy to the container. In the CORS policy, you configure rules that identify origins and the HTTP methods that can be executed on your container. The policy can contain up to 398,000 characters. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.</p>
     /// <p>To learn more about CORS, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html">Cross-Origin Resource Sharing (CORS) in AWS Elemental MediaStore</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutCorsPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1417,10 +1362,10 @@ pub mod fluent_builders {
                 crate::input::PutCorsPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1429,8 +1374,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that you want to assign the CORS policy to.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container that you want to assign the CORS policy to.</p>
@@ -1445,12 +1390,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_cors_policy`](Self::set_cors_policy).
         ///
-        /// <p>The CORS policy to apply to the container.  </p>
-        pub fn cors_policy(mut self, inp: impl Into<crate::model::CorsRule>) -> Self {
-            self.inner = self.inner.cors_policy(inp);
+        /// <p>The CORS policy to apply to the container. </p>
+        pub fn cors_policy(mut self, input: crate::model::CorsRule) -> Self {
+            self.inner = self.inner.cors_policy(input);
             self
         }
-        /// <p>The CORS policy to apply to the container.  </p>
+        /// <p>The CORS policy to apply to the container. </p>
         pub fn set_cors_policy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
@@ -1463,7 +1408,7 @@ pub mod fluent_builders {
     ///
     /// <p>Writes an object lifecycle policy to a container. If the container already has an object lifecycle policy, the service replaces the existing policy with the new policy. It takes up to 20 minutes for the change to take effect.</p>
     /// <p>For information about how to construct an object lifecycle policy, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-object-lifecycle-components.html">Components of an Object Lifecycle Policy</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLifecyclePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1508,10 +1453,10 @@ pub mod fluent_builders {
                 crate::input::PutLifecyclePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1520,8 +1465,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
@@ -1533,8 +1478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The object lifecycle policy to apply to the container.</p>
-        pub fn lifecycle_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_policy(inp);
+        pub fn lifecycle_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_policy(input.into());
             self
         }
         /// <p>The object lifecycle policy to apply to the container.</p>
@@ -1549,7 +1494,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutMetricPolicy`.
     ///
     /// <p>The metric policy that you want to add to the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. It takes up to 20 minutes for the new policy to take effect.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMetricPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1594,10 +1539,10 @@ pub mod fluent_builders {
                 crate::input::PutMetricPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1606,8 +1551,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that you want to add the metric policy to.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container that you want to add the metric policy to.</p>
@@ -1618,27 +1563,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_container_name(input);
             self
         }
-        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for.  If you include rules in the policy, construct each rule with both of the following:</p>
+        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for. If you include rules in the policy, construct each rule with both of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p>
-        /// </li>
-        /// <li>
-        /// <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p>
-        /// </li>
+        /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
+        /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
         /// </ul>
-        pub fn metric_policy(mut self, inp: crate::model::MetricPolicy) -> Self {
-            self.inner = self.inner.metric_policy(inp);
+        pub fn metric_policy(mut self, input: crate::model::MetricPolicy) -> Self {
+            self.inner = self.inner.metric_policy(input);
             self
         }
-        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for.  If you include rules in the policy, construct each rule with both of the following:</p>
+        /// <p>The metric policy that you want to associate with the container. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include up to five rules to define groups of objects that you want MediaStore to send object-level metrics for. If you include rules in the policy, construct each rule with both of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p>
-        /// </li>
-        /// <li>
-        /// <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p>
-        /// </li>
+        /// <li> <p>An object group that defines which objects to include in the group. The definition can be a path or a file name, but it can't have more than 900 characters. Valid characters are: a-z, A-Z, 0-9, _ (underscore), = (equal), : (colon), . (period), - (hyphen), ~ (tilde), / (forward slash), and * (asterisk). Wildcards (*) are acceptable.</p> </li>
+        /// <li> <p>An object group name that allows you to refer to the object group. The name can't have more than 30 characters. Valid characters are: a-z, A-Z, 0-9, and _ (underscore).</p> </li>
         /// </ul>
         pub fn set_metric_policy(
             mut self,
@@ -1651,7 +1588,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartAccessLogging`.
     ///
     /// <p>Starts access logging on the specified container. When you enable access logging on a container, MediaStore delivers access logs for objects stored in that container to Amazon CloudWatch Logs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAccessLogging<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1696,10 +1633,10 @@ pub mod fluent_builders {
                 crate::input::StartAccessLoggingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1708,8 +1645,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that you want to start access logging on.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container that you want to start access logging on.</p>
@@ -1724,7 +1661,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopAccessLogging`.
     ///
     /// <p>Stops access logging on the specified container. When you stop access logging on a container, MediaStore stops sending access logs to Amazon CloudWatch Logs. These access logs are not saved and are not retrievable.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopAccessLogging<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1769,10 +1706,10 @@ pub mod fluent_builders {
                 crate::input::StopAccessLoggingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1781,8 +1718,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the container that you want to stop access logging on.</p>
-        pub fn container_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container_name(inp);
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container_name(input.into());
             self
         }
         /// <p>The name of the container that you want to stop access logging on.</p>
@@ -1796,10 +1733,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds tags to the specified AWS Elemental MediaStore container. Tags are key:value pairs that you can associate with AWS resources. For example, the
-    /// tag key might be "customer" and the tag value might be "companyA." You can specify one or more tags to add to each container. You can add up to 50
-    /// tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds tags to the specified AWS Elemental MediaStore container. Tags are key:value pairs that you can associate with AWS resources. For example, the tag key might be "customer" and the tag value might be "companyA." You can specify one or more tags to add to each container. You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1844,10 +1779,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1856,8 +1791,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the container. </p>
-        pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the container. </p>
@@ -1869,18 +1804,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example,
-        /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
-        /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
-        /// customer:CompanyA, priority:Medium, and type:Contract.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example,
-        /// suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag
-        /// (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags:
-        /// customer:CompanyA, priority:Medium, and type:Contract.</p>
+        /// <p>An array of key:value pairs that you want to add to the container. You need to specify only the tags that you want to add or update. For example, suppose a container already has two tags (customer:CompanyA and priority:High). You want to change the priority tag and also add a third tag (type:Contract). For TagResource, you specify the following tags: priority:Medium, type:Contract. The result is that your container has three tags: customer:CompanyA, priority:Medium, and type:Contract.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1892,7 +1821,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from the specified container. You can specify one or more tags to remove. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1937,10 +1866,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1949,8 +1878,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the container.</p>
-        pub fn resource(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(inp);
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the container.</p>
@@ -1962,16 +1891,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA
-        /// and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove
-        /// (priority).</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA
-        /// and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove
-        /// (priority).</p>
+        /// <p>A comma-separated list of keys for tags that you want to remove from the container. For example, if your container has two tags (customer:CompanyA and priority:High) and you want to remove one of the tags (priority:High), you specify the key for the tag that you want to remove (priority).</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1981,6 +1906,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

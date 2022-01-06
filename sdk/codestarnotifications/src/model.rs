@@ -54,7 +54,7 @@ impl AsRef<str> for DetailType {
     }
 }
 
-/// <p>Information about the SNS topics associated with a  notification rule.</p>
+/// <p>Information about the SNS topics associated with a notification rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Target {
@@ -356,19 +356,13 @@ impl AsRef<str> for TargetStatus {
     }
 }
 
-/// <p>Information about a filter to apply to the list of returned targets. You can filter by
-/// target type, address, or status. For example, to filter results to notification rules
-/// that have active Amazon SNS topics as targets, you could specify a ListTargetsFilter
-/// Name as TargetType and a Value of SNS, and a Name of TARGET_STATUS and a Value of
-/// ACTIVE.</p>
+/// <p>Information about a filter to apply to the list of returned targets. You can filter by target type, address, or status. For example, to filter results to notification rules that have active Amazon SNS topics as targets, you could specify a ListTargetsFilter Name as TargetType and a Value of SNS, and a Name of TARGET_STATUS and a Value of ACTIVE.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetsFilter {
     /// <p>The name of the attribute you want to use to filter the returned targets.</p>
     pub name: std::option::Option<crate::model::ListTargetsFilterName>,
-    /// <p>The value of the attribute you want to use to filter the returned targets. For example,
-    /// if you specify <i>SNS</i> for the Target type, you could specify an Amazon
-    /// Resource Name (ARN) for a topic as the value.</p>
+    /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl ListTargetsFilter {
@@ -376,9 +370,7 @@ impl ListTargetsFilter {
     pub fn name(&self) -> std::option::Option<&crate::model::ListTargetsFilterName> {
         self.name.as_ref()
     }
-    /// <p>The value of the attribute you want to use to filter the returned targets. For example,
-    /// if you specify <i>SNS</i> for the Target type, you could specify an Amazon
-    /// Resource Name (ARN) for a topic as the value.</p>
+    /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -414,16 +406,12 @@ pub mod list_targets_filter {
             self.name = input;
             self
         }
-        /// <p>The value of the attribute you want to use to filter the returned targets. For example,
-        /// if you specify <i>SNS</i> for the Target type, you could specify an Amazon
-        /// Resource Name (ARN) for a topic as the value.</p>
+        /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of the attribute you want to use to filter the returned targets. For example,
-        /// if you specify <i>SNS</i> for the Target type, you could specify an Amazon
-        /// Resource Name (ARN) for a topic as the value.</p>
+        /// <p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -576,15 +564,13 @@ impl NotificationRuleSummary {
     }
 }
 
-/// <p>Information about a filter to apply to the list of returned notification rules. You can
-/// filter by event type, owner, resource, or target.</p>
+/// <p>Information about a filter to apply to the list of returned notification rules. You can filter by event type, owner, resource, or target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotificationRulesFilter {
     /// <p>The name of the attribute you want to use to filter the returned notification rules.</p>
     pub name: std::option::Option<crate::model::ListNotificationRulesFilterName>,
-    /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i>
-    /// in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
+    /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl ListNotificationRulesFilter {
@@ -592,8 +578,7 @@ impl ListNotificationRulesFilter {
     pub fn name(&self) -> std::option::Option<&crate::model::ListNotificationRulesFilterName> {
         self.name.as_ref()
     }
-    /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i>
-    /// in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
+    /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -629,14 +614,12 @@ pub mod list_notification_rules_filter {
             self.name = input;
             self
         }
-        /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i>
-        /// in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
+        /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i>
-        /// in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
+        /// <p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -840,15 +823,13 @@ impl EventTypeSummary {
     }
 }
 
-/// <p>Information about a filter to apply to the list of returned event types. You can filter
-/// by resource type or service name.</p>
+/// <p>Information about a filter to apply to the list of returned event types. You can filter by resource type or service name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventTypesFilter {
     /// <p>The system-generated name of the filter type you want to filter by.</p>
     pub name: std::option::Option<crate::model::ListEventTypesFilterName>,
-    /// <p>The name of the resource type (for example, pipeline) or service name (for example,
-    /// CodePipeline) that you want to filter by.</p>
+    /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl ListEventTypesFilter {
@@ -856,8 +837,7 @@ impl ListEventTypesFilter {
     pub fn name(&self) -> std::option::Option<&crate::model::ListEventTypesFilterName> {
         self.name.as_ref()
     }
-    /// <p>The name of the resource type (for example, pipeline) or service name (for example,
-    /// CodePipeline) that you want to filter by.</p>
+    /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -893,14 +873,12 @@ pub mod list_event_types_filter {
             self.name = input;
             self
         }
-        /// <p>The name of the resource type (for example, pipeline) or service name (for example,
-        /// CodePipeline) that you want to filter by.</p>
+        /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The name of the resource type (for example, pipeline) or service name (for example,
-        /// CodePipeline) that you want to filter by.</p>
+        /// <p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self

@@ -12,27 +12,14 @@ pub struct AssumeRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssumeRoleErrorKind {
-    /// <p>The web identity token that was passed is expired or is not valid. Get a new identity
-    /// token from the identity provider and then retry the request.</p>
+    /// <p>The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request.</p>
     ExpiredTokenException(crate::error::ExpiredTokenException),
-    /// <p>The request was rejected because the policy document was malformed. The error message
-    /// describes the specific error.</p>
+    /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because the total packed size of the session policies and
-    /// session tags combined was too large. An Amazon Web Services conversion compresses the session policy
-    /// document, session policy ARNs, and session tags into a packed binary format that has a
-    /// separate limit. The error message indicates by percentage how close the policies and
-    /// tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
-    /// the <i>IAM User Guide</i>.</p>
-    /// <p>You could receive this error even though you meet other defined session policy and
-    /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity
-    /// Character Limits</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
-    /// <p>STS is not activated in the requested region for the account that is being asked to
-    /// generate credentials. The account administrator must use the IAM console to activate STS
-    /// in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-    /// Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User
-    /// Guide</i>.</p>
+    /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -78,8 +65,6 @@ impl AssumeRoleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -148,35 +133,19 @@ pub struct AssumeRoleWithSAMLError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssumeRoleWithSAMLErrorKind {
-    /// <p>The web identity token that was passed is expired or is not valid. Get a new identity
-    /// token from the identity provider and then retry the request.</p>
+    /// <p>The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request.</p>
     ExpiredTokenException(crate::error::ExpiredTokenException),
-    /// <p>The identity provider (IdP) reported that authentication failed. This might be because
-    /// the claim is invalid.</p>
-    /// <p>If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it
-    /// can also mean that the claim has expired or has been explicitly revoked. </p>
+    /// <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p>
+    /// <p>If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it can also mean that the claim has expired or has been explicitly revoked. </p>
     IdpRejectedClaimException(crate::error::IdpRejectedClaimException),
-    /// <p>The web identity token that was passed could not be validated by Amazon Web Services. Get a new
-    /// identity token from the identity provider and then retry the request.</p>
+    /// <p>The web identity token that was passed could not be validated by Amazon Web Services. Get a new identity token from the identity provider and then retry the request.</p>
     InvalidIdentityTokenException(crate::error::InvalidIdentityTokenException),
-    /// <p>The request was rejected because the policy document was malformed. The error message
-    /// describes the specific error.</p>
+    /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because the total packed size of the session policies and
-    /// session tags combined was too large. An Amazon Web Services conversion compresses the session policy
-    /// document, session policy ARNs, and session tags into a packed binary format that has a
-    /// separate limit. The error message indicates by percentage how close the policies and
-    /// tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
-    /// the <i>IAM User Guide</i>.</p>
-    /// <p>You could receive this error even though you meet other defined session policy and
-    /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity
-    /// Character Limits</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
-    /// <p>STS is not activated in the requested region for the account that is being asked to
-    /// generate credentials. The account administrator must use the IAM console to activate STS
-    /// in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-    /// Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User
-    /// Guide</i>.</p>
+    /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -224,8 +193,6 @@ impl AssumeRoleWithSAMLError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -316,41 +283,21 @@ pub struct AssumeRoleWithWebIdentityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssumeRoleWithWebIdentityErrorKind {
-    /// <p>The web identity token that was passed is expired or is not valid. Get a new identity
-    /// token from the identity provider and then retry the request.</p>
+    /// <p>The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request.</p>
     ExpiredTokenException(crate::error::ExpiredTokenException),
-    /// <p>The request could not be fulfilled because the identity provider (IDP) that
-    /// was asked to verify the incoming identity token could not be reached. This is often a
-    /// transient error caused by network conditions. Retry the request a limited number of
-    /// times so that you don't exceed the request rate. If the error persists, the
-    /// identity provider might be down or not responding.</p>
+    /// <p>The request could not be fulfilled because the identity provider (IDP) that was asked to verify the incoming identity token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited number of times so that you don't exceed the request rate. If the error persists, the identity provider might be down or not responding.</p>
     IdpCommunicationErrorException(crate::error::IdpCommunicationErrorException),
-    /// <p>The identity provider (IdP) reported that authentication failed. This might be because
-    /// the claim is invalid.</p>
-    /// <p>If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it
-    /// can also mean that the claim has expired or has been explicitly revoked. </p>
+    /// <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p>
+    /// <p>If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it can also mean that the claim has expired or has been explicitly revoked. </p>
     IdpRejectedClaimException(crate::error::IdpRejectedClaimException),
-    /// <p>The web identity token that was passed could not be validated by Amazon Web Services. Get a new
-    /// identity token from the identity provider and then retry the request.</p>
+    /// <p>The web identity token that was passed could not be validated by Amazon Web Services. Get a new identity token from the identity provider and then retry the request.</p>
     InvalidIdentityTokenException(crate::error::InvalidIdentityTokenException),
-    /// <p>The request was rejected because the policy document was malformed. The error message
-    /// describes the specific error.</p>
+    /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because the total packed size of the session policies and
-    /// session tags combined was too large. An Amazon Web Services conversion compresses the session policy
-    /// document, session policy ARNs, and session tags into a packed binary format that has a
-    /// separate limit. The error message indicates by percentage how close the policies and
-    /// tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
-    /// the <i>IAM User Guide</i>.</p>
-    /// <p>You could receive this error even though you meet other defined session policy and
-    /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity
-    /// Character Limits</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
-    /// <p>STS is not activated in the requested region for the account that is being asked to
-    /// generate credentials. The account administrator must use the IAM console to activate STS
-    /// in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-    /// Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User
-    /// Guide</i>.</p>
+    /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -407,8 +354,6 @@ impl AssumeRoleWithWebIdentityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -515,9 +460,7 @@ pub struct DecodeAuthorizationMessageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DecodeAuthorizationMessageErrorKind {
-    /// <p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code>
-    /// was invalid. This can happen if the token contains invalid characters, such as
-    /// linebreaks. </p>
+    /// <p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks. </p>
     InvalidAuthorizationMessageException(crate::error::InvalidAuthorizationMessageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -562,8 +505,6 @@ impl DecodeAuthorizationMessageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -656,8 +597,6 @@ impl GetAccessKeyInfoError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -740,8 +679,6 @@ impl GetCallerIdentityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -784,24 +721,12 @@ pub struct GetFederationTokenError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetFederationTokenErrorKind {
-    /// <p>The request was rejected because the policy document was malformed. The error message
-    /// describes the specific error.</p>
+    /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because the total packed size of the session policies and
-    /// session tags combined was too large. An Amazon Web Services conversion compresses the session policy
-    /// document, session policy ARNs, and session tags into a packed binary format that has a
-    /// separate limit. The error message indicates by percentage how close the policies and
-    /// tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
-    /// the <i>IAM User Guide</i>.</p>
-    /// <p>You could receive this error even though you meet other defined session policy and
-    /// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity
-    /// Character Limits</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
-    /// <p>STS is not activated in the requested region for the account that is being asked to
-    /// generate credentials. The account administrator must use the IAM console to activate STS
-    /// in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-    /// Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User
-    /// Guide</i>.</p>
+    /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -846,8 +771,6 @@ impl GetFederationTokenError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -914,11 +837,7 @@ pub struct GetSessionTokenError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSessionTokenErrorKind {
-    /// <p>STS is not activated in the requested region for the account that is being asked to
-    /// generate credentials. The account administrator must use the IAM console to activate STS
-    /// in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-    /// Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User
-    /// Guide</i>.</p>
+    /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -961,8 +880,6 @@ impl GetSessionTokenError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1000,11 +917,7 @@ impl std::error::Error for GetSessionTokenError {
     }
 }
 
-/// <p>STS is not activated in the requested region for the account that is being asked to
-/// generate credentials. The account administrator must use the IAM console to activate STS
-/// in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-/// Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User
-/// Guide</i>.</p>
+/// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionDisabledException {
@@ -1068,15 +981,8 @@ impl RegionDisabledException {
     }
 }
 
-/// <p>The request was rejected because the total packed size of the session policies and
-/// session tags combined was too large. An Amazon Web Services conversion compresses the session policy
-/// document, session policy ARNs, and session tags into a packed binary format that has a
-/// separate limit. The error message indicates by percentage how close the policies and
-/// tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in
-/// the <i>IAM User Guide</i>.</p>
-/// <p>You could receive this error even though you meet other defined session policy and
-/// session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity
-/// Character Limits</a> in the <i>IAM User Guide</i>.</p>
+/// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
+/// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PackedPolicyTooLargeException {
@@ -1140,8 +1046,7 @@ impl PackedPolicyTooLargeException {
     }
 }
 
-/// <p>The request was rejected because the policy document was malformed. The error message
-/// describes the specific error.</p>
+/// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalformedPolicyDocumentException {
@@ -1205,9 +1110,7 @@ impl MalformedPolicyDocumentException {
     }
 }
 
-/// <p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code>
-/// was invalid. This can happen if the token contains invalid characters, such as
-/// linebreaks. </p>
+/// <p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAuthorizationMessageException {
@@ -1271,8 +1174,7 @@ impl InvalidAuthorizationMessageException {
     }
 }
 
-/// <p>The web identity token that was passed could not be validated by Amazon Web Services. Get a new
-/// identity token from the identity provider and then retry the request.</p>
+/// <p>The web identity token that was passed could not be validated by Amazon Web Services. Get a new identity token from the identity provider and then retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidIdentityTokenException {
@@ -1336,10 +1238,8 @@ impl InvalidIdentityTokenException {
     }
 }
 
-/// <p>The identity provider (IdP) reported that authentication failed. This might be because
-/// the claim is invalid.</p>
-/// <p>If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it
-/// can also mean that the claim has expired or has been explicitly revoked. </p>
+/// <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p>
+/// <p>If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it can also mean that the claim has expired or has been explicitly revoked. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdpRejectedClaimException {
@@ -1403,11 +1303,7 @@ impl IdpRejectedClaimException {
     }
 }
 
-/// <p>The request could not be fulfilled because the identity provider (IDP) that
-/// was asked to verify the incoming identity token could not be reached. This is often a
-/// transient error caused by network conditions. Retry the request a limited number of
-/// times so that you don't exceed the request rate. If the error persists, the
-/// identity provider might be down or not responding.</p>
+/// <p>The request could not be fulfilled because the identity provider (IDP) that was asked to verify the incoming identity token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited number of times so that you don't exceed the request rate. If the error persists, the identity provider might be down or not responding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdpCommunicationErrorException {
@@ -1474,8 +1370,7 @@ impl IdpCommunicationErrorException {
     }
 }
 
-/// <p>The web identity token that was passed is expired or is not valid. Get a new identity
-/// token from the identity provider and then retry the request.</p>
+/// <p>The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExpiredTokenException {

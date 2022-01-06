@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The container that you specified in the request already exists or is being
-    /// updated.</p>
+    /// <p>The container that you specified in the request already exists or is being updated.</p>
     ContainerInUseException(crate::error::ContainerInUseException),
     /// <p>The container that you specified in the request does not exist.</p>
     ContainerNotFoundException(crate::error::ContainerNotFoundException),

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Migration Hub Refactor Spaces
@@ -185,6 +185,7 @@ where
     ///
     /// See [`ListApplications`](crate::client::fluent_builders::ListApplications) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
     pub fn list_applications(&self) -> fluent_builders::ListApplications<C, M, R> {
         fluent_builders::ListApplications::new(self.handle.clone())
     }
@@ -192,6 +193,7 @@ where
     ///
     /// See [`ListEnvironments`](crate::client::fluent_builders::ListEnvironments) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironments::into_paginator).
     pub fn list_environments(&self) -> fluent_builders::ListEnvironments<C, M, R> {
         fluent_builders::ListEnvironments::new(self.handle.clone())
     }
@@ -199,6 +201,7 @@ where
     ///
     /// See [`ListEnvironmentVpcs`](crate::client::fluent_builders::ListEnvironmentVpcs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironmentVpcs::into_paginator).
     pub fn list_environment_vpcs(&self) -> fluent_builders::ListEnvironmentVpcs<C, M, R> {
         fluent_builders::ListEnvironmentVpcs::new(self.handle.clone())
     }
@@ -206,6 +209,7 @@ where
     ///
     /// See [`ListRoutes`](crate::client::fluent_builders::ListRoutes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRoutes::into_paginator).
     pub fn list_routes(&self) -> fluent_builders::ListRoutes<C, M, R> {
         fluent_builders::ListRoutes::new(self.handle.clone())
     }
@@ -213,6 +217,7 @@ where
     ///
     /// See [`ListServices`](crate::client::fluent_builders::ListServices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServices::into_paginator).
     pub fn list_services(&self) -> fluent_builders::ListServices<C, M, R> {
         fluent_builders::ListServices::new(self.handle.clone())
     }
@@ -255,11 +260,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
-    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces application. The account that owns the environment also owns the
-    /// applications created inside the environment, regardless of the account that creates the
-    /// application. Refactor Spaces provisions the Amazon API Gateway and Network Load Balancer for
-    /// the application proxy inside your account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces application. The account that owns the environment also owns the applications created inside the environment, regardless of the account that creates the application. Refactor Spaces provisions the Amazon API Gateway and Network Load Balancer for the application proxy inside your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -304,10 +306,10 @@ pub mod fluent_builders {
                 crate::input::CreateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -316,8 +318,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name to use for the application. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name to use for the application. </p>
@@ -326,8 +328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the environment.</p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The unique identifier of the environment.</p>
@@ -339,8 +341,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual private cloud (VPC).</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The ID of the virtual private cloud (VPC).</p>
@@ -349,8 +351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The proxy type of the proxy created within the application. </p>
-        pub fn proxy_type(mut self, inp: crate::model::ProxyType) -> Self {
-            self.inner = self.inner.proxy_type(inp);
+        pub fn proxy_type(mut self, input: crate::model::ProxyType) -> Self {
+            self.inner = self.inner.proxy_type(input);
             self
         }
         /// <p>The proxy type of the proxy created within the application. </p>
@@ -361,14 +363,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_proxy_type(input);
             self
         }
-        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-        /// proxy. </p>
-        pub fn api_gateway_proxy(mut self, inp: crate::model::ApiGatewayProxyInput) -> Self {
-            self.inner = self.inner.api_gateway_proxy(inp);
+        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
+        pub fn api_gateway_proxy(mut self, input: crate::model::ApiGatewayProxyInput) -> Self {
+            self.inner = self.inner.api_gateway_proxy(input);
             self
         }
-        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-        /// proxy. </p>
+        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
         pub fn set_api_gateway_proxy(
             mut self,
             input: std::option::Option<crate::model::ApiGatewayProxyInput>,
@@ -386,7 +386,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
@@ -399,14 +399,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -414,12 +412,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEnvironment`.
     ///
-    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces environment. The caller owns the environment resource, and they
-    /// are referred to as the <i>environment owner</i>. The environment owner has
-    /// cross-account visibility and control of Refactor Spaces resources that are added to the environment
-    /// by other accounts that the environment is shared with. When creating an environment, Refactor Spaces
-    /// provisions a transit gateway in your account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces environment. The caller owns the environment resource, and they are referred to as the <i>environment owner</i>. The environment owner has cross-account visibility and control of Refactor Spaces resources that are added to the environment by other accounts that the environment is shared with. When creating an environment, Refactor Spaces provisions a transit gateway in your account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -464,10 +458,10 @@ pub mod fluent_builders {
                 crate::input::CreateEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -476,8 +470,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment.</p>
@@ -486,8 +480,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the environment.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the environment.</p>
@@ -496,8 +490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The network fabric type of the environment.</p>
-        pub fn network_fabric_type(mut self, inp: crate::model::NetworkFabricType) -> Self {
-            self.inner = self.inner.network_fabric_type(inp);
+        pub fn network_fabric_type(mut self, input: crate::model::NetworkFabricType) -> Self {
+            self.inner = self.inner.network_fabric_type(input);
             self
         }
         /// <p>The network fabric type of the environment.</p>
@@ -518,7 +512,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
@@ -531,14 +525,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -546,43 +538,18 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRoute`.
     ///
-    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces route. The account owner of the service resource is always the
-    /// environment owner, regardless of which account creates the route. Routes target a service in
-    /// the application. If an application does not have any routes, then the first route must be
-    /// created as a <code>DEFAULT</code>
-    /// <code>RouteType</code>.</p>
-    /// <p>When you create a route, Refactor Spaces configures the Amazon API Gateway to send traffic
-    /// to the target service as follows:</p>
+    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces route. The account owner of the service resource is always the environment owner, regardless of which account creates the route. Routes target a service in the application. If an application does not have any routes, then the first route must be created as a <code>DEFAULT</code> <code>RouteType</code>.</p>
+    /// <p>When you create a route, Refactor Spaces configures the Amazon API Gateway to send traffic to the target service as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the service has a URL endpoint, and the endpoint resolves to a private IP address,
-    /// Refactor Spaces routes traffic using the API Gateway VPC link. </p>
-    /// </li>
-    /// <li>
-    /// <p>If the service has a URL endpoint, and the endpoint resolves to a public IP address,
-    /// Refactor Spaces routes traffic over the public internet.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the service has an Lambda function endpoint, then Refactor Spaces uses
-    /// the API Gateway
-    /// Lambda integration.</p>
-    /// </li>
+    /// <li> <p>If the service has a URL endpoint, and the endpoint resolves to a private IP address, Refactor Spaces routes traffic using the API Gateway VPC link. </p> </li>
+    /// <li> <p>If the service has a URL endpoint, and the endpoint resolves to a public IP address, Refactor Spaces routes traffic over the public internet.</p> </li>
+    /// <li> <p>If the service has an Lambda function endpoint, then Refactor Spaces uses the API Gateway Lambda integration.</p> </li>
     /// </ul>
-    /// <p>A health check is performed on the service when the route is created. If the health check
-    /// fails, the route transitions to <code>FAILED</code>, and no traffic is sent to the service.</p>
-    /// <p>For Lambda functions, the Lambda function state is checked. If
-    /// the function is not active, the function configuration is updated so that Lambda
-    /// resources are provisioned. If the Lambda state is <code>Failed</code>, then the
-    /// route creation fails. For more information, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's State response parameter</a> in the <i>Lambda Developer Guide</i>.</p>
-    /// <p>For public URLs, a connection is opened to the public endpoint. If the URL is not reachable,
-    /// the health check fails. For private URLs, a target group is created and the target group
-    /// health check is run.</p>
-    /// <p>The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>, and
-    /// <code>HealthCheckPath</code> are the same protocol, port, and path specified in the URL or
-    /// health URL, if used. All other settings use the default values, as described in <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health checks
-    /// for your target groups</a>. The health check is considered successful if at least one
-    /// target within the target group transitions to a healthy state.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>A health check is performed on the service when the route is created. If the health check fails, the route transitions to <code>FAILED</code>, and no traffic is sent to the service.</p>
+    /// <p>For Lambda functions, the Lambda function state is checked. If the function is not active, the function configuration is updated so that Lambda resources are provisioned. If the Lambda state is <code>Failed</code>, then the route creation fails. For more information, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's State response parameter</a> in the <i>Lambda Developer Guide</i>.</p>
+    /// <p>For public URLs, a connection is opened to the public endpoint. If the URL is not reachable, the health check fails. For private URLs, a target group is created and the target group health check is run.</p>
+    /// <p>The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>, and <code>HealthCheckPath</code> are the same protocol, port, and path specified in the URL or health URL, if used. All other settings use the default values, as described in <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health checks for your target groups</a>. The health check is considered successful if at least one target within the target group transitions to a healthy state.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -627,10 +594,10 @@ pub mod fluent_builders {
                 crate::input::CreateRouteInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -639,8 +606,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment in which the route is created.</p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The ID of the environment in which the route is created.</p>
@@ -652,8 +619,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the application within which the route is being created.</p>
-        pub fn application_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_identifier(inp);
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_identifier(input.into());
             self
         }
         /// <p>The ID of the application within which the route is being created.</p>
@@ -664,14 +631,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_identifier(input);
             self
         }
-        /// <p>The ID of the service in which the route is created. Traffic that matches this route is
-        /// forwarded to this service.</p>
-        pub fn service_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_identifier(inp);
+        /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
+        pub fn service_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_identifier(input.into());
             self
         }
-        /// <p>The ID of the service in which the route is created. Traffic that matches this route is
-        /// forwarded to this service.</p>
+        /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
         pub fn set_service_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -679,18 +644,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_identifier(input);
             self
         }
-        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not
-        /// match another route is forwarded to the default route. Applications must have a default route
-        /// before any other routes can be created. <code>URI_PATH</code> indicates a route that is based
-        /// on a URI path.</p>
-        pub fn route_type(mut self, inp: crate::model::RouteType) -> Self {
-            self.inner = self.inner.route_type(inp);
+        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
+        pub fn route_type(mut self, input: crate::model::RouteType) -> Self {
+            self.inner = self.inner.route_type(input);
             self
         }
-        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not
-        /// match another route is forwarded to the default route. Applications must have a default route
-        /// before any other routes can be created. <code>URI_PATH</code> indicates a route that is based
-        /// on a URI path.</p>
+        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
         pub fn set_route_type(
             mut self,
             input: std::option::Option<crate::model::RouteType>,
@@ -699,8 +658,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration for the URI path route type. </p>
-        pub fn uri_path_route(mut self, inp: crate::model::UriPathRouteInput) -> Self {
-            self.inner = self.inner.uri_path_route(inp);
+        pub fn uri_path_route(mut self, input: crate::model::UriPathRouteInput) -> Self {
+            self.inner = self.inner.uri_path_route(input);
             self
         }
         /// <p>The configuration for the URI path route type. </p>
@@ -721,7 +680,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
@@ -734,14 +693,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -749,17 +706,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateService`.
     ///
-    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces service. The account owner of the service is always the
-    /// environment owner, regardless of which account in the environment creates the service.
-    /// Services have either a URL endpoint in a virtual private cloud (VPC), or a Lambda
-    /// function endpoint.</p>
-    /// <important>
-    /// <p>If an Amazon Web Services resourceis launched in a service VPC, and you want it to be
-    /// accessible to all of an environment’s services with VPCs and routes, apply the
-    /// <code>RefactorSpacesSecurityGroup</code> to the resource. Alternatively, to add more
-    /// cross-account constraints, apply your own security group.</p>
+    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces service. The account owner of the service is always the environment owner, regardless of which account in the environment creates the service. Services have either a URL endpoint in a virtual private cloud (VPC), or a Lambda function endpoint.</p> <important>
+    /// <p>If an Amazon Web Services resourceis launched in a service VPC, and you want it to be accessible to all of an environment’s services with VPCs and routes, apply the <code>RefactorSpacesSecurityGroup</code> to the resource. Alternatively, to add more cross-account constraints, apply your own security group.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -804,10 +754,10 @@ pub mod fluent_builders {
                 crate::input::CreateServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -816,8 +766,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service.</p>
@@ -826,8 +776,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the service.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the service.</p>
@@ -836,8 +786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the environment in which the service is created.</p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The ID of the environment in which the service is created.</p>
@@ -849,8 +799,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the application which the service is created.</p>
-        pub fn application_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_identifier(inp);
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_identifier(input.into());
             self
         }
         /// <p>The ID of the application which the service is created.</p>
@@ -862,8 +812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the VPC.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The ID of the VPC.</p>
@@ -872,8 +822,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
-        pub fn endpoint_type(mut self, inp: crate::model::ServiceEndpointType) -> Self {
-            self.inner = self.inner.endpoint_type(inp);
+        pub fn endpoint_type(mut self, input: crate::model::ServiceEndpointType) -> Self {
+            self.inner = self.inner.endpoint_type(input);
             self
         }
         /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
@@ -885,8 +835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration for the URL endpoint type.</p>
-        pub fn url_endpoint(mut self, inp: crate::model::UrlEndpointInput) -> Self {
-            self.inner = self.inner.url_endpoint(inp);
+        pub fn url_endpoint(mut self, input: crate::model::UrlEndpointInput) -> Self {
+            self.inner = self.inner.url_endpoint(input);
             self
         }
         /// <p>The configuration for the URL endpoint type.</p>
@@ -898,8 +848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration for the Lambda endpoint type.</p>
-        pub fn lambda_endpoint(mut self, inp: crate::model::LambdaEndpointInput) -> Self {
-            self.inner = self.inner.lambda_endpoint(inp);
+        pub fn lambda_endpoint(mut self, input: crate::model::LambdaEndpointInput) -> Self {
+            self.inner = self.inner.lambda_endpoint(input);
             self
         }
         /// <p>The configuration for the Lambda endpoint type.</p>
@@ -920,7 +870,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
@@ -933,14 +883,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -948,9 +896,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
-    /// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces application. Before you can delete an application, you must first
-    /// delete any services or routes within the application.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces application. Before you can delete an application, you must first delete any services or routes within the application.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -995,10 +942,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1007,8 +954,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment. </p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The ID of the environment. </p>
@@ -1020,8 +967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the application.</p>
-        pub fn application_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_identifier(inp);
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_identifier(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -1035,9 +982,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEnvironment`.
     ///
-    /// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces environment. Before you can delete an environment, you must first
-    /// delete any applications and services within the environment.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces environment. Before you can delete an environment, you must first delete any applications and services within the environment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1082,10 +1028,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1094,8 +1040,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment. </p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The ID of the environment. </p>
@@ -1110,7 +1056,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourcePolicy`.
     ///
     /// <p>Deletes the resource policy set for the environment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1155,10 +1101,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1167,8 +1113,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
@@ -1180,7 +1126,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRoute`.
     ///
     /// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1225,10 +1171,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRouteInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1237,8 +1183,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment to delete the route from.</p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The ID of the environment to delete the route from.</p>
@@ -1250,8 +1196,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the application to delete the route from.</p>
-        pub fn application_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_identifier(inp);
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_identifier(input.into());
             self
         }
         /// <p>The ID of the application to delete the route from.</p>
@@ -1263,8 +1209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the route to delete.</p>
-        pub fn route_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_identifier(inp);
+        pub fn route_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_identifier(input.into());
             self
         }
         /// <p>The ID of the route to delete.</p>
@@ -1279,7 +1225,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteService`.
     ///
     /// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces service. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1324,10 +1270,10 @@ pub mod fluent_builders {
                 crate::input::DeleteServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1336,8 +1282,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment that the service is in.</p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The ID of the environment that the service is in.</p>
@@ -1348,21 +1294,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_identifier(input);
             self
         }
-        /// <p>Deletes a Refactor Spaces service.</p>
-        /// <note>
-        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all
-        /// Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL
-        /// endpoint in a VPC.</p>
+        /// <p>Deletes a Refactor Spaces service.</p> <note>
+        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
         /// </note>
-        pub fn application_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_identifier(inp);
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_identifier(input.into());
             self
         }
-        /// <p>Deletes a Refactor Spaces service.</p>
-        /// <note>
-        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all
-        /// Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL
-        /// endpoint in a VPC.</p>
+        /// <p>Deletes a Refactor Spaces service.</p> <note>
+        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
         /// </note>
         pub fn set_application_identifier(
             mut self,
@@ -1372,8 +1312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the service to delete.</p>
-        pub fn service_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_identifier(inp);
+        pub fn service_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_identifier(input.into());
             self
         }
         /// <p>The ID of the service to delete.</p>
@@ -1388,7 +1328,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApplication`.
     ///
     /// <p>Gets an Amazon Web Services Migration Hub Refactor Spaces application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1433,10 +1373,10 @@ pub mod fluent_builders {
                 crate::input::GetApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1445,8 +1385,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment. </p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The ID of the environment. </p>
@@ -1458,8 +1398,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the application.</p>
-        pub fn application_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_identifier(inp);
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_identifier(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -1474,7 +1414,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEnvironment`.
     ///
     /// <p>Gets an Amazon Web Services Migration Hub Refactor Spaces environment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1519,10 +1459,10 @@ pub mod fluent_builders {
                 crate::input::GetEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1531,8 +1471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment.</p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The ID of the environment.</p>
@@ -1547,7 +1487,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourcePolicy`.
     ///
     /// <p>Gets the resource-based permission policy that is set for the given environment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1592,10 +1532,10 @@ pub mod fluent_builders {
                 crate::input::GetResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1604,8 +1544,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
-        pub fn identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(inp);
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
@@ -1617,7 +1557,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRoute`.
     ///
     /// <p>Gets an Amazon Web Services Migration Hub Refactor Spaces route.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoute<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1662,10 +1602,10 @@ pub mod fluent_builders {
                 crate::input::GetRouteInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1674,8 +1614,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment.</p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The ID of the environment.</p>
@@ -1687,8 +1627,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the application. </p>
-        pub fn application_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_identifier(inp);
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_identifier(input.into());
             self
         }
         /// <p>The ID of the application. </p>
@@ -1700,8 +1640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the route.</p>
-        pub fn route_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_identifier(inp);
+        pub fn route_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_identifier(input.into());
             self
         }
         /// <p>The ID of the route.</p>
@@ -1716,7 +1656,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetService`.
     ///
     /// <p>Gets an Amazon Web Services Migration Hub Refactor Spaces service. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetService<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1761,10 +1701,10 @@ pub mod fluent_builders {
                 crate::input::GetServiceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1773,8 +1713,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment.</p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The ID of the environment.</p>
@@ -1786,8 +1726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the application.</p>
-        pub fn application_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_identifier(inp);
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_identifier(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -1799,8 +1739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the service.</p>
-        pub fn service_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_identifier(inp);
+        pub fn service_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_identifier(input.into());
             self
         }
         /// <p>The ID of the service.</p>
@@ -1815,7 +1755,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApplications`.
     ///
     /// <p>Lists all the Amazon Web Services Migration Hub Refactor Spaces applications within an environment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1860,10 +1800,10 @@ pub mod fluent_builders {
                 crate::input::ListApplicationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1871,9 +1811,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListApplicationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListApplicationsPaginator<C, M, R> {
+            crate::paginator::ListApplicationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the environment. </p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The ID of the environment. </p>
@@ -1885,8 +1831,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1894,14 +1840,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1909,9 +1853,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEnvironments`.
     ///
-    /// <p>Lists Amazon Web Services Migration Hub Refactor Spaces environments owned by a caller account or shared with the caller
-    /// account. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists Amazon Web Services Migration Hub Refactor Spaces environments owned by a caller account or shared with the caller account. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1956,10 +1899,10 @@ pub mod fluent_builders {
                 crate::input::ListEnvironmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1967,9 +1910,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEnvironmentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEnvironmentsPaginator<C, M, R> {
+            crate::paginator::ListEnvironmentsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1977,14 +1926,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1993,7 +1940,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListEnvironmentVpcs`.
     ///
     /// <p>Lists all the virtual private clouds (VPCs) that are part of an Amazon Web Services Migration Hub Refactor Spaces environment. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironmentVpcs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2038,10 +1985,10 @@ pub mod fluent_builders {
                 crate::input::ListEnvironmentVpcsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2049,9 +1996,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEnvironmentVpcsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEnvironmentVpcsPaginator<C, M, R> {
+            crate::paginator::ListEnvironmentVpcsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the environment. </p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The ID of the environment. </p>
@@ -2063,8 +2016,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2072,14 +2025,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2088,7 +2039,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRoutes`.
     ///
     /// <p>Lists all the Amazon Web Services Migration Hub Refactor Spaces routes within an application. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRoutes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2133,10 +2084,10 @@ pub mod fluent_builders {
                 crate::input::ListRoutesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2144,9 +2095,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRoutesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRoutesPaginator<C, M, R> {
+            crate::paginator::ListRoutesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the environment. </p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The ID of the environment. </p>
@@ -2158,8 +2115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the application. </p>
-        pub fn application_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_identifier(inp);
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_identifier(input.into());
             self
         }
         /// <p>The ID of the application. </p>
@@ -2171,8 +2128,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2180,14 +2137,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2196,7 +2151,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListServices`.
     ///
     /// <p>Lists all the Amazon Web Services Migration Hub Refactor Spaces services within an application. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2241,10 +2196,10 @@ pub mod fluent_builders {
                 crate::input::ListServicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2252,9 +2207,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListServicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListServicesPaginator<C, M, R> {
+            crate::paginator::ListServicesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the environment. </p>
-        pub fn environment_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(inp);
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The ID of the environment. </p>
@@ -2266,8 +2227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the application. </p>
-        pub fn application_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_identifier(inp);
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_identifier(input.into());
             self
         }
         /// <p>The ID of the application. </p>
@@ -2279,8 +2240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2288,14 +2249,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2303,9 +2262,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists the tags of a resource. The caller account must be the same as the resource’s
-    /// <code>OwnerAccountId</code>. Listing tags in other accounts is not supported. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the tags of a resource. The caller account must be the same as the resource’s <code>OwnerAccountId</code>. Listing tags in other accounts is not supported. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2350,10 +2308,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2362,8 +2320,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
@@ -2374,11 +2332,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutResourcePolicy`.
     ///
-    /// <p>Attaches a resource-based permission policy to the Amazon Web Services Migration Hub Refactor Spaces environment. The policy
-    /// must contain the same actions and condition statements as the
-    /// <code>arn:aws:ram::aws:permission/AWSRAMDefaultPermissionRefactorSpacesEnvironment</code>
-    /// permission in Resource Access Manager. The policy must not contain new lines or blank lines. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Attaches a resource-based permission policy to the Amazon Web Services Migration Hub Refactor Spaces environment. The policy must contain the same actions and condition statements as the <code>arn:aws:ram::aws:permission/AWSRAMDefaultPermissionRefactorSpacesEnvironment</code> permission in Resource Access Manager. The policy must not contain new lines or blank lines. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2423,10 +2378,10 @@ pub mod fluent_builders {
                 crate::input::PutResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2434,21 +2389,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.
-        /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
@@ -2459,14 +2412,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Removes the tags of a given resource. Tags are metadata which can be used to manage a
-    /// resource. To tag a resource, the caller account must be the same as the resource’s
-    /// <code>OwnerAccountId</code>. Tagging resources in other accounts is not supported.</p>
-    /// <note>
-    /// <p>Amazon Web Services Migration Hub Refactor Spaces does not propagate tags to orchestrated resources, such as an
-    /// environment’s transit gateway.</p>
+    /// <p>Removes the tags of a given resource. Tags are metadata which can be used to manage a resource. To tag a resource, the caller account must be the same as the resource’s <code>OwnerAccountId</code>. Tagging resources in other accounts is not supported.</p> <note>
+    /// <p>Amazon Web Services Migration Hub Refactor Spaces does not propagate tags to orchestrated resources, such as an environment’s transit gateway.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2511,10 +2460,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2523,8 +2472,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource</p>
@@ -2542,7 +2491,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The new or modified tags for the resource. </p>
@@ -2558,10 +2507,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata which can be used to
-    /// manage a resource. To untag a resource, the caller account must be the same as the resource’s
-    /// <code>OwnerAccountId</code>. Untagging resources across accounts is not supported. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource. To untag a resource, the caller account must be the same as the resource’s <code>OwnerAccountId</code>. Untagging resources across accounts is not supported. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2606,10 +2553,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2618,8 +2565,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
@@ -2632,8 +2579,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of keys of the tags to be removed from the resource. </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of keys of the tags to be removed from the resource. </p>
@@ -2646,6 +2593,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

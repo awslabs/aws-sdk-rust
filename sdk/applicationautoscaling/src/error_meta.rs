@@ -3,13 +3,9 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Concurrent updates caused an exception, for example, if you request an update to an
-    /// Application Auto Scaling resource that already has a pending update.</p>
+    /// <p>Concurrent updates caused an exception, for example, if you request an update to an Application Auto Scaling resource that already has a pending update.</p>
     ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
-    /// <p>Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling
-    /// is unable to retrieve the alarms associated with a scaling policy due to a client error,
-    /// for example, if the role ARN specified for a scalable target does not have permission to
-    /// call the CloudWatch <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a> on your behalf.</p>
+    /// <p>Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling is unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the role ARN specified for a scalable target does not have permission to call the CloudWatch <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a> on your behalf.</p>
     FailedResourceAccessException(crate::error::FailedResourceAccessException),
     /// <p>The service encountered an internal error.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -17,14 +13,9 @@ pub enum Error {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>A per-account resource limit is exceeded. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-limits.html">Application Auto Scaling service quotas</a>.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The specified object could not be found. For any operation that depends on the existence
-    /// of a scalable target, this exception is thrown if the scalable target with the specified
-    /// service namespace, resource ID, and scalable dimension does not exist. For any operation
-    /// that deletes or deregisters a resource, this exception is thrown if the resource cannot be
-    /// found.</p>
+    /// <p>The specified object could not be found. For any operation that depends on the existence of a scalable target, this exception is thrown if the scalable target with the specified service namespace, resource ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this exception is thrown if the resource cannot be found.</p>
     ObjectNotFoundException(crate::error::ObjectNotFoundException),
-    /// <p>An exception was thrown for a validation issue. Review the available parameters for the
-    /// API request.</p>
+    /// <p>An exception was thrown for a validation issue. Review the available parameters for the API request.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

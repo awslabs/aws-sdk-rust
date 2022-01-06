@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Price List Service
@@ -87,6 +87,7 @@ where
     ///
     /// See [`DescribeServices`](crate::client::fluent_builders::DescribeServices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeServices::into_paginator).
     pub fn describe_services(&self) -> fluent_builders::DescribeServices<C, M, R> {
         fluent_builders::DescribeServices::new(self.handle.clone())
     }
@@ -94,6 +95,7 @@ where
     ///
     /// See [`GetAttributeValues`](crate::client::fluent_builders::GetAttributeValues) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAttributeValues::into_paginator).
     pub fn get_attribute_values(&self) -> fluent_builders::GetAttributeValues<C, M, R> {
         fluent_builders::GetAttributeValues::new(self.handle.clone())
     }
@@ -101,6 +103,7 @@ where
     ///
     /// See [`GetProducts`](crate::client::fluent_builders::GetProducts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetProducts::into_paginator).
     pub fn get_products(&self) -> fluent_builders::GetProducts<C, M, R> {
         fluent_builders::GetProducts::new(self.handle.clone())
     }
@@ -115,14 +118,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `DescribeServices`.
     ///
-    /// <p>Returns the metadata for one service or a list of the metadata for all services. Use
-    /// this without a service code to get the service codes for all services.
-    /// Use it with a service code, such as <code>AmazonEC2</code>, to get information specific to
-    /// that service, such as the attribute
-    /// names available for that service. For example, some of the attribute names available for EC2 are
-    /// <code>volumeType</code>, <code>maxIopsVolume</code>, <code>operation</code>,
-    /// <code>locationType</code>, and <code>instanceCapacity10xlarge</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the metadata for one service or a list of the metadata for all services. Use this without a service code to get the service codes for all services. Use it with a service code, such as <code>AmazonEC2</code>, to get information specific to that service, such as the attribute names available for that service. For example, some of the attribute names available for EC2 are <code>volumeType</code>, <code>maxIopsVolume</code>, <code>operation</code>, <code>locationType</code>, and <code>instanceCapacity10xlarge</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -167,10 +164,10 @@ pub mod fluent_builders {
                 crate::input::DescribeServicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -178,32 +175,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>.
-        /// You can use
-        /// the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call.
-        /// To retrieve a list of all services, leave this blank.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeServicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeServicesPaginator<C, M, R> {
+            crate::paginator::DescribeServicesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
-        /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>.
-        /// You can use
-        /// the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call.
-        /// To retrieve a list of all services, leave this blank.</p>
+        /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_code(input);
             self
         }
         /// <p>The format version that you want the response to be in.</p>
-        /// <p>Valid values are: <code>aws_v1</code>
-        /// </p>
-        pub fn format_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.format_version(inp);
+        /// <p>Valid values are: <code>aws_v1</code> </p>
+        pub fn format_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.format_version(input.into());
             self
         }
         /// <p>The format version that you want the response to be in.</p>
-        /// <p>Valid values are: <code>aws_v1</code>
-        /// </p>
+        /// <p>Valid values are: <code>aws_v1</code> </p>
         pub fn set_format_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -212,8 +207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
@@ -222,8 +217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results that you want returned in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results that you want returned in the response.</p>
@@ -234,11 +229,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAttributeValues`.
     ///
-    /// <p>Returns a list of attribute values. Attibutes are similar to the details
-    /// in a Price List API offer file. For a list of available attributes, see
-    /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer File Definitions</a>
-    /// in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Amazon Web Services Billing and Cost Management User Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of attribute values. Attibutes are similar to the details in a Price List API offer file. For a list of available attributes, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer File Definitions</a> in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Amazon Web Services Billing and Cost Management User Guide</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAttributeValues<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -283,10 +275,10 @@ pub mod fluent_builders {
                 crate::input::GetAttributeValuesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -294,21 +286,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want
-        /// the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetAttributeValuesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetAttributeValuesPaginator<C, M, R> {
+            crate::paginator::GetAttributeValuesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
-        /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want
-        /// the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
+        /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_code(input);
             self
         }
         /// <p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(inp);
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(input.into());
             self
         }
         /// <p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>
@@ -320,8 +316,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
@@ -330,8 +326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in response.</p>
@@ -343,7 +339,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProducts`.
     ///
     /// <p>Returns a list of all products that match the filter criteria.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProducts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -388,10 +384,10 @@ pub mod fluent_builders {
                 crate::input::GetProductsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -399,9 +395,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetProductsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetProductsPaginator<C, M, R> {
+            crate::paginator::GetProductsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The code for the service whose products you want to retrieve. </p>
-        pub fn service_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(inp);
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
         /// <p>The code for the service whose products you want to retrieve. </p>
@@ -413,14 +415,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The list of filters that limit the returned products. only products that match all filters
-        /// are returned.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>The list of filters that limit the returned products. only products that match all filters are returned.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The list of filters that limit the returned products. only products that match all filters
-        /// are returned.</p>
+        /// <p>The list of filters that limit the returned products. only products that match all filters are returned.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -429,15 +429,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format version that you want the response to be in.</p>
-        /// <p>Valid values are: <code>aws_v1</code>
-        /// </p>
-        pub fn format_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.format_version(inp);
+        /// <p>Valid values are: <code>aws_v1</code> </p>
+        pub fn format_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.format_version(input.into());
             self
         }
         /// <p>The format version that you want the response to be in.</p>
-        /// <p>Valid values are: <code>aws_v1</code>
-        /// </p>
+        /// <p>Valid values are: <code>aws_v1</code> </p>
         pub fn set_format_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -446,8 +444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
@@ -456,8 +454,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -467,6 +465,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

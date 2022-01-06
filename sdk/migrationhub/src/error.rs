@@ -14,28 +14,21 @@ pub struct AssociateCreatedArtifactError {
 pub enum AssociateCreatedArtifactErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised to indicate a successfully authorized action when the
-    /// <code>DryRun</code> flag is set to "true".</p>
+    /// <p>Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".</p>
     DryRunOperation(crate::error::DryRunOperation),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
-    /// flag is set to "true".</p>
+    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -86,8 +79,6 @@ impl AssociateCreatedArtifactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -204,32 +195,23 @@ pub struct AssociateDiscoveredResourceError {
 pub enum AssociateDiscoveredResourceErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised to indicate a successfully authorized action when the
-    /// <code>DryRun</code> flag is set to "true".</p>
+    /// <p>Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".</p>
     DryRunOperation(crate::error::DryRunOperation),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when there are problems accessing Application Discovery Service
-    /// (Application Discovery Service); most likely due to a misconfigured policy or the
-    /// <code>migrationhub-discovery</code> role is missing or not configured correctly.</p>
+    /// <p>Exception raised when there are problems accessing Application Discovery Service (Application Discovery Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured correctly.</p>
     PolicyErrorException(crate::error::PolicyErrorException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
-    /// flag is set to "true".</p>
+    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -287,8 +269,6 @@ impl AssociateDiscoveredResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -415,24 +395,19 @@ pub struct CreateProgressUpdateStreamError {
 pub enum CreateProgressUpdateStreamErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised to indicate a successfully authorized action when the
-    /// <code>DryRun</code> flag is set to "true".</p>
+    /// <p>Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".</p>
     DryRunOperation(crate::error::DryRunOperation),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
-    /// flag is set to "true".</p>
+    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -484,8 +459,6 @@ impl CreateProgressUpdateStreamError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -596,28 +569,21 @@ pub struct DeleteProgressUpdateStreamError {
 pub enum DeleteProgressUpdateStreamErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised to indicate a successfully authorized action when the
-    /// <code>DryRun</code> flag is set to "true".</p>
+    /// <p>Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".</p>
     DryRunOperation(crate::error::DryRunOperation),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
-    /// flag is set to "true".</p>
+    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -670,8 +636,6 @@ impl DeleteProgressUpdateStreamError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -792,22 +756,15 @@ pub enum DescribeApplicationStateErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when there are problems accessing Application Discovery Service
-    /// (Application Discovery Service); most likely due to a misconfigured policy or the
-    /// <code>migrationhub-discovery</code> role is missing or not configured correctly.</p>
+    /// <p>Exception raised when there are problems accessing Application Discovery Service (Application Discovery Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured correctly.</p>
     PolicyErrorException(crate::error::PolicyErrorException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -859,8 +816,6 @@ impl DescribeApplicationStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -971,18 +926,13 @@ pub enum DescribeMigrationTaskErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1033,8 +983,6 @@ impl DescribeMigrationTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1135,28 +1083,21 @@ pub struct DisassociateCreatedArtifactError {
 pub enum DisassociateCreatedArtifactErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised to indicate a successfully authorized action when the
-    /// <code>DryRun</code> flag is set to "true".</p>
+    /// <p>Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".</p>
     DryRunOperation(crate::error::DryRunOperation),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
-    /// flag is set to "true".</p>
+    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1213,8 +1154,6 @@ impl DisassociateCreatedArtifactError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1333,28 +1272,21 @@ pub struct DisassociateDiscoveredResourceError {
 pub enum DisassociateDiscoveredResourceErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised to indicate a successfully authorized action when the
-    /// <code>DryRun</code> flag is set to "true".</p>
+    /// <p>Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".</p>
     DryRunOperation(crate::error::DryRunOperation),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
-    /// flag is set to "true".</p>
+    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1414,8 +1346,6 @@ impl DisassociateDiscoveredResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1538,28 +1468,21 @@ pub struct ImportMigrationTaskError {
 pub enum ImportMigrationTaskErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised to indicate a successfully authorized action when the
-    /// <code>DryRun</code> flag is set to "true".</p>
+    /// <p>Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".</p>
     DryRunOperation(crate::error::DryRunOperation),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
-    /// flag is set to "true".</p>
+    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1610,8 +1533,6 @@ impl ImportMigrationTaskError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1727,14 +1648,11 @@ pub enum ListApplicationStatesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1784,8 +1702,6 @@ impl ListApplicationStatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1880,18 +1796,13 @@ pub enum ListCreatedArtifactsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1942,8 +1853,6 @@ impl ListCreatedArtifactsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2046,18 +1955,13 @@ pub enum ListDiscoveredResourcesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2108,8 +2012,6 @@ impl ListDiscoveredResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2212,22 +2114,15 @@ pub enum ListMigrationTasksErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when there are problems accessing Application Discovery Service
-    /// (Application Discovery Service); most likely due to a misconfigured policy or the
-    /// <code>migrationhub-discovery</code> role is missing or not configured correctly.</p>
+    /// <p>Exception raised when there are problems accessing Application Discovery Service (Application Discovery Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured correctly.</p>
     PolicyErrorException(crate::error::PolicyErrorException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2279,8 +2174,6 @@ impl ListMigrationTasksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2391,14 +2284,11 @@ pub enum ListProgressUpdateStreamsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2450,8 +2340,6 @@ impl ListProgressUpdateStreamsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2544,32 +2432,23 @@ pub struct NotifyApplicationStateError {
 pub enum NotifyApplicationStateErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised to indicate a successfully authorized action when the
-    /// <code>DryRun</code> flag is set to "true".</p>
+    /// <p>Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".</p>
     DryRunOperation(crate::error::DryRunOperation),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when there are problems accessing Application Discovery Service
-    /// (Application Discovery Service); most likely due to a misconfigured policy or the
-    /// <code>migrationhub-discovery</code> role is missing or not configured correctly.</p>
+    /// <p>Exception raised when there are problems accessing Application Discovery Service (Application Discovery Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured correctly.</p>
     PolicyErrorException(crate::error::PolicyErrorException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
-    /// flag is set to "true".</p>
+    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2621,8 +2500,6 @@ impl NotifyApplicationStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2747,28 +2624,21 @@ pub struct NotifyMigrationTaskStateError {
 pub enum NotifyMigrationTaskStateErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised to indicate a successfully authorized action when the
-    /// <code>DryRun</code> flag is set to "true".</p>
+    /// <p>Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".</p>
     DryRunOperation(crate::error::DryRunOperation),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
-    /// flag is set to "true".</p>
+    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2819,8 +2689,6 @@ impl NotifyMigrationTaskStateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2937,28 +2805,21 @@ pub struct PutResourceAttributesError {
 pub enum PutResourceAttributesErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised to indicate a successfully authorized action when the
-    /// <code>DryRun</code> flag is set to "true".</p>
+    /// <p>Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".</p>
     DryRunOperation(crate::error::DryRunOperation),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
-    /// flag is set to "true".</p>
+    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3009,8 +2870,6 @@ impl PutResourceAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3112,8 +2971,7 @@ impl std::error::Error for PutResourceAttributesError {
     }
 }
 
-/// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
-/// flag is set to "true".</p>
+/// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedOperation {
@@ -3262,8 +3120,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p>Exception raised when there is an internal, configuration, or dependency error
-/// encountered.</p>
+/// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
@@ -3327,9 +3184,7 @@ impl ServiceUnavailableException {
     }
 }
 
-/// <p>Exception raised when the request references a resource (Application Discovery Service
-/// configuration, update stream, migration task, etc.) that does not exist in Application
-/// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+/// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -3393,8 +3248,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Exception raised when the provided input violates a policy constraint or is entered in
-/// the wrong format or data type.</p>
+/// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
@@ -3458,8 +3312,7 @@ impl InvalidInputException {
     }
 }
 
-/// <p>Exception raised when an internal, configuration, or dependency error is
-/// encountered.</p>
+/// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
@@ -3587,8 +3440,7 @@ impl HomeRegionNotSetException {
     }
 }
 
-/// <p>Exception raised to indicate a successfully authorized action when the
-/// <code>DryRun</code> flag is set to "true".</p>
+/// <p>Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DryRunOperation {
@@ -3716,9 +3568,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>Exception raised when there are problems accessing Application Discovery Service
-/// (Application Discovery Service); most likely due to a misconfigured policy or the
-/// <code>migrationhub-discovery</code> role is missing or not configured correctly.</p>
+/// <p>Exception raised when there are problems accessing Application Discovery Service (Application Discovery Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured correctly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyErrorException {

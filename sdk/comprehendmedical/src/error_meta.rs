@@ -5,27 +5,19 @@
 pub enum Error {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your
-    /// request.</p>
+    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
     InvalidEncodingException(crate::error::InvalidEncodingException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
-    /// </p>
+    /// <p> The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-    /// use a smaller document and then retry your request. </p>
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The filter that you specified for the operation is invalid. Check the filter values that
-    /// you entered and try your request again.</p>
+    /// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -152,6 +144,36 @@ where
                     inner,
                 ) => Error::TooManyRequestsException(inner),
                 crate::error::DescribeRxNormInferenceJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeSNOMEDCTInferenceJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeSNOMEDCTInferenceJobError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeSNOMEDCTInferenceJobErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::DescribeSNOMEDCTInferenceJobErrorKind::InvalidRequestException(
+                    inner,
+                ) => Error::InvalidRequestException(inner),
+                crate::error::DescribeSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::DescribeSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::DescribeSNOMEDCTInferenceJobErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -318,6 +340,37 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::InferSNOMEDCTError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::InferSNOMEDCTError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::InferSNOMEDCTErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::InferSNOMEDCTErrorKind::InvalidEncodingException(inner) => {
+                    Error::InvalidEncodingException(inner)
+                }
+                crate::error::InferSNOMEDCTErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::InferSNOMEDCTErrorKind::ServiceUnavailableException(inner) => {
+                    Error::ServiceUnavailableException(inner)
+                }
+                crate::error::InferSNOMEDCTErrorKind::TextSizeLimitExceededException(inner) => {
+                    Error::TextSizeLimitExceededException(inner)
+                }
+                crate::error::InferSNOMEDCTErrorKind::TooManyRequestsException(inner) => {
+                    Error::TooManyRequestsException(inner)
+                }
+                crate::error::InferSNOMEDCTErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListEntitiesDetectionV2JobsError, R>>
     for Error
 where
@@ -431,6 +484,36 @@ where
                     Error::ValidationException(inner)
                 }
                 crate::error::ListRxNormInferenceJobsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSNOMEDCTInferenceJobsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::ListSNOMEDCTInferenceJobsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListSNOMEDCTInferenceJobsErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::ListSNOMEDCTInferenceJobsErrorKind::InvalidRequestException(
+                    inner,
+                ) => Error::InvalidRequestException(inner),
+                crate::error::ListSNOMEDCTInferenceJobsErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::ListSNOMEDCTInferenceJobsErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::ListSNOMEDCTInferenceJobsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -558,6 +641,36 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartSNOMEDCTInferenceJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::StartSNOMEDCTInferenceJobError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::StartSNOMEDCTInferenceJobErrorKind::InternalServerException(
+                    inner,
+                ) => Error::InternalServerException(inner),
+                crate::error::StartSNOMEDCTInferenceJobErrorKind::InvalidRequestException(
+                    inner,
+                ) => Error::InvalidRequestException(inner),
+                crate::error::StartSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::StartSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::StartSNOMEDCTInferenceJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopEntitiesDetectionV2JobError, R>>
     for Error
 where
@@ -658,6 +771,36 @@ where
                     Error::ResourceNotFoundException(inner)
                 }
                 crate::error::StopRxNormInferenceJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopSNOMEDCTInferenceJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::StopSNOMEDCTInferenceJobError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::StopSNOMEDCTInferenceJobErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::StopSNOMEDCTInferenceJobErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::StopSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::StopSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(
+                    inner,
+                ) => Error::TooManyRequestsException(inner),
+                crate::error::StopSNOMEDCTInferenceJobErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

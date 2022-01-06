@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Voice ID
@@ -161,6 +161,7 @@ where
     ///
     /// See [`ListDomains`](crate::client::fluent_builders::ListDomains) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
     pub fn list_domains(&self) -> fluent_builders::ListDomains<C, M, R> {
         fluent_builders::ListDomains::new(self.handle.clone())
     }
@@ -168,6 +169,7 @@ where
     ///
     /// See [`ListFraudsterRegistrationJobs`](crate::client::fluent_builders::ListFraudsterRegistrationJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFraudsterRegistrationJobs::into_paginator).
     pub fn list_fraudster_registration_jobs(
         &self,
     ) -> fluent_builders::ListFraudsterRegistrationJobs<C, M, R> {
@@ -177,6 +179,7 @@ where
     ///
     /// See [`ListSpeakerEnrollmentJobs`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSpeakerEnrollmentJobs::into_paginator).
     pub fn list_speaker_enrollment_jobs(
         &self,
     ) -> fluent_builders::ListSpeakerEnrollmentJobs<C, M, R> {
@@ -186,6 +189,7 @@ where
     ///
     /// See [`ListSpeakers`](crate::client::fluent_builders::ListSpeakers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSpeakers::into_paginator).
     pub fn list_speakers(&self) -> fluent_builders::ListSpeakers<C, M, R> {
         fluent_builders::ListSpeakers::new(self.handle.clone())
     }
@@ -253,10 +257,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateDomain`.
     ///
-    /// <p>Creates a domain that contains all Amazon Connect Voice ID data, such as speakers, fraudsters, customer
-    /// audio, and voiceprints.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a domain that contains all Amazon Connect Voice ID data, such as speakers, fraudsters, customer audio, and voiceprints. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -301,10 +303,10 @@ pub mod fluent_builders {
                 crate::input::CreateDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -313,8 +315,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the domain.</p>
@@ -323,8 +325,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description of this domain.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A brief description of this domain.</p>
@@ -332,21 +334,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for
-        /// the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-        /// Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used.
-        /// </p>
+        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used. </p>
         pub fn server_side_encryption_configuration(
             mut self,
-            inp: crate::model::ServerSideEncryptionConfiguration,
+            input: crate::model::ServerSideEncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.server_side_encryption_configuration(inp);
+            self.inner = self.inner.server_side_encryption_configuration(input);
             self
         }
-        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for
-        /// the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-        /// Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used.
-        /// </p>
+        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used. </p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -354,14 +350,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_side_encryption_configuration(input);
             self
         }
-        /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates
-        /// this field.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates
-        /// this field.</p>
+        /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -371,8 +365,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags you want added to the domain.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tags you want added to the domain.</p>
@@ -387,7 +381,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDomain`.
     ///
     /// <p>Deletes the specified domain from the Amazon Connect Voice ID system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -432,10 +426,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -444,8 +438,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain you want to delete.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The identifier of the domain you want to delete.</p>
@@ -457,7 +451,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFraudster`.
     ///
     /// <p>Deletes the specified fraudster from the Amazon Connect Voice ID system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFraudster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -502,10 +496,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFraudsterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -514,8 +508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain containing the fraudster.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The identifier of the domain containing the fraudster.</p>
@@ -524,8 +518,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the fraudster you want to delete.</p>
-        pub fn fraudster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fraudster_id(inp);
+        pub fn fraudster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fraudster_id(input.into());
             self
         }
         /// <p>The identifier of the fraudster you want to delete.</p>
@@ -537,7 +531,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSpeaker`.
     ///
     /// <p>Deletes the specified speaker from the Amazon Connect Voice ID system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSpeaker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -582,10 +576,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSpeakerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -594,8 +588,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain containing the speaker.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The identifier of the domain containing the speaker.</p>
@@ -604,8 +598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the speaker you want to delete.</p>
-        pub fn speaker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.speaker_id(inp);
+        pub fn speaker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.speaker_id(input.into());
             self
         }
         /// <p>The identifier of the speaker you want to delete.</p>
@@ -617,7 +611,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDomain`.
     ///
     /// <p>Describes the specified domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -662,10 +656,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -674,8 +668,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain you are describing.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The identifier of the domain you are describing.</p>
@@ -687,7 +681,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFraudster`.
     ///
     /// <p>Describes the specified fraudster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFraudster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -732,10 +726,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFraudsterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -744,8 +738,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain containing the fraudster.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The identifier of the domain containing the fraudster.</p>
@@ -754,8 +748,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the fraudster you are describing.</p>
-        pub fn fraudster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fraudster_id(inp);
+        pub fn fraudster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fraudster_id(input.into());
             self
         }
         /// <p>The identifier of the fraudster you are describing.</p>
@@ -767,7 +761,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFraudsterRegistrationJob`.
     ///
     /// <p>Describes the specified fraudster registration job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFraudsterRegistrationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -812,10 +806,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFraudsterRegistrationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -824,8 +818,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the domain containing the fraudster registration job.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The identifier for the domain containing the fraudster registration job.</p>
@@ -834,8 +828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the fraudster registration job you are describing.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The identifier for the fraudster registration job you are describing.</p>
@@ -847,7 +841,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSpeaker`.
     ///
     /// <p>Describes the specified speaker.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSpeaker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -892,10 +886,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSpeakerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -904,8 +898,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain that contains the speaker.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The identifier of the domain that contains the speaker.</p>
@@ -914,8 +908,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the speaker you are describing.</p>
-        pub fn speaker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.speaker_id(inp);
+        pub fn speaker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.speaker_id(input.into());
             self
         }
         /// <p>The identifier of the speaker you are describing.</p>
@@ -927,7 +921,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSpeakerEnrollmentJob`.
     ///
     /// <p>Describes the specified speaker enrollment job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSpeakerEnrollmentJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -972,10 +966,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSpeakerEnrollmentJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -984,8 +978,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain containing the speaker enrollment job.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The identifier of the domain containing the speaker enrollment job.</p>
@@ -994,8 +988,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the speaker enrollment job you are describing.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The identifier of the speaker enrollment job you are describing.</p>
@@ -1006,9 +1000,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EvaluateSession`.
     ///
-    /// <p>Evaluates a specified session based on audio data accumulated during a streaming Amazon Connect Voice
-    /// ID call.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Evaluates a specified session based on audio data accumulated during a streaming Amazon Connect Voice ID call.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EvaluateSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1053,10 +1046,10 @@ pub mod fluent_builders {
                 crate::input::EvaluateSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1065,8 +1058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain where the session started.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The identifier of the domain where the session started.</p>
@@ -1074,14 +1067,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_id(input);
             self
         }
-        /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID
-        /// integration, this is the Contact-Id.</p>
-        pub fn session_name_or_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_name_or_id(inp);
+        /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
+        pub fn session_name_or_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_name_or_id(input.into());
             self
         }
-        /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID
-        /// integration, this is the Contact-Id.</p>
+        /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
         pub fn set_session_name_or_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1092,9 +1083,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDomains`.
     ///
-    /// <p>Lists all the domains in the Amazon Web Services account.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all the domains in the Amazon Web Services account. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1139,10 +1129,10 @@ pub mod fluent_builders {
                 crate::input::ListDomainsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1150,32 +1140,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDomainsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDomainsPaginator<C, M, R> {
+            crate::paginator::ListDomainsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1183,11 +1169,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFraudsterRegistrationJobs`.
     ///
-    /// <p>Lists all the fraudster registration jobs in the domain with the given <code>JobStatus</code>.
-    /// If <code>JobStatus</code> is not provided, this lists all fraudster registration jobs in the given
-    /// domain.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all the fraudster registration jobs in the domain with the given <code>JobStatus</code>. If <code>JobStatus</code> is not provided, this lists all fraudster registration jobs in the given domain. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFraudsterRegistrationJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1232,10 +1215,10 @@ pub mod fluent_builders {
                 crate::input::ListFraudsterRegistrationJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1243,9 +1226,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFraudsterRegistrationJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListFraudsterRegistrationJobsPaginator<C, M, R> {
+            crate::paginator::ListFraudsterRegistrationJobsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the domain containing the fraudster registration Jobs.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The identifier of the domain containing the fraudster registration Jobs.</p>
@@ -1254,8 +1245,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides the status of your fraudster registration job.</p>
-        pub fn job_status(mut self, inp: crate::model::FraudsterRegistrationJobStatus) -> Self {
-            self.inner = self.inner.job_status(inp);
+        pub fn job_status(mut self, input: crate::model::FraudsterRegistrationJobStatus) -> Self {
+            self.inner = self.inner.job_status(input);
             self
         }
         /// <p>Provides the status of your fraudster registration job.</p>
@@ -1266,32 +1257,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_status(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1299,10 +1280,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSpeakerEnrollmentJobs`.
     ///
-    /// <p>Lists all the speaker enrollment jobs in the domain with the specified <code>JobStatus</code>. If
-    /// <code>JobStatus</code> is not provided, this lists all jobs with all possible speaker enrollment job
-    /// statuses.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all the speaker enrollment jobs in the domain with the specified <code>JobStatus</code>. If <code>JobStatus</code> is not provided, this lists all jobs with all possible speaker enrollment job statuses.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSpeakerEnrollmentJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1347,10 +1326,10 @@ pub mod fluent_builders {
                 crate::input::ListSpeakerEnrollmentJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1358,9 +1337,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSpeakerEnrollmentJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListSpeakerEnrollmentJobsPaginator<C, M, R> {
+            crate::paginator::ListSpeakerEnrollmentJobsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the domain containing the speaker enrollment jobs.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The identifier of the domain containing the speaker enrollment jobs.</p>
@@ -1369,8 +1356,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides the status of your speaker enrollment Job.</p>
-        pub fn job_status(mut self, inp: crate::model::SpeakerEnrollmentJobStatus) -> Self {
-            self.inner = self.inner.job_status(inp);
+        pub fn job_status(mut self, input: crate::model::SpeakerEnrollmentJobStatus) -> Self {
+            self.inner = self.inner.job_status(input);
             self
         }
         /// <p>Provides the status of your speaker enrollment Job.</p>
@@ -1381,32 +1368,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_status(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1415,7 +1392,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSpeakers`.
     ///
     /// <p>Lists all speakers in a specified domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSpeakers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1460,10 +1437,10 @@ pub mod fluent_builders {
                 crate::input::ListSpeakersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1471,9 +1448,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSpeakersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSpeakersPaginator<C, M, R> {
+            crate::paginator::ListSpeakersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The identifier of the domain.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The identifier of the domain.</p>
@@ -1481,32 +1464,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_id(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1515,7 +1488,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags associated with a specified Voice ID resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1560,10 +1533,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1572,8 +1545,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Voice ID resource for which you want to list the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Voice ID resource for which you want to list the tags.</p>
@@ -1584,12 +1557,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `OptOutSpeaker`.
     ///
-    /// <p>Opts out a speaker from Voice ID system. A speaker can be opted out regardless of whether or not they
-    /// already exist in the system. If they don't yet exist, a new speaker is created in an opted out state.
-    /// If they already exist, their existing status is overridden and they are opted out. Enrollment and
-    /// evaluation authentication requests are rejected for opted out speakers, and opted out speakers have
-    /// no voice embeddings stored in the system.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Opts out a speaker from Voice ID system. A speaker can be opted out regardless of whether or not they already exist in the system. If they don't yet exist, a new speaker is created in an opted out state. If they already exist, their existing status is overridden and they are opted out. Enrollment and evaluation authentication requests are rejected for opted out speakers, and opted out speakers have no voice embeddings stored in the system.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct OptOutSpeaker<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1634,10 +1603,10 @@ pub mod fluent_builders {
                 crate::input::OptOutSpeakerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1646,8 +1615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain containing the speaker.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The identifier of the domain containing the speaker.</p>
@@ -1656,8 +1625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the speaker you want opted-out.</p>
-        pub fn speaker_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.speaker_id(inp);
+        pub fn speaker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.speaker_id(input.into());
             self
         }
         /// <p>The identifier of the speaker you want opted-out.</p>
@@ -1669,7 +1638,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartFraudsterRegistrationJob`.
     ///
     /// <p>Starts a new batch fraudster registration job using provided details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFraudsterRegistrationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1714,10 +1683,10 @@ pub mod fluent_builders {
                 crate::input::StartFraudsterRegistrationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1725,21 +1694,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services
-        /// SDK populates this field.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services SDK populates this field.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services
-        /// SDK populates this field.</p>
+        /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services SDK populates this field.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>The name of the new fraudster registration job.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the new fraudster registration job.</p>
@@ -1747,30 +1714,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are
-        /// registered.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are registered.</p>
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
-        /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are
-        /// registered.</p>
+        /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are registered.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_id(input);
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-        /// to read the input manifest file and write the Job output file. Refer to the
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and
-        /// edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
-        pub fn data_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(inp);
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-        /// to read the input manifest file and write the Job output file. Refer to the
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and
-        /// edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1778,14 +1737,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_access_role_arn(input);
             self
         }
-        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is
-        /// detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
-        pub fn registration_config(mut self, inp: crate::model::RegistrationConfig) -> Self {
-            self.inner = self.inner.registration_config(inp);
+        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+        pub fn registration_config(mut self, input: crate::model::RegistrationConfig) -> Self {
+            self.inner = self.inner.registration_config(input);
             self
         }
-        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is
-        /// detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
         pub fn set_registration_config(
             mut self,
             input: std::option::Option<crate::model::RegistrationConfig>,
@@ -1793,14 +1750,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_registration_config(input);
             self
         }
-        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
-        /// of fraudster registration requests.</p>
-        pub fn input_data_config(mut self, inp: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(inp);
+        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
+        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
+            self.inner = self.inner.input_data_config(input);
             self
         }
-        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
-        /// of fraudster registration requests.</p>
+        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -1808,14 +1763,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
-        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-        /// also include a KMS Key ID to encrypt the file.</p>
-        pub fn output_data_config(mut self, inp: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(inp);
+        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
+        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(input);
             self
         }
-        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-        /// also include a KMS Key ID to encrypt the file.</p>
+        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -1827,7 +1780,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartSpeakerEnrollmentJob`.
     ///
     /// <p>Starts a new batch speaker enrollment job using specified details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSpeakerEnrollmentJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1872,10 +1825,10 @@ pub mod fluent_builders {
                 crate::input::StartSpeakerEnrollmentJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1883,21 +1836,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services
-        /// SDK populates this field.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services SDK populates this field.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services
-        /// SDK populates this field.</p>
+        /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services SDK populates this field.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>A name for your speaker enrollment job.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>A name for your speaker enrollment job.</p>
@@ -1905,30 +1856,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are
-        /// enrolled.
-        /// </p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
-        /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are
-        /// enrolled.
-        /// </p>
+        /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_id(input);
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-        /// to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior
-        /// calls</a> documentation for the permissions needed in this role.</p>
-        pub fn data_access_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(inp);
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-        /// to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior
-        /// calls</a> documentation for the permissions needed in this role.</p>
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1936,14 +1879,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_access_role_arn(input);
             self
         }
-        /// <p>The enrollment config that contains details such as the action to take when a speaker is already
-        /// enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
-        pub fn enrollment_config(mut self, inp: crate::model::EnrollmentConfig) -> Self {
-            self.inner = self.inner.enrollment_config(inp);
+        /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
+        pub fn enrollment_config(mut self, input: crate::model::EnrollmentConfig) -> Self {
+            self.inner = self.inner.enrollment_config(input);
             self
         }
-        /// <p>The enrollment config that contains details such as the action to take when a speaker is already
-        /// enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
+        /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
         pub fn set_enrollment_config(
             mut self,
             input: std::option::Option<crate::model::EnrollmentConfig>,
@@ -1951,14 +1892,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enrollment_config(input);
             self
         }
-        /// <p>The input data config containing the S3 location for the input manifest file that contains the list of
-        /// speaker enrollment requests.</p>
-        pub fn input_data_config(mut self, inp: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(inp);
+        /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
+        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
+            self.inner = self.inner.input_data_config(input);
             self
         }
-        /// <p>The input data config containing the S3 location for the input manifest file that contains the list of
-        /// speaker enrollment requests.</p>
+        /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -1966,14 +1905,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
-        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-        /// also include a KMS Key ID to encrypt the file.</p>
-        pub fn output_data_config(mut self, inp: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(inp);
+        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
+        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(input);
             self
         }
-        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-        /// also include a KMS Key ID to encrypt the file.</p>
+        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -1985,7 +1922,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Tags an Amazon Connect Voice ID resource with the provided list of tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2030,10 +1967,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2042,8 +1979,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to tag.</p>
@@ -2056,8 +1993,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags to assign to the specified resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The list of tags to assign to the specified resource.</p>
@@ -2072,7 +2009,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes specified tags from a specified Amazon Connect Voice ID resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2117,10 +2054,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2129,8 +2066,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to remove tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Voice ID resource you want to remove tags from.</p>
@@ -2143,8 +2080,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys you want to remove from the specified resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys you want to remove from the specified resource.</p>
@@ -2158,9 +2095,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDomain`.
     ///
-    /// <p>Updates the specified domain. This API has clobber behavior, and clears and replaces all attributes.
-    /// If an optional field, such as 'Description' is not provided, it is removed from the domain.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the specified domain. This API has clobber behavior, and clears and replaces all attributes. If an optional field, such as 'Description' is not provided, it is removed from the domain.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2205,10 +2141,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2217,8 +2153,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the domain to be updated.</p>
-        pub fn domain_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(inp);
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The identifier of the domain to be updated.</p>
@@ -2227,8 +2163,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the domain.</p>
@@ -2237,8 +2173,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description about this domain.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A brief description about this domain.</p>
@@ -2246,19 +2182,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
-        /// encryption of your data. Note that all the existing data in the domain are still encrypted using the
-        /// existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
         pub fn server_side_encryption_configuration(
             mut self,
-            inp: crate::model::ServerSideEncryptionConfiguration,
+            input: crate::model::ServerSideEncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.server_side_encryption_configuration(inp);
+            self.inner = self.inner.server_side_encryption_configuration(input);
             self
         }
-        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
-        /// encryption of your data. Note that all the existing data in the domain are still encrypted using the
-        /// existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -2268,6 +2200,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

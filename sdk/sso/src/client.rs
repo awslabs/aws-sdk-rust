@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Single Sign-On
@@ -94,6 +94,7 @@ where
     ///
     /// See [`ListAccountRoles`](crate::client::fluent_builders::ListAccountRoles) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccountRoles::into_paginator).
     pub fn list_account_roles(&self) -> fluent_builders::ListAccountRoles<C, M, R> {
         fluent_builders::ListAccountRoles::new(self.handle.clone())
     }
@@ -101,6 +102,7 @@ where
     ///
     /// See [`ListAccounts`](crate::client::fluent_builders::ListAccounts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccounts::into_paginator).
     pub fn list_accounts(&self) -> fluent_builders::ListAccounts<C, M, R> {
         fluent_builders::ListAccounts::new(self.handle.clone())
     }
@@ -122,9 +124,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `GetRoleCredentials`.
     ///
-    /// <p>Returns the STS short-term credentials for a given role name that is assigned to the
-    /// user.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the STS short-term credentials for a given role name that is assigned to the user.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoleCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -169,10 +170,10 @@ pub mod fluent_builders {
                 crate::input::GetRoleCredentialsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -181,8 +182,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The friendly name of the role that is assigned to the user.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(inp);
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The friendly name of the role that is assigned to the user.</p>
@@ -191,8 +192,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the AWS account that is assigned to the user.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The identifier for the AWS account that is assigned to the user.</p>
@@ -200,14 +201,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_account_id(input);
             self
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
-        pub fn access_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(inp);
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_token(input);
             self
@@ -216,7 +215,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAccountRoles`.
     ///
     /// <p>Lists all roles that are assigned to the user for a given AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccountRoles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -261,10 +260,10 @@ pub mod fluent_builders {
                 crate::input::ListAccountRolesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -272,9 +271,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccountRolesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAccountRolesPaginator<C, M, R> {
+            crate::paginator::ListAccountRolesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The page token from the previous response output when you request subsequent pages.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The page token from the previous response output when you request subsequent pages.</p>
@@ -283,8 +288,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items that clients can request per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items that clients can request per page.</p>
@@ -292,21 +297,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
-        pub fn access_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(inp);
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_token(input);
             self
         }
         /// <p>The identifier for the AWS account that is assigned to the user.</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The identifier for the AWS account that is assigned to the user.</p>
@@ -317,10 +320,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccounts`.
     ///
-    /// <p>Lists all AWS accounts assigned to the user. These AWS accounts are assigned by the
-    /// administrator of the account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html#assignusers">Assign User Access</a> in the <i>AWS SSO User Guide</i>. This operation
-    /// returns a paginated response.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists all AWS accounts assigned to the user. These AWS accounts are assigned by the administrator of the account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html#assignusers">Assign User Access</a> in the <i>AWS SSO User Guide</i>. This operation returns a paginated response.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccounts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -365,10 +366,10 @@ pub mod fluent_builders {
                 crate::input::ListAccountsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -376,9 +377,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAccountsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAccountsPaginator<C, M, R> {
+            crate::paginator::ListAccountsPaginator::new(self.handle, self.inner)
+        }
         /// <p>(Optional) When requesting subsequent pages, this is the page token from the previous response output.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>(Optional) When requesting subsequent pages, this is the page token from the previous response output.</p>
@@ -387,8 +394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This is the number of items clients can request per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>This is the number of items clients can request per page.</p>
@@ -396,14 +403,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
-        pub fn access_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(inp);
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_token(input);
             self
@@ -412,7 +417,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `Logout`.
     ///
     /// <p>Removes the client- and server-side session that is associated with the user.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Logout<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -457,10 +462,10 @@ pub mod fluent_builders {
                 crate::input::LogoutInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -468,20 +473,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
-        pub fn access_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(inp);
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
-        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
-        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_token(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -14,19 +14,15 @@ pub struct AddCustomAttributesError {
 pub enum AddCustomAttributesErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when you are trying to modify a user pool while a user import
-    /// job is in progress for that pool.</p>
+    /// <p>This exception is thrown when you are trying to modify a user pool while a user import job is in progress for that pool.</p>
     UserImportInProgressException(crate::error::UserImportInProgressException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -74,8 +70,6 @@ impl AddCustomAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -168,16 +162,13 @@ pub struct AdminAddUserToGroupError {
 pub enum AdminAddUserToGroupErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -227,8 +218,6 @@ impl AdminAddUserToGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -323,28 +312,21 @@ pub enum AdminConfirmSignUpErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many failed attempts for a given
-    /// action (e.g., sign in).</p>
+    /// <p>This exception is thrown when the user has made too many failed attempts for a given action (e.g., sign in).</p>
     TooManyFailedAttemptsException(crate::error::TooManyFailedAttemptsException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -399,8 +381,6 @@ impl AdminConfirmSignUpError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -531,25 +511,19 @@ pub struct AdminCreateUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AdminCreateUserErrorKind {
-    /// <p>This exception is thrown when a verification code fails to deliver
-    /// successfully.</p>
+    /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// password.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid password.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
@@ -557,22 +531,17 @@ pub enum AdminCreateUserErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a precondition is not met.</p>
     PreconditionNotMetException(crate::error::PreconditionNotMetException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
     /// <p>The request failed because the user is in an unsupported state.</p>
     UnsupportedUserStateException(crate::error::UnsupportedUserStateException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
-    /// <p>This exception is thrown when Amazon Cognito encounters a user name that already
-    /// exists in the user pool.</p>
+    /// <p>This exception is thrown when Amazon Cognito encounters a user name that already exists in the user pool.</p>
     UsernameExistsException(crate::error::UsernameExistsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -634,8 +603,6 @@ impl AdminCreateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -810,16 +777,13 @@ pub struct AdminDeleteUserError {
 pub enum AdminDeleteUserErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -869,8 +833,6 @@ impl AdminDeleteUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -963,16 +925,13 @@ pub struct AdminDeleteUserAttributesError {
 pub enum AdminDeleteUserAttributesErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -1022,8 +981,6 @@ impl AdminDeleteUserAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1114,22 +1071,17 @@ pub struct AdminDisableProviderForUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AdminDisableProviderForUserErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or
-    /// phone number that has already been supplied as an alias from a different account. This
-    /// exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -1184,8 +1136,6 @@ impl AdminDisableProviderForUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1286,16 +1236,13 @@ pub struct AdminDisableUserError {
 pub enum AdminDisableUserErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -1345,8 +1292,6 @@ impl AdminDisableUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1439,16 +1384,13 @@ pub struct AdminEnableUserError {
 pub enum AdminEnableUserErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -1498,8 +1440,6 @@ impl AdminEnableUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1592,18 +1532,15 @@ pub struct AdminForgetDeviceError {
 pub enum AdminForgetDeviceErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when the user pool configuration is invalid.</p>
     InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -1656,8 +1593,6 @@ impl AdminForgetDeviceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1760,18 +1695,15 @@ pub struct AdminGetDeviceError {
 pub enum AdminGetDeviceErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when the user pool configuration is invalid.</p>
     InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1819,8 +1751,6 @@ impl AdminGetDeviceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1913,16 +1843,13 @@ pub struct AdminGetUserError {
 pub enum AdminGetUserErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -1972,8 +1899,6 @@ impl AdminGetUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2059,38 +1984,29 @@ pub enum AdminInitiateAuthErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
     /// <p>This exception is thrown when the user pool configuration is invalid.</p>
     InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
-    /// <p>This exception is thrown when Amazon Cognito cannot find a multi-factor authentication
-    /// (MFA) method.</p>
+    /// <p>This exception is thrown when Amazon Cognito cannot find a multi-factor authentication (MFA) method.</p>
     MfaMethodNotFoundException(crate::error::MfaMethodNotFoundException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -2157,8 +2073,6 @@ impl AdminInitiateAuthError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2325,25 +2239,19 @@ pub struct AdminLinkProviderForUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AdminLinkProviderForUserErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or
-    /// phone number that has already been supplied as an alias from a different account. This
-    /// exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -2395,8 +2303,6 @@ impl AdminLinkProviderForUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2505,18 +2411,15 @@ pub struct AdminListDevicesError {
 pub enum AdminListDevicesErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when the user pool configuration is invalid.</p>
     InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2566,8 +2469,6 @@ impl AdminListDevicesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2662,16 +2563,13 @@ pub struct AdminListGroupsForUserError {
 pub enum AdminListGroupsForUserErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -2721,8 +2619,6 @@ impl AdminListGroupsForUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2815,16 +2711,13 @@ pub struct AdminListUserAuthEventsError {
 pub enum AdminListUserAuthEventsErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -2879,8 +2772,6 @@ impl AdminListUserAuthEventsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2983,16 +2874,13 @@ pub struct AdminRemoveUserFromGroupError {
 pub enum AdminRemoveUserFromGroupErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -3042,8 +2930,6 @@ impl AdminRemoveUserFromGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3136,39 +3022,29 @@ pub struct AdminResetUserPasswordError {
 pub enum AdminResetUserPasswordErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email
-    /// identity. HTTP status code: 400.</p>
+    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code: 400.</p>
     InvalidEmailRoleAccessPolicyException(crate::error::InvalidEmailRoleAccessPolicyException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -3233,8 +3109,6 @@ impl AdminResetUserPasswordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3387,12 +3261,9 @@ pub struct AdminRespondToAuthChallengeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AdminRespondToAuthChallengeErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or
-    /// phone number that has already been supplied as an alias from a different account. This
-    /// exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
     AliasExistsException(crate::error::AliasExistsException),
-    /// <p>This exception is thrown if the provided code does not match what the server was
-    /// expecting.</p>
+    /// <p>This exception is thrown if the provided code does not match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
     /// <p>This exception is thrown if a code has expired.</p>
     ExpiredCodeException(crate::error::ExpiredCodeException),
@@ -3400,44 +3271,33 @@ pub enum AdminRespondToAuthChallengeErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// password.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid password.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
     /// <p>This exception is thrown when the user pool configuration is invalid.</p>
     InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
-    /// <p>This exception is thrown when Amazon Cognito cannot find a multi-factor authentication
-    /// (MFA) method.</p>
+    /// <p>This exception is thrown when Amazon Cognito cannot find a multi-factor authentication (MFA) method.</p>
     MfaMethodNotFoundException(crate::error::MfaMethodNotFoundException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the software token TOTP multi-factor authentication
-    /// (MFA) is not enabled for the user pool.</p>
+    /// <p>This exception is thrown when the software token TOTP multi-factor authentication (MFA) is not enabled for the user pool.</p>
     SoftwareTokenMfaNotFoundException(crate::error::SoftwareTokenMfaNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -3527,8 +3387,6 @@ impl AdminRespondToAuthChallengeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3749,15 +3607,13 @@ pub struct AdminSetUserMFAPreferenceError {
 pub enum AdminSetUserMFAPreferenceErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -3812,8 +3668,6 @@ impl AdminSetUserMFAPreferenceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3916,19 +3770,15 @@ pub struct AdminSetUserPasswordError {
 pub enum AdminSetUserPasswordErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// password.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid password.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -3979,8 +3829,6 @@ impl AdminSetUserPasswordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4081,13 +3929,11 @@ pub struct AdminSetUserSettingsError {
 pub enum AdminSetUserSettingsErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -4136,8 +3982,6 @@ impl AdminSetUserSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4222,16 +4066,13 @@ pub struct AdminUpdateAuthEventFeedbackError {
 pub enum AdminUpdateAuthEventFeedbackErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -4292,8 +4133,6 @@ impl AdminUpdateAuthEventFeedbackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4400,18 +4239,15 @@ pub struct AdminUpdateDeviceStatusError {
 pub enum AdminUpdateDeviceStatusErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when the user pool configuration is invalid.</p>
     InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -4464,8 +4300,6 @@ impl AdminUpdateDeviceStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4566,42 +4400,31 @@ pub struct AdminUpdateUserAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AdminUpdateUserAttributesErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or
-    /// phone number that has already been supplied as an alias from a different account. This
-    /// exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
     AliasExistsException(crate::error::AliasExistsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email
-    /// identity. HTTP status code: 400.</p>
+    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code: 400.</p>
     InvalidEmailRoleAccessPolicyException(crate::error::InvalidEmailRoleAccessPolicyException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -4668,8 +4491,6 @@ impl AdminUpdateUserAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4828,16 +4649,13 @@ pub struct AdminUserGlobalSignOutError {
 pub enum AdminUserGlobalSignOutErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -4887,8 +4705,6 @@ impl AdminUserGlobalSignOutError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4979,21 +4795,17 @@ pub struct AssociateSoftwareTokenError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateSoftwareTokenErrorKind {
-    /// <p>This exception is thrown if two or more modifications are happening
-    /// concurrently.</p>
+    /// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the software token TOTP multi-factor authentication
-    /// (MFA) is not enabled for the user pool.</p>
+    /// <p>This exception is thrown when the software token TOTP multi-factor authentication (MFA) is not enabled for the user pool.</p>
     SoftwareTokenMfaNotFoundException(crate::error::SoftwareTokenMfaNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5045,8 +4857,6 @@ impl AssociateSoftwareTokenError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5143,24 +4953,19 @@ pub struct ChangePasswordError {
 pub enum ChangePasswordErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// password.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid password.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -5216,8 +5021,6 @@ impl ChangePasswordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5344,11 +5147,9 @@ pub enum ConfirmDeviceErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// password.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid password.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
     /// <p>This exception is thrown when the user pool configuration is invalid.</p>
     InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
@@ -5356,14 +5157,11 @@ pub enum ConfirmDeviceErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when Amazon Cognito encounters a user name that already
-    /// exists in the user pool.</p>
+    /// <p>This exception is thrown when Amazon Cognito encounters a user name that already exists in the user pool.</p>
     UsernameExistsException(crate::error::UsernameExistsException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -5421,8 +5219,6 @@ impl ConfirmDeviceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5558,8 +5354,7 @@ pub struct ConfirmForgotPasswordError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConfirmForgotPasswordErrorKind {
-    /// <p>This exception is thrown if the provided code does not match what the server was
-    /// expecting.</p>
+    /// <p>This exception is thrown if the provided code does not match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
     /// <p>This exception is thrown if a code has expired.</p>
     ExpiredCodeException(crate::error::ExpiredCodeException),
@@ -5567,31 +5362,23 @@ pub enum ConfirmForgotPasswordErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// password.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid password.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many failed attempts for a given
-    /// action (e.g., sign in).</p>
+    /// <p>This exception is thrown when the user has made too many failed attempts for a given action (e.g., sign in).</p>
     TooManyFailedAttemptsException(crate::error::TooManyFailedAttemptsException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -5652,8 +5439,6 @@ impl ConfirmForgotPasswordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5816,12 +5601,9 @@ pub struct ConfirmSignUpError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConfirmSignUpErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or
-    /// phone number that has already been supplied as an alias from a different account. This
-    /// exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
     AliasExistsException(crate::error::AliasExistsException),
-    /// <p>This exception is thrown if the provided code does not match what the server was
-    /// expecting.</p>
+    /// <p>This exception is thrown if the provided code does not match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
     /// <p>This exception is thrown if a code has expired.</p>
     ExpiredCodeException(crate::error::ExpiredCodeException),
@@ -5829,28 +5611,21 @@ pub enum ConfirmSignUpErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many failed attempts for a given
-    /// action (e.g., sign in).</p>
+    /// <p>This exception is thrown when the user has made too many failed attempts for a given action (e.g., sign in).</p>
     TooManyFailedAttemptsException(crate::error::TooManyFailedAttemptsException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -5908,8 +5683,6 @@ impl ConfirmSignUpError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6052,24 +5825,19 @@ pub struct CreateGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGroupErrorKind {
-    /// <p>This exception is thrown when Amazon Cognito encounters a group that already exists in
-    /// the user pool.</p>
+    /// <p>This exception is thrown when Amazon Cognito encounters a group that already exists in the user pool.</p>
     GroupExistsException(crate::error::GroupExistsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6118,8 +5886,6 @@ impl CreateGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6206,24 +5972,19 @@ pub struct CreateIdentityProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateIdentityProviderErrorKind {
-    /// <p>This exception is thrown when the provider is already supported by the user
-    /// pool.</p>
+    /// <p>This exception is thrown when the provider is already supported by the user pool.</p>
     DuplicateProviderException(crate::error::DuplicateProviderException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6272,8 +6033,6 @@ impl CreateIdentityProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6374,19 +6133,15 @@ pub struct CreateResourceServerError {
 pub enum CreateResourceServerErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6434,8 +6189,6 @@ impl CreateResourceServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6528,21 +6281,17 @@ pub struct CreateUserImportJobError {
 pub enum CreateUserImportJobErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a precondition is not met.</p>
     PreconditionNotMetException(crate::error::PreconditionNotMetException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6591,8 +6340,6 @@ impl CreateUserImportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6693,28 +6440,21 @@ pub struct CreateUserPoolError {
 pub enum CreateUserPoolErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email
-    /// identity. HTTP status code: 400.</p>
+    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code: 400.</p>
     InvalidEmailRoleAccessPolicyException(crate::error::InvalidEmailRoleAccessPolicyException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user pool tag cannot be set or updated.</p>
     UserPoolTaggingException(crate::error::UserPoolTaggingException),
@@ -6769,8 +6509,6 @@ impl CreateUserPoolError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6891,21 +6629,17 @@ pub enum CreateUserPoolClientErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the specified OAuth flow is invalid.</p>
     InvalidOAuthFlowException(crate::error::InvalidOAuthFlowException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This exception is thrown when the specified scope does not exist.</p>
     ScopeDoesNotExistException(crate::error::ScopeDoesNotExistException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6955,8 +6689,6 @@ impl CreateUserPoolClientError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7065,16 +6797,13 @@ pub struct CreateUserPoolDomainError {
 pub enum CreateUserPoolDomainErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7121,8 +6850,6 @@ impl CreateUserPoolDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7207,16 +6934,13 @@ pub struct DeleteGroupError {
 pub enum DeleteGroupErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7263,8 +6987,6 @@ impl DeleteGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7343,16 +7065,13 @@ pub struct DeleteIdentityProviderError {
 pub enum DeleteIdentityProviderErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when the specified identifier is not supported.</p>
     UnsupportedIdentityProviderException(crate::error::UnsupportedIdentityProviderException),
@@ -7404,8 +7123,6 @@ impl DeleteIdentityProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7500,16 +7217,13 @@ pub struct DeleteResourceServerError {
 pub enum DeleteResourceServerErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7556,8 +7270,6 @@ impl DeleteResourceServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7642,18 +7354,15 @@ pub struct DeleteUserError {
 pub enum DeleteUserErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -7707,8 +7416,6 @@ impl DeleteUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7805,18 +7512,15 @@ pub struct DeleteUserAttributesError {
 pub enum DeleteUserAttributesErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -7870,8 +7574,6 @@ impl DeleteUserAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7980,19 +7682,15 @@ pub struct DeleteUserPoolError {
 pub enum DeleteUserPoolErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when you are trying to modify a user pool while a user import
-    /// job is in progress for that pool.</p>
+    /// <p>This exception is thrown when you are trying to modify a user pool while a user import job is in progress for that pool.</p>
     UserImportInProgressException(crate::error::UserImportInProgressException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8040,8 +7738,6 @@ impl DeleteUserPoolError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8134,16 +7830,13 @@ pub struct DeleteUserPoolClientError {
 pub enum DeleteUserPoolClientErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8190,8 +7883,6 @@ impl DeleteUserPoolClientError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8276,13 +7967,11 @@ pub struct DeleteUserPoolDomainError {
 pub enum DeleteUserPoolDomainErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8328,8 +8017,6 @@ impl DeleteUserPoolDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8406,16 +8093,13 @@ pub struct DescribeIdentityProviderError {
 pub enum DescribeIdentityProviderErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8462,8 +8146,6 @@ impl DescribeIdentityProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8548,16 +8230,13 @@ pub struct DescribeResourceServerError {
 pub enum DescribeResourceServerErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8604,8 +8283,6 @@ impl DescribeResourceServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8690,16 +8367,13 @@ pub struct DescribeRiskConfigurationError {
 pub enum DescribeRiskConfigurationErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when user pool add-ons are not enabled.</p>
     UserPoolAddOnNotEnabledException(crate::error::UserPoolAddOnNotEnabledException),
@@ -8751,8 +8425,6 @@ impl DescribeRiskConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8847,16 +8519,13 @@ pub struct DescribeUserImportJobError {
 pub enum DescribeUserImportJobErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8903,8 +8572,6 @@ impl DescribeUserImportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8989,16 +8656,13 @@ pub struct DescribeUserPoolError {
 pub enum DescribeUserPoolErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user pool tag cannot be set or updated.</p>
     UserPoolTaggingException(crate::error::UserPoolTaggingException),
@@ -9048,8 +8712,6 @@ impl DescribeUserPoolError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9142,16 +8804,13 @@ pub struct DescribeUserPoolClientError {
 pub enum DescribeUserPoolClientErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9198,8 +8857,6 @@ impl DescribeUserPoolClientError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9284,13 +8941,11 @@ pub struct DescribeUserPoolDomainError {
 pub enum DescribeUserPoolDomainErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9336,8 +8991,6 @@ impl DescribeUserPoolDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9414,8 +9067,7 @@ pub struct ForgetDeviceError {
 pub enum ForgetDeviceErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when the user pool configuration is invalid.</p>
     InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
@@ -9423,11 +9075,9 @@ pub enum ForgetDeviceErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -9482,8 +9132,6 @@ impl ForgetDeviceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9589,44 +9237,33 @@ pub struct ForgotPasswordError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ForgotPasswordErrorKind {
-    /// <p>This exception is thrown when a verification code fails to deliver
-    /// successfully.</p>
+    /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email
-    /// identity. HTTP status code: 400.</p>
+    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code: 400.</p>
     InvalidEmailRoleAccessPolicyException(crate::error::InvalidEmailRoleAccessPolicyException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -9689,8 +9326,6 @@ impl ForgotPasswordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9857,16 +9492,13 @@ pub struct GetCSVHeaderError {
 pub enum GetCSVHeaderErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9913,8 +9545,6 @@ impl GetCSVHeaderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9993,8 +9623,7 @@ pub struct GetDeviceError {
 pub enum GetDeviceErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when the user pool configuration is invalid.</p>
     InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
@@ -10002,11 +9631,9 @@ pub enum GetDeviceErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -10061,8 +9688,6 @@ impl GetDeviceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10158,16 +9783,13 @@ pub struct GetGroupError {
 pub enum GetGroupErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10214,8 +9836,6 @@ impl GetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10285,16 +9905,13 @@ pub struct GetIdentityProviderByIdentifierError {
 pub enum GetIdentityProviderByIdentifierErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10354,8 +9971,6 @@ impl GetIdentityProviderByIdentifierError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10450,11 +10065,9 @@ pub struct GetSigningCertificateError {
 pub enum GetSigningCertificateErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10499,8 +10112,6 @@ impl GetSigningCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10569,16 +10180,13 @@ pub struct GetUICustomizationError {
 pub enum GetUICustomizationErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10625,8 +10233,6 @@ impl GetUICustomizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10711,18 +10317,15 @@ pub struct GetUserError {
 pub enum GetUserErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -10776,8 +10379,6 @@ impl GetUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10863,46 +10464,35 @@ pub struct GetUserAttributeVerificationCodeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetUserAttributeVerificationCodeErrorKind {
-    /// <p>This exception is thrown when a verification code fails to deliver
-    /// successfully.</p>
+    /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email
-    /// identity. HTTP status code: 400.</p>
+    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code: 400.</p>
     InvalidEmailRoleAccessPolicyException(crate::error::InvalidEmailRoleAccessPolicyException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -10999,8 +10589,6 @@ impl GetUserAttributeVerificationCodeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11205,16 +10793,13 @@ pub struct GetUserPoolMfaConfigError {
 pub enum GetUserPoolMfaConfigErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11261,8 +10846,6 @@ impl GetUserPoolMfaConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11347,18 +10930,15 @@ pub struct GlobalSignOutError {
 pub enum GlobalSignOutErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -11409,8 +10989,6 @@ impl GlobalSignOutError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11513,15 +11091,11 @@ pub enum InitiateAuthErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
@@ -11531,17 +11105,13 @@ pub enum InitiateAuthErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -11603,8 +11173,6 @@ impl InitiateAuthError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11752,8 +11320,7 @@ pub struct ListDevicesError {
 pub enum ListDevicesErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when the user pool configuration is invalid.</p>
     InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
@@ -11761,11 +11328,9 @@ pub enum ListDevicesErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -11820,8 +11385,6 @@ impl ListDevicesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11929,16 +11492,13 @@ pub struct ListGroupsError {
 pub enum ListGroupsErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11985,8 +11545,6 @@ impl ListGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12062,16 +11620,13 @@ pub struct ListIdentityProvidersError {
 pub enum ListIdentityProvidersErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12118,8 +11673,6 @@ impl ListIdentityProvidersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12204,16 +11757,13 @@ pub struct ListResourceServersError {
 pub enum ListResourceServersErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12260,8 +11810,6 @@ impl ListResourceServersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12346,16 +11894,13 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12402,8 +11947,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12488,16 +12031,13 @@ pub struct ListUserImportJobsError {
 pub enum ListUserImportJobsErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12544,8 +12084,6 @@ impl ListUserImportJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12630,16 +12168,13 @@ pub struct ListUserPoolClientsError {
 pub enum ListUserPoolClientsErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12686,8 +12221,6 @@ impl ListUserPoolClientsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12772,13 +12305,11 @@ pub struct ListUserPoolsError {
 pub enum ListUserPoolsErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12824,8 +12355,6 @@ impl ListUserPoolsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12902,16 +12431,13 @@ pub struct ListUsersError {
 pub enum ListUsersErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12958,8 +12484,6 @@ impl ListUsersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13029,16 +12553,13 @@ pub struct ListUsersInGroupError {
 pub enum ListUsersInGroupErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13085,8 +12606,6 @@ impl ListUsersInGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13169,44 +12688,33 @@ pub struct ResendConfirmationCodeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResendConfirmationCodeErrorKind {
-    /// <p>This exception is thrown when a verification code fails to deliver
-    /// successfully.</p>
+    /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email
-    /// identity. HTTP status code: 400.</p>
+    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code: 400.</p>
     InvalidEmailRoleAccessPolicyException(crate::error::InvalidEmailRoleAccessPolicyException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -13272,8 +12780,6 @@ impl ResendConfirmationCodeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13434,12 +12940,9 @@ pub struct RespondToAuthChallengeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RespondToAuthChallengeErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or
-    /// phone number that has already been supplied as an alias from a different account. This
-    /// exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
     AliasExistsException(crate::error::AliasExistsException),
-    /// <p>This exception is thrown if the provided code does not match what the server was
-    /// expecting.</p>
+    /// <p>This exception is thrown if the provided code does not match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
     /// <p>This exception is thrown if a code has expired.</p>
     ExpiredCodeException(crate::error::ExpiredCodeException),
@@ -13447,44 +12950,33 @@ pub enum RespondToAuthChallengeErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// password.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid password.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
     /// <p>This exception is thrown when the user pool configuration is invalid.</p>
     InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
-    /// <p>This exception is thrown when Amazon Cognito cannot find a multi-factor authentication
-    /// (MFA) method.</p>
+    /// <p>This exception is thrown when Amazon Cognito cannot find a multi-factor authentication (MFA) method.</p>
     MfaMethodNotFoundException(crate::error::MfaMethodNotFoundException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the software token TOTP multi-factor authentication
-    /// (MFA) is not enabled for the user pool.</p>
+    /// <p>This exception is thrown when the software token TOTP multi-factor authentication (MFA) is not enabled for the user pool.</p>
     SoftwareTokenMfaNotFoundException(crate::error::SoftwareTokenMfaNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -13562,8 +13054,6 @@ impl RespondToAuthChallengeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13776,11 +13266,9 @@ pub struct RevokeTokenError {
 pub enum RevokeTokenErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when the request is not authorized. This can happen due to an invalid access token in the request.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -13834,8 +13322,6 @@ impl RevokeTokenError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13920,24 +13406,19 @@ pub struct SetRiskConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetRiskConfigurationErrorKind {
-    /// <p>This exception is thrown when a verification code fails to deliver
-    /// successfully.</p>
+    /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email
-    /// identity. HTTP status code: 400.</p>
+    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code: 400.</p>
     InvalidEmailRoleAccessPolicyException(crate::error::InvalidEmailRoleAccessPolicyException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when user pool add-ons are not enabled.</p>
     UserPoolAddOnNotEnabledException(crate::error::UserPoolAddOnNotEnabledException),
@@ -13993,8 +13474,6 @@ impl SetRiskConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14105,16 +13584,13 @@ pub struct SetUICustomizationError {
 pub enum SetUICustomizationErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14161,8 +13637,6 @@ impl SetUICustomizationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14247,15 +13721,13 @@ pub struct SetUserMFAPreferenceError {
 pub enum SetUserMFAPreferenceErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -14308,8 +13780,6 @@ impl SetUserMFAPreferenceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14410,25 +13880,19 @@ pub struct SetUserPoolMfaConfigError {
 pub enum SetUserPoolMfaConfigErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14481,8 +13945,6 @@ impl SetUserPoolMfaConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14587,15 +14049,13 @@ pub struct SetUserSettingsError {
 pub enum SetUserSettingsErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -14648,8 +14108,6 @@ impl SetUserSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14748,47 +14206,35 @@ pub struct SignUpError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SignUpErrorKind {
-    /// <p>This exception is thrown when a verification code fails to deliver
-    /// successfully.</p>
+    /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email
-    /// identity. HTTP status code: 400.</p>
+    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code: 400.</p>
     InvalidEmailRoleAccessPolicyException(crate::error::InvalidEmailRoleAccessPolicyException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// password.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid password.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
-    /// <p>This exception is thrown when Amazon Cognito encounters a user name that already
-    /// exists in the user pool.</p>
+    /// <p>This exception is thrown when Amazon Cognito encounters a user name that already exists in the user pool.</p>
     UsernameExistsException(crate::error::UsernameExistsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14844,8 +14290,6 @@ impl SignUpError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14975,18 +14419,15 @@ pub struct StartUserImportJobError {
 pub enum StartUserImportJobErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a precondition is not met.</p>
     PreconditionNotMetException(crate::error::PreconditionNotMetException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15034,8 +14475,6 @@ impl StartUserImportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15128,18 +14567,15 @@ pub struct StopUserImportJobError {
 pub enum StopUserImportJobErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a precondition is not met.</p>
     PreconditionNotMetException(crate::error::PreconditionNotMetException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15187,8 +14623,6 @@ impl StopUserImportJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15281,16 +14715,13 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15337,8 +14768,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15417,16 +14846,13 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15473,8 +14899,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15559,16 +14983,13 @@ pub struct UpdateAuthEventFeedbackError {
 pub enum UpdateAuthEventFeedbackErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not found.</p>
     UserNotFoundException(crate::error::UserNotFoundException),
@@ -15623,8 +15044,6 @@ impl UpdateAuthEventFeedbackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15727,8 +15146,7 @@ pub struct UpdateDeviceStatusError {
 pub enum UpdateDeviceStatusErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when the user pool configuration is invalid.</p>
     InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
@@ -15736,11 +15154,9 @@ pub enum UpdateDeviceStatusErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -15797,8 +15213,6 @@ impl UpdateDeviceStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15917,16 +15331,13 @@ pub struct UpdateGroupError {
 pub enum UpdateGroupErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15973,8 +15384,6 @@ impl UpdateGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16053,16 +15462,13 @@ pub struct UpdateIdentityProviderError {
 pub enum UpdateIdentityProviderErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when the specified identifier is not supported.</p>
     UnsupportedIdentityProviderException(crate::error::UnsupportedIdentityProviderException),
@@ -16114,8 +15520,6 @@ impl UpdateIdentityProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16210,16 +15614,13 @@ pub struct UpdateResourceServerError {
 pub enum UpdateResourceServerErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16266,8 +15667,6 @@ impl UpdateResourceServerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16350,34 +15749,25 @@ pub struct UpdateUserAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateUserAttributesErrorKind {
-    /// <p>This exception is thrown when a user tries to confirm the account with an email or
-    /// phone number that has already been supplied as an alias from a different account. This
-    /// exception tells user that an account with this email or phone already exists.</p>
+    /// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
     AliasExistsException(crate::error::AliasExistsException),
-    /// <p>This exception is thrown when a verification code fails to deliver
-    /// successfully.</p>
+    /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::error::CodeDeliveryFailureException),
-    /// <p>This exception is thrown if the provided code does not match what the server was
-    /// expecting.</p>
+    /// <p>This exception is thrown if the provided code does not match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
     /// <p>This exception is thrown if a code has expired.</p>
     ExpiredCodeException(crate::error::ExpiredCodeException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email
-    /// identity. HTTP status code: 400.</p>
+    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code: 400.</p>
     InvalidEmailRoleAccessPolicyException(crate::error::InvalidEmailRoleAccessPolicyException),
     /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid Lambda response.</p>
     InvalidLambdaResponseException(crate::error::InvalidLambdaResponseException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
@@ -16385,17 +15775,13 @@ pub enum UpdateUserAttributesErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
     UnexpectedLambdaException(crate::error::UnexpectedLambdaException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
     UserLambdaValidationException(crate::error::UserLambdaValidationException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -16465,8 +15851,6 @@ impl UpdateUserAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16659,36 +16043,27 @@ pub struct UpdateUserPoolError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateUserPoolErrorKind {
-    /// <p>This exception is thrown if two or more modifications are happening
-    /// concurrently.</p>
+    /// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email
-    /// identity. HTTP status code: 400.</p>
+    /// <p>This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code: 400.</p>
     InvalidEmailRoleAccessPolicyException(crate::error::InvalidEmailRoleAccessPolicyException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is returned when the role provided for SMS configuration does not have
-    /// permission to publish using Amazon SNS.</p>
+    /// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
     InvalidSmsRoleAccessPolicyException(crate::error::InvalidSmsRoleAccessPolicyException),
-    /// <p>This exception is thrown when the trust relationship is invalid for the role provided
-    /// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-    /// not match what is provided in the SMS configuration for the user pool.</p>
+    /// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
     InvalidSmsRoleTrustRelationshipException(
         crate::error::InvalidSmsRoleTrustRelationshipException,
     ),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>This exception is thrown when you are trying to modify a user pool while a user import
-    /// job is in progress for that pool.</p>
+    /// <p>This exception is thrown when you are trying to modify a user pool while a user import job is in progress for that pool.</p>
     UserImportInProgressException(crate::error::UserImportInProgressException),
     /// <p>This exception is thrown when a user pool tag cannot be set or updated.</p>
     UserPoolTaggingException(crate::error::UserPoolTaggingException),
@@ -16745,8 +16120,6 @@ impl UpdateUserPoolError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16879,25 +16252,21 @@ pub struct UpdateUserPoolClientError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateUserPoolClientErrorKind {
-    /// <p>This exception is thrown if two or more modifications are happening
-    /// concurrently.</p>
+    /// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>This exception is thrown when the specified OAuth flow is invalid.</p>
     InvalidOAuthFlowException(crate::error::InvalidOAuthFlowException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This exception is thrown when the specified scope does not exist.</p>
     ScopeDoesNotExistException(crate::error::ScopeDoesNotExistException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16947,8 +16316,6 @@ impl UpdateUserPoolClientError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17057,16 +16424,13 @@ pub struct UpdateUserPoolDomainError {
 pub enum UpdateUserPoolDomainErrorKind {
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17113,8 +16477,6 @@ impl UpdateUserPoolDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17197,16 +16559,13 @@ pub struct VerifySoftwareTokenError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum VerifySoftwareTokenErrorKind {
-    /// <p>This exception is thrown if the provided code does not match what the server was
-    /// expecting.</p>
+    /// <p>This exception is thrown if the provided code does not match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
-    /// <p>This exception is thrown when there is a code mismatch and the service fails to
-    /// configure the software token TOTP multi-factor authentication (MFA).</p>
+    /// <p>This exception is thrown when there is a code mismatch and the service fails to configure the software token TOTP multi-factor authentication (MFA).</p>
     EnableSoftwareTokenMfaException(crate::error::EnableSoftwareTokenMfaException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>This exception is thrown when the user pool configuration is invalid.</p>
     InvalidUserPoolConfigurationException(crate::error::InvalidUserPoolConfigurationException),
@@ -17214,14 +16573,11 @@ pub enum VerifySoftwareTokenErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the software token TOTP multi-factor authentication
-    /// (MFA) is not enabled for the user pool.</p>
+    /// <p>This exception is thrown when the software token TOTP multi-factor authentication (MFA) is not enabled for the user pool.</p>
     SoftwareTokenMfaNotFoundException(crate::error::SoftwareTokenMfaNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -17283,8 +16639,6 @@ impl VerifySoftwareTokenError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17425,28 +16779,23 @@ pub struct VerifyUserAttributeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum VerifyUserAttributeErrorKind {
-    /// <p>This exception is thrown if the provided code does not match what the server was
-    /// expecting.</p>
+    /// <p>This exception is thrown if the provided code does not match what the server was expecting.</p>
     CodeMismatchException(crate::error::CodeMismatchException),
     /// <p>This exception is thrown if a code has expired.</p>
     ExpiredCodeException(crate::error::ExpiredCodeException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-    /// parameter.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-    /// resource.</p>
+    /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>This exception is thrown when a user is not authorized.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>This exception is thrown when a password reset is required.</p>
     PasswordResetRequiredException(crate::error::PasswordResetRequiredException),
-    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-    /// resource.</p>
+    /// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the user has made too many requests for a given
-    /// operation.</p>
+    /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>This exception is thrown when a user is not confirmed successfully.</p>
     UserNotConfirmedException(crate::error::UserNotConfirmedException),
@@ -17503,8 +16852,6 @@ impl VerifyUserAttributeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17750,13 +17097,11 @@ impl UserNotConfirmedException {
     }
 }
 
-/// <p>This exception is thrown when the user has made too many requests for a given
-/// operation.</p>
+/// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
-    /// <p>The message returned when the Amazon Cognito service returns a too many requests
-    /// exception.</p>
+    /// <p>The message returned when the Amazon Cognito service returns a too many requests exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyRequestsException {
@@ -17791,14 +17136,12 @@ pub mod too_many_requests_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when the Amazon Cognito service returns a too many requests
-        /// exception.</p>
+        /// <p>The message returned when the Amazon Cognito service returns a too many requests exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message returned when the Amazon Cognito service returns a too many requests
-        /// exception.</p>
+        /// <p>The message returned when the Amazon Cognito service returns a too many requests exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -17818,13 +17161,11 @@ impl TooManyRequestsException {
     }
 }
 
-/// <p>This exception is thrown when the Amazon Cognito service cannot find the requested
-/// resource.</p>
+/// <p>This exception is thrown when the Amazon Cognito service cannot find the requested resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
-    /// <p>The message returned when the Amazon Cognito service returns a resource not found
-    /// exception.</p>
+    /// <p>The message returned when the Amazon Cognito service returns a resource not found exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceNotFoundException {
@@ -17859,14 +17200,12 @@ pub mod resource_not_found_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when the Amazon Cognito service returns a resource not found
-        /// exception.</p>
+        /// <p>The message returned when the Amazon Cognito service returns a resource not found exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message returned when the Amazon Cognito service returns a resource not found
-        /// exception.</p>
+        /// <p>The message returned when the Amazon Cognito service returns a resource not found exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -17954,8 +17293,7 @@ impl PasswordResetRequiredException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotAuthorizedException {
-    /// <p>The message returned when the Amazon Cognito service returns a not authorized
-    /// exception.</p>
+    /// <p>The message returned when the Amazon Cognito service returns a not authorized exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotAuthorizedException {
@@ -17990,14 +17328,12 @@ pub mod not_authorized_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when the Amazon Cognito service returns a not authorized
-        /// exception.</p>
+        /// <p>The message returned when the Amazon Cognito service returns a not authorized exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message returned when the Amazon Cognito service returns a not authorized
-        /// exception.</p>
+        /// <p>The message returned when the Amazon Cognito service returns a not authorized exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -18017,8 +17353,7 @@ impl NotAuthorizedException {
     }
 }
 
-/// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services
-/// resource.</p>
+/// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -18082,13 +17417,11 @@ impl LimitExceededException {
     }
 }
 
-/// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-/// parameter.</p>
+/// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
-    /// <p>The message returned when the Amazon Cognito service throws an invalid parameter
-    /// exception.</p>
+    /// <p>The message returned when the Amazon Cognito service throws an invalid parameter exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterException {
@@ -18123,14 +17456,12 @@ pub mod invalid_parameter_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when the Amazon Cognito service throws an invalid parameter
-        /// exception.</p>
+        /// <p>The message returned when the Amazon Cognito service throws an invalid parameter exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message returned when the Amazon Cognito service throws an invalid parameter
-        /// exception.</p>
+        /// <p>The message returned when the Amazon Cognito service throws an invalid parameter exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -18278,8 +17609,7 @@ impl ExpiredCodeException {
     }
 }
 
-/// <p>This exception is thrown if the provided code does not match what the server was
-/// expecting.</p>
+/// <p>This exception is thrown if the provided code does not match what the server was expecting.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeMismatchException {
@@ -18343,8 +17673,7 @@ impl CodeMismatchException {
     }
 }
 
-/// <p>This exception is thrown when the software token TOTP multi-factor authentication
-/// (MFA) is not enabled for the user pool.</p>
+/// <p>This exception is thrown when the software token TOTP multi-factor authentication (MFA) is not enabled for the user pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SoftwareTokenMfaNotFoundException {
@@ -18475,8 +17804,7 @@ impl InvalidUserPoolConfigurationException {
     }
 }
 
-/// <p>This exception is thrown when there is a code mismatch and the service fails to
-/// configure the software token TOTP multi-factor authentication (MFA).</p>
+/// <p>This exception is thrown when there is a code mismatch and the service fails to configure the software token TOTP multi-factor authentication (MFA).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableSoftwareTokenMfaException {
@@ -18671,8 +17999,7 @@ impl InvalidOAuthFlowException {
     }
 }
 
-/// <p>This exception is thrown if two or more modifications are happening
-/// concurrently.</p>
+/// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
@@ -18800,8 +18127,7 @@ impl UserPoolTaggingException {
     }
 }
 
-/// <p>This exception is thrown when you are trying to modify a user pool while a user import
-/// job is in progress for that pool.</p>
+/// <p>This exception is thrown when you are trying to modify a user pool while a user import job is in progress for that pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserImportInProgressException {
@@ -18865,14 +18191,11 @@ impl UserImportInProgressException {
     }
 }
 
-/// <p>This exception is thrown when the trust relationship is invalid for the role provided
-/// for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does
-/// not match what is provided in the SMS configuration for the user pool.</p>
+/// <p>This exception is thrown when the trust relationship is invalid for the role provided for SMS configuration. This can happen if you do not trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSmsRoleTrustRelationshipException {
-    /// <p>The message returned when the role trust relationship for the SMS message is
-    /// invalid.</p>
+    /// <p>The message returned when the role trust relationship for the SMS message is invalid.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSmsRoleTrustRelationshipException {
@@ -18907,14 +18230,12 @@ pub mod invalid_sms_role_trust_relationship_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when the role trust relationship for the SMS message is
-        /// invalid.</p>
+        /// <p>The message returned when the role trust relationship for the SMS message is invalid.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message returned when the role trust relationship for the SMS message is
-        /// invalid.</p>
+        /// <p>The message returned when the role trust relationship for the SMS message is invalid.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -18934,13 +18255,11 @@ impl InvalidSmsRoleTrustRelationshipException {
     }
 }
 
-/// <p>This exception is returned when the role provided for SMS configuration does not have
-/// permission to publish using Amazon SNS.</p>
+/// <p>This exception is returned when the role provided for SMS configuration does not have permission to publish using Amazon SNS.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSmsRoleAccessPolicyException {
-    /// <p>The message retuned when the invalid SMS role access policy exception is
-    /// thrown.</p>
+    /// <p>The message retuned when the invalid SMS role access policy exception is thrown.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidSmsRoleAccessPolicyException {
@@ -18975,14 +18294,12 @@ pub mod invalid_sms_role_access_policy_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message retuned when the invalid SMS role access policy exception is
-        /// thrown.</p>
+        /// <p>The message retuned when the invalid SMS role access policy exception is thrown.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message retuned when the invalid SMS role access policy exception is
-        /// thrown.</p>
+        /// <p>The message retuned when the invalid SMS role access policy exception is thrown.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -19002,13 +18319,11 @@ impl InvalidSmsRoleAccessPolicyException {
     }
 }
 
-/// <p>This exception is thrown when Amazon Cognito is not allowed to use your email
-/// identity. HTTP status code: 400.</p>
+/// <p>This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code: 400.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEmailRoleAccessPolicyException {
-    /// <p>The message returned when you have an unverified email address or the identity policy
-    /// is not set on an email address that Amazon Cognito can access.</p>
+    /// <p>The message returned when you have an unverified email address or the identity policy is not set on an email address that Amazon Cognito can access.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidEmailRoleAccessPolicyException {
@@ -19043,14 +18358,12 @@ pub mod invalid_email_role_access_policy_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when you have an unverified email address or the identity policy
-        /// is not set on an email address that Amazon Cognito can access.</p>
+        /// <p>The message returned when you have an unverified email address or the identity policy is not set on an email address that Amazon Cognito can access.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message returned when you have an unverified email address or the identity policy
-        /// is not set on an email address that Amazon Cognito can access.</p>
+        /// <p>The message returned when you have an unverified email address or the identity policy is not set on an email address that Amazon Cognito can access.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -19070,13 +18383,11 @@ impl InvalidEmailRoleAccessPolicyException {
     }
 }
 
-/// <p>This exception is thrown when the Amazon Cognito service encounters a user validation
-/// exception with the Lambda service.</p>
+/// <p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the Lambda service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserLambdaValidationException {
-    /// <p>The message returned when the Amazon Cognito service returns a user validation
-    /// exception with the Lambda service.</p>
+    /// <p>The message returned when the Amazon Cognito service returns a user validation exception with the Lambda service.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserLambdaValidationException {
@@ -19111,14 +18422,12 @@ pub mod user_lambda_validation_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when the Amazon Cognito service returns a user validation
-        /// exception with the Lambda service.</p>
+        /// <p>The message returned when the Amazon Cognito service returns a user validation exception with the Lambda service.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message returned when the Amazon Cognito service returns a user validation
-        /// exception with the Lambda service.</p>
+        /// <p>The message returned when the Amazon Cognito service returns a user validation exception with the Lambda service.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -19138,13 +18447,11 @@ impl UserLambdaValidationException {
     }
 }
 
-/// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected
-/// exception with the Lambda service.</p>
+/// <p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the Lambda service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnexpectedLambdaException {
-    /// <p>The message returned when the Amazon Cognito service returns an unexpected Lambda
-    /// exception.</p>
+    /// <p>The message returned when the Amazon Cognito service returns an unexpected Lambda exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnexpectedLambdaException {
@@ -19179,14 +18486,12 @@ pub mod unexpected_lambda_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when the Amazon Cognito service returns an unexpected Lambda
-        /// exception.</p>
+        /// <p>The message returned when the Amazon Cognito service returns an unexpected Lambda exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message returned when the Amazon Cognito service returns an unexpected Lambda
-        /// exception.</p>
+        /// <p>The message returned when the Amazon Cognito service returns an unexpected Lambda exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -19210,8 +18515,7 @@ impl UnexpectedLambdaException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLambdaResponseException {
-    /// <p>The message returned when the Amazon Cognito service throws an invalid Lambda
-    /// response exception.</p>
+    /// <p>The message returned when the Amazon Cognito service throws an invalid Lambda response exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLambdaResponseException {
@@ -19246,14 +18550,12 @@ pub mod invalid_lambda_response_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when the Amazon Cognito service throws an invalid Lambda
-        /// response exception.</p>
+        /// <p>The message returned when the Amazon Cognito service throws an invalid Lambda response exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message returned when the Amazon Cognito service throws an invalid Lambda
-        /// response exception.</p>
+        /// <p>The message returned when the Amazon Cognito service throws an invalid Lambda response exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -19273,8 +18575,7 @@ impl InvalidLambdaResponseException {
     }
 }
 
-/// <p>This exception is thrown when a verification code fails to deliver
-/// successfully.</p>
+/// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeDeliveryFailureException {
@@ -19338,9 +18639,7 @@ impl CodeDeliveryFailureException {
     }
 }
 
-/// <p>This exception is thrown when a user tries to confirm the account with an email or
-/// phone number that has already been supplied as an alias from a different account. This
-/// exception tells user that an account with this email or phone already exists.</p>
+/// <p>This exception is thrown when a user tries to confirm the account with an email or phone number that has already been supplied as an alias from a different account. This exception tells user that an account with this email or phone already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AliasExistsException {
@@ -19596,8 +18895,7 @@ impl PreconditionNotMetException {
     }
 }
 
-/// <p>This exception is thrown when Amazon Cognito encounters a user name that already
-/// exists in the user pool.</p>
+/// <p>This exception is thrown when Amazon Cognito encounters a user name that already exists in the user pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsernameExistsException {
@@ -19661,13 +18959,11 @@ impl UsernameExistsException {
     }
 }
 
-/// <p>This exception is thrown when the Amazon Cognito service encounters an invalid
-/// password.</p>
+/// <p>This exception is thrown when the Amazon Cognito service encounters an invalid password.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPasswordException {
-    /// <p>The message returned when the Amazon Cognito service throws an invalid user password
-    /// exception.</p>
+    /// <p>The message returned when the Amazon Cognito service throws an invalid user password exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPasswordException {
@@ -19702,14 +18998,12 @@ pub mod invalid_password_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when the Amazon Cognito service throws an invalid user password
-        /// exception.</p>
+        /// <p>The message returned when the Amazon Cognito service throws an invalid user password exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message returned when the Amazon Cognito service throws an invalid user password
-        /// exception.</p>
+        /// <p>The message returned when the Amazon Cognito service throws an invalid user password exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -19921,13 +19215,11 @@ impl UnauthorizedException {
     }
 }
 
-/// <p>This exception is thrown when Amazon Cognito cannot find a multi-factor authentication
-/// (MFA) method.</p>
+/// <p>This exception is thrown when Amazon Cognito cannot find a multi-factor authentication (MFA) method.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MfaMethodNotFoundException {
-    /// <p>The message returned when Amazon Cognito throws an MFA method not found
-    /// exception.</p>
+    /// <p>The message returned when Amazon Cognito throws an MFA method not found exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MfaMethodNotFoundException {
@@ -19962,14 +19254,12 @@ pub mod mfa_method_not_found_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when Amazon Cognito throws an MFA method not found
-        /// exception.</p>
+        /// <p>The message returned when Amazon Cognito throws an MFA method not found exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message returned when Amazon Cognito throws an MFA method not found
-        /// exception.</p>
+        /// <p>The message returned when Amazon Cognito throws an MFA method not found exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -19989,8 +19279,7 @@ impl MfaMethodNotFoundException {
     }
 }
 
-/// <p>This exception is thrown when the provider is already supported by the user
-/// pool.</p>
+/// <p>This exception is thrown when the provider is already supported by the user pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateProviderException {
@@ -20054,8 +19343,7 @@ impl DuplicateProviderException {
     }
 }
 
-/// <p>This exception is thrown when Amazon Cognito encounters a group that already exists in
-/// the user pool.</p>
+/// <p>This exception is thrown when Amazon Cognito encounters a group that already exists in the user pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GroupExistsException {
@@ -20119,13 +19407,11 @@ impl GroupExistsException {
     }
 }
 
-/// <p>This exception is thrown when the user has made too many failed attempts for a given
-/// action (e.g., sign in).</p>
+/// <p>This exception is thrown when the user has made too many failed attempts for a given action (e.g., sign in).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyFailedAttemptsException {
-    /// <p>The message returned when the Amazon Cognito service returns a too many failed
-    /// attempts exception.</p>
+    /// <p>The message returned when the Amazon Cognito service returns a too many failed attempts exception.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TooManyFailedAttemptsException {
@@ -20160,14 +19446,12 @@ pub mod too_many_failed_attempts_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned when the Amazon Cognito service returns a too many failed
-        /// attempts exception.</p>
+        /// <p>The message returned when the Amazon Cognito service returns a too many failed attempts exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message returned when the Amazon Cognito service returns a too many failed
-        /// attempts exception.</p>
+        /// <p>The message returned when the Amazon Cognito service returns a too many failed attempts exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

@@ -23,18 +23,14 @@ pub mod associate_entity_to_thing_input {
         }
         /// <p>The ID of the device to be associated with the thing.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
         /// <p>The ID of the device to be associated with the thing.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -67,7 +63,7 @@ pub mod associate_entity_to_thing_input {
 #[doc(hidden)]
 pub type AssociateEntityToThingInputOperationOutputAlias = crate::operation::AssociateEntityToThing;
 #[doc(hidden)]
-pub type AssociateEntityToThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateEntityToThingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateEntityToThingInput {
     /// Consumes the builder and constructs an Operation<[`AssociateEntityToThing`](crate::operation::AssociateEntityToThing)>
     #[allow(clippy::let_and_return)]
@@ -78,7 +74,7 @@ impl AssociateEntityToThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateEntityToThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -165,7 +161,7 @@ impl AssociateEntityToThingInput {
             "AssociateEntityToThing",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -240,7 +236,7 @@ pub mod create_flow_template_input {
 #[doc(hidden)]
 pub type CreateFlowTemplateInputOperationOutputAlias = crate::operation::CreateFlowTemplate;
 #[doc(hidden)]
-pub type CreateFlowTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFlowTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFlowTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateFlowTemplate`](crate::operation::CreateFlowTemplate)>
     #[allow(clippy::let_and_return)]
@@ -251,7 +247,7 @@ impl CreateFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFlowTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -336,7 +332,7 @@ impl CreateFlowTemplateInput {
             "CreateFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -379,9 +375,9 @@ pub mod create_system_instance_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -419,14 +415,12 @@ pub mod create_system_instance_input {
             self.target = input;
             self
         }
-        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
         pub fn greengrass_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.greengrass_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
         pub fn set_greengrass_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -434,14 +428,12 @@ pub mod create_system_instance_input {
             self.greengrass_group_name = input;
             self
         }
-        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -462,16 +454,12 @@ pub mod create_system_instance_input {
             self.metrics_configuration = input;
             self
         }
-        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
-        /// read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes.  This
-        /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
         pub fn flow_actions_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_actions_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
-        /// read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes.  This
-        /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
         pub fn set_flow_actions_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -501,7 +489,7 @@ pub mod create_system_instance_input {
 #[doc(hidden)]
 pub type CreateSystemInstanceInputOperationOutputAlias = crate::operation::CreateSystemInstance;
 #[doc(hidden)]
-pub type CreateSystemInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSystemInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSystemInstanceInput {
     /// Consumes the builder and constructs an Operation<[`CreateSystemInstance`](crate::operation::CreateSystemInstance)>
     #[allow(clippy::let_and_return)]
@@ -512,7 +500,7 @@ impl CreateSystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSystemInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -599,7 +587,7 @@ impl CreateSystemInstanceInput {
             "CreateSystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -674,7 +662,7 @@ pub mod create_system_template_input {
 #[doc(hidden)]
 pub type CreateSystemTemplateInputOperationOutputAlias = crate::operation::CreateSystemTemplate;
 #[doc(hidden)]
-pub type CreateSystemTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSystemTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSystemTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateSystemTemplate`](crate::operation::CreateSystemTemplate)>
     #[allow(clippy::let_and_return)]
@@ -685,7 +673,7 @@ impl CreateSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSystemTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -772,7 +760,7 @@ impl CreateSystemTemplateInput {
             "CreateSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -806,18 +794,14 @@ pub mod delete_flow_template_input {
     impl Builder {
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -836,7 +820,7 @@ pub mod delete_flow_template_input {
 #[doc(hidden)]
 pub type DeleteFlowTemplateInputOperationOutputAlias = crate::operation::DeleteFlowTemplate;
 #[doc(hidden)]
-pub type DeleteFlowTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFlowTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFlowTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFlowTemplate`](crate::operation::DeleteFlowTemplate)>
     #[allow(clippy::let_and_return)]
@@ -847,7 +831,7 @@ impl DeleteFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFlowTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -932,7 +916,7 @@ impl DeleteFlowTemplateInput {
             "DeleteFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -976,7 +960,7 @@ pub mod delete_namespace_input {
 #[doc(hidden)]
 pub type DeleteNamespaceInputOperationOutputAlias = crate::operation::DeleteNamespace;
 #[doc(hidden)]
-pub type DeleteNamespaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNamespace`](crate::operation::DeleteNamespace)>
     #[allow(clippy::let_and_return)]
@@ -987,7 +971,7 @@ impl DeleteNamespaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNamespace,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1072,7 +1056,7 @@ impl DeleteNamespaceInput {
             "DeleteNamespace",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1120,7 +1104,7 @@ pub mod delete_system_instance_input {
 #[doc(hidden)]
 pub type DeleteSystemInstanceInputOperationOutputAlias = crate::operation::DeleteSystemInstance;
 #[doc(hidden)]
-pub type DeleteSystemInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSystemInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSystemInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSystemInstance`](crate::operation::DeleteSystemInstance)>
     #[allow(clippy::let_and_return)]
@@ -1131,7 +1115,7 @@ impl DeleteSystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSystemInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1218,7 +1202,7 @@ impl DeleteSystemInstanceInput {
             "DeleteSystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1252,18 +1236,14 @@ pub mod delete_system_template_input {
     impl Builder {
         /// <p>The ID of the system to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the system to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1282,7 +1262,7 @@ pub mod delete_system_template_input {
 #[doc(hidden)]
 pub type DeleteSystemTemplateInputOperationOutputAlias = crate::operation::DeleteSystemTemplate;
 #[doc(hidden)]
-pub type DeleteSystemTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSystemTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSystemTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSystemTemplate`](crate::operation::DeleteSystemTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1293,7 +1273,7 @@ impl DeleteSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSystemTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1380,7 +1360,7 @@ impl DeleteSystemTemplateInput {
             "DeleteSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1414,18 +1394,14 @@ pub mod deploy_system_instance_input {
     impl Builder {
         /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1444,7 +1420,7 @@ pub mod deploy_system_instance_input {
 #[doc(hidden)]
 pub type DeploySystemInstanceInputOperationOutputAlias = crate::operation::DeploySystemInstance;
 #[doc(hidden)]
-pub type DeploySystemInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeploySystemInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeploySystemInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeploySystemInstance`](crate::operation::DeploySystemInstance)>
     #[allow(clippy::let_and_return)]
@@ -1455,7 +1431,7 @@ impl DeploySystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeploySystemInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1542,7 +1518,7 @@ impl DeploySystemInstanceInput {
             "DeploySystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1576,18 +1552,14 @@ pub mod deprecate_flow_template_input {
     impl Builder {
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1606,7 +1578,7 @@ pub mod deprecate_flow_template_input {
 #[doc(hidden)]
 pub type DeprecateFlowTemplateInputOperationOutputAlias = crate::operation::DeprecateFlowTemplate;
 #[doc(hidden)]
-pub type DeprecateFlowTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeprecateFlowTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprecateFlowTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateFlowTemplate`](crate::operation::DeprecateFlowTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1617,7 +1589,7 @@ impl DeprecateFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateFlowTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1704,7 +1676,7 @@ impl DeprecateFlowTemplateInput {
             "DeprecateFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1738,18 +1710,14 @@ pub mod deprecate_system_template_input {
     impl Builder {
         /// <p>The ID of the system to delete.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the system to delete.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1769,7 +1737,7 @@ pub mod deprecate_system_template_input {
 pub type DeprecateSystemTemplateInputOperationOutputAlias =
     crate::operation::DeprecateSystemTemplate;
 #[doc(hidden)]
-pub type DeprecateSystemTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeprecateSystemTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprecateSystemTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateSystemTemplate`](crate::operation::DeprecateSystemTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1780,7 +1748,7 @@ impl DeprecateSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateSystemTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1867,7 +1835,7 @@ impl DeprecateSystemTemplateInput {
             "DeprecateSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1928,7 +1896,7 @@ pub mod describe_namespace_input {
 #[doc(hidden)]
 pub type DescribeNamespaceInputOperationOutputAlias = crate::operation::DescribeNamespace;
 #[doc(hidden)]
-pub type DescribeNamespaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNamespace`](crate::operation::DescribeNamespace)>
     #[allow(clippy::let_and_return)]
@@ -1939,7 +1907,7 @@ impl DescribeNamespaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeNamespace,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2024,7 +1992,7 @@ impl DescribeNamespaceInput {
             "DescribeNamespace",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2098,7 +2066,7 @@ pub mod dissociate_entity_from_thing_input {
 pub type DissociateEntityFromThingInputOperationOutputAlias =
     crate::operation::DissociateEntityFromThing;
 #[doc(hidden)]
-pub type DissociateEntityFromThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DissociateEntityFromThingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DissociateEntityFromThingInput {
     /// Consumes the builder and constructs an Operation<[`DissociateEntityFromThing`](crate::operation::DissociateEntityFromThing)>
     #[allow(clippy::let_and_return)]
@@ -2109,7 +2077,7 @@ impl DissociateEntityFromThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DissociateEntityFromThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2196,7 +2164,7 @@ impl DissociateEntityFromThingInput {
             "DissociateEntityFromThing",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2235,9 +2203,7 @@ pub mod get_entities_input {
         ///
         /// <p>An array of entity IDs.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ids.unwrap_or_default();
             v.push(input.into());
@@ -2246,9 +2212,7 @@ pub mod get_entities_input {
         }
         /// <p>An array of entity IDs.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn set_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2283,7 +2247,7 @@ pub mod get_entities_input {
 #[doc(hidden)]
 pub type GetEntitiesInputOperationOutputAlias = crate::operation::GetEntities;
 #[doc(hidden)]
-pub type GetEntitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`GetEntities`](crate::operation::GetEntities)>
     #[allow(clippy::let_and_return)]
@@ -2294,7 +2258,7 @@ impl GetEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEntities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2378,7 +2342,7 @@ impl GetEntitiesInput {
             "GetEntities",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2413,18 +2377,14 @@ pub mod get_flow_template_input {
     impl Builder {
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2456,7 +2416,7 @@ pub mod get_flow_template_input {
 #[doc(hidden)]
 pub type GetFlowTemplateInputOperationOutputAlias = crate::operation::GetFlowTemplate;
 #[doc(hidden)]
-pub type GetFlowTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFlowTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFlowTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetFlowTemplate`](crate::operation::GetFlowTemplate)>
     #[allow(clippy::let_and_return)]
@@ -2467,7 +2427,7 @@ impl GetFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFlowTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2552,7 +2512,7 @@ impl GetFlowTemplateInput {
             "GetFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2588,18 +2548,14 @@ pub mod get_flow_template_revisions_input {
     impl Builder {
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2643,7 +2599,7 @@ pub mod get_flow_template_revisions_input {
 pub type GetFlowTemplateRevisionsInputOperationOutputAlias =
     crate::operation::GetFlowTemplateRevisions;
 #[doc(hidden)]
-pub type GetFlowTemplateRevisionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFlowTemplateRevisionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetFlowTemplateRevisionsInput {
     /// Consumes the builder and constructs an Operation<[`GetFlowTemplateRevisions`](crate::operation::GetFlowTemplateRevisions)>
     #[allow(clippy::let_and_return)]
@@ -2654,7 +2610,7 @@ impl GetFlowTemplateRevisionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFlowTemplateRevisions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2741,7 +2697,7 @@ impl GetFlowTemplateRevisionsInput {
             "GetFlowTemplateRevisions",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2786,7 +2742,7 @@ pub mod get_namespace_deletion_status_input {
 pub type GetNamespaceDeletionStatusInputOperationOutputAlias =
     crate::operation::GetNamespaceDeletionStatus;
 #[doc(hidden)]
-pub type GetNamespaceDeletionStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetNamespaceDeletionStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNamespaceDeletionStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetNamespaceDeletionStatus`](crate::operation::GetNamespaceDeletionStatus)>
     #[allow(clippy::let_and_return)]
@@ -2797,7 +2753,7 @@ impl GetNamespaceDeletionStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNamespaceDeletionStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2883,7 +2839,7 @@ impl GetNamespaceDeletionStatusInput {
             "GetNamespaceDeletionStatus",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2909,18 +2865,14 @@ pub mod get_system_instance_input {
     impl Builder {
         /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2939,7 +2891,7 @@ pub mod get_system_instance_input {
 #[doc(hidden)]
 pub type GetSystemInstanceInputOperationOutputAlias = crate::operation::GetSystemInstance;
 #[doc(hidden)]
-pub type GetSystemInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSystemInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSystemInstanceInput {
     /// Consumes the builder and constructs an Operation<[`GetSystemInstance`](crate::operation::GetSystemInstance)>
     #[allow(clippy::let_and_return)]
@@ -2950,7 +2902,7 @@ impl GetSystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSystemInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3035,7 +2987,7 @@ impl GetSystemInstanceInput {
             "GetSystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3070,18 +3022,14 @@ pub mod get_system_template_input {
     impl Builder {
         /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3113,7 +3061,7 @@ pub mod get_system_template_input {
 #[doc(hidden)]
 pub type GetSystemTemplateInputOperationOutputAlias = crate::operation::GetSystemTemplate;
 #[doc(hidden)]
-pub type GetSystemTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSystemTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSystemTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetSystemTemplate`](crate::operation::GetSystemTemplate)>
     #[allow(clippy::let_and_return)]
@@ -3124,7 +3072,7 @@ impl GetSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSystemTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3209,7 +3157,7 @@ impl GetSystemTemplateInput {
             "GetSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3245,18 +3193,14 @@ pub mod get_system_template_revisions_input {
     impl Builder {
         /// <p>The ID of the system template.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the system template.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3300,7 +3244,7 @@ pub mod get_system_template_revisions_input {
 pub type GetSystemTemplateRevisionsInputOperationOutputAlias =
     crate::operation::GetSystemTemplateRevisions;
 #[doc(hidden)]
-pub type GetSystemTemplateRevisionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSystemTemplateRevisionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSystemTemplateRevisionsInput {
     /// Consumes the builder and constructs an Operation<[`GetSystemTemplateRevisions`](crate::operation::GetSystemTemplateRevisions)>
     #[allow(clippy::let_and_return)]
@@ -3311,7 +3255,7 @@ impl GetSystemTemplateRevisionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSystemTemplateRevisions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3397,7 +3341,7 @@ impl GetSystemTemplateRevisionsInput {
             "GetSystemTemplateRevisions",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3455,7 +3399,7 @@ pub mod get_upload_status_input {
 #[doc(hidden)]
 pub type GetUploadStatusInputOperationOutputAlias = crate::operation::GetUploadStatus;
 #[doc(hidden)]
-pub type GetUploadStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUploadStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUploadStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetUploadStatus`](crate::operation::GetUploadStatus)>
     #[allow(clippy::let_and_return)]
@@ -3466,7 +3410,7 @@ impl GetUploadStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUploadStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3551,7 +3495,7 @@ impl GetUploadStatusInput {
             "GetUploadStatus",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3637,7 +3581,7 @@ pub mod list_flow_execution_messages_input {
 pub type ListFlowExecutionMessagesInputOperationOutputAlias =
     crate::operation::ListFlowExecutionMessages;
 #[doc(hidden)]
-pub type ListFlowExecutionMessagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFlowExecutionMessagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFlowExecutionMessagesInput {
     /// Consumes the builder and constructs an Operation<[`ListFlowExecutionMessages`](crate::operation::ListFlowExecutionMessages)>
     #[allow(clippy::let_and_return)]
@@ -3648,7 +3592,7 @@ impl ListFlowExecutionMessagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFlowExecutionMessages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3735,7 +3679,7 @@ impl ListFlowExecutionMessagesInput {
             "ListFlowExecutionMessages",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3817,7 +3761,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3828,7 +3772,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3915,7 +3859,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3956,9 +3900,9 @@ pub mod search_entities_input {
         /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
         ///
         /// <p>The entity types for which to search.</p>
-        pub fn entity_types(mut self, input: impl Into<crate::model::EntityType>) -> Self {
+        pub fn entity_types(mut self, input: crate::model::EntityType) -> Self {
             let mut v = self.entity_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entity_types = Some(v);
             self
         }
@@ -3974,21 +3918,15 @@ pub mod search_entities_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code>
-        /// <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>.
-        /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-        /// you can filter on the ID of a property that is used in a state.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::EntityFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::EntityFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code>
-        /// <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>.
-        /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-        /// you can filter on the ID of a property that is used in a state.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
         pub fn set_filters(
             mut self,
@@ -4047,7 +3985,7 @@ pub mod search_entities_input {
 #[doc(hidden)]
 pub type SearchEntitiesInputOperationOutputAlias = crate::operation::SearchEntities;
 #[doc(hidden)]
-pub type SearchEntitiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchEntitiesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchEntitiesInput {
     /// Consumes the builder and constructs an Operation<[`SearchEntities`](crate::operation::SearchEntities)>
     #[allow(clippy::let_and_return)]
@@ -4058,7 +3996,7 @@ impl SearchEntitiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchEntities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4143,7 +4081,7 @@ impl SearchEntitiesInput {
             "SearchEntities",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4273,7 +4211,7 @@ pub mod search_flow_executions_input {
 #[doc(hidden)]
 pub type SearchFlowExecutionsInputOperationOutputAlias = crate::operation::SearchFlowExecutions;
 #[doc(hidden)]
-pub type SearchFlowExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchFlowExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchFlowExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`SearchFlowExecutions`](crate::operation::SearchFlowExecutions)>
     #[allow(clippy::let_and_return)]
@@ -4284,7 +4222,7 @@ impl SearchFlowExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchFlowExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4371,7 +4309,7 @@ impl SearchFlowExecutionsInput {
             "SearchFlowExecutions",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4410,9 +4348,9 @@ pub mod search_flow_templates_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::FlowTemplateFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::FlowTemplateFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -4462,7 +4400,7 @@ pub mod search_flow_templates_input {
 #[doc(hidden)]
 pub type SearchFlowTemplatesInputOperationOutputAlias = crate::operation::SearchFlowTemplates;
 #[doc(hidden)]
-pub type SearchFlowTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchFlowTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchFlowTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`SearchFlowTemplates`](crate::operation::SearchFlowTemplates)>
     #[allow(clippy::let_and_return)]
@@ -4473,7 +4411,7 @@ impl SearchFlowTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchFlowTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4558,7 +4496,7 @@ impl SearchFlowTemplatesInput {
             "SearchFlowTemplates",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4596,17 +4534,15 @@ pub mod search_system_instances_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
-        /// <code>GREENGRASS_GROUP_NAME</code>.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SystemInstanceFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SystemInstanceFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
-        /// <code>GREENGRASS_GROUP_NAME</code>.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
         pub fn set_filters(
             mut self,
@@ -4653,7 +4589,7 @@ pub mod search_system_instances_input {
 #[doc(hidden)]
 pub type SearchSystemInstancesInputOperationOutputAlias = crate::operation::SearchSystemInstances;
 #[doc(hidden)]
-pub type SearchSystemInstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchSystemInstancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchSystemInstancesInput {
     /// Consumes the builder and constructs an Operation<[`SearchSystemInstances`](crate::operation::SearchSystemInstances)>
     #[allow(clippy::let_and_return)]
@@ -4664,7 +4600,7 @@ impl SearchSystemInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchSystemInstances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4751,7 +4687,7 @@ impl SearchSystemInstancesInput {
             "SearchSystemInstances",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4790,9 +4726,9 @@ pub mod search_system_templates_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::SystemTemplateFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::SystemTemplateFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -4842,7 +4778,7 @@ pub mod search_system_templates_input {
 #[doc(hidden)]
 pub type SearchSystemTemplatesInputOperationOutputAlias = crate::operation::SearchSystemTemplates;
 #[doc(hidden)]
-pub type SearchSystemTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchSystemTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchSystemTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`SearchSystemTemplates`](crate::operation::SearchSystemTemplates)>
     #[allow(clippy::let_and_return)]
@@ -4853,7 +4789,7 @@ impl SearchSystemTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchSystemTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4940,7 +4876,7 @@ impl SearchSystemTemplatesInput {
             "SearchSystemTemplates",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4977,18 +4913,14 @@ pub mod search_things_input {
     impl Builder {
         /// <p>The ID of the entity to which the things are associated.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
         /// <p>The ID of the entity to which the things are associated.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -5042,7 +4974,7 @@ pub mod search_things_input {
 #[doc(hidden)]
 pub type SearchThingsInputOperationOutputAlias = crate::operation::SearchThings;
 #[doc(hidden)]
-pub type SearchThingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchThingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchThingsInput {
     /// Consumes the builder and constructs an Operation<[`SearchThings`](crate::operation::SearchThings)>
     #[allow(clippy::let_and_return)]
@@ -5053,7 +4985,7 @@ impl SearchThingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchThings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5137,7 +5069,7 @@ impl SearchThingsInput {
             "SearchThings",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5184,14 +5116,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to add to the resource.></p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>A list of tags to add to the resource.&gt;</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags to add to the resource.></p>
+        /// <p>A list of tags to add to the resource.&gt;</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5216,7 +5148,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -5227,7 +5159,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5311,7 +5243,7 @@ impl TagResourceInput {
             "TagResource",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5367,7 +5299,7 @@ pub mod undeploy_system_instance_input {
 #[doc(hidden)]
 pub type UndeploySystemInstanceInputOperationOutputAlias = crate::operation::UndeploySystemInstance;
 #[doc(hidden)]
-pub type UndeploySystemInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UndeploySystemInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UndeploySystemInstanceInput {
     /// Consumes the builder and constructs an Operation<[`UndeploySystemInstance`](crate::operation::UndeploySystemInstance)>
     #[allow(clippy::let_and_return)]
@@ -5378,7 +5310,7 @@ impl UndeploySystemInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UndeploySystemInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5465,7 +5397,7 @@ impl UndeploySystemInstanceInput {
             "UndeploySystemInstance",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5546,7 +5478,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -5557,7 +5489,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5641,7 +5573,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5677,18 +5609,14 @@ pub mod update_flow_template_input {
     impl Builder {
         /// <p>The ID of the workflow to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the workflow to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5707,15 +5635,13 @@ pub mod update_flow_template_input {
             self
         }
         /// <p>The version of the user's namespace.</p>
-        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow
-        /// to update.</p>
+        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
         pub fn compatible_namespace_version(mut self, input: i64) -> Self {
             self.compatible_namespace_version = Some(input);
             self
         }
         /// <p>The version of the user's namespace.</p>
-        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow
-        /// to update.</p>
+        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
         pub fn set_compatible_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
             self.compatible_namespace_version = input;
             self
@@ -5738,7 +5664,7 @@ pub mod update_flow_template_input {
 #[doc(hidden)]
 pub type UpdateFlowTemplateInputOperationOutputAlias = crate::operation::UpdateFlowTemplate;
 #[doc(hidden)]
-pub type UpdateFlowTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFlowTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFlowTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFlowTemplate`](crate::operation::UpdateFlowTemplate)>
     #[allow(clippy::let_and_return)]
@@ -5749,7 +5675,7 @@ impl UpdateFlowTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFlowTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5834,7 +5760,7 @@ impl UpdateFlowTemplateInput {
             "UpdateFlowTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5870,18 +5796,14 @@ pub mod update_system_template_input {
     impl Builder {
         /// <p>The ID of the system to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
         /// <p>The ID of the system to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5929,7 +5851,7 @@ pub mod update_system_template_input {
 #[doc(hidden)]
 pub type UpdateSystemTemplateInputOperationOutputAlias = crate::operation::UpdateSystemTemplate;
 #[doc(hidden)]
-pub type UpdateSystemTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSystemTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSystemTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSystemTemplate`](crate::operation::UpdateSystemTemplate)>
     #[allow(clippy::let_and_return)]
@@ -5940,7 +5862,7 @@ impl UpdateSystemTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSystemTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6027,7 +5949,7 @@ impl UpdateSystemTemplateInput {
             "UpdateSystemTemplate",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6084,14 +6006,12 @@ pub mod upload_entity_definitions_input {
             self.sync_with_public_namespace = input;
             self
         }
-        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.
-        /// If set to <code>true</code>, the upload will create a new namespace version.</p>
+        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
         pub fn deprecate_existing_entities(mut self, input: bool) -> Self {
             self.deprecate_existing_entities = Some(input);
             self
         }
-        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.
-        /// If set to <code>true</code>, the upload will create a new namespace version.</p>
+        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
         pub fn set_deprecate_existing_entities(mut self, input: std::option::Option<bool>) -> Self {
             self.deprecate_existing_entities = input;
             self
@@ -6115,7 +6035,7 @@ pub mod upload_entity_definitions_input {
 pub type UploadEntityDefinitionsInputOperationOutputAlias =
     crate::operation::UploadEntityDefinitions;
 #[doc(hidden)]
-pub type UploadEntityDefinitionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UploadEntityDefinitionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UploadEntityDefinitionsInput {
     /// Consumes the builder and constructs an Operation<[`UploadEntityDefinitions`](crate::operation::UploadEntityDefinitions)>
     #[allow(clippy::let_and_return)]
@@ -6126,7 +6046,7 @@ impl UploadEntityDefinitionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UploadEntityDefinitions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6213,7 +6133,7 @@ impl UploadEntityDefinitionsInput {
             "UploadEntityDefinitions",
             "iotthingsgraph",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6244,8 +6164,7 @@ pub struct UploadEntityDefinitionsInput {
     pub document: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
     pub sync_with_public_namespace: bool,
-    /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.
-    /// If set to <code>true</code>, the upload will create a new namespace version.</p>
+    /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
     pub deprecate_existing_entities: bool,
 }
 impl UploadEntityDefinitionsInput {
@@ -6257,8 +6176,7 @@ impl UploadEntityDefinitionsInput {
     pub fn sync_with_public_namespace(&self) -> bool {
         self.sync_with_public_namespace
     }
-    /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.
-    /// If set to <code>true</code>, the upload will create a new namespace version.</p>
+    /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
     pub fn deprecate_existing_entities(&self) -> bool {
         self.deprecate_existing_entities
     }
@@ -6285,9 +6203,7 @@ impl std::fmt::Debug for UploadEntityDefinitionsInput {
 pub struct UpdateSystemTemplateInput {
     /// <p>The ID of the system to be updated.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
@@ -6298,9 +6214,7 @@ pub struct UpdateSystemTemplateInput {
 impl UpdateSystemTemplateInput {
     /// <p>The ID of the system to be updated.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -6333,23 +6247,18 @@ impl std::fmt::Debug for UpdateSystemTemplateInput {
 pub struct UpdateFlowTemplateInput {
     /// <p>The ID of the workflow to be updated.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>The version of the user's namespace.</p>
-    /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow
-    /// to update.</p>
+    /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
     pub compatible_namespace_version: std::option::Option<i64>,
 }
 impl UpdateFlowTemplateInput {
     /// <p>The ID of the workflow to be updated.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -6358,8 +6267,7 @@ impl UpdateFlowTemplateInput {
         self.definition.as_ref()
     }
     /// <p>The version of the user's namespace.</p>
-    /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow
-    /// to update.</p>
+    /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
     pub fn compatible_namespace_version(&self) -> std::option::Option<i64> {
         self.compatible_namespace_version
     }
@@ -6434,7 +6342,7 @@ impl std::fmt::Debug for UndeploySystemInstanceInput {
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags are returned.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tags to add to the resource.></p>
+    /// <p>A list of tags to add to the resource.&gt;</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -6442,7 +6350,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of tags to add to the resource.></p>
+    /// <p>A list of tags to add to the resource.&gt;</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -6462,9 +6370,7 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct SearchThingsInput {
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -6476,9 +6382,7 @@ pub struct SearchThingsInput {
 impl SearchThingsInput {
     /// <p>The ID of the entity to which the things are associated.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
@@ -6545,8 +6449,7 @@ impl std::fmt::Debug for SearchSystemTemplatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchSystemInstancesInput {
-    /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
-    /// <code>GREENGRASS_GROUP_NAME</code>.</p>
+    /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::SystemInstanceFilter>>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -6555,8 +6458,7 @@ pub struct SearchSystemInstancesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl SearchSystemInstancesInput {
-    /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
-    /// <code>GREENGRASS_GROUP_NAME</code>.</p>
+    /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::SystemInstanceFilter]> {
         self.filters.as_deref()
@@ -6677,10 +6579,7 @@ impl std::fmt::Debug for SearchFlowExecutionsInput {
 pub struct SearchEntitiesInput {
     /// <p>The entity types for which to search.</p>
     pub entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
-    /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code>
-    /// <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>.
-    /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-    /// you can filter on the ID of a property that is used in a state.</p>
+    /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::EntityFilter>>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
@@ -6695,10 +6594,7 @@ impl SearchEntitiesInput {
     pub fn entity_types(&self) -> std::option::Option<&[crate::model::EntityType]> {
         self.entity_types.as_deref()
     }
-    /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code>
-    /// <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>.
-    /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-    /// you can filter on the ID of a property that is used in a state.</p>
+    /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::EntityFilter]> {
         self.filters.as_deref()
@@ -6825,9 +6721,7 @@ impl std::fmt::Debug for GetUploadStatusInput {
 pub struct GetSystemTemplateRevisionsInput {
     /// <p>The ID of the system template.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -6837,9 +6731,7 @@ pub struct GetSystemTemplateRevisionsInput {
 impl GetSystemTemplateRevisionsInput {
     /// <p>The ID of the system template.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -6868,9 +6760,7 @@ impl std::fmt::Debug for GetSystemTemplateRevisionsInput {
 pub struct GetSystemTemplateInput {
     /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The number that specifies the revision of the system to get.</p>
     pub revision_number: std::option::Option<i64>,
@@ -6878,9 +6768,7 @@ pub struct GetSystemTemplateInput {
 impl GetSystemTemplateInput {
     /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -6904,17 +6792,13 @@ impl std::fmt::Debug for GetSystemTemplateInput {
 pub struct GetSystemInstanceInput {
     /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl GetSystemInstanceInput {
     /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -6944,9 +6828,7 @@ impl std::fmt::Debug for GetNamespaceDeletionStatusInput {
 pub struct GetFlowTemplateRevisionsInput {
     /// <p>The ID of the workflow.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -6956,9 +6838,7 @@ pub struct GetFlowTemplateRevisionsInput {
 impl GetFlowTemplateRevisionsInput {
     /// <p>The ID of the workflow.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -6987,9 +6867,7 @@ impl std::fmt::Debug for GetFlowTemplateRevisionsInput {
 pub struct GetFlowTemplateInput {
     /// <p>The ID of the workflow.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The number of the workflow revision to retrieve.</p>
     pub revision_number: std::option::Option<i64>,
@@ -6997,9 +6875,7 @@ pub struct GetFlowTemplateInput {
 impl GetFlowTemplateInput {
     /// <p>The ID of the workflow.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -7023,9 +6899,7 @@ impl std::fmt::Debug for GetFlowTemplateInput {
 pub struct GetEntitiesInput {
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub namespace_version: std::option::Option<i64>,
@@ -7033,9 +6907,7 @@ pub struct GetEntitiesInput {
 impl GetEntitiesInput {
     /// <p>An array of entity IDs.</p>
     /// <p>The IDs should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ids.as_deref()
     }
@@ -7108,17 +6980,13 @@ impl std::fmt::Debug for DescribeNamespaceInput {
 pub struct DeprecateSystemTemplateInput {
     /// <p>The ID of the system to delete.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DeprecateSystemTemplateInput {
     /// <p>The ID of the system to delete.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -7137,17 +7005,13 @@ impl std::fmt::Debug for DeprecateSystemTemplateInput {
 pub struct DeprecateFlowTemplateInput {
     /// <p>The ID of the workflow to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DeprecateFlowTemplateInput {
     /// <p>The ID of the workflow to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -7166,17 +7030,13 @@ impl std::fmt::Debug for DeprecateFlowTemplateInput {
 pub struct DeploySystemInstanceInput {
     /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DeploySystemInstanceInput {
     /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -7195,17 +7055,13 @@ impl std::fmt::Debug for DeploySystemInstanceInput {
 pub struct DeleteSystemTemplateInput {
     /// <p>The ID of the system to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteSystemTemplateInput {
     /// <p>The ID of the system to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -7256,17 +7112,13 @@ impl std::fmt::Debug for DeleteNamespaceInput {
 pub struct DeleteFlowTemplateInput {
     /// <p>The ID of the workflow to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteFlowTemplateInput {
     /// <p>The ID of the workflow to be deleted.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -7322,17 +7174,13 @@ pub struct CreateSystemInstanceInput {
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
     /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
     pub target: std::option::Option<crate::model::DeploymentTarget>,
-    /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
-    /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
     pub greengrass_group_name: std::option::Option<std::string::String>,
-    /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
-    /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
     pub metrics_configuration: std::option::Option<crate::model::MetricsConfiguration>,
-    /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
-    /// read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes.  This
-    /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+    /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
     pub flow_actions_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateSystemInstanceInput {
@@ -7348,13 +7196,11 @@ impl CreateSystemInstanceInput {
     pub fn target(&self) -> std::option::Option<&crate::model::DeploymentTarget> {
         self.target.as_ref()
     }
-    /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
-    /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
     pub fn greengrass_group_name(&self) -> std::option::Option<&str> {
         self.greengrass_group_name.as_deref()
     }
-    /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
-    /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
@@ -7364,9 +7210,7 @@ impl CreateSystemInstanceInput {
     ) -> std::option::Option<&crate::model::MetricsConfiguration> {
         self.metrics_configuration.as_ref()
     }
-    /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
-    /// read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes.  This
-    /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+    /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
     pub fn flow_actions_role_arn(&self) -> std::option::Option<&str> {
         self.flow_actions_role_arn.as_deref()
     }
@@ -7426,9 +7270,7 @@ pub struct AssociateEntityToThingInput {
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The ID of the device to be associated with the thing.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub namespace_version: std::option::Option<i64>,
@@ -7440,9 +7282,7 @@ impl AssociateEntityToThingInput {
     }
     /// <p>The ID of the device to be associated with the thing.</p>
     /// <p>The ID should be in the following format.</p>
-    /// <p>
-    /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-    /// </p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }

@@ -107,7 +107,7 @@ impl ModifyLunaClientOutput {
     }
 }
 
-/// <p>Contains the output of the <a>ModifyHsm</a> operation.</p>
+/// <p>Contains the output of the <code>ModifyHsm</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyHsmOutput {
@@ -249,9 +249,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>One or more tags.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -284,8 +284,7 @@ impl ListTagsForResourceOutput {
 pub struct ListLunaClientsOutput {
     /// <p>The list of clients.</p>
     pub client_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to
-    /// retrieve the next set of items.</p>
+    /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLunaClientsOutput {
@@ -293,8 +292,7 @@ impl ListLunaClientsOutput {
     pub fn client_list(&self) -> std::option::Option<&[std::string::String]> {
         self.client_list.as_deref()
     }
-    /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to
-    /// retrieve the next set of items.</p>
+    /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -336,14 +334,12 @@ pub mod list_luna_clients_output {
             self.client_list = input;
             self
         }
-        /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to
-        /// retrieve the next set of items.</p>
+        /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to
-        /// retrieve the next set of items.</p>
+        /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -370,8 +366,7 @@ impl ListLunaClientsOutput {
 pub struct ListHsmsOutput {
     /// <p>The list of ARNs that identify the HSMs.</p>
     pub hsm_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to
-    /// retrieve the next set of items.</p>
+    /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHsmsOutput {
@@ -379,8 +374,7 @@ impl ListHsmsOutput {
     pub fn hsm_list(&self) -> std::option::Option<&[std::string::String]> {
         self.hsm_list.as_deref()
     }
-    /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to
-    /// retrieve the next set of items.</p>
+    /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -422,14 +416,12 @@ pub mod list_hsms_output {
             self.hsm_list = input;
             self
         }
-        /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to
-        /// retrieve the next set of items.</p>
+        /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to
-        /// retrieve the next set of items.</p>
+        /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -456,8 +448,7 @@ impl ListHsmsOutput {
 pub struct ListHapgsOutput {
     /// <p>The list of high-availability partition groups.</p>
     pub hapg_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to
-    /// retrieve the next set of items.</p>
+    /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHapgsOutput {
@@ -465,8 +456,7 @@ impl ListHapgsOutput {
     pub fn hapg_list(&self) -> std::option::Option<&[std::string::String]> {
         self.hapg_list.as_deref()
     }
-    /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to
-    /// retrieve the next set of items.</p>
+    /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -508,14 +498,12 @@ pub mod list_hapgs_output {
             self.hapg_list = input;
             self
         }
-        /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to
-        /// retrieve the next set of items.</p>
+        /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to
-        /// retrieve the next set of items.</p>
+        /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -827,7 +815,7 @@ impl DescribeLunaClientOutput {
     }
 }
 
-/// <p>Contains the output of the <a>DescribeHsm</a> operation.</p>
+/// <p>Contains the output of the <code>DescribeHsm</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHsmOutput {
@@ -845,16 +833,8 @@ pub struct DescribeHsmOutput {
     pub eni_ip: std::option::Option<std::string::String>,
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>PRODUCTION</b> - The HSM is being used in a production
-    /// environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>TRIAL</b> - The HSM is being used in a product
-    /// trial.</p>
-    /// </li>
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
     pub subscription_type: std::option::Option<crate::model::SubscriptionType>,
     /// <p>The subscription start date.</p>
@@ -913,16 +893,8 @@ impl DescribeHsmOutput {
     }
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>PRODUCTION</b> - The HSM is being used in a production
-    /// environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>TRIAL</b> - The HSM is being used in a product
-    /// trial.</p>
-    /// </li>
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
     /// </ul>
     pub fn subscription_type(&self) -> std::option::Option<&crate::model::SubscriptionType> {
         self.subscription_type.as_ref()
@@ -1108,16 +1080,8 @@ pub mod describe_hsm_output {
         }
         /// <p>Specifies the type of subscription for the HSM.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>PRODUCTION</b> - The HSM is being used in a production
-        /// environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>TRIAL</b> - The HSM is being used in a product
-        /// trial.</p>
-        /// </li>
+        /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+        /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
         /// </ul>
         pub fn subscription_type(mut self, input: crate::model::SubscriptionType) -> Self {
             self.subscription_type = Some(input);
@@ -1125,16 +1089,8 @@ pub mod describe_hsm_output {
         }
         /// <p>Specifies the type of subscription for the HSM.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>PRODUCTION</b> - The HSM is being used in a production
-        /// environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>TRIAL</b> - The HSM is being used in a product
-        /// trial.</p>
-        /// </li>
+        /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+        /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
         /// </ul>
         pub fn set_subscription_type(
             mut self,
@@ -1351,7 +1307,7 @@ impl DescribeHsmOutput {
     }
 }
 
-/// <p>Contains the output of the <a>DescribeHapg</a> action.</p>
+/// <p>Contains the output of the <code>DescribeHapg</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeHapgOutput {
@@ -1369,8 +1325,7 @@ pub struct DescribeHapgOutput {
     pub label: std::option::Option<std::string::String>,
     /// <p>The date and time the high-availability partition group was last modified.</p>
     pub last_modified_timestamp: std::option::Option<std::string::String>,
-    /// <p>The list of partition serial numbers that belong to the high-availability partition
-    /// group.</p>
+    /// <p>The list of partition serial numbers that belong to the high-availability partition group.</p>
     pub partition_serial_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The state of the high-availability partition group.</p>
     pub state: std::option::Option<crate::model::CloudHsmObjectState>,
@@ -1404,8 +1359,7 @@ impl DescribeHapgOutput {
     pub fn last_modified_timestamp(&self) -> std::option::Option<&str> {
         self.last_modified_timestamp.as_deref()
     }
-    /// <p>The list of partition serial numbers that belong to the high-availability partition
-    /// group.</p>
+    /// <p>The list of partition serial numbers that belong to the high-availability partition group.</p>
     pub fn partition_serial_list(&self) -> std::option::Option<&[std::string::String]> {
         self.partition_serial_list.as_deref()
     }
@@ -1551,16 +1505,14 @@ pub mod describe_hapg_output {
         ///
         /// To override the contents of this collection use [`set_partition_serial_list`](Self::set_partition_serial_list).
         ///
-        /// <p>The list of partition serial numbers that belong to the high-availability partition
-        /// group.</p>
+        /// <p>The list of partition serial numbers that belong to the high-availability partition group.</p>
         pub fn partition_serial_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.partition_serial_list.unwrap_or_default();
             v.push(input.into());
             self.partition_serial_list = Some(v);
             self
         }
-        /// <p>The list of partition serial numbers that belong to the high-availability partition
-        /// group.</p>
+        /// <p>The list of partition serial numbers that belong to the high-availability partition group.</p>
         pub fn set_partition_serial_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1658,7 +1610,7 @@ impl DeleteLunaClientOutput {
     }
 }
 
-/// <p>Contains the output of the <a>DeleteHsm</a> operation.</p>
+/// <p>Contains the output of the <code>DeleteHsm</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHsmOutput {
@@ -1712,7 +1664,7 @@ impl DeleteHsmOutput {
     }
 }
 
-/// <p>Contains the output of the <a>DeleteHapg</a> action.</p>
+/// <p>Contains the output of the <code>DeleteHapg</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteHapgOutput {
@@ -1766,7 +1718,7 @@ impl DeleteHapgOutput {
     }
 }
 
-/// <p>Contains the output of the <a>CreateLunaClient</a> action.</p>
+/// <p>Contains the output of the <code>CreateLunaClient</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLunaClientOutput {
@@ -1874,7 +1826,7 @@ impl CreateHsmOutput {
     }
 }
 
-/// <p>Contains the output of the <a>CreateHAPartitionGroup</a> action.</p>
+/// <p>Contains the output of the <code>CreateHAPartitionGroup</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHapgOutput {

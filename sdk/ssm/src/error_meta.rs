@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Error returned if an attempt is made to register a patch group with a patch baseline that is
-    /// already registered with a different patch baseline.</p>
+    /// <p>Error returned if an attempt is made to register a patch group with a patch baseline that is already registered with a different patch baseline.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>You must disassociate a document from all managed nodes before you can delete it.</p>
     AssociatedInstances(crate::error::AssociatedInstances),
@@ -16,11 +15,9 @@ pub enum Error {
     AssociationExecutionDoesNotExist(crate::error::AssociationExecutionDoesNotExist),
     /// <p>You can have at most 2,000 active associations.</p>
     AssociationLimitExceeded(crate::error::AssociationLimitExceeded),
-    /// <p>You have reached the maximum number versions allowed for an association. Each association
-    /// has a limit of 1,000 versions. </p>
+    /// <p>You have reached the maximum number versions allowed for an association. Each association has a limit of 1,000 versions. </p>
     AssociationVersionLimitExceeded(crate::error::AssociationVersionLimitExceeded),
-    /// <p>Indicates that the Change Manager change template used in the change request was rejected or is
-    /// still in a pending state.</p>
+    /// <p>Indicates that the Change Manager change template used in the change request was rejected or is still in a pending state.</p>
     AutomationDefinitionNotApprovedException(
         crate::error::AutomationDefinitionNotApprovedException,
     ),
@@ -30,88 +27,62 @@ pub enum Error {
     AutomationDefinitionVersionNotFoundException(
         crate::error::AutomationDefinitionVersionNotFoundException,
     ),
-    /// <p>The number of simultaneously running Automation executions exceeded the allowable
-    /// limit.</p>
+    /// <p>The number of simultaneously running Automation executions exceeded the allowable limit.</p>
     AutomationExecutionLimitExceededException(
         crate::error::AutomationExecutionLimitExceededException,
     ),
-    /// <p>There is no automation execution information for the requested automation execution
-    /// ID.</p>
+    /// <p>There is no automation execution information for the requested automation execution ID.</p>
     AutomationExecutionNotFoundException(crate::error::AutomationExecutionNotFoundException),
-    /// <p>The specified step name and execution ID don't exist. Verify the information and try
-    /// again.</p>
+    /// <p>The specified step name and execution ID don't exist. Verify the information and try again.</p>
     AutomationStepNotFoundException(crate::error::AutomationStepNotFoundException),
-    /// <p>You specified too many custom compliance types. You can specify a maximum of 10 different
-    /// types. </p>
+    /// <p>You specified too many custom compliance types. You can specify a maximum of 10 different types. </p>
     ComplianceTypeCountLimitExceededException(
         crate::error::ComplianceTypeCountLimitExceededException,
     ),
-    /// <p>You have exceeded the limit for custom schemas. Delete one or more custom schemas and try
-    /// again.</p>
+    /// <p>You have exceeded the limit for custom schemas. Delete one or more custom schemas and try again.</p>
     CustomSchemaCountLimitExceededException(crate::error::CustomSchemaCountLimitExceededException),
     /// <p>The specified document already exists.</p>
     DocumentAlreadyExists(crate::error::DocumentAlreadyExists),
     /// <p>You can have at most 500 active SSM documents.</p>
     DocumentLimitExceeded(crate::error::DocumentLimitExceeded),
-    /// <p>The document can't be shared with more Amazon Web Services user accounts. You can share a document
-    /// with a maximum of 20 accounts. You can publicly share up to five documents. If you need to
-    /// increase this limit, contact Amazon Web Services Support.</p>
+    /// <p>The document can't be shared with more Amazon Web Services user accounts. You can share a document with a maximum of 20 accounts. You can publicly share up to five documents. If you need to increase this limit, contact Amazon Web Services Support.</p>
     DocumentPermissionLimit(crate::error::DocumentPermissionLimit),
-    /// <p>The document has too many versions. Delete one or more document versions and try
-    /// again.</p>
+    /// <p>The document has too many versions. Delete one or more document versions and try again.</p>
     DocumentVersionLimitExceeded(crate::error::DocumentVersionLimitExceeded),
-    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch
-    /// baseline, doesn't exist.</p>
-    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the ID specified for a resource, such as a maintenance window or patch baseline, doesn't exist.</p>
+    /// <p>For information about resource quotas in Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     DoesNotExistException(crate::error::DoesNotExistException),
-    /// <p>The content of the association document matches another document. Change the content of the
-    /// document and try again.</p>
+    /// <p>The content of the association document matches another document. Change the content of the document and try again.</p>
     DuplicateDocumentContent(crate::error::DuplicateDocumentContent),
-    /// <p>The version name has already been used in this document. Specify a different version name,
-    /// and then try again.</p>
+    /// <p>The version name has already been used in this document. Specify a different version name, and then try again.</p>
     DuplicateDocumentVersionName(crate::error::DuplicateDocumentVersionName),
     /// <p>You can't specify a managed node ID in more than one association.</p>
     DuplicateInstanceId(crate::error::DuplicateInstanceId),
-    /// <p>You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task in a
-    /// region where the corresponding service isn't available. </p>
+    /// <p>You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task in a region where the corresponding service isn't available. </p>
     FeatureNotAvailableException(crate::error::FeatureNotAvailableException),
-    /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and
-    /// constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and constraints for parameter names</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     HierarchyLevelLimitExceededException(crate::error::HierarchyLevelLimitExceededException),
-    /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you
-    /// can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You
-    /// must create a new, unique parameter.</p>
+    /// <p>Parameter Store doesn't support changing a parameter type in a hierarchy. For example, you can't change a parameter from a <code>String</code> type to a <code>SecureString</code> type. You must create a new, unique parameter.</p>
     HierarchyTypeMismatchException(crate::error::HierarchyTypeMismatchException),
-    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the
-    /// original call to the API with the same idempotency token. </p>
+    /// <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
     IdempotentParameterMismatch(crate::error::IdempotentParameterMismatch),
-    /// <p>There is a conflict in the policies specified for this parameter. You can't, for example,
-    /// specify two Expiration policies for a parameter. Review your policies, and try again.</p>
+    /// <p>There is a conflict in the policies specified for this parameter. You can't, for example, specify two Expiration policies for a parameter. Review your policies, and try again.</p>
     IncompatiblePolicyException(crate::error::IncompatiblePolicyException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The activation isn't valid. The activation might have been deleted, or the ActivationId and
-    /// the ActivationCode don't match.</p>
+    /// <p>The activation isn't valid. The activation might have been deleted, or the ActivationId and the ActivationCode don't match.</p>
     InvalidActivation(crate::error::InvalidActivation),
-    /// <p>The activation ID isn't valid. Verify the you entered the correct ActivationId or
-    /// ActivationCode and try again.</p>
+    /// <p>The activation ID isn't valid. Verify the you entered the correct ActivationId or ActivationCode and try again.</p>
     InvalidActivationId(crate::error::InvalidActivationId),
-    /// <p>The specified aggregator isn't valid for inventory groups. Verify that the aggregator uses a
-    /// valid inventory type such as <code>AWS:Application</code> or
-    /// <code>AWS:InstanceInformation</code>.</p>
+    /// <p>The specified aggregator isn't valid for inventory groups. Verify that the aggregator uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.</p>
     InvalidAggregatorException(crate::error::InvalidAggregatorException),
     /// <p>The request doesn't meet the regular expression requirement.</p>
     InvalidAllowedPatternException(crate::error::InvalidAllowedPatternException),
     /// <p>The association isn't valid or doesn't exist. </p>
     InvalidAssociation(crate::error::InvalidAssociation),
-    /// <p>The version you specified isn't valid. Use ListAssociationVersions to view all versions of
-    /// an association according to the association ID. Or, use the <code>$LATEST</code> parameter to
-    /// view the latest version of the association.</p>
+    /// <p>The version you specified isn't valid. Use ListAssociationVersions to view all versions of an association according to the association ID. Or, use the <code>$LATEST</code> parameter to view the latest version of the association.</p>
     InvalidAssociationVersion(crate::error::InvalidAssociationVersion),
-    /// <p>The supplied parameters for invoking the specified Automation runbook are incorrect. For
-    /// example, they may not match the set of parameters permitted for the specified Automation
-    /// document.</p>
+    /// <p>The supplied parameters for invoking the specified Automation runbook are incorrect. For example, they may not match the set of parameters permitted for the specified Automation document.</p>
     InvalidAutomationExecutionParametersException(
         crate::error::InvalidAutomationExecutionParametersException,
     ),
@@ -121,25 +92,21 @@ pub enum Error {
     InvalidAutomationStatusUpdateException(crate::error::InvalidAutomationStatusUpdateException),
     /// <p>The specified command ID isn't valid. Verify the ID and try again.</p>
     InvalidCommandId(crate::error::InvalidCommandId),
-    /// <p>One or more of the parameters specified for the delete operation isn't valid. Verify all
-    /// parameters and try again.</p>
+    /// <p>One or more of the parameters specified for the delete operation isn't valid. Verify all parameters and try again.</p>
     InvalidDeleteInventoryParametersException(
         crate::error::InvalidDeleteInventoryParametersException,
     ),
-    /// <p>The ID specified for the delete operation doesn't exist or isn't valid. Verify the ID and
-    /// try again.</p>
+    /// <p>The ID specified for the delete operation doesn't exist or isn't valid. Verify the ID and try again.</p>
     InvalidDeletionIdException(crate::error::InvalidDeletionIdException),
     /// <p>The specified SSM document doesn't exist.</p>
     InvalidDocument(crate::error::InvalidDocument),
     /// <p>The content for the document isn't valid.</p>
     InvalidDocumentContent(crate::error::InvalidDocumentContent),
-    /// <p>You attempted to delete a document while it is still shared. You must stop sharing the
-    /// document before you can delete it.</p>
+    /// <p>You attempted to delete a document while it is still shared. You must stop sharing the document before you can delete it.</p>
     InvalidDocumentOperation(crate::error::InvalidDocumentOperation),
     /// <p>The version of the document schema isn't supported.</p>
     InvalidDocumentSchemaVersion(crate::error::InvalidDocumentSchemaVersion),
-    /// <p>The SSM document type isn't valid. Valid document types are described in the
-    /// <code>DocumentType</code> property.</p>
+    /// <p>The SSM document type isn't valid. Valid document types are described in the <code>DocumentType</code> property.</p>
     InvalidDocumentType(crate::error::InvalidDocumentType),
     /// <p>The document version isn't valid or doesn't exist.</p>
     InvalidDocumentVersion(crate::error::InvalidDocumentVersion),
@@ -147,36 +114,23 @@ pub enum Error {
     InvalidFilter(crate::error::InvalidFilter),
     /// <p>The specified key isn't valid.</p>
     InvalidFilterKey(crate::error::InvalidFilterKey),
-    /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path
-    /// filter, valid options are Recursive and OneLevel.</p>
+    /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path filter, valid options are Recursive and OneLevel.</p>
     InvalidFilterOption(crate::error::InvalidFilterOption),
     /// <p>The filter value isn't valid. Verify the value and try again.</p>
     InvalidFilterValue(crate::error::InvalidFilterValue),
     /// <p>The following problems can cause this exception:</p>
     /// <ul>
-    /// <li>
-    /// <p>You don't have permission to access the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is
-    /// running.</p>
-    /// </li>
-    /// <li>
-    /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p>
-    /// </li>
-    /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>,
-    /// <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are:
-    /// <code>Shutting-down</code> and <code>Terminated</code>.</p>
-    /// </li>
+    /// <li> <p>You don't have permission to access the managed node.</p> </li>
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
     /// </ul>
     InvalidInstanceId(crate::error::InvalidInstanceId),
     /// <p>The specified filter value isn't valid.</p>
     InvalidInstanceInformationFilterValue(crate::error::InvalidInstanceInformationFilterValue),
     /// <p>The specified inventory group isn't valid.</p>
     InvalidInventoryGroupException(crate::error::InvalidInventoryGroupException),
-    /// <p>You specified invalid keys or values in the <code>Context</code> attribute for
-    /// <code>InventoryItem</code>. Verify the keys and values, and try again.</p>
+    /// <p>You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>. Verify the keys and values, and try again.</p>
     InvalidInventoryItemContextException(crate::error::InvalidInventoryItemContextException),
     /// <p>The request isn't valid.</p>
     InvalidInventoryRequestException(crate::error::InvalidInventoryRequestException),
@@ -186,8 +140,7 @@ pub enum Error {
     InvalidKeyId(crate::error::InvalidKeyId),
     /// <p>The specified token isn't valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>One or more configuration items isn't valid. Verify that a valid Amazon Resource Name (ARN)
-    /// was provided for an Amazon Simple Notification Service topic.</p>
+    /// <p>One or more configuration items isn't valid. Verify that a valid Amazon Resource Name (ARN) was provided for an Amazon Simple Notification Service topic.</p>
     InvalidNotificationConfig(crate::error::InvalidNotificationConfig),
     /// <p>The delete inventory option specified isn't valid. Verify the option and try again.</p>
     InvalidOptionException(crate::error::InvalidOptionException),
@@ -195,41 +148,33 @@ pub enum Error {
     InvalidOutputFolder(crate::error::InvalidOutputFolder),
     /// <p>The output location isn't valid or doesn't exist.</p>
     InvalidOutputLocation(crate::error::InvalidOutputLocation),
-    /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM
-    /// document). You can only supply values to parameters defined in the SSM document.</p>
+    /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM document). You can only supply values to parameters defined in the SSM document.</p>
     InvalidParameters(crate::error::InvalidParameters),
-    /// <p>The permission type isn't supported. <i>Share</i> is the only supported
-    /// permission type.</p>
+    /// <p>The permission type isn't supported. <i>Share</i> is the only supported permission type.</p>
     InvalidPermissionType(crate::error::InvalidPermissionType),
     /// <p>The plugin name isn't valid.</p>
     InvalidPluginName(crate::error::InvalidPluginName),
     /// <p>A policy attribute or its value is invalid. </p>
     InvalidPolicyAttributeException(crate::error::InvalidPolicyAttributeException),
-    /// <p>The policy type isn't supported. Parameter Store supports the following policy types:
-    /// Expiration, ExpirationNotification, and NoChangeNotification.</p>
+    /// <p>The policy type isn't supported. Parameter Store supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification.</p>
     InvalidPolicyTypeException(crate::error::InvalidPolicyTypeException),
     /// <p>The resource ID isn't valid. Verify that you entered the correct ID and try again.</p>
     InvalidResourceId(crate::error::InvalidResourceId),
-    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the
-    /// instance must be a registered managed node.</p>
+    /// <p>The resource type isn't valid. For example, if you are attempting to tag an EC2 instance, the instance must be a registered managed node.</p>
     InvalidResourceType(crate::error::InvalidResourceType),
     /// <p>The specified inventory item result attribute isn't valid.</p>
     InvalidResultAttributeException(crate::error::InvalidResultAttributeException),
-    /// <p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about
-    /// configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring Amazon SNS Notifications for Run Command</a> in the
-    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring Amazon SNS Notifications for Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     InvalidRole(crate::error::InvalidRole),
     /// <p>The schedule is invalid. Verify your cron or rate expression and try again.</p>
     InvalidSchedule(crate::error::InvalidSchedule),
-    /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might
-    /// not have permission to perform the operation.</p>
+    /// <p>The target isn't valid or doesn't exist. It might not be configured for Systems Manager or you might not have permission to perform the operation.</p>
     InvalidTarget(crate::error::InvalidTarget),
     /// <p>The parameter type name isn't valid.</p>
     InvalidTypeNameException(crate::error::InvalidTypeNameException),
     /// <p>The update isn't valid.</p>
     InvalidUpdate(crate::error::InvalidUpdate),
-    /// <p>The command ID and managed node ID you specified didn't match any invocations. Verify the
-    /// command ID and the managed node ID and try again. </p>
+    /// <p>The command ID and managed node ID you specified didn't match any invocations. Verify the command ID and the managed node ID and try again. </p>
     InvocationDoesNotExist(crate::error::InvocationDoesNotExist),
     /// <p>The inventory item has invalid content. </p>
     ItemContentMismatchException(crate::error::ItemContentMismatchException),
@@ -239,11 +184,9 @@ pub enum Error {
     MaxDocumentSizeExceeded(crate::error::MaxDocumentSizeExceeded),
     /// <p>The OpsItem already exists.</p>
     OpsItemAlreadyExistsException(crate::error::OpsItemAlreadyExistsException),
-    /// <p>A specified parameter argument isn't valid. Verify the available arguments and try
-    /// again.</p>
+    /// <p>A specified parameter argument isn't valid. Verify the available arguments and try again.</p>
     OpsItemInvalidParameterException(crate::error::OpsItemInvalidParameterException),
-    /// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem
-    /// quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
+    /// <p>The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What are the resource limits for OpsCenter?</a>.</p>
     OpsItemLimitExceededException(crate::error::OpsItemLimitExceededException),
     /// <p>The specified OpsItem ID doesn't exist. Verify the ID and try again.</p>
     OpsItemNotFoundException(crate::error::OpsItemNotFoundException),
@@ -251,8 +194,7 @@ pub enum Error {
     OpsItemRelatedItemAlreadyExistsException(
         crate::error::OpsItemRelatedItemAlreadyExistsException,
     ),
-    /// <p>The association wasn't found using the parameters you specified in the call. Verify the
-    /// information and try again.</p>
+    /// <p>The association wasn't found using the parameters you specified in the call. Verify the information and try again.</p>
     OpsItemRelatedItemAssociationNotFoundException(
         crate::error::OpsItemRelatedItemAssociationNotFoundException,
     ),
@@ -260,38 +202,21 @@ pub enum Error {
     OpsMetadataAlreadyExistsException(crate::error::OpsMetadataAlreadyExistsException),
     /// <p>One of the arguments passed is invalid. </p>
     OpsMetadataInvalidArgumentException(crate::error::OpsMetadataInvalidArgumentException),
-    /// <p>The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to
-    /// an application in Application Manager.</p>
+    /// <p>The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to an application in Application Manager.</p>
     OpsMetadataKeyLimitExceededException(crate::error::OpsMetadataKeyLimitExceededException),
-    /// <p>Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The
-    /// maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and try again.</p>
+    /// <p>Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and try again.</p>
     OpsMetadataLimitExceededException(crate::error::OpsMetadataLimitExceededException),
     /// <p>The OpsMetadata object doesn't exist. </p>
     OpsMetadataNotFoundException(crate::error::OpsMetadataNotFoundException),
-    /// <p>The system is processing too many concurrent updates. Wait a few moments and try
-    /// again.</p>
+    /// <p>The system is processing too many concurrent updates. Wait a few moments and try again.</p>
     OpsMetadataTooManyUpdatesException(crate::error::OpsMetadataTooManyUpdatesException),
     /// <p>The parameter already exists. You can't create duplicate parameters.</p>
     ParameterAlreadyExists(crate::error::ParameterAlreadyExists),
-    /// <p>You have exceeded the number of parameters for this Amazon Web Services account. Delete one or more
-    /// parameters and try again.</p>
+    /// <p>You have exceeded the number of parameters for this Amazon Web Services account. Delete one or more parameters and try again.</p>
     ParameterLimitExceeded(crate::error::ParameterLimitExceeded),
-    /// <p>Parameter Store retains the 100 most recently created versions of a parameter. After this
-    /// number of versions has been created, Parameter Store deletes the oldest version when a new one is
-    /// created. However, if the oldest version has a <i>label</i> attached to it,
-    /// Parameter Store won't delete the version and instead presents this error message:</p>
-    /// <p>
-    /// <code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter
-    /// operation: You attempted to create a new version of <i>parameter-name</i> by
-    /// calling the PutParameter API with the overwrite flag. Version
-    /// <i>version-number</i>, the oldest version, can't be deleted because it has a
-    /// label associated with it. Move the label to another version of the parameter, and try
-    /// again.</code>
-    /// </p>
-    /// <p>This safeguard is to prevent parameter versions with mission critical labels assigned to
-    /// them from being deleted. To continue creating new parameters, first move the label from the
-    /// oldest version of the parameter to a newer one for use in your operations. For information about
-    /// moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move a parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move a parameter label (CLI)</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>Parameter Store retains the 100 most recently created versions of a parameter. After this number of versions has been created, Parameter Store deletes the oldest version when a new one is created. However, if the oldest version has a <i>label</i> attached to it, Parameter Store won't delete the version and instead presents this error message:</p>
+    /// <p> <code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter operation: You attempted to create a new version of <i>parameter-name</i> by calling the PutParameter API with the overwrite flag. Version <i>version-number</i>, the oldest version, can't be deleted because it has a label associated with it. Move the label to another version of the parameter, and try again.</code> </p>
+    /// <p>This safeguard is to prevent parameter versions with mission critical labels assigned to them from being deleted. To continue creating new parameters, first move the label from the oldest version of the parameter to a newer one for use in your operations. For information about moving parameter labels, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move">Move a parameter label (console)</a> or <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move">Move a parameter label (CLI)</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     ParameterMaxVersionLimitExceeded(crate::error::ParameterMaxVersionLimitExceeded),
     /// <p>The parameter couldn't be found. Verify the name and try again.</p>
     ParameterNotFound(crate::error::ParameterNotFound),
@@ -299,16 +224,13 @@ pub enum Error {
     ParameterPatternMismatchException(crate::error::ParameterPatternMismatchException),
     /// <p>A parameter version can have a maximum of ten labels.</p>
     ParameterVersionLabelLimitExceeded(crate::error::ParameterVersionLabelLimitExceeded),
-    /// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try
-    /// again.</p>
+    /// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try again.</p>
     ParameterVersionNotFound(crate::error::ParameterVersionNotFound),
-    /// <p>You specified more than the maximum number of allowed policies for the parameter. The
-    /// maximum is 10.</p>
+    /// <p>You specified more than the maximum number of allowed policies for the parameter. The maximum is 10.</p>
     PoliciesLimitExceededException(crate::error::PoliciesLimitExceededException),
     /// <p>A sync configuration with the same name already exists.</p>
     ResourceDataSyncAlreadyExistsException(crate::error::ResourceDataSyncAlreadyExistsException),
-    /// <p>Another <code>UpdateResourceDataSync</code> request is being processed. Wait a few minutes
-    /// and try again.</p>
+    /// <p>Another <code>UpdateResourceDataSync</code> request is being processed. Wait a few minutes and try again.</p>
     ResourceDataSyncConflictException(crate::error::ResourceDataSyncConflictException),
     /// <p>You have exceeded the allowed maximum sync configurations.</p>
     ResourceDataSyncCountExceededException(crate::error::ResourceDataSyncCountExceededException),
@@ -318,31 +240,22 @@ pub enum Error {
     ),
     /// <p>The specified sync name wasn't found.</p>
     ResourceDataSyncNotFoundException(crate::error::ResourceDataSyncNotFoundException),
-    /// <p>Error returned if an attempt is made to delete a patch baseline that is registered for a
-    /// patch group.</p>
+    /// <p>Error returned if an attempt is made to delete a patch baseline that is registered for a patch group.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too
-    /// many maintenance windows or patch baselines have been created.</p>
-    /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too many maintenance windows or patch baselines have been created.</p>
+    /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
-    /// <p>The specified service setting wasn't found. Either the service name or the setting hasn't
-    /// been provisioned by the Amazon Web Services service team.</p>
+    /// <p>The specified service setting wasn't found. Either the service name or the setting hasn't been provisioned by the Amazon Web Services service team.</p>
     ServiceSettingNotFound(crate::error::ServiceSettingNotFound),
     /// <p>The updated status is the same as the current status.</p>
     StatusUnchanged(crate::error::StatusUnchanged),
     /// <p>The sub-type count exceeded the limit for the inventory type.</p>
     SubTypeCountLimitExceededException(crate::error::SubTypeCountLimitExceededException),
-    /// <p>You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow
-    /// operation, but the target is still referenced in a task.</p>
+    /// <p>You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow operation, but the target is still referenced in a task.</p>
     TargetInUseException(crate::error::TargetInUseException),
-    /// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For
-    /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting started with
-    /// Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you
-    /// attempt to start a session on a managed node that is located in a different account or Region</p>
+    /// <p>The specified target managed node for the session isn't fully configured for use with Session Manager. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html">Getting started with Session Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. This error is also returned if you attempt to start a session on a managed node that is located in a different account or Region</p>
     TargetNotConnected(crate::error::TargetNotConnected),
-    /// <p>The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try
-    /// the command again.</p>
+    /// <p>The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try the command again.</p>
     TooManyTagsError(crate::error::TooManyTagsError),
     /// <p>There are concurrent updates for a resource that supports one update at a time.</p>
     TooManyUpdates(crate::error::TooManyUpdates),
@@ -350,29 +263,21 @@ pub enum Error {
     TotalSizeLimitExceededException(crate::error::TotalSizeLimitExceededException),
     /// <p>The calendar entry contained in the specified SSM document isn't supported.</p>
     UnsupportedCalendarException(crate::error::UnsupportedCalendarException),
-    /// <p>Patching for applications released by Microsoft is only available on EC2 instances and
-    /// advanced instances. To patch applications released by Microsoft on on-premises servers and VMs,
-    /// you must enable advanced instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Enabling
-    /// the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Patching for applications released by Microsoft is only available on EC2 instances and advanced instances. To patch applications released by Microsoft on on-premises servers and VMs, you must enable advanced instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Enabling the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     UnsupportedFeatureRequiredException(crate::error::UnsupportedFeatureRequiredException),
-    /// <p>The <code>Context</code> attribute that you specified for the <code>InventoryItem</code>
-    /// isn't allowed for this inventory type. You can only use the <code>Context</code> attribute with
-    /// inventory types like <code>AWS:ComplianceItem</code>.</p>
+    /// <p>The <code>Context</code> attribute that you specified for the <code>InventoryItem</code> isn't allowed for this inventory type. You can only use the <code>Context</code> attribute with inventory types like <code>AWS:ComplianceItem</code>.</p>
     UnsupportedInventoryItemContextException(
         crate::error::UnsupportedInventoryItemContextException,
     ),
-    /// <p>Inventory item type schema version has to match supported versions in the service. Check
-    /// output of GetInventorySchema to see the available schema version for each type.</p>
+    /// <p>Inventory item type schema version has to match supported versions in the service. Check output of GetInventorySchema to see the available schema version for each type.</p>
     UnsupportedInventorySchemaVersionException(
         crate::error::UnsupportedInventorySchemaVersionException,
     ),
-    /// <p>The operating systems you specified isn't supported, or the operation isn't supported for
-    /// the operating system.</p>
+    /// <p>The operating systems you specified isn't supported, or the operation isn't supported for the operating system.</p>
     UnsupportedOperatingSystem(crate::error::UnsupportedOperatingSystem),
     /// <p>The parameter type isn't supported.</p>
     UnsupportedParameterType(crate::error::UnsupportedParameterType),
-    /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you
-    /// sent an document for a Windows managed node to a Linux node.</p>
+    /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you sent an document for a Windows managed node to a Linux node.</p>
     UnsupportedPlatformType(crate::error::UnsupportedPlatformType),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

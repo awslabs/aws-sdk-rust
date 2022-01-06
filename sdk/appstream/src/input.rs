@@ -51,7 +51,7 @@ pub mod associate_application_fleet_input {
 pub type AssociateApplicationFleetInputOperationOutputAlias =
     crate::operation::AssociateApplicationFleet;
 #[doc(hidden)]
-pub type AssociateApplicationFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateApplicationFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateApplicationFleetInput {
     /// Consumes the builder and constructs an Operation<[`AssociateApplicationFleet`](crate::operation::AssociateApplicationFleet)>
     #[allow(clippy::let_and_return)]
@@ -62,7 +62,7 @@ impl AssociateApplicationFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateApplicationFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -149,7 +149,7 @@ impl AssociateApplicationFleetInput {
             "AssociateApplicationFleet",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -169,6 +169,193 @@ impl AssociateApplicationFleetInput {
     /// Creates a new builder-style object to manufacture [`AssociateApplicationFleetInput`](crate::input::AssociateApplicationFleetInput)
     pub fn builder() -> crate::input::associate_application_fleet_input::Builder {
         crate::input::associate_application_fleet_input::Builder::default()
+    }
+}
+
+/// See [`AssociateApplicationToEntitlementInput`](crate::input::AssociateApplicationToEntitlementInput)
+pub mod associate_application_to_entitlement_input {
+    /// A builder for [`AssociateApplicationToEntitlementInput`](crate::input::AssociateApplicationToEntitlementInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stack_name: std::option::Option<std::string::String>,
+        pub(crate) entitlement_name: std::option::Option<std::string::String>,
+        pub(crate) application_identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the stack.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stack.</p>
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn entitlement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entitlement_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn set_entitlement_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.entitlement_name = input;
+            self
+        }
+        /// <p>The identifier of the application.</p>
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_identifier = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the application.</p>
+        pub fn set_application_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateApplicationToEntitlementInput`](crate::input::AssociateApplicationToEntitlementInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::AssociateApplicationToEntitlementInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AssociateApplicationToEntitlementInput {
+                stack_name: self.stack_name,
+                entitlement_name: self.entitlement_name,
+                application_identifier: self.application_identifier,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type AssociateApplicationToEntitlementInputOperationOutputAlias =
+    crate::operation::AssociateApplicationToEntitlement;
+#[doc(hidden)]
+pub type AssociateApplicationToEntitlementInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl AssociateApplicationToEntitlementInput {
+    /// Consumes the builder and constructs an Operation<[`AssociateApplicationToEntitlement`](crate::operation::AssociateApplicationToEntitlement)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::AssociateApplicationToEntitlement,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::AssociateApplicationToEntitlementInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::AssociateApplicationToEntitlementInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::AssociateApplicationToEntitlementInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "PhotonAdminProxyService.AssociateApplicationToEntitlement",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_associate_application_to_entitlement(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AssociateApplicationToEntitlement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AssociateApplicationToEntitlement",
+            "appstream",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`AssociateApplicationToEntitlementInput`](crate::input::AssociateApplicationToEntitlementInput)
+    pub fn builder() -> crate::input::associate_application_to_entitlement_input::Builder {
+        crate::input::associate_application_to_entitlement_input::Builder::default()
     }
 }
 
@@ -219,7 +406,7 @@ pub mod associate_fleet_input {
 #[doc(hidden)]
 pub type AssociateFleetInputOperationOutputAlias = crate::operation::AssociateFleet;
 #[doc(hidden)]
-pub type AssociateFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateFleetInput {
     /// Consumes the builder and constructs an Operation<[`AssociateFleet`](crate::operation::AssociateFleet)>
     #[allow(clippy::let_and_return)]
@@ -230,7 +417,7 @@ impl AssociateFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -315,7 +502,7 @@ impl AssociateFleetInput {
             "AssociateFleet",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -355,10 +542,10 @@ pub mod batch_associate_user_stack_input {
         /// <p>The list of UserStackAssociation objects.</p>
         pub fn user_stack_associations(
             mut self,
-            input: impl Into<crate::model::UserStackAssociation>,
+            input: crate::model::UserStackAssociation,
         ) -> Self {
             let mut v = self.user_stack_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_stack_associations = Some(v);
             self
         }
@@ -387,7 +574,7 @@ pub mod batch_associate_user_stack_input {
 pub type BatchAssociateUserStackInputOperationOutputAlias =
     crate::operation::BatchAssociateUserStack;
 #[doc(hidden)]
-pub type BatchAssociateUserStackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchAssociateUserStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchAssociateUserStackInput {
     /// Consumes the builder and constructs an Operation<[`BatchAssociateUserStack`](crate::operation::BatchAssociateUserStack)>
     #[allow(clippy::let_and_return)]
@@ -398,7 +585,7 @@ impl BatchAssociateUserStackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchAssociateUserStack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -485,7 +672,7 @@ impl BatchAssociateUserStackInput {
             "BatchAssociateUserStack",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -525,10 +712,10 @@ pub mod batch_disassociate_user_stack_input {
         /// <p>The list of UserStackAssociation objects.</p>
         pub fn user_stack_associations(
             mut self,
-            input: impl Into<crate::model::UserStackAssociation>,
+            input: crate::model::UserStackAssociation,
         ) -> Self {
             let mut v = self.user_stack_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_stack_associations = Some(v);
             self
         }
@@ -557,7 +744,7 @@ pub mod batch_disassociate_user_stack_input {
 pub type BatchDisassociateUserStackInputOperationOutputAlias =
     crate::operation::BatchDisassociateUserStack;
 #[doc(hidden)]
-pub type BatchDisassociateUserStackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchDisassociateUserStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchDisassociateUserStackInput {
     /// Consumes the builder and constructs an Operation<[`BatchDisassociateUserStack`](crate::operation::BatchDisassociateUserStack)>
     #[allow(clippy::let_and_return)]
@@ -568,7 +755,7 @@ impl BatchDisassociateUserStackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchDisassociateUserStack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -654,7 +841,7 @@ impl BatchDisassociateUserStackInput {
             "BatchDisassociateUserStack",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -761,7 +948,7 @@ pub mod copy_image_input {
 #[doc(hidden)]
 pub type CopyImageInputOperationOutputAlias = crate::operation::CopyImage;
 #[doc(hidden)]
-pub type CopyImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CopyImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CopyImageInput {
     /// Consumes the builder and constructs an Operation<[`CopyImage`](crate::operation::CopyImage)>
     #[allow(clippy::let_and_return)]
@@ -772,7 +959,7 @@ impl CopyImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CopyImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -854,7 +1041,7 @@ impl CopyImageInput {
                     "CopyImage",
                     "appstream",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -995,7 +1182,7 @@ pub mod create_app_block_input {
 #[doc(hidden)]
 pub type CreateAppBlockInputOperationOutputAlias = crate::operation::CreateAppBlock;
 #[doc(hidden)]
-pub type CreateAppBlockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAppBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppBlockInput {
     /// Consumes the builder and constructs an Operation<[`CreateAppBlock`](crate::operation::CreateAppBlock)>
     #[allow(clippy::let_and_return)]
@@ -1006,7 +1193,7 @@ impl CreateAppBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAppBlock,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1091,7 +1278,7 @@ impl CreateAppBlockInput {
             "CreateAppBlock",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1219,9 +1406,9 @@ pub mod create_application_input {
         /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
         ///
         /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
-        pub fn platforms(mut self, input: impl Into<crate::model::PlatformType>) -> Self {
+        pub fn platforms(mut self, input: crate::model::PlatformType) -> Self {
             let mut v = self.platforms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.platforms = Some(v);
             self
         }
@@ -1316,7 +1503,7 @@ pub mod create_application_input {
 #[doc(hidden)]
 pub type CreateApplicationInputOperationOutputAlias = crate::operation::CreateApplication;
 #[doc(hidden)]
-pub type CreateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`CreateApplication`](crate::operation::CreateApplication)>
     #[allow(clippy::let_and_return)]
@@ -1327,7 +1514,7 @@ impl CreateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1412,7 +1599,7 @@ impl CreateApplicationInput {
             "CreateApplication",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1520,7 +1707,7 @@ pub mod create_directory_config_input {
 #[doc(hidden)]
 pub type CreateDirectoryConfigInputOperationOutputAlias = crate::operation::CreateDirectoryConfig;
 #[doc(hidden)]
-pub type CreateDirectoryConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDirectoryConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDirectoryConfigInput {
     /// Consumes the builder and constructs an Operation<[`CreateDirectoryConfig`](crate::operation::CreateDirectoryConfig)>
     #[allow(clippy::let_and_return)]
@@ -1531,7 +1718,7 @@ impl CreateDirectoryConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDirectoryConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1618,7 +1805,7 @@ impl CreateDirectoryConfigInput {
             "CreateDirectoryConfig",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1638,6 +1825,221 @@ impl CreateDirectoryConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateDirectoryConfigInput`](crate::input::CreateDirectoryConfigInput)
     pub fn builder() -> crate::input::create_directory_config_input::Builder {
         crate::input::create_directory_config_input::Builder::default()
+    }
+}
+
+/// See [`CreateEntitlementInput`](crate::input::CreateEntitlementInput)
+pub mod create_entitlement_input {
+    /// A builder for [`CreateEntitlementInput`](crate::input::CreateEntitlementInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) stack_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) app_visibility: std::option::Option<crate::model::AppVisibility>,
+        pub(crate) attributes:
+            std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>,
+    }
+    impl Builder {
+        /// <p>The name of the entitlement.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
+            self
+        }
+        /// <p>The description of the entitlement.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the entitlement.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Specifies whether all or selected apps are entitled.</p>
+        pub fn app_visibility(mut self, input: crate::model::AppVisibility) -> Self {
+            self.app_visibility = Some(input);
+            self
+        }
+        /// <p>Specifies whether all or selected apps are entitled.</p>
+        pub fn set_app_visibility(
+            mut self,
+            input: std::option::Option<crate::model::AppVisibility>,
+        ) -> Self {
+            self.app_visibility = input;
+            self
+        }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attributes of the entitlement.</p>
+        pub fn attributes(mut self, input: crate::model::EntitlementAttribute) -> Self {
+            let mut v = self.attributes.unwrap_or_default();
+            v.push(input);
+            self.attributes = Some(v);
+            self
+        }
+        /// <p>The attributes of the entitlement.</p>
+        pub fn set_attributes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>,
+        ) -> Self {
+            self.attributes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateEntitlementInput`](crate::input::CreateEntitlementInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateEntitlementInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateEntitlementInput {
+                name: self.name,
+                stack_name: self.stack_name,
+                description: self.description,
+                app_visibility: self.app_visibility,
+                attributes: self.attributes,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateEntitlementInputOperationOutputAlias = crate::operation::CreateEntitlement;
+#[doc(hidden)]
+pub type CreateEntitlementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateEntitlementInput {
+    /// Consumes the builder and constructs an Operation<[`CreateEntitlement`](crate::operation::CreateEntitlement)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateEntitlement,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateEntitlementInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateEntitlementInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateEntitlementInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "PhotonAdminProxyService.CreateEntitlement",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_entitlement(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateEntitlement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateEntitlement",
+            "appstream",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateEntitlementInput`](crate::input::CreateEntitlementInput)
+    pub fn builder() -> crate::input::create_entitlement_input::Builder {
+        crate::input::create_entitlement_input::Builder::default()
     }
 }
 
@@ -1702,231 +2104,91 @@ pub mod create_fleet_input {
             self.image_arn = input;
             self
         }
-        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         /// <p>The following instance types are available for Elastic fleets:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
         /// </ul>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         /// <p>The following instance types are available for Elastic fleets:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,
@@ -1937,16 +2199,17 @@ pub mod create_fleet_input {
         }
         /// <p>The fleet type.</p>
         /// <dl>
-        /// <dt>ALWAYS_ON</dt>
+        /// <dt>
+        /// ALWAYS_ON
+        /// </dt>
         /// <dd>
-        /// <p>Provides users with instant-on access to their apps.
-        /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+        /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
         /// </dd>
-        /// <dt>ON_DEMAND</dt>
+        /// <dt>
+        /// ON_DEMAND
+        /// </dt>
         /// <dd>
-        /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
-        /// You are charged for instance streaming when users are connected and a
-        /// small hourly fee for instances that are not streaming apps.</p>
+        /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
         /// </dd>
         /// </dl>
         pub fn fleet_type(mut self, input: crate::model::FleetType) -> Self {
@@ -1955,16 +2218,17 @@ pub mod create_fleet_input {
         }
         /// <p>The fleet type.</p>
         /// <dl>
-        /// <dt>ALWAYS_ON</dt>
+        /// <dt>
+        /// ALWAYS_ON
+        /// </dt>
         /// <dd>
-        /// <p>Provides users with instant-on access to their apps.
-        /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+        /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
         /// </dd>
-        /// <dt>ON_DEMAND</dt>
+        /// <dt>
+        /// ON_DEMAND
+        /// </dt>
         /// <dd>
-        /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
-        /// You are charged for instance streaming when users are connected and a
-        /// small hourly fee for instances that are not streaming apps.</p>
+        /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
         /// </dd>
         /// </dl>
         pub fn set_fleet_type(
@@ -2078,12 +2342,9 @@ pub mod create_fleet_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn tags(
             mut self,
@@ -2096,12 +2357,9 @@ pub mod create_fleet_input {
             self
         }
         /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_tags(
             mut self,
@@ -2112,36 +2370,16 @@ pub mod create_fleet_input {
             self.tags = input;
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity. If
-        /// they try to reconnect to the streaming session before the time interval specified in
-        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-        /// previous session. Users are considered idle when they stop providing keyboard or mouse
-        /// input during their streaming session. File uploads and downloads, audio in, audio out,
-        /// and pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected.</p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-        /// <note>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
         pub fn idle_disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
             self.idle_disconnect_timeout_in_seconds = Some(input);
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity. If
-        /// they try to reconnect to the streaming session before the time interval specified in
-        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-        /// previous session. Users are considered idle when they stop providing keyboard or mouse
-        /// input during their streaming session. File uploads and downloads, audio in, audio out,
-        /// and pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected.</p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-        /// <note>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
         pub fn set_idle_disconnect_timeout_in_seconds(
@@ -2152,28 +2390,24 @@ pub mod create_fleet_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-        ///
         /// <p>The default value is <code>APP</code>.</p>
         pub fn stream_view(mut self, input: crate::model::StreamView) -> Self {
             self.stream_view = Some(input);
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-        ///
         /// <p>The default value is <code>APP</code>.</p>
         pub fn set_stream_view(
             mut self,
@@ -2182,14 +2416,12 @@ pub mod create_fleet_input {
             self.stream_view = input;
             self
         }
-        /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic
-        /// fleets. </p>
+        /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
         pub fn platform(mut self, input: crate::model::PlatformType) -> Self {
             self.platform = Some(input);
             self
         }
-        /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic
-        /// fleets. </p>
+        /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::PlatformType>,
@@ -2197,14 +2429,12 @@ pub mod create_fleet_input {
             self.platform = input;
             self
         }
-        /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic
-        /// fleets, and not allowed for other fleet types.</p>
+        /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
         pub fn max_concurrent_sessions(mut self, input: i32) -> Self {
             self.max_concurrent_sessions = Some(input);
             self
         }
-        /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic
-        /// fleets, and not allowed for other fleet types.</p>
+        /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
         pub fn set_max_concurrent_sessions(mut self, input: std::option::Option<i32>) -> Self {
             self.max_concurrent_sessions = input;
             self
@@ -2263,7 +2493,7 @@ pub mod create_fleet_input {
 #[doc(hidden)]
 pub type CreateFleetInputOperationOutputAlias = crate::operation::CreateFleet;
 #[doc(hidden)]
-pub type CreateFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFleetInput {
     /// Consumes the builder and constructs an Operation<[`CreateFleet`](crate::operation::CreateFleet)>
     #[allow(clippy::let_and_return)]
@@ -2274,7 +2504,7 @@ impl CreateFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2358,7 +2588,7 @@ impl CreateFleetInput {
             "CreateFleet",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2435,213 +2665,81 @@ pub mod create_image_builder_input {
             self.image_arn = input;
             self
         }
-        /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>   
+        /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>   
+        /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,
@@ -2684,14 +2782,12 @@ pub mod create_image_builder_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
@@ -2741,12 +2837,9 @@ pub mod create_image_builder_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn tags(
             mut self,
@@ -2759,12 +2852,9 @@ pub mod create_image_builder_input {
             self
         }
         /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_tags(
             mut self,
@@ -2780,9 +2870,9 @@ pub mod create_image_builder_input {
         /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
         ///
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-        pub fn access_endpoints(mut self, input: impl Into<crate::model::AccessEndpoint>) -> Self {
+        pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
             let mut v = self.access_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_endpoints = Some(v);
             self
         }
@@ -2822,7 +2912,7 @@ pub mod create_image_builder_input {
 #[doc(hidden)]
 pub type CreateImageBuilderInputOperationOutputAlias = crate::operation::CreateImageBuilder;
 #[doc(hidden)]
-pub type CreateImageBuilderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateImageBuilderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateImageBuilderInput {
     /// Consumes the builder and constructs an Operation<[`CreateImageBuilder`](crate::operation::CreateImageBuilder)>
     #[allow(clippy::let_and_return)]
@@ -2833,7 +2923,7 @@ impl CreateImageBuilderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateImageBuilder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2918,7 +3008,7 @@ impl CreateImageBuilderInput {
             "CreateImageBuilder",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2961,14 +3051,12 @@ pub mod create_image_builder_streaming_url_input {
             self.name = input;
             self
         }
-        /// <p>The time that the streaming URL will be valid, in seconds.
-        /// Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
+        /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
         pub fn validity(mut self, input: i64) -> Self {
             self.validity = Some(input);
             self
         }
-        /// <p>The time that the streaming URL will be valid, in seconds.
-        /// Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
+        /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
         pub fn set_validity(mut self, input: std::option::Option<i64>) -> Self {
             self.validity = input;
             self
@@ -2991,7 +3079,8 @@ pub mod create_image_builder_streaming_url_input {
 pub type CreateImageBuilderStreamingUrlInputOperationOutputAlias =
     crate::operation::CreateImageBuilderStreamingURL;
 #[doc(hidden)]
-pub type CreateImageBuilderStreamingUrlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateImageBuilderStreamingUrlInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateImageBuilderStreamingUrlInput {
     /// Consumes the builder and constructs an Operation<[`CreateImageBuilderStreamingURL`](crate::operation::CreateImageBuilderStreamingURL)>
     #[allow(clippy::let_and_return)]
@@ -3002,7 +3091,7 @@ impl CreateImageBuilderStreamingUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateImageBuilderStreamingURL,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3088,7 +3177,7 @@ impl CreateImageBuilderStreamingUrlInput {
             "CreateImageBuilderStreamingURL",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3169,12 +3258,9 @@ pub mod create_stack_input {
         /// To override the contents of this collection use [`set_storage_connectors`](Self::set_storage_connectors).
         ///
         /// <p>The storage connectors to enable.</p>
-        pub fn storage_connectors(
-            mut self,
-            input: impl Into<crate::model::StorageConnector>,
-        ) -> Self {
+        pub fn storage_connectors(mut self, input: crate::model::StorageConnector) -> Self {
             let mut v = self.storage_connectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_connectors = Some(v);
             self
         }
@@ -3211,9 +3297,9 @@ pub mod create_stack_input {
         /// To override the contents of this collection use [`set_user_settings`](Self::set_user_settings).
         ///
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
-        pub fn user_settings(mut self, input: impl Into<crate::model::UserSetting>) -> Self {
+        pub fn user_settings(mut self, input: crate::model::UserSetting) -> Self {
             let mut v = self.user_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_settings = Some(v);
             self
         }
@@ -3243,12 +3329,9 @@ pub mod create_stack_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn tags(
             mut self,
@@ -3261,12 +3344,9 @@ pub mod create_stack_input {
             self
         }
         /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_tags(
             mut self,
@@ -3282,9 +3362,9 @@ pub mod create_stack_input {
         /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
         ///
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-        pub fn access_endpoints(mut self, input: impl Into<crate::model::AccessEndpoint>) -> Self {
+        pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
             let mut v = self.access_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_endpoints = Some(v);
             self
         }
@@ -3341,7 +3421,7 @@ pub mod create_stack_input {
 #[doc(hidden)]
 pub type CreateStackInputOperationOutputAlias = crate::operation::CreateStack;
 #[doc(hidden)]
-pub type CreateStackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStackInput {
     /// Consumes the builder and constructs an Operation<[`CreateStack`](crate::operation::CreateStack)>
     #[allow(clippy::let_and_return)]
@@ -3352,7 +3432,7 @@ impl CreateStackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3436,7 +3516,7 @@ impl CreateStackInput {
             "CreateStack",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3503,14 +3583,12 @@ pub mod create_streaming_url_input {
             self.user_id = input;
             self
         }
-        /// <p>The name of the application to launch after the session starts. This is the name that you specified
-        /// as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
+        /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_id = Some(input.into());
             self
         }
-        /// <p>The name of the application to launch after the session starts. This is the name that you specified
-        /// as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
+        /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3518,14 +3596,12 @@ pub mod create_streaming_url_input {
             self.application_id = input;
             self
         }
-        /// <p>The time that the streaming URL will be valid, in seconds.
-        /// Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
+        /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
         pub fn validity(mut self, input: i64) -> Self {
             self.validity = Some(input);
             self
         }
-        /// <p>The time that the streaming URL will be valid, in seconds.
-        /// Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
+        /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
         pub fn set_validity(mut self, input: std::option::Option<i64>) -> Self {
             self.validity = input;
             self
@@ -3564,7 +3640,7 @@ pub mod create_streaming_url_input {
 #[doc(hidden)]
 pub type CreateStreamingUrlInputOperationOutputAlias = crate::operation::CreateStreamingURL;
 #[doc(hidden)]
-pub type CreateStreamingUrlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStreamingUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamingUrlInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingURL`](crate::operation::CreateStreamingURL)>
     #[allow(clippy::let_and_return)]
@@ -3575,7 +3651,7 @@ impl CreateStreamingUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStreamingURL,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3660,7 +3736,7 @@ impl CreateStreamingUrlInput {
             "CreateStreamingURL",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3815,7 +3891,7 @@ pub mod create_updated_image_input {
 #[doc(hidden)]
 pub type CreateUpdatedImageInputOperationOutputAlias = crate::operation::CreateUpdatedImage;
 #[doc(hidden)]
-pub type CreateUpdatedImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUpdatedImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUpdatedImageInput {
     /// Consumes the builder and constructs an Operation<[`CreateUpdatedImage`](crate::operation::CreateUpdatedImage)>
     #[allow(clippy::let_and_return)]
@@ -3826,7 +3902,7 @@ impl CreateUpdatedImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUpdatedImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3911,7 +3987,7 @@ impl CreateUpdatedImageInput {
             "CreateUpdatedImage",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3956,7 +4032,8 @@ pub mod create_usage_report_subscription_input {
 pub type CreateUsageReportSubscriptionInputOperationOutputAlias =
     crate::operation::CreateUsageReportSubscription;
 #[doc(hidden)]
-pub type CreateUsageReportSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUsageReportSubscriptionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUsageReportSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`CreateUsageReportSubscription`](crate::operation::CreateUsageReportSubscription)>
     #[allow(clippy::let_and_return)]
@@ -3967,7 +4044,7 @@ impl CreateUsageReportSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUsageReportSubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4053,7 +4130,7 @@ impl CreateUsageReportSubscriptionInput {
             "CreateUsageReportSubscription",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4081,36 +4158,28 @@ pub mod create_user_input {
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
     }
     impl Builder {
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
         /// </note>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
         }
-        /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p>
-        ///
-        /// <note>
+        /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note>
         /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
         /// </note>
         pub fn message_action(mut self, input: crate::model::MessageAction) -> Self {
             self.message_action = Some(input);
             self
         }
-        /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p>
-        ///
-        /// <note>
+        /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note>
         /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
         /// </note>
         pub fn set_message_action(
@@ -4173,7 +4242,7 @@ pub mod create_user_input {
 #[doc(hidden)]
 pub type CreateUserInputOperationOutputAlias = crate::operation::CreateUser;
 #[doc(hidden)]
-pub type CreateUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserInput {
     /// Consumes the builder and constructs an Operation<[`CreateUser`](crate::operation::CreateUser)>
     #[allow(clippy::let_and_return)]
@@ -4184,7 +4253,7 @@ impl CreateUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4268,7 +4337,7 @@ impl CreateUserInput {
             "CreateUser",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4324,7 +4393,7 @@ pub mod delete_app_block_input {
 #[doc(hidden)]
 pub type DeleteAppBlockInputOperationOutputAlias = crate::operation::DeleteAppBlock;
 #[doc(hidden)]
-pub type DeleteAppBlockInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppBlockInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppBlockInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppBlock`](crate::operation::DeleteAppBlock)>
     #[allow(clippy::let_and_return)]
@@ -4335,7 +4404,7 @@ impl DeleteAppBlockInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppBlock,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4420,7 +4489,7 @@ impl DeleteAppBlockInput {
             "DeleteAppBlock",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4476,7 +4545,7 @@ pub mod delete_application_input {
 #[doc(hidden)]
 pub type DeleteApplicationInputOperationOutputAlias = crate::operation::DeleteApplication;
 #[doc(hidden)]
-pub type DeleteApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteApplicationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApplication`](crate::operation::DeleteApplication)>
     #[allow(clippy::let_and_return)]
@@ -4487,7 +4556,7 @@ impl DeleteApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4572,7 +4641,7 @@ impl DeleteApplicationInput {
             "DeleteApplication",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4633,7 +4702,7 @@ pub mod delete_directory_config_input {
 #[doc(hidden)]
 pub type DeleteDirectoryConfigInputOperationOutputAlias = crate::operation::DeleteDirectoryConfig;
 #[doc(hidden)]
-pub type DeleteDirectoryConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDirectoryConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDirectoryConfigInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDirectoryConfig`](crate::operation::DeleteDirectoryConfig)>
     #[allow(clippy::let_and_return)]
@@ -4644,7 +4713,7 @@ impl DeleteDirectoryConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDirectoryConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4731,7 +4800,7 @@ impl DeleteDirectoryConfigInput {
             "DeleteDirectoryConfig",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4751,6 +4820,172 @@ impl DeleteDirectoryConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectoryConfigInput`](crate::input::DeleteDirectoryConfigInput)
     pub fn builder() -> crate::input::delete_directory_config_input::Builder {
         crate::input::delete_directory_config_input::Builder::default()
+    }
+}
+
+/// See [`DeleteEntitlementInput`](crate::input::DeleteEntitlementInput)
+pub mod delete_entitlement_input {
+    /// A builder for [`DeleteEntitlementInput`](crate::input::DeleteEntitlementInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) stack_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the entitlement.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteEntitlementInput`](crate::input::DeleteEntitlementInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteEntitlementInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteEntitlementInput {
+                name: self.name,
+                stack_name: self.stack_name,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteEntitlementInputOperationOutputAlias = crate::operation::DeleteEntitlement;
+#[doc(hidden)]
+pub type DeleteEntitlementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteEntitlementInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteEntitlement`](crate::operation::DeleteEntitlement)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteEntitlement,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteEntitlementInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteEntitlementInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteEntitlementInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "PhotonAdminProxyService.DeleteEntitlement",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_entitlement(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteEntitlement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteEntitlement",
+            "appstream",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteEntitlementInput`](crate::input::DeleteEntitlementInput)
+    pub fn builder() -> crate::input::delete_entitlement_input::Builder {
+        crate::input::delete_entitlement_input::Builder::default()
     }
 }
 
@@ -4787,7 +5022,7 @@ pub mod delete_fleet_input {
 #[doc(hidden)]
 pub type DeleteFleetInputOperationOutputAlias = crate::operation::DeleteFleet;
 #[doc(hidden)]
-pub type DeleteFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFleetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFleet`](crate::operation::DeleteFleet)>
     #[allow(clippy::let_and_return)]
@@ -4798,7 +5033,7 @@ impl DeleteFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4882,7 +5117,7 @@ impl DeleteFleetInput {
             "DeleteFleet",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4938,7 +5173,7 @@ pub mod delete_image_input {
 #[doc(hidden)]
 pub type DeleteImageInputOperationOutputAlias = crate::operation::DeleteImage;
 #[doc(hidden)]
-pub type DeleteImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteImageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImage`](crate::operation::DeleteImage)>
     #[allow(clippy::let_and_return)]
@@ -4949,7 +5184,7 @@ impl DeleteImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5033,7 +5268,7 @@ impl DeleteImageInput {
             "DeleteImage",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5089,7 +5324,7 @@ pub mod delete_image_builder_input {
 #[doc(hidden)]
 pub type DeleteImageBuilderInputOperationOutputAlias = crate::operation::DeleteImageBuilder;
 #[doc(hidden)]
-pub type DeleteImageBuilderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteImageBuilderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteImageBuilderInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImageBuilder`](crate::operation::DeleteImageBuilder)>
     #[allow(clippy::let_and_return)]
@@ -5100,7 +5335,7 @@ impl DeleteImageBuilderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteImageBuilder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5185,7 +5420,7 @@ impl DeleteImageBuilderInput {
             "DeleteImageBuilder",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5258,7 +5493,7 @@ pub mod delete_image_permissions_input {
 #[doc(hidden)]
 pub type DeleteImagePermissionsInputOperationOutputAlias = crate::operation::DeleteImagePermissions;
 #[doc(hidden)]
-pub type DeleteImagePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteImagePermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteImagePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteImagePermissions`](crate::operation::DeleteImagePermissions)>
     #[allow(clippy::let_and_return)]
@@ -5269,7 +5504,7 @@ impl DeleteImagePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteImagePermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5356,7 +5591,7 @@ impl DeleteImagePermissionsInput {
             "DeleteImagePermissions",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5412,7 +5647,7 @@ pub mod delete_stack_input {
 #[doc(hidden)]
 pub type DeleteStackInputOperationOutputAlias = crate::operation::DeleteStack;
 #[doc(hidden)]
-pub type DeleteStackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStackInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStack`](crate::operation::DeleteStack)>
     #[allow(clippy::let_and_return)]
@@ -5423,7 +5658,7 @@ impl DeleteStackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5507,7 +5742,7 @@ impl DeleteStackInput {
             "DeleteStack",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5552,7 +5787,8 @@ pub mod delete_usage_report_subscription_input {
 pub type DeleteUsageReportSubscriptionInputOperationOutputAlias =
     crate::operation::DeleteUsageReportSubscription;
 #[doc(hidden)]
-pub type DeleteUsageReportSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUsageReportSubscriptionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUsageReportSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUsageReportSubscription`](crate::operation::DeleteUsageReportSubscription)>
     #[allow(clippy::let_and_return)]
@@ -5563,7 +5799,7 @@ impl DeleteUsageReportSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUsageReportSubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5649,7 +5885,7 @@ impl DeleteUsageReportSubscriptionInput {
             "DeleteUsageReportSubscription",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5674,18 +5910,14 @@ pub mod delete_user_input {
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
     }
     impl Builder {
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5722,7 +5954,7 @@ pub mod delete_user_input {
 #[doc(hidden)]
 pub type DeleteUserInputOperationOutputAlias = crate::operation::DeleteUser;
 #[doc(hidden)]
-pub type DeleteUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUser`](crate::operation::DeleteUser)>
     #[allow(clippy::let_and_return)]
@@ -5733,7 +5965,7 @@ impl DeleteUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5817,7 +6049,7 @@ impl DeleteUserInput {
             "DeleteUser",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5870,14 +6102,12 @@ pub mod describe_app_blocks_input {
             self.arns = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5910,7 +6140,7 @@ pub mod describe_app_blocks_input {
 #[doc(hidden)]
 pub type DescribeAppBlocksInputOperationOutputAlias = crate::operation::DescribeAppBlocks;
 #[doc(hidden)]
-pub type DescribeAppBlocksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAppBlocksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAppBlocksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAppBlocks`](crate::operation::DescribeAppBlocks)>
     #[allow(clippy::let_and_return)]
@@ -5921,7 +6151,7 @@ impl DescribeAppBlocksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAppBlocks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6006,7 +6236,7 @@ impl DescribeAppBlocksInput {
             "DescribeAppBlocks",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6074,14 +6304,12 @@ pub mod describe_application_fleet_associations_input {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6107,7 +6335,7 @@ pub type DescribeApplicationFleetAssociationsInputOperationOutputAlias =
     crate::operation::DescribeApplicationFleetAssociations;
 #[doc(hidden)]
 pub type DescribeApplicationFleetAssociationsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicationFleetAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplicationFleetAssociations`](crate::operation::DescribeApplicationFleetAssociations)>
     #[allow(clippy::let_and_return)]
@@ -6118,7 +6346,7 @@ impl DescribeApplicationFleetAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplicationFleetAssociations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6204,7 +6432,7 @@ impl DescribeApplicationFleetAssociationsInput {
             "DescribeApplicationFleetAssociations",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6257,14 +6485,12 @@ pub mod describe_applications_input {
             self.arns = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6297,7 +6523,7 @@ pub mod describe_applications_input {
 #[doc(hidden)]
 pub type DescribeApplicationsInputOperationOutputAlias = crate::operation::DescribeApplications;
 #[doc(hidden)]
-pub type DescribeApplicationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplications`](crate::operation::DescribeApplications)>
     #[allow(clippy::let_and_return)]
@@ -6308,7 +6534,7 @@ impl DescribeApplicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplications,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6393,7 +6619,7 @@ impl DescribeApplicationsInput {
             "DescribeApplications",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6485,7 +6711,7 @@ pub mod describe_directory_configs_input {
 pub type DescribeDirectoryConfigsInputOperationOutputAlias =
     crate::operation::DescribeDirectoryConfigs;
 #[doc(hidden)]
-pub type DescribeDirectoryConfigsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDirectoryConfigsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDirectoryConfigsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDirectoryConfigs`](crate::operation::DescribeDirectoryConfigs)>
     #[allow(clippy::let_and_return)]
@@ -6496,7 +6722,7 @@ impl DescribeDirectoryConfigsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDirectoryConfigs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6583,7 +6809,7 @@ impl DescribeDirectoryConfigsInput {
             "DescribeDirectoryConfigs",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6603,6 +6829,196 @@ impl DescribeDirectoryConfigsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectoryConfigsInput`](crate::input::DescribeDirectoryConfigsInput)
     pub fn builder() -> crate::input::describe_directory_configs_input::Builder {
         crate::input::describe_directory_configs_input::Builder::default()
+    }
+}
+
+/// See [`DescribeEntitlementsInput`](crate::input::DescribeEntitlementsInput)
+pub mod describe_entitlements_input {
+    /// A builder for [`DescribeEntitlementsInput`](crate::input::DescribeEntitlementsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) stack_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the entitlement.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum size of each page of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum size of each page of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeEntitlementsInput`](crate::input::DescribeEntitlementsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeEntitlementsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeEntitlementsInput {
+                name: self.name,
+                stack_name: self.stack_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeEntitlementsInputOperationOutputAlias = crate::operation::DescribeEntitlements;
+#[doc(hidden)]
+pub type DescribeEntitlementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeEntitlementsInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeEntitlements`](crate::operation::DescribeEntitlements)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeEntitlements,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeEntitlementsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeEntitlementsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeEntitlementsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "PhotonAdminProxyService.DescribeEntitlements",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_entitlements(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeEntitlements::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeEntitlements",
+            "appstream",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeEntitlementsInput`](crate::input::DescribeEntitlementsInput)
+    pub fn builder() -> crate::input::describe_entitlements_input::Builder {
+        crate::input::describe_entitlements_input::Builder::default()
     }
 }
 
@@ -6662,7 +7078,7 @@ pub mod describe_fleets_input {
 #[doc(hidden)]
 pub type DescribeFleetsInputOperationOutputAlias = crate::operation::DescribeFleets;
 #[doc(hidden)]
-pub type DescribeFleetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFleetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleets`](crate::operation::DescribeFleets)>
     #[allow(clippy::let_and_return)]
@@ -6673,7 +7089,7 @@ impl DescribeFleetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6758,7 +7174,7 @@ impl DescribeFleetsInput {
             "DescribeFleets",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6849,7 +7265,7 @@ pub mod describe_image_builders_input {
 #[doc(hidden)]
 pub type DescribeImageBuildersInputOperationOutputAlias = crate::operation::DescribeImageBuilders;
 #[doc(hidden)]
-pub type DescribeImageBuildersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeImageBuildersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeImageBuildersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeImageBuilders`](crate::operation::DescribeImageBuilders)>
     #[allow(clippy::let_and_return)]
@@ -6860,7 +7276,7 @@ impl DescribeImageBuildersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeImageBuilders,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6947,7 +7363,7 @@ impl DescribeImageBuildersInput {
             "DescribeImageBuilders",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7051,7 +7467,7 @@ pub mod describe_image_permissions_input {
 pub type DescribeImagePermissionsInputOperationOutputAlias =
     crate::operation::DescribeImagePermissions;
 #[doc(hidden)]
-pub type DescribeImagePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeImagePermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeImagePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeImagePermissions`](crate::operation::DescribeImagePermissions)>
     #[allow(clippy::let_and_return)]
@@ -7062,7 +7478,7 @@ impl DescribeImagePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeImagePermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7149,7 +7565,7 @@ impl DescribeImagePermissionsInput {
             "DescribeImagePermissions",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7276,7 +7692,7 @@ pub mod describe_images_input {
 #[doc(hidden)]
 pub type DescribeImagesInputOperationOutputAlias = crate::operation::DescribeImages;
 #[doc(hidden)]
-pub type DescribeImagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeImagesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeImages`](crate::operation::DescribeImages)>
     #[allow(clippy::let_and_return)]
@@ -7287,7 +7703,7 @@ impl DescribeImagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeImages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7372,7 +7788,7 @@ impl DescribeImagesInput {
             "DescribeImages",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7459,16 +7875,12 @@ pub mod describe_sessions_input {
             self.limit = input;
             self
         }
-        /// <p>The authentication method. Specify <code>API</code> for a user
-        /// authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
-        /// The default is to authenticate users using a streaming URL.</p>
+        /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
         pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
             self.authentication_type = Some(input);
             self
         }
-        /// <p>The authentication method. Specify <code>API</code> for a user
-        /// authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
-        /// The default is to authenticate users using a streaming URL.</p>
+        /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
         pub fn set_authentication_type(
             mut self,
             input: std::option::Option<crate::model::AuthenticationType>,
@@ -7497,7 +7909,7 @@ pub mod describe_sessions_input {
 #[doc(hidden)]
 pub type DescribeSessionsInputOperationOutputAlias = crate::operation::DescribeSessions;
 #[doc(hidden)]
-pub type DescribeSessionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSessionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSessions`](crate::operation::DescribeSessions)>
     #[allow(clippy::let_and_return)]
@@ -7508,7 +7920,7 @@ impl DescribeSessionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSessions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7593,7 +8005,7 @@ impl DescribeSessionsInput {
             "DescribeSessions",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7672,7 +8084,7 @@ pub mod describe_stacks_input {
 #[doc(hidden)]
 pub type DescribeStacksInputOperationOutputAlias = crate::operation::DescribeStacks;
 #[doc(hidden)]
-pub type DescribeStacksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStacksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStacksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStacks`](crate::operation::DescribeStacks)>
     #[allow(clippy::let_and_return)]
@@ -7683,7 +8095,7 @@ impl DescribeStacksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStacks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7768,7 +8180,7 @@ impl DescribeStacksInput {
             "DescribeStacks",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7839,7 +8251,8 @@ pub mod describe_usage_report_subscriptions_input {
 pub type DescribeUsageReportSubscriptionsInputOperationOutputAlias =
     crate::operation::DescribeUsageReportSubscriptions;
 #[doc(hidden)]
-pub type DescribeUsageReportSubscriptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeUsageReportSubscriptionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUsageReportSubscriptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUsageReportSubscriptions`](crate::operation::DescribeUsageReportSubscriptions)>
     #[allow(clippy::let_and_return)]
@@ -7850,7 +8263,7 @@ impl DescribeUsageReportSubscriptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUsageReportSubscriptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7936,7 +8349,7 @@ impl DescribeUsageReportSubscriptionsInput {
             "DescribeUsageReportSubscriptions",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8021,7 +8434,7 @@ pub mod describe_users_input {
 #[doc(hidden)]
 pub type DescribeUsersInputOperationOutputAlias = crate::operation::DescribeUsers;
 #[doc(hidden)]
-pub type DescribeUsersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUsersInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUsers`](crate::operation::DescribeUsers)>
     #[allow(clippy::let_and_return)]
@@ -8032,7 +8445,7 @@ impl DescribeUsersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUsers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8116,7 +8529,7 @@ impl DescribeUsersInput {
             "DescribeUsers",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8162,18 +8575,14 @@ pub mod describe_user_stack_associations_input {
             self.stack_name = input;
             self
         }
-        /// <p>The email address of the user who is associated with the stack.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user who is associated with the stack.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The email address of the user who is associated with the stack.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user who is associated with the stack.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -8234,7 +8643,8 @@ pub mod describe_user_stack_associations_input {
 pub type DescribeUserStackAssociationsInputOperationOutputAlias =
     crate::operation::DescribeUserStackAssociations;
 #[doc(hidden)]
-pub type DescribeUserStackAssociationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeUserStackAssociationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserStackAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUserStackAssociations`](crate::operation::DescribeUserStackAssociations)>
     #[allow(clippy::let_and_return)]
@@ -8245,7 +8655,7 @@ impl DescribeUserStackAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserStackAssociations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8331,7 +8741,7 @@ impl DescribeUserStackAssociationsInput {
             "DescribeUserStackAssociations",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8364,18 +8774,14 @@ pub mod disable_user_input {
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
     }
     impl Builder {
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -8412,7 +8818,7 @@ pub mod disable_user_input {
 #[doc(hidden)]
 pub type DisableUserInputOperationOutputAlias = crate::operation::DisableUser;
 #[doc(hidden)]
-pub type DisableUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableUserInput {
     /// Consumes the builder and constructs an Operation<[`DisableUser`](crate::operation::DisableUser)>
     #[allow(clippy::let_and_return)]
@@ -8423,7 +8829,7 @@ impl DisableUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8507,7 +8913,7 @@ impl DisableUserInput {
             "DisableUser",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8581,7 +8987,8 @@ pub mod disassociate_application_fleet_input {
 pub type DisassociateApplicationFleetInputOperationOutputAlias =
     crate::operation::DisassociateApplicationFleet;
 #[doc(hidden)]
-pub type DisassociateApplicationFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateApplicationFleetInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateApplicationFleetInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateApplicationFleet`](crate::operation::DisassociateApplicationFleet)>
     #[allow(clippy::let_and_return)]
@@ -8592,7 +8999,7 @@ impl DisassociateApplicationFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateApplicationFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8678,7 +9085,7 @@ impl DisassociateApplicationFleetInput {
             "DisassociateApplicationFleet",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8698,6 +9105,193 @@ impl DisassociateApplicationFleetInput {
     /// Creates a new builder-style object to manufacture [`DisassociateApplicationFleetInput`](crate::input::DisassociateApplicationFleetInput)
     pub fn builder() -> crate::input::disassociate_application_fleet_input::Builder {
         crate::input::disassociate_application_fleet_input::Builder::default()
+    }
+}
+
+/// See [`DisassociateApplicationFromEntitlementInput`](crate::input::DisassociateApplicationFromEntitlementInput)
+pub mod disassociate_application_from_entitlement_input {
+    /// A builder for [`DisassociateApplicationFromEntitlementInput`](crate::input::DisassociateApplicationFromEntitlementInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stack_name: std::option::Option<std::string::String>,
+        pub(crate) entitlement_name: std::option::Option<std::string::String>,
+        pub(crate) application_identifier: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn entitlement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entitlement_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn set_entitlement_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.entitlement_name = input;
+            self
+        }
+        /// <p>The identifier of the application to remove from the entitlement.</p>
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_identifier = Some(input.into());
+            self
+        }
+        /// <p>The identifier of the application to remove from the entitlement.</p>
+        pub fn set_application_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.application_identifier = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateApplicationFromEntitlementInput`](crate::input::DisassociateApplicationFromEntitlementInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DisassociateApplicationFromEntitlementInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DisassociateApplicationFromEntitlementInput {
+                stack_name: self.stack_name,
+                entitlement_name: self.entitlement_name,
+                application_identifier: self.application_identifier,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DisassociateApplicationFromEntitlementInputOperationOutputAlias =
+    crate::operation::DisassociateApplicationFromEntitlement;
+#[doc(hidden)]
+pub type DisassociateApplicationFromEntitlementInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DisassociateApplicationFromEntitlementInput {
+    /// Consumes the builder and constructs an Operation<[`DisassociateApplicationFromEntitlement`](crate::operation::DisassociateApplicationFromEntitlement)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DisassociateApplicationFromEntitlement,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DisassociateApplicationFromEntitlementInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DisassociateApplicationFromEntitlementInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DisassociateApplicationFromEntitlementInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "PhotonAdminProxyService.DisassociateApplicationFromEntitlement",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_application_from_entitlement(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DisassociateApplicationFromEntitlement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DisassociateApplicationFromEntitlement",
+            "appstream",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DisassociateApplicationFromEntitlementInput`](crate::input::DisassociateApplicationFromEntitlementInput)
+    pub fn builder() -> crate::input::disassociate_application_from_entitlement_input::Builder {
+        crate::input::disassociate_application_from_entitlement_input::Builder::default()
     }
 }
 
@@ -8748,7 +9342,7 @@ pub mod disassociate_fleet_input {
 #[doc(hidden)]
 pub type DisassociateFleetInputOperationOutputAlias = crate::operation::DisassociateFleet;
 #[doc(hidden)]
-pub type DisassociateFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateFleetInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateFleet`](crate::operation::DisassociateFleet)>
     #[allow(clippy::let_and_return)]
@@ -8759,7 +9353,7 @@ impl DisassociateFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8844,7 +9438,7 @@ impl DisassociateFleetInput {
             "DisassociateFleet",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8877,18 +9471,14 @@ pub mod enable_user_input {
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
     }
     impl Builder {
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
         /// </note>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -8925,7 +9515,7 @@ pub mod enable_user_input {
 #[doc(hidden)]
 pub type EnableUserInputOperationOutputAlias = crate::operation::EnableUser;
 #[doc(hidden)]
-pub type EnableUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableUserInput {
     /// Consumes the builder and constructs an Operation<[`EnableUser`](crate::operation::EnableUser)>
     #[allow(clippy::let_and_return)]
@@ -8936,7 +9526,7 @@ impl EnableUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9020,7 +9610,7 @@ impl EnableUserInput {
             "EnableUser",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9078,7 +9668,7 @@ pub mod expire_session_input {
 #[doc(hidden)]
 pub type ExpireSessionInputOperationOutputAlias = crate::operation::ExpireSession;
 #[doc(hidden)]
-pub type ExpireSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExpireSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExpireSessionInput {
     /// Consumes the builder and constructs an Operation<[`ExpireSession`](crate::operation::ExpireSession)>
     #[allow(clippy::let_and_return)]
@@ -9089,7 +9679,7 @@ impl ExpireSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExpireSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9173,7 +9763,7 @@ impl ExpireSessionInput {
             "ExpireSession",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9243,7 +9833,7 @@ pub mod list_associated_fleets_input {
 #[doc(hidden)]
 pub type ListAssociatedFleetsInputOperationOutputAlias = crate::operation::ListAssociatedFleets;
 #[doc(hidden)]
-pub type ListAssociatedFleetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssociatedFleetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssociatedFleetsInput {
     /// Consumes the builder and constructs an Operation<[`ListAssociatedFleets`](crate::operation::ListAssociatedFleets)>
     #[allow(clippy::let_and_return)]
@@ -9254,7 +9844,7 @@ impl ListAssociatedFleetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssociatedFleets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9341,7 +9931,7 @@ impl ListAssociatedFleetsInput {
             "ListAssociatedFleets",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9411,7 +10001,7 @@ pub mod list_associated_stacks_input {
 #[doc(hidden)]
 pub type ListAssociatedStacksInputOperationOutputAlias = crate::operation::ListAssociatedStacks;
 #[doc(hidden)]
-pub type ListAssociatedStacksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAssociatedStacksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssociatedStacksInput {
     /// Consumes the builder and constructs an Operation<[`ListAssociatedStacks`](crate::operation::ListAssociatedStacks)>
     #[allow(clippy::let_and_return)]
@@ -9422,7 +10012,7 @@ impl ListAssociatedStacksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssociatedStacks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9509,7 +10099,7 @@ impl ListAssociatedStacksInput {
             "ListAssociatedStacks",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9529,6 +10119,202 @@ impl ListAssociatedStacksInput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedStacksInput`](crate::input::ListAssociatedStacksInput)
     pub fn builder() -> crate::input::list_associated_stacks_input::Builder {
         crate::input::list_associated_stacks_input::Builder::default()
+    }
+}
+
+/// See [`ListEntitledApplicationsInput`](crate::input::ListEntitledApplicationsInput)
+pub mod list_entitled_applications_input {
+    /// A builder for [`ListEntitledApplicationsInput`](crate::input::ListEntitledApplicationsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stack_name: std::option::Option<std::string::String>,
+        pub(crate) entitlement_name: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn entitlement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entitlement_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn set_entitlement_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.entitlement_name = input;
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum size of each page of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum size of each page of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEntitledApplicationsInput`](crate::input::ListEntitledApplicationsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListEntitledApplicationsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListEntitledApplicationsInput {
+                stack_name: self.stack_name,
+                entitlement_name: self.entitlement_name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListEntitledApplicationsInputOperationOutputAlias =
+    crate::operation::ListEntitledApplications;
+#[doc(hidden)]
+pub type ListEntitledApplicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListEntitledApplicationsInput {
+    /// Consumes the builder and constructs an Operation<[`ListEntitledApplications`](crate::operation::ListEntitledApplications)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListEntitledApplications,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListEntitledApplicationsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListEntitledApplicationsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListEntitledApplicationsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "PhotonAdminProxyService.ListEntitledApplications",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_entitled_applications(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListEntitledApplications::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListEntitledApplications",
+            "appstream",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListEntitledApplicationsInput`](crate::input::ListEntitledApplicationsInput)
+    pub fn builder() -> crate::input::list_entitled_applications_input::Builder {
+        crate::input::list_entitled_applications_input::Builder::default()
     }
 }
 
@@ -9567,7 +10353,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -9578,7 +10364,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9665,7 +10451,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9721,7 +10507,7 @@ pub mod start_fleet_input {
 #[doc(hidden)]
 pub type StartFleetInputOperationOutputAlias = crate::operation::StartFleet;
 #[doc(hidden)]
-pub type StartFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartFleetInput {
     /// Consumes the builder and constructs an Operation<[`StartFleet`](crate::operation::StartFleet)>
     #[allow(clippy::let_and_return)]
@@ -9732,7 +10518,7 @@ impl StartFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9816,7 +10602,7 @@ impl StartFleetInput {
             "StartFleet",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9889,7 +10675,7 @@ pub mod start_image_builder_input {
 #[doc(hidden)]
 pub type StartImageBuilderInputOperationOutputAlias = crate::operation::StartImageBuilder;
 #[doc(hidden)]
-pub type StartImageBuilderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartImageBuilderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartImageBuilderInput {
     /// Consumes the builder and constructs an Operation<[`StartImageBuilder`](crate::operation::StartImageBuilder)>
     #[allow(clippy::let_and_return)]
@@ -9900,7 +10686,7 @@ impl StartImageBuilderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartImageBuilder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9985,7 +10771,7 @@ impl StartImageBuilderInput {
             "StartImageBuilder",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10039,7 +10825,7 @@ pub mod stop_fleet_input {
 #[doc(hidden)]
 pub type StopFleetInputOperationOutputAlias = crate::operation::StopFleet;
 #[doc(hidden)]
-pub type StopFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopFleetInput {
     /// Consumes the builder and constructs an Operation<[`StopFleet`](crate::operation::StopFleet)>
     #[allow(clippy::let_and_return)]
@@ -10050,7 +10836,7 @@ impl StopFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10132,7 +10918,7 @@ impl StopFleetInput {
                     "StopFleet",
                     "appstream",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10188,7 +10974,7 @@ pub mod stop_image_builder_input {
 #[doc(hidden)]
 pub type StopImageBuilderInputOperationOutputAlias = crate::operation::StopImageBuilder;
 #[doc(hidden)]
-pub type StopImageBuilderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopImageBuilderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopImageBuilderInput {
     /// Consumes the builder and constructs an Operation<[`StopImageBuilder`](crate::operation::StopImageBuilder)>
     #[allow(clippy::let_and_return)]
@@ -10199,7 +10985,7 @@ impl StopImageBuilderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopImageBuilder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10284,7 +11070,7 @@ impl StopImageBuilderInput {
             "StopImageBuilder",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10334,9 +11120,7 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
         pub fn tags(
@@ -10350,9 +11134,7 @@ pub mod tag_resource_input {
             self
         }
         /// <p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
         pub fn set_tags(
@@ -10381,7 +11163,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -10392,7 +11174,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10476,7 +11258,7 @@ impl TagResourceInput {
             "TagResource",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10555,7 +11337,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -10566,7 +11348,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10650,7 +11432,7 @@ impl UntagResourceInput {
             "UntagResource",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10788,12 +11570,9 @@ pub mod update_application_input {
         /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
         ///
         /// <p>The attributes to delete for an application.</p>
-        pub fn attributes_to_delete(
-            mut self,
-            input: impl Into<crate::model::ApplicationAttribute>,
-        ) -> Self {
+        pub fn attributes_to_delete(mut self, input: crate::model::ApplicationAttribute) -> Self {
             let mut v = self.attributes_to_delete.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes_to_delete = Some(v);
             self
         }
@@ -10829,7 +11608,7 @@ pub mod update_application_input {
 #[doc(hidden)]
 pub type UpdateApplicationInputOperationOutputAlias = crate::operation::UpdateApplication;
 #[doc(hidden)]
-pub type UpdateApplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateApplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateApplicationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApplication`](crate::operation::UpdateApplication)>
     #[allow(clippy::let_and_return)]
@@ -10840,7 +11619,7 @@ impl UpdateApplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10925,7 +11704,7 @@ impl UpdateApplicationInput {
             "UpdateApplication",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11033,7 +11812,7 @@ pub mod update_directory_config_input {
 #[doc(hidden)]
 pub type UpdateDirectoryConfigInputOperationOutputAlias = crate::operation::UpdateDirectoryConfig;
 #[doc(hidden)]
-pub type UpdateDirectoryConfigInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDirectoryConfigInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDirectoryConfigInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDirectoryConfig`](crate::operation::UpdateDirectoryConfig)>
     #[allow(clippy::let_and_return)]
@@ -11044,7 +11823,7 @@ impl UpdateDirectoryConfigInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDirectoryConfig,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11131,7 +11910,7 @@ impl UpdateDirectoryConfigInput {
             "UpdateDirectoryConfig",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11151,6 +11930,221 @@ impl UpdateDirectoryConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateDirectoryConfigInput`](crate::input::UpdateDirectoryConfigInput)
     pub fn builder() -> crate::input::update_directory_config_input::Builder {
         crate::input::update_directory_config_input::Builder::default()
+    }
+}
+
+/// See [`UpdateEntitlementInput`](crate::input::UpdateEntitlementInput)
+pub mod update_entitlement_input {
+    /// A builder for [`UpdateEntitlementInput`](crate::input::UpdateEntitlementInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) stack_name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) app_visibility: std::option::Option<crate::model::AppVisibility>,
+        pub(crate) attributes:
+            std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>,
+    }
+    impl Builder {
+        /// <p>The name of the entitlement.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_name = input;
+            self
+        }
+        /// <p>The description of the entitlement.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the entitlement.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Specifies whether all or only selected apps are entitled.</p>
+        pub fn app_visibility(mut self, input: crate::model::AppVisibility) -> Self {
+            self.app_visibility = Some(input);
+            self
+        }
+        /// <p>Specifies whether all or only selected apps are entitled.</p>
+        pub fn set_app_visibility(
+            mut self,
+            input: std::option::Option<crate::model::AppVisibility>,
+        ) -> Self {
+            self.app_visibility = input;
+            self
+        }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attributes of the entitlement.</p>
+        pub fn attributes(mut self, input: crate::model::EntitlementAttribute) -> Self {
+            let mut v = self.attributes.unwrap_or_default();
+            v.push(input);
+            self.attributes = Some(v);
+            self
+        }
+        /// <p>The attributes of the entitlement.</p>
+        pub fn set_attributes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>,
+        ) -> Self {
+            self.attributes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateEntitlementInput`](crate::input::UpdateEntitlementInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateEntitlementInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateEntitlementInput {
+                name: self.name,
+                stack_name: self.stack_name,
+                description: self.description,
+                app_visibility: self.app_visibility,
+                attributes: self.attributes,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateEntitlementInputOperationOutputAlias = crate::operation::UpdateEntitlement;
+#[doc(hidden)]
+pub type UpdateEntitlementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateEntitlementInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateEntitlement`](crate::operation::UpdateEntitlement)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateEntitlement,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateEntitlementInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateEntitlementInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateEntitlementInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "PhotonAdminProxyService.UpdateEntitlement",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_entitlement(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateEntitlement::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateEntitlement",
+            "appstream",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateEntitlementInput`](crate::input::UpdateEntitlementInput)
+    pub fn builder() -> crate::input::update_entitlement_input::Builder {
+        crate::input::update_entitlement_input::Builder::default()
     }
 }
 
@@ -11216,114 +12210,44 @@ pub mod update_fleet_input {
         }
         /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         /// <p>The following instance types are available for Elastic fleets:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
         /// </ul>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
@@ -11331,114 +12255,44 @@ pub mod update_fleet_input {
         }
         /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         /// <p>The following instance types are available for Elastic fleets:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,
@@ -11556,38 +12410,16 @@ pub mod update_fleet_input {
             self.domain_join_info = input;
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity. If
-        /// users try to reconnect to the streaming session before the time interval specified in
-        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-        /// previous session. Users are considered idle when they stop providing keyboard or mouse
-        /// input during their streaming session. File uploads and downloads, audio in, audio out,
-        /// and pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected. </p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-        ///
-        /// <note>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
         pub fn idle_disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
             self.idle_disconnect_timeout_in_seconds = Some(input);
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity. If
-        /// users try to reconnect to the streaming session before the time interval specified in
-        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-        /// previous session. Users are considered idle when they stop providing keyboard or mouse
-        /// input during their streaming session. File uploads and downloads, audio in, audio out,
-        /// and pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected. </p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-        ///
-        /// <note>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
         pub fn set_idle_disconnect_timeout_in_seconds(
@@ -11602,12 +12434,9 @@ pub mod update_fleet_input {
         /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
         ///
         /// <p>The fleet attributes to delete.</p>
-        pub fn attributes_to_delete(
-            mut self,
-            input: impl Into<crate::model::FleetAttribute>,
-        ) -> Self {
+        pub fn attributes_to_delete(mut self, input: crate::model::FleetAttribute) -> Self {
             let mut v = self.attributes_to_delete.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes_to_delete = Some(v);
             self
         }
@@ -11620,28 +12449,24 @@ pub mod update_fleet_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-        ///
         /// <p>The default value is <code>APP</code>.</p>
         pub fn stream_view(mut self, input: crate::model::StreamView) -> Self {
             self.stream_view = Some(input);
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-        ///
         /// <p>The default value is <code>APP</code>.</p>
         pub fn set_stream_view(
             mut self,
@@ -11727,7 +12552,7 @@ pub mod update_fleet_input {
 #[doc(hidden)]
 pub type UpdateFleetInputOperationOutputAlias = crate::operation::UpdateFleet;
 #[doc(hidden)]
-pub type UpdateFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFleetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFleet`](crate::operation::UpdateFleet)>
     #[allow(clippy::let_and_return)]
@@ -11738,7 +12563,7 @@ impl UpdateFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11822,7 +12647,7 @@ impl UpdateFleetInput {
             "UpdateFleet",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11910,7 +12735,7 @@ pub mod update_image_permissions_input {
 #[doc(hidden)]
 pub type UpdateImagePermissionsInputOperationOutputAlias = crate::operation::UpdateImagePermissions;
 #[doc(hidden)]
-pub type UpdateImagePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateImagePermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateImagePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateImagePermissions`](crate::operation::UpdateImagePermissions)>
     #[allow(clippy::let_and_return)]
@@ -11921,7 +12746,7 @@ impl UpdateImagePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateImagePermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12008,7 +12833,7 @@ impl UpdateImagePermissionsInput {
             "UpdateImagePermissions",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12089,12 +12914,9 @@ pub mod update_stack_input {
         /// To override the contents of this collection use [`set_storage_connectors`](Self::set_storage_connectors).
         ///
         /// <p>The storage connectors to enable.</p>
-        pub fn storage_connectors(
-            mut self,
-            input: impl Into<crate::model::StorageConnector>,
-        ) -> Self {
+        pub fn storage_connectors(mut self, input: crate::model::StorageConnector) -> Self {
             let mut v = self.storage_connectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_connectors = Some(v);
             self
         }
@@ -12141,12 +12963,9 @@ pub mod update_stack_input {
         /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
         ///
         /// <p>The stack attributes to delete.</p>
-        pub fn attributes_to_delete(
-            mut self,
-            input: impl Into<crate::model::StackAttribute>,
-        ) -> Self {
+        pub fn attributes_to_delete(mut self, input: crate::model::StackAttribute) -> Self {
             let mut v = self.attributes_to_delete.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes_to_delete = Some(v);
             self
         }
@@ -12163,9 +12982,9 @@ pub mod update_stack_input {
         /// To override the contents of this collection use [`set_user_settings`](Self::set_user_settings).
         ///
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
-        pub fn user_settings(mut self, input: impl Into<crate::model::UserSetting>) -> Self {
+        pub fn user_settings(mut self, input: crate::model::UserSetting) -> Self {
             let mut v = self.user_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_settings = Some(v);
             self
         }
@@ -12195,9 +13014,9 @@ pub mod update_stack_input {
         /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
         ///
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-        pub fn access_endpoints(mut self, input: impl Into<crate::model::AccessEndpoint>) -> Self {
+        pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
             let mut v = self.access_endpoints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_endpoints = Some(v);
             self
         }
@@ -12255,7 +13074,7 @@ pub mod update_stack_input {
 #[doc(hidden)]
 pub type UpdateStackInputOperationOutputAlias = crate::operation::UpdateStack;
 #[doc(hidden)]
-pub type UpdateStackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStackInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStack`](crate::operation::UpdateStack)>
     #[allow(clippy::let_and_return)]
@@ -12266,7 +13085,7 @@ impl UpdateStackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStack,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12350,7 +13169,7 @@ impl UpdateStackInput {
             "UpdateStack",
             "appstream",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12518,114 +13337,44 @@ pub struct UpdateFleetInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.medium</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p>
-    /// </li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.medium</p>
-    /// </li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
     /// </ul>
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.</p>
@@ -12648,30 +13397,17 @@ pub struct UpdateFleetInput {
     pub enable_default_internet_access: std::option::Option<bool>,
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
     pub domain_join_info: std::option::Option<crate::model::DomainJoinInfo>,
-    /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-    /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-    /// interval begins. Users are notified before they are disconnected due to inactivity. If
-    /// users try to reconnect to the streaming session before the time interval specified in
-    /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-    /// previous session. Users are considered idle when they stop providing keyboard or mouse
-    /// input during their streaming session. File uploads and downloads, audio in, audio out,
-    /// and pixels changing do not qualify as user activity. If users continue to be idle after
-    /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-    /// disconnected. </p>
-    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-    ///
-    /// <note>
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
     /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
     pub idle_disconnect_timeout_in_seconds: std::option::Option<i32>,
     /// <p>The fleet attributes to delete.</p>
     pub attributes_to_delete: std::option::Option<std::vec::Vec<crate::model::FleetAttribute>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-    ///
     /// <p>The default value is <code>APP</code>.</p>
     pub stream_view: std::option::Option<crate::model::StreamView>,
     /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
@@ -12696,114 +13432,44 @@ impl UpdateFleetInput {
     }
     /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.medium</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p>
-    /// </li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.medium</p>
-    /// </li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
     /// </ul>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
@@ -12846,19 +13512,8 @@ impl UpdateFleetInput {
     pub fn domain_join_info(&self) -> std::option::Option<&crate::model::DomainJoinInfo> {
         self.domain_join_info.as_ref()
     }
-    /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-    /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-    /// interval begins. Users are notified before they are disconnected due to inactivity. If
-    /// users try to reconnect to the streaming session before the time interval specified in
-    /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-    /// previous session. Users are considered idle when they stop providing keyboard or mouse
-    /// input during their streaming session. File uploads and downloads, audio in, audio out,
-    /// and pixels changing do not qualify as user activity. If users continue to be idle after
-    /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-    /// disconnected. </p>
-    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-    ///
-    /// <note>
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
     /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
     pub fn idle_disconnect_timeout_in_seconds(&self) -> std::option::Option<i32> {
@@ -12869,13 +13524,11 @@ impl UpdateFleetInput {
         self.attributes_to_delete.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-    ///
     /// <p>The default value is <code>APP</code>.</p>
     pub fn stream_view(&self) -> std::option::Option<&crate::model::StreamView> {
         self.stream_view.as_ref()
@@ -12928,6 +13581,55 @@ impl std::fmt::Debug for UpdateFleetInput {
         formatter.field("platform", &self.platform);
         formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
         formatter.field("usb_device_filter_strings", &self.usb_device_filter_strings);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateEntitlementInput {
+    /// <p>The name of the entitlement.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub stack_name: std::option::Option<std::string::String>,
+    /// <p>The description of the entitlement.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Specifies whether all or only selected apps are entitled.</p>
+    pub app_visibility: std::option::Option<crate::model::AppVisibility>,
+    /// <p>The attributes of the entitlement.</p>
+    pub attributes: std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>,
+}
+impl UpdateEntitlementInput {
+    /// <p>The name of the entitlement.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The description of the entitlement.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies whether all or only selected apps are entitled.</p>
+    pub fn app_visibility(&self) -> std::option::Option<&crate::model::AppVisibility> {
+        self.app_visibility.as_ref()
+    }
+    /// <p>The attributes of the entitlement.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::EntitlementAttribute]> {
+        self.attributes.as_deref()
+    }
+}
+impl std::fmt::Debug for UpdateEntitlementInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateEntitlementInput");
+        formatter.field("name", &self.name);
+        formatter.field("stack_name", &self.stack_name);
+        formatter.field("description", &self.description);
+        formatter.field("app_visibility", &self.app_visibility);
+        formatter.field("attributes", &self.attributes);
         formatter.finish()
     }
 }
@@ -13093,9 +13795,7 @@ pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-    ///
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    ///
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     pub tags:
@@ -13107,9 +13807,7 @@ impl TagResourceInput {
         self.resource_arn.as_deref()
     }
     /// <p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-    ///
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    ///
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
     pub fn tags(
@@ -13243,6 +13941,48 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEntitledApplicationsInput {
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub stack_name: std::option::Option<std::string::String>,
+    /// <p>The name of the entitlement.</p>
+    pub entitlement_name: std::option::Option<std::string::String>,
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum size of each page of results.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListEntitledApplicationsInput {
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The name of the entitlement.</p>
+    pub fn entitlement_name(&self) -> std::option::Option<&str> {
+        self.entitlement_name.as_deref()
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum size of each page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListEntitledApplicationsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEntitledApplicationsInput");
+        formatter.field("stack_name", &self.stack_name);
+        formatter.field("entitlement_name", &self.entitlement_name);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedStacksInput {
     /// <p>The name of the fleet.</p>
     pub fleet_name: std::option::Option<std::string::String>,
@@ -13321,9 +14061,7 @@ impl std::fmt::Debug for ExpireSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableUserInput {
-    /// <p>The email address of the user.</p>
-    ///
-    /// <note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
     /// </note>
     pub user_name: std::option::Option<std::string::String>,
@@ -13331,9 +14069,7 @@ pub struct EnableUserInput {
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl EnableUserInput {
-    /// <p>The email address of the user.</p>
-    ///
-    /// <note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
     /// </note>
     pub fn user_name(&self) -> std::option::Option<&str> {
@@ -13384,6 +14120,41 @@ impl std::fmt::Debug for DisassociateFleetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateApplicationFromEntitlementInput {
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub stack_name: std::option::Option<std::string::String>,
+    /// <p>The name of the entitlement.</p>
+    pub entitlement_name: std::option::Option<std::string::String>,
+    /// <p>The identifier of the application to remove from the entitlement.</p>
+    pub application_identifier: std::option::Option<std::string::String>,
+}
+impl DisassociateApplicationFromEntitlementInput {
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The name of the entitlement.</p>
+    pub fn entitlement_name(&self) -> std::option::Option<&str> {
+        self.entitlement_name.as_deref()
+    }
+    /// <p>The identifier of the application to remove from the entitlement.</p>
+    pub fn application_identifier(&self) -> std::option::Option<&str> {
+        self.application_identifier.as_deref()
+    }
+}
+impl std::fmt::Debug for DisassociateApplicationFromEntitlementInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateApplicationFromEntitlementInput");
+        formatter.field("stack_name", &self.stack_name);
+        formatter.field("entitlement_name", &self.entitlement_name);
+        formatter.field("application_identifier", &self.application_identifier);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateApplicationFleetInput {
     /// <p>The name of the fleet.</p>
     pub fleet_name: std::option::Option<std::string::String>,
@@ -13413,9 +14184,7 @@ impl std::fmt::Debug for DisassociateApplicationFleetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableUserInput {
-    /// <p>The email address of the user.</p>
-    ///
-    /// <note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub user_name: std::option::Option<std::string::String>,
@@ -13423,9 +14192,7 @@ pub struct DisableUserInput {
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl DisableUserInput {
-    /// <p>The email address of the user.</p>
-    ///
-    /// <note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn user_name(&self) -> std::option::Option<&str> {
@@ -13451,9 +14218,7 @@ impl std::fmt::Debug for DisableUserInput {
 pub struct DescribeUserStackAssociationsInput {
     /// <p>The name of the stack that is associated with the user.</p>
     pub stack_name: std::option::Option<std::string::String>,
-    /// <p>The email address of the user who is associated with the stack.</p>
-    ///
-    /// <note>
+    /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub user_name: std::option::Option<std::string::String>,
@@ -13469,9 +14234,7 @@ impl DescribeUserStackAssociationsInput {
     pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
-    /// <p>The email address of the user who is associated with the stack.</p>
-    ///
-    /// <note>
+    /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn user_name(&self) -> std::option::Option<&str> {
@@ -13607,9 +14370,7 @@ pub struct DescribeSessionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The authentication method. Specify <code>API</code> for a user
-    /// authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
-    /// The default is to authenticate users using a streaming URL.</p>
+    /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl DescribeSessionsInput {
@@ -13633,9 +14394,7 @@ impl DescribeSessionsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The authentication method. Specify <code>API</code> for a user
-    /// authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
-    /// The default is to authenticate users using a streaming URL.</p>
+    /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
     pub fn authentication_type(&self) -> std::option::Option<&crate::model::AuthenticationType> {
         self.authentication_type.as_ref()
     }
@@ -13810,6 +14569,48 @@ impl std::fmt::Debug for DescribeFleetsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeEntitlementsInput {
+    /// <p>The name of the entitlement.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub stack_name: std::option::Option<std::string::String>,
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum size of each page of results.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl DescribeEntitlementsInput {
+    /// <p>The name of the entitlement.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum size of each page of results.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for DescribeEntitlementsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeEntitlementsInput");
+        formatter.field("name", &self.name);
+        formatter.field("stack_name", &self.stack_name);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDirectoryConfigsInput {
     /// <p>The directory names.</p>
     pub directory_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13848,8 +14649,7 @@ impl std::fmt::Debug for DescribeDirectoryConfigsInput {
 pub struct DescribeApplicationsInput {
     /// <p>The ARNs for the applications.</p>
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of each page of results.</p>
     pub max_results: std::option::Option<i32>,
@@ -13859,8 +14659,7 @@ impl DescribeApplicationsInput {
     pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
         self.arns.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13889,8 +14688,7 @@ pub struct DescribeApplicationFleetAssociationsInput {
     pub application_arn: std::option::Option<std::string::String>,
     /// <p>The maximum size of each page of results.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationFleetAssociationsInput {
@@ -13906,8 +14704,7 @@ impl DescribeApplicationFleetAssociationsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13929,8 +14726,7 @@ impl std::fmt::Debug for DescribeApplicationFleetAssociationsInput {
 pub struct DescribeAppBlocksInput {
     /// <p>The ARNs of the app blocks.</p>
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum size of each page of results.</p>
     pub max_results: std::option::Option<i32>,
@@ -13940,8 +14736,7 @@ impl DescribeAppBlocksInput {
     pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
         self.arns.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13964,9 +14759,7 @@ impl std::fmt::Debug for DescribeAppBlocksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
-    /// <p>The email address of the user.</p>
-    ///
-    /// <note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub user_name: std::option::Option<std::string::String>,
@@ -13974,9 +14767,7 @@ pub struct DeleteUserInput {
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl DeleteUserInput {
-    /// <p>The email address of the user.</p>
-    ///
-    /// <note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn user_name(&self) -> std::option::Option<&str> {
@@ -14122,6 +14913,34 @@ impl std::fmt::Debug for DeleteFleetInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEntitlementInput {
+    /// <p>The name of the entitlement.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub stack_name: std::option::Option<std::string::String>,
+}
+impl DeleteEntitlementInput {
+    /// <p>The name of the entitlement.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteEntitlementInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEntitlementInput");
+        formatter.field("name", &self.name);
+        formatter.field("stack_name", &self.stack_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDirectoryConfigInput {
     /// <p>The name of the directory configuration.</p>
     pub directory_name: std::option::Option<std::string::String>,
@@ -14186,15 +15005,11 @@ impl std::fmt::Debug for DeleteAppBlockInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserInput {
-    /// <p>The email address of the user.</p>
-    ///
-    /// <note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
     /// </note>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p>
-    ///
-    /// <note>
+    /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note>
     /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
     /// </note>
     pub message_action: std::option::Option<crate::model::MessageAction>,
@@ -14206,17 +15021,13 @@ pub struct CreateUserInput {
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
 }
 impl CreateUserInput {
-    /// <p>The email address of the user.</p>
-    ///
-    /// <note>
+    /// <p>The email address of the user.</p> <note>
     /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
     /// </note>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p>
-    ///
-    /// <note>
+    /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note>
     /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
     /// </note>
     pub fn message_action(&self) -> std::option::Option<&crate::model::MessageAction> {
@@ -14336,11 +15147,9 @@ pub struct CreateStreamingUrlInput {
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The identifier of the user.</p>
     pub user_id: std::option::Option<std::string::String>,
-    /// <p>The name of the application to launch after the session starts. This is the name that you specified
-    /// as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
+    /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The time that the streaming URL will be valid, in seconds.
-    /// Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
+    /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
     pub validity: std::option::Option<i64>,
     /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub session_context: std::option::Option<std::string::String>,
@@ -14358,13 +15167,11 @@ impl CreateStreamingUrlInput {
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>The name of the application to launch after the session starts. This is the name that you specified
-    /// as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
+    /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The time that the streaming URL will be valid, in seconds.
-    /// Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
+    /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
     pub fn validity(&self) -> std::option::Option<i64> {
         self.validity
     }
@@ -14407,12 +15214,9 @@ pub struct CreateStackInput {
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
     pub application_settings: std::option::Option<crate::model::ApplicationSettings>,
     /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-    ///
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    ///
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
-    ///
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -14455,12 +15259,9 @@ impl CreateStackInput {
         self.application_settings.as_ref()
     }
     /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-    ///
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    ///
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
-    ///
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn tags(
         &self,
@@ -14501,8 +15302,7 @@ impl std::fmt::Debug for CreateStackInput {
 pub struct CreateImageBuilderStreamingUrlInput {
     /// <p>The name of the image builder.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The time that the streaming URL will be valid, in seconds.
-    /// Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
+    /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
     pub validity: std::option::Option<i64>,
 }
 impl CreateImageBuilderStreamingUrlInput {
@@ -14510,8 +15310,7 @@ impl CreateImageBuilderStreamingUrlInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The time that the streaming URL will be valid, in seconds.
-    /// Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
+    /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
     pub fn validity(&self) -> std::option::Option<i64> {
         self.validity
     }
@@ -14535,107 +15334,41 @@ pub struct CreateImageBuilderInput {
     pub image_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the public, private, or shared image to use.</p>
     pub image_arn: std::option::Option<std::string::String>,
-    /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>   
+    /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.medium</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p>
-    /// </li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The description to display.</p>
@@ -14645,7 +15378,6 @@ pub struct CreateImageBuilderInput {
     /// <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>Enables or disables default internet access for the image builder.</p>
@@ -14655,12 +15387,9 @@ pub struct CreateImageBuilderInput {
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
     pub appstream_agent_version: std::option::Option<std::string::String>,
     /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-    ///
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
-    ///
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    ///
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -14680,107 +15409,41 @@ impl CreateImageBuilderInput {
     pub fn image_arn(&self) -> std::option::Option<&str> {
         self.image_arn.as_deref()
     }
-    /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>   
+    /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.medium</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p>
-    /// </li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
@@ -14798,7 +15461,6 @@ impl CreateImageBuilderInput {
         self.vpc_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
@@ -14816,12 +15478,9 @@ impl CreateImageBuilderInput {
         self.appstream_agent_version.as_deref()
     }
     /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-    ///
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
-    ///
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    ///
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn tags(
         &self,
@@ -14867,130 +15526,61 @@ pub struct CreateFleetInput {
     pub image_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the public, private, or shared image to use.</p>
     pub image_arn: std::option::Option<std::string::String>,
-    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.medium</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p>
-    /// </li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.medium</p>
-    /// </li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
     /// </ul>
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The fleet type.</p>
     /// <dl>
-    /// <dt>ALWAYS_ON</dt>
+    /// <dt>
+    /// ALWAYS_ON
+    /// </dt>
     /// <dd>
-    /// <p>Provides users with instant-on access to their apps.
-    /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
     /// </dd>
-    /// <dt>ON_DEMAND</dt>
+    /// <dt>
+    /// ON_DEMAND
+    /// </dt>
     /// <dd>
-    /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
-    /// You are charged for instance streaming when users are connected and a
-    /// small hourly fee for instances that are not streaming apps.</p>
+    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
     /// </dd>
     /// </dl>
     pub fleet_type: std::option::Option<crate::model::FleetType>,
@@ -15013,43 +15603,26 @@ pub struct CreateFleetInput {
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets. </p>
     pub domain_join_info: std::option::Option<crate::model::DomainJoinInfo>,
     /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-    ///
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    ///
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-    /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-    /// interval begins. Users are notified before they are disconnected due to inactivity. If
-    /// they try to reconnect to the streaming session before the time interval specified in
-    /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-    /// previous session. Users are considered idle when they stop providing keyboard or mouse
-    /// input during their streaming session. File uploads and downloads, audio in, audio out,
-    /// and pixels changing do not qualify as user activity. If users continue to be idle after
-    /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-    /// disconnected.</p>
-    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-    /// <note>
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
     /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
     pub idle_disconnect_timeout_in_seconds: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-    ///
     /// <p>The default value is <code>APP</code>.</p>
     pub stream_view: std::option::Option<crate::model::StreamView>,
-    /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic
-    /// fleets. </p>
+    /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
     pub platform: std::option::Option<crate::model::PlatformType>,
-    /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic
-    /// fleets, and not allowed for other fleet types.</p>
+    /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
     pub max_concurrent_sessions: std::option::Option<i32>,
     /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
     pub usb_device_filter_strings: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15067,132 +15640,63 @@ impl CreateFleetInput {
     pub fn image_arn(&self) -> std::option::Option<&str> {
         self.image_arn.as_deref()
     }
-    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.medium</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.compute.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.3xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.6xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.memory.z1d.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.large</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-design.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-desktop.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.2xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.12xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics.g4dn.16xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.4xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.8xlarge</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.graphics-pro.16xlarge</p>
-    /// </li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
     /// <p>The following instance types are available for Elastic fleets:</p>
     /// <ul>
-    /// <li>
-    /// <p>stream.standard.small</p>
-    /// </li>
-    /// <li>
-    /// <p>stream.standard.medium</p>
-    /// </li>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
     /// </ul>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>The fleet type.</p>
     /// <dl>
-    /// <dt>ALWAYS_ON</dt>
+    /// <dt>
+    /// ALWAYS_ON
+    /// </dt>
     /// <dd>
-    /// <p>Provides users with instant-on access to their apps.
-    /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
     /// </dd>
-    /// <dt>ON_DEMAND</dt>
+    /// <dt>
+    /// ON_DEMAND
+    /// </dt>
     /// <dd>
-    /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
-    /// You are charged for instance streaming when users are connected and a
-    /// small hourly fee for instances that are not streaming apps.</p>
+    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
     /// </dd>
     /// </dl>
     pub fn fleet_type(&self) -> std::option::Option<&crate::model::FleetType> {
@@ -15233,12 +15737,9 @@ impl CreateFleetInput {
         self.domain_join_info.as_ref()
     }
     /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-    ///
     /// <p>If you do not specify a value, the value is set to an empty string.</p>
-    ///
     /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
     /// <p>_ . : / = + \ - @</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn tags(
         &self,
@@ -15246,42 +15747,28 @@ impl CreateFleetInput {
     {
         self.tags.as_ref()
     }
-    /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-    /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-    /// interval begins. Users are notified before they are disconnected due to inactivity. If
-    /// they try to reconnect to the streaming session before the time interval specified in
-    /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-    /// previous session. Users are considered idle when they stop providing keyboard or mouse
-    /// input during their streaming session. File uploads and downloads, audio in, audio out,
-    /// and pixels changing do not qualify as user activity. If users continue to be idle after
-    /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-    /// disconnected.</p>
-    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-    /// <note>
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
     /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
     pub fn idle_disconnect_timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.idle_disconnect_timeout_in_seconds
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-    ///
     /// <p>The default value is <code>APP</code>.</p>
     pub fn stream_view(&self) -> std::option::Option<&crate::model::StreamView> {
         self.stream_view.as_ref()
     }
-    /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic
-    /// fleets. </p>
+    /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
     pub fn platform(&self) -> std::option::Option<&crate::model::PlatformType> {
         self.platform.as_ref()
     }
-    /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic
-    /// fleets, and not allowed for other fleet types.</p>
+    /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
     pub fn max_concurrent_sessions(&self) -> std::option::Option<i32> {
         self.max_concurrent_sessions
     }
@@ -15325,6 +15812,55 @@ impl std::fmt::Debug for CreateFleetInput {
         formatter.field("platform", &self.platform);
         formatter.field("max_concurrent_sessions", &self.max_concurrent_sessions);
         formatter.field("usb_device_filter_strings", &self.usb_device_filter_strings);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateEntitlementInput {
+    /// <p>The name of the entitlement.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub stack_name: std::option::Option<std::string::String>,
+    /// <p>The description of the entitlement.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Specifies whether all or selected apps are entitled.</p>
+    pub app_visibility: std::option::Option<crate::model::AppVisibility>,
+    /// <p>The attributes of the entitlement.</p>
+    pub attributes: std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>,
+}
+impl CreateEntitlementInput {
+    /// <p>The name of the entitlement.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The name of the stack with which the entitlement is associated.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The description of the entitlement.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>Specifies whether all or selected apps are entitled.</p>
+    pub fn app_visibility(&self) -> std::option::Option<&crate::model::AppVisibility> {
+        self.app_visibility.as_ref()
+    }
+    /// <p>The attributes of the entitlement.</p>
+    pub fn attributes(&self) -> std::option::Option<&[crate::model::EntitlementAttribute]> {
+        self.attributes.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateEntitlementInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateEntitlementInput");
+        formatter.field("name", &self.name);
+        formatter.field("stack_name", &self.stack_name);
+        formatter.field("description", &self.description);
+        formatter.field("app_visibility", &self.app_visibility);
+        formatter.field("attributes", &self.attributes);
         formatter.finish()
     }
 }
@@ -15647,6 +16183,41 @@ impl std::fmt::Debug for AssociateFleetInput {
         let mut formatter = f.debug_struct("AssociateFleetInput");
         formatter.field("fleet_name", &self.fleet_name);
         formatter.field("stack_name", &self.stack_name);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateApplicationToEntitlementInput {
+    /// <p>The name of the stack.</p>
+    pub stack_name: std::option::Option<std::string::String>,
+    /// <p>The name of the entitlement.</p>
+    pub entitlement_name: std::option::Option<std::string::String>,
+    /// <p>The identifier of the application.</p>
+    pub application_identifier: std::option::Option<std::string::String>,
+}
+impl AssociateApplicationToEntitlementInput {
+    /// <p>The name of the stack.</p>
+    pub fn stack_name(&self) -> std::option::Option<&str> {
+        self.stack_name.as_deref()
+    }
+    /// <p>The name of the entitlement.</p>
+    pub fn entitlement_name(&self) -> std::option::Option<&str> {
+        self.entitlement_name.as_deref()
+    }
+    /// <p>The identifier of the application.</p>
+    pub fn application_identifier(&self) -> std::option::Option<&str> {
+        self.application_identifier.as_deref()
+    }
+}
+impl std::fmt::Debug for AssociateApplicationToEntitlementInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateApplicationToEntitlementInput");
+        formatter.field("stack_name", &self.stack_name);
+        formatter.field("entitlement_name", &self.entitlement_name);
+        formatter.field("application_identifier", &self.application_identifier);
         formatter.finish()
     }
 }

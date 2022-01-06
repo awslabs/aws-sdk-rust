@@ -3,17 +3,13 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more
-    /// than one operation on the same resource at the same time.</p>
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>IoT SiteWise can't process your request right now. Try again later.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or
-    /// unsupported characters. Check your request and try again.</p>
+    /// <p>The request isn't valid. This can occur if your request contains malformed JSON or unsupported characters. Check your request and try again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
-    /// associate more than the allowed number of child assets or attempting to create more than the
-    /// allowed number of properties for an asset model.</p>
+    /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to associate more than the allowed number of child assets or attempting to create more than the allowed number of properties for an asset model.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource already exists.</p>
@@ -22,14 +18,10 @@ pub enum Error {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The requested service is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-    /// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
-    /// on.</p>
+    /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so on.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>You've reached the limit for the number of tags allowed for a resource. For more
-    /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag naming limits and
-    /// requirements</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>You've reached the limit for the number of tags allowed for a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag naming limits and requirements</a> in the <i>Amazon Web Services General Reference</i>.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>You are not authorized.</p>
     UnauthorizedException(crate::error::UnauthorizedException),

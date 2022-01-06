@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>There is another ongoing conflicting backup control plane operation on the table.
-    /// The backup is either being created, deleted or restored to a table.</p>
+    /// <p>There is another ongoing conflicting backup control plane operation on the table. The backup is either being created, deleted or restored to a table.</p>
     BackupInUseException(crate::error::BackupInUseException),
     /// <p>Backup not found for the given BackupARN. </p>
     BackupNotFoundException(crate::error::BackupNotFoundException),
@@ -12,8 +11,7 @@ pub enum Error {
     ConditionalCheckFailedException(crate::error::ConditionalCheckFailedException),
     /// <p>Backups have not yet been enabled for this table.</p>
     ContinuousBackupsUnavailableException(crate::error::ContinuousBackupsUnavailableException),
-    /// <p> There was an attempt to insert an item with the same primary key as an item that
-    /// already exists in the DynamoDB table.</p>
+    /// <p> There was an attempt to insert an item with the same primary key as an item that already exists in the DynamoDB table.</p>
     DuplicateItemException(crate::error::DuplicateItemException),
     /// <p>There was a conflict when writing to the specified S3 bucket.</p>
     ExportConflictException(crate::error::ExportConflictException),
@@ -23,8 +21,7 @@ pub enum Error {
     GlobalTableAlreadyExistsException(crate::error::GlobalTableAlreadyExistsException),
     /// <p>The specified global table does not exist.</p>
     GlobalTableNotFoundException(crate::error::GlobalTableNotFoundException),
-    /// <p>DynamoDB rejected the request because you retried a request with a
-    /// different payload but with an idempotent token that was already used.</p>
+    /// <p>DynamoDB rejected the request because you retried a request with a different payload but with an idempotent token that was already used.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>The operation tried to access a nonexistent index.</p>
     IndexNotFoundException(crate::error::IndexNotFoundException),
@@ -32,297 +29,126 @@ pub enum Error {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>The specified <code>ExportTime</code> is outside of the point in time recovery
-    /// window.</p>
+    /// <p>The specified <code>ExportTime</code> is outside of the point in time recovery window.</p>
     InvalidExportTimeException(crate::error::InvalidExportTimeException),
-    /// <p>An invalid restore time was specified. RestoreDateTime must be between
-    /// EarliestRestorableDateTime and LatestRestorableDateTime.</p>
+    /// <p>An invalid restore time was specified. RestoreDateTime must be between EarliestRestorableDateTime and LatestRestorableDateTime.</p>
     InvalidRestoreTimeException(crate::error::InvalidRestoreTimeException),
-    /// <p>An item collection is too large. This exception is only returned for tables that
-    /// have one or more local secondary indexes.</p>
+    /// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
     ItemCollectionSizeLimitExceededException(
         crate::error::ItemCollectionSizeLimitExceededException,
     ),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Point in time recovery has not yet been enabled for this source table.</p>
     PointInTimeRecoveryUnavailableException(crate::error::PointInTimeRecoveryUnavailableException),
-    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB
-    /// automatically retry requests that receive this exception. Your request is eventually
-    /// successful, unless your retry queue is too large to finish. Reduce the frequency of
-    /// requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>The specified replica is already part of the global table.</p>
     ReplicaAlreadyExistsException(crate::error::ReplicaAlreadyExistsException),
     /// <p>The specified replica is no longer part of the global table.</p>
     ReplicaNotFoundException(crate::error::ReplicaNotFoundException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact
-    /// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-    /// quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// <p>The operation conflicts with the resource's availability. For example, you
-    /// attempted to recreate an existing table, or tried to delete a table currently in the
-    /// <code>CREATING</code> state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A target table with the specified name already exists. </p>
     TableAlreadyExistsException(crate::error::TableAlreadyExistsException),
-    /// <p>A target table with the specified name is either being created or deleted.
-    /// </p>
+    /// <p>A target table with the specified name is either being created or deleted. </p>
     TableInUseException(crate::error::TableInUseException),
-    /// <p>A source table with the name <code>TableName</code> does not currently exist within
-    /// the subscriber's account.</p>
+    /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// <p>The entire transaction request was canceled.</p>
-    /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following
-    /// circumstances:</p>
+    /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p>
     /// <ul>
-    /// <li>
-    /// <p>A condition in one of the condition expressions is not met.</p>
-    /// </li>
-    /// <li>
-    /// <p>A table in the <code>TransactWriteItems</code> request is in a different
-    /// account or region.</p>
-    /// </li>
-    /// <li>
-    /// <p>More than one action in the <code>TransactWriteItems</code> operation
-    /// targets the same item.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is insufficient provisioned capacity for the transaction to be
-    /// completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>An item size becomes too large (larger than 400 KB), or a local secondary
-    /// index (LSI) becomes too large, or a similar validation error occurs because of
-    /// changes made by the transaction.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is a user error, such as an invalid data format.</p>
-    /// </li>
+    /// <li> <p>A condition in one of the condition expressions is not met.</p> </li>
+    /// <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li>
+    /// <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li>
+    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
+    /// <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li>
+    /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
     /// </ul>
-    ///
-    /// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the
-    /// following circumstances:</p>
+    /// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p>
     /// <ul>
-    /// <li>
-    /// <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts
-    /// with a concurrent <code>PutItem</code>, <code>UpdateItem</code>,
-    /// <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this
-    /// case the <code>TransactGetItems</code> operation fails with a
-    /// <code>TransactionCanceledException</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A table in the <code>TransactGetItems</code> request is in a different
-    /// account or region.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is insufficient provisioned capacity for the transaction to be
-    /// completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is a user error, such as an invalid data format.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>If using Java, DynamoDB lists the cancellation reasons on the
-    /// <code>CancellationReasons</code> property. This property is not set for other
-    /// languages. Transaction cancellation reasons are ordered in the order of requested
-    /// items, if an item has no error it will have <code>NONE</code> code and
-    /// <code>Null</code> message.</p>
+    /// <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li>
+    /// <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li>
+    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
+    /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
+    /// </ul> <note>
+    /// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>NONE</code> code and <code>Null</code> message.</p>
     /// </note>
     /// <p>Cancellation reason codes and possible error messages:</p>
     /// <ul>
-    /// <li>
-    /// <p>No Errors:</p>
+    /// <li> <p>No Errors:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>NONE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: <code>null</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Conditional Check Failed:</p>
+    /// <li> <p>Code: <code>NONE</code> </p> </li>
+    /// <li> <p>Message: <code>null</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Conditional Check Failed:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ConditionalCheckFailed</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: The conditional request failed. </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Item Collection Size Limit Exceeded:</p>
+    /// <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li>
+    /// <li> <p>Message: The conditional request failed. </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Item Collection Size Limit Exceeded:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ItemCollectionSizeLimitExceeded</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: Collection size exceeded.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Transaction Conflict:</p>
+    /// <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li>
+    /// <li> <p>Message: Collection size exceeded.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Transaction Conflict:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>TransactionConflict</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: Transaction is ongoing for the item.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Provisioned Throughput Exceeded:</p>
+    /// <li> <p>Code: <code>TransactionConflict</code> </p> </li>
+    /// <li> <p>Message: Transaction is ongoing for the item.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Provisioned Throughput Exceeded:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ProvisionedThroughputExceeded</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Messages:</p>
+    /// <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li>
+    /// <li> <p>Messages:</p>
     /// <ul>
-    /// <li>
-    /// <p>The level of configured provisioned throughput for the
-    /// table was exceeded. Consider increasing your provisioning level
-    /// with the UpdateTable API.</p>
-    /// <note>
-    /// <p>This Message is received when provisioned throughput is
-    /// exceeded is on a provisioned DynamoDB
-    /// table.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>The level of configured provisioned throughput for one or
-    /// more global secondary indexes of the table was exceeded.
-    /// Consider increasing your provisioning level for the
-    /// under-provisioned global secondary indexes with the UpdateTable
-    /// API.</p>
-    /// <note>
-    /// <p>This message is returned when provisioned throughput is
-    /// exceeded is on a provisioned GSI.</p>
-    /// </note>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Throttling Error:</p>
+    /// <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note>
+    /// <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p>
+    /// </note> </li>
+    /// <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note>
+    /// <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p>
+    /// </note> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>Throttling Error:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ThrottlingError</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Messages: </p>
+    /// <li> <p>Code: <code>ThrottlingError</code> </p> </li>
+    /// <li> <p>Messages: </p>
     /// <ul>
-    /// <li>
-    /// <p>Throughput exceeds the current capacity of your table or
-    /// index. DynamoDB is automatically scaling your table or
-    /// index so please try again shortly. If exceptions persist, check
-    /// if you have a hot key:
-    /// https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p>
-    /// <note>
-    /// <p>This message is returned when writes get throttled on an
-    /// On-Demand table as DynamoDB is automatically
-    /// scaling the table.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>Throughput exceeds the current capacity for one or more
-    /// global secondary indexes. DynamoDB is automatically
-    /// scaling your index so please try again shortly.</p>
-    /// <note>
-    /// <p>This message is returned when when writes get throttled on
-    /// an On-Demand GSI as DynamoDB is automatically
-    /// scaling the GSI.</p>
-    /// </note>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Validation Error:</p>
+    /// <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note>
+    /// <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p>
+    /// </note> </li>
+    /// <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note>
+    /// <p>This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p>
+    /// </note> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>Validation Error:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ValidationError</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Messages: </p>
+    /// <li> <p>Code: <code>ValidationError</code> </p> </li>
+    /// <li> <p>Messages: </p>
     /// <ul>
-    /// <li>
-    /// <p>One or more parameter values were invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>The update expression attempted to update the secondary
-    /// index key beyond allowed size limits.</p>
-    /// </li>
-    /// <li>
-    /// <p>The update expression attempted to update the secondary
-    /// index key to unsupported type.</p>
-    /// </li>
-    /// <li>
-    /// <p>An operand in the update expression has an incorrect data
-    /// type.</p>
-    /// </li>
-    /// <li>
-    /// <p>Item size to update has exceeded the maximum allowed
-    /// size.</p>
-    /// </li>
-    /// <li>
-    /// <p>Number overflow. Attempting to store a number with
-    /// magnitude larger than supported range.</p>
-    /// </li>
-    /// <li>
-    /// <p>Type mismatch for attribute to update.</p>
-    /// </li>
-    /// <li>
-    /// <p>Nesting Levels have exceeded supported limits.</p>
-    /// </li>
-    /// <li>
-    /// <p>The document path provided in the update expression is
-    /// invalid for update.</p>
-    /// </li>
-    /// <li>
-    /// <p>The provided expression refers to an attribute that does
-    /// not exist in the item.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>One or more parameter values were invalid.</p> </li>
+    /// <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li>
+    /// <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li>
+    /// <li> <p>An operand in the update expression has an incorrect data type.</p> </li>
+    /// <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li>
+    /// <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li>
+    /// <li> <p>Type mismatch for attribute to update.</p> </li>
+    /// <li> <p>Nesting Levels have exceeded supported limits.</p> </li>
+    /// <li> <p>The document path provided in the update expression is invalid for update.</p> </li>
+    /// <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
     /// </ul>
     TransactionCanceledException(crate::error::TransactionCanceledException),
-    /// <p>Operation was rejected because there is an ongoing transaction for the
-    /// item.</p>
+    /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
     /// <p>The transaction with the given request token is already in progress.</p>
     TransactionInProgressException(crate::error::TransactionInProgressException),

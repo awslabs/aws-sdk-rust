@@ -3,27 +3,19 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

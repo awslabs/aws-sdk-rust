@@ -119,42 +119,18 @@ impl StartMigrationOutput {
 pub struct RevokeCacheSecurityGroupIngressOutput {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AuthorizeCacheSecurityGroupIngress</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CreateCacheSecurityGroup</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RevokeCacheSecurityGroupIngress</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
     pub cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
 }
 impl RevokeCacheSecurityGroupIngressOutput {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AuthorizeCacheSecurityGroupIngress</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CreateCacheSecurityGroup</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RevokeCacheSecurityGroupIngress</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
     pub fn cache_security_group(&self) -> std::option::Option<&crate::model::CacheSecurityGroup> {
         self.cache_security_group.as_ref()
@@ -178,21 +154,9 @@ pub mod revoke_cache_security_group_ingress_output {
     impl Builder {
         /// <p>Represents the output of one of the following operations:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AuthorizeCacheSecurityGroupIngress</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreateCacheSecurityGroup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RevokeCacheSecurityGroupIngress</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
         /// </ul>
         pub fn cache_security_group(mut self, input: crate::model::CacheSecurityGroup) -> Self {
             self.cache_security_group = Some(input);
@@ -200,21 +164,9 @@ pub mod revoke_cache_security_group_ingress_output {
         }
         /// <p>Represents the output of one of the following operations:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AuthorizeCacheSecurityGroupIngress</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreateCacheSecurityGroup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RevokeCacheSecurityGroupIngress</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
         /// </ul>
         pub fn set_cache_security_group(
             mut self,
@@ -240,16 +192,8 @@ impl RevokeCacheSecurityGroupIngressOutput {
 
 /// <p>Represents the output of one of the following operations:</p>
 /// <ul>
-/// <li>
-/// <p>
-/// <code>ModifyCacheParameterGroup</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>ResetCacheParameterGroup</code>
-/// </p>
-/// </li>
+/// <li> <p> <code>ModifyCacheParameterGroup</code> </p> </li>
+/// <li> <p> <code>ResetCacheParameterGroup</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -310,8 +254,7 @@ impl ResetCacheParameterGroupOutput {
     }
 }
 
-/// <p>Represents the output from the <code>AddTagsToResource</code>,
-/// <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
+/// <p>Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromResourceOutput {
@@ -345,9 +288,9 @@ pub mod remove_tags_from_resource_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>A list of tags as key-value pairs.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -435,28 +378,16 @@ impl RebootCacheClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebalanceSlotsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl RebalanceSlotsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub fn global_replication_group(
         &self,
@@ -481,15 +412,9 @@ pub mod rebalance_slots_in_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn global_replication_group(
             mut self,
@@ -498,15 +423,9 @@ pub mod rebalance_slots_in_global_replication_group_output {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn set_global_replication_group(
             mut self,
@@ -1144,28 +1063,16 @@ impl ModifyReplicationGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl ModifyGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub fn global_replication_group(
         &self,
@@ -1190,15 +1097,9 @@ pub mod modify_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn global_replication_group(
             mut self,
@@ -1207,15 +1108,9 @@ pub mod modify_global_replication_group_output {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn set_global_replication_group(
             mut self,
@@ -1245,32 +1140,16 @@ impl ModifyGlobalReplicationGroupOutput {
 pub struct ModifyCacheSubnetGroupOutput {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreateCacheSubnetGroup</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ModifyCacheSubnetGroup</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
+    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
     /// </ul>
     pub cache_subnet_group: std::option::Option<crate::model::CacheSubnetGroup>,
 }
 impl ModifyCacheSubnetGroupOutput {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreateCacheSubnetGroup</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ModifyCacheSubnetGroup</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
+    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
     /// </ul>
     pub fn cache_subnet_group(&self) -> std::option::Option<&crate::model::CacheSubnetGroup> {
         self.cache_subnet_group.as_ref()
@@ -1294,16 +1173,8 @@ pub mod modify_cache_subnet_group_output {
     impl Builder {
         /// <p>Represents the output of one of the following operations:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreateCacheSubnetGroup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ModifyCacheSubnetGroup</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
+        /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
         /// </ul>
         pub fn cache_subnet_group(mut self, input: crate::model::CacheSubnetGroup) -> Self {
             self.cache_subnet_group = Some(input);
@@ -1311,16 +1182,8 @@ pub mod modify_cache_subnet_group_output {
         }
         /// <p>Represents the output of one of the following operations:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreateCacheSubnetGroup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ModifyCacheSubnetGroup</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
+        /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
         /// </ul>
         pub fn set_cache_subnet_group(
             mut self,
@@ -1346,16 +1209,8 @@ impl ModifyCacheSubnetGroupOutput {
 
 /// <p>Represents the output of one of the following operations:</p>
 /// <ul>
-/// <li>
-/// <p>
-/// <code>ModifyCacheParameterGroup</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>ResetCacheParameterGroup</code>
-/// </p>
-/// </li>
+/// <li> <p> <code>ModifyCacheParameterGroup</code> </p> </li>
+/// <li> <p> <code>ResetCacheParameterGroup</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1473,8 +1328,7 @@ impl ModifyCacheClusterOutput {
     }
 }
 
-/// <p>Represents the output from the <code>AddTagsToResource</code>,
-/// <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
+/// <p>Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -1508,9 +1362,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>A list of tags as key-value pairs.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }
@@ -1541,29 +1395,19 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAllowedNodeTypeModificationsOutput {
-    /// <p>A string list, each element of which specifies a cache node type which you can use
-    /// to scale your cluster or replication group.</p>
-    /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
-    /// <code>ModifyReplicationGroup</code>,
-    /// use a value from this list for the <code>CacheNodeType</code> parameter.</p>
+    /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>
+    /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
     pub scale_up_modifications: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.
-    ///
-    /// When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
+    /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group. When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
     pub scale_down_modifications: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListAllowedNodeTypeModificationsOutput {
-    /// <p>A string list, each element of which specifies a cache node type which you can use
-    /// to scale your cluster or replication group.</p>
-    /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
-    /// <code>ModifyReplicationGroup</code>,
-    /// use a value from this list for the <code>CacheNodeType</code> parameter.</p>
+    /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>
+    /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
     pub fn scale_up_modifications(&self) -> std::option::Option<&[std::string::String]> {
         self.scale_up_modifications.as_deref()
     }
-    /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.
-    ///
-    /// When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
+    /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group. When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
     pub fn scale_down_modifications(&self) -> std::option::Option<&[std::string::String]> {
         self.scale_down_modifications.as_deref()
     }
@@ -1591,22 +1435,16 @@ pub mod list_allowed_node_type_modifications_output {
         ///
         /// To override the contents of this collection use [`set_scale_up_modifications`](Self::set_scale_up_modifications).
         ///
-        /// <p>A string list, each element of which specifies a cache node type which you can use
-        /// to scale your cluster or replication group.</p>
-        /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
-        /// <code>ModifyReplicationGroup</code>,
-        /// use a value from this list for the <code>CacheNodeType</code> parameter.</p>
+        /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>
+        /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
         pub fn scale_up_modifications(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.scale_up_modifications.unwrap_or_default();
             v.push(input.into());
             self.scale_up_modifications = Some(v);
             self
         }
-        /// <p>A string list, each element of which specifies a cache node type which you can use
-        /// to scale your cluster or replication group.</p>
-        /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
-        /// <code>ModifyReplicationGroup</code>,
-        /// use a value from this list for the <code>CacheNodeType</code> parameter.</p>
+        /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>
+        /// <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
         pub fn set_scale_up_modifications(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1618,18 +1456,14 @@ pub mod list_allowed_node_type_modifications_output {
         ///
         /// To override the contents of this collection use [`set_scale_down_modifications`](Self::set_scale_down_modifications).
         ///
-        /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.
-        ///
-        /// When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
+        /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group. When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
         pub fn scale_down_modifications(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.scale_down_modifications.unwrap_or_default();
             v.push(input.into());
             self.scale_down_modifications = Some(v);
             self
         }
-        /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.
-        ///
-        /// When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
+        /// <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group. When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
         pub fn set_scale_down_modifications(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1714,28 +1548,16 @@ impl IncreaseReplicaCountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncreaseNodeGroupsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl IncreaseNodeGroupsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub fn global_replication_group(
         &self,
@@ -1760,15 +1582,9 @@ pub mod increase_node_groups_in_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn global_replication_group(
             mut self,
@@ -1777,15 +1593,9 @@ pub mod increase_node_groups_in_global_replication_group_output {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn set_global_replication_group(
             mut self,
@@ -1814,28 +1624,16 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl FailoverGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub fn global_replication_group(
         &self,
@@ -1860,15 +1658,9 @@ pub mod failover_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn global_replication_group(
             mut self,
@@ -1877,15 +1669,9 @@ pub mod failover_global_replication_group_output {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn set_global_replication_group(
             mut self,
@@ -1913,28 +1699,16 @@ impl FailoverGlobalReplicationGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl DisassociateGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub fn global_replication_group(
         &self,
@@ -1959,15 +1733,9 @@ pub mod disassociate_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn global_replication_group(
             mut self,
@@ -1976,15 +1744,9 @@ pub mod disassociate_global_replication_group_output {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn set_global_replication_group(
             mut self,
@@ -2014,7 +1776,7 @@ impl DisassociateGlobalReplicationGroupOutput {
 pub struct DescribeUsersOutput {
     /// <p>A list of users.</p>
     pub users: std::option::Option<std::vec::Vec<crate::model::User>>,
-    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeUsersOutput {
@@ -2022,7 +1784,7 @@ impl DescribeUsersOutput {
     pub fn users(&self) -> std::option::Option<&[crate::model::User]> {
         self.users.as_deref()
     }
-    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2050,9 +1812,9 @@ pub mod describe_users_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>A list of users.</p>
-        pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
+        pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -2064,12 +1826,12 @@ pub mod describe_users_output {
             self.users = input;
             self
         }
-        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2096,7 +1858,7 @@ impl DescribeUsersOutput {
 pub struct DescribeUserGroupsOutput {
     /// <p>Returns a list of user groups.</p>
     pub user_groups: std::option::Option<std::vec::Vec<crate::model::UserGroup>>,
-    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeUserGroupsOutput {
@@ -2104,7 +1866,7 @@ impl DescribeUserGroupsOutput {
     pub fn user_groups(&self) -> std::option::Option<&[crate::model::UserGroup]> {
         self.user_groups.as_deref()
     }
-    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2132,9 +1894,9 @@ pub mod describe_user_groups_output {
         /// To override the contents of this collection use [`set_user_groups`](Self::set_user_groups).
         ///
         /// <p>Returns a list of user groups.</p>
-        pub fn user_groups(mut self, input: impl Into<crate::model::UserGroup>) -> Self {
+        pub fn user_groups(mut self, input: crate::model::UserGroup) -> Self {
             let mut v = self.user_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_groups = Some(v);
             self
         }
@@ -2146,12 +1908,12 @@ pub mod describe_user_groups_output {
             self.user_groups = input;
             self
         }
-        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2176,19 +1938,13 @@ impl DescribeUserGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUpdateActionsOutput {
-    /// <p>An optional marker returned from a prior request.
-    /// Use this marker for pagination of results from this operation. If this
-    /// parameter is specified, the response includes only records beyond the marker, up to the
-    /// value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Returns a list of update actions</p>
     pub update_actions: std::option::Option<std::vec::Vec<crate::model::UpdateAction>>,
 }
 impl DescribeUpdateActionsOutput {
-    /// <p>An optional marker returned from a prior request.
-    /// Use this marker for pagination of results from this operation. If this
-    /// parameter is specified, the response includes only records beyond the marker, up to the
-    /// value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2215,18 +1971,12 @@ pub mod describe_update_actions_output {
         pub(crate) update_actions: std::option::Option<std::vec::Vec<crate::model::UpdateAction>>,
     }
     impl Builder {
-        /// <p>An optional marker returned from a prior request.
-        /// Use this marker for pagination of results from this operation. If this
-        /// parameter is specified, the response includes only records beyond the marker, up to the
-        /// value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional marker returned from a prior request.
-        /// Use this marker for pagination of results from this operation. If this
-        /// parameter is specified, the response includes only records beyond the marker, up to the
-        /// value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2236,9 +1986,9 @@ pub mod describe_update_actions_output {
         /// To override the contents of this collection use [`set_update_actions`](Self::set_update_actions).
         ///
         /// <p>Returns a list of update actions</p>
-        pub fn update_actions(mut self, input: impl Into<crate::model::UpdateAction>) -> Self {
+        pub fn update_actions(mut self, input: crate::model::UpdateAction) -> Self {
             let mut v = self.update_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.update_actions = Some(v);
             self
         }
@@ -2270,19 +2020,13 @@ impl DescribeUpdateActionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotsOutput {
-    /// <p>An optional marker returned from a prior request.
-    /// Use this marker for pagination of results from this operation.
-    /// If this parameter is specified, the response includes only records beyond the marker,
-    /// up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
 }
 impl DescribeSnapshotsOutput {
-    /// <p>An optional marker returned from a prior request.
-    /// Use this marker for pagination of results from this operation.
-    /// If this parameter is specified, the response includes only records beyond the marker,
-    /// up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2309,18 +2053,12 @@ pub mod describe_snapshots_output {
         pub(crate) snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
     }
     impl Builder {
-        /// <p>An optional marker returned from a prior request.
-        /// Use this marker for pagination of results from this operation.
-        /// If this parameter is specified, the response includes only records beyond the marker,
-        /// up to the value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional marker returned from a prior request.
-        /// Use this marker for pagination of results from this operation.
-        /// If this parameter is specified, the response includes only records beyond the marker,
-        /// up to the value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2330,9 +2068,9 @@ pub mod describe_snapshots_output {
         /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
         ///
         /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
-        pub fn snapshots(mut self, input: impl Into<crate::model::Snapshot>) -> Self {
+        pub fn snapshots(mut self, input: crate::model::Snapshot) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.snapshots = Some(v);
             self
         }
@@ -2364,19 +2102,13 @@ impl DescribeSnapshotsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceUpdatesOutput {
-    /// <p>An optional marker returned from a prior request.
-    /// Use this marker for pagination of results from this operation. If this
-    /// parameter is specified, the response includes only records beyond the marker, up to the
-    /// value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of service updates</p>
     pub service_updates: std::option::Option<std::vec::Vec<crate::model::ServiceUpdate>>,
 }
 impl DescribeServiceUpdatesOutput {
-    /// <p>An optional marker returned from a prior request.
-    /// Use this marker for pagination of results from this operation. If this
-    /// parameter is specified, the response includes only records beyond the marker, up to the
-    /// value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2403,18 +2135,12 @@ pub mod describe_service_updates_output {
         pub(crate) service_updates: std::option::Option<std::vec::Vec<crate::model::ServiceUpdate>>,
     }
     impl Builder {
-        /// <p>An optional marker returned from a prior request.
-        /// Use this marker for pagination of results from this operation. If this
-        /// parameter is specified, the response includes only records beyond the marker, up to the
-        /// value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional marker returned from a prior request.
-        /// Use this marker for pagination of results from this operation. If this
-        /// parameter is specified, the response includes only records beyond the marker, up to the
-        /// value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2424,9 +2150,9 @@ pub mod describe_service_updates_output {
         /// To override the contents of this collection use [`set_service_updates`](Self::set_service_updates).
         ///
         /// <p>A list of service updates</p>
-        pub fn service_updates(mut self, input: impl Into<crate::model::ServiceUpdate>) -> Self {
+        pub fn service_updates(mut self, input: crate::model::ServiceUpdate) -> Self {
             let mut v = self.service_updates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_updates = Some(v);
             self
         }
@@ -2515,10 +2241,10 @@ pub mod describe_reserved_cache_nodes_offerings_output {
         /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
         pub fn reserved_cache_nodes_offerings(
             mut self,
-            input: impl Into<crate::model::ReservedCacheNodesOffering>,
+            input: crate::model::ReservedCacheNodesOffering,
         ) -> Self {
             let mut v = self.reserved_cache_nodes_offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_cache_nodes_offerings = Some(v);
             self
         }
@@ -2599,12 +2325,9 @@ pub mod describe_reserved_cache_nodes_output {
         /// To override the contents of this collection use [`set_reserved_cache_nodes`](Self::set_reserved_cache_nodes).
         ///
         /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
-        pub fn reserved_cache_nodes(
-            mut self,
-            input: impl Into<crate::model::ReservedCacheNode>,
-        ) -> Self {
+        pub fn reserved_cache_nodes(mut self, input: crate::model::ReservedCacheNode) -> Self {
             let mut v = self.reserved_cache_nodes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reserved_cache_nodes = Some(v);
             self
         }
@@ -2685,12 +2408,9 @@ pub mod describe_replication_groups_output {
         /// To override the contents of this collection use [`set_replication_groups`](Self::set_replication_groups).
         ///
         /// <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
-        pub fn replication_groups(
-            mut self,
-            input: impl Into<crate::model::ReplicationGroup>,
-        ) -> Self {
+        pub fn replication_groups(mut self, input: crate::model::ReplicationGroup) -> Self {
             let mut v = self.replication_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replication_groups = Some(v);
             self
         }
@@ -2722,14 +2442,14 @@ impl DescribeReplicationGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalReplicationGroupsOutput {
-    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
     pub global_replication_groups:
         std::option::Option<std::vec::Vec<crate::model::GlobalReplicationGroup>>,
 }
 impl DescribeGlobalReplicationGroupsOutput {
-    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2759,12 +2479,12 @@ pub mod describe_global_replication_groups_output {
             std::option::Option<std::vec::Vec<crate::model::GlobalReplicationGroup>>,
     }
     impl Builder {
-        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2776,10 +2496,10 @@ pub mod describe_global_replication_groups_output {
         /// <p>Indicates the slot configuration and global identifier for each slice group.</p>
         pub fn global_replication_groups(
             mut self,
-            input: impl Into<crate::model::GlobalReplicationGroup>,
+            input: crate::model::GlobalReplicationGroup,
         ) -> Self {
             let mut v = self.global_replication_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.global_replication_groups = Some(v);
             self
         }
@@ -2859,9 +2579,9 @@ pub mod describe_events_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>A list of events. Each element in the list contains detailed information about one event.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -2999,12 +2719,9 @@ pub mod describe_cache_subnet_groups_output {
         /// To override the contents of this collection use [`set_cache_subnet_groups`](Self::set_cache_subnet_groups).
         ///
         /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-        pub fn cache_subnet_groups(
-            mut self,
-            input: impl Into<crate::model::CacheSubnetGroup>,
-        ) -> Self {
+        pub fn cache_subnet_groups(mut self, input: crate::model::CacheSubnetGroup) -> Self {
             let mut v = self.cache_subnet_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cache_subnet_groups = Some(v);
             self
         }
@@ -3087,12 +2804,9 @@ pub mod describe_cache_security_groups_output {
         /// To override the contents of this collection use [`set_cache_security_groups`](Self::set_cache_security_groups).
         ///
         /// <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
-        pub fn cache_security_groups(
-            mut self,
-            input: impl Into<crate::model::CacheSecurityGroup>,
-        ) -> Self {
+        pub fn cache_security_groups(mut self, input: crate::model::CacheSecurityGroup) -> Self {
             let mut v = self.cache_security_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cache_security_groups = Some(v);
             self
         }
@@ -3126,10 +2840,9 @@ impl DescribeCacheSecurityGroupsOutput {
 pub struct DescribeCacheParametersOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>A list of <a>Parameter</a> instances.</p>
+    /// <p>A list of <code>Parameter</code> instances.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-    /// <p>A list of parameters specific to a particular cache node type.
-    /// Each element in the list contains detailed information about one parameter.</p>
+    /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
     pub cache_node_type_specific_parameters:
         std::option::Option<std::vec::Vec<crate::model::CacheNodeTypeSpecificParameter>>,
 }
@@ -3138,12 +2851,11 @@ impl DescribeCacheParametersOutput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>A list of <a>Parameter</a> instances.</p>
+    /// <p>A list of <code>Parameter</code> instances.</p>
     pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
         self.parameters.as_deref()
     }
-    /// <p>A list of parameters specific to a particular cache node type.
-    /// Each element in the list contains detailed information about one parameter.</p>
+    /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
     pub fn cache_node_type_specific_parameters(
         &self,
     ) -> std::option::Option<&[crate::model::CacheNodeTypeSpecificParameter]> {
@@ -3188,14 +2900,14 @@ pub mod describe_cache_parameters_output {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A list of <a>Parameter</a> instances.</p>
-        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
+        /// <p>A list of <code>Parameter</code> instances.</p>
+        pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parameters = Some(v);
             self
         }
-        /// <p>A list of <a>Parameter</a> instances.</p>
+        /// <p>A list of <code>Parameter</code> instances.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -3207,19 +2919,17 @@ pub mod describe_cache_parameters_output {
         ///
         /// To override the contents of this collection use [`set_cache_node_type_specific_parameters`](Self::set_cache_node_type_specific_parameters).
         ///
-        /// <p>A list of parameters specific to a particular cache node type.
-        /// Each element in the list contains detailed information about one parameter.</p>
+        /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
         pub fn cache_node_type_specific_parameters(
             mut self,
-            input: impl Into<crate::model::CacheNodeTypeSpecificParameter>,
+            input: crate::model::CacheNodeTypeSpecificParameter,
         ) -> Self {
             let mut v = self.cache_node_type_specific_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cache_node_type_specific_parameters = Some(v);
             self
         }
-        /// <p>A list of parameters specific to a particular cache node type.
-        /// Each element in the list contains detailed information about one parameter.</p>
+        /// <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
         pub fn set_cache_node_type_specific_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CacheNodeTypeSpecificParameter>>,
@@ -3250,8 +2960,7 @@ impl DescribeCacheParametersOutput {
 pub struct DescribeCacheParameterGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>A list of cache parameter groups. Each element in the list contains detailed information
-    /// about one cache parameter group.</p>
+    /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
     pub cache_parameter_groups:
         std::option::Option<std::vec::Vec<crate::model::CacheParameterGroup>>,
 }
@@ -3260,8 +2969,7 @@ impl DescribeCacheParameterGroupsOutput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>A list of cache parameter groups. Each element in the list contains detailed information
-    /// about one cache parameter group.</p>
+    /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
     pub fn cache_parameter_groups(
         &self,
     ) -> std::option::Option<&[crate::model::CacheParameterGroup]> {
@@ -3301,19 +3009,14 @@ pub mod describe_cache_parameter_groups_output {
         ///
         /// To override the contents of this collection use [`set_cache_parameter_groups`](Self::set_cache_parameter_groups).
         ///
-        /// <p>A list of cache parameter groups. Each element in the list contains detailed information
-        /// about one cache parameter group.</p>
-        pub fn cache_parameter_groups(
-            mut self,
-            input: impl Into<crate::model::CacheParameterGroup>,
-        ) -> Self {
+        /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
+        pub fn cache_parameter_groups(mut self, input: crate::model::CacheParameterGroup) -> Self {
             let mut v = self.cache_parameter_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cache_parameter_groups = Some(v);
             self
         }
-        /// <p>A list of cache parameter groups. Each element in the list contains detailed information
-        /// about one cache parameter group.</p>
+        /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
         pub fn set_cache_parameter_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CacheParameterGroup>>,
@@ -3337,14 +3040,13 @@ impl DescribeCacheParameterGroupsOutput {
     }
 }
 
-/// <p>Represents the output of a <a>DescribeCacheEngineVersions</a> operation.</p>
+/// <p>Represents the output of a <code>DescribeCacheEngineVersions</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCacheEngineVersionsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>A list of cache engine version details.
-    /// Each element in the list contains detailed information about one cache engine version.</p>
+    /// <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
     pub cache_engine_versions: std::option::Option<std::vec::Vec<crate::model::CacheEngineVersion>>,
 }
 impl DescribeCacheEngineVersionsOutput {
@@ -3352,8 +3054,7 @@ impl DescribeCacheEngineVersionsOutput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>A list of cache engine version details.
-    /// Each element in the list contains detailed information about one cache engine version.</p>
+    /// <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
     pub fn cache_engine_versions(
         &self,
     ) -> std::option::Option<&[crate::model::CacheEngineVersion]> {
@@ -3393,19 +3094,14 @@ pub mod describe_cache_engine_versions_output {
         ///
         /// To override the contents of this collection use [`set_cache_engine_versions`](Self::set_cache_engine_versions).
         ///
-        /// <p>A list of cache engine version details.
-        /// Each element in the list contains detailed information about one cache engine version.</p>
-        pub fn cache_engine_versions(
-            mut self,
-            input: impl Into<crate::model::CacheEngineVersion>,
-        ) -> Self {
+        /// <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
+        pub fn cache_engine_versions(mut self, input: crate::model::CacheEngineVersion) -> Self {
             let mut v = self.cache_engine_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cache_engine_versions = Some(v);
             self
         }
-        /// <p>A list of cache engine version details.
-        /// Each element in the list contains detailed information about one cache engine version.</p>
+        /// <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
         pub fn set_cache_engine_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CacheEngineVersion>>,
@@ -3481,9 +3177,9 @@ pub mod describe_cache_clusters_output {
         /// To override the contents of this collection use [`set_cache_clusters`](Self::set_cache_clusters).
         ///
         /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
-        pub fn cache_clusters(mut self, input: impl Into<crate::model::CacheCluster>) -> Self {
+        pub fn cache_clusters(mut self, input: crate::model::CacheCluster) -> Self {
             let mut v = self.cache_clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cache_clusters = Some(v);
             self
         }
@@ -4064,28 +3760,16 @@ impl DeleteReplicationGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl DeleteGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub fn global_replication_group(
         &self,
@@ -4110,15 +3794,9 @@ pub mod delete_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn global_replication_group(
             mut self,
@@ -4127,15 +3805,9 @@ pub mod delete_global_replication_group_output {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn set_global_replication_group(
             mut self,
@@ -4367,28 +4039,16 @@ impl DecreaseReplicaCountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecreaseNodeGroupsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl DecreaseNodeGroupsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub fn global_replication_group(
         &self,
@@ -4413,15 +4073,9 @@ pub mod decrease_node_groups_in_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn global_replication_group(
             mut self,
@@ -4430,15 +4084,9 @@ pub mod decrease_node_groups_in_global_replication_group_output {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn set_global_replication_group(
             mut self,
@@ -5016,28 +4664,16 @@ impl CreateReplicationGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub global_replication_group: std::option::Option<crate::model::GlobalReplicationGroup>,
 }
 impl CreateGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-    /// cluster automatically replicates updates to the secondary cluster.</p>
-    ///
-    ///
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
-    /// <li>
-    /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-    /// which is what you use to associate a secondary cluster.</p>
-    /// </li>
+    /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
     /// </ul>
     pub fn global_replication_group(
         &self,
@@ -5062,15 +4698,9 @@ pub mod create_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn global_replication_group(
             mut self,
@@ -5079,15 +4709,9 @@ pub mod create_global_replication_group_output {
             self.global_replication_group = Some(input);
             self
         }
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
-        /// cluster automatically replicates updates to the secondary cluster.</p>
-        ///
-        ///
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore,
-        /// which is what you use to associate a secondary cluster.</p>
-        /// </li>
+        /// <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>
         /// </ul>
         pub fn set_global_replication_group(
             mut self,
@@ -5117,32 +4741,16 @@ impl CreateGlobalReplicationGroupOutput {
 pub struct CreateCacheSubnetGroupOutput {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreateCacheSubnetGroup</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ModifyCacheSubnetGroup</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
+    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
     /// </ul>
     pub cache_subnet_group: std::option::Option<crate::model::CacheSubnetGroup>,
 }
 impl CreateCacheSubnetGroupOutput {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CreateCacheSubnetGroup</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ModifyCacheSubnetGroup</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
+    /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
     /// </ul>
     pub fn cache_subnet_group(&self) -> std::option::Option<&crate::model::CacheSubnetGroup> {
         self.cache_subnet_group.as_ref()
@@ -5166,16 +4774,8 @@ pub mod create_cache_subnet_group_output {
     impl Builder {
         /// <p>Represents the output of one of the following operations:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreateCacheSubnetGroup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ModifyCacheSubnetGroup</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
+        /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
         /// </ul>
         pub fn cache_subnet_group(mut self, input: crate::model::CacheSubnetGroup) -> Self {
             self.cache_subnet_group = Some(input);
@@ -5183,16 +4783,8 @@ pub mod create_cache_subnet_group_output {
         }
         /// <p>Represents the output of one of the following operations:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CreateCacheSubnetGroup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ModifyCacheSubnetGroup</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>
+        /// <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>
         /// </ul>
         pub fn set_cache_subnet_group(
             mut self,
@@ -5222,42 +4814,18 @@ impl CreateCacheSubnetGroupOutput {
 pub struct CreateCacheSecurityGroupOutput {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AuthorizeCacheSecurityGroupIngress</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CreateCacheSecurityGroup</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RevokeCacheSecurityGroupIngress</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
     pub cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
 }
 impl CreateCacheSecurityGroupOutput {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AuthorizeCacheSecurityGroupIngress</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CreateCacheSecurityGroup</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RevokeCacheSecurityGroupIngress</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
     pub fn cache_security_group(&self) -> std::option::Option<&crate::model::CacheSecurityGroup> {
         self.cache_security_group.as_ref()
@@ -5281,21 +4849,9 @@ pub mod create_cache_security_group_output {
     impl Builder {
         /// <p>Represents the output of one of the following operations:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AuthorizeCacheSecurityGroupIngress</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreateCacheSecurityGroup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RevokeCacheSecurityGroupIngress</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
         /// </ul>
         pub fn cache_security_group(mut self, input: crate::model::CacheSecurityGroup) -> Self {
             self.cache_security_group = Some(input);
@@ -5303,21 +4859,9 @@ pub mod create_cache_security_group_output {
         }
         /// <p>Represents the output of one of the following operations:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AuthorizeCacheSecurityGroupIngress</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreateCacheSecurityGroup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RevokeCacheSecurityGroupIngress</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
         /// </ul>
         pub fn set_cache_security_group(
             mut self,
@@ -5621,10 +5165,10 @@ pub mod batch_stop_update_action_output {
         /// <p>Update actions that have been processed successfully</p>
         pub fn processed_update_actions(
             mut self,
-            input: impl Into<crate::model::ProcessedUpdateAction>,
+            input: crate::model::ProcessedUpdateAction,
         ) -> Self {
             let mut v = self.processed_update_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processed_update_actions = Some(v);
             self
         }
@@ -5643,10 +5187,10 @@ pub mod batch_stop_update_action_output {
         /// <p>Update actions that haven't been processed successfully</p>
         pub fn unprocessed_update_actions(
             mut self,
-            input: impl Into<crate::model::UnprocessedUpdateAction>,
+            input: crate::model::UnprocessedUpdateAction,
         ) -> Self {
             let mut v = self.unprocessed_update_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_update_actions = Some(v);
             self
         }
@@ -5729,10 +5273,10 @@ pub mod batch_apply_update_action_output {
         /// <p>Update actions that have been processed successfully</p>
         pub fn processed_update_actions(
             mut self,
-            input: impl Into<crate::model::ProcessedUpdateAction>,
+            input: crate::model::ProcessedUpdateAction,
         ) -> Self {
             let mut v = self.processed_update_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.processed_update_actions = Some(v);
             self
         }
@@ -5751,10 +5295,10 @@ pub mod batch_apply_update_action_output {
         /// <p>Update actions that haven't been processed successfully</p>
         pub fn unprocessed_update_actions(
             mut self,
-            input: impl Into<crate::model::UnprocessedUpdateAction>,
+            input: crate::model::UnprocessedUpdateAction,
         ) -> Self {
             let mut v = self.unprocessed_update_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.unprocessed_update_actions = Some(v);
             self
         }
@@ -5788,42 +5332,18 @@ impl BatchApplyUpdateActionOutput {
 pub struct AuthorizeCacheSecurityGroupIngressOutput {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AuthorizeCacheSecurityGroupIngress</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CreateCacheSecurityGroup</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RevokeCacheSecurityGroupIngress</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
     pub cache_security_group: std::option::Option<crate::model::CacheSecurityGroup>,
 }
 impl AuthorizeCacheSecurityGroupIngressOutput {
     /// <p>Represents the output of one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AuthorizeCacheSecurityGroupIngress</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CreateCacheSecurityGroup</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RevokeCacheSecurityGroupIngress</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
     pub fn cache_security_group(&self) -> std::option::Option<&crate::model::CacheSecurityGroup> {
         self.cache_security_group.as_ref()
@@ -5847,21 +5367,9 @@ pub mod authorize_cache_security_group_ingress_output {
     impl Builder {
         /// <p>Represents the output of one of the following operations:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AuthorizeCacheSecurityGroupIngress</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreateCacheSecurityGroup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RevokeCacheSecurityGroupIngress</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
         /// </ul>
         pub fn cache_security_group(mut self, input: crate::model::CacheSecurityGroup) -> Self {
             self.cache_security_group = Some(input);
@@ -5869,21 +5377,9 @@ pub mod authorize_cache_security_group_ingress_output {
         }
         /// <p>Represents the output of one of the following operations:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AuthorizeCacheSecurityGroupIngress</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreateCacheSecurityGroup</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RevokeCacheSecurityGroupIngress</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+        /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+        /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
         /// </ul>
         pub fn set_cache_security_group(
             mut self,
@@ -5907,8 +5403,7 @@ impl AuthorizeCacheSecurityGroupIngressOutput {
     }
 }
 
-/// <p>Represents the output from the <code>AddTagsToResource</code>,
-/// <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
+/// <p>Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>, and <code>RemoveTagsFromResource</code> operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToResourceOutput {
@@ -5942,9 +5437,9 @@ pub mod add_tags_to_resource_output {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>A list of tags as key-value pairs.</p>
-        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_list = Some(v);
             self
         }

@@ -7,8 +7,7 @@ pub struct Credentials {
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The secret access key that can be used to sign requests.</p>
     pub secret_access_key: std::option::Option<std::string::String>,
-    /// <p>The token that users must pass to the service API to use the temporary
-    /// credentials.</p>
+    /// <p>The token that users must pass to the service API to use the temporary credentials.</p>
     pub session_token: std::option::Option<std::string::String>,
     /// <p>The date on which the current credentials expire.</p>
     pub expiration: std::option::Option<aws_smithy_types::DateTime>,
@@ -22,8 +21,7 @@ impl Credentials {
     pub fn secret_access_key(&self) -> std::option::Option<&str> {
         self.secret_access_key.as_deref()
     }
-    /// <p>The token that users must pass to the service API to use the temporary
-    /// credentials.</p>
+    /// <p>The token that users must pass to the service API to use the temporary credentials.</p>
     pub fn session_token(&self) -> std::option::Option<&str> {
         self.session_token.as_deref()
     }
@@ -80,14 +78,12 @@ pub mod credentials {
             self.secret_access_key = input;
             self
         }
-        /// <p>The token that users must pass to the service API to use the temporary
-        /// credentials.</p>
+        /// <p>The token that users must pass to the service API to use the temporary credentials.</p>
         pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_token = Some(input.into());
             self
         }
-        /// <p>The token that users must pass to the service API to use the temporary
-        /// credentials.</p>
+        /// <p>The token that users must pass to the service API to use the temporary credentials.</p>
         pub fn set_session_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -130,23 +126,17 @@ impl Credentials {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FederatedUser {
-    /// <p>The string that identifies the federated user associated with the credentials, similar
-    /// to the unique ID of an IAM user.</p>
+    /// <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
     pub federated_user_id: std::option::Option<std::string::String>,
-    /// <p>The ARN that specifies the federated user that is associated with the credentials. For
-    /// more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-    /// Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// <p>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl FederatedUser {
-    /// <p>The string that identifies the federated user associated with the credentials, similar
-    /// to the unique ID of an IAM user.</p>
+    /// <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
     pub fn federated_user_id(&self) -> std::option::Option<&str> {
         self.federated_user_id.as_deref()
     }
-    /// <p>The ARN that specifies the federated user that is associated with the credentials. For
-    /// more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-    /// Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    /// <p>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -169,14 +159,12 @@ pub mod federated_user {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The string that identifies the federated user associated with the credentials, similar
-        /// to the unique ID of an IAM user.</p>
+        /// <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
         pub fn federated_user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.federated_user_id = Some(input.into());
             self
         }
-        /// <p>The string that identifies the federated user associated with the credentials, similar
-        /// to the unique ID of an IAM user.</p>
+        /// <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
         pub fn set_federated_user_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -184,16 +172,12 @@ pub mod federated_user {
             self.federated_user_id = input;
             self
         }
-        /// <p>The ARN that specifies the federated user that is associated with the credentials. For
-        /// more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>. </p>
+        /// <p>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN that specifies the federated user that is associated with the credentials. For
-        /// more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// Identifiers</a> in the <i>IAM User Guide</i>. </p>
+        /// <p>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -214,36 +198,25 @@ impl FederatedUser {
     }
 }
 
-/// <p>You can pass custom key-value pair attributes when you assume a role or federate a user.
-/// These are called session tags. You can then use the session tags to control access to
-/// resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging Amazon Web Services STS Sessions</a> in the
-/// <i>IAM User Guide</i>.</p>
+/// <p>You can pass custom key-value pair attributes when you assume a role or federate a user. These are called session tags. You can then use the session tags to control access to resources. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>The key for a session tag.</p>
-    /// <p>You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
-    /// characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-    /// and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128 characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>The value for a session tag.</p>
-    /// <p>You can pass up to 50 session tags. The plain text session tag values can’t exceed 256
-    /// characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-    /// and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>You can pass up to 50 session tags. The plain text session tag values can’t exceed 256 characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
     /// <p>The key for a session tag.</p>
-    /// <p>You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
-    /// characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-    /// and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128 characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The value for a session tag.</p>
-    /// <p>You can pass up to 50 session tags. The plain text session tag values can’t exceed 256
-    /// characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-    /// and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>You can pass up to 50 session tags. The plain text session tag values can’t exceed 256 characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -267,33 +240,25 @@ pub mod tag {
     }
     impl Builder {
         /// <p>The key for a session tag.</p>
-        /// <p>You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
-        /// characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-        /// and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
+        /// <p>You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128 characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
         /// <p>The key for a session tag.</p>
-        /// <p>You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
-        /// characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-        /// and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
+        /// <p>You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128 characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
         /// <p>The value for a session tag.</p>
-        /// <p>You can pass up to 50 session tags. The plain text session tag values can’t exceed 256
-        /// characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-        /// and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
+        /// <p>You can pass up to 50 session tags. The plain text session tag values can’t exceed 256 characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
         /// <p>The value for a session tag.</p>
-        /// <p>You can pass up to 50 session tags. The plain text session tag values can’t exceed 256
-        /// characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-        /// and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
+        /// <p>You can pass up to 50 session tags. The plain text session tag values can’t exceed 256 characters. For these and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -314,20 +279,15 @@ impl Tag {
     }
 }
 
-/// <p>A reference to the IAM managed policy that is passed as a session policy for a role
-/// session or a federated user session.</p>
+/// <p>A reference to the IAM managed policy that is passed as a session policy for a role session or a federated user session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyDescriptorType {
-    /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy
-    /// for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-    /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl PolicyDescriptorType {
-    /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy
-    /// for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-    /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -348,16 +308,12 @@ pub mod policy_descriptor_type {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy
-        /// for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy
-        /// for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
-        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM managed policy to use as a session policy for the role. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -375,28 +331,21 @@ impl PolicyDescriptorType {
     }
 }
 
-/// <p>The identifiers for the temporary security credentials that the operation
-/// returns.</p>
+/// <p>The identifiers for the temporary security credentials that the operation returns.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssumedRoleUser {
-    /// <p>A unique identifier that contains the role ID and the role session name of the role that
-    /// is being assumed. The role ID is generated by Amazon Web Services when the role is created.</p>
+    /// <p>A unique identifier that contains the role ID and the role session name of the role that is being assumed. The role ID is generated by Amazon Web Services when the role is created.</p>
     pub assumed_role_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the temporary security credentials that are returned from the <a>AssumeRole</a> action. For more information about ARNs and how to use them in
-    /// policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
-    /// <i>IAM User Guide</i>.</p>
+    /// <p>The ARN of the temporary security credentials that are returned from the <code>AssumeRole</code> action. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl AssumedRoleUser {
-    /// <p>A unique identifier that contains the role ID and the role session name of the role that
-    /// is being assumed. The role ID is generated by Amazon Web Services when the role is created.</p>
+    /// <p>A unique identifier that contains the role ID and the role session name of the role that is being assumed. The role ID is generated by Amazon Web Services when the role is created.</p>
     pub fn assumed_role_id(&self) -> std::option::Option<&str> {
         self.assumed_role_id.as_deref()
     }
-    /// <p>The ARN of the temporary security credentials that are returned from the <a>AssumeRole</a> action. For more information about ARNs and how to use them in
-    /// policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
-    /// <i>IAM User Guide</i>.</p>
+    /// <p>The ARN of the temporary security credentials that are returned from the <code>AssumeRole</code> action. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -419,14 +368,12 @@ pub mod assumed_role_user {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier that contains the role ID and the role session name of the role that
-        /// is being assumed. The role ID is generated by Amazon Web Services when the role is created.</p>
+        /// <p>A unique identifier that contains the role ID and the role session name of the role that is being assumed. The role ID is generated by Amazon Web Services when the role is created.</p>
         pub fn assumed_role_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.assumed_role_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier that contains the role ID and the role session name of the role that
-        /// is being assumed. The role ID is generated by Amazon Web Services when the role is created.</p>
+        /// <p>A unique identifier that contains the role ID and the role session name of the role that is being assumed. The role ID is generated by Amazon Web Services when the role is created.</p>
         pub fn set_assumed_role_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -434,16 +381,12 @@ pub mod assumed_role_user {
             self.assumed_role_id = input;
             self
         }
-        /// <p>The ARN of the temporary security credentials that are returned from the <a>AssumeRole</a> action. For more information about ARNs and how to use them in
-        /// policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
-        /// <i>IAM User Guide</i>.</p>
+        /// <p>The ARN of the temporary security credentials that are returned from the <code>AssumeRole</code> action. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the temporary security credentials that are returned from the <a>AssumeRole</a> action. For more information about ARNs and how to use them in
-        /// policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the
-        /// <i>IAM User Guide</i>.</p>
+        /// <p>The ARN of the temporary security credentials that are returned from the <code>AssumeRole</code> action. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self

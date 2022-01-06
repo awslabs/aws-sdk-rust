@@ -11,16 +11,12 @@ pub mod accept_eulas_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -72,7 +68,7 @@ pub mod accept_eulas_input {
 #[doc(hidden)]
 pub type AcceptEulasInputOperationOutputAlias = crate::operation::AcceptEulas;
 #[doc(hidden)]
-pub type AcceptEulasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptEulasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptEulasInput {
     /// Consumes the builder and constructs an Operation<[`AcceptEulas`](crate::operation::AcceptEulas)>
     #[allow(clippy::let_and_return)]
@@ -83,7 +79,7 @@ impl AcceptEulasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptEulas,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -209,7 +205,7 @@ impl AcceptEulasInput {
             "AcceptEulas",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -253,16 +249,12 @@ pub mod create_launch_profile_input {
         >,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -281,16 +273,14 @@ pub mod create_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_ec2_subnet_ids`](Self::set_ec2_subnet_ids).
         ///
-        /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
-        /// These subnets must support the specified instance types. </p>
+        /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
         pub fn ec2_subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ec2_subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.ec2_subnet_ids = Some(v);
             self
         }
-        /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
-        /// These subnets must support the specified instance types. </p>
+        /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
         pub fn set_ec2_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -302,8 +292,7 @@ pub mod create_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
         ///
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid
-        /// version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
         pub fn launch_profile_protocol_versions(
             mut self,
             input: impl Into<std::string::String>,
@@ -313,8 +302,7 @@ pub mod create_launch_profile_input {
             self.launch_profile_protocol_versions = Some(v);
             self
         }
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid
-        /// version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
         pub fn set_launch_profile_protocol_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -352,16 +340,14 @@ pub mod create_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_studio_component_ids`](Self::set_studio_component_ids).
         ///
-        /// <p>Unique identifiers for a collection of studio components that can be used with this
-        /// launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
         pub fn studio_component_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.studio_component_ids.unwrap_or_default();
             v.push(input.into());
             self.studio_component_ids = Some(v);
             self
         }
-        /// <p>Unique identifiers for a collection of studio components that can be used with this
-        /// launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
         pub fn set_studio_component_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -383,8 +369,7 @@ pub mod create_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -395,8 +380,7 @@ pub mod create_launch_profile_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -430,7 +414,7 @@ pub mod create_launch_profile_input {
 #[doc(hidden)]
 pub type CreateLaunchProfileInputOperationOutputAlias = crate::operation::CreateLaunchProfile;
 #[doc(hidden)]
-pub type CreateLaunchProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLaunchProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLaunchProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateLaunchProfile`](crate::operation::CreateLaunchProfile)>
     #[allow(clippy::let_and_return)]
@@ -441,7 +425,7 @@ impl CreateLaunchProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLaunchProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -568,7 +552,7 @@ impl CreateLaunchProfileInput {
             "CreateLaunchProfile",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -607,16 +591,12 @@ pub mod create_streaming_image_input {
         >,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -665,8 +645,7 @@ pub mod create_streaming_image_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -677,8 +656,7 @@ pub mod create_streaming_image_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -709,7 +687,7 @@ pub mod create_streaming_image_input {
 #[doc(hidden)]
 pub type CreateStreamingImageInputOperationOutputAlias = crate::operation::CreateStreamingImage;
 #[doc(hidden)]
-pub type CreateStreamingImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStreamingImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamingImageInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingImage`](crate::operation::CreateStreamingImage)>
     #[allow(clippy::let_and_return)]
@@ -720,7 +698,7 @@ impl CreateStreamingImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStreamingImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -849,7 +827,7 @@ impl CreateStreamingImageInput {
             "CreateStreamingImage",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -889,16 +867,12 @@ pub mod create_streaming_session_input {
         >,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -966,8 +940,7 @@ pub mod create_streaming_session_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -978,8 +951,7 @@ pub mod create_streaming_session_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1011,7 +983,7 @@ pub mod create_streaming_session_input {
 #[doc(hidden)]
 pub type CreateStreamingSessionInputOperationOutputAlias = crate::operation::CreateStreamingSession;
 #[doc(hidden)]
-pub type CreateStreamingSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStreamingSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamingSessionInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingSession`](crate::operation::CreateStreamingSession)>
     #[allow(clippy::let_and_return)]
@@ -1022,7 +994,7 @@ impl CreateStreamingSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStreamingSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1151,7 +1123,7 @@ impl CreateStreamingSessionInput {
             "CreateStreamingSession",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1186,16 +1158,12 @@ pub mod create_streaming_session_stream_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1250,7 +1218,8 @@ pub mod create_streaming_session_stream_input {
 pub type CreateStreamingSessionStreamInputOperationOutputAlias =
     crate::operation::CreateStreamingSessionStream;
 #[doc(hidden)]
-pub type CreateStreamingSessionStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStreamingSessionStreamInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamingSessionStreamInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamingSessionStream`](crate::operation::CreateStreamingSessionStream)>
     #[allow(clippy::let_and_return)]
@@ -1261,7 +1230,7 @@ impl CreateStreamingSessionStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStreamingSessionStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1405,7 +1374,7 @@ impl CreateStreamingSessionStreamInput {
             "CreateStreamingSessionStream",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1446,14 +1415,12 @@ pub mod create_studio_input {
         pub(crate) user_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
         pub fn admin_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
         pub fn set_admin_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1461,16 +1428,12 @@ pub mod create_studio_input {
             self.admin_role_arn = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1501,14 +1464,12 @@ pub mod create_studio_input {
             self.studio_encryption_configuration = input;
             self
         }
-        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
-        /// by Nimble Studio users.</p>
+        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
         pub fn studio_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_name = Some(input.into());
             self
         }
-        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
-        /// by Nimble Studio users.</p>
+        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
         pub fn set_studio_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_name = input;
             self
@@ -1517,8 +1478,7 @@ pub mod create_studio_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1529,8 +1489,7 @@ pub mod create_studio_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1540,14 +1499,12 @@ pub mod create_studio_input {
             self.tags = input;
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
         pub fn user_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
         pub fn set_user_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1577,7 +1534,7 @@ pub mod create_studio_input {
 #[doc(hidden)]
 pub type CreateStudioInputOperationOutputAlias = crate::operation::CreateStudio;
 #[doc(hidden)]
-pub type CreateStudioInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStudioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStudioInput {
     /// Consumes the builder and constructs an Operation<[`CreateStudio`](crate::operation::CreateStudio)>
     #[allow(clippy::let_and_return)]
@@ -1588,7 +1545,7 @@ impl CreateStudioInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStudio,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1694,7 +1651,7 @@ impl CreateStudioInput {
             "CreateStudio",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1740,16 +1697,12 @@ pub mod create_studio_component_input {
         pub(crate) r#type: std::option::Option<crate::model::StudioComponentType>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1803,10 +1756,10 @@ pub mod create_studio_component_input {
         /// <p>Initialization scripts for studio components.</p>
         pub fn initialization_scripts(
             mut self,
-            input: impl Into<crate::model::StudioComponentInitializationScript>,
+            input: crate::model::StudioComponentInitializationScript,
         ) -> Self {
             let mut v = self.initialization_scripts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.initialization_scripts = Some(v);
             self
         }
@@ -1835,12 +1788,9 @@ pub mod create_studio_component_input {
         /// To override the contents of this collection use [`set_script_parameters`](Self::set_script_parameters).
         ///
         /// <p>Parameters for the studio component scripts.</p>
-        pub fn script_parameters(
-            mut self,
-            input: impl Into<crate::model::ScriptParameterKeyValue>,
-        ) -> Self {
+        pub fn script_parameters(mut self, input: crate::model::ScriptParameterKeyValue) -> Self {
             let mut v = self.script_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.script_parameters = Some(v);
             self
         }
@@ -1879,8 +1829,7 @@ pub mod create_studio_component_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1891,8 +1840,7 @@ pub mod create_studio_component_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1941,7 +1889,7 @@ pub mod create_studio_component_input {
 #[doc(hidden)]
 pub type CreateStudioComponentInputOperationOutputAlias = crate::operation::CreateStudioComponent;
 #[doc(hidden)]
-pub type CreateStudioComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStudioComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStudioComponentInput {
     /// Consumes the builder and constructs an Operation<[`CreateStudioComponent`](crate::operation::CreateStudioComponent)>
     #[allow(clippy::let_and_return)]
@@ -1952,7 +1900,7 @@ impl CreateStudioComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStudioComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2081,7 +2029,7 @@ impl CreateStudioComponentInput {
             "CreateStudioComponent",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2115,16 +2063,12 @@ pub mod delete_launch_profile_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2170,7 +2114,7 @@ pub mod delete_launch_profile_input {
 #[doc(hidden)]
 pub type DeleteLaunchProfileInputOperationOutputAlias = crate::operation::DeleteLaunchProfile;
 #[doc(hidden)]
-pub type DeleteLaunchProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLaunchProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLaunchProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLaunchProfile`](crate::operation::DeleteLaunchProfile)>
     #[allow(clippy::let_and_return)]
@@ -2181,7 +2125,7 @@ impl DeleteLaunchProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLaunchProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2318,7 +2262,7 @@ impl DeleteLaunchProfileInput {
             "DeleteLaunchProfile",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2345,16 +2289,12 @@ pub mod delete_launch_profile_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2412,7 +2352,7 @@ pub mod delete_launch_profile_member_input {
 pub type DeleteLaunchProfileMemberInputOperationOutputAlias =
     crate::operation::DeleteLaunchProfileMember;
 #[doc(hidden)]
-pub type DeleteLaunchProfileMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLaunchProfileMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLaunchProfileMemberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLaunchProfileMember`](crate::operation::DeleteLaunchProfileMember)>
     #[allow(clippy::let_and_return)]
@@ -2423,7 +2363,7 @@ impl DeleteLaunchProfileMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLaunchProfileMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2569,7 +2509,7 @@ impl DeleteLaunchProfileMemberInput {
             "DeleteLaunchProfileMember",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2595,16 +2535,12 @@ pub mod delete_streaming_image_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2650,7 +2586,7 @@ pub mod delete_streaming_image_input {
 #[doc(hidden)]
 pub type DeleteStreamingImageInputOperationOutputAlias = crate::operation::DeleteStreamingImage;
 #[doc(hidden)]
-pub type DeleteStreamingImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStreamingImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStreamingImageInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStreamingImage`](crate::operation::DeleteStreamingImage)>
     #[allow(clippy::let_and_return)]
@@ -2661,7 +2597,7 @@ impl DeleteStreamingImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStreamingImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2798,7 +2734,7 @@ impl DeleteStreamingImageInput {
             "DeleteStreamingImage",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2824,16 +2760,12 @@ pub mod delete_streaming_session_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2876,7 +2808,7 @@ pub mod delete_streaming_session_input {
 #[doc(hidden)]
 pub type DeleteStreamingSessionInputOperationOutputAlias = crate::operation::DeleteStreamingSession;
 #[doc(hidden)]
-pub type DeleteStreamingSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStreamingSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStreamingSessionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStreamingSession`](crate::operation::DeleteStreamingSession)>
     #[allow(clippy::let_and_return)]
@@ -2887,7 +2819,7 @@ impl DeleteStreamingSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStreamingSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3024,7 +2956,7 @@ impl DeleteStreamingSessionInput {
             "DeleteStreamingSession",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3049,16 +2981,12 @@ pub mod delete_studio_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3090,7 +3018,7 @@ pub mod delete_studio_input {
 #[doc(hidden)]
 pub type DeleteStudioInputOperationOutputAlias = crate::operation::DeleteStudio;
 #[doc(hidden)]
-pub type DeleteStudioInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStudioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStudioInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStudio`](crate::operation::DeleteStudio)>
     #[allow(clippy::let_and_return)]
@@ -3101,7 +3029,7 @@ impl DeleteStudioInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStudio,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3222,7 +3150,7 @@ impl DeleteStudioInput {
             "DeleteStudio",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3248,16 +3176,12 @@ pub mod delete_studio_component_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3303,7 +3227,7 @@ pub mod delete_studio_component_input {
 #[doc(hidden)]
 pub type DeleteStudioComponentInputOperationOutputAlias = crate::operation::DeleteStudioComponent;
 #[doc(hidden)]
-pub type DeleteStudioComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStudioComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStudioComponentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStudioComponent`](crate::operation::DeleteStudioComponent)>
     #[allow(clippy::let_and_return)]
@@ -3314,7 +3238,7 @@ impl DeleteStudioComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStudioComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3451,7 +3375,7 @@ impl DeleteStudioComponentInput {
             "DeleteStudioComponent",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3477,16 +3401,12 @@ pub mod delete_studio_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3529,7 +3449,7 @@ pub mod delete_studio_member_input {
 #[doc(hidden)]
 pub type DeleteStudioMemberInputOperationOutputAlias = crate::operation::DeleteStudioMember;
 #[doc(hidden)]
-pub type DeleteStudioMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStudioMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStudioMemberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStudioMember`](crate::operation::DeleteStudioMember)>
     #[allow(clippy::let_and_return)]
@@ -3540,7 +3460,7 @@ impl DeleteStudioMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStudioMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3677,7 +3597,7 @@ impl DeleteStudioMemberInput {
             "DeleteStudioMember",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3725,7 +3645,7 @@ pub mod get_eula_input {
 #[doc(hidden)]
 pub type GetEulaInputOperationOutputAlias = crate::operation::GetEula;
 #[doc(hidden)]
-pub type GetEulaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEulaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEulaInput {
     /// Consumes the builder and constructs an Operation<[`GetEula`](crate::operation::GetEula)>
     #[allow(clippy::let_and_return)]
@@ -3736,7 +3656,7 @@ impl GetEulaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEula,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3823,7 +3743,7 @@ impl GetEulaInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetEula", "nimble",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3888,7 +3808,7 @@ pub mod get_launch_profile_input {
 #[doc(hidden)]
 pub type GetLaunchProfileInputOperationOutputAlias = crate::operation::GetLaunchProfile;
 #[doc(hidden)]
-pub type GetLaunchProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLaunchProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLaunchProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetLaunchProfile`](crate::operation::GetLaunchProfile)>
     #[allow(clippy::let_and_return)]
@@ -3899,7 +3819,7 @@ impl GetLaunchProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLaunchProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4009,7 +3929,7 @@ impl GetLaunchProfileInput {
             "GetLaunchProfile",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4075,7 +3995,7 @@ pub mod get_launch_profile_details_input {
 pub type GetLaunchProfileDetailsInputOperationOutputAlias =
     crate::operation::GetLaunchProfileDetails;
 #[doc(hidden)]
-pub type GetLaunchProfileDetailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLaunchProfileDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLaunchProfileDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetLaunchProfileDetails`](crate::operation::GetLaunchProfileDetails)>
     #[allow(clippy::let_and_return)]
@@ -4086,7 +4006,7 @@ impl GetLaunchProfileDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLaunchProfileDetails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4196,7 +4116,7 @@ impl GetLaunchProfileDetailsInput {
             "GetLaunchProfileDetails",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4314,7 +4234,8 @@ pub mod get_launch_profile_initialization_input {
 pub type GetLaunchProfileInitializationInputOperationOutputAlias =
     crate::operation::GetLaunchProfileInitialization;
 #[doc(hidden)]
-pub type GetLaunchProfileInitializationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLaunchProfileInitializationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetLaunchProfileInitializationInput {
     /// Consumes the builder and constructs an Operation<[`GetLaunchProfileInitialization`](crate::operation::GetLaunchProfileInitialization)>
     #[allow(clippy::let_and_return)]
@@ -4325,7 +4246,7 @@ impl GetLaunchProfileInitializationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLaunchProfileInitialization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4460,7 +4381,7 @@ impl GetLaunchProfileInitializationInput {
             "GetLaunchProfileInitialization",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4537,7 +4458,7 @@ pub mod get_launch_profile_member_input {
 #[doc(hidden)]
 pub type GetLaunchProfileMemberInputOperationOutputAlias = crate::operation::GetLaunchProfileMember;
 #[doc(hidden)]
-pub type GetLaunchProfileMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLaunchProfileMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLaunchProfileMemberInput {
     /// Consumes the builder and constructs an Operation<[`GetLaunchProfileMember`](crate::operation::GetLaunchProfileMember)>
     #[allow(clippy::let_and_return)]
@@ -4548,7 +4469,7 @@ impl GetLaunchProfileMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLaunchProfileMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4667,7 +4588,7 @@ impl GetLaunchProfileMemberInput {
             "GetLaunchProfileMember",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4732,7 +4653,7 @@ pub mod get_streaming_image_input {
 #[doc(hidden)]
 pub type GetStreamingImageInputOperationOutputAlias = crate::operation::GetStreamingImage;
 #[doc(hidden)]
-pub type GetStreamingImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStreamingImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamingImageInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingImage`](crate::operation::GetStreamingImage)>
     #[allow(clippy::let_and_return)]
@@ -4743,7 +4664,7 @@ impl GetStreamingImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStreamingImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4853,7 +4774,7 @@ impl GetStreamingImageInput {
             "GetStreamingImage",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4915,7 +4836,7 @@ pub mod get_streaming_session_input {
 #[doc(hidden)]
 pub type GetStreamingSessionInputOperationOutputAlias = crate::operation::GetStreamingSession;
 #[doc(hidden)]
-pub type GetStreamingSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStreamingSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamingSessionInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingSession`](crate::operation::GetStreamingSession)>
     #[allow(clippy::let_and_return)]
@@ -4926,7 +4847,7 @@ impl GetStreamingSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStreamingSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5036,7 +4957,7 @@ impl GetStreamingSessionInput {
             "GetStreamingSession",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5111,7 +5032,7 @@ pub mod get_streaming_session_stream_input {
 pub type GetStreamingSessionStreamInputOperationOutputAlias =
     crate::operation::GetStreamingSessionStream;
 #[doc(hidden)]
-pub type GetStreamingSessionStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStreamingSessionStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamingSessionStreamInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamingSessionStream`](crate::operation::GetStreamingSessionStream)>
     #[allow(clippy::let_and_return)]
@@ -5122,7 +5043,7 @@ impl GetStreamingSessionStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStreamingSessionStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5248,7 +5169,7 @@ impl GetStreamingSessionStreamInput {
             "GetStreamingSessionStream",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5296,7 +5217,7 @@ pub mod get_studio_input {
 #[doc(hidden)]
 pub type GetStudioInputOperationOutputAlias = crate::operation::GetStudio;
 #[doc(hidden)]
-pub type GetStudioInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStudioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStudioInput {
     /// Consumes the builder and constructs an Operation<[`GetStudio`](crate::operation::GetStudio)>
     #[allow(clippy::let_and_return)]
@@ -5307,7 +5228,7 @@ impl GetStudioInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStudio,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5399,7 +5320,7 @@ impl GetStudioInput {
                     "GetStudio",
                     "nimble",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5464,7 +5385,7 @@ pub mod get_studio_component_input {
 #[doc(hidden)]
 pub type GetStudioComponentInputOperationOutputAlias = crate::operation::GetStudioComponent;
 #[doc(hidden)]
-pub type GetStudioComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStudioComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStudioComponentInput {
     /// Consumes the builder and constructs an Operation<[`GetStudioComponent`](crate::operation::GetStudioComponent)>
     #[allow(clippy::let_and_return)]
@@ -5475,7 +5396,7 @@ impl GetStudioComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStudioComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5585,7 +5506,7 @@ impl GetStudioComponentInput {
             "GetStudioComponent",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5647,7 +5568,7 @@ pub mod get_studio_member_input {
 #[doc(hidden)]
 pub type GetStudioMemberInputOperationOutputAlias = crate::operation::GetStudioMember;
 #[doc(hidden)]
-pub type GetStudioMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStudioMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStudioMemberInput {
     /// Consumes the builder and constructs an Operation<[`GetStudioMember`](crate::operation::GetStudioMember)>
     #[allow(clippy::let_and_return)]
@@ -5658,7 +5579,7 @@ impl GetStudioMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStudioMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5768,7 +5689,7 @@ impl GetStudioMemberInput {
             "GetStudioMember",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5851,7 +5772,7 @@ pub mod list_eula_acceptances_input {
 #[doc(hidden)]
 pub type ListEulaAcceptancesInputOperationOutputAlias = crate::operation::ListEulaAcceptances;
 #[doc(hidden)]
-pub type ListEulaAcceptancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEulaAcceptancesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEulaAcceptancesInput {
     /// Consumes the builder and constructs an Operation<[`ListEulaAcceptances`](crate::operation::ListEulaAcceptances)>
     #[allow(clippy::let_and_return)]
@@ -5862,7 +5783,7 @@ impl ListEulaAcceptancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEulaAcceptances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5972,7 +5893,7 @@ impl ListEulaAcceptancesInput {
             "ListEulaAcceptances",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6041,7 +5962,7 @@ pub mod list_eulas_input {
 #[doc(hidden)]
 pub type ListEulasInputOperationOutputAlias = crate::operation::ListEulas;
 #[doc(hidden)]
-pub type ListEulasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEulasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEulasInput {
     /// Consumes the builder and constructs an Operation<[`ListEulas`](crate::operation::ListEulas)>
     #[allow(clippy::let_and_return)]
@@ -6052,7 +5973,7 @@ impl ListEulasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEulas,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6140,7 +6061,7 @@ impl ListEulasInput {
                     "ListEulas",
                     "nimble",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6230,7 +6151,7 @@ pub mod list_launch_profile_members_input {
 pub type ListLaunchProfileMembersInputOperationOutputAlias =
     crate::operation::ListLaunchProfileMembers;
 #[doc(hidden)]
-pub type ListLaunchProfileMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLaunchProfileMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLaunchProfileMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListLaunchProfileMembers`](crate::operation::ListLaunchProfileMembers)>
     #[allow(clippy::let_and_return)]
@@ -6241,7 +6162,7 @@ impl ListLaunchProfileMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLaunchProfileMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6368,7 +6289,7 @@ impl ListLaunchProfileMembersInput {
             "ListLaunchProfileMembers",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6475,7 +6396,7 @@ pub mod list_launch_profiles_input {
 #[doc(hidden)]
 pub type ListLaunchProfilesInputOperationOutputAlias = crate::operation::ListLaunchProfiles;
 #[doc(hidden)]
-pub type ListLaunchProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLaunchProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLaunchProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListLaunchProfiles`](crate::operation::ListLaunchProfiles)>
     #[allow(clippy::let_and_return)]
@@ -6486,7 +6407,7 @@ impl ListLaunchProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLaunchProfiles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6608,7 +6529,7 @@ impl ListLaunchProfilesInput {
             "ListLaunchProfiles",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6682,7 +6603,7 @@ pub mod list_streaming_images_input {
 #[doc(hidden)]
 pub type ListStreamingImagesInputOperationOutputAlias = crate::operation::ListStreamingImages;
 #[doc(hidden)]
-pub type ListStreamingImagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStreamingImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamingImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamingImages`](crate::operation::ListStreamingImages)>
     #[allow(clippy::let_and_return)]
@@ -6693,7 +6614,7 @@ impl ListStreamingImagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStreamingImages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6801,7 +6722,7 @@ impl ListStreamingImagesInput {
             "ListStreamingImages",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6899,7 +6820,7 @@ pub mod list_streaming_sessions_input {
 #[doc(hidden)]
 pub type ListStreamingSessionsInputOperationOutputAlias = crate::operation::ListStreamingSessions;
 #[doc(hidden)]
-pub type ListStreamingSessionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStreamingSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamingSessionsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamingSessions`](crate::operation::ListStreamingSessions)>
     #[allow(clippy::let_and_return)]
@@ -6910,7 +6831,7 @@ impl ListStreamingSessionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStreamingSessions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7024,7 +6945,7 @@ impl ListStreamingSessionsInput {
             "ListStreamingSessions",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7140,7 +7061,7 @@ pub mod list_studio_components_input {
 #[doc(hidden)]
 pub type ListStudioComponentsInputOperationOutputAlias = crate::operation::ListStudioComponents;
 #[doc(hidden)]
-pub type ListStudioComponentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStudioComponentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStudioComponentsInput {
     /// Consumes the builder and constructs an Operation<[`ListStudioComponents`](crate::operation::ListStudioComponents)>
     #[allow(clippy::let_and_return)]
@@ -7151,7 +7072,7 @@ impl ListStudioComponentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStudioComponents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7272,7 +7193,7 @@ impl ListStudioComponentsInput {
             "ListStudioComponents",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7346,7 +7267,7 @@ pub mod list_studio_members_input {
 #[doc(hidden)]
 pub type ListStudioMembersInputOperationOutputAlias = crate::operation::ListStudioMembers;
 #[doc(hidden)]
-pub type ListStudioMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStudioMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStudioMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListStudioMembers`](crate::operation::ListStudioMembers)>
     #[allow(clippy::let_and_return)]
@@ -7357,7 +7278,7 @@ impl ListStudioMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStudioMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7468,7 +7389,7 @@ impl ListStudioMembersInput {
             "ListStudioMembers",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7518,7 +7439,7 @@ pub mod list_studios_input {
 #[doc(hidden)]
 pub type ListStudiosInputOperationOutputAlias = crate::operation::ListStudios;
 #[doc(hidden)]
-pub type ListStudiosInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStudiosInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStudiosInput {
     /// Consumes the builder and constructs an Operation<[`ListStudios`](crate::operation::ListStudios)>
     #[allow(clippy::let_and_return)]
@@ -7529,7 +7450,7 @@ impl ListStudiosInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStudios,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7614,7 +7535,7 @@ impl ListStudiosInput {
             "ListStudios",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7664,7 +7585,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -7675,7 +7596,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7769,7 +7690,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7798,16 +7719,12 @@ pub mod put_launch_profile_members_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -7843,9 +7760,9 @@ pub mod put_launch_profile_members_input {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>A list of members.</p>
-        pub fn members(mut self, input: impl Into<crate::model::NewLaunchProfileMember>) -> Self {
+        pub fn members(mut self, input: crate::model::NewLaunchProfileMember) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -7888,7 +7805,7 @@ pub mod put_launch_profile_members_input {
 pub type PutLaunchProfileMembersInputOperationOutputAlias =
     crate::operation::PutLaunchProfileMembers;
 #[doc(hidden)]
-pub type PutLaunchProfileMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutLaunchProfileMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLaunchProfileMembersInput {
     /// Consumes the builder and constructs an Operation<[`PutLaunchProfileMembers`](crate::operation::PutLaunchProfileMembers)>
     #[allow(clippy::let_and_return)]
@@ -7899,7 +7816,7 @@ impl PutLaunchProfileMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutLaunchProfileMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8044,7 +7961,7 @@ impl PutLaunchProfileMembersInput {
             "PutLaunchProfileMembers",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8079,16 +7996,12 @@ pub mod put_studio_members_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8111,9 +8024,9 @@ pub mod put_studio_members_input {
         /// To override the contents of this collection use [`set_members`](Self::set_members).
         ///
         /// <p>A list of members.</p>
-        pub fn members(mut self, input: impl Into<crate::model::NewStudioMember>) -> Self {
+        pub fn members(mut self, input: crate::model::NewStudioMember) -> Self {
             let mut v = self.members.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.members = Some(v);
             self
         }
@@ -8154,7 +8067,7 @@ pub mod put_studio_members_input {
 #[doc(hidden)]
 pub type PutStudioMembersInputOperationOutputAlias = crate::operation::PutStudioMembers;
 #[doc(hidden)]
-pub type PutStudioMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutStudioMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutStudioMembersInput {
     /// Consumes the builder and constructs an Operation<[`PutStudioMembers`](crate::operation::PutStudioMembers)>
     #[allow(clippy::let_and_return)]
@@ -8165,7 +8078,7 @@ impl PutStudioMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutStudioMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8292,7 +8205,7 @@ impl PutStudioMembersInput {
             "PutStudioMembers",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8326,16 +8239,12 @@ pub mod start_streaming_session_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8378,7 +8287,7 @@ pub mod start_streaming_session_input {
 #[doc(hidden)]
 pub type StartStreamingSessionInputOperationOutputAlias = crate::operation::StartStreamingSession;
 #[doc(hidden)]
-pub type StartStreamingSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartStreamingSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartStreamingSessionInput {
     /// Consumes the builder and constructs an Operation<[`StartStreamingSession`](crate::operation::StartStreamingSession)>
     #[allow(clippy::let_and_return)]
@@ -8389,7 +8298,7 @@ impl StartStreamingSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartStreamingSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8526,7 +8435,7 @@ impl StartStreamingSessionInput {
             "StartStreamingSession",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8551,16 +8460,12 @@ pub mod start_studio_sso_configuration_repair_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8593,7 +8498,8 @@ pub mod start_studio_sso_configuration_repair_input {
 pub type StartStudioSsoConfigurationRepairInputOperationOutputAlias =
     crate::operation::StartStudioSSOConfigurationRepair;
 #[doc(hidden)]
-pub type StartStudioSsoConfigurationRepairInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartStudioSsoConfigurationRepairInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartStudioSsoConfigurationRepairInput {
     /// Consumes the builder and constructs an Operation<[`StartStudioSSOConfigurationRepair`](crate::operation::StartStudioSSOConfigurationRepair)>
     #[allow(clippy::let_and_return)]
@@ -8604,7 +8510,7 @@ impl StartStudioSsoConfigurationRepairInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartStudioSSOConfigurationRepair,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8725,7 +8631,7 @@ impl StartStudioSsoConfigurationRepairInput {
             "StartStudioSSOConfigurationRepair",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8751,16 +8657,12 @@ pub mod stop_streaming_session_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8803,7 +8705,7 @@ pub mod stop_streaming_session_input {
 #[doc(hidden)]
 pub type StopStreamingSessionInputOperationOutputAlias = crate::operation::StopStreamingSession;
 #[doc(hidden)]
-pub type StopStreamingSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopStreamingSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopStreamingSessionInput {
     /// Consumes the builder and constructs an Operation<[`StopStreamingSession`](crate::operation::StopStreamingSession)>
     #[allow(clippy::let_and_return)]
@@ -8814,7 +8716,7 @@ impl StopStreamingSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopStreamingSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8951,7 +8853,7 @@ impl StopStreamingSessionInput {
             "StopStreamingSession",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8992,8 +8894,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -9004,8 +8905,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -9032,7 +8932,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -9043,7 +8943,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9142,7 +9042,7 @@ impl TagResourceInput {
             "TagResource",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9221,7 +9121,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -9232,7 +9132,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9339,7 +9239,7 @@ impl UntagResourceInput {
             "UntagResource",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9372,16 +9272,12 @@ pub mod update_launch_profile_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -9413,8 +9309,7 @@ pub mod update_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
         ///
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid
-        /// version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
         pub fn launch_profile_protocol_versions(
             mut self,
             input: impl Into<std::string::String>,
@@ -9424,8 +9319,7 @@ pub mod update_launch_profile_input {
             self.launch_profile_protocol_versions = Some(v);
             self
         }
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid
-        /// version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
         pub fn set_launch_profile_protocol_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9463,16 +9357,14 @@ pub mod update_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_studio_component_ids`](Self::set_studio_component_ids).
         ///
-        /// <p>Unique identifiers for a collection of studio components that can be used with this
-        /// launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
         pub fn studio_component_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.studio_component_ids.unwrap_or_default();
             v.push(input.into());
             self.studio_component_ids = Some(v);
             self
         }
-        /// <p>Unique identifiers for a collection of studio components that can be used with this
-        /// launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
         pub fn set_studio_component_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9513,7 +9405,7 @@ pub mod update_launch_profile_input {
 #[doc(hidden)]
 pub type UpdateLaunchProfileInputOperationOutputAlias = crate::operation::UpdateLaunchProfile;
 #[doc(hidden)]
-pub type UpdateLaunchProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateLaunchProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLaunchProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLaunchProfile`](crate::operation::UpdateLaunchProfile)>
     #[allow(clippy::let_and_return)]
@@ -9524,7 +9416,7 @@ impl UpdateLaunchProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLaunchProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9667,7 +9559,7 @@ impl UpdateLaunchProfileInput {
             "UpdateLaunchProfile",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9703,16 +9595,12 @@ pub mod update_launch_profile_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -9784,7 +9672,7 @@ pub mod update_launch_profile_member_input {
 pub type UpdateLaunchProfileMemberInputOperationOutputAlias =
     crate::operation::UpdateLaunchProfileMember;
 #[doc(hidden)]
-pub type UpdateLaunchProfileMemberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateLaunchProfileMemberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLaunchProfileMemberInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLaunchProfileMember`](crate::operation::UpdateLaunchProfileMember)>
     #[allow(clippy::let_and_return)]
@@ -9795,7 +9683,7 @@ impl UpdateLaunchProfileMemberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLaunchProfileMember,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9949,7 +9837,7 @@ impl UpdateLaunchProfileMemberInput {
             "UpdateLaunchProfileMember",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9985,16 +9873,12 @@ pub mod update_streaming_image_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -10062,7 +9946,7 @@ pub mod update_streaming_image_input {
 #[doc(hidden)]
 pub type UpdateStreamingImageInputOperationOutputAlias = crate::operation::UpdateStreamingImage;
 #[doc(hidden)]
-pub type UpdateStreamingImageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStreamingImageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStreamingImageInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStreamingImage`](crate::operation::UpdateStreamingImage)>
     #[allow(clippy::let_and_return)]
@@ -10073,7 +9957,7 @@ impl UpdateStreamingImageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStreamingImage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10218,7 +10102,7 @@ impl UpdateStreamingImageInput {
             "UpdateStreamingImage",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10254,14 +10138,12 @@ pub mod update_studio_input {
         pub(crate) user_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
         pub fn admin_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
         pub fn set_admin_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10269,16 +10151,12 @@ pub mod update_studio_input {
             self.admin_role_arn = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -10303,14 +10181,12 @@ pub mod update_studio_input {
             self.studio_id = input;
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
         pub fn user_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
         pub fn set_user_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10338,7 +10214,7 @@ pub mod update_studio_input {
 #[doc(hidden)]
 pub type UpdateStudioInputOperationOutputAlias = crate::operation::UpdateStudio;
 #[doc(hidden)]
-pub type UpdateStudioInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStudioInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStudioInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStudio`](crate::operation::UpdateStudio)>
     #[allow(clippy::let_and_return)]
@@ -10349,7 +10225,7 @@ impl UpdateStudioInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStudio,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10475,7 +10351,7 @@ impl UpdateStudioInput {
             "UpdateStudio",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10519,16 +10395,12 @@ pub mod update_studio_component_input {
         pub(crate) r#type: std::option::Option<crate::model::StudioComponentType>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -10582,10 +10454,10 @@ pub mod update_studio_component_input {
         /// <p>Initialization scripts for studio components.</p>
         pub fn initialization_scripts(
             mut self,
-            input: impl Into<crate::model::StudioComponentInitializationScript>,
+            input: crate::model::StudioComponentInitializationScript,
         ) -> Self {
             let mut v = self.initialization_scripts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.initialization_scripts = Some(v);
             self
         }
@@ -10614,12 +10486,9 @@ pub mod update_studio_component_input {
         /// To override the contents of this collection use [`set_script_parameters`](Self::set_script_parameters).
         ///
         /// <p>Parameters for the studio component scripts.</p>
-        pub fn script_parameters(
-            mut self,
-            input: impl Into<crate::model::ScriptParameterKeyValue>,
-        ) -> Self {
+        pub fn script_parameters(mut self, input: crate::model::ScriptParameterKeyValue) -> Self {
             let mut v = self.script_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.script_parameters = Some(v);
             self
         }
@@ -10706,7 +10575,7 @@ pub mod update_studio_component_input {
 #[doc(hidden)]
 pub type UpdateStudioComponentInputOperationOutputAlias = crate::operation::UpdateStudioComponent;
 #[doc(hidden)]
-pub type UpdateStudioComponentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStudioComponentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStudioComponentInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStudioComponent`](crate::operation::UpdateStudioComponent)>
     #[allow(clippy::let_and_return)]
@@ -10717,7 +10586,7 @@ impl UpdateStudioComponentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStudioComponent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10862,7 +10731,7 @@ impl UpdateStudioComponentInput {
             "UpdateStudioComponent",
             "nimble",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10889,17 +10758,13 @@ impl UpdateStudioComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStudioSsoConfigurationRepairInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl StartStudioSsoConfigurationRepairInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -10921,9 +10786,7 @@ impl std::fmt::Debug for StartStudioSsoConfigurationRepairInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStudioMembersInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The ID of the identity store.</p>
     pub identity_store_id: std::option::Option<std::string::String>,
@@ -10933,9 +10796,7 @@ pub struct PutStudioMembersInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl PutStudioMembersInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11030,9 +10891,7 @@ impl std::fmt::Debug for GetStudioMemberInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
     pub principal_id: std::option::Option<std::string::String>,
@@ -11040,9 +10899,7 @@ pub struct DeleteStudioMemberInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStudioMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11090,38 +10947,29 @@ impl std::fmt::Debug for ListStudiosInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioInput {
-    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
     pub admin_role_arn: std::option::Option<std::string::String>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A friendly name for the studio.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The studio encryption configuration.</p>
     pub studio_encryption_configuration:
         std::option::Option<crate::model::StudioEncryptionConfiguration>,
-    /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
-    /// by Nimble Studio users.</p>
+    /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
     pub studio_name: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
     pub user_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateStudioInput {
-    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
     pub fn admin_role_arn(&self) -> std::option::Option<&str> {
         self.admin_role_arn.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11135,21 +10983,18 @@ impl CreateStudioInput {
     ) -> std::option::Option<&crate::model::StudioEncryptionConfiguration> {
         self.studio_encryption_configuration.as_ref()
     }
-    /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
-    /// by Nimble Studio users.</p>
+    /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
     pub fn studio_name(&self) -> std::option::Option<&str> {
         self.studio_name.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
     pub fn user_role_arn(&self) -> std::option::Option<&str> {
         self.user_role_arn.as_deref()
     }
@@ -11175,17 +11020,13 @@ impl std::fmt::Debug for CreateStudioInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStudioInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11207,30 +11048,23 @@ impl std::fmt::Debug for DeleteStudioInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStudioInput {
-    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
     pub admin_role_arn: std::option::Option<std::string::String>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A friendly name for the studio.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
     pub user_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateStudioInput {
-    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
     pub fn admin_role_arn(&self) -> std::option::Option<&str> {
         self.admin_role_arn.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11242,8 +11076,7 @@ impl UpdateStudioInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
     pub fn user_role_arn(&self) -> std::option::Option<&str> {
         self.user_role_arn.as_deref()
     }
@@ -11334,9 +11167,7 @@ impl std::fmt::Debug for ListStudioComponentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The configuration of the studio component, based on component type.</p>
     pub configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
@@ -11356,17 +11187,14 @@ pub struct CreateStudioComponentInput {
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The specific subtype of a studio component.</p>
     pub subtype: std::option::Option<crate::model::StudioComponentSubtype>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the studio component.</p>
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
 }
 impl CreateStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11408,8 +11236,7 @@ impl CreateStudioComponentInput {
     pub fn subtype(&self) -> std::option::Option<&crate::model::StudioComponentSubtype> {
         self.subtype.as_ref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11443,9 +11270,7 @@ impl std::fmt::Debug for CreateStudioComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The studio component ID.</p>
     pub studio_component_id: std::option::Option<std::string::String>,
@@ -11453,9 +11278,7 @@ pub struct DeleteStudioComponentInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11482,9 +11305,7 @@ impl std::fmt::Debug for DeleteStudioComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The configuration of the studio component, based on component type.</p>
     pub configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
@@ -11510,9 +11331,7 @@ pub struct UpdateStudioComponentInput {
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
 }
 impl UpdateStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11613,9 +11432,7 @@ impl std::fmt::Debug for GetStudioComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
     pub session_id: std::option::Option<std::string::String>,
@@ -11623,9 +11440,7 @@ pub struct StopStreamingSessionInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl StopStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11652,9 +11467,7 @@ impl std::fmt::Debug for StopStreamingSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
     pub session_id: std::option::Option<std::string::String>,
@@ -11662,9 +11475,7 @@ pub struct StartStreamingSessionInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl StartStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11726,9 +11537,7 @@ impl std::fmt::Debug for GetStreamingSessionStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingSessionStreamInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The expiration time in seconds.</p>
     pub expiration_in_seconds: i32,
@@ -11738,9 +11547,7 @@ pub struct CreateStreamingSessionStreamInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl CreateStreamingSessionStreamInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11821,9 +11628,7 @@ impl std::fmt::Debug for ListStreamingSessionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The EC2 Instance type used for the streaming session.</p>
     pub ec2_instance_type: std::option::Option<crate::model::StreamingInstanceType>,
@@ -11835,15 +11640,12 @@ pub struct CreateStreamingSessionInput {
     pub streaming_image_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11867,8 +11669,7 @@ impl CreateStreamingSessionInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11894,9 +11695,7 @@ impl std::fmt::Debug for CreateStreamingSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The streaming session ID.</p>
     pub session_id: std::option::Option<std::string::String>,
@@ -11904,9 +11703,7 @@ pub struct DeleteStreamingSessionInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11996,9 +11793,7 @@ impl std::fmt::Debug for ListStreamingImagesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A human-readable description of the streaming image.</p>
     pub description: std::option::Option<std::string::String>,
@@ -12008,15 +11803,12 @@ pub struct CreateStreamingImageInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12036,8 +11828,7 @@ impl CreateStreamingImageInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -12062,9 +11853,7 @@ impl std::fmt::Debug for CreateStreamingImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The streaming image ID.</p>
     pub streaming_image_id: std::option::Option<std::string::String>,
@@ -12072,9 +11861,7 @@ pub struct DeleteStreamingImageInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12101,9 +11888,7 @@ impl std::fmt::Debug for DeleteStreamingImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The description.</p>
     pub description: std::option::Option<std::string::String>,
@@ -12115,9 +11900,7 @@ pub struct UpdateStreamingImageInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl UpdateStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12178,13 +11961,11 @@ impl std::fmt::Debug for GetStreamingImageInput {
     }
 }
 
-/// <p/>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchProfileMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Launch Profile ID.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
@@ -12196,9 +11977,7 @@ pub struct UpdateLaunchProfileMemberInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl UpdateLaunchProfileMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12235,9 +12014,7 @@ impl std::fmt::Debug for UpdateLaunchProfileMemberInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLaunchProfileMembersInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The ID of the identity store.</p>
     pub identity_store_id: std::option::Option<std::string::String>,
@@ -12249,9 +12026,7 @@ pub struct PutLaunchProfileMembersInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl PutLaunchProfileMembersInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12445,9 +12220,7 @@ impl std::fmt::Debug for GetLaunchProfileDetailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchProfileMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Launch Profile ID.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
@@ -12457,9 +12230,7 @@ pub struct DeleteLaunchProfileMemberInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteLaunchProfileMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12540,36 +12311,28 @@ impl std::fmt::Debug for ListLaunchProfilesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
-    /// These subnets must support the specified instance types. </p>
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
     pub ec2_subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The version number of the protocol that is used by the launch profile. The only valid
-    /// version is "2021-03-31".</p>
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub launch_profile_protocol_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name for the launch profile.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A configuration for a streaming session.</p>
     pub stream_configuration: std::option::Option<crate::model::StreamConfigurationCreate>,
-    /// <p>Unique identifiers for a collection of studio components that can be used with this
-    /// launch profile.</p>
+    /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
     pub studio_component_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12577,13 +12340,11 @@ impl CreateLaunchProfileInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
-    /// These subnets must support the specified instance types. </p>
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
     pub fn ec2_subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ec2_subnet_ids.as_deref()
     }
-    /// <p>The version number of the protocol that is used by the launch profile. The only valid
-    /// version is "2021-03-31".</p>
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub fn launch_profile_protocol_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.launch_profile_protocol_versions.as_deref()
     }
@@ -12597,8 +12358,7 @@ impl CreateLaunchProfileInput {
     ) -> std::option::Option<&crate::model::StreamConfigurationCreate> {
         self.stream_configuration.as_ref()
     }
-    /// <p>Unique identifiers for a collection of studio components that can be used with this
-    /// launch profile.</p>
+    /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
     pub fn studio_component_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.studio_component_ids.as_deref()
     }
@@ -12606,8 +12366,7 @@ impl CreateLaunchProfileInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -12638,9 +12397,7 @@ impl std::fmt::Debug for CreateLaunchProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Launch Profile ID.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
@@ -12648,9 +12405,7 @@ pub struct DeleteLaunchProfileInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12677,31 +12432,25 @@ impl std::fmt::Debug for DeleteLaunchProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The description.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The Launch Profile ID.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The version number of the protocol that is used by the launch profile. The only valid
-    /// version is "2021-03-31".</p>
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub launch_profile_protocol_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name for the launch profile.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A configuration for a streaming session.</p>
     pub stream_configuration: std::option::Option<crate::model::StreamConfigurationCreate>,
-    /// <p>Unique identifiers for a collection of studio components that can be used with this
-    /// launch profile.</p>
+    /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
     pub studio_component_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl UpdateLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12713,8 +12462,7 @@ impl UpdateLaunchProfileInput {
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
-    /// <p>The version number of the protocol that is used by the launch profile. The only valid
-    /// version is "2021-03-31".</p>
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub fn launch_profile_protocol_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.launch_profile_protocol_versions.as_deref()
     }
@@ -12728,8 +12476,7 @@ impl UpdateLaunchProfileInput {
     ) -> std::option::Option<&crate::model::StreamConfigurationCreate> {
         self.stream_configuration.as_ref()
     }
-    /// <p>Unique identifiers for a collection of studio components that can be used with this
-    /// launch profile.</p>
+    /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
     pub fn studio_component_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.studio_component_ids.as_deref()
     }
@@ -12872,9 +12619,7 @@ impl std::fmt::Debug for ListEulaAcceptancesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptEulasInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The EULA ID.</p>
     pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12882,9 +12627,7 @@ pub struct AcceptEulasInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl AcceptEulasInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12935,14 +12678,13 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
-/// <p/>
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12951,8 +12693,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

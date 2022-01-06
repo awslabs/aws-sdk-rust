@@ -14,13 +14,9 @@ pub struct CreateAssistantError {
 pub enum CreateAssistantErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource. For example, if you're using a <code>Create</code> API (such as
-    /// <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the
-    /// same name) is being created or mutated.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use service quotas to request a service quota increase.</p>
+    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use service quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
@@ -68,8 +64,6 @@ impl CreateAssistantError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -140,15 +134,11 @@ pub struct CreateAssistantAssociationError {
 pub enum CreateAssistantAssociationErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource. For example, if you're using a <code>Create</code> API (such as
-    /// <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the
-    /// same name) is being created or mutated.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use service quotas to request a service quota increase.</p>
+    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use service quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
@@ -199,8 +189,6 @@ impl CreateAssistantAssociationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -287,15 +275,11 @@ pub struct CreateContentError {
 pub enum CreateContentErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource. For example, if you're using a <code>Create</code> API (such as
-    /// <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the
-    /// same name) is being created or mutated.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use service quotas to request a service quota increase.</p>
+    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use service quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
@@ -344,8 +328,6 @@ impl CreateContentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -421,13 +403,9 @@ pub struct CreateKnowledgeBaseError {
 pub enum CreateKnowledgeBaseErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource. For example, if you're using a <code>Create</code> API (such as
-    /// <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the
-    /// same name) is being created or mutated.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use service quotas to request a service quota increase.</p>
+    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use service quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
@@ -475,8 +453,6 @@ impl CreateKnowledgeBaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -551,10 +527,7 @@ pub struct CreateSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSessionErrorKind {
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource. For example, if you're using a <code>Create</code> API (such as
-    /// <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the
-    /// same name) is being created or mutated.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -603,8 +576,6 @@ impl CreateSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -714,8 +685,6 @@ impl DeleteAssistantError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -828,8 +797,6 @@ impl DeleteAssistantAssociationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -945,8 +912,6 @@ impl DeleteContentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1009,10 +974,7 @@ pub struct DeleteKnowledgeBaseError {
 pub enum DeleteKnowledgeBaseErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource. For example, if you're using a <code>Create</code> API (such as
-    /// <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the
-    /// same name) is being created or mutated.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1059,8 +1021,6 @@ impl DeleteKnowledgeBaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1176,8 +1136,6 @@ impl GetAssistantError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1287,8 +1245,6 @@ impl GetAssistantAssociationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1404,8 +1360,6 @@ impl GetContentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1515,8 +1469,6 @@ impl GetContentSummaryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1632,8 +1584,6 @@ impl GetKnowledgeBaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1749,8 +1699,6 @@ impl GetRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1866,8 +1814,6 @@ impl GetSessionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1977,8 +1923,6 @@ impl ListAssistantAssociationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2091,8 +2035,6 @@ impl ListAssistantsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2197,8 +2139,6 @@ impl ListContentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2305,8 +2245,6 @@ impl ListKnowledgeBasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2408,8 +2346,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2514,8 +2450,6 @@ impl NotifyRecommendationsReceivedError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2633,8 +2567,6 @@ impl QueryAssistantError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2752,8 +2684,6 @@ impl RemoveKnowledgeBaseTemplateUriError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2871,8 +2801,6 @@ impl SearchContentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2982,8 +2910,6 @@ impl SearchSessionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3096,8 +3022,6 @@ impl StartContentUploadError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3210,8 +3134,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3310,8 +3232,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3364,8 +3284,7 @@ pub struct UpdateContentError {
 pub enum UpdateContentErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The provided <code>revisionId</code> does not match, indicating the content has been
-    /// modified since it was last read.</p>
+    /// <p>The provided <code>revisionId</code> does not match, indicating the content has been modified since it was last read.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3415,8 +3334,6 @@ impl UpdateContentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3539,8 +3456,6 @@ impl UpdateKnowledgeBaseTemplateUriError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3812,8 +3727,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>You've exceeded your service quota. To perform the requested action, remove some of the
-/// relevant resources, or use service quotas to request a service quota increase.</p>
+/// <p>You've exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use service quotas to request a service quota increase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
@@ -3877,10 +3791,7 @@ impl ServiceQuotaExceededException {
     }
 }
 
-/// <p>The request could not be processed because of conflict in the current state of the
-/// resource. For example, if you're using a <code>Create</code> API (such as
-/// <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the
-/// same name) is being created or mutated.</p>
+/// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -3944,8 +3855,7 @@ impl ConflictException {
     }
 }
 
-/// <p>The provided <code>revisionId</code> does not match, indicating the content has been
-/// modified since it was last read.</p>
+/// <p>The provided <code>revisionId</code> does not match, indicating the content has been modified since it was last read.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreconditionFailedException {

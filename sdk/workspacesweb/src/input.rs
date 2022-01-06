@@ -51,7 +51,7 @@ pub mod associate_browser_settings_input {
 pub type AssociateBrowserSettingsInputOperationOutputAlias =
     crate::operation::AssociateBrowserSettings;
 #[doc(hidden)]
-pub type AssociateBrowserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateBrowserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateBrowserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateBrowserSettings`](crate::operation::AssociateBrowserSettings)>
     #[allow(clippy::let_and_return)]
@@ -62,7 +62,7 @@ impl AssociateBrowserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateBrowserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -170,7 +170,7 @@ impl AssociateBrowserSettingsInput {
             "AssociateBrowserSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -236,7 +236,7 @@ pub mod associate_network_settings_input {
 pub type AssociateNetworkSettingsInputOperationOutputAlias =
     crate::operation::AssociateNetworkSettings;
 #[doc(hidden)]
-pub type AssociateNetworkSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateNetworkSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateNetworkSettingsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateNetworkSettings`](crate::operation::AssociateNetworkSettings)>
     #[allow(clippy::let_and_return)]
@@ -247,7 +247,7 @@ impl AssociateNetworkSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateNetworkSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -355,7 +355,7 @@ impl AssociateNetworkSettingsInput {
             "AssociateNetworkSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -420,7 +420,7 @@ pub mod associate_trust_store_input {
 #[doc(hidden)]
 pub type AssociateTrustStoreInputOperationOutputAlias = crate::operation::AssociateTrustStore;
 #[doc(hidden)]
-pub type AssociateTrustStoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateTrustStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateTrustStoreInput {
     /// Consumes the builder and constructs an Operation<[`AssociateTrustStore`](crate::operation::AssociateTrustStore)>
     #[allow(clippy::let_and_return)]
@@ -431,7 +431,7 @@ impl AssociateTrustStoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateTrustStore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -539,7 +539,7 @@ impl AssociateTrustStoreInput {
             "AssociateTrustStore",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -604,7 +604,7 @@ pub mod associate_user_settings_input {
 #[doc(hidden)]
 pub type AssociateUserSettingsInputOperationOutputAlias = crate::operation::AssociateUserSettings;
 #[doc(hidden)]
-pub type AssociateUserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`AssociateUserSettings`](crate::operation::AssociateUserSettings)>
     #[allow(clippy::let_and_return)]
@@ -615,7 +615,7 @@ impl AssociateUserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateUserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -723,7 +723,7 @@ impl AssociateUserSettingsInput {
             "AssociateUserSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -758,9 +758,9 @@ pub mod create_browser_settings_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -810,14 +810,12 @@ pub mod create_browser_settings_input {
             self.additional_encryption_context = input;
             self
         }
-        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-        /// streaming sessions.</p>
+        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
         pub fn browser_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.browser_policy = Some(input.into());
             self
         }
-        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-        /// streaming sessions.</p>
+        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
         pub fn set_browser_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -825,19 +823,13 @@ pub mod create_browser_settings_input {
             self.browser_policy = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
@@ -863,7 +855,7 @@ pub mod create_browser_settings_input {
 #[doc(hidden)]
 pub type CreateBrowserSettingsInputOperationOutputAlias = crate::operation::CreateBrowserSettings;
 #[doc(hidden)]
-pub type CreateBrowserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBrowserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBrowserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`CreateBrowserSettings`](crate::operation::CreateBrowserSettings)>
     #[allow(clippy::let_and_return)]
@@ -874,7 +866,7 @@ impl CreateBrowserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBrowserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -959,7 +951,7 @@ impl CreateBrowserSettingsInput {
             "CreateBrowserSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1037,158 +1029,46 @@ pub mod create_identity_provider_input {
         ///
         /// To override the contents of this collection use [`set_identity_provider_details`](Self::set_identity_provider_details).
         ///
-        /// <p>The identity provider details. The following list describes the provider detail keys for
-        /// each identity provider type. </p>
+        /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For Google and Login with Amazon:</p>      
+        /// <li> <p>For Google and Login with Amazon:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Facebook:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Facebook:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>api_version</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Sign in with Apple:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>api_version</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Sign in with Apple:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>team_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>key_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>private_key</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For OIDC providers:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>team_id</code> </p> </li>
+        /// <li> <p> <code>key_id</code> </p> </li>
+        /// <li> <p> <code>private_key</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For OIDC providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>attributes_request_method</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oidc_issuer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_url</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>token_url</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>attributes_url</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jwks_uri</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For SAML providers:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>attributes_request_method</code> </p> </li>
+        /// <li> <p> <code>oidc_issuer</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For SAML providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>MetadataFile</code> OR <code>MetadataURL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IDPSignout</code>
-        /// <i>optional</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
+        /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn identity_provider_details(
             mut self,
@@ -1200,158 +1080,46 @@ pub mod create_identity_provider_input {
             self.identity_provider_details = Some(hash_map);
             self
         }
-        /// <p>The identity provider details. The following list describes the provider detail keys for
-        /// each identity provider type. </p>
+        /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For Google and Login with Amazon:</p>      
+        /// <li> <p>For Google and Login with Amazon:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Facebook:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Facebook:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>api_version</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Sign in with Apple:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>api_version</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Sign in with Apple:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>team_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>key_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>private_key</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For OIDC providers:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>team_id</code> </p> </li>
+        /// <li> <p> <code>key_id</code> </p> </li>
+        /// <li> <p> <code>private_key</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For OIDC providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>attributes_request_method</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oidc_issuer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_url</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>token_url</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>attributes_url</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jwks_uri</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For SAML providers:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>attributes_request_method</code> </p> </li>
+        /// <li> <p> <code>oidc_issuer</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For SAML providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>MetadataFile</code> OR <code>MetadataURL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IDPSignout</code>
-        /// <i>optional</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
+        /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_identity_provider_details(
             mut self,
@@ -1362,22 +1130,14 @@ pub mod create_identity_provider_input {
             self.identity_provider_details = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request.</p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request.</p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1402,7 +1162,7 @@ pub mod create_identity_provider_input {
 #[doc(hidden)]
 pub type CreateIdentityProviderInputOperationOutputAlias = crate::operation::CreateIdentityProvider;
 #[doc(hidden)]
-pub type CreateIdentityProviderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`CreateIdentityProvider`](crate::operation::CreateIdentityProvider)>
     #[allow(clippy::let_and_return)]
@@ -1413,7 +1173,7 @@ impl CreateIdentityProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateIdentityProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1498,7 +1258,7 @@ impl CreateIdentityProviderInput {
             "CreateIdentityProvider",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1587,9 +1347,9 @@ pub mod create_network_settings_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the network settings resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1601,22 +1361,14 @@ pub mod create_network_settings_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1641,7 +1393,7 @@ pub mod create_network_settings_input {
 #[doc(hidden)]
 pub type CreateNetworkSettingsInputOperationOutputAlias = crate::operation::CreateNetworkSettings;
 #[doc(hidden)]
-pub type CreateNetworkSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateNetworkSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNetworkSettingsInput {
     /// Consumes the builder and constructs an Operation<[`CreateNetworkSettings`](crate::operation::CreateNetworkSettings)>
     #[allow(clippy::let_and_return)]
@@ -1652,7 +1404,7 @@ impl CreateNetworkSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateNetworkSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1737,7 +1489,7 @@ impl CreateNetworkSettingsInput {
             "CreateNetworkSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1790,9 +1542,9 @@ pub mod create_portal_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the web portal. A tag is a key-value pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1842,22 +1594,14 @@ pub mod create_portal_input {
             self.additional_encryption_context = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1882,7 +1626,7 @@ pub mod create_portal_input {
 #[doc(hidden)]
 pub type CreatePortalInputOperationOutputAlias = crate::operation::CreatePortal;
 #[doc(hidden)]
-pub type CreatePortalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePortalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePortalInput {
     /// Consumes the builder and constructs an Operation<[`CreatePortal`](crate::operation::CreatePortal)>
     #[allow(clippy::let_and_return)]
@@ -1893,7 +1637,7 @@ impl CreatePortalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePortal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1975,7 +1719,7 @@ impl CreatePortalInput {
             "CreatePortal",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2014,9 +1758,9 @@ pub mod create_trust_store_input {
         /// To override the contents of this collection use [`set_certificate_list`](Self::set_certificate_list).
         ///
         /// <p>A list of CA certificates to be added to the trust store.</p>
-        pub fn certificate_list(mut self, input: impl Into<aws_smithy_types::Blob>) -> Self {
+        pub fn certificate_list(mut self, input: aws_smithy_types::Blob) -> Self {
             let mut v = self.certificate_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificate_list = Some(v);
             self
         }
@@ -2033,9 +1777,9 @@ pub mod create_trust_store_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the trust store. A tag is a key-value pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2047,22 +1791,14 @@ pub mod create_trust_store_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2085,7 +1821,7 @@ pub mod create_trust_store_input {
 #[doc(hidden)]
 pub type CreateTrustStoreInputOperationOutputAlias = crate::operation::CreateTrustStore;
 #[doc(hidden)]
-pub type CreateTrustStoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTrustStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTrustStoreInput {
     /// Consumes the builder and constructs an Operation<[`CreateTrustStore`](crate::operation::CreateTrustStore)>
     #[allow(clippy::let_and_return)]
@@ -2096,7 +1832,7 @@ impl CreateTrustStoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTrustStore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2179,7 +1915,7 @@ impl CreateTrustStoreInput {
             "CreateTrustStore",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2217,14 +1953,12 @@ pub mod create_user_settings_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies whether the user can copy text from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
         pub fn copy_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.copy_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can copy text from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
         pub fn set_copy_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -2232,14 +1966,12 @@ pub mod create_user_settings_input {
             self.copy_allowed = input;
             self
         }
-        /// <p>Specifies whether the user can paste text from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
         pub fn paste_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.paste_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can paste text from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
         pub fn set_paste_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -2247,14 +1979,12 @@ pub mod create_user_settings_input {
             self.paste_allowed = input;
             self
         }
-        /// <p>Specifies whether the user can download files from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
         pub fn download_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.download_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can download files from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
         pub fn set_download_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -2262,14 +1992,12 @@ pub mod create_user_settings_input {
             self.download_allowed = input;
             self
         }
-        /// <p>Specifies whether the user can upload files from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
         pub fn upload_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.upload_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can upload files from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
         pub fn set_upload_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -2295,9 +2023,9 @@ pub mod create_user_settings_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2309,22 +2037,14 @@ pub mod create_user_settings_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2351,7 +2071,7 @@ pub mod create_user_settings_input {
 #[doc(hidden)]
 pub type CreateUserSettingsInputOperationOutputAlias = crate::operation::CreateUserSettings;
 #[doc(hidden)]
-pub type CreateUserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`CreateUserSettings`](crate::operation::CreateUserSettings)>
     #[allow(clippy::let_and_return)]
@@ -2362,7 +2082,7 @@ impl CreateUserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2445,7 +2165,7 @@ impl CreateUserSettingsInput {
             "CreateUserSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2506,7 +2226,7 @@ pub mod delete_browser_settings_input {
 #[doc(hidden)]
 pub type DeleteBrowserSettingsInputOperationOutputAlias = crate::operation::DeleteBrowserSettings;
 #[doc(hidden)]
-pub type DeleteBrowserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBrowserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBrowserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBrowserSettings`](crate::operation::DeleteBrowserSettings)>
     #[allow(clippy::let_and_return)]
@@ -2517,7 +2237,7 @@ impl DeleteBrowserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBrowserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2611,7 +2331,7 @@ impl DeleteBrowserSettingsInput {
             "DeleteBrowserSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2664,7 +2384,7 @@ pub mod delete_identity_provider_input {
 #[doc(hidden)]
 pub type DeleteIdentityProviderInputOperationOutputAlias = crate::operation::DeleteIdentityProvider;
 #[doc(hidden)]
-pub type DeleteIdentityProviderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`DeleteIdentityProvider`](crate::operation::DeleteIdentityProvider)>
     #[allow(clippy::let_and_return)]
@@ -2675,7 +2395,7 @@ impl DeleteIdentityProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteIdentityProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2769,7 +2489,7 @@ impl DeleteIdentityProviderInput {
             "DeleteIdentityProvider",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2822,7 +2542,7 @@ pub mod delete_network_settings_input {
 #[doc(hidden)]
 pub type DeleteNetworkSettingsInputOperationOutputAlias = crate::operation::DeleteNetworkSettings;
 #[doc(hidden)]
-pub type DeleteNetworkSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteNetworkSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNetworkSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNetworkSettings`](crate::operation::DeleteNetworkSettings)>
     #[allow(clippy::let_and_return)]
@@ -2833,7 +2553,7 @@ impl DeleteNetworkSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNetworkSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2927,7 +2647,7 @@ impl DeleteNetworkSettingsInput {
             "DeleteNetworkSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2977,7 +2697,7 @@ pub mod delete_portal_input {
 #[doc(hidden)]
 pub type DeletePortalInputOperationOutputAlias = crate::operation::DeletePortal;
 #[doc(hidden)]
-pub type DeletePortalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePortalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePortalInput {
     /// Consumes the builder and constructs an Operation<[`DeletePortal`](crate::operation::DeletePortal)>
     #[allow(clippy::let_and_return)]
@@ -2988,7 +2708,7 @@ impl DeletePortalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePortal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3078,7 +2798,7 @@ impl DeletePortalInput {
             "DeletePortal",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3131,7 +2851,7 @@ pub mod delete_trust_store_input {
 #[doc(hidden)]
 pub type DeleteTrustStoreInputOperationOutputAlias = crate::operation::DeleteTrustStore;
 #[doc(hidden)]
-pub type DeleteTrustStoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTrustStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTrustStoreInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTrustStore`](crate::operation::DeleteTrustStore)>
     #[allow(clippy::let_and_return)]
@@ -3142,7 +2862,7 @@ impl DeleteTrustStoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTrustStore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3236,7 +2956,7 @@ impl DeleteTrustStoreInput {
             "DeleteTrustStore",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3289,7 +3009,7 @@ pub mod delete_user_settings_input {
 #[doc(hidden)]
 pub type DeleteUserSettingsInputOperationOutputAlias = crate::operation::DeleteUserSettings;
 #[doc(hidden)]
-pub type DeleteUserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUserSettings`](crate::operation::DeleteUserSettings)>
     #[allow(clippy::let_and_return)]
@@ -3300,7 +3020,7 @@ impl DeleteUserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3394,7 +3114,7 @@ impl DeleteUserSettingsInput {
             "DeleteUserSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3445,7 +3165,7 @@ pub mod disassociate_browser_settings_input {
 pub type DisassociateBrowserSettingsInputOperationOutputAlias =
     crate::operation::DisassociateBrowserSettings;
 #[doc(hidden)]
-pub type DisassociateBrowserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateBrowserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateBrowserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateBrowserSettings`](crate::operation::DisassociateBrowserSettings)>
     #[allow(clippy::let_and_return)]
@@ -3456,7 +3176,7 @@ impl DisassociateBrowserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateBrowserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3550,7 +3270,7 @@ impl DisassociateBrowserSettingsInput {
             "DisassociateBrowserSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3601,7 +3321,7 @@ pub mod disassociate_network_settings_input {
 pub type DisassociateNetworkSettingsInputOperationOutputAlias =
     crate::operation::DisassociateNetworkSettings;
 #[doc(hidden)]
-pub type DisassociateNetworkSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateNetworkSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateNetworkSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateNetworkSettings`](crate::operation::DisassociateNetworkSettings)>
     #[allow(clippy::let_and_return)]
@@ -3612,7 +3332,7 @@ impl DisassociateNetworkSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateNetworkSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3706,7 +3426,7 @@ impl DisassociateNetworkSettingsInput {
             "DisassociateNetworkSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3756,7 +3476,7 @@ pub mod disassociate_trust_store_input {
 #[doc(hidden)]
 pub type DisassociateTrustStoreInputOperationOutputAlias = crate::operation::DisassociateTrustStore;
 #[doc(hidden)]
-pub type DisassociateTrustStoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateTrustStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateTrustStoreInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateTrustStore`](crate::operation::DisassociateTrustStore)>
     #[allow(clippy::let_and_return)]
@@ -3767,7 +3487,7 @@ impl DisassociateTrustStoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateTrustStore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3861,7 +3581,7 @@ impl DisassociateTrustStoreInput {
             "DisassociateTrustStore",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3912,7 +3632,7 @@ pub mod disassociate_user_settings_input {
 pub type DisassociateUserSettingsInputOperationOutputAlias =
     crate::operation::DisassociateUserSettings;
 #[doc(hidden)]
-pub type DisassociateUserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateUserSettings`](crate::operation::DisassociateUserSettings)>
     #[allow(clippy::let_and_return)]
@@ -3923,7 +3643,7 @@ impl DisassociateUserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateUserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4017,7 +3737,7 @@ impl DisassociateUserSettingsInput {
             "DisassociateUserSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4070,7 +3790,7 @@ pub mod get_browser_settings_input {
 #[doc(hidden)]
 pub type GetBrowserSettingsInputOperationOutputAlias = crate::operation::GetBrowserSettings;
 #[doc(hidden)]
-pub type GetBrowserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBrowserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBrowserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetBrowserSettings`](crate::operation::GetBrowserSettings)>
     #[allow(clippy::let_and_return)]
@@ -4081,7 +3801,7 @@ impl GetBrowserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBrowserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4175,7 +3895,7 @@ impl GetBrowserSettingsInput {
             "GetBrowserSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4228,7 +3948,7 @@ pub mod get_identity_provider_input {
 #[doc(hidden)]
 pub type GetIdentityProviderInputOperationOutputAlias = crate::operation::GetIdentityProvider;
 #[doc(hidden)]
-pub type GetIdentityProviderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`GetIdentityProvider`](crate::operation::GetIdentityProvider)>
     #[allow(clippy::let_and_return)]
@@ -4239,7 +3959,7 @@ impl GetIdentityProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIdentityProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4333,7 +4053,7 @@ impl GetIdentityProviderInput {
             "GetIdentityProvider",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4386,7 +4106,7 @@ pub mod get_network_settings_input {
 #[doc(hidden)]
 pub type GetNetworkSettingsInputOperationOutputAlias = crate::operation::GetNetworkSettings;
 #[doc(hidden)]
-pub type GetNetworkSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetNetworkSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetNetworkSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetNetworkSettings`](crate::operation::GetNetworkSettings)>
     #[allow(clippy::let_and_return)]
@@ -4397,7 +4117,7 @@ impl GetNetworkSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNetworkSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4491,7 +4211,7 @@ impl GetNetworkSettingsInput {
             "GetNetworkSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4539,7 +4259,7 @@ pub mod get_portal_input {
 #[doc(hidden)]
 pub type GetPortalInputOperationOutputAlias = crate::operation::GetPortal;
 #[doc(hidden)]
-pub type GetPortalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPortalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPortalInput {
     /// Consumes the builder and constructs an Operation<[`GetPortal`](crate::operation::GetPortal)>
     #[allow(clippy::let_and_return)]
@@ -4550,7 +4270,7 @@ impl GetPortalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPortal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4638,7 +4358,7 @@ impl GetPortalInput {
                     "GetPortal",
                     "workspacesweb",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4689,7 +4409,8 @@ pub mod get_portal_service_provider_metadata_input {
 pub type GetPortalServiceProviderMetadataInputOperationOutputAlias =
     crate::operation::GetPortalServiceProviderMetadata;
 #[doc(hidden)]
-pub type GetPortalServiceProviderMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPortalServiceProviderMetadataInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetPortalServiceProviderMetadataInput {
     /// Consumes the builder and constructs an Operation<[`GetPortalServiceProviderMetadata`](crate::operation::GetPortalServiceProviderMetadata)>
     #[allow(clippy::let_and_return)]
@@ -4700,7 +4421,7 @@ impl GetPortalServiceProviderMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPortalServiceProviderMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4790,7 +4511,7 @@ impl GetPortalServiceProviderMetadataInput {
             "GetPortalServiceProviderMetadata",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4843,7 +4564,7 @@ pub mod get_trust_store_input {
 #[doc(hidden)]
 pub type GetTrustStoreInputOperationOutputAlias = crate::operation::GetTrustStore;
 #[doc(hidden)]
-pub type GetTrustStoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTrustStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTrustStoreInput {
     /// Consumes the builder and constructs an Operation<[`GetTrustStore`](crate::operation::GetTrustStore)>
     #[allow(clippy::let_and_return)]
@@ -4854,7 +4575,7 @@ impl GetTrustStoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTrustStore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4948,7 +4669,7 @@ impl GetTrustStoreInput {
             "GetTrustStore",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5014,7 +4735,7 @@ pub mod get_trust_store_certificate_input {
 pub type GetTrustStoreCertificateInputOperationOutputAlias =
     crate::operation::GetTrustStoreCertificate;
 #[doc(hidden)]
-pub type GetTrustStoreCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTrustStoreCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTrustStoreCertificateInput {
     /// Consumes the builder and constructs an Operation<[`GetTrustStoreCertificate`](crate::operation::GetTrustStoreCertificate)>
     #[allow(clippy::let_and_return)]
@@ -5025,7 +4746,7 @@ impl GetTrustStoreCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTrustStoreCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5130,7 +4851,7 @@ impl GetTrustStoreCertificateInput {
             "GetTrustStoreCertificate",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5183,7 +4904,7 @@ pub mod get_user_settings_input {
 #[doc(hidden)]
 pub type GetUserSettingsInputOperationOutputAlias = crate::operation::GetUserSettings;
 #[doc(hidden)]
-pub type GetUserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetUserSettings`](crate::operation::GetUserSettings)>
     #[allow(clippy::let_and_return)]
@@ -5194,7 +4915,7 @@ impl GetUserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetUserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5288,7 +5009,7 @@ impl GetUserSettingsInput {
             "GetUserSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5350,7 +5071,7 @@ pub mod list_browser_settings_input {
 #[doc(hidden)]
 pub type ListBrowserSettingsInputOperationOutputAlias = crate::operation::ListBrowserSettings;
 #[doc(hidden)]
-pub type ListBrowserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBrowserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBrowserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`ListBrowserSettings`](crate::operation::ListBrowserSettings)>
     #[allow(clippy::let_and_return)]
@@ -5361,7 +5082,7 @@ impl ListBrowserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBrowserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5452,7 +5173,7 @@ impl ListBrowserSettingsInput {
             "ListBrowserSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5526,7 +5247,7 @@ pub mod list_identity_providers_input {
 #[doc(hidden)]
 pub type ListIdentityProvidersInputOperationOutputAlias = crate::operation::ListIdentityProviders;
 #[doc(hidden)]
-pub type ListIdentityProvidersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIdentityProvidersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIdentityProvidersInput {
     /// Consumes the builder and constructs an Operation<[`ListIdentityProviders`](crate::operation::ListIdentityProviders)>
     #[allow(clippy::let_and_return)]
@@ -5537,7 +5258,7 @@ impl ListIdentityProvidersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIdentityProviders,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5648,7 +5369,7 @@ impl ListIdentityProvidersInput {
             "ListIdentityProviders",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5710,7 +5431,7 @@ pub mod list_network_settings_input {
 #[doc(hidden)]
 pub type ListNetworkSettingsInputOperationOutputAlias = crate::operation::ListNetworkSettings;
 #[doc(hidden)]
-pub type ListNetworkSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListNetworkSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListNetworkSettingsInput {
     /// Consumes the builder and constructs an Operation<[`ListNetworkSettings`](crate::operation::ListNetworkSettings)>
     #[allow(clippy::let_and_return)]
@@ -5721,7 +5442,7 @@ impl ListNetworkSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListNetworkSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5812,7 +5533,7 @@ impl ListNetworkSettingsInput {
             "ListNetworkSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5874,7 +5595,7 @@ pub mod list_portals_input {
 #[doc(hidden)]
 pub type ListPortalsInputOperationOutputAlias = crate::operation::ListPortals;
 #[doc(hidden)]
-pub type ListPortalsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPortalsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPortalsInput {
     /// Consumes the builder and constructs an Operation<[`ListPortals`](crate::operation::ListPortals)>
     #[allow(clippy::let_and_return)]
@@ -5885,7 +5606,7 @@ impl ListPortalsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPortals,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5976,7 +5697,7 @@ impl ListPortalsInput {
             "ListPortals",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6026,7 +5747,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -6037,7 +5758,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6127,7 +5848,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6205,7 +5926,7 @@ pub mod list_trust_store_certificates_input {
 pub type ListTrustStoreCertificatesInputOperationOutputAlias =
     crate::operation::ListTrustStoreCertificates;
 #[doc(hidden)]
-pub type ListTrustStoreCertificatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTrustStoreCertificatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTrustStoreCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`ListTrustStoreCertificates`](crate::operation::ListTrustStoreCertificates)>
     #[allow(clippy::let_and_return)]
@@ -6216,7 +5937,7 @@ impl ListTrustStoreCertificatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrustStoreCertificates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6327,7 +6048,7 @@ impl ListTrustStoreCertificatesInput {
             "ListTrustStoreCertificates",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6389,7 +6110,7 @@ pub mod list_trust_stores_input {
 #[doc(hidden)]
 pub type ListTrustStoresInputOperationOutputAlias = crate::operation::ListTrustStores;
 #[doc(hidden)]
-pub type ListTrustStoresInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTrustStoresInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTrustStoresInput {
     /// Consumes the builder and constructs an Operation<[`ListTrustStores`](crate::operation::ListTrustStores)>
     #[allow(clippy::let_and_return)]
@@ -6400,7 +6121,7 @@ impl ListTrustStoresInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrustStores,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6491,7 +6212,7 @@ impl ListTrustStoresInput {
             "ListTrustStores",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6553,7 +6274,7 @@ pub mod list_user_settings_input {
 #[doc(hidden)]
 pub type ListUserSettingsInputOperationOutputAlias = crate::operation::ListUserSettings;
 #[doc(hidden)]
-pub type ListUserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`ListUserSettings`](crate::operation::ListUserSettings)>
     #[allow(clippy::let_and_return)]
@@ -6564,7 +6285,7 @@ impl ListUserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6655,7 +6376,7 @@ impl ListUserSettingsInput {
             "ListUserSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6696,9 +6417,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6710,22 +6431,14 @@ pub mod tag_resource_input {
             self.tags = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -6748,7 +6461,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -6759,7 +6472,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6857,7 +6570,7 @@ impl TagResourceInput {
             "TagResource",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6936,7 +6649,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -6947,7 +6660,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7050,7 +6763,7 @@ impl UntagResourceInput {
             "UntagResource",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7089,14 +6802,12 @@ pub mod update_browser_settings_input {
             self.browser_settings_arn = input;
             self
         }
-        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-        /// streaming sessions. </p>
+        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions. </p>
         pub fn browser_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.browser_policy = Some(input.into());
             self
         }
-        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-        /// streaming sessions. </p>
+        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions. </p>
         pub fn set_browser_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7104,22 +6815,14 @@ pub mod update_browser_settings_input {
             self.browser_policy = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -7142,7 +6845,7 @@ pub mod update_browser_settings_input {
 #[doc(hidden)]
 pub type UpdateBrowserSettingsInputOperationOutputAlias = crate::operation::UpdateBrowserSettings;
 #[doc(hidden)]
-pub type UpdateBrowserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBrowserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBrowserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBrowserSettings`](crate::operation::UpdateBrowserSettings)>
     #[allow(clippy::let_and_return)]
@@ -7153,7 +6856,7 @@ impl UpdateBrowserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBrowserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7258,7 +6961,7 @@ impl UpdateBrowserSettingsInput {
             "UpdateBrowserSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7360,22 +7063,14 @@ pub mod update_identity_provider_input {
             self.identity_provider_details = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -7400,7 +7095,7 @@ pub mod update_identity_provider_input {
 #[doc(hidden)]
 pub type UpdateIdentityProviderInputOperationOutputAlias = crate::operation::UpdateIdentityProvider;
 #[doc(hidden)]
-pub type UpdateIdentityProviderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIdentityProvider`](crate::operation::UpdateIdentityProvider)>
     #[allow(clippy::let_and_return)]
@@ -7411,7 +7106,7 @@ impl UpdateIdentityProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateIdentityProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7516,7 +7211,7 @@ impl UpdateIdentityProviderInput {
             "UpdateIdentityProvider",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7613,22 +7308,14 @@ pub mod update_network_settings_input {
             self.security_group_ids = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -7653,7 +7340,7 @@ pub mod update_network_settings_input {
 #[doc(hidden)]
 pub type UpdateNetworkSettingsInputOperationOutputAlias = crate::operation::UpdateNetworkSettings;
 #[doc(hidden)]
-pub type UpdateNetworkSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateNetworkSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNetworkSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNetworkSettings`](crate::operation::UpdateNetworkSettings)>
     #[allow(clippy::let_and_return)]
@@ -7664,7 +7351,7 @@ impl UpdateNetworkSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateNetworkSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7769,7 +7456,7 @@ impl UpdateNetworkSettingsInput {
             "UpdateNetworkSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7839,7 +7526,7 @@ pub mod update_portal_input {
 #[doc(hidden)]
 pub type UpdatePortalInputOperationOutputAlias = crate::operation::UpdatePortal;
 #[doc(hidden)]
-pub type UpdatePortalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePortalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePortalInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePortal`](crate::operation::UpdatePortal)>
     #[allow(clippy::let_and_return)]
@@ -7850,7 +7537,7 @@ impl UpdatePortalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePortal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7945,7 +7632,7 @@ impl UpdatePortalInput {
             "UpdatePortal",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7998,9 +7685,9 @@ pub mod update_trust_store_input {
         /// To override the contents of this collection use [`set_certificates_to_add`](Self::set_certificates_to_add).
         ///
         /// <p>A list of CA certificates to add to the trust store.</p>
-        pub fn certificates_to_add(mut self, input: impl Into<aws_smithy_types::Blob>) -> Self {
+        pub fn certificates_to_add(mut self, input: aws_smithy_types::Blob) -> Self {
             let mut v = self.certificates_to_add.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates_to_add = Some(v);
             self
         }
@@ -8031,22 +7718,14 @@ pub mod update_trust_store_input {
             self.certificates_to_delete = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8070,7 +7749,7 @@ pub mod update_trust_store_input {
 #[doc(hidden)]
 pub type UpdateTrustStoreInputOperationOutputAlias = crate::operation::UpdateTrustStore;
 #[doc(hidden)]
-pub type UpdateTrustStoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTrustStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTrustStoreInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTrustStore`](crate::operation::UpdateTrustStore)>
     #[allow(clippy::let_and_return)]
@@ -8081,7 +7760,7 @@ impl UpdateTrustStoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTrustStore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8184,7 +7863,7 @@ impl UpdateTrustStoreInput {
             "UpdateTrustStore",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8235,14 +7914,12 @@ pub mod update_user_settings_input {
             self.user_settings_arn = input;
             self
         }
-        /// <p>Specifies whether the user can copy text from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
         pub fn copy_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.copy_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can copy text from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
         pub fn set_copy_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -8250,14 +7927,12 @@ pub mod update_user_settings_input {
             self.copy_allowed = input;
             self
         }
-        /// <p>Specifies whether the user can paste text from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
         pub fn paste_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.paste_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can paste text from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
         pub fn set_paste_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -8265,14 +7940,12 @@ pub mod update_user_settings_input {
             self.paste_allowed = input;
             self
         }
-        /// <p>Specifies whether the user can download files from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
         pub fn download_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.download_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can download files from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
         pub fn set_download_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -8280,14 +7953,12 @@ pub mod update_user_settings_input {
             self.download_allowed = input;
             self
         }
-        /// <p>Specifies whether the user can upload files from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
         pub fn upload_allowed(mut self, input: crate::model::EnabledType) -> Self {
             self.upload_allowed = Some(input);
             self
         }
-        /// <p>Specifies whether the user can upload files from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
         pub fn set_upload_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -8308,22 +7979,14 @@ pub mod update_user_settings_input {
             self.print_allowed = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8350,7 +8013,7 @@ pub mod update_user_settings_input {
 #[doc(hidden)]
 pub type UpdateUserSettingsInputOperationOutputAlias = crate::operation::UpdateUserSettings;
 #[doc(hidden)]
-pub type UpdateUserSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateUserSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUserSettings`](crate::operation::UpdateUserSettings)>
     #[allow(clippy::let_and_return)]
@@ -8361,7 +8024,7 @@ impl UpdateUserSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateUserSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8464,7 +8127,7 @@ impl UpdateUserSettingsInput {
             "UpdateUserSettings",
             "workspacesweb",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8493,26 +8156,18 @@ impl UpdateUserSettingsInput {
 pub struct UpdateUserSettingsInput {
     /// <p>The ARN of the user settings.</p>
     pub user_settings_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the user can copy text from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub copy_allowed: std::option::Option<crate::model::EnabledType>,
-    /// <p>Specifies whether the user can paste text from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
     pub paste_allowed: std::option::Option<crate::model::EnabledType>,
-    /// <p>Specifies whether the user can download files from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
     pub download_allowed: std::option::Option<crate::model::EnabledType>,
-    /// <p>Specifies whether the user can upload files from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
     pub upload_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>Specifies whether the user can print to the local device.</p>
     pub print_allowed: std::option::Option<crate::model::EnabledType>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token return the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateUserSettingsInput {
@@ -8520,23 +8175,19 @@ impl UpdateUserSettingsInput {
     pub fn user_settings_arn(&self) -> std::option::Option<&str> {
         self.user_settings_arn.as_deref()
     }
-    /// <p>Specifies whether the user can copy text from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub fn copy_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.copy_allowed.as_ref()
     }
-    /// <p>Specifies whether the user can paste text from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
     pub fn paste_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.paste_allowed.as_ref()
     }
-    /// <p>Specifies whether the user can download files from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
     pub fn download_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.download_allowed.as_ref()
     }
-    /// <p>Specifies whether the user can upload files from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
     pub fn upload_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.upload_allowed.as_ref()
     }
@@ -8544,12 +8195,8 @@ impl UpdateUserSettingsInput {
     pub fn print_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.print_allowed.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token return the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -8578,12 +8225,8 @@ pub struct UpdateTrustStoreInput {
     pub certificates_to_add: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
     /// <p>A list of CA certificates to delete from a trust store.</p>
     pub certificates_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token return the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateTrustStoreInput {
@@ -8599,12 +8242,8 @@ impl UpdateTrustStoreInput {
     pub fn certificates_to_delete(&self) -> std::option::Option<&[std::string::String]> {
         self.certificates_to_delete.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token return the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -8660,12 +8299,8 @@ pub struct UpdateNetworkSettingsInput {
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token return the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateNetworkSettingsInput {
@@ -8685,12 +8320,8 @@ impl UpdateNetworkSettingsInput {
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token return the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -8720,12 +8351,8 @@ pub struct UpdateIdentityProviderInput {
     /// <p>The details of the identity provider.</p>
     pub identity_provider_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token return the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateIdentityProviderInput {
@@ -8750,12 +8377,8 @@ impl UpdateIdentityProviderInput {
     {
         self.identity_provider_details.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token return the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -8778,15 +8401,10 @@ impl std::fmt::Debug for UpdateIdentityProviderInput {
 pub struct UpdateBrowserSettingsInput {
     /// <p>The ARN of the browser settings.</p>
     pub browser_settings_arn: std::option::Option<std::string::String>,
-    /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-    /// streaming sessions. </p>
+    /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions. </p>
     pub browser_policy: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token return the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateBrowserSettingsInput {
@@ -8794,17 +8412,12 @@ impl UpdateBrowserSettingsInput {
     pub fn browser_settings_arn(&self) -> std::option::Option<&str> {
         self.browser_settings_arn.as_deref()
     }
-    /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-    /// streaming sessions. </p>
+    /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions. </p>
     pub fn browser_policy(&self) -> std::option::Option<&str> {
         self.browser_policy.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token return the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -8855,12 +8468,8 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags of the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token returns the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl TagResourceInput {
@@ -8872,12 +8481,8 @@ impl TagResourceInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token returns the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -9512,48 +9117,36 @@ impl std::fmt::Debug for DeleteBrowserSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserSettingsInput {
-    /// <p>Specifies whether the user can copy text from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub copy_allowed: std::option::Option<crate::model::EnabledType>,
-    /// <p>Specifies whether the user can paste text from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
     pub paste_allowed: std::option::Option<crate::model::EnabledType>,
-    /// <p>Specifies whether the user can download files from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
     pub download_allowed: std::option::Option<crate::model::EnabledType>,
-    /// <p>Specifies whether the user can upload files from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
     pub upload_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>Specifies whether the user can print to the local device.</p>
     pub print_allowed: std::option::Option<crate::model::EnabledType>,
     /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token returns the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateUserSettingsInput {
-    /// <p>Specifies whether the user can copy text from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub fn copy_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.copy_allowed.as_ref()
     }
-    /// <p>Specifies whether the user can paste text from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
     pub fn paste_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.paste_allowed.as_ref()
     }
-    /// <p>Specifies whether the user can download files from the streaming session to the local
-    /// device.</p>
+    /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
     pub fn download_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.download_allowed.as_ref()
     }
-    /// <p>Specifies whether the user can upload files from the local device to the streaming
-    /// session.</p>
+    /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
     pub fn upload_allowed(&self) -> std::option::Option<&crate::model::EnabledType> {
         self.upload_allowed.as_ref()
     }
@@ -9565,12 +9158,8 @@ impl CreateUserSettingsInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token returns the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -9597,12 +9186,8 @@ pub struct CreateTrustStoreInput {
     pub certificate_list: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
     /// <p>The tags to add to the trust store. A tag is a key-value pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token returns the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateTrustStoreInput {
@@ -9614,12 +9199,8 @@ impl CreateTrustStoreInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token returns the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -9647,12 +9228,8 @@ pub struct CreatePortalInput {
     /// <p>The additional encryption context of the portal.</p>
     pub additional_encryption_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token returns the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreatePortalInput {
@@ -9675,12 +9252,8 @@ impl CreatePortalInput {
     {
         self.additional_encryption_context.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token returns the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -9712,12 +9285,8 @@ pub struct CreateNetworkSettingsInput {
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags to add to the network settings resource. A tag is a key-value pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token returns the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateNetworkSettingsInput {
@@ -9737,12 +9306,8 @@ impl CreateNetworkSettingsInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token returns the result from the original successful request. </p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -9769,167 +9334,51 @@ pub struct CreateIdentityProviderInput {
     pub identity_provider_name: std::option::Option<std::string::String>,
     /// <p>The identity provider type.</p>
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
-    /// <p>The identity provider details. The following list describes the provider detail keys for
-    /// each identity provider type. </p>
+    /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
     /// <ul>
-    /// <li>
-    /// <p>For Google and Login with Amazon:</p>      
+    /// <li> <p>For Google and Login with Amazon:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>client_secret</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For Facebook:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Facebook:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>client_secret</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>api_version</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For Sign in with Apple:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// <li> <p> <code>api_version</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Sign in with Apple:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>team_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>key_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>private_key</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For OIDC providers:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>team_id</code> </p> </li>
+    /// <li> <p> <code>key_id</code> </p> </li>
+    /// <li> <p> <code>private_key</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For OIDC providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>client_secret</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>attributes_request_method</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>oidc_issuer</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_url</code>
-    /// <i>if not available from discovery URL specified by
-    /// <code>oidc_issuer</code> key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>token_url</code>
-    /// <i>if not available from discovery URL specified by
-    /// <code>oidc_issuer</code> key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>attributes_url</code>
-    /// <i>if not available from discovery URL specified by
-    /// <code>oidc_issuer</code> key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jwks_uri</code>
-    /// <i>if not available from discovery URL specified by
-    /// <code>oidc_issuer</code> key</i>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For SAML providers:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>attributes_request_method</code> </p> </li>
+    /// <li> <p> <code>oidc_issuer</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+    /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+    /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+    /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For SAML providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>MetadataFile</code> OR <code>MetadataURL</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IDPSignout</code>
-    /// <i>optional</i>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
+    /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub identity_provider_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token returns the result from the original successful request.</p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateIdentityProviderInput {
@@ -9947,158 +9396,46 @@ impl CreateIdentityProviderInput {
     ) -> std::option::Option<&crate::model::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
-    /// <p>The identity provider details. The following list describes the provider detail keys for
-    /// each identity provider type. </p>
+    /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
     /// <ul>
-    /// <li>
-    /// <p>For Google and Login with Amazon:</p>      
+    /// <li> <p>For Google and Login with Amazon:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>client_secret</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For Facebook:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Facebook:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>client_secret</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>api_version</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For Sign in with Apple:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// <li> <p> <code>api_version</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Sign in with Apple:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>team_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>key_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>private_key</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For OIDC providers:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>team_id</code> </p> </li>
+    /// <li> <p> <code>key_id</code> </p> </li>
+    /// <li> <p> <code>private_key</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For OIDC providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>client_id</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>client_secret</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>attributes_request_method</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>oidc_issuer</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_scopes</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>authorize_url</code>
-    /// <i>if not available from discovery URL specified by
-    /// <code>oidc_issuer</code> key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>token_url</code>
-    /// <i>if not available from discovery URL specified by
-    /// <code>oidc_issuer</code> key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>attributes_url</code>
-    /// <i>if not available from discovery URL specified by
-    /// <code>oidc_issuer</code> key</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>jwks_uri</code>
-    /// <i>if not available from discovery URL specified by
-    /// <code>oidc_issuer</code> key</i>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>For SAML providers:</p>      
+    /// <li> <p> <code>client_id</code> </p> </li>
+    /// <li> <p> <code>client_secret</code> </p> </li>
+    /// <li> <p> <code>attributes_request_method</code> </p> </li>
+    /// <li> <p> <code>oidc_issuer</code> </p> </li>
+    /// <li> <p> <code>authorize_scopes</code> </p> </li>
+    /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+    /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+    /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+    /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>For SAML providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>MetadataFile</code> OR <code>MetadataURL</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IDPSignout</code>
-    /// <i>optional</i>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
+    /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn identity_provider_details(
         &self,
@@ -10106,12 +9443,8 @@ impl CreateIdentityProviderInput {
     {
         self.identity_provider_details.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token returns the result from the original successful request.</p>
-    /// <p>If you do not specify a client token, one is automatically generated by the AWS
-    /// SDK.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>
+    /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -10139,13 +9472,9 @@ pub struct CreateBrowserSettingsInput {
     /// <p>Additional encryption context of the browser settings.</p>
     pub additional_encryption_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-    /// streaming sessions.</p>
+    /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
     pub browser_policy: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token returns the result from the original successful request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>
     /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK. </p>
     pub client_token: std::option::Option<std::string::String>,
 }
@@ -10165,15 +9494,11 @@ impl CreateBrowserSettingsInput {
     {
         self.additional_encryption_context.as_ref()
     }
-    /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-    /// streaming sessions.</p>
+    /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
     pub fn browser_policy(&self) -> std::option::Option<&str> {
         self.browser_policy.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. Idempotency ensures that an API request completes only once. With an idempotent
-    /// request, if the original request completes successfully, subsequent retries with the same
-    /// client token returns the result from the original successful request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>
     /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK. </p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()

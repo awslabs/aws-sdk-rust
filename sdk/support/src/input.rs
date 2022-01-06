@@ -10,18 +10,12 @@ pub mod add_attachments_to_set_input {
         pub(crate) attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
     }
     impl Builder {
-        /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a
-        /// new attachment set is created, and the ID of the set is returned in the response. If an
-        /// <code>attachmentSetId</code> is specified, the attachments are added to the
-        /// specified set, if it exists.</p>
+        /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
         pub fn attachment_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.attachment_set_id = Some(input.into());
             self
         }
-        /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a
-        /// new attachment set is created, and the ID of the set is returned in the response. If an
-        /// <code>attachmentSetId</code> is specified, the attachments are added to the
-        /// specified set, if it exists.</p>
+        /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
         pub fn set_attachment_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -33,26 +27,16 @@ pub mod add_attachments_to_set_input {
         ///
         /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
         ///
-        /// <p>One or more attachments to add to the set. You can add up to three attachments per
-        /// set. The size limit is 5 MB per attachment.</p>
-        /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify
-        /// the contents of the attachment file. In the previous request syntax, the value for
-        /// <code>data</code> appear as <code>blob</code>, which is represented as a
-        /// base64-encoded string. The value for <code>fileName</code> is the name of the
-        /// attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-        pub fn attachments(mut self, input: impl Into<crate::model::Attachment>) -> Self {
+        /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
+        /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
+        pub fn attachments(mut self, input: crate::model::Attachment) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attachments = Some(v);
             self
         }
-        /// <p>One or more attachments to add to the set. You can add up to three attachments per
-        /// set. The size limit is 5 MB per attachment.</p>
-        /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify
-        /// the contents of the attachment file. In the previous request syntax, the value for
-        /// <code>data</code> appear as <code>blob</code>, which is represented as a
-        /// base64-encoded string. The value for <code>fileName</code> is the name of the
-        /// attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
+        /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
+        /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
         pub fn set_attachments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
@@ -77,7 +61,7 @@ pub mod add_attachments_to_set_input {
 #[doc(hidden)]
 pub type AddAttachmentsToSetInputOperationOutputAlias = crate::operation::AddAttachmentsToSet;
 #[doc(hidden)]
-pub type AddAttachmentsToSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddAttachmentsToSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddAttachmentsToSetInput {
     /// Consumes the builder and constructs an Operation<[`AddAttachmentsToSet`](crate::operation::AddAttachmentsToSet)>
     #[allow(clippy::let_and_return)]
@@ -88,7 +72,7 @@ impl AddAttachmentsToSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddAttachmentsToSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -175,7 +159,7 @@ impl AddAttachmentsToSetInput {
             "AddAttachmentsToSet",
             "support",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -210,18 +194,12 @@ pub mod add_communication_to_case_input {
         pub(crate) attachment_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The support case ID requested or returned in the call. The case ID is an
-        /// alphanumeric string formatted as shown in this example:
-        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-        /// </p>
+        /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
         pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.case_id = Some(input.into());
             self
         }
-        /// <p>The support case ID requested or returned in the call. The case ID is an
-        /// alphanumeric string formatted as shown in this example:
-        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-        /// </p>
+        /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.case_id = input;
             self
@@ -258,16 +236,12 @@ pub mod add_communication_to_case_input {
             self.cc_email_addresses = input;
             self
         }
-        /// <p>The ID of a set of one or more attachments for the communication to add to the case.
-        /// Create the set by calling <a>AddAttachmentsToSet</a>
-        /// </p>
+        /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
         pub fn attachment_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.attachment_set_id = Some(input.into());
             self
         }
-        /// <p>The ID of a set of one or more attachments for the communication to add to the case.
-        /// Create the set by calling <a>AddAttachmentsToSet</a>
-        /// </p>
+        /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
         pub fn set_attachment_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -294,7 +268,7 @@ pub mod add_communication_to_case_input {
 #[doc(hidden)]
 pub type AddCommunicationToCaseInputOperationOutputAlias = crate::operation::AddCommunicationToCase;
 #[doc(hidden)]
-pub type AddCommunicationToCaseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddCommunicationToCaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddCommunicationToCaseInput {
     /// Consumes the builder and constructs an Operation<[`AddCommunicationToCase`](crate::operation::AddCommunicationToCase)>
     #[allow(clippy::let_and_return)]
@@ -305,7 +279,7 @@ impl AddCommunicationToCaseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddCommunicationToCase,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -392,7 +366,7 @@ impl AddCommunicationToCaseInput {
             "AddCommunicationToCase",
             "support",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -432,49 +406,37 @@ pub mod create_case_input {
         pub(crate) attachment_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+        /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
         pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.subject = Some(input.into());
             self
         }
-        /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+        /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
         }
-        /// <p>The code for the AWS service. You can use the <a>DescribeServices</a>
-        /// operation to get the possible <code>serviceCode</code> values.</p>
+        /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_code = Some(input.into());
             self
         }
-        /// <p>The code for the AWS service. You can use the <a>DescribeServices</a>
-        /// operation to get the possible <code>serviceCode</code> values.</p>
+        /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_code = input;
             self
         }
-        /// <p>A value that indicates the urgency of the case. This value determines the response
-        /// time according to your service level agreement with AWS Support. You can use the <a>DescribeSeverityLevels</a> operation to get the possible values for
-        /// <code>severityCode</code>. </p>
-        /// <p>For more information, see <a>SeverityLevel</a> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
-        /// Severity</a> in the <i>AWS Support User Guide</i>.</p>
-        /// <note>
-        /// <p>The availability of severity levels depends on the support plan for the AWS
-        /// account.</p>
+        /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
+        /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
+        /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
         /// </note>
         pub fn severity_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.severity_code = Some(input.into());
             self
         }
-        /// <p>A value that indicates the urgency of the case. This value determines the response
-        /// time according to your service level agreement with AWS Support. You can use the <a>DescribeSeverityLevels</a> operation to get the possible values for
-        /// <code>severityCode</code>. </p>
-        /// <p>For more information, see <a>SeverityLevel</a> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
-        /// Severity</a> in the <i>AWS Support User Guide</i>.</p>
-        /// <note>
-        /// <p>The availability of severity levels depends on the support plan for the AWS
-        /// account.</p>
+        /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
+        /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
+        /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
         /// </note>
         pub fn set_severity_code(
             mut self,
@@ -483,14 +445,12 @@ pub mod create_case_input {
             self.severity_code = input;
             self
         }
-        /// <p>The category of problem for the support case. You also use the <a>DescribeServices</a> operation to get the category code for a service. Each
-        /// AWS service defines its own set of category codes.</p>
+        /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
         pub fn category_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.category_code = Some(input.into());
             self
         }
-        /// <p>The category of problem for the support case. You also use the <a>DescribeServices</a> operation to get the category code for a service. Each
-        /// AWS service defines its own set of category codes.</p>
+        /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
         pub fn set_category_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -498,14 +458,12 @@ pub mod create_case_input {
             self.category_code = input;
             self
         }
-        /// <p>The communication body text that describes the issue. This text appears in the
-        /// <b>Description</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+        /// <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
         pub fn communication_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.communication_body = Some(input.into());
             self
         }
-        /// <p>The communication body text that describes the issue. This text appears in the
-        /// <b>Description</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+        /// <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
         pub fn set_communication_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -517,20 +475,14 @@ pub mod create_case_input {
         ///
         /// To override the contents of this collection use [`set_cc_email_addresses`](Self::set_cc_email_addresses).
         ///
-        /// <p>A list of email addresses that AWS Support copies on case correspondence. AWS Support
-        /// identifies the account that creates the case when you specify your AWS credentials in an
-        /// HTTP POST method or use the <a href="http://aws.amazon.com/tools/">AWS SDKs</a>.
-        /// </p>
+        /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
         pub fn cc_email_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cc_email_addresses.unwrap_or_default();
             v.push(input.into());
             self.cc_email_addresses = Some(v);
             self
         }
-        /// <p>A list of email addresses that AWS Support copies on case correspondence. AWS Support
-        /// identifies the account that creates the case when you specify your AWS credentials in an
-        /// HTTP POST method or use the <a href="http://aws.amazon.com/tools/">AWS SDKs</a>.
-        /// </p>
+        /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
         pub fn set_cc_email_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -538,42 +490,32 @@ pub mod create_case_input {
             self.cc_email_addresses = input;
             self
         }
-        /// <p>The language in which AWS Support handles the case. You must specify the ISO 639-1
-        /// code for the <code>language</code> parameter if you want support in that language.
-        /// Currently, English ("en") and Japanese ("ja") are supported.</p>
+        /// <p>The language in which Amazon Web Services Support handles the case. You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language. Currently, English ("en") and Japanese ("ja") are supported.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.language = Some(input.into());
             self
         }
-        /// <p>The language in which AWS Support handles the case. You must specify the ISO 639-1
-        /// code for the <code>language</code> parameter if you want support in that language.
-        /// Currently, English ("en") and Japanese ("ja") are supported.</p>
+        /// <p>The language in which Amazon Web Services Support handles the case. You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language. Currently, English ("en") and Japanese ("ja") are supported.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.language = input;
             self
         }
-        /// <p>The type of issue for the case. You can specify <code>customer-service</code> or
-        /// <code>technical</code>. If you don't specify a value, the default is
-        /// <code>technical</code>.</p>
+        /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
         pub fn issue_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.issue_type = Some(input.into());
             self
         }
-        /// <p>The type of issue for the case. You can specify <code>customer-service</code> or
-        /// <code>technical</code>. If you don't specify a value, the default is
-        /// <code>technical</code>.</p>
+        /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
         pub fn set_issue_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.issue_type = input;
             self
         }
-        /// <p>The ID of a set of one or more attachments for the case. Create the set by using the
-        /// <a>AddAttachmentsToSet</a> operation.</p>
+        /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
         pub fn attachment_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.attachment_set_id = Some(input.into());
             self
         }
-        /// <p>The ID of a set of one or more attachments for the case. Create the set by using the
-        /// <a>AddAttachmentsToSet</a> operation.</p>
+        /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
         pub fn set_attachment_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -605,7 +547,7 @@ pub mod create_case_input {
 #[doc(hidden)]
 pub type CreateCaseInputOperationOutputAlias = crate::operation::CreateCase;
 #[doc(hidden)]
-pub type CreateCaseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCaseInput {
     /// Consumes the builder and constructs an Operation<[`CreateCase`](crate::operation::CreateCase)>
     #[allow(clippy::let_and_return)]
@@ -616,7 +558,7 @@ impl CreateCaseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCase,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -700,7 +642,7 @@ impl CreateCaseInput {
             "CreateCase",
             "support",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -732,12 +674,12 @@ pub mod describe_attachment_input {
         pub(crate) attachment_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.</p>
+        /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
         pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.attachment_id = Some(input.into());
             self
         }
-        /// <p>The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.</p>
+        /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
         pub fn set_attachment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -761,7 +703,7 @@ pub mod describe_attachment_input {
 #[doc(hidden)]
 pub type DescribeAttachmentInputOperationOutputAlias = crate::operation::DescribeAttachment;
 #[doc(hidden)]
-pub type DescribeAttachmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAttachmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAttachmentInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAttachment`](crate::operation::DescribeAttachment)>
     #[allow(clippy::let_and_return)]
@@ -772,7 +714,7 @@ impl DescribeAttachmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAttachment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -857,7 +799,7 @@ impl DescribeAttachmentInput {
             "DescribeAttachment",
             "support",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -901,16 +843,14 @@ pub mod describe_cases_input {
         ///
         /// To override the contents of this collection use [`set_case_id_list`](Self::set_case_id_list).
         ///
-        /// <p>A list of ID numbers of the support cases you want returned. The maximum number of
-        /// cases is 100.</p>
+        /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
         pub fn case_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.case_id_list.unwrap_or_default();
             v.push(input.into());
             self.case_id_list = Some(v);
             self
         }
-        /// <p>A list of ID numbers of the support cases you want returned. The maximum number of
-        /// cases is 100.</p>
+        /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
         pub fn set_case_id_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -918,48 +858,42 @@ pub mod describe_cases_input {
             self.case_id_list = input;
             self
         }
-        /// <p>The ID displayed for a case in the AWS Support Center user interface.</p>
+        /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
         pub fn display_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_id = Some(input.into());
             self
         }
-        /// <p>The ID displayed for a case in the AWS Support Center user interface.</p>
+        /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
         pub fn set_display_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_id = input;
             self
         }
-        /// <p>The start date for a filtered date search on support case communications. Case
-        /// communications are available for 12 months after creation.</p>
+        /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn after_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.after_time = Some(input.into());
             self
         }
-        /// <p>The start date for a filtered date search on support case communications. Case
-        /// communications are available for 12 months after creation.</p>
+        /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn set_after_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.after_time = input;
             self
         }
-        /// <p>The end date for a filtered date search on support case communications. Case
-        /// communications are available for 12 months after creation.</p>
+        /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn before_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.before_time = Some(input.into());
             self
         }
-        /// <p>The end date for a filtered date search on support case communications. Case
-        /// communications are available for 12 months after creation.</p>
+        /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn set_before_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.before_time = input;
             self
         }
-        /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code>
-        /// response. By default, resolved cases aren't included.</p>
+        /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
         pub fn include_resolved_cases(mut self, input: bool) -> Self {
             self.include_resolved_cases = Some(input);
             self
         }
-        /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code>
-        /// response. By default, resolved cases aren't included.</p>
+        /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
         pub fn set_include_resolved_cases(mut self, input: std::option::Option<bool>) -> Self {
             self.include_resolved_cases = input;
             self
@@ -984,28 +918,22 @@ pub mod describe_cases_input {
             self.max_results = input;
             self
         }
-        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-        /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-        /// passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.language = Some(input.into());
             self
         }
-        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-        /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-        /// passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.language = input;
             self
         }
-        /// <p>Specifies whether to include communications in the <code>DescribeCases</code>
-        /// response. By default, communications are included.</p>
+        /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
         pub fn include_communications(mut self, input: bool) -> Self {
             self.include_communications = Some(input);
             self
         }
-        /// <p>Specifies whether to include communications in the <code>DescribeCases</code>
-        /// response. By default, communications are included.</p>
+        /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
         pub fn set_include_communications(mut self, input: std::option::Option<bool>) -> Self {
             self.include_communications = input;
             self
@@ -1034,7 +962,7 @@ pub mod describe_cases_input {
 #[doc(hidden)]
 pub type DescribeCasesInputOperationOutputAlias = crate::operation::DescribeCases;
 #[doc(hidden)]
-pub type DescribeCasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCasesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCases`](crate::operation::DescribeCases)>
     #[allow(clippy::let_and_return)]
@@ -1045,7 +973,7 @@ impl DescribeCasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1129,7 +1057,7 @@ impl DescribeCasesInput {
             "DescribeCases",
             "support",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1165,42 +1093,32 @@ pub mod describe_communications_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The support case ID requested or returned in the call. The case ID is an
-        /// alphanumeric string formatted as shown in this example:
-        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-        /// </p>
+        /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
         pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.case_id = Some(input.into());
             self
         }
-        /// <p>The support case ID requested or returned in the call. The case ID is an
-        /// alphanumeric string formatted as shown in this example:
-        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-        /// </p>
+        /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.case_id = input;
             self
         }
-        /// <p>The end date for a filtered date search on support case communications. Case
-        /// communications are available for 12 months after creation.</p>
+        /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn before_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.before_time = Some(input.into());
             self
         }
-        /// <p>The end date for a filtered date search on support case communications. Case
-        /// communications are available for 12 months after creation.</p>
+        /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn set_before_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.before_time = input;
             self
         }
-        /// <p>The start date for a filtered date search on support case communications. Case
-        /// communications are available for 12 months after creation.</p>
+        /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn after_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.after_time = Some(input.into());
             self
         }
-        /// <p>The start date for a filtered date search on support case communications. Case
-        /// communications are available for 12 months after creation.</p>
+        /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
         pub fn set_after_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.after_time = input;
             self
@@ -1245,7 +1163,7 @@ pub mod describe_communications_input {
 #[doc(hidden)]
 pub type DescribeCommunicationsInputOperationOutputAlias = crate::operation::DescribeCommunications;
 #[doc(hidden)]
-pub type DescribeCommunicationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCommunicationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCommunicationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCommunications`](crate::operation::DescribeCommunications)>
     #[allow(clippy::let_and_return)]
@@ -1256,7 +1174,7 @@ impl DescribeCommunicationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCommunications,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1343,7 +1261,7 @@ impl DescribeCommunicationsInput {
             "DescribeCommunications",
             "support",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1380,14 +1298,14 @@ pub mod describe_services_input {
         ///
         /// To override the contents of this collection use [`set_service_code_list`](Self::set_service_code_list).
         ///
-        /// <p>A JSON-formatted list of service codes available for AWS services.</p>
+        /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
         pub fn service_code_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.service_code_list.unwrap_or_default();
             v.push(input.into());
             self.service_code_list = Some(v);
             self
         }
-        /// <p>A JSON-formatted list of service codes available for AWS services.</p>
+        /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
         pub fn set_service_code_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1395,16 +1313,12 @@ pub mod describe_services_input {
             self.service_code_list = input;
             self
         }
-        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-        /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-        /// passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.language = Some(input.into());
             self
         }
-        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-        /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-        /// passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.language = input;
             self
@@ -1426,7 +1340,7 @@ pub mod describe_services_input {
 #[doc(hidden)]
 pub type DescribeServicesInputOperationOutputAlias = crate::operation::DescribeServices;
 #[doc(hidden)]
-pub type DescribeServicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeServicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeServicesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServices`](crate::operation::DescribeServices)>
     #[allow(clippy::let_and_return)]
@@ -1437,7 +1351,7 @@ impl DescribeServicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeServices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1522,7 +1436,7 @@ impl DescribeServicesInput {
             "DescribeServices",
             "support",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1554,16 +1468,12 @@ pub mod describe_severity_levels_input {
         pub(crate) language: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-        /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-        /// passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.language = Some(input.into());
             self
         }
-        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-        /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-        /// passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.language = input;
             self
@@ -1584,7 +1494,7 @@ pub mod describe_severity_levels_input {
 #[doc(hidden)]
 pub type DescribeSeverityLevelsInputOperationOutputAlias = crate::operation::DescribeSeverityLevels;
 #[doc(hidden)]
-pub type DescribeSeverityLevelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSeverityLevelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSeverityLevelsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSeverityLevels`](crate::operation::DescribeSeverityLevels)>
     #[allow(clippy::let_and_return)]
@@ -1595,7 +1505,7 @@ impl DescribeSeverityLevelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSeverityLevels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1682,7 +1592,7 @@ impl DescribeSeverityLevelsInput {
             "DescribeSeverityLevels",
             "support",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1718,10 +1628,8 @@ pub mod describe_trusted_advisor_check_refresh_statuses_input {
         ///
         /// To override the contents of this collection use [`set_check_ids`](Self::set_check_ids).
         ///
-        /// <p>The IDs of the Trusted Advisor checks to get the status.</p>
-        /// <note>
-        /// <p>If you specify the check ID of a check that is automatically refreshed, you might
-        /// see an <code>InvalidParameterValue</code> error.</p>
+        /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
+        /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
         /// </note>
         pub fn check_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.check_ids.unwrap_or_default();
@@ -1729,10 +1637,8 @@ pub mod describe_trusted_advisor_check_refresh_statuses_input {
             self.check_ids = Some(v);
             self
         }
-        /// <p>The IDs of the Trusted Advisor checks to get the status.</p>
-        /// <note>
-        /// <p>If you specify the check ID of a check that is automatically refreshed, you might
-        /// see an <code>InvalidParameterValue</code> error.</p>
+        /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
+        /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
         /// </note>
         pub fn set_check_ids(
             mut self,
@@ -1761,7 +1667,7 @@ pub type DescribeTrustedAdvisorCheckRefreshStatusesInputOperationOutputAlias =
     crate::operation::DescribeTrustedAdvisorCheckRefreshStatuses;
 #[doc(hidden)]
 pub type DescribeTrustedAdvisorCheckRefreshStatusesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrustedAdvisorCheckRefreshStatuses`](crate::operation::DescribeTrustedAdvisorCheckRefreshStatuses)>
     #[allow(clippy::let_and_return)]
@@ -1772,7 +1678,7 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTrustedAdvisorCheckRefreshStatuses,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1858,7 +1764,7 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
             "DescribeTrustedAdvisorCheckRefreshStatuses",
             "support",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1902,16 +1808,12 @@ pub mod describe_trusted_advisor_check_result_input {
             self.check_id = input;
             self
         }
-        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-        /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-        /// passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.language = Some(input.into());
             self
         }
-        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-        /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-        /// passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.language = input;
             self
@@ -1934,7 +1836,8 @@ pub mod describe_trusted_advisor_check_result_input {
 pub type DescribeTrustedAdvisorCheckResultInputOperationOutputAlias =
     crate::operation::DescribeTrustedAdvisorCheckResult;
 #[doc(hidden)]
-pub type DescribeTrustedAdvisorCheckResultInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTrustedAdvisorCheckResultInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTrustedAdvisorCheckResultInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrustedAdvisorCheckResult`](crate::operation::DescribeTrustedAdvisorCheckResult)>
     #[allow(clippy::let_and_return)]
@@ -1945,7 +1848,7 @@ impl DescribeTrustedAdvisorCheckResultInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTrustedAdvisorCheckResult,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2031,7 +1934,7 @@ impl DescribeTrustedAdvisorCheckResultInput {
             "DescribeTrustedAdvisorCheckResult",
             "support",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2063,16 +1966,12 @@ pub mod describe_trusted_advisor_checks_input {
         pub(crate) language: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-        /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-        /// passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.language = Some(input.into());
             self
         }
-        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-        /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-        /// passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.language = input;
             self
@@ -2094,7 +1993,8 @@ pub mod describe_trusted_advisor_checks_input {
 pub type DescribeTrustedAdvisorChecksInputOperationOutputAlias =
     crate::operation::DescribeTrustedAdvisorChecks;
 #[doc(hidden)]
-pub type DescribeTrustedAdvisorChecksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTrustedAdvisorChecksInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTrustedAdvisorChecksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrustedAdvisorChecks`](crate::operation::DescribeTrustedAdvisorChecks)>
     #[allow(clippy::let_and_return)]
@@ -2105,7 +2005,7 @@ impl DescribeTrustedAdvisorChecksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTrustedAdvisorChecks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2191,7 +2091,7 @@ impl DescribeTrustedAdvisorChecksInput {
             "DescribeTrustedAdvisorChecks",
             "support",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2260,7 +2160,7 @@ pub type DescribeTrustedAdvisorCheckSummariesInputOperationOutputAlias =
     crate::operation::DescribeTrustedAdvisorCheckSummaries;
 #[doc(hidden)]
 pub type DescribeTrustedAdvisorCheckSummariesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTrustedAdvisorCheckSummariesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrustedAdvisorCheckSummaries`](crate::operation::DescribeTrustedAdvisorCheckSummaries)>
     #[allow(clippy::let_and_return)]
@@ -2271,7 +2171,7 @@ impl DescribeTrustedAdvisorCheckSummariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTrustedAdvisorCheckSummaries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2357,7 +2257,7 @@ impl DescribeTrustedAdvisorCheckSummariesInput {
             "DescribeTrustedAdvisorCheckSummaries",
             "support",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2389,19 +2289,15 @@ pub mod refresh_trusted_advisor_check_input {
         pub(crate) check_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the Trusted Advisor check to refresh.</p>     
-        /// <note>
-        /// <p>Specifying the check ID of a check that is automatically refreshed
-        /// causes an <code>InvalidParameterValue</code> error.</p>
+        /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
+        /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
         /// </note>
         pub fn check_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the Trusted Advisor check to refresh.</p>     
-        /// <note>
-        /// <p>Specifying the check ID of a check that is automatically refreshed
-        /// causes an <code>InvalidParameterValue</code> error.</p>
+        /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
+        /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
         /// </note>
         pub fn set_check_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_id = input;
@@ -2424,7 +2320,7 @@ pub mod refresh_trusted_advisor_check_input {
 pub type RefreshTrustedAdvisorCheckInputOperationOutputAlias =
     crate::operation::RefreshTrustedAdvisorCheck;
 #[doc(hidden)]
-pub type RefreshTrustedAdvisorCheckInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RefreshTrustedAdvisorCheckInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RefreshTrustedAdvisorCheckInput {
     /// Consumes the builder and constructs an Operation<[`RefreshTrustedAdvisorCheck`](crate::operation::RefreshTrustedAdvisorCheck)>
     #[allow(clippy::let_and_return)]
@@ -2435,7 +2331,7 @@ impl RefreshTrustedAdvisorCheckInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RefreshTrustedAdvisorCheck,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2521,7 +2417,7 @@ impl RefreshTrustedAdvisorCheckInput {
             "RefreshTrustedAdvisorCheck",
             "support",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2553,18 +2449,12 @@ pub mod resolve_case_input {
         pub(crate) case_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The support case ID requested or returned in the call. The case ID is an
-        /// alphanumeric string formatted as shown in this example:
-        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-        /// </p>
+        /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
         pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.case_id = Some(input.into());
             self
         }
-        /// <p>The support case ID requested or returned in the call. The case ID is an
-        /// alphanumeric string formatted as shown in this example:
-        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-        /// </p>
+        /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.case_id = input;
             self
@@ -2585,7 +2475,7 @@ pub mod resolve_case_input {
 #[doc(hidden)]
 pub type ResolveCaseInputOperationOutputAlias = crate::operation::ResolveCase;
 #[doc(hidden)]
-pub type ResolveCaseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ResolveCaseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResolveCaseInput {
     /// Consumes the builder and constructs an Operation<[`ResolveCase`](crate::operation::ResolveCase)>
     #[allow(clippy::let_and_return)]
@@ -2596,7 +2486,7 @@ impl ResolveCaseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResolveCase,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2680,7 +2570,7 @@ impl ResolveCaseInput {
             "ResolveCase",
             "support",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2707,17 +2597,11 @@ impl ResolveCaseInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResolveCaseInput {
-    /// <p>The support case ID requested or returned in the call. The case ID is an
-    /// alphanumeric string formatted as shown in this example:
-    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-    /// </p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub case_id: std::option::Option<std::string::String>,
 }
 impl ResolveCaseInput {
-    /// <p>The support case ID requested or returned in the call. The case ID is an
-    /// alphanumeric string formatted as shown in this example:
-    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-    /// </p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub fn case_id(&self) -> std::option::Option<&str> {
         self.case_id.as_deref()
     }
@@ -2734,18 +2618,14 @@ impl std::fmt::Debug for ResolveCaseInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RefreshTrustedAdvisorCheckInput {
-    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p>     
-    /// <note>
-    /// <p>Specifying the check ID of a check that is automatically refreshed
-    /// causes an <code>InvalidParameterValue</code> error.</p>
+    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
+    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
     /// </note>
     pub check_id: std::option::Option<std::string::String>,
 }
 impl RefreshTrustedAdvisorCheckInput {
-    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p>     
-    /// <note>
-    /// <p>Specifying the check ID of a check that is automatically refreshed
-    /// causes an <code>InvalidParameterValue</code> error.</p>
+    /// <p>The unique identifier for the Trusted Advisor check to refresh.</p> <note>
+    /// <p>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>
     /// </note>
     pub fn check_id(&self) -> std::option::Option<&str> {
         self.check_id.as_deref()
@@ -2784,15 +2664,11 @@ impl std::fmt::Debug for DescribeTrustedAdvisorCheckSummariesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrustedAdvisorChecksInput {
-    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-    /// passed explicitly for operations that take them.</p>
+    /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     pub language: std::option::Option<std::string::String>,
 }
 impl DescribeTrustedAdvisorChecksInput {
-    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-    /// passed explicitly for operations that take them.</p>
+    /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     pub fn language(&self) -> std::option::Option<&str> {
         self.language.as_deref()
     }
@@ -2811,9 +2687,7 @@ impl std::fmt::Debug for DescribeTrustedAdvisorChecksInput {
 pub struct DescribeTrustedAdvisorCheckResultInput {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     pub check_id: std::option::Option<std::string::String>,
-    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-    /// passed explicitly for operations that take them.</p>
+    /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     pub language: std::option::Option<std::string::String>,
 }
 impl DescribeTrustedAdvisorCheckResultInput {
@@ -2821,9 +2695,7 @@ impl DescribeTrustedAdvisorCheckResultInput {
     pub fn check_id(&self) -> std::option::Option<&str> {
         self.check_id.as_deref()
     }
-    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-    /// passed explicitly for operations that take them.</p>
+    /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     pub fn language(&self) -> std::option::Option<&str> {
         self.language.as_deref()
     }
@@ -2841,18 +2713,14 @@ impl std::fmt::Debug for DescribeTrustedAdvisorCheckResultInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrustedAdvisorCheckRefreshStatusesInput {
-    /// <p>The IDs of the Trusted Advisor checks to get the status.</p>
-    /// <note>
-    /// <p>If you specify the check ID of a check that is automatically refreshed, you might
-    /// see an <code>InvalidParameterValue</code> error.</p>
+    /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
+    /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
     /// </note>
     pub check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTrustedAdvisorCheckRefreshStatusesInput {
-    /// <p>The IDs of the Trusted Advisor checks to get the status.</p>
-    /// <note>
-    /// <p>If you specify the check ID of a check that is automatically refreshed, you might
-    /// see an <code>InvalidParameterValue</code> error.</p>
+    /// <p>The IDs of the Trusted Advisor checks to get the status.</p> <note>
+    /// <p>If you specify the check ID of a check that is automatically refreshed, you might see an <code>InvalidParameterValue</code> error.</p>
     /// </note>
     pub fn check_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.check_ids.as_deref()
@@ -2870,15 +2738,11 @@ impl std::fmt::Debug for DescribeTrustedAdvisorCheckRefreshStatusesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSeverityLevelsInput {
-    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-    /// passed explicitly for operations that take them.</p>
+    /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     pub language: std::option::Option<std::string::String>,
 }
 impl DescribeSeverityLevelsInput {
-    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-    /// passed explicitly for operations that take them.</p>
+    /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     pub fn language(&self) -> std::option::Option<&str> {
         self.language.as_deref()
     }
@@ -2895,21 +2759,17 @@ impl std::fmt::Debug for DescribeSeverityLevelsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServicesInput {
-    /// <p>A JSON-formatted list of service codes available for AWS services.</p>
+    /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
     pub service_code_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-    /// passed explicitly for operations that take them.</p>
+    /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     pub language: std::option::Option<std::string::String>,
 }
 impl DescribeServicesInput {
-    /// <p>A JSON-formatted list of service codes available for AWS services.</p>
+    /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
     pub fn service_code_list(&self) -> std::option::Option<&[std::string::String]> {
         self.service_code_list.as_deref()
     }
-    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-    /// passed explicitly for operations that take them.</p>
+    /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     pub fn language(&self) -> std::option::Option<&str> {
         self.language.as_deref()
     }
@@ -2927,16 +2787,11 @@ impl std::fmt::Debug for DescribeServicesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCommunicationsInput {
-    /// <p>The support case ID requested or returned in the call. The case ID is an
-    /// alphanumeric string formatted as shown in this example:
-    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-    /// </p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub case_id: std::option::Option<std::string::String>,
-    /// <p>The end date for a filtered date search on support case communications. Case
-    /// communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub before_time: std::option::Option<std::string::String>,
-    /// <p>The start date for a filtered date search on support case communications. Case
-    /// communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub after_time: std::option::Option<std::string::String>,
     /// <p>A resumption point for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -2944,20 +2799,15 @@ pub struct DescribeCommunicationsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeCommunicationsInput {
-    /// <p>The support case ID requested or returned in the call. The case ID is an
-    /// alphanumeric string formatted as shown in this example:
-    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-    /// </p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub fn case_id(&self) -> std::option::Option<&str> {
         self.case_id.as_deref()
     }
-    /// <p>The end date for a filtered date search on support case communications. Case
-    /// communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn before_time(&self) -> std::option::Option<&str> {
         self.before_time.as_deref()
     }
-    /// <p>The start date for a filtered date search on support case communications. Case
-    /// communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn after_time(&self) -> std::option::Option<&str> {
         self.after_time.as_deref()
     }
@@ -2986,54 +2836,43 @@ impl std::fmt::Debug for DescribeCommunicationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCasesInput {
-    /// <p>A list of ID numbers of the support cases you want returned. The maximum number of
-    /// cases is 100.</p>
+    /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
     pub case_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The ID displayed for a case in the AWS Support Center user interface.</p>
+    /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
     pub display_id: std::option::Option<std::string::String>,
-    /// <p>The start date for a filtered date search on support case communications. Case
-    /// communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub after_time: std::option::Option<std::string::String>,
-    /// <p>The end date for a filtered date search on support case communications. Case
-    /// communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub before_time: std::option::Option<std::string::String>,
-    /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code>
-    /// response. By default, resolved cases aren't included.</p>
+    /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
     pub include_resolved_cases: bool,
     /// <p>A resumption point for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return before paginating.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-    /// passed explicitly for operations that take them.</p>
+    /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     pub language: std::option::Option<std::string::String>,
-    /// <p>Specifies whether to include communications in the <code>DescribeCases</code>
-    /// response. By default, communications are included.</p>
+    /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
     pub include_communications: std::option::Option<bool>,
 }
 impl DescribeCasesInput {
-    /// <p>A list of ID numbers of the support cases you want returned. The maximum number of
-    /// cases is 100.</p>
+    /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
     pub fn case_id_list(&self) -> std::option::Option<&[std::string::String]> {
         self.case_id_list.as_deref()
     }
-    /// <p>The ID displayed for a case in the AWS Support Center user interface.</p>
+    /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
     pub fn display_id(&self) -> std::option::Option<&str> {
         self.display_id.as_deref()
     }
-    /// <p>The start date for a filtered date search on support case communications. Case
-    /// communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn after_time(&self) -> std::option::Option<&str> {
         self.after_time.as_deref()
     }
-    /// <p>The end date for a filtered date search on support case communications. Case
-    /// communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn before_time(&self) -> std::option::Option<&str> {
         self.before_time.as_deref()
     }
-    /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code>
-    /// response. By default, resolved cases aren't included.</p>
+    /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
     pub fn include_resolved_cases(&self) -> bool {
         self.include_resolved_cases
     }
@@ -3045,14 +2884,11 @@ impl DescribeCasesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-    /// passed explicitly for operations that take them.</p>
+    /// <p>The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     pub fn language(&self) -> std::option::Option<&str> {
         self.language.as_deref()
     }
-    /// <p>Specifies whether to include communications in the <code>DescribeCases</code>
-    /// response. By default, communications are included.</p>
+    /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
     pub fn include_communications(&self) -> std::option::Option<bool> {
         self.include_communications
     }
@@ -3077,11 +2913,11 @@ impl std::fmt::Debug for DescribeCasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAttachmentInput {
-    /// <p>The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.</p>
+    /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
     pub attachment_id: std::option::Option<std::string::String>,
 }
 impl DescribeAttachmentInput {
-    /// <p>The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.</p>
+    /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
     pub fn attachment_id(&self) -> std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
@@ -3098,97 +2934,65 @@ impl std::fmt::Debug for DescribeAttachmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCaseInput {
-    /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+    /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
     pub subject: std::option::Option<std::string::String>,
-    /// <p>The code for the AWS service. You can use the <a>DescribeServices</a>
-    /// operation to get the possible <code>serviceCode</code> values.</p>
+    /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
     pub service_code: std::option::Option<std::string::String>,
-    /// <p>A value that indicates the urgency of the case. This value determines the response
-    /// time according to your service level agreement with AWS Support. You can use the <a>DescribeSeverityLevels</a> operation to get the possible values for
-    /// <code>severityCode</code>. </p>
-    /// <p>For more information, see <a>SeverityLevel</a> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
-    /// Severity</a> in the <i>AWS Support User Guide</i>.</p>
-    /// <note>
-    /// <p>The availability of severity levels depends on the support plan for the AWS
-    /// account.</p>
+    /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
+    /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
+    /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
     /// </note>
     pub severity_code: std::option::Option<std::string::String>,
-    /// <p>The category of problem for the support case. You also use the <a>DescribeServices</a> operation to get the category code for a service. Each
-    /// AWS service defines its own set of category codes.</p>
+    /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
     pub category_code: std::option::Option<std::string::String>,
-    /// <p>The communication body text that describes the issue. This text appears in the
-    /// <b>Description</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+    /// <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
     pub communication_body: std::option::Option<std::string::String>,
-    /// <p>A list of email addresses that AWS Support copies on case correspondence. AWS Support
-    /// identifies the account that creates the case when you specify your AWS credentials in an
-    /// HTTP POST method or use the <a href="http://aws.amazon.com/tools/">AWS SDKs</a>.
-    /// </p>
+    /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
     pub cc_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The language in which AWS Support handles the case. You must specify the ISO 639-1
-    /// code for the <code>language</code> parameter if you want support in that language.
-    /// Currently, English ("en") and Japanese ("ja") are supported.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language. Currently, English ("en") and Japanese ("ja") are supported.</p>
     pub language: std::option::Option<std::string::String>,
-    /// <p>The type of issue for the case. You can specify <code>customer-service</code> or
-    /// <code>technical</code>. If you don't specify a value, the default is
-    /// <code>technical</code>.</p>
+    /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
     pub issue_type: std::option::Option<std::string::String>,
-    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the
-    /// <a>AddAttachmentsToSet</a> operation.</p>
+    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
     pub attachment_set_id: std::option::Option<std::string::String>,
 }
 impl CreateCaseInput {
-    /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+    /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
     pub fn subject(&self) -> std::option::Option<&str> {
         self.subject.as_deref()
     }
-    /// <p>The code for the AWS service. You can use the <a>DescribeServices</a>
-    /// operation to get the possible <code>serviceCode</code> values.</p>
+    /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
     pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
     }
-    /// <p>A value that indicates the urgency of the case. This value determines the response
-    /// time according to your service level agreement with AWS Support. You can use the <a>DescribeSeverityLevels</a> operation to get the possible values for
-    /// <code>severityCode</code>. </p>
-    /// <p>For more information, see <a>SeverityLevel</a> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
-    /// Severity</a> in the <i>AWS Support User Guide</i>.</p>
-    /// <note>
-    /// <p>The availability of severity levels depends on the support plan for the AWS
-    /// account.</p>
+    /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
+    /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
+    /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
     /// </note>
     pub fn severity_code(&self) -> std::option::Option<&str> {
         self.severity_code.as_deref()
     }
-    /// <p>The category of problem for the support case. You also use the <a>DescribeServices</a> operation to get the category code for a service. Each
-    /// AWS service defines its own set of category codes.</p>
+    /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
     pub fn category_code(&self) -> std::option::Option<&str> {
         self.category_code.as_deref()
     }
-    /// <p>The communication body text that describes the issue. This text appears in the
-    /// <b>Description</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+    /// <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
     pub fn communication_body(&self) -> std::option::Option<&str> {
         self.communication_body.as_deref()
     }
-    /// <p>A list of email addresses that AWS Support copies on case correspondence. AWS Support
-    /// identifies the account that creates the case when you specify your AWS credentials in an
-    /// HTTP POST method or use the <a href="http://aws.amazon.com/tools/">AWS SDKs</a>.
-    /// </p>
+    /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
     pub fn cc_email_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.cc_email_addresses.as_deref()
     }
-    /// <p>The language in which AWS Support handles the case. You must specify the ISO 639-1
-    /// code for the <code>language</code> parameter if you want support in that language.
-    /// Currently, English ("en") and Japanese ("ja") are supported.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language. Currently, English ("en") and Japanese ("ja") are supported.</p>
     pub fn language(&self) -> std::option::Option<&str> {
         self.language.as_deref()
     }
-    /// <p>The type of issue for the case. You can specify <code>customer-service</code> or
-    /// <code>technical</code>. If you don't specify a value, the default is
-    /// <code>technical</code>.</p>
+    /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
     pub fn issue_type(&self) -> std::option::Option<&str> {
         self.issue_type.as_deref()
     }
-    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the
-    /// <a>AddAttachmentsToSet</a> operation.</p>
+    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
     pub fn attachment_set_id(&self) -> std::option::Option<&str> {
         self.attachment_set_id.as_deref()
     }
@@ -3213,25 +3017,17 @@ impl std::fmt::Debug for CreateCaseInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddCommunicationToCaseInput {
-    /// <p>The support case ID requested or returned in the call. The case ID is an
-    /// alphanumeric string formatted as shown in this example:
-    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-    /// </p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub case_id: std::option::Option<std::string::String>,
     /// <p>The body of an email communication to add to the support case.</p>
     pub communication_body: std::option::Option<std::string::String>,
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
     pub cc_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The ID of a set of one or more attachments for the communication to add to the case.
-    /// Create the set by calling <a>AddAttachmentsToSet</a>
-    /// </p>
+    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
     pub attachment_set_id: std::option::Option<std::string::String>,
 }
 impl AddCommunicationToCaseInput {
-    /// <p>The support case ID requested or returned in the call. The case ID is an
-    /// alphanumeric string formatted as shown in this example:
-    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-    /// </p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub fn case_id(&self) -> std::option::Option<&str> {
         self.case_id.as_deref()
     }
@@ -3243,9 +3039,7 @@ impl AddCommunicationToCaseInput {
     pub fn cc_email_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.cc_email_addresses.as_deref()
     }
-    /// <p>The ID of a set of one or more attachments for the communication to add to the case.
-    /// Create the set by calling <a>AddAttachmentsToSet</a>
-    /// </p>
+    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
     pub fn attachment_set_id(&self) -> std::option::Option<&str> {
         self.attachment_set_id.as_deref()
     }
@@ -3265,35 +3059,19 @@ impl std::fmt::Debug for AddCommunicationToCaseInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddAttachmentsToSetInput {
-    /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a
-    /// new attachment set is created, and the ID of the set is returned in the response. If an
-    /// <code>attachmentSetId</code> is specified, the attachments are added to the
-    /// specified set, if it exists.</p>
+    /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
     pub attachment_set_id: std::option::Option<std::string::String>,
-    /// <p>One or more attachments to add to the set. You can add up to three attachments per
-    /// set. The size limit is 5 MB per attachment.</p>
-    /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify
-    /// the contents of the attachment file. In the previous request syntax, the value for
-    /// <code>data</code> appear as <code>blob</code>, which is represented as a
-    /// base64-encoded string. The value for <code>fileName</code> is the name of the
-    /// attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
+    /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
+    /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
     pub attachments: std::option::Option<std::vec::Vec<crate::model::Attachment>>,
 }
 impl AddAttachmentsToSetInput {
-    /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a
-    /// new attachment set is created, and the ID of the set is returned in the response. If an
-    /// <code>attachmentSetId</code> is specified, the attachments are added to the
-    /// specified set, if it exists.</p>
+    /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
     pub fn attachment_set_id(&self) -> std::option::Option<&str> {
         self.attachment_set_id.as_deref()
     }
-    /// <p>One or more attachments to add to the set. You can add up to three attachments per
-    /// set. The size limit is 5 MB per attachment.</p>
-    /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify
-    /// the contents of the attachment file. In the previous request syntax, the value for
-    /// <code>data</code> appear as <code>blob</code>, which is represented as a
-    /// base64-encoded string. The value for <code>fileName</code> is the name of the
-    /// attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
+    /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
+    /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
     pub fn attachments(&self) -> std::option::Option<&[crate::model::Attachment]> {
         self.attachments.as_deref()
     }

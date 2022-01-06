@@ -1686,6 +1686,29 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceRecordSets {
         }
     }
 }
+#[cfg(test)]
+#[allow(unreachable_code, unused_variables)]
+mod list_resource_record_sets_request_test {
+    /// This test validates that that hosted zone is correctly trimmed
+    /// Test ID: ListResourceRecordSetsTrimHostdZone
+    #[tokio::test]
+    async fn list_resource_record_sets_trim_hostd_zone_request() {
+        let config = crate::config::Config::builder().build();
+        let input = crate::input::ListResourceRecordSetsInput::builder()
+            .set_hosted_zone_id(Some("/hostedzone/IDOFMYHOSTEDZONE".to_string()))
+            .build()
+            .unwrap()
+            .make_operation(&config)
+            .await
+            .expect("operation failed to build");
+        let (http_request, parts) = input.into_request_response().0.into_parts();
+        assert_eq!(http_request.method(), "GET");
+        assert_eq!(
+            http_request.uri().path(),
+            "/2013-04-01/hostedzone/IDOFMYHOSTEDZONE/rrset"
+        );
+    }
+}
 
 /// Operation shape for `ListReusableDelegationSets`.
 ///

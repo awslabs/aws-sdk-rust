@@ -70,26 +70,14 @@ pub mod accept_page_input {
             self.accept_code = input;
             self
         }
-        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
-        /// <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by
-        /// replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode
-        /// validation causes Incident Manager to verify that the code entered by the user matches the
-        /// code sent by Incident Manager with the page.</p>
-        /// <p>Incident Manager can also <code>IGNORE</code>
-        /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
-        /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
+        /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
         pub fn accept_code_validation(mut self, input: crate::model::AcceptCodeValidation) -> Self {
             self.accept_code_validation = Some(input);
             self
         }
-        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
-        /// <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by
-        /// replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode
-        /// validation causes Incident Manager to verify that the code entered by the user matches the
-        /// code sent by Incident Manager with the page.</p>
-        /// <p>Incident Manager can also <code>IGNORE</code>
-        /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
-        /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
+        /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
         pub fn set_accept_code_validation(
             mut self,
             input: std::option::Option<crate::model::AcceptCodeValidation>,
@@ -118,7 +106,7 @@ pub mod accept_page_input {
 #[doc(hidden)]
 pub type AcceptPageInputOperationOutputAlias = crate::operation::AcceptPage;
 #[doc(hidden)]
-pub type AcceptPageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptPageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptPageInput {
     /// Consumes the builder and constructs an Operation<[`AcceptPage`](crate::operation::AcceptPage)>
     #[allow(clippy::let_and_return)]
@@ -129,7 +117,7 @@ impl AcceptPageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptPage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -213,7 +201,7 @@ impl AcceptPageInput {
             "AcceptPage",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -289,7 +277,7 @@ pub mod activate_contact_channel_input {
 #[doc(hidden)]
 pub type ActivateContactChannelInputOperationOutputAlias = crate::operation::ActivateContactChannel;
 #[doc(hidden)]
-pub type ActivateContactChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ActivateContactChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ActivateContactChannelInput {
     /// Consumes the builder and constructs an Operation<[`ActivateContactChannel`](crate::operation::ActivateContactChannel)>
     #[allow(clippy::let_and_return)]
@@ -300,7 +288,7 @@ impl ActivateContactChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ActivateContactChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -387,7 +375,7 @@ impl ActivateContactChannelInput {
             "ActivateContactChannel",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -424,48 +412,42 @@ pub mod create_contact_input {
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
-        /// be unique and identifiable. </p>
+        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias = Some(input.into());
             self
         }
-        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
-        /// be unique and identifiable. </p>
+        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
         }
-        /// <p>The full name of the contact or escalation plan.  </p>
+        /// <p>The full name of the contact or escalation plan. </p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
         }
-        /// <p>The full name of the contact or escalation plan.  </p>
+        /// <p>The full name of the contact or escalation plan. </p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
         }
-        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
-        /// <code>PERSONAL</code>.</p>
+        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
         pub fn r#type(mut self, input: crate::model::ContactType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
-        /// <code>PERSONAL</code>.</p>
+        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ContactType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
-        /// contact channels. An escalation plan uses stages that contact specified contacts. </p>
+        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
         pub fn plan(mut self, input: crate::model::Plan) -> Self {
             self.plan = Some(input);
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
-        /// contact channels. An escalation plan uses stages that contact specified contacts. </p>
+        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
         pub fn set_plan(mut self, input: std::option::Option<crate::model::Plan>) -> Self {
             self.plan = input;
             self
@@ -474,16 +456,14 @@ pub mod create_contact_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
-        /// replication set. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
-        /// replication set. </p>
+        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -491,14 +471,12 @@ pub mod create_contact_input {
             self.tags = input;
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -527,7 +505,7 @@ pub mod create_contact_input {
 #[doc(hidden)]
 pub type CreateContactInputOperationOutputAlias = crate::operation::CreateContact;
 #[doc(hidden)]
-pub type CreateContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateContactInput {
     /// Consumes the builder and constructs an Operation<[`CreateContact`](crate::operation::CreateContact)>
     #[allow(clippy::let_and_return)]
@@ -538,7 +516,7 @@ impl CreateContactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateContact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -625,7 +603,7 @@ impl CreateContactInput {
             "CreateContact",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -684,21 +662,9 @@ pub mod create_contact_channel_input {
         }
         /// <p>Incident Manager supports three types of contact channels:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VOICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EMAIL</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMS</code> </p> </li>
+        /// <li> <p> <code>VOICE</code> </p> </li>
+        /// <li> <p> <code>EMAIL</code> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
@@ -706,57 +672,29 @@ pub mod create_contact_channel_input {
         }
         /// <p>Incident Manager supports three types of contact channels:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VOICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EMAIL</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMS</code> </p> </li>
+        /// <li> <p> <code>VOICE</code> </p> </li>
+        /// <li> <p> <code>EMAIL</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format
-        /// is dependent on the type of the contact channel. The following are the expected
-        /// formats:</p>
+        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>SMS - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>VOICE - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>EMAIL - any standard email format</p>
-        /// </li>
+        /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>EMAIL - any standard email format</p> </li>
         /// </ul>
         pub fn delivery_address(mut self, input: crate::model::ContactChannelAddress) -> Self {
             self.delivery_address = Some(input);
             self
         }
-        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format
-        /// is dependent on the type of the contact channel. The following are the expected
-        /// formats:</p>
+        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>SMS - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>VOICE - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>EMAIL - any standard email format</p>
-        /// </li>
+        /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>EMAIL - any standard email format</p> </li>
         /// </ul>
         pub fn set_delivery_address(
             mut self,
@@ -765,26 +703,22 @@ pub mod create_contact_channel_input {
             self.delivery_address = input;
             self
         }
-        /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
-        /// Incident Manager can't engage your contact channel until it has been activated.</p>
+        /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
         pub fn defer_activation(mut self, input: bool) -> Self {
             self.defer_activation = Some(input);
             self
         }
-        /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
-        /// Incident Manager can't engage your contact channel until it has been activated.</p>
+        /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
         pub fn set_defer_activation(mut self, input: std::option::Option<bool>) -> Self {
             self.defer_activation = input;
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -813,7 +747,7 @@ pub mod create_contact_channel_input {
 #[doc(hidden)]
 pub type CreateContactChannelInputOperationOutputAlias = crate::operation::CreateContactChannel;
 #[doc(hidden)]
-pub type CreateContactChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateContactChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateContactChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateContactChannel`](crate::operation::CreateContactChannel)>
     #[allow(clippy::let_and_return)]
@@ -824,7 +758,7 @@ impl CreateContactChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateContactChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -914,7 +848,7 @@ impl CreateContactChannelInput {
             "CreateContactChannel",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -976,7 +910,7 @@ pub mod deactivate_contact_channel_input {
 pub type DeactivateContactChannelInputOperationOutputAlias =
     crate::operation::DeactivateContactChannel;
 #[doc(hidden)]
-pub type DeactivateContactChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeactivateContactChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeactivateContactChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeactivateContactChannel`](crate::operation::DeactivateContactChannel)>
     #[allow(clippy::let_and_return)]
@@ -987,7 +921,7 @@ impl DeactivateContactChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeactivateContactChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1074,7 +1008,7 @@ impl DeactivateContactChannelInput {
             "DeactivateContactChannel",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1132,7 +1066,7 @@ pub mod delete_contact_input {
 #[doc(hidden)]
 pub type DeleteContactInputOperationOutputAlias = crate::operation::DeleteContact;
 #[doc(hidden)]
-pub type DeleteContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContactInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContact`](crate::operation::DeleteContact)>
     #[allow(clippy::let_and_return)]
@@ -1143,7 +1077,7 @@ impl DeleteContactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteContact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1227,7 +1161,7 @@ impl DeleteContactInput {
             "DeleteContact",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1288,7 +1222,7 @@ pub mod delete_contact_channel_input {
 #[doc(hidden)]
 pub type DeleteContactChannelInputOperationOutputAlias = crate::operation::DeleteContactChannel;
 #[doc(hidden)]
-pub type DeleteContactChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteContactChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteContactChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteContactChannel`](crate::operation::DeleteContactChannel)>
     #[allow(clippy::let_and_return)]
@@ -1299,7 +1233,7 @@ impl DeleteContactChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteContactChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1386,7 +1320,7 @@ impl DeleteContactChannelInput {
             "DeleteContactChannel",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1447,7 +1381,7 @@ pub mod describe_engagement_input {
 #[doc(hidden)]
 pub type DescribeEngagementInputOperationOutputAlias = crate::operation::DescribeEngagement;
 #[doc(hidden)]
-pub type DescribeEngagementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEngagementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEngagementInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEngagement`](crate::operation::DescribeEngagement)>
     #[allow(clippy::let_and_return)]
@@ -1458,7 +1392,7 @@ impl DescribeEngagementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEngagement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1543,7 +1477,7 @@ impl DescribeEngagementInput {
             "DescribeEngagement",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1601,7 +1535,7 @@ pub mod describe_page_input {
 #[doc(hidden)]
 pub type DescribePageInputOperationOutputAlias = crate::operation::DescribePage;
 #[doc(hidden)]
-pub type DescribePageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePageInput {
     /// Consumes the builder and constructs an Operation<[`DescribePage`](crate::operation::DescribePage)>
     #[allow(clippy::let_and_return)]
@@ -1612,7 +1546,7 @@ impl DescribePageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1696,7 +1630,7 @@ impl DescribePageInput {
             "DescribePage",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1754,7 +1688,7 @@ pub mod get_contact_input {
 #[doc(hidden)]
 pub type GetContactInputOperationOutputAlias = crate::operation::GetContact;
 #[doc(hidden)]
-pub type GetContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContactInput {
     /// Consumes the builder and constructs an Operation<[`GetContact`](crate::operation::GetContact)>
     #[allow(clippy::let_and_return)]
@@ -1765,7 +1699,7 @@ impl GetContactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1849,7 +1783,7 @@ impl GetContactInput {
             "GetContact",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1910,7 +1844,7 @@ pub mod get_contact_channel_input {
 #[doc(hidden)]
 pub type GetContactChannelInputOperationOutputAlias = crate::operation::GetContactChannel;
 #[doc(hidden)]
-pub type GetContactChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetContactChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContactChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetContactChannel`](crate::operation::GetContactChannel)>
     #[allow(clippy::let_and_return)]
@@ -1921,7 +1855,7 @@ impl GetContactChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContactChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2006,7 +1940,7 @@ impl GetContactChannelInput {
             "GetContactChannel",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2064,7 +1998,7 @@ pub mod get_contact_policy_input {
 #[doc(hidden)]
 pub type GetContactPolicyInputOperationOutputAlias = crate::operation::GetContactPolicy;
 #[doc(hidden)]
-pub type GetContactPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetContactPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetContactPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetContactPolicy`](crate::operation::GetContactPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2075,7 +2009,7 @@ impl GetContactPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetContactPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2160,7 +2094,7 @@ impl GetContactPolicyInput {
             "GetContactPolicy",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2242,7 +2176,7 @@ pub mod list_contact_channels_input {
 #[doc(hidden)]
 pub type ListContactChannelsInputOperationOutputAlias = crate::operation::ListContactChannels;
 #[doc(hidden)]
-pub type ListContactChannelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListContactChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContactChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListContactChannels`](crate::operation::ListContactChannels)>
     #[allow(clippy::let_and_return)]
@@ -2253,7 +2187,7 @@ impl ListContactChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListContactChannels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2338,7 +2272,7 @@ impl ListContactChannelsInput {
             "ListContactChannels",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2403,14 +2337,12 @@ pub mod list_contacts_input {
             self.alias_prefix = input;
             self
         }
-        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
-        /// type <code>ESCALATION</code>.</p>
+        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
         pub fn r#type(mut self, input: crate::model::ContactType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
-        /// type <code>ESCALATION</code>.</p>
+        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ContactType>) -> Self {
             self.r#type = input;
             self
@@ -2434,7 +2366,7 @@ pub mod list_contacts_input {
 #[doc(hidden)]
 pub type ListContactsInputOperationOutputAlias = crate::operation::ListContacts;
 #[doc(hidden)]
-pub type ListContactsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListContactsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListContactsInput {
     /// Consumes the builder and constructs an Operation<[`ListContacts`](crate::operation::ListContacts)>
     #[allow(clippy::let_and_return)]
@@ -2445,7 +2377,7 @@ impl ListContactsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListContacts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2529,7 +2461,7 @@ impl ListContactsInput {
             "ListContacts",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2626,7 +2558,7 @@ pub mod list_engagements_input {
 #[doc(hidden)]
 pub type ListEngagementsInputOperationOutputAlias = crate::operation::ListEngagements;
 #[doc(hidden)]
-pub type ListEngagementsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListEngagementsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListEngagementsInput {
     /// Consumes the builder and constructs an Operation<[`ListEngagements`](crate::operation::ListEngagements)>
     #[allow(clippy::let_and_return)]
@@ -2637,7 +2569,7 @@ impl ListEngagementsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListEngagements,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2722,7 +2654,7 @@ impl ListEngagementsInput {
             "ListEngagements",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2804,7 +2736,7 @@ pub mod list_page_receipts_input {
 #[doc(hidden)]
 pub type ListPageReceiptsInputOperationOutputAlias = crate::operation::ListPageReceipts;
 #[doc(hidden)]
-pub type ListPageReceiptsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPageReceiptsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPageReceiptsInput {
     /// Consumes the builder and constructs an Operation<[`ListPageReceipts`](crate::operation::ListPageReceipts)>
     #[allow(clippy::let_and_return)]
@@ -2815,7 +2747,7 @@ impl ListPageReceiptsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPageReceipts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2900,7 +2832,7 @@ impl ListPageReceiptsInput {
             "ListPageReceipts",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2982,7 +2914,7 @@ pub mod list_pages_by_contact_input {
 #[doc(hidden)]
 pub type ListPagesByContactInputOperationOutputAlias = crate::operation::ListPagesByContact;
 #[doc(hidden)]
-pub type ListPagesByContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPagesByContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPagesByContactInput {
     /// Consumes the builder and constructs an Operation<[`ListPagesByContact`](crate::operation::ListPagesByContact)>
     #[allow(clippy::let_and_return)]
@@ -2993,7 +2925,7 @@ impl ListPagesByContactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPagesByContact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3078,7 +3010,7 @@ impl ListPagesByContactInput {
             "ListPagesByContact",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3135,14 +3067,12 @@ pub mod list_pages_by_engagement_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of engagements to contact channels to list per page of
-        /// results.</p>
+        /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of engagements to contact channels to list per page of
-        /// results.</p>
+        /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3165,7 +3095,7 @@ pub mod list_pages_by_engagement_input {
 #[doc(hidden)]
 pub type ListPagesByEngagementInputOperationOutputAlias = crate::operation::ListPagesByEngagement;
 #[doc(hidden)]
-pub type ListPagesByEngagementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPagesByEngagementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPagesByEngagementInput {
     /// Consumes the builder and constructs an Operation<[`ListPagesByEngagement`](crate::operation::ListPagesByEngagement)>
     #[allow(clippy::let_and_return)]
@@ -3176,7 +3106,7 @@ impl ListPagesByEngagementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPagesByEngagement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3263,7 +3193,7 @@ impl ListPagesByEngagementInput {
             "ListPagesByEngagement",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3321,7 +3251,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3332,7 +3262,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3419,7 +3349,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3489,7 +3419,7 @@ pub mod put_contact_policy_input {
 #[doc(hidden)]
 pub type PutContactPolicyInputOperationOutputAlias = crate::operation::PutContactPolicy;
 #[doc(hidden)]
-pub type PutContactPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutContactPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutContactPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutContactPolicy`](crate::operation::PutContactPolicy)>
     #[allow(clippy::let_and_return)]
@@ -3500,7 +3430,7 @@ impl PutContactPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutContactPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3585,7 +3515,7 @@ impl PutContactPolicyInput {
             "PutContactPolicy",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3646,7 +3576,7 @@ pub mod send_activation_code_input {
 #[doc(hidden)]
 pub type SendActivationCodeInputOperationOutputAlias = crate::operation::SendActivationCode;
 #[doc(hidden)]
-pub type SendActivationCodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendActivationCodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendActivationCodeInput {
     /// Consumes the builder and constructs an Operation<[`SendActivationCode`](crate::operation::SendActivationCode)>
     #[allow(clippy::let_and_return)]
@@ -3657,7 +3587,7 @@ impl SendActivationCodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendActivationCode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3742,7 +3672,7 @@ impl SendActivationCodeInput {
             "SendActivationCode",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3801,38 +3731,32 @@ pub mod start_engagement_input {
             self.sender = input;
             self
         }
-        /// <p>The secure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
         pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.subject = Some(input.into());
             self
         }
-        /// <p>The secure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
         }
-        /// <p>The secure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The secure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
         }
-        /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn public_subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_subject = Some(input.into());
             self
         }
-        /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn set_public_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3840,14 +3764,12 @@ pub mod start_engagement_input {
             self.public_subject = input;
             self
         }
-        /// <p>The insecure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn public_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_content = Some(input.into());
             self
         }
-        /// <p>The insecure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn set_public_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3865,14 +3787,12 @@ pub mod start_engagement_input {
             self.incident_id = input;
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3903,7 +3823,7 @@ pub mod start_engagement_input {
 #[doc(hidden)]
 pub type StartEngagementInputOperationOutputAlias = crate::operation::StartEngagement;
 #[doc(hidden)]
-pub type StartEngagementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartEngagementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartEngagementInput {
     /// Consumes the builder and constructs an Operation<[`StartEngagement`](crate::operation::StartEngagement)>
     #[allow(clippy::let_and_return)]
@@ -3914,7 +3834,7 @@ impl StartEngagementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartEngagement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4002,7 +3922,7 @@ impl StartEngagementInput {
             "StartEngagement",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4075,7 +3995,7 @@ pub mod stop_engagement_input {
 #[doc(hidden)]
 pub type StopEngagementInputOperationOutputAlias = crate::operation::StopEngagement;
 #[doc(hidden)]
-pub type StopEngagementInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopEngagementInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopEngagementInput {
     /// Consumes the builder and constructs an Operation<[`StopEngagement`](crate::operation::StopEngagement)>
     #[allow(clippy::let_and_return)]
@@ -4086,7 +4006,7 @@ impl StopEngagementInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopEngagement,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4171,7 +4091,7 @@ impl StopEngagementInput {
             "StopEngagement",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4219,9 +4139,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags that you are adding to the contact or escalation plan.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4250,7 +4170,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4261,7 +4181,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4345,7 +4265,7 @@ impl TagResourceInput {
             "TagResource",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4424,7 +4344,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4435,7 +4355,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4519,7 +4439,7 @@ impl UntagResourceInput {
             "UntagResource",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4573,14 +4493,12 @@ pub mod update_contact_input {
             self.display_name = input;
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
-        /// channels. An escalation plan uses these stages to contact specified contacts. </p>
+        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
         pub fn plan(mut self, input: crate::model::Plan) -> Self {
             self.plan = Some(input);
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
-        /// channels. An escalation plan uses these stages to contact specified contacts. </p>
+        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
         pub fn set_plan(mut self, input: std::option::Option<crate::model::Plan>) -> Self {
             self.plan = input;
             self
@@ -4603,7 +4521,7 @@ pub mod update_contact_input {
 #[doc(hidden)]
 pub type UpdateContactInputOperationOutputAlias = crate::operation::UpdateContact;
 #[doc(hidden)]
-pub type UpdateContactInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateContactInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateContactInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContact`](crate::operation::UpdateContact)>
     #[allow(clippy::let_and_return)]
@@ -4614,7 +4532,7 @@ impl UpdateContactInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateContact,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4698,7 +4616,7 @@ impl UpdateContactInput {
             "UpdateContact",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4786,7 +4704,7 @@ pub mod update_contact_channel_input {
 #[doc(hidden)]
 pub type UpdateContactChannelInputOperationOutputAlias = crate::operation::UpdateContactChannel;
 #[doc(hidden)]
-pub type UpdateContactChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateContactChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateContactChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateContactChannel`](crate::operation::UpdateContactChannel)>
     #[allow(clippy::let_and_return)]
@@ -4797,7 +4715,7 @@ impl UpdateContactChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateContactChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4884,7 +4802,7 @@ impl UpdateContactChannelInput {
             "UpdateContactChannel",
             "ssmcontacts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4950,8 +4868,7 @@ pub struct UpdateContactInput {
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The full name of the contact or escalation plan.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
-    /// channels. An escalation plan uses these stages to contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
     pub plan: std::option::Option<crate::model::Plan>,
 }
 impl UpdateContactInput {
@@ -4963,8 +4880,7 @@ impl UpdateContactInput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
-    /// channels. An escalation plan uses these stages to contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
     pub fn plan(&self) -> std::option::Option<&crate::model::Plan> {
         self.plan.as_ref()
     }
@@ -5071,22 +4987,17 @@ pub struct StartEngagementInput {
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The user that started the engagement.</p>
     pub sender: std::option::Option<std::string::String>,
-    /// <p>The secure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
     pub subject: std::option::Option<std::string::String>,
-    /// <p>The secure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
     pub content: std::option::Option<std::string::String>,
-    /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub public_subject: std::option::Option<std::string::String>,
-    /// <p>The insecure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub public_content: std::option::Option<std::string::String>,
     /// <p>The ARN of the incident that the engagement is part of.</p>
     pub incident_id: std::option::Option<std::string::String>,
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl StartEngagementInput {
@@ -5098,23 +5009,19 @@ impl StartEngagementInput {
     pub fn sender(&self) -> std::option::Option<&str> {
         self.sender.as_deref()
     }
-    /// <p>The secure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
     pub fn subject(&self) -> std::option::Option<&str> {
         self.subject.as_deref()
     }
-    /// <p>The secure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_subject(&self) -> std::option::Option<&str> {
         self.public_subject.as_deref()
     }
-    /// <p>The insecure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_content(&self) -> std::option::Option<&str> {
         self.public_content.as_deref()
     }
@@ -5122,8 +5029,7 @@ impl StartEngagementInput {
     pub fn incident_id(&self) -> std::option::Option<&str> {
         self.incident_id.as_deref()
     }
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -5221,8 +5127,7 @@ pub struct ListPagesByEngagementInput {
     pub engagement_id: std::option::Option<std::string::String>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of engagements to contact channels to list per page of
-    /// results.</p>
+    /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListPagesByEngagementInput {
@@ -5234,8 +5139,7 @@ impl ListPagesByEngagementInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of engagements to contact channels to list per page of
-    /// results.</p>
+    /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5372,8 +5276,7 @@ pub struct ListContactsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
     pub alias_prefix: std::option::Option<std::string::String>,
-    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
-    /// type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub r#type: std::option::Option<crate::model::ContactType>,
 }
 impl ListContactsInput {
@@ -5389,8 +5292,7 @@ impl ListContactsInput {
     pub fn alias_prefix(&self) -> std::option::Option<&str> {
         self.alias_prefix.as_deref()
     }
-    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
-    /// type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ContactType> {
         self.r#type.as_ref()
     }
@@ -5619,43 +5521,21 @@ pub struct CreateContactChannelInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Incident Manager supports three types of contact channels:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SMS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VOICE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EMAIL</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SMS</code> </p> </li>
+    /// <li> <p> <code>VOICE</code> </p> </li>
+    /// <li> <p> <code>EMAIL</code> </p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ChannelType>,
-    /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format
-    /// is dependent on the type of the contact channel. The following are the expected
-    /// formats:</p>
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>SMS - '+' followed by the country code and phone number</p>
-    /// </li>
-    /// <li>
-    /// <p>VOICE - '+' followed by the country code and phone number</p>
-    /// </li>
-    /// <li>
-    /// <p>EMAIL - any standard email format</p>
-    /// </li>
+    /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
     pub delivery_address: std::option::Option<crate::model::ContactChannelAddress>,
-    /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
-    /// Incident Manager can't engage your contact channel until it has been activated.</p>
+    /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
     pub defer_activation: std::option::Option<bool>,
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateContactChannelInput {
@@ -5669,49 +5549,27 @@ impl CreateContactChannelInput {
     }
     /// <p>Incident Manager supports three types of contact channels:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SMS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VOICE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EMAIL</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SMS</code> </p> </li>
+    /// <li> <p> <code>VOICE</code> </p> </li>
+    /// <li> <p> <code>EMAIL</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
         self.r#type.as_ref()
     }
-    /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format
-    /// is dependent on the type of the contact channel. The following are the expected
-    /// formats:</p>
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>SMS - '+' followed by the country code and phone number</p>
-    /// </li>
-    /// <li>
-    /// <p>VOICE - '+' followed by the country code and phone number</p>
-    /// </li>
-    /// <li>
-    /// <p>EMAIL - any standard email format</p>
-    /// </li>
+    /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
     pub fn delivery_address(&self) -> std::option::Option<&crate::model::ContactChannelAddress> {
         self.delivery_address.as_ref()
     }
-    /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
-    /// Incident Manager can't engage your contact channel until it has been activated.</p>
+    /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
     pub fn defer_activation(&self) -> std::option::Option<bool> {
         self.defer_activation
     }
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -5733,51 +5591,41 @@ impl std::fmt::Debug for CreateContactChannelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactInput {
-    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
-    /// be unique and identifiable. </p>
+    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
     pub alias: std::option::Option<std::string::String>,
-    /// <p>The full name of the contact or escalation plan.  </p>
+    /// <p>The full name of the contact or escalation plan. </p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
-    /// <code>PERSONAL</code>.</p>
+    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
     pub r#type: std::option::Option<crate::model::ContactType>,
-    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
-    /// contact channels. An escalation plan uses stages that contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
     pub plan: std::option::Option<crate::model::Plan>,
-    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
-    /// replication set. </p>
+    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateContactInput {
-    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
-    /// be unique and identifiable. </p>
+    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>The full name of the contact or escalation plan.  </p>
+    /// <p>The full name of the contact or escalation plan. </p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
-    /// <code>PERSONAL</code>.</p>
+    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ContactType> {
         self.r#type.as_ref()
     }
-    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
-    /// contact channels. An escalation plan uses stages that contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
     pub fn plan(&self) -> std::option::Option<&crate::model::Plan> {
         self.plan.as_ref()
     }
-    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
-    /// replication set. </p>
+    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -5837,14 +5685,8 @@ pub struct AcceptPageInput {
     pub note: std::option::Option<std::string::String>,
     /// <p>The accept code is a 6-digit code used to acknowledge the page.</p>
     pub accept_code: std::option::Option<std::string::String>,
-    /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
-    /// <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by
-    /// replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode
-    /// validation causes Incident Manager to verify that the code entered by the user matches the
-    /// code sent by Incident Manager with the page.</p>
-    /// <p>Incident Manager can also <code>IGNORE</code>
-    /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
-    /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+    /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
+    /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
     pub accept_code_validation: std::option::Option<crate::model::AcceptCodeValidation>,
 }
 impl AcceptPageInput {
@@ -5868,14 +5710,8 @@ impl AcceptPageInput {
     pub fn accept_code(&self) -> std::option::Option<&str> {
         self.accept_code.as_deref()
     }
-    /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
-    /// <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by
-    /// replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode
-    /// validation causes Incident Manager to verify that the code entered by the user matches the
-    /// code sent by Incident Manager with the page.</p>
-    /// <p>Incident Manager can also <code>IGNORE</code>
-    /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
-    /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+    /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
+    /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
     pub fn accept_code_validation(
         &self,
     ) -> std::option::Option<&crate::model::AcceptCodeValidation> {

@@ -132,6 +132,11 @@ impl ProfileSet {
         self.profiles.is_empty()
     }
 
+    /// Returns the names of the profiles in this profile set
+    pub fn profiles(&self) -> impl Iterator<Item = &str> {
+        self.profiles.keys().map(String::as_ref)
+    }
+
     fn parse(source: Source) -> Result<Self, ProfileParseError> {
         let mut base = ProfileSet::empty();
         base.selected_profile = source.profile;
@@ -235,19 +240,27 @@ mod test {
 
     #[test]
     fn empty_source_empty_profile() {
-        let source = Source {
-            config_file: File {
-                path: "~/.aws/config".to_string(),
-                contents: "".into(),
-            },
-            credentials_file: File {
-                path: "~/.aws/credentials".to_string(),
-                contents: "".into(),
-            },
-            profile: "default".into(),
-        };
+        let source = make_source(ParserInput {
+            config_file: Some("".to_string()),
+            credentials_file: Some("".to_string()),
+        });
+
         let profile_set = ProfileSet::parse(source).expect("empty profiles are valid");
         assert!(profile_set.is_empty());
+    }
+
+    #[test]
+    fn profile_names_are_exposed() {
+        let source = make_source(ParserInput {
+            config_file: Some("[profile foo]\n[profile bar]".to_string()),
+            credentials_file: Some("".to_string()),
+        });
+
+        let profile_set = ProfileSet::parse(source).expect("profiles loaded");
+
+        let mut profile_names: Vec<_> = profile_set.profiles().collect();
+        profile_names.sort();
+        assert_eq!(profile_names, vec!["bar", "foo"]);
     }
 
     /// Run all tests from the fuzzing corpus to validate coverage

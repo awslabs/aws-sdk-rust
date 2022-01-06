@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Elastic Transcoder
@@ -129,6 +129,7 @@ where
     ///
     /// See [`ListJobsByPipeline`](crate::client::fluent_builders::ListJobsByPipeline) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobsByPipeline::into_paginator).
     pub fn list_jobs_by_pipeline(&self) -> fluent_builders::ListJobsByPipeline<C, M, R> {
         fluent_builders::ListJobsByPipeline::new(self.handle.clone())
     }
@@ -136,6 +137,7 @@ where
     ///
     /// See [`ListJobsByStatus`](crate::client::fluent_builders::ListJobsByStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobsByStatus::into_paginator).
     pub fn list_jobs_by_status(&self) -> fluent_builders::ListJobsByStatus<C, M, R> {
         fluent_builders::ListJobsByStatus::new(self.handle.clone())
     }
@@ -143,6 +145,7 @@ where
     ///
     /// See [`ListPipelines`](crate::client::fluent_builders::ListPipelines) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelines::into_paginator).
     pub fn list_pipelines(&self) -> fluent_builders::ListPipelines<C, M, R> {
         fluent_builders::ListPipelines::new(self.handle.clone())
     }
@@ -150,6 +153,7 @@ where
     ///
     /// See [`ListPresets`](crate::client::fluent_builders::ListPresets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPresets::into_paginator).
     pub fn list_presets(&self) -> fluent_builders::ListPresets<C, M, R> {
         fluent_builders::ListPresets::new(self.handle.clone())
     }
@@ -215,13 +219,10 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CancelJob`.
     ///
-    /// <p>The CancelJob operation cancels an unfinished job.</p>
-    /// <note>
-    /// <p>You can only cancel a job that has a status of <code>Submitted</code>. To prevent a
-    /// pipeline from starting to process a job while you're getting the job identifier, use
-    /// <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</p>
+    /// <p>The CancelJob operation cancels an unfinished job.</p> <note>
+    /// <p>You can only cancel a job that has a status of <code>Submitted</code>. To prevent a pipeline from starting to process a job while you're getting the job identifier, use <code>UpdatePipelineStatus</code> to temporarily pause the pipeline.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -266,10 +267,10 @@ pub mod fluent_builders {
                 crate::input::CancelJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -278,15 +279,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the job that you want to cancel.</p>
-        /// <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of
-        /// <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        /// <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <code>ListJobsByStatus</code> API action.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the job that you want to cancel.</p>
-        /// <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of
-        /// <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
+        /// <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <code>ListJobsByStatus</code> API action.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -294,12 +293,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateJob`.
     ///
-    /// <p>When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified
-    /// plus information about the job that is created.</p>
-    /// <p>If you have specified more than one output for your jobs (for example, one output for the
-    /// Kindle Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to
-    /// list the jobs (as opposed to the AWS Console).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the job that is created.</p>
+    /// <p>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -344,10 +340,10 @@ pub mod fluent_builders {
                 crate::input::CreateJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -355,30 +351,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for
-        /// transcoding. The pipeline determines several settings, including the Amazon S3 bucket
-        /// from which Elastic Transcoder gets the files to transcode and the bucket into which
-        /// Elastic Transcoder puts the transcoded files.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(input.into());
             self
         }
-        /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for
-        /// transcoding. The pipeline determines several settings, including the Amazon S3 bucket
-        /// from which Elastic Transcoder gets the files to transcode and the bucket into which
-        /// Elastic Transcoder puts the transcoded files.</p>
+        /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_pipeline_id(input);
             self
         }
-        /// <p>A section of the request body that provides information about the file that is being
-        /// transcoded.</p>
-        pub fn input(mut self, inp: crate::model::JobInput) -> Self {
-            self.inner = self.inner.input(inp);
+        /// <p>A section of the request body that provides information about the file that is being transcoded.</p>
+        pub fn input(mut self, input: crate::model::JobInput) -> Self {
+            self.inner = self.inner.input(input);
             self
         }
-        /// <p>A section of the request body that provides information about the file that is being
-        /// transcoded.</p>
+        /// <p>A section of the request body that provides information about the file that is being transcoded.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::JobInput>) -> Self {
             self.inner = self.inner.set_input(input);
             self
@@ -387,14 +375,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
         ///
-        /// <p>A section of the request body that provides information about the files that are being
-        /// transcoded.</p>
-        pub fn inputs(mut self, inp: impl Into<crate::model::JobInput>) -> Self {
-            self.inner = self.inner.inputs(inp);
+        /// <p>A section of the request body that provides information about the files that are being transcoded.</p>
+        pub fn inputs(mut self, input: crate::model::JobInput) -> Self {
+            self.inner = self.inner.inputs(input);
             self
         }
-        /// <p>A section of the request body that provides information about the files that are being
-        /// transcoded.</p>
+        /// <p>A section of the request body that provides information about the files that are being transcoded.</p>
         pub fn set_inputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobInput>>,
@@ -402,16 +388,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inputs(input);
             self
         }
-        /// <p> A section of the request body that provides information about the transcoded (target)
-        /// file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the
-        /// <code>Output</code> syntax. </p>
-        pub fn output(mut self, inp: crate::model::CreateJobOutput) -> Self {
-            self.inner = self.inner.output(inp);
+        /// <p> A section of the request body that provides information about the transcoded (target) file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
+        pub fn output(mut self, input: crate::model::CreateJobOutput) -> Self {
+            self.inner = self.inner.output(input);
             self
         }
-        /// <p> A section of the request body that provides information about the transcoded (target)
-        /// file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the
-        /// <code>Output</code> syntax. </p>
+        /// <p> A section of the request body that provides information about the transcoded (target) file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
         pub fn set_output(
             mut self,
             input: std::option::Option<crate::model::CreateJobOutput>,
@@ -423,16 +405,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
-        /// <p> A section of the request body that provides information about the transcoded (target)
-        /// files. We recommend that you use the <code>Outputs</code> syntax instead of the
-        /// <code>Output</code> syntax. </p>
-        pub fn outputs(mut self, inp: impl Into<crate::model::CreateJobOutput>) -> Self {
-            self.inner = self.inner.outputs(inp);
+        /// <p> A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
+        pub fn outputs(mut self, input: crate::model::CreateJobOutput) -> Self {
+            self.inner = self.inner.outputs(input);
             self
         }
-        /// <p> A section of the request body that provides information about the transcoded (target)
-        /// files. We recommend that you use the <code>Outputs</code> syntax instead of the
-        /// <code>Output</code> syntax. </p>
+        /// <p> A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
         pub fn set_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreateJobOutput>>,
@@ -440,14 +418,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_outputs(input);
             self
         }
-        /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this
-        /// job creates, including output files, thumbnails, and playlists.</p>
-        pub fn output_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_key_prefix(inp);
+        /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists.</p>
+        pub fn output_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_key_prefix(input.into());
             self
         }
-        /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this
-        /// job creates, including output files, thumbnails, and playlists.</p>
+        /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists.</p>
         pub fn set_output_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -459,17 +435,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_playlists`](Self::set_playlists).
         ///
-        /// <p>If you specify a preset in <code>PresetId</code> for which the value of
-        /// <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains
-        /// information about the master playlists that you want Elastic Transcoder to create.</p>
+        /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create.</p>
         /// <p>The maximum number of master playlists in a job is 30.</p>
-        pub fn playlists(mut self, inp: impl Into<crate::model::CreateJobPlaylist>) -> Self {
-            self.inner = self.inner.playlists(inp);
+        pub fn playlists(mut self, input: crate::model::CreateJobPlaylist) -> Self {
+            self.inner = self.inner.playlists(input);
             self
         }
-        /// <p>If you specify a preset in <code>PresetId</code> for which the value of
-        /// <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains
-        /// information about the master playlists that you want Elastic Transcoder to create.</p>
+        /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create.</p>
         /// <p>The maximum number of master playlists in a job is 30.</p>
         pub fn set_playlists(
             mut self,
@@ -482,22 +454,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_user_metadata`](Self::set_user_metadata).
         ///
-        /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
-        /// <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job.
-        /// Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same
-        /// order in which you specify them.</p>
+        /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
         pub fn user_metadata(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.user_metadata(k, v);
+            self.inner = self.inner.user_metadata(k.into(), v.into());
             self
         }
-        /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
-        /// <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job.
-        /// Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same
-        /// order in which you specify them.</p>
+        /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
         pub fn set_user_metadata(
             mut self,
             input: std::option::Option<
@@ -511,7 +477,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePipeline`.
     ///
     /// <p>The CreatePipeline operation creates a pipeline with settings that you specify.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -556,10 +522,10 @@ pub mod fluent_builders {
                 crate::input::CreatePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -567,23 +533,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account,
-        /// but uniqueness is not enforced.</p>
+        /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
         /// <p>Constraints: Maximum 40 characters.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account,
-        /// but uniqueness is not enforced.</p>
+        /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
         /// <p>Constraints: Maximum 40 characters.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode.</p>
-        pub fn input_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_bucket(inp);
+        pub fn input_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_bucket(input.into());
             self
         }
         /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode.</p>
@@ -591,78 +555,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_bucket(input);
             self
         }
-        /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. (Use
-        /// this, or use ContentConfig:Bucket plus ThumbnailConfig:Bucket.)</p>
+        /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. (Use this, or use ContentConfig:Bucket plus ThumbnailConfig:Bucket.)</p>
         /// <p>Specify this value when all of the following are true:</p>
         /// <ul>
-        /// <li>
-        /// <p>You want to save transcoded files, thumbnails (if any), and playlists (if any)
-        /// together in one bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>You do not want to specify the users or groups who have access to the transcoded
-        /// files, thumbnails, and playlists.</p>
-        /// </li>
-        /// <li>
-        /// <p>You do not want to specify the permissions that Elastic Transcoder grants to the   
-        ///
-        /// files. </p>
-        /// <important>
-        /// <p>When Elastic Transcoder saves files in
-        /// <code>OutputBucket</code>, it grants full control over the files only to
-        /// the AWS account that owns the role that is specified by
-        /// <code>Role</code>.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>You want to associate the transcoded files and thumbnails with the Amazon S3
-        /// Standard storage class.</p>
-        /// </li>
+        /// <li> <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p> </li>
+        /// <li> <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p> </li>
+        /// <li> <p>You do not want to specify the permissions that Elastic Transcoder grants to the files. </p> <important>
+        /// <p>When Elastic Transcoder saves files in <code>OutputBucket</code>, it grants full control over the files only to the AWS account that owns the role that is specified by <code>Role</code>.</p>
+        /// </important> </li>
+        /// <li> <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p> </li>
         /// </ul>
-        ///
-        /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in
-        /// another bucket, specify which users can access the transcoded files or the permissions
-        /// the users have, or change the Amazon S3 storage class, omit <code>OutputBucket</code>
-        /// and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>
-        /// instead.</p>
-        pub fn output_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_bucket(inp);
+        /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit <code>OutputBucket</code> and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.</p>
+        pub fn output_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_bucket(input.into());
             self
         }
-        /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. (Use
-        /// this, or use ContentConfig:Bucket plus ThumbnailConfig:Bucket.)</p>
+        /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. (Use this, or use ContentConfig:Bucket plus ThumbnailConfig:Bucket.)</p>
         /// <p>Specify this value when all of the following are true:</p>
         /// <ul>
-        /// <li>
-        /// <p>You want to save transcoded files, thumbnails (if any), and playlists (if any)
-        /// together in one bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>You do not want to specify the users or groups who have access to the transcoded
-        /// files, thumbnails, and playlists.</p>
-        /// </li>
-        /// <li>
-        /// <p>You do not want to specify the permissions that Elastic Transcoder grants to the   
-        ///
-        /// files. </p>
-        /// <important>
-        /// <p>When Elastic Transcoder saves files in
-        /// <code>OutputBucket</code>, it grants full control over the files only to
-        /// the AWS account that owns the role that is specified by
-        /// <code>Role</code>.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>You want to associate the transcoded files and thumbnails with the Amazon S3
-        /// Standard storage class.</p>
-        /// </li>
+        /// <li> <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p> </li>
+        /// <li> <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p> </li>
+        /// <li> <p>You do not want to specify the permissions that Elastic Transcoder grants to the files. </p> <important>
+        /// <p>When Elastic Transcoder saves files in <code>OutputBucket</code>, it grants full control over the files only to the AWS account that owns the role that is specified by <code>Role</code>.</p>
+        /// </important> </li>
+        /// <li> <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p> </li>
         /// </ul>
-        ///
-        /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in
-        /// another bucket, specify which users can access the transcoded files or the permissions
-        /// the users have, or change the Amazon S3 storage class, omit <code>OutputBucket</code>
-        /// and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>
-        /// instead.</p>
+        /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit <code>OutputBucket</code> and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.</p>
         pub fn set_output_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -671,8 +589,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to create the pipeline.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to create the pipeline.</p>
@@ -681,23 +599,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
-        /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your
-        /// <code>Encryption:Mode</code>, you don't need to provide a key with
-        /// your job because a default key, known as an AWS-KMS key, is created for you automatically.
-        /// You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are
-        /// using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>,
-        /// or <code>aes-gcm</code>.</p>
-        pub fn aws_kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_kms_key_arn(inp);
+        /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
+        pub fn aws_kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_kms_key_arn(input.into());
             self
         }
         /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
-        /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your
-        /// <code>Encryption:Mode</code>, you don't need to provide a key with
-        /// your job because a default key, known as an AWS-KMS key, is created for you automatically.
-        /// You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are
-        /// using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>,
-        /// or <code>aes-gcm</code>.</p>
+        /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
         pub fn set_aws_kms_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -705,71 +613,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_kms_key_arn(input);
             self
         }
-        /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p>
-        /// <important>
+        /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>
         /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
         /// </important>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to
-        /// notify when Elastic Transcoder has started to process a job in this pipeline. This is the ARN that
-        /// Amazon SNS returned when you created the topic. For more information, see Create a
-        /// Topic in the Amazon Simple Notification Service Developer Guide.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when
-        /// Elastic Transcoder has finished processing a job in this pipeline. This is the ARN that Amazon SNS
-        /// returned when you created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
-        /// encounters a warning condition while processing a job in this pipeline. This is the
-        /// ARN that Amazon SNS returned when you created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
-        /// encounters an error condition while processing a job in this pipeline. This is the
-        /// ARN that Amazon SNS returned when you created the topic.</p>
-        /// </li>
+        /// <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic. For more information, see Create a Topic in the Amazon Simple Notification Service Developer Guide.</p> </li>
+        /// <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition while processing a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition while processing a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
         /// </ul>
-        pub fn notifications(mut self, inp: crate::model::Notifications) -> Self {
-            self.inner = self.inner.notifications(inp);
+        pub fn notifications(mut self, input: crate::model::Notifications) -> Self {
+            self.inner = self.inner.notifications(input);
             self
         }
-        /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p>
-        /// <important>
+        /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>
         /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
         /// </important>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to
-        /// notify when Elastic Transcoder has started to process a job in this pipeline. This is the ARN that
-        /// Amazon SNS returned when you created the topic. For more information, see Create a
-        /// Topic in the Amazon Simple Notification Service Developer Guide.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when
-        /// Elastic Transcoder has finished processing a job in this pipeline. This is the ARN that Amazon SNS
-        /// returned when you created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
-        /// encounters a warning condition while processing a job in this pipeline. This is the
-        /// ARN that Amazon SNS returned when you created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
-        /// encounters an error condition while processing a job in this pipeline. This is the
-        /// ARN that Amazon SNS returned when you created the topic.</p>
-        /// </li>
+        /// <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic. For more information, see Create a Topic in the Amazon Simple Notification Service Developer Guide.</p> </li>
+        /// <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition while processing a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition while processing a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
         /// </ul>
         pub fn set_notifications(
             mut self,
@@ -778,207 +642,57 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notifications(input);
             self
         }
-        /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3
-        /// bucket in which you want Elastic Transcoder to save transcoded files and playlists:
-        /// which bucket to use, which users you want to have access to the files, the type of
-        /// access you want users to have, and the storage class that you want to assign to the
-        /// files.</p>
-        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for
-        /// <code>ThumbnailConfig</code>.</p>
-        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>,
-        /// omit the <code>OutputBucket</code> object.</p>
+        /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists: which bucket to use, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>
+        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code>.</p>
+        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>, omit the <code>OutputBucket</code> object.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save
-        /// transcoded files and playlists.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Permissions</b> (Optional): The Permissions object specifies which users you want
-        /// to have access to transcoded files and the type of access you want them to have. You
-        /// can grant permissions to a maximum of 30 users and/or predefined Amazon S3
-        /// groups.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Grantee Type</b>: Specify the type of value that appears in the
-        /// <code>Grantee</code> object: </p>
+        /// <li> <p> <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists.</p> </li>
+        /// <li> <p> <b>Permissions</b> (Optional): The Permissions object specifies which users you want to have access to transcoded files and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p> </li>
+        /// <li> <p> <b>Grantee Type</b>: Specify the type of value that appears in the <code>Grantee</code> object: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Canonical</b>: The value in the <code>Grantee</code> object is either the
-        /// canonical user ID for an AWS account or an origin access identity for an
-        /// Amazon CloudFront distribution. For more information about canonical user
-        /// IDs, see Access Control List (ACL) Overview in the Amazon Simple Storage
-        /// Service Developer Guide. For more information about using CloudFront origin
-        /// access identities to require that users use CloudFront URLs instead of
-        /// Amazon S3 URLs, see Using an Origin Access Identity to Restrict Access to
-        /// Your Amazon S3 Content.</p>
-        /// <important>
-        /// <p>A canonical user ID is not the same as an
-        /// AWS account number.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Email</b>: The value in the <code>Grantee</code> object is the registered
-        /// email address of an AWS account.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Group</b>: The value in the <code>Grantee</code> object is one of the
-        /// following predefined Amazon S3 groups: <code>AllUsers</code>,
-        /// <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Grantee</b>: The AWS user or group that you want to have access to transcoded
-        /// files and playlists. To identify the user or group, you can specify the canonical
-        /// user ID for an AWS account, an origin access identity for a CloudFront distribution,
-        /// the registered email address of an AWS account, or a predefined Amazon S3 group </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Access</b>: The permission that you want to give to the AWS user that you
-        /// specified in <code>Grantee</code>. Permissions are granted on the files that Elastic
-        /// Transcoder adds to the bucket, including playlists and video files. Valid values
-        /// include: </p>
+        /// <li> <p> <b>Canonical</b>: The value in the <code>Grantee</code> object is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution. For more information about canonical user IDs, see Access Control List (ACL) Overview in the Amazon Simple Storage Service Developer Guide. For more information about using CloudFront origin access identities to require that users use CloudFront URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content.</p> <important>
+        /// <p>A canonical user ID is not the same as an AWS account number.</p>
+        /// </important> </li>
+        /// <li> <p> <b>Email</b>: The value in the <code>Grantee</code> object is the registered email address of an AWS account.</p> </li>
+        /// <li> <p> <b>Group</b>: The value in the <code>Grantee</code> object is one of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Grantee</b>: The AWS user or group that you want to have access to transcoded files and playlists. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group </p> </li>
+        /// <li> <p> <b>Access</b>: The permission that you want to give to the AWS user that you specified in <code>Grantee</code>. Permissions are granted on the files that Elastic Transcoder adds to the bucket, including playlists and video files. Valid values include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>READ</code>: The grantee can read the objects and metadata for objects
-        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>READ_ACP</code>: The grantee can read the object ACL for objects that
-        /// Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WRITE_ACP</code>: The grantee can write the ACL for the objects that
-        /// Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
-        /// <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
-        /// objects that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>READ</code>: The grantee can read the objects and metadata for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>READ_ACP</code>: The grantee can read the object ACL for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>WRITE_ACP</code>: The grantee can write the ACL for the objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>, <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p> </li>
         /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or
-        /// <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
-        /// the video files and playlists that it stores in your Amazon S3 bucket.</p>
-        /// </li>
-        /// </ul>
-        pub fn content_config(mut self, inp: crate::model::PipelineOutputConfig) -> Self {
-            self.inner = self.inner.content_config(inp);
+        pub fn content_config(mut self, input: crate::model::PipelineOutputConfig) -> Self {
+            self.inner = self.inner.content_config(input);
             self
         }
-        /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3
-        /// bucket in which you want Elastic Transcoder to save transcoded files and playlists:
-        /// which bucket to use, which users you want to have access to the files, the type of
-        /// access you want users to have, and the storage class that you want to assign to the
-        /// files.</p>
-        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for
-        /// <code>ThumbnailConfig</code>.</p>
-        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>,
-        /// omit the <code>OutputBucket</code> object.</p>
+        /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists: which bucket to use, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>
+        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code>.</p>
+        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>, omit the <code>OutputBucket</code> object.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save
-        /// transcoded files and playlists.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Permissions</b> (Optional): The Permissions object specifies which users you want
-        /// to have access to transcoded files and the type of access you want them to have. You
-        /// can grant permissions to a maximum of 30 users and/or predefined Amazon S3
-        /// groups.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Grantee Type</b>: Specify the type of value that appears in the
-        /// <code>Grantee</code> object: </p>
+        /// <li> <p> <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists.</p> </li>
+        /// <li> <p> <b>Permissions</b> (Optional): The Permissions object specifies which users you want to have access to transcoded files and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p> </li>
+        /// <li> <p> <b>Grantee Type</b>: Specify the type of value that appears in the <code>Grantee</code> object: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Canonical</b>: The value in the <code>Grantee</code> object is either the
-        /// canonical user ID for an AWS account or an origin access identity for an
-        /// Amazon CloudFront distribution. For more information about canonical user
-        /// IDs, see Access Control List (ACL) Overview in the Amazon Simple Storage
-        /// Service Developer Guide. For more information about using CloudFront origin
-        /// access identities to require that users use CloudFront URLs instead of
-        /// Amazon S3 URLs, see Using an Origin Access Identity to Restrict Access to
-        /// Your Amazon S3 Content.</p>
-        /// <important>
-        /// <p>A canonical user ID is not the same as an
-        /// AWS account number.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Email</b>: The value in the <code>Grantee</code> object is the registered
-        /// email address of an AWS account.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Group</b>: The value in the <code>Grantee</code> object is one of the
-        /// following predefined Amazon S3 groups: <code>AllUsers</code>,
-        /// <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Grantee</b>: The AWS user or group that you want to have access to transcoded
-        /// files and playlists. To identify the user or group, you can specify the canonical
-        /// user ID for an AWS account, an origin access identity for a CloudFront distribution,
-        /// the registered email address of an AWS account, or a predefined Amazon S3 group </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Access</b>: The permission that you want to give to the AWS user that you
-        /// specified in <code>Grantee</code>. Permissions are granted on the files that Elastic
-        /// Transcoder adds to the bucket, including playlists and video files. Valid values
-        /// include: </p>
+        /// <li> <p> <b>Canonical</b>: The value in the <code>Grantee</code> object is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution. For more information about canonical user IDs, see Access Control List (ACL) Overview in the Amazon Simple Storage Service Developer Guide. For more information about using CloudFront origin access identities to require that users use CloudFront URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content.</p> <important>
+        /// <p>A canonical user ID is not the same as an AWS account number.</p>
+        /// </important> </li>
+        /// <li> <p> <b>Email</b>: The value in the <code>Grantee</code> object is the registered email address of an AWS account.</p> </li>
+        /// <li> <p> <b>Group</b>: The value in the <code>Grantee</code> object is one of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Grantee</b>: The AWS user or group that you want to have access to transcoded files and playlists. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group </p> </li>
+        /// <li> <p> <b>Access</b>: The permission that you want to give to the AWS user that you specified in <code>Grantee</code>. Permissions are granted on the files that Elastic Transcoder adds to the bucket, including playlists and video files. Valid values include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>READ</code>: The grantee can read the objects and metadata for objects
-        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>READ_ACP</code>: The grantee can read the object ACL for objects that
-        /// Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WRITE_ACP</code>: The grantee can write the ACL for the objects that
-        /// Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
-        /// <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
-        /// objects that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or
-        /// <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
-        /// the video files and playlists that it stores in your Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>READ</code>: The grantee can read the objects and metadata for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>READ_ACP</code>: The grantee can read the object ACL for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>WRITE_ACP</code>: The grantee can write the ACL for the objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>, <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn set_content_config(
             mut self,
@@ -987,191 +701,57 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_config(input);
             self
         }
-        /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3
-        /// bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have
-        /// access to the files, the type of access you want users to have, and the storage class
-        /// that you want to assign to the files.</p>
-        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for
-        /// <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>
-        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>,
-        /// omit the <code>OutputBucket</code> object.</p>
+        /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>
+        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>
+        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>, omit the <code>OutputBucket</code> object.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save
-        /// thumbnail files.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Permissions</b> (Optional): The <code>Permissions</code> object specifies which
-        /// users and/or predefined Amazon S3 groups you want to have access to thumbnail files,
-        /// and the type of access you want them to have. You can grant permissions to a maximum
-        /// of 30 users and/or predefined Amazon S3 groups.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>GranteeType</b>: Specify the type of value that appears in the Grantee object: </p>
+        /// <li> <p> <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files.</p> </li>
+        /// <li> <p> <b>Permissions</b> (Optional): The <code>Permissions</code> object specifies which users and/or predefined Amazon S3 groups you want to have access to thumbnail files, and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p> </li>
+        /// <li> <p> <b>GranteeType</b>: Specify the type of value that appears in the Grantee object: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Canonical</b>: The value in the <code>Grantee</code> object is either the
-        /// canonical user ID for an AWS account or an origin access identity for an
-        /// Amazon CloudFront distribution.</p>
-        /// <important>
-        /// <p>A canonical user ID is not the
-        /// same as an AWS account number.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Email</b>: The value in the <code>Grantee</code> object is the registered
-        /// email address of an AWS account. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Group</b>: The value in the <code>Grantee</code> object is one of the
-        /// following predefined Amazon S3 groups: <code>AllUsers</code>,
-        /// <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Grantee</b>: The AWS user or group that you want to have access to thumbnail
-        /// files. To identify the user or group, you can specify the canonical user ID for an
-        /// AWS account, an origin access identity for a CloudFront distribution, the registered
-        /// email address of an AWS account, or a predefined Amazon S3 group. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Access</b>: The permission that you want to give to the AWS user that you
-        /// specified in <code>Grantee</code>. Permissions are granted on the thumbnail files
-        /// that Elastic Transcoder adds to the bucket. Valid values include: </p>
+        /// <li> <p> <b>Canonical</b>: The value in the <code>Grantee</code> object is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution.</p> <important>
+        /// <p>A canonical user ID is not the same as an AWS account number.</p>
+        /// </important> </li>
+        /// <li> <p> <b>Email</b>: The value in the <code>Grantee</code> object is the registered email address of an AWS account. </p> </li>
+        /// <li> <p> <b>Group</b>: The value in the <code>Grantee</code> object is one of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Grantee</b>: The AWS user or group that you want to have access to thumbnail files. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group. </p> </li>
+        /// <li> <p> <b>Access</b>: The permission that you want to give to the AWS user that you specified in <code>Grantee</code>. Permissions are granted on the thumbnail files that Elastic Transcoder adds to the bucket. Valid values include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>READ</code>: The grantee can read the thumbnails and metadata for
-        /// objects that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>READ_ACP</code>: The grantee can read the object ACL for thumbnails
-        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails
-        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
-        /// <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
-        /// thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>READ</code>: The grantee can read the thumbnails and metadata for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>READ_ACP</code>: The grantee can read the object ACL for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>, <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.</p> </li>
         /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or
-        /// <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
-        /// the thumbnails that it stores in your Amazon S3 bucket.</p>
-        /// </li>
-        /// </ul>
-        pub fn thumbnail_config(mut self, inp: crate::model::PipelineOutputConfig) -> Self {
-            self.inner = self.inner.thumbnail_config(inp);
+        pub fn thumbnail_config(mut self, input: crate::model::PipelineOutputConfig) -> Self {
+            self.inner = self.inner.thumbnail_config(input);
             self
         }
-        /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3
-        /// bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have
-        /// access to the files, the type of access you want users to have, and the storage class
-        /// that you want to assign to the files.</p>
-        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for
-        /// <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>
-        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>,
-        /// omit the <code>OutputBucket</code> object.</p>
+        /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>
+        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>
+        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>, omit the <code>OutputBucket</code> object.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save
-        /// thumbnail files.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Permissions</b> (Optional): The <code>Permissions</code> object specifies which
-        /// users and/or predefined Amazon S3 groups you want to have access to thumbnail files,
-        /// and the type of access you want them to have. You can grant permissions to a maximum
-        /// of 30 users and/or predefined Amazon S3 groups.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>GranteeType</b>: Specify the type of value that appears in the Grantee object: </p>
+        /// <li> <p> <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files.</p> </li>
+        /// <li> <p> <b>Permissions</b> (Optional): The <code>Permissions</code> object specifies which users and/or predefined Amazon S3 groups you want to have access to thumbnail files, and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p> </li>
+        /// <li> <p> <b>GranteeType</b>: Specify the type of value that appears in the Grantee object: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Canonical</b>: The value in the <code>Grantee</code> object is either the
-        /// canonical user ID for an AWS account or an origin access identity for an
-        /// Amazon CloudFront distribution.</p>
-        /// <important>
-        /// <p>A canonical user ID is not the
-        /// same as an AWS account number.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Email</b>: The value in the <code>Grantee</code> object is the registered
-        /// email address of an AWS account. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Group</b>: The value in the <code>Grantee</code> object is one of the
-        /// following predefined Amazon S3 groups: <code>AllUsers</code>,
-        /// <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Grantee</b>: The AWS user or group that you want to have access to thumbnail
-        /// files. To identify the user or group, you can specify the canonical user ID for an
-        /// AWS account, an origin access identity for a CloudFront distribution, the registered
-        /// email address of an AWS account, or a predefined Amazon S3 group. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Access</b>: The permission that you want to give to the AWS user that you
-        /// specified in <code>Grantee</code>. Permissions are granted on the thumbnail files
-        /// that Elastic Transcoder adds to the bucket. Valid values include: </p>
+        /// <li> <p> <b>Canonical</b>: The value in the <code>Grantee</code> object is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution.</p> <important>
+        /// <p>A canonical user ID is not the same as an AWS account number.</p>
+        /// </important> </li>
+        /// <li> <p> <b>Email</b>: The value in the <code>Grantee</code> object is the registered email address of an AWS account. </p> </li>
+        /// <li> <p> <b>Group</b>: The value in the <code>Grantee</code> object is one of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Grantee</b>: The AWS user or group that you want to have access to thumbnail files. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group. </p> </li>
+        /// <li> <p> <b>Access</b>: The permission that you want to give to the AWS user that you specified in <code>Grantee</code>. Permissions are granted on the thumbnail files that Elastic Transcoder adds to the bucket. Valid values include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>READ</code>: The grantee can read the thumbnails and metadata for
-        /// objects that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>READ_ACP</code>: The grantee can read the object ACL for thumbnails
-        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails
-        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
-        /// <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
-        /// thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or
-        /// <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
-        /// the thumbnails that it stores in your Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>READ</code>: The grantee can read the thumbnails and metadata for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>READ_ACP</code>: The grantee can read the object ACL for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>, <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn set_thumbnail_config(
             mut self,
@@ -1183,21 +763,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePreset`.
     ///
-    /// <p>The CreatePreset operation creates a preset with settings that you specify.</p>
-    /// <important>
-    /// <p>Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder requirements
-    /// and to determine whether they comply with H.264 standards. If your settings are not
-    /// valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (<code>ValidationException</code>) and
-    /// does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly
-    /// compliant with the H.264 standard, Elastic Transcoder creates the preset and returns a warning message
-    /// in the response. This helps you determine whether your settings comply with the H.264
-    /// standard while giving you greater flexibility with respect to the video that Elastic Transcoder
-    /// produces.</p>
+    /// <p>The CreatePreset operation creates a preset with settings that you specify.</p> <important>
+    /// <p>Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264 standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response (<code>ValidationException</code>) and does not create the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant with the H.264 standard, Elastic Transcoder creates the preset and returns a warning message in the response. This helps you determine whether your settings comply with the H.264 standard while giving you greater flexibility with respect to the video that Elastic Transcoder produces.</p>
     /// </important>
-    /// <p>Elastic Transcoder uses the H.264 video-compression format. For more information, see the International
-    /// Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding
-    /// for generic audiovisual services</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Elastic Transcoder uses the H.264 video-compression format. For more information, see the International Telecommunication Union publication <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePreset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1242,10 +812,10 @@ pub mod fluent_builders {
                 crate::input::CreatePresetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1254,8 +824,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
@@ -1264,8 +834,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the preset.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the preset.</p>
@@ -1273,27 +843,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The container type for the output file. Valid values include <code>flac</code>,
-        /// <code>flv</code>, <code>fmp4</code>,
-        /// <code>gif</code>, <code>mp3</code>,
-        /// <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>,
-        /// <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
-        pub fn container(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.container(inp);
+        /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
+        pub fn container(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.container(input.into());
             self
         }
-        /// <p>The container type for the output file. Valid values include <code>flac</code>,
-        /// <code>flv</code>, <code>fmp4</code>,
-        /// <code>gif</code>, <code>mp3</code>,
-        /// <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>,
-        /// <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
+        /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
         pub fn set_container(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_container(input);
             self
         }
         /// <p>A section of the request body that specifies the video parameters.</p>
-        pub fn video(mut self, inp: crate::model::VideoParameters) -> Self {
-            self.inner = self.inner.video(inp);
+        pub fn video(mut self, input: crate::model::VideoParameters) -> Self {
+            self.inner = self.inner.video(input);
             self
         }
         /// <p>A section of the request body that specifies the video parameters.</p>
@@ -1305,8 +867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A section of the request body that specifies the audio parameters.</p>
-        pub fn audio(mut self, inp: crate::model::AudioParameters) -> Self {
-            self.inner = self.inner.audio(inp);
+        pub fn audio(mut self, input: crate::model::AudioParameters) -> Self {
+            self.inner = self.inner.audio(input);
             self
         }
         /// <p>A section of the request body that specifies the audio parameters.</p>
@@ -1318,8 +880,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
-        pub fn thumbnails(mut self, inp: crate::model::Thumbnails) -> Self {
-            self.inner = self.inner.thumbnails(inp);
+        pub fn thumbnails(mut self, input: crate::model::Thumbnails) -> Self {
+            self.inner = self.inner.thumbnails(input);
             self
         }
         /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
@@ -1334,10 +896,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePipeline`.
     ///
     /// <p>The DeletePipeline operation removes a pipeline.</p>
-    /// <p> You can only delete a pipeline that has never been used or that is not currently in use
-    /// (doesn't contain any active jobs). If the pipeline is currently in use,
-    /// <code>DeletePipeline</code> returns an error. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> You can only delete a pipeline that has never been used or that is not currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <code>DeletePipeline</code> returns an error. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1382,10 +942,10 @@ pub mod fluent_builders {
                 crate::input::DeletePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1394,8 +954,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the pipeline that you want to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the pipeline that you want to delete.</p>
@@ -1406,11 +966,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePreset`.
     ///
-    /// <p>The DeletePreset operation removes a preset that you've added in an AWS region.</p>
-    /// <note>
+    /// <p>The DeletePreset operation removes a preset that you've added in an AWS region.</p> <note>
     /// <p>You can't delete the default presets that are included with Elastic Transcoder.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePreset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1455,10 +1014,10 @@ pub mod fluent_builders {
                 crate::input::DeletePresetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1467,8 +1026,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the preset for which you want to get detailed information.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the preset for which you want to get detailed information.</p>
@@ -1480,9 +1039,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJobsByPipeline`.
     ///
     /// <p>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</p>
-    /// <p>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains
-    /// one element for each job that satisfies the search criteria.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobsByPipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1527,10 +1085,10 @@ pub mod fluent_builders {
                 crate::input::ListJobsByPipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1538,9 +1096,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListJobsByPipelinePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListJobsByPipelinePaginator<C, M, R> {
+            crate::paginator::ListJobsByPipelinePaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the pipeline for which you want to get job information.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(input.into());
             self
         }
         /// <p>The ID of the pipeline for which you want to get job information.</p>
@@ -1548,28 +1112,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_id(input);
             self
         }
-        /// <p> To list jobs in chronological order by the date and time that they were submitted, enter
-        /// <code>true</code>. To list jobs in reverse chronological order, enter
-        /// <code>false</code>. </p>
-        pub fn ascending(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ascending(inp);
+        /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+        pub fn ascending(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ascending(input.into());
             self
         }
-        /// <p> To list jobs in chronological order by the date and time that they were submitted, enter
-        /// <code>true</code>. To list jobs in reverse chronological order, enter
-        /// <code>false</code>. </p>
+        /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
         pub fn set_ascending(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ascending(input);
             self
         }
-        /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
-        /// subsequent <code>GET</code> requests to get each successive page of results. </p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
-        /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
-        /// subsequent <code>GET</code> requests to get each successive page of results. </p>
+        /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -1577,9 +1135,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListJobsByStatus`.
     ///
-    /// <p>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response
-    /// body contains one element for each job that satisfies the search criteria.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job that satisfies the search criteria.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobsByStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1624,10 +1181,10 @@ pub mod fluent_builders {
                 crate::input::ListJobsByStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1635,44 +1192,38 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>To get information about all of the jobs associated with the current AWS account that
-        /// have a given status, specify the following status: <code>Submitted</code>,
-        /// <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or
-        /// <code>Error</code>.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListJobsByStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListJobsByStatusPaginator<C, M, R> {
+            crate::paginator::ListJobsByStatusPaginator::new(self.handle, self.inner)
+        }
+        /// <p>To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(input.into());
             self
         }
-        /// <p>To get information about all of the jobs associated with the current AWS account that
-        /// have a given status, specify the following status: <code>Submitted</code>,
-        /// <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or
-        /// <code>Error</code>.</p>
+        /// <p>To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_status(input);
             self
         }
-        /// <p> To list jobs in chronological order by the date and time that they were submitted, enter
-        /// <code>true</code>. To list jobs in reverse chronological order, enter
-        /// <code>false</code>. </p>
-        pub fn ascending(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ascending(inp);
+        /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+        pub fn ascending(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ascending(input.into());
             self
         }
-        /// <p> To list jobs in chronological order by the date and time that they were submitted, enter
-        /// <code>true</code>. To list jobs in reverse chronological order, enter
-        /// <code>false</code>. </p>
+        /// <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
         pub fn set_ascending(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ascending(input);
             self
         }
-        /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
-        /// subsequent <code>GET</code> requests to get each successive page of results. </p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
-        /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
-        /// subsequent <code>GET</code> requests to get each successive page of results. </p>
+        /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -1681,7 +1232,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPipelines`.
     ///
     /// <p>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPipelines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1726,10 +1277,10 @@ pub mod fluent_builders {
                 crate::input::ListPipelinesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1737,28 +1288,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>To list pipelines in chronological order by the date and time that they were created, enter
-        /// <code>true</code>. To list pipelines in reverse chronological order, enter
-        /// <code>false</code>.</p>
-        pub fn ascending(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ascending(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPipelinesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPipelinesPaginator<C, M, R> {
+            crate::paginator::ListPipelinesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>
+        pub fn ascending(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ascending(input.into());
             self
         }
-        /// <p>To list pipelines in chronological order by the date and time that they were created, enter
-        /// <code>true</code>. To list pipelines in reverse chronological order, enter
-        /// <code>false</code>.</p>
+        /// <p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>
         pub fn set_ascending(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ascending(input);
             self
         }
-        /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
-        /// subsequent <code>GET</code> requests to get each successive page of results. </p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
-        /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
-        /// subsequent <code>GET</code> requests to get each successive page of results. </p>
+        /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -1766,9 +1317,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPresets`.
     ///
-    /// <p>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that
-    /// you've added in an AWS region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an AWS region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPresets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1813,10 +1363,10 @@ pub mod fluent_builders {
                 crate::input::ListPresetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1824,28 +1374,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>To list presets in chronological order by the date and time that they were created, enter
-        /// <code>true</code>. To list presets in reverse chronological order, enter
-        /// <code>false</code>.</p>
-        pub fn ascending(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ascending(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPresetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPresetsPaginator<C, M, R> {
+            crate::paginator::ListPresetsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>To list presets in chronological order by the date and time that they were created, enter <code>true</code>. To list presets in reverse chronological order, enter <code>false</code>.</p>
+        pub fn ascending(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ascending(input.into());
             self
         }
-        /// <p>To list presets in chronological order by the date and time that they were created, enter
-        /// <code>true</code>. To list presets in reverse chronological order, enter
-        /// <code>false</code>.</p>
+        /// <p>To list presets in chronological order by the date and time that they were created, enter <code>true</code>. To list presets in reverse chronological order, enter <code>false</code>.</p>
         pub fn set_ascending(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ascending(input);
             self
         }
-        /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
-        /// subsequent <code>GET</code> requests to get each successive page of results. </p>
-        pub fn page_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_token(inp);
+        /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input.into());
             self
         }
-        /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
-        /// subsequent <code>GET</code> requests to get each successive page of results. </p>
+        /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_page_token(input);
             self
@@ -1854,7 +1404,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ReadJob`.
     ///
     /// <p>The ReadJob operation returns detailed information about a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReadJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1899,10 +1449,10 @@ pub mod fluent_builders {
                 crate::input::ReadJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1911,8 +1461,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the job for which you want to get detailed information.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the job for which you want to get detailed information.</p>
@@ -1924,7 +1474,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ReadPipeline`.
     ///
     /// <p>The ReadPipeline operation gets detailed information about a pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReadPipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1969,10 +1519,10 @@ pub mod fluent_builders {
                 crate::input::ReadPipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1981,8 +1531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the pipeline to read.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the pipeline to read.</p>
@@ -1994,7 +1544,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ReadPreset`.
     ///
     /// <p>The ReadPreset operation gets detailed information about a preset.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReadPreset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2039,10 +1589,10 @@ pub mod fluent_builders {
                 crate::input::ReadPresetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2051,8 +1601,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the preset for which you want to get detailed information.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the preset for which you want to get detailed information.</p>
@@ -2064,12 +1614,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TestRole`.
     ///
     /// <p>The TestRole operation tests the IAM role used to create the pipeline.</p>
-    /// <p>The <code>TestRole</code> action lets you determine whether the IAM role you are using
-    /// has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding
-    /// process. The action attempts to assume the specified IAM role, checks read access to the
-    /// input and output buckets, and tries to send a test notification to Amazon SNS topics
-    /// that you specify.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The <code>TestRole</code> action lets you determine whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test notification to Amazon SNS topics that you specify.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestRole<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2114,10 +1660,10 @@ pub mod fluent_builders {
                 crate::input::TestRoleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2126,8 +1672,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
@@ -2136,8 +1682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
-        pub fn input_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_bucket(inp);
+        pub fn input_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_bucket(input.into());
             self
         }
         /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
@@ -2146,8 +1692,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
-        pub fn output_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_bucket(inp);
+        pub fn output_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_bucket(input.into());
             self
         }
         /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
@@ -2163,8 +1709,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_topics`](Self::set_topics).
         ///
         /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
-        pub fn topics(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topics(inp);
+        pub fn topics(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topics(input.into());
             self
         }
         /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
@@ -2178,13 +1724,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePipeline`.
     ///
-    /// <p> Use the <code>UpdatePipeline</code> operation to update settings for a pipeline.</p>
-    /// <important>
-    /// <p>When you change pipeline settings, your changes take effect immediately.
-    /// Jobs that you have already submitted and that Elastic Transcoder has not started to process are
-    /// affected in addition to jobs that you submit after you change settings. </p>
+    /// <p> Use the <code>UpdatePipeline</code> operation to update settings for a pipeline.</p> <important>
+    /// <p>When you change pipeline settings, your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are affected in addition to jobs that you submit after you change settings. </p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2229,10 +1772,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2241,8 +1784,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline that you want to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the pipeline that you want to update.</p>
@@ -2250,60 +1793,46 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but
-        /// uniqueness is not enforced.</p>
+        /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
         /// <p>Constraints: Maximum 40 characters</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but
-        /// uniqueness is not enforced.</p>
+        /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
         /// <p>Constraints: Maximum 40 characters</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics
-        /// that you want to use as watermarks.</p>
-        pub fn input_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_bucket(inp);
+        /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics that you want to use as watermarks.</p>
+        pub fn input_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_bucket(input.into());
             self
         }
-        /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics
-        /// that you want to use as watermarks.</p>
+        /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics that you want to use as watermarks.</p>
         pub fn set_input_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_input_bucket(input);
             self
         }
-        /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for
-        /// this pipeline.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for this pipeline.</p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
-        /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for
-        /// this pipeline.</p>
+        /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for this pipeline.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role(input);
             self
         }
         /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
-        /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>,
-        /// you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is
-        /// created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default
-        /// AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>,
-        /// or <code>aes-gcm</code>.</p>
-        pub fn aws_kms_key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_kms_key_arn(inp);
+        /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
+        pub fn aws_kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_kms_key_arn(input.into());
             self
         }
         /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
-        /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>,
-        /// you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is
-        /// created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default
-        /// AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>,
-        /// or <code>aes-gcm</code>.</p>
+        /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
         pub fn set_aws_kms_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2311,69 +1840,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_kms_key_arn(input);
             self
         }
-        /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p>
-        /// <important>
+        /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>
         /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
         /// </important>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to
-        /// notify when Elastic Transcoder has started to process jobs that are added to this pipeline. This
-        /// is the ARN that Amazon SNS returned when you created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when
-        /// Elastic Transcoder has finished processing a job. This is the ARN that Amazon SNS returned when
-        /// you created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
-        /// encounters a warning condition. This is the ARN that Amazon SNS returned when you
-        /// created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
-        /// encounters an error condition. This is the ARN that Amazon SNS returned when you
-        /// created the topic.</p>
-        /// </li>
+        /// <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process jobs that are added to this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
         /// </ul>
-        pub fn notifications(mut self, inp: crate::model::Notifications) -> Self {
-            self.inner = self.inner.notifications(inp);
+        pub fn notifications(mut self, input: crate::model::Notifications) -> Self {
+            self.inner = self.inner.notifications(input);
             self
         }
-        /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p>
-        /// <important>
+        /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>
         /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
         /// </important>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to
-        /// notify when Elastic Transcoder has started to process jobs that are added to this pipeline. This
-        /// is the ARN that Amazon SNS returned when you created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when
-        /// Elastic Transcoder has finished processing a job. This is the ARN that Amazon SNS returned when
-        /// you created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
-        /// encounters a warning condition. This is the ARN that Amazon SNS returned when you
-        /// created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
-        /// encounters an error condition. This is the ARN that Amazon SNS returned when you
-        /// created the topic.</p>
-        /// </li>
+        /// <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process jobs that are added to this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
         /// </ul>
         pub fn set_notifications(
             mut self,
@@ -2382,207 +1869,57 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notifications(input);
             self
         }
-        /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3
-        /// bucket in which you want Elastic Transcoder to save transcoded files and playlists:
-        /// which bucket to use, which users you want to have access to the files, the type of
-        /// access you want users to have, and the storage class that you want to assign to the
-        /// files.</p>
-        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for
-        /// <code>ThumbnailConfig</code>.</p>
-        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>,
-        /// omit the <code>OutputBucket</code> object.</p>
+        /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists: which bucket to use, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>
+        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code>.</p>
+        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>, omit the <code>OutputBucket</code> object.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save
-        /// transcoded files and playlists.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Permissions</b> (Optional): The Permissions object specifies which users you want
-        /// to have access to transcoded files and the type of access you want them to have. You
-        /// can grant permissions to a maximum of 30 users and/or predefined Amazon S3
-        /// groups.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Grantee Type</b>: Specify the type of value that appears in the
-        /// <code>Grantee</code> object:</p>
+        /// <li> <p> <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists.</p> </li>
+        /// <li> <p> <b>Permissions</b> (Optional): The Permissions object specifies which users you want to have access to transcoded files and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p> </li>
+        /// <li> <p> <b>Grantee Type</b>: Specify the type of value that appears in the <code>Grantee</code> object:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Canonical</b>: The value in the <code>Grantee</code> object is either the
-        /// canonical user ID for an AWS account or an origin access identity for an
-        /// Amazon CloudFront distribution. For more information about canonical user
-        /// IDs, see Access Control List (ACL) Overview in the Amazon Simple Storage
-        /// Service Developer Guide. For more information about using CloudFront origin
-        /// access identities to require that users use CloudFront URLs instead of
-        /// Amazon S3 URLs, see Using an Origin Access Identity to Restrict Access to
-        /// Your Amazon S3 Content.</p>
-        /// <important>
-        /// <p>A canonical user ID is not the same as an
-        /// AWS account number.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Email</b>: The value in the <code>Grantee</code> object is the registered
-        /// email address of an AWS account.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Group</b>: The value in the <code>Grantee</code> object is one of the
-        /// following predefined Amazon S3 groups: <code>AllUsers</code>,
-        /// <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Grantee</b>: The AWS user or group that you want to have access to transcoded
-        /// files and playlists. To identify the user or group, you can specify the canonical
-        /// user ID for an AWS account, an origin access identity for a CloudFront distribution,
-        /// the registered email address of an AWS account, or a predefined Amazon S3 group </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Access</b>: The permission that you want to give to the AWS user that you
-        /// specified in <code>Grantee</code>. Permissions are granted on the files that Elastic
-        /// Transcoder adds to the bucket, including playlists and video files. Valid values
-        /// include: </p>
+        /// <li> <p> <b>Canonical</b>: The value in the <code>Grantee</code> object is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution. For more information about canonical user IDs, see Access Control List (ACL) Overview in the Amazon Simple Storage Service Developer Guide. For more information about using CloudFront origin access identities to require that users use CloudFront URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content.</p> <important>
+        /// <p>A canonical user ID is not the same as an AWS account number.</p>
+        /// </important> </li>
+        /// <li> <p> <b>Email</b>: The value in the <code>Grantee</code> object is the registered email address of an AWS account.</p> </li>
+        /// <li> <p> <b>Group</b>: The value in the <code>Grantee</code> object is one of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Grantee</b>: The AWS user or group that you want to have access to transcoded files and playlists. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group </p> </li>
+        /// <li> <p> <b>Access</b>: The permission that you want to give to the AWS user that you specified in <code>Grantee</code>. Permissions are granted on the files that Elastic Transcoder adds to the bucket, including playlists and video files. Valid values include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>READ</code>: The grantee can read the objects and metadata for objects
-        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>READ_ACP</code>: The grantee can read the object ACL for objects that
-        /// Elastic Transcoder adds to the Amazon S3 bucket. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WRITE_ACP</code>: The grantee can write the ACL for the objects that
-        /// Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
-        /// <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
-        /// objects that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>READ</code>: The grantee can read the objects and metadata for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>READ_ACP</code>: The grantee can read the object ACL for objects that Elastic Transcoder adds to the Amazon S3 bucket. </p> </li>
+        /// <li> <p> <code>WRITE_ACP</code>: The grantee can write the ACL for the objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>, <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p> </li>
         /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or
-        /// <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
-        /// the video files and playlists that it stores in your Amazon S3 bucket.</p>
-        /// </li>
-        /// </ul>
-        pub fn content_config(mut self, inp: crate::model::PipelineOutputConfig) -> Self {
-            self.inner = self.inner.content_config(inp);
+        pub fn content_config(mut self, input: crate::model::PipelineOutputConfig) -> Self {
+            self.inner = self.inner.content_config(input);
             self
         }
-        /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3
-        /// bucket in which you want Elastic Transcoder to save transcoded files and playlists:
-        /// which bucket to use, which users you want to have access to the files, the type of
-        /// access you want users to have, and the storage class that you want to assign to the
-        /// files.</p>
-        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for
-        /// <code>ThumbnailConfig</code>.</p>
-        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>,
-        /// omit the <code>OutputBucket</code> object.</p>
+        /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists: which bucket to use, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>
+        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code>.</p>
+        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>, omit the <code>OutputBucket</code> object.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save
-        /// transcoded files and playlists.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Permissions</b> (Optional): The Permissions object specifies which users you want
-        /// to have access to transcoded files and the type of access you want them to have. You
-        /// can grant permissions to a maximum of 30 users and/or predefined Amazon S3
-        /// groups.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Grantee Type</b>: Specify the type of value that appears in the
-        /// <code>Grantee</code> object:</p>
+        /// <li> <p> <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists.</p> </li>
+        /// <li> <p> <b>Permissions</b> (Optional): The Permissions object specifies which users you want to have access to transcoded files and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p> </li>
+        /// <li> <p> <b>Grantee Type</b>: Specify the type of value that appears in the <code>Grantee</code> object:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Canonical</b>: The value in the <code>Grantee</code> object is either the
-        /// canonical user ID for an AWS account or an origin access identity for an
-        /// Amazon CloudFront distribution. For more information about canonical user
-        /// IDs, see Access Control List (ACL) Overview in the Amazon Simple Storage
-        /// Service Developer Guide. For more information about using CloudFront origin
-        /// access identities to require that users use CloudFront URLs instead of
-        /// Amazon S3 URLs, see Using an Origin Access Identity to Restrict Access to
-        /// Your Amazon S3 Content.</p>
-        /// <important>
-        /// <p>A canonical user ID is not the same as an
-        /// AWS account number.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Email</b>: The value in the <code>Grantee</code> object is the registered
-        /// email address of an AWS account.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Group</b>: The value in the <code>Grantee</code> object is one of the
-        /// following predefined Amazon S3 groups: <code>AllUsers</code>,
-        /// <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Grantee</b>: The AWS user or group that you want to have access to transcoded
-        /// files and playlists. To identify the user or group, you can specify the canonical
-        /// user ID for an AWS account, an origin access identity for a CloudFront distribution,
-        /// the registered email address of an AWS account, or a predefined Amazon S3 group </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Access</b>: The permission that you want to give to the AWS user that you
-        /// specified in <code>Grantee</code>. Permissions are granted on the files that Elastic
-        /// Transcoder adds to the bucket, including playlists and video files. Valid values
-        /// include: </p>
+        /// <li> <p> <b>Canonical</b>: The value in the <code>Grantee</code> object is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution. For more information about canonical user IDs, see Access Control List (ACL) Overview in the Amazon Simple Storage Service Developer Guide. For more information about using CloudFront origin access identities to require that users use CloudFront URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content.</p> <important>
+        /// <p>A canonical user ID is not the same as an AWS account number.</p>
+        /// </important> </li>
+        /// <li> <p> <b>Email</b>: The value in the <code>Grantee</code> object is the registered email address of an AWS account.</p> </li>
+        /// <li> <p> <b>Group</b>: The value in the <code>Grantee</code> object is one of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Grantee</b>: The AWS user or group that you want to have access to transcoded files and playlists. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group </p> </li>
+        /// <li> <p> <b>Access</b>: The permission that you want to give to the AWS user that you specified in <code>Grantee</code>. Permissions are granted on the files that Elastic Transcoder adds to the bucket, including playlists and video files. Valid values include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>READ</code>: The grantee can read the objects and metadata for objects
-        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>READ_ACP</code>: The grantee can read the object ACL for objects that
-        /// Elastic Transcoder adds to the Amazon S3 bucket. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WRITE_ACP</code>: The grantee can write the ACL for the objects that
-        /// Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
-        /// <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
-        /// objects that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or
-        /// <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
-        /// the video files and playlists that it stores in your Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>READ</code>: The grantee can read the objects and metadata for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>READ_ACP</code>: The grantee can read the object ACL for objects that Elastic Transcoder adds to the Amazon S3 bucket. </p> </li>
+        /// <li> <p> <code>WRITE_ACP</code>: The grantee can write the ACL for the objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>, <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn set_content_config(
             mut self,
@@ -2591,191 +1928,57 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_config(input);
             self
         }
-        /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3
-        /// bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have
-        /// access to the files, the type of access you want users to have, and the storage class
-        /// that you want to assign to the files.</p>
-        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for
-        /// <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>
-        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>,
-        /// omit the <code>OutputBucket</code> object.</p>
+        /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>
+        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>
+        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>, omit the <code>OutputBucket</code> object.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save
-        /// thumbnail files.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Permissions</b> (Optional): The <code>Permissions</code> object specifies which
-        /// users and/or predefined Amazon S3 groups you want to have access to thumbnail files,
-        /// and the type of access you want them to have. You can grant permissions to a maximum
-        /// of 30 users and/or predefined Amazon S3 groups.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>GranteeType</b>: Specify the type of value that appears in the Grantee object:</p>
+        /// <li> <p> <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files.</p> </li>
+        /// <li> <p> <b>Permissions</b> (Optional): The <code>Permissions</code> object specifies which users and/or predefined Amazon S3 groups you want to have access to thumbnail files, and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p> </li>
+        /// <li> <p> <b>GranteeType</b>: Specify the type of value that appears in the Grantee object:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Canonical</b>: The value in the <code>Grantee</code> object is either the
-        /// canonical user ID for an AWS account or an origin access identity for an
-        /// Amazon CloudFront distribution.</p>
-        /// <important>
-        /// <p>A canonical user ID is not the
-        /// same as an AWS account number.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Email</b>: The value in the <code>Grantee</code> object is the registered
-        /// email address of an AWS account.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Group</b>: The value in the <code>Grantee</code> object is one of the
-        /// following predefined Amazon S3 groups: <code>AllUsers</code>,
-        /// <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Grantee</b>: The AWS user or group that you want to have access to thumbnail
-        /// files. To identify the user or group, you can specify the canonical user ID for an
-        /// AWS account, an origin access identity for a CloudFront distribution, the registered
-        /// email address of an AWS account, or a predefined Amazon S3 group. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Access</b>: The permission that you want to give to the AWS user that you
-        /// specified in <code>Grantee</code>. Permissions are granted on the thumbnail files
-        /// that Elastic Transcoder adds to the bucket. Valid values include: </p>
+        /// <li> <p> <b>Canonical</b>: The value in the <code>Grantee</code> object is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution.</p> <important>
+        /// <p>A canonical user ID is not the same as an AWS account number.</p>
+        /// </important> </li>
+        /// <li> <p> <b>Email</b>: The value in the <code>Grantee</code> object is the registered email address of an AWS account.</p> </li>
+        /// <li> <p> <b>Group</b>: The value in the <code>Grantee</code> object is one of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Grantee</b>: The AWS user or group that you want to have access to thumbnail files. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group. </p> </li>
+        /// <li> <p> <b>Access</b>: The permission that you want to give to the AWS user that you specified in <code>Grantee</code>. Permissions are granted on the thumbnail files that Elastic Transcoder adds to the bucket. Valid values include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>READ</code>: The grantee can read the thumbnails and metadata for
-        /// objects that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>READ_ACP</code>: The grantee can read the object ACL for thumbnails
-        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails
-        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
-        /// <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
-        /// thumbnails that Elastic Transcoder adds to the Amazon S3 bucket. </p>
-        /// </li>
+        /// <li> <p> <code>READ</code>: The grantee can read the thumbnails and metadata for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>READ_ACP</code>: The grantee can read the object ACL for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>, <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket. </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.</p> </li>
         /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or
-        /// <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
-        /// the thumbnails that it stores in your Amazon S3 bucket.</p>
-        /// </li>
-        /// </ul>
-        pub fn thumbnail_config(mut self, inp: crate::model::PipelineOutputConfig) -> Self {
-            self.inner = self.inner.thumbnail_config(inp);
+        pub fn thumbnail_config(mut self, input: crate::model::PipelineOutputConfig) -> Self {
+            self.inner = self.inner.thumbnail_config(input);
             self
         }
-        /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3
-        /// bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have
-        /// access to the files, the type of access you want users to have, and the storage class
-        /// that you want to assign to the files.</p>
-        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for
-        /// <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>
-        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>,
-        /// omit the <code>OutputBucket</code> object.</p>
+        /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>
+        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>
+        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>, omit the <code>OutputBucket</code> object.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save
-        /// thumbnail files.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Permissions</b> (Optional): The <code>Permissions</code> object specifies which
-        /// users and/or predefined Amazon S3 groups you want to have access to thumbnail files,
-        /// and the type of access you want them to have. You can grant permissions to a maximum
-        /// of 30 users and/or predefined Amazon S3 groups.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>GranteeType</b>: Specify the type of value that appears in the Grantee object:</p>
+        /// <li> <p> <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files.</p> </li>
+        /// <li> <p> <b>Permissions</b> (Optional): The <code>Permissions</code> object specifies which users and/or predefined Amazon S3 groups you want to have access to thumbnail files, and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p> </li>
+        /// <li> <p> <b>GranteeType</b>: Specify the type of value that appears in the Grantee object:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Canonical</b>: The value in the <code>Grantee</code> object is either the
-        /// canonical user ID for an AWS account or an origin access identity for an
-        /// Amazon CloudFront distribution.</p>
-        /// <important>
-        /// <p>A canonical user ID is not the
-        /// same as an AWS account number.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Email</b>: The value in the <code>Grantee</code> object is the registered
-        /// email address of an AWS account.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Group</b>: The value in the <code>Grantee</code> object is one of the
-        /// following predefined Amazon S3 groups: <code>AllUsers</code>,
-        /// <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Grantee</b>: The AWS user or group that you want to have access to thumbnail
-        /// files. To identify the user or group, you can specify the canonical user ID for an
-        /// AWS account, an origin access identity for a CloudFront distribution, the registered
-        /// email address of an AWS account, or a predefined Amazon S3 group. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Access</b>: The permission that you want to give to the AWS user that you
-        /// specified in <code>Grantee</code>. Permissions are granted on the thumbnail files
-        /// that Elastic Transcoder adds to the bucket. Valid values include: </p>
+        /// <li> <p> <b>Canonical</b>: The value in the <code>Grantee</code> object is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution.</p> <important>
+        /// <p>A canonical user ID is not the same as an AWS account number.</p>
+        /// </important> </li>
+        /// <li> <p> <b>Email</b>: The value in the <code>Grantee</code> object is the registered email address of an AWS account.</p> </li>
+        /// <li> <p> <b>Group</b>: The value in the <code>Grantee</code> object is one of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Grantee</b>: The AWS user or group that you want to have access to thumbnail files. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group. </p> </li>
+        /// <li> <p> <b>Access</b>: The permission that you want to give to the AWS user that you specified in <code>Grantee</code>. Permissions are granted on the thumbnail files that Elastic Transcoder adds to the bucket. Valid values include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>READ</code>: The grantee can read the thumbnails and metadata for
-        /// objects that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>READ_ACP</code>: The grantee can read the object ACL for thumbnails
-        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails
-        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
-        /// <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
-        /// thumbnails that Elastic Transcoder adds to the Amazon S3 bucket. </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or
-        /// <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
-        /// the thumbnails that it stores in your Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>READ</code>: The grantee can read the thumbnails and metadata for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>READ_ACP</code>: The grantee can read the object ACL for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>
+        /// <li> <p> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>, <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket. </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn set_thumbnail_config(
             mut self,
@@ -2789,7 +1992,7 @@ pub mod fluent_builders {
     ///
     /// <p>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline.</p>
     /// <p>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePipelineNotifications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2834,10 +2037,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePipelineNotificationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2846,8 +2049,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the pipeline for which you want to change notification settings.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the pipeline for which you want to change notification settings.</p>
@@ -2855,69 +2058,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p>
-        /// <important>
+        /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>
         /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
         /// </important>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to
-        /// notify when Elastic Transcoder has started to process jobs that are added to this pipeline. This
-        /// is the ARN that Amazon SNS returned when you created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when
-        /// Elastic Transcoder has finished processing a job. This is the ARN that Amazon SNS returned when
-        /// you created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
-        /// encounters a warning condition. This is the ARN that Amazon SNS returned when you
-        /// created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
-        /// encounters an error condition. This is the ARN that Amazon SNS returned when you
-        /// created the topic.</p>
-        /// </li>
+        /// <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process jobs that are added to this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
         /// </ul>
-        pub fn notifications(mut self, inp: crate::model::Notifications) -> Self {
-            self.inner = self.inner.notifications(inp);
+        pub fn notifications(mut self, input: crate::model::Notifications) -> Self {
+            self.inner = self.inner.notifications(input);
             self
         }
-        /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p>
-        /// <important>
+        /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>
         /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
         /// </important>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to
-        /// notify when Elastic Transcoder has started to process jobs that are added to this pipeline. This
-        /// is the ARN that Amazon SNS returned when you created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when
-        /// Elastic Transcoder has finished processing a job. This is the ARN that Amazon SNS returned when
-        /// you created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
-        /// encounters a warning condition. This is the ARN that Amazon SNS returned when you
-        /// created the topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
-        /// encounters an error condition. This is the ARN that Amazon SNS returned when you
-        /// created the topic.</p>
-        /// </li>
+        /// <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process jobs that are added to this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
+        /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
         /// </ul>
         pub fn set_notifications(
             mut self,
@@ -2929,13 +2090,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePipelineStatus`.
     ///
-    /// <p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline
-    /// stops or restarts the processing of jobs.</p>
-    /// <p>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't
-    /// cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which
-    /// you submitted the jobs, you have more time to get the job IDs for the jobs that you want
-    /// to cancel, and to send a <a>CancelJob</a> request. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of jobs.</p>
+    /// <p>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a <code>CancelJob</code> request. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePipelineStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2980,10 +2137,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePipelineStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2992,8 +2149,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the pipeline to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the pipeline to update.</p>
@@ -3003,29 +2160,17 @@ pub mod fluent_builders {
         }
         /// <p>The desired status of the pipeline:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Active</code>: The pipeline is processing jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Paused</code>: The pipeline is not currently processing jobs.</p>
-        /// </li>
+        /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
+        /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
         /// </ul>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(input.into());
             self
         }
         /// <p>The desired status of the pipeline:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Active</code>: The pipeline is processing jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Paused</code>: The pipeline is not currently processing jobs.</p>
-        /// </li>
+        /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
+        /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_status(input);
@@ -3033,6 +2178,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

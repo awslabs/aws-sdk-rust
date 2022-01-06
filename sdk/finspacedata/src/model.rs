@@ -98,9 +98,9 @@ pub mod schema_definition {
         /// To override the contents of this collection use [`set_columns`](Self::set_columns).
         ///
         /// <p>List of column definitions.</p>
-        pub fn columns(mut self, input: impl Into<crate::model::ColumnDefinition>) -> Self {
+        pub fn columns(mut self, input: crate::model::ColumnDefinition) -> Self {
             let mut v = self.columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.columns = Some(v);
             self
         }
@@ -153,32 +153,7 @@ impl SchemaDefinition {
 pub struct ColumnDefinition {
     /// <p>Data type of a column.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>STRING</code> - A String data type.</p>
-    /// <p>
-    /// <code>CHAR</code> - A char data type.</p>
-    /// <p>
-    /// <code>INTEGER</code> - An integer data type.</p>
-    /// <p>
-    /// <code>TINYINT</code> - A tinyint data type.</p>
-    /// <p>
-    /// <code>SMALLINT</code> - A smallint data type.</p>
-    /// <p>
-    /// <code>BIGINT</code> - A bigint data type.</p>
-    /// <p>
-    /// <code>FLOAT</code> - A float data type.</p>
-    /// <p>
-    /// <code>DOUBLE</code> - A double data type.</p>
-    /// <p>
-    /// <code>DATE</code> - A date data type.</p>
-    /// <p>
-    /// <code>DATETIME</code> - A datetime data type.</p>
-    /// <p>
-    /// <code>BOOLEAN</code> - A boolean data type.</p>
-    /// <p>
-    /// <code>BINARY</code> - A binary data type.</p>
-    /// </li>
+    /// <li> <p> <code>STRING</code> - A String data type.</p> <p> <code>CHAR</code> - A char data type.</p> <p> <code>INTEGER</code> - An integer data type.</p> <p> <code>TINYINT</code> - A tinyint data type.</p> <p> <code>SMALLINT</code> - A smallint data type.</p> <p> <code>BIGINT</code> - A bigint data type.</p> <p> <code>FLOAT</code> - A float data type.</p> <p> <code>DOUBLE</code> - A double data type.</p> <p> <code>DATE</code> - A date data type.</p> <p> <code>DATETIME</code> - A datetime data type.</p> <p> <code>BOOLEAN</code> - A boolean data type.</p> <p> <code>BINARY</code> - A binary data type.</p> </li>
     /// </ul>
     pub data_type: std::option::Option<crate::model::ColumnDataType>,
     /// <p>Name for a column.</p>
@@ -189,32 +164,7 @@ pub struct ColumnDefinition {
 impl ColumnDefinition {
     /// <p>Data type of a column.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>STRING</code> - A String data type.</p>
-    /// <p>
-    /// <code>CHAR</code> - A char data type.</p>
-    /// <p>
-    /// <code>INTEGER</code> - An integer data type.</p>
-    /// <p>
-    /// <code>TINYINT</code> - A tinyint data type.</p>
-    /// <p>
-    /// <code>SMALLINT</code> - A smallint data type.</p>
-    /// <p>
-    /// <code>BIGINT</code> - A bigint data type.</p>
-    /// <p>
-    /// <code>FLOAT</code> - A float data type.</p>
-    /// <p>
-    /// <code>DOUBLE</code> - A double data type.</p>
-    /// <p>
-    /// <code>DATE</code> - A date data type.</p>
-    /// <p>
-    /// <code>DATETIME</code> - A datetime data type.</p>
-    /// <p>
-    /// <code>BOOLEAN</code> - A boolean data type.</p>
-    /// <p>
-    /// <code>BINARY</code> - A binary data type.</p>
-    /// </li>
+    /// <li> <p> <code>STRING</code> - A String data type.</p> <p> <code>CHAR</code> - A char data type.</p> <p> <code>INTEGER</code> - An integer data type.</p> <p> <code>TINYINT</code> - A tinyint data type.</p> <p> <code>SMALLINT</code> - A smallint data type.</p> <p> <code>BIGINT</code> - A bigint data type.</p> <p> <code>FLOAT</code> - A float data type.</p> <p> <code>DOUBLE</code> - A double data type.</p> <p> <code>DATE</code> - A date data type.</p> <p> <code>DATETIME</code> - A datetime data type.</p> <p> <code>BOOLEAN</code> - A boolean data type.</p> <p> <code>BINARY</code> - A binary data type.</p> </li>
     /// </ul>
     pub fn data_type(&self) -> std::option::Option<&crate::model::ColumnDataType> {
         self.data_type.as_ref()
@@ -250,32 +200,7 @@ pub mod column_definition {
     impl Builder {
         /// <p>Data type of a column.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STRING</code> - A String data type.</p>
-        /// <p>
-        /// <code>CHAR</code> - A char data type.</p>
-        /// <p>
-        /// <code>INTEGER</code> - An integer data type.</p>
-        /// <p>
-        /// <code>TINYINT</code> - A tinyint data type.</p>
-        /// <p>
-        /// <code>SMALLINT</code> - A smallint data type.</p>
-        /// <p>
-        /// <code>BIGINT</code> - A bigint data type.</p>
-        /// <p>
-        /// <code>FLOAT</code> - A float data type.</p>
-        /// <p>
-        /// <code>DOUBLE</code> - A double data type.</p>
-        /// <p>
-        /// <code>DATE</code> - A date data type.</p>
-        /// <p>
-        /// <code>DATETIME</code> - A datetime data type.</p>
-        /// <p>
-        /// <code>BOOLEAN</code> - A boolean data type.</p>
-        /// <p>
-        /// <code>BINARY</code> - A binary data type.</p>
-        /// </li>
+        /// <li> <p> <code>STRING</code> - A String data type.</p> <p> <code>CHAR</code> - A char data type.</p> <p> <code>INTEGER</code> - An integer data type.</p> <p> <code>TINYINT</code> - A tinyint data type.</p> <p> <code>SMALLINT</code> - A smallint data type.</p> <p> <code>BIGINT</code> - A bigint data type.</p> <p> <code>FLOAT</code> - A float data type.</p> <p> <code>DOUBLE</code> - A double data type.</p> <p> <code>DATE</code> - A date data type.</p> <p> <code>DATETIME</code> - A datetime data type.</p> <p> <code>BOOLEAN</code> - A boolean data type.</p> <p> <code>BINARY</code> - A binary data type.</p> </li>
         /// </ul>
         pub fn data_type(mut self, input: crate::model::ColumnDataType) -> Self {
             self.data_type = Some(input);
@@ -283,32 +208,7 @@ pub mod column_definition {
         }
         /// <p>Data type of a column.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STRING</code> - A String data type.</p>
-        /// <p>
-        /// <code>CHAR</code> - A char data type.</p>
-        /// <p>
-        /// <code>INTEGER</code> - An integer data type.</p>
-        /// <p>
-        /// <code>TINYINT</code> - A tinyint data type.</p>
-        /// <p>
-        /// <code>SMALLINT</code> - A smallint data type.</p>
-        /// <p>
-        /// <code>BIGINT</code> - A bigint data type.</p>
-        /// <p>
-        /// <code>FLOAT</code> - A float data type.</p>
-        /// <p>
-        /// <code>DOUBLE</code> - A double data type.</p>
-        /// <p>
-        /// <code>DATE</code> - A date data type.</p>
-        /// <p>
-        /// <code>DATETIME</code> - A datetime data type.</p>
-        /// <p>
-        /// <code>BOOLEAN</code> - A boolean data type.</p>
-        /// <p>
-        /// <code>BINARY</code> - A binary data type.</p>
-        /// </li>
+        /// <li> <p> <code>STRING</code> - A String data type.</p> <p> <code>CHAR</code> - A char data type.</p> <p> <code>INTEGER</code> - An integer data type.</p> <p> <code>TINYINT</code> - A tinyint data type.</p> <p> <code>SMALLINT</code> - A smallint data type.</p> <p> <code>BIGINT</code> - A bigint data type.</p> <p> <code>FLOAT</code> - A float data type.</p> <p> <code>DOUBLE</code> - A double data type.</p> <p> <code>DATE</code> - A date data type.</p> <p> <code>DATETIME</code> - A datetime data type.</p> <p> <code>BOOLEAN</code> - A boolean data type.</p> <p> <code>BINARY</code> - A binary data type.</p> </li>
         /// </ul>
         pub fn set_data_type(
             mut self,
@@ -528,38 +428,14 @@ pub struct DataViewSummary {
     pub sort_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of a Dataview creation.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code> - Dataview creation is running.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STARTING</code> - Dataview creation is starting.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - Dataview creation has failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code> - Dataview creation has been cancelled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TIMEOUT</code> - Dataview creation has timed out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCESS</code> - Dataview creation has succeeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code> - Dataview creation is pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p>
-    /// </li>
+    /// <li> <p> <code>RUNNING</code> - Dataview creation is running.</p> </li>
+    /// <li> <p> <code>STARTING</code> - Dataview creation is starting.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Dataview creation has failed.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> - Dataview creation has been cancelled.</p> </li>
+    /// <li> <p> <code>TIMEOUT</code> - Dataview creation has timed out.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> - Dataview creation has succeeded.</p> </li>
+    /// <li> <p> <code>PENDING</code> - Dataview creation is pending.</p> </li>
+    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::DataViewStatus>,
     /// <p>The structure with error messages.</p>
@@ -601,38 +477,14 @@ impl DataViewSummary {
     }
     /// <p>The status of a Dataview creation.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code> - Dataview creation is running.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STARTING</code> - Dataview creation is starting.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - Dataview creation has failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code> - Dataview creation has been cancelled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TIMEOUT</code> - Dataview creation has timed out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCESS</code> - Dataview creation has succeeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code> - Dataview creation is pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p>
-    /// </li>
+    /// <li> <p> <code>RUNNING</code> - Dataview creation is running.</p> </li>
+    /// <li> <p> <code>STARTING</code> - Dataview creation is starting.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Dataview creation has failed.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> - Dataview creation has been cancelled.</p> </li>
+    /// <li> <p> <code>TIMEOUT</code> - Dataview creation has timed out.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> - Dataview creation has succeeded.</p> </li>
+    /// <li> <p> <code>PENDING</code> - Dataview creation is pending.</p> </li>
+    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::DataViewStatus> {
         self.status.as_ref()
@@ -785,38 +637,14 @@ pub mod data_view_summary {
         }
         /// <p>The status of a Dataview creation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> - Dataview creation is running.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STARTING</code> - Dataview creation is starting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - Dataview creation has failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code> - Dataview creation has been cancelled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TIMEOUT</code> - Dataview creation has timed out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCESS</code> - Dataview creation has succeeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code> - Dataview creation is pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p>
-        /// </li>
+        /// <li> <p> <code>RUNNING</code> - Dataview creation is running.</p> </li>
+        /// <li> <p> <code>STARTING</code> - Dataview creation is starting.</p> </li>
+        /// <li> <p> <code>FAILED</code> - Dataview creation has failed.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> - Dataview creation has been cancelled.</p> </li>
+        /// <li> <p> <code>TIMEOUT</code> - Dataview creation has timed out.</p> </li>
+        /// <li> <p> <code>SUCCESS</code> - Dataview creation has succeeded.</p> </li>
+        /// <li> <p> <code>PENDING</code> - Dataview creation is pending.</p> </li>
+        /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::DataViewStatus) -> Self {
             self.status = Some(input);
@@ -824,38 +652,14 @@ pub mod data_view_summary {
         }
         /// <p>The status of a Dataview creation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> - Dataview creation is running.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STARTING</code> - Dataview creation is starting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - Dataview creation has failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code> - Dataview creation has been cancelled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TIMEOUT</code> - Dataview creation has timed out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCESS</code> - Dataview creation has succeeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code> - Dataview creation is pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p>
-        /// </li>
+        /// <li> <p> <code>RUNNING</code> - Dataview creation is running.</p> </li>
+        /// <li> <p> <code>STARTING</code> - Dataview creation is starting.</p> </li>
+        /// <li> <p> <code>FAILED</code> - Dataview creation has failed.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> - Dataview creation has been cancelled.</p> </li>
+        /// <li> <p> <code>TIMEOUT</code> - Dataview creation has timed out.</p> </li>
+        /// <li> <p> <code>SUCCESS</code> - Dataview creation has succeeded.</p> </li>
+        /// <li> <p> <code>PENDING</code> - Dataview creation is pending.</p> </li>
+        /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -955,29 +759,49 @@ impl DataViewSummary {
 pub struct DataViewDestinationTypeParams {
     /// <p>Destination type for a Dataview.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>GLUE_TABLE</code> - Glue table destination type.</p>
-    /// </li>
+    /// <li> <p> <code>GLUE_TABLE</code> - Glue table destination type.</p> </li>
     /// </ul>
     pub destination_type: std::option::Option<std::string::String>,
+    /// Data View Export File Format
+    pub s3_destination_export_file_format: std::option::Option<crate::model::ExportFileFormat>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub s3_destination_export_file_format_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DataViewDestinationTypeParams {
     /// <p>Destination type for a Dataview.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>GLUE_TABLE</code> - Glue table destination type.</p>
-    /// </li>
+    /// <li> <p> <code>GLUE_TABLE</code> - Glue table destination type.</p> </li>
     /// </ul>
     pub fn destination_type(&self) -> std::option::Option<&str> {
         self.destination_type.as_deref()
+    }
+    /// Data View Export File Format
+    pub fn s3_destination_export_file_format(
+        &self,
+    ) -> std::option::Option<&crate::model::ExportFileFormat> {
+        self.s3_destination_export_file_format.as_ref()
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn s3_destination_export_file_format_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.s3_destination_export_file_format_options.as_ref()
     }
 }
 impl std::fmt::Debug for DataViewDestinationTypeParams {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataViewDestinationTypeParams");
         formatter.field("destination_type", &self.destination_type);
+        formatter.field(
+            "s3_destination_export_file_format",
+            &self.s3_destination_export_file_format,
+        );
+        formatter.field(
+            "s3_destination_export_file_format_options",
+            &self.s3_destination_export_file_format_options,
+        );
         formatter.finish()
     }
 }
@@ -988,14 +812,16 @@ pub mod data_view_destination_type_params {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_type: std::option::Option<std::string::String>,
+        pub(crate) s3_destination_export_file_format:
+            std::option::Option<crate::model::ExportFileFormat>,
+        pub(crate) s3_destination_export_file_format_options: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>Destination type for a Dataview.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>GLUE_TABLE</code> - Glue table destination type.</p>
-        /// </li>
+        /// <li> <p> <code>GLUE_TABLE</code> - Glue table destination type.</p> </li>
         /// </ul>
         pub fn destination_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_type = Some(input.into());
@@ -1003,10 +829,7 @@ pub mod data_view_destination_type_params {
         }
         /// <p>Destination type for a Dataview.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>GLUE_TABLE</code> - Glue table destination type.</p>
-        /// </li>
+        /// <li> <p> <code>GLUE_TABLE</code> - Glue table destination type.</p> </li>
         /// </ul>
         pub fn set_destination_type(
             mut self,
@@ -1015,10 +838,55 @@ pub mod data_view_destination_type_params {
             self.destination_type = input;
             self
         }
+        /// Data View Export File Format
+        pub fn s3_destination_export_file_format(
+            mut self,
+            input: crate::model::ExportFileFormat,
+        ) -> Self {
+            self.s3_destination_export_file_format = Some(input);
+            self
+        }
+        /// Data View Export File Format
+        pub fn set_s3_destination_export_file_format(
+            mut self,
+            input: std::option::Option<crate::model::ExportFileFormat>,
+        ) -> Self {
+            self.s3_destination_export_file_format = input;
+            self
+        }
+        /// Adds a key-value pair to `s3_destination_export_file_format_options`.
+        ///
+        /// To override the contents of this collection use [`set_s3_destination_export_file_format_options`](Self::set_s3_destination_export_file_format_options).
+        ///
+        pub fn s3_destination_export_file_format_options(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self
+                .s3_destination_export_file_format_options
+                .unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.s3_destination_export_file_format_options = Some(hash_map);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_s3_destination_export_file_format_options(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.s3_destination_export_file_format_options = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataViewDestinationTypeParams`](crate::model::DataViewDestinationTypeParams)
         pub fn build(self) -> crate::model::DataViewDestinationTypeParams {
             crate::model::DataViewDestinationTypeParams {
                 destination_type: self.destination_type,
+                s3_destination_export_file_format: self.s3_destination_export_file_format,
+                s3_destination_export_file_format_options: self
+                    .s3_destination_export_file_format_options,
             }
         }
     }
@@ -1030,6 +898,61 @@ impl DataViewDestinationTypeParams {
     }
 }
 
+/// Data View Export File Format
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExportFileFormat {
+    #[allow(missing_docs)] // documentation missing in model
+    DelimitedText,
+    #[allow(missing_docs)] // documentation missing in model
+    Parquet,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ExportFileFormat {
+    fn from(s: &str) -> Self {
+        match s {
+            "DELIMITED_TEXT" => ExportFileFormat::DelimitedText,
+            "PARQUET" => ExportFileFormat::Parquet,
+            other => ExportFileFormat::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ExportFileFormat {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExportFileFormat::from(s))
+    }
+}
+impl ExportFileFormat {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExportFileFormat::DelimitedText => "DELIMITED_TEXT",
+            ExportFileFormat::Parquet => "PARQUET",
+            ExportFileFormat::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["DELIMITED_TEXT", "PARQUET"]
+    }
+}
+impl AsRef<str> for ExportFileFormat {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The structure with error messages.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1038,43 +961,14 @@ pub struct DataViewErrorInfo {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The category of the error.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>VALIDATION</code> -The inputs to this request are invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please
-    /// contact AWS support to increase quotas.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACCESS_DENIED</code> - Missing required permission to perform this
-    /// request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not
-    /// found.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process
-    /// the request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has
-    /// occurred.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code> - Cancelled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p>
-    /// </li>
+    /// <li> <p> <code>VALIDATION</code> -The inputs to this request are invalid.</p> </li>
+    /// <li> <p> <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please contact AWS support to increase quotas.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> - Missing required permission to perform this request.</p> </li>
+    /// <li> <p> <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not found.</p> </li>
+    /// <li> <p> <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process the request.</p> </li>
+    /// <li> <p> <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has occurred.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> - Cancelled.</p> </li>
+    /// <li> <p> <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p> </li>
     /// </ul>
     pub error_category: std::option::Option<crate::model::ErrorCategory>,
 }
@@ -1085,43 +979,14 @@ impl DataViewErrorInfo {
     }
     /// <p>The category of the error.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>VALIDATION</code> -The inputs to this request are invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please
-    /// contact AWS support to increase quotas.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACCESS_DENIED</code> - Missing required permission to perform this
-    /// request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not
-    /// found.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process
-    /// the request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has
-    /// occurred.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code> - Cancelled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p>
-    /// </li>
+    /// <li> <p> <code>VALIDATION</code> -The inputs to this request are invalid.</p> </li>
+    /// <li> <p> <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please contact AWS support to increase quotas.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> - Missing required permission to perform this request.</p> </li>
+    /// <li> <p> <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not found.</p> </li>
+    /// <li> <p> <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process the request.</p> </li>
+    /// <li> <p> <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has occurred.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> - Cancelled.</p> </li>
+    /// <li> <p> <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p> </li>
     /// </ul>
     pub fn error_category(&self) -> std::option::Option<&crate::model::ErrorCategory> {
         self.error_category.as_ref()
@@ -1160,43 +1025,14 @@ pub mod data_view_error_info {
         }
         /// <p>The category of the error.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>VALIDATION</code> -The inputs to this request are invalid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please
-        /// contact AWS support to increase quotas.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCESS_DENIED</code> - Missing required permission to perform this
-        /// request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not
-        /// found.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process
-        /// the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has
-        /// occurred.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code> - Cancelled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p>
-        /// </li>
+        /// <li> <p> <code>VALIDATION</code> -The inputs to this request are invalid.</p> </li>
+        /// <li> <p> <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please contact AWS support to increase quotas.</p> </li>
+        /// <li> <p> <code>ACCESS_DENIED</code> - Missing required permission to perform this request.</p> </li>
+        /// <li> <p> <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not found.</p> </li>
+        /// <li> <p> <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process the request.</p> </li>
+        /// <li> <p> <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has occurred.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> - Cancelled.</p> </li>
+        /// <li> <p> <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p> </li>
         /// </ul>
         pub fn error_category(mut self, input: crate::model::ErrorCategory) -> Self {
             self.error_category = Some(input);
@@ -1204,43 +1040,14 @@ pub mod data_view_error_info {
         }
         /// <p>The category of the error.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>VALIDATION</code> -The inputs to this request are invalid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please
-        /// contact AWS support to increase quotas.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCESS_DENIED</code> - Missing required permission to perform this
-        /// request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not
-        /// found.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process
-        /// the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has
-        /// occurred.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code> - Cancelled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p>
-        /// </li>
+        /// <li> <p> <code>VALIDATION</code> -The inputs to this request are invalid.</p> </li>
+        /// <li> <p> <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please contact AWS support to increase quotas.</p> </li>
+        /// <li> <p> <code>ACCESS_DENIED</code> - Missing required permission to perform this request.</p> </li>
+        /// <li> <p> <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not found.</p> </li>
+        /// <li> <p> <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process the request.</p> </li>
+        /// <li> <p> <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has occurred.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> - Cancelled.</p> </li>
+        /// <li> <p> <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p> </li>
         /// </ul>
         pub fn set_error_category(
             mut self,
@@ -1453,14 +1260,8 @@ pub struct Dataset {
     pub dataset_title: std::option::Option<std::string::String>,
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-    /// </li>
+    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub kind: std::option::Option<crate::model::DatasetKind>,
     /// <p>Description for a Dataset.</p>
@@ -1491,14 +1292,8 @@ impl Dataset {
     }
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-    /// </li>
+    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub fn kind(&self) -> std::option::Option<&crate::model::DatasetKind> {
         self.kind.as_ref()
@@ -1597,14 +1392,8 @@ pub mod dataset {
         }
         /// <p>The format in which Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn kind(mut self, input: crate::model::DatasetKind) -> Self {
             self.kind = Some(input);
@@ -1612,14 +1401,8 @@ pub mod dataset {
         }
         /// <p>The format in which Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::DatasetKind>) -> Self {
             self.kind = input;
@@ -1822,21 +1605,9 @@ pub struct ChangesetSummary {
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded
-    /// Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APPEND</code> - Changeset is considered as an addition to the end of all prior
-    /// loaded Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior
-    /// ingested Changeset.</p>
-    /// </li>
+    /// <li> <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> - Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub change_type: std::option::Option<crate::model::ChangeType>,
     /// <p>Options that define the location of the data being ingested.</p>
@@ -1849,32 +1620,19 @@ pub struct ChangesetSummary {
     pub create_time: i64,
     /// <p>Status of the Changeset ingestion.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code> - Changeset is pending creation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - Changeset creation has failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCESS</code> - Changeset creation has succeeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code> - Changeset creation is running.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOP_REQUESTED</code> - User requested Changeset creation to stop.</p>
-    /// </li>
+    /// <li> <p> <code>PENDING</code> - Changeset is pending creation.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Changeset creation has failed.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> - Changeset creation has succeeded.</p> </li>
+    /// <li> <p> <code>RUNNING</code> - Changeset creation is running.</p> </li>
+    /// <li> <p> <code>STOP_REQUESTED</code> - User requested Changeset creation to stop.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::IngestionStatus>,
     /// <p>The structure with error messages.</p>
     pub error_info: std::option::Option<crate::model::ChangesetErrorInfo>,
     /// <p>Time until which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub active_until_timestamp: std::option::Option<i64>,
+    /// Milliseconds since UTC epoch
+    pub active_from_timestamp: std::option::Option<i64>,
     /// <p>The unique identifier of the Changeset that is updated.</p>
     pub updates_changeset_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the updated Changeset.</p>
@@ -1895,21 +1653,9 @@ impl ChangesetSummary {
     }
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded
-    /// Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APPEND</code> - Changeset is considered as an addition to the end of all prior
-    /// loaded Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior
-    /// ingested Changeset.</p>
-    /// </li>
+    /// <li> <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> - Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeType> {
         self.change_type.as_ref()
@@ -1934,26 +1680,11 @@ impl ChangesetSummary {
     }
     /// <p>Status of the Changeset ingestion.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code> - Changeset is pending creation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - Changeset creation has failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCESS</code> - Changeset creation has succeeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code> - Changeset creation is running.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STOP_REQUESTED</code> - User requested Changeset creation to stop.</p>
-    /// </li>
+    /// <li> <p> <code>PENDING</code> - Changeset is pending creation.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Changeset creation has failed.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> - Changeset creation has succeeded.</p> </li>
+    /// <li> <p> <code>RUNNING</code> - Changeset creation is running.</p> </li>
+    /// <li> <p> <code>STOP_REQUESTED</code> - User requested Changeset creation to stop.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::IngestionStatus> {
         self.status.as_ref()
@@ -1965,6 +1696,10 @@ impl ChangesetSummary {
     /// <p>Time until which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn active_until_timestamp(&self) -> std::option::Option<i64> {
         self.active_until_timestamp
+    }
+    /// Milliseconds since UTC epoch
+    pub fn active_from_timestamp(&self) -> std::option::Option<i64> {
+        self.active_from_timestamp
     }
     /// <p>The unique identifier of the Changeset that is updated.</p>
     pub fn updates_changeset_id(&self) -> std::option::Option<&str> {
@@ -1988,6 +1723,7 @@ impl std::fmt::Debug for ChangesetSummary {
         formatter.field("status", &self.status);
         formatter.field("error_info", &self.error_info);
         formatter.field("active_until_timestamp", &self.active_until_timestamp);
+        formatter.field("active_from_timestamp", &self.active_from_timestamp);
         formatter.field("updates_changeset_id", &self.updates_changeset_id);
         formatter.field("updated_by_changeset_id", &self.updated_by_changeset_id);
         formatter.finish()
@@ -2013,6 +1749,7 @@ pub mod changeset_summary {
         pub(crate) status: std::option::Option<crate::model::IngestionStatus>,
         pub(crate) error_info: std::option::Option<crate::model::ChangesetErrorInfo>,
         pub(crate) active_until_timestamp: std::option::Option<i64>,
+        pub(crate) active_from_timestamp: std::option::Option<i64>,
         pub(crate) updates_changeset_id: std::option::Option<std::string::String>,
         pub(crate) updated_by_changeset_id: std::option::Option<std::string::String>,
     }
@@ -2052,21 +1789,9 @@ pub mod changeset_summary {
         }
         /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded
-        /// Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APPEND</code> - Changeset is considered as an addition to the end of all prior
-        /// loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior
-        /// ingested Changeset.</p>
-        /// </li>
+        /// <li> <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>APPEND</code> - Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
         /// </ul>
         pub fn change_type(mut self, input: crate::model::ChangeType) -> Self {
             self.change_type = Some(input);
@@ -2074,21 +1799,9 @@ pub mod changeset_summary {
         }
         /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded
-        /// Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APPEND</code> - Changeset is considered as an addition to the end of all prior
-        /// loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior
-        /// ingested Changeset.</p>
-        /// </li>
+        /// <li> <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>APPEND</code> - Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
         /// </ul>
         pub fn set_change_type(
             mut self,
@@ -2159,26 +1872,11 @@ pub mod changeset_summary {
         }
         /// <p>Status of the Changeset ingestion.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code> - Changeset is pending creation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - Changeset creation has failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCESS</code> - Changeset creation has succeeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> - Changeset creation is running.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOP_REQUESTED</code> - User requested Changeset creation to stop.</p>
-        /// </li>
+        /// <li> <p> <code>PENDING</code> - Changeset is pending creation.</p> </li>
+        /// <li> <p> <code>FAILED</code> - Changeset creation has failed.</p> </li>
+        /// <li> <p> <code>SUCCESS</code> - Changeset creation has succeeded.</p> </li>
+        /// <li> <p> <code>RUNNING</code> - Changeset creation is running.</p> </li>
+        /// <li> <p> <code>STOP_REQUESTED</code> - User requested Changeset creation to stop.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::IngestionStatus) -> Self {
             self.status = Some(input);
@@ -2186,26 +1884,11 @@ pub mod changeset_summary {
         }
         /// <p>Status of the Changeset ingestion.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code> - Changeset is pending creation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - Changeset creation has failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCESS</code> - Changeset creation has succeeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> - Changeset creation is running.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STOP_REQUESTED</code> - User requested Changeset creation to stop.</p>
-        /// </li>
+        /// <li> <p> <code>PENDING</code> - Changeset is pending creation.</p> </li>
+        /// <li> <p> <code>FAILED</code> - Changeset creation has failed.</p> </li>
+        /// <li> <p> <code>SUCCESS</code> - Changeset creation has succeeded.</p> </li>
+        /// <li> <p> <code>RUNNING</code> - Changeset creation is running.</p> </li>
+        /// <li> <p> <code>STOP_REQUESTED</code> - User requested Changeset creation to stop.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -2235,6 +1918,16 @@ pub mod changeset_summary {
         /// <p>Time until which the Changeset is active. The value is determined as Epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
         pub fn set_active_until_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.active_until_timestamp = input;
+            self
+        }
+        /// Milliseconds since UTC epoch
+        pub fn active_from_timestamp(mut self, input: i64) -> Self {
+            self.active_from_timestamp = Some(input);
+            self
+        }
+        /// Milliseconds since UTC epoch
+        pub fn set_active_from_timestamp(mut self, input: std::option::Option<i64>) -> Self {
+            self.active_from_timestamp = input;
             self
         }
         /// <p>The unique identifier of the Changeset that is updated.</p>
@@ -2276,6 +1969,7 @@ pub mod changeset_summary {
                 status: self.status,
                 error_info: self.error_info,
                 active_until_timestamp: self.active_until_timestamp,
+                active_from_timestamp: self.active_from_timestamp,
                 updates_changeset_id: self.updates_changeset_id,
                 updated_by_changeset_id: self.updated_by_changeset_id,
             }
@@ -2297,43 +1991,14 @@ pub struct ChangesetErrorInfo {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The category of the error.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>VALIDATION</code> -The inputs to this request are invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please
-    /// contact AWS support to increase quotas.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACCESS_DENIED</code> - Missing required permission to perform this
-    /// request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not
-    /// found.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process
-    /// the request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has
-    /// occurred.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code> - Cancelled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p>
-    /// </li>
+    /// <li> <p> <code>VALIDATION</code> -The inputs to this request are invalid.</p> </li>
+    /// <li> <p> <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please contact AWS support to increase quotas.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> - Missing required permission to perform this request.</p> </li>
+    /// <li> <p> <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not found.</p> </li>
+    /// <li> <p> <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process the request.</p> </li>
+    /// <li> <p> <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has occurred.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> - Cancelled.</p> </li>
+    /// <li> <p> <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p> </li>
     /// </ul>
     pub error_category: std::option::Option<crate::model::ErrorCategory>,
 }
@@ -2344,43 +2009,14 @@ impl ChangesetErrorInfo {
     }
     /// <p>The category of the error.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>VALIDATION</code> -The inputs to this request are invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please
-    /// contact AWS support to increase quotas.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACCESS_DENIED</code> - Missing required permission to perform this
-    /// request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not
-    /// found.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process
-    /// the request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has
-    /// occurred.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code> - Cancelled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p>
-    /// </li>
+    /// <li> <p> <code>VALIDATION</code> -The inputs to this request are invalid.</p> </li>
+    /// <li> <p> <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please contact AWS support to increase quotas.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> - Missing required permission to perform this request.</p> </li>
+    /// <li> <p> <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not found.</p> </li>
+    /// <li> <p> <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process the request.</p> </li>
+    /// <li> <p> <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has occurred.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> - Cancelled.</p> </li>
+    /// <li> <p> <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p> </li>
     /// </ul>
     pub fn error_category(&self) -> std::option::Option<&crate::model::ErrorCategory> {
         self.error_category.as_ref()
@@ -2419,43 +2055,14 @@ pub mod changeset_error_info {
         }
         /// <p>The category of the error.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>VALIDATION</code> -The inputs to this request are invalid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please
-        /// contact AWS support to increase quotas.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCESS_DENIED</code> - Missing required permission to perform this
-        /// request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not
-        /// found.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process
-        /// the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has
-        /// occurred.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code> - Cancelled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p>
-        /// </li>
+        /// <li> <p> <code>VALIDATION</code> -The inputs to this request are invalid.</p> </li>
+        /// <li> <p> <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please contact AWS support to increase quotas.</p> </li>
+        /// <li> <p> <code>ACCESS_DENIED</code> - Missing required permission to perform this request.</p> </li>
+        /// <li> <p> <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not found.</p> </li>
+        /// <li> <p> <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process the request.</p> </li>
+        /// <li> <p> <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has occurred.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> - Cancelled.</p> </li>
+        /// <li> <p> <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p> </li>
         /// </ul>
         pub fn error_category(mut self, input: crate::model::ErrorCategory) -> Self {
             self.error_category = Some(input);
@@ -2463,43 +2070,14 @@ pub mod changeset_error_info {
         }
         /// <p>The category of the error.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>VALIDATION</code> -The inputs to this request are invalid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please
-        /// contact AWS support to increase quotas.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACCESS_DENIED</code> - Missing required permission to perform this
-        /// request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not
-        /// found.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process
-        /// the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has
-        /// occurred.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code> - Cancelled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p>
-        /// </li>
+        /// <li> <p> <code>VALIDATION</code> -The inputs to this request are invalid.</p> </li>
+        /// <li> <p> <code>SERVICE_QUOTA_EXCEEDED</code> - Service quotas have been exceeded. Please contact AWS support to increase quotas.</p> </li>
+        /// <li> <p> <code>ACCESS_DENIED</code> - Missing required permission to perform this request.</p> </li>
+        /// <li> <p> <code>RESOURCE_NOT_FOUND</code> - One or more inputs to this request were not found.</p> </li>
+        /// <li> <p> <code>THROTTLING</code> - The system temporarily lacks sufficient resources to process the request.</p> </li>
+        /// <li> <p> <code>INTERNAL_SERVICE_EXCEPTION</code> - An internal service error has occurred.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> - Cancelled.</p> </li>
+        /// <li> <p> <code>USER_RECOVERABLE</code> - A user recoverable error has occurred.</p> </li>
         /// </ul>
         pub fn set_error_category(
             mut self,
@@ -2925,12 +2503,9 @@ pub mod permission_group_params {
         /// To override the contents of this collection use [`set_dataset_permissions`](Self::set_dataset_permissions).
         ///
         /// <p>List of resource permissions.</p>
-        pub fn dataset_permissions(
-            mut self,
-            input: impl Into<crate::model::ResourcePermission>,
-        ) -> Self {
+        pub fn dataset_permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.dataset_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dataset_permissions = Some(v);
             self
         }

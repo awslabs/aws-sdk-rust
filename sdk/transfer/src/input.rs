@@ -32,18 +32,12 @@ pub mod create_access_input {
             self.home_directory = input;
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-        /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-        /// S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-        /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-        /// S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -55,72 +49,30 @@ pub mod create_access_input {
         ///
         /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
         ///
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-        /// be visible to your user and how you want to make them visible. You must specify the
-        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-        /// can only be set when <code>HomeDirectoryType</code> is set to
-        /// <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-        /// <p>
-        /// <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        /// <p>In most cases, you can use this value instead of the session policy to lock down your
-        /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
-        /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-        /// <code>HomeDirectory</code> parameter value.</p>
+        /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p>
-        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        ///
-        /// <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
         /// </note>
         pub fn home_directory_mappings(
             mut self,
-            input: impl Into<crate::model::HomeDirectoryMapEntry>,
+            input: crate::model::HomeDirectoryMapEntry,
         ) -> Self {
             let mut v = self.home_directory_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.home_directory_mappings = Some(v);
             self
         }
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-        /// be visible to your user and how you want to make them visible. You must specify the
-        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-        /// can only be set when <code>HomeDirectoryType</code> is set to
-        /// <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-        /// <p>
-        /// <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        /// <p>In most cases, you can use this value instead of the session policy to lock down your
-        /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
-        /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-        /// <code>HomeDirectory</code> parameter value.</p>
+        /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p>
-        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        ///
-        /// <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
         /// </note>
         pub fn set_home_directory_mappings(
             mut self,
@@ -129,56 +81,32 @@ pub mod create_access_input {
             self.home_directory_mappings = input;
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-        /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-        /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-        ///
-        /// <note>
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
         /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-        /// it in the <code>Policy</code> argument.</p>      
-        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
-        /// session policy</a>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API
-        /// Reference</i>.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
         /// </note>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-        /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-        /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-        ///
-        /// <note>
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
         /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-        /// it in the <code>Policy</code> argument.</p>      
-        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
-        /// session policy</a>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API
-        /// Reference</i>.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
         /// </note>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
         }
-        /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
-        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-        /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
-        /// files and directories in your file system determine the level of access your users get when
-        /// transferring files into and out of your Amazon EFS file systems.</p>
+        /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
         pub fn posix_profile(mut self, input: crate::model::PosixProfile) -> Self {
             self.posix_profile = Some(input);
             self
         }
-        /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
-        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-        /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
-        /// files and directories in your file system determine the level of access your users get when
-        /// transferring files into and out of your Amazon EFS file systems.</p>
+        /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
         pub fn set_posix_profile(
             mut self,
             input: std::option::Option<crate::model::PosixProfile>,
@@ -186,18 +114,12 @@ pub mod create_access_input {
             self.posix_profile = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-        /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-        /// server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-        /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-        /// server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -212,36 +134,18 @@ pub mod create_access_input {
             self.server_id = input;
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory.
-        /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-        /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-        /// you can view the SID values by running the following command using Windows PowerShell.</p>
-        ///
-        /// <p>
-        /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-        /// </p>
-        ///
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        ///
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-        /// You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory.
-        /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-        /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-        /// you can view the SID values by running the following command using Windows PowerShell.</p>
-        ///
-        /// <p>
-        /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-        /// </p>
-        ///
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        ///
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-        /// You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -269,7 +173,7 @@ pub mod create_access_input {
 #[doc(hidden)]
 pub type CreateAccessInputOperationOutputAlias = crate::operation::CreateAccess;
 #[doc(hidden)]
-pub type CreateAccessInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAccessInput {
     /// Consumes the builder and constructs an Operation<[`CreateAccess`](crate::operation::CreateAccess)>
     #[allow(clippy::let_and_return)]
@@ -280,7 +184,7 @@ impl CreateAccessInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAccess,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -364,7 +268,7 @@ impl CreateAccessInput {
             "CreateAccess",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -403,131 +307,68 @@ pub mod create_server_input {
         pub(crate) identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
         pub(crate) logging_role: std::option::Option<std::string::String>,
         pub(crate) protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
+        pub(crate) protocol_details: std::option::Option<crate::model::ProtocolDetails>,
         pub(crate) security_policy_name: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) workflow_details: std::option::Option<crate::model::WorkflowDetails>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required
-        /// when <code>Protocols</code> is set to <code>FTPS</code>.</p>
-        ///
-        /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a>
-        /// in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-        ///
-        /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a>
-        /// in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-        ///
-        /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a
-        /// private certificate</a> in the <i> Amazon Web Services Certificate Manager User
-        /// Guide</i>.</p>
-        ///
-        /// <p>Certificates with the following cryptographic algorithms and key sizes are
-        /// supported:</p>
-        ///
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+        /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+        /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+        /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+        /// <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>2048-bit RSA (RSA_2048)</p>
-        /// </li>
-        /// <li>
-        /// <p>4096-bit RSA (RSA_4096)</p>
-        /// </li>
-        /// <li>
-        /// <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p>
-        /// </li>
-        /// <li>
-        /// <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p>
-        /// </li>
-        /// <li>
-        /// <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <note>
-        /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
-        /// address specified and information about the issuer.</p>
+        /// <li> <p>2048-bit RSA (RSA_2048)</p> </li>
+        /// <li> <p>4096-bit RSA (RSA_4096)</p> </li>
+        /// <li> <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p> </li>
+        /// <li> <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p> </li>
+        /// <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p> </li>
+        /// </ul> <note>
+        /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>
         /// </note>
         pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required
-        /// when <code>Protocols</code> is set to <code>FTPS</code>.</p>
-        ///
-        /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a>
-        /// in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-        ///
-        /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a>
-        /// in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-        ///
-        /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a
-        /// private certificate</a> in the <i> Amazon Web Services Certificate Manager User
-        /// Guide</i>.</p>
-        ///
-        /// <p>Certificates with the following cryptographic algorithms and key sizes are
-        /// supported:</p>
-        ///
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+        /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+        /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+        /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+        /// <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>2048-bit RSA (RSA_2048)</p>
-        /// </li>
-        /// <li>
-        /// <p>4096-bit RSA (RSA_4096)</p>
-        /// </li>
-        /// <li>
-        /// <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p>
-        /// </li>
-        /// <li>
-        /// <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p>
-        /// </li>
-        /// <li>
-        /// <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <note>
-        /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
-        /// address specified and information about the issuer.</p>
+        /// <li> <p>2048-bit RSA (RSA_2048)</p> </li>
+        /// <li> <p>4096-bit RSA (RSA_4096)</p> </li>
+        /// <li> <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p> </li>
+        /// <li> <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p> </li>
+        /// <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p> </li>
+        /// </ul> <note>
+        /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>
         /// </note>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
         }
-        /// <p>The domain of the storage system that is used for file transfers. There are two domains
-        /// available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
-        /// default value is S3.</p>
-        ///
-        /// <note>
+        /// <p>The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p> <note>
         /// <p>After the server is created, the domain cannot be changed.</p>
         /// </note>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.domain = Some(input);
             self
         }
-        /// <p>The domain of the storage system that is used for file transfers. There are two domains
-        /// available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
-        /// default value is S3.</p>
-        ///
-        /// <note>
+        /// <p>The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p> <note>
         /// <p>After the server is created, the domain cannot be changed.</p>
         /// </note>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.domain = input;
             self
         }
-        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server.
-        /// When you host your endpoint within your VPC, you can make it accessible only to resources
-        /// within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over
-        /// the internet. Your VPC's default security groups are automatically assigned to your
-        /// endpoint.</p>
+        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
         pub fn endpoint_details(mut self, input: crate::model::EndpointDetails) -> Self {
             self.endpoint_details = Some(input);
             self
         }
-        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server.
-        /// When you host your endpoint within your VPC, you can make it accessible only to resources
-        /// within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over
-        /// the internet. Your VPC's default security groups are automatically assigned to your
-        /// endpoint.</p>
+        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
         pub fn set_endpoint_details(
             mut self,
             input: std::option::Option<crate::model::EndpointDetails>,
@@ -535,47 +376,19 @@ pub mod create_server_input {
             self.endpoint_details = input;
             self
         }
-        /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC)
-        /// or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and
-        /// resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p>
-        /// <note>
-        /// <p> After May 19, 2021, you won't be able to create a server using
-        /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already
-        /// done so before May 19, 2021. If you have already created servers with
-        /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021,
-        /// you will not be affected. After this date, use
-        /// <code>EndpointType</code>=<code>VPC</code>.</p>
-        ///
-        /// <p>For more information, see
-        /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
-        /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With
-        /// this endpoint type, you have the option to directly associate up to three Elastic IPv4
-        /// addresses (BYO IP included) with your server's endpoint and use VPC security groups to
-        /// restrict traffic by the client's public IP address. This is not possible with
-        /// <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
+        /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>
+        /// <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>
+        /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+        /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
         /// </note>
         pub fn endpoint_type(mut self, input: crate::model::EndpointType) -> Self {
             self.endpoint_type = Some(input);
             self
         }
-        /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC)
-        /// or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and
-        /// resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p>
-        /// <note>
-        /// <p> After May 19, 2021, you won't be able to create a server using
-        /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already
-        /// done so before May 19, 2021. If you have already created servers with
-        /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021,
-        /// you will not be affected. After this date, use
-        /// <code>EndpointType</code>=<code>VPC</code>.</p>
-        ///
-        /// <p>For more information, see
-        /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
-        /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With
-        /// this endpoint type, you have the option to directly associate up to three Elastic IPv4
-        /// addresses (BYO IP included) with your server's endpoint and use VPC security groups to
-        /// restrict traffic by the client's public IP address. This is not possible with
-        /// <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
+        /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>
+        /// <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>
+        /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+        /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
         /// </note>
         pub fn set_endpoint_type(
             mut self,
@@ -584,45 +397,23 @@ pub mod create_server_input {
             self.endpoint_type = input;
             self
         }
-        /// <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
-        /// my-new-server-key</code> command.</p>
-        ///
-        /// <important>
-        /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled
-        /// server to a new server, don't update the host key. Accidentally changing a
-        /// server's host key can be disruptive.</p>
+        /// <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code> command.</p> <important>
+        /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        ///
-        ///
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer
-        /// Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User Guide</i>.</p>
         pub fn host_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_key = Some(input.into());
             self
         }
-        /// <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
-        /// my-new-server-key</code> command.</p>
-        ///
-        /// <important>
-        /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled
-        /// server to a new server, don't update the host key. Accidentally changing a
-        /// server's host key can be disruptive.</p>
+        /// <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code> command.</p> <important>
+        /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        ///
-        ///
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer
-        /// Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User Guide</i>.</p>
         pub fn set_host_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_key = input;
             self
         }
-        /// <p>Required when <code>IdentityProviderType</code> is set to
-        /// <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array containing
-        /// all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or
-        /// invoke a customer-supplied authentication API, including the API Gateway URL. Not required
-        /// when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
+        /// <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
         pub fn identity_provider_details(
             mut self,
             input: crate::model::IdentityProviderDetails,
@@ -630,11 +421,7 @@ pub mod create_server_input {
             self.identity_provider_details = Some(input);
             self
         }
-        /// <p>Required when <code>IdentityProviderType</code> is set to
-        /// <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array containing
-        /// all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or
-        /// invoke a customer-supplied authentication API, including the API Gateway URL. Not required
-        /// when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
+        /// <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
         pub fn set_identity_provider_details(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderDetails>,
@@ -642,34 +429,18 @@ pub mod create_server_input {
             self.identity_provider_details = input;
             self
         }
-        /// <p>Specifies the mode of authentication for a server. The default value is
-        /// <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within
-        /// the Amazon Web Services Transfer Family service.</p>
-        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to
-        /// Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your
-        /// on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to
-        /// provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-        /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
-        /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
-        /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+        /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
+        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
         pub fn identity_provider_type(mut self, input: crate::model::IdentityProviderType) -> Self {
             self.identity_provider_type = Some(input);
             self
         }
-        /// <p>Specifies the mode of authentication for a server. The default value is
-        /// <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within
-        /// the Amazon Web Services Transfer Family service.</p>
-        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to
-        /// Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your
-        /// on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to
-        /// provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-        /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
-        /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-        /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
-        /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+        /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
+        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
         pub fn set_identity_provider_type(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -677,16 +448,12 @@ pub mod create_server_input {
             self.identity_provider_type = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
-        /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
-        /// your CloudWatch logs.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
         pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.logging_role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
-        /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
-        /// your CloudWatch logs.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
         pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.logging_role = input;
             self
@@ -695,89 +462,56 @@ pub mod create_server_input {
         ///
         /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
         ///
-        /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
-        /// client can connect to your server's endpoint. The available protocols are:</p>
-        ///
+        /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over
-        /// SSH</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS
-        /// encryption</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <note>
-        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate
-        /// Manager (ACM) which is used to identify your server when clients connect to it over
-        /// FTPS.</p>
-        ///
-        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
-        /// <code>EndpointType</code> must be <code>VPC</code> and the
-        /// <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-        ///
-        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then
-        /// <code>AddressAllocationIds</code> cannot be associated.</p>
-        ///
-        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
-        /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-        /// <code>SERVICE_MANAGED</code>.</p>
+        /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
+        /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+        /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+        /// </ul> <note>
+        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p>
+        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
+        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
+        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
         /// </note>
-        pub fn protocols(mut self, input: impl Into<crate::model::Protocol>) -> Self {
+        pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }
-        /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
-        /// client can connect to your server's endpoint. The available protocols are:</p>
-        ///
+        /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over
-        /// SSH</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS
-        /// encryption</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <note>
-        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate
-        /// Manager (ACM) which is used to identify your server when clients connect to it over
-        /// FTPS.</p>
-        ///
-        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
-        /// <code>EndpointType</code> must be <code>VPC</code> and the
-        /// <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-        ///
-        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then
-        /// <code>AddressAllocationIds</code> cannot be associated.</p>
-        ///
-        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
-        /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-        /// <code>SERVICE_MANAGED</code>.</p>
+        /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
+        /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+        /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+        /// </ul> <note>
+        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p>
+        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
+        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
+        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
         /// </note>
         pub fn set_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
         ) -> Self {
             self.protocols = input;
+            self
+        }
+        /// <p>The protocol settings that are configured for your server.</p>
+        /// <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p>
+        /// <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p>
+        pub fn protocol_details(mut self, input: crate::model::ProtocolDetails) -> Self {
+            self.protocol_details = Some(input);
+            self
+        }
+        /// <p>The protocol settings that are configured for your server.</p>
+        /// <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p>
+        /// <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p>
+        pub fn set_protocol_details(
+            mut self,
+            input: std::option::Option<crate::model::ProtocolDetails>,
+        ) -> Self {
+            self.protocol_details = input;
             self
         }
         /// <p>Specifies the name of the security policy that is attached to the server.</p>
@@ -798,9 +532,9 @@ pub mod create_server_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Key-value pairs that can be used to group and search for servers.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -842,6 +576,7 @@ pub mod create_server_input {
                 identity_provider_type: self.identity_provider_type,
                 logging_role: self.logging_role,
                 protocols: self.protocols,
+                protocol_details: self.protocol_details,
                 security_policy_name: self.security_policy_name,
                 tags: self.tags,
                 workflow_details: self.workflow_details,
@@ -852,7 +587,7 @@ pub mod create_server_input {
 #[doc(hidden)]
 pub type CreateServerInputOperationOutputAlias = crate::operation::CreateServer;
 #[doc(hidden)]
-pub type CreateServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateServerInput {
     /// Consumes the builder and constructs an Operation<[`CreateServer`](crate::operation::CreateServer)>
     #[allow(clippy::let_and_return)]
@@ -863,7 +598,7 @@ impl CreateServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -947,7 +682,7 @@ impl CreateServerInput {
             "CreateServer",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1004,18 +739,12 @@ pub mod create_user_input {
             self.home_directory = input;
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-        /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-        /// S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-        /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-        /// S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -1027,80 +756,30 @@ pub mod create_user_input {
         ///
         /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
         ///
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-        /// be visible to your user and how you want to make them visible. You must specify the
-        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-        /// can only be set when <code>HomeDirectoryType</code> is set to
-        /// <i>LOGICAL</i>.</p>
-        ///
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-        ///
-        /// <p>
-        /// <code>[ { "Entry": "/directory1", "Target":
-        /// "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        ///
-        /// <p>In most cases, you can use this value instead of the session policy to lock your user
-        /// down to the designated home directory ("<code>chroot</code>"). To do this, you can set
-        /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory
-        /// parameter value.</p>
+        /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p>
-        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        ///
-        /// <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
         /// </note>
         pub fn home_directory_mappings(
             mut self,
-            input: impl Into<crate::model::HomeDirectoryMapEntry>,
+            input: crate::model::HomeDirectoryMapEntry,
         ) -> Self {
             let mut v = self.home_directory_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.home_directory_mappings = Some(v);
             self
         }
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-        /// be visible to your user and how you want to make them visible. You must specify the
-        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-        /// can only be set when <code>HomeDirectoryType</code> is set to
-        /// <i>LOGICAL</i>.</p>
-        ///
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-        ///
-        /// <p>
-        /// <code>[ { "Entry": "/directory1", "Target":
-        /// "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        ///
-        /// <p>In most cases, you can use this value instead of the session policy to lock your user
-        /// down to the designated home directory ("<code>chroot</code>"). To do this, you can set
-        /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory
-        /// parameter value.</p>
+        /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p>
-        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        ///
-        /// <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
         /// </note>
         pub fn set_home_directory_mappings(
             mut self,
@@ -1109,68 +788,32 @@ pub mod create_user_input {
             self.home_directory_mappings = input;
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-        /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-        /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-        ///
-        /// <note>
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
         /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-        /// it in the <code>Policy</code> argument.</p>
-        ///
-        ///
-        ///
-        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session
-        /// policy</a>.</p>
-        ///
-        ///
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
-        /// Security Token Service API Reference</i>.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
         /// </note>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-        /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-        /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-        ///
-        /// <note>
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
         /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-        /// it in the <code>Policy</code> argument.</p>
-        ///
-        ///
-        ///
-        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session
-        /// policy</a>.</p>
-        ///
-        ///
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
-        /// Security Token Service API Reference</i>.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
         /// </note>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
         }
-        /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
-        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-        /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
-        /// files and directories in Amazon EFS determine the level of access your users get when
-        /// transferring files into and out of your Amazon EFS file systems.</p>
+        /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in Amazon EFS determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
         pub fn posix_profile(mut self, input: crate::model::PosixProfile) -> Self {
             self.posix_profile = Some(input);
             self
         }
-        /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
-        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-        /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
-        /// files and directories in Amazon EFS determine the level of access your users get when
-        /// transferring files into and out of your Amazon EFS file systems.</p>
+        /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in Amazon EFS determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
         pub fn set_posix_profile(
             mut self,
             input: std::option::Option<crate::model::PosixProfile>,
@@ -1178,42 +821,36 @@ pub mod create_user_input {
             self.posix_profile = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-        /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-        /// server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-        /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-        /// server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
         }
-        /// <p>A system-assigned unique identifier for a server instance. This is the specific server
-        /// that you added your user to.</p>
+        /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>A system-assigned unique identifier for a server instance. This is the specific server
-        /// that you added your user to.</p>
+        /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
         }
-        /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the
-        /// server.</p>
+        /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p> <note>
+        /// <p> Currently, Transfer Family does not accept elliptical curve keys (keys beginning with <code>ecdsa</code>). </p>
+        /// </note>
         pub fn ssh_public_key_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssh_public_key_body = Some(input.into());
             self
         }
-        /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the
-        /// server.</p>
+        /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p> <note>
+        /// <p> Currently, Transfer Family does not accept elliptical curve keys (keys beginning with <code>ecdsa</code>). </p>
+        /// </note>
         pub fn set_ssh_public_key_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1225,16 +862,14 @@ pub mod create_user_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached
-        /// to users for any purpose.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached
-        /// to users for any purpose.</p>
+        /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1242,18 +877,12 @@ pub mod create_user_input {
             self.tags = input;
             self
         }
-        /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
-        /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
-        /// '-', period '.', and at sign '@'. The user name can't start
-        /// with a hyphen, period, or at sign.</p>
+        /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
-        /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
-        /// '-', period '.', and at sign '@'. The user name can't start
-        /// with a hyphen, period, or at sign.</p>
+        /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -1283,7 +912,7 @@ pub mod create_user_input {
 #[doc(hidden)]
 pub type CreateUserInputOperationOutputAlias = crate::operation::CreateUser;
 #[doc(hidden)]
-pub type CreateUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserInput {
     /// Consumes the builder and constructs an Operation<[`CreateUser`](crate::operation::CreateUser)>
     #[allow(clippy::let_and_return)]
@@ -1294,7 +923,7 @@ impl CreateUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1378,7 +1007,7 @@ impl CreateUserInput {
             "CreateUser",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1429,71 +1058,33 @@ pub mod create_workflow_input {
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
         /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-        /// <p>
-        /// The <code>TYPE</code> specifies which of the following actions is being taken for this step.
-        /// </p>
+        /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Copy</i>: copy the file to another location</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Custom</i>: custom step with a lambda target</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Delete</i>: delete the file</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Tag</i>: add a tag to the file</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>
-        /// Currently, copying and tagging are supported only on S3.
-        /// </p>
+        /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
+        /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
+        /// <li> <p> <i>Delete</i>: delete the file</p> </li>
+        /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+        /// </ul> <note>
+        /// <p> Currently, copying and tagging are supported only on S3. </p>
         /// </note>
-        /// <p>
-        /// For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path.
-        /// </p>
-        pub fn steps(mut self, input: impl Into<crate::model::WorkflowStep>) -> Self {
+        /// <p> For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path. </p>
+        pub fn steps(mut self, input: crate::model::WorkflowStep) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
         /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-        /// <p>
-        /// The <code>TYPE</code> specifies which of the following actions is being taken for this step.
-        /// </p>
+        /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Copy</i>: copy the file to another location</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Custom</i>: custom step with a lambda target</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Delete</i>: delete the file</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Tag</i>: add a tag to the file</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>
-        /// Currently, copying and tagging are supported only on S3.
-        /// </p>
+        /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
+        /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
+        /// <li> <p> <i>Delete</i>: delete the file</p> </li>
+        /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+        /// </ul> <note>
+        /// <p> Currently, copying and tagging are supported only on S3. </p>
         /// </note>
-        /// <p>
-        /// For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path.
-        /// </p>
+        /// <p> For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path. </p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
@@ -1505,23 +1096,17 @@ pub mod create_workflow_input {
         ///
         /// To override the contents of this collection use [`set_on_exception_steps`](Self::set_on_exception_steps).
         ///
-        /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-        /// <note>
-        /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call
-        /// back API to kick off the exception steps. Additionally, if the lambda does not send
-        /// <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
+        /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
+        /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
         /// </note>
-        pub fn on_exception_steps(mut self, input: impl Into<crate::model::WorkflowStep>) -> Self {
+        pub fn on_exception_steps(mut self, input: crate::model::WorkflowStep) -> Self {
             let mut v = self.on_exception_steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.on_exception_steps = Some(v);
             self
         }
-        /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-        /// <note>
-        /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call
-        /// back API to kick off the exception steps. Additionally, if the lambda does not send
-        /// <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
+        /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
+        /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
         /// </note>
         pub fn set_on_exception_steps(
             mut self,
@@ -1534,16 +1119,14 @@ pub mod create_workflow_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached
-        /// to workflows for any purpose.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached
-        /// to workflows for any purpose.</p>
+        /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1570,7 +1153,7 @@ pub mod create_workflow_input {
 #[doc(hidden)]
 pub type CreateWorkflowInputOperationOutputAlias = crate::operation::CreateWorkflow;
 #[doc(hidden)]
-pub type CreateWorkflowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWorkflowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkflowInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkflow`](crate::operation::CreateWorkflow)>
     #[allow(clippy::let_and_return)]
@@ -1581,7 +1164,7 @@ impl CreateWorkflowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkflow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1666,7 +1249,7 @@ impl CreateWorkflowInput {
             "CreateWorkflow",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1709,36 +1292,18 @@ pub mod delete_access_input {
             self.server_id = input;
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory.
-        /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-        /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-        /// you can view the SID values by running the following command using Windows PowerShell.</p>
-        ///
-        /// <p>
-        /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-        /// </p>
-        ///
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        ///
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-        /// You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory.
-        /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-        /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-        /// you can view the SID values by running the following command using Windows PowerShell.</p>
-        ///
-        /// <p>
-        /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-        /// </p>
-        ///
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        ///
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-        /// You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -1760,7 +1325,7 @@ pub mod delete_access_input {
 #[doc(hidden)]
 pub type DeleteAccessInputOperationOutputAlias = crate::operation::DeleteAccess;
 #[doc(hidden)]
-pub type DeleteAccessInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAccessInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccess`](crate::operation::DeleteAccess)>
     #[allow(clippy::let_and_return)]
@@ -1771,7 +1336,7 @@ impl DeleteAccessInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccess,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1855,7 +1420,7 @@ impl DeleteAccessInput {
             "DeleteAccess",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1913,7 +1478,7 @@ pub mod delete_server_input {
 #[doc(hidden)]
 pub type DeleteServerInputOperationOutputAlias = crate::operation::DeleteServer;
 #[doc(hidden)]
-pub type DeleteServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteServer`](crate::operation::DeleteServer)>
     #[allow(clippy::let_and_return)]
@@ -1924,7 +1489,7 @@ impl DeleteServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2008,7 +1573,7 @@ impl DeleteServerInput {
             "DeleteServer",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2042,14 +1607,12 @@ pub mod delete_ssh_public_key_input {
         pub(crate) user_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance
-        /// that has the user assigned to it.</p>
+        /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance
-        /// that has the user assigned to it.</p>
+        /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -2095,7 +1658,7 @@ pub mod delete_ssh_public_key_input {
 #[doc(hidden)]
 pub type DeleteSshPublicKeyInputOperationOutputAlias = crate::operation::DeleteSshPublicKey;
 #[doc(hidden)]
-pub type DeleteSshPublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSshPublicKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSshPublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSshPublicKey`](crate::operation::DeleteSshPublicKey)>
     #[allow(clippy::let_and_return)]
@@ -2106,7 +1669,7 @@ impl DeleteSshPublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSshPublicKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2191,7 +1754,7 @@ impl DeleteSshPublicKeyInput {
             "DeleteSshPublicKey",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2224,14 +1787,12 @@ pub mod delete_user_input {
         pub(crate) user_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A system-assigned unique identifier for a server instance that has the user assigned to
-        /// it.</p>
+        /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>A system-assigned unique identifier for a server instance that has the user assigned to
-        /// it.</p>
+        /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -2263,7 +1824,7 @@ pub mod delete_user_input {
 #[doc(hidden)]
 pub type DeleteUserInputOperationOutputAlias = crate::operation::DeleteUser;
 #[doc(hidden)]
-pub type DeleteUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUser`](crate::operation::DeleteUser)>
     #[allow(clippy::let_and_return)]
@@ -2274,7 +1835,7 @@ impl DeleteUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2358,7 +1919,7 @@ impl DeleteUserInput {
             "DeleteUser",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2416,7 +1977,7 @@ pub mod delete_workflow_input {
 #[doc(hidden)]
 pub type DeleteWorkflowInputOperationOutputAlias = crate::operation::DeleteWorkflow;
 #[doc(hidden)]
-pub type DeleteWorkflowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWorkflowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkflowInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkflow`](crate::operation::DeleteWorkflow)>
     #[allow(clippy::let_and_return)]
@@ -2427,7 +1988,7 @@ impl DeleteWorkflowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkflow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2512,7 +2073,7 @@ impl DeleteWorkflowInput {
             "DeleteWorkflow",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2555,36 +2116,18 @@ pub mod describe_access_input {
             self.server_id = input;
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory.
-        /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-        /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-        /// you can view the SID values by running the following command using Windows PowerShell.</p>
-        ///
-        /// <p>
-        /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-        /// </p>
-        ///
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        ///
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-        /// You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory.
-        /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-        /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-        /// you can view the SID values by running the following command using Windows PowerShell.</p>
-        ///
-        /// <p>
-        /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-        /// </p>
-        ///
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        ///
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-        /// You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -2606,7 +2149,7 @@ pub mod describe_access_input {
 #[doc(hidden)]
 pub type DescribeAccessInputOperationOutputAlias = crate::operation::DescribeAccess;
 #[doc(hidden)]
-pub type DescribeAccessInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccessInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccess`](crate::operation::DescribeAccess)>
     #[allow(clippy::let_and_return)]
@@ -2617,7 +2160,7 @@ impl DescribeAccessInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccess,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2702,7 +2245,7 @@ impl DescribeAccessInput {
             "DescribeAccess",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2772,7 +2315,7 @@ pub mod describe_execution_input {
 #[doc(hidden)]
 pub type DescribeExecutionInputOperationOutputAlias = crate::operation::DescribeExecution;
 #[doc(hidden)]
-pub type DescribeExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeExecution`](crate::operation::DescribeExecution)>
     #[allow(clippy::let_and_return)]
@@ -2783,7 +2326,7 @@ impl DescribeExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2868,7 +2411,7 @@ impl DescribeExecutionInput {
             "DescribeExecution",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2929,7 +2472,7 @@ pub mod describe_security_policy_input {
 #[doc(hidden)]
 pub type DescribeSecurityPolicyInputOperationOutputAlias = crate::operation::DescribeSecurityPolicy;
 #[doc(hidden)]
-pub type DescribeSecurityPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSecurityPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSecurityPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSecurityPolicy`](crate::operation::DescribeSecurityPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2940,7 +2483,7 @@ impl DescribeSecurityPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSecurityPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3027,7 +2570,7 @@ impl DescribeSecurityPolicyInput {
             "DescribeSecurityPolicy",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3085,7 +2628,7 @@ pub mod describe_server_input {
 #[doc(hidden)]
 pub type DescribeServerInputOperationOutputAlias = crate::operation::DescribeServer;
 #[doc(hidden)]
-pub type DescribeServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeServerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeServer`](crate::operation::DescribeServer)>
     #[allow(clippy::let_and_return)]
@@ -3096,7 +2639,7 @@ impl DescribeServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3181,7 +2724,7 @@ impl DescribeServerInput {
             "DescribeServer",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3224,14 +2767,12 @@ pub mod describe_user_input {
             self.server_id = input;
             self
         }
-        /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in
-        /// credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
+        /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in
-        /// credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
+        /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -3253,7 +2794,7 @@ pub mod describe_user_input {
 #[doc(hidden)]
 pub type DescribeUserInputOperationOutputAlias = crate::operation::DescribeUser;
 #[doc(hidden)]
-pub type DescribeUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUser`](crate::operation::DescribeUser)>
     #[allow(clippy::let_and_return)]
@@ -3264,7 +2805,7 @@ impl DescribeUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3348,7 +2889,7 @@ impl DescribeUserInput {
             "DescribeUser",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3406,7 +2947,7 @@ pub mod describe_workflow_input {
 #[doc(hidden)]
 pub type DescribeWorkflowInputOperationOutputAlias = crate::operation::DescribeWorkflow;
 #[doc(hidden)]
-pub type DescribeWorkflowInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorkflowInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkflowInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkflow`](crate::operation::DescribeWorkflow)>
     #[allow(clippy::let_and_return)]
@@ -3417,7 +2958,7 @@ impl DescribeWorkflowInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkflow,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3502,7 +3043,7 @@ impl DescribeWorkflowInput {
             "DescribeWorkflow",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3587,7 +3128,7 @@ pub mod import_ssh_public_key_input {
 #[doc(hidden)]
 pub type ImportSshPublicKeyInputOperationOutputAlias = crate::operation::ImportSshPublicKey;
 #[doc(hidden)]
-pub type ImportSshPublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportSshPublicKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportSshPublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`ImportSshPublicKey`](crate::operation::ImportSshPublicKey)>
     #[allow(clippy::let_and_return)]
@@ -3598,7 +3139,7 @@ impl ImportSshPublicKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportSshPublicKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3683,7 +3224,7 @@ impl ImportSshPublicKeyInput {
             "ImportSshPublicKey",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3727,18 +3268,12 @@ pub mod list_accesses_input {
             self.max_results = input;
             self
         }
-        /// <p>When you can get additional results from the <code>ListAccesses</code> call, a
-        /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
-        /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
-        /// accesses.</p>
+        /// <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you can get additional results from the <code>ListAccesses</code> call, a
-        /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
-        /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
-        /// accesses.</p>
+        /// <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3771,7 +3306,7 @@ pub mod list_accesses_input {
 #[doc(hidden)]
 pub type ListAccessesInputOperationOutputAlias = crate::operation::ListAccesses;
 #[doc(hidden)]
-pub type ListAccessesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAccessesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccessesInput {
     /// Consumes the builder and constructs an Operation<[`ListAccesses`](crate::operation::ListAccesses)>
     #[allow(clippy::let_and_return)]
@@ -3782,7 +3317,7 @@ impl ListAccessesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccesses,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3866,7 +3401,7 @@ impl ListAccessesInput {
             "ListAccesses",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3910,54 +3445,22 @@ pub mod list_executions_input {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output.
-        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
-        /// continue listing additional executions.</p>
-        /// <p>
-        /// This is useful for pagination, for instance.
-        /// If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>:
-        /// </p>
-        /// <p>
-        /// <code>aws transfer list-executions --max-results 10</code>
-        /// </p>
-        /// <p>
-        /// This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution.
-        /// You can now call the API again, suppling the <code>NextToken</code> value you received:
-        /// </p>
-        /// <p>
-        /// <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code>
-        /// </p>
-        /// <p>
-        /// This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details
-        /// for all 100 executions have been returned.
-        /// </p>
+        /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
+        /// <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>: </p>
+        /// <p> <code>aws transfer list-executions --max-results 10</code> </p>
+        /// <p> This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, suppling the <code>NextToken</code> value you received: </p>
+        /// <p> <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code> </p>
+        /// <p> This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details for all 100 executions have been returned. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output.
-        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
-        /// continue listing additional executions.</p>
-        /// <p>
-        /// This is useful for pagination, for instance.
-        /// If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>:
-        /// </p>
-        /// <p>
-        /// <code>aws transfer list-executions --max-results 10</code>
-        /// </p>
-        /// <p>
-        /// This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution.
-        /// You can now call the API again, suppling the <code>NextToken</code> value you received:
-        /// </p>
-        /// <p>
-        /// <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code>
-        /// </p>
-        /// <p>
-        /// This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details
-        /// for all 100 executions have been returned.
-        /// </p>
+        /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
+        /// <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>: </p>
+        /// <p> <code>aws transfer list-executions --max-results 10</code> </p>
+        /// <p> This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, suppling the <code>NextToken</code> value you received: </p>
+        /// <p> <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code> </p>
+        /// <p> This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details for all 100 executions have been returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3990,7 +3493,7 @@ pub mod list_executions_input {
 #[doc(hidden)]
 pub type ListExecutionsInputOperationOutputAlias = crate::operation::ListExecutions;
 #[doc(hidden)]
-pub type ListExecutionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListExecutionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListExecutions`](crate::operation::ListExecutions)>
     #[allow(clippy::let_and_return)]
@@ -4001,7 +3504,7 @@ impl ListExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4086,7 +3589,7 @@ impl ListExecutionsInput {
             "ListExecutions",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4119,30 +3622,22 @@ pub mod list_security_policies_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the number of security policies to return as a response to the
-        /// <code>ListSecurityPolicies</code> query.</p>
+        /// <p>Specifies the number of security policies to return as a response to the <code>ListSecurityPolicies</code> query.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Specifies the number of security policies to return as a response to the
-        /// <code>ListSecurityPolicies</code> query.</p>
+        /// <p>Specifies the number of security policies to return as a response to the <code>ListSecurityPolicies</code> query.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>When additional results are obtained from the <code>ListSecurityPolicies</code> command, a
-        /// <code>NextToken</code> parameter is returned in the output. You can then pass the
-        /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
-        /// security policies.</p>
+        /// <p>When additional results are obtained from the <code>ListSecurityPolicies</code> command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional security policies.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When additional results are obtained from the <code>ListSecurityPolicies</code> command, a
-        /// <code>NextToken</code> parameter is returned in the output. You can then pass the
-        /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
-        /// security policies.</p>
+        /// <p>When additional results are obtained from the <code>ListSecurityPolicies</code> command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional security policies.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4164,7 +3659,7 @@ pub mod list_security_policies_input {
 #[doc(hidden)]
 pub type ListSecurityPoliciesInputOperationOutputAlias = crate::operation::ListSecurityPolicies;
 #[doc(hidden)]
-pub type ListSecurityPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSecurityPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSecurityPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListSecurityPolicies`](crate::operation::ListSecurityPolicies)>
     #[allow(clippy::let_and_return)]
@@ -4175,7 +3670,7 @@ impl ListSecurityPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSecurityPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4262,7 +3757,7 @@ impl ListSecurityPoliciesInput {
             "ListSecurityPolicies",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4295,30 +3790,22 @@ pub mod list_servers_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the number of servers to return as a response to the <code>ListServers</code>
-        /// query.</p>
+        /// <p>Specifies the number of servers to return as a response to the <code>ListServers</code> query.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Specifies the number of servers to return as a response to the <code>ListServers</code>
-        /// query.</p>
+        /// <p>Specifies the number of servers to return as a response to the <code>ListServers</code> query.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>When additional results are obtained from the <code>ListServers</code> command, a
-        /// <code>NextToken</code> parameter is returned in the output. You can then pass the
-        /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
-        /// servers.</p>
+        /// <p>When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional servers.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When additional results are obtained from the <code>ListServers</code> command, a
-        /// <code>NextToken</code> parameter is returned in the output. You can then pass the
-        /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
-        /// servers.</p>
+        /// <p>When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional servers.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4340,7 +3827,7 @@ pub mod list_servers_input {
 #[doc(hidden)]
 pub type ListServersInputOperationOutputAlias = crate::operation::ListServers;
 #[doc(hidden)]
-pub type ListServersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListServersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListServersInput {
     /// Consumes the builder and constructs an Operation<[`ListServers`](crate::operation::ListServers)>
     #[allow(clippy::let_and_return)]
@@ -4351,7 +3838,7 @@ impl ListServersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListServers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4435,7 +3922,7 @@ impl ListServersInput {
             "ListServers",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4469,40 +3956,32 @@ pub mod list_tags_for_resource_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an
-        /// identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
+        /// <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an
-        /// identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
+        /// <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>Specifies the number of tags to return as a response to the
-        /// <code>ListTagsForResource</code> request.</p>
+        /// <p>Specifies the number of tags to return as a response to the <code>ListTagsForResource</code> request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Specifies the number of tags to return as a response to the
-        /// <code>ListTagsForResource</code> request.</p>
+        /// <p>Specifies the number of tags to return as a response to the <code>ListTagsForResource</code> request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>When you request additional results from the <code>ListTagsForResource</code> operation, a
-        /// <code>NextToken</code> parameter is returned in the input. You can then pass in a subsequent
-        /// command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
+        /// <p>When you request additional results from the <code>ListTagsForResource</code> operation, a <code>NextToken</code> parameter is returned in the input. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you request additional results from the <code>ListTagsForResource</code> operation, a
-        /// <code>NextToken</code> parameter is returned in the input. You can then pass in a subsequent
-        /// command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
+        /// <p>When you request additional results from the <code>ListTagsForResource</code> operation, a <code>NextToken</code> parameter is returned in the input. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4525,7 +4004,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -4536,7 +4015,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4623,7 +4102,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4657,30 +4136,22 @@ pub mod list_users_input {
         pub(crate) server_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code>
-        /// request.</p>
+        /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code> request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code>
-        /// request.</p>
+        /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code> request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>When you can get additional results from the <code>ListUsers</code> call, a
-        /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
-        /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
-        /// users.</p>
+        /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you can get additional results from the <code>ListUsers</code> call, a
-        /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
-        /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
-        /// users.</p>
+        /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4711,7 +4182,7 @@ pub mod list_users_input {
 #[doc(hidden)]
 pub type ListUsersInputOperationOutputAlias = crate::operation::ListUsers;
 #[doc(hidden)]
-pub type ListUsersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsersInput {
     /// Consumes the builder and constructs an Operation<[`ListUsers`](crate::operation::ListUsers)>
     #[allow(clippy::let_and_return)]
@@ -4722,7 +4193,7 @@ impl ListUsersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUsers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4804,7 +4275,7 @@ impl ListUsersInput {
                     "ListUsers",
                     "transfer",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4847,18 +4318,12 @@ pub mod list_workflows_input {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output.
-        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
-        /// continue listing additional workflows.</p>
+        /// <p> <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output.
-        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
-        /// continue listing additional workflows.</p>
+        /// <p> <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4880,7 +4345,7 @@ pub mod list_workflows_input {
 #[doc(hidden)]
 pub type ListWorkflowsInputOperationOutputAlias = crate::operation::ListWorkflows;
 #[doc(hidden)]
-pub type ListWorkflowsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorkflowsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkflowsInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkflows`](crate::operation::ListWorkflows)>
     #[allow(clippy::let_and_return)]
@@ -4891,7 +4356,7 @@ impl ListWorkflowsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorkflows,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4975,7 +4440,7 @@ impl ListWorkflowsInput {
             "ListWorkflows",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5072,7 +4537,7 @@ pub mod send_workflow_step_state_input {
 #[doc(hidden)]
 pub type SendWorkflowStepStateInputOperationOutputAlias = crate::operation::SendWorkflowStepState;
 #[doc(hidden)]
-pub type SendWorkflowStepStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendWorkflowStepStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SendWorkflowStepStateInput {
     /// Consumes the builder and constructs an Operation<[`SendWorkflowStepState`](crate::operation::SendWorkflowStepState)>
     #[allow(clippy::let_and_return)]
@@ -5083,7 +4548,7 @@ impl SendWorkflowStepStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SendWorkflowStepState,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5170,7 +4635,7 @@ impl SendWorkflowStepStateInput {
             "SendWorkflowStepState",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5228,7 +4693,7 @@ pub mod start_server_input {
 #[doc(hidden)]
 pub type StartServerInputOperationOutputAlias = crate::operation::StartServer;
 #[doc(hidden)]
-pub type StartServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartServerInput {
     /// Consumes the builder and constructs an Operation<[`StartServer`](crate::operation::StartServer)>
     #[allow(clippy::let_and_return)]
@@ -5239,7 +4704,7 @@ impl StartServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5323,7 +4788,7 @@ impl StartServerInput {
             "StartServer",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5381,7 +4846,7 @@ pub mod stop_server_input {
 #[doc(hidden)]
 pub type StopServerInputOperationOutputAlias = crate::operation::StopServer;
 #[doc(hidden)]
-pub type StopServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopServerInput {
     /// Consumes the builder and constructs an Operation<[`StopServer`](crate::operation::StopServer)>
     #[allow(clippy::let_and_return)]
@@ -5392,7 +4857,7 @@ impl StopServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5476,7 +4941,7 @@ impl StopServerInput {
             "StopServer",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5509,14 +4974,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or
-        /// role.</p>
+        /// <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or role.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or
-        /// role.</p>
+        /// <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or role.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5525,16 +4988,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Key-value pairs assigned to ARNs that you can use to group and search for resources by
-        /// type. You can attach this metadata to user accounts for any purpose.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to user accounts for any purpose.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Key-value pairs assigned to ARNs that you can use to group and search for resources by
-        /// type. You can attach this metadata to user accounts for any purpose.</p>
+        /// <p>Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to user accounts for any purpose.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5559,7 +5020,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -5570,7 +5031,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5654,7 +5115,7 @@ impl TagResourceInput {
             "TagResource",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5690,51 +5151,33 @@ pub mod test_identity_provider_input {
         pub(crate) user_password: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A system-assigned identifier for a specific server. That server's user authentication
-        /// method is tested with a user name and password.</p>
+        /// <p>A system-assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>A system-assigned identifier for a specific server. That server's user authentication
-        /// method is tested with a user name and password.</p>
+        /// <p>A system-assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
         }
         /// <p>The type of file transfer protocol to be tested.</p>
-        ///
         /// <p>The available protocols are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p>
-        /// </li>
-        /// <li>
-        /// <p>File Transfer Protocol Secure (FTPS)</p>
-        /// </li>
-        /// <li>
-        /// <p>File Transfer Protocol (FTP)</p>
-        /// </li>
+        /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
+        /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
+        /// <li> <p>File Transfer Protocol (FTP)</p> </li>
         /// </ul>
         pub fn server_protocol(mut self, input: crate::model::Protocol) -> Self {
             self.server_protocol = Some(input);
             self
         }
         /// <p>The type of file transfer protocol to be tested.</p>
-        ///
         /// <p>The available protocols are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p>
-        /// </li>
-        /// <li>
-        /// <p>File Transfer Protocol Secure (FTPS)</p>
-        /// </li>
-        /// <li>
-        /// <p>File Transfer Protocol (FTP)</p>
-        /// </li>
+        /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
+        /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
+        /// <li> <p>File Transfer Protocol (FTP)</p> </li>
         /// </ul>
         pub fn set_server_protocol(
             mut self,
@@ -5796,7 +5239,7 @@ pub mod test_identity_provider_input {
 #[doc(hidden)]
 pub type TestIdentityProviderInputOperationOutputAlias = crate::operation::TestIdentityProvider;
 #[doc(hidden)]
-pub type TestIdentityProviderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TestIdentityProviderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TestIdentityProviderInput {
     /// Consumes the builder and constructs an Operation<[`TestIdentityProvider`](crate::operation::TestIdentityProvider)>
     #[allow(clippy::let_and_return)]
@@ -5807,7 +5250,7 @@ impl TestIdentityProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestIdentityProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5894,7 +5337,7 @@ impl TestIdentityProviderInput {
             "TestIdentityProvider",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5927,14 +5370,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is
-        /// an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
+        /// <p>The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is
-        /// an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
+        /// <p>The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5943,16 +5384,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>TagKeys are key-value pairs assigned to ARNs that can be used to group and search for
-        /// resources by type. This metadata can be attached to resources for any purpose.</p>
+        /// <p>TagKeys are key-value pairs assigned to ARNs that can be used to group and search for resources by type. This metadata can be attached to resources for any purpose.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>TagKeys are key-value pairs assigned to ARNs that can be used to group and search for
-        /// resources by type. This metadata can be attached to resources for any purpose.</p>
+        /// <p>TagKeys are key-value pairs assigned to ARNs that can be used to group and search for resources by type. This metadata can be attached to resources for any purpose.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5977,7 +5416,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -5988,7 +5427,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6072,7 +5511,7 @@ impl UntagResourceInput {
             "UntagResource",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6127,18 +5566,12 @@ pub mod update_access_input {
             self.home_directory = input;
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-        /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-        /// S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-        /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-        /// S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -6150,72 +5583,30 @@ pub mod update_access_input {
         ///
         /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
         ///
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-        /// be visible to your user and how you want to make them visible. You must specify the
-        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-        /// can only be set when <code>HomeDirectoryType</code> is set to
-        /// <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-        /// <p>
-        /// <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        /// <p>In most cases, you can use this value instead of the session policy to lock down your
-        /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
-        /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-        /// <code>HomeDirectory</code> parameter value.</p>
+        /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p>
-        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        ///
-        /// <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
         /// </note>
         pub fn home_directory_mappings(
             mut self,
-            input: impl Into<crate::model::HomeDirectoryMapEntry>,
+            input: crate::model::HomeDirectoryMapEntry,
         ) -> Self {
             let mut v = self.home_directory_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.home_directory_mappings = Some(v);
             self
         }
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-        /// be visible to your user and how you want to make them visible. You must specify the
-        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-        /// can only be set when <code>HomeDirectoryType</code> is set to
-        /// <i>LOGICAL</i>.</p>
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-        /// <p>
-        /// <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        /// <p>In most cases, you can use this value instead of the session policy to lock down your
-        /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
-        /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-        /// <code>HomeDirectory</code> parameter value.</p>
+        /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p>
-        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        ///
-        /// <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
         /// </note>
         pub fn set_home_directory_mappings(
             mut self,
@@ -6224,58 +5615,32 @@ pub mod update_access_input {
             self.home_directory_mappings = input;
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-        /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-        /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-        ///
-        ///
-        /// <note>
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
         /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-        /// it in the <code>Policy</code> argument.</p>
-        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
-        /// session policy</a>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API
-        /// Reference</i>.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API Reference</i>.</p>
         /// </note>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-        /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-        /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-        ///
-        ///
-        /// <note>
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
         /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-        /// it in the <code>Policy</code> argument.</p>
-        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
-        /// session policy</a>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API
-        /// Reference</i>.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API Reference</i>.</p>
         /// </note>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
         }
-        /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
-        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-        /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
-        /// files and directories in your file system determine the level of access your users get when
-        /// transferring files into and out of your Amazon EFS file systems.</p>
+        /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
         pub fn posix_profile(mut self, input: crate::model::PosixProfile) -> Self {
             self.posix_profile = Some(input);
             self
         }
-        /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
-        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-        /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
-        /// files and directories in your file system determine the level of access your users get when
-        /// transferring files into and out of your Amazon EFS file systems.</p>
+        /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
         pub fn set_posix_profile(
             mut self,
             input: std::option::Option<crate::model::PosixProfile>,
@@ -6283,18 +5648,12 @@ pub mod update_access_input {
             self.posix_profile = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-        /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-        /// server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-        /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-        /// server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -6309,36 +5668,18 @@ pub mod update_access_input {
             self.server_id = input;
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory.
-        /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-        /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-        /// you can view the SID values by running the following command using Windows PowerShell.</p>
-        ///
-        /// <p>
-        /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-        /// </p>
-        ///
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        ///
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-        /// You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier that is required to identify specific groups within your directory.
-        /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-        /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-        /// you can view the SID values by running the following command using Windows PowerShell.</p>
-        ///
-        /// <p>
-        /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-        /// </p>
-        ///
+        /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+        /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-        ///
-        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-        /// You can also include underscores or any of the following characters: =,.@:/-</p>
+        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -6366,7 +5707,7 @@ pub mod update_access_input {
 #[doc(hidden)]
 pub type UpdateAccessInputOperationOutputAlias = crate::operation::UpdateAccess;
 #[doc(hidden)]
-pub type UpdateAccessInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAccessInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAccess`](crate::operation::UpdateAccess)>
     #[allow(clippy::let_and_return)]
@@ -6377,7 +5718,7 @@ impl UpdateAccessInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAccess,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6461,7 +5802,7 @@ impl UpdateAccessInput {
             "UpdateAccess",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6504,108 +5845,52 @@ pub mod update_server_input {
         pub(crate) workflow_details: std::option::Option<crate::model::WorkflowDetails>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required
-        /// when <code>Protocols</code> is set to <code>FTPS</code>.</p>
-        ///
-        /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a>
-        /// in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
-        ///
-        /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a>
-        /// in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
-        ///
-        /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a
-        /// private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
-        /// Guide</i>.</p>
-        ///
-        /// <p>Certificates with the following cryptographic algorithms and key sizes are
-        /// supported:</p>
-        ///
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+        /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+        /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+        /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+        /// <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>2048-bit RSA (RSA_2048)</p>
-        /// </li>
-        /// <li>
-        /// <p>4096-bit RSA (RSA_4096)</p>
-        /// </li>
-        /// <li>
-        /// <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p>
-        /// </li>
-        /// <li>
-        /// <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p>
-        /// </li>
-        /// <li>
-        /// <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <note>
-        /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
-        /// address specified and information about the issuer.</p>
+        /// <li> <p>2048-bit RSA (RSA_2048)</p> </li>
+        /// <li> <p>4096-bit RSA (RSA_4096)</p> </li>
+        /// <li> <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p> </li>
+        /// <li> <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p> </li>
+        /// <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p> </li>
+        /// </ul> <note>
+        /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>
         /// </note>
         pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required
-        /// when <code>Protocols</code> is set to <code>FTPS</code>.</p>
-        ///
-        /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a>
-        /// in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
-        ///
-        /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a>
-        /// in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
-        ///
-        /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a
-        /// private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
-        /// Guide</i>.</p>
-        ///
-        /// <p>Certificates with the following cryptographic algorithms and key sizes are
-        /// supported:</p>
-        ///
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+        /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+        /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+        /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+        /// <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>2048-bit RSA (RSA_2048)</p>
-        /// </li>
-        /// <li>
-        /// <p>4096-bit RSA (RSA_4096)</p>
-        /// </li>
-        /// <li>
-        /// <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p>
-        /// </li>
-        /// <li>
-        /// <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p>
-        /// </li>
-        /// <li>
-        /// <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <note>
-        /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
-        /// address specified and information about the issuer.</p>
+        /// <li> <p>2048-bit RSA (RSA_2048)</p> </li>
+        /// <li> <p>4096-bit RSA (RSA_4096)</p> </li>
+        /// <li> <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p> </li>
+        /// <li> <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p> </li>
+        /// <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p> </li>
+        /// </ul> <note>
+        /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>
         /// </note>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
         }
-        /// <p>
-        /// The protocol settings that are configured for your server.
-        /// </p>
-        /// <p>
-        /// Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols).
-        /// Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
-        /// </p>
+        /// <p> The protocol settings that are configured for your server. </p>
+        /// <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p>
+        /// <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p>
         pub fn protocol_details(mut self, input: crate::model::ProtocolDetails) -> Self {
             self.protocol_details = Some(input);
             self
         }
-        /// <p>
-        /// The protocol settings that are configured for your server.
-        /// </p>
-        /// <p>
-        /// Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols).
-        /// Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
-        /// </p>
+        /// <p> The protocol settings that are configured for your server. </p>
+        /// <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p>
+        /// <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p>
         pub fn set_protocol_details(
             mut self,
             input: std::option::Option<crate::model::ProtocolDetails>,
@@ -6613,20 +5898,12 @@ pub mod update_server_input {
             self.protocol_details = input;
             self
         }
-        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server.
-        /// When you host your endpoint within your VPC, you can make it accessible only to resources
-        /// within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over
-        /// the internet. Your VPC's default security groups are automatically assigned to your
-        /// endpoint.</p>
+        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
         pub fn endpoint_details(mut self, input: crate::model::EndpointDetails) -> Self {
             self.endpoint_details = Some(input);
             self
         }
-        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server.
-        /// When you host your endpoint within your VPC, you can make it accessible only to resources
-        /// within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over
-        /// the internet. Your VPC's default security groups are automatically assigned to your
-        /// endpoint.</p>
+        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
         pub fn set_endpoint_details(
             mut self,
             input: std::option::Option<crate::model::EndpointDetails>,
@@ -6634,47 +5911,19 @@ pub mod update_server_input {
             self.endpoint_details = input;
             self
         }
-        /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC)
-        /// or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and
-        /// resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p>
-        /// <note>
-        /// <p> After May 19, 2021, you won't be able to create a server using
-        /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if your account hasn't already
-        /// done so before May 19, 2021. If you have already created servers with
-        /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021,
-        /// you will not be affected. After this date, use
-        /// <code>EndpointType</code>=<code>VPC</code>.</p>
-        ///
-        /// <p>For more information, see
-        /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
-        /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With
-        /// this endpoint type, you have the option to directly associate up to three Elastic IPv4
-        /// addresses (BYO IP included) with your server's endpoint and use VPC security groups to
-        /// restrict traffic by the client's public IP address. This is not possible with
-        /// <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
+        /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>
+        /// <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>
+        /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+        /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
         /// </note>
         pub fn endpoint_type(mut self, input: crate::model::EndpointType) -> Self {
             self.endpoint_type = Some(input);
             self
         }
-        /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC)
-        /// or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and
-        /// resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p>
-        /// <note>
-        /// <p> After May 19, 2021, you won't be able to create a server using
-        /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if your account hasn't already
-        /// done so before May 19, 2021. If you have already created servers with
-        /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021,
-        /// you will not be affected. After this date, use
-        /// <code>EndpointType</code>=<code>VPC</code>.</p>
-        ///
-        /// <p>For more information, see
-        /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
-        /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With
-        /// this endpoint type, you have the option to directly associate up to three Elastic IPv4
-        /// addresses (BYO IP included) with your server's endpoint and use VPC security groups to
-        /// restrict traffic by the client's public IP address. This is not possible with
-        /// <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
+        /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>
+        /// <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>
+        /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+        /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
         /// </note>
         pub fn set_endpoint_type(
             mut self,
@@ -6683,42 +5932,23 @@ pub mod update_server_input {
             self.endpoint_type = input;
             self
         }
-        /// <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
-        /// my-new-server-key</code>.</p>
-        ///
-        /// <important>
-        /// <p>If you aren't planning to migrate existing users from an existing server to a new
-        /// server, don't update the host key. Accidentally changing a server's host key can
-        /// be disruptive.</p>
+        /// <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.</p> <important>
+        /// <p>If you aren't planning to migrate existing users from an existing server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        ///
-        ///
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer
-        /// Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer Family User Guide</i>.</p>
         pub fn host_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_key = Some(input.into());
             self
         }
-        /// <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
-        /// my-new-server-key</code>.</p>
-        ///
-        /// <important>
-        /// <p>If you aren't planning to migrate existing users from an existing server to a new
-        /// server, don't update the host key. Accidentally changing a server's host key can
-        /// be disruptive.</p>
+        /// <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.</p> <important>
+        /// <p>If you aren't planning to migrate existing users from an existing server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
         /// </important>
-        ///
-        ///
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer
-        /// Family User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer Family User Guide</i>.</p>
         pub fn set_host_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_key = input;
             self
         }
-        /// <p>An array containing all of the information required to call a customer's
-        /// authentication API method.</p>
+        /// <p>An array containing all of the information required to call a customer's authentication API method.</p>
         pub fn identity_provider_details(
             mut self,
             input: crate::model::IdentityProviderDetails,
@@ -6726,8 +5956,7 @@ pub mod update_server_input {
             self.identity_provider_details = Some(input);
             self
         }
-        /// <p>An array containing all of the information required to call a customer's
-        /// authentication API method.</p>
+        /// <p>An array containing all of the information required to call a customer's authentication API method.</p>
         pub fn set_identity_provider_details(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderDetails>,
@@ -6735,16 +5964,12 @@ pub mod update_server_input {
             self.identity_provider_details = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
-        /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
-        /// your CloudWatch logs.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
         pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.logging_role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
-        /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
-        /// your CloudWatch logs.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
         pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.logging_role = input;
             self
@@ -6753,75 +5978,33 @@ pub mod update_server_input {
         ///
         /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
         ///
-        /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
-        /// client can connect to your server's endpoint. The available protocols are:</p>
-        ///
+        /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
         /// <ul>
-        /// <li>
-        /// <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p>
-        /// </li>
-        /// <li>
-        /// <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p>
-        /// </li>
-        /// <li>
-        /// <p>File Transfer Protocol (FTP): Unencrypted file transfer</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <note>
-        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate
-        /// Manager (ACM) which will be used to identify your server when clients connect to it over
-        /// FTPS.</p>
-        ///
-        ///
-        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
-        /// <code>EndpointType</code> must be <code>VPC</code> and the
-        /// <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-        ///
-        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then
-        /// <code>AddressAllocationIds</code> cannot be associated.</p>
-        ///
-        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
-        /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-        /// <code>SERVICE_MANAGED</code>.</p>
+        /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p> </li>
+        /// <li> <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p> </li>
+        /// <li> <p>File Transfer Protocol (FTP): Unencrypted file transfer</p> </li>
+        /// </ul> <note>
+        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.</p>
+        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
+        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
+        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
         /// </note>
-        pub fn protocols(mut self, input: impl Into<crate::model::Protocol>) -> Self {
+        pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }
-        /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
-        /// client can connect to your server's endpoint. The available protocols are:</p>
-        ///
+        /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
         /// <ul>
-        /// <li>
-        /// <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p>
-        /// </li>
-        /// <li>
-        /// <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p>
-        /// </li>
-        /// <li>
-        /// <p>File Transfer Protocol (FTP): Unencrypted file transfer</p>
-        /// </li>
-        /// </ul>
-        ///
-        /// <note>
-        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate
-        /// Manager (ACM) which will be used to identify your server when clients connect to it over
-        /// FTPS.</p>
-        ///
-        ///
-        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
-        /// <code>EndpointType</code> must be <code>VPC</code> and the
-        /// <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-        ///
-        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then
-        /// <code>AddressAllocationIds</code> cannot be associated.</p>
-        ///
-        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
-        /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-        /// <code>SERVICE_MANAGED</code>.</p>
+        /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p> </li>
+        /// <li> <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p> </li>
+        /// <li> <p>File Transfer Protocol (FTP): Unencrypted file transfer</p> </li>
+        /// </ul> <note>
+        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.</p>
+        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
+        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
+        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
         /// </note>
         pub fn set_protocols(
             mut self,
@@ -6843,14 +6026,12 @@ pub mod update_server_input {
             self.security_policy_name = input;
             self
         }
-        /// <p>A system-assigned unique identifier for a server instance that the user account is
-        /// assigned to.</p>
+        /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>A system-assigned unique identifier for a server instance that the user account is
-        /// assigned to.</p>
+        /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -6894,7 +6075,7 @@ pub mod update_server_input {
 #[doc(hidden)]
 pub type UpdateServerInputOperationOutputAlias = crate::operation::UpdateServer;
 #[doc(hidden)]
-pub type UpdateServerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateServerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServer`](crate::operation::UpdateServer)>
     #[allow(clippy::let_and_return)]
@@ -6905,7 +6086,7 @@ impl UpdateServerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateServer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6989,7 +6170,7 @@ impl UpdateServerInput {
             "UpdateServer",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7044,18 +6225,12 @@ pub mod update_user_input {
             self.home_directory = input;
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-        /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-        /// S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
         pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
             self.home_directory_type = Some(input);
             self
         }
-        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-        /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-        /// S3 or EFS paths visible to your users.</p>
+        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -7067,80 +6242,30 @@ pub mod update_user_input {
         ///
         /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
         ///
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-        /// be visible to your user and how you want to make them visible. You must specify the
-        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-        /// can only be set when <code>HomeDirectoryType</code> is set to
-        /// <i>LOGICAL</i>.</p>
-        ///
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-        /// <p>
-        /// <code>[ { "Entry": "/directory1", "Target":
-        /// "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        ///
-        /// <p>In most cases, you can use this value instead of the session policy to lock down your
-        /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
-        /// <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
-        /// parameter value.</p>
-        ///
+        /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p>
-        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        ///
-        /// <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
         /// </note>
         pub fn home_directory_mappings(
             mut self,
-            input: impl Into<crate::model::HomeDirectoryMapEntry>,
+            input: crate::model::HomeDirectoryMapEntry,
         ) -> Self {
             let mut v = self.home_directory_mappings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.home_directory_mappings = Some(v);
             self
         }
-        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-        /// be visible to your user and how you want to make them visible. You must specify the
-        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-        /// can only be set when <code>HomeDirectoryType</code> is set to
-        /// <i>LOGICAL</i>.</p>
-        ///
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-        /// <p>
-        /// <code>[ { "Entry": "/directory1", "Target":
-        /// "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        ///
-        /// <p>In most cases, you can use this value instead of the session policy to lock down your
-        /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
-        /// <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
-        /// parameter value.</p>
-        ///
+        /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
         /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-        /// <p>
-        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-        /// </p>
-        ///
-        /// <note>
-        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
         /// </note>
         pub fn set_home_directory_mappings(
             mut self,
@@ -7149,68 +6274,32 @@ pub mod update_user_input {
             self.home_directory_mappings = input;
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-        /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-        /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-        ///
-        /// <note>
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
         /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-        /// it in the <code>Policy</code> argument.</p>
-        ///
-        ///
-        ///
-        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session
-        /// policy</a>.</p>
-        ///
-        ///
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
-        /// Security Token Service API Reference</i>.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session policy</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
         /// </note>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-        /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-        /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-        ///
-        /// <note>
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
         /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-        /// it in the <code>Policy</code> argument.</p>
-        ///
-        ///
-        ///
-        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session
-        /// policy</a>.</p>
-        ///
-        ///
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
-        /// Security Token Service API Reference</i>.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session policy</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
         /// </note>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
         }
-        /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
-        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-        /// your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions
-        /// that are set on files and directories in your file system determines the level of access your
-        /// users get when transferring files into and out of your Amazon EFS file systems.</p>
+        /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions that are set on files and directories in your file system determines the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
         pub fn posix_profile(mut self, input: crate::model::PosixProfile) -> Self {
             self.posix_profile = Some(input);
             self
         }
-        /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
-        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-        /// your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions
-        /// that are set on files and directories in your file system determines the level of access your
-        /// users get when transferring files into and out of your Amazon EFS file systems.</p>
+        /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions that are set on files and directories in your file system determines the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
         pub fn set_posix_profile(
             mut self,
             input: std::option::Option<crate::model::PosixProfile>,
@@ -7218,48 +6307,32 @@ pub mod update_user_input {
             self.posix_profile = input;
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-        /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-        /// server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-        /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-        /// server to access your resources when servicing your users' transfer requests.</p>
+        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
         }
-        /// <p>A system-assigned unique identifier for a server instance that the user account is
-        /// assigned to.</p>
+        /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
         pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_id = Some(input.into());
             self
         }
-        /// <p>A system-assigned unique identifier for a server instance that the user account is
-        /// assigned to.</p>
+        /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
         }
-        /// <p>A unique string that identifies a user and is associated with a server as specified by the
-        /// <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
-        /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
-        /// '-', period '.', and at sign '@'. The user name can't start
-        /// with a hyphen, period, or at sign.</p>
+        /// <p>A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>A unique string that identifies a user and is associated with a server as specified by the
-        /// <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
-        /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
-        /// '-', period '.', and at sign '@'. The user name can't start
-        /// with a hyphen, period, or at sign.</p>
+        /// <p>A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -7287,7 +6360,7 @@ pub mod update_user_input {
 #[doc(hidden)]
 pub type UpdateUserInputOperationOutputAlias = crate::operation::UpdateUser;
 #[doc(hidden)]
-pub type UpdateUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateUserInput {
     /// Consumes the builder and constructs an Operation<[`UpdateUser`](crate::operation::UpdateUser)>
     #[allow(clippy::let_and_return)]
@@ -7298,7 +6371,7 @@ impl UpdateUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7382,7 +6455,7 @@ impl UpdateUserInput {
             "UpdateUser",
             "transfer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7412,86 +6485,32 @@ pub struct UpdateUserInput {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub home_directory: std::option::Option<std::string::String>,
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-    /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-    /// S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-    /// be visible to your user and how you want to make them visible. You must specify the
-    /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-    /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-    /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-    /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-    /// can only be set when <code>HomeDirectoryType</code> is set to
-    /// <i>LOGICAL</i>.</p>
-    ///
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-    /// <p>
-    /// <code>[ { "Entry": "/directory1", "Target":
-    /// "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    ///
-    /// <p>In most cases, you can use this value instead of the session policy to lock down your
-    /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
-    /// <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
-    /// parameter value.</p>
-    ///
+    /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p>
-    /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    ///
-    /// <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-    /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-    /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-    /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-    /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-    /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
     /// </note>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-    /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-    /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-    ///
-    /// <note>
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
     /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-    /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-    /// it in the <code>Policy</code> argument.</p>
-    ///
-    ///
-    ///
-    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session
-    /// policy</a>.</p>
-    ///
-    ///
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
-    /// Security Token Service API Reference</i>.</p>
+    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session policy</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
     /// </note>
     pub policy: std::option::Option<std::string::String>,
-    /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
-    /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-    /// your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions
-    /// that are set on files and directories in your file system determines the level of access your
-    /// users get when transferring files into and out of your Amazon EFS file systems.</p>
+    /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions that are set on files and directories in your file system determines the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub posix_profile: std::option::Option<crate::model::PosixProfile>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-    /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-    /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-    /// server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>A system-assigned unique identifier for a server instance that the user account is
-    /// assigned to.</p>
+    /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>A unique string that identifies a user and is associated with a server as specified by the
-    /// <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
-    /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
-    /// '-', period '.', and at sign '@'. The user name can't start
-    /// with a hyphen, period, or at sign.</p>
+    /// <p>A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
     pub user_name: std::option::Option<std::string::String>,
 }
 impl UpdateUserInput {
@@ -7500,99 +6519,45 @@ impl UpdateUserInput {
     pub fn home_directory(&self) -> std::option::Option<&str> {
         self.home_directory.as_deref()
     }
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-    /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-    /// S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
     pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
         self.home_directory_type.as_ref()
     }
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-    /// be visible to your user and how you want to make them visible. You must specify the
-    /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-    /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-    /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-    /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-    /// can only be set when <code>HomeDirectoryType</code> is set to
-    /// <i>LOGICAL</i>.</p>
-    ///
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-    /// <p>
-    /// <code>[ { "Entry": "/directory1", "Target":
-    /// "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    ///
-    /// <p>In most cases, you can use this value instead of the session policy to lock down your
-    /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
-    /// <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
-    /// parameter value.</p>
-    ///
+    /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p>
-    /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    ///
-    /// <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-    /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-    /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-    /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-    /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-    /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
     /// </note>
     pub fn home_directory_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
         self.home_directory_mappings.as_deref()
     }
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-    /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-    /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-    ///
-    /// <note>
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
     /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-    /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-    /// it in the <code>Policy</code> argument.</p>
-    ///
-    ///
-    ///
-    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session
-    /// policy</a>.</p>
-    ///
-    ///
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
-    /// Security Token Service API Reference</i>.</p>
+    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session policy</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
     /// </note>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
-    /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
-    /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-    /// your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions
-    /// that are set on files and directories in your file system determines the level of access your
-    /// users get when transferring files into and out of your Amazon EFS file systems.</p>
+    /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions that are set on files and directories in your file system determines the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub fn posix_profile(&self) -> std::option::Option<&crate::model::PosixProfile> {
         self.posix_profile.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-    /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-    /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-    /// server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>A system-assigned unique identifier for a server instance that the user account is
-    /// assigned to.</p>
+    /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>A unique string that identifies a user and is associated with a server as specified by the
-    /// <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
-    /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
-    /// '-', period '.', and at sign '@'. The user name can't start
-    /// with a hyphen, period, or at sign.</p>
+    /// <p>A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
@@ -7616,283 +6581,124 @@ impl std::fmt::Debug for UpdateUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServerInput {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required
-    /// when <code>Protocols</code> is set to <code>FTPS</code>.</p>
-    ///
-    /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a>
-    /// in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
-    ///
-    /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a>
-    /// in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
-    ///
-    /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a
-    /// private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
-    /// Guide</i>.</p>
-    ///
-    /// <p>Certificates with the following cryptographic algorithms and key sizes are
-    /// supported:</p>
-    ///
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+    /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+    /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+    /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+    /// <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>2048-bit RSA (RSA_2048)</p>
-    /// </li>
-    /// <li>
-    /// <p>4096-bit RSA (RSA_4096)</p>
-    /// </li>
-    /// <li>
-    /// <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p>
-    /// </li>
-    /// <li>
-    /// <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p>
-    /// </li>
-    /// <li>
-    /// <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
-    /// address specified and information about the issuer.</p>
+    /// <li> <p>2048-bit RSA (RSA_2048)</p> </li>
+    /// <li> <p>4096-bit RSA (RSA_4096)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p> </li>
+    /// </ul> <note>
+    /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>
     /// </note>
     pub certificate: std::option::Option<std::string::String>,
-    /// <p>
-    /// The protocol settings that are configured for your server.
-    /// </p>
-    /// <p>
-    /// Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols).
-    /// Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
-    /// </p>
+    /// <p> The protocol settings that are configured for your server. </p>
+    /// <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p>
+    /// <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p>
     pub protocol_details: std::option::Option<crate::model::ProtocolDetails>,
-    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server.
-    /// When you host your endpoint within your VPC, you can make it accessible only to resources
-    /// within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over
-    /// the internet. Your VPC's default security groups are automatically assigned to your
-    /// endpoint.</p>
+    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub endpoint_details: std::option::Option<crate::model::EndpointDetails>,
-    /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC)
-    /// or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and
-    /// resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p>
-    /// <note>
-    /// <p> After May 19, 2021, you won't be able to create a server using
-    /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if your account hasn't already
-    /// done so before May 19, 2021. If you have already created servers with
-    /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021,
-    /// you will not be affected. After this date, use
-    /// <code>EndpointType</code>=<code>VPC</code>.</p>
-    ///
-    /// <p>For more information, see
-    /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
-    /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With
-    /// this endpoint type, you have the option to directly associate up to three Elastic IPv4
-    /// addresses (BYO IP included) with your server's endpoint and use VPC security groups to
-    /// restrict traffic by the client's public IP address. This is not possible with
-    /// <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
+    /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>
+    /// <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>
+    /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+    /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
     /// </note>
     pub endpoint_type: std::option::Option<crate::model::EndpointType>,
-    /// <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
-    /// my-new-server-key</code>.</p>
-    ///
-    /// <important>
-    /// <p>If you aren't planning to migrate existing users from an existing server to a new
-    /// server, don't update the host key. Accidentally changing a server's host key can
-    /// be disruptive.</p>
+    /// <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.</p> <important>
+    /// <p>If you aren't planning to migrate existing users from an existing server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
-    ///
-    ///
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer
-    /// Family User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer Family User Guide</i>.</p>
     pub host_key: std::option::Option<std::string::String>,
-    /// <p>An array containing all of the information required to call a customer's
-    /// authentication API method.</p>
+    /// <p>An array containing all of the information required to call a customer's authentication API method.</p>
     pub identity_provider_details: std::option::Option<crate::model::IdentityProviderDetails>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
-    /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
-    /// your CloudWatch logs.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
     pub logging_role: std::option::Option<std::string::String>,
-    /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
-    /// client can connect to your server's endpoint. The available protocols are:</p>
-    ///
+    /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
-    /// <li>
-    /// <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p>
-    /// </li>
-    /// <li>
-    /// <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p>
-    /// </li>
-    /// <li>
-    /// <p>File Transfer Protocol (FTP): Unencrypted file transfer</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate
-    /// Manager (ACM) which will be used to identify your server when clients connect to it over
-    /// FTPS.</p>
-    ///
-    ///
-    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
-    /// <code>EndpointType</code> must be <code>VPC</code> and the
-    /// <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-    ///
-    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then
-    /// <code>AddressAllocationIds</code> cannot be associated.</p>
-    ///
-    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
-    /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-    /// <code>SERVICE_MANAGED</code>.</p>
+    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p> </li>
+    /// <li> <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p> </li>
+    /// <li> <p>File Transfer Protocol (FTP): Unencrypted file transfer</p> </li>
+    /// </ul> <note>
+    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.</p>
+    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
+    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
+    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
     /// </note>
     pub protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub security_policy_name: std::option::Option<std::string::String>,
-    /// <p>A system-assigned unique identifier for a server instance that the user account is
-    /// assigned to.</p>
+    /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
     pub server_id: std::option::Option<std::string::String>,
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
     pub workflow_details: std::option::Option<crate::model::WorkflowDetails>,
 }
 impl UpdateServerInput {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required
-    /// when <code>Protocols</code> is set to <code>FTPS</code>.</p>
-    ///
-    /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a>
-    /// in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
-    ///
-    /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a>
-    /// in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
-    ///
-    /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a
-    /// private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
-    /// Guide</i>.</p>
-    ///
-    /// <p>Certificates with the following cryptographic algorithms and key sizes are
-    /// supported:</p>
-    ///
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+    /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+    /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+    /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+    /// <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>2048-bit RSA (RSA_2048)</p>
-    /// </li>
-    /// <li>
-    /// <p>4096-bit RSA (RSA_4096)</p>
-    /// </li>
-    /// <li>
-    /// <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p>
-    /// </li>
-    /// <li>
-    /// <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p>
-    /// </li>
-    /// <li>
-    /// <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
-    /// address specified and information about the issuer.</p>
+    /// <li> <p>2048-bit RSA (RSA_2048)</p> </li>
+    /// <li> <p>4096-bit RSA (RSA_4096)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p> </li>
+    /// </ul> <note>
+    /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>
     /// </note>
     pub fn certificate(&self) -> std::option::Option<&str> {
         self.certificate.as_deref()
     }
-    /// <p>
-    /// The protocol settings that are configured for your server.
-    /// </p>
-    /// <p>
-    /// Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols).
-    /// Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
-    /// </p>
+    /// <p> The protocol settings that are configured for your server. </p>
+    /// <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p>
+    /// <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p>
     pub fn protocol_details(&self) -> std::option::Option<&crate::model::ProtocolDetails> {
         self.protocol_details.as_ref()
     }
-    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server.
-    /// When you host your endpoint within your VPC, you can make it accessible only to resources
-    /// within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over
-    /// the internet. Your VPC's default security groups are automatically assigned to your
-    /// endpoint.</p>
+    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub fn endpoint_details(&self) -> std::option::Option<&crate::model::EndpointDetails> {
         self.endpoint_details.as_ref()
     }
-    /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC)
-    /// or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and
-    /// resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p>
-    /// <note>
-    /// <p> After May 19, 2021, you won't be able to create a server using
-    /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if your account hasn't already
-    /// done so before May 19, 2021. If you have already created servers with
-    /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021,
-    /// you will not be affected. After this date, use
-    /// <code>EndpointType</code>=<code>VPC</code>.</p>
-    ///
-    /// <p>For more information, see
-    /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
-    /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With
-    /// this endpoint type, you have the option to directly associate up to three Elastic IPv4
-    /// addresses (BYO IP included) with your server's endpoint and use VPC security groups to
-    /// restrict traffic by the client's public IP address. This is not possible with
-    /// <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
+    /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>
+    /// <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>
+    /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+    /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
     /// </note>
     pub fn endpoint_type(&self) -> std::option::Option<&crate::model::EndpointType> {
         self.endpoint_type.as_ref()
     }
-    /// <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
-    /// my-new-server-key</code>.</p>
-    ///
-    /// <important>
-    /// <p>If you aren't planning to migrate existing users from an existing server to a new
-    /// server, don't update the host key. Accidentally changing a server's host key can
-    /// be disruptive.</p>
+    /// <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.</p> <important>
+    /// <p>If you aren't planning to migrate existing users from an existing server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
-    ///
-    ///
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer
-    /// Family User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer Family User Guide</i>.</p>
     pub fn host_key(&self) -> std::option::Option<&str> {
         self.host_key.as_deref()
     }
-    /// <p>An array containing all of the information required to call a customer's
-    /// authentication API method.</p>
+    /// <p>An array containing all of the information required to call a customer's authentication API method.</p>
     pub fn identity_provider_details(
         &self,
     ) -> std::option::Option<&crate::model::IdentityProviderDetails> {
         self.identity_provider_details.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
-    /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
-    /// your CloudWatch logs.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
     pub fn logging_role(&self) -> std::option::Option<&str> {
         self.logging_role.as_deref()
     }
-    /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
-    /// client can connect to your server's endpoint. The available protocols are:</p>
-    ///
+    /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
-    /// <li>
-    /// <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p>
-    /// </li>
-    /// <li>
-    /// <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p>
-    /// </li>
-    /// <li>
-    /// <p>File Transfer Protocol (FTP): Unencrypted file transfer</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate
-    /// Manager (ACM) which will be used to identify your server when clients connect to it over
-    /// FTPS.</p>
-    ///
-    ///
-    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
-    /// <code>EndpointType</code> must be <code>VPC</code> and the
-    /// <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-    ///
-    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then
-    /// <code>AddressAllocationIds</code> cannot be associated.</p>
-    ///
-    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
-    /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-    /// <code>SERVICE_MANAGED</code>.</p>
+    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p> </li>
+    /// <li> <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p> </li>
+    /// <li> <p>File Transfer Protocol (FTP): Unencrypted file transfer</p> </li>
+    /// </ul> <note>
+    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.</p>
+    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
+    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
+    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
     /// </note>
     pub fn protocols(&self) -> std::option::Option<&[crate::model::Protocol]> {
         self.protocols.as_deref()
@@ -7901,8 +6707,7 @@ impl UpdateServerInput {
     pub fn security_policy_name(&self) -> std::option::Option<&str> {
         self.security_policy_name.as_deref()
     }
-    /// <p>A system-assigned unique identifier for a server instance that the user account is
-    /// assigned to.</p>
+    /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
@@ -7936,84 +6741,35 @@ pub struct UpdateAccessInput {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub home_directory: std::option::Option<std::string::String>,
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-    /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-    /// S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-    /// be visible to your user and how you want to make them visible. You must specify the
-    /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-    /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-    /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-    /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-    /// can only be set when <code>HomeDirectoryType</code> is set to
-    /// <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-    /// <p>
-    /// <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    /// <p>In most cases, you can use this value instead of the session policy to lock down your
-    /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
-    /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-    /// <code>HomeDirectory</code> parameter value.</p>
+    /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p>
-    /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    ///
-    /// <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-    /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-    /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-    /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-    /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-    /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
     /// </note>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-    /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-    /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-    ///
-    ///
-    /// <note>
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
     /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-    /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-    /// it in the <code>Policy</code> argument.</p>
-    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
-    /// session policy</a>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API
-    /// Reference</i>.</p>
+    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API Reference</i>.</p>
     /// </note>
     pub policy: std::option::Option<std::string::String>,
-    /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
-    /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-    /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
-    /// files and directories in your file system determine the level of access your users get when
-    /// transferring files into and out of your Amazon EFS file systems.</p>
+    /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub posix_profile: std::option::Option<crate::model::PosixProfile>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-    /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-    /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-    /// server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub role: std::option::Option<std::string::String>,
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that is required to identify specific groups within your directory.
-    /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-    /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-    /// you can view the SID values by running the following command using Windows PowerShell.</p>
-    ///
-    /// <p>
-    /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-    /// </p>
-    ///
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    ///
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-    /// You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
 }
 impl UpdateAccessInput {
@@ -8022,77 +6778,37 @@ impl UpdateAccessInput {
     pub fn home_directory(&self) -> std::option::Option<&str> {
         self.home_directory.as_deref()
     }
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-    /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-    /// S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
     pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
         self.home_directory_type.as_ref()
     }
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-    /// be visible to your user and how you want to make them visible. You must specify the
-    /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-    /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-    /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-    /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-    /// can only be set when <code>HomeDirectoryType</code> is set to
-    /// <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-    /// <p>
-    /// <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    /// <p>In most cases, you can use this value instead of the session policy to lock down your
-    /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
-    /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-    /// <code>HomeDirectory</code> parameter value.</p>
+    /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p>
-    /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    ///
-    /// <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-    /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-    /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-    /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-    /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-    /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
     /// </note>
     pub fn home_directory_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
         self.home_directory_mappings.as_deref()
     }
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-    /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-    /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-    ///
-    ///
-    /// <note>
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
     /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-    /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-    /// it in the <code>Policy</code> argument.</p>
-    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
-    /// session policy</a>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API
-    /// Reference</i>.</p>
+    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API Reference</i>.</p>
     /// </note>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
-    /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
-    /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-    /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
-    /// files and directories in your file system determine the level of access your users get when
-    /// transferring files into and out of your Amazon EFS file systems.</p>
+    /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub fn posix_profile(&self) -> std::option::Option<&crate::model::PosixProfile> {
         self.posix_profile.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-    /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-    /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-    /// server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
@@ -8100,19 +6816,10 @@ impl UpdateAccessInput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>A unique identifier that is required to identify specific groups within your directory.
-    /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-    /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-    /// you can view the SID values by running the following command using Windows PowerShell.</p>
-    ///
-    /// <p>
-    /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-    /// </p>
-    ///
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    ///
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-    /// You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
@@ -8136,21 +6843,17 @@ impl std::fmt::Debug for UpdateAccessInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is
-    /// an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
+    /// <p>The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>TagKeys are key-value pairs assigned to ARNs that can be used to group and search for
-    /// resources by type. This metadata can be attached to resources for any purpose.</p>
+    /// <p>TagKeys are key-value pairs assigned to ARNs that can be used to group and search for resources by type. This metadata can be attached to resources for any purpose.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is
-    /// an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
+    /// <p>The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>TagKeys are key-value pairs assigned to ARNs that can be used to group and search for
-    /// resources by type. This metadata can be attached to resources for any purpose.</p>
+    /// <p>TagKeys are key-value pairs assigned to ARNs that can be used to group and search for resources by type. This metadata can be attached to resources for any purpose.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -8168,23 +6871,14 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestIdentityProviderInput {
-    /// <p>A system-assigned identifier for a specific server. That server's user authentication
-    /// method is tested with a user name and password.</p>
+    /// <p>A system-assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The type of file transfer protocol to be tested.</p>
-    ///
     /// <p>The available protocols are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p>
-    /// </li>
-    /// <li>
-    /// <p>File Transfer Protocol Secure (FTPS)</p>
-    /// </li>
-    /// <li>
-    /// <p>File Transfer Protocol (FTP)</p>
-    /// </li>
+    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
+    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
+    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
     /// </ul>
     pub server_protocol: std::option::Option<crate::model::Protocol>,
     /// <p>The source IP address of the user account to be tested.</p>
@@ -8195,25 +6889,16 @@ pub struct TestIdentityProviderInput {
     pub user_password: std::option::Option<std::string::String>,
 }
 impl TestIdentityProviderInput {
-    /// <p>A system-assigned identifier for a specific server. That server's user authentication
-    /// method is tested with a user name and password.</p>
+    /// <p>A system-assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
     /// <p>The type of file transfer protocol to be tested.</p>
-    ///
     /// <p>The available protocols are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p>
-    /// </li>
-    /// <li>
-    /// <p>File Transfer Protocol Secure (FTPS)</p>
-    /// </li>
-    /// <li>
-    /// <p>File Transfer Protocol (FTP)</p>
-    /// </li>
+    /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
+    /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
+    /// <li> <p>File Transfer Protocol (FTP)</p> </li>
     /// </ul>
     pub fn server_protocol(&self) -> std::option::Option<&crate::model::Protocol> {
         self.server_protocol.as_ref()
@@ -8247,21 +6932,17 @@ impl std::fmt::Debug for TestIdentityProviderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or
-    /// role.</p>
+    /// <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or role.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Key-value pairs assigned to ARNs that you can use to group and search for resources by
-    /// type. You can attach this metadata to user accounts for any purpose.</p>
+    /// <p>Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to user accounts for any purpose.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or
-    /// role.</p>
+    /// <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or role.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Key-value pairs assigned to ARNs that you can use to group and search for resources by
-    /// type. You can attach this metadata to user accounts for any purpose.</p>
+    /// <p>Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to user accounts for any purpose.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -8365,10 +7046,7 @@ impl std::fmt::Debug for SendWorkflowStepStateInput {
 pub struct ListWorkflowsInput {
     /// <p>Specifies the maximum number of workflows to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output.
-    /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
-    /// continue listing additional workflows.</p>
+    /// <p> <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWorkflowsInput {
@@ -8376,10 +7054,7 @@ impl ListWorkflowsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output.
-    /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
-    /// continue listing additional workflows.</p>
+    /// <p> <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8397,27 +7072,19 @@ impl std::fmt::Debug for ListWorkflowsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
-    /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code>
-    /// request.</p>
+    /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code> request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>When you can get additional results from the <code>ListUsers</code> call, a
-    /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
-    /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
-    /// users.</p>
+    /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
     pub server_id: std::option::Option<std::string::String>,
 }
 impl ListUsersInput {
-    /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code>
-    /// request.</p>
+    /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code> request.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>When you can get additional results from the <code>ListUsers</code> call, a
-    /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
-    /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
-    /// users.</p>
+    /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8440,31 +7107,23 @@ impl std::fmt::Debug for ListUsersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an
-    /// identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
+    /// <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of tags to return as a response to the
-    /// <code>ListTagsForResource</code> request.</p>
+    /// <p>Specifies the number of tags to return as a response to the <code>ListTagsForResource</code> request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>When you request additional results from the <code>ListTagsForResource</code> operation, a
-    /// <code>NextToken</code> parameter is returned in the input. You can then pass in a subsequent
-    /// command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
+    /// <p>When you request additional results from the <code>ListTagsForResource</code> operation, a <code>NextToken</code> parameter is returned in the input. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an
-    /// identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
+    /// <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Specifies the number of tags to return as a response to the
-    /// <code>ListTagsForResource</code> request.</p>
+    /// <p>Specifies the number of tags to return as a response to the <code>ListTagsForResource</code> request.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>When you request additional results from the <code>ListTagsForResource</code> operation, a
-    /// <code>NextToken</code> parameter is returned in the input. You can then pass in a subsequent
-    /// command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
+    /// <p>When you request additional results from the <code>ListTagsForResource</code> operation, a <code>NextToken</code> parameter is returned in the input. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8483,25 +7142,17 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServersInput {
-    /// <p>Specifies the number of servers to return as a response to the <code>ListServers</code>
-    /// query.</p>
+    /// <p>Specifies the number of servers to return as a response to the <code>ListServers</code> query.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>When additional results are obtained from the <code>ListServers</code> command, a
-    /// <code>NextToken</code> parameter is returned in the output. You can then pass the
-    /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
-    /// servers.</p>
+    /// <p>When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional servers.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServersInput {
-    /// <p>Specifies the number of servers to return as a response to the <code>ListServers</code>
-    /// query.</p>
+    /// <p>Specifies the number of servers to return as a response to the <code>ListServers</code> query.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>When additional results are obtained from the <code>ListServers</code> command, a
-    /// <code>NextToken</code> parameter is returned in the output. You can then pass the
-    /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
-    /// servers.</p>
+    /// <p>When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional servers.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8519,25 +7170,17 @@ impl std::fmt::Debug for ListServersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityPoliciesInput {
-    /// <p>Specifies the number of security policies to return as a response to the
-    /// <code>ListSecurityPolicies</code> query.</p>
+    /// <p>Specifies the number of security policies to return as a response to the <code>ListSecurityPolicies</code> query.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>When additional results are obtained from the <code>ListSecurityPolicies</code> command, a
-    /// <code>NextToken</code> parameter is returned in the output. You can then pass the
-    /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
-    /// security policies.</p>
+    /// <p>When additional results are obtained from the <code>ListSecurityPolicies</code> command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional security policies.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSecurityPoliciesInput {
-    /// <p>Specifies the number of security policies to return as a response to the
-    /// <code>ListSecurityPolicies</code> query.</p>
+    /// <p>Specifies the number of security policies to return as a response to the <code>ListSecurityPolicies</code> query.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>When additional results are obtained from the <code>ListSecurityPolicies</code> command, a
-    /// <code>NextToken</code> parameter is returned in the output. You can then pass the
-    /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
-    /// security policies.</p>
+    /// <p>When additional results are obtained from the <code>ListSecurityPolicies</code> command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional security policies.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8557,28 +7200,12 @@ impl std::fmt::Debug for ListSecurityPoliciesInput {
 pub struct ListExecutionsInput {
     /// <p>Specifies the aximum number of executions to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output.
-    /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
-    /// continue listing additional executions.</p>
-    /// <p>
-    /// This is useful for pagination, for instance.
-    /// If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>:
-    /// </p>
-    /// <p>
-    /// <code>aws transfer list-executions --max-results 10</code>
-    /// </p>
-    /// <p>
-    /// This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution.
-    /// You can now call the API again, suppling the <code>NextToken</code> value you received:
-    /// </p>
-    /// <p>
-    /// <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code>
-    /// </p>
-    /// <p>
-    /// This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details
-    /// for all 100 executions have been returned.
-    /// </p>
+    /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
+    /// <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>: </p>
+    /// <p> <code>aws transfer list-executions --max-results 10</code> </p>
+    /// <p> This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, suppling the <code>NextToken</code> value you received: </p>
+    /// <p> <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code> </p>
+    /// <p> This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details for all 100 executions have been returned. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the workflow.</p>
     pub workflow_id: std::option::Option<std::string::String>,
@@ -8588,28 +7215,12 @@ impl ListExecutionsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output.
-    /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
-    /// continue listing additional executions.</p>
-    /// <p>
-    /// This is useful for pagination, for instance.
-    /// If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>:
-    /// </p>
-    /// <p>
-    /// <code>aws transfer list-executions --max-results 10</code>
-    /// </p>
-    /// <p>
-    /// This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution.
-    /// You can now call the API again, suppling the <code>NextToken</code> value you received:
-    /// </p>
-    /// <p>
-    /// <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code>
-    /// </p>
-    /// <p>
-    /// This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details
-    /// for all 100 executions have been returned.
-    /// </p>
+    /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
+    /// <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>: </p>
+    /// <p> <code>aws transfer list-executions --max-results 10</code> </p>
+    /// <p> This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, suppling the <code>NextToken</code> value you received: </p>
+    /// <p> <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code> </p>
+    /// <p> This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details for all 100 executions have been returned. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8634,10 +7245,7 @@ impl std::fmt::Debug for ListExecutionsInput {
 pub struct ListAccessesInput {
     /// <p>Specifies the maximum number of access SIDs to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>When you can get additional results from the <code>ListAccesses</code> call, a
-    /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
-    /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
-    /// accesses.</p>
+    /// <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
     pub server_id: std::option::Option<std::string::String>,
@@ -8647,10 +7255,7 @@ impl ListAccessesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>When you can get additional results from the <code>ListAccesses</code> call, a
-    /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
-    /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
-    /// accesses.</p>
+    /// <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8731,8 +7336,7 @@ impl std::fmt::Debug for DescribeWorkflowInput {
 pub struct DescribeUserInput {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in
-    /// credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
+    /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
     pub user_name: std::option::Option<std::string::String>,
 }
 impl DescribeUserInput {
@@ -8740,8 +7344,7 @@ impl DescribeUserInput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in
-    /// credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
+    /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
@@ -8831,19 +7434,10 @@ impl std::fmt::Debug for DescribeExecutionInput {
 pub struct DescribeAccessInput {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that is required to identify specific groups within your directory.
-    /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-    /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-    /// you can view the SID values by running the following command using Windows PowerShell.</p>
-    ///
-    /// <p>
-    /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-    /// </p>
-    ///
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    ///
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-    /// You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
 }
 impl DescribeAccessInput {
@@ -8851,19 +7445,10 @@ impl DescribeAccessInput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>A unique identifier that is required to identify specific groups within your directory.
-    /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-    /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-    /// you can view the SID values by running the following command using Windows PowerShell.</p>
-    ///
-    /// <p>
-    /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-    /// </p>
-    ///
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    ///
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-    /// You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
@@ -8902,15 +7487,13 @@ impl std::fmt::Debug for DeleteWorkflowInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
-    /// <p>A system-assigned unique identifier for a server instance that has the user assigned to
-    /// it.</p>
+    /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
     pub server_id: std::option::Option<std::string::String>,
     /// <p>A unique string that identifies a user that is being deleted from a server.</p>
     pub user_name: std::option::Option<std::string::String>,
 }
 impl DeleteUserInput {
-    /// <p>A system-assigned unique identifier for a server instance that has the user assigned to
-    /// it.</p>
+    /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
@@ -8932,8 +7515,7 @@ impl std::fmt::Debug for DeleteUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSshPublicKeyInput {
-    /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance
-    /// that has the user assigned to it.</p>
+    /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
     pub server_id: std::option::Option<std::string::String>,
     /// <p>A unique identifier used to reference your user's specific SSH key.</p>
     pub ssh_public_key_id: std::option::Option<std::string::String>,
@@ -8941,8 +7523,7 @@ pub struct DeleteSshPublicKeyInput {
     pub user_name: std::option::Option<std::string::String>,
 }
 impl DeleteSshPublicKeyInput {
-    /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance
-    /// that has the user assigned to it.</p>
+    /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
@@ -8992,19 +7573,10 @@ impl std::fmt::Debug for DeleteServerInput {
 pub struct DeleteAccessInput {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that is required to identify specific groups within your directory.
-    /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-    /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-    /// you can view the SID values by running the following command using Windows PowerShell.</p>
-    ///
-    /// <p>
-    /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-    /// </p>
-    ///
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    ///
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-    /// You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
 }
 impl DeleteAccessInput {
@@ -9012,19 +7584,10 @@ impl DeleteAccessInput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>A unique identifier that is required to identify specific groups within your directory.
-    /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-    /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-    /// you can view the SID values by running the following command using Windows PowerShell.</p>
-    ///
-    /// <p>
-    /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-    /// </p>
-    ///
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    ///
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-    /// You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
@@ -9045,45 +7608,22 @@ pub struct CreateWorkflowInput {
     /// <p>A textual description for the workflow.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    /// <p>
-    /// The <code>TYPE</code> specifies which of the following actions is being taken for this step.
-    /// </p>
+    /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Copy</i>: copy the file to another location</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Custom</i>: custom step with a lambda target</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Delete</i>: delete the file</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Tag</i>: add a tag to the file</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>
-    /// Currently, copying and tagging are supported only on S3.
-    /// </p>
+    /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
+    /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
+    /// <li> <p> <i>Delete</i>: delete the file</p> </li>
+    /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+    /// </ul> <note>
+    /// <p> Currently, copying and tagging are supported only on S3. </p>
     /// </note>
-    /// <p>
-    /// For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path.
-    /// </p>
+    /// <p> For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path. </p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
-    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-    /// <note>
-    /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call
-    /// back API to kick off the exception steps. Additionally, if the lambda does not send
-    /// <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
+    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
+    /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
     pub on_exception_steps: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
-    /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached
-    /// to workflows for any purpose.</p>
+    /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateWorkflowInput {
@@ -9092,49 +7632,26 @@ impl CreateWorkflowInput {
         self.description.as_deref()
     }
     /// <p>Specifies the details for the steps that are in the specified workflow.</p>
-    /// <p>
-    /// The <code>TYPE</code> specifies which of the following actions is being taken for this step.
-    /// </p>
+    /// <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Copy</i>: copy the file to another location</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Custom</i>: custom step with a lambda target</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Delete</i>: delete the file</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Tag</i>: add a tag to the file</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>
-    /// Currently, copying and tagging are supported only on S3.
-    /// </p>
+    /// <li> <p> <i>Copy</i>: copy the file to another location</p> </li>
+    /// <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>
+    /// <li> <p> <i>Delete</i>: delete the file</p> </li>
+    /// <li> <p> <i>Tag</i>: add a tag to the file</p> </li>
+    /// </ul> <note>
+    /// <p> Currently, copying and tagging are supported only on S3. </p>
     /// </note>
-    /// <p>
-    /// For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path.
-    /// </p>
+    /// <p> For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path. </p>
     pub fn steps(&self) -> std::option::Option<&[crate::model::WorkflowStep]> {
         self.steps.as_deref()
     }
-    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
-    /// <note>
-    /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call
-    /// back API to kick off the exception steps. Additionally, if the lambda does not send
-    /// <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
+    /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
+    /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
     pub fn on_exception_steps(&self) -> std::option::Option<&[crate::model::WorkflowStep]> {
         self.on_exception_steps.as_deref()
     }
-    /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached
-    /// to workflows for any purpose.</p>
+    /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -9157,91 +7674,38 @@ pub struct CreateUserInput {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub home_directory: std::option::Option<std::string::String>,
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-    /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-    /// S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-    /// be visible to your user and how you want to make them visible. You must specify the
-    /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-    /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-    /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-    /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-    /// can only be set when <code>HomeDirectoryType</code> is set to
-    /// <i>LOGICAL</i>.</p>
-    ///
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-    ///
-    /// <p>
-    /// <code>[ { "Entry": "/directory1", "Target":
-    /// "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    ///
-    /// <p>In most cases, you can use this value instead of the session policy to lock your user
-    /// down to the designated home directory ("<code>chroot</code>"). To do this, you can set
-    /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory
-    /// parameter value.</p>
+    /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p>
-    /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    ///
-    /// <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-    /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-    /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-    /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-    /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-    /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
     /// </note>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-    /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-    /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-    ///
-    /// <note>
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
     /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-    /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-    /// it in the <code>Policy</code> argument.</p>
-    ///
-    ///
-    ///
-    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session
-    /// policy</a>.</p>
-    ///
-    ///
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
-    /// Security Token Service API Reference</i>.</p>
+    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
     /// </note>
     pub policy: std::option::Option<std::string::String>,
-    /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
-    /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-    /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
-    /// files and directories in Amazon EFS determine the level of access your users get when
-    /// transferring files into and out of your Amazon EFS file systems.</p>
+    /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in Amazon EFS determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub posix_profile: std::option::Option<crate::model::PosixProfile>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-    /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-    /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-    /// server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>A system-assigned unique identifier for a server instance. This is the specific server
-    /// that you added your user to.</p>
+    /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the
-    /// server.</p>
+    /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p> <note>
+    /// <p> Currently, Transfer Family does not accept elliptical curve keys (keys beginning with <code>ecdsa</code>). </p>
+    /// </note>
     pub ssh_public_key_body: std::option::Option<std::string::String>,
-    /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached
-    /// to users for any purpose.</p>
+    /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
-    /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
-    /// '-', period '.', and at sign '@'. The user name can't start
-    /// with a hyphen, period, or at sign.</p>
+    /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
     pub user_name: std::option::Option<std::string::String>,
 }
 impl CreateUserInput {
@@ -9250,108 +7714,55 @@ impl CreateUserInput {
     pub fn home_directory(&self) -> std::option::Option<&str> {
         self.home_directory.as_deref()
     }
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-    /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-    /// S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
     pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
         self.home_directory_type.as_ref()
     }
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-    /// be visible to your user and how you want to make them visible. You must specify the
-    /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-    /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-    /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-    /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-    /// can only be set when <code>HomeDirectoryType</code> is set to
-    /// <i>LOGICAL</i>.</p>
-    ///
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-    ///
-    /// <p>
-    /// <code>[ { "Entry": "/directory1", "Target":
-    /// "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    ///
-    /// <p>In most cases, you can use this value instead of the session policy to lock your user
-    /// down to the designated home directory ("<code>chroot</code>"). To do this, you can set
-    /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory
-    /// parameter value.</p>
+    /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p>
-    /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    ///
-    /// <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-    /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-    /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-    /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-    /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-    /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
     /// </note>
     pub fn home_directory_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
         self.home_directory_mappings.as_deref()
     }
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-    /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-    /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-    ///
-    /// <note>
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
     /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-    /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-    /// it in the <code>Policy</code> argument.</p>
-    ///
-    ///
-    ///
-    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session
-    /// policy</a>.</p>
-    ///
-    ///
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
-    /// Security Token Service API Reference</i>.</p>
+    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
     /// </note>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
-    /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
-    /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-    /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
-    /// files and directories in Amazon EFS determine the level of access your users get when
-    /// transferring files into and out of your Amazon EFS file systems.</p>
+    /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in Amazon EFS determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub fn posix_profile(&self) -> std::option::Option<&crate::model::PosixProfile> {
         self.posix_profile.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-    /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-    /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-    /// server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>A system-assigned unique identifier for a server instance. This is the specific server
-    /// that you added your user to.</p>
+    /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the
-    /// server.</p>
+    /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p> <note>
+    /// <p> Currently, Transfer Family does not accept elliptical curve keys (keys beginning with <code>ecdsa</code>). </p>
+    /// </note>
     pub fn ssh_public_key_body(&self) -> std::option::Option<&str> {
         self.ssh_public_key_body.as_deref()
     }
-    /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached
-    /// to users for any purpose.</p>
+    /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
-    /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
-    /// '-', period '.', and at sign '@'. The user name can't start
-    /// with a hyphen, period, or at sign.</p>
+    /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
@@ -9377,153 +7788,63 @@ impl std::fmt::Debug for CreateUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServerInput {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required
-    /// when <code>Protocols</code> is set to <code>FTPS</code>.</p>
-    ///
-    /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a>
-    /// in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-    ///
-    /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a>
-    /// in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-    ///
-    /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a
-    /// private certificate</a> in the <i> Amazon Web Services Certificate Manager User
-    /// Guide</i>.</p>
-    ///
-    /// <p>Certificates with the following cryptographic algorithms and key sizes are
-    /// supported:</p>
-    ///
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+    /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+    /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+    /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+    /// <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>2048-bit RSA (RSA_2048)</p>
-    /// </li>
-    /// <li>
-    /// <p>4096-bit RSA (RSA_4096)</p>
-    /// </li>
-    /// <li>
-    /// <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p>
-    /// </li>
-    /// <li>
-    /// <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p>
-    /// </li>
-    /// <li>
-    /// <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
-    /// address specified and information about the issuer.</p>
+    /// <li> <p>2048-bit RSA (RSA_2048)</p> </li>
+    /// <li> <p>4096-bit RSA (RSA_4096)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p> </li>
+    /// </ul> <note>
+    /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>
     /// </note>
     pub certificate: std::option::Option<std::string::String>,
-    /// <p>The domain of the storage system that is used for file transfers. There are two domains
-    /// available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
-    /// default value is S3.</p>
-    ///
-    /// <note>
+    /// <p>The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p> <note>
     /// <p>After the server is created, the domain cannot be changed.</p>
     /// </note>
     pub domain: std::option::Option<crate::model::Domain>,
-    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server.
-    /// When you host your endpoint within your VPC, you can make it accessible only to resources
-    /// within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over
-    /// the internet. Your VPC's default security groups are automatically assigned to your
-    /// endpoint.</p>
+    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub endpoint_details: std::option::Option<crate::model::EndpointDetails>,
-    /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC)
-    /// or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and
-    /// resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p>
-    /// <note>
-    /// <p> After May 19, 2021, you won't be able to create a server using
-    /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already
-    /// done so before May 19, 2021. If you have already created servers with
-    /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021,
-    /// you will not be affected. After this date, use
-    /// <code>EndpointType</code>=<code>VPC</code>.</p>
-    ///
-    /// <p>For more information, see
-    /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
-    /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With
-    /// this endpoint type, you have the option to directly associate up to three Elastic IPv4
-    /// addresses (BYO IP included) with your server's endpoint and use VPC security groups to
-    /// restrict traffic by the client's public IP address. This is not possible with
-    /// <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
+    /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>
+    /// <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>
+    /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+    /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
     /// </note>
     pub endpoint_type: std::option::Option<crate::model::EndpointType>,
-    /// <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
-    /// my-new-server-key</code> command.</p>
-    ///
-    /// <important>
-    /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled
-    /// server to a new server, don't update the host key. Accidentally changing a
-    /// server's host key can be disruptive.</p>
+    /// <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code> command.</p> <important>
+    /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
-    ///
-    ///
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer
-    /// Family User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User Guide</i>.</p>
     pub host_key: std::option::Option<std::string::String>,
-    /// <p>Required when <code>IdentityProviderType</code> is set to
-    /// <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array containing
-    /// all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or
-    /// invoke a customer-supplied authentication API, including the API Gateway URL. Not required
-    /// when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
     pub identity_provider_details: std::option::Option<crate::model::IdentityProviderDetails>,
-    /// <p>Specifies the mode of authentication for a server. The default value is
-    /// <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within
-    /// the Amazon Web Services Transfer Family service.</p>
-    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to
-    /// Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your
-    /// on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to
-    /// provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-    /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
-    /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
-    /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+    /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
-    /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
-    /// your CloudWatch logs.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
     pub logging_role: std::option::Option<std::string::String>,
-    /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
-    /// client can connect to your server's endpoint. The available protocols are:</p>
-    ///
+    /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over
-    /// SSH</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS
-    /// encryption</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate
-    /// Manager (ACM) which is used to identify your server when clients connect to it over
-    /// FTPS.</p>
-    ///
-    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
-    /// <code>EndpointType</code> must be <code>VPC</code> and the
-    /// <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-    ///
-    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then
-    /// <code>AddressAllocationIds</code> cannot be associated.</p>
-    ///
-    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
-    /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-    /// <code>SERVICE_MANAGED</code>.</p>
+    /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
+    /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+    /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+    /// </ul> <note>
+    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p>
+    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
+    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
+    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
     /// </note>
     pub protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
+    /// <p>The protocol settings that are configured for your server.</p>
+    /// <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p>
+    /// <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p>
+    pub protocol_details: std::option::Option<crate::model::ProtocolDetails>,
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub security_policy_name: std::option::Option<std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for servers.</p>
@@ -9532,174 +7853,86 @@ pub struct CreateServerInput {
     pub workflow_details: std::option::Option<crate::model::WorkflowDetails>,
 }
 impl CreateServerInput {
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required
-    /// when <code>Protocols</code> is set to <code>FTPS</code>.</p>
-    ///
-    /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a>
-    /// in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-    ///
-    /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a>
-    /// in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
-    ///
-    /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a
-    /// private certificate</a> in the <i> Amazon Web Services Certificate Manager User
-    /// Guide</i>.</p>
-    ///
-    /// <p>Certificates with the following cryptographic algorithms and key sizes are
-    /// supported:</p>
-    ///
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+    /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+    /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+    /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+    /// <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>2048-bit RSA (RSA_2048)</p>
-    /// </li>
-    /// <li>
-    /// <p>4096-bit RSA (RSA_4096)</p>
-    /// </li>
-    /// <li>
-    /// <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p>
-    /// </li>
-    /// <li>
-    /// <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p>
-    /// </li>
-    /// <li>
-    /// <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
-    /// address specified and information about the issuer.</p>
+    /// <li> <p>2048-bit RSA (RSA_2048)</p> </li>
+    /// <li> <p>4096-bit RSA (RSA_4096)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p> </li>
+    /// </ul> <note>
+    /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>
     /// </note>
     pub fn certificate(&self) -> std::option::Option<&str> {
         self.certificate.as_deref()
     }
-    /// <p>The domain of the storage system that is used for file transfers. There are two domains
-    /// available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
-    /// default value is S3.</p>
-    ///
-    /// <note>
+    /// <p>The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p> <note>
     /// <p>After the server is created, the domain cannot be changed.</p>
     /// </note>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
     }
-    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server.
-    /// When you host your endpoint within your VPC, you can make it accessible only to resources
-    /// within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over
-    /// the internet. Your VPC's default security groups are automatically assigned to your
-    /// endpoint.</p>
+    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub fn endpoint_details(&self) -> std::option::Option<&crate::model::EndpointDetails> {
         self.endpoint_details.as_ref()
     }
-    /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC)
-    /// or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and
-    /// resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p>
-    /// <note>
-    /// <p> After May 19, 2021, you won't be able to create a server using
-    /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already
-    /// done so before May 19, 2021. If you have already created servers with
-    /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021,
-    /// you will not be affected. After this date, use
-    /// <code>EndpointType</code>=<code>VPC</code>.</p>
-    ///
-    /// <p>For more information, see
-    /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
-    /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With
-    /// this endpoint type, you have the option to directly associate up to three Elastic IPv4
-    /// addresses (BYO IP included) with your server's endpoint and use VPC security groups to
-    /// restrict traffic by the client's public IP address. This is not possible with
-    /// <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
+    /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>
+    /// <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>
+    /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+    /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
     /// </note>
     pub fn endpoint_type(&self) -> std::option::Option<&crate::model::EndpointType> {
         self.endpoint_type.as_ref()
     }
-    /// <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
-    /// my-new-server-key</code> command.</p>
-    ///
-    /// <important>
-    /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled
-    /// server to a new server, don't update the host key. Accidentally changing a
-    /// server's host key can be disruptive.</p>
+    /// <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code> command.</p> <important>
+    /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
-    ///
-    ///
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer
-    /// Family User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User Guide</i>.</p>
     pub fn host_key(&self) -> std::option::Option<&str> {
         self.host_key.as_deref()
     }
-    /// <p>Required when <code>IdentityProviderType</code> is set to
-    /// <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array containing
-    /// all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or
-    /// invoke a customer-supplied authentication API, including the API Gateway URL. Not required
-    /// when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
     pub fn identity_provider_details(
         &self,
     ) -> std::option::Option<&crate::model::IdentityProviderDetails> {
         self.identity_provider_details.as_ref()
     }
-    /// <p>Specifies the mode of authentication for a server. The default value is
-    /// <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within
-    /// the Amazon Web Services Transfer Family service.</p>
-    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to
-    /// Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your
-    /// on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to
-    /// provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-    /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
-    /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
-    /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
-    /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+    /// <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
     pub fn identity_provider_type(
         &self,
     ) -> std::option::Option<&crate::model::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
-    /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
-    /// your CloudWatch logs.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
     pub fn logging_role(&self) -> std::option::Option<&str> {
         self.logging_role.as_deref()
     }
-    /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
-    /// client can connect to your server's endpoint. The available protocols are:</p>
-    ///
+    /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over
-    /// SSH</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS
-    /// encryption</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate
-    /// Manager (ACM) which is used to identify your server when clients connect to it over
-    /// FTPS.</p>
-    ///
-    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
-    /// <code>EndpointType</code> must be <code>VPC</code> and the
-    /// <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
-    ///
-    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then
-    /// <code>AddressAllocationIds</code> cannot be associated.</p>
-    ///
-    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
-    /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
-    /// <code>SERVICE_MANAGED</code>.</p>
+    /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
+    /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+    /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+    /// </ul> <note>
+    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p>
+    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
+    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>
+    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>
     /// </note>
     pub fn protocols(&self) -> std::option::Option<&[crate::model::Protocol]> {
         self.protocols.as_deref()
+    }
+    /// <p>The protocol settings that are configured for your server.</p>
+    /// <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p>
+    /// <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p>
+    pub fn protocol_details(&self) -> std::option::Option<&crate::model::ProtocolDetails> {
+        self.protocol_details.as_ref()
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub fn security_policy_name(&self) -> std::option::Option<&str> {
@@ -9726,6 +7959,7 @@ impl std::fmt::Debug for CreateServerInput {
         formatter.field("identity_provider_type", &self.identity_provider_type);
         formatter.field("logging_role", &self.logging_role);
         formatter.field("protocols", &self.protocols);
+        formatter.field("protocol_details", &self.protocol_details);
         formatter.field("security_policy_name", &self.security_policy_name);
         formatter.field("tags", &self.tags);
         formatter.field("workflow_details", &self.workflow_details);
@@ -9740,83 +7974,35 @@ pub struct CreateAccessInput {
     /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub home_directory: std::option::Option<std::string::String>,
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-    /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-    /// S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
     pub home_directory_type: std::option::Option<crate::model::HomeDirectoryType>,
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-    /// be visible to your user and how you want to make them visible. You must specify the
-    /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-    /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-    /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-    /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-    /// can only be set when <code>HomeDirectoryType</code> is set to
-    /// <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-    /// <p>
-    /// <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    /// <p>In most cases, you can use this value instead of the session policy to lock down your
-    /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
-    /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-    /// <code>HomeDirectory</code> parameter value.</p>
+    /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p>
-    /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    ///
-    /// <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-    /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-    /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-    /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-    /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-    /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
     /// </note>
     pub home_directory_mappings:
         std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-    /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-    /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-    ///
-    /// <note>
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
     /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-    /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-    /// it in the <code>Policy</code> argument.</p>      
-    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
-    /// session policy</a>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API
-    /// Reference</i>.</p>
+    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
     /// </note>
     pub policy: std::option::Option<std::string::String>,
-    /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
-    /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-    /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
-    /// files and directories in your file system determine the level of access your users get when
-    /// transferring files into and out of your Amazon EFS file systems.</p>
+    /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub posix_profile: std::option::Option<crate::model::PosixProfile>,
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-    /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-    /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-    /// server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub role: std::option::Option<std::string::String>,
     /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that is required to identify specific groups within your directory.
-    /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-    /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-    /// you can view the SID values by running the following command using Windows PowerShell.</p>
-    ///
-    /// <p>
-    /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-    /// </p>
-    ///
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    ///
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-    /// You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
 }
 impl CreateAccessInput {
@@ -9825,76 +8011,37 @@ impl CreateAccessInput {
     pub fn home_directory(&self) -> std::option::Option<&str> {
         self.home_directory.as_deref()
     }
-    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-    /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
-    /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
-    /// S3 or EFS paths visible to your users.</p>
+    /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
     pub fn home_directory_type(&self) -> std::option::Option<&crate::model::HomeDirectoryType> {
         self.home_directory_type.as_ref()
     }
-    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
-    /// be visible to your user and how you want to make them visible. You must specify the
-    /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
-    /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
-    /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
-    /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
-    /// can only be set when <code>HomeDirectoryType</code> is set to
-    /// <i>LOGICAL</i>.</p>
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
-    /// <p>
-    /// <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    /// <p>In most cases, you can use this value instead of the session policy to lock down your
-    /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
-    /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-    /// <code>HomeDirectory</code> parameter value.</p>
+    /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
-    /// <p>
-    /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
-    /// </p>
-    ///
-    /// <note>
-    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
-    /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
-    /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
-    /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
-    /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
-    /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+    /// <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>
+    /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
     /// </note>
     pub fn home_directory_mappings(
         &self,
     ) -> std::option::Option<&[crate::model::HomeDirectoryMapEntry]> {
         self.home_directory_mappings.as_deref()
     }
-    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
-    /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-    /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
-    ///
-    /// <note>
+    /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
     /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
-    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
-    /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
-    /// it in the <code>Policy</code> argument.</p>      
-    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
-    /// session policy</a>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API
-    /// Reference</i>.</p>
+    /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
     /// </note>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
-    /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
-    /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
-    /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
-    /// files and directories in your file system determine the level of access your users get when
-    /// transferring files into and out of your Amazon EFS file systems.</p>
+    /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub fn posix_profile(&self) -> std::option::Option<&crate::model::PosixProfile> {
         self.posix_profile.as_ref()
     }
-    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
-    /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
-    /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
-    /// server to access your resources when servicing your users' transfer requests.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
@@ -9902,19 +8049,10 @@ impl CreateAccessInput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>A unique identifier that is required to identify specific groups within your directory.
-    /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
-    /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
-    /// you can view the SID values by running the following command using Windows PowerShell.</p>
-    ///
-    /// <p>
-    /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
-    /// </p>
-    ///
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
+    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-    ///
-    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
-    /// You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }

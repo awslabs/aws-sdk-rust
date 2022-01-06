@@ -5,11 +5,9 @@
 pub struct UpdateMeetingRoomConfiguration {
     /// <p>Whether room utilization metrics are enabled or not.</p>
     pub room_utilization_metrics_enabled: std::option::Option<bool>,
-    /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The
-    /// end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+    /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
     pub end_of_meeting_reminder: std::option::Option<crate::model::UpdateEndOfMeetingReminder>,
-    /// <p>Settings to automatically book an available room available for a configured duration
-    /// when joining a meeting with Alexa.</p>
+    /// <p>Settings to automatically book an available room available for a configured duration when joining a meeting with Alexa.</p>
     pub instant_booking: std::option::Option<crate::model::UpdateInstantBooking>,
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into to make the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
     pub require_check_in: std::option::Option<crate::model::UpdateRequireCheckIn>,
@@ -19,15 +17,13 @@ impl UpdateMeetingRoomConfiguration {
     pub fn room_utilization_metrics_enabled(&self) -> std::option::Option<bool> {
         self.room_utilization_metrics_enabled
     }
-    /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The
-    /// end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+    /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
     pub fn end_of_meeting_reminder(
         &self,
     ) -> std::option::Option<&crate::model::UpdateEndOfMeetingReminder> {
         self.end_of_meeting_reminder.as_ref()
     }
-    /// <p>Settings to automatically book an available room available for a configured duration
-    /// when joining a meeting with Alexa.</p>
+    /// <p>Settings to automatically book an available room available for a configured duration when joining a meeting with Alexa.</p>
     pub fn instant_booking(&self) -> std::option::Option<&crate::model::UpdateInstantBooking> {
         self.instant_booking.as_ref()
     }
@@ -75,8 +71,7 @@ pub mod update_meeting_room_configuration {
             self.room_utilization_metrics_enabled = input;
             self
         }
-        /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The
-        /// end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+        /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
         pub fn end_of_meeting_reminder(
             mut self,
             input: crate::model::UpdateEndOfMeetingReminder,
@@ -84,8 +79,7 @@ pub mod update_meeting_room_configuration {
             self.end_of_meeting_reminder = Some(input);
             self
         }
-        /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The
-        /// end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+        /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
         pub fn set_end_of_meeting_reminder(
             mut self,
             input: std::option::Option<crate::model::UpdateEndOfMeetingReminder>,
@@ -93,14 +87,12 @@ pub mod update_meeting_room_configuration {
             self.end_of_meeting_reminder = input;
             self
         }
-        /// <p>Settings to automatically book an available room available for a configured duration
-        /// when joining a meeting with Alexa.</p>
+        /// <p>Settings to automatically book an available room available for a configured duration when joining a meeting with Alexa.</p>
         pub fn instant_booking(mut self, input: crate::model::UpdateInstantBooking) -> Self {
             self.instant_booking = Some(input);
             self
         }
-        /// <p>Settings to automatically book an available room available for a configured duration
-        /// when joining a meeting with Alexa.</p>
+        /// <p>Settings to automatically book an available room available for a configured duration when joining a meeting with Alexa.</p>
         pub fn set_instant_booking(
             mut self,
             input: std::option::Option<crate::model::UpdateInstantBooking>,
@@ -212,21 +204,17 @@ impl UpdateRequireCheckIn {
     }
 }
 
-/// <p>Updates settings for the instant booking feature that are applied to a room profile. If
-/// instant booking is enabled, Alexa automatically reserves a room if it is free when a user
-/// joins a meeting with Alexa.</p>
+/// <p>Updates settings for the instant booking feature that are applied to a room profile. If instant booking is enabled, Alexa automatically reserves a room if it is free when a user joins a meeting with Alexa.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateInstantBooking {
-    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
-    /// an available room when a meeting is started with Alexa.</p>
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     pub duration_in_minutes: std::option::Option<i32>,
     /// <p>Whether instant booking is enabled or not.</p>
     pub enabled: std::option::Option<bool>,
 }
 impl UpdateInstantBooking {
-    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
-    /// an available room when a meeting is started with Alexa.</p>
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     pub fn duration_in_minutes(&self) -> std::option::Option<i32> {
         self.duration_in_minutes
     }
@@ -253,14 +241,12 @@ pub mod update_instant_booking {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
-        /// an available room when a meeting is started with Alexa.</p>
+        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
         pub fn duration_in_minutes(mut self, input: i32) -> Self {
             self.duration_in_minutes = Some(input);
             self
         }
-        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
-        /// an available room when a meeting is started with Alexa.</p>
+        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_in_minutes = input;
             self
@@ -291,14 +277,11 @@ impl UpdateInstantBooking {
     }
 }
 
-/// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The
-/// end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+/// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEndOfMeetingReminder {
-    /// <p>Updates settings for the end of meeting reminder feature that are applied to a room
-    /// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
-    /// ending. </p>
+    /// <p>Updates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
     pub reminder_at_minutes: std::option::Option<std::vec::Vec<i32>>,
     /// <p>The type of sound that users hear during the end of meeting reminder. </p>
     pub reminder_type: std::option::Option<crate::model::EndOfMeetingReminderType>,
@@ -306,9 +289,7 @@ pub struct UpdateEndOfMeetingReminder {
     pub enabled: std::option::Option<bool>,
 }
 impl UpdateEndOfMeetingReminder {
-    /// <p>Updates settings for the end of meeting reminder feature that are applied to a room
-    /// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
-    /// ending. </p>
+    /// <p>Updates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
     pub fn reminder_at_minutes(&self) -> std::option::Option<&[i32]> {
         self.reminder_at_minutes.as_deref()
     }
@@ -345,18 +326,14 @@ pub mod update_end_of_meeting_reminder {
         ///
         /// To override the contents of this collection use [`set_reminder_at_minutes`](Self::set_reminder_at_minutes).
         ///
-        /// <p>Updates settings for the end of meeting reminder feature that are applied to a room
-        /// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
-        /// ending. </p>
-        pub fn reminder_at_minutes(mut self, input: impl Into<i32>) -> Self {
+        /// <p>Updates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+        pub fn reminder_at_minutes(mut self, input: i32) -> Self {
             let mut v = self.reminder_at_minutes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reminder_at_minutes = Some(v);
             self
         }
-        /// <p>Updates settings for the end of meeting reminder feature that are applied to a room
-        /// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
-        /// ending. </p>
+        /// <p>Updates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
         pub fn set_reminder_at_minutes(
             mut self,
             input: std::option::Option<std::vec::Vec<i32>>,
@@ -908,19 +885,11 @@ impl AsRef<str> for PhoneNumberType {
     }
 }
 
-/// <p>The values that indicate whether a pin is always required (YES), never required (NO),
-/// or OPTIONAL.</p>
+/// <p>The values that indicate whether a pin is always required (YES), never required (NO), or OPTIONAL.</p>
 /// <ul>
-/// <li>
-/// <p>If YES, Alexa will always ask for a meeting pin.</p>
-/// </li>
-/// <li>
-/// <p>If NO, Alexa will never ask for a meeting pin.</p>
-/// </li>
-/// <li>
-/// <p>If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds
-/// with yes, it will ask for the meeting pin.</p>
-/// </li>
+/// <li> <p>If YES, Alexa will always ask for a meeting pin.</p> </li>
+/// <li> <p>If NO, Alexa will never ask for a meeting pin.</p> </li>
+/// <li> <p>If OPTIONAL, Alexa will ask if you have a meeting pin and if the customer responds with yes, it will ask for the meeting pin.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1657,8 +1626,7 @@ impl AsRef<str> for Feature {
     }
 }
 
-/// <p>The content definition. This can contain only one text, SSML, or audio list
-/// object.</p>
+/// <p>The content definition. This can contain only one text, SSML, or audio list object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Content {
@@ -1708,9 +1676,9 @@ pub mod content {
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
         /// <p>The list of text messages.</p>
-        pub fn text_list(mut self, input: impl Into<crate::model::Text>) -> Self {
+        pub fn text_list(mut self, input: crate::model::Text) -> Self {
             let mut v = self.text_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.text_list = Some(v);
             self
         }
@@ -1727,9 +1695,9 @@ pub mod content {
         /// To override the contents of this collection use [`set_ssml_list`](Self::set_ssml_list).
         ///
         /// <p>The list of SSML messages.</p>
-        pub fn ssml_list(mut self, input: impl Into<crate::model::Ssml>) -> Self {
+        pub fn ssml_list(mut self, input: crate::model::Ssml) -> Self {
             let mut v = self.ssml_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ssml_list = Some(v);
             self
         }
@@ -1746,9 +1714,9 @@ pub mod content {
         /// To override the contents of this collection use [`set_audio_list`](Self::set_audio_list).
         ///
         /// <p>The list of audio messages.</p>
-        pub fn audio_list(mut self, input: impl Into<crate::model::Audio>) -> Self {
+        pub fn audio_list(mut self, input: crate::model::Audio) -> Self {
             let mut v = self.audio_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.audio_list = Some(v);
             self
         }
@@ -1777,23 +1745,21 @@ impl Content {
     }
 }
 
-/// <p>The audio message. There is a 1 MB limit on the audio file input and the only supported
-/// format is MP3. To convert your MP3 audio files to an Alexa-friendly,  </p>
-/// <p>required codec version (MPEG version 2) and bit rate (48 kbps), you might use converter
-/// software. One option for this is a command-line tool, FFmpeg. For more information, see
-/// <a href="https://www.ffmpeg.org/">FFmpeg</a>. The following command converts the
-/// provided <input-file> to an MP3 file that is played in the announcement:</p>
-/// <p>
-/// <code>ffmpeg -i <input-file> -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000
-/// <output-file.mp3></code>
-/// </p>
+/// <p>The audio message. There is a 1 MB limit on the audio file input and the only supported format is MP3. To convert your MP3 audio files to an Alexa-friendly, </p>
+/// <p>required codec version (MPEG version 2) and bit rate (48 kbps), you might use converter software. One option for this is a command-line tool, FFmpeg. For more information, see <a href="https://www.ffmpeg.org/">FFmpeg</a>. The following command converts the provided <input-file>
+/// to an MP3 file that is played in the announcement:
+/// </input-file></p>
+/// <p> <code>ffmpeg -i
+/// <input-file>
+/// -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000
+/// <output-file.mp3></output-file.mp3>
+/// </input-file></code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Audio {
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
     pub locale: std::option::Option<crate::model::Locale>,
-    /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations
-    /// comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
+    /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
     pub location: std::option::Option<std::string::String>,
 }
 impl Audio {
@@ -1801,8 +1767,7 @@ impl Audio {
     pub fn locale(&self) -> std::option::Option<&crate::model::Locale> {
         self.locale.as_ref()
     }
-    /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations
-    /// comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
+    /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -1835,14 +1800,12 @@ pub mod audio {
             self.locale = input;
             self
         }
-        /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations
-        /// comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
+        /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations
-        /// comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
+        /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -2060,8 +2023,7 @@ impl Text {
     }
 }
 
-/// <p>A filter name and value pair that is used to return a more specific list of results.
-/// Filters can be used to match a set of resources by various criteria.</p>
+/// <p>A filter name and value pair that is used to return a more specific list of results. Filters can be used to match a set of resources by various criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Filter {
@@ -2769,8 +2731,7 @@ pub struct ProfileData {
     pub temperature_unit: std::option::Option<crate::model::TemperatureUnit>,
     /// <p>The wake word of a room profile.</p>
     pub wake_word: std::option::Option<crate::model::WakeWord>,
-    /// <p>The locale of a room profile. (This is currently available only to a limited preview
-    /// audience.)</p>
+    /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
     pub locale: std::option::Option<std::string::String>,
 }
 impl ProfileData {
@@ -2806,8 +2767,7 @@ impl ProfileData {
     pub fn wake_word(&self) -> std::option::Option<&crate::model::WakeWord> {
         self.wake_word.as_ref()
     }
-    /// <p>The locale of a room profile. (This is currently available only to a limited preview
-    /// audience.)</p>
+    /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
     pub fn locale(&self) -> std::option::Option<&str> {
         self.locale.as_deref()
     }
@@ -2930,14 +2890,12 @@ pub mod profile_data {
             self.wake_word = input;
             self
         }
-        /// <p>The locale of a room profile. (This is currently available only to a limited preview
-        /// audience.)</p>
+        /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
         pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale = Some(input.into());
             self
         }
-        /// <p>The locale of a room profile. (This is currently available only to a limited preview
-        /// audience.)</p>
+        /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
         pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale = input;
             self
@@ -2977,14 +2935,11 @@ pub struct NetworkProfileData {
     pub description: std::option::Option<std::string::String>,
     /// <p>The SSID of the Wi-Fi network.</p>
     pub ssid: std::option::Option<std::string::String>,
-    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-    /// WEP, or OPEN.</p>
+    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
     pub security_type: std::option::Option<crate::model::NetworkSecurityType>,
-    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-    /// supported.</p>
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
     pub eap_method: std::option::Option<crate::model::NetworkEapMethod>,
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-    /// (ACM). This is used to issue certificates to the devices.</p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
 }
 impl NetworkProfileData {
@@ -3004,18 +2959,15 @@ impl NetworkProfileData {
     pub fn ssid(&self) -> std::option::Option<&str> {
         self.ssid.as_deref()
     }
-    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-    /// WEP, or OPEN.</p>
+    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
     pub fn security_type(&self) -> std::option::Option<&crate::model::NetworkSecurityType> {
         self.security_type.as_ref()
     }
-    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-    /// supported.</p>
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
     pub fn eap_method(&self) -> std::option::Option<&crate::model::NetworkEapMethod> {
         self.eap_method.as_ref()
     }
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-    /// (ACM). This is used to issue certificates to the devices.</p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
@@ -3094,14 +3046,12 @@ pub mod network_profile_data {
             self.ssid = input;
             self
         }
-        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-        /// WEP, or OPEN.</p>
+        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
         pub fn security_type(mut self, input: crate::model::NetworkSecurityType) -> Self {
             self.security_type = Some(input);
             self
         }
-        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-        /// WEP, or OPEN.</p>
+        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
         pub fn set_security_type(
             mut self,
             input: std::option::Option<crate::model::NetworkSecurityType>,
@@ -3109,14 +3059,12 @@ pub mod network_profile_data {
             self.security_type = input;
             self
         }
-        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-        /// supported.</p>
+        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
         pub fn eap_method(mut self, input: crate::model::NetworkEapMethod) -> Self {
             self.eap_method = Some(input);
             self
         }
-        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-        /// supported.</p>
+        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
         pub fn set_eap_method(
             mut self,
             input: std::option::Option<crate::model::NetworkEapMethod>,
@@ -3124,14 +3072,12 @@ pub mod network_profile_data {
             self.eap_method = input;
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices.</p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices.</p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices.</p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3639,12 +3585,9 @@ pub mod device_status_info {
         /// To override the contents of this collection use [`set_device_status_details`](Self::set_device_status_details).
         ///
         /// <p>One or more device status detail descriptions.</p>
-        pub fn device_status_details(
-            mut self,
-            input: impl Into<crate::model::DeviceStatusDetail>,
-        ) -> Self {
+        pub fn device_status_details(mut self, input: crate::model::DeviceStatusDetail) -> Self {
             let mut v = self.device_status_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_status_details = Some(v);
             self
         }
@@ -4050,9 +3993,7 @@ pub struct ContactData {
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name of the contact, used to call the contact on the device.</p>
     pub last_name: std::option::Option<std::string::String>,
-    /// <p>The phone number of the contact. The phone number type defaults to WORK. You can
-    /// specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you
-    /// specify the phone number type and multiple numbers.</p>
+    /// <p>The phone number of the contact. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The list of phone numbers for the contact.</p>
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
@@ -4076,9 +4017,7 @@ impl ContactData {
     pub fn last_name(&self) -> std::option::Option<&str> {
         self.last_name.as_deref()
     }
-    /// <p>The phone number of the contact. The phone number type defaults to WORK. You can
-    /// specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you
-    /// specify the phone number type and multiple numbers.</p>
+    /// <p>The phone number of the contact. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -4159,16 +4098,12 @@ pub mod contact_data {
             self.last_name = input;
             self
         }
-        /// <p>The phone number of the contact. The phone number type defaults to WORK. You can
-        /// specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you
-        /// specify the phone number type and multiple numbers.</p>
+        /// <p>The phone number of the contact. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.phone_number = Some(input.into());
             self
         }
-        /// <p>The phone number of the contact. The phone number type defaults to WORK. You can
-        /// specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you
-        /// specify the phone number type and multiple numbers.</p>
+        /// <p>The phone number of the contact. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -4178,9 +4113,9 @@ pub mod contact_data {
         /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
         ///
         /// <p>The list of phone numbers for the contact.</p>
-        pub fn phone_numbers(mut self, input: impl Into<crate::model::PhoneNumber>) -> Self {
+        pub fn phone_numbers(mut self, input: crate::model::PhoneNumber) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phone_numbers = Some(v);
             self
         }
@@ -4197,9 +4132,9 @@ pub mod contact_data {
         /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
         ///
         /// <p>The list of SIP addresses for the contact.</p>
-        pub fn sip_addresses(mut self, input: impl Into<crate::model::SipAddress>) -> Self {
+        pub fn sip_addresses(mut self, input: crate::model::SipAddress) -> Self {
             let mut v = self.sip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sip_addresses = Some(v);
             self
         }
@@ -4331,15 +4266,13 @@ impl AddressBookData {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoomSkillParameter {
-    /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that
-    /// only takes “DEFAULT” or “SCOPE” as valid values.</p>
+    /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
     pub parameter_key: std::option::Option<std::string::String>,
     /// <p>The parameter value of a room skill parameter.</p>
     pub parameter_value: std::option::Option<std::string::String>,
 }
 impl RoomSkillParameter {
-    /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that
-    /// only takes “DEFAULT” or “SCOPE” as valid values.</p>
+    /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
     pub fn parameter_key(&self) -> std::option::Option<&str> {
         self.parameter_key.as_deref()
     }
@@ -4366,14 +4299,12 @@ pub mod room_skill_parameter {
         pub(crate) parameter_value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that
-        /// only takes “DEFAULT” or “SCOPE” as valid values.</p>
+        /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
         pub fn parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.parameter_key = Some(input.into());
             self
         }
-        /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that
-        /// only takes “DEFAULT” or “SCOPE” as valid values.</p>
+        /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
         pub fn set_parameter_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4410,8 +4341,7 @@ impl RoomSkillParameter {
     }
 }
 
-/// <p>The default conference provider that is used if no other scheduled meetings are
-/// detected.</p>
+/// <p>The default conference provider that is used if no other scheduled meetings are detected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConferencePreference {
@@ -4474,8 +4404,7 @@ impl ConferencePreference {
     }
 }
 
-/// <p>A smart home appliance that can connect to a central system. Any domestic device can be
-/// a smart appliance. </p>
+/// <p>A smart home appliance that can connect to a central system. Any domestic device can be a smart appliance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SmartHomeAppliance {
@@ -4768,8 +4697,7 @@ pub struct SkillDetails {
     pub release_date: std::option::Option<std::string::String>,
     /// <p>The URL of the end user license agreement.</p>
     pub end_user_license_agreement: std::option::Option<std::string::String>,
-    /// <p>The generic keywords associated with the skill that can be used to find a
-    /// skill.</p>
+    /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
     pub generic_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The details about what the skill supports organized as bullet points.</p>
     pub bullet_points: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4777,9 +4705,7 @@ pub struct SkillDetails {
     pub new_in_this_version_bullet_points: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The types of skills.</p>
     pub skill_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// <i>This member has been deprecated.</i>
-    /// </p>
+    /// <p> <i>This member has been deprecated.</i> </p>
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
     pub reviews:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -4803,8 +4729,7 @@ impl SkillDetails {
     pub fn end_user_license_agreement(&self) -> std::option::Option<&str> {
         self.end_user_license_agreement.as_deref()
     }
-    /// <p>The generic keywords associated with the skill that can be used to find a
-    /// skill.</p>
+    /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
     pub fn generic_keywords(&self) -> std::option::Option<&[std::string::String]> {
         self.generic_keywords.as_deref()
     }
@@ -4820,9 +4745,7 @@ impl SkillDetails {
     pub fn skill_types(&self) -> std::option::Option<&[std::string::String]> {
         self.skill_types.as_deref()
     }
-    /// <p>
-    /// <i>This member has been deprecated.</i>
-    /// </p>
+    /// <p> <i>This member has been deprecated.</i> </p>
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
     pub fn reviews(
         &self,
@@ -4931,16 +4854,14 @@ pub mod skill_details {
         ///
         /// To override the contents of this collection use [`set_generic_keywords`](Self::set_generic_keywords).
         ///
-        /// <p>The generic keywords associated with the skill that can be used to find a
-        /// skill.</p>
+        /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
         pub fn generic_keywords(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.generic_keywords.unwrap_or_default();
             v.push(input.into());
             self.generic_keywords = Some(v);
             self
         }
-        /// <p>The generic keywords associated with the skill that can be used to find a
-        /// skill.</p>
+        /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
         pub fn set_generic_keywords(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5012,9 +4933,7 @@ pub mod skill_details {
         ///
         /// To override the contents of this collection use [`set_reviews`](Self::set_reviews).
         ///
-        /// <p>
-        /// <i>This member has been deprecated.</i>
-        /// </p>
+        /// <p> <i>This member has been deprecated.</i> </p>
         /// <p>The list of reviews for the skill, including Key and Value pair.</p>
         pub fn reviews(
             mut self,
@@ -5026,9 +4945,7 @@ pub mod skill_details {
             self.reviews = Some(hash_map);
             self
         }
-        /// <p>
-        /// <i>This member has been deprecated.</i>
-        /// </p>
+        /// <p> <i>This member has been deprecated.</i> </p>
         /// <p>The list of reviews for the skill, including Key and Value pair.</p>
         pub fn set_reviews(
             mut self,
@@ -5193,8 +5110,7 @@ impl DeveloperInfo {
     }
 }
 
-/// <p>The skill store category that is shown. Alexa skills are assigned a specific skill
-/// category during creation, such as News, Social, and Sports.</p>
+/// <p>The skill store category that is shown. Alexa skills are assigned a specific skill category during creation, such as News, Social, and Sports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Category {
@@ -5280,8 +5196,7 @@ pub struct SkillSummary {
     pub skill_name: std::option::Option<std::string::String>,
     /// <p>Linking support for a skill.</p>
     pub supports_linking: bool,
-    /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be
-    /// used.</p>
+    /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>
     pub enablement_type: std::option::Option<crate::model::EnablementType>,
     /// <p>Whether the skill is publicly available or is a private skill.</p>
     pub skill_type: std::option::Option<crate::model::SkillType>,
@@ -5299,8 +5214,7 @@ impl SkillSummary {
     pub fn supports_linking(&self) -> bool {
         self.supports_linking
     }
-    /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be
-    /// used.</p>
+    /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>
     pub fn enablement_type(&self) -> std::option::Option<&crate::model::EnablementType> {
         self.enablement_type.as_ref()
     }
@@ -5363,14 +5277,12 @@ pub mod skill_summary {
             self.supports_linking = input;
             self
         }
-        /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be
-        /// used.</p>
+        /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>
         pub fn enablement_type(mut self, input: crate::model::EnablementType) -> Self {
             self.enablement_type = Some(input);
             self
         }
-        /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be
-        /// used.</p>
+        /// <p>Whether the skill is enabled under the user's account, or if it requires linking to be used.</p>
         pub fn set_enablement_type(
             mut self,
             input: std::option::Option<crate::model::EnablementType>,
@@ -5646,8 +5558,7 @@ pub struct GatewaySummary {
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the gateway group that the gateway is associated to.</p>
     pub gateway_group_arn: std::option::Option<std::string::String>,
-    /// <p>The software version of the gateway. The gateway automatically updates its software
-    /// version during normal operation.</p>
+    /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub software_version: std::option::Option<std::string::String>,
 }
 impl GatewaySummary {
@@ -5667,8 +5578,7 @@ impl GatewaySummary {
     pub fn gateway_group_arn(&self) -> std::option::Option<&str> {
         self.gateway_group_arn.as_deref()
     }
-    /// <p>The software version of the gateway. The gateway automatically updates its software
-    /// version during normal operation.</p>
+    /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub fn software_version(&self) -> std::option::Option<&str> {
         self.software_version.as_deref()
     }
@@ -5740,14 +5650,12 @@ pub mod gateway_summary {
             self.gateway_group_arn = input;
             self
         }
-        /// <p>The software version of the gateway. The gateway automatically updates its software
-        /// version during normal operation.</p>
+        /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
         pub fn software_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.software_version = Some(input.into());
             self
         }
-        /// <p>The software version of the gateway. The gateway automatically updates its software
-        /// version during normal operation.</p>
+        /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
         pub fn set_software_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6192,15 +6100,13 @@ pub struct BusinessReportSchedule {
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 key where the report is delivered.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
-    /// <p>The format of the generated report (individual CSV files or zipped files of
-    /// individual files).</p>
+    /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub format: std::option::Option<crate::model::BusinessReportFormat>,
     /// <p>The content range of the reports.</p>
     pub content_range: std::option::Option<crate::model::BusinessReportContentRange>,
     /// <p>The recurrence of the reports.</p>
     pub recurrence: std::option::Option<crate::model::BusinessReportRecurrence>,
-    /// <p>The details of the last business report delivery for a specified time
-    /// interval.</p>
+    /// <p>The details of the last business report delivery for a specified time interval.</p>
     pub last_business_report: std::option::Option<crate::model::BusinessReport>,
 }
 impl BusinessReportSchedule {
@@ -6220,8 +6126,7 @@ impl BusinessReportSchedule {
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
-    /// <p>The format of the generated report (individual CSV files or zipped files of
-    /// individual files).</p>
+    /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub fn format(&self) -> std::option::Option<&crate::model::BusinessReportFormat> {
         self.format.as_ref()
     }
@@ -6233,8 +6138,7 @@ impl BusinessReportSchedule {
     pub fn recurrence(&self) -> std::option::Option<&crate::model::BusinessReportRecurrence> {
         self.recurrence.as_ref()
     }
-    /// <p>The details of the last business report delivery for a specified time
-    /// interval.</p>
+    /// <p>The details of the last business report delivery for a specified time interval.</p>
     pub fn last_business_report(&self) -> std::option::Option<&crate::model::BusinessReport> {
         self.last_business_report.as_ref()
     }
@@ -6318,14 +6222,12 @@ pub mod business_report_schedule {
             self.s3_key_prefix = input;
             self
         }
-        /// <p>The format of the generated report (individual CSV files or zipped files of
-        /// individual files).</p>
+        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn format(mut self, input: crate::model::BusinessReportFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p>The format of the generated report (individual CSV files or zipped files of
-        /// individual files).</p>
+        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::BusinessReportFormat>,
@@ -6359,14 +6261,12 @@ pub mod business_report_schedule {
             self.recurrence = input;
             self
         }
-        /// <p>The details of the last business report delivery for a specified time
-        /// interval.</p>
+        /// <p>The details of the last business report delivery for a specified time interval.</p>
         pub fn last_business_report(mut self, input: crate::model::BusinessReport) -> Self {
             self.last_business_report = Some(input);
             self
         }
-        /// <p>The details of the last business report delivery for a specified time
-        /// interval.</p>
+        /// <p>The details of the last business report delivery for a specified time interval.</p>
         pub fn set_last_business_report(
             mut self,
             input: std::option::Option<crate::model::BusinessReport>,
@@ -6400,8 +6300,7 @@ impl BusinessReportSchedule {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BusinessReport {
-    /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or
-    /// FAILED).</p>
+    /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
     pub status: std::option::Option<crate::model::BusinessReportStatus>,
     /// <p>The failure code.</p>
     pub failure_code: std::option::Option<crate::model::BusinessReportFailureCode>,
@@ -6413,8 +6312,7 @@ pub struct BusinessReport {
     pub download_url: std::option::Option<std::string::String>,
 }
 impl BusinessReport {
-    /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or
-    /// FAILED).</p>
+    /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
     pub fn status(&self) -> std::option::Option<&crate::model::BusinessReportStatus> {
         self.status.as_ref()
     }
@@ -6459,14 +6357,12 @@ pub mod business_report {
         pub(crate) download_url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or
-        /// FAILED).</p>
+        /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
         pub fn status(mut self, input: crate::model::BusinessReportStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or
-        /// FAILED).</p>
+        /// <p>The status of the report generation execution (RUNNING, SUCCEEDED, or FAILED).</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::BusinessReportStatus>,
@@ -7100,8 +6996,7 @@ pub struct Profile {
     pub temperature_unit: std::option::Option<crate::model::TemperatureUnit>,
     /// <p>The wake word of a room profile.</p>
     pub wake_word: std::option::Option<crate::model::WakeWord>,
-    /// <p>The locale of a room profile. (This is currently available only to a limited preview
-    /// audience.)</p>
+    /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
     pub locale: std::option::Option<std::string::String>,
     /// <p>The setup mode of a room profile.</p>
     pub setup_mode_disabled: std::option::Option<bool>,
@@ -7149,8 +7044,7 @@ impl Profile {
     pub fn wake_word(&self) -> std::option::Option<&crate::model::WakeWord> {
         self.wake_word.as_ref()
     }
-    /// <p>The locale of a room profile. (This is currently available only to a limited preview
-    /// audience.)</p>
+    /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
     pub fn locale(&self) -> std::option::Option<&str> {
         self.locale.as_deref()
     }
@@ -7315,14 +7209,12 @@ pub mod profile {
             self.wake_word = input;
             self
         }
-        /// <p>The locale of a room profile. (This is currently available only to a limited preview
-        /// audience.)</p>
+        /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
         pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale = Some(input.into());
             self
         }
-        /// <p>The locale of a room profile. (This is currently available only to a limited preview
-        /// audience.)</p>
+        /// <p>The locale of a room profile. (This is currently available only to a limited preview audience.)</p>
         pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale = input;
             self
@@ -7431,16 +7323,11 @@ impl Profile {
 pub struct MeetingRoomConfiguration {
     /// <p>Whether room utilization metrics are enabled or not.</p>
     pub room_utilization_metrics_enabled: std::option::Option<bool>,
-    /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The
-    /// end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+    /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
     pub end_of_meeting_reminder: std::option::Option<crate::model::EndOfMeetingReminder>,
-    /// <p>Settings to automatically book the room if available for a configured duration when
-    /// joining a meeting with Alexa. </p>
+    /// <p>Settings to automatically book the room if available for a configured duration when joining a meeting with Alexa. </p>
     pub instant_booking: std::option::Option<crate::model::InstantBooking>,
-    /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room
-    /// reservation if it's not checked into. This makes the room available for others. Users can
-    /// check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check
-    /// in.” </p>
+    /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into. This makes the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
     pub require_check_in: std::option::Option<crate::model::RequireCheckIn>,
 }
 impl MeetingRoomConfiguration {
@@ -7448,22 +7335,17 @@ impl MeetingRoomConfiguration {
     pub fn room_utilization_metrics_enabled(&self) -> std::option::Option<bool> {
         self.room_utilization_metrics_enabled
     }
-    /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The
-    /// end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+    /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
     pub fn end_of_meeting_reminder(
         &self,
     ) -> std::option::Option<&crate::model::EndOfMeetingReminder> {
         self.end_of_meeting_reminder.as_ref()
     }
-    /// <p>Settings to automatically book the room if available for a configured duration when
-    /// joining a meeting with Alexa. </p>
+    /// <p>Settings to automatically book the room if available for a configured duration when joining a meeting with Alexa. </p>
     pub fn instant_booking(&self) -> std::option::Option<&crate::model::InstantBooking> {
         self.instant_booking.as_ref()
     }
-    /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room
-    /// reservation if it's not checked into. This makes the room available for others. Users can
-    /// check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check
-    /// in.” </p>
+    /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into. This makes the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
     pub fn require_check_in(&self) -> std::option::Option<&crate::model::RequireCheckIn> {
         self.require_check_in.as_ref()
     }
@@ -7506,8 +7388,7 @@ pub mod meeting_room_configuration {
             self.room_utilization_metrics_enabled = input;
             self
         }
-        /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The
-        /// end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+        /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
         pub fn end_of_meeting_reminder(
             mut self,
             input: crate::model::EndOfMeetingReminder,
@@ -7515,8 +7396,7 @@ pub mod meeting_room_configuration {
             self.end_of_meeting_reminder = Some(input);
             self
         }
-        /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The
-        /// end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+        /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
         pub fn set_end_of_meeting_reminder(
             mut self,
             input: std::option::Option<crate::model::EndOfMeetingReminder>,
@@ -7524,14 +7404,12 @@ pub mod meeting_room_configuration {
             self.end_of_meeting_reminder = input;
             self
         }
-        /// <p>Settings to automatically book the room if available for a configured duration when
-        /// joining a meeting with Alexa. </p>
+        /// <p>Settings to automatically book the room if available for a configured duration when joining a meeting with Alexa. </p>
         pub fn instant_booking(mut self, input: crate::model::InstantBooking) -> Self {
             self.instant_booking = Some(input);
             self
         }
-        /// <p>Settings to automatically book the room if available for a configured duration when
-        /// joining a meeting with Alexa. </p>
+        /// <p>Settings to automatically book the room if available for a configured duration when joining a meeting with Alexa. </p>
         pub fn set_instant_booking(
             mut self,
             input: std::option::Option<crate::model::InstantBooking>,
@@ -7539,18 +7417,12 @@ pub mod meeting_room_configuration {
             self.instant_booking = input;
             self
         }
-        /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room
-        /// reservation if it's not checked into. This makes the room available for others. Users can
-        /// check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check
-        /// in.” </p>
+        /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into. This makes the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
         pub fn require_check_in(mut self, input: crate::model::RequireCheckIn) -> Self {
             self.require_check_in = Some(input);
             self
         }
-        /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room
-        /// reservation if it's not checked into. This makes the room available for others. Users can
-        /// check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check
-        /// in.” </p>
+        /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into. This makes the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
         pub fn set_require_check_in(
             mut self,
             input: std::option::Option<crate::model::RequireCheckIn>,
@@ -7649,21 +7521,17 @@ impl RequireCheckIn {
     }
 }
 
-/// <p>Settings for the instant booking feature that are applied to a room profile. When users
-/// start their meeting with Alexa, Alexa  automatically books the room for the configured
-/// duration if the room is available.</p>
+/// <p>Settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstantBooking {
-    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
-    /// an available room when a meeting is started with Alexa. </p>
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
     pub duration_in_minutes: std::option::Option<i32>,
     /// <p>Whether instant booking is enabled or not.</p>
     pub enabled: std::option::Option<bool>,
 }
 impl InstantBooking {
-    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
-    /// an available room when a meeting is started with Alexa. </p>
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
     pub fn duration_in_minutes(&self) -> std::option::Option<i32> {
         self.duration_in_minutes
     }
@@ -7690,14 +7558,12 @@ pub mod instant_booking {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
-        /// an available room when a meeting is started with Alexa. </p>
+        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
         pub fn duration_in_minutes(mut self, input: i32) -> Self {
             self.duration_in_minutes = Some(input);
             self
         }
-        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
-        /// an available room when a meeting is started with Alexa. </p>
+        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa. </p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_in_minutes = input;
             self
@@ -7728,8 +7594,7 @@ impl InstantBooking {
     }
 }
 
-/// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The
-/// end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+/// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndOfMeetingReminder {
@@ -7779,9 +7644,9 @@ pub mod end_of_meeting_reminder {
         /// To override the contents of this collection use [`set_reminder_at_minutes`](Self::set_reminder_at_minutes).
         ///
         /// <p>A range of 3 to 15 minutes that determines when the reminder begins.</p>
-        pub fn reminder_at_minutes(mut self, input: impl Into<i32>) -> Self {
+        pub fn reminder_at_minutes(mut self, input: i32) -> Self {
             let mut v = self.reminder_at_minutes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reminder_at_minutes = Some(v);
             self
         }
@@ -7845,23 +7710,17 @@ pub struct NetworkProfile {
     pub description: std::option::Option<std::string::String>,
     /// <p>The SSID of the Wi-Fi network.</p>
     pub ssid: std::option::Option<std::string::String>,
-    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-    /// WEP, or OPEN.</p>
+    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
     pub security_type: std::option::Option<crate::model::NetworkSecurityType>,
-    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-    /// supported. </p>
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
     pub eap_method: std::option::Option<crate::model::NetworkEapMethod>,
     /// <p>The current password of the Wi-Fi network.</p>
     pub current_password: std::option::Option<std::string::String>,
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-    /// transmitted to the device and is used when the password of the network changes to
-    /// NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
     pub next_password: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-    /// (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
     pub certificate_authority_arn: std::option::Option<std::string::String>,
-    /// <p>The root certificates of your authentication server, which is installed on your devices
-    /// and used to trust your authentication server during EAP negotiation.</p>
+    /// <p>The root certificates of your authentication server, which is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
     pub trust_anchors: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl NetworkProfile {
@@ -7881,13 +7740,11 @@ impl NetworkProfile {
     pub fn ssid(&self) -> std::option::Option<&str> {
         self.ssid.as_deref()
     }
-    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-    /// WEP, or OPEN.</p>
+    /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
     pub fn security_type(&self) -> std::option::Option<&crate::model::NetworkSecurityType> {
         self.security_type.as_ref()
     }
-    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-    /// supported. </p>
+    /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
     pub fn eap_method(&self) -> std::option::Option<&crate::model::NetworkEapMethod> {
         self.eap_method.as_ref()
     }
@@ -7895,19 +7752,15 @@ impl NetworkProfile {
     pub fn current_password(&self) -> std::option::Option<&str> {
         self.current_password.as_deref()
     }
-    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-    /// transmitted to the device and is used when the password of the network changes to
-    /// NextPassword. </p>
+    /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
     pub fn next_password(&self) -> std::option::Option<&str> {
         self.next_password.as_deref()
     }
-    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-    /// (ACM). This is used to issue certificates to the devices. </p>
+    /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
     pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>The root certificates of your authentication server, which is installed on your devices
-    /// and used to trust your authentication server during EAP negotiation.</p>
+    /// <p>The root certificates of your authentication server, which is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
     pub fn trust_anchors(&self) -> std::option::Option<&[std::string::String]> {
         self.trust_anchors.as_deref()
     }
@@ -7992,14 +7845,12 @@ pub mod network_profile {
             self.ssid = input;
             self
         }
-        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-        /// WEP, or OPEN.</p>
+        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
         pub fn security_type(mut self, input: crate::model::NetworkSecurityType) -> Self {
             self.security_type = Some(input);
             self
         }
-        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-        /// WEP, or OPEN.</p>
+        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
         pub fn set_security_type(
             mut self,
             input: std::option::Option<crate::model::NetworkSecurityType>,
@@ -8007,14 +7858,12 @@ pub mod network_profile {
             self.security_type = input;
             self
         }
-        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-        /// supported. </p>
+        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
         pub fn eap_method(mut self, input: crate::model::NetworkEapMethod) -> Self {
             self.eap_method = Some(input);
             self
         }
-        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-        /// supported. </p>
+        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
         pub fn set_eap_method(
             mut self,
             input: std::option::Option<crate::model::NetworkEapMethod>,
@@ -8035,16 +7884,12 @@ pub mod network_profile {
             self.current_password = input;
             self
         }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-        /// transmitted to the device and is used when the password of the network changes to
-        /// NextPassword. </p>
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn next_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_password = Some(input.into());
             self
         }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-        /// transmitted to the device and is used when the password of the network changes to
-        /// NextPassword. </p>
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn set_next_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8052,14 +7897,12 @@ pub mod network_profile {
             self.next_password = input;
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices. </p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_authority_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices. </p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8071,16 +7914,14 @@ pub mod network_profile {
         ///
         /// To override the contents of this collection use [`set_trust_anchors`](Self::set_trust_anchors).
         ///
-        /// <p>The root certificates of your authentication server, which is installed on your devices
-        /// and used to trust your authentication server during EAP negotiation.</p>
+        /// <p>The root certificates of your authentication server, which is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
         pub fn trust_anchors(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.trust_anchors.unwrap_or_default();
             v.push(input.into());
             self.trust_anchors = Some(v);
             self
         }
-        /// <p>The root certificates of your authentication server, which is installed on your devices
-        /// and used to trust your authentication server during EAP negotiation.</p>
+        /// <p>The root certificates of your authentication server, which is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
         pub fn set_trust_anchors(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8216,8 +8057,7 @@ pub struct Gateway {
     pub description: std::option::Option<std::string::String>,
     /// <p>The ARN of the gateway group that the gateway is associated to.</p>
     pub gateway_group_arn: std::option::Option<std::string::String>,
-    /// <p>The software version of the gateway. The gateway automatically updates its software
-    /// version during normal operation.</p>
+    /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub software_version: std::option::Option<std::string::String>,
 }
 impl Gateway {
@@ -8237,8 +8077,7 @@ impl Gateway {
     pub fn gateway_group_arn(&self) -> std::option::Option<&str> {
         self.gateway_group_arn.as_deref()
     }
-    /// <p>The software version of the gateway. The gateway automatically updates its software
-    /// version during normal operation.</p>
+    /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
     pub fn software_version(&self) -> std::option::Option<&str> {
         self.software_version.as_deref()
     }
@@ -8310,14 +8149,12 @@ pub mod gateway {
             self.gateway_group_arn = input;
             self
         }
-        /// <p>The software version of the gateway. The gateway automatically updates its software
-        /// version during normal operation.</p>
+        /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
         pub fn software_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.software_version = Some(input.into());
             self
         }
-        /// <p>The software version of the gateway. The gateway automatically updates its software
-        /// version during normal operation.</p>
+        /// <p>The software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
         pub fn set_software_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8362,8 +8199,7 @@ pub struct Device {
     pub mac_address: std::option::Option<std::string::String>,
     /// <p>The room ARN of a device.</p>
     pub room_arn: std::option::Option<std::string::String>,
-    /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value
-    /// for details.</p>
+    /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.</p>
     pub device_status: std::option::Option<crate::model::DeviceStatus>,
     /// <p>Detailed information about a device's status.</p>
     pub device_status_info: std::option::Option<crate::model::DeviceStatusInfo>,
@@ -8399,8 +8235,7 @@ impl Device {
     pub fn room_arn(&self) -> std::option::Option<&str> {
         self.room_arn.as_deref()
     }
-    /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value
-    /// for details.</p>
+    /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.</p>
     pub fn device_status(&self) -> std::option::Option<&crate::model::DeviceStatus> {
         self.device_status.as_ref()
     }
@@ -8526,14 +8361,12 @@ pub mod device {
             self.room_arn = input;
             self
         }
-        /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value
-        /// for details.</p>
+        /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.</p>
         pub fn device_status(mut self, input: crate::model::DeviceStatus) -> Self {
             self.device_status = Some(input);
             self
         }
-        /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value
-        /// for details.</p>
+        /// <p>The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.</p>
         pub fn set_device_status(
             mut self,
             input: std::option::Option<crate::model::DeviceStatus>,
@@ -8710,9 +8543,7 @@ pub struct Contact {
     pub first_name: std::option::Option<std::string::String>,
     /// <p>The last name of the contact, used to call the contact on the device.</p>
     pub last_name: std::option::Option<std::string::String>,
-    /// <p>The phone number of the contact. The phone number type defaults to WORK. You can
-    /// either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which
-    /// lets you specify the phone number type and multiple numbers.</p>
+    /// <p>The phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The list of phone numbers for the contact.</p>
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumber>>,
@@ -8736,9 +8567,7 @@ impl Contact {
     pub fn last_name(&self) -> std::option::Option<&str> {
         self.last_name.as_deref()
     }
-    /// <p>The phone number of the contact. The phone number type defaults to WORK. You can
-    /// either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which
-    /// lets you specify the phone number type and multiple numbers.</p>
+    /// <p>The phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -8819,16 +8648,12 @@ pub mod contact {
             self.last_name = input;
             self
         }
-        /// <p>The phone number of the contact. The phone number type defaults to WORK. You can
-        /// either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which
-        /// lets you specify the phone number type and multiple numbers.</p>
+        /// <p>The phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.phone_number = Some(input.into());
             self
         }
-        /// <p>The phone number of the contact. The phone number type defaults to WORK. You can
-        /// either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which
-        /// lets you specify the phone number type and multiple numbers.</p>
+        /// <p>The phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -8838,9 +8663,9 @@ pub mod contact {
         /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
         ///
         /// <p>The list of phone numbers for the contact.</p>
-        pub fn phone_numbers(mut self, input: impl Into<crate::model::PhoneNumber>) -> Self {
+        pub fn phone_numbers(mut self, input: crate::model::PhoneNumber) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.phone_numbers = Some(v);
             self
         }
@@ -8857,9 +8682,9 @@ pub mod contact {
         /// To override the contents of this collection use [`set_sip_addresses`](Self::set_sip_addresses).
         ///
         /// <p>The list of SIP addresses for the contact.</p>
-        pub fn sip_addresses(mut self, input: impl Into<crate::model::SipAddress>) -> Self {
+        pub fn sip_addresses(mut self, input: crate::model::SipAddress) -> Self {
             let mut v = self.sip_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sip_addresses = Some(v);
             self
         }
@@ -9044,9 +8869,7 @@ impl AsRef<str> for DeviceUsageType {
 pub struct CreateMeetingRoomConfiguration {
     /// <p>Whether room utilization metrics are enabled or not.</p>
     pub room_utilization_metrics_enabled: std::option::Option<bool>,
-    /// <p>Creates settings for the end of meeting reminder feature that are applied to a room
-    /// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
-    /// ending.</p>
+    /// <p>Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
     pub end_of_meeting_reminder: std::option::Option<crate::model::CreateEndOfMeetingReminder>,
     /// <p>Settings to automatically book a room for a configured duration if it's free when joining a meeting with Alexa.</p>
     pub instant_booking: std::option::Option<crate::model::CreateInstantBooking>,
@@ -9058,9 +8881,7 @@ impl CreateMeetingRoomConfiguration {
     pub fn room_utilization_metrics_enabled(&self) -> std::option::Option<bool> {
         self.room_utilization_metrics_enabled
     }
-    /// <p>Creates settings for the end of meeting reminder feature that are applied to a room
-    /// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
-    /// ending.</p>
+    /// <p>Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
     pub fn end_of_meeting_reminder(
         &self,
     ) -> std::option::Option<&crate::model::CreateEndOfMeetingReminder> {
@@ -9114,9 +8935,7 @@ pub mod create_meeting_room_configuration {
             self.room_utilization_metrics_enabled = input;
             self
         }
-        /// <p>Creates settings for the end of meeting reminder feature that are applied to a room
-        /// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
-        /// ending.</p>
+        /// <p>Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
         pub fn end_of_meeting_reminder(
             mut self,
             input: crate::model::CreateEndOfMeetingReminder,
@@ -9124,9 +8943,7 @@ pub mod create_meeting_room_configuration {
             self.end_of_meeting_reminder = Some(input);
             self
         }
-        /// <p>Creates settings for the end of meeting reminder feature that are applied to a room
-        /// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
-        /// ending.</p>
+        /// <p>Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
         pub fn set_end_of_meeting_reminder(
             mut self,
             input: std::option::Option<crate::model::CreateEndOfMeetingReminder>,
@@ -9251,21 +9068,17 @@ impl CreateRequireCheckIn {
     }
 }
 
-/// <p>Creates settings for the instant booking feature that are applied to a room profile.
-/// When users start their meeting with Alexa, Alexa automatically books the room for the
-/// configured duration if the room is available.</p>
+/// <p>Creates settings for the instant booking feature that are applied to a room profile. When users start their meeting with Alexa, Alexa automatically books the room for the configured duration if the room is available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateInstantBooking {
-    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
-    /// an available room when a meeting is started with Alexa.</p>
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     pub duration_in_minutes: std::option::Option<i32>,
     /// <p>Whether instant booking is enabled or not.</p>
     pub enabled: std::option::Option<bool>,
 }
 impl CreateInstantBooking {
-    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
-    /// an available room when a meeting is started with Alexa.</p>
+    /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
     pub fn duration_in_minutes(&self) -> std::option::Option<i32> {
         self.duration_in_minutes
     }
@@ -9292,14 +9105,12 @@ pub mod create_instant_booking {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
-        /// an available room when a meeting is started with Alexa.</p>
+        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
         pub fn duration_in_minutes(mut self, input: i32) -> Self {
             self.duration_in_minutes = Some(input);
             self
         }
-        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book
-        /// an available room when a meeting is started with Alexa.</p>
+        /// <p>Duration between 15 and 240 minutes at increments of 15 that determines how long to book an available room when a meeting is started with Alexa.</p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_in_minutes = input;
             self
@@ -9330,9 +9141,7 @@ impl CreateInstantBooking {
     }
 }
 
-/// <p>Creates settings for the end of meeting reminder feature that are applied to a room
-/// profile. The end of meeting reminder enables Alexa to remind users when a meeting is
-/// ending.</p>
+/// <p>Creates settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndOfMeetingReminder {
@@ -9382,9 +9191,9 @@ pub mod create_end_of_meeting_reminder {
         /// To override the contents of this collection use [`set_reminder_at_minutes`](Self::set_reminder_at_minutes).
         ///
         /// <p> A range of 3 to 15 minutes that determines when the reminder begins.</p>
-        pub fn reminder_at_minutes(mut self, input: impl Into<i32>) -> Self {
+        pub fn reminder_at_minutes(mut self, input: i32) -> Self {
             let mut v = self.reminder_at_minutes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reminder_at_minutes = Some(v);
             self
         }

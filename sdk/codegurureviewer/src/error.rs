@@ -14,8 +14,7 @@ pub struct AssociateRepositoryError {
 pub enum AssociateRepositoryErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this request. </p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -68,8 +67,6 @@ impl AssociateRepositoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -154,14 +151,11 @@ pub struct CreateCodeReviewError {
 pub enum CreateCodeReviewErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this request. </p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -213,8 +207,6 @@ impl CreateCodeReviewError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -306,9 +298,7 @@ pub enum DescribeCodeReviewErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -359,8 +349,6 @@ impl DescribeCodeReviewError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -447,9 +435,7 @@ pub enum DescribeRecommendationFeedbackErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -507,8 +493,6 @@ impl DescribeRecommendationFeedbackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -655,8 +639,6 @@ impl DescribeRepositoryAssociationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -741,8 +723,7 @@ pub struct DisassociateRepositoryError {
 pub enum DisassociateRepositoryErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this request. </p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -798,8 +779,6 @@ impl DisassociateRepositoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -942,8 +921,6 @@ impl ListCodeReviewsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1016,9 +993,7 @@ pub enum ListRecommendationFeedbackErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1069,8 +1044,6 @@ impl ListRecommendationFeedbackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1157,9 +1130,7 @@ pub enum ListRecommendationsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1210,8 +1181,6 @@ impl ListRecommendationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1343,8 +1312,6 @@ impl ListRepositoryAssociationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1413,9 +1380,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
@@ -1462,8 +1427,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1534,9 +1497,7 @@ pub enum PutRecommendationFeedbackErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1587,8 +1548,6 @@ impl PutRecommendationFeedbackError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1673,9 +1632,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
@@ -1722,8 +1679,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1786,9 +1741,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The resource specified in the request was not found.
-    /// </p>
+    /// <p> The resource specified in the request was not found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the specified constraints.</p>
     ValidationException(crate::error::ValidationException),
@@ -1835,8 +1788,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1951,9 +1902,7 @@ impl ValidationException {
     }
 }
 
-/// <p>
-/// The resource specified in the request was not found.
-/// </p>
+/// <p> The resource specified in the request was not found. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -2273,8 +2222,7 @@ impl NotFoundException {
     }
 }
 
-/// <p>The requested operation would cause a conflict with the current state of a service
-/// resource associated with the request. Resolve the conflict before retrying this request. </p>
+/// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {

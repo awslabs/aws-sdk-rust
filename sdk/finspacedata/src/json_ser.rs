@@ -242,6 +242,22 @@ pub fn serialize_structure_crate_model_data_view_destination_type_params(
     if let Some(var_59) = &input.destination_type {
         object.key("destinationType").string(var_59);
     }
+    if let Some(var_60) = &input.s3_destination_export_file_format {
+        object
+            .key("s3DestinationExportFileFormat")
+            .string(var_60.as_str());
+    }
+    if let Some(var_61) = &input.s3_destination_export_file_format_options {
+        let mut object_62 = object
+            .key("s3DestinationExportFileFormatOptions")
+            .start_object();
+        for (key_63, value_64) in var_61 {
+            {
+                object_62.key(key_63).string(value_64);
+            }
+        }
+        object_62.finish();
+    }
     Ok(())
 }
 
@@ -249,8 +265,8 @@ pub fn serialize_structure_crate_model_resource_permission(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ResourcePermission,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_60) = &input.permission {
-        object.key("permission").string(var_60);
+    if let Some(var_65) = &input.permission {
+        object.key("permission").string(var_65);
     }
     Ok(())
 }
@@ -259,28 +275,28 @@ pub fn serialize_structure_crate_model_schema_definition(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::SchemaDefinition,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_61) = &input.columns {
-        let mut array_62 = object.key("columns").start_array();
-        for item_63 in var_61 {
+    if let Some(var_66) = &input.columns {
+        let mut array_67 = object.key("columns").start_array();
+        for item_68 in var_66 {
             {
-                let mut object_64 = array_62.value().start_object();
+                let mut object_69 = array_67.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_column_definition(
-                    &mut object_64,
-                    item_63,
+                    &mut object_69,
+                    item_68,
                 )?;
-                object_64.finish();
+                object_69.finish();
             }
         }
-        array_62.finish();
+        array_67.finish();
     }
-    if let Some(var_65) = &input.primary_key_columns {
-        let mut array_66 = object.key("primaryKeyColumns").start_array();
-        for item_67 in var_65 {
+    if let Some(var_70) = &input.primary_key_columns {
+        let mut array_71 = object.key("primaryKeyColumns").start_array();
+        for item_72 in var_70 {
             {
-                array_66.value().string(item_67);
+                array_71.value().string(item_72);
             }
         }
-        array_66.finish();
+        array_71.finish();
     }
     Ok(())
 }
@@ -289,14 +305,14 @@ pub fn serialize_structure_crate_model_column_definition(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ColumnDefinition,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_68) = &input.data_type {
-        object.key("dataType").string(var_68.as_str());
+    if let Some(var_73) = &input.data_type {
+        object.key("dataType").string(var_73.as_str());
     }
-    if let Some(var_69) = &input.column_name {
-        object.key("columnName").string(var_69);
+    if let Some(var_74) = &input.column_name {
+        object.key("columnName").string(var_74);
     }
-    if let Some(var_70) = &input.column_description {
-        object.key("columnDescription").string(var_70);
+    if let Some(var_75) = &input.column_description {
+        object.key("columnDescription").string(var_75);
     }
     Ok(())
 }

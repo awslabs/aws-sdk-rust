@@ -150,12 +150,9 @@ pub mod list_report_definitions_output {
         /// To override the contents of this collection use [`set_report_definitions`](Self::set_report_definitions).
         ///
         /// <p>The retrieved reports.</p>
-        pub fn report_definitions(
-            mut self,
-            input: impl Into<crate::model::ReportDefinition>,
-        ) -> Self {
+        pub fn report_definitions(mut self, input: crate::model::ReportDefinition) -> Self {
             let mut v = self.report_definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.report_definitions = Some(v);
             self
         }

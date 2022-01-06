@@ -75,8 +75,6 @@ impl BatchCreatePartitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -223,8 +221,6 @@ impl BatchDeleteConnectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -335,8 +331,6 @@ impl BatchDeletePartitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -469,8 +463,6 @@ impl BatchDeleteTableError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -613,8 +605,6 @@ impl BatchDeleteTableVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -738,8 +728,6 @@ impl BatchGetBlueprintsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -852,8 +840,6 @@ impl BatchGetCrawlersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -964,8 +950,6 @@ impl BatchGetDevEndpointsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1089,8 +1073,6 @@ impl BatchGetJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1212,8 +1194,6 @@ impl BatchGetPartitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1353,8 +1333,6 @@ impl BatchGetTriggersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1470,8 +1448,6 @@ impl BatchGetWorkflowsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1587,8 +1563,6 @@ impl BatchStopJobRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1710,8 +1684,6 @@ impl BatchUpdatePartitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1846,8 +1818,6 @@ impl CancelMLTaskRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1971,8 +1941,6 @@ impl CheckSchemaVersionValidityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2094,8 +2062,6 @@ impl CreateBlueprintError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2227,8 +2193,6 @@ impl CreateClassifierError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2352,8 +2316,6 @@ impl CreateConnectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2488,8 +2450,6 @@ impl CreateCrawlerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2622,8 +2582,6 @@ impl CreateDatabaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2790,8 +2748,6 @@ impl CreateDevEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2963,8 +2919,6 @@ impl CreateJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3116,8 +3070,6 @@ impl CreateMLTransformError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3281,8 +3233,6 @@ impl CreatePartitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3444,8 +3394,6 @@ impl CreatePartitionIndexError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3601,8 +3549,6 @@ impl CreateRegistryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3743,8 +3689,6 @@ impl CreateSchemaError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3875,8 +3819,6 @@ impl CreateScriptError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3999,8 +3941,6 @@ impl CreateSecurityConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4152,8 +4092,6 @@ impl CreateTableError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4320,8 +4258,6 @@ impl CreateTriggerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4488,8 +4424,6 @@ impl CreateUserDefinedFunctionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4648,8 +4582,6 @@ impl CreateWorkflowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4789,8 +4721,6 @@ impl DeleteBlueprintError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4903,8 +4833,6 @@ impl DeleteClassifierError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5031,8 +4959,6 @@ impl DeleteColumnStatisticsForPartitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5191,8 +5117,6 @@ impl DeleteColumnStatisticsForTableError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5329,8 +5253,6 @@ impl DeleteConnectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5441,8 +5363,6 @@ impl DeleteCrawlerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5572,8 +5492,6 @@ impl DeleteDatabaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5708,8 +5626,6 @@ impl DeleteDevEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5833,8 +5749,6 @@ impl DeleteJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5944,8 +5858,6 @@ impl DeleteMLTransformError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6072,8 +5984,6 @@ impl DeletePartitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6148,7 +6058,7 @@ pub struct DeletePartitionIndexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePartitionIndexErrorKind {
-    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled.  </p>
+    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>A specified entity does not exist</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
@@ -6206,8 +6116,6 @@ impl DeletePartitionIndexError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6350,8 +6258,6 @@ impl DeleteRegistryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6481,8 +6387,6 @@ impl DeleteResourcePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6617,8 +6521,6 @@ impl DeleteSchemaError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6739,8 +6641,6 @@ impl DeleteSchemaVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6869,8 +6769,6 @@ impl DeleteSecurityConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7003,8 +6901,6 @@ impl DeleteTableError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7141,8 +7037,6 @@ impl DeleteTableVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7269,8 +7163,6 @@ impl DeleteTriggerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7394,8 +7286,6 @@ impl DeleteUserDefinedFunctionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7522,8 +7412,6 @@ impl DeleteWorkflowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7650,8 +7538,6 @@ impl GetBlueprintError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7772,8 +7658,6 @@ impl GetBlueprintRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7892,8 +7776,6 @@ impl GetBlueprintRunsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8014,8 +7896,6 @@ impl GetCatalogImportStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8120,8 +8000,6 @@ impl GetClassifierError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8223,8 +8101,6 @@ impl GetClassifiersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8343,8 +8219,6 @@ impl GetColumnStatisticsForPartitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8492,8 +8366,6 @@ impl GetColumnStatisticsForTableError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8628,8 +8500,6 @@ impl GetConnectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8753,8 +8623,6 @@ impl GetConnectionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8875,8 +8743,6 @@ impl GetCrawlerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8975,8 +8841,6 @@ impl GetCrawlerMetricsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9070,8 +8934,6 @@ impl GetCrawlersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9177,8 +9039,6 @@ impl GetDatabaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9304,8 +9164,6 @@ impl GetDatabasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9435,8 +9293,6 @@ impl GetDataCatalogEncryptionSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9558,8 +9414,6 @@ impl GetDataflowGraphError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9678,8 +9532,6 @@ impl GetDevEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9806,8 +9658,6 @@ impl GetDevEndpointsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9934,8 +9784,6 @@ impl GetJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10053,8 +9901,6 @@ impl GetJobBookmarkError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10186,8 +10032,6 @@ impl GetJobRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10302,8 +10146,6 @@ impl GetJobRunsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10421,8 +10263,6 @@ impl GetJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10537,8 +10377,6 @@ impl GetMappingError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10656,8 +10494,6 @@ impl GetMLTaskRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10781,8 +10617,6 @@ impl GetMLTaskRunsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10906,8 +10740,6 @@ impl GetMLTransformError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11034,8 +10866,6 @@ impl GetMLTransformsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11165,8 +10995,6 @@ impl GetPartitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11246,7 +11074,7 @@ pub struct GetPartitionIndexesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPartitionIndexesErrorKind {
-    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled.  </p>
+    /// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>A specified entity does not exist</p>
     EntityNotFoundException(crate::error::EntityNotFoundException),
@@ -11301,8 +11129,6 @@ impl GetPartitionIndexesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11446,8 +11272,6 @@ impl GetPartitionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11589,8 +11413,6 @@ impl GetPlanError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11700,8 +11522,6 @@ impl GetRegistryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11819,8 +11639,6 @@ impl GetResourcePoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11947,8 +11765,6 @@ impl GetResourcePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12075,8 +11891,6 @@ impl GetSchemaError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12191,8 +12005,6 @@ impl GetSchemaByDefinitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12319,8 +12131,6 @@ impl GetSchemaVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12447,8 +12257,6 @@ impl GetSchemaVersionsDiffError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12575,8 +12383,6 @@ impl GetSecurityConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12703,8 +12509,6 @@ impl GetSecurityConfigurationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12837,8 +12641,6 @@ impl GetTableError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12966,8 +12768,6 @@ impl GetTablesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13090,8 +12890,6 @@ impl GetTableVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13229,8 +13027,6 @@ impl GetTableVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13365,8 +13161,6 @@ impl GetTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13481,8 +13275,6 @@ impl GetTriggerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13600,8 +13392,6 @@ impl GetTriggersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13653,6 +13443,502 @@ impl std::error::Error for GetTriggersError {
             GetTriggersErrorKind::InvalidInputException(_inner) => Some(_inner),
             GetTriggersErrorKind::OperationTimeoutException(_inner) => Some(_inner),
             GetTriggersErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetUnfilteredPartitionMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetUnfilteredPartitionMetadataError {
+    /// Kind of error that occurred.
+    pub kind: GetUnfilteredPartitionMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetUnfilteredPartitionMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetUnfilteredPartitionMetadataErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An encryption operation failed.</p>
+    GlueEncryptionException(crate::error::GlueEncryptionException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    #[allow(missing_docs)] // documentation missing in model
+    PermissionTypeMismatchException(crate::error::PermissionTypeMismatchException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetUnfilteredPartitionMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetUnfilteredPartitionMetadataErrorKind::EntityNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetUnfilteredPartitionMetadataErrorKind::GlueEncryptionException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetUnfilteredPartitionMetadataErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetUnfilteredPartitionMetadataErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetUnfilteredPartitionMetadataErrorKind::OperationTimeoutException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetUnfilteredPartitionMetadataErrorKind::PermissionTypeMismatchException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetUnfilteredPartitionMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetUnfilteredPartitionMetadataError {
+    fn code(&self) -> Option<&str> {
+        GetUnfilteredPartitionMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetUnfilteredPartitionMetadataError {
+    /// Creates a new `GetUnfilteredPartitionMetadataError`.
+    pub fn new(
+        kind: GetUnfilteredPartitionMetadataErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetUnfilteredPartitionMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetUnfilteredPartitionMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetUnfilteredPartitionMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetUnfilteredPartitionMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredPartitionMetadataErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredPartitionMetadataErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredPartitionMetadataErrorKind::GlueEncryptionException`.
+    pub fn is_glue_encryption_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredPartitionMetadataErrorKind::GlueEncryptionException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredPartitionMetadataErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredPartitionMetadataErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredPartitionMetadataErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredPartitionMetadataErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredPartitionMetadataErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredPartitionMetadataErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredPartitionMetadataErrorKind::PermissionTypeMismatchException`.
+    pub fn is_permission_type_mismatch_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredPartitionMetadataErrorKind::PermissionTypeMismatchException(_)
+        )
+    }
+}
+impl std::error::Error for GetUnfilteredPartitionMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetUnfilteredPartitionMetadataErrorKind::EntityNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetUnfilteredPartitionMetadataErrorKind::GlueEncryptionException(_inner) => {
+                Some(_inner)
+            }
+            GetUnfilteredPartitionMetadataErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            GetUnfilteredPartitionMetadataErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetUnfilteredPartitionMetadataErrorKind::OperationTimeoutException(_inner) => {
+                Some(_inner)
+            }
+            GetUnfilteredPartitionMetadataErrorKind::PermissionTypeMismatchException(_inner) => {
+                Some(_inner)
+            }
+            GetUnfilteredPartitionMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetUnfilteredPartitionsMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetUnfilteredPartitionsMetadataError {
+    /// Kind of error that occurred.
+    pub kind: GetUnfilteredPartitionsMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetUnfilteredPartitionsMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetUnfilteredPartitionsMetadataErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An encryption operation failed.</p>
+    GlueEncryptionException(crate::error::GlueEncryptionException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    #[allow(missing_docs)] // documentation missing in model
+    PermissionTypeMismatchException(crate::error::PermissionTypeMismatchException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetUnfilteredPartitionsMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetUnfilteredPartitionsMetadataErrorKind::EntityNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetUnfilteredPartitionsMetadataErrorKind::GlueEncryptionException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetUnfilteredPartitionsMetadataErrorKind::InternalServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetUnfilteredPartitionsMetadataErrorKind::InvalidInputException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetUnfilteredPartitionsMetadataErrorKind::OperationTimeoutException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetUnfilteredPartitionsMetadataErrorKind::PermissionTypeMismatchException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetUnfilteredPartitionsMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetUnfilteredPartitionsMetadataError {
+    fn code(&self) -> Option<&str> {
+        GetUnfilteredPartitionsMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetUnfilteredPartitionsMetadataError {
+    /// Creates a new `GetUnfilteredPartitionsMetadataError`.
+    pub fn new(
+        kind: GetUnfilteredPartitionsMetadataErrorKind,
+        meta: aws_smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetUnfilteredPartitionsMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetUnfilteredPartitionsMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetUnfilteredPartitionsMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetUnfilteredPartitionsMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredPartitionsMetadataErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredPartitionsMetadataErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredPartitionsMetadataErrorKind::GlueEncryptionException`.
+    pub fn is_glue_encryption_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredPartitionsMetadataErrorKind::GlueEncryptionException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredPartitionsMetadataErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredPartitionsMetadataErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredPartitionsMetadataErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredPartitionsMetadataErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredPartitionsMetadataErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredPartitionsMetadataErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredPartitionsMetadataErrorKind::PermissionTypeMismatchException`.
+    pub fn is_permission_type_mismatch_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredPartitionsMetadataErrorKind::PermissionTypeMismatchException(_)
+        )
+    }
+}
+impl std::error::Error for GetUnfilteredPartitionsMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetUnfilteredPartitionsMetadataErrorKind::EntityNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            GetUnfilteredPartitionsMetadataErrorKind::GlueEncryptionException(_inner) => {
+                Some(_inner)
+            }
+            GetUnfilteredPartitionsMetadataErrorKind::InternalServiceException(_inner) => {
+                Some(_inner)
+            }
+            GetUnfilteredPartitionsMetadataErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetUnfilteredPartitionsMetadataErrorKind::OperationTimeoutException(_inner) => {
+                Some(_inner)
+            }
+            GetUnfilteredPartitionsMetadataErrorKind::PermissionTypeMismatchException(_inner) => {
+                Some(_inner)
+            }
+            GetUnfilteredPartitionsMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// Error type for the `GetUnfilteredTableMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetUnfilteredTableMetadataError {
+    /// Kind of error that occurred.
+    pub kind: GetUnfilteredTableMetadataErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `GetUnfilteredTableMetadata` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetUnfilteredTableMetadataErrorKind {
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::error::EntityNotFoundException),
+    /// <p>An encryption operation failed.</p>
+    GlueEncryptionException(crate::error::GlueEncryptionException),
+    /// <p>An internal service error occurred.</p>
+    InternalServiceException(crate::error::InternalServiceException),
+    /// <p>The input provided was not valid.</p>
+    InvalidInputException(crate::error::InvalidInputException),
+    /// <p>The operation timed out.</p>
+    OperationTimeoutException(crate::error::OperationTimeoutException),
+    #[allow(missing_docs)] // documentation missing in model
+    PermissionTypeMismatchException(crate::error::PermissionTypeMismatchException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetUnfilteredTableMetadataError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetUnfilteredTableMetadataErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
+            GetUnfilteredTableMetadataErrorKind::GlueEncryptionException(_inner) => _inner.fmt(f),
+            GetUnfilteredTableMetadataErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            GetUnfilteredTableMetadataErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            GetUnfilteredTableMetadataErrorKind::OperationTimeoutException(_inner) => _inner.fmt(f),
+            GetUnfilteredTableMetadataErrorKind::PermissionTypeMismatchException(_inner) => {
+                _inner.fmt(f)
+            }
+            GetUnfilteredTableMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for GetUnfilteredTableMetadataError {
+    fn code(&self) -> Option<&str> {
+        GetUnfilteredTableMetadataError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetUnfilteredTableMetadataError {
+    /// Creates a new `GetUnfilteredTableMetadataError`.
+    pub fn new(kind: GetUnfilteredTableMetadataErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `GetUnfilteredTableMetadataError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetUnfilteredTableMetadataErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `GetUnfilteredTableMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetUnfilteredTableMetadataErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredTableMetadataErrorKind::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredTableMetadataErrorKind::EntityNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredTableMetadataErrorKind::GlueEncryptionException`.
+    pub fn is_glue_encryption_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredTableMetadataErrorKind::GlueEncryptionException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredTableMetadataErrorKind::InternalServiceException`.
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredTableMetadataErrorKind::InternalServiceException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredTableMetadataErrorKind::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredTableMetadataErrorKind::InvalidInputException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredTableMetadataErrorKind::OperationTimeoutException`.
+    pub fn is_operation_timeout_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredTableMetadataErrorKind::OperationTimeoutException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `GetUnfilteredTableMetadataErrorKind::PermissionTypeMismatchException`.
+    pub fn is_permission_type_mismatch_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUnfilteredTableMetadataErrorKind::PermissionTypeMismatchException(_)
+        )
+    }
+}
+impl std::error::Error for GetUnfilteredTableMetadataError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetUnfilteredTableMetadataErrorKind::EntityNotFoundException(_inner) => Some(_inner),
+            GetUnfilteredTableMetadataErrorKind::GlueEncryptionException(_inner) => Some(_inner),
+            GetUnfilteredTableMetadataErrorKind::InternalServiceException(_inner) => Some(_inner),
+            GetUnfilteredTableMetadataErrorKind::InvalidInputException(_inner) => Some(_inner),
+            GetUnfilteredTableMetadataErrorKind::OperationTimeoutException(_inner) => Some(_inner),
+            GetUnfilteredTableMetadataErrorKind::PermissionTypeMismatchException(_inner) => {
+                Some(_inner)
+            }
+            GetUnfilteredTableMetadataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -13725,8 +14011,6 @@ impl GetUserDefinedFunctionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13864,8 +14148,6 @@ impl GetUserDefinedFunctionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14000,8 +14282,6 @@ impl GetWorkflowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14122,8 +14402,6 @@ impl GetWorkflowRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14250,8 +14528,6 @@ impl GetWorkflowRunPropertiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14378,8 +14654,6 @@ impl GetWorkflowRunsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14500,8 +14774,6 @@ impl ImportCatalogToGlueError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14609,8 +14881,6 @@ impl ListBlueprintsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14720,8 +14990,6 @@ impl ListCrawlersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14824,8 +15092,6 @@ impl ListDevEndpointsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14952,8 +15218,6 @@ impl ListJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15068,8 +15332,6 @@ impl ListMLTransformsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15193,8 +15455,6 @@ impl ListRegistriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15313,8 +15573,6 @@ impl ListSchemasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15432,8 +15690,6 @@ impl ListSchemaVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15560,8 +15816,6 @@ impl ListTriggersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15682,8 +15936,6 @@ impl ListWorkflowsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15805,8 +16057,6 @@ impl PutDataCatalogEncryptionSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15934,8 +16184,6 @@ impl PutResourcePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16075,8 +16323,6 @@ impl PutSchemaVersionMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16226,8 +16472,6 @@ impl PutWorkflowRunPropertiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16379,8 +16623,6 @@ impl QuerySchemaVersionMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16509,8 +16751,6 @@ impl RegisterSchemaVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16652,8 +16892,6 @@ impl RemoveSchemaVersionMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16772,8 +17010,6 @@ impl ResetJobBookmarkError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16906,8 +17142,6 @@ impl ResumeWorkflowRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17047,8 +17281,6 @@ impl SearchTablesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17172,8 +17404,6 @@ impl StartBlueprintRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17315,8 +17545,6 @@ impl StartCrawlerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17438,8 +17666,6 @@ impl StartCrawlerScheduleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17574,8 +17800,6 @@ impl StartExportLabelsTaskRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17707,8 +17931,6 @@ impl StartImportLabelsTaskRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17851,8 +18073,6 @@ impl StartJobRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17999,8 +18219,6 @@ impl StartMLEvaluationTaskRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18161,8 +18379,6 @@ impl StartMLLabelingSetGenerationTaskRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18315,8 +18531,6 @@ impl StartTriggerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18464,8 +18678,6 @@ impl StartWorkflowRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18608,8 +18820,6 @@ impl StopCrawlerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18733,8 +18943,6 @@ impl StopCrawlerScheduleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18864,8 +19072,6 @@ impl StopTriggerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18997,8 +19203,6 @@ impl StopWorkflowRunError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19133,8 +19337,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19255,8 +19457,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19386,8 +19586,6 @@ impl UpdateBlueprintError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19530,8 +19728,6 @@ impl UpdateClassifierError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19674,8 +19870,6 @@ impl UpdateColumnStatisticsForPartitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19834,8 +20028,6 @@ impl UpdateColumnStatisticsForTableError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19978,8 +20170,6 @@ impl UpdateConnectionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20109,8 +20299,6 @@ impl UpdateCrawlerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20247,8 +20435,6 @@ impl UpdateCrawlerScheduleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20389,8 +20575,6 @@ impl UpdateDatabaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20536,8 +20720,6 @@ impl UpdateDevEndpointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20675,8 +20857,6 @@ impl UpdateJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20802,8 +20982,6 @@ impl UpdateMLTransformError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -20941,8 +21119,6 @@ impl UpdatePartitionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21080,8 +21256,6 @@ impl UpdateRegistryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21219,8 +21393,6 @@ impl UpdateSchemaError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21361,8 +21533,6 @@ impl UpdateTableError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21515,8 +21685,6 @@ impl UpdateTriggerError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21651,8 +21819,6 @@ impl UpdateUserDefinedFunctionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -21790,8 +21956,6 @@ impl UpdateWorkflowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -23400,6 +23564,70 @@ impl ConditionCheckFailureException {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PermissionTypeMismatchException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for PermissionTypeMismatchException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PermissionTypeMismatchException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl PermissionTypeMismatchException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for PermissionTypeMismatchException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "PermissionTypeMismatchException")?;
+        if let Some(inner_25) = &self.message {
+            write!(f, ": {}", inner_25)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for PermissionTypeMismatchException {}
+/// See [`PermissionTypeMismatchException`](crate::error::PermissionTypeMismatchException)
+pub mod permission_type_mismatch_exception {
+    /// A builder for [`PermissionTypeMismatchException`](crate::error::PermissionTypeMismatchException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PermissionTypeMismatchException`](crate::error::PermissionTypeMismatchException)
+        pub fn build(self) -> crate::error::PermissionTypeMismatchException {
+            crate::error::PermissionTypeMismatchException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl PermissionTypeMismatchException {
+    /// Creates a new builder-style object to manufacture [`PermissionTypeMismatchException`](crate::error::PermissionTypeMismatchException)
+    pub fn builder() -> crate::error::permission_type_mismatch_exception::Builder {
+        crate::error::permission_type_mismatch_exception::Builder::default()
+    }
+}
+
 /// <p>An error that indicates your data is in an invalid state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -23423,8 +23651,8 @@ impl InvalidStateException {
 impl std::fmt::Display for InvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidStateException")?;
-        if let Some(inner_25) = &self.message {
-            write!(f, ": {}", inner_25)?;
+        if let Some(inner_26) = &self.message {
+            write!(f, ": {}", inner_26)?;
         }
         Ok(())
     }
@@ -23464,7 +23692,7 @@ impl InvalidStateException {
     }
 }
 
-/// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled.  </p>
+/// <p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -23487,8 +23715,8 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_26) = &self.message {
-            write!(f, ": {}", inner_26)?;
+        if let Some(inner_27) = &self.message {
+            write!(f, ": {}", inner_27)?;
         }
         Ok(())
     }
@@ -23551,8 +23779,8 @@ impl IdempotentParameterMismatchException {
 impl std::fmt::Display for IdempotentParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IdempotentParameterMismatchException")?;
-        if let Some(inner_27) = &self.message {
-            write!(f, ": {}", inner_27)?;
+        if let Some(inner_28) = &self.message {
+            write!(f, ": {}", inner_28)?;
         }
         Ok(())
     }

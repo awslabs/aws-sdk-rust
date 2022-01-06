@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS CodeBuild
@@ -199,6 +199,7 @@ where
     ///
     /// See [`DescribeCodeCoverages`](crate::client::fluent_builders::DescribeCodeCoverages) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCodeCoverages::into_paginator).
     pub fn describe_code_coverages(&self) -> fluent_builders::DescribeCodeCoverages<C, M, R> {
         fluent_builders::DescribeCodeCoverages::new(self.handle.clone())
     }
@@ -206,6 +207,7 @@ where
     ///
     /// See [`DescribeTestCases`](crate::client::fluent_builders::DescribeTestCases) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeTestCases::into_paginator).
     pub fn describe_test_cases(&self) -> fluent_builders::DescribeTestCases<C, M, R> {
         fluent_builders::DescribeTestCases::new(self.handle.clone())
     }
@@ -241,6 +243,7 @@ where
     ///
     /// See [`ListBuildBatches`](crate::client::fluent_builders::ListBuildBatches) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBuildBatches::into_paginator).
     pub fn list_build_batches(&self) -> fluent_builders::ListBuildBatches<C, M, R> {
         fluent_builders::ListBuildBatches::new(self.handle.clone())
     }
@@ -248,6 +251,7 @@ where
     ///
     /// See [`ListBuildBatchesForProject`](crate::client::fluent_builders::ListBuildBatchesForProject) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBuildBatchesForProject::into_paginator).
     pub fn list_build_batches_for_project(
         &self,
     ) -> fluent_builders::ListBuildBatchesForProject<C, M, R> {
@@ -257,6 +261,7 @@ where
     ///
     /// See [`ListBuilds`](crate::client::fluent_builders::ListBuilds) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBuilds::into_paginator).
     pub fn list_builds(&self) -> fluent_builders::ListBuilds<C, M, R> {
         fluent_builders::ListBuilds::new(self.handle.clone())
     }
@@ -264,6 +269,7 @@ where
     ///
     /// See [`ListBuildsForProject`](crate::client::fluent_builders::ListBuildsForProject) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBuildsForProject::into_paginator).
     pub fn list_builds_for_project(&self) -> fluent_builders::ListBuildsForProject<C, M, R> {
         fluent_builders::ListBuildsForProject::new(self.handle.clone())
     }
@@ -280,6 +286,7 @@ where
     ///
     /// See [`ListProjects`](crate::client::fluent_builders::ListProjects) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
     }
@@ -287,6 +294,7 @@ where
     ///
     /// See [`ListReportGroups`](crate::client::fluent_builders::ListReportGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReportGroups::into_paginator).
     pub fn list_report_groups(&self) -> fluent_builders::ListReportGroups<C, M, R> {
         fluent_builders::ListReportGroups::new(self.handle.clone())
     }
@@ -294,6 +302,7 @@ where
     ///
     /// See [`ListReports`](crate::client::fluent_builders::ListReports) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReports::into_paginator).
     pub fn list_reports(&self) -> fluent_builders::ListReports<C, M, R> {
         fluent_builders::ListReports::new(self.handle.clone())
     }
@@ -301,6 +310,7 @@ where
     ///
     /// See [`ListReportsForReportGroup`](crate::client::fluent_builders::ListReportsForReportGroup) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReportsForReportGroup::into_paginator).
     pub fn list_reports_for_report_group(
         &self,
     ) -> fluent_builders::ListReportsForReportGroup<C, M, R> {
@@ -310,6 +320,7 @@ where
     ///
     /// See [`ListSharedProjects`](crate::client::fluent_builders::ListSharedProjects) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSharedProjects::into_paginator).
     pub fn list_shared_projects(&self) -> fluent_builders::ListSharedProjects<C, M, R> {
         fluent_builders::ListSharedProjects::new(self.handle.clone())
     }
@@ -317,6 +328,7 @@ where
     ///
     /// See [`ListSharedReportGroups`](crate::client::fluent_builders::ListSharedReportGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSharedReportGroups::into_paginator).
     pub fn list_shared_report_groups(&self) -> fluent_builders::ListSharedReportGroups<C, M, R> {
         fluent_builders::ListSharedReportGroups::new(self.handle.clone())
     }
@@ -416,7 +428,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteBuilds`.
     ///
     /// <p>Deletes one or more builds.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteBuilds<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -461,10 +473,10 @@ pub mod fluent_builders {
                 crate::input::BatchDeleteBuildsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -477,8 +489,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ids`](Self::set_ids).
         ///
         /// <p>The IDs of the builds to delete.</p>
-        pub fn ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ids(inp);
+        pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ids(input.into());
             self
         }
         /// <p>The IDs of the builds to delete.</p>
@@ -493,7 +505,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetBuildBatches`.
     ///
     /// <p>Retrieves information about one or more batch builds.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetBuildBatches<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -538,10 +550,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetBuildBatchesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -554,8 +566,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ids`](Self::set_ids).
         ///
         /// <p>An array that contains the batch build identifiers to retrieve.</p>
-        pub fn ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ids(inp);
+        pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ids(input.into());
             self
         }
         /// <p>An array that contains the batch build identifiers to retrieve.</p>
@@ -570,7 +582,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetBuilds`.
     ///
     /// <p>Gets information about one or more builds.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetBuilds<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -615,10 +627,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetBuildsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -631,8 +643,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_ids`](Self::set_ids).
         ///
         /// <p>The IDs of the builds.</p>
-        pub fn ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ids(inp);
+        pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ids(input.into());
             self
         }
         /// <p>The IDs of the builds.</p>
@@ -647,7 +659,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetProjects`.
     ///
     /// <p>Gets information about one or more build projects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -692,10 +704,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetProjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -707,16 +719,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
-        /// <p>The names or ARNs of the build projects. To get information about a project shared
-        /// with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project
-        /// using its name.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
-        /// <p>The names or ARNs of the build projects. To get information about a project shared
-        /// with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project
-        /// using its name.</p>
+        /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -727,10 +735,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetReportGroups`.
     ///
-    /// <p>
-    /// Returns an array of report groups.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns an array of report groups. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetReportGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -775,10 +781,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetReportGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -790,16 +796,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_report_group_arns`](Self::set_report_group_arns).
         ///
-        /// <p>
-        /// An array of report group ARNs that identify the report groups to return.
-        /// </p>
-        pub fn report_group_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_group_arns(inp);
+        /// <p> An array of report group ARNs that identify the report groups to return. </p>
+        pub fn report_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_group_arns(input.into());
             self
         }
-        /// <p>
-        /// An array of report group ARNs that identify the report groups to return.
-        /// </p>
+        /// <p> An array of report group ARNs that identify the report groups to return. </p>
         pub fn set_report_group_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -810,10 +812,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetReports`.
     ///
-    /// <p>
-    /// Returns an array of reports.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns an array of reports. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetReports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -858,10 +858,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetReportsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -873,16 +873,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_report_arns`](Self::set_report_arns).
         ///
-        /// <p>
-        /// An array of ARNs that identify the <code>Report</code> objects to return.
-        /// </p>
-        pub fn report_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_arns(inp);
+        /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
+        pub fn report_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_arns(input.into());
             self
         }
-        /// <p>
-        /// An array of ARNs that identify the <code>Report</code> objects to return.
-        /// </p>
+        /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
         pub fn set_report_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -894,7 +890,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProject`.
     ///
     /// <p>Creates a build project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -939,10 +935,10 @@ pub mod fluent_builders {
                 crate::input::CreateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -951,8 +947,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the build project.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the build project.</p>
@@ -961,8 +957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description that makes the build project easy to identify.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description that makes the build project easy to identify.</p>
@@ -971,8 +967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the build input source code for the build project.</p>
-        pub fn source(mut self, inp: crate::model::ProjectSource) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, input: crate::model::ProjectSource) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>Information about the build input source code for the build project.</p>
@@ -988,8 +984,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_secondary_sources`](Self::set_secondary_sources).
         ///
         /// <p>An array of <code>ProjectSource</code> objects. </p>
-        pub fn secondary_sources(mut self, inp: impl Into<crate::model::ProjectSource>) -> Self {
-            self.inner = self.inner.secondary_sources(inp);
+        pub fn secondary_sources(mut self, input: crate::model::ProjectSource) -> Self {
+            self.inner = self.inner.secondary_sources(input);
             self
         }
         /// <p>An array of <code>ProjectSource</code> objects. </p>
@@ -1000,70 +996,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secondary_sources(input);
             self
         }
-        /// <p>A version of the build input to be built for this project. If not specified, the latest
-        /// version is used. If specified, it must be one of: </p>
+        /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
         /// <ul>
-        /// <li>
-        /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
-        /// corresponds to the version of the source code you want to build. If a pull
-        /// request ID is specified, it must use the format <code>pr/pull-request-ID</code>
-        /// (for example <code>pr/25</code>). If a branch name is specified, the branch's
-        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-        /// used.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the
-        /// version of the source code you want to build. If a branch name is specified, the
-        /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
-        /// commit ID is used.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP
-        /// file to use.</p>
-        /// </li>
+        /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
+        /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
+        /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
+        /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
         /// </ul>
-        /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes
-        /// precedence over this <code>sourceVersion</code> (at the project level). </p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
-        /// </p>
-        pub fn source_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_version(inp);
+        /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+        pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_version(input.into());
             self
         }
-        /// <p>A version of the build input to be built for this project. If not specified, the latest
-        /// version is used. If specified, it must be one of: </p>
+        /// <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
         /// <ul>
-        /// <li>
-        /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
-        /// corresponds to the version of the source code you want to build. If a pull
-        /// request ID is specified, it must use the format <code>pr/pull-request-ID</code>
-        /// (for example <code>pr/25</code>). If a branch name is specified, the branch's
-        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-        /// used.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the
-        /// version of the source code you want to build. If a branch name is specified, the
-        /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
-        /// commit ID is used.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP
-        /// file to use.</p>
-        /// </li>
+        /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
+        /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
+        /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
+        /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
         /// </ul>
-        /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes
-        /// precedence over this <code>sourceVersion</code> (at the project level). </p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
-        /// </p>
+        /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn set_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1075,21 +1029,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_secondary_source_versions`](Self::set_secondary_source_versions).
         ///
-        /// <p>An array of <code>ProjectSourceVersion</code> objects. If
-        /// <code>secondarySourceVersions</code> is specified at the build level, then they take
-        /// precedence over these <code>secondarySourceVersions</code> (at the project level).
-        /// </p>
+        /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
         pub fn secondary_source_versions(
             mut self,
-            inp: impl Into<crate::model::ProjectSourceVersion>,
+            input: crate::model::ProjectSourceVersion,
         ) -> Self {
-            self.inner = self.inner.secondary_source_versions(inp);
+            self.inner = self.inner.secondary_source_versions(input);
             self
         }
-        /// <p>An array of <code>ProjectSourceVersion</code> objects. If
-        /// <code>secondarySourceVersions</code> is specified at the build level, then they take
-        /// precedence over these <code>secondarySourceVersions</code> (at the project level).
-        /// </p>
+        /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
         pub fn set_secondary_source_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
@@ -1098,8 +1046,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the build output artifacts for the build project.</p>
-        pub fn artifacts(mut self, inp: crate::model::ProjectArtifacts) -> Self {
-            self.inner = self.inner.artifacts(inp);
+        pub fn artifacts(mut self, input: crate::model::ProjectArtifacts) -> Self {
+            self.inner = self.inner.artifacts(input);
             self
         }
         /// <p>Information about the build output artifacts for the build project.</p>
@@ -1115,11 +1063,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
         ///
         /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
-        pub fn secondary_artifacts(
-            mut self,
-            inp: impl Into<crate::model::ProjectArtifacts>,
-        ) -> Self {
-            self.inner = self.inner.secondary_artifacts(inp);
+        pub fn secondary_artifacts(mut self, input: crate::model::ProjectArtifacts) -> Self {
+            self.inner = self.inner.secondary_artifacts(input);
             self
         }
         /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
@@ -1130,21 +1075,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secondary_artifacts(input);
             self
         }
-        /// <p>Stores recently used information so that it can be quickly accessed at a later
-        /// time.</p>
-        pub fn cache(mut self, inp: crate::model::ProjectCache) -> Self {
-            self.inner = self.inner.cache(inp);
+        /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
+        pub fn cache(mut self, input: crate::model::ProjectCache) -> Self {
+            self.inner = self.inner.cache(input);
             self
         }
-        /// <p>Stores recently used information so that it can be quickly accessed at a later
-        /// time.</p>
+        /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
         pub fn set_cache(mut self, input: std::option::Option<crate::model::ProjectCache>) -> Self {
             self.inner = self.inner.set_cache(input);
             self
         }
         /// <p>Information about the build environment for the build project.</p>
-        pub fn environment(mut self, inp: crate::model::ProjectEnvironment) -> Self {
-            self.inner = self.inner.environment(inp);
+        pub fn environment(mut self, input: crate::model::ProjectEnvironment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
         /// <p>Information about the build environment for the build project.</p>
@@ -1155,33 +1098,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment(input);
             self
         }
-        /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services
-        /// on behalf of the Amazon Web Services account.</p>
-        pub fn service_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role(inp);
+        /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services
-        /// on behalf of the Amazon Web Services account.</p>
+        /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_role(input);
             self
         }
-        /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out
-        /// any build that has not been marked as completed. The default is 60 minutes.</p>
-        pub fn timeout_in_minutes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout_in_minutes(inp);
+        /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
+        pub fn timeout_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout_in_minutes(input);
             self
         }
-        /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out
-        /// any build that has not been marked as completed. The default is 60 minutes.</p>
+        /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
         pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout_in_minutes(input);
             self
         }
         /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
-        pub fn queued_timeout_in_minutes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.queued_timeout_in_minutes(inp);
+        pub fn queued_timeout_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.queued_timeout_in_minutes(input);
             self
         }
         /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
@@ -1189,28 +1128,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_queued_timeout_in_minutes(input);
             self
         }
-        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output
-        /// artifacts.</p>
-        /// <note>
-        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your
-        /// service role has permission to that key. </p>
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
+        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
         /// </note>
-        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
-        /// the format <code>alias/<alias-name></code>).
-        /// </p>
-        pub fn encryption_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key(inp);
+        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
+        /// <alias-name></alias-name></code>). </p>
+        pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key(input.into());
             self
         }
-        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output
-        /// artifacts.</p>
-        /// <note>
-        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your
-        /// service role has permission to that key. </p>
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
+        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
         /// </note>
-        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
-        /// the format <code>alias/<alias-name></code>).
-        /// </p>
+        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
+        /// <alias-name></alias-name></code>). </p>
         pub fn set_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1223,15 +1154,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag key and value pairs associated with this build project.</p>
-        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
-        /// tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of tag key and value pairs associated with this build project.</p>
-        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
-        /// tags.</p>
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1240,8 +1169,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
         /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
@@ -1252,26 +1181,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_config(input);
             self
         }
-        /// <p>Set this to true to generate a publicly accessible URL for your project's build
-        /// badge.</p>
-        pub fn badge_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.badge_enabled(inp);
+        /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
+        pub fn badge_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.badge_enabled(input);
             self
         }
-        /// <p>Set this to true to generate a publicly accessible URL for your project's build
-        /// badge.</p>
+        /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
         pub fn set_badge_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_badge_enabled(input);
             self
         }
-        /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs
-        /// uploaded to a specified S3 bucket, or both. </p>
-        pub fn logs_config(mut self, inp: crate::model::LogsConfig) -> Self {
-            self.inner = self.inner.logs_config(inp);
+        /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+        pub fn logs_config(mut self, input: crate::model::LogsConfig) -> Self {
+            self.inner = self.inner.logs_config(input);
             self
         }
-        /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs
-        /// uploaded to a specified S3 bucket, or both. </p>
+        /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
         pub fn set_logs_config(
             mut self,
             input: std::option::Option<crate::model::LogsConfig>,
@@ -1283,23 +1208,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_file_system_locations`](Self::set_file_system_locations).
         ///
-        /// <p>
-        /// An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object
-        /// specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
-        /// <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.
-        /// </p>
+        /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
         pub fn file_system_locations(
             mut self,
-            inp: impl Into<crate::model::ProjectFileSystemLocation>,
+            input: crate::model::ProjectFileSystemLocation,
         ) -> Self {
-            self.inner = self.inner.file_system_locations(inp);
+            self.inner = self.inner.file_system_locations(input);
             self
         }
-        /// <p>
-        /// An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object
-        /// specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
-        /// <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.
-        /// </p>
+        /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
         pub fn set_file_system_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
@@ -1307,16 +1224,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_system_locations(input);
             self
         }
-        /// <p>A <a>ProjectBuildBatchConfig</a>
-        /// object that defines the batch build options
-        /// for the project.</p>
-        pub fn build_batch_config(mut self, inp: crate::model::ProjectBuildBatchConfig) -> Self {
-            self.inner = self.inner.build_batch_config(inp);
+        /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
+        pub fn build_batch_config(mut self, input: crate::model::ProjectBuildBatchConfig) -> Self {
+            self.inner = self.inner.build_batch_config(input);
             self
         }
-        /// <p>A <a>ProjectBuildBatchConfig</a>
-        /// object that defines the batch build options
-        /// for the project.</p>
+        /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
         pub fn set_build_batch_config(
             mut self,
             input: std::option::Option<crate::model::ProjectBuildBatchConfig>,
@@ -1325,15 +1238,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
-        /// <p>New builds are only started if the current number of builds is less than or equal to this limit.
-        /// If the current build count meets this limit, new builds are throttled and are not run.</p>
-        pub fn concurrent_build_limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.concurrent_build_limit(inp);
+        /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
+        pub fn concurrent_build_limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.concurrent_build_limit(input);
             self
         }
         /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
-        /// <p>New builds are only started if the current number of builds is less than or equal to this limit.
-        /// If the current build count meets this limit, new builds are throttled and are not run.</p>
+        /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
         pub fn set_concurrent_build_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_concurrent_build_limit(input);
             self
@@ -1341,10 +1252,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateReportGroup`.
     ///
-    /// <p>
-    /// Creates a report group. A report group contains a collection of reports.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Creates a report group. A report group contains a collection of reports. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReportGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1389,10 +1298,10 @@ pub mod fluent_builders {
                 crate::input::CreateReportGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1400,44 +1309,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The name of the report group.
-        /// </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p> The name of the report group. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>
-        /// The name of the report group.
-        /// </p>
+        /// <p> The name of the report group. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>
-        /// The type of report group.
-        /// </p>
-        pub fn r#type(mut self, inp: crate::model::ReportType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p> The type of report group. </p>
+        pub fn r#type(mut self, input: crate::model::ReportType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>
-        /// The type of report group.
-        /// </p>
+        /// <p> The type of report group. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ReportType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>
-        /// A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported.
-        /// </p>
-        pub fn export_config(mut self, inp: crate::model::ReportExportConfig) -> Self {
-            self.inner = self.inner.export_config(inp);
+        /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
+        pub fn export_config(mut self, input: crate::model::ReportExportConfig) -> Self {
+            self.inner = self.inner.export_config(input);
             self
         }
-        /// <p>
-        /// A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported.
-        /// </p>
+        /// <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
         pub fn set_export_config(
             mut self,
             input: std::option::Option<crate::model::ReportExportConfig>,
@@ -1449,20 +1346,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// A list of tag key and value pairs associated with this report group.
-        /// </p>
-        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
-        /// tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p> A list of tag key and value pairs associated with this report group. </p>
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>
-        /// A list of tag key and value pairs associated with this report group.
-        /// </p>
-        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
-        /// tags.</p>
+        /// <p> A list of tag key and value pairs associated with this report group. </p>
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1473,18 +1364,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateWebhook`.
     ///
-    /// <p>For an existing CodeBuild build project that has its source code stored in a GitHub or
-    /// Bitbucket repository, enables CodeBuild to start rebuilding the source code every time a
-    /// code change is pushed to the repository.</p>
-    /// <important>
-    /// <p>If you enable webhooks for an CodeBuild project, and the project is used as a build
-    /// step in CodePipeline, then two identical builds are created for each commit. One build is
-    /// triggered through webhooks, and one through CodePipeline. Because billing is on a per-build
-    /// basis, you are billed for both builds. Therefore, if you are using CodePipeline, we
-    /// recommend that you disable webhooks in CodeBuild. In the CodeBuild console, clear the
-    /// Webhook box. For more information, see step 5 in <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change a Build Project's Settings</a>.</p>
+    /// <p>For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, enables CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.</p> <important>
+    /// <p>If you enable webhooks for an CodeBuild project, and the project is used as a build step in CodePipeline, then two identical builds are created for each commit. One build is triggered through webhooks, and one through CodePipeline. Because billing is on a per-build basis, you are billed for both builds. Therefore, if you are using CodePipeline, we recommend that you disable webhooks in CodeBuild. In the CodeBuild console, clear the Webhook box. For more information, see step 5 in <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change a Build Project's Settings</a>.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWebhook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1529,10 +1412,10 @@ pub mod fluent_builders {
                 crate::input::CreateWebhookInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1541,8 +1424,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the CodeBuild project.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the CodeBuild project.</p>
@@ -1550,23 +1433,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_name(input);
             self
         }
-        /// <p>A regular expression used to determine which repository branches are built when a
-        /// webhook is triggered. If the name of a branch matches the regular expression, then it is
-        /// built. If <code>branchFilter</code> is empty, then all branches are built.</p>
-        /// <note>
-        /// <p>It is recommended that you use <code>filterGroups</code> instead of
-        /// <code>branchFilter</code>. </p>
+        /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+        /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
         /// </note>
-        pub fn branch_filter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_filter(inp);
+        pub fn branch_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_filter(input.into());
             self
         }
-        /// <p>A regular expression used to determine which repository branches are built when a
-        /// webhook is triggered. If the name of a branch matches the regular expression, then it is
-        /// built. If <code>branchFilter</code> is empty, then all branches are built.</p>
-        /// <note>
-        /// <p>It is recommended that you use <code>filterGroups</code> instead of
-        /// <code>branchFilter</code>. </p>
+        /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+        /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
         /// </note>
         pub fn set_branch_filter(
             mut self,
@@ -1579,25 +1454,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filter_groups`](Self::set_filter_groups).
         ///
-        /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which
-        /// webhooks are triggered. At least one <code>WebhookFilter</code> in the array must
-        /// specify <code>EVENT</code> as its <code>type</code>. </p>
-        /// <p>For a build to be triggered, at least one filter group in the
-        /// <code>filterGroups</code> array must pass. For a filter group to pass, each of its
-        /// filters must pass. </p>
-        pub fn filter_groups(
-            mut self,
-            inp: impl Into<std::vec::Vec<crate::model::WebhookFilter>>,
-        ) -> Self {
-            self.inner = self.inner.filter_groups(inp);
+        /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
+        /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
+        pub fn filter_groups(mut self, input: std::vec::Vec<crate::model::WebhookFilter>) -> Self {
+            self.inner = self.inner.filter_groups(input);
             self
         }
-        /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which
-        /// webhooks are triggered. At least one <code>WebhookFilter</code> in the array must
-        /// specify <code>EVENT</code> as its <code>type</code>. </p>
-        /// <p>For a build to be triggered, at least one filter group in the
-        /// <code>filterGroups</code> array must pass. For a filter group to pass, each of its
-        /// filters must pass. </p>
+        /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
+        /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
         pub fn set_filter_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
@@ -1606,8 +1470,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the type of build this webhook will trigger.</p>
-        pub fn build_type(mut self, inp: crate::model::WebhookBuildType) -> Self {
-            self.inner = self.inner.build_type(inp);
+        pub fn build_type(mut self, input: crate::model::WebhookBuildType) -> Self {
+            self.inner = self.inner.build_type(input);
             self
         }
         /// <p>Specifies the type of build this webhook will trigger.</p>
@@ -1622,7 +1486,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBuildBatch`.
     ///
     /// <p>Deletes a batch build.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBuildBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1667,10 +1531,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBuildBatchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1679,8 +1543,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the batch build to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the batch build to delete.</p>
@@ -1691,9 +1555,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteProject`.
     ///
-    /// <p> Deletes a build project. When you delete a project, its builds are not deleted.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Deletes a build project. When you delete a project, its builds are not deleted. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1738,10 +1601,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1750,8 +1613,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the build project.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the build project.</p>
@@ -1762,10 +1625,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteReport`.
     ///
-    /// <p>
-    /// Deletes a report.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Deletes a report. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReport<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1810,10 +1671,10 @@ pub mod fluent_builders {
                 crate::input::DeleteReportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1821,16 +1682,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ARN of the report to delete.
-        /// </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p> The ARN of the report to delete. </p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the report to delete.
-        /// </p>
+        /// <p> The ARN of the report to delete. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -1839,7 +1696,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReportGroup`.
     ///
     /// <p>Deletes a report group. Before you delete a report group, you must delete its reports. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReportGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1884,10 +1741,10 @@ pub mod fluent_builders {
                 crate::input::DeleteReportGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1896,8 +1753,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the report group to delete. </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN of the report group to delete. </p>
@@ -1905,20 +1762,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting
-        /// the report group. </p>
-        /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call
-        /// <code>DeleteReportGroup</code> for a report group that contains one or more reports,
-        /// an exception is thrown. </p>
-        pub fn delete_reports(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_reports(inp);
+        /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>
+        /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
+        pub fn delete_reports(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_reports(input);
             self
         }
-        /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting
-        /// the report group. </p>
-        /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call
-        /// <code>DeleteReportGroup</code> for a report group that contains one or more reports,
-        /// an exception is thrown. </p>
+        /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>
+        /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
         pub fn set_delete_reports(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_delete_reports(input);
             self
@@ -1927,7 +1778,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourcePolicy`.
     ///
     /// <p> Deletes a resource policy that is identified by its resource ARN. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1972,10 +1823,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1984,8 +1835,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ARN of the resource that is associated with the resource policy. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The ARN of the resource that is associated with the resource policy. </p>
@@ -1997,7 +1848,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSourceCredentials`.
     ///
     /// <p> Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSourceCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2042,10 +1893,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSourceCredentialsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2054,8 +1905,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the token.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the token.</p>
@@ -2066,10 +1917,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteWebhook`.
     ///
-    /// <p>For an existing CodeBuild build project that has its source code stored in a GitHub or
-    /// Bitbucket repository, stops CodeBuild from rebuilding the source code every time a code
-    /// change is pushed to the repository.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, stops CodeBuild from rebuilding the source code every time a code change is pushed to the repository.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWebhook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2114,10 +1963,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWebhookInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2126,8 +1975,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the CodeBuild project.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the CodeBuild project.</p>
@@ -2139,7 +1988,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCodeCoverages`.
     ///
     /// <p>Retrieves one or more code coverage reports.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCodeCoverages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2184,10 +2033,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCodeCoveragesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2195,37 +2044,35 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ARN of the report for which test cases are returned.
-        /// </p>
-        pub fn report_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeCodeCoveragesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeCodeCoveragesPaginator<C, M, R> {
+            crate::paginator::DescribeCodeCoveragesPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The ARN of the report for which test cases are returned. </p>
+        pub fn report_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_arn(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the report for which test cases are returned.
-        /// </p>
+        /// <p> The ARN of the report for which test cases are returned. </p>
         pub fn set_report_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_report_arn(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous call to
-        /// <code>DescribeCodeCoverages</code>. This specifies the next item to return. To
-        /// return the beginning of the list, exclude this parameter.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> value returned from a previous call to <code>DescribeCodeCoverages</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous call to
-        /// <code>DescribeCodeCoverages</code>. This specifies the next item to return. To
-        /// return the beginning of the list, exclude this parameter.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous call to <code>DescribeCodeCoverages</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2234,8 +2081,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies if the results are sorted in ascending or descending order.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrderType) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>Specifies if the results are sorted in ascending or descending order.</p>
@@ -2248,26 +2095,34 @@ pub mod fluent_builders {
         }
         /// <p>Specifies how the results are sorted. Possible values are:</p>
         /// <dl>
-        /// <dt>FILE_PATH</dt>
+        /// <dt>
+        /// FILE_PATH
+        /// </dt>
         /// <dd>
         /// <p>The results are sorted by file path.</p>
         /// </dd>
-        /// <dt>LINE_COVERAGE_PERCENTAGE</dt>
+        /// <dt>
+        /// LINE_COVERAGE_PERCENTAGE
+        /// </dt>
         /// <dd>
         /// <p>The results are sorted by the percentage of lines that are covered.</p>
         /// </dd>
         /// </dl>
-        pub fn sort_by(mut self, inp: crate::model::ReportCodeCoverageSortByType) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ReportCodeCoverageSortByType) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>Specifies how the results are sorted. Possible values are:</p>
         /// <dl>
-        /// <dt>FILE_PATH</dt>
+        /// <dt>
+        /// FILE_PATH
+        /// </dt>
         /// <dd>
         /// <p>The results are sorted by file path.</p>
         /// </dd>
-        /// <dt>LINE_COVERAGE_PERCENTAGE</dt>
+        /// <dt>
+        /// LINE_COVERAGE_PERCENTAGE
+        /// </dt>
         /// <dd>
         /// <p>The results are sorted by the percentage of lines that are covered.</p>
         /// </dd>
@@ -2280,8 +2135,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minimum line coverage percentage to report.</p>
-        pub fn min_line_coverage_percentage(mut self, inp: f64) -> Self {
-            self.inner = self.inner.min_line_coverage_percentage(inp);
+        pub fn min_line_coverage_percentage(mut self, input: f64) -> Self {
+            self.inner = self.inner.min_line_coverage_percentage(input);
             self
         }
         /// <p>The minimum line coverage percentage to report.</p>
@@ -2290,8 +2145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum line coverage percentage to report.</p>
-        pub fn max_line_coverage_percentage(mut self, inp: f64) -> Self {
-            self.inner = self.inner.max_line_coverage_percentage(inp);
+        pub fn max_line_coverage_percentage(mut self, input: f64) -> Self {
+            self.inner = self.inner.max_line_coverage_percentage(input);
             self
         }
         /// <p>The maximum line coverage percentage to report.</p>
@@ -2302,10 +2157,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeTestCases`.
     ///
-    /// <p>
-    /// Returns a list of details about test cases for a report.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of details about test cases for a report. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTestCases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2350,10 +2203,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTestCasesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2361,68 +2214,48 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ARN of the report for which test cases are returned.
-        /// </p>
-        pub fn report_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeTestCasesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeTestCasesPaginator<C, M, R> {
+            crate::paginator::DescribeTestCasesPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The ARN of the report for which test cases are returned. </p>
+        pub fn report_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_arn(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the report for which test cases are returned.
-        /// </p>
+        /// <p> The ARN of the report for which test cases are returned. </p>
         pub fn set_report_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_report_arn(input);
             self
         }
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in
-        /// the list of returned <code>TestCase</code> objects. The default value is 100.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in
-        /// the list of returned <code>TestCase</code> objects. The default value is 100.
-        /// </p>
+        /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// A <code>TestCaseFilter</code> object used to filter the returned reports.
-        /// </p>
-        pub fn filter(mut self, inp: crate::model::TestCaseFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
+        pub fn filter(mut self, input: crate::model::TestCaseFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
-        /// <p>
-        /// A <code>TestCaseFilter</code> object used to filter the returned reports.
-        /// </p>
+        /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::TestCaseFilter>,
@@ -2434,7 +2267,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetReportGroupTrend`.
     ///
     /// <p>Analyzes and accumulates test report values for the specified test reports.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetReportGroupTrend<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2479,10 +2312,10 @@ pub mod fluent_builders {
                 crate::input::GetReportGroupTrendInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2491,8 +2324,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the report group that contains the reports to analyze.</p>
-        pub fn report_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_group_arn(inp);
+        pub fn report_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_group_arn(input.into());
             self
         }
         /// <p>The ARN of the report group that contains the reports to analyze.</p>
@@ -2503,15 +2336,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report_group_arn(input);
             self
         }
-        /// <p>The number of reports to analyze. This operation always retrieves the most recent
-        /// reports.</p>
+        /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>
         /// <p>If this parameter is omitted, the most recent 100 reports are analyzed.</p>
-        pub fn num_of_reports(mut self, inp: i32) -> Self {
-            self.inner = self.inner.num_of_reports(inp);
+        pub fn num_of_reports(mut self, input: i32) -> Self {
+            self.inner = self.inner.num_of_reports(input);
             self
         }
-        /// <p>The number of reports to analyze. This operation always retrieves the most recent
-        /// reports.</p>
+        /// <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>
         /// <p>If this parameter is omitted, the most recent 100 reports are analyzed.</p>
         pub fn set_num_of_reports(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_num_of_reports(input);
@@ -2519,124 +2350,150 @@ pub mod fluent_builders {
         }
         /// <p>The test report value to accumulate. This must be one of the following values:</p>
         /// <dl>
-        /// <dt>Test reports:</dt>
+        /// <dt>
+        /// Test reports:
+        /// </dt>
         /// <dd>
         /// <dl>
-        /// <dt>DURATION</dt>
+        /// <dt>
+        /// DURATION
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the test run times for the specified
-        /// reports.</p>
+        /// <p>Accumulate the test run times for the specified reports.</p>
         /// </dd>
-        /// <dt>PASS_RATE</dt>
+        /// <dt>
+        /// PASS_RATE
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the percentage of tests that passed for the
-        /// specified test reports.</p>
+        /// <p>Accumulate the percentage of tests that passed for the specified test reports.</p>
         /// </dd>
-        /// <dt>TOTAL</dt>
+        /// <dt>
+        /// TOTAL
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the total number of tests for the specified test
-        /// reports.</p>
+        /// <p>Accumulate the total number of tests for the specified test reports.</p>
         /// </dd>
         /// </dl>
         /// </dd>
         /// </dl>
         /// <dl>
-        /// <dt>Code coverage reports:</dt>
+        /// <dt>
+        /// Code coverage reports:
+        /// </dt>
         /// <dd>
         /// <dl>
-        /// <dt>BRANCH_COVERAGE</dt>
+        /// <dt>
+        /// BRANCH_COVERAGE
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the branch coverage percentages for the specified
-        /// test reports.</p>
+        /// <p>Accumulate the branch coverage percentages for the specified test reports.</p>
         /// </dd>
-        /// <dt>BRANCHES_COVERED</dt>
+        /// <dt>
+        /// BRANCHES_COVERED
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the branches covered values for the specified test
-        /// reports.</p>
+        /// <p>Accumulate the branches covered values for the specified test reports.</p>
         /// </dd>
-        /// <dt>BRANCHES_MISSED</dt>
+        /// <dt>
+        /// BRANCHES_MISSED
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the branches missed values for the specified test
-        /// reports.</p>
+        /// <p>Accumulate the branches missed values for the specified test reports.</p>
         /// </dd>
-        /// <dt>LINE_COVERAGE</dt>
+        /// <dt>
+        /// LINE_COVERAGE
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the line coverage percentages for the specified
-        /// test reports.</p>
+        /// <p>Accumulate the line coverage percentages for the specified test reports.</p>
         /// </dd>
-        /// <dt>LINES_COVERED</dt>
+        /// <dt>
+        /// LINES_COVERED
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the lines covered values for the specified test
-        /// reports.</p>
+        /// <p>Accumulate the lines covered values for the specified test reports.</p>
         /// </dd>
-        /// <dt>LINES_MISSED</dt>
+        /// <dt>
+        /// LINES_MISSED
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the lines not covered values for the specified test
-        /// reports.</p>
+        /// <p>Accumulate the lines not covered values for the specified test reports.</p>
         /// </dd>
         /// </dl>
         /// </dd>
         /// </dl>
-        pub fn trend_field(mut self, inp: crate::model::ReportGroupTrendFieldType) -> Self {
-            self.inner = self.inner.trend_field(inp);
+        pub fn trend_field(mut self, input: crate::model::ReportGroupTrendFieldType) -> Self {
+            self.inner = self.inner.trend_field(input);
             self
         }
         /// <p>The test report value to accumulate. This must be one of the following values:</p>
         /// <dl>
-        /// <dt>Test reports:</dt>
+        /// <dt>
+        /// Test reports:
+        /// </dt>
         /// <dd>
         /// <dl>
-        /// <dt>DURATION</dt>
+        /// <dt>
+        /// DURATION
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the test run times for the specified
-        /// reports.</p>
+        /// <p>Accumulate the test run times for the specified reports.</p>
         /// </dd>
-        /// <dt>PASS_RATE</dt>
+        /// <dt>
+        /// PASS_RATE
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the percentage of tests that passed for the
-        /// specified test reports.</p>
+        /// <p>Accumulate the percentage of tests that passed for the specified test reports.</p>
         /// </dd>
-        /// <dt>TOTAL</dt>
+        /// <dt>
+        /// TOTAL
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the total number of tests for the specified test
-        /// reports.</p>
+        /// <p>Accumulate the total number of tests for the specified test reports.</p>
         /// </dd>
         /// </dl>
         /// </dd>
         /// </dl>
         /// <dl>
-        /// <dt>Code coverage reports:</dt>
+        /// <dt>
+        /// Code coverage reports:
+        /// </dt>
         /// <dd>
         /// <dl>
-        /// <dt>BRANCH_COVERAGE</dt>
+        /// <dt>
+        /// BRANCH_COVERAGE
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the branch coverage percentages for the specified
-        /// test reports.</p>
+        /// <p>Accumulate the branch coverage percentages for the specified test reports.</p>
         /// </dd>
-        /// <dt>BRANCHES_COVERED</dt>
+        /// <dt>
+        /// BRANCHES_COVERED
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the branches covered values for the specified test
-        /// reports.</p>
+        /// <p>Accumulate the branches covered values for the specified test reports.</p>
         /// </dd>
-        /// <dt>BRANCHES_MISSED</dt>
+        /// <dt>
+        /// BRANCHES_MISSED
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the branches missed values for the specified test
-        /// reports.</p>
+        /// <p>Accumulate the branches missed values for the specified test reports.</p>
         /// </dd>
-        /// <dt>LINE_COVERAGE</dt>
+        /// <dt>
+        /// LINE_COVERAGE
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the line coverage percentages for the specified
-        /// test reports.</p>
+        /// <p>Accumulate the line coverage percentages for the specified test reports.</p>
         /// </dd>
-        /// <dt>LINES_COVERED</dt>
+        /// <dt>
+        /// LINES_COVERED
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the lines covered values for the specified test
-        /// reports.</p>
+        /// <p>Accumulate the lines covered values for the specified test reports.</p>
         /// </dd>
-        /// <dt>LINES_MISSED</dt>
+        /// <dt>
+        /// LINES_MISSED
+        /// </dt>
         /// <dd>
-        /// <p>Accumulate the lines not covered values for the specified test
-        /// reports.</p>
+        /// <p>Accumulate the lines not covered values for the specified test reports.</p>
         /// </dd>
         /// </dl>
         /// </dd>
@@ -2652,7 +2509,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourcePolicy`.
     ///
     /// <p> Gets a resource policy that is identified by its resource ARN. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2697,10 +2554,10 @@ pub mod fluent_builders {
                 crate::input::GetResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2709,8 +2566,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ARN of the resource that is associated with the resource policy. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The ARN of the resource that is associated with the resource policy. </p>
@@ -2721,9 +2578,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportSourceCredentials`.
     ///
-    /// <p> Imports the source repository credentials for an CodeBuild project that has its
-    /// source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Imports the source repository credentials for an CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportSourceCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2768,10 +2624,10 @@ pub mod fluent_builders {
                 crate::input::ImportSourceCredentialsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2779,33 +2635,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter
-        /// is not valid for other types of source providers or connections. </p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(inp);
+        /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
-        /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter
-        /// is not valid for other types of source providers or connections. </p>
+        /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_username(input);
             self
         }
-        /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket,
-        /// this is the app password. </p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
-        /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket,
-        /// this is the app password. </p>
+        /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_token(input);
             self
         }
         /// <p> The source provider used for this project. </p>
-        pub fn server_type(mut self, inp: crate::model::ServerType) -> Self {
-            self.inner = self.inner.server_type(inp);
+        pub fn server_type(mut self, input: crate::model::ServerType) -> Self {
+            self.inner = self.inner.server_type(input);
             self
         }
         /// <p> The source provider used for this project. </p>
@@ -2816,30 +2668,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_type(input);
             self
         }
-        /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or
-        /// Bitbucket repository. An OAUTH connection is not supported by the API and must be
-        /// created using the CodeBuild console. </p>
-        pub fn auth_type(mut self, inp: crate::model::AuthType) -> Self {
-            self.inner = self.inner.auth_type(inp);
+        /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
+        pub fn auth_type(mut self, input: crate::model::AuthType) -> Self {
+            self.inner = self.inner.auth_type(input);
             self
         }
-        /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or
-        /// Bitbucket repository. An OAUTH connection is not supported by the API and must be
-        /// created using the CodeBuild console. </p>
+        /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
         pub fn set_auth_type(mut self, input: std::option::Option<crate::model::AuthType>) -> Self {
             self.inner = self.inner.set_auth_type(input);
             self
         }
-        /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials.
-        /// Set to <code>true</code> to overwrite the repository source credentials. The default
-        /// value is <code>true</code>. </p>
-        pub fn should_overwrite(mut self, inp: bool) -> Self {
-            self.inner = self.inner.should_overwrite(inp);
+        /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
+        pub fn should_overwrite(mut self, input: bool) -> Self {
+            self.inner = self.inner.should_overwrite(input);
             self
         }
-        /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials.
-        /// Set to <code>true</code> to overwrite the repository source credentials. The default
-        /// value is <code>true</code>. </p>
+        /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
         pub fn set_should_overwrite(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_should_overwrite(input);
             self
@@ -2848,7 +2692,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `InvalidateProjectCache`.
     ///
     /// <p>Resets the cache for a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InvalidateProjectCache<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2893,10 +2737,10 @@ pub mod fluent_builders {
                 crate::input::InvalidateProjectCacheInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2905,8 +2749,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
@@ -2918,7 +2762,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBuildBatches`.
     ///
     /// <p>Retrieves the identifiers of your build batches in the current region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBuildBatches<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2963,10 +2807,10 @@ pub mod fluent_builders {
                 crate::input::ListBuildBatchesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2974,9 +2818,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBuildBatchesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBuildBatchesPaginator<C, M, R> {
+            crate::paginator::ListBuildBatchesPaginator::new(self.handle, self.inner)
+        }
         /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-        pub fn filter(mut self, inp: crate::model::BuildBatchFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::BuildBatchFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
@@ -2988,8 +2838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2999,29 +2849,17 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the sort order of the returned items. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
+        /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
         /// </ul>
-        pub fn sort_order(mut self, inp: crate::model::SortOrderType) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>Specifies the sort order of the returned items. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
+        /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
         /// </ul>
         pub fn set_sort_order(
             mut self,
@@ -3030,16 +2868,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous call to
-        /// <code>ListBuildBatches</code>. This specifies the next item to return. To return the
-        /// beginning of the list, exclude this parameter.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous call to
-        /// <code>ListBuildBatches</code>. This specifies the next item to return. To return the
-        /// beginning of the list, exclude this parameter.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3048,7 +2882,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBuildBatchesForProject`.
     ///
     /// <p>Retrieves the identifiers of the build batches for a specific project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBuildBatchesForProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3093,10 +2927,10 @@ pub mod fluent_builders {
                 crate::input::ListBuildBatchesForProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3104,9 +2938,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBuildBatchesForProjectPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListBuildBatchesForProjectPaginator<C, M, R> {
+            crate::paginator::ListBuildBatchesForProjectPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the project.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project.</p>
@@ -3115,8 +2957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-        pub fn filter(mut self, inp: crate::model::BuildBatchFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::BuildBatchFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
@@ -3128,8 +2970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -3139,33 +2981,17 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the sort order of the returned items. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: List the batch build identifiers in ascending order by
-        /// identifier.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: List the batch build identifiers in descending order
-        /// by identifier.</p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
+        /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
         /// </ul>
-        pub fn sort_order(mut self, inp: crate::model::SortOrderType) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>Specifies the sort order of the returned items. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: List the batch build identifiers in ascending order by
-        /// identifier.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: List the batch build identifiers in descending order
-        /// by identifier.</p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
+        /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
         /// </ul>
         pub fn set_sort_order(
             mut self,
@@ -3174,16 +3000,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous call to
-        /// <code>ListBuildBatchesForProject</code>. This specifies the next item to return. To return the
-        /// beginning of the list, exclude this parameter.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatchesForProject</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous call to
-        /// <code>ListBuildBatchesForProject</code>. This specifies the next item to return. To return the
-        /// beginning of the list, exclude this parameter.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatchesForProject</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3192,7 +3014,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBuilds`.
     ///
     /// <p>Gets a list of build IDs, with each build ID representing a single build.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBuilds<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3237,10 +3059,10 @@ pub mod fluent_builders {
                 crate::input::ListBuildsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3248,35 +3070,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBuildsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBuildsPaginator<C, M, R> {
+            crate::paginator::ListBuildsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The order to list build IDs. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: List the build IDs in ascending order by build
-        /// ID.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: List the build IDs in descending order by build
-        /// ID.</p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
+        /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
         /// </ul>
-        pub fn sort_order(mut self, inp: crate::model::SortOrderType) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The order to list build IDs. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: List the build IDs in ascending order by build
-        /// ID.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: List the build IDs in descending order by build
-        /// ID.</p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>
+        /// <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>
         /// </ul>
         pub fn set_sort_order(
             mut self,
@@ -3285,22 +3097,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>During a previous call, if there are more than 100 items in the list, only the first
-        /// 100 items are returned, along with a unique string called a
-        /// <i>nextToken</i>. To get the next batch of items in the list, call
-        /// this operation again, adding the next token to the call. To get all of the items in the
-        /// list, keep calling this operation with each subsequent next token that is returned,
-        /// until no more next tokens are returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>During a previous call, if there are more than 100 items in the list, only the first
-        /// 100 items are returned, along with a unique string called a
-        /// <i>nextToken</i>. To get the next batch of items in the list, call
-        /// this operation again, adding the next token to the call. To get all of the items in the
-        /// list, keep calling this operation with each subsequent next token that is returned,
-        /// until no more next tokens are returned.</p>
+        /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3308,9 +3110,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBuildsForProject`.
     ///
-    /// <p>Gets a list of build identifiers for the specified build project, with each build
-    /// identifier representing a single build.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets a list of build identifiers for the specified build project, with each build identifier representing a single build.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBuildsForProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3355,10 +3156,10 @@ pub mod fluent_builders {
                 crate::input::ListBuildsForProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3366,9 +3167,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBuildsForProjectPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBuildsForProjectPaginator<C, M, R> {
+            crate::paginator::ListBuildsForProjectPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the CodeBuild project.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the CodeBuild project.</p>
@@ -3376,40 +3183,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_name(input);
             self
         }
-        /// <p>The order to sort the results in. The results are sorted by build number, not the build
-        /// identifier. If this is not specified, the results are sorted in descending order.</p>
+        /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li>
+        /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
         /// </ul>
-        /// <p>If the project has more than 100 builds, setting the sort order will result in an
-        /// error. </p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrderType) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
+        pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>The order to sort the results in. The results are sorted by build number, not the build
-        /// identifier. If this is not specified, the results are sorted in descending order.</p>
+        /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li>
+        /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
         /// </ul>
-        /// <p>If the project has more than 100 builds, setting the sort order will result in an
-        /// error. </p>
+        /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrderType>,
@@ -3417,22 +3208,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>During a previous call, if there are more than 100 items in the list, only the first
-        /// 100 items are returned, along with a unique string called a
-        /// <i>nextToken</i>. To get the next batch of items in the list, call
-        /// this operation again, adding the next token to the call. To get all of the items in the
-        /// list, keep calling this operation with each subsequent next token that is returned,
-        /// until no more next tokens are returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>During a previous call, if there are more than 100 items in the list, only the first
-        /// 100 items are returned, along with a unique string called a
-        /// <i>nextToken</i>. To get the next batch of items in the list, call
-        /// this operation again, adding the next token to the call. To get all of the items in the
-        /// list, keep calling this operation with each subsequent next token that is returned,
-        /// until no more next tokens are returned.</p>
+        /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3441,7 +3222,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCuratedEnvironmentImages`.
     ///
     /// <p>Gets information about Docker images that are managed by CodeBuild.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCuratedEnvironmentImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3486,10 +3267,10 @@ pub mod fluent_builders {
                 crate::input::ListCuratedEnvironmentImagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3500,9 +3281,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListProjects`.
     ///
-    /// <p>Gets a list of build project names, with each build project name representing a single
-    /// build project.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets a list of build project names, with each build project name representing a single build project.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3547,10 +3327,10 @@ pub mod fluent_builders {
                 crate::input::ListProjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3558,48 +3338,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProjectsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProjectsPaginator<C, M, R> {
+            crate::paginator::ListProjectsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The criterion to be used to list build project names. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATED_TIME</code>: List based on when each build project was
-        /// created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAST_MODIFIED_TIME</code>: List based on when information about each
-        /// build project was last changed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NAME</code>: List based on each build project's name.</p>
-        /// </li>
+        /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
+        /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
+        /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
         /// </ul>
-        /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names
-        /// based on the preceding criteria.</p>
-        pub fn sort_by(mut self, inp: crate::model::ProjectSortByType) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
+        pub fn sort_by(mut self, input: crate::model::ProjectSortByType) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The criterion to be used to list build project names. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATED_TIME</code>: List based on when each build project was
-        /// created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAST_MODIFIED_TIME</code>: List based on when information about each
-        /// build project was last changed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NAME</code>: List based on each build project's name.</p>
-        /// </li>
+        /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
+        /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
+        /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
         /// </ul>
-        /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names
-        /// based on the preceding criteria.</p>
+        /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::ProjectSortByType>,
@@ -3609,34 +3371,20 @@ pub mod fluent_builders {
         }
         /// <p>The order in which to list build projects. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: List in ascending order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: List in descending order.</p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
         /// </ul>
-        /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project
-        /// names.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrderType) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
+        pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The order in which to list build projects. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: List in ascending order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: List in descending order.</p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
         /// </ul>
-        /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project
-        /// names.</p>
+        /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrderType>,
@@ -3644,22 +3392,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>During a previous call, if there are more than 100 items in the list, only the first
-        /// 100 items are returned, along with a unique string called a
-        /// <i>nextToken</i>. To get the next batch of items in the list, call
-        /// this operation again, adding the next token to the call. To get all of the items in the
-        /// list, keep calling this operation with each subsequent next token that is returned,
-        /// until no more next tokens are returned.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>During a previous call, if there are more than 100 items in the list, only the first
-        /// 100 items are returned, along with a unique string called a
-        /// <i>nextToken</i>. To get the next batch of items in the list, call
-        /// this operation again, adding the next token to the call. To get all of the items in the
-        /// list, keep calling this operation with each subsequent next token that is returned,
-        /// until no more next tokens are returned.</p>
+        /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3667,10 +3405,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListReportGroups`.
     ///
-    /// <p>
-    /// Gets a list ARNs for the report groups in the current Amazon Web Services account.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Gets a list ARNs for the report groups in the current Amazon Web Services account. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReportGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3715,10 +3451,10 @@ pub mod fluent_builders {
                 crate::input::ListReportGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3726,18 +3462,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// Used to specify the order to sort the list of returned report groups. Valid values are
-        /// <code>ASCENDING</code> and <code>DESCENDING</code>.
-        /// </p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrderType) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListReportGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListReportGroupsPaginator<C, M, R> {
+            crate::paginator::ListReportGroupsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>. </p>
+        pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>
-        /// Used to specify the order to sort the list of returned report groups. Valid values are
-        /// <code>ASCENDING</code> and <code>DESCENDING</code>.
-        /// </p>
+        /// <p> Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>. </p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrderType>,
@@ -3745,45 +3481,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>
-        /// The criterion to be used to list build report groups. Valid values include:
-        /// </p>
+        /// <p> The criterion to be used to list build report groups. Valid values include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATED_TIME</code>: List based on when each report group was
-        /// created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAST_MODIFIED_TIME</code>: List based on when each report group  was last changed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NAME</code>: List based on each report group's name.</p>
-        /// </li>
+        /// <li> <p> <code>CREATED_TIME</code>: List based on when each report group was created.</p> </li>
+        /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li>
+        /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li>
         /// </ul>
-        pub fn sort_by(mut self, inp: crate::model::ReportGroupSortByType) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::ReportGroupSortByType) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>
-        /// The criterion to be used to list build report groups. Valid values include:
-        /// </p>
+        /// <p> The criterion to be used to list build report groups. Valid values include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATED_TIME</code>: List based on when each report group was
-        /// created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAST_MODIFIED_TIME</code>: List based on when each report group  was last changed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NAME</code>: List based on each report group's name.</p>
-        /// </li>
+        /// <li> <p> <code>CREATED_TIME</code>: List based on when each report group was created.</p> </li>
+        /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li>
+        /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li>
         /// </ul>
         pub fn set_sort_by(
             mut self,
@@ -3792,40 +3504,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in
-        /// the list of returned <code>ReportGroup</code> objects. The default value is 100.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in
-        /// the list of returned <code>ReportGroup</code> objects. The default value is 100.
-        /// </p>
+        /// <p> The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3833,10 +3527,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListReports`.
     ///
-    /// <p>
-    /// Returns a list of ARNs for the reports in the current Amazon Web Services account.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of ARNs for the reports in the current Amazon Web Services account. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReports<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3881,10 +3573,10 @@ pub mod fluent_builders {
                 crate::input::ListReportsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3892,39 +3584,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// Specifies the sort order for the list of returned reports. Valid values are:
-        /// </p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListReportsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListReportsPaginator<C, M, R> {
+            crate::paginator::ListReportsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> Specifies the sort order for the list of returned reports. Valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: return reports in chronological order based on their creation date.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: return reports in chronological order based on their creation date. </p> </li>
+        /// <li> <p> <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date. </p> </li>
         /// </ul>
-        pub fn sort_order(mut self, inp: crate::model::SortOrderType) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>
-        /// Specifies the sort order for the list of returned reports. Valid values are:
-        /// </p>
+        /// <p> Specifies the sort order for the list of returned reports. Valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: return reports in chronological order based on their creation date.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: return reports in chronological order based on their creation date. </p> </li>
+        /// <li> <p> <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date. </p> </li>
         /// </ul>
         pub fn set_sort_order(
             mut self,
@@ -3933,54 +3611,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// The maximum number of paginated reports returned per response. Use <code>nextToken</code> to iterate pages in
-        /// the list of returned <code>Report</code> objects. The default value is 100.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of paginated reports returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of paginated reports returned per response. Use <code>nextToken</code> to iterate pages in
-        /// the list of returned <code>Report</code> objects. The default value is 100.
-        /// </p>
+        /// <p> The maximum number of paginated reports returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// A <code>ReportFilter</code> object used to filter the returned reports.
-        /// </p>
-        pub fn filter(mut self, inp: crate::model::ReportFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
+        pub fn filter(mut self, input: crate::model::ReportFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
-        /// <p>
-        /// A <code>ReportFilter</code> object used to filter the returned reports.
-        /// </p>
+        /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ReportFilter>,
@@ -3991,10 +3647,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListReportsForReportGroup`.
     ///
-    /// <p>
-    /// Returns a list of ARNs for the reports that belong to a <code>ReportGroup</code>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns a list of ARNs for the reports that belong to a <code>ReportGroup</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReportsForReportGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4039,10 +3693,10 @@ pub mod fluent_builders {
                 crate::input::ListReportsForReportGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4050,16 +3704,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ARN of the report group for which you want to return report ARNs.
-        /// </p>
-        pub fn report_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_group_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListReportsForReportGroupPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListReportsForReportGroupPaginator<C, M, R> {
+            crate::paginator::ListReportsForReportGroupPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The ARN of the report group for which you want to return report ARNs. </p>
+        pub fn report_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_group_arn(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the report group for which you want to return report ARNs.
-        /// </p>
+        /// <p> The ARN of the report group for which you want to return report ARNs. </p>
         pub fn set_report_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4067,38 +3725,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report_group_arn(input);
             self
         }
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// During a previous call, the maximum number of items that can be returned is the value specified in
-        /// <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i>
-        /// is returned. To get the next batch of items in the list, call this operation again, adding the next token
-        /// to the call. To get all of the items in the list, keep calling this operation with each
-        /// subsequent next token that is returned, until no more next tokens are returned.
-        /// </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>
-        /// Use to specify whether the results are returned in ascending or descending order.
-        /// </p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrderType) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        /// <p> Use to specify whether the results are returned in ascending or descending order. </p>
+        pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>
-        /// Use to specify whether the results are returned in ascending or descending order.
-        /// </p>
+        /// <p> Use to specify whether the results are returned in ascending or descending order. </p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrderType>,
@@ -4106,32 +3748,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>
-        /// The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in
-        /// the list of returned <code>Report</code> objects. The default value is 100.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in
-        /// the list of returned <code>Report</code> objects. The default value is 100.
-        /// </p>
+        /// <p> The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// A <code>ReportFilter</code> object used to filter the returned reports.
-        /// </p>
-        pub fn filter(mut self, inp: crate::model::ReportFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
+        pub fn filter(mut self, input: crate::model::ReportFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
-        /// <p>
-        /// A <code>ReportFilter</code> object used to filter the returned reports.
-        /// </p>
+        /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ReportFilter>,
@@ -4143,7 +3775,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSharedProjects`.
     ///
     /// <p> Gets a list of projects that are shared with other Amazon Web Services accounts or users. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSharedProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4188,10 +3820,10 @@ pub mod fluent_builders {
                 crate::input::ListSharedProjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4199,35 +3831,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account
-        /// or user. Valid values include: </p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSharedProjectsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSharedProjectsPaginator<C, M, R> {
+            crate::paginator::ListSharedProjectsPaginator::new(self.handle, self.inner)
+        }
+        /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ARN</code>: List based on the ARN. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFIED_TIME</code>: List based on when information about the shared
-        /// project was last changed. </p>
-        /// </li>
+        /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
+        /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
         /// </ul>
-        pub fn sort_by(mut self, inp: crate::model::SharedResourceSortByType) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SharedResourceSortByType) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account
-        /// or user. Valid values include: </p>
+        /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ARN</code>: List based on the ARN. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFIED_TIME</code>: List based on when information about the shared
-        /// project was last changed. </p>
-        /// </li>
+        /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
+        /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
         /// </ul>
         pub fn set_sort_by(
             mut self,
@@ -4238,29 +3860,17 @@ pub mod fluent_builders {
         }
         /// <p>The order in which to list shared build projects. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: List in ascending order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: List in descending order.</p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
         /// </ul>
-        pub fn sort_order(mut self, inp: crate::model::SortOrderType) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The order in which to list shared build projects. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: List in ascending order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: List in descending order.</p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
         /// </ul>
         pub fn set_sort_order(
             mut self,
@@ -4269,36 +3879,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p> The maximum number of paginated shared build projects returned per response. Use
-        /// <code>nextToken</code> to iterate pages in the list of returned <code>Project</code>
-        /// objects. The default value is 100. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p> The maximum number of paginated shared build projects returned per response. Use
-        /// <code>nextToken</code> to iterate pages in the list of returned <code>Project</code>
-        /// objects. The default value is 100. </p>
+        /// <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p> During a previous call, the maximum number of items that can be returned is the value
-        /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-        /// string called a <i>nextToken</i> is returned. To get the next batch of
-        /// items in the list, call this operation again, adding the next token to the call. To get
-        /// all of the items in the list, keep calling this operation with each subsequent next
-        /// token that is returned, until no more next tokens are returned. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> During a previous call, the maximum number of items that can be returned is the value
-        /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-        /// string called a <i>nextToken</i> is returned. To get the next batch of
-        /// items in the list, call this operation again, adding the next token to the call. To get
-        /// all of the items in the list, keep calling this operation with each subsequent next
-        /// token that is returned, until no more next tokens are returned. </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4306,9 +3902,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSharedReportGroups`.
     ///
-    /// <p> Gets a list of report groups that are shared with other Amazon Web Services accounts or users.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Gets a list of report groups that are shared with other Amazon Web Services accounts or users. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSharedReportGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4353,10 +3948,10 @@ pub mod fluent_builders {
                 crate::input::ListSharedReportGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4364,31 +3959,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSharedReportGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSharedReportGroupsPaginator<C, M, R> {
+            crate::paginator::ListSharedReportGroupsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The order in which to list shared report groups. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: List in ascending order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: List in descending order.</p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
         /// </ul>
-        pub fn sort_order(mut self, inp: crate::model::SortOrderType) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The order in which to list shared report groups. Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASCENDING</code>: List in ascending order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DESCENDING</code>: List in descending order.</p>
-        /// </li>
+        /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+        /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
         /// </ul>
         pub fn set_sort_order(
             mut self,
@@ -4397,35 +3986,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or
-        /// user. Valid values include: </p>
+        /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ARN</code>: List based on the ARN. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFIED_TIME</code>: List based on when information about the shared
-        /// report group was last changed. </p>
-        /// </li>
+        /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
+        /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li>
         /// </ul>
-        pub fn sort_by(mut self, inp: crate::model::SharedResourceSortByType) -> Self {
-            self.inner = self.inner.sort_by(inp);
+        pub fn sort_by(mut self, input: crate::model::SharedResourceSortByType) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or
-        /// user. Valid values include: </p>
+        /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ARN</code>: List based on the ARN. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFIED_TIME</code>: List based on when information about the shared
-        /// report group was last changed. </p>
-        /// </li>
+        /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
+        /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li>
         /// </ul>
         pub fn set_sort_by(
             mut self,
@@ -4434,36 +4007,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p> During a previous call, the maximum number of items that can be returned is the value
-        /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-        /// string called a <i>nextToken</i> is returned. To get the next batch of
-        /// items in the list, call this operation again, adding the next token to the call. To get
-        /// all of the items in the list, keep calling this operation with each subsequent next
-        /// token that is returned, until no more next tokens are returned. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> During a previous call, the maximum number of items that can be returned is the value
-        /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-        /// string called a <i>nextToken</i> is returned. To get the next batch of
-        /// items in the list, call this operation again, adding the next token to the call. To get
-        /// all of the items in the list, keep calling this operation with each subsequent next
-        /// token that is returned, until no more next tokens are returned. </p>
+        /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p> The maximum number of paginated shared report groups per response. Use
-        /// <code>nextToken</code> to iterate pages in the list of returned
-        /// <code>ReportGroup</code> objects. The default value is 100. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p> The maximum number of paginated shared report groups per response. Use
-        /// <code>nextToken</code> to iterate pages in the list of returned
-        /// <code>ReportGroup</code> objects. The default value is 100. </p>
+        /// <p> The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4472,7 +4031,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSourceCredentials`.
     ///
     /// <p> Returns a list of <code>SourceCredentialsInfo</code> objects. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSourceCredentials<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4517,10 +4076,10 @@ pub mod fluent_builders {
                 crate::input::ListSourceCredentialsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4531,9 +4090,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutResourcePolicy`.
     ///
-    /// <p> Stores a resource policy for the ARN of a <code>Project</code> or
-    /// <code>ReportGroup</code> object. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Stores a resource policy for the ARN of a <code>Project</code> or <code>ReportGroup</code> object. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4578,10 +4136,10 @@ pub mod fluent_builders {
                 crate::input::PutResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4589,28 +4147,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> A JSON-formatted resource policy. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
-        /// a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>.
-        /// </p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        /// <p> A JSON-formatted resource policy. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
-        /// <p> A JSON-formatted resource policy. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
-        /// a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>.
-        /// </p>
+        /// <p> A JSON-formatted resource policy. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy(input);
             self
         }
-        /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource you want to
-        /// associate with a resource policy. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource you want to associate with a resource policy. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource you want to
-        /// associate with a resource policy. </p>
+        /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource you want to associate with a resource policy. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4619,7 +4171,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RetryBuild`.
     ///
     /// <p>Restarts a build.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RetryBuild<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4664,10 +4216,10 @@ pub mod fluent_builders {
                 crate::input::RetryBuildInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4676,8 +4228,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the identifier of the build to restart.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>Specifies the identifier of the build to restart.</p>
@@ -4685,20 +4237,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
-        /// <code>RetryBuild</code> request. The token is included in the
-        /// <code>RetryBuild</code> request and is valid for five minutes. If you repeat
-        /// the <code>RetryBuild</code> request with the same token, but change a parameter,
-        /// CodeBuild returns a parameter mismatch error.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code> request. The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
-        /// <code>RetryBuild</code> request. The token is included in the
-        /// <code>RetryBuild</code> request and is valid for five minutes. If you repeat
-        /// the <code>RetryBuild</code> request with the same token, but change a parameter,
-        /// CodeBuild returns a parameter mismatch error.</p>
+        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code> request. The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4710,7 +4254,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RetryBuildBatch`.
     ///
     /// <p>Restarts a failed batch build. Only batch builds that have failed can be retried.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RetryBuildBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4755,10 +4299,10 @@ pub mod fluent_builders {
                 crate::input::RetryBuildBatchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4767,8 +4311,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the identifier of the batch build to restart.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>Specifies the identifier of the batch build to restart.</p>
@@ -4776,20 +4320,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
-        /// <code>RetryBuildBatch</code> request. The token is included in the
-        /// <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat
-        /// the <code>RetryBuildBatch</code> request with the same token, but change a parameter,
-        /// CodeBuild returns a parameter mismatch error.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuildBatch</code> request. The token is included in the <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
-        /// <code>RetryBuildBatch</code> request. The token is included in the
-        /// <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat
-        /// the <code>RetryBuildBatch</code> request with the same token, but change a parameter,
-        /// CodeBuild returns a parameter mismatch error.</p>
+        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuildBatch</code> request. The token is included in the <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4798,8 +4334,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the type of retry to perform.</p>
-        pub fn retry_type(mut self, inp: crate::model::RetryBuildBatchType) -> Self {
-            self.inner = self.inner.retry_type(inp);
+        pub fn retry_type(mut self, input: crate::model::RetryBuildBatchType) -> Self {
+            self.inner = self.inner.retry_type(input);
             self
         }
         /// <p>Specifies the type of retry to perform.</p>
@@ -4814,7 +4350,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartBuild`.
     ///
     /// <p>Starts running a build.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartBuild<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4859,10 +4395,10 @@ pub mod fluent_builders {
                 crate::input::StartBuildInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4871,8 +4407,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the CodeBuild build project to start running a build.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the CodeBuild build project to start running a build.</p>
@@ -4885,11 +4421,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_secondary_sources_override`](Self::set_secondary_sources_override).
         ///
         /// <p> An array of <code>ProjectSource</code> objects. </p>
-        pub fn secondary_sources_override(
-            mut self,
-            inp: impl Into<crate::model::ProjectSource>,
-        ) -> Self {
-            self.inner = self.inner.secondary_sources_override(inp);
+        pub fn secondary_sources_override(mut self, input: crate::model::ProjectSource) -> Self {
+            self.inner = self.inner.secondary_sources_override(input);
             self
         }
         /// <p> An array of <code>ProjectSource</code> objects. </p>
@@ -4904,17 +4437,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_secondary_sources_version_override`](Self::set_secondary_sources_version_override).
         ///
-        /// <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more
-        /// versions of the project's secondary sources to be used for this build only. </p>
+        /// <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's secondary sources to be used for this build only. </p>
         pub fn secondary_sources_version_override(
             mut self,
-            inp: impl Into<crate::model::ProjectSourceVersion>,
+            input: crate::model::ProjectSourceVersion,
         ) -> Self {
-            self.inner = self.inner.secondary_sources_version_override(inp);
+            self.inner = self.inner.secondary_sources_version_override(input);
             self
         }
-        /// <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more
-        /// versions of the project's secondary sources to be used for this build only. </p>
+        /// <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's secondary sources to be used for this build only. </p>
         pub fn set_secondary_sources_version_override(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
@@ -4922,78 +4453,68 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secondary_sources_version_override(input);
             self
         }
-        /// <p>The version of the build input to be built, for this build only. If not specified,
-        /// the latest version is used. If specified, the contents depends on the source
-        /// provider:</p>
+        /// <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
         /// <dl>
-        /// <dt>CodeCommit</dt>
+        /// <dt>
+        /// CodeCommit
+        /// </dt>
         /// <dd>
         /// <p>The commit ID, branch, or Git tag to use.</p>
         /// </dd>
-        /// <dt>GitHub</dt>
+        /// <dt>
+        /// GitHub
+        /// </dt>
         /// <dd>
-        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds
-        /// to the version of the source code you want to build. If a pull request ID is
-        /// specified, it must use the format <code>pr/pull-request-ID</code> (for
-        /// example <code>pr/25</code>). If a branch name is specified, the branch's
-        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit
-        /// ID is used.</p>
+        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
         /// </dd>
-        /// <dt>Bitbucket</dt>
+        /// <dt>
+        /// Bitbucket
+        /// </dt>
         /// <dd>
-        /// <p>The commit ID, branch name, or tag name that corresponds to the version of
-        /// the source code you want to build. If a branch name is specified, the
-        /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
-        /// commit ID is used.</p>
+        /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
         /// </dd>
-        /// <dt>Amazon S3</dt>
+        /// <dt>
+        /// Amazon S3
+        /// </dt>
         /// <dd>
-        /// <p>The version ID of the object that represents the build input ZIP file to
-        /// use.</p>
+        /// <p>The version ID of the object that represents the build input ZIP file to use.</p>
         /// </dd>
         /// </dl>
-        /// <p>If <code>sourceVersion</code> is specified at the project level, then this
-        /// <code>sourceVersion</code> (at the build level) takes precedence. </p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-        pub fn source_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_version(inp);
+        /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+        pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_version(input.into());
             self
         }
-        /// <p>The version of the build input to be built, for this build only. If not specified,
-        /// the latest version is used. If specified, the contents depends on the source
-        /// provider:</p>
+        /// <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
         /// <dl>
-        /// <dt>CodeCommit</dt>
+        /// <dt>
+        /// CodeCommit
+        /// </dt>
         /// <dd>
         /// <p>The commit ID, branch, or Git tag to use.</p>
         /// </dd>
-        /// <dt>GitHub</dt>
+        /// <dt>
+        /// GitHub
+        /// </dt>
         /// <dd>
-        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds
-        /// to the version of the source code you want to build. If a pull request ID is
-        /// specified, it must use the format <code>pr/pull-request-ID</code> (for
-        /// example <code>pr/25</code>). If a branch name is specified, the branch's
-        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit
-        /// ID is used.</p>
+        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
         /// </dd>
-        /// <dt>Bitbucket</dt>
+        /// <dt>
+        /// Bitbucket
+        /// </dt>
         /// <dd>
-        /// <p>The commit ID, branch name, or tag name that corresponds to the version of
-        /// the source code you want to build. If a branch name is specified, the
-        /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
-        /// commit ID is used.</p>
+        /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
         /// </dd>
-        /// <dt>Amazon S3</dt>
+        /// <dt>
+        /// Amazon S3
+        /// </dt>
         /// <dd>
-        /// <p>The version ID of the object that represents the build input ZIP file to
-        /// use.</p>
+        /// <p>The version ID of the object that represents the build input ZIP file to use.</p>
         /// </dd>
         /// </dl>
-        /// <p>If <code>sourceVersion</code> is specified at the project level, then this
-        /// <code>sourceVersion</code> (at the build level) takes precedence. </p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+        /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn set_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5001,14 +4522,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_version(input);
             self
         }
-        /// <p>Build output artifact settings that override, for this build only, the latest ones
-        /// already defined in the build project.</p>
-        pub fn artifacts_override(mut self, inp: crate::model::ProjectArtifacts) -> Self {
-            self.inner = self.inner.artifacts_override(inp);
+        /// <p>Build output artifact settings that override, for this build only, the latest ones already defined in the build project.</p>
+        pub fn artifacts_override(mut self, input: crate::model::ProjectArtifacts) -> Self {
+            self.inner = self.inner.artifacts_override(input);
             self
         }
-        /// <p>Build output artifact settings that override, for this build only, the latest ones
-        /// already defined in the build project.</p>
+        /// <p>Build output artifact settings that override, for this build only, the latest ones already defined in the build project.</p>
         pub fn set_artifacts_override(
             mut self,
             input: std::option::Option<crate::model::ProjectArtifacts>,
@@ -5023,9 +4542,9 @@ pub mod fluent_builders {
         /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
         pub fn secondary_artifacts_override(
             mut self,
-            inp: impl Into<crate::model::ProjectArtifacts>,
+            input: crate::model::ProjectArtifacts,
         ) -> Self {
-            self.inner = self.inner.secondary_artifacts_override(inp);
+            self.inner = self.inner.secondary_artifacts_override(input);
             self
         }
         /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
@@ -5040,17 +4559,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_environment_variables_override`](Self::set_environment_variables_override).
         ///
-        /// <p>A set of environment variables that overrides, for this build only, the latest ones
-        /// already defined in the build project.</p>
+        /// <p>A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.</p>
         pub fn environment_variables_override(
             mut self,
-            inp: impl Into<crate::model::EnvironmentVariable>,
+            input: crate::model::EnvironmentVariable,
         ) -> Self {
-            self.inner = self.inner.environment_variables_override(inp);
+            self.inner = self.inner.environment_variables_override(input);
             self
         }
-        /// <p>A set of environment variables that overrides, for this build only, the latest ones
-        /// already defined in the build project.</p>
+        /// <p>A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.</p>
         pub fn set_environment_variables_override(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
@@ -5058,14 +4575,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_variables_override(input);
             self
         }
-        /// <p>A source input type, for this build, that overrides the source input defined in the
-        /// build project.</p>
-        pub fn source_type_override(mut self, inp: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type_override(inp);
+        /// <p>A source input type, for this build, that overrides the source input defined in the build project.</p>
+        pub fn source_type_override(mut self, input: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source_type_override(input);
             self
         }
-        /// <p>A source input type, for this build, that overrides the source input defined in the
-        /// build project.</p>
+        /// <p>A source input type, for this build, that overrides the source input defined in the build project.</p>
         pub fn set_source_type_override(
             mut self,
             input: std::option::Option<crate::model::SourceType>,
@@ -5073,14 +4588,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_type_override(input);
             self
         }
-        /// <p>A location that overrides, for this build, the source location for the one defined in
-        /// the build project.</p>
-        pub fn source_location_override(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_override(inp);
+        /// <p>A location that overrides, for this build, the source location for the one defined in the build project.</p>
+        pub fn source_location_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_override(input.into());
             self
         }
-        /// <p>A location that overrides, for this build, the source location for the one defined in
-        /// the build project.</p>
+        /// <p>A location that overrides, for this build, the source location for the one defined in the build project.</p>
         pub fn set_source_location_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5088,16 +4601,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_location_override(input);
             self
         }
-        /// <p>An authorization type for this build that overrides the one defined in the build
-        /// project. This override applies only if the build project's source is BitBucket or
-        /// GitHub.</p>
-        pub fn source_auth_override(mut self, inp: crate::model::SourceAuth) -> Self {
-            self.inner = self.inner.source_auth_override(inp);
+        /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
+        pub fn source_auth_override(mut self, input: crate::model::SourceAuth) -> Self {
+            self.inner = self.inner.source_auth_override(input);
             self
         }
-        /// <p>An authorization type for this build that overrides the one defined in the build
-        /// project. This override applies only if the build project's source is BitBucket or
-        /// GitHub.</p>
+        /// <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
         pub fn set_source_auth_override(
             mut self,
             input: std::option::Option<crate::model::SourceAuth>,
@@ -5105,29 +4614,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_auth_override(input);
             self
         }
-        /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this
-        /// build only, any previous depth of history defined in the build project.</p>
-        pub fn git_clone_depth_override(mut self, inp: i32) -> Self {
-            self.inner = self.inner.git_clone_depth_override(inp);
+        /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous depth of history defined in the build project.</p>
+        pub fn git_clone_depth_override(mut self, input: i32) -> Self {
+            self.inner = self.inner.git_clone_depth_override(input);
             self
         }
-        /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this
-        /// build only, any previous depth of history defined in the build project.</p>
+        /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous depth of history defined in the build project.</p>
         pub fn set_git_clone_depth_override(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_git_clone_depth_override(input);
             self
         }
-        /// <p> Information about the Git submodules configuration for this build of an CodeBuild build
-        /// project. </p>
+        /// <p> Information about the Git submodules configuration for this build of an CodeBuild build project. </p>
         pub fn git_submodules_config_override(
             mut self,
-            inp: crate::model::GitSubmodulesConfig,
+            input: crate::model::GitSubmodulesConfig,
         ) -> Self {
-            self.inner = self.inner.git_submodules_config_override(inp);
+            self.inner = self.inner.git_submodules_config_override(input);
             self
         }
-        /// <p> Information about the Git submodules configuration for this build of an CodeBuild build
-        /// project. </p>
+        /// <p> Information about the Git submodules configuration for this build of an CodeBuild build project. </p>
         pub fn set_git_submodules_config_override(
             mut self,
             input: std::option::Option<crate::model::GitSubmodulesConfig>,
@@ -5135,30 +4640,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_git_submodules_config_override(input);
             self
         }
-        /// <p>A buildspec file declaration that overrides, for this build only, the latest one
-        /// already defined in the build project.</p>
-        /// <p> If this value is set, it can be either an inline buildspec definition, the path to an
-        /// alternate buildspec file relative to the value of the built-in
-        /// <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket.
-        /// The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec
-        /// file using its ARN (for example,
-        /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
-        /// provided or is set to an empty string, the source code must contain a buildspec file in
-        /// its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
-        pub fn buildspec_override(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.buildspec_override(inp);
+        /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
+        /// <p> If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
+        pub fn buildspec_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.buildspec_override(input.into());
             self
         }
-        /// <p>A buildspec file declaration that overrides, for this build only, the latest one
-        /// already defined in the build project.</p>
-        /// <p> If this value is set, it can be either an inline buildspec definition, the path to an
-        /// alternate buildspec file relative to the value of the built-in
-        /// <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket.
-        /// The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec
-        /// file using its ARN (for example,
-        /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
-        /// provided or is set to an empty string, the source code must contain a buildspec file in
-        /// its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
+        /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
+        /// <p> If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
         pub fn set_buildspec_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5166,43 +4655,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_buildspec_override(input);
             self
         }
-        /// <p>Enable this flag to override the insecure SSL setting that is specified in the build
-        /// project. The insecure SSL setting determines whether to ignore SSL warnings while
-        /// connecting to the project source code. This override applies only if the build's source
-        /// is GitHub Enterprise.</p>
-        pub fn insecure_ssl_override(mut self, inp: bool) -> Self {
-            self.inner = self.inner.insecure_ssl_override(inp);
+        /// <p>Enable this flag to override the insecure SSL setting that is specified in the build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
+        pub fn insecure_ssl_override(mut self, input: bool) -> Self {
+            self.inner = self.inner.insecure_ssl_override(input);
             self
         }
-        /// <p>Enable this flag to override the insecure SSL setting that is specified in the build
-        /// project. The insecure SSL setting determines whether to ignore SSL warnings while
-        /// connecting to the project source code. This override applies only if the build's source
-        /// is GitHub Enterprise.</p>
+        /// <p>Enable this flag to override the insecure SSL setting that is specified in the build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
         pub fn set_insecure_ssl_override(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_insecure_ssl_override(input);
             self
         }
-        /// <p> Set to true to report to your source provider the status of a build's start and
-        /// completion. If you use this option with a source provider other than GitHub, GitHub
-        /// Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
-        /// <p>To be able to report the build status to the source provider, the user associated with the source provider must
-        /// have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
-        /// <note>
-        /// <p> The status of a build triggered by a webhook is always reported to your source
-        /// provider. </p>
+        /// <p> Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
+        /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p> <note>
+        /// <p> The status of a build triggered by a webhook is always reported to your source provider. </p>
         /// </note>
-        pub fn report_build_status_override(mut self, inp: bool) -> Self {
-            self.inner = self.inner.report_build_status_override(inp);
+        pub fn report_build_status_override(mut self, input: bool) -> Self {
+            self.inner = self.inner.report_build_status_override(input);
             self
         }
-        /// <p> Set to true to report to your source provider the status of a build's start and
-        /// completion. If you use this option with a source provider other than GitHub, GitHub
-        /// Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
-        /// <p>To be able to report the build status to the source provider, the user associated with the source provider must
-        /// have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
-        /// <note>
-        /// <p> The status of a build triggered by a webhook is always reported to your source
-        /// provider. </p>
+        /// <p> Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
+        /// <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p> <note>
+        /// <p> The status of a build triggered by a webhook is always reported to your source provider. </p>
         /// </note>
         pub fn set_report_build_status_override(
             mut self,
@@ -5211,21 +4684,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report_build_status_override(input);
             self
         }
-        /// <p>Contains information that defines how the build project reports the build status to
-        /// the source provider. This option is only used when the source provider is
-        /// <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
-        /// <code>BITBUCKET</code>.</p>
+        /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
         pub fn build_status_config_override(
             mut self,
-            inp: crate::model::BuildStatusConfig,
+            input: crate::model::BuildStatusConfig,
         ) -> Self {
-            self.inner = self.inner.build_status_config_override(inp);
+            self.inner = self.inner.build_status_config_override(input);
             self
         }
-        /// <p>Contains information that defines how the build project reports the build status to
-        /// the source provider. This option is only used when the source provider is
-        /// <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
-        /// <code>BITBUCKET</code>.</p>
+        /// <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
         pub fn set_build_status_config_override(
             mut self,
             input: std::option::Option<crate::model::BuildStatusConfig>,
@@ -5233,14 +4700,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_build_status_config_override(input);
             self
         }
-        /// <p>A container type for this build that overrides the one specified in the build
-        /// project.</p>
-        pub fn environment_type_override(mut self, inp: crate::model::EnvironmentType) -> Self {
-            self.inner = self.inner.environment_type_override(inp);
+        /// <p>A container type for this build that overrides the one specified in the build project.</p>
+        pub fn environment_type_override(mut self, input: crate::model::EnvironmentType) -> Self {
+            self.inner = self.inner.environment_type_override(input);
             self
         }
-        /// <p>A container type for this build that overrides the one specified in the build
-        /// project.</p>
+        /// <p>A container type for this build that overrides the one specified in the build project.</p>
         pub fn set_environment_type_override(
             mut self,
             input: std::option::Option<crate::model::EnvironmentType>,
@@ -5248,14 +4713,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_type_override(input);
             self
         }
-        /// <p>The name of an image for this build that overrides the one specified in the build
-        /// project.</p>
-        pub fn image_override(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_override(inp);
+        /// <p>The name of an image for this build that overrides the one specified in the build project.</p>
+        pub fn image_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_override(input.into());
             self
         }
-        /// <p>The name of an image for this build that overrides the one specified in the build
-        /// project.</p>
+        /// <p>The name of an image for this build that overrides the one specified in the build project.</p>
         pub fn set_image_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5263,14 +4726,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_override(input);
             self
         }
-        /// <p>The name of a compute type for this build that overrides the one specified in the
-        /// build project.</p>
-        pub fn compute_type_override(mut self, inp: crate::model::ComputeType) -> Self {
-            self.inner = self.inner.compute_type_override(inp);
+        /// <p>The name of a compute type for this build that overrides the one specified in the build project.</p>
+        pub fn compute_type_override(mut self, input: crate::model::ComputeType) -> Self {
+            self.inner = self.inner.compute_type_override(input);
             self
         }
-        /// <p>The name of a compute type for this build that overrides the one specified in the
-        /// build project.</p>
+        /// <p>The name of a compute type for this build that overrides the one specified in the build project.</p>
         pub fn set_compute_type_override(
             mut self,
             input: std::option::Option<crate::model::ComputeType>,
@@ -5278,14 +4739,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compute_type_override(input);
             self
         }
-        /// <p>The name of a certificate for this build that overrides the one specified in the build
-        /// project.</p>
-        pub fn certificate_override(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_override(inp);
+        /// <p>The name of a certificate for this build that overrides the one specified in the build project.</p>
+        pub fn certificate_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_override(input.into());
             self
         }
-        /// <p>The name of a certificate for this build that overrides the one specified in the build
-        /// project.</p>
+        /// <p>The name of a certificate for this build that overrides the one specified in the build project.</p>
         pub fn set_certificate_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5293,14 +4752,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_override(input);
             self
         }
-        /// <p>A ProjectCache object specified for this build that overrides the one defined in the
-        /// build project.</p>
-        pub fn cache_override(mut self, inp: crate::model::ProjectCache) -> Self {
-            self.inner = self.inner.cache_override(inp);
+        /// <p>A ProjectCache object specified for this build that overrides the one defined in the build project.</p>
+        pub fn cache_override(mut self, input: crate::model::ProjectCache) -> Self {
+            self.inner = self.inner.cache_override(input);
             self
         }
-        /// <p>A ProjectCache object specified for this build that overrides the one defined in the
-        /// build project.</p>
+        /// <p>A ProjectCache object specified for this build that overrides the one defined in the build project.</p>
         pub fn set_cache_override(
             mut self,
             input: std::option::Option<crate::model::ProjectCache>,
@@ -5308,14 +4765,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cache_override(input);
             self
         }
-        /// <p>The name of a service role for this build that overrides the one specified in the
-        /// build project.</p>
-        pub fn service_role_override(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_override(inp);
+        /// <p>The name of a service role for this build that overrides the one specified in the build project.</p>
+        pub fn service_role_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_override(input.into());
             self
         }
-        /// <p>The name of a service role for this build that overrides the one specified in the
-        /// build project.</p>
+        /// <p>The name of a service role for this build that overrides the one specified in the build project.</p>
         pub fn set_service_role_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5324,8 +4779,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enable this flag to override privileged mode in the build project.</p>
-        pub fn privileged_mode_override(mut self, inp: bool) -> Self {
-            self.inner = self.inner.privileged_mode_override(inp);
+        pub fn privileged_mode_override(mut self, input: bool) -> Self {
+            self.inner = self.inner.privileged_mode_override(input);
             self
         }
         /// <p>Enable this flag to override privileged mode in the build project.</p>
@@ -5333,21 +4788,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_privileged_mode_override(input);
             self
         }
-        /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this
-        /// build only, the latest setting already defined in the build project.</p>
-        pub fn timeout_in_minutes_override(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout_in_minutes_override(inp);
+        /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
+        pub fn timeout_in_minutes_override(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout_in_minutes_override(input);
             self
         }
-        /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this
-        /// build only, the latest setting already defined in the build project.</p>
+        /// <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
         pub fn set_timeout_in_minutes_override(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout_in_minutes_override(input);
             self
         }
         /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
-        pub fn queued_timeout_in_minutes_override(mut self, inp: i32) -> Self {
-            self.inner = self.inner.queued_timeout_in_minutes_override(inp);
+        pub fn queued_timeout_in_minutes_override(mut self, input: i32) -> Self {
+            self.inner = self.inner.queued_timeout_in_minutes_override(input);
             self
         }
         /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
@@ -5358,26 +4811,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_queued_timeout_in_minutes_override(input);
             self
         }
-        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build
-        /// project. The CMK key encrypts the build output artifacts.</p>
-        /// <note>
-        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your
-        /// service role has permission to that key. </p>
+        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.</p> <note>
+        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
         /// </note>
-        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
-        /// the format <code>alias/<alias-name></code>).</p>
-        pub fn encryption_key_override(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key_override(inp);
+        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
+        /// <alias-name></alias-name></code>).</p>
+        pub fn encryption_key_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key_override(input.into());
             self
         }
-        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build
-        /// project. The CMK key encrypts the build output artifacts.</p>
-        /// <note>
-        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your
-        /// service role has permission to that key. </p>
+        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.</p> <note>
+        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
         /// </note>
-        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
-        /// the format <code>alias/<alias-name></code>).</p>
+        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
+        /// <alias-name></alias-name></code>).</p>
         pub fn set_encryption_key_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5385,18 +4832,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_key_override(input);
             self
         }
-        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
-        /// StartBuild request. The token is included in the StartBuild request and is valid for 5
-        /// minutes. If you repeat the StartBuild request with the same token, but change a
-        /// parameter, CodeBuild returns a parameter mismatch error. </p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error. </p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
-        /// StartBuild request. The token is included in the StartBuild request and is valid for 5
-        /// minutes. If you repeat the StartBuild request with the same token, but change a
-        /// parameter, CodeBuild returns a parameter mismatch error. </p>
+        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error. </p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5404,14 +4845,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_idempotency_token(input);
             self
         }
-        /// <p> Log settings for this build that override the log settings defined in the build
-        /// project. </p>
-        pub fn logs_config_override(mut self, inp: crate::model::LogsConfig) -> Self {
-            self.inner = self.inner.logs_config_override(inp);
+        /// <p> Log settings for this build that override the log settings defined in the build project. </p>
+        pub fn logs_config_override(mut self, input: crate::model::LogsConfig) -> Self {
+            self.inner = self.inner.logs_config_override(input);
             self
         }
-        /// <p> Log settings for this build that override the log settings defined in the build
-        /// project. </p>
+        /// <p> Log settings for this build that override the log settings defined in the build project. </p>
         pub fn set_logs_config_override(
             mut self,
             input: std::option::Option<crate::model::LogsConfig>,
@@ -5422,9 +4861,9 @@ pub mod fluent_builders {
         /// <p> The credentials for access to a private registry. </p>
         pub fn registry_credential_override(
             mut self,
-            inp: crate::model::RegistryCredential,
+            input: crate::model::RegistryCredential,
         ) -> Self {
-            self.inner = self.inner.registry_credential_override(inp);
+            self.inner = self.inner.registry_credential_override(input);
             self
         }
         /// <p> The credentials for access to a private registry. </p>
@@ -5435,45 +4874,45 @@ pub mod fluent_builders {
             self.inner = self.inner.set_registry_credential_override(input);
             self
         }
-        /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid
-        /// values: </p>
+        /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
         /// <dl>
-        /// <dt>CODEBUILD</dt>
+        /// <dt>
+        /// CODEBUILD
+        /// </dt>
         /// <dd>
-        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you
-        /// modify your ECR repository policy to trust CodeBuild's service principal.</p>
+        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>
         /// </dd>
-        /// <dt>SERVICE_ROLE</dt>
+        /// <dt>
+        /// SERVICE_ROLE
+        /// </dt>
         /// <dd>
         /// <p>Specifies that CodeBuild uses your build project's service role. </p>
         /// </dd>
         /// </dl>
-        /// <p>When using a cross-account or private registry image, you must use
-        /// <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image,
-        /// you must use <code>CODEBUILD</code> credentials. </p>
+        /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
         pub fn image_pull_credentials_type_override(
             mut self,
-            inp: crate::model::ImagePullCredentialsType,
+            input: crate::model::ImagePullCredentialsType,
         ) -> Self {
-            self.inner = self.inner.image_pull_credentials_type_override(inp);
+            self.inner = self.inner.image_pull_credentials_type_override(input);
             self
         }
-        /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid
-        /// values: </p>
+        /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>
         /// <dl>
-        /// <dt>CODEBUILD</dt>
+        /// <dt>
+        /// CODEBUILD
+        /// </dt>
         /// <dd>
-        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you
-        /// modify your ECR repository policy to trust CodeBuild's service principal.</p>
+        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>
         /// </dd>
-        /// <dt>SERVICE_ROLE</dt>
+        /// <dt>
+        /// SERVICE_ROLE
+        /// </dt>
         /// <dd>
         /// <p>Specifies that CodeBuild uses your build project's service role. </p>
         /// </dd>
         /// </dl>
-        /// <p>When using a cross-account or private registry image, you must use
-        /// <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image,
-        /// you must use <code>CODEBUILD</code> credentials. </p>
+        /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
         pub fn set_image_pull_credentials_type_override(
             mut self,
             input: std::option::Option<crate::model::ImagePullCredentialsType>,
@@ -5481,14 +4920,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_pull_credentials_type_override(input);
             self
         }
-        /// <p>Specifies if session debugging is enabled for this build. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
-        pub fn debug_session_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.debug_session_enabled(inp);
+        /// <p>Specifies if session debugging is enabled for this build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
+        pub fn debug_session_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.debug_session_enabled(input);
             self
         }
-        /// <p>Specifies if session debugging is enabled for this build. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
+        /// <p>Specifies if session debugging is enabled for this build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
         pub fn set_debug_session_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_debug_session_enabled(input);
             self
@@ -5497,7 +4934,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartBuildBatch`.
     ///
     /// <p>Starts a batch build for a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartBuildBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5542,10 +4979,10 @@ pub mod fluent_builders {
                 crate::input::StartBuildBatchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5554,8 +4991,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project.</p>
@@ -5567,17 +5004,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_secondary_sources_override`](Self::set_secondary_sources_override).
         ///
-        /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources
-        /// defined in the batch build project.</p>
-        pub fn secondary_sources_override(
-            mut self,
-            inp: impl Into<crate::model::ProjectSource>,
-        ) -> Self {
-            self.inner = self.inner.secondary_sources_override(inp);
+        /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources defined in the batch build project.</p>
+        pub fn secondary_sources_override(mut self, input: crate::model::ProjectSource) -> Self {
+            self.inner = self.inner.secondary_sources_override(input);
             self
         }
-        /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources
-        /// defined in the batch build project.</p>
+        /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources defined in the batch build project.</p>
         pub fn set_secondary_sources_override(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
@@ -5589,17 +5021,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_secondary_sources_version_override`](Self::set_secondary_sources_version_override).
         ///
-        /// <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source
-        /// versions in the batch build project.</p>
+        /// <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source versions in the batch build project.</p>
         pub fn secondary_sources_version_override(
             mut self,
-            inp: impl Into<crate::model::ProjectSourceVersion>,
+            input: crate::model::ProjectSourceVersion,
         ) -> Self {
-            self.inner = self.inner.secondary_sources_version_override(inp);
+            self.inner = self.inner.secondary_sources_version_override(input);
             self
         }
-        /// <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source
-        /// versions in the batch build project.</p>
+        /// <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source versions in the batch build project.</p>
         pub fn set_secondary_sources_version_override(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
@@ -5607,78 +5037,68 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secondary_sources_version_override(input);
             self
         }
-        /// <p>The version of the batch build input to be built, for this build only. If not specified,
-        /// the latest version is used. If specified, the contents depends on the source
-        /// provider:</p>
+        /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
         /// <dl>
-        /// <dt>CodeCommit</dt>
+        /// <dt>
+        /// CodeCommit
+        /// </dt>
         /// <dd>
         /// <p>The commit ID, branch, or Git tag to use.</p>
         /// </dd>
-        /// <dt>GitHub</dt>
+        /// <dt>
+        /// GitHub
+        /// </dt>
         /// <dd>
-        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds
-        /// to the version of the source code you want to build. If a pull request ID is
-        /// specified, it must use the format <code>pr/pull-request-ID</code> (for
-        /// example <code>pr/25</code>). If a branch name is specified, the branch's
-        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit
-        /// ID is used.</p>
+        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
         /// </dd>
-        /// <dt>Bitbucket</dt>
+        /// <dt>
+        /// Bitbucket
+        /// </dt>
         /// <dd>
-        /// <p>The commit ID, branch name, or tag name that corresponds to the version of
-        /// the source code you want to build. If a branch name is specified, the
-        /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
-        /// commit ID is used.</p>
+        /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
         /// </dd>
-        /// <dt>Amazon S3</dt>
+        /// <dt>
+        /// Amazon S3
+        /// </dt>
         /// <dd>
-        /// <p>The version ID of the object that represents the build input ZIP file to
-        /// use.</p>
+        /// <p>The version ID of the object that represents the build input ZIP file to use.</p>
         /// </dd>
         /// </dl>
-        /// <p>If <code>sourceVersion</code> is specified at the project level, then this
-        /// <code>sourceVersion</code> (at the build level) takes precedence. </p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-        pub fn source_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_version(inp);
+        /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+        pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_version(input.into());
             self
         }
-        /// <p>The version of the batch build input to be built, for this build only. If not specified,
-        /// the latest version is used. If specified, the contents depends on the source
-        /// provider:</p>
+        /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
         /// <dl>
-        /// <dt>CodeCommit</dt>
+        /// <dt>
+        /// CodeCommit
+        /// </dt>
         /// <dd>
         /// <p>The commit ID, branch, or Git tag to use.</p>
         /// </dd>
-        /// <dt>GitHub</dt>
+        /// <dt>
+        /// GitHub
+        /// </dt>
         /// <dd>
-        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds
-        /// to the version of the source code you want to build. If a pull request ID is
-        /// specified, it must use the format <code>pr/pull-request-ID</code> (for
-        /// example <code>pr/25</code>). If a branch name is specified, the branch's
-        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit
-        /// ID is used.</p>
+        /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
         /// </dd>
-        /// <dt>Bitbucket</dt>
+        /// <dt>
+        /// Bitbucket
+        /// </dt>
         /// <dd>
-        /// <p>The commit ID, branch name, or tag name that corresponds to the version of
-        /// the source code you want to build. If a branch name is specified, the
-        /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
-        /// commit ID is used.</p>
+        /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
         /// </dd>
-        /// <dt>Amazon S3</dt>
+        /// <dt>
+        /// Amazon S3
+        /// </dt>
         /// <dd>
-        /// <p>The version ID of the object that represents the build input ZIP file to
-        /// use.</p>
+        /// <p>The version ID of the object that represents the build input ZIP file to use.</p>
         /// </dd>
         /// </dl>
-        /// <p>If <code>sourceVersion</code> is specified at the project level, then this
-        /// <code>sourceVersion</code> (at the build level) takes precedence. </p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+        /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn set_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5686,14 +5106,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_version(input);
             self
         }
-        /// <p>An array of <code>ProjectArtifacts</code> objects that contains information about the
-        /// build output artifact overrides for the build project.</p>
-        pub fn artifacts_override(mut self, inp: crate::model::ProjectArtifacts) -> Self {
-            self.inner = self.inner.artifacts_override(inp);
+        /// <p>An array of <code>ProjectArtifacts</code> objects that contains information about the build output artifact overrides for the build project.</p>
+        pub fn artifacts_override(mut self, input: crate::model::ProjectArtifacts) -> Self {
+            self.inner = self.inner.artifacts_override(input);
             self
         }
-        /// <p>An array of <code>ProjectArtifacts</code> objects that contains information about the
-        /// build output artifact overrides for the build project.</p>
+        /// <p>An array of <code>ProjectArtifacts</code> objects that contains information about the build output artifact overrides for the build project.</p>
         pub fn set_artifacts_override(
             mut self,
             input: std::option::Option<crate::model::ProjectArtifacts>,
@@ -5705,17 +5123,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_secondary_artifacts_override`](Self::set_secondary_artifacts_override).
         ///
-        /// <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts
-        /// defined in the batch build project.</p>
+        /// <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts defined in the batch build project.</p>
         pub fn secondary_artifacts_override(
             mut self,
-            inp: impl Into<crate::model::ProjectArtifacts>,
+            input: crate::model::ProjectArtifacts,
         ) -> Self {
-            self.inner = self.inner.secondary_artifacts_override(inp);
+            self.inner = self.inner.secondary_artifacts_override(input);
             self
         }
-        /// <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts
-        /// defined in the batch build project.</p>
+        /// <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts defined in the batch build project.</p>
         pub fn set_secondary_artifacts_override(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
@@ -5727,17 +5143,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_environment_variables_override`](Self::set_environment_variables_override).
         ///
-        /// <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the
-        /// environment variables defined in the batch build project.</p>
+        /// <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the environment variables defined in the batch build project.</p>
         pub fn environment_variables_override(
             mut self,
-            inp: impl Into<crate::model::EnvironmentVariable>,
+            input: crate::model::EnvironmentVariable,
         ) -> Self {
-            self.inner = self.inner.environment_variables_override(inp);
+            self.inner = self.inner.environment_variables_override(input);
             self
         }
-        /// <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the
-        /// environment variables defined in the batch build project.</p>
+        /// <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the environment variables defined in the batch build project.</p>
         pub fn set_environment_variables_override(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
@@ -5745,14 +5159,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_variables_override(input);
             self
         }
-        /// <p>The source input type that overrides the source input defined in the batch
-        /// build project.</p>
-        pub fn source_type_override(mut self, inp: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type_override(inp);
+        /// <p>The source input type that overrides the source input defined in the batch build project.</p>
+        pub fn source_type_override(mut self, input: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source_type_override(input);
             self
         }
-        /// <p>The source input type that overrides the source input defined in the batch
-        /// build project.</p>
+        /// <p>The source input type that overrides the source input defined in the batch build project.</p>
         pub fn set_source_type_override(
             mut self,
             input: std::option::Option<crate::model::SourceType>,
@@ -5760,14 +5172,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_type_override(input);
             self
         }
-        /// <p>A location that overrides, for this batch build, the source location defined in
-        /// the batch build project.</p>
-        pub fn source_location_override(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_override(inp);
+        /// <p>A location that overrides, for this batch build, the source location defined in the batch build project.</p>
+        pub fn source_location_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_override(input.into());
             self
         }
-        /// <p>A location that overrides, for this batch build, the source location defined in
-        /// the batch build project.</p>
+        /// <p>A location that overrides, for this batch build, the source location defined in the batch build project.</p>
         pub fn set_source_location_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5775,16 +5185,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_location_override(input);
             self
         }
-        /// <p>A <code>SourceAuth</code> object that overrides the one defined in the batch build
-        /// project. This override applies only if the build project's source is BitBucket or
-        /// GitHub.</p>
-        pub fn source_auth_override(mut self, inp: crate::model::SourceAuth) -> Self {
-            self.inner = self.inner.source_auth_override(inp);
+        /// <p>A <code>SourceAuth</code> object that overrides the one defined in the batch build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
+        pub fn source_auth_override(mut self, input: crate::model::SourceAuth) -> Self {
+            self.inner = self.inner.source_auth_override(input);
             self
         }
-        /// <p>A <code>SourceAuth</code> object that overrides the one defined in the batch build
-        /// project. This override applies only if the build project's source is BitBucket or
-        /// GitHub.</p>
+        /// <p>A <code>SourceAuth</code> object that overrides the one defined in the batch build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
         pub fn set_source_auth_override(
             mut self,
             input: std::option::Option<crate::model::SourceAuth>,
@@ -5792,29 +5198,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_auth_override(input);
             self
         }
-        /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this
-        /// batch build only, any previous depth of history defined in the batch build project.</p>
-        pub fn git_clone_depth_override(mut self, inp: i32) -> Self {
-            self.inner = self.inner.git_clone_depth_override(inp);
+        /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this batch build only, any previous depth of history defined in the batch build project.</p>
+        pub fn git_clone_depth_override(mut self, input: i32) -> Self {
+            self.inner = self.inner.git_clone_depth_override(input);
             self
         }
-        /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this
-        /// batch build only, any previous depth of history defined in the batch build project.</p>
+        /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this batch build only, any previous depth of history defined in the batch build project.</p>
         pub fn set_git_clone_depth_override(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_git_clone_depth_override(input);
             self
         }
-        /// <p>A <code>GitSubmodulesConfig</code> object that overrides the Git submodules configuration
-        /// for this batch build.</p>
+        /// <p>A <code>GitSubmodulesConfig</code> object that overrides the Git submodules configuration for this batch build.</p>
         pub fn git_submodules_config_override(
             mut self,
-            inp: crate::model::GitSubmodulesConfig,
+            input: crate::model::GitSubmodulesConfig,
         ) -> Self {
-            self.inner = self.inner.git_submodules_config_override(inp);
+            self.inner = self.inner.git_submodules_config_override(input);
             self
         }
-        /// <p>A <code>GitSubmodulesConfig</code> object that overrides the Git submodules configuration
-        /// for this batch build.</p>
+        /// <p>A <code>GitSubmodulesConfig</code> object that overrides the Git submodules configuration for this batch build.</p>
         pub fn set_git_submodules_config_override(
             mut self,
             input: std::option::Option<crate::model::GitSubmodulesConfig>,
@@ -5822,30 +5224,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_git_submodules_config_override(input);
             self
         }
-        /// <p>A buildspec file declaration that overrides, for this build only, the latest one
-        /// already defined in the build project.</p>
-        /// <p>If this value is set, it can be either an inline buildspec definition, the path to an
-        /// alternate buildspec file relative to the value of the built-in
-        /// <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket.
-        /// The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec
-        /// file using its ARN (for example,
-        /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
-        /// provided or is set to an empty string, the source code must contain a buildspec file in
-        /// its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
-        pub fn buildspec_override(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.buildspec_override(inp);
+        /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
+        /// <p>If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
+        pub fn buildspec_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.buildspec_override(input.into());
             self
         }
-        /// <p>A buildspec file declaration that overrides, for this build only, the latest one
-        /// already defined in the build project.</p>
-        /// <p>If this value is set, it can be either an inline buildspec definition, the path to an
-        /// alternate buildspec file relative to the value of the built-in
-        /// <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket.
-        /// The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec
-        /// file using its ARN (for example,
-        /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
-        /// provided or is set to an empty string, the source code must contain a buildspec file in
-        /// its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
+        /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
+        /// <p>If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
         pub fn set_buildspec_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5853,39 +5239,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_buildspec_override(input);
             self
         }
-        /// <p>Enable this flag to override the insecure SSL setting that is specified in the batch build
-        /// project. The insecure SSL setting determines whether to ignore SSL warnings while
-        /// connecting to the project source code. This override applies only if the build's source
-        /// is GitHub Enterprise.</p>
-        pub fn insecure_ssl_override(mut self, inp: bool) -> Self {
-            self.inner = self.inner.insecure_ssl_override(inp);
+        /// <p>Enable this flag to override the insecure SSL setting that is specified in the batch build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
+        pub fn insecure_ssl_override(mut self, input: bool) -> Self {
+            self.inner = self.inner.insecure_ssl_override(input);
             self
         }
-        /// <p>Enable this flag to override the insecure SSL setting that is specified in the batch build
-        /// project. The insecure SSL setting determines whether to ignore SSL warnings while
-        /// connecting to the project source code. This override applies only if the build's source
-        /// is GitHub Enterprise.</p>
+        /// <p>Enable this flag to override the insecure SSL setting that is specified in the batch build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
         pub fn set_insecure_ssl_override(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_insecure_ssl_override(input);
             self
         }
-        /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's
-        /// start and completion. If you use this option with a source provider other than GitHub,
-        /// GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
-        /// <note>
-        /// <p>The status of a build triggered by a webhook is always reported to your source
-        /// provider. </p>
+        /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> <note>
+        /// <p>The status of a build triggered by a webhook is always reported to your source provider. </p>
         /// </note>
-        pub fn report_build_batch_status_override(mut self, inp: bool) -> Self {
-            self.inner = self.inner.report_build_batch_status_override(inp);
+        pub fn report_build_batch_status_override(mut self, input: bool) -> Self {
+            self.inner = self.inner.report_build_batch_status_override(input);
             self
         }
-        /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's
-        /// start and completion. If you use this option with a source provider other than GitHub,
-        /// GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
-        /// <note>
-        /// <p>The status of a build triggered by a webhook is always reported to your source
-        /// provider. </p>
+        /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> <note>
+        /// <p>The status of a build triggered by a webhook is always reported to your source provider. </p>
         /// </note>
         pub fn set_report_build_batch_status_override(
             mut self,
@@ -5894,14 +5266,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report_build_batch_status_override(input);
             self
         }
-        /// <p>A container type for this batch build that overrides the one specified in the batch build
-        /// project.</p>
-        pub fn environment_type_override(mut self, inp: crate::model::EnvironmentType) -> Self {
-            self.inner = self.inner.environment_type_override(inp);
+        /// <p>A container type for this batch build that overrides the one specified in the batch build project.</p>
+        pub fn environment_type_override(mut self, input: crate::model::EnvironmentType) -> Self {
+            self.inner = self.inner.environment_type_override(input);
             self
         }
-        /// <p>A container type for this batch build that overrides the one specified in the batch build
-        /// project.</p>
+        /// <p>A container type for this batch build that overrides the one specified in the batch build project.</p>
         pub fn set_environment_type_override(
             mut self,
             input: std::option::Option<crate::model::EnvironmentType>,
@@ -5909,14 +5279,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_type_override(input);
             self
         }
-        /// <p>The name of an image for this batch build that overrides the one specified in the batch
-        /// build project.</p>
-        pub fn image_override(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_override(inp);
+        /// <p>The name of an image for this batch build that overrides the one specified in the batch build project.</p>
+        pub fn image_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_override(input.into());
             self
         }
-        /// <p>The name of an image for this batch build that overrides the one specified in the batch
-        /// build project.</p>
+        /// <p>The name of an image for this batch build that overrides the one specified in the batch build project.</p>
         pub fn set_image_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5924,14 +5292,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_override(input);
             self
         }
-        /// <p>The name of a compute type for this batch build that overrides the one specified in the
-        /// batch build project.</p>
-        pub fn compute_type_override(mut self, inp: crate::model::ComputeType) -> Self {
-            self.inner = self.inner.compute_type_override(inp);
+        /// <p>The name of a compute type for this batch build that overrides the one specified in the batch build project.</p>
+        pub fn compute_type_override(mut self, input: crate::model::ComputeType) -> Self {
+            self.inner = self.inner.compute_type_override(input);
             self
         }
-        /// <p>The name of a compute type for this batch build that overrides the one specified in the
-        /// batch build project.</p>
+        /// <p>The name of a compute type for this batch build that overrides the one specified in the batch build project.</p>
         pub fn set_compute_type_override(
             mut self,
             input: std::option::Option<crate::model::ComputeType>,
@@ -5939,14 +5305,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compute_type_override(input);
             self
         }
-        /// <p>The name of a certificate for this batch build that overrides the one specified in the batch build
-        /// project.</p>
-        pub fn certificate_override(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_override(inp);
+        /// <p>The name of a certificate for this batch build that overrides the one specified in the batch build project.</p>
+        pub fn certificate_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_override(input.into());
             self
         }
-        /// <p>The name of a certificate for this batch build that overrides the one specified in the batch build
-        /// project.</p>
+        /// <p>The name of a certificate for this batch build that overrides the one specified in the batch build project.</p>
         pub fn set_certificate_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5955,8 +5319,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>ProjectCache</code> object that specifies cache overrides.</p>
-        pub fn cache_override(mut self, inp: crate::model::ProjectCache) -> Self {
-            self.inner = self.inner.cache_override(inp);
+        pub fn cache_override(mut self, input: crate::model::ProjectCache) -> Self {
+            self.inner = self.inner.cache_override(input);
             self
         }
         /// <p>A <code>ProjectCache</code> object that specifies cache overrides.</p>
@@ -5967,14 +5331,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cache_override(input);
             self
         }
-        /// <p>The name of a service role for this batch build that overrides the one specified in the
-        /// batch build project.</p>
-        pub fn service_role_override(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_override(inp);
+        /// <p>The name of a service role for this batch build that overrides the one specified in the batch build project.</p>
+        pub fn service_role_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_override(input.into());
             self
         }
-        /// <p>The name of a service role for this batch build that overrides the one specified in the
-        /// batch build project.</p>
+        /// <p>The name of a service role for this batch build that overrides the one specified in the batch build project.</p>
         pub fn set_service_role_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5983,8 +5345,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enable this flag to override privileged mode in the batch build project.</p>
-        pub fn privileged_mode_override(mut self, inp: bool) -> Self {
-            self.inner = self.inner.privileged_mode_override(inp);
+        pub fn privileged_mode_override(mut self, input: bool) -> Self {
+            self.inner = self.inner.privileged_mode_override(input);
             self
         }
         /// <p>Enable this flag to override privileged mode in the batch build project.</p>
@@ -5993,8 +5355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Overrides the build timeout specified in the batch build project.</p>
-        pub fn build_timeout_in_minutes_override(mut self, inp: i32) -> Self {
-            self.inner = self.inner.build_timeout_in_minutes_override(inp);
+        pub fn build_timeout_in_minutes_override(mut self, input: i32) -> Self {
+            self.inner = self.inner.build_timeout_in_minutes_override(input);
             self
         }
         /// <p>Overrides the build timeout specified in the batch build project.</p>
@@ -6006,8 +5368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of minutes a batch build is allowed to be queued before it times out.</p>
-        pub fn queued_timeout_in_minutes_override(mut self, inp: i32) -> Self {
-            self.inner = self.inner.queued_timeout_in_minutes_override(inp);
+        pub fn queued_timeout_in_minutes_override(mut self, input: i32) -> Self {
+            self.inner = self.inner.queued_timeout_in_minutes_override(input);
             self
         }
         /// <p>The number of minutes a batch build is allowed to be queued before it times out.</p>
@@ -6018,26 +5380,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_queued_timeout_in_minutes_override(input);
             self
         }
-        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build
-        /// project. The CMK key encrypts the build output artifacts.</p>
-        /// <note>
-        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your
-        /// service role has permission to that key. </p>
+        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>
+        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
         /// </note>
-        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
-        /// the format <code>alias/<alias-name></code>).</p>
-        pub fn encryption_key_override(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key_override(inp);
+        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
+        /// <alias-name></alias-name></code>).</p>
+        pub fn encryption_key_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key_override(input.into());
             self
         }
-        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build
-        /// project. The CMK key encrypts the build output artifacts.</p>
-        /// <note>
-        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your
-        /// service role has permission to that key. </p>
+        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>
+        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
         /// </note>
-        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
-        /// the format <code>alias/<alias-name></code>).</p>
+        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
+        /// <alias-name></alias-name></code>).</p>
         pub fn set_encryption_key_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6045,20 +5401,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_key_override(input);
             self
         }
-        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
-        /// <code>StartBuildBatch</code> request. The token is included in the
-        /// <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat
-        /// the <code>StartBuildBatch</code> request with the same token, but change a parameter,
-        /// CodeBuild returns a parameter mismatch error.</p>
-        pub fn idempotency_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idempotency_token(inp);
+        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>StartBuildBatch</code> request. The token is included in the <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat the <code>StartBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
+        pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
-        /// <code>StartBuildBatch</code> request. The token is included in the
-        /// <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat
-        /// the <code>StartBuildBatch</code> request with the same token, but change a parameter,
-        /// CodeBuild returns a parameter mismatch error.</p>
+        /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>StartBuildBatch</code> request. The token is included in the <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat the <code>StartBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6066,14 +5414,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_idempotency_token(input);
             self
         }
-        /// <p>A <code>LogsConfig</code> object that override the log settings defined in the batch build
-        /// project.</p>
-        pub fn logs_config_override(mut self, inp: crate::model::LogsConfig) -> Self {
-            self.inner = self.inner.logs_config_override(inp);
+        /// <p>A <code>LogsConfig</code> object that override the log settings defined in the batch build project.</p>
+        pub fn logs_config_override(mut self, input: crate::model::LogsConfig) -> Self {
+            self.inner = self.inner.logs_config_override(input);
             self
         }
-        /// <p>A <code>LogsConfig</code> object that override the log settings defined in the batch build
-        /// project.</p>
+        /// <p>A <code>LogsConfig</code> object that override the log settings defined in the batch build project.</p>
         pub fn set_logs_config_override(
             mut self,
             input: std::option::Option<crate::model::LogsConfig>,
@@ -6081,17 +5427,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_logs_config_override(input);
             self
         }
-        /// <p>A <code>RegistryCredential</code> object that overrides credentials for access to a
-        /// private registry.</p>
+        /// <p>A <code>RegistryCredential</code> object that overrides credentials for access to a private registry.</p>
         pub fn registry_credential_override(
             mut self,
-            inp: crate::model::RegistryCredential,
+            input: crate::model::RegistryCredential,
         ) -> Self {
-            self.inner = self.inner.registry_credential_override(inp);
+            self.inner = self.inner.registry_credential_override(input);
             self
         }
-        /// <p>A <code>RegistryCredential</code> object that overrides credentials for access to a
-        /// private registry.</p>
+        /// <p>A <code>RegistryCredential</code> object that overrides credentials for access to a private registry.</p>
         pub fn set_registry_credential_override(
             mut self,
             input: std::option::Option<crate::model::RegistryCredential>,
@@ -6099,45 +5443,45 @@ pub mod fluent_builders {
             self.inner = self.inner.set_registry_credential_override(input);
             self
         }
-        /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid
-        /// values: </p>
+        /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values: </p>
         /// <dl>
-        /// <dt>CODEBUILD</dt>
+        /// <dt>
+        /// CODEBUILD
+        /// </dt>
         /// <dd>
-        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you
-        /// modify your ECR repository policy to trust CodeBuild's service principal.</p>
+        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>
         /// </dd>
-        /// <dt>SERVICE_ROLE</dt>
+        /// <dt>
+        /// SERVICE_ROLE
+        /// </dt>
         /// <dd>
         /// <p>Specifies that CodeBuild uses your build project's service role. </p>
         /// </dd>
         /// </dl>
-        /// <p>When using a cross-account or private registry image, you must use
-        /// <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image,
-        /// you must use <code>CODEBUILD</code> credentials. </p>
+        /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
         pub fn image_pull_credentials_type_override(
             mut self,
-            inp: crate::model::ImagePullCredentialsType,
+            input: crate::model::ImagePullCredentialsType,
         ) -> Self {
-            self.inner = self.inner.image_pull_credentials_type_override(inp);
+            self.inner = self.inner.image_pull_credentials_type_override(input);
             self
         }
-        /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid
-        /// values: </p>
+        /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values: </p>
         /// <dl>
-        /// <dt>CODEBUILD</dt>
+        /// <dt>
+        /// CODEBUILD
+        /// </dt>
         /// <dd>
-        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you
-        /// modify your ECR repository policy to trust CodeBuild's service principal.</p>
+        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>
         /// </dd>
-        /// <dt>SERVICE_ROLE</dt>
+        /// <dt>
+        /// SERVICE_ROLE
+        /// </dt>
         /// <dd>
         /// <p>Specifies that CodeBuild uses your build project's service role. </p>
         /// </dd>
         /// </dl>
-        /// <p>When using a cross-account or private registry image, you must use
-        /// <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image,
-        /// you must use <code>CODEBUILD</code> credentials. </p>
+        /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
         pub fn set_image_pull_credentials_type_override(
             mut self,
             input: std::option::Option<crate::model::ImagePullCredentialsType>,
@@ -6145,17 +5489,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_pull_credentials_type_override(input);
             self
         }
-        /// <p>A <code>BuildBatchConfigOverride</code> object that contains batch build configuration
-        /// overrides.</p>
+        /// <p>A <code>BuildBatchConfigOverride</code> object that contains batch build configuration overrides.</p>
         pub fn build_batch_config_override(
             mut self,
-            inp: crate::model::ProjectBuildBatchConfig,
+            input: crate::model::ProjectBuildBatchConfig,
         ) -> Self {
-            self.inner = self.inner.build_batch_config_override(inp);
+            self.inner = self.inner.build_batch_config_override(input);
             self
         }
-        /// <p>A <code>BuildBatchConfigOverride</code> object that contains batch build configuration
-        /// overrides.</p>
+        /// <p>A <code>BuildBatchConfigOverride</code> object that contains batch build configuration overrides.</p>
         pub fn set_build_batch_config_override(
             mut self,
             input: std::option::Option<crate::model::ProjectBuildBatchConfig>,
@@ -6163,14 +5505,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_build_batch_config_override(input);
             self
         }
-        /// <p>Specifies if session debugging is enabled for this batch build. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
-        pub fn debug_session_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.debug_session_enabled(inp);
+        /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
+        pub fn debug_session_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.debug_session_enabled(input);
             self
         }
-        /// <p>Specifies if session debugging is enabled for this batch build. For more information, see
-        /// <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
+        /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
         pub fn set_debug_session_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_debug_session_enabled(input);
             self
@@ -6179,7 +5519,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopBuild`.
     ///
     /// <p>Attempts to stop running a build.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopBuild<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6224,10 +5564,10 @@ pub mod fluent_builders {
                 crate::input::StopBuildInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6236,8 +5576,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the build.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the build.</p>
@@ -6249,7 +5589,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopBuildBatch`.
     ///
     /// <p>Stops a running batch build.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopBuildBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6294,10 +5634,10 @@ pub mod fluent_builders {
                 crate::input::StopBuildBatchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6306,8 +5646,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the batch build to stop.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the batch build to stop.</p>
@@ -6319,7 +5659,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProject`.
     ///
     /// <p>Changes the settings of a build project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6364,10 +5704,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6375,16 +5715,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the build project.</p>
-        /// <note>
+        /// <p>The name of the build project.</p> <note>
         /// <p>You cannot change a build project's name.</p>
         /// </note>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the build project.</p>
-        /// <note>
+        /// <p>The name of the build project.</p> <note>
         /// <p>You cannot change a build project's name.</p>
         /// </note>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -6392,8 +5730,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new or replacement description of the build project.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A new or replacement description of the build project.</p>
@@ -6401,14 +5739,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Information to be changed about the build input source code for the build
-        /// project.</p>
-        pub fn source(mut self, inp: crate::model::ProjectSource) -> Self {
-            self.inner = self.inner.source(inp);
+        /// <p>Information to be changed about the build input source code for the build project.</p>
+        pub fn source(mut self, input: crate::model::ProjectSource) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
-        /// <p>Information to be changed about the build input source code for the build
-        /// project.</p>
+        /// <p>Information to be changed about the build input source code for the build project.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::ProjectSource>,
@@ -6421,8 +5757,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_secondary_sources`](Self::set_secondary_sources).
         ///
         /// <p> An array of <code>ProjectSource</code> objects. </p>
-        pub fn secondary_sources(mut self, inp: impl Into<crate::model::ProjectSource>) -> Self {
-            self.inner = self.inner.secondary_sources(inp);
+        pub fn secondary_sources(mut self, input: crate::model::ProjectSource) -> Self {
+            self.inner = self.inner.secondary_sources(input);
             self
         }
         /// <p> An array of <code>ProjectSource</code> objects. </p>
@@ -6433,70 +5769,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secondary_sources(input);
             self
         }
-        /// <p> A version of the build input to be built for this project. If not specified, the
-        /// latest version is used. If specified, it must be one of: </p>
+        /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
         /// <ul>
-        /// <li>
-        /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
-        /// corresponds to the version of the source code you want to build. If a pull
-        /// request ID is specified, it must use the format <code>pr/pull-request-ID</code>
-        /// (for example <code>pr/25</code>). If a branch name is specified, the branch's
-        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-        /// used.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the
-        /// version of the source code you want to build. If a branch name is specified, the
-        /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
-        /// commit ID is used.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP
-        /// file to use.</p>
-        /// </li>
+        /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
+        /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
+        /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
+        /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
         /// </ul>
-        /// <p> If <code>sourceVersion</code> is specified at the build level, then that version
-        /// takes precedence over this <code>sourceVersion</code> (at the project level). </p>
-        /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
-        /// </p>
-        pub fn source_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_version(inp);
+        /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+        /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+        pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_version(input.into());
             self
         }
-        /// <p> A version of the build input to be built for this project. If not specified, the
-        /// latest version is used. If specified, it must be one of: </p>
+        /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
         /// <ul>
-        /// <li>
-        /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
-        /// corresponds to the version of the source code you want to build. If a pull
-        /// request ID is specified, it must use the format <code>pr/pull-request-ID</code>
-        /// (for example <code>pr/25</code>). If a branch name is specified, the branch's
-        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-        /// used.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the
-        /// version of the source code you want to build. If a branch name is specified, the
-        /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
-        /// commit ID is used.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP
-        /// file to use.</p>
-        /// </li>
+        /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
+        /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
+        /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
+        /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
         /// </ul>
-        /// <p> If <code>sourceVersion</code> is specified at the build level, then that version
-        /// takes precedence over this <code>sourceVersion</code> (at the project level). </p>
-        /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
-        /// </p>
+        /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+        /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn set_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6508,19 +5802,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_secondary_source_versions`](Self::set_secondary_source_versions).
         ///
-        /// <p> An array of <code>ProjectSourceVersion</code> objects. If
-        /// <code>secondarySourceVersions</code> is specified at the build level, then they take
-        /// over these <code>secondarySourceVersions</code> (at the project level). </p>
+        /// <p> An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level). </p>
         pub fn secondary_source_versions(
             mut self,
-            inp: impl Into<crate::model::ProjectSourceVersion>,
+            input: crate::model::ProjectSourceVersion,
         ) -> Self {
-            self.inner = self.inner.secondary_source_versions(inp);
+            self.inner = self.inner.secondary_source_versions(input);
             self
         }
-        /// <p> An array of <code>ProjectSourceVersion</code> objects. If
-        /// <code>secondarySourceVersions</code> is specified at the build level, then they take
-        /// over these <code>secondarySourceVersions</code> (at the project level). </p>
+        /// <p> An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level). </p>
         pub fn set_secondary_source_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
@@ -6528,14 +5818,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secondary_source_versions(input);
             self
         }
-        /// <p>Information to be changed about the build output artifacts for the build
-        /// project.</p>
-        pub fn artifacts(mut self, inp: crate::model::ProjectArtifacts) -> Self {
-            self.inner = self.inner.artifacts(inp);
+        /// <p>Information to be changed about the build output artifacts for the build project.</p>
+        pub fn artifacts(mut self, input: crate::model::ProjectArtifacts) -> Self {
+            self.inner = self.inner.artifacts(input);
             self
         }
-        /// <p>Information to be changed about the build output artifacts for the build
-        /// project.</p>
+        /// <p>Information to be changed about the build output artifacts for the build project.</p>
         pub fn set_artifacts(
             mut self,
             input: std::option::Option<crate::model::ProjectArtifacts>,
@@ -6548,11 +5836,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
         ///
         /// <p> An array of <code>ProjectArtifact</code> objects. </p>
-        pub fn secondary_artifacts(
-            mut self,
-            inp: impl Into<crate::model::ProjectArtifacts>,
-        ) -> Self {
-            self.inner = self.inner.secondary_artifacts(inp);
+        pub fn secondary_artifacts(mut self, input: crate::model::ProjectArtifacts) -> Self {
+            self.inner = self.inner.secondary_artifacts(input);
             self
         }
         /// <p> An array of <code>ProjectArtifact</code> objects. </p>
@@ -6563,21 +5848,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_secondary_artifacts(input);
             self
         }
-        /// <p>Stores recently used information so that it can be quickly accessed at a later
-        /// time.</p>
-        pub fn cache(mut self, inp: crate::model::ProjectCache) -> Self {
-            self.inner = self.inner.cache(inp);
+        /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
+        pub fn cache(mut self, input: crate::model::ProjectCache) -> Self {
+            self.inner = self.inner.cache(input);
             self
         }
-        /// <p>Stores recently used information so that it can be quickly accessed at a later
-        /// time.</p>
+        /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
         pub fn set_cache(mut self, input: std::option::Option<crate::model::ProjectCache>) -> Self {
             self.inner = self.inner.set_cache(input);
             self
         }
         /// <p>Information to be changed about the build environment for the build project.</p>
-        pub fn environment(mut self, inp: crate::model::ProjectEnvironment) -> Self {
-            self.inner = self.inner.environment(inp);
+        pub fn environment(mut self, input: crate::model::ProjectEnvironment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
         /// <p>Information to be changed about the build environment for the build project.</p>
@@ -6588,33 +5871,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment(input);
             self
         }
-        /// <p>The replacement ARN of the IAM role that enables CodeBuild to interact with dependent
-        /// Amazon Web Services services on behalf of the Amazon Web Services account.</p>
-        pub fn service_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role(inp);
+        /// <p>The replacement ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role(input.into());
             self
         }
-        /// <p>The replacement ARN of the IAM role that enables CodeBuild to interact with dependent
-        /// Amazon Web Services services on behalf of the Amazon Web Services account.</p>
+        /// <p>The replacement ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_service_role(input);
             self
         }
-        /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
-        /// timing out any related build that did not get marked as completed.</p>
-        pub fn timeout_in_minutes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout_in_minutes(inp);
+        /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did not get marked as completed.</p>
+        pub fn timeout_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout_in_minutes(input);
             self
         }
-        /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
-        /// timing out any related build that did not get marked as completed.</p>
+        /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did not get marked as completed.</p>
         pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout_in_minutes(input);
             self
         }
         /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
-        pub fn queued_timeout_in_minutes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.queued_timeout_in_minutes(inp);
+        pub fn queued_timeout_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.queued_timeout_in_minutes(input);
             self
         }
         /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
@@ -6622,28 +5901,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_queued_timeout_in_minutes(input);
             self
         }
-        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output
-        /// artifacts.</p>
-        /// <note>
-        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your
-        /// service role has permission to that key. </p>
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
+        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
         /// </note>
-        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
-        /// the format <code>alias/<alias-name></code>).
-        /// </p>
-        pub fn encryption_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key(inp);
+        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
+        /// <alias-name></alias-name></code>). </p>
+        pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key(input.into());
             self
         }
-        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output
-        /// artifacts.</p>
-        /// <note>
-        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your
-        /// service role has permission to that key. </p>
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
+        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
         /// </note>
-        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
-        /// the format <code>alias/<alias-name></code>).
-        /// </p>
+        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
+        /// <alias-name></alias-name></code>). </p>
         pub fn set_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6656,15 +5927,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An updated list of tag key and value pairs associated with this build project.</p>
-        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
-        /// tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>An updated list of tag key and value pairs associated with this build project.</p>
-        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
-        /// tags.</p>
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6673,8 +5942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
         /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
@@ -6685,26 +5954,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_config(input);
             self
         }
-        /// <p>Set this to true to generate a publicly accessible URL for your project's build
-        /// badge.</p>
-        pub fn badge_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.badge_enabled(inp);
+        /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
+        pub fn badge_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.badge_enabled(input);
             self
         }
-        /// <p>Set this to true to generate a publicly accessible URL for your project's build
-        /// badge.</p>
+        /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
         pub fn set_badge_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_badge_enabled(input);
             self
         }
-        /// <p> Information about logs for the build project. A project can create logs in CloudWatch Logs,
-        /// logs in an S3 bucket, or both. </p>
-        pub fn logs_config(mut self, inp: crate::model::LogsConfig) -> Self {
-            self.inner = self.inner.logs_config(inp);
+        /// <p> Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket, or both. </p>
+        pub fn logs_config(mut self, input: crate::model::LogsConfig) -> Self {
+            self.inner = self.inner.logs_config(input);
             self
         }
-        /// <p> Information about logs for the build project. A project can create logs in CloudWatch Logs,
-        /// logs in an S3 bucket, or both. </p>
+        /// <p> Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket, or both. </p>
         pub fn set_logs_config(
             mut self,
             input: std::option::Option<crate::model::LogsConfig>,
@@ -6716,23 +5981,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_file_system_locations`](Self::set_file_system_locations).
         ///
-        /// <p>
-        /// An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object
-        /// specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
-        /// <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.
-        /// </p>
+        /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
         pub fn file_system_locations(
             mut self,
-            inp: impl Into<crate::model::ProjectFileSystemLocation>,
+            input: crate::model::ProjectFileSystemLocation,
         ) -> Self {
-            self.inner = self.inner.file_system_locations(inp);
+            self.inner = self.inner.file_system_locations(input);
             self
         }
-        /// <p>
-        /// An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object
-        /// specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
-        /// <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.
-        /// </p>
+        /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
         pub fn set_file_system_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
@@ -6741,8 +5998,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains configuration information about a batch build project.</p>
-        pub fn build_batch_config(mut self, inp: crate::model::ProjectBuildBatchConfig) -> Self {
-            self.inner = self.inner.build_batch_config(inp);
+        pub fn build_batch_config(mut self, input: crate::model::ProjectBuildBatchConfig) -> Self {
+            self.inner = self.inner.build_batch_config(input);
             self
         }
         /// <p>Contains configuration information about a batch build project.</p>
@@ -6754,16 +6011,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
-        /// <p>New builds are only started if the current number of builds is less than or equal to this limit.
-        /// If the current build count meets this limit, new builds are throttled and are not run.</p>
+        /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
         /// <p>To remove this limit, set this value to -1.</p>
-        pub fn concurrent_build_limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.concurrent_build_limit(inp);
+        pub fn concurrent_build_limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.concurrent_build_limit(input);
             self
         }
         /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
-        /// <p>New builds are only started if the current number of builds is less than or equal to this limit.
-        /// If the current build count meets this limit, new builds are throttled and are not run.</p>
+        /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
         /// <p>To remove this limit, set this value to -1.</p>
         pub fn set_concurrent_build_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_concurrent_build_limit(input);
@@ -6772,45 +6027,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateProjectVisibility`.
     ///
-    /// <p>Changes the public visibility for a project. The project's build results, logs, and
-    /// artifacts are available to the general public.  For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/public-builds.html">Public build
-    /// projects</a> in the <i>CodeBuild User Guide</i>.</p>
-    /// <important>
+    /// <p>Changes the public visibility for a project. The project's build results, logs, and artifacts are available to the general public. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/public-builds.html">Public build projects</a> in the <i>CodeBuild User Guide</i>.</p> <important>
     /// <p>The following should be kept in mind when making your projects public:</p>
     /// <ul>
-    /// <li>
-    /// <p>All of a project's build results, logs, and artifacts, including builds that were run
-    /// when the project was private, are available to the general public.</p>
-    /// </li>
-    /// <li>
-    /// <p>All build logs and artifacts are available to the public. Environment variables, source
-    /// code, and other sensitive information may have been output to the build logs and artifacts.
-    /// You must be careful about what information is output to the build logs. Some best practice
-    /// are:</p>
+    /// <li> <p>All of a project's build results, logs, and artifacts, including builds that were run when the project was private, are available to the general public.</p> </li>
+    /// <li> <p>All build logs and artifacts are available to the public. Environment variables, source code, and other sensitive information may have been output to the build logs and artifacts. You must be careful about what information is output to the build logs. Some best practice are:</p>
     /// <ul>
-    /// <li>
-    /// <p>Do not store sensitive values, especially Amazon Web Services access key IDs and secret access
-    /// keys, in environment variables. We recommend that you use an Amazon EC2 Systems Manager Parameter Store
-    /// or Secrets Manager to store sensitive values.</p>
-    /// </li>
-    /// <li>
-    /// <p>Follow <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/webhooks.html#webhook-best-practices">Best
-    /// practices for using webhooks</a> in the <i>CodeBuild User
-    /// Guide</i> to limit which entities can trigger a build, and do
-    /// not store the buildspec in the project itself, to ensure that your webhooks are as
-    /// secure as possible.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>A malicious user can use public builds to distribute malicious artifacts. We recommend
-    /// that you review all pull requests to verify that the pull request is a legitimate change. We
-    /// also recommend that you validate any artifacts with their checksums to make sure that the
-    /// correct artifacts are being downloaded.</p>
-    /// </li>
+    /// <li> <p>Do not store sensitive values, especially Amazon Web Services access key IDs and secret access keys, in environment variables. We recommend that you use an Amazon EC2 Systems Manager Parameter Store or Secrets Manager to store sensitive values.</p> </li>
+    /// <li> <p>Follow <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/webhooks.html#webhook-best-practices">Best practices for using webhooks</a> in the <i>CodeBuild User Guide</i> to limit which entities can trigger a build, and do not store the buildspec in the project itself, to ensure that your webhooks are as secure as possible.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>A malicious user can use public builds to distribute malicious artifacts. We recommend that you review all pull requests to verify that the pull request is a legitimate change. We also recommend that you validate any artifacts with their checksums to make sure that the correct artifacts are being downloaded.</p> </li>
     /// </ul>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProjectVisibility<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6855,10 +6084,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProjectVisibilityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6867,8 +6096,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the build project.</p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the build project.</p>
@@ -6877,29 +6106,35 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
-        ///
         /// <dl>
-        /// <dt>PUBLIC_READ</dt>
+        /// <dt>
+        /// PUBLIC_READ
+        /// </dt>
         /// <dd>
         /// <p>The project builds are visible to the public.</p>
         /// </dd>
-        /// <dt>PRIVATE</dt>
+        /// <dt>
+        /// PRIVATE
+        /// </dt>
         /// <dd>
         /// <p>The project builds are not visible to the public.</p>
         /// </dd>
         /// </dl>
-        pub fn project_visibility(mut self, inp: crate::model::ProjectVisibilityType) -> Self {
-            self.inner = self.inner.project_visibility(inp);
+        pub fn project_visibility(mut self, input: crate::model::ProjectVisibilityType) -> Self {
+            self.inner = self.inner.project_visibility(input);
             self
         }
         /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
-        ///
         /// <dl>
-        /// <dt>PUBLIC_READ</dt>
+        /// <dt>
+        /// PUBLIC_READ
+        /// </dt>
         /// <dd>
         /// <p>The project builds are visible to the public.</p>
         /// </dd>
-        /// <dt>PRIVATE</dt>
+        /// <dt>
+        /// PRIVATE
+        /// </dt>
         /// <dd>
         /// <p>The project builds are not visible to the public.</p>
         /// </dd>
@@ -6911,14 +6146,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_visibility(input);
             self
         }
-        /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for
-        /// the project's builds.</p>
-        pub fn resource_access_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_access_role(inp);
+        /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
+        pub fn resource_access_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_access_role(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for
-        /// the project's builds.</p>
+        /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
         pub fn set_resource_access_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6929,10 +6162,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateReportGroup`.
     ///
-    /// <p>
-    /// Updates a report group.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Updates a report group. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReportGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6977,10 +6208,10 @@ pub mod fluent_builders {
                 crate::input::UpdateReportGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6988,53 +6219,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ARN of the report group to update.
-        /// </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p> The ARN of the report group to update. </p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the report group to update.
-        /// </p>
+        /// <p> The ARN of the report group to update. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>
-        /// Used to specify an updated export type. Valid values are:
-        /// </p>
+        /// <p> Used to specify an updated export type. Valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>S3</code>: The report results are exported to an S3 bucket.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NO_EXPORT</code>: The report results are not exported.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
+        /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
         /// </ul>
-        pub fn export_config(mut self, inp: crate::model::ReportExportConfig) -> Self {
-            self.inner = self.inner.export_config(inp);
+        pub fn export_config(mut self, input: crate::model::ReportExportConfig) -> Self {
+            self.inner = self.inner.export_config(input);
             self
         }
-        /// <p>
-        /// Used to specify an updated export type. Valid values are:
-        /// </p>
+        /// <p> Used to specify an updated export type. Valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>S3</code>: The report results are exported to an S3 bucket.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NO_EXPORT</code>: The report results are not exported.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
+        /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
         /// </ul>
         pub fn set_export_config(
             mut self,
@@ -7047,20 +6254,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// An updated list of tag key and value pairs associated with this report group.
-        /// </p>
-        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
-        /// tags.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p> An updated list of tag key and value pairs associated with this report group. </p>
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>
-        /// An updated list of tag key and value pairs associated with this report group.
-        /// </p>
-        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
-        /// tags.</p>
+        /// <p> An updated list of tag key and value pairs associated with this report group. </p>
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7071,12 +6272,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateWebhook`.
     ///
-    /// <p> Updates the webhook associated with an CodeBuild build project. </p>
-    /// <note>
-    /// <p> If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
-    /// </p>
+    /// <p> Updates the webhook associated with an CodeBuild build project. </p> <note>
+    /// <p> If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWebhook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7121,10 +6320,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWebhookInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7133,8 +6332,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the CodeBuild project.</p>
-        pub fn project_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(inp);
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the CodeBuild project.</p>
@@ -7142,23 +6341,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_name(input);
             self
         }
-        /// <p>A regular expression used to determine which repository branches are built when a
-        /// webhook is triggered. If the name of a branch matches the regular expression, then it is
-        /// built. If <code>branchFilter</code> is empty, then all branches are built.</p>
-        /// <note>
-        /// <p> It is recommended that you use <code>filterGroups</code> instead of
-        /// <code>branchFilter</code>. </p>
+        /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+        /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
         /// </note>
-        pub fn branch_filter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_filter(inp);
+        pub fn branch_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_filter(input.into());
             self
         }
-        /// <p>A regular expression used to determine which repository branches are built when a
-        /// webhook is triggered. If the name of a branch matches the regular expression, then it is
-        /// built. If <code>branchFilter</code> is empty, then all branches are built.</p>
-        /// <note>
-        /// <p> It is recommended that you use <code>filterGroups</code> instead of
-        /// <code>branchFilter</code>. </p>
+        /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+        /// <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
         /// </note>
         pub fn set_branch_filter(
             mut self,
@@ -7167,16 +6358,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_branch_filter(input);
             self
         }
-        /// <p> A boolean value that specifies whether the associated GitHub repository's secret
-        /// token should be updated. If you use Bitbucket for your repository,
-        /// <code>rotateSecret</code> is ignored. </p>
-        pub fn rotate_secret(mut self, inp: bool) -> Self {
-            self.inner = self.inner.rotate_secret(inp);
+        /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
+        pub fn rotate_secret(mut self, input: bool) -> Self {
+            self.inner = self.inner.rotate_secret(input);
             self
         }
-        /// <p> A boolean value that specifies whether the associated GitHub repository's secret
-        /// token should be updated. If you use Bitbucket for your repository,
-        /// <code>rotateSecret</code> is ignored. </p>
+        /// <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
         pub fn set_rotate_secret(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_rotate_secret(input);
             self
@@ -7185,21 +6372,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filter_groups`](Self::set_filter_groups).
         ///
-        /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a
-        /// webhook event can trigger a build. A filter group must contain at least one
-        /// <code>EVENT</code>
-        /// <code>WebhookFilter</code>. </p>
-        pub fn filter_groups(
-            mut self,
-            inp: impl Into<std::vec::Vec<crate::model::WebhookFilter>>,
-        ) -> Self {
-            self.inner = self.inner.filter_groups(inp);
+        /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+        pub fn filter_groups(mut self, input: std::vec::Vec<crate::model::WebhookFilter>) -> Self {
+            self.inner = self.inner.filter_groups(input);
             self
         }
-        /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a
-        /// webhook event can trigger a build. A filter group must contain at least one
-        /// <code>EVENT</code>
-        /// <code>WebhookFilter</code>. </p>
+        /// <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
         pub fn set_filter_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
@@ -7208,8 +6386,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the type of build this webhook will trigger.</p>
-        pub fn build_type(mut self, inp: crate::model::WebhookBuildType) -> Self {
-            self.inner = self.inner.build_type(inp);
+        pub fn build_type(mut self, input: crate::model::WebhookBuildType) -> Self {
+            self.inner = self.inner.build_type(input);
             self
         }
         /// <p>Specifies the type of build this webhook will trigger.</p>
@@ -7222,6 +6400,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

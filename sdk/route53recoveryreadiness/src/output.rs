@@ -110,9 +110,9 @@ pub mod update_resource_set_output {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// A list of Resource objects
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -807,9 +807,9 @@ pub mod list_rules_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// A list of rules
-        pub fn rules(mut self, input: impl Into<crate::model::ListRulesOutput>) -> Self {
+        pub fn rules(mut self, input: crate::model::ListRulesOutput) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -890,9 +890,9 @@ pub mod list_resource_sets_output {
         /// To override the contents of this collection use [`set_resource_sets`](Self::set_resource_sets).
         ///
         /// A list of ResourceSets associated with the account
-        pub fn resource_sets(mut self, input: impl Into<crate::model::ResourceSetOutput>) -> Self {
+        pub fn resource_sets(mut self, input: crate::model::ResourceSetOutput) -> Self {
             let mut v = self.resource_sets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_sets = Some(v);
             self
         }
@@ -973,12 +973,9 @@ pub mod list_recovery_groups_output {
         /// To override the contents of this collection use [`set_recovery_groups`](Self::set_recovery_groups).
         ///
         /// A list of RecoveryGroups
-        pub fn recovery_groups(
-            mut self,
-            input: impl Into<crate::model::RecoveryGroupOutput>,
-        ) -> Self {
+        pub fn recovery_groups(mut self, input: crate::model::RecoveryGroupOutput) -> Self {
             let mut v = self.recovery_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recovery_groups = Some(v);
             self
         }
@@ -1059,12 +1056,9 @@ pub mod list_readiness_checks_output {
         /// To override the contents of this collection use [`set_readiness_checks`](Self::set_readiness_checks).
         ///
         /// A list of ReadinessCheck associated with the account
-        pub fn readiness_checks(
-            mut self,
-            input: impl Into<crate::model::ReadinessCheckOutput>,
-        ) -> Self {
+        pub fn readiness_checks(mut self, input: crate::model::ReadinessCheckOutput) -> Self {
             let mut v = self.readiness_checks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.readiness_checks = Some(v);
             self
         }
@@ -1223,9 +1217,9 @@ pub mod list_cells_output {
         /// To override the contents of this collection use [`set_cells`](Self::set_cells).
         ///
         /// A list of Cells
-        pub fn cells(mut self, input: impl Into<crate::model::CellOutput>) -> Self {
+        pub fn cells(mut self, input: crate::model::CellOutput) -> Self {
             let mut v = self.cells.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cells = Some(v);
             self
         }
@@ -1374,9 +1368,9 @@ pub mod get_resource_set_output {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// A list of Resource objects
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -1506,12 +1500,9 @@ pub mod get_recovery_group_readiness_summary_output {
         /// To override the contents of this collection use [`set_readiness_checks`](Self::set_readiness_checks).
         ///
         /// Summaries for the ReadinessChecks making up the RecoveryGroup
-        pub fn readiness_checks(
-            mut self,
-            input: impl Into<crate::model::ReadinessCheckSummary>,
-        ) -> Self {
+        pub fn readiness_checks(mut self, input: crate::model::ReadinessCheckSummary) -> Self {
             let mut v = self.readiness_checks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.readiness_checks = Some(v);
             self
         }
@@ -1745,9 +1736,9 @@ pub mod get_readiness_check_status_output {
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
         /// Top level messages for readiness check status
-        pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
@@ -1787,9 +1778,9 @@ pub mod get_readiness_check_status_output {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// Summary of resources's readiness
-        pub fn resources(mut self, input: impl Into<crate::model::ResourceResult>) -> Self {
+        pub fn resources(mut self, input: crate::model::ResourceResult) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -1892,9 +1883,9 @@ pub mod get_readiness_check_resource_status_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// Details of the rules's results
-        pub fn rules(mut self, input: impl Into<crate::model::RuleResult>) -> Self {
+        pub fn rules(mut self, input: crate::model::RuleResult) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -2135,12 +2126,9 @@ pub mod get_cell_readiness_summary_output {
         /// To override the contents of this collection use [`set_readiness_checks`](Self::set_readiness_checks).
         ///
         /// Summaries for the ReadinessChecks making up the Cell
-        pub fn readiness_checks(
-            mut self,
-            input: impl Into<crate::model::ReadinessCheckSummary>,
-        ) -> Self {
+        pub fn readiness_checks(mut self, input: crate::model::ReadinessCheckSummary) -> Self {
             let mut v = self.readiness_checks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.readiness_checks = Some(v);
             self
         }
@@ -2412,9 +2400,9 @@ pub mod get_architecture_recommendations_output {
         /// To override the contents of this collection use [`set_recommendations`](Self::set_recommendations).
         ///
         /// A list of recommendations for the customer's application
-        pub fn recommendations(mut self, input: impl Into<crate::model::Recommendation>) -> Self {
+        pub fn recommendations(mut self, input: crate::model::Recommendation) -> Self {
             let mut v = self.recommendations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.recommendations = Some(v);
             self
         }
@@ -2704,9 +2692,9 @@ pub mod create_resource_set_output {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// A list of Resource objects
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }

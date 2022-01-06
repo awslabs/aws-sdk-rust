@@ -5,36 +5,25 @@
 pub enum Error {
     /// <p>You do not have required permissions to access the requested resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>You started an assessment run, but one of the instances is already participating in
-    /// another assessment run.</p>
+    /// <p>You started an assessment run, but one of the instances is already participating in another assessment run.</p>
     AgentsAlreadyRunningAssessmentException(crate::error::AgentsAlreadyRunningAssessmentException),
-    /// <p>You cannot perform a specified action if an assessment run is currently in
-    /// progress.</p>
+    /// <p>You cannot perform a specified action if an assessment run is currently in progress.</p>
     AssessmentRunInProgressException(crate::error::AssessmentRunInProgressException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2
-    /// instances during the assessment run.</p>
+    /// <p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the assessment run.</p>
     InvalidCrossAccountRoleException(crate::error::InvalidCrossAccountRoleException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current
-    /// AWS account limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request is rejected. The specified assessment template is currently generating an
-    /// exclusions preview.</p>
+    /// <p>The request is rejected. The specified assessment template is currently generating an exclusions preview.</p>
     PreviewGenerationInProgressException(crate::error::PreviewGenerationInProgressException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// <p>Used by the <a>GetAssessmentReport</a> API. The request was rejected
-    /// because you tried to generate a report for an assessment run that existed before reporting
-    /// was supported in Amazon Inspector. You can only generate reports for assessment runs that
-    /// took place or will take place after generating reports in Amazon Inspector became
-    /// available.</p>
+    /// <p>Used by the <code>GetAssessmentReport</code> API. The request was rejected because you tried to generate a report for an assessment run that existed before reporting was supported in Amazon Inspector. You can only generate reports for assessment runs that took place or will take place after generating reports in Amazon Inspector became available.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

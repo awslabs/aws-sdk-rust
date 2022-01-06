@@ -5,8 +5,7 @@
 pub enum Error {
     /// <p>There is concurrent modification on a rule, target, archive, or replay.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>An error occurred because a replay can be canceled only when the state is Running or
-    /// Starting.</p>
+    /// <p>An error occurred because a replay can be canceled only when the state is Running or Starting.</p>
     IllegalStatusException(crate::error::IllegalStatusException),
     /// <p>This exception occurs due to unexpected causes.</p>
     InternalException(crate::error::InternalException),
@@ -14,15 +13,9 @@ pub enum Error {
     InvalidEventPatternException(crate::error::InvalidEventPatternException),
     /// <p>The specified state is not a valid state for an event source.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The request failed because it attempted to create resource beyond the allowed service
-    /// quota.</p>
+    /// <p>The request failed because it attempted to create resource beyond the allowed service quota.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>This rule was created by an Amazon Web Services service on behalf of your account. It is managed by that
-    /// service. If you see this error in response to <code>DeleteRule</code> or
-    /// <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those calls to
-    /// delete the rule or remove targets from the rule. You cannot modify these managed rules by
-    /// using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-    /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>. </p>
+    /// <p>This rule was created by an Amazon Web Services service on behalf of your account. It is managed by that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those calls to delete the rule or remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>, <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>. </p>
     ManagedRuleException(crate::error::ManagedRuleException),
     /// <p>The operation you are attempting is not available in this region.</p>
     OperationDisabledException(crate::error::OperationDisabledException),

@@ -3,13 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePolicyOutput {
-    /// <p>A structure that contains details about the updated policy, showing the requested
-    /// changes.</p>
+    /// <p>A structure that contains details about the updated policy, showing the requested changes.</p>
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl UpdatePolicyOutput {
-    /// <p>A structure that contains details about the updated policy, showing the requested
-    /// changes.</p>
+    /// <p>A structure that contains details about the updated policy, showing the requested changes.</p>
     pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
         self.policy.as_ref()
     }
@@ -30,14 +28,12 @@ pub mod update_policy_output {
         pub(crate) policy: std::option::Option<crate::model::Policy>,
     }
     impl Builder {
-        /// <p>A structure that contains details about the updated policy, showing the requested
-        /// changes.</p>
+        /// <p>A structure that contains details about the updated policy, showing the requested changes.</p>
         pub fn policy(mut self, input: crate::model::Policy) -> Self {
             self.policy = Some(input);
             self
         }
-        /// <p>A structure that contains details about the updated policy, showing the requested
-        /// changes.</p>
+        /// <p>A structure that contains details about the updated policy, showing the requested changes.</p>
         pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
             self.policy = input;
             self
@@ -61,13 +57,11 @@ impl UpdatePolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOrganizationalUnitOutput {
-    /// <p>A structure that contains the details about the specified OU, including its new
-    /// name.</p>
+    /// <p>A structure that contains the details about the specified OU, including its new name.</p>
     pub organizational_unit: std::option::Option<crate::model::OrganizationalUnit>,
 }
 impl UpdateOrganizationalUnitOutput {
-    /// <p>A structure that contains the details about the specified OU, including its new
-    /// name.</p>
+    /// <p>A structure that contains the details about the specified OU, including its new name.</p>
     pub fn organizational_unit(&self) -> std::option::Option<&crate::model::OrganizationalUnit> {
         self.organizational_unit.as_ref()
     }
@@ -88,14 +82,12 @@ pub mod update_organizational_unit_output {
         pub(crate) organizational_unit: std::option::Option<crate::model::OrganizationalUnit>,
     }
     impl Builder {
-        /// <p>A structure that contains the details about the specified OU, including its new
-        /// name.</p>
+        /// <p>A structure that contains the details about the specified OU, including its new name.</p>
         pub fn organizational_unit(mut self, input: crate::model::OrganizationalUnit) -> Self {
             self.organizational_unit = Some(input);
             self
         }
-        /// <p>A structure that contains the details about the specified OU, including its new
-        /// name.</p>
+        /// <p>A structure that contains the details about the specified OU, including its new name.</p>
         pub fn set_organizational_unit(
             mut self,
             input: std::option::Option<crate::model::OrganizationalUnit>,
@@ -272,25 +264,17 @@ impl MoveAccountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetsForPolicyOutput {
-    /// <p>A list of structures, each of which contains details about one of the entities to
-    /// which the specified policy is attached.</p>
+    /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::PolicyTargetSummary>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTargetsForPolicyOutput {
-    /// <p>A list of structures, each of which contains details about one of the entities to
-    /// which the specified policy is attached.</p>
+    /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
     pub fn targets(&self) -> std::option::Option<&[crate::model::PolicyTargetSummary]> {
         self.targets.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -317,16 +301,14 @@ pub mod list_targets_for_policy_output {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>A list of structures, each of which contains details about one of the entities to
-        /// which the specified policy is attached.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::PolicyTargetSummary>) -> Self {
+        /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
+        pub fn targets(mut self, input: crate::model::PolicyTargetSummary) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
-        /// <p>A list of structures, each of which contains details about one of the entities to
-        /// which the specified policy is attached.</p>
+        /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyTargetSummary>>,
@@ -334,18 +316,12 @@ pub mod list_targets_for_policy_output {
             self.targets = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -372,10 +348,7 @@ impl ListTargetsForPolicyOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>The tags that are assigned to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -383,10 +356,7 @@ impl ListTagsForResourceOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -414,9 +384,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that are assigned to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -428,18 +398,12 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -466,10 +430,7 @@ impl ListTagsForResourceOutput {
 pub struct ListRootsOutput {
     /// <p>A list of roots that are defined in an organization.</p>
     pub roots: std::option::Option<std::vec::Vec<crate::model::Root>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRootsOutput {
@@ -477,10 +438,7 @@ impl ListRootsOutput {
     pub fn roots(&self) -> std::option::Option<&[crate::model::Root]> {
         self.roots.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -508,9 +466,9 @@ pub mod list_roots_output {
         /// To override the contents of this collection use [`set_roots`](Self::set_roots).
         ///
         /// <p>A list of roots that are defined in an organization.</p>
-        pub fn roots(mut self, input: impl Into<crate::model::Root>) -> Self {
+        pub fn roots(mut self, input: crate::model::Root) -> Self {
             let mut v = self.roots.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.roots = Some(v);
             self
         }
@@ -522,18 +480,12 @@ pub mod list_roots_output {
             self.roots = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -560,10 +512,7 @@ impl ListRootsOutput {
 pub struct ListPoliciesForTargetOutput {
     /// <p>The list of policies that match the criteria in the request.</p>
     pub policies: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPoliciesForTargetOutput {
@@ -571,10 +520,7 @@ impl ListPoliciesForTargetOutput {
     pub fn policies(&self) -> std::option::Option<&[crate::model::PolicySummary]> {
         self.policies.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -602,9 +548,9 @@ pub mod list_policies_for_target_output {
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
         /// <p>The list of policies that match the criteria in the request.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::PolicySummary>) -> Self {
+        pub fn policies(mut self, input: crate::model::PolicySummary) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
@@ -616,18 +562,12 @@ pub mod list_policies_for_target_output {
             self.policies = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -652,25 +592,17 @@ impl ListPoliciesForTargetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoliciesOutput {
-    /// <p>A list of policies that match the filter criteria in the request. The output list
-    /// doesn't include the policy contents. To see the content for a policy, see <a>DescribePolicy</a>.</p>
+    /// <p>A list of policies that match the filter criteria in the request. The output list doesn't include the policy contents. To see the content for a policy, see <code>DescribePolicy</code>.</p>
     pub policies: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPoliciesOutput {
-    /// <p>A list of policies that match the filter criteria in the request. The output list
-    /// doesn't include the policy contents. To see the content for a policy, see <a>DescribePolicy</a>.</p>
+    /// <p>A list of policies that match the filter criteria in the request. The output list doesn't include the policy contents. To see the content for a policy, see <code>DescribePolicy</code>.</p>
     pub fn policies(&self) -> std::option::Option<&[crate::model::PolicySummary]> {
         self.policies.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -697,16 +629,14 @@ pub mod list_policies_output {
         ///
         /// To override the contents of this collection use [`set_policies`](Self::set_policies).
         ///
-        /// <p>A list of policies that match the filter criteria in the request. The output list
-        /// doesn't include the policy contents. To see the content for a policy, see <a>DescribePolicy</a>.</p>
-        pub fn policies(mut self, input: impl Into<crate::model::PolicySummary>) -> Self {
+        /// <p>A list of policies that match the filter criteria in the request. The output list doesn't include the policy contents. To see the content for a policy, see <code>DescribePolicy</code>.</p>
+        pub fn policies(mut self, input: crate::model::PolicySummary) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policies = Some(v);
             self
         }
-        /// <p>A list of policies that match the filter criteria in the request. The output list
-        /// doesn't include the policy contents. To see the content for a policy, see <a>DescribePolicy</a>.</p>
+        /// <p>A list of policies that match the filter criteria in the request. The output list doesn't include the policy contents. To see the content for a policy, see <code>DescribePolicy</code>.</p>
         pub fn set_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
@@ -714,18 +644,12 @@ pub mod list_policies_output {
             self.policies = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -752,10 +676,7 @@ impl ListPoliciesOutput {
 pub struct ListParentsOutput {
     /// <p>A list of parents for the specified child account or OU.</p>
     pub parents: std::option::Option<std::vec::Vec<crate::model::Parent>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListParentsOutput {
@@ -763,10 +684,7 @@ impl ListParentsOutput {
     pub fn parents(&self) -> std::option::Option<&[crate::model::Parent]> {
         self.parents.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -794,9 +712,9 @@ pub mod list_parents_output {
         /// To override the contents of this collection use [`set_parents`](Self::set_parents).
         ///
         /// <p>A list of parents for the specified child account or OU.</p>
-        pub fn parents(mut self, input: impl Into<crate::model::Parent>) -> Self {
+        pub fn parents(mut self, input: crate::model::Parent) -> Self {
             let mut v = self.parents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parents = Some(v);
             self
         }
@@ -808,18 +726,12 @@ pub mod list_parents_output {
             self.parents = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -846,10 +758,7 @@ impl ListParentsOutput {
 pub struct ListOrganizationalUnitsForParentOutput {
     /// <p>A list of the OUs in the specified root or parent OU.</p>
     pub organizational_units: std::option::Option<std::vec::Vec<crate::model::OrganizationalUnit>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationalUnitsForParentOutput {
@@ -857,10 +766,7 @@ impl ListOrganizationalUnitsForParentOutput {
     pub fn organizational_units(&self) -> std::option::Option<&[crate::model::OrganizationalUnit]> {
         self.organizational_units.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -889,12 +795,9 @@ pub mod list_organizational_units_for_parent_output {
         /// To override the contents of this collection use [`set_organizational_units`](Self::set_organizational_units).
         ///
         /// <p>A list of the OUs in the specified root or parent OU.</p>
-        pub fn organizational_units(
-            mut self,
-            input: impl Into<crate::model::OrganizationalUnit>,
-        ) -> Self {
+        pub fn organizational_units(mut self, input: crate::model::OrganizationalUnit) -> Self {
             let mut v = self.organizational_units.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.organizational_units = Some(v);
             self
         }
@@ -906,18 +809,12 @@ pub mod list_organizational_units_for_parent_output {
             self.organizational_units = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -942,25 +839,17 @@ impl ListOrganizationalUnitsForParentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHandshakesForOrganizationOutput {
-    /// <p>A list of <a>Handshake</a> objects with details about each of the
-    /// handshakes that are associated with an organization.</p>
+    /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
     pub handshakes: std::option::Option<std::vec::Vec<crate::model::Handshake>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHandshakesForOrganizationOutput {
-    /// <p>A list of <a>Handshake</a> objects with details about each of the
-    /// handshakes that are associated with an organization.</p>
+    /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
     pub fn handshakes(&self) -> std::option::Option<&[crate::model::Handshake]> {
         self.handshakes.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -987,16 +876,14 @@ pub mod list_handshakes_for_organization_output {
         ///
         /// To override the contents of this collection use [`set_handshakes`](Self::set_handshakes).
         ///
-        /// <p>A list of <a>Handshake</a> objects with details about each of the
-        /// handshakes that are associated with an organization.</p>
-        pub fn handshakes(mut self, input: impl Into<crate::model::Handshake>) -> Self {
+        /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
+        pub fn handshakes(mut self, input: crate::model::Handshake) -> Self {
             let mut v = self.handshakes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.handshakes = Some(v);
             self
         }
-        /// <p>A list of <a>Handshake</a> objects with details about each of the
-        /// handshakes that are associated with an organization.</p>
+        /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
         pub fn set_handshakes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Handshake>>,
@@ -1004,18 +891,12 @@ pub mod list_handshakes_for_organization_output {
             self.handshakes = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1040,25 +921,17 @@ impl ListHandshakesForOrganizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHandshakesForAccountOutput {
-    /// <p>A list of <a>Handshake</a> objects with details about each of the
-    /// handshakes that is associated with the specified account.</p>
+    /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
     pub handshakes: std::option::Option<std::vec::Vec<crate::model::Handshake>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHandshakesForAccountOutput {
-    /// <p>A list of <a>Handshake</a> objects with details about each of the
-    /// handshakes that is associated with the specified account.</p>
+    /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
     pub fn handshakes(&self) -> std::option::Option<&[crate::model::Handshake]> {
         self.handshakes.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1085,16 +958,14 @@ pub mod list_handshakes_for_account_output {
         ///
         /// To override the contents of this collection use [`set_handshakes`](Self::set_handshakes).
         ///
-        /// <p>A list of <a>Handshake</a> objects with details about each of the
-        /// handshakes that is associated with the specified account.</p>
-        pub fn handshakes(mut self, input: impl Into<crate::model::Handshake>) -> Self {
+        /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
+        pub fn handshakes(mut self, input: crate::model::Handshake) -> Self {
             let mut v = self.handshakes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.handshakes = Some(v);
             self
         }
-        /// <p>A list of <a>Handshake</a> objects with details about each of the
-        /// handshakes that is associated with the specified account.</p>
+        /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
         pub fn set_handshakes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Handshake>>,
@@ -1102,18 +973,12 @@ pub mod list_handshakes_for_account_output {
             self.handshakes = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1140,10 +1005,7 @@ impl ListHandshakesForAccountOutput {
 pub struct ListDelegatedServicesForAccountOutput {
     /// <p>The services for which the account is a delegated administrator.</p>
     pub delegated_services: std::option::Option<std::vec::Vec<crate::model::DelegatedService>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDelegatedServicesForAccountOutput {
@@ -1151,10 +1013,7 @@ impl ListDelegatedServicesForAccountOutput {
     pub fn delegated_services(&self) -> std::option::Option<&[crate::model::DelegatedService]> {
         self.delegated_services.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1183,12 +1042,9 @@ pub mod list_delegated_services_for_account_output {
         /// To override the contents of this collection use [`set_delegated_services`](Self::set_delegated_services).
         ///
         /// <p>The services for which the account is a delegated administrator.</p>
-        pub fn delegated_services(
-            mut self,
-            input: impl Into<crate::model::DelegatedService>,
-        ) -> Self {
+        pub fn delegated_services(mut self, input: crate::model::DelegatedService) -> Self {
             let mut v = self.delegated_services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegated_services = Some(v);
             self
         }
@@ -1200,18 +1056,12 @@ pub mod list_delegated_services_for_account_output {
             self.delegated_services = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1239,10 +1089,7 @@ pub struct ListDelegatedAdministratorsOutput {
     /// <p>The list of delegated administrators in your organization.</p>
     pub delegated_administrators:
         std::option::Option<std::vec::Vec<crate::model::DelegatedAdministrator>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDelegatedAdministratorsOutput {
@@ -1252,10 +1099,7 @@ impl ListDelegatedAdministratorsOutput {
     ) -> std::option::Option<&[crate::model::DelegatedAdministrator]> {
         self.delegated_administrators.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1286,10 +1130,10 @@ pub mod list_delegated_administrators_output {
         /// <p>The list of delegated administrators in your organization.</p>
         pub fn delegated_administrators(
             mut self,
-            input: impl Into<crate::model::DelegatedAdministrator>,
+            input: crate::model::DelegatedAdministrator,
         ) -> Self {
             let mut v = self.delegated_administrators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delegated_administrators = Some(v);
             self
         }
@@ -1301,18 +1145,12 @@ pub mod list_delegated_administrators_output {
             self.delegated_administrators = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1337,30 +1175,20 @@ impl ListDelegatedAdministratorsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCreateAccountStatusOutput {
-    /// <p>A list of objects with details about the requests. Certain elements, such as the
-    /// accountId number, are present in the output only after the account has been successfully
-    /// created.</p>
+    /// <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
     pub create_account_statuses:
         std::option::Option<std::vec::Vec<crate::model::CreateAccountStatus>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCreateAccountStatusOutput {
-    /// <p>A list of objects with details about the requests. Certain elements, such as the
-    /// accountId number, are present in the output only after the account has been successfully
-    /// created.</p>
+    /// <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
     pub fn create_account_statuses(
         &self,
     ) -> std::option::Option<&[crate::model::CreateAccountStatus]> {
         self.create_account_statuses.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1388,21 +1216,14 @@ pub mod list_create_account_status_output {
         ///
         /// To override the contents of this collection use [`set_create_account_statuses`](Self::set_create_account_statuses).
         ///
-        /// <p>A list of objects with details about the requests. Certain elements, such as the
-        /// accountId number, are present in the output only after the account has been successfully
-        /// created.</p>
-        pub fn create_account_statuses(
-            mut self,
-            input: impl Into<crate::model::CreateAccountStatus>,
-        ) -> Self {
+        /// <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
+        pub fn create_account_statuses(mut self, input: crate::model::CreateAccountStatus) -> Self {
             let mut v = self.create_account_statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.create_account_statuses = Some(v);
             self
         }
-        /// <p>A list of objects with details about the requests. Certain elements, such as the
-        /// accountId number, are present in the output only after the account has been successfully
-        /// created.</p>
+        /// <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
         pub fn set_create_account_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreateAccountStatus>>,
@@ -1410,18 +1231,12 @@ pub mod list_create_account_status_output {
             self.create_account_statuses = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1448,10 +1263,7 @@ impl ListCreateAccountStatusOutput {
 pub struct ListChildrenOutput {
     /// <p>The list of children of the specified parent container.</p>
     pub children: std::option::Option<std::vec::Vec<crate::model::Child>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChildrenOutput {
@@ -1459,10 +1271,7 @@ impl ListChildrenOutput {
     pub fn children(&self) -> std::option::Option<&[crate::model::Child]> {
         self.children.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1490,9 +1299,9 @@ pub mod list_children_output {
         /// To override the contents of this collection use [`set_children`](Self::set_children).
         ///
         /// <p>The list of children of the specified parent container.</p>
-        pub fn children(mut self, input: impl Into<crate::model::Child>) -> Self {
+        pub fn children(mut self, input: crate::model::Child) -> Self {
             let mut v = self.children.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.children = Some(v);
             self
         }
@@ -1504,18 +1313,12 @@ pub mod list_children_output {
             self.children = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1540,30 +1343,20 @@ impl ListChildrenOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAwsServiceAccessForOrganizationOutput {
-    /// <p>A list of the service principals for the services that are enabled to integrate with
-    /// your organization. Each principal is a structure that includes the name and the date
-    /// that it was enabled for integration with AWS Organizations.</p>
+    /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with AWS Organizations.</p>
     pub enabled_service_principals:
         std::option::Option<std::vec::Vec<crate::model::EnabledServicePrincipal>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAwsServiceAccessForOrganizationOutput {
-    /// <p>A list of the service principals for the services that are enabled to integrate with
-    /// your organization. Each principal is a structure that includes the name and the date
-    /// that it was enabled for integration with AWS Organizations.</p>
+    /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with AWS Organizations.</p>
     pub fn enabled_service_principals(
         &self,
     ) -> std::option::Option<&[crate::model::EnabledServicePrincipal]> {
         self.enabled_service_principals.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1594,21 +1387,17 @@ pub mod list_aws_service_access_for_organization_output {
         ///
         /// To override the contents of this collection use [`set_enabled_service_principals`](Self::set_enabled_service_principals).
         ///
-        /// <p>A list of the service principals for the services that are enabled to integrate with
-        /// your organization. Each principal is a structure that includes the name and the date
-        /// that it was enabled for integration with AWS Organizations.</p>
+        /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with AWS Organizations.</p>
         pub fn enabled_service_principals(
             mut self,
-            input: impl Into<crate::model::EnabledServicePrincipal>,
+            input: crate::model::EnabledServicePrincipal,
         ) -> Self {
             let mut v = self.enabled_service_principals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.enabled_service_principals = Some(v);
             self
         }
-        /// <p>A list of the service principals for the services that are enabled to integrate with
-        /// your organization. Each principal is a structure that includes the name and the date
-        /// that it was enabled for integration with AWS Organizations.</p>
+        /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with AWS Organizations.</p>
         pub fn set_enabled_service_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnabledServicePrincipal>>,
@@ -1616,18 +1405,12 @@ pub mod list_aws_service_access_for_organization_output {
             self.enabled_service_principals = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1654,10 +1437,7 @@ impl ListAwsServiceAccessForOrganizationOutput {
 pub struct ListAccountsForParentOutput {
     /// <p>A list of the accounts in the specified root or OU.</p>
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountsForParentOutput {
@@ -1665,10 +1445,7 @@ impl ListAccountsForParentOutput {
     pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
         self.accounts.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1696,9 +1473,9 @@ pub mod list_accounts_for_parent_output {
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
         /// <p>A list of the accounts in the specified root or OU.</p>
-        pub fn accounts(mut self, input: impl Into<crate::model::Account>) -> Self {
+        pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accounts = Some(v);
             self
         }
@@ -1710,18 +1487,12 @@ pub mod list_accounts_for_parent_output {
             self.accounts = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1748,10 +1519,7 @@ impl ListAccountsForParentOutput {
 pub struct ListAccountsOutput {
     /// <p>A list of objects in the organization.</p>
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountsOutput {
@@ -1759,10 +1527,7 @@ impl ListAccountsOutput {
     pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
         self.accounts.as_deref()
     }
-    /// <p>If present, indicates that more output is available than is
-    /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-    /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-    /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1790,9 +1555,9 @@ pub mod list_accounts_output {
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
         /// <p>A list of objects in the organization.</p>
-        pub fn accounts(mut self, input: impl Into<crate::model::Account>) -> Self {
+        pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.accounts = Some(v);
             self
         }
@@ -1804,18 +1569,12 @@ pub mod list_accounts_output {
             self.accounts = input;
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present, indicates that more output is available than is
-        /// included in the current response. Use this value in the <code>NextToken</code> request parameter
-        /// in a subsequent call to the operation to get the next part of the output. You should repeat this
-        /// until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+        /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1870,13 +1629,11 @@ impl LeaveOrganizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InviteAccountToOrganizationOutput {
-    /// <p>A structure that contains details about the handshake that is created to support this
-    /// invitation request.</p>
+    /// <p>A structure that contains details about the handshake that is created to support this invitation request.</p>
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl InviteAccountToOrganizationOutput {
-    /// <p>A structure that contains details about the handshake that is created to support this
-    /// invitation request.</p>
+    /// <p>A structure that contains details about the handshake that is created to support this invitation request.</p>
     pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
         self.handshake.as_ref()
     }
@@ -1897,14 +1654,12 @@ pub mod invite_account_to_organization_output {
         pub(crate) handshake: std::option::Option<crate::model::Handshake>,
     }
     impl Builder {
-        /// <p>A structure that contains details about the handshake that is created to support this
-        /// invitation request.</p>
+        /// <p>A structure that contains details about the handshake that is created to support this invitation request.</p>
         pub fn handshake(mut self, input: crate::model::Handshake) -> Self {
             self.handshake = Some(input);
             self
         }
-        /// <p>A structure that contains details about the handshake that is created to support this
-        /// invitation request.</p>
+        /// <p>A structure that contains details about the handshake that is created to support this invitation request.</p>
         pub fn set_handshake(
             mut self,
             input: std::option::Option<crate::model::Handshake>,
@@ -2013,13 +1768,11 @@ impl EnableAwsServiceAccessOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableAllFeaturesOutput {
-    /// <p>A structure that contains details about the handshake created to support this request
-    /// to enable all features in the organization.</p>
+    /// <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl EnableAllFeaturesOutput {
-    /// <p>A structure that contains details about the handshake created to support this request
-    /// to enable all features in the organization.</p>
+    /// <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
     pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
         self.handshake.as_ref()
     }
@@ -2040,14 +1793,12 @@ pub mod enable_all_features_output {
         pub(crate) handshake: std::option::Option<crate::model::Handshake>,
     }
     impl Builder {
-        /// <p>A structure that contains details about the handshake created to support this request
-        /// to enable all features in the organization.</p>
+        /// <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
         pub fn handshake(mut self, input: crate::model::Handshake) -> Self {
             self.handshake = Some(input);
             self
         }
-        /// <p>A structure that contains details about the handshake created to support this request
-        /// to enable all features in the organization.</p>
+        /// <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
         pub fn set_handshake(
             mut self,
             input: std::option::Option<crate::model::Handshake>,
@@ -2297,26 +2048,14 @@ impl DescribeOrganizationalUnitOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrganizationOutput {
-    /// <p>A structure that contains information about the organization.</p>
-    /// <important>
-    /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you
-    /// shouldn't use it in your apps. It doesn't include any policy type supported by Organizations
-    /// other than SCPs. To determine which policy types are enabled in your organization,
-    /// use the <code>
-    /// <a>ListRoots</a>
-    /// </code> operation.</p>
+    /// <p>A structure that contains information about the organization.</p> <important>
+    /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
     /// </important>
     pub organization: std::option::Option<crate::model::Organization>,
 }
 impl DescribeOrganizationOutput {
-    /// <p>A structure that contains information about the organization.</p>
-    /// <important>
-    /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you
-    /// shouldn't use it in your apps. It doesn't include any policy type supported by Organizations
-    /// other than SCPs. To determine which policy types are enabled in your organization,
-    /// use the <code>
-    /// <a>ListRoots</a>
-    /// </code> operation.</p>
+    /// <p>A structure that contains information about the organization.</p> <important>
+    /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
     /// </important>
     pub fn organization(&self) -> std::option::Option<&crate::model::Organization> {
         self.organization.as_ref()
@@ -2338,27 +2077,15 @@ pub mod describe_organization_output {
         pub(crate) organization: std::option::Option<crate::model::Organization>,
     }
     impl Builder {
-        /// <p>A structure that contains information about the organization.</p>
-        /// <important>
-        /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you
-        /// shouldn't use it in your apps. It doesn't include any policy type supported by Organizations
-        /// other than SCPs. To determine which policy types are enabled in your organization,
-        /// use the <code>
-        /// <a>ListRoots</a>
-        /// </code> operation.</p>
+        /// <p>A structure that contains information about the organization.</p> <important>
+        /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
         /// </important>
         pub fn organization(mut self, input: crate::model::Organization) -> Self {
             self.organization = Some(input);
             self
         }
-        /// <p>A structure that contains information about the organization.</p>
-        /// <important>
-        /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you
-        /// shouldn't use it in your apps. It doesn't include any policy type supported by Organizations
-        /// other than SCPs. To determine which policy types are enabled in your organization,
-        /// use the <code>
-        /// <a>ListRoots</a>
-        /// </code> operation.</p>
+        /// <p>A structure that contains information about the organization.</p> <important>
+        /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
         /// </important>
         pub fn set_organization(
             mut self,
@@ -2731,13 +2458,11 @@ impl DeleteOrganizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineHandshakeOutput {
-    /// <p>A structure that contains details about the declined handshake. The state is updated
-    /// to show the value <code>DECLINED</code>.</p>
+    /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl DeclineHandshakeOutput {
-    /// <p>A structure that contains details about the declined handshake. The state is updated
-    /// to show the value <code>DECLINED</code>.</p>
+    /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
     pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
         self.handshake.as_ref()
     }
@@ -2758,14 +2483,12 @@ pub mod decline_handshake_output {
         pub(crate) handshake: std::option::Option<crate::model::Handshake>,
     }
     impl Builder {
-        /// <p>A structure that contains details about the declined handshake. The state is updated
-        /// to show the value <code>DECLINED</code>.</p>
+        /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
         pub fn handshake(mut self, input: crate::model::Handshake) -> Self {
             self.handshake = Some(input);
             self
         }
-        /// <p>A structure that contains details about the declined handshake. The state is updated
-        /// to show the value <code>DECLINED</code>.</p>
+        /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
         pub fn set_handshake(
             mut self,
             input: std::option::Option<crate::model::Handshake>,
@@ -2960,13 +2683,11 @@ impl CreateOrganizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGovCloudAccountOutput {
-    /// <p>Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS
-    /// GovCloud (US) account in an organization.</p>
+    /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an AWS account or an AWS GovCloud (US) account in an organization.</p>
     pub create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
 }
 impl CreateGovCloudAccountOutput {
-    /// <p>Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS
-    /// GovCloud (US) account in an organization.</p>
+    /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an AWS account or an AWS GovCloud (US) account in an organization.</p>
     pub fn create_account_status(&self) -> std::option::Option<&crate::model::CreateAccountStatus> {
         self.create_account_status.as_ref()
     }
@@ -2987,14 +2708,12 @@ pub mod create_gov_cloud_account_output {
         pub(crate) create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
     }
     impl Builder {
-        /// <p>Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS
-        /// GovCloud (US) account in an organization.</p>
+        /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an AWS account or an AWS GovCloud (US) account in an organization.</p>
         pub fn create_account_status(mut self, input: crate::model::CreateAccountStatus) -> Self {
             self.create_account_status = Some(input);
             self
         }
-        /// <p>Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS
-        /// GovCloud (US) account in an organization.</p>
+        /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an AWS account or an AWS GovCloud (US) account in an organization.</p>
         pub fn set_create_account_status(
             mut self,
             input: std::option::Option<crate::model::CreateAccountStatus>,
@@ -3021,23 +2740,11 @@ impl CreateGovCloudAccountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccountOutput {
-    /// <p>A structure that contains details about the request to create an account. This
-    /// response structure might not be fully populated when you first receive it because
-    /// account creation is an asynchronous process. You can pass the returned
-    /// <code>CreateAccountStatus</code> ID as a parameter to <a>DescribeCreateAccountStatus</a> to get status about the progress of the
-    /// request at later times. You can also check the AWS CloudTrail log for the
-    /// <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your
-    /// Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+    /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
     pub create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
 }
 impl CreateAccountOutput {
-    /// <p>A structure that contains details about the request to create an account. This
-    /// response structure might not be fully populated when you first receive it because
-    /// account creation is an asynchronous process. You can pass the returned
-    /// <code>CreateAccountStatus</code> ID as a parameter to <a>DescribeCreateAccountStatus</a> to get status about the progress of the
-    /// request at later times. You can also check the AWS CloudTrail log for the
-    /// <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your
-    /// Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+    /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
     pub fn create_account_status(&self) -> std::option::Option<&crate::model::CreateAccountStatus> {
         self.create_account_status.as_ref()
     }
@@ -3058,24 +2765,12 @@ pub mod create_account_output {
         pub(crate) create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
     }
     impl Builder {
-        /// <p>A structure that contains details about the request to create an account. This
-        /// response structure might not be fully populated when you first receive it because
-        /// account creation is an asynchronous process. You can pass the returned
-        /// <code>CreateAccountStatus</code> ID as a parameter to <a>DescribeCreateAccountStatus</a> to get status about the progress of the
-        /// request at later times. You can also check the AWS CloudTrail log for the
-        /// <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your
-        /// Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+        /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
         pub fn create_account_status(mut self, input: crate::model::CreateAccountStatus) -> Self {
             self.create_account_status = Some(input);
             self
         }
-        /// <p>A structure that contains details about the request to create an account. This
-        /// response structure might not be fully populated when you first receive it because
-        /// account creation is an asynchronous process. You can pass the returned
-        /// <code>CreateAccountStatus</code> ID as a parameter to <a>DescribeCreateAccountStatus</a> to get status about the progress of the
-        /// request at later times. You can also check the AWS CloudTrail log for the
-        /// <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your
-        /// Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
+        /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>
         pub fn set_create_account_status(
             mut self,
             input: std::option::Option<crate::model::CreateAccountStatus>,

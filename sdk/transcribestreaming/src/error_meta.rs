@@ -3,21 +3,13 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>One or more arguments to the <code>StartStreamTranscription</code> or
-    /// <code>StartMedicalStreamTranscription</code> operation was invalid. For example,
-    /// <code>MediaEncoding</code> was not set to a valid encoding, or <code>LanguageCode</code> was
-    /// not set to a valid code. Check the parameters and try your request again.</p>
+    /// <p>One or more arguments to the <code>StartStreamTranscription</code> or <code>StartMedicalStreamTranscription</code> operation was invalid. For example, <code>MediaEncoding</code> was not set to a valid encoding, or <code>LanguageCode</code> was not set to a valid code. Check the parameters and try your request again.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>A new stream started with the same session ID. The current stream has been
-    /// terminated.</p>
+    /// <p>A new stream started with the same session ID. The current stream has been terminated.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>A problem occurred while processing the audio. Amazon Transcribe or Amazon Transcribe Medical terminated processing. Try
-    /// your request again.</p>
+    /// <p>A problem occurred while processing the audio. Amazon Transcribe or Amazon Transcribe Medical terminated processing. Try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>You have exceeded the maximum number of concurrent transcription streams, are starting
-    /// transcription streams too quickly, or the maximum audio length of 4 hours. Wait until a stream
-    /// has finished processing, or break your audio stream into smaller chunks and try your request
-    /// again.</p>
+    /// <p>You have exceeded the maximum number of concurrent transcription streams, are starting transcription streams too quickly, or the maximum audio length of 4 hours. Wait until a stream has finished processing, or break your audio stream into smaller chunks and try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Service is currently unavailable. Try your request later.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),

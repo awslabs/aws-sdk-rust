@@ -178,8 +178,7 @@ pub struct Domain {
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the domain.</p>
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
-    /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use
-    /// to encrypt your data.</p>
+    /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to encrypt your data.</p>
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The timestamp at which the domain is created.</p>
@@ -208,8 +207,7 @@ impl Domain {
     pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
         self.domain_status.as_ref()
     }
-    /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use
-    /// to encrypt your data.</p>
+    /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to encrypt your data.</p>
     pub fn server_side_encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
@@ -311,8 +309,7 @@ pub mod domain {
             self.domain_status = input;
             self
         }
-        /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use
-        /// to encrypt your data.</p>
+        /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to encrypt your data.</p>
         pub fn server_side_encryption_configuration(
             mut self,
             input: crate::model::ServerSideEncryptionConfiguration,
@@ -320,8 +317,7 @@ pub mod domain {
             self.server_side_encryption_configuration = Some(input);
             self
         }
-        /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use
-        /// to encrypt your data.</p>
+        /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to encrypt your data.</p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -377,8 +373,7 @@ impl Domain {
     }
 }
 
-/// <p>The configuration containing information about the customer-managed KMS Key used for encrypting
-/// customer data.</p>
+/// <p>The configuration containing information about the customer-managed KMS Key used for encrypting customer data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionConfiguration {
@@ -495,25 +490,17 @@ impl AsRef<str> for DomainStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example,
-    /// in the tag ‘Department’:’Sales’, the key is 'Department'.
-    /// </p>
+    /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag ‘Department’:’Sales’, the key is 'Department'. </p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example,
-    /// in the tag ‘Department’:’Sales’, the value is 'Sales'.
-    /// </p>
+    /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag ‘Department’:’Sales’, the value is 'Sales'. </p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example,
-    /// in the tag ‘Department’:’Sales’, the key is 'Department'.
-    /// </p>
+    /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag ‘Department’:’Sales’, the key is 'Department'. </p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example,
-    /// in the tag ‘Department’:’Sales’, the value is 'Sales'.
-    /// </p>
+    /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag ‘Department’:’Sales’, the value is 'Sales'. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -536,30 +523,22 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example,
-        /// in the tag ‘Department’:’Sales’, the key is 'Department'.
-        /// </p>
+        /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag ‘Department’:’Sales’, the key is 'Department'. </p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example,
-        /// in the tag ‘Department’:’Sales’, the key is 'Department'.
-        /// </p>
+        /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag ‘Department’:’Sales’, the key is 'Department'. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example,
-        /// in the tag ‘Department’:’Sales’, the value is 'Sales'.
-        /// </p>
+        /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag ‘Department’:’Sales’, the value is 'Sales'. </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example,
-        /// in the tag ‘Department’:’Sales’, the value is 'Sales'.
-        /// </p>
+        /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag ‘Department’:’Sales’, the value is 'Sales'. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -592,29 +571,21 @@ pub struct SpeakerEnrollmentJob {
     pub job_status: std::option::Option<crate::model::SpeakerEnrollmentJobStatus>,
     /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
     pub domain_id: std::option::Option<std::string::String>,
-    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-    /// to read the input manifest file and write the job output file.</p>
+    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>The configuration that defines the action to take when the speaker is already enrolled in Voice ID, and the
-    /// <code>FraudDetectionConfig</code> to use.</p>
+    /// <p>The configuration that defines the action to take when the speaker is already enrolled in Voice ID, and the <code>FraudDetectionConfig</code> to use.</p>
     pub enrollment_config: std::option::Option<crate::model::EnrollmentConfig>,
-    /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
-    /// of speaker enrollment job requests.</p>
+    /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of speaker enrollment job requests.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
-    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-    /// also include a KMS Key ID to encrypt the file.</p>
+    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>A timestamp showing the creation of the speaker enrollment job.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing when the speaker enrollment job ended. </p>
     pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-    /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-    /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-    /// registration requests that failed.</p>
+    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
-    /// <p>Provides details on job progress. This field shows the completed percentage of registration
-    /// requests listed in the input file.</p>
+    /// <p>Provides details on job progress. This field shows the completed percentage of registration requests listed in the input file.</p>
     pub job_progress: std::option::Option<crate::model::JobProgress>,
 }
 impl SpeakerEnrollmentJob {
@@ -634,23 +605,19 @@ impl SpeakerEnrollmentJob {
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-    /// to read the input manifest file and write the job output file.</p>
+    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>The configuration that defines the action to take when the speaker is already enrolled in Voice ID, and the
-    /// <code>FraudDetectionConfig</code> to use.</p>
+    /// <p>The configuration that defines the action to take when the speaker is already enrolled in Voice ID, and the <code>FraudDetectionConfig</code> to use.</p>
     pub fn enrollment_config(&self) -> std::option::Option<&crate::model::EnrollmentConfig> {
         self.enrollment_config.as_ref()
     }
-    /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
-    /// of speaker enrollment job requests.</p>
+    /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of speaker enrollment job requests.</p>
     pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
     }
-    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-    /// also include a KMS Key ID to encrypt the file.</p>
+    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
@@ -662,15 +629,11 @@ impl SpeakerEnrollmentJob {
     pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
-    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-    /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-    /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-    /// registration requests that failed.</p>
+    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
     pub fn failure_details(&self) -> std::option::Option<&crate::model::FailureDetails> {
         self.failure_details.as_ref()
     }
-    /// <p>Provides details on job progress. This field shows the completed percentage of registration
-    /// requests listed in the input file.</p>
+    /// <p>Provides details on job progress. This field shows the completed percentage of registration requests listed in the input file.</p>
     pub fn job_progress(&self) -> std::option::Option<&crate::model::JobProgress> {
         self.job_progress.as_ref()
     }
@@ -756,14 +719,12 @@ pub mod speaker_enrollment_job {
             self.domain_id = input;
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-        /// to read the input manifest file and write the job output file.</p>
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-        /// to read the input manifest file and write the job output file.</p>
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -771,14 +732,12 @@ pub mod speaker_enrollment_job {
             self.data_access_role_arn = input;
             self
         }
-        /// <p>The configuration that defines the action to take when the speaker is already enrolled in Voice ID, and the
-        /// <code>FraudDetectionConfig</code> to use.</p>
+        /// <p>The configuration that defines the action to take when the speaker is already enrolled in Voice ID, and the <code>FraudDetectionConfig</code> to use.</p>
         pub fn enrollment_config(mut self, input: crate::model::EnrollmentConfig) -> Self {
             self.enrollment_config = Some(input);
             self
         }
-        /// <p>The configuration that defines the action to take when the speaker is already enrolled in Voice ID, and the
-        /// <code>FraudDetectionConfig</code> to use.</p>
+        /// <p>The configuration that defines the action to take when the speaker is already enrolled in Voice ID, and the <code>FraudDetectionConfig</code> to use.</p>
         pub fn set_enrollment_config(
             mut self,
             input: std::option::Option<crate::model::EnrollmentConfig>,
@@ -786,14 +745,12 @@ pub mod speaker_enrollment_job {
             self.enrollment_config = input;
             self
         }
-        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
-        /// of speaker enrollment job requests.</p>
+        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of speaker enrollment job requests.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
             self.input_data_config = Some(input);
             self
         }
-        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
-        /// of speaker enrollment job requests.</p>
+        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of speaker enrollment job requests.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -801,14 +758,12 @@ pub mod speaker_enrollment_job {
             self.input_data_config = input;
             self
         }
-        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-        /// also include a KMS Key ID to encrypt the file.</p>
+        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.output_data_config = Some(input);
             self
         }
-        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-        /// also include a KMS Key ID to encrypt the file.</p>
+        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -842,18 +797,12 @@ pub mod speaker_enrollment_job {
             self.ended_at = input;
             self
         }
-        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-        /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-        /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-        /// registration requests that failed.</p>
+        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
         pub fn failure_details(mut self, input: crate::model::FailureDetails) -> Self {
             self.failure_details = Some(input);
             self
         }
-        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-        /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-        /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-        /// registration requests that failed.</p>
+        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
         pub fn set_failure_details(
             mut self,
             input: std::option::Option<crate::model::FailureDetails>,
@@ -861,14 +810,12 @@ pub mod speaker_enrollment_job {
             self.failure_details = input;
             self
         }
-        /// <p>Provides details on job progress. This field shows the completed percentage of registration
-        /// requests listed in the input file.</p>
+        /// <p>Provides details on job progress. This field shows the completed percentage of registration requests listed in the input file.</p>
         pub fn job_progress(mut self, input: crate::model::JobProgress) -> Self {
             self.job_progress = Some(input);
             self
         }
-        /// <p>Provides details on job progress. This field shows the completed percentage of registration
-        /// requests listed in the input file.</p>
+        /// <p>Provides details on job progress. This field shows the completed percentage of registration requests listed in the input file.</p>
         pub fn set_job_progress(
             mut self,
             input: std::option::Option<crate::model::JobProgress>,
@@ -1033,25 +980,17 @@ impl FailureDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputDataConfig {
-    /// <p>The S3 path of the folder to which Voice ID writes the job output file, which has a
-    /// <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code> and
-    /// the output folder path is <code>s3://output-bucket/output-folder</code>, the full output file path is
-    /// <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
+    /// <p>The S3 path of the folder to which Voice ID writes the job output file, which has a <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code> and the output folder path is <code>s3://output-bucket/output-folder</code>, the full output file path is <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
     pub s3_uri: std::option::Option<std::string::String>,
-    /// <p>the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster
-    /// registration job.</p>
+    /// <p>the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster registration job.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl OutputDataConfig {
-    /// <p>The S3 path of the folder to which Voice ID writes the job output file, which has a
-    /// <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code> and
-    /// the output folder path is <code>s3://output-bucket/output-folder</code>, the full output file path is
-    /// <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
+    /// <p>The S3 path of the folder to which Voice ID writes the job output file, which has a <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code> and the output folder path is <code>s3://output-bucket/output-folder</code>, the full output file path is <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
-    /// <p>the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster
-    /// registration job.</p>
+    /// <p>the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster registration job.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -1074,30 +1013,22 @@ pub mod output_data_config {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The S3 path of the folder to which Voice ID writes the job output file, which has a
-        /// <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code> and
-        /// the output folder path is <code>s3://output-bucket/output-folder</code>, the full output file path is
-        /// <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
+        /// <p>The S3 path of the folder to which Voice ID writes the job output file, which has a <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code> and the output folder path is <code>s3://output-bucket/output-folder</code>, the full output file path is <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
         pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_uri = Some(input.into());
             self
         }
-        /// <p>The S3 path of the folder to which Voice ID writes the job output file, which has a
-        /// <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code> and
-        /// the output folder path is <code>s3://output-bucket/output-folder</code>, the full output file path is
-        /// <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
+        /// <p>The S3 path of the folder to which Voice ID writes the job output file, which has a <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code> and the output folder path is <code>s3://output-bucket/output-folder</code>, the full output file path is <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
         }
-        /// <p>the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster
-        /// registration job.</p>
+        /// <p>the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster registration job.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster
-        /// registration job.</p>
+        /// <p>the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster registration job.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -1122,13 +1053,11 @@ impl OutputDataConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDataConfig {
-    /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration
-    /// job requests.</p>
+    /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
     pub s3_uri: std::option::Option<std::string::String>,
 }
 impl InputDataConfig {
-    /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration
-    /// job requests.</p>
+    /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
@@ -1149,14 +1078,12 @@ pub mod input_data_config {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration
-        /// job requests.</p>
+        /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
         pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_uri = Some(input.into());
             self
         }
-        /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration
-        /// job requests.</p>
+        /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -1180,20 +1107,14 @@ impl InputDataConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnrollmentConfig {
-    /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default
-    /// value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to
-    /// <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker
-    /// with new data generated from the latest audio.</p>
+    /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
     pub existing_enrollment_action: std::option::Option<crate::model::ExistingEnrollmentAction>,
     /// <p>The fraud detection configuration to use for the speaker enrollment job.</p>
     pub fraud_detection_config:
         std::option::Option<crate::model::EnrollmentJobFraudDetectionConfig>,
 }
 impl EnrollmentConfig {
-    /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default
-    /// value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to
-    /// <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker
-    /// with new data generated from the latest audio.</p>
+    /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
     pub fn existing_enrollment_action(
         &self,
     ) -> std::option::Option<&crate::model::ExistingEnrollmentAction> {
@@ -1229,10 +1150,7 @@ pub mod enrollment_config {
             std::option::Option<crate::model::EnrollmentJobFraudDetectionConfig>,
     }
     impl Builder {
-        /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default
-        /// value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to
-        /// <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker
-        /// with new data generated from the latest audio.</p>
+        /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
         pub fn existing_enrollment_action(
             mut self,
             input: crate::model::ExistingEnrollmentAction,
@@ -1240,10 +1158,7 @@ pub mod enrollment_config {
             self.existing_enrollment_action = Some(input);
             self
         }
-        /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default
-        /// value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to
-        /// <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker
-        /// with new data generated from the latest audio.</p>
+        /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
         pub fn set_existing_enrollment_action(
             mut self,
             input: std::option::Option<crate::model::ExistingEnrollmentAction>,
@@ -1283,30 +1198,23 @@ impl EnrollmentConfig {
     }
 }
 
-/// <p>The configuration defining the action to take when a speaker is flagged by the fraud detection system
-/// during a batch speaker enrollment job, and the risk threshold to use for identification.</p>
+/// <p>The configuration defining the action to take when a speaker is flagged by the fraud detection system during a batch speaker enrollment job, and the risk threshold to use for identification.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnrollmentJobFraudDetectionConfig {
-    /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is
-    /// <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code>
-    /// results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
+    /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
     pub fraud_detection_action: std::option::Option<crate::model::FraudDetectionAction>,
-    /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk
-    /// score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
+    /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
     pub risk_threshold: std::option::Option<i32>,
 }
 impl EnrollmentJobFraudDetectionConfig {
-    /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is
-    /// <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code>
-    /// results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
+    /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
     pub fn fraud_detection_action(
         &self,
     ) -> std::option::Option<&crate::model::FraudDetectionAction> {
         self.fraud_detection_action.as_ref()
     }
-    /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk
-    /// score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
+    /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
     pub fn risk_threshold(&self) -> std::option::Option<i32> {
         self.risk_threshold
     }
@@ -1329,16 +1237,12 @@ pub mod enrollment_job_fraud_detection_config {
         pub(crate) risk_threshold: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is
-        /// <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code>
-        /// results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
+        /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
         pub fn fraud_detection_action(mut self, input: crate::model::FraudDetectionAction) -> Self {
             self.fraud_detection_action = Some(input);
             self
         }
-        /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is
-        /// <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code>
-        /// results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
+        /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
         pub fn set_fraud_detection_action(
             mut self,
             input: std::option::Option<crate::model::FraudDetectionAction>,
@@ -1346,14 +1250,12 @@ pub mod enrollment_job_fraud_detection_config {
             self.fraud_detection_action = input;
             self
         }
-        /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk
-        /// score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
+        /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
         pub fn risk_threshold(mut self, input: i32) -> Self {
             self.risk_threshold = Some(input);
             self
         }
-        /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk
-        /// score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
+        /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
         pub fn set_risk_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.risk_threshold = input;
             self
@@ -1569,26 +1471,19 @@ pub struct FraudsterRegistrationJob {
     pub job_status: std::option::Option<crate::model::FraudsterRegistrationJobStatus>,
     /// <p>The identifier of the domain containing the fraudster registration job.</p>
     pub domain_id: std::option::Option<std::string::String>,
-    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-    /// to read the input manifest file and write the job output file.</p>
+    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is
-    /// detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
     pub registration_config: std::option::Option<crate::model::RegistrationConfig>,
-    /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
-    /// of fraudster registration job requests.</p>
+    /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration job requests.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
-    /// <p>The output data config containing the S3 location where you want Voice ID to write your job output
-    /// file; you must also include a KMS Key ID in order to encrypt the file.</p>
+    /// <p>The output data config containing the S3 location where you want Voice ID to write your job output file; you must also include a KMS Key ID in order to encrypt the file.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     /// <p>A timestamp showing the creation time of the fraudster registration job.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing when the fraudster registration job ended.</p>
     pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-    /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-    /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-    /// registration requests that failed.</p>
+    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
     /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
     pub job_progress: std::option::Option<crate::model::JobProgress>,
@@ -1610,23 +1505,19 @@ impl FraudsterRegistrationJob {
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-    /// to read the input manifest file and write the job output file.</p>
+    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is
-    /// detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
     pub fn registration_config(&self) -> std::option::Option<&crate::model::RegistrationConfig> {
         self.registration_config.as_ref()
     }
-    /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
-    /// of fraudster registration job requests.</p>
+    /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration job requests.</p>
     pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
     }
-    /// <p>The output data config containing the S3 location where you want Voice ID to write your job output
-    /// file; you must also include a KMS Key ID in order to encrypt the file.</p>
+    /// <p>The output data config containing the S3 location where you want Voice ID to write your job output file; you must also include a KMS Key ID in order to encrypt the file.</p>
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
@@ -1638,10 +1529,7 @@ impl FraudsterRegistrationJob {
     pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
-    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-    /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-    /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-    /// registration requests that failed.</p>
+    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
     pub fn failure_details(&self) -> std::option::Option<&crate::model::FailureDetails> {
         self.failure_details.as_ref()
     }
@@ -1731,14 +1619,12 @@ pub mod fraudster_registration_job {
             self.domain_id = input;
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-        /// to read the input manifest file and write the job output file.</p>
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-        /// to read the input manifest file and write the job output file.</p>
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1746,14 +1632,12 @@ pub mod fraudster_registration_job {
             self.data_access_role_arn = input;
             self
         }
-        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is
-        /// detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
         pub fn registration_config(mut self, input: crate::model::RegistrationConfig) -> Self {
             self.registration_config = Some(input);
             self
         }
-        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is
-        /// detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
         pub fn set_registration_config(
             mut self,
             input: std::option::Option<crate::model::RegistrationConfig>,
@@ -1761,14 +1645,12 @@ pub mod fraudster_registration_job {
             self.registration_config = input;
             self
         }
-        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
-        /// of fraudster registration job requests.</p>
+        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration job requests.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
             self.input_data_config = Some(input);
             self
         }
-        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
-        /// of fraudster registration job requests.</p>
+        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration job requests.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -1776,14 +1658,12 @@ pub mod fraudster_registration_job {
             self.input_data_config = input;
             self
         }
-        /// <p>The output data config containing the S3 location where you want Voice ID to write your job output
-        /// file; you must also include a KMS Key ID in order to encrypt the file.</p>
+        /// <p>The output data config containing the S3 location where you want Voice ID to write your job output file; you must also include a KMS Key ID in order to encrypt the file.</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.output_data_config = Some(input);
             self
         }
-        /// <p>The output data config containing the S3 location where you want Voice ID to write your job output
-        /// file; you must also include a KMS Key ID in order to encrypt the file.</p>
+        /// <p>The output data config containing the S3 location where you want Voice ID to write your job output file; you must also include a KMS Key ID in order to encrypt the file.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -1817,18 +1697,12 @@ pub mod fraudster_registration_job {
             self.ended_at = input;
             self
         }
-        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-        /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-        /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-        /// registration requests that failed.</p>
+        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
         pub fn failure_details(mut self, input: crate::model::FailureDetails) -> Self {
             self.failure_details = Some(input);
             self
         }
-        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-        /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-        /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-        /// registration requests that failed.</p>
+        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
         pub fn set_failure_details(
             mut self,
             input: std::option::Option<crate::model::FailureDetails>,
@@ -1875,31 +1749,24 @@ impl FraudsterRegistrationJob {
     }
 }
 
-/// <p>The configuration definining the action to take when a duplicate fraudster is detected, and the
-/// similarity threshold to use for detecting a duplicate fraudster during a batch fraudster registration job.</p>
+/// <p>The configuration definining the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster during a batch fraudster registration job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegistrationConfig {
-    /// <p>The action to take when a fraudster is identified as a duplicate. The default action is
-    /// <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to
-    /// <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
+    /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
     pub duplicate_registration_action:
         std::option::Option<crate::model::DuplicateRegistrationAction>,
-    /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new
-    /// fraudster a duplicate.</p>
+    /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
     pub fraudster_similarity_threshold: std::option::Option<i32>,
 }
 impl RegistrationConfig {
-    /// <p>The action to take when a fraudster is identified as a duplicate. The default action is
-    /// <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to
-    /// <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
+    /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
     pub fn duplicate_registration_action(
         &self,
     ) -> std::option::Option<&crate::model::DuplicateRegistrationAction> {
         self.duplicate_registration_action.as_ref()
     }
-    /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new
-    /// fraudster a duplicate.</p>
+    /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
     pub fn fraudster_similarity_threshold(&self) -> std::option::Option<i32> {
         self.fraudster_similarity_threshold
     }
@@ -1929,9 +1796,7 @@ pub mod registration_config {
         pub(crate) fraudster_similarity_threshold: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The action to take when a fraudster is identified as a duplicate. The default action is
-        /// <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to
-        /// <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
+        /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
         pub fn duplicate_registration_action(
             mut self,
             input: crate::model::DuplicateRegistrationAction,
@@ -1939,9 +1804,7 @@ pub mod registration_config {
             self.duplicate_registration_action = Some(input);
             self
         }
-        /// <p>The action to take when a fraudster is identified as a duplicate. The default action is
-        /// <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to
-        /// <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
+        /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
         pub fn set_duplicate_registration_action(
             mut self,
             input: std::option::Option<crate::model::DuplicateRegistrationAction>,
@@ -1949,14 +1812,12 @@ pub mod registration_config {
             self.duplicate_registration_action = input;
             self
         }
-        /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new
-        /// fraudster a duplicate.</p>
+        /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
         pub fn fraudster_similarity_threshold(mut self, input: i32) -> Self {
             self.fraudster_similarity_threshold = Some(input);
             self
         }
-        /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new
-        /// fraudster a duplicate.</p>
+        /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
         pub fn set_fraudster_similarity_threshold(
             mut self,
             input: std::option::Option<i32>,
@@ -2515,13 +2376,9 @@ pub struct SpeakerEnrollmentJobSummary {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing when the speaker enrollment job ended.</p>
     pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-    /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-    /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-    /// registration requests that failed.</p>
+    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
-    /// <p>Provides details regarding job progress. This field shows the completed percentage of enrollment
-    /// requests listed in the input file.</p>
+    /// <p>Provides details regarding job progress. This field shows the completed percentage of enrollment requests listed in the input file.</p>
     pub job_progress: std::option::Option<crate::model::JobProgress>,
 }
 impl SpeakerEnrollmentJobSummary {
@@ -2549,15 +2406,11 @@ impl SpeakerEnrollmentJobSummary {
     pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
-    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-    /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-    /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-    /// registration requests that failed.</p>
+    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
     pub fn failure_details(&self) -> std::option::Option<&crate::model::FailureDetails> {
         self.failure_details.as_ref()
     }
-    /// <p>Provides details regarding job progress. This field shows the completed percentage of enrollment
-    /// requests listed in the input file.</p>
+    /// <p>Provides details regarding job progress. This field shows the completed percentage of enrollment requests listed in the input file.</p>
     pub fn job_progress(&self) -> std::option::Option<&crate::model::JobProgress> {
         self.job_progress.as_ref()
     }
@@ -2661,18 +2514,12 @@ pub mod speaker_enrollment_job_summary {
             self.ended_at = input;
             self
         }
-        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-        /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-        /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-        /// registration requests that failed.</p>
+        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
         pub fn failure_details(mut self, input: crate::model::FailureDetails) -> Self {
             self.failure_details = Some(input);
             self
         }
-        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-        /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-        /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-        /// registration requests that failed.</p>
+        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
         pub fn set_failure_details(
             mut self,
             input: std::option::Option<crate::model::FailureDetails>,
@@ -2680,14 +2527,12 @@ pub mod speaker_enrollment_job_summary {
             self.failure_details = input;
             self
         }
-        /// <p>Provides details regarding job progress. This field shows the completed percentage of enrollment
-        /// requests listed in the input file.</p>
+        /// <p>Provides details regarding job progress. This field shows the completed percentage of enrollment requests listed in the input file.</p>
         pub fn job_progress(mut self, input: crate::model::JobProgress) -> Self {
             self.job_progress = Some(input);
             self
         }
-        /// <p>Provides details regarding job progress. This field shows the completed percentage of enrollment
-        /// requests listed in the input file.</p>
+        /// <p>Provides details regarding job progress. This field shows the completed percentage of enrollment requests listed in the input file.</p>
         pub fn set_job_progress(
             mut self,
             input: std::option::Option<crate::model::JobProgress>,
@@ -2733,10 +2578,7 @@ pub struct FraudsterRegistrationJobSummary {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp showing when the fraudster registration job ended.</p>
     pub ended_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-    /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-    /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-    /// registration requests that failed.</p>
+    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
     pub failure_details: std::option::Option<crate::model::FailureDetails>,
     /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
     pub job_progress: std::option::Option<crate::model::JobProgress>,
@@ -2766,10 +2608,7 @@ impl FraudsterRegistrationJobSummary {
     pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
-    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-    /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-    /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-    /// registration requests that failed.</p>
+    /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
     pub fn failure_details(&self) -> std::option::Option<&crate::model::FailureDetails> {
         self.failure_details.as_ref()
     }
@@ -2877,18 +2716,12 @@ pub mod fraudster_registration_job_summary {
             self.ended_at = input;
             self
         }
-        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-        /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-        /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-        /// registration requests that failed.</p>
+        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
         pub fn failure_details(mut self, input: crate::model::FailureDetails) -> Self {
             self.failure_details = Some(input);
             self
         }
-        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration
-        /// job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of
-        /// <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual
-        /// registration requests that failed.</p>
+        /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
         pub fn set_failure_details(
             mut self,
             input: std::option::Option<crate::model::FailureDetails>,
@@ -2945,8 +2778,7 @@ pub struct DomainSummary {
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the domain.</p>
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
-    /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use
-    /// to encrypt your data..</p>
+    /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to encrypt your data..</p>
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The timestamp showing when the domain is created.</p>
@@ -2975,8 +2807,7 @@ impl DomainSummary {
     pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
         self.domain_status.as_ref()
     }
-    /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use
-    /// to encrypt your data..</p>
+    /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to encrypt your data..</p>
     pub fn server_side_encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
@@ -3078,8 +2909,7 @@ pub mod domain_summary {
             self.domain_status = input;
             self
         }
-        /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use
-        /// to encrypt your data..</p>
+        /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to encrypt your data..</p>
         pub fn server_side_encryption_configuration(
             mut self,
             input: crate::model::ServerSideEncryptionConfiguration,
@@ -3087,8 +2917,7 @@ pub mod domain_summary {
             self.server_side_encryption_configuration = Some(input);
             self
         }
-        /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use
-        /// to encrypt your data..</p>
+        /// <p>The server-side encryption configuration containing the KMS Key Identifier you want Voice ID to use to encrypt your data..</p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -3144,15 +2973,11 @@ impl DomainSummary {
     }
 }
 
-/// <p>The fraud detection result produced by Voice ID, processed against the current session state and streamed
-/// audio of the speaker.</p>
+/// <p>The fraud detection result produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FraudDetectionResult {
-    /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections
-    /// for a given session, this field helps in identifying if the returned result is from previous streaming
-    /// activity or a new result. Note that in the absence of any new streaming activity or risk threshold
-    /// changes, Voice ID always returns cached Fraud Detection result for this API.</p>
+    /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections for a given session, this field helps in identifying if the returned result is from previous streaming activity or a new result. Note that in the absence of any new streaming activity or risk threshold changes, Voice ID always returns cached Fraud Detection result for this API.</p>
     pub fraud_detection_result_id: std::option::Option<std::string::String>,
     /// <p>A timestamp indicating when audio aggregation started for this fraud detection result.</p>
     pub audio_aggregation_started_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -3160,21 +2985,15 @@ pub struct FraudDetectionResult {
     pub audio_aggregation_ended_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The <code>FraudDetectionConfiguration</code> used to generate this fraud detection result.</p>
     pub configuration: std::option::Option<crate::model::FraudDetectionConfiguration>,
-    /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and
-    /// streamed audio of the speaker.</p>
+    /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
     pub decision: std::option::Option<crate::model::FraudDetectionDecision>,
-    /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud
-    /// detection Decision is <code>HIGH_RISK</code>, and only has one possible value:
-    /// <code>KNOWN_FRAUDSTER</code>.</p>
+    /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.</p>
     pub reasons: std::option::Option<std::vec::Vec<crate::model::FraudDetectionReason>>,
     /// <p>Details about each risk analyzed for this speaker.</p>
     pub risk_details: std::option::Option<crate::model::FraudRiskDetails>,
 }
 impl FraudDetectionResult {
-    /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections
-    /// for a given session, this field helps in identifying if the returned result is from previous streaming
-    /// activity or a new result. Note that in the absence of any new streaming activity or risk threshold
-    /// changes, Voice ID always returns cached Fraud Detection result for this API.</p>
+    /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections for a given session, this field helps in identifying if the returned result is from previous streaming activity or a new result. Note that in the absence of any new streaming activity or risk threshold changes, Voice ID always returns cached Fraud Detection result for this API.</p>
     pub fn fraud_detection_result_id(&self) -> std::option::Option<&str> {
         self.fraud_detection_result_id.as_deref()
     }
@@ -3190,14 +3009,11 @@ impl FraudDetectionResult {
     pub fn configuration(&self) -> std::option::Option<&crate::model::FraudDetectionConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and
-    /// streamed audio of the speaker.</p>
+    /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
     pub fn decision(&self) -> std::option::Option<&crate::model::FraudDetectionDecision> {
         self.decision.as_ref()
     }
-    /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud
-    /// detection Decision is <code>HIGH_RISK</code>, and only has one possible value:
-    /// <code>KNOWN_FRAUDSTER</code>.</p>
+    /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.</p>
     pub fn reasons(&self) -> std::option::Option<&[crate::model::FraudDetectionReason]> {
         self.reasons.as_deref()
     }
@@ -3240,18 +3056,12 @@ pub mod fraud_detection_result {
         pub(crate) risk_details: std::option::Option<crate::model::FraudRiskDetails>,
     }
     impl Builder {
-        /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections
-        /// for a given session, this field helps in identifying if the returned result is from previous streaming
-        /// activity or a new result. Note that in the absence of any new streaming activity or risk threshold
-        /// changes, Voice ID always returns cached Fraud Detection result for this API.</p>
+        /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections for a given session, this field helps in identifying if the returned result is from previous streaming activity or a new result. Note that in the absence of any new streaming activity or risk threshold changes, Voice ID always returns cached Fraud Detection result for this API.</p>
         pub fn fraud_detection_result_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fraud_detection_result_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections
-        /// for a given session, this field helps in identifying if the returned result is from previous streaming
-        /// activity or a new result. Note that in the absence of any new streaming activity or risk threshold
-        /// changes, Voice ID always returns cached Fraud Detection result for this API.</p>
+        /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections for a given session, this field helps in identifying if the returned result is from previous streaming activity or a new result. Note that in the absence of any new streaming activity or risk threshold changes, Voice ID always returns cached Fraud Detection result for this API.</p>
         pub fn set_fraud_detection_result_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3298,14 +3108,12 @@ pub mod fraud_detection_result {
             self.configuration = input;
             self
         }
-        /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and
-        /// streamed audio of the speaker.</p>
+        /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
         pub fn decision(mut self, input: crate::model::FraudDetectionDecision) -> Self {
             self.decision = Some(input);
             self
         }
-        /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and
-        /// streamed audio of the speaker.</p>
+        /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
         pub fn set_decision(
             mut self,
             input: std::option::Option<crate::model::FraudDetectionDecision>,
@@ -3317,18 +3125,14 @@ pub mod fraud_detection_result {
         ///
         /// To override the contents of this collection use [`set_reasons`](Self::set_reasons).
         ///
-        /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud
-        /// detection Decision is <code>HIGH_RISK</code>, and only has one possible value:
-        /// <code>KNOWN_FRAUDSTER</code>.</p>
-        pub fn reasons(mut self, input: impl Into<crate::model::FraudDetectionReason>) -> Self {
+        /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.</p>
+        pub fn reasons(mut self, input: crate::model::FraudDetectionReason) -> Self {
             let mut v = self.reasons.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.reasons = Some(v);
             self
         }
-        /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud
-        /// detection Decision is <code>HIGH_RISK</code>, and only has one possible value:
-        /// <code>KNOWN_FRAUDSTER</code>.</p>
+        /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection Decision is <code>HIGH_RISK</code>, and only has one possible value: <code>KNOWN_FRAUDSTER</code>.</p>
         pub fn set_reasons(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FraudDetectionReason>>,
@@ -3370,8 +3174,7 @@ impl FraudDetectionResult {
     }
 }
 
-/// <p>Details regarding various fraud risk analyses performed against the current session state and streamed
-/// audio of the speaker.</p>
+/// <p>Details regarding various fraud risk analyses performed against the current session state and streamed audio of the speaker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FraudRiskDetails {
@@ -3434,9 +3237,7 @@ impl FraudRiskDetails {
 pub struct KnownFraudsterRisk {
     /// <p>The score indicating the likelihood the speaker is a known fraudster.</p>
     pub risk_score: std::option::Option<i32>,
-    /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters
-    /// registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is
-    /// <code>null</code>.</p>
+    /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
     pub generated_fraudster_id: std::option::Option<std::string::String>,
 }
 impl KnownFraudsterRisk {
@@ -3444,9 +3245,7 @@ impl KnownFraudsterRisk {
     pub fn risk_score(&self) -> std::option::Option<i32> {
         self.risk_score
     }
-    /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters
-    /// registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is
-    /// <code>null</code>.</p>
+    /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
     pub fn generated_fraudster_id(&self) -> std::option::Option<&str> {
         self.generated_fraudster_id.as_deref()
     }
@@ -3479,16 +3278,12 @@ pub mod known_fraudster_risk {
             self.risk_score = input;
             self
         }
-        /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters
-        /// registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is
-        /// <code>null</code>.</p>
+        /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
         pub fn generated_fraudster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.generated_fraudster_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters
-        /// registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is
-        /// <code>null</code>.</p>
+        /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
         pub fn set_generated_fraudster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3626,13 +3421,11 @@ impl AsRef<str> for FraudDetectionDecision {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FraudDetectionConfiguration {
-    /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score
-    /// calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
+    /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
     pub risk_threshold: std::option::Option<i32>,
 }
 impl FraudDetectionConfiguration {
-    /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score
-    /// calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
+    /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
     pub fn risk_threshold(&self) -> std::option::Option<i32> {
         self.risk_threshold
     }
@@ -3653,14 +3446,12 @@ pub mod fraud_detection_configuration {
         pub(crate) risk_threshold: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score
-        /// calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
+        /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
         pub fn risk_threshold(mut self, input: i32) -> Self {
             self.risk_threshold = Some(input);
             self
         }
-        /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score
-        /// calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
+        /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
         pub fn set_risk_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.risk_threshold = input;
             self
@@ -3680,41 +3471,29 @@ impl FraudDetectionConfiguration {
     }
 }
 
-/// <p>The authentication result produced by Voice ID, processed against the current session state and streamed
-/// audio of the speaker.</p>
+/// <p>The authentication result produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthenticationResult {
-    /// <p>The unique identifier for this authentication result. Because there can be multiple authentications
-    /// for a given session, this field helps to identify if the returned result is from a previous streaming
-    /// activity or a new result. Note that in absence of any new streaming activity,
-    /// <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID
-    /// always returns cached Authentication Result for this API.</p>
+    /// <p>The unique identifier for this authentication result. Because there can be multiple authentications for a given session, this field helps to identify if the returned result is from a previous streaming activity or a new result. Note that in absence of any new streaming activity, <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID always returns cached Authentication Result for this API.</p>
     pub authentication_result_id: std::option::Option<std::string::String>,
     /// <p>A timestamp indicating when audio aggregation started for this authentication result.</p>
     pub audio_aggregation_started_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating when audio aggregation ended for this authentication result.</p>
     pub audio_aggregation_ended_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a
-    /// <code>SpeakerId</code> is provided for the session.</p>
+    /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a <code>SpeakerId</code> is provided for the session.</p>
     pub customer_speaker_id: std::option::Option<std::string::String>,
     /// <p>The service-generated identifier for the speaker whose authentication result is produced.</p>
     pub generated_speaker_id: std::option::Option<std::string::String>,
-    /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed
-    /// audio of the speaker.</p>
+    /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
     pub decision: std::option::Option<crate::model::AuthenticationDecision>,
-    /// <p>The authentication score for the speaker whose authentication result is produced. This value is
-    /// only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
+    /// <p>The authentication score for the speaker whose authentication result is produced. This value is only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
     pub score: std::option::Option<i32>,
     /// <p>The <code>AuthenticationConfiguration</code> used to generate this authentication result.</p>
     pub configuration: std::option::Option<crate::model::AuthenticationConfiguration>,
 }
 impl AuthenticationResult {
-    /// <p>The unique identifier for this authentication result. Because there can be multiple authentications
-    /// for a given session, this field helps to identify if the returned result is from a previous streaming
-    /// activity or a new result. Note that in absence of any new streaming activity,
-    /// <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID
-    /// always returns cached Authentication Result for this API.</p>
+    /// <p>The unique identifier for this authentication result. Because there can be multiple authentications for a given session, this field helps to identify if the returned result is from a previous streaming activity or a new result. Note that in absence of any new streaming activity, <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID always returns cached Authentication Result for this API.</p>
     pub fn authentication_result_id(&self) -> std::option::Option<&str> {
         self.authentication_result_id.as_deref()
     }
@@ -3726,8 +3505,7 @@ impl AuthenticationResult {
     pub fn audio_aggregation_ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.audio_aggregation_ended_at.as_ref()
     }
-    /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a
-    /// <code>SpeakerId</code> is provided for the session.</p>
+    /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a <code>SpeakerId</code> is provided for the session.</p>
     pub fn customer_speaker_id(&self) -> std::option::Option<&str> {
         self.customer_speaker_id.as_deref()
     }
@@ -3735,13 +3513,11 @@ impl AuthenticationResult {
     pub fn generated_speaker_id(&self) -> std::option::Option<&str> {
         self.generated_speaker_id.as_deref()
     }
-    /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed
-    /// audio of the speaker.</p>
+    /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
     pub fn decision(&self) -> std::option::Option<&crate::model::AuthenticationDecision> {
         self.decision.as_ref()
     }
-    /// <p>The authentication score for the speaker whose authentication result is produced. This value is
-    /// only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
+    /// <p>The authentication score for the speaker whose authentication result is produced. This value is only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
     pub fn score(&self) -> std::option::Option<i32> {
         self.score
     }
@@ -3786,20 +3562,12 @@ pub mod authentication_result {
         pub(crate) configuration: std::option::Option<crate::model::AuthenticationConfiguration>,
     }
     impl Builder {
-        /// <p>The unique identifier for this authentication result. Because there can be multiple authentications
-        /// for a given session, this field helps to identify if the returned result is from a previous streaming
-        /// activity or a new result. Note that in absence of any new streaming activity,
-        /// <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID
-        /// always returns cached Authentication Result for this API.</p>
+        /// <p>The unique identifier for this authentication result. Because there can be multiple authentications for a given session, this field helps to identify if the returned result is from a previous streaming activity or a new result. Note that in absence of any new streaming activity, <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID always returns cached Authentication Result for this API.</p>
         pub fn authentication_result_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.authentication_result_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for this authentication result. Because there can be multiple authentications
-        /// for a given session, this field helps to identify if the returned result is from a previous streaming
-        /// activity or a new result. Note that in absence of any new streaming activity,
-        /// <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID
-        /// always returns cached Authentication Result for this API.</p>
+        /// <p>The unique identifier for this authentication result. Because there can be multiple authentications for a given session, this field helps to identify if the returned result is from a previous streaming activity or a new result. Note that in absence of any new streaming activity, <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID always returns cached Authentication Result for this API.</p>
         pub fn set_authentication_result_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3833,14 +3601,12 @@ pub mod authentication_result {
             self.audio_aggregation_ended_at = input;
             self
         }
-        /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a
-        /// <code>SpeakerId</code> is provided for the session.</p>
+        /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a <code>SpeakerId</code> is provided for the session.</p>
         pub fn customer_speaker_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.customer_speaker_id = Some(input.into());
             self
         }
-        /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a
-        /// <code>SpeakerId</code> is provided for the session.</p>
+        /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a <code>SpeakerId</code> is provided for the session.</p>
         pub fn set_customer_speaker_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3861,14 +3627,12 @@ pub mod authentication_result {
             self.generated_speaker_id = input;
             self
         }
-        /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed
-        /// audio of the speaker.</p>
+        /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
         pub fn decision(mut self, input: crate::model::AuthenticationDecision) -> Self {
             self.decision = Some(input);
             self
         }
-        /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed
-        /// audio of the speaker.</p>
+        /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
         pub fn set_decision(
             mut self,
             input: std::option::Option<crate::model::AuthenticationDecision>,
@@ -3876,14 +3640,12 @@ pub mod authentication_result {
             self.decision = input;
             self
         }
-        /// <p>The authentication score for the speaker whose authentication result is produced. This value is
-        /// only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
+        /// <p>The authentication score for the speaker whose authentication result is produced. This value is only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
         pub fn score(mut self, input: i32) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p>The authentication score for the speaker whose authentication result is produced. This value is
-        /// only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
+        /// <p>The authentication score for the speaker whose authentication result is produced. This value is only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
         pub fn set_score(mut self, input: std::option::Option<i32>) -> Self {
             self.score = input;
             self

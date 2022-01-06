@@ -4,8 +4,8 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use polly::model::{Engine, Voice};
-use polly::{Client, Error, Region, PKG_VERSION};
+use aws_sdk_polly::model::{Engine, Voice};
+use aws_sdk_polly::{Client, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]

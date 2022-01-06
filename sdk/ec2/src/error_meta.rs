@@ -8392,6 +8392,32 @@ where
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::error::ModifyVpcEndpointServicePayerResponsibilityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::error::ModifyVpcEndpointServicePayerResponsibilityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ModifyVpcEndpointServicePayerResponsibilityErrorKind::Unhandled(
+                    inner,
+                ) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::error::ModifyVpcEndpointServicePermissionsError,
             R,
         >,

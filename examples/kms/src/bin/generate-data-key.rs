@@ -4,8 +4,8 @@
  */
 
 use aws_config::meta::region::RegionProviderChain;
-use kms::model::DataKeySpec;
-use kms::{Client, Error, Region, PKG_VERSION};
+use aws_sdk_kms::model::DataKeySpec;
+use aws_sdk_kms::{Client, Error, Region, PKG_VERSION};
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]

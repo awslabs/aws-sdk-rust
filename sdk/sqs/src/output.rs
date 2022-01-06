@@ -89,33 +89,21 @@ impl SetQueueAttributesOutput {
     }
 }
 
-/// <p>For each message in the batch, the response contains a <code>
-/// <a>SendMessageBatchResultEntry</a>
-/// </code> tag if the message succeeds or a <code>
-/// <a>BatchResultErrorEntry</a>
-/// </code> tag if the message fails.</p>
+/// <p>For each message in the batch, the response contains a <code> <code>SendMessageBatchResultEntry</code> </code> tag if the message succeeds or a <code> <code>BatchResultErrorEntry</code> </code> tag if the message fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendMessageBatchOutput {
-    /// <p>A list of <code>
-    /// <a>SendMessageBatchResultEntry</a>
-    /// </code> items.</p>
+    /// <p>A list of <code> <code>SendMessageBatchResultEntry</code> </code> items.</p>
     pub successful: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchResultEntry>>,
-    /// <p>A list of <code>
-    /// <a>BatchResultErrorEntry</a>
-    /// </code> items with error details about each message that can't be enqueued.</p>
+    /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items with error details about each message that can't be enqueued.</p>
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
 }
 impl SendMessageBatchOutput {
-    /// <p>A list of <code>
-    /// <a>SendMessageBatchResultEntry</a>
-    /// </code> items.</p>
+    /// <p>A list of <code> <code>SendMessageBatchResultEntry</code> </code> items.</p>
     pub fn successful(&self) -> std::option::Option<&[crate::model::SendMessageBatchResultEntry]> {
         self.successful.as_deref()
     }
-    /// <p>A list of <code>
-    /// <a>BatchResultErrorEntry</a>
-    /// </code> items with error details about each message that can't be enqueued.</p>
+    /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items with error details about each message that can't be enqueued.</p>
     pub fn failed(&self) -> std::option::Option<&[crate::model::BatchResultErrorEntry]> {
         self.failed.as_deref()
     }
@@ -143,21 +131,14 @@ pub mod send_message_batch_output {
         ///
         /// To override the contents of this collection use [`set_successful`](Self::set_successful).
         ///
-        /// <p>A list of <code>
-        /// <a>SendMessageBatchResultEntry</a>
-        /// </code> items.</p>
-        pub fn successful(
-            mut self,
-            input: impl Into<crate::model::SendMessageBatchResultEntry>,
-        ) -> Self {
+        /// <p>A list of <code> <code>SendMessageBatchResultEntry</code> </code> items.</p>
+        pub fn successful(mut self, input: crate::model::SendMessageBatchResultEntry) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful = Some(v);
             self
         }
-        /// <p>A list of <code>
-        /// <a>SendMessageBatchResultEntry</a>
-        /// </code> items.</p>
+        /// <p>A list of <code> <code>SendMessageBatchResultEntry</code> </code> items.</p>
         pub fn set_successful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchResultEntry>>,
@@ -169,18 +150,14 @@ pub mod send_message_batch_output {
         ///
         /// To override the contents of this collection use [`set_failed`](Self::set_failed).
         ///
-        /// <p>A list of <code>
-        /// <a>BatchResultErrorEntry</a>
-        /// </code> items with error details about each message that can't be enqueued.</p>
-        pub fn failed(mut self, input: impl Into<crate::model::BatchResultErrorEntry>) -> Self {
+        /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items with error details about each message that can't be enqueued.</p>
+        pub fn failed(mut self, input: crate::model::BatchResultErrorEntry) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed = Some(v);
             self
         }
-        /// <p>A list of <code>
-        /// <a>BatchResultErrorEntry</a>
-        /// </code> items with error details about each message that can't be enqueued.</p>
+        /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items with error details about each message that can't be enqueued.</p>
         pub fn set_failed(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
@@ -212,12 +189,9 @@ pub struct SendMessageOutput {
     pub md5_of_message_body: std::option::Option<std::string::String>,
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub md5_of_message_attributes: std::option::Option<std::string::String>,
-    /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this
-    /// attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
+    /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
     pub md5_of_message_system_attributes: std::option::Option<std::string::String>,
-    /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.
-    /// </p>
+    /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
     pub message_id: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
@@ -233,14 +207,11 @@ impl SendMessageOutput {
     pub fn md5_of_message_attributes(&self) -> std::option::Option<&str> {
         self.md5_of_message_attributes.as_deref()
     }
-    /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this
-    /// attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
+    /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
     pub fn md5_of_message_system_attributes(&self) -> std::option::Option<&str> {
         self.md5_of_message_system_attributes.as_deref()
     }
-    /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.
-    /// </p>
+    /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
@@ -304,8 +275,7 @@ pub mod send_message_output {
             self.md5_of_message_attributes = input;
             self
         }
-        /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this
-        /// attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
+        /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
         pub fn md5_of_message_system_attributes(
             mut self,
             input: impl Into<std::string::String>,
@@ -313,8 +283,7 @@ pub mod send_message_output {
             self.md5_of_message_system_attributes = Some(input.into());
             self
         }
-        /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this
-        /// attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
+        /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest.</p>
         pub fn set_md5_of_message_system_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -322,16 +291,12 @@ pub mod send_message_output {
             self.md5_of_message_system_attributes = input;
             self
         }
-        /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.
-        /// </p>
+        /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
         }
-        /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.
-        /// </p>
+        /// <p>An attribute containing the <code>MessageId</code> of the message sent to the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -436,9 +401,9 @@ pub mod receive_message_output {
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
         /// <p>A list of messages.</p>
-        pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
@@ -572,15 +537,13 @@ impl ListQueueTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueuesOutput {
-    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
-    /// results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
     pub queue_urls: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListQueuesOutput {
-    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
-    /// results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -607,14 +570,12 @@ pub mod list_queues_output {
         pub(crate) queue_urls: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
-        /// results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+        /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
-        /// results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+        /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -660,8 +621,7 @@ impl ListQueuesOutput {
 pub struct ListDeadLetterSourceQueuesOutput {
     /// <p>A list of source queue URLs that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p>
     pub queue_urls: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
-    /// results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeadLetterSourceQueuesOutput {
@@ -669,8 +629,7 @@ impl ListDeadLetterSourceQueuesOutput {
     pub fn queue_urls(&self) -> std::option::Option<&[std::string::String]> {
         self.queue_urls.as_deref()
     }
-    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
-    /// results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+    /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -712,14 +671,12 @@ pub mod list_dead_letter_source_queues_output {
             self.queue_urls = input;
             self
         }
-        /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
-        /// results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+        /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
-        /// results to request, or if you did not set <code>MaxResults</code> in the request.</p>
+        /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -838,11 +795,11 @@ pub mod get_queue_attributes_output {
         /// <p>A map of attributes to their respective values.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::QueueAttributeName>,
+            k: crate::model::QueueAttributeName,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.attributes = Some(hash_map);
             self
         }
@@ -901,35 +858,23 @@ impl DeleteQueueOutput {
     }
 }
 
-/// <p>For each message in the batch, the response contains a  <code>
-/// <a>DeleteMessageBatchResultEntry</a>
-/// </code> tag if the message is deleted or a <code>
-/// <a>BatchResultErrorEntry</a>
-/// </code> tag if the message can't be deleted.</p>
+/// <p>For each message in the batch, the response contains a <code> <code>DeleteMessageBatchResultEntry</code> </code> tag if the message is deleted or a <code> <code>BatchResultErrorEntry</code> </code> tag if the message can't be deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMessageBatchOutput {
-    /// <p>A list of <code>
-    /// <a>DeleteMessageBatchResultEntry</a>
-    /// </code> items.</p>
+    /// <p>A list of <code> <code>DeleteMessageBatchResultEntry</code> </code> items.</p>
     pub successful: std::option::Option<std::vec::Vec<crate::model::DeleteMessageBatchResultEntry>>,
-    /// <p>A list of <code>
-    /// <a>BatchResultErrorEntry</a>
-    /// </code> items.</p>
+    /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
 }
 impl DeleteMessageBatchOutput {
-    /// <p>A list of <code>
-    /// <a>DeleteMessageBatchResultEntry</a>
-    /// </code> items.</p>
+    /// <p>A list of <code> <code>DeleteMessageBatchResultEntry</code> </code> items.</p>
     pub fn successful(
         &self,
     ) -> std::option::Option<&[crate::model::DeleteMessageBatchResultEntry]> {
         self.successful.as_deref()
     }
-    /// <p>A list of <code>
-    /// <a>BatchResultErrorEntry</a>
-    /// </code> items.</p>
+    /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
     pub fn failed(&self) -> std::option::Option<&[crate::model::BatchResultErrorEntry]> {
         self.failed.as_deref()
     }
@@ -957,21 +902,14 @@ pub mod delete_message_batch_output {
         ///
         /// To override the contents of this collection use [`set_successful`](Self::set_successful).
         ///
-        /// <p>A list of <code>
-        /// <a>DeleteMessageBatchResultEntry</a>
-        /// </code> items.</p>
-        pub fn successful(
-            mut self,
-            input: impl Into<crate::model::DeleteMessageBatchResultEntry>,
-        ) -> Self {
+        /// <p>A list of <code> <code>DeleteMessageBatchResultEntry</code> </code> items.</p>
+        pub fn successful(mut self, input: crate::model::DeleteMessageBatchResultEntry) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful = Some(v);
             self
         }
-        /// <p>A list of <code>
-        /// <a>DeleteMessageBatchResultEntry</a>
-        /// </code> items.</p>
+        /// <p>A list of <code> <code>DeleteMessageBatchResultEntry</code> </code> items.</p>
         pub fn set_successful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeleteMessageBatchResultEntry>>,
@@ -983,18 +921,14 @@ pub mod delete_message_batch_output {
         ///
         /// To override the contents of this collection use [`set_failed`](Self::set_failed).
         ///
-        /// <p>A list of <code>
-        /// <a>BatchResultErrorEntry</a>
-        /// </code> items.</p>
-        pub fn failed(mut self, input: impl Into<crate::model::BatchResultErrorEntry>) -> Self {
+        /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
+        pub fn failed(mut self, input: crate::model::BatchResultErrorEntry) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed = Some(v);
             self
         }
-        /// <p>A list of <code>
-        /// <a>BatchResultErrorEntry</a>
-        /// </code> items.</p>
+        /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
         pub fn set_failed(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
@@ -1102,36 +1036,24 @@ impl CreateQueueOutput {
     }
 }
 
-/// <p>For each message in the batch, the response contains a <code>
-/// <a>ChangeMessageVisibilityBatchResultEntry</a>
-/// </code> tag if the message succeeds or a <code>
-/// <a>BatchResultErrorEntry</a>
-/// </code> tag if the message fails.</p>
+/// <p>For each message in the batch, the response contains a <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> tag if the message succeeds or a <code> <code>BatchResultErrorEntry</code> </code> tag if the message fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeMessageVisibilityBatchOutput {
-    /// <p>A list of <code>
-    /// <a>ChangeMessageVisibilityBatchResultEntry</a>
-    /// </code> items.</p>
+    /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
     pub successful:
         std::option::Option<std::vec::Vec<crate::model::ChangeMessageVisibilityBatchResultEntry>>,
-    /// <p>A list of <code>
-    /// <a>BatchResultErrorEntry</a>
-    /// </code> items.</p>
+    /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
     pub failed: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,
 }
 impl ChangeMessageVisibilityBatchOutput {
-    /// <p>A list of <code>
-    /// <a>ChangeMessageVisibilityBatchResultEntry</a>
-    /// </code> items.</p>
+    /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
     pub fn successful(
         &self,
     ) -> std::option::Option<&[crate::model::ChangeMessageVisibilityBatchResultEntry]> {
         self.successful.as_deref()
     }
-    /// <p>A list of <code>
-    /// <a>BatchResultErrorEntry</a>
-    /// </code> items.</p>
+    /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
     pub fn failed(&self) -> std::option::Option<&[crate::model::BatchResultErrorEntry]> {
         self.failed.as_deref()
     }
@@ -1160,21 +1082,17 @@ pub mod change_message_visibility_batch_output {
         ///
         /// To override the contents of this collection use [`set_successful`](Self::set_successful).
         ///
-        /// <p>A list of <code>
-        /// <a>ChangeMessageVisibilityBatchResultEntry</a>
-        /// </code> items.</p>
+        /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
         pub fn successful(
             mut self,
-            input: impl Into<crate::model::ChangeMessageVisibilityBatchResultEntry>,
+            input: crate::model::ChangeMessageVisibilityBatchResultEntry,
         ) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.successful = Some(v);
             self
         }
-        /// <p>A list of <code>
-        /// <a>ChangeMessageVisibilityBatchResultEntry</a>
-        /// </code> items.</p>
+        /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
         pub fn set_successful(
             mut self,
             input: std::option::Option<
@@ -1188,18 +1106,14 @@ pub mod change_message_visibility_batch_output {
         ///
         /// To override the contents of this collection use [`set_failed`](Self::set_failed).
         ///
-        /// <p>A list of <code>
-        /// <a>BatchResultErrorEntry</a>
-        /// </code> items.</p>
-        pub fn failed(mut self, input: impl Into<crate::model::BatchResultErrorEntry>) -> Self {
+        /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
+        pub fn failed(mut self, input: crate::model::BatchResultErrorEntry) -> Self {
             let mut v = self.failed.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed = Some(v);
             self
         }
-        /// <p>A list of <code>
-        /// <a>BatchResultErrorEntry</a>
-        /// </code> items.</p>
+        /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
         pub fn set_failed(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchResultErrorEntry>>,

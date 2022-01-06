@@ -5,16 +5,13 @@
 pub enum Error {
     /// <p>Thrown if there are parallel requests to modify a resource.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The provided developer user identifier is already registered with Cognito under a
-    /// different identity ID.</p>
+    /// <p>The provided developer user identifier is already registered with Cognito under a different identity ID.</p>
     DeveloperUserAlreadyRegisteredException(crate::error::DeveloperUserAlreadyRegisteredException),
-    /// <p>An exception thrown when a dependent service such as Facebook or Twitter is not
-    /// responding</p>
+    /// <p>An exception thrown when a dependent service such as Facebook or Twitter is not responding</p>
     ExternalServiceException(crate::error::ExternalServiceException),
     /// <p>Thrown when the service encounters an error during processing the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Thrown if the identity pool has no role associated for the given auth type
-    /// (auth/unauth) or if the AssumeRole fails.</p>
+    /// <p>Thrown if the identity pool has no role associated for the given auth type (auth/unauth) or if the AssumeRole fails.</p>
     InvalidIdentityPoolConfigurationException(
         crate::error::InvalidIdentityPoolConfigurationException,
     ),
@@ -24,11 +21,9 @@ pub enum Error {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when a user tries to use a login which is already linked to another
-    /// account.</p>
+    /// <p>Thrown when a user tries to use a login which is already linked to another account.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),

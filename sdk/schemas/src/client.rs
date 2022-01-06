@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Schemas
@@ -199,6 +199,7 @@ where
     ///
     /// See [`ListDiscoverers`](crate::client::fluent_builders::ListDiscoverers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDiscoverers::into_paginator).
     pub fn list_discoverers(&self) -> fluent_builders::ListDiscoverers<C, M, R> {
         fluent_builders::ListDiscoverers::new(self.handle.clone())
     }
@@ -206,6 +207,7 @@ where
     ///
     /// See [`ListRegistries`](crate::client::fluent_builders::ListRegistries) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRegistries::into_paginator).
     pub fn list_registries(&self) -> fluent_builders::ListRegistries<C, M, R> {
         fluent_builders::ListRegistries::new(self.handle.clone())
     }
@@ -213,6 +215,7 @@ where
     ///
     /// See [`ListSchemas`](crate::client::fluent_builders::ListSchemas) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSchemas::into_paginator).
     pub fn list_schemas(&self) -> fluent_builders::ListSchemas<C, M, R> {
         fluent_builders::ListSchemas::new(self.handle.clone())
     }
@@ -220,6 +223,7 @@ where
     ///
     /// See [`ListSchemaVersions`](crate::client::fluent_builders::ListSchemaVersions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSchemaVersions::into_paginator).
     pub fn list_schema_versions(&self) -> fluent_builders::ListSchemaVersions<C, M, R> {
         fluent_builders::ListSchemaVersions::new(self.handle.clone())
     }
@@ -248,6 +252,7 @@ where
     ///
     /// See [`SearchSchemas`](crate::client::fluent_builders::SearchSchemas) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchSchemas::into_paginator).
     pub fn search_schemas(&self) -> fluent_builders::SearchSchemas<C, M, R> {
         fluent_builders::SearchSchemas::new(self.handle.clone())
     }
@@ -312,7 +317,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDiscoverer`.
     ///
     /// <p>Creates a discoverer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDiscoverer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -357,10 +362,10 @@ pub mod fluent_builders {
                 crate::input::CreateDiscovererInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -369,8 +374,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A description for the discoverer.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the discoverer.</p>
@@ -379,8 +384,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the event bus.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input.into());
             self
         }
         /// <p>The ARN of the event bus.</p>
@@ -389,8 +394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
-        pub fn cross_account(mut self, inp: bool) -> Self {
-            self.inner = self.inner.cross_account(inp);
+        pub fn cross_account(mut self, input: bool) -> Self {
+            self.inner = self.inner.cross_account(input);
             self
         }
         /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
@@ -408,7 +413,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags associated with the resource.</p>
@@ -425,7 +430,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRegistry`.
     ///
     /// <p>Creates a registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -470,10 +475,10 @@ pub mod fluent_builders {
                 crate::input::CreateRegistryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -482,8 +487,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A description of the registry to be created.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the registry to be created.</p>
@@ -492,8 +497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -514,7 +519,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags to associate with the registry.</p>
@@ -530,8 +535,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSchema`.
     ///
-    /// <p>Creates a schema definition.</p> <note><p>Inactive schemas will be deleted after two years.</p></note>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a schema definition.</p> <note>
+    /// <p>Inactive schemas will be deleted after two years.</p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -576,10 +583,10 @@ pub mod fluent_builders {
                 crate::input::CreateSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -588,8 +595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The source of the schema definition.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The source of the schema definition.</p>
@@ -598,8 +605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the schema.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the schema.</p>
@@ -608,8 +615,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -621,8 +628,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(input.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -640,7 +647,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags associated with the schema.</p>
@@ -654,8 +661,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of schema.</p>
-        pub fn r#type(mut self, inp: crate::model::Type) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::Type) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of schema.</p>
@@ -667,7 +674,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDiscoverer`.
     ///
     /// <p>Deletes a discoverer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDiscoverer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -712,10 +719,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDiscovererInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -724,8 +731,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn discoverer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.discoverer_id(inp);
+        pub fn discoverer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.discoverer_id(input.into());
             self
         }
         /// <p>The ID of the discoverer.</p>
@@ -740,7 +747,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRegistry`.
     ///
     /// <p>Deletes a Registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -785,10 +792,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRegistryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -797,8 +804,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -813,7 +820,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourcePolicy`.
     ///
     /// <p>Delete the resource-based policy attached to the specified registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -858,10 +865,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -870,8 +877,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -886,7 +893,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSchema`.
     ///
     /// <p>Delete a schema definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -931,10 +938,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -943,8 +950,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -956,8 +963,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(input.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -969,7 +976,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSchemaVersion`.
     ///
     /// <p>Delete the schema version definition</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchemaVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1014,10 +1021,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSchemaVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1026,8 +1033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -1039,8 +1046,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(input.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -1049,8 +1056,8 @@ pub mod fluent_builders {
             self
         }
         /// The version number of the schema
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version(inp);
+        pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version(input.into());
             self
         }
         /// The version number of the schema
@@ -1065,7 +1072,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCodeBinding`.
     ///
     /// <p>Describe the code binding URI.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCodeBinding<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1110,10 +1117,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCodeBindingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1122,8 +1129,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The language of the code binding.</p>
-        pub fn language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language(inp);
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(input.into());
             self
         }
         /// <p>The language of the code binding.</p>
@@ -1132,8 +1139,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -1145,8 +1152,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(input.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -1155,8 +1162,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version(inp);
+        pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version(input.into());
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
@@ -1171,7 +1178,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDiscoverer`.
     ///
     /// <p>Describes the discoverer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDiscoverer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1216,10 +1223,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDiscovererInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1228,8 +1235,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn discoverer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.discoverer_id(inp);
+        pub fn discoverer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.discoverer_id(input.into());
             self
         }
         /// <p>The ID of the discoverer.</p>
@@ -1244,7 +1251,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRegistry`.
     ///
     /// <p>Describes the registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1289,10 +1296,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRegistryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1301,8 +1308,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -1317,7 +1324,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSchema`.
     ///
     /// <p>Retrieve the schema definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1362,10 +1369,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1374,8 +1381,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -1387,8 +1394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(input.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -1397,8 +1404,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version(inp);
+        pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version(input.into());
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
@@ -1412,7 +1419,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExportSchema`.
     ///
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1457,10 +1464,10 @@ pub mod fluent_builders {
                 crate::input::ExportSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1469,8 +1476,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -1482,8 +1489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(input.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -1492,8 +1499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version(inp);
+        pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version(input.into());
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
@@ -1505,8 +1512,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -1518,7 +1525,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCodeBindingSource`.
     ///
     /// <p>Get the code binding source URI.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCodeBindingSource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1563,10 +1570,10 @@ pub mod fluent_builders {
                 crate::input::GetCodeBindingSourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1575,8 +1582,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The language of the code binding.</p>
-        pub fn language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language(inp);
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(input.into());
             self
         }
         /// <p>The language of the code binding.</p>
@@ -1585,8 +1592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -1598,8 +1605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(input.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -1608,8 +1615,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version(inp);
+        pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version(input.into());
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
@@ -1624,7 +1631,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDiscoveredSchema`.
     ///
     /// <p>Get the discovered schema that was generated based on sampled events.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDiscoveredSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1669,10 +1676,10 @@ pub mod fluent_builders {
                 crate::input::GetDiscoveredSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1685,8 +1692,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
-        pub fn events(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.events(inp);
+        pub fn events(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.events(input.into());
             self
         }
         /// <p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>
@@ -1698,8 +1705,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of event.</p>
-        pub fn r#type(mut self, inp: crate::model::Type) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::Type) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of event.</p>
@@ -1711,7 +1718,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourcePolicy`.
     ///
     /// <p>Retrieves the resource-based policy attached to a given registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1756,10 +1763,10 @@ pub mod fluent_builders {
                 crate::input::GetResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1768,8 +1775,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -1784,7 +1791,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDiscoverers`.
     ///
     /// <p>List the discoverers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDiscoverers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1829,10 +1836,10 @@ pub mod fluent_builders {
                 crate::input::ListDiscoverersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1840,9 +1847,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDiscoverersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDiscoverersPaginator<C, M, R> {
+            crate::paginator::ListDiscoverersPaginator::new(self.handle, self.inner)
+        }
         /// <p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>
-        pub fn discoverer_id_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.discoverer_id_prefix(inp);
+        pub fn discoverer_id_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.discoverer_id_prefix(input.into());
             self
         }
         /// <p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>
@@ -1854,8 +1867,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -1864,8 +1877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -1874,8 +1887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p>
-        pub fn source_arn_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn_prefix(inp);
+        pub fn source_arn_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn_prefix(input.into());
             self
         }
         /// <p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p>
@@ -1890,7 +1903,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRegistries`.
     ///
     /// <p>List the registries.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRegistries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1935,10 +1948,10 @@ pub mod fluent_builders {
                 crate::input::ListRegistriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1946,9 +1959,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRegistriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRegistriesPaginator<C, M, R> {
+            crate::paginator::ListRegistriesPaginator::new(self.handle, self.inner)
+        }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -1957,8 +1976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -1967,8 +1986,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
-        pub fn registry_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name_prefix(inp);
+        pub fn registry_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name_prefix(input.into());
             self
         }
         /// <p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>
@@ -1980,8 +1999,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
-        pub fn scope(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scope(inp);
+        pub fn scope(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scope(input.into());
             self
         }
         /// <p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>
@@ -1993,7 +2012,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSchemas`.
     ///
     /// <p>List the schemas.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchemas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2038,10 +2057,10 @@ pub mod fluent_builders {
                 crate::input::ListSchemasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2049,9 +2068,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSchemasPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSchemasPaginator<C, M, R> {
+            crate::paginator::ListSchemasPaginator::new(self.handle, self.inner)
+        }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -2060,8 +2085,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -2070,8 +2095,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -2083,8 +2108,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only those schema names that start with the specified prefix.</p>
-        pub fn schema_name_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name_prefix(inp);
+        pub fn schema_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name_prefix(input.into());
             self
         }
         /// <p>Specifying this limits the results to only those schema names that start with the specified prefix.</p>
@@ -2099,7 +2124,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSchemaVersions`.
     ///
     /// <p>Provides a list of the schema versions and related information.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchemaVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2144,10 +2169,10 @@ pub mod fluent_builders {
                 crate::input::ListSchemaVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2155,9 +2180,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSchemaVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSchemaVersionsPaginator<C, M, R> {
+            crate::paginator::ListSchemaVersionsPaginator::new(self.handle, self.inner)
+        }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -2166,8 +2197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -2176,8 +2207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -2189,8 +2220,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(input.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -2202,7 +2233,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Get tags for resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2247,10 +2278,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2259,8 +2290,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2272,7 +2303,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutCodeBinding`.
     ///
     /// <p>Put code binding URI</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutCodeBinding<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2317,10 +2348,10 @@ pub mod fluent_builders {
                 crate::input::PutCodeBindingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2329,8 +2360,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The language of the code binding.</p>
-        pub fn language(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language(inp);
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(input.into());
             self
         }
         /// <p>The language of the code binding.</p>
@@ -2339,8 +2370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -2352,8 +2383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(input.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -2362,8 +2393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
-        pub fn schema_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version(inp);
+        pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version(input.into());
             self
         }
         /// <p>Specifying this limits the results to only this schema version.</p>
@@ -2378,7 +2409,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutResourcePolicy`.
     ///
     /// <p>The name of the policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2423,10 +2454,10 @@ pub mod fluent_builders {
                 crate::input::PutResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2435,8 +2466,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource-based policy.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>The resource-based policy.</p>
@@ -2445,8 +2476,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -2458,8 +2489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The revision ID of the policy.</p>
-        pub fn revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(inp);
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The revision ID of the policy.</p>
@@ -2471,7 +2502,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchSchemas`.
     ///
     /// <p>Search the schemas</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchSchemas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2516,10 +2547,10 @@ pub mod fluent_builders {
                 crate::input::SearchSchemasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2527,9 +2558,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchSchemasPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchSchemasPaginator<C, M, R> {
+            crate::paginator::SearchSchemasPaginator::new(self.handle, self.inner)
+        }
         /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
-        pub fn keywords(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.keywords(inp);
+        pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.keywords(input.into());
             self
         }
         /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
@@ -2538,8 +2575,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -2548,8 +2585,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -2558,8 +2595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -2574,7 +2611,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartDiscoverer`.
     ///
     /// <p>Starts the discoverer</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDiscoverer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2619,10 +2656,10 @@ pub mod fluent_builders {
                 crate::input::StartDiscovererInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2631,8 +2668,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn discoverer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.discoverer_id(inp);
+        pub fn discoverer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.discoverer_id(input.into());
             self
         }
         /// <p>The ID of the discoverer.</p>
@@ -2647,7 +2684,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopDiscoverer`.
     ///
     /// <p>Stops the discoverer</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopDiscoverer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2692,10 +2729,10 @@ pub mod fluent_builders {
                 crate::input::StopDiscovererInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2704,8 +2741,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn discoverer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.discoverer_id(inp);
+        pub fn discoverer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.discoverer_id(input.into());
             self
         }
         /// <p>The ID of the discoverer.</p>
@@ -2720,7 +2757,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Add tags to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2765,10 +2802,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2777,8 +2814,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2796,7 +2833,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags associated with the resource.</p>
@@ -2813,7 +2850,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2858,10 +2895,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2870,8 +2907,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -2884,8 +2921,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Keys of key-value pairs.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Keys of key-value pairs.</p>
@@ -2900,7 +2937,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDiscoverer`.
     ///
     /// <p>Updates the discoverer</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDiscoverer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2945,10 +2982,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDiscovererInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2957,8 +2994,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The description of the discoverer to update.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the discoverer to update.</p>
@@ -2967,8 +3004,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the discoverer.</p>
-        pub fn discoverer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.discoverer_id(inp);
+        pub fn discoverer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.discoverer_id(input.into());
             self
         }
         /// <p>The ID of the discoverer.</p>
@@ -2980,8 +3017,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
-        pub fn cross_account(mut self, inp: bool) -> Self {
-            self.inner = self.inner.cross_account(inp);
+        pub fn cross_account(mut self, input: bool) -> Self {
+            self.inner = self.inner.cross_account(input);
             self
         }
         /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
@@ -2993,7 +3030,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRegistry`.
     ///
     /// <p>Updates a registry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3038,10 +3075,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRegistryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3050,8 +3087,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The description of the registry to update.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the registry to update.</p>
@@ -3060,8 +3097,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -3075,8 +3112,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSchema`.
     ///
-    /// <p>Updates the schema definition</p> <note><p>Inactive schemas will be deleted after two years.</p></note>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the schema definition</p> <note>
+    /// <p>Inactive schemas will be deleted after two years.</p>
+    /// </note>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3121,10 +3160,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3133,8 +3172,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the client token.</p>
-        pub fn client_token_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token_id(inp);
+        pub fn client_token_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token_id(input.into());
             self
         }
         /// <p>The ID of the client token.</p>
@@ -3146,8 +3185,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source of the schema definition.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The source of the schema definition.</p>
@@ -3156,8 +3195,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the schema.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the schema.</p>
@@ -3166,8 +3205,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the registry.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>The name of the registry.</p>
@@ -3179,8 +3218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(input.into());
             self
         }
         /// <p>The name of the schema.</p>
@@ -3189,8 +3228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schema type for the events schema.</p>
-        pub fn r#type(mut self, inp: crate::model::Type) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::Type) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The schema type for the events schema.</p>
@@ -3200,6 +3239,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

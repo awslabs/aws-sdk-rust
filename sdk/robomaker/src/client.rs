@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS RoboMaker
@@ -361,6 +361,7 @@ where
     ///
     /// See [`ListDeploymentJobs`](crate::client::fluent_builders::ListDeploymentJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeploymentJobs::into_paginator).
     pub fn list_deployment_jobs(&self) -> fluent_builders::ListDeploymentJobs<C, M, R> {
         fluent_builders::ListDeploymentJobs::new(self.handle.clone())
     }
@@ -368,6 +369,7 @@ where
     ///
     /// See [`ListFleets`](crate::client::fluent_builders::ListFleets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFleets::into_paginator).
     pub fn list_fleets(&self) -> fluent_builders::ListFleets<C, M, R> {
         fluent_builders::ListFleets::new(self.handle.clone())
     }
@@ -375,6 +377,7 @@ where
     ///
     /// See [`ListRobotApplications`](crate::client::fluent_builders::ListRobotApplications) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRobotApplications::into_paginator).
     pub fn list_robot_applications(&self) -> fluent_builders::ListRobotApplications<C, M, R> {
         fluent_builders::ListRobotApplications::new(self.handle.clone())
     }
@@ -382,6 +385,7 @@ where
     ///
     /// See [`ListRobots`](crate::client::fluent_builders::ListRobots) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRobots::into_paginator).
     pub fn list_robots(&self) -> fluent_builders::ListRobots<C, M, R> {
         fluent_builders::ListRobots::new(self.handle.clone())
     }
@@ -389,6 +393,7 @@ where
     ///
     /// See [`ListSimulationApplications`](crate::client::fluent_builders::ListSimulationApplications) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSimulationApplications::into_paginator).
     pub fn list_simulation_applications(
         &self,
     ) -> fluent_builders::ListSimulationApplications<C, M, R> {
@@ -398,6 +403,7 @@ where
     ///
     /// See [`ListSimulationJobBatches`](crate::client::fluent_builders::ListSimulationJobBatches) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSimulationJobBatches::into_paginator).
     pub fn list_simulation_job_batches(
         &self,
     ) -> fluent_builders::ListSimulationJobBatches<C, M, R> {
@@ -407,6 +413,7 @@ where
     ///
     /// See [`ListSimulationJobs`](crate::client::fluent_builders::ListSimulationJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSimulationJobs::into_paginator).
     pub fn list_simulation_jobs(&self) -> fluent_builders::ListSimulationJobs<C, M, R> {
         fluent_builders::ListSimulationJobs::new(self.handle.clone())
     }
@@ -421,6 +428,7 @@ where
     ///
     /// See [`ListWorldExportJobs`](crate::client::fluent_builders::ListWorldExportJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorldExportJobs::into_paginator).
     pub fn list_world_export_jobs(&self) -> fluent_builders::ListWorldExportJobs<C, M, R> {
         fluent_builders::ListWorldExportJobs::new(self.handle.clone())
     }
@@ -428,6 +436,7 @@ where
     ///
     /// See [`ListWorldGenerationJobs`](crate::client::fluent_builders::ListWorldGenerationJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorldGenerationJobs::into_paginator).
     pub fn list_world_generation_jobs(&self) -> fluent_builders::ListWorldGenerationJobs<C, M, R> {
         fluent_builders::ListWorldGenerationJobs::new(self.handle.clone())
     }
@@ -435,6 +444,7 @@ where
     ///
     /// See [`ListWorlds`](crate::client::fluent_builders::ListWorlds) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorlds::into_paginator).
     pub fn list_worlds(&self) -> fluent_builders::ListWorlds<C, M, R> {
         fluent_builders::ListWorlds::new(self.handle.clone())
     }
@@ -442,6 +452,7 @@ where
     ///
     /// See [`ListWorldTemplates`](crate::client::fluent_builders::ListWorldTemplates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorldTemplates::into_paginator).
     pub fn list_world_templates(&self) -> fluent_builders::ListWorldTemplates<C, M, R> {
         fluent_builders::ListWorldTemplates::new(self.handle.clone())
     }
@@ -522,7 +533,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteWorlds`.
     ///
     /// <p>Deletes one or more worlds in a batch operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteWorlds<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -567,10 +578,10 @@ pub mod fluent_builders {
                 crate::input::BatchDeleteWorldsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -583,8 +594,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_worlds`](Self::set_worlds).
         ///
         /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
-        pub fn worlds(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worlds(inp);
+        pub fn worlds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worlds(input.into());
             self
         }
         /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</p>
@@ -599,7 +610,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDescribeSimulationJob`.
     ///
     /// <p>Describes one or more simulation jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDescribeSimulationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -644,10 +655,10 @@ pub mod fluent_builders {
                 crate::input::BatchDescribeSimulationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -660,8 +671,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
-        pub fn jobs(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.jobs(inp);
+        pub fn jobs(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.jobs(input.into());
             self
         }
         /// <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
@@ -676,7 +687,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelDeploymentJob`.
     ///
     /// <p>Cancels the specified deployment job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelDeploymentJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -721,10 +732,10 @@ pub mod fluent_builders {
                 crate::input::CancelDeploymentJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -733,8 +744,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The deployment job ARN to cancel.</p>
-        pub fn job(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(inp);
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The deployment job ARN to cancel.</p>
@@ -746,7 +757,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelSimulationJob`.
     ///
     /// <p>Cancels the specified simulation job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelSimulationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -791,10 +802,10 @@ pub mod fluent_builders {
                 crate::input::CancelSimulationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -803,8 +814,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The simulation job ARN to cancel.</p>
-        pub fn job(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(inp);
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The simulation job ARN to cancel.</p>
@@ -815,9 +826,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelSimulationJobBatch`.
     ///
-    /// <p>Cancels a simulation job batch. When you cancel a simulation job batch, you are also
-    /// cancelling all of the active simulation jobs created as part of the batch. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Cancels a simulation job batch. When you cancel a simulation job batch, you are also cancelling all of the active simulation jobs created as part of the batch. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelSimulationJobBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -862,10 +872,10 @@ pub mod fluent_builders {
                 crate::input::CancelSimulationJobBatchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -874,8 +884,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The id of the batch to cancel.</p>
-        pub fn batch(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch(inp);
+        pub fn batch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch(input.into());
             self
         }
         /// <p>The id of the batch to cancel.</p>
@@ -887,7 +897,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelWorldExportJob`.
     ///
     /// <p>Cancels the specified export job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelWorldExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -932,10 +942,10 @@ pub mod fluent_builders {
                 crate::input::CancelWorldExportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -944,8 +954,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
-        pub fn job(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(inp);
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
@@ -957,7 +967,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelWorldGenerationJob`.
     ///
     /// <p>Cancels the specified world generator job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelWorldGenerationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1002,10 +1012,10 @@ pub mod fluent_builders {
                 crate::input::CancelWorldGenerationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1014,8 +1024,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
-        pub fn job(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(inp);
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
@@ -1027,14 +1037,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeploymentJob`.
     ///
     /// <p>Deploys a specific version of a robot application to robots in a fleet.</p>
-    /// <p>The robot application must have a numbered <code>applicationVersion</code> for
-    /// consistency reasons. To create a new version, use
-    /// <code>CreateRobotApplicationVersion</code> or see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating a Robot Application Version</a>. </p>
-    /// <note>
-    /// <p>After 90 days, deployment jobs expire and will be deleted. They will no longer be
-    /// accessible. </p>
+    /// <p>The robot application must have a numbered <code>applicationVersion</code> for consistency reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating a Robot Application Version</a>. </p> <note>
+    /// <p>After 90 days, deployment jobs expire and will be deleted. They will no longer be accessible. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeploymentJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1079,10 +1085,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeploymentJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1091,8 +1097,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The requested deployment configuration.</p>
-        pub fn deployment_config(mut self, inp: crate::model::DeploymentConfig) -> Self {
-            self.inner = self.inner.deployment_config(inp);
+        pub fn deployment_config(mut self, input: crate::model::DeploymentConfig) -> Self {
+            self.inner = self.inner.deployment_config(input);
             self
         }
         /// <p>The requested deployment configuration.</p>
@@ -1103,14 +1109,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_config(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1119,8 +1123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
-        pub fn fleet(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet(inp);
+        pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
@@ -1135,9 +1139,9 @@ pub mod fluent_builders {
         /// <p>The deployment application configuration.</p>
         pub fn deployment_application_configs(
             mut self,
-            inp: impl Into<crate::model::DeploymentApplicationConfig>,
+            input: crate::model::DeploymentApplicationConfig,
         ) -> Self {
-            self.inner = self.inner.deployment_application_configs(inp);
+            self.inner = self.inner.deployment_application_configs(input);
             self
         }
         /// <p>The deployment application configuration.</p>
@@ -1152,18 +1156,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the deployment
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the deployment
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1177,7 +1179,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFleet`.
     ///
     /// <p>Creates a fleet, a logical group of robots running the same robot application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1222,10 +1224,10 @@ pub mod fluent_builders {
                 crate::input::CreateFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1234,8 +1236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -1253,7 +1255,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the fleet.</p>
@@ -1270,7 +1272,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRobot`.
     ///
     /// <p>Creates a robot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRobot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1315,10 +1317,10 @@ pub mod fluent_builders {
                 crate::input::CreateRobotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1327,8 +1329,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the robot.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the robot.</p>
@@ -1337,8 +1339,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The target architecture of the robot.</p>
-        pub fn architecture(mut self, inp: crate::model::Architecture) -> Self {
-            self.inner = self.inner.architecture(inp);
+        pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
+            self.inner = self.inner.architecture(input);
             self
         }
         /// <p>The target architecture of the robot.</p>
@@ -1350,8 +1352,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Greengrass group id.</p>
-        pub fn greengrass_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.greengrass_group_id(inp);
+        pub fn greengrass_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.greengrass_group_id(input.into());
             self
         }
         /// <p>The Greengrass group id.</p>
@@ -1372,7 +1374,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
@@ -1389,7 +1391,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRobotApplication`.
     ///
     /// <p>Creates a robot application. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRobotApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1434,10 +1436,10 @@ pub mod fluent_builders {
                 crate::input::CreateRobotApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1446,8 +1448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the robot application.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the robot application.</p>
@@ -1460,8 +1462,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the robot application.</p>
-        pub fn sources(mut self, inp: impl Into<crate::model::SourceConfig>) -> Self {
-            self.inner = self.inner.sources(inp);
+        pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
+            self.inner = self.inner.sources(input);
             self
         }
         /// <p>The sources of the robot application.</p>
@@ -1473,8 +1475,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
-        pub fn robot_software_suite(mut self, inp: crate::model::RobotSoftwareSuite) -> Self {
-            self.inner = self.inner.robot_software_suite(inp);
+        pub fn robot_software_suite(mut self, input: crate::model::RobotSoftwareSuite) -> Self {
+            self.inner = self.inner.robot_software_suite(input);
             self
         }
         /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
@@ -1489,18 +1491,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the robot
-        /// application.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the robot
-        /// application.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1510,14 +1510,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The object that contains that URI of the Docker image that you use for your robot
-        /// application.</p>
-        pub fn environment(mut self, inp: crate::model::Environment) -> Self {
-            self.inner = self.inner.environment(inp);
+        /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
-        /// <p>The object that contains that URI of the Docker image that you use for your robot
-        /// application.</p>
+        /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -1529,7 +1527,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRobotApplicationVersion`.
     ///
     /// <p>Creates a version of a robot application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRobotApplicationVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1574,10 +1572,10 @@ pub mod fluent_builders {
                 crate::input::CreateRobotApplicationVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1586,8 +1584,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application information for the robot application.</p>
-        pub fn application(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(inp);
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The application information for the robot application.</p>
@@ -1595,14 +1593,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application(input);
             self
         }
-        /// <p>The current revision id for the robot application. If you provide a value and it matches
-        /// the latest revision ID, a new version will be created.</p>
-        pub fn current_revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_revision_id(inp);
+        /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
+        pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_revision_id(input.into());
             self
         }
-        /// <p>The current revision id for the robot application. If you provide a value and it matches
-        /// the latest revision ID, a new version will be created.</p>
+        /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
         pub fn set_current_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1614,14 +1610,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_s3_etags`](Self::set_s3_etags).
         ///
-        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot
-        /// application.</p>
-        pub fn s3_etags(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_etags(inp);
+        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
+        pub fn s3_etags(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_etags(input.into());
             self
         }
-        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot
-        /// application.</p>
+        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
         pub fn set_s3_etags(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1630,8 +1624,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
-        pub fn image_digest(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_digest(inp);
+        pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_digest(input.into());
             self
         }
         /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
@@ -1643,7 +1637,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSimulationApplication`.
     ///
     /// <p>Creates a simulation application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSimulationApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1688,10 +1682,10 @@ pub mod fluent_builders {
                 crate::input::CreateSimulationApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1700,8 +1694,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the simulation application.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the simulation application.</p>
@@ -1714,8 +1708,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the simulation application.</p>
-        pub fn sources(mut self, inp: impl Into<crate::model::SourceConfig>) -> Self {
-            self.inner = self.inner.sources(inp);
+        pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
+            self.inner = self.inner.sources(input);
             self
         }
         /// <p>The sources of the simulation application.</p>
@@ -1729,9 +1723,9 @@ pub mod fluent_builders {
         /// <p>The simulation software suite used by the simulation application.</p>
         pub fn simulation_software_suite(
             mut self,
-            inp: crate::model::SimulationSoftwareSuite,
+            input: crate::model::SimulationSoftwareSuite,
         ) -> Self {
-            self.inner = self.inner.simulation_software_suite(inp);
+            self.inner = self.inner.simulation_software_suite(input);
             self
         }
         /// <p>The simulation software suite used by the simulation application.</p>
@@ -1743,8 +1737,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
-        pub fn robot_software_suite(mut self, inp: crate::model::RobotSoftwareSuite) -> Self {
-            self.inner = self.inner.robot_software_suite(inp);
+        pub fn robot_software_suite(mut self, input: crate::model::RobotSoftwareSuite) -> Self {
+            self.inner = self.inner.robot_software_suite(input);
             self
         }
         /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
@@ -1756,8 +1750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rendering engine for the simulation application.</p>
-        pub fn rendering_engine(mut self, inp: crate::model::RenderingEngine) -> Self {
-            self.inner = self.inner.rendering_engine(inp);
+        pub fn rendering_engine(mut self, input: crate::model::RenderingEngine) -> Self {
+            self.inner = self.inner.rendering_engine(input);
             self
         }
         /// <p>The rendering engine for the simulation application.</p>
@@ -1772,18 +1766,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation
-        /// application.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation
-        /// application.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1793,14 +1785,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The object that contains the Docker image URI used to create your simulation
-        /// application.</p>
-        pub fn environment(mut self, inp: crate::model::Environment) -> Self {
-            self.inner = self.inner.environment(inp);
+        /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
-        /// <p>The object that contains the Docker image URI used to create your simulation
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -1812,7 +1802,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSimulationApplicationVersion`.
     ///
     /// <p>Creates a simulation application with a specific revision id.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSimulationApplicationVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1859,10 +1849,10 @@ pub mod fluent_builders {
                 crate::input::CreateSimulationApplicationVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1871,8 +1861,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application information for the simulation application.</p>
-        pub fn application(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(inp);
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The application information for the simulation application.</p>
@@ -1880,14 +1870,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application(input);
             self
         }
-        /// <p>The current revision id for the simulation application. If you provide a value and it
-        /// matches the latest revision ID, a new version will be created.</p>
-        pub fn current_revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_revision_id(inp);
+        /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
+        pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_revision_id(input.into());
             self
         }
-        /// <p>The current revision id for the simulation application. If you provide a value and it
-        /// matches the latest revision ID, a new version will be created.</p>
+        /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
         pub fn set_current_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1899,14 +1887,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_s3_etags`](Self::set_s3_etags).
         ///
-        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the
-        /// simulation application.</p>
-        pub fn s3_etags(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_etags(inp);
+        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
+        pub fn s3_etags(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_etags(input.into());
             self
         }
-        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the
-        /// simulation application.</p>
+        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
         pub fn set_s3_etags(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1914,14 +1900,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_etags(input);
             self
         }
-        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
-        /// application.</p>
-        pub fn image_digest(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_digest(inp);
+        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
+        pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_digest(input.into());
             self
         }
-        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
-        /// application.</p>
+        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
         pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_image_digest(input);
             self
@@ -1929,12 +1913,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSimulationJob`.
     ///
-    /// <p>Creates a simulation job.</p>
-    /// <note>
-    /// <p>After 90 days, simulation jobs expire and will be deleted. They will no longer be
-    /// accessible. </p>
+    /// <p>Creates a simulation job.</p> <note>
+    /// <p>After 90 days, simulation jobs expire and will be deleted. They will no longer be accessible. </p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSimulationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1979,10 +1961,10 @@ pub mod fluent_builders {
                 crate::input::CreateSimulationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1990,14 +1972,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2006,8 +1986,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Location for output files generated by the simulation job.</p>
-        pub fn output_location(mut self, inp: crate::model::OutputLocation) -> Self {
-            self.inner = self.inner.output_location(inp);
+        pub fn output_location(mut self, input: crate::model::OutputLocation) -> Self {
+            self.inner = self.inner.output_location(input);
             self
         }
         /// <p>Location for output files generated by the simulation job.</p>
@@ -2019,8 +1999,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The logging configuration.</p>
-        pub fn logging_config(mut self, inp: crate::model::LoggingConfig) -> Self {
-            self.inner = self.inner.logging_config(inp);
+        pub fn logging_config(mut self, input: crate::model::LoggingConfig) -> Self {
+            self.inner = self.inner.logging_config(input);
             self
         }
         /// <p>The logging configuration.</p>
@@ -2031,58 +2011,56 @@ pub mod fluent_builders {
             self.inner = self.inner.set_logging_config(input);
             self
         }
-        /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When
-        /// <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will
-        /// transition to <code>Completed</code>.</p>
-        pub fn max_job_duration_in_seconds(mut self, inp: i64) -> Self {
-            self.inner = self.inner.max_job_duration_in_seconds(inp);
+        /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
+        pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.max_job_duration_in_seconds(input);
             self
         }
-        /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When
-        /// <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will
-        /// transition to <code>Completed</code>.</p>
+        /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
         pub fn set_max_job_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_max_job_duration_in_seconds(input);
             self
         }
-        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
-        /// specified in its associated policies on your behalf. This is how credentials are passed in
-        /// to your simulation job. </p>
-        pub fn iam_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role(inp);
+        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
+        pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role(input.into());
             self
         }
-        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
-        /// specified in its associated policies on your behalf. This is how credentials are passed in
-        /// to your simulation job. </p>
+        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role(input);
             self
         }
         /// <p>The failure behavior the simulation job.</p>
         /// <dl>
-        /// <dt>Continue</dt>
+        /// <dt>
+        /// Continue
+        /// </dt>
         /// <dd>
-        /// <p>Leaves the instance running for its maximum timeout duration after a
-        /// <code>4XX</code> error code.</p>
+        /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
         /// </dd>
-        /// <dt>Fail</dt>
+        /// <dt>
+        /// Fail
+        /// </dt>
         /// <dd>
         /// <p>Stop the simulation job and terminate the instance.</p>
         /// </dd>
         /// </dl>
-        pub fn failure_behavior(mut self, inp: crate::model::FailureBehavior) -> Self {
-            self.inner = self.inner.failure_behavior(inp);
+        pub fn failure_behavior(mut self, input: crate::model::FailureBehavior) -> Self {
+            self.inner = self.inner.failure_behavior(input);
             self
         }
         /// <p>The failure behavior the simulation job.</p>
         /// <dl>
-        /// <dt>Continue</dt>
+        /// <dt>
+        /// Continue
+        /// </dt>
         /// <dd>
-        /// <p>Leaves the instance running for its maximum timeout duration after a
-        /// <code>4XX</code> error code.</p>
+        /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
         /// </dd>
-        /// <dt>Fail</dt>
+        /// <dt>
+        /// Fail
+        /// </dt>
         /// <dd>
         /// <p>Stop the simulation job and terminate the instance.</p>
         /// </dd>
@@ -2099,11 +2077,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_robot_applications`](Self::set_robot_applications).
         ///
         /// <p>The robot application to use in the simulation job.</p>
-        pub fn robot_applications(
-            mut self,
-            inp: impl Into<crate::model::RobotApplicationConfig>,
-        ) -> Self {
-            self.inner = self.inner.robot_applications(inp);
+        pub fn robot_applications(mut self, input: crate::model::RobotApplicationConfig) -> Self {
+            self.inner = self.inner.robot_applications(input);
             self
         }
         /// <p>The robot application to use in the simulation job.</p>
@@ -2121,9 +2096,9 @@ pub mod fluent_builders {
         /// <p>The simulation application to use in the simulation job.</p>
         pub fn simulation_applications(
             mut self,
-            inp: impl Into<crate::model::SimulationApplicationConfig>,
+            input: crate::model::SimulationApplicationConfig,
         ) -> Self {
-            self.inner = self.inner.simulation_applications(inp);
+            self.inner = self.inner.simulation_applications(input);
             self
         }
         /// <p>The simulation application to use in the simulation job.</p>
@@ -2138,21 +2113,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
-        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
-        /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
-        /// <note>
-        /// <p>There is a limit of 100 files and a combined size of 25GB for all
-        /// <code>DataSourceConfig</code> objects. </p>
+        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
         /// </note>
-        pub fn data_sources(mut self, inp: impl Into<crate::model::DataSourceConfig>) -> Self {
-            self.inner = self.inner.data_sources(inp);
+        pub fn data_sources(mut self, input: crate::model::DataSourceConfig) -> Self {
+            self.inner = self.inner.data_sources(input);
             self
         }
-        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
-        /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
-        /// <note>
-        /// <p>There is a limit of 100 files and a combined size of 25GB for all
-        /// <code>DataSourceConfig</code> objects. </p>
+        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
         /// </note>
         pub fn set_data_sources(
             mut self,
@@ -2165,18 +2134,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2186,16 +2153,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
-        /// identifying the list of security group IDs and subnet IDs. These must belong to the same
-        /// VPC. You must provide at least one security group and one subnet ID. </p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
-        /// identifying the list of security group IDs and subnet IDs. These must belong to the same
-        /// VPC. You must provide at least one security group and one subnet ID. </p>
+        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -2204,8 +2167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Compute information for the simulation job.</p>
-        pub fn compute(mut self, inp: crate::model::Compute) -> Self {
-            self.inner = self.inner.compute(inp);
+        pub fn compute(mut self, input: crate::model::Compute) -> Self {
+            self.inner = self.inner.compute(input);
             self
         }
         /// <p>Compute information for the simulation job.</p>
@@ -2217,7 +2180,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorldExportJob`.
     ///
     /// <p>Creates a world export job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorldExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2262,10 +2225,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorldExportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2273,14 +2236,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2293,8 +2254,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_worlds`](Self::set_worlds).
         ///
         /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
-        pub fn worlds(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worlds(inp);
+        pub fn worlds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worlds(input.into());
             self
         }
         /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to export.</p>
@@ -2306,8 +2267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The output location.</p>
-        pub fn output_location(mut self, inp: crate::model::OutputLocation) -> Self {
-            self.inner = self.inner.output_location(inp);
+        pub fn output_location(mut self, input: crate::model::OutputLocation) -> Self {
+            self.inner = self.inner.output_location(input);
             self
         }
         /// <p>The output location.</p>
@@ -2318,14 +2279,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_location(input);
             self
         }
-        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-        /// the export.</p>
-        pub fn iam_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role(inp);
+        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
+        pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role(input.into());
             self
         }
-        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-        /// the export.</p>
+        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role(input);
             self
@@ -2334,18 +2293,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world export
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world export
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2359,7 +2316,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorldGenerationJob`.
     ///
     /// <p>Creates worlds using the specified template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorldGenerationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2404,10 +2361,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorldGenerationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2415,14 +2372,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2430,21 +2385,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to
-        /// create.</p>
-        pub fn template(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template(inp);
+        /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
+        pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to
-        /// create.</p>
+        /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_template(input);
             self
         }
         /// <p>Information about the world count.</p>
-        pub fn world_count(mut self, inp: crate::model::WorldCount) -> Self {
-            self.inner = self.inner.world_count(inp);
+        pub fn world_count(mut self, input: crate::model::WorldCount) -> Self {
+            self.inner = self.inner.world_count(input);
             self
         }
         /// <p>Information about the world count.</p>
@@ -2459,18 +2412,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world generator
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world generator
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2484,18 +2435,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_world_tags`](Self::set_world_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the generated
-        /// worlds.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
         pub fn world_tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.world_tags(k, v);
+            self.inner = self.inner.world_tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the generated
-        /// worlds.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
         pub fn set_world_tags(
             mut self,
             input: std::option::Option<
@@ -2509,7 +2458,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorldTemplate`.
     ///
     /// <p>Creates a world template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorldTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2554,10 +2503,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorldTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2565,14 +2514,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2581,8 +2528,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the world template.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the world template.</p>
@@ -2591,8 +2538,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The world template body.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(inp);
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input.into());
             self
         }
         /// <p>The world template body.</p>
@@ -2604,8 +2551,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location of the world template.</p>
-        pub fn template_location(mut self, inp: crate::model::TemplateLocation) -> Self {
-            self.inner = self.inner.template_location(inp);
+        pub fn template_location(mut self, input: crate::model::TemplateLocation) -> Self {
+            self.inner = self.inner.template_location(input);
             self
         }
         /// <p>The location of the world template.</p>
@@ -2620,18 +2567,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world
-        /// template.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world
-        /// template.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2645,7 +2590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteFleet`.
     ///
     /// <p>Deletes a fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2690,10 +2635,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2702,8 +2647,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn fleet(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet(inp);
+        pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -2715,7 +2660,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRobot`.
     ///
     /// <p>Deletes a robot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRobot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2760,10 +2705,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRobotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2772,8 +2717,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-        pub fn robot(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.robot(inp);
+        pub fn robot(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.robot(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
@@ -2785,7 +2730,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRobotApplication`.
     ///
     /// <p>Deletes a robot application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRobotApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2830,10 +2775,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRobotApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2842,8 +2787,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
-        pub fn application(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(inp);
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
@@ -2852,8 +2797,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the robot application to delete.</p>
-        pub fn application_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_version(inp);
+        pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_version(input.into());
             self
         }
         /// <p>The version of the robot application to delete.</p>
@@ -2868,7 +2813,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSimulationApplication`.
     ///
     /// <p>Deletes a simulation application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSimulationApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2913,10 +2858,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSimulationApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2925,8 +2870,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application information for the simulation application to delete.</p>
-        pub fn application(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(inp);
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The application information for the simulation application to delete.</p>
@@ -2935,8 +2880,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the simulation application to delete.</p>
-        pub fn application_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_version(inp);
+        pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_version(input.into());
             self
         }
         /// <p>The version of the simulation application to delete.</p>
@@ -2951,7 +2896,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorldTemplate`.
     ///
     /// <p>Deletes a world template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorldTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2996,10 +2941,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWorldTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3008,8 +2953,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
-        pub fn template(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template(inp);
+        pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
@@ -3021,7 +2966,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterRobot`.
     ///
     /// <p>Deregisters a robot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterRobot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3066,10 +3011,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterRobotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3078,8 +3023,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn fleet(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet(inp);
+        pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -3088,8 +3033,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-        pub fn robot(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.robot(inp);
+        pub fn robot(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.robot(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
@@ -3101,7 +3046,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeDeploymentJob`.
     ///
     /// <p>Describes a deployment job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeploymentJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3146,10 +3091,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDeploymentJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3158,8 +3103,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
-        pub fn job(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(inp);
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
@@ -3171,7 +3116,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFleet`.
     ///
     /// <p>Describes a fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3216,10 +3161,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3228,8 +3173,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn fleet(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet(inp);
+        pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -3241,7 +3186,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRobot`.
     ///
     /// <p>Describes a robot.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRobot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3286,10 +3231,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRobotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3298,8 +3243,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
-        pub fn robot(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.robot(inp);
+        pub fn robot(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.robot(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
@@ -3311,7 +3256,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRobotApplication`.
     ///
     /// <p>Describes a robot application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRobotApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3356,10 +3301,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRobotApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3368,8 +3313,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
-        pub fn application(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(inp);
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
@@ -3378,8 +3323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the robot application to describe.</p>
-        pub fn application_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_version(inp);
+        pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_version(input.into());
             self
         }
         /// <p>The version of the robot application to describe.</p>
@@ -3394,7 +3339,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSimulationApplication`.
     ///
     /// <p>Describes a simulation application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSimulationApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3439,10 +3384,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSimulationApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3451,8 +3396,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application information for the simulation application.</p>
-        pub fn application(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(inp);
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The application information for the simulation application.</p>
@@ -3461,8 +3406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the simulation application to describe.</p>
-        pub fn application_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_version(inp);
+        pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_version(input.into());
             self
         }
         /// <p>The version of the simulation application to describe.</p>
@@ -3477,7 +3422,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSimulationJob`.
     ///
     /// <p>Describes a simulation job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSimulationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3522,10 +3467,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSimulationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3534,8 +3479,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
-        pub fn job(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(inp);
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
@@ -3547,7 +3492,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeSimulationJobBatch`.
     ///
     /// <p>Describes a simulation job batch.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSimulationJobBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3592,10 +3537,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSimulationJobBatchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3604,8 +3549,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The id of the batch to describe.</p>
-        pub fn batch(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch(inp);
+        pub fn batch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch(input.into());
             self
         }
         /// <p>The id of the batch to describe.</p>
@@ -3617,7 +3562,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorld`.
     ///
     /// <p>Describes a world.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorld<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3662,10 +3607,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorldInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3674,8 +3619,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
-        pub fn world(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.world(inp);
+        pub fn world(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.world(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
@@ -3687,7 +3632,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorldExportJob`.
     ///
     /// <p>Describes a world export job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorldExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3732,10 +3677,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorldExportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3744,8 +3689,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
-        pub fn job(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(inp);
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
@@ -3757,7 +3702,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorldGenerationJob`.
     ///
     /// <p>Describes a world generation job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorldGenerationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3802,10 +3747,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorldGenerationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3814,8 +3759,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
-        pub fn job(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(inp);
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
@@ -3827,7 +3772,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorldTemplate`.
     ///
     /// <p>Describes a world template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorldTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3872,10 +3817,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorldTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3884,8 +3829,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
-        pub fn template(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template(inp);
+        pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
@@ -3897,7 +3842,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorldTemplateBody`.
     ///
     /// <p>Gets the world template body.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorldTemplateBody<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3942,10 +3887,10 @@ pub mod fluent_builders {
                 crate::input::GetWorldTemplateBodyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3954,8 +3899,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world template.</p>
-        pub fn template(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template(inp);
+        pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world template.</p>
@@ -3964,8 +3909,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
-        pub fn generation_job(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.generation_job(inp);
+        pub fn generation_job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.generation_job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
@@ -3979,9 +3924,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeploymentJobs`.
     ///
-    /// <p>Returns a list of deployment jobs for a fleet. You can optionally provide filters to
-    /// retrieve specific deployment jobs. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment jobs. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4026,10 +3970,10 @@ pub mod fluent_builders {
                 crate::input::ListDeploymentJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4037,24 +3981,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDeploymentJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDeploymentJobsPaginator<C, M, R> {
+            crate::paginator::ListDeploymentJobsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-        /// filtering, you must use the complete value of the filtered item. You can use up to three
-        /// filters, but they must be for the same named item. For example, if you are looking for
-        /// items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-        /// filtering, you must use the complete value of the filtered item. You can use up to three
-        /// filters, but they must be for the same named item. For example, if you are looking for
-        /// items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4062,42 +4006,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code>
-        /// value if applicable. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4105,9 +4029,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFleets`.
     ///
-    /// <p>Returns a list of fleets. You can optionally provide filters to retrieve specific
-    /// fleets. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of fleets. You can optionally provide filters to retrieve specific fleets. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4152,10 +4075,10 @@ pub mod fluent_builders {
                 crate::input::ListFleetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4163,50 +4086,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListFleets</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFleetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFleetsPaginator<C, M, R> {
+            crate::paginator::ListFleetsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListFleets</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListFleets</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if
-        /// applicable. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListFleets</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4216,15 +4121,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4235,9 +4138,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRobotApplications`.
     ///
-    /// <p>Returns a list of robot application. You can optionally provide filters to retrieve
-    /// specific robot applications.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of robot application. You can optionally provide filters to retrieve specific robot applications.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRobotApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4282,10 +4184,10 @@ pub mod fluent_builders {
                 crate::input::ListRobotApplicationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4293,9 +4195,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRobotApplicationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRobotApplicationsPaginator<C, M, R> {
+            crate::paginator::ListRobotApplicationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The version qualifier of the robot application.</p>
-        pub fn version_qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_qualifier(inp);
+        pub fn version_qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_qualifier(input.into());
             self
         }
         /// <p>The version qualifier of the robot application.</p>
@@ -4306,42 +4214,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version_qualifier(input);
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListRobotApplications</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListRobotApplications</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListRobotApplications</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListRobotApplications</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4351,15 +4239,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4370,9 +4256,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRobots`.
     ///
-    /// <p>Returns a list of robots. You can optionally provide filters to retrieve specific
-    /// robots.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of robots. You can optionally provide filters to retrieve specific robots.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRobots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4417,10 +4302,10 @@ pub mod fluent_builders {
                 crate::input::ListRobotsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4428,42 +4313,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobots</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRobotsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRobotsPaginator<C, M, R> {
+            crate::paginator::ListRobotsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobots</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListRobots</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListRobots</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if
-        /// applicable. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListRobots</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListRobots</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4473,19 +4344,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-        /// filtering, you must use the complete value of the filtered item. You can use up to three
-        /// filters, but they must be for the same named item. For example, if you are looking for
-        /// items with the status <code>Registered</code> or the status <code>Available</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-        /// filtering, you must use the complete value of the filtered item. You can use up to three
-        /// filters, but they must be for the same named item. For example, if you are looking for
-        /// items with the status <code>Registered</code> or the status <code>Available</code>.</p>
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4496,9 +4361,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSimulationApplications`.
     ///
-    /// <p>Returns a list of simulation applications. You can optionally provide filters to
-    /// retrieve specific simulation applications. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of simulation applications. You can optionally provide filters to retrieve specific simulation applications. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSimulationApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4543,10 +4407,10 @@ pub mod fluent_builders {
                 crate::input::ListSimulationApplicationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4554,9 +4418,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSimulationApplicationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListSimulationApplicationsPaginator<C, M, R> {
+            crate::paginator::ListSimulationApplicationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The version qualifier of the simulation application.</p>
-        pub fn version_qualifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_qualifier(inp);
+        pub fn version_qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_qualifier(input.into());
             self
         }
         /// <p>The version qualifier of the simulation application.</p>
@@ -4567,42 +4439,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version_qualifier(input);
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationApplications</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationApplications</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationApplications</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-        /// not used, then <code>ListSimulationApplications</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationApplications</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-        /// not used, then <code>ListSimulationApplications</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4612,15 +4464,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional list of filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional list of filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4631,9 +4481,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSimulationJobBatches`.
     ///
-    /// <p>Returns a list simulation job batches. You can optionally provide filters to retrieve
-    /// specific simulation batch jobs. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list simulation job batches. You can optionally provide filters to retrieve specific simulation batch jobs. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSimulationJobBatches<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4678,10 +4527,10 @@ pub mod fluent_builders {
                 crate::input::ListSimulationJobBatchesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4689,38 +4538,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
-        /// to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSimulationJobBatchesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListSimulationJobBatchesPaginator<C, M, R> {
+            crate::paginator::ListSimulationJobBatchesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
-        /// to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationJobBatches</code> request with the returned
-        /// <code>nextToken</code> value. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationJobBatches</code> request with the returned
-        /// <code>nextToken</code> value. </p>
+        /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4730,8 +4571,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional filters to limit results.</p>
@@ -4745,9 +4586,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSimulationJobs`.
     ///
-    /// <p>Returns a list of simulation jobs. You can optionally provide filters to retrieve
-    /// specific simulation jobs. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of simulation jobs. You can optionally provide filters to retrieve specific simulation jobs. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSimulationJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4792,10 +4632,10 @@ pub mod fluent_builders {
                 crate::input::ListSimulationJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4803,42 +4643,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSimulationJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSimulationJobsPaginator<C, M, R> {
+            crate::paginator::ListSimulationJobsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this parameter is not used, then
-        /// <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code>
-        /// value if applicable. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this parameter is not used, then
-        /// <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4848,21 +4674,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and
-        /// <code>robotApplicationName</code> are supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters, but they must be for
-        /// the same named item. For example, if you are looking for items with the status
-        /// <code>Preparing</code> or the status <code>Running</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and
-        /// <code>robotApplicationName</code> are supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters, but they must be for
-        /// the same named item. For example, if you are looking for items with the status
-        /// <code>Preparing</code> or the status <code>Running</code>.</p>
+        /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4874,7 +4692,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists all tags on a AWS RoboMaker resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4919,10 +4737,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4931,8 +4749,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
@@ -4944,7 +4762,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorldExportJobs`.
     ///
     /// <p>Lists world export jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorldExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4989,10 +4807,10 @@ pub mod fluent_builders {
                 crate::input::ListWorldExportJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5000,42 +4818,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldExportJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorldExportJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWorldExportJobsPaginator<C, M, R> {
+            crate::paginator::ListWorldExportJobsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldExportJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code>
-        /// value if applicable. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5044,14 +4848,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and
-        /// <code>templateId</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and
-        /// <code>templateId</code>.</p>
+        /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5063,7 +4865,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorldGenerationJobs`.
     ///
     /// <p>Lists world generator jobs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorldGenerationJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5108,10 +4910,10 @@ pub mod fluent_builders {
                 crate::input::ListWorldGenerationJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5119,42 +4921,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorldGenerationJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWorldGenerationJobsPaginator<C, M, R> {
+            crate::paginator::ListWorldGenerationJobsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldGeneratorJobs</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-        /// not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldGeneratorJobs</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-        /// not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5163,14 +4951,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters to limit results. You can use <code>status</code> and
-        /// <code>templateId</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Optional filters to limit results. You can use <code>status</code> and
-        /// <code>templateId</code>.</p>
+        /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5182,7 +4968,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorlds`.
     ///
     /// <p>Lists worlds.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorlds<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5227,10 +5013,10 @@ pub mod fluent_builders {
                 crate::input::ListWorldsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5238,42 +5024,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorlds</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorldsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWorldsPaginator<C, M, R> {
+            crate::paginator::ListWorldsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorlds</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorlds</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorlds</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if
-        /// applicable. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorlds</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorlds</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5283,8 +5055,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results. You can use <code>status</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional filters to limit results. You can use <code>status</code>.</p>
@@ -5299,7 +5071,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorldTemplates`.
     ///
     /// <p>Lists world templates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorldTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5344,10 +5116,10 @@ pub mod fluent_builders {
                 crate::input::ListWorldTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5355,42 +5127,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorldTemplatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWorldTemplatesPaginator<C, M, R> {
+            crate::paginator::ListWorldTemplatesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code>
-        /// value if applicable. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5399,7 +5157,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterRobot`.
     ///
     /// <p>Registers a robot with a fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterRobot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5444,10 +5202,10 @@ pub mod fluent_builders {
                 crate::input::RegisterRobotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5456,8 +5214,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn fleet(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet(inp);
+        pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -5466,8 +5224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-        pub fn robot(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.robot(inp);
+        pub fn robot(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.robot(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
@@ -5479,7 +5237,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RestartSimulationJob`.
     ///
     /// <p>Restarts a running simulation job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestartSimulationJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5524,10 +5282,10 @@ pub mod fluent_builders {
                 crate::input::RestartSimulationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5536,8 +5294,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
-        pub fn job(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(inp);
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
@@ -5548,9 +5306,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartSimulationJobBatch`.
     ///
-    /// <p>Starts a new simulation job batch. The batch is defined using one or more
-    /// <code>SimulationJobRequest</code> objects. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code> objects. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSimulationJobBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5595,10 +5352,10 @@ pub mod fluent_builders {
                 crate::input::StartSimulationJobBatchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5606,14 +5363,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5622,8 +5377,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The batch policy.</p>
-        pub fn batch_policy(mut self, inp: crate::model::BatchPolicy) -> Self {
-            self.inner = self.inner.batch_policy(inp);
+        pub fn batch_policy(mut self, input: crate::model::BatchPolicy) -> Self {
+            self.inner = self.inner.batch_policy(input);
             self
         }
         /// <p>The batch policy.</p>
@@ -5641,9 +5396,9 @@ pub mod fluent_builders {
         /// <p>A list of simulation job requests to create in the batch.</p>
         pub fn create_simulation_job_requests(
             mut self,
-            inp: impl Into<crate::model::SimulationJobRequest>,
+            input: crate::model::SimulationJobRequest,
         ) -> Self {
-            self.inner = self.inner.create_simulation_job_requests(inp);
+            self.inner = self.inner.create_simulation_job_requests(input);
             self
         }
         /// <p>A list of simulation job requests to create in the batch.</p>
@@ -5658,18 +5413,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the deployment job
-        /// batch.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the deployment job
-        /// batch.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5682,9 +5435,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SyncDeploymentJob`.
     ///
-    /// <p>Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were
-    /// added after a deployment.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were added after a deployment.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SyncDeploymentJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5729,10 +5481,10 @@ pub mod fluent_builders {
                 crate::input::SyncDeploymentJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5740,14 +5492,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5756,8 +5506,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The target fleet for the synchronization.</p>
-        pub fn fleet(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet(inp);
+        pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet(input.into());
             self
         }
         /// <p>The target fleet for the synchronization.</p>
@@ -5769,11 +5519,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or edits tags for a AWS RoboMaker resource.</p>
-    /// <p>Each tag consists of a tag key and a tag value. Tag keys and tag values are both
-    /// required, but tag values can be empty strings. </p>
-    /// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management
-    /// User Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty strings. </p>
+    /// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5818,10 +5566,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5830,8 +5578,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</p>
@@ -5849,7 +5597,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A map that contains tag keys and tag values that are attached to the resource.</p>
@@ -5866,11 +5614,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tags from the specified AWS RoboMaker resource.</p>
-    /// <p>To remove a tag, specify the tag key. To change the tag value of an existing tag key,
-    /// use <a href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html">
-    /// <code>TagResource</code>
-    /// </a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To remove a tag, specify the tag key. To change the tag value of an existing tag key, use <a href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html"> <code>TagResource</code> </a>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5915,10 +5660,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5926,14 +5671,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing
-        /// tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -5942,14 +5685,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A map that contains tag keys and tag values that will be unattached from the
-        /// resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>A map that contains tag keys and tag values that will be unattached from the resource.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that will be unattached from the
-        /// resource.</p>
+        /// <p>A map that contains tag keys and tag values that will be unattached from the resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5961,7 +5702,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRobotApplication`.
     ///
     /// <p>Updates a robot application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRobotApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6006,10 +5747,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRobotApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6018,8 +5759,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application information for the robot application.</p>
-        pub fn application(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(inp);
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The application information for the robot application.</p>
@@ -6032,8 +5773,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the robot application.</p>
-        pub fn sources(mut self, inp: impl Into<crate::model::SourceConfig>) -> Self {
-            self.inner = self.inner.sources(inp);
+        pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
+            self.inner = self.inner.sources(input);
             self
         }
         /// <p>The sources of the robot application.</p>
@@ -6045,8 +5786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-        pub fn robot_software_suite(mut self, inp: crate::model::RobotSoftwareSuite) -> Self {
-            self.inner = self.inner.robot_software_suite(inp);
+        pub fn robot_software_suite(mut self, input: crate::model::RobotSoftwareSuite) -> Self {
+            self.inner = self.inner.robot_software_suite(input);
             self
         }
         /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
@@ -6058,8 +5799,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The revision id for the robot application.</p>
-        pub fn current_revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_revision_id(inp);
+        pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_revision_id(input.into());
             self
         }
         /// <p>The revision id for the robot application.</p>
@@ -6071,8 +5812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The object that contains the Docker image URI for your robot application.</p>
-        pub fn environment(mut self, inp: crate::model::Environment) -> Self {
-            self.inner = self.inner.environment(inp);
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
         /// <p>The object that contains the Docker image URI for your robot application.</p>
@@ -6087,7 +5828,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSimulationApplication`.
     ///
     /// <p>Updates a simulation application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSimulationApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6132,10 +5873,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSimulationApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6144,8 +5885,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application information for the simulation application.</p>
-        pub fn application(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(inp);
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The application information for the simulation application.</p>
@@ -6158,8 +5899,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
         /// <p>The sources of the simulation application.</p>
-        pub fn sources(mut self, inp: impl Into<crate::model::SourceConfig>) -> Self {
-            self.inner = self.inner.sources(inp);
+        pub fn sources(mut self, input: crate::model::SourceConfig) -> Self {
+            self.inner = self.inner.sources(input);
             self
         }
         /// <p>The sources of the simulation application.</p>
@@ -6173,9 +5914,9 @@ pub mod fluent_builders {
         /// <p>The simulation software suite used by the simulation application.</p>
         pub fn simulation_software_suite(
             mut self,
-            inp: crate::model::SimulationSoftwareSuite,
+            input: crate::model::SimulationSoftwareSuite,
         ) -> Self {
-            self.inner = self.inner.simulation_software_suite(inp);
+            self.inner = self.inner.simulation_software_suite(input);
             self
         }
         /// <p>The simulation software suite used by the simulation application.</p>
@@ -6187,8 +5928,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the robot software suite (ROS distribution).</p>
-        pub fn robot_software_suite(mut self, inp: crate::model::RobotSoftwareSuite) -> Self {
-            self.inner = self.inner.robot_software_suite(inp);
+        pub fn robot_software_suite(mut self, input: crate::model::RobotSoftwareSuite) -> Self {
+            self.inner = self.inner.robot_software_suite(input);
             self
         }
         /// <p>Information about the robot software suite (ROS distribution).</p>
@@ -6200,8 +5941,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rendering engine for the simulation application.</p>
-        pub fn rendering_engine(mut self, inp: crate::model::RenderingEngine) -> Self {
-            self.inner = self.inner.rendering_engine(inp);
+        pub fn rendering_engine(mut self, input: crate::model::RenderingEngine) -> Self {
+            self.inner = self.inner.rendering_engine(input);
             self
         }
         /// <p>The rendering engine for the simulation application.</p>
@@ -6213,8 +5954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The revision id for the robot application.</p>
-        pub fn current_revision_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_revision_id(inp);
+        pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_revision_id(input.into());
             self
         }
         /// <p>The revision id for the robot application.</p>
@@ -6226,8 +5967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The object that contains the Docker image URI for your simulation application.</p>
-        pub fn environment(mut self, inp: crate::model::Environment) -> Self {
-            self.inner = self.inner.environment(inp);
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
         /// <p>The object that contains the Docker image URI for your simulation application.</p>
@@ -6242,7 +5983,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorldTemplate`.
     ///
     /// <p>Updates a world template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorldTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6287,10 +6028,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWorldTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6299,8 +6040,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
-        pub fn template(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template(inp);
+        pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
@@ -6309,8 +6050,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the template.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the template.</p>
@@ -6319,8 +6060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The world template body.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(inp);
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input.into());
             self
         }
         /// <p>The world template body.</p>
@@ -6332,8 +6073,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location of the world template.</p>
-        pub fn template_location(mut self, inp: crate::model::TemplateLocation) -> Self {
-            self.inner = self.inner.template_location(inp);
+        pub fn template_location(mut self, input: crate::model::TemplateLocation) -> Self {
+            self.inner = self.inner.template_location(input);
             self
         }
         /// <p>The location of the world template.</p>
@@ -6346,6 +6087,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

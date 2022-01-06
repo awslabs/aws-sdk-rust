@@ -3,18 +3,12 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid
-    /// credentials to access a resource.</p>
+    /// <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Lightsail throws this exception when an account is still in the setup in progress
-    /// state.</p>
+    /// <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>
     AccountSetupInProgressException(crate::error::AccountSetupInProgressException),
-    /// <p>Lightsail throws this exception when user input does not conform to the validation rules
-    /// of an input field.</p>
-    /// <note>
-    /// <p>Domain and distribution APIs are only available in the N. Virginia
-    /// (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to
-    /// <code>us-east-1</code> to create, view, or edit these resources.</p>
+    /// <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note>
+    /// <p>Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) AWS Region. Please set your AWS Region configuration to <code>us-east-1</code> to create, view, or edit these resources.</p>
     /// </note>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>Lightsail throws this exception when it cannot find a resource.</p>

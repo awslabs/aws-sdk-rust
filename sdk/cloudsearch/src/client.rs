@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon CloudSearch
@@ -291,7 +291,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BuildSuggesters`.
     ///
     /// <p>Indexes the search suggestions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters">Configuring Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BuildSuggesters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -336,10 +336,10 @@ pub mod fluent_builders {
                 crate::input::BuildSuggestersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -348,8 +348,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -360,9 +360,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDomain`.
     ///
-    /// <p>Creates a new search domain. For more information,
-    /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html" target="_blank">Creating a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html" target="_blank">Creating a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -407,10 +406,10 @@ pub mod fluent_builders {
                 crate::input::CreateDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -419,8 +418,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>
@@ -432,7 +431,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DefineAnalysisScheme`.
     ///
     /// <p>Configures an analysis scheme that can be applied to a <code>text</code> or <code>text-array</code> field to define language-specific text processing options. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DefineAnalysisScheme<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -477,10 +476,10 @@ pub mod fluent_builders {
                 crate::input::DefineAnalysisSchemeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -489,8 +488,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -499,8 +498,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
-        pub fn analysis_scheme(mut self, inp: crate::model::AnalysisScheme) -> Self {
-            self.inner = self.inner.analysis_scheme(inp);
+        pub fn analysis_scheme(mut self, input: crate::model::AnalysisScheme) -> Self {
+            self.inner = self.inner.analysis_scheme(input);
             self
         }
         /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
@@ -514,8 +513,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DefineExpression`.
     ///
-    /// <p>Configures an <code><a>Expression</a></code> for the search domain. Used to create new expressions and modify existing ones.  If the expression exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Configures an <code><code>Expression</code></code> for the search domain. Used to create new expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DefineExpression<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -560,10 +559,10 @@ pub mod fluent_builders {
                 crate::input::DefineExpressionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -572,8 +571,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -581,12 +580,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
-        pub fn expression(mut self, inp: crate::model::Expression) -> Self {
-            self.inner = self.inner.expression(inp);
+        /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
+        pub fn expression(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.expression(input);
             self
         }
-        /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
+        /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
         pub fn set_expression(
             mut self,
             input: std::option::Option<crate::model::Expression>,
@@ -597,8 +596,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DefineIndexField`.
     ///
-    /// <p>Configures an <code><a>IndexField</a></code> for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the <code><a>IndexFieldType</a></code>. If the field exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Configures an <code><code>IndexField</code></code> for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the <code><code>IndexFieldType</code></code>. If the field exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DefineIndexField<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -643,10 +642,10 @@ pub mod fluent_builders {
                 crate::input::DefineIndexFieldInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -655,8 +654,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -665,8 +664,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The index field and field options you want to configure. </p>
-        pub fn index_field(mut self, inp: crate::model::IndexField) -> Self {
-            self.inner = self.inner.index_field(inp);
+        pub fn index_field(mut self, input: crate::model::IndexField) -> Self {
+            self.inner = self.inner.index_field(input);
             self
         }
         /// <p>The index field and field options you want to configure. </p>
@@ -681,7 +680,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DefineSuggester`.
     ///
     /// <p>Configures a suggester for a domain. A suggester enables you to display possible matches before users finish typing their queries. When you configure a suggester, you must specify the name of the text field you want to search for possible matches and a unique name for the suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DefineSuggester<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -726,10 +725,10 @@ pub mod fluent_builders {
                 crate::input::DefineSuggesterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -738,8 +737,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -748,8 +747,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
-        pub fn suggester(mut self, inp: crate::model::Suggester) -> Self {
-            self.inner = self.inner.suggester(inp);
+        pub fn suggester(mut self, input: crate::model::Suggester) -> Self {
+            self.inner = self.inner.suggester(input);
             self
         }
         /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
@@ -764,7 +763,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAnalysisScheme`.
     ///
     /// <p>Deletes an analysis scheme. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAnalysisScheme<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -809,10 +808,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAnalysisSchemeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -821,8 +820,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -831,8 +830,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the analysis scheme you want to delete.</p>
-        pub fn analysis_scheme_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_scheme_name(inp);
+        pub fn analysis_scheme_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_scheme_name(input.into());
             self
         }
         /// <p>The name of the analysis scheme you want to delete.</p>
@@ -846,9 +845,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDomain`.
     ///
-    /// <p>Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered. For more information,
-    /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html" target="_blank">Deleting a Search  Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html" target="_blank">Deleting a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -893,10 +891,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -905,8 +903,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to permanently delete.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to permanently delete.</p>
@@ -917,8 +915,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteExpression`.
     ///
-    /// <p>Removes an <code><a>Expression</a></code> from the search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes an <code><code>Expression</code></code> from the search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteExpression<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -963,10 +961,10 @@ pub mod fluent_builders {
                 crate::input::DeleteExpressionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -975,8 +973,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -984,12 +982,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>The name of the <code><a>Expression</a></code> to delete.</p>
-        pub fn expression_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression_name(inp);
+        /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
+        pub fn expression_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression_name(input.into());
             self
         }
-        /// <p>The name of the <code><a>Expression</a></code> to delete.</p>
+        /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
         pub fn set_expression_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1000,8 +998,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteIndexField`.
     ///
-    /// <p>Removes an <code><a>IndexField</a></code> from the search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes an <code><code>IndexField</code></code> from the search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIndexField<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1046,10 +1044,10 @@ pub mod fluent_builders {
                 crate::input::DeleteIndexFieldInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1058,8 +1056,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -1068,8 +1066,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
-        pub fn index_field_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_field_name(inp);
+        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_field_name(input.into());
             self
         }
         /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
@@ -1084,7 +1082,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSuggester`.
     ///
     /// <p>Deletes a suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSuggester<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1129,10 +1127,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSuggesterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1141,8 +1139,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -1151,8 +1149,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of the suggester you want to delete.</p>
-        pub fn suggester_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suggester_name(inp);
+        pub fn suggester_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suggester_name(input.into());
             self
         }
         /// <p>Specifies the name of the suggester you want to delete.</p>
@@ -1166,8 +1164,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAnalysisSchemes`.
     ///
-    /// <p>Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific text processing options for a <code>text</code> field. Can be limited to specific analysis schemes by name.  By default, shows all analysis schemes and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes.  For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific text processing options for a <code>text</code> field. Can be limited to specific analysis schemes by name. By default, shows all analysis schemes and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAnalysisSchemes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1212,10 +1210,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAnalysisSchemesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1224,8 +1222,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to describe.</p>
@@ -1238,8 +1236,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_analysis_scheme_names`](Self::set_analysis_scheme_names).
         ///
         /// <p>The analysis schemes you want to describe.</p>
-        pub fn analysis_scheme_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_scheme_names(inp);
+        pub fn analysis_scheme_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_scheme_names(input.into());
             self
         }
         /// <p>The analysis schemes you want to describe.</p>
@@ -1251,8 +1249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deployed(inp);
+        pub fn deployed(mut self, input: bool) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -1263,8 +1261,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAvailabilityOptions`.
     ///
-    /// <p>Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see  <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAvailabilityOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1309,10 +1307,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAvailabilityOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1321,8 +1319,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to describe.</p>
@@ -1331,8 +1329,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deployed(inp);
+        pub fn deployed(mut self, input: bool) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -1343,8 +1341,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDomainEndpointOptions`.
     ///
-    /// <p>Returns the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS. For more information, see  <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html" target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html" target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomainEndpointOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1389,10 +1387,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDomainEndpointOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1401,8 +1399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain.</p>
@@ -1411,8 +1409,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deployed(inp);
+        pub fn deployed(mut self, input: bool) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
@@ -1423,10 +1421,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDomains`.
     ///
-    /// <p>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows
-    /// all domains by default. To get the number of searchable documents in a domain, use the console or submit a <code>matchall</code> request to your domain's search endpoint: <code>q=matchall&amp;q.parser=structured&amp;size=0</code>. For more information,
-    /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by default. To get the number of searchable documents in a domain, use the console or submit a <code>matchall</code> request to your domain's search endpoint: <code>q=matchall&amp;q.parser=structured&amp;size=0</code>. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDomains<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1471,10 +1467,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDomainsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1487,8 +1483,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_domain_names`](Self::set_domain_names).
         ///
         /// <p>The names of the domains you want to include in the response.</p>
-        pub fn domain_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_names(inp);
+        pub fn domain_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_names(input.into());
             self
         }
         /// <p>The names of the domains you want to include in the response.</p>
@@ -1502,8 +1498,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeExpressions`.
     ///
-    /// <p>Gets the expressions configured for the search domain. Can be limited to specific expressions by name. By default, shows all expressions and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see  <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the expressions configured for the search domain. Can be limited to specific expressions by name. By default, shows all expressions and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeExpressions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1548,10 +1544,10 @@ pub mod fluent_builders {
                 crate::input::DescribeExpressionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1560,8 +1556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to describe.</p>
@@ -1573,12 +1569,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_expression_names`](Self::set_expression_names).
         ///
-        /// <p>Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</p>
-        pub fn expression_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression_names(inp);
+        /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
+        pub fn expression_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression_names(input.into());
             self
         }
-        /// <p>Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</p>
+        /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
         pub fn set_expression_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1587,8 +1583,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deployed(inp);
+        pub fn deployed(mut self, input: bool) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -1599,10 +1595,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeIndexFields`.
     ///
-    /// <p>Gets information about the index fields configured for the search domain.
-    /// Can be limited to specific fields by name.  By default, shows all fields and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information,
-    /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Domain Information</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. By default, shows all fields and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Domain Information</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIndexFields<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1647,10 +1641,10 @@ pub mod fluent_builders {
                 crate::input::DescribeIndexFieldsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1659,8 +1653,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to describe.</p>
@@ -1673,8 +1667,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_field_names`](Self::set_field_names).
         ///
         /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
-        pub fn field_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.field_names(inp);
+        pub fn field_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.field_names(input.into());
             self
         }
         /// <p>A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</p>
@@ -1686,8 +1680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deployed(inp);
+        pub fn deployed(mut self, input: bool) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -1698,8 +1692,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeScalingParameters`.
     ///
-    /// <p>Gets the scaling parameters configured for a domain. A domain's scaling parameters specify the desired search instance type and replication count. For more information, see   <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the scaling parameters configured for a domain. A domain's scaling parameters specify the desired search instance type and replication count. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeScalingParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1744,10 +1738,10 @@ pub mod fluent_builders {
                 crate::input::DescribeScalingParametersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1756,8 +1750,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -1768,9 +1762,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeServiceAccessPolicies`.
     ///
-    /// <p>Gets information about the access policies that control access to the domain's document and search endpoints. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information,
-    /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets information about the access policies that control access to the domain's document and search endpoints. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServiceAccessPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1815,10 +1808,10 @@ pub mod fluent_builders {
                 crate::input::DescribeServiceAccessPoliciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1827,8 +1820,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to describe.</p>
@@ -1837,8 +1830,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deployed(inp);
+        pub fn deployed(mut self, input: bool) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -1849,8 +1842,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSuggesters`.
     ///
-    /// <p>Gets the suggesters configured for a domain. A suggester enables you to display possible matches before users finish typing their queries.  Can be limited to specific suggesters by name.  By default, shows all suggesters and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes.  For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the suggesters configured for a domain. A suggester enables you to display possible matches before users finish typing their queries. Can be limited to specific suggesters by name. By default, shows all suggesters and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSuggesters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1895,10 +1888,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSuggestersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1907,8 +1900,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to describe.</p>
@@ -1921,8 +1914,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_suggester_names`](Self::set_suggester_names).
         ///
         /// <p>The suggesters you want to describe.</p>
-        pub fn suggester_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suggester_names(inp);
+        pub fn suggester_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suggester_names(input.into());
             self
         }
         /// <p>The suggesters you want to describe.</p>
@@ -1934,8 +1927,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deployed(inp);
+        pub fn deployed(mut self, input: bool) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -1946,8 +1939,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `IndexDocuments`.
     ///
-    /// <p>Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose <a>OptionStatus</a> is  <code>RequiresIndexDocuments</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose <code>OptionStatus</code> is <code>RequiresIndexDocuments</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct IndexDocuments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1992,10 +1985,10 @@ pub mod fluent_builders {
                 crate::input::IndexDocumentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2004,8 +1997,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -2017,7 +2010,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomainNames`.
     ///
     /// <p>Lists all search domains owned by an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainNames<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2062,10 +2055,10 @@ pub mod fluent_builders {
                 crate::input::ListDomainNamesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2077,7 +2070,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAvailabilityOptions`.
     ///
     /// <p>Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can take about half an hour to become active. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAvailabilityOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2122,10 +2115,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAvailabilityOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2134,8 +2127,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -2144,8 +2137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.inner = self.inner.multi_az(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
         /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
@@ -2157,7 +2150,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDomainEndpointOptions`.
     ///
     /// <p>Updates the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html" target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainEndpointOptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2202,10 +2195,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDomainEndpointOptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2214,8 +2207,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain.</p>
@@ -2224,8 +2217,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
-        pub fn domain_endpoint_options(mut self, inp: crate::model::DomainEndpointOptions) -> Self {
-            self.inner = self.inner.domain_endpoint_options(inp);
+        pub fn domain_endpoint_options(
+            mut self,
+            input: crate::model::DomainEndpointOptions,
+        ) -> Self {
+            self.inner = self.inner.domain_endpoint_options(input);
             self
         }
         /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
@@ -2240,7 +2236,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateScalingParameters`.
     ///
     /// <p>Configures scaling parameters for a domain. A domain's scaling parameters specify the desired search instance type and replication count. Amazon CloudSearch will still automatically scale your domain based on the volume of data and traffic, but not below the desired instance type and replication count. If the Multi-AZ option is enabled, these values control the resources used per Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateScalingParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2285,10 +2281,10 @@ pub mod fluent_builders {
                 crate::input::UpdateScalingParametersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2297,8 +2293,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -2307,8 +2303,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The desired instance type and desired number of replicas of each index partition.</p>
-        pub fn scaling_parameters(mut self, inp: crate::model::ScalingParameters) -> Self {
-            self.inner = self.inner.scaling_parameters(inp);
+        pub fn scaling_parameters(mut self, input: crate::model::ScalingParameters) -> Self {
+            self.inner = self.inner.scaling_parameters(input);
             self
         }
         /// <p>The desired instance type and desired number of replicas of each index partition.</p>
@@ -2322,10 +2318,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateServiceAccessPolicies`.
     ///
-    /// <p>Configures the access rules that control access to the domain's document and search endpoints.
-    /// For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">
-    /// Configuring Access for an Amazon CloudSearch Domain</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Configures the access rules that control access to the domain's document and search endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank"> Configuring Access for an Amazon CloudSearch Domain</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceAccessPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2370,10 +2364,10 @@ pub mod fluent_builders {
                 crate::input::UpdateServiceAccessPoliciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2382,8 +2376,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -2392,8 +2386,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
-        pub fn access_policies(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_policies(inp);
+        pub fn access_policies(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_policies(input.into());
             self
         }
         /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
@@ -2406,6 +2400,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

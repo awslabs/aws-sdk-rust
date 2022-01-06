@@ -504,9 +504,10 @@ mod tests {
     };
     use crate::http_request::{SignatureLocation, SigningParams};
     use crate::sign::sha256_hex_string;
+    use http::HeaderValue;
     use http::Uri;
     use pretty_assertions::assert_eq;
-    use proptest::{proptest, strategy::Strategy};
+    use proptest::proptest;
     use std::time::Duration;
 
     fn signing_params(settings: SigningSettings) -> SigningParams<'static> {
@@ -728,13 +729,11 @@ mod tests {
             assert!(trim_all(s.as_bytes()).len() <= s.len())
         }
 
-        // TODO: Using filter map is not ideal here but I wasn't sure how to define a range that covers
-        //       the extended ASCII chars above \x7F. It would be better to define a generator for
-        //       chars in the range of [\x21-\x7E\x80-\xFF] and then prop_map those into HeaderValues.
-        //       _(\x7F is the largest value accepted currently)_
         #[test]
-        fn test_normalize_header_value_doesnt_panic(v in (".*").prop_filter_map("Must be a valid HeaderValue", |v| http::HeaderValue::from_maybe_shared(v).ok())) {
-            let _ = normalize_header_value(&v);
+        fn test_normalize_header_value_doesnt_panic(v in (".*")) {
+            if let Ok(header_value) = HeaderValue::from_maybe_shared(v) {
+                let _ = normalize_header_value(&header_value);
+            }
         }
 
         #[test]

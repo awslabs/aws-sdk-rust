@@ -114,9 +114,9 @@ pub mod model {
         /// To override the contents of this collection use [`set_model_metrics`](Self::set_model_metrics).
         ///
         /// <p>Information required for model metrics.</p>
-        pub fn model_metrics(mut self, input: impl Into<crate::model::EdgeMetric>) -> Self {
+        pub fn model_metrics(mut self, input: crate::model::EdgeMetric) -> Self {
             let mut v = self.model_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.model_metrics = Some(v);
             self
         }

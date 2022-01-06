@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSafetyRuleOutput {
-    /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+    /// <p>The assertion rule updated.</p>
     pub assertion_rule: std::option::Option<crate::model::AssertionRule>,
-    /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+    /// <p>The gating rule updated.</p>
     pub gating_rule: std::option::Option<crate::model::GatingRule>,
 }
 impl UpdateSafetyRuleOutput {
-    /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+    /// <p>The assertion rule updated.</p>
     pub fn assertion_rule(&self) -> std::option::Option<&crate::model::AssertionRule> {
         self.assertion_rule.as_ref()
     }
-    /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+    /// <p>The gating rule updated.</p>
     pub fn gating_rule(&self) -> std::option::Option<&crate::model::GatingRule> {
         self.gating_rule.as_ref()
     }
@@ -36,12 +36,12 @@ pub mod update_safety_rule_output {
         pub(crate) gating_rule: std::option::Option<crate::model::GatingRule>,
     }
     impl Builder {
-        /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+        /// <p>The assertion rule updated.</p>
         pub fn assertion_rule(mut self, input: crate::model::AssertionRule) -> Self {
             self.assertion_rule = Some(input);
             self
         }
-        /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+        /// <p>The assertion rule updated.</p>
         pub fn set_assertion_rule(
             mut self,
             input: std::option::Option<crate::model::AssertionRule>,
@@ -49,12 +49,12 @@ pub mod update_safety_rule_output {
             self.assertion_rule = input;
             self
         }
-        /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+        /// <p>The gating rule updated.</p>
         pub fn gating_rule(mut self, input: crate::model::GatingRule) -> Self {
             self.gating_rule = Some(input);
             self
         }
-        /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+        /// <p>The gating rule updated.</p>
         pub fn set_gating_rule(
             mut self,
             input: std::option::Option<crate::model::GatingRule>,
@@ -195,6 +195,139 @@ impl UpdateControlPanelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceOutput {}
+impl std::fmt::Debug for UntagResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+pub mod untag_resource_output {
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        pub fn build(self) -> crate::output::UntagResourceOutput {
+            crate::output::UntagResourceOutput {}
+        }
+    }
+}
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceOutput {}
+impl std::fmt::Debug for TagResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+pub mod tag_resource_output {
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        pub fn build(self) -> crate::output::TagResourceOutput {
+            crate::output::TagResourceOutput {}
+        }
+    }
+}
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceOutput {
+    /// <p>The tags associated with the resource.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl ListTagsForResourceOutput {
+    /// <p>The tags associated with the resource.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
+    }
+}
+impl std::fmt::Debug for ListTagsForResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+pub mod list_tags_for_resource_output {
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the resource.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        /// <p>The tags associated with the resource.</p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        pub fn build(self) -> crate::output::ListTagsForResourceOutput {
+            crate::output::ListTagsForResourceOutput { tags: self.tags }
+        }
+    }
+}
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSafetyRulesOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -244,9 +377,9 @@ pub mod list_safety_rules_output {
         /// To override the contents of this collection use [`set_safety_rules`](Self::set_safety_rules).
         ///
         /// <p>The list of safety rules in a control panel.</p>
-        pub fn safety_rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn safety_rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.safety_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.safety_rules = Some(v);
             self
         }
@@ -327,9 +460,9 @@ pub mod list_routing_controls_output {
         /// To override the contents of this collection use [`set_routing_controls`](Self::set_routing_controls).
         ///
         /// <p>An array of routing controls.</p>
-        pub fn routing_controls(mut self, input: impl Into<crate::model::RoutingControl>) -> Self {
+        pub fn routing_controls(mut self, input: crate::model::RoutingControl) -> Self {
             let mut v = self.routing_controls.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routing_controls = Some(v);
             self
         }
@@ -399,9 +532,9 @@ pub mod list_control_panels_output {
         /// To override the contents of this collection use [`set_control_panels`](Self::set_control_panels).
         ///
         /// <p>The result of a successful ListControlPanel request.</p>
-        pub fn control_panels(mut self, input: impl Into<crate::model::ControlPanel>) -> Self {
+        pub fn control_panels(mut self, input: crate::model::ControlPanel) -> Self {
             let mut v = self.control_panels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.control_panels = Some(v);
             self
         }
@@ -481,9 +614,9 @@ pub mod list_clusters_output {
         /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
         ///
         /// <p>An array of the clusters in an account.</p>
-        pub fn clusters(mut self, input: impl Into<crate::model::Cluster>) -> Self {
+        pub fn clusters(mut self, input: crate::model::Cluster) -> Self {
             let mut v = self.clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.clusters = Some(v);
             self
         }
@@ -527,7 +660,7 @@ impl ListClustersOutput {
 pub struct ListAssociatedRoute53HealthChecksOutput {
     /// <p>Identifiers for the health checks.</p>
     pub health_check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token that identifies which batch of results you want to see.</p>
+    /// <p>Next token for listing health checks.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAssociatedRoute53HealthChecksOutput {
@@ -535,7 +668,7 @@ impl ListAssociatedRoute53HealthChecksOutput {
     pub fn health_check_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.health_check_ids.as_deref()
     }
-    /// <p>The token that identifies which batch of results you want to see.</p>
+    /// <p>Next token for listing health checks.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -577,12 +710,12 @@ pub mod list_associated_route53_health_checks_output {
             self.health_check_ids = input;
             self
         }
-        /// <p>The token that identifies which batch of results you want to see.</p>
+        /// <p>Next token for listing health checks.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that identifies which batch of results you want to see.</p>
+        /// <p>Next token for listing health checks.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -607,17 +740,17 @@ impl ListAssociatedRoute53HealthChecksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSafetyRuleOutput {
-    /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+    /// <p>The assertion rule in the response.</p>
     pub assertion_rule: std::option::Option<crate::model::AssertionRule>,
-    /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+    /// <p>The gating rule in the response.</p>
     pub gating_rule: std::option::Option<crate::model::GatingRule>,
 }
 impl DescribeSafetyRuleOutput {
-    /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+    /// <p>The assertion rule in the response.</p>
     pub fn assertion_rule(&self) -> std::option::Option<&crate::model::AssertionRule> {
         self.assertion_rule.as_ref()
     }
-    /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+    /// <p>The gating rule in the response.</p>
     pub fn gating_rule(&self) -> std::option::Option<&crate::model::GatingRule> {
         self.gating_rule.as_ref()
     }
@@ -640,12 +773,12 @@ pub mod describe_safety_rule_output {
         pub(crate) gating_rule: std::option::Option<crate::model::GatingRule>,
     }
     impl Builder {
-        /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+        /// <p>The assertion rule in the response.</p>
         pub fn assertion_rule(mut self, input: crate::model::AssertionRule) -> Self {
             self.assertion_rule = Some(input);
             self
         }
-        /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+        /// <p>The assertion rule in the response.</p>
         pub fn set_assertion_rule(
             mut self,
             input: std::option::Option<crate::model::AssertionRule>,
@@ -653,12 +786,12 @@ pub mod describe_safety_rule_output {
             self.assertion_rule = input;
             self
         }
-        /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+        /// <p>The gating rule in the response.</p>
         pub fn gating_rule(mut self, input: crate::model::GatingRule) -> Self {
             self.gating_rule = Some(input);
             self
         }
-        /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+        /// <p>The gating rule in the response.</p>
         pub fn set_gating_rule(
             mut self,
             input: std::option::Option<crate::model::GatingRule>,
@@ -974,17 +1107,17 @@ impl DeleteClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSafetyRuleOutput {
-    /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+    /// <p>The assertion rule created.</p>
     pub assertion_rule: std::option::Option<crate::model::AssertionRule>,
-    /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+    /// <p>The gating rule created.</p>
     pub gating_rule: std::option::Option<crate::model::GatingRule>,
 }
 impl CreateSafetyRuleOutput {
-    /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+    /// <p>The assertion rule created.</p>
     pub fn assertion_rule(&self) -> std::option::Option<&crate::model::AssertionRule> {
         self.assertion_rule.as_ref()
     }
-    /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+    /// <p>The gating rule created.</p>
     pub fn gating_rule(&self) -> std::option::Option<&crate::model::GatingRule> {
         self.gating_rule.as_ref()
     }
@@ -1007,12 +1140,12 @@ pub mod create_safety_rule_output {
         pub(crate) gating_rule: std::option::Option<crate::model::GatingRule>,
     }
     impl Builder {
-        /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+        /// <p>The assertion rule created.</p>
         pub fn assertion_rule(mut self, input: crate::model::AssertionRule) -> Self {
             self.assertion_rule = Some(input);
             self
         }
-        /// <p>An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule configuration is met. Otherwise, the change to the routing control is not accepted.</p>
+        /// <p>The assertion rule created.</p>
         pub fn set_assertion_rule(
             mut self,
             input: std::option::Option<crate::model::AssertionRule>,
@@ -1020,12 +1153,12 @@ pub mod create_safety_rule_output {
             self.assertion_rule = input;
             self
         }
-        /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+        /// <p>The gating rule created.</p>
         pub fn gating_rule(mut self, input: crate::model::GatingRule) -> Self {
             self.gating_rule = Some(input);
             self
         }
-        /// <p>A gating rule verifies that a set of gating controls evaluates as true, based on a rule configuration that you specify. If the gating rule evaluates to true, Amazon Route 53 Application Recovery Controller allows a set of routing control state changes to run and complete against the set of target controls.</p>
+        /// <p>The gating rule created.</p>
         pub fn set_gating_rule(
             mut self,
             input: std::option::Option<crate::model::GatingRule>,

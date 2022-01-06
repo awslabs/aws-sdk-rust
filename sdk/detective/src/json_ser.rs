@@ -83,12 +83,32 @@ pub fn serialize_structure_crate_input_delete_members_input(
     Ok(())
 }
 
+pub fn serialize_structure_crate_input_describe_organization_configuration_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::DescribeOrganizationConfigurationInput,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_17) = &input.graph_arn {
+        object.key("GraphArn").string(var_17);
+    }
+    Ok(())
+}
+
 pub fn serialize_structure_crate_input_disassociate_membership_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DisassociateMembershipInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_17) = &input.graph_arn {
-        object.key("GraphArn").string(var_17);
+    if let Some(var_18) = &input.graph_arn {
+        object.key("GraphArn").string(var_18);
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_enable_organization_admin_account_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::EnableOrganizationAdminAccountInput,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_19) = &input.account_id {
+        object.key("AccountId").string(var_19);
     }
     Ok(())
 }
@@ -97,17 +117,17 @@ pub fn serialize_structure_crate_input_get_members_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::GetMembersInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_18) = &input.account_ids {
-        let mut array_19 = object.key("AccountIds").start_array();
-        for item_20 in var_18 {
+    if let Some(var_20) = &input.account_ids {
+        let mut array_21 = object.key("AccountIds").start_array();
+        for item_22 in var_20 {
             {
-                array_19.value().string(item_20);
+                array_21.value().string(item_22);
             }
         }
-        array_19.finish();
+        array_21.finish();
     }
-    if let Some(var_21) = &input.graph_arn {
-        object.key("GraphArn").string(var_21);
+    if let Some(var_23) = &input.graph_arn {
+        object.key("GraphArn").string(var_23);
     }
     Ok(())
 }
@@ -115,22 +135,6 @@ pub fn serialize_structure_crate_input_get_members_input(
 pub fn serialize_structure_crate_input_list_graphs_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListGraphsInput,
-) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_22) = &input.max_results {
-        object.key("MaxResults").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_22).into()),
-        );
-    }
-    if let Some(var_23) = &input.next_token {
-        object.key("NextToken").string(var_23);
-    }
-    Ok(())
-}
-
-pub fn serialize_structure_crate_input_list_invitations_input(
-    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::ListInvitationsInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_24) = &input.max_results {
         object.key("MaxResults").number(
@@ -144,21 +148,53 @@ pub fn serialize_structure_crate_input_list_invitations_input(
     Ok(())
 }
 
+pub fn serialize_structure_crate_input_list_invitations_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::ListInvitationsInput,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_26) = &input.max_results {
+        object.key("MaxResults").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_26).into()),
+        );
+    }
+    if let Some(var_27) = &input.next_token {
+        object.key("NextToken").string(var_27);
+    }
+    Ok(())
+}
+
 pub fn serialize_structure_crate_input_list_members_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListMembersInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_26) = &input.graph_arn {
-        object.key("GraphArn").string(var_26);
+    if let Some(var_28) = &input.graph_arn {
+        object.key("GraphArn").string(var_28);
     }
-    if let Some(var_27) = &input.max_results {
+    if let Some(var_29) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_27).into()),
+            aws_smithy_types::Number::NegInt((*var_29).into()),
         );
     }
-    if let Some(var_28) = &input.next_token {
-        object.key("NextToken").string(var_28);
+    if let Some(var_30) = &input.next_token {
+        object.key("NextToken").string(var_30);
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_list_organization_admin_accounts_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::ListOrganizationAdminAccountsInput,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_31) = &input.max_results {
+        object.key("MaxResults").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_31).into()),
+        );
+    }
+    if let Some(var_32) = &input.next_token {
+        object.key("NextToken").string(var_32);
     }
     Ok(())
 }
@@ -167,8 +203,8 @@ pub fn serialize_structure_crate_input_reject_invitation_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::RejectInvitationInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_29) = &input.graph_arn {
-        object.key("GraphArn").string(var_29);
+    if let Some(var_33) = &input.graph_arn {
+        object.key("GraphArn").string(var_33);
     }
     Ok(())
 }
@@ -177,11 +213,11 @@ pub fn serialize_structure_crate_input_start_monitoring_member_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::StartMonitoringMemberInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_30) = &input.account_id {
-        object.key("AccountId").string(var_30);
+    if let Some(var_34) = &input.account_id {
+        object.key("AccountId").string(var_34);
     }
-    if let Some(var_31) = &input.graph_arn {
-        object.key("GraphArn").string(var_31);
+    if let Some(var_35) = &input.graph_arn {
+        object.key("GraphArn").string(var_35);
     }
     Ok(())
 }
@@ -190,14 +226,27 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_32) = &input.tags {
-        let mut object_33 = object.key("Tags").start_object();
-        for (key_34, value_35) in var_32 {
+    if let Some(var_36) = &input.tags {
+        let mut object_37 = object.key("Tags").start_object();
+        for (key_38, value_39) in var_36 {
             {
-                object_33.key(key_34).string(value_35);
+                object_37.key(key_38).string(value_39);
             }
         }
-        object_33.finish();
+        object_37.finish();
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_update_organization_configuration_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UpdateOrganizationConfigurationInput,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if input.auto_enable {
+        object.key("AutoEnable").boolean(input.auto_enable);
+    }
+    if let Some(var_40) = &input.graph_arn {
+        object.key("GraphArn").string(var_40);
     }
     Ok(())
 }
@@ -206,11 +255,11 @@ pub fn serialize_structure_crate_model_account(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Account,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_36) = &input.account_id {
-        object.key("AccountId").string(var_36);
+    if let Some(var_41) = &input.account_id {
+        object.key("AccountId").string(var_41);
     }
-    if let Some(var_37) = &input.email_address {
-        object.key("EmailAddress").string(var_37);
+    if let Some(var_42) = &input.email_address {
+        object.key("EmailAddress").string(var_42);
     }
     Ok(())
 }

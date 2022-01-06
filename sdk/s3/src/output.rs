@@ -33,33 +33,25 @@ impl WriteGetObjectResponseOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadPartCopyOutput {
-    /// <p>The version of the source object that was copied, if you have enabled versioning on the
-    /// source bucket.</p>
+    /// <p>The version of the source object that was copied, if you have enabled versioning on the source bucket.</p>
     pub copy_source_version_id: std::option::Option<std::string::String>,
     /// <p>Container for all response elements.</p>
     pub copy_part_result: std::option::Option<crate::model::CopyPartResult>,
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header confirming the encryption algorithm used.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header to provide round-trip message integrity verification of
-    /// the customer-provided encryption key.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl UploadPartCopyOutput {
-    /// <p>The version of the source object that was copied, if you have enabled versioning on the
-    /// source bucket.</p>
+    /// <p>The version of the source object that was copied, if you have enabled versioning on the source bucket.</p>
     pub fn copy_source_version_id(&self) -> std::option::Option<&str> {
         self.copy_source_version_id.as_deref()
     }
@@ -67,26 +59,21 @@ impl UploadPartCopyOutput {
     pub fn copy_part_result(&self) -> std::option::Option<&crate::model::CopyPartResult> {
         self.copy_part_result.as_ref()
     }
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header confirming the encryption algorithm used.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header to provide round-trip message integrity verification of
-    /// the customer-provided encryption key.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
@@ -94,8 +81,7 @@ impl UploadPartCopyOutput {
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -130,14 +116,12 @@ pub mod upload_part_copy_output {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
     }
     impl Builder {
-        /// <p>The version of the source object that was copied, if you have enabled versioning on the
-        /// source bucket.</p>
+        /// <p>The version of the source object that was copied, if you have enabled versioning on the source bucket.</p>
         pub fn copy_source_version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.copy_source_version_id = Some(input.into());
             self
         }
-        /// <p>The version of the source object that was copied, if you have enabled versioning on the
-        /// source bucket.</p>
+        /// <p>The version of the source object that was copied, if you have enabled versioning on the source bucket.</p>
         pub fn set_copy_source_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -158,14 +142,12 @@ pub mod upload_part_copy_output {
             self.copy_part_result = input;
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
             self.server_side_encryption = Some(input);
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn set_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryption>,
@@ -173,14 +155,12 @@ pub mod upload_part_copy_output {
             self.server_side_encryption = input;
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header confirming the encryption algorithm used.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header confirming the encryption algorithm used.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -188,16 +168,12 @@ pub mod upload_part_copy_output {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header to provide round-trip message integrity verification of
-        /// the customer-provided encryption key.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header to provide round-trip message integrity verification of
-        /// the customer-provided encryption key.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -205,14 +181,12 @@ pub mod upload_part_copy_output {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed key that was used for the object.</p>
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
         }
-        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed key that was used for the object.</p>
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
         pub fn set_ssekms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -230,14 +204,12 @@ pub mod upload_part_copy_output {
             self.bucket_key_enabled = input;
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -271,30 +243,23 @@ impl UploadPartCopyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadPartOutput {
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>Entity tag for the uploaded object.</p>
     pub e_tag: std::option::Option<std::string::String>,
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header confirming the encryption algorithm used.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header to provide round-trip message integrity verification of
-    /// the customer-provided encryption key.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed key was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl UploadPartOutput {
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryption> {
@@ -304,19 +269,15 @@ impl UploadPartOutput {
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header confirming the encryption algorithm used.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header to provide round-trip message integrity verification of
-    /// the customer-provided encryption key.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed key was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key was used for the object.</p>
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
@@ -324,8 +285,7 @@ impl UploadPartOutput {
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -358,14 +318,12 @@ pub mod upload_part_output {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
     }
     impl Builder {
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
             self.server_side_encryption = Some(input);
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn set_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryption>,
@@ -383,14 +341,12 @@ pub mod upload_part_output {
             self.e_tag = input;
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header confirming the encryption algorithm used.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header confirming the encryption algorithm used.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -398,16 +354,12 @@ pub mod upload_part_output {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header to provide round-trip message integrity verification of
-        /// the customer-provided encryption key.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header to provide round-trip message integrity verification of
-        /// the customer-provided encryption key.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -415,14 +367,12 @@ pub mod upload_part_output {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed key was used for the object.</p>
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
         }
-        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed key was used for the object.</p>
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key was used for the object.</p>
         pub fn set_ssekms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -440,14 +390,12 @@ pub mod upload_part_output {
             self.bucket_key_enabled = input;
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -571,21 +519,17 @@ impl SelectObjectContentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreObjectOutput {
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
-    /// <p>Indicates the path in the provided S3 output location where Select results will be
-    /// restored to.</p>
+    /// <p>Indicates the path in the provided S3 output location where Select results will be restored to.</p>
     pub restore_output_path: std::option::Option<std::string::String>,
 }
 impl RestoreObjectOutput {
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
-    /// <p>Indicates the path in the provided S3 output location where Select results will be
-    /// restored to.</p>
+    /// <p>Indicates the path in the provided S3 output location where Select results will be restored to.</p>
     pub fn restore_output_path(&self) -> std::option::Option<&str> {
         self.restore_output_path.as_deref()
     }
@@ -608,14 +552,12 @@ pub mod restore_object_output {
         pub(crate) restore_output_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -623,14 +565,12 @@ pub mod restore_object_output {
             self.request_charged = input;
             self
         }
-        /// <p>Indicates the path in the provided S3 output location where Select results will be
-        /// restored to.</p>
+        /// <p>Indicates the path in the provided S3 output location where Select results will be restored to.</p>
         pub fn restore_output_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.restore_output_path = Some(input.into());
             self
         }
-        /// <p>Indicates the path in the provided S3 output location where Select results will be
-        /// restored to.</p>
+        /// <p>Indicates the path in the provided S3 output location where Select results will be restored to.</p>
         pub fn set_restore_output_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -742,13 +682,11 @@ impl PutObjectTaggingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutObjectRetentionOutput {
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl PutObjectRetentionOutput {
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -769,14 +707,12 @@ pub mod put_object_retention_output {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
     }
     impl Builder {
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -803,13 +739,11 @@ impl PutObjectRetentionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutObjectLockConfigurationOutput {
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl PutObjectLockConfigurationOutput {
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -830,14 +764,12 @@ pub mod put_object_lock_configuration_output {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
     }
     impl Builder {
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -864,13 +796,11 @@ impl PutObjectLockConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutObjectLegalHoldOutput {
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl PutObjectLegalHoldOutput {
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -891,14 +821,12 @@ pub mod put_object_legal_hold_output {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
     }
     impl Builder {
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -925,13 +853,11 @@ impl PutObjectLegalHoldOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutObjectAclOutput {
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl PutObjectAclOutput {
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -952,14 +878,12 @@ pub mod put_object_acl_output {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
     }
     impl Builder {
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -986,44 +910,29 @@ impl PutObjectAclOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutObjectOutput {
-    /// <p> If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It
-    /// includes the expiry-date and rule-id key-value pairs that provide information about object
-    /// expiration. The value of the rule-id is URL encoded.</p>
+    /// <p> If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It includes the expiry-date and rule-id key-value pairs that provide information about object expiration. The value of the rule-id is URL encoded.</p>
     pub expiration: std::option::Option<std::string::String>,
     /// <p>Entity tag for the uploaded object.</p>
     pub e_tag: std::option::Option<std::string::String>,
-    /// <p>If you specified server-side encryption either with an Amazon Web Services KMS key
-    /// or Amazon S3-managed encryption key in your PUT request, the response includes this header. It
-    /// confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
+    /// <p>If you specified server-side encryption either with an Amazon Web Services KMS key or Amazon S3-managed encryption key in your PUT request, the response includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>Version of the object.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header confirming the encryption algorithm used.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header to provide round-trip message integrity verification of
-    /// the customer-provided encryption key.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-    /// <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service
-    /// (Amazon Web Services KMS) symmetric customer managed key that was used for the
-    /// object. </p>
+    /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object. </p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
-    /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
-    /// context key-value pairs.</p>
+    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
     pub ssekms_encryption_context: std::option::Option<std::string::String>,
     /// <p>Indicates whether the uploaded object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl PutObjectOutput {
-    /// <p> If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It
-    /// includes the expiry-date and rule-id key-value pairs that provide information about object
-    /// expiration. The value of the rule-id is URL encoded.</p>
+    /// <p> If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It includes the expiry-date and rule-id key-value pairs that provide information about object expiration. The value of the rule-id is URL encoded.</p>
     pub fn expiration(&self) -> std::option::Option<&str> {
         self.expiration.as_deref()
     }
@@ -1031,9 +940,7 @@ impl PutObjectOutput {
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
-    /// <p>If you specified server-side encryption either with an Amazon Web Services KMS key
-    /// or Amazon S3-managed encryption key in your PUT request, the response includes this header. It
-    /// confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
+    /// <p>If you specified server-side encryption either with an Amazon Web Services KMS key or Amazon S3-managed encryption key in your PUT request, the response includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryption> {
@@ -1043,27 +950,19 @@ impl PutObjectOutput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header confirming the encryption algorithm used.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header to provide round-trip message integrity verification of
-    /// the customer-provided encryption key.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-    /// <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service
-    /// (Amazon Web Services KMS) symmetric customer managed key that was used for the
-    /// object. </p>
+    /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object. </p>
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
-    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
-    /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
-    /// context key-value pairs.</p>
+    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
     pub fn ssekms_encryption_context(&self) -> std::option::Option<&str> {
         self.ssekms_encryption_context.as_deref()
     }
@@ -1071,8 +970,7 @@ impl PutObjectOutput {
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -1114,16 +1012,12 @@ pub mod put_object_output {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
     }
     impl Builder {
-        /// <p> If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It
-        /// includes the expiry-date and rule-id key-value pairs that provide information about object
-        /// expiration. The value of the rule-id is URL encoded.</p>
+        /// <p> If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It includes the expiry-date and rule-id key-value pairs that provide information about object expiration. The value of the rule-id is URL encoded.</p>
         pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
             self.expiration = Some(input.into());
             self
         }
-        /// <p> If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It
-        /// includes the expiry-date and rule-id key-value pairs that provide information about object
-        /// expiration. The value of the rule-id is URL encoded.</p>
+        /// <p> If the expiration is configured for the object (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>), the response includes this header. It includes the expiry-date and rule-id key-value pairs that provide information about object expiration. The value of the rule-id is URL encoded.</p>
         pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expiration = input;
             self
@@ -1138,16 +1032,12 @@ pub mod put_object_output {
             self.e_tag = input;
             self
         }
-        /// <p>If you specified server-side encryption either with an Amazon Web Services KMS key
-        /// or Amazon S3-managed encryption key in your PUT request, the response includes this header. It
-        /// confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
+        /// <p>If you specified server-side encryption either with an Amazon Web Services KMS key or Amazon S3-managed encryption key in your PUT request, the response includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
             self.server_side_encryption = Some(input);
             self
         }
-        /// <p>If you specified server-side encryption either with an Amazon Web Services KMS key
-        /// or Amazon S3-managed encryption key in your PUT request, the response includes this header. It
-        /// confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
+        /// <p>If you specified server-side encryption either with an Amazon Web Services KMS key or Amazon S3-managed encryption key in your PUT request, the response includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
         pub fn set_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryption>,
@@ -1165,14 +1055,12 @@ pub mod put_object_output {
             self.version_id = input;
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header confirming the encryption algorithm used.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header confirming the encryption algorithm used.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1180,16 +1068,12 @@ pub mod put_object_output {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header to provide round-trip message integrity verification of
-        /// the customer-provided encryption key.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header to provide round-trip message integrity verification of
-        /// the customer-provided encryption key.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1197,18 +1081,12 @@ pub mod put_object_output {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-        /// <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service
-        /// (Amazon Web Services KMS) symmetric customer managed key that was used for the
-        /// object. </p>
+        /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object. </p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
         }
-        /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-        /// <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service
-        /// (Amazon Web Services KMS) symmetric customer managed key that was used for the
-        /// object. </p>
+        /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object. </p>
         pub fn set_ssekms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1216,16 +1094,12 @@ pub mod put_object_output {
             self.ssekms_key_id = input;
             self
         }
-        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
-        /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
-        /// context key-value pairs.</p>
+        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
         pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_encryption_context = Some(input.into());
             self
         }
-        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
-        /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
-        /// context key-value pairs.</p>
+        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
         pub fn set_ssekms_encryption_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1243,14 +1117,12 @@ pub mod put_object_output {
             self.bucket_key_enabled = input;
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -1827,18 +1699,10 @@ impl PutBucketAccelerateConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPartsOutput {
-    /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete
-    /// multipart uploads and the prefix in the lifecycle rule matches the object name in the
-    /// request, then the response includes this header indicating when the initiated multipart
-    /// upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-    /// Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
-    ///
-    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will
-    /// provide the ID of the lifecycle configuration rule that defines this action.</p>
+    /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
+    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p>
     pub abort_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It
-    /// identifies applicable lifecycle configuration rule that defines the action to abort
-    /// incomplete multipart uploads.</p>
+    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p>
     pub abort_rule_id: std::option::Option<std::string::String>,
     /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
     pub bucket: std::option::Option<std::string::String>,
@@ -1846,54 +1710,32 @@ pub struct ListPartsOutput {
     pub key: std::option::Option<std::string::String>,
     /// <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
     pub upload_id: std::option::Option<std::string::String>,
-    /// <p>When a list is truncated, this element specifies the last part in the list, as well as
-    /// the value to use for the part-number-marker request parameter in a subsequent
-    /// request.</p>
+    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
     pub part_number_marker: std::option::Option<std::string::String>,
-    /// <p>When a list is truncated, this element specifies the last part in the list, as well as
-    /// the value to use for the part-number-marker request parameter in a subsequent
-    /// request.</p>
+    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
     pub next_part_number_marker: std::option::Option<std::string::String>,
     /// <p>Maximum number of parts that were allowed in the response.</p>
     pub max_parts: i32,
-    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that
-    /// the list was truncated. A list can be truncated if the number of parts exceeds the limit
-    /// returned in the MaxParts element.</p>
+    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
     pub is_truncated: bool,
-    /// <p> Container for elements related to a particular part. A response can contain zero or
-    /// more <code>Part</code> elements.</p>
+    /// <p> Container for elements related to a particular part. A response can contain zero or more <code>Part</code> elements.</p>
     pub parts: std::option::Option<std::vec::Vec<crate::model::Part>>,
-    /// <p>Container element that identifies who initiated the multipart upload. If the initiator
-    /// is an Amazon Web Services account, this element provides the same information as the <code>Owner</code>
-    /// element. If the initiator is an IAM User, this element provides the user ARN and display
-    /// name.</p>
+    /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
     pub initiator: std::option::Option<crate::model::Initiator>,
-    /// <p> Container element that identifies the object owner, after the object is created. If
-    /// multipart upload is initiated by an IAM user, this element provides the parent account ID
-    /// and display name.</p>
+    /// <p> Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p>
     pub owner: std::option::Option<crate::model::Owner>,
-    /// <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded
-    /// object.</p>
+    /// <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded object.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl ListPartsOutput {
-    /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete
-    /// multipart uploads and the prefix in the lifecycle rule matches the object name in the
-    /// request, then the response includes this header indicating when the initiated multipart
-    /// upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-    /// Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
-    ///
-    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will
-    /// provide the ID of the lifecycle configuration rule that defines this action.</p>
+    /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
+    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p>
     pub fn abort_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.abort_date.as_ref()
     }
-    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It
-    /// identifies applicable lifecycle configuration rule that defines the action to abort
-    /// incomplete multipart uploads.</p>
+    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p>
     pub fn abort_rule_id(&self) -> std::option::Option<&str> {
         self.abort_rule_id.as_deref()
     }
@@ -1909,15 +1751,11 @@ impl ListPartsOutput {
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p>When a list is truncated, this element specifies the last part in the list, as well as
-    /// the value to use for the part-number-marker request parameter in a subsequent
-    /// request.</p>
+    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
     pub fn part_number_marker(&self) -> std::option::Option<&str> {
         self.part_number_marker.as_deref()
     }
-    /// <p>When a list is truncated, this element specifies the last part in the list, as well as
-    /// the value to use for the part-number-marker request parameter in a subsequent
-    /// request.</p>
+    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
     pub fn next_part_number_marker(&self) -> std::option::Option<&str> {
         self.next_part_number_marker.as_deref()
     }
@@ -1925,37 +1763,27 @@ impl ListPartsOutput {
     pub fn max_parts(&self) -> i32 {
         self.max_parts
     }
-    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that
-    /// the list was truncated. A list can be truncated if the number of parts exceeds the limit
-    /// returned in the MaxParts element.</p>
+    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
-    /// <p> Container for elements related to a particular part. A response can contain zero or
-    /// more <code>Part</code> elements.</p>
+    /// <p> Container for elements related to a particular part. A response can contain zero or more <code>Part</code> elements.</p>
     pub fn parts(&self) -> std::option::Option<&[crate::model::Part]> {
         self.parts.as_deref()
     }
-    /// <p>Container element that identifies who initiated the multipart upload. If the initiator
-    /// is an Amazon Web Services account, this element provides the same information as the <code>Owner</code>
-    /// element. If the initiator is an IAM User, this element provides the user ARN and display
-    /// name.</p>
+    /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
     pub fn initiator(&self) -> std::option::Option<&crate::model::Initiator> {
         self.initiator.as_ref()
     }
-    /// <p> Container element that identifies the object owner, after the object is created. If
-    /// multipart upload is initiated by an IAM user, this element provides the parent account ID
-    /// and display name.</p>
+    /// <p> Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p>
     pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
         self.owner.as_ref()
     }
-    /// <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded
-    /// object.</p>
+    /// <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded object.</p>
     pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
         self.storage_class.as_ref()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -2002,26 +1830,14 @@ pub mod list_parts_output {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
     }
     impl Builder {
-        /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete
-        /// multipart uploads and the prefix in the lifecycle rule matches the object name in the
-        /// request, then the response includes this header indicating when the initiated multipart
-        /// upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-        /// Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
-        ///
-        /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will
-        /// provide the ID of the lifecycle configuration rule that defines this action.</p>
+        /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
+        /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p>
         pub fn abort_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.abort_date = Some(input);
             self
         }
-        /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete
-        /// multipart uploads and the prefix in the lifecycle rule matches the object name in the
-        /// request, then the response includes this header indicating when the initiated multipart
-        /// upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-        /// Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
-        ///
-        /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will
-        /// provide the ID of the lifecycle configuration rule that defines this action.</p>
+        /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
+        /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p>
         pub fn set_abort_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2029,16 +1845,12 @@ pub mod list_parts_output {
             self.abort_date = input;
             self
         }
-        /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It
-        /// identifies applicable lifecycle configuration rule that defines the action to abort
-        /// incomplete multipart uploads.</p>
+        /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p>
         pub fn abort_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.abort_rule_id = Some(input.into());
             self
         }
-        /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It
-        /// identifies applicable lifecycle configuration rule that defines the action to abort
-        /// incomplete multipart uploads.</p>
+        /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p>
         pub fn set_abort_rule_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2076,16 +1888,12 @@ pub mod list_parts_output {
             self.upload_id = input;
             self
         }
-        /// <p>When a list is truncated, this element specifies the last part in the list, as well as
-        /// the value to use for the part-number-marker request parameter in a subsequent
-        /// request.</p>
+        /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
         pub fn part_number_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.part_number_marker = Some(input.into());
             self
         }
-        /// <p>When a list is truncated, this element specifies the last part in the list, as well as
-        /// the value to use for the part-number-marker request parameter in a subsequent
-        /// request.</p>
+        /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
         pub fn set_part_number_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2093,16 +1901,12 @@ pub mod list_parts_output {
             self.part_number_marker = input;
             self
         }
-        /// <p>When a list is truncated, this element specifies the last part in the list, as well as
-        /// the value to use for the part-number-marker request parameter in a subsequent
-        /// request.</p>
+        /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
         pub fn next_part_number_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_part_number_marker = Some(input.into());
             self
         }
-        /// <p>When a list is truncated, this element specifies the last part in the list, as well as
-        /// the value to use for the part-number-marker request parameter in a subsequent
-        /// request.</p>
+        /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
         pub fn set_next_part_number_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2120,16 +1924,12 @@ pub mod list_parts_output {
             self.max_parts = input;
             self
         }
-        /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that
-        /// the list was truncated. A list can be truncated if the number of parts exceeds the limit
-        /// returned in the MaxParts element.</p>
+        /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
             self.is_truncated = Some(input);
             self
         }
-        /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that
-        /// the list was truncated. A list can be truncated if the number of parts exceeds the limit
-        /// returned in the MaxParts element.</p>
+        /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -2138,16 +1938,14 @@ pub mod list_parts_output {
         ///
         /// To override the contents of this collection use [`set_parts`](Self::set_parts).
         ///
-        /// <p> Container for elements related to a particular part. A response can contain zero or
-        /// more <code>Part</code> elements.</p>
-        pub fn parts(mut self, input: impl Into<crate::model::Part>) -> Self {
+        /// <p> Container for elements related to a particular part. A response can contain zero or more <code>Part</code> elements.</p>
+        pub fn parts(mut self, input: crate::model::Part) -> Self {
             let mut v = self.parts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parts = Some(v);
             self
         }
-        /// <p> Container for elements related to a particular part. A response can contain zero or
-        /// more <code>Part</code> elements.</p>
+        /// <p> Container for elements related to a particular part. A response can contain zero or more <code>Part</code> elements.</p>
         pub fn set_parts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Part>>,
@@ -2155,18 +1953,12 @@ pub mod list_parts_output {
             self.parts = input;
             self
         }
-        /// <p>Container element that identifies who initiated the multipart upload. If the initiator
-        /// is an Amazon Web Services account, this element provides the same information as the <code>Owner</code>
-        /// element. If the initiator is an IAM User, this element provides the user ARN and display
-        /// name.</p>
+        /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
         pub fn initiator(mut self, input: crate::model::Initiator) -> Self {
             self.initiator = Some(input);
             self
         }
-        /// <p>Container element that identifies who initiated the multipart upload. If the initiator
-        /// is an Amazon Web Services account, this element provides the same information as the <code>Owner</code>
-        /// element. If the initiator is an IAM User, this element provides the user ARN and display
-        /// name.</p>
+        /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
         pub fn set_initiator(
             mut self,
             input: std::option::Option<crate::model::Initiator>,
@@ -2174,28 +1966,22 @@ pub mod list_parts_output {
             self.initiator = input;
             self
         }
-        /// <p> Container element that identifies the object owner, after the object is created. If
-        /// multipart upload is initiated by an IAM user, this element provides the parent account ID
-        /// and display name.</p>
+        /// <p> Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p>
         pub fn owner(mut self, input: crate::model::Owner) -> Self {
             self.owner = Some(input);
             self
         }
-        /// <p> Container element that identifies the object owner, after the object is created. If
-        /// multipart upload is initiated by an IAM user, this element provides the parent account ID
-        /// and display name.</p>
+        /// <p> Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
             self.owner = input;
             self
         }
-        /// <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded
-        /// object.</p>
+        /// <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded object.</p>
         pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
             self.storage_class = Some(input);
             self
         }
-        /// <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded
-        /// object.</p>
+        /// <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded object.</p>
         pub fn set_storage_class(
             mut self,
             input: std::option::Option<crate::model::StorageClass>,
@@ -2203,14 +1989,12 @@ pub mod list_parts_output {
             self.storage_class = input;
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -2250,24 +2034,15 @@ impl ListPartsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectVersionsOutput {
-    /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search
-    /// criteria. If your results were truncated, you can make a follow-up paginated request using
-    /// the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in
-    /// another request to return the rest of the results.</p>
+    /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.</p>
     pub is_truncated: bool,
     /// <p>Marks the last key returned in a truncated response.</p>
     pub key_marker: std::option::Option<std::string::String>,
     /// <p>Marks the last version of the key returned in a truncated response.</p>
     pub version_id_marker: std::option::Option<std::string::String>,
-    /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
-    /// <code>NextKeyMarker</code> specifies the first key not returned that satisfies the
-    /// search criteria. Use this value for the key-marker request parameter in a subsequent
-    /// request.</p>
+    /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextKeyMarker</code> specifies the first key not returned that satisfies the search criteria. Use this value for the key-marker request parameter in a subsequent request.</p>
     pub next_key_marker: std::option::Option<std::string::String>,
-    /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
-    /// <code>NextVersionIdMarker</code> specifies the first object version not returned that
-    /// satisfies the search criteria. Use this value for the version-id-marker request parameter
-    /// in a subsequent request.</p>
+    /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextVersionIdMarker</code> specifies the first object version not returned that satisfies the search criteria. Use this value for the version-id-marker request parameter in a subsequent request.</p>
     pub next_version_id_marker: std::option::Option<std::string::String>,
     /// <p>Container for version information.</p>
     pub versions: std::option::Option<std::vec::Vec<crate::model::ObjectVersion>>,
@@ -2277,31 +2052,19 @@ pub struct ListObjectVersionsOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Selects objects that start with the value supplied by this parameter.</p>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to
-    /// group keys. All keys that contain the same string between the prefix and the first
-    /// occurrence of the delimiter are grouped under a single result element in
-    /// <code>CommonPrefixes</code>. These groups are counted as one result against the max-keys
-    /// limitation. These keys are not returned elsewhere in the response.</p>
+    /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to group keys. All keys that contain the same string between the prefix and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the max-keys limitation. These keys are not returned elsewhere in the response.</p>
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>Specifies the maximum number of objects to return.</p>
     pub max_keys: i32,
-    /// <p>All of the keys rolled up into a common prefix count as a single return when calculating
-    /// the number of returns.</p>
+    /// <p>All of the keys rolled up into a common prefix count as a single return when calculating the number of returns.</p>
     pub common_prefixes: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
     /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-    ///
-    /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the
-    /// response, and returns encoded key name values in the following response elements:</p>
-    ///
-    /// <p>
-    /// <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
+    /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p> <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
     pub encoding_type: std::option::Option<crate::model::EncodingType>,
 }
 impl ListObjectVersionsOutput {
-    /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search
-    /// criteria. If your results were truncated, you can make a follow-up paginated request using
-    /// the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in
-    /// another request to return the rest of the results.</p>
+    /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
@@ -2313,17 +2076,11 @@ impl ListObjectVersionsOutput {
     pub fn version_id_marker(&self) -> std::option::Option<&str> {
         self.version_id_marker.as_deref()
     }
-    /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
-    /// <code>NextKeyMarker</code> specifies the first key not returned that satisfies the
-    /// search criteria. Use this value for the key-marker request parameter in a subsequent
-    /// request.</p>
+    /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextKeyMarker</code> specifies the first key not returned that satisfies the search criteria. Use this value for the key-marker request parameter in a subsequent request.</p>
     pub fn next_key_marker(&self) -> std::option::Option<&str> {
         self.next_key_marker.as_deref()
     }
-    /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
-    /// <code>NextVersionIdMarker</code> specifies the first object version not returned that
-    /// satisfies the search criteria. Use this value for the version-id-marker request parameter
-    /// in a subsequent request.</p>
+    /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextVersionIdMarker</code> specifies the first object version not returned that satisfies the search criteria. Use this value for the version-id-marker request parameter in a subsequent request.</p>
     pub fn next_version_id_marker(&self) -> std::option::Option<&str> {
         self.next_version_id_marker.as_deref()
     }
@@ -2343,11 +2100,7 @@ impl ListObjectVersionsOutput {
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to
-    /// group keys. All keys that contain the same string between the prefix and the first
-    /// occurrence of the delimiter are grouped under a single result element in
-    /// <code>CommonPrefixes</code>. These groups are counted as one result against the max-keys
-    /// limitation. These keys are not returned elsewhere in the response.</p>
+    /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to group keys. All keys that contain the same string between the prefix and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the max-keys limitation. These keys are not returned elsewhere in the response.</p>
     pub fn delimiter(&self) -> std::option::Option<&str> {
         self.delimiter.as_deref()
     }
@@ -2355,18 +2108,13 @@ impl ListObjectVersionsOutput {
     pub fn max_keys(&self) -> i32 {
         self.max_keys
     }
-    /// <p>All of the keys rolled up into a common prefix count as a single return when calculating
-    /// the number of returns.</p>
+    /// <p>All of the keys rolled up into a common prefix count as a single return when calculating the number of returns.</p>
     pub fn common_prefixes(&self) -> std::option::Option<&[crate::model::CommonPrefix]> {
         self.common_prefixes.as_deref()
     }
     /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-    ///
-    /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the
-    /// response, and returns encoded key name values in the following response elements:</p>
-    ///
-    /// <p>
-    /// <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
+    /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p> <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
     pub fn encoding_type(&self) -> std::option::Option<&crate::model::EncodingType> {
         self.encoding_type.as_ref()
     }
@@ -2412,18 +2160,12 @@ pub mod list_object_versions_output {
         pub(crate) encoding_type: std::option::Option<crate::model::EncodingType>,
     }
     impl Builder {
-        /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search
-        /// criteria. If your results were truncated, you can make a follow-up paginated request using
-        /// the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in
-        /// another request to return the rest of the results.</p>
+        /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
             self.is_truncated = Some(input);
             self
         }
-        /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search
-        /// criteria. If your results were truncated, you can make a follow-up paginated request using
-        /// the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in
-        /// another request to return the rest of the results.</p>
+        /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker response parameters as a starting place in another request to return the rest of the results.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -2451,18 +2193,12 @@ pub mod list_object_versions_output {
             self.version_id_marker = input;
             self
         }
-        /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
-        /// <code>NextKeyMarker</code> specifies the first key not returned that satisfies the
-        /// search criteria. Use this value for the key-marker request parameter in a subsequent
-        /// request.</p>
+        /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextKeyMarker</code> specifies the first key not returned that satisfies the search criteria. Use this value for the key-marker request parameter in a subsequent request.</p>
         pub fn next_key_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_key_marker = Some(input.into());
             self
         }
-        /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
-        /// <code>NextKeyMarker</code> specifies the first key not returned that satisfies the
-        /// search criteria. Use this value for the key-marker request parameter in a subsequent
-        /// request.</p>
+        /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextKeyMarker</code> specifies the first key not returned that satisfies the search criteria. Use this value for the key-marker request parameter in a subsequent request.</p>
         pub fn set_next_key_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2470,18 +2206,12 @@ pub mod list_object_versions_output {
             self.next_key_marker = input;
             self
         }
-        /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
-        /// <code>NextVersionIdMarker</code> specifies the first object version not returned that
-        /// satisfies the search criteria. Use this value for the version-id-marker request parameter
-        /// in a subsequent request.</p>
+        /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextVersionIdMarker</code> specifies the first object version not returned that satisfies the search criteria. Use this value for the version-id-marker request parameter in a subsequent request.</p>
         pub fn next_version_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_version_id_marker = Some(input.into());
             self
         }
-        /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
-        /// <code>NextVersionIdMarker</code> specifies the first object version not returned that
-        /// satisfies the search criteria. Use this value for the version-id-marker request parameter
-        /// in a subsequent request.</p>
+        /// <p>When the number of responses exceeds the value of <code>MaxKeys</code>, <code>NextVersionIdMarker</code> specifies the first object version not returned that satisfies the search criteria. Use this value for the version-id-marker request parameter in a subsequent request.</p>
         pub fn set_next_version_id_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2494,9 +2224,9 @@ pub mod list_object_versions_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// <p>Container for version information.</p>
-        pub fn versions(mut self, input: impl Into<crate::model::ObjectVersion>) -> Self {
+        pub fn versions(mut self, input: crate::model::ObjectVersion) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -2513,9 +2243,9 @@ pub mod list_object_versions_output {
         /// To override the contents of this collection use [`set_delete_markers`](Self::set_delete_markers).
         ///
         /// <p>Container for an object that is a delete marker.</p>
-        pub fn delete_markers(mut self, input: impl Into<crate::model::DeleteMarkerEntry>) -> Self {
+        pub fn delete_markers(mut self, input: crate::model::DeleteMarkerEntry) -> Self {
             let mut v = self.delete_markers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.delete_markers = Some(v);
             self
         }
@@ -2547,20 +2277,12 @@ pub mod list_object_versions_output {
             self.prefix = input;
             self
         }
-        /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to
-        /// group keys. All keys that contain the same string between the prefix and the first
-        /// occurrence of the delimiter are grouped under a single result element in
-        /// <code>CommonPrefixes</code>. These groups are counted as one result against the max-keys
-        /// limitation. These keys are not returned elsewhere in the response.</p>
+        /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to group keys. All keys that contain the same string between the prefix and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the max-keys limitation. These keys are not returned elsewhere in the response.</p>
         pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
             self.delimiter = Some(input.into());
             self
         }
-        /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to
-        /// group keys. All keys that contain the same string between the prefix and the first
-        /// occurrence of the delimiter are grouped under a single result element in
-        /// <code>CommonPrefixes</code>. These groups are counted as one result against the max-keys
-        /// limitation. These keys are not returned elsewhere in the response.</p>
+        /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to group keys. All keys that contain the same string between the prefix and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the max-keys limitation. These keys are not returned elsewhere in the response.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.delimiter = input;
             self
@@ -2579,16 +2301,14 @@ pub mod list_object_versions_output {
         ///
         /// To override the contents of this collection use [`set_common_prefixes`](Self::set_common_prefixes).
         ///
-        /// <p>All of the keys rolled up into a common prefix count as a single return when calculating
-        /// the number of returns.</p>
-        pub fn common_prefixes(mut self, input: impl Into<crate::model::CommonPrefix>) -> Self {
+        /// <p>All of the keys rolled up into a common prefix count as a single return when calculating the number of returns.</p>
+        pub fn common_prefixes(mut self, input: crate::model::CommonPrefix) -> Self {
             let mut v = self.common_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.common_prefixes = Some(v);
             self
         }
-        /// <p>All of the keys rolled up into a common prefix count as a single return when calculating
-        /// the number of returns.</p>
+        /// <p>All of the keys rolled up into a common prefix count as a single return when calculating the number of returns.</p>
         pub fn set_common_prefixes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
@@ -2597,23 +2317,15 @@ pub mod list_object_versions_output {
             self
         }
         /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-        ///
-        /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the
-        /// response, and returns encoded key name values in the following response elements:</p>
-        ///
-        /// <p>
-        /// <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
+        /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+        /// <p> <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
         pub fn encoding_type(mut self, input: crate::model::EncodingType) -> Self {
             self.encoding_type = Some(input);
             self
         }
         /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-        ///
-        /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the
-        /// response, and returns encoded key name values in the following response elements:</p>
-        ///
-        /// <p>
-        /// <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
+        /// <p>If you specify encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+        /// <p> <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
         pub fn set_encoding_type(
             mut self,
             input: std::option::Option<crate::model::EncodingType>,
@@ -2652,9 +2364,7 @@ impl ListObjectVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectsV2Output {
-    /// <p>Set to false if all of the results were returned. Set to true if more keys are available
-    /// to return. If the number of results exceeds that specified by MaxKeys, all of the results
-    /// might not be returned.</p>
+    /// <p>Set to false if all of the results were returned. Set to true if more keys are available to return. If the number of results exceeds that specified by MaxKeys, all of the results might not be returned.</p>
     pub is_truncated: bool,
     /// <p>Metadata about each object returned.</p>
     pub contents: std::option::Option<std::vec::Vec<crate::model::Object>>,
@@ -2664,62 +2374,31 @@ pub struct ListObjectsV2Output {
     pub name: std::option::Option<std::string::String>,
     /// <p> Keys that begin with the indicated prefix.</p>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>Causes keys that contain the same string between the prefix and the first occurrence of
-    /// the delimiter to be rolled up into a single result element in the CommonPrefixes
-    /// collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up
-    /// result counts as only one return against the <code>MaxKeys</code> value.</p>
+    /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the CommonPrefixes collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
     pub delimiter: std::option::Option<std::string::String>,
-    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-    /// to 1,000 key names. The response might contain fewer keys but will never contain
-    /// more.</p>
+    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     pub max_keys: i32,
-    /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating
-    /// the number of returns.</p>
-    ///
-    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a
-    /// delimiter.</p>
-    ///
-    /// <p>
-    /// <code>CommonPrefixes</code> contains all (if there are any) keys between
-    /// <code>Prefix</code> and the next occurrence of the string specified by a
-    /// delimiter.</p>
-    ///
-    /// <p>
-    /// <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory
-    /// specified by <code>Prefix</code>.</p>
-    ///
-    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash
-    /// (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
-    /// <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a
-    /// single return when calculating the number of returns. </p>
+    /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p>
+    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p>
     pub common_prefixes: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
     /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-    ///
-    /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the
-    /// response, and returns encoded key name values in the following response elements:</p>
-    ///
-    /// <p>
-    /// <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
+    /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
     pub encoding_type: std::option::Option<crate::model::EncodingType>,
-    /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less
-    /// than or equals to MaxKeys field. Say you ask for 50 keys, your result will include less than
-    /// equals 50 keys </p>
+    /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less than or equals to MaxKeys field. Say you ask for 50 keys, your result will include less than equals 50 keys </p>
     pub key_count: i32,
     /// <p> If ContinuationToken was sent with the request, it is included in the response.</p>
     pub continuation_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which
-    /// means there are more keys in the bucket that can be listed. The next list requests to Amazon S3
-    /// can be continued with this <code>NextContinuationToken</code>.
-    /// <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
+    /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
     pub next_continuation_token: std::option::Option<std::string::String>,
     /// <p>If StartAfter was sent with the request, it is included in the response.</p>
     pub start_after: std::option::Option<std::string::String>,
 }
 impl ListObjectsV2Output {
-    /// <p>Set to false if all of the results were returned. Set to true if more keys are available
-    /// to return. If the number of results exceeds that specified by MaxKeys, all of the results
-    /// might not be returned.</p>
+    /// <p>Set to false if all of the results were returned. Set to true if more keys are available to return. If the number of results exceeds that specified by MaxKeys, all of the results might not be returned.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
@@ -2737,54 +2416,29 @@ impl ListObjectsV2Output {
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>Causes keys that contain the same string between the prefix and the first occurrence of
-    /// the delimiter to be rolled up into a single result element in the CommonPrefixes
-    /// collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up
-    /// result counts as only one return against the <code>MaxKeys</code> value.</p>
+    /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the CommonPrefixes collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
     pub fn delimiter(&self) -> std::option::Option<&str> {
         self.delimiter.as_deref()
     }
-    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-    /// to 1,000 key names. The response might contain fewer keys but will never contain
-    /// more.</p>
+    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     pub fn max_keys(&self) -> i32 {
         self.max_keys
     }
-    /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating
-    /// the number of returns.</p>
-    ///
-    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a
-    /// delimiter.</p>
-    ///
-    /// <p>
-    /// <code>CommonPrefixes</code> contains all (if there are any) keys between
-    /// <code>Prefix</code> and the next occurrence of the string specified by a
-    /// delimiter.</p>
-    ///
-    /// <p>
-    /// <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory
-    /// specified by <code>Prefix</code>.</p>
-    ///
-    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash
-    /// (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
-    /// <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a
-    /// single return when calculating the number of returns. </p>
+    /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p>
+    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p>
     pub fn common_prefixes(&self) -> std::option::Option<&[crate::model::CommonPrefix]> {
         self.common_prefixes.as_deref()
     }
     /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-    ///
-    /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the
-    /// response, and returns encoded key name values in the following response elements:</p>
-    ///
-    /// <p>
-    /// <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
+    /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
     pub fn encoding_type(&self) -> std::option::Option<&crate::model::EncodingType> {
         self.encoding_type.as_ref()
     }
-    /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less
-    /// than or equals to MaxKeys field. Say you ask for 50 keys, your result will include less than
-    /// equals 50 keys </p>
+    /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less than or equals to MaxKeys field. Say you ask for 50 keys, your result will include less than equals 50 keys </p>
     pub fn key_count(&self) -> i32 {
         self.key_count
     }
@@ -2792,11 +2446,7 @@ impl ListObjectsV2Output {
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
-    /// <p>
-    /// <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which
-    /// means there are more keys in the bucket that can be listed. The next list requests to Amazon S3
-    /// can be continued with this <code>NextContinuationToken</code>.
-    /// <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
+    /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
     pub fn next_continuation_token(&self) -> std::option::Option<&str> {
         self.next_continuation_token.as_deref()
     }
@@ -2843,16 +2493,12 @@ pub mod list_objects_v2_output {
         pub(crate) start_after: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Set to false if all of the results were returned. Set to true if more keys are available
-        /// to return. If the number of results exceeds that specified by MaxKeys, all of the results
-        /// might not be returned.</p>
+        /// <p>Set to false if all of the results were returned. Set to true if more keys are available to return. If the number of results exceeds that specified by MaxKeys, all of the results might not be returned.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
             self.is_truncated = Some(input);
             self
         }
-        /// <p>Set to false if all of the results were returned. Set to true if more keys are available
-        /// to return. If the number of results exceeds that specified by MaxKeys, all of the results
-        /// might not be returned.</p>
+        /// <p>Set to false if all of the results were returned. Set to true if more keys are available to return. If the number of results exceeds that specified by MaxKeys, all of the results might not be returned.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -2862,9 +2508,9 @@ pub mod list_objects_v2_output {
         /// To override the contents of this collection use [`set_contents`](Self::set_contents).
         ///
         /// <p>Metadata about each object returned.</p>
-        pub fn contents(mut self, input: impl Into<crate::model::Object>) -> Self {
+        pub fn contents(mut self, input: crate::model::Object) -> Self {
             let mut v = self.contents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contents = Some(v);
             self
         }
@@ -2900,32 +2546,22 @@ pub mod list_objects_v2_output {
             self.prefix = input;
             self
         }
-        /// <p>Causes keys that contain the same string between the prefix and the first occurrence of
-        /// the delimiter to be rolled up into a single result element in the CommonPrefixes
-        /// collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up
-        /// result counts as only one return against the <code>MaxKeys</code> value.</p>
+        /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the CommonPrefixes collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
         pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
             self.delimiter = Some(input.into());
             self
         }
-        /// <p>Causes keys that contain the same string between the prefix and the first occurrence of
-        /// the delimiter to be rolled up into a single result element in the CommonPrefixes
-        /// collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up
-        /// result counts as only one return against the <code>MaxKeys</code> value.</p>
+        /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the CommonPrefixes collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.delimiter = input;
             self
         }
-        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-        /// to 1,000 key names. The response might contain fewer keys but will never contain
-        /// more.</p>
+        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
         pub fn max_keys(mut self, input: i32) -> Self {
             self.max_keys = Some(input);
             self
         }
-        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-        /// to 1,000 key names. The response might contain fewer keys but will never contain
-        /// more.</p>
+        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
         pub fn set_max_keys(mut self, input: std::option::Option<i32>) -> Self {
             self.max_keys = input;
             self
@@ -2934,50 +2570,22 @@ pub mod list_objects_v2_output {
         ///
         /// To override the contents of this collection use [`set_common_prefixes`](Self::set_common_prefixes).
         ///
-        /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating
-        /// the number of returns.</p>
-        ///
-        /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a
-        /// delimiter.</p>
-        ///
-        /// <p>
-        /// <code>CommonPrefixes</code> contains all (if there are any) keys between
-        /// <code>Prefix</code> and the next occurrence of the string specified by a
-        /// delimiter.</p>
-        ///
-        /// <p>
-        /// <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory
-        /// specified by <code>Prefix</code>.</p>
-        ///
-        /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash
-        /// (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
-        /// <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a
-        /// single return when calculating the number of returns. </p>
-        pub fn common_prefixes(mut self, input: impl Into<crate::model::CommonPrefix>) -> Self {
+        /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p>
+        /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
+        /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
+        /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+        /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p>
+        pub fn common_prefixes(mut self, input: crate::model::CommonPrefix) -> Self {
             let mut v = self.common_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.common_prefixes = Some(v);
             self
         }
-        /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating
-        /// the number of returns.</p>
-        ///
-        /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a
-        /// delimiter.</p>
-        ///
-        /// <p>
-        /// <code>CommonPrefixes</code> contains all (if there are any) keys between
-        /// <code>Prefix</code> and the next occurrence of the string specified by a
-        /// delimiter.</p>
-        ///
-        /// <p>
-        /// <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory
-        /// specified by <code>Prefix</code>.</p>
-        ///
-        /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash
-        /// (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
-        /// <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a
-        /// single return when calculating the number of returns. </p>
+        /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p>
+        /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
+        /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
+        /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+        /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p>
         pub fn set_common_prefixes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
@@ -2986,23 +2594,15 @@ pub mod list_objects_v2_output {
             self
         }
         /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-        ///
-        /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the
-        /// response, and returns encoded key name values in the following response elements:</p>
-        ///
-        /// <p>
-        /// <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
+        /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+        /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
         pub fn encoding_type(mut self, input: crate::model::EncodingType) -> Self {
             self.encoding_type = Some(input);
             self
         }
         /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-        ///
-        /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the
-        /// response, and returns encoded key name values in the following response elements:</p>
-        ///
-        /// <p>
-        /// <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
+        /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+        /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
         pub fn set_encoding_type(
             mut self,
             input: std::option::Option<crate::model::EncodingType>,
@@ -3010,16 +2610,12 @@ pub mod list_objects_v2_output {
             self.encoding_type = input;
             self
         }
-        /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less
-        /// than or equals to MaxKeys field. Say you ask for 50 keys, your result will include less than
-        /// equals 50 keys </p>
+        /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less than or equals to MaxKeys field. Say you ask for 50 keys, your result will include less than equals 50 keys </p>
         pub fn key_count(mut self, input: i32) -> Self {
             self.key_count = Some(input);
             self
         }
-        /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less
-        /// than or equals to MaxKeys field. Say you ask for 50 keys, your result will include less than
-        /// equals 50 keys </p>
+        /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less than or equals to MaxKeys field. Say you ask for 50 keys, your result will include less than equals 50 keys </p>
         pub fn set_key_count(mut self, input: std::option::Option<i32>) -> Self {
             self.key_count = input;
             self
@@ -3037,20 +2633,12 @@ pub mod list_objects_v2_output {
             self.continuation_token = input;
             self
         }
-        /// <p>
-        /// <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which
-        /// means there are more keys in the bucket that can be listed. The next list requests to Amazon S3
-        /// can be continued with this <code>NextContinuationToken</code>.
-        /// <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
+        /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
         pub fn next_continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_continuation_token = Some(input.into());
             self
         }
-        /// <p>
-        /// <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which
-        /// means there are more keys in the bucket that can be listed. The next list requests to Amazon S3
-        /// can be continued with this <code>NextContinuationToken</code>.
-        /// <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
+        /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
         pub fn set_next_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3098,18 +2686,11 @@ impl ListObjectsV2Output {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectsOutput {
-    /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search
-    /// criteria.</p>
+    /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria.</p>
     pub is_truncated: bool,
-    /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it
-    /// was sent with the request.</p>
+    /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it was sent with the request.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>When response is truncated (the IsTruncated element value in the response is true), you
-    /// can use the key name in this field as marker in the subsequent request to get next set of
-    /// objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if
-    /// you have delimiter request parameter specified. If response does not include the NextMarker
-    /// and it is truncated, you can use the value of the last Key in the response as the marker in
-    /// the subsequent request to get the next set of object keys.</p>
+    /// <p>When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMarker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.</p>
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Metadata about each object returned.</p>
     pub contents: std::option::Option<std::vec::Vec<crate::model::Object>>,
@@ -3117,49 +2698,29 @@ pub struct ListObjectsOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Keys that begin with the indicated prefix.</p>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>Causes keys that contain the same string between the prefix and the first occurrence of
-    /// the delimiter to be rolled up into a single result element in the
-    /// <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere
-    /// in the response. Each rolled-up result counts as only one return against the
-    /// <code>MaxKeys</code> value.</p>
+    /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>The maximum number of keys returned in the response body.</p>
     pub max_keys: i32,
-    /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating
-    /// the number of returns. </p>
-    ///
+    /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating the number of returns. </p>
     /// <p>A response can contain CommonPrefixes only if you specify a delimiter.</p>
-    ///
-    /// <p>CommonPrefixes contains all (if there are any) keys between Prefix and the next
-    /// occurrence of the string specified by the delimiter.</p>
-    ///
-    /// <p> CommonPrefixes lists keys that act like subdirectories in the directory specified by
-    /// Prefix.</p>
-    ///
-    /// <p>For example, if the prefix is notes/ and the delimiter is a slash (/) as in
-    /// notes/summer/july, the common prefix is notes/summer/. All of the keys that roll up into a
-    /// common prefix count as a single return when calculating the number of returns.</p>
+    /// <p>CommonPrefixes contains all (if there are any) keys between Prefix and the next occurrence of the string specified by the delimiter.</p>
+    /// <p> CommonPrefixes lists keys that act like subdirectories in the directory specified by Prefix.</p>
+    /// <p>For example, if the prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the common prefix is notes/summer/. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
     pub common_prefixes: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
     pub encoding_type: std::option::Option<crate::model::EncodingType>,
 }
 impl ListObjectsOutput {
-    /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search
-    /// criteria.</p>
+    /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
-    /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it
-    /// was sent with the request.</p>
+    /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it was sent with the request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>When response is truncated (the IsTruncated element value in the response is true), you
-    /// can use the key name in this field as marker in the subsequent request to get next set of
-    /// objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if
-    /// you have delimiter request parameter specified. If response does not include the NextMarker
-    /// and it is truncated, you can use the value of the last Key in the response as the marker in
-    /// the subsequent request to get the next set of object keys.</p>
+    /// <p>When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMarker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -3175,11 +2736,7 @@ impl ListObjectsOutput {
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>Causes keys that contain the same string between the prefix and the first occurrence of
-    /// the delimiter to be rolled up into a single result element in the
-    /// <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere
-    /// in the response. Each rolled-up result counts as only one return against the
-    /// <code>MaxKeys</code> value.</p>
+    /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
     pub fn delimiter(&self) -> std::option::Option<&str> {
         self.delimiter.as_deref()
     }
@@ -3187,20 +2744,11 @@ impl ListObjectsOutput {
     pub fn max_keys(&self) -> i32 {
         self.max_keys
     }
-    /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating
-    /// the number of returns. </p>
-    ///
+    /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating the number of returns. </p>
     /// <p>A response can contain CommonPrefixes only if you specify a delimiter.</p>
-    ///
-    /// <p>CommonPrefixes contains all (if there are any) keys between Prefix and the next
-    /// occurrence of the string specified by the delimiter.</p>
-    ///
-    /// <p> CommonPrefixes lists keys that act like subdirectories in the directory specified by
-    /// Prefix.</p>
-    ///
-    /// <p>For example, if the prefix is notes/ and the delimiter is a slash (/) as in
-    /// notes/summer/july, the common prefix is notes/summer/. All of the keys that roll up into a
-    /// common prefix count as a single return when calculating the number of returns.</p>
+    /// <p>CommonPrefixes contains all (if there are any) keys between Prefix and the next occurrence of the string specified by the delimiter.</p>
+    /// <p> CommonPrefixes lists keys that act like subdirectories in the directory specified by Prefix.</p>
+    /// <p>For example, if the prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the common prefix is notes/summer/. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
     pub fn common_prefixes(&self) -> std::option::Option<&[crate::model::CommonPrefix]> {
         self.common_prefixes.as_deref()
     }
@@ -3243,46 +2791,32 @@ pub mod list_objects_output {
         pub(crate) encoding_type: std::option::Option<crate::model::EncodingType>,
     }
     impl Builder {
-        /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search
-        /// criteria.</p>
+        /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
             self.is_truncated = Some(input);
             self
         }
-        /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search
-        /// criteria.</p>
+        /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
         }
-        /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it
-        /// was sent with the request.</p>
+        /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it was sent with the request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it
-        /// was sent with the request.</p>
+        /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it was sent with the request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
-        /// <p>When response is truncated (the IsTruncated element value in the response is true), you
-        /// can use the key name in this field as marker in the subsequent request to get next set of
-        /// objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if
-        /// you have delimiter request parameter specified. If response does not include the NextMarker
-        /// and it is truncated, you can use the value of the last Key in the response as the marker in
-        /// the subsequent request to get the next set of object keys.</p>
+        /// <p>When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMarker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When response is truncated (the IsTruncated element value in the response is true), you
-        /// can use the key name in this field as marker in the subsequent request to get next set of
-        /// objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if
-        /// you have delimiter request parameter specified. If response does not include the NextMarker
-        /// and it is truncated, you can use the value of the last Key in the response as the marker in
-        /// the subsequent request to get the next set of object keys.</p>
+        /// <p>When response is truncated (the IsTruncated element value in the response is true), you can use the key name in this field as marker in the subsequent request to get next set of objects. Amazon S3 lists objects in alphabetical order Note: This element is returned only if you have delimiter request parameter specified. If response does not include the NextMarker and it is truncated, you can use the value of the last Key in the response as the marker in the subsequent request to get the next set of object keys.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -3292,9 +2826,9 @@ pub mod list_objects_output {
         /// To override the contents of this collection use [`set_contents`](Self::set_contents).
         ///
         /// <p>Metadata about each object returned.</p>
-        pub fn contents(mut self, input: impl Into<crate::model::Object>) -> Self {
+        pub fn contents(mut self, input: crate::model::Object) -> Self {
             let mut v = self.contents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.contents = Some(v);
             self
         }
@@ -3326,20 +2860,12 @@ pub mod list_objects_output {
             self.prefix = input;
             self
         }
-        /// <p>Causes keys that contain the same string between the prefix and the first occurrence of
-        /// the delimiter to be rolled up into a single result element in the
-        /// <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere
-        /// in the response. Each rolled-up result counts as only one return against the
-        /// <code>MaxKeys</code> value.</p>
+        /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
         pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
             self.delimiter = Some(input.into());
             self
         }
-        /// <p>Causes keys that contain the same string between the prefix and the first occurrence of
-        /// the delimiter to be rolled up into a single result element in the
-        /// <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere
-        /// in the response. Each rolled-up result counts as only one return against the
-        /// <code>MaxKeys</code> value.</p>
+        /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.delimiter = input;
             self
@@ -3358,40 +2884,22 @@ pub mod list_objects_output {
         ///
         /// To override the contents of this collection use [`set_common_prefixes`](Self::set_common_prefixes).
         ///
-        /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating
-        /// the number of returns. </p>
-        ///
+        /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating the number of returns. </p>
         /// <p>A response can contain CommonPrefixes only if you specify a delimiter.</p>
-        ///
-        /// <p>CommonPrefixes contains all (if there are any) keys between Prefix and the next
-        /// occurrence of the string specified by the delimiter.</p>
-        ///
-        /// <p> CommonPrefixes lists keys that act like subdirectories in the directory specified by
-        /// Prefix.</p>
-        ///
-        /// <p>For example, if the prefix is notes/ and the delimiter is a slash (/) as in
-        /// notes/summer/july, the common prefix is notes/summer/. All of the keys that roll up into a
-        /// common prefix count as a single return when calculating the number of returns.</p>
-        pub fn common_prefixes(mut self, input: impl Into<crate::model::CommonPrefix>) -> Self {
+        /// <p>CommonPrefixes contains all (if there are any) keys between Prefix and the next occurrence of the string specified by the delimiter.</p>
+        /// <p> CommonPrefixes lists keys that act like subdirectories in the directory specified by Prefix.</p>
+        /// <p>For example, if the prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the common prefix is notes/summer/. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
+        pub fn common_prefixes(mut self, input: crate::model::CommonPrefix) -> Self {
             let mut v = self.common_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.common_prefixes = Some(v);
             self
         }
-        /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating
-        /// the number of returns. </p>
-        ///
+        /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating the number of returns. </p>
         /// <p>A response can contain CommonPrefixes only if you specify a delimiter.</p>
-        ///
-        /// <p>CommonPrefixes contains all (if there are any) keys between Prefix and the next
-        /// occurrence of the string specified by the delimiter.</p>
-        ///
-        /// <p> CommonPrefixes lists keys that act like subdirectories in the directory specified by
-        /// Prefix.</p>
-        ///
-        /// <p>For example, if the prefix is notes/ and the delimiter is a slash (/) as in
-        /// notes/summer/july, the common prefix is notes/summer/. All of the keys that roll up into a
-        /// common prefix count as a single return when calculating the number of returns.</p>
+        /// <p>CommonPrefixes contains all (if there are any) keys between Prefix and the next occurrence of the string specified by the delimiter.</p>
+        /// <p> CommonPrefixes lists keys that act like subdirectories in the directory specified by Prefix.</p>
+        /// <p>For example, if the prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the common prefix is notes/summer/. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns.</p>
         pub fn set_common_prefixes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
@@ -3446,40 +2954,25 @@ pub struct ListMultipartUploadsOutput {
     pub key_marker: std::option::Option<std::string::String>,
     /// <p>Upload ID after which listing began.</p>
     pub upload_id_marker: std::option::Option<std::string::String>,
-    /// <p>When a list is truncated, this element specifies the value that should be used for the
-    /// key-marker request parameter in a subsequent request.</p>
+    /// <p>When a list is truncated, this element specifies the value that should be used for the key-marker request parameter in a subsequent request.</p>
     pub next_key_marker: std::option::Option<std::string::String>,
-    /// <p>When a prefix is provided in the request, this field contains the specified prefix. The
-    /// result contains only keys starting with the specified prefix.</p>
+    /// <p>When a prefix is provided in the request, this field contains the specified prefix. The result contains only keys starting with the specified prefix.</p>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>Contains the delimiter you specified in the request. If you don't specify a delimiter in
-    /// your request, this element is absent from the response.</p>
+    /// <p>Contains the delimiter you specified in the request. If you don't specify a delimiter in your request, this element is absent from the response.</p>
     pub delimiter: std::option::Option<std::string::String>,
-    /// <p>When a list is truncated, this element specifies the value that should be used for the
-    /// <code>upload-id-marker</code> request parameter in a subsequent request.</p>
+    /// <p>When a list is truncated, this element specifies the value that should be used for the <code>upload-id-marker</code> request parameter in a subsequent request.</p>
     pub next_upload_id_marker: std::option::Option<std::string::String>,
-    /// <p>Maximum number of multipart uploads that could have been included in the
-    /// response.</p>
+    /// <p>Maximum number of multipart uploads that could have been included in the response.</p>
     pub max_uploads: i32,
-    /// <p>Indicates whether the returned list of multipart uploads is truncated. A value of true
-    /// indicates that the list was truncated. The list can be truncated if the number of multipart
-    /// uploads exceeds the limit allowed or specified by max uploads.</p>
+    /// <p>Indicates whether the returned list of multipart uploads is truncated. A value of true indicates that the list was truncated. The list can be truncated if the number of multipart uploads exceeds the limit allowed or specified by max uploads.</p>
     pub is_truncated: bool,
-    /// <p>Container for elements related to a particular multipart upload. A response can contain
-    /// zero or more <code>Upload</code> elements.</p>
+    /// <p>Container for elements related to a particular multipart upload. A response can contain zero or more <code>Upload</code> elements.</p>
     pub uploads: std::option::Option<std::vec::Vec<crate::model::MultipartUpload>>,
-    /// <p>If you specify a delimiter in the request, then the result returns each distinct key
-    /// prefix containing the delimiter in a <code>CommonPrefixes</code> element. The distinct key
-    /// prefixes are returned in the <code>Prefix</code> child element.</p>
+    /// <p>If you specify a delimiter in the request, then the result returns each distinct key prefix containing the delimiter in a <code>CommonPrefixes</code> element. The distinct key prefixes are returned in the <code>Prefix</code> child element.</p>
     pub common_prefixes: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-    /// <p>If you specify <code>encoding-type</code> request parameter, Amazon S3 includes this element
-    /// in the response, and returns encoded key name values in the following response
-    /// elements:</p>
-    ///
-    /// <p>
-    /// <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>,
-    /// <code>NextKeyMarker</code>, <code>Key</code>.</p>
+    /// <p>If you specify <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p> <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>, <code>Key</code>.</p>
     pub encoding_type: std::option::Option<crate::model::EncodingType>,
 }
 impl ListMultipartUploadsOutput {
@@ -3495,56 +2988,41 @@ impl ListMultipartUploadsOutput {
     pub fn upload_id_marker(&self) -> std::option::Option<&str> {
         self.upload_id_marker.as_deref()
     }
-    /// <p>When a list is truncated, this element specifies the value that should be used for the
-    /// key-marker request parameter in a subsequent request.</p>
+    /// <p>When a list is truncated, this element specifies the value that should be used for the key-marker request parameter in a subsequent request.</p>
     pub fn next_key_marker(&self) -> std::option::Option<&str> {
         self.next_key_marker.as_deref()
     }
-    /// <p>When a prefix is provided in the request, this field contains the specified prefix. The
-    /// result contains only keys starting with the specified prefix.</p>
+    /// <p>When a prefix is provided in the request, this field contains the specified prefix. The result contains only keys starting with the specified prefix.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>Contains the delimiter you specified in the request. If you don't specify a delimiter in
-    /// your request, this element is absent from the response.</p>
+    /// <p>Contains the delimiter you specified in the request. If you don't specify a delimiter in your request, this element is absent from the response.</p>
     pub fn delimiter(&self) -> std::option::Option<&str> {
         self.delimiter.as_deref()
     }
-    /// <p>When a list is truncated, this element specifies the value that should be used for the
-    /// <code>upload-id-marker</code> request parameter in a subsequent request.</p>
+    /// <p>When a list is truncated, this element specifies the value that should be used for the <code>upload-id-marker</code> request parameter in a subsequent request.</p>
     pub fn next_upload_id_marker(&self) -> std::option::Option<&str> {
         self.next_upload_id_marker.as_deref()
     }
-    /// <p>Maximum number of multipart uploads that could have been included in the
-    /// response.</p>
+    /// <p>Maximum number of multipart uploads that could have been included in the response.</p>
     pub fn max_uploads(&self) -> i32 {
         self.max_uploads
     }
-    /// <p>Indicates whether the returned list of multipart uploads is truncated. A value of true
-    /// indicates that the list was truncated. The list can be truncated if the number of multipart
-    /// uploads exceeds the limit allowed or specified by max uploads.</p>
+    /// <p>Indicates whether the returned list of multipart uploads is truncated. A value of true indicates that the list was truncated. The list can be truncated if the number of multipart uploads exceeds the limit allowed or specified by max uploads.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
-    /// <p>Container for elements related to a particular multipart upload. A response can contain
-    /// zero or more <code>Upload</code> elements.</p>
+    /// <p>Container for elements related to a particular multipart upload. A response can contain zero or more <code>Upload</code> elements.</p>
     pub fn uploads(&self) -> std::option::Option<&[crate::model::MultipartUpload]> {
         self.uploads.as_deref()
     }
-    /// <p>If you specify a delimiter in the request, then the result returns each distinct key
-    /// prefix containing the delimiter in a <code>CommonPrefixes</code> element. The distinct key
-    /// prefixes are returned in the <code>Prefix</code> child element.</p>
+    /// <p>If you specify a delimiter in the request, then the result returns each distinct key prefix containing the delimiter in a <code>CommonPrefixes</code> element. The distinct key prefixes are returned in the <code>Prefix</code> child element.</p>
     pub fn common_prefixes(&self) -> std::option::Option<&[crate::model::CommonPrefix]> {
         self.common_prefixes.as_deref()
     }
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-    /// <p>If you specify <code>encoding-type</code> request parameter, Amazon S3 includes this element
-    /// in the response, and returns encoded key name values in the following response
-    /// elements:</p>
-    ///
-    /// <p>
-    /// <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>,
-    /// <code>NextKeyMarker</code>, <code>Key</code>.</p>
+    /// <p>If you specify <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p> <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>, <code>Key</code>.</p>
     pub fn encoding_type(&self) -> std::option::Option<&crate::model::EncodingType> {
         self.encoding_type.as_ref()
     }
@@ -3620,14 +3098,12 @@ pub mod list_multipart_uploads_output {
             self.upload_id_marker = input;
             self
         }
-        /// <p>When a list is truncated, this element specifies the value that should be used for the
-        /// key-marker request parameter in a subsequent request.</p>
+        /// <p>When a list is truncated, this element specifies the value that should be used for the key-marker request parameter in a subsequent request.</p>
         pub fn next_key_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_key_marker = Some(input.into());
             self
         }
-        /// <p>When a list is truncated, this element specifies the value that should be used for the
-        /// key-marker request parameter in a subsequent request.</p>
+        /// <p>When a list is truncated, this element specifies the value that should be used for the key-marker request parameter in a subsequent request.</p>
         pub fn set_next_key_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3635,38 +3111,32 @@ pub mod list_multipart_uploads_output {
             self.next_key_marker = input;
             self
         }
-        /// <p>When a prefix is provided in the request, this field contains the specified prefix. The
-        /// result contains only keys starting with the specified prefix.</p>
+        /// <p>When a prefix is provided in the request, this field contains the specified prefix. The result contains only keys starting with the specified prefix.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>When a prefix is provided in the request, this field contains the specified prefix. The
-        /// result contains only keys starting with the specified prefix.</p>
+        /// <p>When a prefix is provided in the request, this field contains the specified prefix. The result contains only keys starting with the specified prefix.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
         }
-        /// <p>Contains the delimiter you specified in the request. If you don't specify a delimiter in
-        /// your request, this element is absent from the response.</p>
+        /// <p>Contains the delimiter you specified in the request. If you don't specify a delimiter in your request, this element is absent from the response.</p>
         pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
             self.delimiter = Some(input.into());
             self
         }
-        /// <p>Contains the delimiter you specified in the request. If you don't specify a delimiter in
-        /// your request, this element is absent from the response.</p>
+        /// <p>Contains the delimiter you specified in the request. If you don't specify a delimiter in your request, this element is absent from the response.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.delimiter = input;
             self
         }
-        /// <p>When a list is truncated, this element specifies the value that should be used for the
-        /// <code>upload-id-marker</code> request parameter in a subsequent request.</p>
+        /// <p>When a list is truncated, this element specifies the value that should be used for the <code>upload-id-marker</code> request parameter in a subsequent request.</p>
         pub fn next_upload_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_upload_id_marker = Some(input.into());
             self
         }
-        /// <p>When a list is truncated, this element specifies the value that should be used for the
-        /// <code>upload-id-marker</code> request parameter in a subsequent request.</p>
+        /// <p>When a list is truncated, this element specifies the value that should be used for the <code>upload-id-marker</code> request parameter in a subsequent request.</p>
         pub fn set_next_upload_id_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3674,28 +3144,22 @@ pub mod list_multipart_uploads_output {
             self.next_upload_id_marker = input;
             self
         }
-        /// <p>Maximum number of multipart uploads that could have been included in the
-        /// response.</p>
+        /// <p>Maximum number of multipart uploads that could have been included in the response.</p>
         pub fn max_uploads(mut self, input: i32) -> Self {
             self.max_uploads = Some(input);
             self
         }
-        /// <p>Maximum number of multipart uploads that could have been included in the
-        /// response.</p>
+        /// <p>Maximum number of multipart uploads that could have been included in the response.</p>
         pub fn set_max_uploads(mut self, input: std::option::Option<i32>) -> Self {
             self.max_uploads = input;
             self
         }
-        /// <p>Indicates whether the returned list of multipart uploads is truncated. A value of true
-        /// indicates that the list was truncated. The list can be truncated if the number of multipart
-        /// uploads exceeds the limit allowed or specified by max uploads.</p>
+        /// <p>Indicates whether the returned list of multipart uploads is truncated. A value of true indicates that the list was truncated. The list can be truncated if the number of multipart uploads exceeds the limit allowed or specified by max uploads.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
             self.is_truncated = Some(input);
             self
         }
-        /// <p>Indicates whether the returned list of multipart uploads is truncated. A value of true
-        /// indicates that the list was truncated. The list can be truncated if the number of multipart
-        /// uploads exceeds the limit allowed or specified by max uploads.</p>
+        /// <p>Indicates whether the returned list of multipart uploads is truncated. A value of true indicates that the list was truncated. The list can be truncated if the number of multipart uploads exceeds the limit allowed or specified by max uploads.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -3704,16 +3168,14 @@ pub mod list_multipart_uploads_output {
         ///
         /// To override the contents of this collection use [`set_uploads`](Self::set_uploads).
         ///
-        /// <p>Container for elements related to a particular multipart upload. A response can contain
-        /// zero or more <code>Upload</code> elements.</p>
-        pub fn uploads(mut self, input: impl Into<crate::model::MultipartUpload>) -> Self {
+        /// <p>Container for elements related to a particular multipart upload. A response can contain zero or more <code>Upload</code> elements.</p>
+        pub fn uploads(mut self, input: crate::model::MultipartUpload) -> Self {
             let mut v = self.uploads.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.uploads = Some(v);
             self
         }
-        /// <p>Container for elements related to a particular multipart upload. A response can contain
-        /// zero or more <code>Upload</code> elements.</p>
+        /// <p>Container for elements related to a particular multipart upload. A response can contain zero or more <code>Upload</code> elements.</p>
         pub fn set_uploads(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MultipartUpload>>,
@@ -3725,18 +3187,14 @@ pub mod list_multipart_uploads_output {
         ///
         /// To override the contents of this collection use [`set_common_prefixes`](Self::set_common_prefixes).
         ///
-        /// <p>If you specify a delimiter in the request, then the result returns each distinct key
-        /// prefix containing the delimiter in a <code>CommonPrefixes</code> element. The distinct key
-        /// prefixes are returned in the <code>Prefix</code> child element.</p>
-        pub fn common_prefixes(mut self, input: impl Into<crate::model::CommonPrefix>) -> Self {
+        /// <p>If you specify a delimiter in the request, then the result returns each distinct key prefix containing the delimiter in a <code>CommonPrefixes</code> element. The distinct key prefixes are returned in the <code>Prefix</code> child element.</p>
+        pub fn common_prefixes(mut self, input: crate::model::CommonPrefix) -> Self {
             let mut v = self.common_prefixes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.common_prefixes = Some(v);
             self
         }
-        /// <p>If you specify a delimiter in the request, then the result returns each distinct key
-        /// prefix containing the delimiter in a <code>CommonPrefixes</code> element. The distinct key
-        /// prefixes are returned in the <code>Prefix</code> child element.</p>
+        /// <p>If you specify a delimiter in the request, then the result returns each distinct key prefix containing the delimiter in a <code>CommonPrefixes</code> element. The distinct key prefixes are returned in the <code>Prefix</code> child element.</p>
         pub fn set_common_prefixes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CommonPrefix>>,
@@ -3745,25 +3203,15 @@ pub mod list_multipart_uploads_output {
             self
         }
         /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-        /// <p>If you specify <code>encoding-type</code> request parameter, Amazon S3 includes this element
-        /// in the response, and returns encoded key name values in the following response
-        /// elements:</p>
-        ///
-        /// <p>
-        /// <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>,
-        /// <code>NextKeyMarker</code>, <code>Key</code>.</p>
+        /// <p>If you specify <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+        /// <p> <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>, <code>Key</code>.</p>
         pub fn encoding_type(mut self, input: crate::model::EncodingType) -> Self {
             self.encoding_type = Some(input);
             self
         }
         /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-        /// <p>If you specify <code>encoding-type</code> request parameter, Amazon S3 includes this element
-        /// in the response, and returns encoded key name values in the following response
-        /// elements:</p>
-        ///
-        /// <p>
-        /// <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>,
-        /// <code>NextKeyMarker</code>, <code>Key</code>.</p>
+        /// <p>If you specify <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+        /// <p> <code>Delimiter</code>, <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>, <code>Key</code>.</p>
         pub fn set_encoding_type(
             mut self,
             input: std::option::Option<crate::model::EncodingType>,
@@ -3839,9 +3287,9 @@ pub mod list_buckets_output {
         /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
         ///
         /// <p>The list of buckets owned by the requestor.</p>
-        pub fn buckets(mut self, input: impl Into<crate::model::Bucket>) -> Self {
+        pub fn buckets(mut self, input: crate::model::Bucket) -> Self {
             let mut v = self.buckets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.buckets = Some(v);
             self
         }
@@ -3883,38 +3331,26 @@ impl ListBucketsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBucketMetricsConfigurationsOutput {
-    /// <p>Indicates whether the returned list of metrics configurations is complete. A value of
-    /// true indicates that the list is not complete and the NextContinuationToken will be provided
-    /// for a subsequent request.</p>
+    /// <p>Indicates whether the returned list of metrics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
     pub is_truncated: bool,
-    /// <p>The marker that is used as a starting point for this metrics configuration list
-    /// response. This value is present if it was sent in the request.</p>
+    /// <p>The marker that is used as a starting point for this metrics configuration list response. This value is present if it was sent in the request.</p>
     pub continuation_token: std::option::Option<std::string::String>,
-    /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use
-    /// the <code>NextContinuationToken</code> from a previously truncated list response to
-    /// continue the listing. The continuation token is an opaque value that Amazon S3
-    /// understands.</p>
+    /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub next_continuation_token: std::option::Option<std::string::String>,
     /// <p>The list of metrics configurations for a bucket.</p>
     pub metrics_configuration_list:
         std::option::Option<std::vec::Vec<crate::model::MetricsConfiguration>>,
 }
 impl ListBucketMetricsConfigurationsOutput {
-    /// <p>Indicates whether the returned list of metrics configurations is complete. A value of
-    /// true indicates that the list is not complete and the NextContinuationToken will be provided
-    /// for a subsequent request.</p>
+    /// <p>Indicates whether the returned list of metrics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
-    /// <p>The marker that is used as a starting point for this metrics configuration list
-    /// response. This value is present if it was sent in the request.</p>
+    /// <p>The marker that is used as a starting point for this metrics configuration list response. This value is present if it was sent in the request.</p>
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
-    /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use
-    /// the <code>NextContinuationToken</code> from a previously truncated list response to
-    /// continue the listing. The continuation token is an opaque value that Amazon S3
-    /// understands.</p>
+    /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub fn next_continuation_token(&self) -> std::option::Option<&str> {
         self.next_continuation_token.as_deref()
     }
@@ -3951,28 +3387,22 @@ pub mod list_bucket_metrics_configurations_output {
             std::option::Option<std::vec::Vec<crate::model::MetricsConfiguration>>,
     }
     impl Builder {
-        /// <p>Indicates whether the returned list of metrics configurations is complete. A value of
-        /// true indicates that the list is not complete and the NextContinuationToken will be provided
-        /// for a subsequent request.</p>
+        /// <p>Indicates whether the returned list of metrics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
             self.is_truncated = Some(input);
             self
         }
-        /// <p>Indicates whether the returned list of metrics configurations is complete. A value of
-        /// true indicates that the list is not complete and the NextContinuationToken will be provided
-        /// for a subsequent request.</p>
+        /// <p>Indicates whether the returned list of metrics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
         }
-        /// <p>The marker that is used as a starting point for this metrics configuration list
-        /// response. This value is present if it was sent in the request.</p>
+        /// <p>The marker that is used as a starting point for this metrics configuration list response. This value is present if it was sent in the request.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.continuation_token = Some(input.into());
             self
         }
-        /// <p>The marker that is used as a starting point for this metrics configuration list
-        /// response. This value is present if it was sent in the request.</p>
+        /// <p>The marker that is used as a starting point for this metrics configuration list response. This value is present if it was sent in the request.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3980,18 +3410,12 @@ pub mod list_bucket_metrics_configurations_output {
             self.continuation_token = input;
             self
         }
-        /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use
-        /// the <code>NextContinuationToken</code> from a previously truncated list response to
-        /// continue the listing. The continuation token is an opaque value that Amazon S3
-        /// understands.</p>
+        /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
         pub fn next_continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_continuation_token = Some(input.into());
             self
         }
-        /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use
-        /// the <code>NextContinuationToken</code> from a previously truncated list response to
-        /// continue the listing. The continuation token is an opaque value that Amazon S3
-        /// understands.</p>
+        /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
         pub fn set_next_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4006,10 +3430,10 @@ pub mod list_bucket_metrics_configurations_output {
         /// <p>The list of metrics configurations for a bucket.</p>
         pub fn metrics_configuration_list(
             mut self,
-            input: impl Into<crate::model::MetricsConfiguration>,
+            input: crate::model::MetricsConfiguration,
         ) -> Self {
             let mut v = self.metrics_configuration_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metrics_configuration_list = Some(v);
             self
         }
@@ -4043,24 +3467,18 @@ impl ListBucketMetricsConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBucketInventoryConfigurationsOutput {
-    /// <p>If sent in the request, the marker that is used as a starting point for this inventory
-    /// configuration list response.</p>
+    /// <p>If sent in the request, the marker that is used as a starting point for this inventory configuration list response.</p>
     pub continuation_token: std::option::Option<std::string::String>,
     /// <p>The list of inventory configurations for a bucket.</p>
     pub inventory_configuration_list:
         std::option::Option<std::vec::Vec<crate::model::InventoryConfiguration>>,
-    /// <p>Tells whether the returned list of inventory configurations is complete. A value of true
-    /// indicates that the list is not complete and the NextContinuationToken is provided for a
-    /// subsequent request.</p>
+    /// <p>Tells whether the returned list of inventory configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken is provided for a subsequent request.</p>
     pub is_truncated: bool,
-    /// <p>The marker used to continue this inventory configuration listing. Use the
-    /// <code>NextContinuationToken</code> from this response to continue the listing in a
-    /// subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
+    /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub next_continuation_token: std::option::Option<std::string::String>,
 }
 impl ListBucketInventoryConfigurationsOutput {
-    /// <p>If sent in the request, the marker that is used as a starting point for this inventory
-    /// configuration list response.</p>
+    /// <p>If sent in the request, the marker that is used as a starting point for this inventory configuration list response.</p>
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
@@ -4070,15 +3488,11 @@ impl ListBucketInventoryConfigurationsOutput {
     ) -> std::option::Option<&[crate::model::InventoryConfiguration]> {
         self.inventory_configuration_list.as_deref()
     }
-    /// <p>Tells whether the returned list of inventory configurations is complete. A value of true
-    /// indicates that the list is not complete and the NextContinuationToken is provided for a
-    /// subsequent request.</p>
+    /// <p>Tells whether the returned list of inventory configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken is provided for a subsequent request.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
-    /// <p>The marker used to continue this inventory configuration listing. Use the
-    /// <code>NextContinuationToken</code> from this response to continue the listing in a
-    /// subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
+    /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub fn next_continuation_token(&self) -> std::option::Option<&str> {
         self.next_continuation_token.as_deref()
     }
@@ -4109,14 +3523,12 @@ pub mod list_bucket_inventory_configurations_output {
         pub(crate) next_continuation_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If sent in the request, the marker that is used as a starting point for this inventory
-        /// configuration list response.</p>
+        /// <p>If sent in the request, the marker that is used as a starting point for this inventory configuration list response.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.continuation_token = Some(input.into());
             self
         }
-        /// <p>If sent in the request, the marker that is used as a starting point for this inventory
-        /// configuration list response.</p>
+        /// <p>If sent in the request, the marker that is used as a starting point for this inventory configuration list response.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4131,10 +3543,10 @@ pub mod list_bucket_inventory_configurations_output {
         /// <p>The list of inventory configurations for a bucket.</p>
         pub fn inventory_configuration_list(
             mut self,
-            input: impl Into<crate::model::InventoryConfiguration>,
+            input: crate::model::InventoryConfiguration,
         ) -> Self {
             let mut v = self.inventory_configuration_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.inventory_configuration_list = Some(v);
             self
         }
@@ -4146,30 +3558,22 @@ pub mod list_bucket_inventory_configurations_output {
             self.inventory_configuration_list = input;
             self
         }
-        /// <p>Tells whether the returned list of inventory configurations is complete. A value of true
-        /// indicates that the list is not complete and the NextContinuationToken is provided for a
-        /// subsequent request.</p>
+        /// <p>Tells whether the returned list of inventory configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken is provided for a subsequent request.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
             self.is_truncated = Some(input);
             self
         }
-        /// <p>Tells whether the returned list of inventory configurations is complete. A value of true
-        /// indicates that the list is not complete and the NextContinuationToken is provided for a
-        /// subsequent request.</p>
+        /// <p>Tells whether the returned list of inventory configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken is provided for a subsequent request.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
         }
-        /// <p>The marker used to continue this inventory configuration listing. Use the
-        /// <code>NextContinuationToken</code> from this response to continue the listing in a
-        /// subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
+        /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
         pub fn next_continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_continuation_token = Some(input.into());
             self
         }
-        /// <p>The marker used to continue this inventory configuration listing. Use the
-        /// <code>NextContinuationToken</code> from this response to continue the listing in a
-        /// subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
+        /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
         pub fn set_next_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4199,36 +3603,26 @@ impl ListBucketInventoryConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBucketIntelligentTieringConfigurationsOutput {
-    /// <p>Indicates whether the returned list of analytics configurations is complete. A value of
-    /// true indicates that the list is not complete and the NextContinuationToken will be provided
-    /// for a subsequent request.</p>
+    /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
     pub is_truncated: bool,
-    /// <p>The ContinuationToken that represents a placeholder from where this request should
-    /// begin.</p>
+    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
     pub continuation_token: std::option::Option<std::string::String>,
-    /// <p>The marker used to continue this inventory configuration listing. Use the
-    /// <code>NextContinuationToken</code> from this response to continue the listing in a
-    /// subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
+    /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub next_continuation_token: std::option::Option<std::string::String>,
     /// <p>The list of S3 Intelligent-Tiering configurations for a bucket.</p>
     pub intelligent_tiering_configuration_list:
         std::option::Option<std::vec::Vec<crate::model::IntelligentTieringConfiguration>>,
 }
 impl ListBucketIntelligentTieringConfigurationsOutput {
-    /// <p>Indicates whether the returned list of analytics configurations is complete. A value of
-    /// true indicates that the list is not complete and the NextContinuationToken will be provided
-    /// for a subsequent request.</p>
+    /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
-    /// <p>The ContinuationToken that represents a placeholder from where this request should
-    /// begin.</p>
+    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
-    /// <p>The marker used to continue this inventory configuration listing. Use the
-    /// <code>NextContinuationToken</code> from this response to continue the listing in a
-    /// subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
+    /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub fn next_continuation_token(&self) -> std::option::Option<&str> {
         self.next_continuation_token.as_deref()
     }
@@ -4265,28 +3659,22 @@ pub mod list_bucket_intelligent_tiering_configurations_output {
             std::option::Option<std::vec::Vec<crate::model::IntelligentTieringConfiguration>>,
     }
     impl Builder {
-        /// <p>Indicates whether the returned list of analytics configurations is complete. A value of
-        /// true indicates that the list is not complete and the NextContinuationToken will be provided
-        /// for a subsequent request.</p>
+        /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
             self.is_truncated = Some(input);
             self
         }
-        /// <p>Indicates whether the returned list of analytics configurations is complete. A value of
-        /// true indicates that the list is not complete and the NextContinuationToken will be provided
-        /// for a subsequent request.</p>
+        /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
         }
-        /// <p>The ContinuationToken that represents a placeholder from where this request should
-        /// begin.</p>
+        /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.continuation_token = Some(input.into());
             self
         }
-        /// <p>The ContinuationToken that represents a placeholder from where this request should
-        /// begin.</p>
+        /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4294,16 +3682,12 @@ pub mod list_bucket_intelligent_tiering_configurations_output {
             self.continuation_token = input;
             self
         }
-        /// <p>The marker used to continue this inventory configuration listing. Use the
-        /// <code>NextContinuationToken</code> from this response to continue the listing in a
-        /// subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
+        /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
         pub fn next_continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_continuation_token = Some(input.into());
             self
         }
-        /// <p>The marker used to continue this inventory configuration listing. Use the
-        /// <code>NextContinuationToken</code> from this response to continue the listing in a
-        /// subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
+        /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
         pub fn set_next_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4318,12 +3702,12 @@ pub mod list_bucket_intelligent_tiering_configurations_output {
         /// <p>The list of S3 Intelligent-Tiering configurations for a bucket.</p>
         pub fn intelligent_tiering_configuration_list(
             mut self,
-            input: impl Into<crate::model::IntelligentTieringConfiguration>,
+            input: crate::model::IntelligentTieringConfiguration,
         ) -> Self {
             let mut v = self
                 .intelligent_tiering_configuration_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.intelligent_tiering_configuration_list = Some(v);
             self
         }
@@ -4360,40 +3744,26 @@ impl ListBucketIntelligentTieringConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBucketAnalyticsConfigurationsOutput {
-    /// <p>Indicates whether the returned list of analytics configurations is complete. A value of
-    /// true indicates that the list is not complete and the NextContinuationToken will be provided
-    /// for a subsequent request.</p>
+    /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
     pub is_truncated: bool,
-    /// <p>The marker that is used as a starting point for this analytics configuration list
-    /// response. This value is present if it was sent in the request.</p>
+    /// <p>The marker that is used as a starting point for this analytics configuration list response. This value is present if it was sent in the request.</p>
     pub continuation_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which
-    /// indicates that there are more analytics configurations to list. The next request must
-    /// include this <code>NextContinuationToken</code>. The token is obfuscated and is not a
-    /// usable value.</p>
+    /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
     pub next_continuation_token: std::option::Option<std::string::String>,
     /// <p>The list of analytics configurations for a bucket.</p>
     pub analytics_configuration_list:
         std::option::Option<std::vec::Vec<crate::model::AnalyticsConfiguration>>,
 }
 impl ListBucketAnalyticsConfigurationsOutput {
-    /// <p>Indicates whether the returned list of analytics configurations is complete. A value of
-    /// true indicates that the list is not complete and the NextContinuationToken will be provided
-    /// for a subsequent request.</p>
+    /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
     pub fn is_truncated(&self) -> bool {
         self.is_truncated
     }
-    /// <p>The marker that is used as a starting point for this analytics configuration list
-    /// response. This value is present if it was sent in the request.</p>
+    /// <p>The marker that is used as a starting point for this analytics configuration list response. This value is present if it was sent in the request.</p>
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
-    /// <p>
-    /// <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which
-    /// indicates that there are more analytics configurations to list. The next request must
-    /// include this <code>NextContinuationToken</code>. The token is obfuscated and is not a
-    /// usable value.</p>
+    /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
     pub fn next_continuation_token(&self) -> std::option::Option<&str> {
         self.next_continuation_token.as_deref()
     }
@@ -4430,28 +3800,22 @@ pub mod list_bucket_analytics_configurations_output {
             std::option::Option<std::vec::Vec<crate::model::AnalyticsConfiguration>>,
     }
     impl Builder {
-        /// <p>Indicates whether the returned list of analytics configurations is complete. A value of
-        /// true indicates that the list is not complete and the NextContinuationToken will be provided
-        /// for a subsequent request.</p>
+        /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
         pub fn is_truncated(mut self, input: bool) -> Self {
             self.is_truncated = Some(input);
             self
         }
-        /// <p>Indicates whether the returned list of analytics configurations is complete. A value of
-        /// true indicates that the list is not complete and the NextContinuationToken will be provided
-        /// for a subsequent request.</p>
+        /// <p>Indicates whether the returned list of analytics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
         }
-        /// <p>The marker that is used as a starting point for this analytics configuration list
-        /// response. This value is present if it was sent in the request.</p>
+        /// <p>The marker that is used as a starting point for this analytics configuration list response. This value is present if it was sent in the request.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.continuation_token = Some(input.into());
             self
         }
-        /// <p>The marker that is used as a starting point for this analytics configuration list
-        /// response. This value is present if it was sent in the request.</p>
+        /// <p>The marker that is used as a starting point for this analytics configuration list response. This value is present if it was sent in the request.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4459,20 +3823,12 @@ pub mod list_bucket_analytics_configurations_output {
             self.continuation_token = input;
             self
         }
-        /// <p>
-        /// <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which
-        /// indicates that there are more analytics configurations to list. The next request must
-        /// include this <code>NextContinuationToken</code>. The token is obfuscated and is not a
-        /// usable value.</p>
+        /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
         pub fn next_continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_continuation_token = Some(input.into());
             self
         }
-        /// <p>
-        /// <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which
-        /// indicates that there are more analytics configurations to list. The next request must
-        /// include this <code>NextContinuationToken</code>. The token is obfuscated and is not a
-        /// usable value.</p>
+        /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which indicates that there are more analytics configurations to list. The next request must include this <code>NextContinuationToken</code>. The token is obfuscated and is not a usable value.</p>
         pub fn set_next_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4487,10 +3843,10 @@ pub mod list_bucket_analytics_configurations_output {
         /// <p>The list of analytics configurations for a bucket.</p>
         pub fn analytics_configuration_list(
             mut self,
-            input: impl Into<crate::model::AnalyticsConfiguration>,
+            input: crate::model::AnalyticsConfiguration,
         ) -> Self {
             let mut v = self.analytics_configuration_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analytics_configuration_list = Some(v);
             self
         }
@@ -4524,29 +3880,16 @@ impl ListBucketAnalyticsConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HeadObjectOutput {
-    /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If
-    /// false, this response header does not appear in the response.</p>
+    /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
     pub delete_marker: bool,
     /// <p>Indicates that a range of bytes was specified.</p>
     pub accept_ranges: std::option::Option<std::string::String>,
-    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes
-    /// this header. It includes the expiry-date and rule-id key-value pairs providing object
-    /// expiration information. The value of the rule-id is URL encoded.</p>
+    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
     pub expiration: std::option::Option<std::string::String>,
-    /// <p>If the object is an archived object (an object whose storage class is GLACIER), the
-    /// response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p>
-    ///
-    /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is
-    /// scheduled to delete the object copy. For example:</p>
-    ///
-    /// <p>
-    /// <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00
-    /// GMT"</code>
-    /// </p>
-    ///
-    /// <p>If the object restoration is in progress, the header returns the value
-    /// <code>ongoing-request="true"</code>.</p>
-    ///
+    /// <p>If the object is an archived object (an object whose storage class is GLACIER), the response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p>
+    /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is scheduled to delete the object copy. For example:</p>
+    /// <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p>
+    /// <p>If the object restoration is in progress, the header returns the value <code>ongoing-request="true"</code>.</p>
     /// <p>For more information about archiving objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning Objects: General Considerations</a>.</p>
     pub restore: std::option::Option<std::string::String>,
     /// <p>The archive state of the head object.</p>
@@ -4555,13 +3898,9 @@ pub struct HeadObjectOutput {
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Size of the body in bytes.</p>
     pub content_length: i64,
-    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a
-    /// resource found at a URL.</p>
+    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub e_tag: std::option::Option<std::string::String>,
-    /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code>
-    /// headers. This can happen if you create metadata using an API like SOAP that supports more
-    /// flexible metadata than the REST API. For example, using SOAP, you can create metadata whose
-    /// values are not legal HTTP headers.</p>
+    /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
     pub missing_meta: i32,
     /// <p>Version of the object.</p>
     pub version_id: std::option::Option<std::string::String>,
@@ -4569,9 +3908,7 @@ pub struct HeadObjectOutput {
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>Specifies presentational information for the object.</p>
     pub content_disposition: std::option::Option<std::string::String>,
-    /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-    /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-    /// field.</p>
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
     pub content_encoding: std::option::Option<std::string::String>,
     /// <p>The language the content is in.</p>
     pub content_language: std::option::Option<std::string::String>,
@@ -4579,97 +3916,46 @@ pub struct HeadObjectOutput {
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The date and time at which the object is no longer cacheable.</p>
     pub expires: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>If the bucket is configured as a website, redirects requests for this object to another
-    /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-    /// the object metadata.</p>
+    /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
     pub website_redirect_location: std::option::Option<std::string::String>,
-    /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS key or
-    /// an Amazon S3-managed encryption key, the response includes this header with
-    /// the value of the server-side encryption algorithm used when storing this object in Amazon
-    /// S3 (for example, AES256, aws:kms).</p>
+    /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS key or an Amazon S3-managed encryption key, the response includes this header with the value of the server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>A map of metadata to store with the object in S3.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header confirming the encryption algorithm used.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header to provide round-trip message integrity verification of
-    /// the customer-provided encryption key.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
-    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all
-    /// objects except for S3 Standard storage class objects.</p>
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-    /// Classes</a>.</p>
+    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
-    /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or
-    /// a destination in a replication rule.</p>
-    ///
-    /// <p>In replication, you have a source bucket on which you configure replication and
-    /// destination bucket or buckets where Amazon S3 stores object replicas. When you request an object
-    /// (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
-    /// buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response
-    /// as follows:</p>
+    /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p>
+    /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>If requesting an object from the source bucket — Amazon S3 will return the
-    /// <code>x-amz-replication-status</code> header if the object in your request is
-    /// eligible for replication.</p>
-    /// <p> For example, suppose that in your replication configuration, you specify object
-    /// prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix
-    /// <code>TaxDocs</code>. Any objects you upload with this key name prefix, for
-    /// example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any
-    /// object request with this key name prefix, Amazon S3 will return the
-    /// <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
-    /// FAILED indicating object replication status.</p>
-    /// </li>
-    /// <li>
-    /// <p>If requesting an object from a destination bucket — Amazon S3 will return the
-    /// <code>x-amz-replication-status</code> header with value REPLICA if the object in
-    /// your request is a replica that Amazon S3 created and there is no replica modification
-    /// replication in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>When replicating objects to multiple destination buckets the
-    /// <code>x-amz-replication-status</code> header acts differently. The header of the
-    /// source object will only return a value of COMPLETED when replication is successful to
-    /// all destinations. The header will remain at value PENDING until replication has
-    /// completed for all destinations. If one or more destinations fails replication the
-    /// header will return FAILED. </p>
-    /// </li>
+    /// <li> <p>If requesting an object from the source bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
+    /// <li> <p>If requesting an object from a destination bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
+    /// <li> <p>When replicating objects to multiple destination buckets the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
     /// </ul>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
     pub replication_status: std::option::Option<crate::model::ReplicationStatus>,
     /// <p>The count of parts this object has.</p>
     pub parts_count: i32,
-    /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only
-    /// returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more
-    /// information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
-    /// Lock</a>. </p>
+    /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>. </p>
     pub object_lock_mode: std::option::Option<crate::model::ObjectLockMode>,
-    /// <p>The date and time when the Object Lock retention period expires. This header is only
-    /// returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
+    /// <p>The date and time when the Object Lock retention period expires. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
     pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies whether a legal hold is in effect for this object. This header is only
-    /// returned if the requester has the <code>s3:GetObjectLegalHold</code> permission. This
-    /// header is not returned if the specified version of this object has never had a legal hold
-    /// applied. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
+    /// <p>Specifies whether a legal hold is in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectLegalHold</code> permission. This header is not returned if the specified version of this object has never had a legal hold applied. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
     pub object_lock_legal_hold_status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
 }
 impl HeadObjectOutput {
-    /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If
-    /// false, this response header does not appear in the response.</p>
+    /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
     pub fn delete_marker(&self) -> bool {
         self.delete_marker
     }
@@ -4677,26 +3963,14 @@ impl HeadObjectOutput {
     pub fn accept_ranges(&self) -> std::option::Option<&str> {
         self.accept_ranges.as_deref()
     }
-    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes
-    /// this header. It includes the expiry-date and rule-id key-value pairs providing object
-    /// expiration information. The value of the rule-id is URL encoded.</p>
+    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
     pub fn expiration(&self) -> std::option::Option<&str> {
         self.expiration.as_deref()
     }
-    /// <p>If the object is an archived object (an object whose storage class is GLACIER), the
-    /// response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p>
-    ///
-    /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is
-    /// scheduled to delete the object copy. For example:</p>
-    ///
-    /// <p>
-    /// <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00
-    /// GMT"</code>
-    /// </p>
-    ///
-    /// <p>If the object restoration is in progress, the header returns the value
-    /// <code>ongoing-request="true"</code>.</p>
-    ///
+    /// <p>If the object is an archived object (an object whose storage class is GLACIER), the response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p>
+    /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is scheduled to delete the object copy. For example:</p>
+    /// <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p>
+    /// <p>If the object restoration is in progress, the header returns the value <code>ongoing-request="true"</code>.</p>
     /// <p>For more information about archiving objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning Objects: General Considerations</a>.</p>
     pub fn restore(&self) -> std::option::Option<&str> {
         self.restore.as_deref()
@@ -4713,15 +3987,11 @@ impl HeadObjectOutput {
     pub fn content_length(&self) -> i64 {
         self.content_length
     }
-    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a
-    /// resource found at a URL.</p>
+    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
-    /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code>
-    /// headers. This can happen if you create metadata using an API like SOAP that supports more
-    /// flexible metadata than the REST API. For example, using SOAP, you can create metadata whose
-    /// values are not legal HTTP headers.</p>
+    /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
     pub fn missing_meta(&self) -> i32 {
         self.missing_meta
     }
@@ -4737,9 +4007,7 @@ impl HeadObjectOutput {
     pub fn content_disposition(&self) -> std::option::Option<&str> {
         self.content_disposition.as_deref()
     }
-    /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-    /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-    /// field.</p>
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
     pub fn content_encoding(&self) -> std::option::Option<&str> {
         self.content_encoding.as_deref()
     }
@@ -4755,16 +4023,11 @@ impl HeadObjectOutput {
     pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
-    /// <p>If the bucket is configured as a website, redirects requests for this object to another
-    /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-    /// the object metadata.</p>
+    /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
     pub fn website_redirect_location(&self) -> std::option::Option<&str> {
         self.website_redirect_location.as_deref()
     }
-    /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS key or
-    /// an Amazon S3-managed encryption key, the response includes this header with
-    /// the value of the server-side encryption algorithm used when storing this object in Amazon
-    /// S3 (for example, AES256, aws:kms).</p>
+    /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS key or an Amazon S3-managed encryption key, the response includes this header with the value of the server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryption> {
@@ -4777,19 +4040,15 @@ impl HeadObjectOutput {
     {
         self.metadata.as_ref()
     }
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header confirming the encryption algorithm used.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header to provide round-trip message integrity verification of
-    /// the customer-provided encryption key.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
@@ -4797,56 +4056,22 @@ impl HeadObjectOutput {
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
-    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all
-    /// objects except for S3 Standard storage class objects.</p>
-    ///
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-    /// Classes</a>.</p>
+    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
     pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
         self.storage_class.as_ref()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
-    /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or
-    /// a destination in a replication rule.</p>
-    ///
-    /// <p>In replication, you have a source bucket on which you configure replication and
-    /// destination bucket or buckets where Amazon S3 stores object replicas. When you request an object
-    /// (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
-    /// buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response
-    /// as follows:</p>
+    /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p>
+    /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>If requesting an object from the source bucket — Amazon S3 will return the
-    /// <code>x-amz-replication-status</code> header if the object in your request is
-    /// eligible for replication.</p>
-    /// <p> For example, suppose that in your replication configuration, you specify object
-    /// prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix
-    /// <code>TaxDocs</code>. Any objects you upload with this key name prefix, for
-    /// example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any
-    /// object request with this key name prefix, Amazon S3 will return the
-    /// <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
-    /// FAILED indicating object replication status.</p>
-    /// </li>
-    /// <li>
-    /// <p>If requesting an object from a destination bucket — Amazon S3 will return the
-    /// <code>x-amz-replication-status</code> header with value REPLICA if the object in
-    /// your request is a replica that Amazon S3 created and there is no replica modification
-    /// replication in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>When replicating objects to multiple destination buckets the
-    /// <code>x-amz-replication-status</code> header acts differently. The header of the
-    /// source object will only return a value of COMPLETED when replication is successful to
-    /// all destinations. The header will remain at value PENDING until replication has
-    /// completed for all destinations. If one or more destinations fails replication the
-    /// header will return FAILED. </p>
-    /// </li>
+    /// <li> <p>If requesting an object from the source bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
+    /// <li> <p>If requesting an object from a destination bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
+    /// <li> <p>When replicating objects to multiple destination buckets the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
     /// </ul>
-    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
     pub fn replication_status(&self) -> std::option::Option<&crate::model::ReplicationStatus> {
         self.replication_status.as_ref()
@@ -4855,24 +4080,17 @@ impl HeadObjectOutput {
     pub fn parts_count(&self) -> i32 {
         self.parts_count
     }
-    /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only
-    /// returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more
-    /// information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
-    /// Lock</a>. </p>
+    /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>. </p>
     pub fn object_lock_mode(&self) -> std::option::Option<&crate::model::ObjectLockMode> {
         self.object_lock_mode.as_ref()
     }
-    /// <p>The date and time when the Object Lock retention period expires. This header is only
-    /// returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
+    /// <p>The date and time when the Object Lock retention period expires. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
     pub fn object_lock_retain_until_date(
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.object_lock_retain_until_date.as_ref()
     }
-    /// <p>Specifies whether a legal hold is in effect for this object. This header is only
-    /// returned if the requester has the <code>s3:GetObjectLegalHold</code> permission. This
-    /// header is not returned if the specified version of this object has never had a legal hold
-    /// applied. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
+    /// <p>Specifies whether a legal hold is in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectLegalHold</code> permission. This header is not returned if the specified version of this object has never had a legal hold applied. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
     pub fn object_lock_legal_hold_status(
         &self,
     ) -> std::option::Option<&crate::model::ObjectLockLegalHoldStatus> {
@@ -4962,14 +4180,12 @@ pub mod head_object_output {
             std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
     }
     impl Builder {
-        /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If
-        /// false, this response header does not appear in the response.</p>
+        /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
         pub fn delete_marker(mut self, input: bool) -> Self {
             self.delete_marker = Some(input);
             self
         }
-        /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If
-        /// false, this response header does not appear in the response.</p>
+        /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
         pub fn set_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_marker = input;
             self
@@ -4987,53 +4203,29 @@ pub mod head_object_output {
             self.accept_ranges = input;
             self
         }
-        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes
-        /// this header. It includes the expiry-date and rule-id key-value pairs providing object
-        /// expiration information. The value of the rule-id is URL encoded.</p>
+        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
         pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
             self.expiration = Some(input.into());
             self
         }
-        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes
-        /// this header. It includes the expiry-date and rule-id key-value pairs providing object
-        /// expiration information. The value of the rule-id is URL encoded.</p>
+        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
         pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expiration = input;
             self
         }
-        /// <p>If the object is an archived object (an object whose storage class is GLACIER), the
-        /// response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p>
-        ///
-        /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is
-        /// scheduled to delete the object copy. For example:</p>
-        ///
-        /// <p>
-        /// <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00
-        /// GMT"</code>
-        /// </p>
-        ///
-        /// <p>If the object restoration is in progress, the header returns the value
-        /// <code>ongoing-request="true"</code>.</p>
-        ///
+        /// <p>If the object is an archived object (an object whose storage class is GLACIER), the response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p>
+        /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is scheduled to delete the object copy. For example:</p>
+        /// <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p>
+        /// <p>If the object restoration is in progress, the header returns the value <code>ongoing-request="true"</code>.</p>
         /// <p>For more information about archiving objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning Objects: General Considerations</a>.</p>
         pub fn restore(mut self, input: impl Into<std::string::String>) -> Self {
             self.restore = Some(input.into());
             self
         }
-        /// <p>If the object is an archived object (an object whose storage class is GLACIER), the
-        /// response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p>
-        ///
-        /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is
-        /// scheduled to delete the object copy. For example:</p>
-        ///
-        /// <p>
-        /// <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00
-        /// GMT"</code>
-        /// </p>
-        ///
-        /// <p>If the object restoration is in progress, the header returns the value
-        /// <code>ongoing-request="true"</code>.</p>
-        ///
+        /// <p>If the object is an archived object (an object whose storage class is GLACIER), the response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p>
+        /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is scheduled to delete the object copy. For example:</p>
+        /// <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p>
+        /// <p>If the object restoration is in progress, the header returns the value <code>ongoing-request="true"</code>.</p>
         /// <p>For more information about archiving objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning Objects: General Considerations</a>.</p>
         pub fn set_restore(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.restore = input;
@@ -5075,30 +4267,22 @@ pub mod head_object_output {
             self.content_length = input;
             self
         }
-        /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a
-        /// resource found at a URL.</p>
+        /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a
-        /// resource found at a URL.</p>
+        /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
         }
-        /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code>
-        /// headers. This can happen if you create metadata using an API like SOAP that supports more
-        /// flexible metadata than the REST API. For example, using SOAP, you can create metadata whose
-        /// values are not legal HTTP headers.</p>
+        /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
         pub fn missing_meta(mut self, input: i32) -> Self {
             self.missing_meta = Some(input);
             self
         }
-        /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code>
-        /// headers. This can happen if you create metadata using an API like SOAP that supports more
-        /// flexible metadata than the REST API. For example, using SOAP, you can create metadata whose
-        /// values are not legal HTTP headers.</p>
+        /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
         pub fn set_missing_meta(mut self, input: std::option::Option<i32>) -> Self {
             self.missing_meta = input;
             self
@@ -5139,16 +4323,12 @@ pub mod head_object_output {
             self.content_disposition = input;
             self
         }
-        /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-        /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-        /// field.</p>
+        /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
         pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_encoding = Some(input.into());
             self
         }
-        /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-        /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-        /// field.</p>
+        /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
         pub fn set_content_encoding(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5192,16 +4372,12 @@ pub mod head_object_output {
             self.expires = input;
             self
         }
-        /// <p>If the bucket is configured as a website, redirects requests for this object to another
-        /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-        /// the object metadata.</p>
+        /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
         pub fn website_redirect_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.website_redirect_location = Some(input.into());
             self
         }
-        /// <p>If the bucket is configured as a website, redirects requests for this object to another
-        /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-        /// the object metadata.</p>
+        /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
         pub fn set_website_redirect_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5209,18 +4385,12 @@ pub mod head_object_output {
             self.website_redirect_location = input;
             self
         }
-        /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS key or
-        /// an Amazon S3-managed encryption key, the response includes this header with
-        /// the value of the server-side encryption algorithm used when storing this object in Amazon
-        /// S3 (for example, AES256, aws:kms).</p>
+        /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS key or an Amazon S3-managed encryption key, the response includes this header with the value of the server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
             self.server_side_encryption = Some(input);
             self
         }
-        /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS key or
-        /// an Amazon S3-managed encryption key, the response includes this header with
-        /// the value of the server-side encryption algorithm used when storing this object in Amazon
-        /// S3 (for example, AES256, aws:kms).</p>
+        /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS key or an Amazon S3-managed encryption key, the response includes this header with the value of the server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn set_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryption>,
@@ -5253,14 +4423,12 @@ pub mod head_object_output {
             self.metadata = input;
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header confirming the encryption algorithm used.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header confirming the encryption algorithm used.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5268,16 +4436,12 @@ pub mod head_object_output {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header to provide round-trip message integrity verification of
-        /// the customer-provided encryption key.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header to provide round-trip message integrity verification of
-        /// the customer-provided encryption key.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5285,14 +4449,12 @@ pub mod head_object_output {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed key that was used for the object.</p>
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
         }
-        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed key that was used for the object.</p>
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
         pub fn set_ssekms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5310,20 +4472,14 @@ pub mod head_object_output {
             self.bucket_key_enabled = input;
             self
         }
-        /// <p>Provides storage class information of the object. Amazon S3 returns this header for all
-        /// objects except for S3 Standard storage class objects.</p>
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-        /// Classes</a>.</p>
+        /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
         pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
             self.storage_class = Some(input);
             self
         }
-        /// <p>Provides storage class information of the object. Amazon S3 returns this header for all
-        /// objects except for S3 Standard storage class objects.</p>
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-        /// Classes</a>.</p>
+        /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
         pub fn set_storage_class(
             mut self,
             input: std::option::Option<crate::model::StorageClass>,
@@ -5331,14 +4487,12 @@ pub mod head_object_output {
             self.storage_class = input;
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -5346,85 +4500,25 @@ pub mod head_object_output {
             self.request_charged = input;
             self
         }
-        /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or
-        /// a destination in a replication rule.</p>
-        ///
-        /// <p>In replication, you have a source bucket on which you configure replication and
-        /// destination bucket or buckets where Amazon S3 stores object replicas. When you request an object
-        /// (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
-        /// buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response
-        /// as follows:</p>
+        /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p>
+        /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>If requesting an object from the source bucket — Amazon S3 will return the
-        /// <code>x-amz-replication-status</code> header if the object in your request is
-        /// eligible for replication.</p>
-        /// <p> For example, suppose that in your replication configuration, you specify object
-        /// prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix
-        /// <code>TaxDocs</code>. Any objects you upload with this key name prefix, for
-        /// example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any
-        /// object request with this key name prefix, Amazon S3 will return the
-        /// <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
-        /// FAILED indicating object replication status.</p>
-        /// </li>
-        /// <li>
-        /// <p>If requesting an object from a destination bucket — Amazon S3 will return the
-        /// <code>x-amz-replication-status</code> header with value REPLICA if the object in
-        /// your request is a replica that Amazon S3 created and there is no replica modification
-        /// replication in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>When replicating objects to multiple destination buckets the
-        /// <code>x-amz-replication-status</code> header acts differently. The header of the
-        /// source object will only return a value of COMPLETED when replication is successful to
-        /// all destinations. The header will remain at value PENDING until replication has
-        /// completed for all destinations. If one or more destinations fails replication the
-        /// header will return FAILED. </p>
-        /// </li>
+        /// <li> <p>If requesting an object from the source bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
+        /// <li> <p>If requesting an object from a destination bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
+        /// <li> <p>When replicating objects to multiple destination buckets the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
         /// </ul>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
         pub fn replication_status(mut self, input: crate::model::ReplicationStatus) -> Self {
             self.replication_status = Some(input);
             self
         }
-        /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or
-        /// a destination in a replication rule.</p>
-        ///
-        /// <p>In replication, you have a source bucket on which you configure replication and
-        /// destination bucket or buckets where Amazon S3 stores object replicas. When you request an object
-        /// (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
-        /// buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response
-        /// as follows:</p>
+        /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p>
+        /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>If requesting an object from the source bucket — Amazon S3 will return the
-        /// <code>x-amz-replication-status</code> header if the object in your request is
-        /// eligible for replication.</p>
-        /// <p> For example, suppose that in your replication configuration, you specify object
-        /// prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix
-        /// <code>TaxDocs</code>. Any objects you upload with this key name prefix, for
-        /// example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any
-        /// object request with this key name prefix, Amazon S3 will return the
-        /// <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
-        /// FAILED indicating object replication status.</p>
-        /// </li>
-        /// <li>
-        /// <p>If requesting an object from a destination bucket — Amazon S3 will return the
-        /// <code>x-amz-replication-status</code> header with value REPLICA if the object in
-        /// your request is a replica that Amazon S3 created and there is no replica modification
-        /// replication in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>When replicating objects to multiple destination buckets the
-        /// <code>x-amz-replication-status</code> header acts differently. The header of the
-        /// source object will only return a value of COMPLETED when replication is successful to
-        /// all destinations. The header will remain at value PENDING until replication has
-        /// completed for all destinations. If one or more destinations fails replication the
-        /// header will return FAILED. </p>
-        /// </li>
+        /// <li> <p>If requesting an object from the source bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
+        /// <li> <p>If requesting an object from a destination bucket — Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
+        /// <li> <p>When replicating objects to multiple destination buckets the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
         /// </ul>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
         pub fn set_replication_status(
             mut self,
@@ -5443,18 +4537,12 @@ pub mod head_object_output {
             self.parts_count = input;
             self
         }
-        /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only
-        /// returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more
-        /// information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
-        /// Lock</a>. </p>
+        /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>. </p>
         pub fn object_lock_mode(mut self, input: crate::model::ObjectLockMode) -> Self {
             self.object_lock_mode = Some(input);
             self
         }
-        /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only
-        /// returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more
-        /// information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
-        /// Lock</a>. </p>
+        /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>. </p>
         pub fn set_object_lock_mode(
             mut self,
             input: std::option::Option<crate::model::ObjectLockMode>,
@@ -5462,14 +4550,12 @@ pub mod head_object_output {
             self.object_lock_mode = input;
             self
         }
-        /// <p>The date and time when the Object Lock retention period expires. This header is only
-        /// returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
+        /// <p>The date and time when the Object Lock retention period expires. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
         pub fn object_lock_retain_until_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.object_lock_retain_until_date = Some(input);
             self
         }
-        /// <p>The date and time when the Object Lock retention period expires. This header is only
-        /// returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
+        /// <p>The date and time when the Object Lock retention period expires. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
         pub fn set_object_lock_retain_until_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5477,10 +4563,7 @@ pub mod head_object_output {
             self.object_lock_retain_until_date = input;
             self
         }
-        /// <p>Specifies whether a legal hold is in effect for this object. This header is only
-        /// returned if the requester has the <code>s3:GetObjectLegalHold</code> permission. This
-        /// header is not returned if the specified version of this object has never had a legal hold
-        /// applied. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
+        /// <p>Specifies whether a legal hold is in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectLegalHold</code> permission. This header is not returned if the specified version of this object has never had a legal hold applied. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
         pub fn object_lock_legal_hold_status(
             mut self,
             input: crate::model::ObjectLockLegalHoldStatus,
@@ -5488,10 +4571,7 @@ pub mod head_object_output {
             self.object_lock_legal_hold_status = Some(input);
             self
         }
-        /// <p>Specifies whether a legal hold is in effect for this object. This header is only
-        /// returned if the requester has the <code>s3:GetObjectLegalHold</code> permission. This
-        /// header is not returned if the specified version of this object has never had a legal hold
-        /// applied. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
+        /// <p>Specifies whether a legal hold is in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectLegalHold</code> permission. This header is not returned if the specified version of this object has never had a legal hold applied. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
         pub fn set_object_lock_legal_hold_status(
             mut self,
             input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
@@ -5577,14 +4657,12 @@ impl HeadBucketOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicAccessBlockOutput {
-    /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon S3
-    /// bucket.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon S3 bucket.</p>
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
 }
 impl GetPublicAccessBlockOutput {
-    /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon S3
-    /// bucket.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon S3 bucket.</p>
     pub fn public_access_block_configuration(
         &self,
     ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
@@ -5611,8 +4689,7 @@ pub mod get_public_access_block_output {
             std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     }
     impl Builder {
-        /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon S3
-        /// bucket.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon S3 bucket.</p>
         pub fn public_access_block_configuration(
             mut self,
             input: crate::model::PublicAccessBlockConfiguration,
@@ -5620,8 +4697,7 @@ pub mod get_public_access_block_output {
             self.public_access_block_configuration = Some(input);
             self
         }
-        /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon S3
-        /// bucket.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon S3 bucket.</p>
         pub fn set_public_access_block_configuration(
             mut self,
             input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
@@ -5649,8 +4725,7 @@ impl GetPublicAccessBlockOutput {
 pub struct GetObjectTorrentOutput {
     /// <p>A Bencoded dictionary as defined by the BitTorrent specification</p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl GetObjectTorrentOutput {
@@ -5658,8 +4733,7 @@ impl GetObjectTorrentOutput {
     pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.body
     }
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -5695,14 +4769,12 @@ pub mod get_object_torrent_output {
             self.body = input;
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -5778,9 +4850,9 @@ pub mod get_object_tagging_output {
         /// To override the contents of this collection use [`set_tag_set`](Self::set_tag_set).
         ///
         /// <p>Contains the tag set.</p>
-        pub fn tag_set(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_set(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_set = Some(v);
             self
         }
@@ -5993,8 +5065,7 @@ pub struct GetObjectAclOutput {
     pub owner: std::option::Option<crate::model::Owner>,
     /// <p>A list of grants.</p>
     pub grants: std::option::Option<std::vec::Vec<crate::model::Grant>>,
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl GetObjectAclOutput {
@@ -6006,8 +5077,7 @@ impl GetObjectAclOutput {
     pub fn grants(&self) -> std::option::Option<&[crate::model::Grant]> {
         self.grants.as_deref()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -6047,9 +5117,9 @@ pub mod get_object_acl_output {
         /// To override the contents of this collection use [`set_grants`](Self::set_grants).
         ///
         /// <p>A list of grants.</p>
-        pub fn grants(mut self, input: impl Into<crate::model::Grant>) -> Self {
+        pub fn grants(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grants = Some(v);
             self
         }
@@ -6061,14 +5131,12 @@ pub mod get_object_acl_output {
             self.grants = input;
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -6098,29 +5166,21 @@ impl GetObjectAclOutput {
 pub struct GetObjectOutput {
     /// <p>Object data.</p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
-    /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If
-    /// false, this response header does not appear in the response.</p>
+    /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
     pub delete_marker: bool,
     /// <p>Indicates that a range of bytes was specified.</p>
     pub accept_ranges: std::option::Option<std::string::String>,
-    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes
-    /// this header. It includes the expiry-date and rule-id key-value pairs providing object
-    /// expiration information. The value of the rule-id is URL encoded.</p>
+    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
     pub expiration: std::option::Option<std::string::String>,
-    /// <p>Provides information about object restoration action and expiration time of the
-    /// restored object copy.</p>
+    /// <p>Provides information about object restoration action and expiration time of the restored object copy.</p>
     pub restore: std::option::Option<std::string::String>,
     /// <p>Creation date of the object.</p>
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Size of the body in bytes.</p>
     pub content_length: i64,
-    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a
-    /// resource found at a URL.</p>
+    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub e_tag: std::option::Option<std::string::String>,
-    /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code>
-    /// headers. This can happen if you create metadata using an API like SOAP that supports more
-    /// flexible metadata than the REST API. For example, using SOAP, you can create metadata whose
-    /// values are not legal HTTP headers.</p>
+    /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
     pub missing_meta: i32,
     /// <p>Version of the object.</p>
     pub version_id: std::option::Option<std::string::String>,
@@ -6128,9 +5188,7 @@ pub struct GetObjectOutput {
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>Specifies presentational information for the object.</p>
     pub content_disposition: std::option::Option<std::string::String>,
-    /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-    /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-    /// field.</p>
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
     pub content_encoding: std::option::Option<std::string::String>,
     /// <p>The language the content is in.</p>
     pub content_language: std::option::Option<std::string::String>,
@@ -6140,36 +5198,26 @@ pub struct GetObjectOutput {
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The date and time at which the object is no longer cacheable.</p>
     pub expires: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>If the bucket is configured as a website, redirects requests for this object to another
-    /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-    /// the object metadata.</p>
+    /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
     pub website_redirect_location: std::option::Option<std::string::String>,
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>A map of metadata to store with the object in S3.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header confirming the encryption algorithm used.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header to provide round-trip message integrity verification of
-    /// the customer-provided encryption key.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
-    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all
-    /// objects except for S3 Standard storage class objects.</p>
+    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
-    /// <p>Amazon S3 can return this if your request involves a bucket that is either a source or
-    /// destination in a replication rule.</p>
+    /// <p>Amazon S3 can return this if your request involves a bucket that is either a source or destination in a replication rule.</p>
     pub replication_status: std::option::Option<crate::model::ReplicationStatus>,
     /// <p>The count of parts this object has.</p>
     pub parts_count: i32,
@@ -6179,8 +5227,7 @@ pub struct GetObjectOutput {
     pub object_lock_mode: std::option::Option<crate::model::ObjectLockMode>,
     /// <p>The date and time when this object's Object Lock will expire.</p>
     pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates whether this object has an active legal hold. This field is only returned if
-    /// you have permission to view an object's legal hold status. </p>
+    /// <p>Indicates whether this object has an active legal hold. This field is only returned if you have permission to view an object's legal hold status. </p>
     pub object_lock_legal_hold_status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
 }
 impl GetObjectOutput {
@@ -6188,8 +5235,7 @@ impl GetObjectOutput {
     pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.body
     }
-    /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If
-    /// false, this response header does not appear in the response.</p>
+    /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
     pub fn delete_marker(&self) -> bool {
         self.delete_marker
     }
@@ -6197,14 +5243,11 @@ impl GetObjectOutput {
     pub fn accept_ranges(&self) -> std::option::Option<&str> {
         self.accept_ranges.as_deref()
     }
-    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes
-    /// this header. It includes the expiry-date and rule-id key-value pairs providing object
-    /// expiration information. The value of the rule-id is URL encoded.</p>
+    /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
     pub fn expiration(&self) -> std::option::Option<&str> {
         self.expiration.as_deref()
     }
-    /// <p>Provides information about object restoration action and expiration time of the
-    /// restored object copy.</p>
+    /// <p>Provides information about object restoration action and expiration time of the restored object copy.</p>
     pub fn restore(&self) -> std::option::Option<&str> {
         self.restore.as_deref()
     }
@@ -6216,15 +5259,11 @@ impl GetObjectOutput {
     pub fn content_length(&self) -> i64 {
         self.content_length
     }
-    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a
-    /// resource found at a URL.</p>
+    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
-    /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code>
-    /// headers. This can happen if you create metadata using an API like SOAP that supports more
-    /// flexible metadata than the REST API. For example, using SOAP, you can create metadata whose
-    /// values are not legal HTTP headers.</p>
+    /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
     pub fn missing_meta(&self) -> i32 {
         self.missing_meta
     }
@@ -6240,9 +5279,7 @@ impl GetObjectOutput {
     pub fn content_disposition(&self) -> std::option::Option<&str> {
         self.content_disposition.as_deref()
     }
-    /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-    /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-    /// field.</p>
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
     pub fn content_encoding(&self) -> std::option::Option<&str> {
         self.content_encoding.as_deref()
     }
@@ -6262,14 +5299,11 @@ impl GetObjectOutput {
     pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
-    /// <p>If the bucket is configured as a website, redirects requests for this object to another
-    /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-    /// the object metadata.</p>
+    /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
     pub fn website_redirect_location(&self) -> std::option::Option<&str> {
         self.website_redirect_location.as_deref()
     }
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryption> {
@@ -6282,19 +5316,15 @@ impl GetObjectOutput {
     {
         self.metadata.as_ref()
     }
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header confirming the encryption algorithm used.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header to provide round-trip message integrity verification of
-    /// the customer-provided encryption key.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
@@ -6302,18 +5332,15 @@ impl GetObjectOutput {
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
-    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all
-    /// objects except for S3 Standard storage class objects.</p>
+    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
     pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
         self.storage_class.as_ref()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
-    /// <p>Amazon S3 can return this if your request involves a bucket that is either a source or
-    /// destination in a replication rule.</p>
+    /// <p>Amazon S3 can return this if your request involves a bucket that is either a source or destination in a replication rule.</p>
     pub fn replication_status(&self) -> std::option::Option<&crate::model::ReplicationStatus> {
         self.replication_status.as_ref()
     }
@@ -6335,8 +5362,7 @@ impl GetObjectOutput {
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.object_lock_retain_until_date.as_ref()
     }
-    /// <p>Indicates whether this object has an active legal hold. This field is only returned if
-    /// you have permission to view an object's legal hold status. </p>
+    /// <p>Indicates whether this object has an active legal hold. This field is only returned if you have permission to view an object's legal hold status. </p>
     pub fn object_lock_legal_hold_status(
         &self,
     ) -> std::option::Option<&crate::model::ObjectLockLegalHoldStatus> {
@@ -6443,14 +5469,12 @@ pub mod get_object_output {
             self.body = input;
             self
         }
-        /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If
-        /// false, this response header does not appear in the response.</p>
+        /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
         pub fn delete_marker(mut self, input: bool) -> Self {
             self.delete_marker = Some(input);
             self
         }
-        /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If
-        /// false, this response header does not appear in the response.</p>
+        /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
         pub fn set_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_marker = input;
             self
@@ -6468,28 +5492,22 @@ pub mod get_object_output {
             self.accept_ranges = input;
             self
         }
-        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes
-        /// this header. It includes the expiry-date and rule-id key-value pairs providing object
-        /// expiration information. The value of the rule-id is URL encoded.</p>
+        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
         pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
             self.expiration = Some(input.into());
             self
         }
-        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes
-        /// this header. It includes the expiry-date and rule-id key-value pairs providing object
-        /// expiration information. The value of the rule-id is URL encoded.</p>
+        /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs providing object expiration information. The value of the rule-id is URL encoded.</p>
         pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expiration = input;
             self
         }
-        /// <p>Provides information about object restoration action and expiration time of the
-        /// restored object copy.</p>
+        /// <p>Provides information about object restoration action and expiration time of the restored object copy.</p>
         pub fn restore(mut self, input: impl Into<std::string::String>) -> Self {
             self.restore = Some(input.into());
             self
         }
-        /// <p>Provides information about object restoration action and expiration time of the
-        /// restored object copy.</p>
+        /// <p>Provides information about object restoration action and expiration time of the restored object copy.</p>
         pub fn set_restore(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.restore = input;
             self
@@ -6517,30 +5535,22 @@ pub mod get_object_output {
             self.content_length = input;
             self
         }
-        /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a
-        /// resource found at a URL.</p>
+        /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a
-        /// resource found at a URL.</p>
+        /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
         }
-        /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code>
-        /// headers. This can happen if you create metadata using an API like SOAP that supports more
-        /// flexible metadata than the REST API. For example, using SOAP, you can create metadata whose
-        /// values are not legal HTTP headers.</p>
+        /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
         pub fn missing_meta(mut self, input: i32) -> Self {
             self.missing_meta = Some(input);
             self
         }
-        /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code>
-        /// headers. This can happen if you create metadata using an API like SOAP that supports more
-        /// flexible metadata than the REST API. For example, using SOAP, you can create metadata whose
-        /// values are not legal HTTP headers.</p>
+        /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
         pub fn set_missing_meta(mut self, input: std::option::Option<i32>) -> Self {
             self.missing_meta = input;
             self
@@ -6581,16 +5591,12 @@ pub mod get_object_output {
             self.content_disposition = input;
             self
         }
-        /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-        /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-        /// field.</p>
+        /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
         pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_encoding = Some(input.into());
             self
         }
-        /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-        /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-        /// field.</p>
+        /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
         pub fn set_content_encoding(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6647,16 +5653,12 @@ pub mod get_object_output {
             self.expires = input;
             self
         }
-        /// <p>If the bucket is configured as a website, redirects requests for this object to another
-        /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-        /// the object metadata.</p>
+        /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
         pub fn website_redirect_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.website_redirect_location = Some(input.into());
             self
         }
-        /// <p>If the bucket is configured as a website, redirects requests for this object to another
-        /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-        /// the object metadata.</p>
+        /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
         pub fn set_website_redirect_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6664,14 +5666,12 @@ pub mod get_object_output {
             self.website_redirect_location = input;
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
             self.server_side_encryption = Some(input);
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn set_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryption>,
@@ -6704,14 +5704,12 @@ pub mod get_object_output {
             self.metadata = input;
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header confirming the encryption algorithm used.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header confirming the encryption algorithm used.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6719,16 +5717,12 @@ pub mod get_object_output {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header to provide round-trip message integrity verification of
-        /// the customer-provided encryption key.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header to provide round-trip message integrity verification of
-        /// the customer-provided encryption key.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6736,14 +5730,12 @@ pub mod get_object_output {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed key that was used for the object.</p>
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
         }
-        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed key that was used for the object.</p>
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
         pub fn set_ssekms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6761,14 +5753,12 @@ pub mod get_object_output {
             self.bucket_key_enabled = input;
             self
         }
-        /// <p>Provides storage class information of the object. Amazon S3 returns this header for all
-        /// objects except for S3 Standard storage class objects.</p>
+        /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
         pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
             self.storage_class = Some(input);
             self
         }
-        /// <p>Provides storage class information of the object. Amazon S3 returns this header for all
-        /// objects except for S3 Standard storage class objects.</p>
+        /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
         pub fn set_storage_class(
             mut self,
             input: std::option::Option<crate::model::StorageClass>,
@@ -6776,14 +5766,12 @@ pub mod get_object_output {
             self.storage_class = input;
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -6791,14 +5779,12 @@ pub mod get_object_output {
             self.request_charged = input;
             self
         }
-        /// <p>Amazon S3 can return this if your request involves a bucket that is either a source or
-        /// destination in a replication rule.</p>
+        /// <p>Amazon S3 can return this if your request involves a bucket that is either a source or destination in a replication rule.</p>
         pub fn replication_status(mut self, input: crate::model::ReplicationStatus) -> Self {
             self.replication_status = Some(input);
             self
         }
-        /// <p>Amazon S3 can return this if your request involves a bucket that is either a source or
-        /// destination in a replication rule.</p>
+        /// <p>Amazon S3 can return this if your request involves a bucket that is either a source or destination in a replication rule.</p>
         pub fn set_replication_status(
             mut self,
             input: std::option::Option<crate::model::ReplicationStatus>,
@@ -6852,8 +5838,7 @@ pub mod get_object_output {
             self.object_lock_retain_until_date = input;
             self
         }
-        /// <p>Indicates whether this object has an active legal hold. This field is only returned if
-        /// you have permission to view an object's legal hold status. </p>
+        /// <p>Indicates whether this object has an active legal hold. This field is only returned if you have permission to view an object's legal hold status. </p>
         pub fn object_lock_legal_hold_status(
             mut self,
             input: crate::model::ObjectLockLegalHoldStatus,
@@ -6861,8 +5846,7 @@ pub mod get_object_output {
             self.object_lock_legal_hold_status = Some(input);
             self
         }
-        /// <p>Indicates whether this object has an active legal hold. This field is only returned if
-        /// you have permission to view an object's legal hold status. </p>
+        /// <p>Indicates whether this object has an active legal hold. This field is only returned if you have permission to view an object's legal hold status. </p>
         pub fn set_object_lock_legal_hold_status(
             mut self,
             input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
@@ -6920,11 +5904,9 @@ impl GetObjectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketWebsiteOutput {
-    /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3
-    /// bucket.</p>
+    /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
     pub redirect_all_requests_to: std::option::Option<crate::model::RedirectAllRequestsTo>,
-    /// <p>The name of the index document for the website (for example
-    /// <code>index.html</code>).</p>
+    /// <p>The name of the index document for the website (for example <code>index.html</code>).</p>
     pub index_document: std::option::Option<crate::model::IndexDocument>,
     /// <p>The object key name of the website error document to use for 4XX class errors.</p>
     pub error_document: std::option::Option<crate::model::ErrorDocument>,
@@ -6932,15 +5914,13 @@ pub struct GetBucketWebsiteOutput {
     pub routing_rules: std::option::Option<std::vec::Vec<crate::model::RoutingRule>>,
 }
 impl GetBucketWebsiteOutput {
-    /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3
-    /// bucket.</p>
+    /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
     pub fn redirect_all_requests_to(
         &self,
     ) -> std::option::Option<&crate::model::RedirectAllRequestsTo> {
         self.redirect_all_requests_to.as_ref()
     }
-    /// <p>The name of the index document for the website (for example
-    /// <code>index.html</code>).</p>
+    /// <p>The name of the index document for the website (for example <code>index.html</code>).</p>
     pub fn index_document(&self) -> std::option::Option<&crate::model::IndexDocument> {
         self.index_document.as_ref()
     }
@@ -6976,8 +5956,7 @@ pub mod get_bucket_website_output {
         pub(crate) routing_rules: std::option::Option<std::vec::Vec<crate::model::RoutingRule>>,
     }
     impl Builder {
-        /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3
-        /// bucket.</p>
+        /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
         pub fn redirect_all_requests_to(
             mut self,
             input: crate::model::RedirectAllRequestsTo,
@@ -6985,8 +5964,7 @@ pub mod get_bucket_website_output {
             self.redirect_all_requests_to = Some(input);
             self
         }
-        /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3
-        /// bucket.</p>
+        /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
         pub fn set_redirect_all_requests_to(
             mut self,
             input: std::option::Option<crate::model::RedirectAllRequestsTo>,
@@ -6994,14 +5972,12 @@ pub mod get_bucket_website_output {
             self.redirect_all_requests_to = input;
             self
         }
-        /// <p>The name of the index document for the website (for example
-        /// <code>index.html</code>).</p>
+        /// <p>The name of the index document for the website (for example <code>index.html</code>).</p>
         pub fn index_document(mut self, input: crate::model::IndexDocument) -> Self {
             self.index_document = Some(input);
             self
         }
-        /// <p>The name of the index document for the website (for example
-        /// <code>index.html</code>).</p>
+        /// <p>The name of the index document for the website (for example <code>index.html</code>).</p>
         pub fn set_index_document(
             mut self,
             input: std::option::Option<crate::model::IndexDocument>,
@@ -7027,9 +6003,9 @@ pub mod get_bucket_website_output {
         /// To override the contents of this collection use [`set_routing_rules`](Self::set_routing_rules).
         ///
         /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
-        pub fn routing_rules(mut self, input: impl Into<crate::model::RoutingRule>) -> Self {
+        pub fn routing_rules(mut self, input: crate::model::RoutingRule) -> Self {
             let mut v = self.routing_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routing_rules = Some(v);
             self
         }
@@ -7065,9 +6041,7 @@ impl GetBucketWebsiteOutput {
 pub struct GetBucketVersioningOutput {
     /// <p>The versioning state of the bucket.</p>
     pub status: std::option::Option<crate::model::BucketVersioningStatus>,
-    /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
-    /// element is only returned if the bucket has been configured with MFA delete. If the bucket
-    /// has never been so configured, this element is not returned.</p>
+    /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
     pub mfa_delete: std::option::Option<crate::model::MfaDeleteStatus>,
 }
 impl GetBucketVersioningOutput {
@@ -7075,9 +6049,7 @@ impl GetBucketVersioningOutput {
     pub fn status(&self) -> std::option::Option<&crate::model::BucketVersioningStatus> {
         self.status.as_ref()
     }
-    /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
-    /// element is only returned if the bucket has been configured with MFA delete. If the bucket
-    /// has never been so configured, this element is not returned.</p>
+    /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
     pub fn mfa_delete(&self) -> std::option::Option<&crate::model::MfaDeleteStatus> {
         self.mfa_delete.as_ref()
     }
@@ -7113,16 +6085,12 @@ pub mod get_bucket_versioning_output {
             self.status = input;
             self
         }
-        /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
-        /// element is only returned if the bucket has been configured with MFA delete. If the bucket
-        /// has never been so configured, this element is not returned.</p>
+        /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
         pub fn mfa_delete(mut self, input: crate::model::MfaDeleteStatus) -> Self {
             self.mfa_delete = Some(input);
             self
         }
-        /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
-        /// element is only returned if the bucket has been configured with MFA delete. If the bucket
-        /// has never been so configured, this element is not returned.</p>
+        /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
         pub fn set_mfa_delete(
             mut self,
             input: std::option::Option<crate::model::MfaDeleteStatus>,
@@ -7180,9 +6148,9 @@ pub mod get_bucket_tagging_output {
         /// To override the contents of this collection use [`set_tag_set`](Self::set_tag_set).
         ///
         /// <p>Contains the tag set.</p>
-        pub fn tag_set(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_set(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_set = Some(v);
             self
         }
@@ -7265,13 +6233,11 @@ impl GetBucketRequestPaymentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketReplicationOutput {
-    /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a
-    /// replication configuration is 2 MB.</p>
+    /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
     pub replication_configuration: std::option::Option<crate::model::ReplicationConfiguration>,
 }
 impl GetBucketReplicationOutput {
-    /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a
-    /// replication configuration is 2 MB.</p>
+    /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
     pub fn replication_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ReplicationConfiguration> {
@@ -7295,8 +6261,7 @@ pub mod get_bucket_replication_output {
             std::option::Option<crate::model::ReplicationConfiguration>,
     }
     impl Builder {
-        /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a
-        /// replication configuration is 2 MB.</p>
+        /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
         pub fn replication_configuration(
             mut self,
             input: crate::model::ReplicationConfiguration,
@@ -7304,8 +6269,7 @@ pub mod get_bucket_replication_output {
             self.replication_configuration = Some(input);
             self
         }
-        /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a
-        /// replication configuration is 2 MB.</p>
+        /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
         pub fn set_replication_configuration(
             mut self,
             input: std::option::Option<crate::model::ReplicationConfiguration>,
@@ -7443,13 +6407,11 @@ impl GetBucketPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketOwnershipControlsOutput {
-    /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in
-    /// effect for this Amazon S3 bucket.</p>
+    /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3 bucket.</p>
     pub ownership_controls: std::option::Option<crate::model::OwnershipControls>,
 }
 impl GetBucketOwnershipControlsOutput {
-    /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in
-    /// effect for this Amazon S3 bucket.</p>
+    /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3 bucket.</p>
     pub fn ownership_controls(&self) -> std::option::Option<&crate::model::OwnershipControls> {
         self.ownership_controls.as_ref()
     }
@@ -7470,14 +6432,12 @@ pub mod get_bucket_ownership_controls_output {
         pub(crate) ownership_controls: std::option::Option<crate::model::OwnershipControls>,
     }
     impl Builder {
-        /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in
-        /// effect for this Amazon S3 bucket.</p>
+        /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3 bucket.</p>
         pub fn ownership_controls(mut self, input: crate::model::OwnershipControls) -> Self {
             self.ownership_controls = Some(input);
             self
         }
-        /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in
-        /// effect for this Amazon S3 bucket.</p>
+        /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) currently in effect for this Amazon S3 bucket.</p>
         pub fn set_ownership_controls(
             mut self,
             input: std::option::Option<crate::model::OwnershipControls>,
@@ -7500,37 +6460,30 @@ impl GetBucketOwnershipControlsOutput {
     }
 }
 
-/// <p>A container for specifying the notification configuration of the bucket. If this element
-/// is empty, notifications are turned off for the bucket.</p>
+/// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketNotificationConfigurationOutput {
-    /// <p>The topic to which notifications are sent and the events for which notifications are
-    /// generated.</p>
+    /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
     pub topic_configurations: std::option::Option<std::vec::Vec<crate::model::TopicConfiguration>>,
-    /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which
-    /// to publish messages.</p>
+    /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
     pub queue_configurations: std::option::Option<std::vec::Vec<crate::model::QueueConfiguration>>,
-    /// <p>Describes the Lambda functions to invoke and the events for which to invoke
-    /// them.</p>
+    /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
     pub lambda_function_configurations:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
     /// <p>Enables delivery of events to Amazon EventBridge.</p>
     pub event_bridge_configuration: std::option::Option<crate::model::EventBridgeConfiguration>,
 }
 impl GetBucketNotificationConfigurationOutput {
-    /// <p>The topic to which notifications are sent and the events for which notifications are
-    /// generated.</p>
+    /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
     pub fn topic_configurations(&self) -> std::option::Option<&[crate::model::TopicConfiguration]> {
         self.topic_configurations.as_deref()
     }
-    /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which
-    /// to publish messages.</p>
+    /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
     pub fn queue_configurations(&self) -> std::option::Option<&[crate::model::QueueConfiguration]> {
         self.queue_configurations.as_deref()
     }
-    /// <p>Describes the Lambda functions to invoke and the events for which to invoke
-    /// them.</p>
+    /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
     pub fn lambda_function_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::LambdaFunctionConfiguration]> {
@@ -7579,19 +6532,14 @@ pub mod get_bucket_notification_configuration_output {
         ///
         /// To override the contents of this collection use [`set_topic_configurations`](Self::set_topic_configurations).
         ///
-        /// <p>The topic to which notifications are sent and the events for which notifications are
-        /// generated.</p>
-        pub fn topic_configurations(
-            mut self,
-            input: impl Into<crate::model::TopicConfiguration>,
-        ) -> Self {
+        /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
+        pub fn topic_configurations(mut self, input: crate::model::TopicConfiguration) -> Self {
             let mut v = self.topic_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topic_configurations = Some(v);
             self
         }
-        /// <p>The topic to which notifications are sent and the events for which notifications are
-        /// generated.</p>
+        /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
         pub fn set_topic_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TopicConfiguration>>,
@@ -7603,19 +6551,14 @@ pub mod get_bucket_notification_configuration_output {
         ///
         /// To override the contents of this collection use [`set_queue_configurations`](Self::set_queue_configurations).
         ///
-        /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which
-        /// to publish messages.</p>
-        pub fn queue_configurations(
-            mut self,
-            input: impl Into<crate::model::QueueConfiguration>,
-        ) -> Self {
+        /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
+        pub fn queue_configurations(mut self, input: crate::model::QueueConfiguration) -> Self {
             let mut v = self.queue_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queue_configurations = Some(v);
             self
         }
-        /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which
-        /// to publish messages.</p>
+        /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
         pub fn set_queue_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QueueConfiguration>>,
@@ -7627,19 +6570,17 @@ pub mod get_bucket_notification_configuration_output {
         ///
         /// To override the contents of this collection use [`set_lambda_function_configurations`](Self::set_lambda_function_configurations).
         ///
-        /// <p>Describes the Lambda functions to invoke and the events for which to invoke
-        /// them.</p>
+        /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
         pub fn lambda_function_configurations(
             mut self,
-            input: impl Into<crate::model::LambdaFunctionConfiguration>,
+            input: crate::model::LambdaFunctionConfiguration,
         ) -> Self {
             let mut v = self.lambda_function_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lambda_function_configurations = Some(v);
             self
         }
-        /// <p>Describes the Lambda functions to invoke and the events for which to invoke
-        /// them.</p>
+        /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
         pub fn set_lambda_function_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
@@ -7744,15 +6685,11 @@ impl GetBucketMetricsConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketLoggingOutput {
-    /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys
-    /// for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the
-    /// <i>Amazon S3 API Reference</i>.</p>
+    /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
     pub logging_enabled: std::option::Option<crate::model::LoggingEnabled>,
 }
 impl GetBucketLoggingOutput {
-    /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys
-    /// for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the
-    /// <i>Amazon S3 API Reference</i>.</p>
+    /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
     pub fn logging_enabled(&self) -> std::option::Option<&crate::model::LoggingEnabled> {
         self.logging_enabled.as_ref()
     }
@@ -7773,16 +6710,12 @@ pub mod get_bucket_logging_output {
         pub(crate) logging_enabled: std::option::Option<crate::model::LoggingEnabled>,
     }
     impl Builder {
-        /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys
-        /// for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the
-        /// <i>Amazon S3 API Reference</i>.</p>
+        /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
         pub fn logging_enabled(mut self, input: crate::model::LoggingEnabled) -> Self {
             self.logging_enabled = Some(input);
             self
         }
-        /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys
-        /// for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the
-        /// <i>Amazon S3 API Reference</i>.</p>
+        /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
         pub fn set_logging_enabled(
             mut self,
             input: std::option::Option<crate::model::LoggingEnabled>,
@@ -7809,17 +6742,11 @@ impl GetBucketLoggingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketLocationOutput {
-    /// <p>Specifies the Region where the bucket resides. For a list of all the Amazon S3 supported
-    /// location constraints by Region, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>.
-    /// Buckets in Region <code>us-east-1</code> have a LocationConstraint of
-    /// <code>null</code>.</p>
+    /// <p>Specifies the Region where the bucket resides. For a list of all the Amazon S3 supported location constraints by Region, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>. Buckets in Region <code>us-east-1</code> have a LocationConstraint of <code>null</code>.</p>
     pub location_constraint: std::option::Option<crate::model::BucketLocationConstraint>,
 }
 impl GetBucketLocationOutput {
-    /// <p>Specifies the Region where the bucket resides. For a list of all the Amazon S3 supported
-    /// location constraints by Region, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>.
-    /// Buckets in Region <code>us-east-1</code> have a LocationConstraint of
-    /// <code>null</code>.</p>
+    /// <p>Specifies the Region where the bucket resides. For a list of all the Amazon S3 supported location constraints by Region, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>. Buckets in Region <code>us-east-1</code> have a LocationConstraint of <code>null</code>.</p>
     pub fn location_constraint(
         &self,
     ) -> std::option::Option<&crate::model::BucketLocationConstraint> {
@@ -7842,10 +6769,7 @@ pub mod get_bucket_location_output {
         pub(crate) location_constraint: std::option::Option<crate::model::BucketLocationConstraint>,
     }
     impl Builder {
-        /// <p>Specifies the Region where the bucket resides. For a list of all the Amazon S3 supported
-        /// location constraints by Region, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>.
-        /// Buckets in Region <code>us-east-1</code> have a LocationConstraint of
-        /// <code>null</code>.</p>
+        /// <p>Specifies the Region where the bucket resides. For a list of all the Amazon S3 supported location constraints by Region, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>. Buckets in Region <code>us-east-1</code> have a LocationConstraint of <code>null</code>.</p>
         pub fn location_constraint(
             mut self,
             input: crate::model::BucketLocationConstraint,
@@ -7853,10 +6777,7 @@ pub mod get_bucket_location_output {
             self.location_constraint = Some(input);
             self
         }
-        /// <p>Specifies the Region where the bucket resides. For a list of all the Amazon S3 supported
-        /// location constraints by Region, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>.
-        /// Buckets in Region <code>us-east-1</code> have a LocationConstraint of
-        /// <code>null</code>.</p>
+        /// <p>Specifies the Region where the bucket resides. For a list of all the Amazon S3 supported location constraints by Region, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>. Buckets in Region <code>us-east-1</code> have a LocationConstraint of <code>null</code>.</p>
         pub fn set_location_constraint(
             mut self,
             input: std::option::Option<crate::model::BucketLocationConstraint>,
@@ -7913,9 +6834,9 @@ pub mod get_bucket_lifecycle_configuration_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>Container for a lifecycle rule.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::LifecycleRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::LifecycleRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -8142,13 +7063,11 @@ impl GetBucketEncryptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketCorsOutput {
-    /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add
-    /// up to 100 rules to the configuration.</p>
+    /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
     pub cors_rules: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
 }
 impl GetBucketCorsOutput {
-    /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add
-    /// up to 100 rules to the configuration.</p>
+    /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
     pub fn cors_rules(&self) -> std::option::Option<&[crate::model::CorsRule]> {
         self.cors_rules.as_deref()
     }
@@ -8173,16 +7092,14 @@ pub mod get_bucket_cors_output {
         ///
         /// To override the contents of this collection use [`set_cors_rules`](Self::set_cors_rules).
         ///
-        /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add
-        /// up to 100 rules to the configuration.</p>
-        pub fn cors_rules(mut self, input: impl Into<crate::model::CorsRule>) -> Self {
+        /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
+        pub fn cors_rules(mut self, input: crate::model::CorsRule) -> Self {
             let mut v = self.cors_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cors_rules = Some(v);
             self
         }
-        /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add
-        /// up to 100 rules to the configuration.</p>
+        /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
         pub fn set_cors_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
@@ -8320,9 +7237,9 @@ pub mod get_bucket_acl_output {
         /// To override the contents of this collection use [`set_grants`](Self::set_grants).
         ///
         /// <p>A list of grants.</p>
-        pub fn grants(mut self, input: impl Into<crate::model::Grant>) -> Self {
+        pub fn grants(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grants = Some(v);
             self
         }
@@ -8495,29 +7412,23 @@ impl DeleteObjectTaggingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteObjectsOutput {
-    /// <p>Container element for a successful delete. It identifies the object that was
-    /// successfully deleted.</p>
+    /// <p>Container element for a successful delete. It identifies the object that was successfully deleted.</p>
     pub deleted: std::option::Option<std::vec::Vec<crate::model::DeletedObject>>,
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
-    /// <p>Container for a failed delete action that describes the object that Amazon S3 attempted to
-    /// delete and the error it encountered.</p>
+    /// <p>Container for a failed delete action that describes the object that Amazon S3 attempted to delete and the error it encountered.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::Error>>,
 }
 impl DeleteObjectsOutput {
-    /// <p>Container element for a successful delete. It identifies the object that was
-    /// successfully deleted.</p>
+    /// <p>Container element for a successful delete. It identifies the object that was successfully deleted.</p>
     pub fn deleted(&self) -> std::option::Option<&[crate::model::DeletedObject]> {
         self.deleted.as_deref()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
-    /// <p>Container for a failed delete action that describes the object that Amazon S3 attempted to
-    /// delete and the error it encountered.</p>
+    /// <p>Container for a failed delete action that describes the object that Amazon S3 attempted to delete and the error it encountered.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::Error]> {
         self.errors.as_deref()
     }
@@ -8546,16 +7457,14 @@ pub mod delete_objects_output {
         ///
         /// To override the contents of this collection use [`set_deleted`](Self::set_deleted).
         ///
-        /// <p>Container element for a successful delete. It identifies the object that was
-        /// successfully deleted.</p>
-        pub fn deleted(mut self, input: impl Into<crate::model::DeletedObject>) -> Self {
+        /// <p>Container element for a successful delete. It identifies the object that was successfully deleted.</p>
+        pub fn deleted(mut self, input: crate::model::DeletedObject) -> Self {
             let mut v = self.deleted.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deleted = Some(v);
             self
         }
-        /// <p>Container element for a successful delete. It identifies the object that was
-        /// successfully deleted.</p>
+        /// <p>Container element for a successful delete. It identifies the object that was successfully deleted.</p>
         pub fn set_deleted(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeletedObject>>,
@@ -8563,14 +7472,12 @@ pub mod delete_objects_output {
             self.deleted = input;
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -8582,16 +7489,14 @@ pub mod delete_objects_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>Container for a failed delete action that describes the object that Amazon S3 attempted to
-        /// delete and the error it encountered.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::Error>) -> Self {
+        /// <p>Container for a failed delete action that describes the object that Amazon S3 attempted to delete and the error it encountered.</p>
+        pub fn errors(mut self, input: crate::model::Error) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>Container for a failed delete action that describes the object that Amazon S3 attempted to
-        /// delete and the error it encountered.</p>
+        /// <p>Container for a failed delete action that describes the object that Amazon S3 attempted to delete and the error it encountered.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Error>>,
@@ -8620,29 +7525,23 @@ impl DeleteObjectsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteObjectOutput {
-    /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was
-    /// not (false) a delete marker.</p>
+    /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.</p>
     pub delete_marker: bool,
-    /// <p>Returns the version ID of the delete marker created as a result of the DELETE
-    /// operation.</p>
+    /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl DeleteObjectOutput {
-    /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was
-    /// not (false) a delete marker.</p>
+    /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.</p>
     pub fn delete_marker(&self) -> bool {
         self.delete_marker
     }
-    /// <p>Returns the version ID of the delete marker created as a result of the DELETE
-    /// operation.</p>
+    /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -8667,38 +7566,32 @@ pub mod delete_object_output {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
     }
     impl Builder {
-        /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was
-        /// not (false) a delete marker.</p>
+        /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.</p>
         pub fn delete_marker(mut self, input: bool) -> Self {
             self.delete_marker = Some(input);
             self
         }
-        /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was
-        /// not (false) a delete marker.</p>
+        /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.</p>
         pub fn set_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_marker = input;
             self
         }
-        /// <p>Returns the version ID of the delete marker created as a result of the DELETE
-        /// operation.</p>
+        /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>Returns the version ID of the delete marker created as a result of the DELETE
-        /// operation.</p>
+        /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -9118,18 +8011,10 @@ impl DeleteBucketOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMultipartUploadOutput {
-    /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete
-    /// multipart uploads and the prefix in the lifecycle rule matches the object name in the
-    /// request, the response includes this header. The header indicates when the initiated
-    /// multipart upload becomes eligible for an abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-    /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
-    ///
-    /// <p>The response also includes the <code>x-amz-abort-rule-id</code> header that provides the
-    /// ID of the lifecycle configuration rule that defines this action.</p>
+    /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, the response includes this header. The header indicates when the initiated multipart upload becomes eligible for an abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
+    /// <p>The response also includes the <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle configuration rule that defines this action.</p>
     pub abort_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It
-    /// identifies the applicable lifecycle configuration rule that defines the action to abort
-    /// incomplete multipart uploads.</p>
+    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies the applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p>
     pub abort_rule_id: std::option::Option<std::string::String>,
     /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -9139,44 +8024,28 @@ pub struct CreateMultipartUploadOutput {
     pub key: std::option::Option<std::string::String>,
     /// <p>ID for the initiated multipart upload.</p>
     pub upload_id: std::option::Option<std::string::String>,
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header confirming the encryption algorithm used.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header to provide round-trip message integrity verification of
-    /// the customer-provided encryption key.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
-    /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
-    /// context key-value pairs.</p>
+    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
     pub ssekms_encryption_context: std::option::Option<std::string::String>,
     /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl CreateMultipartUploadOutput {
-    /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete
-    /// multipart uploads and the prefix in the lifecycle rule matches the object name in the
-    /// request, the response includes this header. The header indicates when the initiated
-    /// multipart upload becomes eligible for an abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-    /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
-    ///
-    /// <p>The response also includes the <code>x-amz-abort-rule-id</code> header that provides the
-    /// ID of the lifecycle configuration rule that defines this action.</p>
+    /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, the response includes this header. The header indicates when the initiated multipart upload becomes eligible for an abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
+    /// <p>The response also includes the <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle configuration rule that defines this action.</p>
     pub fn abort_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.abort_date.as_ref()
     }
-    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It
-    /// identifies the applicable lifecycle configuration rule that defines the action to abort
-    /// incomplete multipart uploads.</p>
+    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies the applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p>
     pub fn abort_rule_id(&self) -> std::option::Option<&str> {
         self.abort_rule_id.as_deref()
     }
@@ -9194,32 +8063,25 @@ impl CreateMultipartUploadOutput {
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header confirming the encryption algorithm used.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header to provide round-trip message integrity verification of
-    /// the customer-provided encryption key.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
-    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
-    /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
-    /// context key-value pairs.</p>
+    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
     pub fn ssekms_encryption_context(&self) -> std::option::Option<&str> {
         self.ssekms_encryption_context.as_deref()
     }
@@ -9227,8 +8089,7 @@ impl CreateMultipartUploadOutput {
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -9274,26 +8135,14 @@ pub mod create_multipart_upload_output {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
     }
     impl Builder {
-        /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete
-        /// multipart uploads and the prefix in the lifecycle rule matches the object name in the
-        /// request, the response includes this header. The header indicates when the initiated
-        /// multipart upload becomes eligible for an abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-        /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
-        ///
-        /// <p>The response also includes the <code>x-amz-abort-rule-id</code> header that provides the
-        /// ID of the lifecycle configuration rule that defines this action.</p>
+        /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, the response includes this header. The header indicates when the initiated multipart upload becomes eligible for an abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
+        /// <p>The response also includes the <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle configuration rule that defines this action.</p>
         pub fn abort_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.abort_date = Some(input);
             self
         }
-        /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete
-        /// multipart uploads and the prefix in the lifecycle rule matches the object name in the
-        /// request, the response includes this header. The header indicates when the initiated
-        /// multipart upload becomes eligible for an abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-        /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
-        ///
-        /// <p>The response also includes the <code>x-amz-abort-rule-id</code> header that provides the
-        /// ID of the lifecycle configuration rule that defines this action.</p>
+        /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, the response includes this header. The header indicates when the initiated multipart upload becomes eligible for an abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
+        /// <p>The response also includes the <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle configuration rule that defines this action.</p>
         pub fn set_abort_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9301,16 +8150,12 @@ pub mod create_multipart_upload_output {
             self.abort_date = input;
             self
         }
-        /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It
-        /// identifies the applicable lifecycle configuration rule that defines the action to abort
-        /// incomplete multipart uploads.</p>
+        /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies the applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p>
         pub fn abort_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.abort_rule_id = Some(input.into());
             self
         }
-        /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It
-        /// identifies the applicable lifecycle configuration rule that defines the action to abort
-        /// incomplete multipart uploads.</p>
+        /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies the applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p>
         pub fn set_abort_rule_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9352,14 +8197,12 @@ pub mod create_multipart_upload_output {
             self.upload_id = input;
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
             self.server_side_encryption = Some(input);
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn set_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryption>,
@@ -9367,14 +8210,12 @@ pub mod create_multipart_upload_output {
             self.server_side_encryption = input;
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header confirming the encryption algorithm used.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header confirming the encryption algorithm used.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9382,16 +8223,12 @@ pub mod create_multipart_upload_output {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header to provide round-trip message integrity verification of
-        /// the customer-provided encryption key.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header to provide round-trip message integrity verification of
-        /// the customer-provided encryption key.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9399,14 +8236,12 @@ pub mod create_multipart_upload_output {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed key that was used for the object.</p>
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
         }
-        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed key that was used for the object.</p>
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
         pub fn set_ssekms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9414,16 +8249,12 @@ pub mod create_multipart_upload_output {
             self.ssekms_key_id = input;
             self
         }
-        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
-        /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
-        /// context key-value pairs.</p>
+        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
         pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_encryption_context = Some(input.into());
             self
         }
-        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
-        /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
-        /// context key-value pairs.</p>
+        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
         pub fn set_ssekms_encryption_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9441,14 +8272,12 @@ pub mod create_multipart_upload_output {
             self.bucket_key_enabled = input;
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -9486,15 +8315,11 @@ impl CreateMultipartUploadOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBucketOutput {
-    /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on
-    /// the US East (N. Virginia) Region (us-east-1), you do not need to specify the
-    /// location.</p>
+    /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location.</p>
     pub location: std::option::Option<std::string::String>,
 }
 impl CreateBucketOutput {
-    /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on
-    /// the US East (N. Virginia) Region (us-east-1), you do not need to specify the
-    /// location.</p>
+    /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -9515,16 +8340,12 @@ pub mod create_bucket_output {
         pub(crate) location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on
-        /// the US East (N. Virginia) Region (us-east-1), you do not need to specify the
-        /// location.</p>
+        /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on
-        /// the US East (N. Virginia) Region (us-east-1), you do not need to specify the
-        /// location.</p>
+        /// <p>Specifies the Region where the bucket will be created. If you are creating a bucket on the US East (N. Virginia) Region (us-east-1), you do not need to specify the location.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -9556,27 +8377,19 @@ pub struct CopyObjectOutput {
     pub copy_source_version_id: std::option::Option<std::string::String>,
     /// <p>Version ID of the newly created copy.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header confirming the encryption algorithm used.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header to provide round-trip message integrity verification of
-    /// the customer-provided encryption key.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
-    /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
-    /// context key-value pairs.</p>
+    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
     pub ssekms_encryption_context: std::option::Option<std::string::String>,
     /// <p>Indicates whether the copied object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl CopyObjectOutput {
@@ -9596,32 +8409,25 @@ impl CopyObjectOutput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header confirming the encryption algorithm used.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-    /// response will include this header to provide round-trip message integrity verification of
-    /// the customer-provided encryption key.</p>
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
-    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
-    /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
-    /// context key-value pairs.</p>
+    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
     pub fn ssekms_encryption_context(&self) -> std::option::Option<&str> {
         self.ssekms_encryption_context.as_deref()
     }
@@ -9629,8 +8435,7 @@ impl CopyObjectOutput {
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -9720,14 +8525,12 @@ pub mod copy_object_output {
             self.version_id = input;
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
             self.server_side_encryption = Some(input);
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn set_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryption>,
@@ -9735,14 +8538,12 @@ pub mod copy_object_output {
             self.server_side_encryption = input;
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header confirming the encryption algorithm used.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header confirming the encryption algorithm used.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9750,16 +8551,12 @@ pub mod copy_object_output {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header to provide round-trip message integrity verification of
-        /// the customer-provided encryption key.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>If server-side encryption with a customer-provided encryption key was requested, the
-        /// response will include this header to provide round-trip message integrity verification of
-        /// the customer-provided encryption key.</p>
+        /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9767,14 +8564,12 @@ pub mod copy_object_output {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed key that was used for the object.</p>
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
         }
-        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed key that was used for the object.</p>
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
         pub fn set_ssekms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9782,16 +8577,12 @@ pub mod copy_object_output {
             self.ssekms_key_id = input;
             self
         }
-        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
-        /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
-        /// context key-value pairs.</p>
+        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
         pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_encryption_context = Some(input.into());
             self
         }
-        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
-        /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
-        /// context key-value pairs.</p>
+        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
         pub fn set_ssekms_encryption_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9809,14 +8600,12 @@ pub mod copy_object_output {
             self.bucket_key_enabled = input;
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -9861,30 +8650,19 @@ pub struct CompleteMultipartUploadOutput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The object key of the newly created object.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>If the object expiration is configured, this will contain the expiration date
-    /// (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
+    /// <p>If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
     pub expiration: std::option::Option<std::string::String>,
-    /// <p>Entity tag that identifies the newly created object's data. Objects with different
-    /// object data will have different entity tags. The entity tag is an opaque string. The entity
-    /// tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5
-    /// digest of the object data, it will contain one or more nonhexadecimal characters and/or
-    /// will consist of less than 32 or more than 32 hexadecimal digits.</p>
+    /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits.</p>
     pub e_tag: std::option::Option<std::string::String>,
-    /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an
-    /// Amazon Web Services KMS key in your initiate multipart upload request, the response
-    /// includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the
-    /// object.</p>
+    /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an Amazon Web Services KMS key in your initiate multipart upload request, the response includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
-    /// <p>Version ID of the newly created object, in case the bucket has versioning turned
-    /// on.</p>
+    /// <p>Version ID of the newly created object, in case the bucket has versioning turned on.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl CompleteMultipartUploadOutput {
@@ -9902,35 +8680,25 @@ impl CompleteMultipartUploadOutput {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>If the object expiration is configured, this will contain the expiration date
-    /// (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
+    /// <p>If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
     pub fn expiration(&self) -> std::option::Option<&str> {
         self.expiration.as_deref()
     }
-    /// <p>Entity tag that identifies the newly created object's data. Objects with different
-    /// object data will have different entity tags. The entity tag is an opaque string. The entity
-    /// tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5
-    /// digest of the object data, it will contain one or more nonhexadecimal characters and/or
-    /// will consist of less than 32 or more than 32 hexadecimal digits.</p>
+    /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits.</p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
-    /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an
-    /// Amazon Web Services KMS key in your initiate multipart upload request, the response
-    /// includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the
-    /// object.</p>
+    /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an Amazon Web Services KMS key in your initiate multipart upload request, the response includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
-    /// <p>Version ID of the newly created object, in case the bucket has versioning turned
-    /// on.</p>
+    /// <p>Version ID of the newly created object, in case the bucket has versioning turned on.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-    /// customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
@@ -9938,8 +8706,7 @@ impl CompleteMultipartUploadOutput {
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -10012,48 +8779,32 @@ pub mod complete_multipart_upload_output {
             self.key = input;
             self
         }
-        /// <p>If the object expiration is configured, this will contain the expiration date
-        /// (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
+        /// <p>If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
         pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
             self.expiration = Some(input.into());
             self
         }
-        /// <p>If the object expiration is configured, this will contain the expiration date
-        /// (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
+        /// <p>If the object expiration is configured, this will contain the expiration date (expiry-date) and rule ID (rule-id). The value of rule-id is URL encoded.</p>
         pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expiration = input;
             self
         }
-        /// <p>Entity tag that identifies the newly created object's data. Objects with different
-        /// object data will have different entity tags. The entity tag is an opaque string. The entity
-        /// tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5
-        /// digest of the object data, it will contain one or more nonhexadecimal characters and/or
-        /// will consist of less than 32 or more than 32 hexadecimal digits.</p>
+        /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>Entity tag that identifies the newly created object's data. Objects with different
-        /// object data will have different entity tags. The entity tag is an opaque string. The entity
-        /// tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5
-        /// digest of the object data, it will contain one or more nonhexadecimal characters and/or
-        /// will consist of less than 32 or more than 32 hexadecimal digits.</p>
+        /// <p>Entity tag that identifies the newly created object's data. Objects with different object data will have different entity tags. The entity tag is an opaque string. The entity tag may or may not be an MD5 digest of the object data. If the entity tag is not an MD5 digest of the object data, it will contain one or more nonhexadecimal characters and/or will consist of less than 32 or more than 32 hexadecimal digits.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
         }
-        /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an
-        /// Amazon Web Services KMS key in your initiate multipart upload request, the response
-        /// includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the
-        /// object.</p>
+        /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an Amazon Web Services KMS key in your initiate multipart upload request, the response includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
             self.server_side_encryption = Some(input);
             self
         }
-        /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an
-        /// Amazon Web Services KMS key in your initiate multipart upload request, the response
-        /// includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the
-        /// object.</p>
+        /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an Amazon Web Services KMS key in your initiate multipart upload request, the response includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
         pub fn set_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryption>,
@@ -10061,26 +8812,22 @@ pub mod complete_multipart_upload_output {
             self.server_side_encryption = input;
             self
         }
-        /// <p>Version ID of the newly created object, in case the bucket has versioning turned
-        /// on.</p>
+        /// <p>Version ID of the newly created object, in case the bucket has versioning turned on.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>Version ID of the newly created object, in case the bucket has versioning turned
-        /// on.</p>
+        /// <p>Version ID of the newly created object, in case the bucket has versioning turned on.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
         }
-        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed key that was used for the object.</p>
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
         }
-        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
-        /// customer managed key that was used for the object.</p>
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
         pub fn set_ssekms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10098,14 +8845,12 @@ pub mod complete_multipart_upload_output {
             self.bucket_key_enabled = input;
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -10141,13 +8886,11 @@ impl CompleteMultipartUploadOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AbortMultipartUploadOutput {
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
 }
 impl AbortMultipartUploadOutput {
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -10168,14 +8911,12 @@ pub mod abort_multipart_upload_output {
         pub(crate) request_charged: std::option::Option<crate::model::RequestCharged>,
     }
     impl Builder {
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,

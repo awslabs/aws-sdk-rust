@@ -122,9 +122,9 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     Ok(())
 }
 
-pub fn serialize_structure_crate_input_update_site_input(
+pub fn serialize_structure_crate_input_update_outpost_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::input::UpdateSiteInput,
+    input: &crate::input::UpdateOutpostInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
     if let Some(var_35) = &input.description {
         object.key("Description").string(var_35);
@@ -132,8 +132,24 @@ pub fn serialize_structure_crate_input_update_site_input(
     if let Some(var_36) = &input.name {
         object.key("Name").string(var_36);
     }
-    if let Some(var_37) = &input.notes {
-        object.key("Notes").string(var_37);
+    if let Some(var_37) = &input.supported_hardware_type {
+        object.key("SupportedHardwareType").string(var_37.as_str());
+    }
+    Ok(())
+}
+
+pub fn serialize_structure_crate_input_update_site_input(
+    object: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::input::UpdateSiteInput,
+) -> Result<(), aws_smithy_http::operation::SerializationError> {
+    if let Some(var_38) = &input.description {
+        object.key("Description").string(var_38);
+    }
+    if let Some(var_39) = &input.name {
+        object.key("Name").string(var_39);
+    }
+    if let Some(var_40) = &input.notes {
+        object.key("Notes").string(var_40);
     }
     Ok(())
 }
@@ -142,13 +158,13 @@ pub fn serialize_structure_crate_input_update_site_address_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateSiteAddressInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_38) = &input.address {
-        let mut object_39 = object.key("Address").start_object();
-        crate::json_ser::serialize_structure_crate_model_address(&mut object_39, var_38)?;
-        object_39.finish();
+    if let Some(var_41) = &input.address {
+        let mut object_42 = object.key("Address").start_object();
+        crate::json_ser::serialize_structure_crate_model_address(&mut object_42, var_41)?;
+        object_42.finish();
     }
-    if let Some(var_40) = &input.address_type {
-        object.key("AddressType").string(var_40.as_str());
+    if let Some(var_43) = &input.address_type {
+        object.key("AddressType").string(var_43.as_str());
     }
     Ok(())
 }
@@ -157,34 +173,34 @@ pub fn serialize_structure_crate_input_update_site_rack_physical_properties_inpu
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateSiteRackPhysicalPropertiesInput,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_41) = &input.fiber_optic_cable_type {
-        object.key("FiberOpticCableType").string(var_41.as_str());
+    if let Some(var_44) = &input.fiber_optic_cable_type {
+        object.key("FiberOpticCableType").string(var_44.as_str());
     }
-    if let Some(var_42) = &input.maximum_supported_weight_lbs {
+    if let Some(var_45) = &input.maximum_supported_weight_lbs {
         object
             .key("MaximumSupportedWeightLbs")
-            .string(var_42.as_str());
+            .string(var_45.as_str());
     }
-    if let Some(var_43) = &input.optical_standard {
-        object.key("OpticalStandard").string(var_43.as_str());
+    if let Some(var_46) = &input.optical_standard {
+        object.key("OpticalStandard").string(var_46.as_str());
     }
-    if let Some(var_44) = &input.power_connector {
-        object.key("PowerConnector").string(var_44.as_str());
+    if let Some(var_47) = &input.power_connector {
+        object.key("PowerConnector").string(var_47.as_str());
     }
-    if let Some(var_45) = &input.power_draw_kva {
-        object.key("PowerDrawKva").string(var_45.as_str());
+    if let Some(var_48) = &input.power_draw_kva {
+        object.key("PowerDrawKva").string(var_48.as_str());
     }
-    if let Some(var_46) = &input.power_feed_drop {
-        object.key("PowerFeedDrop").string(var_46.as_str());
+    if let Some(var_49) = &input.power_feed_drop {
+        object.key("PowerFeedDrop").string(var_49.as_str());
     }
-    if let Some(var_47) = &input.power_phase {
-        object.key("PowerPhase").string(var_47.as_str());
+    if let Some(var_50) = &input.power_phase {
+        object.key("PowerPhase").string(var_50.as_str());
     }
-    if let Some(var_48) = &input.uplink_count {
-        object.key("UplinkCount").string(var_48.as_str());
+    if let Some(var_51) = &input.uplink_count {
+        object.key("UplinkCount").string(var_51.as_str());
     }
-    if let Some(var_49) = &input.uplink_gbps {
-        object.key("UplinkGbps").string(var_49.as_str());
+    if let Some(var_52) = &input.uplink_gbps {
+        object.key("UplinkGbps").string(var_52.as_str());
     }
     Ok(())
 }
@@ -193,8 +209,8 @@ pub fn serialize_structure_crate_model_line_item_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LineItemRequest,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_50) = &input.catalog_item_id {
-        object.key("CatalogItemId").string(var_50);
+    if let Some(var_53) = &input.catalog_item_id {
+        object.key("CatalogItemId").string(var_53);
     }
     if input.quantity != 0 {
         object.key("Quantity").number(
@@ -209,38 +225,38 @@ pub fn serialize_structure_crate_model_address(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Address,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_51) = &input.contact_name {
-        object.key("ContactName").string(var_51);
+    if let Some(var_54) = &input.contact_name {
+        object.key("ContactName").string(var_54);
     }
-    if let Some(var_52) = &input.contact_phone_number {
-        object.key("ContactPhoneNumber").string(var_52);
+    if let Some(var_55) = &input.contact_phone_number {
+        object.key("ContactPhoneNumber").string(var_55);
     }
-    if let Some(var_53) = &input.address_line1 {
-        object.key("AddressLine1").string(var_53);
+    if let Some(var_56) = &input.address_line1 {
+        object.key("AddressLine1").string(var_56);
     }
-    if let Some(var_54) = &input.address_line2 {
-        object.key("AddressLine2").string(var_54);
+    if let Some(var_57) = &input.address_line2 {
+        object.key("AddressLine2").string(var_57);
     }
-    if let Some(var_55) = &input.address_line3 {
-        object.key("AddressLine3").string(var_55);
+    if let Some(var_58) = &input.address_line3 {
+        object.key("AddressLine3").string(var_58);
     }
-    if let Some(var_56) = &input.city {
-        object.key("City").string(var_56);
+    if let Some(var_59) = &input.city {
+        object.key("City").string(var_59);
     }
-    if let Some(var_57) = &input.state_or_region {
-        object.key("StateOrRegion").string(var_57);
+    if let Some(var_60) = &input.state_or_region {
+        object.key("StateOrRegion").string(var_60);
     }
-    if let Some(var_58) = &input.district_or_county {
-        object.key("DistrictOrCounty").string(var_58);
+    if let Some(var_61) = &input.district_or_county {
+        object.key("DistrictOrCounty").string(var_61);
     }
-    if let Some(var_59) = &input.postal_code {
-        object.key("PostalCode").string(var_59);
+    if let Some(var_62) = &input.postal_code {
+        object.key("PostalCode").string(var_62);
     }
-    if let Some(var_60) = &input.country_code {
-        object.key("CountryCode").string(var_60);
+    if let Some(var_63) = &input.country_code {
+        object.key("CountryCode").string(var_63);
     }
-    if let Some(var_61) = &input.municipality {
-        object.key("Municipality").string(var_61);
+    if let Some(var_64) = &input.municipality {
+        object.key("Municipality").string(var_64);
     }
     Ok(())
 }
@@ -249,34 +265,34 @@ pub fn serialize_structure_crate_model_rack_physical_properties(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::RackPhysicalProperties,
 ) -> Result<(), aws_smithy_http::operation::SerializationError> {
-    if let Some(var_62) = &input.power_draw_kva {
-        object.key("PowerDrawKva").string(var_62.as_str());
+    if let Some(var_65) = &input.power_draw_kva {
+        object.key("PowerDrawKva").string(var_65.as_str());
     }
-    if let Some(var_63) = &input.power_phase {
-        object.key("PowerPhase").string(var_63.as_str());
+    if let Some(var_66) = &input.power_phase {
+        object.key("PowerPhase").string(var_66.as_str());
     }
-    if let Some(var_64) = &input.power_connector {
-        object.key("PowerConnector").string(var_64.as_str());
+    if let Some(var_67) = &input.power_connector {
+        object.key("PowerConnector").string(var_67.as_str());
     }
-    if let Some(var_65) = &input.power_feed_drop {
-        object.key("PowerFeedDrop").string(var_65.as_str());
+    if let Some(var_68) = &input.power_feed_drop {
+        object.key("PowerFeedDrop").string(var_68.as_str());
     }
-    if let Some(var_66) = &input.uplink_gbps {
-        object.key("UplinkGbps").string(var_66.as_str());
+    if let Some(var_69) = &input.uplink_gbps {
+        object.key("UplinkGbps").string(var_69.as_str());
     }
-    if let Some(var_67) = &input.uplink_count {
-        object.key("UplinkCount").string(var_67.as_str());
+    if let Some(var_70) = &input.uplink_count {
+        object.key("UplinkCount").string(var_70.as_str());
     }
-    if let Some(var_68) = &input.fiber_optic_cable_type {
-        object.key("FiberOpticCableType").string(var_68.as_str());
+    if let Some(var_71) = &input.fiber_optic_cable_type {
+        object.key("FiberOpticCableType").string(var_71.as_str());
     }
-    if let Some(var_69) = &input.optical_standard {
-        object.key("OpticalStandard").string(var_69.as_str());
+    if let Some(var_72) = &input.optical_standard {
+        object.key("OpticalStandard").string(var_72.as_str());
     }
-    if let Some(var_70) = &input.maximum_supported_weight_lbs {
+    if let Some(var_73) = &input.maximum_supported_weight_lbs {
         object
             .key("MaximumSupportedWeightLbs")
-            .string(var_70.as_str());
+            .string(var_73.as_str());
     }
     Ok(())
 }

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Amplify
@@ -354,7 +354,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApp`.
     ///
     /// <p> Creates a new Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -399,10 +399,10 @@ pub mod fluent_builders {
                 crate::input::CreateAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -411,8 +411,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name for an Amplify app. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name for an Amplify app. </p>
@@ -421,8 +421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description for an Amplify app. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description for an Amplify app. </p>
@@ -431,8 +431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The repository for an Amplify app. </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
         /// <p> The repository for an Amplify app. </p>
@@ -441,8 +441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The platform or framework for an Amplify app. </p>
-        pub fn platform(mut self, inp: crate::model::Platform) -> Self {
-            self.inner = self.inner.platform(inp);
+        pub fn platform(mut self, input: crate::model::Platform) -> Self {
+            self.inner = self.inner.platform(input);
             self
         }
         /// <p> The platform or framework for an Amplify app. </p>
@@ -451,8 +451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-        pub fn iam_service_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_service_role_arn(inp);
+        pub fn iam_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_service_role_arn(input.into());
             self
         }
         /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
@@ -463,30 +463,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_iam_service_role_arn(input);
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
-        /// token is used to create a webhook and a read-only deploy key. The OAuth token is not
-        /// stored. </p>
-        pub fn oauth_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.oauth_token(inp);
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
+        pub fn oauth_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.oauth_token(input.into());
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
-        /// token is used to create a webhook and a read-only deploy key. The OAuth token is not
-        /// stored. </p>
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
         pub fn set_oauth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_oauth_token(input);
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The personal access token is used to create a webhook and a read-only deploy key. The
-        /// token is not stored. </p>
-        pub fn access_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(inp);
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored. </p>
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The personal access token is used to create a webhook and a read-only deploy key. The
-        /// token is not stored. </p>
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored. </p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_token(input);
             self
@@ -501,7 +493,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.environment_variables(k, v);
+            self.inner = self.inner.environment_variables(k.into(), v.into());
             self
         }
         /// <p> The environment variables map for an Amplify app. </p>
@@ -515,8 +507,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables the auto building of branches for an Amplify app. </p>
-        pub fn enable_branch_auto_build(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_branch_auto_build(inp);
+        pub fn enable_branch_auto_build(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_branch_auto_build(input);
             self
         }
         /// <p> Enables the auto building of branches for an Amplify app. </p>
@@ -524,33 +516,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_branch_auto_build(input);
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
-        pub fn enable_branch_auto_deletion(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_branch_auto_deletion(inp);
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
+        pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_branch_auto_deletion(input);
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn set_enable_branch_auto_deletion(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_branch_auto_deletion(input);
             self
         }
-        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
-        /// are part of this app. </p>
-        pub fn enable_basic_auth(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_basic_auth(inp);
+        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
+        pub fn enable_basic_auth(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_basic_auth(input);
             self
         }
-        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
-        /// are part of this app. </p>
+        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
         pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_basic_auth(input);
             self
         }
         /// <p> The credentials for basic authorization for an Amplify app. </p>
-        pub fn basic_auth_credentials(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.basic_auth_credentials(inp);
+        pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.basic_auth_credentials(input.into());
             self
         }
         /// <p> The credentials for basic authorization for an Amplify app. </p>
@@ -566,8 +554,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_custom_rules`](Self::set_custom_rules).
         ///
         /// <p> The custom rewrite and redirect rules for an Amplify app. </p>
-        pub fn custom_rules(mut self, inp: impl Into<crate::model::CustomRule>) -> Self {
-            self.inner = self.inner.custom_rules(inp);
+        pub fn custom_rules(mut self, input: crate::model::CustomRule) -> Self {
+            self.inner = self.inner.custom_rules(input);
             self
         }
         /// <p> The custom rewrite and redirect rules for an Amplify app. </p>
@@ -588,7 +576,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p> The tag for an Amplify app. </p>
@@ -602,8 +590,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The build specification (build spec) for an Amplify app. </p>
-        pub fn build_spec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_spec(inp);
+        pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_spec(input.into());
             self
         }
         /// <p> The build specification (build spec) for an Amplify app. </p>
@@ -612,8 +600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The custom HTTP headers for an Amplify app.</p>
-        pub fn custom_headers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_headers(inp);
+        pub fn custom_headers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_headers(input.into());
             self
         }
         /// <p>The custom HTTP headers for an Amplify app.</p>
@@ -625,8 +613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables automated branch creation for an Amplify app. </p>
-        pub fn enable_auto_branch_creation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_auto_branch_creation(inp);
+        pub fn enable_auto_branch_creation(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_branch_creation(input);
             self
         }
         /// <p> Enables automated branch creation for an Amplify app. </p>
@@ -641,9 +629,9 @@ pub mod fluent_builders {
         /// <p> The automated branch creation glob patterns for an Amplify app. </p>
         pub fn auto_branch_creation_patterns(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_branch_creation_patterns(inp);
+            self.inner = self.inner.auto_branch_creation_patterns(input.into());
             self
         }
         /// <p> The automated branch creation glob patterns for an Amplify app. </p>
@@ -657,9 +645,9 @@ pub mod fluent_builders {
         /// <p> The automated branch creation configuration for an Amplify app. </p>
         pub fn auto_branch_creation_config(
             mut self,
-            inp: crate::model::AutoBranchCreationConfig,
+            input: crate::model::AutoBranchCreationConfig,
         ) -> Self {
-            self.inner = self.inner.auto_branch_creation_config(inp);
+            self.inner = self.inner.auto_branch_creation_config(input);
             self
         }
         /// <p> The automated branch creation configuration for an Amplify app. </p>
@@ -674,7 +662,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBackendEnvironment`.
     ///
     /// <p> Creates a new backend environment for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackendEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -719,10 +707,10 @@ pub mod fluent_builders {
                 crate::input::CreateBackendEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -731,8 +719,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -741,8 +729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the backend environment. </p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p> The name for the backend environment. </p>
@@ -754,8 +742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The AWS CloudFormation stack name of a backend environment. </p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
             self
         }
         /// <p> The AWS CloudFormation stack name of a backend environment. </p>
@@ -764,8 +752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of deployment artifacts. </p>
-        pub fn deployment_artifacts(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_artifacts(inp);
+        pub fn deployment_artifacts(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_artifacts(input.into());
             self
         }
         /// <p> The name of deployment artifacts. </p>
@@ -780,7 +768,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBranch`.
     ///
     /// <p> Creates a new branch for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBranch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -825,10 +813,10 @@ pub mod fluent_builders {
                 crate::input::CreateBranchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -837,8 +825,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -847,8 +835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch. </p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch. </p>
@@ -857,8 +845,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description for the branch. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description for the branch. </p>
@@ -867,8 +855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Describes the current stage for the branch. </p>
-        pub fn stage(mut self, inp: crate::model::Stage) -> Self {
-            self.inner = self.inner.stage(inp);
+        pub fn stage(mut self, input: crate::model::Stage) -> Self {
+            self.inner = self.inner.stage(input);
             self
         }
         /// <p> Describes the current stage for the branch. </p>
@@ -877,8 +865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The framework for the branch. </p>
-        pub fn framework(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework(inp);
+        pub fn framework(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework(input.into());
             self
         }
         /// <p> The framework for the branch. </p>
@@ -887,8 +875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables notifications for the branch. </p>
-        pub fn enable_notification(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_notification(inp);
+        pub fn enable_notification(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_notification(input);
             self
         }
         /// <p> Enables notifications for the branch. </p>
@@ -897,8 +885,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables auto building for the branch. </p>
-        pub fn enable_auto_build(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_auto_build(inp);
+        pub fn enable_auto_build(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_build(input);
             self
         }
         /// <p> Enables auto building for the branch. </p>
@@ -916,7 +904,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.environment_variables(k, v);
+            self.inner = self.inner.environment_variables(k.into(), v.into());
             self
         }
         /// <p> The environment variables for the branch. </p>
@@ -930,8 +918,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The basic authorization credentials for the branch. </p>
-        pub fn basic_auth_credentials(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.basic_auth_credentials(inp);
+        pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.basic_auth_credentials(input.into());
             self
         }
         /// <p> The basic authorization credentials for the branch. </p>
@@ -943,8 +931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables basic authorization for the branch. </p>
-        pub fn enable_basic_auth(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_basic_auth(inp);
+        pub fn enable_basic_auth(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_basic_auth(input);
             self
         }
         /// <p> Enables basic authorization for the branch. </p>
@@ -954,8 +942,8 @@ pub mod fluent_builders {
         }
         /// <p>Enables performance mode for the branch.</p>
         /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
-        pub fn enable_performance_mode(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_performance_mode(inp);
+        pub fn enable_performance_mode(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_performance_mode(input);
             self
         }
         /// <p>Enables performance mode for the branch.</p>
@@ -974,7 +962,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p> The tag for the branch. </p>
@@ -988,8 +976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The build specification (build spec) for the branch. </p>
-        pub fn build_spec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_spec(inp);
+        pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_spec(input.into());
             self
         }
         /// <p> The build specification (build spec) for the branch. </p>
@@ -998,8 +986,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The content Time To Live (TTL) for the website in seconds. </p>
-        pub fn ttl(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ttl(inp);
+        pub fn ttl(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ttl(input.into());
             self
         }
         /// <p> The content Time To Live (TTL) for the website in seconds. </p>
@@ -1008,8 +996,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The display name for a branch. This is used as the default domain prefix. </p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p> The display name for a branch. This is used as the default domain prefix. </p>
@@ -1018,8 +1006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables pull request previews for this branch. </p>
-        pub fn enable_pull_request_preview(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_pull_request_preview(inp);
+        pub fn enable_pull_request_preview(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_pull_request_preview(input);
             self
         }
         /// <p> Enables pull request previews for this branch. </p>
@@ -1030,9 +1018,9 @@ pub mod fluent_builders {
         /// <p> The Amplify environment name for the pull request. </p>
         pub fn pull_request_environment_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.pull_request_environment_name(inp);
+            self.inner = self.inner.pull_request_environment_name(input.into());
             self
         }
         /// <p> The Amplify environment name for the pull request. </p>
@@ -1043,14 +1031,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pull_request_environment_name(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
-        pub fn backend_environment_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_arn(inp);
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+        pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn set_backend_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1061,9 +1047,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDeployment`.
     ///
-    /// <p> Creates a deployment for a manually deployed Amplify app. Manually deployed apps are
-    /// not connected to a repository. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Creates a deployment for a manually deployed Amplify app. Manually deployed apps are not connected to a repository. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1108,10 +1093,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1120,8 +1105,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -1130,8 +1115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch, for the job. </p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch, for the job. </p>
@@ -1143,22 +1128,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_file_map`](Self::set_file_map).
         ///
-        /// <p> An optional file map that contains the file name as the key and the file content md5
-        /// hash as the value. If this argument is provided, the service will generate a unique
-        /// upload URL per file. Otherwise, the service will only generate a single upload URL for
-        /// the zipped files. </p>
+        /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
         pub fn file_map(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.file_map(k, v);
+            self.inner = self.inner.file_map(k.into(), v.into());
             self
         }
-        /// <p> An optional file map that contains the file name as the key and the file content md5
-        /// hash as the value. If this argument is provided, the service will generate a unique
-        /// upload URL per file. Otherwise, the service will only generate a single upload URL for
-        /// the zipped files. </p>
+        /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
         pub fn set_file_map(
             mut self,
             input: std::option::Option<
@@ -1171,9 +1150,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDomainAssociation`.
     ///
-    /// <p> Creates a new domain association for an Amplify app. This action associates a custom
-    /// domain with the Amplify app </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Creates a new domain association for an Amplify app. This action associates a custom domain with the Amplify app </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomainAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1218,10 +1196,10 @@ pub mod fluent_builders {
                 crate::input::CreateDomainAssociationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1230,8 +1208,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -1240,8 +1218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The domain name for the domain association. </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p> The domain name for the domain association. </p>
@@ -1250,8 +1228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables the automated creation of subdomains for branches. </p>
-        pub fn enable_auto_sub_domain(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_auto_sub_domain(inp);
+        pub fn enable_auto_sub_domain(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_sub_domain(input);
             self
         }
         /// <p> Enables the automated creation of subdomains for branches. </p>
@@ -1264,11 +1242,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sub_domain_settings`](Self::set_sub_domain_settings).
         ///
         /// <p> The setting for the subdomain. </p>
-        pub fn sub_domain_settings(
-            mut self,
-            inp: impl Into<crate::model::SubDomainSetting>,
-        ) -> Self {
-            self.inner = self.inner.sub_domain_settings(inp);
+        pub fn sub_domain_settings(mut self, input: crate::model::SubDomainSetting) -> Self {
+            self.inner = self.inner.sub_domain_settings(input);
             self
         }
         /// <p> The setting for the subdomain. </p>
@@ -1286,9 +1261,9 @@ pub mod fluent_builders {
         /// <p> Sets the branch patterns for automatic subdomain creation. </p>
         pub fn auto_sub_domain_creation_patterns(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_sub_domain_creation_patterns(inp);
+            self.inner = self.inner.auto_sub_domain_creation_patterns(input.into());
             self
         }
         /// <p> Sets the branch patterns for automatic subdomain creation. </p>
@@ -1299,14 +1274,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_sub_domain_creation_patterns(input);
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
-        pub fn auto_sub_domain_iam_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_sub_domain_iam_role(inp);
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
+        pub fn auto_sub_domain_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_sub_domain_iam_role(input.into());
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn set_auto_sub_domain_iam_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1318,7 +1291,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWebhook`.
     ///
     /// <p> Creates a new webhook on an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWebhook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1363,10 +1336,10 @@ pub mod fluent_builders {
                 crate::input::CreateWebhookInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1375,8 +1348,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -1385,8 +1358,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for a branch that is part of an Amplify app. </p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for a branch that is part of an Amplify app. </p>
@@ -1395,8 +1368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description for a webhook. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description for a webhook. </p>
@@ -1408,7 +1381,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApp`.
     ///
     /// <p> Deletes an existing Amplify app specified by an app ID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1453,10 +1426,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1465,8 +1438,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -1478,7 +1451,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBackendEnvironment`.
     ///
     /// <p> Deletes a backend environment for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackendEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1523,10 +1496,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBackendEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1535,8 +1508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID of an Amplify app. </p>
@@ -1545,8 +1518,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of a backend environment of an Amplify app. </p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p> The name of a backend environment of an Amplify app. </p>
@@ -1561,7 +1534,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBranch`.
     ///
     /// <p> Deletes a branch for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBranch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1606,10 +1579,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBranchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1618,8 +1591,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -1628,8 +1601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch. </p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch. </p>
@@ -1641,7 +1614,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDomainAssociation`.
     ///
     /// <p> Deletes a domain association for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomainAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1686,10 +1659,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDomainAssociationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1698,8 +1671,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique id for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique id for an Amplify app. </p>
@@ -1708,8 +1681,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the domain. </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p> The name of the domain. </p>
@@ -1721,7 +1694,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteJob`.
     ///
     /// <p> Deletes a job for a branch of an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1766,10 +1739,10 @@ pub mod fluent_builders {
                 crate::input::DeleteJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1778,8 +1751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -1788,8 +1761,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch, for the job. </p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch, for the job. </p>
@@ -1798,8 +1771,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique ID for the job. </p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p> The unique ID for the job. </p>
@@ -1811,7 +1784,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWebhook`.
     ///
     /// <p> Deletes a webhook. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWebhook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1856,10 +1829,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWebhookInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1868,8 +1841,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for a webhook. </p>
-        pub fn webhook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.webhook_id(inp);
+        pub fn webhook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.webhook_id(input.into());
             self
         }
         /// <p> The unique ID for a webhook. </p>
@@ -1880,9 +1853,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GenerateAccessLogs`.
     ///
-    /// <p> Returns the website access logs for a specific time range using a presigned URL.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns the website access logs for a specific time range using a presigned URL. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateAccessLogs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1927,10 +1899,10 @@ pub mod fluent_builders {
                 crate::input::GenerateAccessLogsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1938,14 +1910,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The time at which the logs should start. The time range specified is inclusive of the
-        /// start time. </p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
-        /// <p> The time at which the logs should start. The time range specified is inclusive of the
-        /// start time. </p>
+        /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1953,14 +1923,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p> The time at which the logs should end. The time range specified is inclusive of the
-        /// end time. </p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
-        /// <p> The time at which the logs should end. The time range specified is inclusive of the
-        /// end time. </p>
+        /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1969,8 +1937,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the domain. </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p> The name of the domain. </p>
@@ -1979,8 +1947,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -1992,7 +1960,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApp`.
     ///
     /// <p> Returns an existing Amplify app by appID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2037,10 +2005,10 @@ pub mod fluent_builders {
                 crate::input::GetAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2049,8 +2017,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -2062,7 +2030,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetArtifactUrl`.
     ///
     /// <p> Returns the artifact info that corresponds to an artifact id. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetArtifactUrl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2107,10 +2075,10 @@ pub mod fluent_builders {
                 crate::input::GetArtifactUrlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2119,8 +2087,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an artifact. </p>
-        pub fn artifact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_id(inp);
+        pub fn artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_id(input.into());
             self
         }
         /// <p> The unique ID for an artifact. </p>
@@ -2132,7 +2100,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackendEnvironment`.
     ///
     /// <p> Returns a backend environment for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackendEnvironment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2177,10 +2145,10 @@ pub mod fluent_builders {
                 crate::input::GetBackendEnvironmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2189,8 +2157,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique id for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique id for an Amplify app. </p>
@@ -2199,8 +2167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the backend environment. </p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p> The name for the backend environment. </p>
@@ -2215,7 +2183,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBranch`.
     ///
     /// <p> Returns a branch for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBranch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2260,10 +2228,10 @@ pub mod fluent_builders {
                 crate::input::GetBranchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2272,8 +2240,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -2282,8 +2250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch. </p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch. </p>
@@ -2295,7 +2263,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDomainAssociation`.
     ///
     /// <p> Returns the domain information for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDomainAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2340,10 +2308,10 @@ pub mod fluent_builders {
                 crate::input::GetDomainAssociationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2352,8 +2320,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique id for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique id for an Amplify app. </p>
@@ -2362,8 +2330,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the domain. </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p> The name of the domain. </p>
@@ -2375,7 +2343,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJob`.
     ///
     /// <p> Returns a job for a branch of an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2420,10 +2388,10 @@ pub mod fluent_builders {
                 crate::input::GetJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2432,8 +2400,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -2442,8 +2410,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The branch name for the job. </p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The branch name for the job. </p>
@@ -2452,8 +2420,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique ID for the job. </p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p> The unique ID for the job. </p>
@@ -2465,7 +2433,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWebhook`.
     ///
     /// <p> Returns the webhook information that corresponds to a specified webhook ID. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWebhook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2510,10 +2478,10 @@ pub mod fluent_builders {
                 crate::input::GetWebhookInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2522,8 +2490,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for a webhook. </p>
-        pub fn webhook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.webhook_id(inp);
+        pub fn webhook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.webhook_id(input.into());
             self
         }
         /// <p> The unique ID for a webhook. </p>
@@ -2535,7 +2503,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListApps`.
     ///
     /// <p> Returns a list of the existing Amplify apps. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListApps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2580,10 +2548,10 @@ pub mod fluent_builders {
                 crate::input::ListAppsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2591,21 +2559,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-        /// its value in another request to retrieve more entries. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-        /// its value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
@@ -2617,7 +2583,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListArtifacts`.
     ///
     /// <p> Returns a list of artifacts for a specified app, branch, and job. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListArtifacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2662,10 +2628,10 @@ pub mod fluent_builders {
                 crate::input::ListArtifactsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2674,8 +2640,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -2684,8 +2650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of a branch that is part of an Amplify app. </p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name of a branch that is part of an Amplify app. </p>
@@ -2694,8 +2660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique ID for a job. </p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p> The unique ID for a job. </p>
@@ -2703,23 +2669,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more artifacts.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more artifacts.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
@@ -2731,7 +2693,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBackendEnvironments`.
     ///
     /// <p> Lists the backend environments for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackendEnvironments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2776,10 +2738,10 @@ pub mod fluent_builders {
                 crate::input::ListBackendEnvironmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2788,8 +2750,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -2798,8 +2760,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the backend environment </p>
-        pub fn environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(inp);
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p> The name of the backend environment </p>
@@ -2810,23 +2772,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_name(input);
             self
         }
-        /// <p> A pagination token. Set to null to start listing backend environments from the start.
-        /// If a non-null pagination token is returned in a result, pass its value in here to list
-        /// more backend environments. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing backend environments from the start.
-        /// If a non-null pagination token is returned in a result, pass its value in here to list
-        /// more backend environments. </p>
+        /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
@@ -2838,7 +2796,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBranches`.
     ///
     /// <p> Lists the branches of an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBranches<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2883,10 +2841,10 @@ pub mod fluent_builders {
                 crate::input::ListBranchesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2895,8 +2853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -2904,23 +2862,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_app_id(input);
             self
         }
-        /// <p> A pagination token. Set to null to start listing branches from the start. If a
-        /// non-null pagination token is returned in a result, pass its value in here to list more
-        /// branches. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing branches from the start. If a
-        /// non-null pagination token is returned in a result, pass its value in here to list more
-        /// branches. </p>
+        /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
@@ -2932,7 +2886,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDomainAssociations`.
     ///
     /// <p> Returns the domain associations for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDomainAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2977,10 +2931,10 @@ pub mod fluent_builders {
                 crate::input::ListDomainAssociationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2989,8 +2943,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -2998,23 +2952,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_app_id(input);
             self
         }
-        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
-        /// pagination token is returned in a result. Pass its value in here to list more projects.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
-        /// pagination token is returned in a result. Pass its value in here to list more projects.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
@@ -3026,7 +2976,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJobs`.
     ///
     /// <p> Lists the jobs for a branch of an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3071,10 +3021,10 @@ pub mod fluent_builders {
                 crate::input::ListJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3083,8 +3033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -3093,8 +3043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for a branch. </p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for a branch. </p>
@@ -3102,23 +3052,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_branch_name(input);
             self
         }
-        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more steps.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more steps.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
@@ -3130,7 +3076,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p> Returns a list of tags for a specified Amazon Resource Name (ARN). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3175,10 +3121,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3187,8 +3133,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) to use to list tags. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) to use to list tags. </p>
@@ -3200,7 +3146,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWebhooks`.
     ///
     /// <p> Returns a list of webhooks for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWebhooks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3245,10 +3191,10 @@ pub mod fluent_builders {
                 crate::input::ListWebhooksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3257,8 +3203,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -3266,23 +3212,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_app_id(input);
             self
         }
-        /// <p> A pagination token. Set to null to start listing webhooks from the start. If
-        /// non-null,the pagination token is returned in a result. Pass its value in here to list
-        /// more webhooks. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing webhooks from the start. If
-        /// non-null,the pagination token is returned in a result. Pass its value in here to list
-        /// more webhooks. </p>
+        /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
@@ -3293,9 +3235,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartDeployment`.
     ///
-    /// <p> Starts a deployment for a manually deployed app. Manually deployed apps are not
-    /// connected to a repository. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Starts a deployment for a manually deployed app. Manually deployed apps are not connected to a repository. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3340,10 +3281,10 @@ pub mod fluent_builders {
                 crate::input::StartDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3352,8 +3293,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -3362,8 +3303,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch, for the job. </p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch, for the job. </p>
@@ -3372,8 +3313,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The job ID for this deployment, generated by the create deployment request. </p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p> The job ID for this deployment, generated by the create deployment request. </p>
@@ -3381,16 +3322,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p> The source URL for this deployment, used when calling start deployment without create
-        /// deployment. The source URL can be any HTTP GET URL that is publicly accessible and
-        /// downloads a single .zip file. </p>
-        pub fn source_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_url(inp);
+        /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
+        pub fn source_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_url(input.into());
             self
         }
-        /// <p> The source URL for this deployment, used when calling start deployment without create
-        /// deployment. The source URL can be any HTTP GET URL that is publicly accessible and
-        /// downloads a single .zip file. </p>
+        /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
         pub fn set_source_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_source_url(input);
             self
@@ -3399,7 +3336,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartJob`.
     ///
     /// <p> Starts a new job for a branch of an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3444,10 +3381,10 @@ pub mod fluent_builders {
                 crate::input::StartJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3456,8 +3393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -3466,8 +3403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The branch name for the job. </p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The branch name for the job. </p>
@@ -3475,39 +3412,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_branch_name(input);
             self
         }
-        /// <p> The unique ID for an existing job. This is required if the value of
-        /// <code>jobType</code> is <code>RETRY</code>. </p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p> The unique ID for an existing job. This is required if the value of
-        /// <code>jobType</code> is <code>RETRY</code>. </p>
+        /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job
-        /// with the latest change from the specified branch. This value is available only for apps
-        /// that are connected to a repository. The job type <code>RETRY</code> retries an existing
-        /// job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also
-        /// required. </p>
-        pub fn job_type(mut self, inp: crate::model::JobType) -> Self {
-            self.inner = self.inner.job_type(inp);
+        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
+        pub fn job_type(mut self, input: crate::model::JobType) -> Self {
+            self.inner = self.inner.job_type(input);
             self
         }
-        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job
-        /// with the latest change from the specified branch. This value is available only for apps
-        /// that are connected to a repository. The job type <code>RETRY</code> retries an existing
-        /// job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also
-        /// required. </p>
+        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.inner = self.inner.set_job_type(input);
             self
         }
         /// <p> A descriptive reason for starting this job. </p>
-        pub fn job_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_reason(inp);
+        pub fn job_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_reason(input.into());
             self
         }
         /// <p> A descriptive reason for starting this job. </p>
@@ -3516,8 +3443,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The commit ID from a third-party repository provider for the job. </p>
-        pub fn commit_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_id(inp);
+        pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_id(input.into());
             self
         }
         /// <p> The commit ID from a third-party repository provider for the job. </p>
@@ -3526,8 +3453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The commit message from a third-party repository provider for the job. </p>
-        pub fn commit_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(inp);
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p> The commit message from a third-party repository provider for the job. </p>
@@ -3539,8 +3466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The commit date and time for the job. </p>
-        pub fn commit_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.commit_time(inp);
+        pub fn commit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.commit_time(input);
             self
         }
         /// <p> The commit date and time for the job. </p>
@@ -3555,7 +3482,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopJob`.
     ///
     /// <p> Stops a job that is in progress for a branch of an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3600,10 +3527,10 @@ pub mod fluent_builders {
                 crate::input::StopJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3612,8 +3539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -3622,8 +3549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch, for the job. </p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch, for the job. </p>
@@ -3632,8 +3559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique id for the job. </p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p> The unique id for the job. </p>
@@ -3645,7 +3572,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p> Tags the resource with a tag key and value. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3690,10 +3617,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3702,8 +3629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) to use to tag a resource. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) to use to tag a resource. </p>
@@ -3721,7 +3648,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p> The tags used to tag the resource. </p>
@@ -3738,7 +3665,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p> Untags a resource with a specified Amazon Resource Name (ARN). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3783,10 +3710,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3795,8 +3722,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) to use to untag a resource. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) to use to untag a resource. </p>
@@ -3809,8 +3736,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p> The tag keys to use to untag a resource. </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p> The tag keys to use to untag a resource. </p>
@@ -3825,7 +3752,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApp`.
     ///
     /// <p> Updates an existing Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3870,10 +3797,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3882,8 +3809,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -3892,8 +3819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for an Amplify app. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name for an Amplify app. </p>
@@ -3902,8 +3829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description for an Amplify app. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description for an Amplify app. </p>
@@ -3912,8 +3839,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The platform for an Amplify app. </p>
-        pub fn platform(mut self, inp: crate::model::Platform) -> Self {
-            self.inner = self.inner.platform(inp);
+        pub fn platform(mut self, input: crate::model::Platform) -> Self {
+            self.inner = self.inner.platform(input);
             self
         }
         /// <p> The platform for an Amplify app. </p>
@@ -3922,8 +3849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-        pub fn iam_service_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_service_role_arn(inp);
+        pub fn iam_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_service_role_arn(input.into());
             self
         }
         /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
@@ -3944,7 +3871,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.environment_variables(k, v);
+            self.inner = self.inner.environment_variables(k.into(), v.into());
             self
         }
         /// <p> The environment variables for an Amplify app. </p>
@@ -3958,8 +3885,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables branch auto-building for an Amplify app. </p>
-        pub fn enable_branch_auto_build(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_branch_auto_build(inp);
+        pub fn enable_branch_auto_build(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_branch_auto_build(input);
             self
         }
         /// <p> Enables branch auto-building for an Amplify app. </p>
@@ -3967,21 +3894,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_branch_auto_build(input);
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
-        pub fn enable_branch_auto_deletion(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_branch_auto_deletion(inp);
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
+        pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_branch_auto_deletion(input);
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn set_enable_branch_auto_deletion(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_branch_auto_deletion(input);
             self
         }
         /// <p> Enables basic authorization for an Amplify app. </p>
-        pub fn enable_basic_auth(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_basic_auth(inp);
+        pub fn enable_basic_auth(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_basic_auth(input);
             self
         }
         /// <p> Enables basic authorization for an Amplify app. </p>
@@ -3990,8 +3915,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The basic authorization credentials for an Amplify app. </p>
-        pub fn basic_auth_credentials(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.basic_auth_credentials(inp);
+        pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.basic_auth_credentials(input.into());
             self
         }
         /// <p> The basic authorization credentials for an Amplify app. </p>
@@ -4007,8 +3932,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_custom_rules`](Self::set_custom_rules).
         ///
         /// <p> The custom redirect and rewrite rules for an Amplify app. </p>
-        pub fn custom_rules(mut self, inp: impl Into<crate::model::CustomRule>) -> Self {
-            self.inner = self.inner.custom_rules(inp);
+        pub fn custom_rules(mut self, input: crate::model::CustomRule) -> Self {
+            self.inner = self.inner.custom_rules(input);
             self
         }
         /// <p> The custom redirect and rewrite rules for an Amplify app. </p>
@@ -4020,8 +3945,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The build specification (build spec) for an Amplify app. </p>
-        pub fn build_spec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_spec(inp);
+        pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_spec(input.into());
             self
         }
         /// <p> The build specification (build spec) for an Amplify app. </p>
@@ -4030,8 +3955,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The custom HTTP headers for an Amplify app.</p>
-        pub fn custom_headers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_headers(inp);
+        pub fn custom_headers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_headers(input.into());
             self
         }
         /// <p>The custom HTTP headers for an Amplify app.</p>
@@ -4043,8 +3968,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables automated branch creation for an Amplify app. </p>
-        pub fn enable_auto_branch_creation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_auto_branch_creation(inp);
+        pub fn enable_auto_branch_creation(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_branch_creation(input);
             self
         }
         /// <p> Enables automated branch creation for an Amplify app. </p>
@@ -4059,9 +3984,9 @@ pub mod fluent_builders {
         /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
         pub fn auto_branch_creation_patterns(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_branch_creation_patterns(inp);
+            self.inner = self.inner.auto_branch_creation_patterns(input.into());
             self
         }
         /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
@@ -4075,9 +4000,9 @@ pub mod fluent_builders {
         /// <p> The automated branch creation configuration for an Amplify app. </p>
         pub fn auto_branch_creation_config(
             mut self,
-            inp: crate::model::AutoBranchCreationConfig,
+            input: crate::model::AutoBranchCreationConfig,
         ) -> Self {
-            self.inner = self.inner.auto_branch_creation_config(inp);
+            self.inner = self.inner.auto_branch_creation_config(input);
             self
         }
         /// <p> The automated branch creation configuration for an Amplify app. </p>
@@ -4089,8 +4014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the repository for an Amplify app </p>
-        pub fn repository(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(inp);
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
         /// <p> The name of the repository for an Amplify app </p>
@@ -4098,30 +4023,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository(input);
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
-        /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
-        /// </p>
-        pub fn oauth_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.oauth_token(inp);
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
+        pub fn oauth_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.oauth_token(input.into());
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
-        /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
-        /// </p>
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
         pub fn set_oauth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_oauth_token(input);
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The token is used to create webhook and a read-only deploy key. The token is not stored.
-        /// </p>
-        pub fn access_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(inp);
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The token is used to create webhook and a read-only deploy key. The token is not stored. </p>
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The token is used to create webhook and a read-only deploy key. The token is not stored.
-        /// </p>
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The token is used to create webhook and a read-only deploy key. The token is not stored. </p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_token(input);
             self
@@ -4130,7 +4047,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBranch`.
     ///
     /// <p> Updates a branch for an Amplify app. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBranch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4175,10 +4092,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBranchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4187,8 +4104,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -4197,8 +4114,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch. </p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch. </p>
@@ -4207,8 +4124,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description for the branch. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description for the branch. </p>
@@ -4217,8 +4134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The framework for the branch. </p>
-        pub fn framework(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework(inp);
+        pub fn framework(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework(input.into());
             self
         }
         /// <p> The framework for the branch. </p>
@@ -4227,8 +4144,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Describes the current stage for the branch. </p>
-        pub fn stage(mut self, inp: crate::model::Stage) -> Self {
-            self.inner = self.inner.stage(inp);
+        pub fn stage(mut self, input: crate::model::Stage) -> Self {
+            self.inner = self.inner.stage(input);
             self
         }
         /// <p> Describes the current stage for the branch. </p>
@@ -4237,8 +4154,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables notifications for the branch. </p>
-        pub fn enable_notification(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_notification(inp);
+        pub fn enable_notification(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_notification(input);
             self
         }
         /// <p> Enables notifications for the branch. </p>
@@ -4247,8 +4164,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables auto building for the branch. </p>
-        pub fn enable_auto_build(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_auto_build(inp);
+        pub fn enable_auto_build(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_build(input);
             self
         }
         /// <p> Enables auto building for the branch. </p>
@@ -4266,7 +4183,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.environment_variables(k, v);
+            self.inner = self.inner.environment_variables(k.into(), v.into());
             self
         }
         /// <p> The environment variables for the branch. </p>
@@ -4280,8 +4197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The basic authorization credentials for the branch. </p>
-        pub fn basic_auth_credentials(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.basic_auth_credentials(inp);
+        pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.basic_auth_credentials(input.into());
             self
         }
         /// <p> The basic authorization credentials for the branch. </p>
@@ -4293,8 +4210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables basic authorization for the branch. </p>
-        pub fn enable_basic_auth(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_basic_auth(inp);
+        pub fn enable_basic_auth(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_basic_auth(input);
             self
         }
         /// <p> Enables basic authorization for the branch. </p>
@@ -4304,8 +4221,8 @@ pub mod fluent_builders {
         }
         /// <p>Enables performance mode for the branch.</p>
         /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
-        pub fn enable_performance_mode(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_performance_mode(inp);
+        pub fn enable_performance_mode(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_performance_mode(input);
             self
         }
         /// <p>Enables performance mode for the branch.</p>
@@ -4315,8 +4232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The build specification (build spec) for the branch. </p>
-        pub fn build_spec(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_spec(inp);
+        pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_spec(input.into());
             self
         }
         /// <p> The build specification (build spec) for the branch. </p>
@@ -4325,8 +4242,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The content Time to Live (TTL) for the website in seconds. </p>
-        pub fn ttl(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ttl(inp);
+        pub fn ttl(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ttl(input.into());
             self
         }
         /// <p> The content Time to Live (TTL) for the website in seconds. </p>
@@ -4335,8 +4252,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The display name for a branch. This is used as the default domain prefix. </p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p> The display name for a branch. This is used as the default domain prefix. </p>
@@ -4345,8 +4262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables pull request previews for this branch. </p>
-        pub fn enable_pull_request_preview(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_pull_request_preview(inp);
+        pub fn enable_pull_request_preview(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_pull_request_preview(input);
             self
         }
         /// <p> Enables pull request previews for this branch. </p>
@@ -4357,9 +4274,9 @@ pub mod fluent_builders {
         /// <p> The Amplify environment name for the pull request. </p>
         pub fn pull_request_environment_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.pull_request_environment_name(inp);
+            self.inner = self.inner.pull_request_environment_name(input.into());
             self
         }
         /// <p> The Amplify environment name for the pull request. </p>
@@ -4370,14 +4287,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pull_request_environment_name(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
-        pub fn backend_environment_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_arn(inp);
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+        pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn set_backend_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4389,7 +4304,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDomainAssociation`.
     ///
     /// <p> Creates a new domain association for an Amplify app.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomainAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4434,10 +4349,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDomainAssociationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4446,8 +4361,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -4456,8 +4371,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the domain. </p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(inp);
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p> The name of the domain. </p>
@@ -4466,8 +4381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables the automated creation of subdomains for branches. </p>
-        pub fn enable_auto_sub_domain(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_auto_sub_domain(inp);
+        pub fn enable_auto_sub_domain(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_sub_domain(input);
             self
         }
         /// <p> Enables the automated creation of subdomains for branches. </p>
@@ -4480,11 +4395,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sub_domain_settings`](Self::set_sub_domain_settings).
         ///
         /// <p> Describes the settings for the subdomain. </p>
-        pub fn sub_domain_settings(
-            mut self,
-            inp: impl Into<crate::model::SubDomainSetting>,
-        ) -> Self {
-            self.inner = self.inner.sub_domain_settings(inp);
+        pub fn sub_domain_settings(mut self, input: crate::model::SubDomainSetting) -> Self {
+            self.inner = self.inner.sub_domain_settings(input);
             self
         }
         /// <p> Describes the settings for the subdomain. </p>
@@ -4502,9 +4414,9 @@ pub mod fluent_builders {
         /// <p> Sets the branch patterns for automatic subdomain creation. </p>
         pub fn auto_sub_domain_creation_patterns(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_sub_domain_creation_patterns(inp);
+            self.inner = self.inner.auto_sub_domain_creation_patterns(input.into());
             self
         }
         /// <p> Sets the branch patterns for automatic subdomain creation. </p>
@@ -4515,14 +4427,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_sub_domain_creation_patterns(input);
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
-        pub fn auto_sub_domain_iam_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_sub_domain_iam_role(inp);
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
+        pub fn auto_sub_domain_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_sub_domain_iam_role(input.into());
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn set_auto_sub_domain_iam_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4534,7 +4444,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWebhook`.
     ///
     /// <p> Updates a webhook. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWebhook<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4579,10 +4489,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWebhookInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4591,8 +4501,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for a webhook. </p>
-        pub fn webhook_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.webhook_id(inp);
+        pub fn webhook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.webhook_id(input.into());
             self
         }
         /// <p> The unique ID for a webhook. </p>
@@ -4601,8 +4511,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for a branch that is part of an Amplify app. </p>
-        pub fn branch_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(inp);
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for a branch that is part of an Amplify app. </p>
@@ -4611,8 +4521,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description for a webhook. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description for a webhook. </p>
@@ -4622,6 +4532,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

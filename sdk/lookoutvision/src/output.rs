@@ -176,6 +176,60 @@ impl StopModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartModelPackagingJobOutput {
+    /// <p>The job name for the model packaging job. If you don't supply a job name in the <code>JobName</code> input parameter, the service creates a job name for you. </p>
+    pub job_name: std::option::Option<std::string::String>,
+}
+impl StartModelPackagingJobOutput {
+    /// <p>The job name for the model packaging job. If you don't supply a job name in the <code>JobName</code> input parameter, the service creates a job name for you. </p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+}
+impl std::fmt::Debug for StartModelPackagingJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartModelPackagingJobOutput");
+        formatter.field("job_name", &self.job_name);
+        formatter.finish()
+    }
+}
+/// See [`StartModelPackagingJobOutput`](crate::output::StartModelPackagingJobOutput)
+pub mod start_model_packaging_job_output {
+    /// A builder for [`StartModelPackagingJobOutput`](crate::output::StartModelPackagingJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The job name for the model packaging job. If you don't supply a job name in the <code>JobName</code> input parameter, the service creates a job name for you. </p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p>The job name for the model packaging job. If you don't supply a job name in the <code>JobName</code> input parameter, the service creates a job name for you. </p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartModelPackagingJobOutput`](crate::output::StartModelPackagingJobOutput)
+        pub fn build(self) -> crate::output::StartModelPackagingJobOutput {
+            crate::output::StartModelPackagingJobOutput {
+                job_name: self.job_name,
+            }
+        }
+    }
+}
+impl StartModelPackagingJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartModelPackagingJobOutput`](crate::output::StartModelPackagingJobOutput)
+    pub fn builder() -> crate::output::start_model_packaging_job_output::Builder {
+        crate::output::start_model_packaging_job_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartModelOutput {
     /// <p>The current running status of the model.</p>
     pub status: std::option::Option<crate::model::ModelHostingStatus>,
@@ -264,9 +318,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A map of tag keys and values attached to the specified model.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -297,8 +351,7 @@ impl ListTagsForResourceOutput {
 pub struct ListProjectsOutput {
     /// <p>A list of projects in your AWS account.</p>
     pub projects: std::option::Option<std::vec::Vec<crate::model::ProjectMetadata>>,
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-    /// that you can use in the subsequent request to retrieve the next set of projects.</p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -306,8 +359,7 @@ impl ListProjectsOutput {
     pub fn projects(&self) -> std::option::Option<&[crate::model::ProjectMetadata]> {
         self.projects.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-    /// that you can use in the subsequent request to retrieve the next set of projects.</p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -335,9 +387,9 @@ pub mod list_projects_output {
         /// To override the contents of this collection use [`set_projects`](Self::set_projects).
         ///
         /// <p>A list of projects in your AWS account.</p>
-        pub fn projects(mut self, input: impl Into<crate::model::ProjectMetadata>) -> Self {
+        pub fn projects(mut self, input: crate::model::ProjectMetadata) -> Self {
             let mut v = self.projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projects = Some(v);
             self
         }
@@ -349,14 +401,12 @@ pub mod list_projects_output {
             self.projects = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-        /// that you can use in the subsequent request to retrieve the next set of projects.</p>
+        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-        /// that you can use in the subsequent request to retrieve the next set of projects.</p>
+        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -383,8 +433,7 @@ impl ListProjectsOutput {
 pub struct ListModelsOutput {
     /// <p>A list of model versions in the specified project. </p>
     pub models: std::option::Option<std::vec::Vec<crate::model::ModelMetadata>>,
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-    /// that you can use in the subsequent request to retrieve the next set of models. </p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListModelsOutput {
@@ -392,8 +441,7 @@ impl ListModelsOutput {
     pub fn models(&self) -> std::option::Option<&[crate::model::ModelMetadata]> {
         self.models.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-    /// that you can use in the subsequent request to retrieve the next set of models. </p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -421,9 +469,9 @@ pub mod list_models_output {
         /// To override the contents of this collection use [`set_models`](Self::set_models).
         ///
         /// <p>A list of model versions in the specified project. </p>
-        pub fn models(mut self, input: impl Into<crate::model::ModelMetadata>) -> Self {
+        pub fn models(mut self, input: crate::model::ModelMetadata) -> Self {
             let mut v = self.models.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.models = Some(v);
             self
         }
@@ -435,14 +483,12 @@ pub mod list_models_output {
             self.models = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-        /// that you can use in the subsequent request to retrieve the next set of models. </p>
+        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-        /// that you can use in the subsequent request to retrieve the next set of models. </p>
+        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -466,11 +512,99 @@ impl ListModelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListModelPackagingJobsOutput {
+    /// <p> A list of the model packaging jobs created for the specified Amazon Lookout for Vision project. </p>
+    pub model_packaging_jobs:
+        std::option::Option<std::vec::Vec<crate::model::ModelPackagingJobMetadata>>,
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListModelPackagingJobsOutput {
+    /// <p> A list of the model packaging jobs created for the specified Amazon Lookout for Vision project. </p>
+    pub fn model_packaging_jobs(
+        &self,
+    ) -> std::option::Option<&[crate::model::ModelPackagingJobMetadata]> {
+        self.model_packaging_jobs.as_deref()
+    }
+    /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListModelPackagingJobsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListModelPackagingJobsOutput");
+        formatter.field("model_packaging_jobs", &self.model_packaging_jobs);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListModelPackagingJobsOutput`](crate::output::ListModelPackagingJobsOutput)
+pub mod list_model_packaging_jobs_output {
+    /// A builder for [`ListModelPackagingJobsOutput`](crate::output::ListModelPackagingJobsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_packaging_jobs:
+            std::option::Option<std::vec::Vec<crate::model::ModelPackagingJobMetadata>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `model_packaging_jobs`.
+        ///
+        /// To override the contents of this collection use [`set_model_packaging_jobs`](Self::set_model_packaging_jobs).
+        ///
+        /// <p> A list of the model packaging jobs created for the specified Amazon Lookout for Vision project. </p>
+        pub fn model_packaging_jobs(
+            mut self,
+            input: crate::model::ModelPackagingJobMetadata,
+        ) -> Self {
+            let mut v = self.model_packaging_jobs.unwrap_or_default();
+            v.push(input);
+            self.model_packaging_jobs = Some(v);
+            self
+        }
+        /// <p> A list of the model packaging jobs created for the specified Amazon Lookout for Vision project. </p>
+        pub fn set_model_packaging_jobs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ModelPackagingJobMetadata>>,
+        ) -> Self {
+            self.model_packaging_jobs = input;
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListModelPackagingJobsOutput`](crate::output::ListModelPackagingJobsOutput)
+        pub fn build(self) -> crate::output::ListModelPackagingJobsOutput {
+            crate::output::ListModelPackagingJobsOutput {
+                model_packaging_jobs: self.model_packaging_jobs,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListModelPackagingJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListModelPackagingJobsOutput`](crate::output::ListModelPackagingJobsOutput)
+    pub fn builder() -> crate::output::list_model_packaging_jobs_output::Builder {
+        crate::output::list_model_packaging_jobs_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetEntriesOutput {
     /// <p>A list of the entries (JSON Lines) within the dataset.</p>
     pub dataset_entries: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-    /// that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatasetEntriesOutput {
@@ -478,8 +612,7 @@ impl ListDatasetEntriesOutput {
     pub fn dataset_entries(&self) -> std::option::Option<&[std::string::String]> {
         self.dataset_entries.as_deref()
     }
-    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-    /// that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
+    /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -521,14 +654,12 @@ pub mod list_dataset_entries_output {
             self.dataset_entries = input;
             self
         }
-        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-        /// that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
+        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token
-        /// that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
+        /// <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -660,6 +791,72 @@ impl DescribeProjectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectOutput`](crate::output::DescribeProjectOutput)
     pub fn builder() -> crate::output::describe_project_output::Builder {
         crate::output::describe_project_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeModelPackagingJobOutput {
+    /// <p>The description of the model packaging job. </p>
+    pub model_packaging_description: std::option::Option<crate::model::ModelPackagingDescription>,
+}
+impl DescribeModelPackagingJobOutput {
+    /// <p>The description of the model packaging job. </p>
+    pub fn model_packaging_description(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelPackagingDescription> {
+        self.model_packaging_description.as_ref()
+    }
+}
+impl std::fmt::Debug for DescribeModelPackagingJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeModelPackagingJobOutput");
+        formatter.field(
+            "model_packaging_description",
+            &self.model_packaging_description,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DescribeModelPackagingJobOutput`](crate::output::DescribeModelPackagingJobOutput)
+pub mod describe_model_packaging_job_output {
+    /// A builder for [`DescribeModelPackagingJobOutput`](crate::output::DescribeModelPackagingJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) model_packaging_description:
+            std::option::Option<crate::model::ModelPackagingDescription>,
+    }
+    impl Builder {
+        /// <p>The description of the model packaging job. </p>
+        pub fn model_packaging_description(
+            mut self,
+            input: crate::model::ModelPackagingDescription,
+        ) -> Self {
+            self.model_packaging_description = Some(input);
+            self
+        }
+        /// <p>The description of the model packaging job. </p>
+        pub fn set_model_packaging_description(
+            mut self,
+            input: std::option::Option<crate::model::ModelPackagingDescription>,
+        ) -> Self {
+            self.model_packaging_description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeModelPackagingJobOutput`](crate::output::DescribeModelPackagingJobOutput)
+        pub fn build(self) -> crate::output::DescribeModelPackagingJobOutput {
+            crate::output::DescribeModelPackagingJobOutput {
+                model_packaging_description: self.model_packaging_description,
+            }
+        }
+    }
+}
+impl DescribeModelPackagingJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeModelPackagingJobOutput`](crate::output::DescribeModelPackagingJobOutput)
+    pub fn builder() -> crate::output::describe_model_packaging_job_output::Builder {
+        crate::output::describe_model_packaging_job_output::Builder::default()
     }
 }
 

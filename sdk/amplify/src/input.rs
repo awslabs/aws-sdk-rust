@@ -86,30 +86,22 @@ pub mod create_app_input {
             self.iam_service_role_arn = input;
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
-        /// token is used to create a webhook and a read-only deploy key. The OAuth token is not
-        /// stored. </p>
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
         pub fn oauth_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.oauth_token = Some(input.into());
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
-        /// token is used to create a webhook and a read-only deploy key. The OAuth token is not
-        /// stored. </p>
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
         pub fn set_oauth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.oauth_token = input;
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The personal access token is used to create a webhook and a read-only deploy key. The
-        /// token is not stored. </p>
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored. </p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The personal access token is used to create a webhook and a read-only deploy key. The
-        /// token is not stored. </p>
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored. </p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -149,26 +141,22 @@ pub mod create_app_input {
             self.enable_branch_auto_build = input;
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
             self.enable_branch_auto_deletion = Some(input);
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn set_enable_branch_auto_deletion(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_branch_auto_deletion = input;
             self
         }
-        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
-        /// are part of this app. </p>
+        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
         pub fn enable_basic_auth(mut self, input: bool) -> Self {
             self.enable_basic_auth = Some(input);
             self
         }
-        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
-        /// are part of this app. </p>
+        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
         pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_basic_auth = input;
             self
@@ -191,9 +179,9 @@ pub mod create_app_input {
         /// To override the contents of this collection use [`set_custom_rules`](Self::set_custom_rules).
         ///
         /// <p> The custom rewrite and redirect rules for an Amplify app. </p>
-        pub fn custom_rules(mut self, input: impl Into<crate::model::CustomRule>) -> Self {
+        pub fn custom_rules(mut self, input: crate::model::CustomRule) -> Self {
             let mut v = self.custom_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_rules = Some(v);
             self
         }
@@ -333,7 +321,7 @@ pub mod create_app_input {
 #[doc(hidden)]
 pub type CreateAppInputOperationOutputAlias = crate::operation::CreateApp;
 #[doc(hidden)]
-pub type CreateAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInput {
     /// Consumes the builder and constructs an Operation<[`CreateApp`](crate::operation::CreateApp)>
     #[allow(clippy::let_and_return)]
@@ -344,7 +332,7 @@ impl CreateAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -421,7 +409,7 @@ impl CreateAppInput {
                     "CreateApp",
                     "amplify",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -522,7 +510,7 @@ pub mod create_backend_environment_input {
 pub type CreateBackendEnvironmentInputOperationOutputAlias =
     crate::operation::CreateBackendEnvironment;
 #[doc(hidden)]
-pub type CreateBackendEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBackendEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBackendEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackendEnvironment`](crate::operation::CreateBackendEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -533,7 +521,7 @@ impl CreateBackendEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBackendEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -631,7 +619,7 @@ impl CreateBackendEnvironmentInput {
             "CreateBackendEnvironment",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -895,14 +883,12 @@ pub mod create_branch_input {
             self.pull_request_environment_name = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.backend_environment_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn set_backend_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -943,7 +929,7 @@ pub mod create_branch_input {
 #[doc(hidden)]
 pub type CreateBranchInputOperationOutputAlias = crate::operation::CreateBranch;
 #[doc(hidden)]
-pub type CreateBranchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBranchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBranchInput {
     /// Consumes the builder and constructs an Operation<[`CreateBranch`](crate::operation::CreateBranch)>
     #[allow(clippy::let_and_return)]
@@ -954,7 +940,7 @@ impl CreateBranchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBranch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1049,7 +1035,7 @@ impl CreateBranchInput {
             "CreateBranch",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1109,10 +1095,7 @@ pub mod create_deployment_input {
         ///
         /// To override the contents of this collection use [`set_file_map`](Self::set_file_map).
         ///
-        /// <p> An optional file map that contains the file name as the key and the file content md5
-        /// hash as the value. If this argument is provided, the service will generate a unique
-        /// upload URL per file. Otherwise, the service will only generate a single upload URL for
-        /// the zipped files. </p>
+        /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
         pub fn file_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -1123,10 +1106,7 @@ pub mod create_deployment_input {
             self.file_map = Some(hash_map);
             self
         }
-        /// <p> An optional file map that contains the file name as the key and the file content md5
-        /// hash as the value. If this argument is provided, the service will generate a unique
-        /// upload URL per file. Otherwise, the service will only generate a single upload URL for
-        /// the zipped files. </p>
+        /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
         pub fn set_file_map(
             mut self,
             input: std::option::Option<
@@ -1154,7 +1134,7 @@ pub mod create_deployment_input {
 #[doc(hidden)]
 pub type CreateDeploymentInputOperationOutputAlias = crate::operation::CreateDeployment;
 #[doc(hidden)]
-pub type CreateDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeployment`](crate::operation::CreateDeployment)>
     #[allow(clippy::let_and_return)]
@@ -1165,7 +1145,7 @@ impl CreateDeploymentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDeployment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1281,7 +1261,7 @@ impl CreateDeploymentInput {
             "CreateDeployment",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1355,12 +1335,9 @@ pub mod create_domain_association_input {
         /// To override the contents of this collection use [`set_sub_domain_settings`](Self::set_sub_domain_settings).
         ///
         /// <p> The setting for the subdomain. </p>
-        pub fn sub_domain_settings(
-            mut self,
-            input: impl Into<crate::model::SubDomainSetting>,
-        ) -> Self {
+        pub fn sub_domain_settings(mut self, input: crate::model::SubDomainSetting) -> Self {
             let mut v = self.sub_domain_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sub_domain_settings = Some(v);
             self
         }
@@ -1394,14 +1371,12 @@ pub mod create_domain_association_input {
             self.auto_sub_domain_creation_patterns = input;
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn auto_sub_domain_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.auto_sub_domain_iam_role = Some(input.into());
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn set_auto_sub_domain_iam_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1431,7 +1406,7 @@ pub mod create_domain_association_input {
 pub type CreateDomainAssociationInputOperationOutputAlias =
     crate::operation::CreateDomainAssociation;
 #[doc(hidden)]
-pub type CreateDomainAssociationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDomainAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDomainAssociationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDomainAssociation`](crate::operation::CreateDomainAssociation)>
     #[allow(clippy::let_and_return)]
@@ -1442,7 +1417,7 @@ impl CreateDomainAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDomainAssociation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1540,7 +1515,7 @@ impl CreateDomainAssociationInput {
             "CreateDomainAssociation",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1622,7 +1597,7 @@ pub mod create_webhook_input {
 #[doc(hidden)]
 pub type CreateWebhookInputOperationOutputAlias = crate::operation::CreateWebhook;
 #[doc(hidden)]
-pub type CreateWebhookInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWebhookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWebhookInput {
     /// Consumes the builder and constructs an Operation<[`CreateWebhook`](crate::operation::CreateWebhook)>
     #[allow(clippy::let_and_return)]
@@ -1633,7 +1608,7 @@ impl CreateWebhookInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWebhook,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1728,7 +1703,7 @@ impl CreateWebhookInput {
             "CreateWebhook",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1784,7 +1759,7 @@ pub mod delete_app_input {
 #[doc(hidden)]
 pub type DeleteAppInputOperationOutputAlias = crate::operation::DeleteApp;
 #[doc(hidden)]
-pub type DeleteAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApp`](crate::operation::DeleteApp)>
     #[allow(clippy::let_and_return)]
@@ -1795,7 +1770,7 @@ impl DeleteAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1882,7 +1857,7 @@ impl DeleteAppInput {
                     "DeleteApp",
                     "amplify",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1948,7 +1923,7 @@ pub mod delete_backend_environment_input {
 pub type DeleteBackendEnvironmentInputOperationOutputAlias =
     crate::operation::DeleteBackendEnvironment;
 #[doc(hidden)]
-pub type DeleteBackendEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBackendEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBackendEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackendEnvironment`](crate::operation::DeleteBackendEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -1959,7 +1934,7 @@ impl DeleteBackendEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBackendEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2069,7 +2044,7 @@ impl DeleteBackendEnvironmentInput {
             "DeleteBackendEnvironment",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2131,7 +2106,7 @@ pub mod delete_branch_input {
 #[doc(hidden)]
 pub type DeleteBranchInputOperationOutputAlias = crate::operation::DeleteBranch;
 #[doc(hidden)]
-pub type DeleteBranchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBranchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBranchInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBranch`](crate::operation::DeleteBranch)>
     #[allow(clippy::let_and_return)]
@@ -2142,7 +2117,7 @@ impl DeleteBranchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBranch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2252,7 +2227,7 @@ impl DeleteBranchInput {
             "DeleteBranch",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2315,7 +2290,7 @@ pub mod delete_domain_association_input {
 pub type DeleteDomainAssociationInputOperationOutputAlias =
     crate::operation::DeleteDomainAssociation;
 #[doc(hidden)]
-pub type DeleteDomainAssociationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDomainAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDomainAssociationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDomainAssociation`](crate::operation::DeleteDomainAssociation)>
     #[allow(clippy::let_and_return)]
@@ -2326,7 +2301,7 @@ impl DeleteDomainAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDomainAssociation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2436,7 +2411,7 @@ impl DeleteDomainAssociationInput {
             "DeleteDomainAssociation",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2508,7 +2483,7 @@ pub mod delete_job_input {
 #[doc(hidden)]
 pub type DeleteJobInputOperationOutputAlias = crate::operation::DeleteJob;
 #[doc(hidden)]
-pub type DeleteJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJob`](crate::operation::DeleteJob)>
     #[allow(clippy::let_and_return)]
@@ -2519,7 +2494,7 @@ impl DeleteJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2643,7 +2618,7 @@ impl DeleteJobInput {
                     "DeleteJob",
                     "amplify",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2693,7 +2668,7 @@ pub mod delete_webhook_input {
 #[doc(hidden)]
 pub type DeleteWebhookInputOperationOutputAlias = crate::operation::DeleteWebhook;
 #[doc(hidden)]
-pub type DeleteWebhookInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWebhookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWebhookInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWebhook`](crate::operation::DeleteWebhook)>
     #[allow(clippy::let_and_return)]
@@ -2704,7 +2679,7 @@ impl DeleteWebhookInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWebhook,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2794,7 +2769,7 @@ impl DeleteWebhookInput {
             "DeleteWebhook",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2821,14 +2796,12 @@ pub mod generate_access_logs_input {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The time at which the logs should start. The time range specified is inclusive of the
-        /// start time. </p>
+        /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p> The time at which the logs should start. The time range specified is inclusive of the
-        /// start time. </p>
+        /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2836,14 +2809,12 @@ pub mod generate_access_logs_input {
             self.start_time = input;
             self
         }
-        /// <p> The time at which the logs should end. The time range specified is inclusive of the
-        /// end time. </p>
+        /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p> The time at which the logs should end. The time range specified is inclusive of the
-        /// end time. </p>
+        /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2890,7 +2861,7 @@ pub mod generate_access_logs_input {
 #[doc(hidden)]
 pub type GenerateAccessLogsInputOperationOutputAlias = crate::operation::GenerateAccessLogs;
 #[doc(hidden)]
-pub type GenerateAccessLogsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GenerateAccessLogsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GenerateAccessLogsInput {
     /// Consumes the builder and constructs an Operation<[`GenerateAccessLogs`](crate::operation::GenerateAccessLogs)>
     #[allow(clippy::let_and_return)]
@@ -2901,7 +2872,7 @@ impl GenerateAccessLogsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GenerateAccessLogs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2997,7 +2968,7 @@ impl GenerateAccessLogsInput {
             "GenerateAccessLogs",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3053,7 +3024,7 @@ pub mod get_app_input {
 #[doc(hidden)]
 pub type GetAppInputOperationOutputAlias = crate::operation::GetApp;
 #[doc(hidden)]
-pub type GetAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppInput {
     /// Consumes the builder and constructs an Operation<[`GetApp`](crate::operation::GetApp)>
     #[allow(clippy::let_and_return)]
@@ -3064,7 +3035,7 @@ impl GetAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3150,7 +3121,7 @@ impl GetAppInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetApp", "amplify",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3200,7 +3171,7 @@ pub mod get_artifact_url_input {
 #[doc(hidden)]
 pub type GetArtifactUrlInputOperationOutputAlias = crate::operation::GetArtifactUrl;
 #[doc(hidden)]
-pub type GetArtifactUrlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetArtifactUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetArtifactUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetArtifactUrl`](crate::operation::GetArtifactUrl)>
     #[allow(clippy::let_and_return)]
@@ -3211,7 +3182,7 @@ impl GetArtifactUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetArtifactUrl,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3301,7 +3272,7 @@ impl GetArtifactUrlInput {
             "GetArtifactUrl",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3366,7 +3337,7 @@ pub mod get_backend_environment_input {
 #[doc(hidden)]
 pub type GetBackendEnvironmentInputOperationOutputAlias = crate::operation::GetBackendEnvironment;
 #[doc(hidden)]
-pub type GetBackendEnvironmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBackendEnvironmentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBackendEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`GetBackendEnvironment`](crate::operation::GetBackendEnvironment)>
     #[allow(clippy::let_and_return)]
@@ -3377,7 +3348,7 @@ impl GetBackendEnvironmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBackendEnvironment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3487,7 +3458,7 @@ impl GetBackendEnvironmentInput {
             "GetBackendEnvironment",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3547,7 +3518,7 @@ pub mod get_branch_input {
 #[doc(hidden)]
 pub type GetBranchInputOperationOutputAlias = crate::operation::GetBranch;
 #[doc(hidden)]
-pub type GetBranchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBranchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBranchInput {
     /// Consumes the builder and constructs an Operation<[`GetBranch`](crate::operation::GetBranch)>
     #[allow(clippy::let_and_return)]
@@ -3558,7 +3529,7 @@ impl GetBranchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBranch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3666,7 +3637,7 @@ impl GetBranchInput {
                     "GetBranch",
                     "amplify",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3728,7 +3699,7 @@ pub mod get_domain_association_input {
 #[doc(hidden)]
 pub type GetDomainAssociationInputOperationOutputAlias = crate::operation::GetDomainAssociation;
 #[doc(hidden)]
-pub type GetDomainAssociationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDomainAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDomainAssociationInput {
     /// Consumes the builder and constructs an Operation<[`GetDomainAssociation`](crate::operation::GetDomainAssociation)>
     #[allow(clippy::let_and_return)]
@@ -3739,7 +3710,7 @@ impl GetDomainAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDomainAssociation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3849,7 +3820,7 @@ impl GetDomainAssociationInput {
             "GetDomainAssociation",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3921,7 +3892,7 @@ pub mod get_job_input {
 #[doc(hidden)]
 pub type GetJobInputOperationOutputAlias = crate::operation::GetJob;
 #[doc(hidden)]
-pub type GetJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobInput {
     /// Consumes the builder and constructs an Operation<[`GetJob`](crate::operation::GetJob)>
     #[allow(clippy::let_and_return)]
@@ -3932,7 +3903,7 @@ impl GetJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4055,7 +4026,7 @@ impl GetJobInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetJob", "amplify",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4105,7 +4076,7 @@ pub mod get_webhook_input {
 #[doc(hidden)]
 pub type GetWebhookInputOperationOutputAlias = crate::operation::GetWebhook;
 #[doc(hidden)]
-pub type GetWebhookInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetWebhookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetWebhookInput {
     /// Consumes the builder and constructs an Operation<[`GetWebhook`](crate::operation::GetWebhook)>
     #[allow(clippy::let_and_return)]
@@ -4116,7 +4087,7 @@ impl GetWebhookInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetWebhook,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4206,7 +4177,7 @@ impl GetWebhookInput {
             "GetWebhook",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4231,14 +4202,12 @@ pub mod list_apps_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-        /// its value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-        /// its value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4268,7 +4237,7 @@ pub mod list_apps_input {
 #[doc(hidden)]
 pub type ListAppsInputOperationOutputAlias = crate::operation::ListApps;
 #[doc(hidden)]
-pub type ListAppsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAppsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppsInput {
     /// Consumes the builder and constructs an Operation<[`ListApps`](crate::operation::ListApps)>
     #[allow(clippy::let_and_return)]
@@ -4279,7 +4248,7 @@ impl ListAppsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApps,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4367,7 +4336,7 @@ impl ListAppsInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListApps", "amplify",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4425,16 +4394,12 @@ pub mod list_artifacts_input {
             self.job_id = input;
             self
         }
-        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more artifacts.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more artifacts.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4469,7 +4434,7 @@ pub mod list_artifacts_input {
 #[doc(hidden)]
 pub type ListArtifactsInputOperationOutputAlias = crate::operation::ListArtifacts;
 #[doc(hidden)]
-pub type ListArtifactsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListArtifactsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListArtifactsInput {
     /// Consumes the builder and constructs an Operation<[`ListArtifacts`](crate::operation::ListArtifacts)>
     #[allow(clippy::let_and_return)]
@@ -4480,7 +4445,7 @@ impl ListArtifactsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListArtifacts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4623,7 +4588,7 @@ impl ListArtifactsInput {
             "ListArtifacts",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4673,16 +4638,12 @@ pub mod list_backend_environments_input {
             self.environment_name = input;
             self
         }
-        /// <p> A pagination token. Set to null to start listing backend environments from the start.
-        /// If a non-null pagination token is returned in a result, pass its value in here to list
-        /// more backend environments. </p>
+        /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing backend environments from the start.
-        /// If a non-null pagination token is returned in a result, pass its value in here to list
-        /// more backend environments. </p>
+        /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4717,7 +4678,7 @@ pub mod list_backend_environments_input {
 pub type ListBackendEnvironmentsInputOperationOutputAlias =
     crate::operation::ListBackendEnvironments;
 #[doc(hidden)]
-pub type ListBackendEnvironmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBackendEnvironmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBackendEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListBackendEnvironments`](crate::operation::ListBackendEnvironments)>
     #[allow(clippy::let_and_return)]
@@ -4728,7 +4689,7 @@ impl ListBackendEnvironmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBackendEnvironments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4841,7 +4802,7 @@ impl ListBackendEnvironmentsInput {
             "ListBackendEnvironments",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4877,16 +4838,12 @@ pub mod list_branches_input {
             self.app_id = input;
             self
         }
-        /// <p> A pagination token. Set to null to start listing branches from the start. If a
-        /// non-null pagination token is returned in a result, pass its value in here to list more
-        /// branches. </p>
+        /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing branches from the start. If a
-        /// non-null pagination token is returned in a result, pass its value in here to list more
-        /// branches. </p>
+        /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4919,7 +4876,7 @@ pub mod list_branches_input {
 #[doc(hidden)]
 pub type ListBranchesInputOperationOutputAlias = crate::operation::ListBranches;
 #[doc(hidden)]
-pub type ListBranchesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBranchesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBranchesInput {
     /// Consumes the builder and constructs an Operation<[`ListBranches`](crate::operation::ListBranches)>
     #[allow(clippy::let_and_return)]
@@ -4930,7 +4887,7 @@ impl ListBranchesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBranches,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5037,7 +4994,7 @@ impl ListBranchesInput {
             "ListBranches",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5073,16 +5030,12 @@ pub mod list_domain_associations_input {
             self.app_id = input;
             self
         }
-        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
-        /// pagination token is returned in a result. Pass its value in here to list more projects.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
-        /// pagination token is returned in a result. Pass its value in here to list more projects.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5115,7 +5068,7 @@ pub mod list_domain_associations_input {
 #[doc(hidden)]
 pub type ListDomainAssociationsInputOperationOutputAlias = crate::operation::ListDomainAssociations;
 #[doc(hidden)]
-pub type ListDomainAssociationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDomainAssociationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomainAssociations`](crate::operation::ListDomainAssociations)>
     #[allow(clippy::let_and_return)]
@@ -5126,7 +5079,7 @@ impl ListDomainAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomainAssociations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5233,7 +5186,7 @@ impl ListDomainAssociationsInput {
             "ListDomainAssociations",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5280,16 +5233,12 @@ pub mod list_jobs_input {
             self.branch_name = input;
             self
         }
-        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more steps.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more steps.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5321,7 +5270,7 @@ pub mod list_jobs_input {
 #[doc(hidden)]
 pub type ListJobsInputOperationOutputAlias = crate::operation::ListJobs;
 #[doc(hidden)]
-pub type ListJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(clippy::let_and_return)]
@@ -5332,7 +5281,7 @@ impl ListJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5456,7 +5405,7 @@ impl ListJobsInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListJobs", "amplify",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5506,7 +5455,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -5517,7 +5466,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5607,7 +5556,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5643,16 +5592,12 @@ pub mod list_webhooks_input {
             self.app_id = input;
             self
         }
-        /// <p> A pagination token. Set to null to start listing webhooks from the start. If
-        /// non-null,the pagination token is returned in a result. Pass its value in here to list
-        /// more webhooks. </p>
+        /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing webhooks from the start. If
-        /// non-null,the pagination token is returned in a result. Pass its value in here to list
-        /// more webhooks. </p>
+        /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5685,7 +5630,7 @@ pub mod list_webhooks_input {
 #[doc(hidden)]
 pub type ListWebhooksInputOperationOutputAlias = crate::operation::ListWebhooks;
 #[doc(hidden)]
-pub type ListWebhooksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWebhooksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWebhooksInput {
     /// Consumes the builder and constructs an Operation<[`ListWebhooks`](crate::operation::ListWebhooks)>
     #[allow(clippy::let_and_return)]
@@ -5696,7 +5641,7 @@ impl ListWebhooksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWebhooks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5803,7 +5748,7 @@ impl ListWebhooksInput {
             "ListWebhooks",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5860,16 +5805,12 @@ pub mod start_deployment_input {
             self.job_id = input;
             self
         }
-        /// <p> The source URL for this deployment, used when calling start deployment without create
-        /// deployment. The source URL can be any HTTP GET URL that is publicly accessible and
-        /// downloads a single .zip file. </p>
+        /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
         pub fn source_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_url = Some(input.into());
             self
         }
-        /// <p> The source URL for this deployment, used when calling start deployment without create
-        /// deployment. The source URL can be any HTTP GET URL that is publicly accessible and
-        /// downloads a single .zip file. </p>
+        /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
         pub fn set_source_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_url = input;
             self
@@ -5893,7 +5834,7 @@ pub mod start_deployment_input {
 #[doc(hidden)]
 pub type StartDeploymentInputOperationOutputAlias = crate::operation::StartDeployment;
 #[doc(hidden)]
-pub type StartDeploymentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartDeploymentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`StartDeployment`](crate::operation::StartDeployment)>
     #[allow(clippy::let_and_return)]
@@ -5904,7 +5845,7 @@ impl StartDeploymentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartDeployment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6020,7 +5961,7 @@ impl StartDeploymentInput {
             "StartDeployment",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6079,32 +6020,22 @@ pub mod start_job_input {
             self.branch_name = input;
             self
         }
-        /// <p> The unique ID for an existing job. This is required if the value of
-        /// <code>jobType</code> is <code>RETRY</code>. </p>
+        /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p> The unique ID for an existing job. This is required if the value of
-        /// <code>jobType</code> is <code>RETRY</code>. </p>
+        /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job
-        /// with the latest change from the specified branch. This value is available only for apps
-        /// that are connected to a repository. The job type <code>RETRY</code> retries an existing
-        /// job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also
-        /// required. </p>
+        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
             self.job_type = Some(input);
             self
         }
-        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job
-        /// with the latest change from the specified branch. This value is available only for apps
-        /// that are connected to a repository. The job type <code>RETRY</code> retries an existing
-        /// job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also
-        /// required. </p>
+        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.job_type = input;
             self
@@ -6176,7 +6107,7 @@ pub mod start_job_input {
 #[doc(hidden)]
 pub type StartJobInputOperationOutputAlias = crate::operation::StartJob;
 #[doc(hidden)]
-pub type StartJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartJobInput {
     /// Consumes the builder and constructs an Operation<[`StartJob`](crate::operation::StartJob)>
     #[allow(clippy::let_and_return)]
@@ -6187,7 +6118,7 @@ impl StartJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6299,7 +6230,7 @@ impl StartJobInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "StartJob", "amplify",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6379,7 +6310,7 @@ pub mod stop_job_input {
 #[doc(hidden)]
 pub type StopJobInputOperationOutputAlias = crate::operation::StopJob;
 #[doc(hidden)]
-pub type StopJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopJobInput {
     /// Consumes the builder and constructs an Operation<[`StopJob`](crate::operation::StopJob)>
     #[allow(clippy::let_and_return)]
@@ -6390,7 +6321,7 @@ impl StopJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6513,7 +6444,7 @@ impl StopJobInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "StopJob", "amplify",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6592,7 +6523,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -6603,7 +6534,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6698,7 +6629,7 @@ impl TagResourceInput {
             "TagResource",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6777,7 +6708,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -6788,7 +6719,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6891,7 +6822,7 @@ impl UntagResourceInput {
             "UntagResource",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7025,14 +6956,12 @@ pub mod update_app_input {
             self.enable_branch_auto_build = input;
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
             self.enable_branch_auto_deletion = Some(input);
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn set_enable_branch_auto_deletion(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_branch_auto_deletion = input;
             self
@@ -7065,9 +6994,9 @@ pub mod update_app_input {
         /// To override the contents of this collection use [`set_custom_rules`](Self::set_custom_rules).
         ///
         /// <p> The custom redirect and rewrite rules for an Amplify app. </p>
-        pub fn custom_rules(mut self, input: impl Into<crate::model::CustomRule>) -> Self {
+        pub fn custom_rules(mut self, input: crate::model::CustomRule) -> Self {
             let mut v = self.custom_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_rules = Some(v);
             self
         }
@@ -7160,30 +7089,22 @@ pub mod update_app_input {
             self.repository = input;
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
-        /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
-        /// </p>
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
         pub fn oauth_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.oauth_token = Some(input.into());
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
-        /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
-        /// </p>
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
         pub fn set_oauth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.oauth_token = input;
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The token is used to create webhook and a read-only deploy key. The token is not stored.
-        /// </p>
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The token is used to create webhook and a read-only deploy key. The token is not stored. </p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The token is used to create webhook and a read-only deploy key. The token is not stored.
-        /// </p>
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The token is used to create webhook and a read-only deploy key. The token is not stored. </p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -7220,7 +7141,7 @@ pub mod update_app_input {
 #[doc(hidden)]
 pub type UpdateAppInputOperationOutputAlias = crate::operation::UpdateApp;
 #[doc(hidden)]
-pub type UpdateAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAppInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApp`](crate::operation::UpdateApp)>
     #[allow(clippy::let_and_return)]
@@ -7231,7 +7152,7 @@ impl UpdateAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7323,7 +7244,7 @@ impl UpdateAppInput {
                     "UpdateApp",
                     "amplify",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7559,14 +7480,12 @@ pub mod update_branch_input {
             self.pull_request_environment_name = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.backend_environment_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn set_backend_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7606,7 +7525,7 @@ pub mod update_branch_input {
 #[doc(hidden)]
 pub type UpdateBranchInputOperationOutputAlias = crate::operation::UpdateBranch;
 #[doc(hidden)]
-pub type UpdateBranchInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBranchInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBranchInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBranch`](crate::operation::UpdateBranch)>
     #[allow(clippy::let_and_return)]
@@ -7617,7 +7536,7 @@ impl UpdateBranchInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBranch,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7732,7 +7651,7 @@ impl UpdateBranchInput {
             "UpdateBranch",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7806,12 +7725,9 @@ pub mod update_domain_association_input {
         /// To override the contents of this collection use [`set_sub_domain_settings`](Self::set_sub_domain_settings).
         ///
         /// <p> Describes the settings for the subdomain. </p>
-        pub fn sub_domain_settings(
-            mut self,
-            input: impl Into<crate::model::SubDomainSetting>,
-        ) -> Self {
+        pub fn sub_domain_settings(mut self, input: crate::model::SubDomainSetting) -> Self {
             let mut v = self.sub_domain_settings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sub_domain_settings = Some(v);
             self
         }
@@ -7845,14 +7761,12 @@ pub mod update_domain_association_input {
             self.auto_sub_domain_creation_patterns = input;
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn auto_sub_domain_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.auto_sub_domain_iam_role = Some(input.into());
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn set_auto_sub_domain_iam_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7882,7 +7796,7 @@ pub mod update_domain_association_input {
 pub type UpdateDomainAssociationInputOperationOutputAlias =
     crate::operation::UpdateDomainAssociation;
 #[doc(hidden)]
-pub type UpdateDomainAssociationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDomainAssociationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDomainAssociationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomainAssociation`](crate::operation::UpdateDomainAssociation)>
     #[allow(clippy::let_and_return)]
@@ -7893,7 +7807,7 @@ impl UpdateDomainAssociationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainAssociation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8011,7 +7925,7 @@ impl UpdateDomainAssociationInput {
             "UpdateDomainAssociation",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8093,7 +8007,7 @@ pub mod update_webhook_input {
 #[doc(hidden)]
 pub type UpdateWebhookInputOperationOutputAlias = crate::operation::UpdateWebhook;
 #[doc(hidden)]
-pub type UpdateWebhookInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateWebhookInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWebhookInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWebhook`](crate::operation::UpdateWebhook)>
     #[allow(clippy::let_and_return)]
@@ -8104,7 +8018,7 @@ impl UpdateWebhookInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWebhook,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8199,7 +8113,7 @@ impl UpdateWebhookInput {
             "UpdateWebhook",
             "amplify",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8271,8 +8185,7 @@ pub struct UpdateDomainAssociationInput {
     pub sub_domain_settings: std::option::Option<std::vec::Vec<crate::model::SubDomainSetting>>,
     /// <p> Sets the branch patterns for automatic subdomain creation. </p>
     pub auto_sub_domain_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-    /// Resource Name (ARN) for automatically creating subdomains. </p>
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     pub auto_sub_domain_iam_role: std::option::Option<std::string::String>,
 }
 impl UpdateDomainAssociationInput {
@@ -8296,8 +8209,7 @@ impl UpdateDomainAssociationInput {
     pub fn auto_sub_domain_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.auto_sub_domain_creation_patterns.as_deref()
     }
-    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-    /// Resource Name (ARN) for automatically creating subdomains. </p>
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     pub fn auto_sub_domain_iam_role(&self) -> std::option::Option<&str> {
         self.auto_sub_domain_iam_role.as_deref()
     }
@@ -8356,8 +8268,7 @@ pub struct UpdateBranchInput {
     pub enable_pull_request_preview: std::option::Option<bool>,
     /// <p> The Amplify environment name for the pull request. </p>
     pub pull_request_environment_name: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-    /// app. </p>
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub backend_environment_arn: std::option::Option<std::string::String>,
 }
 impl UpdateBranchInput {
@@ -8429,8 +8340,7 @@ impl UpdateBranchInput {
     pub fn pull_request_environment_name(&self) -> std::option::Option<&str> {
         self.pull_request_environment_name.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-    /// app. </p>
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn backend_environment_arn(&self) -> std::option::Option<&str> {
         self.backend_environment_arn.as_deref()
     }
@@ -8484,8 +8394,7 @@ pub struct UpdateAppInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Enables branch auto-building for an Amplify app. </p>
     pub enable_branch_auto_build: std::option::Option<bool>,
-    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-    /// from your Git repository. </p>
+    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     pub enable_branch_auto_deletion: std::option::Option<bool>,
     /// <p> Enables basic authorization for an Amplify app. </p>
     pub enable_basic_auth: std::option::Option<bool>,
@@ -8505,13 +8414,9 @@ pub struct UpdateAppInput {
     pub auto_branch_creation_config: std::option::Option<crate::model::AutoBranchCreationConfig>,
     /// <p> The name of the repository for an Amplify app </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
-    /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
-    /// </p>
+    /// <p> The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
     pub oauth_token: std::option::Option<std::string::String>,
-    /// <p> The personal access token for a third-party source control system for an Amplify app.
-    /// The token is used to create webhook and a read-only deploy key. The token is not stored.
-    /// </p>
+    /// <p> The personal access token for a third-party source control system for an Amplify app. The token is used to create webhook and a read-only deploy key. The token is not stored. </p>
     pub access_token: std::option::Option<std::string::String>,
 }
 impl UpdateAppInput {
@@ -8546,8 +8451,7 @@ impl UpdateAppInput {
     pub fn enable_branch_auto_build(&self) -> std::option::Option<bool> {
         self.enable_branch_auto_build
     }
-    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-    /// from your Git repository. </p>
+    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     pub fn enable_branch_auto_deletion(&self) -> std::option::Option<bool> {
         self.enable_branch_auto_deletion
     }
@@ -8589,15 +8493,11 @@ impl UpdateAppInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
-    /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
-    /// </p>
+    /// <p> The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
     pub fn oauth_token(&self) -> std::option::Option<&str> {
         self.oauth_token.as_deref()
     }
-    /// <p> The personal access token for a third-party source control system for an Amplify app.
-    /// The token is used to create webhook and a read-only deploy key. The token is not stored.
-    /// </p>
+    /// <p> The personal access token for a third-party source control system for an Amplify app. The token is used to create webhook and a read-only deploy key. The token is not stored. </p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -8743,14 +8643,9 @@ pub struct StartJobInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p> The branch name for the job. </p>
     pub branch_name: std::option::Option<std::string::String>,
-    /// <p> The unique ID for an existing job. This is required if the value of
-    /// <code>jobType</code> is <code>RETRY</code>. </p>
+    /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job
-    /// with the latest change from the specified branch. This value is available only for apps
-    /// that are connected to a repository. The job type <code>RETRY</code> retries an existing
-    /// job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also
-    /// required. </p>
+    /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
     pub job_type: std::option::Option<crate::model::JobType>,
     /// <p> A descriptive reason for starting this job. </p>
     pub job_reason: std::option::Option<std::string::String>,
@@ -8770,16 +8665,11 @@ impl StartJobInput {
     pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
-    /// <p> The unique ID for an existing job. This is required if the value of
-    /// <code>jobType</code> is <code>RETRY</code>. </p>
+    /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job
-    /// with the latest change from the specified branch. This value is available only for apps
-    /// that are connected to a repository. The job type <code>RETRY</code> retries an existing
-    /// job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also
-    /// required. </p>
+    /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
     pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
         self.job_type.as_ref()
     }
@@ -8825,9 +8715,7 @@ pub struct StartDeploymentInput {
     pub branch_name: std::option::Option<std::string::String>,
     /// <p> The job ID for this deployment, generated by the create deployment request. </p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p> The source URL for this deployment, used when calling start deployment without create
-    /// deployment. The source URL can be any HTTP GET URL that is publicly accessible and
-    /// downloads a single .zip file. </p>
+    /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
     pub source_url: std::option::Option<std::string::String>,
 }
 impl StartDeploymentInput {
@@ -8843,9 +8731,7 @@ impl StartDeploymentInput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p> The source URL for this deployment, used when calling start deployment without create
-    /// deployment. The source URL can be any HTTP GET URL that is publicly accessible and
-    /// downloads a single .zip file. </p>
+    /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
     pub fn source_url(&self) -> std::option::Option<&str> {
         self.source_url.as_deref()
     }
@@ -8867,9 +8753,7 @@ impl std::fmt::Debug for StartDeploymentInput {
 pub struct ListWebhooksInput {
     /// <p> The unique ID for an Amplify app. </p>
     pub app_id: std::option::Option<std::string::String>,
-    /// <p> A pagination token. Set to null to start listing webhooks from the start. If
-    /// non-null,the pagination token is returned in a result. Pass its value in here to list
-    /// more webhooks. </p>
+    /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
@@ -8879,9 +8763,7 @@ impl ListWebhooksInput {
     pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p> A pagination token. Set to null to start listing webhooks from the start. If
-    /// non-null,the pagination token is returned in a result. Pass its value in here to list
-    /// more webhooks. </p>
+    /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8929,9 +8811,7 @@ pub struct ListJobsInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p> The name for a branch. </p>
     pub branch_name: std::option::Option<std::string::String>,
-    /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
-    /// pagination token is returned in a result, pass its value in here to list more steps.
-    /// </p>
+    /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
@@ -8945,9 +8825,7 @@ impl ListJobsInput {
     pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
-    /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
-    /// pagination token is returned in a result, pass its value in here to list more steps.
-    /// </p>
+    /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8973,9 +8851,7 @@ impl std::fmt::Debug for ListJobsInput {
 pub struct ListDomainAssociationsInput {
     /// <p> The unique ID for an Amplify app. </p>
     pub app_id: std::option::Option<std::string::String>,
-    /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
-    /// pagination token is returned in a result. Pass its value in here to list more projects.
-    /// </p>
+    /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
@@ -8985,9 +8861,7 @@ impl ListDomainAssociationsInput {
     pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
-    /// pagination token is returned in a result. Pass its value in here to list more projects.
-    /// </p>
+    /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9012,9 +8886,7 @@ impl std::fmt::Debug for ListDomainAssociationsInput {
 pub struct ListBranchesInput {
     /// <p> The unique ID for an Amplify app. </p>
     pub app_id: std::option::Option<std::string::String>,
-    /// <p> A pagination token. Set to null to start listing branches from the start. If a
-    /// non-null pagination token is returned in a result, pass its value in here to list more
-    /// branches. </p>
+    /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
@@ -9024,9 +8896,7 @@ impl ListBranchesInput {
     pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p> A pagination token. Set to null to start listing branches from the start. If a
-    /// non-null pagination token is returned in a result, pass its value in here to list more
-    /// branches. </p>
+    /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9053,9 +8923,7 @@ pub struct ListBackendEnvironmentsInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p> The name of the backend environment </p>
     pub environment_name: std::option::Option<std::string::String>,
-    /// <p> A pagination token. Set to null to start listing backend environments from the start.
-    /// If a non-null pagination token is returned in a result, pass its value in here to list
-    /// more backend environments. </p>
+    /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
@@ -9069,9 +8937,7 @@ impl ListBackendEnvironmentsInput {
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p> A pagination token. Set to null to start listing backend environments from the start.
-    /// If a non-null pagination token is returned in a result, pass its value in here to list
-    /// more backend environments. </p>
+    /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9101,9 +8967,7 @@ pub struct ListArtifactsInput {
     pub branch_name: std::option::Option<std::string::String>,
     /// <p> The unique ID for a job. </p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
-    /// pagination token is returned in a result, pass its value in here to list more artifacts.
-    /// </p>
+    /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
@@ -9121,9 +8985,7 @@ impl ListArtifactsInput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
-    /// pagination token is returned in a result, pass its value in here to list more artifacts.
-    /// </p>
+    /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9148,15 +9010,13 @@ impl std::fmt::Debug for ListArtifactsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppsInput {
-    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-    /// its value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
 }
 impl ListAppsInput {
-    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-    /// its value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9360,11 +9220,9 @@ impl std::fmt::Debug for GetAppInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateAccessLogsInput {
-    /// <p> The time at which the logs should start. The time range specified is inclusive of the
-    /// start time. </p>
+    /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The time at which the logs should end. The time range specified is inclusive of the
-    /// end time. </p>
+    /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The name of the domain. </p>
     pub domain_name: std::option::Option<std::string::String>,
@@ -9372,13 +9230,11 @@ pub struct GenerateAccessLogsInput {
     pub app_id: std::option::Option<std::string::String>,
 }
 impl GenerateAccessLogsInput {
-    /// <p> The time at which the logs should start. The time range specified is inclusive of the
-    /// start time. </p>
+    /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p> The time at which the logs should end. The time range specified is inclusive of the
-    /// end time. </p>
+    /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -9612,8 +9468,7 @@ pub struct CreateDomainAssociationInput {
     pub sub_domain_settings: std::option::Option<std::vec::Vec<crate::model::SubDomainSetting>>,
     /// <p> Sets the branch patterns for automatic subdomain creation. </p>
     pub auto_sub_domain_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-    /// Resource Name (ARN) for automatically creating subdomains. </p>
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     pub auto_sub_domain_iam_role: std::option::Option<std::string::String>,
 }
 impl CreateDomainAssociationInput {
@@ -9637,8 +9492,7 @@ impl CreateDomainAssociationInput {
     pub fn auto_sub_domain_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.auto_sub_domain_creation_patterns.as_deref()
     }
-    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-    /// Resource Name (ARN) for automatically creating subdomains. </p>
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     pub fn auto_sub_domain_iam_role(&self) -> std::option::Option<&str> {
         self.auto_sub_domain_iam_role.as_deref()
     }
@@ -9667,10 +9521,7 @@ pub struct CreateDeploymentInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p> The name for the branch, for the job. </p>
     pub branch_name: std::option::Option<std::string::String>,
-    /// <p> An optional file map that contains the file name as the key and the file content md5
-    /// hash as the value. If this argument is provided, the service will generate a unique
-    /// upload URL per file. Otherwise, the service will only generate a single upload URL for
-    /// the zipped files. </p>
+    /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
     pub file_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9683,10 +9534,7 @@ impl CreateDeploymentInput {
     pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
-    /// <p> An optional file map that contains the file name as the key and the file content md5
-    /// hash as the value. If this argument is provided, the service will generate a unique
-    /// upload URL per file. Otherwise, the service will only generate a single upload URL for
-    /// the zipped files. </p>
+    /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
     pub fn file_map(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9745,8 +9593,7 @@ pub struct CreateBranchInput {
     pub enable_pull_request_preview: std::option::Option<bool>,
     /// <p> The Amplify environment name for the pull request. </p>
     pub pull_request_environment_name: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-    /// app. </p>
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub backend_environment_arn: std::option::Option<std::string::String>,
 }
 impl CreateBranchInput {
@@ -9825,8 +9672,7 @@ impl CreateBranchInput {
     pub fn pull_request_environment_name(&self) -> std::option::Option<&str> {
         self.pull_request_environment_name.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-    /// app. </p>
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn backend_environment_arn(&self) -> std::option::Option<&str> {
         self.backend_environment_arn.as_deref()
     }
@@ -9918,24 +9764,18 @@ pub struct CreateAppInput {
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
     pub iam_service_role_arn: std::option::Option<std::string::String>,
-    /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
-    /// token is used to create a webhook and a read-only deploy key. The OAuth token is not
-    /// stored. </p>
+    /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
     pub oauth_token: std::option::Option<std::string::String>,
-    /// <p> The personal access token for a third-party source control system for an Amplify app.
-    /// The personal access token is used to create a webhook and a read-only deploy key. The
-    /// token is not stored. </p>
+    /// <p> The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored. </p>
     pub access_token: std::option::Option<std::string::String>,
     /// <p> The environment variables map for an Amplify app. </p>
     pub environment_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Enables the auto building of branches for an Amplify app. </p>
     pub enable_branch_auto_build: std::option::Option<bool>,
-    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-    /// from your Git repository. </p>
+    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     pub enable_branch_auto_deletion: std::option::Option<bool>,
-    /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
-    /// are part of this app. </p>
+    /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
     pub enable_basic_auth: std::option::Option<bool>,
     /// <p> The credentials for basic authorization for an Amplify app. </p>
     pub basic_auth_credentials: std::option::Option<std::string::String>,
@@ -9976,15 +9816,11 @@ impl CreateAppInput {
     pub fn iam_service_role_arn(&self) -> std::option::Option<&str> {
         self.iam_service_role_arn.as_deref()
     }
-    /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
-    /// token is used to create a webhook and a read-only deploy key. The OAuth token is not
-    /// stored. </p>
+    /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
     pub fn oauth_token(&self) -> std::option::Option<&str> {
         self.oauth_token.as_deref()
     }
-    /// <p> The personal access token for a third-party source control system for an Amplify app.
-    /// The personal access token is used to create a webhook and a read-only deploy key. The
-    /// token is not stored. </p>
+    /// <p> The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored. </p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -9999,13 +9835,11 @@ impl CreateAppInput {
     pub fn enable_branch_auto_build(&self) -> std::option::Option<bool> {
         self.enable_branch_auto_build
     }
-    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-    /// from your Git repository. </p>
+    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     pub fn enable_branch_auto_deletion(&self) -> std::option::Option<bool> {
         self.enable_branch_auto_deletion
     }
-    /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
-    /// are part of this app. </p>
+    /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
     pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
         self.enable_basic_auth
     }

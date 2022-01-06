@@ -16,6 +16,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Model,
     #[allow(missing_docs)] // documentation missing in model
+    ModelPackageJob,
+    #[allow(missing_docs)] // documentation missing in model
     Project,
     #[allow(missing_docs)] // documentation missing in model
     Trial,
@@ -27,6 +29,7 @@ impl std::convert::From<&str> for ResourceType {
         match s {
             "DATASET" => ResourceType::Dataset,
             "MODEL" => ResourceType::Model,
+            "MODEL_PACKAGE_JOB" => ResourceType::ModelPackageJob,
             "PROJECT" => ResourceType::Project,
             "TRIAL" => ResourceType::Trial,
             other => ResourceType::Unknown(other.to_owned()),
@@ -46,6 +49,7 @@ impl ResourceType {
         match self {
             ResourceType::Dataset => "DATASET",
             ResourceType::Model => "MODEL",
+            ResourceType::ModelPackageJob => "MODEL_PACKAGE_JOB",
             ResourceType::Project => "PROJECT",
             ResourceType::Trial => "TRIAL",
             ResourceType::Unknown(s) => s.as_ref(),
@@ -53,7 +57,7 @@ impl ResourceType {
     }
     /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
-        &["DATASET", "MODEL", "PROJECT", "TRIAL"]
+        &["DATASET", "MODEL", "MODEL_PACKAGE_JOB", "PROJECT", "TRIAL"]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -301,6 +305,668 @@ impl ModelHostingStatus {
     }
 }
 impl AsRef<str> for ModelHostingStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p> Configuration information for a Amazon Lookout for Vision model packaging job. For more information, see <code>StartModelPackagingJob</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModelPackagingConfiguration {
+    /// <p> Configuration information for the AWS IoT Greengrass component in a model packaging job. </p>
+    pub greengrass: std::option::Option<crate::model::GreengrassConfiguration>,
+}
+impl ModelPackagingConfiguration {
+    /// <p> Configuration information for the AWS IoT Greengrass component in a model packaging job. </p>
+    pub fn greengrass(&self) -> std::option::Option<&crate::model::GreengrassConfiguration> {
+        self.greengrass.as_ref()
+    }
+}
+impl std::fmt::Debug for ModelPackagingConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModelPackagingConfiguration");
+        formatter.field("greengrass", &self.greengrass);
+        formatter.finish()
+    }
+}
+/// See [`ModelPackagingConfiguration`](crate::model::ModelPackagingConfiguration)
+pub mod model_packaging_configuration {
+    /// A builder for [`ModelPackagingConfiguration`](crate::model::ModelPackagingConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) greengrass: std::option::Option<crate::model::GreengrassConfiguration>,
+    }
+    impl Builder {
+        /// <p> Configuration information for the AWS IoT Greengrass component in a model packaging job. </p>
+        pub fn greengrass(mut self, input: crate::model::GreengrassConfiguration) -> Self {
+            self.greengrass = Some(input);
+            self
+        }
+        /// <p> Configuration information for the AWS IoT Greengrass component in a model packaging job. </p>
+        pub fn set_greengrass(
+            mut self,
+            input: std::option::Option<crate::model::GreengrassConfiguration>,
+        ) -> Self {
+            self.greengrass = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModelPackagingConfiguration`](crate::model::ModelPackagingConfiguration)
+        pub fn build(self) -> crate::model::ModelPackagingConfiguration {
+            crate::model::ModelPackagingConfiguration {
+                greengrass: self.greengrass,
+            }
+        }
+    }
+}
+impl ModelPackagingConfiguration {
+    /// Creates a new builder-style object to manufacture [`ModelPackagingConfiguration`](crate::model::ModelPackagingConfiguration)
+    pub fn builder() -> crate::model::model_packaging_configuration::Builder {
+        crate::model::model_packaging_configuration::Builder::default()
+    }
+}
+
+/// <p>Configuration information for the AWS IoT Greengrass component created in a model packaging job. For more information, see <code>StartModelPackagingJob</code>. </p> <note>
+/// <p>You can't specify a component with the same <code>ComponentName</code> and <code>Componentversion</code> as an existing component with the same component name and component version.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GreengrassConfiguration {
+    /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) are supported.</p>
+    /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide. </p>
+    pub compiler_options: std::option::Option<std::string::String>,
+    /// <p>The target device for the model. Currently the only supported value is <code>jetson_xavier</code>. If you specify <code>TargetDevice</code>, you can't specify <code>TargetPlatform</code>. </p>
+    pub target_device: std::option::Option<crate::model::TargetDevice>,
+    /// <p>The target platform for the model. If you specify <code>TargetPlatform</code>, you can't specify <code>TargetDevice</code>. </p>
+    pub target_platform: std::option::Option<crate::model::TargetPlatform>,
+    /// <p> An S3 location in which Lookout for Vision stores the component artifacts. </p>
+    pub s3_output_location: std::option::Option<crate::model::S3Location>,
+    /// <p> A name for the AWS IoT Greengrass component. </p>
+    pub component_name: std::option::Option<std::string::String>,
+    /// <p>A Version for the AWS IoT Greengrass component. If you don't provide a value, a default value of <code> <i>Model Version</i>.0.0</code> is used. </p>
+    pub component_version: std::option::Option<std::string::String>,
+    /// <p> A description for the AWS IoT Greengrass component. </p>
+    pub component_description: std::option::Option<std::string::String>,
+    /// <p> A set of tags (key-value pairs) that you want to attach to the AWS IoT Greengrass component. </p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl GreengrassConfiguration {
+    /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) are supported.</p>
+    /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide. </p>
+    pub fn compiler_options(&self) -> std::option::Option<&str> {
+        self.compiler_options.as_deref()
+    }
+    /// <p>The target device for the model. Currently the only supported value is <code>jetson_xavier</code>. If you specify <code>TargetDevice</code>, you can't specify <code>TargetPlatform</code>. </p>
+    pub fn target_device(&self) -> std::option::Option<&crate::model::TargetDevice> {
+        self.target_device.as_ref()
+    }
+    /// <p>The target platform for the model. If you specify <code>TargetPlatform</code>, you can't specify <code>TargetDevice</code>. </p>
+    pub fn target_platform(&self) -> std::option::Option<&crate::model::TargetPlatform> {
+        self.target_platform.as_ref()
+    }
+    /// <p> An S3 location in which Lookout for Vision stores the component artifacts. </p>
+    pub fn s3_output_location(&self) -> std::option::Option<&crate::model::S3Location> {
+        self.s3_output_location.as_ref()
+    }
+    /// <p> A name for the AWS IoT Greengrass component. </p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p>A Version for the AWS IoT Greengrass component. If you don't provide a value, a default value of <code> <i>Model Version</i>.0.0</code> is used. </p>
+    pub fn component_version(&self) -> std::option::Option<&str> {
+        self.component_version.as_deref()
+    }
+    /// <p> A description for the AWS IoT Greengrass component. </p>
+    pub fn component_description(&self) -> std::option::Option<&str> {
+        self.component_description.as_deref()
+    }
+    /// <p> A set of tags (key-value pairs) that you want to attach to the AWS IoT Greengrass component. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags.as_deref()
+    }
+}
+impl std::fmt::Debug for GreengrassConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GreengrassConfiguration");
+        formatter.field("compiler_options", &self.compiler_options);
+        formatter.field("target_device", &self.target_device);
+        formatter.field("target_platform", &self.target_platform);
+        formatter.field("s3_output_location", &self.s3_output_location);
+        formatter.field("component_name", &self.component_name);
+        formatter.field("component_version", &self.component_version);
+        formatter.field("component_description", &self.component_description);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`GreengrassConfiguration`](crate::model::GreengrassConfiguration)
+pub mod greengrass_configuration {
+    /// A builder for [`GreengrassConfiguration`](crate::model::GreengrassConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) compiler_options: std::option::Option<std::string::String>,
+        pub(crate) target_device: std::option::Option<crate::model::TargetDevice>,
+        pub(crate) target_platform: std::option::Option<crate::model::TargetPlatform>,
+        pub(crate) s3_output_location: std::option::Option<crate::model::S3Location>,
+        pub(crate) component_name: std::option::Option<std::string::String>,
+        pub(crate) component_version: std::option::Option<std::string::String>,
+        pub(crate) component_description: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) are supported.</p>
+        /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide. </p>
+        pub fn compiler_options(mut self, input: impl Into<std::string::String>) -> Self {
+            self.compiler_options = Some(input.into());
+            self
+        }
+        /// <p>Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics Processing Units (GPU) are supported.</p>
+        /// <p>For more information, see <i>Compiler options</i> in the Amazon Lookout for Vision Developer Guide. </p>
+        pub fn set_compiler_options(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.compiler_options = input;
+            self
+        }
+        /// <p>The target device for the model. Currently the only supported value is <code>jetson_xavier</code>. If you specify <code>TargetDevice</code>, you can't specify <code>TargetPlatform</code>. </p>
+        pub fn target_device(mut self, input: crate::model::TargetDevice) -> Self {
+            self.target_device = Some(input);
+            self
+        }
+        /// <p>The target device for the model. Currently the only supported value is <code>jetson_xavier</code>. If you specify <code>TargetDevice</code>, you can't specify <code>TargetPlatform</code>. </p>
+        pub fn set_target_device(
+            mut self,
+            input: std::option::Option<crate::model::TargetDevice>,
+        ) -> Self {
+            self.target_device = input;
+            self
+        }
+        /// <p>The target platform for the model. If you specify <code>TargetPlatform</code>, you can't specify <code>TargetDevice</code>. </p>
+        pub fn target_platform(mut self, input: crate::model::TargetPlatform) -> Self {
+            self.target_platform = Some(input);
+            self
+        }
+        /// <p>The target platform for the model. If you specify <code>TargetPlatform</code>, you can't specify <code>TargetDevice</code>. </p>
+        pub fn set_target_platform(
+            mut self,
+            input: std::option::Option<crate::model::TargetPlatform>,
+        ) -> Self {
+            self.target_platform = input;
+            self
+        }
+        /// <p> An S3 location in which Lookout for Vision stores the component artifacts. </p>
+        pub fn s3_output_location(mut self, input: crate::model::S3Location) -> Self {
+            self.s3_output_location = Some(input);
+            self
+        }
+        /// <p> An S3 location in which Lookout for Vision stores the component artifacts. </p>
+        pub fn set_s3_output_location(
+            mut self,
+            input: std::option::Option<crate::model::S3Location>,
+        ) -> Self {
+            self.s3_output_location = input;
+            self
+        }
+        /// <p> A name for the AWS IoT Greengrass component. </p>
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_name = Some(input.into());
+            self
+        }
+        /// <p> A name for the AWS IoT Greengrass component. </p>
+        pub fn set_component_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_name = input;
+            self
+        }
+        /// <p>A Version for the AWS IoT Greengrass component. If you don't provide a value, a default value of <code> <i>Model Version</i>.0.0</code> is used. </p>
+        pub fn component_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_version = Some(input.into());
+            self
+        }
+        /// <p>A Version for the AWS IoT Greengrass component. If you don't provide a value, a default value of <code> <i>Model Version</i>.0.0</code> is used. </p>
+        pub fn set_component_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_version = input;
+            self
+        }
+        /// <p> A description for the AWS IoT Greengrass component. </p>
+        pub fn component_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_description = Some(input.into());
+            self
+        }
+        /// <p> A description for the AWS IoT Greengrass component. </p>
+        pub fn set_component_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_description = input;
+            self
+        }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p> A set of tags (key-value pairs) that you want to attach to the AWS IoT Greengrass component. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input);
+            self.tags = Some(v);
+            self
+        }
+        /// <p> A set of tags (key-value pairs) that you want to attach to the AWS IoT Greengrass component. </p>
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GreengrassConfiguration`](crate::model::GreengrassConfiguration)
+        pub fn build(self) -> crate::model::GreengrassConfiguration {
+            crate::model::GreengrassConfiguration {
+                compiler_options: self.compiler_options,
+                target_device: self.target_device,
+                target_platform: self.target_platform,
+                s3_output_location: self.s3_output_location,
+                component_name: self.component_name,
+                component_version: self.component_version,
+                component_description: self.component_description,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl GreengrassConfiguration {
+    /// Creates a new builder-style object to manufacture [`GreengrassConfiguration`](crate::model::GreengrassConfiguration)
+    pub fn builder() -> crate::model::greengrass_configuration::Builder {
+        crate::model::greengrass_configuration::Builder::default()
+    }
+}
+
+/// <p>Information about the location of training output or the output of a model packaging job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct S3Location {
+    /// <p>The S3 bucket that contains the training or model packaging job output. If you are training a model, the bucket must in your AWS account. If you use an S3 bucket for a model packaging job, the S3 bucket must be in the same AWS Region and AWS account in which you use AWS IoT Greengrass.</p>
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p>The path of the folder, within the S3 bucket, that contains the output.</p>
+    pub prefix: std::option::Option<std::string::String>,
+}
+impl S3Location {
+    /// <p>The S3 bucket that contains the training or model packaging job output. If you are training a model, the bucket must in your AWS account. If you use an S3 bucket for a model packaging job, the S3 bucket must be in the same AWS Region and AWS account in which you use AWS IoT Greengrass.</p>
+    pub fn bucket(&self) -> std::option::Option<&str> {
+        self.bucket.as_deref()
+    }
+    /// <p>The path of the folder, within the S3 bucket, that contains the output.</p>
+    pub fn prefix(&self) -> std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
+}
+impl std::fmt::Debug for S3Location {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("S3Location");
+        formatter.field("bucket", &self.bucket);
+        formatter.field("prefix", &self.prefix);
+        formatter.finish()
+    }
+}
+/// See [`S3Location`](crate::model::S3Location)
+pub mod s3_location {
+    /// A builder for [`S3Location`](crate::model::S3Location)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The S3 bucket that contains the training or model packaging job output. If you are training a model, the bucket must in your AWS account. If you use an S3 bucket for a model packaging job, the S3 bucket must be in the same AWS Region and AWS account in which you use AWS IoT Greengrass.</p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        /// <p>The S3 bucket that contains the training or model packaging job output. If you are training a model, the bucket must in your AWS account. If you use an S3 bucket for a model packaging job, the S3 bucket must be in the same AWS Region and AWS account in which you use AWS IoT Greengrass.</p>
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p>The path of the folder, within the S3 bucket, that contains the output.</p>
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
+            self
+        }
+        /// <p>The path of the folder, within the S3 bucket, that contains the output.</p>
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location)
+        pub fn build(self) -> crate::model::S3Location {
+            crate::model::S3Location {
+                bucket: self.bucket,
+                prefix: self.prefix,
+            }
+        }
+    }
+}
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location)
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
+/// <p>The platform on which a model runs on an AWS IoT Greengrass core device.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TargetPlatform {
+    /// <p>The target operating system for the model. Linux is the only operating system that is currently supported. </p>
+    pub os: std::option::Option<crate::model::TargetPlatformOs>,
+    /// <p>The target architecture for the model. The currently supported architectures are X86_64 (64-bit version of the x86 instruction set) and ARM_64 (ARMv8 64-bit CPU). </p>
+    pub arch: std::option::Option<crate::model::TargetPlatformArch>,
+    /// <p>The target accelerator for the model. NVIDIA (Nvidia graphics processing unit) is the only accelerator that is currently supported. You must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. </p>
+    pub accelerator: std::option::Option<crate::model::TargetPlatformAccelerator>,
+}
+impl TargetPlatform {
+    /// <p>The target operating system for the model. Linux is the only operating system that is currently supported. </p>
+    pub fn os(&self) -> std::option::Option<&crate::model::TargetPlatformOs> {
+        self.os.as_ref()
+    }
+    /// <p>The target architecture for the model. The currently supported architectures are X86_64 (64-bit version of the x86 instruction set) and ARM_64 (ARMv8 64-bit CPU). </p>
+    pub fn arch(&self) -> std::option::Option<&crate::model::TargetPlatformArch> {
+        self.arch.as_ref()
+    }
+    /// <p>The target accelerator for the model. NVIDIA (Nvidia graphics processing unit) is the only accelerator that is currently supported. You must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. </p>
+    pub fn accelerator(&self) -> std::option::Option<&crate::model::TargetPlatformAccelerator> {
+        self.accelerator.as_ref()
+    }
+}
+impl std::fmt::Debug for TargetPlatform {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TargetPlatform");
+        formatter.field("os", &self.os);
+        formatter.field("arch", &self.arch);
+        formatter.field("accelerator", &self.accelerator);
+        formatter.finish()
+    }
+}
+/// See [`TargetPlatform`](crate::model::TargetPlatform)
+pub mod target_platform {
+    /// A builder for [`TargetPlatform`](crate::model::TargetPlatform)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) os: std::option::Option<crate::model::TargetPlatformOs>,
+        pub(crate) arch: std::option::Option<crate::model::TargetPlatformArch>,
+        pub(crate) accelerator: std::option::Option<crate::model::TargetPlatformAccelerator>,
+    }
+    impl Builder {
+        /// <p>The target operating system for the model. Linux is the only operating system that is currently supported. </p>
+        pub fn os(mut self, input: crate::model::TargetPlatformOs) -> Self {
+            self.os = Some(input);
+            self
+        }
+        /// <p>The target operating system for the model. Linux is the only operating system that is currently supported. </p>
+        pub fn set_os(
+            mut self,
+            input: std::option::Option<crate::model::TargetPlatformOs>,
+        ) -> Self {
+            self.os = input;
+            self
+        }
+        /// <p>The target architecture for the model. The currently supported architectures are X86_64 (64-bit version of the x86 instruction set) and ARM_64 (ARMv8 64-bit CPU). </p>
+        pub fn arch(mut self, input: crate::model::TargetPlatformArch) -> Self {
+            self.arch = Some(input);
+            self
+        }
+        /// <p>The target architecture for the model. The currently supported architectures are X86_64 (64-bit version of the x86 instruction set) and ARM_64 (ARMv8 64-bit CPU). </p>
+        pub fn set_arch(
+            mut self,
+            input: std::option::Option<crate::model::TargetPlatformArch>,
+        ) -> Self {
+            self.arch = input;
+            self
+        }
+        /// <p>The target accelerator for the model. NVIDIA (Nvidia graphics processing unit) is the only accelerator that is currently supported. You must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. </p>
+        pub fn accelerator(mut self, input: crate::model::TargetPlatformAccelerator) -> Self {
+            self.accelerator = Some(input);
+            self
+        }
+        /// <p>The target accelerator for the model. NVIDIA (Nvidia graphics processing unit) is the only accelerator that is currently supported. You must also specify the <code>gpu-code</code>, <code>trt-ver</code>, and <code>cuda-ver</code> compiler options. </p>
+        pub fn set_accelerator(
+            mut self,
+            input: std::option::Option<crate::model::TargetPlatformAccelerator>,
+        ) -> Self {
+            self.accelerator = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TargetPlatform`](crate::model::TargetPlatform)
+        pub fn build(self) -> crate::model::TargetPlatform {
+            crate::model::TargetPlatform {
+                os: self.os,
+                arch: self.arch,
+                accelerator: self.accelerator,
+            }
+        }
+    }
+}
+impl TargetPlatform {
+    /// Creates a new builder-style object to manufacture [`TargetPlatform`](crate::model::TargetPlatform)
+    pub fn builder() -> crate::model::target_platform::Builder {
+        crate::model::target_platform::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TargetPlatformAccelerator {
+    #[allow(missing_docs)] // documentation missing in model
+    Nvidia,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TargetPlatformAccelerator {
+    fn from(s: &str) -> Self {
+        match s {
+            "NVIDIA" => TargetPlatformAccelerator::Nvidia,
+            other => TargetPlatformAccelerator::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TargetPlatformAccelerator {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetPlatformAccelerator::from(s))
+    }
+}
+impl TargetPlatformAccelerator {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetPlatformAccelerator::Nvidia => "NVIDIA",
+            TargetPlatformAccelerator::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["NVIDIA"]
+    }
+}
+impl AsRef<str> for TargetPlatformAccelerator {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TargetPlatformArch {
+    #[allow(missing_docs)] // documentation missing in model
+    Arm64,
+    #[allow(missing_docs)] // documentation missing in model
+    X8664,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TargetPlatformArch {
+    fn from(s: &str) -> Self {
+        match s {
+            "ARM64" => TargetPlatformArch::Arm64,
+            "X86_64" => TargetPlatformArch::X8664,
+            other => TargetPlatformArch::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TargetPlatformArch {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetPlatformArch::from(s))
+    }
+}
+impl TargetPlatformArch {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetPlatformArch::Arm64 => "ARM64",
+            TargetPlatformArch::X8664 => "X86_64",
+            TargetPlatformArch::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["ARM64", "X86_64"]
+    }
+}
+impl AsRef<str> for TargetPlatformArch {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TargetPlatformOs {
+    #[allow(missing_docs)] // documentation missing in model
+    Linux,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TargetPlatformOs {
+    fn from(s: &str) -> Self {
+        match s {
+            "LINUX" => TargetPlatformOs::Linux,
+            other => TargetPlatformOs::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TargetPlatformOs {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetPlatformOs::from(s))
+    }
+}
+impl TargetPlatformOs {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetPlatformOs::Linux => "LINUX",
+            TargetPlatformOs::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["LINUX"]
+    }
+}
+impl AsRef<str> for TargetPlatformOs {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TargetDevice {
+    #[allow(missing_docs)] // documentation missing in model
+    JetsonXavier,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TargetDevice {
+    fn from(s: &str) -> Self {
+        match s {
+            "jetson_xavier" => TargetDevice::JetsonXavier,
+            other => TargetDevice::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TargetDevice {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetDevice::from(s))
+    }
+}
+impl TargetDevice {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetDevice::JetsonXavier => "jetson_xavier",
+            TargetDevice::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["jetson_xavier"]
+    }
+}
+impl AsRef<str> for TargetDevice {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -766,12 +1432,307 @@ impl AsRef<str> for ModelStatus {
     }
 }
 
-/// <p>The prediction results from a call to <a>DetectAnomalies</a>.</p>
+/// <p> Metadata for a model packaging job. For more information, see <code>ListModelPackagingJobs</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModelPackagingJobMetadata {
+    /// <p> The name of the model packaging job. </p>
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p> The project that contains the model that is in the model package. </p>
+    pub project_name: std::option::Option<std::string::String>,
+    /// <p> The version of the model that is in the model package. </p>
+    pub model_version: std::option::Option<std::string::String>,
+    /// <p> The description for the model packaging job. </p>
+    pub model_packaging_job_description: std::option::Option<std::string::String>,
+    /// <p> The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
+    pub model_packaging_method: std::option::Option<std::string::String>,
+    /// <p>The status of the model packaging job. </p>
+    pub status: std::option::Option<crate::model::ModelPackagingJobStatus>,
+    /// <p>The status message for the model packaging job. </p>
+    pub status_message: std::option::Option<std::string::String>,
+    /// <p>The Unix timestamp for the time and date that the model packaging job was created.</p>
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The Unix timestamp for the time and date that the model packaging job was last updated.</p>
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ModelPackagingJobMetadata {
+    /// <p> The name of the model packaging job. </p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p> The project that contains the model that is in the model package. </p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p> The version of the model that is in the model package. </p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+    /// <p> The description for the model packaging job. </p>
+    pub fn model_packaging_job_description(&self) -> std::option::Option<&str> {
+        self.model_packaging_job_description.as_deref()
+    }
+    /// <p> The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
+    pub fn model_packaging_method(&self) -> std::option::Option<&str> {
+        self.model_packaging_method.as_deref()
+    }
+    /// <p>The status of the model packaging job. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelPackagingJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The status message for the model packaging job. </p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p>The Unix timestamp for the time and date that the model packaging job was created.</p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p>The Unix timestamp for the time and date that the model packaging job was last updated.</p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_timestamp.as_ref()
+    }
+}
+impl std::fmt::Debug for ModelPackagingJobMetadata {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModelPackagingJobMetadata");
+        formatter.field("job_name", &self.job_name);
+        formatter.field("project_name", &self.project_name);
+        formatter.field("model_version", &self.model_version);
+        formatter.field(
+            "model_packaging_job_description",
+            &self.model_packaging_job_description,
+        );
+        formatter.field("model_packaging_method", &self.model_packaging_method);
+        formatter.field("status", &self.status);
+        formatter.field("status_message", &self.status_message);
+        formatter.field("creation_timestamp", &self.creation_timestamp);
+        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`ModelPackagingJobMetadata`](crate::model::ModelPackagingJobMetadata)
+pub mod model_packaging_job_metadata {
+    /// A builder for [`ModelPackagingJobMetadata`](crate::model::ModelPackagingJobMetadata)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) project_name: std::option::Option<std::string::String>,
+        pub(crate) model_version: std::option::Option<std::string::String>,
+        pub(crate) model_packaging_job_description: std::option::Option<std::string::String>,
+        pub(crate) model_packaging_method: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::ModelPackagingJobStatus>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p> The name of the model packaging job. </p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the model packaging job. </p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p> The project that contains the model that is in the model package. </p>
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_name = Some(input.into());
+            self
+        }
+        /// <p> The project that contains the model that is in the model package. </p>
+        pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_name = input;
+            self
+        }
+        /// <p> The version of the model that is in the model package. </p>
+        pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_version = Some(input.into());
+            self
+        }
+        /// <p> The version of the model that is in the model package. </p>
+        pub fn set_model_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_version = input;
+            self
+        }
+        /// <p> The description for the model packaging job. </p>
+        pub fn model_packaging_job_description(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.model_packaging_job_description = Some(input.into());
+            self
+        }
+        /// <p> The description for the model packaging job. </p>
+        pub fn set_model_packaging_job_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_packaging_job_description = input;
+            self
+        }
+        /// <p> The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
+        pub fn model_packaging_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_packaging_method = Some(input.into());
+            self
+        }
+        /// <p> The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
+        pub fn set_model_packaging_method(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_packaging_method = input;
+            self
+        }
+        /// <p>The status of the model packaging job. </p>
+        pub fn status(mut self, input: crate::model::ModelPackagingJobStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p>The status of the model packaging job. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelPackagingJobStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The status message for the model packaging job. </p>
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
+            self
+        }
+        /// <p>The status message for the model packaging job. </p>
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
+            self
+        }
+        /// <p>The Unix timestamp for the time and date that the model packaging job was created.</p>
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_timestamp = Some(input);
+            self
+        }
+        /// <p>The Unix timestamp for the time and date that the model packaging job was created.</p>
+        pub fn set_creation_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_timestamp = input;
+            self
+        }
+        /// <p>The Unix timestamp for the time and date that the model packaging job was last updated.</p>
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_timestamp = Some(input);
+            self
+        }
+        /// <p>The Unix timestamp for the time and date that the model packaging job was last updated.</p>
+        pub fn set_last_updated_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModelPackagingJobMetadata`](crate::model::ModelPackagingJobMetadata)
+        pub fn build(self) -> crate::model::ModelPackagingJobMetadata {
+            crate::model::ModelPackagingJobMetadata {
+                job_name: self.job_name,
+                project_name: self.project_name,
+                model_version: self.model_version,
+                model_packaging_job_description: self.model_packaging_job_description,
+                model_packaging_method: self.model_packaging_method,
+                status: self.status,
+                status_message: self.status_message,
+                creation_timestamp: self.creation_timestamp,
+                last_updated_timestamp: self.last_updated_timestamp,
+            }
+        }
+    }
+}
+impl ModelPackagingJobMetadata {
+    /// Creates a new builder-style object to manufacture [`ModelPackagingJobMetadata`](crate::model::ModelPackagingJobMetadata)
+    pub fn builder() -> crate::model::model_packaging_job_metadata::Builder {
+        crate::model::model_packaging_job_metadata::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ModelPackagingJobStatus {
+    #[allow(missing_docs)] // documentation missing in model
+    Created,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Running,
+    #[allow(missing_docs)] // documentation missing in model
+    Succeeded,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ModelPackagingJobStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "CREATED" => ModelPackagingJobStatus::Created,
+            "FAILED" => ModelPackagingJobStatus::Failed,
+            "RUNNING" => ModelPackagingJobStatus::Running,
+            "SUCCEEDED" => ModelPackagingJobStatus::Succeeded,
+            other => ModelPackagingJobStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ModelPackagingJobStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ModelPackagingJobStatus::from(s))
+    }
+}
+impl ModelPackagingJobStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ModelPackagingJobStatus::Created => "CREATED",
+            ModelPackagingJobStatus::Failed => "FAILED",
+            ModelPackagingJobStatus::Running => "RUNNING",
+            ModelPackagingJobStatus::Succeeded => "SUCCEEDED",
+            ModelPackagingJobStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &["CREATED", "FAILED", "RUNNING", "SUCCEEDED"]
+    }
+}
+impl AsRef<str> for ModelPackagingJobStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The prediction results from a call to <code>DetectAnomalies</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectAnomalyResult {
-    /// <p>The source of the image that was analyzed. <code>direct</code> means that the
-    /// images was supplied from the local computer. No other values are supported.</p>
+    /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
     pub source: std::option::Option<crate::model::ImageSource>,
     /// <p>True if the image contains an anomaly, otherwise false.</p>
     pub is_anomalous: bool,
@@ -779,8 +1740,7 @@ pub struct DetectAnomalyResult {
     pub confidence: std::option::Option<f32>,
 }
 impl DetectAnomalyResult {
-    /// <p>The source of the image that was analyzed. <code>direct</code> means that the
-    /// images was supplied from the local computer. No other values are supported.</p>
+    /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
     pub fn source(&self) -> std::option::Option<&crate::model::ImageSource> {
         self.source.as_ref()
     }
@@ -813,14 +1773,12 @@ pub mod detect_anomaly_result {
         pub(crate) confidence: std::option::Option<f32>,
     }
     impl Builder {
-        /// <p>The source of the image that was analyzed. <code>direct</code> means that the
-        /// images was supplied from the local computer. No other values are supported.</p>
+        /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
         pub fn source(mut self, input: crate::model::ImageSource) -> Self {
             self.source = Some(input);
             self
         }
-        /// <p>The source of the image that was analyzed. <code>direct</code> means that the
-        /// images was supplied from the local computer. No other values are supported.</p>
+        /// <p>The source of the image that was analyzed. <code>direct</code> means that the images was supplied from the local computer. No other values are supported.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::ImageSource>) -> Self {
             self.source = input;
             self
@@ -916,7 +1874,7 @@ impl ImageSource {
     }
 }
 
-/// <p>Describe an Amazon Lookout for Vision project. For more information, see <a>DescribeProject</a>.</p>
+/// <p>Describe an Amazon Lookout for Vision project. For more information, see <code>DescribeProject</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectDescription {
@@ -1007,9 +1965,9 @@ pub mod project_description {
         /// To override the contents of this collection use [`set_datasets`](Self::set_datasets).
         ///
         /// <p>A list of datasets in the project.</p>
-        pub fn datasets(mut self, input: impl Into<crate::model::DatasetMetadata>) -> Self {
+        pub fn datasets(mut self, input: crate::model::DatasetMetadata) -> Self {
             let mut v = self.datasets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.datasets = Some(v);
             self
         }
@@ -1039,7 +1997,7 @@ impl ProjectDescription {
     }
 }
 
-/// <p>Sumary information for an Amazon Lookout for Vision dataset.</p>
+/// <p>Summary information for an Amazon Lookout for Vision dataset. For more information, see <code>DescribeDataset</code> and <code>ProjectDescription</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetMetadata {
@@ -1159,6 +2117,461 @@ impl DatasetMetadata {
     }
 }
 
+/// <p> Information about a model packaging job. For more information, see <code>DescribeModelPackagingJob</code>. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModelPackagingDescription {
+    /// <p> The name of the model packaging job. </p>
+    pub job_name: std::option::Option<std::string::String>,
+    /// <p>The name of the project that's associated with a model that's in the model package. </p>
+    pub project_name: std::option::Option<std::string::String>,
+    /// <p>The version of the model used in the model packaging job. </p>
+    pub model_version: std::option::Option<std::string::String>,
+    /// <p> The configuration information used in the model packaging job. </p>
+    pub model_packaging_configuration:
+        std::option::Option<crate::model::ModelPackagingConfiguration>,
+    /// <p>The description for the model packaging job. </p>
+    pub model_packaging_job_description: std::option::Option<std::string::String>,
+    /// <p>The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
+    pub model_packaging_method: std::option::Option<std::string::String>,
+    /// <p>Information about the output of the model packaging job. For more information, see <code>DescribeModelPackagingJob</code>. </p>
+    pub model_packaging_output_details:
+        std::option::Option<crate::model::ModelPackagingOutputDetails>,
+    /// <p> The status of the model packaging job. </p>
+    pub status: std::option::Option<crate::model::ModelPackagingJobStatus>,
+    /// <p> The status message for the model packaging job. </p>
+    pub status_message: std::option::Option<std::string::String>,
+    /// <p> The Unix timestamp for the time and date that the model packaging job was created. </p>
+    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The Unix timestamp for the time and date that the model packaging job was last updated. </p>
+    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl ModelPackagingDescription {
+    /// <p> The name of the model packaging job. </p>
+    pub fn job_name(&self) -> std::option::Option<&str> {
+        self.job_name.as_deref()
+    }
+    /// <p>The name of the project that's associated with a model that's in the model package. </p>
+    pub fn project_name(&self) -> std::option::Option<&str> {
+        self.project_name.as_deref()
+    }
+    /// <p>The version of the model used in the model packaging job. </p>
+    pub fn model_version(&self) -> std::option::Option<&str> {
+        self.model_version.as_deref()
+    }
+    /// <p> The configuration information used in the model packaging job. </p>
+    pub fn model_packaging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelPackagingConfiguration> {
+        self.model_packaging_configuration.as_ref()
+    }
+    /// <p>The description for the model packaging job. </p>
+    pub fn model_packaging_job_description(&self) -> std::option::Option<&str> {
+        self.model_packaging_job_description.as_deref()
+    }
+    /// <p>The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
+    pub fn model_packaging_method(&self) -> std::option::Option<&str> {
+        self.model_packaging_method.as_deref()
+    }
+    /// <p>Information about the output of the model packaging job. For more information, see <code>DescribeModelPackagingJob</code>. </p>
+    pub fn model_packaging_output_details(
+        &self,
+    ) -> std::option::Option<&crate::model::ModelPackagingOutputDetails> {
+        self.model_packaging_output_details.as_ref()
+    }
+    /// <p> The status of the model packaging job. </p>
+    pub fn status(&self) -> std::option::Option<&crate::model::ModelPackagingJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p> The status message for the model packaging job. </p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
+    /// <p> The Unix timestamp for the time and date that the model packaging job was created. </p>
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.creation_timestamp.as_ref()
+    }
+    /// <p> The Unix timestamp for the time and date that the model packaging job was last updated. </p>
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.last_updated_timestamp.as_ref()
+    }
+}
+impl std::fmt::Debug for ModelPackagingDescription {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModelPackagingDescription");
+        formatter.field("job_name", &self.job_name);
+        formatter.field("project_name", &self.project_name);
+        formatter.field("model_version", &self.model_version);
+        formatter.field(
+            "model_packaging_configuration",
+            &self.model_packaging_configuration,
+        );
+        formatter.field(
+            "model_packaging_job_description",
+            &self.model_packaging_job_description,
+        );
+        formatter.field("model_packaging_method", &self.model_packaging_method);
+        formatter.field(
+            "model_packaging_output_details",
+            &self.model_packaging_output_details,
+        );
+        formatter.field("status", &self.status);
+        formatter.field("status_message", &self.status_message);
+        formatter.field("creation_timestamp", &self.creation_timestamp);
+        formatter.field("last_updated_timestamp", &self.last_updated_timestamp);
+        formatter.finish()
+    }
+}
+/// See [`ModelPackagingDescription`](crate::model::ModelPackagingDescription)
+pub mod model_packaging_description {
+    /// A builder for [`ModelPackagingDescription`](crate::model::ModelPackagingDescription)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) project_name: std::option::Option<std::string::String>,
+        pub(crate) model_version: std::option::Option<std::string::String>,
+        pub(crate) model_packaging_configuration:
+            std::option::Option<crate::model::ModelPackagingConfiguration>,
+        pub(crate) model_packaging_job_description: std::option::Option<std::string::String>,
+        pub(crate) model_packaging_method: std::option::Option<std::string::String>,
+        pub(crate) model_packaging_output_details:
+            std::option::Option<crate::model::ModelPackagingOutputDetails>,
+        pub(crate) status: std::option::Option<crate::model::ModelPackagingJobStatus>,
+        pub(crate) status_message: std::option::Option<std::string::String>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p> The name of the model packaging job. </p>
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the model packaging job. </p>
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_name = input;
+            self
+        }
+        /// <p>The name of the project that's associated with a model that's in the model package. </p>
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the project that's associated with a model that's in the model package. </p>
+        pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_name = input;
+            self
+        }
+        /// <p>The version of the model used in the model packaging job. </p>
+        pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_version = Some(input.into());
+            self
+        }
+        /// <p>The version of the model used in the model packaging job. </p>
+        pub fn set_model_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_version = input;
+            self
+        }
+        /// <p> The configuration information used in the model packaging job. </p>
+        pub fn model_packaging_configuration(
+            mut self,
+            input: crate::model::ModelPackagingConfiguration,
+        ) -> Self {
+            self.model_packaging_configuration = Some(input);
+            self
+        }
+        /// <p> The configuration information used in the model packaging job. </p>
+        pub fn set_model_packaging_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ModelPackagingConfiguration>,
+        ) -> Self {
+            self.model_packaging_configuration = input;
+            self
+        }
+        /// <p>The description for the model packaging job. </p>
+        pub fn model_packaging_job_description(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.model_packaging_job_description = Some(input.into());
+            self
+        }
+        /// <p>The description for the model packaging job. </p>
+        pub fn set_model_packaging_job_description(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_packaging_job_description = input;
+            self
+        }
+        /// <p>The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
+        pub fn model_packaging_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_packaging_method = Some(input.into());
+            self
+        }
+        /// <p>The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
+        pub fn set_model_packaging_method(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_packaging_method = input;
+            self
+        }
+        /// <p>Information about the output of the model packaging job. For more information, see <code>DescribeModelPackagingJob</code>. </p>
+        pub fn model_packaging_output_details(
+            mut self,
+            input: crate::model::ModelPackagingOutputDetails,
+        ) -> Self {
+            self.model_packaging_output_details = Some(input);
+            self
+        }
+        /// <p>Information about the output of the model packaging job. For more information, see <code>DescribeModelPackagingJob</code>. </p>
+        pub fn set_model_packaging_output_details(
+            mut self,
+            input: std::option::Option<crate::model::ModelPackagingOutputDetails>,
+        ) -> Self {
+            self.model_packaging_output_details = input;
+            self
+        }
+        /// <p> The status of the model packaging job. </p>
+        pub fn status(mut self, input: crate::model::ModelPackagingJobStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        /// <p> The status of the model packaging job. </p>
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ModelPackagingJobStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p> The status message for the model packaging job. </p>
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
+            self
+        }
+        /// <p> The status message for the model packaging job. </p>
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
+            self
+        }
+        /// <p> The Unix timestamp for the time and date that the model packaging job was created. </p>
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.creation_timestamp = Some(input);
+            self
+        }
+        /// <p> The Unix timestamp for the time and date that the model packaging job was created. </p>
+        pub fn set_creation_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.creation_timestamp = input;
+            self
+        }
+        /// <p> The Unix timestamp for the time and date that the model packaging job was last updated. </p>
+        pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.last_updated_timestamp = Some(input);
+            self
+        }
+        /// <p> The Unix timestamp for the time and date that the model packaging job was last updated. </p>
+        pub fn set_last_updated_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.last_updated_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModelPackagingDescription`](crate::model::ModelPackagingDescription)
+        pub fn build(self) -> crate::model::ModelPackagingDescription {
+            crate::model::ModelPackagingDescription {
+                job_name: self.job_name,
+                project_name: self.project_name,
+                model_version: self.model_version,
+                model_packaging_configuration: self.model_packaging_configuration,
+                model_packaging_job_description: self.model_packaging_job_description,
+                model_packaging_method: self.model_packaging_method,
+                model_packaging_output_details: self.model_packaging_output_details,
+                status: self.status,
+                status_message: self.status_message,
+                creation_timestamp: self.creation_timestamp,
+                last_updated_timestamp: self.last_updated_timestamp,
+            }
+        }
+    }
+}
+impl ModelPackagingDescription {
+    /// Creates a new builder-style object to manufacture [`ModelPackagingDescription`](crate::model::ModelPackagingDescription)
+    pub fn builder() -> crate::model::model_packaging_description::Builder {
+        crate::model::model_packaging_description::Builder::default()
+    }
+}
+
+/// <p> Information about the output from a model packaging job. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModelPackagingOutputDetails {
+    /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
+    pub greengrass: std::option::Option<crate::model::GreengrassOutputDetails>,
+}
+impl ModelPackagingOutputDetails {
+    /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
+    pub fn greengrass(&self) -> std::option::Option<&crate::model::GreengrassOutputDetails> {
+        self.greengrass.as_ref()
+    }
+}
+impl std::fmt::Debug for ModelPackagingOutputDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModelPackagingOutputDetails");
+        formatter.field("greengrass", &self.greengrass);
+        formatter.finish()
+    }
+}
+/// See [`ModelPackagingOutputDetails`](crate::model::ModelPackagingOutputDetails)
+pub mod model_packaging_output_details {
+    /// A builder for [`ModelPackagingOutputDetails`](crate::model::ModelPackagingOutputDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) greengrass: std::option::Option<crate::model::GreengrassOutputDetails>,
+    }
+    impl Builder {
+        /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
+        pub fn greengrass(mut self, input: crate::model::GreengrassOutputDetails) -> Self {
+            self.greengrass = Some(input);
+            self
+        }
+        /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
+        pub fn set_greengrass(
+            mut self,
+            input: std::option::Option<crate::model::GreengrassOutputDetails>,
+        ) -> Self {
+            self.greengrass = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModelPackagingOutputDetails`](crate::model::ModelPackagingOutputDetails)
+        pub fn build(self) -> crate::model::ModelPackagingOutputDetails {
+            crate::model::ModelPackagingOutputDetails {
+                greengrass: self.greengrass,
+            }
+        }
+    }
+}
+impl ModelPackagingOutputDetails {
+    /// Creates a new builder-style object to manufacture [`ModelPackagingOutputDetails`](crate::model::ModelPackagingOutputDetails)
+    pub fn builder() -> crate::model::model_packaging_output_details::Builder {
+        crate::model::model_packaging_output_details::Builder::default()
+    }
+}
+
+/// <p>Information about the AWS IoT Greengrass component created by a model packaging job. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GreengrassOutputDetails {
+    /// <p> The Amazon Resource Name (ARN) of the component. </p>
+    pub component_version_arn: std::option::Option<std::string::String>,
+    /// <p> The name of the component. </p>
+    pub component_name: std::option::Option<std::string::String>,
+    /// <p> The version of the component. </p>
+    pub component_version: std::option::Option<std::string::String>,
+}
+impl GreengrassOutputDetails {
+    /// <p> The Amazon Resource Name (ARN) of the component. </p>
+    pub fn component_version_arn(&self) -> std::option::Option<&str> {
+        self.component_version_arn.as_deref()
+    }
+    /// <p> The name of the component. </p>
+    pub fn component_name(&self) -> std::option::Option<&str> {
+        self.component_name.as_deref()
+    }
+    /// <p> The version of the component. </p>
+    pub fn component_version(&self) -> std::option::Option<&str> {
+        self.component_version.as_deref()
+    }
+}
+impl std::fmt::Debug for GreengrassOutputDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GreengrassOutputDetails");
+        formatter.field("component_version_arn", &self.component_version_arn);
+        formatter.field("component_name", &self.component_name);
+        formatter.field("component_version", &self.component_version);
+        formatter.finish()
+    }
+}
+/// See [`GreengrassOutputDetails`](crate::model::GreengrassOutputDetails)
+pub mod greengrass_output_details {
+    /// A builder for [`GreengrassOutputDetails`](crate::model::GreengrassOutputDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) component_version_arn: std::option::Option<std::string::String>,
+        pub(crate) component_name: std::option::Option<std::string::String>,
+        pub(crate) component_version: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The Amazon Resource Name (ARN) of the component. </p>
+        pub fn component_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_version_arn = Some(input.into());
+            self
+        }
+        /// <p> The Amazon Resource Name (ARN) of the component. </p>
+        pub fn set_component_version_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_version_arn = input;
+            self
+        }
+        /// <p> The name of the component. </p>
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_name = Some(input.into());
+            self
+        }
+        /// <p> The name of the component. </p>
+        pub fn set_component_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_name = input;
+            self
+        }
+        /// <p> The version of the component. </p>
+        pub fn component_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.component_version = Some(input.into());
+            self
+        }
+        /// <p> The version of the component. </p>
+        pub fn set_component_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.component_version = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GreengrassOutputDetails`](crate::model::GreengrassOutputDetails)
+        pub fn build(self) -> crate::model::GreengrassOutputDetails {
+            crate::model::GreengrassOutputDetails {
+                component_version_arn: self.component_version_arn,
+                component_name: self.component_name,
+                component_version: self.component_version,
+            }
+        }
+    }
+}
+impl GreengrassOutputDetails {
+    /// Creates a new builder-style object to manufacture [`GreengrassOutputDetails`](crate::model::GreengrassOutputDetails)
+    pub fn builder() -> crate::model::greengrass_output_details::Builder {
+        crate::model::greengrass_output_details::Builder::default()
+    }
+}
+
 /// <p>Describes an Amazon Lookout for Vision model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1179,15 +2592,13 @@ pub struct ModelDescription {
     pub performance: std::option::Option<crate::model::ModelPerformance>,
     /// <p>The S3 location where Amazon Lookout for Vision saves model training files.</p>
     pub output_config: std::option::Option<crate::model::OutputConfig>,
-    /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file
-    /// that was used to test the trained model and generate the performance scores.</p>
+    /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file that was used to test the trained model and generate the performance scores.</p>
     pub evaluation_manifest: std::option::Option<crate::model::OutputS3Object>,
     /// <p>The S3 location where Amazon Lookout for Vision saves the performance metrics.</p>
     pub evaluation_result: std::option::Option<crate::model::OutputS3Object>,
     /// <p>The unix timestamp for the date and time that the evaluation ended. </p>
     pub evaluation_end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model
-    /// during training.</p>
+    /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model during training.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ModelDescription {
@@ -1223,8 +2634,7 @@ impl ModelDescription {
     pub fn output_config(&self) -> std::option::Option<&crate::model::OutputConfig> {
         self.output_config.as_ref()
     }
-    /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file
-    /// that was used to test the trained model and generate the performance scores.</p>
+    /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file that was used to test the trained model and generate the performance scores.</p>
     pub fn evaluation_manifest(&self) -> std::option::Option<&crate::model::OutputS3Object> {
         self.evaluation_manifest.as_ref()
     }
@@ -1236,8 +2646,7 @@ impl ModelDescription {
     pub fn evaluation_end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.evaluation_end_timestamp.as_ref()
     }
-    /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model
-    /// during training.</p>
+    /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model during training.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -1375,14 +2784,12 @@ pub mod model_description {
             self.output_config = input;
             self
         }
-        /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file
-        /// that was used to test the trained model and generate the performance scores.</p>
+        /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file that was used to test the trained model and generate the performance scores.</p>
         pub fn evaluation_manifest(mut self, input: crate::model::OutputS3Object) -> Self {
             self.evaluation_manifest = Some(input);
             self
         }
-        /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file
-        /// that was used to test the trained model and generate the performance scores.</p>
+        /// <p>The S3 location where Amazon Lookout for Vision saves the manifest file that was used to test the trained model and generate the performance scores.</p>
         pub fn set_evaluation_manifest(
             mut self,
             input: std::option::Option<crate::model::OutputS3Object>,
@@ -1416,14 +2823,12 @@ pub mod model_description {
             self.evaluation_end_timestamp = input;
             self
         }
-        /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model
-        /// during training.</p>
+        /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model during training.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model
-        /// during training.</p>
+        /// <p>The identifer for the AWS Key Management Service (AWS KMS) key that was used to encrypt the model during training.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -1584,87 +2989,13 @@ impl OutputConfig {
     }
 }
 
-/// <p>Information about the location training output.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct S3Location {
-    /// <p>The S3 bucket that contains the training output.</p>
-    pub bucket: std::option::Option<std::string::String>,
-    /// <p>The path of the folder, within the S3 bucket, that contains the training output.</p>
-    pub prefix: std::option::Option<std::string::String>,
-}
-impl S3Location {
-    /// <p>The S3 bucket that contains the training output.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
-        self.bucket.as_deref()
-    }
-    /// <p>The path of the folder, within the S3 bucket, that contains the training output.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
-        self.prefix.as_deref()
-    }
-}
-impl std::fmt::Debug for S3Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("S3Location");
-        formatter.field("bucket", &self.bucket);
-        formatter.field("prefix", &self.prefix);
-        formatter.finish()
-    }
-}
-/// See [`S3Location`](crate::model::S3Location)
-pub mod s3_location {
-    /// A builder for [`S3Location`](crate::model::S3Location)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) bucket: std::option::Option<std::string::String>,
-        pub(crate) prefix: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The S3 bucket that contains the training output.</p>
-        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(input.into());
-            self
-        }
-        /// <p>The S3 bucket that contains the training output.</p>
-        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
-        }
-        /// <p>The path of the folder, within the S3 bucket, that contains the training output.</p>
-        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(input.into());
-            self
-        }
-        /// <p>The path of the folder, within the S3 bucket, that contains the training output.</p>
-        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location)
-        pub fn build(self) -> crate::model::S3Location {
-            crate::model::S3Location {
-                bucket: self.bucket,
-                prefix: self.prefix,
-            }
-        }
-    }
-}
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location)
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
-    }
-}
-
-/// <p>The description for a dataset. For more information, see <a>DescribeDataset</a>.</p>
+/// <p>The description for a dataset. For more information, see <code>DescribeDataset</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetDescription {
     /// <p>The name of the project that contains the dataset.</p>
     pub project_name: std::option::Option<std::string::String>,
-    /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project.
-    /// The value <code>test</code> represents a test dataset.</p>
+    /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project. The value <code>test</code> represents a test dataset.</p>
     pub dataset_type: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for the time and date that the dataset was created.</p>
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1674,7 +3005,7 @@ pub struct DatasetDescription {
     pub status: std::option::Option<crate::model::DatasetStatus>,
     /// <p>The status message for the dataset. </p>
     pub status_message: std::option::Option<std::string::String>,
-    /// <p></p>
+    /// <p>Statistics about the images in a dataset.</p>
     pub image_stats: std::option::Option<crate::model::DatasetImageStats>,
 }
 impl DatasetDescription {
@@ -1682,8 +3013,7 @@ impl DatasetDescription {
     pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project.
-    /// The value <code>test</code> represents a test dataset.</p>
+    /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project. The value <code>test</code> represents a test dataset.</p>
     pub fn dataset_type(&self) -> std::option::Option<&str> {
         self.dataset_type.as_deref()
     }
@@ -1703,7 +3033,7 @@ impl DatasetDescription {
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p></p>
+    /// <p>Statistics about the images in a dataset.</p>
     pub fn image_stats(&self) -> std::option::Option<&crate::model::DatasetImageStats> {
         self.image_stats.as_ref()
     }
@@ -1746,14 +3076,12 @@ pub mod dataset_description {
             self.project_name = input;
             self
         }
-        /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project.
-        /// The value <code>test</code> represents a test dataset.</p>
+        /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project. The value <code>test</code> represents a test dataset.</p>
         pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_type = Some(input.into());
             self
         }
-        /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project.
-        /// The value <code>test</code> represents a test dataset.</p>
+        /// <p>The type of the dataset. The value <code>train</code> represents a training dataset or single dataset project. The value <code>test</code> represents a test dataset.</p>
         pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_type = input;
             self
@@ -1810,12 +3138,12 @@ pub mod dataset_description {
             self.status_message = input;
             self
         }
-        /// <p></p>
+        /// <p>Statistics about the images in a dataset.</p>
         pub fn image_stats(mut self, input: crate::model::DatasetImageStats) -> Self {
             self.image_stats = Some(input);
             self
         }
-        /// <p></p>
+        /// <p>Statistics about the images in a dataset.</p>
         pub fn set_image_stats(
             mut self,
             input: std::option::Option<crate::model::DatasetImageStats>,
@@ -2018,8 +3346,7 @@ impl DatasetSource {
     }
 }
 
-/// <p>Location information about a manifest file. You can use a manifest file to
-/// create a dataset.</p>
+/// <p>Location information about a manifest file. You can use a manifest file to create a dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetGroundTruthManifest {

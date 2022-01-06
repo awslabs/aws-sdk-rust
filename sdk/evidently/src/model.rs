@@ -140,8 +140,7 @@ impl AsRef<str> for ValidationExceptionReason {
     }
 }
 
-/// <p>This structure defines a project, which is the logical object in Evidently that can contain features, launches, and
-/// experiments. Use projects to group similar features together.</p>
+/// <p>This structure defines a project, which is the logical object in Evidently that can contain features, launches, and experiments. Use projects to group similar features together.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Project {
@@ -159,18 +158,15 @@ pub struct Project {
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of features currently in the project.</p>
     pub feature_count: std::option::Option<i64>,
-    /// <p>The number of launches currently in the project. This includes all launches that have been created
-    /// and not deleted, whether they are ongoing or not.</p>
+    /// <p>The number of launches currently in the project. This includes all launches that have been created and not deleted, whether they are ongoing or not.</p>
     pub launch_count: std::option::Option<i64>,
     /// <p>The number of ongoing launches currently in the project.</p>
     pub active_launch_count: std::option::Option<i64>,
-    /// <p>The number of experiments currently in the project. This includes all experiments that have been created
-    /// and not deleted, whether they are ongoing or not.</p>
+    /// <p>The number of experiments currently in the project. This includes all experiments that have been created and not deleted, whether they are ongoing or not.</p>
     pub experiment_count: std::option::Option<i64>,
     /// <p>The number of ongoing experiments currently in the project.</p>
     pub active_experiment_count: std::option::Option<i64>,
-    /// <p>A structure that contains information about where Evidently is to store
-    /// evaluation events for longer term storage.</p>
+    /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
     pub data_delivery: std::option::Option<crate::model::ProjectDataDelivery>,
     /// <p>The list of tag keys and values associated with this project.</p>
     pub tags:
@@ -205,8 +201,7 @@ impl Project {
     pub fn feature_count(&self) -> std::option::Option<i64> {
         self.feature_count
     }
-    /// <p>The number of launches currently in the project. This includes all launches that have been created
-    /// and not deleted, whether they are ongoing or not.</p>
+    /// <p>The number of launches currently in the project. This includes all launches that have been created and not deleted, whether they are ongoing or not.</p>
     pub fn launch_count(&self) -> std::option::Option<i64> {
         self.launch_count
     }
@@ -214,8 +209,7 @@ impl Project {
     pub fn active_launch_count(&self) -> std::option::Option<i64> {
         self.active_launch_count
     }
-    /// <p>The number of experiments currently in the project. This includes all experiments that have been created
-    /// and not deleted, whether they are ongoing or not.</p>
+    /// <p>The number of experiments currently in the project. This includes all experiments that have been created and not deleted, whether they are ongoing or not.</p>
     pub fn experiment_count(&self) -> std::option::Option<i64> {
         self.experiment_count
     }
@@ -223,8 +217,7 @@ impl Project {
     pub fn active_experiment_count(&self) -> std::option::Option<i64> {
         self.active_experiment_count
     }
-    /// <p>A structure that contains information about where Evidently is to store
-    /// evaluation events for longer term storage.</p>
+    /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
     pub fn data_delivery(&self) -> std::option::Option<&crate::model::ProjectDataDelivery> {
         self.data_delivery.as_ref()
     }
@@ -357,14 +350,12 @@ pub mod project {
             self.feature_count = input;
             self
         }
-        /// <p>The number of launches currently in the project. This includes all launches that have been created
-        /// and not deleted, whether they are ongoing or not.</p>
+        /// <p>The number of launches currently in the project. This includes all launches that have been created and not deleted, whether they are ongoing or not.</p>
         pub fn launch_count(mut self, input: i64) -> Self {
             self.launch_count = Some(input);
             self
         }
-        /// <p>The number of launches currently in the project. This includes all launches that have been created
-        /// and not deleted, whether they are ongoing or not.</p>
+        /// <p>The number of launches currently in the project. This includes all launches that have been created and not deleted, whether they are ongoing or not.</p>
         pub fn set_launch_count(mut self, input: std::option::Option<i64>) -> Self {
             self.launch_count = input;
             self
@@ -379,14 +370,12 @@ pub mod project {
             self.active_launch_count = input;
             self
         }
-        /// <p>The number of experiments currently in the project. This includes all experiments that have been created
-        /// and not deleted, whether they are ongoing or not.</p>
+        /// <p>The number of experiments currently in the project. This includes all experiments that have been created and not deleted, whether they are ongoing or not.</p>
         pub fn experiment_count(mut self, input: i64) -> Self {
             self.experiment_count = Some(input);
             self
         }
-        /// <p>The number of experiments currently in the project. This includes all experiments that have been created
-        /// and not deleted, whether they are ongoing or not.</p>
+        /// <p>The number of experiments currently in the project. This includes all experiments that have been created and not deleted, whether they are ongoing or not.</p>
         pub fn set_experiment_count(mut self, input: std::option::Option<i64>) -> Self {
             self.experiment_count = input;
             self
@@ -401,14 +390,12 @@ pub mod project {
             self.active_experiment_count = input;
             self
         }
-        /// <p>A structure that contains information about where Evidently is to store
-        /// evaluation events for longer term storage.</p>
+        /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
         pub fn data_delivery(mut self, input: crate::model::ProjectDataDelivery) -> Self {
             self.data_delivery = Some(input);
             self
         }
-        /// <p>A structure that contains information about where Evidently is to store
-        /// evaluation events for longer term storage.</p>
+        /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
         pub fn set_data_delivery(
             mut self,
             input: std::option::Option<crate::model::ProjectDataDelivery>,
@@ -468,26 +455,21 @@ impl Project {
     }
 }
 
-/// <p>A structure that contains information about where Evidently is to store
-/// evaluation events for longer term storage.</p>
+/// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectDataDelivery {
-    /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure
-    /// stores the bucket name and bucket prefix.</p>
+    /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
     pub s3_destination: std::option::Option<crate::model::S3Destination>,
-    /// <p>If the project stores evaluation events in CloudWatch Logs, this structure
-    /// stores the log group name.</p>
+    /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
     pub cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsDestination>,
 }
 impl ProjectDataDelivery {
-    /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure
-    /// stores the bucket name and bucket prefix.</p>
+    /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
     pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
         self.s3_destination.as_ref()
     }
-    /// <p>If the project stores evaluation events in CloudWatch Logs, this structure
-    /// stores the log group name.</p>
+    /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
     pub fn cloud_watch_logs(
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLogsDestination> {
@@ -512,14 +494,12 @@ pub mod project_data_delivery {
         pub(crate) cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsDestination>,
     }
     impl Builder {
-        /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure
-        /// stores the bucket name and bucket prefix.</p>
+        /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
         pub fn s3_destination(mut self, input: crate::model::S3Destination) -> Self {
             self.s3_destination = Some(input);
             self
         }
-        /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure
-        /// stores the bucket name and bucket prefix.</p>
+        /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
         pub fn set_s3_destination(
             mut self,
             input: std::option::Option<crate::model::S3Destination>,
@@ -527,14 +507,12 @@ pub mod project_data_delivery {
             self.s3_destination = input;
             self
         }
-        /// <p>If the project stores evaluation events in CloudWatch Logs, this structure
-        /// stores the log group name.</p>
+        /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
         pub fn cloud_watch_logs(mut self, input: crate::model::CloudWatchLogsDestination) -> Self {
             self.cloud_watch_logs = Some(input);
             self
         }
-        /// <p>If the project stores evaluation events in CloudWatch Logs, this structure
-        /// stores the log group name.</p>
+        /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
         pub fn set_cloud_watch_logs(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsDestination>,
@@ -558,18 +536,15 @@ impl ProjectDataDelivery {
     }
 }
 
-/// <p>A structure containing the CloudWatch Logs log group where the project stores evaluation
-/// events.</p>
+/// <p>A structure containing the CloudWatch Logs log group where the project stores evaluation events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogsDestination {
-    /// <p>The name of the log group where the project stores evaluation
-    /// events.</p>
+    /// <p>The name of the log group where the project stores evaluation events.</p>
     pub log_group: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsDestination {
-    /// <p>The name of the log group where the project stores evaluation
-    /// events.</p>
+    /// <p>The name of the log group where the project stores evaluation events.</p>
     pub fn log_group(&self) -> std::option::Option<&str> {
         self.log_group.as_deref()
     }
@@ -590,14 +565,12 @@ pub mod cloud_watch_logs_destination {
         pub(crate) log_group: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the log group where the project stores evaluation
-        /// events.</p>
+        /// <p>The name of the log group where the project stores evaluation events.</p>
         pub fn log_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group = Some(input.into());
             self
         }
-        /// <p>The name of the log group where the project stores evaluation
-        /// events.</p>
+        /// <p>The name of the log group where the project stores evaluation events.</p>
         pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_group = input;
             self
@@ -617,8 +590,7 @@ impl CloudWatchLogsDestination {
     }
 }
 
-/// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure
-/// stores the bucket name and bucket prefix.</p>
+/// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Destination {
@@ -746,18 +718,15 @@ impl AsRef<str> for ProjectStatus {
     }
 }
 
-/// <p>A structure containing the CloudWatch Logs log group where the project stores evaluation
-/// events.</p>
+/// <p>A structure containing the CloudWatch Logs log group where the project stores evaluation events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogsDestinationConfig {
-    /// <p>The name of the log group where the project stores evaluation
-    /// events.</p>
+    /// <p>The name of the log group where the project stores evaluation events.</p>
     pub log_group: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsDestinationConfig {
-    /// <p>The name of the log group where the project stores evaluation
-    /// events.</p>
+    /// <p>The name of the log group where the project stores evaluation events.</p>
     pub fn log_group(&self) -> std::option::Option<&str> {
         self.log_group.as_deref()
     }
@@ -778,14 +747,12 @@ pub mod cloud_watch_logs_destination_config {
         pub(crate) log_group: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the log group where the project stores evaluation
-        /// events.</p>
+        /// <p>The name of the log group where the project stores evaluation events.</p>
         pub fn log_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group = Some(input.into());
             self
         }
-        /// <p>The name of the log group where the project stores evaluation
-        /// events.</p>
+        /// <p>The name of the log group where the project stores evaluation events.</p>
         pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_group = input;
             self
@@ -805,8 +772,7 @@ impl CloudWatchLogsDestinationConfig {
     }
 }
 
-/// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure
-/// stores the bucket name and bucket prefix.</p>
+/// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DestinationConfig {
@@ -885,11 +851,9 @@ impl S3DestinationConfig {
 pub struct PutProjectEventsResultEntry {
     /// <p>A unique ID assigned to this <code>PutProjectEvents</code> operation. </p>
     pub event_id: std::option::Option<std::string::String>,
-    /// <p>If the <code>PutProjectEvents</code> operation has an error, the error code is returned
-    /// here.</p>
+    /// <p>If the <code>PutProjectEvents</code> operation has an error, the error code is returned here.</p>
     pub error_code: std::option::Option<std::string::String>,
-    /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is
-    /// returned here.</p>
+    /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is returned here.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
 impl PutProjectEventsResultEntry {
@@ -897,13 +861,11 @@ impl PutProjectEventsResultEntry {
     pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
     }
-    /// <p>If the <code>PutProjectEvents</code> operation has an error, the error code is returned
-    /// here.</p>
+    /// <p>If the <code>PutProjectEvents</code> operation has an error, the error code is returned here.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is
-    /// returned here.</p>
+    /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is returned here.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -938,26 +900,22 @@ pub mod put_project_events_result_entry {
             self.event_id = input;
             self
         }
-        /// <p>If the <code>PutProjectEvents</code> operation has an error, the error code is returned
-        /// here.</p>
+        /// <p>If the <code>PutProjectEvents</code> operation has an error, the error code is returned here.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p>If the <code>PutProjectEvents</code> operation has an error, the error code is returned
-        /// here.</p>
+        /// <p>If the <code>PutProjectEvents</code> operation has an error, the error code is returned here.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is
-        /// returned here.</p>
+        /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is returned here.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is
-        /// returned here.</p>
+        /// <p>If the <code>PutProjectEvents</code> operation has an error, the error message is returned here.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -982,18 +940,13 @@ impl PutProjectEventsResultEntry {
     }
 }
 
-/// <p>A structure that contains the information about one evaluation event or custom event sent to Evidently.
-/// This is a JSON payload. If this event specifies a pre-defined event type, the payload must follow the
-/// defined event schema.</p>
+/// <p>A structure that contains the information about one evaluation event or custom event sent to Evidently. This is a JSON payload. If this event specifies a pre-defined event type, the payload must follow the defined event schema.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Event {
     /// <p>The timestamp of the event.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines
-    /// which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom
-    /// event, which generates metrics from user actions such as clicks and checkouts.</p>
+    /// <p> <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom event, which generates metrics from user actions such as clicks and checkouts.</p>
     pub r#type: std::option::Option<crate::model::EventType>,
     /// <p>The event data.</p>
     pub data: std::option::Option<std::string::String>,
@@ -1003,10 +956,7 @@ impl Event {
     pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
-    /// <p>
-    /// <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines
-    /// which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom
-    /// event, which generates metrics from user actions such as clicks and checkouts.</p>
+    /// <p> <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom event, which generates metrics from user actions such as clicks and checkouts.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::EventType> {
         self.r#type.as_ref()
     }
@@ -1048,18 +998,12 @@ pub mod event {
             self.timestamp = input;
             self
         }
-        /// <p>
-        /// <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines
-        /// which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom
-        /// event, which generates metrics from user actions such as clicks and checkouts.</p>
+        /// <p> <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom event, which generates metrics from user actions such as clicks and checkouts.</p>
         pub fn r#type(mut self, input: crate::model::EventType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>
-        /// <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines
-        /// which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom
-        /// event, which generates metrics from user actions such as clicks and checkouts.</p>
+        /// <p> <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom event, which generates metrics from user actions such as clicks and checkouts.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::EventType>) -> Self {
             self.r#type = input;
             self
@@ -1146,23 +1090,17 @@ impl AsRef<str> for EventType {
     }
 }
 
-/// <p>The value assigned to a feature variation. This structure must contain exactly one
-/// field. It can be <code>boolValue</code>, <code>doubleValue</code>, <code>longValue</code>, or
-/// <code>stringValue</code>.</p>
+/// <p>The value assigned to a feature variation. This structure must contain exactly one field. It can be <code>boolValue</code>, <code>doubleValue</code>, <code>longValue</code>, or <code>stringValue</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum VariableValue {
-    /// <p>If this feature uses the Boolean variation type, this field contains the Boolean value of
-    /// this variation.</p>
+    /// <p>If this feature uses the Boolean variation type, this field contains the Boolean value of this variation.</p>
     BoolValue(bool),
-    /// <p>If this feature uses the double integer variation type, this field contains the double integer value of
-    /// this variation.</p>
+    /// <p>If this feature uses the double integer variation type, this field contains the double integer value of this variation.</p>
     DoubleValue(f64),
-    /// <p>If this feature uses the long variation type, this field contains the long value of
-    /// this variation.</p>
+    /// <p>If this feature uses the long variation type, this field contains the long value of this variation.</p>
     LongValue(i64),
-    /// <p>If this feature uses the string variation type, this field contains the string value of
-    /// this variation.</p>
+    /// <p>If this feature uses the string variation type, this field contains the string value of this variation.</p>
     StringValue(std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -1233,8 +1171,7 @@ impl VariableValue {
     }
 }
 
-/// <p>This structure displays the results of one feature evaluation assignment to one user
-/// session.</p>
+/// <p>This structure displays the results of one feature evaluation assignment to one user session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationResult {
@@ -1248,11 +1185,7 @@ pub struct EvaluationResult {
     pub value: std::option::Option<crate::model::VariableValue>,
     /// <p>An internal ID that represents a unique user session of the application.</p>
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the reason that the user session was assigned this variation. Possible values
-    /// include <code>DEFAULT</code>, meaning the user was served the default variation;
-    /// <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or
-    /// <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an
-    /// experiment.</p>
+    /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment.</p>
     pub reason: std::option::Option<std::string::String>,
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
     pub details: std::option::Option<std::string::String>,
@@ -1278,11 +1211,7 @@ impl EvaluationResult {
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>Specifies the reason that the user session was assigned this variation. Possible values
-    /// include <code>DEFAULT</code>, meaning the user was served the default variation;
-    /// <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or
-    /// <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an
-    /// experiment.</p>
+    /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
@@ -1372,20 +1301,12 @@ pub mod evaluation_result {
             self.entity_id = input;
             self
         }
-        /// <p>Specifies the reason that the user session was assigned this variation. Possible values
-        /// include <code>DEFAULT</code>, meaning the user was served the default variation;
-        /// <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or
-        /// <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an
-        /// experiment.</p>
+        /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason = Some(input.into());
             self
         }
-        /// <p>Specifies the reason that the user session was assigned this variation. Possible values
-        /// include <code>DEFAULT</code>, meaning the user was served the default variation;
-        /// <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or
-        /// <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an
-        /// experiment.</p>
+        /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -1427,12 +1348,9 @@ impl EvaluationResult {
 pub struct EvaluationRequest {
     /// <p>The name of the feature being evaluated.</p>
     pub feature: std::option::Option<std::string::String>,
-    /// <p>An internal ID that represents a unique user session of the application. This
-    /// <code>entityID</code> is checked against any override rules assigned for this
-    /// feature.</p>
+    /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included
-    /// in the evaluation events sent to Evidently from the user session. </p>
+    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
     pub evaluation_context: std::option::Option<std::string::String>,
 }
 impl EvaluationRequest {
@@ -1440,14 +1358,11 @@ impl EvaluationRequest {
     pub fn feature(&self) -> std::option::Option<&str> {
         self.feature.as_deref()
     }
-    /// <p>An internal ID that represents a unique user session of the application. This
-    /// <code>entityID</code> is checked against any override rules assigned for this
-    /// feature.</p>
+    /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included
-    /// in the evaluation events sent to Evidently from the user session. </p>
+    /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
     pub fn evaluation_context(&self) -> std::option::Option<&str> {
         self.evaluation_context.as_deref()
     }
@@ -1482,28 +1397,22 @@ pub mod evaluation_request {
             self.feature = input;
             self
         }
-        /// <p>An internal ID that represents a unique user session of the application. This
-        /// <code>entityID</code> is checked against any override rules assigned for this
-        /// feature.</p>
+        /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>An internal ID that represents a unique user session of the application. This
-        /// <code>entityID</code> is checked against any override rules assigned for this
-        /// feature.</p>
+        /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
         }
-        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included
-        /// in the evaluation events sent to Evidently from the user session. </p>
+        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
         pub fn evaluation_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.evaluation_context = Some(input.into());
             self
         }
-        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included
-        /// in the evaluation events sent to Evidently from the user session. </p>
+        /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
         pub fn set_evaluation_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1821,26 +1730,21 @@ impl ProjectSummary {
     }
 }
 
-/// <p>A structure that contains information about where Evidently is to store
-/// evaluation events for longer term storage.</p>
+/// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProjectDataDeliveryConfig {
-    /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure
-    /// stores the bucket name and bucket prefix.</p>
+    /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
     pub s3_destination: std::option::Option<crate::model::S3DestinationConfig>,
-    /// <p>If the project stores evaluation events in CloudWatch Logs, this structure
-    /// stores the log group name.</p>
+    /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
     pub cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogsDestinationConfig>,
 }
 impl ProjectDataDeliveryConfig {
-    /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure
-    /// stores the bucket name and bucket prefix.</p>
+    /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
     pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3DestinationConfig> {
         self.s3_destination.as_ref()
     }
-    /// <p>If the project stores evaluation events in CloudWatch Logs, this structure
-    /// stores the log group name.</p>
+    /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
     pub fn cloud_watch_logs(
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLogsDestinationConfig> {
@@ -1866,14 +1770,12 @@ pub mod project_data_delivery_config {
             std::option::Option<crate::model::CloudWatchLogsDestinationConfig>,
     }
     impl Builder {
-        /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure
-        /// stores the bucket name and bucket prefix.</p>
+        /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
         pub fn s3_destination(mut self, input: crate::model::S3DestinationConfig) -> Self {
             self.s3_destination = Some(input);
             self
         }
-        /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure
-        /// stores the bucket name and bucket prefix.</p>
+        /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
         pub fn set_s3_destination(
             mut self,
             input: std::option::Option<crate::model::S3DestinationConfig>,
@@ -1881,8 +1783,7 @@ pub mod project_data_delivery_config {
             self.s3_destination = input;
             self
         }
-        /// <p>If the project stores evaluation events in CloudWatch Logs, this structure
-        /// stores the log group name.</p>
+        /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
         pub fn cloud_watch_logs(
             mut self,
             input: crate::model::CloudWatchLogsDestinationConfig,
@@ -1890,8 +1791,7 @@ pub mod project_data_delivery_config {
             self.cloud_watch_logs = Some(input);
             self
         }
-        /// <p>If the project stores evaluation events in CloudWatch Logs, this structure
-        /// stores the log group name.</p>
+        /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
         pub fn set_cloud_watch_logs(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsDestinationConfig>,
@@ -1982,8 +1882,7 @@ pub struct Launch {
     pub project: std::option::Option<std::string::String>,
     /// <p>The current state of the launch.</p>
     pub status: std::option::Option<crate::model::LaunchStatus>,
-    /// <p>If the launch was stopped, this is the string that was entered by the person who
-    /// stopped the launch, to explain why it was stopped.</p>
+    /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The description of the launch.</p>
     pub description: std::option::Option<std::string::String>,
@@ -1997,14 +1896,11 @@ pub struct Launch {
     pub groups: std::option::Option<std::vec::Vec<crate::model::LaunchGroup>>,
     /// <p>An array of structures that define the metrics that are being used to monitor the launch performance.</p>
     pub metric_monitors: std::option::Option<std::vec::Vec<crate::model::MetricMonitor>>,
-    /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID
-    /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-    /// and <code>randomizationSalt</code>.</p>
+    /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
     pub randomization_salt: std::option::Option<std::string::String>,
     /// <p>The type of launch.</p>
     pub r#type: std::option::Option<crate::model::LaunchType>,
-    /// <p>An array of structures that define the traffic allocation percentages among the feature
-    /// variations during each step of the launch.</p>
+    /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub scheduled_splits_definition:
         std::option::Option<crate::model::ScheduledSplitsLaunchDefinition>,
     /// <p>The list of tag keys and values associated with this launch.</p>
@@ -2028,8 +1924,7 @@ impl Launch {
     pub fn status(&self) -> std::option::Option<&crate::model::LaunchStatus> {
         self.status.as_ref()
     }
-    /// <p>If the launch was stopped, this is the string that was entered by the person who
-    /// stopped the launch, to explain why it was stopped.</p>
+    /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
@@ -2057,9 +1952,7 @@ impl Launch {
     pub fn metric_monitors(&self) -> std::option::Option<&[crate::model::MetricMonitor]> {
         self.metric_monitors.as_deref()
     }
-    /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID
-    /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-    /// and <code>randomizationSalt</code>.</p>
+    /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(&self) -> std::option::Option<&str> {
         self.randomization_salt.as_deref()
     }
@@ -2067,8 +1960,7 @@ impl Launch {
     pub fn r#type(&self) -> std::option::Option<&crate::model::LaunchType> {
         self.r#type.as_ref()
     }
-    /// <p>An array of structures that define the traffic allocation percentages among the feature
-    /// variations during each step of the launch.</p>
+    /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub fn scheduled_splits_definition(
         &self,
     ) -> std::option::Option<&crate::model::ScheduledSplitsLaunchDefinition> {
@@ -2175,14 +2067,12 @@ pub mod launch {
             self.status = input;
             self
         }
-        /// <p>If the launch was stopped, this is the string that was entered by the person who
-        /// stopped the launch, to explain why it was stopped.</p>
+        /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_reason = Some(input.into());
             self
         }
-        /// <p>If the launch was stopped, this is the string that was entered by the person who
-        /// stopped the launch, to explain why it was stopped.</p>
+        /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2244,9 +2134,9 @@ pub mod launch {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// <p>An array of structures that define the feature variations that are being used in the launch.</p>
-        pub fn groups(mut self, input: impl Into<crate::model::LaunchGroup>) -> Self {
+        pub fn groups(mut self, input: crate::model::LaunchGroup) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -2263,9 +2153,9 @@ pub mod launch {
         /// To override the contents of this collection use [`set_metric_monitors`](Self::set_metric_monitors).
         ///
         /// <p>An array of structures that define the metrics that are being used to monitor the launch performance.</p>
-        pub fn metric_monitors(mut self, input: impl Into<crate::model::MetricMonitor>) -> Self {
+        pub fn metric_monitors(mut self, input: crate::model::MetricMonitor) -> Self {
             let mut v = self.metric_monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_monitors = Some(v);
             self
         }
@@ -2277,16 +2167,12 @@ pub mod launch {
             self.metric_monitors = input;
             self
         }
-        /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>.</p>
+        /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
         pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
             self.randomization_salt = Some(input.into());
             self
         }
-        /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID
-        /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
-        /// and <code>randomizationSalt</code>.</p>
+        /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
         pub fn set_randomization_salt(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2304,8 +2190,7 @@ pub mod launch {
             self.r#type = input;
             self
         }
-        /// <p>An array of structures that define the traffic allocation percentages among the feature
-        /// variations during each step of the launch.</p>
+        /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
         pub fn scheduled_splits_definition(
             mut self,
             input: crate::model::ScheduledSplitsLaunchDefinition,
@@ -2313,8 +2198,7 @@ pub mod launch {
             self.scheduled_splits_definition = Some(input);
             self
         }
-        /// <p>An array of structures that define the traffic allocation percentages among the feature
-        /// variations during each step of the launch.</p>
+        /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
         pub fn set_scheduled_splits_definition(
             mut self,
             input: std::option::Option<crate::model::ScheduledSplitsLaunchDefinition>,
@@ -2376,20 +2260,15 @@ impl Launch {
     }
 }
 
-/// <p>An array of structures that define the traffic allocation percentages among the feature
-/// variations during each step of a launch. This also defines the start time of each step.</p>
+/// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of a launch. This also defines the start time of each step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledSplitsLaunchDefinition {
-    /// <p>An array of structures that define the traffic allocation percentages among the feature
-    /// variations during each step of the launch. This also defines the start time of each
-    /// step.</p>
+    /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::ScheduledSplit>>,
 }
 impl ScheduledSplitsLaunchDefinition {
-    /// <p>An array of structures that define the traffic allocation percentages among the feature
-    /// variations during each step of the launch. This also defines the start time of each
-    /// step.</p>
+    /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
     pub fn steps(&self) -> std::option::Option<&[crate::model::ScheduledSplit]> {
         self.steps.as_deref()
     }
@@ -2414,18 +2293,14 @@ pub mod scheduled_splits_launch_definition {
         ///
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
-        /// <p>An array of structures that define the traffic allocation percentages among the feature
-        /// variations during each step of the launch. This also defines the start time of each
-        /// step.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::ScheduledSplit>) -> Self {
+        /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
+        pub fn steps(mut self, input: crate::model::ScheduledSplit) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
-        /// <p>An array of structures that define the traffic allocation percentages among the feature
-        /// variations during each step of the launch. This also defines the start time of each
-        /// step.</p>
+        /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScheduledSplit>>,
@@ -2446,16 +2321,13 @@ impl ScheduledSplitsLaunchDefinition {
     }
 }
 
-/// <p>This structure defines the traffic allocation percentages among the feature
-/// variations during one step of a launch, and the start time of that step.</p>
+/// <p>This structure defines the traffic allocation percentages among the feature variations during one step of a launch, and the start time of that step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledSplit {
     /// <p>The date and time that this step of the launch starts.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The traffic allocation percentages among the feature variations during one step of a
-    /// launch. This is a set of key-value pairs.   The keys are variation names. The values represent
-    /// the percentage of traffic to allocate to that variation during this step.</p>
+    /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
     pub group_weights: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
 }
 impl ScheduledSplit {
@@ -2463,9 +2335,7 @@ impl ScheduledSplit {
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The traffic allocation percentages among the feature variations during one step of a
-    /// launch. This is a set of key-value pairs.   The keys are variation names. The values represent
-    /// the percentage of traffic to allocate to that variation during this step.</p>
+    /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
     pub fn group_weights(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i64>> {
@@ -2508,22 +2378,14 @@ pub mod scheduled_split {
         ///
         /// To override the contents of this collection use [`set_group_weights`](Self::set_group_weights).
         ///
-        /// <p>The traffic allocation percentages among the feature variations during one step of a
-        /// launch. This is a set of key-value pairs.   The keys are variation names. The values represent
-        /// the percentage of traffic to allocate to that variation during this step.</p>
-        pub fn group_weights(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i64>,
-        ) -> Self {
+        /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
+        pub fn group_weights(mut self, k: impl Into<std::string::String>, v: i64) -> Self {
             let mut hash_map = self.group_weights.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.group_weights = Some(hash_map);
             self
         }
-        /// <p>The traffic allocation percentages among the feature variations during one step of a
-        /// launch. This is a set of key-value pairs.   The keys are variation names. The values represent
-        /// the percentage of traffic to allocate to that variation during this step.</p>
+        /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
         pub fn set_group_weights(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
@@ -2655,21 +2517,18 @@ impl MetricMonitor {
     }
 }
 
-/// <p>This structure defines a metric that is being used to evaluate the variations
-/// during a launch or experiment.</p>
+/// <p>This structure defines a metric that is being used to evaluate the variations during a launch or experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDefinition {
     /// <p>The name of the metric.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The entity, such as a user or session, that does an action that causes a metric
-    /// value to be recorded.</p>
+    /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded.</p>
     pub entity_id_key: std::option::Option<std::string::String>,
     /// <p>The value that is tracked to produce the metric.</p>
     pub value_key: std::option::Option<std::string::String>,
     /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
-    /// <p>For more information about EventBridge event patterns, see
-    /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
+    /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>The label for the units that the metric is measuring.</p>
     pub unit_label: std::option::Option<std::string::String>,
@@ -2679,8 +2538,7 @@ impl MetricDefinition {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The entity, such as a user or session, that does an action that causes a metric
-    /// value to be recorded.</p>
+    /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded.</p>
     pub fn entity_id_key(&self) -> std::option::Option<&str> {
         self.entity_id_key.as_deref()
     }
@@ -2689,8 +2547,7 @@ impl MetricDefinition {
         self.value_key.as_deref()
     }
     /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
-    /// <p>For more information about EventBridge event patterns, see
-    /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
+    /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
     pub fn event_pattern(&self) -> std::option::Option<&str> {
         self.event_pattern.as_deref()
     }
@@ -2733,14 +2590,12 @@ pub mod metric_definition {
             self.name = input;
             self
         }
-        /// <p>The entity, such as a user or session, that does an action that causes a metric
-        /// value to be recorded.</p>
+        /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded.</p>
         pub fn entity_id_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id_key = Some(input.into());
             self
         }
-        /// <p>The entity, such as a user or session, that does an action that causes a metric
-        /// value to be recorded.</p>
+        /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded.</p>
         pub fn set_entity_id_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2759,15 +2614,13 @@ pub mod metric_definition {
             self
         }
         /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
-        /// <p>For more information about EventBridge event patterns, see
-        /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
+        /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
         pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_pattern = Some(input.into());
             self
         }
         /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
-        /// <p>For more information about EventBridge event patterns, see
-        /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
+        /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
         pub fn set_event_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2804,8 +2657,7 @@ impl MetricDefinition {
     }
 }
 
-/// <p>A structure that defines one launch group in a launch. A launch group is a variation of the feature
-/// that you are including in the launch.</p>
+/// <p>A structure that defines one launch group in a launch. A launch group is a variation of the feature that you are including in the launch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchGroup {
@@ -3064,8 +2916,7 @@ impl AsRef<str> for LaunchStatus {
     }
 }
 
-/// <p>A structure that defines one launch group in a launch. A launch group is a variation of
-/// the feature that you are including in the launch.</p>
+/// <p>A structure that defines one launch group in a launch. A launch group is a variation of the feature that you are including in the launch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchGroupConfig {
@@ -3233,21 +3084,18 @@ impl MetricMonitorConfig {
     }
 }
 
-/// <p>This structure defines a metric that you want to use to evaluate the variations
-/// during a launch or experiment.</p>
+/// <p>This structure defines a metric that you want to use to evaluate the variations during a launch or experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricDefinitionConfig {
     /// <p>A name for the metric.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The entity, such as a user or session, that does an action that causes a metric
-    /// value to be recorded. An example is <code>userDetails.userID</code>.</p>
+    /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is <code>userDetails.userID</code>.</p>
     pub entity_id_key: std::option::Option<std::string::String>,
     /// <p>The value that is tracked to produce the metric.</p>
     pub value_key: std::option::Option<std::string::String>,
     /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
-    /// <p>For more information about EventBridge event patterns, see
-    /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
+    /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>A label for the units that the metric is measuring.</p>
     pub unit_label: std::option::Option<std::string::String>,
@@ -3257,8 +3105,7 @@ impl MetricDefinitionConfig {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The entity, such as a user or session, that does an action that causes a metric
-    /// value to be recorded. An example is <code>userDetails.userID</code>.</p>
+    /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is <code>userDetails.userID</code>.</p>
     pub fn entity_id_key(&self) -> std::option::Option<&str> {
         self.entity_id_key.as_deref()
     }
@@ -3267,8 +3114,7 @@ impl MetricDefinitionConfig {
         self.value_key.as_deref()
     }
     /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
-    /// <p>For more information about EventBridge event patterns, see
-    /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
+    /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
     pub fn event_pattern(&self) -> std::option::Option<&str> {
         self.event_pattern.as_deref()
     }
@@ -3311,14 +3157,12 @@ pub mod metric_definition_config {
             self.name = input;
             self
         }
-        /// <p>The entity, such as a user or session, that does an action that causes a metric
-        /// value to be recorded. An example is <code>userDetails.userID</code>.</p>
+        /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is <code>userDetails.userID</code>.</p>
         pub fn entity_id_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id_key = Some(input.into());
             self
         }
-        /// <p>The entity, such as a user or session, that does an action that causes a metric
-        /// value to be recorded. An example is <code>userDetails.userID</code>.</p>
+        /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded. An example is <code>userDetails.userID</code>.</p>
         pub fn set_entity_id_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3337,15 +3181,13 @@ pub mod metric_definition_config {
             self
         }
         /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
-        /// <p>For more information about EventBridge event patterns, see
-        /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
+        /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
         pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_pattern = Some(input.into());
             self
         }
         /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
-        /// <p>For more information about EventBridge event patterns, see
-        /// <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
+        /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
         pub fn set_event_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3382,20 +3224,15 @@ impl MetricDefinitionConfig {
     }
 }
 
-/// <p>An array of structures that define the traffic allocation percentages among the feature
-/// variations during each step of a launch. This also defines the start time of each step.</p>
+/// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of a launch. This also defines the start time of each step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledSplitsLaunchConfig {
-    /// <p>An array of structures that define the traffic allocation percentages among the feature
-    /// variations during each step of the launch. This also defines the start time of each
-    /// step.</p>
+    /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::ScheduledSplitConfig>>,
 }
 impl ScheduledSplitsLaunchConfig {
-    /// <p>An array of structures that define the traffic allocation percentages among the feature
-    /// variations during each step of the launch. This also defines the start time of each
-    /// step.</p>
+    /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
     pub fn steps(&self) -> std::option::Option<&[crate::model::ScheduledSplitConfig]> {
         self.steps.as_deref()
     }
@@ -3420,18 +3257,14 @@ pub mod scheduled_splits_launch_config {
         ///
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
-        /// <p>An array of structures that define the traffic allocation percentages among the feature
-        /// variations during each step of the launch. This also defines the start time of each
-        /// step.</p>
-        pub fn steps(mut self, input: impl Into<crate::model::ScheduledSplitConfig>) -> Self {
+        /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
+        pub fn steps(mut self, input: crate::model::ScheduledSplitConfig) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.steps = Some(v);
             self
         }
-        /// <p>An array of structures that define the traffic allocation percentages among the feature
-        /// variations during each step of the launch. This also defines the start time of each
-        /// step.</p>
+        /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch. This also defines the start time of each step.</p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScheduledSplitConfig>>,
@@ -3452,16 +3285,13 @@ impl ScheduledSplitsLaunchConfig {
     }
 }
 
-/// <p>This structure defines the traffic allocation percentages among the feature
-/// variations during one step of a launch, and the start time of that step.</p>
+/// <p>This structure defines the traffic allocation percentages among the feature variations during one step of a launch, and the start time of that step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduledSplitConfig {
     /// <p>The date and time that this step of the launch starts.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The traffic allocation percentages among the feature variations during one step of a
-    /// launch. This is a set of key-value pairs. The keys are variation names. The values represent
-    /// the percentage of traffic to allocate to that variation during this step.</p>
+    /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
     pub group_weights: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
 }
 impl ScheduledSplitConfig {
@@ -3469,9 +3299,7 @@ impl ScheduledSplitConfig {
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The traffic allocation percentages among the feature variations during one step of a
-    /// launch. This is a set of key-value pairs. The keys are variation names. The values represent
-    /// the percentage of traffic to allocate to that variation during this step.</p>
+    /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
     pub fn group_weights(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i64>> {
@@ -3514,22 +3342,14 @@ pub mod scheduled_split_config {
         ///
         /// To override the contents of this collection use [`set_group_weights`](Self::set_group_weights).
         ///
-        /// <p>The traffic allocation percentages among the feature variations during one step of a
-        /// launch. This is a set of key-value pairs. The keys are variation names. The values represent
-        /// the percentage of traffic to allocate to that variation during this step.</p>
-        pub fn group_weights(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i64>,
-        ) -> Self {
+        /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
+        pub fn group_weights(mut self, k: impl Into<std::string::String>, v: i64) -> Self {
             let mut hash_map = self.group_weights.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.group_weights = Some(hash_map);
             self
         }
-        /// <p>The traffic allocation percentages among the feature variations during one step of a
-        /// launch. This is a set of key-value pairs. The keys are variation names. The values represent
-        /// the percentage of traffic to allocate to that variation during this step.</p>
+        /// <p>The traffic allocation percentages among the feature variations during one step of a launch. This is a set of key-value pairs. The keys are variation names. The values represent the percentage of traffic to allocate to that variation during this step.</p>
         pub fn set_group_weights(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
@@ -3569,15 +3389,11 @@ pub struct FeatureSummary {
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that the feature was most recently updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by
-    /// any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>,
-    /// the default variation is being served to all users.</p>
+    /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
     pub evaluation_strategy: std::option::Option<crate::model::FeatureEvaluationStrategy>,
     /// <p>An array of structures that define</p>
     pub evaluation_rules: std::option::Option<std::vec::Vec<crate::model::EvaluationRule>>,
-    /// <p>The name of the variation that is used as the default variation. The default
-    /// variation is served to users who are not allocated to any ongoing launches
-    /// or experiments of this feature.</p>
+    /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     pub default_variation: std::option::Option<std::string::String>,
     /// <p>The list of tag keys and values associated with this feature.</p>
     pub tags:
@@ -3608,9 +3424,7 @@ impl FeatureSummary {
     pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
-    /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by
-    /// any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>,
-    /// the default variation is being served to all users.</p>
+    /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
     pub fn evaluation_strategy(
         &self,
     ) -> std::option::Option<&crate::model::FeatureEvaluationStrategy> {
@@ -3620,9 +3434,7 @@ impl FeatureSummary {
     pub fn evaluation_rules(&self) -> std::option::Option<&[crate::model::EvaluationRule]> {
         self.evaluation_rules.as_deref()
     }
-    /// <p>The name of the variation that is used as the default variation. The default
-    /// variation is served to users who are not allocated to any ongoing launches
-    /// or experiments of this feature.</p>
+    /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     pub fn default_variation(&self) -> std::option::Option<&str> {
         self.default_variation.as_deref()
     }
@@ -3741,9 +3553,7 @@ pub mod feature_summary {
             self.last_updated_time = input;
             self
         }
-        /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by
-        /// any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>,
-        /// the default variation is being served to all users.</p>
+        /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
         pub fn evaluation_strategy(
             mut self,
             input: crate::model::FeatureEvaluationStrategy,
@@ -3751,9 +3561,7 @@ pub mod feature_summary {
             self.evaluation_strategy = Some(input);
             self
         }
-        /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by
-        /// any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>,
-        /// the default variation is being served to all users.</p>
+        /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
         pub fn set_evaluation_strategy(
             mut self,
             input: std::option::Option<crate::model::FeatureEvaluationStrategy>,
@@ -3766,9 +3574,9 @@ pub mod feature_summary {
         /// To override the contents of this collection use [`set_evaluation_rules`](Self::set_evaluation_rules).
         ///
         /// <p>An array of structures that define</p>
-        pub fn evaluation_rules(mut self, input: impl Into<crate::model::EvaluationRule>) -> Self {
+        pub fn evaluation_rules(mut self, input: crate::model::EvaluationRule) -> Self {
             let mut v = self.evaluation_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evaluation_rules = Some(v);
             self
         }
@@ -3780,16 +3588,12 @@ pub mod feature_summary {
             self.evaluation_rules = input;
             self
         }
-        /// <p>The name of the variation that is used as the default variation. The default
-        /// variation is served to users who are not allocated to any ongoing launches
-        /// or experiments of this feature.</p>
+        /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
         pub fn default_variation(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_variation = Some(input.into());
             self
         }
-        /// <p>The name of the variation that is used as the default variation. The default
-        /// variation is served to users who are not allocated to any ongoing launches
-        /// or experiments of this feature.</p>
+        /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
         pub fn set_default_variation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3846,15 +3650,13 @@ impl FeatureSummary {
     }
 }
 
-/// <p>A structure that contains the information about an evaluation rule for this feature,
-/// if it is used in a launch or experiment.</p>
+/// <p>A structure that contains the information about an evaluation rule for this feature, if it is used in a launch or experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EvaluationRule {
     /// <p>The name of the experiment or launch.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is
-    /// <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
+    /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl EvaluationRule {
@@ -3862,8 +3664,7 @@ impl EvaluationRule {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is
-    /// <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
+    /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -3896,14 +3697,12 @@ pub mod evaluation_rule {
             self.name = input;
             self
         }
-        /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is
-        /// <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
+        /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is
-        /// <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
+        /// <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule for a launch, and it is <code>aws.evidently.onlineab</code> if this is an evaluation rule for an experiment.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -4052,34 +3851,23 @@ pub struct Feature {
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The description of the feature.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by
-    /// any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>,
-    /// the default variation is being served to all users.</p>
+    /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
     pub evaluation_strategy: std::option::Option<crate::model::FeatureEvaluationStrategy>,
-    /// <p>Defines the type of value used to define the different feature variations.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a>
-    /// </p>
+    /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a> </p>
     pub value_type: std::option::Option<crate::model::VariationValueType>,
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
     pub variations: std::option::Option<std::vec::Vec<crate::model::Variation>>,
-    /// <p>The name of the variation that is used as the default variation. The default
-    /// variation is served to users who are not allocated to any ongoing launches
-    /// or experiments of this feature.</p>
+    /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
-    /// <p>If you omit <code>defaultVariation</code>, the first variation listed in
-    /// the <code>variations</code> structure is used as the default variation.</p>
+    /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
     pub default_variation: std::option::Option<std::string::String>,
     /// <p>An array of structures that define the evaluation rules for the feature.</p>
     pub evaluation_rules: std::option::Option<std::vec::Vec<crate::model::EvaluationRule>>,
     /// <p>The list of tag keys and values associated with this feature.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A set of key-value pairs  that specify users who should always be served a specific
-    /// variation of a feature. Each key specifies a user using their user ID, account ID, or some
-    /// other identifier. The value specifies the name of the variation that the user is to be
-    /// served.</p>
-    /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used
-    /// in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
+    /// <p>A set of key-value pairs that specify users who should always be served a specific variation of a feature. Each key specifies a user using their user ID, account ID, or some other identifier. The value specifies the name of the variation that the user is to be served.</p>
+    /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
     pub entity_overrides:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4112,17 +3900,13 @@ impl Feature {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by
-    /// any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>,
-    /// the default variation is being served to all users.</p>
+    /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
     pub fn evaluation_strategy(
         &self,
     ) -> std::option::Option<&crate::model::FeatureEvaluationStrategy> {
         self.evaluation_strategy.as_ref()
     }
-    /// <p>Defines the type of value used to define the different feature variations.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a>
-    /// </p>
+    /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a> </p>
     pub fn value_type(&self) -> std::option::Option<&crate::model::VariationValueType> {
         self.value_type.as_ref()
     }
@@ -4130,12 +3914,9 @@ impl Feature {
     pub fn variations(&self) -> std::option::Option<&[crate::model::Variation]> {
         self.variations.as_deref()
     }
-    /// <p>The name of the variation that is used as the default variation. The default
-    /// variation is served to users who are not allocated to any ongoing launches
-    /// or experiments of this feature.</p>
+    /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
-    /// <p>If you omit <code>defaultVariation</code>, the first variation listed in
-    /// the <code>variations</code> structure is used as the default variation.</p>
+    /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
     pub fn default_variation(&self) -> std::option::Option<&str> {
         self.default_variation.as_deref()
     }
@@ -4150,12 +3931,8 @@ impl Feature {
     {
         self.tags.as_ref()
     }
-    /// <p>A set of key-value pairs  that specify users who should always be served a specific
-    /// variation of a feature. Each key specifies a user using their user ID, account ID, or some
-    /// other identifier. The value specifies the name of the variation that the user is to be
-    /// served.</p>
-    /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used
-    /// in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
+    /// <p>A set of key-value pairs that specify users who should always be served a specific variation of a feature. Each key specifies a user using their user ID, account ID, or some other identifier. The value specifies the name of the variation that the user is to be served.</p>
+    /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
     pub fn entity_overrides(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -4290,9 +4067,7 @@ pub mod feature {
             self.description = input;
             self
         }
-        /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by
-        /// any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>,
-        /// the default variation is being served to all users.</p>
+        /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
         pub fn evaluation_strategy(
             mut self,
             input: crate::model::FeatureEvaluationStrategy,
@@ -4300,9 +4075,7 @@ pub mod feature {
             self.evaluation_strategy = Some(input);
             self
         }
-        /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by
-        /// any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>,
-        /// the default variation is being served to all users.</p>
+        /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
         pub fn set_evaluation_strategy(
             mut self,
             input: std::option::Option<crate::model::FeatureEvaluationStrategy>,
@@ -4310,16 +4083,12 @@ pub mod feature {
             self.evaluation_strategy = input;
             self
         }
-        /// <p>Defines the type of value used to define the different feature variations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a>
-        /// </p>
+        /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a> </p>
         pub fn value_type(mut self, input: crate::model::VariationValueType) -> Self {
             self.value_type = Some(input);
             self
         }
-        /// <p>Defines the type of value used to define the different feature variations.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a>
-        /// </p>
+        /// <p>Defines the type of value used to define the different feature variations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-variationtypes.html">Variation types</a> </p>
         pub fn set_value_type(
             mut self,
             input: std::option::Option<crate::model::VariationValueType>,
@@ -4332,9 +4101,9 @@ pub mod feature {
         /// To override the contents of this collection use [`set_variations`](Self::set_variations).
         ///
         /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-        pub fn variations(mut self, input: impl Into<crate::model::Variation>) -> Self {
+        pub fn variations(mut self, input: crate::model::Variation) -> Self {
             let mut v = self.variations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variations = Some(v);
             self
         }
@@ -4346,22 +4115,16 @@ pub mod feature {
             self.variations = input;
             self
         }
-        /// <p>The name of the variation that is used as the default variation. The default
-        /// variation is served to users who are not allocated to any ongoing launches
-        /// or experiments of this feature.</p>
+        /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
         /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
-        /// <p>If you omit <code>defaultVariation</code>, the first variation listed in
-        /// the <code>variations</code> structure is used as the default variation.</p>
+        /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
         pub fn default_variation(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_variation = Some(input.into());
             self
         }
-        /// <p>The name of the variation that is used as the default variation. The default
-        /// variation is served to users who are not allocated to any ongoing launches
-        /// or experiments of this feature.</p>
+        /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
         /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
-        /// <p>If you omit <code>defaultVariation</code>, the first variation listed in
-        /// the <code>variations</code> structure is used as the default variation.</p>
+        /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
         pub fn set_default_variation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4374,9 +4137,9 @@ pub mod feature {
         /// To override the contents of this collection use [`set_evaluation_rules`](Self::set_evaluation_rules).
         ///
         /// <p>An array of structures that define the evaluation rules for the feature.</p>
-        pub fn evaluation_rules(mut self, input: impl Into<crate::model::EvaluationRule>) -> Self {
+        pub fn evaluation_rules(mut self, input: crate::model::EvaluationRule) -> Self {
             let mut v = self.evaluation_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.evaluation_rules = Some(v);
             self
         }
@@ -4417,12 +4180,8 @@ pub mod feature {
         ///
         /// To override the contents of this collection use [`set_entity_overrides`](Self::set_entity_overrides).
         ///
-        /// <p>A set of key-value pairs  that specify users who should always be served a specific
-        /// variation of a feature. Each key specifies a user using their user ID, account ID, or some
-        /// other identifier. The value specifies the name of the variation that the user is to be
-        /// served.</p>
-        /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used
-        /// in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
+        /// <p>A set of key-value pairs that specify users who should always be served a specific variation of a feature. Each key specifies a user using their user ID, account ID, or some other identifier. The value specifies the name of the variation that the user is to be served.</p>
+        /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
         pub fn entity_overrides(
             mut self,
             k: impl Into<std::string::String>,
@@ -4433,12 +4192,8 @@ pub mod feature {
             self.entity_overrides = Some(hash_map);
             self
         }
-        /// <p>A set of key-value pairs  that specify users who should always be served a specific
-        /// variation of a feature. Each key specifies a user using their user ID, account ID, or some
-        /// other identifier. The value specifies the name of the variation that the user is to be
-        /// served.</p>
-        /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used
-        /// in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
+        /// <p>A set of key-value pairs that specify users who should always be served a specific variation of a feature. Each key specifies a user using their user ID, account ID, or some other identifier. The value specifies the name of the variation that the user is to be served.</p>
+        /// <p>For the override to be successful, the value of the key must match the <code>entityId</code> used in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation.</p>
         pub fn set_entity_overrides(
             mut self,
             input: std::option::Option<
@@ -4914,8 +4669,7 @@ impl AsRef<str> for ExperimentReportName {
     }
 }
 
-/// <p>A structure that contains experiment results for one metric that is monitored in
-/// the experiment.</p>
+/// <p>A structure that contains experiment results for one metric that is monitored in the experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExperimentResultsData {
@@ -5009,9 +4763,9 @@ pub mod experiment_results_data {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The values for the <code>metricName</code> that were recorded in the experiment.</p>
-        pub fn values(mut self, input: impl Into<f64>) -> Self {
+        pub fn values(mut self, input: f64) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
@@ -5250,8 +5004,7 @@ pub struct Experiment {
     pub project: std::option::Option<std::string::String>,
     /// <p>The current state of the experiment.</p>
     pub status: std::option::Option<crate::model::ExperimentStatus>,
-    /// <p>If the experiment was stopped, this is the string that was entered by the person who
-    /// stopped the experiment, to explain why it was stopped.</p>
+    /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>A description of the experiment.</p>
     pub description: std::option::Option<std::string::String>,
@@ -5265,24 +5018,16 @@ pub struct Experiment {
     pub execution: std::option::Option<crate::model::ExperimentExecution>,
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
     pub treatments: std::option::Option<std::vec::Vec<crate::model::Treatment>>,
-    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-    /// or lower value for each metric is the goal.</p>
+    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
     pub metric_goals: std::option::Option<std::vec::Vec<crate::model::MetricGoal>>,
-    /// <p>This value is used when Evidently assigns a particular user session to the experiment. It
-    /// helps create a randomization ID to determine which variation the user session is served. This
-    /// randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
+    /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
     pub randomization_salt: std::option::Option<std::string::String>,
-    /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment.
-    /// The available audience
-    /// is the total audience minus the audience that you have allocated to overrides or current launches of
-    /// this feature.</p>
+    /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent, so a value of 10,000 is 10% of the available audience.</p>
     pub sampling_rate: i64,
     /// <p>The type of this experiment. Currently, this value must be <code>aws.experiment.onlineab</code>.</p>
     pub r#type: std::option::Option<crate::model::ExperimentType>,
-    /// <p>A structure that contains the configuration of which variation to use as the "control"
-    /// version. The "control" version is used for comparison with other variations. This structure
-    /// also specifies how much experiment traffic is allocated to each variation.</p>
+    /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub online_ab_definition: std::option::Option<crate::model::OnlineAbDefinition>,
     /// <p>The list of tag keys and values associated with this experiment.</p>
     pub tags:
@@ -5305,8 +5050,7 @@ impl Experiment {
     pub fn status(&self) -> std::option::Option<&crate::model::ExperimentStatus> {
         self.status.as_ref()
     }
-    /// <p>If the experiment was stopped, this is the string that was entered by the person who
-    /// stopped the experiment, to explain why it was stopped.</p>
+    /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
@@ -5334,21 +5078,15 @@ impl Experiment {
     pub fn treatments(&self) -> std::option::Option<&[crate::model::Treatment]> {
         self.treatments.as_deref()
     }
-    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-    /// or lower value for each metric is the goal.</p>
+    /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
     pub fn metric_goals(&self) -> std::option::Option<&[crate::model::MetricGoal]> {
         self.metric_goals.as_deref()
     }
-    /// <p>This value is used when Evidently assigns a particular user session to the experiment. It
-    /// helps create a randomization ID to determine which variation the user session is served. This
-    /// randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
+    /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(&self) -> std::option::Option<&str> {
         self.randomization_salt.as_deref()
     }
-    /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment.
-    /// The available audience
-    /// is the total audience minus the audience that you have allocated to overrides or current launches of
-    /// this feature.</p>
+    /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent, so a value of 10,000 is 10% of the available audience.</p>
     pub fn sampling_rate(&self) -> i64 {
         self.sampling_rate
@@ -5357,9 +5095,7 @@ impl Experiment {
     pub fn r#type(&self) -> std::option::Option<&crate::model::ExperimentType> {
         self.r#type.as_ref()
     }
-    /// <p>A structure that contains the configuration of which variation to use as the "control"
-    /// version. The "control" version is used for comparison with other variations. This structure
-    /// also specifies how much experiment traffic is allocated to each variation.</p>
+    /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub fn online_ab_definition(&self) -> std::option::Option<&crate::model::OnlineAbDefinition> {
         self.online_ab_definition.as_ref()
     }
@@ -5464,14 +5200,12 @@ pub mod experiment {
             self.status = input;
             self
         }
-        /// <p>If the experiment was stopped, this is the string that was entered by the person who
-        /// stopped the experiment, to explain why it was stopped.</p>
+        /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_reason = Some(input.into());
             self
         }
-        /// <p>If the experiment was stopped, this is the string that was entered by the person who
-        /// stopped the experiment, to explain why it was stopped.</p>
+        /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5546,9 +5280,9 @@ pub mod experiment {
         /// To override the contents of this collection use [`set_treatments`](Self::set_treatments).
         ///
         /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-        pub fn treatments(mut self, input: impl Into<crate::model::Treatment>) -> Self {
+        pub fn treatments(mut self, input: crate::model::Treatment) -> Self {
             let mut v = self.treatments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.treatments = Some(v);
             self
         }
@@ -5564,16 +5298,14 @@ pub mod experiment {
         ///
         /// To override the contents of this collection use [`set_metric_goals`](Self::set_metric_goals).
         ///
-        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-        /// or lower value for each metric is the goal.</p>
-        pub fn metric_goals(mut self, input: impl Into<crate::model::MetricGoal>) -> Self {
+        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
+        pub fn metric_goals(mut self, input: crate::model::MetricGoal) -> Self {
             let mut v = self.metric_goals.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_goals = Some(v);
             self
         }
-        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher
-        /// or lower value for each metric is the goal.</p>
+        /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
         pub fn set_metric_goals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricGoal>>,
@@ -5581,16 +5313,12 @@ pub mod experiment {
             self.metric_goals = input;
             self
         }
-        /// <p>This value is used when Evidently assigns a particular user session to the experiment. It
-        /// helps create a randomization ID to determine which variation the user session is served. This
-        /// randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
+        /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
         pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
             self.randomization_salt = Some(input.into());
             self
         }
-        /// <p>This value is used when Evidently assigns a particular user session to the experiment. It
-        /// helps create a randomization ID to determine which variation the user session is served. This
-        /// randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
+        /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
         pub fn set_randomization_salt(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5598,19 +5326,13 @@ pub mod experiment {
             self.randomization_salt = input;
             self
         }
-        /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment.
-        /// The available audience
-        /// is the total audience minus the audience that you have allocated to overrides or current launches of
-        /// this feature.</p>
+        /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
         /// <p>This is represented in thousandths of a percent, so a value of 10,000 is 10% of the available audience.</p>
         pub fn sampling_rate(mut self, input: i64) -> Self {
             self.sampling_rate = Some(input);
             self
         }
-        /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment.
-        /// The available audience
-        /// is the total audience minus the audience that you have allocated to overrides or current launches of
-        /// this feature.</p>
+        /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
         /// <p>This is represented in thousandths of a percent, so a value of 10,000 is 10% of the available audience.</p>
         pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
             self.sampling_rate = input;
@@ -5629,16 +5351,12 @@ pub mod experiment {
             self.r#type = input;
             self
         }
-        /// <p>A structure that contains the configuration of which variation to use as the "control"
-        /// version. The "control" version is used for comparison with other variations. This structure
-        /// also specifies how much experiment traffic is allocated to each variation.</p>
+        /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
         pub fn online_ab_definition(mut self, input: crate::model::OnlineAbDefinition) -> Self {
             self.online_ab_definition = Some(input);
             self
         }
-        /// <p>A structure that contains the configuration of which variation to use as the "control"
-        /// version. The "control" version is used for comparison with other variations. This structure
-        /// also specifies how much experiment traffic is allocated to each variation.</p>
+        /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
         pub fn set_online_ab_definition(
             mut self,
             input: std::option::Option<crate::model::OnlineAbDefinition>,
@@ -5702,18 +5420,13 @@ impl Experiment {
     }
 }
 
-/// <p>A structure that contains the configuration of which variation to use as the "control"
-/// version. The "control" version is used for comparison with other variations. This structure
-/// also specifies how much experiment traffic is allocated to each variation.</p>
+/// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnlineAbDefinition {
     /// <p>The name of the variation that is the default variation that the other variations are compared to.</p>
     pub control_treatment_name: std::option::Option<std::string::String>,
-    /// <p>A set of key-value pairs.  The keys are variation names, and the values are the portion
-    /// of experiment traffic to be assigned to that variation. The traffic portion is specified in
-    /// thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment
-    /// traffic to that variation.</p>
+    /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. The traffic portion is specified in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
     pub treatment_weights: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
 }
 impl OnlineAbDefinition {
@@ -5721,10 +5434,7 @@ impl OnlineAbDefinition {
     pub fn control_treatment_name(&self) -> std::option::Option<&str> {
         self.control_treatment_name.as_deref()
     }
-    /// <p>A set of key-value pairs.  The keys are variation names, and the values are the portion
-    /// of experiment traffic to be assigned to that variation. The traffic portion is specified in
-    /// thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment
-    /// traffic to that variation.</p>
+    /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. The traffic portion is specified in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
     pub fn treatment_weights(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i64>> {
@@ -5767,24 +5477,14 @@ pub mod online_ab_definition {
         ///
         /// To override the contents of this collection use [`set_treatment_weights`](Self::set_treatment_weights).
         ///
-        /// <p>A set of key-value pairs.  The keys are variation names, and the values are the portion
-        /// of experiment traffic to be assigned to that variation. The traffic portion is specified in
-        /// thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment
-        /// traffic to that variation.</p>
-        pub fn treatment_weights(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i64>,
-        ) -> Self {
+        /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. The traffic portion is specified in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
+        pub fn treatment_weights(mut self, k: impl Into<std::string::String>, v: i64) -> Self {
             let mut hash_map = self.treatment_weights.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.treatment_weights = Some(hash_map);
             self
         }
-        /// <p>A set of key-value pairs.  The keys are variation names, and the values are the portion
-        /// of experiment traffic to be assigned to that variation. The traffic portion is specified in
-        /// thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment
-        /// traffic to that variation.</p>
+        /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. The traffic portion is specified in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
         pub fn set_treatment_weights(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
@@ -5859,19 +5559,14 @@ impl AsRef<str> for ExperimentType {
     }
 }
 
-/// <p>A structure that tells Evidently whether higher or lower values are desired for a metric that is
-/// used in an experiment.</p>
+/// <p>A structure that tells Evidently whether higher or lower values are desired for a metric that is used in an experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricGoal {
     /// <p>A structure that contains details about the metric.</p>
     pub metric_definition: std::option::Option<crate::model::MetricDefinition>,
-    /// <p>
-    /// <code>INCREASE</code> means that a variation with a higher number for this metric is performing
-    /// better.</p>
-    /// <p>
-    /// <code>DECREASE</code> means that a variation with a lower number for this metric is performing
-    /// better.</p>
+    /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
+    /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     pub desired_change: std::option::Option<crate::model::ChangeDirectionEnum>,
 }
 impl MetricGoal {
@@ -5879,12 +5574,8 @@ impl MetricGoal {
     pub fn metric_definition(&self) -> std::option::Option<&crate::model::MetricDefinition> {
         self.metric_definition.as_ref()
     }
-    /// <p>
-    /// <code>INCREASE</code> means that a variation with a higher number for this metric is performing
-    /// better.</p>
-    /// <p>
-    /// <code>DECREASE</code> means that a variation with a lower number for this metric is performing
-    /// better.</p>
+    /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
+    /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     pub fn desired_change(&self) -> std::option::Option<&crate::model::ChangeDirectionEnum> {
         self.desired_change.as_ref()
     }
@@ -5920,22 +5611,14 @@ pub mod metric_goal {
             self.metric_definition = input;
             self
         }
-        /// <p>
-        /// <code>INCREASE</code> means that a variation with a higher number for this metric is performing
-        /// better.</p>
-        /// <p>
-        /// <code>DECREASE</code> means that a variation with a lower number for this metric is performing
-        /// better.</p>
+        /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
+        /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
         pub fn desired_change(mut self, input: crate::model::ChangeDirectionEnum) -> Self {
             self.desired_change = Some(input);
             self
         }
-        /// <p>
-        /// <code>INCREASE</code> means that a variation with a higher number for this metric is performing
-        /// better.</p>
-        /// <p>
-        /// <code>DECREASE</code> means that a variation with a lower number for this metric is performing
-        /// better.</p>
+        /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
+        /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
         pub fn set_desired_change(
             mut self,
             input: std::option::Option<crate::model::ChangeDirectionEnum>,
@@ -6014,8 +5697,7 @@ impl AsRef<str> for ChangeDirectionEnum {
     }
 }
 
-/// <p>A structure that defines one treatment in an experiment. A treatment is a variation of the feature
-/// that you are including in the experiment.</p>
+/// <p>A structure that defines one treatment in an experiment. A treatment is a variation of the feature that you are including in the experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Treatment {
@@ -6023,8 +5705,7 @@ pub struct Treatment {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the treatment.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The feature variation used for this treatment. This is a key-value pair. The key is the
-    /// feature name, and the value is the variation name.</p>
+    /// <p>The feature variation used for this treatment. This is a key-value pair. The key is the feature name, and the value is the variation name.</p>
     pub feature_variations:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6037,8 +5718,7 @@ impl Treatment {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The feature variation used for this treatment. This is a key-value pair. The key is the
-    /// feature name, and the value is the variation name.</p>
+    /// <p>The feature variation used for this treatment. This is a key-value pair. The key is the feature name, and the value is the variation name.</p>
     pub fn feature_variations(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -6092,8 +5772,7 @@ pub mod treatment {
         ///
         /// To override the contents of this collection use [`set_feature_variations`](Self::set_feature_variations).
         ///
-        /// <p>The feature variation used for this treatment. This is a key-value pair. The key is the
-        /// feature name, and the value is the variation name.</p>
+        /// <p>The feature variation used for this treatment. This is a key-value pair. The key is the feature name, and the value is the variation name.</p>
         pub fn feature_variations(
             mut self,
             k: impl Into<std::string::String>,
@@ -6104,8 +5783,7 @@ pub mod treatment {
             self.feature_variations = Some(hash_map);
             self
         }
-        /// <p>The feature variation used for this treatment. This is a key-value pair. The key is the
-        /// feature name, and the value is the variation name.</p>
+        /// <p>The feature variation used for this treatment. This is a key-value pair. The key is the feature name, and the value is the variation name.</p>
         pub fn set_feature_variations(
             mut self,
             input: std::option::Option<
@@ -6335,18 +6013,13 @@ impl AsRef<str> for ExperimentStatus {
     }
 }
 
-/// <p>A structure that contains the configuration of which variation to use as the "control"
-/// version. The "control" version  is used for comparison with other variations. This structure
-/// also specifies how much experiment traffic is allocated to each variation.</p>
+/// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OnlineAbConfig {
     /// <p>The name of the variation that is to be the default variation that the other variations are compared to.</p>
     pub control_treatment_name: std::option::Option<std::string::String>,
-    /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion
-    /// of experiment traffic to be assigned to that variation. Specify the traffic portion in
-    /// thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment
-    /// traffic to that variation.</p>
+    /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. Specify the traffic portion in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
     pub treatment_weights: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
 }
 impl OnlineAbConfig {
@@ -6354,10 +6027,7 @@ impl OnlineAbConfig {
     pub fn control_treatment_name(&self) -> std::option::Option<&str> {
         self.control_treatment_name.as_deref()
     }
-    /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion
-    /// of experiment traffic to be assigned to that variation. Specify the traffic portion in
-    /// thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment
-    /// traffic to that variation.</p>
+    /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. Specify the traffic portion in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
     pub fn treatment_weights(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, i64>> {
@@ -6400,24 +6070,14 @@ pub mod online_ab_config {
         ///
         /// To override the contents of this collection use [`set_treatment_weights`](Self::set_treatment_weights).
         ///
-        /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion
-        /// of experiment traffic to be assigned to that variation. Specify the traffic portion in
-        /// thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment
-        /// traffic to that variation.</p>
-        pub fn treatment_weights(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<i64>,
-        ) -> Self {
+        /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. Specify the traffic portion in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
+        pub fn treatment_weights(mut self, k: impl Into<std::string::String>, v: i64) -> Self {
             let mut hash_map = self.treatment_weights.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.treatment_weights = Some(hash_map);
             self
         }
-        /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion
-        /// of experiment traffic to be assigned to that variation. Specify the traffic portion in
-        /// thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment
-        /// traffic to that variation.</p>
+        /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. Specify the traffic portion in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
         pub fn set_treatment_weights(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
@@ -6441,19 +6101,14 @@ impl OnlineAbConfig {
     }
 }
 
-/// <p>Use this structure to tell Evidently whether higher or lower values are desired for a metric that is
-/// used in an experiment.</p>
+/// <p>Use this structure to tell Evidently whether higher or lower values are desired for a metric that is used in an experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricGoalConfig {
     /// <p>A structure that contains details about the metric.</p>
     pub metric_definition: std::option::Option<crate::model::MetricDefinitionConfig>,
-    /// <p>
-    /// <code>INCREASE</code> means that a variation with a higher number for this metric is performing
-    /// better.</p>
-    /// <p>
-    /// <code>DECREASE</code> means that a variation with a lower number for this metric is performing
-    /// better.</p>
+    /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
+    /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     pub desired_change: std::option::Option<crate::model::ChangeDirectionEnum>,
 }
 impl MetricGoalConfig {
@@ -6461,12 +6116,8 @@ impl MetricGoalConfig {
     pub fn metric_definition(&self) -> std::option::Option<&crate::model::MetricDefinitionConfig> {
         self.metric_definition.as_ref()
     }
-    /// <p>
-    /// <code>INCREASE</code> means that a variation with a higher number for this metric is performing
-    /// better.</p>
-    /// <p>
-    /// <code>DECREASE</code> means that a variation with a lower number for this metric is performing
-    /// better.</p>
+    /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
+    /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     pub fn desired_change(&self) -> std::option::Option<&crate::model::ChangeDirectionEnum> {
         self.desired_change.as_ref()
     }
@@ -6502,22 +6153,14 @@ pub mod metric_goal_config {
             self.metric_definition = input;
             self
         }
-        /// <p>
-        /// <code>INCREASE</code> means that a variation with a higher number for this metric is performing
-        /// better.</p>
-        /// <p>
-        /// <code>DECREASE</code> means that a variation with a lower number for this metric is performing
-        /// better.</p>
+        /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
+        /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
         pub fn desired_change(mut self, input: crate::model::ChangeDirectionEnum) -> Self {
             self.desired_change = Some(input);
             self
         }
-        /// <p>
-        /// <code>INCREASE</code> means that a variation with a higher number for this metric is performing
-        /// better.</p>
-        /// <p>
-        /// <code>DECREASE</code> means that a variation with a lower number for this metric is performing
-        /// better.</p>
+        /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
+        /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
         pub fn set_desired_change(
             mut self,
             input: std::option::Option<crate::model::ChangeDirectionEnum>,
@@ -6541,8 +6184,7 @@ impl MetricGoalConfig {
     }
 }
 
-/// <p>A structure that defines one treatment in an experiment. A treatment is a variation of the feature
-/// that you are including in the experiment.</p>
+/// <p>A structure that defines one treatment in an experiment. A treatment is a variation of the feature that you are including in the experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TreatmentConfig {

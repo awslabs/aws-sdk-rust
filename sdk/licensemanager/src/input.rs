@@ -35,7 +35,7 @@ pub mod accept_grant_input {
 #[doc(hidden)]
 pub type AcceptGrantInputOperationOutputAlias = crate::operation::AcceptGrant;
 #[doc(hidden)]
-pub type AcceptGrantInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptGrantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptGrantInput {
     /// Consumes the builder and constructs an Operation<[`AcceptGrant`](crate::operation::AcceptGrant)>
     #[allow(clippy::let_and_return)]
@@ -46,7 +46,7 @@ impl AcceptGrantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptGrant,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -130,7 +130,7 @@ impl AcceptGrantInput {
             "AcceptGrant",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -203,7 +203,7 @@ pub mod check_in_license_input {
 #[doc(hidden)]
 pub type CheckInLicenseInputOperationOutputAlias = crate::operation::CheckInLicense;
 #[doc(hidden)]
-pub type CheckInLicenseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CheckInLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CheckInLicenseInput {
     /// Consumes the builder and constructs an Operation<[`CheckInLicense`](crate::operation::CheckInLicense)>
     #[allow(clippy::let_and_return)]
@@ -214,7 +214,7 @@ impl CheckInLicenseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckInLicense,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -299,7 +299,7 @@ impl CheckInLicenseInput {
             "CheckInLicense",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -352,9 +352,9 @@ pub mod checkout_borrow_license_input {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// <p>License entitlements. Partial checkouts are not supported.</p>
-        pub fn entitlements(mut self, input: impl Into<crate::model::EntitlementData>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::EntitlementData) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -366,8 +366,7 @@ pub mod checkout_borrow_license_input {
             self.entitlements = input;
             self
         }
-        /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384.
-        /// For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
+        /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
         pub fn digital_signature_method(
             mut self,
             input: crate::model::DigitalSignatureMethod,
@@ -375,8 +374,7 @@ pub mod checkout_borrow_license_input {
             self.digital_signature_method = Some(input);
             self
         }
-        /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384.
-        /// For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
+        /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
         pub fn set_digital_signature_method(
             mut self,
             input: std::option::Option<crate::model::DigitalSignatureMethod>,
@@ -399,9 +397,9 @@ pub mod checkout_borrow_license_input {
         /// To override the contents of this collection use [`set_checkout_metadata`](Self::set_checkout_metadata).
         ///
         /// <p>Information about constraints.</p>
-        pub fn checkout_metadata(mut self, input: impl Into<crate::model::Metadata>) -> Self {
+        pub fn checkout_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.checkout_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.checkout_metadata = Some(v);
             self
         }
@@ -444,7 +442,7 @@ pub mod checkout_borrow_license_input {
 #[doc(hidden)]
 pub type CheckoutBorrowLicenseInputOperationOutputAlias = crate::operation::CheckoutBorrowLicense;
 #[doc(hidden)]
-pub type CheckoutBorrowLicenseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CheckoutBorrowLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CheckoutBorrowLicenseInput {
     /// Consumes the builder and constructs an Operation<[`CheckoutBorrowLicense`](crate::operation::CheckoutBorrowLicense)>
     #[allow(clippy::let_and_return)]
@@ -455,7 +453,7 @@ impl CheckoutBorrowLicenseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckoutBorrowLicense,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -542,7 +540,7 @@ impl CheckoutBorrowLicenseInput {
             "CheckoutBorrowLicense",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -621,9 +619,9 @@ pub mod checkout_license_input {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// <p>License entitlements.</p>
-        pub fn entitlements(mut self, input: impl Into<crate::model::EntitlementData>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::EntitlementData) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -687,7 +685,7 @@ pub mod checkout_license_input {
 #[doc(hidden)]
 pub type CheckoutLicenseInputOperationOutputAlias = crate::operation::CheckoutLicense;
 #[doc(hidden)]
-pub type CheckoutLicenseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CheckoutLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CheckoutLicenseInput {
     /// Consumes the builder and constructs an Operation<[`CheckoutLicense`](crate::operation::CheckoutLicense)>
     #[allow(clippy::let_and_return)]
@@ -698,7 +696,7 @@ impl CheckoutLicenseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CheckoutLicense,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -783,7 +781,7 @@ impl CheckoutLicenseInput {
             "CheckoutLicense",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -885,12 +883,9 @@ pub mod create_grant_input {
         /// To override the contents of this collection use [`set_allowed_operations`](Self::set_allowed_operations).
         ///
         /// <p>Allowed operations for the grant.</p>
-        pub fn allowed_operations(
-            mut self,
-            input: impl Into<crate::model::AllowedOperation>,
-        ) -> Self {
+        pub fn allowed_operations(mut self, input: crate::model::AllowedOperation) -> Self {
             let mut v = self.allowed_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_operations = Some(v);
             self
         }
@@ -923,7 +918,7 @@ pub mod create_grant_input {
 #[doc(hidden)]
 pub type CreateGrantInputOperationOutputAlias = crate::operation::CreateGrant;
 #[doc(hidden)]
-pub type CreateGrantInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGrantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGrantInput {
     /// Consumes the builder and constructs an Operation<[`CreateGrant`](crate::operation::CreateGrant)>
     #[allow(clippy::let_and_return)]
@@ -934,7 +929,7 @@ impl CreateGrantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGrant,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1018,7 +1013,7 @@ impl CreateGrantInput {
             "CreateGrant",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1092,12 +1087,9 @@ pub mod create_grant_version_input {
         /// To override the contents of this collection use [`set_allowed_operations`](Self::set_allowed_operations).
         ///
         /// <p>Allowed operations for the grant.</p>
-        pub fn allowed_operations(
-            mut self,
-            input: impl Into<crate::model::AllowedOperation>,
-        ) -> Self {
+        pub fn allowed_operations(mut self, input: crate::model::AllowedOperation) -> Self {
             let mut v = self.allowed_operations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.allowed_operations = Some(v);
             self
         }
@@ -1167,7 +1159,7 @@ pub mod create_grant_version_input {
 #[doc(hidden)]
 pub type CreateGrantVersionInputOperationOutputAlias = crate::operation::CreateGrantVersion;
 #[doc(hidden)]
-pub type CreateGrantVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGrantVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGrantVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateGrantVersion`](crate::operation::CreateGrantVersion)>
     #[allow(clippy::let_and_return)]
@@ -1178,7 +1170,7 @@ impl CreateGrantVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGrantVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1263,7 +1255,7 @@ impl CreateGrantVersionInput {
             "CreateGrantVersion",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1374,9 +1366,9 @@ pub mod create_license_input {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// <p>License entitlements.</p>
-        pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -1398,9 +1390,7 @@ pub mod create_license_input {
             self.beneficiary = input;
             self
         }
-        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
-        /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
-        /// usage.</p>
+        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
         pub fn consumption_configuration(
             mut self,
             input: crate::model::ConsumptionConfiguration,
@@ -1408,9 +1398,7 @@ pub mod create_license_input {
             self.consumption_configuration = Some(input);
             self
         }
-        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
-        /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
-        /// usage.</p>
+        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
         pub fn set_consumption_configuration(
             mut self,
             input: std::option::Option<crate::model::ConsumptionConfiguration>,
@@ -1423,9 +1411,9 @@ pub mod create_license_input {
         /// To override the contents of this collection use [`set_license_metadata`](Self::set_license_metadata).
         ///
         /// <p>Information about the license.</p>
-        pub fn license_metadata(mut self, input: impl Into<crate::model::Metadata>) -> Self {
+        pub fn license_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.license_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.license_metadata = Some(v);
             self
         }
@@ -1473,7 +1461,7 @@ pub mod create_license_input {
 #[doc(hidden)]
 pub type CreateLicenseInputOperationOutputAlias = crate::operation::CreateLicense;
 #[doc(hidden)]
-pub type CreateLicenseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLicenseInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicense`](crate::operation::CreateLicense)>
     #[allow(clippy::let_and_return)]
@@ -1484,7 +1472,7 @@ impl CreateLicenseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLicense,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1568,7 +1556,7 @@ impl CreateLicenseInput {
             "CreateLicense",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1652,14 +1640,12 @@ pub mod create_license_configuration_input {
             self.license_count = input;
             self
         }
-        /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit
-        /// blocks the launch of new instances.</p>
+        /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
         pub fn license_count_hard_limit(mut self, input: bool) -> Self {
             self.license_count_hard_limit = Some(input);
             self
         }
-        /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit
-        /// blocks the launch of new instances.</p>
+        /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
         pub fn set_license_count_hard_limit(mut self, input: std::option::Option<bool>) -> Self {
             self.license_count_hard_limit = input;
             self
@@ -1668,86 +1654,28 @@ pub mod create_license_configuration_input {
         ///
         /// To override the contents of this collection use [`set_license_rules`](Self::set_license_rules).
         ///
-        /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
-        /// vary by dimension, as follows.</p>
+        /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Cores</code> dimension: <code>allowedTenancy</code> |
-        /// <code>licenseAffinityToHost</code> |
-        /// <code>maximumCores</code> | <code>minimumCores</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instances</code> dimension: <code>allowedTenancy</code> |
-        /// <code>maximumCores</code> | <code>minimumCores</code> |
-        /// <code>maximumSockets</code> | <code>minimumSockets</code> |
-        /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-        /// <code>licenseAffinityToHost</code> |
-        /// <code>maximumSockets</code> | <code>minimumSockets</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-        /// <code>honorVcpuOptimization</code> |
-        /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li>
+        /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
+        /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li>
+        /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
         /// </ul>
-        /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible
-        /// values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
-        /// <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
-        /// <code>True</code> and <code>False</code>.</p>
+        /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
         pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_rules.unwrap_or_default();
             v.push(input.into());
             self.license_rules = Some(v);
             self
         }
-        /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
-        /// vary by dimension, as follows.</p>
+        /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Cores</code> dimension: <code>allowedTenancy</code> |
-        /// <code>licenseAffinityToHost</code> |
-        /// <code>maximumCores</code> | <code>minimumCores</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Instances</code> dimension: <code>allowedTenancy</code> |
-        /// <code>maximumCores</code> | <code>minimumCores</code> |
-        /// <code>maximumSockets</code> | <code>minimumSockets</code> |
-        /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-        /// <code>licenseAffinityToHost</code> |
-        /// <code>maximumSockets</code> | <code>minimumSockets</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-        /// <code>honorVcpuOptimization</code> |
-        /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li>
+        /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
+        /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li>
+        /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
         /// </ul>
-        /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible
-        /// values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
-        /// <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
-        /// <code>True</code> and <code>False</code>.</p>
+        /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
         pub fn set_license_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1760,9 +1688,9 @@ pub mod create_license_configuration_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to add to the license configuration.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1789,12 +1717,9 @@ pub mod create_license_configuration_input {
         /// To override the contents of this collection use [`set_product_information_list`](Self::set_product_information_list).
         ///
         /// <p>Product information.</p>
-        pub fn product_information_list(
-            mut self,
-            input: impl Into<crate::model::ProductInformation>,
-        ) -> Self {
+        pub fn product_information_list(mut self, input: crate::model::ProductInformation) -> Self {
             let mut v = self.product_information_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_information_list = Some(v);
             self
         }
@@ -1831,7 +1756,7 @@ pub mod create_license_configuration_input {
 pub type CreateLicenseConfigurationInputOperationOutputAlias =
     crate::operation::CreateLicenseConfiguration;
 #[doc(hidden)]
-pub type CreateLicenseConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLicenseConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicenseConfiguration`](crate::operation::CreateLicenseConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1842,7 +1767,7 @@ impl CreateLicenseConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLicenseConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1929,7 +1854,7 @@ impl CreateLicenseConfigurationInput {
             "CreateLicenseConfiguration",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1975,8 +1900,7 @@ pub mod create_license_conversion_task_for_resource_input {
             self.resource_arn = input;
             self
         }
-        /// <p>Information that identifies the license type you are converting from.
-        /// For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+        /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn source_license_context(
             mut self,
             input: crate::model::LicenseConversionContext,
@@ -1984,8 +1908,7 @@ pub mod create_license_conversion_task_for_resource_input {
             self.source_license_context = Some(input);
             self
         }
-        /// <p>Information that identifies the license type you are converting from.
-        /// For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+        /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn set_source_license_context(
             mut self,
             input: std::option::Option<crate::model::LicenseConversionContext>,
@@ -2029,7 +1952,7 @@ pub type CreateLicenseConversionTaskForResourceInputOperationOutputAlias =
     crate::operation::CreateLicenseConversionTaskForResource;
 #[doc(hidden)]
 pub type CreateLicenseConversionTaskForResourceInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLicenseConversionTaskForResourceInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicenseConversionTaskForResource`](crate::operation::CreateLicenseConversionTaskForResource)>
     #[allow(clippy::let_and_return)]
@@ -2040,7 +1963,7 @@ impl CreateLicenseConversionTaskForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLicenseConversionTaskForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2126,7 +2049,7 @@ impl CreateLicenseConversionTaskForResourceInput {
             "CreateLicenseConversionTaskForResource",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2183,27 +2106,19 @@ pub mod create_license_manager_report_generator_input {
         ///
         /// <p>Type of reports to generate. The following report types an be generated:</p>
         /// <ul>
-        /// <li>
-        /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
-        /// </li>
+        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
         /// </ul>
-        pub fn r#type(mut self, input: impl Into<crate::model::ReportType>) -> Self {
+        pub fn r#type(mut self, input: crate::model::ReportType) -> Self {
             let mut v = self.r#type.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.r#type = Some(v);
             self
         }
         /// <p>Type of reports to generate. The following report types an be generated:</p>
         /// <ul>
-        /// <li>
-        /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
-        /// </li>
+        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -2225,12 +2140,12 @@ pub mod create_license_manager_report_generator_input {
             self.report_context = input;
             self
         }
-        /// <p>Frequency by which reports are generated.  Reports can be generated daily, monthly, or weekly.</p>
+        /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
         pub fn report_frequency(mut self, input: crate::model::ReportFrequency) -> Self {
             self.report_frequency = Some(input);
             self
         }
-        /// <p>Frequency by which reports are generated.  Reports can be generated daily, monthly, or weekly.</p>
+        /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
         pub fn set_report_frequency(
             mut self,
             input: std::option::Option<crate::model::ReportFrequency>,
@@ -2263,9 +2178,9 @@ pub mod create_license_manager_report_generator_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags to add to the report generator.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2301,7 +2216,7 @@ pub type CreateLicenseManagerReportGeneratorInputOperationOutputAlias =
     crate::operation::CreateLicenseManagerReportGenerator;
 #[doc(hidden)]
 pub type CreateLicenseManagerReportGeneratorInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLicenseManagerReportGeneratorInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicenseManagerReportGenerator`](crate::operation::CreateLicenseManagerReportGenerator)>
     #[allow(clippy::let_and_return)]
@@ -2312,7 +2227,7 @@ impl CreateLicenseManagerReportGeneratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLicenseManagerReportGenerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2398,7 +2313,7 @@ impl CreateLicenseManagerReportGeneratorInput {
             "CreateLicenseManagerReportGenerator",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2510,9 +2425,9 @@ pub mod create_license_version_input {
         /// To override the contents of this collection use [`set_license_metadata`](Self::set_license_metadata).
         ///
         /// <p>Information about the license.</p>
-        pub fn license_metadata(mut self, input: impl Into<crate::model::Metadata>) -> Self {
+        pub fn license_metadata(mut self, input: crate::model::Metadata) -> Self {
             let mut v = self.license_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.license_metadata = Some(v);
             self
         }
@@ -2529,9 +2444,9 @@ pub mod create_license_version_input {
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
         /// <p>License entitlements.</p>
-        pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
+        pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entitlements = Some(v);
             self
         }
@@ -2543,9 +2458,7 @@ pub mod create_license_version_input {
             self.entitlements = input;
             self
         }
-        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
-        /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
-        /// usage.</p>
+        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
         pub fn consumption_configuration(
             mut self,
             input: crate::model::ConsumptionConfiguration,
@@ -2553,9 +2466,7 @@ pub mod create_license_version_input {
             self.consumption_configuration = Some(input);
             self
         }
-        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
-        /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
-        /// usage.</p>
+        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
         pub fn set_consumption_configuration(
             mut self,
             input: std::option::Option<crate::model::ConsumptionConfiguration>,
@@ -2626,7 +2537,7 @@ pub mod create_license_version_input {
 #[doc(hidden)]
 pub type CreateLicenseVersionInputOperationOutputAlias = crate::operation::CreateLicenseVersion;
 #[doc(hidden)]
-pub type CreateLicenseVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLicenseVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLicenseVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateLicenseVersion`](crate::operation::CreateLicenseVersion)>
     #[allow(clippy::let_and_return)]
@@ -2637,7 +2548,7 @@ impl CreateLicenseVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLicenseVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2724,7 +2635,7 @@ impl CreateLicenseVersionInput {
             "CreateLicenseVersion",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2760,14 +2671,12 @@ pub mod create_token_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the
-        /// JWT token.</p>
+        /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
         pub fn license_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.license_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the
-        /// JWT token.</p>
+        /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_arn = input;
             self
@@ -2776,16 +2685,14 @@ pub mod create_token_input {
         ///
         /// To override the contents of this collection use [`set_role_arns`](Self::set_role_arns).
         ///
-        /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token.
-        /// License Manager does not check whether the roles are in use.</p>
+        /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
         pub fn role_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.role_arns.unwrap_or_default();
             v.push(input.into());
             self.role_arns = Some(v);
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token.
-        /// License Manager does not check whether the roles are in use.</p>
+        /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
         pub fn set_role_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2807,16 +2714,14 @@ pub mod create_token_input {
         ///
         /// To override the contents of this collection use [`set_token_properties`](Self::set_token_properties).
         ///
-        /// <p>Data specified by the caller to be included in the JWT token. The data is mapped
-        /// to the amr claim of the JWT token.</p>
+        /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
         pub fn token_properties(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.token_properties.unwrap_or_default();
             v.push(input.into());
             self.token_properties = Some(v);
             self
         }
-        /// <p>Data specified by the caller to be included in the JWT token. The data is mapped
-        /// to the amr claim of the JWT token.</p>
+        /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
         pub fn set_token_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2854,7 +2759,7 @@ pub mod create_token_input {
 #[doc(hidden)]
 pub type CreateTokenInputOperationOutputAlias = crate::operation::CreateToken;
 #[doc(hidden)]
-pub type CreateTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTokenInput {
     /// Consumes the builder and constructs an Operation<[`CreateToken`](crate::operation::CreateToken)>
     #[allow(clippy::let_and_return)]
@@ -2865,7 +2770,7 @@ impl CreateTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateToken,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2949,7 +2854,7 @@ impl CreateTokenInput {
             "CreateToken",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3034,7 +2939,7 @@ pub mod delete_grant_input {
 #[doc(hidden)]
 pub type DeleteGrantInputOperationOutputAlias = crate::operation::DeleteGrant;
 #[doc(hidden)]
-pub type DeleteGrantInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteGrantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGrantInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGrant`](crate::operation::DeleteGrant)>
     #[allow(clippy::let_and_return)]
@@ -3045,7 +2950,7 @@ impl DeleteGrantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGrant,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3129,7 +3034,7 @@ impl DeleteGrantInput {
             "DeleteGrant",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3202,7 +3107,7 @@ pub mod delete_license_input {
 #[doc(hidden)]
 pub type DeleteLicenseInputOperationOutputAlias = crate::operation::DeleteLicense;
 #[doc(hidden)]
-pub type DeleteLicenseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLicenseInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLicense`](crate::operation::DeleteLicense)>
     #[allow(clippy::let_and_return)]
@@ -3213,7 +3118,7 @@ impl DeleteLicenseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLicense,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3297,7 +3202,7 @@ impl DeleteLicenseInput {
             "DeleteLicense",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3359,7 +3264,7 @@ pub mod delete_license_configuration_input {
 pub type DeleteLicenseConfigurationInputOperationOutputAlias =
     crate::operation::DeleteLicenseConfiguration;
 #[doc(hidden)]
-pub type DeleteLicenseConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteLicenseConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLicenseConfiguration`](crate::operation::DeleteLicenseConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -3370,7 +3275,7 @@ impl DeleteLicenseConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLicenseConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3457,7 +3362,7 @@ impl DeleteLicenseConfigurationInput {
             "DeleteLicenseConfiguration",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3523,7 +3428,7 @@ pub type DeleteLicenseManagerReportGeneratorInputOperationOutputAlias =
     crate::operation::DeleteLicenseManagerReportGenerator;
 #[doc(hidden)]
 pub type DeleteLicenseManagerReportGeneratorInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteLicenseManagerReportGeneratorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteLicenseManagerReportGenerator`](crate::operation::DeleteLicenseManagerReportGenerator)>
     #[allow(clippy::let_and_return)]
@@ -3534,7 +3439,7 @@ impl DeleteLicenseManagerReportGeneratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteLicenseManagerReportGenerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3620,7 +3525,7 @@ impl DeleteLicenseManagerReportGeneratorInput {
             "DeleteLicenseManagerReportGenerator",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3678,7 +3583,7 @@ pub mod delete_token_input {
 #[doc(hidden)]
 pub type DeleteTokenInputOperationOutputAlias = crate::operation::DeleteToken;
 #[doc(hidden)]
-pub type DeleteTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTokenInput {
     /// Consumes the builder and constructs an Operation<[`DeleteToken`](crate::operation::DeleteToken)>
     #[allow(clippy::let_and_return)]
@@ -3689,7 +3594,7 @@ impl DeleteTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteToken,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3773,7 +3678,7 @@ impl DeleteTokenInput {
             "DeleteToken",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3847,7 +3752,7 @@ pub mod extend_license_consumption_input {
 pub type ExtendLicenseConsumptionInputOperationOutputAlias =
     crate::operation::ExtendLicenseConsumption;
 #[doc(hidden)]
-pub type ExtendLicenseConsumptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExtendLicenseConsumptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExtendLicenseConsumptionInput {
     /// Consumes the builder and constructs an Operation<[`ExtendLicenseConsumption`](crate::operation::ExtendLicenseConsumption)>
     #[allow(clippy::let_and_return)]
@@ -3858,7 +3763,7 @@ impl ExtendLicenseConsumptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExtendLicenseConsumption,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3945,7 +3850,7 @@ impl ExtendLicenseConsumptionInput {
             "ExtendLicenseConsumption",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4024,7 +3929,7 @@ pub mod get_access_token_input {
 #[doc(hidden)]
 pub type GetAccessTokenInputOperationOutputAlias = crate::operation::GetAccessToken;
 #[doc(hidden)]
-pub type GetAccessTokenInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAccessTokenInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccessTokenInput {
     /// Consumes the builder and constructs an Operation<[`GetAccessToken`](crate::operation::GetAccessToken)>
     #[allow(clippy::let_and_return)]
@@ -4035,7 +3940,7 @@ impl GetAccessTokenInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessToken,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4120,7 +4025,7 @@ impl GetAccessTokenInput {
             "GetAccessToken",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4188,7 +4093,7 @@ pub mod get_grant_input {
 #[doc(hidden)]
 pub type GetGrantInputOperationOutputAlias = crate::operation::GetGrant;
 #[doc(hidden)]
-pub type GetGrantInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetGrantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetGrantInput {
     /// Consumes the builder and constructs an Operation<[`GetGrant`](crate::operation::GetGrant)>
     #[allow(clippy::let_and_return)]
@@ -4199,7 +4104,7 @@ impl GetGrantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetGrant,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4281,7 +4186,7 @@ impl GetGrantInput {
                     "GetGrant",
                     "licensemanager",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4351,7 +4256,7 @@ pub mod get_license_input {
 #[doc(hidden)]
 pub type GetLicenseInputOperationOutputAlias = crate::operation::GetLicense;
 #[doc(hidden)]
-pub type GetLicenseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLicenseInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLicenseInput {
     /// Consumes the builder and constructs an Operation<[`GetLicense`](crate::operation::GetLicense)>
     #[allow(clippy::let_and_return)]
@@ -4362,7 +4267,7 @@ impl GetLicenseInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLicense,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4446,7 +4351,7 @@ impl GetLicenseInput {
             "GetLicense",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4508,7 +4413,7 @@ pub mod get_license_configuration_input {
 pub type GetLicenseConfigurationInputOperationOutputAlias =
     crate::operation::GetLicenseConfiguration;
 #[doc(hidden)]
-pub type GetLicenseConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLicenseConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetLicenseConfiguration`](crate::operation::GetLicenseConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4519,7 +4424,7 @@ impl GetLicenseConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLicenseConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4606,7 +4511,7 @@ impl GetLicenseConfigurationInput {
             "GetLicenseConfiguration",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4668,7 +4573,7 @@ pub mod get_license_conversion_task_input {
 pub type GetLicenseConversionTaskInputOperationOutputAlias =
     crate::operation::GetLicenseConversionTask;
 #[doc(hidden)]
-pub type GetLicenseConversionTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLicenseConversionTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLicenseConversionTaskInput {
     /// Consumes the builder and constructs an Operation<[`GetLicenseConversionTask`](crate::operation::GetLicenseConversionTask)>
     #[allow(clippy::let_and_return)]
@@ -4679,7 +4584,7 @@ impl GetLicenseConversionTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLicenseConversionTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4766,7 +4671,7 @@ impl GetLicenseConversionTaskInput {
             "GetLicenseConversionTask",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4831,7 +4736,8 @@ pub mod get_license_manager_report_generator_input {
 pub type GetLicenseManagerReportGeneratorInputOperationOutputAlias =
     crate::operation::GetLicenseManagerReportGenerator;
 #[doc(hidden)]
-pub type GetLicenseManagerReportGeneratorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLicenseManagerReportGeneratorInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetLicenseManagerReportGeneratorInput {
     /// Consumes the builder and constructs an Operation<[`GetLicenseManagerReportGenerator`](crate::operation::GetLicenseManagerReportGenerator)>
     #[allow(clippy::let_and_return)]
@@ -4842,7 +4748,7 @@ impl GetLicenseManagerReportGeneratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLicenseManagerReportGenerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4928,7 +4834,7 @@ impl GetLicenseManagerReportGeneratorInput {
             "GetLicenseManagerReportGenerator",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4986,7 +4892,7 @@ pub mod get_license_usage_input {
 #[doc(hidden)]
 pub type GetLicenseUsageInputOperationOutputAlias = crate::operation::GetLicenseUsage;
 #[doc(hidden)]
-pub type GetLicenseUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLicenseUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLicenseUsageInput {
     /// Consumes the builder and constructs an Operation<[`GetLicenseUsage`](crate::operation::GetLicenseUsage)>
     #[allow(clippy::let_and_return)]
@@ -4997,7 +4903,7 @@ impl GetLicenseUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLicenseUsage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5082,7 +4988,7 @@ impl GetLicenseUsageInput {
             "GetLicenseUsage",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5126,7 +5032,7 @@ pub mod get_service_settings_input {
 #[doc(hidden)]
 pub type GetServiceSettingsInputOperationOutputAlias = crate::operation::GetServiceSettings;
 #[doc(hidden)]
-pub type GetServiceSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetServiceSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServiceSettingsInput {
     /// Consumes the builder and constructs an Operation<[`GetServiceSettings`](crate::operation::GetServiceSettings)>
     #[allow(clippy::let_and_return)]
@@ -5137,7 +5043,7 @@ impl GetServiceSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServiceSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5222,7 +5128,7 @@ impl GetServiceSettingsInput {
             "GetServiceSettings",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5301,7 +5207,7 @@ pub type ListAssociationsForLicenseConfigurationInputOperationOutputAlias =
     crate::operation::ListAssociationsForLicenseConfiguration;
 #[doc(hidden)]
 pub type ListAssociationsForLicenseConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAssociationsForLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`ListAssociationsForLicenseConfiguration`](crate::operation::ListAssociationsForLicenseConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -5312,7 +5218,7 @@ impl ListAssociationsForLicenseConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAssociationsForLicenseConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5398,7 +5304,7 @@ impl ListAssociationsForLicenseConfigurationInput {
             "ListAssociationsForLicenseConfiguration",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5458,65 +5364,25 @@ pub mod list_distributed_grants_input {
         ///
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LicenseArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GrantStatus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GranteePrincipalARN</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LicenseIssuerName</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LicenseArn</code> </p> </li>
+        /// <li> <p> <code>GrantStatus</code> </p> </li>
+        /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LicenseArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GrantStatus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GranteePrincipalARN</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LicenseIssuerName</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LicenseArn</code> </p> </li>
+        /// <li> <p> <code>GrantStatus</code> </p> </li>
+        /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -5564,7 +5430,7 @@ pub mod list_distributed_grants_input {
 #[doc(hidden)]
 pub type ListDistributedGrantsInputOperationOutputAlias = crate::operation::ListDistributedGrants;
 #[doc(hidden)]
-pub type ListDistributedGrantsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDistributedGrantsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDistributedGrantsInput {
     /// Consumes the builder and constructs an Operation<[`ListDistributedGrants`](crate::operation::ListDistributedGrants)>
     #[allow(clippy::let_and_return)]
@@ -5575,7 +5441,7 @@ impl ListDistributedGrantsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDistributedGrants,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5662,7 +5528,7 @@ impl ListDistributedGrantsInput {
             "ListDistributedGrants",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5751,7 +5617,7 @@ pub type ListFailuresForLicenseConfigurationOperationsInputOperationOutputAlias 
     crate::operation::ListFailuresForLicenseConfigurationOperations;
 #[doc(hidden)]
 pub type ListFailuresForLicenseConfigurationOperationsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListFailuresForLicenseConfigurationOperationsInput {
     /// Consumes the builder and constructs an Operation<[`ListFailuresForLicenseConfigurationOperations`](crate::operation::ListFailuresForLicenseConfigurationOperations)>
     #[allow(clippy::let_and_return)]
@@ -5762,7 +5628,7 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFailuresForLicenseConfigurationOperations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5848,7 +5714,7 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
             "ListFailuresForLicenseConfigurationOperations",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5928,51 +5794,23 @@ pub mod list_license_configurations_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters and logical operators
-        /// are supported:</p>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>licenseCountingType</code> - The dimension for which licenses are counted.
-        /// Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
+        /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Filters to scope the results. The following filters and logical operators
-        /// are supported:</p>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>licenseCountingType</code> - The dimension for which licenses are counted.
-        /// Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
+        /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -6001,7 +5839,7 @@ pub mod list_license_configurations_input {
 pub type ListLicenseConfigurationsInputOperationOutputAlias =
     crate::operation::ListLicenseConfigurations;
 #[doc(hidden)]
-pub type ListLicenseConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLicenseConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLicenseConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseConfigurations`](crate::operation::ListLicenseConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -6012,7 +5850,7 @@ impl ListLicenseConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6099,7 +5937,7 @@ impl ListLicenseConfigurationsInput {
             "ListLicenseConfigurations",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6157,18 +5995,14 @@ pub mod list_license_conversion_tasks_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>
-        /// Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
-        /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>
-        /// Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
-        /// </p>
+        /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6195,7 +6029,7 @@ pub mod list_license_conversion_tasks_input {
 pub type ListLicenseConversionTasksInputOperationOutputAlias =
     crate::operation::ListLicenseConversionTasks;
 #[doc(hidden)]
-pub type ListLicenseConversionTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLicenseConversionTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLicenseConversionTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseConversionTasks`](crate::operation::ListLicenseConversionTasks)>
     #[allow(clippy::let_and_return)]
@@ -6206,7 +6040,7 @@ impl ListLicenseConversionTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseConversionTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6292,7 +6126,7 @@ impl ListLicenseConversionTasksInput {
             "ListLicenseConversionTasks",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6332,25 +6166,17 @@ pub mod list_license_manager_report_generators_input {
         ///
         /// <p>Filters to scope the results. The following filters are supported: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LicenseConfigurationArn</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Filters to scope the results. The following filters are supported: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LicenseConfigurationArn</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -6398,7 +6224,8 @@ pub mod list_license_manager_report_generators_input {
 pub type ListLicenseManagerReportGeneratorsInputOperationOutputAlias =
     crate::operation::ListLicenseManagerReportGenerators;
 #[doc(hidden)]
-pub type ListLicenseManagerReportGeneratorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLicenseManagerReportGeneratorsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListLicenseManagerReportGeneratorsInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseManagerReportGenerators`](crate::operation::ListLicenseManagerReportGenerators)>
     #[allow(clippy::let_and_return)]
@@ -6409,7 +6236,7 @@ impl ListLicenseManagerReportGeneratorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseManagerReportGenerators,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6495,7 +6322,7 @@ impl ListLicenseManagerReportGeneratorsInput {
             "ListLicenseManagerReportGenerators",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6555,55 +6382,23 @@ pub mod list_licenses_input {
         ///
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Beneficiary</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fingerprint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Beneficiary</code> </p> </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>Fingerprint</code> </p> </li>
+        /// <li> <p> <code>Status</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Beneficiary</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fingerprint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Beneficiary</code> </p> </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>Fingerprint</code> </p> </li>
+        /// <li> <p> <code>Status</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -6651,7 +6446,7 @@ pub mod list_licenses_input {
 #[doc(hidden)]
 pub type ListLicensesInputOperationOutputAlias = crate::operation::ListLicenses;
 #[doc(hidden)]
-pub type ListLicensesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLicensesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLicensesInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenses`](crate::operation::ListLicenses)>
     #[allow(clippy::let_and_return)]
@@ -6662,7 +6457,7 @@ impl ListLicensesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLicenses,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6746,7 +6541,7 @@ impl ListLicensesInput {
             "ListLicenses",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6830,7 +6625,7 @@ pub type ListLicenseSpecificationsForResourceInputOperationOutputAlias =
     crate::operation::ListLicenseSpecificationsForResource;
 #[doc(hidden)]
 pub type ListLicenseSpecificationsForResourceInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListLicenseSpecificationsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseSpecificationsForResource`](crate::operation::ListLicenseSpecificationsForResource)>
     #[allow(clippy::let_and_return)]
@@ -6841,7 +6636,7 @@ impl ListLicenseSpecificationsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseSpecificationsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6927,7 +6722,7 @@ impl ListLicenseSpecificationsForResourceInput {
             "ListLicenseSpecificationsForResource",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7009,7 +6804,7 @@ pub mod list_license_versions_input {
 #[doc(hidden)]
 pub type ListLicenseVersionsInputOperationOutputAlias = crate::operation::ListLicenseVersions;
 #[doc(hidden)]
-pub type ListLicenseVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLicenseVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLicenseVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListLicenseVersions`](crate::operation::ListLicenseVersions)>
     #[allow(clippy::let_and_return)]
@@ -7020,7 +6815,7 @@ impl ListLicenseVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7105,7 +6900,7 @@ impl ListLicenseVersionsInput {
             "ListLicenseVersions",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7165,65 +6960,25 @@ pub mod list_received_grants_input {
         ///
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LicenseIssuerName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LicenseArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GrantStatus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GranterAccountId</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+        /// <li> <p> <code>LicenseArn</code> </p> </li>
+        /// <li> <p> <code>GrantStatus</code> </p> </li>
+        /// <li> <p> <code>GranterAccountId</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LicenseIssuerName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LicenseArn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GrantStatus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GranterAccountId</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+        /// <li> <p> <code>LicenseArn</code> </p> </li>
+        /// <li> <p> <code>GrantStatus</code> </p> </li>
+        /// <li> <p> <code>GranterAccountId</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -7271,7 +7026,7 @@ pub mod list_received_grants_input {
 #[doc(hidden)]
 pub type ListReceivedGrantsInputOperationOutputAlias = crate::operation::ListReceivedGrants;
 #[doc(hidden)]
-pub type ListReceivedGrantsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListReceivedGrantsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReceivedGrantsInput {
     /// Consumes the builder and constructs an Operation<[`ListReceivedGrants`](crate::operation::ListReceivedGrants)>
     #[allow(clippy::let_and_return)]
@@ -7282,7 +7037,7 @@ impl ListReceivedGrantsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReceivedGrants,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7367,7 +7122,7 @@ impl ListReceivedGrantsInput {
             "ListReceivedGrants",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7427,65 +7182,25 @@ pub mod list_received_licenses_input {
         ///
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fingerprint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IssuerName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Beneficiary</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>Status</code> </p> </li>
+        /// <li> <p> <code>Fingerprint</code> </p> </li>
+        /// <li> <p> <code>IssuerName</code> </p> </li>
+        /// <li> <p> <code>Beneficiary</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Filters to scope the results. The following filters are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ProductSKU</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Status</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fingerprint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IssuerName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Beneficiary</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ProductSKU</code> </p> </li>
+        /// <li> <p> <code>Status</code> </p> </li>
+        /// <li> <p> <code>Fingerprint</code> </p> </li>
+        /// <li> <p> <code>IssuerName</code> </p> </li>
+        /// <li> <p> <code>Beneficiary</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -7533,7 +7248,7 @@ pub mod list_received_licenses_input {
 #[doc(hidden)]
 pub type ListReceivedLicensesInputOperationOutputAlias = crate::operation::ListReceivedLicenses;
 #[doc(hidden)]
-pub type ListReceivedLicensesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListReceivedLicensesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListReceivedLicensesInput {
     /// Consumes the builder and constructs an Operation<[`ListReceivedLicenses`](crate::operation::ListReceivedLicenses)>
     #[allow(clippy::let_and_return)]
@@ -7544,7 +7259,7 @@ impl ListReceivedLicensesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListReceivedLicenses,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7631,7 +7346,7 @@ impl ListReceivedLicensesInput {
             "ListReceivedLicenses",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7689,89 +7404,31 @@ pub mod list_resource_inventory_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters and logical operators
-        /// are supported:</p>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application_name</code> - The name of the application.
-        /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>license_included</code> - The type of license included.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
-        /// Possible values are <code>sql-server-enterprise</code> |
-        /// <code>sql-server-standard</code> |
-        /// <code>sql-server-web</code> |  
-        /// <code>windows-server-datacenter</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code> - The platform of the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resource_id</code> - The ID of the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>tag:<key></code> - The key/value combination of a tag assigned
-        /// to the resource. Logical operators are <code>EQUALS</code> (single account) or
-        /// <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p>
-        /// </li>
+        /// <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
+        /// <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
+        /// <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
+        /// <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>tag:
+        /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::InventoryFilter>) -> Self {
+        pub fn filters(mut self, input: crate::model::InventoryFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Filters to scope the results. The following filters and logical operators
-        /// are supported:</p>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application_name</code> - The name of the application.
-        /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>license_included</code> - The type of license included.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
-        /// Possible values are <code>sql-server-enterprise</code> |
-        /// <code>sql-server-standard</code> |
-        /// <code>sql-server-web</code> |  
-        /// <code>windows-server-datacenter</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>platform</code> - The platform of the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resource_id</code> - The ID of the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>tag:<key></code> - The key/value combination of a tag assigned
-        /// to the resource. Logical operators are <code>EQUALS</code> (single account) or
-        /// <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p>
-        /// </li>
+        /// <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
+        /// <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
+        /// <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
+        /// <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>tag:
+        /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -7798,7 +7455,7 @@ pub mod list_resource_inventory_input {
 #[doc(hidden)]
 pub type ListResourceInventoryInputOperationOutputAlias = crate::operation::ListResourceInventory;
 #[doc(hidden)]
-pub type ListResourceInventoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListResourceInventoryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourceInventoryInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceInventory`](crate::operation::ListResourceInventory)>
     #[allow(clippy::let_and_return)]
@@ -7809,7 +7466,7 @@ impl ListResourceInventoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResourceInventory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7896,7 +7553,7 @@ impl ListResourceInventoryInput {
             "ListResourceInventory",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7954,7 +7611,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -7965,7 +7622,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8052,7 +7709,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8112,25 +7769,17 @@ pub mod list_tokens_input {
         ///
         /// <p>Filters to scope the results. The following filter is supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LicenseArns</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LicenseArns</code> </p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Filters to scope the results. The following filter is supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LicenseArns</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>LicenseArns</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -8178,7 +7827,7 @@ pub mod list_tokens_input {
 #[doc(hidden)]
 pub type ListTokensInputOperationOutputAlias = crate::operation::ListTokens;
 #[doc(hidden)]
-pub type ListTokensInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTokensInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTokensInput {
     /// Consumes the builder and constructs an Operation<[`ListTokens`](crate::operation::ListTokens)>
     #[allow(clippy::let_and_return)]
@@ -8189,7 +7838,7 @@ impl ListTokensInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTokens,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8273,7 +7922,7 @@ impl ListTokensInput {
             "ListTokens",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8345,49 +7994,23 @@ pub mod list_usage_for_license_configuration_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters to scope the results. The following filters and logical operators
-        /// are supported:</p>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>resourceArn</code> - The ARN of the license configuration resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>).
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resourceAccount</code> - The ID of the account that owns the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
+        /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
         /// </ul>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Filters to scope the results. The following filters and logical operators
-        /// are supported:</p>
+        /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>resourceArn</code> - The ARN of the license configuration resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>).
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resourceAccount</code> - The ID of the account that owns the resource.
-        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-        /// </li>
+        /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+        /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -8416,7 +8039,8 @@ pub mod list_usage_for_license_configuration_input {
 pub type ListUsageForLicenseConfigurationInputOperationOutputAlias =
     crate::operation::ListUsageForLicenseConfiguration;
 #[doc(hidden)]
-pub type ListUsageForLicenseConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListUsageForLicenseConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsageForLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`ListUsageForLicenseConfiguration`](crate::operation::ListUsageForLicenseConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -8427,7 +8051,7 @@ impl ListUsageForLicenseConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUsageForLicenseConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8513,7 +8137,7 @@ impl ListUsageForLicenseConfigurationInput {
             "ListUsageForLicenseConfiguration",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8571,7 +8195,7 @@ pub mod reject_grant_input {
 #[doc(hidden)]
 pub type RejectGrantInputOperationOutputAlias = crate::operation::RejectGrant;
 #[doc(hidden)]
-pub type RejectGrantInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RejectGrantInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectGrantInput {
     /// Consumes the builder and constructs an Operation<[`RejectGrant`](crate::operation::RejectGrant)>
     #[allow(clippy::let_and_return)]
@@ -8582,7 +8206,7 @@ impl RejectGrantInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectGrant,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8666,7 +8290,7 @@ impl RejectGrantInput {
             "RejectGrant",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8714,9 +8338,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8745,7 +8369,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -8756,7 +8380,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8840,7 +8464,7 @@ impl TagResourceInput {
             "TagResource",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8919,7 +8543,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -8930,7 +8554,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9014,7 +8638,7 @@ impl UntagResourceInput {
             "UntagResource",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9089,16 +8713,14 @@ pub mod update_license_configuration_input {
         ///
         /// To override the contents of this collection use [`set_license_rules`](Self::set_license_rules).
         ///
-        /// <p>New license rule. The only rule that you can add after you create a license
-        /// configuration is licenseAffinityToHost.</p>
+        /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
         pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_rules.unwrap_or_default();
             v.push(input.into());
             self.license_rules = Some(v);
             self
         }
-        /// <p>New license rule. The only rule that you can add after you create a license
-        /// configuration is licenseAffinityToHost.</p>
+        /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
         pub fn set_license_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9151,12 +8773,9 @@ pub mod update_license_configuration_input {
         /// To override the contents of this collection use [`set_product_information_list`](Self::set_product_information_list).
         ///
         /// <p>New product information.</p>
-        pub fn product_information_list(
-            mut self,
-            input: impl Into<crate::model::ProductInformation>,
-        ) -> Self {
+        pub fn product_information_list(mut self, input: crate::model::ProductInformation) -> Self {
             let mut v = self.product_information_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.product_information_list = Some(v);
             self
         }
@@ -9203,7 +8822,7 @@ pub mod update_license_configuration_input {
 pub type UpdateLicenseConfigurationInputOperationOutputAlias =
     crate::operation::UpdateLicenseConfiguration;
 #[doc(hidden)]
-pub type UpdateLicenseConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateLicenseConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLicenseConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLicenseConfiguration`](crate::operation::UpdateLicenseConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -9214,7 +8833,7 @@ impl UpdateLicenseConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLicenseConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9301,7 +8920,7 @@ impl UpdateLicenseConfigurationInput {
             "UpdateLicenseConfiguration",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9374,27 +8993,19 @@ pub mod update_license_manager_report_generator_input {
         ///
         /// <p>Type of reports to generate. The following report types are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
-        /// </li>
+        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
         /// </ul>
-        pub fn r#type(mut self, input: impl Into<crate::model::ReportType>) -> Self {
+        pub fn r#type(mut self, input: crate::model::ReportType) -> Self {
             let mut v = self.r#type.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.r#type = Some(v);
             self
         }
         /// <p>Type of reports to generate. The following report types are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
-        /// </li>
+        /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+        /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -9473,7 +9084,7 @@ pub type UpdateLicenseManagerReportGeneratorInputOperationOutputAlias =
     crate::operation::UpdateLicenseManagerReportGenerator;
 #[doc(hidden)]
 pub type UpdateLicenseManagerReportGeneratorInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLicenseManagerReportGeneratorInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLicenseManagerReportGenerator`](crate::operation::UpdateLicenseManagerReportGenerator)>
     #[allow(clippy::let_and_return)]
@@ -9484,7 +9095,7 @@ impl UpdateLicenseManagerReportGeneratorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLicenseManagerReportGenerator,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9570,7 +9181,7 @@ impl UpdateLicenseManagerReportGeneratorInput {
             "UpdateLicenseManagerReportGenerator",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9623,10 +9234,10 @@ pub mod update_license_specifications_for_resource_input {
         /// <p>ARNs of the license configurations to add.</p>
         pub fn add_license_specifications(
             mut self,
-            input: impl Into<crate::model::LicenseSpecification>,
+            input: crate::model::LicenseSpecification,
         ) -> Self {
             let mut v = self.add_license_specifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.add_license_specifications = Some(v);
             self
         }
@@ -9645,10 +9256,10 @@ pub mod update_license_specifications_for_resource_input {
         /// <p>ARNs of the license configurations to remove.</p>
         pub fn remove_license_specifications(
             mut self,
-            input: impl Into<crate::model::LicenseSpecification>,
+            input: crate::model::LicenseSpecification,
         ) -> Self {
             let mut v = self.remove_license_specifications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remove_license_specifications = Some(v);
             self
         }
@@ -9680,7 +9291,7 @@ pub type UpdateLicenseSpecificationsForResourceInputOperationOutputAlias =
     crate::operation::UpdateLicenseSpecificationsForResource;
 #[doc(hidden)]
 pub type UpdateLicenseSpecificationsForResourceInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLicenseSpecificationsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLicenseSpecificationsForResource`](crate::operation::UpdateLicenseSpecificationsForResource)>
     #[allow(clippy::let_and_return)]
@@ -9691,7 +9302,7 @@ impl UpdateLicenseSpecificationsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLicenseSpecificationsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9777,7 +9388,7 @@ impl UpdateLicenseSpecificationsForResourceInput {
             "UpdateLicenseSpecificationsForResource",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9887,7 +9498,7 @@ pub mod update_service_settings_input {
 #[doc(hidden)]
 pub type UpdateServiceSettingsInputOperationOutputAlias = crate::operation::UpdateServiceSettings;
 #[doc(hidden)]
-pub type UpdateServiceSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateServiceSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateServiceSettingsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateServiceSettings`](crate::operation::UpdateServiceSettings)>
     #[allow(clippy::let_and_return)]
@@ -9898,7 +9509,7 @@ impl UpdateServiceSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateServiceSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9985,7 +9596,7 @@ impl UpdateServiceSettingsInput {
             "UpdateServiceSettings",
             "licensemanager",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10115,12 +9726,8 @@ pub struct UpdateLicenseManagerReportGeneratorInput {
     pub report_generator_name: std::option::Option<std::string::String>,
     /// <p>Type of reports to generate. The following report types are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
-    /// </li>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
     /// <p>The report context.</p>
@@ -10143,12 +9750,8 @@ impl UpdateLicenseManagerReportGeneratorInput {
     }
     /// <p>Type of reports to generate. The following report types are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
-    /// </li>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&[crate::model::ReportType]> {
         self.r#type.as_deref()
@@ -10195,8 +9798,7 @@ pub struct UpdateLicenseConfigurationInput {
     pub license_configuration_arn: std::option::Option<std::string::String>,
     /// <p>New status of the license configuration.</p>
     pub license_configuration_status: std::option::Option<crate::model::LicenseConfigurationStatus>,
-    /// <p>New license rule. The only rule that you can add after you create a license
-    /// configuration is licenseAffinityToHost.</p>
+    /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
     pub license_rules: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>New number of licenses managed by the license configuration.</p>
     pub license_count: std::option::Option<i64>,
@@ -10223,8 +9825,7 @@ impl UpdateLicenseConfigurationInput {
     ) -> std::option::Option<&crate::model::LicenseConfigurationStatus> {
         self.license_configuration_status.as_ref()
     }
-    /// <p>New license rule. The only rule that you can add after you create a license
-    /// configuration is licenseAffinityToHost.</p>
+    /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
     pub fn license_rules(&self) -> std::option::Option<&[std::string::String]> {
         self.license_rules.as_deref()
     }
@@ -10364,24 +9965,11 @@ pub struct ListUsageForLicenseConfigurationInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Filters to scope the results. The following filters and logical operators
-    /// are supported:</p>
+    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resourceArn</code> - The ARN of the license configuration resource.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>).
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>resourceAccount</code> - The ID of the account that owns the resource.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
+    /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
@@ -10398,24 +9986,11 @@ impl ListUsageForLicenseConfigurationInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Filters to scope the results. The following filters and logical operators
-    /// are supported:</p>
+    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resourceArn</code> - The ARN of the license configuration resource.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>).
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>resourceAccount</code> - The ID of the account that owns the resource.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
+    /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -10440,11 +10015,7 @@ pub struct ListTokensInput {
     pub token_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters to scope the results. The following filter is supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LicenseArns</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>LicenseArns</code> </p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Token for the next set of results.</p>
@@ -10459,11 +10030,7 @@ impl ListTokensInput {
     }
     /// <p>Filters to scope the results. The following filter is supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LicenseArns</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>LicenseArns</code> </p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -10517,44 +10084,15 @@ pub struct ListResourceInventoryInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Filters to scope the results. The following filters and logical operators
-    /// are supported:</p>
+    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>application_name</code> - The name of the application.
-    /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>license_included</code> - The type of license included.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
-    /// Possible values are <code>sql-server-enterprise</code> |
-    /// <code>sql-server-standard</code> |
-    /// <code>sql-server-web</code> |  
-    /// <code>windows-server-datacenter</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>platform</code> - The platform of the resource.
-    /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>resource_id</code> - The ID of the resource.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>tag:<key></code> - The key/value combination of a tag assigned
-    /// to the resource. Logical operators are <code>EQUALS</code> (single account) or
-    /// <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p>
-    /// </li>
+    /// <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
+    /// <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
+    /// <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
+    /// <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>tag:
+    /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::InventoryFilter>>,
 }
@@ -10567,44 +10105,15 @@ impl ListResourceInventoryInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Filters to scope the results. The following filters and logical operators
-    /// are supported:</p>
+    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>application_name</code> - The name of the application.
-    /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>license_included</code> - The type of license included.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
-    /// Possible values are <code>sql-server-enterprise</code> |
-    /// <code>sql-server-standard</code> |
-    /// <code>sql-server-web</code> |  
-    /// <code>windows-server-datacenter</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>platform</code> - The platform of the resource.
-    /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>resource_id</code> - The ID of the resource.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>tag:<key></code> - The key/value combination of a tag assigned
-    /// to the resource. Logical operators are <code>EQUALS</code> (single account) or
-    /// <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p>
-    /// </li>
+    /// <li> <p> <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>application_name</code> - The name of the application. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
+    /// <li> <p> <code>license_included</code> - The type of license included. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p> </li>
+    /// <li> <p> <code>platform</code> - The platform of the resource. Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p> </li>
+    /// <li> <p> <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>tag:
+    /// <key></key></code> - The key/value combination of a tag assigned to the resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::InventoryFilter]> {
         self.filters.as_deref()
@@ -10628,31 +10137,11 @@ pub struct ListReceivedLicensesInput {
     pub license_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ProductSKU</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fingerprint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IssuerName</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Beneficiary</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
+    /// <li> <p> <code>Fingerprint</code> </p> </li>
+    /// <li> <p> <code>IssuerName</code> </p> </li>
+    /// <li> <p> <code>Beneficiary</code> </p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Token for the next set of results.</p>
@@ -10667,31 +10156,11 @@ impl ListReceivedLicensesInput {
     }
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ProductSKU</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fingerprint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IssuerName</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Beneficiary</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
+    /// <li> <p> <code>Fingerprint</code> </p> </li>
+    /// <li> <p> <code>IssuerName</code> </p> </li>
+    /// <li> <p> <code>Beneficiary</code> </p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -10724,31 +10193,11 @@ pub struct ListReceivedGrantsInput {
     pub grant_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ProductSKU</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LicenseIssuerName</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LicenseArn</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GrantStatus</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GranterAccountId</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+    /// <li> <p> <code>LicenseArn</code> </p> </li>
+    /// <li> <p> <code>GrantStatus</code> </p> </li>
+    /// <li> <p> <code>GranterAccountId</code> </p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Token for the next set of results.</p>
@@ -10763,31 +10212,11 @@ impl ListReceivedGrantsInput {
     }
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ProductSKU</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LicenseIssuerName</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LicenseArn</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GrantStatus</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GranterAccountId</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+    /// <li> <p> <code>LicenseArn</code> </p> </li>
+    /// <li> <p> <code>GrantStatus</code> </p> </li>
+    /// <li> <p> <code>GranterAccountId</code> </p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -10890,26 +10319,10 @@ pub struct ListLicensesInput {
     pub license_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Beneficiary</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ProductSKU</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fingerprint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Beneficiary</code> </p> </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <li> <p> <code>Fingerprint</code> </p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Token for the next set of results.</p>
@@ -10924,26 +10337,10 @@ impl ListLicensesInput {
     }
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Beneficiary</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ProductSKU</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fingerprint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Status</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Beneficiary</code> </p> </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <li> <p> <code>Fingerprint</code> </p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -10974,11 +10371,7 @@ impl std::fmt::Debug for ListLicensesInput {
 pub struct ListLicenseManagerReportGeneratorsInput {
     /// <p>Filters to scope the results. The following filters are supported: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LicenseConfigurationArn</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Token for the next set of results.</p>
@@ -10989,11 +10382,7 @@ pub struct ListLicenseManagerReportGeneratorsInput {
 impl ListLicenseManagerReportGeneratorsInput {
     /// <p>Filters to scope the results. The following filters are supported: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LicenseConfigurationArn</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>LicenseConfigurationArn</code> </p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -11025,9 +10414,7 @@ pub struct ListLicenseConversionTasksInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
-    /// </p>
+    /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl ListLicenseConversionTasksInput {
@@ -11039,9 +10426,7 @@ impl ListLicenseConversionTasksInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
-    /// </p>
+    /// <p> Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>. </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -11066,25 +10451,11 @@ pub struct ListLicenseConfigurationsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Filters to scope the results. The following filters and logical operators
-    /// are supported:</p>
+    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>licenseCountingType</code> - The dimension for which licenses are counted.
-    /// Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
+    /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
@@ -11101,25 +10472,11 @@ impl ListLicenseConfigurationsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Filters to scope the results. The following filters and logical operators
-    /// are supported:</p>
+    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>licenseCountingType</code> - The dimension for which licenses are counted.
-    /// Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded.
-    /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
-    /// </li>
+    /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -11182,31 +10539,11 @@ pub struct ListDistributedGrantsInput {
     pub grant_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LicenseArn</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GrantStatus</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GranteePrincipalARN</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ProductSKU</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LicenseIssuerName</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>LicenseArn</code> </p> </li>
+    /// <li> <p> <code>GrantStatus</code> </p> </li>
+    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Token for the next set of results.</p>
@@ -11221,31 +10558,11 @@ impl ListDistributedGrantsInput {
     }
     /// <p>Filters to scope the results. The following filters are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>LicenseArn</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GrantStatus</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GranteePrincipalARN</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ProductSKU</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LicenseIssuerName</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>LicenseArn</code> </p> </li>
+    /// <li> <p> <code>GrantStatus</code> </p> </li>
+    /// <li> <p> <code>GranteePrincipalARN</code> </p> </li>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -11651,28 +10968,23 @@ impl std::fmt::Debug for DeleteGrantInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTokenInput {
-    /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the
-    /// JWT token.</p>
+    /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
     pub license_arn: std::option::Option<std::string::String>,
-    /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token.
-    /// License Manager does not check whether the roles are in use.</p>
+    /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
     pub role_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
     pub expiration_in_days: std::option::Option<i32>,
-    /// <p>Data specified by the caller to be included in the JWT token. The data is mapped
-    /// to the amr claim of the JWT token.</p>
+    /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
     pub token_properties: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Idempotency token, valid for 10 minutes.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateTokenInput {
-    /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the
-    /// JWT token.</p>
+    /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
     pub fn license_arn(&self) -> std::option::Option<&str> {
         self.license_arn.as_deref()
     }
-    /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token.
-    /// License Manager does not check whether the roles are in use.</p>
+    /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
     pub fn role_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.role_arns.as_deref()
     }
@@ -11680,8 +10992,7 @@ impl CreateTokenInput {
     pub fn expiration_in_days(&self) -> std::option::Option<i32> {
         self.expiration_in_days
     }
-    /// <p>Data specified by the caller to be included in the JWT token. The data is mapped
-    /// to the amr claim of the JWT token.</p>
+    /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
     pub fn token_properties(&self) -> std::option::Option<&[std::string::String]> {
         self.token_properties.as_deref()
     }
@@ -11722,9 +11033,7 @@ pub struct CreateLicenseVersionInput {
     pub license_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
     /// <p>License entitlements.</p>
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
-    /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
-    /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
-    /// usage.</p>
+    /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
     pub consumption_configuration: std::option::Option<crate::model::ConsumptionConfiguration>,
     /// <p>License status.</p>
     pub status: std::option::Option<crate::model::LicenseStatus>,
@@ -11766,9 +11075,7 @@ impl CreateLicenseVersionInput {
     pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
         self.entitlements.as_deref()
     }
-    /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
-    /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
-    /// usage.</p>
+    /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
     pub fn consumption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ConsumptionConfiguration> {
@@ -11814,17 +11121,13 @@ pub struct CreateLicenseManagerReportGeneratorInput {
     pub report_generator_name: std::option::Option<std::string::String>,
     /// <p>Type of reports to generate. The following report types an be generated:</p>
     /// <ul>
-    /// <li>
-    /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
-    /// </li>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
     /// <p>Defines the type of license configuration the report generator tracks.</p>
     pub report_context: std::option::Option<crate::model::ReportContext>,
-    /// <p>Frequency by which reports are generated.  Reports can be generated daily, monthly, or weekly.</p>
+    /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
     pub report_frequency: std::option::Option<crate::model::ReportFrequency>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
@@ -11840,12 +11143,8 @@ impl CreateLicenseManagerReportGeneratorInput {
     }
     /// <p>Type of reports to generate. The following report types an be generated:</p>
     /// <ul>
-    /// <li>
-    /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
-    /// </li>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&[crate::model::ReportType]> {
         self.r#type.as_deref()
@@ -11854,7 +11153,7 @@ impl CreateLicenseManagerReportGeneratorInput {
     pub fn report_context(&self) -> std::option::Option<&crate::model::ReportContext> {
         self.report_context.as_ref()
     }
-    /// <p>Frequency by which reports are generated.  Reports can be generated daily, monthly, or weekly.</p>
+    /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
     pub fn report_frequency(&self) -> std::option::Option<&crate::model::ReportFrequency> {
         self.report_frequency.as_ref()
     }
@@ -11891,8 +11190,7 @@ impl std::fmt::Debug for CreateLicenseManagerReportGeneratorInput {
 pub struct CreateLicenseConversionTaskForResourceInput {
     /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Information that identifies the license type you are converting from.
-    /// For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+    /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
     pub source_license_context: std::option::Option<crate::model::LicenseConversionContext>,
     /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
     pub destination_license_context: std::option::Option<crate::model::LicenseConversionContext>,
@@ -11902,8 +11200,7 @@ impl CreateLicenseConversionTaskForResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Information that identifies the license type you are converting from.
-    /// For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
+    /// <p>Information that identifies the license type you are converting from. For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
     pub fn source_license_context(
         &self,
     ) -> std::option::Option<&crate::model::LicenseConversionContext> {
@@ -11941,46 +11238,16 @@ pub struct CreateLicenseConfigurationInput {
     pub license_counting_type: std::option::Option<crate::model::LicenseCountingType>,
     /// <p>Number of licenses managed by the license configuration.</p>
     pub license_count: std::option::Option<i64>,
-    /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit
-    /// blocks the launch of new instances.</p>
+    /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
     pub license_count_hard_limit: std::option::Option<bool>,
-    /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
-    /// vary by dimension, as follows.</p>
+    /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Cores</code> dimension: <code>allowedTenancy</code> |
-    /// <code>licenseAffinityToHost</code> |
-    /// <code>maximumCores</code> | <code>minimumCores</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instances</code> dimension: <code>allowedTenancy</code> |
-    /// <code>maximumCores</code> | <code>minimumCores</code> |
-    /// <code>maximumSockets</code> | <code>minimumSockets</code> |
-    /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-    /// <code>licenseAffinityToHost</code> |
-    /// <code>maximumSockets</code> | <code>minimumSockets</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-    /// <code>honorVcpuOptimization</code> |
-    /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li>
+    /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
+    /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li>
+    /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
     /// </ul>
-    /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible
-    /// values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
-    /// <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
-    /// <code>True</code> and <code>False</code>.</p>
+    /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
     pub license_rules: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Tags to add to the license configuration.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -12007,48 +11274,18 @@ impl CreateLicenseConfigurationInput {
     pub fn license_count(&self) -> std::option::Option<i64> {
         self.license_count
     }
-    /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit
-    /// blocks the launch of new instances.</p>
+    /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
     pub fn license_count_hard_limit(&self) -> std::option::Option<bool> {
         self.license_count_hard_limit
     }
-    /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
-    /// vary by dimension, as follows.</p>
+    /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Cores</code> dimension: <code>allowedTenancy</code> |
-    /// <code>licenseAffinityToHost</code> |
-    /// <code>maximumCores</code> | <code>minimumCores</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Instances</code> dimension: <code>allowedTenancy</code> |
-    /// <code>maximumCores</code> | <code>minimumCores</code> |
-    /// <code>maximumSockets</code> | <code>minimumSockets</code> |
-    /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Sockets</code> dimension: <code>allowedTenancy</code> |
-    /// <code>licenseAffinityToHost</code> |
-    /// <code>maximumSockets</code> | <code>minimumSockets</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
-    /// <code>honorVcpuOptimization</code> |
-    /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li>
+    /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
+    /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li>
+    /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
     /// </ul>
-    /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible
-    /// values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
-    /// <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
-    /// <code>True</code> and <code>False</code>.</p>
+    /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
     pub fn license_rules(&self) -> std::option::Option<&[std::string::String]> {
         self.license_rules.as_deref()
     }
@@ -12106,9 +11343,7 @@ pub struct CreateLicenseInput {
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
     /// <p>License beneficiary.</p>
     pub beneficiary: std::option::Option<std::string::String>,
-    /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
-    /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
-    /// usage.</p>
+    /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
     pub consumption_configuration: std::option::Option<crate::model::ConsumptionConfiguration>,
     /// <p>Information about the license.</p>
     pub license_metadata: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
@@ -12148,9 +11383,7 @@ impl CreateLicenseInput {
     pub fn beneficiary(&self) -> std::option::Option<&str> {
         self.beneficiary.as_deref()
     }
-    /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
-    /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
-    /// usage.</p>
+    /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
     pub fn consumption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ConsumptionConfiguration> {
@@ -12373,8 +11606,7 @@ pub struct CheckoutBorrowLicenseInput {
     pub license_arn: std::option::Option<std::string::String>,
     /// <p>License entitlements. Partial checkouts are not supported.</p>
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
-    /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384.
-    /// For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
+    /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
     pub digital_signature_method: std::option::Option<crate::model::DigitalSignatureMethod>,
     /// <p>Node ID.</p>
     pub node_id: std::option::Option<std::string::String>,
@@ -12392,8 +11624,7 @@ impl CheckoutBorrowLicenseInput {
     pub fn entitlements(&self) -> std::option::Option<&[crate::model::EntitlementData]> {
         self.entitlements.as_deref()
     }
-    /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384.
-    /// For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
+    /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
     pub fn digital_signature_method(
         &self,
     ) -> std::option::Option<&crate::model::DigitalSignatureMethod> {

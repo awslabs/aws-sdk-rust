@@ -3,21 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentMember {
-    /// <p>The type of environment member permissions associated with this environment member.
-    /// Available values include:</p>
+    /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>owner</code>: Owns the environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>read-only</code>: Has read-only access to the environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>read-write</code>: Has read-write access to the environment.</p>
-    /// </li>
+    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     pub permissions: std::option::Option<crate::model::Permissions>,
     /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
@@ -26,26 +16,15 @@ pub struct EnvironmentMember {
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the environment for the environment member.</p>
     pub environment_id: std::option::Option<std::string::String>,
-    /// <p>The time, expressed in epoch time format, when the environment member last opened the
-    /// environment.</p>
+    /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
     pub last_access: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl EnvironmentMember {
-    /// <p>The type of environment member permissions associated with this environment member.
-    /// Available values include:</p>
+    /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>owner</code>: Owns the environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>read-only</code>: Has read-only access to the environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>read-write</code>: Has read-write access to the environment.</p>
-    /// </li>
+    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     pub fn permissions(&self) -> std::option::Option<&crate::model::Permissions> {
         self.permissions.as_ref()
@@ -62,8 +41,7 @@ impl EnvironmentMember {
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The time, expressed in epoch time format, when the environment member last opened the
-    /// environment.</p>
+    /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
     pub fn last_access(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_access.as_ref()
     }
@@ -92,41 +70,21 @@ pub mod environment_member {
         pub(crate) last_access: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The type of environment member permissions associated with this environment member.
-        /// Available values include:</p>
+        /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>owner</code>: Owns the environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>read-only</code>: Has read-only access to the environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>read-write</code>: Has read-write access to the environment.</p>
-        /// </li>
+        /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
+        /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+        /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
         /// </ul>
         pub fn permissions(mut self, input: crate::model::Permissions) -> Self {
             self.permissions = Some(input);
             self
         }
-        /// <p>The type of environment member permissions associated with this environment member.
-        /// Available values include:</p>
+        /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>owner</code>: Owns the environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>read-only</code>: Has read-only access to the environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>read-write</code>: Has read-write access to the environment.</p>
-        /// </li>
+        /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
+        /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+        /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
         /// </ul>
         pub fn set_permissions(
             mut self,
@@ -168,14 +126,12 @@ pub mod environment_member {
             self.environment_id = input;
             self
         }
-        /// <p>The time, expressed in epoch time format, when the environment member last opened the
-        /// environment.</p>
+        /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
         pub fn last_access(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_access = Some(input);
             self
         }
-        /// <p>The time, expressed in epoch time format, when the environment member last opened the
-        /// environment.</p>
+        /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
         pub fn set_last_access(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -371,11 +327,7 @@ impl AsRef<str> for ManagedCredentialsAction {
     }
 }
 
-/// <p>Metadata that is associated with Amazon Web Services resources. In particular, a name-value pair that
-/// can be associated with an Cloud9 development environment. There are two types of tags:
-/// <i>user tags</i> and <i>system tags</i>. A user tag is created
-/// by the user. A system tag is automatically created by Amazon Web Services services. A system tag is prefixed
-/// with <code>"aws:"</code> and cannot be modified by the user.</p>
+/// <p>Metadata that is associated with Amazon Web Services resources. In particular, a name-value pair that can be associated with an Cloud9 development environment. There are two types of tags: <i>user tags</i> and <i>system tags</i>. A user tag is created by the user. A system tag is automatically created by Amazon Web Services services. A system tag is prefixed with <code>"aws:"</code> and cannot be modified by the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
@@ -543,18 +495,11 @@ pub struct Environment {
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of environment. Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ssh</code>: Your own server connects to the environment.</p>
-    /// </li>
+    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
+    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::EnvironmentType>,
-    /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code>
-    /// is selected by default.</p>
+    /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -562,59 +507,18 @@ pub struct Environment {
     pub owner_arn: std::option::Option<std::string::String>,
     /// <p>The state of the environment in its creation or deletion lifecycle.</p>
     pub lifecycle: std::option::Option<crate::model::EnvironmentLifecycle>,
-    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment.
-    /// Available values are:</p>
+    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED_ON_CREATE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED_BY_OWNER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED_BY_DEFAULT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED_BY_OWNER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED_BY_COLLABORATOR</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING_REMOVAL_BY_COLLABORATOR</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING_REMOVAL_BY_OWNER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED_REMOVAL_BY_COLLABORATOR</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED_BY_OWNER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED_BY_DEFAULT</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li>
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
+    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li>
+    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li>
+    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li>
+    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li>
+    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li>
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
     /// </ul>
     pub managed_credentials_status: std::option::Option<crate::model::ManagedCredentialsStatus>,
 }
@@ -633,20 +537,13 @@ impl Environment {
     }
     /// <p>The type of environment. Valid values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ssh</code>: Your own server connects to the environment.</p>
-    /// </li>
+    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
+    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::EnvironmentType> {
         self.r#type.as_ref()
     }
-    /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code>
-    /// is selected by default.</p>
+    /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
     pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
         self.connection_type.as_ref()
     }
@@ -662,59 +559,18 @@ impl Environment {
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::EnvironmentLifecycle> {
         self.lifecycle.as_ref()
     }
-    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment.
-    /// Available values are:</p>
+    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED_ON_CREATE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED_BY_OWNER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED_BY_DEFAULT</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED_BY_OWNER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED_BY_COLLABORATOR</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING_REMOVAL_BY_COLLABORATOR</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING_REMOVAL_BY_OWNER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED_REMOVAL_BY_COLLABORATOR</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED_BY_OWNER</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED_BY_DEFAULT</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li>
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
+    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li>
+    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li>
+    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li>
+    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li>
+    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li>
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
     /// </ul>
     pub fn managed_credentials_status(
         &self,
@@ -790,14 +646,8 @@ pub mod environment {
         }
         /// <p>The type of environment. Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ssh</code>: Your own server connects to the environment.</p>
-        /// </li>
+        /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
+        /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::EnvironmentType) -> Self {
             self.r#type = Some(input);
@@ -805,14 +655,8 @@ pub mod environment {
         }
         /// <p>The type of environment. Valid values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ssh</code>: Your own server connects to the environment.</p>
-        /// </li>
+        /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
+        /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -821,14 +665,12 @@ pub mod environment {
             self.r#type = input;
             self
         }
-        /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code>
-        /// is selected by default.</p>
+        /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
         pub fn connection_type(mut self, input: crate::model::ConnectionType) -> Self {
             self.connection_type = Some(input);
             self
         }
-        /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code>
-        /// is selected by default.</p>
+        /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
         pub fn set_connection_type(
             mut self,
             input: std::option::Option<crate::model::ConnectionType>,
@@ -869,59 +711,18 @@ pub mod environment {
             self.lifecycle = input;
             self
         }
-        /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment.
-        /// Available values are:</p>
+        /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED_ON_CREATE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED_BY_OWNER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED_BY_DEFAULT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED_BY_OWNER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED_BY_COLLABORATOR</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING_REMOVAL_BY_COLLABORATOR</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING_REMOVAL_BY_OWNER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED_REMOVAL_BY_COLLABORATOR</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED_BY_OWNER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED_BY_DEFAULT</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li>
+        /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
+        /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
+        /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li>
+        /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li>
+        /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li>
+        /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li>
+        /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li>
+        /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
+        /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
         /// </ul>
         pub fn managed_credentials_status(
             mut self,
@@ -930,59 +731,18 @@ pub mod environment {
             self.managed_credentials_status = Some(input);
             self
         }
-        /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment.
-        /// Available values are:</p>
+        /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED_ON_CREATE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED_BY_OWNER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED_BY_DEFAULT</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED_BY_OWNER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED_BY_COLLABORATOR</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING_REMOVAL_BY_COLLABORATOR</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING_REMOVAL_BY_OWNER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED_REMOVAL_BY_COLLABORATOR</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED_BY_OWNER</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED_BY_DEFAULT</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li>
+        /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
+        /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
+        /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li>
+        /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li>
+        /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li>
+        /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li>
+        /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li>
+        /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
+        /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
         /// </ul>
         pub fn set_managed_credentials_status(
             mut self,
@@ -1133,64 +893,32 @@ impl AsRef<str> for ManagedCredentialsStatus {
     }
 }
 
-/// <p>Information about the current creation or deletion lifecycle state of an Cloud9 development
-/// environment.</p>
+/// <p>Information about the current creation or deletion lifecycle state of an Cloud9 development environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentLifecycle {
     /// <p>The current creation or deletion lifecycle state of the environment.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATING</code>: The environment is in the process of being created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATED</code>: The environment was successfully created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_FAILED</code>: The environment failed to be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETING</code>: The environment is in the process of being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_FAILED</code>: The environment failed to delete.</p>
-    /// </li>
+    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
+    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
+    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::EnvironmentLifecycleStatus>,
     /// <p>Any informational message about the lifecycle state of the environment.</p>
     pub reason: std::option::Option<std::string::String>,
-    /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services
-    /// resource.</p>
+    /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
     pub failure_resource: std::option::Option<std::string::String>,
 }
 impl EnvironmentLifecycle {
     /// <p>The current creation or deletion lifecycle state of the environment.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CREATING</code>: The environment is in the process of being created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATED</code>: The environment was successfully created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CREATE_FAILED</code>: The environment failed to be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETING</code>: The environment is in the process of being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETE_FAILED</code>: The environment failed to delete.</p>
-    /// </li>
+    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
+    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
+    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentLifecycleStatus> {
         self.status.as_ref()
@@ -1199,8 +927,7 @@ impl EnvironmentLifecycle {
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
-    /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services
-    /// resource.</p>
+    /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
     pub fn failure_resource(&self) -> std::option::Option<&str> {
         self.failure_resource.as_deref()
     }
@@ -1227,26 +954,11 @@ pub mod environment_lifecycle {
     impl Builder {
         /// <p>The current creation or deletion lifecycle state of the environment.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code>: The environment is in the process of being created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATED</code>: The environment was successfully created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_FAILED</code>: The environment failed to be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code>: The environment is in the process of being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_FAILED</code>: The environment failed to delete.</p>
-        /// </li>
+        /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
+        /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
+        /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
+        /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::EnvironmentLifecycleStatus) -> Self {
             self.status = Some(input);
@@ -1254,26 +966,11 @@ pub mod environment_lifecycle {
         }
         /// <p>The current creation or deletion lifecycle state of the environment.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATING</code>: The environment is in the process of being created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATED</code>: The environment was successfully created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_FAILED</code>: The environment failed to be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code>: The environment is in the process of being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_FAILED</code>: The environment failed to delete.</p>
-        /// </li>
+        /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
+        /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
+        /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
+        /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
+        /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -1292,14 +989,12 @@ pub mod environment_lifecycle {
             self.reason = input;
             self
         }
-        /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services
-        /// resource.</p>
+        /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
         pub fn failure_resource(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_resource = Some(input.into());
             self
         }
-        /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services
-        /// resource.</p>
+        /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
         pub fn set_failure_resource(
             mut self,
             input: std::option::Option<std::string::String>,

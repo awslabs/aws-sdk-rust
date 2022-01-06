@@ -136,6 +136,63 @@ impl UpdateFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateEntitlementOutput {
+    /// <p>The entitlement.</p>
+    pub entitlement: std::option::Option<crate::model::Entitlement>,
+}
+impl UpdateEntitlementOutput {
+    /// <p>The entitlement.</p>
+    pub fn entitlement(&self) -> std::option::Option<&crate::model::Entitlement> {
+        self.entitlement.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateEntitlementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateEntitlementOutput");
+        formatter.field("entitlement", &self.entitlement);
+        formatter.finish()
+    }
+}
+/// See [`UpdateEntitlementOutput`](crate::output::UpdateEntitlementOutput)
+pub mod update_entitlement_output {
+    /// A builder for [`UpdateEntitlementOutput`](crate::output::UpdateEntitlementOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entitlement: std::option::Option<crate::model::Entitlement>,
+    }
+    impl Builder {
+        /// <p>The entitlement.</p>
+        pub fn entitlement(mut self, input: crate::model::Entitlement) -> Self {
+            self.entitlement = Some(input);
+            self
+        }
+        /// <p>The entitlement.</p>
+        pub fn set_entitlement(
+            mut self,
+            input: std::option::Option<crate::model::Entitlement>,
+        ) -> Self {
+            self.entitlement = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateEntitlementOutput`](crate::output::UpdateEntitlementOutput)
+        pub fn build(self) -> crate::output::UpdateEntitlementOutput {
+            crate::output::UpdateEntitlementOutput {
+                entitlement: self.entitlement,
+            }
+        }
+    }
+}
+impl UpdateEntitlementOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEntitlementOutput`](crate::output::UpdateEntitlementOutput)
+    pub fn builder() -> crate::output::update_entitlement_output::Builder {
+        crate::output::update_entitlement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDirectoryConfigOutput {
     /// <p>Information about the Directory Config object.</p>
     pub directory_config: std::option::Option<crate::model::DirectoryConfig>,
@@ -557,6 +614,92 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEntitledApplicationsOutput {
+    /// <p>The entitled applications.</p>
+    pub entitled_applications:
+        std::option::Option<std::vec::Vec<crate::model::EntitledApplication>>,
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl ListEntitledApplicationsOutput {
+    /// <p>The entitled applications.</p>
+    pub fn entitled_applications(
+        &self,
+    ) -> std::option::Option<&[crate::model::EntitledApplication]> {
+        self.entitled_applications.as_deref()
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for ListEntitledApplicationsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEntitledApplicationsOutput");
+        formatter.field("entitled_applications", &self.entitled_applications);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListEntitledApplicationsOutput`](crate::output::ListEntitledApplicationsOutput)
+pub mod list_entitled_applications_output {
+    /// A builder for [`ListEntitledApplicationsOutput`](crate::output::ListEntitledApplicationsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entitled_applications:
+            std::option::Option<std::vec::Vec<crate::model::EntitledApplication>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `entitled_applications`.
+        ///
+        /// To override the contents of this collection use [`set_entitled_applications`](Self::set_entitled_applications).
+        ///
+        /// <p>The entitled applications.</p>
+        pub fn entitled_applications(mut self, input: crate::model::EntitledApplication) -> Self {
+            let mut v = self.entitled_applications.unwrap_or_default();
+            v.push(input);
+            self.entitled_applications = Some(v);
+            self
+        }
+        /// <p>The entitled applications.</p>
+        pub fn set_entitled_applications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EntitledApplication>>,
+        ) -> Self {
+            self.entitled_applications = input;
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEntitledApplicationsOutput`](crate::output::ListEntitledApplicationsOutput)
+        pub fn build(self) -> crate::output::ListEntitledApplicationsOutput {
+            crate::output::ListEntitledApplicationsOutput {
+                entitled_applications: self.entitled_applications,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListEntitledApplicationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEntitledApplicationsOutput`](crate::output::ListEntitledApplicationsOutput)
+    pub fn builder() -> crate::output::list_entitled_applications_output::Builder {
+        crate::output::list_entitled_applications_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociatedStacksOutput {
     /// <p>The name of the stack.</p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -811,6 +954,36 @@ impl DisassociateFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateApplicationFromEntitlementOutput {}
+impl std::fmt::Debug for DisassociateApplicationFromEntitlementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateApplicationFromEntitlementOutput");
+        formatter.finish()
+    }
+}
+/// See [`DisassociateApplicationFromEntitlementOutput`](crate::output::DisassociateApplicationFromEntitlementOutput)
+pub mod disassociate_application_from_entitlement_output {
+    /// A builder for [`DisassociateApplicationFromEntitlementOutput`](crate::output::DisassociateApplicationFromEntitlementOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DisassociateApplicationFromEntitlementOutput`](crate::output::DisassociateApplicationFromEntitlementOutput)
+        pub fn build(self) -> crate::output::DisassociateApplicationFromEntitlementOutput {
+            crate::output::DisassociateApplicationFromEntitlementOutput {}
+        }
+    }
+}
+impl DisassociateApplicationFromEntitlementOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateApplicationFromEntitlementOutput`](crate::output::DisassociateApplicationFromEntitlementOutput)
+    pub fn builder() -> crate::output::disassociate_application_from_entitlement_output::Builder {
+        crate::output::disassociate_application_from_entitlement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateApplicationFleetOutput {}
 impl std::fmt::Debug for DisassociateApplicationFleetOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -916,10 +1089,10 @@ pub mod describe_user_stack_associations_output {
         /// <p>The UserStackAssociation objects.</p>
         pub fn user_stack_associations(
             mut self,
-            input: impl Into<crate::model::UserStackAssociation>,
+            input: crate::model::UserStackAssociation,
         ) -> Self {
             let mut v = self.user_stack_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_stack_associations = Some(v);
             self
         }
@@ -999,9 +1172,9 @@ pub mod describe_users_output {
         /// To override the contents of this collection use [`set_users`](Self::set_users).
         ///
         /// <p>Information about users in the user pool.</p>
-        pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
+        pub fn users(mut self, input: crate::model::User) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.users = Some(v);
             self
         }
@@ -1090,10 +1263,10 @@ pub mod describe_usage_report_subscriptions_output {
         /// <p>Information about the usage report subscription.</p>
         pub fn usage_report_subscriptions(
             mut self,
-            input: impl Into<crate::model::UsageReportSubscription>,
+            input: crate::model::UsageReportSubscription,
         ) -> Self {
             let mut v = self.usage_report_subscriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.usage_report_subscriptions = Some(v);
             self
         }
@@ -1173,9 +1346,9 @@ pub mod describe_stacks_output {
         /// To override the contents of this collection use [`set_stacks`](Self::set_stacks).
         ///
         /// <p>Information about the stacks.</p>
-        pub fn stacks(mut self, input: impl Into<crate::model::Stack>) -> Self {
+        pub fn stacks(mut self, input: crate::model::Stack) -> Self {
             let mut v = self.stacks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stacks = Some(v);
             self
         }
@@ -1255,9 +1428,9 @@ pub mod describe_sessions_output {
         /// To override the contents of this collection use [`set_sessions`](Self::set_sessions).
         ///
         /// <p>Information about the streaming sessions.</p>
-        pub fn sessions(mut self, input: impl Into<crate::model::Session>) -> Self {
+        pub fn sessions(mut self, input: crate::model::Session) -> Self {
             let mut v = self.sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sessions = Some(v);
             self
         }
@@ -1337,9 +1510,9 @@ pub mod describe_images_output {
         /// To override the contents of this collection use [`set_images`](Self::set_images).
         ///
         /// <p>Information about the images.</p>
-        pub fn images(mut self, input: impl Into<crate::model::Image>) -> Self {
+        pub fn images(mut self, input: crate::model::Image) -> Self {
             let mut v = self.images.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.images = Some(v);
             self
         }
@@ -1446,10 +1619,10 @@ pub mod describe_image_permissions_output {
         /// <p>The permissions for a private image that you own. </p>
         pub fn shared_image_permissions_list(
             mut self,
-            input: impl Into<crate::model::SharedImagePermissions>,
+            input: crate::model::SharedImagePermissions,
         ) -> Self {
             let mut v = self.shared_image_permissions_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.shared_image_permissions_list = Some(v);
             self
         }
@@ -1530,9 +1703,9 @@ pub mod describe_image_builders_output {
         /// To override the contents of this collection use [`set_image_builders`](Self::set_image_builders).
         ///
         /// <p>Information about the image builders.</p>
-        pub fn image_builders(mut self, input: impl Into<crate::model::ImageBuilder>) -> Self {
+        pub fn image_builders(mut self, input: crate::model::ImageBuilder) -> Self {
             let mut v = self.image_builders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.image_builders = Some(v);
             self
         }
@@ -1612,9 +1785,9 @@ pub mod describe_fleets_output {
         /// To override the contents of this collection use [`set_fleets`](Self::set_fleets).
         ///
         /// <p>Information about the fleets.</p>
-        pub fn fleets(mut self, input: impl Into<crate::model::Fleet>) -> Self {
+        pub fn fleets(mut self, input: crate::model::Fleet) -> Self {
             let mut v = self.fleets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.fleets = Some(v);
             self
         }
@@ -1649,6 +1822,88 @@ impl DescribeFleetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetsOutput`](crate::output::DescribeFleetsOutput)
     pub fn builder() -> crate::output::describe_fleets_output::Builder {
         crate::output::describe_fleets_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeEntitlementsOutput {
+    /// <p>The entitlements.</p>
+    pub entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl DescribeEntitlementsOutput {
+    /// <p>The entitlements.</p>
+    pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
+        self.entitlements.as_deref()
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeEntitlementsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeEntitlementsOutput");
+        formatter.field("entitlements", &self.entitlements);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeEntitlementsOutput`](crate::output::DescribeEntitlementsOutput)
+pub mod describe_entitlements_output {
+    /// A builder for [`DescribeEntitlementsOutput`](crate::output::DescribeEntitlementsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// Appends an item to `entitlements`.
+        ///
+        /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
+        ///
+        /// <p>The entitlements.</p>
+        pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
+            let mut v = self.entitlements.unwrap_or_default();
+            v.push(input);
+            self.entitlements = Some(v);
+            self
+        }
+        /// <p>The entitlements.</p>
+        pub fn set_entitlements(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
+        ) -> Self {
+            self.entitlements = input;
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeEntitlementsOutput`](crate::output::DescribeEntitlementsOutput)
+        pub fn build(self) -> crate::output::DescribeEntitlementsOutput {
+            crate::output::DescribeEntitlementsOutput {
+                entitlements: self.entitlements,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeEntitlementsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEntitlementsOutput`](crate::output::DescribeEntitlementsOutput)
+    pub fn builder() -> crate::output::describe_entitlements_output::Builder {
+        crate::output::describe_entitlements_output::Builder::default()
     }
 }
 
@@ -1695,12 +1950,9 @@ pub mod describe_directory_configs_output {
         /// To override the contents of this collection use [`set_directory_configs`](Self::set_directory_configs).
         ///
         /// <p>Information about the directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>
-        pub fn directory_configs(
-            mut self,
-            input: impl Into<crate::model::DirectoryConfig>,
-        ) -> Self {
+        pub fn directory_configs(mut self, input: crate::model::DirectoryConfig) -> Self {
             let mut v = self.directory_configs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.directory_configs = Some(v);
             self
         }
@@ -1744,8 +1996,7 @@ impl DescribeDirectoryConfigsOutput {
 pub struct DescribeApplicationsOutput {
     /// <p>The applications in the list.</p>
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationsOutput {
@@ -1753,8 +2004,7 @@ impl DescribeApplicationsOutput {
     pub fn applications(&self) -> std::option::Option<&[crate::model::Application]> {
         self.applications.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1782,9 +2032,9 @@ pub mod describe_applications_output {
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
         /// <p>The applications in the list.</p>
-        pub fn applications(mut self, input: impl Into<crate::model::Application>) -> Self {
+        pub fn applications(mut self, input: crate::model::Application) -> Self {
             let mut v = self.applications.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applications = Some(v);
             self
         }
@@ -1796,14 +2046,12 @@ pub mod describe_applications_output {
             self.applications = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1831,8 +2079,7 @@ pub struct DescribeApplicationFleetAssociationsOutput {
     /// <p>The application fleet associations in the list.</p>
     pub application_fleet_associations:
         std::option::Option<std::vec::Vec<crate::model::ApplicationFleetAssociation>>,
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationFleetAssociationsOutput {
@@ -1842,8 +2089,7 @@ impl DescribeApplicationFleetAssociationsOutput {
     ) -> std::option::Option<&[crate::model::ApplicationFleetAssociation]> {
         self.application_fleet_associations.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1877,10 +2123,10 @@ pub mod describe_application_fleet_associations_output {
         /// <p>The application fleet associations in the list.</p>
         pub fn application_fleet_associations(
             mut self,
-            input: impl Into<crate::model::ApplicationFleetAssociation>,
+            input: crate::model::ApplicationFleetAssociation,
         ) -> Self {
             let mut v = self.application_fleet_associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.application_fleet_associations = Some(v);
             self
         }
@@ -1892,14 +2138,12 @@ pub mod describe_application_fleet_associations_output {
             self.application_fleet_associations = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1926,8 +2170,7 @@ impl DescribeApplicationFleetAssociationsOutput {
 pub struct DescribeAppBlocksOutput {
     /// <p>The app blocks in the list.</p>
     pub app_blocks: std::option::Option<std::vec::Vec<crate::model::AppBlock>>,
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAppBlocksOutput {
@@ -1935,8 +2178,7 @@ impl DescribeAppBlocksOutput {
     pub fn app_blocks(&self) -> std::option::Option<&[crate::model::AppBlock]> {
         self.app_blocks.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1964,9 +2206,9 @@ pub mod describe_app_blocks_output {
         /// To override the contents of this collection use [`set_app_blocks`](Self::set_app_blocks).
         ///
         /// <p>The app blocks in the list.</p>
-        pub fn app_blocks(mut self, input: impl Into<crate::model::AppBlock>) -> Self {
+        pub fn app_blocks(mut self, input: crate::model::AppBlock) -> Self {
             let mut v = self.app_blocks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_blocks = Some(v);
             self
         }
@@ -1978,14 +2220,12 @@ pub mod describe_app_blocks_output {
             self.app_blocks = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2268,6 +2508,36 @@ impl DeleteFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEntitlementOutput {}
+impl std::fmt::Debug for DeleteEntitlementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEntitlementOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteEntitlementOutput`](crate::output::DeleteEntitlementOutput)
+pub mod delete_entitlement_output {
+    /// A builder for [`DeleteEntitlementOutput`](crate::output::DeleteEntitlementOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteEntitlementOutput`](crate::output::DeleteEntitlementOutput)
+        pub fn build(self) -> crate::output::DeleteEntitlementOutput {
+            crate::output::DeleteEntitlementOutput {}
+        }
+    }
+}
+impl DeleteEntitlementOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEntitlementOutput`](crate::output::DeleteEntitlementOutput)
+    pub fn builder() -> crate::output::delete_entitlement_output::Builder {
+        crate::output::delete_entitlement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDirectoryConfigOutput {}
 impl std::fmt::Debug for DeleteDirectoryConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2390,24 +2660,14 @@ impl CreateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUsageReportSubscriptionOutput {
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
-    ///
-    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
-    /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
-    /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
-    /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
-    /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The schedule for generating usage reports.</p>
     pub schedule: std::option::Option<crate::model::UsageReportSchedule>,
 }
 impl CreateUsageReportSubscriptionOutput {
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
-    ///
-    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
-    /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
-    /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
-    /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
-    /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
@@ -2435,23 +2695,13 @@ pub mod create_usage_report_subscription_output {
     }
     impl Builder {
         /// <p>The Amazon S3 bucket where generated reports are stored.</p>
-        ///
-        /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
-        /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
-        /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
-        /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
-        /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+        /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
             self
         }
         /// <p>The Amazon S3 bucket where generated reports are stored.</p>
-        ///
-        /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
-        /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
-        /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
-        /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
-        /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+        /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2883,6 +3133,63 @@ impl CreateFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateEntitlementOutput {
+    /// <p>The entitlement.</p>
+    pub entitlement: std::option::Option<crate::model::Entitlement>,
+}
+impl CreateEntitlementOutput {
+    /// <p>The entitlement.</p>
+    pub fn entitlement(&self) -> std::option::Option<&crate::model::Entitlement> {
+        self.entitlement.as_ref()
+    }
+}
+impl std::fmt::Debug for CreateEntitlementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateEntitlementOutput");
+        formatter.field("entitlement", &self.entitlement);
+        formatter.finish()
+    }
+}
+/// See [`CreateEntitlementOutput`](crate::output::CreateEntitlementOutput)
+pub mod create_entitlement_output {
+    /// A builder for [`CreateEntitlementOutput`](crate::output::CreateEntitlementOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) entitlement: std::option::Option<crate::model::Entitlement>,
+    }
+    impl Builder {
+        /// <p>The entitlement.</p>
+        pub fn entitlement(mut self, input: crate::model::Entitlement) -> Self {
+            self.entitlement = Some(input);
+            self
+        }
+        /// <p>The entitlement.</p>
+        pub fn set_entitlement(
+            mut self,
+            input: std::option::Option<crate::model::Entitlement>,
+        ) -> Self {
+            self.entitlement = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateEntitlementOutput`](crate::output::CreateEntitlementOutput)
+        pub fn build(self) -> crate::output::CreateEntitlementOutput {
+            crate::output::CreateEntitlementOutput {
+                entitlement: self.entitlement,
+            }
+        }
+    }
+}
+impl CreateEntitlementOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEntitlementOutput`](crate::output::CreateEntitlementOutput)
+    pub fn builder() -> crate::output::create_entitlement_output::Builder {
+        crate::output::create_entitlement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDirectoryConfigOutput {
     /// <p>Information about the directory configuration.</p>
     pub directory_config: std::option::Option<crate::model::DirectoryConfig>,
@@ -3140,9 +3447,9 @@ pub mod batch_disassociate_user_stack_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The list of UserStackAssociationError objects.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::UserStackAssociationError>) -> Self {
+        pub fn errors(mut self, input: crate::model::UserStackAssociationError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -3204,9 +3511,9 @@ pub mod batch_associate_user_stack_output {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The list of UserStackAssociationError objects.</p>
-        pub fn errors(mut self, input: impl Into<crate::model::UserStackAssociationError>) -> Self {
+        pub fn errors(mut self, input: crate::model::UserStackAssociationError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -3266,17 +3573,43 @@ impl AssociateFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateApplicationToEntitlementOutput {}
+impl std::fmt::Debug for AssociateApplicationToEntitlementOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateApplicationToEntitlementOutput");
+        formatter.finish()
+    }
+}
+/// See [`AssociateApplicationToEntitlementOutput`](crate::output::AssociateApplicationToEntitlementOutput)
+pub mod associate_application_to_entitlement_output {
+    /// A builder for [`AssociateApplicationToEntitlementOutput`](crate::output::AssociateApplicationToEntitlementOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`AssociateApplicationToEntitlementOutput`](crate::output::AssociateApplicationToEntitlementOutput)
+        pub fn build(self) -> crate::output::AssociateApplicationToEntitlementOutput {
+            crate::output::AssociateApplicationToEntitlementOutput {}
+        }
+    }
+}
+impl AssociateApplicationToEntitlementOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateApplicationToEntitlementOutput`](crate::output::AssociateApplicationToEntitlementOutput)
+    pub fn builder() -> crate::output::associate_application_to_entitlement_output::Builder {
+        crate::output::associate_application_to_entitlement_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateApplicationFleetOutput {
-    /// <p>If fleet name is specified, this returns the list of applications that are associated
-    /// to it. If application ARN is specified, this returns the list of fleets to which it is
-    /// associated.</p>
+    /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
     pub application_fleet_association:
         std::option::Option<crate::model::ApplicationFleetAssociation>,
 }
 impl AssociateApplicationFleetOutput {
-    /// <p>If fleet name is specified, this returns the list of applications that are associated
-    /// to it. If application ARN is specified, this returns the list of fleets to which it is
-    /// associated.</p>
+    /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
     pub fn application_fleet_association(
         &self,
     ) -> std::option::Option<&crate::model::ApplicationFleetAssociation> {
@@ -3303,9 +3636,7 @@ pub mod associate_application_fleet_output {
             std::option::Option<crate::model::ApplicationFleetAssociation>,
     }
     impl Builder {
-        /// <p>If fleet name is specified, this returns the list of applications that are associated
-        /// to it. If application ARN is specified, this returns the list of fleets to which it is
-        /// associated.</p>
+        /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
         pub fn application_fleet_association(
             mut self,
             input: crate::model::ApplicationFleetAssociation,
@@ -3313,9 +3644,7 @@ pub mod associate_application_fleet_output {
             self.application_fleet_association = Some(input);
             self
         }
-        /// <p>If fleet name is specified, this returns the list of applications that are associated
-        /// to it. If application ARN is specified, this returns the list of fleets to which it is
-        /// associated.</p>
+        /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
         pub fn set_application_fleet_association(
             mut self,
             input: std::option::Option<crate::model::ApplicationFleetAssociation>,

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Athena
@@ -192,6 +192,7 @@ where
     ///
     /// See [`GetQueryResults`](crate::client::fluent_builders::GetQueryResults) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetQueryResults::into_paginator).
     pub fn get_query_results(&self) -> fluent_builders::GetQueryResults<C, M, R> {
         fluent_builders::GetQueryResults::new(self.handle.clone())
     }
@@ -213,6 +214,7 @@ where
     ///
     /// See [`ListDatabases`](crate::client::fluent_builders::ListDatabases) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatabases::into_paginator).
     pub fn list_databases(&self) -> fluent_builders::ListDatabases<C, M, R> {
         fluent_builders::ListDatabases::new(self.handle.clone())
     }
@@ -220,6 +222,7 @@ where
     ///
     /// See [`ListDataCatalogs`](crate::client::fluent_builders::ListDataCatalogs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataCatalogs::into_paginator).
     pub fn list_data_catalogs(&self) -> fluent_builders::ListDataCatalogs<C, M, R> {
         fluent_builders::ListDataCatalogs::new(self.handle.clone())
     }
@@ -234,6 +237,7 @@ where
     ///
     /// See [`ListNamedQueries`](crate::client::fluent_builders::ListNamedQueries) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNamedQueries::into_paginator).
     pub fn list_named_queries(&self) -> fluent_builders::ListNamedQueries<C, M, R> {
         fluent_builders::ListNamedQueries::new(self.handle.clone())
     }
@@ -241,6 +245,7 @@ where
     ///
     /// See [`ListPreparedStatements`](crate::client::fluent_builders::ListPreparedStatements) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPreparedStatements::into_paginator).
     pub fn list_prepared_statements(&self) -> fluent_builders::ListPreparedStatements<C, M, R> {
         fluent_builders::ListPreparedStatements::new(self.handle.clone())
     }
@@ -248,6 +253,7 @@ where
     ///
     /// See [`ListQueryExecutions`](crate::client::fluent_builders::ListQueryExecutions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQueryExecutions::into_paginator).
     pub fn list_query_executions(&self) -> fluent_builders::ListQueryExecutions<C, M, R> {
         fluent_builders::ListQueryExecutions::new(self.handle.clone())
     }
@@ -255,6 +261,7 @@ where
     ///
     /// See [`ListTableMetadata`](crate::client::fluent_builders::ListTableMetadata) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTableMetadata::into_paginator).
     pub fn list_table_metadata(&self) -> fluent_builders::ListTableMetadata<C, M, R> {
         fluent_builders::ListTableMetadata::new(self.handle.clone())
     }
@@ -262,6 +269,7 @@ where
     ///
     /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
@@ -269,6 +277,7 @@ where
     ///
     /// See [`ListWorkGroups`](crate::client::fluent_builders::ListWorkGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkGroups::into_paginator).
     pub fn list_work_groups(&self) -> fluent_builders::ListWorkGroups<C, M, R> {
         fluent_builders::ListWorkGroups::new(self.handle.clone())
     }
@@ -332,16 +341,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BatchGetNamedQuery`.
     ///
-    /// <p>Returns the details of a single named query or a list of up to 50 queries, which you
-    /// provide as an array of query ID strings. Requires you to have access to the workgroup in
-    /// which the queries were saved. Use <a>ListNamedQueriesInput</a> to get the
-    /// list of named query IDs in the specified workgroup. If information could not be
-    /// retrieved for a submitted query ID, information about the query ID submitted is listed
-    /// under <a>UnprocessedNamedQueryId</a>. Named queries differ from executed
-    /// queries. Use <a>BatchGetQueryExecutionInput</a> to get details about each
-    /// unique query execution, and <a>ListQueryExecutionsInput</a> to get a list of
-    /// query execution IDs.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the details of a single named query or a list of up to 50 queries, which you provide as an array of query ID strings. Requires you to have access to the workgroup in which the queries were saved. Use <code>ListNamedQueriesInput</code> to get the list of named query IDs in the specified workgroup. If information could not be retrieved for a submitted query ID, information about the query ID submitted is listed under <code>UnprocessedNamedQueryId</code>. Named queries differ from executed queries. Use <code>BatchGetQueryExecutionInput</code> to get details about each unique query execution, and <code>ListQueryExecutionsInput</code> to get a list of query execution IDs.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetNamedQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -386,10 +387,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetNamedQueryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -402,8 +403,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_named_query_ids`](Self::set_named_query_ids).
         ///
         /// <p>An array of query IDs.</p>
-        pub fn named_query_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.named_query_ids(inp);
+        pub fn named_query_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.named_query_ids(input.into());
             self
         }
         /// <p>An array of query IDs.</p>
@@ -417,13 +418,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetQueryExecution`.
     ///
-    /// <p>Returns the details of a single query execution or a list of up to 50 query
-    /// executions, which you provide as an array of query execution ID strings. Requires you to
-    /// have access to the workgroup in which the queries ran. To get a list of query execution
-    /// IDs, use <a>ListQueryExecutionsInput$WorkGroup</a>. Query executions differ
-    /// from named (saved) queries. Use <a>BatchGetNamedQueryInput</a> to get details
-    /// about named queries.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the details of a single query execution or a list of up to 50 query executions, which you provide as an array of query execution ID strings. Requires you to have access to the workgroup in which the queries ran. To get a list of query execution IDs, use <code>ListQueryExecutionsInput$WorkGroup</code>. Query executions differ from named (saved) queries. Use <code>BatchGetNamedQueryInput</code> to get details about named queries.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetQueryExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -468,10 +464,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetQueryExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -484,8 +480,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_query_execution_ids`](Self::set_query_execution_ids).
         ///
         /// <p>An array of query execution IDs.</p>
-        pub fn query_execution_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_execution_ids(inp);
+        pub fn query_execution_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_execution_ids(input.into());
             self
         }
         /// <p>An array of query execution IDs.</p>
@@ -499,9 +495,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDataCatalog`.
     ///
-    /// <p>Creates (registers) a data catalog with the specified name and properties. Catalogs
-    /// created are visible to all users of the same Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all users of the same Amazon Web Services account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataCatalog<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -546,10 +541,10 @@ pub mod fluent_builders {
                 crate::input::CreateDataCatalogInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -557,30 +552,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the data catalog to create. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the data catalog to create. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
-        /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
-        /// Glue Data Catalog.</p>
-        pub fn r#type(mut self, inp: crate::model::DataCatalogType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+        pub fn r#type(mut self, input: crate::model::DataCatalogType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
-        /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
-        /// Glue Data Catalog.</p>
+        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataCatalogType>,
@@ -589,8 +576,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the data catalog to be created.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the data catalog to be created.</p>
@@ -602,149 +589,43 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Specifies the Lambda function or functions to use for creating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
-        /// <code>
-        /// <i>catalog_id</i>
-        /// </code> is the account ID of the
-        /// Amazon Web Services account to which the Glue Data Catalog
-        /// belongs.</p>
-        /// <p>
-        /// <code>catalog-id=<i>catalog_id</i>
-        /// </code>
-        /// </p>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>GLUE</code> data catalog type also applies to the default
-        /// <code>AwsDataCatalog</code> that already exists in your account, of
-        /// which you can have only one and cannot modify.</p>
-        /// </li>
-        /// <li>
-        /// <p>Queries that specify a Glue Data Catalog other than the default
-        /// <code>AwsDataCatalog</code> must be run on Athena engine
-        /// version 2.</p>
-        /// </li>
-        /// <li>
-        /// <p>In Regions where Athena engine version 2 is not available,
-        /// creating new Glue data catalogs results in an
-        /// <code>INVALID_INPUT</code> error.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li>
+        /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
+        /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.parameters(k, v);
+            self.inner = self.inner.parameters(k.into(), v.into());
             self
         }
-        /// <p>Specifies the Lambda function or functions to use for creating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
-        /// <code>
-        /// <i>catalog_id</i>
-        /// </code> is the account ID of the
-        /// Amazon Web Services account to which the Glue Data Catalog
-        /// belongs.</p>
-        /// <p>
-        /// <code>catalog-id=<i>catalog_id</i>
-        /// </code>
-        /// </p>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>GLUE</code> data catalog type also applies to the default
-        /// <code>AwsDataCatalog</code> that already exists in your account, of
-        /// which you can have only one and cannot modify.</p>
-        /// </li>
-        /// <li>
-        /// <p>Queries that specify a Glue Data Catalog other than the default
-        /// <code>AwsDataCatalog</code> must be run on Athena engine
-        /// version 2.</p>
-        /// </li>
-        /// <li>
-        /// <p>In Regions where Athena engine version 2 is not available,
-        /// creating new Glue data catalogs results in an
-        /// <code>INVALID_INPUT</code> error.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li>
+        /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
+        /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_parameters(
             mut self,
@@ -760,8 +641,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of comma separated tags to add to the data catalog that is created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of comma separated tags to add to the data catalog that is created.</p>
@@ -775,12 +656,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateNamedQuery`.
     ///
-    /// <p>Creates a named query in the specified workgroup. Requires that you have access to the
-    /// workgroup.</p>
-    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
-    /// Code Samples</a> in the <i>Amazon Athena User
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a named query in the specified workgroup. Requires that you have access to the workgroup.</p>
+    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNamedQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -825,10 +703,10 @@ pub mod fluent_builders {
                 crate::input::CreateNamedQueryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -837,8 +715,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The query name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The query name.</p>
@@ -847,8 +725,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The query description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The query description.</p>
@@ -857,8 +735,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database to which the query belongs.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
         /// <p>The database to which the query belongs.</p>
@@ -867,8 +745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contents of the query with all query statements.</p>
-        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_string(inp);
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(input.into());
             self
         }
         /// <p>The contents of the query with all query statements.</p>
@@ -876,29 +754,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_query_string(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>CreateNamedQuery</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>CreateNamedQuery</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -908,8 +772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the workgroup in which the named query is being created.</p>
-        pub fn work_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(inp);
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The name of the workgroup in which the named query is being created.</p>
@@ -921,7 +785,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePreparedStatement`.
     ///
     /// <p>Creates a prepared statement for use with SQL queries in Athena.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePreparedStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -966,10 +830,10 @@ pub mod fluent_builders {
                 crate::input::CreatePreparedStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -978,8 +842,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the prepared statement.</p>
-        pub fn statement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_name(inp);
+        pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_name(input.into());
             self
         }
         /// <p>The name of the prepared statement.</p>
@@ -991,8 +855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the workgroup to which the prepared statement belongs.</p>
-        pub fn work_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(inp);
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The name of the workgroup to which the prepared statement belongs.</p>
@@ -1001,8 +865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The query string for the prepared statement.</p>
-        pub fn query_statement(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_statement(inp);
+        pub fn query_statement(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_statement(input.into());
             self
         }
         /// <p>The query string for the prepared statement.</p>
@@ -1014,8 +878,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the prepared statement.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the prepared statement.</p>
@@ -1027,7 +891,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkGroup`.
     ///
     /// <p>Creates a workgroup with the specified name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1072,10 +936,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorkGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1084,8 +948,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The workgroup name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The workgroup name.</p>
@@ -1093,24 +957,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The configuration for the workgroup, which includes the location in Amazon S3
-        /// where query results are stored, the encryption configuration, if any, used for
-        /// encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the
-        /// workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is
-        /// specified, and whether workgroup's settings (specified with
-        /// <code>EnforceWorkGroupConfiguration</code>) in the
-        /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
-        pub fn configuration(mut self, inp: crate::model::WorkGroupConfiguration) -> Self {
-            self.inner = self.inner.configuration(inp);
+        /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+        pub fn configuration(mut self, input: crate::model::WorkGroupConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>The configuration for the workgroup, which includes the location in Amazon S3
-        /// where query results are stored, the encryption configuration, if any, used for
-        /// encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the
-        /// workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is
-        /// specified, and whether workgroup's settings (specified with
-        /// <code>EnforceWorkGroupConfiguration</code>) in the
-        /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::WorkGroupConfiguration>,
@@ -1119,8 +971,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workgroup description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The workgroup description.</p>
@@ -1133,8 +985,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of comma separated tags to add to the workgroup that is created.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of comma separated tags to add to the workgroup that is created.</p>
@@ -1149,7 +1001,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataCatalog`.
     ///
     /// <p>Deletes a data catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataCatalog<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1194,10 +1046,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDataCatalogInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1206,8 +1058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data catalog to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the data catalog to delete.</p>
@@ -1218,12 +1070,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteNamedQuery`.
     ///
-    /// <p>Deletes the named query if you have access to the workgroup in which the query was
-    /// saved.</p>
-    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
-    /// Code Samples</a> in the <i>Amazon Athena User
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the named query if you have access to the workgroup in which the query was saved.</p>
+    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNamedQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1268,10 +1117,10 @@ pub mod fluent_builders {
                 crate::input::DeleteNamedQueryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1280,8 +1129,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the query to delete.</p>
-        pub fn named_query_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.named_query_id(inp);
+        pub fn named_query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.named_query_id(input.into());
             self
         }
         /// <p>The unique ID of the query to delete.</p>
@@ -1295,9 +1144,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePreparedStatement`.
     ///
-    /// <p>Deletes the prepared statement with the specified name from the specified
-    /// workgroup.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the prepared statement with the specified name from the specified workgroup.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePreparedStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1342,10 +1190,10 @@ pub mod fluent_builders {
                 crate::input::DeletePreparedStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1354,8 +1202,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the prepared statement to delete.</p>
-        pub fn statement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_name(inp);
+        pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_name(input.into());
             self
         }
         /// <p>The name of the prepared statement to delete.</p>
@@ -1367,8 +1215,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workgroup to which the statement to be deleted belongs.</p>
-        pub fn work_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(inp);
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The workgroup to which the statement to be deleted belongs.</p>
@@ -1379,9 +1227,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteWorkGroup`.
     ///
-    /// <p>Deletes the workgroup with the specified name. The primary workgroup cannot be
-    /// deleted.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the workgroup with the specified name. The primary workgroup cannot be deleted.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1426,10 +1273,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWorkGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1438,8 +1285,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the workgroup to delete.</p>
-        pub fn work_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(inp);
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The unique name of the workgroup to delete.</p>
@@ -1447,14 +1294,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_work_group(input);
             self
         }
-        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
-        /// named queries or query executions.</p>
-        pub fn recursive_delete_option(mut self, inp: bool) -> Self {
-            self.inner = self.inner.recursive_delete_option(inp);
+        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
+        pub fn recursive_delete_option(mut self, input: bool) -> Self {
+            self.inner = self.inner.recursive_delete_option(input);
             self
         }
-        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
-        /// named queries or query executions.</p>
+        /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
         pub fn set_recursive_delete_option(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_recursive_delete_option(input);
             self
@@ -1463,7 +1308,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDatabase`.
     ///
     /// <p>Returns a database object for the specified database and data catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1508,10 +1353,10 @@ pub mod fluent_builders {
                 crate::input::GetDatabaseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1520,8 +1365,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data catalog that contains the database to return.</p>
-        pub fn catalog_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_name(inp);
+        pub fn catalog_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_name(input.into());
             self
         }
         /// <p>The name of the data catalog that contains the database to return.</p>
@@ -1530,8 +1375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database to return.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the database to return.</p>
@@ -1546,7 +1391,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataCatalog`.
     ///
     /// <p>Returns the specified data catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataCatalog<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1591,10 +1436,10 @@ pub mod fluent_builders {
                 crate::input::GetDataCatalogInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1603,8 +1448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data catalog to return.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the data catalog to return.</p>
@@ -1615,9 +1460,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetNamedQuery`.
     ///
-    /// <p>Returns information about a single query. Requires that you have access to the
-    /// workgroup in which the query was saved.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about a single query. Requires that you have access to the workgroup in which the query was saved.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNamedQuery<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1662,10 +1506,10 @@ pub mod fluent_builders {
                 crate::input::GetNamedQueryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1673,14 +1517,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
-        /// IDs.</p>
-        pub fn named_query_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.named_query_id(inp);
+        /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
+        pub fn named_query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.named_query_id(input.into());
             self
         }
-        /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
-        /// IDs.</p>
+        /// <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
         pub fn set_named_query_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1691,9 +1533,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPreparedStatement`.
     ///
-    /// <p>Retrieves the prepared statement with the specified name from the specified
-    /// workgroup.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the prepared statement with the specified name from the specified workgroup.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPreparedStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1738,10 +1579,10 @@ pub mod fluent_builders {
                 crate::input::GetPreparedStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1750,8 +1591,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the prepared statement to retrieve.</p>
-        pub fn statement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_name(inp);
+        pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_name(input.into());
             self
         }
         /// <p>The name of the prepared statement to retrieve.</p>
@@ -1763,8 +1604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workgroup to which the statement to be retrieved belongs.</p>
-        pub fn work_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(inp);
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The workgroup to which the statement to be retrieved belongs.</p>
@@ -1775,10 +1616,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetQueryExecution`.
     ///
-    /// <p>Returns information about a single execution of a query if you have access to the
-    /// workgroup in which the query ran. Each time a query executes, information about the
-    /// query execution is saved with a unique ID.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about a single execution of a query if you have access to the workgroup in which the query ran. Each time a query executes, information about the query execution is saved with a unique ID.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQueryExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1823,10 +1662,10 @@ pub mod fluent_builders {
                 crate::input::GetQueryExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1835,8 +1674,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the query execution.</p>
-        pub fn query_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_execution_id(inp);
+        pub fn query_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_execution_id(input.into());
             self
         }
         /// <p>The unique ID of the query execution.</p>
@@ -1850,22 +1689,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetQueryResults`.
     ///
-    /// <p>Streams the results of a single query execution specified by
-    /// <code>QueryExecutionId</code> from the Athena query results location in
-    /// Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> in the <i>Amazon Athena User Guide</i>. This request does not execute the query
-    /// but returns results. Use <a>StartQueryExecution</a> to run a query.</p>
-    /// <p>To stream query results successfully, the IAM principal with permission to call
-    /// <code>GetQueryResults</code> also must have permissions to the Amazon S3
-    /// <code>GetObject</code> action for the Athena query results location.</p>
-    /// <important>
-    /// <p>IAM principals with permission to the Amazon S3
-    /// <code>GetObject</code> action for the query results location are able to retrieve
-    /// query results from Amazon S3 even if permission to the
-    /// <code>GetQueryResults</code> action is denied. To restrict user or role access,
-    /// ensure that Amazon S3 permissions to the Athena query location
-    /// are denied.</p>
+    /// <p>Streams the results of a single query execution specified by <code>QueryExecutionId</code> from the Athena query results location in Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> in the <i>Amazon Athena User Guide</i>. This request does not execute the query but returns results. Use <code>StartQueryExecution</code> to run a query.</p>
+    /// <p>To stream query results successfully, the IAM principal with permission to call <code>GetQueryResults</code> also must have permissions to the Amazon S3 <code>GetObject</code> action for the Athena query results location.</p> <important>
+    /// <p>IAM principals with permission to the Amazon S3 <code>GetObject</code> action for the query results location are able to retrieve query results from Amazon S3 even if permission to the <code>GetQueryResults</code> action is denied. To restrict user or role access, ensure that Amazon S3 permissions to the Athena query location are denied.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetQueryResults<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1910,10 +1738,10 @@ pub mod fluent_builders {
                 crate::input::GetQueryResultsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1921,9 +1749,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetQueryResultsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetQueryResultsPaginator<C, M, R> {
+            crate::paginator::GetQueryResultsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique ID of the query execution.</p>
-        pub fn query_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_execution_id(inp);
+        pub fn query_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_execution_id(input.into());
             self
         }
         /// <p>The unique ID of the query execution.</p>
@@ -1934,23 +1768,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_query_execution_id(input);
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results (rows) to return in this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results (rows) to return in this request.</p>
@@ -1962,7 +1792,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTableMetadata`.
     ///
     /// <p>Returns table metadata for the specified catalog, database, and table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTableMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2007,10 +1837,10 @@ pub mod fluent_builders {
                 crate::input::GetTableMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2018,21 +1848,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the data catalog that contains the database and table metadata to
-        /// return.</p>
-        pub fn catalog_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_name(inp);
+        /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
+        pub fn catalog_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_name(input.into());
             self
         }
-        /// <p>The name of the data catalog that contains the database and table metadata to
-        /// return.</p>
+        /// <p>The name of the data catalog that contains the database and table metadata to return.</p>
         pub fn set_catalog_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_name(input);
             self
         }
         /// <p>The name of the database that contains the table metadata to return.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the database that contains the table metadata to return.</p>
@@ -2044,8 +1872,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the table for which metadata is returned.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table for which metadata is returned.</p>
@@ -2057,7 +1885,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkGroup`.
     ///
     /// <p>Returns information about the workgroup with the specified name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2102,10 +1930,10 @@ pub mod fluent_builders {
                 crate::input::GetWorkGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2114,8 +1942,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workgroup.</p>
-        pub fn work_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(inp);
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The name of the workgroup.</p>
@@ -2127,7 +1955,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDatabases`.
     ///
     /// <p>Lists the databases in the specified data catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatabases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2172,10 +2000,10 @@ pub mod fluent_builders {
                 crate::input::ListDatabasesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2183,9 +2011,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDatabasesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDatabasesPaginator<C, M, R> {
+            crate::paginator::ListDatabasesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the data catalog that contains the databases to return.</p>
-        pub fn catalog_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_name(inp);
+        pub fn catalog_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_name(input.into());
             self
         }
         /// <p>The name of the data catalog that contains the databases to return.</p>
@@ -2193,23 +2027,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_catalog_name(input);
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Specifies the maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the maximum number of results to return.</p>
@@ -2221,7 +2051,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataCatalogs`.
     ///
     /// <p>Lists the data catalogs in the current Amazon Web Services account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataCatalogs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2266,10 +2096,10 @@ pub mod fluent_builders {
                 crate::input::ListDataCatalogsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2277,23 +2107,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDataCatalogsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDataCatalogsPaginator<C, M, R> {
+            crate::paginator::ListDataCatalogsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Specifies the maximum number of data catalogs to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the maximum number of data catalogs to return.</p>
@@ -2304,9 +2136,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEngineVersions`.
     ///
-    /// <p>Returns a list of engine versions that are available to choose from, including the
-    /// Auto option.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of engine versions that are available to choose from, including the Auto option.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEngineVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2351,10 +2182,10 @@ pub mod fluent_builders {
                 crate::input::ListEngineVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2362,23 +2193,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of engine versions to return in this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of engine versions to return in this request.</p>
@@ -2389,13 +2216,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListNamedQueries`.
     ///
-    /// <p>Provides a list of available query IDs only for queries saved in the specified
-    /// workgroup. Requires that you have access to the specified workgroup. If a workgroup is
-    /// not specified, lists the saved queries for the primary workgroup.</p>
-    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
-    /// Code Samples</a> in the <i>Amazon Athena User
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.</p>
+    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNamedQueries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2440,10 +2263,10 @@ pub mod fluent_builders {
                 crate::input::ListNamedQueriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2451,23 +2274,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListNamedQueriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListNamedQueriesPaginator<C, M, R> {
+            crate::paginator::ListNamedQueriesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of queries to return in this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of queries to return in this request.</p>
@@ -2475,16 +2300,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The name of the workgroup from which the named queries are being returned. If a
-        /// workgroup is not specified, the saved queries for the primary workgroup are
-        /// returned.</p>
-        pub fn work_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(inp);
+        /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
-        /// <p>The name of the workgroup from which the named queries are being returned. If a
-        /// workgroup is not specified, the saved queries for the primary workgroup are
-        /// returned.</p>
+        /// <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
         pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_work_group(input);
             self
@@ -2493,7 +2314,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPreparedStatements`.
     ///
     /// <p>Lists the prepared statements in the specfied workgroup.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPreparedStatements<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2538,10 +2359,10 @@ pub mod fluent_builders {
                 crate::input::ListPreparedStatementsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2549,9 +2370,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPreparedStatementsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPreparedStatementsPaginator<C, M, R> {
+            crate::paginator::ListPreparedStatementsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The workgroup to list the prepared statements for.</p>
-        pub fn work_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(inp);
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The workgroup to list the prepared statements for.</p>
@@ -2559,23 +2386,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_work_group(input);
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -2586,14 +2409,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListQueryExecutions`.
     ///
-    /// <p>Provides a list of available query execution IDs for the queries in the specified
-    /// workgroup. If a workgroup is not specified, returns a list of query execution IDs for
-    /// the primary workgroup. Requires you to have access to the workgroup in which the queries
-    /// ran.</p>
-    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
-    /// Code Samples</a> in the <i>Amazon Athena User
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Provides a list of available query execution IDs for the queries in the specified workgroup. If a workgroup is not specified, returns a list of query execution IDs for the primary workgroup. Requires you to have access to the workgroup in which the queries ran.</p>
+    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListQueryExecutions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2638,10 +2456,10 @@ pub mod fluent_builders {
                 crate::input::ListQueryExecutionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2649,23 +2467,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListQueryExecutionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListQueryExecutionsPaginator<C, M, R> {
+            crate::paginator::ListQueryExecutionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of query executions to return in this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of query executions to return in this request.</p>
@@ -2673,16 +2493,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
-        /// specified, a list of available query execution IDs for the queries in the primary
-        /// workgroup is returned.</p>
-        pub fn work_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(inp);
+        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
-        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
-        /// specified, a list of available query execution IDs for the queries in the primary
-        /// workgroup is returned.</p>
+        /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
         pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_work_group(input);
             self
@@ -2691,7 +2507,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTableMetadata`.
     ///
     /// <p>Lists the metadata for the tables in the specified data catalog database.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTableMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2736,10 +2552,10 @@ pub mod fluent_builders {
                 crate::input::ListTableMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2747,9 +2563,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTableMetadataPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTableMetadataPaginator<C, M, R> {
+            crate::paginator::ListTableMetadataPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the data catalog for which table metadata should be returned.</p>
-        pub fn catalog_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_name(inp);
+        pub fn catalog_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_name(input.into());
             self
         }
         /// <p>The name of the data catalog for which table metadata should be returned.</p>
@@ -2758,8 +2580,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database for which table metadata should be returned.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the database for which table metadata should be returned.</p>
@@ -2770,35 +2592,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
-        /// metadata for all tables are listed.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(inp);
+        /// <p>A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.</p>
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(input.into());
             self
         }
-        /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
-        /// metadata for all tables are listed.</p>
+        /// <p>A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_expression(input);
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the NextToken from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Specifies the maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the maximum number of results to return.</p>
@@ -2809,9 +2625,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists the tags associated with an Athena workgroup or data catalog
-    /// resource.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Lists the tags associated with an Athena workgroup or data catalog resource.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2856,10 +2671,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2867,9 +2682,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsForResourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagsForResourcePaginator<C, M, R> {
+            crate::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
+        }
         /// <p>Lists the tags for the resource with the specified ARN.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Lists the tags for the resource with the specified ARN.</p>
@@ -2877,28 +2698,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The token for the next set of results, or null if there are no additional results for
-        /// this request, where the request lists the tags for the resource with the specified
-        /// ARN.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results, or null if there are no additional results for
-        /// this request, where the request lists the tags for the resource with the specified
-        /// ARN.</p>
+        /// <p>The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request that lists the tags for the
-        /// resource.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of results to be returned per request that lists the tags for the resource.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request that lists the tags for the
-        /// resource.</p>
+        /// <p>The maximum number of results to be returned per request that lists the tags for the resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2907,7 +2722,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkGroups`.
     ///
     /// <p>Lists available workgroups for the account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2952,10 +2767,10 @@ pub mod fluent_builders {
                 crate::input::ListWorkGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2963,23 +2778,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorkGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWorkGroupsPaginator<C, M, R> {
+            crate::paginator::ListWorkGroupsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue
-        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
-        /// the <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of workgroups to return in this request.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of workgroups to return in this request.</p>
@@ -2990,13 +2807,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartQueryExecution`.
     ///
-    /// <p>Runs the SQL query statements contained in the <code>Query</code>. Requires you to
-    /// have access to the workgroup in which the query ran. Running queries against an external
-    /// catalog requires <a>GetDataCatalog</a> permission to the catalog. For code
-    /// samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
-    /// Code Samples</a> in the <i>Amazon Athena User
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup in which the query ran. Running queries against an external catalog requires <code>GetDataCatalog</code> permission to the catalog. For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartQueryExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3041,10 +2853,10 @@ pub mod fluent_builders {
                 crate::input::StartQueryExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3053,8 +2865,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SQL query statements to be executed.</p>
-        pub fn query_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_string(inp);
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(input.into());
             self
         }
         /// <p>The SQL query statements to be executed.</p>
@@ -3062,29 +2874,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_query_string(input);
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>StartQueryExecution</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique case-sensitive string used to ensure the request to create the query is
-        /// idempotent (executes only once). If another <code>StartQueryExecution</code> request is
-        /// received, the same response is returned and another query is not created. If a parameter
-        /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
-        /// <important>
-        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
-        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
-        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
-        /// this token or the action will fail.</p>
+        /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
         /// </important>
         pub fn set_client_request_token(
             mut self,
@@ -3094,8 +2892,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database within which the query executes.</p>
-        pub fn query_execution_context(mut self, inp: crate::model::QueryExecutionContext) -> Self {
-            self.inner = self.inner.query_execution_context(inp);
+        pub fn query_execution_context(
+            mut self,
+            input: crate::model::QueryExecutionContext,
+        ) -> Self {
+            self.inner = self.inner.query_execution_context(input);
             self
         }
         /// <p>The database within which the query executes.</p>
@@ -3106,18 +2907,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_query_execution_context(input);
             self
         }
-        /// <p>Specifies information about where and how to save the results of the query execution.
-        /// If the query runs in a workgroup, then workgroup's settings may override query settings.
-        /// This affects the query results location. The workgroup settings override is specified in
-        /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
-        pub fn result_configuration(mut self, inp: crate::model::ResultConfiguration) -> Self {
-            self.inner = self.inner.result_configuration(inp);
+        /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+        pub fn result_configuration(mut self, input: crate::model::ResultConfiguration) -> Self {
+            self.inner = self.inner.result_configuration(input);
             self
         }
-        /// <p>Specifies information about where and how to save the results of the query execution.
-        /// If the query runs in a workgroup, then workgroup's settings may override query settings.
-        /// This affects the query results location. The workgroup settings override is specified in
-        /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
         pub fn set_result_configuration(
             mut self,
             input: std::option::Option<crate::model::ResultConfiguration>,
@@ -3126,8 +2921,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the workgroup in which the query is being started.</p>
-        pub fn work_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(inp);
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The name of the workgroup in which the query is being started.</p>
@@ -3138,12 +2933,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopQueryExecution`.
     ///
-    /// <p>Stops a query execution. Requires you to have access to the workgroup in which the
-    /// query ran.</p>
-    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and
-    /// Code Samples</a> in the <i>Amazon Athena User
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Stops a query execution. Requires you to have access to the workgroup in which the query ran.</p>
+    /// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopQueryExecution<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3188,10 +2980,10 @@ pub mod fluent_builders {
                 crate::input::StopQueryExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3200,8 +2992,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the query execution to stop.</p>
-        pub fn query_execution_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_execution_id(inp);
+        pub fn query_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_execution_id(input.into());
             self
         }
         /// <p>The unique ID of the query execution to stop.</p>
@@ -3215,18 +3007,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds one or more tags to an Athena resource. A tag is a label that you
-    /// assign to a resource. In Athena, a resource can be a workgroup or data
-    /// catalog. Each tag consists of a key and an optional value, both of which you define. For
-    /// example, you can use tags to categorize Athena workgroups or data catalogs
-    /// by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to
-    /// search and filter workgroups or data catalogs in your account. For best practices, see
-    /// <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode
-    /// characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use
-    /// letters and numbers representable in UTF-8, and the following characters: + - = . _ : /
-    /// @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you
-    /// specify more than one tag, separate them by commas.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3271,10 +3053,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3282,14 +3064,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
-        /// which tags are to be added.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
-        /// which tags are to be added.</p>
+        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -3299,8 +3079,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog resource.</p>
@@ -3315,7 +3095,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from a data catalog or workgroup resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3360,10 +3140,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3372,8 +3152,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the ARN of the resource from which tags are to be removed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Specifies the ARN of the resource from which tags are to be removed.</p>
@@ -3385,14 +3165,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the
-        /// specified resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the
-        /// specified resource.</p>
+        /// <p>A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3404,7 +3182,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDataCatalog`.
     ///
     /// <p>Updates the data catalog that has the specified name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataCatalog<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3449,10 +3227,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDataCatalogInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3460,30 +3238,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the data catalog to update. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the data catalog to update. The catalog name must be unique for the
-        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
-        /// sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
-        /// federated catalog, <code>HIVE</code> for an external hive metastore, or
-        /// <code>GLUE</code> for an Glue Data Catalog.</p>
-        pub fn r#type(mut self, inp: crate::model::DataCatalogType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+        pub fn r#type(mut self, input: crate::model::DataCatalogType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
-        /// federated catalog, <code>HIVE</code> for an external hive metastore, or
-        /// <code>GLUE</code> for an Glue Data Catalog.</p>
+        /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataCatalogType>,
@@ -3492,8 +3262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>New or modified text that describes the data catalog.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>New or modified text that describes the data catalog.</p>
@@ -3505,91 +3275,31 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Specifies the Lambda function or functions to use for updating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.parameters(k, v);
+            self.inner = self.inner.parameters(k.into(), v.into());
             self
         }
-        /// <p>Specifies the Lambda function or functions to use for updating the data
-        /// catalog. This is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
-        /// <code>metadata-function</code> parameter is required. <code>The
-        /// sdk-version</code> parameter is optional and defaults to the currently
-        /// supported version.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// sdk-version=<i>version_number</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets
-        /// of required parameters, but not both.</p>
+        /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+        /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
         /// <ul>
-        /// <li>
-        /// <p>If you have one Lambda function that processes metadata
-        /// and another for reading the actual data, use the following syntax. Both
-        /// parameters are required.</p>
-        /// <p>
-        /// <code>metadata-function=<i>lambda_arn</i>,
-        /// record-function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p> If you have a composite Lambda function that processes
-        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
-        /// <p>
-        /// <code>function=<i>lambda_arn</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+        /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_parameters(
             mut self,
@@ -3604,7 +3314,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePreparedStatement`.
     ///
     /// <p>Updates a prepared statement.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePreparedStatement<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3649,10 +3359,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePreparedStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3661,8 +3371,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the prepared statement.</p>
-        pub fn statement_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_name(inp);
+        pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_name(input.into());
             self
         }
         /// <p>The name of the prepared statement.</p>
@@ -3674,8 +3384,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workgroup for the prepared statement.</p>
-        pub fn work_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(inp);
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The workgroup for the prepared statement.</p>
@@ -3684,8 +3394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The query string for the prepared statement.</p>
-        pub fn query_statement(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_statement(inp);
+        pub fn query_statement(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_statement(input.into());
             self
         }
         /// <p>The query string for the prepared statement.</p>
@@ -3697,8 +3407,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the prepared statement.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the prepared statement.</p>
@@ -3709,9 +3419,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateWorkGroup`.
     ///
-    /// <p>Updates the workgroup with the specified name. The workgroup's name cannot be
-    /// changed.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the workgroup with the specified name. The workgroup's name cannot be changed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3756,10 +3465,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWorkGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3768,8 +3477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The specified workgroup that will be updated.</p>
-        pub fn work_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(inp);
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The specified workgroup that will be updated.</p>
@@ -3778,8 +3487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workgroup description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The workgroup description.</p>
@@ -3790,9 +3499,9 @@ pub mod fluent_builders {
         /// <p>The workgroup configuration that will be updated for the given workgroup.</p>
         pub fn configuration_updates(
             mut self,
-            inp: crate::model::WorkGroupConfigurationUpdates,
+            input: crate::model::WorkGroupConfigurationUpdates,
         ) -> Self {
-            self.inner = self.inner.configuration_updates(inp);
+            self.inner = self.inner.configuration_updates(input);
             self
         }
         /// <p>The workgroup configuration that will be updated for the given workgroup.</p>
@@ -3804,8 +3513,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workgroup state that will be updated for the given workgroup.</p>
-        pub fn state(mut self, inp: crate::model::WorkGroupState) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, input: crate::model::WorkGroupState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>The workgroup state that will be updated for the given workgroup.</p>
@@ -3818,6 +3527,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

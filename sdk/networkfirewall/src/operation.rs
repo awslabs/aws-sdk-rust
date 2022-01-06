@@ -471,6 +471,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRuleGroup {
     }
 }
 
+/// Operation shape for `DescribeRuleGroupMetadata`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_rule_group_metadata`](crate::client::Client::describe_rule_group_metadata).
+///
+/// See [`crate::client::fluent_builders::DescribeRuleGroupMetadata`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeRuleGroupMetadata {
+    _private: (),
+}
+impl DescribeRuleGroupMetadata {
+    /// Creates a new builder-style object to manufacture [`DescribeRuleGroupMetadataInput`](crate::input::DescribeRuleGroupMetadataInput)
+    pub fn builder() -> crate::input::describe_rule_group_metadata_input::Builder {
+        crate::input::describe_rule_group_metadata_input::Builder::default()
+    }
+    /// Creates a new `DescribeRuleGroupMetadata` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeRuleGroupMetadata {
+    type Output = std::result::Result<
+        crate::output::DescribeRuleGroupMetadataOutput,
+        crate::error::DescribeRuleGroupMetadataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_rule_group_metadata_error(response)
+        } else {
+            crate::operation_deser::parse_describe_rule_group_metadata_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DisassociateSubnets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

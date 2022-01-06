@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Elastic  Inference
@@ -96,6 +96,7 @@ where
     ///
     /// See [`DescribeAccelerators`](crate::client::fluent_builders::DescribeAccelerators) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAccelerators::into_paginator).
     pub fn describe_accelerators(&self) -> fluent_builders::DescribeAccelerators<C, M, R> {
         fluent_builders::DescribeAccelerators::new(self.handle.clone())
     }
@@ -138,10 +139,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `DescribeAcceleratorOfferings`.
     ///
-    /// <p>
-    /// Describes the locations in which a given accelerator type or set of types is present in a given region.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Describes the locations in which a given accelerator type or set of types is present in a given region. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAcceleratorOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -186,10 +185,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAcceleratorOfferingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -197,22 +196,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The location type that you want to describe accelerator type offerings for. It can assume the following values:
-        /// region: will return the accelerator type offering at the regional level.
-        /// availability-zone: will return the accelerator type offering at the availability zone level.
-        /// availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.
-        /// </p>
-        pub fn location_type(mut self, inp: crate::model::LocationType) -> Self {
-            self.inner = self.inner.location_type(inp);
+        /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
+        pub fn location_type(mut self, input: crate::model::LocationType) -> Self {
+            self.inner = self.inner.location_type(input);
             self
         }
-        /// <p>
-        /// The location type that you want to describe accelerator type offerings for. It can assume the following values:
-        /// region: will return the accelerator type offering at the regional level.
-        /// availability-zone: will return the accelerator type offering at the availability zone level.
-        /// availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.
-        /// </p>
+        /// <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
         pub fn set_location_type(
             mut self,
             input: std::option::Option<crate::model::LocationType>,
@@ -224,16 +213,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
         ///
-        /// <p>
-        /// The list of accelerator types to describe.
-        /// </p>
-        pub fn accelerator_types(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_types(inp);
+        /// <p> The list of accelerator types to describe. </p>
+        pub fn accelerator_types(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_types(input.into());
             self
         }
-        /// <p>
-        /// The list of accelerator types to describe.
-        /// </p>
+        /// <p> The list of accelerator types to describe. </p>
         pub fn set_accelerator_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -244,10 +229,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAccelerators`.
     ///
-    /// <p>
-    /// Describes information over a provided set of accelerators belonging to an account.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Describes information over a provided set of accelerators belonging to an account. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccelerators<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -292,10 +275,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAcceleratorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -303,20 +286,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeAcceleratorsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeAcceleratorsPaginator<C, M, R> {
+            crate::paginator::DescribeAcceleratorsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `acceleratorIds`.
         ///
         /// To override the contents of this collection use [`set_accelerator_ids`](Self::set_accelerator_ids).
         ///
-        /// <p>
-        /// The IDs of the accelerators to describe.
-        /// </p>
-        pub fn accelerator_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accelerator_ids(inp);
+        /// <p> The IDs of the accelerators to describe. </p>
+        pub fn accelerator_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accelerator_ids(input.into());
             self
         }
-        /// <p>
-        /// The IDs of the accelerators to describe.
-        /// </p>
+        /// <p> The IDs of the accelerators to describe. </p>
         pub fn set_accelerator_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -328,20 +313,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>
-        /// One or more filters. Filter names and values are case-sensitive. Valid filter names are:
-        /// accelerator-types: can provide a list of accelerator type names to filter for.
-        /// instance-id: can provide a list of EC2 instance ids to filter for.
-        /// </p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>
-        /// One or more filters. Filter names and values are case-sensitive. Valid filter names are:
-        /// accelerator-types: can provide a list of accelerator type names to filter for.
-        /// instance-id: can provide a list of EC2 instance ids to filter for.
-        /// </p>
+        /// <p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -349,34 +326,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>
-        /// The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output.
-        /// To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command.
-        /// Do not use the NextToken response element directly outside of the AWS CLI.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output.
-        /// To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command.
-        /// Do not use the NextToken response element directly outside of the AWS CLI.
-        /// </p>
+        /// <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-        /// </p>
+        /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -384,10 +349,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAcceleratorTypes`.
     ///
-    /// <p>
-    /// Describes the accelerator types available in a given region, as well as their characteristics, such as memory and throughput.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Describes the accelerator types available in a given region, as well as their characteristics, such as memory and throughput. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAcceleratorTypes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -432,10 +395,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAcceleratorTypesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -446,10 +409,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>
-    /// Returns all tags of an Elastic Inference Accelerator.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Returns all tags of an Elastic Inference Accelerator. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -494,10 +455,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -505,16 +466,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ARN of the Elastic Inference Accelerator to list the tags for.
-        /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p> The ARN of the Elastic Inference Accelerator to list the tags for. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the Elastic Inference Accelerator to list the tags for.
-        /// </p>
+        /// <p> The ARN of the Elastic Inference Accelerator to list the tags for. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -522,10 +479,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>
-    /// Adds the specified tags to an Elastic Inference Accelerator.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Adds the specified tags to an Elastic Inference Accelerator. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -570,10 +525,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -581,16 +536,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ARN of the Elastic Inference Accelerator to tag.
-        /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p> The ARN of the Elastic Inference Accelerator to tag. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the Elastic Inference Accelerator to tag.
-        /// </p>
+        /// <p> The ARN of the Elastic Inference Accelerator to tag. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -599,20 +550,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The tags to add to the Elastic Inference Accelerator.
-        /// </p>
+        /// <p> The tags to add to the Elastic Inference Accelerator. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>
-        /// The tags to add to the Elastic Inference Accelerator.
-        /// </p>
+        /// <p> The tags to add to the Elastic Inference Accelerator. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -625,10 +572,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>
-    /// Removes the specified tags from an Elastic Inference Accelerator.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Removes the specified tags from an Elastic Inference Accelerator. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -673,10 +618,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -684,16 +629,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The ARN of the Elastic Inference Accelerator to untag.
-        /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p> The ARN of the Elastic Inference Accelerator to untag. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>
-        /// The ARN of the Elastic Inference Accelerator to untag.
-        /// </p>
+        /// <p> The ARN of the Elastic Inference Accelerator to untag. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -702,16 +643,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>
-        /// The list of tags to remove from the Elastic Inference Accelerator.
-        /// </p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>
-        /// The list of tags to remove from the Elastic Inference Accelerator.
-        /// </p>
+        /// <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -721,6 +658,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

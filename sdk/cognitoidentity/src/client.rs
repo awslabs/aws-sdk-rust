@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Cognito Identity
@@ -177,6 +177,7 @@ where
     ///
     /// See [`ListIdentityPools`](crate::client::fluent_builders::ListIdentityPools) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIdentityPools::into_paginator).
     pub fn list_identity_pools(&self) -> fluent_builders::ListIdentityPools<C, M, R> {
         fluent_builders::ListIdentityPools::new(self.handle.clone())
     }
@@ -263,34 +264,16 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateIdentityPool`.
     ///
-    /// <p>Creates a new identity pool. The identity pool is a store of user identity
-    /// information that is specific to your AWS account. The keys for <code>SupportedLoginProviders</code> are as follows:</p>
-    ///
+    /// <p>Creates a new identity pool. The identity pool is a store of user identity information that is specific to your AWS account. The keys for <code>SupportedLoginProviders</code> are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>Facebook: <code>graph.facebook.com</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Google: <code>accounts.google.com</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon: <code>www.amazon.com</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Twitter: <code>api.twitter.com</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Digits: <code>www.digits.com</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
+    /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
+    /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
+    /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
+    /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
     /// </ul>
-    ///
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIdentityPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -335,10 +318,10 @@ pub mod fluent_builders {
                 crate::input::CreateIdentityPoolInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -347,8 +330,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that you provide.</p>
-        pub fn identity_pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_name(inp);
+        pub fn identity_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_name(input.into());
             self
         }
         /// <p>A string that you provide.</p>
@@ -360,8 +343,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-        pub fn allow_unauthenticated_identities(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_unauthenticated_identities(inp);
+        pub fn allow_unauthenticated_identities(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_unauthenticated_identities(input);
             self
         }
         /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
@@ -372,14 +355,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_allow_unauthenticated_identities(input);
             self
         }
-        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
-        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
-        pub fn allow_classic_flow(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_classic_flow(inp);
+        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+        pub fn allow_classic_flow(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_classic_flow(input);
             self
         }
-        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
-        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn set_allow_classic_flow(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_classic_flow(input);
             self
@@ -394,7 +375,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.supported_login_providers(k, v);
+            self.inner = self.inner.supported_login_providers(k.into(), v.into());
             self
         }
         /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
@@ -407,24 +388,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_supported_login_providers(input);
             self
         }
-        /// <p>The "domain" by which Cognito will refer to your users. This name acts as a
-        /// placeholder that allows your backend and the Cognito service to communicate about the
-        /// developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well
-        /// as period (<code>.</code>), underscore (<code>_</code>), and dash
-        /// (<code>-</code>).</p>
-        /// <p>Once you have set a developer provider name, you cannot change it. Please take care
-        /// in setting this parameter.</p>
-        pub fn developer_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.developer_provider_name(inp);
+        /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p>
+        /// <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
+        pub fn developer_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.developer_provider_name(input.into());
             self
         }
-        /// <p>The "domain" by which Cognito will refer to your users. This name acts as a
-        /// placeholder that allows your backend and the Cognito service to communicate about the
-        /// developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well
-        /// as period (<code>.</code>), underscore (<code>_</code>), and dash
-        /// (<code>-</code>).</p>
-        /// <p>Once you have set a developer provider name, you cannot change it. Please take care
-        /// in setting this parameter.</p>
+        /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p>
+        /// <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
         pub fn set_developer_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -439,9 +410,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
         pub fn open_id_connect_provider_ar_ns(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.open_id_connect_provider_ar_ns(inp);
+            self.inner = self.inner.open_id_connect_provider_ar_ns(input.into());
             self
         }
         /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
@@ -459,9 +430,9 @@ pub mod fluent_builders {
         /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
         pub fn cognito_identity_providers(
             mut self,
-            inp: impl Into<crate::model::CognitoIdentityProvider>,
+            input: crate::model::CognitoIdentityProvider,
         ) -> Self {
-            self.inner = self.inner.cognito_identity_providers(inp);
+            self.inner = self.inner.cognito_identity_providers(input);
             self
         }
         /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
@@ -476,14 +447,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_saml_provider_ar_ns`](Self::set_saml_provider_ar_ns).
         ///
-        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
-        /// pool.</p>
-        pub fn saml_provider_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_ar_ns(inp);
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
+        pub fn saml_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_ar_ns(input.into());
             self
         }
-        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
-        /// pool.</p>
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
         pub fn set_saml_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -495,20 +464,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_identity_pool_tags`](Self::set_identity_pool_tags).
         ///
-        /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity
-        /// pools to categorize and manage them in different ways, such as by purpose, owner,
-        /// environment, or other criteria.</p>
+        /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
         pub fn identity_pool_tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.identity_pool_tags(k, v);
+            self.inner = self.inner.identity_pool_tags(k.into(), v.into());
             self
         }
-        /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity
-        /// pools to categorize and manage them in different ways, such as by purpose, owner,
-        /// environment, or other criteria.</p>
+        /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
         pub fn set_identity_pool_tags(
             mut self,
             input: std::option::Option<
@@ -521,10 +486,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteIdentities`.
     ///
-    /// <p>Deletes identities from an identity pool. You can specify a list of 1-60 identities
-    /// that you want to delete.</p>
+    /// <p>Deletes identities from an identity pool. You can specify a list of 1-60 identities that you want to delete.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIdentities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -569,10 +533,10 @@ pub mod fluent_builders {
                 crate::input::DeleteIdentitiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -585,8 +549,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_identity_ids_to_delete`](Self::set_identity_ids_to_delete).
         ///
         /// <p>A list of 1-60 identities that you want to delete.</p>
-        pub fn identity_ids_to_delete(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_ids_to_delete(inp);
+        pub fn identity_ids_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_ids_to_delete(input.into());
             self
         }
         /// <p>A list of 1-60 identities that you want to delete.</p>
@@ -600,10 +564,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteIdentityPool`.
     ///
-    /// <p>Deletes an identity pool. Once a pool is deleted, users will not be able to
-    /// authenticate with the pool.</p>
+    /// <p>Deletes an identity pool. Once a pool is deleted, users will not be able to authenticate with the pool.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIdentityPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -648,10 +611,10 @@ pub mod fluent_builders {
                 crate::input::DeleteIdentityPoolInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -660,8 +623,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(input.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -675,10 +638,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeIdentity`.
     ///
-    /// <p>Returns metadata related to the given identity, including when the identity was
-    /// created and any associated linked logins.</p>
+    /// <p>Returns metadata related to the given identity, including when the identity was created and any associated linked logins.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -723,10 +685,10 @@ pub mod fluent_builders {
                 crate::input::DescribeIdentityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -735,8 +697,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -747,10 +709,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeIdentityPool`.
     ///
-    /// <p>Gets details about a particular identity pool, including the pool name, ID
-    /// description, creation date, and current number of users.</p>
+    /// <p>Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeIdentityPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -795,10 +756,10 @@ pub mod fluent_builders {
                 crate::input::DescribeIdentityPoolInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -807,8 +768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(input.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -822,12 +783,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCredentialsForIdentity`.
     ///
-    /// <p>Returns credentials for the provided identity ID. Any provided logins will be
-    /// validated against supported login providers. If the token is for
-    /// cognito-identity.amazonaws.com, it will be passed through to AWS Security Token Service
-    /// with the appropriate role for the token.</p>
+    /// <p>Returns credentials for the provided identity ID. Any provided logins will be validated against supported login providers. If the token is for cognito-identity.amazonaws.com, it will be passed through to AWS Security Token Service with the appropriate role for the token.</p>
     /// <p>This is a public API. You do not need any credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCredentialsForIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -872,10 +830,10 @@ pub mod fluent_builders {
                 crate::input::GetCredentialsForIdentityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -884,8 +842,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -897,32 +855,20 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
-        /// name-value pair will follow the syntax "provider_name":
-        /// "provider_user_identifier".</p>
-        /// <p>Logins should not be specified when trying to get credentials for an unauthenticated
-        /// identity.</p>
-        /// <p>The Logins parameter is required when using identities associated with external
-        /// identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code
-        /// examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer
-        /// Guide.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p>
+        /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p>
+        /// <p>The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
         pub fn logins(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.logins(k, v);
+            self.inner = self.inner.logins(k.into(), v.into());
             self
         }
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
-        /// name-value pair will follow the syntax "provider_name":
-        /// "provider_user_identifier".</p>
-        /// <p>Logins should not be specified when trying to get credentials for an unauthenticated
-        /// identity.</p>
-        /// <p>The Logins parameter is required when using identities associated with external
-        /// identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code
-        /// examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer
-        /// Guide.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p>
+        /// <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p>
+        /// <p>The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
         pub fn set_logins(
             mut self,
             input: std::option::Option<
@@ -932,18 +878,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_logins(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were
-        /// received in the token from the identity provider. For example, a SAML-based identity
-        /// provider. This parameter is optional for identity providers that do not support role
-        /// customization.</p>
-        pub fn custom_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_role_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
+        pub fn custom_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were
-        /// received in the token from the identity provider. For example, a SAML-based identity
-        /// provider. This parameter is optional for identity providers that do not support role
-        /// customization.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
         pub fn set_custom_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -954,10 +894,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetId`.
     ///
-    /// <p>Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an
-    /// implicit linked account.</p>
+    /// <p>Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit linked account.</p>
     /// <p>This is a public API. You do not need any credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetId<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1002,10 +941,10 @@ pub mod fluent_builders {
                 crate::input::GetIdInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1014,8 +953,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A standard AWS account ID (9+ digits).</p>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(inp);
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>A standard AWS account ID (9+ digits).</p>
@@ -1024,8 +963,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(input.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -1040,73 +979,39 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
-        /// available provider names for <code>Logins</code> are as follows:</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>Facebook: <code>graph.facebook.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito user pool:
-        /// <code>cognito-idp.<region>.amazonaws.com/<YOUR_USER_POOL_ID></code>,
-        /// for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Google: <code>accounts.google.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon: <code>www.amazon.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Twitter: <code>api.twitter.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Digits: <code>www.digits.com</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
+        /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
+        /// <region>
+        /// .amazonaws.com/
+        /// <your_user_pool_id></your_user_pool_id>
+        /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
+        /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
+        /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
+        /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
+        /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
         /// </ul>
         pub fn logins(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.logins(k, v);
+            self.inner = self.inner.logins(k.into(), v.into());
             self
         }
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The
-        /// available provider names for <code>Logins</code> are as follows:</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>Facebook: <code>graph.facebook.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Cognito user pool:
-        /// <code>cognito-idp.<region>.amazonaws.com/<YOUR_USER_POOL_ID></code>,
-        /// for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Google: <code>accounts.google.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon: <code>www.amazon.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Twitter: <code>api.twitter.com</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Digits: <code>www.digits.com</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>
+        /// <li> <p>Amazon Cognito user pool: <code>cognito-idp.
+        /// <region>
+        /// .amazonaws.com/
+        /// <your_user_pool_id></your_user_pool_id>
+        /// </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
+        /// <li> <p>Google: <code>accounts.google.com</code> </p> </li>
+        /// <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>
+        /// <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>
+        /// <li> <p>Digits: <code>www.digits.com</code> </p> </li>
         /// </ul>
         pub fn set_logins(
             mut self,
@@ -1122,7 +1027,7 @@ pub mod fluent_builders {
     ///
     /// <p>Gets the roles for an identity pool.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIdentityPoolRoles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1167,10 +1072,10 @@ pub mod fluent_builders {
                 crate::input::GetIdentityPoolRolesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1179,8 +1084,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(input.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -1194,12 +1099,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOpenIdToken`.
     ///
-    /// <p>Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned by
-    /// <a>GetId</a>. You can optionally add additional logins for the identity.
-    /// Supplying multiple logins creates an implicit link.</p>
+    /// <p>Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned by <code>GetId</code>. You can optionally add additional logins for the identity. Supplying multiple logins creates an implicit link.</p>
     /// <p>The OpenID token is valid for 10 minutes.</p>
     /// <p>This is a public API. You do not need any credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOpenIdToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1244,10 +1147,10 @@ pub mod fluent_builders {
                 crate::input::GetOpenIdTokenInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1256,8 +1159,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1269,22 +1172,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. When
-        /// using graph.facebook.com and www.amazon.com, supply the access_token returned from the
-        /// provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any
-        /// other OpenID Connect provider, always include the <code>id_token</code>.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenID Connect provider, always include the <code>id_token</code>.</p>
         pub fn logins(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.logins(k, v);
+            self.inner = self.inner.logins(k.into(), v.into());
             self
         }
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. When
-        /// using graph.facebook.com and www.amazon.com, supply the access_token returned from the
-        /// provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any
-        /// other OpenID Connect provider, always include the <code>id_token</code>.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenID Connect provider, always include the <code>id_token</code>.</p>
         pub fn set_logins(
             mut self,
             input: std::option::Option<
@@ -1297,20 +1194,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOpenIdTokenForDeveloperIdentity`.
     ///
-    /// <p>Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect
-    /// token for a user authenticated by your backend authentication process. Supplying multiple
-    /// logins will create an implicit linked account. You can only specify one developer provider
-    /// as part of the <code>Logins</code> map, which is linked to the identity pool. The developer
-    /// provider is the "domain" by which Cognito will refer to your users.</p>
-    /// <p>You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create a new identity
-    /// and to link new logins (that is, user credentials issued by a public provider or developer
-    /// provider) to an existing identity. When you want to create a new identity, the
-    /// <code>IdentityId</code> should be null. When you want to associate a new login with an
-    /// existing authenticated/unauthenticated identity, you can do so by providing the existing
-    /// <code>IdentityId</code>. This API will create the identity in the specified
-    /// <code>IdentityPoolId</code>.</p>
+    /// <p>Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect token for a user authenticated by your backend authentication process. Supplying multiple logins will create an implicit linked account. You can only specify one developer provider as part of the <code>Logins</code> map, which is linked to the identity pool. The developer provider is the "domain" by which Cognito will refer to your users.</p>
+    /// <p>You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create a new identity and to link new logins (that is, user credentials issued by a public provider or developer provider) to an existing identity. When you want to create a new identity, the <code>IdentityId</code> should be null. When you want to associate a new login with an existing authenticated/unauthenticated identity, you can do so by providing the existing <code>IdentityId</code>. This API will create the identity in the specified <code>IdentityPoolId</code>.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOpenIdTokenForDeveloperIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1357,10 +1244,10 @@ pub mod fluent_builders {
                 crate::input::GetOpenIdTokenForDeveloperIdentityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1369,8 +1256,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(input.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -1382,8 +1269,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1395,30 +1282,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each
-        /// name-value pair represents a user from a public provider or developer provider. If the user
-        /// is from a developer provider, the name-value pair will follow the syntax
-        /// <code>"developer_provider_name": "developer_user_identifier"</code>. The developer
-        /// provider is the "domain" by which Cognito will refer to your users; you provided this
-        /// domain while creating/updating the identity pool. The developer user identifier is an
-        /// identifier from your backend that uniquely identifies a user. When you create an identity
-        /// pool, you can specify the supported logins.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
         pub fn logins(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.logins(k, v);
+            self.inner = self.inner.logins(k.into(), v.into());
             self
         }
-        /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each
-        /// name-value pair represents a user from a public provider or developer provider. If the user
-        /// is from a developer provider, the name-value pair will follow the syntax
-        /// <code>"developer_provider_name": "developer_user_identifier"</code>. The developer
-        /// provider is the "domain" by which Cognito will refer to your users; you provided this
-        /// domain while creating/updating the identity pool. The developer user identifier is an
-        /// identifier from your backend that uniquely identifies a user. When you create an identity
-        /// pool, you can specify the supported logins.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
         pub fn set_logins(
             mut self,
             input: std::option::Option<
@@ -1438,7 +1311,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.principal_tags(k, v);
+            self.inner = self.inner.principal_tags(k.into(), v.into());
             self
         }
         /// <p>Use this operation to configure attribute mappings for custom providers. </p>
@@ -1451,28 +1324,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principal_tags(input);
             self
         }
-        /// <p>The expiration time of the token, in seconds. You can specify a custom expiration
-        /// time for the token so that you can cache it. If you don't provide an expiration time, the
-        /// token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS
-        /// credentials, which are valid for a maximum of one hour. The maximum token duration you can
-        /// set is 24 hours. You should take care in setting the expiration time for a token, as there
-        /// are significant security implications: an attacker could use a leaked token to access your
-        /// AWS resources for the token's duration.</p>
-        /// <note>
+        /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
         /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
         /// </note>
-        pub fn token_duration(mut self, inp: i64) -> Self {
-            self.inner = self.inner.token_duration(inp);
+        pub fn token_duration(mut self, input: i64) -> Self {
+            self.inner = self.inner.token_duration(input);
             self
         }
-        /// <p>The expiration time of the token, in seconds. You can specify a custom expiration
-        /// time for the token so that you can cache it. If you don't provide an expiration time, the
-        /// token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS
-        /// credentials, which are valid for a maximum of one hour. The maximum token duration you can
-        /// set is 24 hours. You should take care in setting the expiration time for a token, as there
-        /// are significant security implications: an attacker could use a leaked token to access your
-        /// AWS resources for the token's duration.</p>
-        /// <note>
+        /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
         /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
         /// </note>
         pub fn set_token_duration(mut self, input: std::option::Option<i64>) -> Self {
@@ -1483,7 +1342,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPrincipalTagAttributeMap`.
     ///
     /// <p>Use <code>GetPrincipalTagAttributeMap</code> to list all mappings between <code>PrincipalTags</code> and user attributes.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPrincipalTagAttributeMap<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1528,10 +1387,10 @@ pub mod fluent_builders {
                 crate::input::GetPrincipalTagAttributeMapInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1540,8 +1399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(input.into());
             self
         }
         /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
@@ -1553,8 +1412,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>You can use this operation to get the provider name.</p>
-        pub fn identity_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_provider_name(inp);
+        pub fn identity_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_provider_name(input.into());
             self
         }
         /// <p>You can use this operation to get the provider name.</p>
@@ -1570,7 +1429,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists the identities in an identity pool.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIdentities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1615,10 +1474,10 @@ pub mod fluent_builders {
                 crate::input::ListIdentitiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1627,8 +1486,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(input.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -1640,8 +1499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of identities to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of identities to return.</p>
@@ -1650,8 +1509,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token.</p>
@@ -1659,14 +1518,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>An optional boolean parameter that allows you to hide disabled identities. If
-        /// omitted, the ListIdentities API will include disabled identities in the response.</p>
-        pub fn hide_disabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.hide_disabled(inp);
+        /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
+        pub fn hide_disabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.hide_disabled(input);
             self
         }
-        /// <p>An optional boolean parameter that allows you to hide disabled identities. If
-        /// omitted, the ListIdentities API will include disabled identities in the response.</p>
+        /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
         pub fn set_hide_disabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_hide_disabled(input);
             self
@@ -1676,7 +1533,7 @@ pub mod fluent_builders {
     ///
     /// <p>Lists all of the Cognito identity pools registered for your account.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIdentityPools<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1721,10 +1578,10 @@ pub mod fluent_builders {
                 crate::input::ListIdentityPoolsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1732,9 +1589,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListIdentityPoolsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListIdentityPoolsPaginator<C, M, R> {
+            crate::paginator::ListIdentityPoolsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of identities to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of identities to return.</p>
@@ -1743,8 +1606,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token.</p>
@@ -1756,10 +1619,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Lists the tags that are assigned to an Amazon Cognito identity pool.</p>
-    /// <p>A tag is a label that you can apply to identity pools to categorize and manage them in
-    /// different ways, such as by purpose, owner, environment, or other criteria.</p>
+    /// <p>A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
     /// <p>You can use this action up to 10 times per second, per account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1804,10 +1666,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1815,14 +1677,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned
-        /// to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1830,24 +1690,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `LookupDeveloperIdentity`.
     ///
-    /// <p>Retrieves the <code>IdentityID</code> associated with a
-    /// <code>DeveloperUserIdentifier</code> or the list of <code>DeveloperUserIdentifier</code>
-    /// values associated with an <code>IdentityId</code> for an existing identity. Either
-    /// <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you
-    /// supply only one of these values, the other value will be searched in the database and
-    /// returned as a part of the response. If you supply both,
-    /// <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If
-    /// the values are verified against the database, the response returns both values and is the
-    /// same as the request. Otherwise a <code>ResourceConflictException</code> is
-    /// thrown.</p>
-    /// <p>
-    /// <code>LookupDeveloperIdentity</code> is intended for low-throughput control plane
-    /// operations: for example, to enable customer service to locate an identity ID by username.
-    /// If you are using it for higher-volume operations such as user authentication, your requests
-    /// are likely to be throttled. <a>GetOpenIdTokenForDeveloperIdentity</a> is a
-    /// better option for higher-volume operations for user authentication.</p>
+    /// <p>Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code> or the list of <code>DeveloperUserIdentifier</code> values associated with an <code>IdentityId</code> for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you supply only one of these values, the other value will be searched in the database and returned as a part of the response. If you supply both, <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If the values are verified against the database, the response returns both values and is the same as the request. Otherwise a <code>ResourceConflictException</code> is thrown.</p>
+    /// <p> <code>LookupDeveloperIdentity</code> is intended for low-throughput control plane operations: for example, to enable customer service to locate an identity ID by username. If you are using it for higher-volume operations such as user authentication, your requests are likely to be throttled. <code>GetOpenIdTokenForDeveloperIdentity</code> is a better option for higher-volume operations for user authentication.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct LookupDeveloperIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1892,10 +1738,10 @@ pub mod fluent_builders {
                 crate::input::LookupDeveloperIdentityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1904,8 +1750,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(input.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -1917,8 +1763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1926,16 +1772,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_id(input);
             self
         }
-        /// <p>A unique ID used by your backend authentication process to identify a user.
-        /// Typically, a developer identity provider would issue many developer user identifiers, in
-        /// keeping with the number of users.</p>
-        pub fn developer_user_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.developer_user_identifier(inp);
+        /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
+        pub fn developer_user_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.developer_user_identifier(input.into());
             self
         }
-        /// <p>A unique ID used by your backend authentication process to identify a user.
-        /// Typically, a developer identity provider would issue many developer user identifiers, in
-        /// keeping with the number of users.</p>
+        /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
         pub fn set_developer_user_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1944,8 +1786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of identities to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of identities to return.</p>
@@ -1953,22 +1795,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to
-        /// null. After that the service will return <code>NextToken</code> values as needed. For
-        /// example, let's say you make a request with <code>MaxResults</code> set to 10, and there are
-        /// 20 matches in the database. The service will return a pagination token as a part of the
-        /// response. This token can be used to call the API again and get results starting from the
-        /// 11th match.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to
-        /// null. After that the service will return <code>NextToken</code> values as needed. For
-        /// example, let's say you make a request with <code>MaxResults</code> set to 10, and there are
-        /// 20 matches in the database. The service will return a pagination token as a part of the
-        /// response. This token can be used to call the API again and get results starting from the
-        /// 11th match.</p>
+        /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1976,20 +1808,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `MergeDeveloperIdentities`.
     ///
-    /// <p>Merges two users having different <code>IdentityId</code>s, existing in the same
-    /// identity pool, and identified by the same developer provider. You can use this action to
-    /// request that discrete users be merged and identified as a single user in the Cognito
-    /// environment. Cognito associates the given source user (<code>SourceUserIdentifier</code>)
-    /// with the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>. Only
-    /// developer-authenticated users can be merged. If the users to be merged are associated with
-    /// the same public provider, but as two different users, an exception will be
-    /// thrown.</p>
-    /// <p>The number of linked logins is limited to 20. So, the number of linked logins for the
-    /// source user, <code>SourceUserIdentifier</code>, and the destination user,
-    /// <code>DestinationUserIdentifier</code>, together should not be larger than 20.
-    /// Otherwise, an exception will be thrown.</p>
+    /// <p>Merges two users having different <code>IdentityId</code>s, existing in the same identity pool, and identified by the same developer provider. You can use this action to request that discrete users be merged and identified as a single user in the Cognito environment. Cognito associates the given source user (<code>SourceUserIdentifier</code>) with the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>. Only developer-authenticated users can be merged. If the users to be merged are associated with the same public provider, but as two different users, an exception will be thrown.</p>
+    /// <p>The number of linked logins is limited to 20. So, the number of linked logins for the source user, <code>SourceUserIdentifier</code>, and the destination user, <code>DestinationUserIdentifier</code>, together should not be larger than 20. Otherwise, an exception will be thrown.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MergeDeveloperIdentities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2034,10 +1856,10 @@ pub mod fluent_builders {
                 crate::input::MergeDeveloperIdentitiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2045,14 +1867,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>User identifier for the source user. The value should be a
-        /// <code>DeveloperUserIdentifier</code>.</p>
-        pub fn source_user_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_user_identifier(inp);
+        /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
+        pub fn source_user_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_user_identifier(input.into());
             self
         }
-        /// <p>User identifier for the source user. The value should be a
-        /// <code>DeveloperUserIdentifier</code>.</p>
+        /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
         pub fn set_source_user_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2060,14 +1880,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_user_identifier(input);
             self
         }
-        /// <p>User identifier for the destination user. The value should be a
-        /// <code>DeveloperUserIdentifier</code>.</p>
-        pub fn destination_user_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_user_identifier(inp);
+        /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
+        pub fn destination_user_identifier(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.destination_user_identifier(input.into());
             self
         }
-        /// <p>User identifier for the destination user. The value should be a
-        /// <code>DeveloperUserIdentifier</code>.</p>
+        /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
         pub fn set_destination_user_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2075,20 +1896,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_user_identifier(input);
             self
         }
-        /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain
-        /// name that you provide while creating an identity pool. This name acts as a placeholder that
-        /// allows your backend and the Cognito service to communicate about the developer provider.
-        /// For the <code>DeveloperProviderName</code>, you can use letters as well as period (.),
-        /// underscore (_), and dash (-).</p>
-        pub fn developer_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.developer_provider_name(inp);
+        /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
+        pub fn developer_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.developer_provider_name(input.into());
             self
         }
-        /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain
-        /// name that you provide while creating an identity pool. This name acts as a placeholder that
-        /// allows your backend and the Cognito service to communicate about the developer provider.
-        /// For the <code>DeveloperProviderName</code>, you can use letters as well as period (.),
-        /// underscore (_), and dash (-).</p>
+        /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
         pub fn set_developer_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2097,8 +1910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(input.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -2112,9 +1925,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetIdentityPoolRoles`.
     ///
-    /// <p>Sets the roles for an identity pool. These roles are used when making calls to <a>GetCredentialsForIdentity</a> action.</p>
+    /// <p>Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code> action.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetIdentityPoolRoles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2159,10 +1972,10 @@ pub mod fluent_builders {
                 crate::input::SetIdentityPoolRolesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2171,8 +1984,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(input.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -2187,18 +2000,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_roles`](Self::set_roles).
         ///
-        /// <p>The map of roles associated with this pool. For a given role, the key will be either
-        /// "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
+        /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
         pub fn roles(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.roles(k, v);
+            self.inner = self.inner.roles(k.into(), v.into());
             self
         }
-        /// <p>The map of roles associated with this pool. For a given role, the key will be either
-        /// "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
+        /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
         pub fn set_roles(
             mut self,
             input: std::option::Option<
@@ -2212,23 +2023,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_role_mappings`](Self::set_role_mappings).
         ///
-        /// <p>How users for a specific identity provider are to mapped to roles. This is a string
-        /// to <a>RoleMapping</a> object map. The string identifies the identity provider,
-        /// for example, "graph.facebook.com" or
-        /// "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+        /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
         /// <p>Up to 25 rules can be specified per identity provider.</p>
         pub fn role_mappings(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::RoleMapping>,
+            v: crate::model::RoleMapping,
         ) -> Self {
-            self.inner = self.inner.role_mappings(k, v);
+            self.inner = self.inner.role_mappings(k.into(), v);
             self
         }
-        /// <p>How users for a specific identity provider are to mapped to roles. This is a string
-        /// to <a>RoleMapping</a> object map. The string identifies the identity provider,
-        /// for example, "graph.facebook.com" or
-        /// "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+        /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
         /// <p>Up to 25 rules can be specified per identity provider.</p>
         pub fn set_role_mappings(
             mut self,
@@ -2243,7 +2048,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SetPrincipalTagAttributeMap`.
     ///
     /// <p>You can use this operation to use default (username and clientID) attribute or custom attribute mappings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetPrincipalTagAttributeMap<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2288,10 +2093,10 @@ pub mod fluent_builders {
                 crate::input::SetPrincipalTagAttributeMapInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2300,8 +2105,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(input.into());
             self
         }
         /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
@@ -2313,8 +2118,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The provider name you want to use for attribute mappings.</p>
-        pub fn identity_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_provider_name(inp);
+        pub fn identity_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_provider_name(input.into());
             self
         }
         /// <p>The provider name you want to use for attribute mappings.</p>
@@ -2326,8 +2131,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
-        pub fn use_defaults(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_defaults(inp);
+        pub fn use_defaults(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_defaults(input);
             self
         }
         /// <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
@@ -2345,7 +2150,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.principal_tags(k, v);
+            self.inner = self.inner.principal_tags(k.into(), v.into());
             self
         }
         /// <p>You can use this operation to add principal tags.</p>
@@ -2361,22 +2166,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Assigns a set of tags to the specified Amazon Cognito identity pool. A tag is a label
-    /// that you can use to categorize and manage identity pools in different ways, such as by
-    /// purpose, owner, environment, or other criteria.</p>
-    /// <p>Each tag consists of a key and value, both of which you define. A key is a general
-    /// category for more specific values. For example, if you have two versions of an identity
-    /// pool, one for testing and another for production, you might assign an
-    /// <code>Environment</code> tag key to both identity pools. The value of this key might be
-    /// <code>Test</code> for one identity pool and <code>Production</code> for the
-    /// other.</p>
-    /// <p>Tags are useful for cost tracking and access control. You can activate your tags so that
-    /// they appear on the Billing and Cost Management console, where you can track the costs
-    /// associated with your identity pools. In an IAM policy, you can constrain permissions for
-    /// identity pools based on specific tags or tag values.</p>
-    /// <p>You can use this action up to 5 times per second, per account. An identity pool can have
-    /// as many as 50 tags.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Assigns a set of tags to the specified Amazon Cognito identity pool. A tag is a label that you can use to categorize and manage identity pools in different ways, such as by purpose, owner, environment, or other criteria.</p>
+    /// <p>Each tag consists of a key and value, both of which you define. A key is a general category for more specific values. For example, if you have two versions of an identity pool, one for testing and another for production, you might assign an <code>Environment</code> tag key to both identity pools. The value of this key might be <code>Test</code> for one identity pool and <code>Production</code> for the other.</p>
+    /// <p>Tags are useful for cost tracking and access control. You can activate your tags so that they appear on the Billing and Cost Management console, where you can track the costs associated with your identity pools. In an IAM policy, you can constrain permissions for identity pools based on specific tags or tag values.</p>
+    /// <p>You can use this action up to 5 times per second, per account. An identity pool can have as many as 50 tags.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2421,10 +2215,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2433,8 +2227,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
@@ -2452,7 +2246,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to assign to the identity pool.</p>
@@ -2468,12 +2262,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UnlinkDeveloperIdentity`.
     ///
-    /// <p>Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity. Unlinked
-    /// developer users will be considered new identities next time they are seen. If, for a given
-    /// Cognito identity, you remove all federated identities as well as the developer user
-    /// identifier, the Cognito identity becomes inaccessible.</p>
+    /// <p>Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity. Unlinked developer users will be considered new identities next time they are seen. If, for a given Cognito identity, you remove all federated identities as well as the developer user identifier, the Cognito identity becomes inaccessible.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnlinkDeveloperIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2518,10 +2309,10 @@ pub mod fluent_builders {
                 crate::input::UnlinkDeveloperIdentityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2530,8 +2321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -2540,8 +2331,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(input.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -2553,8 +2344,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The "domain" by which Cognito will refer to your users.</p>
-        pub fn developer_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.developer_provider_name(inp);
+        pub fn developer_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.developer_provider_name(input.into());
             self
         }
         /// <p>The "domain" by which Cognito will refer to your users.</p>
@@ -2566,8 +2357,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique ID used by your backend authentication process to identify a user.</p>
-        pub fn developer_user_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.developer_user_identifier(inp);
+        pub fn developer_user_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.developer_user_identifier(input.into());
             self
         }
         /// <p>A unique ID used by your backend authentication process to identify a user.</p>
@@ -2581,11 +2372,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UnlinkIdentity`.
     ///
-    /// <p>Unlinks a federated identity from an existing account. Unlinked logins will be
-    /// considered new identities next time they are seen. Removing the last linked login will make
-    /// this identity inaccessible.</p>
+    /// <p>Unlinks a federated identity from an existing account. Unlinked logins will be considered new identities next time they are seen. Removing the last linked login will make this identity inaccessible.</p>
     /// <p>This is a public API. You do not need any credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnlinkIdentity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2630,10 +2419,10 @@ pub mod fluent_builders {
                 crate::input::UnlinkIdentityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2642,8 +2431,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
-        pub fn identity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(inp);
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -2655,18 +2444,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_logins`](Self::set_logins).
         ///
-        /// <p>A set of optional name-value pairs that map provider names to provider
-        /// tokens.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
         pub fn logins(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.logins(k, v);
+            self.inner = self.inner.logins(k.into(), v.into());
             self
         }
-        /// <p>A set of optional name-value pairs that map provider names to provider
-        /// tokens.</p>
+        /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
         pub fn set_logins(
             mut self,
             input: std::option::Option<
@@ -2681,8 +2468,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_logins_to_remove`](Self::set_logins_to_remove).
         ///
         /// <p>Provider names to unlink from this identity.</p>
-        pub fn logins_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logins_to_remove(inp);
+        pub fn logins_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logins_to_remove(input.into());
             self
         }
         /// <p>Provider names to unlink from this identity.</p>
@@ -2696,9 +2483,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes the specified tags from the specified Amazon Cognito identity pool. You can use
-    /// this action up to 5 times per second, per account</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes the specified tags from the specified Amazon Cognito identity pool. You can use this action up to 5 times per second, per account</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2743,10 +2529,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2755,8 +2541,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the identity pool.</p>
@@ -2769,8 +2555,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags to remove from the user pool.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags to remove from the user pool.</p>
@@ -2786,7 +2572,7 @@ pub mod fluent_builders {
     ///
     /// <p>Updates an identity pool.</p>
     /// <p>You must use AWS Developer credentials to call this API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIdentityPool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2831,10 +2617,10 @@ pub mod fluent_builders {
                 crate::input::UpdateIdentityPoolInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2843,8 +2629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(input.into());
             self
         }
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -2856,8 +2642,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that you provide.</p>
-        pub fn identity_pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_name(inp);
+        pub fn identity_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_name(input.into());
             self
         }
         /// <p>A string that you provide.</p>
@@ -2869,8 +2655,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-        pub fn allow_unauthenticated_identities(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_unauthenticated_identities(inp);
+        pub fn allow_unauthenticated_identities(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_unauthenticated_identities(input);
             self
         }
         /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
@@ -2881,14 +2667,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_allow_unauthenticated_identities(input);
             self
         }
-        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
-        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
-        pub fn allow_classic_flow(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_classic_flow(inp);
+        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+        pub fn allow_classic_flow(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_classic_flow(input);
             self
         }
-        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
-        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn set_allow_classic_flow(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_classic_flow(input);
             self
@@ -2903,7 +2687,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.supported_login_providers(k, v);
+            self.inner = self.inner.supported_login_providers(k.into(), v.into());
             self
         }
         /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
@@ -2917,8 +2701,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The "domain" by which Cognito will refer to your users.</p>
-        pub fn developer_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.developer_provider_name(inp);
+        pub fn developer_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.developer_provider_name(input.into());
             self
         }
         /// <p>The "domain" by which Cognito will refer to your users.</p>
@@ -2936,9 +2720,9 @@ pub mod fluent_builders {
         /// <p>The ARNs of the OpenID Connect providers.</p>
         pub fn open_id_connect_provider_ar_ns(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.open_id_connect_provider_ar_ns(inp);
+            self.inner = self.inner.open_id_connect_provider_ar_ns(input.into());
             self
         }
         /// <p>The ARNs of the OpenID Connect providers.</p>
@@ -2956,9 +2740,9 @@ pub mod fluent_builders {
         /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
         pub fn cognito_identity_providers(
             mut self,
-            inp: impl Into<crate::model::CognitoIdentityProvider>,
+            input: crate::model::CognitoIdentityProvider,
         ) -> Self {
-            self.inner = self.inner.cognito_identity_providers(inp);
+            self.inner = self.inner.cognito_identity_providers(input);
             self
         }
         /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
@@ -2973,14 +2757,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_saml_provider_ar_ns`](Self::set_saml_provider_ar_ns).
         ///
-        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
-        /// pool.</p>
-        pub fn saml_provider_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_ar_ns(inp);
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
+        pub fn saml_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_ar_ns(input.into());
             self
         }
-        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
-        /// pool.</p>
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
         pub fn set_saml_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2992,20 +2774,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_identity_pool_tags`](Self::set_identity_pool_tags).
         ///
-        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
-        /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
-        /// environment, or other criteria.</p>
+        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
         pub fn identity_pool_tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.identity_pool_tags(k, v);
+            self.inner = self.inner.identity_pool_tags(k.into(), v.into());
             self
         }
-        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
-        /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
-        /// environment, or other criteria.</p>
+        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
         pub fn set_identity_pool_tags(
             mut self,
             input: std::option::Option<
@@ -3017,6 +2795,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -112,6 +112,7 @@ impl Builder {
         let connector = expect_connector(provider_config.connector(&http_settings));
         let client = aws_smithy_client::Builder::new()
             .connector(connector)
+            .sleep_impl(provider_config.sleep())
             .build();
         HttpCredentialProvider {
             uri,
@@ -129,6 +130,12 @@ impl ParseStrictResponse for CredentialsResponseParser {
     type Output = credentials::Result;
 
     fn parse(&self, response: &Response<Bytes>) -> Self::Output {
+        if !response.status().is_success() {
+            return Err(CredentialsError::provider_error(format!(
+                "Non-success status from HTTP credential provider: {:?}",
+                response.status()
+            )));
+        }
         let str_resp =
             std::str::from_utf8(response.body().as_ref()).map_err(CredentialsError::unhandled)?;
         let json_creds = parse_json_credentials(str_resp).map_err(CredentialsError::unhandled)?;

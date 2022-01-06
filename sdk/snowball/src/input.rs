@@ -9,14 +9,12 @@ pub mod cancel_cluster_input {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The 39-character ID for the cluster that you want to cancel, for example
-        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>The 39-character ID for the cluster that you want to cancel, for example
-        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -37,7 +35,7 @@ pub mod cancel_cluster_input {
 #[doc(hidden)]
 pub type CancelClusterInputOperationOutputAlias = crate::operation::CancelCluster;
 #[doc(hidden)]
-pub type CancelClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelClusterInput {
     /// Consumes the builder and constructs an Operation<[`CancelCluster`](crate::operation::CancelCluster)>
     #[allow(clippy::let_and_return)]
@@ -48,7 +46,7 @@ impl CancelClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -132,7 +130,7 @@ impl CancelClusterInput {
             "CancelCluster",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -164,14 +162,12 @@ pub mod cancel_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The 39-character job ID for the job that you want to cancel, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The 39-character job ID for the job that you want to cancel, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The 39-character job ID for the job that you want to cancel, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The 39-character job ID for the job that you want to cancel, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -190,7 +186,7 @@ pub mod cancel_job_input {
 #[doc(hidden)]
 pub type CancelJobInputOperationOutputAlias = crate::operation::CancelJob;
 #[doc(hidden)]
-pub type CancelJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelJob`](crate::operation::CancelJob)>
     #[allow(clippy::let_and_return)]
@@ -201,7 +197,7 @@ impl CancelJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -283,7 +279,7 @@ impl CancelJobInput {
                     "CancelJob",
                     "snowball",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -341,7 +337,7 @@ pub mod create_address_input {
 #[doc(hidden)]
 pub type CreateAddressInputOperationOutputAlias = crate::operation::CreateAddress;
 #[doc(hidden)]
-pub type CreateAddressInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAddressInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAddressInput {
     /// Consumes the builder and constructs an Operation<[`CreateAddress`](crate::operation::CreateAddress)>
     #[allow(clippy::let_and_return)]
@@ -352,7 +348,7 @@ impl CreateAddressInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAddress,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -436,7 +432,7 @@ impl CreateAddressInput {
             "CreateAddress",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -481,40 +477,24 @@ pub mod create_cluster_input {
         pub(crate) remote_management: std::option::Option<crate::model::RemoteManagement>,
     }
     impl Builder {
-        /// <p>The type of job for this cluster. Currently, the only job type supported for clusters
-        /// is <code>LOCAL_USE</code>.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
             self.job_type = Some(input);
             self
         }
-        /// <p>The type of job for this cluster. Currently, the only job type supported for clusters
-        /// is <code>LOCAL_USE</code>.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.job_type = input;
             self
         }
-        /// <p>The resources associated with the cluster job. These resources include Amazon S3
-        /// buckets and optional Lambda functions written in the Python language.
-        /// </p>
+        /// <p>The resources associated with the cluster job. These resources include Amazon S3 buckets and optional Lambda functions written in the Python language. </p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
             self.resources = Some(input);
             self
         }
-        /// <p>The resources associated with the cluster job. These resources include Amazon S3
-        /// buckets and optional Lambda functions written in the Python language.
-        /// </p>
+        /// <p>The resources associated with the cluster job. These resources include Amazon S3 buckets and optional Lambda functions written in the Python language. </p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::JobResource>,
@@ -522,9 +502,7 @@ pub mod create_cluster_input {
             self.resources = input;
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
-        /// (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
         pub fn on_device_service_configuration(
             mut self,
             input: crate::model::OnDeviceServiceConfiguration,
@@ -532,9 +510,7 @@ pub mod create_cluster_input {
             self.on_device_service_configuration = Some(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
-        /// (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -542,14 +518,12 @@ pub mod create_cluster_input {
             self.on_device_service_configuration = input;
             self
         }
-        /// <p>An optional description of this specific cluster, for example <code>Environmental Data
-        /// Cluster-01</code>.</p>
+        /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>An optional description of this specific cluster, for example <code>Environmental Data
-        /// Cluster-01</code>.</p>
+        /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -564,56 +538,38 @@ pub mod create_cluster_input {
             self.address_id = input;
             self
         }
-        /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
-        /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
+        /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
-        /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
+        /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
         }
-        /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
-        /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+        /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
-        /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+        /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The type of Snow Family Devices to use for this cluster. </p>
-        /// <note>
-        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
-        /// <code>EDGE</code> device type.</p>
+        /// <p>The type of Snow Family Devices to use for this cluster. </p> <note>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
             self.snowball_type = Some(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for this cluster. </p>
-        /// <note>
-        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
-        /// <code>EDGE</code> device type.</p>
+        /// <p>The type of Snow Family Devices to use for this cluster. </p> <note>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_snowball_type(
             mut self,
             input: std::option::Option<crate::model::SnowballType>,
@@ -621,91 +577,35 @@ pub mod create_cluster_input {
             self.snowball_type = input;
             self
         }
-        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
-        /// you'll get each Snowball Edge device, rather it represents how quickly each device moves to
-        /// its destination while in transit. Regional shipping speeds are as follows: </p>
+        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
-        /// express are delivered in about a day.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-        /// devices shipped express are delivered in about a day. In addition, most countries in the
-        /// EU have access to standard shipping, which typically takes less than a week, one
-        /// way.</p>
-        /// </li>
-        /// <li>
-        /// <p>In India, Snow devices are delivered in one to seven days.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the United States of America (US), you have access to one-day shipping and
-        /// two-day shipping.</p>
-        /// </li>
+        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+        /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
         /// </ul>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>In Australia, you have access to express shipping. Typically, devices shipped
-        /// express are delivered in about a day.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-        /// devices shipped express are delivered in about a day. In addition, most countries in the
-        /// EU have access to standard shipping, which typically takes less than a week, one
-        /// way.</p>
-        /// </li>
-        /// <li>
-        /// <p>In India, Snow devices are delivered in one to seven days.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
-        /// </li>
+        /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
         /// </ul>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.shipping_option = Some(input);
             self
         }
-        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
-        /// you'll get each Snowball Edge device, rather it represents how quickly each device moves to
-        /// its destination while in transit. Regional shipping speeds are as follows: </p>
+        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
-        /// express are delivered in about a day.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-        /// devices shipped express are delivered in about a day. In addition, most countries in the
-        /// EU have access to standard shipping, which typically takes less than a week, one
-        /// way.</p>
-        /// </li>
-        /// <li>
-        /// <p>In India, Snow devices are delivered in one to seven days.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the United States of America (US), you have access to one-day shipping and
-        /// two-day shipping.</p>
-        /// </li>
+        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+        /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
         /// </ul>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>In Australia, you have access to express shipping. Typically, devices shipped
-        /// express are delivered in about a day.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-        /// devices shipped express are delivered in about a day. In addition, most countries in the
-        /// EU have access to standard shipping, which typically takes less than a week, one
-        /// way.</p>
-        /// </li>
-        /// <li>
-        /// <p>In India, Snow devices are delivered in one to seven days.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
-        /// </li>
+        /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
         /// </ul>
         pub fn set_shipping_option(
             mut self,
@@ -714,14 +614,12 @@ pub mod create_cluster_input {
             self.shipping_option = input;
             self
         }
-        /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this
-        /// cluster.</p>
+        /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
             self.notification = Some(input);
             self
         }
-        /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this
-        /// cluster.</p>
+        /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -729,14 +627,12 @@ pub mod create_cluster_input {
             self.notification = input;
             self
         }
-        /// <p>The forwarding address ID for a cluster. This field is not supported in most
-        /// regions.</p>
+        /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
         pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.forwarding_address_id = Some(input.into());
             self
         }
-        /// <p>The forwarding address ID for a cluster. This field is not supported in most
-        /// regions.</p>
+        /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
         pub fn set_forwarding_address_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -757,18 +653,12 @@ pub mod create_cluster_input {
             self.tax_documents = input;
             self
         }
-        /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside
-        /// of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
-        /// automatically be available when the device arrives at your location. Otherwise, you need to
-        /// use the Snowball Client to manage the device.</p>
+        /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
         pub fn remote_management(mut self, input: crate::model::RemoteManagement) -> Self {
             self.remote_management = Some(input);
             self
         }
-        /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside
-        /// of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
-        /// automatically be available when the device arrives at your location. Otherwise, you need to
-        /// use the Snowball Client to manage the device.</p>
+        /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
         pub fn set_remote_management(
             mut self,
             input: std::option::Option<crate::model::RemoteManagement>,
@@ -804,7 +694,7 @@ pub mod create_cluster_input {
 #[doc(hidden)]
 pub type CreateClusterInputOperationOutputAlias = crate::operation::CreateCluster;
 #[doc(hidden)]
-pub type CreateClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateClusterInput {
     /// Consumes the builder and constructs an Operation<[`CreateCluster`](crate::operation::CreateCluster)>
     #[allow(clippy::let_and_return)]
@@ -815,7 +705,7 @@ impl CreateClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -899,7 +789,7 @@ impl CreateClusterInput {
             "CreateCluster",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -949,42 +839,26 @@ pub mod create_job_input {
         pub(crate) long_term_pricing_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Defines the type of job that you're creating.
-        /// </p>
+        /// <p>Defines the type of job that you're creating. </p>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
             self.job_type = Some(input);
             self
         }
-        /// <p>Defines the type of job that you're creating.
-        /// </p>
+        /// <p>Defines the type of job that you're creating. </p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.job_type = input;
             self
         }
         /// <p>Defines the Amazon S3 buckets associated with this job.</p>
-        ///
-        /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred
-        /// data will be imported into.</p>
-        ///
-        /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred
-        /// data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If
-        /// you choose to export a range, you define the length of the range by providing either an
-        /// inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both.
-        /// Ranges are UTF-8 binary sorted.</p>
+        /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>
+        /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If you choose to export a range, you define the length of the range by providing either an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both. Ranges are UTF-8 binary sorted.</p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
             self.resources = Some(input);
             self
         }
         /// <p>Defines the Amazon S3 buckets associated with this job.</p>
-        ///
-        /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred
-        /// data will be imported into.</p>
-        ///
-        /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred
-        /// data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If
-        /// you choose to export a range, you define the length of the range by providing either an
-        /// inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both.
-        /// Ranges are UTF-8 binary sorted.</p>
+        /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>
+        /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If you choose to export a range, you define the length of the range by providing either an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both. Ranges are UTF-8 binary sorted.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::JobResource>,
@@ -992,9 +866,7 @@ pub mod create_job_input {
             self.resources = input;
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
-        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn on_device_service_configuration(
             mut self,
             input: crate::model::OnDeviceServiceConfiguration,
@@ -1002,9 +874,7 @@ pub mod create_job_input {
             self.on_device_service_configuration = Some(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
-        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -1012,14 +882,12 @@ pub mod create_job_input {
             self.on_device_service_configuration = input;
             self
         }
-        /// <p>Defines an optional description of this specific job, for example <code>Important
-        /// Photos 2016-08-11</code>.</p>
+        /// <p>Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>Defines an optional description of this specific job, for example <code>Important
-        /// Photos 2016-08-11</code>.</p>
+        /// <p>Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1034,43 +902,28 @@ pub mod create_job_input {
             self.address_id = input;
             self
         }
-        /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
-        /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-        /// Key Management Service (KMS) API action.</p>
+        /// <p>The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> Key Management Service (KMS) API action.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
-        /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-        /// Key Management Service (KMS) API action.</p>
+        /// <p>The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> Key Management Service (KMS) API action.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
         }
-        /// <p>The <code>RoleARN</code> that you want to associate with this job.
-        /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-        /// Identity and Access Management (IAM) API action.</p>
+        /// <p>The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> Identity and Access Management (IAM) API action.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The <code>RoleARN</code> that you want to associate with this job.
-        /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-        /// Identity and Access Management (IAM) API action.</p>
+        /// <p>The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> Identity and Access Management (IAM) API action.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>If your job is being created in one of the US regions, you have the option of
-        /// specifying what size Snow device you'd like for this job. In all other regions, Snowballs come
-        /// with 80 TB in storage capacity.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn snowball_capacity_preference(
             mut self,
             input: crate::model::SnowballCapacity,
@@ -1078,15 +931,8 @@ pub mod create_job_input {
             self.snowball_capacity_preference = Some(input);
             self
         }
-        /// <p>If your job is being created in one of the US regions, you have the option of
-        /// specifying what size Snow device you'd like for this job. In all other regions, Snowballs come
-        /// with 80 TB in storage capacity.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_snowball_capacity_preference(
             mut self,
             input: std::option::Option<crate::model::SnowballCapacity>,
@@ -1094,53 +940,23 @@ pub mod create_job_input {
             self.snowball_capacity_preference = input;
             self
         }
-        /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
-        /// Snow device, rather it represents how quickly the Snow device moves to its destination while
-        /// in transit. Regional shipping speeds are as follows:</p>
-        ///
+        /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
-        /// express are delivered in about a day.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-        /// devices shipped express are delivered in about a day. In addition, most countries in the
-        /// EU have access to standard shipping, which typically takes less than a week, one
-        /// way.</p>
-        /// </li>
-        /// <li>
-        /// <p>In India, Snow devices are delivered in one to seven days.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
-        /// </li>
+        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
         /// </ul>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.shipping_option = Some(input);
             self
         }
-        /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
-        /// Snow device, rather it represents how quickly the Snow device moves to its destination while
-        /// in transit. Regional shipping speeds are as follows:</p>
-        ///
+        /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
-        /// express are delivered in about a day.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-        /// devices shipped express are delivered in about a day. In addition, most countries in the
-        /// EU have access to standard shipping, which typically takes less than a week, one
-        /// way.</p>
-        /// </li>
-        /// <li>
-        /// <p>In India, Snow devices are delivered in one to seven days.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
-        /// </li>
+        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
         /// </ul>
         pub fn set_shipping_option(
             mut self,
@@ -1149,14 +965,12 @@ pub mod create_job_input {
             self.shipping_option = input;
             self
         }
-        /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for
-        /// this job.</p>
+        /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
             self.notification = Some(input);
             self
         }
-        /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for
-        /// this job.</p>
+        /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -1164,56 +978,32 @@ pub mod create_job_input {
             self.notification = input;
             self
         }
-        /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to
-        /// provide only this <code>clusterId</code> value. The other job attributes are inherited from
-        /// the cluster.</p>
+        /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to
-        /// provide only this <code>clusterId</code> value. The other job attributes are inherited from
-        /// the cluster.</p>
+        /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
         }
-        /// <p>The type of Snow Family Devices to use for this job.
-        /// </p>
-        /// <note>
-        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
-        /// <code>EDGE</code> device type.</p>
+        /// <p>The type of Snow Family Devices to use for this job. </p> <note>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
-        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only
-        /// supported device type for cluster jobs is <code>EDGE</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-        /// Options</a> in the Snowball Edge Developer Guide.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
             self.snowball_type = Some(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for this job.
-        /// </p>
-        /// <note>
-        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
-        /// <code>EDGE</code> device type.</p>
+        /// <p>The type of Snow Family Devices to use for this job. </p> <note>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
-        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only
-        /// supported device type for cluster jobs is <code>EDGE</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-        /// Options</a> in the Snowball Edge Developer Guide.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_snowball_type(
             mut self,
             input: std::option::Option<crate::model::SnowballType>,
@@ -1221,14 +1011,12 @@ pub mod create_job_input {
             self.snowball_type = input;
             self
         }
-        /// <p>The forwarding address ID for a job. This field is not supported in most
-        /// Regions.</p>
+        /// <p>The forwarding address ID for a job. This field is not supported in most Regions.</p>
         pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.forwarding_address_id = Some(input.into());
             self
         }
-        /// <p>The forwarding address ID for a job. This field is not supported in most
-        /// Regions.</p>
+        /// <p>The forwarding address ID for a job. This field is not supported in most Regions.</p>
         pub fn set_forwarding_address_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1250,23 +1038,13 @@ pub mod create_job_input {
             self
         }
         /// <p>Defines the device configuration for an Snowcone job.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn device_configuration(mut self, input: crate::model::DeviceConfiguration) -> Self {
             self.device_configuration = Some(input);
             self
         }
         /// <p>Defines the device configuration for an Snowcone job.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_device_configuration(
             mut self,
             input: std::option::Option<crate::model::DeviceConfiguration>,
@@ -1274,18 +1052,12 @@ pub mod create_job_input {
             self.device_configuration = input;
             self
         }
-        /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your
-        /// internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
-        /// automatically be available when the device arrives at your location. Otherwise, you need to
-        /// use the Snowball Client to manage the device.</p>
+        /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
         pub fn remote_management(mut self, input: crate::model::RemoteManagement) -> Self {
             self.remote_management = Some(input);
             self
         }
-        /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your
-        /// internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
-        /// automatically be available when the device arrives at your location. Otherwise, you need to
-        /// use the Snowball Client to manage the device.</p>
+        /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
         pub fn set_remote_management(
             mut self,
             input: std::option::Option<crate::model::RemoteManagement>,
@@ -1336,7 +1108,7 @@ pub mod create_job_input {
 #[doc(hidden)]
 pub type CreateJobInputOperationOutputAlias = crate::operation::CreateJob;
 #[doc(hidden)]
-pub type CreateJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateJob`](crate::operation::CreateJob)>
     #[allow(clippy::let_and_return)]
@@ -1347,7 +1119,7 @@ impl CreateJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1429,7 +1201,7 @@ impl CreateJobInput {
                     "CreateJob",
                     "snowball",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1463,14 +1235,12 @@ pub mod create_long_term_pricing_input {
         pub(crate) snowball_type: std::option::Option<crate::model::SnowballType>,
     }
     impl Builder {
-        /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year
-        /// long-term pricing.</p>
+        /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
         pub fn long_term_pricing_type(mut self, input: crate::model::LongTermPricingType) -> Self {
             self.long_term_pricing_type = Some(input);
             self
         }
-        /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year
-        /// long-term pricing.</p>
+        /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
         pub fn set_long_term_pricing_type(
             mut self,
             input: std::option::Option<crate::model::LongTermPricingType>,
@@ -1478,14 +1248,12 @@ pub mod create_long_term_pricing_input {
             self.long_term_pricing_type = input;
             self
         }
-        /// <p>Specifies whether the current long-term pricing type for the device should be
-        /// renewed.</p>
+        /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
         pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
             self.is_long_term_pricing_auto_renew = Some(input);
             self
         }
-        /// <p>Specifies whether the current long-term pricing type for the device should be
-        /// renewed.</p>
+        /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
         pub fn set_is_long_term_pricing_auto_renew(
             mut self,
             input: std::option::Option<bool>,
@@ -1524,7 +1292,7 @@ pub mod create_long_term_pricing_input {
 #[doc(hidden)]
 pub type CreateLongTermPricingInputOperationOutputAlias = crate::operation::CreateLongTermPricing;
 #[doc(hidden)]
-pub type CreateLongTermPricingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateLongTermPricingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateLongTermPricingInput {
     /// Consumes the builder and constructs an Operation<[`CreateLongTermPricing`](crate::operation::CreateLongTermPricing)>
     #[allow(clippy::let_and_return)]
@@ -1535,7 +1303,7 @@ impl CreateLongTermPricingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateLongTermPricing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1622,7 +1390,7 @@ impl CreateLongTermPricingInput {
             "CreateLongTermPricing",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1655,28 +1423,22 @@ pub mod create_return_shipping_label_input {
         pub(crate) shipping_option: std::option::Option<crate::model::ShippingOption>,
     }
     impl Builder {
-        /// <p>The ID for a job that you want to create the return shipping label for; for example,
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The ID for a job that you want to create the return shipping label for; for example,
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device
-        /// is returned to Amazon Web Services. This speed represents how quickly it moves to its
-        /// destination while in transit. Regional shipping speeds are as follows:</p>
+        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.shipping_option = Some(input);
             self
         }
-        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device
-        /// is returned to Amazon Web Services. This speed represents how quickly it moves to its
-        /// destination while in transit. Regional shipping speeds are as follows:</p>
+        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
         pub fn set_shipping_option(
             mut self,
             input: std::option::Option<crate::model::ShippingOption>,
@@ -1702,7 +1464,7 @@ pub mod create_return_shipping_label_input {
 pub type CreateReturnShippingLabelInputOperationOutputAlias =
     crate::operation::CreateReturnShippingLabel;
 #[doc(hidden)]
-pub type CreateReturnShippingLabelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateReturnShippingLabelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReturnShippingLabelInput {
     /// Consumes the builder and constructs an Operation<[`CreateReturnShippingLabel`](crate::operation::CreateReturnShippingLabel)>
     #[allow(clippy::let_and_return)]
@@ -1713,7 +1475,7 @@ impl CreateReturnShippingLabelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateReturnShippingLabel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1800,7 +1562,7 @@ impl CreateReturnShippingLabelInput {
             "CreateReturnShippingLabel",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1858,7 +1620,7 @@ pub mod describe_address_input {
 #[doc(hidden)]
 pub type DescribeAddressInputOperationOutputAlias = crate::operation::DescribeAddress;
 #[doc(hidden)]
-pub type DescribeAddressInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAddressInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAddressInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAddress`](crate::operation::DescribeAddress)>
     #[allow(clippy::let_and_return)]
@@ -1869,7 +1631,7 @@ impl DescribeAddressInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAddress,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1954,7 +1716,7 @@ impl DescribeAddressInput {
             "DescribeAddress",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1997,16 +1759,12 @@ pub mod describe_addresses_input {
             self.max_results = input;
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>ADDRESS</code> objects, you have the option of specifying a value for
-        /// <code>NextToken</code> as the starting point for your list of returned addresses.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ADDRESS</code> objects, you have the option of specifying a value for <code>NextToken</code> as the starting point for your list of returned addresses.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>ADDRESS</code> objects, you have the option of specifying a value for
-        /// <code>NextToken</code> as the starting point for your list of returned addresses.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ADDRESS</code> objects, you have the option of specifying a value for <code>NextToken</code> as the starting point for your list of returned addresses.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2028,7 +1786,7 @@ pub mod describe_addresses_input {
 #[doc(hidden)]
 pub type DescribeAddressesInputOperationOutputAlias = crate::operation::DescribeAddresses;
 #[doc(hidden)]
-pub type DescribeAddressesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAddressesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAddressesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAddresses`](crate::operation::DescribeAddresses)>
     #[allow(clippy::let_and_return)]
@@ -2039,7 +1797,7 @@ impl DescribeAddressesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAddresses,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2124,7 +1882,7 @@ impl DescribeAddressesInput {
             "DescribeAddresses",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2182,7 +1940,7 @@ pub mod describe_cluster_input {
 #[doc(hidden)]
 pub type DescribeClusterInputOperationOutputAlias = crate::operation::DescribeCluster;
 #[doc(hidden)]
-pub type DescribeClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeClusterInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCluster`](crate::operation::DescribeCluster)>
     #[allow(clippy::let_and_return)]
@@ -2193,7 +1951,7 @@ impl DescribeClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2278,7 +2036,7 @@ impl DescribeClusterInput {
             "DescribeCluster",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2310,14 +2068,12 @@ pub mod describe_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The automatically generated ID for a job, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The automatically generated ID for a job, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2338,7 +2094,7 @@ pub mod describe_job_input {
 #[doc(hidden)]
 pub type DescribeJobInputOperationOutputAlias = crate::operation::DescribeJob;
 #[doc(hidden)]
-pub type DescribeJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJob`](crate::operation::DescribeJob)>
     #[allow(clippy::let_and_return)]
@@ -2349,7 +2105,7 @@ impl DescribeJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2433,7 +2189,7 @@ impl DescribeJobInput {
             "DescribeJob",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2465,14 +2221,12 @@ pub mod describe_return_shipping_label_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The automatically generated ID for a job, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The automatically generated ID for a job, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2494,7 +2248,7 @@ pub mod describe_return_shipping_label_input {
 pub type DescribeReturnShippingLabelInputOperationOutputAlias =
     crate::operation::DescribeReturnShippingLabel;
 #[doc(hidden)]
-pub type DescribeReturnShippingLabelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeReturnShippingLabelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReturnShippingLabelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReturnShippingLabel`](crate::operation::DescribeReturnShippingLabel)>
     #[allow(clippy::let_and_return)]
@@ -2505,7 +2259,7 @@ impl DescribeReturnShippingLabelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReturnShippingLabel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2591,7 +2345,7 @@ impl DescribeReturnShippingLabelInput {
             "DescribeReturnShippingLabel",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2623,14 +2377,12 @@ pub mod get_job_manifest_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for a job that you want to get the manifest file for, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The ID for a job that you want to get the manifest file for, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2651,7 +2403,7 @@ pub mod get_job_manifest_input {
 #[doc(hidden)]
 pub type GetJobManifestInputOperationOutputAlias = crate::operation::GetJobManifest;
 #[doc(hidden)]
-pub type GetJobManifestInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJobManifestInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobManifestInput {
     /// Consumes the builder and constructs an Operation<[`GetJobManifest`](crate::operation::GetJobManifest)>
     #[allow(clippy::let_and_return)]
@@ -2662,7 +2414,7 @@ impl GetJobManifestInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJobManifest,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2747,7 +2499,7 @@ impl GetJobManifestInput {
             "GetJobManifest",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2779,14 +2531,12 @@ pub mod get_job_unlock_code_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for
-        /// example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for
-        /// example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2807,7 +2557,7 @@ pub mod get_job_unlock_code_input {
 #[doc(hidden)]
 pub type GetJobUnlockCodeInputOperationOutputAlias = crate::operation::GetJobUnlockCode;
 #[doc(hidden)]
-pub type GetJobUnlockCodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJobUnlockCodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobUnlockCodeInput {
     /// Consumes the builder and constructs an Operation<[`GetJobUnlockCode`](crate::operation::GetJobUnlockCode)>
     #[allow(clippy::let_and_return)]
@@ -2818,7 +2568,7 @@ impl GetJobUnlockCodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJobUnlockCode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2903,7 +2653,7 @@ impl GetJobUnlockCodeInput {
             "GetJobUnlockCode",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2947,7 +2697,7 @@ pub mod get_snowball_usage_input {
 #[doc(hidden)]
 pub type GetSnowballUsageInputOperationOutputAlias = crate::operation::GetSnowballUsage;
 #[doc(hidden)]
-pub type GetSnowballUsageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSnowballUsageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSnowballUsageInput {
     /// Consumes the builder and constructs an Operation<[`GetSnowballUsage`](crate::operation::GetSnowballUsage)>
     #[allow(clippy::let_and_return)]
@@ -2958,7 +2708,7 @@ impl GetSnowballUsageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSnowballUsage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3043,7 +2793,7 @@ impl GetSnowballUsageInput {
             "GetSnowballUsage",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3067,14 +2817,12 @@ pub mod get_software_updates_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID for a job that you want to get the software update file for, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The ID for a job that you want to get the software update file for, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -3095,7 +2843,7 @@ pub mod get_software_updates_input {
 #[doc(hidden)]
 pub type GetSoftwareUpdatesInputOperationOutputAlias = crate::operation::GetSoftwareUpdates;
 #[doc(hidden)]
-pub type GetSoftwareUpdatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSoftwareUpdatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSoftwareUpdatesInput {
     /// Consumes the builder and constructs an Operation<[`GetSoftwareUpdates`](crate::operation::GetSoftwareUpdates)>
     #[allow(clippy::let_and_return)]
@@ -3106,7 +2854,7 @@ impl GetSoftwareUpdatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSoftwareUpdates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3191,7 +2939,7 @@ impl GetSoftwareUpdatesInput {
             "GetSoftwareUpdates",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3225,14 +2973,12 @@ pub mod list_cluster_jobs_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The 39-character ID for the cluster that you want to list, for example
-        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>The 39-character ID for the cluster that you want to list, for example
-        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -3247,16 +2993,12 @@ pub mod list_cluster_jobs_input {
             self.max_results = input;
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
-        /// as the starting point for your returned list.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
-        /// as the starting point for your returned list.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3279,7 +3021,7 @@ pub mod list_cluster_jobs_input {
 #[doc(hidden)]
 pub type ListClusterJobsInputOperationOutputAlias = crate::operation::ListClusterJobs;
 #[doc(hidden)]
-pub type ListClusterJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListClusterJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListClusterJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListClusterJobs`](crate::operation::ListClusterJobs)>
     #[allow(clippy::let_and_return)]
@@ -3290,7 +3032,7 @@ impl ListClusterJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListClusterJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3375,7 +3117,7 @@ impl ListClusterJobsInput {
             "ListClusterJobs",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3418,16 +3160,12 @@ pub mod list_clusters_input {
             self.max_results = input;
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>ClusterListEntry</code> objects, you have the option of specifying
-        /// <code>NextToken</code> as the starting point for your returned list.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>ClusterListEntry</code> objects, you have the option of specifying
-        /// <code>NextToken</code> as the starting point for your returned list.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3449,7 +3187,7 @@ pub mod list_clusters_input {
 #[doc(hidden)]
 pub type ListClustersInputOperationOutputAlias = crate::operation::ListClusters;
 #[doc(hidden)]
-pub type ListClustersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListClustersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListClustersInput {
     /// Consumes the builder and constructs an Operation<[`ListClusters`](crate::operation::ListClusters)>
     #[allow(clippy::let_and_return)]
@@ -3460,7 +3198,7 @@ impl ListClustersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListClusters,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3544,7 +3282,7 @@ impl ListClustersInput {
             "ListClusters",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3577,28 +3315,22 @@ pub mod list_compatible_images_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball
-        /// Edge device can store 10 AMIs.</p>
+        /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball
-        /// Edge device can store 10 AMIs.</p>
+        /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// compatible images, you can specify a value for <code>NextToken</code> as the starting point
-        /// for your list of returned images.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// compatible images, you can specify a value for <code>NextToken</code> as the starting point
-        /// for your list of returned images.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3620,7 +3352,7 @@ pub mod list_compatible_images_input {
 #[doc(hidden)]
 pub type ListCompatibleImagesInputOperationOutputAlias = crate::operation::ListCompatibleImages;
 #[doc(hidden)]
-pub type ListCompatibleImagesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCompatibleImagesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCompatibleImagesInput {
     /// Consumes the builder and constructs an Operation<[`ListCompatibleImages`](crate::operation::ListCompatibleImages)>
     #[allow(clippy::let_and_return)]
@@ -3631,7 +3363,7 @@ impl ListCompatibleImagesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCompatibleImages,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3718,7 +3450,7 @@ impl ListCompatibleImagesInput {
             "ListCompatibleImages",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3761,16 +3493,12 @@ pub mod list_jobs_input {
             self.max_results = input;
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
-        /// as the starting point for your returned list.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
-        /// as the starting point for your returned list.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3790,7 +3518,7 @@ pub mod list_jobs_input {
 #[doc(hidden)]
 pub type ListJobsInputOperationOutputAlias = crate::operation::ListJobs;
 #[doc(hidden)]
-pub type ListJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(clippy::let_and_return)]
@@ -3801,7 +3529,7 @@ impl ListJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3882,7 +3610,7 @@ impl ListJobsInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListJobs", "snowball",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3925,14 +3653,12 @@ pub mod list_long_term_pricing_input {
             self.max_results = input;
             self
         }
-        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
-        /// <code>ListLongTermPricing</code> to return.</p>
+        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
-        /// <code>ListLongTermPricing</code> to return.</p>
+        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3954,7 +3680,7 @@ pub mod list_long_term_pricing_input {
 #[doc(hidden)]
 pub type ListLongTermPricingInputOperationOutputAlias = crate::operation::ListLongTermPricing;
 #[doc(hidden)]
-pub type ListLongTermPricingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListLongTermPricingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListLongTermPricingInput {
     /// Consumes the builder and constructs an Operation<[`ListLongTermPricing`](crate::operation::ListLongTermPricing)>
     #[allow(clippy::let_and_return)]
@@ -3965,7 +3691,7 @@ impl ListLongTermPricingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListLongTermPricing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4052,7 +3778,7 @@ impl ListLongTermPricingInput {
             "ListLongTermPricing",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4093,26 +3819,22 @@ pub mod update_cluster_input {
         pub(crate) forwarding_address_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The cluster ID of the cluster that you want to update, for example
-        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_id = Some(input.into());
             self
         }
-        /// <p>The cluster ID of the cluster that you want to update, for example
-        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
         }
-        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
-        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
-        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4127,14 +3849,12 @@ pub mod update_cluster_input {
             self.description = input;
             self
         }
-        /// <p>The updated arrays of <a>JobResource</a> objects that can include updated
-        /// <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
+        /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
             self.resources = Some(input);
             self
         }
-        /// <p>The updated arrays of <a>JobResource</a> objects that can include updated
-        /// <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
+        /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::JobResource>,
@@ -4142,9 +3862,7 @@ pub mod update_cluster_input {
             self.resources = input;
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
-        /// (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
         pub fn on_device_service_configuration(
             mut self,
             input: crate::model::OnDeviceServiceConfiguration,
@@ -4152,9 +3870,7 @@ pub mod update_cluster_input {
             self.on_device_service_configuration = Some(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
-        /// (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -4162,24 +3878,22 @@ pub mod update_cluster_input {
             self.on_device_service_configuration = input;
             self
         }
-        /// <p>The ID of the updated <a>Address</a> object.</p>
+        /// <p>The ID of the updated <code>Address</code> object.</p>
         pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.address_id = Some(input.into());
             self
         }
-        /// <p>The ID of the updated <a>Address</a> object.</p>
+        /// <p>The ID of the updated <code>Address</code> object.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address_id = input;
             self
         }
-        /// <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
-        /// object.</p>
+        /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.shipping_option = Some(input);
             self
         }
-        /// <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
-        /// object.</p>
+        /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
         pub fn set_shipping_option(
             mut self,
             input: std::option::Option<crate::model::ShippingOption>,
@@ -4187,12 +3901,12 @@ pub mod update_cluster_input {
             self.shipping_option = input;
             self
         }
-        /// <p>The new or updated <a>Notification</a> object.</p>
+        /// <p>The new or updated <code>Notification</code> object.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
             self.notification = Some(input);
             self
         }
-        /// <p>The new or updated <a>Notification</a> object.</p>
+        /// <p>The new or updated <code>Notification</code> object.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -4200,14 +3914,12 @@ pub mod update_cluster_input {
             self.notification = input;
             self
         }
-        /// <p>The updated ID for the forwarding address for a cluster. This field is not
-        /// supported in most regions.</p>
+        /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
         pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.forwarding_address_id = Some(input.into());
             self
         }
-        /// <p>The updated ID for the forwarding address for a cluster. This field is not
-        /// supported in most regions.</p>
+        /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
         pub fn set_forwarding_address_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4239,7 +3951,7 @@ pub mod update_cluster_input {
 #[doc(hidden)]
 pub type UpdateClusterInputOperationOutputAlias = crate::operation::UpdateCluster;
 #[doc(hidden)]
-pub type UpdateClusterInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateClusterInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateClusterInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCluster`](crate::operation::UpdateCluster)>
     #[allow(clippy::let_and_return)]
@@ -4250,7 +3962,7 @@ impl UpdateClusterInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCluster,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4334,7 +4046,7 @@ impl UpdateClusterInput {
             "UpdateCluster",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4377,38 +4089,32 @@ pub mod update_job_input {
         pub(crate) forwarding_address_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The job ID of the job that you want to update, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The job ID of the job that you want to update, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
-        /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management
-        /// (IAM) API action.</p>
+        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
-        /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management
-        /// (IAM) API action.</p>
+        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The new or updated <a>Notification</a> object.</p>
+        /// <p>The new or updated <code>Notification</code> object.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
             self.notification = Some(input);
             self
         }
-        /// <p>The new or updated <a>Notification</a> object.</p>
+        /// <p>The new or updated <code>Notification</code> object.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -4416,12 +4122,12 @@ pub mod update_job_input {
             self.notification = input;
             self
         }
-        /// <p>The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object. </p>
+        /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
             self.resources = Some(input);
             self
         }
-        /// <p>The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object. </p>
+        /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::JobResource>,
@@ -4429,9 +4135,7 @@ pub mod update_job_input {
             self.resources = input;
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
-        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn on_device_service_configuration(
             mut self,
             input: crate::model::OnDeviceServiceConfiguration,
@@ -4439,9 +4143,7 @@ pub mod update_job_input {
             self.on_device_service_configuration = Some(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
-        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -4449,24 +4151,22 @@ pub mod update_job_input {
             self.on_device_service_configuration = input;
             self
         }
-        /// <p>The ID of the updated <a>Address</a> object.</p>
+        /// <p>The ID of the updated <code>Address</code> object.</p>
         pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.address_id = Some(input.into());
             self
         }
-        /// <p>The ID of the updated <a>Address</a> object.</p>
+        /// <p>The ID of the updated <code>Address</code> object.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address_id = input;
             self
         }
-        /// <p>The updated shipping option value of this job's <a>ShippingDetails</a>
-        /// object.</p>
+        /// <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.shipping_option = Some(input);
             self
         }
-        /// <p>The updated shipping option value of this job's <a>ShippingDetails</a>
-        /// object.</p>
+        /// <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
         pub fn set_shipping_option(
             mut self,
             input: std::option::Option<crate::model::ShippingOption>,
@@ -4474,24 +4174,18 @@ pub mod update_job_input {
             self.shipping_option = input;
             self
         }
-        /// <p>The updated description of this job's <a>JobMetadata</a> object.</p>
+        /// <p>The updated description of this job's <code>JobMetadata</code> object.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The updated description of this job's <a>JobMetadata</a> object.</p>
+        /// <p>The updated description of this job's <code>JobMetadata</code> object.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
-        /// regions.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn snowball_capacity_preference(
             mut self,
             input: crate::model::SnowballCapacity,
@@ -4499,14 +4193,8 @@ pub mod update_job_input {
             self.snowball_capacity_preference = Some(input);
             self
         }
-        /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
-        /// regions.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_snowball_capacity_preference(
             mut self,
             input: std::option::Option<crate::model::SnowballCapacity>,
@@ -4514,14 +4202,12 @@ pub mod update_job_input {
             self.snowball_capacity_preference = input;
             self
         }
-        /// <p>The updated ID for the forwarding address for a job. This field is not
-        /// supported in most regions.</p>
+        /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
         pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.forwarding_address_id = Some(input.into());
             self
         }
-        /// <p>The updated ID for the forwarding address for a job. This field is not
-        /// supported in most regions.</p>
+        /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
         pub fn set_forwarding_address_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4552,7 +4238,7 @@ pub mod update_job_input {
 #[doc(hidden)]
 pub type UpdateJobInputOperationOutputAlias = crate::operation::UpdateJob;
 #[doc(hidden)]
-pub type UpdateJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJob`](crate::operation::UpdateJob)>
     #[allow(clippy::let_and_return)]
@@ -4563,7 +4249,7 @@ impl UpdateJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4645,7 +4331,7 @@ impl UpdateJobInput {
                     "UpdateJob",
                     "snowball",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4678,14 +4364,12 @@ pub mod update_job_shipment_state_input {
         pub(crate) shipment_state: std::option::Option<crate::model::ShipmentState>,
     }
     impl Builder {
-        /// <p>The job ID of the job whose shipment date you want to update, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The job ID of the job whose shipment date you want to update, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -4724,7 +4408,7 @@ pub mod update_job_shipment_state_input {
 #[doc(hidden)]
 pub type UpdateJobShipmentStateInputOperationOutputAlias = crate::operation::UpdateJobShipmentState;
 #[doc(hidden)]
-pub type UpdateJobShipmentStateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateJobShipmentStateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateJobShipmentStateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJobShipmentState`](crate::operation::UpdateJobShipmentState)>
     #[allow(clippy::let_and_return)]
@@ -4735,7 +4419,7 @@ impl UpdateJobShipmentStateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateJobShipmentState,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4822,7 +4506,7 @@ impl UpdateJobShipmentStateInput {
             "UpdateJobShipmentState",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4869,14 +4553,12 @@ pub mod update_long_term_pricing_input {
             self.long_term_pricing_id = input;
             self
         }
-        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a
-        /// new device.</p>
+        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
         pub fn replacement_job(mut self, input: impl Into<std::string::String>) -> Self {
             self.replacement_job = Some(input.into());
             self
         }
-        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a
-        /// new device.</p>
+        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
         pub fn set_replacement_job(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4884,14 +4566,12 @@ pub mod update_long_term_pricing_input {
             self.replacement_job = input;
             self
         }
-        /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the
-        /// device should be automatically renewed before the long-term pricing contract expires.</p>
+        /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
         pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
             self.is_long_term_pricing_auto_renew = Some(input);
             self
         }
-        /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the
-        /// device should be automatically renewed before the long-term pricing contract expires.</p>
+        /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
         pub fn set_is_long_term_pricing_auto_renew(
             mut self,
             input: std::option::Option<bool>,
@@ -4917,7 +4597,7 @@ pub mod update_long_term_pricing_input {
 #[doc(hidden)]
 pub type UpdateLongTermPricingInputOperationOutputAlias = crate::operation::UpdateLongTermPricing;
 #[doc(hidden)]
-pub type UpdateLongTermPricingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateLongTermPricingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateLongTermPricingInput {
     /// Consumes the builder and constructs an Operation<[`UpdateLongTermPricing`](crate::operation::UpdateLongTermPricing)>
     #[allow(clippy::let_and_return)]
@@ -4928,7 +4608,7 @@ impl UpdateLongTermPricingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateLongTermPricing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5015,7 +4695,7 @@ impl UpdateLongTermPricingInput {
             "UpdateLongTermPricing",
             "snowball",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5044,11 +4724,9 @@ impl UpdateLongTermPricingInput {
 pub struct UpdateLongTermPricingInput {
     /// <p>The ID of the long-term pricing type for the device.</p>
     pub long_term_pricing_id: std::option::Option<std::string::String>,
-    /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a
-    /// new device.</p>
+    /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
     pub replacement_job: std::option::Option<std::string::String>,
-    /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the
-    /// device should be automatically renewed before the long-term pricing contract expires.</p>
+    /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
     pub is_long_term_pricing_auto_renew: std::option::Option<bool>,
 }
 impl UpdateLongTermPricingInput {
@@ -5056,13 +4734,11 @@ impl UpdateLongTermPricingInput {
     pub fn long_term_pricing_id(&self) -> std::option::Option<&str> {
         self.long_term_pricing_id.as_deref()
     }
-    /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a
-    /// new device.</p>
+    /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
     pub fn replacement_job(&self) -> std::option::Option<&str> {
         self.replacement_job.as_deref()
     }
-    /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the
-    /// device should be automatically renewed before the long-term pricing contract expires.</p>
+    /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
     pub fn is_long_term_pricing_auto_renew(&self) -> std::option::Option<bool> {
         self.is_long_term_pricing_auto_renew
     }
@@ -5084,8 +4760,7 @@ impl std::fmt::Debug for UpdateLongTermPricingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobShipmentStateInput {
-    /// <p>The job ID of the job whose shipment date you want to update, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The state of a device when it is being shipped. </p>
     /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
@@ -5093,8 +4768,7 @@ pub struct UpdateJobShipmentStateInput {
     pub shipment_state: std::option::Option<crate::model::ShipmentState>,
 }
 impl UpdateJobShipmentStateInput {
-    /// <p>The job ID of the job whose shipment date you want to update, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -5118,98 +4792,72 @@ impl std::fmt::Debug for UpdateJobShipmentStateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateJobInput {
-    /// <p>The job ID of the job that you want to update, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
-    /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management
-    /// (IAM) API action.</p>
+    /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The new or updated <a>Notification</a> object.</p>
+    /// <p>The new or updated <code>Notification</code> object.</p>
     pub notification: std::option::Option<crate::model::Notification>,
-    /// <p>The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object. </p>
+    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
     pub resources: std::option::Option<crate::model::JobResource>,
-    /// <p>Specifies the service or services on the Snow Family device that your transferred data
-    /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
-    /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
     pub on_device_service_configuration:
         std::option::Option<crate::model::OnDeviceServiceConfiguration>,
-    /// <p>The ID of the updated <a>Address</a> object.</p>
+    /// <p>The ID of the updated <code>Address</code> object.</p>
     pub address_id: std::option::Option<std::string::String>,
-    /// <p>The updated shipping option value of this job's <a>ShippingDetails</a>
-    /// object.</p>
+    /// <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
     pub shipping_option: std::option::Option<crate::model::ShippingOption>,
-    /// <p>The updated description of this job's <a>JobMetadata</a> object.</p>
+    /// <p>The updated description of this job's <code>JobMetadata</code> object.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
-    /// regions.</p>
-    ///
-    /// <p>For more information, see
-    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub snowball_capacity_preference: std::option::Option<crate::model::SnowballCapacity>,
-    /// <p>The updated ID for the forwarding address for a job. This field is not
-    /// supported in most regions.</p>
+    /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
     pub forwarding_address_id: std::option::Option<std::string::String>,
 }
 impl UpdateJobInput {
-    /// <p>The job ID of the job that you want to update, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
-    /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management
-    /// (IAM) API action.</p>
+    /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The new or updated <a>Notification</a> object.</p>
+    /// <p>The new or updated <code>Notification</code> object.</p>
     pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
         self.notification.as_ref()
     }
-    /// <p>The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object. </p>
+    /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
     pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
         self.resources.as_ref()
     }
-    /// <p>Specifies the service or services on the Snow Family device that your transferred data
-    /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
-    /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
     pub fn on_device_service_configuration(
         &self,
     ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
-    /// <p>The ID of the updated <a>Address</a> object.</p>
+    /// <p>The ID of the updated <code>Address</code> object.</p>
     pub fn address_id(&self) -> std::option::Option<&str> {
         self.address_id.as_deref()
     }
-    /// <p>The updated shipping option value of this job's <a>ShippingDetails</a>
-    /// object.</p>
+    /// <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
     pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
         self.shipping_option.as_ref()
     }
-    /// <p>The updated description of this job's <a>JobMetadata</a> object.</p>
+    /// <p>The updated description of this job's <code>JobMetadata</code> object.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
-    /// regions.</p>
-    ///
-    /// <p>For more information, see
-    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn snowball_capacity_preference(
         &self,
     ) -> std::option::Option<&crate::model::SnowballCapacity> {
         self.snowball_capacity_preference.as_ref()
     }
-    /// <p>The updated ID for the forwarding address for a job. This field is not
-    /// supported in most regions.</p>
+    /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
     pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
         self.forwarding_address_id.as_deref()
     }
@@ -5241,41 +4889,32 @@ impl std::fmt::Debug for UpdateJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateClusterInput {
-    /// <p>The cluster ID of the cluster that you want to update, for example
-    /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub cluster_id: std::option::Option<std::string::String>,
-    /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
-    /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+    /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The updated description of this cluster.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The updated arrays of <a>JobResource</a> objects that can include updated
-    /// <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
+    /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
     pub resources: std::option::Option<crate::model::JobResource>,
-    /// <p>Specifies the service or services on the Snow Family device that your transferred data
-    /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
-    /// (Network File System).</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
     pub on_device_service_configuration:
         std::option::Option<crate::model::OnDeviceServiceConfiguration>,
-    /// <p>The ID of the updated <a>Address</a> object.</p>
+    /// <p>The ID of the updated <code>Address</code> object.</p>
     pub address_id: std::option::Option<std::string::String>,
-    /// <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
-    /// object.</p>
+    /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
     pub shipping_option: std::option::Option<crate::model::ShippingOption>,
-    /// <p>The new or updated <a>Notification</a> object.</p>
+    /// <p>The new or updated <code>Notification</code> object.</p>
     pub notification: std::option::Option<crate::model::Notification>,
-    /// <p>The updated ID for the forwarding address for a cluster. This field is not
-    /// supported in most regions.</p>
+    /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
     pub forwarding_address_id: std::option::Option<std::string::String>,
 }
 impl UpdateClusterInput {
-    /// <p>The cluster ID of the cluster that you want to update, for example
-    /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
-    /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
-    /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+    /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -5283,34 +4922,29 @@ impl UpdateClusterInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The updated arrays of <a>JobResource</a> objects that can include updated
-    /// <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
+    /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
     pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
         self.resources.as_ref()
     }
-    /// <p>Specifies the service or services on the Snow Family device that your transferred data
-    /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
-    /// (Network File System).</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
     pub fn on_device_service_configuration(
         &self,
     ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
-    /// <p>The ID of the updated <a>Address</a> object.</p>
+    /// <p>The ID of the updated <code>Address</code> object.</p>
     pub fn address_id(&self) -> std::option::Option<&str> {
         self.address_id.as_deref()
     }
-    /// <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
-    /// object.</p>
+    /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
     pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
         self.shipping_option.as_ref()
     }
-    /// <p>The new or updated <a>Notification</a> object.</p>
+    /// <p>The new or updated <code>Notification</code> object.</p>
     pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
         self.notification.as_ref()
     }
-    /// <p>The updated ID for the forwarding address for a cluster. This field is not
-    /// supported in most regions.</p>
+    /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
     pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
         self.forwarding_address_id.as_deref()
     }
@@ -5340,8 +4974,7 @@ impl std::fmt::Debug for UpdateClusterInput {
 pub struct ListLongTermPricingInput {
     /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
-    /// <code>ListLongTermPricing</code> to return.</p>
+    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLongTermPricingInput {
@@ -5349,8 +4982,7 @@ impl ListLongTermPricingInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
-    /// <code>ListLongTermPricing</code> to return.</p>
+    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5370,9 +5002,7 @@ impl std::fmt::Debug for ListLongTermPricingInput {
 pub struct ListJobsInput {
     /// <p>The number of <code>JobListEntry</code> objects to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-    /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
-    /// as the starting point for your returned list.</p>
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsInput {
@@ -5380,9 +5010,7 @@ impl ListJobsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-    /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
-    /// as the starting point for your returned list.</p>
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5400,23 +5028,17 @@ impl std::fmt::Debug for ListJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCompatibleImagesInput {
-    /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball
-    /// Edge device can store 10 AMIs.</p>
+    /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-    /// compatible images, you can specify a value for <code>NextToken</code> as the starting point
-    /// for your list of returned images.</p>
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCompatibleImagesInput {
-    /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball
-    /// Edge device can store 10 AMIs.</p>
+    /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-    /// compatible images, you can specify a value for <code>NextToken</code> as the starting point
-    /// for your list of returned images.</p>
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5436,9 +5058,7 @@ impl std::fmt::Debug for ListCompatibleImagesInput {
 pub struct ListClustersInput {
     /// <p>The number of <code>ClusterListEntry</code> objects to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-    /// <code>ClusterListEntry</code> objects, you have the option of specifying
-    /// <code>NextToken</code> as the starting point for your returned list.</p>
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersInput {
@@ -5446,9 +5066,7 @@ impl ListClustersInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-    /// <code>ClusterListEntry</code> objects, you have the option of specifying
-    /// <code>NextToken</code> as the starting point for your returned list.</p>
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5466,19 +5084,15 @@ impl std::fmt::Debug for ListClustersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClusterJobsInput {
-    /// <p>The 39-character ID for the cluster that you want to list, for example
-    /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The number of <code>JobListEntry</code> objects to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-    /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
-    /// as the starting point for your returned list.</p>
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClusterJobsInput {
-    /// <p>The 39-character ID for the cluster that you want to list, for example
-    /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
@@ -5486,9 +5100,7 @@ impl ListClusterJobsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-    /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
-    /// as the starting point for your returned list.</p>
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5507,13 +5119,11 @@ impl std::fmt::Debug for ListClusterJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSoftwareUpdatesInput {
-    /// <p>The ID for a job that you want to get the software update file for, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetSoftwareUpdatesInput {
-    /// <p>The ID for a job that you want to get the software update file for, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -5541,13 +5151,11 @@ impl std::fmt::Debug for GetSnowballUsageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobUnlockCodeInput {
-    /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for
-    /// example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetJobUnlockCodeInput {
-    /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for
-    /// example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -5564,13 +5172,11 @@ impl std::fmt::Debug for GetJobUnlockCodeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobManifestInput {
-    /// <p>The ID for a job that you want to get the manifest file for, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetJobManifestInput {
-    /// <p>The ID for a job that you want to get the manifest file for, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -5587,13 +5193,11 @@ impl std::fmt::Debug for GetJobManifestInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReturnShippingLabelInput {
-    /// <p>The automatically generated ID for a job, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeReturnShippingLabelInput {
-    /// <p>The automatically generated ID for a job, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -5610,13 +5214,11 @@ impl std::fmt::Debug for DescribeReturnShippingLabelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobInput {
-    /// <p>The automatically generated ID for a job, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeJobInput {
-    /// <p>The automatically generated ID for a job, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -5656,9 +5258,7 @@ impl std::fmt::Debug for DescribeClusterInput {
 pub struct DescribeAddressesInput {
     /// <p>The number of <code>ADDRESS</code> objects to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-    /// <code>ADDRESS</code> objects, you have the option of specifying a value for
-    /// <code>NextToken</code> as the starting point for your list of returned addresses.</p>
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ADDRESS</code> objects, you have the option of specifying a value for <code>NextToken</code> as the starting point for your list of returned addresses.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAddressesInput {
@@ -5666,9 +5266,7 @@ impl DescribeAddressesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-    /// <code>ADDRESS</code> objects, you have the option of specifying a value for
-    /// <code>NextToken</code> as the starting point for your list of returned addresses.</p>
+    /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ADDRESS</code> objects, you have the option of specifying a value for <code>NextToken</code> as the starting point for your list of returned addresses.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5707,23 +5305,17 @@ impl std::fmt::Debug for DescribeAddressInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReturnShippingLabelInput {
-    /// <p>The ID for a job that you want to create the return shipping label for; for example,
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device
-    /// is returned to Amazon Web Services. This speed represents how quickly it moves to its
-    /// destination while in transit. Regional shipping speeds are as follows:</p>
+    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     pub shipping_option: std::option::Option<crate::model::ShippingOption>,
 }
 impl CreateReturnShippingLabelInput {
-    /// <p>The ID for a job that you want to create the return shipping label for; for example,
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device
-    /// is returned to Amazon Web Services. This speed represents how quickly it moves to its
-    /// destination while in transit. Regional shipping speeds are as follows:</p>
+    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
         self.shipping_option.as_ref()
     }
@@ -5741,25 +5333,21 @@ impl std::fmt::Debug for CreateReturnShippingLabelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLongTermPricingInput {
-    /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year
-    /// long-term pricing.</p>
+    /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
     pub long_term_pricing_type: std::option::Option<crate::model::LongTermPricingType>,
-    /// <p>Specifies whether the current long-term pricing type for the device should be
-    /// renewed.</p>
+    /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
     pub is_long_term_pricing_auto_renew: std::option::Option<bool>,
     /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
 }
 impl CreateLongTermPricingInput {
-    /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year
-    /// long-term pricing.</p>
+    /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
     pub fn long_term_pricing_type(
         &self,
     ) -> std::option::Option<&crate::model::LongTermPricingType> {
         self.long_term_pricing_type.as_ref()
     }
-    /// <p>Specifies whether the current long-term pricing type for the device should be
-    /// renewed.</p>
+    /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
     pub fn is_long_term_pricing_auto_renew(&self) -> std::option::Option<bool> {
         self.is_long_term_pricing_auto_renew
     }
@@ -5785,145 +5373,75 @@ impl std::fmt::Debug for CreateLongTermPricingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobInput {
-    /// <p>Defines the type of job that you're creating.
-    /// </p>
+    /// <p>Defines the type of job that you're creating. </p>
     pub job_type: std::option::Option<crate::model::JobType>,
     /// <p>Defines the Amazon S3 buckets associated with this job.</p>
-    ///
-    /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred
-    /// data will be imported into.</p>
-    ///
-    /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred
-    /// data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If
-    /// you choose to export a range, you define the length of the range by providing either an
-    /// inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both.
-    /// Ranges are UTF-8 binary sorted.</p>
+    /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>
+    /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If you choose to export a range, you define the length of the range by providing either an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both. Ranges are UTF-8 binary sorted.</p>
     pub resources: std::option::Option<crate::model::JobResource>,
-    /// <p>Specifies the service or services on the Snow Family device that your transferred data
-    /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
-    /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
     pub on_device_service_configuration:
         std::option::Option<crate::model::OnDeviceServiceConfiguration>,
-    /// <p>Defines an optional description of this specific job, for example <code>Important
-    /// Photos 2016-08-11</code>.</p>
+    /// <p>Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID for the address that you want the Snow device shipped to.</p>
     pub address_id: std::option::Option<std::string::String>,
-    /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
-    /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-    /// Key Management Service (KMS) API action.</p>
+    /// <p>The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> Key Management Service (KMS) API action.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The <code>RoleARN</code> that you want to associate with this job.
-    /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-    /// Identity and Access Management (IAM) API action.</p>
+    /// <p>The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> Identity and Access Management (IAM) API action.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>If your job is being created in one of the US regions, you have the option of
-    /// specifying what size Snow device you'd like for this job. In all other regions, Snowballs come
-    /// with 80 TB in storage capacity.</p>
-    ///
-    /// <p>For more information, see
-    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub snowball_capacity_preference: std::option::Option<crate::model::SnowballCapacity>,
-    /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
-    /// Snow device, rather it represents how quickly the Snow device moves to its destination while
-    /// in transit. Regional shipping speeds are as follows:</p>
-    ///
+    /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
-    /// express are delivered in about a day.</p>
-    /// </li>
-    /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-    /// devices shipped express are delivered in about a day. In addition, most countries in the
-    /// EU have access to standard shipping, which typically takes less than a week, one
-    /// way.</p>
-    /// </li>
-    /// <li>
-    /// <p>In India, Snow devices are delivered in one to seven days.</p>
-    /// </li>
-    /// <li>
-    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
-    /// </li>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
     pub shipping_option: std::option::Option<crate::model::ShippingOption>,
-    /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for
-    /// this job.</p>
+    /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
     pub notification: std::option::Option<crate::model::Notification>,
-    /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to
-    /// provide only this <code>clusterId</code> value. The other job attributes are inherited from
-    /// the cluster.</p>
+    /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
     pub cluster_id: std::option::Option<std::string::String>,
-    /// <p>The type of Snow Family Devices to use for this job.
-    /// </p>
-    /// <note>
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
-    /// <code>EDGE</code> device type.</p>
+    /// <p>The type of Snow Family Devices to use for this job. </p> <note>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
-    /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only
-    /// supported device type for cluster jobs is <code>EDGE</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-    /// Options</a> in the Snowball Edge Developer Guide.</p>
-    ///
-    /// <p>For more information, see
-    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
-    /// <p>The forwarding address ID for a job. This field is not supported in most
-    /// Regions.</p>
+    /// <p>The forwarding address ID for a job. This field is not supported in most Regions.</p>
     pub forwarding_address_id: std::option::Option<std::string::String>,
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub tax_documents: std::option::Option<crate::model::TaxDocuments>,
     /// <p>Defines the device configuration for an Snowcone job.</p>
-    ///
-    /// <p>For more information, see
-    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub device_configuration: std::option::Option<crate::model::DeviceConfiguration>,
-    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your
-    /// internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
-    /// automatically be available when the device arrives at your location. Otherwise, you need to
-    /// use the Snowball Client to manage the device.</p>
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
     pub remote_management: std::option::Option<crate::model::RemoteManagement>,
     /// <p>The ID of the long-term pricing type for the device.</p>
     pub long_term_pricing_id: std::option::Option<std::string::String>,
 }
 impl CreateJobInput {
-    /// <p>Defines the type of job that you're creating.
-    /// </p>
+    /// <p>Defines the type of job that you're creating. </p>
     pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
         self.job_type.as_ref()
     }
     /// <p>Defines the Amazon S3 buckets associated with this job.</p>
-    ///
-    /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred
-    /// data will be imported into.</p>
-    ///
-    /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred
-    /// data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If
-    /// you choose to export a range, you define the length of the range by providing either an
-    /// inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both.
-    /// Ranges are UTF-8 binary sorted.</p>
+    /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>
+    /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If you choose to export a range, you define the length of the range by providing either an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both. Ranges are UTF-8 binary sorted.</p>
     pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
         self.resources.as_ref()
     }
-    /// <p>Specifies the service or services on the Snow Family device that your transferred data
-    /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
-    /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
     pub fn on_device_service_configuration(
         &self,
     ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
-    /// <p>Defines an optional description of this specific job, for example <code>Important
-    /// Photos 2016-08-11</code>.</p>
+    /// <p>Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -5931,89 +5449,49 @@ impl CreateJobInput {
     pub fn address_id(&self) -> std::option::Option<&str> {
         self.address_id.as_deref()
     }
-    /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
-    /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-    /// Key Management Service (KMS) API action.</p>
+    /// <p>The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> Key Management Service (KMS) API action.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>The <code>RoleARN</code> that you want to associate with this job.
-    /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-    /// Identity and Access Management (IAM) API action.</p>
+    /// <p>The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> Identity and Access Management (IAM) API action.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>If your job is being created in one of the US regions, you have the option of
-    /// specifying what size Snow device you'd like for this job. In all other regions, Snowballs come
-    /// with 80 TB in storage capacity.</p>
-    ///
-    /// <p>For more information, see
-    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn snowball_capacity_preference(
         &self,
     ) -> std::option::Option<&crate::model::SnowballCapacity> {
         self.snowball_capacity_preference.as_ref()
     }
-    /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
-    /// Snow device, rather it represents how quickly the Snow device moves to its destination while
-    /// in transit. Regional shipping speeds are as follows:</p>
-    ///
+    /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
-    /// express are delivered in about a day.</p>
-    /// </li>
-    /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-    /// devices shipped express are delivered in about a day. In addition, most countries in the
-    /// EU have access to standard shipping, which typically takes less than a week, one
-    /// way.</p>
-    /// </li>
-    /// <li>
-    /// <p>In India, Snow devices are delivered in one to seven days.</p>
-    /// </li>
-    /// <li>
-    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
-    /// </li>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
     pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
         self.shipping_option.as_ref()
     }
-    /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for
-    /// this job.</p>
+    /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
     pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
         self.notification.as_ref()
     }
-    /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to
-    /// provide only this <code>clusterId</code> value. The other job attributes are inherited from
-    /// the cluster.</p>
+    /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
-    /// <p>The type of Snow Family Devices to use for this job.
-    /// </p>
-    /// <note>
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
-    /// <code>EDGE</code> device type.</p>
+    /// <p>The type of Snow Family Devices to use for this job. </p> <note>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
-    /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only
-    /// supported device type for cluster jobs is <code>EDGE</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-    /// Options</a> in the Snowball Edge Developer Guide.</p>
-    ///
-    /// <p>For more information, see
-    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
         self.snowball_type.as_ref()
     }
-    /// <p>The forwarding address ID for a job. This field is not supported in most
-    /// Regions.</p>
+    /// <p>The forwarding address ID for a job. This field is not supported in most Regions.</p>
     pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
         self.forwarding_address_id.as_deref()
     }
@@ -6022,19 +5500,11 @@ impl CreateJobInput {
         self.tax_documents.as_ref()
     }
     /// <p>Defines the device configuration for an Snowcone job.</p>
-    ///
-    /// <p>For more information, see
-    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn device_configuration(&self) -> std::option::Option<&crate::model::DeviceConfiguration> {
         self.device_configuration.as_ref()
     }
-    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your
-    /// internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
-    /// automatically be available when the device arrives at your location. Otherwise, you need to
-    /// use the Snowball Client to manage the device.</p>
+    /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
     pub fn remote_management(&self) -> std::option::Option<&crate::model::RemoteManagement> {
         self.remote_management.as_ref()
     }
@@ -6077,131 +5547,67 @@ impl std::fmt::Debug for CreateJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateClusterInput {
-    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters
-    /// is <code>LOCAL_USE</code>.</p>
-    ///
-    /// <p>For more information, see
-    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub job_type: std::option::Option<crate::model::JobType>,
-    /// <p>The resources associated with the cluster job. These resources include Amazon S3
-    /// buckets and optional Lambda functions written in the Python language.
-    /// </p>
+    /// <p>The resources associated with the cluster job. These resources include Amazon S3 buckets and optional Lambda functions written in the Python language. </p>
     pub resources: std::option::Option<crate::model::JobResource>,
-    /// <p>Specifies the service or services on the Snow Family device that your transferred data
-    /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
-    /// (Network File System).</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
     pub on_device_service_configuration:
         std::option::Option<crate::model::OnDeviceServiceConfiguration>,
-    /// <p>An optional description of this specific cluster, for example <code>Environmental Data
-    /// Cluster-01</code>.</p>
+    /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID for the address that you want the cluster shipped to.</p>
     pub address_id: std::option::Option<std::string::String>,
-    /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
-    /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
+    /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
-    /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+    /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The type of Snow Family Devices to use for this cluster. </p>
-    /// <note>
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
-    /// <code>EDGE</code> device type.</p>
+    /// <p>The type of Snow Family Devices to use for this cluster. </p> <note>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
-    ///
-    /// <p>For more information, see
-    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub snowball_type: std::option::Option<crate::model::SnowballType>,
-    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
-    /// you'll get each Snowball Edge device, rather it represents how quickly each device moves to
-    /// its destination while in transit. Regional shipping speeds are as follows: </p>
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
-    /// express are delivered in about a day.</p>
-    /// </li>
-    /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-    /// devices shipped express are delivered in about a day. In addition, most countries in the
-    /// EU have access to standard shipping, which typically takes less than a week, one
-    /// way.</p>
-    /// </li>
-    /// <li>
-    /// <p>In India, Snow devices are delivered in one to seven days.</p>
-    /// </li>
-    /// <li>
-    /// <p>In the United States of America (US), you have access to one-day shipping and
-    /// two-day shipping.</p>
-    /// </li>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>In Australia, you have access to express shipping. Typically, devices shipped
-    /// express are delivered in about a day.</p>
-    /// </li>
-    /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-    /// devices shipped express are delivered in about a day. In addition, most countries in the
-    /// EU have access to standard shipping, which typically takes less than a week, one
-    /// way.</p>
-    /// </li>
-    /// <li>
-    /// <p>In India, Snow devices are delivered in one to seven days.</p>
-    /// </li>
-    /// <li>
-    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
-    /// </li>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
     pub shipping_option: std::option::Option<crate::model::ShippingOption>,
-    /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this
-    /// cluster.</p>
+    /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
     pub notification: std::option::Option<crate::model::Notification>,
-    /// <p>The forwarding address ID for a cluster. This field is not supported in most
-    /// regions.</p>
+    /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
     pub forwarding_address_id: std::option::Option<std::string::String>,
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub tax_documents: std::option::Option<crate::model::TaxDocuments>,
-    /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside
-    /// of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
-    /// automatically be available when the device arrives at your location. Otherwise, you need to
-    /// use the Snowball Client to manage the device.</p>
+    /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
     pub remote_management: std::option::Option<crate::model::RemoteManagement>,
 }
 impl CreateClusterInput {
-    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters
-    /// is <code>LOCAL_USE</code>.</p>
-    ///
-    /// <p>For more information, see
-    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
         self.job_type.as_ref()
     }
-    /// <p>The resources associated with the cluster job. These resources include Amazon S3
-    /// buckets and optional Lambda functions written in the Python language.
-    /// </p>
+    /// <p>The resources associated with the cluster job. These resources include Amazon S3 buckets and optional Lambda functions written in the Python language. </p>
     pub fn resources(&self) -> std::option::Option<&crate::model::JobResource> {
         self.resources.as_ref()
     }
-    /// <p>Specifies the service or services on the Snow Family device that your transferred data
-    /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
-    /// (Network File System).</p>
+    /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
     pub fn on_device_service_configuration(
         &self,
     ) -> std::option::Option<&crate::model::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
-    /// <p>An optional description of this specific cluster, for example <code>Environmental Data
-    /// Cluster-01</code>.</p>
+    /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -6209,81 +5615,42 @@ impl CreateClusterInput {
     pub fn address_id(&self) -> std::option::Option<&str> {
         self.address_id.as_deref()
     }
-    /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
-    /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
+    /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
-    /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+    /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The type of Snow Family Devices to use for this cluster. </p>
-    /// <note>
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
-    /// <code>EDGE</code> device type.</p>
+    /// <p>The type of Snow Family Devices to use for this cluster. </p> <note>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
-    ///
-    /// <p>For more information, see
-    /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-    /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-    /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn snowball_type(&self) -> std::option::Option<&crate::model::SnowballType> {
         self.snowball_type.as_ref()
     }
-    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
-    /// you'll get each Snowball Edge device, rather it represents how quickly each device moves to
-    /// its destination while in transit. Regional shipping speeds are as follows: </p>
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
-    /// express are delivered in about a day.</p>
-    /// </li>
-    /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-    /// devices shipped express are delivered in about a day. In addition, most countries in the
-    /// EU have access to standard shipping, which typically takes less than a week, one
-    /// way.</p>
-    /// </li>
-    /// <li>
-    /// <p>In India, Snow devices are delivered in one to seven days.</p>
-    /// </li>
-    /// <li>
-    /// <p>In the United States of America (US), you have access to one-day shipping and
-    /// two-day shipping.</p>
-    /// </li>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>In Australia, you have access to express shipping. Typically, devices shipped
-    /// express are delivered in about a day.</p>
-    /// </li>
-    /// <li>
-    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-    /// devices shipped express are delivered in about a day. In addition, most countries in the
-    /// EU have access to standard shipping, which typically takes less than a week, one
-    /// way.</p>
-    /// </li>
-    /// <li>
-    /// <p>In India, Snow devices are delivered in one to seven days.</p>
-    /// </li>
-    /// <li>
-    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
-    /// </li>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
     pub fn shipping_option(&self) -> std::option::Option<&crate::model::ShippingOption> {
         self.shipping_option.as_ref()
     }
-    /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this
-    /// cluster.</p>
+    /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
     pub fn notification(&self) -> std::option::Option<&crate::model::Notification> {
         self.notification.as_ref()
     }
-    /// <p>The forwarding address ID for a cluster. This field is not supported in most
-    /// regions.</p>
+    /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
     pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
         self.forwarding_address_id.as_deref()
     }
@@ -6291,10 +5658,7 @@ impl CreateClusterInput {
     pub fn tax_documents(&self) -> std::option::Option<&crate::model::TaxDocuments> {
         self.tax_documents.as_ref()
     }
-    /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside
-    /// of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
-    /// automatically be available when the device arrives at your location. Otherwise, you need to
-    /// use the Snowball Client to manage the device.</p>
+    /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
     pub fn remote_management(&self) -> std::option::Option<&crate::model::RemoteManagement> {
         self.remote_management.as_ref()
     }
@@ -6347,13 +5711,11 @@ impl std::fmt::Debug for CreateAddressInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJobInput {
-    /// <p>The 39-character job ID for the job that you want to cancel, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The 39-character job ID for the job that you want to cancel, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CancelJobInput {
-    /// <p>The 39-character job ID for the job that you want to cancel, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The 39-character job ID for the job that you want to cancel, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -6370,13 +5732,11 @@ impl std::fmt::Debug for CancelJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelClusterInput {
-    /// <p>The 39-character ID for the cluster that you want to cancel, for example
-    /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl CancelClusterInput {
-    /// <p>The 39-character ID for the cluster that you want to cancel, for example
-    /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }

@@ -64,10 +64,7 @@ pub struct AvailabilityZone {
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
     pub outpost_id: std::option::Option<std::string::String>,
-    /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can
-    /// specify one Elastic IP address per Availability Zone when you create an internal-facing load
-    /// balancer. For internal load balancers, you can specify a private IP address from the IPv4
-    /// range of the subnet.</p>
+    /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
     pub load_balancer_addresses:
         std::option::Option<std::vec::Vec<crate::model::LoadBalancerAddress>>,
 }
@@ -84,10 +81,7 @@ impl AvailabilityZone {
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
-    /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can
-    /// specify one Elastic IP address per Availability Zone when you create an internal-facing load
-    /// balancer. For internal load balancers, you can specify a private IP address from the IPv4
-    /// range of the subnet.</p>
+    /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
     pub fn load_balancer_addresses(
         &self,
     ) -> std::option::Option<&[crate::model::LoadBalancerAddress]> {
@@ -151,23 +145,14 @@ pub mod availability_zone {
         ///
         /// To override the contents of this collection use [`set_load_balancer_addresses`](Self::set_load_balancer_addresses).
         ///
-        /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can
-        /// specify one Elastic IP address per Availability Zone when you create an internal-facing load
-        /// balancer. For internal load balancers, you can specify a private IP address from the IPv4
-        /// range of the subnet.</p>
-        pub fn load_balancer_addresses(
-            mut self,
-            input: impl Into<crate::model::LoadBalancerAddress>,
-        ) -> Self {
+        /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
+        pub fn load_balancer_addresses(mut self, input: crate::model::LoadBalancerAddress) -> Self {
             let mut v = self.load_balancer_addresses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_balancer_addresses = Some(v);
             self
         }
-        /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can
-        /// specify one Elastic IP address per Availability Zone when you create an internal-facing load
-        /// balancer. For internal load balancers, you can specify a private IP address from the IPv4
-        /// range of the subnet.</p>
+        /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
         pub fn set_load_balancer_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LoadBalancerAddress>>,
@@ -199,8 +184,7 @@ impl AvailabilityZone {
 pub struct LoadBalancerAddress {
     /// <p>The static IP address.</p>
     pub ip_address: std::option::Option<std::string::String>,
-    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
-    /// internal-facing load balancer.</p>
+    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.</p>
     pub allocation_id: std::option::Option<std::string::String>,
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
     pub private_i_pv4_address: std::option::Option<std::string::String>,
@@ -212,8 +196,7 @@ impl LoadBalancerAddress {
     pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
-    /// internal-facing load balancer.</p>
+    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.</p>
     pub fn allocation_id(&self) -> std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
@@ -258,14 +241,12 @@ pub mod load_balancer_address {
             self.ip_address = input;
             self
         }
-        /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
-        /// internal-facing load balancer.</p>
+        /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.</p>
         pub fn allocation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.allocation_id = Some(input.into());
             self
         }
-        /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
-        /// internal-facing load balancer.</p>
+        /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internal-facing load balancer.</p>
         pub fn set_allocation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -323,8 +304,7 @@ impl LoadBalancerAddress {
 pub struct SubnetMapping {
     /// <p>The ID of the subnet.</p>
     pub subnet_id: std::option::Option<std::string::String>,
-    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
-    /// internet-facing load balancer.</p>
+    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
     pub allocation_id: std::option::Option<std::string::String>,
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
     pub private_i_pv4_address: std::option::Option<std::string::String>,
@@ -336,8 +316,7 @@ impl SubnetMapping {
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
-    /// internet-facing load balancer.</p>
+    /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
     pub fn allocation_id(&self) -> std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
@@ -382,14 +361,12 @@ pub mod subnet_mapping {
             self.subnet_id = input;
             self
         }
-        /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
-        /// internet-facing load balancer.</p>
+        /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
         pub fn allocation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.allocation_id = Some(input.into());
             self
         }
-        /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
-        /// internet-facing load balancer.</p>
+        /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
         pub fn set_allocation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -449,14 +426,9 @@ pub struct Rule {
     pub rule_arn: std::option::Option<std::string::String>,
     /// <p>The priority.</p>
     pub priority: std::option::Option<std::string::String>,
-    /// <p>The conditions. Each rule can include zero or one of the following conditions:
-    /// <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
-    /// <code>source-ip</code>, and zero or more of the following conditions:
-    /// <code>http-header</code> and <code>query-string</code>.</p>
+    /// <p>The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and <code>query-string</code>.</p>
     pub conditions: std::option::Option<std::vec::Vec<crate::model::RuleCondition>>,
-    /// <p>The actions. Each rule must include exactly one of the following types of actions:
-    /// <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be
-    /// the last action to be performed.</p>
+    /// <p>The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>Indicates whether this is the default rule.</p>
     pub is_default: bool,
@@ -470,16 +442,11 @@ impl Rule {
     pub fn priority(&self) -> std::option::Option<&str> {
         self.priority.as_deref()
     }
-    /// <p>The conditions. Each rule can include zero or one of the following conditions:
-    /// <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
-    /// <code>source-ip</code>, and zero or more of the following conditions:
-    /// <code>http-header</code> and <code>query-string</code>.</p>
+    /// <p>The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and <code>query-string</code>.</p>
     pub fn conditions(&self) -> std::option::Option<&[crate::model::RuleCondition]> {
         self.conditions.as_deref()
     }
-    /// <p>The actions. Each rule must include exactly one of the following types of actions:
-    /// <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be
-    /// the last action to be performed.</p>
+    /// <p>The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.</p>
     pub fn actions(&self) -> std::option::Option<&[crate::model::Action]> {
         self.actions.as_deref()
     }
@@ -536,20 +503,14 @@ pub mod rule {
         ///
         /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
         ///
-        /// <p>The conditions. Each rule can include zero or one of the following conditions:
-        /// <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
-        /// <code>source-ip</code>, and zero or more of the following conditions:
-        /// <code>http-header</code> and <code>query-string</code>.</p>
-        pub fn conditions(mut self, input: impl Into<crate::model::RuleCondition>) -> Self {
+        /// <p>The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and <code>query-string</code>.</p>
+        pub fn conditions(mut self, input: crate::model::RuleCondition) -> Self {
             let mut v = self.conditions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.conditions = Some(v);
             self
         }
-        /// <p>The conditions. Each rule can include zero or one of the following conditions:
-        /// <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
-        /// <code>source-ip</code>, and zero or more of the following conditions:
-        /// <code>http-header</code> and <code>query-string</code>.</p>
+        /// <p>The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and <code>query-string</code>.</p>
         pub fn set_conditions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RuleCondition>>,
@@ -561,18 +522,14 @@ pub mod rule {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>The actions. Each rule must include exactly one of the following types of actions:
-        /// <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be
-        /// the last action to be performed.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        /// <p>The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.</p>
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
-        /// <p>The actions. Each rule must include exactly one of the following types of actions:
-        /// <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be
-        /// the last action to be performed.</p>
+        /// <p>The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>redirect</code>, or <code>fixed-response</code>, and it must be the last action to be performed.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -610,40 +567,26 @@ impl Rule {
 }
 
 /// <p>Information about an action.</p>
-/// <p>Each rule must include exactly one of the following types of actions:
-/// <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it must be
-/// the last action to be performed.</p>
+/// <p>Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Action {
     /// <p>The type of action.</p>
     pub r#type: std::option::Option<crate::model::ActionTypeEnum>,
-    /// <p>The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is
-    /// <code>forward</code> and you want to route to a single target group. To route to one or more
-    /// target groups, use <code>ForwardConfig</code> instead.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is <code>forward</code> and you want to route to a single target group. To route to one or more target groups, use <code>ForwardConfig</code> instead.</p>
     pub target_group_arn: std::option::Option<std::string::String>,
-    /// <p>[HTTPS listeners] Information about an identity provider that is compliant with OpenID
-    /// Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.</p>
+    /// <p>[HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.</p>
     pub authenticate_oidc_config: std::option::Option<crate::model::AuthenticateOidcActionConfig>,
-    /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only
-    /// when <code>Type</code> is <code>authenticate-cognito</code>.</p>
+    /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code> is <code>authenticate-cognito</code>.</p>
     pub authenticate_cognito_config:
         std::option::Option<crate::model::AuthenticateCognitoActionConfig>,
-    /// <p>The order for the action. This value is required for rules with multiple actions. The
-    /// action with the lowest value for order is performed first.</p>
+    /// <p>The order for the action. This value is required for rules with multiple actions. The action with the lowest value for order is performed first.</p>
     pub order: std::option::Option<i32>,
-    /// <p>[Application Load Balancer] Information for creating a redirect action. Specify only when
-    /// <code>Type</code> is <code>redirect</code>.</p>
+    /// <p>[Application Load Balancer] Information for creating a redirect action. Specify only when <code>Type</code> is <code>redirect</code>.</p>
     pub redirect_config: std::option::Option<crate::model::RedirectActionConfig>,
-    /// <p>[Application Load Balancer] Information for creating an action that returns a custom HTTP
-    /// response. Specify only when <code>Type</code> is <code>fixed-response</code>.</p>
+    /// <p>[Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only when <code>Type</code> is <code>fixed-response</code>.</p>
     pub fixed_response_config: std::option::Option<crate::model::FixedResponseActionConfig>,
-    /// <p>Information for creating an action that distributes requests among one or more target
-    /// groups. For Network Load Balancers, you can specify a single target group. Specify only when
-    /// <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code>
-    /// and <code>TargetGroupArn</code>, you can specify only one target group using
-    /// <code>ForwardConfig</code> and it must be the same target group specified in
-    /// <code>TargetGroupArn</code>.</p>
+    /// <p>Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can specify only one target group using <code>ForwardConfig</code> and it must be the same target group specified in <code>TargetGroupArn</code>.</p>
     pub forward_config: std::option::Option<crate::model::ForwardActionConfig>,
 }
 impl Action {
@@ -651,49 +594,37 @@ impl Action {
     pub fn r#type(&self) -> std::option::Option<&crate::model::ActionTypeEnum> {
         self.r#type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is
-    /// <code>forward</code> and you want to route to a single target group. To route to one or more
-    /// target groups, use <code>ForwardConfig</code> instead.</p>
+    /// <p>The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is <code>forward</code> and you want to route to a single target group. To route to one or more target groups, use <code>ForwardConfig</code> instead.</p>
     pub fn target_group_arn(&self) -> std::option::Option<&str> {
         self.target_group_arn.as_deref()
     }
-    /// <p>[HTTPS listeners] Information about an identity provider that is compliant with OpenID
-    /// Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.</p>
+    /// <p>[HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.</p>
     pub fn authenticate_oidc_config(
         &self,
     ) -> std::option::Option<&crate::model::AuthenticateOidcActionConfig> {
         self.authenticate_oidc_config.as_ref()
     }
-    /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only
-    /// when <code>Type</code> is <code>authenticate-cognito</code>.</p>
+    /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code> is <code>authenticate-cognito</code>.</p>
     pub fn authenticate_cognito_config(
         &self,
     ) -> std::option::Option<&crate::model::AuthenticateCognitoActionConfig> {
         self.authenticate_cognito_config.as_ref()
     }
-    /// <p>The order for the action. This value is required for rules with multiple actions. The
-    /// action with the lowest value for order is performed first.</p>
+    /// <p>The order for the action. This value is required for rules with multiple actions. The action with the lowest value for order is performed first.</p>
     pub fn order(&self) -> std::option::Option<i32> {
         self.order
     }
-    /// <p>[Application Load Balancer] Information for creating a redirect action. Specify only when
-    /// <code>Type</code> is <code>redirect</code>.</p>
+    /// <p>[Application Load Balancer] Information for creating a redirect action. Specify only when <code>Type</code> is <code>redirect</code>.</p>
     pub fn redirect_config(&self) -> std::option::Option<&crate::model::RedirectActionConfig> {
         self.redirect_config.as_ref()
     }
-    /// <p>[Application Load Balancer] Information for creating an action that returns a custom HTTP
-    /// response. Specify only when <code>Type</code> is <code>fixed-response</code>.</p>
+    /// <p>[Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only when <code>Type</code> is <code>fixed-response</code>.</p>
     pub fn fixed_response_config(
         &self,
     ) -> std::option::Option<&crate::model::FixedResponseActionConfig> {
         self.fixed_response_config.as_ref()
     }
-    /// <p>Information for creating an action that distributes requests among one or more target
-    /// groups. For Network Load Balancers, you can specify a single target group. Specify only when
-    /// <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code>
-    /// and <code>TargetGroupArn</code>, you can specify only one target group using
-    /// <code>ForwardConfig</code> and it must be the same target group specified in
-    /// <code>TargetGroupArn</code>.</p>
+    /// <p>Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can specify only one target group using <code>ForwardConfig</code> and it must be the same target group specified in <code>TargetGroupArn</code>.</p>
     pub fn forward_config(&self) -> std::option::Option<&crate::model::ForwardActionConfig> {
         self.forward_config.as_ref()
     }
@@ -747,16 +678,12 @@ pub mod action {
             self.r#type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is
-        /// <code>forward</code> and you want to route to a single target group. To route to one or more
-        /// target groups, use <code>ForwardConfig</code> instead.</p>
+        /// <p>The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is <code>forward</code> and you want to route to a single target group. To route to one or more target groups, use <code>ForwardConfig</code> instead.</p>
         pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is
-        /// <code>forward</code> and you want to route to a single target group. To route to one or more
-        /// target groups, use <code>ForwardConfig</code> instead.</p>
+        /// <p>The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code> is <code>forward</code> and you want to route to a single target group. To route to one or more target groups, use <code>ForwardConfig</code> instead.</p>
         pub fn set_target_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -764,8 +691,7 @@ pub mod action {
             self.target_group_arn = input;
             self
         }
-        /// <p>[HTTPS listeners] Information about an identity provider that is compliant with OpenID
-        /// Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.</p>
+        /// <p>[HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.</p>
         pub fn authenticate_oidc_config(
             mut self,
             input: crate::model::AuthenticateOidcActionConfig,
@@ -773,8 +699,7 @@ pub mod action {
             self.authenticate_oidc_config = Some(input);
             self
         }
-        /// <p>[HTTPS listeners] Information about an identity provider that is compliant with OpenID
-        /// Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.</p>
+        /// <p>[HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.</p>
         pub fn set_authenticate_oidc_config(
             mut self,
             input: std::option::Option<crate::model::AuthenticateOidcActionConfig>,
@@ -782,8 +707,7 @@ pub mod action {
             self.authenticate_oidc_config = input;
             self
         }
-        /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only
-        /// when <code>Type</code> is <code>authenticate-cognito</code>.</p>
+        /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code> is <code>authenticate-cognito</code>.</p>
         pub fn authenticate_cognito_config(
             mut self,
             input: crate::model::AuthenticateCognitoActionConfig,
@@ -791,8 +715,7 @@ pub mod action {
             self.authenticate_cognito_config = Some(input);
             self
         }
-        /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only
-        /// when <code>Type</code> is <code>authenticate-cognito</code>.</p>
+        /// <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code> is <code>authenticate-cognito</code>.</p>
         pub fn set_authenticate_cognito_config(
             mut self,
             input: std::option::Option<crate::model::AuthenticateCognitoActionConfig>,
@@ -800,26 +723,22 @@ pub mod action {
             self.authenticate_cognito_config = input;
             self
         }
-        /// <p>The order for the action. This value is required for rules with multiple actions. The
-        /// action with the lowest value for order is performed first.</p>
+        /// <p>The order for the action. This value is required for rules with multiple actions. The action with the lowest value for order is performed first.</p>
         pub fn order(mut self, input: i32) -> Self {
             self.order = Some(input);
             self
         }
-        /// <p>The order for the action. This value is required for rules with multiple actions. The
-        /// action with the lowest value for order is performed first.</p>
+        /// <p>The order for the action. This value is required for rules with multiple actions. The action with the lowest value for order is performed first.</p>
         pub fn set_order(mut self, input: std::option::Option<i32>) -> Self {
             self.order = input;
             self
         }
-        /// <p>[Application Load Balancer] Information for creating a redirect action. Specify only when
-        /// <code>Type</code> is <code>redirect</code>.</p>
+        /// <p>[Application Load Balancer] Information for creating a redirect action. Specify only when <code>Type</code> is <code>redirect</code>.</p>
         pub fn redirect_config(mut self, input: crate::model::RedirectActionConfig) -> Self {
             self.redirect_config = Some(input);
             self
         }
-        /// <p>[Application Load Balancer] Information for creating a redirect action. Specify only when
-        /// <code>Type</code> is <code>redirect</code>.</p>
+        /// <p>[Application Load Balancer] Information for creating a redirect action. Specify only when <code>Type</code> is <code>redirect</code>.</p>
         pub fn set_redirect_config(
             mut self,
             input: std::option::Option<crate::model::RedirectActionConfig>,
@@ -827,8 +746,7 @@ pub mod action {
             self.redirect_config = input;
             self
         }
-        /// <p>[Application Load Balancer] Information for creating an action that returns a custom HTTP
-        /// response. Specify only when <code>Type</code> is <code>fixed-response</code>.</p>
+        /// <p>[Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only when <code>Type</code> is <code>fixed-response</code>.</p>
         pub fn fixed_response_config(
             mut self,
             input: crate::model::FixedResponseActionConfig,
@@ -836,8 +754,7 @@ pub mod action {
             self.fixed_response_config = Some(input);
             self
         }
-        /// <p>[Application Load Balancer] Information for creating an action that returns a custom HTTP
-        /// response. Specify only when <code>Type</code> is <code>fixed-response</code>.</p>
+        /// <p>[Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only when <code>Type</code> is <code>fixed-response</code>.</p>
         pub fn set_fixed_response_config(
             mut self,
             input: std::option::Option<crate::model::FixedResponseActionConfig>,
@@ -845,22 +762,12 @@ pub mod action {
             self.fixed_response_config = input;
             self
         }
-        /// <p>Information for creating an action that distributes requests among one or more target
-        /// groups. For Network Load Balancers, you can specify a single target group. Specify only when
-        /// <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code>
-        /// and <code>TargetGroupArn</code>, you can specify only one target group using
-        /// <code>ForwardConfig</code> and it must be the same target group specified in
-        /// <code>TargetGroupArn</code>.</p>
+        /// <p>Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can specify only one target group using <code>ForwardConfig</code> and it must be the same target group specified in <code>TargetGroupArn</code>.</p>
         pub fn forward_config(mut self, input: crate::model::ForwardActionConfig) -> Self {
             self.forward_config = Some(input);
             self
         }
-        /// <p>Information for creating an action that distributes requests among one or more target
-        /// groups. For Network Load Balancers, you can specify a single target group. Specify only when
-        /// <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code>
-        /// and <code>TargetGroupArn</code>, you can specify only one target group using
-        /// <code>ForwardConfig</code> and it must be the same target group specified in
-        /// <code>TargetGroupArn</code>.</p>
+        /// <p>Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can specify only one target group using <code>ForwardConfig</code> and it must be the same target group specified in <code>TargetGroupArn</code>.</p>
         pub fn set_forward_config(
             mut self,
             input: std::option::Option<crate::model::ForwardActionConfig>,
@@ -894,16 +801,14 @@ impl Action {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForwardActionConfig {
-    /// <p>One or more target groups. For Network Load Balancers, you can specify a single target
-    /// group.</p>
+    /// <p>One or more target groups. For Network Load Balancers, you can specify a single target group.</p>
     pub target_groups: std::option::Option<std::vec::Vec<crate::model::TargetGroupTuple>>,
     /// <p>The target group stickiness for the rule.</p>
     pub target_group_stickiness_config:
         std::option::Option<crate::model::TargetGroupStickinessConfig>,
 }
 impl ForwardActionConfig {
-    /// <p>One or more target groups. For Network Load Balancers, you can specify a single target
-    /// group.</p>
+    /// <p>One or more target groups. For Network Load Balancers, you can specify a single target group.</p>
     pub fn target_groups(&self) -> std::option::Option<&[crate::model::TargetGroupTuple]> {
         self.target_groups.as_deref()
     }
@@ -941,16 +846,14 @@ pub mod forward_action_config {
         ///
         /// To override the contents of this collection use [`set_target_groups`](Self::set_target_groups).
         ///
-        /// <p>One or more target groups. For Network Load Balancers, you can specify a single target
-        /// group.</p>
-        pub fn target_groups(mut self, input: impl Into<crate::model::TargetGroupTuple>) -> Self {
+        /// <p>One or more target groups. For Network Load Balancers, you can specify a single target group.</p>
+        pub fn target_groups(mut self, input: crate::model::TargetGroupTuple) -> Self {
             let mut v = self.target_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_groups = Some(v);
             self
         }
-        /// <p>One or more target groups. For Network Load Balancers, you can specify a single target
-        /// group.</p>
+        /// <p>One or more target groups. For Network Load Balancers, you can specify a single target group.</p>
         pub fn set_target_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetGroupTuple>>,
@@ -996,8 +899,7 @@ impl ForwardActionConfig {
 pub struct TargetGroupStickinessConfig {
     /// <p>Indicates whether target group stickiness is enabled.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>The time period, in seconds, during which requests from a client should be routed to the
-    /// same target group. The range is 1-604800 seconds (7 days).</p>
+    /// <p>The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).</p>
     pub duration_seconds: std::option::Option<i32>,
 }
 impl TargetGroupStickinessConfig {
@@ -1005,8 +907,7 @@ impl TargetGroupStickinessConfig {
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
-    /// <p>The time period, in seconds, during which requests from a client should be routed to the
-    /// same target group. The range is 1-604800 seconds (7 days).</p>
+    /// <p>The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).</p>
     pub fn duration_seconds(&self) -> std::option::Option<i32> {
         self.duration_seconds
     }
@@ -1039,14 +940,12 @@ pub mod target_group_stickiness_config {
             self.enabled = input;
             self
         }
-        /// <p>The time period, in seconds, during which requests from a client should be routed to the
-        /// same target group. The range is 1-604800 seconds (7 days).</p>
+        /// <p>The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).</p>
         pub fn duration_seconds(mut self, input: i32) -> Self {
             self.duration_seconds = Some(input);
             self
         }
-        /// <p>The time period, in seconds, during which requests from a client should be routed to the
-        /// same target group. The range is 1-604800 seconds (7 days).</p>
+        /// <p>The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_seconds = input;
             self
@@ -1067,8 +966,7 @@ impl TargetGroupStickinessConfig {
     }
 }
 
-/// <p>Information about how traffic will be distributed between multiple target groups in a
-/// forward rule.</p>
+/// <p>Information about how traffic will be distributed between multiple target groups in a forward rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetGroupTuple {
@@ -1153,8 +1051,7 @@ pub struct FixedResponseActionConfig {
     /// <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
     pub status_code: std::option::Option<std::string::String>,
     /// <p>The content type.</p>
-    /// <p>Valid Values: text/plain | text/css | text/html | application/javascript |
-    /// application/json</p>
+    /// <p>Valid Values: text/plain | text/css | text/html | application/javascript | application/json</p>
     pub content_type: std::option::Option<std::string::String>,
 }
 impl FixedResponseActionConfig {
@@ -1167,8 +1064,7 @@ impl FixedResponseActionConfig {
         self.status_code.as_deref()
     }
     /// <p>The content type.</p>
-    /// <p>Valid Values: text/plain | text/css | text/html | application/javascript |
-    /// application/json</p>
+    /// <p>Valid Values: text/plain | text/css | text/html | application/javascript | application/json</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -1214,15 +1110,13 @@ pub mod fixed_response_action_config {
             self
         }
         /// <p>The content type.</p>
-        /// <p>Valid Values: text/plain | text/css | text/html | application/javascript |
-        /// application/json</p>
+        /// <p>Valid Values: text/plain | text/css | text/html | application/javascript | application/json</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
         /// <p>The content type.</p>
-        /// <p>Valid Values: text/plain | text/css | text/html | application/javascript |
-        /// application/json</p>
+        /// <p>Valid Values: text/plain | text/css | text/html | application/javascript | application/json</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -1245,54 +1139,34 @@ impl FixedResponseActionConfig {
 }
 
 /// <p>Information about a redirect action.</p>
-/// <p>A URI consists of the following components: protocol://hostname:port/path?query. You must
-/// modify at least one of the following components to avoid a redirect loop: protocol, hostname,
-/// port, or path. Any components that you do not modify retain their original values.</p>
+/// <p>A URI consists of the following components: protocol://hostname:port/path?query. You must modify at least one of the following components to avoid a redirect loop: protocol, hostname, port, or path. Any components that you do not modify retain their original values.</p>
 /// <p>You can reuse URI components using the following reserved keywords:</p>
 /// <ul>
-/// <li>
-/// <p>#{protocol}</p>
-/// </li>
-/// <li>
-/// <p>#{host}</p>
-/// </li>
-/// <li>
-/// <p>#{port}</p>
-/// </li>
-/// <li>
-/// <p>#{path} (the leading "/" is removed)</p>
-/// </li>
-/// <li>
-/// <p>#{query}</p>
-/// </li>
+/// <li> <p>#{protocol}</p> </li>
+/// <li> <p>#{host}</p> </li>
+/// <li> <p>#{port}</p> </li>
+/// <li> <p>#{path} (the leading "/" is removed)</p> </li>
+/// <li> <p>#{query}</p> </li>
 /// </ul>
-/// <p>For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}",
-/// or the query to "#{query}&value=xyz".</p>
+/// <p>For example, you can change the path to "/new/#{path}", the hostname to "example.#{host}", or the query to "#{query}&amp;value=xyz".</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedirectActionConfig {
-    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP,
-    /// HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
+    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
     pub protocol: std::option::Option<std::string::String>,
     /// <p>The port. You can specify a value from 1 to 65535 or #{port}.</p>
     pub port: std::option::Option<std::string::String>,
-    /// <p>The hostname. This component is not percent-encoded. The hostname can contain
-    /// #{host}.</p>
+    /// <p>The hostname. This component is not percent-encoded. The hostname can contain #{host}.</p>
     pub host: std::option::Option<std::string::String>,
-    /// <p>The absolute path, starting with the leading "/". This component is not percent-encoded.
-    /// The path can contain #{host}, #{path}, and #{port}.</p>
+    /// <p>The absolute path, starting with the leading "/". This component is not percent-encoded. The path can contain #{host}, #{path}, and #{port}.</p>
     pub path: std::option::Option<std::string::String>,
-    /// <p>The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include
-    /// the leading "?", as it is automatically added. You can specify any of the reserved
-    /// keywords.</p>
+    /// <p>The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include the leading "?", as it is automatically added. You can specify any of the reserved keywords.</p>
     pub query: std::option::Option<std::string::String>,
-    /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP
-    /// 302).</p>
+    /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).</p>
     pub status_code: std::option::Option<crate::model::RedirectActionStatusCodeEnum>,
 }
 impl RedirectActionConfig {
-    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP,
-    /// HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
+    /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
     pub fn protocol(&self) -> std::option::Option<&str> {
         self.protocol.as_deref()
     }
@@ -1300,24 +1174,19 @@ impl RedirectActionConfig {
     pub fn port(&self) -> std::option::Option<&str> {
         self.port.as_deref()
     }
-    /// <p>The hostname. This component is not percent-encoded. The hostname can contain
-    /// #{host}.</p>
+    /// <p>The hostname. This component is not percent-encoded. The hostname can contain #{host}.</p>
     pub fn host(&self) -> std::option::Option<&str> {
         self.host.as_deref()
     }
-    /// <p>The absolute path, starting with the leading "/". This component is not percent-encoded.
-    /// The path can contain #{host}, #{path}, and #{port}.</p>
+    /// <p>The absolute path, starting with the leading "/". This component is not percent-encoded. The path can contain #{host}, #{path}, and #{port}.</p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
-    /// <p>The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include
-    /// the leading "?", as it is automatically added. You can specify any of the reserved
-    /// keywords.</p>
+    /// <p>The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include the leading "?", as it is automatically added. You can specify any of the reserved keywords.</p>
     pub fn query(&self) -> std::option::Option<&str> {
         self.query.as_deref()
     }
-    /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP
-    /// 302).</p>
+    /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).</p>
     pub fn status_code(&self) -> std::option::Option<&crate::model::RedirectActionStatusCodeEnum> {
         self.status_code.as_ref()
     }
@@ -1348,14 +1217,12 @@ pub mod redirect_action_config {
         pub(crate) status_code: std::option::Option<crate::model::RedirectActionStatusCodeEnum>,
     }
     impl Builder {
-        /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP,
-        /// HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
+        /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
         pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
             self.protocol = Some(input.into());
             self
         }
-        /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP,
-        /// HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
+        /// <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.</p>
         pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.protocol = input;
             self
@@ -1370,52 +1237,42 @@ pub mod redirect_action_config {
             self.port = input;
             self
         }
-        /// <p>The hostname. This component is not percent-encoded. The hostname can contain
-        /// #{host}.</p>
+        /// <p>The hostname. This component is not percent-encoded. The hostname can contain #{host}.</p>
         pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
             self.host = Some(input.into());
             self
         }
-        /// <p>The hostname. This component is not percent-encoded. The hostname can contain
-        /// #{host}.</p>
+        /// <p>The hostname. This component is not percent-encoded. The hostname can contain #{host}.</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host = input;
             self
         }
-        /// <p>The absolute path, starting with the leading "/". This component is not percent-encoded.
-        /// The path can contain #{host}, #{path}, and #{port}.</p>
+        /// <p>The absolute path, starting with the leading "/". This component is not percent-encoded. The path can contain #{host}, #{path}, and #{port}.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.path = Some(input.into());
             self
         }
-        /// <p>The absolute path, starting with the leading "/". This component is not percent-encoded.
-        /// The path can contain #{host}, #{path}, and #{port}.</p>
+        /// <p>The absolute path, starting with the leading "/". This component is not percent-encoded. The path can contain #{host}, #{path}, and #{port}.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
-        /// <p>The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include
-        /// the leading "?", as it is automatically added. You can specify any of the reserved
-        /// keywords.</p>
+        /// <p>The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include the leading "?", as it is automatically added. You can specify any of the reserved keywords.</p>
         pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
             self.query = Some(input.into());
             self
         }
-        /// <p>The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include
-        /// the leading "?", as it is automatically added. You can specify any of the reserved
-        /// keywords.</p>
+        /// <p>The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include the leading "?", as it is automatically added. You can specify any of the reserved keywords.</p>
         pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query = input;
             self
         }
-        /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP
-        /// 302).</p>
+        /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).</p>
         pub fn status_code(mut self, input: crate::model::RedirectActionStatusCodeEnum) -> Self {
             self.status_code = Some(input);
             self
         }
-        /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP
-        /// 302).</p>
+        /// <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::RedirectActionStatusCodeEnum>,
@@ -1498,8 +1355,7 @@ impl AsRef<str> for RedirectActionStatusCodeEnum {
     }
 }
 
-/// <p>Request parameters to use when integrating with Amazon Cognito to authenticate
-/// users.</p>
+/// <p>Request parameters to use when integrating with Amazon Cognito to authenticate users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthenticateCognitoActionConfig {
@@ -1509,33 +1365,21 @@ pub struct AuthenticateCognitoActionConfig {
     pub user_pool_client_id: std::option::Option<std::string::String>,
     /// <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.</p>
     pub user_pool_domain: std::option::Option<std::string::String>,
-    /// <p>The name of the cookie used to maintain session information. The default is
-    /// AWSELBAuthSessionCookie.</p>
+    /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
     pub session_cookie_name: std::option::Option<std::string::String>,
-    /// <p>The set of user claims to be requested from the IdP. The default is
-    /// <code>openid</code>.</p>
-    /// <p>To verify which scope values your IdP supports and how to separate multiple values, see
-    /// the documentation for your IdP.</p>
+    /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
+    /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
     pub scope: std::option::Option<std::string::String>,
-    /// <p>The maximum duration of the authentication session, in seconds. The default is 604800
-    /// seconds (7 days).</p>
+    /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
     pub session_timeout: std::option::Option<i64>,
-    /// <p>The query parameters (up to 10) to include in the redirect request to the authorization
-    /// endpoint.</p>
+    /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     pub authentication_request_extra_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p>
-    /// </li>
-    /// <li>
-    /// <p>allow<code></code> - Allow the request to be forwarded to the target.</p>
-    /// </li>
-    /// <li>
-    /// <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is
-    /// the default value.</p>
-    /// </li>
+    /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
+    /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
+    /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
     pub on_unauthenticated_request:
         std::option::Option<crate::model::AuthenticateCognitoActionConditionalBehaviorEnum>,
@@ -1553,25 +1397,20 @@ impl AuthenticateCognitoActionConfig {
     pub fn user_pool_domain(&self) -> std::option::Option<&str> {
         self.user_pool_domain.as_deref()
     }
-    /// <p>The name of the cookie used to maintain session information. The default is
-    /// AWSELBAuthSessionCookie.</p>
+    /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
     pub fn session_cookie_name(&self) -> std::option::Option<&str> {
         self.session_cookie_name.as_deref()
     }
-    /// <p>The set of user claims to be requested from the IdP. The default is
-    /// <code>openid</code>.</p>
-    /// <p>To verify which scope values your IdP supports and how to separate multiple values, see
-    /// the documentation for your IdP.</p>
+    /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
+    /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
     pub fn scope(&self) -> std::option::Option<&str> {
         self.scope.as_deref()
     }
-    /// <p>The maximum duration of the authentication session, in seconds. The default is 604800
-    /// seconds (7 days).</p>
+    /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
     pub fn session_timeout(&self) -> std::option::Option<i64> {
         self.session_timeout
     }
-    /// <p>The query parameters (up to 10) to include in the redirect request to the authorization
-    /// endpoint.</p>
+    /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     pub fn authentication_request_extra_params(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1580,16 +1419,9 @@ impl AuthenticateCognitoActionConfig {
     }
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p>
-    /// </li>
-    /// <li>
-    /// <p>allow<code></code> - Allow the request to be forwarded to the target.</p>
-    /// </li>
-    /// <li>
-    /// <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is
-    /// the default value.</p>
-    /// </li>
+    /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
+    /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
+    /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
     pub fn on_unauthenticated_request(
         &self,
@@ -1675,14 +1507,12 @@ pub mod authenticate_cognito_action_config {
             self.user_pool_domain = input;
             self
         }
-        /// <p>The name of the cookie used to maintain session information. The default is
-        /// AWSELBAuthSessionCookie.</p>
+        /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
         pub fn session_cookie_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_cookie_name = Some(input.into());
             self
         }
-        /// <p>The name of the cookie used to maintain session information. The default is
-        /// AWSELBAuthSessionCookie.</p>
+        /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
         pub fn set_session_cookie_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1690,30 +1520,24 @@ pub mod authenticate_cognito_action_config {
             self.session_cookie_name = input;
             self
         }
-        /// <p>The set of user claims to be requested from the IdP. The default is
-        /// <code>openid</code>.</p>
-        /// <p>To verify which scope values your IdP supports and how to separate multiple values, see
-        /// the documentation for your IdP.</p>
+        /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
+        /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
         pub fn scope(mut self, input: impl Into<std::string::String>) -> Self {
             self.scope = Some(input.into());
             self
         }
-        /// <p>The set of user claims to be requested from the IdP. The default is
-        /// <code>openid</code>.</p>
-        /// <p>To verify which scope values your IdP supports and how to separate multiple values, see
-        /// the documentation for your IdP.</p>
+        /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
+        /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
         pub fn set_scope(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.scope = input;
             self
         }
-        /// <p>The maximum duration of the authentication session, in seconds. The default is 604800
-        /// seconds (7 days).</p>
+        /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
         pub fn session_timeout(mut self, input: i64) -> Self {
             self.session_timeout = Some(input);
             self
         }
-        /// <p>The maximum duration of the authentication session, in seconds. The default is 604800
-        /// seconds (7 days).</p>
+        /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
         pub fn set_session_timeout(mut self, input: std::option::Option<i64>) -> Self {
             self.session_timeout = input;
             self
@@ -1722,8 +1546,7 @@ pub mod authenticate_cognito_action_config {
         ///
         /// To override the contents of this collection use [`set_authentication_request_extra_params`](Self::set_authentication_request_extra_params).
         ///
-        /// <p>The query parameters (up to 10) to include in the redirect request to the authorization
-        /// endpoint.</p>
+        /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
         pub fn authentication_request_extra_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -1734,8 +1557,7 @@ pub mod authenticate_cognito_action_config {
             self.authentication_request_extra_params = Some(hash_map);
             self
         }
-        /// <p>The query parameters (up to 10) to include in the redirect request to the authorization
-        /// endpoint.</p>
+        /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
         pub fn set_authentication_request_extra_params(
             mut self,
             input: std::option::Option<
@@ -1747,16 +1569,9 @@ pub mod authenticate_cognito_action_config {
         }
         /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p>
-        /// </li>
-        /// <li>
-        /// <p>allow<code></code> - Allow the request to be forwarded to the target.</p>
-        /// </li>
-        /// <li>
-        /// <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is
-        /// the default value.</p>
-        /// </li>
+        /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
+        /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
+        /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
         /// </ul>
         pub fn on_unauthenticated_request(
             mut self,
@@ -1767,16 +1582,9 @@ pub mod authenticate_cognito_action_config {
         }
         /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p>
-        /// </li>
-        /// <li>
-        /// <p>allow<code></code> - Allow the request to be forwarded to the target.</p>
-        /// </li>
-        /// <li>
-        /// <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is
-        /// the default value.</p>
-        /// </li>
+        /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
+        /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
+        /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
         /// </ul>
         pub fn set_on_unauthenticated_request(
             mut self,
@@ -1868,81 +1676,57 @@ impl AsRef<str> for AuthenticateCognitoActionConditionalBehaviorEnum {
     }
 }
 
-/// <p>Request parameters when using an identity provider (IdP) that is compliant with OpenID
-/// Connect (OIDC) to authenticate users.</p>
+/// <p>Request parameters when using an identity provider (IdP) that is compliant with OpenID Connect (OIDC) to authenticate users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthenticateOidcActionConfig {
-    /// <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS
-    /// protocol, the domain, and the path.</p>
+    /// <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
     pub issuer: std::option::Option<std::string::String>,
-    /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS
-    /// protocol, the domain, and the path.</p>
+    /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
     pub authorization_endpoint: std::option::Option<std::string::String>,
-    /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the
-    /// domain, and the path.</p>
+    /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
     pub token_endpoint: std::option::Option<std::string::String>,
-    /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol,
-    /// the domain, and the path.</p>
+    /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
     pub user_info_endpoint: std::option::Option<std::string::String>,
     /// <p>The OAuth 2.0 client identifier.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you
-    /// are modifying a rule, you can omit this parameter if you set
-    /// <code>UseExistingClientSecret</code> to true.</p>
+    /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule, you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.</p>
     pub client_secret: std::option::Option<std::string::String>,
-    /// <p>The name of the cookie used to maintain session information. The default is
-    /// AWSELBAuthSessionCookie.</p>
+    /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
     pub session_cookie_name: std::option::Option<std::string::String>,
-    /// <p>The set of user claims to be requested from the IdP. The default is
-    /// <code>openid</code>.</p>
-    /// <p>To verify which scope values your IdP supports and how to separate multiple values, see
-    /// the documentation for your IdP.</p>
+    /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
+    /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
     pub scope: std::option::Option<std::string::String>,
-    /// <p>The maximum duration of the authentication session, in seconds. The default is 604800
-    /// seconds (7 days).</p>
+    /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
     pub session_timeout: std::option::Option<i64>,
-    /// <p>The query parameters (up to 10) to include in the redirect request to the authorization
-    /// endpoint.</p>
+    /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     pub authentication_request_extra_params:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p>
-    /// </li>
-    /// <li>
-    /// <p>allow<code></code> - Allow the request to be forwarded to the target.</p>
-    /// </li>
-    /// <li>
-    /// <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is
-    /// the default value.</p>
-    /// </li>
+    /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
+    /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
+    /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
     pub on_unauthenticated_request:
         std::option::Option<crate::model::AuthenticateOidcActionConditionalBehaviorEnum>,
-    /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are
-    /// creating a rule, you can omit this parameter or set it to false.</p>
+    /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can omit this parameter or set it to false.</p>
     pub use_existing_client_secret: std::option::Option<bool>,
 }
 impl AuthenticateOidcActionConfig {
-    /// <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS
-    /// protocol, the domain, and the path.</p>
+    /// <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
     pub fn issuer(&self) -> std::option::Option<&str> {
         self.issuer.as_deref()
     }
-    /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS
-    /// protocol, the domain, and the path.</p>
+    /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
     pub fn authorization_endpoint(&self) -> std::option::Option<&str> {
         self.authorization_endpoint.as_deref()
     }
-    /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the
-    /// domain, and the path.</p>
+    /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
     pub fn token_endpoint(&self) -> std::option::Option<&str> {
         self.token_endpoint.as_deref()
     }
-    /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol,
-    /// the domain, and the path.</p>
+    /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
     pub fn user_info_endpoint(&self) -> std::option::Option<&str> {
         self.user_info_endpoint.as_deref()
     }
@@ -1950,31 +1734,24 @@ impl AuthenticateOidcActionConfig {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you
-    /// are modifying a rule, you can omit this parameter if you set
-    /// <code>UseExistingClientSecret</code> to true.</p>
+    /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule, you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.</p>
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
-    /// <p>The name of the cookie used to maintain session information. The default is
-    /// AWSELBAuthSessionCookie.</p>
+    /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
     pub fn session_cookie_name(&self) -> std::option::Option<&str> {
         self.session_cookie_name.as_deref()
     }
-    /// <p>The set of user claims to be requested from the IdP. The default is
-    /// <code>openid</code>.</p>
-    /// <p>To verify which scope values your IdP supports and how to separate multiple values, see
-    /// the documentation for your IdP.</p>
+    /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
+    /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
     pub fn scope(&self) -> std::option::Option<&str> {
         self.scope.as_deref()
     }
-    /// <p>The maximum duration of the authentication session, in seconds. The default is 604800
-    /// seconds (7 days).</p>
+    /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
     pub fn session_timeout(&self) -> std::option::Option<i64> {
         self.session_timeout
     }
-    /// <p>The query parameters (up to 10) to include in the redirect request to the authorization
-    /// endpoint.</p>
+    /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     pub fn authentication_request_extra_params(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1983,24 +1760,16 @@ impl AuthenticateOidcActionConfig {
     }
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p>
-    /// </li>
-    /// <li>
-    /// <p>allow<code></code> - Allow the request to be forwarded to the target.</p>
-    /// </li>
-    /// <li>
-    /// <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is
-    /// the default value.</p>
-    /// </li>
+    /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
+    /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
+    /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
     /// </ul>
     pub fn on_unauthenticated_request(
         &self,
     ) -> std::option::Option<&crate::model::AuthenticateOidcActionConditionalBehaviorEnum> {
         self.on_unauthenticated_request.as_ref()
     }
-    /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are
-    /// creating a rule, you can omit this parameter or set it to false.</p>
+    /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can omit this parameter or set it to false.</p>
     pub fn use_existing_client_secret(&self) -> std::option::Option<bool> {
         self.use_existing_client_secret
     }
@@ -2055,26 +1824,22 @@ pub mod authenticate_oidc_action_config {
         pub(crate) use_existing_client_secret: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS
-        /// protocol, the domain, and the path.</p>
+        /// <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
         pub fn issuer(mut self, input: impl Into<std::string::String>) -> Self {
             self.issuer = Some(input.into());
             self
         }
-        /// <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS
-        /// protocol, the domain, and the path.</p>
+        /// <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
         pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.issuer = input;
             self
         }
-        /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS
-        /// protocol, the domain, and the path.</p>
+        /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
         pub fn authorization_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorization_endpoint = Some(input.into());
             self
         }
-        /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS
-        /// protocol, the domain, and the path.</p>
+        /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
         pub fn set_authorization_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2082,14 +1847,12 @@ pub mod authenticate_oidc_action_config {
             self.authorization_endpoint = input;
             self
         }
-        /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the
-        /// domain, and the path.</p>
+        /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
         pub fn token_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.token_endpoint = Some(input.into());
             self
         }
-        /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the
-        /// domain, and the path.</p>
+        /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
         pub fn set_token_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2097,14 +1860,12 @@ pub mod authenticate_oidc_action_config {
             self.token_endpoint = input;
             self
         }
-        /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol,
-        /// the domain, and the path.</p>
+        /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
         pub fn user_info_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_info_endpoint = Some(input.into());
             self
         }
-        /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol,
-        /// the domain, and the path.</p>
+        /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
         pub fn set_user_info_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2122,16 +1883,12 @@ pub mod authenticate_oidc_action_config {
             self.client_id = input;
             self
         }
-        /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you
-        /// are modifying a rule, you can omit this parameter if you set
-        /// <code>UseExistingClientSecret</code> to true.</p>
+        /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule, you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.</p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_secret = Some(input.into());
             self
         }
-        /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you
-        /// are modifying a rule, you can omit this parameter if you set
-        /// <code>UseExistingClientSecret</code> to true.</p>
+        /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule, you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.</p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2139,14 +1896,12 @@ pub mod authenticate_oidc_action_config {
             self.client_secret = input;
             self
         }
-        /// <p>The name of the cookie used to maintain session information. The default is
-        /// AWSELBAuthSessionCookie.</p>
+        /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
         pub fn session_cookie_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_cookie_name = Some(input.into());
             self
         }
-        /// <p>The name of the cookie used to maintain session information. The default is
-        /// AWSELBAuthSessionCookie.</p>
+        /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
         pub fn set_session_cookie_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2154,30 +1909,24 @@ pub mod authenticate_oidc_action_config {
             self.session_cookie_name = input;
             self
         }
-        /// <p>The set of user claims to be requested from the IdP. The default is
-        /// <code>openid</code>.</p>
-        /// <p>To verify which scope values your IdP supports and how to separate multiple values, see
-        /// the documentation for your IdP.</p>
+        /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
+        /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
         pub fn scope(mut self, input: impl Into<std::string::String>) -> Self {
             self.scope = Some(input.into());
             self
         }
-        /// <p>The set of user claims to be requested from the IdP. The default is
-        /// <code>openid</code>.</p>
-        /// <p>To verify which scope values your IdP supports and how to separate multiple values, see
-        /// the documentation for your IdP.</p>
+        /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
+        /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
         pub fn set_scope(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.scope = input;
             self
         }
-        /// <p>The maximum duration of the authentication session, in seconds. The default is 604800
-        /// seconds (7 days).</p>
+        /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
         pub fn session_timeout(mut self, input: i64) -> Self {
             self.session_timeout = Some(input);
             self
         }
-        /// <p>The maximum duration of the authentication session, in seconds. The default is 604800
-        /// seconds (7 days).</p>
+        /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
         pub fn set_session_timeout(mut self, input: std::option::Option<i64>) -> Self {
             self.session_timeout = input;
             self
@@ -2186,8 +1935,7 @@ pub mod authenticate_oidc_action_config {
         ///
         /// To override the contents of this collection use [`set_authentication_request_extra_params`](Self::set_authentication_request_extra_params).
         ///
-        /// <p>The query parameters (up to 10) to include in the redirect request to the authorization
-        /// endpoint.</p>
+        /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
         pub fn authentication_request_extra_params(
             mut self,
             k: impl Into<std::string::String>,
@@ -2198,8 +1946,7 @@ pub mod authenticate_oidc_action_config {
             self.authentication_request_extra_params = Some(hash_map);
             self
         }
-        /// <p>The query parameters (up to 10) to include in the redirect request to the authorization
-        /// endpoint.</p>
+        /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
         pub fn set_authentication_request_extra_params(
             mut self,
             input: std::option::Option<
@@ -2211,16 +1958,9 @@ pub mod authenticate_oidc_action_config {
         }
         /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p>
-        /// </li>
-        /// <li>
-        /// <p>allow<code></code> - Allow the request to be forwarded to the target.</p>
-        /// </li>
-        /// <li>
-        /// <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is
-        /// the default value.</p>
-        /// </li>
+        /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
+        /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
+        /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
         /// </ul>
         pub fn on_unauthenticated_request(
             mut self,
@@ -2231,16 +1971,9 @@ pub mod authenticate_oidc_action_config {
         }
         /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p>
-        /// </li>
-        /// <li>
-        /// <p>allow<code></code> - Allow the request to be forwarded to the target.</p>
-        /// </li>
-        /// <li>
-        /// <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is
-        /// the default value.</p>
-        /// </li>
+        /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
+        /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
+        /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
         /// </ul>
         pub fn set_on_unauthenticated_request(
             mut self,
@@ -2249,14 +1982,12 @@ pub mod authenticate_oidc_action_config {
             self.on_unauthenticated_request = input;
             self
         }
-        /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are
-        /// creating a rule, you can omit this parameter or set it to false.</p>
+        /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can omit this parameter or set it to false.</p>
         pub fn use_existing_client_secret(mut self, input: bool) -> Self {
             self.use_existing_client_secret = Some(input);
             self
         }
-        /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are
-        /// creating a rule, you can omit this parameter or set it to false.</p>
+        /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can omit this parameter or set it to false.</p>
         pub fn set_use_existing_client_secret(mut self, input: std::option::Option<bool>) -> Self {
             self.use_existing_client_secret = input;
             self
@@ -2420,229 +2151,114 @@ impl AsRef<str> for ActionTypeEnum {
 }
 
 /// <p>Information about a condition for a rule.</p>
-/// <p>Each rule can optionally include up to one of each of the following conditions:
-/// <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
-/// <code>source-ip</code>. Each rule can also optionally include one or more of each of the
-/// following conditions: <code>http-header</code> and <code>query-string</code>.</p>
+/// <p>Each rule can optionally include up to one of each of the following conditions: <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>. Each rule can also optionally include one or more of each of the following conditions: <code>http-header</code> and <code>query-string</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RuleCondition {
     /// <p>The field in the HTTP request. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>http-header</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>http-request-method</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>host-header</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>path-pattern</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>query-string</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>source-ip</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>http-header</code> </p> </li>
+    /// <li> <p> <code>http-request-method</code> </p> </li>
+    /// <li> <p> <code>host-header</code> </p> </li>
+    /// <li> <p> <code>path-pattern</code> </p> </li>
+    /// <li> <p> <code>query-string</code> </p> </li>
+    /// <li> <p> <code>source-ip</code> </p> </li>
     /// </ul>
     pub field: std::option::Option<std::string::String>,
-    /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or
-    /// <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path
-    /// patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
-    /// <p>If <code>Field</code> is <code>host-header</code> and you are not using
-    /// <code>HostHeaderConfig</code>, you can specify a single host name (for example,
-    /// my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128
-    /// characters in length, and can contain any of the following characters.</p>
+    /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
+    /// <p>If <code>Field</code> is <code>host-header</code> and you are not using <code>HostHeaderConfig</code>, you can specify a single host name (for example, my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
     /// <ul>
-    /// <li>
-    /// <p>A-Z, a-z, 0-9</p>
-    /// </li>
-    /// <li>
-    /// <p>- .</p>
-    /// </li>
-    /// <li>
-    /// <p>* (matches 0 or more characters)</p>
-    /// </li>
-    /// <li>
-    /// <p>? (matches exactly 1 character)</p>
-    /// </li>
+    /// <li> <p>A-Z, a-z, 0-9</p> </li>
+    /// <li> <p>- .</p> </li>
+    /// <li> <p>* (matches 0 or more characters)</p> </li>
+    /// <li> <p>? (matches exactly 1 character)</p> </li>
     /// </ul>
-    /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using
-    /// <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*)
-    /// in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in
-    /// length, and can contain any of the following characters.</p>
+    /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*) in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
     /// <ul>
-    /// <li>
-    /// <p>A-Z, a-z, 0-9</p>
-    /// </li>
-    /// <li>
-    /// <p>_ - . $ / ~ " ' @ : +</p>
-    /// </li>
-    /// <li>
-    /// <p>& (using &amp;)</p>
-    /// </li>
-    /// <li>
-    /// <p>* (matches 0 or more characters)</p>
-    /// </li>
-    /// <li>
-    /// <p>? (matches exactly 1 character)</p>
-    /// </li>
+    /// <li> <p>A-Z, a-z, 0-9</p> </li>
+    /// <li> <p>_ - . $ / ~ " ' @ : +</p> </li>
+    /// <li> <p>&amp; (using &amp;)</p> </li>
+    /// <li> <p>* (matches 0 or more characters)</p> </li>
+    /// <li> <p>? (matches exactly 1 character)</p> </li>
     /// </ul>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Information for a host header condition. Specify only when <code>Field</code> is
-    /// <code>host-header</code>.</p>
+    /// <p>Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.</p>
     pub host_header_config: std::option::Option<crate::model::HostHeaderConditionConfig>,
-    /// <p>Information for a path pattern condition. Specify only when <code>Field</code> is
-    /// <code>path-pattern</code>.</p>
+    /// <p>Information for a path pattern condition. Specify only when <code>Field</code> is <code>path-pattern</code>.</p>
     pub path_pattern_config: std::option::Option<crate::model::PathPatternConditionConfig>,
-    /// <p>Information for an HTTP header condition. Specify only when <code>Field</code> is
-    /// <code>http-header</code>.</p>
+    /// <p>Information for an HTTP header condition. Specify only when <code>Field</code> is <code>http-header</code>.</p>
     pub http_header_config: std::option::Option<crate::model::HttpHeaderConditionConfig>,
-    /// <p>Information for a query string condition. Specify only when <code>Field</code> is
-    /// <code>query-string</code>.</p>
+    /// <p>Information for a query string condition. Specify only when <code>Field</code> is <code>query-string</code>.</p>
     pub query_string_config: std::option::Option<crate::model::QueryStringConditionConfig>,
-    /// <p>Information for an HTTP method condition. Specify only when <code>Field</code> is
-    /// <code>http-request-method</code>.</p>
+    /// <p>Information for an HTTP method condition. Specify only when <code>Field</code> is <code>http-request-method</code>.</p>
     pub http_request_method_config:
         std::option::Option<crate::model::HttpRequestMethodConditionConfig>,
-    /// <p>Information for a source IP condition. Specify only when <code>Field</code> is
-    /// <code>source-ip</code>.</p>
+    /// <p>Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.</p>
     pub source_ip_config: std::option::Option<crate::model::SourceIpConditionConfig>,
 }
 impl RuleCondition {
     /// <p>The field in the HTTP request. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>http-header</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>http-request-method</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>host-header</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>path-pattern</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>query-string</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>source-ip</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>http-header</code> </p> </li>
+    /// <li> <p> <code>http-request-method</code> </p> </li>
+    /// <li> <p> <code>host-header</code> </p> </li>
+    /// <li> <p> <code>path-pattern</code> </p> </li>
+    /// <li> <p> <code>query-string</code> </p> </li>
+    /// <li> <p> <code>source-ip</code> </p> </li>
     /// </ul>
     pub fn field(&self) -> std::option::Option<&str> {
         self.field.as_deref()
     }
-    /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or
-    /// <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path
-    /// patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
-    /// <p>If <code>Field</code> is <code>host-header</code> and you are not using
-    /// <code>HostHeaderConfig</code>, you can specify a single host name (for example,
-    /// my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128
-    /// characters in length, and can contain any of the following characters.</p>
+    /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
+    /// <p>If <code>Field</code> is <code>host-header</code> and you are not using <code>HostHeaderConfig</code>, you can specify a single host name (for example, my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
     /// <ul>
-    /// <li>
-    /// <p>A-Z, a-z, 0-9</p>
-    /// </li>
-    /// <li>
-    /// <p>- .</p>
-    /// </li>
-    /// <li>
-    /// <p>* (matches 0 or more characters)</p>
-    /// </li>
-    /// <li>
-    /// <p>? (matches exactly 1 character)</p>
-    /// </li>
+    /// <li> <p>A-Z, a-z, 0-9</p> </li>
+    /// <li> <p>- .</p> </li>
+    /// <li> <p>* (matches 0 or more characters)</p> </li>
+    /// <li> <p>? (matches exactly 1 character)</p> </li>
     /// </ul>
-    /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using
-    /// <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*)
-    /// in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in
-    /// length, and can contain any of the following characters.</p>
+    /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*) in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
     /// <ul>
-    /// <li>
-    /// <p>A-Z, a-z, 0-9</p>
-    /// </li>
-    /// <li>
-    /// <p>_ - . $ / ~ " ' @ : +</p>
-    /// </li>
-    /// <li>
-    /// <p>& (using &amp;)</p>
-    /// </li>
-    /// <li>
-    /// <p>* (matches 0 or more characters)</p>
-    /// </li>
-    /// <li>
-    /// <p>? (matches exactly 1 character)</p>
-    /// </li>
+    /// <li> <p>A-Z, a-z, 0-9</p> </li>
+    /// <li> <p>_ - . $ / ~ " ' @ : +</p> </li>
+    /// <li> <p>&amp; (using &amp;)</p> </li>
+    /// <li> <p>* (matches 0 or more characters)</p> </li>
+    /// <li> <p>? (matches exactly 1 character)</p> </li>
     /// </ul>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
-    /// <p>Information for a host header condition. Specify only when <code>Field</code> is
-    /// <code>host-header</code>.</p>
+    /// <p>Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.</p>
     pub fn host_header_config(
         &self,
     ) -> std::option::Option<&crate::model::HostHeaderConditionConfig> {
         self.host_header_config.as_ref()
     }
-    /// <p>Information for a path pattern condition. Specify only when <code>Field</code> is
-    /// <code>path-pattern</code>.</p>
+    /// <p>Information for a path pattern condition. Specify only when <code>Field</code> is <code>path-pattern</code>.</p>
     pub fn path_pattern_config(
         &self,
     ) -> std::option::Option<&crate::model::PathPatternConditionConfig> {
         self.path_pattern_config.as_ref()
     }
-    /// <p>Information for an HTTP header condition. Specify only when <code>Field</code> is
-    /// <code>http-header</code>.</p>
+    /// <p>Information for an HTTP header condition. Specify only when <code>Field</code> is <code>http-header</code>.</p>
     pub fn http_header_config(
         &self,
     ) -> std::option::Option<&crate::model::HttpHeaderConditionConfig> {
         self.http_header_config.as_ref()
     }
-    /// <p>Information for a query string condition. Specify only when <code>Field</code> is
-    /// <code>query-string</code>.</p>
+    /// <p>Information for a query string condition. Specify only when <code>Field</code> is <code>query-string</code>.</p>
     pub fn query_string_config(
         &self,
     ) -> std::option::Option<&crate::model::QueryStringConditionConfig> {
         self.query_string_config.as_ref()
     }
-    /// <p>Information for an HTTP method condition. Specify only when <code>Field</code> is
-    /// <code>http-request-method</code>.</p>
+    /// <p>Information for an HTTP method condition. Specify only when <code>Field</code> is <code>http-request-method</code>.</p>
     pub fn http_request_method_config(
         &self,
     ) -> std::option::Option<&crate::model::HttpRequestMethodConditionConfig> {
         self.http_request_method_config.as_ref()
     }
-    /// <p>Information for a source IP condition. Specify only when <code>Field</code> is
-    /// <code>source-ip</code>.</p>
+    /// <p>Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.</p>
     pub fn source_ip_config(&self) -> std::option::Option<&crate::model::SourceIpConditionConfig> {
         self.source_ip_config.as_ref()
     }
@@ -2685,36 +2301,12 @@ pub mod rule_condition {
     impl Builder {
         /// <p>The field in the HTTP request. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>http-header</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>http-request-method</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>host-header</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>path-pattern</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>query-string</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>source-ip</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>http-header</code> </p> </li>
+        /// <li> <p> <code>http-request-method</code> </p> </li>
+        /// <li> <p> <code>host-header</code> </p> </li>
+        /// <li> <p> <code>path-pattern</code> </p> </li>
+        /// <li> <p> <code>query-string</code> </p> </li>
+        /// <li> <p> <code>source-ip</code> </p> </li>
         /// </ul>
         pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
             self.field = Some(input.into());
@@ -2722,36 +2314,12 @@ pub mod rule_condition {
         }
         /// <p>The field in the HTTP request. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>http-header</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>http-request-method</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>host-header</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>path-pattern</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>query-string</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>source-ip</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>http-header</code> </p> </li>
+        /// <li> <p> <code>http-request-method</code> </p> </li>
+        /// <li> <p> <code>host-header</code> </p> </li>
+        /// <li> <p> <code>path-pattern</code> </p> </li>
+        /// <li> <p> <code>query-string</code> </p> </li>
+        /// <li> <p> <code>source-ip</code> </p> </li>
         /// </ul>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.field = input;
@@ -2761,47 +2329,21 @@ pub mod rule_condition {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or
-        /// <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path
-        /// patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
-        /// <p>If <code>Field</code> is <code>host-header</code> and you are not using
-        /// <code>HostHeaderConfig</code>, you can specify a single host name (for example,
-        /// my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128
-        /// characters in length, and can contain any of the following characters.</p>
+        /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
+        /// <p>If <code>Field</code> is <code>host-header</code> and you are not using <code>HostHeaderConfig</code>, you can specify a single host name (for example, my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
         /// <ul>
-        /// <li>
-        /// <p>A-Z, a-z, 0-9</p>
-        /// </li>
-        /// <li>
-        /// <p>- .</p>
-        /// </li>
-        /// <li>
-        /// <p>* (matches 0 or more characters)</p>
-        /// </li>
-        /// <li>
-        /// <p>? (matches exactly 1 character)</p>
-        /// </li>
+        /// <li> <p>A-Z, a-z, 0-9</p> </li>
+        /// <li> <p>- .</p> </li>
+        /// <li> <p>* (matches 0 or more characters)</p> </li>
+        /// <li> <p>? (matches exactly 1 character)</p> </li>
         /// </ul>
-        /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using
-        /// <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*)
-        /// in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in
-        /// length, and can contain any of the following characters.</p>
+        /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*) in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
         /// <ul>
-        /// <li>
-        /// <p>A-Z, a-z, 0-9</p>
-        /// </li>
-        /// <li>
-        /// <p>_ - . $ / ~ " ' @ : +</p>
-        /// </li>
-        /// <li>
-        /// <p>& (using &amp;)</p>
-        /// </li>
-        /// <li>
-        /// <p>* (matches 0 or more characters)</p>
-        /// </li>
-        /// <li>
-        /// <p>? (matches exactly 1 character)</p>
-        /// </li>
+        /// <li> <p>A-Z, a-z, 0-9</p> </li>
+        /// <li> <p>_ - . $ / ~ " ' @ : +</p> </li>
+        /// <li> <p>&amp; (using &amp;)</p> </li>
+        /// <li> <p>* (matches 0 or more characters)</p> </li>
+        /// <li> <p>? (matches exactly 1 character)</p> </li>
         /// </ul>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
@@ -2809,47 +2351,21 @@ pub mod rule_condition {
             self.values = Some(v);
             self
         }
-        /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or
-        /// <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path
-        /// patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
-        /// <p>If <code>Field</code> is <code>host-header</code> and you are not using
-        /// <code>HostHeaderConfig</code>, you can specify a single host name (for example,
-        /// my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128
-        /// characters in length, and can contain any of the following characters.</p>
+        /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
+        /// <p>If <code>Field</code> is <code>host-header</code> and you are not using <code>HostHeaderConfig</code>, you can specify a single host name (for example, my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
         /// <ul>
-        /// <li>
-        /// <p>A-Z, a-z, 0-9</p>
-        /// </li>
-        /// <li>
-        /// <p>- .</p>
-        /// </li>
-        /// <li>
-        /// <p>* (matches 0 or more characters)</p>
-        /// </li>
-        /// <li>
-        /// <p>? (matches exactly 1 character)</p>
-        /// </li>
+        /// <li> <p>A-Z, a-z, 0-9</p> </li>
+        /// <li> <p>- .</p> </li>
+        /// <li> <p>* (matches 0 or more characters)</p> </li>
+        /// <li> <p>? (matches exactly 1 character)</p> </li>
         /// </ul>
-        /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using
-        /// <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*)
-        /// in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in
-        /// length, and can contain any of the following characters.</p>
+        /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*) in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
         /// <ul>
-        /// <li>
-        /// <p>A-Z, a-z, 0-9</p>
-        /// </li>
-        /// <li>
-        /// <p>_ - . $ / ~ " ' @ : +</p>
-        /// </li>
-        /// <li>
-        /// <p>& (using &amp;)</p>
-        /// </li>
-        /// <li>
-        /// <p>* (matches 0 or more characters)</p>
-        /// </li>
-        /// <li>
-        /// <p>? (matches exactly 1 character)</p>
-        /// </li>
+        /// <li> <p>A-Z, a-z, 0-9</p> </li>
+        /// <li> <p>_ - . $ / ~ " ' @ : +</p> </li>
+        /// <li> <p>&amp; (using &amp;)</p> </li>
+        /// <li> <p>* (matches 0 or more characters)</p> </li>
+        /// <li> <p>? (matches exactly 1 character)</p> </li>
         /// </ul>
         pub fn set_values(
             mut self,
@@ -2858,8 +2374,7 @@ pub mod rule_condition {
             self.values = input;
             self
         }
-        /// <p>Information for a host header condition. Specify only when <code>Field</code> is
-        /// <code>host-header</code>.</p>
+        /// <p>Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.</p>
         pub fn host_header_config(
             mut self,
             input: crate::model::HostHeaderConditionConfig,
@@ -2867,8 +2382,7 @@ pub mod rule_condition {
             self.host_header_config = Some(input);
             self
         }
-        /// <p>Information for a host header condition. Specify only when <code>Field</code> is
-        /// <code>host-header</code>.</p>
+        /// <p>Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.</p>
         pub fn set_host_header_config(
             mut self,
             input: std::option::Option<crate::model::HostHeaderConditionConfig>,
@@ -2876,8 +2390,7 @@ pub mod rule_condition {
             self.host_header_config = input;
             self
         }
-        /// <p>Information for a path pattern condition. Specify only when <code>Field</code> is
-        /// <code>path-pattern</code>.</p>
+        /// <p>Information for a path pattern condition. Specify only when <code>Field</code> is <code>path-pattern</code>.</p>
         pub fn path_pattern_config(
             mut self,
             input: crate::model::PathPatternConditionConfig,
@@ -2885,8 +2398,7 @@ pub mod rule_condition {
             self.path_pattern_config = Some(input);
             self
         }
-        /// <p>Information for a path pattern condition. Specify only when <code>Field</code> is
-        /// <code>path-pattern</code>.</p>
+        /// <p>Information for a path pattern condition. Specify only when <code>Field</code> is <code>path-pattern</code>.</p>
         pub fn set_path_pattern_config(
             mut self,
             input: std::option::Option<crate::model::PathPatternConditionConfig>,
@@ -2894,8 +2406,7 @@ pub mod rule_condition {
             self.path_pattern_config = input;
             self
         }
-        /// <p>Information for an HTTP header condition. Specify only when <code>Field</code> is
-        /// <code>http-header</code>.</p>
+        /// <p>Information for an HTTP header condition. Specify only when <code>Field</code> is <code>http-header</code>.</p>
         pub fn http_header_config(
             mut self,
             input: crate::model::HttpHeaderConditionConfig,
@@ -2903,8 +2414,7 @@ pub mod rule_condition {
             self.http_header_config = Some(input);
             self
         }
-        /// <p>Information for an HTTP header condition. Specify only when <code>Field</code> is
-        /// <code>http-header</code>.</p>
+        /// <p>Information for an HTTP header condition. Specify only when <code>Field</code> is <code>http-header</code>.</p>
         pub fn set_http_header_config(
             mut self,
             input: std::option::Option<crate::model::HttpHeaderConditionConfig>,
@@ -2912,8 +2422,7 @@ pub mod rule_condition {
             self.http_header_config = input;
             self
         }
-        /// <p>Information for a query string condition. Specify only when <code>Field</code> is
-        /// <code>query-string</code>.</p>
+        /// <p>Information for a query string condition. Specify only when <code>Field</code> is <code>query-string</code>.</p>
         pub fn query_string_config(
             mut self,
             input: crate::model::QueryStringConditionConfig,
@@ -2921,8 +2430,7 @@ pub mod rule_condition {
             self.query_string_config = Some(input);
             self
         }
-        /// <p>Information for a query string condition. Specify only when <code>Field</code> is
-        /// <code>query-string</code>.</p>
+        /// <p>Information for a query string condition. Specify only when <code>Field</code> is <code>query-string</code>.</p>
         pub fn set_query_string_config(
             mut self,
             input: std::option::Option<crate::model::QueryStringConditionConfig>,
@@ -2930,8 +2438,7 @@ pub mod rule_condition {
             self.query_string_config = input;
             self
         }
-        /// <p>Information for an HTTP method condition. Specify only when <code>Field</code> is
-        /// <code>http-request-method</code>.</p>
+        /// <p>Information for an HTTP method condition. Specify only when <code>Field</code> is <code>http-request-method</code>.</p>
         pub fn http_request_method_config(
             mut self,
             input: crate::model::HttpRequestMethodConditionConfig,
@@ -2939,8 +2446,7 @@ pub mod rule_condition {
             self.http_request_method_config = Some(input);
             self
         }
-        /// <p>Information for an HTTP method condition. Specify only when <code>Field</code> is
-        /// <code>http-request-method</code>.</p>
+        /// <p>Information for an HTTP method condition. Specify only when <code>Field</code> is <code>http-request-method</code>.</p>
         pub fn set_http_request_method_config(
             mut self,
             input: std::option::Option<crate::model::HttpRequestMethodConditionConfig>,
@@ -2948,14 +2454,12 @@ pub mod rule_condition {
             self.http_request_method_config = input;
             self
         }
-        /// <p>Information for a source IP condition. Specify only when <code>Field</code> is
-        /// <code>source-ip</code>.</p>
+        /// <p>Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.</p>
         pub fn source_ip_config(mut self, input: crate::model::SourceIpConditionConfig) -> Self {
             self.source_ip_config = Some(input);
             self
         }
-        /// <p>Information for a source IP condition. Specify only when <code>Field</code> is
-        /// <code>source-ip</code>.</p>
+        /// <p>Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.</p>
         pub fn set_source_ip_config(
             mut self,
             input: std::option::Option<crate::model::SourceIpConditionConfig>,
@@ -2986,27 +2490,17 @@ impl RuleCondition {
 }
 
 /// <p>Information about a source IP condition.</p>
-/// <p>You can use this condition to route based on the IP address of the source that connects to
-/// the load balancer. If a client is behind a proxy, this is the IP address of the proxy not the
-/// IP address of the client.</p>
+/// <p>You can use this condition to route based on the IP address of the source that connects to the load balancer. If a client is behind a proxy, this is the IP address of the proxy not the IP address of the client.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceIpConditionConfig {
-    /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses.
-    /// Wildcards are not supported.</p>
-    /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of
-    /// the request matches one of the CIDR blocks. This condition is not satisfied by the addresses
-    /// in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use
-    /// <a>HttpHeaderConditionConfig</a>.</p>
+    /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.</p>
+    /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use <code>HttpHeaderConditionConfig</code>.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SourceIpConditionConfig {
-    /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses.
-    /// Wildcards are not supported.</p>
-    /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of
-    /// the request matches one of the CIDR blocks. This condition is not satisfied by the addresses
-    /// in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use
-    /// <a>HttpHeaderConditionConfig</a>.</p>
+    /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.</p>
+    /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use <code>HttpHeaderConditionConfig</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
@@ -3031,24 +2525,16 @@ pub mod source_ip_condition_config {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses.
-        /// Wildcards are not supported.</p>
-        /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of
-        /// the request matches one of the CIDR blocks. This condition is not satisfied by the addresses
-        /// in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use
-        /// <a>HttpHeaderConditionConfig</a>.</p>
+        /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.</p>
+        /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use <code>HttpHeaderConditionConfig</code>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
-        /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses.
-        /// Wildcards are not supported.</p>
-        /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of
-        /// the request matches one of the CIDR blocks. This condition is not satisfied by the addresses
-        /// in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use
-        /// <a>HttpHeaderConditionConfig</a>.</p>
+        /// <p>One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.</p>
+        /// <p>If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header. To search for addresses in the X-Forwarded-For header, use <code>HttpHeaderConditionConfig</code>.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3072,27 +2558,17 @@ impl SourceIpConditionConfig {
 }
 
 /// <p>Information about an HTTP method condition.</p>
-/// <p>HTTP defines a set of request methods, also referred to as HTTP verbs. For more
-/// information, see the <a href="https://www.iana.org/assignments/http-methods/http-methods.xhtml">HTTP Method
-/// Registry</a>. You can also define custom HTTP methods.</p>
+/// <p>HTTP defines a set of request methods, also referred to as HTTP verbs. For more information, see the <a href="https://www.iana.org/assignments/http-methods/http-methods.xhtml">HTTP Method Registry</a>. You can also define custom HTTP methods.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpRequestMethodConditionConfig {
-    /// <p>The name of the request method. The maximum size is 40 characters. The allowed characters
-    /// are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards are not
-    /// supported; therefore, the method name must be an exact match.</p>
-    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
-    /// the HTTP request method. We recommend that you route GET and HEAD requests in the same way,
-    /// because the response to a HEAD request may be cached.</p>
+    /// <p>The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the method name must be an exact match.</p>
+    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request may be cached.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl HttpRequestMethodConditionConfig {
-    /// <p>The name of the request method. The maximum size is 40 characters. The allowed characters
-    /// are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards are not
-    /// supported; therefore, the method name must be an exact match.</p>
-    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
-    /// the HTTP request method. We recommend that you route GET and HEAD requests in the same way,
-    /// because the response to a HEAD request may be cached.</p>
+    /// <p>The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the method name must be an exact match.</p>
+    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request may be cached.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
@@ -3117,24 +2593,16 @@ pub mod http_request_method_condition_config {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>The name of the request method. The maximum size is 40 characters. The allowed characters
-        /// are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards are not
-        /// supported; therefore, the method name must be an exact match.</p>
-        /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
-        /// the HTTP request method. We recommend that you route GET and HEAD requests in the same way,
-        /// because the response to a HEAD request may be cached.</p>
+        /// <p>The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the method name must be an exact match.</p>
+        /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request may be cached.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
-        /// <p>The name of the request method. The maximum size is 40 characters. The allowed characters
-        /// are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards are not
-        /// supported; therefore, the method name must be an exact match.</p>
-        /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
-        /// the HTTP request method. We recommend that you route GET and HEAD requests in the same way,
-        /// because the response to a HEAD request may be cached.</p>
+        /// <p>The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the method name must be an exact match.</p>
+        /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request may be cached.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3158,30 +2626,17 @@ impl HttpRequestMethodConditionConfig {
 }
 
 /// <p>Information about a query string condition.</p>
-/// <p>The query string component of a URI starts after the first '?' character and is terminated
-/// by either a '#' character or the end of the URI. A typical query string contains key/value
-/// pairs separated by '&' characters. The allowed characters are specified by RFC 3986. Any
-/// character can be percentage encoded.</p>
+/// <p>The query string component of a URI starts after the first '?' character and is terminated by either a '#' character or the end of the URI. A typical query string contains key/value pairs separated by '&amp;' characters. The allowed characters are specified by RFC 3986. Any character can be percentage encoded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryStringConditionConfig {
-    /// <p>One or more key/value pairs or values to find in the query string. The maximum size of
-    /// each string is 128 characters. The comparison is case insensitive. The following wildcard
-    /// characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
-    /// character). To search for a literal '*' or '?' character in a query string, you must escape
-    /// these characters in <code>Values</code> using a '\' character.</p>
-    /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of
-    /// them is found in the query string.</p>
+    /// <p>One or more key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
+    /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
     pub values: std::option::Option<std::vec::Vec<crate::model::QueryStringKeyValuePair>>,
 }
 impl QueryStringConditionConfig {
-    /// <p>One or more key/value pairs or values to find in the query string. The maximum size of
-    /// each string is 128 characters. The comparison is case insensitive. The following wildcard
-    /// characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
-    /// character). To search for a literal '*' or '?' character in a query string, you must escape
-    /// these characters in <code>Values</code> using a '\' character.</p>
-    /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of
-    /// them is found in the query string.</p>
+    /// <p>One or more key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
+    /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
     pub fn values(&self) -> std::option::Option<&[crate::model::QueryStringKeyValuePair]> {
         self.values.as_deref()
     }
@@ -3207,26 +2662,16 @@ pub mod query_string_condition_config {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>One or more key/value pairs or values to find in the query string. The maximum size of
-        /// each string is 128 characters. The comparison is case insensitive. The following wildcard
-        /// characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
-        /// character). To search for a literal '*' or '?' character in a query string, you must escape
-        /// these characters in <code>Values</code> using a '\' character.</p>
-        /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of
-        /// them is found in the query string.</p>
-        pub fn values(mut self, input: impl Into<crate::model::QueryStringKeyValuePair>) -> Self {
+        /// <p>One or more key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
+        /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
+        pub fn values(mut self, input: crate::model::QueryStringKeyValuePair) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.values = Some(v);
             self
         }
-        /// <p>One or more key/value pairs or values to find in the query string. The maximum size of
-        /// each string is 128 characters. The comparison is case insensitive. The following wildcard
-        /// characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
-        /// character). To search for a literal '*' or '?' character in a query string, you must escape
-        /// these characters in <code>Values</code> using a '\' character.</p>
-        /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of
-        /// them is found in the query string.</p>
+        /// <p>One or more key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in <code>Values</code> using a '\' character.</p>
+        /// <p>If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QueryStringKeyValuePair>>,
@@ -3323,44 +2768,27 @@ impl QueryStringKeyValuePair {
 }
 
 /// <p>Information about an HTTP header condition.</p>
-/// <p>There is a set of standard HTTP header fields. You can also define custom HTTP header
-/// fields.</p>
+/// <p>There is a set of standard HTTP header fields. You can also define custom HTTP header fields.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpHeaderConditionConfig {
-    /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is
-    /// case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not
-    /// supported.</p>
-    /// <p>You can't use an HTTP header condition to specify the host header. Use <a>HostHeaderConditionConfig</a> to specify a host header condition.</p>
+    /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
+    /// <p>You can't use an HTTP header condition to specify the host header. Use <code>HostHeaderConditionConfig</code> to specify a host header condition.</p>
     pub http_header_name: std::option::Option<std::string::String>,
-    /// <p>One or more strings to compare against the value of the HTTP header. The maximum size of
-    /// each string is 128 characters. The comparison strings are case insensitive. The following
-    /// wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
-    /// character).</p>
-    /// <p>If the same header appears multiple times in the request, we search them in order until a
-    /// match is found.</p>
-    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
-    /// the value of the HTTP header. To require that all of the strings are a match, create one
-    /// condition per string.</p>
+    /// <p>One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
+    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl HttpHeaderConditionConfig {
-    /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is
-    /// case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not
-    /// supported.</p>
-    /// <p>You can't use an HTTP header condition to specify the host header. Use <a>HostHeaderConditionConfig</a> to specify a host header condition.</p>
+    /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
+    /// <p>You can't use an HTTP header condition to specify the host header. Use <code>HostHeaderConditionConfig</code> to specify a host header condition.</p>
     pub fn http_header_name(&self) -> std::option::Option<&str> {
         self.http_header_name.as_deref()
     }
-    /// <p>One or more strings to compare against the value of the HTTP header. The maximum size of
-    /// each string is 128 characters. The comparison strings are case insensitive. The following
-    /// wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
-    /// character).</p>
-    /// <p>If the same header appears multiple times in the request, we search them in order until a
-    /// match is found.</p>
-    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
-    /// the value of the HTTP header. To require that all of the strings are a match, create one
-    /// condition per string.</p>
+    /// <p>One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
+    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
@@ -3383,18 +2811,14 @@ pub mod http_header_condition_config {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is
-        /// case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not
-        /// supported.</p>
-        /// <p>You can't use an HTTP header condition to specify the host header. Use <a>HostHeaderConditionConfig</a> to specify a host header condition.</p>
+        /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
+        /// <p>You can't use an HTTP header condition to specify the host header. Use <code>HostHeaderConditionConfig</code> to specify a host header condition.</p>
         pub fn http_header_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_header_name = Some(input.into());
             self
         }
-        /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is
-        /// case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not
-        /// supported.</p>
-        /// <p>You can't use an HTTP header condition to specify the host header. Use <a>HostHeaderConditionConfig</a> to specify a host header condition.</p>
+        /// <p>The name of the HTTP header field. The maximum size is 40 characters. The header name is case insensitive. The allowed characters are specified by RFC 7230. Wildcards are not supported.</p>
+        /// <p>You can't use an HTTP header condition to specify the host header. Use <code>HostHeaderConditionConfig</code> to specify a host header condition.</p>
         pub fn set_http_header_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3406,30 +2830,18 @@ pub mod http_header_condition_config {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>One or more strings to compare against the value of the HTTP header. The maximum size of
-        /// each string is 128 characters. The comparison strings are case insensitive. The following
-        /// wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
-        /// character).</p>
-        /// <p>If the same header appears multiple times in the request, we search them in order until a
-        /// match is found.</p>
-        /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
-        /// the value of the HTTP header. To require that all of the strings are a match, create one
-        /// condition per string.</p>
+        /// <p>One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+        /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
+        /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
-        /// <p>One or more strings to compare against the value of the HTTP header. The maximum size of
-        /// each string is 128 characters. The comparison strings are case insensitive. The following
-        /// wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
-        /// character).</p>
-        /// <p>If the same header appears multiple times in the request, we search them in order until a
-        /// match is found.</p>
-        /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
-        /// the value of the HTTP header. To require that all of the strings are a match, create one
-        /// condition per string.</p>
+        /// <p>One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+        /// <p>If the same header appears multiple times in the request, we search them in order until a match is found.</p>
+        /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3457,21 +2869,13 @@ impl HttpHeaderConditionConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PathPatternConditionConfig {
-    /// <p>One or more path patterns to compare against the request URL. The maximum size of each
-    /// string is 128 characters. The comparison is case sensitive. The following wildcard characters
-    /// are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
-    /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the
-    /// request URL. The path pattern is compared only to the path of the URL, not to its query
-    /// string. To compare against the query string, use <a>QueryStringConditionConfig</a>.</p>
+    /// <p>One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path pattern is compared only to the path of the URL, not to its query string. To compare against the query string, use <code>QueryStringConditionConfig</code>.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PathPatternConditionConfig {
-    /// <p>One or more path patterns to compare against the request URL. The maximum size of each
-    /// string is 128 characters. The comparison is case sensitive. The following wildcard characters
-    /// are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
-    /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the
-    /// request URL. The path pattern is compared only to the path of the URL, not to its query
-    /// string. To compare against the query string, use <a>QueryStringConditionConfig</a>.</p>
+    /// <p>One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path pattern is compared only to the path of the URL, not to its query string. To compare against the query string, use <code>QueryStringConditionConfig</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
@@ -3496,24 +2900,16 @@ pub mod path_pattern_condition_config {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>One or more path patterns to compare against the request URL. The maximum size of each
-        /// string is 128 characters. The comparison is case sensitive. The following wildcard characters
-        /// are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
-        /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the
-        /// request URL. The path pattern is compared only to the path of the URL, not to its query
-        /// string. To compare against the query string, use <a>QueryStringConditionConfig</a>.</p>
+        /// <p>One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+        /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path pattern is compared only to the path of the URL, not to its query string. To compare against the query string, use <code>QueryStringConditionConfig</code>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
-        /// <p>One or more path patterns to compare against the request URL. The maximum size of each
-        /// string is 128 characters. The comparison is case sensitive. The following wildcard characters
-        /// are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
-        /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the
-        /// request URL. The path pattern is compared only to the path of the URL, not to its query
-        /// string. To compare against the query string, use <a>QueryStringConditionConfig</a>.</p>
+        /// <p>One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+        /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path pattern is compared only to the path of the URL, not to its query string. To compare against the query string, use <code>QueryStringConditionConfig</code>.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3540,19 +2936,13 @@ impl PathPatternConditionConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HostHeaderConditionConfig {
-    /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is
-    /// case insensitive. The following wildcard characters are supported: * (matches 0 or more
-    /// characters) and ? (matches exactly 1 character).</p>
-    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
-    /// the host name.</p>
+    /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl HostHeaderConditionConfig {
-    /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is
-    /// case insensitive. The following wildcard characters are supported: * (matches 0 or more
-    /// characters) and ? (matches exactly 1 character).</p>
-    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
-    /// the host name.</p>
+    /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
@@ -3577,22 +2967,16 @@ pub mod host_header_condition_config {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is
-        /// case insensitive. The following wildcard characters are supported: * (matches 0 or more
-        /// characters) and ? (matches exactly 1 character).</p>
-        /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
-        /// the host name.</p>
+        /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+        /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
-        /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is
-        /// case insensitive. The following wildcard characters are supported: * (matches 0 or more
-        /// characters) and ? (matches exactly 1 character).</p>
-        /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches
-        /// the host name.</p>
+        /// <p>One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+        /// <p>If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3694,9 +3078,7 @@ impl RulePriorityPair {
 pub struct Certificate {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the certificate is the default certificate. Do not set this value when
-    /// specifying a certificate as an input. This value is not included in the output when describing
-    /// a listener, but is included when describing listener certificates.</p>
+    /// <p>Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate as an input. This value is not included in the output when describing a listener, but is included when describing listener certificates.</p>
     pub is_default: std::option::Option<bool>,
 }
 impl Certificate {
@@ -3704,9 +3086,7 @@ impl Certificate {
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>Indicates whether the certificate is the default certificate. Do not set this value when
-    /// specifying a certificate as an input. This value is not included in the output when describing
-    /// a listener, but is included when describing listener certificates.</p>
+    /// <p>Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate as an input. This value is not included in the output when describing a listener, but is included when describing listener certificates.</p>
     pub fn is_default(&self) -> std::option::Option<bool> {
         self.is_default
     }
@@ -3742,16 +3122,12 @@ pub mod certificate {
             self.certificate_arn = input;
             self
         }
-        /// <p>Indicates whether the certificate is the default certificate. Do not set this value when
-        /// specifying a certificate as an input. This value is not included in the output when describing
-        /// a listener, but is included when describing listener certificates.</p>
+        /// <p>Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate as an input. This value is not included in the output when describing a listener, but is included when describing listener certificates.</p>
         pub fn is_default(mut self, input: bool) -> Self {
             self.is_default = Some(input);
             self
         }
-        /// <p>Indicates whether the certificate is the default certificate. Do not set this value when
-        /// specifying a certificate as an input. This value is not included in the output when describing
-        /// a listener, but is included when describing listener certificates.</p>
+        /// <p>Indicates whether the certificate is the default certificate. Do not set this value when specifying a certificate as an input. This value is not included in the output when describing a listener, but is included when describing listener certificates.</p>
         pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default = input;
             self
@@ -3776,59 +3152,31 @@ impl Certificate {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetDescription {
-    /// <p>The ID of the target. If the target type of the target group is <code>instance</code>,
-    /// specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the
-    /// target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type
-    /// is <code>alb</code>, specify the ARN of the Application Load Balancer target. </p>
+    /// <p>The ID of the target. If the target type of the target group is <code>instance</code>, specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type is <code>alb</code>, specify the ARN of the Application Load Balancer target. </p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The port on which the target is listening. If the target group protocol is GENEVE, the
-    /// supported port is 6081. If the target type is <code>alb</code>, the targeted Application Load
-    /// Balancer must have at least one listener whose port matches the target group port. Not used if
-    /// the target is a Lambda function.</p>
+    /// <p>The port on which the target is listening. If the target group protocol is GENEVE, the supported port is 6081. If the target type is <code>alb</code>, the targeted Application Load Balancer must have at least one listener whose port matches the target group port. Not used if the target is a Lambda function.</p>
     pub port: std::option::Option<i32>,
-    /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives
-    /// traffic from the load balancer nodes in the specified Availability Zone or from all enabled
-    /// Availability Zones for the load balancer.</p>
-    /// <p>This parameter is not supported if the target type of the target group is
-    /// <code>instance</code> or <code>alb</code>.</p>
-    /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the
-    /// target group, the Availability Zone is automatically detected and this parameter is optional.
-    /// If the IP address is outside the VPC, this parameter is required.</p>
-    /// <p>With an Application Load Balancer, if the target type is <code>ip</code> and the IP
-    /// address is outside the VPC for the target group, the only supported value is
-    /// <code>all</code>.</p>
-    /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only
-    /// supported value is <code>all</code>.</p>
+    /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives traffic from the load balancer nodes in the specified Availability Zone or from all enabled Availability Zones for the load balancer.</p>
+    /// <p>This parameter is not supported if the target type of the target group is <code>instance</code> or <code>alb</code>.</p>
+    /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically detected and this parameter is optional. If the IP address is outside the VPC, this parameter is required.</p>
+    /// <p>With an Application Load Balancer, if the target type is <code>ip</code> and the IP address is outside the VPC for the target group, the only supported value is <code>all</code>.</p>
+    /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only supported value is <code>all</code>.</p>
     pub availability_zone: std::option::Option<std::string::String>,
 }
 impl TargetDescription {
-    /// <p>The ID of the target. If the target type of the target group is <code>instance</code>,
-    /// specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the
-    /// target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type
-    /// is <code>alb</code>, specify the ARN of the Application Load Balancer target. </p>
+    /// <p>The ID of the target. If the target type of the target group is <code>instance</code>, specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type is <code>alb</code>, specify the ARN of the Application Load Balancer target. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The port on which the target is listening. If the target group protocol is GENEVE, the
-    /// supported port is 6081. If the target type is <code>alb</code>, the targeted Application Load
-    /// Balancer must have at least one listener whose port matches the target group port. Not used if
-    /// the target is a Lambda function.</p>
+    /// <p>The port on which the target is listening. If the target group protocol is GENEVE, the supported port is 6081. If the target type is <code>alb</code>, the targeted Application Load Balancer must have at least one listener whose port matches the target group port. Not used if the target is a Lambda function.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives
-    /// traffic from the load balancer nodes in the specified Availability Zone or from all enabled
-    /// Availability Zones for the load balancer.</p>
-    /// <p>This parameter is not supported if the target type of the target group is
-    /// <code>instance</code> or <code>alb</code>.</p>
-    /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the
-    /// target group, the Availability Zone is automatically detected and this parameter is optional.
-    /// If the IP address is outside the VPC, this parameter is required.</p>
-    /// <p>With an Application Load Balancer, if the target type is <code>ip</code> and the IP
-    /// address is outside the VPC for the target group, the only supported value is
-    /// <code>all</code>.</p>
-    /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only
-    /// supported value is <code>all</code>.</p>
+    /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives traffic from the load balancer nodes in the specified Availability Zone or from all enabled Availability Zones for the load balancer.</p>
+    /// <p>This parameter is not supported if the target type of the target group is <code>instance</code> or <code>alb</code>.</p>
+    /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically detected and this parameter is optional. If the IP address is outside the VPC, this parameter is required.</p>
+    /// <p>With an Application Load Balancer, if the target type is <code>ip</code> and the IP address is outside the VPC for the target group, the only supported value is <code>all</code>.</p>
+    /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only supported value is <code>all</code>.</p>
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -3853,68 +3201,40 @@ pub mod target_description {
         pub(crate) availability_zone: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the target. If the target type of the target group is <code>instance</code>,
-        /// specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the
-        /// target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type
-        /// is <code>alb</code>, specify the ARN of the Application Load Balancer target. </p>
+        /// <p>The ID of the target. If the target type of the target group is <code>instance</code>, specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type is <code>alb</code>, specify the ARN of the Application Load Balancer target. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The ID of the target. If the target type of the target group is <code>instance</code>,
-        /// specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the
-        /// target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type
-        /// is <code>alb</code>, specify the ARN of the Application Load Balancer target. </p>
+        /// <p>The ID of the target. If the target type of the target group is <code>instance</code>, specify an instance ID. If the target type is <code>ip</code>, specify an IP address. If the target type is <code>lambda</code>, specify the ARN of the Lambda function. If the target type is <code>alb</code>, specify the ARN of the Application Load Balancer target. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The port on which the target is listening. If the target group protocol is GENEVE, the
-        /// supported port is 6081. If the target type is <code>alb</code>, the targeted Application Load
-        /// Balancer must have at least one listener whose port matches the target group port. Not used if
-        /// the target is a Lambda function.</p>
+        /// <p>The port on which the target is listening. If the target group protocol is GENEVE, the supported port is 6081. If the target type is <code>alb</code>, the targeted Application Load Balancer must have at least one listener whose port matches the target group port. Not used if the target is a Lambda function.</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>The port on which the target is listening. If the target group protocol is GENEVE, the
-        /// supported port is 6081. If the target type is <code>alb</code>, the targeted Application Load
-        /// Balancer must have at least one listener whose port matches the target group port. Not used if
-        /// the target is a Lambda function.</p>
+        /// <p>The port on which the target is listening. If the target group protocol is GENEVE, the supported port is 6081. If the target type is <code>alb</code>, the targeted Application Load Balancer must have at least one listener whose port matches the target group port. Not used if the target is a Lambda function.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
         }
-        /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives
-        /// traffic from the load balancer nodes in the specified Availability Zone or from all enabled
-        /// Availability Zones for the load balancer.</p>
-        /// <p>This parameter is not supported if the target type of the target group is
-        /// <code>instance</code> or <code>alb</code>.</p>
-        /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the
-        /// target group, the Availability Zone is automatically detected and this parameter is optional.
-        /// If the IP address is outside the VPC, this parameter is required.</p>
-        /// <p>With an Application Load Balancer, if the target type is <code>ip</code> and the IP
-        /// address is outside the VPC for the target group, the only supported value is
-        /// <code>all</code>.</p>
-        /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only
-        /// supported value is <code>all</code>.</p>
+        /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives traffic from the load balancer nodes in the specified Availability Zone or from all enabled Availability Zones for the load balancer.</p>
+        /// <p>This parameter is not supported if the target type of the target group is <code>instance</code> or <code>alb</code>.</p>
+        /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically detected and this parameter is optional. If the IP address is outside the VPC, this parameter is required.</p>
+        /// <p>With an Application Load Balancer, if the target type is <code>ip</code> and the IP address is outside the VPC for the target group, the only supported value is <code>all</code>.</p>
+        /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only supported value is <code>all</code>.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone = Some(input.into());
             self
         }
-        /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives
-        /// traffic from the load balancer nodes in the specified Availability Zone or from all enabled
-        /// Availability Zones for the load balancer.</p>
-        /// <p>This parameter is not supported if the target type of the target group is
-        /// <code>instance</code> or <code>alb</code>.</p>
-        /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the
-        /// target group, the Availability Zone is automatically detected and this parameter is optional.
-        /// If the IP address is outside the VPC, this parameter is required.</p>
-        /// <p>With an Application Load Balancer, if the target type is <code>ip</code> and the IP
-        /// address is outside the VPC for the target group, the only supported value is
-        /// <code>all</code>.</p>
-        /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only
-        /// supported value is <code>all</code>.</p>
+        /// <p>An Availability Zone or <code>all</code>. This determines whether the target receives traffic from the load balancer nodes in the specified Availability Zone or from all enabled Availability Zones for the load balancer.</p>
+        /// <p>This parameter is not supported if the target type of the target group is <code>instance</code> or <code>alb</code>.</p>
+        /// <p>If the target type is <code>ip</code> and the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically detected and this parameter is optional. If the IP address is outside the VPC, this parameter is required.</p>
+        /// <p>With an Application Load Balancer, if the target type is <code>ip</code> and the IP address is outside the VPC for the target group, the only supported value is <code>all</code>.</p>
+        /// <p>If the target type is <code>lambda</code>, this parameter is optional and the only supported value is <code>all</code>.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3944,113 +3264,32 @@ impl TargetDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetGroupAttribute {
     /// <p>The name of the attribute.</p>
-    ///
     /// <p>The following attribute is supported by all load balancers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds,
-    /// for Elastic Load Balancing to wait before changing the state of a deregistering target
-    /// from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
-    /// default value is 300 seconds. If the target is a Lambda function, this attribute is not
-    /// supported.</p>
-    /// </li>
+    /// <li> <p> <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is not supported.</p> </li>
     /// </ul>
-    ///
-    /// <p>The following attributes are supported by both Application Load Balancers and Network Load
-    /// Balancers:</p>
+    /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The
-    /// value is <code>true</code> or <code>false</code>. The default is
-    /// <code>false</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stickiness.type</code> - The type of sticky sessions. The possible values are
-    /// <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers or
-    /// <code>source_ip</code> for Network Load Balancers.</p>
-    /// </li>
+    /// <li> <p> <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li>
     /// </ul>
-    ///
-    /// <p>The following attributes are supported only if the load balancer is an Application Load
-    /// Balancer and the target is an instance or an IP address:</p>
+    /// <p>The following attributes are supported only if the load balancer is an Application Load Balancer and the target is an instance or an IP address:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines
-    /// how the load balancer selects targets when routing requests. The value is
-    /// <code>round_robin</code> or <code>least_outstanding_requests</code>. The default is
-    /// <code>round_robin</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a
-    /// newly registered target receives an increasing share of the traffic to the target group.
-    /// After this time period ends, the target receives its full share of traffic. The range is
-    /// 30-900 seconds (15 minutes). The default is 0 seconds (disabled).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
-    /// application-based cookie. Names that start with the following prefixes are not allowed:
-    /// <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved
-    /// for use by the load balancer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds,
-    /// during which requests from a client should be routed to the same target. After this time
-    /// period expires, the application-based cookie is considered stale. The range is 1 second to
-    /// 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds,
-    /// during which requests from a client should be routed to the same target. After this time
-    /// period expires, the load balancer-generated cookie is considered stale. The range is 1
-    /// second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p>
-    /// </li>
+    /// <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines how the load balancer selects targets when routing requests. The value is <code>round_robin</code> or <code>least_outstanding_requests</code>. The default is <code>round_robin</code>.</p> </li>
+    /// <li> <p> <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target receives an increasing share of the traffic to the target group. After this time period ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).</p> </li>
+    /// <li> <p> <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved for use by the load balancer.</p> </li>
+    /// <li> <p> <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the application-based cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
+    /// <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
     /// </ul>
-    ///
-    /// <p>The following attribute is supported only if the load balancer is an Application Load
-    /// Balancer and the target is a Lambda function:</p>
+    /// <p>The following attribute is supported only if the load balancer is an Application Load Balancer and the target is a Lambda function:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and
-    /// response headers that are exchanged between the load balancer and the Lambda function
-    /// include arrays of values or strings. The value is <code>true</code> or <code>false</code>.
-    /// The default is <code>false</code>. If the value is <code>false</code> and the request
-    /// contains a duplicate header field name or query parameter key, the load balancer uses the
-    /// last value sent by the client.</p>
-    /// </li>
+    /// <li> <p> <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers that are exchanged between the load balancer and the Lambda function include arrays of values or strings. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is <code>false</code> and the request contains a duplicate header field name or query parameter key, the load balancer uses the last value sent by the client.</p> </li>
     /// </ul>
-    ///
     /// <p>The following attributes are supported only by Network Load Balancers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether
-    /// the load balancer terminates connections at the end of the deregistration timeout. The
-    /// value is <code>true</code> or <code>false</code>. The default is
-    /// <code>false</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is
-    /// enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if
-    /// the target group type is IP address and the target group protocol is TCP or TLS.
-    /// Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and
-    /// TCP_UDP target groups.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is
-    /// enabled. The value is <code>true</code> or <code>false</code>. The default is
-    /// <code>false</code>.</p>
-    /// </li>
+    /// <li> <p> <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
+    /// <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
     /// </ul>
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the attribute.</p>
@@ -4058,113 +3297,32 @@ pub struct TargetGroupAttribute {
 }
 impl TargetGroupAttribute {
     /// <p>The name of the attribute.</p>
-    ///
     /// <p>The following attribute is supported by all load balancers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds,
-    /// for Elastic Load Balancing to wait before changing the state of a deregistering target
-    /// from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
-    /// default value is 300 seconds. If the target is a Lambda function, this attribute is not
-    /// supported.</p>
-    /// </li>
+    /// <li> <p> <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is not supported.</p> </li>
     /// </ul>
-    ///
-    /// <p>The following attributes are supported by both Application Load Balancers and Network Load
-    /// Balancers:</p>
+    /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The
-    /// value is <code>true</code> or <code>false</code>. The default is
-    /// <code>false</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stickiness.type</code> - The type of sticky sessions. The possible values are
-    /// <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers or
-    /// <code>source_ip</code> for Network Load Balancers.</p>
-    /// </li>
+    /// <li> <p> <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li>
     /// </ul>
-    ///
-    /// <p>The following attributes are supported only if the load balancer is an Application Load
-    /// Balancer and the target is an instance or an IP address:</p>
+    /// <p>The following attributes are supported only if the load balancer is an Application Load Balancer and the target is an instance or an IP address:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines
-    /// how the load balancer selects targets when routing requests. The value is
-    /// <code>round_robin</code> or <code>least_outstanding_requests</code>. The default is
-    /// <code>round_robin</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a
-    /// newly registered target receives an increasing share of the traffic to the target group.
-    /// After this time period ends, the target receives its full share of traffic. The range is
-    /// 30-900 seconds (15 minutes). The default is 0 seconds (disabled).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
-    /// application-based cookie. Names that start with the following prefixes are not allowed:
-    /// <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved
-    /// for use by the load balancer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds,
-    /// during which requests from a client should be routed to the same target. After this time
-    /// period expires, the application-based cookie is considered stale. The range is 1 second to
-    /// 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds,
-    /// during which requests from a client should be routed to the same target. After this time
-    /// period expires, the load balancer-generated cookie is considered stale. The range is 1
-    /// second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p>
-    /// </li>
+    /// <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines how the load balancer selects targets when routing requests. The value is <code>round_robin</code> or <code>least_outstanding_requests</code>. The default is <code>round_robin</code>.</p> </li>
+    /// <li> <p> <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target receives an increasing share of the traffic to the target group. After this time period ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).</p> </li>
+    /// <li> <p> <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved for use by the load balancer.</p> </li>
+    /// <li> <p> <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the application-based cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
+    /// <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
     /// </ul>
-    ///
-    /// <p>The following attribute is supported only if the load balancer is an Application Load
-    /// Balancer and the target is a Lambda function:</p>
+    /// <p>The following attribute is supported only if the load balancer is an Application Load Balancer and the target is a Lambda function:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and
-    /// response headers that are exchanged between the load balancer and the Lambda function
-    /// include arrays of values or strings. The value is <code>true</code> or <code>false</code>.
-    /// The default is <code>false</code>. If the value is <code>false</code> and the request
-    /// contains a duplicate header field name or query parameter key, the load balancer uses the
-    /// last value sent by the client.</p>
-    /// </li>
+    /// <li> <p> <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers that are exchanged between the load balancer and the Lambda function include arrays of values or strings. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is <code>false</code> and the request contains a duplicate header field name or query parameter key, the load balancer uses the last value sent by the client.</p> </li>
     /// </ul>
-    ///
     /// <p>The following attributes are supported only by Network Load Balancers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether
-    /// the load balancer terminates connections at the end of the deregistration timeout. The
-    /// value is <code>true</code> or <code>false</code>. The default is
-    /// <code>false</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is
-    /// enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if
-    /// the target group type is IP address and the target group protocol is TCP or TLS.
-    /// Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and
-    /// TCP_UDP target groups.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is
-    /// enabled. The value is <code>true</code> or <code>false</code>. The default is
-    /// <code>false</code>.</p>
-    /// </li>
+    /// <li> <p> <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
+    /// <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
     /// </ul>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
@@ -4193,226 +3351,64 @@ pub mod target_group_attribute {
     }
     impl Builder {
         /// <p>The name of the attribute.</p>
-        ///
         /// <p>The following attribute is supported by all load balancers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds,
-        /// for Elastic Load Balancing to wait before changing the state of a deregistering target
-        /// from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
-        /// default value is 300 seconds. If the target is a Lambda function, this attribute is not
-        /// supported.</p>
-        /// </li>
+        /// <li> <p> <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is not supported.</p> </li>
         /// </ul>
-        ///
-        /// <p>The following attributes are supported by both Application Load Balancers and Network Load
-        /// Balancers:</p>
+        /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The
-        /// value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stickiness.type</code> - The type of sticky sessions. The possible values are
-        /// <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers or
-        /// <code>source_ip</code> for Network Load Balancers.</p>
-        /// </li>
+        /// <li> <p> <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li>
         /// </ul>
-        ///
-        /// <p>The following attributes are supported only if the load balancer is an Application Load
-        /// Balancer and the target is an instance or an IP address:</p>
+        /// <p>The following attributes are supported only if the load balancer is an Application Load Balancer and the target is an instance or an IP address:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines
-        /// how the load balancer selects targets when routing requests. The value is
-        /// <code>round_robin</code> or <code>least_outstanding_requests</code>. The default is
-        /// <code>round_robin</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a
-        /// newly registered target receives an increasing share of the traffic to the target group.
-        /// After this time period ends, the target receives its full share of traffic. The range is
-        /// 30-900 seconds (15 minutes). The default is 0 seconds (disabled).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
-        /// application-based cookie. Names that start with the following prefixes are not allowed:
-        /// <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved
-        /// for use by the load balancer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds,
-        /// during which requests from a client should be routed to the same target. After this time
-        /// period expires, the application-based cookie is considered stale. The range is 1 second to
-        /// 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds,
-        /// during which requests from a client should be routed to the same target. After this time
-        /// period expires, the load balancer-generated cookie is considered stale. The range is 1
-        /// second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p>
-        /// </li>
+        /// <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines how the load balancer selects targets when routing requests. The value is <code>round_robin</code> or <code>least_outstanding_requests</code>. The default is <code>round_robin</code>.</p> </li>
+        /// <li> <p> <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target receives an increasing share of the traffic to the target group. After this time period ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).</p> </li>
+        /// <li> <p> <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved for use by the load balancer.</p> </li>
+        /// <li> <p> <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the application-based cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
+        /// <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
         /// </ul>
-        ///
-        /// <p>The following attribute is supported only if the load balancer is an Application Load
-        /// Balancer and the target is a Lambda function:</p>
+        /// <p>The following attribute is supported only if the load balancer is an Application Load Balancer and the target is a Lambda function:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and
-        /// response headers that are exchanged between the load balancer and the Lambda function
-        /// include arrays of values or strings. The value is <code>true</code> or <code>false</code>.
-        /// The default is <code>false</code>. If the value is <code>false</code> and the request
-        /// contains a duplicate header field name or query parameter key, the load balancer uses the
-        /// last value sent by the client.</p>
-        /// </li>
+        /// <li> <p> <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers that are exchanged between the load balancer and the Lambda function include arrays of values or strings. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is <code>false</code> and the request contains a duplicate header field name or query parameter key, the load balancer uses the last value sent by the client.</p> </li>
         /// </ul>
-        ///
         /// <p>The following attributes are supported only by Network Load Balancers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether
-        /// the load balancer terminates connections at the end of the deregistration timeout. The
-        /// value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is
-        /// enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if
-        /// the target group type is IP address and the target group protocol is TCP or TLS.
-        /// Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and
-        /// TCP_UDP target groups.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is
-        /// enabled. The value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>.</p>
-        /// </li>
+        /// <li> <p> <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
+        /// <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
         /// </ul>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
         /// <p>The name of the attribute.</p>
-        ///
         /// <p>The following attribute is supported by all load balancers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds,
-        /// for Elastic Load Balancing to wait before changing the state of a deregistering target
-        /// from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
-        /// default value is 300 seconds. If the target is a Lambda function, this attribute is not
-        /// supported.</p>
-        /// </li>
+        /// <li> <p> <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is not supported.</p> </li>
         /// </ul>
-        ///
-        /// <p>The following attributes are supported by both Application Load Balancers and Network Load
-        /// Balancers:</p>
+        /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The
-        /// value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stickiness.type</code> - The type of sticky sessions. The possible values are
-        /// <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers or
-        /// <code>source_ip</code> for Network Load Balancers.</p>
-        /// </li>
+        /// <li> <p> <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.</p> </li>
         /// </ul>
-        ///
-        /// <p>The following attributes are supported only if the load balancer is an Application Load
-        /// Balancer and the target is an instance or an IP address:</p>
+        /// <p>The following attributes are supported only if the load balancer is an Application Load Balancer and the target is an instance or an IP address:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines
-        /// how the load balancer selects targets when routing requests. The value is
-        /// <code>round_robin</code> or <code>least_outstanding_requests</code>. The default is
-        /// <code>round_robin</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a
-        /// newly registered target receives an increasing share of the traffic to the target group.
-        /// After this time period ends, the target receives its full share of traffic. The range is
-        /// 30-900 seconds (15 minutes). The default is 0 seconds (disabled).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
-        /// application-based cookie. Names that start with the following prefixes are not allowed:
-        /// <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved
-        /// for use by the load balancer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds,
-        /// during which requests from a client should be routed to the same target. After this time
-        /// period expires, the application-based cookie is considered stale. The range is 1 second to
-        /// 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds,
-        /// during which requests from a client should be routed to the same target. After this time
-        /// period expires, the load balancer-generated cookie is considered stale. The range is 1
-        /// second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p>
-        /// </li>
+        /// <li> <p> <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines how the load balancer selects targets when routing requests. The value is <code>round_robin</code> or <code>least_outstanding_requests</code>. The default is <code>round_robin</code>.</p> </li>
+        /// <li> <p> <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target receives an increasing share of the traffic to the target group. After this time period ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).</p> </li>
+        /// <li> <p> <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that start with the following prefixes are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved for use by the load balancer.</p> </li>
+        /// <li> <p> <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the application-based cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
+        /// <li> <p> <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a client should be routed to the same target. After this time period expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).</p> </li>
         /// </ul>
-        ///
-        /// <p>The following attribute is supported only if the load balancer is an Application Load
-        /// Balancer and the target is a Lambda function:</p>
+        /// <p>The following attribute is supported only if the load balancer is an Application Load Balancer and the target is a Lambda function:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and
-        /// response headers that are exchanged between the load balancer and the Lambda function
-        /// include arrays of values or strings. The value is <code>true</code> or <code>false</code>.
-        /// The default is <code>false</code>. If the value is <code>false</code> and the request
-        /// contains a duplicate header field name or query parameter key, the load balancer uses the
-        /// last value sent by the client.</p>
-        /// </li>
+        /// <li> <p> <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and response headers that are exchanged between the load balancer and the Lambda function include arrays of values or strings. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>. If the value is <code>false</code> and the request contains a duplicate header field name or query parameter key, the load balancer uses the last value sent by the client.</p> </li>
         /// </ul>
-        ///
         /// <p>The following attributes are supported only by Network Load Balancers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether
-        /// the load balancer terminates connections at the end of the deregistration timeout. The
-        /// value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is
-        /// enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if
-        /// the target group type is IP address and the target group protocol is TCP or TLS.
-        /// Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and
-        /// TCP_UDP target groups.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is
-        /// enabled. The value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>.</p>
-        /// </li>
+        /// <li> <p> <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
+        /// <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
         /// </ul>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
@@ -4454,50 +3450,35 @@ pub struct TargetGroup {
     pub target_group_name: std::option::Option<std::string::String>,
     /// <p>The protocol to use for routing traffic to the targets.</p>
     pub protocol: std::option::Option<crate::model::ProtocolEnum>,
-    /// <p>The port on which the targets are listening. Not used if the target is a Lambda
-    /// function.</p>
+    /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
     pub port: std::option::Option<i32>,
     /// <p>The ID of the VPC for the targets.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP
-    /// protocols are not supported for health checks.</p>
+    /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
     pub health_check_protocol: std::option::Option<crate::model::ProtocolEnum>,
     /// <p>The port to use to connect with the target.</p>
     pub health_check_port: std::option::Option<std::string::String>,
     /// <p>Indicates whether health checks are enabled.</p>
     pub health_check_enabled: std::option::Option<bool>,
-    /// <p>The approximate amount of time, in seconds, between health checks of an individual
-    /// target.</p>
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
     pub health_check_interval_seconds: std::option::Option<i32>,
-    /// <p>The amount of time, in seconds, during which no response means a failed health
-    /// check.</p>
+    /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
     pub health_check_timeout_seconds: std::option::Option<i32>,
-    /// <p>The number of consecutive health checks successes required before considering an unhealthy
-    /// target healthy.</p>
+    /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
     pub healthy_threshold_count: std::option::Option<i32>,
-    /// <p>The number of consecutive health check failures required before considering the target
-    /// unhealthy.</p>
+    /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
     pub unhealthy_threshold_count: std::option::Option<i32>,
     /// <p>The destination for health checks on the targets.</p>
     pub health_check_path: std::option::Option<std::string::String>,
-    /// <p>The HTTP or gRPC codes to use when checking for a successful response from a
-    /// target.</p>
+    /// <p>The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
     pub matcher: std::option::Option<crate::model::Matcher>,
-    /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target
-    /// group.</p>
+    /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
     pub load_balancer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The type of target that you must specify when registering targets with this target group.
-    /// The possible values are <code>instance</code> (register targets by instance ID),
-    /// <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single
-    /// Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer
-    /// as a target).</p>
+    /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
     pub target_type: std::option::Option<crate::model::TargetTypeEnum>,
-    /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>,
-    /// <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+    /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
     pub protocol_version: std::option::Option<std::string::String>,
-    /// <p>The type of IP address used for this target group. The possible values are
-    /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
-    /// the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
     pub ip_address_type: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
 }
 impl TargetGroup {
@@ -4513,8 +3494,7 @@ impl TargetGroup {
     pub fn protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
         self.protocol.as_ref()
     }
-    /// <p>The port on which the targets are listening. Not used if the target is a Lambda
-    /// function.</p>
+    /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
@@ -4522,8 +3502,7 @@ impl TargetGroup {
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP
-    /// protocols are not supported for health checks.</p>
+    /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
     pub fn health_check_protocol(&self) -> std::option::Option<&crate::model::ProtocolEnum> {
         self.health_check_protocol.as_ref()
     }
@@ -4535,23 +3514,19 @@ impl TargetGroup {
     pub fn health_check_enabled(&self) -> std::option::Option<bool> {
         self.health_check_enabled
     }
-    /// <p>The approximate amount of time, in seconds, between health checks of an individual
-    /// target.</p>
+    /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
     pub fn health_check_interval_seconds(&self) -> std::option::Option<i32> {
         self.health_check_interval_seconds
     }
-    /// <p>The amount of time, in seconds, during which no response means a failed health
-    /// check.</p>
+    /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
     pub fn health_check_timeout_seconds(&self) -> std::option::Option<i32> {
         self.health_check_timeout_seconds
     }
-    /// <p>The number of consecutive health checks successes required before considering an unhealthy
-    /// target healthy.</p>
+    /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
     pub fn healthy_threshold_count(&self) -> std::option::Option<i32> {
         self.healthy_threshold_count
     }
-    /// <p>The number of consecutive health check failures required before considering the target
-    /// unhealthy.</p>
+    /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
     pub fn unhealthy_threshold_count(&self) -> std::option::Option<i32> {
         self.unhealthy_threshold_count
     }
@@ -4559,32 +3534,23 @@ impl TargetGroup {
     pub fn health_check_path(&self) -> std::option::Option<&str> {
         self.health_check_path.as_deref()
     }
-    /// <p>The HTTP or gRPC codes to use when checking for a successful response from a
-    /// target.</p>
+    /// <p>The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
     pub fn matcher(&self) -> std::option::Option<&crate::model::Matcher> {
         self.matcher.as_ref()
     }
-    /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target
-    /// group.</p>
+    /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
     pub fn load_balancer_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.load_balancer_arns.as_deref()
     }
-    /// <p>The type of target that you must specify when registering targets with this target group.
-    /// The possible values are <code>instance</code> (register targets by instance ID),
-    /// <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single
-    /// Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer
-    /// as a target).</p>
+    /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
     pub fn target_type(&self) -> std::option::Option<&crate::model::TargetTypeEnum> {
         self.target_type.as_ref()
     }
-    /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>,
-    /// <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+    /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
     pub fn protocol_version(&self) -> std::option::Option<&str> {
         self.protocol_version.as_deref()
     }
-    /// <p>The type of IP address used for this target group. The possible values are
-    /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
-    /// the IP address type defaults to <code>ipv4</code>.</p>
+    /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
     pub fn ip_address_type(
         &self,
     ) -> std::option::Option<&crate::model::TargetGroupIpAddressTypeEnum> {
@@ -4686,14 +3652,12 @@ pub mod target_group {
             self.protocol = input;
             self
         }
-        /// <p>The port on which the targets are listening. Not used if the target is a Lambda
-        /// function.</p>
+        /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>The port on which the targets are listening. Not used if the target is a Lambda
-        /// function.</p>
+        /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -4708,14 +3672,12 @@ pub mod target_group {
             self.vpc_id = input;
             self
         }
-        /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP
-        /// protocols are not supported for health checks.</p>
+        /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
         pub fn health_check_protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
             self.health_check_protocol = Some(input);
             self
         }
-        /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP
-        /// protocols are not supported for health checks.</p>
+        /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
         pub fn set_health_check_protocol(
             mut self,
             input: std::option::Option<crate::model::ProtocolEnum>,
@@ -4746,14 +3708,12 @@ pub mod target_group {
             self.health_check_enabled = input;
             self
         }
-        /// <p>The approximate amount of time, in seconds, between health checks of an individual
-        /// target.</p>
+        /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
         pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
             self.health_check_interval_seconds = Some(input);
             self
         }
-        /// <p>The approximate amount of time, in seconds, between health checks of an individual
-        /// target.</p>
+        /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
         pub fn set_health_check_interval_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -4761,38 +3721,32 @@ pub mod target_group {
             self.health_check_interval_seconds = input;
             self
         }
-        /// <p>The amount of time, in seconds, during which no response means a failed health
-        /// check.</p>
+        /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
         pub fn health_check_timeout_seconds(mut self, input: i32) -> Self {
             self.health_check_timeout_seconds = Some(input);
             self
         }
-        /// <p>The amount of time, in seconds, during which no response means a failed health
-        /// check.</p>
+        /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
         pub fn set_health_check_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_timeout_seconds = input;
             self
         }
-        /// <p>The number of consecutive health checks successes required before considering an unhealthy
-        /// target healthy.</p>
+        /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
         pub fn healthy_threshold_count(mut self, input: i32) -> Self {
             self.healthy_threshold_count = Some(input);
             self
         }
-        /// <p>The number of consecutive health checks successes required before considering an unhealthy
-        /// target healthy.</p>
+        /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
         pub fn set_healthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.healthy_threshold_count = input;
             self
         }
-        /// <p>The number of consecutive health check failures required before considering the target
-        /// unhealthy.</p>
+        /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
         pub fn unhealthy_threshold_count(mut self, input: i32) -> Self {
             self.unhealthy_threshold_count = Some(input);
             self
         }
-        /// <p>The number of consecutive health check failures required before considering the target
-        /// unhealthy.</p>
+        /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
         pub fn set_unhealthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.unhealthy_threshold_count = input;
             self
@@ -4810,14 +3764,12 @@ pub mod target_group {
             self.health_check_path = input;
             self
         }
-        /// <p>The HTTP or gRPC codes to use when checking for a successful response from a
-        /// target.</p>
+        /// <p>The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
         pub fn matcher(mut self, input: crate::model::Matcher) -> Self {
             self.matcher = Some(input);
             self
         }
-        /// <p>The HTTP or gRPC codes to use when checking for a successful response from a
-        /// target.</p>
+        /// <p>The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
         pub fn set_matcher(mut self, input: std::option::Option<crate::model::Matcher>) -> Self {
             self.matcher = input;
             self
@@ -4826,16 +3778,14 @@ pub mod target_group {
         ///
         /// To override the contents of this collection use [`set_load_balancer_arns`](Self::set_load_balancer_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target
-        /// group.</p>
+        /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
         pub fn load_balancer_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.load_balancer_arns.unwrap_or_default();
             v.push(input.into());
             self.load_balancer_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target
-        /// group.</p>
+        /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
         pub fn set_load_balancer_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4843,20 +3793,12 @@ pub mod target_group {
             self.load_balancer_arns = input;
             self
         }
-        /// <p>The type of target that you must specify when registering targets with this target group.
-        /// The possible values are <code>instance</code> (register targets by instance ID),
-        /// <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single
-        /// Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer
-        /// as a target).</p>
+        /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
         pub fn target_type(mut self, input: crate::model::TargetTypeEnum) -> Self {
             self.target_type = Some(input);
             self
         }
-        /// <p>The type of target that you must specify when registering targets with this target group.
-        /// The possible values are <code>instance</code> (register targets by instance ID),
-        /// <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single
-        /// Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer
-        /// as a target).</p>
+        /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
         pub fn set_target_type(
             mut self,
             input: std::option::Option<crate::model::TargetTypeEnum>,
@@ -4864,14 +3806,12 @@ pub mod target_group {
             self.target_type = input;
             self
         }
-        /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>,
-        /// <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+        /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
         pub fn protocol_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.protocol_version = Some(input.into());
             self
         }
-        /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>,
-        /// <code>HTTP1</code>, and <code>HTTP2</code>.</p>
+        /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
         pub fn set_protocol_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4879,9 +3819,7 @@ pub mod target_group {
             self.protocol_version = input;
             self
         }
-        /// <p>The type of IP address used for this target group. The possible values are
-        /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
-        /// the IP address type defaults to <code>ipv4</code>.</p>
+        /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
         pub fn ip_address_type(
             mut self,
             input: crate::model::TargetGroupIpAddressTypeEnum,
@@ -4889,9 +3827,7 @@ pub mod target_group {
             self.ip_address_type = Some(input);
             self
         }
-        /// <p>The type of IP address used for this target group. The possible values are
-        /// <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified,
-        /// the IP address type defaults to <code>ipv4</code>.</p>
+        /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::TargetGroupIpAddressTypeEnum>,
@@ -5049,34 +3985,25 @@ impl AsRef<str> for TargetTypeEnum {
     }
 }
 
-/// <p>The codes to use when checking for a successful response from a target. If the protocol
-/// version is gRPC, these are gRPC codes. Otherwise, these are HTTP codes. </p>
+/// <p>The codes to use when checking for a successful response from a target. If the protocol version is gRPC, these are gRPC codes. Otherwise, these are HTTP codes. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Matcher {
-    /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the
-    /// default value is 200. You can specify multiple values (for example, "200,202") or a range of
-    /// values (for example, "200-299").</p>
+    /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
     /// <p>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
-    /// <p>Note that when using shorthand syntax, some values such as commas need to be
-    /// escaped.</p>
+    /// <p>Note that when using shorthand syntax, some values such as commas need to be escaped.</p>
     pub http_code: std::option::Option<std::string::String>,
-    /// <p>You can specify values between 0 and 99. You can specify multiple values (for example,
-    /// "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
+    /// <p>You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
     pub grpc_code: std::option::Option<std::string::String>,
 }
 impl Matcher {
-    /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the
-    /// default value is 200. You can specify multiple values (for example, "200,202") or a range of
-    /// values (for example, "200-299").</p>
+    /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
     /// <p>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
-    /// <p>Note that when using shorthand syntax, some values such as commas need to be
-    /// escaped.</p>
+    /// <p>Note that when using shorthand syntax, some values such as commas need to be escaped.</p>
     pub fn http_code(&self) -> std::option::Option<&str> {
         self.http_code.as_deref()
     }
-    /// <p>You can specify values between 0 and 99. You can specify multiple values (for example,
-    /// "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
+    /// <p>You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
     pub fn grpc_code(&self) -> std::option::Option<&str> {
         self.grpc_code.as_deref()
     }
@@ -5099,34 +4026,26 @@ pub mod matcher {
         pub(crate) grpc_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the
-        /// default value is 200. You can specify multiple values (for example, "200,202") or a range of
-        /// values (for example, "200-299").</p>
+        /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
         /// <p>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
-        /// <p>Note that when using shorthand syntax, some values such as commas need to be
-        /// escaped.</p>
+        /// <p>Note that when using shorthand syntax, some values such as commas need to be escaped.</p>
         pub fn http_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_code = Some(input.into());
             self
         }
-        /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the
-        /// default value is 200. You can specify multiple values (for example, "200,202") or a range of
-        /// values (for example, "200-299").</p>
+        /// <p>For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").</p>
         /// <p>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</p>
-        /// <p>Note that when using shorthand syntax, some values such as commas need to be
-        /// escaped.</p>
+        /// <p>Note that when using shorthand syntax, some values such as commas need to be escaped.</p>
         pub fn set_http_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_code = input;
             self
         }
-        /// <p>You can specify values between 0 and 99. You can specify multiple values (for example,
-        /// "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
+        /// <p>You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
         pub fn grpc_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.grpc_code = Some(input.into());
             self
         }
-        /// <p>You can specify values between 0 and 99. You can specify multiple values (for example,
-        /// "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
+        /// <p>You can specify values between 0 and 99. You can specify multiple values (for example, "0,1") or a range of values (for example, "0-5"). The default value is 12.</p>
         pub fn set_grpc_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grpc_code = input;
             self
@@ -5227,110 +4146,30 @@ impl AsRef<str> for ProtocolEnum {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancerAttribute {
     /// <p>The name of the attribute.</p>
-    ///
     /// <p>The following attribute is supported by all load balancers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deletion_protection.enabled</code> - Indicates whether deletion protection is
-    /// enabled. The value is <code>true</code> or <code>false</code>. The default is
-    /// <code>false</code>.</p>
-    /// </li>
+    /// <li> <p> <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
     /// </ul>
-    ///
-    /// <p>The following attributes are supported by both Application Load Balancers and Network Load
-    /// Balancers:</p>
+    /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The
-    /// value is <code>true</code> or <code>false</code>. The default is
-    /// <code>false</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs.
-    /// This attribute is required if access logs are enabled. The bucket must exist in the same
-    /// region as the load balancer and have a bucket policy that grants Elastic Load Balancing
-    /// permissions to write to the bucket.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the
-    /// access logs.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to the
-    /// load balancer. It is set to <code>false</code> for internet-facing load balancers and
-    /// <code>true</code> for internal load balancers, preventing unintended access to your
-    /// internal load balancer through an internet gateway.</p>
-    /// </li>
+    /// <li> <p> <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is required if access logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.</p> </li>
+    /// <li> <p> <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.</p> </li>
+    /// <li> <p> <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to the load balancer. It is set to <code>false</code> for internet-facing load balancers and <code>true</code> for internal load balancers, preventing unintended access to your internal load balancer through an internet gateway.</p> </li>
     /// </ul>
-    ///
     /// <p>The following attributes are supported by only Application Load Balancers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The
-    /// valid range is 1-4000 seconds. The default is 60 seconds.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer
-    /// handles requests that might pose a security risk to your application. The possible values
-    /// are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default
-    /// is <code>defensive</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP
-    /// headers with invalid header fields are removed by the load balancer (<code>true</code>) or
-    /// routed to targets (<code>false</code>). The default is <code>false</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates
-    /// whether the two headers (<code>x-amzn-tls-version</code> and
-    /// <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated
-    /// TLS version and cipher suite, are added to the client request before sending it to the
-    /// target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol
-    /// version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header
-    /// has information about the cipher suite negotiated with the client. Both headers are in
-    /// OpenSSL format. The possible values for the attribute are <code>true</code> and
-    /// <code>false</code>. The default is <code>false</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>routing.http.xff_client_port.enabled</code> - Indicates whether the
-    /// <code>X-Forwarded-For</code> header should preserve the source port that the client used
-    /// to connect to the load balancer. The possible values are <code>true</code> and
-    /// <code>false</code>. The default is <code>false</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible
-    /// values are <code>true</code> and <code>false</code>. The default is <code>true</code>.
-    /// Elastic Load Balancing requires that message header names contain only alphanumeric
-    /// characters and hyphens.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load
-    /// balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The
-    /// default is <code>false</code>.</p>
-    /// </li>
+    /// <li> <p> <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li>
+    /// <li> <p> <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
+    /// <li> <p> <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates whether the two headers (<code>x-amzn-tls-version</code> and <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated TLS version and cipher suite, are added to the client request before sending it to the target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header has information about the cipher suite negotiated with the client. Both headers are in OpenSSL format. The possible values for the attribute are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>routing.http.xff_client_port.enabled</code> - Indicates whether the <code>X-Forwarded-For</code> header should preserve the source port that the client used to connect to the load balancer. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.</p> </li>
+    /// <li> <p> <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
     /// </ul>
-    ///
-    /// <p>The following attribute is supported by Network Load Balancers and Gateway Load
-    /// Balancers:</p>
+    /// <p>The following attribute is supported by Network Load Balancers and Gateway Load Balancers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load
-    /// balancing is enabled. The possible values are <code>true</code> and <code>false</code>.
-    /// The default is <code>false</code>.</p>
-    /// </li>
+    /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
     /// </ul>
     pub key: std::option::Option<std::string::String>,
     /// <p>The value of the attribute.</p>
@@ -5338,110 +4177,30 @@ pub struct LoadBalancerAttribute {
 }
 impl LoadBalancerAttribute {
     /// <p>The name of the attribute.</p>
-    ///
     /// <p>The following attribute is supported by all load balancers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deletion_protection.enabled</code> - Indicates whether deletion protection is
-    /// enabled. The value is <code>true</code> or <code>false</code>. The default is
-    /// <code>false</code>.</p>
-    /// </li>
+    /// <li> <p> <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
     /// </ul>
-    ///
-    /// <p>The following attributes are supported by both Application Load Balancers and Network Load
-    /// Balancers:</p>
+    /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The
-    /// value is <code>true</code> or <code>false</code>. The default is
-    /// <code>false</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs.
-    /// This attribute is required if access logs are enabled. The bucket must exist in the same
-    /// region as the load balancer and have a bucket policy that grants Elastic Load Balancing
-    /// permissions to write to the bucket.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the
-    /// access logs.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to the
-    /// load balancer. It is set to <code>false</code> for internet-facing load balancers and
-    /// <code>true</code> for internal load balancers, preventing unintended access to your
-    /// internal load balancer through an internet gateway.</p>
-    /// </li>
+    /// <li> <p> <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is required if access logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.</p> </li>
+    /// <li> <p> <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.</p> </li>
+    /// <li> <p> <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to the load balancer. It is set to <code>false</code> for internet-facing load balancers and <code>true</code> for internal load balancers, preventing unintended access to your internal load balancer through an internet gateway.</p> </li>
     /// </ul>
-    ///
     /// <p>The following attributes are supported by only Application Load Balancers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The
-    /// valid range is 1-4000 seconds. The default is 60 seconds.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer
-    /// handles requests that might pose a security risk to your application. The possible values
-    /// are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default
-    /// is <code>defensive</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP
-    /// headers with invalid header fields are removed by the load balancer (<code>true</code>) or
-    /// routed to targets (<code>false</code>). The default is <code>false</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates
-    /// whether the two headers (<code>x-amzn-tls-version</code> and
-    /// <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated
-    /// TLS version and cipher suite, are added to the client request before sending it to the
-    /// target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol
-    /// version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header
-    /// has information about the cipher suite negotiated with the client. Both headers are in
-    /// OpenSSL format. The possible values for the attribute are <code>true</code> and
-    /// <code>false</code>. The default is <code>false</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>routing.http.xff_client_port.enabled</code> - Indicates whether the
-    /// <code>X-Forwarded-For</code> header should preserve the source port that the client used
-    /// to connect to the load balancer. The possible values are <code>true</code> and
-    /// <code>false</code>. The default is <code>false</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible
-    /// values are <code>true</code> and <code>false</code>. The default is <code>true</code>.
-    /// Elastic Load Balancing requires that message header names contain only alphanumeric
-    /// characters and hyphens.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load
-    /// balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The
-    /// default is <code>false</code>.</p>
-    /// </li>
+    /// <li> <p> <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li>
+    /// <li> <p> <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
+    /// <li> <p> <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates whether the two headers (<code>x-amzn-tls-version</code> and <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated TLS version and cipher suite, are added to the client request before sending it to the target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header has information about the cipher suite negotiated with the client. Both headers are in OpenSSL format. The possible values for the attribute are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>routing.http.xff_client_port.enabled</code> - Indicates whether the <code>X-Forwarded-For</code> header should preserve the source port that the client used to connect to the load balancer. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
+    /// <li> <p> <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.</p> </li>
+    /// <li> <p> <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
     /// </ul>
-    ///
-    /// <p>The following attribute is supported by Network Load Balancers and Gateway Load
-    /// Balancers:</p>
+    /// <p>The following attribute is supported by Network Load Balancers and Gateway Load Balancers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load
-    /// balancing is enabled. The possible values are <code>true</code> and <code>false</code>.
-    /// The default is <code>false</code>.</p>
-    /// </li>
+    /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
     /// </ul>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
@@ -5470,220 +4229,60 @@ pub mod load_balancer_attribute {
     }
     impl Builder {
         /// <p>The name of the attribute.</p>
-        ///
         /// <p>The following attribute is supported by all load balancers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deletion_protection.enabled</code> - Indicates whether deletion protection is
-        /// enabled. The value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>.</p>
-        /// </li>
+        /// <li> <p> <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
         /// </ul>
-        ///
-        /// <p>The following attributes are supported by both Application Load Balancers and Network Load
-        /// Balancers:</p>
+        /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The
-        /// value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs.
-        /// This attribute is required if access logs are enabled. The bucket must exist in the same
-        /// region as the load balancer and have a bucket policy that grants Elastic Load Balancing
-        /// permissions to write to the bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the
-        /// access logs.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to the
-        /// load balancer. It is set to <code>false</code> for internet-facing load balancers and
-        /// <code>true</code> for internal load balancers, preventing unintended access to your
-        /// internal load balancer through an internet gateway.</p>
-        /// </li>
+        /// <li> <p> <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is required if access logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.</p> </li>
+        /// <li> <p> <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.</p> </li>
+        /// <li> <p> <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to the load balancer. It is set to <code>false</code> for internet-facing load balancers and <code>true</code> for internal load balancers, preventing unintended access to your internal load balancer through an internet gateway.</p> </li>
         /// </ul>
-        ///
         /// <p>The following attributes are supported by only Application Load Balancers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The
-        /// valid range is 1-4000 seconds. The default is 60 seconds.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer
-        /// handles requests that might pose a security risk to your application. The possible values
-        /// are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default
-        /// is <code>defensive</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP
-        /// headers with invalid header fields are removed by the load balancer (<code>true</code>) or
-        /// routed to targets (<code>false</code>). The default is <code>false</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates
-        /// whether the two headers (<code>x-amzn-tls-version</code> and
-        /// <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated
-        /// TLS version and cipher suite, are added to the client request before sending it to the
-        /// target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol
-        /// version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header
-        /// has information about the cipher suite negotiated with the client. Both headers are in
-        /// OpenSSL format. The possible values for the attribute are <code>true</code> and
-        /// <code>false</code>. The default is <code>false</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>routing.http.xff_client_port.enabled</code> - Indicates whether the
-        /// <code>X-Forwarded-For</code> header should preserve the source port that the client used
-        /// to connect to the load balancer. The possible values are <code>true</code> and
-        /// <code>false</code>. The default is <code>false</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible
-        /// values are <code>true</code> and <code>false</code>. The default is <code>true</code>.
-        /// Elastic Load Balancing requires that message header names contain only alphanumeric
-        /// characters and hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load
-        /// balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The
-        /// default is <code>false</code>.</p>
-        /// </li>
+        /// <li> <p> <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li>
+        /// <li> <p> <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
+        /// <li> <p> <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates whether the two headers (<code>x-amzn-tls-version</code> and <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated TLS version and cipher suite, are added to the client request before sending it to the target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header has information about the cipher suite negotiated with the client. Both headers are in OpenSSL format. The possible values for the attribute are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>routing.http.xff_client_port.enabled</code> - Indicates whether the <code>X-Forwarded-For</code> header should preserve the source port that the client used to connect to the load balancer. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.</p> </li>
+        /// <li> <p> <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
         /// </ul>
-        ///
-        /// <p>The following attribute is supported by Network Load Balancers and Gateway Load
-        /// Balancers:</p>
+        /// <p>The following attribute is supported by Network Load Balancers and Gateway Load Balancers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load
-        /// balancing is enabled. The possible values are <code>true</code> and <code>false</code>.
-        /// The default is <code>false</code>.</p>
-        /// </li>
+        /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
         /// </ul>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
         /// <p>The name of the attribute.</p>
-        ///
         /// <p>The following attribute is supported by all load balancers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deletion_protection.enabled</code> - Indicates whether deletion protection is
-        /// enabled. The value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>.</p>
-        /// </li>
+        /// <li> <p> <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
         /// </ul>
-        ///
-        /// <p>The following attributes are supported by both Application Load Balancers and Network Load
-        /// Balancers:</p>
+        /// <p>The following attributes are supported by both Application Load Balancers and Network Load Balancers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The
-        /// value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs.
-        /// This attribute is required if access logs are enabled. The bucket must exist in the same
-        /// region as the load balancer and have a bucket policy that grants Elastic Load Balancing
-        /// permissions to write to the bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the
-        /// access logs.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to the
-        /// load balancer. It is set to <code>false</code> for internet-facing load balancers and
-        /// <code>true</code> for internal load balancers, preventing unintended access to your
-        /// internal load balancer through an internet gateway.</p>
-        /// </li>
+        /// <li> <p> <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is required if access logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy that grants Elastic Load Balancing permissions to write to the bucket.</p> </li>
+        /// <li> <p> <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.</p> </li>
+        /// <li> <p> <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to the load balancer. It is set to <code>false</code> for internet-facing load balancers and <code>true</code> for internal load balancers, preventing unintended access to your internal load balancer through an internet gateway.</p> </li>
         /// </ul>
-        ///
         /// <p>The following attributes are supported by only Application Load Balancers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The
-        /// valid range is 1-4000 seconds. The default is 60 seconds.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer
-        /// handles requests that might pose a security risk to your application. The possible values
-        /// are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default
-        /// is <code>defensive</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP
-        /// headers with invalid header fields are removed by the load balancer (<code>true</code>) or
-        /// routed to targets (<code>false</code>). The default is <code>false</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates
-        /// whether the two headers (<code>x-amzn-tls-version</code> and
-        /// <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated
-        /// TLS version and cipher suite, are added to the client request before sending it to the
-        /// target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol
-        /// version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header
-        /// has information about the cipher suite negotiated with the client. Both headers are in
-        /// OpenSSL format. The possible values for the attribute are <code>true</code> and
-        /// <code>false</code>. The default is <code>false</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>routing.http.xff_client_port.enabled</code> - Indicates whether the
-        /// <code>X-Forwarded-For</code> header should preserve the source port that the client used
-        /// to connect to the load balancer. The possible values are <code>true</code> and
-        /// <code>false</code>. The default is <code>false</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible
-        /// values are <code>true</code> and <code>false</code>. The default is <code>true</code>.
-        /// Elastic Load Balancing requires that message header names contain only alphanumeric
-        /// characters and hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load
-        /// balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The
-        /// default is <code>false</code>.</p>
-        /// </li>
+        /// <li> <p> <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li>
+        /// <li> <p> <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that might pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.</p> </li>
+        /// <li> <p> <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates whether the two headers (<code>x-amzn-tls-version</code> and <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated TLS version and cipher suite, are added to the client request before sending it to the target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header has information about the cipher suite negotiated with the client. Both headers are in OpenSSL format. The possible values for the attribute are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>routing.http.xff_client_port.enabled</code> - Indicates whether the <code>X-Forwarded-For</code> header should preserve the source port that the client used to connect to the load balancer. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
+        /// <li> <p> <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.</p> </li>
+        /// <li> <p> <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
         /// </ul>
-        ///
-        /// <p>The following attribute is supported by Network Load Balancers and Gateway Load
-        /// Balancers:</p>
+        /// <p>The following attribute is supported by Network Load Balancers and Gateway Load Balancers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load
-        /// balancing is enabled. The possible values are <code>true</code> and <code>false</code>.
-        /// The default is <code>false</code>.</p>
-        /// </li>
+        /// <li> <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.</p> </li>
         /// </ul>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
@@ -5729,13 +4328,11 @@ pub struct Listener {
     pub protocol: std::option::Option<crate::model::ProtocolEnum>,
     /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
-    /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are
-    /// supported.</p>
+    /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
     pub ssl_policy: std::option::Option<std::string::String>,
     /// <p>The default actions for the listener.</p>
     pub default_actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
-    /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
-    /// policy.</p>
+    /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
     pub alpn_policy: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Listener {
@@ -5759,8 +4356,7 @@ impl Listener {
     pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
         self.certificates.as_deref()
     }
-    /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are
-    /// supported.</p>
+    /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
     pub fn ssl_policy(&self) -> std::option::Option<&str> {
         self.ssl_policy.as_deref()
     }
@@ -5768,8 +4364,7 @@ impl Listener {
     pub fn default_actions(&self) -> std::option::Option<&[crate::model::Action]> {
         self.default_actions.as_deref()
     }
-    /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
-    /// policy.</p>
+    /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
     pub fn alpn_policy(&self) -> std::option::Option<&[std::string::String]> {
         self.alpn_policy.as_deref()
     }
@@ -5855,9 +4450,9 @@ pub mod listener {
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
         /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
@@ -5869,14 +4464,12 @@ pub mod listener {
             self.certificates = input;
             self
         }
-        /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are
-        /// supported.</p>
+        /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
         pub fn ssl_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssl_policy = Some(input.into());
             self
         }
-        /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are
-        /// supported.</p>
+        /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
         pub fn set_ssl_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ssl_policy = input;
             self
@@ -5886,9 +4479,9 @@ pub mod listener {
         /// To override the contents of this collection use [`set_default_actions`](Self::set_default_actions).
         ///
         /// <p>The default actions for the listener.</p>
-        pub fn default_actions(mut self, input: impl Into<crate::model::Action>) -> Self {
+        pub fn default_actions(mut self, input: crate::model::Action) -> Self {
             let mut v = self.default_actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.default_actions = Some(v);
             self
         }
@@ -5904,16 +4497,14 @@ pub mod listener {
         ///
         /// To override the contents of this collection use [`set_alpn_policy`](Self::set_alpn_policy).
         ///
-        /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
-        /// policy.</p>
+        /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
         pub fn alpn_policy(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alpn_policy.unwrap_or_default();
             v.push(input.into());
             self.alpn_policy = Some(v);
             self
         }
-        /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
-        /// policy.</p>
+        /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
         pub fn set_alpn_policy(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6051,102 +4642,37 @@ pub struct TargetHealth {
     /// <p>The state of the target.</p>
     pub state: std::option::Option<crate::model::TargetHealthStateEnum>,
     /// <p>The reason code.</p>
-    ///
     /// <p>If the target state is <code>healthy</code>, a reason code is not provided.</p>
-    ///
-    /// <p>If the target state is <code>initial</code>, the reason code can be one of the following
-    /// values:</p>
+    /// <p>If the target state is <code>initial</code>, the reason code can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered
-    /// with the load balancer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the
-    /// minimum number of health checks required to determine its health status.</p>
-    /// </li>
+    /// <li> <p> <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load balancer.</p> </li>
+    /// <li> <p> <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number of health checks required to determine its health status.</p> </li>
     /// </ul>
-    ///
-    /// <p>If the target state is <code>unhealthy</code>, the reason code can be one of the following
-    /// values:</p>
+    /// <p>If the target state is <code>unhealthy</code>, the reason code can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
-    /// expected HTTP code. Applies only to Application Load Balancers and Gateway Load
-    /// Balancers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Target.Timeout</code> - The health check requests timed out. Applies only to
-    /// Application Load Balancers and Gateway Load Balancers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Target.FailedHealthChecks</code> - The load balancer received an error while
-    /// establishing a connection to the target or the target response was malformed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Elb.InternalError</code> - The health checks failed due to an internal error.
-    /// Applies only to Application Load Balancers.</p>
-    /// </li>
+    /// <li> <p> <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only to Application Load Balancers and Gateway Load Balancers.</p> </li>
+    /// <li> <p> <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and Gateway Load Balancers.</p> </li>
+    /// <li> <p> <code>Target.FailedHealthChecks</code> - The load balancer received an error while establishing a connection to the target or the target response was malformed.</p> </li>
+    /// <li> <p> <code>Elb.InternalError</code> - The health checks failed due to an internal error. Applies only to Application Load Balancers.</p> </li>
     /// </ul>
-    ///
-    /// <p>If the target state is <code>unused</code>, the reason code can be one of the following
-    /// values:</p>
+    /// <p>If the target state is <code>unused</code>, the reason code can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Target.NotRegistered</code> - The target is not registered with the target
-    /// group.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Target.NotInUse</code> - The target group is not used by any load balancer or
-    /// the target is in an Availability Zone that is not enabled for its load balancer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Target.InvalidState</code> - The target is in the stopped or terminated
-    /// state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load
-    /// balancer.</p>
-    /// </li>
+    /// <li> <p> <code>Target.NotRegistered</code> - The target is not registered with the target group.</p> </li>
+    /// <li> <p> <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an Availability Zone that is not enabled for its load balancer.</p> </li>
+    /// <li> <p> <code>Target.InvalidState</code> - The target is in the stopped or terminated state.</p> </li>
+    /// <li> <p> <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.</p> </li>
     /// </ul>
-    ///
-    /// <p>If the target state is <code>draining</code>, the reason code can be the following
-    /// value:</p>
+    /// <p>If the target state is <code>draining</code>, the reason code can be the following value:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Target.DeregistrationInProgress</code> - The target is in the process of being
-    /// deregistered and the deregistration delay period has not expired.</p>
-    /// </li>
+    /// <li> <p> <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the deregistration delay period has not expired.</p> </li>
     /// </ul>
-    ///
-    /// <p>If the target state is <code>unavailable</code>, the reason code can be the following
-    /// value:</p>
+    /// <p>If the target state is <code>unavailable</code>, the reason code can be the following value:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target
-    /// group. Applies only to Application Load Balancers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Elb.InternalError</code> - Target health is unavailable due to an internal
-    /// error. Applies only to Network Load Balancers.</p>
-    /// </li>
+    /// <li> <p> <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group. Applies only to Application Load Balancers.</p> </li>
+    /// <li> <p> <code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p> </li>
     /// </ul>
     pub reason: std::option::Option<crate::model::TargetHealthReasonEnum>,
-    /// <p>A description of the target health that provides additional details. If the state is
-    /// <code>healthy</code>, a description is not provided.</p>
+    /// <p>A description of the target health that provides additional details. If the state is <code>healthy</code>, a description is not provided.</p>
     pub description: std::option::Option<std::string::String>,
 }
 impl TargetHealth {
@@ -6155,104 +4681,39 @@ impl TargetHealth {
         self.state.as_ref()
     }
     /// <p>The reason code.</p>
-    ///
     /// <p>If the target state is <code>healthy</code>, a reason code is not provided.</p>
-    ///
-    /// <p>If the target state is <code>initial</code>, the reason code can be one of the following
-    /// values:</p>
+    /// <p>If the target state is <code>initial</code>, the reason code can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered
-    /// with the load balancer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the
-    /// minimum number of health checks required to determine its health status.</p>
-    /// </li>
+    /// <li> <p> <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load balancer.</p> </li>
+    /// <li> <p> <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number of health checks required to determine its health status.</p> </li>
     /// </ul>
-    ///
-    /// <p>If the target state is <code>unhealthy</code>, the reason code can be one of the following
-    /// values:</p>
+    /// <p>If the target state is <code>unhealthy</code>, the reason code can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
-    /// expected HTTP code. Applies only to Application Load Balancers and Gateway Load
-    /// Balancers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Target.Timeout</code> - The health check requests timed out. Applies only to
-    /// Application Load Balancers and Gateway Load Balancers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Target.FailedHealthChecks</code> - The load balancer received an error while
-    /// establishing a connection to the target or the target response was malformed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Elb.InternalError</code> - The health checks failed due to an internal error.
-    /// Applies only to Application Load Balancers.</p>
-    /// </li>
+    /// <li> <p> <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only to Application Load Balancers and Gateway Load Balancers.</p> </li>
+    /// <li> <p> <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and Gateway Load Balancers.</p> </li>
+    /// <li> <p> <code>Target.FailedHealthChecks</code> - The load balancer received an error while establishing a connection to the target or the target response was malformed.</p> </li>
+    /// <li> <p> <code>Elb.InternalError</code> - The health checks failed due to an internal error. Applies only to Application Load Balancers.</p> </li>
     /// </ul>
-    ///
-    /// <p>If the target state is <code>unused</code>, the reason code can be one of the following
-    /// values:</p>
+    /// <p>If the target state is <code>unused</code>, the reason code can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Target.NotRegistered</code> - The target is not registered with the target
-    /// group.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Target.NotInUse</code> - The target group is not used by any load balancer or
-    /// the target is in an Availability Zone that is not enabled for its load balancer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Target.InvalidState</code> - The target is in the stopped or terminated
-    /// state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load
-    /// balancer.</p>
-    /// </li>
+    /// <li> <p> <code>Target.NotRegistered</code> - The target is not registered with the target group.</p> </li>
+    /// <li> <p> <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an Availability Zone that is not enabled for its load balancer.</p> </li>
+    /// <li> <p> <code>Target.InvalidState</code> - The target is in the stopped or terminated state.</p> </li>
+    /// <li> <p> <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.</p> </li>
     /// </ul>
-    ///
-    /// <p>If the target state is <code>draining</code>, the reason code can be the following
-    /// value:</p>
+    /// <p>If the target state is <code>draining</code>, the reason code can be the following value:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Target.DeregistrationInProgress</code> - The target is in the process of being
-    /// deregistered and the deregistration delay period has not expired.</p>
-    /// </li>
+    /// <li> <p> <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the deregistration delay period has not expired.</p> </li>
     /// </ul>
-    ///
-    /// <p>If the target state is <code>unavailable</code>, the reason code can be the following
-    /// value:</p>
+    /// <p>If the target state is <code>unavailable</code>, the reason code can be the following value:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target
-    /// group. Applies only to Application Load Balancers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Elb.InternalError</code> - Target health is unavailable due to an internal
-    /// error. Applies only to Network Load Balancers.</p>
-    /// </li>
+    /// <li> <p> <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group. Applies only to Application Load Balancers.</p> </li>
+    /// <li> <p> <code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p> </li>
     /// </ul>
     pub fn reason(&self) -> std::option::Option<&crate::model::TargetHealthReasonEnum> {
         self.reason.as_ref()
     }
-    /// <p>A description of the target health that provides additional details. If the state is
-    /// <code>healthy</code>, a description is not provided.</p>
+    /// <p>A description of the target health that provides additional details. If the state is <code>healthy</code>, a description is not provided.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -6291,196 +4752,68 @@ pub mod target_health {
             self
         }
         /// <p>The reason code.</p>
-        ///
         /// <p>If the target state is <code>healthy</code>, a reason code is not provided.</p>
-        ///
-        /// <p>If the target state is <code>initial</code>, the reason code can be one of the following
-        /// values:</p>
+        /// <p>If the target state is <code>initial</code>, the reason code can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered
-        /// with the load balancer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the
-        /// minimum number of health checks required to determine its health status.</p>
-        /// </li>
+        /// <li> <p> <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load balancer.</p> </li>
+        /// <li> <p> <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number of health checks required to determine its health status.</p> </li>
         /// </ul>
-        ///
-        /// <p>If the target state is <code>unhealthy</code>, the reason code can be one of the following
-        /// values:</p>
+        /// <p>If the target state is <code>unhealthy</code>, the reason code can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
-        /// expected HTTP code. Applies only to Application Load Balancers and Gateway Load
-        /// Balancers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Target.Timeout</code> - The health check requests timed out. Applies only to
-        /// Application Load Balancers and Gateway Load Balancers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Target.FailedHealthChecks</code> - The load balancer received an error while
-        /// establishing a connection to the target or the target response was malformed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Elb.InternalError</code> - The health checks failed due to an internal error.
-        /// Applies only to Application Load Balancers.</p>
-        /// </li>
+        /// <li> <p> <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only to Application Load Balancers and Gateway Load Balancers.</p> </li>
+        /// <li> <p> <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and Gateway Load Balancers.</p> </li>
+        /// <li> <p> <code>Target.FailedHealthChecks</code> - The load balancer received an error while establishing a connection to the target or the target response was malformed.</p> </li>
+        /// <li> <p> <code>Elb.InternalError</code> - The health checks failed due to an internal error. Applies only to Application Load Balancers.</p> </li>
         /// </ul>
-        ///
-        /// <p>If the target state is <code>unused</code>, the reason code can be one of the following
-        /// values:</p>
+        /// <p>If the target state is <code>unused</code>, the reason code can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Target.NotRegistered</code> - The target is not registered with the target
-        /// group.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Target.NotInUse</code> - The target group is not used by any load balancer or
-        /// the target is in an Availability Zone that is not enabled for its load balancer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Target.InvalidState</code> - The target is in the stopped or terminated
-        /// state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load
-        /// balancer.</p>
-        /// </li>
+        /// <li> <p> <code>Target.NotRegistered</code> - The target is not registered with the target group.</p> </li>
+        /// <li> <p> <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an Availability Zone that is not enabled for its load balancer.</p> </li>
+        /// <li> <p> <code>Target.InvalidState</code> - The target is in the stopped or terminated state.</p> </li>
+        /// <li> <p> <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.</p> </li>
         /// </ul>
-        ///
-        /// <p>If the target state is <code>draining</code>, the reason code can be the following
-        /// value:</p>
+        /// <p>If the target state is <code>draining</code>, the reason code can be the following value:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Target.DeregistrationInProgress</code> - The target is in the process of being
-        /// deregistered and the deregistration delay period has not expired.</p>
-        /// </li>
+        /// <li> <p> <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the deregistration delay period has not expired.</p> </li>
         /// </ul>
-        ///
-        /// <p>If the target state is <code>unavailable</code>, the reason code can be the following
-        /// value:</p>
+        /// <p>If the target state is <code>unavailable</code>, the reason code can be the following value:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target
-        /// group. Applies only to Application Load Balancers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Elb.InternalError</code> - Target health is unavailable due to an internal
-        /// error. Applies only to Network Load Balancers.</p>
-        /// </li>
+        /// <li> <p> <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group. Applies only to Application Load Balancers.</p> </li>
+        /// <li> <p> <code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p> </li>
         /// </ul>
         pub fn reason(mut self, input: crate::model::TargetHealthReasonEnum) -> Self {
             self.reason = Some(input);
             self
         }
         /// <p>The reason code.</p>
-        ///
         /// <p>If the target state is <code>healthy</code>, a reason code is not provided.</p>
-        ///
-        /// <p>If the target state is <code>initial</code>, the reason code can be one of the following
-        /// values:</p>
+        /// <p>If the target state is <code>initial</code>, the reason code can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered
-        /// with the load balancer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the
-        /// minimum number of health checks required to determine its health status.</p>
-        /// </li>
+        /// <li> <p> <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered with the load balancer.</p> </li>
+        /// <li> <p> <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target the minimum number of health checks required to determine its health status.</p> </li>
         /// </ul>
-        ///
-        /// <p>If the target state is <code>unhealthy</code>, the reason code can be one of the following
-        /// values:</p>
+        /// <p>If the target state is <code>unhealthy</code>, the reason code can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Target.ResponseCodeMismatch</code> - The health checks did not return an
-        /// expected HTTP code. Applies only to Application Load Balancers and Gateway Load
-        /// Balancers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Target.Timeout</code> - The health check requests timed out. Applies only to
-        /// Application Load Balancers and Gateway Load Balancers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Target.FailedHealthChecks</code> - The load balancer received an error while
-        /// establishing a connection to the target or the target response was malformed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Elb.InternalError</code> - The health checks failed due to an internal error.
-        /// Applies only to Application Load Balancers.</p>
-        /// </li>
+        /// <li> <p> <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only to Application Load Balancers and Gateway Load Balancers.</p> </li>
+        /// <li> <p> <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and Gateway Load Balancers.</p> </li>
+        /// <li> <p> <code>Target.FailedHealthChecks</code> - The load balancer received an error while establishing a connection to the target or the target response was malformed.</p> </li>
+        /// <li> <p> <code>Elb.InternalError</code> - The health checks failed due to an internal error. Applies only to Application Load Balancers.</p> </li>
         /// </ul>
-        ///
-        /// <p>If the target state is <code>unused</code>, the reason code can be one of the following
-        /// values:</p>
+        /// <p>If the target state is <code>unused</code>, the reason code can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Target.NotRegistered</code> - The target is not registered with the target
-        /// group.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Target.NotInUse</code> - The target group is not used by any load balancer or
-        /// the target is in an Availability Zone that is not enabled for its load balancer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Target.InvalidState</code> - The target is in the stopped or terminated
-        /// state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load
-        /// balancer.</p>
-        /// </li>
+        /// <li> <p> <code>Target.NotRegistered</code> - The target is not registered with the target group.</p> </li>
+        /// <li> <p> <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an Availability Zone that is not enabled for its load balancer.</p> </li>
+        /// <li> <p> <code>Target.InvalidState</code> - The target is in the stopped or terminated state.</p> </li>
+        /// <li> <p> <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.</p> </li>
         /// </ul>
-        ///
-        /// <p>If the target state is <code>draining</code>, the reason code can be the following
-        /// value:</p>
+        /// <p>If the target state is <code>draining</code>, the reason code can be the following value:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Target.DeregistrationInProgress</code> - The target is in the process of being
-        /// deregistered and the deregistration delay period has not expired.</p>
-        /// </li>
+        /// <li> <p> <code>Target.DeregistrationInProgress</code> - The target is in the process of being deregistered and the deregistration delay period has not expired.</p> </li>
         /// </ul>
-        ///
-        /// <p>If the target state is <code>unavailable</code>, the reason code can be the following
-        /// value:</p>
+        /// <p>If the target state is <code>unavailable</code>, the reason code can be the following value:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target
-        /// group. Applies only to Application Load Balancers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Elb.InternalError</code> - Target health is unavailable due to an internal
-        /// error. Applies only to Network Load Balancers.</p>
-        /// </li>
+        /// <li> <p> <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group. Applies only to Application Load Balancers.</p> </li>
+        /// <li> <p> <code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p> </li>
         /// </ul>
         pub fn set_reason(
             mut self,
@@ -6489,14 +4822,12 @@ pub mod target_health {
             self.reason = input;
             self
         }
-        /// <p>A description of the target health that provides additional details. If the state is
-        /// <code>healthy</code>, a description is not provided.</p>
+        /// <p>A description of the target health that provides additional details. If the state is <code>healthy</code>, a description is not provided.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the target health that provides additional details. If the state is
-        /// <code>healthy</code>, a description is not provided.</p>
+        /// <p>A description of the target health that provides additional details. If the state is <code>healthy</code>, a description is not provided.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -6756,9 +5087,9 @@ pub mod tag_description {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6940,9 +5271,9 @@ pub mod ssl_policy {
         /// To override the contents of this collection use [`set_ciphers`](Self::set_ciphers).
         ///
         /// <p>The ciphers.</p>
-        pub fn ciphers(mut self, input: impl Into<crate::model::Cipher>) -> Self {
+        pub fn ciphers(mut self, input: crate::model::Cipher) -> Self {
             let mut v = self.ciphers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ciphers = Some(v);
             self
         }
@@ -7150,14 +5481,8 @@ pub struct LoadBalancer {
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the load balancer.</p>
     pub load_balancer_name: std::option::Option<std::string::String>,
-    /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
-    /// Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes.
-    /// Therefore, Internet-facing load balancers can route requests from clients over the
-    /// internet.</p>
-    /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an
-    /// internal load balancer is publicly resolvable to the private IP addresses of the nodes.
-    /// Therefore, internal load balancers can route requests only from clients with access to the VPC
-    /// for the load balancer.</p>
+    /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
+    /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
     pub scheme: std::option::Option<crate::model::LoadBalancerSchemeEnum>,
     /// <p>The ID of the VPC for the load balancer.</p>
     pub vpc_id: std::option::Option<std::string::String>,
@@ -7169,9 +5494,7 @@ pub struct LoadBalancer {
     pub availability_zones: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
     /// <p>The IDs of the security groups for the load balancer.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
-    /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-    /// addresses).</p>
+    /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
     pub ip_address_type: std::option::Option<crate::model::IpAddressType>,
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
     pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
@@ -7197,14 +5520,8 @@ impl LoadBalancer {
     pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
-    /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
-    /// Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes.
-    /// Therefore, Internet-facing load balancers can route requests from clients over the
-    /// internet.</p>
-    /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an
-    /// internal load balancer is publicly resolvable to the private IP addresses of the nodes.
-    /// Therefore, internal load balancers can route requests only from clients with access to the VPC
-    /// for the load balancer.</p>
+    /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
+    /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
     pub fn scheme(&self) -> std::option::Option<&crate::model::LoadBalancerSchemeEnum> {
         self.scheme.as_ref()
     }
@@ -7228,9 +5545,7 @@ impl LoadBalancer {
     pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
-    /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
-    /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-    /// addresses).</p>
+    /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
     pub fn ip_address_type(&self) -> std::option::Option<&crate::model::IpAddressType> {
         self.ip_address_type.as_ref()
     }
@@ -7342,26 +5657,14 @@ pub mod load_balancer {
             self.load_balancer_name = input;
             self
         }
-        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
-        /// Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes.
-        /// Therefore, Internet-facing load balancers can route requests from clients over the
-        /// internet.</p>
-        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an
-        /// internal load balancer is publicly resolvable to the private IP addresses of the nodes.
-        /// Therefore, internal load balancers can route requests only from clients with access to the VPC
-        /// for the load balancer.</p>
+        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
+        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
         pub fn scheme(mut self, input: crate::model::LoadBalancerSchemeEnum) -> Self {
             self.scheme = Some(input);
             self
         }
-        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
-        /// Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes.
-        /// Therefore, Internet-facing load balancers can route requests from clients over the
-        /// internet.</p>
-        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an
-        /// internal load balancer is publicly resolvable to the private IP addresses of the nodes.
-        /// Therefore, internal load balancers can route requests only from clients with access to the VPC
-        /// for the load balancer.</p>
+        /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
+        /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
         pub fn set_scheme(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerSchemeEnum>,
@@ -7410,12 +5713,9 @@ pub mod load_balancer {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>The subnets for the load balancer.</p>
-        pub fn availability_zones(
-            mut self,
-            input: impl Into<crate::model::AvailabilityZone>,
-        ) -> Self {
+        pub fn availability_zones(mut self, input: crate::model::AvailabilityZone) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.availability_zones = Some(v);
             self
         }
@@ -7446,16 +5746,12 @@ pub mod load_balancer {
             self.security_groups = input;
             self
         }
-        /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
-        /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-        /// addresses).</p>
+        /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
         pub fn ip_address_type(mut self, input: crate::model::IpAddressType) -> Self {
             self.ip_address_type = Some(input);
             self
         }
-        /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values
-        /// are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
-        /// addresses).</p>
+        /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -7507,21 +5803,13 @@ impl LoadBalancer {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoadBalancerState {
-    /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After
-    /// the load balancer is fully set up and ready to route traffic, its state is
-    /// <code>active</code>. If load balancer is routing traffic but does not have the resources it
-    /// needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be
-    /// set up, its state is <code>failed</code>.</p>
+    /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.</p>
     pub code: std::option::Option<crate::model::LoadBalancerStateEnum>,
     /// <p>A description of the state.</p>
     pub reason: std::option::Option<std::string::String>,
 }
 impl LoadBalancerState {
-    /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After
-    /// the load balancer is fully set up and ready to route traffic, its state is
-    /// <code>active</code>. If load balancer is routing traffic but does not have the resources it
-    /// needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be
-    /// set up, its state is <code>failed</code>.</p>
+    /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.</p>
     pub fn code(&self) -> std::option::Option<&crate::model::LoadBalancerStateEnum> {
         self.code.as_ref()
     }
@@ -7548,20 +5836,12 @@ pub mod load_balancer_state {
         pub(crate) reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After
-        /// the load balancer is fully set up and ready to route traffic, its state is
-        /// <code>active</code>. If load balancer is routing traffic but does not have the resources it
-        /// needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be
-        /// set up, its state is <code>failed</code>.</p>
+        /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.</p>
         pub fn code(mut self, input: crate::model::LoadBalancerStateEnum) -> Self {
             self.code = Some(input);
             self
         }
-        /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After
-        /// the load balancer is fully set up and ready to route traffic, its state is
-        /// <code>active</code>. If load balancer is routing traffic but does not have the resources it
-        /// needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be
-        /// set up, its state is <code>failed</code>.</p>
+        /// <p>The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.</p>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerStateEnum>,
@@ -7713,67 +5993,30 @@ impl AsRef<str> for LoadBalancerSchemeEnum {
     }
 }
 
-/// <p>Information about an Elastic Load Balancing resource limit for your Amazon Web Services
-/// account.</p>
+/// <p>Information about an Elastic Load Balancing resource limit for your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Limit {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>application-load-balancers</p>
-    /// </li>
-    /// <li>
-    /// <p>condition-values-per-alb-rule</p>
-    /// </li>
-    /// <li>
-    /// <p>condition-wildcards-per-alb-rule</p>
-    /// </li>
-    /// <li>
-    /// <p>gateway-load-balancers</p>
-    /// </li>
-    /// <li>
-    /// <p>gateway-load-balancers-per-vpc</p>
-    /// </li>
-    /// <li>
-    /// <p>geneve-target-groups</p>
-    /// </li>
-    /// <li>
-    /// <p>listeners-per-application-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>listeners-per-network-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>network-load-balancers</p>
-    /// </li>
-    /// <li>
-    /// <p>rules-per-application-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>target-groups</p>
-    /// </li>
-    /// <li>
-    /// <p>target-groups-per-action-on-application-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>target-groups-per-action-on-network-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>target-groups-per-application-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>targets-per-application-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>targets-per-availability-zone-per-gateway-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>targets-per-availability-zone-per-network-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>targets-per-network-load-balancer</p>
-    /// </li>
+    /// <li> <p>application-load-balancers</p> </li>
+    /// <li> <p>condition-values-per-alb-rule</p> </li>
+    /// <li> <p>condition-wildcards-per-alb-rule</p> </li>
+    /// <li> <p>gateway-load-balancers</p> </li>
+    /// <li> <p>gateway-load-balancers-per-vpc</p> </li>
+    /// <li> <p>geneve-target-groups</p> </li>
+    /// <li> <p>listeners-per-application-load-balancer</p> </li>
+    /// <li> <p>listeners-per-network-load-balancer</p> </li>
+    /// <li> <p>network-load-balancers</p> </li>
+    /// <li> <p>rules-per-application-load-balancer</p> </li>
+    /// <li> <p>target-groups</p> </li>
+    /// <li> <p>target-groups-per-action-on-application-load-balancer</p> </li>
+    /// <li> <p>target-groups-per-action-on-network-load-balancer</p> </li>
+    /// <li> <p>target-groups-per-application-load-balancer</p> </li>
+    /// <li> <p>targets-per-application-load-balancer</p> </li>
+    /// <li> <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li>
+    /// <li> <p>targets-per-availability-zone-per-network-load-balancer</p> </li>
+    /// <li> <p>targets-per-network-load-balancer</p> </li>
     /// </ul>
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum value of the limit.</p>
@@ -7782,60 +6025,24 @@ pub struct Limit {
 impl Limit {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>application-load-balancers</p>
-    /// </li>
-    /// <li>
-    /// <p>condition-values-per-alb-rule</p>
-    /// </li>
-    /// <li>
-    /// <p>condition-wildcards-per-alb-rule</p>
-    /// </li>
-    /// <li>
-    /// <p>gateway-load-balancers</p>
-    /// </li>
-    /// <li>
-    /// <p>gateway-load-balancers-per-vpc</p>
-    /// </li>
-    /// <li>
-    /// <p>geneve-target-groups</p>
-    /// </li>
-    /// <li>
-    /// <p>listeners-per-application-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>listeners-per-network-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>network-load-balancers</p>
-    /// </li>
-    /// <li>
-    /// <p>rules-per-application-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>target-groups</p>
-    /// </li>
-    /// <li>
-    /// <p>target-groups-per-action-on-application-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>target-groups-per-action-on-network-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>target-groups-per-application-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>targets-per-application-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>targets-per-availability-zone-per-gateway-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>targets-per-availability-zone-per-network-load-balancer</p>
-    /// </li>
-    /// <li>
-    /// <p>targets-per-network-load-balancer</p>
-    /// </li>
+    /// <li> <p>application-load-balancers</p> </li>
+    /// <li> <p>condition-values-per-alb-rule</p> </li>
+    /// <li> <p>condition-wildcards-per-alb-rule</p> </li>
+    /// <li> <p>gateway-load-balancers</p> </li>
+    /// <li> <p>gateway-load-balancers-per-vpc</p> </li>
+    /// <li> <p>geneve-target-groups</p> </li>
+    /// <li> <p>listeners-per-application-load-balancer</p> </li>
+    /// <li> <p>listeners-per-network-load-balancer</p> </li>
+    /// <li> <p>network-load-balancers</p> </li>
+    /// <li> <p>rules-per-application-load-balancer</p> </li>
+    /// <li> <p>target-groups</p> </li>
+    /// <li> <p>target-groups-per-action-on-application-load-balancer</p> </li>
+    /// <li> <p>target-groups-per-action-on-network-load-balancer</p> </li>
+    /// <li> <p>target-groups-per-application-load-balancer</p> </li>
+    /// <li> <p>targets-per-application-load-balancer</p> </li>
+    /// <li> <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li>
+    /// <li> <p>targets-per-availability-zone-per-network-load-balancer</p> </li>
+    /// <li> <p>targets-per-network-load-balancer</p> </li>
     /// </ul>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
@@ -7865,60 +6072,24 @@ pub mod limit {
     impl Builder {
         /// <p>The name of the limit. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>application-load-balancers</p>
-        /// </li>
-        /// <li>
-        /// <p>condition-values-per-alb-rule</p>
-        /// </li>
-        /// <li>
-        /// <p>condition-wildcards-per-alb-rule</p>
-        /// </li>
-        /// <li>
-        /// <p>gateway-load-balancers</p>
-        /// </li>
-        /// <li>
-        /// <p>gateway-load-balancers-per-vpc</p>
-        /// </li>
-        /// <li>
-        /// <p>geneve-target-groups</p>
-        /// </li>
-        /// <li>
-        /// <p>listeners-per-application-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>listeners-per-network-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>network-load-balancers</p>
-        /// </li>
-        /// <li>
-        /// <p>rules-per-application-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>target-groups</p>
-        /// </li>
-        /// <li>
-        /// <p>target-groups-per-action-on-application-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>target-groups-per-action-on-network-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>target-groups-per-application-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>targets-per-application-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>targets-per-availability-zone-per-gateway-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>targets-per-availability-zone-per-network-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>targets-per-network-load-balancer</p>
-        /// </li>
+        /// <li> <p>application-load-balancers</p> </li>
+        /// <li> <p>condition-values-per-alb-rule</p> </li>
+        /// <li> <p>condition-wildcards-per-alb-rule</p> </li>
+        /// <li> <p>gateway-load-balancers</p> </li>
+        /// <li> <p>gateway-load-balancers-per-vpc</p> </li>
+        /// <li> <p>geneve-target-groups</p> </li>
+        /// <li> <p>listeners-per-application-load-balancer</p> </li>
+        /// <li> <p>listeners-per-network-load-balancer</p> </li>
+        /// <li> <p>network-load-balancers</p> </li>
+        /// <li> <p>rules-per-application-load-balancer</p> </li>
+        /// <li> <p>target-groups</p> </li>
+        /// <li> <p>target-groups-per-action-on-application-load-balancer</p> </li>
+        /// <li> <p>target-groups-per-action-on-network-load-balancer</p> </li>
+        /// <li> <p>target-groups-per-application-load-balancer</p> </li>
+        /// <li> <p>targets-per-application-load-balancer</p> </li>
+        /// <li> <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li>
+        /// <li> <p>targets-per-availability-zone-per-network-load-balancer</p> </li>
+        /// <li> <p>targets-per-network-load-balancer</p> </li>
         /// </ul>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -7926,60 +6097,24 @@ pub mod limit {
         }
         /// <p>The name of the limit. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>application-load-balancers</p>
-        /// </li>
-        /// <li>
-        /// <p>condition-values-per-alb-rule</p>
-        /// </li>
-        /// <li>
-        /// <p>condition-wildcards-per-alb-rule</p>
-        /// </li>
-        /// <li>
-        /// <p>gateway-load-balancers</p>
-        /// </li>
-        /// <li>
-        /// <p>gateway-load-balancers-per-vpc</p>
-        /// </li>
-        /// <li>
-        /// <p>geneve-target-groups</p>
-        /// </li>
-        /// <li>
-        /// <p>listeners-per-application-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>listeners-per-network-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>network-load-balancers</p>
-        /// </li>
-        /// <li>
-        /// <p>rules-per-application-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>target-groups</p>
-        /// </li>
-        /// <li>
-        /// <p>target-groups-per-action-on-application-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>target-groups-per-action-on-network-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>target-groups-per-application-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>targets-per-application-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>targets-per-availability-zone-per-gateway-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>targets-per-availability-zone-per-network-load-balancer</p>
-        /// </li>
-        /// <li>
-        /// <p>targets-per-network-load-balancer</p>
-        /// </li>
+        /// <li> <p>application-load-balancers</p> </li>
+        /// <li> <p>condition-values-per-alb-rule</p> </li>
+        /// <li> <p>condition-wildcards-per-alb-rule</p> </li>
+        /// <li> <p>gateway-load-balancers</p> </li>
+        /// <li> <p>gateway-load-balancers-per-vpc</p> </li>
+        /// <li> <p>geneve-target-groups</p> </li>
+        /// <li> <p>listeners-per-application-load-balancer</p> </li>
+        /// <li> <p>listeners-per-network-load-balancer</p> </li>
+        /// <li> <p>network-load-balancers</p> </li>
+        /// <li> <p>rules-per-application-load-balancer</p> </li>
+        /// <li> <p>target-groups</p> </li>
+        /// <li> <p>target-groups-per-action-on-application-load-balancer</p> </li>
+        /// <li> <p>target-groups-per-action-on-network-load-balancer</p> </li>
+        /// <li> <p>target-groups-per-application-load-balancer</p> </li>
+        /// <li> <p>targets-per-application-load-balancer</p> </li>
+        /// <li> <p>targets-per-availability-zone-per-gateway-load-balancer</p> </li>
+        /// <li> <p>targets-per-availability-zone-per-network-load-balancer</p> </li>
+        /// <li> <p>targets-per-network-load-balancer</p> </li>
         /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;

@@ -5,11 +5,9 @@
 pub struct MeshRef {
     /// <p>The name of the service mesh.</p>
     pub mesh_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) of the service mesh.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -25,13 +23,11 @@ impl MeshRef {
     pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -90,26 +86,22 @@ pub mod mesh_ref {
             self.mesh_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -428,11 +420,9 @@ pub struct ResourceMetadata {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
 }
 impl ResourceMetadata {
@@ -456,13 +446,11 @@ impl ResourceMetadata {
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -551,26 +539,22 @@ pub mod resource_metadata {
             self.last_updated_at = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -660,19 +644,11 @@ impl MeshSpec {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EgressFilter {
-    /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows
-    /// egress only from virtual nodes to other defined resources in the service mesh (and any
-    /// traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter
-    /// type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the
-    /// service mesh.</p>
+    /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
     pub r#type: std::option::Option<crate::model::EgressFilterType>,
 }
 impl EgressFilter {
-    /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows
-    /// egress only from virtual nodes to other defined resources in the service mesh (and any
-    /// traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter
-    /// type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the
-    /// service mesh.</p>
+    /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::EgressFilterType> {
         self.r#type.as_ref()
     }
@@ -693,20 +669,12 @@ pub mod egress_filter {
         pub(crate) r#type: std::option::Option<crate::model::EgressFilterType>,
     }
     impl Builder {
-        /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows
-        /// egress only from virtual nodes to other defined resources in the service mesh (and any
-        /// traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter
-        /// type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the
-        /// service mesh.</p>
+        /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
         pub fn r#type(mut self, input: crate::model::EgressFilterType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows
-        /// egress only from virtual nodes to other defined resources in the service mesh (and any
-        /// traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter
-        /// type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the
-        /// service mesh.</p>
+        /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::EgressFilterType>,
@@ -784,28 +752,21 @@ impl AsRef<str> for EgressFilterType {
     }
 }
 
-/// <p>Optional metadata that you apply to a resource to assist with categorization and
-/// organization. Each tag consists of a key and an optional value, both of which you define.
-/// Tag keys can have a maximum character length of 128 characters, and tag values can have
-/// a maximum length of 256 characters.</p>
+/// <p>Optional metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagRef {
-    /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label
-    /// that acts like a category for more specific tag values.</p>
+    /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a
-    /// descriptor within a tag category (key).</p>
+    /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl TagRef {
-    /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label
-    /// that acts like a category for more specific tag values.</p>
+    /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a
-    /// descriptor within a tag category (key).</p>
+    /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -828,26 +789,22 @@ pub mod tag_ref {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label
-        /// that acts like a category for more specific tag values.</p>
+        /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label
-        /// that acts like a category for more specific tag values.</p>
+        /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a
-        /// descriptor within a tag category (key).</p>
+        /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a
-        /// descriptor within a tag category (key).</p>
+        /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -876,11 +833,9 @@ pub struct VirtualServiceRef {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual service.</p>
     pub virtual_service_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the virtual service.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -900,13 +855,11 @@ impl VirtualServiceRef {
     pub fn virtual_service_name(&self) -> std::option::Option<&str> {
         self.virtual_service_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -980,26 +933,22 @@ pub mod virtual_service_ref {
             self.virtual_service_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1337,13 +1286,11 @@ impl AsRef<str> for VirtualServiceStatusCode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualServiceSpec {
-    /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify
-    /// a single virtual node or virtual router.</p>
+    /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
     pub provider: std::option::Option<crate::model::VirtualServiceProvider>,
 }
 impl VirtualServiceSpec {
-    /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify
-    /// a single virtual node or virtual router.</p>
+    /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
     pub fn provider(&self) -> std::option::Option<&crate::model::VirtualServiceProvider> {
         self.provider.as_ref()
     }
@@ -1364,14 +1311,12 @@ pub mod virtual_service_spec {
         pub(crate) provider: std::option::Option<crate::model::VirtualServiceProvider>,
     }
     impl Builder {
-        /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify
-        /// a single virtual node or virtual router.</p>
+        /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
         pub fn provider(mut self, input: crate::model::VirtualServiceProvider) -> Self {
             self.provider = Some(input);
             self
         }
-        /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify
-        /// a single virtual node or virtual router.</p>
+        /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
         pub fn set_provider(
             mut self,
             input: std::option::Option<crate::model::VirtualServiceProvider>,
@@ -1571,11 +1516,9 @@ pub struct VirtualRouterRef {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual router.</p>
     pub virtual_router_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the virtual router.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -1595,13 +1538,11 @@ impl VirtualRouterRef {
     pub fn virtual_router_name(&self) -> std::option::Option<&str> {
         self.virtual_router_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -1675,26 +1616,22 @@ pub mod virtual_router_ref {
             self.virtual_router_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2032,13 +1969,11 @@ impl AsRef<str> for VirtualRouterStatusCode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualRouterSpec {
-    /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You
-    /// can specify one listener.</p>
+    /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
     pub listeners: std::option::Option<std::vec::Vec<crate::model::VirtualRouterListener>>,
 }
 impl VirtualRouterSpec {
-    /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You
-    /// can specify one listener.</p>
+    /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
     pub fn listeners(&self) -> std::option::Option<&[crate::model::VirtualRouterListener]> {
         self.listeners.as_deref()
     }
@@ -2064,16 +1999,14 @@ pub mod virtual_router_spec {
         ///
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
-        /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You
-        /// can specify one listener.</p>
-        pub fn listeners(mut self, input: impl Into<crate::model::VirtualRouterListener>) -> Self {
+        /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
+        pub fn listeners(mut self, input: crate::model::VirtualRouterListener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listeners = Some(v);
             self
         }
-        /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You
-        /// can specify one listener.</p>
+        /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
         pub fn set_listeners(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VirtualRouterListener>>,
@@ -2302,11 +2235,9 @@ pub struct RouteRef {
     pub virtual_router_name: std::option::Option<std::string::String>,
     /// <p>The name of the route.</p>
     pub route_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the route.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -2330,13 +2261,11 @@ impl RouteRef {
     pub fn route_name(&self) -> std::option::Option<&str> {
         self.route_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -2422,26 +2351,22 @@ pub mod route_ref {
             self.route_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2793,8 +2718,7 @@ impl AsRef<str> for RouteStatusCode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RouteSpec {
-    /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is
-    /// the highest priority.</p>
+    /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>
     pub priority: std::option::Option<i32>,
     /// <p>An object that represents the specification of an HTTP route.</p>
     pub http_route: std::option::Option<crate::model::HttpRoute>,
@@ -2806,8 +2730,7 @@ pub struct RouteSpec {
     pub grpc_route: std::option::Option<crate::model::GrpcRoute>,
 }
 impl RouteSpec {
-    /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is
-    /// the highest priority.</p>
+    /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>
     pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
@@ -2852,14 +2775,12 @@ pub mod route_spec {
         pub(crate) grpc_route: std::option::Option<crate::model::GrpcRoute>,
     }
     impl Builder {
-        /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is
-        /// the highest priority.</p>
+        /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.priority = Some(input);
             self
         }
-        /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is
-        /// the highest priority.</p>
+        /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -3059,17 +2980,13 @@ impl GrpcRoute {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrpcTimeout {
-    /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh
-    /// resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15
-    /// seconds for the source and destination virtual node and the route.</p>
+    /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
     pub per_request: std::option::Option<crate::model::Duration>,
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     pub idle: std::option::Option<crate::model::Duration>,
 }
 impl GrpcTimeout {
-    /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh
-    /// resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15
-    /// seconds for the source and destination virtual node and the route.</p>
+    /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
     pub fn per_request(&self) -> std::option::Option<&crate::model::Duration> {
         self.per_request.as_ref()
     }
@@ -3096,16 +3013,12 @@ pub mod grpc_timeout {
         pub(crate) idle: std::option::Option<crate::model::Duration>,
     }
     impl Builder {
-        /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh
-        /// resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15
-        /// seconds for the source and destination virtual node and the route.</p>
+        /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
         pub fn per_request(mut self, input: crate::model::Duration) -> Self {
             self.per_request = Some(input);
             self
         }
-        /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh
-        /// resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15
-        /// seconds for the source and destination virtual node and the route.</p>
+        /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
         pub fn set_per_request(
             mut self,
             input: std::option::Option<crate::model::Duration>,
@@ -3267,9 +3180,7 @@ impl AsRef<str> for DurationUnit {
     }
 }
 
-/// <p>An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
-/// Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the
-/// <code>reset</code> policy, see the <a href="https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on">Envoy documentation</a>.</p>
+/// <p>An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the <code>reset</code> policy, see the <a href="https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on">Envoy documentation</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrpcRetryPolicy {
@@ -3279,25 +3190,10 @@ pub struct GrpcRetryPolicy {
     pub max_retries: std::option::Option<i64>,
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>server-error</b> – HTTP status codes 500, 501,
-    /// 502, 503, 504, 505, 506, 507, 508, 510, and 511</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>gateway-error</b> – HTTP status codes 502,
-    /// 503, and 504</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>client-error</b> – HTTP status code 409</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>stream-error</b> – Retry on refused
-    /// stream</p>
-    /// </li>
+    /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
+    /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
+    /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
+    /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
     /// </ul>
     pub http_retry_events: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
@@ -3316,25 +3212,10 @@ impl GrpcRetryPolicy {
     }
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>server-error</b> – HTTP status codes 500, 501,
-    /// 502, 503, 504, 505, 506, 507, 508, 510, and 511</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>gateway-error</b> – HTTP status codes 502,
-    /// 503, and 504</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>client-error</b> – HTTP status code 409</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>stream-error</b> – Retry on refused
-    /// stream</p>
-    /// </li>
+    /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
+    /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
+    /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
+    /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
     /// </ul>
     pub fn http_retry_events(&self) -> std::option::Option<&[std::string::String]> {
         self.http_retry_events.as_deref()
@@ -3403,25 +3284,10 @@ pub mod grpc_retry_policy {
         ///
         /// <p>Specify at least one of the following values.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>server-error</b> – HTTP status codes 500, 501,
-        /// 502, 503, 504, 505, 506, 507, 508, 510, and 511</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>gateway-error</b> – HTTP status codes 502,
-        /// 503, and 504</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>client-error</b> – HTTP status code 409</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>stream-error</b> – Retry on refused
-        /// stream</p>
-        /// </li>
+        /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
+        /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
+        /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
+        /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
         /// </ul>
         pub fn http_retry_events(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.http_retry_events.unwrap_or_default();
@@ -3431,25 +3297,10 @@ pub mod grpc_retry_policy {
         }
         /// <p>Specify at least one of the following values.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>server-error</b> – HTTP status codes 500, 501,
-        /// 502, 503, 504, 505, 506, 507, 508, 510, and 511</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>gateway-error</b> – HTTP status codes 502,
-        /// 503, and 504</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>client-error</b> – HTTP status code 409</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>stream-error</b> – Retry on refused
-        /// stream</p>
-        /// </li>
+        /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
+        /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
+        /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
+        /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
         /// </ul>
         pub fn set_http_retry_events(
             mut self,
@@ -3463,12 +3314,9 @@ pub mod grpc_retry_policy {
         /// To override the contents of this collection use [`set_tcp_retry_events`](Self::set_tcp_retry_events).
         ///
         /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-        pub fn tcp_retry_events(
-            mut self,
-            input: impl Into<crate::model::TcpRetryPolicyEvent>,
-        ) -> Self {
+        pub fn tcp_retry_events(mut self, input: crate::model::TcpRetryPolicyEvent) -> Self {
             let mut v = self.tcp_retry_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tcp_retry_events = Some(v);
             self
         }
@@ -3485,12 +3333,9 @@ pub mod grpc_retry_policy {
         /// To override the contents of this collection use [`set_grpc_retry_events`](Self::set_grpc_retry_events).
         ///
         /// <p>Specify at least one of the valid values.</p>
-        pub fn grpc_retry_events(
-            mut self,
-            input: impl Into<crate::model::GrpcRetryPolicyEvent>,
-        ) -> Self {
+        pub fn grpc_retry_events(mut self, input: crate::model::GrpcRetryPolicyEvent) -> Self {
             let mut v = self.grpc_retry_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grpc_retry_events = Some(v);
             self
         }
@@ -3651,8 +3496,7 @@ impl AsRef<str> for TcpRetryPolicyEvent {
 pub struct GrpcRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
     pub service_name: std::option::Option<std::string::String>,
-    /// <p>The method name to match from the request. If you specify a name, you must also specify
-    /// a <code>serviceName</code>.</p>
+    /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
     pub method_name: std::option::Option<std::string::String>,
     /// <p>An object that represents the data to match from the request.</p>
     pub metadata: std::option::Option<std::vec::Vec<crate::model::GrpcRouteMetadata>>,
@@ -3662,8 +3506,7 @@ impl GrpcRouteMatch {
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
-    /// <p>The method name to match from the request. If you specify a name, you must also specify
-    /// a <code>serviceName</code>.</p>
+    /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
     pub fn method_name(&self) -> std::option::Option<&str> {
         self.method_name.as_deref()
     }
@@ -3702,14 +3545,12 @@ pub mod grpc_route_match {
             self.service_name = input;
             self
         }
-        /// <p>The method name to match from the request. If you specify a name, you must also specify
-        /// a <code>serviceName</code>.</p>
+        /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
         pub fn method_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.method_name = Some(input.into());
             self
         }
-        /// <p>The method name to match from the request. If you specify a name, you must also specify
-        /// a <code>serviceName</code>.</p>
+        /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
         pub fn set_method_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.method_name = input;
             self
@@ -3719,9 +3560,9 @@ pub mod grpc_route_match {
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
         /// <p>An object that represents the data to match from the request.</p>
-        pub fn metadata(mut self, input: impl Into<crate::model::GrpcRouteMetadata>) -> Self {
+        pub fn metadata(mut self, input: crate::model::GrpcRouteMetadata) -> Self {
             let mut v = self.metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metadata = Some(v);
             self
         }
@@ -4049,9 +3890,9 @@ pub mod grpc_route_action {
         /// To override the contents of this collection use [`set_weighted_targets`](Self::set_weighted_targets).
         ///
         /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-        pub fn weighted_targets(mut self, input: impl Into<crate::model::WeightedTarget>) -> Self {
+        pub fn weighted_targets(mut self, input: crate::model::WeightedTarget) -> Self {
             let mut v = self.weighted_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.weighted_targets = Some(v);
             self
         }
@@ -4078,10 +3919,7 @@ impl GrpcRouteAction {
     }
 }
 
-/// <p>An object that represents a target and its relative weight. Traffic is distributed
-/// across targets according to their relative weight. For example, a weighted target with a
-/// relative weight of 50 receives five times as much traffic as one with a relative weight of
-/// 10. The total weight for all targets combined must be less than or equal to 100.</p>
+/// <p>An object that represents a target and its relative weight. Traffic is distributed across targets according to their relative weight. For example, a weighted target with a relative weight of 50 receives five times as much traffic as one with a relative weight of 10. The total weight for all targets combined must be less than or equal to 100.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WeightedTarget {
@@ -4281,17 +4119,13 @@ impl HttpRoute {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpTimeout {
-    /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh
-    /// resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15
-    /// seconds for the source and destination virtual node and the route.</p>
+    /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
     pub per_request: std::option::Option<crate::model::Duration>,
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     pub idle: std::option::Option<crate::model::Duration>,
 }
 impl HttpTimeout {
-    /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh
-    /// resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15
-    /// seconds for the source and destination virtual node and the route.</p>
+    /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
     pub fn per_request(&self) -> std::option::Option<&crate::model::Duration> {
         self.per_request.as_ref()
     }
@@ -4318,16 +4152,12 @@ pub mod http_timeout {
         pub(crate) idle: std::option::Option<crate::model::Duration>,
     }
     impl Builder {
-        /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh
-        /// resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15
-        /// seconds for the source and destination virtual node and the route.</p>
+        /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
         pub fn per_request(mut self, input: crate::model::Duration) -> Self {
             self.per_request = Some(input);
             self
         }
-        /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh
-        /// resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15
-        /// seconds for the source and destination virtual node and the route.</p>
+        /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
         pub fn set_per_request(
             mut self,
             input: std::option::Option<crate::model::Duration>,
@@ -4361,9 +4191,7 @@ impl HttpTimeout {
     }
 }
 
-/// <p>An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
-/// Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the
-/// <code>reset</code> policy, see the <a href="https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on">Envoy documentation</a>.</p>
+/// <p>An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the <code>reset</code> policy, see the <a href="https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on">Envoy documentation</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpRetryPolicy {
@@ -4373,25 +4201,10 @@ pub struct HttpRetryPolicy {
     pub max_retries: std::option::Option<i64>,
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>server-error</b> – HTTP status codes 500, 501,
-    /// 502, 503, 504, 505, 506, 507, 508, 510, and 511</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>gateway-error</b> – HTTP status codes 502,
-    /// 503, and 504</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>client-error</b> – HTTP status code 409</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>stream-error</b> – Retry on refused
-    /// stream</p>
-    /// </li>
+    /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
+    /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
+    /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
+    /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
     /// </ul>
     pub http_retry_events: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
@@ -4408,25 +4221,10 @@ impl HttpRetryPolicy {
     }
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>server-error</b> – HTTP status codes 500, 501,
-    /// 502, 503, 504, 505, 506, 507, 508, 510, and 511</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>gateway-error</b> – HTTP status codes 502,
-    /// 503, and 504</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>client-error</b> – HTTP status code 409</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>stream-error</b> – Retry on refused
-    /// stream</p>
-    /// </li>
+    /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
+    /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
+    /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
+    /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
     /// </ul>
     pub fn http_retry_events(&self) -> std::option::Option<&[std::string::String]> {
         self.http_retry_events.as_deref()
@@ -4488,25 +4286,10 @@ pub mod http_retry_policy {
         ///
         /// <p>Specify at least one of the following values.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>server-error</b> – HTTP status codes 500, 501,
-        /// 502, 503, 504, 505, 506, 507, 508, 510, and 511</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>gateway-error</b> – HTTP status codes 502,
-        /// 503, and 504</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>client-error</b> – HTTP status code 409</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>stream-error</b> – Retry on refused
-        /// stream</p>
-        /// </li>
+        /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
+        /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
+        /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
+        /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
         /// </ul>
         pub fn http_retry_events(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.http_retry_events.unwrap_or_default();
@@ -4516,25 +4299,10 @@ pub mod http_retry_policy {
         }
         /// <p>Specify at least one of the following values.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>server-error</b> – HTTP status codes 500, 501,
-        /// 502, 503, 504, 505, 506, 507, 508, 510, and 511</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>gateway-error</b> – HTTP status codes 502,
-        /// 503, and 504</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>client-error</b> – HTTP status code 409</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>stream-error</b> – Retry on refused
-        /// stream</p>
-        /// </li>
+        /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
+        /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
+        /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
+        /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
         /// </ul>
         pub fn set_http_retry_events(
             mut self,
@@ -4548,12 +4316,9 @@ pub mod http_retry_policy {
         /// To override the contents of this collection use [`set_tcp_retry_events`](Self::set_tcp_retry_events).
         ///
         /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-        pub fn tcp_retry_events(
-            mut self,
-            input: impl Into<crate::model::TcpRetryPolicyEvent>,
-        ) -> Self {
+        pub fn tcp_retry_events(mut self, input: crate::model::TcpRetryPolicyEvent) -> Self {
             let mut v = self.tcp_retry_events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tcp_retry_events = Some(v);
             self
         }
@@ -4618,9 +4383,9 @@ pub mod http_route_action {
         /// To override the contents of this collection use [`set_weighted_targets`](Self::set_weighted_targets).
         ///
         /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-        pub fn weighted_targets(mut self, input: impl Into<crate::model::WeightedTarget>) -> Self {
+        pub fn weighted_targets(mut self, input: crate::model::WeightedTarget) -> Self {
             let mut v = self.weighted_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.weighted_targets = Some(v);
             self
         }
@@ -4647,17 +4412,11 @@ impl HttpRouteAction {
     }
 }
 
-/// <p>An object that represents the requirements for a route to match HTTP requests for a
-/// virtual router.</p>
+/// <p>An object that represents the requirements for a route to match HTTP requests for a virtual router.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpRouteMatch {
-    /// <p>Specifies the path to match requests with. This parameter must always start with
-    /// <code>/</code>, which by itself matches all requests to the virtual service name. You
-    /// can also match for path-based routing of requests. For example, if your virtual service
-    /// name is <code>my-service.local</code> and you want the route to match requests to
-    /// <code>my-service.local/metrics</code>, your prefix should be
-    /// <code>/metrics</code>.</p>
+    /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The client request path to match on.</p>
     pub path: std::option::Option<crate::model::HttpPathMatch>,
@@ -4665,19 +4424,13 @@ pub struct HttpRouteMatch {
     pub query_parameters: std::option::Option<std::vec::Vec<crate::model::HttpQueryParameter>>,
     /// <p>The client request method to match on. Specify only one.</p>
     pub method: std::option::Option<crate::model::HttpMethod>,
-    /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2
-    /// routes.</p>
+    /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
     pub scheme: std::option::Option<crate::model::HttpScheme>,
     /// <p>The client request headers to match on.</p>
     pub headers: std::option::Option<std::vec::Vec<crate::model::HttpRouteHeader>>,
 }
 impl HttpRouteMatch {
-    /// <p>Specifies the path to match requests with. This parameter must always start with
-    /// <code>/</code>, which by itself matches all requests to the virtual service name. You
-    /// can also match for path-based routing of requests. For example, if your virtual service
-    /// name is <code>my-service.local</code> and you want the route to match requests to
-    /// <code>my-service.local/metrics</code>, your prefix should be
-    /// <code>/metrics</code>.</p>
+    /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
@@ -4693,8 +4446,7 @@ impl HttpRouteMatch {
     pub fn method(&self) -> std::option::Option<&crate::model::HttpMethod> {
         self.method.as_ref()
     }
-    /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2
-    /// routes.</p>
+    /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
     pub fn scheme(&self) -> std::option::Option<&crate::model::HttpScheme> {
         self.scheme.as_ref()
     }
@@ -4730,22 +4482,12 @@ pub mod http_route_match {
         pub(crate) headers: std::option::Option<std::vec::Vec<crate::model::HttpRouteHeader>>,
     }
     impl Builder {
-        /// <p>Specifies the path to match requests with. This parameter must always start with
-        /// <code>/</code>, which by itself matches all requests to the virtual service name. You
-        /// can also match for path-based routing of requests. For example, if your virtual service
-        /// name is <code>my-service.local</code> and you want the route to match requests to
-        /// <code>my-service.local/metrics</code>, your prefix should be
-        /// <code>/metrics</code>.</p>
+        /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>Specifies the path to match requests with. This parameter must always start with
-        /// <code>/</code>, which by itself matches all requests to the virtual service name. You
-        /// can also match for path-based routing of requests. For example, if your virtual service
-        /// name is <code>my-service.local</code> and you want the route to match requests to
-        /// <code>my-service.local/metrics</code>, your prefix should be
-        /// <code>/metrics</code>.</p>
+        /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -4765,12 +4507,9 @@ pub mod http_route_match {
         /// To override the contents of this collection use [`set_query_parameters`](Self::set_query_parameters).
         ///
         /// <p>The client request query parameters to match on.</p>
-        pub fn query_parameters(
-            mut self,
-            input: impl Into<crate::model::HttpQueryParameter>,
-        ) -> Self {
+        pub fn query_parameters(mut self, input: crate::model::HttpQueryParameter) -> Self {
             let mut v = self.query_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_parameters = Some(v);
             self
         }
@@ -4792,14 +4531,12 @@ pub mod http_route_match {
             self.method = input;
             self
         }
-        /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2
-        /// routes.</p>
+        /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
         pub fn scheme(mut self, input: crate::model::HttpScheme) -> Self {
             self.scheme = Some(input);
             self
         }
-        /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2
-        /// routes.</p>
+        /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
         pub fn set_scheme(mut self, input: std::option::Option<crate::model::HttpScheme>) -> Self {
             self.scheme = input;
             self
@@ -4809,9 +4546,9 @@ pub mod http_route_match {
         /// To override the contents of this collection use [`set_headers`](Self::set_headers).
         ///
         /// <p>The client request headers to match on.</p>
-        pub fn headers(mut self, input: impl Into<crate::model::HttpRouteHeader>) -> Self {
+        pub fn headers(mut self, input: crate::model::HttpRouteHeader) -> Self {
             let mut v = self.headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.headers = Some(v);
             self
         }
@@ -4938,8 +4675,7 @@ impl HttpRouteHeader {
     }
 }
 
-/// <p>An object that represents the method and value to match with the header value sent in a
-/// request. Specify one match method.</p>
+/// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum HeaderMatchMethod {
@@ -5539,9 +5275,9 @@ pub mod tcp_route_action {
         /// To override the contents of this collection use [`set_weighted_targets`](Self::set_weighted_targets).
         ///
         /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-        pub fn weighted_targets(mut self, input: impl Into<crate::model::WeightedTarget>) -> Self {
+        pub fn weighted_targets(mut self, input: crate::model::WeightedTarget) -> Self {
             let mut v = self.weighted_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.weighted_targets = Some(v);
             self
         }
@@ -5576,11 +5312,9 @@ pub struct VirtualNodeRef {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the virtual node.</p>
     pub virtual_node_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the virtual node.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -5600,13 +5334,11 @@ impl VirtualNodeRef {
     pub fn virtual_node_name(&self) -> std::option::Option<&str> {
         self.virtual_node_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -5680,26 +5412,22 @@ pub mod virtual_node_ref {
             self.virtual_node_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6037,12 +5765,9 @@ impl AsRef<str> for VirtualNodeStatusCode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualNodeSpec {
-    /// <p>The service discovery information for the virtual node. If your virtual node does not
-    /// expect ingress traffic, you can omit this parameter. If you specify a
-    /// <code>listener</code>, then you must specify service discovery information.</p>
+    /// <p>The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery information.</p>
     pub service_discovery: std::option::Option<crate::model::ServiceDiscovery>,
-    /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can
-    /// specify one listener.</p>
+    /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.</p>
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
     /// <p>The backends that the virtual node is expected to send outbound traffic to.</p>
     pub backends: std::option::Option<std::vec::Vec<crate::model::Backend>>,
@@ -6052,14 +5777,11 @@ pub struct VirtualNodeSpec {
     pub logging: std::option::Option<crate::model::Logging>,
 }
 impl VirtualNodeSpec {
-    /// <p>The service discovery information for the virtual node. If your virtual node does not
-    /// expect ingress traffic, you can omit this parameter. If you specify a
-    /// <code>listener</code>, then you must specify service discovery information.</p>
+    /// <p>The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery information.</p>
     pub fn service_discovery(&self) -> std::option::Option<&crate::model::ServiceDiscovery> {
         self.service_discovery.as_ref()
     }
-    /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can
-    /// specify one listener.</p>
+    /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.</p>
     pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
         self.listeners.as_deref()
     }
@@ -6100,16 +5822,12 @@ pub mod virtual_node_spec {
         pub(crate) logging: std::option::Option<crate::model::Logging>,
     }
     impl Builder {
-        /// <p>The service discovery information for the virtual node. If your virtual node does not
-        /// expect ingress traffic, you can omit this parameter. If you specify a
-        /// <code>listener</code>, then you must specify service discovery information.</p>
+        /// <p>The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery information.</p>
         pub fn service_discovery(mut self, input: crate::model::ServiceDiscovery) -> Self {
             self.service_discovery = Some(input);
             self
         }
-        /// <p>The service discovery information for the virtual node. If your virtual node does not
-        /// expect ingress traffic, you can omit this parameter. If you specify a
-        /// <code>listener</code>, then you must specify service discovery information.</p>
+        /// <p>The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery information.</p>
         pub fn set_service_discovery(
             mut self,
             input: std::option::Option<crate::model::ServiceDiscovery>,
@@ -6121,16 +5839,14 @@ pub mod virtual_node_spec {
         ///
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
-        /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can
-        /// specify one listener.</p>
-        pub fn listeners(mut self, input: impl Into<crate::model::Listener>) -> Self {
+        /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.</p>
+        pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listeners = Some(v);
             self
         }
-        /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can
-        /// specify one listener.</p>
+        /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.</p>
         pub fn set_listeners(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Listener>>,
@@ -6143,9 +5859,9 @@ pub mod virtual_node_spec {
         /// To override the contents of this collection use [`set_backends`](Self::set_backends).
         ///
         /// <p>The backends that the virtual node is expected to send outbound traffic to.</p>
-        pub fn backends(mut self, input: impl Into<crate::model::Backend>) -> Self {
+        pub fn backends(mut self, input: crate::model::Backend) -> Self {
             let mut v = self.backends.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.backends = Some(v);
             self
         }
@@ -6297,26 +6013,14 @@ impl AccessLog {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileAccessLog {
-    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send
-    /// access logs to standard out and configure your Envoy container to use a log driver, such as
-    /// <code>awslogs</code>, to export the access logs to a log storage service such as Amazon
-    /// CloudWatch Logs. You can also specify a path in the Envoy container's file system to write
-    /// the files to disk.</p>
-    /// <note>
-    /// <p>The Envoy process must have write permissions to the path that you specify here.
-    /// Otherwise, Envoy fails to bootstrap properly.</p>
+    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
+    /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
     /// </note>
     pub path: std::option::Option<std::string::String>,
 }
 impl FileAccessLog {
-    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send
-    /// access logs to standard out and configure your Envoy container to use a log driver, such as
-    /// <code>awslogs</code>, to export the access logs to a log storage service such as Amazon
-    /// CloudWatch Logs. You can also specify a path in the Envoy container's file system to write
-    /// the files to disk.</p>
-    /// <note>
-    /// <p>The Envoy process must have write permissions to the path that you specify here.
-    /// Otherwise, Envoy fails to bootstrap properly.</p>
+    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
+    /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
     /// </note>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
@@ -6338,27 +6042,15 @@ pub mod file_access_log {
         pub(crate) path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send
-        /// access logs to standard out and configure your Envoy container to use a log driver, such as
-        /// <code>awslogs</code>, to export the access logs to a log storage service such as Amazon
-        /// CloudWatch Logs. You can also specify a path in the Envoy container's file system to write
-        /// the files to disk.</p>
-        /// <note>
-        /// <p>The Envoy process must have write permissions to the path that you specify here.
-        /// Otherwise, Envoy fails to bootstrap properly.</p>
+        /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
+        /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
         /// </note>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.path = Some(input.into());
             self
         }
-        /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send
-        /// access logs to standard out and configure your Envoy container to use a log driver, such as
-        /// <code>awslogs</code>, to export the access logs to a log storage service such as Amazon
-        /// CloudWatch Logs. You can also specify a path in the Envoy container's file system to write
-        /// the files to disk.</p>
-        /// <note>
-        /// <p>The Envoy process must have write permissions to the path that you specify here.
-        /// Otherwise, Envoy fails to bootstrap properly.</p>
+        /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
+        /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
         /// </note>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
@@ -6557,9 +6249,9 @@ pub mod client_policy_tls {
         /// To override the contents of this collection use [`set_ports`](Self::set_ports).
         ///
         /// <p>One or more ports that the policy is enforced for.</p>
-        pub fn ports(mut self, input: impl Into<i32>) -> Self {
+        pub fn ports(mut self, input: i32) -> Self {
             let mut v = self.ports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ports = Some(v);
             self
         }
@@ -6612,20 +6304,17 @@ impl ClientPolicyTls {
     }
 }
 
-/// <p>An object that represents how the proxy will validate its peer during Transport Layer Security (TLS)
-/// negotiation.</p>
+/// <p>An object that represents how the proxy will validate its peer during Transport Layer Security (TLS) negotiation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TlsValidationContext {
-    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-    /// certificate.</p>
+    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     pub trust: std::option::Option<crate::model::TlsValidationContextTrust>,
     /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context.</p>
     pub subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
 }
 impl TlsValidationContext {
-    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-    /// certificate.</p>
+    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     pub fn trust(&self) -> std::option::Option<&crate::model::TlsValidationContextTrust> {
         self.trust.as_ref()
     }
@@ -6655,14 +6344,12 @@ pub mod tls_validation_context {
             std::option::Option<crate::model::SubjectAlternativeNames>,
     }
     impl Builder {
-        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-        /// certificate.</p>
+        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
         pub fn trust(mut self, input: crate::model::TlsValidationContextTrust) -> Self {
             self.trust = Some(input);
             self
         }
-        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-        /// certificate.</p>
+        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
         pub fn set_trust(
             mut self,
             input: std::option::Option<crate::model::TlsValidationContextTrust>,
@@ -6702,8 +6389,7 @@ impl TlsValidationContext {
     }
 }
 
-/// <p>An object that represents the subject alternative names secured by the
-/// certificate.</p>
+/// <p>An object that represents the subject alternative names secured by the certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubjectAlternativeNames {
@@ -6760,8 +6446,7 @@ impl SubjectAlternativeNames {
     }
 }
 
-/// <p>An object that represents the methods by which a subject alternative name on a peer
-/// Transport Layer Security (TLS) certificate can be matched.</p>
+/// <p>An object that represents the methods by which a subject alternative name on a peer Transport Layer Security (TLS) certificate can be matched.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubjectAlternativeNameMatchers {
@@ -6826,13 +6511,11 @@ impl SubjectAlternativeNameMatchers {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum TlsValidationContextTrust {
-    /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an
-    /// Certificate Manager certificate.</p>
+    /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
     Acm(crate::model::TlsValidationContextAcmTrust),
     /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
     File(crate::model::TlsValidationContextFileTrust),
-    /// <p>A reference to an object that represents a Transport Layer Security (TLS) Secret Discovery Service validation
-    /// context trust.</p>
+    /// <p>A reference to an object that represents a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     Sds(crate::model::TlsValidationContextSdsTrust),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -6896,20 +6579,15 @@ impl TlsValidationContextTrust {
     }
 }
 
-/// <p>An object that represents a Transport Layer Security (TLS) Secret Discovery Service validation context trust. The
-/// proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh
-/// <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS
-/// documentation</a> for more info.</p>
+/// <p>An object that represents a Transport Layer Security (TLS) Secret Discovery Service validation context trust. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TlsValidationContextSdsTrust {
-    /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret
-    /// Discovery Service validation context trust.</p>
+    /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     pub secret_name: std::option::Option<std::string::String>,
 }
 impl TlsValidationContextSdsTrust {
-    /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret
-    /// Discovery Service validation context trust.</p>
+    /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     pub fn secret_name(&self) -> std::option::Option<&str> {
         self.secret_name.as_deref()
     }
@@ -6930,14 +6608,12 @@ pub mod tls_validation_context_sds_trust {
         pub(crate) secret_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret
-        /// Discovery Service validation context trust.</p>
+        /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
         pub fn secret_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_name = Some(input.into());
             self
         }
-        /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret
-        /// Discovery Service validation context trust.</p>
+        /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
         pub fn set_secret_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_name = input;
             self
@@ -6961,13 +6637,11 @@ impl TlsValidationContextSdsTrust {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TlsValidationContextFileTrust {
-    /// <p>The certificate trust chain for a certificate stored on the file system of the virtual
-    /// node that the proxy is running on.</p>
+    /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub certificate_chain: std::option::Option<std::string::String>,
 }
 impl TlsValidationContextFileTrust {
-    /// <p>The certificate trust chain for a certificate stored on the file system of the virtual
-    /// node that the proxy is running on.</p>
+    /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub fn certificate_chain(&self) -> std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
@@ -6988,14 +6662,12 @@ pub mod tls_validation_context_file_trust {
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The certificate trust chain for a certificate stored on the file system of the virtual
-        /// node that the proxy is running on.</p>
+        /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
         pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_chain = Some(input.into());
             self
         }
-        /// <p>The certificate trust chain for a certificate stored on the file system of the virtual
-        /// node that the proxy is running on.</p>
+        /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
         pub fn set_certificate_chain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7018,8 +6690,7 @@ impl TlsValidationContextFileTrust {
     }
 }
 
-/// <p>An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager
-/// certificate.</p>
+/// <p>An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TlsValidationContextAcmTrust {
@@ -7090,12 +6761,9 @@ impl TlsValidationContextAcmTrust {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ClientTlsCertificate {
-    /// <p>An object that represents a local file certificate. The certificate must meet specific
-    /// requirements and you must have proxy authorization enabled. For more information, see
-    /// <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">Transport Layer Security (TLS)</a>.</p>
+    /// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">Transport Layer Security (TLS)</a>.</p>
     File(crate::model::ListenerTlsFileCertificate),
-    /// <p>A reference to an object that represents a client's TLS Secret Discovery Service
-    /// certificate.</p>
+    /// <p>A reference to an object that represents a client's TLS Secret Discovery Service certificate.</p>
     Sds(crate::model::ListenerTlsSdsCertificate),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -7140,21 +6808,15 @@ impl ClientTlsCertificate {
     }
 }
 
-/// <p>An object that represents the listener's Secret Discovery Service certificate. The proxy
-/// must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a>
-/// for more info.</p>
+/// <p>An object that represents the listener's Secret Discovery Service certificate. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListenerTlsSdsCertificate {
-    /// <p>A reference to an object that represents the name of the secret requested from the
-    /// Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or
-    /// certificate chain.</p>
+    /// <p>A reference to an object that represents the name of the secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     pub secret_name: std::option::Option<std::string::String>,
 }
 impl ListenerTlsSdsCertificate {
-    /// <p>A reference to an object that represents the name of the secret requested from the
-    /// Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or
-    /// certificate chain.</p>
+    /// <p>A reference to an object that represents the name of the secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     pub fn secret_name(&self) -> std::option::Option<&str> {
         self.secret_name.as_deref()
     }
@@ -7175,16 +6837,12 @@ pub mod listener_tls_sds_certificate {
         pub(crate) secret_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A reference to an object that represents the name of the secret requested from the
-        /// Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or
-        /// certificate chain.</p>
+        /// <p>A reference to an object that represents the name of the secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
         pub fn secret_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_name = Some(input.into());
             self
         }
-        /// <p>A reference to an object that represents the name of the secret requested from the
-        /// Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or
-        /// certificate chain.</p>
+        /// <p>A reference to an object that represents the name of the secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
         pub fn set_secret_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_name = input;
             self
@@ -7204,15 +6862,13 @@ impl ListenerTlsSdsCertificate {
     }
 }
 
-/// <p>An object that represents a local file certificate.
-/// The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
+/// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListenerTlsFileCertificate {
     /// <p>The certificate chain for the certificate.</p>
     pub certificate_chain: std::option::Option<std::string::String>,
-    /// <p>The private key for a certificate stored on the file system of the virtual node that the
-    /// proxy is running on.</p>
+    /// <p>The private key for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub private_key: std::option::Option<std::string::String>,
 }
 impl ListenerTlsFileCertificate {
@@ -7220,8 +6876,7 @@ impl ListenerTlsFileCertificate {
     pub fn certificate_chain(&self) -> std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
-    /// <p>The private key for a certificate stored on the file system of the virtual node that the
-    /// proxy is running on.</p>
+    /// <p>The private key for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub fn private_key(&self) -> std::option::Option<&str> {
         self.private_key.as_deref()
     }
@@ -7257,14 +6912,12 @@ pub mod listener_tls_file_certificate {
             self.certificate_chain = input;
             self
         }
-        /// <p>The private key for a certificate stored on the file system of the virtual node that the
-        /// proxy is running on.</p>
+        /// <p>The private key for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
         pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.private_key = Some(input.into());
             self
         }
-        /// <p>The private key for a certificate stored on the file system of the virtual node that the
-        /// proxy is running on.</p>
+        /// <p>The private key for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
         pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.private_key = input;
             self
@@ -7285,12 +6938,11 @@ impl ListenerTlsFileCertificate {
     }
 }
 
-/// <p>An object that represents the backends that a virtual node is expected to send outbound
-/// traffic to.</p>
+/// <p>An object that represents the backends that a virtual node is expected to send outbound traffic to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum Backend {
-    /// <p>Specifies a virtual service to use as a backend.  </p>
+    /// <p>Specifies a virtual service to use as a backend. </p>
     VirtualService(crate::model::VirtualServiceBackend),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -7569,11 +7221,9 @@ impl Listener {
 }
 
 /// <p>An object that represents the type of virtual node connection pool.</p>
-/// <p>Only one protocol is used at a time and should be the same protocol as the one chosen
-/// under port mapping.</p>
-/// <p>If not present the default value for <code>maxPendingRequests</code> is
-/// <code>2147483647</code>.</p>
-/// <p/>
+/// <p>Only one protocol is used at a time and should be the same protocol as the one chosen under port mapping.</p>
+/// <p>If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>.</p>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum VirtualNodeConnectionPool {
@@ -7666,13 +7316,11 @@ impl VirtualNodeConnectionPool {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualNodeGrpcConnectionPool {
-    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-    /// upstream cluster.</p>
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub max_requests: i32,
 }
 impl VirtualNodeGrpcConnectionPool {
-    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-    /// upstream cluster.</p>
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub fn max_requests(&self) -> i32 {
         self.max_requests
     }
@@ -7693,14 +7341,12 @@ pub mod virtual_node_grpc_connection_pool {
         pub(crate) max_requests: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-        /// upstream cluster.</p>
+        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
         pub fn max_requests(mut self, input: i32) -> Self {
             self.max_requests = Some(input);
             self
         }
-        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-        /// upstream cluster.</p>
+        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
         pub fn set_max_requests(mut self, input: std::option::Option<i32>) -> Self {
             self.max_requests = input;
             self
@@ -7724,13 +7370,11 @@ impl VirtualNodeGrpcConnectionPool {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualNodeHttp2ConnectionPool {
-    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-    /// upstream cluster.</p>
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub max_requests: i32,
 }
 impl VirtualNodeHttp2ConnectionPool {
-    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-    /// upstream cluster.</p>
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub fn max_requests(&self) -> i32 {
         self.max_requests
     }
@@ -7751,14 +7395,12 @@ pub mod virtual_node_http2_connection_pool {
         pub(crate) max_requests: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-        /// upstream cluster.</p>
+        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
         pub fn max_requests(mut self, input: i32) -> Self {
             self.max_requests = Some(input);
             self
         }
-        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-        /// upstream cluster.</p>
+        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
         pub fn set_max_requests(mut self, input: std::option::Option<i32>) -> Self {
             self.max_requests = input;
             self
@@ -7782,21 +7424,17 @@ impl VirtualNodeHttp2ConnectionPool {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualNodeHttpConnectionPool {
-    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
-    /// hosts in upstream cluster.</p>
+    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     pub max_connections: i32,
-    /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to
-    /// upstream cluster.</p>
+    /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
     pub max_pending_requests: std::option::Option<i32>,
 }
 impl VirtualNodeHttpConnectionPool {
-    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
-    /// hosts in upstream cluster.</p>
+    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     pub fn max_connections(&self) -> i32 {
         self.max_connections
     }
-    /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to
-    /// upstream cluster.</p>
+    /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
     pub fn max_pending_requests(&self) -> std::option::Option<i32> {
         self.max_pending_requests
     }
@@ -7819,26 +7457,22 @@ pub mod virtual_node_http_connection_pool {
         pub(crate) max_pending_requests: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
-        /// hosts in upstream cluster.</p>
+        /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
         pub fn max_connections(mut self, input: i32) -> Self {
             self.max_connections = Some(input);
             self
         }
-        /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
-        /// hosts in upstream cluster.</p>
+        /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
         pub fn set_max_connections(mut self, input: std::option::Option<i32>) -> Self {
             self.max_connections = input;
             self
         }
-        /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to
-        /// upstream cluster.</p>
+        /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
         pub fn max_pending_requests(mut self, input: i32) -> Self {
             self.max_pending_requests = Some(input);
             self
         }
-        /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to
-        /// upstream cluster.</p>
+        /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
         pub fn set_max_pending_requests(mut self, input: std::option::Option<i32>) -> Self {
             self.max_pending_requests = input;
             self
@@ -7863,13 +7497,11 @@ impl VirtualNodeHttpConnectionPool {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualNodeTcpConnectionPool {
-    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
-    /// hosts in upstream cluster.</p>
+    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     pub max_connections: i32,
 }
 impl VirtualNodeTcpConnectionPool {
-    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
-    /// hosts in upstream cluster.</p>
+    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     pub fn max_connections(&self) -> i32 {
         self.max_connections
     }
@@ -7890,14 +7522,12 @@ pub mod virtual_node_tcp_connection_pool {
         pub(crate) max_connections: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
-        /// hosts in upstream cluster.</p>
+        /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
         pub fn max_connections(mut self, input: i32) -> Self {
             self.max_connections = Some(input);
             self
         }
-        /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
-        /// hosts in upstream cluster.</p>
+        /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
         pub fn set_max_connections(mut self, input: std::option::Option<i32>) -> Self {
             self.max_connections = input;
             self
@@ -7927,8 +7557,7 @@ pub struct OutlierDetection {
     pub interval: std::option::Option<crate::model::Duration>,
     /// <p>The base amount of time for which a host is ejected.</p>
     pub base_ejection_duration: std::option::Option<crate::model::Duration>,
-    /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be
-    /// ejected. Will eject at least one host regardless of the value.</p>
+    /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
     pub max_ejection_percent: std::option::Option<i32>,
 }
 impl OutlierDetection {
@@ -7944,8 +7573,7 @@ impl OutlierDetection {
     pub fn base_ejection_duration(&self) -> std::option::Option<&crate::model::Duration> {
         self.base_ejection_duration.as_ref()
     }
-    /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be
-    /// ejected. Will eject at least one host regardless of the value.</p>
+    /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
     pub fn max_ejection_percent(&self) -> std::option::Option<i32> {
         self.max_ejection_percent
     }
@@ -8005,14 +7633,12 @@ pub mod outlier_detection {
             self.base_ejection_duration = input;
             self
         }
-        /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be
-        /// ejected. Will eject at least one host regardless of the value.</p>
+        /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
         pub fn max_ejection_percent(mut self, input: i32) -> Self {
             self.max_ejection_percent = Some(input);
             self
         }
-        /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be
-        /// ejected. Will eject at least one host regardless of the value.</p>
+        /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
         pub fn set_max_ejection_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.max_ejection_percent = input;
             self
@@ -8120,31 +7746,23 @@ impl ListenerTimeout {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HealthCheckPolicy {
-    /// <p>The amount of time to wait when receiving a response from the health check, in
-    /// milliseconds.</p>
+    /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
     pub timeout_millis: std::option::Option<i64>,
     /// <p>The time period in milliseconds between each health check execution.</p>
     pub interval_millis: std::option::Option<i64>,
-    /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your
-    /// service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health
-    /// Checking Protocol</a>.</p>
+    /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
     pub protocol: std::option::Option<crate::model::PortProtocol>,
-    /// <p>The destination port for the health check request. This port must match the port defined
-    /// in the <a>PortMapping</a> for the listener.</p>
+    /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
     pub port: i32,
-    /// <p>The destination path for the health check request. This value is only used if the
-    /// specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
+    /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
     pub path: std::option::Option<std::string::String>,
-    /// <p>The number of consecutive successful health checks that must occur before declaring
-    /// listener healthy.</p>
+    /// <p>The number of consecutive successful health checks that must occur before declaring listener healthy.</p>
     pub healthy_threshold: i32,
-    /// <p>The number of consecutive failed health checks that must occur before declaring a
-    /// virtual node unhealthy. </p>
+    /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy. </p>
     pub unhealthy_threshold: i32,
 }
 impl HealthCheckPolicy {
-    /// <p>The amount of time to wait when receiving a response from the health check, in
-    /// milliseconds.</p>
+    /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
     pub fn timeout_millis(&self) -> std::option::Option<i64> {
         self.timeout_millis
     }
@@ -8152,29 +7770,23 @@ impl HealthCheckPolicy {
     pub fn interval_millis(&self) -> std::option::Option<i64> {
         self.interval_millis
     }
-    /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your
-    /// service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health
-    /// Checking Protocol</a>.</p>
+    /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::PortProtocol> {
         self.protocol.as_ref()
     }
-    /// <p>The destination port for the health check request. This port must match the port defined
-    /// in the <a>PortMapping</a> for the listener.</p>
+    /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
     pub fn port(&self) -> i32 {
         self.port
     }
-    /// <p>The destination path for the health check request. This value is only used if the
-    /// specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
+    /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
-    /// <p>The number of consecutive successful health checks that must occur before declaring
-    /// listener healthy.</p>
+    /// <p>The number of consecutive successful health checks that must occur before declaring listener healthy.</p>
     pub fn healthy_threshold(&self) -> i32 {
         self.healthy_threshold
     }
-    /// <p>The number of consecutive failed health checks that must occur before declaring a
-    /// virtual node unhealthy. </p>
+    /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy. </p>
     pub fn unhealthy_threshold(&self) -> i32 {
         self.unhealthy_threshold
     }
@@ -8207,14 +7819,12 @@ pub mod health_check_policy {
         pub(crate) unhealthy_threshold: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The amount of time to wait when receiving a response from the health check, in
-        /// milliseconds.</p>
+        /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
         pub fn timeout_millis(mut self, input: i64) -> Self {
             self.timeout_millis = Some(input);
             self
         }
-        /// <p>The amount of time to wait when receiving a response from the health check, in
-        /// milliseconds.</p>
+        /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
         pub fn set_timeout_millis(mut self, input: std::option::Option<i64>) -> Self {
             self.timeout_millis = input;
             self
@@ -8229,16 +7839,12 @@ pub mod health_check_policy {
             self.interval_millis = input;
             self
         }
-        /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your
-        /// service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health
-        /// Checking Protocol</a>.</p>
+        /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
         pub fn protocol(mut self, input: crate::model::PortProtocol) -> Self {
             self.protocol = Some(input);
             self
         }
-        /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your
-        /// service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health
-        /// Checking Protocol</a>.</p>
+        /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::PortProtocol>,
@@ -8246,50 +7852,42 @@ pub mod health_check_policy {
             self.protocol = input;
             self
         }
-        /// <p>The destination port for the health check request. This port must match the port defined
-        /// in the <a>PortMapping</a> for the listener.</p>
+        /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>The destination port for the health check request. This port must match the port defined
-        /// in the <a>PortMapping</a> for the listener.</p>
+        /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
         }
-        /// <p>The destination path for the health check request. This value is only used if the
-        /// specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
+        /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.path = Some(input.into());
             self
         }
-        /// <p>The destination path for the health check request. This value is only used if the
-        /// specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
+        /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
-        /// <p>The number of consecutive successful health checks that must occur before declaring
-        /// listener healthy.</p>
+        /// <p>The number of consecutive successful health checks that must occur before declaring listener healthy.</p>
         pub fn healthy_threshold(mut self, input: i32) -> Self {
             self.healthy_threshold = Some(input);
             self
         }
-        /// <p>The number of consecutive successful health checks that must occur before declaring
-        /// listener healthy.</p>
+        /// <p>The number of consecutive successful health checks that must occur before declaring listener healthy.</p>
         pub fn set_healthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.healthy_threshold = input;
             self
         }
-        /// <p>The number of consecutive failed health checks that must occur before declaring a
-        /// virtual node unhealthy. </p>
+        /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy. </p>
         pub fn unhealthy_threshold(mut self, input: i32) -> Self {
             self.unhealthy_threshold = Some(input);
             self
         }
-        /// <p>The number of consecutive failed health checks that must occur before declaring a
-        /// virtual node unhealthy. </p>
+        /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy. </p>
         pub fn set_unhealthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.unhealthy_threshold = input;
             self
@@ -8321,21 +7919,9 @@ impl HealthCheckPolicy {
 pub struct ListenerTls {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b/>STRICT – Listener only accepts connections with TLS
-    /// enabled. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b/>PERMISSIVE – Listener accepts connections with or
-    /// without TLS enabled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b/>DISABLED – Listener only accepts connections without
-    /// TLS. </p>
-    /// </li>
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
     /// </ul>
     pub mode: std::option::Option<crate::model::ListenerTlsMode>,
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
@@ -8346,21 +7932,9 @@ pub struct ListenerTls {
 impl ListenerTls {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b/>STRICT – Listener only accepts connections with TLS
-    /// enabled. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b/>PERMISSIVE – Listener accepts connections with or
-    /// without TLS enabled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b/>DISABLED – Listener only accepts connections without
-    /// TLS. </p>
-    /// </li>
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
     /// </ul>
     pub fn mode(&self) -> std::option::Option<&crate::model::ListenerTlsMode> {
         self.mode.as_ref()
@@ -8396,21 +7970,9 @@ pub mod listener_tls {
     impl Builder {
         /// <p>Specify one of the following modes.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b/>STRICT – Listener only accepts connections with TLS
-        /// enabled. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b/>PERMISSIVE – Listener accepts connections with or
-        /// without TLS enabled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b/>DISABLED – Listener only accepts connections without
-        /// TLS. </p>
-        /// </li>
+        /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
+        /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
+        /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
         /// </ul>
         pub fn mode(mut self, input: crate::model::ListenerTlsMode) -> Self {
             self.mode = Some(input);
@@ -8418,21 +7980,9 @@ pub mod listener_tls {
         }
         /// <p>Specify one of the following modes.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b/>STRICT – Listener only accepts connections with TLS
-        /// enabled. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b/>PERMISSIVE – Listener accepts connections with or
-        /// without TLS enabled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b/>DISABLED – Listener only accepts connections without
-        /// TLS. </p>
-        /// </li>
+        /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
+        /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
+        /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
         /// </ul>
         pub fn set_mode(
             mut self,
@@ -8488,21 +8038,17 @@ impl ListenerTls {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListenerTlsValidationContext {
-    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-    /// certificate.</p>
+    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     pub trust: std::option::Option<crate::model::ListenerTlsValidationContextTrust>,
-    /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation
-    /// context.</p>
+    /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation context.</p>
     pub subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
 }
 impl ListenerTlsValidationContext {
-    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-    /// certificate.</p>
+    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     pub fn trust(&self) -> std::option::Option<&crate::model::ListenerTlsValidationContextTrust> {
         self.trust.as_ref()
     }
-    /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation
-    /// context.</p>
+    /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation context.</p>
     pub fn subject_alternative_names(
         &self,
     ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
@@ -8528,14 +8074,12 @@ pub mod listener_tls_validation_context {
             std::option::Option<crate::model::SubjectAlternativeNames>,
     }
     impl Builder {
-        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-        /// certificate.</p>
+        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
         pub fn trust(mut self, input: crate::model::ListenerTlsValidationContextTrust) -> Self {
             self.trust = Some(input);
             self
         }
-        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-        /// certificate.</p>
+        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
         pub fn set_trust(
             mut self,
             input: std::option::Option<crate::model::ListenerTlsValidationContextTrust>,
@@ -8543,8 +8087,7 @@ pub mod listener_tls_validation_context {
             self.trust = input;
             self
         }
-        /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation
-        /// context.</p>
+        /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation context.</p>
         pub fn subject_alternative_names(
             mut self,
             input: crate::model::SubjectAlternativeNames,
@@ -8552,8 +8095,7 @@ pub mod listener_tls_validation_context {
             self.subject_alternative_names = Some(input);
             self
         }
-        /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation
-        /// context.</p>
+        /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation context.</p>
         pub fn set_subject_alternative_names(
             mut self,
             input: std::option::Option<crate::model::SubjectAlternativeNames>,
@@ -8583,8 +8125,7 @@ impl ListenerTlsValidationContext {
 pub enum ListenerTlsValidationContextTrust {
     /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
     File(crate::model::TlsValidationContextFileTrust),
-    /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) Secret Discovery Service
-    /// validation context trust.</p>
+    /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     Sds(crate::model::TlsValidationContextSdsTrust),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -8641,8 +8182,7 @@ pub enum ListenerTlsCertificate {
     Acm(crate::model::ListenerTlsAcmCertificate),
     /// <p>A reference to an object that represents a local file certificate.</p>
     File(crate::model::ListenerTlsFileCertificate),
-    /// <p>A reference to an object that represents a listener's Secret Discovery Service
-    /// certificate.</p>
+    /// <p>A reference to an object that represents a listener's Secret Discovery Service certificate.</p>
     Sds(crate::model::ListenerTlsSdsCertificate),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -8869,9 +8409,7 @@ impl ServiceDiscovery {
     }
 }
 
-/// <p>An object that represents the Cloud Map service discovery information for your virtual
-/// node.</p>
-/// <note>
+/// <p>An object that represents the Cloud Map service discovery information for your virtual node.</p> <note>
 /// <p>Cloud Map is not available in the eu-south-1 Region.</p>
 /// </note>
 #[non_exhaustive]
@@ -8881,9 +8419,7 @@ pub struct AwsCloudMapServiceDiscovery {
     pub namespace_name: std::option::Option<std::string::String>,
     /// <p>The name of the Cloud Map service to use.</p>
     pub service_name: std::option::Option<std::string::String>,
-    /// <p>A string map that contains attributes with values that you can use to filter instances
-    /// by any custom attribute that you specified when you registered the instance. Only instances
-    /// that match all of the specified key/value pairs will be returned.</p>
+    /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AwsCloudMapInstanceAttribute>>,
 }
 impl AwsCloudMapServiceDiscovery {
@@ -8895,9 +8431,7 @@ impl AwsCloudMapServiceDiscovery {
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
-    /// <p>A string map that contains attributes with values that you can use to filter instances
-    /// by any custom attribute that you specified when you registered the instance. Only instances
-    /// that match all of the specified key/value pairs will be returned.</p>
+    /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::AwsCloudMapInstanceAttribute]> {
         self.attributes.as_deref()
     }
@@ -8950,21 +8484,14 @@ pub mod aws_cloud_map_service_discovery {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A string map that contains attributes with values that you can use to filter instances
-        /// by any custom attribute that you specified when you registered the instance. Only instances
-        /// that match all of the specified key/value pairs will be returned.</p>
-        pub fn attributes(
-            mut self,
-            input: impl Into<crate::model::AwsCloudMapInstanceAttribute>,
-        ) -> Self {
+        /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
+        pub fn attributes(mut self, input: crate::model::AwsCloudMapInstanceAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
-        /// <p>A string map that contains attributes with values that you can use to filter instances
-        /// by any custom attribute that you specified when you registered the instance. Only instances
-        /// that match all of the specified key/value pairs will be returned.</p>
+        /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AwsCloudMapInstanceAttribute>>,
@@ -8989,29 +8516,23 @@ impl AwsCloudMapServiceDiscovery {
     }
 }
 
-/// <p>An object that represents the Cloud Map attribute information for your virtual
-/// node.</p>
-/// <note>
+/// <p>An object that represents the Cloud Map attribute information for your virtual node.</p> <note>
 /// <p>AWS Cloud Map is not available in the eu-south-1 Region.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCloudMapInstanceAttribute {
-    /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service
-    /// instance that contains the specified key and value is returned.</p>
+    /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service
-    /// instance that contains the specified key and value is returned.</p>
+    /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl AwsCloudMapInstanceAttribute {
-    /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service
-    /// instance that contains the specified key and value is returned.</p>
+    /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service
-    /// instance that contains the specified key and value is returned.</p>
+    /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -9034,26 +8555,22 @@ pub mod aws_cloud_map_instance_attribute {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service
-        /// instance that contains the specified key and value is returned.</p>
+        /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service
-        /// instance that contains the specified key and value is returned.</p>
+        /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service
-        /// instance that contains the specified key and value is returned.</p>
+        /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service
-        /// instance that contains the specified key and value is returned.</p>
+        /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -9074,8 +8591,7 @@ impl AwsCloudMapInstanceAttribute {
     }
 }
 
-/// <p>An object that represents the DNS service discovery information for your virtual
-/// node.</p>
+/// <p>An object that represents the DNS service discovery information for your virtual node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DnsServiceDiscovery {
@@ -9214,11 +8730,9 @@ pub struct VirtualGatewayRef {
     pub mesh_name: std::option::Option<std::string::String>,
     /// <p>The name of the resource.</p>
     pub virtual_gateway_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -9238,13 +8752,11 @@ impl VirtualGatewayRef {
     pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
         self.virtual_gateway_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -9318,26 +8830,22 @@ pub mod virtual_gateway_ref {
             self.virtual_gateway_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9677,8 +9185,7 @@ impl AsRef<str> for VirtualGatewayStatusCode {
 pub struct VirtualGatewaySpec {
     /// <p>A reference to an object that represents the defaults for backends.</p>
     pub backend_defaults: std::option::Option<crate::model::VirtualGatewayBackendDefaults>,
-    /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You
-    /// can specify one listener.</p>
+    /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
     pub listeners: std::option::Option<std::vec::Vec<crate::model::VirtualGatewayListener>>,
     /// <p>An object that represents logging information.</p>
     pub logging: std::option::Option<crate::model::VirtualGatewayLogging>,
@@ -9690,8 +9197,7 @@ impl VirtualGatewaySpec {
     ) -> std::option::Option<&crate::model::VirtualGatewayBackendDefaults> {
         self.backend_defaults.as_ref()
     }
-    /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You
-    /// can specify one listener.</p>
+    /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
     pub fn listeners(&self) -> std::option::Option<&[crate::model::VirtualGatewayListener]> {
         self.listeners.as_deref()
     }
@@ -9742,16 +9248,14 @@ pub mod virtual_gateway_spec {
         ///
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
-        /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You
-        /// can specify one listener.</p>
-        pub fn listeners(mut self, input: impl Into<crate::model::VirtualGatewayListener>) -> Self {
+        /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
+        pub fn listeners(mut self, input: crate::model::VirtualGatewayListener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listeners = Some(v);
             self
         }
-        /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You
-        /// can specify one listener.</p>
+        /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
         pub fn set_listeners(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VirtualGatewayListener>>,
@@ -9889,19 +9393,11 @@ impl VirtualGatewayAccessLog {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayFileAccessLog {
-    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send
-    /// access logs to standard out and configure your Envoy container to use a log driver, such as
-    /// <code>awslogs</code>, to export the access logs to a log storage service such as Amazon
-    /// CloudWatch Logs. You can also specify a path in the Envoy container's file system to write
-    /// the files to disk.</p>
+    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
     pub path: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayFileAccessLog {
-    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send
-    /// access logs to standard out and configure your Envoy container to use a log driver, such as
-    /// <code>awslogs</code>, to export the access logs to a log storage service such as Amazon
-    /// CloudWatch Logs. You can also specify a path in the Envoy container's file system to write
-    /// the files to disk.</p>
+    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
@@ -9922,20 +9418,12 @@ pub mod virtual_gateway_file_access_log {
         pub(crate) path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send
-        /// access logs to standard out and configure your Envoy container to use a log driver, such as
-        /// <code>awslogs</code>, to export the access logs to a log storage service such as Amazon
-        /// CloudWatch Logs. You can also specify a path in the Envoy container's file system to write
-        /// the files to disk.</p>
+        /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.path = Some(input.into());
             self
         }
-        /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send
-        /// access logs to standard out and configure your Envoy container to use a log driver, such as
-        /// <code>awslogs</code>, to export the access logs to a log storage service such as Amazon
-        /// CloudWatch Logs. You can also specify a path in the Envoy container's file system to write
-        /// the files to disk.</p>
+        /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -10087,10 +9575,8 @@ impl VirtualGatewayListener {
 }
 
 /// <p>An object that represents the type of virtual gateway connection pool.</p>
-/// <p>Only one protocol is used at a time and should be the same protocol as the one chosen
-/// under port mapping.</p>
-/// <p>If not present the default value for <code>maxPendingRequests</code> is
-/// <code>2147483647</code>.</p>
+/// <p>Only one protocol is used at a time and should be the same protocol as the one chosen under port mapping.</p>
+/// <p>If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum VirtualGatewayConnectionPool {
@@ -10166,13 +9652,11 @@ impl VirtualGatewayConnectionPool {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayGrpcConnectionPool {
-    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-    /// upstream cluster.</p>
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub max_requests: i32,
 }
 impl VirtualGatewayGrpcConnectionPool {
-    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-    /// upstream cluster.</p>
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub fn max_requests(&self) -> i32 {
         self.max_requests
     }
@@ -10193,14 +9677,12 @@ pub mod virtual_gateway_grpc_connection_pool {
         pub(crate) max_requests: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-        /// upstream cluster.</p>
+        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
         pub fn max_requests(mut self, input: i32) -> Self {
             self.max_requests = Some(input);
             self
         }
-        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-        /// upstream cluster.</p>
+        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
         pub fn set_max_requests(mut self, input: std::option::Option<i32>) -> Self {
             self.max_requests = input;
             self
@@ -10224,13 +9706,11 @@ impl VirtualGatewayGrpcConnectionPool {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayHttp2ConnectionPool {
-    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-    /// upstream cluster.</p>
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub max_requests: i32,
 }
 impl VirtualGatewayHttp2ConnectionPool {
-    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-    /// upstream cluster.</p>
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub fn max_requests(&self) -> i32 {
         self.max_requests
     }
@@ -10251,14 +9731,12 @@ pub mod virtual_gateway_http2_connection_pool {
         pub(crate) max_requests: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-        /// upstream cluster.</p>
+        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
         pub fn max_requests(mut self, input: i32) -> Self {
             self.max_requests = Some(input);
             self
         }
-        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in
-        /// upstream cluster.</p>
+        /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
         pub fn set_max_requests(mut self, input: std::option::Option<i32>) -> Self {
             self.max_requests = input;
             self
@@ -10282,21 +9760,17 @@ impl VirtualGatewayHttp2ConnectionPool {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayHttpConnectionPool {
-    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
-    /// hosts in upstream cluster.</p>
+    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     pub max_connections: i32,
-    /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to
-    /// upstream cluster.</p>
+    /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
     pub max_pending_requests: std::option::Option<i32>,
 }
 impl VirtualGatewayHttpConnectionPool {
-    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
-    /// hosts in upstream cluster.</p>
+    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     pub fn max_connections(&self) -> i32 {
         self.max_connections
     }
-    /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to
-    /// upstream cluster.</p>
+    /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
     pub fn max_pending_requests(&self) -> std::option::Option<i32> {
         self.max_pending_requests
     }
@@ -10319,26 +9793,22 @@ pub mod virtual_gateway_http_connection_pool {
         pub(crate) max_pending_requests: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
-        /// hosts in upstream cluster.</p>
+        /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
         pub fn max_connections(mut self, input: i32) -> Self {
             self.max_connections = Some(input);
             self
         }
-        /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all
-        /// hosts in upstream cluster.</p>
+        /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
         pub fn set_max_connections(mut self, input: std::option::Option<i32>) -> Self {
             self.max_connections = input;
             self
         }
-        /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to
-        /// upstream cluster.</p>
+        /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
         pub fn max_pending_requests(mut self, input: i32) -> Self {
             self.max_pending_requests = Some(input);
             self
         }
-        /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to
-        /// upstream cluster.</p>
+        /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
         pub fn set_max_pending_requests(mut self, input: std::option::Option<i32>) -> Self {
             self.max_pending_requests = input;
             self
@@ -10365,25 +9835,12 @@ impl VirtualGatewayHttpConnectionPool {
 pub struct VirtualGatewayListenerTls {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b/>STRICT – Listener only accepts connections with TLS
-    /// enabled. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b/>PERMISSIVE – Listener accepts connections with or
-    /// without TLS enabled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b/>DISABLED – Listener only accepts connections without
-    /// TLS. </p>
-    /// </li>
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
     /// </ul>
     pub mode: std::option::Option<crate::model::VirtualGatewayListenerTlsMode>,
-    /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation
-    /// context.</p>
+    /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
     pub validation: std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContext>,
     /// <p>An object that represents a Transport Layer Security (TLS) certificate.</p>
     pub certificate: std::option::Option<crate::model::VirtualGatewayListenerTlsCertificate>,
@@ -10391,27 +9848,14 @@ pub struct VirtualGatewayListenerTls {
 impl VirtualGatewayListenerTls {
     /// <p>Specify one of the following modes.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b/>STRICT – Listener only accepts connections with TLS
-    /// enabled. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b/>PERMISSIVE – Listener accepts connections with or
-    /// without TLS enabled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b/>DISABLED – Listener only accepts connections without
-    /// TLS. </p>
-    /// </li>
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
     /// </ul>
     pub fn mode(&self) -> std::option::Option<&crate::model::VirtualGatewayListenerTlsMode> {
         self.mode.as_ref()
     }
-    /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation
-    /// context.</p>
+    /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
     pub fn validation(
         &self,
     ) -> std::option::Option<&crate::model::VirtualGatewayListenerTlsValidationContext> {
@@ -10448,21 +9892,9 @@ pub mod virtual_gateway_listener_tls {
     impl Builder {
         /// <p>Specify one of the following modes.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b/>STRICT – Listener only accepts connections with TLS
-        /// enabled. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b/>PERMISSIVE – Listener accepts connections with or
-        /// without TLS enabled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b/>DISABLED – Listener only accepts connections without
-        /// TLS. </p>
-        /// </li>
+        /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
+        /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
+        /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
         /// </ul>
         pub fn mode(mut self, input: crate::model::VirtualGatewayListenerTlsMode) -> Self {
             self.mode = Some(input);
@@ -10470,21 +9902,9 @@ pub mod virtual_gateway_listener_tls {
         }
         /// <p>Specify one of the following modes.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b/>STRICT – Listener only accepts connections with TLS
-        /// enabled. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b/>PERMISSIVE – Listener accepts connections with or
-        /// without TLS enabled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b/>DISABLED – Listener only accepts connections without
-        /// TLS. </p>
-        /// </li>
+        /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
+        /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
+        /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
         /// </ul>
         pub fn set_mode(
             mut self,
@@ -10493,8 +9913,7 @@ pub mod virtual_gateway_listener_tls {
             self.mode = input;
             self
         }
-        /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation
-        /// context.</p>
+        /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
         pub fn validation(
             mut self,
             input: crate::model::VirtualGatewayListenerTlsValidationContext,
@@ -10502,8 +9921,7 @@ pub mod virtual_gateway_listener_tls {
             self.validation = Some(input);
             self
         }
-        /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation
-        /// context.</p>
+        /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
         pub fn set_validation(
             mut self,
             input: std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContext>,
@@ -10552,8 +9970,7 @@ pub enum VirtualGatewayListenerTlsCertificate {
     Acm(crate::model::VirtualGatewayListenerTlsAcmCertificate),
     /// <p>A reference to an object that represents a local file certificate.</p>
     File(crate::model::VirtualGatewayListenerTlsFileCertificate),
-    /// <p>A reference to an object that represents a virtual gateway's listener's Secret Discovery
-    /// Service certificate.</p>
+    /// <p>A reference to an object that represents a virtual gateway's listener's Secret Discovery Service certificate.</p>
     Sds(crate::model::VirtualGatewayListenerTlsSdsCertificate),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -10617,22 +10034,15 @@ impl VirtualGatewayListenerTlsCertificate {
     }
 }
 
-/// <p>An object that represents the virtual gateway's listener's Secret Discovery Service
-/// certificate.The proxy must be configured with a local SDS provider via a Unix Domain
-/// Socket. See App Mesh<a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS
-/// documentation</a> for more info. </p>
+/// <p>An object that represents the virtual gateway's listener's Secret Discovery Service certificate.The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh<a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayListenerTlsSdsCertificate {
-    /// <p>A reference to an object that represents the name of the secret secret requested from
-    /// the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or
-    /// certificate chain.</p>
+    /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     pub secret_name: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayListenerTlsSdsCertificate {
-    /// <p>A reference to an object that represents the name of the secret secret requested from
-    /// the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or
-    /// certificate chain.</p>
+    /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     pub fn secret_name(&self) -> std::option::Option<&str> {
         self.secret_name.as_deref()
     }
@@ -10653,16 +10063,12 @@ pub mod virtual_gateway_listener_tls_sds_certificate {
         pub(crate) secret_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A reference to an object that represents the name of the secret secret requested from
-        /// the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or
-        /// certificate chain.</p>
+        /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
         pub fn secret_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_name = Some(input.into());
             self
         }
-        /// <p>A reference to an object that represents the name of the secret secret requested from
-        /// the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or
-        /// certificate chain.</p>
+        /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
         pub fn set_secret_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_name = input;
             self
@@ -10682,15 +10088,13 @@ impl VirtualGatewayListenerTlsSdsCertificate {
     }
 }
 
-/// <p>An object that represents a local file certificate.
-/// The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
+/// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayListenerTlsFileCertificate {
     /// <p>The certificate chain for the certificate.</p>
     pub certificate_chain: std::option::Option<std::string::String>,
-    /// <p>The private key for a certificate stored on the file system of the mesh endpoint that
-    /// the proxy is running on.</p>
+    /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
     pub private_key: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayListenerTlsFileCertificate {
@@ -10698,8 +10102,7 @@ impl VirtualGatewayListenerTlsFileCertificate {
     pub fn certificate_chain(&self) -> std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
-    /// <p>The private key for a certificate stored on the file system of the mesh endpoint that
-    /// the proxy is running on.</p>
+    /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
     pub fn private_key(&self) -> std::option::Option<&str> {
         self.private_key.as_deref()
     }
@@ -10735,14 +10138,12 @@ pub mod virtual_gateway_listener_tls_file_certificate {
             self.certificate_chain = input;
             self
         }
-        /// <p>The private key for a certificate stored on the file system of the mesh endpoint that
-        /// the proxy is running on.</p>
+        /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
         pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.private_key = Some(input.into());
             self
         }
-        /// <p>The private key for a certificate stored on the file system of the mesh endpoint that
-        /// the proxy is running on.</p>
+        /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
         pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.private_key = input;
             self
@@ -10820,28 +10221,23 @@ impl VirtualGatewayListenerTlsAcmCertificate {
     }
 }
 
-/// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation
-/// context.</p>
+/// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayListenerTlsValidationContext {
-    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-    /// certificate.</p>
+    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     pub trust: std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContextTrust>,
-    /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS)
-    /// validation context.</p>
+    /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS) validation context.</p>
     pub subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
 }
 impl VirtualGatewayListenerTlsValidationContext {
-    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-    /// certificate.</p>
+    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     pub fn trust(
         &self,
     ) -> std::option::Option<&crate::model::VirtualGatewayListenerTlsValidationContextTrust> {
         self.trust.as_ref()
     }
-    /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS)
-    /// validation context.</p>
+    /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS) validation context.</p>
     pub fn subject_alternative_names(
         &self,
     ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
@@ -10868,8 +10264,7 @@ pub mod virtual_gateway_listener_tls_validation_context {
             std::option::Option<crate::model::SubjectAlternativeNames>,
     }
     impl Builder {
-        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-        /// certificate.</p>
+        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
         pub fn trust(
             mut self,
             input: crate::model::VirtualGatewayListenerTlsValidationContextTrust,
@@ -10877,8 +10272,7 @@ pub mod virtual_gateway_listener_tls_validation_context {
             self.trust = Some(input);
             self
         }
-        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-        /// certificate.</p>
+        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
         pub fn set_trust(
             mut self,
             input: std::option::Option<
@@ -10888,8 +10282,7 @@ pub mod virtual_gateway_listener_tls_validation_context {
             self.trust = input;
             self
         }
-        /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS)
-        /// validation context.</p>
+        /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS) validation context.</p>
         pub fn subject_alternative_names(
             mut self,
             input: crate::model::SubjectAlternativeNames,
@@ -10897,8 +10290,7 @@ pub mod virtual_gateway_listener_tls_validation_context {
             self.subject_alternative_names = Some(input);
             self
         }
-        /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS)
-        /// validation context.</p>
+        /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS) validation context.</p>
         pub fn set_subject_alternative_names(
             mut self,
             input: std::option::Option<crate::model::SubjectAlternativeNames>,
@@ -10922,15 +10314,13 @@ impl VirtualGatewayListenerTlsValidationContext {
     }
 }
 
-/// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context
-/// trust.</p>
+/// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context trust.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum VirtualGatewayListenerTlsValidationContextTrust {
     /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
     File(crate::model::VirtualGatewayTlsValidationContextFileTrust),
-    /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) Secret
-    /// Discovery Service validation context trust.</p>
+    /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     Sds(crate::model::VirtualGatewayTlsValidationContextSdsTrust),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -10980,19 +10370,15 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
     }
 }
 
-/// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) Secret Discovery Service
-/// validation context trust. The proxy must be configured with a local SDS provider via a Unix
-/// Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info.</p>
+/// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) Secret Discovery Service validation context trust. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayTlsValidationContextSdsTrust {
-    /// <p>A reference to an object that represents the name of the secret for a virtual gateway's
-    /// Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
+    /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     pub secret_name: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayTlsValidationContextSdsTrust {
-    /// <p>A reference to an object that represents the name of the secret for a virtual gateway's
-    /// Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
+    /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     pub fn secret_name(&self) -> std::option::Option<&str> {
         self.secret_name.as_deref()
     }
@@ -11013,14 +10399,12 @@ pub mod virtual_gateway_tls_validation_context_sds_trust {
         pub(crate) secret_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A reference to an object that represents the name of the secret for a virtual gateway's
-        /// Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
+        /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
         pub fn secret_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_name = Some(input.into());
             self
         }
-        /// <p>A reference to an object that represents the name of the secret for a virtual gateway's
-        /// Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
+        /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
         pub fn set_secret_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_name = input;
             self
@@ -11044,13 +10428,11 @@ impl VirtualGatewayTlsValidationContextSdsTrust {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayTlsValidationContextFileTrust {
-    /// <p>The certificate trust chain for a certificate stored on the file system of the virtual
-    /// node that the proxy is running on.</p>
+    /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub certificate_chain: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayTlsValidationContextFileTrust {
-    /// <p>The certificate trust chain for a certificate stored on the file system of the virtual
-    /// node that the proxy is running on.</p>
+    /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub fn certificate_chain(&self) -> std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
@@ -11071,14 +10453,12 @@ pub mod virtual_gateway_tls_validation_context_file_trust {
         pub(crate) certificate_chain: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The certificate trust chain for a certificate stored on the file system of the virtual
-        /// node that the proxy is running on.</p>
+        /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
         pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_chain = Some(input.into());
             self
         }
-        /// <p>The certificate trust chain for a certificate stored on the file system of the virtual
-        /// node that the proxy is running on.</p>
+        /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
         pub fn set_certificate_chain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11295,36 +10675,27 @@ impl AsRef<str> for VirtualGatewayPortProtocol {
     }
 }
 
-/// <p>An object that represents the health check policy for a virtual gateway's
-/// listener.</p>
+/// <p>An object that represents the health check policy for a virtual gateway's listener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayHealthCheckPolicy {
-    /// <p>The amount of time to wait when receiving a response from the health check, in
-    /// milliseconds.</p>
+    /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
     pub timeout_millis: std::option::Option<i64>,
     /// <p>The time period in milliseconds between each health check execution.</p>
     pub interval_millis: std::option::Option<i64>,
-    /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your
-    /// service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health
-    /// Checking Protocol</a>.</p>
+    /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
     pub protocol: std::option::Option<crate::model::VirtualGatewayPortProtocol>,
-    /// <p>The destination port for the health check request. This port must match the port defined
-    /// in the <a>PortMapping</a> for the listener.</p>
+    /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
     pub port: i32,
-    /// <p>The destination path for the health check request. This value is only used if the
-    /// specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
+    /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
     pub path: std::option::Option<std::string::String>,
-    /// <p>The number of consecutive successful health checks that must occur before declaring the
-    /// listener healthy.</p>
+    /// <p>The number of consecutive successful health checks that must occur before declaring the listener healthy.</p>
     pub healthy_threshold: i32,
-    /// <p>The number of consecutive failed health checks that must occur before declaring a
-    /// virtual gateway unhealthy.</p>
+    /// <p>The number of consecutive failed health checks that must occur before declaring a virtual gateway unhealthy.</p>
     pub unhealthy_threshold: i32,
 }
 impl VirtualGatewayHealthCheckPolicy {
-    /// <p>The amount of time to wait when receiving a response from the health check, in
-    /// milliseconds.</p>
+    /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
     pub fn timeout_millis(&self) -> std::option::Option<i64> {
         self.timeout_millis
     }
@@ -11332,29 +10703,23 @@ impl VirtualGatewayHealthCheckPolicy {
     pub fn interval_millis(&self) -> std::option::Option<i64> {
         self.interval_millis
     }
-    /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your
-    /// service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health
-    /// Checking Protocol</a>.</p>
+    /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::VirtualGatewayPortProtocol> {
         self.protocol.as_ref()
     }
-    /// <p>The destination port for the health check request. This port must match the port defined
-    /// in the <a>PortMapping</a> for the listener.</p>
+    /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
     pub fn port(&self) -> i32 {
         self.port
     }
-    /// <p>The destination path for the health check request. This value is only used if the
-    /// specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
+    /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
-    /// <p>The number of consecutive successful health checks that must occur before declaring the
-    /// listener healthy.</p>
+    /// <p>The number of consecutive successful health checks that must occur before declaring the listener healthy.</p>
     pub fn healthy_threshold(&self) -> i32 {
         self.healthy_threshold
     }
-    /// <p>The number of consecutive failed health checks that must occur before declaring a
-    /// virtual gateway unhealthy.</p>
+    /// <p>The number of consecutive failed health checks that must occur before declaring a virtual gateway unhealthy.</p>
     pub fn unhealthy_threshold(&self) -> i32 {
         self.unhealthy_threshold
     }
@@ -11387,14 +10752,12 @@ pub mod virtual_gateway_health_check_policy {
         pub(crate) unhealthy_threshold: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The amount of time to wait when receiving a response from the health check, in
-        /// milliseconds.</p>
+        /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
         pub fn timeout_millis(mut self, input: i64) -> Self {
             self.timeout_millis = Some(input);
             self
         }
-        /// <p>The amount of time to wait when receiving a response from the health check, in
-        /// milliseconds.</p>
+        /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
         pub fn set_timeout_millis(mut self, input: std::option::Option<i64>) -> Self {
             self.timeout_millis = input;
             self
@@ -11409,16 +10772,12 @@ pub mod virtual_gateway_health_check_policy {
             self.interval_millis = input;
             self
         }
-        /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your
-        /// service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health
-        /// Checking Protocol</a>.</p>
+        /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
         pub fn protocol(mut self, input: crate::model::VirtualGatewayPortProtocol) -> Self {
             self.protocol = Some(input);
             self
         }
-        /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your
-        /// service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health
-        /// Checking Protocol</a>.</p>
+        /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::VirtualGatewayPortProtocol>,
@@ -11426,50 +10785,42 @@ pub mod virtual_gateway_health_check_policy {
             self.protocol = input;
             self
         }
-        /// <p>The destination port for the health check request. This port must match the port defined
-        /// in the <a>PortMapping</a> for the listener.</p>
+        /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>The destination port for the health check request. This port must match the port defined
-        /// in the <a>PortMapping</a> for the listener.</p>
+        /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
         }
-        /// <p>The destination path for the health check request. This value is only used if the
-        /// specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
+        /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.path = Some(input.into());
             self
         }
-        /// <p>The destination path for the health check request. This value is only used if the
-        /// specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
+        /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
-        /// <p>The number of consecutive successful health checks that must occur before declaring the
-        /// listener healthy.</p>
+        /// <p>The number of consecutive successful health checks that must occur before declaring the listener healthy.</p>
         pub fn healthy_threshold(mut self, input: i32) -> Self {
             self.healthy_threshold = Some(input);
             self
         }
-        /// <p>The number of consecutive successful health checks that must occur before declaring the
-        /// listener healthy.</p>
+        /// <p>The number of consecutive successful health checks that must occur before declaring the listener healthy.</p>
         pub fn set_healthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.healthy_threshold = input;
             self
         }
-        /// <p>The number of consecutive failed health checks that must occur before declaring a
-        /// virtual gateway unhealthy.</p>
+        /// <p>The number of consecutive failed health checks that must occur before declaring a virtual gateway unhealthy.</p>
         pub fn unhealthy_threshold(mut self, input: i32) -> Self {
             self.unhealthy_threshold = Some(input);
             self
         }
-        /// <p>The number of consecutive failed health checks that must occur before declaring a
-        /// virtual gateway unhealthy.</p>
+        /// <p>The number of consecutive failed health checks that must occur before declaring a virtual gateway unhealthy.</p>
         pub fn set_unhealthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.unhealthy_threshold = input;
             self
@@ -11611,20 +10962,17 @@ impl VirtualGatewayClientPolicy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayClientPolicyTls {
-    /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't
-    /// specified.</p>
+    /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
     pub enforce: std::option::Option<bool>,
     /// <p>One or more ports that the policy is enforced for.</p>
     pub ports: std::option::Option<std::vec::Vec<i32>>,
-    /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS)
-    /// certificate.</p>
+    /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
     pub certificate: std::option::Option<crate::model::VirtualGatewayClientTlsCertificate>,
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
     pub validation: std::option::Option<crate::model::VirtualGatewayTlsValidationContext>,
 }
 impl VirtualGatewayClientPolicyTls {
-    /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't
-    /// specified.</p>
+    /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
     pub fn enforce(&self) -> std::option::Option<bool> {
         self.enforce
     }
@@ -11632,8 +10980,7 @@ impl VirtualGatewayClientPolicyTls {
     pub fn ports(&self) -> std::option::Option<&[i32]> {
         self.ports.as_deref()
     }
-    /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS)
-    /// certificate.</p>
+    /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
     pub fn certificate(
         &self,
     ) -> std::option::Option<&crate::model::VirtualGatewayClientTlsCertificate> {
@@ -11670,14 +11017,12 @@ pub mod virtual_gateway_client_policy_tls {
             std::option::Option<crate::model::VirtualGatewayTlsValidationContext>,
     }
     impl Builder {
-        /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't
-        /// specified.</p>
+        /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
         pub fn enforce(mut self, input: bool) -> Self {
             self.enforce = Some(input);
             self
         }
-        /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't
-        /// specified.</p>
+        /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
         pub fn set_enforce(mut self, input: std::option::Option<bool>) -> Self {
             self.enforce = input;
             self
@@ -11687,9 +11032,9 @@ pub mod virtual_gateway_client_policy_tls {
         /// To override the contents of this collection use [`set_ports`](Self::set_ports).
         ///
         /// <p>One or more ports that the policy is enforced for.</p>
-        pub fn ports(mut self, input: impl Into<i32>) -> Self {
+        pub fn ports(mut self, input: i32) -> Self {
             let mut v = self.ports.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ports = Some(v);
             self
         }
@@ -11698,8 +11043,7 @@ pub mod virtual_gateway_client_policy_tls {
             self.ports = input;
             self
         }
-        /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS)
-        /// certificate.</p>
+        /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
         pub fn certificate(
             mut self,
             input: crate::model::VirtualGatewayClientTlsCertificate,
@@ -11707,8 +11051,7 @@ pub mod virtual_gateway_client_policy_tls {
             self.certificate = Some(input);
             self
         }
-        /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS)
-        /// certificate.</p>
+        /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
         pub fn set_certificate(
             mut self,
             input: std::option::Option<crate::model::VirtualGatewayClientTlsCertificate>,
@@ -11754,23 +11097,19 @@ impl VirtualGatewayClientPolicyTls {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayTlsValidationContext {
-    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-    /// certificate.</p>
+    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     pub trust: std::option::Option<crate::model::VirtualGatewayTlsValidationContextTrust>,
-    /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's
-    /// Transport Layer Security (TLS) validation context.</p>
+    /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
     pub subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
 }
 impl VirtualGatewayTlsValidationContext {
-    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-    /// certificate.</p>
+    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     pub fn trust(
         &self,
     ) -> std::option::Option<&crate::model::VirtualGatewayTlsValidationContextTrust> {
         self.trust.as_ref()
     }
-    /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's
-    /// Transport Layer Security (TLS) validation context.</p>
+    /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
     pub fn subject_alternative_names(
         &self,
     ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
@@ -11797,8 +11136,7 @@ pub mod virtual_gateway_tls_validation_context {
             std::option::Option<crate::model::SubjectAlternativeNames>,
     }
     impl Builder {
-        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-        /// certificate.</p>
+        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
         pub fn trust(
             mut self,
             input: crate::model::VirtualGatewayTlsValidationContextTrust,
@@ -11806,8 +11144,7 @@ pub mod virtual_gateway_tls_validation_context {
             self.trust = Some(input);
             self
         }
-        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS)
-        /// certificate.</p>
+        /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
         pub fn set_trust(
             mut self,
             input: std::option::Option<crate::model::VirtualGatewayTlsValidationContextTrust>,
@@ -11815,8 +11152,7 @@ pub mod virtual_gateway_tls_validation_context {
             self.trust = input;
             self
         }
-        /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's
-        /// Transport Layer Security (TLS) validation context.</p>
+        /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
         pub fn subject_alternative_names(
             mut self,
             input: crate::model::SubjectAlternativeNames,
@@ -11824,8 +11160,7 @@ pub mod virtual_gateway_tls_validation_context {
             self.subject_alternative_names = Some(input);
             self
         }
-        /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's
-        /// Transport Layer Security (TLS) validation context.</p>
+        /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
         pub fn set_subject_alternative_names(
             mut self,
             input: std::option::Option<crate::model::SubjectAlternativeNames>,
@@ -11853,13 +11188,11 @@ impl VirtualGatewayTlsValidationContext {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum VirtualGatewayTlsValidationContextTrust {
-    /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an
-    /// Certificate Manager certificate.</p>
+    /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
     Acm(crate::model::VirtualGatewayTlsValidationContextAcmTrust),
     /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
     File(crate::model::VirtualGatewayTlsValidationContextFileTrust),
-    /// <p>A reference to an object that represents a virtual gateway's Transport Layer Security (TLS) Secret Discovery
-    /// Service validation context trust.</p>
+    /// <p>A reference to an object that represents a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     Sds(crate::model::VirtualGatewayTlsValidationContextSdsTrust),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -11924,8 +11257,7 @@ impl VirtualGatewayTlsValidationContextTrust {
     }
 }
 
-/// <p>An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager
-/// certificate.</p>
+/// <p>An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VirtualGatewayTlsValidationContextAcmTrust {
@@ -11996,13 +11328,9 @@ impl VirtualGatewayTlsValidationContextAcmTrust {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum VirtualGatewayClientTlsCertificate {
-    /// <p>An object that represents a local file certificate. The certificate must meet specific
-    /// requirements and you must have proxy authorization enabled. For more information, see
-    /// <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html"> Transport Layer Security (TLS)
-    /// </a>.</p>
+    /// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html"> Transport Layer Security (TLS) </a>.</p>
     File(crate::model::VirtualGatewayListenerTlsFileCertificate),
-    /// <p>A reference to an object that represents a virtual gateway's client's Secret Discovery
-    /// Service certificate.</p>
+    /// <p>A reference to an object that represents a virtual gateway's client's Secret Discovery Service certificate.</p>
     Sds(crate::model::VirtualGatewayListenerTlsSdsCertificate),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -12061,11 +11389,9 @@ pub struct GatewayRouteRef {
     pub gateway_route_name: std::option::Option<std::string::String>,
     /// <p>The virtual gateway that the gateway route is associated with.</p>
     pub virtual_gateway_name: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: std::option::Option<std::string::String>,
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the gateway route.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -12089,13 +11415,11 @@ impl GatewayRouteRef {
     pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
         self.virtual_gateway_name.as_deref()
     }
-    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-    /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
-    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-    /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
@@ -12184,26 +11508,22 @@ pub mod gateway_route_ref {
             self.virtual_gateway_name = input;
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.mesh_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's
-        /// the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12560,8 +11880,7 @@ impl AsRef<str> for GatewayRouteStatusCode {
     }
 }
 
-/// <p>An object that represents a gateway route specification. Specify one gateway route
-/// type.</p>
+/// <p>An object that represents a gateway route specification. Specify one gateway route type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayRouteSpec {
@@ -13204,12 +12523,9 @@ pub mod grpc_gateway_route_match {
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
         /// <p>The gateway route metadata to be matched on.</p>
-        pub fn metadata(
-            mut self,
-            input: impl Into<crate::model::GrpcGatewayRouteMetadata>,
-        ) -> Self {
+        pub fn metadata(mut self, input: crate::model::GrpcGatewayRouteMetadata) -> Self {
             let mut v = self.metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metadata = Some(v);
             self
         }
@@ -13893,12 +13209,7 @@ impl HttpGatewayRoutePrefixRewrite {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpGatewayRouteMatch {
-    /// <p>Specifies the path to match requests with. This parameter must always start with
-    /// <code>/</code>, which by itself matches all requests to the virtual service name. You
-    /// can also match for path-based routing of requests. For example, if your virtual service
-    /// name is <code>my-service.local</code> and you want the route to match requests to
-    /// <code>my-service.local/metrics</code>, your prefix should be
-    /// <code>/metrics</code>.</p>
+    /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The path to match on.</p>
     pub path: std::option::Option<crate::model::HttpPathMatch>,
@@ -13912,12 +13223,7 @@ pub struct HttpGatewayRouteMatch {
     pub headers: std::option::Option<std::vec::Vec<crate::model::HttpGatewayRouteHeader>>,
 }
 impl HttpGatewayRouteMatch {
-    /// <p>Specifies the path to match requests with. This parameter must always start with
-    /// <code>/</code>, which by itself matches all requests to the virtual service name. You
-    /// can also match for path-based routing of requests. For example, if your virtual service
-    /// name is <code>my-service.local</code> and you want the route to match requests to
-    /// <code>my-service.local/metrics</code>, your prefix should be
-    /// <code>/metrics</code>.</p>
+    /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
@@ -13970,22 +13276,12 @@ pub mod http_gateway_route_match {
             std::option::Option<std::vec::Vec<crate::model::HttpGatewayRouteHeader>>,
     }
     impl Builder {
-        /// <p>Specifies the path to match requests with. This parameter must always start with
-        /// <code>/</code>, which by itself matches all requests to the virtual service name. You
-        /// can also match for path-based routing of requests. For example, if your virtual service
-        /// name is <code>my-service.local</code> and you want the route to match requests to
-        /// <code>my-service.local/metrics</code>, your prefix should be
-        /// <code>/metrics</code>.</p>
+        /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>Specifies the path to match requests with. This parameter must always start with
-        /// <code>/</code>, which by itself matches all requests to the virtual service name. You
-        /// can also match for path-based routing of requests. For example, if your virtual service
-        /// name is <code>my-service.local</code> and you want the route to match requests to
-        /// <code>my-service.local/metrics</code>, your prefix should be
-        /// <code>/metrics</code>.</p>
+        /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -14005,12 +13301,9 @@ pub mod http_gateway_route_match {
         /// To override the contents of this collection use [`set_query_parameters`](Self::set_query_parameters).
         ///
         /// <p>The query parameter to match on.</p>
-        pub fn query_parameters(
-            mut self,
-            input: impl Into<crate::model::HttpQueryParameter>,
-        ) -> Self {
+        pub fn query_parameters(mut self, input: crate::model::HttpQueryParameter) -> Self {
             let mut v = self.query_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_parameters = Some(v);
             self
         }
@@ -14050,9 +13343,9 @@ pub mod http_gateway_route_match {
         /// To override the contents of this collection use [`set_headers`](Self::set_headers).
         ///
         /// <p>The client request headers to match on.</p>
-        pub fn headers(mut self, input: impl Into<crate::model::HttpGatewayRouteHeader>) -> Self {
+        pub fn headers(mut self, input: crate::model::HttpGatewayRouteHeader) -> Self {
             let mut v = self.headers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.headers = Some(v);
             self
         }
@@ -14092,8 +13385,7 @@ pub struct HttpGatewayRouteHeader {
     pub name: std::option::Option<std::string::String>,
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
     pub invert: std::option::Option<bool>,
-    /// <p>An object that represents the method and value to match with the header value sent in a
-    /// request. Specify one match method.</p>
+    /// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
     pub r#match: std::option::Option<crate::model::HeaderMatchMethod>,
 }
 impl HttpGatewayRouteHeader {
@@ -14105,8 +13397,7 @@ impl HttpGatewayRouteHeader {
     pub fn invert(&self) -> std::option::Option<bool> {
         self.invert
     }
-    /// <p>An object that represents the method and value to match with the header value sent in a
-    /// request. Specify one match method.</p>
+    /// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
     pub fn r#match(&self) -> std::option::Option<&crate::model::HeaderMatchMethod> {
         self.r#match.as_ref()
     }
@@ -14151,14 +13442,12 @@ pub mod http_gateway_route_header {
             self.invert = input;
             self
         }
-        /// <p>An object that represents the method and value to match with the header value sent in a
-        /// request. Specify one match method.</p>
+        /// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
         pub fn r#match(mut self, input: crate::model::HeaderMatchMethod) -> Self {
             self.r#match = Some(input);
             self
         }
-        /// <p>An object that represents the method and value to match with the header value sent in a
-        /// request. Specify one match method.</p>
+        /// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
         pub fn set_match(
             mut self,
             input: std::option::Option<crate::model::HeaderMatchMethod>,

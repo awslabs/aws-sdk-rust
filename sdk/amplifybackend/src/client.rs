@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AmplifyBackend
@@ -314,7 +314,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CloneBackend`.
     ///
     /// <p>This operation clones an existing backend.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CloneBackend<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -359,10 +359,10 @@ pub mod fluent_builders {
                 crate::input::CloneBackendInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -371,8 +371,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -381,8 +381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -394,8 +394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the destination backend environment to be created.</p>
-        pub fn target_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_environment_name(inp);
+        pub fn target_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_environment_name(input.into());
             self
         }
         /// <p>The name of the destination backend environment to be created.</p>
@@ -410,7 +410,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBackend`.
     ///
     /// <p>This operation creates a backend for an Amplify app. Backends are automatically created at the time of app creation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackend<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -455,10 +455,10 @@ pub mod fluent_builders {
                 crate::input::CreateBackendInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -467,8 +467,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -477,8 +477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the app.</p>
-        pub fn app_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_name(inp);
+        pub fn app_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_name(input.into());
             self
         }
         /// <p>The name of the app.</p>
@@ -487,8 +487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -500,8 +500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource configuration for creating backend storage.</p>
-        pub fn resource_config(mut self, inp: crate::model::ResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(inp);
+        pub fn resource_config(mut self, input: crate::model::ResourceConfig) -> Self {
+            self.inner = self.inner.resource_config(input);
             self
         }
         /// <p>The resource configuration for creating backend storage.</p>
@@ -513,8 +513,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of the resource.</p>
@@ -529,7 +529,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBackendAPI`.
     ///
     /// <p>Creates a new backend API resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackendAPI<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -574,10 +574,10 @@ pub mod fluent_builders {
                 crate::input::CreateBackendApiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -586,8 +586,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -596,8 +596,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -609,8 +609,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource configuration for this request.</p>
-        pub fn resource_config(mut self, inp: crate::model::BackendApiResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(inp);
+        pub fn resource_config(mut self, input: crate::model::BackendApiResourceConfig) -> Self {
+            self.inner = self.inner.resource_config(input);
             self
         }
         /// <p>The resource configuration for this request.</p>
@@ -622,8 +622,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -638,7 +638,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBackendAuth`.
     ///
     /// <p>Creates a new backend authentication resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackendAuth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -683,10 +683,10 @@ pub mod fluent_builders {
                 crate::input::CreateBackendAuthInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -695,8 +695,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -705,8 +705,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -720,9 +720,9 @@ pub mod fluent_builders {
         /// <p>The resource configuration for this request object.</p>
         pub fn resource_config(
             mut self,
-            inp: crate::model::CreateBackendAuthResourceConfig,
+            input: crate::model::CreateBackendAuthResourceConfig,
         ) -> Self {
-            self.inner = self.inner.resource_config(inp);
+            self.inner = self.inner.resource_config(input);
             self
         }
         /// <p>The resource configuration for this request object.</p>
@@ -734,8 +734,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -750,7 +750,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBackendConfig`.
     ///
     /// <p>Creates a config object for a backend.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackendConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -795,10 +795,10 @@ pub mod fluent_builders {
                 crate::input::CreateBackendConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -807,8 +807,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -817,8 +817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app ID for the backend manager.</p>
-        pub fn backend_manager_app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_manager_app_id(inp);
+        pub fn backend_manager_app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_manager_app_id(input.into());
             self
         }
         /// <p>The app ID for the backend manager.</p>
@@ -833,7 +833,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBackendStorage`.
     ///
     /// <p>Creates a backend storage resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackendStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -878,10 +878,10 @@ pub mod fluent_builders {
                 crate::input::CreateBackendStorageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -890,8 +890,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -900,8 +900,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -915,9 +915,9 @@ pub mod fluent_builders {
         /// <p>The resource configuration for creating backend storage.</p>
         pub fn resource_config(
             mut self,
-            inp: crate::model::CreateBackendStorageResourceConfig,
+            input: crate::model::CreateBackendStorageResourceConfig,
         ) -> Self {
-            self.inner = self.inner.resource_config(inp);
+            self.inner = self.inner.resource_config(input);
             self
         }
         /// <p>The resource configuration for creating backend storage.</p>
@@ -929,8 +929,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the storage resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of the storage resource.</p>
@@ -945,7 +945,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateToken`.
     ///
     /// <p>Generates a one-time challenge code to authenticate a user into your Amplify Admin UI.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -990,10 +990,10 @@ pub mod fluent_builders {
                 crate::input::CreateTokenInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1002,8 +1002,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1015,7 +1015,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBackend`.
     ///
     /// <p>Removes an existing environment from your Amplify project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackend<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1060,10 +1060,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBackendInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1072,8 +1072,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1082,8 +1082,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1098,7 +1098,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBackendAPI`.
     ///
     /// <p>Deletes an existing backend API resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackendAPI<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1143,10 +1143,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBackendApiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1155,8 +1155,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1165,8 +1165,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1178,8 +1178,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-        pub fn resource_config(mut self, inp: crate::model::BackendApiResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(inp);
+        pub fn resource_config(mut self, input: crate::model::BackendApiResourceConfig) -> Self {
+            self.inner = self.inner.resource_config(input);
             self
         }
         /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
@@ -1191,8 +1191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -1207,7 +1207,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBackendAuth`.
     ///
     /// <p>Deletes an existing backend authentication resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackendAuth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1252,10 +1252,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBackendAuthInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1264,8 +1264,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1274,8 +1274,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1287,8 +1287,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -1303,7 +1303,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBackendStorage`.
     ///
     /// <p>Removes the specified backend storage resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackendStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1348,10 +1348,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBackendStorageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1360,8 +1360,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1370,8 +1370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1383,8 +1383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the storage resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of the storage resource.</p>
@@ -1396,8 +1396,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the storage service.</p>
-        pub fn service_name(mut self, inp: crate::model::ServiceName) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: crate::model::ServiceName) -> Self {
+            self.inner = self.inner.service_name(input);
             self
         }
         /// <p>The name of the storage service.</p>
@@ -1412,7 +1412,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteToken`.
     ///
     /// <p>Deletes the challenge token based on the given appId and sessionId.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1457,10 +1457,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTokenInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1469,8 +1469,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1479,8 +1479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The session ID.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The session ID.</p>
@@ -1492,7 +1492,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GenerateBackendAPIModels`.
     ///
     /// <p>Generates a model schema for an existing backend API resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateBackendAPIModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1537,10 +1537,10 @@ pub mod fluent_builders {
                 crate::input::GenerateBackendApiModelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1549,8 +1549,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1559,8 +1559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1572,8 +1572,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -1588,7 +1588,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackend`.
     ///
     /// <p>Provides project-level details for your Amplify UI project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackend<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1633,10 +1633,10 @@ pub mod fluent_builders {
                 crate::input::GetBackendInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1645,8 +1645,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1655,8 +1655,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1671,7 +1671,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackendAPI`.
     ///
     /// <p>Gets the details for a backend API.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackendAPI<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1716,10 +1716,10 @@ pub mod fluent_builders {
                 crate::input::GetBackendApiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1728,8 +1728,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1738,8 +1738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1751,8 +1751,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-        pub fn resource_config(mut self, inp: crate::model::BackendApiResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(inp);
+        pub fn resource_config(mut self, input: crate::model::BackendApiResourceConfig) -> Self {
+            self.inner = self.inner.resource_config(input);
             self
         }
         /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
@@ -1764,8 +1764,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -1780,7 +1780,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackendAPIModels`.
     ///
     /// <p>Generates a model schema for existing backend API resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackendAPIModels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1825,10 +1825,10 @@ pub mod fluent_builders {
                 crate::input::GetBackendApiModelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1837,8 +1837,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1847,8 +1847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1860,8 +1860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -1876,7 +1876,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackendAuth`.
     ///
     /// <p>Gets a backend auth details.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackendAuth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1921,10 +1921,10 @@ pub mod fluent_builders {
                 crate::input::GetBackendAuthInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1933,8 +1933,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -1943,8 +1943,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -1956,8 +1956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -1972,7 +1972,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackendJob`.
     ///
     /// <p>Returns information about a specific job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackendJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2017,10 +2017,10 @@ pub mod fluent_builders {
                 crate::input::GetBackendJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2029,8 +2029,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2039,8 +2039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -2052,8 +2052,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID for the job.</p>
@@ -2065,7 +2065,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBackendStorage`.
     ///
     /// <p>Gets details for a backend storage resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackendStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2110,10 +2110,10 @@ pub mod fluent_builders {
                 crate::input::GetBackendStorageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2122,8 +2122,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2132,8 +2132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -2145,8 +2145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the storage resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of the storage resource.</p>
@@ -2161,7 +2161,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetToken`.
     ///
     /// <p>Gets the challenge token based on the given appId and sessionId.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetToken<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2206,10 +2206,10 @@ pub mod fluent_builders {
                 crate::input::GetTokenInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2218,8 +2218,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2228,8 +2228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The session ID.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The session ID.</p>
@@ -2241,7 +2241,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportBackendAuth`.
     ///
     /// <p>Imports an existing backend authentication resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportBackendAuth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2286,10 +2286,10 @@ pub mod fluent_builders {
                 crate::input::ImportBackendAuthInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2298,8 +2298,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2308,8 +2308,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -2321,8 +2321,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Cognito identity pool.</p>
-        pub fn identity_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_pool_id(inp);
+        pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_pool_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Cognito identity pool.</p>
@@ -2334,8 +2334,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Cognito native client.</p>
-        pub fn native_client_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.native_client_id(inp);
+        pub fn native_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.native_client_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Cognito native client.</p>
@@ -2347,8 +2347,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Cognito user pool.</p>
-        pub fn user_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(inp);
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Cognito user pool.</p>
@@ -2357,8 +2357,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Cognito web client.</p>
-        pub fn web_client_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_client_id(inp);
+        pub fn web_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_client_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Cognito web client.</p>
@@ -2373,7 +2373,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportBackendStorage`.
     ///
     /// <p>Imports an existing backend storage resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportBackendStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2418,10 +2418,10 @@ pub mod fluent_builders {
                 crate::input::ImportBackendStorageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2430,8 +2430,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2440,8 +2440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -2453,8 +2453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the S3 bucket.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(inp);
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input.into());
             self
         }
         /// <p>The name of the S3 bucket.</p>
@@ -2463,8 +2463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the storage service.</p>
-        pub fn service_name(mut self, inp: crate::model::ServiceName) -> Self {
-            self.inner = self.inner.service_name(inp);
+        pub fn service_name(mut self, input: crate::model::ServiceName) -> Self {
+            self.inner = self.inner.service_name(input);
             self
         }
         /// <p>The name of the storage service.</p>
@@ -2479,7 +2479,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBackendJobs`.
     ///
     /// <p>Lists the jobs for the backend of an Amplify app.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackendJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2524,10 +2524,10 @@ pub mod fluent_builders {
                 crate::input::ListBackendJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2536,8 +2536,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2546,8 +2546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -2559,8 +2559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID for the job.</p>
@@ -2569,8 +2569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results that you want in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results that you want in the response.</p>
@@ -2579,8 +2579,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2589,8 +2589,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
-        pub fn operation(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation(inp);
+        pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation(input.into());
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
@@ -2599,8 +2599,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified status.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(input.into());
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified status.</p>
@@ -2612,7 +2612,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListS3Buckets`.
     ///
     /// <p>The list of S3 buckets in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListS3Buckets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2657,10 +2657,10 @@ pub mod fluent_builders {
                 crate::input::ListS3BucketsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2669,8 +2669,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Reserved for future use.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Reserved for future use.</p>
@@ -2682,7 +2682,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveAllBackends`.
     ///
     /// <p>Removes all backend environments from your Amplify project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveAllBackends<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2727,10 +2727,10 @@ pub mod fluent_builders {
                 crate::input::RemoveAllBackendsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2739,8 +2739,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2749,8 +2749,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
-        pub fn clean_amplify_app(mut self, inp: bool) -> Self {
-            self.inner = self.inner.clean_amplify_app(inp);
+        pub fn clean_amplify_app(mut self, input: bool) -> Self {
+            self.inner = self.inner.clean_amplify_app(input);
             self
         }
         /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
@@ -2762,7 +2762,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveBackendConfig`.
     ///
     /// <p>Removes the AWS resources required to access the Amplify Admin UI.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveBackendConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2807,10 +2807,10 @@ pub mod fluent_builders {
                 crate::input::RemoveBackendConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2819,8 +2819,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2832,7 +2832,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBackendAPI`.
     ///
     /// <p>Updates an existing backend API resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBackendAPI<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2877,10 +2877,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBackendApiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2889,8 +2889,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -2899,8 +2899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -2912,8 +2912,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
-        pub fn resource_config(mut self, inp: crate::model::BackendApiResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(inp);
+        pub fn resource_config(mut self, input: crate::model::BackendApiResourceConfig) -> Self {
+            self.inner = self.inner.resource_config(input);
             self
         }
         /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
@@ -2925,8 +2925,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -2941,7 +2941,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBackendAuth`.
     ///
     /// <p>Updates an existing backend authentication resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBackendAuth<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2986,10 +2986,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBackendAuthInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2998,8 +2998,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -3008,8 +3008,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -3023,9 +3023,9 @@ pub mod fluent_builders {
         /// <p>The resource configuration for this request object.</p>
         pub fn resource_config(
             mut self,
-            inp: crate::model::UpdateBackendAuthResourceConfig,
+            input: crate::model::UpdateBackendAuthResourceConfig,
         ) -> Self {
-            self.inner = self.inner.resource_config(inp);
+            self.inner = self.inner.resource_config(input);
             self
         }
         /// <p>The resource configuration for this request object.</p>
@@ -3037,8 +3037,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of this resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of this resource.</p>
@@ -3053,7 +3053,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBackendConfig`.
     ///
     /// <p>Updates the AWS resources required to access the Amplify Admin UI.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBackendConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3098,10 +3098,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBackendConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3110,8 +3110,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -3120,8 +3120,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
-        pub fn login_auth_config(mut self, inp: crate::model::LoginAuthConfigReqObj) -> Self {
-            self.inner = self.inner.login_auth_config(inp);
+        pub fn login_auth_config(mut self, input: crate::model::LoginAuthConfigReqObj) -> Self {
+            self.inner = self.inner.login_auth_config(input);
             self
         }
         /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
@@ -3136,7 +3136,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBackendJob`.
     ///
     /// <p>Updates a specific job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBackendJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3181,10 +3181,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBackendJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3193,8 +3193,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -3203,8 +3203,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -3216,8 +3216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID for the job.</p>
@@ -3226,8 +3226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
-        pub fn operation(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation(inp);
+        pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation(input.into());
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
@@ -3236,8 +3236,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified status.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(input.into());
             self
         }
         /// <p>Filters the list of response objects to include only those with the specified status.</p>
@@ -3249,7 +3249,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBackendStorage`.
     ///
     /// <p>Updates an existing backend storage resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBackendStorage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3294,10 +3294,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBackendStorageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3306,8 +3306,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -3316,8 +3316,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the backend environment.</p>
-        pub fn backend_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backend_environment_name(inp);
+        pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_name(input.into());
             self
         }
         /// <p>The name of the backend environment.</p>
@@ -3331,9 +3331,9 @@ pub mod fluent_builders {
         /// <p>The resource configuration for updating backend storage.</p>
         pub fn resource_config(
             mut self,
-            inp: crate::model::UpdateBackendStorageResourceConfig,
+            input: crate::model::UpdateBackendStorageResourceConfig,
         ) -> Self {
-            self.inner = self.inner.resource_config(inp);
+            self.inner = self.inner.resource_config(input);
             self
         }
         /// <p>The resource configuration for updating backend storage.</p>
@@ -3345,8 +3345,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the storage resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(inp);
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of the storage resource.</p>
@@ -3359,6 +3359,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -3,35 +3,23 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that
-    /// is making the request must have at least one IAM permissions policy attached that
-    /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-    /// Management</a> in the <i>IAM User Guide</i>. </p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User Guide</i>. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception is thrown if the request contains a semantic error. The precise meaning
-    /// will depend on the API, and will be documented in the error message.</p>
+    /// <p>This exception is thrown if the request contains a semantic error. The precise meaning will depend on the API, and will be documented in the error message.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>These errors are usually caused by a client action. Actions can include using an
-    /// action or resource on behalf of a user that doesn't have permissions to use the action
-    /// or resource or specifying an identifier that is not valid.</p>
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster
-    /// and the associated operations.</p>
+    /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should not
-    /// retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The specified resource is in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>You have encountered a service limit on the specified resource.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
-    /// <p>The specified resource could not be found. You can view your available clusters with
-    /// <a>ListClusters</a>. You can view your available managed node groups with
-    /// <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-    /// Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Required resources (such as Service Linked Roles) were created and are still propagating. Retry later.</p>
     ResourcePropagationDelayException(crate::error::ResourcePropagationDelayException),
@@ -39,9 +27,7 @@ pub enum Error {
     ServerException(crate::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>At least one of your specified cluster subnets is in an Availability Zone that does
-    /// not support Amazon EKS. The exception output specifies the supported Availability Zones for
-    /// your account, from which you can choose subnets for your cluster.</p>
+    /// <p>At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon EKS. The exception output specifies the supported Availability Zones for your account, from which you can choose subnets for your cluster.</p>
     UnsupportedAvailabilityZoneException(crate::error::UnsupportedAvailabilityZoneException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

@@ -63,7 +63,7 @@ pub mod associate_delegate_to_resource_input {
 pub type AssociateDelegateToResourceInputOperationOutputAlias =
     crate::operation::AssociateDelegateToResource;
 #[doc(hidden)]
-pub type AssociateDelegateToResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateDelegateToResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateDelegateToResourceInput {
     /// Consumes the builder and constructs an Operation<[`AssociateDelegateToResource`](crate::operation::AssociateDelegateToResource)>
     #[allow(clippy::let_and_return)]
@@ -74,7 +74,7 @@ impl AssociateDelegateToResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateDelegateToResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -160,7 +160,7 @@ impl AssociateDelegateToResourceInput {
             "AssociateDelegateToResource",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -245,7 +245,7 @@ pub mod associate_member_to_group_input {
 #[doc(hidden)]
 pub type AssociateMemberToGroupInputOperationOutputAlias = crate::operation::AssociateMemberToGroup;
 #[doc(hidden)]
-pub type AssociateMemberToGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateMemberToGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateMemberToGroupInput {
     /// Consumes the builder and constructs an Operation<[`AssociateMemberToGroup`](crate::operation::AssociateMemberToGroup)>
     #[allow(clippy::let_and_return)]
@@ -256,7 +256,7 @@ impl AssociateMemberToGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateMemberToGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -343,7 +343,7 @@ impl AssociateMemberToGroupInput {
             "AssociateMemberToGroup",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -428,7 +428,7 @@ pub mod cancel_mailbox_export_job_input {
 #[doc(hidden)]
 pub type CancelMailboxExportJobInputOperationOutputAlias = crate::operation::CancelMailboxExportJob;
 #[doc(hidden)]
-pub type CancelMailboxExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelMailboxExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelMailboxExportJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelMailboxExportJob`](crate::operation::CancelMailboxExportJob)>
     #[allow(clippy::let_and_return)]
@@ -439,7 +439,7 @@ impl CancelMailboxExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelMailboxExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -529,7 +529,7 @@ impl CancelMailboxExportJobInput {
             "CancelMailboxExportJob",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -614,7 +614,7 @@ pub mod create_alias_input {
 #[doc(hidden)]
 pub type CreateAliasInputOperationOutputAlias = crate::operation::CreateAlias;
 #[doc(hidden)]
-pub type CreateAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAliasInput {
     /// Consumes the builder and constructs an Operation<[`CreateAlias`](crate::operation::CreateAlias)>
     #[allow(clippy::let_and_return)]
@@ -625,7 +625,7 @@ impl CreateAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -709,7 +709,7 @@ impl CreateAliasInput {
             "CreateAlias",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -782,7 +782,7 @@ pub mod create_group_input {
 #[doc(hidden)]
 pub type CreateGroupInputOperationOutputAlias = crate::operation::CreateGroup;
 #[doc(hidden)]
-pub type CreateGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateGroup`](crate::operation::CreateGroup)>
     #[allow(clippy::let_and_return)]
@@ -793,7 +793,7 @@ impl CreateGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -877,7 +877,7 @@ impl CreateGroupInput {
             "CreateGroup",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1163,7 +1163,8 @@ pub mod create_mobile_device_access_rule_input {
 pub type CreateMobileDeviceAccessRuleInputOperationOutputAlias =
     crate::operation::CreateMobileDeviceAccessRule;
 #[doc(hidden)]
-pub type CreateMobileDeviceAccessRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMobileDeviceAccessRuleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMobileDeviceAccessRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateMobileDeviceAccessRule`](crate::operation::CreateMobileDeviceAccessRule)>
     #[allow(clippy::let_and_return)]
@@ -1174,7 +1175,7 @@ impl CreateMobileDeviceAccessRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMobileDeviceAccessRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1263,7 +1264,7 @@ impl CreateMobileDeviceAccessRuleInput {
             "CreateMobileDeviceAccessRule",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1335,9 +1336,9 @@ pub mod create_organization_input {
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
         /// <p>The email domains to associate with the organization.</p>
-        pub fn domains(mut self, input: impl Into<crate::model::Domain>) -> Self {
+        pub fn domains(mut self, input: crate::model::Domain) -> Self {
             let mut v = self.domains.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.domains = Some(v);
             self
         }
@@ -1349,14 +1350,12 @@ pub mod create_organization_input {
             self.domains = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-        /// KMS.</p>
+        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-        /// KMS.</p>
+        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -1392,7 +1391,7 @@ pub mod create_organization_input {
 #[doc(hidden)]
 pub type CreateOrganizationInputOperationOutputAlias = crate::operation::CreateOrganization;
 #[doc(hidden)]
-pub type CreateOrganizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateOrganizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`CreateOrganization`](crate::operation::CreateOrganization)>
     #[allow(clippy::let_and_return)]
@@ -1403,7 +1402,7 @@ impl CreateOrganizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateOrganization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1491,7 +1490,7 @@ impl CreateOrganizationInput {
             "CreateOrganization",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1525,14 +1524,12 @@ pub mod create_resource_input {
         pub(crate) r#type: std::option::Option<crate::model::ResourceType>,
     }
     impl Builder {
-        /// <p>The identifier associated with the organization for which the resource is
-        /// created.</p>
+        /// <p>The identifier associated with the organization for which the resource is created.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// created.</p>
+        /// <p>The identifier associated with the organization for which the resource is created.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1550,14 +1547,12 @@ pub mod create_resource_input {
             self.name = input;
             self
         }
-        /// <p>The type of the new resource. The available types are <code>equipment</code> and
-        /// <code>room</code>.</p>
+        /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
         pub fn r#type(mut self, input: crate::model::ResourceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the new resource. The available types are <code>equipment</code> and
-        /// <code>room</code>.</p>
+        /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
             self.r#type = input;
             self
@@ -1580,7 +1575,7 @@ pub mod create_resource_input {
 #[doc(hidden)]
 pub type CreateResourceInputOperationOutputAlias = crate::operation::CreateResource;
 #[doc(hidden)]
-pub type CreateResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResourceInput {
     /// Consumes the builder and constructs an Operation<[`CreateResource`](crate::operation::CreateResource)>
     #[allow(clippy::let_and_return)]
@@ -1591,7 +1586,7 @@ impl CreateResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1676,7 +1671,7 @@ impl CreateResourceInput {
             "CreateResource",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1773,7 +1768,7 @@ pub mod create_user_input {
 #[doc(hidden)]
 pub type CreateUserInputOperationOutputAlias = crate::operation::CreateUser;
 #[doc(hidden)]
-pub type CreateUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateUserInput {
     /// Consumes the builder and constructs an Operation<[`CreateUser`](crate::operation::CreateUser)>
     #[allow(clippy::let_and_return)]
@@ -1784,7 +1779,7 @@ impl CreateUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1868,7 +1863,7 @@ impl CreateUserInput {
             "CreateUser",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1942,7 +1937,7 @@ pub mod delete_access_control_rule_input {
 pub type DeleteAccessControlRuleInputOperationOutputAlias =
     crate::operation::DeleteAccessControlRule;
 #[doc(hidden)]
-pub type DeleteAccessControlRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAccessControlRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAccessControlRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccessControlRule`](crate::operation::DeleteAccessControlRule)>
     #[allow(clippy::let_and_return)]
@@ -1953,7 +1948,7 @@ impl DeleteAccessControlRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessControlRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2040,7 +2035,7 @@ impl DeleteAccessControlRuleInput {
             "DeleteAccessControlRule",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2087,26 +2082,22 @@ pub mod delete_alias_input {
             self.organization_id = input;
             self
         }
-        /// <p>The identifier for the member (user or group) from which to have the aliases
-        /// removed.</p>
+        /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the member (user or group) from which to have the aliases
-        /// removed.</p>
+        /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
         }
-        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
-        /// list are collapsed into single entries (the list is transformed into a set).</p>
+        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias = Some(input.into());
             self
         }
-        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
-        /// list are collapsed into single entries (the list is transformed into a set).</p>
+        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -2129,7 +2120,7 @@ pub mod delete_alias_input {
 #[doc(hidden)]
 pub type DeleteAliasInputOperationOutputAlias = crate::operation::DeleteAlias;
 #[doc(hidden)]
-pub type DeleteAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAliasInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAlias`](crate::operation::DeleteAlias)>
     #[allow(clippy::let_and_return)]
@@ -2140,7 +2131,7 @@ impl DeleteAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2224,7 +2215,7 @@ impl DeleteAliasInput {
             "DeleteAlias",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2244,6 +2235,166 @@ impl DeleteAliasInput {
     /// Creates a new builder-style object to manufacture [`DeleteAliasInput`](crate::input::DeleteAliasInput)
     pub fn builder() -> crate::input::delete_alias_input::Builder {
         crate::input::delete_alias_input::Builder::default()
+    }
+}
+
+/// See [`DeleteEmailMonitoringConfigurationInput`](crate::input::DeleteEmailMonitoringConfigurationInput)
+pub mod delete_email_monitoring_configuration_input {
+    /// A builder for [`DeleteEmailMonitoringConfigurationInput`](crate::input::DeleteEmailMonitoringConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteEmailMonitoringConfigurationInput`](crate::input::DeleteEmailMonitoringConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteEmailMonitoringConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteEmailMonitoringConfigurationInput {
+                organization_id: self.organization_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteEmailMonitoringConfigurationInputOperationOutputAlias =
+    crate::operation::DeleteEmailMonitoringConfiguration;
+#[doc(hidden)]
+pub type DeleteEmailMonitoringConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteEmailMonitoringConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteEmailMonitoringConfiguration`](crate::operation::DeleteEmailMonitoringConfiguration)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteEmailMonitoringConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteEmailMonitoringConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteEmailMonitoringConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteEmailMonitoringConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.DeleteEmailMonitoringConfiguration",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_email_monitoring_configuration(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteEmailMonitoringConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteEmailMonitoringConfiguration",
+            "workmail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteEmailMonitoringConfigurationInput`](crate::input::DeleteEmailMonitoringConfigurationInput)
+    pub fn builder() -> crate::input::delete_email_monitoring_configuration_input::Builder {
+        crate::input::delete_email_monitoring_configuration_input::Builder::default()
     }
 }
 
@@ -2297,7 +2448,7 @@ pub mod delete_group_input {
 #[doc(hidden)]
 pub type DeleteGroupInputOperationOutputAlias = crate::operation::DeleteGroup;
 #[doc(hidden)]
-pub type DeleteGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteGroup`](crate::operation::DeleteGroup)>
     #[allow(clippy::let_and_return)]
@@ -2308,7 +2459,7 @@ impl DeleteGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2392,7 +2543,7 @@ impl DeleteGroupInput {
             "DeleteGroup",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2426,14 +2577,12 @@ pub mod delete_mailbox_permissions_input {
         pub(crate) grantee_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the organization under which the member (user or group)
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the member (user or group) exists.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the organization under which the member (user or group)
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the member (user or group) exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2451,14 +2600,12 @@ pub mod delete_mailbox_permissions_input {
             self.entity_id = input;
             self
         }
-        /// <p>The identifier of the member (user or group) for which to delete granted
-        /// permissions.</p>
+        /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
         pub fn grantee_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.grantee_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the member (user or group) for which to delete granted
-        /// permissions.</p>
+        /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
         pub fn set_grantee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grantee_id = input;
             self
@@ -2482,7 +2629,7 @@ pub mod delete_mailbox_permissions_input {
 pub type DeleteMailboxPermissionsInputOperationOutputAlias =
     crate::operation::DeleteMailboxPermissions;
 #[doc(hidden)]
-pub type DeleteMailboxPermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMailboxPermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMailboxPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMailboxPermissions`](crate::operation::DeleteMailboxPermissions)>
     #[allow(clippy::let_and_return)]
@@ -2493,7 +2640,7 @@ impl DeleteMailboxPermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMailboxPermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2580,7 +2727,7 @@ impl DeleteMailboxPermissionsInput {
             "DeleteMailboxPermissions",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2629,18 +2776,9 @@ pub mod delete_mobile_device_access_override_input {
         }
         /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID:  <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
@@ -2648,18 +2786,9 @@ pub mod delete_mobile_device_access_override_input {
         }
         /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID:  <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
@@ -2694,7 +2823,8 @@ pub mod delete_mobile_device_access_override_input {
 pub type DeleteMobileDeviceAccessOverrideInputOperationOutputAlias =
     crate::operation::DeleteMobileDeviceAccessOverride;
 #[doc(hidden)]
-pub type DeleteMobileDeviceAccessOverrideInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMobileDeviceAccessOverrideInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMobileDeviceAccessOverrideInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMobileDeviceAccessOverride`](crate::operation::DeleteMobileDeviceAccessOverride)>
     #[allow(clippy::let_and_return)]
@@ -2705,7 +2835,7 @@ impl DeleteMobileDeviceAccessOverrideInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMobileDeviceAccessOverride,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2791,7 +2921,7 @@ impl DeleteMobileDeviceAccessOverrideInput {
             "DeleteMobileDeviceAccessOverride",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2871,7 +3001,8 @@ pub mod delete_mobile_device_access_rule_input {
 pub type DeleteMobileDeviceAccessRuleInputOperationOutputAlias =
     crate::operation::DeleteMobileDeviceAccessRule;
 #[doc(hidden)]
-pub type DeleteMobileDeviceAccessRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMobileDeviceAccessRuleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMobileDeviceAccessRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMobileDeviceAccessRule`](crate::operation::DeleteMobileDeviceAccessRule)>
     #[allow(clippy::let_and_return)]
@@ -2882,7 +3013,7 @@ impl DeleteMobileDeviceAccessRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMobileDeviceAccessRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2968,7 +3099,7 @@ impl DeleteMobileDeviceAccessRuleInput {
             "DeleteMobileDeviceAccessRule",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3053,7 +3184,7 @@ pub mod delete_organization_input {
 #[doc(hidden)]
 pub type DeleteOrganizationInputOperationOutputAlias = crate::operation::DeleteOrganization;
 #[doc(hidden)]
-pub type DeleteOrganizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteOrganizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOrganization`](crate::operation::DeleteOrganization)>
     #[allow(clippy::let_and_return)]
@@ -3064,7 +3195,7 @@ impl DeleteOrganizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOrganization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3152,7 +3283,7 @@ impl DeleteOrganizationInput {
             "DeleteOrganization",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3185,14 +3316,12 @@ pub mod delete_resource_input {
         pub(crate) resource_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier associated with the organization from which the resource is
-        /// deleted.</p>
+        /// <p>The identifier associated with the organization from which the resource is deleted.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier associated with the organization from which the resource is
-        /// deleted.</p>
+        /// <p>The identifier associated with the organization from which the resource is deleted.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3227,7 +3356,7 @@ pub mod delete_resource_input {
 #[doc(hidden)]
 pub type DeleteResourceInputOperationOutputAlias = crate::operation::DeleteResource;
 #[doc(hidden)]
-pub type DeleteResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResource`](crate::operation::DeleteResource)>
     #[allow(clippy::let_and_return)]
@@ -3238,7 +3367,7 @@ impl DeleteResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3323,7 +3452,7 @@ impl DeleteResourceInput {
             "DeleteResource",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3396,7 +3525,7 @@ pub mod delete_retention_policy_input {
 #[doc(hidden)]
 pub type DeleteRetentionPolicyInputOperationOutputAlias = crate::operation::DeleteRetentionPolicy;
 #[doc(hidden)]
-pub type DeleteRetentionPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRetentionPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRetentionPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRetentionPolicy`](crate::operation::DeleteRetentionPolicy)>
     #[allow(clippy::let_and_return)]
@@ -3407,7 +3536,7 @@ impl DeleteRetentionPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRetentionPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3494,7 +3623,7 @@ impl DeleteRetentionPolicyInput {
             "DeleteRetentionPolicy",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3567,7 +3696,7 @@ pub mod delete_user_input {
 #[doc(hidden)]
 pub type DeleteUserInputOperationOutputAlias = crate::operation::DeleteUser;
 #[doc(hidden)]
-pub type DeleteUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteUserInput {
     /// Consumes the builder and constructs an Operation<[`DeleteUser`](crate::operation::DeleteUser)>
     #[allow(clippy::let_and_return)]
@@ -3578,7 +3707,7 @@ impl DeleteUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3662,7 +3791,7 @@ impl DeleteUserInput {
             "DeleteUser",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3735,7 +3864,7 @@ pub mod deregister_from_work_mail_input {
 #[doc(hidden)]
 pub type DeregisterFromWorkMailInputOperationOutputAlias = crate::operation::DeregisterFromWorkMail;
 #[doc(hidden)]
-pub type DeregisterFromWorkMailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterFromWorkMailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterFromWorkMailInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterFromWorkMail`](crate::operation::DeregisterFromWorkMail)>
     #[allow(clippy::let_and_return)]
@@ -3746,7 +3875,7 @@ impl DeregisterFromWorkMailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterFromWorkMail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3833,7 +3962,7 @@ impl DeregisterFromWorkMailInput {
             "DeregisterFromWorkMail",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3906,7 +4035,7 @@ pub mod deregister_mail_domain_input {
 #[doc(hidden)]
 pub type DeregisterMailDomainInputOperationOutputAlias = crate::operation::DeregisterMailDomain;
 #[doc(hidden)]
-pub type DeregisterMailDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeregisterMailDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeregisterMailDomainInput {
     /// Consumes the builder and constructs an Operation<[`DeregisterMailDomain`](crate::operation::DeregisterMailDomain)>
     #[allow(clippy::let_and_return)]
@@ -3917,7 +4046,7 @@ impl DeregisterMailDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeregisterMailDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4004,7 +4133,7 @@ impl DeregisterMailDomainInput {
             "DeregisterMailDomain",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4024,6 +4153,166 @@ impl DeregisterMailDomainInput {
     /// Creates a new builder-style object to manufacture [`DeregisterMailDomainInput`](crate::input::DeregisterMailDomainInput)
     pub fn builder() -> crate::input::deregister_mail_domain_input::Builder {
         crate::input::deregister_mail_domain_input::Builder::default()
+    }
+}
+
+/// See [`DescribeEmailMonitoringConfigurationInput`](crate::input::DescribeEmailMonitoringConfigurationInput)
+pub mod describe_email_monitoring_configuration_input {
+    /// A builder for [`DescribeEmailMonitoringConfigurationInput`](crate::input::DescribeEmailMonitoringConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeEmailMonitoringConfigurationInput`](crate::input::DescribeEmailMonitoringConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeEmailMonitoringConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeEmailMonitoringConfigurationInput {
+                organization_id: self.organization_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeEmailMonitoringConfigurationInputOperationOutputAlias =
+    crate::operation::DescribeEmailMonitoringConfiguration;
+#[doc(hidden)]
+pub type DescribeEmailMonitoringConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeEmailMonitoringConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeEmailMonitoringConfiguration`](crate::operation::DescribeEmailMonitoringConfiguration)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeEmailMonitoringConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeEmailMonitoringConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeEmailMonitoringConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeEmailMonitoringConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.DescribeEmailMonitoringConfiguration",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_describe_email_monitoring_configuration(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeEmailMonitoringConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeEmailMonitoringConfiguration",
+            "workmail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeEmailMonitoringConfigurationInput`](crate::input::DescribeEmailMonitoringConfigurationInput)
+    pub fn builder() -> crate::input::describe_email_monitoring_configuration_input::Builder {
+        crate::input::describe_email_monitoring_configuration_input::Builder::default()
     }
 }
 
@@ -4077,7 +4366,7 @@ pub mod describe_group_input {
 #[doc(hidden)]
 pub type DescribeGroupInputOperationOutputAlias = crate::operation::DescribeGroup;
 #[doc(hidden)]
-pub type DescribeGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeGroup`](crate::operation::DescribeGroup)>
     #[allow(clippy::let_and_return)]
@@ -4088,7 +4377,7 @@ impl DescribeGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4172,7 +4461,7 @@ impl DescribeGroupInput {
             "DescribeGroup",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4234,7 +4523,8 @@ pub mod describe_inbound_dmarc_settings_input {
 pub type DescribeInboundDmarcSettingsInputOperationOutputAlias =
     crate::operation::DescribeInboundDmarcSettings;
 #[doc(hidden)]
-pub type DescribeInboundDmarcSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeInboundDmarcSettingsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeInboundDmarcSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInboundDmarcSettings`](crate::operation::DescribeInboundDmarcSettings)>
     #[allow(clippy::let_and_return)]
@@ -4245,7 +4535,7 @@ impl DescribeInboundDmarcSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeInboundDmarcSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4331,7 +4621,7 @@ impl DescribeInboundDmarcSettingsInput {
             "DescribeInboundDmarcSettings",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4405,7 +4695,7 @@ pub mod describe_mailbox_export_job_input {
 pub type DescribeMailboxExportJobInputOperationOutputAlias =
     crate::operation::DescribeMailboxExportJob;
 #[doc(hidden)]
-pub type DescribeMailboxExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeMailboxExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMailboxExportJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMailboxExportJob`](crate::operation::DescribeMailboxExportJob)>
     #[allow(clippy::let_and_return)]
@@ -4416,7 +4706,7 @@ impl DescribeMailboxExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMailboxExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4503,7 +4793,7 @@ impl DescribeMailboxExportJobInput {
             "DescribeMailboxExportJob",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4564,7 +4854,7 @@ pub mod describe_organization_input {
 #[doc(hidden)]
 pub type DescribeOrganizationInputOperationOutputAlias = crate::operation::DescribeOrganization;
 #[doc(hidden)]
-pub type DescribeOrganizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeOrganizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrganization`](crate::operation::DescribeOrganization)>
     #[allow(clippy::let_and_return)]
@@ -4575,7 +4865,7 @@ impl DescribeOrganizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrganization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4660,7 +4950,7 @@ impl DescribeOrganizationInput {
             "DescribeOrganization",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4693,14 +4983,12 @@ pub mod describe_resource_input {
         pub(crate) resource_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier associated with the organization for which the resource is
-        /// described.</p>
+        /// <p>The identifier associated with the organization for which the resource is described.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// described.</p>
+        /// <p>The identifier associated with the organization for which the resource is described.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4735,7 +5023,7 @@ pub mod describe_resource_input {
 #[doc(hidden)]
 pub type DescribeResourceInputOperationOutputAlias = crate::operation::DescribeResource;
 #[doc(hidden)]
-pub type DescribeResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeResourceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeResource`](crate::operation::DescribeResource)>
     #[allow(clippy::let_and_return)]
@@ -4746,7 +5034,7 @@ impl DescribeResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4831,7 +5119,7 @@ impl DescribeResourceInput {
             "DescribeResource",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4904,7 +5192,7 @@ pub mod describe_user_input {
 #[doc(hidden)]
 pub type DescribeUserInputOperationOutputAlias = crate::operation::DescribeUser;
 #[doc(hidden)]
-pub type DescribeUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeUserInput {
     /// Consumes the builder and constructs an Operation<[`DescribeUser`](crate::operation::DescribeUser)>
     #[allow(clippy::let_and_return)]
@@ -4915,7 +5203,7 @@ impl DescribeUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4999,7 +5287,7 @@ impl DescribeUserInput {
             "DescribeUser",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5046,26 +5334,22 @@ pub mod disassociate_delegate_from_resource_input {
             self.organization_id = input;
             self
         }
-        /// <p>The identifier of the resource from which delegates' set members are removed.
-        /// </p>
+        /// <p>The identifier of the resource from which delegates' set members are removed. </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the resource from which delegates' set members are removed.
-        /// </p>
+        /// <p>The identifier of the resource from which delegates' set members are removed. </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>The identifier for the member (user, group) to be removed from the resource's
-        /// delegates.</p>
+        /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the member (user, group) to be removed from the resource's
-        /// delegates.</p>
+        /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -5089,7 +5373,8 @@ pub mod disassociate_delegate_from_resource_input {
 pub type DisassociateDelegateFromResourceInputOperationOutputAlias =
     crate::operation::DisassociateDelegateFromResource;
 #[doc(hidden)]
-pub type DisassociateDelegateFromResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateDelegateFromResourceInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateDelegateFromResourceInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateDelegateFromResource`](crate::operation::DisassociateDelegateFromResource)>
     #[allow(clippy::let_and_return)]
@@ -5100,7 +5385,7 @@ impl DisassociateDelegateFromResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateDelegateFromResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5186,7 +5471,7 @@ impl DisassociateDelegateFromResourceInput {
             "DisassociateDelegateFromResource",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5272,7 +5557,7 @@ pub mod disassociate_member_from_group_input {
 pub type DisassociateMemberFromGroupInputOperationOutputAlias =
     crate::operation::DisassociateMemberFromGroup;
 #[doc(hidden)]
-pub type DisassociateMemberFromGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateMemberFromGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateMemberFromGroupInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateMemberFromGroup`](crate::operation::DisassociateMemberFromGroup)>
     #[allow(clippy::let_and_return)]
@@ -5283,7 +5568,7 @@ impl DisassociateMemberFromGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateMemberFromGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5369,7 +5654,7 @@ impl DisassociateMemberFromGroupInput {
             "DisassociateMemberFromGroup",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5427,16 +5712,12 @@ pub mod get_access_control_effect_input {
             self.ip_address = input;
             self
         }
-        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
-        /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
-        /// <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             self.action = Some(input.into());
             self
         }
-        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
-        /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
-        /// <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action = input;
             self
@@ -5470,7 +5751,7 @@ pub mod get_access_control_effect_input {
 #[doc(hidden)]
 pub type GetAccessControlEffectInputOperationOutputAlias = crate::operation::GetAccessControlEffect;
 #[doc(hidden)]
-pub type GetAccessControlEffectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAccessControlEffectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAccessControlEffectInput {
     /// Consumes the builder and constructs an Operation<[`GetAccessControlEffect`](crate::operation::GetAccessControlEffect)>
     #[allow(clippy::let_and_return)]
@@ -5481,7 +5762,7 @@ impl GetAccessControlEffectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAccessControlEffect,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5568,7 +5849,7 @@ impl GetAccessControlEffectInput {
             "GetAccessControlEffect",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5630,7 +5911,7 @@ pub mod get_default_retention_policy_input {
 pub type GetDefaultRetentionPolicyInputOperationOutputAlias =
     crate::operation::GetDefaultRetentionPolicy;
 #[doc(hidden)]
-pub type GetDefaultRetentionPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDefaultRetentionPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDefaultRetentionPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetDefaultRetentionPolicy`](crate::operation::GetDefaultRetentionPolicy)>
     #[allow(clippy::let_and_return)]
@@ -5641,7 +5922,7 @@ impl GetDefaultRetentionPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDefaultRetentionPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5728,7 +6009,7 @@ impl GetDefaultRetentionPolicyInput {
             "GetDefaultRetentionPolicy",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5761,14 +6042,12 @@ pub mod get_mailbox_details_input {
         pub(crate) user_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the organization that contains the user whose mailbox details are
-        /// being requested.</p>
+        /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the organization that contains the user whose mailbox details are
-        /// being requested.</p>
+        /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5803,7 +6082,7 @@ pub mod get_mailbox_details_input {
 #[doc(hidden)]
 pub type GetMailboxDetailsInputOperationOutputAlias = crate::operation::GetMailboxDetails;
 #[doc(hidden)]
-pub type GetMailboxDetailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMailboxDetailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMailboxDetailsInput {
     /// Consumes the builder and constructs an Operation<[`GetMailboxDetails`](crate::operation::GetMailboxDetails)>
     #[allow(clippy::let_and_return)]
@@ -5814,7 +6093,7 @@ impl GetMailboxDetailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMailboxDetails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5899,7 +6178,7 @@ impl GetMailboxDetailsInput {
             "GetMailboxDetails",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5972,7 +6251,7 @@ pub mod get_mail_domain_input {
 #[doc(hidden)]
 pub type GetMailDomainInputOperationOutputAlias = crate::operation::GetMailDomain;
 #[doc(hidden)]
-pub type GetMailDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMailDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMailDomainInput {
     /// Consumes the builder and constructs an Operation<[`GetMailDomain`](crate::operation::GetMailDomain)>
     #[allow(clippy::let_and_return)]
@@ -5983,7 +6262,7 @@ impl GetMailDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMailDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6068,7 +6347,7 @@ impl GetMailDomainInput {
             "GetMailDomain",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6184,7 +6463,7 @@ pub mod get_mobile_device_access_effect_input {
 pub type GetMobileDeviceAccessEffectInputOperationOutputAlias =
     crate::operation::GetMobileDeviceAccessEffect;
 #[doc(hidden)]
-pub type GetMobileDeviceAccessEffectInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMobileDeviceAccessEffectInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMobileDeviceAccessEffectInput {
     /// Consumes the builder and constructs an Operation<[`GetMobileDeviceAccessEffect`](crate::operation::GetMobileDeviceAccessEffect)>
     #[allow(clippy::let_and_return)]
@@ -6195,7 +6474,7 @@ impl GetMobileDeviceAccessEffectInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMobileDeviceAccessEffect,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6281,7 +6560,7 @@ impl GetMobileDeviceAccessEffectInput {
             "GetMobileDeviceAccessEffect",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6330,18 +6609,9 @@ pub mod get_mobile_device_access_override_input {
         }
         /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
@@ -6349,18 +6619,9 @@ pub mod get_mobile_device_access_override_input {
         }
         /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
@@ -6395,7 +6656,8 @@ pub mod get_mobile_device_access_override_input {
 pub type GetMobileDeviceAccessOverrideInputOperationOutputAlias =
     crate::operation::GetMobileDeviceAccessOverride;
 #[doc(hidden)]
-pub type GetMobileDeviceAccessOverrideInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMobileDeviceAccessOverrideInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetMobileDeviceAccessOverrideInput {
     /// Consumes the builder and constructs an Operation<[`GetMobileDeviceAccessOverride`](crate::operation::GetMobileDeviceAccessOverride)>
     #[allow(clippy::let_and_return)]
@@ -6406,7 +6668,7 @@ impl GetMobileDeviceAccessOverrideInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMobileDeviceAccessOverride,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6492,7 +6754,7 @@ impl GetMobileDeviceAccessOverrideInput {
             "GetMobileDeviceAccessOverride",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6553,7 +6815,7 @@ pub mod list_access_control_rules_input {
 #[doc(hidden)]
 pub type ListAccessControlRulesInputOperationOutputAlias = crate::operation::ListAccessControlRules;
 #[doc(hidden)]
-pub type ListAccessControlRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAccessControlRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAccessControlRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListAccessControlRules`](crate::operation::ListAccessControlRules)>
     #[allow(clippy::let_and_return)]
@@ -6564,7 +6826,7 @@ impl ListAccessControlRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAccessControlRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6651,7 +6913,7 @@ impl ListAccessControlRulesInput {
             "ListAccessControlRules",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6709,14 +6971,12 @@ pub mod list_aliases_input {
             self.entity_id = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6750,7 +7010,7 @@ pub mod list_aliases_input {
 #[doc(hidden)]
 pub type ListAliasesInputOperationOutputAlias = crate::operation::ListAliases;
 #[doc(hidden)]
-pub type ListAliasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAliasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAliasesInput {
     /// Consumes the builder and constructs an Operation<[`ListAliases`](crate::operation::ListAliases)>
     #[allow(clippy::let_and_return)]
@@ -6761,7 +7021,7 @@ impl ListAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAliases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6845,7 +7105,7 @@ impl ListAliasesInput {
             "ListAliases",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6893,26 +7153,22 @@ pub mod list_group_members_input {
             self.organization_id = input;
             self
         }
-        /// <p>The identifier for the group to which the members (users or groups) are
-        /// associated.</p>
+        /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
         pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the group to which the members (users or groups) are
-        /// associated.</p>
+        /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
         }
-        /// <p> The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6946,7 +7202,7 @@ pub mod list_group_members_input {
 #[doc(hidden)]
 pub type ListGroupMembersInputOperationOutputAlias = crate::operation::ListGroupMembers;
 #[doc(hidden)]
-pub type ListGroupMembersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGroupMembersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupMembersInput {
     /// Consumes the builder and constructs an Operation<[`ListGroupMembers`](crate::operation::ListGroupMembers)>
     #[allow(clippy::let_and_return)]
@@ -6957,7 +7213,7 @@ impl ListGroupMembersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGroupMembers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7042,7 +7298,7 @@ impl ListGroupMembersInput {
             "ListGroupMembers",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7089,14 +7345,12 @@ pub mod list_groups_input {
             self.organization_id = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7129,7 +7383,7 @@ pub mod list_groups_input {
 #[doc(hidden)]
 pub type ListGroupsInputOperationOutputAlias = crate::operation::ListGroups;
 #[doc(hidden)]
-pub type ListGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListGroups`](crate::operation::ListGroups)>
     #[allow(clippy::let_and_return)]
@@ -7140,7 +7394,7 @@ impl ListGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7224,7 +7478,7 @@ impl ListGroupsInput {
             "ListGroups",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7309,7 +7563,7 @@ pub mod list_mailbox_export_jobs_input {
 #[doc(hidden)]
 pub type ListMailboxExportJobsInputOperationOutputAlias = crate::operation::ListMailboxExportJobs;
 #[doc(hidden)]
-pub type ListMailboxExportJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMailboxExportJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMailboxExportJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListMailboxExportJobs`](crate::operation::ListMailboxExportJobs)>
     #[allow(clippy::let_and_return)]
@@ -7320,7 +7574,7 @@ impl ListMailboxExportJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMailboxExportJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7407,7 +7661,7 @@ impl ListMailboxExportJobsInput {
             "ListMailboxExportJobs",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7442,14 +7696,12 @@ pub mod list_mailbox_permissions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7457,26 +7709,22 @@ pub mod list_mailbox_permissions_input {
             self.organization_id = input;
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to list mailbox
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to list mailbox
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7510,7 +7758,7 @@ pub mod list_mailbox_permissions_input {
 #[doc(hidden)]
 pub type ListMailboxPermissionsInputOperationOutputAlias = crate::operation::ListMailboxPermissions;
 #[doc(hidden)]
-pub type ListMailboxPermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMailboxPermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMailboxPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ListMailboxPermissions`](crate::operation::ListMailboxPermissions)>
     #[allow(clippy::let_and_return)]
@@ -7521,7 +7769,7 @@ impl ListMailboxPermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMailboxPermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7608,7 +7856,7 @@ impl ListMailboxPermissionsInput {
             "ListMailboxPermissions",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7693,7 +7941,7 @@ pub mod list_mail_domains_input {
 #[doc(hidden)]
 pub type ListMailDomainsInputOperationOutputAlias = crate::operation::ListMailDomains;
 #[doc(hidden)]
-pub type ListMailDomainsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMailDomainsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMailDomainsInput {
     /// Consumes the builder and constructs an Operation<[`ListMailDomains`](crate::operation::ListMailDomains)>
     #[allow(clippy::let_and_return)]
@@ -7704,7 +7952,7 @@ impl ListMailDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMailDomains,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7789,7 +8037,7 @@ impl ListMailDomainsInput {
             "ListMailDomains",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7840,18 +8088,9 @@ pub mod list_mobile_device_access_overrides_input {
         }
         /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
@@ -7859,18 +8098,9 @@ pub mod list_mobile_device_access_overrides_input {
         }
         /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
@@ -7927,7 +8157,8 @@ pub mod list_mobile_device_access_overrides_input {
 pub type ListMobileDeviceAccessOverridesInputOperationOutputAlias =
     crate::operation::ListMobileDeviceAccessOverrides;
 #[doc(hidden)]
-pub type ListMobileDeviceAccessOverridesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMobileDeviceAccessOverridesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListMobileDeviceAccessOverridesInput {
     /// Consumes the builder and constructs an Operation<[`ListMobileDeviceAccessOverrides`](crate::operation::ListMobileDeviceAccessOverrides)>
     #[allow(clippy::let_and_return)]
@@ -7938,7 +8169,7 @@ impl ListMobileDeviceAccessOverridesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMobileDeviceAccessOverrides,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8024,7 +8255,7 @@ impl ListMobileDeviceAccessOverridesInput {
             "ListMobileDeviceAccessOverrides",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8086,7 +8317,7 @@ pub mod list_mobile_device_access_rules_input {
 pub type ListMobileDeviceAccessRulesInputOperationOutputAlias =
     crate::operation::ListMobileDeviceAccessRules;
 #[doc(hidden)]
-pub type ListMobileDeviceAccessRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMobileDeviceAccessRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMobileDeviceAccessRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListMobileDeviceAccessRules`](crate::operation::ListMobileDeviceAccessRules)>
     #[allow(clippy::let_and_return)]
@@ -8097,7 +8328,7 @@ impl ListMobileDeviceAccessRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMobileDeviceAccessRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8183,7 +8414,7 @@ impl ListMobileDeviceAccessRulesInput {
             "ListMobileDeviceAccessRules",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8216,14 +8447,12 @@ pub mod list_organizations_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8255,7 +8484,7 @@ pub mod list_organizations_input {
 #[doc(hidden)]
 pub type ListOrganizationsInputOperationOutputAlias = crate::operation::ListOrganizations;
 #[doc(hidden)]
-pub type ListOrganizationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOrganizationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOrganizationsInput {
     /// Consumes the builder and constructs an Operation<[`ListOrganizations`](crate::operation::ListOrganizations)>
     #[allow(clippy::let_and_return)]
@@ -8266,7 +8495,7 @@ impl ListOrganizationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOrganizations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8351,7 +8580,7 @@ impl ListOrganizationsInput {
             "ListOrganizations",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8386,14 +8615,12 @@ pub mod list_resource_delegates_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The identifier for the organization that contains the resource for which delegates
-        /// are listed.</p>
+        /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the organization that contains the resource for which delegates
-        /// are listed.</p>
+        /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8411,14 +8638,12 @@ pub mod list_resource_delegates_input {
             self.resource_id = input;
             self
         }
-        /// <p>The token used to paginate through the delegates associated with a
-        /// resource.</p>
+        /// <p>The token used to paginate through the delegates associated with a resource.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to paginate through the delegates associated with a
-        /// resource.</p>
+        /// <p>The token used to paginate through the delegates associated with a resource.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8452,7 +8677,7 @@ pub mod list_resource_delegates_input {
 #[doc(hidden)]
 pub type ListResourceDelegatesInputOperationOutputAlias = crate::operation::ListResourceDelegates;
 #[doc(hidden)]
-pub type ListResourceDelegatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListResourceDelegatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourceDelegatesInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceDelegates`](crate::operation::ListResourceDelegates)>
     #[allow(clippy::let_and_return)]
@@ -8463,7 +8688,7 @@ impl ListResourceDelegatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResourceDelegates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8550,7 +8775,7 @@ impl ListResourceDelegatesInput {
             "ListResourceDelegates",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8597,14 +8822,12 @@ pub mod list_resources_input {
             self.organization_id = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8637,7 +8860,7 @@ pub mod list_resources_input {
 #[doc(hidden)]
 pub type ListResourcesInputOperationOutputAlias = crate::operation::ListResources;
 #[doc(hidden)]
-pub type ListResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListResources`](crate::operation::ListResources)>
     #[allow(clippy::let_and_return)]
@@ -8648,7 +8871,7 @@ impl ListResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8732,7 +8955,7 @@ impl ListResourcesInput {
             "ListResources",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8790,7 +9013,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -8801,7 +9024,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8888,7 +9111,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8935,14 +9158,12 @@ pub mod list_users_input {
             self.organization_id = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8973,7 +9194,7 @@ pub mod list_users_input {
 #[doc(hidden)]
 pub type ListUsersInputOperationOutputAlias = crate::operation::ListUsers;
 #[doc(hidden)]
-pub type ListUsersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListUsersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListUsersInput {
     /// Consumes the builder and constructs an Operation<[`ListUsers`](crate::operation::ListUsers)>
     #[allow(clippy::let_and_return)]
@@ -8984,7 +9205,7 @@ impl ListUsersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListUsers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9066,7 +9287,7 @@ impl ListUsersInput {
                     "ListUsers",
                     "workmail",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9182,18 +9403,14 @@ pub mod put_access_control_rule_input {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>Access protocol actions to include in the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
-        /// <p>Access protocol actions to include in the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9205,18 +9422,14 @@ pub mod put_access_control_rule_input {
         ///
         /// To override the contents of this collection use [`set_not_actions`](Self::set_not_actions).
         ///
-        /// <p>Access protocol actions to exclude from the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn not_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_actions.unwrap_or_default();
             v.push(input.into());
             self.not_actions = Some(v);
             self
         }
-        /// <p>Access protocol actions to exclude from the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn set_not_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9300,7 +9513,7 @@ pub mod put_access_control_rule_input {
 #[doc(hidden)]
 pub type PutAccessControlRuleInputOperationOutputAlias = crate::operation::PutAccessControlRule;
 #[doc(hidden)]
-pub type PutAccessControlRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAccessControlRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAccessControlRuleInput {
     /// Consumes the builder and constructs an Operation<[`PutAccessControlRule`](crate::operation::PutAccessControlRule)>
     #[allow(clippy::let_and_return)]
@@ -9311,7 +9524,7 @@ impl PutAccessControlRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAccessControlRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9398,7 +9611,7 @@ impl PutAccessControlRuleInput {
             "PutAccessControlRule",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9418,6 +9631,193 @@ impl PutAccessControlRuleInput {
     /// Creates a new builder-style object to manufacture [`PutAccessControlRuleInput`](crate::input::PutAccessControlRuleInput)
     pub fn builder() -> crate::input::put_access_control_rule_input::Builder {
         crate::input::put_access_control_rule_input::Builder::default()
+    }
+}
+
+/// See [`PutEmailMonitoringConfigurationInput`](crate::input::PutEmailMonitoringConfigurationInput)
+pub mod put_email_monitoring_configuration_input {
+    /// A builder for [`PutEmailMonitoringConfigurationInput`](crate::input::PutEmailMonitoringConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) role_arn: std::option::Option<std::string::String>,
+        pub(crate) log_group_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the organization for which the email monitoring configuration is set.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the organization for which the email monitoring configuration is set.</p>
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+        pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_group_arn = Some(input.into());
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+        pub fn set_log_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_group_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutEmailMonitoringConfigurationInput`](crate::input::PutEmailMonitoringConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::PutEmailMonitoringConfigurationInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PutEmailMonitoringConfigurationInput {
+                organization_id: self.organization_id,
+                role_arn: self.role_arn,
+                log_group_arn: self.log_group_arn,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type PutEmailMonitoringConfigurationInputOperationOutputAlias =
+    crate::operation::PutEmailMonitoringConfiguration;
+#[doc(hidden)]
+pub type PutEmailMonitoringConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
+impl PutEmailMonitoringConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`PutEmailMonitoringConfiguration`](crate::operation::PutEmailMonitoringConfiguration)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::PutEmailMonitoringConfiguration,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::PutEmailMonitoringConfigurationInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::PutEmailMonitoringConfigurationInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::PutEmailMonitoringConfigurationInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "WorkMailService.PutEmailMonitoringConfiguration",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_put_email_monitoring_configuration(&self)?
+        ;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutEmailMonitoringConfiguration::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutEmailMonitoringConfiguration",
+            "workmail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`PutEmailMonitoringConfigurationInput`](crate::input::PutEmailMonitoringConfigurationInput)
+    pub fn builder() -> crate::input::put_email_monitoring_configuration_input::Builder {
+        crate::input::put_email_monitoring_configuration_input::Builder::default()
     }
 }
 
@@ -9472,7 +9872,7 @@ pub mod put_inbound_dmarc_settings_input {
 pub type PutInboundDmarcSettingsInputOperationOutputAlias =
     crate::operation::PutInboundDmarcSettings;
 #[doc(hidden)]
-pub type PutInboundDmarcSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutInboundDmarcSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutInboundDmarcSettingsInput {
     /// Consumes the builder and constructs an Operation<[`PutInboundDmarcSettings`](crate::operation::PutInboundDmarcSettings)>
     #[allow(clippy::let_and_return)]
@@ -9483,7 +9883,7 @@ impl PutInboundDmarcSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutInboundDmarcSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9570,7 +9970,7 @@ impl PutInboundDmarcSettingsInput {
             "PutInboundDmarcSettings",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9606,14 +10006,12 @@ pub mod put_mailbox_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
     }
     impl Builder {
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9621,26 +10019,22 @@ pub mod put_mailbox_permissions_input {
             self.organization_id = input;
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to update mailbox
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to update mailbox
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
         }
-        /// <p>The identifier of the user, group, or resource to which to grant the
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
         pub fn grantee_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.grantee_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the user, group, or resource to which to grant the
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
         pub fn set_grantee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grantee_id = input;
             self
@@ -9649,24 +10043,14 @@ pub mod put_mailbox_permissions_input {
         ///
         /// To override the contents of this collection use [`set_permission_values`](Self::set_permission_values).
         ///
-        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
-        /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
-        /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
-        /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
-        /// access to the mailbox, irrespective of other folder-level permissions set on the
-        /// mailbox.</p>
-        pub fn permission_values(mut self, input: impl Into<crate::model::PermissionType>) -> Self {
+        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
+        pub fn permission_values(mut self, input: crate::model::PermissionType) -> Self {
             let mut v = self.permission_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permission_values = Some(v);
             self
         }
-        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
-        /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
-        /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
-        /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
-        /// access to the mailbox, irrespective of other folder-level permissions set on the
-        /// mailbox.</p>
+        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
         pub fn set_permission_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
@@ -9693,7 +10077,7 @@ pub mod put_mailbox_permissions_input {
 #[doc(hidden)]
 pub type PutMailboxPermissionsInputOperationOutputAlias = crate::operation::PutMailboxPermissions;
 #[doc(hidden)]
-pub type PutMailboxPermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutMailboxPermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutMailboxPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`PutMailboxPermissions`](crate::operation::PutMailboxPermissions)>
     #[allow(clippy::let_and_return)]
@@ -9704,7 +10088,7 @@ impl PutMailboxPermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutMailboxPermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9791,7 +10175,7 @@ impl PutMailboxPermissionsInput {
             "PutMailboxPermissions",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9842,18 +10226,9 @@ pub mod put_mobile_device_access_override_input {
         }
         /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
@@ -9861,18 +10236,9 @@ pub mod put_mobile_device_access_override_input {
         }
         /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
@@ -9932,7 +10298,8 @@ pub mod put_mobile_device_access_override_input {
 pub type PutMobileDeviceAccessOverrideInputOperationOutputAlias =
     crate::operation::PutMobileDeviceAccessOverride;
 #[doc(hidden)]
-pub type PutMobileDeviceAccessOverrideInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutMobileDeviceAccessOverrideInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutMobileDeviceAccessOverrideInput {
     /// Consumes the builder and constructs an Operation<[`PutMobileDeviceAccessOverride`](crate::operation::PutMobileDeviceAccessOverride)>
     #[allow(clippy::let_and_return)]
@@ -9943,7 +10310,7 @@ impl PutMobileDeviceAccessOverrideInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutMobileDeviceAccessOverride,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10029,7 +10396,7 @@ impl PutMobileDeviceAccessOverrideInput {
             "PutMobileDeviceAccessOverride",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10114,12 +10481,9 @@ pub mod put_retention_policy_input {
         /// To override the contents of this collection use [`set_folder_configurations`](Self::set_folder_configurations).
         ///
         /// <p>The retention policy folder configurations.</p>
-        pub fn folder_configurations(
-            mut self,
-            input: impl Into<crate::model::FolderConfiguration>,
-        ) -> Self {
+        pub fn folder_configurations(mut self, input: crate::model::FolderConfiguration) -> Self {
             let mut v = self.folder_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.folder_configurations = Some(v);
             self
         }
@@ -10151,7 +10515,7 @@ pub mod put_retention_policy_input {
 #[doc(hidden)]
 pub type PutRetentionPolicyInputOperationOutputAlias = crate::operation::PutRetentionPolicy;
 #[doc(hidden)]
-pub type PutRetentionPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutRetentionPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRetentionPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutRetentionPolicy`](crate::operation::PutRetentionPolicy)>
     #[allow(clippy::let_and_return)]
@@ -10162,7 +10526,7 @@ impl PutRetentionPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRetentionPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10247,7 +10611,7 @@ impl PutRetentionPolicyInput {
             "PutRetentionPolicy",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10332,7 +10696,7 @@ pub mod register_mail_domain_input {
 #[doc(hidden)]
 pub type RegisterMailDomainInputOperationOutputAlias = crate::operation::RegisterMailDomain;
 #[doc(hidden)]
-pub type RegisterMailDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterMailDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterMailDomainInput {
     /// Consumes the builder and constructs an Operation<[`RegisterMailDomain`](crate::operation::RegisterMailDomain)>
     #[allow(clippy::let_and_return)]
@@ -10343,7 +10707,7 @@ impl RegisterMailDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterMailDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10431,7 +10795,7 @@ impl RegisterMailDomainInput {
             "RegisterMailDomain",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10465,14 +10829,12 @@ pub mod register_to_work_mail_input {
         pub(crate) email: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10518,7 +10880,7 @@ pub mod register_to_work_mail_input {
 #[doc(hidden)]
 pub type RegisterToWorkMailInputOperationOutputAlias = crate::operation::RegisterToWorkMail;
 #[doc(hidden)]
-pub type RegisterToWorkMailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterToWorkMailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterToWorkMailInput {
     /// Consumes the builder and constructs an Operation<[`RegisterToWorkMail`](crate::operation::RegisterToWorkMail)>
     #[allow(clippy::let_and_return)]
@@ -10529,7 +10891,7 @@ impl RegisterToWorkMailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterToWorkMail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10614,7 +10976,7 @@ impl RegisterToWorkMailInput {
             "RegisterToWorkMail",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10648,14 +11010,12 @@ pub mod reset_password_input {
         pub(crate) password: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the organization that contains the user for which the password is
-        /// reset.</p>
+        /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the organization that contains the user for which the password is
-        /// reset.</p>
+        /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10701,7 +11061,7 @@ pub mod reset_password_input {
 #[doc(hidden)]
 pub type ResetPasswordInputOperationOutputAlias = crate::operation::ResetPassword;
 #[doc(hidden)]
-pub type ResetPasswordInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ResetPasswordInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ResetPasswordInput {
     /// Consumes the builder and constructs an Operation<[`ResetPassword`](crate::operation::ResetPassword)>
     #[allow(clippy::let_and_return)]
@@ -10712,7 +11072,7 @@ impl ResetPasswordInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ResetPassword,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10796,7 +11156,7 @@ impl ResetPasswordInput {
             "ResetPassword",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10878,26 +11238,22 @@ pub mod start_mailbox_export_job_input {
             self.description = input;
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
-        /// bucket.</p>
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
-        /// bucket.</p>
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-        /// key that encrypts the exported mailbox content.</p>
+        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-        /// key that encrypts the exported mailbox content.</p>
+        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -10948,7 +11304,7 @@ pub mod start_mailbox_export_job_input {
 #[doc(hidden)]
 pub type StartMailboxExportJobInputOperationOutputAlias = crate::operation::StartMailboxExportJob;
 #[doc(hidden)]
-pub type StartMailboxExportJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartMailboxExportJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartMailboxExportJobInput {
     /// Consumes the builder and constructs an Operation<[`StartMailboxExportJob`](crate::operation::StartMailboxExportJob)>
     #[allow(clippy::let_and_return)]
@@ -10959,7 +11315,7 @@ impl StartMailboxExportJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartMailboxExportJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11049,7 +11405,7 @@ impl StartMailboxExportJobInput {
             "StartMailboxExportJob",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11097,9 +11453,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -11128,7 +11484,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -11139,7 +11495,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11223,7 +11579,7 @@ impl TagResourceInput {
             "TagResource",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11302,7 +11658,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -11313,7 +11669,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11397,7 +11753,7 @@ impl UntagResourceInput {
             "UntagResource",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11471,7 +11827,7 @@ pub mod update_default_mail_domain_input {
 pub type UpdateDefaultMailDomainInputOperationOutputAlias =
     crate::operation::UpdateDefaultMailDomain;
 #[doc(hidden)]
-pub type UpdateDefaultMailDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDefaultMailDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDefaultMailDomainInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDefaultMailDomain`](crate::operation::UpdateDefaultMailDomain)>
     #[allow(clippy::let_and_return)]
@@ -11482,7 +11838,7 @@ impl UpdateDefaultMailDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDefaultMailDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11569,7 +11925,7 @@ impl UpdateDefaultMailDomainInput {
             "UpdateDefaultMailDomain",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11603,14 +11959,12 @@ pub mod update_mailbox_quota_input {
         pub(crate) mailbox_quota: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The identifier for the organization that contains the user for whom to update the
-        /// mailbox quota.</p>
+        /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the organization that contains the user for whom to update the
-        /// mailbox quota.</p>
+        /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11656,7 +12010,7 @@ pub mod update_mailbox_quota_input {
 #[doc(hidden)]
 pub type UpdateMailboxQuotaInputOperationOutputAlias = crate::operation::UpdateMailboxQuota;
 #[doc(hidden)]
-pub type UpdateMailboxQuotaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMailboxQuotaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMailboxQuotaInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMailboxQuota`](crate::operation::UpdateMailboxQuota)>
     #[allow(clippy::let_and_return)]
@@ -11667,7 +12021,7 @@ impl UpdateMailboxQuotaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMailboxQuota,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11752,7 +12106,7 @@ impl UpdateMailboxQuotaInput {
             "UpdateMailboxQuota",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12044,7 +12398,8 @@ pub mod update_mobile_device_access_rule_input {
 pub type UpdateMobileDeviceAccessRuleInputOperationOutputAlias =
     crate::operation::UpdateMobileDeviceAccessRule;
 #[doc(hidden)]
-pub type UpdateMobileDeviceAccessRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMobileDeviceAccessRuleInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMobileDeviceAccessRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMobileDeviceAccessRule`](crate::operation::UpdateMobileDeviceAccessRule)>
     #[allow(clippy::let_and_return)]
@@ -12055,7 +12410,7 @@ impl UpdateMobileDeviceAccessRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMobileDeviceAccessRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12141,7 +12496,7 @@ impl UpdateMobileDeviceAccessRuleInput {
             "UpdateMobileDeviceAccessRule",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12227,7 +12582,7 @@ pub mod update_primary_email_address_input {
 pub type UpdatePrimaryEmailAddressInputOperationOutputAlias =
     crate::operation::UpdatePrimaryEmailAddress;
 #[doc(hidden)]
-pub type UpdatePrimaryEmailAddressInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePrimaryEmailAddressInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePrimaryEmailAddressInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePrimaryEmailAddress`](crate::operation::UpdatePrimaryEmailAddress)>
     #[allow(clippy::let_and_return)]
@@ -12238,7 +12593,7 @@ impl UpdatePrimaryEmailAddressInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePrimaryEmailAddress,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12325,7 +12680,7 @@ impl UpdatePrimaryEmailAddressInput {
             "UpdatePrimaryEmailAddress",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12360,14 +12715,12 @@ pub mod update_resource_input {
         pub(crate) booking_options: std::option::Option<crate::model::BookingOptions>,
     }
     impl Builder {
-        /// <p>The identifier associated with the organization for which the resource is
-        /// updated.</p>
+        /// <p>The identifier associated with the organization for which the resource is updated.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// updated.</p>
+        /// <p>The identifier associated with the organization for which the resource is updated.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12427,7 +12780,7 @@ pub mod update_resource_input {
 #[doc(hidden)]
 pub type UpdateResourceInputOperationOutputAlias = crate::operation::UpdateResource;
 #[doc(hidden)]
-pub type UpdateResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResource`](crate::operation::UpdateResource)>
     #[allow(clippy::let_and_return)]
@@ -12438,7 +12791,7 @@ impl UpdateResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12523,7 +12876,7 @@ impl UpdateResourceInput {
             "UpdateResource",
             "workmail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12550,8 +12903,7 @@ impl UpdateResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceInput {
-    /// <p>The identifier associated with the organization for which the resource is
-    /// updated.</p>
+    /// <p>The identifier associated with the organization for which the resource is updated.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the resource to be updated.</p>
     pub resource_id: std::option::Option<std::string::String>,
@@ -12561,8 +12913,7 @@ pub struct UpdateResourceInput {
     pub booking_options: std::option::Option<crate::model::BookingOptions>,
 }
 impl UpdateResourceInput {
-    /// <p>The identifier associated with the organization for which the resource is
-    /// updated.</p>
+    /// <p>The identifier associated with the organization for which the resource is updated.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -12740,8 +13091,7 @@ impl std::fmt::Debug for UpdateMobileDeviceAccessRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMailboxQuotaInput {
-    /// <p>The identifier for the organization that contains the user for whom to update the
-    /// mailbox quota.</p>
+    /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifer for the user for whom to update the mailbox quota.</p>
     pub user_id: std::option::Option<std::string::String>,
@@ -12749,8 +13099,7 @@ pub struct UpdateMailboxQuotaInput {
     pub mailbox_quota: std::option::Option<i32>,
 }
 impl UpdateMailboxQuotaInput {
-    /// <p>The identifier for the organization that contains the user for whom to update the
-    /// mailbox quota.</p>
+    /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -12869,11 +13218,9 @@ pub struct StartMailboxExportJobInput {
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The mailbox export job description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
-    /// bucket.</p>
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-    /// key that encrypts the exported mailbox content.</p>
+    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The name of the S3 bucket.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
@@ -12897,13 +13244,11 @@ impl StartMailboxExportJobInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
-    /// bucket.</p>
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-    /// key that encrypts the exported mailbox content.</p>
+    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -12935,8 +13280,7 @@ impl std::fmt::Debug for StartMailboxExportJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetPasswordInput {
-    /// <p>The identifier of the organization that contains the user for which the password is
-    /// reset.</p>
+    /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user for whom the password is reset.</p>
     pub user_id: std::option::Option<std::string::String>,
@@ -12944,8 +13288,7 @@ pub struct ResetPasswordInput {
     pub password: std::option::Option<std::string::String>,
 }
 impl ResetPasswordInput {
-    /// <p>The identifier of the organization that contains the user for which the password is
-    /// reset.</p>
+    /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -12972,8 +13315,7 @@ impl std::fmt::Debug for ResetPasswordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterToWorkMailInput {
-    /// <p>The identifier for the organization under which the user, group, or resource
-    /// exists.</p>
+    /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the user, group, or resource to be updated.</p>
     pub entity_id: std::option::Option<std::string::String>,
@@ -12981,8 +13323,7 @@ pub struct RegisterToWorkMailInput {
     pub email: std::option::Option<std::string::String>,
 }
 impl RegisterToWorkMailInput {
-    /// <p>The identifier for the organization under which the user, group, or resource
-    /// exists.</p>
+    /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -13100,18 +13441,9 @@ pub struct PutMobileDeviceAccessOverrideInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
@@ -13128,18 +13460,9 @@ impl PutMobileDeviceAccessOverrideInput {
     }
     /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
@@ -13173,45 +13496,29 @@ impl std::fmt::Debug for PutMobileDeviceAccessOverrideInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMailboxPermissionsInput {
-    /// <p>The identifier of the organization under which the user, group, or resource
-    /// exists.</p>
+    /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the user, group, or resource for which to update mailbox
-    /// permissions.</p>
+    /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the user, group, or resource to which to grant the
-    /// permissions.</p>
+    /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
     pub grantee_id: std::option::Option<std::string::String>,
-    /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
-    /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
-    /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
-    /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
-    /// access to the mailbox, irrespective of other folder-level permissions set on the
-    /// mailbox.</p>
+    /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
     pub permission_values: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
 }
 impl PutMailboxPermissionsInput {
-    /// <p>The identifier of the organization under which the user, group, or resource
-    /// exists.</p>
+    /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The identifier of the user, group, or resource for which to update mailbox
-    /// permissions.</p>
+    /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>The identifier of the user, group, or resource to which to grant the
-    /// permissions.</p>
+    /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
     pub fn grantee_id(&self) -> std::option::Option<&str> {
         self.grantee_id.as_deref()
     }
-    /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
-    /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
-    /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
-    /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
-    /// access to the mailbox, irrespective of other folder-level permissions set on the
-    /// mailbox.</p>
+    /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
     pub fn permission_values(&self) -> std::option::Option<&[crate::model::PermissionType]> {
         self.permission_values.as_deref()
     }
@@ -13258,6 +13565,41 @@ impl std::fmt::Debug for PutInboundDmarcSettingsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutEmailMonitoringConfigurationInput {
+    /// <p>The ID of the organization for which the email monitoring configuration is set.</p>
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+    pub role_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+    pub log_group_arn: std::option::Option<std::string::String>,
+}
+impl PutEmailMonitoringConfigurationInput {
+    /// <p>The ID of the organization for which the email monitoring configuration is set.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+    pub fn role_arn(&self) -> std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+        self.log_group_arn.as_deref()
+    }
+}
+impl std::fmt::Debug for PutEmailMonitoringConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutEmailMonitoringConfigurationInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("log_group_arn", &self.log_group_arn);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccessControlRuleInput {
     /// <p>The rule name.</p>
     pub name: std::option::Option<std::string::String>,
@@ -13269,13 +13611,9 @@ pub struct PutAccessControlRuleInput {
     pub ip_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
     pub not_ip_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Access protocol actions to include in the rule. Valid values include
-    /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-    /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Access protocol actions to exclude from the rule. Valid values include
-    /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-    /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
     pub not_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>User IDs to include in the rule.</p>
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13305,15 +13643,11 @@ impl PutAccessControlRuleInput {
     pub fn not_ip_ranges(&self) -> std::option::Option<&[std::string::String]> {
         self.not_ip_ranges.as_deref()
     }
-    /// <p>Access protocol actions to include in the rule. Valid values include
-    /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-    /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
     pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
     }
-    /// <p>Access protocol actions to exclude from the rule. Valid values include
-    /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-    /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
     pub fn not_actions(&self) -> std::option::Option<&[std::string::String]> {
         self.not_actions.as_deref()
     }
@@ -13353,8 +13687,7 @@ impl std::fmt::Debug for PutAccessControlRuleInput {
 pub struct ListUsersInput {
     /// <p>The identifier for the organization under which the users exist.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
@@ -13364,8 +13697,7 @@ impl ListUsersInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13411,8 +13743,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListResourcesInput {
     /// <p>The identifier for the organization under which the resources exist.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
@@ -13422,8 +13753,7 @@ impl ListResourcesInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13446,20 +13776,17 @@ impl std::fmt::Debug for ListResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceDelegatesInput {
-    /// <p>The identifier for the organization that contains the resource for which delegates
-    /// are listed.</p>
+    /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the resource whose delegates are listed.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The token used to paginate through the delegates associated with a
-    /// resource.</p>
+    /// <p>The token used to paginate through the delegates associated with a resource.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of maximum results in a page.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListResourceDelegatesInput {
-    /// <p>The identifier for the organization that contains the resource for which delegates
-    /// are listed.</p>
+    /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -13467,8 +13794,7 @@ impl ListResourceDelegatesInput {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The token used to paginate through the delegates associated with a
-    /// resource.</p>
+    /// <p>The token used to paginate through the delegates associated with a resource.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13492,15 +13818,13 @@ impl std::fmt::Debug for ListResourceDelegatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationsInput {
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListOrganizationsInput {
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13547,18 +13871,9 @@ pub struct ListMobileDeviceAccessOverridesInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The mobile device to which the access override applies.</p>
@@ -13575,18 +13890,9 @@ impl ListMobileDeviceAccessOverridesInput {
     }
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
@@ -13655,31 +13961,25 @@ impl std::fmt::Debug for ListMailDomainsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMailboxPermissionsInput {
-    /// <p>The identifier of the organization under which the user, group, or resource
-    /// exists.</p>
+    /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the user, group, or resource for which to list mailbox
-    /// permissions.</p>
+    /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListMailboxPermissionsInput {
-    /// <p>The identifier of the organization under which the user, group, or resource
-    /// exists.</p>
+    /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The identifier of the user, group, or resource for which to list mailbox
-    /// permissions.</p>
+    /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13740,8 +14040,7 @@ impl std::fmt::Debug for ListMailboxExportJobsInput {
 pub struct ListGroupsInput {
     /// <p>The identifier for the organization under which the groups exist.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
@@ -13751,8 +14050,7 @@ impl ListGroupsInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13777,11 +14075,9 @@ impl std::fmt::Debug for ListGroupsInput {
 pub struct ListGroupMembersInput {
     /// <p>The identifier for the organization under which the group exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The identifier for the group to which the members (users or groups) are
-    /// associated.</p>
+    /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
     pub group_id: std::option::Option<std::string::String>,
-    /// <p> The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
@@ -13791,13 +14087,11 @@ impl ListGroupMembersInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The identifier for the group to which the members (users or groups) are
-    /// associated.</p>
+    /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
     pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
-    /// <p> The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13825,8 +14119,7 @@ pub struct ListAliasesInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the entity for which to list the aliases.</p>
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
@@ -13840,8 +14133,7 @@ impl ListAliasesInput {
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13890,18 +14182,9 @@ pub struct GetMobileDeviceAccessOverrideInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
@@ -13914,18 +14197,9 @@ impl GetMobileDeviceAccessOverrideInput {
     }
     /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
@@ -14026,15 +14300,13 @@ impl std::fmt::Debug for GetMailDomainInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMailboxDetailsInput {
-    /// <p>The identifier for the organization that contains the user whose mailbox details are
-    /// being requested.</p>
+    /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the user whose mailbox details are being requested.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
 impl GetMailboxDetailsInput {
-    /// <p>The identifier for the organization that contains the user whose mailbox details are
-    /// being requested.</p>
+    /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14081,9 +14353,7 @@ pub struct GetAccessControlEffectInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The IPv4 address.</p>
     pub ip_address: std::option::Option<std::string::String>,
-    /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
-    /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
-    /// <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
     pub action: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
     pub user_id: std::option::Option<std::string::String>,
@@ -14097,9 +14367,7 @@ impl GetAccessControlEffectInput {
     pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
-    /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
-    /// <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
     pub fn action(&self) -> std::option::Option<&str> {
         self.action.as_deref()
     }
@@ -14160,11 +14428,9 @@ impl std::fmt::Debug for DisassociateMemberFromGroupInput {
 pub struct DisassociateDelegateFromResourceInput {
     /// <p>The identifier for the organization under which the resource exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the resource from which delegates' set members are removed.
-    /// </p>
+    /// <p>The identifier of the resource from which delegates' set members are removed. </p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The identifier for the member (user, group) to be removed from the resource's
-    /// delegates.</p>
+    /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     pub entity_id: std::option::Option<std::string::String>,
 }
 impl DisassociateDelegateFromResourceInput {
@@ -14172,13 +14438,11 @@ impl DisassociateDelegateFromResourceInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The identifier of the resource from which delegates' set members are removed.
-    /// </p>
+    /// <p>The identifier of the resource from which delegates' set members are removed. </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The identifier for the member (user, group) to be removed from the resource's
-    /// delegates.</p>
+    /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
@@ -14225,15 +14489,13 @@ impl std::fmt::Debug for DescribeUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceInput {
-    /// <p>The identifier associated with the organization for which the resource is
-    /// described.</p>
+    /// <p>The identifier associated with the organization for which the resource is described.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the resource to be described.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DescribeResourceInput {
-    /// <p>The identifier associated with the organization for which the resource is
-    /// described.</p>
+    /// <p>The identifier associated with the organization for which the resource is described.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14345,6 +14607,27 @@ impl std::fmt::Debug for DescribeGroupInput {
         let mut formatter = f.debug_struct("DescribeGroupInput");
         formatter.field("organization_id", &self.organization_id);
         formatter.field("group_id", &self.group_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeEmailMonitoringConfigurationInput {
+    /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
+    pub organization_id: std::option::Option<std::string::String>,
+}
+impl DescribeEmailMonitoringConfigurationInput {
+    /// <p>The ID of the organization for which the email monitoring configuration is described.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeEmailMonitoringConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeEmailMonitoringConfigurationInput");
+        formatter.field("organization_id", &self.organization_id);
         formatter.finish()
     }
 }
@@ -14465,15 +14748,13 @@ impl std::fmt::Debug for DeleteRetentionPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceInput {
-    /// <p>The identifier associated with the organization from which the resource is
-    /// deleted.</p>
+    /// <p>The identifier associated with the organization from which the resource is deleted.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the resource to be deleted.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourceInput {
-    /// <p>The identifier associated with the organization from which the resource is
-    /// deleted.</p>
+    /// <p>The identifier associated with the organization from which the resource is deleted.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14565,18 +14846,9 @@ pub struct DeleteMobileDeviceAccessOverrideInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID:  <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
@@ -14589,18 +14861,9 @@ impl DeleteMobileDeviceAccessOverrideInput {
     }
     /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID:  <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
@@ -14624,18 +14887,15 @@ impl std::fmt::Debug for DeleteMobileDeviceAccessOverrideInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMailboxPermissionsInput {
-    /// <p>The identifier of the organization under which the member (user or group)
-    /// exists.</p>
+    /// <p>The identifier of the organization under which the member (user or group) exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the member (user or group) for which to delete granted
-    /// permissions.</p>
+    /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
     pub grantee_id: std::option::Option<std::string::String>,
 }
 impl DeleteMailboxPermissionsInput {
-    /// <p>The identifier of the organization under which the member (user or group)
-    /// exists.</p>
+    /// <p>The identifier of the organization under which the member (user or group) exists.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14643,8 +14903,7 @@ impl DeleteMailboxPermissionsInput {
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>The identifier of the member (user or group) for which to delete granted
-    /// permissions.</p>
+    /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
     pub fn grantee_id(&self) -> std::option::Option<&str> {
         self.grantee_id.as_deref()
     }
@@ -14690,14 +14949,33 @@ impl std::fmt::Debug for DeleteGroupInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEmailMonitoringConfigurationInput {
+    /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
+    pub organization_id: std::option::Option<std::string::String>,
+}
+impl DeleteEmailMonitoringConfigurationInput {
+    /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
+    pub fn organization_id(&self) -> std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteEmailMonitoringConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEmailMonitoringConfigurationInput");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAliasInput {
     /// <p>The identifier for the organization under which the user exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The identifier for the member (user or group) from which to have the aliases
-    /// removed.</p>
+    /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
-    /// list are collapsed into single entries (the list is transformed into a set).</p>
+    /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
     pub alias: std::option::Option<std::string::String>,
 }
 impl DeleteAliasInput {
@@ -14705,13 +14983,11 @@ impl DeleteAliasInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The identifier for the member (user or group) from which to have the aliases
-    /// removed.</p>
+    /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
-    /// list are collapsed into single entries (the list is transformed into a set).</p>
+    /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
@@ -14800,18 +15076,15 @@ impl std::fmt::Debug for CreateUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceInput {
-    /// <p>The identifier associated with the organization for which the resource is
-    /// created.</p>
+    /// <p>The identifier associated with the organization for which the resource is created.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The name of the new resource.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of the new resource. The available types are <code>equipment</code> and
-    /// <code>room</code>.</p>
+    /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
     pub r#type: std::option::Option<crate::model::ResourceType>,
 }
 impl CreateResourceInput {
-    /// <p>The identifier associated with the organization for which the resource is
-    /// created.</p>
+    /// <p>The identifier associated with the organization for which the resource is created.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14819,8 +15092,7 @@ impl CreateResourceInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of the new resource. The available types are <code>equipment</code> and
-    /// <code>room</code>.</p>
+    /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.r#type.as_ref()
     }
@@ -14847,8 +15119,7 @@ pub struct CreateOrganizationInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The email domains to associate with the organization.</p>
     pub domains: std::option::Option<std::vec::Vec<crate::model::Domain>>,
-    /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-    /// KMS.</p>
+    /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
     pub enable_interoperability: bool,
@@ -14870,8 +15141,7 @@ impl CreateOrganizationInput {
     pub fn domains(&self) -> std::option::Option<&[crate::model::Domain]> {
         self.domains.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-    /// KMS.</p>
+    /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }

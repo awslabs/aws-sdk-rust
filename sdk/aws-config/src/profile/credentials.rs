@@ -336,6 +336,7 @@ impl Builder {
     /// Override the configuration for the [`ProfileFileCredentialsProvider`]
     ///
     /// # Examples
+    ///
     /// ```no_run
     /// # async fn test() {
     /// use aws_config::profile::ProfileFileCredentialsProvider;

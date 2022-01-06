@@ -24,68 +24,34 @@ pub mod batch_put_message_input {
         ///
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
-        /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string",
-        /// "payload": "string"}.</p>
+        /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
         /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain only alphanumeric characters and undescores (_). No other special characters are
-        /// allowed.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must begin with an alphabetic character or single underscore (_).</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot contain hyphens (-).</p>
-        /// </li>
-        /// <li>
-        /// <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot be more than 255 characters.</p>
-        /// </li>
-        /// <li>
-        /// <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered
-        /// duplicates.)</p>
-        /// </li>
+        /// <li> <p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p> </li>
+        /// <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li>
+        /// <li> <p>Cannot contain hyphens (-).</p> </li>
+        /// <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li>
+        /// <li> <p>Cannot be more than 255 characters.</p> </li>
+        /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
         /// </ul>
-        /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29},
-        /// {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.  </p>
-        pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
+        /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
-        /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string",
-        /// "payload": "string"}.</p>
+        /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
         /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain only alphanumeric characters and undescores (_). No other special characters are
-        /// allowed.</p>
-        /// </li>
-        /// <li>
-        /// <p>Must begin with an alphabetic character or single underscore (_).</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot contain hyphens (-).</p>
-        /// </li>
-        /// <li>
-        /// <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot be more than 255 characters.</p>
-        /// </li>
-        /// <li>
-        /// <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered
-        /// duplicates.)</p>
-        /// </li>
+        /// <li> <p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p> </li>
+        /// <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li>
+        /// <li> <p>Cannot contain hyphens (-).</p> </li>
+        /// <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li>
+        /// <li> <p>Cannot be more than 255 characters.</p> </li>
+        /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
         /// </ul>
-        /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29},
-        /// {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.  </p>
+        /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -110,7 +76,7 @@ pub mod batch_put_message_input {
 #[doc(hidden)]
 pub type BatchPutMessageInputOperationOutputAlias = crate::operation::BatchPutMessage;
 #[doc(hidden)]
-pub type BatchPutMessageInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchPutMessageInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchPutMessageInput {
     /// Consumes the builder and constructs an Operation<[`BatchPutMessage`](crate::operation::BatchPutMessage)>
     #[allow(clippy::let_and_return)]
@@ -121,7 +87,7 @@ impl BatchPutMessageInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchPutMessage,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -201,7 +167,7 @@ impl BatchPutMessageInput {
             "BatchPutMessage",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -247,14 +213,12 @@ pub mod cancel_pipeline_reprocessing_input {
             self.pipeline_name = input;
             self
         }
-        /// <p>The ID of the reprocessing task (returned by
-        /// <code>StartPipelineReprocessing</code>).</p>
+        /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
         pub fn reprocessing_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.reprocessing_id = Some(input.into());
             self
         }
-        /// <p>The ID of the reprocessing task (returned by
-        /// <code>StartPipelineReprocessing</code>).</p>
+        /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
         pub fn set_reprocessing_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -280,7 +244,7 @@ pub mod cancel_pipeline_reprocessing_input {
 pub type CancelPipelineReprocessingInputOperationOutputAlias =
     crate::operation::CancelPipelineReprocessing;
 #[doc(hidden)]
-pub type CancelPipelineReprocessingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelPipelineReprocessingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelPipelineReprocessingInput {
     /// Consumes the builder and constructs an Operation<[`CancelPipelineReprocessing`](crate::operation::CancelPipelineReprocessing)>
     #[allow(clippy::let_and_return)]
@@ -291,7 +255,7 @@ impl CancelPipelineReprocessingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelPipelineReprocessing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -401,7 +365,7 @@ impl CancelPipelineReprocessingInput {
             "CancelPipelineReprocessing",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -438,18 +402,12 @@ pub mod create_channel_input {
             self.channel_name = input;
             self
         }
-        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-        /// created.</p>
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
         pub fn channel_storage(mut self, input: crate::model::ChannelStorage) -> Self {
             self.channel_storage = Some(input);
             self
         }
-        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-        /// created.</p>
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
         pub fn set_channel_storage(
             mut self,
             input: std::option::Option<crate::model::ChannelStorage>,
@@ -457,14 +415,12 @@ pub mod create_channel_input {
             self.channel_storage = input;
             self
         }
-        /// <p>How long, in days, message data is kept for the channel. When
-        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+        /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.retention_period = Some(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the channel. When
-        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+        /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -477,9 +433,9 @@ pub mod create_channel_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the channel.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -510,7 +466,7 @@ pub mod create_channel_input {
 #[doc(hidden)]
 pub type CreateChannelInputOperationOutputAlias = crate::operation::CreateChannel;
 #[doc(hidden)]
-pub type CreateChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannel`](crate::operation::CreateChannel)>
     #[allow(clippy::let_and_return)]
@@ -521,7 +477,7 @@ impl CreateChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -600,7 +556,7 @@ impl CreateChannelInput {
             "CreateChannel",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -656,9 +612,9 @@ pub mod create_dataset_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>A list of actions that create the dataset contents.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::DatasetAction>) -> Self {
+        pub fn actions(mut self, input: crate::model::DatasetAction) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -674,18 +630,14 @@ pub mod create_dataset_input {
         ///
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
-        /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time
-        /// interval or when another dataset's contents are created. The list of triggers can be empty or
-        /// contain up to five <code>DataSetTrigger</code> objects.</p>
-        pub fn triggers(mut self, input: impl Into<crate::model::DatasetTrigger>) -> Self {
+        /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
+        pub fn triggers(mut self, input: crate::model::DatasetTrigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.triggers = Some(v);
             self
         }
-        /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time
-        /// interval or when another dataset's contents are created. The list of triggers can be empty or
-        /// contain up to five <code>DataSetTrigger</code> objects.</p>
+        /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
         pub fn set_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
@@ -697,19 +649,17 @@ pub mod create_dataset_input {
         ///
         /// To override the contents of this collection use [`set_content_delivery_rules`](Self::set_content_delivery_rules).
         ///
-        /// <p>When dataset contents are created, they are delivered to destinations specified
-        /// here.</p>
+        /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
         pub fn content_delivery_rules(
             mut self,
-            input: impl Into<crate::model::DatasetContentDeliveryRule>,
+            input: crate::model::DatasetContentDeliveryRule,
         ) -> Self {
             let mut v = self.content_delivery_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content_delivery_rules = Some(v);
             self
         }
-        /// <p>When dataset contents are created, they are delivered to destinations specified
-        /// here.</p>
+        /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
         pub fn set_content_delivery_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
@@ -717,22 +667,12 @@ pub mod create_dataset_input {
             self.content_delivery_rules = input;
             self
         }
-        /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not
-        /// specified or set to <code>null</code>, versions of dataset contents are retained for at most
-        /// 90 days. The number of versions of dataset contents retained is determined by the
-        /// <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
-        /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.retention_period = Some(input);
             self
         }
-        /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not
-        /// specified or set to <code>null</code>, versions of dataset contents are retained for at most
-        /// 90 days. The number of versions of dataset contents retained is determined by the
-        /// <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
-        /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -740,11 +680,7 @@ pub mod create_dataset_input {
             self.retention_period = input;
             self
         }
-        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-        /// only the latest version plus the latest succeeded version (if they are different) are kept for
-        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn versioning_configuration(
             mut self,
             input: crate::model::VersioningConfiguration,
@@ -752,11 +688,7 @@ pub mod create_dataset_input {
             self.versioning_configuration = Some(input);
             self
         }
-        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-        /// only the latest version plus the latest succeeded version (if they are different) are kept for
-        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn set_versioning_configuration(
             mut self,
             input: std::option::Option<crate::model::VersioningConfiguration>,
@@ -769,9 +701,9 @@ pub mod create_dataset_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the dataset.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -788,9 +720,9 @@ pub mod create_dataset_input {
         /// To override the contents of this collection use [`set_late_data_rules`](Self::set_late_data_rules).
         ///
         /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-        pub fn late_data_rules(mut self, input: impl Into<crate::model::LateDataRule>) -> Self {
+        pub fn late_data_rules(mut self, input: crate::model::LateDataRule) -> Self {
             let mut v = self.late_data_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.late_data_rules = Some(v);
             self
         }
@@ -825,7 +757,7 @@ pub mod create_dataset_input {
 #[doc(hidden)]
 pub type CreateDatasetInputOperationOutputAlias = crate::operation::CreateDataset;
 #[doc(hidden)]
-pub type CreateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`CreateDataset`](crate::operation::CreateDataset)>
     #[allow(clippy::let_and_return)]
@@ -836,7 +768,7 @@ impl CreateDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -915,7 +847,7 @@ impl CreateDatasetInput {
             "CreateDataset",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -958,14 +890,12 @@ pub mod create_dataset_content_input {
             self.dataset_name = input;
             self
         }
-        /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset
-        /// content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+        /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset
-        /// content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+        /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -987,7 +917,7 @@ pub mod create_dataset_content_input {
 #[doc(hidden)]
 pub type CreateDatasetContentInputOperationOutputAlias = crate::operation::CreateDatasetContent;
 #[doc(hidden)]
-pub type CreateDatasetContentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatasetContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatasetContentInput {
     /// Consumes the builder and constructs an Operation<[`CreateDatasetContent`](crate::operation::CreateDatasetContent)>
     #[allow(clippy::let_and_return)]
@@ -998,7 +928,7 @@ impl CreateDatasetContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDatasetContent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1100,7 +1030,7 @@ impl CreateDatasetContentInput {
             "CreateDatasetContent",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1164,14 +1094,12 @@ pub mod create_datastore_input {
             self.datastore_storage = input;
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. When
-        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+        /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.retention_period = Some(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. When
-        /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+        /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -1184,9 +1112,9 @@ pub mod create_datastore_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the data store.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1198,7 +1126,7 @@ pub mod create_datastore_input {
             self.tags = input;
             self
         }
-        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn file_format_configuration(
@@ -1208,7 +1136,7 @@ pub mod create_datastore_input {
             self.file_format_configuration = Some(input);
             self
         }
-        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn set_file_format_configuration(
@@ -1252,7 +1180,7 @@ pub mod create_datastore_input {
 #[doc(hidden)]
 pub type CreateDatastoreInputOperationOutputAlias = crate::operation::CreateDatastore;
 #[doc(hidden)]
-pub type CreateDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDatastoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`CreateDatastore`](crate::operation::CreateDatastore)>
     #[allow(clippy::let_and_return)]
@@ -1263,7 +1191,7 @@ impl CreateDatastoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDatastore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1343,7 +1271,7 @@ impl CreateDatastoreInput {
             "CreateDatastore",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1395,37 +1323,18 @@ pub mod create_pipeline_input {
         ///
         /// To override the contents of this collection use [`set_pipeline_activities`](Self::set_pipeline_activities).
         ///
-        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-        /// your messages, such as removing, renaming or adding message attributes; filtering messages
-        /// based on attribute values; invoking your Lambda unctions on messages for advanced processing;
-        /// or performing mathematical transformations to normalize device data.</p>
-        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-        /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-        /// contain only one activity. For example:</p>
-        /// <p>
-        /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-        /// ]</code>
-        /// </p>
-        pub fn pipeline_activities(
-            mut self,
-            input: impl Into<crate::model::PipelineActivity>,
-        ) -> Self {
+        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+        /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
+        pub fn pipeline_activities(mut self, input: crate::model::PipelineActivity) -> Self {
             let mut v = self.pipeline_activities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_activities = Some(v);
             self
         }
-        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-        /// your messages, such as removing, renaming or adding message attributes; filtering messages
-        /// based on attribute values; invoking your Lambda unctions on messages for advanced processing;
-        /// or performing mathematical transformations to normalize device data.</p>
-        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-        /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-        /// contain only one activity. For example:</p>
-        /// <p>
-        /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-        /// ]</code>
-        /// </p>
+        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+        /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
         pub fn set_pipeline_activities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
@@ -1438,9 +1347,9 @@ pub mod create_pipeline_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the pipeline.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1470,7 +1379,7 @@ pub mod create_pipeline_input {
 #[doc(hidden)]
 pub type CreatePipelineInputOperationOutputAlias = crate::operation::CreatePipeline;
 #[doc(hidden)]
-pub type CreatePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePipelineInput {
     /// Consumes the builder and constructs an Operation<[`CreatePipeline`](crate::operation::CreatePipeline)>
     #[allow(clippy::let_and_return)]
@@ -1481,7 +1390,7 @@ impl CreatePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1561,7 +1470,7 @@ impl CreatePipelineInput {
             "CreatePipeline",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1619,7 +1528,7 @@ pub mod delete_channel_input {
 #[doc(hidden)]
 pub type DeleteChannelInputOperationOutputAlias = crate::operation::DeleteChannel;
 #[doc(hidden)]
-pub type DeleteChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannel`](crate::operation::DeleteChannel)>
     #[allow(clippy::let_and_return)]
@@ -1630,7 +1539,7 @@ impl DeleteChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1724,7 +1633,7 @@ impl DeleteChannelInput {
             "DeleteChannel",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1774,7 +1683,7 @@ pub mod delete_dataset_input {
 #[doc(hidden)]
 pub type DeleteDatasetInputOperationOutputAlias = crate::operation::DeleteDataset;
 #[doc(hidden)]
-pub type DeleteDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDataset`](crate::operation::DeleteDataset)>
     #[allow(clippy::let_and_return)]
@@ -1785,7 +1694,7 @@ impl DeleteDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1879,7 +1788,7 @@ impl DeleteDatasetInput {
             "DeleteDataset",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1914,16 +1823,12 @@ pub mod delete_dataset_content_input {
             self.dataset_name = input;
             self
         }
-        /// <p>The version of the dataset whose content is deleted. You can also use the strings
-        /// "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data
-        /// set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+        /// <p>The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>The version of the dataset whose content is deleted. You can also use the strings
-        /// "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data
-        /// set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+        /// <p>The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -1945,7 +1850,7 @@ pub mod delete_dataset_content_input {
 #[doc(hidden)]
 pub type DeleteDatasetContentInputOperationOutputAlias = crate::operation::DeleteDatasetContent;
 #[doc(hidden)]
-pub type DeleteDatasetContentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatasetContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatasetContentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDatasetContent`](crate::operation::DeleteDatasetContent)>
     #[allow(clippy::let_and_return)]
@@ -1956,7 +1861,7 @@ impl DeleteDatasetContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDatasetContent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2061,7 +1966,7 @@ impl DeleteDatasetContentInput {
             "DeleteDatasetContent",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2114,7 +2019,7 @@ pub mod delete_datastore_input {
 #[doc(hidden)]
 pub type DeleteDatastoreInputOperationOutputAlias = crate::operation::DeleteDatastore;
 #[doc(hidden)]
-pub type DeleteDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDatastoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDatastore`](crate::operation::DeleteDatastore)>
     #[allow(clippy::let_and_return)]
@@ -2125,7 +2030,7 @@ impl DeleteDatastoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDatastore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2219,7 +2124,7 @@ impl DeleteDatastoreInput {
             "DeleteDatastore",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2272,7 +2177,7 @@ pub mod delete_pipeline_input {
 #[doc(hidden)]
 pub type DeletePipelineInputOperationOutputAlias = crate::operation::DeletePipeline;
 #[doc(hidden)]
-pub type DeletePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DeletePipeline`](crate::operation::DeletePipeline)>
     #[allow(clippy::let_and_return)]
@@ -2283,7 +2188,7 @@ impl DeletePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2377,7 +2282,7 @@ impl DeletePipelineInput {
             "DeletePipeline",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2412,14 +2317,12 @@ pub mod describe_channel_input {
             self.channel_name = input;
             self
         }
-        /// <p>If true, additional statistical information about the channel is included in the response.
-        /// This feature can't be used with a channel whose S3 storage is customer-managed.</p>
+        /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
         pub fn include_statistics(mut self, input: bool) -> Self {
             self.include_statistics = Some(input);
             self
         }
-        /// <p>If true, additional statistical information about the channel is included in the response.
-        /// This feature can't be used with a channel whose S3 storage is customer-managed.</p>
+        /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
         pub fn set_include_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.include_statistics = input;
             self
@@ -2441,7 +2344,7 @@ pub mod describe_channel_input {
 #[doc(hidden)]
 pub type DescribeChannelInputOperationOutputAlias = crate::operation::DescribeChannel;
 #[doc(hidden)]
-pub type DescribeChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannel`](crate::operation::DescribeChannel)>
     #[allow(clippy::let_and_return)]
@@ -2452,7 +2355,7 @@ impl DescribeChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2560,7 +2463,7 @@ impl DescribeChannelInput {
             "DescribeChannel",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2610,7 +2513,7 @@ pub mod describe_dataset_input {
 #[doc(hidden)]
 pub type DescribeDatasetInputOperationOutputAlias = crate::operation::DescribeDataset;
 #[doc(hidden)]
-pub type DescribeDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatasetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDataset`](crate::operation::DescribeDataset)>
     #[allow(clippy::let_and_return)]
@@ -2621,7 +2524,7 @@ impl DescribeDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2715,7 +2618,7 @@ impl DescribeDatasetInput {
             "DescribeDataset",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2753,16 +2656,12 @@ pub mod describe_datastore_input {
             self.datastore_name = input;
             self
         }
-        /// <p>If true, additional statistical information about the data store is included in the
-        /// response. This feature can't be used with a data store whose S3 storage is
-        /// customer-managed.</p>
+        /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
         pub fn include_statistics(mut self, input: bool) -> Self {
             self.include_statistics = Some(input);
             self
         }
-        /// <p>If true, additional statistical information about the data store is included in the
-        /// response. This feature can't be used with a data store whose S3 storage is
-        /// customer-managed.</p>
+        /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
         pub fn set_include_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.include_statistics = input;
             self
@@ -2784,7 +2683,7 @@ pub mod describe_datastore_input {
 #[doc(hidden)]
 pub type DescribeDatastoreInputOperationOutputAlias = crate::operation::DescribeDatastore;
 #[doc(hidden)]
-pub type DescribeDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDatastoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDatastore`](crate::operation::DescribeDatastore)>
     #[allow(clippy::let_and_return)]
@@ -2795,7 +2694,7 @@ impl DescribeDatastoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDatastore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2903,7 +2802,7 @@ impl DescribeDatastoreInput {
             "DescribeDatastore",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2939,7 +2838,7 @@ pub mod describe_logging_options_input {
 #[doc(hidden)]
 pub type DescribeLoggingOptionsInputOperationOutputAlias = crate::operation::DescribeLoggingOptions;
 #[doc(hidden)]
-pub type DescribeLoggingOptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeLoggingOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeLoggingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeLoggingOptions`](crate::operation::DescribeLoggingOptions)>
     #[allow(clippy::let_and_return)]
@@ -2950,7 +2849,7 @@ impl DescribeLoggingOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoggingOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3024,7 +2923,7 @@ impl DescribeLoggingOptionsInput {
             "DescribeLoggingOptions",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3077,7 +2976,7 @@ pub mod describe_pipeline_input {
 #[doc(hidden)]
 pub type DescribePipelineInputOperationOutputAlias = crate::operation::DescribePipeline;
 #[doc(hidden)]
-pub type DescribePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePipelineInput {
     /// Consumes the builder and constructs an Operation<[`DescribePipeline`](crate::operation::DescribePipeline)>
     #[allow(clippy::let_and_return)]
@@ -3088,7 +2987,7 @@ impl DescribePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3182,7 +3081,7 @@ impl DescribePipelineInput {
             "DescribePipeline",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3217,16 +3116,12 @@ pub mod get_dataset_content_input {
             self.dataset_name = input;
             self
         }
-        /// <p>The version of the dataset whose contents are retrieved. You can also use the strings
-        /// "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully
-        /// completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+        /// <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>The version of the dataset whose contents are retrieved. You can also use the strings
-        /// "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully
-        /// completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+        /// <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -3248,7 +3143,7 @@ pub mod get_dataset_content_input {
 #[doc(hidden)]
 pub type GetDatasetContentInputOperationOutputAlias = crate::operation::GetDatasetContent;
 #[doc(hidden)]
-pub type GetDatasetContentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDatasetContentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDatasetContentInput {
     /// Consumes the builder and constructs an Operation<[`GetDatasetContent`](crate::operation::GetDatasetContent)>
     #[allow(clippy::let_and_return)]
@@ -3259,7 +3154,7 @@ impl GetDatasetContentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDatasetContent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3364,7 +3259,7 @@ impl GetDatasetContentInput {
             "GetDatasetContent",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3428,7 +3323,7 @@ pub mod list_channels_input {
 #[doc(hidden)]
 pub type ListChannelsInputOperationOutputAlias = crate::operation::ListChannels;
 #[doc(hidden)]
-pub type ListChannelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannels`](crate::operation::ListChannels)>
     #[allow(clippy::let_and_return)]
@@ -3439,7 +3334,7 @@ impl ListChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3530,7 +3425,7 @@ impl ListChannelsInput {
             "ListChannels",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3588,16 +3483,12 @@ pub mod list_dataset_contents_input {
             self.max_results = input;
             self
         }
-        /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or
-        /// after the given time. See the field <code>triggers.schedule</code> in the
-        /// <code>CreateDataset</code> request. (timestamp)</p>
+        /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
         pub fn scheduled_on_or_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.scheduled_on_or_after = Some(input);
             self
         }
-        /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or
-        /// after the given time. See the field <code>triggers.schedule</code> in the
-        /// <code>CreateDataset</code> request. (timestamp)</p>
+        /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
         pub fn set_scheduled_on_or_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3605,16 +3496,12 @@ pub mod list_dataset_contents_input {
             self.scheduled_on_or_after = input;
             self
         }
-        /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the
-        /// given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
-        /// request. (timestamp)</p>
+        /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
         pub fn scheduled_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.scheduled_before = Some(input);
             self
         }
-        /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the
-        /// given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
-        /// request. (timestamp)</p>
+        /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
         pub fn set_scheduled_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3642,7 +3529,7 @@ pub mod list_dataset_contents_input {
 #[doc(hidden)]
 pub type ListDatasetContentsInputOperationOutputAlias = crate::operation::ListDatasetContents;
 #[doc(hidden)]
-pub type ListDatasetContentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetContentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetContentsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasetContents`](crate::operation::ListDatasetContents)>
     #[allow(clippy::let_and_return)]
@@ -3653,7 +3540,7 @@ impl ListDatasetContentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasetContents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3782,7 +3669,7 @@ impl ListDatasetContentsInput {
             "ListDatasetContents",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3846,7 +3733,7 @@ pub mod list_datasets_input {
 #[doc(hidden)]
 pub type ListDatasetsInputOperationOutputAlias = crate::operation::ListDatasets;
 #[doc(hidden)]
-pub type ListDatasetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatasetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatasetsInput {
     /// Consumes the builder and constructs an Operation<[`ListDatasets`](crate::operation::ListDatasets)>
     #[allow(clippy::let_and_return)]
@@ -3857,7 +3744,7 @@ impl ListDatasetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatasets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3948,7 +3835,7 @@ impl ListDatasetsInput {
             "ListDatasets",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4012,7 +3899,7 @@ pub mod list_datastores_input {
 #[doc(hidden)]
 pub type ListDatastoresInputOperationOutputAlias = crate::operation::ListDatastores;
 #[doc(hidden)]
-pub type ListDatastoresInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDatastoresInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDatastoresInput {
     /// Consumes the builder and constructs an Operation<[`ListDatastores`](crate::operation::ListDatastores)>
     #[allow(clippy::let_and_return)]
@@ -4023,7 +3910,7 @@ impl ListDatastoresInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDatastores,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4114,7 +4001,7 @@ impl ListDatastoresInput {
             "ListDatastores",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4178,7 +4065,7 @@ pub mod list_pipelines_input {
 #[doc(hidden)]
 pub type ListPipelinesInputOperationOutputAlias = crate::operation::ListPipelines;
 #[doc(hidden)]
-pub type ListPipelinesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPipelinesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPipelinesInput {
     /// Consumes the builder and constructs an Operation<[`ListPipelines`](crate::operation::ListPipelines)>
     #[allow(clippy::let_and_return)]
@@ -4189,7 +4076,7 @@ impl ListPipelinesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPipelines,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4280,7 +4167,7 @@ impl ListPipelinesInput {
             "ListPipelines",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4330,7 +4217,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -4341,7 +4228,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4429,7 +4316,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4482,7 +4369,7 @@ pub mod put_logging_options_input {
 #[doc(hidden)]
 pub type PutLoggingOptionsInputOperationOutputAlias = crate::operation::PutLoggingOptions;
 #[doc(hidden)]
-pub type PutLoggingOptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutLoggingOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutLoggingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`PutLoggingOptions`](crate::operation::PutLoggingOptions)>
     #[allow(clippy::let_and_return)]
@@ -4493,7 +4380,7 @@ impl PutLoggingOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutLoggingOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4573,7 +4460,7 @@ impl PutLoggingOptionsInput {
             "PutLoggingOptions",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4606,20 +4493,12 @@ pub mod run_pipeline_activity_input {
         pub(crate) payloads: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
     }
     impl Builder {
-        /// <p>The pipeline activity that is run. This must not be a channel activity or a data store
-        /// activity because these activities are used in a pipeline only to load the original message and
-        /// to store the (possibly) transformed message. If a Lambda activity is specified, only
-        /// short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be
-        /// used.</p>
+        /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
         pub fn pipeline_activity(mut self, input: crate::model::PipelineActivity) -> Self {
             self.pipeline_activity = Some(input);
             self
         }
-        /// <p>The pipeline activity that is run. This must not be a channel activity or a data store
-        /// activity because these activities are used in a pipeline only to load the original message and
-        /// to store the (possibly) transformed message. If a Lambda activity is specified, only
-        /// short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be
-        /// used.</p>
+        /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
         pub fn set_pipeline_activity(
             mut self,
             input: std::option::Option<crate::model::PipelineActivity>,
@@ -4632,9 +4511,9 @@ pub mod run_pipeline_activity_input {
         /// To override the contents of this collection use [`set_payloads`](Self::set_payloads).
         ///
         /// <p>The sample message payloads on which the pipeline activity is run.</p>
-        pub fn payloads(mut self, input: impl Into<aws_smithy_types::Blob>) -> Self {
+        pub fn payloads(mut self, input: aws_smithy_types::Blob) -> Self {
             let mut v = self.payloads.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.payloads = Some(v);
             self
         }
@@ -4663,7 +4542,7 @@ pub mod run_pipeline_activity_input {
 #[doc(hidden)]
 pub type RunPipelineActivityInputOperationOutputAlias = crate::operation::RunPipelineActivity;
 #[doc(hidden)]
-pub type RunPipelineActivityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RunPipelineActivityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RunPipelineActivityInput {
     /// Consumes the builder and constructs an Operation<[`RunPipelineActivity`](crate::operation::RunPipelineActivity)>
     #[allow(clippy::let_and_return)]
@@ -4674,7 +4553,7 @@ impl RunPipelineActivityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RunPipelineActivity,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4754,7 +4633,7 @@ impl RunPipelineActivityInput {
             "RunPipelineActivity",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4799,14 +4678,12 @@ pub mod sample_channel_data_input {
             self.channel_name = input;
             self
         }
-        /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also
-        /// 10.</p>
+        /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
         pub fn max_messages(mut self, input: i32) -> Self {
             self.max_messages = Some(input);
             self
         }
-        /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also
-        /// 10.</p>
+        /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
         pub fn set_max_messages(mut self, input: std::option::Option<i32>) -> Self {
             self.max_messages = input;
             self
@@ -4856,7 +4733,7 @@ pub mod sample_channel_data_input {
 #[doc(hidden)]
 pub type SampleChannelDataInputOperationOutputAlias = crate::operation::SampleChannelData;
 #[doc(hidden)]
-pub type SampleChannelDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SampleChannelDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SampleChannelDataInput {
     /// Consumes the builder and constructs an Operation<[`SampleChannelData`](crate::operation::SampleChannelData)>
     #[allow(clippy::let_and_return)]
@@ -4867,7 +4744,7 @@ impl SampleChannelDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SampleChannelData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4993,7 +4870,7 @@ impl SampleChannelDataInput {
             "SampleChannelData",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5034,15 +4911,13 @@ pub mod start_pipeline_reprocessing_input {
             self
         }
         /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
-        /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the
-        /// <code>channelMessages</code> object.</p>
+        /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
         /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
-        /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the
-        /// <code>channelMessages</code> object.</p>
+        /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5051,15 +4926,13 @@ pub mod start_pipeline_reprocessing_input {
             self
         }
         /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
-        /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the
-        /// <code>channelMessages</code> object.</p>
+        /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
         /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
-        /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the
-        /// <code>channelMessages</code> object.</p>
+        /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5068,15 +4941,13 @@ pub mod start_pipeline_reprocessing_input {
             self
         }
         /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
-        /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for
-        /// <code>startTime</code> and <code>endTime</code>.</p>
+        /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
         pub fn channel_messages(mut self, input: crate::model::ChannelMessages) -> Self {
             self.channel_messages = Some(input);
             self
         }
         /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
-        /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for
-        /// <code>startTime</code> and <code>endTime</code>.</p>
+        /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
         pub fn set_channel_messages(
             mut self,
             input: std::option::Option<crate::model::ChannelMessages>,
@@ -5104,7 +4975,7 @@ pub mod start_pipeline_reprocessing_input {
 pub type StartPipelineReprocessingInputOperationOutputAlias =
     crate::operation::StartPipelineReprocessing;
 #[doc(hidden)]
-pub type StartPipelineReprocessingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartPipelineReprocessingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartPipelineReprocessingInput {
     /// Consumes the builder and constructs an Operation<[`StartPipelineReprocessing`](crate::operation::StartPipelineReprocessing)>
     #[allow(clippy::let_and_return)]
@@ -5115,7 +4986,7 @@ impl StartPipelineReprocessingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartPipelineReprocessing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5217,7 +5088,7 @@ impl StartPipelineReprocessingInput {
             "StartPipelineReprocessing",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5265,9 +5136,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The new or modified tags for the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5296,7 +5167,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -5307,7 +5178,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5400,7 +5271,7 @@ impl TagResourceInput {
             "TagResource",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5479,7 +5350,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -5490,7 +5361,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5583,7 +5454,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5619,18 +5490,12 @@ pub mod update_channel_input {
             self.channel_name = input;
             self
         }
-        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-        /// created.</p>
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
         pub fn channel_storage(mut self, input: crate::model::ChannelStorage) -> Self {
             self.channel_storage = Some(input);
             self
         }
-        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-        /// created.</p>
+        /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
         pub fn set_channel_storage(
             mut self,
             input: std::option::Option<crate::model::ChannelStorage>,
@@ -5638,14 +5503,12 @@ pub mod update_channel_input {
             self.channel_storage = input;
             self
         }
-        /// <p>How long, in days, message data is kept for the channel. The retention period can't be
-        /// updated if the channel's Amazon S3 storage is customer-managed.</p>
+        /// <p>How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.retention_period = Some(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the channel. The retention period can't be
-        /// updated if the channel's Amazon S3 storage is customer-managed.</p>
+        /// <p>How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -5671,7 +5534,7 @@ pub mod update_channel_input {
 #[doc(hidden)]
 pub type UpdateChannelInputOperationOutputAlias = crate::operation::UpdateChannel;
 #[doc(hidden)]
-pub type UpdateChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannel`](crate::operation::UpdateChannel)>
     #[allow(clippy::let_and_return)]
@@ -5682,7 +5545,7 @@ impl UpdateChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5781,7 +5644,7 @@ impl UpdateChannelInput {
             "UpdateChannel",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5836,9 +5699,9 @@ pub mod update_dataset_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>A list of <code>DatasetAction</code> objects.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::DatasetAction>) -> Self {
+        pub fn actions(mut self, input: crate::model::DatasetAction) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -5854,16 +5717,14 @@ pub mod update_dataset_input {
         ///
         /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
         ///
-        /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to
-        /// five <code>DatasetTrigger</code> objects.</p>
-        pub fn triggers(mut self, input: impl Into<crate::model::DatasetTrigger>) -> Self {
+        /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to five <code>DatasetTrigger</code> objects.</p>
+        pub fn triggers(mut self, input: crate::model::DatasetTrigger) -> Self {
             let mut v = self.triggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.triggers = Some(v);
             self
         }
-        /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to
-        /// five <code>DatasetTrigger</code> objects.</p>
+        /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to five <code>DatasetTrigger</code> objects.</p>
         pub fn set_triggers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
@@ -5875,19 +5736,17 @@ pub mod update_dataset_input {
         ///
         /// To override the contents of this collection use [`set_content_delivery_rules`](Self::set_content_delivery_rules).
         ///
-        /// <p>When dataset contents are created, they are delivered to destinations specified
-        /// here.</p>
+        /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
         pub fn content_delivery_rules(
             mut self,
-            input: impl Into<crate::model::DatasetContentDeliveryRule>,
+            input: crate::model::DatasetContentDeliveryRule,
         ) -> Self {
             let mut v = self.content_delivery_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.content_delivery_rules = Some(v);
             self
         }
-        /// <p>When dataset contents are created, they are delivered to destinations specified
-        /// here.</p>
+        /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
         pub fn set_content_delivery_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
@@ -5908,11 +5767,7 @@ pub mod update_dataset_input {
             self.retention_period = input;
             self
         }
-        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-        /// only the latest version plus the latest succeeded version (if they are different) are kept for
-        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn versioning_configuration(
             mut self,
             input: crate::model::VersioningConfiguration,
@@ -5920,11 +5775,7 @@ pub mod update_dataset_input {
             self.versioning_configuration = Some(input);
             self
         }
-        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-        /// only the latest version plus the latest succeeded version (if they are different) are kept for
-        /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-        /// <i>IoT Analytics User Guide</i>.</p>
+        /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
         pub fn set_versioning_configuration(
             mut self,
             input: std::option::Option<crate::model::VersioningConfiguration>,
@@ -5937,9 +5788,9 @@ pub mod update_dataset_input {
         /// To override the contents of this collection use [`set_late_data_rules`](Self::set_late_data_rules).
         ///
         /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
-        pub fn late_data_rules(mut self, input: impl Into<crate::model::LateDataRule>) -> Self {
+        pub fn late_data_rules(mut self, input: crate::model::LateDataRule) -> Self {
             let mut v = self.late_data_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.late_data_rules = Some(v);
             self
         }
@@ -5973,7 +5824,7 @@ pub mod update_dataset_input {
 #[doc(hidden)]
 pub type UpdateDatasetInputOperationOutputAlias = crate::operation::UpdateDataset;
 #[doc(hidden)]
-pub type UpdateDatasetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDatasetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDatasetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDataset`](crate::operation::UpdateDataset)>
     #[allow(clippy::let_and_return)]
@@ -5984,7 +5835,7 @@ impl UpdateDatasetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDataset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6083,7 +5934,7 @@ impl UpdateDatasetInput {
             "UpdateDataset",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6132,14 +5983,12 @@ pub mod update_datastore_input {
             self.datastore_name = input;
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. The retention period can't be
-        /// updated if the data store's Amazon S3 storage is customer-managed.</p>
+        /// <p>How long, in days, message data is kept for the data store. The retention period can't be updated if the data store's Amazon S3 storage is customer-managed.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.retention_period = Some(input);
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. The retention period can't be
-        /// updated if the data store's Amazon S3 storage is customer-managed.</p>
+        /// <p>How long, in days, message data is kept for the data store. The retention period can't be updated if the data store's Amazon S3 storage is customer-managed.</p>
         pub fn set_retention_period(
             mut self,
             input: std::option::Option<crate::model::RetentionPeriod>,
@@ -6160,7 +6009,7 @@ pub mod update_datastore_input {
             self.datastore_storage = input;
             self
         }
-        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn file_format_configuration(
@@ -6170,7 +6019,7 @@ pub mod update_datastore_input {
             self.file_format_configuration = Some(input);
             self
         }
-        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn set_file_format_configuration(
@@ -6199,7 +6048,7 @@ pub mod update_datastore_input {
 #[doc(hidden)]
 pub type UpdateDatastoreInputOperationOutputAlias = crate::operation::UpdateDatastore;
 #[doc(hidden)]
-pub type UpdateDatastoreInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDatastoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDatastoreInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDatastore`](crate::operation::UpdateDatastore)>
     #[allow(clippy::let_and_return)]
@@ -6210,7 +6059,7 @@ impl UpdateDatastoreInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDatastore,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6310,7 +6159,7 @@ impl UpdateDatastoreInput {
             "UpdateDatastore",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6361,37 +6210,18 @@ pub mod update_pipeline_input {
         ///
         /// To override the contents of this collection use [`set_pipeline_activities`](Self::set_pipeline_activities).
         ///
-        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-        /// your messages, such as removing, renaming or adding message attributes; filtering messages
-        /// based on attribute values; invoking your Lambda functions on messages for advanced processing;
-        /// or performing mathematical transformations to normalize device data.</p>
-        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-        /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-        /// contain only one activity. For example:</p>
-        /// <p>
-        /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-        /// ]</code>
-        /// </p>
-        pub fn pipeline_activities(
-            mut self,
-            input: impl Into<crate::model::PipelineActivity>,
-        ) -> Self {
+        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+        /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
+        pub fn pipeline_activities(mut self, input: crate::model::PipelineActivity) -> Self {
             let mut v = self.pipeline_activities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.pipeline_activities = Some(v);
             self
         }
-        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-        /// your messages, such as removing, renaming or adding message attributes; filtering messages
-        /// based on attribute values; invoking your Lambda functions on messages for advanced processing;
-        /// or performing mathematical transformations to normalize device data.</p>
-        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-        /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-        /// contain only one activity. For example:</p>
-        /// <p>
-        /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-        /// ]</code>
-        /// </p>
+        /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+        /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+        /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
         pub fn set_pipeline_activities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
@@ -6416,7 +6246,7 @@ pub mod update_pipeline_input {
 #[doc(hidden)]
 pub type UpdatePipelineInputOperationOutputAlias = crate::operation::UpdatePipeline;
 #[doc(hidden)]
-pub type UpdatePipelineInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePipelineInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePipelineInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePipeline`](crate::operation::UpdatePipeline)>
     #[allow(clippy::let_and_return)]
@@ -6427,7 +6257,7 @@ impl UpdatePipelineInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePipeline,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6527,7 +6357,7 @@ impl UpdatePipelineInput {
             "UpdatePipeline",
             "iotanalytics",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6556,17 +6386,9 @@ impl UpdatePipelineInput {
 pub struct UpdatePipelineInput {
     /// <p>The name of the pipeline to update.</p>
     pub pipeline_name: std::option::Option<std::string::String>,
-    /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-    /// your messages, such as removing, renaming or adding message attributes; filtering messages
-    /// based on attribute values; invoking your Lambda functions on messages for advanced processing;
-    /// or performing mathematical transformations to normalize device data.</p>
-    /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-    /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-    /// contain only one activity. For example:</p>
-    /// <p>
-    /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-    /// ]</code>
-    /// </p>
+    /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+    /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+    /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
     pub pipeline_activities: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
 }
 impl UpdatePipelineInput {
@@ -6574,17 +6396,9 @@ impl UpdatePipelineInput {
     pub fn pipeline_name(&self) -> std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
-    /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-    /// your messages, such as removing, renaming or adding message attributes; filtering messages
-    /// based on attribute values; invoking your Lambda functions on messages for advanced processing;
-    /// or performing mathematical transformations to normalize device data.</p>
-    /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-    /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-    /// contain only one activity. For example:</p>
-    /// <p>
-    /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-    /// ]</code>
-    /// </p>
+    /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+    /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+    /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
     pub fn pipeline_activities(&self) -> std::option::Option<&[crate::model::PipelineActivity]> {
         self.pipeline_activities.as_deref()
     }
@@ -6604,12 +6418,11 @@ impl std::fmt::Debug for UpdatePipelineInput {
 pub struct UpdateDatastoreInput {
     /// <p>The name of the data store to be updated.</p>
     pub datastore_name: std::option::Option<std::string::String>,
-    /// <p>How long, in days, message data is kept for the data store. The retention period can't be
-    /// updated if the data store's Amazon S3 storage is customer-managed.</p>
+    /// <p>How long, in days, message data is kept for the data store. The retention period can't be updated if the data store's Amazon S3 storage is customer-managed.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
     pub datastore_storage: std::option::Option<crate::model::DatastoreStorage>,
-    /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+    /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
     pub file_format_configuration: std::option::Option<crate::model::FileFormatConfiguration>,
@@ -6619,8 +6432,7 @@ impl UpdateDatastoreInput {
     pub fn datastore_name(&self) -> std::option::Option<&str> {
         self.datastore_name.as_deref()
     }
-    /// <p>How long, in days, message data is kept for the data store. The retention period can't be
-    /// updated if the data store's Amazon S3 storage is customer-managed.</p>
+    /// <p>How long, in days, message data is kept for the data store. The retention period can't be updated if the data store's Amazon S3 storage is customer-managed.</p>
     pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
@@ -6628,7 +6440,7 @@ impl UpdateDatastoreInput {
     pub fn datastore_storage(&self) -> std::option::Option<&crate::model::DatastoreStorage> {
         self.datastore_storage.as_ref()
     }
-    /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+    /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
     pub fn file_format_configuration(
@@ -6656,20 +6468,14 @@ pub struct UpdateDatasetInput {
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>A list of <code>DatasetAction</code> objects.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::DatasetAction>>,
-    /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to
-    /// five <code>DatasetTrigger</code> objects.</p>
+    /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to five <code>DatasetTrigger</code> objects.</p>
     pub triggers: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
-    /// <p>When dataset contents are created, they are delivered to destinations specified
-    /// here.</p>
+    /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
     pub content_delivery_rules:
         std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
     /// <p>How long, in days, dataset contents are kept for the dataset.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
-    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-    /// only the latest version plus the latest succeeded version (if they are different) are kept for
-    /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-    /// <i>IoT Analytics User Guide</i>.</p>
+    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub versioning_configuration: std::option::Option<crate::model::VersioningConfiguration>,
     /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
     pub late_data_rules: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
@@ -6683,13 +6489,11 @@ impl UpdateDatasetInput {
     pub fn actions(&self) -> std::option::Option<&[crate::model::DatasetAction]> {
         self.actions.as_deref()
     }
-    /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to
-    /// five <code>DatasetTrigger</code> objects.</p>
+    /// <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to five <code>DatasetTrigger</code> objects.</p>
     pub fn triggers(&self) -> std::option::Option<&[crate::model::DatasetTrigger]> {
         self.triggers.as_deref()
     }
-    /// <p>When dataset contents are created, they are delivered to destinations specified
-    /// here.</p>
+    /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
     pub fn content_delivery_rules(
         &self,
     ) -> std::option::Option<&[crate::model::DatasetContentDeliveryRule]> {
@@ -6699,11 +6503,7 @@ impl UpdateDatasetInput {
     pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
-    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-    /// only the latest version plus the latest succeeded version (if they are different) are kept for
-    /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-    /// <i>IoT Analytics User Guide</i>.</p>
+    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub fn versioning_configuration(
         &self,
     ) -> std::option::Option<&crate::model::VersioningConfiguration> {
@@ -6734,13 +6534,9 @@ impl std::fmt::Debug for UpdateDatasetInput {
 pub struct UpdateChannelInput {
     /// <p>The name of the channel to be updated.</p>
     pub channel_name: std::option::Option<std::string::String>,
-    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-    /// <code>customerManagedS3</code> storage. If not specified, the default is
-    /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-    /// created.</p>
+    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
     pub channel_storage: std::option::Option<crate::model::ChannelStorage>,
-    /// <p>How long, in days, message data is kept for the channel. The retention period can't be
-    /// updated if the channel's Amazon S3 storage is customer-managed.</p>
+    /// <p>How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
 }
 impl UpdateChannelInput {
@@ -6748,15 +6544,11 @@ impl UpdateChannelInput {
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
-    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-    /// <code>customerManagedS3</code> storage. If not specified, the default is
-    /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-    /// created.</p>
+    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
     pub fn channel_storage(&self) -> std::option::Option<&crate::model::ChannelStorage> {
         self.channel_storage.as_ref()
     }
-    /// <p>How long, in days, message data is kept for the channel. The retention period can't be
-    /// updated if the channel's Amazon S3 storage is customer-managed.</p>
+    /// <p>How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
     pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
@@ -6834,16 +6626,13 @@ pub struct StartPipelineReprocessingInput {
     /// <p>The name of the pipeline on which to start reprocessing.</p>
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
-    /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the
-    /// <code>channelMessages</code> object.</p>
+    /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
-    /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the
-    /// <code>channelMessages</code> object.</p>
+    /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
-    /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for
-    /// <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
     pub channel_messages: std::option::Option<crate::model::ChannelMessages>,
 }
 impl StartPipelineReprocessingInput {
@@ -6852,20 +6641,17 @@ impl StartPipelineReprocessingInput {
         self.pipeline_name.as_deref()
     }
     /// <p>The start time (inclusive) of raw message data that is reprocessed.</p>
-    /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the
-    /// <code>channelMessages</code> object.</p>
+    /// <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time (exclusive) of raw message data that is reprocessed.</p>
-    /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the
-    /// <code>channelMessages</code> object.</p>
+    /// <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Specifies one or more sets of channel messages that you want to reprocess.</p>
-    /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for
-    /// <code>startTime</code> and <code>endTime</code>.</p>
+    /// <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
     pub fn channel_messages(&self) -> std::option::Option<&crate::model::ChannelMessages> {
         self.channel_messages.as_ref()
     }
@@ -6887,8 +6673,7 @@ impl std::fmt::Debug for StartPipelineReprocessingInput {
 pub struct SampleChannelDataInput {
     /// <p>The name of the channel whose message samples are retrieved.</p>
     pub channel_name: std::option::Option<std::string::String>,
-    /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also
-    /// 10.</p>
+    /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
     pub max_messages: std::option::Option<i32>,
     /// <p>The start of the time window from which sample messages are retrieved.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -6900,8 +6685,7 @@ impl SampleChannelDataInput {
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
-    /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also
-    /// 10.</p>
+    /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
     pub fn max_messages(&self) -> std::option::Option<i32> {
         self.max_messages
     }
@@ -6929,21 +6713,13 @@ impl std::fmt::Debug for SampleChannelDataInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunPipelineActivityInput {
-    /// <p>The pipeline activity that is run. This must not be a channel activity or a data store
-    /// activity because these activities are used in a pipeline only to load the original message and
-    /// to store the (possibly) transformed message. If a Lambda activity is specified, only
-    /// short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be
-    /// used.</p>
+    /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
     pub pipeline_activity: std::option::Option<crate::model::PipelineActivity>,
     /// <p>The sample message payloads on which the pipeline activity is run.</p>
     pub payloads: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
 }
 impl RunPipelineActivityInput {
-    /// <p>The pipeline activity that is run. This must not be a channel activity or a data store
-    /// activity because these activities are used in a pipeline only to load the original message and
-    /// to store the (possibly) transformed message. If a Lambda activity is specified, only
-    /// short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be
-    /// used.</p>
+    /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
     pub fn pipeline_activity(&self) -> std::option::Option<&crate::model::PipelineActivity> {
         self.pipeline_activity.as_ref()
     }
@@ -7103,13 +6879,9 @@ pub struct ListDatasetContentsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or
-    /// after the given time. See the field <code>triggers.schedule</code> in the
-    /// <code>CreateDataset</code> request. (timestamp)</p>
+    /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
     pub scheduled_on_or_after: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the
-    /// given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
-    /// request. (timestamp)</p>
+    /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
     pub scheduled_before: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListDatasetContentsInput {
@@ -7125,15 +6897,11 @@ impl ListDatasetContentsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or
-    /// after the given time. See the field <code>triggers.schedule</code> in the
-    /// <code>CreateDataset</code> request. (timestamp)</p>
+    /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
     pub fn scheduled_on_or_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.scheduled_on_or_after.as_ref()
     }
-    /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the
-    /// given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
-    /// request. (timestamp)</p>
+    /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
     pub fn scheduled_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.scheduled_before.as_ref()
     }
@@ -7186,9 +6954,7 @@ impl std::fmt::Debug for ListChannelsInput {
 pub struct GetDatasetContentInput {
     /// <p>The name of the dataset whose contents are retrieved.</p>
     pub dataset_name: std::option::Option<std::string::String>,
-    /// <p>The version of the dataset whose contents are retrieved. You can also use the strings
-    /// "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully
-    /// completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+    /// <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
 impl GetDatasetContentInput {
@@ -7196,9 +6962,7 @@ impl GetDatasetContentInput {
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p>The version of the dataset whose contents are retrieved. You can also use the strings
-    /// "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully
-    /// completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+    /// <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -7250,9 +7014,7 @@ impl std::fmt::Debug for DescribeLoggingOptionsInput {
 pub struct DescribeDatastoreInput {
     /// <p>The name of the data store</p>
     pub datastore_name: std::option::Option<std::string::String>,
-    /// <p>If true, additional statistical information about the data store is included in the
-    /// response. This feature can't be used with a data store whose S3 storage is
-    /// customer-managed.</p>
+    /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
     pub include_statistics: bool,
 }
 impl DescribeDatastoreInput {
@@ -7260,9 +7022,7 @@ impl DescribeDatastoreInput {
     pub fn datastore_name(&self) -> std::option::Option<&str> {
         self.datastore_name.as_deref()
     }
-    /// <p>If true, additional statistical information about the data store is included in the
-    /// response. This feature can't be used with a data store whose S3 storage is
-    /// customer-managed.</p>
+    /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
     pub fn include_statistics(&self) -> bool {
         self.include_statistics
     }
@@ -7303,8 +7063,7 @@ impl std::fmt::Debug for DescribeDatasetInput {
 pub struct DescribeChannelInput {
     /// <p>The name of the channel whose information is retrieved.</p>
     pub channel_name: std::option::Option<std::string::String>,
-    /// <p>If true, additional statistical information about the channel is included in the response.
-    /// This feature can't be used with a channel whose S3 storage is customer-managed.</p>
+    /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
     pub include_statistics: bool,
 }
 impl DescribeChannelInput {
@@ -7312,8 +7071,7 @@ impl DescribeChannelInput {
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
-    /// <p>If true, additional statistical information about the channel is included in the response.
-    /// This feature can't be used with a channel whose S3 storage is customer-managed.</p>
+    /// <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
     pub fn include_statistics(&self) -> bool {
         self.include_statistics
     }
@@ -7375,9 +7133,7 @@ impl std::fmt::Debug for DeleteDatastoreInput {
 pub struct DeleteDatasetContentInput {
     /// <p>The name of the dataset whose content is deleted.</p>
     pub dataset_name: std::option::Option<std::string::String>,
-    /// <p>The version of the dataset whose content is deleted. You can also use the strings
-    /// "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data
-    /// set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+    /// <p>The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
 impl DeleteDatasetContentInput {
@@ -7385,9 +7141,7 @@ impl DeleteDatasetContentInput {
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p>The version of the dataset whose content is deleted. You can also use the strings
-    /// "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data
-    /// set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+    /// <p>The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -7449,17 +7203,9 @@ impl std::fmt::Debug for DeleteChannelInput {
 pub struct CreatePipelineInput {
     /// <p>The name of the pipeline.</p>
     pub pipeline_name: std::option::Option<std::string::String>,
-    /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-    /// your messages, such as removing, renaming or adding message attributes; filtering messages
-    /// based on attribute values; invoking your Lambda unctions on messages for advanced processing;
-    /// or performing mathematical transformations to normalize device data.</p>
-    /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-    /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-    /// contain only one activity. For example:</p>
-    /// <p>
-    /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-    /// ]</code>
-    /// </p>
+    /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+    /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+    /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
     pub pipeline_activities: std::option::Option<std::vec::Vec<crate::model::PipelineActivity>>,
     /// <p>Metadata which can be used to manage the pipeline.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7469,17 +7215,9 @@ impl CreatePipelineInput {
     pub fn pipeline_name(&self) -> std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
-    /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
-    /// your messages, such as removing, renaming or adding message attributes; filtering messages
-    /// based on attribute values; invoking your Lambda unctions on messages for advanced processing;
-    /// or performing mathematical transformations to normalize device data.</p>
-    /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-    /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
-    /// contain only one activity. For example:</p>
-    /// <p>
-    /// <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-    /// ]</code>
-    /// </p>
+    /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+    /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+    /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
     pub fn pipeline_activities(&self) -> std::option::Option<&[crate::model::PipelineActivity]> {
         self.pipeline_activities.as_deref()
     }
@@ -7506,12 +7244,11 @@ pub struct CreateDatastoreInput {
     pub datastore_name: std::option::Option<std::string::String>,
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
     pub datastore_storage: std::option::Option<crate::model::DatastoreStorage>,
-    /// <p>How long, in days, message data is kept for the data store. When
-    /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Metadata which can be used to manage the data store.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+    /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
     pub file_format_configuration: std::option::Option<crate::model::FileFormatConfiguration>,
@@ -7527,8 +7264,7 @@ impl CreateDatastoreInput {
     pub fn datastore_storage(&self) -> std::option::Option<&crate::model::DatastoreStorage> {
         self.datastore_storage.as_ref()
     }
-    /// <p>How long, in days, message data is kept for the data store. When
-    /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
@@ -7536,7 +7272,7 @@ impl CreateDatastoreInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+    /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
     pub fn file_format_configuration(
@@ -7568,8 +7304,7 @@ impl std::fmt::Debug for CreateDatastoreInput {
 pub struct CreateDatasetContentInput {
     /// <p>The name of the dataset.</p>
     pub dataset_name: std::option::Option<std::string::String>,
-    /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset
-    /// content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+    /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
 impl CreateDatasetContentInput {
@@ -7577,8 +7312,7 @@ impl CreateDatasetContentInput {
     pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
-    /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset
-    /// content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+    /// <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -7600,26 +7334,14 @@ pub struct CreateDatasetInput {
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>A list of actions that create the dataset contents.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::DatasetAction>>,
-    /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time
-    /// interval or when another dataset's contents are created. The list of triggers can be empty or
-    /// contain up to five <code>DataSetTrigger</code> objects.</p>
+    /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
     pub triggers: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
-    /// <p>When dataset contents are created, they are delivered to destinations specified
-    /// here.</p>
+    /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
     pub content_delivery_rules:
         std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
-    /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not
-    /// specified or set to <code>null</code>, versions of dataset contents are retained for at most
-    /// 90 days. The number of versions of dataset contents retained is determined by the
-    /// <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
-    /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
-    /// <i>IoT Analytics User Guide</i>.</p>
+    /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
-    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-    /// only the latest version plus the latest succeeded version (if they are different) are kept for
-    /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-    /// <i>IoT Analytics User Guide</i>.</p>
+    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub versioning_configuration: std::option::Option<crate::model::VersioningConfiguration>,
     /// <p>Metadata which can be used to manage the dataset.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7635,33 +7357,21 @@ impl CreateDatasetInput {
     pub fn actions(&self) -> std::option::Option<&[crate::model::DatasetAction]> {
         self.actions.as_deref()
     }
-    /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time
-    /// interval or when another dataset's contents are created. The list of triggers can be empty or
-    /// contain up to five <code>DataSetTrigger</code> objects.</p>
+    /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
     pub fn triggers(&self) -> std::option::Option<&[crate::model::DatasetTrigger]> {
         self.triggers.as_deref()
     }
-    /// <p>When dataset contents are created, they are delivered to destinations specified
-    /// here.</p>
+    /// <p>When dataset contents are created, they are delivered to destinations specified here.</p>
     pub fn content_delivery_rules(
         &self,
     ) -> std::option::Option<&[crate::model::DatasetContentDeliveryRule]> {
         self.content_delivery_rules.as_deref()
     }
-    /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not
-    /// specified or set to <code>null</code>, versions of dataset contents are retained for at most
-    /// 90 days. The number of versions of dataset contents retained is determined by the
-    /// <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
-    /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
-    /// <i>IoT Analytics User Guide</i>.</p>
+    /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
-    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
-    /// only the latest version plus the latest succeeded version (if they are different) are kept for
-    /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
-    /// <i>IoT Analytics User Guide</i>.</p>
+    /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
     pub fn versioning_configuration(
         &self,
     ) -> std::option::Option<&crate::model::VersioningConfiguration> {
@@ -7697,13 +7407,9 @@ impl std::fmt::Debug for CreateDatasetInput {
 pub struct CreateChannelInput {
     /// <p>The name of the channel.</p>
     pub channel_name: std::option::Option<std::string::String>,
-    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-    /// <code>customerManagedS3</code> storage. If not specified, the default is
-    /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-    /// created.</p>
+    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
     pub channel_storage: std::option::Option<crate::model::ChannelStorage>,
-    /// <p>How long, in days, message data is kept for the channel. When
-    /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Metadata which can be used to manage the channel.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7713,15 +7419,11 @@ impl CreateChannelInput {
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
-    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
-    /// <code>customerManagedS3</code> storage. If not specified, the default is
-    /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
-    /// created.</p>
+    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
     pub fn channel_storage(&self) -> std::option::Option<&crate::model::ChannelStorage> {
         self.channel_storage.as_ref()
     }
-    /// <p>How long, in days, message data is kept for the channel. When
-    /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub fn retention_period(&self) -> std::option::Option<&crate::model::RetentionPeriod> {
         self.retention_period.as_ref()
     }
@@ -7747,8 +7449,7 @@ impl std::fmt::Debug for CreateChannelInput {
 pub struct CancelPipelineReprocessingInput {
     /// <p>The name of pipeline for which data reprocessing is canceled.</p>
     pub pipeline_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the reprocessing task (returned by
-    /// <code>StartPipelineReprocessing</code>).</p>
+    /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
     pub reprocessing_id: std::option::Option<std::string::String>,
 }
 impl CancelPipelineReprocessingInput {
@@ -7756,8 +7457,7 @@ impl CancelPipelineReprocessingInput {
     pub fn pipeline_name(&self) -> std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
-    /// <p>The ID of the reprocessing task (returned by
-    /// <code>StartPipelineReprocessing</code>).</p>
+    /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
     pub fn reprocessing_id(&self) -> std::option::Option<&str> {
         self.reprocessing_id.as_deref()
     }
@@ -7777,34 +7477,17 @@ impl std::fmt::Debug for CancelPipelineReprocessingInput {
 pub struct BatchPutMessageInput {
     /// <p>The name of the channel where the messages are sent.</p>
     pub channel_name: std::option::Option<std::string::String>,
-    /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string",
-    /// "payload": "string"}.</p>
+    /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
     /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain only alphanumeric characters and undescores (_). No other special characters are
-    /// allowed.</p>
-    /// </li>
-    /// <li>
-    /// <p>Must begin with an alphabetic character or single underscore (_).</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot contain hyphens (-).</p>
-    /// </li>
-    /// <li>
-    /// <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot be more than 255 characters.</p>
-    /// </li>
-    /// <li>
-    /// <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered
-    /// duplicates.)</p>
-    /// </li>
+    /// <li> <p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p> </li>
+    /// <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li>
+    /// <li> <p>Cannot contain hyphens (-).</p> </li>
+    /// <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li>
+    /// <li> <p>Cannot be more than 255 characters.</p> </li>
+    /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
     /// </ul>
-    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29},
-    /// {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.  </p>
+    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
 }
 impl BatchPutMessageInput {
@@ -7812,34 +7495,17 @@ impl BatchPutMessageInput {
     pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
-    /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string",
-    /// "payload": "string"}.</p>
+    /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>
     /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain only alphanumeric characters and undescores (_). No other special characters are
-    /// allowed.</p>
-    /// </li>
-    /// <li>
-    /// <p>Must begin with an alphabetic character or single underscore (_).</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot contain hyphens (-).</p>
-    /// </li>
-    /// <li>
-    /// <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot be more than 255 characters.</p>
-    /// </li>
-    /// <li>
-    /// <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered
-    /// duplicates.)</p>
-    /// </li>
+    /// <li> <p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p> </li>
+    /// <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li>
+    /// <li> <p>Cannot contain hyphens (-).</p> </li>
+    /// <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li>
+    /// <li> <p>Cannot be more than 255 characters.</p> </li>
+    /// <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>
     /// </ul>
-    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29},
-    /// {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads.  </p>
+    /// <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
     pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
         self.messages.as_deref()
     }

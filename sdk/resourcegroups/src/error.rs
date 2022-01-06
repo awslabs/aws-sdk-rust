@@ -20,8 +20,7 @@ pub enum CreateGroupErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The request uses an HTTP method that isn't allowed for the specified resource.</p>
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -68,8 +67,6 @@ impl CreateGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -156,8 +153,7 @@ pub enum DeleteGroupErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -205,8 +201,6 @@ impl DeleteGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -298,8 +292,7 @@ pub enum GetGroupErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -347,8 +340,6 @@ impl GetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -434,8 +425,7 @@ pub enum GetGroupConfigurationErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -483,8 +473,6 @@ impl GetGroupConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -585,8 +573,7 @@ pub enum GetGroupQueryErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -634,8 +621,6 @@ impl GetGroupQueryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -727,8 +712,7 @@ pub enum GetTagsErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -776,8 +760,6 @@ impl GetTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -863,8 +845,7 @@ pub enum GroupResourcesErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -912,8 +893,6 @@ impl GroupResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1005,11 +984,9 @@ pub enum ListGroupResourcesErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request was rejected because it doesn't have valid credentials for the target
-    /// resource.</p>
+    /// <p>The request was rejected because it doesn't have valid credentials for the target resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1058,8 +1035,6 @@ impl ListGroupResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1166,8 +1141,7 @@ pub enum ListGroupsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The request uses an HTTP method that isn't allowed for the specified resource.</p>
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1214,8 +1188,6 @@ impl ListGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1299,8 +1271,7 @@ pub enum PutGroupConfigurationErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1348,8 +1319,6 @@ impl PutGroupConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1448,11 +1417,9 @@ pub enum SearchResourcesErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The request uses an HTTP method that isn't allowed for the specified resource.</p>
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request was rejected because it doesn't have valid credentials for the target
-    /// resource.</p>
+    /// <p>The request was rejected because it doesn't have valid credentials for the target resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1500,8 +1467,6 @@ impl SearchResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1596,8 +1561,7 @@ pub enum TagErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1645,8 +1609,6 @@ impl TagError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1729,8 +1691,7 @@ pub enum UngroupResourcesErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1778,8 +1739,6 @@ impl UngroupResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1874,8 +1833,7 @@ pub enum UntagErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1923,8 +1881,6 @@ impl UntagError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2007,8 +1963,7 @@ pub enum UpdateGroupErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2056,8 +2011,6 @@ impl UpdateGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2149,8 +2102,7 @@ pub enum UpdateGroupQueryErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2198,8 +2150,6 @@ impl UpdateGroupQueryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2271,8 +2221,7 @@ impl std::error::Error for UpdateGroupQueryError {
     }
 }
 
-/// <p>You've exceeded throttling limits by making too many requests in a period of
-/// time.</p>
+/// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
@@ -2656,8 +2605,7 @@ impl BadRequestException {
     }
 }
 
-/// <p>The request was rejected because it doesn't have valid credentials for the target
-/// resource.</p>
+/// <p>The request was rejected because it doesn't have valid credentials for the target resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedException {

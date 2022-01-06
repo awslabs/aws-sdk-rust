@@ -5,7 +5,7 @@
 
 use aws_sdk_dynamodb as dynamodb;
 
-use aws_http::AwsErrorRetryPolicy;
+use aws_http::retry::AwsErrorRetryPolicy;
 use aws_sdk_dynamodb::input::CreateTableInput;
 use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_http::body::SdkBody;

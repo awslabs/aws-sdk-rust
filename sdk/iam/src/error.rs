@@ -12,17 +12,13 @@ pub struct AddClientIDToOpenIDConnectProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddClientIDToOpenIDConnectProviderErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -79,8 +75,6 @@ impl AddClientIDToOpenIDConnectProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -163,22 +157,15 @@ pub struct AddRoleToInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddRoleToInstanceProfileErrorKind {
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>The request was rejected because only the service that depends on the service-linked role
-    /// can modify or delete the role on your behalf. The error message includes the name of the
-    /// service that depends on this service-linked role. You must request the change through that
-    /// service.</p>
+    /// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -227,8 +214,6 @@ impl AddRoleToInstanceProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -311,14 +296,11 @@ pub struct AddUserToGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddUserToGroupErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -363,8 +345,6 @@ impl AddUserToGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -431,20 +411,15 @@ pub struct AttachGroupPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachGroupPolicyErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request failed because Amazon Web Services service role policies can only be attached to the
-    /// service-linked role for that service.</p>
+    /// <p>The request failed because Amazon Web Services service role policies can only be attached to the service-linked role for that service.</p>
     PolicyNotAttachableException(crate::error::PolicyNotAttachableException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -491,8 +466,6 @@ impl AttachGroupPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -575,25 +548,17 @@ pub struct AttachRolePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachRolePolicyErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request failed because Amazon Web Services service role policies can only be attached to the
-    /// service-linked role for that service.</p>
+    /// <p>The request failed because Amazon Web Services service role policies can only be attached to the service-linked role for that service.</p>
     PolicyNotAttachableException(crate::error::PolicyNotAttachableException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>The request was rejected because only the service that depends on the service-linked role
-    /// can modify or delete the role on your behalf. The error message includes the name of the
-    /// service that depends on this service-linked role. You must request the change through that
-    /// service.</p>
+    /// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -641,8 +606,6 @@ impl AttachRolePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -733,20 +696,15 @@ pub struct AttachUserPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachUserPolicyErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request failed because Amazon Web Services service role policies can only be attached to the
-    /// service-linked role for that service.</p>
+    /// <p>The request failed because Amazon Web Services service role policies can only be attached to the service-linked role for that service.</p>
     PolicyNotAttachableException(crate::error::PolicyNotAttachableException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -793,8 +751,6 @@ impl AttachUserPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -877,25 +833,17 @@ pub struct ChangePasswordError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ChangePasswordErrorKind {
-    /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable,
-    /// such as a user name that was deleted and then recreated. The error indicates that the request
-    /// is likely to succeed if you try again after waiting several minutes. The error message
-    /// describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity.</p>
     EntityTemporarilyUnmodifiableException(crate::error::EntityTemporarilyUnmodifiableException),
-    /// <p>The request was rejected because the type of user for the transaction was
-    /// incorrect.</p>
+    /// <p>The request was rejected because the type of user for the transaction was incorrect.</p>
     InvalidUserTypeException(crate::error::InvalidUserTypeException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request was rejected because the provided password did not meet the requirements
-    /// imposed by the account password policy.</p>
+    /// <p>The request was rejected because the provided password did not meet the requirements imposed by the account password policy.</p>
     PasswordPolicyViolationException(crate::error::PasswordPolicyViolationException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -945,8 +893,6 @@ impl ChangePasswordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1037,14 +983,11 @@ pub struct CreateAccessKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAccessKeyErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1089,8 +1032,6 @@ impl CreateAccessKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1157,14 +1098,11 @@ pub struct CreateAccountAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAccountAliasErrorKind {
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1209,8 +1147,6 @@ impl CreateAccountAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1277,17 +1213,13 @@ pub struct CreateGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGroupErrorKind {
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1333,8 +1265,6 @@ impl CreateGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1400,20 +1330,15 @@ pub struct CreateInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateInstanceProfileErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1462,8 +1387,6 @@ impl CreateInstanceProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1546,20 +1469,15 @@ pub struct CreateLoginProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLoginProfileErrorKind {
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request was rejected because the provided password did not meet the requirements
-    /// imposed by the account password policy.</p>
+    /// <p>The request was rejected because the provided password did not meet the requirements imposed by the account password policy.</p>
     PasswordPolicyViolationException(crate::error::PasswordPolicyViolationException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1606,8 +1524,6 @@ impl CreateLoginProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1690,20 +1606,15 @@ pub struct CreateOpenIDConnectProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateOpenIDConnectProviderErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1754,8 +1665,6 @@ impl CreateOpenIDConnectProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1842,23 +1751,17 @@ pub struct CreatePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePolicyErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the policy document was malformed. The error message
-    /// describes the specific error.</p>
+    /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1906,8 +1809,6 @@ impl CreatePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1992,20 +1893,15 @@ pub struct CreatePolicyVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePolicyVersionErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the policy document was malformed. The error message
-    /// describes the specific error.</p>
+    /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2052,8 +1948,6 @@ impl CreatePolicyVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2136,23 +2030,17 @@ pub struct CreateRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRoleErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the policy document was malformed. The error message
-    /// describes the specific error.</p>
+    /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2200,8 +2088,6 @@ impl CreateRoleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2283,20 +2169,15 @@ pub struct CreateSAMLProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSAMLProviderErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2343,8 +2224,6 @@ impl CreateSAMLProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2427,17 +2306,13 @@ pub struct CreateServiceLinkedRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateServiceLinkedRoleErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2483,8 +2358,6 @@ impl CreateServiceLinkedRoleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2559,11 +2432,9 @@ pub struct CreateServiceSpecificCredentialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateServiceSpecificCredentialErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The specified service does not support service-specific credentials.</p>
     ServiceNotSupportedException(crate::error::ServiceNotSupportedException),
@@ -2619,8 +2490,6 @@ impl CreateServiceSpecificCredentialError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2691,23 +2560,17 @@ pub struct CreateUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateUserErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2755,8 +2618,6 @@ impl CreateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2835,20 +2696,15 @@ pub struct CreateVirtualMFADeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVirtualMFADeviceErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2897,8 +2753,6 @@ impl CreateVirtualMFADeviceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2983,19 +2837,13 @@ pub struct DeactivateMFADeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeactivateMFADeviceErrorKind {
-    /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable,
-    /// such as a user name that was deleted and then recreated. The error indicates that the request
-    /// is likely to succeed if you try again after waiting several minutes. The error message
-    /// describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity.</p>
     EntityTemporarilyUnmodifiableException(crate::error::EntityTemporarilyUnmodifiableException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3043,8 +2891,6 @@ impl DeactivateMFADeviceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3121,14 +2967,11 @@ pub struct DeleteAccessKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccessKeyErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3173,8 +3016,6 @@ impl DeleteAccessKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3241,14 +3082,11 @@ pub struct DeleteAccountAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccountAliasErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3293,8 +3131,6 @@ impl DeleteAccountAliasError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3361,14 +3197,11 @@ pub struct DeleteAccountPasswordPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAccountPasswordPolicyErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3413,8 +3246,6 @@ impl DeleteAccountPasswordPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3481,17 +3312,13 @@ pub struct DeleteGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGroupErrorKind {
-    /// <p>The request was rejected because it attempted to delete a resource that has attached
-    /// subordinate entities. The error message describes these entities.</p>
+    /// <p>The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3537,8 +3364,6 @@ impl DeleteGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3601,14 +3426,11 @@ pub struct DeleteGroupPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGroupPolicyErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3653,8 +3475,6 @@ impl DeleteGroupPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3721,17 +3541,13 @@ pub struct DeleteInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteInstanceProfileErrorKind {
-    /// <p>The request was rejected because it attempted to delete a resource that has attached
-    /// subordinate entities. The error message describes these entities.</p>
+    /// <p>The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3777,8 +3593,6 @@ impl DeleteInstanceProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3853,19 +3667,13 @@ pub struct DeleteLoginProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLoginProfileErrorKind {
-    /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable,
-    /// such as a user name that was deleted and then recreated. The error indicates that the request
-    /// is likely to succeed if you try again after waiting several minutes. The error message
-    /// describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity.</p>
     EntityTemporarilyUnmodifiableException(crate::error::EntityTemporarilyUnmodifiableException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3913,8 +3721,6 @@ impl DeleteLoginProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3991,14 +3797,11 @@ pub struct DeleteOpenIDConnectProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteOpenIDConnectProviderErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4043,8 +3846,6 @@ impl DeleteOpenIDConnectProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4111,20 +3912,15 @@ pub struct DeletePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePolicyErrorKind {
-    /// <p>The request was rejected because it attempted to delete a resource that has attached
-    /// subordinate entities. The error message describes these entities.</p>
+    /// <p>The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4171,8 +3967,6 @@ impl DeletePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4246,20 +4040,15 @@ pub struct DeletePolicyVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePolicyVersionErrorKind {
-    /// <p>The request was rejected because it attempted to delete a resource that has attached
-    /// subordinate entities. The error message describes these entities.</p>
+    /// <p>The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4306,8 +4095,6 @@ impl DeletePolicyVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4390,25 +4177,17 @@ pub struct DeleteRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRoleErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because it attempted to delete a resource that has attached
-    /// subordinate entities. The error message describes these entities.</p>
+    /// <p>The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>The request was rejected because only the service that depends on the service-linked role
-    /// can modify or delete the role on your behalf. The error message includes the name of the
-    /// service that depends on this service-linked role. You must request the change through that
-    /// service.</p>
+    /// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4456,8 +4235,6 @@ impl DeleteRoleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4536,16 +4313,11 @@ pub struct DeleteRolePermissionsBoundaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRolePermissionsBoundaryErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>The request was rejected because only the service that depends on the service-linked role
-    /// can modify or delete the role on your behalf. The error message includes the name of the
-    /// service that depends on this service-linked role. You must request the change through that
-    /// service.</p>
+    /// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4597,8 +4369,6 @@ impl DeleteRolePermissionsBoundaryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4667,19 +4437,13 @@ pub struct DeleteRolePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRolePolicyErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>The request was rejected because only the service that depends on the service-linked role
-    /// can modify or delete the role on your behalf. The error message includes the name of the
-    /// service that depends on this service-linked role. You must request the change through that
-    /// service.</p>
+    /// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4725,8 +4489,6 @@ impl DeleteRolePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4801,17 +4563,13 @@ pub struct DeleteSAMLProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSAMLProviderErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4857,8 +4615,6 @@ impl DeleteSAMLProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4933,17 +4689,13 @@ pub struct DeleteServerCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteServerCertificateErrorKind {
-    /// <p>The request was rejected because it attempted to delete a resource that has attached
-    /// subordinate entities. The error message describes these entities.</p>
+    /// <p>The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4989,8 +4741,6 @@ impl DeleteServerCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5065,14 +4815,11 @@ pub struct DeleteServiceLinkedRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteServiceLinkedRoleErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5117,8 +4864,6 @@ impl DeleteServiceLinkedRoleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5185,8 +4930,7 @@ pub struct DeleteServiceSpecificCredentialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteServiceSpecificCredentialErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5234,8 +4978,6 @@ impl DeleteServiceSpecificCredentialError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5286,14 +5028,11 @@ pub struct DeleteSigningCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSigningCertificateErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5338,8 +5077,6 @@ impl DeleteSigningCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5406,8 +5143,7 @@ pub struct DeleteSSHPublicKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSSHPublicKeyErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5450,8 +5186,6 @@ impl DeleteSSHPublicKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5502,20 +5236,15 @@ pub struct DeleteUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUserErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because it attempted to delete a resource that has attached
-    /// subordinate entities. The error message describes these entities.</p>
+    /// <p>The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5562,8 +5291,6 @@ impl DeleteUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5634,11 +5361,9 @@ pub struct DeleteUserPermissionsBoundaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUserPermissionsBoundaryErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5687,8 +5412,6 @@ impl DeleteUserPermissionsBoundaryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5747,14 +5470,11 @@ pub struct DeleteUserPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUserPolicyErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5799,8 +5519,6 @@ impl DeleteUserPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5867,17 +5585,13 @@ pub struct DeleteVirtualMFADeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVirtualMFADeviceErrorKind {
-    /// <p>The request was rejected because it attempted to delete a resource that has attached
-    /// subordinate entities. The error message describes these entities.</p>
+    /// <p>The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5923,8 +5637,6 @@ impl DeleteVirtualMFADeviceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5999,17 +5711,13 @@ pub struct DetachGroupPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachGroupPolicyErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6055,8 +5763,6 @@ impl DetachGroupPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6131,22 +5837,15 @@ pub struct DetachRolePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachRolePolicyErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>The request was rejected because only the service that depends on the service-linked role
-    /// can modify or delete the role on your behalf. The error message includes the name of the
-    /// service that depends on this service-linked role. You must request the change through that
-    /// service.</p>
+    /// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6193,8 +5892,6 @@ impl DetachRolePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6277,17 +5974,13 @@ pub struct DetachUserPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachUserPolicyErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6333,8 +6026,6 @@ impl DetachUserPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6409,25 +6100,17 @@ pub struct EnableMFADeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableMFADeviceErrorKind {
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable,
-    /// such as a user name that was deleted and then recreated. The error indicates that the request
-    /// is likely to succeed if you try again after waiting several minutes. The error message
-    /// describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity.</p>
     EntityTemporarilyUnmodifiableException(crate::error::EntityTemporarilyUnmodifiableException),
-    /// <p>The request was rejected because the authentication code was not recognized. The error
-    /// message describes the specific error.</p>
+    /// <p>The request was rejected because the authentication code was not recognized. The error message describes the specific error.</p>
     InvalidAuthenticationCodeException(crate::error::InvalidAuthenticationCodeException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6477,8 +6160,6 @@ impl EnableMFADeviceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6571,11 +6252,9 @@ pub struct GenerateCredentialReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateCredentialReportErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6619,8 +6298,6 @@ impl GenerateCredentialReportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6679,8 +6356,7 @@ pub struct GenerateOrganizationsAccessReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateOrganizationsAccessReportErrorKind {
-    /// <p>The request failed because the maximum number of concurrent requests for this account are
-    /// already running.</p>
+    /// <p>The request failed because the maximum number of concurrent requests for this account are already running.</p>
     ReportGenerationLimitExceededException(crate::error::ReportGenerationLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6728,8 +6404,6 @@ impl GenerateOrganizationsAccessReportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6782,11 +6456,9 @@ pub struct GenerateServiceLastAccessedDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateServiceLastAccessedDetailsErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6837,8 +6509,6 @@ impl GenerateServiceLastAccessedDetailsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6901,8 +6571,7 @@ pub struct GetAccessKeyLastUsedError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccessKeyLastUsedErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6945,8 +6614,6 @@ impl GetAccessKeyLastUsedError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6997,8 +6664,7 @@ pub struct GetAccountAuthorizationDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountAuthorizationDetailsErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7046,8 +6712,6 @@ impl GetAccountAuthorizationDetailsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7100,11 +6764,9 @@ pub struct GetAccountPasswordPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountPasswordPolicyErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7148,8 +6810,6 @@ impl GetAccountPasswordPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7208,8 +6868,7 @@ pub struct GetAccountSummaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountSummaryErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7252,8 +6911,6 @@ impl GetAccountSummaryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7304,8 +6961,7 @@ pub struct GetContextKeysForCustomPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContextKeysForCustomPolicyErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7351,8 +7007,6 @@ impl GetContextKeysForCustomPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7403,11 +7057,9 @@ pub struct GetContextKeysForPrincipalPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetContextKeysForPrincipalPolicyErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7458,8 +7110,6 @@ impl GetContextKeysForPrincipalPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7522,18 +7172,13 @@ pub struct GetCredentialReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCredentialReportErrorKind {
-    /// <p>The request was rejected because the most recent credential report has expired. To
-    /// generate a new credential report, use <a>GenerateCredentialReport</a>. For more
-    /// information about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in the
-    /// <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the most recent credential report has expired. To generate a new credential report, use <code>GenerateCredentialReport</code>. For more information about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in the <i>IAM User Guide</i>.</p>
     CredentialReportExpiredException(crate::error::CredentialReportExpiredException),
-    /// <p>The request was rejected because the credential report does not exist. To generate a
-    /// credential report, use <a>GenerateCredentialReport</a>.</p>
+    /// <p>The request was rejected because the credential report does not exist. To generate a credential report, use <code>GenerateCredentialReport</code>.</p>
     CredentialReportNotPresentException(crate::error::CredentialReportNotPresentException),
     /// <p>The request was rejected because the credential report is still being generated.</p>
     CredentialReportNotReadyException(crate::error::CredentialReportNotReadyException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7583,8 +7228,6 @@ impl GetCredentialReportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7661,11 +7304,9 @@ pub struct GetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetGroupErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7709,8 +7350,6 @@ impl GetGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7763,11 +7402,9 @@ pub struct GetGroupPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetGroupPolicyErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7811,8 +7448,6 @@ impl GetGroupPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7871,11 +7506,9 @@ pub struct GetInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInstanceProfileErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7919,8 +7552,6 @@ impl GetInstanceProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7979,11 +7610,9 @@ pub struct GetLoginProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLoginProfileErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8027,8 +7656,6 @@ impl GetLoginProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8087,14 +7714,11 @@ pub struct GetOpenIDConnectProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOpenIDConnectProviderErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8139,8 +7763,6 @@ impl GetOpenIDConnectProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8207,8 +7829,7 @@ pub struct GetOrganizationsAccessReportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOrganizationsAccessReportErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8251,8 +7872,6 @@ impl GetOrganizationsAccessReportError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8303,14 +7922,11 @@ pub struct GetPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPolicyErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8355,8 +7971,6 @@ impl GetPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8414,14 +8028,11 @@ pub struct GetPolicyVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPolicyVersionErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8466,8 +8077,6 @@ impl GetPolicyVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8534,11 +8143,9 @@ pub struct GetRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRoleErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8582,8 +8189,6 @@ impl GetRoleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8636,11 +8241,9 @@ pub struct GetRolePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRolePolicyErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8684,8 +8287,6 @@ impl GetRolePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8741,14 +8342,11 @@ pub struct GetSAMLProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSAMLProviderErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8793,8 +8391,6 @@ impl GetSAMLProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8861,11 +8457,9 @@ pub struct GetServerCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetServerCertificateErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8909,8 +8503,6 @@ impl GetServerCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8969,11 +8561,9 @@ pub struct GetServiceLastAccessedDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetServiceLastAccessedDetailsErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9020,8 +8610,6 @@ impl GetServiceLastAccessedDetailsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9080,11 +8668,9 @@ pub struct GetServiceLastAccessedDetailsWithEntitiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetServiceLastAccessedDetailsWithEntitiesErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9135,8 +8721,6 @@ impl GetServiceLastAccessedDetailsWithEntitiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9201,14 +8785,11 @@ pub struct GetServiceLinkedRoleDeletionStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetServiceLinkedRoleDeletionStatusErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9262,8 +8843,6 @@ impl GetServiceLinkedRoleDeletionStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9336,11 +8915,9 @@ pub struct GetSSHPublicKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSSHPublicKeyErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request was rejected because the public key encoding format is unsupported or
-    /// unrecognized.</p>
+    /// <p>The request was rejected because the public key encoding format is unsupported or unrecognized.</p>
     UnrecognizedPublicKeyEncodingException(crate::error::UnrecognizedPublicKeyEncodingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9386,8 +8963,6 @@ impl GetSSHPublicKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9448,11 +9023,9 @@ pub struct GetUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetUserErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9496,8 +9069,6 @@ impl GetUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9550,11 +9121,9 @@ pub struct GetUserPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetUserPolicyErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9598,8 +9167,6 @@ impl GetUserPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9655,11 +9222,9 @@ pub struct ListAccessKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAccessKeysErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9703,8 +9268,6 @@ impl ListAccessKeysError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9763,8 +9326,7 @@ pub struct ListAccountAliasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAccountAliasesErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9807,8 +9369,6 @@ impl ListAccountAliasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9859,14 +9419,11 @@ pub struct ListAttachedGroupPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAttachedGroupPoliciesErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9911,8 +9468,6 @@ impl ListAttachedGroupPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9979,14 +9534,11 @@ pub struct ListAttachedRolePoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAttachedRolePoliciesErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10031,8 +9583,6 @@ impl ListAttachedRolePoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10099,14 +9649,11 @@ pub struct ListAttachedUserPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAttachedUserPoliciesErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10151,8 +9698,6 @@ impl ListAttachedUserPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10219,14 +9764,11 @@ pub struct ListEntitiesForPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEntitiesForPolicyErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10271,8 +9813,6 @@ impl ListEntitiesForPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10339,11 +9879,9 @@ pub struct ListGroupPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGroupPoliciesErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10387,8 +9925,6 @@ impl ListGroupPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10447,8 +9983,7 @@ pub struct ListGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGroupsErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10491,8 +10026,6 @@ impl ListGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10540,11 +10073,9 @@ pub struct ListGroupsForUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGroupsForUserErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10588,8 +10119,6 @@ impl ListGroupsForUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10648,8 +10177,7 @@ pub struct ListInstanceProfilesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInstanceProfilesErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10692,8 +10220,6 @@ impl ListInstanceProfilesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10744,11 +10270,9 @@ pub struct ListInstanceProfilesForRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInstanceProfilesForRoleErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10792,8 +10316,6 @@ impl ListInstanceProfilesForRoleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10852,11 +10374,9 @@ pub struct ListInstanceProfileTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInstanceProfileTagsErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10900,8 +10420,6 @@ impl ListInstanceProfileTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10960,11 +10478,9 @@ pub struct ListMFADevicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMFADevicesErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11008,8 +10524,6 @@ impl ListMFADevicesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11068,14 +10582,11 @@ pub struct ListMFADeviceTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMFADeviceTagsErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11120,8 +10631,6 @@ impl ListMFADeviceTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11188,8 +10697,7 @@ pub struct ListOpenIDConnectProvidersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListOpenIDConnectProvidersErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11232,8 +10740,6 @@ impl ListOpenIDConnectProvidersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11284,14 +10790,11 @@ pub struct ListOpenIDConnectProviderTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListOpenIDConnectProviderTagsErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11341,8 +10844,6 @@ impl ListOpenIDConnectProviderTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11409,8 +10910,7 @@ pub struct ListPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPoliciesErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11453,8 +10953,6 @@ impl ListPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11505,11 +11003,9 @@ pub struct ListPoliciesGrantingServiceAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPoliciesGrantingServiceAccessErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11560,8 +11056,6 @@ impl ListPoliciesGrantingServiceAccessError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11624,14 +11118,11 @@ pub struct ListPolicyTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPolicyTagsErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11676,8 +11167,6 @@ impl ListPolicyTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11744,14 +11233,11 @@ pub struct ListPolicyVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPolicyVersionsErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11796,8 +11282,6 @@ impl ListPolicyVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11864,11 +11348,9 @@ pub struct ListRolePoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRolePoliciesErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11912,8 +11394,6 @@ impl ListRolePoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11972,8 +11452,7 @@ pub struct ListRolesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRolesErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12016,8 +11495,6 @@ impl ListRolesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12065,11 +11542,9 @@ pub struct ListRoleTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRoleTagsErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12113,8 +11588,6 @@ impl ListRoleTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12170,8 +11643,7 @@ pub struct ListSAMLProvidersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSAMLProvidersErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12214,8 +11686,6 @@ impl ListSAMLProvidersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12266,14 +11736,11 @@ pub struct ListSAMLProviderTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSAMLProviderTagsErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12318,8 +11785,6 @@ impl ListSAMLProviderTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12386,8 +11851,7 @@ pub struct ListServerCertificatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListServerCertificatesErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12430,8 +11894,6 @@ impl ListServerCertificatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12482,11 +11944,9 @@ pub struct ListServerCertificateTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListServerCertificateTagsErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12530,8 +11990,6 @@ impl ListServerCertificateTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12590,8 +12048,7 @@ pub struct ListServiceSpecificCredentialsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListServiceSpecificCredentialsErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The specified service does not support service-specific credentials.</p>
     ServiceNotSupportedException(crate::error::ServiceNotSupportedException),
@@ -12642,8 +12099,6 @@ impl ListServiceSpecificCredentialsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12704,11 +12159,9 @@ pub struct ListSigningCertificatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSigningCertificatesErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12752,8 +12205,6 @@ impl ListSigningCertificatesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12812,8 +12263,7 @@ pub struct ListSSHPublicKeysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSSHPublicKeysErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12856,8 +12306,6 @@ impl ListSSHPublicKeysError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -12908,11 +12356,9 @@ pub struct ListUserPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListUserPoliciesErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12956,8 +12402,6 @@ impl ListUserPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13016,8 +12460,7 @@ pub struct ListUsersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListUsersErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13060,8 +12503,6 @@ impl ListUsersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13109,11 +12550,9 @@ pub struct ListUserTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListUserTagsErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13157,8 +12596,6 @@ impl ListUserTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13254,8 +12691,6 @@ impl ListVirtualMFADevicesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13298,17 +12733,13 @@ pub struct PutGroupPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutGroupPolicyErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the policy document was malformed. The error message
-    /// describes the specific error.</p>
+    /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13354,8 +12785,6 @@ impl PutGroupPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13430,22 +12859,15 @@ pub struct PutRolePermissionsBoundaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutRolePermissionsBoundaryErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request failed because Amazon Web Services service role policies can only be attached to the
-    /// service-linked role for that service.</p>
+    /// <p>The request failed because Amazon Web Services service role policies can only be attached to the service-linked role for that service.</p>
     PolicyNotAttachableException(crate::error::PolicyNotAttachableException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>The request was rejected because only the service that depends on the service-linked role
-    /// can modify or delete the role on your behalf. The error message includes the name of the
-    /// service that depends on this service-linked role. You must request the change through that
-    /// service.</p>
+    /// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13496,8 +12918,6 @@ impl PutRolePermissionsBoundaryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13584,22 +13004,15 @@ pub struct PutRolePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutRolePolicyErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the policy document was malformed. The error message
-    /// describes the specific error.</p>
+    /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>The request was rejected because only the service that depends on the service-linked role
-    /// can modify or delete the role on your behalf. The error message includes the name of the
-    /// service that depends on this service-linked role. You must request the change through that
-    /// service.</p>
+    /// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13646,8 +13059,6 @@ impl PutRolePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13727,17 +13138,13 @@ pub struct PutUserPermissionsBoundaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutUserPermissionsBoundaryErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request failed because Amazon Web Services service role policies can only be attached to the
-    /// service-linked role for that service.</p>
+    /// <p>The request failed because Amazon Web Services service role policies can only be attached to the service-linked role for that service.</p>
     PolicyNotAttachableException(crate::error::PolicyNotAttachableException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13785,8 +13192,6 @@ impl PutUserPermissionsBoundaryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13863,17 +13268,13 @@ pub struct PutUserPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutUserPolicyErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the policy document was malformed. The error message
-    /// describes the specific error.</p>
+    /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13919,8 +13320,6 @@ impl PutUserPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -13992,14 +13391,11 @@ pub struct RemoveClientIDFromOpenIDConnectProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveClientIDFromOpenIDConnectProviderErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14053,8 +13449,6 @@ impl RemoveClientIDFromOpenIDConnectProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14129,19 +13523,13 @@ pub struct RemoveRoleFromInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveRoleFromInstanceProfileErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>The request was rejected because only the service that depends on the service-linked role
-    /// can modify or delete the role on your behalf. The error message includes the name of the
-    /// service that depends on this service-linked role. You must request the change through that
-    /// service.</p>
+    /// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14194,8 +13582,6 @@ impl RemoveRoleFromInstanceProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14272,14 +13658,11 @@ pub struct RemoveUserFromGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveUserFromGroupErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14324,8 +13707,6 @@ impl RemoveUserFromGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14392,8 +13773,7 @@ pub struct ResetServiceSpecificCredentialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetServiceSpecificCredentialErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14439,8 +13819,6 @@ impl ResetServiceSpecificCredentialError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14491,17 +13869,13 @@ pub struct ResyncMFADeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResyncMFADeviceErrorKind {
-    /// <p>The request was rejected because the authentication code was not recognized. The error
-    /// message describes the specific error.</p>
+    /// <p>The request was rejected because the authentication code was not recognized. The error message describes the specific error.</p>
     InvalidAuthenticationCodeException(crate::error::InvalidAuthenticationCodeException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14547,8 +13921,6 @@ impl ResyncMFADeviceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14623,17 +13995,13 @@ pub struct SetDefaultPolicyVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetDefaultPolicyVersionErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14679,8 +14047,6 @@ impl SetDefaultPolicyVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14755,8 +14121,7 @@ pub struct SetSecurityTokenServicePreferencesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetSecurityTokenServicePreferencesErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14804,8 +14169,6 @@ impl SetSecurityTokenServicePreferencesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14858,11 +14221,9 @@ pub struct SimulateCustomPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SimulateCustomPolicyErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request failed because a provided policy could not be successfully evaluated. An
-    /// additional detailed message indicates the source of the failure.</p>
+    /// <p>The request failed because a provided policy could not be successfully evaluated. An additional detailed message indicates the source of the failure.</p>
     PolicyEvaluationException(crate::error::PolicyEvaluationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -14906,8 +14267,6 @@ impl SimulateCustomPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -14966,14 +14325,11 @@ pub struct SimulatePrincipalPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SimulatePrincipalPolicyErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request failed because a provided policy could not be successfully evaluated. An
-    /// additional detailed message indicates the source of the failure.</p>
+    /// <p>The request failed because a provided policy could not be successfully evaluated. An additional detailed message indicates the source of the failure.</p>
     PolicyEvaluationException(crate::error::PolicyEvaluationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15018,8 +14374,6 @@ impl SimulatePrincipalPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15086,20 +14440,15 @@ pub struct TagInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagInstanceProfileErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15146,8 +14495,6 @@ impl TagInstanceProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15230,20 +14577,15 @@ pub struct TagMFADeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagMFADeviceErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15290,8 +14632,6 @@ impl TagMFADeviceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15365,20 +14705,15 @@ pub struct TagOpenIDConnectProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagOpenIDConnectProviderErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15427,8 +14762,6 @@ impl TagOpenIDConnectProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15513,20 +14846,15 @@ pub struct TagPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagPolicyErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15573,8 +14901,6 @@ impl TagPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15645,20 +14971,15 @@ pub struct TagRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagRoleErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15705,8 +15026,6 @@ impl TagRoleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15777,20 +15096,15 @@ pub struct TagSAMLProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagSAMLProviderErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15837,8 +15151,6 @@ impl TagSAMLProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -15921,20 +15233,15 @@ pub struct TagServerCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagServerCertificateErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -15981,8 +15288,6 @@ impl TagServerCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16065,20 +15370,15 @@ pub struct TagUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagUserErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16125,8 +15425,6 @@ impl TagUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16197,17 +15495,13 @@ pub struct UntagInstanceProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagInstanceProfileErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16253,8 +15547,6 @@ impl UntagInstanceProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16329,17 +15621,13 @@ pub struct UntagMFADeviceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagMFADeviceErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16385,8 +15673,6 @@ impl UntagMFADeviceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16461,17 +15747,13 @@ pub struct UntagOpenIDConnectProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagOpenIDConnectProviderErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16519,8 +15801,6 @@ impl UntagOpenIDConnectProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16597,17 +15877,13 @@ pub struct UntagPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagPolicyErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16653,8 +15929,6 @@ impl UntagPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16720,14 +15994,11 @@ pub struct UntagRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagRoleErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16772,8 +16043,6 @@ impl UntagRoleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16834,17 +16103,13 @@ pub struct UntagSAMLProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagSAMLProviderErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -16890,8 +16155,6 @@ impl UntagSAMLProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -16966,17 +16229,13 @@ pub struct UntagServerCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagServerCertificateErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17024,8 +16283,6 @@ impl UntagServerCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17102,14 +16359,11 @@ pub struct UntagUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagUserErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17154,8 +16408,6 @@ impl UntagUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17216,14 +16468,11 @@ pub struct UpdateAccessKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAccessKeyErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17268,8 +16517,6 @@ impl UpdateAccessKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17336,17 +16583,13 @@ pub struct UpdateAccountPasswordPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAccountPasswordPolicyErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the policy document was malformed. The error message
-    /// describes the specific error.</p>
+    /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17394,8 +16637,6 @@ impl UpdateAccountPasswordPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17472,22 +16713,15 @@ pub struct UpdateAssumeRolePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAssumeRolePolicyErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the policy document was malformed. The error message
-    /// describes the specific error.</p>
+    /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>The request was rejected because only the service that depends on the service-linked role
-    /// can modify or delete the role on your behalf. The error message includes the name of the
-    /// service that depends on this service-linked role. You must request the change through that
-    /// service.</p>
+    /// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17536,8 +16770,6 @@ impl UpdateAssumeRolePolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17622,17 +16854,13 @@ pub struct UpdateGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGroupErrorKind {
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17678,8 +16906,6 @@ impl UpdateGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17745,22 +16971,15 @@ pub struct UpdateLoginProfileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateLoginProfileErrorKind {
-    /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable,
-    /// such as a user name that was deleted and then recreated. The error indicates that the request
-    /// is likely to succeed if you try again after waiting several minutes. The error message
-    /// describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity.</p>
     EntityTemporarilyUnmodifiableException(crate::error::EntityTemporarilyUnmodifiableException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request was rejected because the provided password did not meet the requirements
-    /// imposed by the account password policy.</p>
+    /// <p>The request was rejected because the provided password did not meet the requirements imposed by the account password policy.</p>
     PasswordPolicyViolationException(crate::error::PasswordPolicyViolationException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17809,8 +17028,6 @@ impl UpdateLoginProfileError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -17895,14 +17112,11 @@ pub struct UpdateOpenIDConnectProviderThumbprintError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateOpenIDConnectProviderThumbprintErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -17956,8 +17170,6 @@ impl UpdateOpenIDConnectProviderThumbprintError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18032,16 +17244,11 @@ pub struct UpdateRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRoleErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>The request was rejected because only the service that depends on the service-linked role
-    /// can modify or delete the role on your behalf. The error message includes the name of the
-    /// service that depends on this service-linked role. You must request the change through that
-    /// service.</p>
+    /// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18086,8 +17293,6 @@ impl UpdateRoleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18148,16 +17353,11 @@ pub struct UpdateRoleDescriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRoleDescriptionErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    /// <p>The request was rejected because only the service that depends on the service-linked role
-    /// can modify or delete the role on your behalf. The error message includes the name of the
-    /// service that depends on this service-linked role. You must request the change through that
-    /// service.</p>
+    /// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
     UnmodifiableEntityException(crate::error::UnmodifiableEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18202,8 +17402,6 @@ impl UpdateRoleDescriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18270,17 +17468,13 @@ pub struct UpdateSAMLProviderError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSAMLProviderErrorKind {
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18326,8 +17520,6 @@ impl UpdateSAMLProviderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18402,17 +17594,13 @@ pub struct UpdateServerCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateServerCertificateErrorKind {
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18458,8 +17646,6 @@ impl UpdateServerCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18534,8 +17720,7 @@ pub struct UpdateServiceSpecificCredentialError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateServiceSpecificCredentialErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18583,8 +17768,6 @@ impl UpdateServiceSpecificCredentialError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18635,14 +17818,11 @@ pub struct UpdateSigningCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSigningCertificateErrorKind {
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18687,8 +17867,6 @@ impl UpdateSigningCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18755,8 +17933,7 @@ pub struct UpdateSSHPublicKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSSHPublicKeyErrorKind {
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18799,8 +17976,6 @@ impl UpdateSSHPublicKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -18851,25 +18026,17 @@ pub struct UpdateUserError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateUserErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable,
-    /// such as a user name that was deleted and then recreated. The error indicates that the request
-    /// is likely to succeed if you try again after waiting several minutes. The error message
-    /// describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity.</p>
     EntityTemporarilyUnmodifiableException(crate::error::EntityTemporarilyUnmodifiableException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -18917,8 +18084,6 @@ impl UpdateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19000,26 +18165,19 @@ pub struct UploadServerCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UploadServerCertificateErrorKind {
-    /// <p>The request was rejected because multiple requests to change this object were submitted
-    /// simultaneously. Wait a few minutes and submit your request again.</p>
+    /// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because the public key certificate and the private key do not
-    /// match.</p>
+    /// <p>The request was rejected because the public key certificate and the private key do not match.</p>
     KeyPairMismatchException(crate::error::KeyPairMismatchException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the certificate was malformed or expired. The error
-    /// message describes the specific error.</p>
+    /// <p>The request was rejected because the certificate was malformed or expired. The error message describes the specific error.</p>
     MalformedCertificateException(crate::error::MalformedCertificateException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -19072,8 +18230,6 @@ impl UploadServerCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19174,25 +18330,19 @@ pub struct UploadSigningCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UploadSigningCertificateErrorKind {
-    /// <p>The request was rejected because the same certificate is associated with an IAM user in
-    /// the account.</p>
+    /// <p>The request was rejected because the same certificate is associated with an IAM user in the account.</p>
     DuplicateCertificateException(crate::error::DuplicateCertificateException),
-    /// <p>The request was rejected because it attempted to create a resource that already
-    /// exists.</p>
+    /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
     /// <p>The request was rejected because the certificate is invalid.</p>
     InvalidCertificateException(crate::error::InvalidCertificateException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because the certificate was malformed or expired. The error
-    /// message describes the specific error.</p>
+    /// <p>The request was rejected because the certificate was malformed or expired. The error message describes the specific error.</p>
     MalformedCertificateException(crate::error::MalformedCertificateException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -19247,8 +18397,6 @@ impl UploadSigningCertificateError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19351,19 +18499,15 @@ pub struct UploadSSHPublicKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UploadSSHPublicKeyErrorKind {
-    /// <p>The request was rejected because the SSH public key is already associated with the
-    /// specified IAM user.</p>
+    /// <p>The request was rejected because the SSH public key is already associated with the specified IAM user.</p>
     DuplicateSshPublicKeyException(crate::error::DuplicateSshPublicKeyException),
     /// <p>The request was rejected because the public key is malformed or otherwise invalid.</p>
     InvalidPublicKeyException(crate::error::InvalidPublicKeyException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-    /// account limits. The error message describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced a resource entity that does not exist. The
-    /// error message describes the resource.</p>
+    /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request was rejected because the public key encoding format is unsupported or
-    /// unrecognized.</p>
+    /// <p>The request was rejected because the public key encoding format is unsupported or unrecognized.</p>
     UnrecognizedPublicKeyEncodingException(crate::error::UnrecognizedPublicKeyEncodingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -19412,8 +18556,6 @@ impl UploadSSHPublicKeyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -19485,8 +18627,7 @@ impl std::error::Error for UploadSSHPublicKeyError {
     }
 }
 
-/// <p>The request was rejected because the public key encoding format is unsupported or
-/// unrecognized.</p>
+/// <p>The request was rejected because the public key encoding format is unsupported or unrecognized.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnrecognizedPublicKeyEncodingException {
@@ -19550,8 +18691,7 @@ impl UnrecognizedPublicKeyEncodingException {
     }
 }
 
-/// <p>The request was rejected because it referenced a resource entity that does not exist. The
-/// error message describes the resource.</p>
+/// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchEntityException {
@@ -19615,8 +18755,7 @@ impl NoSuchEntityException {
     }
 }
 
-/// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
-/// account limits. The error message describes the limit exceeded.</p>
+/// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -19744,8 +18883,7 @@ impl InvalidPublicKeyException {
     }
 }
 
-/// <p>The request was rejected because the SSH public key is already associated with the
-/// specified IAM user.</p>
+/// <p>The request was rejected because the SSH public key is already associated with the specified IAM user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateSshPublicKeyException {
@@ -19812,8 +18950,7 @@ impl DuplicateSshPublicKeyException {
     }
 }
 
-/// <p>The request processing has failed because of an unknown error, exception or
-/// failure.</p>
+/// <p>The request processing has failed because of an unknown error, exception or failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceFailureException {
@@ -19877,8 +19014,7 @@ impl ServiceFailureException {
     }
 }
 
-/// <p>The request was rejected because the certificate was malformed or expired. The error
-/// message describes the specific error.</p>
+/// <p>The request was rejected because the certificate was malformed or expired. The error message describes the specific error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalformedCertificateException {
@@ -20006,8 +19142,7 @@ impl InvalidCertificateException {
     }
 }
 
-/// <p>The request was rejected because it attempted to create a resource that already
-/// exists.</p>
+/// <p>The request was rejected because it attempted to create a resource that already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityAlreadyExistsException {
@@ -20071,8 +19206,7 @@ impl EntityAlreadyExistsException {
     }
 }
 
-/// <p>The request was rejected because the same certificate is associated with an IAM user in
-/// the account.</p>
+/// <p>The request was rejected because the same certificate is associated with an IAM user in the account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateCertificateException {
@@ -20136,8 +19270,7 @@ impl DuplicateCertificateException {
     }
 }
 
-/// <p>The request was rejected because the public key certificate and the private key do not
-/// match.</p>
+/// <p>The request was rejected because the public key certificate and the private key do not match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyPairMismatchException {
@@ -20201,8 +19334,7 @@ impl KeyPairMismatchException {
     }
 }
 
-/// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-/// input parameter.</p>
+/// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
@@ -20266,8 +19398,7 @@ impl InvalidInputException {
     }
 }
 
-/// <p>The request was rejected because multiple requests to change this object were submitted
-/// simultaneously. Wait a few minutes and submit your request again.</p>
+/// <p>The request was rejected because multiple requests to change this object were submitted simultaneously. Wait a few minutes and submit your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
@@ -20331,10 +19462,7 @@ impl ConcurrentModificationException {
     }
 }
 
-/// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable,
-/// such as a user name that was deleted and then recreated. The error indicates that the request
-/// is likely to succeed if you try again after waiting several minutes. The error message
-/// describes the entity.</p>
+/// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityTemporarilyUnmodifiableException {
@@ -20398,10 +19526,7 @@ impl EntityTemporarilyUnmodifiableException {
     }
 }
 
-/// <p>The request was rejected because only the service that depends on the service-linked role
-/// can modify or delete the role on your behalf. The error message includes the name of the
-/// service that depends on this service-linked role. You must request the change through that
-/// service.</p>
+/// <p>The request was rejected because only the service that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the name of the service that depends on this service-linked role. You must request the change through that service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnmodifiableEntityException {
@@ -20465,8 +19590,7 @@ impl UnmodifiableEntityException {
     }
 }
 
-/// <p>The request was rejected because the provided password did not meet the requirements
-/// imposed by the account password policy.</p>
+/// <p>The request was rejected because the provided password did not meet the requirements imposed by the account password policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PasswordPolicyViolationException {
@@ -20530,8 +19654,7 @@ impl PasswordPolicyViolationException {
     }
 }
 
-/// <p>The request was rejected because the policy document was malformed. The error message
-/// describes the specific error.</p>
+/// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalformedPolicyDocumentException {
@@ -20595,8 +19718,7 @@ impl MalformedPolicyDocumentException {
     }
 }
 
-/// <p>The request failed because a provided policy could not be successfully evaluated. An
-/// additional detailed message indicates the source of the failure.</p>
+/// <p>The request failed because a provided policy could not be successfully evaluated. An additional detailed message indicates the source of the failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyEvaluationException {
@@ -20660,8 +19782,7 @@ impl PolicyEvaluationException {
     }
 }
 
-/// <p>The request was rejected because the authentication code was not recognized. The error
-/// message describes the specific error.</p>
+/// <p>The request was rejected because the authentication code was not recognized. The error message describes the specific error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAuthenticationCodeException {
@@ -20725,8 +19846,7 @@ impl InvalidAuthenticationCodeException {
     }
 }
 
-/// <p>The request failed because Amazon Web Services service role policies can only be attached to the
-/// service-linked role for that service.</p>
+/// <p>The request failed because Amazon Web Services service role policies can only be attached to the service-linked role for that service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyNotAttachableException {
@@ -20918,8 +20038,7 @@ impl CredentialReportNotReadyException {
     }
 }
 
-/// <p>The request was rejected because the credential report does not exist. To generate a
-/// credential report, use <a>GenerateCredentialReport</a>.</p>
+/// <p>The request was rejected because the credential report does not exist. To generate a credential report, use <code>GenerateCredentialReport</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CredentialReportNotPresentException {
@@ -20983,10 +20102,7 @@ impl CredentialReportNotPresentException {
     }
 }
 
-/// <p>The request was rejected because the most recent credential report has expired. To
-/// generate a new credential report, use <a>GenerateCredentialReport</a>. For more
-/// information about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in the
-/// <i>IAM User Guide</i>.</p>
+/// <p>The request was rejected because the most recent credential report has expired. To generate a new credential report, use <code>GenerateCredentialReport</code>. For more information about credential report expiration, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CredentialReportExpiredException {
@@ -21050,8 +20166,7 @@ impl CredentialReportExpiredException {
     }
 }
 
-/// <p>The request failed because the maximum number of concurrent requests for this account are
-/// already running.</p>
+/// <p>The request failed because the maximum number of concurrent requests for this account are already running.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReportGenerationLimitExceededException {
@@ -21115,8 +20230,7 @@ impl ReportGenerationLimitExceededException {
     }
 }
 
-/// <p>The request was rejected because it attempted to delete a resource that has attached
-/// subordinate entities. The error message describes these entities.</p>
+/// <p>The request was rejected because it attempted to delete a resource that has attached subordinate entities. The error message describes these entities.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConflictException {
@@ -21180,8 +20294,7 @@ impl DeleteConflictException {
     }
 }
 
-/// <p>The request was rejected because the type of user for the transaction was
-/// incorrect.</p>
+/// <p>The request was rejected because the type of user for the transaction was incorrect.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidUserTypeException {

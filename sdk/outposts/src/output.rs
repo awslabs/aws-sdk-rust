@@ -55,25 +55,17 @@ impl UpdateSiteRackPhysicalPropertiesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSiteAddressOutput {
-    /// <p>
-    /// The type of the address.
-    /// </p>
+    /// <p> The type of the address. </p>
     pub address_type: std::option::Option<crate::model::AddressType>,
-    /// <p>
-    /// Information about an address.
-    /// </p>
+    /// <p> Information about an address. </p>
     pub address: std::option::Option<crate::model::Address>,
 }
 impl UpdateSiteAddressOutput {
-    /// <p>
-    /// The type of the address.
-    /// </p>
+    /// <p> The type of the address. </p>
     pub fn address_type(&self) -> std::option::Option<&crate::model::AddressType> {
         self.address_type.as_ref()
     }
-    /// <p>
-    /// Information about an address.
-    /// </p>
+    /// <p> Information about an address. </p>
     pub fn address(&self) -> std::option::Option<&crate::model::Address> {
         self.address.as_ref()
     }
@@ -96,16 +88,12 @@ pub mod update_site_address_output {
         pub(crate) address: std::option::Option<crate::model::Address>,
     }
     impl Builder {
-        /// <p>
-        /// The type of the address.
-        /// </p>
+        /// <p> The type of the address. </p>
         pub fn address_type(mut self, input: crate::model::AddressType) -> Self {
             self.address_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of the address.
-        /// </p>
+        /// <p> The type of the address. </p>
         pub fn set_address_type(
             mut self,
             input: std::option::Option<crate::model::AddressType>,
@@ -113,16 +101,12 @@ pub mod update_site_address_output {
             self.address_type = input;
             self
         }
-        /// <p>
-        /// Information about an address.
-        /// </p>
+        /// <p> Information about an address. </p>
         pub fn address(mut self, input: crate::model::Address) -> Self {
             self.address = Some(input);
             self
         }
-        /// <p>
-        /// Information about an address.
-        /// </p>
+        /// <p> Information about an address. </p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.address = input;
             self
@@ -192,6 +176,60 @@ impl UpdateSiteOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSiteOutput`](crate::output::UpdateSiteOutput)
     pub fn builder() -> crate::output::update_site_output::Builder {
         crate::output::update_site_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateOutpostOutput {
+    /// <p>Information about an Outpost.</p>
+    pub outpost: std::option::Option<crate::model::Outpost>,
+}
+impl UpdateOutpostOutput {
+    /// <p>Information about an Outpost.</p>
+    pub fn outpost(&self) -> std::option::Option<&crate::model::Outpost> {
+        self.outpost.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateOutpostOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateOutpostOutput");
+        formatter.field("outpost", &self.outpost);
+        formatter.finish()
+    }
+}
+/// See [`UpdateOutpostOutput`](crate::output::UpdateOutpostOutput)
+pub mod update_outpost_output {
+    /// A builder for [`UpdateOutpostOutput`](crate::output::UpdateOutpostOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) outpost: std::option::Option<crate::model::Outpost>,
+    }
+    impl Builder {
+        /// <p>Information about an Outpost.</p>
+        pub fn outpost(mut self, input: crate::model::Outpost) -> Self {
+            self.outpost = Some(input);
+            self
+        }
+        /// <p>Information about an Outpost.</p>
+        pub fn set_outpost(mut self, input: std::option::Option<crate::model::Outpost>) -> Self {
+            self.outpost = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateOutpostOutput`](crate::output::UpdateOutpostOutput)
+        pub fn build(self) -> crate::output::UpdateOutpostOutput {
+            crate::output::UpdateOutpostOutput {
+                outpost: self.outpost,
+            }
+        }
+    }
+}
+impl UpdateOutpostOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateOutpostOutput`](crate::output::UpdateOutpostOutput)
+    pub fn builder() -> crate::output::update_outpost_output::Builder {
+        crate::output::update_outpost_output::Builder::default()
     }
 }
 
@@ -370,9 +408,9 @@ pub mod list_sites_output {
         /// To override the contents of this collection use [`set_sites`](Self::set_sites).
         ///
         /// <p>Information about the sites.</p>
-        pub fn sites(mut self, input: impl Into<crate::model::Site>) -> Self {
+        pub fn sites(mut self, input: crate::model::Site) -> Self {
             let mut v = self.sites.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sites = Some(v);
             self
         }
@@ -452,9 +490,9 @@ pub mod list_outposts_output {
         /// To override the contents of this collection use [`set_outposts`](Self::set_outposts).
         ///
         /// <p>Information about the Outposts.</p>
-        pub fn outposts(mut self, input: impl Into<crate::model::Outpost>) -> Self {
+        pub fn outposts(mut self, input: crate::model::Outpost) -> Self {
             let mut v = self.outposts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outposts = Some(v);
             self
         }
@@ -496,17 +534,13 @@ impl ListOutpostsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrdersOutput {
-    /// <p>
-    /// Information about the orders.
-    /// </p>
+    /// <p> Information about the orders. </p>
     pub orders: std::option::Option<std::vec::Vec<crate::model::OrderSummary>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrdersOutput {
-    /// <p>
-    /// Information about the orders.
-    /// </p>
+    /// <p> Information about the orders. </p>
     pub fn orders(&self) -> std::option::Option<&[crate::model::OrderSummary]> {
         self.orders.as_deref()
     }
@@ -537,18 +571,14 @@ pub mod list_orders_output {
         ///
         /// To override the contents of this collection use [`set_orders`](Self::set_orders).
         ///
-        /// <p>
-        /// Information about the orders.
-        /// </p>
-        pub fn orders(mut self, input: impl Into<crate::model::OrderSummary>) -> Self {
+        /// <p> Information about the orders. </p>
+        pub fn orders(mut self, input: crate::model::OrderSummary) -> Self {
             let mut v = self.orders.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.orders = Some(v);
             self
         }
-        /// <p>
-        /// Information about the orders.
-        /// </p>
+        /// <p> Information about the orders. </p>
         pub fn set_orders(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OrderSummary>>,
@@ -624,9 +654,9 @@ pub mod list_catalog_items_output {
         /// To override the contents of this collection use [`set_catalog_items`](Self::set_catalog_items).
         ///
         /// <p>Information about the catalog items.</p>
-        pub fn catalog_items(mut self, input: impl Into<crate::model::CatalogItem>) -> Self {
+        pub fn catalog_items(mut self, input: crate::model::CatalogItem) -> Self {
             let mut v = self.catalog_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.catalog_items = Some(v);
             self
         }
@@ -668,17 +698,15 @@ impl ListCatalogItemsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSiteAddressOutput {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID of the site. </p>
     pub site_id: std::option::Option<std::string::String>,
     /// <p> The type of the address you receive. </p>
     pub address_type: std::option::Option<crate::model::AddressType>,
-    /// <p>
-    /// Information about the address.
-    /// </p>
+    /// <p> Information about the address. </p>
     pub address: std::option::Option<crate::model::Address>,
 }
 impl GetSiteAddressOutput {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID of the site. </p>
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
@@ -686,9 +714,7 @@ impl GetSiteAddressOutput {
     pub fn address_type(&self) -> std::option::Option<&crate::model::AddressType> {
         self.address_type.as_ref()
     }
-    /// <p>
-    /// Information about the address.
-    /// </p>
+    /// <p> Information about the address. </p>
     pub fn address(&self) -> std::option::Option<&crate::model::Address> {
         self.address.as_ref()
     }
@@ -713,12 +739,12 @@ pub mod get_site_address_output {
         pub(crate) address: std::option::Option<crate::model::Address>,
     }
     impl Builder {
-        /// <p>The ID of the site.</p>
+        /// <p> The ID of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.site_id = Some(input.into());
             self
         }
-        /// <p>The ID of the site.</p>
+        /// <p> The ID of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
@@ -736,16 +762,12 @@ pub mod get_site_address_output {
             self.address_type = input;
             self
         }
-        /// <p>
-        /// Information about the address.
-        /// </p>
+        /// <p> Information about the address. </p>
         pub fn address(mut self, input: crate::model::Address) -> Self {
             self.address = Some(input);
             self
         }
-        /// <p>
-        /// Information about the address.
-        /// </p>
+        /// <p> Information about the address. </p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.address = input;
             self
@@ -827,9 +849,7 @@ pub struct GetOutpostInstanceTypesOutput {
     pub instance_types: std::option::Option<std::vec::Vec<crate::model::InstanceTypeItem>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID of the Outpost. </p>
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
@@ -843,9 +863,7 @@ impl GetOutpostInstanceTypesOutput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID of the Outpost. </p>
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
@@ -882,9 +900,9 @@ pub mod get_outpost_instance_types_output {
         /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
         ///
         /// <p>Information about the instance types.</p>
-        pub fn instance_types(mut self, input: impl Into<crate::model::InstanceTypeItem>) -> Self {
+        pub fn instance_types(mut self, input: crate::model::InstanceTypeItem) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_types = Some(v);
             self
         }
@@ -906,16 +924,12 @@ pub mod get_outpost_instance_types_output {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self

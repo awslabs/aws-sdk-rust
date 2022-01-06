@@ -41,9 +41,9 @@ pub mod describe_vcenter_clients_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>List of items returned by DescribeVcenterClients.</p>
-        pub fn items(mut self, input: impl Into<crate::model::VcenterClient>) -> Self {
+        pub fn items(mut self, input: crate::model::VcenterClient) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -688,10 +688,10 @@ pub mod update_replication_configuration_output {
         /// <p>Replication Configuration replicated disks.</p>
         pub fn replicated_disks(
             mut self,
-            input: impl Into<crate::model::ReplicationConfigurationReplicatedDisk>,
+            input: crate::model::ReplicationConfigurationReplicatedDisk,
         ) -> Self {
             let mut v = self.replicated_disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replicated_disks = Some(v);
             self
         }
@@ -2149,10 +2149,10 @@ pub mod get_replication_configuration_output {
         /// <p>Replication Configuration replicated disks.</p>
         pub fn replicated_disks(
             mut self,
-            input: impl Into<crate::model::ReplicationConfigurationReplicatedDisk>,
+            input: crate::model::ReplicationConfigurationReplicatedDisk,
         ) -> Self {
             let mut v = self.replicated_disks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replicated_disks = Some(v);
             self
         }
@@ -3498,9 +3498,9 @@ pub mod describe_source_servers_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Request to filter Source Servers list by item.</p>
-        pub fn items(mut self, input: impl Into<crate::model::SourceServer>) -> Self {
+        pub fn items(mut self, input: crate::model::SourceServer) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -3611,12 +3611,9 @@ pub mod describe_replication_configuration_templates_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Request to describe Replication Configuration template by items.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::ReplicationConfigurationTemplate>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::ReplicationConfigurationTemplate) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -4639,9 +4636,9 @@ pub mod describe_job_log_items_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Request to describe Job log response items.</p>
-        pub fn items(mut self, input: impl Into<crate::model::JobLog>) -> Self {
+        pub fn items(mut self, input: crate::model::JobLog) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -4721,9 +4718,9 @@ pub mod describe_jobs_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>Request to describe Job log items.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn items(mut self, input: crate::model::Job) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }

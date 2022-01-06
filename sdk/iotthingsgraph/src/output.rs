@@ -326,9 +326,9 @@ pub mod search_things_output {
         /// To override the contents of this collection use [`set_things`](Self::set_things).
         ///
         /// <p>An array of things in the result set.</p>
-        pub fn things(mut self, input: impl Into<crate::model::Thing>) -> Self {
+        pub fn things(mut self, input: crate::model::Thing) -> Self {
             let mut v = self.things.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.things = Some(v);
             self
         }
@@ -409,9 +409,9 @@ pub mod search_system_templates_output {
         /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
         ///
         /// <p>An array of objects that contain summary information about each system deployment in the result set.</p>
-        pub fn summaries(mut self, input: impl Into<crate::model::SystemTemplateSummary>) -> Self {
+        pub fn summaries(mut self, input: crate::model::SystemTemplateSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summaries = Some(v);
             self
         }
@@ -492,9 +492,9 @@ pub mod search_system_instances_output {
         /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
         ///
         /// <p>An array of objects that contain summary data abour the system instances in the result set.</p>
-        pub fn summaries(mut self, input: impl Into<crate::model::SystemInstanceSummary>) -> Self {
+        pub fn summaries(mut self, input: crate::model::SystemInstanceSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summaries = Some(v);
             self
         }
@@ -574,9 +574,9 @@ pub mod search_flow_templates_output {
         /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
         ///
         /// <p>An array of objects that contain summary information about each workflow in the result set.</p>
-        pub fn summaries(mut self, input: impl Into<crate::model::FlowTemplateSummary>) -> Self {
+        pub fn summaries(mut self, input: crate::model::FlowTemplateSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summaries = Some(v);
             self
         }
@@ -657,9 +657,9 @@ pub mod search_flow_executions_output {
         /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
         ///
         /// <p>An array of objects that contain summary information about each workflow execution in the result set.</p>
-        pub fn summaries(mut self, input: impl Into<crate::model::FlowExecutionSummary>) -> Self {
+        pub fn summaries(mut self, input: crate::model::FlowExecutionSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summaries = Some(v);
             self
         }
@@ -740,9 +740,9 @@ pub mod search_entities_output {
         /// To override the contents of this collection use [`set_descriptions`](Self::set_descriptions).
         ///
         /// <p>An array of descriptions for each entity returned in the search result.</p>
-        pub fn descriptions(mut self, input: impl Into<crate::model::EntityDescription>) -> Self {
+        pub fn descriptions(mut self, input: crate::model::EntityDescription) -> Self {
             let mut v = self.descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.descriptions = Some(v);
             self
         }
@@ -822,9 +822,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -904,9 +904,9 @@ pub mod list_flow_execution_messages_output {
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
         /// <p>A list of objects that contain information about events in the specified flow execution.</p>
-        pub fn messages(mut self, input: impl Into<crate::model::FlowExecutionMessage>) -> Self {
+        pub fn messages(mut self, input: crate::model::FlowExecutionMessage) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }
@@ -1176,9 +1176,9 @@ pub mod get_system_template_revisions_output {
         /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
         ///
         /// <p>An array of objects that contain summary data about the system template revisions.</p>
-        pub fn summaries(mut self, input: impl Into<crate::model::SystemTemplateSummary>) -> Self {
+        pub fn summaries(mut self, input: crate::model::SystemTemplateSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summaries = Some(v);
             self
         }
@@ -1522,9 +1522,9 @@ pub mod get_flow_template_revisions_output {
         /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
         ///
         /// <p>An array of objects that provide summary data about each revision.</p>
-        pub fn summaries(mut self, input: impl Into<crate::model::FlowTemplateSummary>) -> Self {
+        pub fn summaries(mut self, input: crate::model::FlowTemplateSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.summaries = Some(v);
             self
         }
@@ -1654,9 +1654,9 @@ pub mod get_entities_output {
         /// To override the contents of this collection use [`set_descriptions`](Self::set_descriptions).
         ///
         /// <p>An array of descriptions for the specified entities.</p>
-        pub fn descriptions(mut self, input: impl Into<crate::model::EntityDescription>) -> Self {
+        pub fn descriptions(mut self, input: crate::model::EntityDescription) -> Self {
             let mut v = self.descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.descriptions = Some(v);
             self
         }

@@ -3,31 +3,19 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>
-    /// The operation did not succeed because of an unauthorized access attempt.
-    /// </p>
+    /// <p> The operation did not succeed because of an unauthorized access attempt. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// The operation did not succeed because prerequisites are not met.
-    /// </p>
+    /// <p> The operation did not succeed because prerequisites are not met. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The operation did not succeed because of an error that occurred inside AWS CodeArtifact. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// The operation did not succeed because the resource requested is not found in the service.
-    /// </p>
+    /// <p> The operation did not succeed because the resource requested is not found in the service. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>
-    /// The operation did not succeed because it would have exceeded a service limit for your account.
-    /// </p>
+    /// <p> The operation did not succeed because it would have exceeded a service limit for your account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>
-    /// The operation did not succeed because too many requests are sent to the service.
-    /// </p>
+    /// <p> The operation did not succeed because too many requests are sent to the service. </p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>
-    /// The operation did not succeed because a parameter in the request was sent with an invalid value.
-    /// </p>
+    /// <p> The operation did not succeed because a parameter in the request was sent with an invalid value. </p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

@@ -42,7 +42,7 @@ pub mod batch_get_channel_input {
 #[doc(hidden)]
 pub type BatchGetChannelInputOperationOutputAlias = crate::operation::BatchGetChannel;
 #[doc(hidden)]
-pub type BatchGetChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetChannelInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetChannel`](crate::operation::BatchGetChannel)>
     #[allow(clippy::let_and_return)]
@@ -53,7 +53,7 @@ impl BatchGetChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -133,7 +133,7 @@ impl BatchGetChannelInput {
             "BatchGetChannel",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -198,7 +198,7 @@ pub mod batch_get_stream_key_input {
 #[doc(hidden)]
 pub type BatchGetStreamKeyInputOperationOutputAlias = crate::operation::BatchGetStreamKey;
 #[doc(hidden)]
-pub type BatchGetStreamKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetStreamKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetStreamKeyInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetStreamKey`](crate::operation::BatchGetStreamKey)>
     #[allow(clippy::let_and_return)]
@@ -209,7 +209,7 @@ impl BatchGetStreamKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetStreamKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -289,7 +289,7 @@ impl BatchGetStreamKeyInput {
             "BatchGetStreamKey",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -338,18 +338,12 @@ pub mod create_channel_input {
             self.name = input;
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-        /// Standard, respectively.) Default: <code>LOW</code>.</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
         pub fn latency_mode(mut self, input: crate::model::ChannelLatencyMode) -> Self {
             self.latency_mode = Some(input);
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-        /// Standard, respectively.) Default: <code>LOW</code>.</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
         pub fn set_latency_mode(
             mut self,
             input: std::option::Option<crate::model::ChannelLatencyMode>,
@@ -357,58 +351,30 @@ pub mod create_channel_input {
             self.latency_mode = input;
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-        /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-        /// automatically give viewers the best experience for their devices and network conditions.
-        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-        /// for renditions 360p and below; above that, audio is passed through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-        /// bitrate can be up to 1.5 Mbps.</p>
-        /// </li>
+        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-        /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-        /// automatically give viewers the best experience for their devices and network conditions.
-        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-        /// for renditions 360p and below; above that, audio is passed through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-        /// bitrate can be up to 1.5 Mbps.</p>
-        /// </li>
+        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>Whether the channel is private (enabled for playback authorization). Default:
-        /// <code>false</code>.</p>
+        /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
         pub fn authorized(mut self, input: bool) -> Self {
             self.authorized = Some(input);
             self
         }
-        /// <p>Whether the channel is private (enabled for playback authorization). Default:
-        /// <code>false</code>.</p>
+        /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
         pub fn set_authorized(mut self, input: std::option::Option<bool>) -> Self {
             self.authorized = input;
             self
@@ -475,7 +441,7 @@ pub mod create_channel_input {
 #[doc(hidden)]
 pub type CreateChannelInputOperationOutputAlias = crate::operation::CreateChannel;
 #[doc(hidden)]
-pub type CreateChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannel`](crate::operation::CreateChannel)>
     #[allow(clippy::let_and_return)]
@@ -486,7 +452,7 @@ impl CreateChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -565,7 +531,7 @@ impl CreateChannelInput {
             "CreateChannel",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -612,8 +578,7 @@ pub mod create_recording_configuration_input {
             self.name = input;
             self
         }
-        /// <p>A complex type that contains a destination configuration for where recorded video will be
-        /// stored.</p>
+        /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
         pub fn destination_configuration(
             mut self,
             input: crate::model::DestinationConfiguration,
@@ -621,8 +586,7 @@ pub mod create_recording_configuration_input {
             self.destination_configuration = Some(input);
             self
         }
-        /// <p>A complex type that contains a destination configuration for where recorded video will be
-        /// stored.</p>
+        /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
         pub fn set_destination_configuration(
             mut self,
             input: std::option::Option<crate::model::DestinationConfiguration>,
@@ -674,7 +638,8 @@ pub mod create_recording_configuration_input {
 pub type CreateRecordingConfigurationInputOperationOutputAlias =
     crate::operation::CreateRecordingConfiguration;
 #[doc(hidden)]
-pub type CreateRecordingConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRecordingConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRecordingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateRecordingConfiguration`](crate::operation::CreateRecordingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -685,7 +650,7 @@ impl CreateRecordingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRecordingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -766,7 +731,7 @@ impl CreateRecordingConfigurationInput {
             "CreateRecordingConfiguration",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -853,7 +818,7 @@ pub mod create_stream_key_input {
 #[doc(hidden)]
 pub type CreateStreamKeyInputOperationOutputAlias = crate::operation::CreateStreamKey;
 #[doc(hidden)]
-pub type CreateStreamKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStreamKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamKeyInput {
     /// Consumes the builder and constructs an Operation<[`CreateStreamKey`](crate::operation::CreateStreamKey)>
     #[allow(clippy::let_and_return)]
@@ -864,7 +829,7 @@ impl CreateStreamKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStreamKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -944,7 +909,7 @@ impl CreateStreamKeyInput {
             "CreateStreamKey",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1000,7 +965,7 @@ pub mod delete_channel_input {
 #[doc(hidden)]
 pub type DeleteChannelInputOperationOutputAlias = crate::operation::DeleteChannel;
 #[doc(hidden)]
-pub type DeleteChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannel`](crate::operation::DeleteChannel)>
     #[allow(clippy::let_and_return)]
@@ -1011,7 +976,7 @@ impl DeleteChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1090,7 +1055,7 @@ impl DeleteChannelInput {
             "DeleteChannel",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1146,7 +1111,7 @@ pub mod delete_playback_key_pair_input {
 #[doc(hidden)]
 pub type DeletePlaybackKeyPairInputOperationOutputAlias = crate::operation::DeletePlaybackKeyPair;
 #[doc(hidden)]
-pub type DeletePlaybackKeyPairInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePlaybackKeyPairInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePlaybackKeyPairInput {
     /// Consumes the builder and constructs an Operation<[`DeletePlaybackKeyPair`](crate::operation::DeletePlaybackKeyPair)>
     #[allow(clippy::let_and_return)]
@@ -1157,7 +1122,7 @@ impl DeletePlaybackKeyPairInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePlaybackKeyPair,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1239,7 +1204,7 @@ impl DeletePlaybackKeyPairInput {
             "DeletePlaybackKeyPair",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1296,7 +1261,8 @@ pub mod delete_recording_configuration_input {
 pub type DeleteRecordingConfigurationInputOperationOutputAlias =
     crate::operation::DeleteRecordingConfiguration;
 #[doc(hidden)]
-pub type DeleteRecordingConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRecordingConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRecordingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRecordingConfiguration`](crate::operation::DeleteRecordingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1307,7 +1273,7 @@ impl DeleteRecordingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRecordingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1388,7 +1354,7 @@ impl DeleteRecordingConfigurationInput {
             "DeleteRecordingConfiguration",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1444,7 +1410,7 @@ pub mod delete_stream_key_input {
 #[doc(hidden)]
 pub type DeleteStreamKeyInputOperationOutputAlias = crate::operation::DeleteStreamKey;
 #[doc(hidden)]
-pub type DeleteStreamKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStreamKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStreamKeyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStreamKey`](crate::operation::DeleteStreamKey)>
     #[allow(clippy::let_and_return)]
@@ -1455,7 +1421,7 @@ impl DeleteStreamKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStreamKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1535,7 +1501,7 @@ impl DeleteStreamKeyInput {
             "DeleteStreamKey",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1591,7 +1557,7 @@ pub mod get_channel_input {
 #[doc(hidden)]
 pub type GetChannelInputOperationOutputAlias = crate::operation::GetChannel;
 #[doc(hidden)]
-pub type GetChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChannelInput {
     /// Consumes the builder and constructs an Operation<[`GetChannel`](crate::operation::GetChannel)>
     #[allow(clippy::let_and_return)]
@@ -1602,7 +1568,7 @@ impl GetChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1681,7 +1647,7 @@ impl GetChannelInput {
             "GetChannel",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1737,7 +1703,7 @@ pub mod get_playback_key_pair_input {
 #[doc(hidden)]
 pub type GetPlaybackKeyPairInputOperationOutputAlias = crate::operation::GetPlaybackKeyPair;
 #[doc(hidden)]
-pub type GetPlaybackKeyPairInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPlaybackKeyPairInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPlaybackKeyPairInput {
     /// Consumes the builder and constructs an Operation<[`GetPlaybackKeyPair`](crate::operation::GetPlaybackKeyPair)>
     #[allow(clippy::let_and_return)]
@@ -1748,7 +1714,7 @@ impl GetPlaybackKeyPairInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPlaybackKeyPair,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1828,7 +1794,7 @@ impl GetPlaybackKeyPairInput {
             "GetPlaybackKeyPair",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1885,7 +1851,7 @@ pub mod get_recording_configuration_input {
 pub type GetRecordingConfigurationInputOperationOutputAlias =
     crate::operation::GetRecordingConfiguration;
 #[doc(hidden)]
-pub type GetRecordingConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecordingConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecordingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetRecordingConfiguration`](crate::operation::GetRecordingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1896,7 +1862,7 @@ impl GetRecordingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecordingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1978,7 +1944,7 @@ impl GetRecordingConfigurationInput {
             "GetRecordingConfiguration",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2034,7 +2000,7 @@ pub mod get_stream_input {
 #[doc(hidden)]
 pub type GetStreamInputOperationOutputAlias = crate::operation::GetStream;
 #[doc(hidden)]
-pub type GetStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamInput {
     /// Consumes the builder and constructs an Operation<[`GetStream`](crate::operation::GetStream)>
     #[allow(clippy::let_and_return)]
@@ -2045,7 +2011,7 @@ impl GetStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2122,7 +2088,7 @@ impl GetStreamInput {
                     "GetStream",
                     "ivs",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2178,7 +2144,7 @@ pub mod get_stream_key_input {
 #[doc(hidden)]
 pub type GetStreamKeyInputOperationOutputAlias = crate::operation::GetStreamKey;
 #[doc(hidden)]
-pub type GetStreamKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStreamKeyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamKeyInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamKey`](crate::operation::GetStreamKey)>
     #[allow(clippy::let_and_return)]
@@ -2189,7 +2155,7 @@ impl GetStreamKeyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStreamKey,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2268,7 +2234,7 @@ impl GetStreamKeyInput {
             "GetStreamKey",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2311,16 +2277,12 @@ pub mod get_stream_session_input {
             self.channel_arn = input;
             self
         }
-        /// <p>Unique identifier for a live or previously live stream in the specified channel. If no
-        /// <code>streamId</code> is provided, this returns the most recent stream session for the
-        /// channel, if it exists.</p>
+        /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_id = Some(input.into());
             self
         }
-        /// <p>Unique identifier for a live or previously live stream in the specified channel. If no
-        /// <code>streamId</code> is provided, this returns the most recent stream session for the
-        /// channel, if it exists.</p>
+        /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -2342,7 +2304,7 @@ pub mod get_stream_session_input {
 #[doc(hidden)]
 pub type GetStreamSessionInputOperationOutputAlias = crate::operation::GetStreamSession;
 #[doc(hidden)]
-pub type GetStreamSessionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStreamSessionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStreamSessionInput {
     /// Consumes the builder and constructs an Operation<[`GetStreamSession`](crate::operation::GetStreamSession)>
     #[allow(clippy::let_and_return)]
@@ -2353,7 +2315,7 @@ impl GetStreamSessionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStreamSession,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2433,7 +2395,7 @@ impl GetStreamSessionInput {
             "GetStreamSession",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2535,7 +2497,7 @@ pub mod import_playback_key_pair_input {
 #[doc(hidden)]
 pub type ImportPlaybackKeyPairInputOperationOutputAlias = crate::operation::ImportPlaybackKeyPair;
 #[doc(hidden)]
-pub type ImportPlaybackKeyPairInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportPlaybackKeyPairInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportPlaybackKeyPairInput {
     /// Consumes the builder and constructs an Operation<[`ImportPlaybackKeyPair`](crate::operation::ImportPlaybackKeyPair)>
     #[allow(clippy::let_and_return)]
@@ -2546,7 +2508,7 @@ impl ImportPlaybackKeyPairInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportPlaybackKeyPair,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2628,7 +2590,7 @@ impl ImportPlaybackKeyPairInput {
             "ImportPlaybackKeyPair",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2692,14 +2654,12 @@ pub mod list_channels_input {
             self.filter_by_recording_configuration_arn = input;
             self
         }
-        /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2733,7 +2693,7 @@ pub mod list_channels_input {
 #[doc(hidden)]
 pub type ListChannelsInputOperationOutputAlias = crate::operation::ListChannels;
 #[doc(hidden)]
-pub type ListChannelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannels`](crate::operation::ListChannels)>
     #[allow(clippy::let_and_return)]
@@ -2744,7 +2704,7 @@ impl ListChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2823,7 +2783,7 @@ impl ListChannelsInput {
             "ListChannels",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2866,14 +2826,12 @@ pub mod list_playback_key_pairs_input {
             self.next_token = input;
             self
         }
-        /// <p>The first key pair to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field. Default: 50.</p>
+        /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The first key pair to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field. Default: 50.</p>
+        /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2895,7 +2853,7 @@ pub mod list_playback_key_pairs_input {
 #[doc(hidden)]
 pub type ListPlaybackKeyPairsInputOperationOutputAlias = crate::operation::ListPlaybackKeyPairs;
 #[doc(hidden)]
-pub type ListPlaybackKeyPairsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPlaybackKeyPairsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPlaybackKeyPairsInput {
     /// Consumes the builder and constructs an Operation<[`ListPlaybackKeyPairs`](crate::operation::ListPlaybackKeyPairs)>
     #[allow(clippy::let_and_return)]
@@ -2906,7 +2864,7 @@ impl ListPlaybackKeyPairsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPlaybackKeyPairs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2988,7 +2946,7 @@ impl ListPlaybackKeyPairsInput {
             "ListPlaybackKeyPairs",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3021,14 +2979,12 @@ pub mod list_recording_configurations_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The first recording configuration to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field.</p>
+        /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The first recording configuration to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field.</p>
+        /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3061,7 +3017,7 @@ pub mod list_recording_configurations_input {
 pub type ListRecordingConfigurationsInputOperationOutputAlias =
     crate::operation::ListRecordingConfigurations;
 #[doc(hidden)]
-pub type ListRecordingConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRecordingConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRecordingConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListRecordingConfigurations`](crate::operation::ListRecordingConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -3072,7 +3028,7 @@ impl ListRecordingConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRecordingConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3153,7 +3109,7 @@ impl ListRecordingConfigurationsInput {
             "ListRecordingConfigurations",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3197,14 +3153,12 @@ pub mod list_stream_keys_input {
             self.channel_arn = input;
             self
         }
-        /// <p>The first stream key to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field.</p>
+        /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The first stream key to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field.</p>
+        /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3237,7 +3191,7 @@ pub mod list_stream_keys_input {
 #[doc(hidden)]
 pub type ListStreamKeysInputOperationOutputAlias = crate::operation::ListStreamKeys;
 #[doc(hidden)]
-pub type ListStreamKeysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStreamKeysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamKeysInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamKeys`](crate::operation::ListStreamKeys)>
     #[allow(clippy::let_and_return)]
@@ -3248,7 +3202,7 @@ impl ListStreamKeysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStreamKeys,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3328,7 +3282,7 @@ impl ListStreamKeysInput {
             "ListStreamKeys",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3375,14 +3329,12 @@ pub mod list_streams_input {
             self.filter_by = input;
             self
         }
-        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3415,7 +3367,7 @@ pub mod list_streams_input {
 #[doc(hidden)]
 pub type ListStreamsInputOperationOutputAlias = crate::operation::ListStreams;
 #[doc(hidden)]
-pub type ListStreamsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreams`](crate::operation::ListStreams)>
     #[allow(clippy::let_and_return)]
@@ -3426,7 +3378,7 @@ impl ListStreamsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStreams,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3505,7 +3457,7 @@ impl ListStreamsInput {
             "ListStreams",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3549,14 +3501,12 @@ pub mod list_stream_sessions_input {
             self.channel_arn = input;
             self
         }
-        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3589,7 +3539,7 @@ pub mod list_stream_sessions_input {
 #[doc(hidden)]
 pub type ListStreamSessionsInputOperationOutputAlias = crate::operation::ListStreamSessions;
 #[doc(hidden)]
-pub type ListStreamSessionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStreamSessionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamSessionsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreamSessions`](crate::operation::ListStreamSessions)>
     #[allow(clippy::let_and_return)]
@@ -3600,7 +3550,7 @@ impl ListStreamSessionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStreamSessions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3680,7 +3630,7 @@ impl ListStreamSessionsInput {
             "ListStreamSessions",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3738,7 +3688,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3749,7 +3699,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3839,7 +3789,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3864,14 +3814,12 @@ pub mod put_metadata_input {
         pub(crate) metadata: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>ARN of the channel into which metadata is inserted. This channel must have an active
-        /// stream.</p>
+        /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
         pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_arn = Some(input.into());
             self
         }
-        /// <p>ARN of the channel into which metadata is inserted. This channel must have an active
-        /// stream.</p>
+        /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
@@ -3903,7 +3851,7 @@ pub mod put_metadata_input {
 #[doc(hidden)]
 pub type PutMetadataInputOperationOutputAlias = crate::operation::PutMetadata;
 #[doc(hidden)]
-pub type PutMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutMetadataInput {
     /// Consumes the builder and constructs an Operation<[`PutMetadata`](crate::operation::PutMetadata)>
     #[allow(clippy::let_and_return)]
@@ -3914,7 +3862,7 @@ impl PutMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3993,7 +3941,7 @@ impl PutMetadataInput {
             "PutMetadata",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4051,7 +3999,7 @@ pub mod stop_stream_input {
 #[doc(hidden)]
 pub type StopStreamInputOperationOutputAlias = crate::operation::StopStream;
 #[doc(hidden)]
-pub type StopStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopStreamInput {
     /// Consumes the builder and constructs an Operation<[`StopStream`](crate::operation::StopStream)>
     #[allow(clippy::let_and_return)]
@@ -4062,7 +4010,7 @@ impl StopStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4141,7 +4089,7 @@ impl StopStreamInput {
             "StopStream",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4228,7 +4176,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4239,7 +4187,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4334,7 +4282,7 @@ impl TagResourceInput {
             "TagResource",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4413,7 +4361,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4424,7 +4372,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4527,7 +4475,7 @@ impl UntagResourceInput {
             "UntagResource",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4576,18 +4524,12 @@ pub mod update_channel_input {
             self.name = input;
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-        /// Standard, respectively.)</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
         pub fn latency_mode(mut self, input: crate::model::ChannelLatencyMode) -> Self {
             self.latency_mode = Some(input);
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-        /// Standard, respectively.)</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
         pub fn set_latency_mode(
             mut self,
             input: std::option::Option<crate::model::ChannelLatencyMode>,
@@ -4595,45 +4537,19 @@ pub mod update_channel_input {
             self.latency_mode = input;
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-        /// immediately</i>. Valid values:</p>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-        /// automatically give viewers the best experience for their devices and network conditions.
-        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-        /// for renditions 360p and below; above that, audio is passed through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-        /// bitrate can be up to 1.5 Mbps.</p>
-        /// </li>
+        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-        /// immediately</i>. Valid values:</p>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-        /// automatically give viewers the best experience for their devices and network conditions.
-        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-        /// for renditions 360p and below; above that, audio is passed through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-        /// bitrate can be up to 1.5 Mbps.</p>
-        /// </li>
+        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
@@ -4649,8 +4565,7 @@ pub mod update_channel_input {
             self.authorized = input;
             self
         }
-        /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A
-        /// value other than an empty string indicates that recording is enabled</p>
+        /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
         pub fn recording_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -4658,8 +4573,7 @@ pub mod update_channel_input {
             self.recording_configuration_arn = Some(input.into());
             self
         }
-        /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A
-        /// value other than an empty string indicates that recording is enabled</p>
+        /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
         pub fn set_recording_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4688,7 +4602,7 @@ pub mod update_channel_input {
 #[doc(hidden)]
 pub type UpdateChannelInputOperationOutputAlias = crate::operation::UpdateChannel;
 #[doc(hidden)]
-pub type UpdateChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannel`](crate::operation::UpdateChannel)>
     #[allow(clippy::let_and_return)]
@@ -4699,7 +4613,7 @@ impl UpdateChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4778,7 +4692,7 @@ impl UpdateChannelInput {
             "UpdateChannel",
             "ivs",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4809,34 +4723,17 @@ pub struct UpdateChannelInput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>Channel name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-    /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-    /// Standard, respectively.)</p>
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
     pub latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-    /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-    /// immediately</i>. Valid values:</p>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-    /// automatically give viewers the best experience for their devices and network conditions.
-    /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-    /// for renditions 360p and below; above that, audio is passed through.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-    /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-    /// bitrate can be up to 1.5 Mbps.</p>
-    /// </li>
+    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ChannelType>,
     /// <p>Whether the channel is private (enabled for playback authorization).</p>
     pub authorized: bool,
-    /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A
-    /// value other than an empty string indicates that recording is enabled</p>
+    /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
     pub recording_configuration_arn: std::option::Option<std::string::String>,
 }
 impl UpdateChannelInput {
@@ -4848,30 +4745,14 @@ impl UpdateChannelInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-    /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-    /// Standard, respectively.)</p>
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
     pub fn latency_mode(&self) -> std::option::Option<&crate::model::ChannelLatencyMode> {
         self.latency_mode.as_ref()
     }
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-    /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-    /// immediately</i>. Valid values:</p>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-    /// automatically give viewers the best experience for their devices and network conditions.
-    /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-    /// for renditions 360p and below; above that, audio is passed through.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-    /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-    /// bitrate can be up to 1.5 Mbps.</p>
-    /// </li>
+    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
         self.r#type.as_ref()
@@ -4880,8 +4761,7 @@ impl UpdateChannelInput {
     pub fn authorized(&self) -> bool {
         self.authorized
     }
-    /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A
-    /// value other than an empty string indicates that recording is enabled</p>
+    /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
     pub fn recording_configuration_arn(&self) -> std::option::Option<&str> {
         self.recording_configuration_arn.as_deref()
     }
@@ -4987,15 +4867,13 @@ impl std::fmt::Debug for StopStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMetadataInput {
-    /// <p>ARN of the channel into which metadata is inserted. This channel must have an active
-    /// stream.</p>
+    /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
     pub metadata: std::option::Option<std::string::String>,
 }
 impl PutMetadataInput {
-    /// <p>ARN of the channel into which metadata is inserted. This channel must have an active
-    /// stream.</p>
+    /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
@@ -5040,8 +4918,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListStreamSessionsInput {
     /// <p>Channel ARN used to filter the list.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-    /// response field.</p>
+    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of streams to return. Default: 50.</p>
     pub max_results: i32,
@@ -5051,8 +4928,7 @@ impl ListStreamSessionsInput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-    /// response field.</p>
+    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5077,8 +4953,7 @@ impl std::fmt::Debug for ListStreamSessionsInput {
 pub struct ListStreamsInput {
     /// <p>Filters the stream list to match the specified criterion.</p>
     pub filter_by: std::option::Option<crate::model::StreamFilters>,
-    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-    /// response field.</p>
+    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of streams to return. Default: 50.</p>
     pub max_results: i32,
@@ -5088,8 +4963,7 @@ impl ListStreamsInput {
     pub fn filter_by(&self) -> std::option::Option<&crate::model::StreamFilters> {
         self.filter_by.as_ref()
     }
-    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-    /// response field.</p>
+    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5114,8 +4988,7 @@ impl std::fmt::Debug for ListStreamsInput {
 pub struct ListStreamKeysInput {
     /// <p>Channel ARN used to filter the list.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The first stream key to retrieve. This is used for pagination; see the
-    /// <code>nextToken</code> response field.</p>
+    /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of streamKeys to return. Default: 50.</p>
     pub max_results: i32,
@@ -5125,8 +4998,7 @@ impl ListStreamKeysInput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The first stream key to retrieve. This is used for pagination; see the
-    /// <code>nextToken</code> response field.</p>
+    /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5149,15 +5021,13 @@ impl std::fmt::Debug for ListStreamKeysInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecordingConfigurationsInput {
-    /// <p>The first recording configuration to retrieve. This is used for pagination; see the
-    /// <code>nextToken</code> response field.</p>
+    /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of recording configurations to return. Default: 50. </p>
     pub max_results: i32,
 }
 impl ListRecordingConfigurationsInput {
-    /// <p>The first recording configuration to retrieve. This is used for pagination; see the
-    /// <code>nextToken</code> response field.</p>
+    /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5181,8 +5051,7 @@ impl std::fmt::Debug for ListRecordingConfigurationsInput {
 pub struct ListPlaybackKeyPairsInput {
     /// <p>Maximum number of key pairs to return.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The first key pair to retrieve. This is used for pagination; see the
-    /// <code>nextToken</code> response field. Default: 50.</p>
+    /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
     pub max_results: i32,
 }
 impl ListPlaybackKeyPairsInput {
@@ -5190,8 +5059,7 @@ impl ListPlaybackKeyPairsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The first key pair to retrieve. This is used for pagination; see the
-    /// <code>nextToken</code> response field. Default: 50.</p>
+    /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -5213,8 +5081,7 @@ pub struct ListChannelsInput {
     pub filter_by_name: std::option::Option<std::string::String>,
     /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
     pub filter_by_recording_configuration_arn: std::option::Option<std::string::String>,
-    /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code>
-    /// response field.</p>
+    /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of channels to return. Default: 50.</p>
     pub max_results: i32,
@@ -5228,8 +5095,7 @@ impl ListChannelsInput {
     pub fn filter_by_recording_configuration_arn(&self) -> std::option::Option<&str> {
         self.filter_by_recording_configuration_arn.as_deref()
     }
-    /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code>
-    /// response field.</p>
+    /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5297,9 +5163,7 @@ impl std::fmt::Debug for ImportPlaybackKeyPairInput {
 pub struct GetStreamSessionInput {
     /// <p>ARN of the channel resource</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>Unique identifier for a live or previously live stream in the specified channel. If no
-    /// <code>streamId</code> is provided, this returns the most recent stream session for the
-    /// channel, if it exists.</p>
+    /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl GetStreamSessionInput {
@@ -5307,9 +5171,7 @@ impl GetStreamSessionInput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>Unique identifier for a live or previously live stream in the specified channel. If no
-    /// <code>streamId</code> is provided, this returns the most recent stream session for the
-    /// channel, if it exists.</p>
+    /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
     }
@@ -5550,8 +5412,7 @@ impl std::fmt::Debug for CreateStreamKeyInput {
 pub struct CreateRecordingConfigurationInput {
     /// <p>Recording-configuration name. The value does not need to be unique.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A complex type that contains a destination configuration for where recorded video will be
-    /// stored.</p>
+    /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
     pub destination_configuration: std::option::Option<crate::model::DestinationConfiguration>,
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
@@ -5562,8 +5423,7 @@ impl CreateRecordingConfigurationInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A complex type that contains a destination configuration for where recorded video will be
-    /// stored.</p>
+    /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
     pub fn destination_configuration(
         &self,
     ) -> std::option::Option<&crate::model::DestinationConfiguration> {
@@ -5593,32 +5453,15 @@ impl std::fmt::Debug for CreateRecordingConfigurationInput {
 pub struct CreateChannelInput {
     /// <p>Channel name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-    /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-    /// Standard, respectively.) Default: <code>LOW</code>.</p>
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
     pub latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-    /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-    /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-    /// automatically give viewers the best experience for their devices and network conditions.
-    /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-    /// for renditions 360p and below; above that, audio is passed through.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-    /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-    /// bitrate can be up to 1.5 Mbps.</p>
-    /// </li>
+    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ChannelType>,
-    /// <p>Whether the channel is private (enabled for playback authorization). Default:
-    /// <code>false</code>.</p>
+    /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
     pub authorized: bool,
     /// <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
     pub recording_configuration_arn: std::option::Option<std::string::String>,
@@ -5631,36 +5474,19 @@ impl CreateChannelInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-    /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-    /// Standard, respectively.) Default: <code>LOW</code>.</p>
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
     pub fn latency_mode(&self) -> std::option::Option<&crate::model::ChannelLatencyMode> {
         self.latency_mode.as_ref()
     }
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-    /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-    /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-    /// automatically give viewers the best experience for their devices and network conditions.
-    /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-    /// for renditions 360p and below; above that, audio is passed through.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-    /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-    /// bitrate can be up to 1.5 Mbps.</p>
-    /// </li>
+    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
         self.r#type.as_ref()
     }
-    /// <p>Whether the channel is private (enabled for playback authorization). Default:
-    /// <code>false</code>.</p>
+    /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
     pub fn authorized(&self) -> bool {
         self.authorized
     }

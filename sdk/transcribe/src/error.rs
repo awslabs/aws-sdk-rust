@@ -12,16 +12,13 @@ pub struct CreateCallAnalyticsCategoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCallAnalyticsCategoryErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There is already a resource with that name.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -67,8 +64,6 @@ impl CreateCallAnalyticsCategoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -143,16 +138,13 @@ pub struct CreateLanguageModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateLanguageModelErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There is already a resource with that name.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -198,8 +190,6 @@ impl CreateLanguageModelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -274,16 +264,13 @@ pub struct CreateMedicalVocabularyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMedicalVocabularyErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There is already a resource with that name.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -329,8 +316,6 @@ impl CreateMedicalVocabularyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -405,16 +390,13 @@ pub struct CreateVocabularyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVocabularyErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There is already a resource with that name.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -460,8 +442,6 @@ impl CreateVocabularyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -533,16 +513,13 @@ pub struct CreateVocabularyFilterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVocabularyFilterErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There is already a resource with that name.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -588,8 +565,6 @@ impl CreateVocabularyFilterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -664,14 +639,11 @@ pub struct DeleteCallAnalyticsCategoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCallAnalyticsCategoryErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -719,8 +691,6 @@ impl DeleteCallAnalyticsCategoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -795,14 +765,11 @@ pub struct DeleteCallAnalyticsJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCallAnalyticsJobErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -847,8 +814,6 @@ impl DeleteCallAnalyticsJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -915,14 +880,11 @@ pub struct DeleteLanguageModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLanguageModelErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -967,8 +929,6 @@ impl DeleteLanguageModelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1035,14 +995,11 @@ pub struct DeleteMedicalTranscriptionJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMedicalTranscriptionJobErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1092,8 +1049,6 @@ impl DeleteMedicalTranscriptionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1162,14 +1117,11 @@ pub struct DeleteMedicalVocabularyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMedicalVocabularyErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -1217,8 +1169,6 @@ impl DeleteMedicalVocabularyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1293,14 +1243,11 @@ pub struct DeleteTranscriptionJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTranscriptionJobErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1345,8 +1292,6 @@ impl DeleteTranscriptionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1413,14 +1358,11 @@ pub struct DeleteVocabularyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVocabularyErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -1468,8 +1410,6 @@ impl DeleteVocabularyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1541,14 +1481,11 @@ pub struct DeleteVocabularyFilterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVocabularyFilterErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -1596,8 +1533,6 @@ impl DeleteVocabularyFilterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1672,14 +1607,11 @@ pub struct DescribeLanguageModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLanguageModelErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -1727,8 +1659,6 @@ impl DescribeLanguageModelError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1803,14 +1733,11 @@ pub struct GetCallAnalyticsCategoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCallAnalyticsCategoryErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -1858,8 +1785,6 @@ impl GetCallAnalyticsCategoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1934,14 +1859,11 @@ pub struct GetCallAnalyticsJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCallAnalyticsJobErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -1989,8 +1911,6 @@ impl GetCallAnalyticsJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2065,14 +1985,11 @@ pub struct GetMedicalTranscriptionJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMedicalTranscriptionJobErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -2120,8 +2037,6 @@ impl GetMedicalTranscriptionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2196,14 +2111,11 @@ pub struct GetMedicalVocabularyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMedicalVocabularyErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -2251,8 +2163,6 @@ impl GetMedicalVocabularyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2327,14 +2237,11 @@ pub struct GetTranscriptionJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTranscriptionJobErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -2382,8 +2289,6 @@ impl GetTranscriptionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2458,14 +2363,11 @@ pub struct GetVocabularyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetVocabularyErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -2513,8 +2415,6 @@ impl GetVocabularyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2583,14 +2483,11 @@ pub struct GetVocabularyFilterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetVocabularyFilterErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -2638,8 +2535,6 @@ impl GetVocabularyFilterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2714,14 +2609,11 @@ pub struct ListCallAnalyticsCategoriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCallAnalyticsCategoriesErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2766,8 +2658,6 @@ impl ListCallAnalyticsCategoriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2834,14 +2724,11 @@ pub struct ListCallAnalyticsJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCallAnalyticsJobsErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2886,8 +2773,6 @@ impl ListCallAnalyticsJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2954,14 +2839,11 @@ pub struct ListLanguageModelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLanguageModelsErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3006,8 +2888,6 @@ impl ListLanguageModelsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3074,14 +2954,11 @@ pub struct ListMedicalTranscriptionJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMedicalTranscriptionJobsErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3128,8 +3005,6 @@ impl ListMedicalTranscriptionJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3196,14 +3071,11 @@ pub struct ListMedicalVocabulariesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMedicalVocabulariesErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3248,8 +3120,6 @@ impl ListMedicalVocabulariesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3316,14 +3186,11 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -3371,8 +3238,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3447,14 +3312,11 @@ pub struct ListTranscriptionJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTranscriptionJobsErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3499,8 +3361,6 @@ impl ListTranscriptionJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3567,14 +3427,11 @@ pub struct ListVocabulariesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListVocabulariesErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3619,8 +3476,6 @@ impl ListVocabulariesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3687,14 +3542,11 @@ pub struct ListVocabularyFiltersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListVocabularyFiltersErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3739,8 +3591,6 @@ impl ListVocabularyFiltersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3807,16 +3657,13 @@ pub struct StartCallAnalyticsJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartCallAnalyticsJobErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There is already a resource with that name.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3862,8 +3709,6 @@ impl StartCallAnalyticsJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3938,16 +3783,13 @@ pub struct StartMedicalTranscriptionJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartMedicalTranscriptionJobErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There is already a resource with that name.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3995,8 +3837,6 @@ impl StartMedicalTranscriptionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4071,16 +3911,13 @@ pub struct StartTranscriptionJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartTranscriptionJobErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There is already a resource with that name.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4126,8 +3963,6 @@ impl StartTranscriptionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4202,16 +4037,13 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There is already a resource with that name.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4260,8 +4092,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4332,16 +4162,13 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There is already a resource with that name.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4390,8 +4217,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4465,16 +4290,13 @@ pub struct UpdateCallAnalyticsCategoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateCallAnalyticsCategoryErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There is already a resource with that name.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4523,8 +4345,6 @@ impl UpdateCallAnalyticsCategoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4607,16 +4427,13 @@ pub struct UpdateMedicalVocabularyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMedicalVocabularyErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There is already a resource with that name.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4665,8 +4482,6 @@ impl UpdateMedicalVocabularyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4749,16 +4564,13 @@ pub struct UpdateVocabularyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateVocabularyErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There is already a resource with that name.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4807,8 +4619,6 @@ impl UpdateVocabularyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4885,14 +4695,11 @@ pub struct UpdateVocabularyFilterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateVocabularyFilterErrorKind {
-    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-    /// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-    /// field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>There was an internal error. Check the error message and try your request again.</p>
     InternalFailureException(crate::error::InternalFailureException),
-    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-    /// use a smaller file and resend the request.</p>
+    /// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>We can't find the requested resource. Check the name and try your request again.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4940,8 +4747,6 @@ impl UpdateVocabularyFilterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5067,8 +4872,7 @@ impl NotFoundException {
     }
 }
 
-/// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or
-/// use a smaller file and resend the request.</p>
+/// <p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -5196,9 +5000,7 @@ impl InternalFailureException {
     }
 }
 
-/// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete
-/// doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code>
-/// field for more information.</p>
+/// <p>Your request didn't pass one or more validation tests. For example, if the entity that you're trying to delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the exception <code>Message</code> field for more information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {

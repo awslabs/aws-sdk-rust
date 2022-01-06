@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Elemental MediaPackage VOD
@@ -163,6 +163,7 @@ where
     ///
     /// See [`ListAssets`](crate::client::fluent_builders::ListAssets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssets::into_paginator).
     pub fn list_assets(&self) -> fluent_builders::ListAssets<C, M, R> {
         fluent_builders::ListAssets::new(self.handle.clone())
     }
@@ -170,6 +171,7 @@ where
     ///
     /// See [`ListPackagingConfigurations`](crate::client::fluent_builders::ListPackagingConfigurations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPackagingConfigurations::into_paginator).
     pub fn list_packaging_configurations(
         &self,
     ) -> fluent_builders::ListPackagingConfigurations<C, M, R> {
@@ -179,6 +181,7 @@ where
     ///
     /// See [`ListPackagingGroups`](crate::client::fluent_builders::ListPackagingGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPackagingGroups::into_paginator).
     pub fn list_packaging_groups(&self) -> fluent_builders::ListPackagingGroups<C, M, R> {
         fluent_builders::ListPackagingGroups::new(self.handle.clone())
     }
@@ -222,7 +225,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ConfigureLogs`.
     ///
     /// Changes the packaging group's properities to configure log subscription
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ConfigureLogs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -267,10 +270,10 @@ pub mod fluent_builders {
                 crate::input::ConfigureLogsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -279,8 +282,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Configure egress access logging.
-        pub fn egress_access_logs(mut self, inp: crate::model::EgressAccessLogs) -> Self {
-            self.inner = self.inner.egress_access_logs(inp);
+        pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
+            self.inner = self.inner.egress_access_logs(input);
             self
         }
         /// Configure egress access logging.
@@ -292,8 +295,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of a MediaPackage VOD PackagingGroup resource.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of a MediaPackage VOD PackagingGroup resource.
@@ -305,7 +308,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAsset`.
     ///
     /// Creates a new MediaPackage VOD Asset resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -350,10 +353,10 @@ pub mod fluent_builders {
                 crate::input::CreateAssetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -362,8 +365,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The unique identifier for the Asset.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The unique identifier for the Asset.
@@ -372,8 +375,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the PackagingGroup for the Asset.
-        pub fn packaging_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.packaging_group_id(inp);
+        pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.packaging_group_id(input.into());
             self
         }
         /// The ID of the PackagingGroup for the Asset.
@@ -385,8 +388,8 @@ pub mod fluent_builders {
             self
         }
         /// The resource ID to include in SPEKE key requests.
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// The resource ID to include in SPEKE key requests.
@@ -395,8 +398,8 @@ pub mod fluent_builders {
             self
         }
         /// ARN of the source object in S3.
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(inp);
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input.into());
             self
         }
         /// ARN of the source object in S3.
@@ -405,8 +408,8 @@ pub mod fluent_builders {
             self
         }
         /// The IAM role ARN used to access the source S3 bucket.
-        pub fn source_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_role_arn(inp);
+        pub fn source_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_role_arn(input.into());
             self
         }
         /// The IAM role ARN used to access the source S3 bucket.
@@ -427,7 +430,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -444,7 +447,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePackagingConfiguration`.
     ///
     /// Creates a new MediaPackage VOD PackagingConfiguration resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePackagingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -489,10 +492,10 @@ pub mod fluent_builders {
                 crate::input::CreatePackagingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -501,8 +504,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A CMAF packaging configuration.
-        pub fn cmaf_package(mut self, inp: crate::model::CmafPackage) -> Self {
-            self.inner = self.inner.cmaf_package(inp);
+        pub fn cmaf_package(mut self, input: crate::model::CmafPackage) -> Self {
+            self.inner = self.inner.cmaf_package(input);
             self
         }
         /// A CMAF packaging configuration.
@@ -514,8 +517,8 @@ pub mod fluent_builders {
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn dash_package(mut self, inp: crate::model::DashPackage) -> Self {
-            self.inner = self.inner.dash_package(inp);
+        pub fn dash_package(mut self, input: crate::model::DashPackage) -> Self {
+            self.inner = self.inner.dash_package(input);
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
@@ -527,8 +530,8 @@ pub mod fluent_builders {
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn hls_package(mut self, inp: crate::model::HlsPackage) -> Self {
-            self.inner = self.inner.hls_package(inp);
+        pub fn hls_package(mut self, input: crate::model::HlsPackage) -> Self {
+            self.inner = self.inner.hls_package(input);
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
@@ -540,8 +543,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the PackagingConfiguration.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of the PackagingConfiguration.
@@ -550,8 +553,8 @@ pub mod fluent_builders {
             self
         }
         /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
-        pub fn mss_package(mut self, inp: crate::model::MssPackage) -> Self {
-            self.inner = self.inner.mss_package(inp);
+        pub fn mss_package(mut self, input: crate::model::MssPackage) -> Self {
+            self.inner = self.inner.mss_package(input);
             self
         }
         /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
@@ -563,8 +566,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of a PackagingGroup.
-        pub fn packaging_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.packaging_group_id(inp);
+        pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.packaging_group_id(input.into());
             self
         }
         /// The ID of a PackagingGroup.
@@ -585,7 +588,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -602,7 +605,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePackagingGroup`.
     ///
     /// Creates a new MediaPackage VOD PackagingGroup resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePackagingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -647,10 +650,10 @@ pub mod fluent_builders {
                 crate::input::CreatePackagingGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -659,8 +662,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// CDN Authorization credentials
-        pub fn authorization(mut self, inp: crate::model::Authorization) -> Self {
-            self.inner = self.inner.authorization(inp);
+        pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
+            self.inner = self.inner.authorization(input);
             self
         }
         /// CDN Authorization credentials
@@ -672,8 +675,8 @@ pub mod fluent_builders {
             self
         }
         /// Configure egress access logging.
-        pub fn egress_access_logs(mut self, inp: crate::model::EgressAccessLogs) -> Self {
-            self.inner = self.inner.egress_access_logs(inp);
+        pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
+            self.inner = self.inner.egress_access_logs(input);
             self
         }
         /// Configure egress access logging.
@@ -685,8 +688,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the PackagingGroup.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of the PackagingGroup.
@@ -704,7 +707,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -721,7 +724,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAsset`.
     ///
     /// Deletes an existing MediaPackage VOD Asset resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -766,10 +769,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAssetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -778,8 +781,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the MediaPackage VOD Asset resource to delete.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of the MediaPackage VOD Asset resource to delete.
@@ -791,7 +794,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePackagingConfiguration`.
     ///
     /// Deletes a MediaPackage VOD PackagingConfiguration resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePackagingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -836,10 +839,10 @@ pub mod fluent_builders {
                 crate::input::DeletePackagingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -848,8 +851,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
@@ -861,7 +864,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePackagingGroup`.
     ///
     /// Deletes a MediaPackage VOD PackagingGroup resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePackagingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -906,10 +909,10 @@ pub mod fluent_builders {
                 crate::input::DeletePackagingGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -918,8 +921,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the MediaPackage VOD PackagingGroup resource to delete.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of the MediaPackage VOD PackagingGroup resource to delete.
@@ -931,7 +934,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAsset`.
     ///
     /// Returns a description of a MediaPackage VOD Asset resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAsset<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -976,10 +979,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAssetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -988,8 +991,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of an MediaPackage VOD Asset resource.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of an MediaPackage VOD Asset resource.
@@ -1001,7 +1004,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePackagingConfiguration`.
     ///
     /// Returns a description of a MediaPackage VOD PackagingConfiguration resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePackagingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1046,10 +1049,10 @@ pub mod fluent_builders {
                 crate::input::DescribePackagingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1058,8 +1061,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of a MediaPackage VOD PackagingConfiguration resource.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of a MediaPackage VOD PackagingConfiguration resource.
@@ -1071,7 +1074,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePackagingGroup`.
     ///
     /// Returns a description of a MediaPackage VOD PackagingGroup resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePackagingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1116,10 +1119,10 @@ pub mod fluent_builders {
                 crate::input::DescribePackagingGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1128,8 +1131,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of a MediaPackage VOD PackagingGroup resource.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of a MediaPackage VOD PackagingGroup resource.
@@ -1141,7 +1144,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssets`.
     ///
     /// Returns a collection of MediaPackage VOD Asset resources.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1186,10 +1189,10 @@ pub mod fluent_builders {
                 crate::input::ListAssetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1197,9 +1200,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssetsPaginator<C, M, R> {
+            crate::paginator::ListAssetsPaginator::new(self.handle, self.inner)
+        }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -1208,8 +1217,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1218,8 +1227,8 @@ pub mod fluent_builders {
             self
         }
         /// Returns Assets associated with the specified PackagingGroup.
-        pub fn packaging_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.packaging_group_id(inp);
+        pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.packaging_group_id(input.into());
             self
         }
         /// Returns Assets associated with the specified PackagingGroup.
@@ -1234,7 +1243,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPackagingConfigurations`.
     ///
     /// Returns a collection of MediaPackage VOD PackagingConfiguration resources.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPackagingConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1279,10 +1288,10 @@ pub mod fluent_builders {
                 crate::input::ListPackagingConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1290,9 +1299,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPackagingConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListPackagingConfigurationsPaginator<C, M, R> {
+            crate::paginator::ListPackagingConfigurationsPaginator::new(self.handle, self.inner)
+        }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -1301,8 +1318,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1311,8 +1328,8 @@ pub mod fluent_builders {
             self
         }
         /// Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.
-        pub fn packaging_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.packaging_group_id(inp);
+        pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.packaging_group_id(input.into());
             self
         }
         /// Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.
@@ -1327,7 +1344,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPackagingGroups`.
     ///
     /// Returns a collection of MediaPackage VOD PackagingGroup resources.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPackagingGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1372,10 +1389,10 @@ pub mod fluent_builders {
                 crate::input::ListPackagingGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1383,9 +1400,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPackagingGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPackagingGroupsPaginator<C, M, R> {
+            crate::paginator::ListPackagingGroupsPaginator::new(self.handle, self.inner)
+        }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -1394,8 +1417,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1407,7 +1430,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// Returns a list of the tags assigned to the specified resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1452,10 +1475,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1464,8 +1487,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
@@ -1477,7 +1500,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// Adds tags to the specified resource. You can specify one or more tags to add.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1522,10 +1545,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1534,8 +1557,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
@@ -1553,7 +1576,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// A collection of tags associated with a resource
@@ -1570,7 +1593,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// Removes tags from the specified resource. You can specify one or more tags to remove.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1615,10 +1638,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1627,8 +1650,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
@@ -1641,8 +1664,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// A comma-separated list of the tag keys to remove from the resource.
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// A comma-separated list of the tag keys to remove from the resource.
@@ -1657,7 +1680,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePackagingGroup`.
     ///
     /// Updates a specific packaging group. You can't change the id attribute or any other system-generated attributes.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePackagingGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1702,10 +1725,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePackagingGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1714,8 +1737,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// CDN Authorization credentials
-        pub fn authorization(mut self, inp: crate::model::Authorization) -> Self {
-            self.inner = self.inner.authorization(inp);
+        pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
+            self.inner = self.inner.authorization(input);
             self
         }
         /// CDN Authorization credentials
@@ -1727,8 +1750,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of a MediaPackage VOD PackagingGroup resource.
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of a MediaPackage VOD PackagingGroup resource.
@@ -1738,6 +1761,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

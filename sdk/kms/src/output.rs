@@ -5,11 +5,7 @@
 pub struct VerifyOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to verify the signature.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>A Boolean value that indicates whether the signature was verified. A value of
-    /// <code>True</code> indicates that the <code>Signature</code> was produced by signing the
-    /// <code>Message</code> with the specified <code>KeyID</code> and
-    /// <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code>
-    /// operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
+    /// <p>A Boolean value that indicates whether the signature was verified. A value of <code>True</code> indicates that the <code>Signature</code> was produced by signing the <code>Message</code> with the specified <code>KeyID</code> and <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code> operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
     pub signature_valid: bool,
     /// <p>The signing algorithm that was used to verify the signature.</p>
     pub signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
@@ -19,11 +15,7 @@ impl VerifyOutput {
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>A Boolean value that indicates whether the signature was verified. A value of
-    /// <code>True</code> indicates that the <code>Signature</code> was produced by signing the
-    /// <code>Message</code> with the specified <code>KeyID</code> and
-    /// <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code>
-    /// operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
+    /// <p>A Boolean value that indicates whether the signature was verified. A value of <code>True</code> indicates that the <code>Signature</code> was produced by signing the <code>Message</code> with the specified <code>KeyID</code> and <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code> operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
     pub fn signature_valid(&self) -> bool {
         self.signature_valid
     }
@@ -62,20 +54,12 @@ pub mod verify_output {
             self.key_id = input;
             self
         }
-        /// <p>A Boolean value that indicates whether the signature was verified. A value of
-        /// <code>True</code> indicates that the <code>Signature</code> was produced by signing the
-        /// <code>Message</code> with the specified <code>KeyID</code> and
-        /// <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code>
-        /// operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
+        /// <p>A Boolean value that indicates whether the signature was verified. A value of <code>True</code> indicates that the <code>Signature</code> was produced by signing the <code>Message</code> with the specified <code>KeyID</code> and <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code> operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
         pub fn signature_valid(mut self, input: bool) -> Self {
             self.signature_valid = Some(input);
             self
         }
-        /// <p>A Boolean value that indicates whether the signature was verified. A value of
-        /// <code>True</code> indicates that the <code>Signature</code> was produced by signing the
-        /// <code>Message</code> with the specified <code>KeyID</code> and
-        /// <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code>
-        /// operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
+        /// <p>A Boolean value that indicates whether the signature was verified. A value of <code>True</code> indicates that the <code>Signature</code> was produced by signing the <code>Message</code> with the specified <code>KeyID</code> and <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code> operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
         pub fn set_signature_valid(mut self, input: std::option::Option<bool>) -> Self {
             self.signature_valid = input;
             self
@@ -298,18 +282,8 @@ pub struct SignOutput {
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The cryptographic signature that was generated for the message. </p>
     /// <ul>
-    /// <li>
-    /// <p>When used with the supported RSA signing algorithms, the encoding of this value is
-    /// defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1 in RFC
-    /// 8017</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or
-    /// <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded object as
-    /// defined by ANS X9.62–2005 and <a href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>.
-    /// This is the most commonly used signature format and is appropriate for most uses.
-    /// </p>
-    /// </li>
+    /// <li> <p>When used with the supported RSA signing algorithms, the encoding of this value is defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1 in RFC 8017</a>.</p> </li>
+    /// <li> <p>When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded object as defined by ANS X9.62–2005 and <a href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>. This is the most commonly used signature format and is appropriate for most uses. </p> </li>
     /// </ul>
     /// <p>When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub signature: std::option::Option<aws_smithy_types::Blob>,
@@ -323,18 +297,8 @@ impl SignOutput {
     }
     /// <p>The cryptographic signature that was generated for the message. </p>
     /// <ul>
-    /// <li>
-    /// <p>When used with the supported RSA signing algorithms, the encoding of this value is
-    /// defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1 in RFC
-    /// 8017</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or
-    /// <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded object as
-    /// defined by ANS X9.62–2005 and <a href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>.
-    /// This is the most commonly used signature format and is appropriate for most uses.
-    /// </p>
-    /// </li>
+    /// <li> <p>When used with the supported RSA signing algorithms, the encoding of this value is defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1 in RFC 8017</a>.</p> </li>
+    /// <li> <p>When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded object as defined by ANS X9.62–2005 and <a href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>. This is the most commonly used signature format and is appropriate for most uses. </p> </li>
     /// </ul>
     /// <p>When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub fn signature(&self) -> std::option::Option<&aws_smithy_types::Blob> {
@@ -377,18 +341,8 @@ pub mod sign_output {
         }
         /// <p>The cryptographic signature that was generated for the message. </p>
         /// <ul>
-        /// <li>
-        /// <p>When used with the supported RSA signing algorithms, the encoding of this value is
-        /// defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1 in RFC
-        /// 8017</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or
-        /// <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded object as
-        /// defined by ANS X9.62–2005 and <a href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>.
-        /// This is the most commonly used signature format and is appropriate for most uses.
-        /// </p>
-        /// </li>
+        /// <li> <p>When used with the supported RSA signing algorithms, the encoding of this value is defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1 in RFC 8017</a>.</p> </li>
+        /// <li> <p>When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded object as defined by ANS X9.62–2005 and <a href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>. This is the most commonly used signature format and is appropriate for most uses. </p> </li>
         /// </ul>
         /// <p>When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         pub fn signature(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -397,18 +351,8 @@ pub mod sign_output {
         }
         /// <p>The cryptographic signature that was generated for the message. </p>
         /// <ul>
-        /// <li>
-        /// <p>When used with the supported RSA signing algorithms, the encoding of this value is
-        /// defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1 in RFC
-        /// 8017</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or
-        /// <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded object as
-        /// defined by ANS X9.62–2005 and <a href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>.
-        /// This is the most commonly used signature format and is appropriate for most uses.
-        /// </p>
-        /// </li>
+        /// <li> <p>When used with the supported RSA signing algorithms, the encoding of this value is defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1 in RFC 8017</a>.</p> </li>
+        /// <li> <p>When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded object as defined by ANS X9.62–2005 and <a href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>. This is the most commonly used signature format and is appropriate for most uses. </p> </li>
         /// </ul>
         /// <p>When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         pub fn set_signature(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
@@ -452,18 +396,13 @@ pub struct ScheduleKeyDeletionOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key whose deletion is scheduled.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The date and time after which KMS deletes the KMS key.</p>
-    /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not
-    /// appear. The deletion date for the primary key isn't known until its last replica key is
-    /// deleted.</p>
+    /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not appear. The deletion date for the primary key isn't known until its last replica key is deleted.</p>
     pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current status of the KMS key.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub key_state: std::option::Option<crate::model::KeyState>,
     /// <p>The waiting period before the KMS key is deleted. </p>
-    /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when
-    /// the last of its replica keys is deleted. Otherwise, the waiting period begins
-    /// immediately.</p>
+    /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
     pub pending_window_in_days: std::option::Option<i32>,
 }
 impl ScheduleKeyDeletionOutput {
@@ -472,22 +411,17 @@ impl ScheduleKeyDeletionOutput {
         self.key_id.as_deref()
     }
     /// <p>The date and time after which KMS deletes the KMS key.</p>
-    /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not
-    /// appear. The deletion date for the primary key isn't known until its last replica key is
-    /// deleted.</p>
+    /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not appear. The deletion date for the primary key isn't known until its last replica key is deleted.</p>
     pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deletion_date.as_ref()
     }
     /// <p>The current status of the KMS key.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn key_state(&self) -> std::option::Option<&crate::model::KeyState> {
         self.key_state.as_ref()
     }
     /// <p>The waiting period before the KMS key is deleted. </p>
-    /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when
-    /// the last of its replica keys is deleted. Otherwise, the waiting period begins
-    /// immediately.</p>
+    /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
     pub fn pending_window_in_days(&self) -> std::option::Option<i32> {
         self.pending_window_in_days
     }
@@ -525,17 +459,13 @@ pub mod schedule_key_deletion_output {
             self
         }
         /// <p>The date and time after which KMS deletes the KMS key.</p>
-        /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not
-        /// appear. The deletion date for the primary key isn't known until its last replica key is
-        /// deleted.</p>
+        /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not appear. The deletion date for the primary key isn't known until its last replica key is deleted.</p>
         pub fn deletion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deletion_date = Some(input);
             self
         }
         /// <p>The date and time after which KMS deletes the KMS key.</p>
-        /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not
-        /// appear. The deletion date for the primary key isn't known until its last replica key is
-        /// deleted.</p>
+        /// <p>If the KMS key is a multi-Region primary key with replica keys, this field does not appear. The deletion date for the primary key isn't known until its last replica key is deleted.</p>
         pub fn set_deletion_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -544,31 +474,25 @@ pub mod schedule_key_deletion_output {
             self
         }
         /// <p>The current status of the KMS key.</p>
-        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-        /// key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn key_state(mut self, input: crate::model::KeyState) -> Self {
             self.key_state = Some(input);
             self
         }
         /// <p>The current status of the KMS key.</p>
-        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-        /// key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_key_state(mut self, input: std::option::Option<crate::model::KeyState>) -> Self {
             self.key_state = input;
             self
         }
         /// <p>The waiting period before the KMS key is deleted. </p>
-        /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when
-        /// the last of its replica keys is deleted. Otherwise, the waiting period begins
-        /// immediately.</p>
+        /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
         pub fn pending_window_in_days(mut self, input: i32) -> Self {
             self.pending_window_in_days = Some(input);
             self
         }
         /// <p>The waiting period before the KMS key is deleted. </p>
-        /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when
-        /// the last of its replica keys is deleted. Otherwise, the waiting period begins
-        /// immediately.</p>
+        /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
         pub fn set_pending_window_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.pending_window_in_days = input;
             self
@@ -655,31 +579,23 @@ impl RetireGrantOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicateKeyOutput {
-    /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also
-    /// includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
+    /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
     pub replica_key_metadata: std::option::Option<crate::model::KeyMetadata>,
-    /// <p>The key policy of the new replica key. The value is a key policy document in JSON
-    /// format.</p>
+    /// <p>The key policy of the new replica key. The value is a key policy document in JSON format.</p>
     pub replica_policy: std::option::Option<std::string::String>,
-    /// <p>The tags on the new replica key. The value is a list of tag key and tag value
-    /// pairs.</p>
+    /// <p>The tags on the new replica key. The value is a list of tag key and tag value pairs.</p>
     pub replica_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ReplicateKeyOutput {
-    /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also
-    /// includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
+    /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
     pub fn replica_key_metadata(&self) -> std::option::Option<&crate::model::KeyMetadata> {
         self.replica_key_metadata.as_ref()
     }
-    /// <p>The key policy of the new replica key. The value is a key policy document in JSON
-    /// format.</p>
+    /// <p>The key policy of the new replica key. The value is a key policy document in JSON format.</p>
     pub fn replica_policy(&self) -> std::option::Option<&str> {
         self.replica_policy.as_deref()
     }
-    /// <p>The tags on the new replica key. The value is a list of tag key and tag value
-    /// pairs.</p>
+    /// <p>The tags on the new replica key. The value is a list of tag key and tag value pairs.</p>
     pub fn replica_tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.replica_tags.as_deref()
     }
@@ -704,16 +620,12 @@ pub mod replicate_key_output {
         pub(crate) replica_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also
-        /// includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
+        /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
         pub fn replica_key_metadata(mut self, input: crate::model::KeyMetadata) -> Self {
             self.replica_key_metadata = Some(input);
             self
         }
-        /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also
-        /// includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
+        /// <p>Displays details about the new replica key, including its Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">key state</a>. It also includes the ARN and Amazon Web Services Region of its primary key and other replica keys.</p>
         pub fn set_replica_key_metadata(
             mut self,
             input: std::option::Option<crate::model::KeyMetadata>,
@@ -721,14 +633,12 @@ pub mod replicate_key_output {
             self.replica_key_metadata = input;
             self
         }
-        /// <p>The key policy of the new replica key. The value is a key policy document in JSON
-        /// format.</p>
+        /// <p>The key policy of the new replica key. The value is a key policy document in JSON format.</p>
         pub fn replica_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.replica_policy = Some(input.into());
             self
         }
-        /// <p>The key policy of the new replica key. The value is a key policy document in JSON
-        /// format.</p>
+        /// <p>The key policy of the new replica key. The value is a key policy document in JSON format.</p>
         pub fn set_replica_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -740,16 +650,14 @@ pub mod replicate_key_output {
         ///
         /// To override the contents of this collection use [`set_replica_tags`](Self::set_replica_tags).
         ///
-        /// <p>The tags on the new replica key. The value is a list of tag key and tag value
-        /// pairs.</p>
-        pub fn replica_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>The tags on the new replica key. The value is a list of tag key and tag value pairs.</p>
+        pub fn replica_tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.replica_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replica_tags = Some(v);
             self
         }
-        /// <p>The tags on the new replica key. The value is a list of tag key and tag value
-        /// pairs.</p>
+        /// <p>The tags on the new replica key. The value is a list of tag key and tag value pairs.</p>
         pub fn set_replica_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -784,8 +692,7 @@ pub struct ReEncryptOutput {
     pub source_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to reencrypt the data.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was
-    /// reencrypted.</p>
+    /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.</p>
     pub source_encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
     /// <p>The encryption algorithm that was used to reencrypt the data.</p>
     pub destination_encryption_algorithm:
@@ -804,8 +711,7 @@ impl ReEncryptOutput {
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was
-    /// reencrypted.</p>
+    /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.</p>
     pub fn source_encryption_algorithm(
         &self,
     ) -> std::option::Option<&crate::model::EncryptionAlgorithmSpec> {
@@ -886,8 +792,7 @@ pub mod re_encrypt_output {
             self.key_id = input;
             self
         }
-        /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was
-        /// reencrypted.</p>
+        /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.</p>
         pub fn source_encryption_algorithm(
             mut self,
             input: crate::model::EncryptionAlgorithmSpec,
@@ -895,8 +800,7 @@ pub mod re_encrypt_output {
             self.source_encryption_algorithm = Some(input);
             self
         }
-        /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was
-        /// reencrypted.</p>
+        /// <p>The encryption algorithm that was used to decrypt the ciphertext before it was reencrypted.</p>
         pub fn set_source_encryption_algorithm(
             mut self,
             input: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
@@ -975,13 +879,9 @@ impl PutKeyPolicyOutput {
 pub struct ListRetirableGrantsOutput {
     /// <p>A list of grants.</p>
     pub grants: std::option::Option<std::vec::Vec<crate::model::GrantListEntry>>,
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the
-    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>A flag that indicates whether there are more items in the list. When this
-    /// value is true, the list in this response is truncated. To get more items, pass the value of
-    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-    /// subsequent request.</p>
+    /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub truncated: bool,
 }
 impl ListRetirableGrantsOutput {
@@ -989,15 +889,11 @@ impl ListRetirableGrantsOutput {
     pub fn grants(&self) -> std::option::Option<&[crate::model::GrantListEntry]> {
         self.grants.as_deref()
     }
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the
-    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>A flag that indicates whether there are more items in the list. When this
-    /// value is true, the list in this response is truncated. To get more items, pass the value of
-    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-    /// subsequent request.</p>
+    /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn truncated(&self) -> bool {
         self.truncated
     }
@@ -1027,9 +923,9 @@ pub mod list_retirable_grants_output {
         /// To override the contents of this collection use [`set_grants`](Self::set_grants).
         ///
         /// <p>A list of grants.</p>
-        pub fn grants(mut self, input: impl Into<crate::model::GrantListEntry>) -> Self {
+        pub fn grants(mut self, input: crate::model::GrantListEntry) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grants = Some(v);
             self
         }
@@ -1041,30 +937,22 @@ pub mod list_retirable_grants_output {
             self.grants = input;
             self
         }
-        /// <p>When <code>Truncated</code> is true, this element is present and contains the
-        /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+        /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When <code>Truncated</code> is true, this element is present and contains the
-        /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+        /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>A flag that indicates whether there are more items in the list. When this
-        /// value is true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-        /// subsequent request.</p>
+        /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn truncated(mut self, input: bool) -> Self {
             self.truncated = Some(input);
             self
         }
-        /// <p>A flag that indicates whether there are more items in the list. When this
-        /// value is true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-        /// subsequent request.</p>
+        /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input;
             self
@@ -1090,39 +978,29 @@ impl ListRetirableGrantsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceTagsOutput {
-    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p>
-    /// <note>
+    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the
-    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     /// <p>Do not assume or infer any information from this value.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>A flag that indicates whether there are more items in the list. When this
-    /// value is true, the list in this response is truncated. To get more items, pass the value of
-    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-    /// subsequent request.</p>
+    /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub truncated: bool,
 }
 impl ListResourceTagsOutput {
-    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p>
-    /// <note>
+    /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the
-    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     /// <p>Do not assume or infer any information from this value.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>A flag that indicates whether there are more items in the list. When this
-    /// value is true, the list in this response is truncated. To get more items, pass the value of
-    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-    /// subsequent request.</p>
+    /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn truncated(&self) -> bool {
         self.truncated
     }
@@ -1151,18 +1029,16 @@ pub mod list_resource_tags_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p>
-        /// <note>
+        /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
         /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p>
-        /// <note>
+        /// <p>A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
         /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// </note>
         pub fn set_tags(
@@ -1172,32 +1048,24 @@ pub mod list_resource_tags_output {
             self.tags = input;
             self
         }
-        /// <p>When <code>Truncated</code> is true, this element is present and contains the
-        /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+        /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
         /// <p>Do not assume or infer any information from this value.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When <code>Truncated</code> is true, this element is present and contains the
-        /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+        /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
         /// <p>Do not assume or infer any information from this value.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>A flag that indicates whether there are more items in the list. When this
-        /// value is true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-        /// subsequent request.</p>
+        /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn truncated(mut self, input: bool) -> Self {
             self.truncated = Some(input);
             self
         }
-        /// <p>A flag that indicates whether there are more items in the list. When this
-        /// value is true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-        /// subsequent request.</p>
+        /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input;
             self
@@ -1225,13 +1093,9 @@ impl ListResourceTagsOutput {
 pub struct ListKeysOutput {
     /// <p>A list of KMS keys.</p>
     pub keys: std::option::Option<std::vec::Vec<crate::model::KeyListEntry>>,
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the
-    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>A flag that indicates whether there are more items in the list. When this
-    /// value is true, the list in this response is truncated. To get more items, pass the value of
-    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-    /// subsequent request.</p>
+    /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub truncated: bool,
 }
 impl ListKeysOutput {
@@ -1239,15 +1103,11 @@ impl ListKeysOutput {
     pub fn keys(&self) -> std::option::Option<&[crate::model::KeyListEntry]> {
         self.keys.as_deref()
     }
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the
-    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>A flag that indicates whether there are more items in the list. When this
-    /// value is true, the list in this response is truncated. To get more items, pass the value of
-    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-    /// subsequent request.</p>
+    /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn truncated(&self) -> bool {
         self.truncated
     }
@@ -1277,9 +1137,9 @@ pub mod list_keys_output {
         /// To override the contents of this collection use [`set_keys`](Self::set_keys).
         ///
         /// <p>A list of KMS keys.</p>
-        pub fn keys(mut self, input: impl Into<crate::model::KeyListEntry>) -> Self {
+        pub fn keys(mut self, input: crate::model::KeyListEntry) -> Self {
             let mut v = self.keys.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.keys = Some(v);
             self
         }
@@ -1291,30 +1151,22 @@ pub mod list_keys_output {
             self.keys = input;
             self
         }
-        /// <p>When <code>Truncated</code> is true, this element is present and contains the
-        /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+        /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When <code>Truncated</code> is true, this element is present and contains the
-        /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+        /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>A flag that indicates whether there are more items in the list. When this
-        /// value is true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-        /// subsequent request.</p>
+        /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn truncated(mut self, input: bool) -> Self {
             self.truncated = Some(input);
             self
         }
-        /// <p>A flag that indicates whether there are more items in the list. When this
-        /// value is true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-        /// subsequent request.</p>
+        /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input;
             self
@@ -1342,13 +1194,9 @@ impl ListKeysOutput {
 pub struct ListKeyPoliciesOutput {
     /// <p>A list of key policy names. The only valid value is <code>default</code>.</p>
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the
-    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>A flag that indicates whether there are more items in the list. When this
-    /// value is true, the list in this response is truncated. To get more items, pass the value of
-    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-    /// subsequent request.</p>
+    /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub truncated: bool,
 }
 impl ListKeyPoliciesOutput {
@@ -1356,15 +1204,11 @@ impl ListKeyPoliciesOutput {
     pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
         self.policy_names.as_deref()
     }
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the
-    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>A flag that indicates whether there are more items in the list. When this
-    /// value is true, the list in this response is truncated. To get more items, pass the value of
-    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-    /// subsequent request.</p>
+    /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn truncated(&self) -> bool {
         self.truncated
     }
@@ -1408,30 +1252,22 @@ pub mod list_key_policies_output {
             self.policy_names = input;
             self
         }
-        /// <p>When <code>Truncated</code> is true, this element is present and contains the
-        /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+        /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When <code>Truncated</code> is true, this element is present and contains the
-        /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+        /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>A flag that indicates whether there are more items in the list. When this
-        /// value is true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-        /// subsequent request.</p>
+        /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn truncated(mut self, input: bool) -> Self {
             self.truncated = Some(input);
             self
         }
-        /// <p>A flag that indicates whether there are more items in the list. When this
-        /// value is true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-        /// subsequent request.</p>
+        /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input;
             self
@@ -1459,13 +1295,9 @@ impl ListKeyPoliciesOutput {
 pub struct ListGrantsOutput {
     /// <p>A list of grants.</p>
     pub grants: std::option::Option<std::vec::Vec<crate::model::GrantListEntry>>,
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the
-    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>A flag that indicates whether there are more items in the list. When this
-    /// value is true, the list in this response is truncated. To get more items, pass the value of
-    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-    /// subsequent request.</p>
+    /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub truncated: bool,
 }
 impl ListGrantsOutput {
@@ -1473,15 +1305,11 @@ impl ListGrantsOutput {
     pub fn grants(&self) -> std::option::Option<&[crate::model::GrantListEntry]> {
         self.grants.as_deref()
     }
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the
-    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>A flag that indicates whether there are more items in the list. When this
-    /// value is true, the list in this response is truncated. To get more items, pass the value of
-    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-    /// subsequent request.</p>
+    /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn truncated(&self) -> bool {
         self.truncated
     }
@@ -1511,9 +1339,9 @@ pub mod list_grants_output {
         /// To override the contents of this collection use [`set_grants`](Self::set_grants).
         ///
         /// <p>A list of grants.</p>
-        pub fn grants(mut self, input: impl Into<crate::model::GrantListEntry>) -> Self {
+        pub fn grants(mut self, input: crate::model::GrantListEntry) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grants = Some(v);
             self
         }
@@ -1525,30 +1353,22 @@ pub mod list_grants_output {
             self.grants = input;
             self
         }
-        /// <p>When <code>Truncated</code> is true, this element is present and contains the
-        /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+        /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When <code>Truncated</code> is true, this element is present and contains the
-        /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+        /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>A flag that indicates whether there are more items in the list. When this
-        /// value is true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-        /// subsequent request.</p>
+        /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn truncated(mut self, input: bool) -> Self {
             self.truncated = Some(input);
             self
         }
-        /// <p>A flag that indicates whether there are more items in the list. When this
-        /// value is true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-        /// subsequent request.</p>
+        /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input;
             self
@@ -1576,13 +1396,9 @@ impl ListGrantsOutput {
 pub struct ListAliasesOutput {
     /// <p>A list of aliases.</p>
     pub aliases: std::option::Option<std::vec::Vec<crate::model::AliasListEntry>>,
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the
-    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>A flag that indicates whether there are more items in the list. When this
-    /// value is true, the list in this response is truncated. To get more items, pass the value of
-    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-    /// subsequent request.</p>
+    /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub truncated: bool,
 }
 impl ListAliasesOutput {
@@ -1590,15 +1406,11 @@ impl ListAliasesOutput {
     pub fn aliases(&self) -> std::option::Option<&[crate::model::AliasListEntry]> {
         self.aliases.as_deref()
     }
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the
-    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>A flag that indicates whether there are more items in the list. When this
-    /// value is true, the list in this response is truncated. To get more items, pass the value of
-    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-    /// subsequent request.</p>
+    /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn truncated(&self) -> bool {
         self.truncated
     }
@@ -1628,9 +1440,9 @@ pub mod list_aliases_output {
         /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
         ///
         /// <p>A list of aliases.</p>
-        pub fn aliases(mut self, input: impl Into<crate::model::AliasListEntry>) -> Self {
+        pub fn aliases(mut self, input: crate::model::AliasListEntry) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.aliases = Some(v);
             self
         }
@@ -1642,30 +1454,22 @@ pub mod list_aliases_output {
             self.aliases = input;
             self
         }
-        /// <p>When <code>Truncated</code> is true, this element is present and contains the
-        /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+        /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When <code>Truncated</code> is true, this element is present and contains the
-        /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+        /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>A flag that indicates whether there are more items in the list. When this
-        /// value is true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-        /// subsequent request.</p>
+        /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn truncated(mut self, input: bool) -> Self {
             self.truncated = Some(input);
             self
         }
-        /// <p>A flag that indicates whether there are more items in the list. When this
-        /// value is true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-        /// subsequent request.</p>
+        /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input;
             self
@@ -1721,57 +1525,42 @@ impl ImportKeyMaterialOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicKeyOutput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was
-    /// downloaded.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was downloaded.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The exported public key. </p>
-    /// <p>The value is a DER-encoded X.509 public key, also known as
-    /// <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     /// <p></p>
     pub public_key: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code>
-    /// response.</p>
-    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
-    /// value. We recommend that you use the <code>KeySpec</code> field in your code. However, to
-    /// avoid breaking changes, KMS will support both fields.</p>
+    /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
+    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
     pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
     /// <p>The type of the of the public key that was downloaded.</p>
     pub key_spec: std::option::Option<crate::model::KeySpec>,
-    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or
-    /// <code>SIGN_VERIFY</code>. </p>
-    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage
-    /// encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
+    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>. </p>
+    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
     pub key_usage: std::option::Option<crate::model::KeyUsageType>,
     /// <p>The encryption algorithms that KMS supports for this key. </p>
-    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an
-    /// unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
-    /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key
-    /// is <code>ENCRYPT_DECRYPT</code>.</p>
+    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
+    /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>ENCRYPT_DECRYPT</code>.</p>
     pub encryption_algorithms:
         std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
     /// <p>The signing algorithms that KMS supports for this key.</p>
-    /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key
-    /// is <code>SIGN_VERIFY</code>.</p>
+    /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>SIGN_VERIFY</code>.</p>
     pub signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
 }
 impl GetPublicKeyOutput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was
-    /// downloaded.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was downloaded.</p>
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
     /// <p>The exported public key. </p>
-    /// <p>The value is a DER-encoded X.509 public key, also known as
-    /// <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+    /// <p>The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     /// <p></p>
     pub fn public_key(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.public_key.as_ref()
     }
-    /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code>
-    /// response.</p>
-    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
-    /// value. We recommend that you use the <code>KeySpec</code> field in your code. However, to
-    /// avoid breaking changes, KMS will support both fields.</p>
+    /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
+    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
     pub fn customer_master_key_spec(
         &self,
     ) -> std::option::Option<&crate::model::CustomerMasterKeySpec> {
@@ -1781,26 +1570,21 @@ impl GetPublicKeyOutput {
     pub fn key_spec(&self) -> std::option::Option<&crate::model::KeySpec> {
         self.key_spec.as_ref()
     }
-    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or
-    /// <code>SIGN_VERIFY</code>. </p>
-    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage
-    /// encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
+    /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>. </p>
+    /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
     pub fn key_usage(&self) -> std::option::Option<&crate::model::KeyUsageType> {
         self.key_usage.as_ref()
     }
     /// <p>The encryption algorithms that KMS supports for this key. </p>
-    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an
-    /// unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
-    /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key
-    /// is <code>ENCRYPT_DECRYPT</code>.</p>
+    /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
+    /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>ENCRYPT_DECRYPT</code>.</p>
     pub fn encryption_algorithms(
         &self,
     ) -> std::option::Option<&[crate::model::EncryptionAlgorithmSpec]> {
         self.encryption_algorithms.as_deref()
     }
     /// <p>The signing algorithms that KMS supports for this key.</p>
-    /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key
-    /// is <code>SIGN_VERIFY</code>.</p>
+    /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>SIGN_VERIFY</code>.</p>
     pub fn signing_algorithms(&self) -> std::option::Option<&[crate::model::SigningAlgorithmSpec]> {
         self.signing_algorithms.as_deref()
     }
@@ -1836,29 +1620,25 @@ pub mod get_public_key_output {
             std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was
-        /// downloaded.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was downloaded.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was
-        /// downloaded.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key from which the public key was downloaded.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
         }
         /// <p>The exported public key. </p>
-        /// <p>The value is a DER-encoded X.509 public key, also known as
-        /// <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+        /// <p>The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         /// <p></p>
         pub fn public_key(mut self, input: aws_smithy_types::Blob) -> Self {
             self.public_key = Some(input);
             self
         }
         /// <p>The exported public key. </p>
-        /// <p>The value is a DER-encoded X.509 public key, also known as
-        /// <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+        /// <p>The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
         /// <p></p>
         pub fn set_public_key(
             mut self,
@@ -1867,11 +1647,8 @@ pub mod get_public_key_output {
             self.public_key = input;
             self
         }
-        /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code>
-        /// response.</p>
-        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
-        /// value. We recommend that you use the <code>KeySpec</code> field in your code. However, to
-        /// avoid breaking changes, KMS will support both fields.</p>
+        /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
+        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
         pub fn customer_master_key_spec(
             mut self,
             input: crate::model::CustomerMasterKeySpec,
@@ -1879,11 +1656,8 @@ pub mod get_public_key_output {
             self.customer_master_key_spec = Some(input);
             self
         }
-        /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code>
-        /// response.</p>
-        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
-        /// value. We recommend that you use the <code>KeySpec</code> field in your code. However, to
-        /// avoid breaking changes, KMS will support both fields.</p>
+        /// <p>Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
+        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
         pub fn set_customer_master_key_spec(
             mut self,
             input: std::option::Option<crate::model::CustomerMasterKeySpec>,
@@ -1901,18 +1675,14 @@ pub mod get_public_key_output {
             self.key_spec = input;
             self
         }
-        /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or
-        /// <code>SIGN_VERIFY</code>. </p>
-        /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage
-        /// encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
+        /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>. </p>
+        /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
         pub fn key_usage(mut self, input: crate::model::KeyUsageType) -> Self {
             self.key_usage = Some(input);
             self
         }
-        /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or
-        /// <code>SIGN_VERIFY</code>. </p>
-        /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage
-        /// encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
+        /// <p>The permitted use of the public key. Valid values are <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>. </p>
+        /// <p>This information is critical. If a public key with <code>SIGN_VERIFY</code> key usage encrypts data outside of KMS, the ciphertext cannot be decrypted. </p>
         pub fn set_key_usage(
             mut self,
             input: std::option::Option<crate::model::KeyUsageType>,
@@ -1925,24 +1695,20 @@ pub mod get_public_key_output {
         /// To override the contents of this collection use [`set_encryption_algorithms`](Self::set_encryption_algorithms).
         ///
         /// <p>The encryption algorithms that KMS supports for this key. </p>
-        /// <p>This information is critical. If a public key encrypts data outside of KMS by using an
-        /// unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
-        /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key
-        /// is <code>ENCRYPT_DECRYPT</code>.</p>
+        /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
+        /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>ENCRYPT_DECRYPT</code>.</p>
         pub fn encryption_algorithms(
             mut self,
-            input: impl Into<crate::model::EncryptionAlgorithmSpec>,
+            input: crate::model::EncryptionAlgorithmSpec,
         ) -> Self {
             let mut v = self.encryption_algorithms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.encryption_algorithms = Some(v);
             self
         }
         /// <p>The encryption algorithms that KMS supports for this key. </p>
-        /// <p>This information is critical. If a public key encrypts data outside of KMS by using an
-        /// unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
-        /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key
-        /// is <code>ENCRYPT_DECRYPT</code>.</p>
+        /// <p>This information is critical. If a public key encrypts data outside of KMS by using an unsupported encryption algorithm, the ciphertext cannot be decrypted. </p>
+        /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>ENCRYPT_DECRYPT</code>.</p>
         pub fn set_encryption_algorithms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
@@ -1955,20 +1721,15 @@ pub mod get_public_key_output {
         /// To override the contents of this collection use [`set_signing_algorithms`](Self::set_signing_algorithms).
         ///
         /// <p>The signing algorithms that KMS supports for this key.</p>
-        /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key
-        /// is <code>SIGN_VERIFY</code>.</p>
-        pub fn signing_algorithms(
-            mut self,
-            input: impl Into<crate::model::SigningAlgorithmSpec>,
-        ) -> Self {
+        /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>SIGN_VERIFY</code>.</p>
+        pub fn signing_algorithms(mut self, input: crate::model::SigningAlgorithmSpec) -> Self {
             let mut v = self.signing_algorithms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.signing_algorithms = Some(v);
             self
         }
         /// <p>The signing algorithms that KMS supports for this key.</p>
-        /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key
-        /// is <code>SIGN_VERIFY</code>.</p>
+        /// <p>This field appears in the response only when the <code>KeyUsage</code> of the public key is <code>SIGN_VERIFY</code>.</p>
         pub fn set_signing_algorithms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
@@ -2001,37 +1762,29 @@ impl GetPublicKeyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParametersForImportOutput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request. This is the same KMS key specified in the <code>GetParametersForImport</code>
-    /// request.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <code>ImportKeyMaterial</code> request. This is the same KMS key specified in the <code>GetParametersForImport</code> request.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>The import token to send in a subsequent <a>ImportKeyMaterial</a>
-    /// request.</p>
+    /// <p>The import token to send in a subsequent <code>ImportKeyMaterial</code> request.</p>
     pub import_token: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The public key to use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.</p>
+    /// <p>The public key to use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>.</p>
     pub public_key: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The time at which the import token and public key are no longer valid. After this time,
-    /// you cannot use them to make an <a>ImportKeyMaterial</a> request and you must send
-    /// another <code>GetParametersForImport</code> request to get new ones.</p>
+    /// <p>The time at which the import token and public key are no longer valid. After this time, you cannot use them to make an <code>ImportKeyMaterial</code> request and you must send another <code>GetParametersForImport</code> request to get new ones.</p>
     pub parameters_valid_to: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetParametersForImportOutput {
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request. This is the same KMS key specified in the <code>GetParametersForImport</code>
-    /// request.</p>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <code>ImportKeyMaterial</code> request. This is the same KMS key specified in the <code>GetParametersForImport</code> request.</p>
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>The import token to send in a subsequent <a>ImportKeyMaterial</a>
-    /// request.</p>
+    /// <p>The import token to send in a subsequent <code>ImportKeyMaterial</code> request.</p>
     pub fn import_token(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.import_token.as_ref()
     }
-    /// <p>The public key to use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.</p>
+    /// <p>The public key to use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>.</p>
     pub fn public_key(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.public_key.as_ref()
     }
-    /// <p>The time at which the import token and public key are no longer valid. After this time,
-    /// you cannot use them to make an <a>ImportKeyMaterial</a> request and you must send
-    /// another <code>GetParametersForImport</code> request to get new ones.</p>
+    /// <p>The time at which the import token and public key are no longer valid. After this time, you cannot use them to make an <code>ImportKeyMaterial</code> request and you must send another <code>GetParametersForImport</code> request to get new ones.</p>
     pub fn parameters_valid_to(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.parameters_valid_to.as_ref()
     }
@@ -2058,26 +1811,22 @@ pub mod get_parameters_for_import_output {
         pub(crate) parameters_valid_to: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request. This is the same KMS key specified in the <code>GetParametersForImport</code>
-        /// request.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <code>ImportKeyMaterial</code> request. This is the same KMS key specified in the <code>GetParametersForImport</code> request.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <a>ImportKeyMaterial</a> request. This is the same KMS key specified in the <code>GetParametersForImport</code>
-        /// request.</p>
+        /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <code>ImportKeyMaterial</code> request. This is the same KMS key specified in the <code>GetParametersForImport</code> request.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
         }
-        /// <p>The import token to send in a subsequent <a>ImportKeyMaterial</a>
-        /// request.</p>
+        /// <p>The import token to send in a subsequent <code>ImportKeyMaterial</code> request.</p>
         pub fn import_token(mut self, input: aws_smithy_types::Blob) -> Self {
             self.import_token = Some(input);
             self
         }
-        /// <p>The import token to send in a subsequent <a>ImportKeyMaterial</a>
-        /// request.</p>
+        /// <p>The import token to send in a subsequent <code>ImportKeyMaterial</code> request.</p>
         pub fn set_import_token(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -2085,12 +1834,12 @@ pub mod get_parameters_for_import_output {
             self.import_token = input;
             self
         }
-        /// <p>The public key to use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.</p>
+        /// <p>The public key to use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>.</p>
         pub fn public_key(mut self, input: aws_smithy_types::Blob) -> Self {
             self.public_key = Some(input);
             self
         }
-        /// <p>The public key to use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.</p>
+        /// <p>The public key to use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>.</p>
         pub fn set_public_key(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -2098,16 +1847,12 @@ pub mod get_parameters_for_import_output {
             self.public_key = input;
             self
         }
-        /// <p>The time at which the import token and public key are no longer valid. After this time,
-        /// you cannot use them to make an <a>ImportKeyMaterial</a> request and you must send
-        /// another <code>GetParametersForImport</code> request to get new ones.</p>
+        /// <p>The time at which the import token and public key are no longer valid. After this time, you cannot use them to make an <code>ImportKeyMaterial</code> request and you must send another <code>GetParametersForImport</code> request to get new ones.</p>
         pub fn parameters_valid_to(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.parameters_valid_to = Some(input);
             self
         }
-        /// <p>The time at which the import token and public key are no longer valid. After this time,
-        /// you cannot use them to make an <a>ImportKeyMaterial</a> request and you must send
-        /// another <code>GetParametersForImport</code> request to get new ones.</p>
+        /// <p>The time at which the import token and public key are no longer valid. After this time, you cannot use them to make an <code>ImportKeyMaterial</code> request and you must send another <code>GetParametersForImport</code> request to get new ones.</p>
         pub fn set_parameters_valid_to(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2645,8 +2390,7 @@ impl GenerateDataKeyPairOutput {
 pub struct GenerateDataKeyOutput {
     /// <p>The encrypted copy of the data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of
-    /// KMS. Then, remove it from memory as soon as possible.</p>
+    /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.</p>
     pub plaintext: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the data key.</p>
     pub key_id: std::option::Option<std::string::String>,
@@ -2656,8 +2400,7 @@ impl GenerateDataKeyOutput {
     pub fn ciphertext_blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.ciphertext_blob.as_ref()
     }
-    /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of
-    /// KMS. Then, remove it from memory as soon as possible.</p>
+    /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.</p>
     pub fn plaintext(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.plaintext.as_ref()
     }
@@ -2699,14 +2442,12 @@ pub mod generate_data_key_output {
             self.ciphertext_blob = input;
             self
         }
-        /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of
-        /// KMS. Then, remove it from memory as soon as possible.</p>
+        /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.</p>
         pub fn plaintext(mut self, input: aws_smithy_types::Blob) -> Self {
             self.plaintext = Some(input);
             self
         }
-        /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of
-        /// KMS. Then, remove it from memory as soon as possible.</p>
+        /// <p>The plaintext data key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded. Use this data key to encrypt your data outside of KMS. Then, remove it from memory as soon as possible.</p>
         pub fn set_plaintext(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.plaintext = input;
             self
@@ -3055,13 +2796,9 @@ pub struct DescribeCustomKeyStoresOutput {
     /// <p>Contains metadata about each custom key store.</p>
     pub custom_key_stores:
         std::option::Option<std::vec::Vec<crate::model::CustomKeyStoresListEntry>>,
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the
-    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>A flag that indicates whether there are more items in the list. When this
-    /// value is true, the list in this response is truncated. To get more items, pass the value of
-    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-    /// subsequent request.</p>
+    /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub truncated: bool,
 }
 impl DescribeCustomKeyStoresOutput {
@@ -3071,15 +2808,11 @@ impl DescribeCustomKeyStoresOutput {
     ) -> std::option::Option<&[crate::model::CustomKeyStoresListEntry]> {
         self.custom_key_stores.as_deref()
     }
-    /// <p>When <code>Truncated</code> is true, this element is present and contains the
-    /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+    /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>A flag that indicates whether there are more items in the list. When this
-    /// value is true, the list in this response is truncated. To get more items, pass the value of
-    /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-    /// subsequent request.</p>
+    /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn truncated(&self) -> bool {
         self.truncated
     }
@@ -3110,12 +2843,9 @@ pub mod describe_custom_key_stores_output {
         /// To override the contents of this collection use [`set_custom_key_stores`](Self::set_custom_key_stores).
         ///
         /// <p>Contains metadata about each custom key store.</p>
-        pub fn custom_key_stores(
-            mut self,
-            input: impl Into<crate::model::CustomKeyStoresListEntry>,
-        ) -> Self {
+        pub fn custom_key_stores(mut self, input: crate::model::CustomKeyStoresListEntry) -> Self {
             let mut v = self.custom_key_stores.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.custom_key_stores = Some(v);
             self
         }
@@ -3127,30 +2857,22 @@ pub mod describe_custom_key_stores_output {
             self.custom_key_stores = input;
             self
         }
-        /// <p>When <code>Truncated</code> is true, this element is present and contains the
-        /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+        /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When <code>Truncated</code> is true, this element is present and contains the
-        /// value to use for the <code>Marker</code> parameter in a subsequent request.</p>
+        /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>A flag that indicates whether there are more items in the list. When this
-        /// value is true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-        /// subsequent request.</p>
+        /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn truncated(mut self, input: bool) -> Self {
             self.truncated = Some(input);
             self
         }
-        /// <p>A flag that indicates whether there are more items in the list. When this
-        /// value is true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a
-        /// subsequent request.</p>
+        /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input;
             self
@@ -3424,22 +3146,20 @@ impl CreateKeyOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGrantOutput {
     /// <p>The grant token.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
-    /// <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub grant_token: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the grant.</p>
-    /// <p>You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a> operation.</p>
+    /// <p>You can use the <code>GrantId</code> in a <code>ListGrants</code>, <code>RetireGrant</code>, or <code>RevokeGrant</code> operation.</p>
     pub grant_id: std::option::Option<std::string::String>,
 }
 impl CreateGrantOutput {
     /// <p>The grant token.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
-    /// <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn grant_token(&self) -> std::option::Option<&str> {
         self.grant_token.as_deref()
     }
     /// <p>The unique identifier for the grant.</p>
-    /// <p>You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a> operation.</p>
+    /// <p>You can use the <code>GrantId</code> in a <code>ListGrants</code>, <code>RetireGrant</code>, or <code>RevokeGrant</code> operation.</p>
     pub fn grant_id(&self) -> std::option::Option<&str> {
         self.grant_id.as_deref()
     }
@@ -3463,27 +3183,25 @@ pub mod create_grant_output {
     }
     impl Builder {
         /// <p>The grant token.</p>
-        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
-        /// <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_token = Some(input.into());
             self
         }
         /// <p>The grant token.</p>
-        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
-        /// <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_grant_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_token = input;
             self
         }
         /// <p>The unique identifier for the grant.</p>
-        /// <p>You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a> operation.</p>
+        /// <p>You can use the <code>GrantId</code> in a <code>ListGrants</code>, <code>RetireGrant</code>, or <code>RevokeGrant</code> operation.</p>
         pub fn grant_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_id = Some(input.into());
             self
         }
         /// <p>The unique identifier for the grant.</p>
-        /// <p>You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or <a>RevokeGrant</a> operation.</p>
+        /// <p>You can use the <code>GrantId</code> in a <code>ListGrants</code>, <code>RetireGrant</code>, or <code>RevokeGrant</code> operation.</p>
         pub fn set_grant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_id = input;
             self

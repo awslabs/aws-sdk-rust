@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Data Pipeline
@@ -122,6 +122,7 @@ where
     ///
     /// See [`DescribeObjects`](crate::client::fluent_builders::DescribeObjects) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeObjects::into_paginator).
     pub fn describe_objects(&self) -> fluent_builders::DescribeObjects<C, M, R> {
         fluent_builders::DescribeObjects::new(self.handle.clone())
     }
@@ -150,6 +151,7 @@ where
     ///
     /// See [`ListPipelines`](crate::client::fluent_builders::ListPipelines) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelines::into_paginator).
     pub fn list_pipelines(&self) -> fluent_builders::ListPipelines<C, M, R> {
         fluent_builders::ListPipelines::new(self.handle.clone())
     }
@@ -171,6 +173,7 @@ where
     ///
     /// See [`QueryObjects`](crate::client::fluent_builders::QueryObjects) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::QueryObjects::into_paginator).
     pub fn query_objects(&self) -> fluent_builders::QueryObjects<C, M, R> {
         fluent_builders::QueryObjects::new(self.handle.clone())
     }
@@ -231,38 +234,17 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `ActivatePipeline`.
     ///
-    /// <p>Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation,
-    /// activation fails.</p>
-    /// <p>If you need to pause the pipeline to investigate an issue with a component, such as a data source or script,
-    /// call <a>DeactivatePipeline</a>.</p>
-    /// <p>To activate a finished pipeline, modify the end date for the pipeline and then activate it.</p>
-    /// <examples>
+    /// <p>Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails.</p>
+    /// <p>If you need to pause the pipeline to investigate an issue with a component, such as a data source or script, call <code>DeactivatePipeline</code>.</p>
+    /// <p>To activate a finished pipeline, modify the end date for the pipeline and then activate it.</p> <examples>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.ActivatePipeline
-    /// Content-Length: 39
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"pipelineId": "df-06372391ZG65EXAMPLE"}
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.ActivatePipeline Content-Length: 39 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"pipelineId": "df-06372391ZG65EXAMPLE"}
     /// </request>
     /// <response>
-    ///
-    /// HTTP/1.1 200
-    /// x-amzn-RequestId: ee19d5bf-074e-11e2-af6f-6bc7a6be60d9
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 2
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {}
-    ///
+    /// HTTP/1.1 200 x-amzn-RequestId: ee19d5bf-074e-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 2 Date: Mon, 12 Nov 2012 17:50:53 GMT {}
     /// </response>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ActivatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -307,10 +289,10 @@ pub mod fluent_builders {
                 crate::input::ActivatePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -319,8 +301,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(input.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -333,8 +315,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
         ///
         /// <p>A list of parameter values to pass to the pipeline at activation.</p>
-        pub fn parameter_values(mut self, inp: impl Into<crate::model::ParameterValue>) -> Self {
-            self.inner = self.inner.parameter_values(inp);
+        pub fn parameter_values(mut self, input: crate::model::ParameterValue) -> Self {
+            self.inner = self.inner.parameter_values(input);
             self
         }
         /// <p>A list of parameter values to pass to the pipeline at activation.</p>
@@ -346,8 +328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
-        pub fn start_timestamp(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_timestamp(inp);
+        pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_timestamp(input);
             self
         }
         /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
@@ -362,7 +344,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AddTags`.
     ///
     /// <p>Adds or modifies tags for the specified pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -407,10 +389,10 @@ pub mod fluent_builders {
                 crate::input::AddTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -419,8 +401,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(input.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -433,8 +415,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add, as key/value pairs.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add, as key/value pairs.</p>
@@ -448,38 +430,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePipeline`.
     ///
-    /// <p>Creates a new, empty pipeline. Use <a>PutPipelineDefinition</a> to populate the pipeline.</p>
-    ///
-    /// <examples>
+    /// <p>Creates a new, empty pipeline. Use <code>PutPipelineDefinition</code> to populate the pipeline.</p> <examples>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.CreatePipeline
-    /// Content-Length: 91
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"name": "myPipeline",
-    /// "uniqueId": "123456789",
-    /// "description": "This is my first pipeline"}
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.CreatePipeline Content-Length: 91 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"name": "myPipeline", "uniqueId": "123456789", "description": "This is my first pipeline"}
     /// </request>
-    ///
     /// <response>
-    ///
-    /// HTTP/1.1 200
-    /// x-amzn-RequestId: b16911ce-0774-11e2-af6f-6bc7a6be60d9
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 40
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {"pipelineId": "df-06372391ZG65EXAMPLE"}
-    ///
+    /// HTTP/1.1 200 x-amzn-RequestId: b16911ce-0774-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 40 Date: Mon, 12 Nov 2012 17:50:53 GMT {"pipelineId": "df-06372391ZG65EXAMPLE"}
     /// </response>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -524,10 +483,10 @@ pub mod fluent_builders {
                 crate::input::CreatePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -535,45 +494,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account,
-        /// because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account,
-        /// because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
+        /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline.
-        /// You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this
-        /// parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the
-        /// first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and
-        /// pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code>
-        /// ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not
-        /// created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the
-        /// name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
-        pub fn unique_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.unique_id(inp);
+        /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
+        pub fn unique_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.unique_id(input.into());
             self
         }
-        /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline.
-        /// You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this
-        /// parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the
-        /// first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and
-        /// pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code>
-        /// ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not
-        /// created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the
-        /// name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
+        /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
         pub fn set_unique_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_unique_id(input);
             self
         }
         /// <p>The description for the pipeline.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the pipeline.</p>
@@ -585,16 +528,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines.
-        /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a>
-        /// in the <i>AWS Data Pipeline Developer Guide</i>.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines.
-        /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a>
-        /// in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+        /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -605,11 +544,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeactivatePipeline`.
     ///
-    /// <p>Deactivates the specified running pipeline. The pipeline is set to the <code>DEACTIVATING</code>
-    /// state until the deactivation process completes.</p>
-    /// <p>To resume a deactivated pipeline, use <a>ActivatePipeline</a>. By default, the pipeline resumes from the last completed execution.
-    /// Optionally, you can specify the date and time to resume the pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deactivates the specified running pipeline. The pipeline is set to the <code>DEACTIVATING</code> state until the deactivation process completes.</p>
+    /// <p>To resume a deactivated pipeline, use <code>ActivatePipeline</code>. By default, the pipeline resumes from the last completed execution. Optionally, you can specify the date and time to resume the pipeline.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeactivatePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -654,10 +591,10 @@ pub mod fluent_builders {
                 crate::input::DeactivatePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -666,8 +603,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(input.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -675,18 +612,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_id(input);
             self
         }
-        /// <p>Indicates whether to cancel any running objects. The default is true,
-        /// which sets the state of any running objects to <code>CANCELED</code>.
-        /// If this value is false, the pipeline is deactivated after all
-        /// running objects finish.</p>
-        pub fn cancel_active(mut self, inp: bool) -> Self {
-            self.inner = self.inner.cancel_active(inp);
+        /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
+        pub fn cancel_active(mut self, input: bool) -> Self {
+            self.inner = self.inner.cancel_active(input);
             self
         }
-        /// <p>Indicates whether to cancel any running objects. The default is true,
-        /// which sets the state of any running objects to <code>CANCELED</code>.
-        /// If this value is false, the pipeline is deactivated after all
-        /// running objects finish.</p>
+        /// <p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>
         pub fn set_cancel_active(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_cancel_active(input);
             self
@@ -694,39 +625,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePipeline`.
     ///
-    /// <p>Deletes a pipeline, its pipeline definition, and its run history.  
-    /// AWS Data Pipeline attempts to cancel instances associated with the pipeline that are currently being processed by task runners.</p>
-    /// <p>Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline.
-    /// To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with the status set to <code>PAUSE</code> on individual components.
-    /// Components that are paused by <a>SetStatus</a> can be resumed.</p>
-    ///
-    /// <examples>
+    /// <p>Deletes a pipeline, its pipeline definition, and its run history. AWS Data Pipeline attempts to cancel instances associated with the pipeline that are currently being processed by task runners.</p>
+    /// <p>Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline. To temporarily pause a pipeline instead of deleting it, call <code>SetStatus</code> with the status set to <code>PAUSE</code> on individual components. Components that are paused by <code>SetStatus</code> can be resumed.</p> <examples>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.DeletePipeline
-    /// Content-Length: 50
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"pipelineId": "df-06372391ZG65EXAMPLE"}
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.DeletePipeline Content-Length: 50 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"pipelineId": "df-06372391ZG65EXAMPLE"}
     /// </request>
-    ///
     /// <response>
-    ///
-    /// x-amzn-RequestId: b7a88c81-0754-11e2-af6f-6bc7a6be60d9
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 0
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// Unexpected response: 200, OK, undefined
-    ///
+    /// x-amzn-RequestId: b7a88c81-0754-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 0 Date: Mon, 12 Nov 2012 17:50:53 GMT Unexpected response: 200, OK, undefined
     /// </response>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePipeline<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -771,10 +679,10 @@ pub mod fluent_builders {
                 crate::input::DeletePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -783,8 +691,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(input.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -795,66 +703,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeObjects`.
     ///
-    /// <p>Gets the object definitions for a set of objects associated with the pipeline. Object definitions are composed of
-    /// a set of fields that define the properties of the object.</p>
-    ///
-    /// <examples>
+    /// <p>Gets the object definitions for a set of objects associated with the pipeline. Object definitions are composed of a set of fields that define the properties of the object.</p> <examples>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.DescribeObjects
-    /// Content-Length: 98
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"pipelineId": "df-06372391ZG65EXAMPLE",
-    /// "objectIds":
-    /// ["Schedule"],
-    /// "evaluateExpressions": true}
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.DescribeObjects Content-Length: 98 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"pipelineId": "df-06372391ZG65EXAMPLE", "objectIds": ["Schedule"], "evaluateExpressions": true}
     /// </request>
-    ///
     /// <response>
-    ///
-    /// x-amzn-RequestId: 4c18ea5d-0777-11e2-8a14-21bb8a1f50ef
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 1488
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {"hasMoreResults": false,
-    /// "pipelineObjects":
-    /// [
-    /// {"fields":
-    /// [
-    /// {"key": "startDateTime",
-    /// "stringValue": "2012-12-12T00:00:00"},
-    /// {"key": "parent",
-    /// "refValue": "Default"},
-    /// {"key": "@sphere",
-    /// "stringValue": "COMPONENT"},
-    /// {"key": "type",
-    /// "stringValue": "Schedule"},
-    /// {"key": "period",
-    /// "stringValue": "1 hour"},
-    /// {"key": "endDateTime",
-    /// "stringValue": "2012-12-21T18:00:00"},
-    /// {"key": "@version",
-    /// "stringValue": "1"},
-    /// {"key": "@status",
-    /// "stringValue": "PENDING"},
-    /// {"key": "@pipelineId",
-    /// "stringValue": "df-06372391ZG65EXAMPLE"}
-    /// ],
-    /// "id": "Schedule",
-    /// "name": "Schedule"}
-    /// ]
-    /// }
-    ///
+    /// x-amzn-RequestId: 4c18ea5d-0777-11e2-8a14-21bb8a1f50ef Content-Type: application/x-amz-json-1.1 Content-Length: 1488 Date: Mon, 12 Nov 2012 17:50:53 GMT {"hasMoreResults": false, "pipelineObjects": [ {"fields": [ {"key": "startDateTime", "stringValue": "2012-12-12T00:00:00"}, {"key": "parent", "refValue": "Default"}, {"key": "@sphere", "stringValue": "COMPONENT"}, {"key": "type", "stringValue": "Schedule"}, {"key": "period", "stringValue": "1 hour"}, {"key": "endDateTime", "stringValue": "2012-12-21T18:00:00"}, {"key": "@version", "stringValue": "1"}, {"key": "@status", "stringValue": "PENDING"}, {"key": "@pipelineId", "stringValue": "df-06372391ZG65EXAMPLE"} ], "id": "Schedule", "name": "Schedule"} ] }
     /// </response>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeObjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -899,10 +756,10 @@ pub mod fluent_builders {
                 crate::input::DescribeObjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -910,9 +767,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeObjectsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeObjectsPaginator<C, M, R> {
+            crate::paginator::DescribeObjectsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the pipeline that contains the object definitions.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(input.into());
             self
         }
         /// <p>The ID of the pipeline that contains the object definitions.</p>
@@ -925,8 +788,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_object_ids`](Self::set_object_ids).
         ///
         /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
-        pub fn object_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_ids(inp);
+        pub fn object_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_ids(input.into());
             self
         }
         /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
@@ -938,8 +801,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
-        pub fn evaluate_expressions(mut self, inp: bool) -> Self {
-            self.inner = self.inner.evaluate_expressions(inp);
+        pub fn evaluate_expressions(mut self, input: bool) -> Self {
+            self.inner = self.inner.evaluate_expressions(input);
             self
         }
         /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
@@ -947,16 +810,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_evaluate_expressions(input);
             self
         }
-        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-        /// As long as there are more results, continue to call <code>DescribeObjects</code> with
-        /// the marker value from the previous call to retrieve the next set of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-        /// As long as there are more results, continue to call <code>DescribeObjects</code> with
-        /// the marker value from the previous call to retrieve the next set of results.</p>
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -964,69 +823,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePipelines`.
     ///
-    /// <p>Retrieves metadata about one or more pipelines. The information retrieved includes the name of the pipeline, the pipeline identifier,
-    /// its current state, and the user account that owns the pipeline. Using account credentials, you can retrieve metadata about pipelines
-    /// that you or your IAM users have created. If you are using an IAM user account, you can retrieve metadata about only those pipelines
-    /// for which you have read permissions.</p>
-    /// <p>To retrieve the full pipeline definition instead of metadata about the pipeline, call <a>GetPipelineDefinition</a>.</p>
-    ///
-    /// <examples>
+    /// <p>Retrieves metadata about one or more pipelines. The information retrieved includes the name of the pipeline, the pipeline identifier, its current state, and the user account that owns the pipeline. Using account credentials, you can retrieve metadata about pipelines that you or your IAM users have created. If you are using an IAM user account, you can retrieve metadata about only those pipelines for which you have read permissions.</p>
+    /// <p>To retrieve the full pipeline definition instead of metadata about the pipeline, call <code>GetPipelineDefinition</code>.</p> <examples>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.DescribePipelines
-    /// Content-Length: 70
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"pipelineIds":
-    /// ["df-08785951KAKJEXAMPLE"]
-    /// }
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.DescribePipelines Content-Length: 70 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"pipelineIds": ["df-08785951KAKJEXAMPLE"] }
     /// </request>
-    ///
     /// <response>
-    ///
-    /// x-amzn-RequestId: 02870eb7-0736-11e2-af6f-6bc7a6be60d9
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 767
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {"pipelineDescriptionList":
-    /// [
-    /// {"description": "This is my first pipeline",
-    /// "fields":
-    /// [
-    /// {"key": "@pipelineState",
-    /// "stringValue": "SCHEDULED"},
-    /// {"key": "description",
-    /// "stringValue": "This is my first pipeline"},
-    /// {"key": "name",
-    /// "stringValue": "myPipeline"},
-    /// {"key": "@creationTime",
-    /// "stringValue": "2012-12-13T01:24:06"},
-    /// {"key": "@id",
-    /// "stringValue": "df-0937003356ZJEXAMPLE"},
-    /// {"key": "@sphere",
-    /// "stringValue": "PIPELINE"},
-    /// {"key": "@version",
-    /// "stringValue": "1"},
-    /// {"key": "@userId",
-    /// "stringValue": "924374875933"},
-    /// {"key": "@accountId",
-    /// "stringValue": "924374875933"},
-    /// {"key": "uniqueId",
-    /// "stringValue": "1234567890"}
-    /// ],
-    /// "name": "myPipeline",
-    /// "pipelineId": "df-0937003356ZJEXAMPLE"}
-    /// ]
-    /// }
+    /// x-amzn-RequestId: 02870eb7-0736-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 767 Date: Mon, 12 Nov 2012 17:50:53 GMT {"pipelineDescriptionList": [ {"description": "This is my first pipeline", "fields": [ {"key": "@pipelineState", "stringValue": "SCHEDULED"}, {"key": "description", "stringValue": "This is my first pipeline"}, {"key": "name", "stringValue": "myPipeline"}, {"key": "@creationTime", "stringValue": "2012-12-13T01:24:06"}, {"key": "@id", "stringValue": "df-0937003356ZJEXAMPLE"}, {"key": "@sphere", "stringValue": "PIPELINE"}, {"key": "@version", "stringValue": "1"}, {"key": "@userId", "stringValue": "924374875933"}, {"key": "@accountId", "stringValue": "924374875933"}, {"key": "uniqueId", "stringValue": "1234567890"} ], "name": "myPipeline", "pipelineId": "df-0937003356ZJEXAMPLE"} ] }
     /// </response>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePipelines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1071,10 +877,10 @@ pub mod fluent_builders {
                 crate::input::DescribePipelinesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1086,14 +892,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_pipeline_ids`](Self::set_pipeline_ids).
         ///
-        /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call.
-        /// To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
-        pub fn pipeline_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_ids(inp);
+        /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
+        pub fn pipeline_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_ids(input.into());
             self
         }
-        /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call.
-        /// To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
+        /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <code>ListPipelines</code>.</p>
         pub fn set_pipeline_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1104,38 +908,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EvaluateExpression`.
     ///
-    /// <p>Task runners call <code>EvaluateExpression</code> to evaluate a string in the context of the specified object.
-    /// For example, a task runner can evaluate SQL queries stored in Amazon S3.</p>
-    ///
-    /// <examples>
+    /// <p>Task runners call <code>EvaluateExpression</code> to evaluate a string in the context of the specified object. For example, a task runner can evaluate SQL queries stored in Amazon S3.</p> <examples>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.DescribePipelines
-    /// Content-Length: 164
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"pipelineId": "df-08785951KAKJEXAMPLE",
-    /// "objectId": "Schedule",
-    /// "expression": "Transform started at #{startDateTime} and finished at #{endDateTime}"}
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.DescribePipelines Content-Length: 164 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"pipelineId": "df-08785951KAKJEXAMPLE", "objectId": "Schedule", "expression": "Transform started at #{startDateTime} and finished at #{endDateTime}"}
     /// </request>
-    ///
-    ///
     /// <response>
-    ///
-    /// x-amzn-RequestId: 02870eb7-0736-11e2-af6f-6bc7a6be60d9
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 103
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {"evaluatedExpression": "Transform started at 2012-12-12T00:00:00 and finished at 2012-12-21T18:00:00"}
+    /// x-amzn-RequestId: 02870eb7-0736-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 103 Date: Mon, 12 Nov 2012 17:50:53 GMT {"evaluatedExpression": "Transform started at 2012-12-12T00:00:00 and finished at 2012-12-21T18:00:00"}
     /// </response>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EvaluateExpression<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1180,10 +961,10 @@ pub mod fluent_builders {
                 crate::input::EvaluateExpressionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1192,8 +973,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(input.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -1202,8 +983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the object.</p>
-        pub fn object_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_id(inp);
+        pub fn object_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_id(input.into());
             self
         }
         /// <p>The ID of the object.</p>
@@ -1212,8 +993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The expression to evaluate.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(inp);
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(input.into());
             self
         }
         /// <p>The expression to evaluate.</p>
@@ -1224,72 +1005,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPipelineDefinition`.
     ///
-    /// <p>Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code> to retrieve
-    /// the pipeline definition that you provided using <a>PutPipelineDefinition</a>.</p>
-    ///
-    /// <examples>
+    /// <p>Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code> to retrieve the pipeline definition that you provided using <code>PutPipelineDefinition</code>.</p> <examples>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.GetPipelineDefinition
-    /// Content-Length: 40
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    ///
-    /// {"pipelineId": "df-06372391ZG65EXAMPLE"}
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.GetPipelineDefinition Content-Length: 40 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"pipelineId": "df-06372391ZG65EXAMPLE"}
     /// </request>
     /// <response>
-    ///
-    /// x-amzn-RequestId: e28309e5-0776-11e2-8a14-21bb8a1f50ef
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 890
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {"pipelineObjects":
-    /// [
-    /// {"fields":
-    /// [
-    /// {"key": "workerGroup",
-    /// "stringValue": "workerGroup"}
-    /// ],
-    /// "id": "Default",
-    /// "name": "Default"},
-    /// {"fields":
-    /// [
-    /// {"key": "startDateTime",
-    /// "stringValue": "2012-09-25T17:00:00"},
-    /// {"key": "type",
-    /// "stringValue": "Schedule"},
-    /// {"key": "period",
-    /// "stringValue": "1 hour"},
-    /// {"key": "endDateTime",
-    /// "stringValue": "2012-09-25T18:00:00"}
-    /// ],
-    /// "id": "Schedule",
-    /// "name": "Schedule"},
-    /// {"fields":
-    /// [
-    /// {"key": "schedule",
-    /// "refValue": "Schedule"},
-    /// {"key": "command",
-    /// "stringValue": "echo hello"},
-    /// {"key": "parent",
-    /// "refValue": "Default"},
-    /// {"key": "type",
-    /// "stringValue": "ShellCommandActivity"}
-    /// ],
-    /// "id": "SayHello",
-    /// "name": "SayHello"}
-    /// ]
-    /// }
-    ///
+    /// x-amzn-RequestId: e28309e5-0776-11e2-8a14-21bb8a1f50ef Content-Type: application/x-amz-json-1.1 Content-Length: 890 Date: Mon, 12 Nov 2012 17:50:53 GMT {"pipelineObjects": [ {"fields": [ {"key": "workerGroup", "stringValue": "workerGroup"} ], "id": "Default", "name": "Default"}, {"fields": [ {"key": "startDateTime", "stringValue": "2012-09-25T17:00:00"}, {"key": "type", "stringValue": "Schedule"}, {"key": "period", "stringValue": "1 hour"}, {"key": "endDateTime", "stringValue": "2012-09-25T18:00:00"} ], "id": "Schedule", "name": "Schedule"}, {"fields": [ {"key": "schedule", "refValue": "Schedule"}, {"key": "command", "stringValue": "echo hello"}, {"key": "parent", "refValue": "Default"}, {"key": "type", "stringValue": "ShellCommandActivity"} ], "id": "SayHello", "name": "SayHello"} ] }
     /// </response>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPipelineDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1334,10 +1058,10 @@ pub mod fluent_builders {
                 crate::input::GetPipelineDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1346,8 +1070,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(input.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -1355,16 +1079,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_id(input);
             self
         }
-        /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default)
-        /// to use the last definition saved to the pipeline or <code>active</code> to use the last definition  
-        /// that was activated.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default)
-        /// to use the last definition saved to the pipeline or <code>active</code> to use the last definition  
-        /// that was activated.</p>
+        /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -1372,39 +1092,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPipelines`.
     ///
-    /// <p>Lists the pipeline identifiers for all active pipelines that you have permission to access.</p>
-    ///
-    /// <examples>
+    /// <p>Lists the pipeline identifiers for all active pipelines that you have permission to access.</p> <examples>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.ListPipelines
-    /// Content-Length: 14
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {}</request>
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.ListPipelines Content-Length: 14 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {}
+    /// </request>
     /// <response>
-    ///
-    /// Status:
-    /// x-amzn-RequestId: b3104dc5-0734-11e2-af6f-6bc7a6be60d9
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 39
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {"PipelineIdList":
-    /// [
-    /// {"id": "df-08785951KAKJEXAMPLE",
-    /// "name": "MyPipeline"},
-    /// {"id": "df-08662578ISYEXAMPLE",
-    /// "name": "MySecondPipeline"}
-    /// ]
-    /// }</response>
+    /// Status: x-amzn-RequestId: b3104dc5-0734-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 39 Date: Mon, 12 Nov 2012 17:50:53 GMT {"PipelineIdList": [ {"id": "df-08785951KAKJEXAMPLE", "name": "MyPipeline"}, {"id": "df-08662578ISYEXAMPLE", "name": "MySecondPipeline"} ] }
+    /// </response>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPipelines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1449,10 +1145,10 @@ pub mod fluent_builders {
                 crate::input::ListPipelinesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1460,16 +1156,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-        /// As long as there are more results, continue to call <code>ListPipelines</code> with
-        /// the marker value from the previous call to retrieve the next set of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPipelinesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPipelinesPaginator<C, M, R> {
+            crate::paginator::ListPipelinesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-        /// As long as there are more results, continue to call <code>ListPipelines</code> with
-        /// the marker value from the previous call to retrieve the next set of results.</p>
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
@@ -1477,86 +1175,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PollForTask`.
     ///
-    /// <p>Task runners call <code>PollForTask</code> to receive a task to perform from AWS Data Pipeline. The task runner specifies which tasks it can perform
-    /// by setting a value for the <code>workerGroup</code> parameter. The task returned can come from any of the pipelines that
-    /// match the <code>workerGroup</code> value passed in by the task runner and that was launched using the IAM user credentials
-    /// specified by the task runner.</p>
-    /// <p>If tasks are ready in the work queue, <code>PollForTask</code> returns a response immediately. If no tasks are available in the queue,
-    /// <code>PollForTask</code> uses long-polling and holds on to a poll connection for up to a 90 seconds, during which time the first newly
-    /// scheduled task is handed to the task runner. To accomodate this, set the socket timeout in your task runner to 90 seconds. The task
-    /// runner should not call <code>PollForTask</code> again on the same <code>workerGroup</code> until it receives a response, and this can take up to 90 seconds.
-    /// </p>
-    ///
-    /// <examples>
+    /// <p>Task runners call <code>PollForTask</code> to receive a task to perform from AWS Data Pipeline. The task runner specifies which tasks it can perform by setting a value for the <code>workerGroup</code> parameter. The task returned can come from any of the pipelines that match the <code>workerGroup</code> value passed in by the task runner and that was launched using the IAM user credentials specified by the task runner.</p>
+    /// <p>If tasks are ready in the work queue, <code>PollForTask</code> returns a response immediately. If no tasks are available in the queue, <code>PollForTask</code> uses long-polling and holds on to a poll connection for up to a 90 seconds, during which time the first newly scheduled task is handed to the task runner. To accomodate this, set the socket timeout in your task runner to 90 seconds. The task runner should not call <code>PollForTask</code> again on the same <code>workerGroup</code> until it receives a response, and this can take up to 90 seconds. </p> <examples>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.PollForTask
-    /// Content-Length: 59
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"workerGroup": "MyworkerGroup",
-    /// "hostname": "example.com"}
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.PollForTask Content-Length: 59 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"workerGroup": "MyworkerGroup", "hostname": "example.com"}
     /// </request>
-    ///
     /// <response>
-    ///
-    /// x-amzn-RequestId: 41c713d2-0775-11e2-af6f-6bc7a6be60d9
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 39
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {"taskObject":
-    /// {"attemptId": "@SayHello_2012-12-12T00:00:00_Attempt=1",
-    /// "objects":
-    /// {"@SayHello_2012-12-12T00:00:00_Attempt=1":
-    /// {"fields":
-    /// [
-    /// {"key": "@componentParent",
-    /// "refValue": "SayHello"},
-    /// {"key": "@scheduledStartTime",
-    /// "stringValue": "2012-12-12T00:00:00"},
-    /// {"key": "parent",
-    /// "refValue": "SayHello"},
-    /// {"key": "@sphere",
-    /// "stringValue": "ATTEMPT"},
-    /// {"key": "workerGroup",
-    /// "stringValue": "workerGroup"},
-    /// {"key": "@instanceParent",
-    /// "refValue": "@SayHello_2012-12-12T00:00:00"},
-    /// {"key": "type",
-    /// "stringValue": "ShellCommandActivity"},
-    /// {"key": "@status",
-    /// "stringValue": "WAITING_FOR_RUNNER"},
-    /// {"key": "@version",
-    /// "stringValue": "1"},
-    /// {"key": "schedule",
-    /// "refValue": "Schedule"},
-    /// {"key": "@actualStartTime",
-    /// "stringValue": "2012-12-13T01:40:50"},
-    /// {"key": "command",
-    /// "stringValue": "echo hello"},
-    /// {"key": "@scheduledEndTime",
-    /// "stringValue": "2012-12-12T01:00:00"},
-    /// {"key": "@activeInstances",
-    /// "refValue": "@SayHello_2012-12-12T00:00:00"},
-    /// {"key": "@pipelineId",
-    /// "stringValue": "df-0937003356ZJEXAMPLE"}
-    /// ],
-    /// "id": "@SayHello_2012-12-12T00:00:00_Attempt=1",
-    /// "name": "@SayHello_2012-12-12T00:00:00_Attempt=1"}
-    /// },
-    /// "pipelineId": "df-0937003356ZJEXAMPLE",
-    /// "taskId": "2xaM4wRs5zOsIH+g9U3oVHfAgAlbSqU6XduncB0HhZ3xMnmvfePZPn4dIbYXHyWyRK+cU15MqDHwdrvftx/4wv+sNS4w34vJfv7QA9aOoOazW28l1GYSb2ZRR0N0paiQp+d1MhSKo10hOTWOsVK5S5Lnx9Qm6omFgXHyIvZRIvTlrQMpr1xuUrflyGOfbFOGpOLpvPE172MYdqpZKnbSS4TcuqgQKSWV2833fEubI57DPOP7ghWa2TcYeSIv4pdLYG53fTuwfbnbdc98g2LNUQzSVhSnt7BoqyNwht2aQ6b/UHg9A80+KVpuXuqmz3m1MXwHFgxjdmuesXNOrrlGpeLCcRWD+aGo0RN1NqhQRzNAig8V4GlaPTQzMsRCljKqvrIyAoP3Tt2XEGsHkkQo12rEX8Z90957XX2qKRwhruwYzqGkSLWjINoLdAxUJdpRXRc5DJTrBd3D5mdzn7kY1l7NEh4kFHJDt3Cx4Z3Mk8MYCACyCk/CEyy9DwuPi66cLz0NBcgbCM5LKjTBOwo1m+am+pvM1kSposE9FPP1+RFGb8k6jQBTJx3TRz1yKilnGXQTZ5xvdOFpJrklIT0OXP1MG3+auM9FlJA+1dX90QoNJE5z7axmK//MOGXUdkqFe2kiDkorqjxwDvc0Js9pVKfKvAmW8YqUbmI9l0ERpWCXXnLVHNmPWz3jaPY+OBAmuJWDmxB/Z8p94aEDg4BVXQ7LvsKQ3DLYhaB7yJ390CJT+i0mm+EBqY60V6YikPSWDFrYQ/NPi2b1DgE19mX8zHqw8qprIl4yh1Ckx2Iige4En/N5ktOoIxnASxAw/TzcE2skxdw5KlHDF+UTj71m16CR/dIaKlXijlfNlNzUBo/bNSadCQn3G5NoO501wPKI:XO50TgDNyo8EXAMPLE/g==:1"}
-    /// }
-    ///
+    /// x-amzn-RequestId: 41c713d2-0775-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 39 Date: Mon, 12 Nov 2012 17:50:53 GMT {"taskObject": {"attemptId": "@SayHello_2012-12-12T00:00:00_Attempt=1", "objects": {"@SayHello_2012-12-12T00:00:00_Attempt=1": {"fields": [ {"key": "@componentParent", "refValue": "SayHello"}, {"key": "@scheduledStartTime", "stringValue": "2012-12-12T00:00:00"}, {"key": "parent", "refValue": "SayHello"}, {"key": "@sphere", "stringValue": "ATTEMPT"}, {"key": "workerGroup", "stringValue": "workerGroup"}, {"key": "@instanceParent", "refValue": "@SayHello_2012-12-12T00:00:00"}, {"key": "type", "stringValue": "ShellCommandActivity"}, {"key": "@status", "stringValue": "WAITING_FOR_RUNNER"}, {"key": "@version", "stringValue": "1"}, {"key": "schedule", "refValue": "Schedule"}, {"key": "@actualStartTime", "stringValue": "2012-12-13T01:40:50"}, {"key": "command", "stringValue": "echo hello"}, {"key": "@scheduledEndTime", "stringValue": "2012-12-12T01:00:00"}, {"key": "@activeInstances", "refValue": "@SayHello_2012-12-12T00:00:00"}, {"key": "@pipelineId", "stringValue": "df-0937003356ZJEXAMPLE"} ], "id": "@SayHello_2012-12-12T00:00:00_Attempt=1", "name": "@SayHello_2012-12-12T00:00:00_Attempt=1"} }, "pipelineId": "df-0937003356ZJEXAMPLE", "taskId": "2xaM4wRs5zOsIH+g9U3oVHfAgAlbSqU6XduncB0HhZ3xMnmvfePZPn4dIbYXHyWyRK+cU15MqDHwdrvftx/4wv+sNS4w34vJfv7QA9aOoOazW28l1GYSb2ZRR0N0paiQp+d1MhSKo10hOTWOsVK5S5Lnx9Qm6omFgXHyIvZRIvTlrQMpr1xuUrflyGOfbFOGpOLpvPE172MYdqpZKnbSS4TcuqgQKSWV2833fEubI57DPOP7ghWa2TcYeSIv4pdLYG53fTuwfbnbdc98g2LNUQzSVhSnt7BoqyNwht2aQ6b/UHg9A80+KVpuXuqmz3m1MXwHFgxjdmuesXNOrrlGpeLCcRWD+aGo0RN1NqhQRzNAig8V4GlaPTQzMsRCljKqvrIyAoP3Tt2XEGsHkkQo12rEX8Z90957XX2qKRwhruwYzqGkSLWjINoLdAxUJdpRXRc5DJTrBd3D5mdzn7kY1l7NEh4kFHJDt3Cx4Z3Mk8MYCACyCk/CEyy9DwuPi66cLz0NBcgbCM5LKjTBOwo1m+am+pvM1kSposE9FPP1+RFGb8k6jQBTJx3TRz1yKilnGXQTZ5xvdOFpJrklIT0OXP1MG3+auM9FlJA+1dX90QoNJE5z7axmK//MOGXUdkqFe2kiDkorqjxwDvc0Js9pVKfKvAmW8YqUbmI9l0ERpWCXXnLVHNmPWz3jaPY+OBAmuJWDmxB/Z8p94aEDg4BVXQ7LvsKQ3DLYhaB7yJ390CJT+i0mm+EBqY60V6YikPSWDFrYQ/NPi2b1DgE19mX8zHqw8qprIl4yh1Ckx2Iige4En/N5ktOoIxnASxAw/TzcE2skxdw5KlHDF+UTj71m16CR/dIaKlXijlfNlNzUBo/bNSadCQn3G5NoO501wPKI:XO50TgDNyo8EXAMPLE/g==:1"} }
     /// </response>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PollForTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1601,10 +1229,10 @@ pub mod fluent_builders {
                 crate::input::PollForTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1612,23 +1240,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
-        /// You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in
-        /// <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
-        pub fn worker_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_group(inp);
+        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+        pub fn worker_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_group(input.into());
             self
         }
-        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
-        /// You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in
-        /// <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
         pub fn set_worker_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_worker_group(input);
             self
         }
         /// <p>The public DNS name of the calling task runner.</p>
-        pub fn hostname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname(inp);
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname(input.into());
             self
         }
         /// <p>The public DNS name of the calling task runner.</p>
@@ -1637,8 +1261,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
-        pub fn instance_identity(mut self, inp: crate::model::InstanceIdentity) -> Self {
-            self.inner = self.inner.instance_identity(inp);
+        pub fn instance_identity(mut self, input: crate::model::InstanceIdentity) -> Self {
+            self.inner = self.inner.instance_identity(input);
             self
         }
         /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
@@ -1653,166 +1277,45 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutPipelineDefinition`.
     ///
     /// <p>Adds tasks, schedules, and preconditions to the specified pipeline. You can use <code>PutPipelineDefinition</code> to populate a new pipeline.</p>
-    /// <p>
-    /// <code>PutPipelineDefinition</code> also validates the configuration as it adds it to the pipeline. Changes to the pipeline are saved unless one
-    /// of the following three validation errors exists in the pipeline.
-    /// </p>
+    /// <p> <code>PutPipelineDefinition</code> also validates the configuration as it adds it to the pipeline. Changes to the pipeline are saved unless one of the following three validation errors exists in the pipeline. </p>
     /// <ol>
     /// <li>An object is missing a name or identifier field.</li>
     /// <li>A string or reference field is empty.</li>
     /// <li>The number of objects in the pipeline exceeds the maximum allowed objects.</li>
     /// <li>The pipeline is in a FINISHED state.</li>
     /// </ol>
-    /// <p>
-    /// Pipeline object definitions are passed to the <code>PutPipelineDefinition</code> action and returned by the <a>GetPipelineDefinition</a> action.
-    /// </p>
-    /// <examples>
+    /// <p> Pipeline object definitions are passed to the <code>PutPipelineDefinition</code> action and returned by the <code>GetPipelineDefinition</code> action. </p> <examples>
     /// <example>
-    /// <name>Example 1</name>
+    /// <name>
+    /// Example 1
+    /// </name>
     /// <description>
     /// This example sets an valid pipeline configuration and returns success.
     /// </description>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.PutPipelineDefinition
-    /// Content-Length: 914
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"pipelineId": "df-0937003356ZJEXAMPLE",
-    /// "pipelineObjects":
-    /// [
-    /// {"id": "Default",
-    /// "name": "Default",
-    /// "fields":
-    /// [
-    /// {"key": "workerGroup",
-    /// "stringValue": "workerGroup"}
-    /// ]
-    /// },
-    /// {"id": "Schedule",
-    /// "name": "Schedule",
-    /// "fields":
-    /// [
-    /// {"key": "startDateTime",
-    /// "stringValue": "2012-12-12T00:00:00"},
-    /// {"key": "type",
-    /// "stringValue": "Schedule"},
-    /// {"key": "period",
-    /// "stringValue": "1 hour"},
-    /// {"key": "endDateTime",
-    /// "stringValue": "2012-12-21T18:00:00"}
-    /// ]
-    /// },
-    /// {"id": "SayHello",
-    /// "name": "SayHello",
-    /// "fields":
-    /// [
-    /// {"key": "type",
-    /// "stringValue": "ShellCommandActivity"},
-    /// {"key": "command",
-    /// "stringValue": "echo hello"},
-    /// {"key": "parent",
-    /// "refValue": "Default"},
-    /// {"key": "schedule",
-    /// "refValue": "Schedule"}
-    /// ]
-    /// }
-    /// ]
-    /// }
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.PutPipelineDefinition Content-Length: 914 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"pipelineId": "df-0937003356ZJEXAMPLE", "pipelineObjects": [ {"id": "Default", "name": "Default", "fields": [ {"key": "workerGroup", "stringValue": "workerGroup"} ] }, {"id": "Schedule", "name": "Schedule", "fields": [ {"key": "startDateTime", "stringValue": "2012-12-12T00:00:00"}, {"key": "type", "stringValue": "Schedule"}, {"key": "period", "stringValue": "1 hour"}, {"key": "endDateTime", "stringValue": "2012-12-21T18:00:00"} ] }, {"id": "SayHello", "name": "SayHello", "fields": [ {"key": "type", "stringValue": "ShellCommandActivity"}, {"key": "command", "stringValue": "echo hello"}, {"key": "parent", "refValue": "Default"}, {"key": "schedule", "refValue": "Schedule"} ] } ] }
     /// </request>
     /// <response>
-    ///
-    /// HTTP/1.1 200
-    /// x-amzn-RequestId: f74afc14-0754-11e2-af6f-6bc7a6be60d9
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 18
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {"errored": false}
-    ///
-    ///
+    /// HTTP/1.1 200 x-amzn-RequestId: f74afc14-0754-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 18 Date: Mon, 12 Nov 2012 17:50:53 GMT {"errored": false}
     /// </response>
     /// </example>
     /// <example>
-    /// <name>Example 2</name>
+    /// <name>
+    /// Example 2
+    /// </name>
     /// <description>
-    /// This example sets an invalid pipeline configuration (the value for <code>workerGroup</code> is an empty string) and returns an error message.
+    /// This example sets an invalid pipeline configuration (the value for
+    /// <code>workerGroup</code> is an empty string) and returns an error message.
     /// </description>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.PutPipelineDefinition
-    /// Content-Length: 903
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"pipelineId": "df-06372391ZG65EXAMPLE",
-    /// "pipelineObjects":
-    /// [
-    /// {"id": "Default",
-    /// "name": "Default",
-    /// "fields":
-    /// [
-    /// {"key": "workerGroup",
-    /// "stringValue": ""}
-    /// ]
-    /// },
-    /// {"id": "Schedule",
-    /// "name": "Schedule",
-    /// "fields":
-    /// [
-    /// {"key": "startDateTime",
-    /// "stringValue": "2012-09-25T17:00:00"},
-    /// {"key": "type",
-    /// "stringValue": "Schedule"},
-    /// {"key": "period",
-    /// "stringValue": "1 hour"},
-    /// {"key": "endDateTime",
-    /// "stringValue": "2012-09-25T18:00:00"}
-    /// ]
-    /// },
-    /// {"id": "SayHello",
-    /// "name": "SayHello",
-    /// "fields":
-    /// [
-    /// {"key": "type",
-    /// "stringValue": "ShellCommandActivity"},
-    /// {"key": "command",
-    /// "stringValue": "echo hello"},
-    /// {"key": "parent",
-    /// "refValue": "Default"},
-    /// {"key": "schedule",
-    /// "refValue": "Schedule"}
-    ///
-    /// ]
-    /// }
-    /// ]
-    /// }
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.PutPipelineDefinition Content-Length: 903 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"pipelineId": "df-06372391ZG65EXAMPLE", "pipelineObjects": [ {"id": "Default", "name": "Default", "fields": [ {"key": "workerGroup", "stringValue": ""} ] }, {"id": "Schedule", "name": "Schedule", "fields": [ {"key": "startDateTime", "stringValue": "2012-09-25T17:00:00"}, {"key": "type", "stringValue": "Schedule"}, {"key": "period", "stringValue": "1 hour"}, {"key": "endDateTime", "stringValue": "2012-09-25T18:00:00"} ] }, {"id": "SayHello", "name": "SayHello", "fields": [ {"key": "type", "stringValue": "ShellCommandActivity"}, {"key": "command", "stringValue": "echo hello"}, {"key": "parent", "refValue": "Default"}, {"key": "schedule", "refValue": "Schedule"} ] } ] }
     /// </request>
     /// <response>
-    ///
-    /// HTTP/1.1 200
-    /// x-amzn-RequestId: f74afc14-0754-11e2-af6f-6bc7a6be60d9
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 18
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {"__type": "com.amazon.setl.webservice#InvalidRequestException",
-    /// "message": "Pipeline definition has errors: Could not save the pipeline definition due to FATAL errors: [com.amazon.setl.webservice.ValidationError@108d7ea9] Please call Validate to validate your pipeline"}
-    ///
-    ///
+    /// HTTP/1.1 200 x-amzn-RequestId: f74afc14-0754-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 18 Date: Mon, 12 Nov 2012 17:50:53 GMT {"__type": "com.amazon.setl.webservice#InvalidRequestException", "message": "Pipeline definition has errors: Could not save the pipeline definition due to FATAL errors: [com.amazon.setl.webservice.ValidationError@108d7ea9] Please call Validate to validate your pipeline"}
     /// </response>
     /// </example>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutPipelineDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1857,10 +1360,10 @@ pub mod fluent_builders {
                 crate::input::PutPipelineDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1869,8 +1372,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(input.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -1883,8 +1386,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_pipeline_objects`](Self::set_pipeline_objects).
         ///
         /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
-        pub fn pipeline_objects(mut self, inp: impl Into<crate::model::PipelineObject>) -> Self {
-            self.inner = self.inner.pipeline_objects(inp);
+        pub fn pipeline_objects(mut self, input: crate::model::PipelineObject) -> Self {
+            self.inner = self.inner.pipeline_objects(input);
             self
         }
         /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
@@ -1900,8 +1403,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_objects`](Self::set_parameter_objects).
         ///
         /// <p>The parameter objects used with the pipeline.</p>
-        pub fn parameter_objects(mut self, inp: impl Into<crate::model::ParameterObject>) -> Self {
-            self.inner = self.inner.parameter_objects(inp);
+        pub fn parameter_objects(mut self, input: crate::model::ParameterObject) -> Self {
+            self.inner = self.inner.parameter_objects(input);
             self
         }
         /// <p>The parameter objects used with the pipeline.</p>
@@ -1917,8 +1420,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
         ///
         /// <p>The parameter values used with the pipeline.</p>
-        pub fn parameter_values(mut self, inp: impl Into<crate::model::ParameterValue>) -> Self {
-            self.inner = self.inner.parameter_values(inp);
+        pub fn parameter_values(mut self, input: crate::model::ParameterValue) -> Self {
+            self.inner = self.inner.parameter_values(input);
             self
         }
         /// <p>The parameter values used with the pipeline.</p>
@@ -1932,46 +1435,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `QueryObjects`.
     ///
-    /// <p>Queries the specified pipeline for the names of objects that match the specified set of conditions.</p>
-    ///
-    /// <examples>
+    /// <p>Queries the specified pipeline for the names of objects that match the specified set of conditions.</p> <examples>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.QueryObjects
-    /// Content-Length: 123
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"pipelineId": "df-06372391ZG65EXAMPLE",
-    /// "query":
-    /// {"selectors":
-    /// [
-    /// ]
-    /// },
-    /// "sphere": "INSTANCE",
-    /// "marker": "",
-    /// "limit": 10}
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.QueryObjects Content-Length: 123 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"pipelineId": "df-06372391ZG65EXAMPLE", "query": {"selectors": [ ] }, "sphere": "INSTANCE", "marker": "", "limit": 10}
     /// </request>
-    ///
-    ///
     /// <response>
-    ///
-    /// x-amzn-RequestId: 14d704c1-0775-11e2-af6f-6bc7a6be60d9
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 72
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {"hasMoreResults": false,
-    /// "ids":
-    /// ["@SayHello_1_2012-09-25T17:00:00"]
-    /// }
+    /// x-amzn-RequestId: 14d704c1-0775-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 72 Date: Mon, 12 Nov 2012 17:50:53 GMT {"hasMoreResults": false, "ids": ["@SayHello_1_2012-09-25T17:00:00"] }
     /// </response>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct QueryObjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2016,10 +1488,10 @@ pub mod fluent_builders {
                 crate::input::QueryObjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2027,9 +1499,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::QueryObjectsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::QueryObjectsPaginator<C, M, R> {
+            crate::paginator::QueryObjectsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(input.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -2037,49 +1515,39 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_id(input);
             self
         }
-        /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors.
-        /// The conditions in the query are limited to top-level String fields in the object.
-        /// These filters can be applied to components, instances, and attempts.</p>
-        pub fn query(mut self, inp: crate::model::Query) -> Self {
-            self.inner = self.inner.query(inp);
+        /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
+        pub fn query(mut self, input: crate::model::Query) -> Self {
+            self.inner = self.inner.query(input);
             self
         }
-        /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors.
-        /// The conditions in the query are limited to top-level String fields in the object.
-        /// These filters can be applied to components, instances, and attempts.</p>
+        /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
         pub fn set_query(mut self, input: std::option::Option<crate::model::Query>) -> Self {
             self.inner = self.inner.set_query(input);
             self
         }
-        /// <p>Indicates whether the query applies to components or instances. The possible values are:  
-        /// <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
-        pub fn sphere(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sphere(inp);
+        /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
+        pub fn sphere(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sphere(input.into());
             self
         }
-        /// <p>Indicates whether the query applies to components or instances. The possible values are:  
-        /// <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
+        /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
         pub fn set_sphere(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_sphere(input);
             self
         }
-        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-        /// As long as there are more results, continue to call <code>QueryObjects</code> with
-        /// the marker value from the previous call to retrieve the next set of results.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
-        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
-        /// As long as there are more results, continue to call <code>QueryObjects</code> with
-        /// the marker value from the previous call to retrieve the next set of results.</p>
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
@@ -2091,7 +1559,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveTags`.
     ///
     /// <p>Removes existing tags from the specified pipeline.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2136,10 +1604,10 @@ pub mod fluent_builders {
                 crate::input::RemoveTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2148,8 +1616,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(input.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -2162,8 +1630,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags to remove.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags to remove.</p>
@@ -2177,45 +1645,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ReportTaskProgress`.
     ///
-    /// <p>Task runners call <code>ReportTaskProgress</code> when assigned a task to acknowledge that it has the task. If the web service does not
-    /// receive this acknowledgement within 2 minutes, it assigns the task in a subsequent <a>PollForTask</a> call. After this initial acknowledgement,
-    /// the task runner only needs to report progress every 15 minutes to maintain its ownership of the task. You can change this reporting time
-    /// from 15 minutes by specifying a <code>reportProgressTimeout</code> field in your pipeline.</p>
-    /// <p>If a task runner does not report its status after 5 minutes, AWS Data Pipeline assumes that the task runner is unable to process the task
-    /// and reassigns the task in a subsequent response to <a>PollForTask</a>. Task runners should call <code>ReportTaskProgress</code> every 60 seconds.</p>
-    /// <examples>
+    /// <p>Task runners call <code>ReportTaskProgress</code> when assigned a task to acknowledge that it has the task. If the web service does not receive this acknowledgement within 2 minutes, it assigns the task in a subsequent <code>PollForTask</code> call. After this initial acknowledgement, the task runner only needs to report progress every 15 minutes to maintain its ownership of the task. You can change this reporting time from 15 minutes by specifying a <code>reportProgressTimeout</code> field in your pipeline.</p>
+    /// <p>If a task runner does not report its status after 5 minutes, AWS Data Pipeline assumes that the task runner is unable to process the task and reassigns the task in a subsequent response to <code>PollForTask</code>. Task runners should call <code>ReportTaskProgress</code> every 60 seconds.</p> <examples>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.ReportTaskProgress
-    /// Content-Length: 832
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"taskId": "aaGgHT4LuH0T0Y0oLrJRjas5qH0d8cDPADxqq3tn+zCWGELkCdV2JprLreXm1oxeP5EFZHFLJ69kjSsLYE0iYHYBYVGBrB+E/pYq7ANEEeGJFnSBMRiXZVA+8UJ3OzcInvXeinqBmBaKwii7hnnKb/AXjXiNTXyxgydX1KAyg1AxkwBYG4cfPYMZbuEbQJFJvv5C/2+GVXz1w94nKYTeUeepwUOFOuRLS6JVtZoYwpF56E+Yfk1IcGpFOvCZ01B4Bkuu7x3J+MD/j6kJgZLAgbCJQtI3eiW3kdGmX0p0I2BdY1ZsX6b4UiSvM3OMj6NEHJCJL4E0ZfitnhCoe24Kvjo6C2hFbZq+ei/HPgSXBQMSagkr4vS9c0ChzxH2+LNYvec6bY4kymkaZI1dvOzmpa0FcnGf5AjSK4GpsViZ/ujz6zxFv81qBXzjF0/4M1775rjV1VUdyKaixiA/sJiACNezqZqETidp8d24BDPRhGsj6pBCrnelqGFrk/gXEXUsJ+xwMifRC8UVwiKekpAvHUywVk7Ku4jH/n3i2VoLRP6FXwpUbelu34iiZ9czpXyLtyPKwxa87dlrnRVURwkcVjOt2Mcrcaqe+cbWHvNRhyrPkkdfSF3ac8/wfgVbXvLEB2k9mKc67aD9rvdc1PKX09Tk8BKklsMTpZ3TRCd4NzQlJKigMe8Jat9+1tKj4Ole5ZzW6uyTu2s2iFjEV8KXu4MaiRJyNKCdKeGhhZWY37Qk4NBK4Ppgu+C6Y41dpfOh288SLDEVx0/UySlqOEdhba7c6BiPp5r3hKj3mk9lFy5OYp1aoGLeeFmjXveTnPdf2gkWqXXg7AUbJ7jEs1F0lKZQg4szep2gcKyAJXgvXLfJJHcha8Lfb/Ee7wYmyOcAaRpDBoFNSbtoVXar46teIrpho+ZDvynUXvU0grHWGOk=:wn3SgymHZM99bEXAMPLE",
-    /// "fields":
-    /// [
-    /// {"key": "percentComplete",
-    /// "stringValue": "50"}
-    /// ]
-    /// }
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.ReportTaskProgress Content-Length: 832 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"taskId": "aaGgHT4LuH0T0Y0oLrJRjas5qH0d8cDPADxqq3tn+zCWGELkCdV2JprLreXm1oxeP5EFZHFLJ69kjSsLYE0iYHYBYVGBrB+E/pYq7ANEEeGJFnSBMRiXZVA+8UJ3OzcInvXeinqBmBaKwii7hnnKb/AXjXiNTXyxgydX1KAyg1AxkwBYG4cfPYMZbuEbQJFJvv5C/2+GVXz1w94nKYTeUeepwUOFOuRLS6JVtZoYwpF56E+Yfk1IcGpFOvCZ01B4Bkuu7x3J+MD/j6kJgZLAgbCJQtI3eiW3kdGmX0p0I2BdY1ZsX6b4UiSvM3OMj6NEHJCJL4E0ZfitnhCoe24Kvjo6C2hFbZq+ei/HPgSXBQMSagkr4vS9c0ChzxH2+LNYvec6bY4kymkaZI1dvOzmpa0FcnGf5AjSK4GpsViZ/ujz6zxFv81qBXzjF0/4M1775rjV1VUdyKaixiA/sJiACNezqZqETidp8d24BDPRhGsj6pBCrnelqGFrk/gXEXUsJ+xwMifRC8UVwiKekpAvHUywVk7Ku4jH/n3i2VoLRP6FXwpUbelu34iiZ9czpXyLtyPKwxa87dlrnRVURwkcVjOt2Mcrcaqe+cbWHvNRhyrPkkdfSF3ac8/wfgVbXvLEB2k9mKc67aD9rvdc1PKX09Tk8BKklsMTpZ3TRCd4NzQlJKigMe8Jat9+1tKj4Ole5ZzW6uyTu2s2iFjEV8KXu4MaiRJyNKCdKeGhhZWY37Qk4NBK4Ppgu+C6Y41dpfOh288SLDEVx0/UySlqOEdhba7c6BiPp5r3hKj3mk9lFy5OYp1aoGLeeFmjXveTnPdf2gkWqXXg7AUbJ7jEs1F0lKZQg4szep2gcKyAJXgvXLfJJHcha8Lfb/Ee7wYmyOcAaRpDBoFNSbtoVXar46teIrpho+ZDvynUXvU0grHWGOk=:wn3SgymHZM99bEXAMPLE", "fields": [ {"key": "percentComplete", "stringValue": "50"} ] }
     /// </request>
-    ///
     /// <response>
-    ///
-    /// x-amzn-RequestId: 640bd023-0775-11e2-af6f-6bc7a6be60d9
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 18
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {"canceled": false}
-    ///
+    /// x-amzn-RequestId: 640bd023-0775-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 18 Date: Mon, 12 Nov 2012 17:50:53 GMT {"canceled": false}
     /// </response>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReportTaskProgress<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2260,10 +1699,10 @@ pub mod fluent_builders {
                 crate::input::ReportTaskProgressInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2271,12 +1710,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
+        pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(input.into());
             self
         }
-        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
+        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_id(input);
             self
@@ -2286,8 +1725,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
-        pub fn fields(mut self, inp: impl Into<crate::model::Field>) -> Self {
-            self.inner = self.inner.fields(inp);
+        pub fn fields(mut self, input: crate::model::Field) -> Self {
+            self.inner = self.inner.fields(input);
             self
         }
         /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
@@ -2301,40 +1740,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ReportTaskRunnerHeartbeat`.
     ///
-    /// <p>Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate that they are operational.
-    /// If the AWS Data Pipeline Task Runner is launched on a resource managed by AWS Data Pipeline, the web service can use
-    /// this call to detect when the task runner application has failed and restart a new instance.</p>
-    ///
-    /// <examples>
-    /// <request>           
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.ReportTaskRunnerHeartbeat
-    /// Content-Length: 84
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"taskrunnerId": "1234567890",
-    /// "workerGroup": "wg-12345",
-    /// "hostname": "example.com"}
-    ///
+    /// <p>Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed and restart a new instance.</p> <examples>
+    /// <request>
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.ReportTaskRunnerHeartbeat Content-Length: 84 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"taskrunnerId": "1234567890", "workerGroup": "wg-12345", "hostname": "example.com"}
     /// </request>
-    ///
     /// <response>
-    ///
-    /// Status:
-    /// x-amzn-RequestId: b3104dc5-0734-11e2-af6f-6bc7a6be60d9
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 20
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {"terminate": false}
-    ///
+    /// Status: x-amzn-RequestId: b3104dc5-0734-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 20 Date: Mon, 12 Nov 2012 17:50:53 GMT {"terminate": false}
     /// </response>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReportTaskRunnerHeartbeat<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2379,10 +1793,10 @@ pub mod fluent_builders {
                 crate::input::ReportTaskRunnerHeartbeatInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2390,16 +1804,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner
-        /// launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application.
-        /// If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
-        pub fn taskrunner_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.taskrunner_id(inp);
+        /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
+        pub fn taskrunner_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.taskrunner_id(input.into());
             self
         }
-        /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner
-        /// launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application.
-        /// If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
+        /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
         pub fn set_taskrunner_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2407,23 +1817,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_taskrunner_id(input);
             self
         }
-        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
-        /// You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string
-        /// must be an exact, case-sensitive, match.</p>
-        pub fn worker_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_group(inp);
+        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
+        pub fn worker_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_group(input.into());
             self
         }
-        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
-        /// You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string
-        /// must be an exact, case-sensitive, match.</p>
+        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
         pub fn set_worker_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_worker_group(input);
             self
         }
         /// <p>The public DNS name of the task runner.</p>
-        pub fn hostname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname(inp);
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname(input.into());
             self
         }
         /// <p>The public DNS name of the task runner.</p>
@@ -2434,40 +1840,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetStatus`.
     ///
-    /// <p>Requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline.
-    /// This update might not occur immediately, but is eventually consistent. The status that can be set depends on the type of object (for example, DataNode or Activity).
-    /// You cannot perform this operation on <code>FINISHED</code> pipelines and attempting to do so returns <code>InvalidRequestException</code>.</p>
-    ///
-    /// <examples>
+    /// <p>Requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline. This update might not occur immediately, but is eventually consistent. The status that can be set depends on the type of object (for example, DataNode or Activity). You cannot perform this operation on <code>FINISHED</code> pipelines and attempting to do so returns <code>InvalidRequestException</code>.</p> <examples>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.SetStatus
-    /// Content-Length: 100
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"pipelineId": "df-0634701J7KEXAMPLE",
-    /// "objectIds":
-    /// ["o-08600941GHJWMBR9E2"],
-    /// "status": "pause"}
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.SetStatus Content-Length: 100 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"pipelineId": "df-0634701J7KEXAMPLE", "objectIds": ["o-08600941GHJWMBR9E2"], "status": "pause"}
     /// </request>
-    ///
     /// <response>
-    ///
-    /// x-amzn-RequestId: e83b8ab7-076a-11e2-af6f-6bc7a6be60d9
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 0
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// Unexpected response: 200, OK, undefined
-    ///
+    /// x-amzn-RequestId: e83b8ab7-076a-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 0 Date: Mon, 12 Nov 2012 17:50:53 GMT Unexpected response: 200, OK, undefined
     /// </response>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2512,10 +1893,10 @@ pub mod fluent_builders {
                 crate::input::SetStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2524,8 +1905,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline that contains the objects.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(input.into());
             self
         }
         /// <p>The ID of the pipeline that contains the objects.</p>
@@ -2538,8 +1919,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_object_ids`](Self::set_object_ids).
         ///
         /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
-        pub fn object_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.object_ids(inp);
+        pub fn object_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.object_ids(input.into());
             self
         }
         /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
@@ -2550,14 +1931,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_object_ids(input);
             self
         }
-        /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>.
-        /// For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(input.into());
             self
         }
-        /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>.
-        /// For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+        /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_status(input);
             self
@@ -2565,38 +1944,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetTaskStatus`.
     ///
-    /// <p>Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task is completed and provide information about the final status.
-    /// A task runner makes this call regardless of whether the task was sucessful. A task runner does not need to call <code>SetTaskStatus</code> for
-    /// tasks that are canceled by the web service during a call to <a>ReportTaskProgress</a>.</p>
-    ///
-    /// <examples>
+    /// <p>Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task is completed and provide information about the final status. A task runner makes this call regardless of whether the task was sucessful. A task runner does not need to call <code>SetTaskStatus</code> for tasks that are canceled by the web service during a call to <code>ReportTaskProgress</code>.</p> <examples>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.SetTaskStatus
-    /// Content-Length: 847
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"taskId": "aaGgHT4LuH0T0Y0oLrJRjas5qH0d8cDPADxqq3tn+zCWGELkCdV2JprLreXm1oxeP5EFZHFLJ69kjSsLYE0iYHYBYVGBrB+E/pYq7ANEEeGJFnSBMRiXZVA+8UJ3OzcInvXeinqBmBaKwii7hnnKb/AXjXiNTXyxgydX1KAyg1AxkwBYG4cfPYMZbuEbQJFJvv5C/2+GVXz1w94nKYTeUeepwUOFOuRLS6JVtZoYwpF56E+Yfk1IcGpFOvCZ01B4Bkuu7x3J+MD/j6kJgZLAgbCJQtI3eiW3kdGmX0p0I2BdY1ZsX6b4UiSvM3OMj6NEHJCJL4E0ZfitnhCoe24Kvjo6C2hFbZq+ei/HPgSXBQMSagkr4vS9c0ChzxH2+LNYvec6bY4kymkaZI1dvOzmpa0FcnGf5AjSK4GpsViZ/ujz6zxFv81qBXzjF0/4M1775rjV1VUdyKaixiA/sJiACNezqZqETidp8d24BDPRhGsj6pBCrnelqGFrk/gXEXUsJ+xwMifRC8UVwiKekpAvHUywVk7Ku4jH/n3i2VoLRP6FXwpUbelu34iiZ9czpXyLtyPKwxa87dlrnRVURwkcVjOt2Mcrcaqe+cbWHvNRhyrPkkdfSF3ac8/wfgVbXvLEB2k9mKc67aD9rvdc1PKX09Tk8BKklsMTpZ3TRCd4NzQlJKigMe8Jat9+1tKj4Ole5ZzW6uyTu2s2iFjEV8KXu4MaiRJyNKCdKeGhhZWY37Qk4NBK4Ppgu+C6Y41dpfOh288SLDEVx0/UySlqOEdhba7c6BiPp5r3hKj3mk9lFy5OYp1aoGLeeFmjXveTnPdf2gkWqXXg7AUbJ7jEs1F0lKZQg4szep2gcKyAJXgvXLfJJHcha8Lfb/Ee7wYmyOcAaRpDBoFNSbtoVXar46teIrpho+ZDvynUXvU0grHWGOk=:wn3SgymHZM99bEXAMPLE",
-    /// "taskStatus": "FINISHED"}
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.SetTaskStatus Content-Length: 847 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"taskId": "aaGgHT4LuH0T0Y0oLrJRjas5qH0d8cDPADxqq3tn+zCWGELkCdV2JprLreXm1oxeP5EFZHFLJ69kjSsLYE0iYHYBYVGBrB+E/pYq7ANEEeGJFnSBMRiXZVA+8UJ3OzcInvXeinqBmBaKwii7hnnKb/AXjXiNTXyxgydX1KAyg1AxkwBYG4cfPYMZbuEbQJFJvv5C/2+GVXz1w94nKYTeUeepwUOFOuRLS6JVtZoYwpF56E+Yfk1IcGpFOvCZ01B4Bkuu7x3J+MD/j6kJgZLAgbCJQtI3eiW3kdGmX0p0I2BdY1ZsX6b4UiSvM3OMj6NEHJCJL4E0ZfitnhCoe24Kvjo6C2hFbZq+ei/HPgSXBQMSagkr4vS9c0ChzxH2+LNYvec6bY4kymkaZI1dvOzmpa0FcnGf5AjSK4GpsViZ/ujz6zxFv81qBXzjF0/4M1775rjV1VUdyKaixiA/sJiACNezqZqETidp8d24BDPRhGsj6pBCrnelqGFrk/gXEXUsJ+xwMifRC8UVwiKekpAvHUywVk7Ku4jH/n3i2VoLRP6FXwpUbelu34iiZ9czpXyLtyPKwxa87dlrnRVURwkcVjOt2Mcrcaqe+cbWHvNRhyrPkkdfSF3ac8/wfgVbXvLEB2k9mKc67aD9rvdc1PKX09Tk8BKklsMTpZ3TRCd4NzQlJKigMe8Jat9+1tKj4Ole5ZzW6uyTu2s2iFjEV8KXu4MaiRJyNKCdKeGhhZWY37Qk4NBK4Ppgu+C6Y41dpfOh288SLDEVx0/UySlqOEdhba7c6BiPp5r3hKj3mk9lFy5OYp1aoGLeeFmjXveTnPdf2gkWqXXg7AUbJ7jEs1F0lKZQg4szep2gcKyAJXgvXLfJJHcha8Lfb/Ee7wYmyOcAaRpDBoFNSbtoVXar46teIrpho+ZDvynUXvU0grHWGOk=:wn3SgymHZM99bEXAMPLE", "taskStatus": "FINISHED"}
     /// </request>
-    ///
     /// <response>
-    ///
-    /// x-amzn-RequestId: 8c8deb53-0788-11e2-af9c-6bc7a6be6qr8
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 0
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {}
-    ///
+    /// x-amzn-RequestId: 8c8deb53-0788-11e2-af9c-6bc7a6be6qr8 Content-Type: application/x-amz-json-1.1 Content-Length: 0 Date: Mon, 12 Nov 2012 17:50:53 GMT {}
     /// </response>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetTaskStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2641,10 +1997,10 @@ pub mod fluent_builders {
                 crate::input::SetTaskStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2652,19 +2008,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
+        pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(input.into());
             self
         }
-        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
+        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_id(input);
             self
         }
         /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
-        pub fn task_status(mut self, inp: crate::model::TaskStatus) -> Self {
-            self.inner = self.inner.task_status(inp);
+        pub fn task_status(mut self, input: crate::model::TaskStatus) -> Self {
+            self.inner = self.inner.task_status(input);
             self
         }
         /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
@@ -2675,26 +2031,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_status(input);
             self
         }
-        /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object.
-        /// It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
-        pub fn error_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.error_id(inp);
+        /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
+        pub fn error_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.error_id(input.into());
             self
         }
-        /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object.
-        /// It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
+        /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
         pub fn set_error_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_error_id(input);
             self
         }
-        /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object.
-        /// It is used to display error information to the user. The web service does not parse this value.</p>
-        pub fn error_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.error_message(inp);
+        /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.error_message(input.into());
             self
         }
-        /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object.
-        /// It is used to display error information to the user. The web service does not parse this value.</p>
+        /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2702,14 +2054,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_error_message(input);
             self
         }
-        /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object.
-        /// It is used to display error information to the user. The web service does not parse this value.</p>
-        pub fn error_stack_trace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.error_stack_trace(inp);
+        /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
+        pub fn error_stack_trace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.error_stack_trace(input.into());
             self
         }
-        /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object.
-        /// It is used to display error information to the user. The web service does not parse this value.</p>
+        /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
         pub fn set_error_stack_trace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2720,159 +2070,37 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ValidatePipelineDefinition`.
     ///
-    /// <p>Validates the specified pipeline definition to ensure that it is well formed and can be run without error.</p>
-    ///
-    /// <examples>
+    /// <p>Validates the specified pipeline definition to ensure that it is well formed and can be run without error.</p> <examples>
     /// <example>
-    /// <name>Example 1</name>
+    /// <name>
+    /// Example 1
+    /// </name>
     /// <description>
     /// This example sets an valid pipeline configuration and returns success.
     /// </description>
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.ValidatePipelineDefinition
-    /// Content-Length: 936
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"pipelineId": "df-06372391ZG65EXAMPLE",
-    /// "pipelineObjects":
-    /// [
-    /// {"id": "Default",
-    /// "name": "Default",
-    /// "fields":
-    /// [
-    /// {"key": "workerGroup",
-    /// "stringValue": "MyworkerGroup"}
-    /// ]
-    /// },
-    /// {"id": "Schedule",
-    /// "name": "Schedule",
-    /// "fields":
-    /// [
-    /// {"key": "startDateTime",
-    /// "stringValue": "2012-09-25T17:00:00"},
-    /// {"key": "type",
-    /// "stringValue": "Schedule"},
-    /// {"key": "period",
-    /// "stringValue": "1 hour"},
-    /// {"key": "endDateTime",
-    /// "stringValue": "2012-09-25T18:00:00"}
-    /// ]
-    /// },
-    /// {"id": "SayHello",
-    /// "name": "SayHello",
-    /// "fields":
-    /// [
-    /// {"key": "type",
-    /// "stringValue": "ShellCommandActivity"},
-    /// {"key": "command",
-    /// "stringValue": "echo hello"},
-    /// {"key": "parent",
-    /// "refValue": "Default"},
-    /// {"key": "schedule",
-    /// "refValue": "Schedule"}
-    ///
-    /// ]
-    /// }
-    /// ]
-    /// }
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.ValidatePipelineDefinition Content-Length: 936 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"pipelineId": "df-06372391ZG65EXAMPLE", "pipelineObjects": [ {"id": "Default", "name": "Default", "fields": [ {"key": "workerGroup", "stringValue": "MyworkerGroup"} ] }, {"id": "Schedule", "name": "Schedule", "fields": [ {"key": "startDateTime", "stringValue": "2012-09-25T17:00:00"}, {"key": "type", "stringValue": "Schedule"}, {"key": "period", "stringValue": "1 hour"}, {"key": "endDateTime", "stringValue": "2012-09-25T18:00:00"} ] }, {"id": "SayHello", "name": "SayHello", "fields": [ {"key": "type", "stringValue": "ShellCommandActivity"}, {"key": "command", "stringValue": "echo hello"}, {"key": "parent", "refValue": "Default"}, {"key": "schedule", "refValue": "Schedule"} ] } ] }
     /// </request>
     /// <response>
-    ///
-    /// x-amzn-RequestId: 92c9f347-0776-11e2-8a14-21bb8a1f50ef
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 18
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {"errored": false}
-    ///
+    /// x-amzn-RequestId: 92c9f347-0776-11e2-8a14-21bb8a1f50ef Content-Type: application/x-amz-json-1.1 Content-Length: 18 Date: Mon, 12 Nov 2012 17:50:53 GMT {"errored": false}
     /// </response>
     /// </example>
     /// <example>
-    /// <name>Example 2</name>
+    /// <name>
+    /// Example 2
+    /// </name>
     /// <description>
     /// This example sets an invalid pipeline configuration and returns the associated set of validation errors.
     /// </description>
-    ///
     /// <request>
-    ///
-    /// POST / HTTP/1.1
-    /// Content-Type: application/x-amz-json-1.1
-    /// X-Amz-Target: DataPipeline.ValidatePipelineDefinition
-    /// Content-Length: 903
-    /// Host: datapipeline.us-east-1.amazonaws.com
-    /// X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT
-    /// Authorization: AuthParams
-    ///
-    /// {"pipelineId": "df-06372391ZG65EXAMPLE",
-    /// "pipelineObjects":
-    /// [
-    /// {"id": "Default",
-    /// "name": "Default",
-    /// "fields":
-    /// [
-    /// {"key": "workerGroup",
-    /// "stringValue": "MyworkerGroup"}
-    /// ]
-    /// },
-    /// {"id": "Schedule",
-    /// "name": "Schedule",
-    /// "fields":
-    /// [
-    /// {"key": "startDateTime",
-    /// "stringValue": "bad-time"},
-    /// {"key": "type",
-    /// "stringValue": "Schedule"},
-    /// {"key": "period",
-    /// "stringValue": "1 hour"},
-    /// {"key": "endDateTime",
-    /// "stringValue": "2012-09-25T18:00:00"}
-    /// ]
-    /// },
-    /// {"id": "SayHello",
-    /// "name": "SayHello",
-    /// "fields":
-    /// [
-    /// {"key": "type",
-    /// "stringValue": "ShellCommandActivity"},
-    /// {"key": "command",
-    /// "stringValue": "echo hello"},
-    /// {"key": "parent",
-    /// "refValue": "Default"},
-    /// {"key": "schedule",
-    /// "refValue": "Schedule"}
-    ///
-    /// ]
-    /// }
-    /// ]
-    /// }
-    ///
+    /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.ValidatePipelineDefinition Content-Length: 903 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"pipelineId": "df-06372391ZG65EXAMPLE", "pipelineObjects": [ {"id": "Default", "name": "Default", "fields": [ {"key": "workerGroup", "stringValue": "MyworkerGroup"} ] }, {"id": "Schedule", "name": "Schedule", "fields": [ {"key": "startDateTime", "stringValue": "bad-time"}, {"key": "type", "stringValue": "Schedule"}, {"key": "period", "stringValue": "1 hour"}, {"key": "endDateTime", "stringValue": "2012-09-25T18:00:00"} ] }, {"id": "SayHello", "name": "SayHello", "fields": [ {"key": "type", "stringValue": "ShellCommandActivity"}, {"key": "command", "stringValue": "echo hello"}, {"key": "parent", "refValue": "Default"}, {"key": "schedule", "refValue": "Schedule"} ] } ] }
     /// </request>
     /// <response>
-    ///
-    /// x-amzn-RequestId: 496a1f5a-0e6a-11e2-a61c-bd6312c92ddd
-    /// Content-Type: application/x-amz-json-1.1
-    /// Content-Length: 278
-    /// Date: Mon, 12 Nov 2012 17:50:53 GMT
-    ///
-    /// {"errored": true,
-    /// "validationErrors":
-    /// [
-    /// {"errors":
-    /// ["INVALID_FIELD_VALUE:  'startDateTime' value must be a literal datetime value."],
-    /// "id": "Schedule"}
-    /// ]
-    /// }
-    ///
+    /// x-amzn-RequestId: 496a1f5a-0e6a-11e2-a61c-bd6312c92ddd Content-Type: application/x-amz-json-1.1 Content-Length: 278 Date: Mon, 12 Nov 2012 17:50:53 GMT {"errored": true, "validationErrors": [ {"errors": ["INVALID_FIELD_VALUE: 'startDateTime' value must be a literal datetime value."], "id": "Schedule"} ] }
     /// </response>
     /// </example>
     /// </examples>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ValidatePipelineDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2917,10 +2145,10 @@ pub mod fluent_builders {
                 crate::input::ValidatePipelineDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2929,8 +2157,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline.</p>
-        pub fn pipeline_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_id(inp);
+        pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_id(input.into());
             self
         }
         /// <p>The ID of the pipeline.</p>
@@ -2943,8 +2171,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_pipeline_objects`](Self::set_pipeline_objects).
         ///
         /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
-        pub fn pipeline_objects(mut self, inp: impl Into<crate::model::PipelineObject>) -> Self {
-            self.inner = self.inner.pipeline_objects(inp);
+        pub fn pipeline_objects(mut self, input: crate::model::PipelineObject) -> Self {
+            self.inner = self.inner.pipeline_objects(input);
             self
         }
         /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
@@ -2960,8 +2188,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_objects`](Self::set_parameter_objects).
         ///
         /// <p>The parameter objects used with the pipeline.</p>
-        pub fn parameter_objects(mut self, inp: impl Into<crate::model::ParameterObject>) -> Self {
-            self.inner = self.inner.parameter_objects(inp);
+        pub fn parameter_objects(mut self, input: crate::model::ParameterObject) -> Self {
+            self.inner = self.inner.parameter_objects(input);
             self
         }
         /// <p>The parameter objects used with the pipeline.</p>
@@ -2977,8 +2205,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
         ///
         /// <p>The parameter values used with the pipeline.</p>
-        pub fn parameter_values(mut self, inp: impl Into<crate::model::ParameterValue>) -> Self {
-            self.inner = self.inner.parameter_values(inp);
+        pub fn parameter_values(mut self, input: crate::model::ParameterValue) -> Self {
+            self.inner = self.inner.parameter_values(input);
             self
         }
         /// <p>The parameter values used with the pipeline.</p>
@@ -2991,6 +2219,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

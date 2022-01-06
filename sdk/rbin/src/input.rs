@@ -41,9 +41,9 @@ pub mod create_rule_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags to assign to the retention rule.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -55,14 +55,12 @@ pub mod create_rule_input {
             self.tags = input;
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are
-        /// supported.</p>
+        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are
-        /// supported.</p>
+        /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -74,23 +72,15 @@ pub mod create_rule_input {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule.</p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
-        pub fn resource_tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tags = Some(v);
             self
         }
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule.</p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
         pub fn set_resource_tags(
             mut self,
@@ -119,7 +109,7 @@ pub mod create_rule_input {
 #[doc(hidden)]
 pub type CreateRuleInputOperationOutputAlias = crate::operation::CreateRule;
 #[doc(hidden)]
-pub type CreateRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateRule`](crate::operation::CreateRule)>
     #[allow(clippy::let_and_return)]
@@ -130,7 +120,7 @@ impl CreateRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -209,7 +199,7 @@ impl CreateRuleInput {
             "CreateRule",
             "rbin",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -267,7 +257,7 @@ pub mod delete_rule_input {
 #[doc(hidden)]
 pub type DeleteRuleInputOperationOutputAlias = crate::operation::DeleteRule;
 #[doc(hidden)]
-pub type DeleteRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRule`](crate::operation::DeleteRule)>
     #[allow(clippy::let_and_return)]
@@ -278,7 +268,7 @@ impl DeleteRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -368,7 +358,7 @@ impl DeleteRuleInput {
             "DeleteRule",
             "rbin",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -416,7 +406,7 @@ pub mod get_rule_input {
 #[doc(hidden)]
 pub type GetRuleInputOperationOutputAlias = crate::operation::GetRule;
 #[doc(hidden)]
-pub type GetRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetRule`](crate::operation::GetRule)>
     #[allow(clippy::let_and_return)]
@@ -427,7 +417,7 @@ impl GetRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -512,7 +502,7 @@ impl GetRuleInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::GetRule::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("GetRule", "rbin"));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -559,14 +549,12 @@ pub mod list_rules_input {
             self.next_token = input;
             self
         }
-        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type
-        /// are listed.</p>
+        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type
-        /// are listed.</p>
+        /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -579,9 +567,9 @@ pub mod list_rules_input {
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
         /// <p>The tags used to identify resources that are to be retained by the retention rule.</p>
-        pub fn resource_tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tags = Some(v);
             self
         }
@@ -610,7 +598,7 @@ pub mod list_rules_input {
 #[doc(hidden)]
 pub type ListRulesInputOperationOutputAlias = crate::operation::ListRules;
 #[doc(hidden)]
-pub type ListRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListRules`](crate::operation::ListRules)>
     #[allow(clippy::let_and_return)]
@@ -621,7 +609,7 @@ impl ListRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -698,7 +686,7 @@ impl ListRulesInput {
                     "ListRules",
                     "rbin",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -756,7 +744,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -767,7 +755,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -857,7 +845,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "rbin",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -897,9 +885,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags to assign to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -928,7 +916,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -939,7 +927,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1034,7 +1022,7 @@ impl TagResourceInput {
             "TagResource",
             "rbin",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1113,7 +1101,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -1124,7 +1112,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1227,7 +1215,7 @@ impl UntagResourceInput {
             "UntagResource",
             "rbin",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1305,23 +1293,15 @@ pub mod update_rule_input {
         ///
         /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
         ///
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule. </p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
-        pub fn resource_tags(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
+        pub fn resource_tags(mut self, input: crate::model::ResourceTag) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_tags = Some(v);
             self
         }
-        /// <p>Information about the resource tags to use to identify resources that are to be retained
-        /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-        /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-        /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-        /// by the retention rule. </p>
+        /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>
         /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
         pub fn set_resource_tags(
             mut self,
@@ -1350,7 +1330,7 @@ pub mod update_rule_input {
 #[doc(hidden)]
 pub type UpdateRuleInputOperationOutputAlias = crate::operation::UpdateRule;
 #[doc(hidden)]
-pub type UpdateRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRuleInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRule`](crate::operation::UpdateRule)>
     #[allow(clippy::let_and_return)]
@@ -1361,7 +1341,7 @@ impl UpdateRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1456,7 +1436,7 @@ impl UpdateRuleInput {
             "UpdateRule",
             "rbin",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1491,11 +1471,7 @@ pub struct UpdateRuleInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>Information about the resource tags to use to identify resources that are to be retained
-    /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-    /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-    /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-    /// by the retention rule. </p>
+    /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
@@ -1516,11 +1492,7 @@ impl UpdateRuleInput {
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>Information about the resource tags to use to identify resources that are to be retained
-    /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-    /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-    /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-    /// by the retention rule. </p>
+    /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule. </p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
@@ -1623,8 +1595,7 @@ pub struct ListRulesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type
-    /// are listed.</p>
+    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The tags used to identify resources that are to be retained by the retention rule.</p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -1638,8 +1609,7 @@ impl ListRulesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type
-    /// are listed.</p>
+    /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed.</p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -1711,14 +1681,9 @@ pub struct CreateRuleInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Information about the tags to assign to the retention rule.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are
-    /// supported.</p>
+    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
-    /// <p>Information about the resource tags to use to identify resources that are to be retained
-    /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-    /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-    /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-    /// by the retention rule.</p>
+    /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
 }
@@ -1735,16 +1700,11 @@ impl CreateRuleInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are
-    /// supported.</p>
+    /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>Information about the resource tags to use to identify resources that are to be retained
-    /// by the retention rule. The retention rule retains only deleted snapshots that have one or more
-    /// of the specified tag key and value pairs. If a snapshot is deleted, but it does not have
-    /// any of the specified tag key and value pairs, it is immediately deleted without being retained
-    /// by the retention rule.</p>
+    /// <p>Information about the resource tags to use to identify resources that are to be retained by the retention rule. The retention rule retains only deleted snapshots that have one or more of the specified tag key and value pairs. If a snapshot is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.</p>
     /// <p>You can add the same tag key and value pair to a maximum or five retention rules.</p>
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()

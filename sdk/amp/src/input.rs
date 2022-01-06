@@ -60,7 +60,8 @@ pub mod create_alert_manager_definition_input {
 pub type CreateAlertManagerDefinitionInputOperationOutputAlias =
     crate::operation::CreateAlertManagerDefinition;
 #[doc(hidden)]
-pub type CreateAlertManagerDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAlertManagerDefinitionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAlertManagerDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`CreateAlertManagerDefinition`](crate::operation::CreateAlertManagerDefinition)>
     #[allow(clippy::let_and_return)]
@@ -71,7 +72,7 @@ impl CreateAlertManagerDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAlertManagerDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -175,7 +176,7 @@ impl CreateAlertManagerDefinitionInput {
             "CreateAlertManagerDefinition",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -299,7 +300,7 @@ pub mod create_rule_groups_namespace_input {
 pub type CreateRuleGroupsNamespaceInputOperationOutputAlias =
     crate::operation::CreateRuleGroupsNamespace;
 #[doc(hidden)]
-pub type CreateRuleGroupsNamespaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRuleGroupsNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRuleGroupsNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`CreateRuleGroupsNamespace`](crate::operation::CreateRuleGroupsNamespace)>
     #[allow(clippy::let_and_return)]
@@ -310,7 +311,7 @@ impl CreateRuleGroupsNamespaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRuleGroupsNamespace,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -415,7 +416,7 @@ impl CreateRuleGroupsNamespaceInput {
             "CreateRuleGroupsNamespace",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -514,7 +515,7 @@ pub mod create_workspace_input {
 #[doc(hidden)]
 pub type CreateWorkspaceInputOperationOutputAlias = crate::operation::CreateWorkspace;
 #[doc(hidden)]
-pub type CreateWorkspaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`CreateWorkspace`](crate::operation::CreateWorkspace)>
     #[allow(clippy::let_and_return)]
@@ -525,7 +526,7 @@ impl CreateWorkspaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkspace,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -608,7 +609,7 @@ impl CreateWorkspaceInput {
             "CreateWorkspace",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -679,7 +680,8 @@ pub mod delete_alert_manager_definition_input {
 pub type DeleteAlertManagerDefinitionInputOperationOutputAlias =
     crate::operation::DeleteAlertManagerDefinition;
 #[doc(hidden)]
-pub type DeleteAlertManagerDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAlertManagerDefinitionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAlertManagerDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAlertManagerDefinition`](crate::operation::DeleteAlertManagerDefinition)>
     #[allow(clippy::let_and_return)]
@@ -690,7 +692,7 @@ impl DeleteAlertManagerDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAlertManagerDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -798,7 +800,7 @@ impl DeleteAlertManagerDefinitionInput {
             "DeleteAlertManagerDefinition",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -873,7 +875,7 @@ pub mod delete_rule_groups_namespace_input {
 pub type DeleteRuleGroupsNamespaceInputOperationOutputAlias =
     crate::operation::DeleteRuleGroupsNamespace;
 #[doc(hidden)]
-pub type DeleteRuleGroupsNamespaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRuleGroupsNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRuleGroupsNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRuleGroupsNamespace`](crate::operation::DeleteRuleGroupsNamespace)>
     #[allow(clippy::let_and_return)]
@@ -884,7 +886,7 @@ impl DeleteRuleGroupsNamespaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRuleGroupsNamespace,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1008,7 +1010,7 @@ impl DeleteRuleGroupsNamespaceInput {
             "DeleteRuleGroupsNamespace",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1070,7 +1072,7 @@ pub mod delete_workspace_input {
 #[doc(hidden)]
 pub type DeleteWorkspaceInputOperationOutputAlias = crate::operation::DeleteWorkspace;
 #[doc(hidden)]
-pub type DeleteWorkspaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWorkspace`](crate::operation::DeleteWorkspace)>
     #[allow(clippy::let_and_return)]
@@ -1081,7 +1083,7 @@ impl DeleteWorkspaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkspace,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1189,7 +1191,7 @@ impl DeleteWorkspaceInput {
             "DeleteWorkspace",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1240,7 +1242,8 @@ pub mod describe_alert_manager_definition_input {
 pub type DescribeAlertManagerDefinitionInputOperationOutputAlias =
     crate::operation::DescribeAlertManagerDefinition;
 #[doc(hidden)]
-pub type DescribeAlertManagerDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAlertManagerDefinitionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAlertManagerDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlertManagerDefinition`](crate::operation::DescribeAlertManagerDefinition)>
     #[allow(clippy::let_and_return)]
@@ -1251,7 +1254,7 @@ impl DescribeAlertManagerDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAlertManagerDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1345,7 +1348,7 @@ impl DescribeAlertManagerDefinitionInput {
             "DescribeAlertManagerDefinition",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1408,7 +1411,7 @@ pub mod describe_rule_groups_namespace_input {
 pub type DescribeRuleGroupsNamespaceInputOperationOutputAlias =
     crate::operation::DescribeRuleGroupsNamespace;
 #[doc(hidden)]
-pub type DescribeRuleGroupsNamespaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRuleGroupsNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRuleGroupsNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRuleGroupsNamespace`](crate::operation::DescribeRuleGroupsNamespace)>
     #[allow(clippy::let_and_return)]
@@ -1419,7 +1422,7 @@ impl DescribeRuleGroupsNamespaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRuleGroupsNamespace,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1529,7 +1532,7 @@ impl DescribeRuleGroupsNamespaceInput {
             "DescribeRuleGroupsNamespace",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1579,7 +1582,7 @@ pub mod describe_workspace_input {
 #[doc(hidden)]
 pub type DescribeWorkspaceInputOperationOutputAlias = crate::operation::DescribeWorkspace;
 #[doc(hidden)]
-pub type DescribeWorkspaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeWorkspaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWorkspaceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWorkspace`](crate::operation::DescribeWorkspace)>
     #[allow(clippy::let_and_return)]
@@ -1590,7 +1593,7 @@ impl DescribeWorkspaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkspace,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1684,7 +1687,7 @@ impl DescribeWorkspaceInput {
             "DescribeWorkspace",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1771,7 +1774,7 @@ pub mod list_rule_groups_namespaces_input {
 pub type ListRuleGroupsNamespacesInputOperationOutputAlias =
     crate::operation::ListRuleGroupsNamespaces;
 #[doc(hidden)]
-pub type ListRuleGroupsNamespacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRuleGroupsNamespacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRuleGroupsNamespacesInput {
     /// Consumes the builder and constructs an Operation<[`ListRuleGroupsNamespaces`](crate::operation::ListRuleGroupsNamespaces)>
     #[allow(clippy::let_and_return)]
@@ -1782,7 +1785,7 @@ impl ListRuleGroupsNamespacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRuleGroupsNamespaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1896,7 +1899,7 @@ impl ListRuleGroupsNamespacesInput {
             "ListRuleGroupsNamespaces",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1946,7 +1949,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1957,7 +1960,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2047,7 +2050,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2121,7 +2124,7 @@ pub mod list_workspaces_input {
 #[doc(hidden)]
 pub type ListWorkspacesInputOperationOutputAlias = crate::operation::ListWorkspaces;
 #[doc(hidden)]
-pub type ListWorkspacesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWorkspacesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListWorkspacesInput {
     /// Consumes the builder and constructs an Operation<[`ListWorkspaces`](crate::operation::ListWorkspaces)>
     #[allow(clippy::let_and_return)]
@@ -2132,7 +2135,7 @@ impl ListWorkspacesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWorkspaces,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2226,7 +2229,7 @@ impl ListWorkspacesInput {
             "ListWorkspaces",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2301,7 +2304,7 @@ pub mod put_alert_manager_definition_input {
 pub type PutAlertManagerDefinitionInputOperationOutputAlias =
     crate::operation::PutAlertManagerDefinition;
 #[doc(hidden)]
-pub type PutAlertManagerDefinitionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAlertManagerDefinitionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAlertManagerDefinitionInput {
     /// Consumes the builder and constructs an Operation<[`PutAlertManagerDefinition`](crate::operation::PutAlertManagerDefinition)>
     #[allow(clippy::let_and_return)]
@@ -2312,7 +2315,7 @@ impl PutAlertManagerDefinitionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAlertManagerDefinition,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2417,7 +2420,7 @@ impl PutAlertManagerDefinitionInput {
             "PutAlertManagerDefinition",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2511,7 +2514,7 @@ pub mod put_rule_groups_namespace_input {
 #[doc(hidden)]
 pub type PutRuleGroupsNamespaceInputOperationOutputAlias = crate::operation::PutRuleGroupsNamespace;
 #[doc(hidden)]
-pub type PutRuleGroupsNamespaceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutRuleGroupsNamespaceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutRuleGroupsNamespaceInput {
     /// Consumes the builder and constructs an Operation<[`PutRuleGroupsNamespace`](crate::operation::PutRuleGroupsNamespace)>
     #[allow(clippy::let_and_return)]
@@ -2522,7 +2525,7 @@ impl PutRuleGroupsNamespaceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutRuleGroupsNamespace,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2643,7 +2646,7 @@ impl PutRuleGroupsNamespaceInput {
             "PutRuleGroupsNamespace",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2730,7 +2733,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -2741,7 +2744,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2836,7 +2839,7 @@ impl TagResourceInput {
             "TagResource",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2915,7 +2918,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -2926,7 +2929,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3029,7 +3032,7 @@ impl UntagResourceInput {
             "UntagResource",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3103,7 +3106,7 @@ pub mod update_workspace_alias_input {
 #[doc(hidden)]
 pub type UpdateWorkspaceAliasInputOperationOutputAlias = crate::operation::UpdateWorkspaceAlias;
 #[doc(hidden)]
-pub type UpdateWorkspaceAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateWorkspaceAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateWorkspaceAliasInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWorkspaceAlias`](crate::operation::UpdateWorkspaceAlias)>
     #[allow(clippy::let_and_return)]
@@ -3114,7 +3117,7 @@ impl UpdateWorkspaceAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateWorkspaceAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3219,7 +3222,7 @@ impl UpdateWorkspaceAliasInput {
             "UpdateWorkspaceAlias",
             "amp",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(

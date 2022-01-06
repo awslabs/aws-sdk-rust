@@ -11,17 +11,13 @@ pub mod add_tags_input {
     }
     impl Builder {
         /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
         /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -31,9 +27,9 @@ pub mod add_tags_input {
         /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
         ///
         /// <p>Contains a list of tags, up to a limit of 50</p>
-        pub fn tags_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags_list = Some(v);
             self
         }
@@ -60,7 +56,7 @@ pub mod add_tags_input {
 #[doc(hidden)]
 pub type AddTagsInputOperationOutputAlias = crate::operation::AddTags;
 #[doc(hidden)]
-pub type AddTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsInput {
     /// Consumes the builder and constructs an Operation<[`AddTags`](crate::operation::AddTags)>
     #[allow(clippy::let_and_return)]
@@ -71,7 +67,7 @@ impl AddTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -153,7 +149,7 @@ impl AddTagsInput {
                     "AddTags",
                     "cloudtrail",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -173,6 +169,427 @@ impl AddTagsInput {
     /// Creates a new builder-style object to manufacture [`AddTagsInput`](crate::input::AddTagsInput)
     pub fn builder() -> crate::input::add_tags_input::Builder {
         crate::input::add_tags_input::Builder::default()
+    }
+}
+
+/// See [`CancelQueryInput`](crate::input::CancelQueryInput)
+pub mod cancel_query_input {
+    /// A builder for [`CancelQueryInput`](crate::input::CancelQueryInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_data_store: std::option::Option<std::string::String>,
+        pub(crate) query_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_data_store = Some(input.into());
+            self
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_data_store = input;
+            self
+        }
+        /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
+        pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CancelQueryInput`](crate::input::CancelQueryInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CancelQueryInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CancelQueryInput {
+                event_data_store: self.event_data_store,
+                query_id: self.query_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CancelQueryInputOperationOutputAlias = crate::operation::CancelQuery;
+#[doc(hidden)]
+pub type CancelQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CancelQueryInput {
+    /// Consumes the builder and constructs an Operation<[`CancelQuery`](crate::operation::CancelQuery)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CancelQuery,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CancelQueryInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CancelQueryInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CancelQueryInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.CancelQuery",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_cancel_query(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelQuery::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelQuery",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CancelQueryInput`](crate::input::CancelQueryInput)
+    pub fn builder() -> crate::input::cancel_query_input::Builder {
+        crate::input::cancel_query_input::Builder::default()
+    }
+}
+
+/// See [`CreateEventDataStoreInput`](crate::input::CreateEventDataStoreInput)
+pub mod create_event_data_store_input {
+    /// A builder for [`CreateEventDataStoreInput`](crate::input::CreateEventDataStoreInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) advanced_event_selectors:
+            std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        pub(crate) multi_region_enabled: std::option::Option<bool>,
+        pub(crate) organization_enabled: std::option::Option<bool>,
+        pub(crate) retention_period: std::option::Option<i32>,
+        pub(crate) termination_protection_enabled: std::option::Option<bool>,
+        pub(crate) tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The name of the event data store.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the event data store.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `advanced_event_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
+        ///
+        /// <p>The advanced event selectors to use to select the events for the data store. For more information about how to use advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
+        pub fn advanced_event_selectors(
+            mut self,
+            input: crate::model::AdvancedEventSelector,
+        ) -> Self {
+            let mut v = self.advanced_event_selectors.unwrap_or_default();
+            v.push(input);
+            self.advanced_event_selectors = Some(v);
+            self
+        }
+        /// <p>The advanced event selectors to use to select the events for the data store. For more information about how to use advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
+        pub fn set_advanced_event_selectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        ) -> Self {
+            self.advanced_event_selectors = input;
+            self
+        }
+        /// <p>Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created.</p>
+        pub fn multi_region_enabled(mut self, input: bool) -> Self {
+            self.multi_region_enabled = Some(input);
+            self
+        }
+        /// <p>Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created.</p>
+        pub fn set_multi_region_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_region_enabled = input;
+            self
+        }
+        /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+        pub fn organization_enabled(mut self, input: bool) -> Self {
+            self.organization_enabled = Some(input);
+            self
+        }
+        /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+        pub fn set_organization_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.organization_enabled = input;
+            self
+        }
+        /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the equivalent of seven years.</p>
+        pub fn retention_period(mut self, input: i32) -> Self {
+            self.retention_period = Some(input);
+            self
+        }
+        /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the equivalent of seven years.</p>
+        pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.retention_period = input;
+            self
+        }
+        /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
+        pub fn termination_protection_enabled(mut self, input: bool) -> Self {
+            self.termination_protection_enabled = Some(input);
+            self
+        }
+        /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
+        pub fn set_termination_protection_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.termination_protection_enabled = input;
+            self
+        }
+        /// Appends an item to `tags_list`.
+        ///
+        /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
+        ///
+        /// <p>A list of tags.</p>
+        pub fn tags_list(mut self, input: crate::model::Tag) -> Self {
+            let mut v = self.tags_list.unwrap_or_default();
+            v.push(input);
+            self.tags_list = Some(v);
+            self
+        }
+        /// <p>A list of tags.</p>
+        pub fn set_tags_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateEventDataStoreInput`](crate::input::CreateEventDataStoreInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::CreateEventDataStoreInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::CreateEventDataStoreInput {
+                name: self.name,
+                advanced_event_selectors: self.advanced_event_selectors,
+                multi_region_enabled: self.multi_region_enabled,
+                organization_enabled: self.organization_enabled,
+                retention_period: self.retention_period,
+                termination_protection_enabled: self.termination_protection_enabled,
+                tags_list: self.tags_list,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type CreateEventDataStoreInputOperationOutputAlias = crate::operation::CreateEventDataStore;
+#[doc(hidden)]
+pub type CreateEventDataStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl CreateEventDataStoreInput {
+    /// Consumes the builder and constructs an Operation<[`CreateEventDataStore`](crate::operation::CreateEventDataStore)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::CreateEventDataStore,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::CreateEventDataStoreInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::CreateEventDataStoreInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::CreateEventDataStoreInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.CreateEventDataStore",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_create_event_data_store(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateEventDataStore::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateEventDataStore",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`CreateEventDataStoreInput`](crate::input::CreateEventDataStoreInput)
+    pub fn builder() -> crate::input::create_event_data_store_input::Builder {
+        crate::input::create_event_data_store_input::Builder::default()
     }
 }
 
@@ -198,22 +615,11 @@ pub mod create_trail_input {
     impl Builder {
         /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -221,22 +627,11 @@ pub mod create_trail_input {
         }
         /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
@@ -255,14 +650,12 @@ pub mod create_trail_input {
             self.s3_bucket_name = input;
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
         pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_key_prefix = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -296,44 +689,31 @@ pub mod create_trail_input {
             self.include_global_service_events = input;
             self
         }
-        /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider
-        /// creating trails that log events in all regions.</p>
+        /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
         pub fn is_multi_region_trail(mut self, input: bool) -> Self {
             self.is_multi_region_trail = Some(input);
             self
         }
-        /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider
-        /// creating trails that log events in all regions.</p>
+        /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
         pub fn set_is_multi_region_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.is_multi_region_trail = input;
             self
         }
-        /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
-        /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does
-        /// not create digest files for log files that were delivered during a period in which log file integrity validation was disabled.
-        /// For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable
-        /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
-        /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
         pub fn enable_log_file_validation(mut self, input: bool) -> Self {
             self.enable_log_file_validation = Some(input);
             self
         }
-        /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
-        /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does
-        /// not create digest files for log files that were delivered during a period in which log file integrity validation was disabled.
-        /// For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable
-        /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
-        /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
         pub fn set_enable_log_file_validation(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_log_file_validation = input;
             self
         }
-        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-        /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
         pub fn cloud_watch_logs_log_group_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -341,8 +721,7 @@ pub mod create_trail_input {
             self.cloud_watch_logs_log_group_arn = Some(input.into());
             self
         }
-        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-        /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+        /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
         pub fn set_cloud_watch_logs_log_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -363,64 +742,38 @@ pub mod create_trail_input {
             self.cloud_watch_logs_role_arn = input;
             self
         }
-        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-        /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-        /// specified ARN to a key, or a globally unique identifier.</p>
-        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-        /// </li>
-        /// <li>
-        /// <p>12345678-1234-1234-1234-123456789012</p>
-        /// </li>
+        /// <li> <p>alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+        /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
         /// </ul>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-        /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-        /// specified ARN to a key, or a globally unique identifier.</p>
-        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-        /// </li>
-        /// <li>
-        /// <p>12345678-1234-1234-1234-123456789012</p>
-        /// </li>
+        /// <li> <p>alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+        /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
         /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-        /// Organizations.</p>
+        /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
         pub fn is_organization_trail(mut self, input: bool) -> Self {
             self.is_organization_trail = Some(input);
             self
         }
-        /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-        /// Organizations.</p>
+        /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
         pub fn set_is_organization_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.is_organization_trail = input;
             self
@@ -430,9 +783,9 @@ pub mod create_trail_input {
         /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
         ///
         /// <p>A list of tags.</p>
-        pub fn tags_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags_list = Some(v);
             self
         }
@@ -471,7 +824,7 @@ pub mod create_trail_input {
 #[doc(hidden)]
 pub type CreateTrailInputOperationOutputAlias = crate::operation::CreateTrail;
 #[doc(hidden)]
-pub type CreateTrailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTrailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTrailInput {
     /// Consumes the builder and constructs an Operation<[`CreateTrail`](crate::operation::CreateTrail)>
     #[allow(clippy::let_and_return)]
@@ -482,7 +835,7 @@ impl CreateTrailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTrail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -566,7 +919,7 @@ impl CreateTrailInput {
             "CreateTrail",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -589,6 +942,165 @@ impl CreateTrailInput {
     }
 }
 
+/// See [`DeleteEventDataStoreInput`](crate::input::DeleteEventDataStoreInput)
+pub mod delete_event_data_store_input {
+    /// A builder for [`DeleteEventDataStoreInput`](crate::input::DeleteEventDataStoreInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_data_store: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_data_store = Some(input.into());
+            self
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_data_store = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteEventDataStoreInput`](crate::input::DeleteEventDataStoreInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DeleteEventDataStoreInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DeleteEventDataStoreInput {
+                event_data_store: self.event_data_store,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DeleteEventDataStoreInputOperationOutputAlias = crate::operation::DeleteEventDataStore;
+#[doc(hidden)]
+pub type DeleteEventDataStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DeleteEventDataStoreInput {
+    /// Consumes the builder and constructs an Operation<[`DeleteEventDataStore`](crate::operation::DeleteEventDataStore)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DeleteEventDataStore,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DeleteEventDataStoreInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DeleteEventDataStoreInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DeleteEventDataStoreInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.DeleteEventDataStore",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_delete_event_data_store(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteEventDataStore::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteEventDataStore",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DeleteEventDataStoreInput`](crate::input::DeleteEventDataStoreInput)
+    pub fn builder() -> crate::input::delete_event_data_store_input::Builder {
+        crate::input::delete_event_data_store_input::Builder::default()
+    }
+}
+
 /// See [`DeleteTrailInput`](crate::input::DeleteTrailInput)
 pub mod delete_trail_input {
     /// A builder for [`DeleteTrailInput`](crate::input::DeleteTrailInput)
@@ -598,18 +1110,12 @@ pub mod delete_trail_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
-        /// trail ARN.
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
-        /// trail ARN.
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -628,7 +1134,7 @@ pub mod delete_trail_input {
 #[doc(hidden)]
 pub type DeleteTrailInputOperationOutputAlias = crate::operation::DeleteTrail;
 #[doc(hidden)]
-pub type DeleteTrailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTrailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTrailInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTrail`](crate::operation::DeleteTrail)>
     #[allow(clippy::let_and_return)]
@@ -639,7 +1145,7 @@ impl DeleteTrailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTrail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -723,7 +1229,7 @@ impl DeleteTrailInput {
             "DeleteTrail",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -746,6 +1252,174 @@ impl DeleteTrailInput {
     }
 }
 
+/// See [`DescribeQueryInput`](crate::input::DescribeQueryInput)
+pub mod describe_query_input {
+    /// A builder for [`DescribeQueryInput`](crate::input::DescribeQueryInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_data_store: std::option::Option<std::string::String>,
+        pub(crate) query_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_data_store = Some(input.into());
+            self
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_data_store = input;
+            self
+        }
+        /// <p>The query ID.</p>
+        pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_id = Some(input.into());
+            self
+        }
+        /// <p>The query ID.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeQueryInput`](crate::input::DescribeQueryInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeQueryInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeQueryInput {
+                event_data_store: self.event_data_store,
+                query_id: self.query_id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeQueryInputOperationOutputAlias = crate::operation::DescribeQuery;
+#[doc(hidden)]
+pub type DescribeQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl DescribeQueryInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeQuery`](crate::operation::DescribeQuery)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::DescribeQuery,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::DescribeQueryInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::DescribeQueryInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::DescribeQueryInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.DescribeQuery",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_describe_query(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeQuery::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeQuery",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeQueryInput`](crate::input::DescribeQueryInput)
+    pub fn builder() -> crate::input::describe_query_input::Builder {
+        crate::input::describe_query_input::Builder::default()
+    }
+}
+
 /// See [`DescribeTrailsInput`](crate::input::DescribeTrailsInput)
 pub mod describe_trails_input {
     /// A builder for [`DescribeTrailsInput`](crate::input::DescribeTrailsInput)
@@ -761,21 +1435,12 @@ pub mod describe_trails_input {
         /// To override the contents of this collection use [`set_trail_name_list`](Self::set_trail_name_list).
         ///
         /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        ///
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         /// <p>If an empty list is specified, information for the trail in the current region is returned.</p>
         /// <ul>
-        /// <li>
-        /// <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then
-        /// information for all trails in the current region is returned.</p>
-        /// </li>
-        /// <li>
-        /// <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</p> </li>
+        /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p> </li>
+        /// </ul> <note>
         /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p>
         /// </note>
         pub fn trail_name_list(mut self, input: impl Into<std::string::String>) -> Self {
@@ -785,21 +1450,12 @@ pub mod describe_trails_input {
             self
         }
         /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
-        ///
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         /// <p>If an empty list is specified, information for the trail in the current region is returned.</p>
         /// <ul>
-        /// <li>
-        /// <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then
-        /// information for all trails in the current region is returned.</p>
-        /// </li>
-        /// <li>
-        /// <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</p> </li>
+        /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p> </li>
+        /// </ul> <note>
         /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p>
         /// </note>
         pub fn set_trail_name_list(
@@ -809,16 +1465,12 @@ pub mod describe_trails_input {
             self.trail_name_list = input;
             self
         }
-        /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,
-        /// or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account
-        /// and region replication trails will not be returned. The default is true.</p>
+        /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>
         pub fn include_shadow_trails(mut self, input: bool) -> Self {
             self.include_shadow_trails = Some(input);
             self
         }
-        /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,
-        /// or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account
-        /// and region replication trails will not be returned. The default is true.</p>
+        /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>
         pub fn set_include_shadow_trails(mut self, input: std::option::Option<bool>) -> Self {
             self.include_shadow_trails = input;
             self
@@ -840,7 +1492,7 @@ pub mod describe_trails_input {
 #[doc(hidden)]
 pub type DescribeTrailsInputOperationOutputAlias = crate::operation::DescribeTrails;
 #[doc(hidden)]
-pub type DescribeTrailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTrailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTrailsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTrails`](crate::operation::DescribeTrails)>
     #[allow(clippy::let_and_return)]
@@ -851,7 +1503,7 @@ impl DescribeTrailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTrails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -936,7 +1588,7 @@ impl DescribeTrailsInput {
             "DescribeTrails",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -959,6 +1611,163 @@ impl DescribeTrailsInput {
     }
 }
 
+/// See [`GetEventDataStoreInput`](crate::input::GetEventDataStoreInput)
+pub mod get_event_data_store_input {
+    /// A builder for [`GetEventDataStoreInput`](crate::input::GetEventDataStoreInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_data_store: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_data_store = Some(input.into());
+            self
+        }
+        /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_data_store = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetEventDataStoreInput`](crate::input::GetEventDataStoreInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetEventDataStoreInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetEventDataStoreInput {
+                event_data_store: self.event_data_store,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetEventDataStoreInputOperationOutputAlias = crate::operation::GetEventDataStore;
+#[doc(hidden)]
+pub type GetEventDataStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetEventDataStoreInput {
+    /// Consumes the builder and constructs an Operation<[`GetEventDataStore`](crate::operation::GetEventDataStore)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetEventDataStore,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetEventDataStoreInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetEventDataStoreInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetEventDataStoreInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.GetEventDataStore",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_event_data_store(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetEventDataStore::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetEventDataStore",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetEventDataStoreInput`](crate::input::GetEventDataStoreInput)
+    pub fn builder() -> crate::input::get_event_data_store_input::Builder {
+        crate::input::get_event_data_store_input::Builder::default()
+    }
+}
+
 /// See [`GetEventSelectorsInput`](crate::input::GetEventSelectorsInput)
 pub mod get_event_selectors_input {
     /// A builder for [`GetEventSelectorsInput`](crate::input::GetEventSelectorsInput)
@@ -968,58 +1777,30 @@ pub mod get_event_selectors_input {
         pub(crate) trail_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the format:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn trail_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.trail_name = Some(input.into());
             self
         }
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the format:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_trail_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_name = input;
             self
@@ -1040,7 +1821,7 @@ pub mod get_event_selectors_input {
 #[doc(hidden)]
 pub type GetEventSelectorsInputOperationOutputAlias = crate::operation::GetEventSelectors;
 #[doc(hidden)]
-pub type GetEventSelectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEventSelectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEventSelectorsInput {
     /// Consumes the builder and constructs an Operation<[`GetEventSelectors`](crate::operation::GetEventSelectors)>
     #[allow(clippy::let_and_return)]
@@ -1051,7 +1832,7 @@ impl GetEventSelectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEventSelectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1136,7 +1917,7 @@ impl GetEventSelectorsInput {
             "GetEventSelectors",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1168,58 +1949,30 @@ pub mod get_insight_selectors_input {
         pub(crate) trail_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the format:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn trail_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.trail_name = Some(input.into());
             self
         }
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the format:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_trail_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_name = input;
             self
@@ -1240,7 +1993,7 @@ pub mod get_insight_selectors_input {
 #[doc(hidden)]
 pub type GetInsightSelectorsInputOperationOutputAlias = crate::operation::GetInsightSelectors;
 #[doc(hidden)]
-pub type GetInsightSelectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetInsightSelectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetInsightSelectorsInput {
     /// Consumes the builder and constructs an Operation<[`GetInsightSelectors`](crate::operation::GetInsightSelectors)>
     #[allow(clippy::let_and_return)]
@@ -1251,7 +2004,7 @@ impl GetInsightSelectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetInsightSelectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1336,7 +2089,7 @@ impl GetInsightSelectorsInput {
             "GetInsightSelectors",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1356,6 +2109,199 @@ impl GetInsightSelectorsInput {
     /// Creates a new builder-style object to manufacture [`GetInsightSelectorsInput`](crate::input::GetInsightSelectorsInput)
     pub fn builder() -> crate::input::get_insight_selectors_input::Builder {
         crate::input::get_insight_selectors_input::Builder::default()
+    }
+}
+
+/// See [`GetQueryResultsInput`](crate::input::GetQueryResultsInput)
+pub mod get_query_results_input {
+    /// A builder for [`GetQueryResultsInput`](crate::input::GetQueryResultsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_data_store: std::option::Option<std::string::String>,
+        pub(crate) query_id: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_query_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_data_store = Some(input.into());
+            self
+        }
+        /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_data_store = input;
+            self
+        }
+        /// <p>The ID of the query for which you want to get results.</p>
+        pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the query for which you want to get results.</p>
+        pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_id = input;
+            self
+        }
+        /// <p>A token you can use to get the next page of query results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token you can use to get the next page of query results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of query results to display on a single page.</p>
+        pub fn max_query_results(mut self, input: i32) -> Self {
+            self.max_query_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of query results to display on a single page.</p>
+        pub fn set_max_query_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_query_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetQueryResultsInput`](crate::input::GetQueryResultsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetQueryResultsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetQueryResultsInput {
+                event_data_store: self.event_data_store,
+                query_id: self.query_id,
+                next_token: self.next_token,
+                max_query_results: self.max_query_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetQueryResultsInputOperationOutputAlias = crate::operation::GetQueryResults;
+#[doc(hidden)]
+pub type GetQueryResultsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl GetQueryResultsInput {
+    /// Consumes the builder and constructs an Operation<[`GetQueryResults`](crate::operation::GetQueryResults)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetQueryResults,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::GetQueryResultsInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::GetQueryResultsInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::GetQueryResultsInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.GetQueryResults",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_get_query_results(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetQueryResults::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetQueryResults",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetQueryResultsInput`](crate::input::GetQueryResultsInput)
+    pub fn builder() -> crate::input::get_query_results_input::Builder {
+        crate::input::get_query_results_input::Builder::default()
     }
 }
 
@@ -1390,7 +2336,7 @@ pub mod get_trail_input {
 #[doc(hidden)]
 pub type GetTrailInputOperationOutputAlias = crate::operation::GetTrail;
 #[doc(hidden)]
-pub type GetTrailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTrailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTrailInput {
     /// Consumes the builder and constructs an Operation<[`GetTrail`](crate::operation::GetTrail)>
     #[allow(clippy::let_and_return)]
@@ -1401,7 +2347,7 @@ impl GetTrailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTrail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1483,7 +2429,7 @@ impl GetTrailInput {
                     "GetTrail",
                     "cloudtrail",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1515,20 +2461,14 @@ pub mod get_trail_status_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
-        /// shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
-        /// shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1547,7 +2487,7 @@ pub mod get_trail_status_input {
 #[doc(hidden)]
 pub type GetTrailStatusInputOperationOutputAlias = crate::operation::GetTrailStatus;
 #[doc(hidden)]
-pub type GetTrailStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTrailStatusInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTrailStatusInput {
     /// Consumes the builder and constructs an Operation<[`GetTrailStatus`](crate::operation::GetTrailStatus)>
     #[allow(clippy::let_and_return)]
@@ -1558,7 +2498,7 @@ impl GetTrailStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTrailStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1643,7 +2583,7 @@ impl GetTrailStatusInput {
             "GetTrailStatus",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1666,6 +2606,174 @@ impl GetTrailStatusInput {
     }
 }
 
+/// See [`ListEventDataStoresInput`](crate::input::ListEventDataStoresInput)
+pub mod list_event_data_stores_input {
+    /// A builder for [`ListEventDataStoresInput`](crate::input::ListEventDataStoresInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A token you can use to get the next page of event data store results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token you can use to get the next page of event data store results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of event data stores to display on a single page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of event data stores to display on a single page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListEventDataStoresInput`](crate::input::ListEventDataStoresInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListEventDataStoresInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListEventDataStoresInput {
+                next_token: self.next_token,
+                max_results: self.max_results,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListEventDataStoresInputOperationOutputAlias = crate::operation::ListEventDataStores;
+#[doc(hidden)]
+pub type ListEventDataStoresInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListEventDataStoresInput {
+    /// Consumes the builder and constructs an Operation<[`ListEventDataStores`](crate::operation::ListEventDataStores)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListEventDataStores,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListEventDataStoresInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListEventDataStoresInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListEventDataStoresInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.ListEventDataStores",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_list_event_data_stores(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListEventDataStores::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListEventDataStores",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListEventDataStoresInput`](crate::input::ListEventDataStoresInput)
+    pub fn builder() -> crate::input::list_event_data_stores_input::Builder {
+        crate::input::list_event_data_stores_input::Builder::default()
+    }
+}
+
 /// See [`ListPublicKeysInput`](crate::input::ListPublicKeysInput)
 pub mod list_public_keys_input {
     /// A builder for [`ListPublicKeysInput`](crate::input::ListPublicKeysInput)
@@ -1677,14 +2785,12 @@ pub mod list_public_keys_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
-        /// If not specified, the current time is used, and the current public key is returned.</p>
+        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
-        /// If not specified, the current time is used, and the current public key is returned.</p>
+        /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1692,14 +2798,12 @@ pub mod list_public_keys_input {
             self.start_time = input;
             self
         }
-        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
-        /// specified, the current time is used.</p>
+        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
-        /// specified, the current time is used.</p>
+        /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1735,7 +2839,7 @@ pub mod list_public_keys_input {
 #[doc(hidden)]
 pub type ListPublicKeysInputOperationOutputAlias = crate::operation::ListPublicKeys;
 #[doc(hidden)]
-pub type ListPublicKeysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPublicKeysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPublicKeysInput {
     /// Consumes the builder and constructs an Operation<[`ListPublicKeys`](crate::operation::ListPublicKeys)>
     #[allow(clippy::let_and_return)]
@@ -1746,7 +2850,7 @@ impl ListPublicKeysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPublicKeys,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1831,7 +2935,7 @@ impl ListPublicKeysInput {
             "ListPublicKeys",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1854,6 +2958,231 @@ impl ListPublicKeysInput {
     }
 }
 
+/// See [`ListQueriesInput`](crate::input::ListQueriesInput)
+pub mod list_queries_input {
+    /// A builder for [`ListQueriesInput`](crate::input::ListQueriesInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_data_store: std::option::Option<std::string::String>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) query_status: std::option::Option<crate::model::QueryStatus>,
+    }
+    impl Builder {
+        /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_data_store = Some(input.into());
+            self
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_data_store = input;
+            self
+        }
+        /// <p>A token you can use to get the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        /// <p>A token you can use to get the next page of results.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// <p>The maximum number of queries to show on a page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
+            self
+        }
+        /// <p>The maximum number of queries to show on a page.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
+            self
+        }
+        /// <p>Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        /// <p>Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        /// <p>Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+        pub fn query_status(mut self, input: crate::model::QueryStatus) -> Self {
+            self.query_status = Some(input);
+            self
+        }
+        /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+        pub fn set_query_status(
+            mut self,
+            input: std::option::Option<crate::model::QueryStatus>,
+        ) -> Self {
+            self.query_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListQueriesInput`](crate::input::ListQueriesInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListQueriesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListQueriesInput {
+                event_data_store: self.event_data_store,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                query_status: self.query_status,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListQueriesInputOperationOutputAlias = crate::operation::ListQueries;
+#[doc(hidden)]
+pub type ListQueriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl ListQueriesInput {
+    /// Consumes the builder and constructs an Operation<[`ListQueries`](crate::operation::ListQueries)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::ListQueries,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::ListQueriesInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::ListQueriesInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::ListQueriesInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.ListQueries",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_list_queries(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListQueries::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListQueries",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListQueriesInput`](crate::input::ListQueriesInput)
+    pub fn builder() -> crate::input::list_queries_input::Builder {
+        crate::input::list_queries_input::Builder::default()
+    }
+}
+
 /// See [`ListTagsInput`](crate::input::ListTagsInput)
 pub mod list_tags_input {
     /// A builder for [`ListTagsInput`](crate::input::ListTagsInput)
@@ -1868,22 +3197,16 @@ pub mod list_tags_input {
         ///
         /// To override the contents of this collection use [`set_resource_id_list`](Self::set_resource_id_list).
         ///
-        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of
-        /// a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn resource_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_id_list.unwrap_or_default();
             v.push(input.into());
             self.resource_id_list = Some(v);
             self
         }
-        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of
-        /// a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_resource_id_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1916,7 +3239,7 @@ pub mod list_tags_input {
 #[doc(hidden)]
 pub type ListTagsInputOperationOutputAlias = crate::operation::ListTags;
 #[doc(hidden)]
-pub type ListTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsInput {
     /// Consumes the builder and constructs an Operation<[`ListTags`](crate::operation::ListTags)>
     #[allow(clippy::let_and_return)]
@@ -1927,7 +3250,7 @@ impl ListTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2009,7 +3332,7 @@ impl ListTagsInput {
                     "ListTags",
                     "cloudtrail",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2041,18 +3364,12 @@ pub mod list_trails_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed
-        /// in with the same parameters that were specified in the the original call. For example, if the original
-        /// call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should
-        /// include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed
-        /// in with the same parameters that were specified in the the original call. For example, if the original
-        /// call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should
-        /// include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2073,7 +3390,7 @@ pub mod list_trails_input {
 #[doc(hidden)]
 pub type ListTrailsInputOperationOutputAlias = crate::operation::ListTrails;
 #[doc(hidden)]
-pub type ListTrailsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTrailsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTrailsInput {
     /// Consumes the builder and constructs an Operation<[`ListTrails`](crate::operation::ListTrails)>
     #[allow(clippy::let_and_return)]
@@ -2084,7 +3401,7 @@ impl ListTrailsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTrails,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2168,7 +3485,7 @@ impl ListTrailsInput {
             "ListTrails",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2211,12 +3528,9 @@ pub mod lookup_events_input {
         /// To override the contents of this collection use [`set_lookup_attributes`](Self::set_lookup_attributes).
         ///
         /// <p>Contains a list of lookup attributes. Currently the list can contain only one item.</p>
-        pub fn lookup_attributes(
-            mut self,
-            input: impl Into<crate::model::LookupAttribute>,
-        ) -> Self {
+        pub fn lookup_attributes(mut self, input: crate::model::LookupAttribute) -> Self {
             let mut v = self.lookup_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lookup_attributes = Some(v);
             self
         }
@@ -2254,14 +3568,12 @@ pub mod lookup_events_input {
             self.end_time = input;
             self
         }
-        /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example,
-        /// if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
+        /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
         pub fn event_category(mut self, input: crate::model::EventCategory) -> Self {
             self.event_category = Some(input);
             self
         }
-        /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example,
-        /// if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
+        /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
         pub fn set_event_category(
             mut self,
             input: std::option::Option<crate::model::EventCategory>,
@@ -2279,14 +3591,12 @@ pub mod lookup_events_input {
             self.max_results = input;
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call.
-        /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call.
-        /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+        /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2312,7 +3622,7 @@ pub mod lookup_events_input {
 #[doc(hidden)]
 pub type LookupEventsInputOperationOutputAlias = crate::operation::LookupEvents;
 #[doc(hidden)]
-pub type LookupEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type LookupEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl LookupEventsInput {
     /// Consumes the builder and constructs an Operation<[`LookupEvents`](crate::operation::LookupEvents)>
     #[allow(clippy::let_and_return)]
@@ -2323,7 +3633,7 @@ impl LookupEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::LookupEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2407,7 +3717,7 @@ impl LookupEventsInput {
             "LookupEvents",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2442,58 +3752,30 @@ pub mod put_event_selectors_input {
             std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
     }
     impl Builder {
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn trail_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.trail_name = Some(input.into());
             self
         }
-        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If you specify a trail ARN, it must be in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_trail_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_name = input;
             self
@@ -2502,18 +3784,14 @@ pub mod put_event_selectors_input {
         ///
         /// To override the contents of this collection use [`set_event_selectors`](Self::set_event_selectors).
         ///
-        /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
-        /// You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both.
-        /// If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
-        pub fn event_selectors(mut self, input: impl Into<crate::model::EventSelector>) -> Self {
+        /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+        pub fn event_selectors(mut self, input: crate::model::EventSelector) -> Self {
             let mut v = self.event_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_selectors = Some(v);
             self
         }
-        /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
-        /// You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both.
-        /// If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+        /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
         pub fn set_event_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
@@ -2525,33 +3803,17 @@ pub mod put_event_selectors_input {
         ///
         /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
         ///
-        /// <p>
-        /// Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced
-        /// event selectors, up to a maximum of 500 values for all conditions and selectors on a trail.
-        /// You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
-        /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
-        /// advanced event selectors, see
-        /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
-        /// </p>
+        /// <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
         pub fn advanced_event_selectors(
             mut self,
-            input: impl Into<crate::model::AdvancedEventSelector>,
+            input: crate::model::AdvancedEventSelector,
         ) -> Self {
             let mut v = self.advanced_event_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.advanced_event_selectors = Some(v);
             self
         }
-        /// <p>
-        /// Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced
-        /// event selectors, up to a maximum of 500 values for all conditions and selectors on a trail.
-        /// You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
-        /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
-        /// advanced event selectors, see
-        /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
-        /// </p>
+        /// <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
         pub fn set_advanced_event_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
@@ -2577,7 +3839,7 @@ pub mod put_event_selectors_input {
 #[doc(hidden)]
 pub type PutEventSelectorsInputOperationOutputAlias = crate::operation::PutEventSelectors;
 #[doc(hidden)]
-pub type PutEventSelectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutEventSelectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutEventSelectorsInput {
     /// Consumes the builder and constructs an Operation<[`PutEventSelectors`](crate::operation::PutEventSelectors)>
     #[allow(clippy::let_and_return)]
@@ -2588,7 +3850,7 @@ impl PutEventSelectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutEventSelectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2673,7 +3935,7 @@ impl PutEventSelectorsInput {
             "PutEventSelectors",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2721,17 +3983,14 @@ pub mod put_insight_selectors_input {
         ///
         /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
         ///
-        /// <p>A JSON string that contains the Insights types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
-        pub fn insight_selectors(
-            mut self,
-            input: impl Into<crate::model::InsightSelector>,
-        ) -> Self {
+        /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
+        pub fn insight_selectors(mut self, input: crate::model::InsightSelector) -> Self {
             let mut v = self.insight_selectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.insight_selectors = Some(v);
             self
         }
-        /// <p>A JSON string that contains the Insights types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
+        /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
         pub fn set_insight_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
@@ -2756,7 +4015,7 @@ pub mod put_insight_selectors_input {
 #[doc(hidden)]
 pub type PutInsightSelectorsInputOperationOutputAlias = crate::operation::PutInsightSelectors;
 #[doc(hidden)]
-pub type PutInsightSelectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutInsightSelectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutInsightSelectorsInput {
     /// Consumes the builder and constructs an Operation<[`PutInsightSelectors`](crate::operation::PutInsightSelectors)>
     #[allow(clippy::let_and_return)]
@@ -2767,7 +4026,7 @@ impl PutInsightSelectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutInsightSelectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2852,7 +4111,7 @@ impl PutInsightSelectorsInput {
             "PutInsightSelectors",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2886,17 +4145,13 @@ pub mod remove_tags_input {
     }
     impl Builder {
         /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
         /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -2906,9 +4161,9 @@ pub mod remove_tags_input {
         /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
         ///
         /// <p>Specifies a list of tags to be removed.</p>
-        pub fn tags_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags_list = Some(v);
             self
         }
@@ -2937,7 +4192,7 @@ pub mod remove_tags_input {
 #[doc(hidden)]
 pub type RemoveTagsInputOperationOutputAlias = crate::operation::RemoveTags;
 #[doc(hidden)]
-pub type RemoveTagsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveTagsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTags`](crate::operation::RemoveTags)>
     #[allow(clippy::let_and_return)]
@@ -2948,7 +4203,7 @@ impl RemoveTagsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveTags,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3032,7 +4287,7 @@ impl RemoveTagsInput {
             "RemoveTags",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3055,6 +4310,165 @@ impl RemoveTagsInput {
     }
 }
 
+/// See [`RestoreEventDataStoreInput`](crate::input::RestoreEventDataStoreInput)
+pub mod restore_event_data_store_input {
+    /// A builder for [`RestoreEventDataStoreInput`](crate::input::RestoreEventDataStoreInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_data_store: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to restore.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_data_store = Some(input.into());
+            self
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to restore.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_data_store = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RestoreEventDataStoreInput`](crate::input::RestoreEventDataStoreInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::RestoreEventDataStoreInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::RestoreEventDataStoreInput {
+                event_data_store: self.event_data_store,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type RestoreEventDataStoreInputOperationOutputAlias = crate::operation::RestoreEventDataStore;
+#[doc(hidden)]
+pub type RestoreEventDataStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl RestoreEventDataStoreInput {
+    /// Consumes the builder and constructs an Operation<[`RestoreEventDataStore`](crate::operation::RestoreEventDataStore)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::RestoreEventDataStore,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::RestoreEventDataStoreInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::RestoreEventDataStoreInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::RestoreEventDataStoreInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.RestoreEventDataStore",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_restore_event_data_store(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RestoreEventDataStore::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RestoreEventDataStore",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`RestoreEventDataStoreInput`](crate::input::RestoreEventDataStoreInput)
+    pub fn builder() -> crate::input::restore_event_data_store_input::Builder {
+        crate::input::restore_event_data_store_input::Builder::default()
+    }
+}
+
 /// See [`StartLoggingInput`](crate::input::StartLoggingInput)
 pub mod start_logging_input {
     /// A builder for [`StartLoggingInput`](crate::input::StartLoggingInput)
@@ -3064,20 +4478,14 @@ pub mod start_logging_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
-        /// The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
-        /// The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3096,7 +4504,7 @@ pub mod start_logging_input {
 #[doc(hidden)]
 pub type StartLoggingInputOperationOutputAlias = crate::operation::StartLogging;
 #[doc(hidden)]
-pub type StartLoggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartLoggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartLoggingInput {
     /// Consumes the builder and constructs an Operation<[`StartLogging`](crate::operation::StartLogging)>
     #[allow(clippy::let_and_return)]
@@ -3107,7 +4515,7 @@ impl StartLoggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartLogging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3191,7 +4599,7 @@ impl StartLoggingInput {
             "StartLogging",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3214,6 +4622,162 @@ impl StartLoggingInput {
     }
 }
 
+/// See [`StartQueryInput`](crate::input::StartQueryInput)
+pub mod start_query_input {
+    /// A builder for [`StartQueryInput`](crate::input::StartQueryInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) query_statement: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The SQL code of your query.</p>
+        pub fn query_statement(mut self, input: impl Into<std::string::String>) -> Self {
+            self.query_statement = Some(input.into());
+            self
+        }
+        /// <p>The SQL code of your query.</p>
+        pub fn set_query_statement(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.query_statement = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartQueryInput`](crate::input::StartQueryInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::StartQueryInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::StartQueryInput {
+                query_statement: self.query_statement,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type StartQueryInputOperationOutputAlias = crate::operation::StartQuery;
+#[doc(hidden)]
+pub type StartQueryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl StartQueryInput {
+    /// Consumes the builder and constructs an Operation<[`StartQuery`](crate::operation::StartQuery)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::StartQuery,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::StartQueryInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::StartQueryInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::StartQueryInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.StartQuery",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_start_query(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartQuery::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartQuery",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`StartQueryInput`](crate::input::StartQueryInput)
+    pub fn builder() -> crate::input::start_query_input::Builder {
+        crate::input::start_query_input::Builder::default()
+    }
+}
+
 /// See [`StopLoggingInput`](crate::input::StopLoggingInput)
 pub mod stop_logging_input {
     /// A builder for [`StopLoggingInput`](crate::input::StopLoggingInput)
@@ -3223,20 +4787,14 @@ pub mod stop_logging_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
-        /// API calls. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
-        /// API calls. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3255,7 +4813,7 @@ pub mod stop_logging_input {
 #[doc(hidden)]
 pub type StopLoggingInputOperationOutputAlias = crate::operation::StopLogging;
 #[doc(hidden)]
-pub type StopLoggingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopLoggingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopLoggingInput {
     /// Consumes the builder and constructs an Operation<[`StopLogging`](crate::operation::StopLogging)>
     #[allow(clippy::let_and_return)]
@@ -3266,7 +4824,7 @@ impl StopLoggingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopLogging,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3350,7 +4908,7 @@ impl StopLoggingInput {
             "StopLogging",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3373,6 +4931,253 @@ impl StopLoggingInput {
     }
 }
 
+/// See [`UpdateEventDataStoreInput`](crate::input::UpdateEventDataStoreInput)
+pub mod update_event_data_store_input {
+    /// A builder for [`UpdateEventDataStoreInput`](crate::input::UpdateEventDataStoreInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) event_data_store: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) advanced_event_selectors:
+            std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        pub(crate) multi_region_enabled: std::option::Option<bool>,
+        pub(crate) organization_enabled: std::option::Option<bool>,
+        pub(crate) retention_period: std::option::Option<i32>,
+        pub(crate) termination_protection_enabled: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
+        pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_data_store = Some(input.into());
+            self
+        }
+        /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
+        pub fn set_event_data_store(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_data_store = input;
+            self
+        }
+        /// <p>The event data store name.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The event data store name.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// Appends an item to `advanced_event_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
+        ///
+        /// <p>The advanced event selectors used to select events for the event data store.</p>
+        pub fn advanced_event_selectors(
+            mut self,
+            input: crate::model::AdvancedEventSelector,
+        ) -> Self {
+            let mut v = self.advanced_event_selectors.unwrap_or_default();
+            v.push(input);
+            self.advanced_event_selectors = Some(v);
+            self
+        }
+        /// <p>The advanced event selectors used to select events for the event data store.</p>
+        pub fn set_advanced_event_selectors(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+        ) -> Self {
+            self.advanced_event_selectors = input;
+            self
+        }
+        /// <p>Specifies whether an event data store collects events from all regions, or only from the region in which it was created.</p>
+        pub fn multi_region_enabled(mut self, input: bool) -> Self {
+            self.multi_region_enabled = Some(input);
+            self
+        }
+        /// <p>Specifies whether an event data store collects events from all regions, or only from the region in which it was created.</p>
+        pub fn set_multi_region_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_region_enabled = input;
+            self
+        }
+        /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+        pub fn organization_enabled(mut self, input: bool) -> Self {
+            self.organization_enabled = Some(input);
+            self
+        }
+        /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+        pub fn set_organization_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.organization_enabled = input;
+            self
+        }
+        /// <p>The retention period, in days.</p>
+        pub fn retention_period(mut self, input: i32) -> Self {
+            self.retention_period = Some(input);
+            self
+        }
+        /// <p>The retention period, in days.</p>
+        pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.retention_period = input;
+            self
+        }
+        /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+        pub fn termination_protection_enabled(mut self, input: bool) -> Self {
+            self.termination_protection_enabled = Some(input);
+            self
+        }
+        /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+        pub fn set_termination_protection_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.termination_protection_enabled = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateEventDataStoreInput`](crate::input::UpdateEventDataStoreInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateEventDataStoreInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateEventDataStoreInput {
+                event_data_store: self.event_data_store,
+                name: self.name,
+                advanced_event_selectors: self.advanced_event_selectors,
+                multi_region_enabled: self.multi_region_enabled,
+                organization_enabled: self.organization_enabled,
+                retention_period: self.retention_period,
+                termination_protection_enabled: self.termination_protection_enabled,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateEventDataStoreInputOperationOutputAlias = crate::operation::UpdateEventDataStore;
+#[doc(hidden)]
+pub type UpdateEventDataStoreInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateEventDataStoreInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateEventDataStore`](crate::operation::UpdateEventDataStore)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateEventDataStore,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateEventDataStoreInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            write!(output, "/").expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateEventDataStoreInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("POST").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateEventDataStoreInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/x-amz-json-1.1",
+            );
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("x-amz-target"),
+                "CloudTrail_20131101.UpdateEventDataStore",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body =
+            crate::operation_ser::serialize_operation_crate_operation_update_event_data_store(
+                &self,
+            )?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateEventDataStore::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateEventDataStore",
+            "cloudtrail",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateEventDataStoreInput`](crate::input::UpdateEventDataStoreInput)
+    pub fn builder() -> crate::input::update_event_data_store_input::Builder {
+        crate::input::update_event_data_store_input::Builder::default()
+    }
+}
+
 /// See [`UpdateTrailInput`](crate::input::UpdateTrailInput)
 pub mod update_trail_input {
     /// A builder for [`UpdateTrailInput`](crate::input::UpdateTrailInput)
@@ -3392,58 +5197,30 @@ pub mod update_trail_input {
         pub(crate) is_organization_trail: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the
-        /// string must meet the following requirements:</p>
+        /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-        /// </li>
-        /// <li>
-        /// <p>Start with a letter or number, and end with a letter or number</p>
-        /// </li>
-        /// <li>
-        /// <p>Be between 3 and 128 characters</p>
-        /// </li>
-        /// <li>
-        /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-        /// </li>
+        /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+        /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+        /// <li> <p>Be between 3 and 128 characters</p> </li>
+        /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+        /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
         /// </ul>
         /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3461,14 +5238,12 @@ pub mod update_trail_input {
             self.s3_bucket_name = input;
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
         pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_key_prefix = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3502,41 +5277,25 @@ pub mod update_trail_input {
             self.include_global_service_events = input;
             self
         }
-        /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true,
-        /// shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region
-        /// where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider
-        /// using trails that log events in all regions.</p>
+        /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true, shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider using trails that log events in all regions.</p>
         pub fn is_multi_region_trail(mut self, input: bool) -> Self {
             self.is_multi_region_trail = Some(input);
             self
         }
-        /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true,
-        /// shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region
-        /// where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider
-        /// using trails that log events in all regions.</p>
+        /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true, shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider using trails that log events in all regions.</p>
         pub fn set_is_multi_region_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.is_multi_region_trail = input;
             self
         }
-        /// <p>Specifies whether log file validation is enabled. The default is false.</p>
-        /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail
-        /// does not create digest files for log files that were delivered during a period in which log file integrity validation
-        /// was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on
-        /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
-        /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
         pub fn enable_log_file_validation(mut self, input: bool) -> Self {
             self.enable_log_file_validation = Some(input);
             self
         }
-        /// <p>Specifies whether log file validation is enabled. The default is false.</p>
-        /// <note>
-        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail
-        /// does not create digest files for log files that were delivered during a period in which log file integrity validation
-        /// was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on
-        /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
-        /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+        /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+        /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
         pub fn set_enable_log_file_validation(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_log_file_validation = input;
@@ -3571,68 +5330,38 @@ pub mod update_trail_input {
             self.cloud_watch_logs_role_arn = input;
             self
         }
-        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-        /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-        /// specified ARN to a key, or a globally unique identifier.</p>
-        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-        /// </li>
-        /// <li>
-        /// <p>12345678-1234-1234-1234-123456789012</p>
-        /// </li>
+        /// <li> <p>alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+        /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
         /// </ul>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-        /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-        /// specified ARN to a key, or a globally unique identifier.</p>
-        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+        /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Examples:</p>
         /// <ul>
-        /// <li>
-        /// <p>alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-        /// </li>
-        /// <li>
-        /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-        /// </li>
-        /// <li>
-        /// <p>12345678-1234-1234-1234-123456789012</p>
-        /// </li>
+        /// <li> <p>alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+        /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+        /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
         /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-        /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
-        /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
-        /// deleted from all member accounts in the organization.</p>
+        /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
         pub fn is_organization_trail(mut self, input: bool) -> Self {
             self.is_organization_trail = Some(input);
             self
         }
-        /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-        /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-        /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
-        /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
-        /// deleted from all member accounts in the organization.</p>
+        /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
         pub fn set_is_organization_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.is_organization_trail = input;
             self
@@ -3663,7 +5392,7 @@ pub mod update_trail_input {
 #[doc(hidden)]
 pub type UpdateTrailInputOperationOutputAlias = crate::operation::UpdateTrail;
 #[doc(hidden)]
-pub type UpdateTrailInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTrailInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTrailInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTrail`](crate::operation::UpdateTrail)>
     #[allow(clippy::let_and_return)]
@@ -3674,7 +5403,7 @@ impl UpdateTrailInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTrail,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3758,7 +5487,7 @@ impl UpdateTrailInput {
             "UpdateTrail",
             "cloudtrail",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3785,111 +5514,59 @@ impl UpdateTrailInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrailInput {
-    /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
     pub sns_topic_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
     pub include_global_service_events: std::option::Option<bool>,
-    /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true,
-    /// shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region
-    /// where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider
-    /// using trails that log events in all regions.</p>
+    /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true, shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider using trails that log events in all regions.</p>
     pub is_multi_region_trail: std::option::Option<bool>,
-    /// <p>Specifies whether log file validation is enabled. The default is false.</p>
-    /// <note>
-    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail
-    /// does not create digest files for log files that were delivered during a period in which log file integrity validation
-    /// was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on
-    /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
-    /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+    /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub enable_log_file_validation: std::option::Option<bool>,
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-    /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-    /// specified ARN to a key, or a globally unique identifier.</p>
-    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-    /// </li>
-    /// <li>
-    /// <p>12345678-1234-1234-1234-123456789012</p>
-    /// </li>
+    /// <li> <p>alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
     /// </ul>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-    /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-    /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
-    /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
-    /// deleted from all member accounts in the organization.</p>
+    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
     pub is_organization_trail: std::option::Option<bool>,
 }
 impl UpdateTrailInput {
-    /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -3897,8 +5574,7 @@ impl UpdateTrailInput {
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
-    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
@@ -3910,20 +5586,12 @@ impl UpdateTrailInput {
     pub fn include_global_service_events(&self) -> std::option::Option<bool> {
         self.include_global_service_events
     }
-    /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true,
-    /// shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region
-    /// where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider
-    /// using trails that log events in all regions.</p>
+    /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true, shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider using trails that log events in all regions.</p>
     pub fn is_multi_region_trail(&self) -> std::option::Option<bool> {
         self.is_multi_region_trail
     }
-    /// <p>Specifies whether log file validation is enabled. The default is false.</p>
-    /// <note>
-    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail
-    /// does not create digest files for log files that were delivered during a period in which log file integrity validation
-    /// was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on
-    /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
-    /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+    /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub fn enable_log_file_validation(&self) -> std::option::Option<bool> {
         self.enable_log_file_validation
@@ -3936,34 +5604,19 @@ impl UpdateTrailInput {
     pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
-    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-    /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-    /// specified ARN to a key, or a globally unique identifier.</p>
-    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-    /// </li>
-    /// <li>
-    /// <p>12345678-1234-1234-1234-123456789012</p>
-    /// </li>
+    /// <li> <p>alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
     /// </ul>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-    /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-    /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
-    /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
-    /// deleted from all member accounts in the organization.</p>
+    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p>
     pub fn is_organization_trail(&self) -> std::option::Option<bool> {
         self.is_organization_trail
     }
@@ -3995,23 +5648,86 @@ impl std::fmt::Debug for UpdateTrailInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateEventDataStoreInput {
+    /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
+    pub event_data_store: std::option::Option<std::string::String>,
+    /// <p>The event data store name.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The advanced event selectors used to select events for the event data store.</p>
+    pub advanced_event_selectors:
+        std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+    /// <p>Specifies whether an event data store collects events from all regions, or only from the region in which it was created.</p>
+    pub multi_region_enabled: std::option::Option<bool>,
+    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    pub organization_enabled: std::option::Option<bool>,
+    /// <p>The retention period, in days.</p>
+    pub retention_period: std::option::Option<i32>,
+    /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+    pub termination_protection_enabled: std::option::Option<bool>,
+}
+impl UpdateEventDataStoreInput {
+    /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
+    pub fn event_data_store(&self) -> std::option::Option<&str> {
+        self.event_data_store.as_deref()
+    }
+    /// <p>The event data store name.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The advanced event selectors used to select events for the event data store.</p>
+    pub fn advanced_event_selectors(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
+        self.advanced_event_selectors.as_deref()
+    }
+    /// <p>Specifies whether an event data store collects events from all regions, or only from the region in which it was created.</p>
+    pub fn multi_region_enabled(&self) -> std::option::Option<bool> {
+        self.multi_region_enabled
+    }
+    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    pub fn organization_enabled(&self) -> std::option::Option<bool> {
+        self.organization_enabled
+    }
+    /// <p>The retention period, in days.</p>
+    pub fn retention_period(&self) -> std::option::Option<i32> {
+        self.retention_period
+    }
+    /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+    pub fn termination_protection_enabled(&self) -> std::option::Option<bool> {
+        self.termination_protection_enabled
+    }
+}
+impl std::fmt::Debug for UpdateEventDataStoreInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateEventDataStoreInput");
+        formatter.field("event_data_store", &self.event_data_store);
+        formatter.field("name", &self.name);
+        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
+        formatter.field("multi_region_enabled", &self.multi_region_enabled);
+        formatter.field("organization_enabled", &self.organization_enabled);
+        formatter.field("retention_period", &self.retention_period);
+        formatter.field(
+            "termination_protection_enabled",
+            &self.termination_protection_enabled,
+        );
+        formatter.finish()
+    }
+}
+
 /// <p>Passes the request to CloudTrail to stop logging Amazon Web Services API calls for the specified account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopLoggingInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
-    /// API calls. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub name: std::option::Option<std::string::String>,
 }
 impl StopLoggingInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
-    /// API calls. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -4024,23 +5740,38 @@ impl std::fmt::Debug for StopLoggingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartQueryInput {
+    /// <p>The SQL code of your query.</p>
+    pub query_statement: std::option::Option<std::string::String>,
+}
+impl StartQueryInput {
+    /// <p>The SQL code of your query.</p>
+    pub fn query_statement(&self) -> std::option::Option<&str> {
+        self.query_statement.as_deref()
+    }
+}
+impl std::fmt::Debug for StartQueryInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartQueryInput");
+        formatter.field("query_statement", &self.query_statement);
+        formatter.finish()
+    }
+}
+
 /// <p>The request to CloudTrail to start logging Amazon Web Services API calls for an account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartLoggingInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
-    /// The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub name: std::option::Option<std::string::String>,
 }
 impl StartLoggingInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
-    /// The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -4053,23 +5784,40 @@ impl std::fmt::Debug for StartLoggingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RestoreEventDataStoreInput {
+    /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to restore.</p>
+    pub event_data_store: std::option::Option<std::string::String>,
+}
+impl RestoreEventDataStoreInput {
+    /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to restore.</p>
+    pub fn event_data_store(&self) -> std::option::Option<&str> {
+        self.event_data_store.as_deref()
+    }
+}
+impl std::fmt::Debug for RestoreEventDataStoreInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RestoreEventDataStoreInput");
+        formatter.field("event_data_store", &self.event_data_store);
+        formatter.finish()
+    }
+}
+
 /// <p>Specifies the tags to remove from a trail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsInput {
     /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Specifies a list of tags to be removed.</p>
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RemoveTagsInput {
     /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
@@ -4093,7 +5841,7 @@ impl std::fmt::Debug for RemoveTagsInput {
 pub struct PutInsightSelectorsInput {
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
     pub trail_name: std::option::Option<std::string::String>,
-    /// <p>A JSON string that contains the Insights types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
+    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
     pub insight_selectors: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
 }
 impl PutInsightSelectorsInput {
@@ -4101,7 +5849,7 @@ impl PutInsightSelectorsInput {
     pub fn trail_name(&self) -> std::option::Option<&str> {
         self.trail_name.as_deref()
     }
-    /// <p>A JSON string that contains the Insights types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
+    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
     pub fn insight_selectors(&self) -> std::option::Option<&[crate::model::InsightSelector]> {
         self.insight_selectors.as_deref()
     }
@@ -4119,90 +5867,42 @@ impl std::fmt::Debug for PutInsightSelectorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventSelectorsInput {
-    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the following format.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub trail_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
-    /// You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both.
-    /// If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+    /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
     pub event_selectors: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
-    /// <p>
-    /// Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced
-    /// event selectors, up to a maximum of 500 values for all conditions and selectors on a trail.
-    /// You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
-    /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
-    /// advanced event selectors, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
-    /// </p>
+    /// <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
     pub advanced_event_selectors:
         std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
 }
 impl PutEventSelectorsInput {
-    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the following format.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn trail_name(&self) -> std::option::Option<&str> {
         self.trail_name.as_deref()
     }
-    /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
-    /// You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both.
-    /// If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
+    /// <p>Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any existing <code>AdvancedEventSelectors</code> are overwritten.</p>
     pub fn event_selectors(&self) -> std::option::Option<&[crate::model::EventSelector]> {
         self.event_selectors.as_deref()
     }
-    /// <p>
-    /// Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced
-    /// event selectors, up to a maximum of 500 values for all conditions and selectors on a trail.
-    /// You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
-    /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about
-    /// advanced event selectors, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
-    /// </p>
+    /// <p> Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
     pub fn advanced_event_selectors(
         &self,
     ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
@@ -4229,13 +5929,11 @@ pub struct LookupEventsInput {
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example,
-    /// if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
+    /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
     pub event_category: std::option::Option<crate::model::EventCategory>,
     /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call.
-    /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl LookupEventsInput {
@@ -4251,8 +5949,7 @@ impl LookupEventsInput {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example,
-    /// if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
+    /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example, if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
     pub fn event_category(&self) -> std::option::Option<&crate::model::EventCategory> {
         self.event_category.as_ref()
     }
@@ -4260,8 +5957,7 @@ impl LookupEventsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call.
-    /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4283,17 +5979,11 @@ impl std::fmt::Debug for LookupEventsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrailsInput {
-    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed
-    /// in with the same parameters that were specified in the the original call. For example, if the original
-    /// call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should
-    /// include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrailsInput {
-    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed
-    /// in with the same parameters that were specified in the the original call. For example, if the original
-    /// call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should
-    /// include those same parameters.</p>
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4310,21 +6000,15 @@ impl std::fmt::Debug for ListTrailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
-    /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of
-    /// a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub resource_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Reserved for future use.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsInput {
-    /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of
-    /// a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn resource_id_list(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_id_list.as_deref()
     }
@@ -4342,27 +6026,79 @@ impl std::fmt::Debug for ListTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListQueriesInput {
+    /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
+    pub event_data_store: std::option::Option<std::string::String>,
+    /// <p>A token you can use to get the next page of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of queries to show on a page.</p>
+    pub max_results: std::option::Option<i32>,
+    /// <p>Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
+    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
+    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+    pub query_status: std::option::Option<crate::model::QueryStatus>,
+}
+impl ListQueriesInput {
+    /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
+    pub fn event_data_store(&self) -> std::option::Option<&str> {
+        self.event_data_store.as_deref()
+    }
+    /// <p>A token you can use to get the next page of results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of queries to show on a page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+    /// <p>Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit its results to only those queries run within a specified time period.</p>
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
+    /// <p>The status of queries that you want to return in results. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, or <code>CANCELLED</code>.</p>
+    pub fn query_status(&self) -> std::option::Option<&crate::model::QueryStatus> {
+        self.query_status.as_ref()
+    }
+}
+impl std::fmt::Debug for ListQueriesInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListQueriesInput");
+        formatter.field("event_data_store", &self.event_data_store);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("query_status", &self.query_status);
+        formatter.finish()
+    }
+}
+
 /// <p>Requests the public keys for a specified time range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPublicKeysInput {
-    /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
-    /// If not specified, the current time is used, and the current public key is returned.</p>
+    /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
-    /// specified, the current time is used.</p>
+    /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Reserved for future use.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPublicKeysInput {
-    /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
-    /// If not specified, the current time is used, and the current public key is returned.</p>
+    /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used, and the current public key is returned.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
-    /// specified, the current time is used.</p>
+    /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not specified, the current time is used.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -4381,23 +6117,45 @@ impl std::fmt::Debug for ListPublicKeysInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListEventDataStoresInput {
+    /// <p>A token you can use to get the next page of event data store results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of event data stores to display on a single page.</p>
+    pub max_results: std::option::Option<i32>,
+}
+impl ListEventDataStoresInput {
+    /// <p>A token you can use to get the next page of event data store results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of event data stores to display on a single page.</p>
+    pub fn max_results(&self) -> std::option::Option<i32> {
+        self.max_results
+    }
+}
+impl std::fmt::Debug for ListEventDataStoresInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListEventDataStoresInput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_results", &self.max_results);
+        formatter.finish()
+    }
+}
+
 /// <p>The name of a trail about which you want the current status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrailStatusInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
-    /// shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetTrailStatusInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
-    /// shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a shadow trail (a replication of the trail in another region), you must specify its ARN. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -4434,58 +6192,72 @@ impl std::fmt::Debug for GetTrailInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetQueryResultsInput {
+    /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
+    pub event_data_store: std::option::Option<std::string::String>,
+    /// <p>The ID of the query for which you want to get results.</p>
+    pub query_id: std::option::Option<std::string::String>,
+    /// <p>A token you can use to get the next page of query results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of query results to display on a single page.</p>
+    pub max_query_results: std::option::Option<i32>,
+}
+impl GetQueryResultsInput {
+    /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
+    pub fn event_data_store(&self) -> std::option::Option<&str> {
+        self.event_data_store.as_deref()
+    }
+    /// <p>The ID of the query for which you want to get results.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+    /// <p>A token you can use to get the next page of query results.</p>
+    pub fn next_token(&self) -> std::option::Option<&str> {
+        self.next_token.as_deref()
+    }
+    /// <p>The maximum number of query results to display on a single page.</p>
+    pub fn max_query_results(&self) -> std::option::Option<i32> {
+        self.max_query_results
+    }
+}
+impl std::fmt::Debug for GetQueryResultsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetQueryResultsInput");
+        formatter.field("event_data_store", &self.event_data_store);
+        formatter.field("query_id", &self.query_id);
+        formatter.field("next_token", &self.next_token);
+        formatter.field("max_query_results", &self.max_query_results);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightSelectorsInput {
-    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub trail_name: std::option::Option<std::string::String>,
 }
 impl GetInsightSelectorsInput {
-    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn trail_name(&self) -> std::option::Option<&str> {
         self.trail_name.as_deref()
     }
@@ -4502,57 +6274,29 @@ impl std::fmt::Debug for GetInsightSelectorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventSelectorsInput {
-    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub trail_name: std::option::Option<std::string::String>,
 }
 impl GetEventSelectorsInput {
-    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
-    /// string must meet the following requirements:</p>
+    /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     /// <p>If you specify a trail ARN, it must be in the format:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn trail_name(&self) -> std::option::Option<&str> {
         self.trail_name.as_deref()
     }
@@ -4565,59 +6309,58 @@ impl std::fmt::Debug for GetEventSelectorsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetEventDataStoreInput {
+    /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
+    pub event_data_store: std::option::Option<std::string::String>,
+}
+impl GetEventDataStoreInput {
+    /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
+    pub fn event_data_store(&self) -> std::option::Option<&str> {
+        self.event_data_store.as_deref()
+    }
+}
+impl std::fmt::Debug for GetEventDataStoreInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetEventDataStoreInput");
+        formatter.field("event_data_store", &self.event_data_store);
+        formatter.finish()
+    }
+}
+
 /// <p>Returns information about the trail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrailsInput {
     /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
-    ///
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>If an empty list is specified, information for the trail in the current region is returned.</p>
     /// <ul>
-    /// <li>
-    /// <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then
-    /// information for all trails in the current region is returned.</p>
-    /// </li>
-    /// <li>
-    /// <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</p> </li>
+    /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p> </li>
+    /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p>
     /// </note>
     pub trail_name_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,
-    /// or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account
-    /// and region replication trails will not be returned. The default is true.</p>
+    /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>
     pub include_shadow_trails: std::option::Option<bool>,
 }
 impl DescribeTrailsInput {
     /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
-    ///
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>If an empty list is specified, information for the trail in the current region is returned.</p>
     /// <ul>
-    /// <li>
-    /// <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then
-    /// information for all trails in the current region is returned.</p>
-    /// </li>
-    /// <li>
-    /// <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current region is returned.</p> </li>
+    /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current region and any associated shadow trails in other regions is returned.</p> </li>
+    /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region. To return information about a trail in another region, you must specify its trail ARN.</p>
     /// </note>
     pub fn trail_name_list(&self) -> std::option::Option<&[std::string::String]> {
         self.trail_name_list.as_deref()
     }
-    /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,
-    /// or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account
-    /// and region replication trails will not be returned. The default is true.</p>
+    /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>
     pub fn include_shadow_trails(&self) -> std::option::Option<bool> {
         self.include_shadow_trails
     }
@@ -4631,21 +6374,43 @@ impl std::fmt::Debug for DescribeTrailsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeQueryInput {
+    /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
+    pub event_data_store: std::option::Option<std::string::String>,
+    /// <p>The query ID.</p>
+    pub query_id: std::option::Option<std::string::String>,
+}
+impl DescribeQueryInput {
+    /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
+    pub fn event_data_store(&self) -> std::option::Option<&str> {
+        self.event_data_store.as_deref()
+    }
+    /// <p>The query ID.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+}
+impl std::fmt::Debug for DescribeQueryInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeQueryInput");
+        formatter.field("event_data_store", &self.event_data_store);
+        formatter.field("query_id", &self.query_id);
+        formatter.finish()
+    }
+}
+
 /// <p>The request that specifies the name of a trail to delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrailInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
-    /// trail ARN.
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteTrailInput {
-    /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
-    /// trail ARN.
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -4658,80 +6423,69 @@ impl std::fmt::Debug for DeleteTrailInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteEventDataStoreInput {
+    /// <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
+    pub event_data_store: std::option::Option<std::string::String>,
+}
+impl DeleteEventDataStoreInput {
+    /// <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
+    pub fn event_data_store(&self) -> std::option::Option<&str> {
+        self.event_data_store.as_deref()
+    }
+}
+impl std::fmt::Debug for DeleteEventDataStoreInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteEventDataStoreInput");
+        formatter.field("event_data_store", &self.event_data_store);
+        formatter.finish()
+    }
+}
+
 /// <p>Specifies the settings for each trail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrailInput {
     /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
     pub sns_topic_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
     pub include_global_service_events: std::option::Option<bool>,
-    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider
-    /// creating trails that log events in all regions.</p>
+    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
     pub is_multi_region_trail: std::option::Option<bool>,
-    /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
-    /// <note>
-    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does
-    /// not create digest files for log files that were delivered during a period in which log file integrity validation was disabled.
-    /// For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable
-    /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
-    /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+    /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>
+    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub enable_log_file_validation: std::option::Option<bool>,
-    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-    /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-    /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-    /// specified ARN to a key, or a globally unique identifier.</p>
-    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-    /// </li>
-    /// <li>
-    /// <p>12345678-1234-1234-1234-123456789012</p>
-    /// </li>
+    /// <li> <p>alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
     /// </ul>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-    /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-    /// Organizations.</p>
+    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
     pub is_organization_trail: std::option::Option<bool>,
     /// <p>A list of tags.</p>
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4739,22 +6493,11 @@ pub struct CreateTrailInput {
 impl CreateTrailInput {
     /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
@@ -4763,8 +6506,7 @@ impl CreateTrailInput {
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
-    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
@@ -4776,24 +6518,17 @@ impl CreateTrailInput {
     pub fn include_global_service_events(&self) -> std::option::Option<bool> {
         self.include_global_service_events
     }
-    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider
-    /// creating trails that log events in all regions.</p>
+    /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
     pub fn is_multi_region_trail(&self) -> std::option::Option<bool> {
         self.is_multi_region_trail
     }
-    /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
-    /// <note>
-    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does
-    /// not create digest files for log files that were delivered during a period in which log file integrity validation was disabled.
-    /// For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable
-    /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
-    /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
+    /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>
+    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub fn enable_log_file_validation(&self) -> std::option::Option<bool> {
         self.enable_log_file_validation
     }
-    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-    /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
+    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
@@ -4801,32 +6536,19 @@ impl CreateTrailInput {
     pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
-    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
-    /// value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-    /// specified ARN to a key, or a globally unique identifier.</p>
-    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li>
-    /// <p>alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>
-    /// </li>
-    /// <li>
-    /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-    /// </li>
-    /// <li>
-    /// <p>12345678-1234-1234-1234-123456789012</p>
-    /// </li>
+    /// <li> <p>alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
     /// </ul>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
-    /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
-    /// Organizations.</p>
+    /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations.</p>
     pub fn is_organization_trail(&self) -> std::option::Option<bool> {
         self.is_organization_trail
     }
@@ -4863,23 +6585,116 @@ impl std::fmt::Debug for CreateTrailInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateEventDataStoreInput {
+    /// <p>The name of the event data store.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The advanced event selectors to use to select the events for the data store. For more information about how to use advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
+    pub advanced_event_selectors:
+        std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
+    /// <p>Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created.</p>
+    pub multi_region_enabled: std::option::Option<bool>,
+    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    pub organization_enabled: std::option::Option<bool>,
+    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the equivalent of seven years.</p>
+    pub retention_period: std::option::Option<i32>,
+    /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
+    pub termination_protection_enabled: std::option::Option<bool>,
+    /// <p>A list of tags.</p>
+    pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl CreateEventDataStoreInput {
+    /// <p>The name of the event data store.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The advanced event selectors to use to select the events for the data store. For more information about how to use advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log events by using advanced event selectors</a> in the CloudTrail User Guide.</p>
+    pub fn advanced_event_selectors(
+        &self,
+    ) -> std::option::Option<&[crate::model::AdvancedEventSelector]> {
+        self.advanced_event_selectors.as_deref()
+    }
+    /// <p>Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created.</p>
+    pub fn multi_region_enabled(&self) -> std::option::Option<bool> {
+        self.multi_region_enabled
+    }
+    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    pub fn organization_enabled(&self) -> std::option::Option<bool> {
+        self.organization_enabled
+    }
+    /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2555 days, the equivalent of seven years.</p>
+    pub fn retention_period(&self) -> std::option::Option<i32> {
+        self.retention_period
+    }
+    /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
+    pub fn termination_protection_enabled(&self) -> std::option::Option<bool> {
+        self.termination_protection_enabled
+    }
+    /// <p>A list of tags.</p>
+    pub fn tags_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+        self.tags_list.as_deref()
+    }
+}
+impl std::fmt::Debug for CreateEventDataStoreInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateEventDataStoreInput");
+        formatter.field("name", &self.name);
+        formatter.field("advanced_event_selectors", &self.advanced_event_selectors);
+        formatter.field("multi_region_enabled", &self.multi_region_enabled);
+        formatter.field("organization_enabled", &self.organization_enabled);
+        formatter.field("retention_period", &self.retention_period);
+        formatter.field(
+            "termination_protection_enabled",
+            &self.termination_protection_enabled,
+        );
+        formatter.field("tags_list", &self.tags_list);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CancelQueryInput {
+    /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
+    pub event_data_store: std::option::Option<std::string::String>,
+    /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
+    pub query_id: std::option::Option<std::string::String>,
+}
+impl CancelQueryInput {
+    /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
+    pub fn event_data_store(&self) -> std::option::Option<&str> {
+        self.event_data_store.as_deref()
+    }
+    /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
+    pub fn query_id(&self) -> std::option::Option<&str> {
+        self.query_id.as_deref()
+    }
+}
+impl std::fmt::Debug for CancelQueryInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CancelQueryInput");
+        formatter.field("event_data_store", &self.event_data_store);
+        formatter.field("query_id", &self.query_id);
+        formatter.finish()
+    }
+}
+
 /// <p>Specifies the tags to add to a trail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsInput {
     /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>Contains a list of tags, up to a limit of 50</p>
     pub tags_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AddTagsInput {
     /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }

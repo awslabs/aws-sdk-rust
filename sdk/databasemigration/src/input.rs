@@ -27,9 +27,9 @@ pub mod add_tags_to_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -58,7 +58,7 @@ pub mod add_tags_to_resource_input {
 #[doc(hidden)]
 pub type AddTagsToResourceInputOperationOutputAlias = crate::operation::AddTagsToResource;
 #[doc(hidden)]
-pub type AddTagsToResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddTagsToResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddTagsToResourceInput {
     /// Consumes the builder and constructs an Operation<[`AddTagsToResource`](crate::operation::AddTagsToResource)>
     #[allow(clippy::let_and_return)]
@@ -69,7 +69,7 @@ impl AddTagsToResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddTagsToResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -154,7 +154,7 @@ impl AddTagsToResourceInput {
             "AddTagsToResource",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -188,14 +188,12 @@ pub mod apply_pending_maintenance_action_input {
         pub(crate) opt_in_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance
-        /// action applies to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
         pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_instance_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance
-        /// action applies to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
         pub fn set_replication_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -204,60 +202,34 @@ pub mod apply_pending_maintenance_action_input {
             self
         }
         /// <p>The pending maintenance action to apply to this resource.</p>
-        /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code>
-        /// </p>
+        /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>
         pub fn apply_action(mut self, input: impl Into<std::string::String>) -> Self {
             self.apply_action = Some(input.into());
             self
         }
         /// <p>The pending maintenance action to apply to this resource.</p>
-        /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code>
-        /// </p>
+        /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>
         pub fn set_apply_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.apply_action = input;
             self
         }
-        /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an
-        /// opt-in request of type <code>immediate</code>.</p>
+        /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>immediate</code> - Apply the maintenance action immediately.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>next-maintenance</code> - Apply the maintenance action during the next
-        /// maintenance window for the resource.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in
-        /// requests.</p>
-        /// </li>
+        /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
+        /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
+        /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
         /// </ul>
         pub fn opt_in_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.opt_in_type = Some(input.into());
             self
         }
-        /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an
-        /// opt-in request of type <code>immediate</code>.</p>
+        /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>immediate</code> - Apply the maintenance action immediately.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>next-maintenance</code> - Apply the maintenance action during the next
-        /// maintenance window for the resource.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in
-        /// requests.</p>
-        /// </li>
+        /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
+        /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
+        /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
         /// </ul>
         pub fn set_opt_in_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.opt_in_type = input;
@@ -282,7 +254,8 @@ pub mod apply_pending_maintenance_action_input {
 pub type ApplyPendingMaintenanceActionInputOperationOutputAlias =
     crate::operation::ApplyPendingMaintenanceAction;
 #[doc(hidden)]
-pub type ApplyPendingMaintenanceActionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ApplyPendingMaintenanceActionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ApplyPendingMaintenanceActionInput {
     /// Consumes the builder and constructs an Operation<[`ApplyPendingMaintenanceAction`](crate::operation::ApplyPendingMaintenanceAction)>
     #[allow(clippy::let_and_return)]
@@ -293,7 +266,7 @@ impl ApplyPendingMaintenanceActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ApplyPendingMaintenanceAction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -379,7 +352,7 @@ impl ApplyPendingMaintenanceActionInput {
             "ApplyPendingMaintenanceAction",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -444,7 +417,8 @@ pub mod cancel_replication_task_assessment_run_input {
 pub type CancelReplicationTaskAssessmentRunInputOperationOutputAlias =
     crate::operation::CancelReplicationTaskAssessmentRun;
 #[doc(hidden)]
-pub type CancelReplicationTaskAssessmentRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelReplicationTaskAssessmentRunInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CancelReplicationTaskAssessmentRunInput {
     /// Consumes the builder and constructs an Operation<[`CancelReplicationTaskAssessmentRun`](crate::operation::CancelReplicationTaskAssessmentRun)>
     #[allow(clippy::let_and_return)]
@@ -455,7 +429,7 @@ impl CancelReplicationTaskAssessmentRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelReplicationTaskAssessmentRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -541,7 +515,7 @@ impl CancelReplicationTaskAssessmentRunInput {
             "CancelReplicationTaskAssessmentRun",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -607,16 +581,12 @@ pub mod create_endpoint_input {
         pub(crate) gcp_my_sql_settings: std::option::Option<crate::model::GcpMySqlSettings>,
     }
     impl Builder {
-        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
-        /// only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two
-        /// consecutive hyphens.</p>
+        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
         pub fn endpoint_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_identifier = Some(input.into());
             self
         }
-        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
-        /// only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two
-        /// consecutive hyphens.</p>
+        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
         pub fn set_endpoint_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -624,12 +594,12 @@ pub mod create_endpoint_input {
             self.endpoint_identifier = input;
             self
         }
-        /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
+        /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
         pub fn endpoint_type(mut self, input: crate::model::ReplicationEndpointTypeValue) -> Self {
             self.endpoint_type = Some(input);
             self
         }
-        /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
+        /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
         pub fn set_endpoint_type(
             mut self,
             input: std::option::Option<crate::model::ReplicationEndpointTypeValue>,
@@ -637,24 +607,12 @@ pub mod create_endpoint_input {
             self.endpoint_type = input;
             self
         }
-        /// <p>The type of engine for the endpoint. Valid values, depending on the
-        /// <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>,
-        /// <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-        /// <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-        /// <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-        /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
-        /// <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+        /// <p>The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
         pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_name = Some(input.into());
             self
         }
-        /// <p>The type of engine for the endpoint. Valid values, depending on the
-        /// <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>,
-        /// <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-        /// <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-        /// <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-        /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
-        /// <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+        /// <p>The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
         pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_name = input;
             self
@@ -712,13 +670,7 @@ pub mod create_endpoint_input {
             self.database_name = input;
             self
         }
-        /// <p>Additional attributes associated with the connection. Each attribute is specified as a
-        /// name-value pair associated by an equal sign (=). Multiple attributes are separated by a
-        /// semicolon (;) with no additional white space. For information on the attributes available
-        /// for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with
-        /// DMS Endpoints</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For information on the attributes available for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with DMS Endpoints</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn extra_connection_attributes(
             mut self,
             input: impl Into<std::string::String>,
@@ -726,13 +678,7 @@ pub mod create_endpoint_input {
             self.extra_connection_attributes = Some(input.into());
             self
         }
-        /// <p>Additional attributes associated with the connection. Each attribute is specified as a
-        /// name-value pair associated by an equal sign (=). Multiple attributes are separated by a
-        /// semicolon (;) with no additional white space. For information on the attributes available
-        /// for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with
-        /// DMS Endpoints</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For information on the attributes available for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with DMS Endpoints</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_extra_connection_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -741,19 +687,15 @@ pub mod create_endpoint_input {
             self
         }
         /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
-        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-        /// DMS uses your default encryption key.</p>
-        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
-        /// different default encryption key for each Amazon Web Services Region.</p>
+        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
         /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
-        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-        /// DMS uses your default encryption key.</p>
-        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
-        /// different default encryption key for each Amazon Web Services Region.</p>
+        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -763,9 +705,9 @@ pub mod create_endpoint_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the endpoint.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -790,14 +732,12 @@ pub mod create_endpoint_input {
             self.certificate_arn = input;
             self
         }
-        /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
-        /// </p>
+        /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code> </p>
         pub fn ssl_mode(mut self, input: crate::model::DmsSslModeValue) -> Self {
             self.ssl_mode = Some(input);
             self
         }
-        /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
-        /// </p>
+        /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code> </p>
         pub fn set_ssl_mode(
             mut self,
             input: std::option::Option<crate::model::DmsSslModeValue>,
@@ -805,14 +745,12 @@ pub mod create_endpoint_input {
             self.ssl_mode = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to
-        /// create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+        /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_access_role_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to
-        /// create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+        /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn set_service_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -833,20 +771,12 @@ pub mod create_endpoint_input {
             self.external_table_definition = input;
             self
         }
-        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
-        /// Data to DynamoDB</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn dynamo_db_settings(mut self, input: crate::model::DynamoDbSettings) -> Self {
             self.dynamo_db_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
-        /// Data to DynamoDB</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_dynamo_db_settings(
             mut self,
             input: std::option::Option<crate::model::DynamoDbSettings>,
@@ -854,20 +784,12 @@ pub mod create_endpoint_input {
             self.dynamo_db_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-        /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn s3_settings(mut self, input: crate::model::S3Settings) -> Self {
             self.s3_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-        /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_s3_settings(
             mut self,
             input: std::option::Option<crate::model::S3Settings>,
@@ -878,22 +800,11 @@ pub mod create_endpoint_input {
         /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
         /// <p>Possible settings include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role.
-        /// The role must allow the <code>iam:PassRole</code> action.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BucketName</code> - The name of the S3 bucket to use.</p>
-        /// </li>
+        /// <li> <p> <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p> </li>
+        /// <li> <p> <code>BucketName</code> - The name of the S3 bucket to use.</p> </li>
         /// </ul>
-        /// <p>Shorthand syntax for these settings is as follows:
-        /// <code>ServiceAccessRoleArn=string,BucketName=string</code>
-        /// </p>
-        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn":
-        /// "string", "BucketName": "string", } </code>
-        /// </p>
+        /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string</code> </p>
+        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", } </code> </p>
         pub fn dms_transfer_settings(mut self, input: crate::model::DmsTransferSettings) -> Self {
             self.dms_transfer_settings = Some(input);
             self
@@ -901,22 +812,11 @@ pub mod create_endpoint_input {
         /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
         /// <p>Possible settings include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role.
-        /// The role must allow the <code>iam:PassRole</code> action.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BucketName</code> - The name of the S3 bucket to use.</p>
-        /// </li>
+        /// <li> <p> <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p> </li>
+        /// <li> <p> <code>BucketName</code> - The name of the S3 bucket to use.</p> </li>
         /// </ul>
-        /// <p>Shorthand syntax for these settings is as follows:
-        /// <code>ServiceAccessRoleArn=string,BucketName=string</code>
-        /// </p>
-        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn":
-        /// "string", "BucketName": "string", } </code>
-        /// </p>
+        /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string</code> </p>
+        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", } </code> </p>
         pub fn set_dms_transfer_settings(
             mut self,
             input: std::option::Option<crate::model::DmsTransferSettings>,
@@ -924,20 +824,12 @@ pub mod create_endpoint_input {
             self.dms_transfer_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
-        /// when using MongoDB as a source for Database Migration Service</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn mongo_db_settings(mut self, input: crate::model::MongoDbSettings) -> Self {
             self.mongo_db_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
-        /// when using MongoDB as a source for Database Migration Service</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_mongo_db_settings(
             mut self,
             input: std::option::Option<crate::model::MongoDbSettings>,
@@ -945,18 +837,12 @@ pub mod create_endpoint_input {
             self.mongo_db_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
-        /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn kinesis_settings(mut self, input: crate::model::KinesisSettings) -> Self {
             self.kinesis_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
-        /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_kinesis_settings(
             mut self,
             input: std::option::Option<crate::model::KinesisSettings>,
@@ -964,20 +850,12 @@ pub mod create_endpoint_input {
             self.kinesis_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
-        /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn kafka_settings(mut self, input: crate::model::KafkaSettings) -> Self {
             self.kafka_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
-        /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_kafka_settings(
             mut self,
             input: std::option::Option<crate::model::KafkaSettings>,
@@ -985,9 +863,7 @@ pub mod create_endpoint_input {
             self.kafka_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
-        /// the <i>Database Migration Service User Guide</i>.</p>
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide</i>.</p>
         pub fn elasticsearch_settings(
             mut self,
             input: crate::model::ElasticsearchSettings,
@@ -995,9 +871,7 @@ pub mod create_endpoint_input {
             self.elasticsearch_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
-        /// the <i>Database Migration Service User Guide</i>.</p>
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide</i>.</p>
         pub fn set_elasticsearch_settings(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchSettings>,
@@ -1005,20 +879,12 @@ pub mod create_endpoint_input {
             self.elasticsearch_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the target Amazon Neptune endpoint.
-        /// For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
-        /// in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn neptune_settings(mut self, input: crate::model::NeptuneSettings) -> Self {
             self.neptune_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon Neptune endpoint.
-        /// For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
-        /// in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_neptune_settings(
             mut self,
             input: std::option::Option<crate::model::NeptuneSettings>,
@@ -1039,22 +905,12 @@ pub mod create_endpoint_input {
             self.redshift_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
-        /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
-        /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn postgre_sql_settings(mut self, input: crate::model::PostgreSqlSettings) -> Self {
             self.postgre_sql_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
-        /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
-        /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_postgre_sql_settings(
             mut self,
             input: std::option::Option<crate::model::PostgreSqlSettings>,
@@ -1062,20 +918,12 @@ pub mod create_endpoint_input {
             self.postgre_sql_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes
-        /// when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in
-        /// the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn my_sql_settings(mut self, input: crate::model::MySqlSettings) -> Self {
             self.my_sql_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes
-        /// when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in
-        /// the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_my_sql_settings(
             mut self,
             input: std::option::Option<crate::model::MySqlSettings>,
@@ -1083,24 +931,12 @@ pub mod create_endpoint_input {
             self.my_sql_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes
-        /// when using Oracle as a source for DMS</a> and
-        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
-        /// Extra connection attributes when using Oracle as a target for DMS</a>
-        /// in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn oracle_settings(mut self, input: crate::model::OracleSettings) -> Self {
             self.oracle_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes
-        /// when using Oracle as a source for DMS</a> and
-        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
-        /// Extra connection attributes when using Oracle as a target for DMS</a>
-        /// in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_oracle_settings(
             mut self,
             input: std::option::Option<crate::model::OracleSettings>,
@@ -1108,22 +944,12 @@ pub mod create_endpoint_input {
             self.oracle_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn sybase_settings(mut self, input: crate::model::SybaseSettings) -> Self {
             self.sybase_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_sybase_settings(
             mut self,
             input: std::option::Option<crate::model::SybaseSettings>,
@@ -1131,12 +957,7 @@ pub mod create_endpoint_input {
             self.sybase_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
-        /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
-        /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn microsoft_sql_server_settings(
             mut self,
             input: crate::model::MicrosoftSqlServerSettings,
@@ -1144,12 +965,7 @@ pub mod create_endpoint_input {
             self.microsoft_sql_server_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
-        /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
-        /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_microsoft_sql_server_settings(
             mut self,
             input: std::option::Option<crate::model::MicrosoftSqlServerSettings>,
@@ -1157,20 +973,12 @@ pub mod create_endpoint_input {
             self.microsoft_sql_server_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
-        /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn ibm_db2_settings(mut self, input: crate::model::IbmDb2Settings) -> Self {
             self.ibm_db2_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
-        /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_ibm_db2_settings(
             mut self,
             input: std::option::Option<crate::model::IbmDb2Settings>,
@@ -1178,28 +986,12 @@ pub mod create_endpoint_input {
             self.ibm_db2_settings = input;
             self
         }
-        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-        /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-        /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-        /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-        /// value might result in the <code>EndpointArn</code> value
-        /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-        /// value for the end of <code>EndpointArn</code>.</p>
+        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_identifier = Some(input.into());
             self
         }
-        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-        /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-        /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-        /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-        /// value might result in the <code>EndpointArn</code> value
-        /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-        /// value for the end of <code>EndpointArn</code>.</p>
+        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1295,7 +1087,7 @@ pub mod create_endpoint_input {
 #[doc(hidden)]
 pub type CreateEndpointInputOperationOutputAlias = crate::operation::CreateEndpoint;
 #[doc(hidden)]
-pub type CreateEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEndpointInput {
     /// Consumes the builder and constructs an Operation<[`CreateEndpoint`](crate::operation::CreateEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -1306,7 +1098,7 @@ impl CreateEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1391,7 +1183,7 @@ impl CreateEndpointInput {
             "CreateEndpoint",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1442,14 +1234,12 @@ pub mod create_event_subscription_input {
             self.subscription_name = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
-        /// The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
+        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
-        /// The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
+        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1457,22 +1247,14 @@ pub mod create_event_subscription_input {
             self.sns_topic_arn = input;
             self
         }
-        /// <p> The type of DMS resource that generates the events. For example, if you want to be
-        /// notified of events generated by a replication instance, you set this parameter to
-        /// <code>replication-instance</code>. If this value isn't specified, all events are
-        /// returned. </p>
-        /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code>
-        /// </p>
+        /// <p> The type of DMS resource that generates the events. For example, if you want to be notified of events generated by a replication instance, you set this parameter to <code>replication-instance</code>. If this value isn't specified, all events are returned. </p>
+        /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code> </p>
         pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_type = Some(input.into());
             self
         }
-        /// <p> The type of DMS resource that generates the events. For example, if you want to be
-        /// notified of events generated by a replication instance, you set this parameter to
-        /// <code>replication-instance</code>. If this value isn't specified, all events are
-        /// returned. </p>
-        /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code>
-        /// </p>
+        /// <p> The type of DMS resource that generates the events. For example, if you want to be notified of events generated by a replication instance, you set this parameter to <code>replication-instance</code>. If this value isn't specified, all events are returned. </p>
+        /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code> </p>
         pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_type = input;
             self
@@ -1481,22 +1263,14 @@ pub mod create_event_subscription_input {
         ///
         /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
         ///
-        /// <p>A list of event categories for a source type that you want to subscribe to. For more
-        /// information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
-        /// Notifications</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>A list of event categories for a source type that you want to subscribe to. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories.unwrap_or_default();
             v.push(input.into());
             self.event_categories = Some(v);
             self
         }
-        /// <p>A list of event categories for a source type that you want to subscribe to. For more
-        /// information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
-        /// Notifications</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>A list of event categories for a source type that you want to subscribe to. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_event_categories(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1510,9 +1284,7 @@ pub mod create_event_subscription_input {
         ///
         /// <p>A list of identifiers for which DMS provides notification events.</p>
         /// <p>If you don't specify a value, notifications are provided for all sources.</p>
-        /// <p>If you specify multiple values, they must be of the same type. For example, if you
-        /// specify a database instance ID, then all of the other values must be database instance
-        /// IDs.</p>
+        /// <p>If you specify multiple values, they must be of the same type. For example, if you specify a database instance ID, then all of the other values must be database instance IDs.</p>
         pub fn source_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_ids.unwrap_or_default();
             v.push(input.into());
@@ -1521,9 +1293,7 @@ pub mod create_event_subscription_input {
         }
         /// <p>A list of identifiers for which DMS provides notification events.</p>
         /// <p>If you don't specify a value, notifications are provided for all sources.</p>
-        /// <p>If you specify multiple values, they must be of the same type. For example, if you
-        /// specify a database instance ID, then all of the other values must be database instance
-        /// IDs.</p>
+        /// <p>If you specify multiple values, they must be of the same type. For example, if you specify a database instance ID, then all of the other values must be database instance IDs.</p>
         pub fn set_source_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1531,14 +1301,12 @@ pub mod create_event_subscription_input {
             self.source_ids = input;
             self
         }
-        /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to
-        /// <code>false</code> to create the subscription but not activate it. </p>
+        /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create the subscription but not activate it. </p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to
-        /// <code>false</code> to create the subscription but not activate it. </p>
+        /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create the subscription but not activate it. </p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -1548,9 +1316,9 @@ pub mod create_event_subscription_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the event subscription.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1585,7 +1353,7 @@ pub mod create_event_subscription_input {
 pub type CreateEventSubscriptionInputOperationOutputAlias =
     crate::operation::CreateEventSubscription;
 #[doc(hidden)]
-pub type CreateEventSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateEventSubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateEventSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`CreateEventSubscription`](crate::operation::CreateEventSubscription)>
     #[allow(clippy::let_and_return)]
@@ -1596,7 +1364,7 @@ impl CreateEventSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateEventSubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1683,7 +1451,7 @@ impl CreateEventSubscriptionInput {
             "CreateEventSubscription",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1729,22 +1497,14 @@ pub mod create_replication_instance_input {
         pub(crate) resource_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The replication instance identifier. This parameter is stored as a lowercase
-        /// string.</p>
+        /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
+        /// <li> <p>Must contain 1-63 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
-        /// <p>Example: <code>myrepinstance</code>
-        /// </p>
+        /// <p>Example: <code>myrepinstance</code> </p>
         pub fn replication_instance_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -1752,22 +1512,14 @@ pub mod create_replication_instance_input {
             self.replication_instance_identifier = Some(input.into());
             self
         }
-        /// <p>The replication instance identifier. This parameter is stored as a lowercase
-        /// string.</p>
+        /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
+        /// <li> <p>Must contain 1-63 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
-        /// <p>Example: <code>myrepinstance</code>
-        /// </p>
+        /// <p>Example: <code>myrepinstance</code> </p>
         pub fn set_replication_instance_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1775,34 +1527,24 @@ pub mod create_replication_instance_input {
             self.replication_instance_identifier = input;
             self
         }
-        /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication
-        /// instance.</p>
+        /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication instance.</p>
         pub fn allocated_storage(mut self, input: i32) -> Self {
             self.allocated_storage = Some(input);
             self
         }
-        /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication
-        /// instance.</p>
+        /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication instance.</p>
         pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_storage = input;
             self
         }
-        /// <p>The compute and memory capacity of the replication instance as defined for the specified
-        /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-        /// <p>For more information on the settings and capacities for the available replication instance classes, see
-        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-        /// Selecting the right DMS replication instance for your migration</a>.
-        /// </p>
+        /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+        /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
         pub fn replication_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_instance_class = Some(input.into());
             self
         }
-        /// <p>The compute and memory capacity of the replication instance as defined for the specified
-        /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-        /// <p>For more information on the settings and capacities for the available replication instance classes, see
-        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-        /// Selecting the right DMS replication instance for your migration</a>.
-        /// </p>
+        /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+        /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
         pub fn set_replication_instance_class(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1814,16 +1556,14 @@ pub mod create_replication_instance_input {
         ///
         /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
         ///
-        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
-        /// security group must work with the VPC containing the replication instance. </p>
+        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
         pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
-        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
-        /// security group must work with the VPC containing the replication instance. </p>
+        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
         pub fn set_vpc_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1831,18 +1571,12 @@ pub mod create_replication_instance_input {
             self.vpc_security_group_ids = input;
             self
         }
-        /// <p>The Availability Zone where the replication instance will be created. The default
-        /// value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for
-        /// example: <code>us-east-1d</code>
-        /// </p>
+        /// <p>The Availability Zone where the replication instance will be created. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone = Some(input.into());
             self
         }
-        /// <p>The Availability Zone where the replication instance will be created. The default
-        /// value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for
-        /// example: <code>us-east-1d</code>
-        /// </p>
+        /// <p>The Availability Zone where the replication instance will be created. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1866,12 +1600,9 @@ pub mod create_replication_instance_input {
             self.replication_subnet_group_identifier = input;
             self
         }
-        /// <p>The weekly time range during which system maintenance can occur, in Universal
-        /// Coordinated Time (UTC).</p>
-        /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
-        /// </p>
-        /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region,
-        /// occurring on a random day of the week.</p>
+        /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+        /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+        /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region, occurring on a random day of the week.</p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
         pub fn preferred_maintenance_window(
@@ -1881,12 +1612,9 @@ pub mod create_replication_instance_input {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
-        /// <p>The weekly time range during which system maintenance can occur, in Universal
-        /// Coordinated Time (UTC).</p>
-        /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
-        /// </p>
-        /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region,
-        /// occurring on a random day of the week.</p>
+        /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+        /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+        /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region, occurring on a random day of the week.</p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
         pub fn set_preferred_maintenance_window(
@@ -1896,30 +1624,24 @@ pub mod create_replication_instance_input {
             self.preferred_maintenance_window = input;
             self
         }
-        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
-        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
-        /// <code>true</code>. </p>
+        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
         pub fn multi_az(mut self, input: bool) -> Self {
             self.multi_az = Some(input);
             self
         }
-        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
-        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
-        /// <code>true</code>. </p>
+        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
         pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
             self.multi_az = input;
             self
         }
         /// <p>The engine version number of the replication instance.</p>
-        /// <p>If an engine version number is not specified when a replication
-        /// instance is created, the default is the latest engine version available.</p>
+        /// <p>If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
         }
         /// <p>The engine version number of the replication instance.</p>
-        /// <p>If an engine version number is not specified when a replication
-        /// instance is created, the default is the latest engine version available.</p>
+        /// <p>If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1927,20 +1649,14 @@ pub mod create_replication_instance_input {
             self.engine_version = input;
             self
         }
-        /// <p>A value that indicates whether minor engine upgrades are applied automatically to the
-        /// replication instance during the maintenance window. This parameter defaults to
-        /// <code>true</code>.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>A value that indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window. This parameter defaults to <code>true</code>.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
             self.auto_minor_version_upgrade = Some(input);
             self
         }
-        /// <p>A value that indicates whether minor engine upgrades are applied automatically to the
-        /// replication instance during the maintenance window. This parameter defaults to
-        /// <code>true</code>.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>A value that indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window. This parameter defaults to <code>true</code>.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_minor_version_upgrade = input;
             self
@@ -1950,9 +1666,9 @@ pub mod create_replication_instance_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the replication instance.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1964,58 +1680,36 @@ pub mod create_replication_instance_input {
             self.tags = input;
             self
         }
-        /// <p>An KMS key identifier that is used to encrypt the data on the replication
-        /// instance.</p>
-        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-        /// DMS uses your default encryption key.</p>
-        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
-        /// different default encryption key for each Amazon Web Services Region.</p>
+        /// <p>An KMS key identifier that is used to encrypt the data on the replication instance.</p>
+        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>An KMS key identifier that is used to encrypt the data on the replication
-        /// instance.</p>
-        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-        /// DMS uses your default encryption key.</p>
-        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
-        /// different default encryption key for each Amazon Web Services Region.</p>
+        /// <p>An KMS key identifier that is used to encrypt the data on the replication instance.</p>
+        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p> Specifies the accessibility options for the replication instance. A value of
-        /// <code>true</code> represents an instance with a public IP address. A value of
-        /// <code>false</code> represents an instance with a private IP address. The default value
-        /// is <code>true</code>. </p>
+        /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
         pub fn publicly_accessible(mut self, input: bool) -> Self {
             self.publicly_accessible = Some(input);
             self
         }
-        /// <p> Specifies the accessibility options for the replication instance. A value of
-        /// <code>true</code> represents an instance with a public IP address. A value of
-        /// <code>false</code> represents an instance with a private IP address. The default value
-        /// is <code>true</code>. </p>
+        /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.publicly_accessible = input;
             self
         }
-        /// <p>A list of custom DNS name servers supported for the replication instance to access your
-        /// on-premise source or target database. This list overrides the default name servers
-        /// supported by the replication instance. You can specify a comma-separated list of internet
-        /// addresses for up to four on-premise DNS name servers. For example:
-        /// <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
-        /// </p>
+        /// <p>A list of custom DNS name servers supported for the replication instance to access your on-premise source or target database. This list overrides the default name servers supported by the replication instance. You can specify a comma-separated list of internet addresses for up to four on-premise DNS name servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
         pub fn dns_name_servers(mut self, input: impl Into<std::string::String>) -> Self {
             self.dns_name_servers = Some(input.into());
             self
         }
-        /// <p>A list of custom DNS name servers supported for the replication instance to access your
-        /// on-premise source or target database. This list overrides the default name servers
-        /// supported by the replication instance. You can specify a comma-separated list of internet
-        /// addresses for up to four on-premise DNS name servers. For example:
-        /// <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
-        /// </p>
+        /// <p>A list of custom DNS name servers supported for the replication instance to access your on-premise source or target database. This list overrides the default name servers supported by the replication instance. You can specify a comma-separated list of internet addresses for up to four on-premise DNS name servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
         pub fn set_dns_name_servers(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2023,28 +1717,12 @@ pub mod create_replication_instance_input {
             self.dns_name_servers = input;
             self
         }
-        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-        /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-        /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-        /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-        /// value might result in the <code>EndpointArn</code> value
-        /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-        /// value for the end of <code>EndpointArn</code>.</p>
+        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_identifier = Some(input.into());
             self
         }
-        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-        /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-        /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-        /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-        /// value might result in the <code>EndpointArn</code> value
-        /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-        /// value for the end of <code>EndpointArn</code>.</p>
+        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2083,7 +1761,7 @@ pub mod create_replication_instance_input {
 pub type CreateReplicationInstanceInputOperationOutputAlias =
     crate::operation::CreateReplicationInstance;
 #[doc(hidden)]
-pub type CreateReplicationInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateReplicationInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReplicationInstanceInput {
     /// Consumes the builder and constructs an Operation<[`CreateReplicationInstance`](crate::operation::CreateReplicationInstance)>
     #[allow(clippy::let_and_return)]
@@ -2094,7 +1772,7 @@ impl CreateReplicationInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateReplicationInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2181,7 +1859,7 @@ impl CreateReplicationInstanceInput {
             "CreateReplicationInstance",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2216,12 +1894,9 @@ pub mod create_replication_subnet_group_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name for the replication subnet group. This value is stored as a lowercase
-        /// string.</p>
-        /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces,
-        /// underscores, or hyphens. Must not be "default".</p>
-        /// <p>Example: <code>mySubnetgroup</code>
-        /// </p>
+        /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
+        /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+        /// <p>Example: <code>mySubnetgroup</code> </p>
         pub fn replication_subnet_group_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -2229,12 +1904,9 @@ pub mod create_replication_subnet_group_input {
             self.replication_subnet_group_identifier = Some(input.into());
             self
         }
-        /// <p>The name for the replication subnet group. This value is stored as a lowercase
-        /// string.</p>
-        /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces,
-        /// underscores, or hyphens. Must not be "default".</p>
-        /// <p>Example: <code>mySubnetgroup</code>
-        /// </p>
+        /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
+        /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+        /// <p>Example: <code>mySubnetgroup</code> </p>
         pub fn set_replication_subnet_group_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2282,9 +1954,9 @@ pub mod create_replication_subnet_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the subnet group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2316,7 +1988,8 @@ pub mod create_replication_subnet_group_input {
 pub type CreateReplicationSubnetGroupInputOperationOutputAlias =
     crate::operation::CreateReplicationSubnetGroup;
 #[doc(hidden)]
-pub type CreateReplicationSubnetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateReplicationSubnetGroupInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReplicationSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateReplicationSubnetGroup`](crate::operation::CreateReplicationSubnetGroup)>
     #[allow(clippy::let_and_return)]
@@ -2327,7 +2000,7 @@ impl CreateReplicationSubnetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateReplicationSubnetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2413,7 +2086,7 @@ impl CreateReplicationSubnetGroupInput {
             "CreateReplicationSubnetGroup",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2460,15 +2133,9 @@ pub mod create_replication_task_input {
         /// <p>An identifier for the replication task.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
+        /// <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
         pub fn replication_task_identifier(
             mut self,
@@ -2480,15 +2147,9 @@ pub mod create_replication_task_input {
         /// <p>An identifier for the replication task.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
+        /// <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
         pub fn set_replication_task_identifier(
             mut self,
@@ -2536,14 +2197,12 @@ pub mod create_replication_task_input {
             self.replication_instance_arn = input;
             self
         }
-        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
-        /// </p>
+        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
         pub fn migration_type(mut self, input: crate::model::MigrationTypeValue) -> Self {
             self.migration_type = Some(input);
             self
         }
-        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
-        /// </p>
+        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
         pub fn set_migration_type(
             mut self,
             input: std::option::Option<crate::model::MigrationTypeValue>,
@@ -2551,18 +2210,12 @@ pub mod create_replication_task_input {
             self.migration_type = input;
             self
         }
-        /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-        /// Mapping to Specify Task Settings</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn table_mappings(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_mappings = Some(input.into());
             self
         }
-        /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-        /// Mapping to Specify Task Settings</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_table_mappings(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2570,16 +2223,12 @@ pub mod create_replication_task_input {
             self.table_mappings = input;
             self
         }
-        /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task
-        /// Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn replication_task_settings(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_task_settings = Some(input.into());
             self
         }
-        /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task
-        /// Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_replication_task_settings(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2587,17 +2236,13 @@ pub mod create_replication_task_input {
             self.replication_task_settings = input;
             self
         }
-        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-        /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn cdc_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cdc_start_time = Some(input);
             self
         }
-        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-        /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn set_cdc_start_time(
             mut self,
@@ -2606,39 +2251,23 @@ pub mod create_replication_task_input {
             self.cdc_start_time = input;
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-        /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
         /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-        /// <p>Checkpoint Example: --cdc-start-position
-        /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-        /// <note>
-        /// <p>When you use this task setting with a source PostgreSQL database, a logical
-        /// replication slot should already be created and associated with the source endpoint. You
-        /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-        /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for DMS</a>.</p>
+        /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+        /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
         /// </note>
         pub fn cdc_start_position(mut self, input: impl Into<std::string::String>) -> Self {
             self.cdc_start_position = Some(input.into());
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-        /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
         /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-        /// <p>Checkpoint Example: --cdc-start-position
-        /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-        /// <note>
-        /// <p>When you use this task setting with a source PostgreSQL database, a logical
-        /// replication slot should already be created and associated with the source endpoint. You
-        /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-        /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for DMS</a>.</p>
+        /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+        /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
         /// </note>
         pub fn set_cdc_start_position(
             mut self,
@@ -2647,16 +2276,14 @@ pub mod create_replication_task_input {
             self.cdc_start_position = input;
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-        /// either server time or commit time.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
         pub fn cdc_stop_position(mut self, input: impl Into<std::string::String>) -> Self {
             self.cdc_stop_position = Some(input.into());
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-        /// either server time or commit time.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
         pub fn set_cdc_stop_position(
@@ -2671,9 +2298,9 @@ pub mod create_replication_task_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags to be assigned to the replication task.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -2685,44 +2312,22 @@ pub mod create_replication_task_input {
             self.tags = input;
             self
         }
-        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
-        /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn task_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_data = Some(input.into());
             self
         }
-        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
-        /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_task_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_data = input;
             self
         }
-        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-        /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-        /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-        /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-        /// value might result in the <code>EndpointArn</code> value
-        /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-        /// value for the end of <code>EndpointArn</code>.</p>
+        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_identifier = Some(input.into());
             self
         }
-        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-        /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-        /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-        /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-        /// value might result in the <code>EndpointArn</code> value
-        /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-        /// value for the end of <code>EndpointArn</code>.</p>
+        /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2758,7 +2363,7 @@ pub mod create_replication_task_input {
 #[doc(hidden)]
 pub type CreateReplicationTaskInputOperationOutputAlias = crate::operation::CreateReplicationTask;
 #[doc(hidden)]
-pub type CreateReplicationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateReplicationTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReplicationTaskInput {
     /// Consumes the builder and constructs an Operation<[`CreateReplicationTask`](crate::operation::CreateReplicationTask)>
     #[allow(clippy::let_and_return)]
@@ -2769,7 +2374,7 @@ impl CreateReplicationTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateReplicationTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2856,7 +2461,7 @@ impl CreateReplicationTaskInput {
             "CreateReplicationTask",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2917,7 +2522,7 @@ pub mod delete_certificate_input {
 #[doc(hidden)]
 pub type DeleteCertificateInputOperationOutputAlias = crate::operation::DeleteCertificate;
 #[doc(hidden)]
-pub type DeleteCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCertificate`](crate::operation::DeleteCertificate)>
     #[allow(clippy::let_and_return)]
@@ -2928,7 +2533,7 @@ impl DeleteCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3013,7 +2618,7 @@ impl DeleteCertificateInput {
             "DeleteCertificate",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3086,7 +2691,7 @@ pub mod delete_connection_input {
 #[doc(hidden)]
 pub type DeleteConnectionInputOperationOutputAlias = crate::operation::DeleteConnection;
 #[doc(hidden)]
-pub type DeleteConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteConnectionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteConnection`](crate::operation::DeleteConnection)>
     #[allow(clippy::let_and_return)]
@@ -3097,7 +2702,7 @@ impl DeleteConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3182,7 +2787,7 @@ impl DeleteConnectionInput {
             "DeleteConnection",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3240,7 +2845,7 @@ pub mod delete_endpoint_input {
 #[doc(hidden)]
 pub type DeleteEndpointInputOperationOutputAlias = crate::operation::DeleteEndpoint;
 #[doc(hidden)]
-pub type DeleteEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEndpoint`](crate::operation::DeleteEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -3251,7 +2856,7 @@ impl DeleteEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3336,7 +2941,7 @@ impl DeleteEndpointInput {
             "DeleteEndpoint",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3398,7 +3003,7 @@ pub mod delete_event_subscription_input {
 pub type DeleteEventSubscriptionInputOperationOutputAlias =
     crate::operation::DeleteEventSubscription;
 #[doc(hidden)]
-pub type DeleteEventSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteEventSubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteEventSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteEventSubscription`](crate::operation::DeleteEventSubscription)>
     #[allow(clippy::let_and_return)]
@@ -3409,7 +3014,7 @@ impl DeleteEventSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteEventSubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3496,7 +3101,7 @@ impl DeleteEventSubscriptionInput {
             "DeleteEventSubscription",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3558,7 +3163,7 @@ pub mod delete_replication_instance_input {
 pub type DeleteReplicationInstanceInputOperationOutputAlias =
     crate::operation::DeleteReplicationInstance;
 #[doc(hidden)]
-pub type DeleteReplicationInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteReplicationInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReplicationInstanceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReplicationInstance`](crate::operation::DeleteReplicationInstance)>
     #[allow(clippy::let_and_return)]
@@ -3569,7 +3174,7 @@ impl DeleteReplicationInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReplicationInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3656,7 +3261,7 @@ impl DeleteReplicationInstanceInput {
             "DeleteReplicationInstance",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3721,7 +3326,8 @@ pub mod delete_replication_subnet_group_input {
 pub type DeleteReplicationSubnetGroupInputOperationOutputAlias =
     crate::operation::DeleteReplicationSubnetGroup;
 #[doc(hidden)]
-pub type DeleteReplicationSubnetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteReplicationSubnetGroupInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReplicationSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReplicationSubnetGroup`](crate::operation::DeleteReplicationSubnetGroup)>
     #[allow(clippy::let_and_return)]
@@ -3732,7 +3338,7 @@ impl DeleteReplicationSubnetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReplicationSubnetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3818,7 +3424,7 @@ impl DeleteReplicationSubnetGroupInput {
             "DeleteReplicationSubnetGroup",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3879,7 +3485,7 @@ pub mod delete_replication_task_input {
 #[doc(hidden)]
 pub type DeleteReplicationTaskInputOperationOutputAlias = crate::operation::DeleteReplicationTask;
 #[doc(hidden)]
-pub type DeleteReplicationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteReplicationTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReplicationTaskInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReplicationTask`](crate::operation::DeleteReplicationTask)>
     #[allow(clippy::let_and_return)]
@@ -3890,7 +3496,7 @@ impl DeleteReplicationTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReplicationTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3977,7 +3583,7 @@ impl DeleteReplicationTaskInput {
             "DeleteReplicationTask",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4042,7 +3648,8 @@ pub mod delete_replication_task_assessment_run_input {
 pub type DeleteReplicationTaskAssessmentRunInputOperationOutputAlias =
     crate::operation::DeleteReplicationTaskAssessmentRun;
 #[doc(hidden)]
-pub type DeleteReplicationTaskAssessmentRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteReplicationTaskAssessmentRunInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReplicationTaskAssessmentRunInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReplicationTaskAssessmentRun`](crate::operation::DeleteReplicationTaskAssessmentRun)>
     #[allow(clippy::let_and_return)]
@@ -4053,7 +3660,7 @@ impl DeleteReplicationTaskAssessmentRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReplicationTaskAssessmentRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4139,7 +3746,7 @@ impl DeleteReplicationTaskAssessmentRunInput {
             "DeleteReplicationTaskAssessmentRun",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4184,7 +3791,7 @@ pub mod describe_account_attributes_input {
 pub type DescribeAccountAttributesInputOperationOutputAlias =
     crate::operation::DescribeAccountAttributes;
 #[doc(hidden)]
-pub type DescribeAccountAttributesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAccountAttributesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountAttributesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountAttributes`](crate::operation::DescribeAccountAttributes)>
     #[allow(clippy::let_and_return)]
@@ -4195,7 +3802,7 @@ impl DescribeAccountAttributesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountAttributes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4282,7 +3889,7 @@ impl DescribeAccountAttributesInput {
             "DescribeAccountAttributes",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4312,14 +3919,12 @@ pub mod describe_applicable_individual_assessments_input {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base
-        /// the default list of individual assessments.</p>
+        /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
         pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_task_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base
-        /// the default list of individual assessments.</p>
+        /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
         pub fn set_replication_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4327,14 +3932,12 @@ pub mod describe_applicable_individual_assessments_input {
             self.replication_task_arn = input;
             self
         }
-        /// <p>ARN of a replication instance on which you want to base the default list of individual
-        /// assessments.</p>
+        /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
         pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_instance_arn = Some(input.into());
             self
         }
-        /// <p>ARN of a replication instance on which you want to base the default list of individual
-        /// assessments.</p>
+        /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
         pub fn set_replication_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4381,30 +3984,22 @@ pub mod describe_applicable_individual_assessments_input {
             self.migration_type = input;
             self
         }
-        /// <p>Maximum number of records to include in the response. If more records exist than the
-        /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-        /// the response so that the remaining results can be retrieved.</p>
+        /// <p>Maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p>Maximum number of records to include in the response. If more records exist than the
-        /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-        /// the response so that the remaining results can be retrieved.</p>
+        /// <p>Maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p>Optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
+        /// <p>Optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
+        /// <p>Optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4433,7 +4028,7 @@ pub type DescribeApplicableIndividualAssessmentsInputOperationOutputAlias =
     crate::operation::DescribeApplicableIndividualAssessments;
 #[doc(hidden)]
 pub type DescribeApplicableIndividualAssessmentsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeApplicableIndividualAssessmentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeApplicableIndividualAssessments`](crate::operation::DescribeApplicableIndividualAssessments)>
     #[allow(clippy::let_and_return)]
@@ -4444,7 +4039,7 @@ impl DescribeApplicableIndividualAssessmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplicableIndividualAssessments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4530,7 +4125,7 @@ impl DescribeApplicableIndividualAssessmentsInput {
             "DescribeApplicableIndividualAssessments",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4568,16 +4163,14 @@ pub mod describe_certificates_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters applied to the certificates described in the form of key-value pairs.
-        /// Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>Filters applied to the certificates described in the form of key-value pairs. Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Filters applied to the certificates described in the form of key-value pairs.
-        /// Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
+        /// <p>Filters applied to the certificates described in the form of key-value pairs. Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4585,32 +4178,24 @@ pub mod describe_certificates_input {
             self.filters = input;
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 10</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 10</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4633,7 +4218,7 @@ pub mod describe_certificates_input {
 #[doc(hidden)]
 pub type DescribeCertificatesInputOperationOutputAlias = crate::operation::DescribeCertificates;
 #[doc(hidden)]
-pub type DescribeCertificatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCertificatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCertificates`](crate::operation::DescribeCertificates)>
     #[allow(clippy::let_and_return)]
@@ -4644,7 +4229,7 @@ impl DescribeCertificatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCertificates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4729,7 +4314,7 @@ impl DescribeCertificatesInput {
             "DescribeCertificates",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4769,9 +4354,9 @@ pub mod describe_connections_input {
         ///
         /// <p>The filters applied to the connection.</p>
         /// <p>Valid filter names: endpoint-arn | replication-instance-arn</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -4784,34 +4369,26 @@ pub mod describe_connections_input {
             self.filters = input;
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4834,7 +4411,7 @@ pub mod describe_connections_input {
 #[doc(hidden)]
 pub type DescribeConnectionsInputOperationOutputAlias = crate::operation::DescribeConnections;
 #[doc(hidden)]
-pub type DescribeConnectionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeConnectionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeConnectionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeConnections`](crate::operation::DescribeConnections)>
     #[allow(clippy::let_and_return)]
@@ -4845,7 +4422,7 @@ impl DescribeConnectionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeConnections,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4930,7 +4507,7 @@ impl DescribeConnectionsInput {
             "DescribeConnections",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4970,9 +4547,9 @@ pub mod describe_endpoints_input {
         ///
         /// <p>Filters applied to the endpoints.</p>
         /// <p>Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -4985,34 +4562,26 @@ pub mod describe_endpoints_input {
             self.filters = input;
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5035,7 +4604,7 @@ pub mod describe_endpoints_input {
 #[doc(hidden)]
 pub type DescribeEndpointsInputOperationOutputAlias = crate::operation::DescribeEndpoints;
 #[doc(hidden)]
-pub type DescribeEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpoints`](crate::operation::DescribeEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -5046,7 +4615,7 @@ impl DescribeEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5131,7 +4700,7 @@ impl DescribeEndpointsInput {
             "DescribeEndpoints",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5175,28 +4744,22 @@ pub mod describe_endpoint_settings_input {
             self.engine_name = input;
             self
         }
-        /// <p>The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response
-        /// so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p>The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response
-        /// so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
-        /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
-        /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5220,7 +4783,7 @@ pub mod describe_endpoint_settings_input {
 pub type DescribeEndpointSettingsInputOperationOutputAlias =
     crate::operation::DescribeEndpointSettings;
 #[doc(hidden)]
-pub type DescribeEndpointSettingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEndpointSettingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointSettingsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpointSettings`](crate::operation::DescribeEndpointSettings)>
     #[allow(clippy::let_and_return)]
@@ -5231,7 +4794,7 @@ impl DescribeEndpointSettingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpointSettings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5318,7 +4881,7 @@ impl DescribeEndpointSettingsInput {
             "DescribeEndpointSettings",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5358,9 +4921,9 @@ pub mod describe_endpoint_types_input {
         ///
         /// <p>Filters applied to the endpoint types.</p>
         /// <p>Valid filter names: engine-name | endpoint-type</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -5373,34 +4936,26 @@ pub mod describe_endpoint_types_input {
             self.filters = input;
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5423,7 +4978,7 @@ pub mod describe_endpoint_types_input {
 #[doc(hidden)]
 pub type DescribeEndpointTypesInputOperationOutputAlias = crate::operation::DescribeEndpointTypes;
 #[doc(hidden)]
-pub type DescribeEndpointTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEndpointTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointTypesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpointTypes`](crate::operation::DescribeEndpointTypes)>
     #[allow(clippy::let_and_return)]
@@ -5434,7 +4989,7 @@ impl DescribeEndpointTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpointTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5521,7 +5076,7 @@ impl DescribeEndpointTypesInput {
             "DescribeEndpointTypes",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5571,9 +5126,9 @@ pub mod describe_event_categories_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to the event categories.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -5603,7 +5158,7 @@ pub mod describe_event_categories_input {
 pub type DescribeEventCategoriesInputOperationOutputAlias =
     crate::operation::DescribeEventCategories;
 #[doc(hidden)]
-pub type DescribeEventCategoriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEventCategoriesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventCategoriesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventCategories`](crate::operation::DescribeEventCategories)>
     #[allow(clippy::let_and_return)]
@@ -5614,7 +5169,7 @@ impl DescribeEventCategoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEventCategories,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5701,7 +5256,7 @@ impl DescribeEventCategoriesInput {
             "DescribeEventCategories",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5829,9 +5384,9 @@ pub mod describe_events_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -5843,34 +5398,26 @@ pub mod describe_events_input {
             self.filters = input;
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5899,7 +5446,7 @@ pub mod describe_events_input {
 #[doc(hidden)]
 pub type DescribeEventsInputOperationOutputAlias = crate::operation::DescribeEvents;
 #[doc(hidden)]
-pub type DescribeEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEvents`](crate::operation::DescribeEvents)>
     #[allow(clippy::let_and_return)]
@@ -5910,7 +5457,7 @@ impl DescribeEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5995,7 +5542,7 @@ impl DescribeEventsInput {
             "DescribeEvents",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6048,15 +5595,15 @@ pub mod describe_event_subscriptions_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to event subscriptions.</p>
-        /// <p>Valid filter names: event-subscription-arn |  event-subscription-id </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>Valid filter names: event-subscription-arn | event-subscription-id </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Filters applied to event subscriptions.</p>
-        /// <p>Valid filter names: event-subscription-arn |  event-subscription-id </p>
+        /// <p>Valid filter names: event-subscription-arn | event-subscription-id </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6064,34 +5611,26 @@ pub mod describe_event_subscriptions_input {
             self.filters = input;
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6116,7 +5655,7 @@ pub mod describe_event_subscriptions_input {
 pub type DescribeEventSubscriptionsInputOperationOutputAlias =
     crate::operation::DescribeEventSubscriptions;
 #[doc(hidden)]
-pub type DescribeEventSubscriptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEventSubscriptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventSubscriptionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventSubscriptions`](crate::operation::DescribeEventSubscriptions)>
     #[allow(clippy::let_and_return)]
@@ -6127,7 +5666,7 @@ impl DescribeEventSubscriptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEventSubscriptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6214,7 +5753,7 @@ impl DescribeEventSubscriptionsInput {
             "DescribeEventSubscriptions",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6247,34 +5786,26 @@ pub mod describe_orderable_replication_instances_input {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6298,7 +5829,7 @@ pub type DescribeOrderableReplicationInstancesInputOperationOutputAlias =
     crate::operation::DescribeOrderableReplicationInstances;
 #[doc(hidden)]
 pub type DescribeOrderableReplicationInstancesInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeOrderableReplicationInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeOrderableReplicationInstances`](crate::operation::DescribeOrderableReplicationInstances)>
     #[allow(clippy::let_and_return)]
@@ -6309,7 +5840,7 @@ impl DescribeOrderableReplicationInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeOrderableReplicationInstances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6395,7 +5926,7 @@ impl DescribeOrderableReplicationInstancesInput {
             "DescribeOrderableReplicationInstances",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6448,9 +5979,9 @@ pub mod describe_pending_maintenance_actions_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p></p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -6462,32 +5993,24 @@ pub mod describe_pending_maintenance_actions_input {
             self.filters = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
@@ -6514,7 +6037,8 @@ pub mod describe_pending_maintenance_actions_input {
 pub type DescribePendingMaintenanceActionsInputOperationOutputAlias =
     crate::operation::DescribePendingMaintenanceActions;
 #[doc(hidden)]
-pub type DescribePendingMaintenanceActionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePendingMaintenanceActionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribePendingMaintenanceActionsInput {
     /// Consumes the builder and constructs an Operation<[`DescribePendingMaintenanceActions`](crate::operation::DescribePendingMaintenanceActions)>
     #[allow(clippy::let_and_return)]
@@ -6525,7 +6049,7 @@ impl DescribePendingMaintenanceActionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribePendingMaintenanceActions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6611,7 +6135,7 @@ impl DescribePendingMaintenanceActionsInput {
             "DescribePendingMaintenanceActions",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6670,7 +6194,8 @@ pub mod describe_refresh_schemas_status_input {
 pub type DescribeRefreshSchemasStatusInputOperationOutputAlias =
     crate::operation::DescribeRefreshSchemasStatus;
 #[doc(hidden)]
-pub type DescribeRefreshSchemasStatusInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRefreshSchemasStatusInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRefreshSchemasStatusInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRefreshSchemasStatus`](crate::operation::DescribeRefreshSchemasStatus)>
     #[allow(clippy::let_and_return)]
@@ -6681,7 +6206,7 @@ impl DescribeRefreshSchemasStatusInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRefreshSchemasStatus,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6767,7 +6292,7 @@ impl DescribeRefreshSchemasStatusInput {
             "DescribeRefreshSchemasStatus",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6806,17 +6331,15 @@ pub mod describe_replication_instances_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to replication instances.</p>
-        /// <p>Valid filter names: replication-instance-arn | replication-instance-id |
-        /// replication-instance-class | engine-version</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Filters applied to replication instances.</p>
-        /// <p>Valid filter names: replication-instance-arn | replication-instance-id |
-        /// replication-instance-class | engine-version</p>
+        /// <p>Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6824,34 +6347,26 @@ pub mod describe_replication_instances_input {
             self.filters = input;
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6875,7 +6390,8 @@ pub mod describe_replication_instances_input {
 pub type DescribeReplicationInstancesInputOperationOutputAlias =
     crate::operation::DescribeReplicationInstances;
 #[doc(hidden)]
-pub type DescribeReplicationInstancesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeReplicationInstancesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReplicationInstancesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationInstances`](crate::operation::DescribeReplicationInstances)>
     #[allow(clippy::let_and_return)]
@@ -6886,7 +6402,7 @@ impl DescribeReplicationInstancesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReplicationInstances,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6972,7 +6488,7 @@ impl DescribeReplicationInstancesInput {
             "DescribeReplicationInstances",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7019,34 +6535,26 @@ pub mod describe_replication_instance_task_logs_input {
             self.replication_instance_arn = input;
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7071,7 +6579,7 @@ pub type DescribeReplicationInstanceTaskLogsInputOperationOutputAlias =
     crate::operation::DescribeReplicationInstanceTaskLogs;
 #[doc(hidden)]
 pub type DescribeReplicationInstanceTaskLogsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReplicationInstanceTaskLogsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationInstanceTaskLogs`](crate::operation::DescribeReplicationInstanceTaskLogs)>
     #[allow(clippy::let_and_return)]
@@ -7082,7 +6590,7 @@ impl DescribeReplicationInstanceTaskLogsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReplicationInstanceTaskLogs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7168,7 +6676,7 @@ impl DescribeReplicationInstanceTaskLogsInput {
             "DescribeReplicationInstanceTaskLogs",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7208,9 +6716,9 @@ pub mod describe_replication_subnet_groups_input {
         ///
         /// <p>Filters applied to replication subnet groups.</p>
         /// <p>Valid filter names: replication-subnet-group-id</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
@@ -7223,34 +6731,26 @@ pub mod describe_replication_subnet_groups_input {
             self.filters = input;
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7274,7 +6774,8 @@ pub mod describe_replication_subnet_groups_input {
 pub type DescribeReplicationSubnetGroupsInputOperationOutputAlias =
     crate::operation::DescribeReplicationSubnetGroups;
 #[doc(hidden)]
-pub type DescribeReplicationSubnetGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeReplicationSubnetGroupsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReplicationSubnetGroupsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationSubnetGroups`](crate::operation::DescribeReplicationSubnetGroups)>
     #[allow(clippy::let_and_return)]
@@ -7285,7 +6786,7 @@ impl DescribeReplicationSubnetGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReplicationSubnetGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7371,7 +6872,7 @@ impl DescribeReplicationSubnetGroupsInput {
             "DescribeReplicationSubnetGroups",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7405,16 +6906,12 @@ pub mod describe_replication_task_assessment_results_input {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input
-        /// parameter is specified, the API returns only one result and ignore the values of the
-        /// <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
         pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_task_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input
-        /// parameter is specified, the API returns only one result and ignore the values of the
-        /// <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
         pub fn set_replication_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7422,34 +6919,26 @@ pub mod describe_replication_task_assessment_results_input {
             self.replication_task_arn = input;
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7476,7 +6965,7 @@ pub type DescribeReplicationTaskAssessmentResultsInputOperationOutputAlias =
     crate::operation::DescribeReplicationTaskAssessmentResults;
 #[doc(hidden)]
 pub type DescribeReplicationTaskAssessmentResultsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReplicationTaskAssessmentResultsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationTaskAssessmentResults`](crate::operation::DescribeReplicationTaskAssessmentResults)>
     #[allow(clippy::let_and_return)]
@@ -7487,7 +6976,7 @@ impl DescribeReplicationTaskAssessmentResultsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReplicationTaskAssessmentResults,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7573,7 +7062,7 @@ impl DescribeReplicationTaskAssessmentResultsInput {
             "DescribeReplicationTaskAssessmentResults",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7612,19 +7101,15 @@ pub mod describe_replication_task_assessment_runs_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to the premigration assessment runs described in the form of key-value pairs.</p>
-        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>,
-        /// <code>replication-instance-arn</code>, <code>status</code>
-        /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>replication-instance-arn</code>, <code>status</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Filters applied to the premigration assessment runs described in the form of key-value pairs.</p>
-        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>,
-        /// <code>replication-instance-arn</code>, <code>status</code>
-        /// </p>
+        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>replication-instance-arn</code>, <code>status</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7632,30 +7117,22 @@ pub mod describe_replication_task_assessment_runs_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of records to include in the response. If more records exist than the
-        /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-        /// the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p>The maximum number of records to include in the response. If more records exist than the
-        /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-        /// the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7680,7 +7157,7 @@ pub type DescribeReplicationTaskAssessmentRunsInputOperationOutputAlias =
     crate::operation::DescribeReplicationTaskAssessmentRuns;
 #[doc(hidden)]
 pub type DescribeReplicationTaskAssessmentRunsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReplicationTaskAssessmentRunsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationTaskAssessmentRuns`](crate::operation::DescribeReplicationTaskAssessmentRuns)>
     #[allow(clippy::let_and_return)]
@@ -7691,7 +7168,7 @@ impl DescribeReplicationTaskAssessmentRunsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReplicationTaskAssessmentRuns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7777,7 +7254,7 @@ impl DescribeReplicationTaskAssessmentRunsInput {
             "DescribeReplicationTaskAssessmentRuns",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7815,22 +7292,16 @@ pub mod describe_replication_task_individual_assessments_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters applied to the individual assessments described in the form of key-value
-        /// pairs.</p>
-        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>,
-        /// <code>replication-task-arn</code>, <code>status</code>
-        /// </p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
+        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>Filters applied to the individual assessments described in the form of key-value
-        /// pairs.</p>
-        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>,
-        /// <code>replication-task-arn</code>, <code>status</code>
-        /// </p>
+        /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
+        /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7838,30 +7309,22 @@ pub mod describe_replication_task_individual_assessments_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of records to include in the response. If more records exist than the
-        /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-        /// the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p>The maximum number of records to include in the response. If more records exist than the
-        /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-        /// the response so that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7888,7 +7351,7 @@ pub type DescribeReplicationTaskIndividualAssessmentsInputOperationOutputAlias =
     crate::operation::DescribeReplicationTaskIndividualAssessments;
 #[doc(hidden)]
 pub type DescribeReplicationTaskIndividualAssessmentsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReplicationTaskIndividualAssessmentsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationTaskIndividualAssessments`](crate::operation::DescribeReplicationTaskIndividualAssessments)>
     #[allow(clippy::let_and_return)]
@@ -7899,7 +7362,7 @@ impl DescribeReplicationTaskIndividualAssessmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReplicationTaskIndividualAssessments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7985,7 +7448,7 @@ impl DescribeReplicationTaskIndividualAssessmentsInput {
             "DescribeReplicationTaskIndividualAssessments",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8026,17 +7489,15 @@ pub mod describe_replication_tasks_input {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Filters applied to replication tasks.</p>
-        /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type |
-        /// endpoint-arn | replication-instance-arn</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Filters applied to replication tasks.</p>
-        /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type |
-        /// endpoint-arn | replication-instance-arn</p>
+        /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -8044,48 +7505,36 @@ pub mod describe_replication_tasks_input {
             self.filters = input;
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
-        /// <p>An option to set to avoid returning information about settings. Use this to reduce
-        /// overhead when setting information is too large. To use this option, choose
-        /// <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
+        /// <p>An option to set to avoid returning information about settings. Use this to reduce overhead when setting information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
         pub fn without_settings(mut self, input: bool) -> Self {
             self.without_settings = Some(input);
             self
         }
-        /// <p>An option to set to avoid returning information about settings. Use this to reduce
-        /// overhead when setting information is too large. To use this option, choose
-        /// <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
+        /// <p>An option to set to avoid returning information about settings. Use this to reduce overhead when setting information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
         pub fn set_without_settings(mut self, input: std::option::Option<bool>) -> Self {
             self.without_settings = input;
             self
@@ -8110,7 +7559,7 @@ pub mod describe_replication_tasks_input {
 pub type DescribeReplicationTasksInputOperationOutputAlias =
     crate::operation::DescribeReplicationTasks;
 #[doc(hidden)]
-pub type DescribeReplicationTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeReplicationTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReplicationTasksInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReplicationTasks`](crate::operation::DescribeReplicationTasks)>
     #[allow(clippy::let_and_return)]
@@ -8121,7 +7570,7 @@ impl DescribeReplicationTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReplicationTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8208,7 +7657,7 @@ impl DescribeReplicationTasksInput {
             "DescribeReplicationTasks",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8252,34 +7701,26 @@ pub mod describe_schemas_input {
             self.endpoint_arn = input;
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -8302,7 +7743,7 @@ pub mod describe_schemas_input {
 #[doc(hidden)]
 pub type DescribeSchemasInputOperationOutputAlias = crate::operation::DescribeSchemas;
 #[doc(hidden)]
-pub type DescribeSchemasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSchemasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSchemasInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSchemas`](crate::operation::DescribeSchemas)>
     #[allow(clippy::let_and_return)]
@@ -8313,7 +7754,7 @@ impl DescribeSchemasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSchemas,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8398,7 +7839,7 @@ impl DescribeSchemasInput {
             "DescribeSchemas",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8446,34 +7887,26 @@ pub mod describe_table_statistics_input {
             self.replication_task_arn = input;
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 500.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
-        /// <p> The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-        /// in the response so that the remaining results can be retrieved. </p>
+        /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 500.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -8484,18 +7917,16 @@ pub mod describe_table_statistics_input {
         ///
         /// <p>Filters applied to table statistics.</p>
         /// <p>Valid filter names: schema-name | table-name | table-state</p>
-        /// <p>A combination of filters creates an AND condition where each record matches all
-        /// specified filters.</p>
-        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
+        /// <p>A combination of filters creates an AND condition where each record matches all specified filters.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filters = Some(v);
             self
         }
         /// <p>Filters applied to table statistics.</p>
         /// <p>Valid filter names: schema-name | table-name | table-state</p>
-        /// <p>A combination of filters creates an AND condition where each record matches all
-        /// specified filters.</p>
+        /// <p>A combination of filters creates an AND condition where each record matches all specified filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -8523,7 +7954,7 @@ pub mod describe_table_statistics_input {
 pub type DescribeTableStatisticsInputOperationOutputAlias =
     crate::operation::DescribeTableStatistics;
 #[doc(hidden)]
-pub type DescribeTableStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeTableStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeTableStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeTableStatistics`](crate::operation::DescribeTableStatistics)>
     #[allow(clippy::let_and_return)]
@@ -8534,7 +7965,7 @@ impl DescribeTableStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeTableStatistics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8621,7 +8052,7 @@ impl DescribeTableStatisticsInput {
             "DescribeTableStatistics",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8656,16 +8087,12 @@ pub mod import_certificate_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and
-        /// must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
-        /// contain two consecutive hyphens.</p>
+        /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
         pub fn certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_identifier = Some(input.into());
             self
         }
-        /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and
-        /// must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
-        /// contain two consecutive hyphens.</p>
+        /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
         pub fn set_certificate_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8686,18 +8113,14 @@ pub mod import_certificate_input {
             self.certificate_pem = input;
             self
         }
-        /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
-        /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
-        /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
-        /// </p>
+        /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
+        /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
         pub fn certificate_wallet(mut self, input: aws_smithy_types::Blob) -> Self {
             self.certificate_wallet = Some(input);
             self
         }
-        /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
-        /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
-        /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
-        /// </p>
+        /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
+        /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
         pub fn set_certificate_wallet(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -8710,9 +8133,9 @@ pub mod import_certificate_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the certificate.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8743,7 +8166,7 @@ pub mod import_certificate_input {
 #[doc(hidden)]
 pub type ImportCertificateInputOperationOutputAlias = crate::operation::ImportCertificate;
 #[doc(hidden)]
-pub type ImportCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportCertificateInput {
     /// Consumes the builder and constructs an Operation<[`ImportCertificate`](crate::operation::ImportCertificate)>
     #[allow(clippy::let_and_return)]
@@ -8754,7 +8177,7 @@ impl ImportCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8839,7 +8262,7 @@ impl ImportCertificateInput {
             "ImportCertificate",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8872,16 +8295,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to
-        /// list tags for. This returns a list of keys (names of tags) created for the resource and
-        /// their associated tag values.</p>
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to list tags for. This returns a list of keys (names of tags) created for the resource and their associated tag values.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to
-        /// list tags for. This returns a list of keys (names of tags) created for the resource and
-        /// their associated tag values.</p>
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to list tags for. This returns a list of keys (names of tags) created for the resource and their associated tag values.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -8890,20 +8309,14 @@ pub mod list_tags_for_resource_input {
         ///
         /// To override the contents of this collection use [`set_resource_arn_list`](Self::set_resource_arn_list).
         ///
-        /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This
-        /// returns a list of keys (tag names) and their associated tag values. It also returns each
-        /// tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which
-        /// each listed tag is created. </p>
+        /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This returns a list of keys (tag names) and their associated tag values. It also returns each tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which each listed tag is created. </p>
         pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arn_list.unwrap_or_default();
             v.push(input.into());
             self.resource_arn_list = Some(v);
             self
         }
-        /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This
-        /// returns a list of keys (tag names) and their associated tag values. It also returns each
-        /// tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which
-        /// each listed tag is created. </p>
+        /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This returns a list of keys (tag names) and their associated tag values. It also returns each tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which each listed tag is created. </p>
         pub fn set_resource_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8928,7 +8341,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -8939,7 +8352,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9026,7 +8439,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9101,16 +8514,12 @@ pub mod modify_endpoint_input {
             self.endpoint_arn = input;
             self
         }
-        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
-        /// only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two
-        /// consecutive hyphens.</p>
+        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
         pub fn endpoint_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_identifier = Some(input.into());
             self
         }
-        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
-        /// only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two
-        /// consecutive hyphens.</p>
+        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
         pub fn set_endpoint_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9118,12 +8527,12 @@ pub mod modify_endpoint_input {
             self.endpoint_identifier = input;
             self
         }
-        /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
+        /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
         pub fn endpoint_type(mut self, input: crate::model::ReplicationEndpointTypeValue) -> Self {
             self.endpoint_type = Some(input);
             self
         }
-        /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
+        /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
         pub fn set_endpoint_type(
             mut self,
             input: std::option::Option<crate::model::ReplicationEndpointTypeValue>,
@@ -9131,26 +8540,12 @@ pub mod modify_endpoint_input {
             self.endpoint_type = input;
             self
         }
-        /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType,
-        /// include
-        /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
-        /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
-        /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-        /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-        /// <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+        /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
         pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_name = Some(input.into());
             self
         }
-        /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType,
-        /// include
-        /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
-        /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
-        /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-        /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-        /// <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+        /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
         pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_name = input;
             self
@@ -9208,8 +8603,7 @@ pub mod modify_endpoint_input {
             self.database_name = input;
             self
         }
-        /// <p>Additional attributes associated with the connection. To reset this parameter, pass the
-        /// empty string ("") as an argument.</p>
+        /// <p>Additional attributes associated with the connection. To reset this parameter, pass the empty string ("") as an argument.</p>
         pub fn extra_connection_attributes(
             mut self,
             input: impl Into<std::string::String>,
@@ -9217,8 +8611,7 @@ pub mod modify_endpoint_input {
             self.extra_connection_attributes = Some(input.into());
             self
         }
-        /// <p>Additional attributes associated with the connection. To reset this parameter, pass the
-        /// empty string ("") as an argument.</p>
+        /// <p>Additional attributes associated with the connection. To reset this parameter, pass the empty string ("") as an argument.</p>
         pub fn set_extra_connection_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9239,12 +8632,12 @@ pub mod modify_endpoint_input {
             self.certificate_arn = input;
             self
         }
-        /// <p>The SSL mode used to connect to the endpoint.  The default value is <code>none</code>.</p>
+        /// <p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>
         pub fn ssl_mode(mut self, input: crate::model::DmsSslModeValue) -> Self {
             self.ssl_mode = Some(input);
             self
         }
-        /// <p>The SSL mode used to connect to the endpoint.  The default value is <code>none</code>.</p>
+        /// <p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>
         pub fn set_ssl_mode(
             mut self,
             input: std::option::Option<crate::model::DmsSslModeValue>,
@@ -9252,14 +8645,12 @@ pub mod modify_endpoint_input {
             self.ssl_mode = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify
-        /// the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+        /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_access_role_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify
-        /// the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+        /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn set_service_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9280,20 +8671,12 @@ pub mod modify_endpoint_input {
             self.external_table_definition = input;
             self
         }
-        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
-        /// Data to DynamoDB</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn dynamo_db_settings(mut self, input: crate::model::DynamoDbSettings) -> Self {
             self.dynamo_db_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
-        /// Data to DynamoDB</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_dynamo_db_settings(
             mut self,
             input: std::option::Option<crate::model::DynamoDbSettings>,
@@ -9301,20 +8684,12 @@ pub mod modify_endpoint_input {
             self.dynamo_db_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-        /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn s3_settings(mut self, input: crate::model::S3Settings) -> Self {
             self.s3_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-        /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_s3_settings(
             mut self,
             input: std::option::Option<crate::model::S3Settings>,
@@ -9325,19 +8700,11 @@ pub mod modify_endpoint_input {
         /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
         /// <p>Attributes include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-        /// </li>
-        /// <li>
-        /// <p>BucketName - The name of the S3 bucket to use.</p>
-        /// </li>
+        /// <li> <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p> </li>
+        /// <li> <p>BucketName - The name of the S3 bucket to use.</p> </li>
         /// </ul>
-        /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string
-        /// ,BucketName=string</code>
-        /// </p>
-        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-        /// "BucketName": "string"} </code>
-        /// </p>
+        /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string ,BucketName=string</code> </p>
+        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code> </p>
         pub fn dms_transfer_settings(mut self, input: crate::model::DmsTransferSettings) -> Self {
             self.dms_transfer_settings = Some(input);
             self
@@ -9345,19 +8712,11 @@ pub mod modify_endpoint_input {
         /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
         /// <p>Attributes include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-        /// </li>
-        /// <li>
-        /// <p>BucketName - The name of the S3 bucket to use.</p>
-        /// </li>
+        /// <li> <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p> </li>
+        /// <li> <p>BucketName - The name of the S3 bucket to use.</p> </li>
         /// </ul>
-        /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string
-        /// ,BucketName=string</code>
-        /// </p>
-        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-        /// "BucketName": "string"} </code>
-        /// </p>
+        /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string ,BucketName=string</code> </p>
+        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code> </p>
         pub fn set_dms_transfer_settings(
             mut self,
             input: std::option::Option<crate::model::DmsTransferSettings>,
@@ -9365,20 +8724,12 @@ pub mod modify_endpoint_input {
             self.dms_transfer_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
-        /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
-        /// when using MongoDB as a source for Database Migration Service</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn mongo_db_settings(mut self, input: crate::model::MongoDbSettings) -> Self {
             self.mongo_db_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
-        /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
-        /// when using MongoDB as a source for Database Migration Service</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_mongo_db_settings(
             mut self,
             input: std::option::Option<crate::model::MongoDbSettings>,
@@ -9386,18 +8737,12 @@ pub mod modify_endpoint_input {
             self.mongo_db_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
-        /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn kinesis_settings(mut self, input: crate::model::KinesisSettings) -> Self {
             self.kinesis_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
-        /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_kinesis_settings(
             mut self,
             input: std::option::Option<crate::model::KinesisSettings>,
@@ -9405,18 +8750,12 @@ pub mod modify_endpoint_input {
             self.kinesis_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
-        /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn kafka_settings(mut self, input: crate::model::KafkaSettings) -> Self {
             self.kafka_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
-        /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_kafka_settings(
             mut self,
             input: std::option::Option<crate::model::KafkaSettings>,
@@ -9424,10 +8763,7 @@ pub mod modify_endpoint_input {
             self.kafka_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
-        /// the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn elasticsearch_settings(
             mut self,
             input: crate::model::ElasticsearchSettings,
@@ -9435,10 +8771,7 @@ pub mod modify_endpoint_input {
             self.elasticsearch_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
-        /// the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_elasticsearch_settings(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchSettings>,
@@ -9446,18 +8779,12 @@ pub mod modify_endpoint_input {
             self.elasticsearch_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
-        /// in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn neptune_settings(mut self, input: crate::model::NeptuneSettings) -> Self {
             self.neptune_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
-        /// in the <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_neptune_settings(
             mut self,
             input: std::option::Option<crate::model::NeptuneSettings>,
@@ -9478,22 +8805,12 @@ pub mod modify_endpoint_input {
             self.redshift_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
-        /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
-        /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn postgre_sql_settings(mut self, input: crate::model::PostgreSqlSettings) -> Self {
             self.postgre_sql_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
-        /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
-        /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_postgre_sql_settings(
             mut self,
             input: std::option::Option<crate::model::PostgreSqlSettings>,
@@ -9501,22 +8818,12 @@ pub mod modify_endpoint_input {
             self.postgre_sql_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection
-        /// attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra
-        /// connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn my_sql_settings(mut self, input: crate::model::MySqlSettings) -> Self {
             self.my_sql_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection
-        /// attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra
-        /// connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_my_sql_settings(
             mut self,
             input: std::option::Option<crate::model::MySqlSettings>,
@@ -9524,22 +8831,12 @@ pub mod modify_endpoint_input {
             self.my_sql_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection
-        /// attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
-        /// Extra connection attributes when using Oracle as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn oracle_settings(mut self, input: crate::model::OracleSettings) -> Self {
             self.oracle_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection
-        /// attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
-        /// Extra connection attributes when using Oracle as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_oracle_settings(
             mut self,
             input: std::option::Option<crate::model::OracleSettings>,
@@ -9547,22 +8844,12 @@ pub mod modify_endpoint_input {
             self.oracle_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn sybase_settings(mut self, input: crate::model::SybaseSettings) -> Self {
             self.sybase_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_sybase_settings(
             mut self,
             input: std::option::Option<crate::model::SybaseSettings>,
@@ -9570,12 +8857,7 @@ pub mod modify_endpoint_input {
             self.sybase_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
-        /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
-        /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn microsoft_sql_server_settings(
             mut self,
             input: crate::model::MicrosoftSqlServerSettings,
@@ -9583,12 +8865,7 @@ pub mod modify_endpoint_input {
             self.microsoft_sql_server_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
-        /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
-        /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_microsoft_sql_server_settings(
             mut self,
             input: std::option::Option<crate::model::MicrosoftSqlServerSettings>,
@@ -9596,20 +8873,12 @@ pub mod modify_endpoint_input {
             self.microsoft_sql_server_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
-        /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn ibm_db2_settings(mut self, input: crate::model::IbmDb2Settings) -> Self {
             self.ibm_db2_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
-        /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
-        /// User Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_ibm_db2_settings(
             mut self,
             input: std::option::Option<crate::model::IbmDb2Settings>,
@@ -9617,20 +8886,12 @@ pub mod modify_endpoint_input {
             self.ibm_db2_settings = input;
             self
         }
-        /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the
-        /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service
-        /// </a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service </a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn doc_db_settings(mut self, input: crate::model::DocDbSettings) -> Self {
             self.doc_db_settings = Some(input);
             self
         }
-        /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the
-        /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service
-        /// </a> in the <i>Database Migration Service User
-        /// Guide.</i>
-        /// </p>
+        /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service </a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_doc_db_settings(
             mut self,
             input: std::option::Option<crate::model::DocDbSettings>,
@@ -9651,52 +8912,24 @@ pub mod modify_endpoint_input {
             self.redis_settings = input;
             self
         }
-        /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all
-        /// existing endpoint settings with the exact settings that you specify in this call. If this
-        /// attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
+        /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all existing endpoint settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
         /// <ul>
-        /// <li>
-        /// <p>It replaces any endpoint settings that already exist with new values, for settings with the
-        /// same names.</p>
-        /// </li>
-        /// <li>
-        /// <p>It creates new endpoint settings that you specify in the call, for settings with different
-        /// names. </p>
-        /// </li>
+        /// <li> <p>It replaces any endpoint settings that already exist with new values, for settings with the same names.</p> </li>
+        /// <li> <p>It creates new endpoint settings that you specify in the call, for settings with different names. </p> </li>
         /// </ul>
-        /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}'
-        /// ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If
-        /// you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the
-        /// same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
-        /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ...
-        /// --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again.
-        /// Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings
-        /// are replaced with the exact settings that you specify. </p>
+        /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}' ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
+        /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ... --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again. Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings are replaced with the exact settings that you specify. </p>
         pub fn exact_settings(mut self, input: bool) -> Self {
             self.exact_settings = Some(input);
             self
         }
-        /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all
-        /// existing endpoint settings with the exact settings that you specify in this call. If this
-        /// attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
+        /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all existing endpoint settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
         /// <ul>
-        /// <li>
-        /// <p>It replaces any endpoint settings that already exist with new values, for settings with the
-        /// same names.</p>
-        /// </li>
-        /// <li>
-        /// <p>It creates new endpoint settings that you specify in the call, for settings with different
-        /// names. </p>
-        /// </li>
+        /// <li> <p>It replaces any endpoint settings that already exist with new values, for settings with the same names.</p> </li>
+        /// <li> <p>It creates new endpoint settings that you specify in the call, for settings with different names. </p> </li>
         /// </ul>
-        /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}'
-        /// ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If
-        /// you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the
-        /// same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
-        /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ...
-        /// --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again.
-        /// Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings
-        /// are replaced with the exact settings that you specify. </p>
+        /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}' ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
+        /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ... --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again. Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings are replaced with the exact settings that you specify. </p>
         pub fn set_exact_settings(mut self, input: std::option::Option<bool>) -> Self {
             self.exact_settings = input;
             self
@@ -9762,7 +8995,7 @@ pub mod modify_endpoint_input {
 #[doc(hidden)]
 pub type ModifyEndpointInputOperationOutputAlias = crate::operation::ModifyEndpoint;
 #[doc(hidden)]
-pub type ModifyEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyEndpointInput {
     /// Consumes the builder and constructs an Operation<[`ModifyEndpoint`](crate::operation::ModifyEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -9773,7 +9006,7 @@ impl ModifyEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9858,7 +9091,7 @@ impl ModifyEndpointInput {
             "ModifyEndpoint",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9907,14 +9140,12 @@ pub mod modify_event_subscription_input {
             self.subscription_name = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
-        /// The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
-        /// The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+        /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9938,16 +9169,14 @@ pub mod modify_event_subscription_input {
         ///
         /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
         ///
-        /// <p> A list of event categories for a source type that you want to subscribe to. Use the
-        /// <code>DescribeEventCategories</code> action to see a list of event categories. </p>
+        /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
         pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories.unwrap_or_default();
             v.push(input.into());
             self.event_categories = Some(v);
             self
         }
-        /// <p> A list of event categories for a source type that you want to subscribe to. Use the
-        /// <code>DescribeEventCategories</code> action to see a list of event categories. </p>
+        /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
         pub fn set_event_categories(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9955,14 +9184,12 @@ pub mod modify_event_subscription_input {
             self.event_categories = input;
             self
         }
-        /// <p> A Boolean value; set to <b>true</b> to activate the
-        /// subscription. </p>
+        /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p> A Boolean value; set to <b>true</b> to activate the
-        /// subscription. </p>
+        /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -9988,7 +9215,7 @@ pub mod modify_event_subscription_input {
 pub type ModifyEventSubscriptionInputOperationOutputAlias =
     crate::operation::ModifyEventSubscription;
 #[doc(hidden)]
-pub type ModifyEventSubscriptionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyEventSubscriptionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyEventSubscriptionInput {
     /// Consumes the builder and constructs an Operation<[`ModifyEventSubscription`](crate::operation::ModifyEventSubscription)>
     #[allow(clippy::let_and_return)]
@@ -9999,7 +9226,7 @@ impl ModifyEventSubscriptionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyEventSubscription,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10086,7 +9313,7 @@ impl ModifyEventSubscriptionInput {
             "ModifyEventSubscription",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10141,46 +9368,34 @@ pub mod modify_replication_instance_input {
             self.replication_instance_arn = input;
             self
         }
-        /// <p>The amount of storage (in gigabytes) to be allocated for the replication
-        /// instance.</p>
+        /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
         pub fn allocated_storage(mut self, input: i32) -> Self {
             self.allocated_storage = Some(input);
             self
         }
-        /// <p>The amount of storage (in gigabytes) to be allocated for the replication
-        /// instance.</p>
+        /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
         pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_storage = input;
             self
         }
-        /// <p>Indicates whether the changes should be applied immediately or during the next
-        /// maintenance window.</p>
+        /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
         pub fn apply_immediately(mut self, input: bool) -> Self {
             self.apply_immediately = Some(input);
             self
         }
-        /// <p>Indicates whether the changes should be applied immediately or during the next
-        /// maintenance window.</p>
+        /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
         pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
             self.apply_immediately = input;
             self
         }
-        /// <p>The compute and memory capacity of the replication instance as defined for the specified
-        /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-        /// <p>For more information on the settings and capacities for the available replication instance classes, see
-        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-        /// Selecting the right DMS replication instance for your migration</a>.
-        /// </p>
+        /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+        /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
         pub fn replication_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_instance_class = Some(input.into());
             self
         }
-        /// <p>The compute and memory capacity of the replication instance as defined for the specified
-        /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-        /// <p>For more information on the settings and capacities for the available replication instance classes, see
-        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-        /// Selecting the right DMS replication instance for your migration</a>.
-        /// </p>
+        /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+        /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
         pub fn set_replication_instance_class(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10192,16 +9407,14 @@ pub mod modify_replication_instance_input {
         ///
         /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
         ///
-        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
-        /// security group must work with the VPC containing the replication instance. </p>
+        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
         pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
-        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
-        /// security group must work with the VPC containing the replication instance. </p>
+        /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
         pub fn set_vpc_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10209,11 +9422,7 @@ pub mod modify_replication_instance_input {
             self.vpc_security_group_ids = input;
             self
         }
-        /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might
-        /// result in an outage. Changing this parameter does not result in an outage, except in the
-        /// following situation, and the change is asynchronously applied as soon as possible. If
-        /// moving this window to the current time, there must be at least 30 minutes between the
-        /// current time and end of the window to ensure pending changes are applied.</p>
+        /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
         /// <p>Default: Uses existing setting</p>
         /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
         /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
@@ -10225,11 +9434,7 @@ pub mod modify_replication_instance_input {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
-        /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might
-        /// result in an outage. Changing this parameter does not result in an outage, except in the
-        /// following situation, and the change is asynchronously applied as soon as possible. If
-        /// moving this window to the current time, there must be at least 30 minutes between the
-        /// current time and end of the window to ensure pending changes are applied.</p>
+        /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
         /// <p>Default: Uses existing setting</p>
         /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
         /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
@@ -10241,30 +9446,24 @@ pub mod modify_replication_instance_input {
             self.preferred_maintenance_window = input;
             self
         }
-        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
-        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
-        /// <code>true</code>. </p>
+        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
         pub fn multi_az(mut self, input: bool) -> Self {
             self.multi_az = Some(input);
             self
         }
-        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
-        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
-        /// <code>true</code>. </p>
+        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
         pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
             self.multi_az = input;
             self
         }
         /// <p>The engine version number of the replication instance.</p>
-        /// <p>When modifying a major engine version of an instance, also set
-        /// <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
+        /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.engine_version = Some(input.into());
             self
         }
         /// <p>The engine version number of the replication instance.</p>
-        /// <p>When modifying a major engine version of an instance, also set
-        /// <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
+        /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10272,66 +9471,41 @@ pub mod modify_replication_instance_input {
             self.engine_version = input;
             self
         }
-        /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not
-        /// result in an outage, and the change is asynchronously applied as soon as possible.</p>
-        /// <p>This parameter must be set to <code>true</code> when specifying a value for the
-        /// <code>EngineVersion</code> parameter that is a different major version than the
-        /// replication instance's current version.</p>
+        /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
+        /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
         pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
             self.allow_major_version_upgrade = Some(input);
             self
         }
-        /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not
-        /// result in an outage, and the change is asynchronously applied as soon as possible.</p>
-        /// <p>This parameter must be set to <code>true</code> when specifying a value for the
-        /// <code>EngineVersion</code> parameter that is a different major version than the
-        /// replication instance's current version.</p>
+        /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
+        /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
         pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_major_version_upgrade = input;
             self
         }
-        /// <p>A value that indicates that minor version upgrades are applied automatically to the
-        /// replication instance during the maintenance window. Changing this parameter doesn't result
-        /// in an outage, except in the case described following. The change is asynchronously applied
-        /// as soon as possible. </p>
+        /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
         /// <p>An outage does result if these factors apply: </p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter is set to <code>true</code> during the maintenance window.</p>
-        /// </li>
-        /// <li>
-        /// <p>A newer minor version is available. </p>
-        /// </li>
-        /// <li>
-        /// <p>DMS has enabled automatic patching for the given engine version. </p>
-        /// </li>
+        /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>
+        /// <li> <p>A newer minor version is available. </p> </li>
+        /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
         /// </ul>
         pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
             self.auto_minor_version_upgrade = Some(input);
             self
         }
-        /// <p>A value that indicates that minor version upgrades are applied automatically to the
-        /// replication instance during the maintenance window. Changing this parameter doesn't result
-        /// in an outage, except in the case described following. The change is asynchronously applied
-        /// as soon as possible. </p>
+        /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
         /// <p>An outage does result if these factors apply: </p>
         /// <ul>
-        /// <li>
-        /// <p>This parameter is set to <code>true</code> during the maintenance window.</p>
-        /// </li>
-        /// <li>
-        /// <p>A newer minor version is available. </p>
-        /// </li>
-        /// <li>
-        /// <p>DMS has enabled automatic patching for the given engine version. </p>
-        /// </li>
+        /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>
+        /// <li> <p>A newer minor version is available. </p> </li>
+        /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
         /// </ul>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_minor_version_upgrade = input;
             self
         }
-        /// <p>The replication instance identifier. This parameter is stored as a lowercase
-        /// string.</p>
+        /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
         pub fn replication_instance_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -10339,8 +9513,7 @@ pub mod modify_replication_instance_input {
             self.replication_instance_identifier = Some(input.into());
             self
         }
-        /// <p>The replication instance identifier. This parameter is stored as a lowercase
-        /// string.</p>
+        /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
         pub fn set_replication_instance_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10375,7 +9548,7 @@ pub mod modify_replication_instance_input {
 pub type ModifyReplicationInstanceInputOperationOutputAlias =
     crate::operation::ModifyReplicationInstance;
 #[doc(hidden)]
-pub type ModifyReplicationInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyReplicationInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyReplicationInstanceInput {
     /// Consumes the builder and constructs an Operation<[`ModifyReplicationInstance`](crate::operation::ModifyReplicationInstance)>
     #[allow(clippy::let_and_return)]
@@ -10386,7 +9559,7 @@ impl ModifyReplicationInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyReplicationInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10473,7 +9646,7 @@ impl ModifyReplicationInstanceInput {
             "ModifyReplicationInstance",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10577,7 +9750,8 @@ pub mod modify_replication_subnet_group_input {
 pub type ModifyReplicationSubnetGroupInputOperationOutputAlias =
     crate::operation::ModifyReplicationSubnetGroup;
 #[doc(hidden)]
-pub type ModifyReplicationSubnetGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyReplicationSubnetGroupInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyReplicationSubnetGroupInput {
     /// Consumes the builder and constructs an Operation<[`ModifyReplicationSubnetGroup`](crate::operation::ModifyReplicationSubnetGroup)>
     #[allow(clippy::let_and_return)]
@@ -10588,7 +9762,7 @@ impl ModifyReplicationSubnetGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyReplicationSubnetGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10674,7 +9848,7 @@ impl ModifyReplicationSubnetGroupInput {
             "ModifyReplicationSubnetGroup",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10730,15 +9904,9 @@ pub mod modify_replication_task_input {
         /// <p>The replication task identifier.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
+        /// <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
         pub fn replication_task_identifier(
             mut self,
@@ -10750,15 +9918,9 @@ pub mod modify_replication_task_input {
         /// <p>The replication task identifier.</p>
         /// <p>Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>First character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-        /// </li>
+        /// <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>First character must be a letter.</p> </li>
+        /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
         pub fn set_replication_task_identifier(
             mut self,
@@ -10767,14 +9929,12 @@ pub mod modify_replication_task_input {
             self.replication_task_identifier = input;
             self
         }
-        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
-        /// </p>
+        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
         pub fn migration_type(mut self, input: crate::model::MigrationTypeValue) -> Self {
             self.migration_type = Some(input);
             self
         }
-        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
-        /// </p>
+        /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
         pub fn set_migration_type(
             mut self,
             input: std::option::Option<crate::model::MigrationTypeValue>,
@@ -10782,20 +9942,12 @@ pub mod modify_replication_task_input {
             self.migration_type = input;
             self
         }
-        /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the
-        /// table mappings. Precede the path with <code>file://</code>.  For example,
-        /// <code>--table-mappings file://mappingfile.json</code>. When working with the DMS  API,
-        /// provide the JSON as the parameter value.
-        /// </p>
+        /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as the parameter value. </p>
         pub fn table_mappings(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_mappings = Some(input.into());
             self
         }
-        /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the
-        /// table mappings. Precede the path with <code>file://</code>.  For example,
-        /// <code>--table-mappings file://mappingfile.json</code>. When working with the DMS  API,
-        /// provide the JSON as the parameter value.
-        /// </p>
+        /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as the parameter value. </p>
         pub fn set_table_mappings(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10816,17 +9968,13 @@ pub mod modify_replication_task_input {
             self.replication_task_settings = input;
             self
         }
-        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-        /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn cdc_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cdc_start_time = Some(input);
             self
         }
-        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-        /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn set_cdc_start_time(
             mut self,
@@ -10835,39 +9983,23 @@ pub mod modify_replication_task_input {
             self.cdc_start_time = input;
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-        /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
         /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-        /// <p>Checkpoint Example: --cdc-start-position
-        /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-        /// <note>
-        /// <p>When you use this task setting with a source PostgreSQL database, a logical
-        /// replication slot should already be created and associated with the source endpoint. You
-        /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-        /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for DMS</a>.</p>
+        /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+        /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
         /// </note>
         pub fn cdc_start_position(mut self, input: impl Into<std::string::String>) -> Self {
             self.cdc_start_position = Some(input.into());
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-        /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
         /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-        /// <p>Checkpoint Example: --cdc-start-position
-        /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-        /// <note>
-        /// <p>When you use this task setting with a source PostgreSQL database, a logical
-        /// replication slot should already be created and associated with the source endpoint. You
-        /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-        /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for DMS</a>.</p>
+        /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+        /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
         /// </note>
         pub fn set_cdc_start_position(
             mut self,
@@ -10876,16 +10008,14 @@ pub mod modify_replication_task_input {
             self.cdc_start_position = input;
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-        /// either server time or commit time.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
         pub fn cdc_stop_position(mut self, input: impl Into<std::string::String>) -> Self {
             self.cdc_stop_position = Some(input.into());
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-        /// either server time or commit time.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
         pub fn set_cdc_stop_position(
@@ -10895,18 +10025,12 @@ pub mod modify_replication_task_input {
             self.cdc_stop_position = input;
             self
         }
-        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
-        /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn task_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_data = Some(input.into());
             self
         }
-        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
-        /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_task_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_data = input;
             self
@@ -10935,7 +10059,7 @@ pub mod modify_replication_task_input {
 #[doc(hidden)]
 pub type ModifyReplicationTaskInputOperationOutputAlias = crate::operation::ModifyReplicationTask;
 #[doc(hidden)]
-pub type ModifyReplicationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ModifyReplicationTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ModifyReplicationTaskInput {
     /// Consumes the builder and constructs an Operation<[`ModifyReplicationTask`](crate::operation::ModifyReplicationTask)>
     #[allow(clippy::let_and_return)]
@@ -10946,7 +10070,7 @@ impl ModifyReplicationTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ModifyReplicationTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11033,7 +10157,7 @@ impl ModifyReplicationTaskInput {
             "ModifyReplicationTask",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11112,7 +10236,7 @@ pub mod move_replication_task_input {
 #[doc(hidden)]
 pub type MoveReplicationTaskInputOperationOutputAlias = crate::operation::MoveReplicationTask;
 #[doc(hidden)]
-pub type MoveReplicationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type MoveReplicationTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl MoveReplicationTaskInput {
     /// Consumes the builder and constructs an Operation<[`MoveReplicationTask`](crate::operation::MoveReplicationTask)>
     #[allow(clippy::let_and_return)]
@@ -11123,7 +10247,7 @@ impl MoveReplicationTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::MoveReplicationTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11208,7 +10332,7 @@ impl MoveReplicationTaskInput {
             "MoveReplicationTask",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11255,32 +10379,22 @@ pub mod reboot_replication_instance_input {
             self.replication_instance_arn = input;
             self
         }
-        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ
-        /// failover. If the instance isn't configured for Multi-AZ, then you can't specify
-        /// <code>true</code>.  ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ failover. If the instance isn't configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
         pub fn force_failover(mut self, input: bool) -> Self {
             self.force_failover = Some(input);
             self
         }
-        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ
-        /// failover. If the instance isn't configured for Multi-AZ, then you can't specify
-        /// <code>true</code>.  ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ failover. If the instance isn't configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
         pub fn set_force_failover(mut self, input: std::option::Option<bool>) -> Self {
             self.force_failover = input;
             self
         }
-        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover
-        /// where resources are released and cleaned up prior to conducting the failover.
-        /// If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>.
-        /// ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover where resources are released and cleaned up prior to conducting the failover. If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
         pub fn force_planned_failover(mut self, input: bool) -> Self {
             self.force_planned_failover = Some(input);
             self
         }
-        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover
-        /// where resources are released and cleaned up prior to conducting the failover.
-        /// If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>.
-        /// ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+        /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover where resources are released and cleaned up prior to conducting the failover. If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
         pub fn set_force_planned_failover(mut self, input: std::option::Option<bool>) -> Self {
             self.force_planned_failover = input;
             self
@@ -11304,7 +10418,7 @@ pub mod reboot_replication_instance_input {
 pub type RebootReplicationInstanceInputOperationOutputAlias =
     crate::operation::RebootReplicationInstance;
 #[doc(hidden)]
-pub type RebootReplicationInstanceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RebootReplicationInstanceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RebootReplicationInstanceInput {
     /// Consumes the builder and constructs an Operation<[`RebootReplicationInstance`](crate::operation::RebootReplicationInstance)>
     #[allow(clippy::let_and_return)]
@@ -11315,7 +10429,7 @@ impl RebootReplicationInstanceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RebootReplicationInstance,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11402,7 +10516,7 @@ impl RebootReplicationInstanceInput {
             "RebootReplicationInstance",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11475,7 +10589,7 @@ pub mod refresh_schemas_input {
 #[doc(hidden)]
 pub type RefreshSchemasInputOperationOutputAlias = crate::operation::RefreshSchemas;
 #[doc(hidden)]
-pub type RefreshSchemasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RefreshSchemasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RefreshSchemasInput {
     /// Consumes the builder and constructs an Operation<[`RefreshSchemas`](crate::operation::RefreshSchemas)>
     #[allow(clippy::let_and_return)]
@@ -11486,7 +10600,7 @@ impl RefreshSchemasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RefreshSchemas,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11571,7 +10685,7 @@ impl RefreshSchemasInput {
             "RefreshSchemas",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11624,9 +10738,9 @@ pub mod reload_tables_input {
         /// To override the contents of this collection use [`set_tables_to_reload`](Self::set_tables_to_reload).
         ///
         /// <p>The name and schema of the table to be reloaded. </p>
-        pub fn tables_to_reload(mut self, input: impl Into<crate::model::TableToReload>) -> Self {
+        pub fn tables_to_reload(mut self, input: crate::model::TableToReload) -> Self {
             let mut v = self.tables_to_reload.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tables_to_reload = Some(v);
             self
         }
@@ -11638,18 +10752,14 @@ pub mod reload_tables_input {
             self.tables_to_reload = input;
             self
         }
-        /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate
-        /// it if validation is enabled. Specify <code>validate-only</code> to re-validate the table.
-        /// This option applies only when validation is enabled for the task. </p>
+        /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
         /// <p>Valid values: data-reload, validate-only</p>
         /// <p>Default value is data-reload.</p>
         pub fn reload_option(mut self, input: crate::model::ReloadOptionValue) -> Self {
             self.reload_option = Some(input);
             self
         }
-        /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate
-        /// it if validation is enabled. Specify <code>validate-only</code> to re-validate the table.
-        /// This option applies only when validation is enabled for the task. </p>
+        /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
         /// <p>Valid values: data-reload, validate-only</p>
         /// <p>Default value is data-reload.</p>
         pub fn set_reload_option(
@@ -11677,7 +10787,7 @@ pub mod reload_tables_input {
 #[doc(hidden)]
 pub type ReloadTablesInputOperationOutputAlias = crate::operation::ReloadTables;
 #[doc(hidden)]
-pub type ReloadTablesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ReloadTablesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ReloadTablesInput {
     /// Consumes the builder and constructs an Operation<[`ReloadTables`](crate::operation::ReloadTables)>
     #[allow(clippy::let_and_return)]
@@ -11688,7 +10798,7 @@ impl ReloadTablesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ReloadTables,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11772,7 +10882,7 @@ impl ReloadTablesInput {
             "ReloadTables",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11851,7 +10961,7 @@ pub mod remove_tags_from_resource_input {
 #[doc(hidden)]
 pub type RemoveTagsFromResourceInputOperationOutputAlias = crate::operation::RemoveTagsFromResource;
 #[doc(hidden)]
-pub type RemoveTagsFromResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveTagsFromResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveTagsFromResourceInput {
     /// Consumes the builder and constructs an Operation<[`RemoveTagsFromResource`](crate::operation::RemoveTagsFromResource)>
     #[allow(clippy::let_and_return)]
@@ -11862,7 +10972,7 @@ impl RemoveTagsFromResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveTagsFromResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11949,7 +11059,7 @@ impl RemoveTagsFromResourceInput {
             "RemoveTagsFromResource",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12000,12 +11110,8 @@ pub mod start_replication_task_input {
             self
         }
         /// <p>The type of replication task to start.</p>
-        /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-        /// for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart
-        /// the task and <code>resume-processing</code> to resume the task.</p>
-        /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
-        /// the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for
-        /// a task with migration type of <code>cdc</code>.</p>
+        /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task and <code>resume-processing</code> to resume the task.</p>
+        /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task with migration type of <code>cdc</code>.</p>
         pub fn start_replication_task_type(
             mut self,
             input: crate::model::StartReplicationTaskTypeValue,
@@ -12014,12 +11120,8 @@ pub mod start_replication_task_input {
             self
         }
         /// <p>The type of replication task to start.</p>
-        /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-        /// for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart
-        /// the task and <code>resume-processing</code> to resume the task.</p>
-        /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
-        /// the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for
-        /// a task with migration type of <code>cdc</code>.</p>
+        /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task and <code>resume-processing</code> to resume the task.</p>
+        /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task with migration type of <code>cdc</code>.</p>
         pub fn set_start_replication_task_type(
             mut self,
             input: std::option::Option<crate::model::StartReplicationTaskTypeValue>,
@@ -12027,17 +11129,13 @@ pub mod start_replication_task_input {
             self.start_replication_task_type = input;
             self
         }
-        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-        /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn cdc_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.cdc_start_time = Some(input);
             self
         }
-        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-        /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
         pub fn set_cdc_start_time(
             mut self,
@@ -12046,39 +11144,23 @@ pub mod start_replication_task_input {
             self.cdc_start_time = input;
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-        /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
         /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-        /// <p>Checkpoint Example: --cdc-start-position
-        /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-        /// <note>
-        /// <p>When you use this task setting with a source PostgreSQL database, a logical
-        /// replication slot should already be created and associated with the source endpoint. You
-        /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-        /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for DMS</a>.</p>
+        /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+        /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
         /// </note>
         pub fn cdc_start_position(mut self, input: impl Into<std::string::String>) -> Self {
             self.cdc_start_position = Some(input.into());
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-        /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-        /// Specifying both values results in an error.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
         /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
         /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-        /// <p>Checkpoint Example: --cdc-start-position
-        /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-        /// <note>
-        /// <p>When you use this task setting with a source PostgreSQL database, a logical
-        /// replication slot should already be created and associated with the source endpoint. You
-        /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-        /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for DMS</a>.</p>
+        /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+        /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
         /// </note>
         pub fn set_cdc_start_position(
             mut self,
@@ -12087,16 +11169,14 @@ pub mod start_replication_task_input {
             self.cdc_start_position = input;
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-        /// either server time or commit time.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
         pub fn cdc_stop_position(mut self, input: impl Into<std::string::String>) -> Self {
             self.cdc_stop_position = Some(input.into());
             self
         }
-        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-        /// either server time or commit time.</p>
+        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
         /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
         /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
         pub fn set_cdc_stop_position(
@@ -12126,7 +11206,7 @@ pub mod start_replication_task_input {
 #[doc(hidden)]
 pub type StartReplicationTaskInputOperationOutputAlias = crate::operation::StartReplicationTask;
 #[doc(hidden)]
-pub type StartReplicationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartReplicationTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartReplicationTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartReplicationTask`](crate::operation::StartReplicationTask)>
     #[allow(clippy::let_and_return)]
@@ -12137,7 +11217,7 @@ impl StartReplicationTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartReplicationTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12224,7 +11304,7 @@ impl StartReplicationTaskInput {
             "StartReplicationTask",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12286,7 +11366,8 @@ pub mod start_replication_task_assessment_input {
 pub type StartReplicationTaskAssessmentInputOperationOutputAlias =
     crate::operation::StartReplicationTaskAssessment;
 #[doc(hidden)]
-pub type StartReplicationTaskAssessmentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartReplicationTaskAssessmentInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartReplicationTaskAssessmentInput {
     /// Consumes the builder and constructs an Operation<[`StartReplicationTaskAssessment`](crate::operation::StartReplicationTaskAssessment)>
     #[allow(clippy::let_and_return)]
@@ -12297,7 +11378,7 @@ impl StartReplicationTaskAssessmentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartReplicationTaskAssessment,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12383,7 +11464,7 @@ impl StartReplicationTaskAssessmentInput {
             "StartReplicationTaskAssessment",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12423,14 +11504,12 @@ pub mod start_replication_task_assessment_run_input {
         pub(crate) exclude: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration
-        /// assessment run that you want to start.</p>
+        /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
         pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_task_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration
-        /// assessment run that you want to start.</p>
+        /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
         pub fn set_replication_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12451,14 +11530,12 @@ pub mod start_replication_task_assessment_run_input {
             self.service_access_role_arn = input;
             self
         }
-        /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment
-        /// run.</p>
+        /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
         pub fn result_location_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.result_location_bucket = Some(input.into());
             self
         }
-        /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment
-        /// run.</p>
+        /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
         pub fn set_result_location_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12466,14 +11543,12 @@ pub mod start_replication_task_assessment_run_input {
             self.result_location_bucket = input;
             self
         }
-        /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment
-        /// run.</p>
+        /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
         pub fn result_location_folder(mut self, input: impl Into<std::string::String>) -> Self {
             self.result_location_folder = Some(input.into());
             self
         }
-        /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment
-        /// run.</p>
+        /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
         pub fn set_result_location_folder(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12481,41 +11556,19 @@ pub mod start_replication_task_assessment_run_input {
             self.result_location_folder = input;
             self
         }
-        /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If
-        /// you don't specify this request parameter, DMS stores the assessment run results
-        /// without encryption. You can specify one of the options following:</p>
+        /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this request parameter, DMS stores the assessment run results without encryption. You can specify one of the options following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"SSE_S3"</code> – The server-side encryption provided as a default by
-        /// Amazon S3.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption.
-        /// This encryption can use either a custom KMS encryption key that you specify or the
-        /// default KMS encryption key that DMS provides.</p>
-        /// </li>
+        /// <li> <p> <code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p> </li>
+        /// <li> <p> <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p> </li>
         /// </ul>
         pub fn result_encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.result_encryption_mode = Some(input.into());
             self
         }
-        /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If
-        /// you don't specify this request parameter, DMS stores the assessment run results
-        /// without encryption. You can specify one of the options following:</p>
+        /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this request parameter, DMS stores the assessment run results without encryption. You can specify one of the options following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"SSE_S3"</code> – The server-side encryption provided as a default by
-        /// Amazon S3.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption.
-        /// This encryption can use either a custom KMS encryption key that you specify or the
-        /// default KMS encryption key that DMS provides.</p>
-        /// </li>
+        /// <li> <p> <code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p> </li>
+        /// <li> <p> <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p> </li>
         /// </ul>
         pub fn set_result_encryption_mode(
             mut self,
@@ -12524,14 +11577,12 @@ pub mod start_replication_task_assessment_run_input {
             self.result_encryption_mode = input;
             self
         }
-        /// <p>ARN of a custom KMS encryption key that you specify when you set
-        /// <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
+        /// <p>ARN of a custom KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
         pub fn result_kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.result_kms_key_arn = Some(input.into());
             self
         }
-        /// <p>ARN of a custom KMS encryption key that you specify when you set
-        /// <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
+        /// <p>ARN of a custom KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
         pub fn set_result_kms_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12556,17 +11607,9 @@ pub mod start_replication_task_assessment_run_input {
         ///
         /// To override the contents of this collection use [`set_include_only`](Self::set_include_only).
         ///
-        /// <p>Space-separated list of names for specific individual assessments that you want to
-        /// include. These names come from the default list of individual assessments that DMS
-        /// supports for the associated migration task. This task is specified by
-        /// <code>ReplicationTaskArn</code>.</p>
-        /// <note>
-        /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for
-        /// <code>Exclude</code> in the API operation. </p>
-        /// <p>To identify the names of the default individual assessments that DMS
-        /// supports for the associated migration task, run the
-        /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
-        /// <code>ReplicationTaskArn</code> request parameter.</p>
+        /// <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+        /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>
+        /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
         /// </note>
         pub fn include_only(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.include_only.unwrap_or_default();
@@ -12574,17 +11617,9 @@ pub mod start_replication_task_assessment_run_input {
             self.include_only = Some(v);
             self
         }
-        /// <p>Space-separated list of names for specific individual assessments that you want to
-        /// include. These names come from the default list of individual assessments that DMS
-        /// supports for the associated migration task. This task is specified by
-        /// <code>ReplicationTaskArn</code>.</p>
-        /// <note>
-        /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for
-        /// <code>Exclude</code> in the API operation. </p>
-        /// <p>To identify the names of the default individual assessments that DMS
-        /// supports for the associated migration task, run the
-        /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
-        /// <code>ReplicationTaskArn</code> request parameter.</p>
+        /// <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+        /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>
+        /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
         /// </note>
         pub fn set_include_only(
             mut self,
@@ -12597,17 +11632,9 @@ pub mod start_replication_task_assessment_run_input {
         ///
         /// To override the contents of this collection use [`set_exclude`](Self::set_exclude).
         ///
-        /// <p>Space-separated list of names for specific individual assessments that you want to
-        /// exclude. These names come from the default list of individual assessments that DMS
-        /// supports for the associated migration task. This task is specified by
-        /// <code>ReplicationTaskArn</code>.</p>
-        /// <note>
-        /// <p>You can't set a value for <code>Exclude</code> if you also set a value for
-        /// <code>IncludeOnly</code> in the API operation.</p>
-        /// <p>To identify the names of the default individual assessments that DMS
-        /// supports for the associated migration task, run the
-        /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
-        /// <code>ReplicationTaskArn</code> request parameter.</p>
+        /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+        /// <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p>
+        /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
         /// </note>
         pub fn exclude(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclude.unwrap_or_default();
@@ -12615,17 +11642,9 @@ pub mod start_replication_task_assessment_run_input {
             self.exclude = Some(v);
             self
         }
-        /// <p>Space-separated list of names for specific individual assessments that you want to
-        /// exclude. These names come from the default list of individual assessments that DMS
-        /// supports for the associated migration task. This task is specified by
-        /// <code>ReplicationTaskArn</code>.</p>
-        /// <note>
-        /// <p>You can't set a value for <code>Exclude</code> if you also set a value for
-        /// <code>IncludeOnly</code> in the API operation.</p>
-        /// <p>To identify the names of the default individual assessments that DMS
-        /// supports for the associated migration task, run the
-        /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
-        /// <code>ReplicationTaskArn</code> request parameter.</p>
+        /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+        /// <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p>
+        /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
         /// </note>
         pub fn set_exclude(
             mut self,
@@ -12659,7 +11678,8 @@ pub mod start_replication_task_assessment_run_input {
 pub type StartReplicationTaskAssessmentRunInputOperationOutputAlias =
     crate::operation::StartReplicationTaskAssessmentRun;
 #[doc(hidden)]
-pub type StartReplicationTaskAssessmentRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartReplicationTaskAssessmentRunInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartReplicationTaskAssessmentRunInput {
     /// Consumes the builder and constructs an Operation<[`StartReplicationTaskAssessmentRun`](crate::operation::StartReplicationTaskAssessmentRun)>
     #[allow(clippy::let_and_return)]
@@ -12670,7 +11690,7 @@ impl StartReplicationTaskAssessmentRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartReplicationTaskAssessmentRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12756,7 +11776,7 @@ impl StartReplicationTaskAssessmentRunInput {
             "StartReplicationTaskAssessmentRun",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12817,7 +11837,7 @@ pub mod stop_replication_task_input {
 #[doc(hidden)]
 pub type StopReplicationTaskInputOperationOutputAlias = crate::operation::StopReplicationTask;
 #[doc(hidden)]
-pub type StopReplicationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopReplicationTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopReplicationTaskInput {
     /// Consumes the builder and constructs an Operation<[`StopReplicationTask`](crate::operation::StopReplicationTask)>
     #[allow(clippy::let_and_return)]
@@ -12828,7 +11848,7 @@ impl StopReplicationTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopReplicationTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12913,7 +11933,7 @@ impl StopReplicationTaskInput {
             "StopReplicationTask",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12986,7 +12006,7 @@ pub mod test_connection_input {
 #[doc(hidden)]
 pub type TestConnectionInputOperationOutputAlias = crate::operation::TestConnection;
 #[doc(hidden)]
-pub type TestConnectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TestConnectionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TestConnectionInput {
     /// Consumes the builder and constructs an Operation<[`TestConnection`](crate::operation::TestConnection)>
     #[allow(clippy::let_and_return)]
@@ -12997,7 +12017,7 @@ impl TestConnectionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestConnection,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13082,7 +12102,7 @@ impl TestConnectionInput {
             "TestConnection",
             "databasemigrationservice",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13158,69 +12178,37 @@ impl std::fmt::Debug for StopReplicationTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReplicationTaskAssessmentRunInput {
-    /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration
-    /// assessment run that you want to start.</p>
+    /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code> action.</p>
     pub service_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment
-    /// run.</p>
+    /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
     pub result_location_bucket: std::option::Option<std::string::String>,
-    /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment
-    /// run.</p>
+    /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
     pub result_location_folder: std::option::Option<std::string::String>,
-    /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If
-    /// you don't specify this request parameter, DMS stores the assessment run results
-    /// without encryption. You can specify one of the options following:</p>
+    /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this request parameter, DMS stores the assessment run results without encryption. You can specify one of the options following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>"SSE_S3"</code> – The server-side encryption provided as a default by
-    /// Amazon S3.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption.
-    /// This encryption can use either a custom KMS encryption key that you specify or the
-    /// default KMS encryption key that DMS provides.</p>
-    /// </li>
+    /// <li> <p> <code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p> </li>
+    /// <li> <p> <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p> </li>
     /// </ul>
     pub result_encryption_mode: std::option::Option<std::string::String>,
-    /// <p>ARN of a custom KMS encryption key that you specify when you set
-    /// <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
+    /// <p>ARN of a custom KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
     pub result_kms_key_arn: std::option::Option<std::string::String>,
     /// <p>Unique name to identify the assessment run.</p>
     pub assessment_run_name: std::option::Option<std::string::String>,
-    /// <p>Space-separated list of names for specific individual assessments that you want to
-    /// include. These names come from the default list of individual assessments that DMS
-    /// supports for the associated migration task. This task is specified by
-    /// <code>ReplicationTaskArn</code>.</p>
-    /// <note>
-    /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for
-    /// <code>Exclude</code> in the API operation. </p>
-    /// <p>To identify the names of the default individual assessments that DMS
-    /// supports for the associated migration task, run the
-    /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
-    /// <code>ReplicationTaskArn</code> request parameter.</p>
+    /// <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+    /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>
+    /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
     pub include_only: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Space-separated list of names for specific individual assessments that you want to
-    /// exclude. These names come from the default list of individual assessments that DMS
-    /// supports for the associated migration task. This task is specified by
-    /// <code>ReplicationTaskArn</code>.</p>
-    /// <note>
-    /// <p>You can't set a value for <code>Exclude</code> if you also set a value for
-    /// <code>IncludeOnly</code> in the API operation.</p>
-    /// <p>To identify the names of the default individual assessments that DMS
-    /// supports for the associated migration task, run the
-    /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
-    /// <code>ReplicationTaskArn</code> request parameter.</p>
+    /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+    /// <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p>
+    /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
     pub exclude: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartReplicationTaskAssessmentRunInput {
-    /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration
-    /// assessment run that you want to start.</p>
+    /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
     pub fn replication_task_arn(&self) -> std::option::Option<&str> {
         self.replication_task_arn.as_deref()
     }
@@ -13228,37 +12216,23 @@ impl StartReplicationTaskAssessmentRunInput {
     pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
         self.service_access_role_arn.as_deref()
     }
-    /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment
-    /// run.</p>
+    /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
     pub fn result_location_bucket(&self) -> std::option::Option<&str> {
         self.result_location_bucket.as_deref()
     }
-    /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment
-    /// run.</p>
+    /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
     pub fn result_location_folder(&self) -> std::option::Option<&str> {
         self.result_location_folder.as_deref()
     }
-    /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If
-    /// you don't specify this request parameter, DMS stores the assessment run results
-    /// without encryption. You can specify one of the options following:</p>
+    /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this request parameter, DMS stores the assessment run results without encryption. You can specify one of the options following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>"SSE_S3"</code> – The server-side encryption provided as a default by
-    /// Amazon S3.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption.
-    /// This encryption can use either a custom KMS encryption key that you specify or the
-    /// default KMS encryption key that DMS provides.</p>
-    /// </li>
+    /// <li> <p> <code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p> </li>
+    /// <li> <p> <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p> </li>
     /// </ul>
     pub fn result_encryption_mode(&self) -> std::option::Option<&str> {
         self.result_encryption_mode.as_deref()
     }
-    /// <p>ARN of a custom KMS encryption key that you specify when you set
-    /// <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
+    /// <p>ARN of a custom KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
     pub fn result_kms_key_arn(&self) -> std::option::Option<&str> {
         self.result_kms_key_arn.as_deref()
     }
@@ -13266,32 +12240,16 @@ impl StartReplicationTaskAssessmentRunInput {
     pub fn assessment_run_name(&self) -> std::option::Option<&str> {
         self.assessment_run_name.as_deref()
     }
-    /// <p>Space-separated list of names for specific individual assessments that you want to
-    /// include. These names come from the default list of individual assessments that DMS
-    /// supports for the associated migration task. This task is specified by
-    /// <code>ReplicationTaskArn</code>.</p>
-    /// <note>
-    /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for
-    /// <code>Exclude</code> in the API operation. </p>
-    /// <p>To identify the names of the default individual assessments that DMS
-    /// supports for the associated migration task, run the
-    /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
-    /// <code>ReplicationTaskArn</code> request parameter.</p>
+    /// <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+    /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>
+    /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
     pub fn include_only(&self) -> std::option::Option<&[std::string::String]> {
         self.include_only.as_deref()
     }
-    /// <p>Space-separated list of names for specific individual assessments that you want to
-    /// exclude. These names come from the default list of individual assessments that DMS
-    /// supports for the associated migration task. This task is specified by
-    /// <code>ReplicationTaskArn</code>.</p>
-    /// <note>
-    /// <p>You can't set a value for <code>Exclude</code> if you also set a value for
-    /// <code>IncludeOnly</code> in the API operation.</p>
-    /// <p>To identify the names of the default individual assessments that DMS
-    /// supports for the associated migration task, run the
-    /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
-    /// <code>ReplicationTaskArn</code> request parameter.</p>
+    /// <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>
+    /// <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p>
+    /// <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>
     /// </note>
     pub fn exclude(&self) -> std::option::Option<&[std::string::String]> {
         self.exclude.as_deref()
@@ -13341,37 +12299,22 @@ pub struct StartReplicationTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task to be started.</p>
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>The type of replication task to start.</p>
-    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-    /// for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart
-    /// the task and <code>resume-processing</code> to resume the task.</p>
-    /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
-    /// the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for
-    /// a task with migration type of <code>cdc</code>.</p>
+    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task and <code>resume-processing</code> to resume the task.</p>
+    /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task with migration type of <code>cdc</code>.</p>
     pub start_replication_task_type:
         std::option::Option<crate::model::StartReplicationTaskTypeValue>,
-    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-    /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-    /// Specifying both values results in an error.</p>
+    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
     pub cdc_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-    /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-    /// Specifying both values results in an error.</p>
+    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-    /// <p>Checkpoint Example: --cdc-start-position
-    /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-    /// <note>
-    /// <p>When you use this task setting with a source PostgreSQL database, a logical
-    /// replication slot should already be created and associated with the source endpoint. You
-    /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-    /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-    /// for DMS</a>.</p>
+    /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+    /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub cdc_start_position: std::option::Option<std::string::String>,
-    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-    /// either server time or commit time.</p>
+    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
     pub cdc_stop_position: std::option::Option<std::string::String>,
@@ -13382,44 +12325,29 @@ impl StartReplicationTaskInput {
         self.replication_task_arn.as_deref()
     }
     /// <p>The type of replication task to start.</p>
-    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
-    /// for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart
-    /// the task and <code>resume-processing</code> to resume the task.</p>
-    /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart
-    /// the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for
-    /// a task with migration type of <code>cdc</code>.</p>
+    /// <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task and <code>resume-processing</code> to resume the task.</p>
+    /// <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task with migration type of <code>cdc</code>.</p>
     pub fn start_replication_task_type(
         &self,
     ) -> std::option::Option<&crate::model::StartReplicationTaskTypeValue> {
         self.start_replication_task_type.as_ref()
     }
-    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-    /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-    /// Specifying both values results in an error.</p>
+    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
     pub fn cdc_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cdc_start_time.as_ref()
     }
-    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-    /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-    /// Specifying both values results in an error.</p>
+    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-    /// <p>Checkpoint Example: --cdc-start-position
-    /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-    /// <note>
-    /// <p>When you use this task setting with a source PostgreSQL database, a logical
-    /// replication slot should already be created and associated with the source endpoint. You
-    /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-    /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-    /// for DMS</a>.</p>
+    /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+    /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub fn cdc_start_position(&self) -> std::option::Option<&str> {
         self.cdc_start_position.as_deref()
     }
-    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-    /// either server time or commit time.</p>
+    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
     pub fn cdc_stop_position(&self) -> std::option::Option<&str> {
@@ -13477,9 +12405,7 @@ pub struct ReloadTablesInput {
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>The name and schema of the table to be reloaded. </p>
     pub tables_to_reload: std::option::Option<std::vec::Vec<crate::model::TableToReload>>,
-    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate
-    /// it if validation is enabled. Specify <code>validate-only</code> to re-validate the table.
-    /// This option applies only when validation is enabled for the task. </p>
+    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
     /// <p>Valid values: data-reload, validate-only</p>
     /// <p>Default value is data-reload.</p>
     pub reload_option: std::option::Option<crate::model::ReloadOptionValue>,
@@ -13493,9 +12419,7 @@ impl ReloadTablesInput {
     pub fn tables_to_reload(&self) -> std::option::Option<&[crate::model::TableToReload]> {
         self.tables_to_reload.as_deref()
     }
-    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate
-    /// it if validation is enabled. Specify <code>validate-only</code> to re-validate the table.
-    /// This option applies only when validation is enabled for the task. </p>
+    /// <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>
     /// <p>Valid values: data-reload, validate-only</p>
     /// <p>Default value is data-reload.</p>
     pub fn reload_option(&self) -> std::option::Option<&crate::model::ReloadOptionValue> {
@@ -13546,14 +12470,9 @@ impl std::fmt::Debug for RefreshSchemasInput {
 pub struct RebootReplicationInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub replication_instance_arn: std::option::Option<std::string::String>,
-    /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ
-    /// failover. If the instance isn't configured for Multi-AZ, then you can't specify
-    /// <code>true</code>.  ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+    /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ failover. If the instance isn't configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
     pub force_failover: std::option::Option<bool>,
-    /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover
-    /// where resources are released and cleaned up prior to conducting the failover.
-    /// If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>.
-    /// ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+    /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover where resources are released and cleaned up prior to conducting the failover. If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
     pub force_planned_failover: std::option::Option<bool>,
 }
 impl RebootReplicationInstanceInput {
@@ -13561,16 +12480,11 @@ impl RebootReplicationInstanceInput {
     pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
         self.replication_instance_arn.as_deref()
     }
-    /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ
-    /// failover. If the instance isn't configured for Multi-AZ, then you can't specify
-    /// <code>true</code>.  ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+    /// <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ failover. If the instance isn't configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
     pub fn force_failover(&self) -> std::option::Option<bool> {
         self.force_failover
     }
-    /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover
-    /// where resources are released and cleaned up prior to conducting the failover.
-    /// If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>.
-    /// ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
+    /// <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover where resources are released and cleaned up prior to conducting the failover. If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
     pub fn force_planned_failover(&self) -> std::option::Option<bool> {
         self.force_planned_failover
     }
@@ -13625,58 +12539,33 @@ pub struct ModifyReplicationTaskInput {
     /// <p>The replication task identifier.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
-    /// </li>
-    /// <li>
-    /// <p>First character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-    /// </li>
+    /// <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub replication_task_identifier: std::option::Option<std::string::String>,
-    /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
-    /// </p>
+    /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
     pub migration_type: std::option::Option<crate::model::MigrationTypeValue>,
-    /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the
-    /// table mappings. Precede the path with <code>file://</code>.  For example,
-    /// <code>--table-mappings file://mappingfile.json</code>. When working with the DMS  API,
-    /// provide the JSON as the parameter value.
-    /// </p>
+    /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as the parameter value. </p>
     pub table_mappings: std::option::Option<std::string::String>,
     /// <p>JSON file that contains settings for the task, such as task metadata settings.</p>
     pub replication_task_settings: std::option::Option<std::string::String>,
-    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-    /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-    /// Specifying both values results in an error.</p>
+    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
     pub cdc_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-    /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-    /// Specifying both values results in an error.</p>
+    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-    /// <p>Checkpoint Example: --cdc-start-position
-    /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-    /// <note>
-    /// <p>When you use this task setting with a source PostgreSQL database, a logical
-    /// replication slot should already be created and associated with the source endpoint. You
-    /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-    /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-    /// for DMS</a>.</p>
+    /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+    /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub cdc_start_position: std::option::Option<std::string::String>,
-    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-    /// either server time or commit time.</p>
+    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
     pub cdc_stop_position: std::option::Option<std::string::String>,
-    /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
-    /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub task_data: std::option::Option<std::string::String>,
 }
 impl ModifyReplicationTaskInput {
@@ -13687,29 +12576,18 @@ impl ModifyReplicationTaskInput {
     /// <p>The replication task identifier.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
-    /// </li>
-    /// <li>
-    /// <p>First character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-    /// </li>
+    /// <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn replication_task_identifier(&self) -> std::option::Option<&str> {
         self.replication_task_identifier.as_deref()
     }
-    /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
-    /// </p>
+    /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
     pub fn migration_type(&self) -> std::option::Option<&crate::model::MigrationTypeValue> {
         self.migration_type.as_ref()
     }
-    /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the
-    /// table mappings. Precede the path with <code>file://</code>.  For example,
-    /// <code>--table-mappings file://mappingfile.json</code>. When working with the DMS  API,
-    /// provide the JSON as the parameter value.
-    /// </p>
+    /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as the parameter value. </p>
     pub fn table_mappings(&self) -> std::option::Option<&str> {
         self.table_mappings.as_deref()
     }
@@ -13717,42 +12595,28 @@ impl ModifyReplicationTaskInput {
     pub fn replication_task_settings(&self) -> std::option::Option<&str> {
         self.replication_task_settings.as_deref()
     }
-    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-    /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-    /// Specifying both values results in an error.</p>
+    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
     pub fn cdc_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cdc_start_time.as_ref()
     }
-    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-    /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-    /// Specifying both values results in an error.</p>
+    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-    /// <p>Checkpoint Example: --cdc-start-position
-    /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-    /// <note>
-    /// <p>When you use this task setting with a source PostgreSQL database, a logical
-    /// replication slot should already be created and associated with the source endpoint. You
-    /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-    /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-    /// for DMS</a>.</p>
+    /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+    /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub fn cdc_start_position(&self) -> std::option::Option<&str> {
         self.cdc_start_position.as_deref()
     }
-    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-    /// either server time or commit time.</p>
+    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
     pub fn cdc_stop_position(&self) -> std::option::Option<&str> {
         self.cdc_stop_position.as_deref()
     }
-    /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
-    /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn task_data(&self) -> std::option::Option<&str> {
         self.task_data.as_deref()
     }
@@ -13823,65 +12687,38 @@ impl std::fmt::Debug for ModifyReplicationSubnetGroupInput {
 pub struct ModifyReplicationInstanceInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub replication_instance_arn: std::option::Option<std::string::String>,
-    /// <p>The amount of storage (in gigabytes) to be allocated for the replication
-    /// instance.</p>
+    /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
     pub allocated_storage: std::option::Option<i32>,
-    /// <p>Indicates whether the changes should be applied immediately or during the next
-    /// maintenance window.</p>
+    /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
     pub apply_immediately: bool,
-    /// <p>The compute and memory capacity of the replication instance as defined for the specified
-    /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see
-    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-    /// Selecting the right DMS replication instance for your migration</a>.
-    /// </p>
+    /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub replication_instance_class: std::option::Option<std::string::String>,
-    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
-    /// security group must work with the VPC containing the replication instance. </p>
+    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might
-    /// result in an outage. Changing this parameter does not result in an outage, except in the
-    /// following situation, and the change is asynchronously applied as soon as possible. If
-    /// moving this window to the current time, there must be at least 30 minutes between the
-    /// current time and end of the window to ensure pending changes are applied.</p>
+    /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
     /// <p>Default: Uses existing setting</p>
     /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes</p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
-    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
-    /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
-    /// <code>true</code>. </p>
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub multi_az: std::option::Option<bool>,
     /// <p>The engine version number of the replication instance.</p>
-    /// <p>When modifying a major engine version of an instance, also set
-    /// <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
+    /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
     pub engine_version: std::option::Option<std::string::String>,
-    /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not
-    /// result in an outage, and the change is asynchronously applied as soon as possible.</p>
-    /// <p>This parameter must be set to <code>true</code> when specifying a value for the
-    /// <code>EngineVersion</code> parameter that is a different major version than the
-    /// replication instance's current version.</p>
+    /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
+    /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
     pub allow_major_version_upgrade: bool,
-    /// <p>A value that indicates that minor version upgrades are applied automatically to the
-    /// replication instance during the maintenance window. Changing this parameter doesn't result
-    /// in an outage, except in the case described following. The change is asynchronously applied
-    /// as soon as possible. </p>
+    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
     /// <p>An outage does result if these factors apply: </p>
     /// <ul>
-    /// <li>
-    /// <p>This parameter is set to <code>true</code> during the maintenance window.</p>
-    /// </li>
-    /// <li>
-    /// <p>A newer minor version is available. </p>
-    /// </li>
-    /// <li>
-    /// <p>DMS has enabled automatic patching for the given engine version. </p>
-    /// </li>
+    /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>
+    /// <li> <p>A newer minor version is available. </p> </li>
+    /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
     /// </ul>
     pub auto_minor_version_upgrade: std::option::Option<bool>,
-    /// <p>The replication instance identifier. This parameter is stored as a lowercase
-    /// string.</p>
+    /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
     pub replication_instance_identifier: std::option::Option<std::string::String>,
 }
 impl ModifyReplicationInstanceInput {
@@ -13889,35 +12726,24 @@ impl ModifyReplicationInstanceInput {
     pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
         self.replication_instance_arn.as_deref()
     }
-    /// <p>The amount of storage (in gigabytes) to be allocated for the replication
-    /// instance.</p>
+    /// <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
     pub fn allocated_storage(&self) -> std::option::Option<i32> {
         self.allocated_storage
     }
-    /// <p>Indicates whether the changes should be applied immediately or during the next
-    /// maintenance window.</p>
+    /// <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
     pub fn apply_immediately(&self) -> bool {
         self.apply_immediately
     }
-    /// <p>The compute and memory capacity of the replication instance as defined for the specified
-    /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see
-    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-    /// Selecting the right DMS replication instance for your migration</a>.
-    /// </p>
+    /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn replication_instance_class(&self) -> std::option::Option<&str> {
         self.replication_instance_class.as_deref()
     }
-    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
-    /// security group must work with the VPC containing the replication instance. </p>
+    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
     pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
-    /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might
-    /// result in an outage. Changing this parameter does not result in an outage, except in the
-    /// following situation, and the change is asynchronously applied as soon as possible. If
-    /// moving this window to the current time, there must be at least 30 minutes between the
-    /// current time and end of the window to ensure pending changes are applied.</p>
+    /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
     /// <p>Default: Uses existing setting</p>
     /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
@@ -13925,47 +12751,31 @@ impl ModifyReplicationInstanceInput {
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
-    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
-    /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
-    /// <code>true</code>. </p>
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub fn multi_az(&self) -> std::option::Option<bool> {
         self.multi_az
     }
     /// <p>The engine version number of the replication instance.</p>
-    /// <p>When modifying a major engine version of an instance, also set
-    /// <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
+    /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not
-    /// result in an outage, and the change is asynchronously applied as soon as possible.</p>
-    /// <p>This parameter must be set to <code>true</code> when specifying a value for the
-    /// <code>EngineVersion</code> parameter that is a different major version than the
-    /// replication instance's current version.</p>
+    /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
+    /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
     pub fn allow_major_version_upgrade(&self) -> bool {
         self.allow_major_version_upgrade
     }
-    /// <p>A value that indicates that minor version upgrades are applied automatically to the
-    /// replication instance during the maintenance window. Changing this parameter doesn't result
-    /// in an outage, except in the case described following. The change is asynchronously applied
-    /// as soon as possible. </p>
+    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
     /// <p>An outage does result if these factors apply: </p>
     /// <ul>
-    /// <li>
-    /// <p>This parameter is set to <code>true</code> during the maintenance window.</p>
-    /// </li>
-    /// <li>
-    /// <p>A newer minor version is available. </p>
-    /// </li>
-    /// <li>
-    /// <p>DMS has enabled automatic patching for the given engine version. </p>
-    /// </li>
+    /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>
+    /// <li> <p>A newer minor version is available. </p> </li>
+    /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
     /// </ul>
     pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
-    /// <p>The replication instance identifier. This parameter is stored as a lowercase
-    /// string.</p>
+    /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
     pub fn replication_instance_identifier(&self) -> std::option::Option<&str> {
         self.replication_instance_identifier.as_deref()
     }
@@ -14009,17 +12819,14 @@ impl std::fmt::Debug for ModifyReplicationInstanceInput {
 pub struct ModifyEventSubscriptionInput {
     /// <p>The name of the DMS event notification subscription to be modified.</p>
     pub subscription_name: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
-    /// The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub source_type: std::option::Option<std::string::String>,
-    /// <p> A list of event categories for a source type that you want to subscribe to. Use the
-    /// <code>DescribeEventCategories</code> action to see a list of event categories. </p>
+    /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> A Boolean value; set to <b>true</b> to activate the
-    /// subscription. </p>
+    /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
     pub enabled: std::option::Option<bool>,
 }
 impl ModifyEventSubscriptionInput {
@@ -14027,8 +12834,7 @@ impl ModifyEventSubscriptionInput {
     pub fn subscription_name(&self) -> std::option::Option<&str> {
         self.subscription_name.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
-    /// The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
@@ -14037,13 +12843,11 @@ impl ModifyEventSubscriptionInput {
     pub fn source_type(&self) -> std::option::Option<&str> {
         self.source_type.as_deref()
     }
-    /// <p> A list of event categories for a source type that you want to subscribe to. Use the
-    /// <code>DescribeEventCategories</code> action to see a list of event categories. </p>
+    /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
     pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
         self.event_categories.as_deref()
     }
-    /// <p> A Boolean value; set to <b>true</b> to activate the
-    /// subscription. </p>
+    /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
@@ -14066,20 +12870,11 @@ impl std::fmt::Debug for ModifyEventSubscriptionInput {
 pub struct ModifyEndpointInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
-    /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
-    /// only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two
-    /// consecutive hyphens.</p>
+    /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
     pub endpoint_identifier: std::option::Option<std::string::String>,
-    /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
+    /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
     pub endpoint_type: std::option::Option<crate::model::ReplicationEndpointTypeValue>,
-    /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType,
-    /// include
-    /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-    /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
-    /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
-    /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-    /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-    /// <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+    /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
     pub engine_name: std::option::Option<std::string::String>,
     /// <p>The user name to be used to login to the endpoint database.</p>
     pub username: std::option::Option<std::string::String>,
@@ -14091,146 +12886,65 @@ pub struct ModifyEndpointInput {
     pub port: std::option::Option<i32>,
     /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>Additional attributes associated with the connection. To reset this parameter, pass the
-    /// empty string ("") as an argument.</p>
+    /// <p>Additional attributes associated with the connection. To reset this parameter, pass the empty string ("") as an argument.</p>
     pub extra_connection_attributes: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
-    /// <p>The SSL mode used to connect to the endpoint.  The default value is <code>none</code>.</p>
+    /// <p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>
     pub ssl_mode: std::option::Option<crate::model::DmsSslModeValue>,
-    /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify
-    /// the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+    /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
     pub service_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The external table definition.</p>
     pub external_table_definition: std::option::Option<std::string::String>,
-    /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
-    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
-    /// Data to DynamoDB</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub dynamo_db_settings: std::option::Option<crate::model::DynamoDbSettings>,
-    /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
-    /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-    /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub s3_settings: std::option::Option<crate::model::S3Settings>,
     /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
     /// <p>Attributes include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    /// </li>
-    /// <li>
-    /// <p>BucketName - The name of the S3 bucket to use.</p>
-    /// </li>
+    /// <li> <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p> </li>
+    /// <li> <p>BucketName - The name of the S3 bucket to use.</p> </li>
     /// </ul>
-    /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string
-    /// ,BucketName=string</code>
-    /// </p>
-    /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-    /// "BucketName": "string"} </code>
-    /// </p>
+    /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string ,BucketName=string</code> </p>
+    /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code> </p>
     pub dms_transfer_settings: std::option::Option<crate::model::DmsTransferSettings>,
-    /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
-    /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
-    /// when using MongoDB as a source for Database Migration Service</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub mongo_db_settings: std::option::Option<crate::model::MongoDbSettings>,
-    /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-    /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
-    /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub kinesis_settings: std::option::Option<crate::model::KinesisSettings>,
-    /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
-    /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
-    /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub kafka_settings: std::option::Option<crate::model::KafkaSettings>,
-    /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
-    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
-    /// the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub elasticsearch_settings: std::option::Option<crate::model::ElasticsearchSettings>,
-    /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information
-    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
-    /// in the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub neptune_settings: std::option::Option<crate::model::NeptuneSettings>,
     /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
     pub redshift_settings: std::option::Option<crate::model::RedshiftSettings>,
-    /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
-    /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
-    /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
-    /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub postgre_sql_settings: std::option::Option<crate::model::PostgreSqlSettings>,
-    /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
-    /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection
-    /// attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra
-    /// connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub my_sql_settings: std::option::Option<crate::model::MySqlSettings>,
-    /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
-    /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection
-    /// attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
-    /// Extra connection attributes when using Oracle as a target for DMS</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub oracle_settings: std::option::Option<crate::model::OracleSettings>,
-    /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
-    /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
-    /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
-    /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
-    /// User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub sybase_settings: std::option::Option<crate::model::SybaseSettings>,
-    /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-    /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
-    /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
-    /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub microsoft_sql_server_settings:
         std::option::Option<crate::model::MicrosoftSqlServerSettings>,
-    /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
-    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
-    /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
-    /// User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub ibm_db2_settings: std::option::Option<crate::model::IbmDb2Settings>,
-    /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the
-    /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service
-    /// </a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service </a> in the <i>Database Migration Service User Guide.</i> </p>
     pub doc_db_settings: std::option::Option<crate::model::DocDbSettings>,
     /// <p>Settings in JSON format for the Redis target endpoint.</p>
     pub redis_settings: std::option::Option<crate::model::RedisSettings>,
-    /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all
-    /// existing endpoint settings with the exact settings that you specify in this call. If this
-    /// attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
+    /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all existing endpoint settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
     /// <ul>
-    /// <li>
-    /// <p>It replaces any endpoint settings that already exist with new values, for settings with the
-    /// same names.</p>
-    /// </li>
-    /// <li>
-    /// <p>It creates new endpoint settings that you specify in the call, for settings with different
-    /// names. </p>
-    /// </li>
+    /// <li> <p>It replaces any endpoint settings that already exist with new values, for settings with the same names.</p> </li>
+    /// <li> <p>It creates new endpoint settings that you specify in the call, for settings with different names. </p> </li>
     /// </ul>
-    /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}'
-    /// ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If
-    /// you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the
-    /// same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
-    /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ...
-    /// --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again.
-    /// Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings
-    /// are replaced with the exact settings that you specify. </p>
+    /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}' ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
+    /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ... --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again. Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings are replaced with the exact settings that you specify. </p>
     pub exact_settings: std::option::Option<bool>,
     /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
     pub gcp_my_sql_settings: std::option::Option<crate::model::GcpMySqlSettings>,
@@ -14240,26 +12954,17 @@ impl ModifyEndpointInput {
     pub fn endpoint_arn(&self) -> std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
-    /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
-    /// only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two
-    /// consecutive hyphens.</p>
+    /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn endpoint_identifier(&self) -> std::option::Option<&str> {
         self.endpoint_identifier.as_deref()
     }
-    /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
+    /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
     pub fn endpoint_type(
         &self,
     ) -> std::option::Option<&crate::model::ReplicationEndpointTypeValue> {
         self.endpoint_type.as_ref()
     }
-    /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType,
-    /// include
-    /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-    /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
-    /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
-    /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-    /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-    /// <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+    /// <p>The type of engine for the endpoint. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
     pub fn engine_name(&self) -> std::option::Option<&str> {
         self.engine_name.as_deref()
     }
@@ -14283,8 +12988,7 @@ impl ModifyEndpointInput {
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>Additional attributes associated with the connection. To reset this parameter, pass the
-    /// empty string ("") as an argument.</p>
+    /// <p>Additional attributes associated with the connection. To reset this parameter, pass the empty string ("") as an argument.</p>
     pub fn extra_connection_attributes(&self) -> std::option::Option<&str> {
         self.extra_connection_attributes.as_deref()
     }
@@ -14292,12 +12996,11 @@ impl ModifyEndpointInput {
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>The SSL mode used to connect to the endpoint.  The default value is <code>none</code>.</p>
+    /// <p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>
     pub fn ssl_mode(&self) -> std::option::Option<&crate::model::DmsSslModeValue> {
         self.ssl_mode.as_ref()
     }
-    /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify
-    /// the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+    /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
         self.service_access_role_arn.as_deref()
     }
@@ -14305,76 +13008,44 @@ impl ModifyEndpointInput {
     pub fn external_table_definition(&self) -> std::option::Option<&str> {
         self.external_table_definition.as_deref()
     }
-    /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
-    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
-    /// Data to DynamoDB</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn dynamo_db_settings(&self) -> std::option::Option<&crate::model::DynamoDbSettings> {
         self.dynamo_db_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
-    /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-    /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn s3_settings(&self) -> std::option::Option<&crate::model::S3Settings> {
         self.s3_settings.as_ref()
     }
     /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
     /// <p>Attributes include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    /// </li>
-    /// <li>
-    /// <p>BucketName - The name of the S3 bucket to use.</p>
-    /// </li>
+    /// <li> <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p> </li>
+    /// <li> <p>BucketName - The name of the S3 bucket to use.</p> </li>
     /// </ul>
-    /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string
-    /// ,BucketName=string</code>
-    /// </p>
-    /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-    /// "BucketName": "string"} </code>
-    /// </p>
+    /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string ,BucketName=string</code> </p>
+    /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code> </p>
     pub fn dms_transfer_settings(&self) -> std::option::Option<&crate::model::DmsTransferSettings> {
         self.dms_transfer_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
-    /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
-    /// when using MongoDB as a source for Database Migration Service</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn mongo_db_settings(&self) -> std::option::Option<&crate::model::MongoDbSettings> {
         self.mongo_db_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-    /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
-    /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn kinesis_settings(&self) -> std::option::Option<&crate::model::KinesisSettings> {
         self.kinesis_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
-    /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
-    /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn kafka_settings(&self) -> std::option::Option<&crate::model::KafkaSettings> {
         self.kafka_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
-    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
-    /// the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn elasticsearch_settings(
         &self,
     ) -> std::option::Option<&crate::model::ElasticsearchSettings> {
         self.elasticsearch_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information
-    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
-    /// in the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn neptune_settings(&self) -> std::option::Option<&crate::model::NeptuneSettings> {
         self.neptune_settings.as_ref()
     }
@@ -14382,66 +13053,33 @@ impl ModifyEndpointInput {
     pub fn redshift_settings(&self) -> std::option::Option<&crate::model::RedshiftSettings> {
         self.redshift_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
-    /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
-    /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
-    /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn postgre_sql_settings(&self) -> std::option::Option<&crate::model::PostgreSqlSettings> {
         self.postgre_sql_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
-    /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection
-    /// attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra
-    /// connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn my_sql_settings(&self) -> std::option::Option<&crate::model::MySqlSettings> {
         self.my_sql_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
-    /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection
-    /// attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
-    /// Extra connection attributes when using Oracle as a target for DMS</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn oracle_settings(&self) -> std::option::Option<&crate::model::OracleSettings> {
         self.oracle_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
-    /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
-    /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
-    /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
-    /// User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn sybase_settings(&self) -> std::option::Option<&crate::model::SybaseSettings> {
         self.sybase_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-    /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
-    /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
-    /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn microsoft_sql_server_settings(
         &self,
     ) -> std::option::Option<&crate::model::MicrosoftSqlServerSettings> {
         self.microsoft_sql_server_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
-    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
-    /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
-    /// User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn ibm_db2_settings(&self) -> std::option::Option<&crate::model::IbmDb2Settings> {
         self.ibm_db2_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the
-    /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service
-    /// </a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service </a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn doc_db_settings(&self) -> std::option::Option<&crate::model::DocDbSettings> {
         self.doc_db_settings.as_ref()
     }
@@ -14449,27 +13087,13 @@ impl ModifyEndpointInput {
     pub fn redis_settings(&self) -> std::option::Option<&crate::model::RedisSettings> {
         self.redis_settings.as_ref()
     }
-    /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all
-    /// existing endpoint settings with the exact settings that you specify in this call. If this
-    /// attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
+    /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all existing endpoint settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
     /// <ul>
-    /// <li>
-    /// <p>It replaces any endpoint settings that already exist with new values, for settings with the
-    /// same names.</p>
-    /// </li>
-    /// <li>
-    /// <p>It creates new endpoint settings that you specify in the call, for settings with different
-    /// names. </p>
-    /// </li>
+    /// <li> <p>It replaces any endpoint settings that already exist with new values, for settings with the same names.</p> </li>
+    /// <li> <p>It creates new endpoint settings that you specify in the call, for settings with different names. </p> </li>
     /// </ul>
-    /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}'
-    /// ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If
-    /// you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the
-    /// same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
-    /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ...
-    /// --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again.
-    /// Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings
-    /// are replaced with the exact settings that you specify. </p>
+    /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}' ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
+    /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ... --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again. Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings are replaced with the exact settings that you specify. </p>
     pub fn exact_settings(&self) -> std::option::Option<bool> {
         self.exact_settings
     }
@@ -14528,27 +13152,17 @@ impl std::fmt::Debug for ModifyEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to
-    /// list tags for. This returns a list of keys (names of tags) created for the resource and
-    /// their associated tag values.</p>
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to list tags for. This returns a list of keys (names of tags) created for the resource and their associated tag values.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This
-    /// returns a list of keys (tag names) and their associated tag values. It also returns each
-    /// tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which
-    /// each listed tag is created. </p>
+    /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This returns a list of keys (tag names) and their associated tag values. It also returns each tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which each listed tag is created. </p>
     pub resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to
-    /// list tags for. This returns a list of keys (names of tags) created for the resource and
-    /// their associated tag values.</p>
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to list tags for. This returns a list of keys (names of tags) created for the resource and their associated tag values.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This
-    /// returns a list of keys (tag names) and their associated tag values. It also returns each
-    /// tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which
-    /// each listed tag is created. </p>
+    /// <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This returns a list of keys (tag names) and their associated tag values. It also returns each tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which each listed tag is created. </p>
     pub fn resource_arn_list(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arn_list.as_deref()
     }
@@ -14566,24 +13180,18 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCertificateInput {
-    /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and
-    /// must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
-    /// contain two consecutive hyphens.</p>
+    /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
     pub certificate_identifier: std::option::Option<std::string::String>,
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     pub certificate_pem: std::option::Option<std::string::String>,
-    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
-    /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
-    /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
-    /// </p>
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
+    /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
     pub certificate_wallet: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The tags associated with the certificate.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ImportCertificateInput {
-    /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and
-    /// must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
-    /// contain two consecutive hyphens.</p>
+    /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn certificate_identifier(&self) -> std::option::Option<&str> {
         self.certificate_identifier.as_deref()
     }
@@ -14591,10 +13199,8 @@ impl ImportCertificateInput {
     pub fn certificate_pem(&self) -> std::option::Option<&str> {
         self.certificate_pem.as_deref()
     }
-    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
-    /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
-    /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
-    /// </p>
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
+    /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
     pub fn certificate_wallet(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.certificate_wallet.as_ref()
     }
@@ -14620,20 +13226,15 @@ impl std::fmt::Debug for ImportCertificateInput {
 pub struct DescribeTableStatisticsInput {
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub replication_task_arn: std::option::Option<std::string::String>,
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 500.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Filters applied to table statistics.</p>
     /// <p>Valid filter names: schema-name | table-name | table-state</p>
-    /// <p>A combination of filters creates an AND condition where each record matches all
-    /// specified filters.</p>
+    /// <p>A combination of filters creates an AND condition where each record matches all specified filters.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl DescribeTableStatisticsInput {
@@ -14641,24 +13242,19 @@ impl DescribeTableStatisticsInput {
     pub fn replication_task_arn(&self) -> std::option::Option<&str> {
         self.replication_task_arn.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 500.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Filters applied to table statistics.</p>
     /// <p>Valid filter names: schema-name | table-name | table-state</p>
-    /// <p>A combination of filters creates an AND condition where each record matches all
-    /// specified filters.</p>
+    /// <p>A combination of filters creates an AND condition where each record matches all specified filters.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -14680,15 +13276,11 @@ impl std::fmt::Debug for DescribeTableStatisticsInput {
 pub struct DescribeSchemasInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeSchemasInput {
@@ -14696,17 +13288,13 @@ impl DescribeSchemasInput {
     pub fn endpoint_arn(&self) -> std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -14726,48 +13314,34 @@ impl std::fmt::Debug for DescribeSchemasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationTasksInput {
     /// <p>Filters applied to replication tasks.</p>
-    /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type |
-    /// endpoint-arn | replication-instance-arn</p>
+    /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>An option to set to avoid returning information about settings. Use this to reduce
-    /// overhead when setting information is too large. To use this option, choose
-    /// <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
+    /// <p>An option to set to avoid returning information about settings. Use this to reduce overhead when setting information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
     pub without_settings: std::option::Option<bool>,
 }
 impl DescribeReplicationTasksInput {
     /// <p>Filters applied to replication tasks.</p>
-    /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type |
-    /// endpoint-arn | replication-instance-arn</p>
+    /// <p>Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>An option to set to avoid returning information about settings. Use this to reduce
-    /// overhead when setting information is too large. To use this option, choose
-    /// <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
+    /// <p>An option to set to avoid returning information about settings. Use this to reduce overhead when setting information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
     pub fn without_settings(&self) -> std::option::Option<bool> {
         self.without_settings
     }
@@ -14787,39 +13361,25 @@ impl std::fmt::Debug for DescribeReplicationTasksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationTaskIndividualAssessmentsInput {
-    /// <p>Filters applied to the individual assessments described in the form of key-value
-    /// pairs.</p>
-    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>,
-    /// <code>replication-task-arn</code>, <code>status</code>
-    /// </p>
+    /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
+    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The maximum number of records to include in the response. If more records exist than the
-    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-    /// the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p>An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationTaskIndividualAssessmentsInput {
-    /// <p>Filters applied to the individual assessments described in the form of key-value
-    /// pairs.</p>
-    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>,
-    /// <code>replication-task-arn</code>, <code>status</code>
-    /// </p>
+    /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
+    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the
-    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-    /// the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p>An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -14839,36 +13399,24 @@ impl std::fmt::Debug for DescribeReplicationTaskIndividualAssessmentsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationTaskAssessmentRunsInput {
     /// <p>Filters applied to the premigration assessment runs described in the form of key-value pairs.</p>
-    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>,
-    /// <code>replication-instance-arn</code>, <code>status</code>
-    /// </p>
+    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>replication-instance-arn</code>, <code>status</code> </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>The maximum number of records to include in the response. If more records exist than the
-    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-    /// the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p>An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationTaskAssessmentRunsInput {
     /// <p>Filters applied to the premigration assessment runs described in the form of key-value pairs.</p>
-    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>,
-    /// <code>replication-instance-arn</code>, <code>status</code>
-    /// </p>
+    /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>replication-instance-arn</code>, <code>status</code> </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the
-    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-    /// the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p>An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -14887,39 +13435,27 @@ impl std::fmt::Debug for DescribeReplicationTaskAssessmentRunsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationTaskAssessmentResultsInput {
-    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input
-    /// parameter is specified, the API returns only one result and ignore the values of the
-    /// <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
     pub replication_task_arn: std::option::Option<std::string::String>,
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationTaskAssessmentResultsInput {
-    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input
-    /// parameter is specified, the API returns only one result and ignore the values of the
-    /// <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
     pub fn replication_task_arn(&self) -> std::option::Option<&str> {
         self.replication_task_arn.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -14941,15 +13477,11 @@ pub struct DescribeReplicationSubnetGroupsInput {
     /// <p>Filters applied to replication subnet groups.</p>
     /// <p>Valid filter names: replication-subnet-group-id</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationSubnetGroupsInput {
@@ -14958,17 +13490,13 @@ impl DescribeReplicationSubnetGroupsInput {
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -14989,15 +13517,11 @@ impl std::fmt::Debug for DescribeReplicationSubnetGroupsInput {
 pub struct DescribeReplicationInstanceTaskLogsInput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub replication_instance_arn: std::option::Option<std::string::String>,
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationInstanceTaskLogsInput {
@@ -15005,17 +13529,13 @@ impl DescribeReplicationInstanceTaskLogsInput {
     pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
         self.replication_instance_arn.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -15035,38 +13555,28 @@ impl std::fmt::Debug for DescribeReplicationInstanceTaskLogsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationInstancesInput {
     /// <p>Filters applied to replication instances.</p>
-    /// <p>Valid filter names: replication-instance-arn | replication-instance-id |
-    /// replication-instance-class | engine-version</p>
+    /// <p>Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationInstancesInput {
     /// <p>Filters applied to replication instances.</p>
-    /// <p>Valid filter names: replication-instance-arn | replication-instance-id |
-    /// replication-instance-class | engine-version</p>
+    /// <p>Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -15110,13 +13620,9 @@ pub struct DescribePendingMaintenanceActionsInput {
     pub replication_instance_arn: std::option::Option<std::string::String>,
     /// <p></p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
@@ -15130,15 +13636,11 @@ impl DescribePendingMaintenanceActionsInput {
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
@@ -15160,29 +13662,21 @@ impl std::fmt::Debug for DescribePendingMaintenanceActionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOrderableReplicationInstancesInput {
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableReplicationInstancesInput {
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -15203,17 +13697,13 @@ pub struct DescribeEventSubscriptionsInput {
     /// <p>The name of the DMS event subscription to be described.</p>
     pub subscription_name: std::option::Option<std::string::String>,
     /// <p>Filters applied to event subscriptions.</p>
-    /// <p>Valid filter names: event-subscription-arn |  event-subscription-id </p>
+    /// <p>Valid filter names: event-subscription-arn | event-subscription-id </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEventSubscriptionsInput {
@@ -15222,21 +13712,17 @@ impl DescribeEventSubscriptionsInput {
         self.subscription_name.as_deref()
     }
     /// <p>Filters applied to event subscriptions.</p>
-    /// <p>Valid filter names: event-subscription-arn |  event-subscription-id </p>
+    /// <p>Valid filter names: event-subscription-arn | event-subscription-id </p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -15271,15 +13757,11 @@ pub struct DescribeEventsInput {
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEventsInput {
@@ -15312,17 +13794,13 @@ impl DescribeEventsInput {
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -15380,15 +13858,11 @@ pub struct DescribeEndpointTypesInput {
     /// <p>Filters applied to the endpoint types.</p>
     /// <p>Valid filter names: engine-name | endpoint-type</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointTypesInput {
@@ -15397,17 +13871,13 @@ impl DescribeEndpointTypesInput {
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -15428,12 +13898,9 @@ impl std::fmt::Debug for DescribeEndpointTypesInput {
 pub struct DescribeEndpointSettingsInput {
     /// <p>The databse engine used for your source or target endpoint.</p>
     pub engine_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response
-    /// so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
-    /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointSettingsInput {
@@ -15441,14 +13908,11 @@ impl DescribeEndpointSettingsInput {
     pub fn engine_name(&self) -> std::option::Option<&str> {
         self.engine_name.as_deref()
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response
-    /// so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
-    /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -15470,15 +13934,11 @@ pub struct DescribeEndpointsInput {
     /// <p>Filters applied to the endpoints.</p>
     /// <p>Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointsInput {
@@ -15487,17 +13947,13 @@ impl DescribeEndpointsInput {
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -15519,15 +13975,11 @@ pub struct DescribeConnectionsInput {
     /// <p>The filters applied to the connection.</p>
     /// <p>Valid filter names: endpoint-arn | replication-instance-arn</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeConnectionsInput {
@@ -15536,17 +13988,13 @@ impl DescribeConnectionsInput {
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -15565,35 +14013,25 @@ impl std::fmt::Debug for DescribeConnectionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificatesInput {
-    /// <p>Filters applied to the certificates described in the form of key-value pairs.
-    /// Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
+    /// <p>Filters applied to the certificates described in the form of key-value pairs. Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 10</p>
     pub max_records: std::option::Option<i32>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeCertificatesInput {
-    /// <p>Filters applied to the certificates described in the form of key-value pairs.
-    /// Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
+    /// <p>Filters applied to the certificates described in the form of key-value pairs. Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than
-    /// the specified <code>MaxRecords</code> value, a pagination token called a marker is included
-    /// in the response so that the remaining results can be retrieved. </p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 10</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -15612,11 +14050,9 @@ impl std::fmt::Debug for DescribeCertificatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicableIndividualAssessmentsInput {
-    /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base
-    /// the default list of individual assessments.</p>
+    /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
     pub replication_task_arn: std::option::Option<std::string::String>,
-    /// <p>ARN of a replication instance on which you want to base the default list of individual
-    /// assessments.</p>
+    /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
     pub replication_instance_arn: std::option::Option<std::string::String>,
     /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
     pub source_engine_name: std::option::Option<std::string::String>,
@@ -15624,23 +14060,17 @@ pub struct DescribeApplicableIndividualAssessmentsInput {
     pub target_engine_name: std::option::Option<std::string::String>,
     /// <p>Name of the migration type that each provided individual assessment must support.</p>
     pub migration_type: std::option::Option<crate::model::MigrationTypeValue>,
-    /// <p>Maximum number of records to include in the response. If more records exist than the
-    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-    /// the response so that the remaining results can be retrieved.</p>
+    /// <p>Maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     pub max_records: std::option::Option<i32>,
-    /// <p>Optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>.</p>
+    /// <p>Optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeApplicableIndividualAssessmentsInput {
-    /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base
-    /// the default list of individual assessments.</p>
+    /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
     pub fn replication_task_arn(&self) -> std::option::Option<&str> {
         self.replication_task_arn.as_deref()
     }
-    /// <p>ARN of a replication instance on which you want to base the default list of individual
-    /// assessments.</p>
+    /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
     pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
         self.replication_instance_arn.as_deref()
     }
@@ -15656,15 +14086,11 @@ impl DescribeApplicableIndividualAssessmentsInput {
     pub fn migration_type(&self) -> std::option::Option<&crate::model::MigrationTypeValue> {
         self.migration_type.as_ref()
     }
-    /// <p>Maximum number of records to include in the response. If more records exist than the
-    /// specified <code>MaxRecords</code> value, a pagination token called a marker is included in
-    /// the response so that the remaining results can be retrieved.</p>
+    /// <p>Maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p>Optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>.</p>
+    /// <p>Optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -15882,15 +14308,9 @@ pub struct CreateReplicationTaskInput {
     /// <p>An identifier for the replication task.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
-    /// </li>
-    /// <li>
-    /// <p>First character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-    /// </li>
+    /// <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub replication_task_identifier: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.</p>
@@ -15899,75 +14319,41 @@ pub struct CreateReplicationTaskInput {
     pub target_endpoint_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a replication instance.</p>
     pub replication_instance_arn: std::option::Option<std::string::String>,
-    /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
-    /// </p>
+    /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
     pub migration_type: std::option::Option<crate::model::MigrationTypeValue>,
-    /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-    /// Mapping to Specify Task Settings</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub table_mappings: std::option::Option<std::string::String>,
-    /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task
-    /// Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub replication_task_settings: std::option::Option<std::string::String>,
-    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-    /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-    /// Specifying both values results in an error.</p>
+    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
     pub cdc_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-    /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-    /// Specifying both values results in an error.</p>
+    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-    /// <p>Checkpoint Example: --cdc-start-position
-    /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-    /// <note>
-    /// <p>When you use this task setting with a source PostgreSQL database, a logical
-    /// replication slot should already be created and associated with the source endpoint. You
-    /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-    /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-    /// for DMS</a>.</p>
+    /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+    /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub cdc_start_position: std::option::Option<std::string::String>,
-    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-    /// either server time or commit time.</p>
+    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
     pub cdc_stop_position: std::option::Option<std::string::String>,
     /// <p>One or more tags to be assigned to the replication task.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
-    /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub task_data: std::option::Option<std::string::String>,
-    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-    /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-    /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-    /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-    /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-    /// value might result in the <code>EndpointArn</code> value
-    /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-    /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-    /// value for the end of <code>EndpointArn</code>.</p>
+    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
     pub resource_identifier: std::option::Option<std::string::String>,
 }
 impl CreateReplicationTaskInput {
     /// <p>An identifier for the replication task.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
-    /// </li>
-    /// <li>
-    /// <p>First character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-    /// </li>
+    /// <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     pub fn replication_task_identifier(&self) -> std::option::Option<&str> {
         self.replication_task_identifier.as_deref()
@@ -15984,51 +14370,34 @@ impl CreateReplicationTaskInput {
     pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
         self.replication_instance_arn.as_deref()
     }
-    /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
-    /// </p>
+    /// <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
     pub fn migration_type(&self) -> std::option::Option<&crate::model::MigrationTypeValue> {
         self.migration_type.as_ref()
     }
-    /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-    /// Mapping to Specify Task Settings</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn table_mappings(&self) -> std::option::Option<&str> {
         self.table_mappings.as_deref()
     }
-    /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task
-    /// Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn replication_task_settings(&self) -> std::option::Option<&str> {
         self.replication_task_settings.as_deref()
     }
-    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either
-    /// CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start.
-    /// Specifying both values results in an error.</p>
+    /// <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
     pub fn cdc_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.cdc_start_time.as_ref()
     }
-    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
-    /// CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start.
-    /// Specifying both values results in an error.</p>
+    /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     /// <p> The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
-    /// <p>Checkpoint Example: --cdc-start-position
-    /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-    /// <note>
-    /// <p>When you use this task setting with a source PostgreSQL database, a logical
-    /// replication slot should already be created and associated with the source endpoint. You
-    /// can verify this by setting the <code>slotName</code> extra connection attribute to the
-    /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-    /// for DMS</a>.</p>
+    /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+    /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub fn cdc_start_position(&self) -> std::option::Option<&str> {
         self.cdc_start_position.as_deref()
     }
-    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
-    /// either server time or commit time.</p>
+    /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
     pub fn cdc_stop_position(&self) -> std::option::Option<&str> {
@@ -16038,22 +14407,11 @@ impl CreateReplicationTaskInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
-    /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn task_data(&self) -> std::option::Option<&str> {
         self.task_data.as_deref()
     }
-    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-    /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-    /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-    /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-    /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-    /// value might result in the <code>EndpointArn</code> value
-    /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-    /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-    /// value for the end of <code>EndpointArn</code>.</p>
+    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
     pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
@@ -16085,12 +14443,9 @@ impl std::fmt::Debug for CreateReplicationTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationSubnetGroupInput {
-    /// <p>The name for the replication subnet group. This value is stored as a lowercase
-    /// string.</p>
-    /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces,
-    /// underscores, or hyphens. Must not be "default".</p>
-    /// <p>Example: <code>mySubnetgroup</code>
-    /// </p>
+    /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+    /// <p>Example: <code>mySubnetgroup</code> </p>
     pub replication_subnet_group_identifier: std::option::Option<std::string::String>,
     /// <p>The description for the subnet group.</p>
     pub replication_subnet_group_description: std::option::Option<std::string::String>,
@@ -16100,12 +14455,9 @@ pub struct CreateReplicationSubnetGroupInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateReplicationSubnetGroupInput {
-    /// <p>The name for the replication subnet group. This value is stored as a lowercase
-    /// string.</p>
-    /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces,
-    /// underscores, or hyphens. Must not be "default".</p>
-    /// <p>Example: <code>mySubnetgroup</code>
-    /// </p>
+    /// <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+    /// <p>Example: <code>mySubnetgroup</code> </p>
     pub fn replication_subnet_group_identifier(&self) -> std::option::Option<&str> {
         self.replication_subnet_group_identifier.as_deref()
     }
@@ -16143,141 +14495,79 @@ impl std::fmt::Debug for CreateReplicationSubnetGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationInstanceInput {
-    /// <p>The replication instance identifier. This parameter is stored as a lowercase
-    /// string.</p>
+    /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p>
-    /// </li>
-    /// <li>
-    /// <p>First character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-    /// </li>
+    /// <li> <p>Must contain 1-63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>myrepinstance</code>
-    /// </p>
+    /// <p>Example: <code>myrepinstance</code> </p>
     pub replication_instance_identifier: std::option::Option<std::string::String>,
-    /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication
-    /// instance.</p>
+    /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication instance.</p>
     pub allocated_storage: std::option::Option<i32>,
-    /// <p>The compute and memory capacity of the replication instance as defined for the specified
-    /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see
-    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-    /// Selecting the right DMS replication instance for your migration</a>.
-    /// </p>
+    /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub replication_instance_class: std::option::Option<std::string::String>,
-    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
-    /// security group must work with the VPC containing the replication instance. </p>
+    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
     pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Availability Zone where the replication instance will be created. The default
-    /// value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for
-    /// example: <code>us-east-1d</code>
-    /// </p>
+    /// <p>The Availability Zone where the replication instance will be created. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>A subnet group to associate with the replication instance.</p>
     pub replication_subnet_group_identifier: std::option::Option<std::string::String>,
-    /// <p>The weekly time range during which system maintenance can occur, in Universal
-    /// Coordinated Time (UTC).</p>
-    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
-    /// </p>
-    /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region,
-    /// occurring on a random day of the week.</p>
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
-    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
-    /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
-    /// <code>true</code>. </p>
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub multi_az: std::option::Option<bool>,
     /// <p>The engine version number of the replication instance.</p>
-    /// <p>If an engine version number is not specified when a replication
-    /// instance is created, the default is the latest engine version available.</p>
+    /// <p>If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
     pub engine_version: std::option::Option<std::string::String>,
-    /// <p>A value that indicates whether minor engine upgrades are applied automatically to the
-    /// replication instance during the maintenance window. This parameter defaults to
-    /// <code>true</code>.</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>A value that indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window. This parameter defaults to <code>true</code>.</p>
+    /// <p>Default: <code>true</code> </p>
     pub auto_minor_version_upgrade: std::option::Option<bool>,
     /// <p>One or more tags to be assigned to the replication instance.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>An KMS key identifier that is used to encrypt the data on the replication
-    /// instance.</p>
-    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-    /// DMS uses your default encryption key.</p>
-    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
-    /// different default encryption key for each Amazon Web Services Region.</p>
+    /// <p>An KMS key identifier that is used to encrypt the data on the replication instance.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p> Specifies the accessibility options for the replication instance. A value of
-    /// <code>true</code> represents an instance with a public IP address. A value of
-    /// <code>false</code> represents an instance with a private IP address. The default value
-    /// is <code>true</code>. </p>
+    /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
     pub publicly_accessible: std::option::Option<bool>,
-    /// <p>A list of custom DNS name servers supported for the replication instance to access your
-    /// on-premise source or target database. This list overrides the default name servers
-    /// supported by the replication instance. You can specify a comma-separated list of internet
-    /// addresses for up to four on-premise DNS name servers. For example:
-    /// <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
-    /// </p>
+    /// <p>A list of custom DNS name servers supported for the replication instance to access your on-premise source or target database. This list overrides the default name servers supported by the replication instance. You can specify a comma-separated list of internet addresses for up to four on-premise DNS name servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
     pub dns_name_servers: std::option::Option<std::string::String>,
-    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-    /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-    /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-    /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-    /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-    /// value might result in the <code>EndpointArn</code> value
-    /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-    /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-    /// value for the end of <code>EndpointArn</code>.</p>
+    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
     pub resource_identifier: std::option::Option<std::string::String>,
 }
 impl CreateReplicationInstanceInput {
-    /// <p>The replication instance identifier. This parameter is stored as a lowercase
-    /// string.</p>
+    /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p>
-    /// </li>
-    /// <li>
-    /// <p>First character must be a letter.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-    /// </li>
+    /// <li> <p>Must contain 1-63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    /// <p>Example: <code>myrepinstance</code>
-    /// </p>
+    /// <p>Example: <code>myrepinstance</code> </p>
     pub fn replication_instance_identifier(&self) -> std::option::Option<&str> {
         self.replication_instance_identifier.as_deref()
     }
-    /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication
-    /// instance.</p>
+    /// <p>The amount of storage (in gigabytes) to be initially allocated for the replication instance.</p>
     pub fn allocated_storage(&self) -> std::option::Option<i32> {
         self.allocated_storage
     }
-    /// <p>The compute and memory capacity of the replication instance as defined for the specified
-    /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
-    /// <p>For more information on the settings and capacities for the available replication instance classes, see
-    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-    /// Selecting the right DMS replication instance for your migration</a>.
-    /// </p>
+    /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+    /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn replication_instance_class(&self) -> std::option::Option<&str> {
         self.replication_instance_class.as_deref()
     }
-    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC
-    /// security group must work with the VPC containing the replication instance. </p>
+    /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
     pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
-    /// <p>The Availability Zone where the replication instance will be created. The default
-    /// value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for
-    /// example: <code>us-east-1d</code>
-    /// </p>
+    /// <p>The Availability Zone where the replication instance will be created. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -16285,34 +14575,25 @@ impl CreateReplicationInstanceInput {
     pub fn replication_subnet_group_identifier(&self) -> std::option::Option<&str> {
         self.replication_subnet_group_identifier.as_deref()
     }
-    /// <p>The weekly time range during which system maintenance can occur, in Universal
-    /// Coordinated Time (UTC).</p>
-    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
-    /// </p>
-    /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region,
-    /// occurring on a random day of the week.</p>
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
-    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
-    /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
-    /// <code>true</code>. </p>
+    /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
     pub fn multi_az(&self) -> std::option::Option<bool> {
         self.multi_az
     }
     /// <p>The engine version number of the replication instance.</p>
-    /// <p>If an engine version number is not specified when a replication
-    /// instance is created, the default is the latest engine version available.</p>
+    /// <p>If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>A value that indicates whether minor engine upgrades are applied automatically to the
-    /// replication instance during the maintenance window. This parameter defaults to
-    /// <code>true</code>.</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>A value that indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window. This parameter defaults to <code>true</code>.</p>
+    /// <p>Default: <code>true</code> </p>
     pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
@@ -16320,40 +14601,21 @@ impl CreateReplicationInstanceInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>An KMS key identifier that is used to encrypt the data on the replication
-    /// instance.</p>
-    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-    /// DMS uses your default encryption key.</p>
-    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
-    /// different default encryption key for each Amazon Web Services Region.</p>
+    /// <p>An KMS key identifier that is used to encrypt the data on the replication instance.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p> Specifies the accessibility options for the replication instance. A value of
-    /// <code>true</code> represents an instance with a public IP address. A value of
-    /// <code>false</code> represents an instance with a private IP address. The default value
-    /// is <code>true</code>. </p>
+    /// <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
     pub fn publicly_accessible(&self) -> std::option::Option<bool> {
         self.publicly_accessible
     }
-    /// <p>A list of custom DNS name servers supported for the replication instance to access your
-    /// on-premise source or target database. This list overrides the default name servers
-    /// supported by the replication instance. You can specify a comma-separated list of internet
-    /// addresses for up to four on-premise DNS name servers. For example:
-    /// <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code>
-    /// </p>
+    /// <p>A list of custom DNS name servers supported for the replication instance to access your on-premise source or target database. This list overrides the default name servers supported by the replication instance. You can specify a comma-separated list of internet addresses for up to four on-premise DNS name servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
     pub fn dns_name_servers(&self) -> std::option::Option<&str> {
         self.dns_name_servers.as_deref()
     }
-    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-    /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-    /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-    /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-    /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-    /// value might result in the <code>EndpointArn</code> value
-    /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-    /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-    /// value for the end of <code>EndpointArn</code>.</p>
+    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
     pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
@@ -16401,30 +14663,18 @@ impl std::fmt::Debug for CreateReplicationInstanceInput {
 pub struct CreateEventSubscriptionInput {
     /// <p>The name of the DMS event notification subscription. This name must be less than 255 characters.</p>
     pub subscription_name: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
-    /// The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
+    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p> The type of DMS resource that generates the events. For example, if you want to be
-    /// notified of events generated by a replication instance, you set this parameter to
-    /// <code>replication-instance</code>. If this value isn't specified, all events are
-    /// returned. </p>
-    /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code>
-    /// </p>
+    /// <p> The type of DMS resource that generates the events. For example, if you want to be notified of events generated by a replication instance, you set this parameter to <code>replication-instance</code>. If this value isn't specified, all events are returned. </p>
+    /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code> </p>
     pub source_type: std::option::Option<std::string::String>,
-    /// <p>A list of event categories for a source type that you want to subscribe to. For more
-    /// information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
-    /// Notifications</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>A list of event categories for a source type that you want to subscribe to. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of identifiers for which DMS provides notification events.</p>
     /// <p>If you don't specify a value, notifications are provided for all sources.</p>
-    /// <p>If you specify multiple values, they must be of the same type. For example, if you
-    /// specify a database instance ID, then all of the other values must be database instance
-    /// IDs.</p>
+    /// <p>If you specify multiple values, they must be of the same type. For example, if you specify a database instance ID, then all of the other values must be database instance IDs.</p>
     pub source_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to
-    /// <code>false</code> to create the subscription but not activate it. </p>
+    /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create the subscription but not activate it. </p>
     pub enabled: std::option::Option<bool>,
     /// <p>One or more tags to be assigned to the event subscription.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -16434,38 +14684,26 @@ impl CreateEventSubscriptionInput {
     pub fn subscription_name(&self) -> std::option::Option<&str> {
         self.subscription_name.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification.
-    /// The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
+    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p> The type of DMS resource that generates the events. For example, if you want to be
-    /// notified of events generated by a replication instance, you set this parameter to
-    /// <code>replication-instance</code>. If this value isn't specified, all events are
-    /// returned. </p>
-    /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code>
-    /// </p>
+    /// <p> The type of DMS resource that generates the events. For example, if you want to be notified of events generated by a replication instance, you set this parameter to <code>replication-instance</code>. If this value isn't specified, all events are returned. </p>
+    /// <p>Valid values: <code>replication-instance</code> | <code>replication-task</code> </p>
     pub fn source_type(&self) -> std::option::Option<&str> {
         self.source_type.as_deref()
     }
-    /// <p>A list of event categories for a source type that you want to subscribe to. For more
-    /// information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
-    /// Notifications</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>A list of event categories for a source type that you want to subscribe to. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
         self.event_categories.as_deref()
     }
     /// <p>A list of identifiers for which DMS provides notification events.</p>
     /// <p>If you don't specify a value, notifications are provided for all sources.</p>
-    /// <p>If you specify multiple values, they must be of the same type. For example, if you
-    /// specify a database instance ID, then all of the other values must be database instance
-    /// IDs.</p>
+    /// <p>If you specify multiple values, they must be of the same type. For example, if you specify a database instance ID, then all of the other values must be database instance IDs.</p>
     pub fn source_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.source_ids.as_deref()
     }
-    /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to
-    /// <code>false</code> to create the subscription but not activate it. </p>
+    /// <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create the subscription but not activate it. </p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
@@ -16492,19 +14730,11 @@ impl std::fmt::Debug for CreateEventSubscriptionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointInput {
-    /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
-    /// only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two
-    /// consecutive hyphens.</p>
+    /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
     pub endpoint_identifier: std::option::Option<std::string::String>,
-    /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
+    /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
     pub endpoint_type: std::option::Option<crate::model::ReplicationEndpointTypeValue>,
-    /// <p>The type of engine for the endpoint. Valid values, depending on the
-    /// <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>,
-    /// <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-    /// <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-    /// <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-    /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
-    /// <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+    /// <p>The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
     pub engine_name: std::option::Option<std::string::String>,
     /// <p>The user name to be used to log in to the endpoint database.</p>
     pub username: std::option::Option<std::string::String>,
@@ -16516,144 +14746,61 @@ pub struct CreateEndpointInput {
     pub port: std::option::Option<i32>,
     /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>Additional attributes associated with the connection. Each attribute is specified as a
-    /// name-value pair associated by an equal sign (=). Multiple attributes are separated by a
-    /// semicolon (;) with no additional white space. For information on the attributes available
-    /// for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with
-    /// DMS Endpoints</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For information on the attributes available for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with DMS Endpoints</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub extra_connection_attributes: std::option::Option<std::string::String>,
     /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
-    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-    /// DMS uses your default encryption key.</p>
-    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
-    /// different default encryption key for each Amazon Web Services Region.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>One or more tags to be assigned to the endpoint.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
-    /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
-    /// </p>
+    /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code> </p>
     pub ssl_mode: std::option::Option<crate::model::DmsSslModeValue>,
-    /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to
-    /// create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+    /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
     pub service_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The external table definition. </p>
     pub external_table_definition: std::option::Option<std::string::String>,
-    /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
-    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
-    /// Data to DynamoDB</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub dynamo_db_settings: std::option::Option<crate::model::DynamoDbSettings>,
-    /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
-    /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-    /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub s3_settings: std::option::Option<crate::model::S3Settings>,
     /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
     /// <p>Possible settings include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role.
-    /// The role must allow the <code>iam:PassRole</code> action.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BucketName</code> - The name of the S3 bucket to use.</p>
-    /// </li>
+    /// <li> <p> <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p> </li>
+    /// <li> <p> <code>BucketName</code> - The name of the S3 bucket to use.</p> </li>
     /// </ul>
-    /// <p>Shorthand syntax for these settings is as follows:
-    /// <code>ServiceAccessRoleArn=string,BucketName=string</code>
-    /// </p>
-    /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn":
-    /// "string", "BucketName": "string", } </code>
-    /// </p>
+    /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string</code> </p>
+    /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", } </code> </p>
     pub dms_transfer_settings: std::option::Option<crate::model::DmsTransferSettings>,
-    /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
-    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
-    /// when using MongoDB as a source for Database Migration Service</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub mongo_db_settings: std::option::Option<crate::model::MongoDbSettings>,
-    /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-    /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
-    /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub kinesis_settings: std::option::Option<crate::model::KinesisSettings>,
-    /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
-    /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
-    /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub kafka_settings: std::option::Option<crate::model::KafkaSettings>,
-    /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
-    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
-    /// the <i>Database Migration Service User Guide</i>.</p>
+    /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide</i>.</p>
     pub elasticsearch_settings: std::option::Option<crate::model::ElasticsearchSettings>,
-    /// <p>Settings in JSON format for the target Amazon Neptune endpoint.
-    /// For more information
-    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
-    /// in the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub neptune_settings: std::option::Option<crate::model::NeptuneSettings>,
     /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
     pub redshift_settings: std::option::Option<crate::model::RedshiftSettings>,
-    /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
-    /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
-    /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
-    /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub postgre_sql_settings: std::option::Option<crate::model::PostgreSqlSettings>,
-    /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
-    /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes
-    /// when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in
-    /// the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub my_sql_settings: std::option::Option<crate::model::MySqlSettings>,
-    /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
-    /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes
-    /// when using Oracle as a source for DMS</a> and
-    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
-    /// Extra connection attributes when using Oracle as a target for DMS</a>
-    /// in the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub oracle_settings: std::option::Option<crate::model::OracleSettings>,
-    /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
-    /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
-    /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
-    /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
-    /// User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub sybase_settings: std::option::Option<crate::model::SybaseSettings>,
-    /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-    /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
-    /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
-    /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub microsoft_sql_server_settings:
         std::option::Option<crate::model::MicrosoftSqlServerSettings>,
-    /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
-    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
-    /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
-    /// User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub ibm_db2_settings: std::option::Option<crate::model::IbmDb2Settings>,
-    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-    /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-    /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-    /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-    /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-    /// value might result in the <code>EndpointArn</code> value
-    /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-    /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-    /// value for the end of <code>EndpointArn</code>.</p>
+    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>Provides information that defines a DocumentDB endpoint.</p>
     pub doc_db_settings: std::option::Option<crate::model::DocDbSettings>,
@@ -16663,25 +14810,17 @@ pub struct CreateEndpointInput {
     pub gcp_my_sql_settings: std::option::Option<crate::model::GcpMySqlSettings>,
 }
 impl CreateEndpointInput {
-    /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
-    /// only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two
-    /// consecutive hyphens.</p>
+    /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
     pub fn endpoint_identifier(&self) -> std::option::Option<&str> {
         self.endpoint_identifier.as_deref()
     }
-    /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
+    /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
     pub fn endpoint_type(
         &self,
     ) -> std::option::Option<&crate::model::ReplicationEndpointTypeValue> {
         self.endpoint_type.as_ref()
     }
-    /// <p>The type of engine for the endpoint. Valid values, depending on the
-    /// <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>,
-    /// <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-    /// <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>,
-    /// <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-    /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
-    /// <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
+    /// <p>The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
     pub fn engine_name(&self) -> std::option::Option<&str> {
         self.engine_name.as_deref()
     }
@@ -16705,21 +14844,13 @@ impl CreateEndpointInput {
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>Additional attributes associated with the connection. Each attribute is specified as a
-    /// name-value pair associated by an equal sign (=). Multiple attributes are separated by a
-    /// semicolon (;) with no additional white space. For information on the attributes available
-    /// for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with
-    /// DMS Endpoints</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For information on the attributes available for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with DMS Endpoints</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn extra_connection_attributes(&self) -> std::option::Option<&str> {
         self.extra_connection_attributes.as_deref()
     }
     /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
-    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-    /// DMS uses your default encryption key.</p>
-    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
-    /// different default encryption key for each Amazon Web Services Region.</p>
+    /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -16731,13 +14862,11 @@ impl CreateEndpointInput {
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code>
-    /// </p>
+    /// <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code> </p>
     pub fn ssl_mode(&self) -> std::option::Option<&crate::model::DmsSslModeValue> {
         self.ssl_mode.as_ref()
     }
-    /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to
-    /// create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
+    /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
         self.service_access_role_arn.as_deref()
     }
@@ -16745,80 +14874,44 @@ impl CreateEndpointInput {
     pub fn external_table_definition(&self) -> std::option::Option<&str> {
         self.external_table_definition.as_deref()
     }
-    /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
-    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
-    /// Data to DynamoDB</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn dynamo_db_settings(&self) -> std::option::Option<&crate::model::DynamoDbSettings> {
         self.dynamo_db_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
-    /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-    /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn s3_settings(&self) -> std::option::Option<&crate::model::S3Settings> {
         self.s3_settings.as_ref()
     }
     /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
     /// <p>Possible settings include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role.
-    /// The role must allow the <code>iam:PassRole</code> action.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BucketName</code> - The name of the S3 bucket to use.</p>
-    /// </li>
+    /// <li> <p> <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p> </li>
+    /// <li> <p> <code>BucketName</code> - The name of the S3 bucket to use.</p> </li>
     /// </ul>
-    /// <p>Shorthand syntax for these settings is as follows:
-    /// <code>ServiceAccessRoleArn=string,BucketName=string</code>
-    /// </p>
-    /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn":
-    /// "string", "BucketName": "string", } </code>
-    /// </p>
+    /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string</code> </p>
+    /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", } </code> </p>
     pub fn dms_transfer_settings(&self) -> std::option::Option<&crate::model::DmsTransferSettings> {
         self.dms_transfer_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
-    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
-    /// when using MongoDB as a source for Database Migration Service</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn mongo_db_settings(&self) -> std::option::Option<&crate::model::MongoDbSettings> {
         self.mongo_db_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-    /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
-    /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn kinesis_settings(&self) -> std::option::Option<&crate::model::KinesisSettings> {
         self.kinesis_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
-    /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
-    /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User
-    /// Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn kafka_settings(&self) -> std::option::Option<&crate::model::KafkaSettings> {
         self.kafka_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information
-    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in
-    /// the <i>Database Migration Service User Guide</i>.</p>
+    /// <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide</i>.</p>
     pub fn elasticsearch_settings(
         &self,
     ) -> std::option::Option<&crate::model::ElasticsearchSettings> {
         self.elasticsearch_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the target Amazon Neptune endpoint.
-    /// For more information
-    /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
-    /// in the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn neptune_settings(&self) -> std::option::Option<&crate::model::NeptuneSettings> {
         self.neptune_settings.as_ref()
     }
@@ -16826,70 +14919,33 @@ impl CreateEndpointInput {
     pub fn redshift_settings(&self) -> std::option::Option<&crate::model::RedshiftSettings> {
         self.redshift_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
-    /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
-    /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
-    /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn postgre_sql_settings(&self) -> std::option::Option<&crate::model::PostgreSqlSettings> {
         self.postgre_sql_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
-    /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes
-    /// when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in
-    /// the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn my_sql_settings(&self) -> std::option::Option<&crate::model::MySqlSettings> {
         self.my_sql_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
-    /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes
-    /// when using Oracle as a source for DMS</a> and
-    /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
-    /// Extra connection attributes when using Oracle as a target for DMS</a>
-    /// in the <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn oracle_settings(&self) -> std::option::Option<&crate::model::OracleSettings> {
         self.oracle_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
-    /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
-    /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
-    /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
-    /// User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn sybase_settings(&self) -> std::option::Option<&crate::model::SybaseSettings> {
         self.sybase_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-    /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
-    /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
-    /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn microsoft_sql_server_settings(
         &self,
     ) -> std::option::Option<&crate::model::MicrosoftSqlServerSettings> {
         self.microsoft_sql_server_settings.as_ref()
     }
-    /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
-    /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
-    /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
-    /// User Guide.</i>
-    /// </p>
+    /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn ibm_db2_settings(&self) -> std::option::Option<&crate::model::IbmDb2Settings> {
         self.ibm_db2_settings.as_ref()
     }
-    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-    /// response parameter that is returned in the created <code>Endpoint</code> object. The value
-    /// for this parameter can have up to 31 characters. It can contain only ASCII letters, digits,
-    /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
-    /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
-    /// value might result in the <code>EndpointArn</code> value
-    /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-    /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
-    /// value for the end of <code>EndpointArn</code>.</p>
+    /// <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
     pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
@@ -16981,64 +15037,36 @@ impl std::fmt::Debug for CancelReplicationTaskAssessmentRunInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplyPendingMaintenanceActionInput {
-    /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance
-    /// action applies to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
     pub replication_instance_arn: std::option::Option<std::string::String>,
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code>
-    /// </p>
+    /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>
     pub apply_action: std::option::Option<std::string::String>,
-    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an
-    /// opt-in request of type <code>immediate</code>.</p>
+    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>immediate</code> - Apply the maintenance action immediately.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>next-maintenance</code> - Apply the maintenance action during the next
-    /// maintenance window for the resource.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in
-    /// requests.</p>
-    /// </li>
+    /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
+    /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
+    /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
     /// </ul>
     pub opt_in_type: std::option::Option<std::string::String>,
 }
 impl ApplyPendingMaintenanceActionInput {
-    /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance
-    /// action applies to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
     pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
         self.replication_instance_arn.as_deref()
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code>
-    /// </p>
+    /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>
     pub fn apply_action(&self) -> std::option::Option<&str> {
         self.apply_action.as_deref()
     }
-    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an
-    /// opt-in request of type <code>immediate</code>.</p>
+    /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>immediate</code> - Apply the maintenance action immediately.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>next-maintenance</code> - Apply the maintenance action during the next
-    /// maintenance window for the resource.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in
-    /// requests.</p>
-    /// </li>
+    /// <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>
+    /// <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>
+    /// <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>
     /// </ul>
     pub fn opt_in_type(&self) -> std::option::Option<&str> {
         self.opt_in_type.as_deref()

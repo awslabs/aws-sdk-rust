@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon QLDB Session
@@ -101,28 +101,14 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `SendCommand`.
     ///
-    /// <p>Sends a command to an Amazon QLDB ledger.</p>
-    /// <note>
-    /// <p>Instead of interacting directly with this API, we recommend using the QLDB driver
-    /// or the QLDB shell to execute data transactions on a ledger.</p>
+    /// <p>Sends a command to an Amazon QLDB ledger.</p> <note>
+    /// <p>Instead of interacting directly with this API, we recommend using the QLDB driver or the QLDB shell to execute data transactions on a ledger.</p>
     /// <ul>
-    /// <li>
-    /// <p>If you are working with an AWS SDK, use the QLDB driver. The driver provides
-    /// a high-level abstraction layer above this <i>QLDB Session</i> data
-    /// plane and manages <code>SendCommand</code> API calls for you. For information and
-    /// a list of supported programming languages, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-driver.html">Getting started
-    /// with the driver</a> in the <i>Amazon QLDB Developer
-    /// Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you are working with the AWS Command Line Interface (AWS CLI), use the
-    /// QLDB shell. The shell is a command line interface that uses the QLDB driver to
-    /// interact with a ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing Amazon QLDB using the
-    /// QLDB shell</a>.</p>
-    /// </li>
+    /// <li> <p>If you are working with an AWS SDK, use the QLDB driver. The driver provides a high-level abstraction layer above this <i>QLDB Session</i> data plane and manages <code>SendCommand</code> API calls for you. For information and a list of supported programming languages, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-driver.html">Getting started with the driver</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </li>
+    /// <li> <p>If you are working with the AWS Command Line Interface (AWS CLI), use the QLDB shell. The shell is a command line interface that uses the QLDB driver to interact with a ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing Amazon QLDB using the QLDB shell</a>.</p> </li>
     /// </ul>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendCommand<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -167,10 +153,10 @@ pub mod fluent_builders {
                 crate::input::SendCommandInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -178,20 +164,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the session token for the current command. A session token is constant
-        /// throughout the life of the session.</p>
-        /// <p>To obtain a session token, run the <code>StartSession</code> command. This
-        /// <code>SessionToken</code> is required for every subsequent command that is issued during
-        /// the current session.</p>
-        pub fn session_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_token(inp);
+        /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
+        /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
+        pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_token(input.into());
             self
         }
-        /// <p>Specifies the session token for the current command. A session token is constant
-        /// throughout the life of the session.</p>
-        /// <p>To obtain a session token, run the <code>StartSession</code> command. This
-        /// <code>SessionToken</code> is required for every subsequent command that is issued during
-        /// the current session.</p>
+        /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
+        /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
         pub fn set_session_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -199,14 +179,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_session_token(input);
             self
         }
-        /// <p>Command to start a new session. A session token is obtained as part of the
-        /// response.</p>
-        pub fn start_session(mut self, inp: crate::model::StartSessionRequest) -> Self {
-            self.inner = self.inner.start_session(inp);
+        /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
+        pub fn start_session(mut self, input: crate::model::StartSessionRequest) -> Self {
+            self.inner = self.inner.start_session(input);
             self
         }
-        /// <p>Command to start a new session. A session token is obtained as part of the
-        /// response.</p>
+        /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
         pub fn set_start_session(
             mut self,
             input: std::option::Option<crate::model::StartSessionRequest>,
@@ -215,8 +193,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Command to start a new transaction.</p>
-        pub fn start_transaction(mut self, inp: crate::model::StartTransactionRequest) -> Self {
-            self.inner = self.inner.start_transaction(inp);
+        pub fn start_transaction(mut self, input: crate::model::StartTransactionRequest) -> Self {
+            self.inner = self.inner.start_transaction(input);
             self
         }
         /// <p>Command to start a new transaction.</p>
@@ -228,8 +206,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Command to end the current session.</p>
-        pub fn end_session(mut self, inp: crate::model::EndSessionRequest) -> Self {
-            self.inner = self.inner.end_session(inp);
+        pub fn end_session(mut self, input: crate::model::EndSessionRequest) -> Self {
+            self.inner = self.inner.end_session(input);
             self
         }
         /// <p>Command to end the current session.</p>
@@ -241,8 +219,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Command to commit the specified transaction.</p>
-        pub fn commit_transaction(mut self, inp: crate::model::CommitTransactionRequest) -> Self {
-            self.inner = self.inner.commit_transaction(inp);
+        pub fn commit_transaction(mut self, input: crate::model::CommitTransactionRequest) -> Self {
+            self.inner = self.inner.commit_transaction(input);
             self
         }
         /// <p>Command to commit the specified transaction.</p>
@@ -254,8 +232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Command to abort the current transaction.</p>
-        pub fn abort_transaction(mut self, inp: crate::model::AbortTransactionRequest) -> Self {
-            self.inner = self.inner.abort_transaction(inp);
+        pub fn abort_transaction(mut self, input: crate::model::AbortTransactionRequest) -> Self {
+            self.inner = self.inner.abort_transaction(input);
             self
         }
         /// <p>Command to abort the current transaction.</p>
@@ -267,8 +245,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Command to execute a statement in the specified transaction.</p>
-        pub fn execute_statement(mut self, inp: crate::model::ExecuteStatementRequest) -> Self {
-            self.inner = self.inner.execute_statement(inp);
+        pub fn execute_statement(mut self, input: crate::model::ExecuteStatementRequest) -> Self {
+            self.inner = self.inner.execute_statement(input);
             self
         }
         /// <p>Command to execute a statement in the specified transaction.</p>
@@ -280,8 +258,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Command to fetch a page.</p>
-        pub fn fetch_page(mut self, inp: crate::model::FetchPageRequest) -> Self {
-            self.inner = self.inner.fetch_page(inp);
+        pub fn fetch_page(mut self, input: crate::model::FetchPageRequest) -> Self {
+            self.inner = self.inner.fetch_page(input);
             self
         }
         /// <p>Command to fetch a page.</p>
@@ -294,6 +272,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -277,29 +277,21 @@ impl AsRef<str> for PortalState {
     }
 }
 
-/// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
-/// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-/// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+/// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Alarms {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services
-    /// resources and services, such as IoT Events.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
     pub alarm_role_arn: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more
-    /// information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm
-    /// notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
     pub notification_lambda_arn: std::option::Option<std::string::String>,
 }
 impl Alarms {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services
-    /// resources and services, such as IoT Events.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
     pub fn alarm_role_arn(&self) -> std::option::Option<&str> {
         self.alarm_role_arn.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more
-    /// information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm
-    /// notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
     pub fn notification_lambda_arn(&self) -> std::option::Option<&str> {
         self.notification_lambda_arn.as_deref()
     }
@@ -322,14 +314,12 @@ pub mod alarms {
         pub(crate) notification_lambda_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services
-        /// resources and services, such as IoT Events.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
         pub fn alarm_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.alarm_role_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services
-        /// resources and services, such as IoT Events.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows the alarm to perform actions and access Amazon Web Services resources and services, such as IoT Events.</p>
         pub fn set_alarm_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -337,16 +327,12 @@ pub mod alarms {
             self.alarm_role_arn = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm
-        /// notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
         pub fn notification_lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_lambda_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm
-        /// notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function that manages alarm notifications. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">Managing alarm notifications</a> in the <i>IoT Events Developer Guide</i>.</p>
         pub fn set_notification_lambda_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -372,12 +358,8 @@ impl Alarms {
 
 /// <p>Contains an image that is one of the following:</p>
 /// <ul>
-/// <li>
-/// <p>An image file. Choose this option to upload a new image.</p>
-/// </li>
-/// <li>
-/// <p>The ID of an existing image. Choose this option to keep an existing image.</p>
-/// </li>
+/// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+/// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -455,15 +437,13 @@ impl Image {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageFile {
-    /// <p>The image file contents, represented as a base64-encoded string. The file size must be
-    /// less than 1 MB.</p>
+    /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
     pub data: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The file type of the image.</p>
     pub r#type: std::option::Option<crate::model::ImageFileType>,
 }
 impl ImageFile {
-    /// <p>The image file contents, represented as a base64-encoded string. The file size must be
-    /// less than 1 MB.</p>
+    /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
     pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.data.as_ref()
     }
@@ -490,14 +470,12 @@ pub mod image_file {
         pub(crate) r#type: std::option::Option<crate::model::ImageFileType>,
     }
     impl Builder {
-        /// <p>The image file contents, represented as a base64-encoded string. The file size must be
-        /// less than 1 MB.</p>
+        /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
         pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
             self.data = Some(input);
             self
         }
-        /// <p>The image file contents, represented as a base64-encoded string. The file size must be
-        /// less than 1 MB.</p>
+        /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
         pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.data = input;
             self
@@ -697,8 +675,7 @@ impl AsRef<str> for PropertyNotificationState {
     }
 }
 
-/// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model
-/// states</a> in the <i>IoT SiteWise User Guide</i>.</p>
+/// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelStatus {
@@ -844,9 +821,9 @@ pub mod error_details {
         /// To override the contents of this collection use [`set_details`](Self::set_details).
         ///
         /// <p> A list of detailed errors. </p>
-        pub fn details(mut self, input: impl Into<crate::model::DetailedError>) -> Self {
+        pub fn details(mut self, input: crate::model::DetailedError) -> Self {
             let mut v = self.details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.details = Some(v);
             self
         }
@@ -1146,8 +1123,7 @@ impl AsRef<str> for AssetModelState {
     }
 }
 
-/// <p>Contains information about a composite model in an asset model. This object contains the
-/// asset property definitions that you define in the composite model.</p>
+/// <p>Contains information about a composite model in an asset model. This object contains the asset property definitions that you define in the composite model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelCompositeModel {
@@ -1155,8 +1131,7 @@ pub struct AssetModelCompositeModel {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the composite model.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The type of the composite model. For alarm composite models, this type is
-    /// <code>AWS/ALARM</code>.</p>
+    /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The asset property definitions for this composite model.</p>
     pub properties: std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
@@ -1170,8 +1145,7 @@ impl AssetModelCompositeModel {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of the composite model. For alarm composite models, this type is
-    /// <code>AWS/ALARM</code>.</p>
+    /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -1222,14 +1196,12 @@ pub mod asset_model_composite_model {
             self.description = input;
             self
         }
-        /// <p>The type of the composite model. For alarm composite models, this type is
-        /// <code>AWS/ALARM</code>.</p>
+        /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of the composite model. For alarm composite models, this type is
-        /// <code>AWS/ALARM</code>.</p>
+        /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -1239,9 +1211,9 @@ pub mod asset_model_composite_model {
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>The asset property definitions for this composite model.</p>
-        pub fn properties(mut self, input: impl Into<crate::model::AssetModelProperty>) -> Self {
+        pub fn properties(mut self, input: crate::model::AssetModelProperty) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.properties = Some(v);
             self
         }
@@ -1281,11 +1253,9 @@ pub struct AssetModelProperty {
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the asset model property.</p>
     pub data_type: std::option::Option<crate::model::PropertyDataType>,
-    /// <p>The data type of the structure for this property. This parameter exists on properties that
-    /// have the <code>STRUCT</code> data type.</p>
+    /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub data_type_spec: std::option::Option<std::string::String>,
-    /// <p>The unit of the asset model property, such as <code>Newtons</code> or
-    /// <code>RPM</code>.</p>
+    /// <p>The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.</p>
     pub unit: std::option::Option<std::string::String>,
     /// <p>The property type (see <code>PropertyType</code>).</p>
     pub r#type: std::option::Option<crate::model::PropertyType>,
@@ -1303,13 +1273,11 @@ impl AssetModelProperty {
     pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
         self.data_type.as_ref()
     }
-    /// <p>The data type of the structure for this property. This parameter exists on properties that
-    /// have the <code>STRUCT</code> data type.</p>
+    /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub fn data_type_spec(&self) -> std::option::Option<&str> {
         self.data_type_spec.as_deref()
     }
-    /// <p>The unit of the asset model property, such as <code>Newtons</code> or
-    /// <code>RPM</code>.</p>
+    /// <p>The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
     }
@@ -1377,14 +1345,12 @@ pub mod asset_model_property {
             self.data_type = input;
             self
         }
-        /// <p>The data type of the structure for this property. This parameter exists on properties that
-        /// have the <code>STRUCT</code> data type.</p>
+        /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
         pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_type_spec = Some(input.into());
             self
         }
-        /// <p>The data type of the structure for this property. This parameter exists on properties that
-        /// have the <code>STRUCT</code> data type.</p>
+        /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
         pub fn set_data_type_spec(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1392,14 +1358,12 @@ pub mod asset_model_property {
             self.data_type_spec = input;
             self
         }
-        /// <p>The unit of the asset model property, such as <code>Newtons</code> or
-        /// <code>RPM</code>.</p>
+        /// <p>The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
             self.unit = Some(input.into());
             self
         }
-        /// <p>The unit of the asset model property, such as <code>Newtons</code> or
-        /// <code>RPM</code>.</p>
+        /// <p>The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -1434,46 +1398,33 @@ impl AssetModelProperty {
     }
 }
 
-/// <p>Contains a property type, which can be one of <code>attribute</code>,
-/// <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
+/// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyType {
-    /// <p>Specifies an asset attribute property. An attribute generally contains static information,
-    /// such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
+    /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
     pub attribute: std::option::Option<crate::model::Attribute>,
-    /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor
-    /// data stream, such as timestamped temperature values or timestamped power values.</p>
+    /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
     pub measurement: std::option::Option<crate::model::Measurement>,
-    /// <p>Specifies an asset transform property. A transform contains a mathematical expression that
-    /// maps a property's data points from one form to another, such as a unit conversion from Celsius
-    /// to Fahrenheit.</p>
+    /// <p>Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit.</p>
     pub transform: std::option::Option<crate::model::Transform>,
-    /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses
-    /// aggregate functions to process all input data points over a time interval and output a single
-    /// data point, such as to calculate the average hourly temperature.</p>
+    /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
     pub metric: std::option::Option<crate::model::Metric>,
 }
 impl PropertyType {
-    /// <p>Specifies an asset attribute property. An attribute generally contains static information,
-    /// such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
+    /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
     pub fn attribute(&self) -> std::option::Option<&crate::model::Attribute> {
         self.attribute.as_ref()
     }
-    /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor
-    /// data stream, such as timestamped temperature values or timestamped power values.</p>
+    /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
     pub fn measurement(&self) -> std::option::Option<&crate::model::Measurement> {
         self.measurement.as_ref()
     }
-    /// <p>Specifies an asset transform property. A transform contains a mathematical expression that
-    /// maps a property's data points from one form to another, such as a unit conversion from Celsius
-    /// to Fahrenheit.</p>
+    /// <p>Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit.</p>
     pub fn transform(&self) -> std::option::Option<&crate::model::Transform> {
         self.transform.as_ref()
     }
-    /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses
-    /// aggregate functions to process all input data points over a time interval and output a single
-    /// data point, such as to calculate the average hourly temperature.</p>
+    /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
     pub fn metric(&self) -> std::option::Option<&crate::model::Metric> {
         self.metric.as_ref()
     }
@@ -1500,14 +1451,12 @@ pub mod property_type {
         pub(crate) metric: std::option::Option<crate::model::Metric>,
     }
     impl Builder {
-        /// <p>Specifies an asset attribute property. An attribute generally contains static information,
-        /// such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
+        /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
         pub fn attribute(mut self, input: crate::model::Attribute) -> Self {
             self.attribute = Some(input);
             self
         }
-        /// <p>Specifies an asset attribute property. An attribute generally contains static information,
-        /// such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
+        /// <p>Specifies an asset attribute property. An attribute generally contains static information, such as the serial number of an <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">IIoT</a> wind turbine.</p>
         pub fn set_attribute(
             mut self,
             input: std::option::Option<crate::model::Attribute>,
@@ -1515,14 +1464,12 @@ pub mod property_type {
             self.attribute = input;
             self
         }
-        /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor
-        /// data stream, such as timestamped temperature values or timestamped power values.</p>
+        /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
         pub fn measurement(mut self, input: crate::model::Measurement) -> Self {
             self.measurement = Some(input);
             self
         }
-        /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor
-        /// data stream, such as timestamped temperature values or timestamped power values.</p>
+        /// <p>Specifies an asset measurement property. A measurement represents a device's raw sensor data stream, such as timestamped temperature values or timestamped power values.</p>
         pub fn set_measurement(
             mut self,
             input: std::option::Option<crate::model::Measurement>,
@@ -1530,16 +1477,12 @@ pub mod property_type {
             self.measurement = input;
             self
         }
-        /// <p>Specifies an asset transform property. A transform contains a mathematical expression that
-        /// maps a property's data points from one form to another, such as a unit conversion from Celsius
-        /// to Fahrenheit.</p>
+        /// <p>Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit.</p>
         pub fn transform(mut self, input: crate::model::Transform) -> Self {
             self.transform = Some(input);
             self
         }
-        /// <p>Specifies an asset transform property. A transform contains a mathematical expression that
-        /// maps a property's data points from one form to another, such as a unit conversion from Celsius
-        /// to Fahrenheit.</p>
+        /// <p>Specifies an asset transform property. A transform contains a mathematical expression that maps a property's data points from one form to another, such as a unit conversion from Celsius to Fahrenheit.</p>
         pub fn set_transform(
             mut self,
             input: std::option::Option<crate::model::Transform>,
@@ -1547,16 +1490,12 @@ pub mod property_type {
             self.transform = input;
             self
         }
-        /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses
-        /// aggregate functions to process all input data points over a time interval and output a single
-        /// data point, such as to calculate the average hourly temperature.</p>
+        /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
         pub fn metric(mut self, input: crate::model::Metric) -> Self {
             self.metric = Some(input);
             self
         }
-        /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses
-        /// aggregate functions to process all input data points over a time interval and output a single
-        /// data point, such as to calculate the average hourly temperature.</p>
+        /// <p>Specifies an asset metric property. A metric contains a mathematical expression that uses aggregate functions to process all input data points over a time interval and output a single data point, such as to calculate the average hourly temperature.</p>
         pub fn set_metric(mut self, input: std::option::Option<crate::model::Metric>) -> Self {
             self.metric = input;
             self
@@ -1579,37 +1518,24 @@ impl PropertyType {
     }
 }
 
-/// <p>Contains an asset metric property. With metrics, you can calculate aggregate functions,
-/// such as an average, maximum, or minimum, as specified through an expression. A metric maps
-/// several values to a single value (such as a sum).</p>
-/// <p>The maximum number of dependent/cascading variables used in any one metric calculation is
-/// 10. Therefore, a <i>root</i> metric can have
-/// up to 10 cascading metrics in its computational dependency
-/// tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume
-/// properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p>
+/// <p>Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum).</p>
+/// <p>The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics">Metrics</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metric {
-    /// <p>The mathematical expression that defines the metric aggregation function. You can specify
-    /// up to 10 variables per expression. You can specify up to 10 functions
-    /// per expression. </p>
+    /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub expression: std::option::Option<std::string::String>,
     /// <p>The list of variables used in the expression.</p>
     pub variables: std::option::Option<std::vec::Vec<crate::model::ExpressionVariable>>,
-    /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression.
-    /// IoT SiteWise computes one data point per <code>window</code>.</p>
+    /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
     pub window: std::option::Option<crate::model::MetricWindow>,
-    /// <p>The processing configuration for the given metric property.
-    /// You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud.
-    /// By default, metrics are forwarded to the cloud.</p>
+    /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
     pub processing_config: std::option::Option<crate::model::MetricProcessingConfig>,
 }
 impl Metric {
-    /// <p>The mathematical expression that defines the metric aggregation function. You can specify
-    /// up to 10 variables per expression. You can specify up to 10 functions
-    /// per expression. </p>
+    /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
@@ -1618,14 +1544,11 @@ impl Metric {
     pub fn variables(&self) -> std::option::Option<&[crate::model::ExpressionVariable]> {
         self.variables.as_deref()
     }
-    /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression.
-    /// IoT SiteWise computes one data point per <code>window</code>.</p>
+    /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
     pub fn window(&self) -> std::option::Option<&crate::model::MetricWindow> {
         self.window.as_ref()
     }
-    /// <p>The processing configuration for the given metric property.
-    /// You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud.
-    /// By default, metrics are forwarded to the cloud.</p>
+    /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
     pub fn processing_config(&self) -> std::option::Option<&crate::model::MetricProcessingConfig> {
         self.processing_config.as_ref()
     }
@@ -1652,17 +1575,13 @@ pub mod metric {
         pub(crate) processing_config: std::option::Option<crate::model::MetricProcessingConfig>,
     }
     impl Builder {
-        /// <p>The mathematical expression that defines the metric aggregation function. You can specify
-        /// up to 10 variables per expression. You can specify up to 10 functions
-        /// per expression. </p>
+        /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
         }
-        /// <p>The mathematical expression that defines the metric aggregation function. You can specify
-        /// up to 10 variables per expression. You can specify up to 10 functions
-        /// per expression. </p>
+        /// <p>The mathematical expression that defines the metric aggregation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
@@ -1673,9 +1592,9 @@ pub mod metric {
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
         /// <p>The list of variables used in the expression.</p>
-        pub fn variables(mut self, input: impl Into<crate::model::ExpressionVariable>) -> Self {
+        pub fn variables(mut self, input: crate::model::ExpressionVariable) -> Self {
             let mut v = self.variables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variables = Some(v);
             self
         }
@@ -1687,14 +1606,12 @@ pub mod metric {
             self.variables = input;
             self
         }
-        /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression.
-        /// IoT SiteWise computes one data point per <code>window</code>.</p>
+        /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
         pub fn window(mut self, input: crate::model::MetricWindow) -> Self {
             self.window = Some(input);
             self
         }
-        /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression.
-        /// IoT SiteWise computes one data point per <code>window</code>.</p>
+        /// <p>The window (time interval) over which IoT SiteWise computes the metric's aggregation expression. IoT SiteWise computes one data point per <code>window</code>.</p>
         pub fn set_window(
             mut self,
             input: std::option::Option<crate::model::MetricWindow>,
@@ -1702,16 +1619,12 @@ pub mod metric {
             self.window = input;
             self
         }
-        /// <p>The processing configuration for the given metric property.
-        /// You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud.
-        /// By default, metrics are forwarded to the cloud.</p>
+        /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
         pub fn processing_config(mut self, input: crate::model::MetricProcessingConfig) -> Self {
             self.processing_config = Some(input);
             self
         }
-        /// <p>The processing configuration for the given metric property.
-        /// You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud.
-        /// By default, metrics are forwarded to the cloud.</p>
+        /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
         pub fn set_processing_config(
             mut self,
             input: std::option::Option<crate::model::MetricProcessingConfig>,
@@ -1737,9 +1650,7 @@ impl Metric {
     }
 }
 
-/// <p>The processing configuration for the given metric property.
-/// You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud.
-/// By default, metrics are forwarded to the cloud.</p>
+/// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricProcessingConfig {
@@ -1851,8 +1762,7 @@ impl AsRef<str> for ComputeLocation {
     }
 }
 
-/// <p>Contains a time interval window used for data aggregate computations (for example,
-/// average, sum, count, and so on).</p>
+/// <p>Contains a time interval window used for data aggregate computations (for example, average, sum, count, and so on).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricWindow {
@@ -1909,159 +1819,62 @@ impl MetricWindow {
     }
 }
 
-/// <p>Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and
-/// contiguous time window. You can use this window in metrics to aggregate data from properties
-/// and other assets.</p>
-/// <p>You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code> when you
-/// specify an interval or offset. Note that <code>m</code> represents minutes, <code>h</code>
-/// represents hours, <code>d</code> represents days, and <code>w</code> represents weeks. You can
-/// also use <code>s</code> to represent seconds in <code>offset</code>.</p>
-/// <p>The <code>interval</code> and <code>offset</code> parameters support the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>. For example,
-/// <code>PT5S</code> represents 5 seconds, <code>PT5M</code> represents 5 minutes, and
-/// <code>PT5H</code> represents 5 hours.</p>
+/// <p>Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time window. You can use this window in metrics to aggregate data from properties and other assets.</p>
+/// <p>You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code> when you specify an interval or offset. Note that <code>m</code> represents minutes, <code>h</code> represents hours, <code>d</code> represents days, and <code>w</code> represents weeks. You can also use <code>s</code> to represent seconds in <code>offset</code>.</p>
+/// <p>The <code>interval</code> and <code>offset</code> parameters support the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>. For example, <code>PT5S</code> represents 5 seconds, <code>PT5M</code> represents 5 minutes, and <code>PT5H</code> represents 5 hours.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TumblingWindow {
-    /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and
-    /// 1 week.</p>
-    /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC),
-    /// the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code>
-    /// interval at the end of each hour, and so on. </p>
-    /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is
-    /// exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at
-    /// the end of the interval.</p>
+    /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
+    /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
+    /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
     pub interval: std::option::Option<std::string::String>,
-    /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the
-    /// following:</p>
+    /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The offset time.</p>
-    /// <p>For example, if you specify <code>18h</code> for <code>offset</code> and
-    /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
-    /// ways:</p>
+    /// <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
-    /// result at 6 PM (UTC) on the day when you create the metric.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
-    /// 6 PM (UTC) the next day.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>The ISO 8601 format.</p>
-    /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and
-    /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
-    /// ways:</p>
+    /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
+    /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>The ISO 8601 format.</p> <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
-    /// result at 6 PM (UTC) on the day when you create the metric.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
-    /// 6 PM (UTC) the next day.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>The 24-hour clock.</p>
-    /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>,
-    /// <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you
-    /// get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result
-    /// at 2:08 PM (UTC). </p>
-    /// </li>
-    /// <li>
-    /// <p>The offset time zone.</p>
-    /// <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code>
-    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the
-    /// following ways:</p>
+    /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
+    /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>The 24-hour clock.</p> <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08 PM (UTC). </p> </li>
+    /// <li> <p>The offset time zone.</p> <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you create the metric before or at 6 PM (PST), you get the first aggregation
-    /// result at 6 PM (PST) on the day when you create the metric.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you create the metric after 6 PM (PST), you get the first aggregation result at
-    /// 6 PM (PST) the next day.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>If you create the metric before or at 6 PM (PST), you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p> </li>
+    /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub offset: std::option::Option<std::string::String>,
 }
 impl TumblingWindow {
-    /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and
-    /// 1 week.</p>
-    /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC),
-    /// the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code>
-    /// interval at the end of each hour, and so on. </p>
-    /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is
-    /// exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at
-    /// the end of the interval.</p>
+    /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
+    /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
+    /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
     pub fn interval(&self) -> std::option::Option<&str> {
         self.interval.as_deref()
     }
-    /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the
-    /// following:</p>
+    /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The offset time.</p>
-    /// <p>For example, if you specify <code>18h</code> for <code>offset</code> and
-    /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
-    /// ways:</p>
+    /// <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
-    /// result at 6 PM (UTC) on the day when you create the metric.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
-    /// 6 PM (UTC) the next day.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>The ISO 8601 format.</p>
-    /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and
-    /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
-    /// ways:</p>
+    /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
+    /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>The ISO 8601 format.</p> <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
-    /// result at 6 PM (UTC) on the day when you create the metric.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
-    /// 6 PM (UTC) the next day.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>The 24-hour clock.</p>
-    /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>,
-    /// <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you
-    /// get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result
-    /// at 2:08 PM (UTC). </p>
-    /// </li>
-    /// <li>
-    /// <p>The offset time zone.</p>
-    /// <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code>
-    /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the
-    /// following ways:</p>
+    /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
+    /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>The 24-hour clock.</p> <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08 PM (UTC). </p> </li>
+    /// <li> <p>The offset time zone.</p> <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you create the metric before or at 6 PM (PST), you get the first aggregation
-    /// result at 6 PM (PST) on the day when you create the metric.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you create the metric after 6 PM (PST), you get the first aggregation result at
-    /// 6 PM (PST) the next day.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>If you create the metric before or at 6 PM (PST), you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p> </li>
+    /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn offset(&self) -> std::option::Option<&str> {
         self.offset.as_deref()
@@ -2085,151 +1898,61 @@ pub mod tumbling_window {
         pub(crate) offset: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and
-        /// 1 week.</p>
-        /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC),
-        /// the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code>
-        /// interval at the end of each hour, and so on. </p>
-        /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is
-        /// exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at
-        /// the end of the interval.</p>
+        /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
+        /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
+        /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
         pub fn interval(mut self, input: impl Into<std::string::String>) -> Self {
             self.interval = Some(input.into());
             self
         }
-        /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and
-        /// 1 week.</p>
-        /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC),
-        /// the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code>
-        /// interval at the end of each hour, and so on. </p>
-        /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is
-        /// exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at
-        /// the end of the interval.</p>
+        /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
+        /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
+        /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
         pub fn set_interval(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.interval = input;
             self
         }
-        /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the
-        /// following:</p>
+        /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The offset time.</p>
-        /// <p>For example, if you specify <code>18h</code> for <code>offset</code> and
-        /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
-        /// ways:</p>
+        /// <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
-        /// result at 6 PM (UTC) on the day when you create the metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
-        /// 6 PM (UTC) the next day.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>The ISO 8601 format.</p>
-        /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and
-        /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
-        /// ways:</p>
+        /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
+        /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>The ISO 8601 format.</p> <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
-        /// result at 6 PM (UTC) on the day when you create the metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
-        /// 6 PM (UTC) the next day.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>The 24-hour clock.</p>
-        /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>,
-        /// <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you
-        /// get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result
-        /// at 2:08 PM (UTC). </p>
-        /// </li>
-        /// <li>
-        /// <p>The offset time zone.</p>
-        /// <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code>
-        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the
-        /// following ways:</p>
+        /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
+        /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>The 24-hour clock.</p> <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08 PM (UTC). </p> </li>
+        /// <li> <p>The offset time zone.</p> <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you create the metric before or at 6 PM (PST), you get the first aggregation
-        /// result at 6 PM (PST) on the day when you create the metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you create the metric after 6 PM (PST), you get the first aggregation result at
-        /// 6 PM (PST) the next day.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>If you create the metric before or at 6 PM (PST), you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p> </li>
+        /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn offset(mut self, input: impl Into<std::string::String>) -> Self {
             self.offset = Some(input.into());
             self
         }
-        /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the
-        /// following:</p>
+        /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The offset time.</p>
-        /// <p>For example, if you specify <code>18h</code> for <code>offset</code> and
-        /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
-        /// ways:</p>
+        /// <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
-        /// result at 6 PM (UTC) on the day when you create the metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
-        /// 6 PM (UTC) the next day.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>The ISO 8601 format.</p>
-        /// <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and
-        /// <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following
-        /// ways:</p>
+        /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
+        /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>The ISO 8601 format.</p> <p>For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation
-        /// result at 6 PM (UTC) on the day when you create the metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at
-        /// 6 PM (UTC) the next day.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>The 24-hour clock.</p>
-        /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>,
-        /// <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you
-        /// get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result
-        /// at 2:08 PM (UTC). </p>
-        /// </li>
-        /// <li>
-        /// <p>The offset time zone.</p>
-        /// <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code>
-        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the
-        /// following ways:</p>
+        /// <li> <p>If you create the metric before or at 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p> </li>
+        /// <li> <p>If you create the metric after 6 PM (UTC), you get the first aggregation result at 6 PM (UTC) the next day.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>The 24-hour clock.</p> <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08 PM (UTC). </p> </li>
+        /// <li> <p>The offset time zone.</p> <p>For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you create the metric before or at 6 PM (PST), you get the first aggregation
-        /// result at 6 PM (PST) on the day when you create the metric.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you create the metric after 6 PM (PST), you get the first aggregation result at
-        /// 6 PM (PST) the next day.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>If you create the metric before or at 6 PM (PST), you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p> </li>
+        /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_offset(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offset = input;
@@ -2331,29 +2054,19 @@ impl ExpressionVariable {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VariableValue {
-    /// <p>The ID of the property to use as the variable. You can use the property <code>name</code>
-    /// if it's from the same asset model.</p>
+    /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model.</p>
     pub property_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name
-    /// instead of the hierarchy's ID.</p>
-    /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies
-    /// using the same model and therefore the same <code>propertyId</code>. For example, you might
-    /// have separately grouped assets that come from the same asset model. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p>
+    /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub hierarchy_id: std::option::Option<std::string::String>,
 }
 impl VariableValue {
-    /// <p>The ID of the property to use as the variable. You can use the property <code>name</code>
-    /// if it's from the same asset model.</p>
+    /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model.</p>
     pub fn property_id(&self) -> std::option::Option<&str> {
         self.property_id.as_deref()
     }
-    /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name
-    /// instead of the hierarchy's ID.</p>
-    /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies
-    /// using the same model and therefore the same <code>propertyId</code>. For example, you might
-    /// have separately grouped assets that come from the same asset model. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p>
+    /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn hierarchy_id(&self) -> std::option::Option<&str> {
         self.hierarchy_id.as_deref()
     }
@@ -2376,34 +2089,24 @@ pub mod variable_value {
         pub(crate) hierarchy_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the property to use as the variable. You can use the property <code>name</code>
-        /// if it's from the same asset model.</p>
+        /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model.</p>
         pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.property_id = Some(input.into());
             self
         }
-        /// <p>The ID of the property to use as the variable. You can use the property <code>name</code>
-        /// if it's from the same asset model.</p>
+        /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model.</p>
         pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.property_id = input;
             self
         }
-        /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name
-        /// instead of the hierarchy's ID.</p>
-        /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies
-        /// using the same model and therefore the same <code>propertyId</code>. For example, you might
-        /// have separately grouped assets that come from the same asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p>
+        /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hierarchy_id = Some(input.into());
             self
         }
-        /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name
-        /// instead of the hierarchy's ID.</p>
-        /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies
-        /// using the same model and therefore the same <code>propertyId</code>. For example, you might
-        /// have separately grouped assets that come from the same asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p>
+        /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_hierarchy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hierarchy_id = input;
             self
@@ -2424,31 +2127,21 @@ impl VariableValue {
     }
 }
 
-/// <p>Contains an asset transform property. A transform is a one-to-one mapping of a property's
-/// data points from one form to another. For example, you can use a transform to convert a
-/// Celsius data stream to Fahrenheit by applying the transformation expression to each data point
-/// of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and
-/// consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p>
+/// <p>Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Transform {
-    /// <p>The mathematical expression that defines the transformation function. You can specify up
-    /// to 10 variables per expression. You can specify up to 10 functions per
-    /// expression. </p>
+    /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub expression: std::option::Option<std::string::String>,
     /// <p>The list of variables used in the expression.</p>
     pub variables: std::option::Option<std::vec::Vec<crate::model::ExpressionVariable>>,
-    /// <p>The processing configuration for the given transform property.
-    /// You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud.
-    /// You can also configure transforms to be computed at the edge or in the cloud.</p>
+    /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
     pub processing_config: std::option::Option<crate::model::TransformProcessingConfig>,
 }
 impl Transform {
-    /// <p>The mathematical expression that defines the transformation function. You can specify up
-    /// to 10 variables per expression. You can specify up to 10 functions per
-    /// expression. </p>
+    /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
@@ -2457,9 +2150,7 @@ impl Transform {
     pub fn variables(&self) -> std::option::Option<&[crate::model::ExpressionVariable]> {
         self.variables.as_deref()
     }
-    /// <p>The processing configuration for the given transform property.
-    /// You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud.
-    /// You can also configure transforms to be computed at the edge or in the cloud.</p>
+    /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
     pub fn processing_config(
         &self,
     ) -> std::option::Option<&crate::model::TransformProcessingConfig> {
@@ -2486,17 +2177,13 @@ pub mod transform {
         pub(crate) processing_config: std::option::Option<crate::model::TransformProcessingConfig>,
     }
     impl Builder {
-        /// <p>The mathematical expression that defines the transformation function. You can specify up
-        /// to 10 variables per expression. You can specify up to 10 functions per
-        /// expression. </p>
+        /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
         }
-        /// <p>The mathematical expression that defines the transformation function. You can specify up
-        /// to 10 variables per expression. You can specify up to 10 functions per
-        /// expression. </p>
+        /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
@@ -2507,9 +2194,9 @@ pub mod transform {
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
         /// <p>The list of variables used in the expression.</p>
-        pub fn variables(mut self, input: impl Into<crate::model::ExpressionVariable>) -> Self {
+        pub fn variables(mut self, input: crate::model::ExpressionVariable) -> Self {
             let mut v = self.variables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.variables = Some(v);
             self
         }
@@ -2521,16 +2208,12 @@ pub mod transform {
             self.variables = input;
             self
         }
-        /// <p>The processing configuration for the given transform property.
-        /// You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud.
-        /// You can also configure transforms to be computed at the edge or in the cloud.</p>
+        /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
         pub fn processing_config(mut self, input: crate::model::TransformProcessingConfig) -> Self {
             self.processing_config = Some(input);
             self
         }
-        /// <p>The processing configuration for the given transform property.
-        /// You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud.
-        /// You can also configure transforms to be computed at the edge or in the cloud.</p>
+        /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
         pub fn set_processing_config(
             mut self,
             input: std::option::Option<crate::model::TransformProcessingConfig>,
@@ -2555,9 +2238,7 @@ impl Transform {
     }
 }
 
-/// <p>The processing configuration for the given transform property.
-/// You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud.
-/// You can also configure transforms to be computed at the edge or in the cloud.</p>
+/// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransformProcessingConfig {
@@ -2746,20 +2427,15 @@ impl AsRef<str> for ForwardingConfigState {
     }
 }
 
-/// <p>Contains an asset measurement property. For more information, see
-/// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a> in the <i>IoT SiteWise User Guide</i>.</p>
+/// <p>Contains an asset measurement property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Measurement {
-    /// <p>The processing configuration for the given measurement property.
-    /// You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud.
-    /// By default, measurements are forwarded to the cloud.</p>
+    /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
     pub processing_config: std::option::Option<crate::model::MeasurementProcessingConfig>,
 }
 impl Measurement {
-    /// <p>The processing configuration for the given measurement property.
-    /// You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud.
-    /// By default, measurements are forwarded to the cloud.</p>
+    /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
     pub fn processing_config(
         &self,
     ) -> std::option::Option<&crate::model::MeasurementProcessingConfig> {
@@ -2783,9 +2459,7 @@ pub mod measurement {
             std::option::Option<crate::model::MeasurementProcessingConfig>,
     }
     impl Builder {
-        /// <p>The processing configuration for the given measurement property.
-        /// You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud.
-        /// By default, measurements are forwarded to the cloud.</p>
+        /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
         pub fn processing_config(
             mut self,
             input: crate::model::MeasurementProcessingConfig,
@@ -2793,9 +2467,7 @@ pub mod measurement {
             self.processing_config = Some(input);
             self
         }
-        /// <p>The processing configuration for the given measurement property.
-        /// You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud.
-        /// By default, measurements are forwarded to the cloud.</p>
+        /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
         pub fn set_processing_config(
             mut self,
             input: std::option::Option<crate::model::MeasurementProcessingConfig>,
@@ -2818,9 +2490,7 @@ impl Measurement {
     }
 }
 
-/// <p>The processing configuration for the given measurement property.
-/// You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud.
-/// By default, measurements are forwarded to the cloud.</p>
+/// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeasurementProcessingConfig {
@@ -2877,22 +2547,15 @@ impl MeasurementProcessingConfig {
     }
 }
 
-/// <p>Contains an asset attribute property. For more information, see
-/// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes">Attributes</a> in the <i>IoT SiteWise User Guide</i>.</p>
+/// <p>Contains an asset attribute property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes">Attributes</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attribute {
-    /// <p>The default value of the asset model property attribute. All assets that you create from
-    /// the asset model contain this attribute value. You can update an attribute's value after you
-    /// create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The default value of the asset model property attribute. All assets that you create from the asset model contain this attribute value. You can update an attribute's value after you create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub default_value: std::option::Option<std::string::String>,
 }
 impl Attribute {
-    /// <p>The default value of the asset model property attribute. All assets that you create from
-    /// the asset model contain this attribute value. You can update an attribute's value after you
-    /// create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The default value of the asset model property attribute. All assets that you create from the asset model contain this attribute value. You can update an attribute's value after you create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
     }
@@ -2913,18 +2576,12 @@ pub mod attribute {
         pub(crate) default_value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The default value of the asset model property attribute. All assets that you create from
-        /// the asset model contain this attribute value. You can update an attribute's value after you
-        /// create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The default value of the asset model property attribute. All assets that you create from the asset model contain this attribute value. You can update an attribute's value after you create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_value = Some(input.into());
             self
         }
-        /// <p>The default value of the asset model property attribute. All assets that you create from
-        /// the asset model contain this attribute value. You can update an attribute's value after you
-        /// create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The default value of the asset model property attribute. All assets that you create from the asset model contain this attribute value. You can update an attribute's value after you create an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-attribute-values.html">Updating attribute values</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3014,18 +2671,15 @@ impl AsRef<str> for PropertyDataType {
     }
 }
 
-/// <p>Describes an asset hierarchy that contains a hierarchy's name, ID, and child asset model
-/// ID that specifies the type of asset that can be in this hierarchy.</p>
+/// <p>Describes an asset hierarchy that contains a hierarchy's name, ID, and child asset model ID that specifies the type of asset that can be in this hierarchy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelHierarchy {
     /// <p>The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
+    /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the
-    /// <code>childAssetModelId</code> asset model.</p>
+    /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code> asset model.</p>
     pub child_asset_model_id: std::option::Option<std::string::String>,
 }
 impl AssetModelHierarchy {
@@ -3033,13 +2687,11 @@ impl AssetModelHierarchy {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
+    /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the
-    /// <code>childAssetModelId</code> asset model.</p>
+    /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code> asset model.</p>
     pub fn child_asset_model_id(&self) -> std::option::Option<&str> {
         self.child_asset_model_id.as_deref()
     }
@@ -3074,26 +2726,22 @@ pub mod asset_model_hierarchy {
             self.id = input;
             self
         }
-        /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
+        /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
+        /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the
-        /// <code>childAssetModelId</code> asset model.</p>
+        /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code> asset model.</p>
         pub fn child_asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.child_asset_model_id = Some(input.into());
             self
         }
-        /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the
-        /// <code>childAssetModelId</code> asset model.</p>
+        /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code> asset model.</p>
         pub fn set_child_asset_model_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3118,9 +2766,7 @@ impl AssetModelHierarchy {
     }
 }
 
-/// <p>Contains information about the current status of an asset. For more information, see
-/// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model
-/// states</a> in the <i>IoT SiteWise User Guide</i>.</p>
+/// <p>Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetStatus {
@@ -3498,10 +3144,8 @@ impl PortalResource {
     }
 }
 
-/// <p>Contains an identity that can access an IoT SiteWise Monitor resource.</p>
-/// <note>
-/// <p>Currently, you can't use Amazon Web Services APIs to retrieve Amazon Web Services SSO identity IDs. You can find the
-/// Amazon Web Services SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">Amazon Web Services SSO console</a>.</p>
+/// <p>Contains an identity that can access an IoT SiteWise Monitor resource.</p> <note>
+/// <p>Currently, you can't use Amazon Web Services APIs to retrieve Amazon Web Services SSO identity IDs. You can find the Amazon Web Services SSO identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">Amazon Web Services SSO console</a>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3622,18 +3266,15 @@ impl Identity {
     }
 }
 
-/// <p>Contains information about an Identity and Access Management role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the
-/// <i>IAM User Guide</i>.</p>
+/// <p>Contains information about an Identity and Access Management role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamRoleIdentity {
-    /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
-    /// <i>IAM User Guide</i>.</p>
+    /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl IamRoleIdentity {
-    /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
-    /// <i>IAM User Guide</i>.</p>
+    /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -3654,14 +3295,12 @@ pub mod iam_role_identity {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
-        /// <i>IAM User Guide</i>.</p>
+        /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
-        /// <i>IAM User Guide</i>.</p>
+        /// <p>The ARN of the IAM role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3683,22 +3322,14 @@ impl IamRoleIdentity {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamUserIdentity {
-    /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
-    /// <i>IAM User Guide</i>.</p>
-    /// <note>
-    /// <p>If you delete the IAM user, access policies that contain this identity include an
-    /// empty <code>arn</code>. You can delete the access policy for the IAM user that no longer
-    /// exists.</p>
+    /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note>
+    /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
     /// </note>
     pub arn: std::option::Option<std::string::String>,
 }
 impl IamUserIdentity {
-    /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
-    /// <i>IAM User Guide</i>.</p>
-    /// <note>
-    /// <p>If you delete the IAM user, access policies that contain this identity include an
-    /// empty <code>arn</code>. You can delete the access policy for the IAM user that no longer
-    /// exists.</p>
+    /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note>
+    /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
     /// </note>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
@@ -3720,23 +3351,15 @@ pub mod iam_user_identity {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
-        /// <i>IAM User Guide</i>.</p>
-        /// <note>
-        /// <p>If you delete the IAM user, access policies that contain this identity include an
-        /// empty <code>arn</code>. You can delete the access policy for the IAM user that no longer
-        /// exists.</p>
+        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note>
+        /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
         /// </note>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
-        /// <i>IAM User Guide</i>.</p>
-        /// <note>
-        /// <p>If you delete the IAM user, access policies that contain this identity include an
-        /// empty <code>arn</code>. You can delete the access policy for the IAM user that no longer
-        /// exists.</p>
+        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>.</p> <note>
+        /// <p>If you delete the IAM user, access policies that contain this identity include an empty <code>arn</code>. You can delete the access policy for the IAM user that no longer exists.</p>
         /// </note>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
@@ -4074,32 +3697,24 @@ impl AsRef<str> for ConfigurationState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetentionPeriod {
-    /// <p>The number of days that your data is kept.</p>
-    /// <note>
-    /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must
-    /// be <code>false</code>.</p>
+    /// <p>The number of days that your data is kept.</p> <note>
+    /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
     /// </note>
     pub number_of_days: std::option::Option<i32>,
-    /// <p>If true, your data is kept indefinitely.</p>
-    /// <note>
-    /// <p>If configured to <code>true</code>, you must not specify a value for the
-    /// <code>numberOfDays</code> parameter.</p>
+    /// <p>If true, your data is kept indefinitely.</p> <note>
+    /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
     /// </note>
     pub unlimited: std::option::Option<bool>,
 }
 impl RetentionPeriod {
-    /// <p>The number of days that your data is kept.</p>
-    /// <note>
-    /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must
-    /// be <code>false</code>.</p>
+    /// <p>The number of days that your data is kept.</p> <note>
+    /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
     /// </note>
     pub fn number_of_days(&self) -> std::option::Option<i32> {
         self.number_of_days
     }
-    /// <p>If true, your data is kept indefinitely.</p>
-    /// <note>
-    /// <p>If configured to <code>true</code>, you must not specify a value for the
-    /// <code>numberOfDays</code> parameter.</p>
+    /// <p>If true, your data is kept indefinitely.</p> <note>
+    /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
     /// </note>
     pub fn unlimited(&self) -> std::option::Option<bool> {
         self.unlimited
@@ -4123,37 +3738,29 @@ pub mod retention_period {
         pub(crate) unlimited: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The number of days that your data is kept.</p>
-        /// <note>
-        /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must
-        /// be <code>false</code>.</p>
+        /// <p>The number of days that your data is kept.</p> <note>
+        /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
         /// </note>
         pub fn number_of_days(mut self, input: i32) -> Self {
             self.number_of_days = Some(input);
             self
         }
-        /// <p>The number of days that your data is kept.</p>
-        /// <note>
-        /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must
-        /// be <code>false</code>.</p>
+        /// <p>The number of days that your data is kept.</p> <note>
+        /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
         /// </note>
         pub fn set_number_of_days(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_days = input;
             self
         }
-        /// <p>If true, your data is kept indefinitely.</p>
-        /// <note>
-        /// <p>If configured to <code>true</code>, you must not specify a value for the
-        /// <code>numberOfDays</code> parameter.</p>
+        /// <p>If true, your data is kept indefinitely.</p> <note>
+        /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
         /// </note>
         pub fn unlimited(mut self, input: bool) -> Self {
             self.unlimited = Some(input);
             self
         }
-        /// <p>If true, your data is kept indefinitely.</p>
-        /// <note>
-        /// <p>If configured to <code>true</code>, you must not specify a value for the
-        /// <code>numberOfDays</code> parameter.</p>
+        /// <p>If true, your data is kept indefinitely.</p> <note>
+        /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
         /// </note>
         pub fn set_unlimited(mut self, input: std::option::Option<bool>) -> Self {
             self.unlimited = input;
@@ -4300,17 +3907,13 @@ impl MultiLayerStorage {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerManagedS3Storage {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an
-    /// Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the
-    /// <i>Amazon Simple Storage Service User Guide</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     pub s3_resource_arn: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Identity and Access Management role that allows IoT SiteWise to send data to Amazon S3.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CustomerManagedS3Storage {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an
-    /// Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the
-    /// <i>Amazon Simple Storage Service User Guide</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     pub fn s3_resource_arn(&self) -> std::option::Option<&str> {
         self.s3_resource_arn.as_deref()
     }
@@ -4337,16 +3940,12 @@ pub mod customer_managed_s3_storage {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an
-        /// Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the
-        /// <i>Amazon Simple Storage Service User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
         pub fn s3_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_resource_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an
-        /// Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the
-        /// <i>Amazon Simple Storage Service User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Amazon S3 object. For more information about how to find the ARN for an Amazon S3 object, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
         pub fn set_s3_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4616,11 +4215,8 @@ pub struct TimeSeriesSummary {
     /// <p>The data type of the time series.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this time series.</p>
     pub data_type: std::option::Option<crate::model::PropertyDataType>,
-    /// <p>The data type of the structure for this time series. This parameter is required for time series
-    /// that have the <code>STRUCT</code> data type.</p>
-    /// <p>The options for this parameter depend on the type of the composite model
-    /// in which you created the asset property that is associated with your time series.
-    /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+    /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+    /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
     pub data_type_spec: std::option::Option<std::string::String>,
     /// <p>The date that the time series was created, in Unix epoch time.</p>
     pub time_series_creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -4649,11 +4245,8 @@ impl TimeSeriesSummary {
     pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
         self.data_type.as_ref()
     }
-    /// <p>The data type of the structure for this time series. This parameter is required for time series
-    /// that have the <code>STRUCT</code> data type.</p>
-    /// <p>The options for this parameter depend on the type of the composite model
-    /// in which you created the asset property that is associated with your time series.
-    /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+    /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+    /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
     pub fn data_type_spec(&self) -> std::option::Option<&str> {
         self.data_type_spec.as_deref()
     }
@@ -4757,20 +4350,14 @@ pub mod time_series_summary {
             self.data_type = input;
             self
         }
-        /// <p>The data type of the structure for this time series. This parameter is required for time series
-        /// that have the <code>STRUCT</code> data type.</p>
-        /// <p>The options for this parameter depend on the type of the composite model
-        /// in which you created the asset property that is associated with your time series.
-        /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+        /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+        /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
         pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_type_spec = Some(input.into());
             self
         }
-        /// <p>The data type of the structure for this time series. This parameter is required for time series
-        /// that have the <code>STRUCT</code> data type.</p>
-        /// <p>The options for this parameter depend on the type of the composite model
-        /// in which you created the asset property that is associated with your time series.
-        /// Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
+        /// <p>The data type of the structure for this time series. This parameter is required for time series that have the <code>STRUCT</code> data type.</p>
+        /// <p>The options for this parameter depend on the type of the composite model in which you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
         pub fn set_data_type_spec(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5027,17 +4614,13 @@ pub struct PortalSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>The portal's description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
-    /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
-    /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub start_url: std::option::Option<std::string::String>,
     /// <p>The date the portal was created, in Unix epoch time.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
     pub last_update_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
-    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Contains information about the current status of a portal.</p>
     pub status: std::option::Option<crate::model::PortalStatus>,
@@ -5055,9 +4638,7 @@ impl PortalSummary {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
-    /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
-    /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub fn start_url(&self) -> std::option::Option<&str> {
         self.start_url.as_deref()
     }
@@ -5069,9 +4650,7 @@ impl PortalSummary {
     pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
-    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -5140,16 +4719,12 @@ pub mod portal_summary {
             self.description = input;
             self
         }
-        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
-        /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
-        /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn start_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_url = Some(input.into());
             self
         }
-        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that
-        /// use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the
-        /// IoT SiteWise console to get a URL that you can use to access the portal.</p>
+        /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use Amazon Web Services SSO for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
         pub fn set_start_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_url = input;
             self
@@ -5180,16 +4755,12 @@ pub mod portal_summary {
             self.last_update_date = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -5239,9 +4810,7 @@ pub struct GatewaySummary {
     pub gateway_name: std::option::Option<std::string::String>,
     /// <p>Contains a gateway's platform information.</p>
     pub gateway_platform: std::option::Option<crate::model::GatewayPlatform>,
-    /// <p>A list of gateway capability summaries that each contain a namespace and status. Each
-    /// gateway capability defines data sources for the gateway. To retrieve a capability
-    /// configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
+    /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
     pub gateway_capability_summaries:
         std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
     /// <p>The date the gateway was created, in Unix epoch time.</p>
@@ -5262,9 +4831,7 @@ impl GatewaySummary {
     pub fn gateway_platform(&self) -> std::option::Option<&crate::model::GatewayPlatform> {
         self.gateway_platform.as_ref()
     }
-    /// <p>A list of gateway capability summaries that each contain a namespace and status. Each
-    /// gateway capability defines data sources for the gateway. To retrieve a capability
-    /// configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
+    /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
     pub fn gateway_capability_summaries(
         &self,
     ) -> std::option::Option<&[crate::model::GatewayCapabilitySummary]> {
@@ -5346,21 +4913,17 @@ pub mod gateway_summary {
         ///
         /// To override the contents of this collection use [`set_gateway_capability_summaries`](Self::set_gateway_capability_summaries).
         ///
-        /// <p>A list of gateway capability summaries that each contain a namespace and status. Each
-        /// gateway capability defines data sources for the gateway. To retrieve a capability
-        /// configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
+        /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
         pub fn gateway_capability_summaries(
             mut self,
-            input: impl Into<crate::model::GatewayCapabilitySummary>,
+            input: crate::model::GatewayCapabilitySummary,
         ) -> Self {
             let mut v = self.gateway_capability_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.gateway_capability_summaries = Some(v);
             self
         }
-        /// <p>A list of gateway capability summaries that each contain a namespace and status. Each
-        /// gateway capability defines data sources for the gateway. To retrieve a capability
-        /// configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
+        /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
         pub fn set_gateway_capability_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
@@ -5418,52 +4981,26 @@ impl GatewaySummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayCapabilitySummary {
-    /// <p>The namespace of the capability configuration.
-    /// For example, if you configure OPC-UA
-    /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
-    /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
-    /// <code>1</code>.</p>
+    /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
     pub capability_namespace: std::option::Option<std::string::String>,
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code> – The gateway is running the capability configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p>
-    /// </li>
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
     pub capability_sync_status: std::option::Option<crate::model::CapabilitySyncStatus>,
 }
 impl GatewayCapabilitySummary {
-    /// <p>The namespace of the capability configuration.
-    /// For example, if you configure OPC-UA
-    /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
-    /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
-    /// <code>1</code>.</p>
+    /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
     pub fn capability_namespace(&self) -> std::option::Option<&str> {
         self.capability_namespace.as_deref()
     }
     /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>IN_SYNC</code> – The gateway is running the capability configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p>
-    /// </li>
+    /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
+    /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
+    /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
     /// </ul>
     pub fn capability_sync_status(
         &self,
@@ -5489,20 +5026,12 @@ pub mod gateway_capability_summary {
         pub(crate) capability_sync_status: std::option::Option<crate::model::CapabilitySyncStatus>,
     }
     impl Builder {
-        /// <p>The namespace of the capability configuration.
-        /// For example, if you configure OPC-UA
-        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
-        /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
-        /// <code>1</code>.</p>
+        /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
         pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.capability_namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the capability configuration.
-        /// For example, if you configure OPC-UA
-        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
-        /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
-        /// <code>1</code>.</p>
+        /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
         pub fn set_capability_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5512,18 +5041,9 @@ pub mod gateway_capability_summary {
         }
         /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code> – The gateway is running the capability configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p>
-        /// </li>
+        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
+        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
+        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
         /// </ul>
         pub fn capability_sync_status(mut self, input: crate::model::CapabilitySyncStatus) -> Self {
             self.capability_sync_status = Some(input);
@@ -5531,18 +5051,9 @@ pub mod gateway_capability_summary {
         }
         /// <p>The synchronization status of the capability configuration. The sync status can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>IN_SYNC</code> – The gateway is running the capability configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p>
-        /// </li>
+        /// <li> <p> <code>IN_SYNC</code> – The gateway is running the capability configuration.</p> </li>
+        /// <li> <p> <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.</p> </li>
+        /// <li> <p> <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.</p> </li>
         /// </ul>
         pub fn set_capability_sync_status(
             mut self,
@@ -5646,11 +5157,7 @@ impl GatewayPlatform {
     }
 }
 
-/// <p>Contains details for a gateway that runs on IoT Greengrass V2. To create a gateway that runs on IoT Greengrass
-/// V2, you must deploy the IoT SiteWise Edge component to your gateway device. Your <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/device-service-role.html">Greengrass
-/// device role</a> must use the <code>AWSIoTSiteWiseEdgeAccess</code> policy. For more
-/// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/sw-gateways.html">Using IoT SiteWise at the edge</a> in the
-/// <i>IoT SiteWise User Guide</i>.</p>
+/// <p>Contains details for a gateway that runs on IoT Greengrass V2. To create a gateway that runs on IoT Greengrass V2, you must deploy the IoT SiteWise Edge component to your gateway device. Your <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/device-service-role.html">Greengrass device role</a> must use the <code>AWSIoTSiteWiseEdgeAccess</code> policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/sw-gateways.html">Using IoT SiteWise at the edge</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GreengrassV2 {
@@ -5707,22 +5214,15 @@ impl GreengrassV2 {
     }
 }
 
-/// <p>Contains details for a gateway that runs on IoT Greengrass. To create a gateway that runs on IoT Greengrass,
-/// you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass
-/// group must also have permissions to upload data to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a
-/// gateway</a> in the <i>IoT SiteWise User Guide</i>.</p>
+/// <p>Contains details for a gateway that runs on IoT Greengrass. To create a gateway that runs on IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Greengrass {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's
-    /// ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the
-    /// <i>IoT Greengrass API Reference</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.</p>
     pub group_arn: std::option::Option<std::string::String>,
 }
 impl Greengrass {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's
-    /// ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the
-    /// <i>IoT Greengrass API Reference</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.</p>
     pub fn group_arn(&self) -> std::option::Option<&str> {
         self.group_arn.as_deref()
     }
@@ -5743,16 +5243,12 @@ pub mod greengrass {
         pub(crate) group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's
-        /// ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the
-        /// <i>IoT Greengrass API Reference</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.</p>
         pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_arn = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's
-        /// ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the
-        /// <i>IoT Greengrass API Reference</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.</p>
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_arn = input;
             self
@@ -5915,9 +5411,7 @@ pub struct AssociatedAssetsSummary {
     /// <p>The ID of the asset.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the asset.</p>
     pub name: std::option::Option<std::string::String>,
@@ -5938,9 +5432,7 @@ impl AssociatedAssetsSummary {
         self.id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -6010,17 +5502,13 @@ pub mod associated_assets_summary {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6089,9 +5577,9 @@ pub mod associated_assets_summary {
         /// To override the contents of this collection use [`set_hierarchies`](Self::set_hierarchies).
         ///
         /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-        pub fn hierarchies(mut self, input: impl Into<crate::model::AssetHierarchy>) -> Self {
+        pub fn hierarchies(mut self, input: crate::model::AssetHierarchy) -> Self {
             let mut v = self.hierarchies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hierarchies = Some(v);
             self
         }
@@ -6131,8 +5619,7 @@ impl AssociatedAssetsSummary {
 pub struct AssetHierarchy {
     /// <p>The ID of the hierarchy. This ID is a <code>hierarchyId</code>.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
-    /// API operation.</p>
+    /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl AssetHierarchy {
@@ -6140,8 +5627,7 @@ impl AssetHierarchy {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
-    /// API operation.</p>
+    /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -6174,14 +5660,12 @@ pub mod asset_hierarchy {
             self.id = input;
             self
         }
-        /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
-        /// API operation.</p>
+        /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
-        /// API operation.</p>
+        /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6264,9 +5748,7 @@ pub struct AssetSummary {
     /// <p>The ID of the asset.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the asset.</p>
     pub name: std::option::Option<std::string::String>,
@@ -6287,9 +5769,7 @@ impl AssetSummary {
         self.id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -6359,17 +5839,13 @@ pub mod asset_summary {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6438,9 +5914,9 @@ pub mod asset_summary {
         /// To override the contents of this collection use [`set_hierarchies`](Self::set_hierarchies).
         ///
         /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-        pub fn hierarchies(mut self, input: impl Into<crate::model::AssetHierarchy>) -> Self {
+        pub fn hierarchies(mut self, input: crate::model::AssetHierarchy) -> Self {
             let mut v = self.hierarchies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hierarchies = Some(v);
             self
         }
@@ -6534,37 +6010,23 @@ impl AsRef<str> for ListAssetsFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetRelationshipSummary {
     /// <p>The assets that are related through an asset hierarchy.</p>
-    /// <p>This object is present if the <code>relationshipType</code> is
-    /// <code>HIERARCHY</code>.</p>
+    /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
     pub hierarchy_info: std::option::Option<crate::model::AssetHierarchyInfo>,
-    /// <p>The relationship type of the assets in this relationship. This value is one of the
-    /// following:</p>
+    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If
-    /// you specify this relationship type, this asset relationship includes the
-    /// <code>hierarchyInfo</code> object.</p>
-    /// </li>
+    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
     /// </ul>
     pub relationship_type: std::option::Option<crate::model::AssetRelationshipType>,
 }
 impl AssetRelationshipSummary {
     /// <p>The assets that are related through an asset hierarchy.</p>
-    /// <p>This object is present if the <code>relationshipType</code> is
-    /// <code>HIERARCHY</code>.</p>
+    /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
     pub fn hierarchy_info(&self) -> std::option::Option<&crate::model::AssetHierarchyInfo> {
         self.hierarchy_info.as_ref()
     }
-    /// <p>The relationship type of the assets in this relationship. This value is one of the
-    /// following:</p>
+    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If
-    /// you specify this relationship type, this asset relationship includes the
-    /// <code>hierarchyInfo</code> object.</p>
-    /// </li>
+    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
     /// </ul>
     pub fn relationship_type(&self) -> std::option::Option<&crate::model::AssetRelationshipType> {
         self.relationship_type.as_ref()
@@ -6589,15 +6051,13 @@ pub mod asset_relationship_summary {
     }
     impl Builder {
         /// <p>The assets that are related through an asset hierarchy.</p>
-        /// <p>This object is present if the <code>relationshipType</code> is
-        /// <code>HIERARCHY</code>.</p>
+        /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
         pub fn hierarchy_info(mut self, input: crate::model::AssetHierarchyInfo) -> Self {
             self.hierarchy_info = Some(input);
             self
         }
         /// <p>The assets that are related through an asset hierarchy.</p>
-        /// <p>This object is present if the <code>relationshipType</code> is
-        /// <code>HIERARCHY</code>.</p>
+        /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
         pub fn set_hierarchy_info(
             mut self,
             input: std::option::Option<crate::model::AssetHierarchyInfo>,
@@ -6605,29 +6065,17 @@ pub mod asset_relationship_summary {
             self.hierarchy_info = input;
             self
         }
-        /// <p>The relationship type of the assets in this relationship. This value is one of the
-        /// following:</p>
+        /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If
-        /// you specify this relationship type, this asset relationship includes the
-        /// <code>hierarchyInfo</code> object.</p>
-        /// </li>
+        /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
         /// </ul>
         pub fn relationship_type(mut self, input: crate::model::AssetRelationshipType) -> Self {
             self.relationship_type = Some(input);
             self
         }
-        /// <p>The relationship type of the assets in this relationship. This value is one of the
-        /// following:</p>
+        /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If
-        /// you specify this relationship type, this asset relationship includes the
-        /// <code>hierarchyInfo</code> object.</p>
-        /// </li>
+        /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
         /// </ul>
         pub fn set_relationship_type(
             mut self,
@@ -6703,8 +6151,7 @@ impl AsRef<str> for AssetRelationshipType {
     }
 }
 
-/// <p>Contains information about a parent asset and a child asset that are related through an
-/// asset hierarchy.</p>
+/// <p>Contains information about a parent asset and a child asset that are related through an asset hierarchy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetHierarchyInfo {
@@ -6841,9 +6288,7 @@ pub struct AssetModelSummary {
     /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the asset model.</p>
     pub name: std::option::Option<std::string::String>,
@@ -6862,9 +6307,7 @@ impl AssetModelSummary {
         self.id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-    /// <p>
-    /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-    /// </p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -6928,17 +6371,13 @@ pub mod asset_model_summary {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
-        /// <p>
-        /// <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
-        /// </p>
+        /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -7023,8 +6462,7 @@ impl AssetModelSummary {
     }
 }
 
-/// <p>Contains an access policy that defines an identity's access to an IoT SiteWise Monitor
-/// resource.</p>
+/// <p>Contains an access policy that defines an identity's access to an IoT SiteWise Monitor resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPolicySummary {
@@ -7034,8 +6472,7 @@ pub struct AccessPolicySummary {
     pub identity: std::option::Option<crate::model::Identity>,
     /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
     pub resource: std::option::Option<crate::model::Resource>,
-    /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is
-    /// also known as a project owner.</p>
+    /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub permission: std::option::Option<crate::model::Permission>,
     /// <p>The date the access policy was created, in Unix epoch time.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -7055,8 +6492,7 @@ impl AccessPolicySummary {
     pub fn resource(&self) -> std::option::Option<&crate::model::Resource> {
         self.resource.as_ref()
     }
-    /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is
-    /// also known as a project owner.</p>
+    /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub fn permission(&self) -> std::option::Option<&crate::model::Permission> {
         self.permission.as_ref()
     }
@@ -7125,14 +6561,12 @@ pub mod access_policy_summary {
             self.resource = input;
             self
         }
-        /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is
-        /// also known as a project owner.</p>
+        /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
         pub fn permission(mut self, input: crate::model::Permission) -> Self {
             self.permission = Some(input);
             self
         }
-        /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is
-        /// also known as a project owner.</p>
+        /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
         pub fn set_permission(
             mut self,
             input: std::option::Option<crate::model::Permission>,
@@ -7491,15 +6925,13 @@ impl Variant {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeInNanos {
-    /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is
-    /// provided by <code>offsetInNanos</code>.</p>
+    /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
     pub time_in_seconds: std::option::Option<i64>,
     /// <p>The nanosecond offset from <code>timeInSeconds</code>.</p>
     pub offset_in_nanos: std::option::Option<i32>,
 }
 impl TimeInNanos {
-    /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is
-    /// provided by <code>offsetInNanos</code>.</p>
+    /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
     pub fn time_in_seconds(&self) -> std::option::Option<i64> {
         self.time_in_seconds
     }
@@ -7526,14 +6958,12 @@ pub mod time_in_nanos {
         pub(crate) offset_in_nanos: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is
-        /// provided by <code>offsetInNanos</code>.</p>
+        /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
         pub fn time_in_seconds(mut self, input: i64) -> Self {
             self.time_in_seconds = Some(input);
             self
         }
-        /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is
-        /// provided by <code>offsetInNanos</code>.</p>
+        /// <p>The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data is provided by <code>offsetInNanos</code>.</p>
         pub fn set_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.time_in_seconds = input;
             self
@@ -7773,8 +7203,7 @@ impl AsRef<str> for TimeOrdering {
     }
 }
 
-/// <p>Contains aggregated asset property values (for example, average, minimum, and
-/// maximum).</p>
+/// <p>Contains aggregated asset property values (for example, average, minimum, and maximum).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AggregatedValue {
@@ -8157,8 +7586,7 @@ impl AsRef<str> for AuthMode {
 pub struct ImageLocation {
     /// <p>The ID of the image.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view
-    /// and download the image</p>
+    /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
     pub url: std::option::Option<std::string::String>,
 }
 impl ImageLocation {
@@ -8166,8 +7594,7 @@ impl ImageLocation {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view
-    /// and download the image</p>
+    /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -8200,14 +7627,12 @@ pub mod image_location {
             self.id = input;
             self
         }
-        /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view
-        /// and download the image</p>
+        /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view
-        /// and download the image</p>
+        /// <p>The URL where the image is available. The URL is valid for 15 minutes so that you can view and download the image</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -8331,10 +7756,7 @@ pub struct Property {
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the property.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-    /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub alias: std::option::Option<std::string::String>,
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
     pub notification: std::option::Option<crate::model::PropertyNotification>,
@@ -8354,10 +7776,7 @@ impl Property {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-    /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
@@ -8426,18 +7845,12 @@ pub mod property {
             self.name = input;
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias = Some(input.into());
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -8509,8 +7922,7 @@ impl Property {
     }
 }
 
-/// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value
-/// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
+/// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PropertyNotification {
@@ -8586,8 +7998,7 @@ impl PropertyNotification {
     }
 }
 
-/// <p>Contains information about a composite model in an asset. This object contains the asset's
-/// properties that you define in the composite model.</p>
+/// <p>Contains information about a composite model in an asset. This object contains the asset's properties that you define in the composite model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetCompositeModel {
@@ -8595,8 +8006,7 @@ pub struct AssetCompositeModel {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the composite model.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The type of the composite model. For alarm composite models, this type is
-    /// <code>AWS/ALARM</code>.</p>
+    /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The asset properties that this composite model defines.</p>
     pub properties: std::option::Option<std::vec::Vec<crate::model::AssetProperty>>,
@@ -8610,8 +8020,7 @@ impl AssetCompositeModel {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of the composite model. For alarm composite models, this type is
-    /// <code>AWS/ALARM</code>.</p>
+    /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -8662,14 +8071,12 @@ pub mod asset_composite_model {
             self.description = input;
             self
         }
-        /// <p>The type of the composite model. For alarm composite models, this type is
-        /// <code>AWS/ALARM</code>.</p>
+        /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of the composite model. For alarm composite models, this type is
-        /// <code>AWS/ALARM</code>.</p>
+        /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -8679,9 +8086,9 @@ pub mod asset_composite_model {
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>The asset properties that this composite model defines.</p>
-        pub fn properties(mut self, input: impl Into<crate::model::AssetProperty>) -> Self {
+        pub fn properties(mut self, input: crate::model::AssetProperty) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.properties = Some(v);
             self
         }
@@ -8719,17 +8126,13 @@ pub struct AssetProperty {
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the property.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-    /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub alias: std::option::Option<std::string::String>,
     /// <p>The asset property's notification topic and state. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
     pub notification: std::option::Option<crate::model::PropertyNotification>,
     /// <p>The data type of the asset property.</p>
     pub data_type: std::option::Option<crate::model::PropertyDataType>,
-    /// <p>The data type of the structure for this property. This parameter exists on properties that
-    /// have the <code>STRUCT</code> data type.</p>
+    /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub data_type_spec: std::option::Option<std::string::String>,
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.</p>
     pub unit: std::option::Option<std::string::String>,
@@ -8743,10 +8146,7 @@ impl AssetProperty {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-    /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
@@ -8758,8 +8158,7 @@ impl AssetProperty {
     pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
         self.data_type.as_ref()
     }
-    /// <p>The data type of the structure for this property. This parameter exists on properties that
-    /// have the <code>STRUCT</code> data type.</p>
+    /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub fn data_type_spec(&self) -> std::option::Option<&str> {
         self.data_type_spec.as_deref()
     }
@@ -8816,18 +8215,12 @@ pub mod asset_property {
             self.name = input;
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias = Some(input.into());
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -8858,14 +8251,12 @@ pub mod asset_property {
             self.data_type = input;
             self
         }
-        /// <p>The data type of the structure for this property. This parameter exists on properties that
-        /// have the <code>STRUCT</code> data type.</p>
+        /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
         pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_type_spec = Some(input.into());
             self
         }
-        /// <p>The data type of the structure for this property. This parameter exists on properties that
-        /// have the <code>STRUCT</code> data type.</p>
+        /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
         pub fn set_data_type_spec(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8904,8 +8295,7 @@ impl AssetProperty {
     }
 }
 
-/// <p>Contains a composite model definition in an asset model. This composite model definition
-/// is applied to all assets created from the asset model.</p>
+/// <p>Contains a composite model definition in an asset model. This composite model definition is applied to all assets created from the asset model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelCompositeModelDefinition {
@@ -8913,8 +8303,7 @@ pub struct AssetModelCompositeModelDefinition {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the composite model.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The type of the composite model. For alarm composite models, this type is
-    /// <code>AWS/ALARM</code>.</p>
+    /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The asset property definitions for this composite model.</p>
     pub properties: std::option::Option<std::vec::Vec<crate::model::AssetModelPropertyDefinition>>,
@@ -8928,8 +8317,7 @@ impl AssetModelCompositeModelDefinition {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of the composite model. For alarm composite models, this type is
-    /// <code>AWS/ALARM</code>.</p>
+    /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -8981,14 +8369,12 @@ pub mod asset_model_composite_model_definition {
             self.description = input;
             self
         }
-        /// <p>The type of the composite model. For alarm composite models, this type is
-        /// <code>AWS/ALARM</code>.</p>
+        /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of the composite model. For alarm composite models, this type is
-        /// <code>AWS/ALARM</code>.</p>
+        /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -8998,12 +8384,9 @@ pub mod asset_model_composite_model_definition {
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>The asset property definitions for this composite model.</p>
-        pub fn properties(
-            mut self,
-            input: impl Into<crate::model::AssetModelPropertyDefinition>,
-        ) -> Self {
+        pub fn properties(mut self, input: crate::model::AssetModelPropertyDefinition) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.properties = Some(v);
             self
         }
@@ -9033,28 +8416,21 @@ impl AssetModelCompositeModelDefinition {
     }
 }
 
-/// <p>Contains an asset model property definition. This property definition is applied to all
-/// assets created from the asset model.</p>
+/// <p>Contains an asset model property definition. This property definition is applied to all assets created from the asset model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelPropertyDefinition {
     /// <p>The name of the property definition.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The data type of the property definition.</p>
-    /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to
-    /// identify the type of the structure for this property.</p>
+    /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
     pub data_type: std::option::Option<crate::model::PropertyDataType>,
-    /// <p>The data type of the structure for this property. This parameter is required on properties
-    /// that have the <code>STRUCT</code> data type.</p>
-    /// <p>The options for this parameter depend on the type of the composite model in which you
-    /// define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite
-    /// models.</p>
+    /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
+    /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
     pub data_type_spec: std::option::Option<std::string::String>,
-    /// <p>The unit of the property definition, such as <code>Newtons</code> or
-    /// <code>RPM</code>.</p>
+    /// <p>The unit of the property definition, such as <code>Newtons</code> or <code>RPM</code>.</p>
     pub unit: std::option::Option<std::string::String>,
-    /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one
-    /// type in a property definition.</p>
+    /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition.</p>
     pub r#type: std::option::Option<crate::model::PropertyType>,
 }
 impl AssetModelPropertyDefinition {
@@ -9063,26 +8439,20 @@ impl AssetModelPropertyDefinition {
         self.name.as_deref()
     }
     /// <p>The data type of the property definition.</p>
-    /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to
-    /// identify the type of the structure for this property.</p>
+    /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
     pub fn data_type(&self) -> std::option::Option<&crate::model::PropertyDataType> {
         self.data_type.as_ref()
     }
-    /// <p>The data type of the structure for this property. This parameter is required on properties
-    /// that have the <code>STRUCT</code> data type.</p>
-    /// <p>The options for this parameter depend on the type of the composite model in which you
-    /// define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite
-    /// models.</p>
+    /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
+    /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
     pub fn data_type_spec(&self) -> std::option::Option<&str> {
         self.data_type_spec.as_deref()
     }
-    /// <p>The unit of the property definition, such as <code>Newtons</code> or
-    /// <code>RPM</code>.</p>
+    /// <p>The unit of the property definition, such as <code>Newtons</code> or <code>RPM</code>.</p>
     pub fn unit(&self) -> std::option::Option<&str> {
         self.unit.as_deref()
     }
-    /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one
-    /// type in a property definition.</p>
+    /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::PropertyType> {
         self.r#type.as_ref()
     }
@@ -9122,15 +8492,13 @@ pub mod asset_model_property_definition {
             self
         }
         /// <p>The data type of the property definition.</p>
-        /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to
-        /// identify the type of the structure for this property.</p>
+        /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
         pub fn data_type(mut self, input: crate::model::PropertyDataType) -> Self {
             self.data_type = Some(input);
             self
         }
         /// <p>The data type of the property definition.</p>
-        /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to
-        /// identify the type of the structure for this property.</p>
+        /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
         pub fn set_data_type(
             mut self,
             input: std::option::Option<crate::model::PropertyDataType>,
@@ -9138,20 +8506,14 @@ pub mod asset_model_property_definition {
             self.data_type = input;
             self
         }
-        /// <p>The data type of the structure for this property. This parameter is required on properties
-        /// that have the <code>STRUCT</code> data type.</p>
-        /// <p>The options for this parameter depend on the type of the composite model in which you
-        /// define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite
-        /// models.</p>
+        /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
+        /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
         pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_type_spec = Some(input.into());
             self
         }
-        /// <p>The data type of the structure for this property. This parameter is required on properties
-        /// that have the <code>STRUCT</code> data type.</p>
-        /// <p>The options for this parameter depend on the type of the composite model in which you
-        /// define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite
-        /// models.</p>
+        /// <p>The data type of the structure for this property. This parameter is required on properties that have the <code>STRUCT</code> data type.</p>
+        /// <p>The options for this parameter depend on the type of the composite model in which you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm composite models.</p>
         pub fn set_data_type_spec(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9159,26 +8521,22 @@ pub mod asset_model_property_definition {
             self.data_type_spec = input;
             self
         }
-        /// <p>The unit of the property definition, such as <code>Newtons</code> or
-        /// <code>RPM</code>.</p>
+        /// <p>The unit of the property definition, such as <code>Newtons</code> or <code>RPM</code>.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
             self.unit = Some(input.into());
             self
         }
-        /// <p>The unit of the property definition, such as <code>Newtons</code> or
-        /// <code>RPM</code>.</p>
+        /// <p>The unit of the property definition, such as <code>Newtons</code> or <code>RPM</code>.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
         }
-        /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one
-        /// type in a property definition.</p>
+        /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition.</p>
         pub fn r#type(mut self, input: crate::model::PropertyType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one
-        /// type in a property definition.</p>
+        /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PropertyType>) -> Self {
             self.r#type = input;
             self
@@ -9202,20 +8560,17 @@ impl AssetModelPropertyDefinition {
     }
 }
 
-/// <p>Contains an asset model hierarchy used in asset model creation. An asset model hierarchy
-/// determines the kind (or type) of asset that can belong to a hierarchy.</p>
+/// <p>Contains an asset model hierarchy used in asset model creation. An asset model hierarchy determines the kind (or type) of asset that can belong to a hierarchy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssetModelHierarchyDefinition {
-    /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
+    /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of an asset model for this hierarchy.</p>
     pub child_asset_model_id: std::option::Option<std::string::String>,
 }
 impl AssetModelHierarchyDefinition {
-    /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
+    /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -9242,14 +8597,12 @@ pub mod asset_model_hierarchy_definition {
         pub(crate) child_asset_model_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
+        /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
+        /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9283,8 +8636,7 @@ impl AssetModelHierarchyDefinition {
     }
 }
 
-/// <p>Contains error information for asset property value entries that are associated with the
-/// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API.</p>
+/// <p>Contains error information for asset property value entries that are associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutAssetPropertyErrorEntry {
@@ -9337,12 +8689,9 @@ pub mod batch_put_asset_property_error_entry {
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
         /// <p>The list of update property value errors.</p>
-        pub fn errors(
-            mut self,
-            input: impl Into<crate::model::BatchPutAssetPropertyError>,
-        ) -> Self {
+        pub fn errors(mut self, input: crate::model::BatchPutAssetPropertyError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.errors = Some(v);
             self
         }
@@ -9378,7 +8727,7 @@ pub struct BatchPutAssetPropertyError {
     pub error_code: std::option::Option<crate::model::BatchPutAssetPropertyValueErrorCode>,
     /// <p>The associated error message.</p>
     pub error_message: std::option::Option<std::string::String>,
-    /// <p>A list of timestamps for each  error, if any.</p>
+    /// <p>A list of timestamps for each error, if any.</p>
     pub timestamps: std::option::Option<std::vec::Vec<crate::model::TimeInNanos>>,
 }
 impl BatchPutAssetPropertyError {
@@ -9392,7 +8741,7 @@ impl BatchPutAssetPropertyError {
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
-    /// <p>A list of timestamps for each  error, if any.</p>
+    /// <p>A list of timestamps for each error, if any.</p>
     pub fn timestamps(&self) -> std::option::Option<&[crate::model::TimeInNanos]> {
         self.timestamps.as_deref()
     }
@@ -9451,14 +8800,14 @@ pub mod batch_put_asset_property_error {
         ///
         /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
         ///
-        /// <p>A list of timestamps for each  error, if any.</p>
-        pub fn timestamps(mut self, input: impl Into<crate::model::TimeInNanos>) -> Self {
+        /// <p>A list of timestamps for each error, if any.</p>
+        pub fn timestamps(mut self, input: crate::model::TimeInNanos) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.timestamps = Some(v);
             self
         }
-        /// <p>A list of timestamps for each  error, if any.</p>
+        /// <p>A list of timestamps for each error, if any.</p>
         pub fn set_timestamps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TimeInNanos>>,
@@ -9600,31 +8949,23 @@ impl AsRef<str> for BatchPutAssetPropertyValueErrorCode {
     }
 }
 
-/// <p>Contains a list of value updates for an asset property in the list of asset entries
-/// consumed by the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API
-/// operation.</p>
+/// <p>Contains a list of value updates for an asset property in the list of asset entries consumed by the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAssetPropertyValueEntry {
-    /// <p>The user specified ID for the entry. You can use this ID to identify which entries
-    /// failed.</p>
+    /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
     pub entry_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset to update.</p>
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property for this entry.</p>
     pub property_id: std::option::Option<std::string::String>,
-    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-    /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub property_alias: std::option::Option<std::string::String>,
-    /// <p>The list of property values to upload. You can specify up to 10
-    /// <code>propertyValues</code> array elements. </p>
+    /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
     pub property_values: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
 }
 impl PutAssetPropertyValueEntry {
-    /// <p>The user specified ID for the entry. You can use this ID to identify which entries
-    /// failed.</p>
+    /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
     pub fn entry_id(&self) -> std::option::Option<&str> {
         self.entry_id.as_deref()
     }
@@ -9636,15 +8977,11 @@ impl PutAssetPropertyValueEntry {
     pub fn property_id(&self) -> std::option::Option<&str> {
         self.property_id.as_deref()
     }
-    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-    /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn property_alias(&self) -> std::option::Option<&str> {
         self.property_alias.as_deref()
     }
-    /// <p>The list of property values to upload. You can specify up to 10
-    /// <code>propertyValues</code> array elements. </p>
+    /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
     pub fn property_values(&self) -> std::option::Option<&[crate::model::AssetPropertyValue]> {
         self.property_values.as_deref()
     }
@@ -9674,14 +9011,12 @@ pub mod put_asset_property_value_entry {
             std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,
     }
     impl Builder {
-        /// <p>The user specified ID for the entry. You can use this ID to identify which entries
-        /// failed.</p>
+        /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
         pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entry_id = Some(input.into());
             self
         }
-        /// <p>The user specified ID for the entry. You can use this ID to identify which entries
-        /// failed.</p>
+        /// <p>The user specified ID for the entry. You can use this ID to identify which entries failed.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entry_id = input;
             self
@@ -9706,18 +9041,12 @@ pub mod put_asset_property_value_entry {
             self.property_id = input;
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.property_alias = Some(input.into());
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_property_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9729,19 +9058,14 @@ pub mod put_asset_property_value_entry {
         ///
         /// To override the contents of this collection use [`set_property_values`](Self::set_property_values).
         ///
-        /// <p>The list of property values to upload. You can specify up to 10
-        /// <code>propertyValues</code> array elements. </p>
-        pub fn property_values(
-            mut self,
-            input: impl Into<crate::model::AssetPropertyValue>,
-        ) -> Self {
+        /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
+        pub fn property_values(mut self, input: crate::model::AssetPropertyValue) -> Self {
             let mut v = self.property_values.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.property_values = Some(v);
             self
         }
-        /// <p>The list of property values to upload. You can specify up to 10
-        /// <code>propertyValues</code> array elements. </p>
+        /// <p>The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements. </p>
         pub fn set_property_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetPropertyValue>>,

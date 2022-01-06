@@ -662,12 +662,9 @@ pub mod remove_targets_output {
         /// To override the contents of this collection use [`set_failed_entries`](Self::set_failed_entries).
         ///
         /// <p>The failed target entries.</p>
-        pub fn failed_entries(
-            mut self,
-            input: impl Into<crate::model::RemoveTargetsResultEntry>,
-        ) -> Self {
+        pub fn failed_entries(mut self, input: crate::model::RemoveTargetsResultEntry) -> Self {
             let mut v = self.failed_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_entries = Some(v);
             self
         }
@@ -778,12 +775,9 @@ pub mod put_targets_output {
         /// To override the contents of this collection use [`set_failed_entries`](Self::set_failed_entries).
         ///
         /// <p>The failed target entries.</p>
-        pub fn failed_entries(
-            mut self,
-            input: impl Into<crate::model::PutTargetsResultEntry>,
-        ) -> Self {
+        pub fn failed_entries(mut self, input: crate::model::PutTargetsResultEntry) -> Self {
             let mut v = self.failed_entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failed_entries = Some(v);
             self
         }
@@ -899,21 +893,17 @@ impl PutPermissionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPartnerEventsOutput {
-    /// <p>The number of events from this operation that could not be written to the partner event
-    /// bus.</p>
+    /// <p>The number of events from this operation that could not be written to the partner event bus.</p>
     pub failed_entry_count: i32,
-    /// <p>The list of events from this operation that were successfully written to the partner event
-    /// bus.</p>
+    /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::PutPartnerEventsResultEntry>>,
 }
 impl PutPartnerEventsOutput {
-    /// <p>The number of events from this operation that could not be written to the partner event
-    /// bus.</p>
+    /// <p>The number of events from this operation that could not be written to the partner event bus.</p>
     pub fn failed_entry_count(&self) -> i32 {
         self.failed_entry_count
     }
-    /// <p>The list of events from this operation that were successfully written to the partner event
-    /// bus.</p>
+    /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
     pub fn entries(&self) -> std::option::Option<&[crate::model::PutPartnerEventsResultEntry]> {
         self.entries.as_deref()
     }
@@ -937,14 +927,12 @@ pub mod put_partner_events_output {
             std::option::Option<std::vec::Vec<crate::model::PutPartnerEventsResultEntry>>,
     }
     impl Builder {
-        /// <p>The number of events from this operation that could not be written to the partner event
-        /// bus.</p>
+        /// <p>The number of events from this operation that could not be written to the partner event bus.</p>
         pub fn failed_entry_count(mut self, input: i32) -> Self {
             self.failed_entry_count = Some(input);
             self
         }
-        /// <p>The number of events from this operation that could not be written to the partner event
-        /// bus.</p>
+        /// <p>The number of events from this operation that could not be written to the partner event bus.</p>
         pub fn set_failed_entry_count(mut self, input: std::option::Option<i32>) -> Self {
             self.failed_entry_count = input;
             self
@@ -953,19 +941,14 @@ pub mod put_partner_events_output {
         ///
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
-        /// <p>The list of events from this operation that were successfully written to the partner event
-        /// bus.</p>
-        pub fn entries(
-            mut self,
-            input: impl Into<crate::model::PutPartnerEventsResultEntry>,
-        ) -> Self {
+        /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
+        pub fn entries(mut self, input: crate::model::PutPartnerEventsResultEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
-        /// <p>The list of events from this operation that were successfully written to the partner event
-        /// bus.</p>
+        /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PutPartnerEventsResultEntry>>,
@@ -995,9 +978,7 @@ impl PutPartnerEventsOutput {
 pub struct PutEventsOutput {
     /// <p>The number of failed entries.</p>
     pub failed_entry_count: i32,
-    /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was
-    /// successful, the entry has the event ID in it. Otherwise, you can use the error code and error
-    /// message to identify the problem with the entry.</p>
+    /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::PutEventsResultEntry>>,
 }
 impl PutEventsOutput {
@@ -1005,9 +986,7 @@ impl PutEventsOutput {
     pub fn failed_entry_count(&self) -> i32 {
         self.failed_entry_count
     }
-    /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was
-    /// successful, the entry has the event ID in it. Otherwise, you can use the error code and error
-    /// message to identify the problem with the entry.</p>
+    /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
     pub fn entries(&self) -> std::option::Option<&[crate::model::PutEventsResultEntry]> {
         self.entries.as_deref()
     }
@@ -1044,18 +1023,14 @@ pub mod put_events_output {
         ///
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
-        /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was
-        /// successful, the entry has the event ID in it. Otherwise, you can use the error code and error
-        /// message to identify the problem with the entry.</p>
-        pub fn entries(mut self, input: impl Into<crate::model::PutEventsResultEntry>) -> Self {
+        /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+        pub fn entries(mut self, input: crate::model::PutEventsResultEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.entries = Some(v);
             self
         }
-        /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was
-        /// successful, the entry has the event ID in it. Otherwise, you can use the error code and error
-        /// message to identify the problem with the entry.</p>
+        /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PutEventsResultEntry>>,
@@ -1085,8 +1060,7 @@ impl PutEventsOutput {
 pub struct ListTargetsByRuleOutput {
     /// <p>The targets assigned to the rule.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
-    /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
-    /// the value is null.</p>
+    /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTargetsByRuleOutput {
@@ -1094,8 +1068,7 @@ impl ListTargetsByRuleOutput {
     pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
         self.targets.as_deref()
     }
-    /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
-    /// the value is null.</p>
+    /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1123,9 +1096,9 @@ pub mod list_targets_by_rule_output {
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
         /// <p>The targets assigned to the rule.</p>
-        pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
+        pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.targets = Some(v);
             self
         }
@@ -1137,14 +1110,12 @@ pub mod list_targets_by_rule_output {
             self.targets = input;
             self
         }
-        /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
-        /// the value is null.</p>
+        /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
-        /// the value is null.</p>
+        /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1199,9 +1170,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tag keys and values associated with the resource you specified</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1232,8 +1203,7 @@ impl ListTagsForResourceOutput {
 pub struct ListRulesOutput {
     /// <p>The rules that match the specified criteria.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
-    /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
-    /// the value is null.</p>
+    /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRulesOutput {
@@ -1241,8 +1211,7 @@ impl ListRulesOutput {
     pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
         self.rules.as_deref()
     }
-    /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
-    /// the value is null.</p>
+    /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1270,9 +1239,9 @@ pub mod list_rules_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The rules that match the specified criteria.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1284,14 +1253,12 @@ pub mod list_rules_output {
             self.rules = input;
             self
         }
-        /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
-        /// the value is null.</p>
+        /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
-        /// the value is null.</p>
+        /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1318,8 +1285,7 @@ impl ListRulesOutput {
 pub struct ListRuleNamesByTargetOutput {
     /// <p>The names of the rules that can invoke the given target.</p>
     pub rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
-    /// the value is null.</p>
+    /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRuleNamesByTargetOutput {
@@ -1327,8 +1293,7 @@ impl ListRuleNamesByTargetOutput {
     pub fn rule_names(&self) -> std::option::Option<&[std::string::String]> {
         self.rule_names.as_deref()
     }
-    /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
-    /// the value is null.</p>
+    /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1370,14 +1335,12 @@ pub mod list_rule_names_by_target_output {
             self.rule_names = input;
             self
         }
-        /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
-        /// the value is null.</p>
+        /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Indicates whether there are additional results to retrieve. If there are no more results,
-        /// the value is null.</p>
+        /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1440,9 +1403,9 @@ pub mod list_replays_output {
         /// To override the contents of this collection use [`set_replays`](Self::set_replays).
         ///
         /// <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
-        pub fn replays(mut self, input: impl Into<crate::model::Replay>) -> Self {
+        pub fn replays(mut self, input: crate::model::Replay) -> Self {
             let mut v = self.replays.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.replays = Some(v);
             self
         }
@@ -1525,12 +1488,9 @@ pub mod list_partner_event_sources_output {
         /// To override the contents of this collection use [`set_partner_event_sources`](Self::set_partner_event_sources).
         ///
         /// <p>The list of partner event sources returned by the operation.</p>
-        pub fn partner_event_sources(
-            mut self,
-            input: impl Into<crate::model::PartnerEventSource>,
-        ) -> Self {
+        pub fn partner_event_sources(mut self, input: crate::model::PartnerEventSource) -> Self {
             let mut v = self.partner_event_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partner_event_sources = Some(v);
             self
         }
@@ -1619,10 +1579,10 @@ pub mod list_partner_event_source_accounts_output {
         /// <p>The list of partner event sources returned by the operation.</p>
         pub fn partner_event_source_accounts(
             mut self,
-            input: impl Into<crate::model::PartnerEventSourceAccount>,
+            input: crate::model::PartnerEventSourceAccount,
         ) -> Self {
             let mut v = self.partner_event_source_accounts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.partner_event_source_accounts = Some(v);
             self
         }
@@ -1702,9 +1662,9 @@ pub mod list_event_sources_output {
         /// To override the contents of this collection use [`set_event_sources`](Self::set_event_sources).
         ///
         /// <p>The list of event sources.</p>
-        pub fn event_sources(mut self, input: impl Into<crate::model::EventSource>) -> Self {
+        pub fn event_sources(mut self, input: crate::model::EventSource) -> Self {
             let mut v = self.event_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_sources = Some(v);
             self
         }
@@ -1784,9 +1744,9 @@ pub mod list_event_buses_output {
         /// To override the contents of this collection use [`set_event_buses`](Self::set_event_buses).
         ///
         /// <p>This list of event buses.</p>
-        pub fn event_buses(mut self, input: impl Into<crate::model::EventBus>) -> Self {
+        pub fn event_buses(mut self, input: crate::model::EventBus) -> Self {
             let mut v = self.event_buses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_buses = Some(v);
             self
         }
@@ -1866,9 +1826,9 @@ pub mod list_connections_output {
         /// To override the contents of this collection use [`set_connections`](Self::set_connections).
         ///
         /// <p>An array of connections objects that include details about the connections.</p>
-        pub fn connections(mut self, input: impl Into<crate::model::Connection>) -> Self {
+        pub fn connections(mut self, input: crate::model::Connection) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connections = Some(v);
             self
         }
@@ -1948,9 +1908,9 @@ pub mod list_archives_output {
         /// To override the contents of this collection use [`set_archives`](Self::set_archives).
         ///
         /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
-        pub fn archives(mut self, input: impl Into<crate::model::Archive>) -> Self {
+        pub fn archives(mut self, input: crate::model::Archive) -> Self {
             let mut v = self.archives.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.archives = Some(v);
             self
         }
@@ -1992,15 +1952,13 @@ impl ListArchivesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApiDestinationsOutput {
-    /// <p>An array of <code>ApiDestination</code> objects that include information about an API
-    /// destination.</p>
+    /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
     pub api_destinations: std::option::Option<std::vec::Vec<crate::model::ApiDestination>>,
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApiDestinationsOutput {
-    /// <p>An array of <code>ApiDestination</code> objects that include information about an API
-    /// destination.</p>
+    /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
     pub fn api_destinations(&self) -> std::option::Option<&[crate::model::ApiDestination]> {
         self.api_destinations.as_deref()
     }
@@ -2032,16 +1990,14 @@ pub mod list_api_destinations_output {
         ///
         /// To override the contents of this collection use [`set_api_destinations`](Self::set_api_destinations).
         ///
-        /// <p>An array of <code>ApiDestination</code> objects that include information about an API
-        /// destination.</p>
-        pub fn api_destinations(mut self, input: impl Into<crate::model::ApiDestination>) -> Self {
+        /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
+        pub fn api_destinations(mut self, input: crate::model::ApiDestination) -> Self {
             let mut v = self.api_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.api_destinations = Some(v);
             self
         }
-        /// <p>An array of <code>ApiDestination</code> objects that include information about an API
-        /// destination.</p>
+        /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
         pub fn set_api_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApiDestination>>,
@@ -2143,8 +2099,7 @@ pub struct DescribeRuleOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-    /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p>
     pub schedule_expression: std::option::Option<std::string::String>,
@@ -2154,16 +2109,11 @@ pub struct DescribeRuleOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays
-    /// the principal name of the Amazon Web Services service that created the rule.</p>
+    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays the principal name of the Amazon Web Services service that created the rule.</p>
     pub managed_by: std::option::Option<std::string::String>,
     /// <p>The name of the event bus associated with the rule.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
-    /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a
-    /// rule on an event bus in another account, the other account is the owner of the rule, and the
-    /// rule ARN includes the account ID for that account. However, the value for
-    /// <code>CreatedBy</code> is the account ID as the account that created the rule in the other
-    /// account.</p>
+    /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in the other account.</p>
     pub created_by: std::option::Option<std::string::String>,
 }
 impl DescribeRuleOutput {
@@ -2175,8 +2125,7 @@ impl DescribeRuleOutput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-    /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn event_pattern(&self) -> std::option::Option<&str> {
         self.event_pattern.as_deref()
     }
@@ -2196,8 +2145,7 @@ impl DescribeRuleOutput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays
-    /// the principal name of the Amazon Web Services service that created the rule.</p>
+    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays the principal name of the Amazon Web Services service that created the rule.</p>
     pub fn managed_by(&self) -> std::option::Option<&str> {
         self.managed_by.as_deref()
     }
@@ -2205,11 +2153,7 @@ impl DescribeRuleOutput {
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
-    /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a
-    /// rule on an event bus in another account, the other account is the owner of the rule, and the
-    /// rule ARN includes the account ID for that account. However, the value for
-    /// <code>CreatedBy</code> is the account ID as the account that created the rule in the other
-    /// account.</p>
+    /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in the other account.</p>
     pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
@@ -2268,14 +2212,12 @@ pub mod describe_rule_output {
             self.arn = input;
             self
         }
-        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-        /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_pattern = Some(input.into());
             self
         }
-        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-        /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn set_event_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2326,14 +2268,12 @@ pub mod describe_rule_output {
             self.role_arn = input;
             self
         }
-        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays
-        /// the principal name of the Amazon Web Services service that created the rule.</p>
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays the principal name of the Amazon Web Services service that created the rule.</p>
         pub fn managed_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.managed_by = Some(input.into());
             self
         }
-        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays
-        /// the principal name of the Amazon Web Services service that created the rule.</p>
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays the principal name of the Amazon Web Services service that created the rule.</p>
         pub fn set_managed_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.managed_by = input;
             self
@@ -2351,20 +2291,12 @@ pub mod describe_rule_output {
             self.event_bus_name = input;
             self
         }
-        /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a
-        /// rule on an event bus in another account, the other account is the owner of the rule, and the
-        /// rule ARN includes the account ID for that account. However, the value for
-        /// <code>CreatedBy</code> is the account ID as the account that created the rule in the other
-        /// account.</p>
+        /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in the other account.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.created_by = Some(input.into());
             self
         }
-        /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a
-        /// rule on an event bus in another account, the other account is the owner of the rule, and the
-        /// rule ARN includes the account ID for that account. However, the value for
-        /// <code>CreatedBy</code> is the account ID as the account that created the rule in the other
-        /// account.</p>
+        /// <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in the other account.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.created_by = input;
             self
@@ -2760,15 +2692,11 @@ pub struct DescribeEventSourceOutput {
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time that the event source was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time that the event source will expire if you do not create a matching event
-    /// bus.</p>
+    /// <p>The date and time that the event source will expire if you do not create a matching event bus.</p>
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the partner event source.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
-    /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
-    /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
-    /// created a matching event bus, but the event source has since been deleted.</p>
+    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub state: std::option::Option<crate::model::EventSourceState>,
 }
 impl DescribeEventSourceOutput {
@@ -2784,8 +2712,7 @@ impl DescribeEventSourceOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The date and time that the event source will expire if you do not create a matching event
-    /// bus.</p>
+    /// <p>The date and time that the event source will expire if you do not create a matching event bus.</p>
     pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
@@ -2793,10 +2720,7 @@ impl DescribeEventSourceOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
-    /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
-    /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
-    /// created a matching event bus, but the event source has since been deleted.</p>
+    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::EventSourceState> {
         self.state.as_ref()
     }
@@ -2860,14 +2784,12 @@ pub mod describe_event_source_output {
             self.creation_time = input;
             self
         }
-        /// <p>The date and time that the event source will expire if you do not create a matching event
-        /// bus.</p>
+        /// <p>The date and time that the event source will expire if you do not create a matching event bus.</p>
         pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_time = Some(input);
             self
         }
-        /// <p>The date and time that the event source will expire if you do not create a matching event
-        /// bus.</p>
+        /// <p>The date and time that the event source will expire if you do not create a matching event bus.</p>
         pub fn set_expiration_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2885,18 +2807,12 @@ pub mod describe_event_source_output {
             self.name = input;
             self
         }
-        /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
-        /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
-        /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
-        /// created a matching event bus, but the event source has since been deleted.</p>
+        /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
         pub fn state(mut self, input: crate::model::EventSourceState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
-        /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
-        /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
-        /// created a matching event bus, but the event source has since been deleted.</p>
+        /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::EventSourceState>,
@@ -2930,8 +2846,7 @@ impl DescribeEventSourceOutput {
 pub struct DescribeEventBusOutput {
     /// <p>The name of the event bus. Currently, this is always <code>default</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current
-    /// account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The policy that enables the external account to send events to your account.</p>
     pub policy: std::option::Option<std::string::String>,
@@ -2941,8 +2856,7 @@ impl DescribeEventBusOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current
-    /// account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -2981,14 +2895,12 @@ pub mod describe_event_bus_output {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current
-        /// account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current
-        /// account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3036,8 +2948,7 @@ pub struct DescribeConnectionOutput {
     pub state_reason: std::option::Option<std::string::String>,
     /// <p>The type of authorization specified for the connection.</p>
     pub authorization_type: std::option::Option<crate::model::ConnectionAuthorizationType>,
-    /// <p>The ARN of the secret created from the authorization parameters specified for the
-    /// connection.</p>
+    /// <p>The ARN of the secret created from the authorization parameters specified for the connection.</p>
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The parameters to use for authorization for the connection.</p>
     pub auth_parameters: std::option::Option<crate::model::ConnectionAuthResponseParameters>,
@@ -3075,8 +2986,7 @@ impl DescribeConnectionOutput {
     ) -> std::option::Option<&crate::model::ConnectionAuthorizationType> {
         self.authorization_type.as_ref()
     }
-    /// <p>The ARN of the secret created from the authorization parameters specified for the
-    /// connection.</p>
+    /// <p>The ARN of the secret created from the authorization parameters specified for the connection.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
@@ -3209,14 +3119,12 @@ pub mod describe_connection_output {
             self.authorization_type = input;
             self
         }
-        /// <p>The ARN of the secret created from the authorization parameters specified for the
-        /// connection.</p>
+        /// <p>The ARN of the secret created from the authorization parameters specified for the connection.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the secret created from the authorization parameters specified for the
-        /// connection.</p>
+        /// <p>The ARN of the secret created from the authorization parameters specified for the connection.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -3572,12 +3480,7 @@ pub struct DescribeApiDestinationOutput {
     pub invocation_endpoint: std::option::Option<std::string::String>,
     /// <p>The method to use to connect to the HTTP endpoint.</p>
     pub http_method: std::option::Option<crate::model::ApiDestinationHttpMethod>,
-    /// <p>The maximum number of invocations per second to specified for the API destination. Note
-    /// that if you set the invocation rate maximum to a value lower the rate necessary to send all
-    /// events received on to the destination HTTP endpoint, some events may not be delivered within
-    /// the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver
-    /// all events, consider using a dead-letter queue to catch events that are not delivered within
-    /// 24 hours.</p>
+    /// <p>The maximum number of invocations per second to specified for the API destination. Note that if you set the invocation rate maximum to a value lower the rate necessary to send all events received on to the destination HTTP endpoint, some events may not be delivered within the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver all events, consider using a dead-letter queue to catch events that are not delivered within 24 hours.</p>
     pub invocation_rate_limit_per_second: std::option::Option<i32>,
     /// <p>A time stamp for the time that the API destination was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3613,12 +3516,7 @@ impl DescribeApiDestinationOutput {
     pub fn http_method(&self) -> std::option::Option<&crate::model::ApiDestinationHttpMethod> {
         self.http_method.as_ref()
     }
-    /// <p>The maximum number of invocations per second to specified for the API destination. Note
-    /// that if you set the invocation rate maximum to a value lower the rate necessary to send all
-    /// events received on to the destination HTTP endpoint, some events may not be delivered within
-    /// the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver
-    /// all events, consider using a dead-letter queue to catch events that are not delivered within
-    /// 24 hours.</p>
+    /// <p>The maximum number of invocations per second to specified for the API destination. Note that if you set the invocation rate maximum to a value lower the rate necessary to send all events received on to the destination HTTP endpoint, some events may not be delivered within the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver all events, consider using a dead-letter queue to catch events that are not delivered within 24 hours.</p>
     pub fn invocation_rate_limit_per_second(&self) -> std::option::Option<i32> {
         self.invocation_rate_limit_per_second
     }
@@ -3753,22 +3651,12 @@ pub mod describe_api_destination_output {
             self.http_method = input;
             self
         }
-        /// <p>The maximum number of invocations per second to specified for the API destination. Note
-        /// that if you set the invocation rate maximum to a value lower the rate necessary to send all
-        /// events received on to the destination HTTP endpoint, some events may not be delivered within
-        /// the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver
-        /// all events, consider using a dead-letter queue to catch events that are not delivered within
-        /// 24 hours.</p>
+        /// <p>The maximum number of invocations per second to specified for the API destination. Note that if you set the invocation rate maximum to a value lower the rate necessary to send all events received on to the destination HTTP endpoint, some events may not be delivered within the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver all events, consider using a dead-letter queue to catch events that are not delivered within 24 hours.</p>
         pub fn invocation_rate_limit_per_second(mut self, input: i32) -> Self {
             self.invocation_rate_limit_per_second = Some(input);
             self
         }
-        /// <p>The maximum number of invocations per second to specified for the API destination. Note
-        /// that if you set the invocation rate maximum to a value lower the rate necessary to send all
-        /// events received on to the destination HTTP endpoint, some events may not be delivered within
-        /// the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver
-        /// all events, consider using a dead-letter queue to catch events that are not delivered within
-        /// 24 hours.</p>
+        /// <p>The maximum number of invocations per second to specified for the API destination. Note that if you set the invocation rate maximum to a value lower the rate necessary to send all events received on to the destination HTTP endpoint, some events may not be delivered within the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver all events, consider using a dead-letter queue to catch events that are not delivered within 24 hours.</p>
         pub fn set_invocation_rate_limit_per_second(
             mut self,
             input: std::option::Option<i32>,
@@ -3926,11 +3814,9 @@ pub struct DeleteConnectionOutput {
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>A time stamp for the time that the connection was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A time stamp for the time that the connection was last modified before it was
-    /// deleted.</p>
+    /// <p>A time stamp for the time that the connection was last modified before it was deleted.</p>
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A time stamp for the time that the connection was last authorized before it wa
-    /// deleted.</p>
+    /// <p>A time stamp for the time that the connection was last authorized before it wa deleted.</p>
     pub last_authorized_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteConnectionOutput {
@@ -3946,13 +3832,11 @@ impl DeleteConnectionOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>A time stamp for the time that the connection was last modified before it was
-    /// deleted.</p>
+    /// <p>A time stamp for the time that the connection was last modified before it was deleted.</p>
     pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
-    /// <p>A time stamp for the time that the connection was last authorized before it wa
-    /// deleted.</p>
+    /// <p>A time stamp for the time that the connection was last authorized before it wa deleted.</p>
     pub fn last_authorized_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_authorized_time.as_ref()
     }
@@ -4020,14 +3904,12 @@ pub mod delete_connection_output {
             self.creation_time = input;
             self
         }
-        /// <p>A time stamp for the time that the connection was last modified before it was
-        /// deleted.</p>
+        /// <p>A time stamp for the time that the connection was last modified before it was deleted.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_time = Some(input);
             self
         }
-        /// <p>A time stamp for the time that the connection was last modified before it was
-        /// deleted.</p>
+        /// <p>A time stamp for the time that the connection was last modified before it was deleted.</p>
         pub fn set_last_modified_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4035,14 +3917,12 @@ pub mod delete_connection_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>A time stamp for the time that the connection was last authorized before it wa
-        /// deleted.</p>
+        /// <p>A time stamp for the time that the connection was last authorized before it wa deleted.</p>
         pub fn last_authorized_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_authorized_time = Some(input);
             self
         }
-        /// <p>A time stamp for the time that the connection was last authorized before it wa
-        /// deleted.</p>
+        /// <p>A time stamp for the time that the connection was last authorized before it wa deleted.</p>
         pub fn set_last_authorized_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,

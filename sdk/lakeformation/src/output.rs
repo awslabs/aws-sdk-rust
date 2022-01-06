@@ -306,9 +306,9 @@ pub mod search_tables_by_lf_tags_output {
         /// To override the contents of this collection use [`set_table_list`](Self::set_table_list).
         ///
         /// <p>A list of tables that meet the LF-tag conditions.</p>
-        pub fn table_list(mut self, input: impl Into<crate::model::TaggedTable>) -> Self {
+        pub fn table_list(mut self, input: crate::model::TaggedTable) -> Self {
             let mut v = self.table_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.table_list = Some(v);
             self
         }
@@ -388,9 +388,9 @@ pub mod search_databases_by_lf_tags_output {
         /// To override the contents of this collection use [`set_database_list`](Self::set_database_list).
         ///
         /// <p>A list of databases that meet the LF-tag conditions.</p>
-        pub fn database_list(mut self, input: impl Into<crate::model::TaggedDatabase>) -> Self {
+        pub fn database_list(mut self, input: crate::model::TaggedDatabase) -> Self {
             let mut v = self.database_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.database_list = Some(v);
             self
         }
@@ -482,9 +482,9 @@ pub mod remove_lf_tags_from_resource_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>A list of failures to untag a resource.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::LfTagError>) -> Self {
+        pub fn failures(mut self, input: crate::model::LfTagError) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -614,12 +614,9 @@ pub mod list_transactions_output {
         /// To override the contents of this collection use [`set_transactions`](Self::set_transactions).
         ///
         /// <p>A list of transactions. The record for each transaction is a <code>TransactionDescription</code> object.</p>
-        pub fn transactions(
-            mut self,
-            input: impl Into<crate::model::TransactionDescription>,
-        ) -> Self {
+        pub fn transactions(mut self, input: crate::model::TransactionDescription) -> Self {
             let mut v = self.transactions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transactions = Some(v);
             self
         }
@@ -700,12 +697,9 @@ pub mod list_table_storage_optimizers_output {
         /// To override the contents of this collection use [`set_storage_optimizer_list`](Self::set_storage_optimizer_list).
         ///
         /// <p>A list of the storage optimizers associated with a table.</p>
-        pub fn storage_optimizer_list(
-            mut self,
-            input: impl Into<crate::model::StorageOptimizer>,
-        ) -> Self {
+        pub fn storage_optimizer_list(mut self, input: crate::model::StorageOptimizer) -> Self {
             let mut v = self.storage_optimizer_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.storage_optimizer_list = Some(v);
             self
         }
@@ -786,9 +780,9 @@ pub mod list_resources_output {
         /// To override the contents of this collection use [`set_resource_info_list`](Self::set_resource_info_list).
         ///
         /// <p>A summary of the data lake resources.</p>
-        pub fn resource_info_list(mut self, input: impl Into<crate::model::ResourceInfo>) -> Self {
+        pub fn resource_info_list(mut self, input: crate::model::ResourceInfo) -> Self {
             let mut v = self.resource_info_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_info_list = Some(v);
             self
         }
@@ -877,10 +871,10 @@ pub mod list_permissions_output {
         /// <p>A list of principals and their permissions on the resource for the specified principal and resource types.</p>
         pub fn principal_resource_permissions(
             mut self,
-            input: impl Into<crate::model::PrincipalResourcePermissions>,
+            input: crate::model::PrincipalResourcePermissions,
         ) -> Self {
             let mut v = self.principal_resource_permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.principal_resource_permissions = Some(v);
             self
         }
@@ -960,9 +954,9 @@ pub mod list_lf_tags_output {
         /// To override the contents of this collection use [`set_lf_tags`](Self::set_lf_tags).
         ///
         /// <p>A list of LF-tags that the requested has permission to view.</p>
-        pub fn lf_tags(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tags(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags = Some(v);
             self
         }
@@ -1043,12 +1037,9 @@ pub mod list_data_cells_filter_output {
         /// To override the contents of this collection use [`set_data_cells_filters`](Self::set_data_cells_filters).
         ///
         /// <p>A list of <code>DataCellFilter</code> structures.</p>
-        pub fn data_cells_filters(
-            mut self,
-            input: impl Into<crate::model::DataCellsFilter>,
-        ) -> Self {
+        pub fn data_cells_filters(mut self, input: crate::model::DataCellsFilter) -> Self {
             let mut v = self.data_cells_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_cells_filters = Some(v);
             self
         }
@@ -1187,9 +1178,9 @@ pub mod get_work_units_output {
         /// To override the contents of this collection use [`set_work_unit_ranges`](Self::set_work_unit_ranges).
         ///
         /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
-        pub fn work_unit_ranges(mut self, input: impl Into<crate::model::WorkUnitRange>) -> Self {
+        pub fn work_unit_ranges(mut self, input: crate::model::WorkUnitRange) -> Self {
             let mut v = self.work_unit_ranges.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.work_unit_ranges = Some(v);
             self
         }
@@ -1277,6 +1268,252 @@ impl GetWorkUnitResultsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetTemporaryGlueTableCredentialsOutput {
+    /// <p>The access key ID for the temporary credentials.</p>
+    pub access_key_id: std::option::Option<std::string::String>,
+    /// <p>The secret key for the temporary credentials.</p>
+    pub secret_access_key: std::option::Option<std::string::String>,
+    /// <p>The session token for the temporary credentials.</p>
+    pub session_token: std::option::Option<std::string::String>,
+    /// <p>The date and time when the temporary credentials expire.</p>
+    pub expiration: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl GetTemporaryGlueTableCredentialsOutput {
+    /// <p>The access key ID for the temporary credentials.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p>The secret key for the temporary credentials.</p>
+    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+        self.secret_access_key.as_deref()
+    }
+    /// <p>The session token for the temporary credentials.</p>
+    pub fn session_token(&self) -> std::option::Option<&str> {
+        self.session_token.as_deref()
+    }
+    /// <p>The date and time when the temporary credentials expire.</p>
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.expiration.as_ref()
+    }
+}
+impl std::fmt::Debug for GetTemporaryGlueTableCredentialsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetTemporaryGlueTableCredentialsOutput");
+        formatter.field("access_key_id", &self.access_key_id);
+        formatter.field("secret_access_key", &self.secret_access_key);
+        formatter.field("session_token", &self.session_token);
+        formatter.field("expiration", &self.expiration);
+        formatter.finish()
+    }
+}
+/// See [`GetTemporaryGlueTableCredentialsOutput`](crate::output::GetTemporaryGlueTableCredentialsOutput)
+pub mod get_temporary_glue_table_credentials_output {
+    /// A builder for [`GetTemporaryGlueTableCredentialsOutput`](crate::output::GetTemporaryGlueTableCredentialsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) access_key_id: std::option::Option<std::string::String>,
+        pub(crate) secret_access_key: std::option::Option<std::string::String>,
+        pub(crate) session_token: std::option::Option<std::string::String>,
+        pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The access key ID for the temporary credentials.</p>
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_key_id = Some(input.into());
+            self
+        }
+        /// <p>The access key ID for the temporary credentials.</p>
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_key_id = input;
+            self
+        }
+        /// <p>The secret key for the temporary credentials.</p>
+        pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_access_key = Some(input.into());
+            self
+        }
+        /// <p>The secret key for the temporary credentials.</p>
+        pub fn set_secret_access_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secret_access_key = input;
+            self
+        }
+        /// <p>The session token for the temporary credentials.</p>
+        pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_token = Some(input.into());
+            self
+        }
+        /// <p>The session token for the temporary credentials.</p>
+        pub fn set_session_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.session_token = input;
+            self
+        }
+        /// <p>The date and time when the temporary credentials expire.</p>
+        pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.expiration = Some(input);
+            self
+        }
+        /// <p>The date and time when the temporary credentials expire.</p>
+        pub fn set_expiration(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.expiration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTemporaryGlueTableCredentialsOutput`](crate::output::GetTemporaryGlueTableCredentialsOutput)
+        pub fn build(self) -> crate::output::GetTemporaryGlueTableCredentialsOutput {
+            crate::output::GetTemporaryGlueTableCredentialsOutput {
+                access_key_id: self.access_key_id,
+                secret_access_key: self.secret_access_key,
+                session_token: self.session_token,
+                expiration: self.expiration,
+            }
+        }
+    }
+}
+impl GetTemporaryGlueTableCredentialsOutput {
+    /// Creates a new builder-style object to manufacture [`GetTemporaryGlueTableCredentialsOutput`](crate::output::GetTemporaryGlueTableCredentialsOutput)
+    pub fn builder() -> crate::output::get_temporary_glue_table_credentials_output::Builder {
+        crate::output::get_temporary_glue_table_credentials_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetTemporaryGluePartitionCredentialsOutput {
+    /// <p>The access key ID for the temporary credentials.</p>
+    pub access_key_id: std::option::Option<std::string::String>,
+    /// <p>The secret key for the temporary credentials.</p>
+    pub secret_access_key: std::option::Option<std::string::String>,
+    /// <p>The session token for the temporary credentials.</p>
+    pub session_token: std::option::Option<std::string::String>,
+    /// <p>The date and time when the temporary credentials expire.</p>
+    pub expiration: std::option::Option<aws_smithy_types::DateTime>,
+}
+impl GetTemporaryGluePartitionCredentialsOutput {
+    /// <p>The access key ID for the temporary credentials.</p>
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
+        self.access_key_id.as_deref()
+    }
+    /// <p>The secret key for the temporary credentials.</p>
+    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+        self.secret_access_key.as_deref()
+    }
+    /// <p>The session token for the temporary credentials.</p>
+    pub fn session_token(&self) -> std::option::Option<&str> {
+        self.session_token.as_deref()
+    }
+    /// <p>The date and time when the temporary credentials expire.</p>
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.expiration.as_ref()
+    }
+}
+impl std::fmt::Debug for GetTemporaryGluePartitionCredentialsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetTemporaryGluePartitionCredentialsOutput");
+        formatter.field("access_key_id", &self.access_key_id);
+        formatter.field("secret_access_key", &self.secret_access_key);
+        formatter.field("session_token", &self.session_token);
+        formatter.field("expiration", &self.expiration);
+        formatter.finish()
+    }
+}
+/// See [`GetTemporaryGluePartitionCredentialsOutput`](crate::output::GetTemporaryGluePartitionCredentialsOutput)
+pub mod get_temporary_glue_partition_credentials_output {
+    /// A builder for [`GetTemporaryGluePartitionCredentialsOutput`](crate::output::GetTemporaryGluePartitionCredentialsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) access_key_id: std::option::Option<std::string::String>,
+        pub(crate) secret_access_key: std::option::Option<std::string::String>,
+        pub(crate) session_token: std::option::Option<std::string::String>,
+        pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
+    }
+    impl Builder {
+        /// <p>The access key ID for the temporary credentials.</p>
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_key_id = Some(input.into());
+            self
+        }
+        /// <p>The access key ID for the temporary credentials.</p>
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_key_id = input;
+            self
+        }
+        /// <p>The secret key for the temporary credentials.</p>
+        pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_access_key = Some(input.into());
+            self
+        }
+        /// <p>The secret key for the temporary credentials.</p>
+        pub fn set_secret_access_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secret_access_key = input;
+            self
+        }
+        /// <p>The session token for the temporary credentials.</p>
+        pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_token = Some(input.into());
+            self
+        }
+        /// <p>The session token for the temporary credentials.</p>
+        pub fn set_session_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.session_token = input;
+            self
+        }
+        /// <p>The date and time when the temporary credentials expire.</p>
+        pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.expiration = Some(input);
+            self
+        }
+        /// <p>The date and time when the temporary credentials expire.</p>
+        pub fn set_expiration(
+            mut self,
+            input: std::option::Option<aws_smithy_types::DateTime>,
+        ) -> Self {
+            self.expiration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetTemporaryGluePartitionCredentialsOutput`](crate::output::GetTemporaryGluePartitionCredentialsOutput)
+        pub fn build(self) -> crate::output::GetTemporaryGluePartitionCredentialsOutput {
+            crate::output::GetTemporaryGluePartitionCredentialsOutput {
+                access_key_id: self.access_key_id,
+                secret_access_key: self.secret_access_key,
+                session_token: self.session_token,
+                expiration: self.expiration,
+            }
+        }
+    }
+}
+impl GetTemporaryGluePartitionCredentialsOutput {
+    /// Creates a new builder-style object to manufacture [`GetTemporaryGluePartitionCredentialsOutput`](crate::output::GetTemporaryGluePartitionCredentialsOutput)
+    pub fn builder() -> crate::output::get_temporary_glue_partition_credentials_output::Builder {
+        crate::output::get_temporary_glue_partition_credentials_output::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTableObjectsOutput {
     /// <p>A list of objects organized by partition keys.</p>
     pub objects: std::option::Option<std::vec::Vec<crate::model::PartitionObjects>>,
@@ -1316,9 +1553,9 @@ pub mod get_table_objects_output {
         /// To override the contents of this collection use [`set_objects`](Self::set_objects).
         ///
         /// <p>A list of objects organized by partition keys.</p>
-        pub fn objects(mut self, input: impl Into<crate::model::PartitionObjects>) -> Self {
+        pub fn objects(mut self, input: crate::model::PartitionObjects) -> Self {
             let mut v = self.objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.objects = Some(v);
             self
         }
@@ -1407,9 +1644,9 @@ pub mod get_resource_lf_tags_output {
         /// To override the contents of this collection use [`set_lf_tag_on_database`](Self::set_lf_tag_on_database).
         ///
         /// <p>A list of LF-tags applied to a database resource.</p>
-        pub fn lf_tag_on_database(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tag_on_database(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tag_on_database.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tag_on_database = Some(v);
             self
         }
@@ -1426,9 +1663,9 @@ pub mod get_resource_lf_tags_output {
         /// To override the contents of this collection use [`set_lf_tags_on_table`](Self::set_lf_tags_on_table).
         ///
         /// <p>A list of LF-tags applied to a table resource.</p>
-        pub fn lf_tags_on_table(mut self, input: impl Into<crate::model::LfTagPair>) -> Self {
+        pub fn lf_tags_on_table(mut self, input: crate::model::LfTagPair) -> Self {
             let mut v = self.lf_tags_on_table.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags_on_table = Some(v);
             self
         }
@@ -1445,9 +1682,9 @@ pub mod get_resource_lf_tags_output {
         /// To override the contents of this collection use [`set_lf_tags_on_columns`](Self::set_lf_tags_on_columns).
         ///
         /// <p>A list of LF-tags applied to a column resource.</p>
-        pub fn lf_tags_on_columns(mut self, input: impl Into<crate::model::ColumnLfTag>) -> Self {
+        pub fn lf_tags_on_columns(mut self, input: crate::model::ColumnLfTag) -> Self {
             let mut v = self.lf_tags_on_columns.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lf_tags_on_columns = Some(v);
             self
         }
@@ -1584,20 +1821,11 @@ pub struct GetQueryStateOutput {
     /// <p>An error message when the operation fails.</p>
     pub error: std::option::Option<std::string::String>,
     /// <p>The state of a query previously submitted. The possible states are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>PENDING: the query is pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p>
-    /// </li>
-    /// <li>
-    /// <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p>
-    /// </li>
-    /// <li>
-    /// <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p>
-    /// </li>
+    /// <li> <p>PENDING: the query is pending.</p> </li>
+    /// <li> <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p> </li>
+    /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
+    /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
     /// </ul>
     pub state: std::option::Option<crate::model::QueryStateString>,
 }
@@ -1607,20 +1835,11 @@ impl GetQueryStateOutput {
         self.error.as_deref()
     }
     /// <p>The state of a query previously submitted. The possible states are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>PENDING: the query is pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p>
-    /// </li>
-    /// <li>
-    /// <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p>
-    /// </li>
-    /// <li>
-    /// <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p>
-    /// </li>
+    /// <li> <p>PENDING: the query is pending.</p> </li>
+    /// <li> <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p> </li>
+    /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
+    /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
     /// </ul>
     pub fn state(&self) -> std::option::Option<&crate::model::QueryStateString> {
         self.state.as_ref()
@@ -1655,40 +1874,22 @@ pub mod get_query_state_output {
             self
         }
         /// <p>The state of a query previously submitted. The possible states are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>PENDING: the query is pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p>
-        /// </li>
-        /// <li>
-        /// <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p>
-        /// </li>
-        /// <li>
-        /// <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p>
-        /// </li>
+        /// <li> <p>PENDING: the query is pending.</p> </li>
+        /// <li> <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p> </li>
+        /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
+        /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
         /// </ul>
         pub fn state(mut self, input: crate::model::QueryStateString) -> Self {
             self.state = Some(input);
             self
         }
         /// <p>The state of a query previously submitted. The possible states are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>PENDING: the query is pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p>
-        /// </li>
-        /// <li>
-        /// <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p>
-        /// </li>
-        /// <li>
-        /// <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p>
-        /// </li>
+        /// <li> <p>PENDING: the query is pending.</p> </li>
+        /// <li> <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p> </li>
+        /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
+        /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
         /// </ul>
         pub fn set_state(
             mut self,
@@ -1859,12 +2060,9 @@ pub mod get_effective_permissions_for_path_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of the permissions for the specified table or database resource located at the path in Amazon S3.</p>
-        pub fn permissions(
-            mut self,
-            input: impl Into<crate::model::PrincipalResourcePermissions>,
-        ) -> Self {
+        pub fn permissions(mut self, input: crate::model::PrincipalResourcePermissions) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -2411,12 +2609,9 @@ pub mod batch_revoke_permissions_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>A list of failures to revoke permissions to the resources.</p>
-        pub fn failures(
-            mut self,
-            input: impl Into<crate::model::BatchPermissionsFailureEntry>,
-        ) -> Self {
+        pub fn failures(mut self, input: crate::model::BatchPermissionsFailureEntry) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -2478,12 +2673,9 @@ pub mod batch_grant_permissions_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>A list of failures to grant permissions to the resources.</p>
-        pub fn failures(
-            mut self,
-            input: impl Into<crate::model::BatchPermissionsFailureEntry>,
-        ) -> Self {
+        pub fn failures(mut self, input: crate::model::BatchPermissionsFailureEntry) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }
@@ -2544,9 +2736,9 @@ pub mod add_lf_tags_to_resource_output {
         /// To override the contents of this collection use [`set_failures`](Self::set_failures).
         ///
         /// <p>A list of failures to tag the resource.</p>
-        pub fn failures(mut self, input: impl Into<crate::model::LfTagError>) -> Self {
+        pub fn failures(mut self, input: crate::model::LfTagError) -> Self {
             let mut v = self.failures.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.failures = Some(v);
             self
         }

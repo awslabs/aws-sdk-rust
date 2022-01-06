@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Interactive Video Service
@@ -205,6 +205,7 @@ where
     ///
     /// See [`ListChannels`](crate::client::fluent_builders::ListChannels) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
     pub fn list_channels(&self) -> fluent_builders::ListChannels<C, M, R> {
         fluent_builders::ListChannels::new(self.handle.clone())
     }
@@ -212,6 +213,7 @@ where
     ///
     /// See [`ListPlaybackKeyPairs`](crate::client::fluent_builders::ListPlaybackKeyPairs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPlaybackKeyPairs::into_paginator).
     pub fn list_playback_key_pairs(&self) -> fluent_builders::ListPlaybackKeyPairs<C, M, R> {
         fluent_builders::ListPlaybackKeyPairs::new(self.handle.clone())
     }
@@ -219,6 +221,7 @@ where
     ///
     /// See [`ListRecordingConfigurations`](crate::client::fluent_builders::ListRecordingConfigurations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecordingConfigurations::into_paginator).
     pub fn list_recording_configurations(
         &self,
     ) -> fluent_builders::ListRecordingConfigurations<C, M, R> {
@@ -228,6 +231,7 @@ where
     ///
     /// See [`ListStreamKeys`](crate::client::fluent_builders::ListStreamKeys) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStreamKeys::into_paginator).
     pub fn list_stream_keys(&self) -> fluent_builders::ListStreamKeys<C, M, R> {
         fluent_builders::ListStreamKeys::new(self.handle.clone())
     }
@@ -235,6 +239,7 @@ where
     ///
     /// See [`ListStreams`](crate::client::fluent_builders::ListStreams) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStreams::into_paginator).
     pub fn list_streams(&self) -> fluent_builders::ListStreams<C, M, R> {
         fluent_builders::ListStreams::new(self.handle.clone())
     }
@@ -242,6 +247,7 @@ where
     ///
     /// See [`ListStreamSessions`](crate::client::fluent_builders::ListStreamSessions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStreamSessions::into_paginator).
     pub fn list_stream_sessions(&self) -> fluent_builders::ListStreamSessions<C, M, R> {
         fluent_builders::ListStreamSessions::new(self.handle.clone())
     }
@@ -298,8 +304,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BatchGetChannel`.
     ///
-    /// <p>Performs <a>GetChannel</a> on multiple ARNs simultaneously.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Performs <code>GetChannel</code> on multiple ARNs simultaneously.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -344,10 +350,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -360,8 +366,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_arns`](Self::set_arns).
         ///
         /// <p>Array of ARNs, one per channel.</p>
-        pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arns(inp);
+        pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arns(input.into());
             self
         }
         /// <p>Array of ARNs, one per channel.</p>
@@ -375,8 +381,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetStreamKey`.
     ///
-    /// <p>Performs <a>GetStreamKey</a> on multiple ARNs simultaneously.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Performs <code>GetStreamKey</code> on multiple ARNs simultaneously.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetStreamKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -421,10 +427,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetStreamKeyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -437,8 +443,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_arns`](Self::set_arns).
         ///
         /// <p>Array of ARNs, one per channel.</p>
-        pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arns(inp);
+        pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arns(input.into());
             self
         }
         /// <p>Array of ARNs, one per channel.</p>
@@ -453,7 +459,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateChannel`.
     ///
     /// <p>Creates a new channel and an associated stream key to start streaming.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -498,10 +504,10 @@ pub mod fluent_builders {
                 crate::input::CreateChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -510,8 +516,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Channel name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Channel name.</p>
@@ -519,18 +525,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-        /// Standard, respectively.) Default: <code>LOW</code>.</p>
-        pub fn latency_mode(mut self, inp: crate::model::ChannelLatencyMode) -> Self {
-            self.inner = self.inner.latency_mode(inp);
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
+        pub fn latency_mode(mut self, input: crate::model::ChannelLatencyMode) -> Self {
+            self.inner = self.inner.latency_mode(input);
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-        /// Standard, respectively.) Default: <code>LOW</code>.</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
         pub fn set_latency_mode(
             mut self,
             input: std::option::Option<crate::model::ChannelLatencyMode>,
@@ -538,65 +538,40 @@ pub mod fluent_builders {
             self.inner = self.inner.set_latency_mode(input);
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-        /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-        /// automatically give viewers the best experience for their devices and network conditions.
-        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-        /// for renditions 360p and below; above that, audio is passed through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-        /// bitrate can be up to 1.5 Mbps.</p>
-        /// </li>
+        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::ChannelType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-        /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-        /// automatically give viewers the best experience for their devices and network conditions.
-        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-        /// for renditions 360p and below; above that, audio is passed through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-        /// bitrate can be up to 1.5 Mbps.</p>
-        /// </li>
+        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>Whether the channel is private (enabled for playback authorization). Default:
-        /// <code>false</code>.</p>
-        pub fn authorized(mut self, inp: bool) -> Self {
-            self.inner = self.inner.authorized(inp);
+        /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
+        pub fn authorized(mut self, input: bool) -> Self {
+            self.inner = self.inner.authorized(input);
             self
         }
-        /// <p>Whether the channel is private (enabled for playback authorization). Default:
-        /// <code>false</code>.</p>
+        /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
         pub fn set_authorized(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_authorized(input);
             self
         }
         /// <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
-        pub fn recording_configuration_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recording_configuration_arn(inp);
+        pub fn recording_configuration_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.recording_configuration_arn(input.into());
             self
         }
         /// <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
@@ -617,7 +592,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
@@ -634,18 +609,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRecordingConfiguration`.
     ///
     /// <p>Creates a new recording configuration, used to enable recording to Amazon S3.</p>
-    /// <p>
-    /// <b>Known issue:</b> In the us-east-1 region, if you use the
-    /// Amazon Web Services CLI to create a recording configuration, it returns success even if the
-    /// S3 bucket is in a different region. In this case, the <code>state</code> of the recording
-    /// configuration is <code>CREATE_FAILED</code> (instead of <code>ACTIVE</code>). (In other
-    /// regions, the CLI correctly returns failure if the bucket is in a different region.)</p>
-    /// <p>
-    /// <b>Workaround:</b> Ensure that your S3 bucket is in the same
-    /// region as the recording configuration. If you create a recording configuration in a different
-    /// region as your S3 bucket, delete that recording configuration and create a new one with an S3
-    /// bucket from the correct region.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Known issue:</b> In the us-east-1 region, if you use the Amazon Web Services CLI to create a recording configuration, it returns success even if the S3 bucket is in a different region. In this case, the <code>state</code> of the recording configuration is <code>CREATE_FAILED</code> (instead of <code>ACTIVE</code>). (In other regions, the CLI correctly returns failure if the bucket is in a different region.)</p>
+    /// <p> <b>Workaround:</b> Ensure that your S3 bucket is in the same region as the recording configuration. If you create a recording configuration in a different region as your S3 bucket, delete that recording configuration and create a new one with an S3 bucket from the correct region.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecordingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -690,10 +656,10 @@ pub mod fluent_builders {
                 crate::input::CreateRecordingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -702,8 +668,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Recording-configuration name. The value does not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Recording-configuration name. The value does not need to be unique.</p>
@@ -711,17 +677,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A complex type that contains a destination configuration for where recorded video will be
-        /// stored.</p>
+        /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
         pub fn destination_configuration(
             mut self,
-            inp: crate::model::DestinationConfiguration,
+            input: crate::model::DestinationConfiguration,
         ) -> Self {
-            self.inner = self.inner.destination_configuration(inp);
+            self.inner = self.inner.destination_configuration(input);
             self
         }
-        /// <p>A complex type that contains a destination configuration for where recorded video will be
-        /// stored.</p>
+        /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
         pub fn set_destination_configuration(
             mut self,
             input: std::option::Option<crate::model::DestinationConfiguration>,
@@ -739,7 +703,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
@@ -756,10 +720,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStreamKey`.
     ///
     /// <p>Creates a stream key, used to initiate a stream, for the specified channel ARN.</p>
-    /// <p>Note that <a>CreateChannel</a> creates a stream key. If you subsequently use
-    /// CreateStreamKey on the same channel, it will fail because a stream key already exists and
-    /// there is a limit of 1 stream key per channel. To reset the stream key on a channel, use <a>DeleteStreamKey</a> and then CreateStreamKey.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Note that <code>CreateChannel</code> creates a stream key. If you subsequently use CreateStreamKey on the same channel, it will fail because a stream key already exists and there is a limit of 1 stream key per channel. To reset the stream key on a channel, use <code>DeleteStreamKey</code> and then CreateStreamKey.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -804,10 +766,10 @@ pub mod fluent_builders {
                 crate::input::CreateStreamKeyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -816,8 +778,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the channel for which to create the stream key.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>ARN of the channel for which to create the stream key.</p>
@@ -835,7 +797,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
@@ -852,12 +814,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteChannel`.
     ///
     /// <p>Deletes the specified channel and its associated stream keys.</p>
-    /// <p>If you try to delete a live channel, you will get an error (409 ConflictException). To
-    /// delete a channel that is live, call <a>StopStream</a>, wait for the Amazon
-    /// EventBridge "Stream End" event (to verify that the stream's state was changed from Live to
-    /// Offline), then call DeleteChannel. (See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html"> Using EventBridge with Amazon IVS</a>.)
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If you try to delete a live channel, you will get an error (409 ConflictException). To delete a channel that is live, call <code>StopStream</code>, wait for the Amazon EventBridge "Stream End" event (to verify that the stream's state was changed from Live to Offline), then call DeleteChannel. (See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html"> Using EventBridge with Amazon IVS</a>.) </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -902,10 +860,10 @@ pub mod fluent_builders {
                 crate::input::DeleteChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -914,8 +872,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the channel to be deleted.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>ARN of the channel to be deleted.</p>
@@ -926,10 +884,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePlaybackKeyPair`.
     ///
-    /// <p>Deletes a specified authorization key pair. This invalidates future viewer tokens
-    /// generated using the key pair’s <code>privateKey</code>. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private
-    /// Channels</a> in the <i>Amazon IVS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a specified authorization key pair. This invalidates future viewer tokens generated using the key pair’s <code>privateKey</code>. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePlaybackKeyPair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -974,10 +930,10 @@ pub mod fluent_builders {
                 crate::input::DeletePlaybackKeyPairInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -986,8 +942,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the key pair to be deleted.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>ARN of the key pair to be deleted.</p>
@@ -999,12 +955,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRecordingConfiguration`.
     ///
     /// <p>Deletes the recording configuration for the specified ARN.</p>
-    /// <p>If you try to delete a recording configuration that is associated with a channel, you will
-    /// get an error (409 ConflictException). To avoid this, for all channels that reference the
-    /// recording configuration, first use <a>UpdateChannel</a> to set the
-    /// <code>recordingConfigurationArn</code> field to an empty string, then use
-    /// DeleteRecordingConfiguration.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If you try to delete a recording configuration that is associated with a channel, you will get an error (409 ConflictException). To avoid this, for all channels that reference the recording configuration, first use <code>UpdateChannel</code> to set the <code>recordingConfigurationArn</code> field to an empty string, then use DeleteRecordingConfiguration.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecordingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1049,10 +1001,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRecordingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1061,8 +1013,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the recording configuration to be deleted.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>ARN of the recording configuration to be deleted.</p>
@@ -1073,9 +1025,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteStreamKey`.
     ///
-    /// <p>Deletes the stream key for the specified ARN, so it can no longer be used to
-    /// stream.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the stream key for the specified ARN, so it can no longer be used to stream.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStreamKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1120,10 +1071,10 @@ pub mod fluent_builders {
                 crate::input::DeleteStreamKeyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1132,8 +1083,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the stream key to be deleted.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>ARN of the stream key to be deleted.</p>
@@ -1144,8 +1095,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetChannel`.
     ///
-    /// <p>Gets the channel configuration for the specified channel ARN. See also <a>BatchGetChannel</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the channel configuration for the specified channel ARN. See also <code>BatchGetChannel</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1190,10 +1141,10 @@ pub mod fluent_builders {
                 crate::input::GetChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1202,8 +1153,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>ARN of the channel for which the configuration is to be retrieved.</p>
@@ -1214,12 +1165,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPlaybackKeyPair`.
     ///
-    /// <p>Gets a specified playback authorization key pair and returns the <code>arn</code> and
-    /// <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be used to
-    /// generate viewer authorization tokens, to grant viewers access to private channels. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private Channels</a> in the <i>Amazon IVS User
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets a specified playback authorization key pair and returns the <code>arn</code> and <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be used to generate viewer authorization tokens, to grant viewers access to private channels. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPlaybackKeyPair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1264,10 +1211,10 @@ pub mod fluent_builders {
                 crate::input::GetPlaybackKeyPairInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1276,8 +1223,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the key pair to be returned.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>ARN of the key pair to be returned.</p>
@@ -1289,7 +1236,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRecordingConfiguration`.
     ///
     /// <p>Gets the recording configuration for the specified ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecordingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1334,10 +1281,10 @@ pub mod fluent_builders {
                 crate::input::GetRecordingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1346,8 +1293,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the recording configuration to be retrieved.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>ARN of the recording configuration to be retrieved.</p>
@@ -1359,7 +1306,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStream`.
     ///
     /// <p>Gets information about the active (live) stream on a specified channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1404,10 +1351,10 @@ pub mod fluent_builders {
                 crate::input::GetStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1416,8 +1363,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Channel ARN for stream to be accessed.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>Channel ARN for stream to be accessed.</p>
@@ -1429,7 +1376,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStreamKey`.
     ///
     /// <p>Gets stream-key information for a specified ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStreamKey<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1474,10 +1421,10 @@ pub mod fluent_builders {
                 crate::input::GetStreamKeyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1486,8 +1433,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN for the stream key to be retrieved.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>ARN for the stream key to be retrieved.</p>
@@ -1499,7 +1446,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetStreamSession`.
     ///
     /// <p>Gets metadata on a specified stream.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetStreamSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1544,10 +1491,10 @@ pub mod fluent_builders {
                 crate::input::GetStreamSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1556,8 +1503,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the channel resource</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>ARN of the channel resource</p>
@@ -1565,16 +1512,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>Unique identifier for a live or previously live stream in the specified channel. If no
-        /// <code>streamId</code> is provided, this returns the most recent stream session for the
-        /// channel, if it exists.</p>
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_id(inp);
+        /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(input.into());
             self
         }
-        /// <p>Unique identifier for a live or previously live stream in the specified channel. If no
-        /// <code>streamId</code> is provided, this returns the most recent stream session for the
-        /// channel, if it exists.</p>
+        /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stream_id(input);
             self
@@ -1582,12 +1525,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportPlaybackKeyPair`.
     ///
-    /// <p>Imports the public portion of a new key pair and returns its <code>arn</code> and
-    /// <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate viewer
-    /// authorization tokens, to grant viewers access to private channels. For more information, see
-    /// <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up
-    /// Private Channels</a> in the <i>Amazon IVS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Imports the public portion of a new key pair and returns its <code>arn</code> and <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate viewer authorization tokens, to grant viewers access to private channels. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportPlaybackKeyPair<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1632,10 +1571,10 @@ pub mod fluent_builders {
                 crate::input::ImportPlaybackKeyPairInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1644,8 +1583,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The public portion of a customer-generated key pair.</p>
-        pub fn public_key_material(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.public_key_material(inp);
+        pub fn public_key_material(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_key_material(input.into());
             self
         }
         /// <p>The public portion of a customer-generated key pair.</p>
@@ -1657,8 +1596,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Playback-key-pair name. The value does not need to be unique.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Playback-key-pair name. The value does not need to be unique.</p>
@@ -1676,7 +1615,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Any tags provided with the request are added to the playback key pair tags.</p>
@@ -1692,11 +1631,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannels`.
     ///
-    /// <p>Gets summary information about all channels in your account, in the Amazon Web Services
-    /// region where the API request is processed. This list can be filtered to match a specified name
-    /// or recording-configuration ARN. Filters are mutually exclusive and cannot be used together. If
-    /// you try to use both filters, you will get an error (409 ConflictException).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets summary information about all channels in your account, in the Amazon Web Services region where the API request is processed. This list can be filtered to match a specified name or recording-configuration ARN. Filters are mutually exclusive and cannot be used together. If you try to use both filters, you will get an error (409 ConflictException).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1741,10 +1677,10 @@ pub mod fluent_builders {
                 crate::input::ListChannelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1752,9 +1688,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListChannelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListChannelsPaginator<C, M, R> {
+            crate::paginator::ListChannelsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Filters the channel list to match the specified name.</p>
-        pub fn filter_by_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_by_name(inp);
+        pub fn filter_by_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_by_name(input.into());
             self
         }
         /// <p>Filters the channel list to match the specified name.</p>
@@ -1768,9 +1710,11 @@ pub mod fluent_builders {
         /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
         pub fn filter_by_recording_configuration_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.filter_by_recording_configuration_arn(inp);
+            self.inner = self
+                .inner
+                .filter_by_recording_configuration_arn(input.into());
             self
         }
         /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
@@ -1781,21 +1725,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_by_recording_configuration_arn(input);
             self
         }
-        /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Maximum number of channels to return. Default: 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of channels to return. Default: 50.</p>
@@ -1806,9 +1748,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPlaybackKeyPairs`.
     ///
-    /// <p>Gets summary information about playback key pairs. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private
-    /// Channels</a> in the <i>Amazon IVS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets summary information about playback key pairs. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPlaybackKeyPairs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1853,10 +1794,10 @@ pub mod fluent_builders {
                 crate::input::ListPlaybackKeyPairsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1864,9 +1805,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPlaybackKeyPairsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPlaybackKeyPairsPaginator<C, M, R> {
+            crate::paginator::ListPlaybackKeyPairsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Maximum number of key pairs to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Maximum number of key pairs to return.</p>
@@ -1874,14 +1821,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The first key pair to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field. Default: 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The first key pair to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field. Default: 50.</p>
+        /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1889,9 +1834,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRecordingConfigurations`.
     ///
-    /// <p>Gets summary information about all recording configurations in your account, in the
-    /// Amazon Web Services region where the API request is processed.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets summary information about all recording configurations in your account, in the Amazon Web Services region where the API request is processed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecordingConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1936,10 +1880,10 @@ pub mod fluent_builders {
                 crate::input::ListRecordingConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1947,21 +1891,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The first recording configuration to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRecordingConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListRecordingConfigurationsPaginator<C, M, R> {
+            crate::paginator::ListRecordingConfigurationsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The first recording configuration to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field.</p>
+        /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Maximum number of recording configurations to return. Default: 50. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of recording configurations to return. Default: 50. </p>
@@ -1973,7 +1923,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListStreamKeys`.
     ///
     /// <p>Gets summary information about stream keys for the specified channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreamKeys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2018,10 +1968,10 @@ pub mod fluent_builders {
                 crate::input::ListStreamKeysInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2029,9 +1979,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStreamKeysPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListStreamKeysPaginator<C, M, R> {
+            crate::paginator::ListStreamKeysPaginator::new(self.handle, self.inner)
+        }
         /// <p>Channel ARN used to filter the list.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>Channel ARN used to filter the list.</p>
@@ -2039,21 +1995,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The first stream key to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The first stream key to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field.</p>
+        /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Maximum number of streamKeys to return. Default: 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of streamKeys to return. Default: 50.</p>
@@ -2064,9 +2018,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStreams`.
     ///
-    /// <p>Gets summary information about live streams in your account, in the Amazon Web Services
-    /// region where the API request is processed.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets summary information about live streams in your account, in the Amazon Web Services region where the API request is processed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2111,10 +2064,10 @@ pub mod fluent_builders {
                 crate::input::ListStreamsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2122,9 +2075,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStreamsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListStreamsPaginator<C, M, R> {
+            crate::paginator::ListStreamsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Filters the stream list to match the specified criterion.</p>
-        pub fn filter_by(mut self, inp: crate::model::StreamFilters) -> Self {
-            self.inner = self.inner.filter_by(inp);
+        pub fn filter_by(mut self, input: crate::model::StreamFilters) -> Self {
+            self.inner = self.inner.filter_by(input);
             self
         }
         /// <p>Filters the stream list to match the specified criterion.</p>
@@ -2135,21 +2094,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_by(input);
             self
         }
-        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Maximum number of streams to return. Default: 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of streams to return. Default: 50.</p>
@@ -2160,9 +2117,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStreamSessions`.
     ///
-    /// <p>Gets a summary of current and previous streams for a specified channel in your account, in
-    /// the AWS region where the API request is processed.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets a summary of current and previous streams for a specified channel in your account, in the AWS region where the API request is processed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreamSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2207,10 +2163,10 @@ pub mod fluent_builders {
                 crate::input::ListStreamSessionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2218,9 +2174,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStreamSessionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListStreamSessionsPaginator<C, M, R> {
+            crate::paginator::ListStreamSessionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Channel ARN used to filter the list.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>Channel ARN used to filter the list.</p>
@@ -2228,21 +2190,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Maximum number of streams to return. Default: 50.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of streams to return. Default: 50.</p>
@@ -2254,7 +2214,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Gets information about Amazon Web Services tags for the specified ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2299,10 +2259,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2311,8 +2271,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to be retrieved.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource to be retrieved.</p>
@@ -2323,12 +2283,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutMetadata`.
     ///
-    /// <p>Inserts metadata into the active stream of the specified channel. At most 5 requests per
-    /// second per channel are allowed, each with a maximum 1 KB payload. (If 5 TPS is not sufficient
-    /// for your needs, we recommend batching your data into a single PutMetadata call.) At most 155
-    /// requests per second per account are allowed. Also see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/metadata.html">Embedding Metadata within a Video Stream</a> in
-    /// the <i>Amazon IVS User Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Inserts metadata into the active stream of the specified channel. At most 5 requests per second per channel are allowed, each with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we recommend batching your data into a single PutMetadata call.) At most 155 requests per second per account are allowed. Also see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/metadata.html">Embedding Metadata within a Video Stream</a> in the <i>Amazon IVS User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2373,10 +2329,10 @@ pub mod fluent_builders {
                 crate::input::PutMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2384,21 +2340,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>ARN of the channel into which metadata is inserted. This channel must have an active
-        /// stream.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
-        /// <p>ARN of the channel into which metadata is inserted. This channel must have an active
-        /// stream.</p>
+        /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
         /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
-        pub fn metadata(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(inp);
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
@@ -2409,15 +2363,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopStream`.
     ///
-    /// <p>Disconnects the incoming RTMPS stream for the specified channel. Can be used in
-    /// conjunction with <a>DeleteStreamKey</a> to prevent further streaming to a
-    /// channel.</p>
-    /// <note>
-    /// <p>Many streaming client-software libraries automatically reconnect a dropped RTMPS
-    /// session, so to stop the stream permanently, you may want to first revoke the
-    /// <code>streamKey</code> attached to the channel.</p>
+    /// <p>Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with <code>DeleteStreamKey</code> to prevent further streaming to a channel.</p> <note>
+    /// <p>Many streaming client-software libraries automatically reconnect a dropped RTMPS session, so to stop the stream permanently, you may want to first revoke the <code>streamKey</code> attached to the channel.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2462,10 +2411,10 @@ pub mod fluent_builders {
                 crate::input::StopStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2474,8 +2423,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the channel for which the stream is to be stopped.</p>
-        pub fn channel_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(inp);
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>ARN of the channel for which the stream is to be stopped.</p>
@@ -2487,7 +2436,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or updates tags for the Amazon Web Services resource with the specified ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2532,10 +2481,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2544,8 +2493,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the resource for which tags are to be added or updated.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>ARN of the resource for which tags are to be added or updated.</p>
@@ -2563,7 +2512,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Array of tags to be added or updated.</p>
@@ -2580,7 +2529,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from the resource with the specified ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2625,10 +2574,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2637,8 +2586,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the resource for which tags are to be removed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>ARN of the resource for which tags are to be removed.</p>
@@ -2651,8 +2600,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Array of tags to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Array of tags to be removed.</p>
@@ -2666,9 +2615,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateChannel`.
     ///
-    /// <p>Updates a channel's configuration. This does not affect an ongoing stream of this channel.
-    /// You must stop and restart the stream for the changes to take effect.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a channel's configuration. This does not affect an ongoing stream of this channel. You must stop and restart the stream for the changes to take effect.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2713,10 +2661,10 @@ pub mod fluent_builders {
                 crate::input::UpdateChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2725,8 +2673,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the channel to be updated.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>ARN of the channel to be updated.</p>
@@ -2735,8 +2683,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Channel name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Channel name.</p>
@@ -2744,18 +2692,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-        /// Standard, respectively.)</p>
-        pub fn latency_mode(mut self, inp: crate::model::ChannelLatencyMode) -> Self {
-            self.inner = self.inner.latency_mode(inp);
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
+        pub fn latency_mode(mut self, input: crate::model::ChannelLatencyMode) -> Self {
+            self.inner = self.inner.latency_mode(input);
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-        /// Standard, respectively.)</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
         pub fn set_latency_mode(
             mut self,
             input: std::option::Option<crate::model::ChannelLatencyMode>,
@@ -2763,53 +2705,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_latency_mode(input);
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-        /// immediately</i>. Valid values:</p>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-        /// automatically give viewers the best experience for their devices and network conditions.
-        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-        /// for renditions 360p and below; above that, audio is passed through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-        /// bitrate can be up to 1.5 Mbps.</p>
-        /// </li>
+        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::ChannelType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-        /// immediately</i>. Valid values:</p>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-        /// automatically give viewers the best experience for their devices and network conditions.
-        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-        /// for renditions 360p and below; above that, audio is passed through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-        /// bitrate can be up to 1.5 Mbps.</p>
-        /// </li>
+        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
         /// <p>Whether the channel is private (enabled for playback authorization).</p>
-        pub fn authorized(mut self, inp: bool) -> Self {
-            self.inner = self.inner.authorized(inp);
+        pub fn authorized(mut self, input: bool) -> Self {
+            self.inner = self.inner.authorized(input);
             self
         }
         /// <p>Whether the channel is private (enabled for playback authorization).</p>
@@ -2817,14 +2733,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_authorized(input);
             self
         }
-        /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A
-        /// value other than an empty string indicates that recording is enabled</p>
-        pub fn recording_configuration_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recording_configuration_arn(inp);
+        /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
+        pub fn recording_configuration_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.recording_configuration_arn(input.into());
             self
         }
-        /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A
-        /// value other than an empty string indicates that recording is enabled</p>
+        /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
         pub fn set_recording_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2834,6 +2751,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

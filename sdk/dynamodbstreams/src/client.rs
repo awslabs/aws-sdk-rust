@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon DynamoDB Streams
@@ -122,16 +122,11 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `DescribeStream`.
     ///
-    /// <p>Returns information about a stream, including the current status of the stream, its Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table.</p>
-    /// <note>
+    /// <p>Returns information about a stream, including the current status of the stream, its Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table.</p> <note>
     /// <p>You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.</p>
     /// </note>
-    /// <p>Each shard in the stream has a <code>SequenceNumberRange</code> associated with it. If the
-    /// <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code> but no
-    /// <code>EndingSequenceNumber</code>, then the shard is still open (able to receive more stream
-    /// records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code>
-    /// are present, then that shard is closed and can no longer receive more data.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Each shard in the stream has a <code>SequenceNumberRange</code> associated with it. If the <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code> but no <code>EndingSequenceNumber</code>, then the shard is still open (able to receive more stream records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code> are present, then that shard is closed and can no longer receive more data.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -176,10 +171,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -188,8 +183,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the stream.</p>
@@ -198,8 +193,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
@@ -207,14 +202,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was
-        /// returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
-        pub fn exclusive_start_shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclusive_start_shard_id(inp);
+        /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
+        pub fn exclusive_start_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusive_start_shard_id(input.into());
             self
         }
-        /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was
-        /// returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
+        /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
         pub fn set_exclusive_start_shard_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -226,17 +219,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRecords`.
     ///
     /// <p>Retrieves the stream records from a given shard.</p>
-    /// <p>Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard iterator
-    /// specifies the position in the shard from which you want to start reading stream records
-    /// sequentially. If there are no stream records available in the portion of the shard that the
-    /// iterator points to, <code>GetRecords</code> returns an empty list. Note that it might take
-    /// multiple calls to get to a portion of the shard that contains stream records.</p>
-    /// <note>
-    /// <p>
-    /// <code>GetRecords</code> can retrieve a maximum of 1 MB of data or 1000 stream records,
-    /// whichever comes first.</p>
+    /// <p>Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard iterator specifies the position in the shard from which you want to start reading stream records sequentially. If there are no stream records available in the portion of the shard that the iterator points to, <code>GetRecords</code> returns an empty list. Note that it might take multiple calls to get to a portion of the shard that contains stream records.</p> <note>
+    /// <p> <code>GetRecords</code> can retrieve a maximum of 1 MB of data or 1000 stream records, whichever comes first.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecords<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -281,10 +267,10 @@ pub mod fluent_builders {
                 crate::input::GetRecordsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -293,8 +279,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
-        pub fn shard_iterator(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shard_iterator(inp);
+        pub fn shard_iterator(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shard_iterator(input.into());
             self
         }
         /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
@@ -306,8 +292,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
@@ -318,15 +304,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetShardIterator`.
     ///
-    /// <p>Returns a shard iterator. A shard iterator provides information
-    /// about how to retrieve the stream records from within a shard.  Use
-    /// the shard iterator in a subsequent
-    /// <code>GetRecords</code> request to read the stream records
-    /// from the shard.</p>
-    /// <note>
+    /// <p>Returns a shard iterator. A shard iterator provides information about how to retrieve the stream records from within a shard. Use the shard iterator in a subsequent <code>GetRecords</code> request to read the stream records from the shard.</p> <note>
     /// <p>A shard iterator expires 15 minutes after it is returned to the requester.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetShardIterator<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -371,10 +352,10 @@ pub mod fluent_builders {
                 crate::input::GetShardIteratorInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -383,8 +364,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the stream.</p>
@@ -393,8 +374,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
-        pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shard_id(inp);
+        pub fn shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shard_id(input.into());
             self
         }
         /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
@@ -404,57 +385,21 @@ pub mod fluent_builders {
         }
         /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a
-        /// specific sequence number.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a
-        /// specific sequence number.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is
-        /// the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention.
-        /// Stream records whose age exceeds this limit are subject to removal (trimming) from the
-        /// stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LATEST</code> - Start reading just after the most recent stream record in the
-        /// shard, so that you always read the most recent data in the shard.</p>
-        /// </li>
+        /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li>
+        /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li>
+        /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
+        /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
         /// </ul>
-        pub fn shard_iterator_type(mut self, inp: crate::model::ShardIteratorType) -> Self {
-            self.inner = self.inner.shard_iterator_type(inp);
+        pub fn shard_iterator_type(mut self, input: crate::model::ShardIteratorType) -> Self {
+            self.inner = self.inner.shard_iterator_type(input);
             self
         }
         /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a
-        /// specific sequence number.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a
-        /// specific sequence number.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is
-        /// the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention.
-        /// Stream records whose age exceeds this limit are subject to removal (trimming) from the
-        /// stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LATEST</code> - Start reading just after the most recent stream record in the
-        /// shard, so that you always read the most recent data in the shard.</p>
-        /// </li>
+        /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li>
+        /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li>
+        /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
+        /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
         /// </ul>
         pub fn set_shard_iterator_type(
             mut self,
@@ -464,8 +409,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
-        pub fn sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sequence_number(inp);
+        pub fn sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sequence_number(input.into());
             self
         }
         /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
@@ -479,13 +424,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListStreams`.
     ///
-    /// <p>Returns an array of stream ARNs associated with the current account and endpoint. If the
-    /// <code>TableName</code> parameter is present, then <code>ListStreams</code> will return only the
-    /// streams ARNs for that table.</p>
-    /// <note>
+    /// <p>Returns an array of stream ARNs associated with the current account and endpoint. If the <code>TableName</code> parameter is present, then <code>ListStreams</code> will return only the streams ARNs for that table.</p> <note>
     /// <p>You can call <code>ListStreams</code> at a maximum rate of 5 times per second.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListStreams<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -530,10 +472,10 @@ pub mod fluent_builders {
                 crate::input::ListStreamsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -542,8 +484,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
@@ -552,8 +494,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of streams to return. The upper limit is 100.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of streams to return. The upper limit is 100.</p>
@@ -561,16 +503,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the
-        /// value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.
-        /// </p>
-        pub fn exclusive_start_stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclusive_start_stream_arn(inp);
+        /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
+        pub fn exclusive_start_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusive_start_stream_arn(input.into());
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the
-        /// value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation.
-        /// </p>
+        /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
         pub fn set_exclusive_start_stream_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -580,6 +518,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

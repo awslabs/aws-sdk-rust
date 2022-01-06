@@ -41,9 +41,9 @@ pub mod list_tables_output {
         /// To override the contents of this collection use [`set_tables`](Self::set_tables).
         ///
         /// <p>The tables that match the request pattern. </p>
-        pub fn tables(mut self, input: impl Into<crate::model::TableMember>) -> Self {
+        pub fn tables(mut self, input: crate::model::TableMember) -> Self {
             let mut v = self.tables.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tables = Some(v);
             self
         }
@@ -123,9 +123,9 @@ pub mod list_statements_output {
         /// To override the contents of this collection use [`set_statements`](Self::set_statements).
         ///
         /// <p>The SQL statements. </p>
-        pub fn statements(mut self, input: impl Into<crate::model::StatementData>) -> Self {
+        pub fn statements(mut self, input: crate::model::StatementData) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statements = Some(v);
             self
         }
@@ -335,8 +335,7 @@ pub struct GetStatementResultOutput {
     pub records: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::Field>>>,
     /// <p>The properties (metadata) of a column. </p>
     pub column_metadata: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
-    /// <p>The total number of rows in the result set returned from a query.
-    /// You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
+    /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
     pub total_num_rows: i64,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -350,8 +349,7 @@ impl GetStatementResultOutput {
     pub fn column_metadata(&self) -> std::option::Option<&[crate::model::ColumnMetadata]> {
         self.column_metadata.as_deref()
     }
-    /// <p>The total number of rows in the result set returned from a query.
-    /// You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
+    /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
     pub fn total_num_rows(&self) -> i64 {
         self.total_num_rows
     }
@@ -388,9 +386,9 @@ pub mod get_statement_result_output {
         /// To override the contents of this collection use [`set_records`](Self::set_records).
         ///
         /// <p>The results of the SQL statement.</p>
-        pub fn records(mut self, input: impl Into<std::vec::Vec<crate::model::Field>>) -> Self {
+        pub fn records(mut self, input: std::vec::Vec<crate::model::Field>) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.records = Some(v);
             self
         }
@@ -407,9 +405,9 @@ pub mod get_statement_result_output {
         /// To override the contents of this collection use [`set_column_metadata`](Self::set_column_metadata).
         ///
         /// <p>The properties (metadata) of a column. </p>
-        pub fn column_metadata(mut self, input: impl Into<crate::model::ColumnMetadata>) -> Self {
+        pub fn column_metadata(mut self, input: crate::model::ColumnMetadata) -> Self {
             let mut v = self.column_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_metadata = Some(v);
             self
         }
@@ -421,14 +419,12 @@ pub mod get_statement_result_output {
             self.column_metadata = input;
             self
         }
-        /// <p>The total number of rows in the result set returned from a query.
-        /// You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
+        /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
         pub fn total_num_rows(mut self, input: i64) -> Self {
             self.total_num_rows = Some(input);
             self
         }
-        /// <p>The total number of rows in the result set returned from a query.
-        /// You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
+        /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
         pub fn set_total_num_rows(mut self, input: std::option::Option<i64>) -> Self {
             self.total_num_rows = input;
             self
@@ -676,9 +672,9 @@ pub mod describe_table_output {
         /// To override the contents of this collection use [`set_column_list`](Self::set_column_list).
         ///
         /// <p>A list of columns in the table. </p>
-        pub fn column_list(mut self, input: impl Into<crate::model::ColumnMetadata>) -> Self {
+        pub fn column_list(mut self, input: crate::model::ColumnMetadata) -> Self {
             let mut v = self.column_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.column_list = Some(v);
             self
         }
@@ -737,49 +733,30 @@ pub struct DescribeStatementOutput {
     pub error: std::option::Option<std::string::String>,
     /// <p>The status of the SQL statement being described. Status values are defined as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>ABORTED - The query run was stopped by the user. </p>
-    /// </li>
-    /// <li>
-    /// <p>ALL -  A status value that includes all query statuses. This value can be used to filter results. </p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED - The query run failed. </p>
-    /// </li>
-    /// <li>
-    /// <p>FINISHED - The query has finished running. </p>
-    /// </li>
-    /// <li>
-    /// <p>PICKED - The query has been chosen to be run. </p>
-    /// </li>
-    /// <li>
-    /// <p>STARTED - The query run has started. </p>
-    /// </li>
-    /// <li>
-    /// <p>SUBMITTED - The query was submitted, but not yet processed. </p>
-    /// </li>
+    /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li>
+    /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li>
+    /// <li> <p>FAILED - The query run failed. </p> </li>
+    /// <li> <p>FINISHED - The query has finished running. </p> </li>
+    /// <li> <p>PICKED - The query has been chosen to be run. </p> </li>
+    /// <li> <p>STARTED - The query run has started. </p> </li>
+    /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::StatusString>,
     /// <p>The date and time (UTC) when the SQL statement was submitted to run. </p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time (UTC) that the metadata for the SQL statement was last updated. An
-    /// example is the time the status last changed. </p>
+    /// <p>The date and time (UTC) that the metadata for the SQL statement was last updated. An example is the time the status last changed. </p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The process identifier from Amazon Redshift. </p>
     pub redshift_pid: i64,
-    /// <p>A value that indicates whether the statement has a result set. The result set can be empty. The value is true for an empty result set.
-    /// The value is true if any substatement returns a result set.</p>
+    /// <p>A value that indicates whether the statement has a result set. The result set can be empty. The value is true for an empty result set. The value is true if any substatement returns a result set.</p>
     pub has_result_set: std::option::Option<bool>,
     /// <p>The SQL statement text. </p>
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>Either the number of rows returned from the SQL statement or the number of rows affected.
-    /// If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others.
-    /// A <code>-1</code> indicates the value is null.</p>
+    /// <p>Either the number of rows returned from the SQL statement or the number of rows affected. If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others. A <code>-1</code> indicates the value is null.</p>
     pub result_rows: i64,
     /// <p>The size in bytes of the returned results. A <code>-1</code> indicates the value is null.</p>
     pub result_size: i64,
-    /// <p>The identifier of the query generated by Amazon Redshift.
-    /// These identifiers are also available in the <code>query</code> column of the <code>STL_QUERY</code> system view. </p>
+    /// <p>The identifier of the query generated by Amazon Redshift. These identifiers are also available in the <code>query</code> column of the <code>STL_QUERY</code> system view. </p>
     pub redshift_query_id: i64,
     /// <p>The parameters for the SQL statement.</p>
     pub query_parameters: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
@@ -817,27 +794,13 @@ impl DescribeStatementOutput {
     }
     /// <p>The status of the SQL statement being described. Status values are defined as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>ABORTED - The query run was stopped by the user. </p>
-    /// </li>
-    /// <li>
-    /// <p>ALL -  A status value that includes all query statuses. This value can be used to filter results. </p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED - The query run failed. </p>
-    /// </li>
-    /// <li>
-    /// <p>FINISHED - The query has finished running. </p>
-    /// </li>
-    /// <li>
-    /// <p>PICKED - The query has been chosen to be run. </p>
-    /// </li>
-    /// <li>
-    /// <p>STARTED - The query run has started. </p>
-    /// </li>
-    /// <li>
-    /// <p>SUBMITTED - The query was submitted, but not yet processed. </p>
-    /// </li>
+    /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li>
+    /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li>
+    /// <li> <p>FAILED - The query run failed. </p> </li>
+    /// <li> <p>FINISHED - The query has finished running. </p> </li>
+    /// <li> <p>PICKED - The query has been chosen to be run. </p> </li>
+    /// <li> <p>STARTED - The query run has started. </p> </li>
+    /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::StatusString> {
         self.status.as_ref()
@@ -846,8 +809,7 @@ impl DescribeStatementOutput {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The date and time (UTC) that the metadata for the SQL statement was last updated. An
-    /// example is the time the status last changed. </p>
+    /// <p>The date and time (UTC) that the metadata for the SQL statement was last updated. An example is the time the status last changed. </p>
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -855,8 +817,7 @@ impl DescribeStatementOutput {
     pub fn redshift_pid(&self) -> i64 {
         self.redshift_pid
     }
-    /// <p>A value that indicates whether the statement has a result set. The result set can be empty. The value is true for an empty result set.
-    /// The value is true if any substatement returns a result set.</p>
+    /// <p>A value that indicates whether the statement has a result set. The result set can be empty. The value is true for an empty result set. The value is true if any substatement returns a result set.</p>
     pub fn has_result_set(&self) -> std::option::Option<bool> {
         self.has_result_set
     }
@@ -864,9 +825,7 @@ impl DescribeStatementOutput {
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>Either the number of rows returned from the SQL statement or the number of rows affected.
-    /// If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others.
-    /// A <code>-1</code> indicates the value is null.</p>
+    /// <p>Either the number of rows returned from the SQL statement or the number of rows affected. If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others. A <code>-1</code> indicates the value is null.</p>
     pub fn result_rows(&self) -> i64 {
         self.result_rows
     }
@@ -874,8 +833,7 @@ impl DescribeStatementOutput {
     pub fn result_size(&self) -> i64 {
         self.result_size
     }
-    /// <p>The identifier of the query generated by Amazon Redshift.
-    /// These identifiers are also available in the <code>query</code> column of the <code>STL_QUERY</code> system view. </p>
+    /// <p>The identifier of the query generated by Amazon Redshift. These identifiers are also available in the <code>query</code> column of the <code>STL_QUERY</code> system view. </p>
     pub fn redshift_query_id(&self) -> i64 {
         self.redshift_query_id
     }
@@ -1014,27 +972,13 @@ pub mod describe_statement_output {
         }
         /// <p>The status of the SQL statement being described. Status values are defined as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>ABORTED - The query run was stopped by the user. </p>
-        /// </li>
-        /// <li>
-        /// <p>ALL -  A status value that includes all query statuses. This value can be used to filter results. </p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED - The query run failed. </p>
-        /// </li>
-        /// <li>
-        /// <p>FINISHED - The query has finished running. </p>
-        /// </li>
-        /// <li>
-        /// <p>PICKED - The query has been chosen to be run. </p>
-        /// </li>
-        /// <li>
-        /// <p>STARTED - The query run has started. </p>
-        /// </li>
-        /// <li>
-        /// <p>SUBMITTED - The query was submitted, but not yet processed. </p>
-        /// </li>
+        /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li>
+        /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li>
+        /// <li> <p>FAILED - The query run failed. </p> </li>
+        /// <li> <p>FINISHED - The query has finished running. </p> </li>
+        /// <li> <p>PICKED - The query has been chosen to be run. </p> </li>
+        /// <li> <p>STARTED - The query run has started. </p> </li>
+        /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::StatusString) -> Self {
             self.status = Some(input);
@@ -1042,27 +986,13 @@ pub mod describe_statement_output {
         }
         /// <p>The status of the SQL statement being described. Status values are defined as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>ABORTED - The query run was stopped by the user. </p>
-        /// </li>
-        /// <li>
-        /// <p>ALL -  A status value that includes all query statuses. This value can be used to filter results. </p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED - The query run failed. </p>
-        /// </li>
-        /// <li>
-        /// <p>FINISHED - The query has finished running. </p>
-        /// </li>
-        /// <li>
-        /// <p>PICKED - The query has been chosen to be run. </p>
-        /// </li>
-        /// <li>
-        /// <p>STARTED - The query run has started. </p>
-        /// </li>
-        /// <li>
-        /// <p>SUBMITTED - The query was submitted, but not yet processed. </p>
-        /// </li>
+        /// <li> <p>ABORTED - The query run was stopped by the user. </p> </li>
+        /// <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li>
+        /// <li> <p>FAILED - The query run failed. </p> </li>
+        /// <li> <p>FINISHED - The query has finished running. </p> </li>
+        /// <li> <p>PICKED - The query has been chosen to be run. </p> </li>
+        /// <li> <p>STARTED - The query run has started. </p> </li>
+        /// <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -1084,14 +1014,12 @@ pub mod describe_statement_output {
             self.created_at = input;
             self
         }
-        /// <p>The date and time (UTC) that the metadata for the SQL statement was last updated. An
-        /// example is the time the status last changed. </p>
+        /// <p>The date and time (UTC) that the metadata for the SQL statement was last updated. An example is the time the status last changed. </p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.updated_at = Some(input);
             self
         }
-        /// <p>The date and time (UTC) that the metadata for the SQL statement was last updated. An
-        /// example is the time the status last changed. </p>
+        /// <p>The date and time (UTC) that the metadata for the SQL statement was last updated. An example is the time the status last changed. </p>
         pub fn set_updated_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1109,14 +1037,12 @@ pub mod describe_statement_output {
             self.redshift_pid = input;
             self
         }
-        /// <p>A value that indicates whether the statement has a result set. The result set can be empty. The value is true for an empty result set.
-        /// The value is true if any substatement returns a result set.</p>
+        /// <p>A value that indicates whether the statement has a result set. The result set can be empty. The value is true for an empty result set. The value is true if any substatement returns a result set.</p>
         pub fn has_result_set(mut self, input: bool) -> Self {
             self.has_result_set = Some(input);
             self
         }
-        /// <p>A value that indicates whether the statement has a result set. The result set can be empty. The value is true for an empty result set.
-        /// The value is true if any substatement returns a result set.</p>
+        /// <p>A value that indicates whether the statement has a result set. The result set can be empty. The value is true for an empty result set. The value is true if any substatement returns a result set.</p>
         pub fn set_has_result_set(mut self, input: std::option::Option<bool>) -> Self {
             self.has_result_set = input;
             self
@@ -1131,16 +1057,12 @@ pub mod describe_statement_output {
             self.query_string = input;
             self
         }
-        /// <p>Either the number of rows returned from the SQL statement or the number of rows affected.
-        /// If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others.
-        /// A <code>-1</code> indicates the value is null.</p>
+        /// <p>Either the number of rows returned from the SQL statement or the number of rows affected. If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others. A <code>-1</code> indicates the value is null.</p>
         pub fn result_rows(mut self, input: i64) -> Self {
             self.result_rows = Some(input);
             self
         }
-        /// <p>Either the number of rows returned from the SQL statement or the number of rows affected.
-        /// If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others.
-        /// A <code>-1</code> indicates the value is null.</p>
+        /// <p>Either the number of rows returned from the SQL statement or the number of rows affected. If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others. A <code>-1</code> indicates the value is null.</p>
         pub fn set_result_rows(mut self, input: std::option::Option<i64>) -> Self {
             self.result_rows = input;
             self
@@ -1155,14 +1077,12 @@ pub mod describe_statement_output {
             self.result_size = input;
             self
         }
-        /// <p>The identifier of the query generated by Amazon Redshift.
-        /// These identifiers are also available in the <code>query</code> column of the <code>STL_QUERY</code> system view. </p>
+        /// <p>The identifier of the query generated by Amazon Redshift. These identifiers are also available in the <code>query</code> column of the <code>STL_QUERY</code> system view. </p>
         pub fn redshift_query_id(mut self, input: i64) -> Self {
             self.redshift_query_id = Some(input);
             self
         }
-        /// <p>The identifier of the query generated by Amazon Redshift.
-        /// These identifiers are also available in the <code>query</code> column of the <code>STL_QUERY</code> system view. </p>
+        /// <p>The identifier of the query generated by Amazon Redshift. These identifiers are also available in the <code>query</code> column of the <code>STL_QUERY</code> system view. </p>
         pub fn set_redshift_query_id(mut self, input: std::option::Option<i64>) -> Self {
             self.redshift_query_id = input;
             self
@@ -1172,9 +1092,9 @@ pub mod describe_statement_output {
         /// To override the contents of this collection use [`set_query_parameters`](Self::set_query_parameters).
         ///
         /// <p>The parameters for the SQL statement.</p>
-        pub fn query_parameters(mut self, input: impl Into<crate::model::SqlParameter>) -> Self {
+        pub fn query_parameters(mut self, input: crate::model::SqlParameter) -> Self {
             let mut v = self.query_parameters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.query_parameters = Some(v);
             self
         }
@@ -1191,9 +1111,9 @@ pub mod describe_statement_output {
         /// To override the contents of this collection use [`set_sub_statements`](Self::set_sub_statements).
         ///
         /// <p>The SQL statements from a multiple statement run.</p>
-        pub fn sub_statements(mut self, input: impl Into<crate::model::SubStatementData>) -> Self {
+        pub fn sub_statements(mut self, input: crate::model::SubStatementData) -> Self {
             let mut v = self.sub_statements.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sub_statements = Some(v);
             self
         }
@@ -1295,8 +1215,7 @@ impl CancelStatementOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchExecuteStatementOutput {
-    /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-    /// This identifier is returned by <code>BatchExecuteStatment</code>. </p>
+    /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned by <code>BatchExecuteStatment</code>. </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time (UTC) the statement was created. </p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -1310,8 +1229,7 @@ pub struct BatchExecuteStatementOutput {
     pub secret_arn: std::option::Option<std::string::String>,
 }
 impl BatchExecuteStatementOutput {
-    /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-    /// This identifier is returned by <code>BatchExecuteStatment</code>. </p>
+    /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned by <code>BatchExecuteStatment</code>. </p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -1362,14 +1280,12 @@ pub mod batch_execute_statement_output {
         pub(crate) secret_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-        /// This identifier is returned by <code>BatchExecuteStatment</code>. </p>
+        /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned by <code>BatchExecuteStatment</code>. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-        /// This identifier is returned by <code>BatchExecuteStatment</code>. </p>
+        /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned by <code>BatchExecuteStatment</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self

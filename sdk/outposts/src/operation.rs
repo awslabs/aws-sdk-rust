@@ -610,6 +610,38 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     }
 }
 
+/// Operation shape for `UpdateOutpost`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_outpost`](crate::client::Client::update_outpost).
+///
+/// See [`crate::client::fluent_builders::UpdateOutpost`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateOutpost {
+    _private: (),
+}
+impl UpdateOutpost {
+    /// Creates a new builder-style object to manufacture [`UpdateOutpostInput`](crate::input::UpdateOutpostInput)
+    pub fn builder() -> crate::input::update_outpost_input::Builder {
+        crate::input::update_outpost_input::Builder::default()
+    }
+    /// Creates a new `UpdateOutpost` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateOutpost {
+    type Output =
+        std::result::Result<crate::output::UpdateOutpostOutput, crate::error::UpdateOutpostError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_outpost_error(response)
+        } else {
+            crate::operation_deser::parse_update_outpost_response(response)
+        }
+    }
+}
+
 /// Operation shape for `UpdateSite`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by

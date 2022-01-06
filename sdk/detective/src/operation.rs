@@ -161,6 +161,74 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMembers {
     }
 }
 
+/// Operation shape for `DescribeOrganizationConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_organization_configuration`](crate::client::Client::describe_organization_configuration).
+///
+/// See [`crate::client::fluent_builders::DescribeOrganizationConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeOrganizationConfiguration {
+    _private: (),
+}
+impl DescribeOrganizationConfiguration {
+    /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationInput`](crate::input::DescribeOrganizationConfigurationInput)
+    pub fn builder() -> crate::input::describe_organization_configuration_input::Builder {
+        crate::input::describe_organization_configuration_input::Builder::default()
+    }
+    /// Creates a new `DescribeOrganizationConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeOrganizationConfiguration {
+    type Output = std::result::Result<
+        crate::output::DescribeOrganizationConfigurationOutput,
+        crate::error::DescribeOrganizationConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_organization_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_describe_organization_configuration_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DisableOrganizationAdminAccount`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`disable_organization_admin_account`](crate::client::Client::disable_organization_admin_account).
+///
+/// See [`crate::client::fluent_builders::DisableOrganizationAdminAccount`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisableOrganizationAdminAccount {
+    _private: (),
+}
+impl DisableOrganizationAdminAccount {
+    /// Creates a new builder-style object to manufacture [`DisableOrganizationAdminAccountInput`](crate::input::DisableOrganizationAdminAccountInput)
+    pub fn builder() -> crate::input::disable_organization_admin_account_input::Builder {
+        crate::input::disable_organization_admin_account_input::Builder::default()
+    }
+    /// Creates a new `DisableOrganizationAdminAccount` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DisableOrganizationAdminAccount {
+    type Output = std::result::Result<
+        crate::output::DisableOrganizationAdminAccountOutput,
+        crate::error::DisableOrganizationAdminAccountError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disable_organization_admin_account_error(response)
+        } else {
+            crate::operation_deser::parse_disable_organization_admin_account_response(response)
+        }
+    }
+}
+
 /// Operation shape for `DisassociateMembership`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -191,6 +259,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateMembership {
             crate::operation_deser::parse_disassociate_membership_error(response)
         } else {
             crate::operation_deser::parse_disassociate_membership_response(response)
+        }
+    }
+}
+
+/// Operation shape for `EnableOrganizationAdminAccount`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`enable_organization_admin_account`](crate::client::Client::enable_organization_admin_account).
+///
+/// See [`crate::client::fluent_builders::EnableOrganizationAdminAccount`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct EnableOrganizationAdminAccount {
+    _private: (),
+}
+impl EnableOrganizationAdminAccount {
+    /// Creates a new builder-style object to manufacture [`EnableOrganizationAdminAccountInput`](crate::input::EnableOrganizationAdminAccountInput)
+    pub fn builder() -> crate::input::enable_organization_admin_account_input::Builder {
+        crate::input::enable_organization_admin_account_input::Builder::default()
+    }
+    /// Creates a new `EnableOrganizationAdminAccount` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for EnableOrganizationAdminAccount {
+    type Output = std::result::Result<
+        crate::output::EnableOrganizationAdminAccountOutput,
+        crate::error::EnableOrganizationAdminAccountError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_enable_organization_admin_account_error(response)
+        } else {
+            crate::operation_deser::parse_enable_organization_admin_account_response(response)
         }
     }
 }
@@ -321,6 +423,40 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMembers {
             crate::operation_deser::parse_list_members_error(response)
         } else {
             crate::operation_deser::parse_list_members_response(response)
+        }
+    }
+}
+
+/// Operation shape for `ListOrganizationAdminAccounts`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`list_organization_admin_accounts`](crate::client::Client::list_organization_admin_accounts).
+///
+/// See [`crate::client::fluent_builders::ListOrganizationAdminAccounts`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListOrganizationAdminAccounts {
+    _private: (),
+}
+impl ListOrganizationAdminAccounts {
+    /// Creates a new builder-style object to manufacture [`ListOrganizationAdminAccountsInput`](crate::input::ListOrganizationAdminAccountsInput)
+    pub fn builder() -> crate::input::list_organization_admin_accounts_input::Builder {
+        crate::input::list_organization_admin_accounts_input::Builder::default()
+    }
+    /// Creates a new `ListOrganizationAdminAccounts` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for ListOrganizationAdminAccounts {
+    type Output = std::result::Result<
+        crate::output::ListOrganizationAdminAccountsOutput,
+        crate::error::ListOrganizationAdminAccountsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_organization_admin_accounts_error(response)
+        } else {
+            crate::operation_deser::parse_list_organization_admin_accounts_response(response)
         }
     }
 }
@@ -487,6 +623,40 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// Operation shape for `UpdateOrganizationConfiguration`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`update_organization_configuration`](crate::client::Client::update_organization_configuration).
+///
+/// See [`crate::client::fluent_builders::UpdateOrganizationConfiguration`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateOrganizationConfiguration {
+    _private: (),
+}
+impl UpdateOrganizationConfiguration {
+    /// Creates a new builder-style object to manufacture [`UpdateOrganizationConfigurationInput`](crate::input::UpdateOrganizationConfigurationInput)
+    pub fn builder() -> crate::input::update_organization_configuration_input::Builder {
+        crate::input::update_organization_configuration_input::Builder::default()
+    }
+    /// Creates a new `UpdateOrganizationConfiguration` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for UpdateOrganizationConfiguration {
+    type Output = std::result::Result<
+        crate::output::UpdateOrganizationConfigurationOutput,
+        crate::error::UpdateOrganizationConfigurationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_organization_configuration_error(response)
+        } else {
+            crate::operation_deser::parse_update_organization_configuration_response(response)
         }
     }
 }

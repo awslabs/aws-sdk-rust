@@ -195,8 +195,7 @@ impl ListTagsForResourceOutput {
 pub struct ListEnvironmentsOutput {
     /// <p>A list of all of your FinSpace environments.</p>
     pub environments: std::option::Option<std::vec::Vec<crate::model::Environment>>,
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentsOutput {
@@ -204,8 +203,7 @@ impl ListEnvironmentsOutput {
     pub fn environments(&self) -> std::option::Option<&[crate::model::Environment]> {
         self.environments.as_deref()
     }
-    /// <p>A token that you can use in a subsequent call to retrieve the next set of
-    /// results.</p>
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -233,9 +231,9 @@ pub mod list_environments_output {
         /// To override the contents of this collection use [`set_environments`](Self::set_environments).
         ///
         /// <p>A list of all of your FinSpace environments.</p>
-        pub fn environments(mut self, input: impl Into<crate::model::Environment>) -> Self {
+        pub fn environments(mut self, input: crate::model::Environment) -> Self {
             let mut v = self.environments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.environments = Some(v);
             self
         }
@@ -247,14 +245,12 @@ pub mod list_environments_output {
             self.environments = input;
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that you can use in a subsequent call to retrieve the next set of
-        /// results.</p>
+        /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

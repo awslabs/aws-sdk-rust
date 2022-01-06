@@ -70,15 +70,13 @@ impl AsRef<str> for ParallelDataStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParallelDataConfig {
-    /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder
-    /// must be in the same Region as the API endpoint you are calling.</p>
+    /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
     pub s3_uri: std::option::Option<std::string::String>,
     /// <p>The format of the parallel data input file.</p>
     pub format: std::option::Option<crate::model::ParallelDataFormat>,
 }
 impl ParallelDataConfig {
-    /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder
-    /// must be in the same Region as the API endpoint you are calling.</p>
+    /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
@@ -105,14 +103,12 @@ pub mod parallel_data_config {
         pub(crate) format: std::option::Option<crate::model::ParallelDataFormat>,
     }
     impl Builder {
-        /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder
-        /// must be in the same Region as the API endpoint you are calling.</p>
+        /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
         pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_uri = Some(input.into());
             self
         }
-        /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder
-        /// must be in the same Region as the API endpoint you are calling.</p>
+        /// <p>The URI of the Amazon S3 folder that contains the parallel data input file. The folder must be in the same Region as the API endpoint you are calling.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -209,25 +205,15 @@ impl AsRef<str> for ParallelDataFormat {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TranslationSettings {
-    /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and
-    /// phrases in your translation output.</p>
-    /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string
-    /// “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the
-    /// length or number of words.</p>
-    /// <p>Amazon Translate does not detect profanity in all of its supported languages. For
-    /// languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported
-    /// Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
+    /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
+    /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
+    /// <p>Amazon Translate does not detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
     pub profanity: std::option::Option<crate::model::Profanity>,
 }
 impl TranslationSettings {
-    /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and
-    /// phrases in your translation output.</p>
-    /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string
-    /// “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the
-    /// length or number of words.</p>
-    /// <p>Amazon Translate does not detect profanity in all of its supported languages. For
-    /// languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported
-    /// Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
+    /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
+    /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
+    /// <p>Amazon Translate does not detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
     pub fn profanity(&self) -> std::option::Option<&crate::model::Profanity> {
         self.profanity.as_ref()
     }
@@ -248,26 +234,16 @@ pub mod translation_settings {
         pub(crate) profanity: std::option::Option<crate::model::Profanity>,
     }
     impl Builder {
-        /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and
-        /// phrases in your translation output.</p>
-        /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string
-        /// “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the
-        /// length or number of words.</p>
-        /// <p>Amazon Translate does not detect profanity in all of its supported languages. For
-        /// languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported
-        /// Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
+        /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
+        /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
+        /// <p>Amazon Translate does not detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
         pub fn profanity(mut self, input: crate::model::Profanity) -> Self {
             self.profanity = Some(input);
             self
         }
-        /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and
-        /// phrases in your translation output.</p>
-        /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string
-        /// “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the
-        /// length or number of words.</p>
-        /// <p>Amazon Translate does not detect profanity in all of its supported languages. For
-        /// languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported
-        /// Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
+        /// <p>Enable the profanity setting if you want Amazon Translate to mask profane words and phrases in your translation output.</p>
+        /// <p>To mask profane words and phrases, Amazon Translate replaces them with the grawlix string “?$#@$“. This 5-character sequence is used for each profane word or phrase, regardless of the length or number of words.</p>
+        /// <p>Amazon Translate does not detect profanity in all of its supported languages. For languages that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html#what-is-languages">Supported Languages and Language Codes in the Amazon Translate Developer Guide</a>.</p>
         pub fn set_profanity(
             mut self,
             input: std::option::Option<crate::model::Profanity>,
@@ -341,30 +317,21 @@ impl AsRef<str> for Profanity {
     }
 }
 
-/// <p>The custom terminology applied to the input text by Amazon Translate for the translated text
-/// response. This is optional in the response and will only be present if you specified
-/// terminology input in the request. Currently, only one terminology can be applied per
-/// TranslateText request.</p>
+/// <p>The custom terminology applied to the input text by Amazon Translate for the translated text response. This is optional in the response and will only be present if you specified terminology input in the request. Currently, only one terminology can be applied per TranslateText request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppliedTerminology {
-    /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated
-    /// text response.</p>
+    /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the
-    /// translated text response. A maximum of 250 terms will be returned, and the specific terms
-    /// applied will be the first 250 terms in the source text. </p>
+    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
     pub terms: std::option::Option<std::vec::Vec<crate::model::Term>>,
 }
 impl AppliedTerminology {
-    /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated
-    /// text response.</p>
+    /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the
-    /// translated text response. A maximum of 250 terms will be returned, and the specific terms
-    /// applied will be the first 250 terms in the source text. </p>
+    /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
     pub fn terms(&self) -> std::option::Option<&[crate::model::Term]> {
         self.terms.as_deref()
     }
@@ -387,14 +354,12 @@ pub mod applied_terminology {
         pub(crate) terms: std::option::Option<std::vec::Vec<crate::model::Term>>,
     }
     impl Builder {
-        /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated
-        /// text response.</p>
+        /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated
-        /// text response.</p>
+        /// <p>The name of the custom terminology applied to the input text by Amazon Translate for the translated text response.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -403,18 +368,14 @@ pub mod applied_terminology {
         ///
         /// To override the contents of this collection use [`set_terms`](Self::set_terms).
         ///
-        /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the
-        /// translated text response. A maximum of 250 terms will be returned, and the specific terms
-        /// applied will be the first 250 terms in the source text. </p>
-        pub fn terms(mut self, input: impl Into<crate::model::Term>) -> Self {
+        /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
+        pub fn terms(mut self, input: crate::model::Term) -> Self {
             let mut v = self.terms.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.terms = Some(v);
             self
         }
-        /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the
-        /// translated text response. A maximum of 250 terms will be returned, and the specific terms
-        /// applied will be the first 250 terms in the source text. </p>
+        /// <p>The specific terms of the custom terminology applied to the input text by Amazon Translate for the translated text response. A maximum of 250 terms will be returned, and the specific terms applied will be the first 250 terms in the source text. </p>
         pub fn set_terms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Term>>,
@@ -598,15 +559,13 @@ impl AsRef<str> for JobStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputDataConfig {
-    /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must
-    /// be in the same Region as the API endpoint that you are calling.</p>
+    /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
     pub s3_uri: std::option::Option<std::string::String>,
     /// <p>The encryption key used to encrypt this object.</p>
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
 }
 impl OutputDataConfig {
-    /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must
-    /// be in the same Region as the API endpoint that you are calling.</p>
+    /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
@@ -633,14 +592,12 @@ pub mod output_data_config {
         pub(crate) encryption_key: std::option::Option<crate::model::EncryptionKey>,
     }
     impl Builder {
-        /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must
-        /// be in the same Region as the API endpoint that you are calling.</p>
+        /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
         pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_uri = Some(input.into());
             self
         }
-        /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must
-        /// be in the same Region as the API endpoint that you are calling.</p>
+        /// <p>The URI of the S3 folder that contains a translation job's output file. The folder must be in the same Region as the API endpoint that you are calling.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -805,100 +762,36 @@ impl AsRef<str> for EncryptionKeyType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputDataConfig {
-    /// <p>The URI of the AWS S3 folder that contains the input file. The folder must be in the
-    /// same Region as the API endpoint you are calling.</p>
+    /// <p>The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the API endpoint you are calling.</p>
     pub s3_uri: std::option::Option<std::string::String>,
-    /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can
-    /// specify one of the following multipurpose internet mail extension (MIME) types:</p>
+    /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>text/html</code>: The input data consists of one or more HTML files. Amazon
-    /// Translate translates only the text that resides in the <code>html</code> element in each
-    /// file.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>text/plain</code>: The input data consists of one or more unformatted text
-    /// files. Amazon Translate translates every character in this type of input.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>:
-    /// The input data consists of one or more Word documents (.docx).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>:
-    /// The input data consists of one or more PowerPoint Presentation files (.pptx).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The
-    /// input data consists of one or more Excel Workbook files (.xlsx).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>application/x-xliff+xml</code>: The input data consists of one or more XML
-    /// Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only
-    /// XLIFF version 1.2.</p>
-    /// </li>
-    /// </ul>
-    /// <important>
-    /// <p>If you structure your input data as HTML, ensure that you set this parameter to
-    /// <code>text/html</code>. By doing so, you cut costs by limiting the translation to the
-    /// contents of the <code>html</code> element in each file. Otherwise, if you set this parameter
-    /// to <code>text/plain</code>, your costs will cover the translation of every character.</p>
+    /// <li> <p> <code>text/html</code>: The input data consists of one or more HTML files. Amazon Translate translates only the text that resides in the <code>html</code> element in each file.</p> </li>
+    /// <li> <p> <code>text/plain</code>: The input data consists of one or more unformatted text files. Amazon Translate translates every character in this type of input.</p> </li>
+    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>: The input data consists of one or more Word documents (.docx).</p> </li>
+    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>: The input data consists of one or more PowerPoint Presentation files (.pptx).</p> </li>
+    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
+    /// <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only XLIFF version 1.2.</p> </li>
+    /// </ul> <important>
+    /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p>
     /// </important>
     pub content_type: std::option::Option<std::string::String>,
 }
 impl InputDataConfig {
-    /// <p>The URI of the AWS S3 folder that contains the input file. The folder must be in the
-    /// same Region as the API endpoint you are calling.</p>
+    /// <p>The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the API endpoint you are calling.</p>
     pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
-    /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can
-    /// specify one of the following multipurpose internet mail extension (MIME) types:</p>
+    /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>text/html</code>: The input data consists of one or more HTML files. Amazon
-    /// Translate translates only the text that resides in the <code>html</code> element in each
-    /// file.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>text/plain</code>: The input data consists of one or more unformatted text
-    /// files. Amazon Translate translates every character in this type of input.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>:
-    /// The input data consists of one or more Word documents (.docx).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>:
-    /// The input data consists of one or more PowerPoint Presentation files (.pptx).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The
-    /// input data consists of one or more Excel Workbook files (.xlsx).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>application/x-xliff+xml</code>: The input data consists of one or more XML
-    /// Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only
-    /// XLIFF version 1.2.</p>
-    /// </li>
-    /// </ul>
-    /// <important>
-    /// <p>If you structure your input data as HTML, ensure that you set this parameter to
-    /// <code>text/html</code>. By doing so, you cut costs by limiting the translation to the
-    /// contents of the <code>html</code> element in each file. Otherwise, if you set this parameter
-    /// to <code>text/plain</code>, your costs will cover the translation of every character.</p>
+    /// <li> <p> <code>text/html</code>: The input data consists of one or more HTML files. Amazon Translate translates only the text that resides in the <code>html</code> element in each file.</p> </li>
+    /// <li> <p> <code>text/plain</code>: The input data consists of one or more unformatted text files. Amazon Translate translates every character in this type of input.</p> </li>
+    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>: The input data consists of one or more Word documents (.docx).</p> </li>
+    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>: The input data consists of one or more PowerPoint Presentation files (.pptx).</p> </li>
+    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
+    /// <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only XLIFF version 1.2.</p> </li>
+    /// </ul> <important>
+    /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p>
     /// </important>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
@@ -922,105 +815,41 @@ pub mod input_data_config {
         pub(crate) content_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The URI of the AWS S3 folder that contains the input file. The folder must be in the
-        /// same Region as the API endpoint you are calling.</p>
+        /// <p>The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the API endpoint you are calling.</p>
         pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_uri = Some(input.into());
             self
         }
-        /// <p>The URI of the AWS S3 folder that contains the input file. The folder must be in the
-        /// same Region as the API endpoint you are calling.</p>
+        /// <p>The URI of the AWS S3 folder that contains the input file. The folder must be in the same Region as the API endpoint you are calling.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
         }
-        /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can
-        /// specify one of the following multipurpose internet mail extension (MIME) types:</p>
+        /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>text/html</code>: The input data consists of one or more HTML files. Amazon
-        /// Translate translates only the text that resides in the <code>html</code> element in each
-        /// file.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>text/plain</code>: The input data consists of one or more unformatted text
-        /// files. Amazon Translate translates every character in this type of input.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>:
-        /// The input data consists of one or more Word documents (.docx).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>:
-        /// The input data consists of one or more PowerPoint Presentation files (.pptx).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The
-        /// input data consists of one or more Excel Workbook files (.xlsx).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/x-xliff+xml</code>: The input data consists of one or more XML
-        /// Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only
-        /// XLIFF version 1.2.</p>
-        /// </li>
-        /// </ul>
-        /// <important>
-        /// <p>If you structure your input data as HTML, ensure that you set this parameter to
-        /// <code>text/html</code>. By doing so, you cut costs by limiting the translation to the
-        /// contents of the <code>html</code> element in each file. Otherwise, if you set this parameter
-        /// to <code>text/plain</code>, your costs will cover the translation of every character.</p>
+        /// <li> <p> <code>text/html</code>: The input data consists of one or more HTML files. Amazon Translate translates only the text that resides in the <code>html</code> element in each file.</p> </li>
+        /// <li> <p> <code>text/plain</code>: The input data consists of one or more unformatted text files. Amazon Translate translates every character in this type of input.</p> </li>
+        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>: The input data consists of one or more Word documents (.docx).</p> </li>
+        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>: The input data consists of one or more PowerPoint Presentation files (.pptx).</p> </li>
+        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
+        /// <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only XLIFF version 1.2.</p> </li>
+        /// </ul> <important>
+        /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p>
         /// </important>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can
-        /// specify one of the following multipurpose internet mail extension (MIME) types:</p>
+        /// <p>Describes the format of the data that you submit to Amazon Translate as input. You can specify one of the following multipurpose internet mail extension (MIME) types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>text/html</code>: The input data consists of one or more HTML files. Amazon
-        /// Translate translates only the text that resides in the <code>html</code> element in each
-        /// file.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>text/plain</code>: The input data consists of one or more unformatted text
-        /// files. Amazon Translate translates every character in this type of input.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>:
-        /// The input data consists of one or more Word documents (.docx).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>:
-        /// The input data consists of one or more PowerPoint Presentation files (.pptx).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The
-        /// input data consists of one or more Excel Workbook files (.xlsx).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/x-xliff+xml</code>: The input data consists of one or more XML
-        /// Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only
-        /// XLIFF version 1.2.</p>
-        /// </li>
-        /// </ul>
-        /// <important>
-        /// <p>If you structure your input data as HTML, ensure that you set this parameter to
-        /// <code>text/html</code>. By doing so, you cut costs by limiting the translation to the
-        /// contents of the <code>html</code> element in each file. Otherwise, if you set this parameter
-        /// to <code>text/plain</code>, your costs will cover the translation of every character.</p>
+        /// <li> <p> <code>text/html</code>: The input data consists of one or more HTML files. Amazon Translate translates only the text that resides in the <code>html</code> element in each file.</p> </li>
+        /// <li> <p> <code>text/plain</code>: The input data consists of one or more unformatted text files. Amazon Translate translates every character in this type of input.</p> </li>
+        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>: The input data consists of one or more Word documents (.docx).</p> </li>
+        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>: The input data consists of one or more PowerPoint Presentation files (.pptx).</p> </li>
+        /// <li> <p> <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The input data consists of one or more Excel Workbook files (.xlsx).</p> </li>
+        /// <li> <p> <code>application/x-xliff+xml</code>: The input data consists of one or more XML Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only XLIFF version 1.2.</p> </li>
+        /// </ul> <important>
+        /// <p>If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>. By doing so, you cut costs by limiting the translation to the contents of the <code>html</code> element in each file. Otherwise, if you set this parameter to <code>text/plain</code>, your costs will cover the translation of every character.</p>
         /// </important>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
@@ -1052,21 +881,15 @@ pub struct TextTranslationJobProperties {
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The status of the translation job.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
-    /// <p>The number of documents successfully and unsuccessfully processed during the translation
-    /// job.</p>
+    /// <p>The number of documents successfully and unsuccessfully processed during the translation job.</p>
     pub job_details: std::option::Option<crate::model::JobDetails>,
-    /// <p>The language code of the language of the source text. The language must be a language
-    /// supported by Amazon Translate.</p>
+    /// <p>The language code of the language of the source text. The language must be a language supported by Amazon Translate.</p>
     pub source_language_code: std::option::Option<std::string::String>,
-    /// <p>The language code of the language of the target text. The language must be a language
-    /// supported by Amazon Translate.</p>
+    /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
     pub target_language_codes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list containing the names of the terminologies applied to a translation job. Only one
-    /// terminology can be applied per <a>StartTextTranslationJob</a> request at this
-    /// time.</p>
+    /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
     pub terminology_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list containing the names of the parallel data resources applied to the translation
-    /// job.</p>
+    /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
     pub parallel_data_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An explanation of any errors that may have occurred during the translation job.</p>
     pub message: std::option::Option<std::string::String>,
@@ -1078,8 +901,7 @@ pub struct TextTranslationJobProperties {
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The output configuration properties that were specified when the job was requested.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-    /// that granted Amazon Translate read access to the job's input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that granted Amazon Translate read access to the job's input data.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>Settings that configure the translation output.</p>
     pub settings: std::option::Option<crate::model::TranslationSettings>,
@@ -1097,29 +919,23 @@ impl TextTranslationJobProperties {
     pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>The number of documents successfully and unsuccessfully processed during the translation
-    /// job.</p>
+    /// <p>The number of documents successfully and unsuccessfully processed during the translation job.</p>
     pub fn job_details(&self) -> std::option::Option<&crate::model::JobDetails> {
         self.job_details.as_ref()
     }
-    /// <p>The language code of the language of the source text. The language must be a language
-    /// supported by Amazon Translate.</p>
+    /// <p>The language code of the language of the source text. The language must be a language supported by Amazon Translate.</p>
     pub fn source_language_code(&self) -> std::option::Option<&str> {
         self.source_language_code.as_deref()
     }
-    /// <p>The language code of the language of the target text. The language must be a language
-    /// supported by Amazon Translate.</p>
+    /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
     pub fn target_language_codes(&self) -> std::option::Option<&[std::string::String]> {
         self.target_language_codes.as_deref()
     }
-    /// <p>A list containing the names of the terminologies applied to a translation job. Only one
-    /// terminology can be applied per <a>StartTextTranslationJob</a> request at this
-    /// time.</p>
+    /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
     pub fn terminology_names(&self) -> std::option::Option<&[std::string::String]> {
         self.terminology_names.as_deref()
     }
-    /// <p>A list containing the names of the parallel data resources applied to the translation
-    /// job.</p>
+    /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
     pub fn parallel_data_names(&self) -> std::option::Option<&[std::string::String]> {
         self.parallel_data_names.as_deref()
     }
@@ -1143,8 +959,7 @@ impl TextTranslationJobProperties {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-    /// that granted Amazon Translate read access to the job's input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that granted Amazon Translate read access to the job's input data.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -1230,14 +1045,12 @@ pub mod text_translation_job_properties {
             self.job_status = input;
             self
         }
-        /// <p>The number of documents successfully and unsuccessfully processed during the translation
-        /// job.</p>
+        /// <p>The number of documents successfully and unsuccessfully processed during the translation job.</p>
         pub fn job_details(mut self, input: crate::model::JobDetails) -> Self {
             self.job_details = Some(input);
             self
         }
-        /// <p>The number of documents successfully and unsuccessfully processed during the translation
-        /// job.</p>
+        /// <p>The number of documents successfully and unsuccessfully processed during the translation job.</p>
         pub fn set_job_details(
             mut self,
             input: std::option::Option<crate::model::JobDetails>,
@@ -1245,14 +1058,12 @@ pub mod text_translation_job_properties {
             self.job_details = input;
             self
         }
-        /// <p>The language code of the language of the source text. The language must be a language
-        /// supported by Amazon Translate.</p>
+        /// <p>The language code of the language of the source text. The language must be a language supported by Amazon Translate.</p>
         pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_language_code = Some(input.into());
             self
         }
-        /// <p>The language code of the language of the source text. The language must be a language
-        /// supported by Amazon Translate.</p>
+        /// <p>The language code of the language of the source text. The language must be a language supported by Amazon Translate.</p>
         pub fn set_source_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1264,16 +1075,14 @@ pub mod text_translation_job_properties {
         ///
         /// To override the contents of this collection use [`set_target_language_codes`](Self::set_target_language_codes).
         ///
-        /// <p>The language code of the language of the target text. The language must be a language
-        /// supported by Amazon Translate.</p>
+        /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
         pub fn target_language_codes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_language_codes.unwrap_or_default();
             v.push(input.into());
             self.target_language_codes = Some(v);
             self
         }
-        /// <p>The language code of the language of the target text. The language must be a language
-        /// supported by Amazon Translate.</p>
+        /// <p>The language code of the language of the target text. The language must be a language supported by Amazon Translate.</p>
         pub fn set_target_language_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1285,18 +1094,14 @@ pub mod text_translation_job_properties {
         ///
         /// To override the contents of this collection use [`set_terminology_names`](Self::set_terminology_names).
         ///
-        /// <p>A list containing the names of the terminologies applied to a translation job. Only one
-        /// terminology can be applied per <a>StartTextTranslationJob</a> request at this
-        /// time.</p>
+        /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
         pub fn terminology_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.terminology_names.unwrap_or_default();
             v.push(input.into());
             self.terminology_names = Some(v);
             self
         }
-        /// <p>A list containing the names of the terminologies applied to a translation job. Only one
-        /// terminology can be applied per <a>StartTextTranslationJob</a> request at this
-        /// time.</p>
+        /// <p>A list containing the names of the terminologies applied to a translation job. Only one terminology can be applied per <code>StartTextTranslationJob</code> request at this time.</p>
         pub fn set_terminology_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1308,16 +1113,14 @@ pub mod text_translation_job_properties {
         ///
         /// To override the contents of this collection use [`set_parallel_data_names`](Self::set_parallel_data_names).
         ///
-        /// <p>A list containing the names of the parallel data resources applied to the translation
-        /// job.</p>
+        /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
         pub fn parallel_data_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.parallel_data_names.unwrap_or_default();
             v.push(input.into());
             self.parallel_data_names = Some(v);
             self
         }
-        /// <p>A list containing the names of the parallel data resources applied to the translation
-        /// job.</p>
+        /// <p>A list containing the names of the parallel data resources applied to the translation job.</p>
         pub fn set_parallel_data_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1387,14 +1190,12 @@ pub mod text_translation_job_properties {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-        /// that granted Amazon Translate read access to the job's input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that granted Amazon Translate read access to the job's input data.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
-        /// that granted Amazon Translate read access to the job's input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that granted Amazon Translate read access to the job's input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1444,8 +1245,7 @@ impl TextTranslationJobProperties {
     }
 }
 
-/// <p>The number of documents successfully and unsuccessfully processed during a translation
-/// job.</p>
+/// <p>The number of documents successfully and unsuccessfully processed during a translation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobDetails {
@@ -1543,8 +1343,7 @@ impl JobDetails {
     }
 }
 
-/// <p>Provides information for filtering a list of translation jobs. For more information, see
-/// <a>ListTextTranslationJobs</a>.</p>
+/// <p>Provides information for filtering a list of translation jobs. For more information, see <code>ListTextTranslationJobs</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextTranslationJobFilter {
@@ -1552,13 +1351,9 @@ pub struct TextTranslationJobFilter {
     pub job_name: std::option::Option<std::string::String>,
     /// <p>Filters the list of jobs based by job status.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
-    /// <p>Filters the list of jobs based on the time that the job was submitted for processing and
-    /// returns only the jobs submitted before the specified time. Jobs are returned in ascending
-    /// order, oldest to newest.</p>
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
     pub submitted_before_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Filters the list of jobs based on the time that the job was submitted for processing and
-    /// returns only the jobs submitted after the specified time. Jobs are returned in descending
-    /// order, newest to oldest.</p>
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub submitted_after_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TextTranslationJobFilter {
@@ -1570,15 +1365,11 @@ impl TextTranslationJobFilter {
     pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>Filters the list of jobs based on the time that the job was submitted for processing and
-    /// returns only the jobs submitted before the specified time. Jobs are returned in ascending
-    /// order, oldest to newest.</p>
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
     pub fn submitted_before_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_before_time.as_ref()
     }
-    /// <p>Filters the list of jobs based on the time that the job was submitted for processing and
-    /// returns only the jobs submitted after the specified time. Jobs are returned in descending
-    /// order, newest to oldest.</p>
+    /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn submitted_after_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_after_time.as_ref()
     }
@@ -1628,16 +1419,12 @@ pub mod text_translation_job_filter {
             self.job_status = input;
             self
         }
-        /// <p>Filters the list of jobs based on the time that the job was submitted for processing and
-        /// returns only the jobs submitted before the specified time. Jobs are returned in ascending
-        /// order, oldest to newest.</p>
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
         pub fn submitted_before_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submitted_before_time = Some(input);
             self
         }
-        /// <p>Filters the list of jobs based on the time that the job was submitted for processing and
-        /// returns only the jobs submitted before the specified time. Jobs are returned in ascending
-        /// order, oldest to newest.</p>
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
         pub fn set_submitted_before_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1645,16 +1432,12 @@ pub mod text_translation_job_filter {
             self.submitted_before_time = input;
             self
         }
-        /// <p>Filters the list of jobs based on the time that the job was submitted for processing and
-        /// returns only the jobs submitted after the specified time. Jobs are returned in descending
-        /// order, newest to oldest.</p>
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
         pub fn submitted_after_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submitted_after_time = Some(input);
             self
         }
-        /// <p>Filters the list of jobs based on the time that the job was submitted for processing and
-        /// returns only the jobs submitted after the specified time. Jobs are returned in descending
-        /// order, newest to oldest.</p>
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
         pub fn set_submitted_after_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1690,11 +1473,9 @@ pub struct TerminologyProperties {
     pub description: std::option::Option<std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the custom terminology. </p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The language code for the source text of the translation request for which the custom
-    /// terminology is being used.</p>
+    /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
     pub source_language_code: std::option::Option<std::string::String>,
-    /// <p>The language codes for the target languages available with the custom terminology
-    /// resource. All possible target languages are returned in array.</p>
+    /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
     pub target_language_codes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The encryption key for the custom terminology.</p>
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
@@ -1706,15 +1487,17 @@ pub struct TerminologyProperties {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the custom terminology was last update, based on the timestamp.</p>
     pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The directionality of your terminology resource indicates whether it has one source
-    /// language (uni-directional) or multiple (multi-directional). </p>
+    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
     /// <dl>
-    /// <dt>UNI</dt>
+    /// <dt>
+    /// UNI
+    /// </dt>
     /// <dd>
-    /// <p>The terminology resource has one source language (the first column in a CSV file),
-    /// and all of its other languages are target languages.</p>
+    /// <p>The terminology resource has one source language (the first column in a CSV file), and all of its other languages are target languages.</p>
     /// </dd>
-    /// <dt>MULTI</dt>
+    /// <dt>
+    /// MULTI
+    /// </dt>
     /// <dd>
     /// <p>Any language in the terminology resource can be the source language.</p>
     /// </dd>
@@ -1722,8 +1505,7 @@ pub struct TerminologyProperties {
     pub directionality: std::option::Option<crate::model::Directionality>,
     /// <p>Additional information from Amazon Translate about the terminology resource.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The number of terms in the input file that Amazon Translate skipped when you created or
-    /// updated the terminology resource.</p>
+    /// <p>The number of terms in the input file that Amazon Translate skipped when you created or updated the terminology resource.</p>
     pub skipped_term_count: std::option::Option<i32>,
     /// <p>The format of the custom terminology input file.</p>
     pub format: std::option::Option<crate::model::TerminologyDataFormat>,
@@ -1741,13 +1523,11 @@ impl TerminologyProperties {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The language code for the source text of the translation request for which the custom
-    /// terminology is being used.</p>
+    /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
     pub fn source_language_code(&self) -> std::option::Option<&str> {
         self.source_language_code.as_deref()
     }
-    /// <p>The language codes for the target languages available with the custom terminology
-    /// resource. All possible target languages are returned in array.</p>
+    /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
     pub fn target_language_codes(&self) -> std::option::Option<&[std::string::String]> {
         self.target_language_codes.as_deref()
     }
@@ -1771,15 +1551,17 @@ impl TerminologyProperties {
     pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>The directionality of your terminology resource indicates whether it has one source
-    /// language (uni-directional) or multiple (multi-directional). </p>
+    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
     /// <dl>
-    /// <dt>UNI</dt>
+    /// <dt>
+    /// UNI
+    /// </dt>
     /// <dd>
-    /// <p>The terminology resource has one source language (the first column in a CSV file),
-    /// and all of its other languages are target languages.</p>
+    /// <p>The terminology resource has one source language (the first column in a CSV file), and all of its other languages are target languages.</p>
     /// </dd>
-    /// <dt>MULTI</dt>
+    /// <dt>
+    /// MULTI
+    /// </dt>
     /// <dd>
     /// <p>Any language in the terminology resource can be the source language.</p>
     /// </dd>
@@ -1791,8 +1573,7 @@ impl TerminologyProperties {
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>The number of terms in the input file that Amazon Translate skipped when you created or
-    /// updated the terminology resource.</p>
+    /// <p>The number of terms in the input file that Amazon Translate skipped when you created or updated the terminology resource.</p>
     pub fn skipped_term_count(&self) -> std::option::Option<i32> {
         self.skipped_term_count
     }
@@ -1873,14 +1654,12 @@ pub mod terminology_properties {
             self.arn = input;
             self
         }
-        /// <p>The language code for the source text of the translation request for which the custom
-        /// terminology is being used.</p>
+        /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
         pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_language_code = Some(input.into());
             self
         }
-        /// <p>The language code for the source text of the translation request for which the custom
-        /// terminology is being used.</p>
+        /// <p>The language code for the source text of the translation request for which the custom terminology is being used.</p>
         pub fn set_source_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1892,16 +1671,14 @@ pub mod terminology_properties {
         ///
         /// To override the contents of this collection use [`set_target_language_codes`](Self::set_target_language_codes).
         ///
-        /// <p>The language codes for the target languages available with the custom terminology
-        /// resource. All possible target languages are returned in array.</p>
+        /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
         pub fn target_language_codes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_language_codes.unwrap_or_default();
             v.push(input.into());
             self.target_language_codes = Some(v);
             self
         }
-        /// <p>The language codes for the target languages available with the custom terminology
-        /// resource. All possible target languages are returned in array.</p>
+        /// <p>The language codes for the target languages available with the custom terminology resource. All possible target languages are returned in array.</p>
         pub fn set_target_language_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1968,15 +1745,17 @@ pub mod terminology_properties {
             self.last_updated_at = input;
             self
         }
-        /// <p>The directionality of your terminology resource indicates whether it has one source
-        /// language (uni-directional) or multiple (multi-directional). </p>
+        /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
         /// <dl>
-        /// <dt>UNI</dt>
+        /// <dt>
+        /// UNI
+        /// </dt>
         /// <dd>
-        /// <p>The terminology resource has one source language (the first column in a CSV file),
-        /// and all of its other languages are target languages.</p>
+        /// <p>The terminology resource has one source language (the first column in a CSV file), and all of its other languages are target languages.</p>
         /// </dd>
-        /// <dt>MULTI</dt>
+        /// <dt>
+        /// MULTI
+        /// </dt>
         /// <dd>
         /// <p>Any language in the terminology resource can be the source language.</p>
         /// </dd>
@@ -1985,15 +1764,17 @@ pub mod terminology_properties {
             self.directionality = Some(input);
             self
         }
-        /// <p>The directionality of your terminology resource indicates whether it has one source
-        /// language (uni-directional) or multiple (multi-directional). </p>
+        /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional). </p>
         /// <dl>
-        /// <dt>UNI</dt>
+        /// <dt>
+        /// UNI
+        /// </dt>
         /// <dd>
-        /// <p>The terminology resource has one source language (the first column in a CSV file),
-        /// and all of its other languages are target languages.</p>
+        /// <p>The terminology resource has one source language (the first column in a CSV file), and all of its other languages are target languages.</p>
         /// </dd>
-        /// <dt>MULTI</dt>
+        /// <dt>
+        /// MULTI
+        /// </dt>
         /// <dd>
         /// <p>Any language in the terminology resource can be the source language.</p>
         /// </dd>
@@ -2015,14 +1796,12 @@ pub mod terminology_properties {
             self.message = input;
             self
         }
-        /// <p>The number of terms in the input file that Amazon Translate skipped when you created or
-        /// updated the terminology resource.</p>
+        /// <p>The number of terms in the input file that Amazon Translate skipped when you created or updated the terminology resource.</p>
         pub fn skipped_term_count(mut self, input: i32) -> Self {
             self.skipped_term_count = Some(input);
             self
         }
-        /// <p>The number of terms in the input file that Amazon Translate skipped when you created or
-        /// updated the terminology resource.</p>
+        /// <p>The number of terms in the input file that Amazon Translate skipped when you created or updated the terminology resource.</p>
         pub fn set_skipped_term_count(mut self, input: std::option::Option<i32>) -> Self {
             self.skipped_term_count = input;
             self
@@ -2192,30 +1971,23 @@ pub struct ParallelDataProperties {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The description assigned to the parallel data resource.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The status of the parallel data resource. When the parallel data is ready for you to use,
-    /// the status is <code>ACTIVE</code>.</p>
+    /// <p>The status of the parallel data resource. When the parallel data is ready for you to use, the status is <code>ACTIVE</code>.</p>
     pub status: std::option::Option<crate::model::ParallelDataStatus>,
     /// <p>The source language of the translations in the parallel data file.</p>
     pub source_language_code: std::option::Option<std::string::String>,
-    /// <p>The language codes for the target languages available in the parallel data file. All
-    /// possible target languages are returned as an array.</p>
+    /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
     pub target_language_codes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
     pub parallel_data_config: std::option::Option<crate::model::ParallelDataConfig>,
     /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input
-    /// file. This number includes only the characters in your translation examples. It does not
-    /// include characters that are used to format your file. For example, if you provided a
-    /// Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
+    /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input file. This number includes only the characters in your translation examples. It does not include characters that are used to format your file. For example, if you provided a Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
     pub imported_data_size: std::option::Option<i64>,
     /// <p>The number of records successfully imported from the parallel data input file.</p>
     pub imported_record_count: std::option::Option<i64>,
     /// <p>The number of records unsuccessfully imported from the parallel data input file.</p>
     pub failed_record_count: std::option::Option<i64>,
-    /// <p>The number of items in the input file that Amazon Translate skipped when you created or
-    /// updated the parallel data resource. For example, Amazon Translate skips empty records, empty
-    /// target texts, and empty lines.</p>
+    /// <p>The number of items in the input file that Amazon Translate skipped when you created or updated the parallel data resource. For example, Amazon Translate skips empty records, empty target texts, and empty lines.</p>
     pub skipped_record_count: std::option::Option<i64>,
     /// <p>The encryption key used to encrypt this object.</p>
     pub encryption_key: std::option::Option<crate::model::EncryptionKey>,
@@ -2241,8 +2013,7 @@ impl ParallelDataProperties {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The status of the parallel data resource. When the parallel data is ready for you to use,
-    /// the status is <code>ACTIVE</code>.</p>
+    /// <p>The status of the parallel data resource. When the parallel data is ready for you to use, the status is <code>ACTIVE</code>.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ParallelDataStatus> {
         self.status.as_ref()
     }
@@ -2250,8 +2021,7 @@ impl ParallelDataProperties {
     pub fn source_language_code(&self) -> std::option::Option<&str> {
         self.source_language_code.as_deref()
     }
-    /// <p>The language codes for the target languages available in the parallel data file. All
-    /// possible target languages are returned as an array.</p>
+    /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
     pub fn target_language_codes(&self) -> std::option::Option<&[std::string::String]> {
         self.target_language_codes.as_deref()
     }
@@ -2263,10 +2033,7 @@ impl ParallelDataProperties {
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input
-    /// file. This number includes only the characters in your translation examples. It does not
-    /// include characters that are used to format your file. For example, if you provided a
-    /// Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
+    /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input file. This number includes only the characters in your translation examples. It does not include characters that are used to format your file. For example, if you provided a Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
     pub fn imported_data_size(&self) -> std::option::Option<i64> {
         self.imported_data_size
     }
@@ -2278,9 +2045,7 @@ impl ParallelDataProperties {
     pub fn failed_record_count(&self) -> std::option::Option<i64> {
         self.failed_record_count
     }
-    /// <p>The number of items in the input file that Amazon Translate skipped when you created or
-    /// updated the parallel data resource. For example, Amazon Translate skips empty records, empty
-    /// target texts, and empty lines.</p>
+    /// <p>The number of items in the input file that Amazon Translate skipped when you created or updated the parallel data resource. For example, Amazon Translate skips empty records, empty target texts, and empty lines.</p>
     pub fn skipped_record_count(&self) -> std::option::Option<i64> {
         self.skipped_record_count
     }
@@ -2389,14 +2154,12 @@ pub mod parallel_data_properties {
             self.description = input;
             self
         }
-        /// <p>The status of the parallel data resource. When the parallel data is ready for you to use,
-        /// the status is <code>ACTIVE</code>.</p>
+        /// <p>The status of the parallel data resource. When the parallel data is ready for you to use, the status is <code>ACTIVE</code>.</p>
         pub fn status(mut self, input: crate::model::ParallelDataStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the parallel data resource. When the parallel data is ready for you to use,
-        /// the status is <code>ACTIVE</code>.</p>
+        /// <p>The status of the parallel data resource. When the parallel data is ready for you to use, the status is <code>ACTIVE</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ParallelDataStatus>,
@@ -2421,16 +2184,14 @@ pub mod parallel_data_properties {
         ///
         /// To override the contents of this collection use [`set_target_language_codes`](Self::set_target_language_codes).
         ///
-        /// <p>The language codes for the target languages available in the parallel data file. All
-        /// possible target languages are returned as an array.</p>
+        /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
         pub fn target_language_codes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_language_codes.unwrap_or_default();
             v.push(input.into());
             self.target_language_codes = Some(v);
             self
         }
-        /// <p>The language codes for the target languages available in the parallel data file. All
-        /// possible target languages are returned as an array.</p>
+        /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
         pub fn set_target_language_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2461,18 +2222,12 @@ pub mod parallel_data_properties {
             self.message = input;
             self
         }
-        /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input
-        /// file. This number includes only the characters in your translation examples. It does not
-        /// include characters that are used to format your file. For example, if you provided a
-        /// Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
+        /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input file. This number includes only the characters in your translation examples. It does not include characters that are used to format your file. For example, if you provided a Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
         pub fn imported_data_size(mut self, input: i64) -> Self {
             self.imported_data_size = Some(input);
             self
         }
-        /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input
-        /// file. This number includes only the characters in your translation examples. It does not
-        /// include characters that are used to format your file. For example, if you provided a
-        /// Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
+        /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input file. This number includes only the characters in your translation examples. It does not include characters that are used to format your file. For example, if you provided a Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
         pub fn set_imported_data_size(mut self, input: std::option::Option<i64>) -> Self {
             self.imported_data_size = input;
             self
@@ -2497,16 +2252,12 @@ pub mod parallel_data_properties {
             self.failed_record_count = input;
             self
         }
-        /// <p>The number of items in the input file that Amazon Translate skipped when you created or
-        /// updated the parallel data resource. For example, Amazon Translate skips empty records, empty
-        /// target texts, and empty lines.</p>
+        /// <p>The number of items in the input file that Amazon Translate skipped when you created or updated the parallel data resource. For example, Amazon Translate skips empty records, empty target texts, and empty lines.</p>
         pub fn skipped_record_count(mut self, input: i64) -> Self {
             self.skipped_record_count = Some(input);
             self
         }
-        /// <p>The number of items in the input file that Amazon Translate skipped when you created or
-        /// updated the parallel data resource. For example, Amazon Translate skips empty records, empty
-        /// target texts, and empty lines.</p>
+        /// <p>The number of items in the input file that Amazon Translate skipped when you created or updated the parallel data resource. For example, Amazon Translate skips empty records, empty target texts, and empty lines.</p>
         pub fn set_skipped_record_count(mut self, input: std::option::Option<i64>) -> Self {
             self.skipped_record_count = input;
             self
@@ -2616,17 +2367,9 @@ impl ParallelDataProperties {
 pub struct TerminologyDataLocation {
     /// <p>The repository type for the custom terminology data.</p>
     pub repository_type: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was
-    /// successfully imported into Amazon Translate. The location is returned as a presigned URL that
-    /// has a 30 minute expiration.</p>
-    ///
-    /// <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
-    /// attacks. </p>
-    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
-    /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
-    /// file is opened in a spreadsheet program, the program might interpret the record as a formula
-    /// and run the code within it.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
     pub location: std::option::Option<std::string::String>,
@@ -2636,17 +2379,9 @@ impl TerminologyDataLocation {
     pub fn repository_type(&self) -> std::option::Option<&str> {
         self.repository_type.as_deref()
     }
-    /// <p>The Amazon S3 location of the most recent custom terminology input file that was
-    /// successfully imported into Amazon Translate. The location is returned as a presigned URL that
-    /// has a 30 minute expiration.</p>
-    ///
-    /// <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
-    /// attacks. </p>
-    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
-    /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
-    /// file is opened in a spreadsheet program, the program might interpret the record as a formula
-    /// and run the code within it.</p>
+    /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
     pub fn location(&self) -> std::option::Option<&str> {
@@ -2684,34 +2419,18 @@ pub mod terminology_data_location {
             self.repository_type = input;
             self
         }
-        /// <p>The Amazon S3 location of the most recent custom terminology input file that was
-        /// successfully imported into Amazon Translate. The location is returned as a presigned URL that
-        /// has a 30 minute expiration.</p>
-        ///
-        /// <important>
-        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
-        /// attacks. </p>
-        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
-        /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
-        /// file is opened in a spreadsheet program, the program might interpret the record as a formula
-        /// and run the code within it.</p>
+        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
         /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
         /// </important>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 location of the most recent custom terminology input file that was
-        /// successfully imported into Amazon Translate. The location is returned as a presigned URL that
-        /// has a 30 minute expiration.</p>
-        ///
-        /// <important>
-        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
-        /// attacks. </p>
-        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
-        /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
-        /// file is opened in a spreadsheet program, the program might interpret the record as a formula
-        /// and run the code within it.</p>
+        /// <p>The Amazon S3 location of the most recent custom terminology input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30 minute expiration.</p> <important>
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
         /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
         /// </important>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2738,37 +2457,30 @@ impl TerminologyDataLocation {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminologyData {
-    /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a
-    /// Base64-encoding on this field before sending a request to the AWS service. Users of the SDK
-    /// should not perform Base64-encoding themselves.</p>
+    /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
     pub file: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The data format of the custom terminology.</p>
     pub format: std::option::Option<crate::model::TerminologyDataFormat>,
-    /// <p>The directionality of your terminology resource indicates whether it has one source
-    /// language (uni-directional) or multiple (multi-directional).</p>
+    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
-    /// <dt>UNI</dt>
+    /// <dt>
+    /// UNI
+    /// </dt>
     /// <dd>
-    /// <p>The terminology resource has one source language (for example, the first column in a
-    /// CSV file), and all of its other languages are target languages. </p>
+    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p>
     /// </dd>
-    /// <dt>MULTI</dt>
+    /// <dt>
+    /// MULTI
+    /// </dt>
     /// <dd>
-    /// <p>Any language in the terminology resource can be the source language or a target
-    /// language. A single multi-directional terminology resource can be used for jobs that
-    /// translate different language pairs. For example, if the terminology contains terms in
-    /// English and Spanish, then it can be used for jobs that translate English to Spanish and
-    /// jobs that translate Spanish to English.</p>
+    /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains terms in English and Spanish, then it can be used for jobs that translate English to Spanish and jobs that translate Spanish to English.</p>
     /// </dd>
     /// </dl>
-    /// <p>When you create a custom terminology resource without specifying the directionality, it
-    /// behaves as uni-directional terminology, although this parameter will have a null value.</p>
+    /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
     pub directionality: std::option::Option<crate::model::Directionality>,
 }
 impl TerminologyData {
-    /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a
-    /// Base64-encoding on this field before sending a request to the AWS service. Users of the SDK
-    /// should not perform Base64-encoding themselves.</p>
+    /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
     pub fn file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.file.as_ref()
     }
@@ -2776,25 +2488,22 @@ impl TerminologyData {
     pub fn format(&self) -> std::option::Option<&crate::model::TerminologyDataFormat> {
         self.format.as_ref()
     }
-    /// <p>The directionality of your terminology resource indicates whether it has one source
-    /// language (uni-directional) or multiple (multi-directional).</p>
+    /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
-    /// <dt>UNI</dt>
+    /// <dt>
+    /// UNI
+    /// </dt>
     /// <dd>
-    /// <p>The terminology resource has one source language (for example, the first column in a
-    /// CSV file), and all of its other languages are target languages. </p>
+    /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p>
     /// </dd>
-    /// <dt>MULTI</dt>
+    /// <dt>
+    /// MULTI
+    /// </dt>
     /// <dd>
-    /// <p>Any language in the terminology resource can be the source language or a target
-    /// language. A single multi-directional terminology resource can be used for jobs that
-    /// translate different language pairs. For example, if the terminology contains terms in
-    /// English and Spanish, then it can be used for jobs that translate English to Spanish and
-    /// jobs that translate Spanish to English.</p>
+    /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains terms in English and Spanish, then it can be used for jobs that translate English to Spanish and jobs that translate Spanish to English.</p>
     /// </dd>
     /// </dl>
-    /// <p>When you create a custom terminology resource without specifying the directionality, it
-    /// behaves as uni-directional terminology, although this parameter will have a null value.</p>
+    /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
     pub fn directionality(&self) -> std::option::Option<&crate::model::Directionality> {
         self.directionality.as_ref()
     }
@@ -2819,16 +2528,12 @@ pub mod terminology_data {
         pub(crate) directionality: std::option::Option<crate::model::Directionality>,
     }
     impl Builder {
-        /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a
-        /// Base64-encoding on this field before sending a request to the AWS service. Users of the SDK
-        /// should not perform Base64-encoding themselves.</p>
+        /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
         pub fn file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.file = Some(input);
             self
         }
-        /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a
-        /// Base64-encoding on this field before sending a request to the AWS service. Users of the SDK
-        /// should not perform Base64-encoding themselves.</p>
+        /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
         pub fn set_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.file = input;
             self
@@ -2846,48 +2551,42 @@ pub mod terminology_data {
             self.format = input;
             self
         }
-        /// <p>The directionality of your terminology resource indicates whether it has one source
-        /// language (uni-directional) or multiple (multi-directional).</p>
+        /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
         /// <dl>
-        /// <dt>UNI</dt>
+        /// <dt>
+        /// UNI
+        /// </dt>
         /// <dd>
-        /// <p>The terminology resource has one source language (for example, the first column in a
-        /// CSV file), and all of its other languages are target languages. </p>
+        /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p>
         /// </dd>
-        /// <dt>MULTI</dt>
+        /// <dt>
+        /// MULTI
+        /// </dt>
         /// <dd>
-        /// <p>Any language in the terminology resource can be the source language or a target
-        /// language. A single multi-directional terminology resource can be used for jobs that
-        /// translate different language pairs. For example, if the terminology contains terms in
-        /// English and Spanish, then it can be used for jobs that translate English to Spanish and
-        /// jobs that translate Spanish to English.</p>
+        /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains terms in English and Spanish, then it can be used for jobs that translate English to Spanish and jobs that translate Spanish to English.</p>
         /// </dd>
         /// </dl>
-        /// <p>When you create a custom terminology resource without specifying the directionality, it
-        /// behaves as uni-directional terminology, although this parameter will have a null value.</p>
+        /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
         pub fn directionality(mut self, input: crate::model::Directionality) -> Self {
             self.directionality = Some(input);
             self
         }
-        /// <p>The directionality of your terminology resource indicates whether it has one source
-        /// language (uni-directional) or multiple (multi-directional).</p>
+        /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
         /// <dl>
-        /// <dt>UNI</dt>
+        /// <dt>
+        /// UNI
+        /// </dt>
         /// <dd>
-        /// <p>The terminology resource has one source language (for example, the first column in a
-        /// CSV file), and all of its other languages are target languages. </p>
+        /// <p>The terminology resource has one source language (for example, the first column in a CSV file), and all of its other languages are target languages. </p>
         /// </dd>
-        /// <dt>MULTI</dt>
+        /// <dt>
+        /// MULTI
+        /// </dt>
         /// <dd>
-        /// <p>Any language in the terminology resource can be the source language or a target
-        /// language. A single multi-directional terminology resource can be used for jobs that
-        /// translate different language pairs. For example, if the terminology contains terms in
-        /// English and Spanish, then it can be used for jobs that translate English to Spanish and
-        /// jobs that translate Spanish to English.</p>
+        /// <p>Any language in the terminology resource can be the source language or a target language. A single multi-directional terminology resource can be used for jobs that translate different language pairs. For example, if the terminology contains terms in English and Spanish, then it can be used for jobs that translate English to Spanish and jobs that translate Spanish to English.</p>
         /// </dd>
         /// </dl>
-        /// <p>When you create a custom terminology resource without specifying the directionality, it
-        /// behaves as uni-directional terminology, although this parameter will have a null value.</p>
+        /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
         pub fn set_directionality(
             mut self,
             input: std::option::Option<crate::model::Directionality>,
@@ -2963,23 +2662,15 @@ impl AsRef<str> for MergeStrategy {
     }
 }
 
-/// <p>The location of the most recent parallel data input file that was successfully imported
-/// into Amazon Translate.</p>
+/// <p>The location of the most recent parallel data input file that was successfully imported into Amazon Translate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParallelDataDataLocation {
     /// <p>Describes the repository that contains the parallel data input file.</p>
     pub repository_type: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a
-    /// presigned URL to that has a 30 minute expiration.</p>
-    ///
-    /// <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
-    /// attacks. </p>
-    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
-    /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
-    /// file is opened in a spreadsheet program, the program might interpret the record as a formula
-    /// and run the code within it.</p>
+    /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30 minute expiration.</p> <important>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
     pub location: std::option::Option<std::string::String>,
@@ -2989,16 +2680,9 @@ impl ParallelDataDataLocation {
     pub fn repository_type(&self) -> std::option::Option<&str> {
         self.repository_type.as_deref()
     }
-    /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a
-    /// presigned URL to that has a 30 minute expiration.</p>
-    ///
-    /// <important>
-    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
-    /// attacks. </p>
-    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
-    /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
-    /// file is opened in a spreadsheet program, the program might interpret the record as a formula
-    /// and run the code within it.</p>
+    /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30 minute expiration.</p> <important>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
     /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
     /// </important>
     pub fn location(&self) -> std::option::Option<&str> {
@@ -3036,32 +2720,18 @@ pub mod parallel_data_data_location {
             self.repository_type = input;
             self
         }
-        /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a
-        /// presigned URL to that has a 30 minute expiration.</p>
-        ///
-        /// <important>
-        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
-        /// attacks. </p>
-        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
-        /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
-        /// file is opened in a spreadsheet program, the program might interpret the record as a formula
-        /// and run the code within it.</p>
+        /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30 minute expiration.</p> <important>
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
         /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
         /// </important>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a
-        /// presigned URL to that has a 30 minute expiration.</p>
-        ///
-        /// <important>
-        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
-        /// attacks. </p>
-        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains
-        /// malicious code. The record begins with a special character, such as =, +, -, or @. When the
-        /// file is opened in a spreadsheet program, the program might interpret the record as a formula
-        /// and run the code within it.</p>
+        /// <p>The Amazon S3 location of the parallel data input file. The location is returned as a presigned URL to that has a 30 minute expiration.</p> <important>
+        /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
+        /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
         /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
         /// </important>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {

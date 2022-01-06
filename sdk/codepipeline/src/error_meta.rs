@@ -11,14 +11,9 @@ pub enum Error {
     ApprovalAlreadyCompletedException(crate::error::ApprovalAlreadyCompletedException),
     /// <p>Unable to modify the tag due to a simultaneous update request.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>Your request cannot be handled because the pipeline is busy handling ongoing
-    /// activities. Try again later.</p>
+    /// <p>Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The pipeline execution is already in a <code>Stopping</code> state. If you already
-    /// chose to stop and wait, you cannot make that request again. You can choose to stop and
-    /// abandon now, but be aware that this option can lead to failed tasks or out of sequence
-    /// tasks. If you already chose to stop and abandon, you cannot make that request
-    /// again.</p>
+    /// <p>The pipeline execution is already in a <code>Stopping</code> state. If you already chose to stop and wait, you cannot make that request again. You can choose to stop and abandon now, but be aware that this option can lead to failed tasks or out of sequence tasks. If you already chose to stop and abandon, you cannot make that request again.</p>
     DuplicatedStopRequestException(crate::error::DuplicatedStopRequestException),
     /// <p>The action declaration was specified in an invalid format.</p>
     InvalidActionDeclarationException(crate::error::InvalidActionDeclarationException),
@@ -34,8 +29,7 @@ pub enum Error {
     InvalidJobException(crate::error::InvalidJobException),
     /// <p>The job state was specified in an invalid format.</p>
     InvalidJobStateException(crate::error::InvalidJobStateException),
-    /// <p>The next token was specified in an invalid format. Make sure that the next token
-    /// you provide is the token returned by a previous call.</p>
+    /// <p>The next token was specified in an invalid format. Make sure that the next token you provide is the token returned by a previous call.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The nonce was specified in an invalid format.</p>
     InvalidNonceException(crate::error::InvalidNonceException),
@@ -53,26 +47,21 @@ pub enum Error {
     InvalidWebhookFilterPatternException(crate::error::InvalidWebhookFilterPatternException),
     /// <p>The job was specified in an invalid format or cannot be found.</p>
     JobNotFoundException(crate::error::JobNotFoundException),
-    /// <p>The number of pipelines associated with the AWS account has exceeded the limit
-    /// allowed for the account.</p>
+    /// <p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The stage has failed in a later run of the pipeline and the pipelineExecutionId
-    /// associated with the request is out of date.</p>
+    /// <p>The stage has failed in a later run of the pipeline and the pipelineExecutionId associated with the request is out of date.</p>
     NotLatestPipelineExecutionException(crate::error::NotLatestPipelineExecutionException),
     /// <p>Exceeded the total size limit for all variables in the pipeline.</p>
     OutputVariablesSizeExceededException(crate::error::OutputVariablesSizeExceededException),
-    /// <p>The pipeline execution was specified in an invalid format or cannot be found, or an
-    /// execution ID does not belong to the specified pipeline. </p>
+    /// <p>The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not belong to the specified pipeline. </p>
     PipelineExecutionNotFoundException(crate::error::PipelineExecutionNotFoundException),
-    /// <p>Unable to stop the pipeline execution. The execution might already be in a
-    /// <code>Stopped</code> state, or it might no longer be in progress.</p>
+    /// <p>Unable to stop the pipeline execution. The execution might already be in a <code>Stopped</code> state, or it might no longer be in progress.</p>
     PipelineExecutionNotStoppableException(crate::error::PipelineExecutionNotStoppableException),
     /// <p>The specified pipeline name is already in use.</p>
     PipelineNameInUseException(crate::error::PipelineNameInUseException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
     PipelineNotFoundException(crate::error::PipelineNotFoundException),
-    /// <p>The pipeline version was specified in an invalid format or cannot be
-    /// found.</p>
+    /// <p>The pipeline version was specified in an invalid format or cannot be found.</p>
     PipelineVersionNotFoundException(crate::error::PipelineVersionNotFoundException),
     /// <p>The request failed because of an unknown error, exception, or failure.</p>
     RequestFailedException(crate::error::RequestFailedException),
@@ -80,16 +69,13 @@ pub enum Error {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The stage was specified in an invalid format or cannot be found.</p>
     StageNotFoundException(crate::error::StageNotFoundException),
-    /// <p>Unable to retry. The pipeline structure or stage state might have changed while
-    /// actions awaited retry, or the stage contains no failed
-    /// actions.</p>
+    /// <p>Unable to retry. The pipeline structure or stage state might have changed while actions awaited retry, or the stage contains no failed actions.</p>
     StageNotRetryableException(crate::error::StageNotRetryableException),
     /// <p>The tags limit for a resource has been exceeded.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The validation was specified in an invalid format.</p>
     ValidationException(crate::error::ValidationException),
-    /// <p>The specified webhook was entered in an invalid format or cannot be
-    /// found.</p>
+    /// <p>The specified webhook was entered in an invalid format or cannot be found.</p>
     WebhookNotFoundException(crate::error::WebhookNotFoundException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

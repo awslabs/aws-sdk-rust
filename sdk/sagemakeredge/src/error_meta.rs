@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>An internal failure occurred. Try your request again. If the problem
-    /// persists, contact AWS customer support.</p>
+    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

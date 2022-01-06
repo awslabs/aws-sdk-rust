@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use aws_http::AwsErrorRetryPolicy;
+use aws_http::retry::AwsErrorRetryPolicy;
 use aws_sdk_kms as kms;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::operation::{self, Parts};

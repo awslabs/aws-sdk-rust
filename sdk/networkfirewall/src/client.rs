@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Network Firewall
@@ -183,6 +183,15 @@ where
     pub fn describe_rule_group(&self) -> fluent_builders::DescribeRuleGroup<C, M, R> {
         fluent_builders::DescribeRuleGroup::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DescribeRuleGroupMetadata` operation.
+    ///
+    /// See [`DescribeRuleGroupMetadata`](crate::client::fluent_builders::DescribeRuleGroupMetadata) for more information about the
+    /// operation and its arguments.
+    pub fn describe_rule_group_metadata(
+        &self,
+    ) -> fluent_builders::DescribeRuleGroupMetadata<C, M, R> {
+        fluent_builders::DescribeRuleGroupMetadata::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DisassociateSubnets` operation.
     ///
     /// See [`DisassociateSubnets`](crate::client::fluent_builders::DisassociateSubnets) for more information about the
@@ -194,6 +203,7 @@ where
     ///
     /// See [`ListFirewallPolicies`](crate::client::fluent_builders::ListFirewallPolicies) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFirewallPolicies::into_paginator).
     pub fn list_firewall_policies(&self) -> fluent_builders::ListFirewallPolicies<C, M, R> {
         fluent_builders::ListFirewallPolicies::new(self.handle.clone())
     }
@@ -201,6 +211,7 @@ where
     ///
     /// See [`ListFirewalls`](crate::client::fluent_builders::ListFirewalls) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFirewalls::into_paginator).
     pub fn list_firewalls(&self) -> fluent_builders::ListFirewalls<C, M, R> {
         fluent_builders::ListFirewalls::new(self.handle.clone())
     }
@@ -208,6 +219,7 @@ where
     ///
     /// See [`ListRuleGroups`](crate::client::fluent_builders::ListRuleGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRuleGroups::into_paginator).
     pub fn list_rule_groups(&self) -> fluent_builders::ListRuleGroups<C, M, R> {
         fluent_builders::ListRuleGroups::new(self.handle.clone())
     }
@@ -215,6 +227,7 @@ where
     ///
     /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
@@ -309,12 +322,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateFirewallPolicy`.
     ///
-    /// <p>Associates a <a>FirewallPolicy</a> to a <a>Firewall</a>. </p>
-    /// <p>A firewall policy defines how to monitor and manage your VPC network traffic, using a
-    /// collection of inspection rule groups and other settings. Each firewall requires one
-    /// firewall policy association, and you can use the same firewall policy for multiple
-    /// firewalls. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates a <code>FirewallPolicy</code> to a <code>Firewall</code>. </p>
+    /// <p>A firewall policy defines how to monitor and manage your VPC network traffic, using a collection of inspection rule groups and other settings. Each firewall requires one firewall policy association, and you can use the same firewall policy for multiple firewalls. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateFirewallPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -359,10 +369,10 @@ pub mod fluent_builders {
                 crate::input::AssociateFirewallPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -373,8 +383,8 @@ pub mod fluent_builders {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
         /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(input.into());
             self
         }
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -386,8 +396,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -398,8 +408,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -412,8 +422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
-        pub fn firewall_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_arn(inp);
+        pub fn firewall_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
@@ -427,13 +437,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateSubnets`.
     ///
-    /// <p>Associates the specified subnets in the Amazon VPC to the firewall. You can specify one
-    /// subnet for each of the Availability Zones that the VPC spans. </p>
-    /// <p>This request creates an AWS Network Firewall firewall endpoint in each of the subnets. To
-    /// enable the firewall's protections, you must also modify the VPC's route tables for each
-    /// subnet's Availability Zone, to redirect the traffic that's coming into and going out of the
-    /// zone through the firewall endpoint. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates the specified subnets in the Amazon VPC to the firewall. You can specify one subnet for each of the Availability Zones that the VPC spans. </p>
+    /// <p>This request creates an AWS Network Firewall firewall endpoint in each of the subnets. To enable the firewall's protections, you must also modify the VPC's route tables for each subnet's Availability Zone, to redirect the traffic that's coming into and going out of the zone through the firewall endpoint. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateSubnets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -478,10 +484,10 @@ pub mod fluent_builders {
                 crate::input::AssociateSubnetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -492,8 +498,8 @@ pub mod fluent_builders {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
         /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(input.into());
             self
         }
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -505,8 +511,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -517,8 +523,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -535,8 +541,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
         /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
-        pub fn subnet_mappings(mut self, inp: impl Into<crate::model::SubnetMapping>) -> Self {
-            self.inner = self.inner.subnet_mappings(inp);
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
+            self.inner = self.inner.subnet_mappings(input);
             self
         }
         /// <p>The IDs of the subnets that you want to associate with the firewall. </p>
@@ -550,14 +556,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFirewall`.
     ///
-    /// <p>Creates an AWS Network Firewall <a>Firewall</a> and accompanying <a>FirewallStatus</a> for a VPC. </p>
+    /// <p>Creates an AWS Network Firewall <code>Firewall</code> and accompanying <code>FirewallStatus</code> for a VPC. </p>
     /// <p>The firewall defines the configuration settings for an AWS Network Firewall firewall. The settings that you can define at creation include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall AWS resource. </p>
     /// <p>After you create a firewall, you can provide additional settings, like the logging configuration. </p>
-    /// <p>To update the settings for a firewall, you use the operations that apply to the settings
-    /// themselves, for example <a>UpdateLoggingConfiguration</a>, <a>AssociateSubnets</a>, and <a>UpdateFirewallDeleteProtection</a>. </p>
-    /// <p>To manage a firewall's tags, use the standard AWS resource tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.</p>
-    /// <p>To retrieve information about firewalls, use <a>ListFirewalls</a> and <a>DescribeFirewall</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>To update the settings for a firewall, you use the operations that apply to the settings themselves, for example <code>UpdateLoggingConfiguration</code>, <code>AssociateSubnets</code>, and <code>UpdateFirewallDeleteProtection</code>. </p>
+    /// <p>To manage a firewall's tags, use the standard AWS resource tagging operations, <code>ListTagsForResource</code>, <code>TagResource</code>, and <code>UntagResource</code>.</p>
+    /// <p>To retrieve information about firewalls, use <code>ListFirewalls</code> and <code>DescribeFirewall</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFirewall<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -602,10 +607,10 @@ pub mod fluent_builders {
                 crate::input::CreateFirewallInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -614,8 +619,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -626,14 +631,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_firewall_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a>FirewallPolicy</a> that you want to
-        /// use for the firewall.</p>
-        pub fn firewall_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
+        pub fn firewall_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a>FirewallPolicy</a> that you want to
-        /// use for the firewall.</p>
+        /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
         pub fn set_firewall_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -643,8 +646,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
         /// <p>You can't change this setting after you create the firewall. </p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
@@ -657,16 +660,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
         ///
-        /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a
-        /// different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each
-        /// subnet. </p>
-        pub fn subnet_mappings(mut self, inp: impl Into<crate::model::SubnetMapping>) -> Self {
-            self.inner = self.inner.subnet_mappings(inp);
+        /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
+        pub fn subnet_mappings(mut self, input: crate::model::SubnetMapping) -> Self {
+            self.inner = self.inner.subnet_mappings(input);
             self
         }
-        /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a
-        /// different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each
-        /// subnet. </p>
+        /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
         pub fn set_subnet_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
@@ -674,44 +673,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subnet_mappings(input);
             self
         }
-        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
-        /// that the firewall is protected against deletion. Use this setting to protect against
-        /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
-        pub fn delete_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_protection(inp);
+        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+        pub fn delete_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_protection(input);
             self
         }
-        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
-        /// that the firewall is protected against deletion. Use this setting to protect against
-        /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
         pub fn set_delete_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_delete_protection(input);
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-        /// Use this setting to protect against
-        /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-        pub fn subnet_change_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.subnet_change_protection(inp);
+        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        pub fn subnet_change_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.subnet_change_protection(input);
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-        /// Use this setting to protect against
-        /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn set_subnet_change_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_subnet_change_protection(input);
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-        /// Use this setting to protect against
-        /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-        pub fn firewall_policy_change_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.firewall_policy_change_protection(inp);
+        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        pub fn firewall_policy_change_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.firewall_policy_change_protection(input);
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-        /// Use this setting to protect against
-        /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn set_firewall_policy_change_protection(
             mut self,
             input: std::option::Option<bool>,
@@ -720,8 +707,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the firewall.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the firewall.</p>
@@ -734,8 +721,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key:value pairs to associate with the resource.</p>
@@ -750,10 +737,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateFirewallPolicy`.
     ///
     /// <p>Creates the firewall policy for the firewall according to the specifications. </p>
-    /// <p>An AWS Network Firewall firewall policy defines the behavior of a firewall, in a collection of
-    /// stateless and stateful rule groups and other settings. You can use one firewall policy for
-    /// multiple firewalls. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>An AWS Network Firewall firewall policy defines the behavior of a firewall, in a collection of stateless and stateful rule groups and other settings. You can use one firewall policy for multiple firewalls. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFirewallPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -798,10 +783,10 @@ pub mod fluent_builders {
                 crate::input::CreateFirewallPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -810,8 +795,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
-        pub fn firewall_policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_name(inp);
+        pub fn firewall_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
@@ -823,8 +808,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule groups and policy actions to use in the firewall policy.</p>
-        pub fn firewall_policy(mut self, inp: crate::model::FirewallPolicy) -> Self {
-            self.inner = self.inner.firewall_policy(inp);
+        pub fn firewall_policy(mut self, input: crate::model::FirewallPolicy) -> Self {
+            self.inner = self.inner.firewall_policy(input);
             self
         }
         /// <p>The rule groups and policy actions to use in the firewall policy.</p>
@@ -836,8 +821,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the firewall policy.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the firewall policy.</p>
@@ -850,8 +835,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key:value pairs to associate with the resource.</p>
@@ -863,20 +848,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
@@ -885,11 +864,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRuleGroup`.
     ///
-    /// <p>Creates the specified stateless or stateful rule group, which includes the rules for
-    /// network traffic inspection, a capacity setting, and tags. </p>
-    /// <p>You provide your rule group specification in your request using either
-    /// <code>RuleGroup</code> or <code>Rules</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates the specified stateless or stateful rule group, which includes the rules for network traffic inspection, a capacity setting, and tags. </p>
+    /// <p>You provide your rule group specification in your request using either <code>RuleGroup</code> or <code>Rules</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -934,10 +911,10 @@ pub mod fluent_builders {
                 crate::input::CreateRuleGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -946,8 +923,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-        pub fn rule_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_name(inp);
+        pub fn rule_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_name(input.into());
             self
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -958,16 +935,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_group_name(input);
             self
         }
-        /// <p>An object that defines the rule group rules. </p>
-        /// <note>
+        /// <p>An object that defines the rule group rules. </p> <note>
         /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
         /// </note>
-        pub fn rule_group(mut self, inp: crate::model::RuleGroup) -> Self {
-            self.inner = self.inner.rule_group(inp);
+        pub fn rule_group(mut self, input: crate::model::RuleGroup) -> Self {
+            self.inner = self.inner.rule_group(input);
             self
         }
-        /// <p>An object that defines the rule group rules. </p>
-        /// <note>
+        /// <p>An object that defines the rule group rules. </p> <note>
         /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
         /// </note>
         pub fn set_rule_group(
@@ -977,43 +952,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_group(input);
             self
         }
-        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
-        /// per line. Use this to import your existing Suricata compatible rule groups. </p>
-        /// <note>
+        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
         /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-        /// </note>  
-        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
-        /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
-        pub fn rules(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rules(inp);
+        /// </note>
+        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
+        pub fn rules(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rules(input.into());
             self
         }
-        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
-        /// per line. Use this to import your existing Suricata compatible rule groups. </p>
-        /// <note>
+        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
         /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-        /// </note>  
-        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
-        /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
+        /// </note>
+        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
         pub fn set_rules(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_rules(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
-        pub fn r#type(mut self, inp: crate::model::RuleGroupType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
+        pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
         /// <p>A description of the rule group. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the rule group. </p>
@@ -1021,92 +988,40 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation.
-        /// When you update a rule group, you are limited to this capacity. When you reference a rule group
-        /// from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
-        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling
-        /// <a>CreateRuleGroup</a> with <code>DryRun</code> set to <code>TRUE</code>. </p>
-        /// <note>
-        /// <p>You can't change or exceed this capacity when you update the rule group, so leave
-        /// room for your rule group to grow. </p>
+        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note>
+        /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p>
         /// </note>
-        /// <p>
-        /// <b>Capacity for a stateless rule group</b>
-        /// </p>
-        /// <p>For a stateless rule group, the capacity required is the sum of the capacity
-        /// requirements of the individual rules that you expect to have in the rule group. </p>
-        /// <p>To calculate the capacity requirement of a single rule, multiply the capacity
-        /// requirement values of each of the rule's match settings:</p>
+        /// <p> <b>Capacity for a stateless rule group</b> </p>
+        /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p>
+        /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
         /// <ul>
-        /// <li>
-        /// <p>A match setting with no criteria specified has a value of 1. </p>
-        /// </li>
-        /// <li>
-        /// <p>A match setting with <code>Any</code> specified has a value of 1. </p>
-        /// </li>
-        /// <li>
-        /// <p>All other match settings have a value equal to the number of elements provided in
-        /// the setting. For example, a protocol setting ["UDP"] and a source setting
-        /// ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value
-        /// of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.
-        /// </p>
-        /// </li>
+        /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li>
+        /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li>
+        /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li>
         /// </ul>
-        /// <p>A rule with no criteria specified in any of its match settings has a capacity
-        /// requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting
-        /// ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification
-        /// for each of the other match settings has a capacity requirement of 6. </p>
-        /// <p>
-        /// <b>Capacity for a stateful rule group</b>
-        /// </p>
-        /// <p>For
-        /// a stateful rule group, the minimum capacity required is the number of individual rules that
-        /// you expect to have in the rule group. </p>
-        pub fn capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.capacity(inp);
+        /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p>
+        /// <p> <b>Capacity for a stateful rule group</b> </p>
+        /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group. </p>
+        pub fn capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.capacity(input);
             self
         }
-        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation.
-        /// When you update a rule group, you are limited to this capacity. When you reference a rule group
-        /// from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
-        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling
-        /// <a>CreateRuleGroup</a> with <code>DryRun</code> set to <code>TRUE</code>. </p>
-        /// <note>
-        /// <p>You can't change or exceed this capacity when you update the rule group, so leave
-        /// room for your rule group to grow. </p>
+        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note>
+        /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p>
         /// </note>
-        /// <p>
-        /// <b>Capacity for a stateless rule group</b>
-        /// </p>
-        /// <p>For a stateless rule group, the capacity required is the sum of the capacity
-        /// requirements of the individual rules that you expect to have in the rule group. </p>
-        /// <p>To calculate the capacity requirement of a single rule, multiply the capacity
-        /// requirement values of each of the rule's match settings:</p>
+        /// <p> <b>Capacity for a stateless rule group</b> </p>
+        /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p>
+        /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
         /// <ul>
-        /// <li>
-        /// <p>A match setting with no criteria specified has a value of 1. </p>
-        /// </li>
-        /// <li>
-        /// <p>A match setting with <code>Any</code> specified has a value of 1. </p>
-        /// </li>
-        /// <li>
-        /// <p>All other match settings have a value equal to the number of elements provided in
-        /// the setting. For example, a protocol setting ["UDP"] and a source setting
-        /// ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value
-        /// of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3.
-        /// </p>
-        /// </li>
+        /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li>
+        /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li>
+        /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li>
         /// </ul>
-        /// <p>A rule with no criteria specified in any of its match settings has a capacity
-        /// requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting
-        /// ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification
-        /// for each of the other match settings has a capacity requirement of 6. </p>
-        /// <p>
-        /// <b>Capacity for a stateful rule group</b>
-        /// </p>
-        /// <p>For
-        /// a stateful rule group, the minimum capacity required is the number of individual rules that
-        /// you expect to have in the rule group. </p>
+        /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p>
+        /// <p> <b>Capacity for a stateful rule group</b> </p>
+        /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group. </p>
         pub fn set_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_capacity(input);
             self
@@ -1116,8 +1031,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key:value pairs to associate with the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The key:value pairs to associate with the resource.</p>
@@ -1129,20 +1044,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
@@ -1151,18 +1060,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteFirewall`.
     ///
-    /// <p>Deletes the specified <a>Firewall</a> and its <a>FirewallStatus</a>.
-    /// This operation requires the firewall's <code>DeleteProtection</code> flag to be
-    /// <code>FALSE</code>. You can't revert this operation. </p>
-    /// <p>You can check whether a firewall is
-    /// in use by reviewing the route tables for the Availability Zones where you have
-    /// firewall subnet mappings. Retrieve the subnet mappings by calling <a>DescribeFirewall</a>.
-    /// You define and update the route tables through Amazon VPC. As needed, update the route tables for the
-    /// zones to remove the firewall endpoints. When the route tables no longer use the firewall endpoints,
-    /// you can remove the firewall safely.</p>
-    /// <p>To delete a firewall, remove the delete protection if you need to using <a>UpdateFirewallDeleteProtection</a>,
-    /// then delete the firewall by calling <a>DeleteFirewall</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified <code>Firewall</code> and its <code>FirewallStatus</code>. This operation requires the firewall's <code>DeleteProtection</code> flag to be <code>FALSE</code>. You can't revert this operation. </p>
+    /// <p>You can check whether a firewall is in use by reviewing the route tables for the Availability Zones where you have firewall subnet mappings. Retrieve the subnet mappings by calling <code>DescribeFirewall</code>. You define and update the route tables through Amazon VPC. As needed, update the route tables for the zones to remove the firewall endpoints. When the route tables no longer use the firewall endpoints, you can remove the firewall safely.</p>
+    /// <p>To delete a firewall, remove the delete protection if you need to using <code>UpdateFirewallDeleteProtection</code>, then delete the firewall by calling <code>DeleteFirewall</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFirewall<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1207,10 +1108,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFirewallInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1220,8 +1121,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -1235,8 +1136,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -1248,8 +1149,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteFirewallPolicy`.
     ///
-    /// <p>Deletes the specified <a>FirewallPolicy</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified <code>FirewallPolicy</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFirewallPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1294,10 +1195,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFirewallPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1307,8 +1208,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_name(inp);
+        pub fn firewall_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
@@ -1322,8 +1223,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_arn(inp);
+        pub fn firewall_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
@@ -1338,8 +1239,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResourcePolicy`.
     ///
-    /// <p>Deletes a resource policy that you created in a <a>PutResourcePolicy</a> request. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a resource policy that you created in a <code>PutResourcePolicy</code> request. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1384,10 +1285,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1396,8 +1297,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
@@ -1408,8 +1309,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRuleGroup`.
     ///
-    /// <p>Deletes the specified <a>RuleGroup</a>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified <code>RuleGroup</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1454,10 +1355,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRuleGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1467,8 +1368,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn rule_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_name(inp);
+        pub fn rule_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_name(input.into());
             self
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -1482,8 +1383,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn rule_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_arn(inp);
+        pub fn rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
@@ -1495,18 +1396,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_group_arn(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
-        /// <note>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
-        pub fn r#type(mut self, inp: crate::model::RuleGroupType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
-        /// <note>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
@@ -1517,7 +1414,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFirewall`.
     ///
     /// <p>Returns the data objects for the specified firewall. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFirewall<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1562,10 +1459,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFirewallInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1575,8 +1472,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -1590,8 +1487,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -1604,7 +1501,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeFirewallPolicy`.
     ///
     /// <p>Returns the data objects for the specified firewall policy. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFirewallPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1649,10 +1546,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFirewallPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1662,8 +1559,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_name(inp);
+        pub fn firewall_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
@@ -1677,8 +1574,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_arn(inp);
+        pub fn firewall_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
@@ -1694,7 +1591,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoggingConfiguration`.
     ///
     /// <p>Returns the logging configuration for the specified firewall. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoggingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1739,10 +1636,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLoggingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1752,8 +1649,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -1764,8 +1661,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -1780,8 +1677,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeResourcePolicy`.
     ///
-    /// <p>Retrieves a resource policy that you created in a <a>PutResourcePolicy</a> request. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a resource policy that you created in a <code>PutResourcePolicy</code> request. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1826,10 +1723,10 @@ pub mod fluent_builders {
                 crate::input::DescribeResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1838,8 +1735,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to retrieve. </p>
@@ -1851,7 +1748,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRuleGroup`.
     ///
     /// <p>Returns the data objects for the specified rule group. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1896,10 +1793,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRuleGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1909,8 +1806,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn rule_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_name(inp);
+        pub fn rule_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_name(input.into());
             self
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -1924,8 +1821,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn rule_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_arn(inp);
+        pub fn rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
@@ -1937,18 +1834,118 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_group_arn(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
-        /// <note>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
-        pub fn r#type(mut self, inp: crate::model::RuleGroupType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
-        /// <note>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
+        /// </note>
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `DescribeRuleGroupMetadata`.
+    ///
+    /// <p>High-level information about a rule group, returned by operations like create and describe. You can use the information provided in the metadata to retrieve and manage a rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeRuleGroupMetadata<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_rule_group_metadata_input::Builder,
+    }
+    impl<C, M, R> DescribeRuleGroupMetadata<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeRuleGroupMetadata`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeRuleGroupMetadataOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeRuleGroupMetadataError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeRuleGroupMetadataInputOperationOutputAlias,
+                crate::output::DescribeRuleGroupMetadataOutput,
+                crate::error::DescribeRuleGroupMetadataError,
+                crate::input::DescribeRuleGroupMetadataInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+        /// <p>You must specify the ARN or the name, and you can specify both. </p>
+        pub fn rule_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_name(input.into());
+            self
+        }
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+        /// <p>You must specify the ARN or the name, and you can specify both. </p>
+        pub fn set_rule_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_rule_group_name(input);
+            self
+        }
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+        /// <p>You must specify the ARN or the name, and you can specify both. </p>
+        pub fn rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_arn(input.into());
+            self
+        }
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+        /// <p>You must specify the ARN or the name, and you can specify both. </p>
+        pub fn set_rule_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_rule_group_arn(input);
+            self
+        }
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+        /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
+        /// </note>
+        pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
@@ -1958,11 +1955,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateSubnets`.
     ///
-    /// <p>Removes the specified subnet associations from the firewall. This removes the
-    /// firewall endpoints from the subnets and removes any network filtering protections that the endpoints
-    /// were providing.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes the specified subnet associations from the firewall. This removes the firewall endpoints from the subnets and removes any network filtering protections that the endpoints were providing. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateSubnets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2007,10 +2001,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateSubnetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2021,8 +2015,8 @@ pub mod fluent_builders {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
         /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(input.into());
             self
         }
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -2034,8 +2028,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -2046,8 +2040,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -2064,8 +2058,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>The unique identifiers for the subnets that you want to disassociate. </p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>The unique identifiers for the subnets that you want to disassociate. </p>
@@ -2079,10 +2073,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFirewallPolicies`.
     ///
-    /// <p>Retrieves the metadata for the firewall policies that you have defined. Depending on
-    /// your setting for max results and the number of firewall policies, a single call might not
-    /// return the full list. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the metadata for the firewall policies that you have defined. Depending on your setting for max results and the number of firewall policies, a single call might not return the full list. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFirewallPolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2127,10 +2119,10 @@ pub mod fluent_builders {
                 crate::input::ListFirewallPoliciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2138,30 +2130,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFirewallPoliciesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFirewallPoliciesPaginator<C, M, R> {
+            crate::paginator::ListFirewallPoliciesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2169,11 +2159,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFirewalls`.
     ///
-    /// <p>Retrieves the metadata for the firewalls that you have defined. If you provide VPC
-    /// identifiers in your request, this returns only the firewalls for those VPCs.</p>
-    /// <p>Depending on your setting for max results and the number of firewalls, a single call
-    /// might not return the full list. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the metadata for the firewalls that you have defined. If you provide VPC identifiers in your request, this returns only the firewalls for those VPCs.</p>
+    /// <p>Depending on your setting for max results and the number of firewalls, a single call might not return the full list. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFirewalls<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2218,10 +2206,10 @@ pub mod fluent_builders {
                 crate::input::ListFirewallsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2229,16 +2217,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFirewallsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFirewallsPaginator<C, M, R> {
+            crate::paginator::ListFirewallsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2247,14 +2237,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_vpc_ids`](Self::set_vpc_ids).
         ///
-        /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls
-        /// for. Leave this blank to retrieve all firewalls that you have defined.</p>
-        pub fn vpc_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_ids(inp);
+        /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.</p>
+        pub fn vpc_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_ids(input.into());
             self
         }
-        /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls
-        /// for. Leave this blank to retrieve all firewalls that you have defined.</p>
+        /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.</p>
         pub fn set_vpc_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2262,16 +2250,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_ids(input);
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2279,10 +2263,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRuleGroups`.
     ///
-    /// <p>Retrieves the metadata for the rule groups that you have defined. Depending on your
-    /// setting for max results and the number of rule groups, a single call might not return the
-    /// full list. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the metadata for the rule groups that you have defined. Depending on your setting for max results and the number of rule groups, a single call might not return the full list. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRuleGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2327,10 +2309,10 @@ pub mod fluent_builders {
                 crate::input::ListRuleGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2338,45 +2320,51 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRuleGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRuleGroupsPaginator<C, M, R> {
+            crate::paginator::ListRuleGroupsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+        pub fn scope(mut self, input: crate::model::ResourceManagedStatus) -> Self {
+            self.inner = self.inner.scope(input);
+            self
+        }
+        /// <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+        pub fn set_scope(
+            mut self,
+            input: std::option::Option<crate::model::ResourceManagedStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_scope(input);
             self
         }
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Retrieves the tags associated with the specified resource. Tags are key:value pairs that
-    /// you can use to categorize and manage your resources, for purposes like billing. For
-    /// example, you might set the tag key to "customer" and the value to the customer name or ID.
-    /// You can specify one or more tags to add to each AWS resource, up to 50 tags for a
-    /// resource.</p>
-    /// <p>You can tag the AWS resources that you manage through AWS Network Firewall: firewalls, firewall
-    /// policies, and rule groups. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the tags associated with the specified resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
+    /// <p>You can tag the AWS resources that you manage through AWS Network Firewall: firewalls, firewall policies, and rule groups. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2421,10 +2409,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2432,37 +2420,35 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsForResourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagsForResourcePaginator<C, M, R> {
+            crate::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
+        }
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code>
-        /// value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+        /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more
-        /// objects are available, in the response, Network Firewall provides a
-        /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2473,22 +2459,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutResourcePolicy`.
     ///
-    /// <p>Creates or updates an AWS Identity and Access Management policy for your rule group or firewall policy. Use this to share rule groups and firewall policies between accounts. This operation works in conjunction with the AWS Resource Access Manager (RAM) service
-    /// to manage resource sharing for Network Firewall. </p>
+    /// <p>Creates or updates an AWS Identity and Access Management policy for your rule group or firewall policy. Use this to share rule groups and firewall policies between accounts. This operation works in conjunction with the AWS Resource Access Manager (RAM) service to manage resource sharing for Network Firewall. </p>
     /// <p>Use this operation to create or update a resource policy for your rule group or firewall policy. In the policy, you specify the accounts that you want to share the resource with and the operations that you want the accounts to be able to perform. </p>
     /// <p>When you add an account in the resource policy, you then run the following Resource Access Manager (RAM) operations to access and accept the shared rule group or firewall policy. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareInvitations.html">GetResourceShareInvitations</a> - Returns the Amazon Resource Names (ARNs) of the resource share invitations.  </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html">AcceptResourceShareInvitation</a> - Accepts the share invitation for a specified resource share. </p>
-    /// </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareInvitations.html">GetResourceShareInvitations</a> - Returns the Amazon Resource Names (ARNs) of the resource share invitations. </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html">AcceptResourceShareInvitation</a> - Accepts the share invitation for a specified resource share. </p> </li>
     /// </ul>
     /// <p>For additional information about resource sharing using RAM, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">AWS Resource Access Manager User Guide</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2533,10 +2512,10 @@ pub mod fluent_builders {
                 crate::input::PutResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2545,8 +2524,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
@@ -2554,68 +2533,38 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with
-        /// and the operations that you want the accounts to be able to perform. </p>
+        /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
         /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
         /// <ul>
-        /// <li>
-        /// <p>network-firewall:CreateFirewallPolicy</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:UpdateFirewallPolicy</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:ListRuleGroups</p>
-        /// </li>
+        /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:ListRuleGroups</p> </li>
         /// </ul>
         /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>
         /// <ul>
-        /// <li>
-        /// <p>network-firewall:CreateFirewall</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:UpdateFirewall</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:AssociateFirewallPolicy</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:ListFirewallPolicies</p>
-        /// </li>
+        /// <li> <p>network-firewall:CreateFirewall</p> </li>
+        /// <li> <p>network-firewall:UpdateFirewall</p> </li>
+        /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:ListFirewallPolicies</p> </li>
         /// </ul>
         /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
-        /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with
-        /// and the operations that you want the accounts to be able to perform. </p>
+        /// <p>The AWS Identity and Access Management policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
         /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
         /// <ul>
-        /// <li>
-        /// <p>network-firewall:CreateFirewallPolicy</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:UpdateFirewallPolicy</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:ListRuleGroups</p>
-        /// </li>
+        /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:ListRuleGroups</p> </li>
         /// </ul>
         /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>
         /// <ul>
-        /// <li>
-        /// <p>network-firewall:CreateFirewall</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:UpdateFirewall</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:AssociateFirewallPolicy</p>
-        /// </li>
-        /// <li>
-        /// <p>network-firewall:ListFirewallPolicies</p>
-        /// </li>
+        /// <li> <p>network-firewall:CreateFirewall</p> </li>
+        /// <li> <p>network-firewall:UpdateFirewall</p> </li>
+        /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+        /// <li> <p>network-firewall:ListFirewallPolicies</p> </li>
         /// </ul>
         /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2625,13 +2574,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds the specified tags to the specified resource. Tags are key:value pairs that you can
-    /// use to categorize and manage your resources, for purposes like billing. For example, you
-    /// might set the tag key to "customer" and the value to the customer name or ID. You can
-    /// specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
-    /// <p>You can tag the AWS resources that you manage through AWS Network Firewall: firewalls, firewall
-    /// policies, and rule groups. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds the specified tags to the specified resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
+    /// <p>You can tag the AWS resources that you manage through AWS Network Firewall: firewalls, firewall policies, and rule groups. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2676,10 +2621,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2688,8 +2633,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2702,8 +2647,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p></p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p></p>
@@ -2717,14 +2662,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes the tags with the specified keys from the specified resource. Tags are key:value
-    /// pairs that you can use to categorize and manage your resources, for purposes like billing.
-    /// For example, you might set the tag key to "customer" and the value to the customer name or
-    /// ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a
-    /// resource.</p>
-    /// <p>You can manage tags for the AWS resources that you manage through AWS Network Firewall:
-    /// firewalls, firewall policies, and rule groups. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes the tags with the specified keys from the specified resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
+    /// <p>You can manage tags for the AWS resources that you manage through AWS Network Firewall: firewalls, firewall policies, and rule groups. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2769,10 +2709,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2781,8 +2721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2795,8 +2735,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p></p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p></p>
@@ -2810,11 +2750,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFirewallDeleteProtection`.
     ///
-    /// <p>Modifies the flag, <code>DeleteProtection</code>, which indicates whether it is possible
-    /// to delete the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected
-    /// against deletion. This setting helps protect against accidentally deleting a firewall
-    /// that's in use. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies the flag, <code>DeleteProtection</code>, which indicates whether it is possible to delete the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected against deletion. This setting helps protect against accidentally deleting a firewall that's in use. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFirewallDeleteProtection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2859,10 +2796,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFirewallDeleteProtectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2873,8 +2810,8 @@ pub mod fluent_builders {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
         /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(input.into());
             self
         }
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -2886,8 +2823,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -2898,8 +2835,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -2911,16 +2848,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_firewall_name(input);
             self
         }
-        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
-        /// that the firewall is protected against deletion. Use this setting to protect against
-        /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
-        pub fn delete_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_protection(inp);
+        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+        pub fn delete_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_protection(input);
             self
         }
-        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
-        /// that the firewall is protected against deletion. Use this setting to protect against
-        /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
+        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
         pub fn set_delete_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_delete_protection(input);
             self
@@ -2928,9 +2861,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFirewallDescription`.
     ///
-    /// <p>Modifies the description for the specified firewall. Use the description to help you
-    /// identify the firewall when you're working with it. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies the description for the specified firewall. Use the description to help you identify the firewall when you're working with it. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFirewallDescription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2975,10 +2907,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFirewallDescriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2989,8 +2921,8 @@ pub mod fluent_builders {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
         /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(input.into());
             self
         }
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -3002,8 +2934,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -3014,8 +2946,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -3027,14 +2959,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_firewall_name(input);
             self
         }
-        /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes
-        /// the description for the firewall.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes the description for the firewall.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes
-        /// the description for the firewall.</p>
+        /// <p>The new description for the firewall. If you omit this setting, Network Firewall removes the description for the firewall.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -3043,7 +2973,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFirewallPolicy`.
     ///
     /// <p>Updates the properties of the specified firewall policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFirewallPolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3088,10 +3018,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFirewallPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3101,8 +3031,8 @@ pub mod fluent_builders {
         }
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
         /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(input.into());
             self
         }
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
@@ -3113,8 +3043,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_arn(inp);
+        pub fn firewall_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
@@ -3128,8 +3058,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_policy_name(inp);
+        pub fn firewall_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_policy_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
@@ -3142,8 +3072,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated firewall policy to use for the firewall. </p>
-        pub fn firewall_policy(mut self, inp: crate::model::FirewallPolicy) -> Self {
-            self.inner = self.inner.firewall_policy(inp);
+        pub fn firewall_policy(mut self, input: crate::model::FirewallPolicy) -> Self {
+            self.inner = self.inner.firewall_policy(input);
             self
         }
         /// <p>The updated firewall policy to use for the firewall. </p>
@@ -3155,8 +3085,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the firewall policy.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the firewall policy.</p>
@@ -3165,20 +3095,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
@@ -3187,8 +3111,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFirewallPolicyChangeProtection`.
     ///
-    /// <p></p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies the flag, <code>ChangeProtection</code>, which indicates whether it is possible to change the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected from changes. This setting helps protect against accidentally changing a firewall that's in use.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFirewallPolicyChangeProtection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3235,10 +3159,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFirewallPolicyChangeProtectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3249,8 +3173,8 @@ pub mod fluent_builders {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
         /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(input.into());
             self
         }
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -3262,8 +3186,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -3274,8 +3198,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -3287,16 +3211,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_firewall_name(input);
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-        /// Use this setting to protect against
-        /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-        pub fn firewall_policy_change_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.firewall_policy_change_protection(inp);
+        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        pub fn firewall_policy_change_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.firewall_policy_change_protection(input);
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
-        /// Use this setting to protect against
-        /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn set_firewall_policy_change_protection(
             mut self,
             input: std::option::Option<bool>,
@@ -3308,32 +3228,15 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLoggingConfiguration`.
     ///
     /// <p>Sets the logging configuration for the specified firewall. </p>
-    /// <p>To change the logging configuration, retrieve the <a>LoggingConfiguration</a> by calling <a>DescribeLoggingConfiguration</a>, then change it and provide
-    /// the modified object to this update call. You must change the logging configuration one
-    /// <a>LogDestinationConfig</a> at a time inside the retrieved <a>LoggingConfiguration</a> object. </p>
-    /// <p>You can perform only one of the following actions in any call to
-    /// <code>UpdateLoggingConfiguration</code>: </p>
+    /// <p>To change the logging configuration, retrieve the <code>LoggingConfiguration</code> by calling <code>DescribeLoggingConfiguration</code>, then change it and provide the modified object to this update call. You must change the logging configuration one <code>LogDestinationConfig</code> at a time inside the retrieved <code>LoggingConfiguration</code> object. </p>
+    /// <p>You can perform only one of the following actions in any call to <code>UpdateLoggingConfiguration</code>: </p>
     /// <ul>
-    /// <li>
-    /// <p>Create a new log destination object by adding a single
-    /// <code>LogDestinationConfig</code> array element to
-    /// <code>LogDestinationConfigs</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Delete a log destination object by removing a single
-    /// <code>LogDestinationConfig</code> array element from
-    /// <code>LogDestinationConfigs</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Change the <code>LogDestination</code> setting in a single
-    /// <code>LogDestinationConfig</code> array element.</p>
-    /// </li>
+    /// <li> <p>Create a new log destination object by adding a single <code>LogDestinationConfig</code> array element to <code>LogDestinationConfigs</code>.</p> </li>
+    /// <li> <p>Delete a log destination object by removing a single <code>LogDestinationConfig</code> array element from <code>LogDestinationConfigs</code>.</p> </li>
+    /// <li> <p>Change the <code>LogDestination</code> setting in a single <code>LogDestinationConfig</code> array element.</p> </li>
     /// </ul>
-    /// <p>You can't change the <code>LogDestinationType</code> or <code>LogType</code> in a
-    /// <code>LogDestinationConfig</code>. To change these settings, delete the existing
-    /// <code>LogDestinationConfig</code> object and create a new one, using two separate calls
-    /// to this update operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>You can't change the <code>LogDestinationType</code> or <code>LogType</code> in a <code>LogDestinationConfig</code>. To change these settings, delete the existing <code>LogDestinationConfig</code> object and create a new one, using two separate calls to this update operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLoggingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3378,10 +3281,10 @@ pub mod fluent_builders {
                 crate::input::UpdateLoggingConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3391,8 +3294,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -3403,8 +3306,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -3416,14 +3319,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_firewall_name(input);
             self
         }
-        /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting,
-        /// Network Firewall disables logging for the firewall.</p>
-        pub fn logging_configuration(mut self, inp: crate::model::LoggingConfiguration) -> Self {
-            self.inner = self.inner.logging_configuration(inp);
+        /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
+        pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
+            self.inner = self.inner.logging_configuration(input);
             self
         }
-        /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting,
-        /// Network Firewall disables logging for the firewall.</p>
+        /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
         pub fn set_logging_configuration(
             mut self,
             input: std::option::Option<crate::model::LoggingConfiguration>,
@@ -3434,13 +3335,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRuleGroup`.
     ///
-    /// <p>Updates the rule settings for the specified rule group. You use a rule group by
-    /// reference in one or more firewall policies. When you modify a rule group, you modify all
-    /// firewall policies that use the rule group. </p>
-    /// <p>To update a rule group, first call <a>DescribeRuleGroup</a> to retrieve the
-    /// current <a>RuleGroup</a> object, update the object as needed, and then provide
-    /// the updated object to this call. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the rule settings for the specified rule group. You use a rule group by reference in one or more firewall policies. When you modify a rule group, you modify all firewall policies that use the rule group. </p>
+    /// <p>To update a rule group, first call <code>DescribeRuleGroup</code> to retrieve the current <code>RuleGroup</code> object, update the object as needed, and then provide the updated object to this call. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRuleGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3485,10 +3382,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRuleGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3498,8 +3395,8 @@ pub mod fluent_builders {
         }
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
         /// <p>To make changes to the rule group, you provide the token in your request. Network Firewall uses the token to ensure that the rule group hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the rule group again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(input.into());
             self
         }
         /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the rule group. The token marks the state of the rule group resource at the time of the request. </p>
@@ -3510,8 +3407,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn rule_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_arn(inp);
+        pub fn rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
@@ -3525,8 +3422,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn rule_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule_group_name(inp);
+        pub fn rule_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule_group_name(input.into());
             self
         }
         /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
@@ -3538,16 +3435,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_group_name(input);
             self
         }
-        /// <p>An object that defines the rule group rules. </p>
-        /// <note>
+        /// <p>An object that defines the rule group rules. </p> <note>
         /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
         /// </note>
-        pub fn rule_group(mut self, inp: crate::model::RuleGroup) -> Self {
-            self.inner = self.inner.rule_group(inp);
+        pub fn rule_group(mut self, input: crate::model::RuleGroup) -> Self {
+            self.inner = self.inner.rule_group(input);
             self
         }
-        /// <p>An object that defines the rule group rules. </p>
-        /// <note>
+        /// <p>An object that defines the rule group rules. </p> <note>
         /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
         /// </note>
         pub fn set_rule_group(
@@ -3557,40 +3452,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rule_group(input);
             self
         }
-        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
-        /// per line. Use this to import your existing Suricata compatible rule groups. </p>
-        /// <note>
+        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
         /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-        /// </note>  
-        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
-        /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
-        pub fn rules(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rules(inp);
+        /// </note>
+        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
+        pub fn rules(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rules(input.into());
             self
         }
-        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule
-        /// per line. Use this to import your existing Suricata compatible rule groups. </p>
-        /// <note>
+        /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
         /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-        /// </note>  
-        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call
-        /// response returns a <a>RuleGroup</a> object that Network Firewall has populated from your string. </p>
+        /// </note>
+        /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
         pub fn set_rules(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_rules(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
-        /// <note>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
-        pub fn r#type(mut self, inp: crate::model::RuleGroupType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::RuleGroupType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
-        /// stateless rules. If it is stateful, it contains stateful rules. </p>
-        /// <note>
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
         /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
         /// </note>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
@@ -3598,8 +3483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the rule group. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the rule group. </p>
@@ -3608,20 +3493,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
         /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
-        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
-        /// but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with
-        /// dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have
-        /// the required permissions to run the request and that your request parameters are valid. </p>
+        /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
         /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
@@ -3631,7 +3510,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSubnetChangeProtection`.
     ///
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSubnetChangeProtection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3676,10 +3555,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSubnetChangeProtectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3690,8 +3569,8 @@ pub mod fluent_builders {
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
         /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
         /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-        pub fn update_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_token(inp);
+        pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_token(input.into());
             self
         }
         /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
@@ -3703,8 +3582,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_arn(inp);
+        pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
@@ -3715,8 +3594,8 @@ pub mod fluent_builders {
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         /// <p>You must specify the ARN or the name, and you can specify both. </p>
-        pub fn firewall_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_name(inp);
+        pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_name(input.into());
             self
         }
         /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -3728,22 +3607,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_firewall_name(input);
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-        /// Use this setting to protect against
-        /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-        pub fn subnet_change_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.subnet_change_protection(inp);
+        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        pub fn subnet_change_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.subnet_change_protection(input);
             self
         }
-        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
-        /// Use this setting to protect against
-        /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn set_subnet_change_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_subnet_change_protection(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

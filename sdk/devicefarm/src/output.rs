@@ -561,18 +561,15 @@ impl StopRunOutput {
     }
 }
 
-/// <p>Represents the response from the server that describes the remote access session
-/// when AWS Device Farm stops the session.</p>
+/// <p>Represents the response from the server that describes the remote access session when AWS Device Farm stops the session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopRemoteAccessSessionOutput {
-    /// <p>A container that represents the metadata from the service about the remote access session you are
-    /// stopping.</p>
+    /// <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
     pub remote_access_session: std::option::Option<crate::model::RemoteAccessSession>,
 }
 impl StopRemoteAccessSessionOutput {
-    /// <p>A container that represents the metadata from the service about the remote access session you are
-    /// stopping.</p>
+    /// <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
     pub fn remote_access_session(&self) -> std::option::Option<&crate::model::RemoteAccessSession> {
         self.remote_access_session.as_ref()
     }
@@ -593,14 +590,12 @@ pub mod stop_remote_access_session_output {
         pub(crate) remote_access_session: std::option::Option<crate::model::RemoteAccessSession>,
     }
     impl Builder {
-        /// <p>A container that represents the metadata from the service about the remote access session you are
-        /// stopping.</p>
+        /// <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
         pub fn remote_access_session(mut self, input: crate::model::RemoteAccessSession) -> Self {
             self.remote_access_session = Some(input);
             self
         }
-        /// <p>A container that represents the metadata from the service about the remote access session you are
-        /// stopping.</p>
+        /// <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
         pub fn set_remote_access_session(
             mut self,
             input: std::option::Option<crate::model::RemoteAccessSession>,
@@ -845,21 +840,17 @@ impl PurchaseOfferingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVpceConfigurationsOutput {
-    /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
-    /// configuration.</p>
+    /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
     pub vpce_configurations: std::option::Option<std::vec::Vec<crate::model::VpceConfiguration>>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVpceConfigurationsOutput {
-    /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
-    /// configuration.</p>
+    /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
     pub fn vpce_configurations(&self) -> std::option::Option<&[crate::model::VpceConfiguration]> {
         self.vpce_configurations.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -887,19 +878,14 @@ pub mod list_vpce_configurations_output {
         ///
         /// To override the contents of this collection use [`set_vpce_configurations`](Self::set_vpce_configurations).
         ///
-        /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
-        /// configuration.</p>
-        pub fn vpce_configurations(
-            mut self,
-            input: impl Into<crate::model::VpceConfiguration>,
-        ) -> Self {
+        /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
+        pub fn vpce_configurations(mut self, input: crate::model::VpceConfiguration) -> Self {
             let mut v = self.vpce_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vpce_configurations = Some(v);
             self
         }
-        /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
-        /// configuration.</p>
+        /// <p>An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint configuration.</p>
         pub fn set_vpce_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpceConfiguration>>,
@@ -907,14 +893,12 @@ pub mod list_vpce_configurations_output {
             self.vpce_configurations = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -941,9 +925,7 @@ impl ListVpceConfigurationsOutput {
 pub struct ListUploadsOutput {
     /// <p>Information about the uploads.</p>
     pub uploads: std::option::Option<std::vec::Vec<crate::model::Upload>>,
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUploadsOutput {
@@ -951,9 +933,7 @@ impl ListUploadsOutput {
     pub fn uploads(&self) -> std::option::Option<&[crate::model::Upload]> {
         self.uploads.as_deref()
     }
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -981,9 +961,9 @@ pub mod list_uploads_output {
         /// To override the contents of this collection use [`set_uploads`](Self::set_uploads).
         ///
         /// <p>Information about the uploads.</p>
-        pub fn uploads(mut self, input: impl Into<crate::model::Upload>) -> Self {
+        pub fn uploads(mut self, input: crate::model::Upload) -> Self {
             let mut v = self.uploads.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.uploads = Some(v);
             self
         }
@@ -995,16 +975,12 @@ pub mod list_uploads_output {
             self.uploads = input;
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1032,27 +1008,13 @@ pub struct ListUniqueProblemsOutput {
     /// <p>Information about the unique problems.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PASSED</p>
-    /// </li>
-    /// <li>
-    /// <p>WARNED</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>SKIPPED</p>
-    /// </li>
-    /// <li>
-    /// <p>ERRORED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPED</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub unique_problems: std::option::Option<
         std::collections::HashMap<
@@ -1060,36 +1022,20 @@ pub struct ListUniqueProblemsOutput {
             std::vec::Vec<crate::model::UniqueProblem>,
         >,
     >,
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUniqueProblemsOutput {
     /// <p>Information about the unique problems.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>PENDING</p>
-    /// </li>
-    /// <li>
-    /// <p>PASSED</p>
-    /// </li>
-    /// <li>
-    /// <p>WARNED</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED</p>
-    /// </li>
-    /// <li>
-    /// <p>SKIPPED</p>
-    /// </li>
-    /// <li>
-    /// <p>ERRORED</p>
-    /// </li>
-    /// <li>
-    /// <p>STOPPED</p>
-    /// </li>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn unique_problems(
         &self,
@@ -1101,9 +1047,7 @@ impl ListUniqueProblemsOutput {
     > {
         self.unique_problems.as_ref()
     }
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1138,62 +1082,34 @@ pub mod list_unique_problems_output {
         /// <p>Information about the unique problems.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PASSED</p>
-        /// </li>
-        /// <li>
-        /// <p>WARNED</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED</p>
-        /// </li>
-        /// <li>
-        /// <p>SKIPPED</p>
-        /// </li>
-        /// <li>
-        /// <p>ERRORED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPED</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PASSED</p> </li>
+        /// <li> <p>WARNED</p> </li>
+        /// <li> <p>FAILED</p> </li>
+        /// <li> <p>SKIPPED</p> </li>
+        /// <li> <p>ERRORED</p> </li>
+        /// <li> <p>STOPPED</p> </li>
         /// </ul>
         pub fn unique_problems(
             mut self,
-            k: impl Into<crate::model::ExecutionResult>,
-            v: impl Into<std::vec::Vec<crate::model::UniqueProblem>>,
+            k: crate::model::ExecutionResult,
+            v: std::vec::Vec<crate::model::UniqueProblem>,
         ) -> Self {
             let mut hash_map = self.unique_problems.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.unique_problems = Some(hash_map);
             self
         }
         /// <p>Information about the unique problems.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>PENDING</p>
-        /// </li>
-        /// <li>
-        /// <p>PASSED</p>
-        /// </li>
-        /// <li>
-        /// <p>WARNED</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED</p>
-        /// </li>
-        /// <li>
-        /// <p>SKIPPED</p>
-        /// </li>
-        /// <li>
-        /// <p>ERRORED</p>
-        /// </li>
-        /// <li>
-        /// <p>STOPPED</p>
-        /// </li>
+        /// <li> <p>PENDING</p> </li>
+        /// <li> <p>PASSED</p> </li>
+        /// <li> <p>WARNED</p> </li>
+        /// <li> <p>FAILED</p> </li>
+        /// <li> <p>SKIPPED</p> </li>
+        /// <li> <p>ERRORED</p> </li>
+        /// <li> <p>STOPPED</p> </li>
         /// </ul>
         pub fn set_unique_problems(
             mut self,
@@ -1207,16 +1123,12 @@ pub mod list_unique_problems_output {
             self.unique_problems = input;
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1243,9 +1155,7 @@ impl ListUniqueProblemsOutput {
 pub struct ListTestsOutput {
     /// <p>Information about the tests.</p>
     pub tests: std::option::Option<std::vec::Vec<crate::model::Test>>,
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestsOutput {
@@ -1253,9 +1163,7 @@ impl ListTestsOutput {
     pub fn tests(&self) -> std::option::Option<&[crate::model::Test]> {
         self.tests.as_deref()
     }
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1283,9 +1191,9 @@ pub mod list_tests_output {
         /// To override the contents of this collection use [`set_tests`](Self::set_tests).
         ///
         /// <p>Information about the tests.</p>
-        pub fn tests(mut self, input: impl Into<crate::model::Test>) -> Self {
+        pub fn tests(mut self, input: crate::model::Test) -> Self {
             let mut v = self.tests.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tests = Some(v);
             self
         }
@@ -1297,16 +1205,12 @@ pub mod list_tests_output {
             self.tests = input;
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1331,13 +1235,13 @@ impl ListTestsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestGridSessionsOutput {
-    /// <p>The sessions that match the criteria in a <a>ListTestGridSessionsRequest</a>. </p>
+    /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
     pub test_grid_sessions: std::option::Option<std::vec::Vec<crate::model::TestGridSession>>,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestGridSessionsOutput {
-    /// <p>The sessions that match the criteria in a <a>ListTestGridSessionsRequest</a>. </p>
+    /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
     pub fn test_grid_sessions(&self) -> std::option::Option<&[crate::model::TestGridSession]> {
         self.test_grid_sessions.as_deref()
     }
@@ -1369,17 +1273,14 @@ pub mod list_test_grid_sessions_output {
         ///
         /// To override the contents of this collection use [`set_test_grid_sessions`](Self::set_test_grid_sessions).
         ///
-        /// <p>The sessions that match the criteria in a <a>ListTestGridSessionsRequest</a>. </p>
-        pub fn test_grid_sessions(
-            mut self,
-            input: impl Into<crate::model::TestGridSession>,
-        ) -> Self {
+        /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
+        pub fn test_grid_sessions(mut self, input: crate::model::TestGridSession) -> Self {
             let mut v = self.test_grid_sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.test_grid_sessions = Some(v);
             self
         }
-        /// <p>The sessions that match the criteria in a <a>ListTestGridSessionsRequest</a>. </p>
+        /// <p>The sessions that match the criteria in a <code>ListTestGridSessionsRequest</code>. </p>
         pub fn set_test_grid_sessions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TestGridSession>>,
@@ -1417,13 +1318,13 @@ impl ListTestGridSessionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestGridSessionArtifactsOutput {
-    /// <p>A list of test grid session artifacts for a <a>TestGridSession</a>.</p>
+    /// <p>A list of test grid session artifacts for a <code>TestGridSession</code>.</p>
     pub artifacts: std::option::Option<std::vec::Vec<crate::model::TestGridSessionArtifact>>,
     /// <p>Pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestGridSessionArtifactsOutput {
-    /// <p>A list of test grid session artifacts for a <a>TestGridSession</a>.</p>
+    /// <p>A list of test grid session artifacts for a <code>TestGridSession</code>.</p>
     pub fn artifacts(&self) -> std::option::Option<&[crate::model::TestGridSessionArtifact]> {
         self.artifacts.as_deref()
     }
@@ -1455,17 +1356,14 @@ pub mod list_test_grid_session_artifacts_output {
         ///
         /// To override the contents of this collection use [`set_artifacts`](Self::set_artifacts).
         ///
-        /// <p>A list of test grid session artifacts for a <a>TestGridSession</a>.</p>
-        pub fn artifacts(
-            mut self,
-            input: impl Into<crate::model::TestGridSessionArtifact>,
-        ) -> Self {
+        /// <p>A list of test grid session artifacts for a <code>TestGridSession</code>.</p>
+        pub fn artifacts(mut self, input: crate::model::TestGridSessionArtifact) -> Self {
             let mut v = self.artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.artifacts = Some(v);
             self
         }
-        /// <p>A list of test grid session artifacts for a <a>TestGridSession</a>.</p>
+        /// <p>A list of test grid session artifacts for a <code>TestGridSession</code>.</p>
         pub fn set_artifacts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TestGridSessionArtifact>>,
@@ -1541,9 +1439,9 @@ pub mod list_test_grid_session_actions_output {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The action taken by the session.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::TestGridSessionAction>) -> Self {
+        pub fn actions(mut self, input: crate::model::TestGridSessionAction) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }
@@ -1585,19 +1483,17 @@ impl ListTestGridSessionActionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestGridProjectsOutput {
-    /// <p>The list of TestGridProjects, based on a <a>ListTestGridProjectsRequest</a>.</p>
+    /// <p>The list of TestGridProjects, based on a <code>ListTestGridProjectsRequest</code>.</p>
     pub test_grid_projects: std::option::Option<std::vec::Vec<crate::model::TestGridProject>>,
-    /// <p>Used for pagination. Pass into <a>ListTestGridProjects</a> to get more results in a paginated
-    /// request.</p>
+    /// <p>Used for pagination. Pass into <code>ListTestGridProjects</code> to get more results in a paginated request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestGridProjectsOutput {
-    /// <p>The list of TestGridProjects, based on a <a>ListTestGridProjectsRequest</a>.</p>
+    /// <p>The list of TestGridProjects, based on a <code>ListTestGridProjectsRequest</code>.</p>
     pub fn test_grid_projects(&self) -> std::option::Option<&[crate::model::TestGridProject]> {
         self.test_grid_projects.as_deref()
     }
-    /// <p>Used for pagination. Pass into <a>ListTestGridProjects</a> to get more results in a paginated
-    /// request.</p>
+    /// <p>Used for pagination. Pass into <code>ListTestGridProjects</code> to get more results in a paginated request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1625,17 +1521,14 @@ pub mod list_test_grid_projects_output {
         ///
         /// To override the contents of this collection use [`set_test_grid_projects`](Self::set_test_grid_projects).
         ///
-        /// <p>The list of TestGridProjects, based on a <a>ListTestGridProjectsRequest</a>.</p>
-        pub fn test_grid_projects(
-            mut self,
-            input: impl Into<crate::model::TestGridProject>,
-        ) -> Self {
+        /// <p>The list of TestGridProjects, based on a <code>ListTestGridProjectsRequest</code>.</p>
+        pub fn test_grid_projects(mut self, input: crate::model::TestGridProject) -> Self {
             let mut v = self.test_grid_projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.test_grid_projects = Some(v);
             self
         }
-        /// <p>The list of TestGridProjects, based on a <a>ListTestGridProjectsRequest</a>.</p>
+        /// <p>The list of TestGridProjects, based on a <code>ListTestGridProjectsRequest</code>.</p>
         pub fn set_test_grid_projects(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TestGridProject>>,
@@ -1643,14 +1536,12 @@ pub mod list_test_grid_projects_output {
             self.test_grid_projects = input;
             self
         }
-        /// <p>Used for pagination. Pass into <a>ListTestGridProjects</a> to get more results in a paginated
-        /// request.</p>
+        /// <p>Used for pagination. Pass into <code>ListTestGridProjects</code> to get more results in a paginated request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Used for pagination. Pass into <a>ListTestGridProjects</a> to get more results in a paginated
-        /// request.</p>
+        /// <p>Used for pagination. Pass into <code>ListTestGridProjects</code> to get more results in a paginated request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1675,13 +1566,11 @@ impl ListTestGridProjectsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-    /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-    /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -1706,16 +1595,14 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-        /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-        /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1742,9 +1629,7 @@ impl ListTagsForResourceOutput {
 pub struct ListSuitesOutput {
     /// <p>Information about the suites.</p>
     pub suites: std::option::Option<std::vec::Vec<crate::model::Suite>>,
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSuitesOutput {
@@ -1752,9 +1637,7 @@ impl ListSuitesOutput {
     pub fn suites(&self) -> std::option::Option<&[crate::model::Suite]> {
         self.suites.as_deref()
     }
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1782,9 +1665,9 @@ pub mod list_suites_output {
         /// To override the contents of this collection use [`set_suites`](Self::set_suites).
         ///
         /// <p>Information about the suites.</p>
-        pub fn suites(mut self, input: impl Into<crate::model::Suite>) -> Self {
+        pub fn suites(mut self, input: crate::model::Suite) -> Self {
             let mut v = self.suites.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.suites = Some(v);
             self
         }
@@ -1796,16 +1679,12 @@ pub mod list_suites_output {
             self.suites = input;
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1832,9 +1711,7 @@ impl ListSuitesOutput {
 pub struct ListSamplesOutput {
     /// <p>Information about the samples.</p>
     pub samples: std::option::Option<std::vec::Vec<crate::model::Sample>>,
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSamplesOutput {
@@ -1842,9 +1719,7 @@ impl ListSamplesOutput {
     pub fn samples(&self) -> std::option::Option<&[crate::model::Sample]> {
         self.samples.as_deref()
     }
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1872,9 +1747,9 @@ pub mod list_samples_output {
         /// To override the contents of this collection use [`set_samples`](Self::set_samples).
         ///
         /// <p>Information about the samples.</p>
-        pub fn samples(mut self, input: impl Into<crate::model::Sample>) -> Self {
+        pub fn samples(mut self, input: crate::model::Sample) -> Self {
             let mut v = self.samples.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.samples = Some(v);
             self
         }
@@ -1886,16 +1761,12 @@ pub mod list_samples_output {
             self.samples = input;
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1922,9 +1793,7 @@ impl ListSamplesOutput {
 pub struct ListRunsOutput {
     /// <p>Information about the runs.</p>
     pub runs: std::option::Option<std::vec::Vec<crate::model::Run>>,
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRunsOutput {
@@ -1932,9 +1801,7 @@ impl ListRunsOutput {
     pub fn runs(&self) -> std::option::Option<&[crate::model::Run]> {
         self.runs.as_deref()
     }
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1962,9 +1829,9 @@ pub mod list_runs_output {
         /// To override the contents of this collection use [`set_runs`](Self::set_runs).
         ///
         /// <p>Information about the runs.</p>
-        pub fn runs(mut self, input: impl Into<crate::model::Run>) -> Self {
+        pub fn runs(mut self, input: crate::model::Run) -> Self {
             let mut v = self.runs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.runs = Some(v);
             self
         }
@@ -1976,16 +1843,12 @@ pub mod list_runs_output {
             self.runs = input;
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2006,29 +1869,24 @@ impl ListRunsOutput {
     }
 }
 
-/// <p>Represents the response from the server after AWS Device Farm makes a request to
-/// return information about the remote access session.</p>
+/// <p>Represents the response from the server after AWS Device Farm makes a request to return information about the remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRemoteAccessSessionsOutput {
-    /// <p>A container that represents the metadata from the service about each remote access session you are
-    /// requesting.</p>
+    /// <p>A container that represents the metadata from the service about each remote access session you are requesting.</p>
     pub remote_access_sessions:
         std::option::Option<std::vec::Vec<crate::model::RemoteAccessSession>>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRemoteAccessSessionsOutput {
-    /// <p>A container that represents the metadata from the service about each remote access session you are
-    /// requesting.</p>
+    /// <p>A container that represents the metadata from the service about each remote access session you are requesting.</p>
     pub fn remote_access_sessions(
         &self,
     ) -> std::option::Option<&[crate::model::RemoteAccessSession]> {
         self.remote_access_sessions.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2056,19 +1914,14 @@ pub mod list_remote_access_sessions_output {
         ///
         /// To override the contents of this collection use [`set_remote_access_sessions`](Self::set_remote_access_sessions).
         ///
-        /// <p>A container that represents the metadata from the service about each remote access session you are
-        /// requesting.</p>
-        pub fn remote_access_sessions(
-            mut self,
-            input: impl Into<crate::model::RemoteAccessSession>,
-        ) -> Self {
+        /// <p>A container that represents the metadata from the service about each remote access session you are requesting.</p>
+        pub fn remote_access_sessions(mut self, input: crate::model::RemoteAccessSession) -> Self {
             let mut v = self.remote_access_sessions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.remote_access_sessions = Some(v);
             self
         }
-        /// <p>A container that represents the metadata from the service about each remote access session you are
-        /// requesting.</p>
+        /// <p>A container that represents the metadata from the service about each remote access session you are requesting.</p>
         pub fn set_remote_access_sessions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RemoteAccessSession>>,
@@ -2076,14 +1929,12 @@ pub mod list_remote_access_sessions_output {
             self.remote_access_sessions = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2110,9 +1961,7 @@ impl ListRemoteAccessSessionsOutput {
 pub struct ListProjectsOutput {
     /// <p>Information about the projects.</p>
     pub projects: std::option::Option<std::vec::Vec<crate::model::Project>>,
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -2120,9 +1969,7 @@ impl ListProjectsOutput {
     pub fn projects(&self) -> std::option::Option<&[crate::model::Project]> {
         self.projects.as_deref()
     }
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2150,9 +1997,9 @@ pub mod list_projects_output {
         /// To override the contents of this collection use [`set_projects`](Self::set_projects).
         ///
         /// <p>Information about the projects.</p>
-        pub fn projects(mut self, input: impl Into<crate::model::Project>) -> Self {
+        pub fn projects(mut self, input: crate::model::Project) -> Self {
             let mut v = self.projects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.projects = Some(v);
             self
         }
@@ -2164,16 +2011,12 @@ pub mod list_projects_output {
             self.projects = input;
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2198,24 +2041,20 @@ impl ListProjectsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingTransactionsOutput {
-    /// <p>The audit log of subscriptions you have purchased and modified through AWS Device
-    /// Farm.</p>
+    /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
     pub offering_transactions:
         std::option::Option<std::vec::Vec<crate::model::OfferingTransaction>>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOfferingTransactionsOutput {
-    /// <p>The audit log of subscriptions you have purchased and modified through AWS Device
-    /// Farm.</p>
+    /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
     pub fn offering_transactions(
         &self,
     ) -> std::option::Option<&[crate::model::OfferingTransaction]> {
         self.offering_transactions.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2243,19 +2082,14 @@ pub mod list_offering_transactions_output {
         ///
         /// To override the contents of this collection use [`set_offering_transactions`](Self::set_offering_transactions).
         ///
-        /// <p>The audit log of subscriptions you have purchased and modified through AWS Device
-        /// Farm.</p>
-        pub fn offering_transactions(
-            mut self,
-            input: impl Into<crate::model::OfferingTransaction>,
-        ) -> Self {
+        /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
+        pub fn offering_transactions(mut self, input: crate::model::OfferingTransaction) -> Self {
             let mut v = self.offering_transactions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.offering_transactions = Some(v);
             self
         }
-        /// <p>The audit log of subscriptions you have purchased and modified through AWS Device
-        /// Farm.</p>
+        /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
         pub fn set_offering_transactions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OfferingTransaction>>,
@@ -2263,14 +2097,12 @@ pub mod list_offering_transactions_output {
             self.offering_transactions = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2297,8 +2129,7 @@ impl ListOfferingTransactionsOutput {
 pub struct ListOfferingsOutput {
     /// <p>A value that represents the list offering results.</p>
     pub offerings: std::option::Option<std::vec::Vec<crate::model::Offering>>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOfferingsOutput {
@@ -2306,8 +2137,7 @@ impl ListOfferingsOutput {
     pub fn offerings(&self) -> std::option::Option<&[crate::model::Offering]> {
         self.offerings.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2335,9 +2165,9 @@ pub mod list_offerings_output {
         /// To override the contents of this collection use [`set_offerings`](Self::set_offerings).
         ///
         /// <p>A value that represents the list offering results.</p>
-        pub fn offerings(mut self, input: impl Into<crate::model::Offering>) -> Self {
+        pub fn offerings(mut self, input: crate::model::Offering) -> Self {
             let mut v = self.offerings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.offerings = Some(v);
             self
         }
@@ -2349,14 +2179,12 @@ pub mod list_offerings_output {
             self.offerings = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2383,8 +2211,7 @@ impl ListOfferingsOutput {
 pub struct ListOfferingPromotionsOutput {
     /// <p>Information about the offering promotions.</p>
     pub offering_promotions: std::option::Option<std::vec::Vec<crate::model::OfferingPromotion>>,
-    /// <p>An identifier to be used in the next call to this operation, to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOfferingPromotionsOutput {
@@ -2392,8 +2219,7 @@ impl ListOfferingPromotionsOutput {
     pub fn offering_promotions(&self) -> std::option::Option<&[crate::model::OfferingPromotion]> {
         self.offering_promotions.as_deref()
     }
-    /// <p>An identifier to be used in the next call to this operation, to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2422,12 +2248,9 @@ pub mod list_offering_promotions_output {
         /// To override the contents of this collection use [`set_offering_promotions`](Self::set_offering_promotions).
         ///
         /// <p>Information about the offering promotions.</p>
-        pub fn offering_promotions(
-            mut self,
-            input: impl Into<crate::model::OfferingPromotion>,
-        ) -> Self {
+        pub fn offering_promotions(mut self, input: crate::model::OfferingPromotion) -> Self {
             let mut v = self.offering_promotions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.offering_promotions = Some(v);
             self
         }
@@ -2439,14 +2262,12 @@ pub mod list_offering_promotions_output {
             self.offering_promotions = input;
             self
         }
-        /// <p>An identifier to be used in the next call to this operation, to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier to be used in the next call to this operation, to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2473,8 +2294,7 @@ impl ListOfferingPromotionsOutput {
 pub struct ListNetworkProfilesOutput {
     /// <p>A list of the available network profiles.</p>
     pub network_profiles: std::option::Option<std::vec::Vec<crate::model::NetworkProfile>>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNetworkProfilesOutput {
@@ -2482,8 +2302,7 @@ impl ListNetworkProfilesOutput {
     pub fn network_profiles(&self) -> std::option::Option<&[crate::model::NetworkProfile]> {
         self.network_profiles.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2512,9 +2331,9 @@ pub mod list_network_profiles_output {
         /// To override the contents of this collection use [`set_network_profiles`](Self::set_network_profiles).
         ///
         /// <p>A list of the available network profiles.</p>
-        pub fn network_profiles(mut self, input: impl Into<crate::model::NetworkProfile>) -> Self {
+        pub fn network_profiles(mut self, input: crate::model::NetworkProfile) -> Self {
             let mut v = self.network_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.network_profiles = Some(v);
             self
         }
@@ -2526,14 +2345,12 @@ pub mod list_network_profiles_output {
             self.network_profiles = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2560,9 +2377,7 @@ impl ListNetworkProfilesOutput {
 pub struct ListJobsOutput {
     /// <p>Information about the jobs.</p>
     pub jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -2570,9 +2385,7 @@ impl ListJobsOutput {
     pub fn jobs(&self) -> std::option::Option<&[crate::model::Job]> {
         self.jobs.as_deref()
     }
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2600,9 +2413,9 @@ pub mod list_jobs_output {
         /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
         ///
         /// <p>Information about the jobs.</p>
-        pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
+        pub fn jobs(mut self, input: crate::model::Job) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.jobs = Some(v);
             self
         }
@@ -2614,16 +2427,12 @@ pub mod list_jobs_output {
             self.jobs = input;
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2650,8 +2459,7 @@ impl ListJobsOutput {
 pub struct ListInstanceProfilesOutput {
     /// <p>An object that contains information about your instance profiles.</p>
     pub instance_profiles: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
-    /// <p>An identifier that can be used in the next call to this operation to return the next
-    /// set of items in the list.</p>
+    /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstanceProfilesOutput {
@@ -2659,8 +2467,7 @@ impl ListInstanceProfilesOutput {
     pub fn instance_profiles(&self) -> std::option::Option<&[crate::model::InstanceProfile]> {
         self.instance_profiles.as_deref()
     }
-    /// <p>An identifier that can be used in the next call to this operation to return the next
-    /// set of items in the list.</p>
+    /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2689,12 +2496,9 @@ pub mod list_instance_profiles_output {
         /// To override the contents of this collection use [`set_instance_profiles`](Self::set_instance_profiles).
         ///
         /// <p>An object that contains information about your instance profiles.</p>
-        pub fn instance_profiles(
-            mut self,
-            input: impl Into<crate::model::InstanceProfile>,
-        ) -> Self {
+        pub fn instance_profiles(mut self, input: crate::model::InstanceProfile) -> Self {
             let mut v = self.instance_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_profiles = Some(v);
             self
         }
@@ -2706,14 +2510,12 @@ pub mod list_instance_profiles_output {
             self.instance_profiles = input;
             self
         }
-        /// <p>An identifier that can be used in the next call to this operation to return the next
-        /// set of items in the list.</p>
+        /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that can be used in the next call to this operation to return the next
-        /// set of items in the list.</p>
+        /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2740,9 +2542,7 @@ impl ListInstanceProfilesOutput {
 pub struct ListDevicesOutput {
     /// <p>Information about the devices.</p>
     pub devices: std::option::Option<std::vec::Vec<crate::model::Device>>,
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicesOutput {
@@ -2750,9 +2550,7 @@ impl ListDevicesOutput {
     pub fn devices(&self) -> std::option::Option<&[crate::model::Device]> {
         self.devices.as_deref()
     }
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2780,9 +2578,9 @@ pub mod list_devices_output {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// <p>Information about the devices.</p>
-        pub fn devices(mut self, input: impl Into<crate::model::Device>) -> Self {
+        pub fn devices(mut self, input: crate::model::Device) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -2794,16 +2592,12 @@ pub mod list_devices_output {
             self.devices = input;
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2830,9 +2624,7 @@ impl ListDevicesOutput {
 pub struct ListDevicePoolsOutput {
     /// <p>Information about the device pools.</p>
     pub device_pools: std::option::Option<std::vec::Vec<crate::model::DevicePool>>,
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicePoolsOutput {
@@ -2840,9 +2632,7 @@ impl ListDevicePoolsOutput {
     pub fn device_pools(&self) -> std::option::Option<&[crate::model::DevicePool]> {
         self.device_pools.as_deref()
     }
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2870,9 +2660,9 @@ pub mod list_device_pools_output {
         /// To override the contents of this collection use [`set_device_pools`](Self::set_device_pools).
         ///
         /// <p>Information about the device pools.</p>
-        pub fn device_pools(mut self, input: impl Into<crate::model::DevicePool>) -> Self {
+        pub fn device_pools(mut self, input: crate::model::DevicePool) -> Self {
             let mut v = self.device_pools.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_pools = Some(v);
             self
         }
@@ -2884,16 +2674,12 @@ pub mod list_device_pools_output {
             self.device_pools = input;
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2920,8 +2706,7 @@ impl ListDevicePoolsOutput {
 pub struct ListDeviceInstancesOutput {
     /// <p>An object that contains information about your device instances.</p>
     pub device_instances: std::option::Option<std::vec::Vec<crate::model::DeviceInstance>>,
-    /// <p>An identifier that can be used in the next call to this operation to return the next
-    /// set of items in the list.</p>
+    /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeviceInstancesOutput {
@@ -2929,8 +2714,7 @@ impl ListDeviceInstancesOutput {
     pub fn device_instances(&self) -> std::option::Option<&[crate::model::DeviceInstance]> {
         self.device_instances.as_deref()
     }
-    /// <p>An identifier that can be used in the next call to this operation to return the next
-    /// set of items in the list.</p>
+    /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2959,9 +2743,9 @@ pub mod list_device_instances_output {
         /// To override the contents of this collection use [`set_device_instances`](Self::set_device_instances).
         ///
         /// <p>An object that contains information about your device instances.</p>
-        pub fn device_instances(mut self, input: impl Into<crate::model::DeviceInstance>) -> Self {
+        pub fn device_instances(mut self, input: crate::model::DeviceInstance) -> Self {
             let mut v = self.device_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.device_instances = Some(v);
             self
         }
@@ -2973,14 +2757,12 @@ pub mod list_device_instances_output {
             self.device_instances = input;
             self
         }
-        /// <p>An identifier that can be used in the next call to this operation to return the next
-        /// set of items in the list.</p>
+        /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that can be used in the next call to this operation to return the next
-        /// set of items in the list.</p>
+        /// <p>An identifier that can be used in the next call to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3007,9 +2789,7 @@ impl ListDeviceInstancesOutput {
 pub struct ListArtifactsOutput {
     /// <p>Information about the artifacts.</p>
     pub artifacts: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListArtifactsOutput {
@@ -3017,9 +2797,7 @@ impl ListArtifactsOutput {
     pub fn artifacts(&self) -> std::option::Option<&[crate::model::Artifact]> {
         self.artifacts.as_deref()
     }
-    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-    /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-    /// list.</p>
+    /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3047,9 +2825,9 @@ pub mod list_artifacts_output {
         /// To override the contents of this collection use [`set_artifacts`](Self::set_artifacts).
         ///
         /// <p>Information about the artifacts.</p>
-        pub fn artifacts(mut self, input: impl Into<crate::model::Artifact>) -> Self {
+        pub fn artifacts(mut self, input: crate::model::Artifact) -> Self {
             let mut v = self.artifacts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.artifacts = Some(v);
             self
         }
@@ -3061,16 +2839,12 @@ pub mod list_artifacts_output {
             self.artifacts = input;
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also
-        /// returned. It can be used in a subsequent call to this operation to return the next set of items in the
-        /// list.</p>
+        /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3091,8 +2865,7 @@ impl ListArtifactsOutput {
     }
 }
 
-/// <p>Represents the response from the server after AWS Device Farm makes a request to
-/// install to a remote access session.</p>
+/// <p>Represents the response from the server after AWS Device Farm makes a request to install to a remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstallToRemoteAccessSessionOutput {
@@ -3207,13 +2980,11 @@ impl GetVpceConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUploadOutput {
-    /// <p>An app or a set of one or more tests to upload or that have been
-    /// uploaded.</p>
+    /// <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
     pub upload: std::option::Option<crate::model::Upload>,
 }
 impl GetUploadOutput {
-    /// <p>An app or a set of one or more tests to upload or that have been
-    /// uploaded.</p>
+    /// <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
     pub fn upload(&self) -> std::option::Option<&crate::model::Upload> {
         self.upload.as_ref()
     }
@@ -3234,14 +3005,12 @@ pub mod get_upload_output {
         pub(crate) upload: std::option::Option<crate::model::Upload>,
     }
     impl Builder {
-        /// <p>An app or a set of one or more tests to upload or that have been
-        /// uploaded.</p>
+        /// <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
         pub fn upload(mut self, input: crate::model::Upload) -> Self {
             self.upload = Some(input);
             self
         }
-        /// <p>An app or a set of one or more tests to upload or that have been
-        /// uploaded.</p>
+        /// <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
         pub fn set_upload(mut self, input: std::option::Option<crate::model::Upload>) -> Self {
             self.upload = input;
             self
@@ -3265,11 +3034,11 @@ impl GetUploadOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTestGridSessionOutput {
-    /// <p>The <a>TestGridSession</a> that was requested.</p>
+    /// <p>The <code>TestGridSession</code> that was requested.</p>
     pub test_grid_session: std::option::Option<crate::model::TestGridSession>,
 }
 impl GetTestGridSessionOutput {
-    /// <p>The <a>TestGridSession</a> that was requested.</p>
+    /// <p>The <code>TestGridSession</code> that was requested.</p>
     pub fn test_grid_session(&self) -> std::option::Option<&crate::model::TestGridSession> {
         self.test_grid_session.as_ref()
     }
@@ -3290,12 +3059,12 @@ pub mod get_test_grid_session_output {
         pub(crate) test_grid_session: std::option::Option<crate::model::TestGridSession>,
     }
     impl Builder {
-        /// <p>The <a>TestGridSession</a> that was requested.</p>
+        /// <p>The <code>TestGridSession</code> that was requested.</p>
         pub fn test_grid_session(mut self, input: crate::model::TestGridSession) -> Self {
             self.test_grid_session = Some(input);
             self
         }
-        /// <p>The <a>TestGridSession</a> that was requested.</p>
+        /// <p>The <code>TestGridSession</code> that was requested.</p>
         pub fn set_test_grid_session(
             mut self,
             input: std::option::Option<crate::model::TestGridSession>,
@@ -3322,11 +3091,11 @@ impl GetTestGridSessionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTestGridProjectOutput {
-    /// <p>A <a>TestGridProject</a>.</p>
+    /// <p>A <code>TestGridProject</code>.</p>
     pub test_grid_project: std::option::Option<crate::model::TestGridProject>,
 }
 impl GetTestGridProjectOutput {
-    /// <p>A <a>TestGridProject</a>.</p>
+    /// <p>A <code>TestGridProject</code>.</p>
     pub fn test_grid_project(&self) -> std::option::Option<&crate::model::TestGridProject> {
         self.test_grid_project.as_ref()
     }
@@ -3347,12 +3116,12 @@ pub mod get_test_grid_project_output {
         pub(crate) test_grid_project: std::option::Option<crate::model::TestGridProject>,
     }
     impl Builder {
-        /// <p>A <a>TestGridProject</a>.</p>
+        /// <p>A <code>TestGridProject</code>.</p>
         pub fn test_grid_project(mut self, input: crate::model::TestGridProject) -> Self {
             self.test_grid_project = Some(input);
             self
         }
-        /// <p>A <a>TestGridProject</a>.</p>
+        /// <p>A <code>TestGridProject</code>.</p>
         pub fn set_test_grid_project(
             mut self,
             input: std::option::Option<crate::model::TestGridProject>,
@@ -3531,18 +3300,15 @@ impl GetRunOutput {
     }
 }
 
-/// <p>Represents the response from the server that lists detailed information about the
-/// remote access session.</p>
+/// <p>Represents the response from the server that lists detailed information about the remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRemoteAccessSessionOutput {
-    /// <p>A container that lists detailed information about the remote access
-    /// session.</p>
+    /// <p>A container that lists detailed information about the remote access session.</p>
     pub remote_access_session: std::option::Option<crate::model::RemoteAccessSession>,
 }
 impl GetRemoteAccessSessionOutput {
-    /// <p>A container that lists detailed information about the remote access
-    /// session.</p>
+    /// <p>A container that lists detailed information about the remote access session.</p>
     pub fn remote_access_session(&self) -> std::option::Option<&crate::model::RemoteAccessSession> {
         self.remote_access_session.as_ref()
     }
@@ -3563,14 +3329,12 @@ pub mod get_remote_access_session_output {
         pub(crate) remote_access_session: std::option::Option<crate::model::RemoteAccessSession>,
     }
     impl Builder {
-        /// <p>A container that lists detailed information about the remote access
-        /// session.</p>
+        /// <p>A container that lists detailed information about the remote access session.</p>
         pub fn remote_access_session(mut self, input: crate::model::RemoteAccessSession) -> Self {
             self.remote_access_session = Some(input);
             self
         }
-        /// <p>A container that lists detailed information about the remote access
-        /// session.</p>
+        /// <p>A container that lists detailed information about the remote access session.</p>
         pub fn set_remote_access_session(
             mut self,
             input: std::option::Option<crate::model::RemoteAccessSession>,
@@ -3659,8 +3423,7 @@ pub struct GetOfferingStatusOutput {
     pub next_period: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::OfferingStatus>,
     >,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOfferingStatusOutput {
@@ -3680,8 +3443,7 @@ impl GetOfferingStatusOutput {
     > {
         self.next_period.as_ref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3718,10 +3480,10 @@ pub mod get_offering_status_output {
         pub fn current(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::OfferingStatus>,
+            v: crate::model::OfferingStatus,
         ) -> Self {
             let mut hash_map = self.current.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.current = Some(hash_map);
             self
         }
@@ -3743,10 +3505,10 @@ pub mod get_offering_status_output {
         pub fn next_period(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::OfferingStatus>,
+            v: crate::model::OfferingStatus,
         ) -> Self {
             let mut hash_map = self.next_period.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.next_period = Some(hash_map);
             self
         }
@@ -3760,14 +3522,12 @@ pub mod get_offering_status_output {
             self.next_period = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4007,10 +3767,10 @@ pub mod get_device_pool_compatibility_output {
         /// <p>Information about compatible devices.</p>
         pub fn compatible_devices(
             mut self,
-            input: impl Into<crate::model::DevicePoolCompatibilityResult>,
+            input: crate::model::DevicePoolCompatibilityResult,
         ) -> Self {
             let mut v = self.compatible_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.compatible_devices = Some(v);
             self
         }
@@ -4029,10 +3789,10 @@ pub mod get_device_pool_compatibility_output {
         /// <p>Information about incompatible devices.</p>
         pub fn incompatible_devices(
             mut self,
-            input: impl Into<crate::model::DevicePoolCompatibilityResult>,
+            input: crate::model::DevicePoolCompatibilityResult,
         ) -> Self {
             let mut v = self.incompatible_devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.incompatible_devices = Some(v);
             self
         }
@@ -4228,8 +3988,7 @@ impl GetDeviceOutput {
     }
 }
 
-/// <p>Represents the account settings return values from the
-/// <code>GetAccountSettings</code> request.</p>
+/// <p>Represents the account settings return values from the <code>GetAccountSettings</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountSettingsOutput {
@@ -4406,8 +4165,7 @@ impl DeleteRunOutput {
     }
 }
 
-/// <p>The response from the server when a request is made to delete the remote access
-/// session.</p>
+/// <p>The response from the server when a request is made to delete the remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRemoteAccessSessionOutput {}
@@ -4672,19 +4430,17 @@ impl CreateUploadOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTestGridUrlOutput {
-    /// <p>A signed URL, expiring in <a>CreateTestGridUrlRequest$expiresInSeconds</a> seconds, to be passed
-    /// to a <code>RemoteWebDriver</code>. </p>
+    /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>. </p>
     pub url: std::option::Option<std::string::String>,
-    /// <p>The number of seconds the URL from <a>CreateTestGridUrlResult$url</a> stays active.</p>
+    /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
     pub expires: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateTestGridUrlOutput {
-    /// <p>A signed URL, expiring in <a>CreateTestGridUrlRequest$expiresInSeconds</a> seconds, to be passed
-    /// to a <code>RemoteWebDriver</code>. </p>
+    /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>. </p>
     pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
-    /// <p>The number of seconds the URL from <a>CreateTestGridUrlResult$url</a> stays active.</p>
+    /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
     pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
@@ -4707,24 +4463,22 @@ pub mod create_test_grid_url_output {
         pub(crate) expires: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>A signed URL, expiring in <a>CreateTestGridUrlRequest$expiresInSeconds</a> seconds, to be passed
-        /// to a <code>RemoteWebDriver</code>. </p>
+        /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>. </p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
             self.url = Some(input.into());
             self
         }
-        /// <p>A signed URL, expiring in <a>CreateTestGridUrlRequest$expiresInSeconds</a> seconds, to be passed
-        /// to a <code>RemoteWebDriver</code>. </p>
+        /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>. </p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
         }
-        /// <p>The number of seconds the URL from <a>CreateTestGridUrlResult$url</a> stays active.</p>
+        /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
         pub fn expires(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires = Some(input);
             self
         }
-        /// <p>The number of seconds the URL from <a>CreateTestGridUrlResult$url</a> stays active.</p>
+        /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
         pub fn set_expires(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4805,18 +4559,15 @@ impl CreateTestGridProjectOutput {
     }
 }
 
-/// <p>Represents the server response from a request to create a remote access
-/// session.</p>
+/// <p>Represents the server response from a request to create a remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRemoteAccessSessionOutput {
-    /// <p>A container that describes the remote access session when the request to create a
-    /// remote access session is sent.</p>
+    /// <p>A container that describes the remote access session when the request to create a remote access session is sent.</p>
     pub remote_access_session: std::option::Option<crate::model::RemoteAccessSession>,
 }
 impl CreateRemoteAccessSessionOutput {
-    /// <p>A container that describes the remote access session when the request to create a
-    /// remote access session is sent.</p>
+    /// <p>A container that describes the remote access session when the request to create a remote access session is sent.</p>
     pub fn remote_access_session(&self) -> std::option::Option<&crate::model::RemoteAccessSession> {
         self.remote_access_session.as_ref()
     }
@@ -4837,14 +4588,12 @@ pub mod create_remote_access_session_output {
         pub(crate) remote_access_session: std::option::Option<crate::model::RemoteAccessSession>,
     }
     impl Builder {
-        /// <p>A container that describes the remote access session when the request to create a
-        /// remote access session is sent.</p>
+        /// <p>A container that describes the remote access session when the request to create a remote access session is sent.</p>
         pub fn remote_access_session(mut self, input: crate::model::RemoteAccessSession) -> Self {
             self.remote_access_session = Some(input);
             self
         }
-        /// <p>A container that describes the remote access session when the request to create a
-        /// remote access session is sent.</p>
+        /// <p>A container that describes the remote access session when the request to create a remote access session is sent.</p>
         pub fn set_remote_access_session(
             mut self,
             input: std::option::Option<crate::model::RemoteAccessSession>,
@@ -4925,13 +4674,11 @@ impl CreateProjectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkProfileOutput {
-    /// <p>The network profile that is returned by the create network profile
-    /// request.</p>
+    /// <p>The network profile that is returned by the create network profile request.</p>
     pub network_profile: std::option::Option<crate::model::NetworkProfile>,
 }
 impl CreateNetworkProfileOutput {
-    /// <p>The network profile that is returned by the create network profile
-    /// request.</p>
+    /// <p>The network profile that is returned by the create network profile request.</p>
     pub fn network_profile(&self) -> std::option::Option<&crate::model::NetworkProfile> {
         self.network_profile.as_ref()
     }
@@ -4952,14 +4699,12 @@ pub mod create_network_profile_output {
         pub(crate) network_profile: std::option::Option<crate::model::NetworkProfile>,
     }
     impl Builder {
-        /// <p>The network profile that is returned by the create network profile
-        /// request.</p>
+        /// <p>The network profile that is returned by the create network profile request.</p>
         pub fn network_profile(mut self, input: crate::model::NetworkProfile) -> Self {
             self.network_profile = Some(input);
             self
         }
-        /// <p>The network profile that is returned by the create network profile
-        /// request.</p>
+        /// <p>The network profile that is returned by the create network profile request.</p>
         pub fn set_network_profile(
             mut self,
             input: std::option::Option<crate::model::NetworkProfile>,

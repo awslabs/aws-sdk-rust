@@ -827,9 +827,9 @@ pub mod list_subscription_definition_versions_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// Information about a version.
-        pub fn versions(mut self, input: impl Into<crate::model::VersionInformation>) -> Self {
+        pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -900,12 +900,9 @@ pub mod list_subscription_definitions_output {
         /// To override the contents of this collection use [`set_definitions`](Self::set_definitions).
         ///
         /// Information about a definition.
-        pub fn definitions(
-            mut self,
-            input: impl Into<crate::model::DefinitionInformation>,
-        ) -> Self {
+        pub fn definitions(mut self, input: crate::model::DefinitionInformation) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.definitions = Some(v);
             self
         }
@@ -995,9 +992,9 @@ pub mod list_resource_definition_versions_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// Information about a version.
-        pub fn versions(mut self, input: impl Into<crate::model::VersionInformation>) -> Self {
+        pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -1068,12 +1065,9 @@ pub mod list_resource_definitions_output {
         /// To override the contents of this collection use [`set_definitions`](Self::set_definitions).
         ///
         /// Information about a definition.
-        pub fn definitions(
-            mut self,
-            input: impl Into<crate::model::DefinitionInformation>,
-        ) -> Self {
+        pub fn definitions(mut self, input: crate::model::DefinitionInformation) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.definitions = Some(v);
             self
         }
@@ -1163,9 +1157,9 @@ pub mod list_logger_definition_versions_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// Information about a version.
-        pub fn versions(mut self, input: impl Into<crate::model::VersionInformation>) -> Self {
+        pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -1236,12 +1230,9 @@ pub mod list_logger_definitions_output {
         /// To override the contents of this collection use [`set_definitions`](Self::set_definitions).
         ///
         /// Information about a definition.
-        pub fn definitions(
-            mut self,
-            input: impl Into<crate::model::DefinitionInformation>,
-        ) -> Self {
+        pub fn definitions(mut self, input: crate::model::DefinitionInformation) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.definitions = Some(v);
             self
         }
@@ -1331,9 +1322,9 @@ pub mod list_group_versions_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// Information about a version.
-        pub fn versions(mut self, input: impl Into<crate::model::VersionInformation>) -> Self {
+        pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -1403,9 +1394,9 @@ pub mod list_groups_output {
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
         /// Information about a group.
-        pub fn groups(mut self, input: impl Into<crate::model::GroupInformation>) -> Self {
+        pub fn groups(mut self, input: crate::model::GroupInformation) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.groups = Some(v);
             self
         }
@@ -1486,10 +1477,10 @@ pub mod list_group_certificate_authorities_output {
         /// A list of certificate authorities associated with the group.
         pub fn group_certificate_authorities(
             mut self,
-            input: impl Into<crate::model::GroupCertificateAuthorityProperties>,
+            input: crate::model::GroupCertificateAuthorityProperties,
         ) -> Self {
             let mut v = self.group_certificate_authorities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_certificate_authorities = Some(v);
             self
         }
@@ -1570,9 +1561,9 @@ pub mod list_function_definition_versions_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// Information about a version.
-        pub fn versions(mut self, input: impl Into<crate::model::VersionInformation>) -> Self {
+        pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -1643,12 +1634,9 @@ pub mod list_function_definitions_output {
         /// To override the contents of this collection use [`set_definitions`](Self::set_definitions).
         ///
         /// Information about a definition.
-        pub fn definitions(
-            mut self,
-            input: impl Into<crate::model::DefinitionInformation>,
-        ) -> Self {
+        pub fn definitions(mut self, input: crate::model::DefinitionInformation) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.definitions = Some(v);
             self
         }
@@ -1738,9 +1726,9 @@ pub mod list_device_definition_versions_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// Information about a version.
-        pub fn versions(mut self, input: impl Into<crate::model::VersionInformation>) -> Self {
+        pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -1811,12 +1799,9 @@ pub mod list_device_definitions_output {
         /// To override the contents of this collection use [`set_definitions`](Self::set_definitions).
         ///
         /// Information about a definition.
-        pub fn definitions(
-            mut self,
-            input: impl Into<crate::model::DefinitionInformation>,
-        ) -> Self {
+        pub fn definitions(mut self, input: crate::model::DefinitionInformation) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.definitions = Some(v);
             self
         }
@@ -1896,9 +1881,9 @@ pub mod list_deployments_output {
         /// To override the contents of this collection use [`set_deployments`](Self::set_deployments).
         ///
         /// A list of deployments for the requested groups.
-        pub fn deployments(mut self, input: impl Into<crate::model::Deployment>) -> Self {
+        pub fn deployments(mut self, input: crate::model::Deployment) -> Self {
             let mut v = self.deployments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployments = Some(v);
             self
         }
@@ -1988,9 +1973,9 @@ pub mod list_core_definition_versions_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// Information about a version.
-        pub fn versions(mut self, input: impl Into<crate::model::VersionInformation>) -> Self {
+        pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -2061,12 +2046,9 @@ pub mod list_core_definitions_output {
         /// To override the contents of this collection use [`set_definitions`](Self::set_definitions).
         ///
         /// Information about a definition.
-        pub fn definitions(
-            mut self,
-            input: impl Into<crate::model::DefinitionInformation>,
-        ) -> Self {
+        pub fn definitions(mut self, input: crate::model::DefinitionInformation) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.definitions = Some(v);
             self
         }
@@ -2156,9 +2138,9 @@ pub mod list_connector_definition_versions_output {
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
         /// Information about a version.
-        pub fn versions(mut self, input: impl Into<crate::model::VersionInformation>) -> Self {
+        pub fn versions(mut self, input: crate::model::VersionInformation) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.versions = Some(v);
             self
         }
@@ -2229,12 +2211,9 @@ pub mod list_connector_definitions_output {
         /// To override the contents of this collection use [`set_definitions`](Self::set_definitions).
         ///
         /// Information about a definition.
-        pub fn definitions(
-            mut self,
-            input: impl Into<crate::model::DefinitionInformation>,
-        ) -> Self {
+        pub fn definitions(mut self, input: crate::model::DefinitionInformation) -> Self {
             let mut v = self.definitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.definitions = Some(v);
             self
         }
@@ -2315,9 +2294,9 @@ pub mod list_bulk_deployments_output {
         /// To override the contents of this collection use [`set_bulk_deployments`](Self::set_bulk_deployments).
         ///
         /// A list of bulk deployments.
-        pub fn bulk_deployments(mut self, input: impl Into<crate::model::BulkDeployment>) -> Self {
+        pub fn bulk_deployments(mut self, input: crate::model::BulkDeployment) -> Self {
             let mut v = self.bulk_deployments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.bulk_deployments = Some(v);
             self
         }
@@ -2398,9 +2377,9 @@ pub mod list_bulk_deployment_detailed_reports_output {
         /// To override the contents of this collection use [`set_deployments`](Self::set_deployments).
         ///
         /// A list of the individual group deployments in the bulk deployment operation.
-        pub fn deployments(mut self, input: impl Into<crate::model::BulkDeploymentResult>) -> Self {
+        pub fn deployments(mut self, input: crate::model::BulkDeploymentResult) -> Self {
             let mut v = self.deployments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployments = Some(v);
             self
         }
@@ -5083,9 +5062,9 @@ pub mod get_deployment_status_output {
         /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
         ///
         /// Error details
-        pub fn error_details(mut self, input: impl Into<crate::model::ErrorDetail>) -> Self {
+        pub fn error_details(mut self, input: crate::model::ErrorDetail) -> Self {
             let mut v = self.error_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_details = Some(v);
             self
         }
@@ -5932,12 +5911,9 @@ pub mod get_connectivity_info_output {
         /// To override the contents of this collection use [`set_connectivity_info`](Self::set_connectivity_info).
         ///
         /// Connectivity info list.
-        pub fn connectivity_info(
-            mut self,
-            input: impl Into<crate::model::ConnectivityInfo>,
-        ) -> Self {
+        pub fn connectivity_info(mut self, input: crate::model::ConnectivityInfo) -> Self {
             let mut v = self.connectivity_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connectivity_info = Some(v);
             self
         }
@@ -6099,9 +6075,9 @@ pub mod get_bulk_deployment_status_output {
         /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
         ///
         /// Error details
-        pub fn error_details(mut self, input: impl Into<crate::model::ErrorDetail>) -> Self {
+        pub fn error_details(mut self, input: crate::model::ErrorDetail) -> Self {
             let mut v = self.error_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_details = Some(v);
             self
         }

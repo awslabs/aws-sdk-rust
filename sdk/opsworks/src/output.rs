@@ -885,11 +885,7 @@ pub struct ListTagsOutput {
     /// <p>A set of key-value pairs that contain tag keys and tag values that are attached to a stack or layer.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that
-    /// you can assign to the request object's <code>NextToken</code> parameter to get the next set of results.
-    /// If the previous paginated request returned all of the remaining results,
-    /// this parameter is set to <code>null</code>.
-    /// </p>
+    /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to get the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsOutput {
@@ -900,11 +896,7 @@ impl ListTagsOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that
-    /// you can assign to the request object's <code>NextToken</code> parameter to get the next set of results.
-    /// If the previous paginated request returned all of the remaining results,
-    /// this parameter is set to <code>null</code>.
-    /// </p>
+    /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to get the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -954,20 +946,12 @@ pub mod list_tags_output {
             self.tags = input;
             self
         }
-        /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that
-        /// you can assign to the request object's <code>NextToken</code> parameter to get the next set of results.
-        /// If the previous paginated request returned all of the remaining results,
-        /// this parameter is set to <code>null</code>.
-        /// </p>
+        /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to get the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that
-        /// you can assign to the request object's <code>NextToken</code> parameter to get the next set of results.
-        /// If the previous paginated request returned all of the remaining results,
-        /// this parameter is set to <code>null</code>.
-        /// </p>
+        /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to get the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -992,13 +976,11 @@ impl ListTagsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantAccessOutput {
-    /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the
-    /// instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
+    /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
     pub temporary_credential: std::option::Option<crate::model::TemporaryCredential>,
 }
 impl GrantAccessOutput {
-    /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the
-    /// instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
+    /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
     pub fn temporary_credential(&self) -> std::option::Option<&crate::model::TemporaryCredential> {
         self.temporary_credential.as_ref()
     }
@@ -1019,14 +1001,12 @@ pub mod grant_access_output {
         pub(crate) temporary_credential: std::option::Option<crate::model::TemporaryCredential>,
     }
     impl Builder {
-        /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the
-        /// instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
+        /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
         pub fn temporary_credential(mut self, input: crate::model::TemporaryCredential) -> Self {
             self.temporary_credential = Some(input);
             self
         }
-        /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the
-        /// instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
+        /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
         pub fn set_temporary_credential(
             mut self,
             input: std::option::Option<crate::model::TemporaryCredential>,
@@ -1216,9 +1196,9 @@ pub mod describe_volumes_output {
         /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
         ///
         /// <p>An array of volume IDs.</p>
-        pub fn volumes(mut self, input: impl Into<crate::model::Volume>) -> Self {
+        pub fn volumes(mut self, input: crate::model::Volume) -> Self {
             let mut v = self.volumes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.volumes = Some(v);
             self
         }
@@ -1279,9 +1259,9 @@ pub mod describe_user_profiles_output {
         /// To override the contents of this collection use [`set_user_profiles`](Self::set_user_profiles).
         ///
         /// <p>A <code>Users</code> object that describes the specified users.</p>
-        pub fn user_profiles(mut self, input: impl Into<crate::model::UserProfile>) -> Self {
+        pub fn user_profiles(mut self, input: crate::model::UserProfile) -> Self {
             let mut v = self.user_profiles.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_profiles = Some(v);
             self
         }
@@ -1312,14 +1292,12 @@ impl DescribeUserProfilesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTimeBasedAutoScalingOutput {
-    /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the
-    /// configuration for the specified instances.</p>
+    /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
     pub time_based_auto_scaling_configurations:
         std::option::Option<std::vec::Vec<crate::model::TimeBasedAutoScalingConfiguration>>,
 }
 impl DescribeTimeBasedAutoScalingOutput {
-    /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the
-    /// configuration for the specified instances.</p>
+    /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
     pub fn time_based_auto_scaling_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::TimeBasedAutoScalingConfiguration]> {
@@ -1350,21 +1328,19 @@ pub mod describe_time_based_auto_scaling_output {
         ///
         /// To override the contents of this collection use [`set_time_based_auto_scaling_configurations`](Self::set_time_based_auto_scaling_configurations).
         ///
-        /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the
-        /// configuration for the specified instances.</p>
+        /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
         pub fn time_based_auto_scaling_configurations(
             mut self,
-            input: impl Into<crate::model::TimeBasedAutoScalingConfiguration>,
+            input: crate::model::TimeBasedAutoScalingConfiguration,
         ) -> Self {
             let mut v = self
                 .time_based_auto_scaling_configurations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.time_based_auto_scaling_configurations = Some(v);
             self
         }
-        /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the
-        /// configuration for the specified instances.</p>
+        /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
         pub fn set_time_based_auto_scaling_configurations(
             mut self,
             input: std::option::Option<
@@ -1480,9 +1456,9 @@ pub mod describe_stacks_output {
         /// To override the contents of this collection use [`set_stacks`](Self::set_stacks).
         ///
         /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
-        pub fn stacks(mut self, input: impl Into<crate::model::Stack>) -> Self {
+        pub fn stacks(mut self, input: crate::model::Stack) -> Self {
             let mut v = self.stacks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.stacks = Some(v);
             self
         }
@@ -1640,9 +1616,9 @@ pub mod describe_service_errors_output {
         /// To override the contents of this collection use [`set_service_errors`](Self::set_service_errors).
         ///
         /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-        pub fn service_errors(mut self, input: impl Into<crate::model::ServiceError>) -> Self {
+        pub fn service_errors(mut self, input: crate::model::ServiceError) -> Self {
             let mut v = self.service_errors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_errors = Some(v);
             self
         }
@@ -1704,9 +1680,9 @@ pub mod describe_rds_db_instances_output {
         /// To override the contents of this collection use [`set_rds_db_instances`](Self::set_rds_db_instances).
         ///
         /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-        pub fn rds_db_instances(mut self, input: impl Into<crate::model::RdsDbInstance>) -> Self {
+        pub fn rds_db_instances(mut self, input: crate::model::RdsDbInstance) -> Self {
             let mut v = self.rds_db_instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rds_db_instances = Some(v);
             self
         }
@@ -1767,9 +1743,9 @@ pub mod describe_raid_arrays_output {
         /// To override the contents of this collection use [`set_raid_arrays`](Self::set_raid_arrays).
         ///
         /// <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
-        pub fn raid_arrays(mut self, input: impl Into<crate::model::RaidArray>) -> Self {
+        pub fn raid_arrays(mut self, input: crate::model::RaidArray) -> Self {
             let mut v = self.raid_arrays.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.raid_arrays = Some(v);
             self
         }
@@ -1802,36 +1778,18 @@ impl DescribeRaidArraysOutput {
 pub struct DescribePermissionsOutput {
     /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the request object contains only a stack ID, the array contains a
-    /// <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the request object contains only an IAM ARN, the array contains a
-    /// <code>Permission</code> object with permissions for each of the user's stack IDs.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the request contains a stack ID and an IAM ARN, the array contains a single
-    /// <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p>
-    /// </li>
+    /// <li> <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p> </li>
+    /// <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>
+    /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
     /// </ul>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
 }
 impl DescribePermissionsOutput {
     /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
     /// <ul>
-    /// <li>
-    /// <p>If the request object contains only a stack ID, the array contains a
-    /// <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the request object contains only an IAM ARN, the array contains a
-    /// <code>Permission</code> object with permissions for each of the user's stack IDs.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the request contains a stack ID and an IAM ARN, the array contains a single
-    /// <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p>
-    /// </li>
+    /// <li> <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p> </li>
+    /// <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>
+    /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
     /// </ul>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::Permission]> {
         self.permissions.as_deref()
@@ -1859,39 +1817,21 @@ pub mod describe_permissions_output {
         ///
         /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
         /// <ul>
-        /// <li>
-        /// <p>If the request object contains only a stack ID, the array contains a
-        /// <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the request object contains only an IAM ARN, the array contains a
-        /// <code>Permission</code> object with permissions for each of the user's stack IDs.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the request contains a stack ID and an IAM ARN, the array contains a single
-        /// <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p>
-        /// </li>
+        /// <li> <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p> </li>
+        /// <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>
+        /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
         /// </ul>
-        pub fn permissions(mut self, input: impl Into<crate::model::Permission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::Permission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
         /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
         /// <ul>
-        /// <li>
-        /// <p>If the request object contains only a stack ID, the array contains a
-        /// <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the request object contains only an IAM ARN, the array contains a
-        /// <code>Permission</code> object with permissions for each of the user's stack IDs.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the request contains a stack ID and an IAM ARN, the array contains a single
-        /// <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p>
-        /// </li>
+        /// <li> <p>If the request object contains only a stack ID, the array contains a <code>Permission</code> object with permissions for each of the stack IAM ARNs.</p> </li>
+        /// <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>
+        /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
         /// </ul>
         pub fn set_permissions(
             mut self,
@@ -1950,12 +1890,9 @@ pub mod describe_operating_systems_output {
         /// To override the contents of this collection use [`set_operating_systems`](Self::set_operating_systems).
         ///
         /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
-        pub fn operating_systems(
-            mut self,
-            input: impl Into<crate::model::OperatingSystem>,
-        ) -> Self {
+        pub fn operating_systems(mut self, input: crate::model::OperatingSystem) -> Self {
             let mut v = self.operating_systems.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.operating_systems = Some(v);
             self
         }
@@ -2043,14 +1980,12 @@ impl DescribeMyUserProfileOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBasedAutoScalingOutput {
-    /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's
-    /// configuration.</p>
+    /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
     pub load_based_auto_scaling_configurations:
         std::option::Option<std::vec::Vec<crate::model::LoadBasedAutoScalingConfiguration>>,
 }
 impl DescribeLoadBasedAutoScalingOutput {
-    /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's
-    /// configuration.</p>
+    /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
     pub fn load_based_auto_scaling_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::LoadBasedAutoScalingConfiguration]> {
@@ -2081,21 +2016,19 @@ pub mod describe_load_based_auto_scaling_output {
         ///
         /// To override the contents of this collection use [`set_load_based_auto_scaling_configurations`](Self::set_load_based_auto_scaling_configurations).
         ///
-        /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's
-        /// configuration.</p>
+        /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
         pub fn load_based_auto_scaling_configurations(
             mut self,
-            input: impl Into<crate::model::LoadBasedAutoScalingConfiguration>,
+            input: crate::model::LoadBasedAutoScalingConfiguration,
         ) -> Self {
             let mut v = self
                 .load_based_auto_scaling_configurations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_based_auto_scaling_configurations = Some(v);
             self
         }
-        /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's
-        /// configuration.</p>
+        /// <p>An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each layer's configuration.</p>
         pub fn set_load_based_auto_scaling_configurations(
             mut self,
             input: std::option::Option<
@@ -2154,9 +2087,9 @@ pub mod describe_layers_output {
         /// To override the contents of this collection use [`set_layers`](Self::set_layers).
         ///
         /// <p>An array of <code>Layer</code> objects that describe the layers.</p>
-        pub fn layers(mut self, input: impl Into<crate::model::Layer>) -> Self {
+        pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.layers = Some(v);
             self
         }
@@ -2217,9 +2150,9 @@ pub mod describe_instances_output {
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
         /// <p>An array of <code>Instance</code> objects that describe the instances.</p>
-        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances = Some(v);
             self
         }
@@ -2250,14 +2183,12 @@ impl DescribeInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticLoadBalancersOutput {
-    /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing
-    /// instances.</p>
+    /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
     pub elastic_load_balancers:
         std::option::Option<std::vec::Vec<crate::model::ElasticLoadBalancer>>,
 }
 impl DescribeElasticLoadBalancersOutput {
-    /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing
-    /// instances.</p>
+    /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
     pub fn elastic_load_balancers(
         &self,
     ) -> std::option::Option<&[crate::model::ElasticLoadBalancer]> {
@@ -2285,19 +2216,14 @@ pub mod describe_elastic_load_balancers_output {
         ///
         /// To override the contents of this collection use [`set_elastic_load_balancers`](Self::set_elastic_load_balancers).
         ///
-        /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing
-        /// instances.</p>
-        pub fn elastic_load_balancers(
-            mut self,
-            input: impl Into<crate::model::ElasticLoadBalancer>,
-        ) -> Self {
+        /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
+        pub fn elastic_load_balancers(mut self, input: crate::model::ElasticLoadBalancer) -> Self {
             let mut v = self.elastic_load_balancers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.elastic_load_balancers = Some(v);
             self
         }
-        /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing
-        /// instances.</p>
+        /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
         pub fn set_elastic_load_balancers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ElasticLoadBalancer>>,
@@ -2354,9 +2280,9 @@ pub mod describe_elastic_ips_output {
         /// To override the contents of this collection use [`set_elastic_ips`](Self::set_elastic_ips).
         ///
         /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
-        pub fn elastic_ips(mut self, input: impl Into<crate::model::ElasticIp>) -> Self {
+        pub fn elastic_ips(mut self, input: crate::model::ElasticIp) -> Self {
             let mut v = self.elastic_ips.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.elastic_ips = Some(v);
             self
         }
@@ -2389,10 +2315,7 @@ impl DescribeElasticIpsOutput {
 pub struct DescribeEcsClustersOutput {
     /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
     pub ecs_clusters: std::option::Option<std::vec::Vec<crate::model::EcsCluster>>,
-    /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that
-    /// you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results.
-    /// If the previous paginated request returned all of the remaining results,
-    /// this parameter is set to <code>null</code>.</p>
+    /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEcsClustersOutput {
@@ -2400,10 +2323,7 @@ impl DescribeEcsClustersOutput {
     pub fn ecs_clusters(&self) -> std::option::Option<&[crate::model::EcsCluster]> {
         self.ecs_clusters.as_deref()
     }
-    /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that
-    /// you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results.
-    /// If the previous paginated request returned all of the remaining results,
-    /// this parameter is set to <code>null</code>.</p>
+    /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2431,9 +2351,9 @@ pub mod describe_ecs_clusters_output {
         /// To override the contents of this collection use [`set_ecs_clusters`](Self::set_ecs_clusters).
         ///
         /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
-        pub fn ecs_clusters(mut self, input: impl Into<crate::model::EcsCluster>) -> Self {
+        pub fn ecs_clusters(mut self, input: crate::model::EcsCluster) -> Self {
             let mut v = self.ecs_clusters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ecs_clusters = Some(v);
             self
         }
@@ -2445,18 +2365,12 @@ pub mod describe_ecs_clusters_output {
             self.ecs_clusters = input;
             self
         }
-        /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that
-        /// you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results.
-        /// If the previous paginated request returned all of the remaining results,
-        /// this parameter is set to <code>null</code>.</p>
+        /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that
-        /// you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results.
-        /// If the previous paginated request returned all of the remaining results,
-        /// this parameter is set to <code>null</code>.</p>
+        /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2511,9 +2425,9 @@ pub mod describe_deployments_output {
         /// To override the contents of this collection use [`set_deployments`](Self::set_deployments).
         ///
         /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-        pub fn deployments(mut self, input: impl Into<crate::model::Deployment>) -> Self {
+        pub fn deployments(mut self, input: crate::model::Deployment) -> Self {
             let mut v = self.deployments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployments = Some(v);
             self
         }
@@ -2574,9 +2488,9 @@ pub mod describe_commands_output {
         /// To override the contents of this collection use [`set_commands`](Self::set_commands).
         ///
         /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-        pub fn commands(mut self, input: impl Into<crate::model::Command>) -> Self {
+        pub fn commands(mut self, input: crate::model::Command) -> Self {
             let mut v = self.commands.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.commands = Some(v);
             self
         }
@@ -2637,9 +2551,9 @@ pub mod describe_apps_output {
         /// To override the contents of this collection use [`set_apps`](Self::set_apps).
         ///
         /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
-        pub fn apps(mut self, input: impl Into<crate::model::App>) -> Self {
+        pub fn apps(mut self, input: crate::model::App) -> Self {
             let mut v = self.apps.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.apps = Some(v);
             self
         }
@@ -2698,9 +2612,9 @@ pub mod describe_agent_versions_output {
         /// To override the contents of this collection use [`set_agent_versions`](Self::set_agent_versions).
         ///
         /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
-        pub fn agent_versions(mut self, input: impl Into<crate::model::AgentVersion>) -> Self {
+        pub fn agent_versions(mut self, input: crate::model::AgentVersion) -> Self {
             let mut v = self.agent_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.agent_versions = Some(v);
             self
         }
@@ -3085,13 +2999,11 @@ impl CreateUserProfileOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStackOutput {
-    /// <p>The stack ID, which is an opaque string that you use to identify the stack when performing
-    /// actions such as <code>DescribeStacks</code>.</p>
+    /// <p>The stack ID, which is an opaque string that you use to identify the stack when performing actions such as <code>DescribeStacks</code>.</p>
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl CreateStackOutput {
-    /// <p>The stack ID, which is an opaque string that you use to identify the stack when performing
-    /// actions such as <code>DescribeStacks</code>.</p>
+    /// <p>The stack ID, which is an opaque string that you use to identify the stack when performing actions such as <code>DescribeStacks</code>.</p>
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
@@ -3112,14 +3024,12 @@ pub mod create_stack_output {
         pub(crate) stack_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The stack ID, which is an opaque string that you use to identify the stack when performing
-        /// actions such as <code>DescribeStacks</code>.</p>
+        /// <p>The stack ID, which is an opaque string that you use to identify the stack when performing actions such as <code>DescribeStacks</code>.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_id = Some(input.into());
             self
         }
-        /// <p>The stack ID, which is an opaque string that you use to identify the stack when performing
-        /// actions such as <code>DescribeStacks</code>.</p>
+        /// <p>The stack ID, which is an opaque string that you use to identify the stack when performing actions such as <code>DescribeStacks</code>.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Glue
@@ -507,6 +507,7 @@ where
     ///
     /// See [`GetBlueprintRuns`](crate::client::fluent_builders::GetBlueprintRuns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetBlueprintRuns::into_paginator).
     pub fn get_blueprint_runs(&self) -> fluent_builders::GetBlueprintRuns<C, M, R> {
         fluent_builders::GetBlueprintRuns::new(self.handle.clone())
     }
@@ -528,6 +529,7 @@ where
     ///
     /// See [`GetClassifiers`](crate::client::fluent_builders::GetClassifiers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetClassifiers::into_paginator).
     pub fn get_classifiers(&self) -> fluent_builders::GetClassifiers<C, M, R> {
         fluent_builders::GetClassifiers::new(self.handle.clone())
     }
@@ -560,6 +562,7 @@ where
     ///
     /// See [`GetConnections`](crate::client::fluent_builders::GetConnections) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetConnections::into_paginator).
     pub fn get_connections(&self) -> fluent_builders::GetConnections<C, M, R> {
         fluent_builders::GetConnections::new(self.handle.clone())
     }
@@ -574,6 +577,7 @@ where
     ///
     /// See [`GetCrawlerMetrics`](crate::client::fluent_builders::GetCrawlerMetrics) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCrawlerMetrics::into_paginator).
     pub fn get_crawler_metrics(&self) -> fluent_builders::GetCrawlerMetrics<C, M, R> {
         fluent_builders::GetCrawlerMetrics::new(self.handle.clone())
     }
@@ -581,6 +585,7 @@ where
     ///
     /// See [`GetCrawlers`](crate::client::fluent_builders::GetCrawlers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCrawlers::into_paginator).
     pub fn get_crawlers(&self) -> fluent_builders::GetCrawlers<C, M, R> {
         fluent_builders::GetCrawlers::new(self.handle.clone())
     }
@@ -595,6 +600,7 @@ where
     ///
     /// See [`GetDatabases`](crate::client::fluent_builders::GetDatabases) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDatabases::into_paginator).
     pub fn get_databases(&self) -> fluent_builders::GetDatabases<C, M, R> {
         fluent_builders::GetDatabases::new(self.handle.clone())
     }
@@ -625,6 +631,7 @@ where
     ///
     /// See [`GetDevEndpoints`](crate::client::fluent_builders::GetDevEndpoints) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDevEndpoints::into_paginator).
     pub fn get_dev_endpoints(&self) -> fluent_builders::GetDevEndpoints<C, M, R> {
         fluent_builders::GetDevEndpoints::new(self.handle.clone())
     }
@@ -653,6 +660,7 @@ where
     ///
     /// See [`GetJobRuns`](crate::client::fluent_builders::GetJobRuns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetJobRuns::into_paginator).
     pub fn get_job_runs(&self) -> fluent_builders::GetJobRuns<C, M, R> {
         fluent_builders::GetJobRuns::new(self.handle.clone())
     }
@@ -660,6 +668,7 @@ where
     ///
     /// See [`GetJobs`](crate::client::fluent_builders::GetJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetJobs::into_paginator).
     pub fn get_jobs(&self) -> fluent_builders::GetJobs<C, M, R> {
         fluent_builders::GetJobs::new(self.handle.clone())
     }
@@ -681,6 +690,7 @@ where
     ///
     /// See [`GetMLTaskRuns`](crate::client::fluent_builders::GetMLTaskRuns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetMLTaskRuns::into_paginator).
     pub fn get_ml_task_runs(&self) -> fluent_builders::GetMLTaskRuns<C, M, R> {
         fluent_builders::GetMLTaskRuns::new(self.handle.clone())
     }
@@ -695,6 +705,7 @@ where
     ///
     /// See [`GetMLTransforms`](crate::client::fluent_builders::GetMLTransforms) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetMLTransforms::into_paginator).
     pub fn get_ml_transforms(&self) -> fluent_builders::GetMLTransforms<C, M, R> {
         fluent_builders::GetMLTransforms::new(self.handle.clone())
     }
@@ -709,6 +720,7 @@ where
     ///
     /// See [`GetPartitionIndexes`](crate::client::fluent_builders::GetPartitionIndexes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetPartitionIndexes::into_paginator).
     pub fn get_partition_indexes(&self) -> fluent_builders::GetPartitionIndexes<C, M, R> {
         fluent_builders::GetPartitionIndexes::new(self.handle.clone())
     }
@@ -716,6 +728,7 @@ where
     ///
     /// See [`GetPartitions`](crate::client::fluent_builders::GetPartitions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetPartitions::into_paginator).
     pub fn get_partitions(&self) -> fluent_builders::GetPartitions<C, M, R> {
         fluent_builders::GetPartitions::new(self.handle.clone())
     }
@@ -737,6 +750,7 @@ where
     ///
     /// See [`GetResourcePolicies`](crate::client::fluent_builders::GetResourcePolicies) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourcePolicies::into_paginator).
     pub fn get_resource_policies(&self) -> fluent_builders::GetResourcePolicies<C, M, R> {
         fluent_builders::GetResourcePolicies::new(self.handle.clone())
     }
@@ -786,6 +800,7 @@ where
     ///
     /// See [`GetSecurityConfigurations`](crate::client::fluent_builders::GetSecurityConfigurations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSecurityConfigurations::into_paginator).
     pub fn get_security_configurations(
         &self,
     ) -> fluent_builders::GetSecurityConfigurations<C, M, R> {
@@ -802,6 +817,7 @@ where
     ///
     /// See [`GetTables`](crate::client::fluent_builders::GetTables) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTables::into_paginator).
     pub fn get_tables(&self) -> fluent_builders::GetTables<C, M, R> {
         fluent_builders::GetTables::new(self.handle.clone())
     }
@@ -816,6 +832,7 @@ where
     ///
     /// See [`GetTableVersions`](crate::client::fluent_builders::GetTableVersions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTableVersions::into_paginator).
     pub fn get_table_versions(&self) -> fluent_builders::GetTableVersions<C, M, R> {
         fluent_builders::GetTableVersions::new(self.handle.clone())
     }
@@ -837,8 +854,37 @@ where
     ///
     /// See [`GetTriggers`](crate::client::fluent_builders::GetTriggers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTriggers::into_paginator).
     pub fn get_triggers(&self) -> fluent_builders::GetTriggers<C, M, R> {
         fluent_builders::GetTriggers::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetUnfilteredPartitionMetadata` operation.
+    ///
+    /// See [`GetUnfilteredPartitionMetadata`](crate::client::fluent_builders::GetUnfilteredPartitionMetadata) for more information about the
+    /// operation and its arguments.
+    pub fn get_unfiltered_partition_metadata(
+        &self,
+    ) -> fluent_builders::GetUnfilteredPartitionMetadata<C, M, R> {
+        fluent_builders::GetUnfilteredPartitionMetadata::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetUnfilteredPartitionsMetadata` operation.
+    ///
+    /// See [`GetUnfilteredPartitionsMetadata`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata) for more information about the
+    /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetUnfilteredPartitionsMetadata::into_paginator).
+    pub fn get_unfiltered_partitions_metadata(
+        &self,
+    ) -> fluent_builders::GetUnfilteredPartitionsMetadata<C, M, R> {
+        fluent_builders::GetUnfilteredPartitionsMetadata::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `GetUnfilteredTableMetadata` operation.
+    ///
+    /// See [`GetUnfilteredTableMetadata`](crate::client::fluent_builders::GetUnfilteredTableMetadata) for more information about the
+    /// operation and its arguments.
+    pub fn get_unfiltered_table_metadata(
+        &self,
+    ) -> fluent_builders::GetUnfilteredTableMetadata<C, M, R> {
+        fluent_builders::GetUnfilteredTableMetadata::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `GetUserDefinedFunction` operation.
     ///
@@ -851,6 +897,7 @@ where
     ///
     /// See [`GetUserDefinedFunctions`](crate::client::fluent_builders::GetUserDefinedFunctions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetUserDefinedFunctions::into_paginator).
     pub fn get_user_defined_functions(&self) -> fluent_builders::GetUserDefinedFunctions<C, M, R> {
         fluent_builders::GetUserDefinedFunctions::new(self.handle.clone())
     }
@@ -881,6 +928,7 @@ where
     ///
     /// See [`GetWorkflowRuns`](crate::client::fluent_builders::GetWorkflowRuns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetWorkflowRuns::into_paginator).
     pub fn get_workflow_runs(&self) -> fluent_builders::GetWorkflowRuns<C, M, R> {
         fluent_builders::GetWorkflowRuns::new(self.handle.clone())
     }
@@ -895,6 +943,7 @@ where
     ///
     /// See [`ListBlueprints`](crate::client::fluent_builders::ListBlueprints) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBlueprints::into_paginator).
     pub fn list_blueprints(&self) -> fluent_builders::ListBlueprints<C, M, R> {
         fluent_builders::ListBlueprints::new(self.handle.clone())
     }
@@ -902,6 +951,7 @@ where
     ///
     /// See [`ListCrawlers`](crate::client::fluent_builders::ListCrawlers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCrawlers::into_paginator).
     pub fn list_crawlers(&self) -> fluent_builders::ListCrawlers<C, M, R> {
         fluent_builders::ListCrawlers::new(self.handle.clone())
     }
@@ -909,6 +959,7 @@ where
     ///
     /// See [`ListDevEndpoints`](crate::client::fluent_builders::ListDevEndpoints) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevEndpoints::into_paginator).
     pub fn list_dev_endpoints(&self) -> fluent_builders::ListDevEndpoints<C, M, R> {
         fluent_builders::ListDevEndpoints::new(self.handle.clone())
     }
@@ -916,6 +967,7 @@ where
     ///
     /// See [`ListJobs`](crate::client::fluent_builders::ListJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
     }
@@ -923,6 +975,7 @@ where
     ///
     /// See [`ListMLTransforms`](crate::client::fluent_builders::ListMLTransforms) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMLTransforms::into_paginator).
     pub fn list_ml_transforms(&self) -> fluent_builders::ListMLTransforms<C, M, R> {
         fluent_builders::ListMLTransforms::new(self.handle.clone())
     }
@@ -930,6 +983,7 @@ where
     ///
     /// See [`ListRegistries`](crate::client::fluent_builders::ListRegistries) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRegistries::into_paginator).
     pub fn list_registries(&self) -> fluent_builders::ListRegistries<C, M, R> {
         fluent_builders::ListRegistries::new(self.handle.clone())
     }
@@ -937,6 +991,7 @@ where
     ///
     /// See [`ListSchemas`](crate::client::fluent_builders::ListSchemas) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSchemas::into_paginator).
     pub fn list_schemas(&self) -> fluent_builders::ListSchemas<C, M, R> {
         fluent_builders::ListSchemas::new(self.handle.clone())
     }
@@ -944,6 +999,7 @@ where
     ///
     /// See [`ListSchemaVersions`](crate::client::fluent_builders::ListSchemaVersions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSchemaVersions::into_paginator).
     pub fn list_schema_versions(&self) -> fluent_builders::ListSchemaVersions<C, M, R> {
         fluent_builders::ListSchemaVersions::new(self.handle.clone())
     }
@@ -951,6 +1007,7 @@ where
     ///
     /// See [`ListTriggers`](crate::client::fluent_builders::ListTriggers) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTriggers::into_paginator).
     pub fn list_triggers(&self) -> fluent_builders::ListTriggers<C, M, R> {
         fluent_builders::ListTriggers::new(self.handle.clone())
     }
@@ -958,6 +1015,7 @@ where
     ///
     /// See [`ListWorkflows`](crate::client::fluent_builders::ListWorkflows) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkflows::into_paginator).
     pub fn list_workflows(&self) -> fluent_builders::ListWorkflows<C, M, R> {
         fluent_builders::ListWorkflows::new(self.handle.clone())
     }
@@ -1038,6 +1096,7 @@ where
     ///
     /// See [`SearchTables`](crate::client::fluent_builders::SearchTables) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchTables::into_paginator).
     pub fn search_tables(&self) -> fluent_builders::SearchTables<C, M, R> {
         fluent_builders::SearchTables::new(self.handle.clone())
     }
@@ -1305,7 +1364,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchCreatePartition`.
     ///
     /// <p>Creates one or more partitions in a batch operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreatePartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1350,10 +1409,10 @@ pub mod fluent_builders {
                 crate::input::BatchCreatePartitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1361,26 +1420,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be
-        /// the Amazon Web Services account ID.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be
-        /// the Amazon Web Services account ID.</p>
+        /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be created.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The name of the metadata database in which the partition is to be created.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be created.</p>
+        /// <p>The name of the metadata database in which the partition is to be created.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1389,8 +1444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metadata table in which the partition is to be created.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the metadata table in which the partition is to be created.</p>
@@ -1402,17 +1457,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_partition_input_list`](Self::set_partition_input_list).
         ///
-        /// <p>A list of <code>PartitionInput</code> structures that define
-        /// the partitions to be created.</p>
-        pub fn partition_input_list(
-            mut self,
-            inp: impl Into<crate::model::PartitionInput>,
-        ) -> Self {
-            self.inner = self.inner.partition_input_list(inp);
+        /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
+        pub fn partition_input_list(mut self, input: crate::model::PartitionInput) -> Self {
+            self.inner = self.inner.partition_input_list(input);
             self
         }
-        /// <p>A list of <code>PartitionInput</code> structures that define
-        /// the partitions to be created.</p>
+        /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
         pub fn set_partition_input_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PartitionInput>>,
@@ -1424,7 +1474,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteConnection`.
     ///
     /// <p>Deletes a list of connection definitions from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1469,10 +1519,10 @@ pub mod fluent_builders {
                 crate::input::BatchDeleteConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1480,14 +1530,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -1497,8 +1545,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_connection_name_list`](Self::set_connection_name_list).
         ///
         /// <p>A list of names of the connections to delete.</p>
-        pub fn connection_name_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_name_list(inp);
+        pub fn connection_name_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_name_list(input.into());
             self
         }
         /// <p>A list of names of the connections to delete.</p>
@@ -1513,7 +1561,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeletePartition`.
     ///
     /// <p>Deletes one or more partitions in a batch operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeletePartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1558,10 +1606,10 @@ pub mod fluent_builders {
                 crate::input::BatchDeletePartitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1569,26 +1617,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The name of the catalog database in which the table in question resides.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1597,8 +1641,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the table that contains the partitions to be deleted.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table that contains the partitions to be deleted.</p>
@@ -1610,17 +1654,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_partitions_to_delete`](Self::set_partitions_to_delete).
         ///
-        /// <p>A list of <code>PartitionInput</code> structures that define
-        /// the partitions to be deleted.</p>
-        pub fn partitions_to_delete(
-            mut self,
-            inp: impl Into<crate::model::PartitionValueList>,
-        ) -> Self {
-            self.inner = self.inner.partitions_to_delete(inp);
+        /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
+        pub fn partitions_to_delete(mut self, input: crate::model::PartitionValueList) -> Self {
+            self.inner = self.inner.partitions_to_delete(input);
             self
         }
-        /// <p>A list of <code>PartitionInput</code> structures that define
-        /// the partitions to be deleted.</p>
+        /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
         pub fn set_partitions_to_delete(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
@@ -1631,18 +1670,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDeleteTable`.
     ///
-    /// <p>Deletes multiple tables at once.</p>
-    /// <note>
-    /// <p>After completing this operation, you no longer have access to the table versions and
-    /// partitions that belong to the deleted table. Glue deletes these "orphaned" resources
-    /// asynchronously in a timely manner, at the discretion of the service.</p>
-    /// <p>To ensure the immediate deletion of all related resources, before calling
-    /// <code>BatchDeleteTable</code>, use <code>DeleteTableVersion</code> or
-    /// <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
-    /// <code>BatchDeletePartition</code>, to delete any resources that belong to the
-    /// table.</p>
+    /// <p>Deletes multiple tables at once.</p> <note>
+    /// <p>After completing this operation, you no longer have access to the table versions and partitions that belong to the deleted table. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service.</p>
+    /// <p>To ensure the immediate deletion of all related resources, before calling <code>BatchDeleteTable</code>, use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1687,10 +1719,10 @@ pub mod fluent_builders {
                 crate::input::BatchDeleteTableInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1698,26 +1730,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database in which the tables to delete reside. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the tables to delete reside. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1730,8 +1758,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tables_to_delete`](Self::set_tables_to_delete).
         ///
         /// <p>A list of the table to delete.</p>
-        pub fn tables_to_delete(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tables_to_delete(inp);
+        pub fn tables_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tables_to_delete(input.into());
             self
         }
         /// <p>A list of the table to delete.</p>
@@ -1743,8 +1771,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The transaction ID at which to delete the table contents.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The transaction ID at which to delete the table contents.</p>
@@ -1759,7 +1787,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteTableVersion`.
     ///
     /// <p>Deletes a specified batch of versions of a table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteTableVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1804,10 +1832,10 @@ pub mod fluent_builders {
                 crate::input::BatchDeleteTableVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1815,26 +1843,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1842,14 +1866,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_name(input);
             self
@@ -1859,8 +1881,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_version_ids`](Self::set_version_ids).
         ///
         /// <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
-        pub fn version_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_ids(inp);
+        pub fn version_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_ids(input.into());
             self
         }
         /// <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
@@ -1875,7 +1897,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetBlueprints`.
     ///
     /// <p>Retrieves information about a list of blueprints.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetBlueprints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1920,10 +1942,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetBlueprintsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1936,8 +1958,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>A list of blueprint names.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>A list of blueprint names.</p>
@@ -1949,8 +1971,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether or not to include the blueprint in the response.</p>
-        pub fn include_blueprint(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_blueprint(inp);
+        pub fn include_blueprint(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_blueprint(input);
             self
         }
         /// <p>Specifies whether or not to include the blueprint in the response.</p>
@@ -1959,8 +1981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
-        pub fn include_parameter_spec(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_parameter_spec(inp);
+        pub fn include_parameter_spec(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_parameter_spec(input);
             self
         }
         /// <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
@@ -1972,7 +1994,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetCrawlers`.
     ///
     /// <p>Returns a list of resource metadata for a given list of crawler names. After calling the <code>ListCrawlers</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetCrawlers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2017,10 +2039,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetCrawlersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2032,14 +2054,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_crawler_names`](Self::set_crawler_names).
         ///
-        /// <p>A list of crawler names, which might be the names returned from the
-        /// <code>ListCrawlers</code> operation.</p>
-        pub fn crawler_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.crawler_names(inp);
+        /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
+        pub fn crawler_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.crawler_names(input.into());
             self
         }
-        /// <p>A list of crawler names, which might be the names returned from the
-        /// <code>ListCrawlers</code> operation.</p>
+        /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
         pub fn set_crawler_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2050,11 +2070,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetDevEndpoints`.
     ///
-    /// <p>Returns a list of resource metadata for a given list of development endpoint names. After
-    /// calling the <code>ListDevEndpoints</code> operation, you can call this operation to access the
-    /// data to which you have been granted permissions. This operation supports all IAM permissions,
-    /// including permission conditions that uses tags.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of resource metadata for a given list of development endpoint names. After calling the <code>ListDevEndpoints</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDevEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2099,10 +2116,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetDevEndpointsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2114,14 +2131,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_dev_endpoint_names`](Self::set_dev_endpoint_names).
         ///
-        /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the
-        /// <code>ListDevEndpoint</code> operation.</p>
-        pub fn dev_endpoint_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dev_endpoint_names(inp);
+        /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
+        pub fn dev_endpoint_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dev_endpoint_names(input.into());
             self
         }
-        /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the
-        /// <code>ListDevEndpoint</code> operation.</p>
+        /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
         pub fn set_dev_endpoint_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2132,9 +2147,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetJobs`.
     ///
-    /// <p>Returns a list of resource metadata for a given list of job names. After calling the <code>ListJobs</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of resource metadata for a given list of job names. After calling the <code>ListJobs</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2179,10 +2193,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2194,14 +2208,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_job_names`](Self::set_job_names).
         ///
-        /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code>
-        /// operation.</p>
-        pub fn job_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_names(inp);
+        /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
+        pub fn job_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_names(input.into());
             self
         }
-        /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code>
-        /// operation.</p>
+        /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
         pub fn set_job_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2213,7 +2225,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetPartition`.
     ///
     /// <p>Retrieves partitions in a batch request.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetPartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2258,10 +2270,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetPartitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2269,21 +2281,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -2295,8 +2305,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -2309,11 +2319,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_partitions_to_get`](Self::set_partitions_to_get).
         ///
         /// <p>A list of partition values identifying the partitions to retrieve.</p>
-        pub fn partitions_to_get(
-            mut self,
-            inp: impl Into<crate::model::PartitionValueList>,
-        ) -> Self {
-            self.inner = self.inner.partitions_to_get(inp);
+        pub fn partitions_to_get(mut self, input: crate::model::PartitionValueList) -> Self {
+            self.inner = self.inner.partitions_to_get(input);
             self
         }
         /// <p>A list of partition values identifying the partitions to retrieve.</p>
@@ -2328,7 +2335,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetTriggers`.
     ///
     /// <p>Returns a list of resource metadata for a given list of trigger names. After calling the <code>ListTriggers</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetTriggers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2373,10 +2380,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetTriggersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2389,8 +2396,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_trigger_names`](Self::set_trigger_names).
         ///
         /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
-        pub fn trigger_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trigger_names(inp);
+        pub fn trigger_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trigger_names(input.into());
             self
         }
         /// <p>A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation.</p>
@@ -2405,7 +2412,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchGetWorkflows`.
     ///
     /// <p>Returns a list of resource metadata for a given list of workflow names. After calling the <code>ListWorkflows</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetWorkflows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2450,10 +2457,10 @@ pub mod fluent_builders {
                 crate::input::BatchGetWorkflowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2466,8 +2473,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
@@ -2479,8 +2486,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
-        pub fn include_graph(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_graph(inp);
+        pub fn include_graph(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_graph(input);
             self
         }
         /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
@@ -2492,7 +2499,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchStopJobRun`.
     ///
     /// <p>Stops one or more job runs for a specified job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchStopJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2537,10 +2544,10 @@ pub mod fluent_builders {
                 crate::input::BatchStopJobRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2549,8 +2556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job definition for which to stop job runs.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job definition for which to stop job runs.</p>
@@ -2562,14 +2569,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_job_run_ids`](Self::set_job_run_ids).
         ///
-        /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job
-        /// definition.</p>
-        pub fn job_run_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_run_ids(inp);
+        /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
+        pub fn job_run_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_run_ids(input.into());
             self
         }
-        /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job
-        /// definition.</p>
+        /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
         pub fn set_job_run_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2581,7 +2586,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchUpdatePartition`.
     ///
     /// <p>Updates one or more partitions in a batch operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdatePartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2626,10 +2631,10 @@ pub mod fluent_builders {
                 crate::input::BatchUpdatePartitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2637,26 +2642,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be
-        /// the Amazon Web Services account ID.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be
-        /// the Amazon Web Services account ID.</p>
+        /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be updated.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The name of the metadata database in which the partition is to be updated.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be updated.</p>
+        /// <p>The name of the metadata database in which the partition is to be updated.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2665,8 +2666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metadata table in which the partition is to be updated.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the metadata table in which the partition is to be updated.</p>
@@ -2679,11 +2680,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
         /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
-        pub fn entries(
-            mut self,
-            inp: impl Into<crate::model::BatchUpdatePartitionRequestEntry>,
-        ) -> Self {
-            self.inner = self.inner.entries(inp);
+        pub fn entries(mut self, input: crate::model::BatchUpdatePartitionRequestEntry) -> Self {
+            self.inner = self.inner.entries(input);
             self
         }
         /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
@@ -2699,10 +2697,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelMLTaskRun`.
     ///
-    /// <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can cancel a
-    /// machine learning task run at any time by calling <code>CancelMLTaskRun</code> with a task
-    /// run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can cancel a machine learning task run at any time by calling <code>CancelMLTaskRun</code> with a task run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelMLTaskRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2747,10 +2743,10 @@ pub mod fluent_builders {
                 crate::input::CancelMlTaskRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2759,8 +2755,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the machine learning transform.</p>
-        pub fn transform_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(inp);
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the machine learning transform.</p>
@@ -2769,8 +2765,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the task run.</p>
-        pub fn task_run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_run_id(inp);
+        pub fn task_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_run_id(input.into());
             self
         }
         /// <p>A unique identifier for the task run.</p>
@@ -2782,7 +2778,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CheckSchemaVersionValidity`.
     ///
     /// <p>Validates the supplied schema. This call has no side effects, it simply validates using the supplied schema using <code>DataFormat</code> as the format. Since it does not take a schema set name, no compatibility checks are performed.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CheckSchemaVersionValidity<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2827,10 +2823,10 @@ pub mod fluent_builders {
                 crate::input::CheckSchemaVersionValidityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2839,8 +2835,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
-        pub fn data_format(mut self, inp: crate::model::DataFormat) -> Self {
-            self.inner = self.inner.data_format(inp);
+        pub fn data_format(mut self, input: crate::model::DataFormat) -> Self {
+            self.inner = self.inner.data_format(input);
             self
         }
         /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
@@ -2852,8 +2848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The definition of the schema that has to be validated.</p>
-        pub fn schema_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_definition(inp);
+        pub fn schema_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_definition(input.into());
             self
         }
         /// <p>The definition of the schema that has to be validated.</p>
@@ -2868,7 +2864,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateBlueprint`.
     ///
     /// <p>Registers a blueprint with Glue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBlueprint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2913,10 +2909,10 @@ pub mod fluent_builders {
                 crate::input::CreateBlueprintInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2925,8 +2921,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the blueprint.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the blueprint.</p>
@@ -2935,8 +2931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the blueprint.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the blueprint.</p>
@@ -2945,8 +2941,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
-        pub fn blueprint_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.blueprint_location(inp);
+        pub fn blueprint_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blueprint_location(input.into());
             self
         }
         /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
@@ -2967,7 +2963,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be applied to this blueprint.</p>
@@ -2983,10 +2979,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateClassifier`.
     ///
-    /// <p>Creates a classifier in the user's account. This can be a <code>GrokClassifier</code>, an
-    /// <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>,
-    /// depending on which field of the request is present.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a classifier in the user's account. This can be a <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which field of the request is present.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateClassifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3031,10 +3025,10 @@ pub mod fluent_builders {
                 crate::input::CreateClassifierInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3042,14 +3036,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A <code>GrokClassifier</code> object specifying the classifier
-        /// to create.</p>
-        pub fn grok_classifier(mut self, inp: crate::model::CreateGrokClassifierRequest) -> Self {
-            self.inner = self.inner.grok_classifier(inp);
+        /// <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
+        pub fn grok_classifier(mut self, input: crate::model::CreateGrokClassifierRequest) -> Self {
+            self.inner = self.inner.grok_classifier(input);
             self
         }
-        /// <p>A <code>GrokClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
         pub fn set_grok_classifier(
             mut self,
             input: std::option::Option<crate::model::CreateGrokClassifierRequest>,
@@ -3057,14 +3049,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_grok_classifier(input);
             self
         }
-        /// <p>An <code>XMLClassifier</code> object specifying the classifier
-        /// to create.</p>
-        pub fn xml_classifier(mut self, inp: crate::model::CreateXmlClassifierRequest) -> Self {
-            self.inner = self.inner.xml_classifier(inp);
+        /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
+        pub fn xml_classifier(mut self, input: crate::model::CreateXmlClassifierRequest) -> Self {
+            self.inner = self.inner.xml_classifier(input);
             self
         }
-        /// <p>An <code>XMLClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
         pub fn set_xml_classifier(
             mut self,
             input: std::option::Option<crate::model::CreateXmlClassifierRequest>,
@@ -3072,14 +3062,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_xml_classifier(input);
             self
         }
-        /// <p>A <code>JsonClassifier</code> object specifying the classifier
-        /// to create.</p>
-        pub fn json_classifier(mut self, inp: crate::model::CreateJsonClassifierRequest) -> Self {
-            self.inner = self.inner.json_classifier(inp);
+        /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
+        pub fn json_classifier(mut self, input: crate::model::CreateJsonClassifierRequest) -> Self {
+            self.inner = self.inner.json_classifier(input);
             self
         }
-        /// <p>A <code>JsonClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
         pub fn set_json_classifier(
             mut self,
             input: std::option::Option<crate::model::CreateJsonClassifierRequest>,
@@ -3087,14 +3075,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_json_classifier(input);
             self
         }
-        /// <p>A <code>CsvClassifier</code> object specifying the classifier
-        /// to create.</p>
-        pub fn csv_classifier(mut self, inp: crate::model::CreateCsvClassifierRequest) -> Self {
-            self.inner = self.inner.csv_classifier(inp);
+        /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
+        pub fn csv_classifier(mut self, input: crate::model::CreateCsvClassifierRequest) -> Self {
+            self.inner = self.inner.csv_classifier(input);
             self
         }
-        /// <p>A <code>CsvClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
         pub fn set_csv_classifier(
             mut self,
             input: std::option::Option<crate::model::CreateCsvClassifierRequest>,
@@ -3106,7 +3092,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateConnection`.
     ///
     /// <p>Creates a connection definition in the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3151,10 +3137,10 @@ pub mod fluent_builders {
                 crate::input::CreateConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3162,26 +3148,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>A <code>ConnectionInput</code> object defining the connection
-        /// to create.</p>
-        pub fn connection_input(mut self, inp: crate::model::ConnectionInput) -> Self {
-            self.inner = self.inner.connection_input(inp);
+        /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
+        pub fn connection_input(mut self, input: crate::model::ConnectionInput) -> Self {
+            self.inner = self.inner.connection_input(input);
             self
         }
-        /// <p>A <code>ConnectionInput</code> object defining the connection
-        /// to create.</p>
+        /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
         pub fn set_connection_input(
             mut self,
             input: std::option::Option<crate::model::ConnectionInput>,
@@ -3199,7 +3181,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags you assign to the connection.</p>
@@ -3215,10 +3197,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCrawler`.
     ///
-    /// <p>Creates a new crawler with specified targets, role, configuration, and optional schedule.
-    /// At least one crawl target must be specified, in the <code>s3Targets</code> field, the
-    /// <code>jdbcTargets</code> field, or the <code>DynamoDBTargets</code> field.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl target must be specified, in the <code>s3Targets</code> field, the <code>jdbcTargets</code> field, or the <code>DynamoDBTargets</code> field.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCrawler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3263,10 +3243,10 @@ pub mod fluent_builders {
                 crate::input::CreateCrawlerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3275,8 +3255,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the new crawler.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the new crawler.</p>
@@ -3284,26 +3264,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to
-        /// access customer resources.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to access customer resources.</p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
-        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to
-        /// access customer resources.</p>
+        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to access customer resources.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role(input);
             self
         }
-        /// <p>The Glue database where results are written, such as:
-        /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The Glue database where results are written, such as:
-        /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+        /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3312,8 +3288,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the new crawler.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the new crawler.</p>
@@ -3322,8 +3298,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of collection of targets to crawl.</p>
-        pub fn targets(mut self, inp: crate::model::CrawlerTargets) -> Self {
-            self.inner = self.inner.targets(inp);
+        pub fn targets(mut self, input: crate::model::CrawlerTargets) -> Self {
+            self.inner = self.inner.targets(input);
             self
         }
         /// <p>A list of collection of targets to crawl.</p>
@@ -3334,16 +3310,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_targets(input);
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
-        pub fn schedule(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(inp);
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schedule(input);
             self
@@ -3352,16 +3324,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_classifiers`](Self::set_classifiers).
         ///
-        /// <p>A list of custom classifiers that the user has registered. By default, all built-in
-        /// classifiers are included in a crawl, but these custom classifiers always override the default
-        /// classifiers for a given classification.</p>
-        pub fn classifiers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.classifiers(inp);
+        /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
+        pub fn classifiers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.classifiers(input.into());
             self
         }
-        /// <p>A list of custom classifiers that the user has registered. By default, all built-in
-        /// classifiers are included in a crawl, but these custom classifiers always override the default
-        /// classifiers for a given classification.</p>
+        /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
         pub fn set_classifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3370,8 +3338,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The table prefix used for catalog tables that are created.</p>
-        pub fn table_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_prefix(inp);
+        pub fn table_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_prefix(input.into());
             self
         }
         /// <p>The table prefix used for catalog tables that are created.</p>
@@ -3380,8 +3348,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policy for the crawler's update and deletion behavior.</p>
-        pub fn schema_change_policy(mut self, inp: crate::model::SchemaChangePolicy) -> Self {
-            self.inner = self.inner.schema_change_policy(inp);
+        pub fn schema_change_policy(mut self, input: crate::model::SchemaChangePolicy) -> Self {
+            self.inner = self.inner.schema_change_policy(input);
             self
         }
         /// <p>The policy for the crawler's update and deletion behavior.</p>
@@ -3393,8 +3361,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
-        pub fn recrawl_policy(mut self, inp: crate::model::RecrawlPolicy) -> Self {
-            self.inner = self.inner.recrawl_policy(inp);
+        pub fn recrawl_policy(mut self, input: crate::model::RecrawlPolicy) -> Self {
+            self.inner = self.inner.recrawl_policy(input);
             self
         }
         /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
@@ -3406,8 +3374,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies data lineage configuration settings for the crawler.</p>
-        pub fn lineage_configuration(mut self, inp: crate::model::LineageConfiguration) -> Self {
-            self.inner = self.inner.lineage_configuration(inp);
+        pub fn lineage_configuration(mut self, input: crate::model::LineageConfiguration) -> Self {
+            self.inner = self.inner.lineage_configuration(input);
             self
         }
         /// <p>Specifies data lineage configuration settings for the crawler.</p>
@@ -3418,16 +3386,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lineage_configuration(input);
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON
-        /// string allows users to specify aspects of a crawler's behavior.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
-        pub fn configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration(inp);
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn lake_formation_configuration(
+            mut self,
+            input: crate::model::LakeFormationConfiguration,
+        ) -> Self {
+            self.inner = self.inner.lake_formation_configuration(input);
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON
-        /// string allows users to specify aspects of a crawler's behavior.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_lake_formation_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LakeFormationConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_lake_formation_configuration(input);
+            self
+        }
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration(input.into());
+            self
+        }
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3435,17 +3415,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-        /// crawler.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
         pub fn crawler_security_configuration(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.crawler_security_configuration(inp);
+            self.inner = self.inner.crawler_security_configuration(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-        /// crawler.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
         pub fn set_crawler_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3457,20 +3435,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to use with this crawler request. You may use tags to limit access to the
-        /// crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer
-        /// guide.</p>
+        /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags to use with this crawler request. You may use tags to limit access to the
-        /// crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer
-        /// guide.</p>
+        /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3484,7 +3458,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDatabase`.
     ///
     /// <p>Creates a new database in a Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3529,10 +3503,10 @@ pub mod fluent_builders {
                 crate::input::CreateDatabaseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3540,21 +3514,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The metadata for the database.</p>
-        pub fn database_input(mut self, inp: crate::model::DatabaseInput) -> Self {
-            self.inner = self.inner.database_input(inp);
+        pub fn database_input(mut self, input: crate::model::DatabaseInput) -> Self {
+            self.inner = self.inner.database_input(input);
             self
         }
         /// <p>The metadata for the database.</p>
@@ -3569,7 +3541,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDevEndpoint`.
     ///
     /// <p>Creates a new development endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDevEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3614,10 +3586,10 @@ pub mod fluent_builders {
                 crate::input::CreateDevEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3626,8 +3598,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name to be assigned to the new <code>DevEndpoint</code>.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The name to be assigned to the new <code>DevEndpoint</code>.</p>
@@ -3639,8 +3611,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IAM role for the <code>DevEndpoint</code>.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The IAM role for the <code>DevEndpoint</code>.</p>
@@ -3652,14 +3624,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>Security group IDs for the security groups to be used by the new
-        /// <code>DevEndpoint</code>.</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        /// <p>Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
-        /// <p>Security group IDs for the security groups to be used by the new
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3668,8 +3638,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subnet ID for the new <code>DevEndpoint</code> to use.</p>
-        pub fn subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(inp);
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(input.into());
             self
         }
         /// <p>The subnet ID for the new <code>DevEndpoint</code> to use.</p>
@@ -3677,16 +3647,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subnet_id(input);
             self
         }
-        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
-        /// attribute is provided for backward compatibility because the recommended attribute to use is
-        /// public keys.</p>
-        pub fn public_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.public_key(inp);
+        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
+        pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_key(input.into());
             self
         }
-        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
-        /// attribute is provided for backward compatibility because the recommended attribute to use is
-        /// public keys.</p>
+        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
         pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_public_key(input);
             self
@@ -3695,29 +3661,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_public_keys`](Self::set_public_keys).
         ///
-        /// <p>A list of public keys to be used by the development endpoints for authentication. The use
-        /// of this attribute is preferred over a single public key because the public keys allow you to
-        /// have a different private key per client.</p>
-        ///
-        /// <note>
-        /// <p>If you previously created an endpoint with a public key, you must remove that key to be able
-        /// to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public
-        /// key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the
-        /// <code>addPublicKeys</code> attribute.</p>
+        /// <p>A list of public keys to be used by the development endpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
+        /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
         /// </note>
-        pub fn public_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.public_keys(inp);
+        pub fn public_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_keys(input.into());
             self
         }
-        /// <p>A list of public keys to be used by the development endpoints for authentication. The use
-        /// of this attribute is preferred over a single public key because the public keys allow you to
-        /// have a different private key per client.</p>
-        ///
-        /// <note>
-        /// <p>If you previously created an endpoint with a public key, you must remove that key to be able
-        /// to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public
-        /// key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the
-        /// <code>addPublicKeys</code> attribute.</p>
+        /// <p>A list of public keys to be used by the development endpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
+        /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
         /// </note>
         pub fn set_public_keys(
             mut self,
@@ -3726,50 +3678,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_public_keys(input);
             self
         }
-        /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this
-        /// <code>DevEndpoint</code>.</p>
-        pub fn number_of_nodes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.number_of_nodes(inp);
+        /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.</p>
+        pub fn number_of_nodes(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_nodes(input);
             self
         }
-        /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.</p>
         pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_number_of_nodes(input);
             self
         }
         /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
-        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
-        /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
-        pub fn worker_type(mut self, inp: crate::model::WorkerType) -> Self {
-            self.inner = self.inner.worker_type(inp);
+        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+        pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
+            self.inner = self.inner.worker_type(input);
             self
         }
         /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
-        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
-        /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
         pub fn set_worker_type(
             mut self,
             input: std::option::Option<crate::model::WorkerType>,
@@ -3778,60 +3714,42 @@ pub mod fluent_builders {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
-        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
-        ///
+        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-        pub fn glue_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.glue_version(inp);
+        pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.glue_version(input.into());
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
-        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
-        ///
+        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_glue_version(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
-        pub fn number_of_workers(mut self, inp: i32) -> Self {
-            self.inner = self.inner.number_of_workers(inp);
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_number_of_workers(input);
             self
         }
-        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
-        /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
-        /// comma.</p>
-        /// <note>
-        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-        /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-        /// analysis library, are not yet supported.</p>
+        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet supported.</p>
         /// </note>
-        pub fn extra_python_libs_s3_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extra_python_libs_s3_path(inp);
+        pub fn extra_python_libs_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extra_python_libs_s3_path(input.into());
             self
         }
-        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
-        /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
-        /// comma.</p>
-        /// <note>
-        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-        /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-        /// analysis library, are not yet supported.</p>
+        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet supported.</p>
         /// </note>
         pub fn set_extra_python_libs_s3_path(
             mut self,
@@ -3840,14 +3758,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_extra_python_libs_s3_path(input);
             self
         }
-        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-        /// in your <code>DevEndpoint</code>.</p>
-        pub fn extra_jars_s3_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extra_jars_s3_path(inp);
+        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p>
+        pub fn extra_jars_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extra_jars_s3_path(input.into());
             self
         }
-        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-        /// in your <code>DevEndpoint</code>.</p>
+        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p>
         pub fn set_extra_jars_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3855,14 +3771,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_extra_jars_s3_path(input);
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// <code>DevEndpoint</code>.</p>
-        pub fn security_configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_configuration(inp);
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
+        pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_configuration(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3880,7 +3794,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
@@ -3903,7 +3817,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.arguments(k, v);
+            self.inner = self.inner.arguments(k.into(), v.into());
             self
         }
         /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
@@ -3920,7 +3834,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateJob`.
     ///
     /// <p>Creates a new job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3965,10 +3879,10 @@ pub mod fluent_builders {
                 crate::input::CreateJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3977,8 +3891,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name you assign to this job definition. It must be unique in your account.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name you assign to this job definition. It must be unique in your account.</p>
@@ -3987,8 +3901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the job being defined.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Description of the job being defined.</p>
@@ -3997,8 +3911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This field is reserved for future use.</p>
-        pub fn log_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_uri(inp);
+        pub fn log_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_uri(input.into());
             self
         }
         /// <p>This field is reserved for future use.</p>
@@ -4007,8 +3921,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
@@ -4016,14 +3930,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role(input);
             self
         }
-        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-        /// for this job.</p>
-        pub fn execution_property(mut self, inp: crate::model::ExecutionProperty) -> Self {
-            self.inner = self.inner.execution_property(inp);
+        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
+        pub fn execution_property(mut self, input: crate::model::ExecutionProperty) -> Self {
+            self.inner = self.inner.execution_property(input);
             self
         }
-        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-        /// for this job.</p>
+        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
         pub fn set_execution_property(
             mut self,
             input: std::option::Option<crate::model::ExecutionProperty>,
@@ -4032,8 +3944,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>JobCommand</code> that runs this job.</p>
-        pub fn command(mut self, inp: crate::model::JobCommand) -> Self {
-            self.inner = self.inner.command(inp);
+        pub fn command(mut self, input: crate::model::JobCommand) -> Self {
+            self.inner = self.inner.command(input);
             self
         }
         /// <p>The <code>JobCommand</code> that runs this job.</p>
@@ -4046,8 +3958,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_default_arguments`](Self::set_default_arguments).
         ///
         /// <p>The default arguments for this job.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn default_arguments(
@@ -4055,12 +3966,11 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_arguments(k, v);
+            self.inner = self.inner.default_arguments(k.into(), v.into());
             self
         }
         /// <p>The default arguments for this job.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_default_arguments(
@@ -4082,7 +3992,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.non_overridable_arguments(k, v);
+            self.inner = self.inner.non_overridable_arguments(k.into(), v.into());
             self
         }
         /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
@@ -4096,8 +4006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The connections used for this job.</p>
-        pub fn connections(mut self, inp: crate::model::ConnectionsList) -> Self {
-            self.inner = self.inner.connections(inp);
+        pub fn connections(mut self, input: crate::model::ConnectionsList) -> Self {
+            self.inner = self.inner.connections(input);
             self
         }
         /// <p>The connections used for this job.</p>
@@ -4109,8 +4019,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of times to retry this job if it fails.</p>
-        pub fn max_retries(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_retries(inp);
+        pub fn max_retries(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_retries(input);
             self
         }
         /// <p>The maximum number of times to retry this job if it fails.</p>
@@ -4119,99 +4029,57 @@ pub mod fluent_builders {
             self
         }
         /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can
-        /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-        /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>.</p>
-        pub fn allocated_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.allocated_capacity(inp);
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        pub fn allocated_capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_capacity(input);
             self
         }
         /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can
-        /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-        /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_allocated_capacity(input);
             self
         }
-        /// <p>The job timeout in minutes.  This is the maximum time that a job run
-        /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-        /// status. The default is 2,880 minutes (48 hours).</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout(inp);
+        /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
-        /// <p>The job timeout in minutes.  This is the maximum time that a job run
-        /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-        /// status. The default is 2,880 minutes (48 hours).</p>
+        /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
             self
         }
-        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job or an Apache Spark ETL job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-        /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-        /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
-        pub fn max_capacity(mut self, inp: f64) -> Self {
-            self.inner = self.inner.max_capacity(inp);
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job or an Apache Spark ETL job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-        /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-        /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// job.</p>
-        pub fn security_configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_configuration(inp);
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
+        pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_configuration(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// job.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4229,7 +4097,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to use with this job. You may use tags to limit access to the job. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
@@ -4243,8 +4111,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies configuration properties of a job notification.</p>
-        pub fn notification_property(mut self, inp: crate::model::NotificationProperty) -> Self {
-            self.inner = self.inner.notification_property(inp);
+        pub fn notification_property(mut self, input: crate::model::NotificationProperty) -> Self {
+            self.inner = self.inner.notification_property(input);
             self
         }
         /// <p>Specifies configuration properties of a job notification.</p>
@@ -4256,32 +4124,26 @@ pub mod fluent_builders {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
         /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
-        pub fn glue_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.glue_version(inp);
+        pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.glue_version(input.into());
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
         /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_glue_version(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
-        pub fn number_of_workers(mut self, inp: i32) -> Self {
-            self.inner = self.inner.number_of_workers(inp);
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_number_of_workers(input);
@@ -4289,31 +4151,19 @@ pub mod fluent_builders {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
-        pub fn worker_type(mut self, inp: crate::model::WorkerType) -> Self {
-            self.inner = self.inner.worker_type(inp);
+        pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
+            self.inner = self.inner.worker_type(input);
             self
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -4325,20 +4175,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMLTransform`.
     ///
-    /// <p>Creates an Glue machine learning transform. This operation creates the transform and
-    /// all the necessary parameters to train it.</p>
-    ///
-    /// <p>Call this operation as the first step in the process of using a machine learning transform
-    /// (such as the <code>FindMatches</code> transform) for deduplicating data. You can provide an
-    /// optional <code>Description</code>, in addition to the parameters that you want to use for your
-    /// algorithm.</p>
-    ///
-    /// <p>You must also specify certain parameters for the tasks that Glue runs on your
-    /// behalf as part of learning from your data and creating a high-quality machine learning
-    /// transform. These parameters include <code>Role</code>, and optionally,
-    /// <code>AllocatedCapacity</code>, <code>Timeout</code>, and <code>MaxRetries</code>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an Glue machine learning transform. This operation creates the transform and all the necessary parameters to train it.</p>
+    /// <p>Call this operation as the first step in the process of using a machine learning transform (such as the <code>FindMatches</code> transform) for deduplicating data. You can provide an optional <code>Description</code>, in addition to the parameters that you want to use for your algorithm.</p>
+    /// <p>You must also specify certain parameters for the tasks that Glue runs on your behalf as part of learning from your data and creating a high-quality machine learning transform. These parameters include <code>Role</code>, and optionally, <code>AllocatedCapacity</code>, <code>Timeout</code>, and <code>MaxRetries</code>. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMLTransform<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4383,10 +4223,10 @@ pub mod fluent_builders {
                 crate::input::CreateMlTransformInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4395,8 +4235,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name that you give the transform when you create it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The unique name that you give the transform when you create it.</p>
@@ -4404,14 +4244,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A description of the machine learning transform that is being defined. The default is an
-        /// empty string.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>A description of the machine learning transform that is being defined. The default is an empty string.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A description of the machine learning transform that is being defined. The default is an
-        /// empty string.</p>
+        /// <p>A description of the machine learning transform that is being defined. The default is an empty string.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -4421,8 +4259,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_input_record_tables`](Self::set_input_record_tables).
         ///
         /// <p>A list of Glue table definitions used by the transform.</p>
-        pub fn input_record_tables(mut self, inp: impl Into<crate::model::GlueTable>) -> Self {
-            self.inner = self.inner.input_record_tables(inp);
+        pub fn input_record_tables(mut self, input: crate::model::GlueTable) -> Self {
+            self.inner = self.inner.input_record_tables(input);
             self
         }
         /// <p>A list of Glue table definitions used by the transform.</p>
@@ -4433,14 +4271,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_record_tables(input);
             self
         }
-        /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally
-        /// dependent on the transform type.</p>
-        pub fn parameters(mut self, inp: crate::model::TransformParameters) -> Self {
-            self.inner = self.inner.parameters(inp);
+        /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
+        pub fn parameters(mut self, input: crate::model::TransformParameters) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
-        /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally
-        /// dependent on the transform type.</p>
+        /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::TransformParameters>,
@@ -4449,100 +4285,56 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
-        /// </li>
+        /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
+        /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
         /// </ul>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
-        /// </li>
+        /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
+        /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
         /// </ul>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role(input);
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
-        pub fn glue_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.glue_version(inp);
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.glue_version(input.into());
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_glue_version(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
-        ///
-        /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>    
-        ///
-        ///
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
-        pub fn max_capacity(mut self, inp: f64) -> Self {
-            self.inner = self.inner.max_capacity(inp);
+        /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
-        ///
-        /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>    
-        ///
-        ///
+        /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
@@ -4550,67 +4342,33 @@ pub mod fluent_builders {
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
-        pub fn worker_type(mut self, inp: crate::model::WorkerType) -> Self {
-            self.inner = self.inner.worker_type(inp);
+        pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
+            self.inner = self.inner.worker_type(input);
             self
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -4620,22 +4378,20 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
-        ///
         /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        pub fn number_of_workers(mut self, inp: i32) -> Self {
-            self.inner = self.inner.number_of_workers(inp);
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
-        ///
         /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_number_of_workers(input);
             self
         }
         /// <p>The timeout of the task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout(inp);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
         /// <p>The timeout of the task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
@@ -4644,8 +4400,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
-        pub fn max_retries(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_retries(inp);
+        pub fn max_retries(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_retries(input);
             self
         }
         /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
@@ -4663,7 +4419,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
@@ -4677,8 +4433,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
-        pub fn transform_encryption(mut self, inp: crate::model::TransformEncryption) -> Self {
-            self.inner = self.inner.transform_encryption(inp);
+        pub fn transform_encryption(mut self, input: crate::model::TransformEncryption) -> Self {
+            self.inner = self.inner.transform_encryption(input);
             self
         }
         /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
@@ -4693,7 +4449,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePartition`.
     ///
     /// <p>Creates a new partition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4738,10 +4494,10 @@ pub mod fluent_builders {
                 crate::input::CreatePartitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4750,8 +4506,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the catalog in which the partition is to be created.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the catalog in which the partition is to be created.</p>
@@ -4759,14 +4515,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be created.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The name of the metadata database in which the partition is to be created.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be created.</p>
+        /// <p>The name of the metadata database in which the partition is to be created.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4775,8 +4529,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metadata table in which the partition is to be created.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the metadata table in which the partition is to be created.</p>
@@ -4784,14 +4538,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_table_name(input);
             self
         }
-        /// <p>A <code>PartitionInput</code> structure defining the partition
-        /// to be created.</p>
-        pub fn partition_input(mut self, inp: crate::model::PartitionInput) -> Self {
-            self.inner = self.inner.partition_input(inp);
+        /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
+        pub fn partition_input(mut self, input: crate::model::PartitionInput) -> Self {
+            self.inner = self.inner.partition_input(input);
             self
         }
-        /// <p>A <code>PartitionInput</code> structure defining the partition
-        /// to be created.</p>
+        /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
         pub fn set_partition_input(
             mut self,
             input: std::option::Option<crate::model::PartitionInput>,
@@ -4803,7 +4555,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePartitionIndex`.
     ///
     /// <p>Creates a specified partition index in an existing table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePartitionIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4848,10 +4600,10 @@ pub mod fluent_builders {
                 crate::input::CreatePartitionIndexInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4860,8 +4612,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The catalog ID where the table resides.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The catalog ID where the table resides.</p>
@@ -4870,8 +4622,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of a database in which you want to create a partition index.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>Specifies the name of a database in which you want to create a partition index.</p>
@@ -4883,8 +4635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of a table in which you want to create a partition index.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>Specifies the name of a table in which you want to create a partition index.</p>
@@ -4893,8 +4645,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
-        pub fn partition_index(mut self, inp: crate::model::PartitionIndex) -> Self {
-            self.inner = self.inner.partition_index(inp);
+        pub fn partition_index(mut self, input: crate::model::PartitionIndex) -> Self {
+            self.inner = self.inner.partition_index(input);
             self
         }
         /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
@@ -4909,7 +4661,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRegistry`.
     ///
     /// <p>Creates a new registry which may be used to hold a collection of schemas.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4954,10 +4706,10 @@ pub mod fluent_builders {
                 crate::input::CreateRegistryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4965,12 +4717,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark.  No whitespace.</p>
-        pub fn registry_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(inp);
+        /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
-        /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark.  No whitespace.</p>
+        /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
         pub fn set_registry_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4979,8 +4731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the registry. If description is not provided, there will not be any default value for this.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the registry. If description is not provided, there will not be any default value for this.</p>
@@ -4998,7 +4750,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API.</p>
@@ -5017,7 +4769,7 @@ pub mod fluent_builders {
     /// <p>Creates a new schema set and registers the schema definition. Returns an error if the schema set already exists without actually registering the version.</p>
     /// <p>When the schema set is created, a version checkpoint will be set to the first version. Compatibility mode "DISABLED" restricts any additional schema versions from being added after the first schema version. For all other compatibility modes, validation of compatibility settings will be applied only from the second version onwards when the <code>RegisterSchemaVersion</code> API is used.</p>
     /// <p>When this API is called without a <code>RegistryId</code>, this will create an entry for a "default-registry" in the registry database tables, if it is not already present.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5062,10 +4814,10 @@ pub mod fluent_builders {
                 crate::input::CreateSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5073,12 +4825,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:<customer id>:registry/default-registry:random-5-letter-id</code>.</p>
-        pub fn registry_id(mut self, inp: crate::model::RegistryId) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:
+        /// <customer id>
+        /// :registry/default-registry:random-5-letter-id
+        /// </customer></code>.</p>
+        pub fn registry_id(mut self, input: crate::model::RegistryId) -> Self {
+            self.inner = self.inner.registry_id(input);
             self
         }
-        /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:<customer id>:registry/default-registry:random-5-letter-id</code>.</p>
+        /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:
+        /// <customer id>
+        /// :registry/default-registry:random-5-letter-id
+        /// </customer></code>.</p>
         pub fn set_registry_id(
             mut self,
             input: std::option::Option<crate::model::RegistryId>,
@@ -5087,8 +4845,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
-        pub fn schema_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(inp);
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(input.into());
             self
         }
         /// <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
@@ -5097,8 +4855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
-        pub fn data_format(mut self, inp: crate::model::DataFormat) -> Self {
-            self.inner = self.inner.data_format(inp);
+        pub fn data_format(mut self, input: crate::model::DataFormat) -> Self {
+            self.inner = self.inner.data_format(input);
             self
         }
         /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
@@ -5110,80 +4868,30 @@ pub mod fluent_builders {
             self
         }
         /// <p>The compatibility mode of the schema. The possible values are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p>
-        /// </li>
+        /// <li> <p> <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p> </li>
+        /// <li> <p> <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p> </li>
+        /// <li> <p> <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p> </li>
+        /// <li> <p> <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p> </li>
+        /// <li> <p> <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p> </li>
+        /// <li> <p> <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p> </li>
+        /// <li> <p> <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p> </li>
+        /// <li> <p> <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p> </li>
         /// </ul>
-        pub fn compatibility(mut self, inp: crate::model::Compatibility) -> Self {
-            self.inner = self.inner.compatibility(inp);
+        pub fn compatibility(mut self, input: crate::model::Compatibility) -> Self {
+            self.inner = self.inner.compatibility(input);
             self
         }
         /// <p>The compatibility mode of the schema. The possible values are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p>
-        /// </li>
+        /// <li> <p> <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p> </li>
+        /// <li> <p> <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p> </li>
+        /// <li> <p> <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p> </li>
+        /// <li> <p> <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p> </li>
+        /// <li> <p> <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p> </li>
+        /// <li> <p> <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p> </li>
+        /// <li> <p> <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p> </li>
+        /// <li> <p> <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p> </li>
         /// </ul>
         pub fn set_compatibility(
             mut self,
@@ -5193,8 +4901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
@@ -5212,7 +4920,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
@@ -5226,8 +4934,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
-        pub fn schema_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_definition(inp);
+        pub fn schema_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_definition(input.into());
             self
         }
         /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
@@ -5242,7 +4950,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateScript`.
     ///
     /// <p>Transforms a directed acyclic graph (DAG) into code.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateScript<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5287,10 +4995,10 @@ pub mod fluent_builders {
                 crate::input::CreateScriptInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5303,8 +5011,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_dag_nodes`](Self::set_dag_nodes).
         ///
         /// <p>A list of the nodes in the DAG.</p>
-        pub fn dag_nodes(mut self, inp: impl Into<crate::model::CodeGenNode>) -> Self {
-            self.inner = self.inner.dag_nodes(inp);
+        pub fn dag_nodes(mut self, input: crate::model::CodeGenNode) -> Self {
+            self.inner = self.inner.dag_nodes(input);
             self
         }
         /// <p>A list of the nodes in the DAG.</p>
@@ -5320,8 +5028,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_dag_edges`](Self::set_dag_edges).
         ///
         /// <p>A list of the edges in the DAG.</p>
-        pub fn dag_edges(mut self, inp: impl Into<crate::model::CodeGenEdge>) -> Self {
-            self.inner = self.inner.dag_edges(inp);
+        pub fn dag_edges(mut self, input: crate::model::CodeGenEdge) -> Self {
+            self.inner = self.inner.dag_edges(input);
             self
         }
         /// <p>A list of the edges in the DAG.</p>
@@ -5333,8 +5041,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The programming language of the resulting code from the DAG.</p>
-        pub fn language(mut self, inp: crate::model::Language) -> Self {
-            self.inner = self.inner.language(inp);
+        pub fn language(mut self, input: crate::model::Language) -> Self {
+            self.inner = self.inner.language(input);
             self
         }
         /// <p>The programming language of the resulting code from the DAG.</p>
@@ -5346,7 +5054,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSecurityConfiguration`.
     ///
     /// <p>Creates a new security configuration. A security configuration is a set of security properties that can be used by Glue. You can use a security configuration to encrypt data at rest. For information about using security configurations in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting Data Written by Crawlers, Jobs, and Development Endpoints</a>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSecurityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5391,10 +5099,10 @@ pub mod fluent_builders {
                 crate::input::CreateSecurityConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5403,8 +5111,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the new security configuration.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the new security configuration.</p>
@@ -5415,9 +5123,9 @@ pub mod fluent_builders {
         /// <p>The encryption configuration for the new security configuration.</p>
         pub fn encryption_configuration(
             mut self,
-            inp: crate::model::EncryptionConfiguration,
+            input: crate::model::EncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.encryption_configuration(inp);
+            self.inner = self.inner.encryption_configuration(input);
             self
         }
         /// <p>The encryption configuration for the new security configuration.</p>
@@ -5432,7 +5140,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTable`.
     ///
     /// <p>Creates a new table definition in the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5477,10 +5185,10 @@ pub mod fluent_builders {
                 crate::input::CreateTableInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5488,26 +5196,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which to create the <code>Table</code>.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which to create the <code>Table</code>.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The catalog database in which to create the new table. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The catalog database in which to create the new table. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5515,14 +5219,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>The <code>TableInput</code> object that defines the metadata table
-        /// to create in the catalog.</p>
-        pub fn table_input(mut self, inp: crate::model::TableInput) -> Self {
-            self.inner = self.inner.table_input(inp);
+        /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
+        pub fn table_input(mut self, input: crate::model::TableInput) -> Self {
+            self.inner = self.inner.table_input(input);
             self
         }
-        /// <p>The <code>TableInput</code> object that defines the metadata table
-        /// to create in the catalog.</p>
+        /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
         pub fn set_table_input(
             mut self,
             input: std::option::Option<crate::model::TableInput>,
@@ -5535,8 +5237,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_partition_indexes`](Self::set_partition_indexes).
         ///
         /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
-        pub fn partition_indexes(mut self, inp: impl Into<crate::model::PartitionIndex>) -> Self {
-            self.inner = self.inner.partition_indexes(inp);
+        pub fn partition_indexes(mut self, input: crate::model::PartitionIndex) -> Self {
+            self.inner = self.inner.partition_indexes(input);
             self
         }
         /// <p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>
@@ -5548,8 +5250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the transaction.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The ID of the transaction.</p>
@@ -5564,7 +5266,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTrigger`.
     ///
     /// <p>Creates a new trigger.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrigger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5609,10 +5311,10 @@ pub mod fluent_builders {
                 crate::input::CreateTriggerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5621,8 +5323,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trigger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the trigger.</p>
@@ -5631,8 +5333,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the workflow associated with the trigger.</p>
-        pub fn workflow_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_name(inp);
+        pub fn workflow_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_name(input.into());
             self
         }
         /// <p>The name of the workflow associated with the trigger.</p>
@@ -5644,8 +5346,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the new trigger.</p>
-        pub fn r#type(mut self, inp: crate::model::TriggerType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::TriggerType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of the new trigger.</p>
@@ -5653,17 +5355,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         /// <p>This field is required when the trigger type is SCHEDULED.</p>
-        pub fn schedule(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(inp);
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         /// <p>This field is required when the trigger type is SCHEDULED.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schedule(input);
@@ -5671,8 +5369,8 @@ pub mod fluent_builders {
         }
         /// <p>A predicate to specify when the new trigger should fire.</p>
         /// <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
-        pub fn predicate(mut self, inp: crate::model::Predicate) -> Self {
-            self.inner = self.inner.predicate(inp);
+        pub fn predicate(mut self, input: crate::model::Predicate) -> Self {
+            self.inner = self.inner.predicate(input);
             self
         }
         /// <p>A predicate to specify when the new trigger should fire.</p>
@@ -5689,8 +5387,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions initiated by this trigger when it fires.</p>
-        pub fn actions(mut self, inp: impl Into<crate::model::Action>) -> Self {
-            self.inner = self.inner.actions(inp);
+        pub fn actions(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>The actions initiated by this trigger when it fires.</p>
@@ -5702,8 +5400,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the new trigger.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the new trigger.</p>
@@ -5711,14 +5409,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code>
-        /// triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
-        pub fn start_on_creation(mut self, inp: bool) -> Self {
-            self.inner = self.inner.start_on_creation(inp);
+        /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
+        pub fn start_on_creation(mut self, input: bool) -> Self {
+            self.inner = self.inner.start_on_creation(input);
             self
         }
-        /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code>
-        /// triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
+        /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
         pub fn set_start_on_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_start_on_creation(input);
             self
@@ -5727,20 +5423,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger.
-        /// For more information about tags in Glue, see
-        /// <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
+        /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger.
-        /// For more information about tags in Glue, see
-        /// <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
+        /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5750,17 +5442,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-        /// before EventBridge event trigger fires.</p>
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
         pub fn event_batching_condition(
             mut self,
-            inp: crate::model::EventBatchingCondition,
+            input: crate::model::EventBatchingCondition,
         ) -> Self {
-            self.inner = self.inner.event_batching_condition(inp);
+            self.inner = self.inner.event_batching_condition(input);
             self
         }
-        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-        /// before EventBridge event trigger fires.</p>
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
         pub fn set_event_batching_condition(
             mut self,
             input: std::option::Option<crate::model::EventBatchingCondition>,
@@ -5772,7 +5462,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUserDefinedFunction`.
     ///
     /// <p>Creates a new function definition in the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserDefinedFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5817,10 +5507,10 @@ pub mod fluent_builders {
                 crate::input::CreateUserDefinedFunctionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5828,21 +5518,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the catalog database in which to create the function.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database in which to create the function.</p>
@@ -5853,14 +5541,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>A <code>FunctionInput</code> object that defines the function
-        /// to create in the Data Catalog.</p>
-        pub fn function_input(mut self, inp: crate::model::UserDefinedFunctionInput) -> Self {
-            self.inner = self.inner.function_input(inp);
+        /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
+        pub fn function_input(mut self, input: crate::model::UserDefinedFunctionInput) -> Self {
+            self.inner = self.inner.function_input(input);
             self
         }
-        /// <p>A <code>FunctionInput</code> object that defines the function
-        /// to create in the Data Catalog.</p>
+        /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
         pub fn set_function_input(
             mut self,
             input: std::option::Option<crate::model::UserDefinedFunctionInput>,
@@ -5872,7 +5558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkflow`.
     ///
     /// <p>Creates a new workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkflow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5917,10 +5603,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorkflowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5929,8 +5615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name to be assigned to the workflow. It should be unique within your account.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name to be assigned to the workflow. It should be unique within your account.</p>
@@ -5939,8 +5625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the workflow.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the workflow.</p>
@@ -5958,7 +5644,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_run_properties(k, v);
+            self.inner = self.inner.default_run_properties(k.into(), v.into());
             self
         }
         /// <p>A collection of properties to be used as part of each execution of the workflow.</p>
@@ -5981,7 +5667,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to be used with this workflow.</p>
@@ -5995,8 +5681,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
-        pub fn max_concurrent_runs(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_concurrent_runs(inp);
+        pub fn max_concurrent_runs(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_concurrent_runs(input);
             self
         }
         /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
@@ -6008,7 +5694,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBlueprint`.
     ///
     /// <p>Deletes an existing blueprint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBlueprint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6053,10 +5739,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBlueprintInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6065,8 +5751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the blueprint to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the blueprint to delete.</p>
@@ -6078,7 +5764,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteClassifier`.
     ///
     /// <p>Removes a classifier from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteClassifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6123,10 +5809,10 @@ pub mod fluent_builders {
                 crate::input::DeleteClassifierInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6135,8 +5821,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the classifier to remove.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the classifier to remove.</p>
@@ -6148,9 +5834,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteColumnStatisticsForPartition`.
     ///
     /// <p>Delete the partition column statistics of a column.</p>
-    ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>DeletePartition</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteColumnStatisticsForPartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6197,10 +5882,10 @@ pub mod fluent_builders {
                 crate::input::DeleteColumnStatisticsForPartitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6208,21 +5893,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -6234,8 +5917,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -6248,8 +5931,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
         ///
         /// <p>A list of partition values identifying the partition.</p>
-        pub fn partition_values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partition_values(inp);
+        pub fn partition_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partition_values(input.into());
             self
         }
         /// <p>A list of partition values identifying the partition.</p>
@@ -6261,8 +5944,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the column.</p>
-        pub fn column_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.column_name(inp);
+        pub fn column_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.column_name(input.into());
             self
         }
         /// <p>Name of the column.</p>
@@ -6274,9 +5957,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteColumnStatisticsForTable`.
     ///
     /// <p>Retrieves table statistics of columns.</p>
-    ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>DeleteTable</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteColumnStatisticsForTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6321,10 +6003,10 @@ pub mod fluent_builders {
                 crate::input::DeleteColumnStatisticsForTableInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6332,21 +6014,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -6358,8 +6038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -6368,8 +6048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the column.</p>
-        pub fn column_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.column_name(inp);
+        pub fn column_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.column_name(input.into());
             self
         }
         /// <p>The name of the column.</p>
@@ -6381,7 +6061,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConnection`.
     ///
     /// <p>Deletes a connection from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6426,10 +6106,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6437,21 +6117,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the connection to delete.</p>
-        pub fn connection_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_name(inp);
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_name(input.into());
             self
         }
         /// <p>The name of the connection to delete.</p>
@@ -6465,9 +6143,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCrawler`.
     ///
-    /// <p>Removes a specified crawler from the Glue Data Catalog, unless the crawler state is
-    /// <code>RUNNING</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes a specified crawler from the Glue Data Catalog, unless the crawler state is <code>RUNNING</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCrawler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6512,10 +6189,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCrawlerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6524,8 +6201,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the crawler to remove.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the crawler to remove.</p>
@@ -6536,20 +6213,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDatabase`.
     ///
-    /// <p>Removes a specified database from a Data Catalog.</p>
-    /// <note>
-    /// <p>After completing this operation, you no longer have access to the tables (and all table
-    /// versions and partitions that might belong to the tables) and the user-defined functions in
-    /// the deleted database. Glue deletes these "orphaned" resources asynchronously in a timely
-    /// manner, at the discretion of the service.</p>
-    /// <p>To ensure the immediate deletion of all related resources, before calling
-    /// <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code> or
-    /// <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
-    /// <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and
-    /// <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any resources that
-    /// belong to the database.</p>
+    /// <p>Removes a specified database from a Data Catalog.</p> <note>
+    /// <p>After completing this operation, you no longer have access to the tables (and all table versions and partitions that might belong to the tables) and the user-defined functions in the deleted database. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service.</p>
+    /// <p>To ensure the immediate deletion of all related resources, before calling <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any resources that belong to the database.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6594,10 +6262,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDatabaseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6605,26 +6273,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the database to delete. For Hive compatibility, this must be all
-        /// lowercase.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the database to delete. For Hive compatibility, this must be all
-        /// lowercase.</p>
+        /// <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -6633,7 +6297,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDevEndpoint`.
     ///
     /// <p>Deletes a specified development endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDevEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6678,10 +6342,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDevEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6690,8 +6354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the <code>DevEndpoint</code>.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The name of the <code>DevEndpoint</code>.</p>
@@ -6705,9 +6369,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteJob`.
     ///
-    /// <p>Deletes a specified job definition. If the job definition
-    /// is not found, no exception is thrown.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a specified job definition. If the job definition is not found, no exception is thrown.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6752,10 +6415,10 @@ pub mod fluent_builders {
                 crate::input::DeleteJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6764,8 +6427,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job definition to delete.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job definition to delete.</p>
@@ -6776,13 +6439,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMLTransform`.
     ///
-    /// <p>Deletes an Glue machine learning transform. Machine learning transforms are a special
-    /// type of transform that use machine learning to learn the details of the transformation to be
-    /// performed by learning from examples provided by humans. These transformations are then saved
-    /// by Glue. If you no longer need a transform, you can delete it by calling
-    /// <code>DeleteMLTransforms</code>. However, any Glue jobs that still reference the deleted
-    /// transform will no longer succeed.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an Glue machine learning transform. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue. If you no longer need a transform, you can delete it by calling <code>DeleteMLTransforms</code>. However, any Glue jobs that still reference the deleted transform will no longer succeed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMLTransform<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6827,10 +6485,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMlTransformInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6839,8 +6497,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the transform to delete.</p>
-        pub fn transform_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(inp);
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the transform to delete.</p>
@@ -6852,7 +6510,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePartition`.
     ///
     /// <p>Deletes a specified partition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6897,10 +6555,10 @@ pub mod fluent_builders {
                 crate::input::DeletePartitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6908,26 +6566,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The name of the catalog database in which the table in question resides.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6936,8 +6590,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the table that contains the partition to be deleted.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table that contains the partition to be deleted.</p>
@@ -6950,8 +6604,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
         ///
         /// <p>The values that define the partition.</p>
-        pub fn partition_values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partition_values(inp);
+        pub fn partition_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partition_values(input.into());
             self
         }
         /// <p>The values that define the partition.</p>
@@ -6966,7 +6620,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePartitionIndex`.
     ///
     /// <p>Deletes a specified partition index from an existing table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePartitionIndex<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7011,10 +6665,10 @@ pub mod fluent_builders {
                 crate::input::DeletePartitionIndexInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7023,8 +6677,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The catalog ID where the table resides.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The catalog ID where the table resides.</p>
@@ -7033,8 +6687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
@@ -7046,8 +6700,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of a table from which you want to delete a partition index.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>Specifies the name of a table from which you want to delete a partition index.</p>
@@ -7056,8 +6710,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partition index to be deleted.</p>
-        pub fn index_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(inp);
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input.into());
             self
         }
         /// <p>The name of the partition index to be deleted.</p>
@@ -7069,7 +6723,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRegistry`.
     ///
     /// <p>Delete the entire registry including schema and all of its versions. To get the status of the delete operation, you can call the <code>GetRegistry</code> API after the asynchronous call. Deleting a registry will deactivate all online operations for the registry such as the <code>UpdateRegistry</code>, <code>CreateSchema</code>, <code>UpdateSchema</code>, and <code>RegisterSchemaVersion</code> APIs. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7114,10 +6768,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRegistryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7126,8 +6780,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-        pub fn registry_id(mut self, inp: crate::model::RegistryId) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, input: crate::model::RegistryId) -> Self {
+            self.inner = self.inner.registry_id(input);
             self
         }
         /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
@@ -7142,7 +6796,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteResourcePolicy`.
     ///
     /// <p>Deletes a specified policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7187,10 +6841,10 @@ pub mod fluent_builders {
                 crate::input::DeleteResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7199,8 +6853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The hash value returned when this policy was set.</p>
-        pub fn policy_hash_condition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_hash_condition(inp);
+        pub fn policy_hash_condition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_hash_condition(input.into());
             self
         }
         /// <p>The hash value returned when this policy was set.</p>
@@ -7212,8 +6866,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the Glue resource for the resource policy to be deleted.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the Glue resource for the resource policy to be deleted.</p>
@@ -7225,7 +6879,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSchema`.
     ///
     /// <p>Deletes the entire schema set, including the schema set and all of its versions. To get the status of the delete operation, you can call <code>GetSchema</code> API after the asynchronous call. Deleting a registry will deactivate all online operations for the schema, such as the <code>GetSchemaByDefinition</code>, and <code>RegisterSchemaVersion</code> APIs.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7270,10 +6924,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7282,8 +6936,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
-        pub fn schema_id(mut self, inp: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(inp);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
@@ -7294,11 +6948,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSchemaVersions`.
     ///
-    /// <p>Remove versions from the specified schema. A version number or range may be supplied. If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned.  Calling the <code>GetSchemaVersions</code> API after this call will list the status of the deleted versions.</p>
+    /// <p>Remove versions from the specified schema. A version number or range may be supplied. If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned. Calling the <code>GetSchemaVersions</code> API after this call will list the status of the deleted versions.</p>
     /// <p>When the range of version numbers contain check pointed version, the API will return a 409 conflict and will not proceed with the deletion. You have to remove the checkpoint first using the <code>DeleteSchemaCheckpoint</code> API before using this API.</p>
     /// <p>You cannot use the <code>DeleteSchemaVersions</code> API to delete the first schema version in the schema set. The first schema version can only be deleted by the <code>DeleteSchema</code> API. This operation will also delete the attached <code>SchemaVersionMetadata</code> under the schema versions. Hard deletes will be enforced on the database.</p>
     /// <p>If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSchemaVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7343,10 +6997,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSchemaVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7355,8 +7009,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
-        pub fn schema_id(mut self, inp: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(inp);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
@@ -7366,25 +7020,17 @@ pub mod fluent_builders {
         }
         /// <p>A version range may be supplied which may be of the format:</p>
         /// <ul>
-        /// <li>
-        /// <p>a single version number, 5</p>
-        /// </li>
-        /// <li>
-        /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p>
-        /// </li>
+        /// <li> <p>a single version number, 5</p> </li>
+        /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
         /// </ul>
-        pub fn versions(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.versions(inp);
+        pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.versions(input.into());
             self
         }
         /// <p>A version range may be supplied which may be of the format:</p>
         /// <ul>
-        /// <li>
-        /// <p>a single version number, 5</p>
-        /// </li>
-        /// <li>
-        /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p>
-        /// </li>
+        /// <li> <p>a single version number, 5</p> </li>
+        /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
         /// </ul>
         pub fn set_versions(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_versions(input);
@@ -7394,7 +7040,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSecurityConfiguration`.
     ///
     /// <p>Deletes a specified security configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSecurityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7439,10 +7085,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSecurityConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7451,8 +7097,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the security configuration to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the security configuration to delete.</p>
@@ -7463,18 +7109,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTable`.
     ///
-    /// <p>Removes a table definition from the Data Catalog.</p>
-    /// <note>
-    /// <p>After completing this operation, you no longer have access to the table versions and
-    /// partitions that belong to the deleted table. Glue deletes these "orphaned" resources
-    /// asynchronously in a timely manner, at the discretion of the service.</p>
-    /// <p>To ensure the immediate deletion of all related resources, before calling
-    /// <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or
-    /// <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
-    /// <code>BatchDeletePartition</code>, to delete any resources that belong to the
-    /// table.</p>
+    /// <p>Removes a table definition from the Data Catalog.</p> <note>
+    /// <p>After completing this operation, you no longer have access to the table versions and partitions that belong to the deleted table. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service.</p>
+    /// <p>To ensure the immediate deletion of all related resources, before calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7519,10 +7158,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTableInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7530,26 +7169,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7557,21 +7192,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>The name of the table to be deleted. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the table to be deleted. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The transaction ID at which to delete the table contents.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The transaction ID at which to delete the table contents.</p>
@@ -7586,7 +7219,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTableVersion`.
     ///
     /// <p>Deletes a specified version of a table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTableVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7631,10 +7264,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTableVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7642,26 +7275,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7669,21 +7298,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input.into());
             self
         }
         /// <p>The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
@@ -7694,9 +7321,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTrigger`.
     ///
-    /// <p>Deletes a specified trigger. If the trigger is not found, no
-    /// exception is thrown.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a specified trigger. If the trigger is not found, no exception is thrown.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrigger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7741,10 +7367,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTriggerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7753,8 +7379,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trigger to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the trigger to delete.</p>
@@ -7766,7 +7392,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUserDefinedFunction`.
     ///
     /// <p>Deletes an existing function definition from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserDefinedFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7811,10 +7437,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUserDefinedFunctionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7822,21 +7448,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the function to be deleted is
-        /// located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the function to be deleted is
-        /// located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the catalog database where the function is located.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the function is located.</p>
@@ -7848,8 +7472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the function definition to be deleted.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input.into());
             self
         }
         /// <p>The name of the function definition to be deleted.</p>
@@ -7864,7 +7488,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkflow`.
     ///
     /// <p>Deletes a workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkflow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7909,10 +7533,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWorkflowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7921,8 +7545,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the workflow to be deleted.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the workflow to be deleted.</p>
@@ -7934,7 +7558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBlueprint`.
     ///
     /// <p>Retrieves the details of a blueprint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlueprint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7979,10 +7603,10 @@ pub mod fluent_builders {
                 crate::input::GetBlueprintInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7991,8 +7615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the blueprint.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the blueprint.</p>
@@ -8001,8 +7625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether or not to include the blueprint in the response.</p>
-        pub fn include_blueprint(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_blueprint(inp);
+        pub fn include_blueprint(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_blueprint(input);
             self
         }
         /// <p>Specifies whether or not to include the blueprint in the response.</p>
@@ -8011,8 +7635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether or not to include the parameter specification.</p>
-        pub fn include_parameter_spec(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_parameter_spec(inp);
+        pub fn include_parameter_spec(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_parameter_spec(input);
             self
         }
         /// <p>Specifies whether or not to include the parameter specification.</p>
@@ -8024,7 +7648,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBlueprintRun`.
     ///
     /// <p>Retrieves the details of a blueprint run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlueprintRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8069,10 +7693,10 @@ pub mod fluent_builders {
                 crate::input::GetBlueprintRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8081,8 +7705,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the blueprint.</p>
-        pub fn blueprint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.blueprint_name(inp);
+        pub fn blueprint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blueprint_name(input.into());
             self
         }
         /// <p>The name of the blueprint.</p>
@@ -8094,8 +7718,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The run ID for the blueprint run you want to retrieve.</p>
-        pub fn run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(inp);
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The run ID for the blueprint run you want to retrieve.</p>
@@ -8107,7 +7731,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBlueprintRuns`.
     ///
     /// <p>Retrieves the details of blueprint runs for a specified blueprint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBlueprintRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8152,10 +7776,10 @@ pub mod fluent_builders {
                 crate::input::GetBlueprintRunsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8163,9 +7787,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetBlueprintRunsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetBlueprintRunsPaginator<C, M, R> {
+            crate::paginator::GetBlueprintRunsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the blueprint.</p>
-        pub fn blueprint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.blueprint_name(inp);
+        pub fn blueprint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blueprint_name(input.into());
             self
         }
         /// <p>The name of the blueprint.</p>
@@ -8177,8 +7807,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -8187,8 +7817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -8200,7 +7830,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCatalogImportStatus`.
     ///
     /// <p>Retrieves the status of a migration operation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCatalogImportStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8245,10 +7875,10 @@ pub mod fluent_builders {
                 crate::input::GetCatalogImportStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8257,8 +7887,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID.</p>
@@ -8270,7 +7900,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetClassifier`.
     ///
     /// <p>Retrieve a classifier by name.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetClassifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8315,10 +7945,10 @@ pub mod fluent_builders {
                 crate::input::GetClassifierInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8327,8 +7957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the classifier to retrieve.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the classifier to retrieve.</p>
@@ -8340,7 +7970,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetClassifiers`.
     ///
     /// <p>Lists all classifier objects in the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetClassifiers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8385,10 +8015,10 @@ pub mod fluent_builders {
                 crate::input::GetClassifiersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8396,9 +8026,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetClassifiersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetClassifiersPaginator<C, M, R> {
+            crate::paginator::GetClassifiersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The size of the list to return (optional).</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The size of the list to return (optional).</p>
@@ -8407,8 +8043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional continuation token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional continuation token.</p>
@@ -8420,9 +8056,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetColumnStatisticsForPartition`.
     ///
     /// <p>Retrieves partition statistics of columns.</p>
-    ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>GetPartition</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetColumnStatisticsForPartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8467,10 +8102,10 @@ pub mod fluent_builders {
                 crate::input::GetColumnStatisticsForPartitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8478,21 +8113,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -8504,8 +8137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -8518,8 +8151,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
         ///
         /// <p>A list of partition values identifying the partition.</p>
-        pub fn partition_values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partition_values(inp);
+        pub fn partition_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partition_values(input.into());
             self
         }
         /// <p>A list of partition values identifying the partition.</p>
@@ -8535,8 +8168,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_column_names`](Self::set_column_names).
         ///
         /// <p>A list of the column names.</p>
-        pub fn column_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.column_names(inp);
+        pub fn column_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.column_names(input.into());
             self
         }
         /// <p>A list of the column names.</p>
@@ -8551,9 +8184,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetColumnStatisticsForTable`.
     ///
     /// <p>Retrieves table statistics of columns.</p>
-    ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>GetTable</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetColumnStatisticsForTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8598,10 +8230,10 @@ pub mod fluent_builders {
                 crate::input::GetColumnStatisticsForTableInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8609,21 +8241,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -8635,8 +8265,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -8649,8 +8279,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_column_names`](Self::set_column_names).
         ///
         /// <p>A list of the column names.</p>
-        pub fn column_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.column_names(inp);
+        pub fn column_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.column_names(input.into());
             self
         }
         /// <p>A list of the column names.</p>
@@ -8665,7 +8295,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConnection`.
     ///
     /// <p>Retrieves a connection definition from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8710,10 +8340,10 @@ pub mod fluent_builders {
                 crate::input::GetConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8721,21 +8351,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the connection definition to retrieve.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the connection definition to retrieve.</p>
@@ -8743,20 +8371,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For
-        /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-        /// the password. Set this parameter when the caller might not have permission to use the KMS
-        /// key to decrypt the password, but it does have permission to access the rest of the connection
-        /// properties.</p>
-        pub fn hide_password(mut self, inp: bool) -> Self {
-            self.inner = self.inner.hide_password(inp);
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
+        pub fn hide_password(mut self, input: bool) -> Self {
+            self.inner = self.inner.hide_password(input);
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For
-        /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-        /// the password. Set this parameter when the caller might not have permission to use the KMS
-        /// key to decrypt the password, but it does have permission to access the rest of the connection
-        /// properties.</p>
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
         pub fn set_hide_password(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_hide_password(input);
             self
@@ -8765,7 +8385,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetConnections`.
     ///
     /// <p>Retrieves a list of connection definitions from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnections<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8810,10 +8430,10 @@ pub mod fluent_builders {
                 crate::input::GetConnectionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8821,21 +8441,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetConnectionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetConnectionsPaginator<C, M, R> {
+            crate::paginator::GetConnectionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>A filter that controls which connections are returned.</p>
-        pub fn filter(mut self, inp: crate::model::GetConnectionsFilter) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::GetConnectionsFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>A filter that controls which connections are returned.</p>
@@ -8846,27 +8470,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For
-        /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-        /// the password. Set this parameter when the caller might not have permission to use the KMS
-        /// key to decrypt the password, but it does have permission to access the rest of the connection
-        /// properties.</p>
-        pub fn hide_password(mut self, inp: bool) -> Self {
-            self.inner = self.inner.hide_password(inp);
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
+        pub fn hide_password(mut self, input: bool) -> Self {
+            self.inner = self.inner.hide_password(input);
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For
-        /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-        /// the password. Set this parameter when the caller might not have permission to use the KMS
-        /// key to decrypt the password, but it does have permission to access the rest of the connection
-        /// properties.</p>
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
         pub fn set_hide_password(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_hide_password(input);
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -8875,8 +8491,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of connections to return in one response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of connections to return in one response.</p>
@@ -8888,7 +8504,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCrawler`.
     ///
     /// <p>Retrieves metadata for a specified crawler.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCrawler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8933,10 +8549,10 @@ pub mod fluent_builders {
                 crate::input::GetCrawlerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8945,8 +8561,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the crawler to retrieve metadata for.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the crawler to retrieve metadata for.</p>
@@ -8958,7 +8574,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCrawlerMetrics`.
     ///
     /// <p>Retrieves metrics about specified crawlers.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCrawlerMetrics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9003,10 +8619,10 @@ pub mod fluent_builders {
                 crate::input::GetCrawlerMetricsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9014,13 +8630,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetCrawlerMetricsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetCrawlerMetricsPaginator<C, M, R> {
+            crate::paginator::GetCrawlerMetricsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `CrawlerNameList`.
         ///
         /// To override the contents of this collection use [`set_crawler_name_list`](Self::set_crawler_name_list).
         ///
         /// <p>A list of the names of crawlers about which to retrieve metrics.</p>
-        pub fn crawler_name_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.crawler_name_list(inp);
+        pub fn crawler_name_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.crawler_name_list(input.into());
             self
         }
         /// <p>A list of the names of crawlers about which to retrieve metrics.</p>
@@ -9032,8 +8654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -9042,8 +8664,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -9054,9 +8676,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCrawlers`.
     ///
-    /// <p>Retrieves metadata for all crawlers defined in the customer
-    /// account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves metadata for all crawlers defined in the customer account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCrawlers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9101,10 +8722,10 @@ pub mod fluent_builders {
                 crate::input::GetCrawlersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9112,9 +8733,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetCrawlersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetCrawlersPaginator<C, M, R> {
+            crate::paginator::GetCrawlersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The number of crawlers to return on each call.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of crawlers to return on each call.</p>
@@ -9123,8 +8750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -9136,7 +8763,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDatabase`.
     ///
     /// <p>Retrieves the definition of a specified database.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9181,10 +8808,10 @@ pub mod fluent_builders {
                 crate::input::GetDatabaseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9192,26 +8819,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the database to retrieve. For Hive compatibility, this
-        /// should be all lowercase.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the database to retrieve. For Hive compatibility, this
-        /// should be all lowercase.</p>
+        /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -9220,7 +8843,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDatabases`.
     ///
     /// <p>Retrieves all databases defined in a given Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDatabases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9265,10 +8888,10 @@ pub mod fluent_builders {
                 crate::input::GetDatabasesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9276,21 +8899,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetDatabasesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetDatabasesPaginator<C, M, R> {
+            crate::paginator::GetDatabasesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -9299,8 +8926,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of databases to return in one response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of databases to return in one response.</p>
@@ -9309,28 +8936,18 @@ pub mod fluent_builders {
             self
         }
         /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p>
-        /// </li>
-        /// <li>
-        /// <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p>
-        /// </li>
+        /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
+        /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
         /// </ul>
-        pub fn resource_share_type(mut self, inp: crate::model::ResourceShareType) -> Self {
-            self.inner = self.inner.resource_share_type(inp);
+        pub fn resource_share_type(mut self, input: crate::model::ResourceShareType) -> Self {
+            self.inner = self.inner.resource_share_type(input);
             self
         }
         /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p>
-        /// </li>
-        /// <li>
-        /// <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p>
-        /// </li>
+        /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
+        /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
         /// </ul>
         pub fn set_resource_share_type(
             mut self,
@@ -9343,7 +8960,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataCatalogEncryptionSettings`.
     ///
     /// <p>Retrieves the security configuration for a specified catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataCatalogEncryptionSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9388,10 +9005,10 @@ pub mod fluent_builders {
                 crate::input::GetDataCatalogEncryptionSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9399,14 +9016,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -9415,7 +9030,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataflowGraph`.
     ///
     /// <p>Transforms a Python script into a directed acyclic graph (DAG). </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataflowGraph<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9460,10 +9075,10 @@ pub mod fluent_builders {
                 crate::input::GetDataflowGraphInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9472,8 +9087,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Python script to transform.</p>
-        pub fn python_script(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.python_script(inp);
+        pub fn python_script(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.python_script(input.into());
             self
         }
         /// <p>The Python script to transform.</p>
@@ -9487,13 +9102,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDevEndpoint`.
     ///
-    /// <p>Retrieves information about a specified development endpoint.</p>
-    /// <note>
-    /// <p>When you create a development endpoint in a virtual private cloud (VPC), Glue returns only
-    /// a private IP address, and the public IP address field is not populated. When you create a
-    /// non-VPC development endpoint, Glue returns only a public IP address.</p>
+    /// <p>Retrieves information about a specified development endpoint.</p> <note>
+    /// <p>When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address, and the public IP address field is not populated. When you create a non-VPC development endpoint, Glue returns only a public IP address.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9538,10 +9150,10 @@ pub mod fluent_builders {
                 crate::input::GetDevEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9550,8 +9162,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
@@ -9565,13 +9177,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDevEndpoints`.
     ///
-    /// <p>Retrieves all the development endpoints in this AWS account.</p>
-    /// <note>
-    /// <p>When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address
-    /// and the public IP address field is not populated. When you create a non-VPC development
-    /// endpoint, Glue returns only a public IP address.</p>
+    /// <p>Retrieves all the development endpoints in this AWS account.</p> <note>
+    /// <p>When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address and the public IP address field is not populated. When you create a non-VPC development endpoint, Glue returns only a public IP address.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9616,10 +9225,10 @@ pub mod fluent_builders {
                 crate::input::GetDevEndpointsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9627,9 +9236,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetDevEndpointsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetDevEndpointsPaginator<C, M, R> {
+            crate::paginator::GetDevEndpointsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum size of information to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of information to return.</p>
@@ -9638,8 +9253,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -9651,7 +9266,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJob`.
     ///
     /// <p>Retrieves an existing job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9696,10 +9311,10 @@ pub mod fluent_builders {
                 crate::input::GetJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9708,8 +9323,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job definition to retrieve.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job definition to retrieve.</p>
@@ -9721,7 +9336,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJobBookmark`.
     ///
     /// <p>Returns information on a job bookmark entry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJobBookmark<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9766,10 +9381,10 @@ pub mod fluent_builders {
                 crate::input::GetJobBookmarkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9778,8 +9393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job in question.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job in question.</p>
@@ -9788,8 +9403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique run identifier associated with this job run.</p>
-        pub fn run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(inp);
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The unique run identifier associated with this job run.</p>
@@ -9801,7 +9416,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJobRun`.
     ///
     /// <p>Retrieves the metadata for a given job run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9846,10 +9461,10 @@ pub mod fluent_builders {
                 crate::input::GetJobRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9858,8 +9473,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the job definition being run.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>Name of the job definition being run.</p>
@@ -9868,8 +9483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the job run.</p>
-        pub fn run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(inp);
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The ID of the job run.</p>
@@ -9878,8 +9493,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>True if a list of predecessor runs should be returned.</p>
-        pub fn predecessors_included(mut self, inp: bool) -> Self {
-            self.inner = self.inner.predecessors_included(inp);
+        pub fn predecessors_included(mut self, input: bool) -> Self {
+            self.inner = self.inner.predecessors_included(input);
             self
         }
         /// <p>True if a list of predecessor runs should be returned.</p>
@@ -9891,7 +9506,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJobRuns`.
     ///
     /// <p>Retrieves metadata for all runs of a given job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJobRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9936,10 +9551,10 @@ pub mod fluent_builders {
                 crate::input::GetJobRunsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9947,9 +9562,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetJobRunsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetJobRunsPaginator<C, M, R> {
+            crate::paginator::GetJobRunsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the job definition for which to retrieve all job runs.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job definition for which to retrieve all job runs.</p>
@@ -9958,8 +9579,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -9968,8 +9589,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of the response.</p>
@@ -9981,7 +9602,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJobs`.
     ///
     /// <p>Retrieves all current job definitions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10026,10 +9647,10 @@ pub mod fluent_builders {
                 crate::input::GetJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10037,9 +9658,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetJobsPaginator<C, M, R> {
+            crate::paginator::GetJobsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -10048,8 +9675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of the response.</p>
@@ -10061,7 +9688,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMapping`.
     ///
     /// <p>Creates mappings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMapping<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10106,10 +9733,10 @@ pub mod fluent_builders {
                 crate::input::GetMappingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10118,8 +9745,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the source table.</p>
-        pub fn source(mut self, inp: crate::model::CatalogEntry) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, input: crate::model::CatalogEntry) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>Specifies the source table.</p>
@@ -10135,8 +9762,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
         ///
         /// <p>A list of target tables.</p>
-        pub fn sinks(mut self, inp: impl Into<crate::model::CatalogEntry>) -> Self {
-            self.inner = self.inner.sinks(inp);
+        pub fn sinks(mut self, input: crate::model::CatalogEntry) -> Self {
+            self.inner = self.inner.sinks(input);
             self
         }
         /// <p>A list of target tables.</p>
@@ -10148,8 +9775,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Parameters for the mapping.</p>
-        pub fn location(mut self, inp: crate::model::Location) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>Parameters for the mapping.</p>
@@ -10160,12 +9787,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMLTaskRun`.
     ///
-    /// <p>Gets details for a specific task run on a machine learning transform. Machine learning
-    /// task runs are asynchronous tasks that Glue runs on your behalf as part of various machine
-    /// learning workflows. You can check the stats of any task run by calling
-    /// <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its parent transform's
-    /// <code>TransformID</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets details for a specific task run on a machine learning transform. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can check the stats of any task run by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its parent transform's <code>TransformID</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMLTaskRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10210,10 +9833,10 @@ pub mod fluent_builders {
                 crate::input::GetMlTaskRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10222,8 +9845,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the machine learning transform.</p>
-        pub fn transform_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(inp);
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the machine learning transform.</p>
@@ -10232,8 +9855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the task run.</p>
-        pub fn task_run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_run_id(inp);
+        pub fn task_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_run_id(input.into());
             self
         }
         /// <p>The unique identifier of the task run.</p>
@@ -10244,14 +9867,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMLTaskRuns`.
     ///
-    /// <p>Gets a list of runs for a machine learning transform. Machine learning task runs are
-    /// asynchronous tasks that Glue runs on your behalf as part of various machine learning
-    /// workflows. You can get a sortable, filterable list of machine learning task runs by calling
-    /// <code>GetMLTaskRuns</code> with their parent transform's <code>TransformID</code> and other
-    /// optional parameters as documented in this section.</p>
-    ///
+    /// <p>Gets a list of runs for a machine learning transform. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can get a sortable, filterable list of machine learning task runs by calling <code>GetMLTaskRuns</code> with their parent transform's <code>TransformID</code> and other optional parameters as documented in this section.</p>
     /// <p>This operation returns a list of historic runs and must be paginated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMLTaskRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10296,10 +9914,10 @@ pub mod fluent_builders {
                 crate::input::GetMlTaskRunsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10307,9 +9925,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetMlTaskRunsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetMlTaskRunsPaginator<C, M, R> {
+            crate::paginator::GetMlTaskRunsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique identifier of the machine learning transform.</p>
-        pub fn transform_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(inp);
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the machine learning transform.</p>
@@ -10318,8 +9942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token for pagination of the results. The default is empty.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token for pagination of the results. The default is empty.</p>
@@ -10328,8 +9952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return. </p>
@@ -10338,8 +9962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p>
-        pub fn filter(mut self, inp: crate::model::TaskRunFilterCriteria) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::TaskRunFilterCriteria) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p>
@@ -10351,8 +9975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p>
-        pub fn sort(mut self, inp: crate::model::TaskRunSortCriteria) -> Self {
-            self.inner = self.inner.sort(inp);
+        pub fn sort(mut self, input: crate::model::TaskRunSortCriteria) -> Self {
+            self.inner = self.inner.sort(input);
             self
         }
         /// <p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p>
@@ -10366,12 +9990,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMLTransform`.
     ///
-    /// <p>Gets an Glue machine learning transform artifact and all its corresponding metadata.
-    /// Machine learning transforms are a special type of transform that use machine learning to learn
-    /// the details of the transformation to be performed by learning from examples provided by
-    /// humans. These transformations are then saved by Glue. You can retrieve their metadata by
-    /// calling <code>GetMLTransform</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets an Glue machine learning transform artifact and all its corresponding metadata. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue. You can retrieve their metadata by calling <code>GetMLTransform</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMLTransform<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10416,10 +10036,10 @@ pub mod fluent_builders {
                 crate::input::GetMlTransformInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10427,14 +10047,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the transform, generated at the time that the transform was
-        /// created.</p>
-        pub fn transform_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(inp);
+        /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
-        /// <p>The unique identifier of the transform, generated at the time that the transform was
-        /// created.</p>
+        /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
         pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_transform_id(input);
             self
@@ -10442,12 +10060,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMLTransforms`.
     ///
-    /// <p>Gets a sortable, filterable list of existing Glue machine learning transforms. Machine
-    /// learning transforms are a special type of transform that use machine learning to learn the
-    /// details of the transformation to be performed by learning from examples provided by humans.
-    /// These transformations are then saved by Glue, and you can retrieve their metadata by
-    /// calling <code>GetMLTransforms</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets a sortable, filterable list of existing Glue machine learning transforms. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue, and you can retrieve their metadata by calling <code>GetMLTransforms</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMLTransforms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10492,10 +10106,10 @@ pub mod fluent_builders {
                 crate::input::GetMlTransformsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10503,9 +10117,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetMlTransformsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetMlTransformsPaginator<C, M, R> {
+            crate::paginator::GetMlTransformsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A paginated token to offset the results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A paginated token to offset the results.</p>
@@ -10514,8 +10134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -10524,8 +10144,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The filter transformation criteria.</p>
-        pub fn filter(mut self, inp: crate::model::TransformFilterCriteria) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::TransformFilterCriteria) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>The filter transformation criteria.</p>
@@ -10537,8 +10157,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sorting criteria.</p>
-        pub fn sort(mut self, inp: crate::model::TransformSortCriteria) -> Self {
-            self.inner = self.inner.sort(inp);
+        pub fn sort(mut self, input: crate::model::TransformSortCriteria) -> Self {
+            self.inner = self.inner.sort(input);
             self
         }
         /// <p>The sorting criteria.</p>
@@ -10553,7 +10173,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPartition`.
     ///
     /// <p>Retrieves information about a specified partition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10598,10 +10218,10 @@ pub mod fluent_builders {
                 crate::input::GetPartitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10609,21 +10229,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the catalog database where the partition resides.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partition resides.</p>
@@ -10635,8 +10253,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partition's table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partition's table.</p>
@@ -10649,8 +10267,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
         ///
         /// <p>The values that define the partition.</p>
-        pub fn partition_values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partition_values(inp);
+        pub fn partition_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partition_values(input.into());
             self
         }
         /// <p>The values that define the partition.</p>
@@ -10665,7 +10283,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPartitionIndexes`.
     ///
     /// <p>Retrieves the partition indexes associated with a table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPartitionIndexes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10710,10 +10328,10 @@ pub mod fluent_builders {
                 crate::input::GetPartitionIndexesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10721,9 +10339,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetPartitionIndexesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetPartitionIndexesPaginator<C, M, R> {
+            crate::paginator::GetPartitionIndexesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The catalog ID where the table resides.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The catalog ID where the table resides.</p>
@@ -10732,8 +10356,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
@@ -10745,8 +10369,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
@@ -10755,8 +10379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, included if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, included if this is a continuation call.</p>
@@ -10768,7 +10392,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPartitions`.
     ///
     /// <p>Retrieves information about the partitions in a table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPartitions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10813,10 +10437,10 @@ pub mod fluent_builders {
                 crate::input::GetPartitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10824,21 +10448,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetPartitionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetPartitionsPaginator<C, M, R> {
+            crate::paginator::GetPartitionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -10850,8 +10478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -10860,240 +10488,164 @@ pub mod fluent_builders {
             self
         }
         /// <p>An expression that filters the partitions to be returned.</p>
-        /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The
-        /// SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
-        /// <p>
-        /// <i>Operators</i>: The following are the operators that you can use in the
-        /// <code>Expression</code> API call:</p>
+        /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+        /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
         /// <dl>
-        /// <dt>=</dt>
+        /// <dt>
+        /// =
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes
-        /// true.</p>
+        /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
         /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
         /// <p>(a = b) is not true.</p>
         /// </dd>
-        /// <dt>< ></dt>
+        /// <dt>
+        /// &lt; &gt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the values of two operands are equal; if the values are not equal,
-        /// then the condition becomes true.</p>
-        /// <p>Example: (a < > b) is true.</p>
+        /// <p>Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.</p>
+        /// <p>Example: (a &lt; &gt; b) is true.</p>
         /// </dd>
-        /// <dt>></dt>
+        /// <dt>
+        /// &gt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is greater than the value of the right
-        /// operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a > b) is not true.</p>
+        /// <p>Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &gt; b) is not true.</p>
         /// </dd>
-        /// <dt><</dt>
+        /// <dt>
+        /// &lt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is less than the value of the right
-        /// operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a < b) is true.</p>
+        /// <p>Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &lt; b) is true.</p>
         /// </dd>
-        /// <dt>>=</dt>
+        /// <dt>
+        /// &gt;=
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is greater than or equal to the value
-        /// of the right operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a >= b) is not true.</p>
+        /// <p>Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &gt;= b) is not true.</p>
         /// </dd>
-        /// <dt><=</dt>
+        /// <dt>
+        /// &lt;=
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is less than or equal to the value of
-        /// the right operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a <= b) is true.</p>
+        /// <p>Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &lt;= b) is true.</p>
         /// </dd>
-        /// <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+        /// <dt>
+        /// AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL
+        /// </dt>
         /// <dd>
         /// <p>Logical operators.</p>
         /// </dd>
         /// </dl>
-        /// <p>
-        /// <i>Supported Partition Key Types</i>: The following are the supported
-        /// partition keys.</p>
+        /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>string</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>date</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>timestamp</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>int</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>bigint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>long</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>tinyint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>smallint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>decimal</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>string</code> </p> </li>
+        /// <li> <p> <code>date</code> </p> </li>
+        /// <li> <p> <code>timestamp</code> </p> </li>
+        /// <li> <p> <code>int</code> </p> </li>
+        /// <li> <p> <code>bigint</code> </p> </li>
+        /// <li> <p> <code>long</code> </p> </li>
+        /// <li> <p> <code>tinyint</code> </p> </li>
+        /// <li> <p> <code>smallint</code> </p> </li>
+        /// <li> <p> <code>decimal</code> </p> </li>
         /// </ul>
         /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
-        /// <p>The following list shows the valid operators on each type. When you define a crawler, the
-        /// <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog
-        /// partitions. </p>
-        ///
-        /// <p>
-        /// <i>Sample API Call</i>: </p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(inp);
+        /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions. </p>
+        /// <p> <i>Sample API Call</i>: </p>
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(input.into());
             self
         }
         /// <p>An expression that filters the partitions to be returned.</p>
-        /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The
-        /// SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
-        /// <p>
-        /// <i>Operators</i>: The following are the operators that you can use in the
-        /// <code>Expression</code> API call:</p>
+        /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+        /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
         /// <dl>
-        /// <dt>=</dt>
+        /// <dt>
+        /// =
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes
-        /// true.</p>
+        /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
         /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
         /// <p>(a = b) is not true.</p>
         /// </dd>
-        /// <dt>< ></dt>
+        /// <dt>
+        /// &lt; &gt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the values of two operands are equal; if the values are not equal,
-        /// then the condition becomes true.</p>
-        /// <p>Example: (a < > b) is true.</p>
+        /// <p>Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.</p>
+        /// <p>Example: (a &lt; &gt; b) is true.</p>
         /// </dd>
-        /// <dt>></dt>
+        /// <dt>
+        /// &gt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is greater than the value of the right
-        /// operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a > b) is not true.</p>
+        /// <p>Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &gt; b) is not true.</p>
         /// </dd>
-        /// <dt><</dt>
+        /// <dt>
+        /// &lt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is less than the value of the right
-        /// operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a < b) is true.</p>
+        /// <p>Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &lt; b) is true.</p>
         /// </dd>
-        /// <dt>>=</dt>
+        /// <dt>
+        /// &gt;=
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is greater than or equal to the value
-        /// of the right operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a >= b) is not true.</p>
+        /// <p>Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &gt;= b) is not true.</p>
         /// </dd>
-        /// <dt><=</dt>
+        /// <dt>
+        /// &lt;=
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is less than or equal to the value of
-        /// the right operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a <= b) is true.</p>
+        /// <p>Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &lt;= b) is true.</p>
         /// </dd>
-        /// <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+        /// <dt>
+        /// AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL
+        /// </dt>
         /// <dd>
         /// <p>Logical operators.</p>
         /// </dd>
         /// </dl>
-        /// <p>
-        /// <i>Supported Partition Key Types</i>: The following are the supported
-        /// partition keys.</p>
+        /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>string</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>date</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>timestamp</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>int</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>bigint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>long</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>tinyint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>smallint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>decimal</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>string</code> </p> </li>
+        /// <li> <p> <code>date</code> </p> </li>
+        /// <li> <p> <code>timestamp</code> </p> </li>
+        /// <li> <p> <code>int</code> </p> </li>
+        /// <li> <p> <code>bigint</code> </p> </li>
+        /// <li> <p> <code>long</code> </p> </li>
+        /// <li> <p> <code>tinyint</code> </p> </li>
+        /// <li> <p> <code>smallint</code> </p> </li>
+        /// <li> <p> <code>decimal</code> </p> </li>
         /// </ul>
         /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
-        /// <p>The following list shows the valid operators on each type. When you define a crawler, the
-        /// <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog
-        /// partitions. </p>
-        ///
-        /// <p>
-        /// <i>Sample API Call</i>: </p>
+        /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions. </p>
+        /// <p> <i>Sample API Call</i>: </p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_expression(input);
             self
         }
-        /// <p>A continuation token, if this is not the first call to retrieve
-        /// these partitions.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A continuation token, if this is not the first call to retrieve
-        /// these partitions.</p>
+        /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The segment of the table's partitions to scan in this request.</p>
-        pub fn segment(mut self, inp: crate::model::Segment) -> Self {
-            self.inner = self.inner.segment(inp);
+        pub fn segment(mut self, input: crate::model::Segment) -> Self {
+            self.inner = self.inner.segment(input);
             self
         }
         /// <p>The segment of the table's partitions to scan in this request.</p>
@@ -11102,8 +10654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of partitions to return in a single response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of partitions to return in a single response.</p>
@@ -11112,8 +10664,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When true, specifies not returning the partition column schema. Useful when you are interested only in other partition attributes such as partition values or location. This approach avoids the problem of a large response by not returning duplicate data.</p>
-        pub fn exclude_column_schema(mut self, inp: bool) -> Self {
-            self.inner = self.inner.exclude_column_schema(inp);
+        pub fn exclude_column_schema(mut self, input: bool) -> Self {
+            self.inner = self.inner.exclude_column_schema(input);
             self
         }
         /// <p>When true, specifies not returning the partition column schema. Useful when you are interested only in other partition attributes such as partition values or location. This approach avoids the problem of a large response by not returning duplicate data.</p>
@@ -11122,8 +10674,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The transaction ID at which to read the partition contents.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The transaction ID at which to read the partition contents.</p>
@@ -11135,8 +10687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-        pub fn query_as_of_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.query_as_of_time(inp);
+        pub fn query_as_of_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.query_as_of_time(input);
             self
         }
         /// <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
@@ -11151,7 +10703,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPlan`.
     ///
     /// <p>Gets code to perform a specified mapping.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPlan<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11196,10 +10748,10 @@ pub mod fluent_builders {
                 crate::input::GetPlanInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11212,8 +10764,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_mapping`](Self::set_mapping).
         ///
         /// <p>The list of mappings from a source table to target tables.</p>
-        pub fn mapping(mut self, inp: impl Into<crate::model::MappingEntry>) -> Self {
-            self.inner = self.inner.mapping(inp);
+        pub fn mapping(mut self, input: crate::model::MappingEntry) -> Self {
+            self.inner = self.inner.mapping(input);
             self
         }
         /// <p>The list of mappings from a source table to target tables.</p>
@@ -11225,8 +10777,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source table.</p>
-        pub fn source(mut self, inp: crate::model::CatalogEntry) -> Self {
-            self.inner = self.inner.source(inp);
+        pub fn source(mut self, input: crate::model::CatalogEntry) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>The source table.</p>
@@ -11242,8 +10794,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
         ///
         /// <p>The target tables.</p>
-        pub fn sinks(mut self, inp: impl Into<crate::model::CatalogEntry>) -> Self {
-            self.inner = self.inner.sinks(inp);
+        pub fn sinks(mut self, input: crate::model::CatalogEntry) -> Self {
+            self.inner = self.inner.sinks(input);
             self
         }
         /// <p>The target tables.</p>
@@ -11255,8 +10807,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parameters for the mapping.</p>
-        pub fn location(mut self, inp: crate::model::Location) -> Self {
-            self.inner = self.inner.location(inp);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>The parameters for the mapping.</p>
@@ -11265,8 +10817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The programming language of the code to perform the mapping.</p>
-        pub fn language(mut self, inp: crate::model::Language) -> Self {
-            self.inner = self.inner.language(inp);
+        pub fn language(mut self, input: crate::model::Language) -> Self {
+            self.inner = self.inner.language(input);
             self
         }
         /// <p>The programming language of the code to perform the mapping.</p>
@@ -11279,38 +10831,22 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_additional_plan_options_map`](Self::set_additional_plan_options_map).
         ///
         /// <p>A map to hold additional optional key-value parameters.</p>
-        ///
         /// <p>Currently, these key-value pairs are supported:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>inferSchema</code>  —  Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p>
-        /// <p>
-        /// <code>--additional-plan-options-map '{"inferSchema":"true"}'</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>inferSchema</code>&nbsp; — &nbsp;Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p> <p> <code>--additional-plan-options-map '{"inferSchema":"true"}'</code> </p> </li>
         /// </ul>
         pub fn additional_plan_options_map(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.additional_plan_options_map(k, v);
+            self.inner = self.inner.additional_plan_options_map(k.into(), v.into());
             self
         }
         /// <p>A map to hold additional optional key-value parameters.</p>
-        ///
         /// <p>Currently, these key-value pairs are supported:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>inferSchema</code>  —  Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p>
-        /// <p>
-        /// <code>--additional-plan-options-map '{"inferSchema":"true"}'</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>inferSchema</code>&nbsp; — &nbsp;Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p> <p> <code>--additional-plan-options-map '{"inferSchema":"true"}'</code> </p> </li>
         /// </ul>
         pub fn set_additional_plan_options_map(
             mut self,
@@ -11325,7 +10861,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRegistry`.
     ///
     /// <p>Describes the specified registry in detail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11370,10 +10906,10 @@ pub mod fluent_builders {
                 crate::input::GetRegistryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11382,8 +10918,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-        pub fn registry_id(mut self, inp: crate::model::RegistryId) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, input: crate::model::RegistryId) -> Self {
+            self.inner = self.inner.registry_id(input);
             self
         }
         /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
@@ -11397,13 +10933,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResourcePolicies`.
     ///
-    /// <p>Retrieves the resource policies set on individual resources by Resource Access Manager
-    /// during cross-account permission grants. Also retrieves the Data Catalog resource
-    /// policy.</p>
-    /// <p>If you enabled metadata encryption in Data Catalog settings, and you do not have
-    /// permission on the KMS key, the operation can't return the Data Catalog resource
-    /// policy.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the resource policies set on individual resources by Resource Access Manager during cross-account permission grants. Also retrieves the Data Catalog resource policy.</p>
+    /// <p>If you enabled metadata encryption in Data Catalog settings, and you do not have permission on the KMS key, the operation can't return the Data Catalog resource policy.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicies<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11448,10 +10980,10 @@ pub mod fluent_builders {
                 crate::input::GetResourcePoliciesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11459,9 +10991,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetResourcePoliciesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetResourcePoliciesPaginator<C, M, R> {
+            crate::paginator::GetResourcePoliciesPaginator::new(self.handle, self.inner)
+        }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -11470,8 +11008,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -11483,7 +11021,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetResourcePolicy`.
     ///
     /// <p>Retrieves a specified resource policy.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11528,10 +11066,10 @@ pub mod fluent_builders {
                 crate::input::GetResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11539,18 +11077,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not
-        /// supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code>
-        /// to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>.
-        /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>. </p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not
-        /// supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code>
-        /// to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>.
-        /// </p>
+        /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -11559,7 +11091,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSchema`.
     ///
     /// <p>Describes the specified schema in detail.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11604,10 +11136,10 @@ pub mod fluent_builders {
                 crate::input::GetSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11617,25 +11149,17 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
-        pub fn schema_id(mut self, inp: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(inp);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.inner = self.inner.set_schema_id(input);
@@ -11645,7 +11169,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSchemaByDefinition`.
     ///
     /// <p>Retrieves a schema by the <code>SchemaDefinition</code>. The schema definition is sent to the Schema Registry, canonicalized, and hashed. If the hash is matched within the scope of the <code>SchemaName</code> or ARN (or the default registry, if none is supplied), that schema’s metadata is returned. Otherwise, a 404 or NotFound error is returned. Schema versions in <code>Deleted</code> statuses will not be included in the results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSchemaByDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11690,10 +11214,10 @@ pub mod fluent_builders {
                 crate::input::GetSchemaByDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11703,33 +11227,25 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
-        pub fn schema_id(mut self, inp: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(inp);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.inner = self.inner.set_schema_id(input);
             self
         }
         /// <p>The definition of the schema for which schema details are required.</p>
-        pub fn schema_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_definition(inp);
+        pub fn schema_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_definition(input.into());
             self
         }
         /// <p>The definition of the schema for which schema details are required.</p>
@@ -11744,7 +11260,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSchemaVersion`.
     ///
     /// <p>Get the specified schema by its unique ID assigned when a version of the schema is created or registered. Schema versions in Deleted status will not be included in the results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSchemaVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11789,10 +11305,10 @@ pub mod fluent_builders {
                 crate::input::GetSchemaVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11802,33 +11318,25 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
-        pub fn schema_id(mut self, inp: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(inp);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.inner = self.inner.set_schema_id(input);
             self
         }
         /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
-        pub fn schema_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version_id(inp);
+        pub fn schema_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version_id(input.into());
             self
         }
         /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
@@ -11840,8 +11348,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the schema.</p>
-        pub fn schema_version_number(mut self, inp: crate::model::SchemaVersionNumber) -> Self {
-            self.inner = self.inner.schema_version_number(inp);
+        pub fn schema_version_number(mut self, input: crate::model::SchemaVersionNumber) -> Self {
+            self.inner = self.inner.schema_version_number(input);
             self
         }
         /// <p>The version number of the schema.</p>
@@ -11857,7 +11365,7 @@ pub mod fluent_builders {
     ///
     /// <p>Fetches the schema version difference in the specified difference type between two stored schema versions in the Schema Registry.</p>
     /// <p>This API allows you to compare two schema versions between two schema definitions under the same schema.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSchemaVersionsDiff<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11902,10 +11410,10 @@ pub mod fluent_builders {
                 crate::input::GetSchemaVersionsDiffInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11915,25 +11423,17 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
-        pub fn schema_id(mut self, inp: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(inp);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.inner = self.inner.set_schema_id(input);
@@ -11942,9 +11442,9 @@ pub mod fluent_builders {
         /// <p>The first of the two schema versions to be compared.</p>
         pub fn first_schema_version_number(
             mut self,
-            inp: crate::model::SchemaVersionNumber,
+            input: crate::model::SchemaVersionNumber,
         ) -> Self {
-            self.inner = self.inner.first_schema_version_number(inp);
+            self.inner = self.inner.first_schema_version_number(input);
             self
         }
         /// <p>The first of the two schema versions to be compared.</p>
@@ -11958,9 +11458,9 @@ pub mod fluent_builders {
         /// <p>The second of the two schema versions to be compared.</p>
         pub fn second_schema_version_number(
             mut self,
-            inp: crate::model::SchemaVersionNumber,
+            input: crate::model::SchemaVersionNumber,
         ) -> Self {
-            self.inner = self.inner.second_schema_version_number(inp);
+            self.inner = self.inner.second_schema_version_number(input);
             self
         }
         /// <p>The second of the two schema versions to be compared.</p>
@@ -11972,8 +11472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
-        pub fn schema_diff_type(mut self, inp: crate::model::SchemaDiffType) -> Self {
-            self.inner = self.inner.schema_diff_type(inp);
+        pub fn schema_diff_type(mut self, input: crate::model::SchemaDiffType) -> Self {
+            self.inner = self.inner.schema_diff_type(input);
             self
         }
         /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
@@ -11988,7 +11488,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSecurityConfiguration`.
     ///
     /// <p>Retrieves a specified security configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSecurityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12033,10 +11533,10 @@ pub mod fluent_builders {
                 crate::input::GetSecurityConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12045,8 +11545,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the security configuration to retrieve.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the security configuration to retrieve.</p>
@@ -12058,7 +11558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSecurityConfigurations`.
     ///
     /// <p>Retrieves a list of all security configurations.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSecurityConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12103,10 +11603,10 @@ pub mod fluent_builders {
                 crate::input::GetSecurityConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12114,9 +11614,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetSecurityConfigurationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetSecurityConfigurationsPaginator<C, M, R> {
+            crate::paginator::GetSecurityConfigurationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -12125,8 +11633,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -12137,9 +11645,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTable`.
     ///
-    /// <p>Retrieves the <code>Table</code> definition in a Data Catalog for
-    /// a specified table.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the <code>Table</code> definition in a Data Catalog for a specified table.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12184,10 +11691,10 @@ pub mod fluent_builders {
                 crate::input::GetTableInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12195,26 +11702,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the database in the catalog in which the table resides.
-        /// For Hive compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the database in the catalog in which the table resides.
-        /// For Hive compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12222,21 +11725,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>The name of the table for which to retrieve the definition. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the table for which to retrieve the definition. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The transaction ID at which to read the table contents. </p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The transaction ID at which to read the table contents. </p>
@@ -12248,8 +11749,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-        pub fn query_as_of_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.query_as_of_time(inp);
+        pub fn query_as_of_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.query_as_of_time(input);
             self
         }
         /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
@@ -12263,9 +11764,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTables`.
     ///
-    /// <p>Retrieves the definitions of some or all of the tables in a given
-    /// <code>Database</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the definitions of some or all of the tables in a given <code>Database</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12310,10 +11810,10 @@ pub mod fluent_builders {
                 crate::input::GetTablesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12321,26 +11821,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetTablesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetTablesPaginator<C, M, R> {
+            crate::paginator::GetTablesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The database in the catalog whose tables to list. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The database in the catalog whose tables to list. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12348,21 +11850,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>A regular expression pattern. If present, only those tables
-        /// whose names match the pattern are returned.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(inp);
+        /// <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(input.into());
             self
         }
-        /// <p>A regular expression pattern. If present, only those tables
-        /// whose names match the pattern are returned.</p>
+        /// <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_expression(input);
             self
         }
         /// <p>A continuation token, included if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, included if this is a continuation call.</p>
@@ -12371,8 +11871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of tables to return in a single response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of tables to return in a single response.</p>
@@ -12381,8 +11881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The transaction ID at which to read the table contents.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The transaction ID at which to read the table contents.</p>
@@ -12394,8 +11894,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-        pub fn query_as_of_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.query_as_of_time(inp);
+        pub fn query_as_of_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.query_as_of_time(input);
             self
         }
         /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
@@ -12410,7 +11910,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTableVersion`.
     ///
     /// <p>Retrieves a specified version of a table.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTableVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12455,10 +11955,10 @@ pub mod fluent_builders {
                 crate::input::GetTableVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12466,26 +11966,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12493,21 +11989,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>The ID value of the table version to be retrieved. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1. </p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input.into());
             self
         }
         /// <p>The ID value of the table version to be retrieved. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1. </p>
@@ -12518,9 +12012,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTableVersions`.
     ///
-    /// <p>Retrieves a list of strings that identify available versions of
-    /// a specified table.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list of strings that identify available versions of a specified table.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTableVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12565,10 +12058,10 @@ pub mod fluent_builders {
                 crate::input::GetTableVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12576,26 +12069,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetTableVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetTableVersionsPaginator<C, M, R> {
+            crate::paginator::GetTableVersionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12603,21 +12098,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>The name of the table. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
-        /// <p>The name of the table. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_name(input);
             self
         }
         /// <p>A continuation token, if this is not the first call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is not the first call.</p>
@@ -12626,8 +12119,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of table versions to return in one response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of table versions to return in one response.</p>
@@ -12639,7 +12132,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTags`.
     ///
     /// <p>Retrieves a list of tags associated with a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12684,10 +12177,10 @@ pub mod fluent_builders {
                 crate::input::GetTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12696,8 +12189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which to retrieve tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which to retrieve tags.</p>
@@ -12709,7 +12202,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTrigger`.
     ///
     /// <p>Retrieves the definition of a trigger.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTrigger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12754,10 +12247,10 @@ pub mod fluent_builders {
                 crate::input::GetTriggerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12766,8 +12259,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trigger to retrieve.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the trigger to retrieve.</p>
@@ -12779,7 +12272,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTriggers`.
     ///
     /// <p>Gets all the triggers associated with a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTriggers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12824,10 +12317,10 @@ pub mod fluent_builders {
                 crate::input::GetTriggersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12835,9 +12328,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetTriggersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetTriggersPaginator<C, M, R> {
+            crate::paginator::GetTriggersPaginator::new(self.handle, self.inner)
+        }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -12845,14 +12344,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is
-        /// returned, and if there is no such trigger, all triggers are returned.</p>
-        pub fn dependent_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dependent_job_name(inp);
+        /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
+        pub fn dependent_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dependent_job_name(input.into());
             self
         }
-        /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is
-        /// returned, and if there is no such trigger, all triggers are returned.</p>
+        /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
         pub fn set_dependent_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12861,8 +12358,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of the response.</p>
@@ -12871,10 +12368,441 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `GetUnfilteredPartitionMetadata`.
+    ///
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetUnfilteredPartitionMetadata<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_unfiltered_partition_metadata_input::Builder,
+    }
+    impl<C, M, R> GetUnfilteredPartitionMetadata<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetUnfilteredPartitionMetadata`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetUnfilteredPartitionMetadataOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetUnfilteredPartitionMetadataError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetUnfilteredPartitionMetadataInputOperationOutputAlias,
+                crate::output::GetUnfilteredPartitionMetadataOutput,
+                crate::error::GetUnfilteredPartitionMetadataError,
+                crate::input::GetUnfilteredPartitionMetadataInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_catalog_id(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_database_name(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
+            self
+        }
+        /// Appends an item to `PartitionValues`.
+        ///
+        /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
+        ///
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn partition_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partition_values(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_partition_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_partition_values(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn audit_context(mut self, input: crate::model::AuditContext) -> Self {
+            self.inner = self.inner.audit_context(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_audit_context(
+            mut self,
+            input: std::option::Option<crate::model::AuditContext>,
+        ) -> Self {
+            self.inner = self.inner.set_audit_context(input);
+            self
+        }
+        /// Appends an item to `SupportedPermissionTypes`.
+        ///
+        /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).
+        ///
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn supported_permission_types(mut self, input: crate::model::PermissionType) -> Self {
+            self.inner = self.inner.supported_permission_types(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_supported_permission_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
+        ) -> Self {
+            self.inner = self.inner.set_supported_permission_types(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetUnfilteredPartitionsMetadata`.
+    ///
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetUnfilteredPartitionsMetadata<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_unfiltered_partitions_metadata_input::Builder,
+    }
+    impl<C, M, R> GetUnfilteredPartitionsMetadata<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetUnfilteredPartitionsMetadata`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetUnfilteredPartitionsMetadataOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetUnfilteredPartitionsMetadataError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetUnfilteredPartitionsMetadataInputOperationOutputAlias,
+                crate::output::GetUnfilteredPartitionsMetadataOutput,
+                crate::error::GetUnfilteredPartitionsMetadataError,
+                crate::input::GetUnfilteredPartitionsMetadataInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetUnfilteredPartitionsMetadataPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::GetUnfilteredPartitionsMetadataPaginator<C, M, R> {
+            crate::paginator::GetUnfilteredPartitionsMetadataPaginator::new(self.handle, self.inner)
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_catalog_id(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_database_name(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_table_name(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_expression(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn audit_context(mut self, input: crate::model::AuditContext) -> Self {
+            self.inner = self.inner.audit_context(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_audit_context(
+            mut self,
+            input: std::option::Option<crate::model::AuditContext>,
+        ) -> Self {
+            self.inner = self.inner.set_audit_context(input);
+            self
+        }
+        /// Appends an item to `SupportedPermissionTypes`.
+        ///
+        /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).
+        ///
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn supported_permission_types(mut self, input: crate::model::PermissionType) -> Self {
+            self.inner = self.inner.supported_permission_types(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_supported_permission_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
+        ) -> Self {
+            self.inner = self.inner.set_supported_permission_types(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
+        pub fn segment(mut self, input: crate::model::Segment) -> Self {
+            self.inner = self.inner.segment(input);
+            self
+        }
+        /// <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
+        pub fn set_segment(mut self, input: std::option::Option<crate::model::Segment>) -> Self {
+            self.inner = self.inner.set_segment(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    /// Fluent builder constructing a request to `GetUnfilteredTableMetadata`.
+    ///
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct GetUnfilteredTableMetadata<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::get_unfiltered_table_metadata_input::Builder,
+    }
+    impl<C, M, R> GetUnfilteredTableMetadata<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `GetUnfilteredTableMetadata`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetUnfilteredTableMetadataOutput,
+            aws_smithy_http::result::SdkError<crate::error::GetUnfilteredTableMetadataError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::GetUnfilteredTableMetadataInputOperationOutputAlias,
+                crate::output::GetUnfilteredTableMetadataOutput,
+                crate::error::GetUnfilteredTableMetadataError,
+                crate::input::GetUnfilteredTableMetadataInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_catalog_id(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_database_name(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn audit_context(mut self, input: crate::model::AuditContext) -> Self {
+            self.inner = self.inner.audit_context(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_audit_context(
+            mut self,
+            input: std::option::Option<crate::model::AuditContext>,
+        ) -> Self {
+            self.inner = self.inner.set_audit_context(input);
+            self
+        }
+        /// Appends an item to `SupportedPermissionTypes`.
+        ///
+        /// To override the contents of this collection use [`set_supported_permission_types`](Self::set_supported_permission_types).
+        ///
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn supported_permission_types(mut self, input: crate::model::PermissionType) -> Self {
+            self.inner = self.inner.supported_permission_types(input);
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_supported_permission_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
+        ) -> Self {
+            self.inner = self.inner.set_supported_permission_types(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `GetUserDefinedFunction`.
     ///
     /// <p>Retrieves a specified function definition from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUserDefinedFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -12919,10 +12847,10 @@ pub mod fluent_builders {
                 crate::input::GetUserDefinedFunctionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12930,21 +12858,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the catalog database where the function is located.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the function is located.</p>
@@ -12956,8 +12882,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the function.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input.into());
             self
         }
         /// <p>The name of the function.</p>
@@ -12972,7 +12898,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUserDefinedFunctions`.
     ///
     /// <p>Retrieves multiple function definitions from the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUserDefinedFunctions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13017,10 +12943,10 @@ pub mod fluent_builders {
                 crate::input::GetUserDefinedFunctionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13028,26 +12954,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetUserDefinedFunctionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetUserDefinedFunctionsPaginator<C, M, R> {
+            crate::paginator::GetUserDefinedFunctionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the
-        /// databases across the catalog will be returned.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the
-        /// databases across the catalog will be returned.</p>
+        /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13055,21 +12983,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>An optional function-name pattern string that filters the function
-        /// definitions returned.</p>
-        pub fn pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern(inp);
+        /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
+        pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern(input.into());
             self
         }
-        /// <p>An optional function-name pattern string that filters the function
-        /// definitions returned.</p>
+        /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_pattern(input);
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -13078,8 +13004,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of functions to return in one response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of functions to return in one response.</p>
@@ -13091,7 +13017,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkflow`.
     ///
     /// <p>Retrieves resource metadata for a workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkflow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13136,10 +13062,10 @@ pub mod fluent_builders {
                 crate::input::GetWorkflowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13148,8 +13074,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workflow to retrieve.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the workflow to retrieve.</p>
@@ -13158,8 +13084,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
-        pub fn include_graph(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_graph(inp);
+        pub fn include_graph(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_graph(input);
             self
         }
         /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
@@ -13171,7 +13097,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkflowRun`.
     ///
     /// <p>Retrieves the metadata for a given workflow run. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkflowRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13216,10 +13142,10 @@ pub mod fluent_builders {
                 crate::input::GetWorkflowRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13228,8 +13154,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the workflow being run.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the workflow being run.</p>
@@ -13238,8 +13164,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workflow run.</p>
-        pub fn run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(inp);
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The ID of the workflow run.</p>
@@ -13248,8 +13174,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to include the workflow graph in response or not.</p>
-        pub fn include_graph(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_graph(inp);
+        pub fn include_graph(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_graph(input);
             self
         }
         /// <p>Specifies whether to include the workflow graph in response or not.</p>
@@ -13261,7 +13187,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkflowRunProperties`.
     ///
     /// <p>Retrieves the workflow run properties which were set during the run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkflowRunProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13306,10 +13232,10 @@ pub mod fluent_builders {
                 crate::input::GetWorkflowRunPropertiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13318,8 +13244,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the workflow which was run.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the workflow which was run.</p>
@@ -13328,8 +13254,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workflow run whose run properties should be returned.</p>
-        pub fn run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(inp);
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The ID of the workflow run whose run properties should be returned.</p>
@@ -13341,7 +13267,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetWorkflowRuns`.
     ///
     /// <p>Retrieves metadata for all runs of a given workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetWorkflowRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13386,10 +13312,10 @@ pub mod fluent_builders {
                 crate::input::GetWorkflowRunsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13397,9 +13323,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetWorkflowRunsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetWorkflowRunsPaginator<C, M, R> {
+            crate::paginator::GetWorkflowRunsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Name of the workflow whose metadata of runs should be returned.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the workflow whose metadata of runs should be returned.</p>
@@ -13408,8 +13340,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to include the workflow graph in response or not.</p>
-        pub fn include_graph(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_graph(inp);
+        pub fn include_graph(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_graph(input);
             self
         }
         /// <p>Specifies whether to include the workflow graph in response or not.</p>
@@ -13418,8 +13350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of the response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The maximum size of the response.</p>
@@ -13428,8 +13360,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of workflow runs to be included in the response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of workflow runs to be included in the response.</p>
@@ -13441,7 +13373,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportCatalogToGlue`.
     ///
     /// <p>Imports an existing Amazon Athena Data Catalog to Glue.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportCatalogToGlue<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13486,10 +13418,10 @@ pub mod fluent_builders {
                 crate::input::ImportCatalogToGlueInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13498,8 +13430,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.</p>
@@ -13511,7 +13443,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBlueprints`.
     ///
     /// <p>Lists all the blueprint names in an account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBlueprints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13556,10 +13488,10 @@ pub mod fluent_builders {
                 crate::input::ListBlueprintsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13567,9 +13499,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBlueprintsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBlueprintsPaginator<C, M, R> {
+            crate::paginator::ListBlueprintsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -13578,8 +13516,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -13597,7 +13535,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Filters the list by an Amazon Web Services resource tag.</p>
@@ -13613,14 +13551,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCrawlers`.
     ///
-    /// <p>Retrieves the names of all crawler resources in this Amazon Web Services account, or the
-    /// resources with the specified tag. This operation allows you to see which
-    /// resources are available in your account, and their names.</p>
-    ///
-    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on
-    /// the response so that tagged resources can be retrieved as a group. If you choose to use tags
-    /// filtering, only resources with the tag are retrieved.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the names of all crawler resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p>
+    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCrawlers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13665,10 +13598,10 @@ pub mod fluent_builders {
                 crate::input::ListCrawlersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13676,9 +13609,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCrawlersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCrawlersPaginator<C, M, R> {
+            crate::paginator::ListCrawlersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -13687,8 +13626,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -13706,7 +13645,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Specifies to return only these tagged resources.</p>
@@ -13722,14 +13661,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDevEndpoints`.
     ///
-    /// <p>Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon Web Services account, or the
-    /// resources with the specified tag. This operation allows you to see which resources are
-    /// available in your account, and their names.</p>
-    ///
-    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on
-    /// the response so that tagged resources can be retrieved as a group. If you choose to use tags
-    /// filtering, only resources with the tag are retrieved.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p>
+    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13774,10 +13708,10 @@ pub mod fluent_builders {
                 crate::input::ListDevEndpointsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13785,9 +13719,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDevEndpointsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDevEndpointsPaginator<C, M, R> {
+            crate::paginator::ListDevEndpointsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -13796,8 +13736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -13815,7 +13755,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Specifies to return only these tagged resources.</p>
@@ -13832,11 +13772,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJobs`.
     ///
     /// <p>Retrieves the names of all job resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p>
-    ///
-    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on
-    /// the response so that tagged resources can be retrieved as a group. If you choose to use tags
-    /// filtering, only resources with the tag are retrieved.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13881,10 +13818,10 @@ pub mod fluent_builders {
                 crate::input::ListJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13892,9 +13829,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListJobsPaginator<C, M, R> {
+            crate::paginator::ListJobsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -13903,8 +13846,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -13922,7 +13865,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Specifies to return only these tagged resources.</p>
@@ -13938,12 +13881,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMLTransforms`.
     ///
-    /// <p> Retrieves a sortable, filterable list of existing Glue machine learning transforms in this Amazon Web Services account,
-    /// or the resources with the specified tag. This operation takes the optional <code>Tags</code> field, which you can use as
-    /// a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag
-    /// filtering, only resources with the tags are retrieved.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p> Retrieves a sortable, filterable list of existing Glue machine learning transforms in this Amazon Web Services account, or the resources with the specified tag. This operation takes the optional <code>Tags</code> field, which you can use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag filtering, only resources with the tags are retrieved. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMLTransforms<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -13988,10 +13927,10 @@ pub mod fluent_builders {
                 crate::input::ListMlTransformsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13999,9 +13938,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMlTransformsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMlTransformsPaginator<C, M, R> {
+            crate::paginator::ListMlTransformsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -14010,8 +13955,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -14020,8 +13965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.</p>
-        pub fn filter(mut self, inp: crate::model::TransformFilterCriteria) -> Self {
-            self.inner = self.inner.filter(inp);
+        pub fn filter(mut self, input: crate::model::TransformFilterCriteria) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.</p>
@@ -14033,8 +13978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>TransformSortCriteria</code> used to sort the machine learning transforms.</p>
-        pub fn sort(mut self, inp: crate::model::TransformSortCriteria) -> Self {
-            self.inner = self.inner.sort(inp);
+        pub fn sort(mut self, input: crate::model::TransformSortCriteria) -> Self {
+            self.inner = self.inner.sort(input);
             self
         }
         /// <p>A <code>TransformSortCriteria</code> used to sort the machine learning transforms.</p>
@@ -14055,7 +14000,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Specifies to return only these tagged resources.</p>
@@ -14072,7 +14017,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRegistries`.
     ///
     /// <p>Returns a list of registries that you have created, with minimal registry information. Registries in the <code>Deleting</code> status will not be included in the results. Empty results will be returned if there are no registries available.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRegistries<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14117,10 +14062,10 @@ pub mod fluent_builders {
                 crate::input::ListRegistriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14128,9 +14073,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRegistriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRegistriesPaginator<C, M, R> {
+            crate::paginator::ListRegistriesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
@@ -14139,8 +14090,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -14153,7 +14104,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns a list of schemas with minimal details. Schemas in Deleting status will not be included in the results. Empty results will be returned if there are no schemas available.</p>
     /// <p>When the <code>RegistryId</code> is not provided, all the schemas across registries will be part of the API response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchemas<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14198,10 +14149,10 @@ pub mod fluent_builders {
                 crate::input::ListSchemasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14209,9 +14160,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSchemasPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSchemasPaginator<C, M, R> {
+            crate::paginator::ListSchemasPaginator::new(self.handle, self.inner)
+        }
         /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-        pub fn registry_id(mut self, inp: crate::model::RegistryId) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, input: crate::model::RegistryId) -> Self {
+            self.inner = self.inner.registry_id(input);
             self
         }
         /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
@@ -14223,8 +14180,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
@@ -14233,8 +14190,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -14246,7 +14203,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSchemaVersions`.
     ///
     /// <p>Returns a list of schema versions that you have created, with minimal information. Schema versions in Deleted status will not be included in the results. Empty results will be returned if there are no schema versions available.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSchemaVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14291,10 +14248,10 @@ pub mod fluent_builders {
                 crate::input::ListSchemaVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14302,35 +14259,33 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSchemaVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSchemaVersionsPaginator<C, M, R> {
+            crate::paginator::ListSchemaVersionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
-        pub fn schema_id(mut self, inp: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(inp);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.inner = self.inner.set_schema_id(input);
             self
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
@@ -14339,8 +14294,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -14352,11 +14307,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTriggers`.
     ///
     /// <p>Retrieves the names of all trigger resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p>
-    ///
-    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on
-    /// the response so that tagged resources can be retrieved as a group. If you choose to use tags
-    /// filtering, only resources with the tag are retrieved.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTriggers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14401,10 +14353,10 @@ pub mod fluent_builders {
                 crate::input::ListTriggersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14412,9 +14364,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTriggersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTriggersPaginator<C, M, R> {
+            crate::paginator::ListTriggersPaginator::new(self.handle, self.inner)
+        }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -14422,14 +14380,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job
-        /// is returned. If there is no such trigger, all triggers are returned.</p>
-        pub fn dependent_job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dependent_job_name(inp);
+        /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
+        pub fn dependent_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dependent_job_name(input.into());
             self
         }
-        /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job
-        /// is returned. If there is no such trigger, all triggers are returned.</p>
+        /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
         pub fn set_dependent_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14438,8 +14394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -14457,7 +14413,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Specifies to return only these tagged resources.</p>
@@ -14474,7 +14430,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkflows`.
     ///
     /// <p>Lists names of workflows created in the account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkflows<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14519,10 +14475,10 @@ pub mod fluent_builders {
                 crate::input::ListWorkflowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14530,9 +14486,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorkflowsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWorkflowsPaginator<C, M, R> {
+            crate::paginator::ListWorkflowsPaginator::new(self.handle, self.inner)
+        }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -14541,8 +14503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -14553,9 +14515,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutDataCatalogEncryptionSettings`.
     ///
-    /// <p>Sets the security configuration for a specified catalog. After the configuration has been
-    /// set, the specified encryption is applied to every catalog write thereafter.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sets the security configuration for a specified catalog. After the configuration has been set, the specified encryption is applied to every catalog write thereafter.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDataCatalogEncryptionSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14600,10 +14561,10 @@ pub mod fluent_builders {
                 crate::input::PutDataCatalogEncryptionSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14611,14 +14572,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the
-        /// Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the
-        /// Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -14626,9 +14585,9 @@ pub mod fluent_builders {
         /// <p>The security configuration to set.</p>
         pub fn data_catalog_encryption_settings(
             mut self,
-            inp: crate::model::DataCatalogEncryptionSettings,
+            input: crate::model::DataCatalogEncryptionSettings,
         ) -> Self {
-            self.inner = self.inner.data_catalog_encryption_settings(inp);
+            self.inner = self.inner.data_catalog_encryption_settings(input);
             self
         }
         /// <p>The security configuration to set.</p>
@@ -14643,7 +14602,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutResourcePolicy`.
     ///
     /// <p>Sets the Data Catalog resource policy for access control.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14688,10 +14647,10 @@ pub mod fluent_builders {
                 crate::input::PutResourcePolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14700,8 +14659,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Contains the policy document to set, in JSON format.</p>
-        pub fn policy_in_json(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_in_json(inp);
+        pub fn policy_in_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_in_json(input.into());
             self
         }
         /// <p>Contains the policy document to set, in JSON format.</p>
@@ -14713,8 +14672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Do not use. For internal use only.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Do not use. For internal use only.</p>
@@ -14722,16 +14681,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The hash value returned when the previous policy was set using
-        /// <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a
-        /// policy. Do not use this parameter if no previous policy has been set.</p>
-        pub fn policy_hash_condition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_hash_condition(inp);
+        /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
+        pub fn policy_hash_condition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_hash_condition(input.into());
             self
         }
-        /// <p>The hash value returned when the previous policy was set using
-        /// <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a
-        /// policy. Do not use this parameter if no previous policy has been set.</p>
+        /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
         pub fn set_policy_hash_condition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14739,16 +14694,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_hash_condition(input);
             self
         }
-        /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
-        /// <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a
-        /// null value is used, the call does not depend on the existence of a policy.</p>
-        pub fn policy_exists_condition(mut self, inp: crate::model::ExistCondition) -> Self {
-            self.inner = self.inner.policy_exists_condition(inp);
+        /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
+        pub fn policy_exists_condition(mut self, input: crate::model::ExistCondition) -> Self {
+            self.inner = self.inner.policy_exists_condition(input);
             self
         }
-        /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
-        /// <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a
-        /// null value is used, the call does not depend on the existence of a policy.</p>
+        /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
         pub fn set_policy_exists_condition(
             mut self,
             input: std::option::Option<crate::model::ExistCondition>,
@@ -14756,36 +14707,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_exists_condition(input);
             self
         }
-        /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account
-        /// access to Data Catalog resources:</p>
+        /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>By directly updating the resource policy with <code>PutResourePolicy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p>
-        /// </li>
+        /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
+        /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
         /// </ul>
-        /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to
-        /// grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
-        pub fn enable_hybrid(mut self, inp: crate::model::EnableHybridValues) -> Self {
-            self.inner = self.inner.enable_hybrid(inp);
+        /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
+        pub fn enable_hybrid(mut self, input: crate::model::EnableHybridValues) -> Self {
+            self.inner = self.inner.enable_hybrid(input);
             self
         }
-        /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account
-        /// access to Data Catalog resources:</p>
+        /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>By directly updating the resource policy with <code>PutResourePolicy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p>
-        /// </li>
+        /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
+        /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
         /// </ul>
-        /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to
-        /// grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
+        /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
         pub fn set_enable_hybrid(
             mut self,
             input: std::option::Option<crate::model::EnableHybridValues>,
@@ -14797,7 +14734,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutSchemaVersionMetadata`.
     ///
     /// <p>Puts the metadata key value pair for a specified schema version ID. A maximum of 10 key value pairs will be allowed per schema version. They can be added over one or more calls.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSchemaVersionMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14842,10 +14779,10 @@ pub mod fluent_builders {
                 crate::input::PutSchemaVersionMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14854,8 +14791,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID for the schema.</p>
-        pub fn schema_id(mut self, inp: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(inp);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>The unique ID for the schema.</p>
@@ -14864,8 +14801,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the schema.</p>
-        pub fn schema_version_number(mut self, inp: crate::model::SchemaVersionNumber) -> Self {
-            self.inner = self.inner.schema_version_number(inp);
+        pub fn schema_version_number(mut self, input: crate::model::SchemaVersionNumber) -> Self {
+            self.inner = self.inner.schema_version_number(input);
             self
         }
         /// <p>The version number of the schema.</p>
@@ -14877,8 +14814,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique version ID of the schema version.</p>
-        pub fn schema_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version_id(inp);
+        pub fn schema_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version_id(input.into());
             self
         }
         /// <p>The unique version ID of the schema version.</p>
@@ -14890,8 +14827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata key's corresponding value.</p>
-        pub fn metadata_key_value(mut self, inp: crate::model::MetadataKeyValuePair) -> Self {
-            self.inner = self.inner.metadata_key_value(inp);
+        pub fn metadata_key_value(mut self, input: crate::model::MetadataKeyValuePair) -> Self {
+            self.inner = self.inner.metadata_key_value(input);
             self
         }
         /// <p>The metadata key's corresponding value.</p>
@@ -14906,7 +14843,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutWorkflowRunProperties`.
     ///
     /// <p>Puts the specified workflow run properties for the given workflow run. If a property already exists for the specified run, then it overrides the value otherwise adds the property to existing properties.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutWorkflowRunProperties<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -14951,10 +14888,10 @@ pub mod fluent_builders {
                 crate::input::PutWorkflowRunPropertiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14963,8 +14900,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the workflow which was run.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the workflow which was run.</p>
@@ -14973,8 +14910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workflow run for which the run properties should be updated.</p>
-        pub fn run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(inp);
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The ID of the workflow run for which the run properties should be updated.</p>
@@ -14992,7 +14929,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.run_properties(k, v);
+            self.inner = self.inner.run_properties(k.into(), v.into());
             self
         }
         /// <p>The properties to put for the specified run.</p>
@@ -15009,7 +14946,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `QuerySchemaVersionMetadata`.
     ///
     /// <p>Queries for the schema version metadata information. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct QuerySchemaVersionMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15054,10 +14991,10 @@ pub mod fluent_builders {
                 crate::input::QuerySchemaVersionMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15066,8 +15003,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
-        pub fn schema_id(mut self, inp: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(inp);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
@@ -15076,8 +15013,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the schema.</p>
-        pub fn schema_version_number(mut self, inp: crate::model::SchemaVersionNumber) -> Self {
-            self.inner = self.inner.schema_version_number(inp);
+        pub fn schema_version_number(mut self, input: crate::model::SchemaVersionNumber) -> Self {
+            self.inner = self.inner.schema_version_number(input);
             self
         }
         /// <p>The version number of the schema.</p>
@@ -15089,8 +15026,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique version ID of the schema version.</p>
-        pub fn schema_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version_id(inp);
+        pub fn schema_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version_id(input.into());
             self
         }
         /// <p>The unique version ID of the schema version.</p>
@@ -15106,8 +15043,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_metadata_list`](Self::set_metadata_list).
         ///
         /// <p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>
-        pub fn metadata_list(mut self, inp: impl Into<crate::model::MetadataKeyValuePair>) -> Self {
-            self.inner = self.inner.metadata_list(inp);
+        pub fn metadata_list(mut self, input: crate::model::MetadataKeyValuePair) -> Self {
+            self.inner = self.inner.metadata_list(input);
             self
         }
         /// <p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>
@@ -15119,8 +15056,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
@@ -15129,8 +15066,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -15144,7 +15081,7 @@ pub mod fluent_builders {
     /// <p>Adds a new version to the existing schema. Returns an error if new version of schema does not meet the compatibility requirements of the schema set. This API will not create a new schema set and will return a 404 error if the schema set is not already present in the Schema Registry.</p>
     /// <p>If this is the first schema definition to be registered in the Schema Registry, this API will store the schema version and return immediately. Otherwise, this call has the potential to run longer than other operations due to compatibility modes. You can call the <code>GetSchemaVersion</code> API with the <code>SchemaVersionId</code> to check compatibility modes.</p>
     /// <p>If the same schema definition is already stored in Schema Registry as a version, the schema ID of the existing schema is returned to the caller.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterSchemaVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15189,10 +15126,10 @@ pub mod fluent_builders {
                 crate::input::RegisterSchemaVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15202,33 +15139,25 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
-        pub fn schema_id(mut self, inp: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(inp);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.inner = self.inner.set_schema_id(input);
             self
         }
         /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
-        pub fn schema_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_definition(inp);
+        pub fn schema_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_definition(input.into());
             self
         }
         /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
@@ -15243,7 +15172,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveSchemaVersionMetadata`.
     ///
     /// <p>Removes a key value pair from the schema version metadata for the specified schema version ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveSchemaVersionMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15288,10 +15217,10 @@ pub mod fluent_builders {
                 crate::input::RemoveSchemaVersionMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15300,8 +15229,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
-        pub fn schema_id(mut self, inp: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(inp);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
@@ -15310,8 +15239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the schema.</p>
-        pub fn schema_version_number(mut self, inp: crate::model::SchemaVersionNumber) -> Self {
-            self.inner = self.inner.schema_version_number(inp);
+        pub fn schema_version_number(mut self, input: crate::model::SchemaVersionNumber) -> Self {
+            self.inner = self.inner.schema_version_number(input);
             self
         }
         /// <p>The version number of the schema.</p>
@@ -15323,8 +15252,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique version ID of the schema version.</p>
-        pub fn schema_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version_id(inp);
+        pub fn schema_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version_id(input.into());
             self
         }
         /// <p>The unique version ID of the schema version.</p>
@@ -15336,8 +15265,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value of the metadata key.</p>
-        pub fn metadata_key_value(mut self, inp: crate::model::MetadataKeyValuePair) -> Self {
-            self.inner = self.inner.metadata_key_value(inp);
+        pub fn metadata_key_value(mut self, input: crate::model::MetadataKeyValuePair) -> Self {
+            self.inner = self.inner.metadata_key_value(input);
             self
         }
         /// <p>The value of the metadata key.</p>
@@ -15352,7 +15281,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResetJobBookmark`.
     ///
     /// <p>Resets a bookmark entry.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetJobBookmark<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15397,10 +15326,10 @@ pub mod fluent_builders {
                 crate::input::ResetJobBookmarkInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15409,8 +15338,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job in question.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job in question.</p>
@@ -15419,8 +15348,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique run identifier associated with this job run.</p>
-        pub fn run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(inp);
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The unique run identifier associated with this job run.</p>
@@ -15432,7 +15361,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ResumeWorkflowRun`.
     ///
     /// <p>Restarts selected nodes of a previous partially completed workflow run and resumes the workflow run. The selected nodes and all nodes that are downstream from the selected nodes are run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResumeWorkflowRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15477,10 +15406,10 @@ pub mod fluent_builders {
                 crate::input::ResumeWorkflowRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15489,8 +15418,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workflow to resume.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the workflow to resume.</p>
@@ -15499,8 +15428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workflow run to resume.</p>
-        pub fn run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(inp);
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The ID of the workflow run to resume.</p>
@@ -15513,8 +15442,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_node_ids`](Self::set_node_ids).
         ///
         /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
-        pub fn node_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_ids(inp);
+        pub fn node_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_ids(input.into());
             self
         }
         /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
@@ -15530,7 +15459,7 @@ pub mod fluent_builders {
     ///
     /// <p>Searches a set of tables based on properties in the table metadata as well as on the parent database. You can search against text or filter conditions. </p>
     /// <p>You can only get tables that you have access to based on the security policies defined in Lake Formation. You need at least a read-only access to the table for it to be returned. If you do not have access to all the columns in the table, these columns will not be searched against when returning the list of tables back to you. If you have access to the columns but not the data in the columns, those columns and the associated metadata for those columns will be included in the search. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchTables<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15575,10 +15504,10 @@ pub mod fluent_builders {
                 crate::input::SearchTablesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15586,23 +15515,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier, consisting of <code>
-        /// <i>account_id</i>
-        /// </code>.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchTablesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchTablesPaginator<C, M, R> {
+            crate::paginator::SearchTablesPaginator::new(self.handle, self.inner)
+        }
+        /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>A unique identifier, consisting of <code>
-        /// <i>account_id</i>
-        /// </code>.</p>
+        /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>A continuation token, included if this is a continuation call.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, included if this is a continuation call.</p>
@@ -15615,14 +15546,12 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
-        ///
         /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::PropertyPredicate>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::PropertyPredicate) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
-        ///
         /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
         pub fn set_filters(
             mut self,
@@ -15633,8 +15562,8 @@ pub mod fluent_builders {
         }
         /// <p>A string used for a text search.</p>
         /// <p>Specifying a value in quotes filters based on an exact match to the value.</p>
-        pub fn search_text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.search_text(inp);
+        pub fn search_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.search_text(input.into());
             self
         }
         /// <p>A string used for a text search.</p>
@@ -15648,8 +15577,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
         /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
-        pub fn sort_criteria(mut self, inp: impl Into<crate::model::SortCriterion>) -> Self {
-            self.inner = self.inner.sort_criteria(inp);
+        pub fn sort_criteria(mut self, input: crate::model::SortCriterion) -> Self {
+            self.inner = self.inner.sort_criteria(input);
             self
         }
         /// <p>A list of criteria for sorting the results by a field name, in an ascending or descending order.</p>
@@ -15661,8 +15590,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of tables to return in a single response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of tables to return in a single response.</p>
@@ -15671,28 +15600,18 @@ pub mod fluent_builders {
             self
         }
         /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p>
-        /// </li>
-        /// <li>
-        /// <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p>
-        /// </li>
+        /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+        /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
         /// </ul>
-        pub fn resource_share_type(mut self, inp: crate::model::ResourceShareType) -> Self {
-            self.inner = self.inner.resource_share_type(inp);
+        pub fn resource_share_type(mut self, input: crate::model::ResourceShareType) -> Self {
+            self.inner = self.inner.resource_share_type(input);
             self
         }
         /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p>
-        /// </li>
-        /// <li>
-        /// <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p>
-        /// </li>
+        /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+        /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
         /// </ul>
         pub fn set_resource_share_type(
             mut self,
@@ -15705,7 +15624,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartBlueprintRun`.
     ///
     /// <p>Starts a new run of the specified blueprint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartBlueprintRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15750,10 +15669,10 @@ pub mod fluent_builders {
                 crate::input::StartBlueprintRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15762,8 +15681,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the blueprint.</p>
-        pub fn blueprint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.blueprint_name(inp);
+        pub fn blueprint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blueprint_name(input.into());
             self
         }
         /// <p>The name of the blueprint.</p>
@@ -15775,8 +15694,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
-        pub fn parameters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameters(inp);
+        pub fn parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameters(input.into());
             self
         }
         /// <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
@@ -15785,8 +15704,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the IAM role used to create the workflow.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>Specifies the IAM role used to create the workflow.</p>
@@ -15797,10 +15716,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartCrawler`.
     ///
-    /// <p>Starts a crawl using the specified crawler, regardless
-    /// of what is scheduled. If the crawler is already running, returns a
-    /// <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts a crawl using the specified crawler, regardless of what is scheduled. If the crawler is already running, returns a <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCrawler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15845,10 +15762,10 @@ pub mod fluent_builders {
                 crate::input::StartCrawlerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15857,8 +15774,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the crawler to start.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the crawler to start.</p>
@@ -15869,10 +15786,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartCrawlerSchedule`.
     ///
-    /// <p>Changes the schedule state of the specified crawler to
-    /// <code>SCHEDULED</code>, unless the crawler is already running or the
-    /// schedule state is already <code>SCHEDULED</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Changes the schedule state of the specified crawler to <code>SCHEDULED</code>, unless the crawler is already running or the schedule state is already <code>SCHEDULED</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCrawlerSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15917,10 +15832,10 @@ pub mod fluent_builders {
                 crate::input::StartCrawlerScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15929,8 +15844,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the crawler to schedule.</p>
-        pub fn crawler_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.crawler_name(inp);
+        pub fn crawler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.crawler_name(input.into());
             self
         }
         /// <p>Name of the crawler to schedule.</p>
@@ -15941,16 +15856,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartExportLabelsTaskRun`.
     ///
-    /// <p>Begins an asynchronous task to export all labeled data for a particular transform. This
-    /// task is the only label-related API call that is not part of the typical active learning
-    /// workflow. You typically use <code>StartExportLabelsTaskRun</code> when you want to work with
-    /// all of your existing labels at the same time, such as when you want to remove or change labels
-    /// that were previously submitted as truth. This API operation accepts the
-    /// <code>TransformId</code> whose labels you want to export and an Amazon Simple Storage
-    /// Service (Amazon S3) path to export the labels to. The operation returns a
-    /// <code>TaskRunId</code>. You can check on the status of your task run by calling the
-    /// <code>GetMLTaskRun</code> API.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Begins an asynchronous task to export all labeled data for a particular transform. This task is the only label-related API call that is not part of the typical active learning workflow. You typically use <code>StartExportLabelsTaskRun</code> when you want to work with all of your existing labels at the same time, such as when you want to remove or change labels that were previously submitted as truth. This API operation accepts the <code>TransformId</code> whose labels you want to export and an Amazon Simple Storage Service (Amazon S3) path to export the labels to. The operation returns a <code>TaskRunId</code>. You can check on the status of your task run by calling the <code>GetMLTaskRun</code> API.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartExportLabelsTaskRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -15995,10 +15902,10 @@ pub mod fluent_builders {
                 crate::input::StartExportLabelsTaskRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16007,8 +15914,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the machine learning transform.</p>
-        pub fn transform_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(inp);
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the machine learning transform.</p>
@@ -16017,8 +15924,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 path where you export the labels.</p>
-        pub fn output_s3_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_s3_path(inp);
+        pub fn output_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_s3_path(input.into());
             self
         }
         /// <p>The Amazon S3 path where you export the labels.</p>
@@ -16032,32 +15939,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartImportLabelsTaskRun`.
     ///
-    /// <p>Enables you to provide additional labels (examples of truth) to be used to teach the
-    /// machine learning transform and improve its quality. This API operation is generally used as
-    /// part of the active learning workflow that starts with the
-    /// <code>StartMLLabelingSetGenerationTaskRun</code> call and that ultimately results in
-    /// improving the quality of your machine learning transform. </p>
-    ///
-    /// <p>After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue machine learning
-    /// will have generated a series of questions for humans to answer. (Answering these questions is
-    /// often called 'labeling' in the machine learning workflows). In the case of the
-    /// <code>FindMatches</code> transform, these questions are of the form, “What is the correct
-    /// way to group these rows together into groups composed entirely of matching records?” After the
-    /// labeling process is finished, users upload their answers/labels with a call to
-    /// <code>StartImportLabelsTaskRun</code>. After <code>StartImportLabelsTaskRun</code> finishes,
-    /// all future runs of the machine learning transform use the new and improved labels and perform
-    /// a higher-quality transformation.</p>
-    ///
-    /// <p>By default, <code>StartMLLabelingSetGenerationTaskRun</code> continually learns from and
-    /// combines all labels that you upload unless you set <code>Replace</code> to true. If you set
-    /// <code>Replace</code> to true, <code>StartImportLabelsTaskRun</code> deletes and forgets all
-    /// previously uploaded labels and learns only from the exact set that you upload. Replacing
-    /// labels can be helpful if you realize that you previously uploaded incorrect labels, and you
-    /// believe that they are having a negative effect on your transform quality.</p>
-    ///
-    /// <p>You can check on the status of your task run by calling the <code>GetMLTaskRun</code>
-    /// operation. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Enables you to provide additional labels (examples of truth) to be used to teach the machine learning transform and improve its quality. This API operation is generally used as part of the active learning workflow that starts with the <code>StartMLLabelingSetGenerationTaskRun</code> call and that ultimately results in improving the quality of your machine learning transform. </p>
+    /// <p>After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue machine learning will have generated a series of questions for humans to answer. (Answering these questions is often called 'labeling' in the machine learning workflows). In the case of the <code>FindMatches</code> transform, these questions are of the form, “What is the correct way to group these rows together into groups composed entirely of matching records?” After the labeling process is finished, users upload their answers/labels with a call to <code>StartImportLabelsTaskRun</code>. After <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine learning transform use the new and improved labels and perform a higher-quality transformation.</p>
+    /// <p>By default, <code>StartMLLabelingSetGenerationTaskRun</code> continually learns from and combines all labels that you upload unless you set <code>Replace</code> to true. If you set <code>Replace</code> to true, <code>StartImportLabelsTaskRun</code> deletes and forgets all previously uploaded labels and learns only from the exact set that you upload. Replacing labels can be helpful if you realize that you previously uploaded incorrect labels, and you believe that they are having a negative effect on your transform quality.</p>
+    /// <p>You can check on the status of your task run by calling the <code>GetMLTaskRun</code> operation. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImportLabelsTaskRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16102,10 +15988,10 @@ pub mod fluent_builders {
                 crate::input::StartImportLabelsTaskRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16114,8 +16000,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the machine learning transform.</p>
-        pub fn transform_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(inp);
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the machine learning transform.</p>
@@ -16123,14 +16009,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_transform_id(input);
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the
-        /// labels.</p>
-        pub fn input_s3_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_s3_path(inp);
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
+        pub fn input_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_s3_path(input.into());
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the
-        /// labels.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
         pub fn set_input_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16139,8 +16023,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether to overwrite your existing labels.</p>
-        pub fn replace_all_labels(mut self, inp: bool) -> Self {
-            self.inner = self.inner.replace_all_labels(inp);
+        pub fn replace_all_labels(mut self, input: bool) -> Self {
+            self.inner = self.inner.replace_all_labels(input);
             self
         }
         /// <p>Indicates whether to overwrite your existing labels.</p>
@@ -16152,7 +16036,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartJobRun`.
     ///
     /// <p>Starts a job run using a job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartJobRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16197,10 +16081,10 @@ pub mod fluent_builders {
                 crate::input::StartJobRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16209,8 +16093,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job definition to use.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job definition to use.</p>
@@ -16219,8 +16103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
-        pub fn job_run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_run_id(inp);
+        pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_run_id(input.into());
             self
         }
         /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
@@ -16233,8 +16117,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
         ///
         /// <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn arguments(
@@ -16242,12 +16125,11 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.arguments(k, v);
+            self.inner = self.inner.arguments(k.into(), v.into());
             self
         }
         /// <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_arguments(
@@ -16260,93 +16142,55 @@ pub mod fluent_builders {
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun.
-        /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        pub fn allocated_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.allocated_capacity(inp);
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        pub fn allocated_capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_capacity(input);
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun.
-        /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_allocated_capacity(input);
             self
         }
-        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-        /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout(inp);
+        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
-        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-        /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job, or an Apache Spark ETL job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
-        pub fn max_capacity(mut self, inp: f64) -> Self {
-            self.inner = self.inner.max_capacity(inp);
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job, or an Apache Spark ETL job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
-        /// run.</p>
-        pub fn security_configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_configuration(inp);
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
+        pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_configuration(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
-        /// run.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16355,8 +16199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies configuration properties of a job run notification.</p>
-        pub fn notification_property(mut self, inp: crate::model::NotificationProperty) -> Self {
-            self.inner = self.inner.notification_property(inp);
+        pub fn notification_property(mut self, input: crate::model::NotificationProperty) -> Self {
+            self.inner = self.inner.notification_property(input);
             self
         }
         /// <p>Specifies configuration properties of a job run notification.</p>
@@ -16369,31 +16213,19 @@ pub mod fluent_builders {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
-        pub fn worker_type(mut self, inp: crate::model::WorkerType) -> Self {
-            self.inner = self.inner.worker_type(inp);
+        pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
+            self.inner = self.inner.worker_type(input);
             self
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -16403,14 +16235,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
-        pub fn number_of_workers(mut self, inp: i32) -> Self {
-            self.inner = self.inner.number_of_workers(inp);
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_number_of_workers(input);
@@ -16420,14 +16250,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartMLEvaluationTaskRun`.
     ///
     /// <p>Starts a task to estimate the quality of the transform. </p>
-    ///
-    /// <p>When you provide label sets as examples of truth, Glue machine learning uses some of
-    /// those examples to learn from them. The rest of the labels are used as a test to estimate
-    /// quality.</p>
-    ///
-    /// <p>Returns a unique identifier for the run. You can call <code>GetMLTaskRun</code> to get more
-    /// information about the stats of the <code>EvaluationTaskRun</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>When you provide label sets as examples of truth, Glue machine learning uses some of those examples to learn from them. The rest of the labels are used as a test to estimate quality.</p>
+    /// <p>Returns a unique identifier for the run. You can call <code>GetMLTaskRun</code> to get more information about the stats of the <code>EvaluationTaskRun</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMLEvaluationTaskRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16472,10 +16297,10 @@ pub mod fluent_builders {
                 crate::input::StartMlEvaluationTaskRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16484,8 +16309,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the machine learning transform.</p>
-        pub fn transform_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(inp);
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the machine learning transform.</p>
@@ -16496,21 +16321,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartMLLabelingSetGenerationTaskRun`.
     ///
-    /// <p>Starts the active learning workflow for your machine learning transform to improve the
-    /// transform's quality by generating label sets and adding labels.</p>
-    ///
-    /// <p>When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue will have
-    /// generated a "labeling set" or a set of questions for humans to answer.</p>
-    ///
-    /// <p>In the case of the <code>FindMatches</code> transform, these questions are of the form,
-    /// “What is the correct way to group these rows together into groups composed entirely of
-    /// matching records?” </p>
-    ///
-    /// <p>After the labeling process is finished, you can upload your labels with a call to
-    /// <code>StartImportLabelsTaskRun</code>. After <code>StartImportLabelsTaskRun</code> finishes,
-    /// all future runs of the machine learning transform will use the new and improved labels and
-    /// perform a higher-quality transformation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts the active learning workflow for your machine learning transform to improve the transform's quality by generating label sets and adding labels.</p>
+    /// <p>When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue will have generated a "labeling set" or a set of questions for humans to answer.</p>
+    /// <p>In the case of the <code>FindMatches</code> transform, these questions are of the form, “What is the correct way to group these rows together into groups composed entirely of matching records?” </p>
+    /// <p>After the labeling process is finished, you can upload your labels with a call to <code>StartImportLabelsTaskRun</code>. After <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine learning transform will use the new and improved labels and perform a higher-quality transformation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMLLabelingSetGenerationTaskRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16557,10 +16372,10 @@ pub mod fluent_builders {
                 crate::input::StartMlLabelingSetGenerationTaskRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16569,8 +16384,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the machine learning transform.</p>
-        pub fn transform_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(inp);
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the machine learning transform.</p>
@@ -16578,14 +16393,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_transform_id(input);
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling
-        /// set.</p>
-        pub fn output_s3_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_s3_path(inp);
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
+        pub fn output_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_s3_path(input.into());
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling
-        /// set.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
         pub fn set_output_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16596,10 +16409,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartTrigger`.
     ///
-    /// <p>Starts an existing trigger. See <a href="https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
-    /// Jobs</a> for information about how different types of trigger are
-    /// started.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts an existing trigger. See <a href="https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering Jobs</a> for information about how different types of trigger are started.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTrigger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16644,10 +16455,10 @@ pub mod fluent_builders {
                 crate::input::StartTriggerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16656,8 +16467,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trigger to start.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the trigger to start.</p>
@@ -16669,7 +16480,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartWorkflowRun`.
     ///
     /// <p>Starts a new run of the specified workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartWorkflowRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16714,10 +16525,10 @@ pub mod fluent_builders {
                 crate::input::StartWorkflowRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16726,8 +16537,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workflow to start.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the workflow to start.</p>
@@ -16739,7 +16550,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopCrawler`.
     ///
     /// <p>If the specified crawler is running, stops the crawl.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopCrawler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16784,10 +16595,10 @@ pub mod fluent_builders {
                 crate::input::StopCrawlerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16796,8 +16607,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the crawler to stop.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the crawler to stop.</p>
@@ -16808,10 +16619,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopCrawlerSchedule`.
     ///
-    /// <p>Sets the schedule state of the specified crawler to
-    /// <code>NOT_SCHEDULED</code>, but does not stop the crawler if it is
-    /// already running.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Sets the schedule state of the specified crawler to <code>NOT_SCHEDULED</code>, but does not stop the crawler if it is already running.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopCrawlerSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16856,10 +16665,10 @@ pub mod fluent_builders {
                 crate::input::StopCrawlerScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16868,8 +16677,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the crawler whose schedule state to set.</p>
-        pub fn crawler_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.crawler_name(inp);
+        pub fn crawler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.crawler_name(input.into());
             self
         }
         /// <p>Name of the crawler whose schedule state to set.</p>
@@ -16881,7 +16690,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopTrigger`.
     ///
     /// <p>Stops a specified trigger.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTrigger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16926,10 +16735,10 @@ pub mod fluent_builders {
                 crate::input::StopTriggerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16938,8 +16747,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trigger to stop.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the trigger to stop.</p>
@@ -16951,7 +16760,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopWorkflowRun`.
     ///
     /// <p>Stops the execution of the specified workflow run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopWorkflowRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -16996,10 +16805,10 @@ pub mod fluent_builders {
                 crate::input::StopWorkflowRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17008,8 +16817,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workflow to stop.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the workflow to stop.</p>
@@ -17018,8 +16827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workflow run to stop.</p>
-        pub fn run_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(inp);
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The ID of the workflow run to stop.</p>
@@ -17030,10 +16839,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds tags to a resource. A tag is a label you can assign to an Amazon Web Services resource.
-    /// In Glue, you can tag only certain resources. For information about what
-    /// resources you can tag, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Adds tags to a resource. A tag is a label you can assign to an Amazon Web Services resource. In Glue, you can tag only certain resources. For information about what resources you can tag, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17078,10 +16885,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17089,14 +16896,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Glue resource to which to add the tags. For more
-        /// information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN of the Glue resource to which to add the tags. For more
-        /// information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
+        /// <p>The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -17111,7 +16916,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags_to_add(k, v);
+            self.inner = self.inner.tags_to_add(k.into(), v.into());
             self
         }
         /// <p>Tags to add to this resource.</p>
@@ -17128,7 +16933,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17173,10 +16978,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17185,8 +16990,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to remove the tags.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to remove the tags.</p>
@@ -17199,8 +17004,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags_to_remove`](Self::set_tags_to_remove).
         ///
         /// <p>Tags to remove from this resource.</p>
-        pub fn tags_to_remove(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags_to_remove(inp);
+        pub fn tags_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tags_to_remove(input.into());
             self
         }
         /// <p>Tags to remove from this resource.</p>
@@ -17215,7 +17020,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBlueprint`.
     ///
     /// <p>Updates a registered blueprint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBlueprint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17260,10 +17065,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBlueprintInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17272,8 +17077,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the blueprint.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the blueprint.</p>
@@ -17282,8 +17087,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the blueprint.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the blueprint.</p>
@@ -17292,8 +17097,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
-        pub fn blueprint_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.blueprint_location(inp);
+        pub fn blueprint_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blueprint_location(input.into());
             self
         }
         /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
@@ -17307,10 +17112,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateClassifier`.
     ///
-    /// <p>Modifies an existing classifier (a <code>GrokClassifier</code>,
-    /// an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on
-    /// which field is present).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies an existing classifier (a <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which field is present).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateClassifier<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17355,10 +17158,10 @@ pub mod fluent_builders {
                 crate::input::UpdateClassifierInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17367,8 +17170,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
-        pub fn grok_classifier(mut self, inp: crate::model::UpdateGrokClassifierRequest) -> Self {
-            self.inner = self.inner.grok_classifier(inp);
+        pub fn grok_classifier(mut self, input: crate::model::UpdateGrokClassifierRequest) -> Self {
+            self.inner = self.inner.grok_classifier(input);
             self
         }
         /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
@@ -17380,8 +17183,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
-        pub fn xml_classifier(mut self, inp: crate::model::UpdateXmlClassifierRequest) -> Self {
-            self.inner = self.inner.xml_classifier(inp);
+        pub fn xml_classifier(mut self, input: crate::model::UpdateXmlClassifierRequest) -> Self {
+            self.inner = self.inner.xml_classifier(input);
             self
         }
         /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
@@ -17393,8 +17196,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
-        pub fn json_classifier(mut self, inp: crate::model::UpdateJsonClassifierRequest) -> Self {
-            self.inner = self.inner.json_classifier(inp);
+        pub fn json_classifier(mut self, input: crate::model::UpdateJsonClassifierRequest) -> Self {
+            self.inner = self.inner.json_classifier(input);
             self
         }
         /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
@@ -17406,8 +17209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
-        pub fn csv_classifier(mut self, inp: crate::model::UpdateCsvClassifierRequest) -> Self {
-            self.inner = self.inner.csv_classifier(inp);
+        pub fn csv_classifier(mut self, input: crate::model::UpdateCsvClassifierRequest) -> Self {
+            self.inner = self.inner.csv_classifier(input);
             self
         }
         /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
@@ -17422,9 +17225,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateColumnStatisticsForPartition`.
     ///
     /// <p>Creates or updates partition statistics of columns.</p>
-    ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>UpdatePartition</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateColumnStatisticsForPartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17471,10 +17273,10 @@ pub mod fluent_builders {
                 crate::input::UpdateColumnStatisticsForPartitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17482,21 +17284,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -17508,8 +17308,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -17522,8 +17322,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_partition_values`](Self::set_partition_values).
         ///
         /// <p>A list of partition values identifying the partition.</p>
-        pub fn partition_values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partition_values(inp);
+        pub fn partition_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partition_values(input.into());
             self
         }
         /// <p>A list of partition values identifying the partition.</p>
@@ -17539,11 +17339,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_column_statistics_list`](Self::set_column_statistics_list).
         ///
         /// <p>A list of the column statistics.</p>
-        pub fn column_statistics_list(
-            mut self,
-            inp: impl Into<crate::model::ColumnStatistics>,
-        ) -> Self {
-            self.inner = self.inner.column_statistics_list(inp);
+        pub fn column_statistics_list(mut self, input: crate::model::ColumnStatistics) -> Self {
+            self.inner = self.inner.column_statistics_list(input);
             self
         }
         /// <p>A list of the column statistics.</p>
@@ -17558,9 +17355,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateColumnStatisticsForTable`.
     ///
     /// <p>Creates or updates table statistics of columns.</p>
-    ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>UpdateTable</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateColumnStatisticsForTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17605,10 +17401,10 @@ pub mod fluent_builders {
                 crate::input::UpdateColumnStatisticsForTableInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17616,21 +17412,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -17642,8 +17436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -17656,11 +17450,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_column_statistics_list`](Self::set_column_statistics_list).
         ///
         /// <p>A list of the column statistics.</p>
-        pub fn column_statistics_list(
-            mut self,
-            inp: impl Into<crate::model::ColumnStatistics>,
-        ) -> Self {
-            self.inner = self.inner.column_statistics_list(inp);
+        pub fn column_statistics_list(mut self, input: crate::model::ColumnStatistics) -> Self {
+            self.inner = self.inner.column_statistics_list(input);
             self
         }
         /// <p>A list of the column statistics.</p>
@@ -17675,7 +17466,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConnection`.
     ///
     /// <p>Updates a connection definition in the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConnection<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17720,10 +17511,10 @@ pub mod fluent_builders {
                 crate::input::UpdateConnectionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17731,21 +17522,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
         /// <p>The name of the connection definition to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the connection definition to update.</p>
@@ -17753,14 +17542,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A <code>ConnectionInput</code> object that redefines the connection
-        /// in question.</p>
-        pub fn connection_input(mut self, inp: crate::model::ConnectionInput) -> Self {
-            self.inner = self.inner.connection_input(inp);
+        /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
+        pub fn connection_input(mut self, input: crate::model::ConnectionInput) -> Self {
+            self.inner = self.inner.connection_input(input);
             self
         }
-        /// <p>A <code>ConnectionInput</code> object that redefines the connection
-        /// in question.</p>
+        /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
         pub fn set_connection_input(
             mut self,
             input: std::option::Option<crate::model::ConnectionInput>,
@@ -17771,10 +17558,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateCrawler`.
     ///
-    /// <p>Updates a crawler. If a crawler is
-    /// running, you must stop it using <code>StopCrawler</code> before updating
-    /// it.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a crawler. If a crawler is running, you must stop it using <code>StopCrawler</code> before updating it.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCrawler<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -17819,10 +17604,10 @@ pub mod fluent_builders {
                 crate::input::UpdateCrawlerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17831,8 +17616,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the new crawler.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the new crawler.</p>
@@ -17840,26 +17625,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler
-        /// to access customer resources.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer resources.</p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
-        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler
-        /// to access customer resources.</p>
+        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer resources.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role(input);
             self
         }
-        /// <p>The Glue database where results are stored, such as:
-        /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The Glue database where results are stored, such as:
-        /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+        /// <p>The Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17868,8 +17649,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the new crawler.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the new crawler.</p>
@@ -17878,8 +17659,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of targets to crawl.</p>
-        pub fn targets(mut self, inp: crate::model::CrawlerTargets) -> Self {
-            self.inner = self.inner.targets(inp);
+        pub fn targets(mut self, input: crate::model::CrawlerTargets) -> Self {
+            self.inner = self.inner.targets(input);
             self
         }
         /// <p>A list of targets to crawl.</p>
@@ -17890,16 +17671,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_targets(input);
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
-        pub fn schedule(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(inp);
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schedule(input);
             self
@@ -17908,18 +17685,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_classifiers`](Self::set_classifiers).
         ///
-        /// <p>A list of custom classifiers that the user
-        /// has registered. By default, all built-in classifiers are included in a crawl,
-        /// but these custom classifiers always override the default classifiers
-        /// for a given classification.</p>
-        pub fn classifiers(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.classifiers(inp);
+        /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
+        pub fn classifiers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.classifiers(input.into());
             self
         }
-        /// <p>A list of custom classifiers that the user
-        /// has registered. By default, all built-in classifiers are included in a crawl,
-        /// but these custom classifiers always override the default classifiers
-        /// for a given classification.</p>
+        /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
         pub fn set_classifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17928,8 +17699,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The table prefix used for catalog tables that are created.</p>
-        pub fn table_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_prefix(inp);
+        pub fn table_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_prefix(input.into());
             self
         }
         /// <p>The table prefix used for catalog tables that are created.</p>
@@ -17938,8 +17709,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policy for the crawler's update and deletion behavior.</p>
-        pub fn schema_change_policy(mut self, inp: crate::model::SchemaChangePolicy) -> Self {
-            self.inner = self.inner.schema_change_policy(inp);
+        pub fn schema_change_policy(mut self, input: crate::model::SchemaChangePolicy) -> Self {
+            self.inner = self.inner.schema_change_policy(input);
             self
         }
         /// <p>The policy for the crawler's update and deletion behavior.</p>
@@ -17951,8 +17722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
-        pub fn recrawl_policy(mut self, inp: crate::model::RecrawlPolicy) -> Self {
-            self.inner = self.inner.recrawl_policy(inp);
+        pub fn recrawl_policy(mut self, input: crate::model::RecrawlPolicy) -> Self {
+            self.inner = self.inner.recrawl_policy(input);
             self
         }
         /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
@@ -17964,8 +17735,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies data lineage configuration settings for the crawler.</p>
-        pub fn lineage_configuration(mut self, inp: crate::model::LineageConfiguration) -> Self {
-            self.inner = self.inner.lineage_configuration(inp);
+        pub fn lineage_configuration(mut self, input: crate::model::LineageConfiguration) -> Self {
+            self.inner = self.inner.lineage_configuration(input);
             self
         }
         /// <p>Specifies data lineage configuration settings for the crawler.</p>
@@ -17976,16 +17747,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lineage_configuration(input);
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users
-        /// to specify aspects of a crawler's behavior.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
-        pub fn configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration(inp);
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn lake_formation_configuration(
+            mut self,
+            input: crate::model::LakeFormationConfiguration,
+        ) -> Self {
+            self.inner = self.inner.lake_formation_configuration(input);
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users
-        /// to specify aspects of a crawler's behavior.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_lake_formation_configuration(
+            mut self,
+            input: std::option::Option<crate::model::LakeFormationConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_lake_formation_configuration(input);
+            self
+        }
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration(input.into());
+            self
+        }
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17993,17 +17776,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-        /// crawler.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
         pub fn crawler_security_configuration(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.crawler_security_configuration(inp);
+            self.inner = self.inner.crawler_security_configuration(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-        /// crawler.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
         pub fn set_crawler_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18015,7 +17796,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCrawlerSchedule`.
     ///
     /// <p>Updates the schedule of a crawler using a <code>cron</code> expression. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCrawlerSchedule<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18060,10 +17841,10 @@ pub mod fluent_builders {
                 crate::input::UpdateCrawlerScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -18072,8 +17853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the crawler whose schedule to update.</p>
-        pub fn crawler_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.crawler_name(inp);
+        pub fn crawler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.crawler_name(input.into());
             self
         }
         /// <p>The name of the crawler whose schedule to update.</p>
@@ -18081,16 +17862,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_crawler_name(input);
             self
         }
-        /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
-        pub fn schedule(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(inp);
+        /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
-        /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schedule(input);
             self
@@ -18099,7 +17876,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDatabase`.
     ///
     /// <p>Updates an existing database definition in a Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDatabase<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18144,10 +17921,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDatabaseInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -18155,38 +17932,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the database to update in the catalog. For Hive
-        /// compatibility, this is folded to lowercase.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the database to update in the catalog. For Hive
-        /// compatibility, this is folded to lowercase.</p>
+        /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A <code>DatabaseInput</code> object specifying the new definition
-        /// of the metadata database in the catalog.</p>
-        pub fn database_input(mut self, inp: crate::model::DatabaseInput) -> Self {
-            self.inner = self.inner.database_input(inp);
+        /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
+        pub fn database_input(mut self, input: crate::model::DatabaseInput) -> Self {
+            self.inner = self.inner.database_input(input);
             self
         }
-        /// <p>A <code>DatabaseInput</code> object specifying the new definition
-        /// of the metadata database in the catalog.</p>
+        /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
         pub fn set_database_input(
             mut self,
             input: std::option::Option<crate::model::DatabaseInput>,
@@ -18198,7 +17969,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDevEndpoint`.
     ///
     /// <p>Updates a specified development endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDevEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18243,10 +18014,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDevEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -18255,8 +18026,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the <code>DevEndpoint</code> to be updated.</p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The name of the <code>DevEndpoint</code> to be updated.</p>
@@ -18268,8 +18039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The public key for the <code>DevEndpoint</code> to use.</p>
-        pub fn public_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.public_key(inp);
+        pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_key(input.into());
             self
         }
         /// <p>The public key for the <code>DevEndpoint</code> to use.</p>
@@ -18282,8 +18053,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_add_public_keys`](Self::set_add_public_keys).
         ///
         /// <p>The list of public keys for the <code>DevEndpoint</code> to use.</p>
-        pub fn add_public_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.add_public_keys(inp);
+        pub fn add_public_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.add_public_keys(input.into());
             self
         }
         /// <p>The list of public keys for the <code>DevEndpoint</code> to use.</p>
@@ -18299,8 +18070,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_delete_public_keys`](Self::set_delete_public_keys).
         ///
         /// <p>The list of public keys to be deleted from the <code>DevEndpoint</code>.</p>
-        pub fn delete_public_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delete_public_keys(inp);
+        pub fn delete_public_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delete_public_keys(input.into());
             self
         }
         /// <p>The list of public keys to be deleted from the <code>DevEndpoint</code>.</p>
@@ -18312,8 +18083,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
-        pub fn custom_libraries(mut self, inp: crate::model::DevEndpointCustomLibraries) -> Self {
-            self.inner = self.inner.custom_libraries(inp);
+        pub fn custom_libraries(mut self, input: crate::model::DevEndpointCustomLibraries) -> Self {
+            self.inner = self.inner.custom_libraries(input);
             self
         }
         /// <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
@@ -18324,16 +18095,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_libraries(input);
             self
         }
-        /// <p>
-        /// <code>True</code> if the list of custom libraries to be loaded in the development endpoint
-        /// needs to be updated, or <code>False</code> if otherwise.</p>
-        pub fn update_etl_libraries(mut self, inp: bool) -> Self {
-            self.inner = self.inner.update_etl_libraries(inp);
+        /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
+        pub fn update_etl_libraries(mut self, input: bool) -> Self {
+            self.inner = self.inner.update_etl_libraries(input);
             self
         }
-        /// <p>
-        /// <code>True</code> if the list of custom libraries to be loaded in the development endpoint
-        /// needs to be updated, or <code>False</code> if otherwise.</p>
+        /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
         pub fn set_update_etl_libraries(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_update_etl_libraries(input);
             self
@@ -18342,14 +18109,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_delete_arguments`](Self::set_delete_arguments).
         ///
-        /// <p>The list of argument keys to be deleted from the map of arguments used to configure the
-        /// <code>DevEndpoint</code>.</p>
-        pub fn delete_arguments(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delete_arguments(inp);
+        /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
+        pub fn delete_arguments(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delete_arguments(input.into());
             self
         }
-        /// <p>The list of argument keys to be deleted from the map of arguments used to configure the
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
         pub fn set_delete_arguments(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18361,39 +18126,25 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_add_arguments`](Self::set_add_arguments).
         ///
-        /// <p>The map of arguments to add the map of arguments used to configure the
-        /// <code>DevEndpoint</code>.</p>
-        ///
+        /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
         /// <p>Valid arguments are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"--enable-glue-datacatalog": ""</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
         /// </ul>
-        ///
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn add_arguments(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.add_arguments(k, v);
+            self.inner = self.inner.add_arguments(k.into(), v.into());
             self
         }
-        /// <p>The map of arguments to add the map of arguments used to configure the
-        /// <code>DevEndpoint</code>.</p>
-        ///
+        /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
         /// <p>Valid arguments are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"--enable-glue-datacatalog": ""</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
         /// </ul>
-        ///
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn set_add_arguments(
             mut self,
@@ -18408,7 +18159,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateJob`.
     ///
     /// <p>Updates an existing job definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18453,10 +18204,10 @@ pub mod fluent_builders {
                 crate::input::UpdateJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -18465,8 +18216,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job definition to update.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job definition to update.</p>
@@ -18475,8 +18226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the values with which to update the job definition.</p>
-        pub fn job_update(mut self, inp: crate::model::JobUpdate) -> Self {
-            self.inner = self.inner.job_update(inp);
+        pub fn job_update(mut self, input: crate::model::JobUpdate) -> Self {
+            self.inner = self.inner.job_update(input);
             self
         }
         /// <p>Specifies the values with which to update the job definition.</p>
@@ -18491,11 +18242,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMLTransform`.
     ///
     /// <p>Updates an existing machine learning transform. Call this operation to tune the algorithm parameters to achieve better results.</p>
-    ///
-    /// <p>After calling this operation, you can call the <code>StartMLEvaluationTaskRun</code>
-    /// operation to assess how well your new parameters achieved your goals (such as improving the
-    /// quality of your machine learning transform, or making it more cost-effective).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>After calling this operation, you can call the <code>StartMLEvaluationTaskRun</code> operation to assess how well your new parameters achieved your goals (such as improving the quality of your machine learning transform, or making it more cost-effective).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMLTransform<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18540,10 +18288,10 @@ pub mod fluent_builders {
                 crate::input::UpdateMlTransformInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -18552,8 +18300,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier that was generated when the transform was created.</p>
-        pub fn transform_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(inp);
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>A unique identifier that was generated when the transform was created.</p>
@@ -18562,8 +18310,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name that you gave the transform when you created it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The unique name that you gave the transform when you created it.</p>
@@ -18572,8 +18320,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the transform. The default is an empty string.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the transform. The default is an empty string.</p>
@@ -18581,14 +18329,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The configuration parameters that are specific to the transform type (algorithm) used.
-        /// Conditionally dependent on the transform type.</p>
-        pub fn parameters(mut self, inp: crate::model::TransformParameters) -> Self {
-            self.inner = self.inner.parameters(inp);
+        /// <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
+        pub fn parameters(mut self, input: crate::model::TransformParameters) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
-        /// <p>The configuration parameters that are specific to the transform type (algorithm) used.
-        /// Conditionally dependent on the transform type.</p>
+        /// <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::TransformParameters>,
@@ -18596,43 +18342,33 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parameters(input);
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-        /// permissions.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(inp);
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-        /// permissions.</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role(input);
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
-        pub fn glue_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.glue_version(inp);
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.glue_version(input.into());
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_glue_version(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
-        pub fn max_capacity(mut self, inp: f64) -> Self {
-            self.inner = self.inner.max_capacity(inp);
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
@@ -18640,31 +18376,19 @@ pub mod fluent_builders {
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
-        pub fn worker_type(mut self, inp: crate::model::WorkerType) -> Self {
-            self.inner = self.inner.worker_type(inp);
+        pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
+            self.inner = self.inner.worker_type(input);
             self
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -18674,8 +18398,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
-        pub fn number_of_workers(mut self, inp: i32) -> Self {
-            self.inner = self.inner.number_of_workers(inp);
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
@@ -18684,8 +18408,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
-        pub fn timeout(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout(inp);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
         /// <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
@@ -18694,8 +18418,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
-        pub fn max_retries(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_retries(inp);
+        pub fn max_retries(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_retries(input);
             self
         }
         /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
@@ -18707,7 +18431,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePartition`.
     ///
     /// <p>Updates a partition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePartition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18752,10 +18476,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePartitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -18763,26 +18487,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The name of the catalog database in which the table in question resides.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18791,8 +18511,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the table in which the partition to be updated is located.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(inp);
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table in which the partition to be updated is located.</p>
@@ -18805,8 +18525,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_partition_value_list`](Self::set_partition_value_list).
         ///
         /// <p>List of partition key values that define the partition to update.</p>
-        pub fn partition_value_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partition_value_list(inp);
+        pub fn partition_value_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partition_value_list(input.into());
             self
         }
         /// <p>List of partition key values that define the partition to update.</p>
@@ -18818,14 +18538,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new partition object to update the partition to.</p>
-        ///
         /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
-        pub fn partition_input(mut self, inp: crate::model::PartitionInput) -> Self {
-            self.inner = self.inner.partition_input(inp);
+        pub fn partition_input(mut self, input: crate::model::PartitionInput) -> Self {
+            self.inner = self.inner.partition_input(input);
             self
         }
         /// <p>The new partition object to update the partition to.</p>
-        ///
         /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
         pub fn set_partition_input(
             mut self,
@@ -18838,7 +18556,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRegistry`.
     ///
     /// <p>Updates an existing registry which is used to hold a collection of schemas. The updated properties relate to the registry, and do not modify any of the schemas within the registry. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRegistry<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18883,10 +18601,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRegistryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -18895,8 +18613,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-        pub fn registry_id(mut self, inp: crate::model::RegistryId) -> Self {
-            self.inner = self.inner.registry_id(inp);
+        pub fn registry_id(mut self, input: crate::model::RegistryId) -> Self {
+            self.inner = self.inner.registry_id(input);
             self
         }
         /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
@@ -18908,8 +18626,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
@@ -18924,7 +18642,7 @@ pub mod fluent_builders {
     /// <p>For updating the compatibility setting, the call will not validate compatibility for the entire set of schema versions with the new compatibility setting. If the value for <code>Compatibility</code> is provided, the <code>VersionNumber</code> (a checkpoint) is also required. The API will validate the checkpoint version number for consistency.</p>
     /// <p>If the value for the <code>VersionNumber</code> (checkpoint) is provided, <code>Compatibility</code> is optional and this can be used to set/reset a checkpoint for the schema.</p>
     /// <p>This update will happen only if the schema is in the AVAILABLE state.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSchema<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -18969,10 +18687,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSchemaInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -18982,33 +18700,25 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
-        pub fn schema_id(mut self, inp: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(inp);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.inner = self.inner.set_schema_id(input);
             self
         }
         /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
-        pub fn schema_version_number(mut self, inp: crate::model::SchemaVersionNumber) -> Self {
-            self.inner = self.inner.schema_version_number(inp);
+        pub fn schema_version_number(mut self, input: crate::model::SchemaVersionNumber) -> Self {
+            self.inner = self.inner.schema_version_number(input);
             self
         }
         /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
@@ -19020,8 +18730,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new compatibility setting for the schema.</p>
-        pub fn compatibility(mut self, inp: crate::model::Compatibility) -> Self {
-            self.inner = self.inner.compatibility(inp);
+        pub fn compatibility(mut self, input: crate::model::Compatibility) -> Self {
+            self.inner = self.inner.compatibility(input);
             self
         }
         /// <p>The new compatibility setting for the schema.</p>
@@ -19033,8 +18743,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description for the schema.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description for the schema.</p>
@@ -19046,7 +18756,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTable`.
     ///
     /// <p>Updates a metadata table in the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTable<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19091,10 +18801,10 @@ pub mod fluent_builders {
                 crate::input::UpdateTableInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -19102,26 +18812,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19129,14 +18835,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>An updated <code>TableInput</code> object to define the metadata table
-        /// in the catalog.</p>
-        pub fn table_input(mut self, inp: crate::model::TableInput) -> Self {
-            self.inner = self.inner.table_input(inp);
+        /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
+        pub fn table_input(mut self, input: crate::model::TableInput) -> Self {
+            self.inner = self.inner.table_input(input);
             self
         }
-        /// <p>An updated <code>TableInput</code> object to define the metadata table
-        /// in the catalog.</p>
+        /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
         pub fn set_table_input(
             mut self,
             input: std::option::Option<crate::model::TableInput>,
@@ -19144,23 +18848,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_table_input(input);
             self
         }
-        /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table
-        /// before updating it. However, if <code>skipArchive</code> is set to true,
-        /// <code>UpdateTable</code> does not create the archived version.</p>
-        pub fn skip_archive(mut self, inp: bool) -> Self {
-            self.inner = self.inner.skip_archive(inp);
+        /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
+        pub fn skip_archive(mut self, input: bool) -> Self {
+            self.inner = self.inner.skip_archive(input);
             self
         }
-        /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table
-        /// before updating it. However, if <code>skipArchive</code> is set to true,
-        /// <code>UpdateTable</code> does not create the archived version.</p>
+        /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
         pub fn set_skip_archive(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_skip_archive(input);
             self
         }
         /// <p>The transaction ID at which to update the table contents. </p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The transaction ID at which to update the table contents. </p>
@@ -19175,7 +18875,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTrigger`.
     ///
     /// <p>Updates a trigger definition.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTrigger<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19220,10 +18920,10 @@ pub mod fluent_builders {
                 crate::input::UpdateTriggerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -19232,8 +18932,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trigger to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the trigger to update.</p>
@@ -19242,8 +18942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new values with which to update the trigger.</p>
-        pub fn trigger_update(mut self, inp: crate::model::TriggerUpdate) -> Self {
-            self.inner = self.inner.trigger_update(inp);
+        pub fn trigger_update(mut self, input: crate::model::TriggerUpdate) -> Self {
+            self.inner = self.inner.trigger_update(input);
             self
         }
         /// <p>The new values with which to update the trigger.</p>
@@ -19258,7 +18958,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserDefinedFunction`.
     ///
     /// <p>Updates an existing function definition in the Data Catalog.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserDefinedFunction<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19303,10 +19003,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUserDefinedFunctionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -19314,26 +19014,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the function to be updated is located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(inp);
+        /// <p>The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the function to be updated is located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database where the function to be updated is
-        /// located.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(inp);
+        /// <p>The name of the catalog database where the function to be updated is located.</p>
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database where the function to be updated is
-        /// located.</p>
+        /// <p>The name of the catalog database where the function to be updated is located.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19342,8 +19038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the function.</p>
-        pub fn function_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(inp);
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input.into());
             self
         }
         /// <p>The name of the function.</p>
@@ -19354,14 +19050,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_function_name(input);
             self
         }
-        /// <p>A <code>FunctionInput</code> object that redefines the function in the Data
-        /// Catalog.</p>
-        pub fn function_input(mut self, inp: crate::model::UserDefinedFunctionInput) -> Self {
-            self.inner = self.inner.function_input(inp);
+        /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
+        pub fn function_input(mut self, input: crate::model::UserDefinedFunctionInput) -> Self {
+            self.inner = self.inner.function_input(input);
             self
         }
-        /// <p>A <code>FunctionInput</code> object that redefines the function in the Data
-        /// Catalog.</p>
+        /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
         pub fn set_function_input(
             mut self,
             input: std::option::Option<crate::model::UserDefinedFunctionInput>,
@@ -19373,7 +19067,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorkflow`.
     ///
     /// <p>Updates an existing workflow.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkflow<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -19418,10 +19112,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWorkflowInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -19430,8 +19124,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the workflow to be updated.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the workflow to be updated.</p>
@@ -19440,8 +19134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the workflow.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the workflow.</p>
@@ -19459,7 +19153,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_run_properties(k, v);
+            self.inner = self.inner.default_run_properties(k.into(), v.into());
             self
         }
         /// <p>A collection of properties to be used as part of each execution of the workflow.</p>
@@ -19473,8 +19167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
-        pub fn max_concurrent_runs(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_concurrent_runs(inp);
+        pub fn max_concurrent_runs(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_concurrent_runs(input);
             self
         }
         /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
@@ -19484,6 +19178,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

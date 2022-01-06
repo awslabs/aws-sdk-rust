@@ -14,21 +14,15 @@ pub struct AttachManagedPolicyToPermissionSetError {
 pub enum AttachManagedPolicyToPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the permitted number of resources that can be
-    /// created.</p>
+    /// <p>Indicates that the principal has crossed the permitted number of resources that can be created.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -94,8 +88,6 @@ impl AttachManagedPolicyToPermissionSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -208,21 +200,15 @@ pub struct CreateAccountAssignmentError {
 pub enum CreateAccountAssignmentErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the permitted number of resources that can be
-    /// created.</p>
+    /// <p>Indicates that the principal has crossed the permitted number of resources that can be created.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -275,8 +261,6 @@ impl CreateAccountAssignmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -377,18 +361,13 @@ pub struct CreateInstanceAccessControlAttributeConfigurationError {
 pub enum CreateInstanceAccessControlAttributeConfigurationErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -457,8 +436,6 @@ impl CreateInstanceAccessControlAttributeConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -567,21 +544,15 @@ pub struct CreatePermissionSetError {
 pub enum CreatePermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the permitted number of resources that can be
-    /// created.</p>
+    /// <p>Indicates that the principal has crossed the permitted number of resources that can be created.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -632,8 +603,6 @@ impl CreatePermissionSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -734,18 +703,13 @@ pub struct DeleteAccountAssignmentError {
 pub enum DeleteAccountAssignmentErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -795,8 +759,6 @@ impl DeleteAccountAssignmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -889,18 +851,13 @@ pub struct DeleteInlinePolicyFromPermissionSetError {
 pub enum DeleteInlinePolicyFromPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -965,8 +922,6 @@ impl DeleteInlinePolicyFromPermissionSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1071,18 +1026,13 @@ pub struct DeleteInstanceAccessControlAttributeConfigurationError {
 pub enum DeleteInstanceAccessControlAttributeConfigurationErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -1151,8 +1101,6 @@ impl DeleteInstanceAccessControlAttributeConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1261,18 +1209,13 @@ pub struct DeletePermissionSetError {
 pub enum DeletePermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -1322,8 +1265,6 @@ impl DeletePermissionSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1416,13 +1357,11 @@ pub struct DescribeAccountAssignmentCreationStatusError {
 pub enum DescribeAccountAssignmentCreationStatusErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -1484,8 +1423,6 @@ impl DescribeAccountAssignmentCreationStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1582,13 +1519,11 @@ pub struct DescribeAccountAssignmentDeletionStatusError {
 pub enum DescribeAccountAssignmentDeletionStatusErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -1650,8 +1585,6 @@ impl DescribeAccountAssignmentDeletionStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1748,13 +1681,11 @@ pub struct DescribeInstanceAccessControlAttributeConfigurationError {
 pub enum DescribeInstanceAccessControlAttributeConfigurationErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -1824,8 +1755,6 @@ impl DescribeInstanceAccessControlAttributeConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1926,13 +1855,11 @@ pub struct DescribePermissionSetError {
 pub enum DescribePermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -1981,8 +1908,6 @@ impl DescribePermissionSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2067,13 +1992,11 @@ pub struct DescribePermissionSetProvisioningStatusError {
 pub enum DescribePermissionSetProvisioningStatusErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -2135,8 +2058,6 @@ impl DescribePermissionSetProvisioningStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2233,18 +2154,13 @@ pub struct DetachManagedPolicyFromPermissionSetError {
 pub enum DetachManagedPolicyFromPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -2309,8 +2225,6 @@ impl DetachManagedPolicyFromPermissionSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2417,13 +2331,11 @@ pub struct GetInlinePolicyForPermissionSetError {
 pub enum GetInlinePolicyForPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -2481,8 +2393,6 @@ impl GetInlinePolicyForPermissionSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2571,13 +2481,11 @@ pub struct ListAccountAssignmentCreationStatusError {
 pub enum ListAccountAssignmentCreationStatusErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -2639,8 +2547,6 @@ impl ListAccountAssignmentCreationStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2737,13 +2643,11 @@ pub struct ListAccountAssignmentDeletionStatusError {
 pub enum ListAccountAssignmentDeletionStatusErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -2805,8 +2709,6 @@ impl ListAccountAssignmentDeletionStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2903,13 +2805,11 @@ pub struct ListAccountAssignmentsError {
 pub enum ListAccountAssignmentsErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -2958,8 +2858,6 @@ impl ListAccountAssignmentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3044,13 +2942,11 @@ pub struct ListAccountsForProvisionedPermissionSetError {
 pub enum ListAccountsForProvisionedPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -3112,8 +3008,6 @@ impl ListAccountsForProvisionedPermissionSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3210,11 +3104,9 @@ pub struct ListInstancesError {
 pub enum ListInstancesErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -3262,8 +3154,6 @@ impl ListInstancesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3331,13 +3221,11 @@ pub struct ListManagedPoliciesInPermissionSetError {
 pub enum ListManagedPoliciesInPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -3399,8 +3287,6 @@ impl ListManagedPoliciesInPermissionSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3495,13 +3381,11 @@ pub struct ListPermissionSetProvisioningStatusError {
 pub enum ListPermissionSetProvisioningStatusErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -3563,8 +3447,6 @@ impl ListPermissionSetProvisioningStatusError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3661,13 +3543,11 @@ pub struct ListPermissionSetsError {
 pub enum ListPermissionSetsErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -3716,8 +3596,6 @@ impl ListPermissionSetsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3802,13 +3680,11 @@ pub struct ListPermissionSetsProvisionedToAccountError {
 pub enum ListPermissionSetsProvisionedToAccountErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -3870,8 +3746,6 @@ impl ListPermissionSetsProvisionedToAccountError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3968,13 +3842,11 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -4023,8 +3895,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4109,18 +3979,13 @@ pub struct ProvisionPermissionSetError {
 pub enum ProvisionPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -4170,8 +4035,6 @@ impl ProvisionPermissionSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4264,21 +4127,15 @@ pub struct PutInlinePolicyToPermissionSetError {
 pub enum PutInlinePolicyToPermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the permitted number of resources that can be
-    /// created.</p>
+    /// <p>Indicates that the principal has crossed the permitted number of resources that can be created.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -4338,8 +4195,6 @@ impl PutInlinePolicyToPermissionSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4446,21 +4301,15 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the permitted number of resources that can be
-    /// created.</p>
+    /// <p>Indicates that the principal has crossed the permitted number of resources that can be created.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -4511,8 +4360,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4598,18 +4445,13 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -4659,8 +4501,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4741,18 +4581,13 @@ pub struct UpdateInstanceAccessControlAttributeConfigurationError {
 pub enum UpdateInstanceAccessControlAttributeConfigurationErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -4821,8 +4656,6 @@ impl UpdateInstanceAccessControlAttributeConfigurationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4931,18 +4764,13 @@ pub struct UpdatePermissionSetError {
 pub enum UpdatePermissionSetErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception, or failure with
-    /// an internal server.</p>
+    /// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Indicates that a requested resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that the principal has crossed the throttling limits of the API
-    /// operations.</p>
+    /// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request failed because it contains a syntax error.</p>
     ValidationException(crate::error::ValidationException),
@@ -4992,8 +4820,6 @@ impl UpdatePermissionSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5135,8 +4961,7 @@ impl ValidationException {
     }
 }
 
-/// <p>Indicates that the principal has crossed the throttling limits of the API
-/// operations.</p>
+/// <p>Indicates that the principal has crossed the throttling limits of the API operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -5264,8 +5089,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The request processing has failed because of an unknown error, exception, or failure with
-/// an internal server.</p>
+/// <p>The request processing has failed because of an unknown error, exception, or failure with an internal server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -5329,10 +5153,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-/// when the previous write did not have time to propagate to the host serving the current
-/// request. A retry (with appropriate backoff logic) is the recommended response to this
-/// exception.</p>
+/// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -5460,8 +5281,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>Indicates that the principal has crossed the permitted number of resources that can be
-/// created.</p>
+/// <p>Indicates that the principal has crossed the permitted number of resources that can be created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

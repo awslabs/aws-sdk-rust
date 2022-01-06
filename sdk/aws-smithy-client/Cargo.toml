@@ -5,7 +5,7 @@ required-features = ["test-util", "rt-tokio"]
 
 [package]
 name = "aws-smithy-client"
-version = "0.33.1"
+version = "0.34.0"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "Client for smithy-rs."
 edition = "2018"
@@ -17,7 +17,7 @@ targets = ["x86_64-unknown-linux-gnu"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
-rt-tokio = ["tokio/net", "aws-smithy-async/rt-tokio", "aws-smithy-http/rt-tokio"]
+rt-tokio = ["aws-smithy-async/rt-tokio"]
 test-util = ["aws-smithy-protocol-test", "serde/derive", "rustls"]
 native-tls = ["client-hyper", "hyper-tls", "rt-tokio"]
 rustls = ["client-hyper", "hyper-rustls", "rt-tokio", "lazy_static"]
@@ -34,23 +34,23 @@ tracing = "0.1"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-version = "0.33.1"
+version = "0.34.0"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.33.1"
+version = "0.34.0"
 
 [dependencies.aws-smithy-http-tower]
 path = "../aws-smithy-http-tower"
-version = "0.33.1"
+version = "0.34.0"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "0.33.1"
+version = "0.34.0"
 
 [dependencies.hyper]
-version = "0.14.2"
-features = ["client", "http2"]
+version = "0.14"
+features = ["client", "http2", "http1"]
 optional = true
 
 [dependencies.hyper-rustls]
@@ -76,7 +76,7 @@ features = ["util", "retry"]
 [dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
 optional = true
-version = "0.33.1"
+version = "0.34.0"
 
 [dependencies.serde]
 version = "1"
@@ -91,6 +91,11 @@ tracing-test = "0.2.1"
 [dev-dependencies.tokio]
 version = "1"
 features = ["full", "test-util"]
+
+[dev-dependencies.aws-smithy-async]
+path = "../aws-smithy-async"
+features = ["rt-tokio"]
+version = "0.34.0"
 
 [dev-dependencies.serde]
 version = "1"

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon FSx
@@ -229,6 +229,7 @@ where
     ///
     /// See [`DescribeBackups`](crate::client::fluent_builders::DescribeBackups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBackups::into_paginator).
     pub fn describe_backups(&self) -> fluent_builders::DescribeBackups<C, M, R> {
         fluent_builders::DescribeBackups::new(self.handle.clone())
     }
@@ -236,6 +237,7 @@ where
     ///
     /// See [`DescribeDataRepositoryAssociations`](crate::client::fluent_builders::DescribeDataRepositoryAssociations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDataRepositoryAssociations::into_paginator).
     pub fn describe_data_repository_associations(
         &self,
     ) -> fluent_builders::DescribeDataRepositoryAssociations<C, M, R> {
@@ -245,6 +247,7 @@ where
     ///
     /// See [`DescribeDataRepositoryTasks`](crate::client::fluent_builders::DescribeDataRepositoryTasks) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDataRepositoryTasks::into_paginator).
     pub fn describe_data_repository_tasks(
         &self,
     ) -> fluent_builders::DescribeDataRepositoryTasks<C, M, R> {
@@ -263,6 +266,7 @@ where
     ///
     /// See [`DescribeFileSystems`](crate::client::fluent_builders::DescribeFileSystems) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFileSystems::into_paginator).
     pub fn describe_file_systems(&self) -> fluent_builders::DescribeFileSystems<C, M, R> {
         fluent_builders::DescribeFileSystems::new(self.handle.clone())
     }
@@ -270,6 +274,7 @@ where
     ///
     /// See [`DescribeSnapshots`](crate::client::fluent_builders::DescribeSnapshots) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSnapshots::into_paginator).
     pub fn describe_snapshots(&self) -> fluent_builders::DescribeSnapshots<C, M, R> {
         fluent_builders::DescribeSnapshots::new(self.handle.clone())
     }
@@ -277,6 +282,7 @@ where
     ///
     /// See [`DescribeStorageVirtualMachines`](crate::client::fluent_builders::DescribeStorageVirtualMachines) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeStorageVirtualMachines::into_paginator).
     pub fn describe_storage_virtual_machines(
         &self,
     ) -> fluent_builders::DescribeStorageVirtualMachines<C, M, R> {
@@ -286,6 +292,7 @@ where
     ///
     /// See [`DescribeVolumes`](crate::client::fluent_builders::DescribeVolumes) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeVolumes::into_paginator).
     pub fn describe_volumes(&self) -> fluent_builders::DescribeVolumes<C, M, R> {
         fluent_builders::DescribeVolumes::new(self.handle.clone())
     }
@@ -302,6 +309,7 @@ where
     ///
     /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
@@ -387,18 +395,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateFileSystemAliases`.
     ///
-    /// <p>Use this action to associate one or more Domain Name Server (DNS) aliases with an existing Amazon FSx for Windows File Server file system.
-    /// A file system can have a maximum of 50 DNS aliases associated with it at any one time. If you try to
-    /// associate a DNS alias that is already associated with the file system, FSx takes no action on that alias in the request.
-    /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a> and
-    /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough 5: Using DNS aliases to access your file system</a>, including
-    /// additional steps you must take to be able to access your file system using a DNS alias.</p>
-    /// <p>The system response shows the DNS aliases that
-    /// Amazon FSx is attempting to associate with the file system.
-    /// Use the  API
-    /// operation to monitor the status of the aliases Amazon FSx is
-    /// associating with the file system.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Use this action to associate one or more Domain Name Server (DNS) aliases with an existing Amazon FSx for Windows File Server file system. A file system can have a maximum of 50 DNS aliases associated with it at any one time. If you try to associate a DNS alias that is already associated with the file system, FSx takes no action on that alias in the request. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be able to access your file system using a DNS alias.</p>
+    /// <p>The system response shows the DNS aliases that Amazon FSx is attempting to associate with the file system. Use the API operation to monitor the status of the aliases Amazon FSx is associating with the file system.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateFileSystemAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -443,10 +442,10 @@ pub mod fluent_builders {
                 crate::input::AssociateFileSystemAliasesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -454,16 +453,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -472,8 +467,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(input.into());
             self
         }
         /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
@@ -488,52 +483,26 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
         ///
-        /// <p>An array of one or more DNS alias names to associate with the file system.
-        /// The alias name has to comply with the following formatting requirements:</p>
+        /// <p>An array of one or more DNS alias names to associate with the file system. The alias name has to comply with the following formatting requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Formatted as a fully-qualified domain name (FQDN), <i>
-        /// <code>hostname.domain</code>
-        /// </i>,
-        /// for example, <code>accounting.corp.example.com</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can contain alphanumeric characters and the hyphen (-).</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot start or end with a hyphen.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can start with a numeric.</p>
-        /// </li>
+        /// <li> <p>Formatted as a fully-qualified domain name (FQDN), <i> <code>hostname.domain</code> </i>, for example, <code>accounting.corp.example.com</code>.</p> </li>
+        /// <li> <p>Can contain alphanumeric characters and the hyphen (-).</p> </li>
+        /// <li> <p>Cannot start or end with a hyphen.</p> </li>
+        /// <li> <p>Can start with a numeric.</p> </li>
         /// </ul>
-        /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them:
-        /// as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
-        pub fn aliases(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aliases(inp);
+        /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
+        pub fn aliases(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aliases(input.into());
             self
         }
-        /// <p>An array of one or more DNS alias names to associate with the file system.
-        /// The alias name has to comply with the following formatting requirements:</p>
+        /// <p>An array of one or more DNS alias names to associate with the file system. The alias name has to comply with the following formatting requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Formatted as a fully-qualified domain name (FQDN), <i>
-        /// <code>hostname.domain</code>
-        /// </i>,
-        /// for example, <code>accounting.corp.example.com</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can contain alphanumeric characters and the hyphen (-).</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot start or end with a hyphen.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can start with a numeric.</p>
-        /// </li>
+        /// <li> <p>Formatted as a fully-qualified domain name (FQDN), <i> <code>hostname.domain</code> </i>, for example, <code>accounting.corp.example.com</code>.</p> </li>
+        /// <li> <p>Can contain alphanumeric characters and the hyphen (-).</p> </li>
+        /// <li> <p>Cannot start or end with a hyphen.</p> </li>
+        /// <li> <p>Can start with a numeric.</p> </li>
         /// </ul>
-        /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them:
-        /// as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
+        /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
         pub fn set_aliases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -544,20 +513,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelDataRepositoryTask`.
     ///
-    /// <p>Cancels an existing Amazon FSx for Lustre data repository task if that task is in either the
-    /// <code>PENDING</code> or <code>EXECUTING</code> state. When you cancel a task, Amazon FSx does the following.</p>
+    /// <p>Cancels an existing Amazon FSx for Lustre data repository task if that task is in either the <code>PENDING</code> or <code>EXECUTING</code> state. When you cancel a task, Amazon FSx does the following.</p>
     /// <ul>
-    /// <li>
-    /// <p>Any files that FSx has already exported are not reverted.</p>
-    /// </li>
-    /// <li>
-    /// <p>FSx continues to export any files that are "in-flight" when the cancel operation is received.</p>
-    /// </li>
-    /// <li>
-    /// <p>FSx does not export any files that have not yet been exported.</p>
-    /// </li>
+    /// <li> <p>Any files that FSx has already exported are not reverted.</p> </li>
+    /// <li> <p>FSx continues to export any files that are "in-flight" when the cancel operation is received.</p> </li>
+    /// <li> <p>FSx does not export any files that have not yet been exported.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelDataRepositoryTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -602,10 +564,10 @@ pub mod fluent_builders {
                 crate::input::CancelDataRepositoryTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -614,8 +576,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the data repository task to cancel.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(input.into());
             self
         }
         /// <p>Specifies the data repository task to cancel.</p>
@@ -626,28 +588,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CopyBackup`.
     ///
-    /// <p>Copies an existing backup within the same Amazon Web Services account to another Amazon Web Services Region
-    /// (cross-Region copy) or within the same Amazon Web Services Region (in-Region copy). You can have up to five
-    /// backup copy requests in progress to a single destination Region per account.</p>
-    /// <p>You can use cross-Region backup copies for cross-Region disaster recovery. You can
-    /// periodically take backups and copy them to another Region so that in the event of a
-    /// disaster in the primary Region, you can restore from backup and recover availability
-    /// quickly in the other Region. You can make cross-Region copies only within your Amazon Web Services partition. A partition is a grouping of Regions. Amazon Web Services currently
-    /// has three partitions: <code>aws</code> (Standard Regions), <code>aws-cn</code> (China
-    /// Regions), and <code>aws-us-gov</code> (Amazon Web Services GovCloud [US] Regions).</p>
-    /// <p>You can also use backup copies to clone your file dataset to another Region or within
-    /// the same Region.</p>
-    /// <p>You can use the <code>SourceRegion</code> parameter to specify the Amazon Web Services Region
-    /// from which the backup will be copied. For example, if you make the call from the
-    /// <code>us-west-1</code> Region and want to copy a backup from the <code>us-east-2</code>
-    /// Region, you specify <code>us-east-2</code> in the <code>SourceRegion</code> parameter
-    /// to make a cross-Region copy. If you don't specify a Region, the backup copy is
-    /// created in the same Region where the request is sent from (in-Region copy).</p>
-    /// <p>For more information about creating backup copies, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups"> Copying backups</a>
-    /// in the <i>Amazon FSx for Windows User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying backups</a> in the <i>Amazon FSx for Lustre User
-    /// Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/using-backups.html#copy-backups">Copying backups</a> in the <i>Amazon FSx for OpenZFS User
-    /// Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Copies an existing backup within the same Amazon Web Services account to another Amazon Web Services Region (cross-Region copy) or within the same Amazon Web Services Region (in-Region copy). You can have up to five backup copy requests in progress to a single destination Region per account.</p>
+    /// <p>You can use cross-Region backup copies for cross-Region disaster recovery. You can periodically take backups and copy them to another Region so that in the event of a disaster in the primary Region, you can restore from backup and recover availability quickly in the other Region. You can make cross-Region copies only within your Amazon Web Services partition. A partition is a grouping of Regions. Amazon Web Services currently has three partitions: <code>aws</code> (Standard Regions), <code>aws-cn</code> (China Regions), and <code>aws-us-gov</code> (Amazon Web Services GovCloud [US] Regions).</p>
+    /// <p>You can also use backup copies to clone your file dataset to another Region or within the same Region.</p>
+    /// <p>You can use the <code>SourceRegion</code> parameter to specify the Amazon Web Services Region from which the backup will be copied. For example, if you make the call from the <code>us-west-1</code> Region and want to copy a backup from the <code>us-east-2</code> Region, you specify <code>us-east-2</code> in the <code>SourceRegion</code> parameter to make a cross-Region copy. If you don't specify a Region, the backup copy is created in the same Region where the request is sent from (in-Region copy).</p>
+    /// <p>For more information about creating backup copies, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups"> Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying backups</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/using-backups.html#copy-backups">Copying backups</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -692,10 +638,10 @@ pub mod fluent_builders {
                 crate::input::CopyBackupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -703,16 +649,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -721,8 +663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the source backup. Specifies the ID of the backup that's being copied.</p>
-        pub fn source_backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_backup_id(inp);
+        pub fn source_backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_backup_id(input.into());
             self
         }
         /// <p>The ID of the source backup. Specifies the ID of the backup that's being copied.</p>
@@ -733,18 +675,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_backup_id(input);
             self
         }
-        /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which the backup is being copied. The source and destination
-        /// Regions must be in the same Amazon Web Services partition. If you don't specify a
-        /// Region, <code>SourceRegion</code> defaults to the Region where the request is sent from
-        /// (in-Region copy).</p>
-        pub fn source_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_region(inp);
+        /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which the backup is being copied. The source and destination Regions must be in the same Amazon Web Services partition. If you don't specify a Region, <code>SourceRegion</code> defaults to the Region where the request is sent from (in-Region copy).</p>
+        pub fn source_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_region(input.into());
             self
         }
-        /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which the backup is being copied. The source and destination
-        /// Regions must be in the same Amazon Web Services partition. If you don't specify a
-        /// Region, <code>SourceRegion</code> defaults to the Region where the request is sent from
-        /// (in-Region copy).</p>
+        /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which the backup is being copied. The source and destination Regions must be in the same Amazon Web Services partition. If you don't specify a Region, <code>SourceRegion</code> defaults to the Region where the request is sent from (in-Region copy).</p>
         pub fn set_source_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -752,46 +688,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_region(input);
             self
         }
-        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file
-        /// system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre
-        /// <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID
-        /// isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre
-        /// <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at
-        /// rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-        /// in the <i>Key Management Service API Reference</i>.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file
-        /// system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre
-        /// <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID
-        /// isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre
-        /// <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at
-        /// rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-        /// in the <i>Key Management Service API Reference</i>.</p>
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
         }
-        /// <p>A Boolean flag indicating whether tags from the source backup should be copied to the
-        /// backup copy. This value defaults to <code>false</code>.</p>
-        /// <p>If you set <code>CopyTags</code> to <code>true</code> and the source backup has existing
-        /// tags, you can use the <code>Tags</code> parameter to create new tags, provided that the sum
-        /// of the source backup tags and the new tags doesn't exceed 50. Both sets of tags are
-        /// merged. If there are tag conflicts (for example, two tags with the same key but different
-        /// values), the tags created with the <code>Tags</code> parameter take precedence.</p>
-        pub fn copy_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.copy_tags(inp);
+        /// <p>A Boolean flag indicating whether tags from the source backup should be copied to the backup copy. This value defaults to <code>false</code>.</p>
+        /// <p>If you set <code>CopyTags</code> to <code>true</code> and the source backup has existing tags, you can use the <code>Tags</code> parameter to create new tags, provided that the sum of the source backup tags and the new tags doesn't exceed 50. Both sets of tags are merged. If there are tag conflicts (for example, two tags with the same key but different values), the tags created with the <code>Tags</code> parameter take precedence.</p>
+        pub fn copy_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags(input);
             self
         }
-        /// <p>A Boolean flag indicating whether tags from the source backup should be copied to the
-        /// backup copy. This value defaults to <code>false</code>.</p>
-        /// <p>If you set <code>CopyTags</code> to <code>true</code> and the source backup has existing
-        /// tags, you can use the <code>Tags</code> parameter to create new tags, provided that the sum
-        /// of the source backup tags and the new tags doesn't exceed 50. Both sets of tags are
-        /// merged. If there are tag conflicts (for example, two tags with the same key but different
-        /// values), the tags created with the <code>Tags</code> parameter take precedence.</p>
+        /// <p>A Boolean flag indicating whether tags from the source backup should be copied to the backup copy. This value defaults to <code>false</code>.</p>
+        /// <p>If you set <code>CopyTags</code> to <code>true</code> and the source backup has existing tags, you can use the <code>Tags</code> parameter to create new tags, provided that the sum of the source backup tags and the new tags doesn't exceed 50. Both sets of tags are merged. If there are tag conflicts (for example, two tags with the same key but different values), the tags created with the <code>Tags</code> parameter take precedence.</p>
         pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_copy_tags(input);
             self
@@ -801,8 +715,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -816,65 +730,27 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBackup`.
     ///
-    /// <p>Creates a backup of an existing Amazon FSx for Windows File Server file
-    /// system, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP
-    /// volume, or Amazon FSx for OpenZFS file system. We recommend creating regular
-    /// backups so that you can restore a file system or volume from a backup if an issue arises
-    /// with the original file system or volume.</p>
-    /// <p>For Amazon FSx for Lustre file systems, you can create a backup only for file
-    /// systems that have the following configuration:</p>
+    /// <p>Creates a backup of an existing Amazon FSx for Windows File Server file system, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx for OpenZFS file system. We recommend creating regular backups so that you can restore a file system or volume from a backup if an issue arises with the original file system or volume.</p>
+    /// <p>For Amazon FSx for Lustre file systems, you can create a backup only for file systems that have the following configuration:</p>
     /// <ul>
-    /// <li>
-    /// <p>A Persistent deployment type</p>
-    /// </li>
-    /// <li>
-    /// <p>Are <i>not</i> linked to a data repository</p>
-    /// </li>
+    /// <li> <p>A Persistent deployment type</p> </li>
+    /// <li> <p>Are <i>not</i> linked to a data repository</p> </li>
     /// </ul>
     /// <p>For more information about backups, see the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>For Amazon FSx for Lustre, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with FSx for
-    /// Lustre backups</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For Amazon FSx for Windows, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working with FSx for
-    /// Windows backups</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For Amazon FSx for NetApp ONTAP, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/using-backups.html">Working with FSx for NetApp
-    /// ONTAP backups</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For Amazon FSx for OpenZFS, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/using-backups.html">Working with FSx for OpenZFS backups</a>.</p>
-    /// </li>
+    /// <li> <p>For Amazon FSx for Lustre, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with FSx for Lustre backups</a>.</p> </li>
+    /// <li> <p>For Amazon FSx for Windows, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working with FSx for Windows backups</a>.</p> </li>
+    /// <li> <p>For Amazon FSx for NetApp ONTAP, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/using-backups.html">Working with FSx for NetApp ONTAP backups</a>.</p> </li>
+    /// <li> <p>For Amazon FSx for OpenZFS, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/using-backups.html">Working with FSx for OpenZFS backups</a>.</p> </li>
     /// </ul>
-    /// <p>If a backup with the specified client request token exists and the parameters match,
-    /// this operation returns the description of the existing backup. If a backup with the
-    /// specified client request token exists and the parameters don't match, this operation
-    /// returns <code>IncompatibleParameterError</code>. If a backup with the specified client
-    /// request token doesn't exist, <code>CreateBackup</code> does the following: </p>
+    /// <p>If a backup with the specified client request token exists and the parameters match, this operation returns the description of the existing backup. If a backup with the specified client request token exists and the parameters don't match, this operation returns <code>IncompatibleParameterError</code>. If a backup with the specified client request token doesn't exist, <code>CreateBackup</code> does the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>Creates a new Amazon FSx backup with an assigned ID, and an initial
-    /// lifecycle state of <code>CREATING</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Returns the description of the backup.</p>
-    /// </li>
+    /// <li> <p>Creates a new Amazon FSx backup with an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
+    /// <li> <p>Returns the description of the backup.</p> </li>
     /// </ul>
-    ///
-    /// <p>By using the idempotent operation, you can retry a <code>CreateBackup</code>
-    /// operation without the risk of creating an extra backup. This approach can be useful when
-    /// an initial call fails in a way that makes it unclear whether a backup was created. If
-    /// you use the same client request token and the initial call created a backup, the
-    /// operation returns a successful result because all the parameters are the same.</p>
-    ///
-    /// <p>The <code>CreateBackup</code> operation returns while the backup's lifecycle state is
-    /// still <code>CREATING</code>. You can check the backup creation status by calling the
-    /// <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeBackups.html">DescribeBackups</a> operation, which returns the backup state along with other
-    /// information.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>By using the idempotent operation, you can retry a <code>CreateBackup</code> operation without the risk of creating an extra backup. This approach can be useful when an initial call fails in a way that makes it unclear whether a backup was created. If you use the same client request token and the initial call created a backup, the operation returns a successful result because all the parameters are the same.</p>
+    /// <p>The <code>CreateBackup</code> operation returns while the backup's lifecycle state is still <code>CREATING</code>. You can check the backup creation status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeBackups.html">DescribeBackups</a> operation, which returns the backup state along with other information.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -919,10 +795,10 @@ pub mod fluent_builders {
                 crate::input::CreateBackupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -931,8 +807,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the file system to back up.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(input.into());
             self
         }
         /// <p>The ID of the file system to back up.</p>
@@ -943,16 +819,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_system_id(input);
             self
         }
-        /// <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-        /// ensure idempotent creation. This string is automatically filled on your behalf when you
-        /// use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
-        /// ensure idempotent creation. This string is automatically filled on your behalf when you
-        /// use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -964,20 +836,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>(Optional) The tags to apply to the backup at backup creation. The key value of the
-        /// <code>Name</code> tag appears in the console as the backup name. If you have set
-        /// <code>CopyTagsToBackups</code> to <code>true</code>, and you specify one or more
-        /// tags using the <code>CreateBackup</code> operation, no existing file system tags are
-        /// copied from the file system to the backup.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>(Optional) The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to <code>true</code>, and you specify one or more tags using the <code>CreateBackup</code> operation, no existing file system tags are copied from the file system to the backup.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>(Optional) The tags to apply to the backup at backup creation. The key value of the
-        /// <code>Name</code> tag appears in the console as the backup name. If you have set
-        /// <code>CopyTagsToBackups</code> to <code>true</code>, and you specify one or more
-        /// tags using the <code>CreateBackup</code> operation, no existing file system tags are
-        /// copied from the file system to the backup.</p>
+        /// <p>(Optional) The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to <code>true</code>, and you specify one or more tags using the <code>CreateBackup</code> operation, no existing file system tags are copied from the file system to the backup.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -986,8 +850,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(inp);
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(input.into());
             self
         }
         /// <p>(Optional) The ID of the FSx for ONTAP volume to back up.</p>
@@ -998,18 +862,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDataRepositoryAssociation`.
     ///
-    /// <p>Creates an Amazon FSx for Lustre data repository association (DRA). A data
-    /// repository association is a link between a directory on the file system and
-    /// an Amazon S3 bucket or prefix. You can have a maximum of 8 data repository
-    /// associations on a file system. Data repository associations are supported only
-    /// for file systems with the <code>Persistent_2</code> deployment type.</p>
-    /// <p>Each data repository association must have a unique Amazon FSx file
-    /// system directory and a unique S3 bucket or prefix associated with it. You
-    /// can configure a data repository association for automatic import only,
-    /// for automatic export only, or for both. To learn more about linking a
-    /// data repository to your file system, see
-    /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking your file system to an S3 bucket</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an Amazon FSx for Lustre data repository association (DRA). A data repository association is a link between a directory on the file system and an Amazon S3 bucket or prefix. You can have a maximum of 8 data repository associations on a file system. Data repository associations are supported only for file systems with the <code>Persistent_2</code> deployment type.</p>
+    /// <p>Each data repository association must have a unique Amazon FSx file system directory and a unique S3 bucket or prefix associated with it. You can configure a data repository association for automatic import only, for automatic export only, or for both. To learn more about linking a data repository to your file system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking your file system to an S3 bucket</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataRepositoryAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1054,10 +909,10 @@ pub mod fluent_builders {
                 crate::input::CreateDataRepositoryAssociationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1066,8 +921,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(input.into());
             self
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
@@ -1078,32 +933,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_system_id(input);
             self
         }
-        /// <p>A path on the file system that points to a high-level directory (such
-        /// as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>)
-        /// that will be mapped 1-1 with <code>DataRepositoryPath</code>.
-        /// The leading forward slash in the name is required. Two data repository
-        /// associations cannot have overlapping file system paths. For example, if
-        /// a data repository is associated with file system path <code>/ns1/</code>,
-        /// then you cannot link another data repository with file system
-        /// path <code>/ns1/ns2</code>.</p>
-        /// <p>This path specifies where in your file system files will be exported
-        /// from or imported to. This file system directory can be linked to only one
-        /// Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p>
-        pub fn file_system_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_path(inp);
+        /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
+        /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p>
+        pub fn file_system_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_path(input.into());
             self
         }
-        /// <p>A path on the file system that points to a high-level directory (such
-        /// as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>)
-        /// that will be mapped 1-1 with <code>DataRepositoryPath</code>.
-        /// The leading forward slash in the name is required. Two data repository
-        /// associations cannot have overlapping file system paths. For example, if
-        /// a data repository is associated with file system path <code>/ns1/</code>,
-        /// then you cannot link another data repository with file system
-        /// path <code>/ns1/ns2</code>.</p>
-        /// <p>This path specifies where in your file system files will be exported
-        /// from or imported to. This file system directory can be linked to only one
-        /// Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p>
+        /// <p>A path on the file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
+        /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p>
         pub fn set_file_system_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1111,18 +948,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_system_path(input);
             self
         }
-        /// <p>The path to the Amazon S3 data repository that will be linked to the file
-        /// system. The path can be an S3 bucket or prefix in the format
-        /// <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3
-        /// data repository files will be imported from or exported to.</p>
-        pub fn data_repository_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_repository_path(inp);
+        /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
+        pub fn data_repository_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_repository_path(input.into());
             self
         }
-        /// <p>The path to the Amazon S3 data repository that will be linked to the file
-        /// system. The path can be an S3 bucket or prefix in the format
-        /// <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3
-        /// data repository files will be imported from or exported to.</p>
+        /// <p>The path to the Amazon S3 data repository that will be linked to the file system. The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data repository files will be imported from or exported to.</p>
         pub fn set_data_repository_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1130,16 +961,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_repository_path(input);
             self
         }
-        /// <p>Set to <code>true</code> to run an import data repository task to import
-        /// metadata from the data repository to the file system after the data repository
-        /// association is created. Default is <code>false</code>.</p>
-        pub fn batch_import_meta_data_on_create(mut self, inp: bool) -> Self {
-            self.inner = self.inner.batch_import_meta_data_on_create(inp);
+        /// <p>Set to <code>true</code> to run an import data repository task to import metadata from the data repository to the file system after the data repository association is created. Default is <code>false</code>.</p>
+        pub fn batch_import_meta_data_on_create(mut self, input: bool) -> Self {
+            self.inner = self.inner.batch_import_meta_data_on_create(input);
             self
         }
-        /// <p>Set to <code>true</code> to run an import data repository task to import
-        /// metadata from the data repository to the file system after the data repository
-        /// association is created. Default is <code>false</code>.</p>
+        /// <p>Set to <code>true</code> to run an import data repository task to import metadata from the data repository to the file system after the data repository association is created. Default is <code>false</code>.</p>
         pub fn set_batch_import_meta_data_on_create(
             mut self,
             input: std::option::Option<bool>,
@@ -1147,44 +974,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_batch_import_meta_data_on_create(input);
             self
         }
-        /// <p>For files imported from a data repository, this value determines the stripe count and
-        /// maximum amount of data per file (in MiB) stored on a single physical disk. The maximum
-        /// number of disks that a single file can be striped across is limited by the total number
-        /// of disks that make up the file system.</p>
-        ///
-        /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
-        /// GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
-        pub fn imported_file_chunk_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.imported_file_chunk_size(inp);
+        /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
+        /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
+        pub fn imported_file_chunk_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.imported_file_chunk_size(input);
             self
         }
-        /// <p>For files imported from a data repository, this value determines the stripe count and
-        /// maximum amount of data per file (in MiB) stored on a single physical disk. The maximum
-        /// number of disks that a single file can be striped across is limited by the total number
-        /// of disks that make up the file system.</p>
-        ///
-        /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
-        /// GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
+        /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
+        /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
         pub fn set_imported_file_chunk_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_imported_file_chunk_size(input);
             self
         }
-        /// <p>The configuration for an Amazon S3 data repository linked to an
-        /// Amazon FSx Lustre file system with a data repository association.
-        /// The configuration defines which file events (new, changed, or
-        /// deleted files or directories) are automatically imported from
-        /// the linked data repository to the file system or automatically
-        /// exported from the file system to the data repository.</p>
-        pub fn s3(mut self, inp: crate::model::S3DataRepositoryConfiguration) -> Self {
-            self.inner = self.inner.s3(inp);
+        /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
+        pub fn s3(mut self, input: crate::model::S3DataRepositoryConfiguration) -> Self {
+            self.inner = self.inner.s3(input);
             self
         }
-        /// <p>The configuration for an Amazon S3 data repository linked to an
-        /// Amazon FSx Lustre file system with a data repository association.
-        /// The configuration defines which file events (new, changed, or
-        /// deleted files or directories) are automatically imported from
-        /// the linked data repository to the file system or automatically
-        /// exported from the file system to the data repository.</p>
+        /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
         pub fn set_s3(
             mut self,
             input: std::option::Option<crate::model::S3DataRepositoryConfiguration>,
@@ -1192,16 +999,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3(input);
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1214,8 +1017,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -1229,17 +1032,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDataRepositoryTask`.
     ///
-    /// <p>Creates an Amazon FSx for Lustre data repository task. You use data repository tasks
-    /// to perform bulk operations between your Amazon FSx file system and its linked data
-    /// repositories. An example of a data repository task is exporting any data and metadata
-    /// changes, including POSIX metadata, to files, directories, and symbolic links (symlinks)
-    /// from your FSx file system to a linked data repository. A <code>CreateDataRepositoryTask</code>
-    /// operation will fail if a data repository is not linked to the FSx file system. To learn
-    /// more about data repository tasks, see
-    /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data Repository Tasks</a>.
-    /// To learn more about linking a data repository to your file system, see
-    /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking your file system to an S3 bucket</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an Amazon FSx for Lustre data repository task. You use data repository tasks to perform bulk operations between your Amazon FSx file system and its linked data repositories. An example of a data repository task is exporting any data and metadata changes, including POSIX metadata, to files, directories, and symbolic links (symlinks) from your FSx file system to a linked data repository. A <code>CreateDataRepositoryTask</code> operation will fail if a data repository is not linked to the FSx file system. To learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data Repository Tasks</a>. To learn more about linking a data repository to your file system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking your file system to an S3 bucket</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataRepositoryTask<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1284,10 +1078,10 @@ pub mod fluent_builders {
                 crate::input::CreateDataRepositoryTaskInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1296,8 +1090,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the type of data repository task to create.</p>
-        pub fn r#type(mut self, inp: crate::model::DataRepositoryTaskType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::DataRepositoryTaskType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>Specifies the type of data repository task to create.</p>
@@ -1312,20 +1106,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_paths`](Self::set_paths).
         ///
-        /// <p>(Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed.
-        /// The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system.
-        /// If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or
-        /// file on the file system you want to export, then the path to provide is <code>path1</code>.
-        /// If a path that you provide isn't valid, the task fails.</p>
-        pub fn paths(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.paths(inp);
+        /// <p>(Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>. If a path that you provide isn't valid, the task fails.</p>
+        pub fn paths(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.paths(input.into());
             self
         }
-        /// <p>(Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed.
-        /// The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system.
-        /// If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or
-        /// file on the file system you want to export, then the path to provide is <code>path1</code>.
-        /// If a path that you provide isn't valid, the task fails.</p>
+        /// <p>(Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed. The default path is the file system root directory. The paths you provide need to be relative to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to provide is <code>path1</code>. If a path that you provide isn't valid, the task fails.</p>
         pub fn set_paths(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1334,8 +1120,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(input.into());
             self
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
@@ -1346,18 +1132,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_system_id(input);
             self
         }
-        /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed.
-        /// A CompletionReport provides a detailed  report on the files that Amazon FSx processed that meet the criteria specified by the
-        /// <code>Scope</code> parameter. For more information, see
-        /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
-        pub fn report(mut self, inp: crate::model::CompletionReport) -> Self {
-            self.inner = self.inner.report(inp);
+        /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
+        pub fn report(mut self, input: crate::model::CompletionReport) -> Self {
+            self.inner = self.inner.report(input);
             self
         }
-        /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed.
-        /// A CompletionReport provides a detailed  report on the files that Amazon FSx processed that meet the criteria specified by the
-        /// <code>Scope</code> parameter. For more information, see
-        /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
+        /// <p>Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the <code>Scope</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task Completion Reports</a>.</p>
         pub fn set_report(
             mut self,
             input: std::option::Option<crate::model::CompletionReport>,
@@ -1365,16 +1145,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report(input);
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1387,8 +1163,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -1402,60 +1178,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFileSystem`.
     ///
-    /// <p>Creates a new, empty Amazon FSx file system. You can create the following supported
-    /// Amazon FSx file systems using the <code>CreateFileSystem</code> API operation:</p>
+    /// <p>Creates a new, empty Amazon FSx file system. You can create the following supported Amazon FSx file systems using the <code>CreateFileSystem</code> API operation:</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon FSx for Lustre</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon FSx for NetApp ONTAP</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon FSx for Windows File Server</p>
-    /// </li>
-    /// </ul>             
-    /// <p>This operation requires a client request token in the request that Amazon FSx uses
-    /// to ensure idempotent creation. This means that calling the operation multiple times with
-    /// the same client request token has no effect. By using the idempotent operation, you can
-    /// retry a <code>CreateFileSystem</code> operation without the risk of creating an extra
-    /// file system. This approach can be useful when an initial call fails in a way that makes
-    /// it unclear whether a file system was created. Examples are if a transport level timeout
-    /// occurred, or your connection was reset. If you use the same client request token and the
-    /// initial call created a file system, the client receives success as long as the
-    /// parameters are the same.</p>
-    /// <p>If a file system with the specified client request token exists and the parameters
-    /// match, <code>CreateFileSystem</code> returns the description of the existing file
-    /// system. If a file system with the specified client request token exists and the
-    /// parameters don't match, this call returns <code>IncompatibleParameterError</code>. If a
-    /// file system with the specified client request token doesn't exist,
-    /// <code>CreateFileSystem</code> does the following: </p>
-    /// <ul>
-    /// <li>
-    /// <p>Creates a new, empty Amazon FSx file system with an assigned ID, and
-    /// an initial lifecycle state of <code>CREATING</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Returns the description of the file system.</p>
-    /// </li>
+    /// <li> <p>Amazon FSx for Lustre</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
     /// </ul>
-    ///
-    /// <p>This operation requires a client request token in the request that Amazon FSx
-    /// uses to ensure idempotent creation. This means that calling the operation multiple times
-    /// with the same client request token has no effect. By using the idempotent operation, you
-    /// can retry a <code>CreateFileSystem</code> operation without the risk of creating an
-    /// extra file system. This approach can be useful when an initial call fails in a way that
-    /// makes it unclear whether a file system was created. Examples are if a transport-level
-    /// timeout occurred, or your connection was reset. If you use the same client request token
-    /// and the initial call created a file system, the client receives a success message as
-    /// long as the parameters are the same.</p>
-    /// <note>
-    /// <p>The <code>CreateFileSystem</code> call returns while the file system's lifecycle
-    /// state is still <code>CREATING</code>. You can check the file-system creation status
-    /// by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a> operation, which returns the file system state
-    /// along with other information.</p>
+    /// <p>This operation requires a client request token in the request that Amazon FSx uses to ensure idempotent creation. This means that calling the operation multiple times with the same client request token has no effect. By using the idempotent operation, you can retry a <code>CreateFileSystem</code> operation without the risk of creating an extra file system. This approach can be useful when an initial call fails in a way that makes it unclear whether a file system was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a file system, the client receives success as long as the parameters are the same.</p>
+    /// <p>If a file system with the specified client request token exists and the parameters match, <code>CreateFileSystem</code> returns the description of the existing file system. If a file system with the specified client request token exists and the parameters don't match, this call returns <code>IncompatibleParameterError</code>. If a file system with the specified client request token doesn't exist, <code>CreateFileSystem</code> does the following: </p>
+    /// <ul>
+    /// <li> <p>Creates a new, empty Amazon FSx file system with an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
+    /// <li> <p>Returns the description of the file system.</p> </li>
+    /// </ul>
+    /// <p>This operation requires a client request token in the request that Amazon FSx uses to ensure idempotent creation. This means that calling the operation multiple times with the same client request token has no effect. By using the idempotent operation, you can retry a <code>CreateFileSystem</code> operation without the risk of creating an extra file system. This approach can be useful when an initial call fails in a way that makes it unclear whether a file system was created. Examples are if a transport-level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a file system, the client receives a success message as long as the parameters are the same.</p> <note>
+    /// <p>The <code>CreateFileSystem</code> call returns while the file system's lifecycle state is still <code>CREATING</code>. You can check the file-system creation status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a> operation, which returns the file system state along with other information.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFileSystem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1500,10 +1238,10 @@ pub mod fluent_builders {
                 crate::input::CreateFileSystemInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1511,16 +1249,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent creation. This string is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent creation. This string is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1528,16 +1262,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>The type of Amazon FSx file system to create. Valid values are
-        /// <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and
-        /// <code>OPENZFS</code>.</p>
-        pub fn file_system_type(mut self, inp: crate::model::FileSystemType) -> Self {
-            self.inner = self.inner.file_system_type(inp);
+        /// <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and <code>OPENZFS</code>.</p>
+        pub fn file_system_type(mut self, input: crate::model::FileSystemType) -> Self {
+            self.inner = self.inner.file_system_type(input);
             self
         }
-        /// <p>The type of Amazon FSx file system to create. Valid values are
-        /// <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and
-        /// <code>OPENZFS</code>.</p>
+        /// <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and <code>OPENZFS</code>.</p>
         pub fn set_file_system_type(
             mut self,
             input: std::option::Option<crate::model::FileSystemType>,
@@ -1545,132 +1275,58 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_system_type(input);
             self
         }
-        /// <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>      
-        /// <p>
-        /// <b>FSx for Lustre file systems</b> - The amount of
-        /// storage capacity that you can configure depends on the value that you set for
-        /// <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as
-        /// follows:</p>
+        /// <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>
+        /// <p> <b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types
-        /// using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for
-        /// 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>SCRATCH_1</code> deployment type, valid values are
-        /// 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p>
-        /// </li>
+        /// <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p> </li>
+        /// <li> <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p> </li>
+        /// <li> <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li>
         /// </ul>
-        /// <p>
-        /// <b>FSx for ONTAP file systems</b> - The amount of storage capacity
-        /// that you can configure is from 1024 GiB up to 196,608 GiB (192 TiB).</p>
-        /// <p>
-        /// <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that
-        /// you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
-        /// <p>
-        /// <b>FSx for Windows File Server file systems</b> - The amount
-        /// of storage capacity that you can configure depends on the value that you set for
-        /// <code>StorageType</code> as follows:</p>
+        /// <p> <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure is from 1024 GiB up to 196,608 GiB (192 TiB).</p>
+        /// <p> <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
+        /// <p> <b>FSx for Windows File Server file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p>
-        /// </li>
-        /// <li>
-        /// <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p>
-        /// </li>
+        /// <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li>
+        /// <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
         /// </ul>
-        pub fn storage_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.storage_capacity(inp);
+        pub fn storage_capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.storage_capacity(input);
             self
         }
-        /// <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>      
-        /// <p>
-        /// <b>FSx for Lustre file systems</b> - The amount of
-        /// storage capacity that you can configure depends on the value that you set for
-        /// <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as
-        /// follows:</p>
+        /// <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>
+        /// <p> <b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types
-        /// using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for
-        /// 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>SCRATCH_1</code> deployment type, valid values are
-        /// 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p>
-        /// </li>
+        /// <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p> </li>
+        /// <li> <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p> </li>
+        /// <li> <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li>
         /// </ul>
-        /// <p>
-        /// <b>FSx for ONTAP file systems</b> - The amount of storage capacity
-        /// that you can configure is from 1024 GiB up to 196,608 GiB (192 TiB).</p>
-        /// <p>
-        /// <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that
-        /// you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
-        /// <p>
-        /// <b>FSx for Windows File Server file systems</b> - The amount
-        /// of storage capacity that you can configure depends on the value that you set for
-        /// <code>StorageType</code> as follows:</p>
+        /// <p> <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure is from 1024 GiB up to 196,608 GiB (192 TiB).</p>
+        /// <p> <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
+        /// <p> <b>FSx for Windows File Server file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p>
-        /// </li>
-        /// <li>
-        /// <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p>
-        /// </li>
+        /// <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li>
+        /// <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
         /// </ul>
         pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_storage_capacity(input);
             self
         }
-        /// <p>Sets the storage type for the file system that you're creating. Valid values are
-        /// <code>SSD</code> and <code>HDD</code>.</p>
+        /// <p>Sets the storage type for the file system that you're creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows,
-        /// Lustre, ONTAP, and OpenZFS deployment types.</p>
-        /// </li>
-        /// <li>
-        /// <p>Set to <code>HDD</code> to use hard disk drive storage.
-        /// HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types,
-        /// and on <code>PERSISTENT</code> Lustre file system deployment types.
-        /// </p>
-        /// </li>
+        /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li>
+        /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT</code> Lustre file system deployment types. </p> </li>
         /// </ul>
-        /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage
-        /// type options</a> in the <i>FSx for Windows File Server User
-        /// Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage
-        /// options</a> in the <i>FSx for Lustre User
-        /// Guide</i>. </p>
-        pub fn storage_type(mut self, inp: crate::model::StorageType) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>. </p>
+        pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
+            self.inner = self.inner.storage_type(input);
             self
         }
-        /// <p>Sets the storage type for the file system that you're creating. Valid values are
-        /// <code>SSD</code> and <code>HDD</code>.</p>
+        /// <p>Sets the storage type for the file system that you're creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows,
-        /// Lustre, ONTAP, and OpenZFS deployment types.</p>
-        /// </li>
-        /// <li>
-        /// <p>Set to <code>HDD</code> to use hard disk drive storage.
-        /// HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types,
-        /// and on <code>PERSISTENT</code> Lustre file system deployment types.
-        /// </p>
-        /// </li>
+        /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li>
+        /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT</code> Lustre file system deployment types. </p> </li>
         /// </ul>
-        /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage
-        /// type options</a> in the <i>FSx for Windows File Server User
-        /// Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage
-        /// options</a> in the <i>FSx for Lustre User
-        /// Guide</i>. </p>
+        /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>. </p>
         pub fn set_storage_type(
             mut self,
             input: std::option::Option<crate::model::StorageType>,
@@ -1682,36 +1338,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For
-        /// Windows and ONTAP <code>MULTI_AZ_1</code> deployment types,provide exactly two subnet
-        /// IDs, one for the preferred file server and one for the standby file server. You specify
-        /// one of these subnets as the preferred subnet using the <code>WindowsConfiguration >
-        /// PreferredSubnetID</code> or <code>OntapConfiguration > PreferredSubnetID</code>
-        /// properties. For more information about Multi-AZ file system configuration, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-        /// Availability and durability: Single-AZ and Multi-AZ file systems</a> in the
-        /// <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
-        /// Availability and durability</a> in the <i>Amazon FSx for ONTAP User
-        /// Guide</i>.</p>
-        /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> and all Lustre
-        /// deployment types, provide exactly one subnet ID.
-        /// The file server is launched in that subnet's Availability Zone.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows and ONTAP <code>MULTI_AZ_1</code> deployment types,provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more information about Multi-AZ file system configuration, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and durability: Single-AZ and Multi-AZ file systems</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html"> Availability and durability</a> in the <i>Amazon FSx for ONTAP User Guide</i>.</p>
+        /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> and all Lustre deployment types, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
-        /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For
-        /// Windows and ONTAP <code>MULTI_AZ_1</code> deployment types,provide exactly two subnet
-        /// IDs, one for the preferred file server and one for the standby file server. You specify
-        /// one of these subnets as the preferred subnet using the <code>WindowsConfiguration >
-        /// PreferredSubnetID</code> or <code>OntapConfiguration > PreferredSubnetID</code>
-        /// properties. For more information about Multi-AZ file system configuration, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-        /// Availability and durability: Single-AZ and Multi-AZ file systems</a> in the
-        /// <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">
-        /// Availability and durability</a> in the <i>Amazon FSx for ONTAP User
-        /// Guide</i>.</p>
-        /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> and all Lustre
-        /// deployment types, provide exactly one subnet ID.
-        /// The file server is launched in that subnet's Availability Zone.</p>
+        /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows and ONTAP <code>MULTI_AZ_1</code> deployment types,provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more information about Multi-AZ file system configuration, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and durability: Single-AZ and Multi-AZ file systems</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html"> Availability and durability</a> in the <i>Amazon FSx for ONTAP User Guide</i>.</p>
+        /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> and all Lustre deployment types, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1723,16 +1357,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>A list of IDs specifying the security groups to apply to all network interfaces
-        /// created for file system access. This list isn't returned in later requests to
-        /// describe the file system.</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for file system access. This list isn't returned in later requests to describe the file system.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
-        /// <p>A list of IDs specifying the security groups to apply to all network interfaces
-        /// created for file system access. This list isn't returned in later requests to
-        /// describe the file system.</p>
+        /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for file system access. This list isn't returned in later requests to describe the file system.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1744,14 +1374,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to apply to the file system that's being created. The key value of the
-        /// <code>Name</code> tag appears in the console as the file system name.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>The tags to apply to the file system that's being created. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to apply to the file system that's being created. The key value of the
-        /// <code>Name</code> tag appears in the console as the file system name.</p>
+        /// <p>The tags to apply to the file system that's being created. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1759,24 +1387,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file
-        /// system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre
-        /// <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID
-        /// isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre
-        /// <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at
-        /// rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-        /// in the <i>Key Management Service API Reference</i>.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file
-        /// system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre
-        /// <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID
-        /// isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre
-        /// <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at
-        /// rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-        /// in the <i>Key Management Service API Reference</i>.</p>
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -1784,9 +1400,9 @@ pub mod fluent_builders {
         /// <p>The Microsoft Windows configuration for the file system that's being created. </p>
         pub fn windows_configuration(
             mut self,
-            inp: crate::model::CreateFileSystemWindowsConfiguration,
+            input: crate::model::CreateFileSystemWindowsConfiguration,
         ) -> Self {
-            self.inner = self.inner.windows_configuration(inp);
+            self.inner = self.inner.windows_configuration(input);
             self
         }
         /// <p>The Microsoft Windows configuration for the file system that's being created. </p>
@@ -1797,67 +1413,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_windows_configuration(input);
             self
         }
-        /// <p>The Lustre configuration for the file system being created.</p>
-        /// <note>
-        /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code>
-        /// deployment type. Instead, use <code>CreateDataRepositoryAssociation</code>
-        /// to create a data repository association to link your Lustre file system to a data repository.</p>
+        /// <p>The Lustre configuration for the file system being created.</p> <note>
+        /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AutoImportPolicy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ExportPath</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ImportedChunkSize</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ImportPath</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+        /// <li> <p> <code>ExportPath</code> </p> </li>
+        /// <li> <p> <code>ImportedChunkSize</code> </p> </li>
+        /// <li> <p> <code>ImportPath</code> </p> </li>
         /// </ul>
         /// </note>
         pub fn lustre_configuration(
             mut self,
-            inp: crate::model::CreateFileSystemLustreConfiguration,
+            input: crate::model::CreateFileSystemLustreConfiguration,
         ) -> Self {
-            self.inner = self.inner.lustre_configuration(inp);
+            self.inner = self.inner.lustre_configuration(input);
             self
         }
-        /// <p>The Lustre configuration for the file system being created.</p>
-        /// <note>
-        /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code>
-        /// deployment type. Instead, use <code>CreateDataRepositoryAssociation</code>
-        /// to create a data repository association to link your Lustre file system to a data repository.</p>
+        /// <p>The Lustre configuration for the file system being created.</p> <note>
+        /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AutoImportPolicy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ExportPath</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ImportedChunkSize</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ImportPath</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+        /// <li> <p> <code>ExportPath</code> </p> </li>
+        /// <li> <p> <code>ImportedChunkSize</code> </p> </li>
+        /// <li> <p> <code>ImportPath</code> </p> </li>
         /// </ul>
         /// </note>
         pub fn set_lustre_configuration(
@@ -1870,9 +1448,9 @@ pub mod fluent_builders {
         /// <p>The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.</p>
         pub fn ontap_configuration(
             mut self,
-            inp: crate::model::CreateFileSystemOntapConfiguration,
+            input: crate::model::CreateFileSystemOntapConfiguration,
         ) -> Self {
-            self.inner = self.inner.ontap_configuration(inp);
+            self.inner = self.inner.ontap_configuration(input);
             self
         }
         /// <p>The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.</p>
@@ -1883,51 +1461,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ontap_configuration(input);
             self
         }
-        /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-        /// file system that you're creating. Valid values are <code>2.10</code> and
-        /// <code>2.12</code>:</p>
-        ///
+        /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p>
-        /// </li>
-        /// <li>
-        /// <p>2.12 is supported by all Lustre deployment types. <code>2.12</code> is
-        /// required when setting FSx for Lustre <code>DeploymentType</code> to
-        /// <code>PERSISTENT_2</code>.</p>
-        /// </li>
+        /// <li> <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p> </li>
+        /// <li> <p>2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>
         /// </ul>
-        /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to
-        /// <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
-        /// <note>
-        /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a   
-        /// <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code>
-        /// operation fails.</p>
+        /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
+        /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
         /// </note>
-        pub fn file_system_type_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_type_version(inp);
+        pub fn file_system_type_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_type_version(input.into());
             self
         }
-        /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-        /// file system that you're creating. Valid values are <code>2.10</code> and
-        /// <code>2.12</code>:</p>
-        ///
+        /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p>
-        /// </li>
-        /// <li>
-        /// <p>2.12 is supported by all Lustre deployment types. <code>2.12</code> is
-        /// required when setting FSx for Lustre <code>DeploymentType</code> to
-        /// <code>PERSISTENT_2</code>.</p>
-        /// </li>
+        /// <li> <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p> </li>
+        /// <li> <p>2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>
         /// </ul>
-        /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to
-        /// <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
-        /// <note>
-        /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a   
-        /// <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code>
-        /// operation fails.</p>
+        /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
+        /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
         /// </note>
         pub fn set_file_system_type_version(
             mut self,
@@ -1939,9 +1491,9 @@ pub mod fluent_builders {
         /// <p>The OpenZFS configuration for the file system that's being created.</p>
         pub fn open_zfs_configuration(
             mut self,
-            inp: crate::model::CreateFileSystemOpenZfsConfiguration,
+            input: crate::model::CreateFileSystemOpenZfsConfiguration,
         ) -> Self {
-            self.inner = self.inner.open_zfs_configuration(inp);
+            self.inner = self.inner.open_zfs_configuration(input);
             self
         }
         /// <p>The OpenZFS configuration for the file system that's being created.</p>
@@ -1955,44 +1507,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFileSystemFromBackup`.
     ///
-    /// <p>Creates a new Amazon FSx for Lustre, Amazon FSx for Windows File
-    /// Server, or Amazon FSx for OpenZFS file system from an existing Amazon FSx backup.</p>
-    ///
-    /// <p>If a file system with the specified client request token exists and the parameters
-    /// match, this operation returns the description of the file system. If a client request
-    /// token with the specified by the file system exists and the parameters don't match, this
-    /// call returns <code>IncompatibleParameterError</code>. If a file system with the
-    /// specified client request token doesn't exist, this operation does the following:</p>
-    ///
+    /// <p>Creates a new Amazon FSx for Lustre, Amazon FSx for Windows File Server, or Amazon FSx for OpenZFS file system from an existing Amazon FSx backup.</p>
+    /// <p>If a file system with the specified client request token exists and the parameters match, this operation returns the description of the file system. If a client request token with the specified by the file system exists and the parameters don't match, this call returns <code>IncompatibleParameterError</code>. If a file system with the specified client request token doesn't exist, this operation does the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Creates a new Amazon FSx file system from backup with an assigned ID,
-    /// and an initial lifecycle state of <code>CREATING</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Returns the description of the file system.</p>
-    /// </li>
+    /// <li> <p>Creates a new Amazon FSx file system from backup with an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
+    /// <li> <p>Returns the description of the file system.</p> </li>
     /// </ul>
-    ///
-    /// <p>Parameters like the Active Directory, default share name, automatic backup, and backup
-    /// settings default to the parameters of the file system that was backed up, unless
-    /// overridden. You can explicitly supply other settings.</p>
-    ///
-    /// <p>By using the idempotent operation, you can retry a
-    /// <code>CreateFileSystemFromBackup</code> call without the risk of creating an extra
-    /// file system. This approach can be useful when an initial call fails in a way that makes
-    /// it unclear whether a file system was created. Examples are if a transport level timeout
-    /// occurred, or your connection was reset. If you use the same client request token and the
-    /// initial call created a file system, the client receives a success message as long as the
-    /// parameters are the same.</p>
-    /// <note>
-    /// <p>The <code>CreateFileSystemFromBackup</code> call returns while the file system's
-    /// lifecycle state is still <code>CREATING</code>. You can check the file-system
-    /// creation status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">
-    /// DescribeFileSystems</a> operation, which returns the file system state along
-    /// with other information.</p>
+    /// <p>Parameters like the Active Directory, default share name, automatic backup, and backup settings default to the parameters of the file system that was backed up, unless overridden. You can explicitly supply other settings.</p>
+    /// <p>By using the idempotent operation, you can retry a <code>CreateFileSystemFromBackup</code> call without the risk of creating an extra file system. This approach can be useful when an initial call fails in a way that makes it unclear whether a file system was created. Examples are if a transport level timeout occurred, or your connection was reset. If you use the same client request token and the initial call created a file system, the client receives a success message as long as the parameters are the same.</p> <note>
+    /// <p>The <code>CreateFileSystemFromBackup</code> call returns while the file system's lifecycle state is still <code>CREATING</code>. You can check the file-system creation status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html"> DescribeFileSystems</a> operation, which returns the file system state along with other information.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFileSystemFromBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2037,10 +1562,10 @@ pub mod fluent_builders {
                 crate::input::CreateFileSystemFromBackupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2049,8 +1574,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
-        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(inp);
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(input.into());
             self
         }
         /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
@@ -2058,16 +1583,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_id(input);
             self
         }
-        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent creation. This string is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent creation. This string is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2079,24 +1600,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code>
-        /// file system deployment types, provide exactly two subnet IDs, one for the preferred file server
-        /// and one for the standby file server. You specify one of these subnets as the preferred subnet
-        /// using the <code>WindowsConfiguration > PreferredSubnetID</code> property.</p>
-        /// <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment
-        /// types, Lustre file systems, and OpenZFS file systems provide exactly one subnet ID. The
-        /// file server is launched in that subnet's Availability Zone.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+        /// <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types, Lustre file systems, and OpenZFS file systems provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
-        /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code>
-        /// file system deployment types, provide exactly two subnet IDs, one for the preferred file server
-        /// and one for the standby file server. You specify one of these subnets as the preferred subnet
-        /// using the <code>WindowsConfiguration > PreferredSubnetID</code> property.</p>
-        /// <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment
-        /// types, Lustre file systems, and OpenZFS file systems provide exactly one subnet ID. The
-        /// file server is launched in that subnet's Availability Zone.</p>
+        /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+        /// <p>Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types, Lustre file systems, and OpenZFS file systems provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2108,16 +1619,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>A list of IDs for the security groups that apply to the specified network interfaces
-        /// created for file system access. These security groups apply to all network interfaces.
-        /// This value isn't returned in later <code>DescribeFileSystem</code> requests.</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        /// <p>A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups apply to all network interfaces. This value isn't returned in later <code>DescribeFileSystem</code> requests.</p>
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
-        /// <p>A list of IDs for the security groups that apply to the specified network interfaces
-        /// created for file system access. These security groups apply to all network interfaces.
-        /// This value isn't returned in later <code>DescribeFileSystem</code> requests.</p>
+        /// <p>A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups apply to all network interfaces. This value isn't returned in later <code>DescribeFileSystem</code> requests.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2129,16 +1636,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to be applied to the file system at file system creation. The key value of
-        /// the <code>Name</code> tag appears in the console as the file system
-        /// name.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to be applied to the file system at file system creation. The key value of
-        /// the <code>Name</code> tag appears in the console as the file system
-        /// name.</p>
+        /// <p>The tags to be applied to the file system at file system creation. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2149,9 +1652,9 @@ pub mod fluent_builders {
         /// <p>The configuration for this Microsoft Windows file system.</p>
         pub fn windows_configuration(
             mut self,
-            inp: crate::model::CreateFileSystemWindowsConfiguration,
+            input: crate::model::CreateFileSystemWindowsConfiguration,
         ) -> Self {
-            self.inner = self.inner.windows_configuration(inp);
+            self.inner = self.inner.windows_configuration(input);
             self
         }
         /// <p>The configuration for this Microsoft Windows file system.</p>
@@ -2162,67 +1665,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_windows_configuration(input);
             self
         }
-        /// <p>The Lustre configuration for the file system being created.</p>
-        /// <note>
-        /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code>
-        /// deployment type. Instead, use <code>CreateDataRepositoryAssociation</code>
-        /// to create a data repository association to link your Lustre file system to a data repository.</p>
+        /// <p>The Lustre configuration for the file system being created.</p> <note>
+        /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AutoImportPolicy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ExportPath</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ImportedChunkSize</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ImportPath</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+        /// <li> <p> <code>ExportPath</code> </p> </li>
+        /// <li> <p> <code>ImportedChunkSize</code> </p> </li>
+        /// <li> <p> <code>ImportPath</code> </p> </li>
         /// </ul>
         /// </note>
         pub fn lustre_configuration(
             mut self,
-            inp: crate::model::CreateFileSystemLustreConfiguration,
+            input: crate::model::CreateFileSystemLustreConfiguration,
         ) -> Self {
-            self.inner = self.inner.lustre_configuration(inp);
+            self.inner = self.inner.lustre_configuration(input);
             self
         }
-        /// <p>The Lustre configuration for the file system being created.</p>
-        /// <note>
-        /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code>
-        /// deployment type. Instead, use <code>CreateDataRepositoryAssociation</code>
-        /// to create a data repository association to link your Lustre file system to a data repository.</p>
+        /// <p>The Lustre configuration for the file system being created.</p> <note>
+        /// <p>The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file system to a data repository.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AutoImportPolicy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ExportPath</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ImportedChunkSize</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ImportPath</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+        /// <li> <p> <code>ExportPath</code> </p> </li>
+        /// <li> <p> <code>ImportedChunkSize</code> </p> </li>
+        /// <li> <p> <code>ImportPath</code> </p> </li>
         /// </ul>
         /// </note>
         pub fn set_lustre_configuration(
@@ -2232,47 +1697,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lustre_configuration(input);
             self
         }
-        /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from
-        /// a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
+        /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS
-        /// deployment types.</p>
-        /// </li>
-        /// <li>
-        /// <p>Set to <code>HDD</code> to use hard disk drive storage.
-        /// HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p>
-        /// </li>
+        /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p> </li>
+        /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p> </li>
         /// </ul>
-        /// <p> The default value is <code>SSD</code>. </p>
-        /// <note>
-        /// <p>HDD and SSD storage types have different minimum storage capacity requirements.
-        /// A restored file system's storage capacity is tied to the file system that was backed up.
-        /// You can create a file system that uses HDD storage from a backup of a file system that
-        /// used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
+        /// <p> The default value is <code>SSD</code>. </p> <note>
+        /// <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
         /// </note>
-        pub fn storage_type(mut self, inp: crate::model::StorageType) -> Self {
-            self.inner = self.inner.storage_type(inp);
+        pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
+            self.inner = self.inner.storage_type(input);
             self
         }
-        /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from
-        /// a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
+        /// <p>Sets the storage type for the Windows or OpenZFS file system that you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS
-        /// deployment types.</p>
-        /// </li>
-        /// <li>
-        /// <p>Set to <code>HDD</code> to use hard disk drive storage.
-        /// HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p>
-        /// </li>
+        /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and OpenZFS deployment types.</p> </li>
+        /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> FSx for Windows File Server file system deployment types.</p> </li>
         /// </ul>
-        /// <p> The default value is <code>SSD</code>. </p>
-        /// <note>
-        /// <p>HDD and SSD storage types have different minimum storage capacity requirements.
-        /// A restored file system's storage capacity is tied to the file system that was backed up.
-        /// You can create a file system that uses HDD storage from a backup of a file system that
-        /// used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
+        /// <p> The default value is <code>SSD</code>. </p> <note>
+        /// <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage if the original SSD file system had a storage capacity of at least 2000 GiB.</p>
         /// </note>
         pub fn set_storage_type(
             mut self,
@@ -2281,44 +1724,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_storage_type(input);
             self
         }
-        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file
-        /// system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre
-        /// <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID
-        /// isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre
-        /// <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at
-        /// rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-        /// in the <i>Key Management Service API Reference</i>.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(inp);
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file
-        /// system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre
-        /// <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID
-        /// isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre
-        /// <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at
-        /// rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
-        /// in the <i>Key Management Service API Reference</i>.</p>
+        /// <p>The ID of the Key Management Service (KMS) key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems, Amazon FSx for NetApp ONTAP file systems, and Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems at rest. If this ID isn't specified, the key managed by Amazon FSx is used. The Amazon FSx for Lustre <code>SCRATCH_1</code> and <code>SCRATCH_2</code> file systems are always encrypted at rest using Amazon FSx-managed keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
         }
-        /// <p>Sets the version for the Amazon FSx for Lustre file system that you're
-        /// creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
-        /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will
-        /// be applied using the backup's <code>FileSystemTypeVersion</code> setting.
-        /// If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the
-        /// value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
-        pub fn file_system_type_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_type_version(inp);
+        /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+        /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+        pub fn file_system_type_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_type_version(input.into());
             self
         }
-        /// <p>Sets the version for the Amazon FSx for Lustre file system that you're
-        /// creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
-        /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will
-        /// be applied using the backup's <code>FileSystemTypeVersion</code> setting.
-        /// If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the
-        /// value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
+        /// <p>Sets the version for the Amazon FSx for Lustre file system that you're creating from a backup. Valid values are <code>2.10</code> and <code>2.12</code>.</p>
+        /// <p>You don't need to specify <code>FileSystemTypeVersion</code> because it will be applied using the backup's <code>FileSystemTypeVersion</code> setting. If you choose to specify <code>FileSystemTypeVersion</code> when creating from backup, the value must match the backup's <code>FileSystemTypeVersion</code> setting.</p>
         pub fn set_file_system_type_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2329,9 +1752,9 @@ pub mod fluent_builders {
         /// <p>The OpenZFS configuration for the file system that's being created. </p>
         pub fn open_zfs_configuration(
             mut self,
-            inp: crate::model::CreateFileSystemOpenZfsConfiguration,
+            input: crate::model::CreateFileSystemOpenZfsConfiguration,
         ) -> Self {
-            self.inner = self.inner.open_zfs_configuration(inp);
+            self.inner = self.inner.open_zfs_configuration(input);
             self
         }
         /// <p>The OpenZFS configuration for the file system that's being created. </p>
@@ -2345,35 +1768,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSnapshot`.
     ///
-    /// <p>Creates a snapshot of an existing Amazon FSx for OpenZFS file system. With
-    /// snapshots, you can easily undo file changes and compare file versions by restoring the
-    /// volume to a previous version.</p>
-    /// <p>If a snapshot with the specified client request token exists, and the parameters
-    /// match, this operation returns the description of the existing snapshot. If a snapshot
-    /// with the specified client request token exists, and the parameters don't match, this
-    /// operation returns <code>IncompatibleParameterError</code>. If a snapshot with the
-    /// specified client request token doesn't exist, <code>CreateSnapshot</code> does the
-    /// following: </p>
+    /// <p>Creates a snapshot of an existing Amazon FSx for OpenZFS file system. With snapshots, you can easily undo file changes and compare file versions by restoring the volume to a previous version.</p>
+    /// <p>If a snapshot with the specified client request token exists, and the parameters match, this operation returns the description of the existing snapshot. If a snapshot with the specified client request token exists, and the parameters don't match, this operation returns <code>IncompatibleParameterError</code>. If a snapshot with the specified client request token doesn't exist, <code>CreateSnapshot</code> does the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>Creates a new OpenZFS snapshot with an assigned ID, and an initial lifecycle
-    /// state of <code>CREATING</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Returns the description of the snapshot.</p>
-    /// </li>
+    /// <li> <p>Creates a new OpenZFS snapshot with an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p> </li>
+    /// <li> <p>Returns the description of the snapshot.</p> </li>
     /// </ul>
-    /// <p>By using the idempotent operation, you can retry a <code>CreateSnapshot</code>
-    /// operation without the risk of creating an extra snapshot. This approach can be useful
-    /// when an initial call fails in a way that makes it unclear whether a snapshot was
-    /// created. If you use the same client request token and the initial call created a
-    /// snapshot, the operation returns a successful result because all the parameters are the
-    /// same.</p>
-    /// <p>The <code>CreateSnapshot</code> operation returns while the snapshot's lifecycle state
-    /// is still <code>CREATING</code>. You can check the snapshot creation status by calling
-    /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a> operation, which returns the snapshot state along with
-    /// other information. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>By using the idempotent operation, you can retry a <code>CreateSnapshot</code> operation without the risk of creating an extra snapshot. This approach can be useful when an initial call fails in a way that makes it unclear whether a snapshot was created. If you use the same client request token and the initial call created a snapshot, the operation returns a successful result because all the parameters are the same.</p>
+    /// <p>The <code>CreateSnapshot</code> operation returns while the snapshot's lifecycle state is still <code>CREATING</code>. You can check the snapshot creation status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a> operation, which returns the snapshot state along with other information. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2418,10 +1821,10 @@ pub mod fluent_builders {
                 crate::input::CreateSnapshotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2429,16 +1832,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2447,8 +1846,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the snapshot. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the snapshot. </p>
@@ -2457,8 +1856,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the volume that you are taking a snapshot of.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(inp);
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(input.into());
             self
         }
         /// <p>The ID of the volume that you are taking a snapshot of.</p>
@@ -2471,8 +1870,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -2487,7 +1886,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStorageVirtualMachine`.
     ///
     /// <p>Creates a storage virtual machine (SVM) for an Amazon FSx for ONTAP file system.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStorageVirtualMachine<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2532,10 +1931,10 @@ pub mod fluent_builders {
                 crate::input::CreateStorageVirtualMachineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2543,19 +1942,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM.
-        /// Joining an Active Directory provides user authentication and access control for SMB clients,
-        /// including Microsoft Windows and macOS client accessing the file system.</p>
+        /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
         pub fn active_directory_configuration(
             mut self,
-            inp: crate::model::CreateSvmActiveDirectoryConfiguration,
+            input: crate::model::CreateSvmActiveDirectoryConfiguration,
         ) -> Self {
-            self.inner = self.inner.active_directory_configuration(inp);
+            self.inner = self.inner.active_directory_configuration(input);
             self
         }
-        /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM.
-        /// Joining an Active Directory provides user authentication and access control for SMB clients,
-        /// including Microsoft Windows and macOS client accessing the file system.</p>
+        /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
         pub fn set_active_directory_configuration(
             mut self,
             input: std::option::Option<crate::model::CreateSvmActiveDirectoryConfiguration>,
@@ -2563,16 +1958,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_active_directory_configuration(input);
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2581,8 +1972,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(input.into());
             self
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
@@ -2594,8 +1985,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the SVM.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the SVM.</p>
@@ -2603,16 +1994,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API.
-        /// If you do not specify a password, you can still use the file system's
-        /// <code>fsxadmin</code> user to manage the SVM.</p>
-        pub fn svm_admin_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.svm_admin_password(inp);
+        /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API. If you do not specify a password, you can still use the file system's <code>fsxadmin</code> user to manage the SVM.</p>
+        pub fn svm_admin_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.svm_admin_password(input.into());
             self
         }
-        /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API.
-        /// If you do not specify a password, you can still use the file system's
-        /// <code>fsxadmin</code> user to manage the SVM.</p>
+        /// <p>The password to use when managing the SVM using the NetApp ONTAP CLI or REST API. If you do not specify a password, you can still use the file system's <code>fsxadmin</code> user to manage the SVM.</p>
         pub fn set_svm_admin_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2625,8 +2012,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -2639,50 +2026,22 @@ pub mod fluent_builders {
         }
         /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UNIX</code> if the file system is managed by a UNIX
-        /// administrator, the majority of users are NFS clients, and an application
-        /// accessing the data uses a UNIX user as the service account.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NTFS</code> if the file system is managed by a Windows
-        /// administrator, the majority of users are SMB clients, and an application
-        /// accessing the data uses a Windows user as the service account.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MIXED</code> if the file system is managed by both UNIX
-        /// and Windows administrators and users consist of both NFS and SMB clients.</p>
-        /// </li>
+        /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p> </li>
+        /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
+        /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
         /// </ul>
         pub fn root_volume_security_style(
             mut self,
-            inp: crate::model::StorageVirtualMachineRootVolumeSecurityStyle,
+            input: crate::model::StorageVirtualMachineRootVolumeSecurityStyle,
         ) -> Self {
-            self.inner = self.inner.root_volume_security_style(inp);
+            self.inner = self.inner.root_volume_security_style(input);
             self
         }
         /// <p>The security style of the root volume of the SVM. Specify one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UNIX</code> if the file system is managed by a UNIX
-        /// administrator, the majority of users are NFS clients, and an application
-        /// accessing the data uses a UNIX user as the service account.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NTFS</code> if the file system is managed by a Windows
-        /// administrator, the majority of users are SMB clients, and an application
-        /// accessing the data uses a Windows user as the service account.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MIXED</code> if the file system is managed by both UNIX
-        /// and Windows administrators and users consist of both NFS and SMB clients.</p>
-        /// </li>
+        /// <li> <p> <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p> </li>
+        /// <li> <p> <code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p> </li>
+        /// <li> <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p> </li>
         /// </ul>
         pub fn set_root_volume_security_style(
             mut self,
@@ -2694,9 +2053,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateVolume`.
     ///
-    /// <p>Creates an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS storage
-    /// volume.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS storage volume.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2741,10 +2099,10 @@ pub mod fluent_builders {
                 crate::input::CreateVolumeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2752,16 +2110,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2769,14 +2123,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are
-        /// the only valid volume types.</p>
-        pub fn volume_type(mut self, inp: crate::model::VolumeType) -> Self {
-            self.inner = self.inner.volume_type(inp);
+        /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are the only valid volume types.</p>
+        pub fn volume_type(mut self, input: crate::model::VolumeType) -> Self {
+            self.inner = self.inner.volume_type(input);
             self
         }
-        /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are
-        /// the only valid volume types.</p>
+        /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are the only valid volume types.</p>
         pub fn set_volume_type(
             mut self,
             input: std::option::Option<crate::model::VolumeType>,
@@ -2785,8 +2137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of the volume that you're creating.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Specifies the name of the volume that you're creating.</p>
@@ -2797,9 +2149,9 @@ pub mod fluent_builders {
         /// <p>Specifies the configuration to use when creating the ONTAP volume.</p>
         pub fn ontap_configuration(
             mut self,
-            inp: crate::model::CreateOntapVolumeConfiguration,
+            input: crate::model::CreateOntapVolumeConfiguration,
         ) -> Self {
-            self.inner = self.inner.ontap_configuration(inp);
+            self.inner = self.inner.ontap_configuration(input);
             self
         }
         /// <p>Specifies the configuration to use when creating the ONTAP volume.</p>
@@ -2815,8 +2167,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -2830,9 +2182,9 @@ pub mod fluent_builders {
         /// <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
         pub fn open_zfs_configuration(
             mut self,
-            inp: crate::model::CreateOpenZfsVolumeConfiguration,
+            input: crate::model::CreateOpenZfsVolumeConfiguration,
         ) -> Self {
-            self.inner = self.inner.open_zfs_configuration(inp);
+            self.inner = self.inner.open_zfs_configuration(input);
             self
         }
         /// <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
@@ -2846,9 +2198,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateVolumeFromBackup`.
     ///
-    /// <p>Creates a new Amazon FSx for NetApp ONTAP volume from an
-    /// existing Amazon FSx volume backup.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new Amazon FSx for NetApp ONTAP volume from an existing Amazon FSx volume backup.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVolumeFromBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2893,10 +2244,10 @@ pub mod fluent_builders {
                 crate::input::CreateVolumeFromBackupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2905,8 +2256,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
-        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(inp);
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(input.into());
             self
         }
         /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
@@ -2914,16 +2265,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_id(input);
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2932,8 +2279,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new volume you're creating.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the new volume you're creating.</p>
@@ -2944,9 +2291,9 @@ pub mod fluent_builders {
         /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
         pub fn ontap_configuration(
             mut self,
-            inp: crate::model::CreateOntapVolumeConfiguration,
+            input: crate::model::CreateOntapVolumeConfiguration,
         ) -> Self {
-            self.inner = self.inner.ontap_configuration(inp);
+            self.inner = self.inner.ontap_configuration(input);
             self
         }
         /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
@@ -2962,8 +2309,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
@@ -2977,17 +2324,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBackup`.
     ///
-    /// <p>Deletes an Amazon FSx backup. After deletion, the backup no longer exists, and
-    /// its data is gone.</p>
-    ///
-    /// <p>The <code>DeleteBackup</code> call returns instantly. The backup won't show up in
-    /// later <code>DescribeBackups</code> calls.</p>
-    ///
-    /// <important>
-    /// <p>The data in a deleted backup is also deleted and can't be recovered by any
-    /// means.</p>
+    /// <p>Deletes an Amazon FSx backup. After deletion, the backup no longer exists, and its data is gone.</p>
+    /// <p>The <code>DeleteBackup</code> call returns instantly. The backup won't show up in later <code>DescribeBackups</code> calls.</p> <important>
+    /// <p>The data in a deleted backup is also deleted and can't be recovered by any means.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3032,10 +2373,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBackupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3044,8 +2385,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the backup that you want to delete.</p>
-        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(inp);
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(input.into());
             self
         }
         /// <p>The ID of the backup that you want to delete.</p>
@@ -3053,16 +2394,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_id(input);
             self
         }
-        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent deletion. This parameter is automatically filled on your behalf when using
-        /// the CLI or SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This parameter is automatically filled on your behalf when using the CLI or SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent deletion. This parameter is automatically filled on your behalf when using
-        /// the CLI or SDK.</p>
+        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This parameter is automatically filled on your behalf when using the CLI or SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3073,14 +2410,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDataRepositoryAssociation`.
     ///
-    /// <p>Deletes a data repository association on an Amazon FSx for Lustre
-    /// file system. Deleting the data repository association unlinks the
-    /// file system from the Amazon S3 bucket. When deleting a data repository
-    /// association, you have the option of deleting the data in the file system
-    /// that corresponds to the data repository association. Data repository
-    /// associations are supported only for file systems with the
-    /// <code>Persistent_2</code> deployment type.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a data repository association on an Amazon FSx for Lustre file system. Deleting the data repository association unlinks the file system from the Amazon S3 bucket. When deleting a data repository association, you have the option of deleting the data in the file system that corresponds to the data repository association. Data repository associations are supported only for file systems with the <code>Persistent_2</code> deployment type.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataRepositoryAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3125,10 +2456,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDataRepositoryAssociationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3137,8 +2468,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the data repository association that you want to delete.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(inp);
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The ID of the data repository association that you want to delete.</p>
@@ -3149,16 +2480,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_association_id(input);
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3166,14 +2493,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>Set to <code>true</code> to delete the data in the file system that corresponds
-        /// to the data repository association.</p>
-        pub fn delete_data_in_file_system(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_data_in_file_system(inp);
+        /// <p>Set to <code>true</code> to delete the data in the file system that corresponds to the data repository association.</p>
+        pub fn delete_data_in_file_system(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_data_in_file_system(input);
             self
         }
-        /// <p>Set to <code>true</code> to delete the data in the file system that corresponds
-        /// to the data repository association.</p>
+        /// <p>Set to <code>true</code> to delete the data in the file system that corresponds to the data repository association.</p>
         pub fn set_delete_data_in_file_system(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_delete_data_in_file_system(input);
             self
@@ -3181,32 +2506,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteFileSystem`.
     ///
-    /// <p>Deletes a file system. After deletion, the file system no longer exists, and its data
-    /// is gone. Any existing automatic backups and snapshots are also deleted.</p>
-    /// <p>To delete an Amazon FSx for NetApp ONTAP file system, first delete all the
-    /// volumes and storage virtual machines (SVMs) on the file system. Then provide a
-    /// <code>FileSystemId</code> value to the <code>DeleFileSystem</code> operation.</p>
-    ///
-    /// <p>By default, when you delete an Amazon FSx for Windows File Server file system,
-    /// a final backup is created upon deletion. This final backup isn't subject to the file
-    /// system's retention policy, and must be manually deleted.</p>
-    ///
-    /// <p>The <code>DeleteFileSystem</code> operation returns while the file system has the
-    /// <code>DELETING</code> status. You can check the file system deletion status by
-    /// calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a> operation, which returns a list of file systems in your
-    /// account. If you pass the file system ID for a deleted file system, the
-    /// <code>DescribeFileSystems</code> operation returns a <code>FileSystemNotFound</code>
-    /// error.</p>
-    /// <note>
-    /// <p>If a data repository task is in a <code>PENDING</code> or <code>EXECUTING</code> state,
-    /// deleting an Amazon FSx for Lustre file system will fail with an HTTP status
-    /// code 400 (Bad Request).</p>
-    /// </note>
-    /// <important>
-    /// <p>The data in a deleted file system is also deleted and can't be recovered by
-    /// any means.</p>
+    /// <p>Deletes a file system. After deletion, the file system no longer exists, and its data is gone. Any existing automatic backups and snapshots are also deleted.</p>
+    /// <p>To delete an Amazon FSx for NetApp ONTAP file system, first delete all the volumes and storage virtual machines (SVMs) on the file system. Then provide a <code>FileSystemId</code> value to the <code>DeleFileSystem</code> operation.</p>
+    /// <p>By default, when you delete an Amazon FSx for Windows File Server file system, a final backup is created upon deletion. This final backup isn't subject to the file system's retention policy, and must be manually deleted.</p>
+    /// <p>The <code>DeleteFileSystem</code> operation returns while the file system has the <code>DELETING</code> status. You can check the file system deletion status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a> operation, which returns a list of file systems in your account. If you pass the file system ID for a deleted file system, the <code>DescribeFileSystems</code> operation returns a <code>FileSystemNotFound</code> error.</p> <note>
+    /// <p>If a data repository task is in a <code>PENDING</code> or <code>EXECUTING</code> state, deleting an Amazon FSx for Lustre file system will fail with an HTTP status code 400 (Bad Request).</p>
+    /// </note> <important>
+    /// <p>The data in a deleted file system is also deleted and can't be recovered by any means.</p>
     /// </important>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFileSystem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3251,10 +2559,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFileSystemInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3263,8 +2571,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the file system that you want to delete.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(input.into());
             self
         }
         /// <p>The ID of the file system that you want to delete.</p>
@@ -3275,16 +2583,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_system_id(input);
             self
         }
-        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent deletion. This token is automatically filled on your behalf when using the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This token is automatically filled on your behalf when using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent deletion. This token is automatically filled on your behalf when using the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This token is automatically filled on your behalf when using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3292,17 +2596,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>The configuration object for the Microsoft Windows file system used in the
-        /// <code>DeleteFileSystem</code> operation.</p>
+        /// <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
         pub fn windows_configuration(
             mut self,
-            inp: crate::model::DeleteFileSystemWindowsConfiguration,
+            input: crate::model::DeleteFileSystemWindowsConfiguration,
         ) -> Self {
-            self.inner = self.inner.windows_configuration(inp);
+            self.inner = self.inner.windows_configuration(input);
             self
         }
-        /// <p>The configuration object for the Microsoft Windows file system used in the
-        /// <code>DeleteFileSystem</code> operation.</p>
+        /// <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
         pub fn set_windows_configuration(
             mut self,
             input: std::option::Option<crate::model::DeleteFileSystemWindowsConfiguration>,
@@ -3310,17 +2612,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_windows_configuration(input);
             self
         }
-        /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the
-        /// <code>DeleteFileSystem</code> operation.</p>
+        /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
         pub fn lustre_configuration(
             mut self,
-            inp: crate::model::DeleteFileSystemLustreConfiguration,
+            input: crate::model::DeleteFileSystemLustreConfiguration,
         ) -> Self {
-            self.inner = self.inner.lustre_configuration(inp);
+            self.inner = self.inner.lustre_configuration(input);
             self
         }
-        /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the
-        /// <code>DeleteFileSystem</code> operation.</p>
+        /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
         pub fn set_lustre_configuration(
             mut self,
             input: std::option::Option<crate::model::DeleteFileSystemLustreConfiguration>,
@@ -3328,17 +2628,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lustre_configuration(input);
             self
         }
-        /// <p>The configuration object for the OpenZFS file system used in the
-        /// <code>DeleteFileSystem</code> operation.</p>
+        /// <p>The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
         pub fn open_zfs_configuration(
             mut self,
-            inp: crate::model::DeleteFileSystemOpenZfsConfiguration,
+            input: crate::model::DeleteFileSystemOpenZfsConfiguration,
         ) -> Self {
-            self.inner = self.inner.open_zfs_configuration(inp);
+            self.inner = self.inner.open_zfs_configuration(input);
             self
         }
-        /// <p>The configuration object for the OpenZFS file system used in the
-        /// <code>DeleteFileSystem</code> operation.</p>
+        /// <p>The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
         pub fn set_open_zfs_configuration(
             mut self,
             input: std::option::Option<crate::model::DeleteFileSystemOpenZfsConfiguration>,
@@ -3349,12 +2647,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSnapshot`.
     ///
-    /// <p>Deletes the Amazon FSx snapshot. After deletion, the snapshot no longer
-    /// exists, and its data is gone. Deleting a snapshot doesn't affect snapshots stored in a
-    /// file system backup. </p>
-    /// <p>The <code>DeleteSnapshot</code> operation returns instantly. The snapshot appears with
-    /// the lifecycle status of <code>DELETING</code> until the deletion is complete.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the Amazon FSx snapshot. After deletion, the snapshot no longer exists, and its data is gone. Deleting a snapshot doesn't affect snapshots stored in a file system backup. </p>
+    /// <p>The <code>DeleteSnapshot</code> operation returns instantly. The snapshot appears with the lifecycle status of <code>DELETING</code> until the deletion is complete.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3399,10 +2694,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSnapshotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3410,16 +2705,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3428,8 +2719,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the snapshot that you want to delete.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(input.into());
             self
         }
         /// <p>The ID of the snapshot that you want to delete.</p>
@@ -3440,9 +2731,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteStorageVirtualMachine`.
     ///
-    /// <p>Deletes an existing Amazon FSx for ONTAP storage virtual machine (SVM). Prior
-    /// to deleting an SVM, you must delete all non-root volumes in the SVM, otherwise the operation will fail.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an existing Amazon FSx for ONTAP storage virtual machine (SVM). Prior to deleting an SVM, you must delete all non-root volumes in the SVM, otherwise the operation will fail.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStorageVirtualMachine<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3487,10 +2777,10 @@ pub mod fluent_builders {
                 crate::input::DeleteStorageVirtualMachineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3498,16 +2788,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3516,8 +2802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the SVM that you want to delete.</p>
-        pub fn storage_virtual_machine_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_virtual_machine_id(inp);
+        pub fn storage_virtual_machine_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_virtual_machine_id(input.into());
             self
         }
         /// <p>The ID of the SVM that you want to delete.</p>
@@ -3531,9 +2817,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteVolume`.
     ///
-    /// <p>Deletes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS
-    /// volume.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3578,10 +2863,10 @@ pub mod fluent_builders {
                 crate::input::DeleteVolumeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3589,16 +2874,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3607,8 +2888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the volume that you are deleting.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(inp);
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(input.into());
             self
         }
         /// <p>The ID of the volume that you are deleting.</p>
@@ -3616,19 +2897,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_volume_id(input);
             self
         }
-        /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of
-        /// the volume and apply tags to the backup. To apply tags to the backup, you must have the
-        /// <code>fsx:TagResource</code> permission.</p>
+        /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code> permission.</p>
         pub fn ontap_configuration(
             mut self,
-            inp: crate::model::DeleteVolumeOntapConfiguration,
+            input: crate::model::DeleteVolumeOntapConfiguration,
         ) -> Self {
-            self.inner = self.inner.ontap_configuration(inp);
+            self.inner = self.inner.ontap_configuration(input);
             self
         }
-        /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of
-        /// the volume and apply tags to the backup. To apply tags to the backup, you must have the
-        /// <code>fsx:TagResource</code> permission.</p>
+        /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code> permission.</p>
         pub fn set_ontap_configuration(
             mut self,
             input: std::option::Option<crate::model::DeleteVolumeOntapConfiguration>,
@@ -3636,17 +2913,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ontap_configuration(input);
             self
         }
-        /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child
-        /// volumes and snapshots.</p>
+        /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and snapshots.</p>
         pub fn open_zfs_configuration(
             mut self,
-            inp: crate::model::DeleteVolumeOpenZfsConfiguration,
+            input: crate::model::DeleteVolumeOpenZfsConfiguration,
         ) -> Self {
-            self.inner = self.inner.open_zfs_configuration(inp);
+            self.inner = self.inner.open_zfs_configuration(input);
             self
         }
-        /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child
-        /// volumes and snapshots.</p>
+        /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and snapshots.</p>
         pub fn set_open_zfs_configuration(
             mut self,
             input: std::option::Option<crate::model::DeleteVolumeOpenZfsConfiguration>,
@@ -3657,36 +2932,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBackups`.
     ///
-    /// <p>Returns the description of a specific Amazon FSx backup, if a
-    /// <code>BackupIds</code> value is provided for that backup. Otherwise, it returns all
-    /// backups owned by your Amazon Web Services account in the Amazon Web Services Region of the
-    /// endpoint that you're calling.</p>
-    ///
-    /// <p>When retrieving all backups, you can optionally specify the <code>MaxResults</code>
-    /// parameter to limit the number of backups in a response. If more backups remain, Amazon FSx returns a <code>NextToken</code> value in the response. In this case,
-    /// send a later request with the <code>NextToken</code> request parameter set to the value
-    /// of the <code>NextToken</code> value from the last response.</p>
-    ///
-    /// <p>This operation is used in an iterative process to retrieve a list of your backups.
-    /// <code>DescribeBackups</code> is called first without a <code>NextToken</code> value.
-    /// Then the operation continues to be called with the <code>NextToken</code> parameter set
-    /// to the value of the last <code>NextToken</code> value until a response has no
-    /// <code>NextToken</code> value.</p>
-    ///
+    /// <p>Returns the description of a specific Amazon FSx backup, if a <code>BackupIds</code> value is provided for that backup. Otherwise, it returns all backups owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
+    /// <p>When retrieving all backups, you can optionally specify the <code>MaxResults</code> parameter to limit the number of backups in a response. If more backups remain, Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of the <code>NextToken</code> value from the last response.</p>
+    /// <p>This operation is used in an iterative process to retrieve a list of your backups. <code>DescribeBackups</code> is called first without a <code>NextToken</code> value. Then the operation continues to be called with the <code>NextToken</code> parameter set to the value of the last <code>NextToken</code> value until a response has no <code>NextToken</code> value.</p>
     /// <p>When using this operation, keep the following in mind:</p>
     /// <ul>
-    /// <li>
-    /// <p>The operation might return fewer than the <code>MaxResults</code> value of
-    /// backup descriptions while still including a <code>NextToken</code>
-    /// value.</p>
-    /// </li>
-    /// <li>
-    /// <p>The order of the backups returned in the response of one
-    /// <code>DescribeBackups</code> call and the order of the backups returned
-    /// across the responses of a multi-call iteration is unspecified.</p>
-    /// </li>
+    /// <li> <p>The operation might return fewer than the <code>MaxResults</code> value of backup descriptions while still including a <code>NextToken</code> value.</p> </li>
+    /// <li> <p>The order of the backups returned in the response of one <code>DescribeBackups</code> call and the order of the backups returned across the responses of a multi-call iteration is unspecified.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBackups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3731,10 +2985,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBackupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3742,18 +2996,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeBackupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeBackupsPaginator<C, M, R> {
+            crate::paginator::DescribeBackupsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `BackupIds`.
         ///
         /// To override the contents of this collection use [`set_backup_ids`](Self::set_backup_ids).
         ///
-        /// <p>The IDs of the backups that you want to retrieve. This parameter value overrides any
-        /// filters. If any IDs aren't found, a <code>BackupNotFound</code> error occurs.</p>
-        pub fn backup_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_ids(inp);
+        /// <p>The IDs of the backups that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code> error occurs.</p>
+        pub fn backup_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_ids(input.into());
             self
         }
-        /// <p>The IDs of the backups that you want to retrieve. This parameter value overrides any
-        /// filters. If any IDs aren't found, a <code>BackupNotFound</code> error occurs.</p>
+        /// <p>The IDs of the backups that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code> error occurs.</p>
         pub fn set_backup_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3765,16 +3023,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters structure. The supported names are <code>file-system-id</code>,
-        /// <code>backup-type</code>, <code>file-system-type</code>, and
-        /// <code>volume-id</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>The filters structure. The supported names are <code>file-system-id</code>, <code>backup-type</code>, <code>file-system-type</code>, and <code>volume-id</code>.</p>
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The filters structure. The supported names are <code>file-system-id</code>,
-        /// <code>backup-type</code>, <code>file-system-type</code>, and
-        /// <code>volume-id</code>.</p>
+        /// <p>The filters structure. The supported names are <code>file-system-id</code>, <code>backup-type</code>, <code>file-system-type</code>, and <code>volume-id</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -3782,32 +3036,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>Maximum number of backups to return in the response. This parameter value must be
-        /// greater than 0. The number of items that Amazon FSx returns is the minimum of
-        /// the <code>MaxResults</code> parameter specified in the request and the service's
-        /// internal maximum number of items per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Maximum number of backups to return in the response. This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Maximum number of backups to return in the response. This parameter value must be
-        /// greater than 0. The number of items that Amazon FSx returns is the minimum of
-        /// the <code>MaxResults</code> parameter specified in the request and the service's
-        /// internal maximum number of items per page.</p>
+        /// <p>Maximum number of backups to return in the response. This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An opaque pagination token returned from a previous <code>DescribeBackups</code>
-        /// operation. If a token is present, the operation continues the list from where the
-        /// returning call left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An opaque pagination token returned from a previous <code>DescribeBackups</code> operation. If a token is present, the operation continues the list from where the returning call left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An opaque pagination token returned from a previous <code>DescribeBackups</code>
-        /// operation. If a token is present, the operation continues the list from where the
-        /// returning call left off.</p>
+        /// <p>An opaque pagination token returned from a previous <code>DescribeBackups</code> operation. If a token is present, the operation continues the list from where the returning call left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3815,26 +3059,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDataRepositoryAssociations`.
     ///
-    /// <p>Returns the description of specific Amazon FSx for Lustre data repository associations, if
-    /// one or more <code>AssociationIds</code> values are provided in the request, or if filters are
-    /// used in the request. Data repository associations are supported only
-    /// for file systems with the <code>Persistent_2</code> deployment type.</p>
-    ///
-    /// <p>You can use filters to narrow the response to include just data repository
-    /// associations for specific file systems (use the <code>file-system-id</code> filter with
-    /// the ID of the file system) or data repository associations for a specific repository type
-    /// (use the <code>data-repository-type</code> filter with a value of <code>S3</code>).
-    /// If you don't use filters, the response returns all data repository associations
-    /// owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint
-    /// that you're calling.</p>
-    ///
-    /// <p>When retrieving all data repository associations, you can paginate the response by using
-    /// the optional <code>MaxResults</code> parameter to limit the number of data repository associations
-    /// returned in a response. If more data repository associations remain, Amazon FSx returns a
-    /// <code>NextToken</code> value in the response. In this case, send a later
-    /// request with the <code>NextToken</code> request parameter set to the value of
-    /// <code>NextToken</code> from the last response.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the description of specific Amazon FSx for Lustre data repository associations, if one or more <code>AssociationIds</code> values are provided in the request, or if filters are used in the request. Data repository associations are supported only for file systems with the <code>Persistent_2</code> deployment type.</p>
+    /// <p>You can use filters to narrow the response to include just data repository associations for specific file systems (use the <code>file-system-id</code> filter with the ID of the file system) or data repository associations for a specific repository type (use the <code>data-repository-type</code> filter with a value of <code>S3</code>). If you don't use filters, the response returns all data repository associations owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
+    /// <p>When retrieving all data repository associations, you can paginate the response by using the optional <code>MaxResults</code> parameter to limit the number of data repository associations returned in a response. If more data repository associations remain, Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataRepositoryAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3881,10 +3109,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDataRepositoryAssociationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3892,18 +3120,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeDataRepositoryAssociationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeDataRepositoryAssociationsPaginator<C, M, R> {
+            crate::paginator::DescribeDataRepositoryAssociationsPaginator::new(
+                self.handle,
+                self.inner,
+            )
+        }
         /// Appends an item to `AssociationIds`.
         ///
         /// To override the contents of this collection use [`set_association_ids`](Self::set_association_ids).
         ///
-        /// <p>IDs of the data repository associations whose descriptions you want to retrieve
-        /// (String).</p>
-        pub fn association_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_ids(inp);
+        /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
+        pub fn association_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_ids(input.into());
             self
         }
-        /// <p>IDs of the data repository associations whose descriptions you want to retrieve
-        /// (String).</p>
+        /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
         pub fn set_association_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3916,8 +3153,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of <code>Filter</code> elements.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::Filter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A list of <code>Filter</code> elements.</p>
@@ -3928,28 +3165,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of resources to return in the response. This value must be
-        /// an integer greater than zero.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of resources to return in the response. This value must be
-        /// an integer greater than zero.</p>
+        /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
-        /// present, this token indicates from what point you can continue processing the request, where
-        /// the previous <code>NextToken</code> value left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
-        /// present, this token indicates from what point you can continue processing the request, where
-        /// the previous <code>NextToken</code> value left off.</p>
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3957,18 +3188,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDataRepositoryTasks`.
     ///
-    /// <p>Returns the description of specific Amazon FSx for Lustre data repository tasks, if
-    /// one or more <code>TaskIds</code> values are provided in the request, or if filters are used in the request.
-    /// You can use filters to narrow the response to include just tasks for specific file systems,
-    /// or tasks in a specific lifecycle state. Otherwise, it returns all data repository tasks owned
-    /// by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
-    ///
-    /// <p>When retrieving all tasks, you can paginate the response by using  the optional <code>MaxResults</code>
-    /// parameter to limit the number of tasks returned in a response. If more tasks remain, Amazon
-    /// FSx returns a <code>NextToken</code> value in the response. In this case, send a later
-    /// request with the <code>NextToken</code> request parameter set to the value of
-    /// <code>NextToken</code> from the last response.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the description of specific Amazon FSx for Lustre data repository tasks, if one or more <code>TaskIds</code> values are provided in the request, or if filters are used in the request. You can use filters to narrow the response to include just tasks for specific file systems, or tasks in a specific lifecycle state. Otherwise, it returns all data repository tasks owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
+    /// <p>When retrieving all tasks, you can paginate the response by using the optional <code>MaxResults</code> parameter to limit the number of tasks returned in a response. If more tasks remain, Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataRepositoryTasks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4013,10 +3235,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDataRepositoryTasksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4024,18 +3246,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeDataRepositoryTasksPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeDataRepositoryTasksPaginator<C, M, R> {
+            crate::paginator::DescribeDataRepositoryTasksPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `TaskIds`.
         ///
         /// To override the contents of this collection use [`set_task_ids`](Self::set_task_ids).
         ///
-        /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve
-        /// (String).</p>
-        pub fn task_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_ids(inp);
+        /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
+        pub fn task_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_ids(input.into());
             self
         }
-        /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve
-        /// (String).</p>
+        /// <p>(Optional) IDs of the tasks whose descriptions you want to retrieve (String).</p>
         pub fn set_task_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4047,14 +3275,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to
-        /// include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::DataRepositoryTaskFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
+        pub fn filters(mut self, input: crate::model::DataRepositoryTaskFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to
-        /// include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
+        /// <p>(Optional) You can use filters to narrow the <code>DescribeDataRepositoryTasks</code> response to include just tasks for specific file systems, or tasks in a specific lifecycle state.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataRepositoryTaskFilter>>,
@@ -4062,28 +3288,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of resources to return in the response. This value must be an
-        /// integer greater than zero.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of resources to return in the response. This value must be an
-        /// integer greater than zero.</p>
+        /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
-        /// present, this token indicates from what point you can continue processing the request, where
-        /// the previous <code>NextToken</code> value left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
-        /// present, this token indicates from what point you can continue processing the request, where
-        /// the previous <code>NextToken</code> value left off.</p>
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4091,10 +3311,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFileSystemAliases`.
     ///
-    /// <p>Returns the DNS aliases that are associated with the specified Amazon FSx for Windows File Server file system. A history of
-    /// all DNS aliases that have been associated with and disassociated from the file system is available in the list of <a>AdministrativeAction</a>
-    /// provided in the <a>DescribeFileSystems</a> operation response.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the DNS aliases that are associated with the specified Amazon FSx for Windows File Server file system. A history of all DNS aliases that have been associated with and disassociated from the file system is available in the list of <code>AdministrativeAction</code> provided in the <code>DescribeFileSystems</code> operation response.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFileSystemAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4139,10 +3357,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFileSystemAliasesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4150,16 +3368,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4167,14 +3381,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>The ID of the file system to return the associated DNS aliases for
-        /// (String).</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        /// <p>The ID of the file system to return the associated DNS aliases for (String).</p>
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(input.into());
             self
         }
-        /// <p>The ID of the file system to return the associated DNS aliases for
-        /// (String).</p>
+        /// <p>The ID of the file system to return the associated DNS aliases for (String).</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4182,32 +3394,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_system_id(input);
             self
         }
-        /// <p>Maximum number of DNS aliases to return in the response (integer). This
-        /// parameter value must be greater than 0. The number of items that Amazon FSx returns is
-        /// the minimum of the <code>MaxResults</code> parameter specified in the request and the
-        /// service's internal maximum number of items per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Maximum number of DNS aliases to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Maximum number of DNS aliases to return in the response (integer). This
-        /// parameter value must be greater than 0. The number of items that Amazon FSx returns is
-        /// the minimum of the <code>MaxResults</code> parameter specified in the request and the
-        /// service's internal maximum number of items per page.</p>
+        /// <p>Maximum number of DNS aliases to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Opaque pagination token returned from a previous
-        /// <code>DescribeFileSystemAliases</code> operation (String). If a token is included in the request, the action
-        /// continues the list from where the previous returning call left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystemAliases</code> operation (String). If a token is included in the request, the action continues the list from where the previous returning call left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Opaque pagination token returned from a previous
-        /// <code>DescribeFileSystemAliases</code> operation (String). If a token is included in the request, the action
-        /// continues the list from where the previous returning call left off.</p>
+        /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystemAliases</code> operation (String). If a token is included in the request, the action continues the list from where the previous returning call left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4215,39 +3417,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFileSystems`.
     ///
-    /// <p>Returns the description of specific Amazon FSx file systems, if a
-    /// <code>FileSystemIds</code> value is provided for that file system. Otherwise, it
-    /// returns descriptions of all file systems owned by your Amazon Web Services account in the
-    /// Amazon Web Services Region of the endpoint that you're calling.</p>
-    ///
-    /// <p>When retrieving all file system descriptions, you can optionally specify the
-    /// <code>MaxResults</code> parameter to limit the number of descriptions in a response.
-    /// If more file system descriptions remain, Amazon FSx returns a
-    /// <code>NextToken</code> value in the response. In this case, send a later request
-    /// with the <code>NextToken</code> request parameter set to the value of
-    /// <code>NextToken</code> from the last response.</p>
-    ///
-    /// <p>This operation is used in an iterative process to retrieve a list of your file system
-    /// descriptions. <code>DescribeFileSystems</code> is called first without a
-    /// <code>NextToken</code>value. Then the operation continues to be called with the
-    /// <code>NextToken</code> parameter set to the value of the last <code>NextToken</code>
-    /// value until a response has no <code>NextToken</code>.</p>
-    ///
+    /// <p>Returns the description of specific Amazon FSx file systems, if a <code>FileSystemIds</code> value is provided for that file system. Otherwise, it returns descriptions of all file systems owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
+    /// <p>When retrieving all file system descriptions, you can optionally specify the <code>MaxResults</code> parameter to limit the number of descriptions in a response. If more file system descriptions remain, Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response.</p>
+    /// <p>This operation is used in an iterative process to retrieve a list of your file system descriptions. <code>DescribeFileSystems</code> is called first without a <code>NextToken</code>value. Then the operation continues to be called with the <code>NextToken</code> parameter set to the value of the last <code>NextToken</code> value until a response has no <code>NextToken</code>.</p>
     /// <p>When using this operation, keep the following in mind:</p>
     /// <ul>
-    /// <li>
-    /// <p>The implementation might return fewer than <code>MaxResults</code> file
-    /// system descriptions while still including a <code>NextToken</code>
-    /// value.</p>
-    ///
-    /// </li>
-    /// <li>
-    /// <p>The order of file systems returned in the response of one
-    /// <code>DescribeFileSystems</code> call and the order of file systems returned
-    /// across the responses of a multicall iteration is unspecified.</p>
-    /// </li>
+    /// <li> <p>The implementation might return fewer than <code>MaxResults</code> file system descriptions while still including a <code>NextToken</code> value.</p> </li>
+    /// <li> <p>The order of file systems returned in the response of one <code>DescribeFileSystems</code> call and the order of file systems returned across the responses of a multicall iteration is unspecified.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFileSystems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4292,10 +3470,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFileSystemsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4303,18 +3481,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeFileSystemsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeFileSystemsPaginator<C, M, R> {
+            crate::paginator::DescribeFileSystemsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `FileSystemIds`.
         ///
         /// To override the contents of this collection use [`set_file_system_ids`](Self::set_file_system_ids).
         ///
-        /// <p>IDs of the file systems whose descriptions you want to retrieve
-        /// (String).</p>
-        pub fn file_system_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_ids(inp);
+        /// <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
+        pub fn file_system_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_ids(input.into());
             self
         }
-        /// <p>IDs of the file systems whose descriptions you want to retrieve
-        /// (String).</p>
+        /// <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
         pub fn set_file_system_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4322,32 +3504,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_system_ids(input);
             self
         }
-        /// <p>Maximum number of file systems to return in the response (integer). This
-        /// parameter value must be greater than 0. The number of items that Amazon FSx returns is
-        /// the minimum of the <code>MaxResults</code> parameter specified in the request and the
-        /// service's internal maximum number of items per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Maximum number of file systems to return in the response (integer). This
-        /// parameter value must be greater than 0. The number of items that Amazon FSx returns is
-        /// the minimum of the <code>MaxResults</code> parameter specified in the request and the
-        /// service's internal maximum number of items per page.</p>
+        /// <p>Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystems</code>
-        /// operation (String). If a token present, the operation continues the list from where the
-        /// returning call left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token present, the operation continues the list from where the returning call left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystems</code>
-        /// operation (String). If a token present, the operation continues the list from where the
-        /// returning call left off.</p>
+        /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token present, the operation continues the list from where the returning call left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4355,34 +3527,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSnapshots`.
     ///
-    /// <p>Returns the description of specific Amazon FSx snapshots, if a
-    /// <code>SnapshotIds</code> value is provided. Otherwise, this operation returns all
-    /// snapshots owned by your Amazon Web Services account in the Amazon Web Services Region of
-    /// the endpoint that you're calling.</p>
-    /// <p>When retrieving all snapshots, you can optionally specify the <code>MaxResults</code>
-    /// parameter to limit the number of snapshots in a response. If more backups remain,
-    /// Amazon FSx returns a <code>NextToken</code> value in the response. In this
-    /// case, send a later request with the <code>NextToken</code> request parameter set to the
-    /// value of <code>NextToken</code> from the last response. </p>
-    /// <p>Use this operation in an iterative process to retrieve a list of your snapshots.
-    /// <code>DescribeSnapshots</code> is called first without a <code>NextToken</code>
-    /// value. Then the operation continues to be called with the <code>NextToken</code>
-    /// parameter set to the value of the last <code>NextToken</code> value until a response has
-    /// no <code>NextToken</code> value.</p>
+    /// <p>Returns the description of specific Amazon FSx snapshots, if a <code>SnapshotIds</code> value is provided. Otherwise, this operation returns all snapshots owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>
+    /// <p>When retrieving all snapshots, you can optionally specify the <code>MaxResults</code> parameter to limit the number of snapshots in a response. If more backups remain, Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response. </p>
+    /// <p>Use this operation in an iterative process to retrieve a list of your snapshots. <code>DescribeSnapshots</code> is called first without a <code>NextToken</code> value. Then the operation continues to be called with the <code>NextToken</code> parameter set to the value of the last <code>NextToken</code> value until a response has no <code>NextToken</code> value.</p>
     /// <p>When using this operation, keep the following in mind:</p>
     /// <ul>
-    /// <li>
-    /// <p>The operation might return fewer than the <code>MaxResults</code> value of
-    /// snapshot descriptions while still including a <code>NextToken</code>
-    /// value.</p>
-    /// </li>
-    /// <li>
-    /// <p>The order of snapshots returned in the response of one
-    /// <code>DescribeSnapshots</code> call and the order of backups returned across
-    /// the responses of a multi-call iteration is unspecified. </p>
-    /// </li>
+    /// <li> <p>The operation might return fewer than the <code>MaxResults</code> value of snapshot descriptions while still including a <code>NextToken</code> value.</p> </li>
+    /// <li> <p>The order of snapshots returned in the response of one <code>DescribeSnapshots</code> call and the order of backups returned across the responses of a multi-call iteration is unspecified. </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSnapshots<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4427,10 +3580,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSnapshotsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4438,18 +3591,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeSnapshotsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeSnapshotsPaginator<C, M, R> {
+            crate::paginator::DescribeSnapshotsPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `SnapshotIds`.
         ///
         /// To override the contents of this collection use [`set_snapshot_ids`](Self::set_snapshot_ids).
         ///
-        /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any
-        /// filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
-        pub fn snapshot_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_ids(inp);
+        /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
+        pub fn snapshot_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_ids(input.into());
             self
         }
-        /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any
-        /// filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
+        /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
         pub fn set_snapshot_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4461,14 +3618,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters structure. The supported names are <code>file-system-id</code> or
-        /// <code>volume-id</code>.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::SnapshotFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
+        pub fn filters(mut self, input: crate::model::SnapshotFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The filters structure. The supported names are <code>file-system-id</code> or
-        /// <code>volume-id</code>.</p>
+        /// <p>The filters structure. The supported names are <code>file-system-id</code> or <code>volume-id</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SnapshotFilter>>,
@@ -4476,28 +3631,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of resources to return in the response. This value must be an
-        /// integer greater than zero.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of resources to return in the response. This value must be an
-        /// integer greater than zero.</p>
+        /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
-        /// present, this token indicates from what point you can continue processing the request, where
-        /// the previous <code>NextToken</code> value left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
-        /// present, this token indicates from what point you can continue processing the request, where
-        /// the previous <code>NextToken</code> value left off.</p>
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4506,7 +3655,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStorageVirtualMachines`.
     ///
     /// <p>Describes one or more Amazon FSx for NetApp ONTAP storage virtual machines (SVMs).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStorageVirtualMachines<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4551,10 +3700,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStorageVirtualMachinesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4562,13 +3711,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeStorageVirtualMachinesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeStorageVirtualMachinesPaginator<C, M, R> {
+            crate::paginator::DescribeStorageVirtualMachinesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `StorageVirtualMachineIds`.
         ///
         /// To override the contents of this collection use [`set_storage_virtual_machine_ids`](Self::set_storage_virtual_machine_ids).
         ///
         /// <p>Enter the ID of one or more SVMs that you want to view.</p>
-        pub fn storage_virtual_machine_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_virtual_machine_ids(inp);
+        pub fn storage_virtual_machine_ids(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.storage_virtual_machine_ids(input.into());
             self
         }
         /// <p>Enter the ID of one or more SVMs that you want to view.</p>
@@ -4584,11 +3744,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
-        pub fn filters(
-            mut self,
-            inp: impl Into<crate::model::StorageVirtualMachineFilter>,
-        ) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::StorageVirtualMachineFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
@@ -4599,28 +3756,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of resources to return in the response. This value must be an
-        /// integer greater than zero.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of resources to return in the response. This value must be an
-        /// integer greater than zero.</p>
+        /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
-        /// present, this token indicates from what point you can continue processing the request, where
-        /// the previous <code>NextToken</code> value left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
-        /// present, this token indicates from what point you can continue processing the request, where
-        /// the previous <code>NextToken</code> value left off.</p>
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4628,9 +3779,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeVolumes`.
     ///
-    /// <p>Describes one or more Amazon FSx for NetApp ONTAP or Amazon FSx for
-    /// OpenZFS volumes.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes one or more Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volumes.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVolumes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4675,10 +3825,10 @@ pub mod fluent_builders {
                 crate::input::DescribeVolumesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4686,13 +3836,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeVolumesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeVolumesPaginator<C, M, R> {
+            crate::paginator::DescribeVolumesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `VolumeIds`.
         ///
         /// To override the contents of this collection use [`set_volume_ids`](Self::set_volume_ids).
         ///
         /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
-        pub fn volume_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_ids(inp);
+        pub fn volume_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_ids(input.into());
             self
         }
         /// <p>The IDs of the volumes whose descriptions you want to retrieve.</p>
@@ -4707,14 +3863,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of
-        /// volumes.</p>
-        pub fn filters(mut self, inp: impl Into<crate::model::VolumeFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p>
+        pub fn filters(mut self, input: crate::model::VolumeFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of
-        /// volumes.</p>
+        /// <p>Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set of volumes.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VolumeFilter>>,
@@ -4722,28 +3876,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of resources to return in the response. This value must be an
-        /// integer greater than zero.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of resources to return in the response. This value must be an
-        /// integer greater than zero.</p>
+        /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
-        /// present, this token indicates from what point you can continue processing the request, where
-        /// the previous <code>NextToken</code> value left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If
-        /// present, this token indicates from what point you can continue processing the request, where
-        /// the previous <code>NextToken</code> value left off.</p>
+        /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4751,16 +3899,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateFileSystemAliases`.
     ///
-    /// <p>Use this action to disassociate, or remove, one or more Domain Name Service (DNS) aliases
-    /// from an Amazon FSx for Windows File Server file system. If you attempt to disassociate a DNS alias that is not
-    /// associated with the file system, Amazon FSx responds with a 400 Bad Request. For more information, see
-    /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a>.</p>
-    /// <p>The system generated response showing the DNS aliases that
-    /// Amazon FSx is attempting to disassociate from the file system.
-    /// Use the  API
-    /// operation to monitor the status of the aliases Amazon FSx is
-    /// disassociating with the file system.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Use this action to disassociate, or remove, one or more Domain Name Service (DNS) aliases from an Amazon FSx for Windows File Server file system. If you attempt to disassociate a DNS alias that is not associated with the file system, Amazon FSx responds with a 400 Bad Request. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a>.</p>
+    /// <p>The system generated response showing the DNS aliases that Amazon FSx is attempting to disassociate from the file system. Use the API operation to monitor the status of the aliases Amazon FSx is disassociating with the file system.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFileSystemAliases<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4805,10 +3946,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateFileSystemAliasesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4816,16 +3957,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4834,8 +3971,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(input.into());
             self
         }
         /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
@@ -4851,8 +3988,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
         ///
         /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
-        pub fn aliases(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aliases(inp);
+        pub fn aliases(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aliases(input.into());
             self
         }
         /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
@@ -4866,36 +4003,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists tags for an Amazon FSx file systems and backups in the case of Amazon FSx for
-    /// Windows File Server.</p>
-    ///
-    /// <p>When retrieving all tags, you can optionally specify the <code>MaxResults</code>
-    /// parameter to limit the number of tags in a response. If more tags remain, Amazon FSx
-    /// returns a <code>NextToken</code> value in the response. In this case, send a later
-    /// request with the <code>NextToken</code> request parameter set to the value of
-    /// <code>NextToken</code> from the last response.</p>
-    ///
-    /// <p>This action is used in an iterative process to retrieve a list of your tags.
-    /// <code>ListTagsForResource</code> is called first without a
-    /// <code>NextToken</code>value. Then the action continues to be called with the
-    /// <code>NextToken</code> parameter set to the value of the last <code>NextToken</code>
-    /// value until a response has no <code>NextToken</code>.</p>
-    ///
+    /// <p>Lists tags for an Amazon FSx file systems and backups in the case of Amazon FSx for Windows File Server.</p>
+    /// <p>When retrieving all tags, you can optionally specify the <code>MaxResults</code> parameter to limit the number of tags in a response. If more tags remain, Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response.</p>
+    /// <p>This action is used in an iterative process to retrieve a list of your tags. <code>ListTagsForResource</code> is called first without a <code>NextToken</code>value. Then the action continues to be called with the <code>NextToken</code> parameter set to the value of the last <code>NextToken</code> value until a response has no <code>NextToken</code>.</p>
     /// <p>When using this action, keep the following in mind:</p>
     /// <ul>
-    /// <li>
-    /// <p>The implementation might return fewer than <code>MaxResults</code> file
-    /// system descriptions while still including a <code>NextToken</code>
-    /// value.</p>
-    ///
-    /// </li>
-    /// <li>
-    /// <p>The order of tags returned in the response of one
-    /// <code>ListTagsForResource</code> call and the order of tags returned across
-    /// the responses of a multi-call iteration is unspecified.</p>
-    /// </li>
+    /// <li> <p>The implementation might return fewer than <code>MaxResults</code> file system descriptions while still including a <code>NextToken</code> value.</p> </li>
+    /// <li> <p>The order of tags returned in the response of one <code>ListTagsForResource</code> call and the order of tags returned across the responses of a multi-call iteration is unspecified.</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4940,10 +4056,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4951,9 +4067,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsForResourcePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagsForResourcePaginator<C, M, R> {
+            crate::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the Amazon FSx resource that will have its tags listed.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the Amazon FSx resource that will have its tags listed.</p>
@@ -4961,32 +4083,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>Maximum number of tags to return in the response (integer). This
-        /// parameter value must be greater than 0. The number of items that Amazon FSx returns is
-        /// the minimum of the <code>MaxResults</code> parameter specified in the request and the
-        /// service's internal maximum number of items per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Maximum number of tags to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Maximum number of tags to return in the response (integer). This
-        /// parameter value must be greater than 0. The number of items that Amazon FSx returns is
-        /// the minimum of the <code>MaxResults</code> parameter specified in the request and the
-        /// service's internal maximum number of items per page.</p>
+        /// <p>Maximum number of tags to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Opaque pagination token returned from a previous
-        /// <code>ListTagsForResource</code> operation (String). If a token present, the action
-        /// continues the list from where the returning call left off.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If a token present, the action continues the list from where the returning call left off.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Opaque pagination token returned from a previous
-        /// <code>ListTagsForResource</code> operation (String). If a token present, the action
-        /// continues the list from where the returning call left off.</p>
+        /// <p>Opaque pagination token returned from a previous <code>ListTagsForResource</code> operation (String). If a token present, the action continues the list from where the returning call left off.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4994,9 +4106,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ReleaseFileSystemNfsV3Locks`.
     ///
-    /// <p>Releases the file system lock from an Amazon FSx for OpenZFS file
-    /// system.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Releases the file system lock from an Amazon FSx for OpenZFS file system.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReleaseFileSystemNfsV3Locks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5041,10 +4152,10 @@ pub mod fluent_builders {
                 crate::input::ReleaseFileSystemNfsV3LocksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5053,8 +4164,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(input.into());
             self
         }
         /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
@@ -5065,16 +4176,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_system_id(input);
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5085,9 +4192,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RestoreVolumeFromSnapshot`.
     ///
-    /// <p>Returns an Amazon FSx for OpenZFS volume to the state saved by the specified
-    /// snapshot. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns an Amazon FSx for OpenZFS volume to the state saved by the specified snapshot. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreVolumeFromSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5132,10 +4238,10 @@ pub mod fluent_builders {
                 crate::input::RestoreVolumeFromSnapshotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5143,16 +4249,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5161,8 +4263,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the volume that you are restoring.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(inp);
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(input.into());
             self
         }
         /// <p>The ID of the volume that you are restoring.</p>
@@ -5170,14 +4272,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_volume_id(input);
             self
         }
-        /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring
-        /// from.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(input.into());
             self
         }
-        /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring
-        /// from.</p>
+        /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_snapshot_id(input);
             self
@@ -5188,37 +4288,17 @@ pub mod fluent_builders {
         ///
         /// <p>The settings used when restoring the specified volume from snapshot. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the
-        /// current state and the specified snapshot. If there are intermediate snapshots
-        /// and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_CLONED_VOLUMES</code> - Deletes any volumes cloned from this
-        /// volume. If there are any cloned volumes and this option isn't used,
-        /// <code>RestoreVolumeFromSnapshot</code> fails.</p>
-        /// </li>
+        /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
+        /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any volumes cloned from this volume. If there are any cloned volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
         /// </ul>
-        pub fn options(mut self, inp: impl Into<crate::model::RestoreOpenZfsVolumeOption>) -> Self {
-            self.inner = self.inner.options(inp);
+        pub fn options(mut self, input: crate::model::RestoreOpenZfsVolumeOption) -> Self {
+            self.inner = self.inner.options(input);
             self
         }
         /// <p>The settings used when restoring the specified volume from snapshot. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the
-        /// current state and the specified snapshot. If there are intermediate snapshots
-        /// and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETE_CLONED_VOLUMES</code> - Deletes any volumes cloned from this
-        /// volume. If there are any cloned volumes and this option isn't used,
-        /// <code>RestoreVolumeFromSnapshot</code> fails.</p>
-        /// </li>
+        /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
+        /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any volumes cloned from this volume. If there are any cloned volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
         /// </ul>
         pub fn set_options(
             mut self,
@@ -5231,7 +4311,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Tags an Amazon FSx resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5276,10 +4356,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5287,14 +4367,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to
-        /// tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to tag.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to
-        /// tag.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -5303,14 +4381,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags for the resource. If a tag with a given key already exists, the
-        /// value is replaced by the one specified in this parameter.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>A list of tags for the resource. If a tag with a given key already exists, the value is replaced by the one specified in this parameter.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags for the resource. If a tag with a given key already exists, the
-        /// value is replaced by the one specified in this parameter.</p>
+        /// <p>A list of tags for the resource. If a tag with a given key already exists, the value is replaced by the one specified in this parameter.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5322,7 +4398,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>This action removes a tag from an Amazon FSx resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5367,10 +4443,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5379,8 +4455,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Amazon FSx resource to untag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the Amazon FSx resource to untag.</p>
@@ -5392,14 +4468,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of keys of tags on the resource to untag. In case the tag key doesn't exist,
-        /// the call will still succeed to be idempotent.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        /// <p>A list of keys of tags on the resource to untag. In case the tag key doesn't exist, the call will still succeed to be idempotent.</p>
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A list of keys of tags on the resource to untag. In case the tag key doesn't exist,
-        /// the call will still succeed to be idempotent.</p>
+        /// <p>A list of keys of tags on the resource to untag. In case the tag key doesn't exist, the call will still succeed to be idempotent.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5410,10 +4484,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDataRepositoryAssociation`.
     ///
-    /// <p>Updates the configuration of an existing data repository association
-    /// on an Amazon FSx for Lustre file system. Data repository associations are
-    /// supported only for file systems with the <code>Persistent_2</code> deployment type.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates the configuration of an existing data repository association on an Amazon FSx for Lustre file system. Data repository associations are supported only for file systems with the <code>Persistent_2</code> deployment type.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataRepositoryAssociation<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5458,10 +4530,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDataRepositoryAssociationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5470,8 +4542,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the data repository association that you are updating.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(inp);
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The ID of the data repository association that you are updating.</p>
@@ -5482,16 +4554,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_association_id(input);
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5499,44 +4567,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>For files imported from a data repository, this value determines the stripe count and
-        /// maximum amount of data per file (in MiB) stored on a single physical disk. The maximum
-        /// number of disks that a single file can be striped across is limited by the total number
-        /// of disks that make up the file system.</p>
-        ///
-        /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
-        /// GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
-        pub fn imported_file_chunk_size(mut self, inp: i32) -> Self {
-            self.inner = self.inner.imported_file_chunk_size(inp);
+        /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
+        /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
+        pub fn imported_file_chunk_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.imported_file_chunk_size(input);
             self
         }
-        /// <p>For files imported from a data repository, this value determines the stripe count and
-        /// maximum amount of data per file (in MiB) stored on a single physical disk. The maximum
-        /// number of disks that a single file can be striped across is limited by the total number
-        /// of disks that make up the file system.</p>
-        ///
-        /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
-        /// GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
+        /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
+        /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
         pub fn set_imported_file_chunk_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_imported_file_chunk_size(input);
             self
         }
-        /// <p>The configuration for an Amazon S3 data repository linked to an
-        /// Amazon FSx Lustre file system with a data repository association.
-        /// The configuration defines which file events (new, changed, or
-        /// deleted files or directories) are automatically imported from
-        /// the linked data repository to the file system or automatically
-        /// exported from the file system to the data repository.</p>
-        pub fn s3(mut self, inp: crate::model::S3DataRepositoryConfiguration) -> Self {
-            self.inner = self.inner.s3(inp);
+        /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
+        pub fn s3(mut self, input: crate::model::S3DataRepositoryConfiguration) -> Self {
+            self.inner = self.inner.s3(input);
             self
         }
-        /// <p>The configuration for an Amazon S3 data repository linked to an
-        /// Amazon FSx Lustre file system with a data repository association.
-        /// The configuration defines which file events (new, changed, or
-        /// deleted files or directories) are automatically imported from
-        /// the linked data repository to the file system or automatically
-        /// exported from the file system to the data repository.</p>
+        /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
         pub fn set_s3(
             mut self,
             input: std::option::Option<crate::model::S3DataRepositoryConfiguration>,
@@ -5547,145 +4595,44 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFileSystem`.
     ///
-    /// <p>Use this operation to update the configuration of an existing Amazon FSx file
-    /// system. You can update multiple properties in a single request.</p>
-    /// <p>For Amazon FSx for Windows File Server file systems, you can update the following
-    /// properties:</p>
+    /// <p>Use this operation to update the configuration of an existing Amazon FSx file system. You can update multiple properties in a single request.</p>
+    /// <p>For Amazon FSx for Windows File Server file systems, you can update the following properties:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AuditLogConfiguration</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AutomaticBackupRetentionDays</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DailyAutomaticBackupStartTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SelfManagedActiveDirectoryConfiguration</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>StorageCapacity</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ThroughputCapacity</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>WeeklyMaintenanceStartTime</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AuditLogConfiguration</code> </p> </li>
+    /// <li> <p> <code>AutomaticBackupRetentionDays</code> </p> </li>
+    /// <li> <p> <code>DailyAutomaticBackupStartTime</code> </p> </li>
+    /// <li> <p> <code>SelfManagedActiveDirectoryConfiguration</code> </p> </li>
+    /// <li> <p> <code>StorageCapacity</code> </p> </li>
+    /// <li> <p> <code>ThroughputCapacity</code> </p> </li>
+    /// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
     /// </ul>
-    /// <p>For FSx for Lustre file systems, you can update the following
-    /// properties:</p>
+    /// <p>For FSx for Lustre file systems, you can update the following properties:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AutoImportPolicy</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AutomaticBackupRetentionDays</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DailyAutomaticBackupStartTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DataCompressionType</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>StorageCapacity</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>WeeklyMaintenanceStartTime</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+    /// <li> <p> <code>AutomaticBackupRetentionDays</code> </p> </li>
+    /// <li> <p> <code>DailyAutomaticBackupStartTime</code> </p> </li>
+    /// <li> <p> <code>DataCompressionType</code> </p> </li>
+    /// <li> <p> <code>StorageCapacity</code> </p> </li>
+    /// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
     /// </ul>
-    /// <p>For FSx for ONTAP file systems, you can update the following
-    /// properties:</p>
+    /// <p>For FSx for ONTAP file systems, you can update the following properties:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AutomaticBackupRetentionDays</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DailyAutomaticBackupStartTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FsxAdminPassword</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>WeeklyMaintenanceStartTime</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AutomaticBackupRetentionDays</code> </p> </li>
+    /// <li> <p> <code>DailyAutomaticBackupStartTime</code> </p> </li>
+    /// <li> <p> <code>FsxAdminPassword</code> </p> </li>
+    /// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
     /// </ul>
-    /// <p>For the Amazon FSx for OpenZFS file systems, you can update the following
-    /// properties:</p>
+    /// <p>For the Amazon FSx for OpenZFS file systems, you can update the following properties:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AutomaticBackupRetentionDays</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CopyTagsToBackups</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CopyTagsToVolumes</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DailyAutomaticBackupStartTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DiskIopsConfiguration</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ThroughputCapacity</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>WeeklyMaintenanceStartTime</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AutomaticBackupRetentionDays</code> </p> </li>
+    /// <li> <p> <code>CopyTagsToBackups</code> </p> </li>
+    /// <li> <p> <code>CopyTagsToVolumes</code> </p> </li>
+    /// <li> <p> <code>DailyAutomaticBackupStartTime</code> </p> </li>
+    /// <li> <p> <code>DiskIopsConfiguration</code> </p> </li>
+    /// <li> <p> <code>ThroughputCapacity</code> </p> </li>
+    /// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFileSystem<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5730,10 +4677,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFileSystemInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5742,8 +4689,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the file system that you are updating.</p>
-        pub fn file_system_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_system_id(inp);
+        pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_system_id(input.into());
             self
         }
         /// <p>The ID of the file system that you are updating.</p>
@@ -5754,16 +4701,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_system_id(input);
             self
         }
-        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent updates. This string is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
-        /// idempotent updates. This string is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5771,97 +4714,47 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>Use this parameter to increase the storage capacity of an Amazon FSx for Windows
-        /// File Server or Amazon FSx for Lustre file system. Specifies the storage capacity
-        /// target value, in GiB, to increase the storage capacity for the file system that you're
-        /// updating. </p>
-        /// <note>
-        /// <p>You can't make a storage capacity increase request if there is an existing storage
-        /// capacity increase request in progress.</p>
+        /// <p>Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server or Amazon FSx for Lustre file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating. </p> <note>
+        /// <p>You can't make a storage capacity increase request if there is an existing storage capacity increase request in progress.</p>
         /// </note>
-        /// <p>For Windows file systems, the storage capacity target value must be at least 10 percent
-        /// greater than the current storage capacity value. To increase storage capacity, the file system
-        /// must have at least 16 MBps of throughput capacity.</p>
+        /// <p>For Windows file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. To increase storage capacity, the file system must have at least 16 MBps of throughput capacity.</p>
         /// <p>For Lustre file systems, the storage capacity target value can be the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values
-        /// are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for
-        /// 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput
-        /// per TiB file systems. The values must be greater than the current storage capacity.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.</p>
-        /// </li>
+        /// <li> <p>For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p> </li>
+        /// <li> <p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput per TiB file systems. The values must be greater than the current storage capacity.</p> </li>
+        /// <li> <p>For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.</p> </li>
         /// </ul>
-        /// <p>For OpenZFS file systems, the input/output operations per second (IOPS) automatically
-        /// scale with increases to the storage capacity if IOPS is configured for automatic scaling. If
-        /// the storage capacity increase would result in less than 3 IOPS per GiB of storage, this
-        /// operation returns an error. </p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
-        /// capacity</a> in the <i>Amazon FSx for Windows File Server User
-        /// Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput
-        /// capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and
-        /// <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for OpenZFS User
-        /// Guide</i>.</p>
-        pub fn storage_capacity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.storage_capacity(inp);
+        /// <p>For OpenZFS file systems, the input/output operations per second (IOPS) automatically scale with increases to the storage capacity if IOPS is configured for automatic scaling. If the storage capacity increase would result in less than 3 IOPS per GiB of storage, this operation returns an error. </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
+        pub fn storage_capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.storage_capacity(input);
             self
         }
-        /// <p>Use this parameter to increase the storage capacity of an Amazon FSx for Windows
-        /// File Server or Amazon FSx for Lustre file system. Specifies the storage capacity
-        /// target value, in GiB, to increase the storage capacity for the file system that you're
-        /// updating. </p>
-        /// <note>
-        /// <p>You can't make a storage capacity increase request if there is an existing storage
-        /// capacity increase request in progress.</p>
+        /// <p>Use this parameter to increase the storage capacity of an Amazon FSx for Windows File Server or Amazon FSx for Lustre file system. Specifies the storage capacity target value, in GiB, to increase the storage capacity for the file system that you're updating. </p> <note>
+        /// <p>You can't make a storage capacity increase request if there is an existing storage capacity increase request in progress.</p>
         /// </note>
-        /// <p>For Windows file systems, the storage capacity target value must be at least 10 percent
-        /// greater than the current storage capacity value. To increase storage capacity, the file system
-        /// must have at least 16 MBps of throughput capacity.</p>
+        /// <p>For Windows file systems, the storage capacity target value must be at least 10 percent greater than the current storage capacity value. To increase storage capacity, the file system must have at least 16 MBps of throughput capacity.</p>
         /// <p>For Lustre file systems, the storage capacity target value can be the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values
-        /// are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for
-        /// 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput
-        /// per TiB file systems. The values must be greater than the current storage capacity.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.</p>
-        /// </li>
+        /// <li> <p>For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in multiples of 2400 GiB. The value must be greater than the current storage capacity.</p> </li>
+        /// <li> <p>For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput per TiB file systems. The values must be greater than the current storage capacity.</p> </li>
+        /// <li> <p>For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.</p> </li>
         /// </ul>
-        /// <p>For OpenZFS file systems, the input/output operations per second (IOPS) automatically
-        /// scale with increases to the storage capacity if IOPS is configured for automatic scaling. If
-        /// the storage capacity increase would result in less than 3 IOPS per GiB of storage, this
-        /// operation returns an error. </p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
-        /// capacity</a> in the <i>Amazon FSx for Windows File Server User
-        /// Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput
-        /// capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and
-        /// <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for OpenZFS User
-        /// Guide</i>.</p>
+        /// <p>For OpenZFS file systems, the input/output operations per second (IOPS) automatically scale with increases to the storage capacity if IOPS is configured for automatic scaling. If the storage capacity increase would result in less than 3 IOPS per GiB of storage, this operation returns an error. </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
         pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_storage_capacity(input);
             self
         }
-        /// <p>The configuration updates for an Amazon FSx for Windows File Server file
-        /// system.</p>
+        /// <p>The configuration updates for an Amazon FSx for Windows File Server file system.</p>
         pub fn windows_configuration(
             mut self,
-            inp: crate::model::UpdateFileSystemWindowsConfiguration,
+            input: crate::model::UpdateFileSystemWindowsConfiguration,
         ) -> Self {
-            self.inner = self.inner.windows_configuration(inp);
+            self.inner = self.inner.windows_configuration(input);
             self
         }
-        /// <p>The configuration updates for an Amazon FSx for Windows File Server file
-        /// system.</p>
+        /// <p>The configuration updates for an Amazon FSx for Windows File Server file system.</p>
         pub fn set_windows_configuration(
             mut self,
             input: std::option::Option<crate::model::UpdateFileSystemWindowsConfiguration>,
@@ -5869,17 +4762,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_windows_configuration(input);
             self
         }
-        /// <p>The configuration object for Amazon FSx for Lustre file systems used in the
-        /// <code>UpdateFileSystem</code> operation.</p>
+        /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
         pub fn lustre_configuration(
             mut self,
-            inp: crate::model::UpdateFileSystemLustreConfiguration,
+            input: crate::model::UpdateFileSystemLustreConfiguration,
         ) -> Self {
-            self.inner = self.inner.lustre_configuration(inp);
+            self.inner = self.inner.lustre_configuration(input);
             self
         }
-        /// <p>The configuration object for Amazon FSx for Lustre file systems used in the
-        /// <code>UpdateFileSystem</code> operation.</p>
+        /// <p>The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.</p>
         pub fn set_lustre_configuration(
             mut self,
             input: std::option::Option<crate::model::UpdateFileSystemLustreConfiguration>,
@@ -5890,9 +4781,9 @@ pub mod fluent_builders {
         /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
         pub fn ontap_configuration(
             mut self,
-            inp: crate::model::UpdateFileSystemOntapConfiguration,
+            input: crate::model::UpdateFileSystemOntapConfiguration,
         ) -> Self {
-            self.inner = self.inner.ontap_configuration(inp);
+            self.inner = self.inner.ontap_configuration(input);
             self
         }
         /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
@@ -5906,9 +4797,9 @@ pub mod fluent_builders {
         /// <p>The configuration updates for an Amazon FSx for OpenZFS file system.</p>
         pub fn open_zfs_configuration(
             mut self,
-            inp: crate::model::UpdateFileSystemOpenZfsConfiguration,
+            input: crate::model::UpdateFileSystemOpenZfsConfiguration,
         ) -> Self {
-            self.inner = self.inner.open_zfs_configuration(inp);
+            self.inner = self.inner.open_zfs_configuration(input);
             self
         }
         /// <p>The configuration updates for an Amazon FSx for OpenZFS file system.</p>
@@ -5923,7 +4814,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSnapshot`.
     ///
     /// <p>Updates the name of a snapshot. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSnapshot<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5968,10 +4859,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSnapshotInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5979,16 +4870,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5997,8 +4884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the snapshot to update. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the snapshot to update. </p>
@@ -6006,14 +4893,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The ID of the snapshot that you want to update, in the format
-        /// <code>fsvolsnap-0123456789abcdef0</code>.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(inp);
+        /// <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(input.into());
             self
         }
-        /// <p>The ID of the snapshot that you want to update, in the format
-        /// <code>fsvolsnap-0123456789abcdef0</code>.</p>
+        /// <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_snapshot_id(input);
             self
@@ -6022,7 +4907,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateStorageVirtualMachine`.
     ///
     /// <p>Updates an Amazon FSx for ONTAP storage virtual machine (SVM).</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStorageVirtualMachine<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6067,10 +4952,10 @@ pub mod fluent_builders {
                 crate::input::UpdateStorageVirtualMachineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6081,9 +4966,9 @@ pub mod fluent_builders {
         /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
         pub fn active_directory_configuration(
             mut self,
-            inp: crate::model::UpdateSvmActiveDirectoryConfiguration,
+            input: crate::model::UpdateSvmActiveDirectoryConfiguration,
         ) -> Self {
-            self.inner = self.inner.active_directory_configuration(inp);
+            self.inner = self.inner.active_directory_configuration(input);
             self
         }
         /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
@@ -6094,16 +4979,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_active_directory_configuration(input);
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6112,8 +4993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
-        pub fn storage_virtual_machine_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_virtual_machine_id(inp);
+        pub fn storage_virtual_machine_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_virtual_machine_id(input.into());
             self
         }
         /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
@@ -6125,8 +5006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
-        pub fn svm_admin_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.svm_admin_password(inp);
+        pub fn svm_admin_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.svm_admin_password(input.into());
             self
         }
         /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
@@ -6141,7 +5022,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVolume`.
     ///
     /// <p>Updates the configuration of an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6186,10 +5067,10 @@ pub mod fluent_builders {
                 crate::input::UpdateVolumeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6197,16 +5078,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64
-        /// ASCII characters. This token is automatically filled on your behalf when you use the
-        /// Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+        /// <p>(Optional) An idempotency token for resource creation, in a string of up to 64 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6214,14 +5091,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>The ID of the volume that you want to update, in the format
-        /// <code>fsvol-0123456789abcdef0</code>.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(inp);
+        /// <p>The ID of the volume that you want to update, in the format <code>fsvol-0123456789abcdef0</code>.</p>
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(input.into());
             self
         }
-        /// <p>The ID of the volume that you want to update, in the format
-        /// <code>fsvol-0123456789abcdef0</code>.</p>
+        /// <p>The ID of the volume that you want to update, in the format <code>fsvol-0123456789abcdef0</code>.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_volume_id(input);
             self
@@ -6229,9 +5104,9 @@ pub mod fluent_builders {
         /// <p>The configuration of the ONTAP volume that you are updating.</p>
         pub fn ontap_configuration(
             mut self,
-            inp: crate::model::UpdateOntapVolumeConfiguration,
+            input: crate::model::UpdateOntapVolumeConfiguration,
         ) -> Self {
-            self.inner = self.inner.ontap_configuration(inp);
+            self.inner = self.inner.ontap_configuration(input);
             self
         }
         /// <p>The configuration of the ONTAP volume that you are updating.</p>
@@ -6242,16 +5117,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ontap_configuration(input);
             self
         }
-        /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named
-        /// <code>FSX</code>. Child volume names must be unique among their parent volume's
-        /// children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named
-        /// <code>FSX</code>. Child volume names must be unique among their parent volume's
-        /// children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
+        /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -6259,9 +5130,9 @@ pub mod fluent_builders {
         /// <p>The configuration of the OpenZFS volume that you are updating.</p>
         pub fn open_zfs_configuration(
             mut self,
-            inp: crate::model::UpdateOpenZfsVolumeConfiguration,
+            input: crate::model::UpdateOpenZfsVolumeConfiguration,
         ) -> Self {
-            self.inner = self.inner.open_zfs_configuration(inp);
+            self.inner = self.inner.open_zfs_configuration(input);
             self
         }
         /// <p>The configuration of the OpenZFS volume that you are updating.</p>
@@ -6274,6 +5145,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

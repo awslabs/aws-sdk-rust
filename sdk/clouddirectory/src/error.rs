@@ -12,12 +12,11 @@ pub struct AddFacetToObjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddFacetToObjectErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -29,8 +28,7 @@ pub enum AddFacetToObjectErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -81,8 +79,6 @@ impl AddFacetToObjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -197,14 +193,13 @@ pub struct ApplySchemaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ApplySchemaErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>Indicates that the provided ARN value is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes
-    /// with a link type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.</p>
+    /// <p>Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes with a link type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.</p>
     InvalidAttachmentException(crate::error::InvalidAttachmentException),
     /// <p>Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more information.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -212,11 +207,9 @@ pub enum ApplySchemaErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that a schema could not be created due to a naming conflict. Please select a
-    /// different name and then try again.</p>
+    /// <p>Indicates that a schema could not be created due to a naming conflict. Please select a different name and then try again.</p>
     SchemaAlreadyExistsException(crate::error::SchemaAlreadyExistsException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -267,8 +260,6 @@ impl ApplySchemaError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -371,31 +362,27 @@ pub struct AttachObjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachObjectErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>Indicates that the provided ARN value is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes
-    /// with a link type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.</p>
+    /// <p>Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes with a link type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.</p>
     InvalidAttachmentException(crate::error::InvalidAttachmentException),
     /// <p>Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more information.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Indicates that a link could not be created due to a naming conflict. Choose a different
-    /// name and then try again.</p>
+    /// <p>Indicates that a link could not be created due to a naming conflict. Choose a different name and then try again.</p>
     LinkNameAlreadyInUseException(crate::error::LinkNameAlreadyInUseException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -448,8 +435,6 @@ impl AttachObjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -568,7 +553,7 @@ pub struct AttachPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachPolicyErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -584,8 +569,7 @@ pub enum AttachPolicyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -636,8 +620,6 @@ impl AttachPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -737,7 +719,7 @@ pub struct AttachToIndexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachToIndexErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -747,13 +729,11 @@ pub enum AttachToIndexErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>Indicates that the provided ARN value is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes
-    /// with a link type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.</p>
+    /// <p>Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes with a link type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.</p>
     InvalidAttachmentException(crate::error::InvalidAttachmentException),
     /// <p>Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more information.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Indicates that a link could not be created due to a naming conflict. Choose a different
-    /// name and then try again.</p>
+    /// <p>Indicates that a link could not be created due to a naming conflict. Choose a different name and then try again.</p>
     LinkNameAlreadyInUseException(crate::error::LinkNameAlreadyInUseException),
     /// <p>Indicates that the requested operation can only operate on index objects.</p>
     NotIndexException(crate::error::NotIndexException),
@@ -761,8 +741,7 @@ pub enum AttachToIndexErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -816,8 +795,6 @@ impl AttachToIndexError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -944,19 +921,17 @@ pub struct AttachTypedLinkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachTypedLinkErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>Indicates that the provided ARN value is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes
-    /// with a link type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.</p>
+    /// <p>Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes with a link type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.</p>
     InvalidAttachmentException(crate::error::InvalidAttachmentException),
     /// <p>Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more information.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -964,8 +939,7 @@ pub enum AttachTypedLinkErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1017,8 +991,6 @@ impl AttachTypedLinkError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1135,7 +1107,7 @@ pub struct BatchReadError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchReadErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -1147,8 +1119,7 @@ pub enum BatchReadErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1197,8 +1168,6 @@ impl BatchReadError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1282,7 +1251,7 @@ pub struct BatchWriteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchWriteErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A <code>BatchWrite</code> exception has occurred.</p>
     BatchWriteException(crate::error::BatchWriteException),
@@ -1296,8 +1265,7 @@ pub enum BatchWriteErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1347,8 +1315,6 @@ impl BatchWriteError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1437,10 +1403,9 @@ pub struct CreateDirectoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDirectoryErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Indicates that a <a>Directory</a> could not be created due to a naming
-    /// conflict. Choose a different name and try again.</p>
+    /// <p>Indicates that a <code>Directory</code> could not be created due to a naming conflict. Choose a different name and try again.</p>
     DirectoryAlreadyExistsException(crate::error::DirectoryAlreadyExistsException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -1452,8 +1417,7 @@ pub enum CreateDirectoryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1503,8 +1467,6 @@ impl CreateDirectoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1605,12 +1567,11 @@ pub struct CreateFacetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFacetErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A facet with the same name already exists.</p>
     FacetAlreadyExistsException(crate::error::FacetAlreadyExistsException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -1624,8 +1585,7 @@ pub enum CreateFacetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1677,8 +1637,6 @@ impl CreateFacetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1786,12 +1744,11 @@ pub struct CreateIndexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateIndexErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -1799,8 +1756,7 @@ pub enum CreateIndexErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more information.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Indicates that a link could not be created due to a naming conflict. Choose a different
-    /// name and then try again.</p>
+    /// <p>Indicates that a link could not be created due to a naming conflict. Choose a different name and then try again.</p>
     LinkNameAlreadyInUseException(crate::error::LinkNameAlreadyInUseException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1808,8 +1764,7 @@ pub enum CreateIndexErrorKind {
     RetryableConflictException(crate::error::RetryableConflictException),
     /// <p>Indicates that the requested index type is not supported.</p>
     UnsupportedIndexTypeException(crate::error::UnsupportedIndexTypeException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1862,8 +1817,6 @@ impl CreateIndexError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1982,12 +1935,11 @@ pub struct CreateObjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateObjectErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -1995,8 +1947,7 @@ pub enum CreateObjectErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more information.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Indicates that a link could not be created due to a naming conflict. Choose a different
-    /// name and then try again.</p>
+    /// <p>Indicates that a link could not be created due to a naming conflict. Choose a different name and then try again.</p>
     LinkNameAlreadyInUseException(crate::error::LinkNameAlreadyInUseException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2004,8 +1955,7 @@ pub enum CreateObjectErrorKind {
     RetryableConflictException(crate::error::RetryableConflictException),
     /// <p>Indicates that the requested index type is not supported.</p>
     UnsupportedIndexTypeException(crate::error::UnsupportedIndexTypeException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2058,8 +2008,6 @@ impl CreateObjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2178,7 +2126,7 @@ pub struct CreateSchemaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSchemaErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -2188,11 +2136,9 @@ pub enum CreateSchemaErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that a schema could not be created due to a naming conflict. Please select a
-    /// different name and then try again.</p>
+    /// <p>Indicates that a schema could not be created due to a naming conflict. Please select a different name and then try again.</p>
     SchemaAlreadyExistsException(crate::error::SchemaAlreadyExistsException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2241,8 +2187,6 @@ impl CreateSchemaError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2329,12 +2273,11 @@ pub struct CreateTypedLinkFacetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTypedLinkFacetErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A facet with the same name already exists.</p>
     FacetAlreadyExistsException(crate::error::FacetAlreadyExistsException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -2348,8 +2291,7 @@ pub enum CreateTypedLinkFacetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2401,8 +2343,6 @@ impl CreateTypedLinkFacetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2525,10 +2465,9 @@ pub struct DeleteDirectoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDirectoryErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A directory that has been deleted and to which access has been attempted. Note: The
-    /// requested resource will eventually cease to exist.</p>
+    /// <p>A directory that has been deleted and to which access has been attempted. Note: The requested resource will eventually cease to exist.</p>
     DirectoryDeletedException(crate::error::DirectoryDeletedException),
     /// <p>An operation can only operate on a disabled directory.</p>
     DirectoryNotDisabledException(crate::error::DirectoryNotDisabledException),
@@ -2542,8 +2481,7 @@ pub enum DeleteDirectoryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2594,8 +2532,6 @@ impl DeleteDirectoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2704,12 +2640,11 @@ pub struct DeleteFacetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFacetErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when deleting a facet that contains an attribute that is a target to an
-    /// attribute reference in a different facet.</p>
+    /// <p>Occurs when deleting a facet that contains an attribute that is a target to an attribute reference in a different facet.</p>
     FacetInUseException(crate::error::FacetInUseException),
-    /// <p>The specified <a>Facet</a> could not be found.</p>
+    /// <p>The specified <code>Facet</code> could not be found.</p>
     FacetNotFoundException(crate::error::FacetNotFoundException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -2721,8 +2656,7 @@ pub enum DeleteFacetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2773,8 +2707,6 @@ impl DeleteFacetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2871,7 +2803,7 @@ pub struct DeleteObjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteObjectErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -2881,15 +2813,13 @@ pub enum DeleteObjectErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more information.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Indicates that the requested operation cannot be completed because the object has not
-    /// been detached from the tree.</p>
+    /// <p>Indicates that the requested operation cannot be completed because the object has not been detached from the tree.</p>
     ObjectNotDetachedException(crate::error::ObjectNotDetachedException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2940,8 +2870,6 @@ impl DeleteObjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3044,7 +2972,7 @@ pub struct DeleteSchemaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSchemaErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -3056,11 +2984,9 @@ pub enum DeleteSchemaErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>The object could not be deleted because links still exist. Remove the links and then
-    /// try the operation again.</p>
+    /// <p>The object could not be deleted because links still exist. Remove the links and then try the operation again.</p>
     StillContainsLinksException(crate::error::StillContainsLinksException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3110,8 +3036,6 @@ impl DeleteSchemaError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3206,9 +3130,9 @@ pub struct DeleteTypedLinkFacetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTypedLinkFacetErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The specified <a>Facet</a> could not be found.</p>
+    /// <p>The specified <code>Facet</code> could not be found.</p>
     FacetNotFoundException(crate::error::FacetNotFoundException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -3220,8 +3144,7 @@ pub enum DeleteTypedLinkFacetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3271,8 +3194,6 @@ impl DeleteTypedLinkFacetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3379,7 +3300,7 @@ pub struct DetachFromIndexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachFromIndexErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -3397,8 +3318,7 @@ pub enum DetachFromIndexErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3450,8 +3370,6 @@ impl DetachFromIndexError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3565,7 +3483,7 @@ pub struct DetachObjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachObjectErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -3575,15 +3493,13 @@ pub enum DetachObjectErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more information.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Occurs when any invalid operations are performed on an object that is not a node, such
-    /// as calling <code>ListObjectChildren</code> for a leaf node object.</p>
+    /// <p>Occurs when any invalid operations are performed on an object that is not a node, such as calling <code>ListObjectChildren</code> for a leaf node object.</p>
     NotNodeException(crate::error::NotNodeException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3634,8 +3550,6 @@ impl DetachObjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3735,7 +3649,7 @@ pub struct DetachPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachPolicyErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -3751,8 +3665,7 @@ pub enum DetachPolicyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3803,8 +3716,6 @@ impl DetachPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3904,12 +3815,11 @@ pub struct DetachTypedLinkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachTypedLinkErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -3921,8 +3831,7 @@ pub enum DetachTypedLinkErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3973,8 +3882,6 @@ impl DetachTypedLinkError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4083,10 +3990,9 @@ pub struct DisableDirectoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableDirectoryErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A directory that has been deleted and to which access has been attempted. Note: The
-    /// requested resource will eventually cease to exist.</p>
+    /// <p>A directory that has been deleted and to which access has been attempted. Note: The requested resource will eventually cease to exist.</p>
     DirectoryDeletedException(crate::error::DirectoryDeletedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -4098,8 +4004,7 @@ pub enum DisableDirectoryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4149,8 +4054,6 @@ impl DisableDirectoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4257,10 +4160,9 @@ pub struct EnableDirectoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableDirectoryErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A directory that has been deleted and to which access has been attempted. Note: The
-    /// requested resource will eventually cease to exist.</p>
+    /// <p>A directory that has been deleted and to which access has been attempted. Note: The requested resource will eventually cease to exist.</p>
     DirectoryDeletedException(crate::error::DirectoryDeletedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -4272,8 +4174,7 @@ pub enum EnableDirectoryErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4323,8 +4224,6 @@ impl EnableDirectoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4425,7 +4324,7 @@ pub struct GetAppliedSchemaVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAppliedSchemaVersionErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -4437,8 +4336,7 @@ pub enum GetAppliedSchemaVersionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4487,8 +4385,6 @@ impl GetAppliedSchemaVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4587,7 +4483,7 @@ pub struct GetDirectoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDirectoryErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -4597,8 +4493,7 @@ pub enum GetDirectoryErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4646,8 +4541,6 @@ impl GetDirectoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4726,9 +4619,9 @@ pub struct GetFacetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetFacetErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The specified <a>Facet</a> could not be found.</p>
+    /// <p>The specified <code>Facet</code> could not be found.</p>
     FacetNotFoundException(crate::error::FacetNotFoundException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -4740,8 +4633,7 @@ pub enum GetFacetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4791,8 +4683,6 @@ impl GetFacetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4875,12 +4765,11 @@ pub struct GetLinkAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLinkAttributesErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -4892,8 +4781,7 @@ pub enum GetLinkAttributesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4944,8 +4832,6 @@ impl GetLinkAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5060,12 +4946,11 @@ pub struct GetObjectAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetObjectAttributesErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -5077,8 +4962,7 @@ pub enum GetObjectAttributesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5129,8 +5013,6 @@ impl GetObjectAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5245,7 +5127,7 @@ pub struct GetObjectInformationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetObjectInformationErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -5259,8 +5141,7 @@ pub enum GetObjectInformationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5310,8 +5191,6 @@ impl GetObjectInformationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5418,7 +5297,7 @@ pub struct GetSchemaAsJsonError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSchemaAsJsonErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -5430,8 +5309,7 @@ pub enum GetSchemaAsJsonErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5480,8 +5358,6 @@ impl GetSchemaAsJsonError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5574,9 +5450,9 @@ pub struct GetTypedLinkFacetInformationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTypedLinkFacetInformationErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The specified <a>Facet</a> could not be found.</p>
+    /// <p>The specified <code>Facet</code> could not be found.</p>
     FacetNotFoundException(crate::error::FacetNotFoundException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -5590,8 +5466,7 @@ pub enum GetTypedLinkFacetInformationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5650,8 +5525,6 @@ impl GetTypedLinkFacetInformationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5772,7 +5645,7 @@ pub struct ListAppliedSchemaArnsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppliedSchemaArnsErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -5786,8 +5659,7 @@ pub enum ListAppliedSchemaArnsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5837,8 +5709,6 @@ impl ListAppliedSchemaArnsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5945,7 +5815,7 @@ pub struct ListAttachedIndicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAttachedIndicesErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -5959,8 +5829,7 @@ pub enum ListAttachedIndicesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6010,8 +5879,6 @@ impl ListAttachedIndicesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6118,7 +5985,7 @@ pub struct ListDevelopmentSchemaArnsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDevelopmentSchemaArnsErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -6132,8 +5999,7 @@ pub enum ListDevelopmentSchemaArnsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6183,8 +6049,6 @@ impl ListDevelopmentSchemaArnsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6291,7 +6155,7 @@ pub struct ListDirectoriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDirectoriesErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -6303,8 +6167,7 @@ pub enum ListDirectoriesErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6353,8 +6216,6 @@ impl ListDirectoriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6447,9 +6308,9 @@ pub struct ListFacetAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFacetAttributesErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The specified <a>Facet</a> could not be found.</p>
+    /// <p>The specified <code>Facet</code> could not be found.</p>
     FacetNotFoundException(crate::error::FacetNotFoundException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -6463,8 +6324,7 @@ pub enum ListFacetAttributesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6515,8 +6375,6 @@ impl ListFacetAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6631,7 +6489,7 @@ pub struct ListFacetNamesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFacetNamesErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -6645,8 +6503,7 @@ pub enum ListFacetNamesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6696,8 +6553,6 @@ impl ListFacetNamesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6798,12 +6653,11 @@ pub struct ListIncomingTypedLinksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListIncomingTypedLinksErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -6817,8 +6671,7 @@ pub enum ListIncomingTypedLinksErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6870,8 +6723,6 @@ impl ListIncomingTypedLinksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6994,12 +6845,11 @@ pub struct ListIndexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListIndexErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -7015,8 +6865,7 @@ pub enum ListIndexErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7069,8 +6918,6 @@ impl ListIndexError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7174,7 +7021,7 @@ pub struct ListManagedSchemaArnsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListManagedSchemaArnsErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -7184,8 +7031,7 @@ pub enum ListManagedSchemaArnsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7233,8 +7079,6 @@ impl ListManagedSchemaArnsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7325,12 +7169,11 @@ pub struct ListObjectAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListObjectAttributesErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -7344,8 +7187,7 @@ pub enum ListObjectAttributesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7397,8 +7239,6 @@ impl ListObjectAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7521,7 +7361,7 @@ pub struct ListObjectChildrenError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListObjectChildrenErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -7533,15 +7373,13 @@ pub enum ListObjectChildrenErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more information.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Occurs when any invalid operations are performed on an object that is not a node, such
-    /// as calling <code>ListObjectChildren</code> for a leaf node object.</p>
+    /// <p>Occurs when any invalid operations are performed on an object that is not a node, such as calling <code>ListObjectChildren</code> for a leaf node object.</p>
     NotNodeException(crate::error::NotNodeException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7593,8 +7431,6 @@ impl ListObjectChildrenError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7714,7 +7550,7 @@ pub struct ListObjectParentPathsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListObjectParentPathsErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -7730,8 +7566,7 @@ pub enum ListObjectParentPathsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7782,8 +7617,6 @@ impl ListObjectParentPathsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7898,9 +7731,9 @@ pub struct ListObjectParentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListObjectParentsErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Cannot list the parents of a <a>Directory</a> root.</p>
+    /// <p>Cannot list the parents of a <code>Directory</code> root.</p>
     CannotListParentOfRootException(crate::error::CannotListParentOfRootException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -7916,8 +7749,7 @@ pub enum ListObjectParentsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7969,8 +7801,6 @@ impl ListObjectParentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8093,7 +7923,7 @@ pub struct ListObjectPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListObjectPoliciesErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -8109,8 +7939,7 @@ pub enum ListObjectPoliciesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8161,8 +7990,6 @@ impl ListObjectPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8277,12 +8104,11 @@ pub struct ListOutgoingTypedLinksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListOutgoingTypedLinksErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -8296,8 +8122,7 @@ pub enum ListOutgoingTypedLinksErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8349,8 +8174,6 @@ impl ListOutgoingTypedLinksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8473,7 +8296,7 @@ pub struct ListPolicyAttachmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPolicyAttachmentsErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -8491,8 +8314,7 @@ pub enum ListPolicyAttachmentsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8544,8 +8366,6 @@ impl ListPolicyAttachmentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8668,7 +8488,7 @@ pub struct ListPublishedSchemaArnsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPublishedSchemaArnsErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -8682,8 +8502,7 @@ pub enum ListPublishedSchemaArnsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8733,8 +8552,6 @@ impl ListPublishedSchemaArnsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8841,7 +8658,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -8855,8 +8672,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8906,8 +8722,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9014,9 +8828,9 @@ pub struct ListTypedLinkFacetAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTypedLinkFacetAttributesErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The specified <a>Facet</a> could not be found.</p>
+    /// <p>The specified <code>Facet</code> could not be found.</p>
     FacetNotFoundException(crate::error::FacetNotFoundException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -9030,8 +8844,7 @@ pub enum ListTypedLinkFacetAttributesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9090,8 +8903,6 @@ impl ListTypedLinkFacetAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9212,7 +9023,7 @@ pub struct ListTypedLinkFacetNamesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTypedLinkFacetNamesErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -9226,8 +9037,7 @@ pub enum ListTypedLinkFacetNamesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9277,8 +9087,6 @@ impl ListTypedLinkFacetNamesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9385,7 +9193,7 @@ pub struct LookupPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum LookupPolicyErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
@@ -9401,8 +9209,7 @@ pub enum LookupPolicyErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9453,8 +9260,6 @@ impl LookupPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9557,7 +9362,7 @@ pub struct PublishSchemaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PublishSchemaErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -9571,8 +9376,7 @@ pub enum PublishSchemaErrorKind {
     RetryableConflictException(crate::error::RetryableConflictException),
     /// <p>Indicates that a schema is already published.</p>
     SchemaAlreadyPublishedException(crate::error::SchemaAlreadyPublishedException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9622,8 +9426,6 @@ impl PublishSchemaError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9721,7 +9523,7 @@ pub struct PutSchemaFromJsonError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutSchemaFromJsonErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -9735,8 +9537,7 @@ pub enum PutSchemaFromJsonErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9786,8 +9587,6 @@ impl PutSchemaFromJsonError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9894,12 +9693,11 @@ pub struct RemoveFacetFromObjectError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveFacetFromObjectErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -9911,8 +9709,7 @@ pub enum RemoveFacetFromObjectErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9963,8 +9760,6 @@ impl RemoveFacetFromObjectError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10079,7 +9874,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -10093,8 +9888,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10144,8 +9938,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10240,7 +10032,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -10254,8 +10046,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10305,8 +10096,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10404,19 +10193,17 @@ pub struct UpdateFacetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFacetErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The specified <a>Facet</a> could not be found.</p>
+    /// <p>The specified <code>Facet</code> could not be found.</p>
     FacetNotFoundException(crate::error::FacetNotFoundException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>Indicates that the provided ARN value is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>An attempt to modify a <a>Facet</a> resulted in an invalid schema
-    /// exception.</p>
+    /// <p>An attempt to modify a <code>Facet</code> resulted in an invalid schema exception.</p>
     InvalidFacetUpdateException(crate::error::InvalidFacetUpdateException),
     /// <p>Occurs when any of the rule parameter keys or values are invalid.</p>
     InvalidRuleException(crate::error::InvalidRuleException),
@@ -10426,8 +10213,7 @@ pub enum UpdateFacetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10480,8 +10266,6 @@ impl UpdateFacetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10594,12 +10378,11 @@ pub struct UpdateLinkAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateLinkAttributesErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -10611,8 +10394,7 @@ pub enum UpdateLinkAttributesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10663,8 +10445,6 @@ impl UpdateLinkAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10779,12 +10559,11 @@ pub struct UpdateObjectAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateObjectAttributesErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Operations are only permitted on enabled directories.</p>
     DirectoryNotEnabledException(crate::error::DirectoryNotEnabledException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -10792,15 +10571,13 @@ pub enum UpdateObjectAttributesErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more information.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Indicates that a link could not be created due to a naming conflict. Choose a different
-    /// name and then try again.</p>
+    /// <p>Indicates that a link could not be created due to a naming conflict. Choose a different name and then try again.</p>
     LinkNameAlreadyInUseException(crate::error::LinkNameAlreadyInUseException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10852,8 +10629,6 @@ impl UpdateObjectAttributesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -10976,7 +10751,7 @@ pub struct UpdateSchemaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSchemaErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
@@ -10988,8 +10763,7 @@ pub enum UpdateSchemaErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11038,8 +10812,6 @@ impl UpdateSchemaError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11126,19 +10898,17 @@ pub struct UpdateTypedLinkFacetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTypedLinkFacetErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The specified <a>Facet</a> could not be found.</p>
+    /// <p>The specified <code>Facet</code> could not be found.</p>
     FacetNotFoundException(crate::error::FacetNotFoundException),
-    /// <p>The <a>Facet</a> that you provided was not well formed or could not be
-    /// validated with the schema.</p>
+    /// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
     FacetValidationException(crate::error::FacetValidationException),
     /// <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>Indicates that the provided ARN value is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>An attempt to modify a <a>Facet</a> resulted in an invalid schema
-    /// exception.</p>
+    /// <p>An attempt to modify a <code>Facet</code> resulted in an invalid schema exception.</p>
     InvalidFacetUpdateException(crate::error::InvalidFacetUpdateException),
     /// <p>Occurs when any of the rule parameter keys or values are invalid.</p>
     InvalidRuleException(crate::error::InvalidRuleException),
@@ -11148,8 +10918,7 @@ pub enum UpdateTypedLinkFacetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11202,8 +10971,6 @@ impl UpdateTypedLinkFacetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11334,7 +11101,7 @@ pub struct UpgradeAppliedSchemaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpgradeAppliedSchemaErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a failure occurred while performing a check for backward compatibility between the specified schema and the schema that is currently applied to the directory.</p>
     IncompatibleSchemaException(crate::error::IncompatibleSchemaException),
@@ -11342,18 +11109,15 @@ pub enum UpgradeAppliedSchemaErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>Indicates that the provided ARN value is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes
-    /// with a link type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.</p>
+    /// <p>Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes with a link type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.</p>
     InvalidAttachmentException(crate::error::InvalidAttachmentException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that a schema could not be created due to a naming conflict. Please select a
-    /// different name and then try again.</p>
+    /// <p>Indicates that a schema could not be created due to a naming conflict. Please select a different name and then try again.</p>
     SchemaAlreadyExistsException(crate::error::SchemaAlreadyExistsException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11404,8 +11168,6 @@ impl UpgradeAppliedSchemaError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11520,7 +11282,7 @@ pub struct UpgradePublishedSchemaError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpgradePublishedSchemaErrorKind {
-    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+    /// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Indicates a failure occurred while performing a check for backward compatibility between the specified schema and the schema that is currently applied to the directory.</p>
     IncompatibleSchemaException(crate::error::IncompatibleSchemaException),
@@ -11528,8 +11290,7 @@ pub enum UpgradePublishedSchemaErrorKind {
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>Indicates that the provided ARN value is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes
-    /// with a link type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.</p>
+    /// <p>Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes with a link type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.</p>
     InvalidAttachmentException(crate::error::InvalidAttachmentException),
     /// <p>Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more information.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -11537,8 +11298,7 @@ pub enum UpgradePublishedSchemaErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     RetryableConflictException(crate::error::RetryableConflictException),
-    /// <p>Indicates that your request is malformed in some manner. See the exception
-    /// message.</p>
+    /// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11589,8 +11349,6 @@ impl UpgradePublishedSchemaError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -11692,8 +11450,7 @@ impl std::error::Error for UpgradePublishedSchemaError {
     }
 }
 
-/// <p>Indicates that your request is malformed in some manner. See the exception
-/// message.</p>
+/// <p>Indicates that your request is malformed in some manner. See the exception message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -11949,8 +11706,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes
-/// with a link type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.</p>
+/// <p>Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes with a link type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAttachmentException {
@@ -12206,7 +11962,7 @@ impl IncompatibleSchemaException {
     }
 }
 
-/// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
+/// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <code>ListDirectories</code> and check your permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -12270,8 +12026,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>Indicates that a schema could not be created due to a naming conflict. Please select a
-/// different name and then try again.</p>
+/// <p>Indicates that a schema could not be created due to a naming conflict. Please select a different name and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaAlreadyExistsException {
@@ -12399,8 +12154,7 @@ impl InvalidRuleException {
     }
 }
 
-/// <p>An attempt to modify a <a>Facet</a> resulted in an invalid schema
-/// exception.</p>
+/// <p>An attempt to modify a <code>Facet</code> resulted in an invalid schema exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFacetUpdateException {
@@ -12464,8 +12218,7 @@ impl InvalidFacetUpdateException {
     }
 }
 
-/// <p>The <a>Facet</a> that you provided was not well formed or could not be
-/// validated with the schema.</p>
+/// <p>The <code>Facet</code> that you provided was not well formed or could not be validated with the schema.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FacetValidationException {
@@ -12529,7 +12282,7 @@ impl FacetValidationException {
     }
 }
 
-/// <p>The specified <a>Facet</a> could not be found.</p>
+/// <p>The specified <code>Facet</code> could not be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FacetNotFoundException {
@@ -12593,8 +12346,7 @@ impl FacetNotFoundException {
     }
 }
 
-/// <p>Indicates that a link could not be created due to a naming conflict. Choose a different
-/// name and then try again.</p>
+/// <p>Indicates that a link could not be created due to a naming conflict. Choose a different name and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LinkNameAlreadyInUseException {
@@ -13042,7 +12794,7 @@ impl NotPolicyException {
     }
 }
 
-/// <p>Cannot list the parents of a <a>Directory</a> root.</p>
+/// <p>Cannot list the parents of a <code>Directory</code> root.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CannotListParentOfRootException {
@@ -13106,8 +12858,7 @@ impl CannotListParentOfRootException {
     }
 }
 
-/// <p>Occurs when any invalid operations are performed on an object that is not a node, such
-/// as calling <code>ListObjectChildren</code> for a leaf node object.</p>
+/// <p>Occurs when any invalid operations are performed on an object that is not a node, such as calling <code>ListObjectChildren</code> for a leaf node object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotNodeException {
@@ -13235,8 +12986,7 @@ impl NotIndexException {
     }
 }
 
-/// <p>A directory that has been deleted and to which access has been attempted. Note: The
-/// requested resource will eventually cease to exist.</p>
+/// <p>A directory that has been deleted and to which access has been attempted. Note: The requested resource will eventually cease to exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryDeletedException {
@@ -13364,8 +13114,7 @@ impl ObjectAlreadyDetachedException {
     }
 }
 
-/// <p>The object could not be deleted because links still exist. Remove the links and then
-/// try the operation again.</p>
+/// <p>The object could not be deleted because links still exist. Remove the links and then try the operation again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StillContainsLinksException {
@@ -13429,8 +13178,7 @@ impl StillContainsLinksException {
     }
 }
 
-/// <p>Indicates that the requested operation cannot be completed because the object has not
-/// been detached from the tree.</p>
+/// <p>Indicates that the requested operation cannot be completed because the object has not been detached from the tree.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectNotDetachedException {
@@ -13494,8 +13242,7 @@ impl ObjectNotDetachedException {
     }
 }
 
-/// <p>Occurs when deleting a facet that contains an attribute that is a target to an
-/// attribute reference in a different facet.</p>
+/// <p>Occurs when deleting a facet that contains an attribute that is a target to an attribute reference in a different facet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FacetInUseException {
@@ -13751,8 +13498,7 @@ impl UnsupportedIndexTypeException {
     }
 }
 
-/// <p>Indicates that a <a>Directory</a> could not be created due to a naming
-/// conflict. Choose a different name and try again.</p>
+/// <p>Indicates that a <code>Directory</code> could not be created due to a naming conflict. Choose a different name and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryAlreadyExistsException {

@@ -453,6 +453,119 @@ pub fn parse_describe_rx_norm_inference_job_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_snomedct_inference_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeSnomedctInferenceJobOutput,
+    crate::error::DescribeSNOMEDCTInferenceJobError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeSNOMEDCTInferenceJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeSNOMEDCTInferenceJobError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::DescribeSNOMEDCTInferenceJobError {
+            meta: generic,
+            kind: crate::error::DescribeSNOMEDCTInferenceJobErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSNOMEDCTInferenceJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::DescribeSNOMEDCTInferenceJobError {
+            meta: generic,
+            kind: crate::error::DescribeSNOMEDCTInferenceJobErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSNOMEDCTInferenceJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::DescribeSNOMEDCTInferenceJobError {
+            meta: generic,
+            kind: crate::error::DescribeSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSNOMEDCTInferenceJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyRequestsException" => crate::error::DescribeSNOMEDCTInferenceJobError {
+            meta: generic,
+            kind: crate::error::DescribeSNOMEDCTInferenceJobErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSNOMEDCTInferenceJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeSNOMEDCTInferenceJobError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_snomedct_inference_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeSnomedctInferenceJobOutput,
+    crate::error::DescribeSNOMEDCTInferenceJobError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_snomedct_inference_job_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_crate_operation_describe_snomedct_inference_job(
+                response.body().as_ref(),
+                output,
+            )
+            .map_err(crate::error::DescribeSNOMEDCTInferenceJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_detect_entities_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetectEntitiesOutput, crate::error::DetectEntitiesError> {
@@ -1145,6 +1258,144 @@ pub fn parse_infer_rx_norm_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_infer_snomedct_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::InferSnomedctOutput, crate::error::InferSNOMEDCTError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::InferSNOMEDCTError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::InferSNOMEDCTError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::InferSNOMEDCTError {
+            meta: generic,
+            kind: crate::error::InferSNOMEDCTErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferSNOMEDCTError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidEncodingException" => crate::error::InferSNOMEDCTError {
+            meta: generic,
+            kind: crate::error::InferSNOMEDCTErrorKind::InvalidEncodingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_encoding_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_encoding_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferSNOMEDCTError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::InferSNOMEDCTError {
+            meta: generic,
+            kind: crate::error::InferSNOMEDCTErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferSNOMEDCTError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => crate::error::InferSNOMEDCTError {
+            meta: generic,
+            kind: crate::error::InferSNOMEDCTErrorKind::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferSNOMEDCTError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TextSizeLimitExceededException" => crate::error::InferSNOMEDCTError {
+            meta: generic,
+            kind: crate::error::InferSNOMEDCTErrorKind::TextSizeLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::text_size_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_text_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferSNOMEDCTError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyRequestsException" => crate::error::InferSNOMEDCTError {
+            meta: generic,
+            kind: crate::error::InferSNOMEDCTErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferSNOMEDCTError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::InferSNOMEDCTError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_infer_snomedct_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::InferSnomedctOutput, crate::error::InferSNOMEDCTError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::infer_snomedct_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_infer_snomedct(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::InferSNOMEDCTError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_entities_detection_v2_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -1585,6 +1836,118 @@ pub fn parse_list_rx_norm_inference_jobs_response(
             output,
         )
         .map_err(crate::error::ListRxNormInferenceJobsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_snomedct_inference_jobs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListSnomedctInferenceJobsOutput,
+    crate::error::ListSNOMEDCTInferenceJobsError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListSNOMEDCTInferenceJobsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListSNOMEDCTInferenceJobsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::ListSNOMEDCTInferenceJobsError {
+            meta: generic,
+            kind: crate::error::ListSNOMEDCTInferenceJobsErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSNOMEDCTInferenceJobsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::ListSNOMEDCTInferenceJobsError {
+            meta: generic,
+            kind: crate::error::ListSNOMEDCTInferenceJobsErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSNOMEDCTInferenceJobsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyRequestsException" => crate::error::ListSNOMEDCTInferenceJobsError {
+            meta: generic,
+            kind: crate::error::ListSNOMEDCTInferenceJobsErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSNOMEDCTInferenceJobsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationException" => crate::error::ListSNOMEDCTInferenceJobsError {
+            meta: generic,
+            kind: crate::error::ListSNOMEDCTInferenceJobsErrorKind::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSNOMEDCTInferenceJobsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListSNOMEDCTInferenceJobsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_snomedct_inference_jobs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListSnomedctInferenceJobsOutput,
+    crate::error::ListSNOMEDCTInferenceJobsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_snomedct_inference_jobs_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_list_snomedct_inference_jobs(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListSNOMEDCTInferenceJobsError::unhandled)?;
         output.build()
     })
 }
@@ -2035,6 +2398,118 @@ pub fn parse_start_rx_norm_inference_job_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_snomedct_inference_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartSnomedctInferenceJobOutput,
+    crate::error::StartSNOMEDCTInferenceJobError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StartSNOMEDCTInferenceJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::StartSNOMEDCTInferenceJobError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::StartSNOMEDCTInferenceJobError {
+            meta: generic,
+            kind: crate::error::StartSNOMEDCTInferenceJobErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSNOMEDCTInferenceJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::StartSNOMEDCTInferenceJobError {
+            meta: generic,
+            kind: crate::error::StartSNOMEDCTInferenceJobErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSNOMEDCTInferenceJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::StartSNOMEDCTInferenceJobError {
+            meta: generic,
+            kind: crate::error::StartSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSNOMEDCTInferenceJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyRequestsException" => crate::error::StartSNOMEDCTInferenceJobError {
+            meta: generic,
+            kind: crate::error::StartSNOMEDCTInferenceJobErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSNOMEDCTInferenceJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::StartSNOMEDCTInferenceJobError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_snomedct_inference_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartSnomedctInferenceJobOutput,
+    crate::error::StartSNOMEDCTInferenceJobError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::start_snomedct_inference_job_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_start_snomedct_inference_job(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StartSNOMEDCTInferenceJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_entities_detection_v2_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -2406,6 +2881,118 @@ pub fn parse_stop_rx_norm_inference_job_response(
             output,
         )
         .map_err(crate::error::StopRxNormInferenceJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_snomedct_inference_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopSnomedctInferenceJobOutput,
+    crate::error::StopSNOMEDCTInferenceJobError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StopSNOMEDCTInferenceJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::StopSNOMEDCTInferenceJobError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::StopSNOMEDCTInferenceJobError {
+            meta: generic,
+            kind: crate::error::StopSNOMEDCTInferenceJobErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopSNOMEDCTInferenceJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::StopSNOMEDCTInferenceJobError {
+            meta: generic,
+            kind: crate::error::StopSNOMEDCTInferenceJobErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopSNOMEDCTInferenceJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => crate::error::StopSNOMEDCTInferenceJobError {
+            meta: generic,
+            kind: crate::error::StopSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopSNOMEDCTInferenceJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "TooManyRequestsException" => crate::error::StopSNOMEDCTInferenceJobError {
+            meta: generic,
+            kind: crate::error::StopSNOMEDCTInferenceJobErrorKind::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopSNOMEDCTInferenceJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::StopSNOMEDCTInferenceJobError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_snomedct_inference_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopSnomedctInferenceJobOutput,
+    crate::error::StopSNOMEDCTInferenceJobError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::stop_snomedct_inference_job_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_crate_operation_stop_snomedct_inference_job(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::StopSNOMEDCTInferenceJobError::unhandled)?;
         output.build()
     })
 }

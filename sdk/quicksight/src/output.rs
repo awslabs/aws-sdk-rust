@@ -178,9 +178,9 @@ pub mod update_theme_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>The resulting list of resource permissions for the theme.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -565,9 +565,9 @@ pub mod update_template_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of resource permissions to be set on the template.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -968,8 +968,7 @@ pub struct UpdateIamPolicyAssignmentOutput {
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The ID of the assignment.</p>
     pub assignment_id: std::option::Option<std::string::String>,
-    /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this
-    /// assignment.</p>
+    /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this assignment.</p>
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon QuickSight users, groups, or both that the IAM policy is assigned to.</p>
     pub identities: std::option::Option<
@@ -977,20 +976,9 @@ pub struct UpdateIamPolicyAssignmentOutput {
     >,
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-    /// source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-    /// data source.</p>
-    /// </li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
@@ -1007,8 +995,7 @@ impl UpdateIamPolicyAssignmentOutput {
     pub fn assignment_id(&self) -> std::option::Option<&str> {
         self.assignment_id.as_deref()
     }
-    /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this
-    /// assignment.</p>
+    /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this assignment.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
@@ -1022,20 +1009,9 @@ impl UpdateIamPolicyAssignmentOutput {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-    /// source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-    /// data source.</p>
-    /// </li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
         self.assignment_status.as_ref()
@@ -1105,14 +1081,12 @@ pub mod update_iam_policy_assignment_output {
             self.assignment_id = input;
             self
         }
-        /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this
-        /// assignment.</p>
+        /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this assignment.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
         }
-        /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this
-        /// assignment.</p>
+        /// <p>The ARN for the IAM policy applied to the Amazon QuickSight users and groups specified in this assignment.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -1125,10 +1099,10 @@ pub mod update_iam_policy_assignment_output {
         pub fn identities(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.identities.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.identities = Some(hash_map);
             self
         }
@@ -1144,20 +1118,9 @@ pub mod update_iam_policy_assignment_output {
         }
         /// <p>The status of the assignment. Possible values are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-        /// source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-        /// data source.</p>
-        /// </li>
+        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
         /// </ul>
         pub fn assignment_status(mut self, input: crate::model::AssignmentStatus) -> Self {
             self.assignment_status = Some(input);
@@ -1165,20 +1128,9 @@ pub mod update_iam_policy_assignment_output {
         }
         /// <p>The status of the assignment. Possible values are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-        /// source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-        /// data source.</p>
-        /// </li>
+        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
         /// </ul>
         pub fn set_assignment_status(
             mut self,
@@ -1417,9 +1369,9 @@ pub mod update_folder_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>Information about the permissions for the folder.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -1830,8 +1782,7 @@ impl UpdateDataSourceOutput {
 pub struct UpdateDataSetPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub data_set_arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-    /// Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -1843,8 +1794,7 @@ impl UpdateDataSetPermissionsOutput {
     pub fn data_set_arn(&self) -> std::option::Option<&str> {
         self.data_set_arn.as_deref()
     }
-    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-    /// Amazon Web Services Region for each Amazon Web Services account.</p>
+    /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
@@ -1889,14 +1839,12 @@ pub mod update_data_set_permissions_output {
             self.data_set_arn = input;
             self
         }
-        /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-        /// Amazon Web Services Region for each Amazon Web Services account.</p>
+        /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
         }
-        /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-        /// Amazon Web Services Region for each Amazon Web Services account.</p>
+        /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_set_id = input;
             self
@@ -1947,11 +1895,9 @@ pub struct UpdateDataSetOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
-    /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import
-    /// mode is SPICE.</p>
+    /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
     pub ingestion_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import
-    /// mode is SPICE.</p>
+    /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
     pub ingestion_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -1967,13 +1913,11 @@ impl UpdateDataSetOutput {
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
-    /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import
-    /// mode is SPICE.</p>
+    /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
     pub fn ingestion_arn(&self) -> std::option::Option<&str> {
         self.ingestion_arn.as_deref()
     }
-    /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import
-    /// mode is SPICE.</p>
+    /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
     pub fn ingestion_id(&self) -> std::option::Option<&str> {
         self.ingestion_id.as_deref()
     }
@@ -2032,14 +1976,12 @@ pub mod update_data_set_output {
             self.data_set_id = input;
             self
         }
-        /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import
-        /// mode is SPICE.</p>
+        /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
         pub fn ingestion_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.ingestion_arn = Some(input.into());
             self
         }
-        /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import
-        /// mode is SPICE.</p>
+        /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
         pub fn set_ingestion_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2047,14 +1989,12 @@ pub mod update_data_set_output {
             self.ingestion_arn = input;
             self
         }
-        /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import
-        /// mode is SPICE.</p>
+        /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
         pub fn ingestion_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ingestion_id = Some(input.into());
             self
         }
-        /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import
-        /// mode is SPICE.</p>
+        /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
         pub fn set_ingestion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ingestion_id = input;
             self
@@ -2317,9 +2257,9 @@ pub mod update_dashboard_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>Information about the permissions on the dashboard.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -2547,8 +2487,7 @@ pub struct UpdateAnalysisPermissionsOutput {
     pub analysis_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the analysis that you updated permissions for.</p>
     pub analysis_id: std::option::Option<std::string::String>,
-    /// <p>A structure that describes the principals and the resource-level permissions on an
-    /// analysis.</p>
+    /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -2564,8 +2503,7 @@ impl UpdateAnalysisPermissionsOutput {
     pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
-    /// <p>A structure that describes the principals and the resource-level permissions on an
-    /// analysis.</p>
+    /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
@@ -2627,16 +2565,14 @@ pub mod update_analysis_permissions_output {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>A structure that describes the principals and the resource-level permissions on an
-        /// analysis.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
-        /// <p>A structure that describes the principals and the resource-level permissions on an
-        /// analysis.</p>
+        /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -2895,8 +2831,7 @@ impl UpdateAccountSettingsOutput {
 pub struct UpdateAccountCustomizationOutput {
     /// <p>The Amazon Resource Name (ARN) for the updated customization for this Amazon Web Services account.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
-    /// for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace associated with the customization that you're updating.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -2912,8 +2847,7 @@ impl UpdateAccountCustomizationOutput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
-    /// for.</p>
+    /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
@@ -2972,14 +2906,12 @@ pub mod update_account_customization_output {
             self.arn = input;
             self
         }
-        /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
-        /// for.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
         }
-        /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
-        /// for.</p>
+        /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3265,12 +3197,9 @@ pub mod search_folders_output {
         /// To override the contents of this collection use [`set_folder_summary_list`](Self::set_folder_summary_list).
         ///
         /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
-        pub fn folder_summary_list(
-            mut self,
-            input: impl Into<crate::model::FolderSummary>,
-        ) -> Self {
+        pub fn folder_summary_list(mut self, input: crate::model::FolderSummary) -> Self {
             let mut v = self.folder_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.folder_summary_list = Some(v);
             self
         }
@@ -3324,8 +3253,7 @@ impl SearchFoldersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchDashboardsOutput {
-    /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your
-    /// request.</p>
+    /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
     pub dashboard_summary_list: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -3335,8 +3263,7 @@ pub struct SearchDashboardsOutput {
     pub request_id: std::option::Option<std::string::String>,
 }
 impl SearchDashboardsOutput {
-    /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your
-    /// request.</p>
+    /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
     pub fn dashboard_summary_list(&self) -> std::option::Option<&[crate::model::DashboardSummary]> {
         self.dashboard_summary_list.as_deref()
     }
@@ -3380,19 +3307,14 @@ pub mod search_dashboards_output {
         ///
         /// To override the contents of this collection use [`set_dashboard_summary_list`](Self::set_dashboard_summary_list).
         ///
-        /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your
-        /// request.</p>
-        pub fn dashboard_summary_list(
-            mut self,
-            input: impl Into<crate::model::DashboardSummary>,
-        ) -> Self {
+        /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
+        pub fn dashboard_summary_list(mut self, input: crate::model::DashboardSummary) -> Self {
             let mut v = self.dashboard_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dashboard_summary_list = Some(v);
             self
         }
-        /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your
-        /// request.</p>
+        /// <p>The list of dashboards owned by the user specified in <code>Filters</code> in your request.</p>
         pub fn set_dashboard_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
@@ -3454,8 +3376,7 @@ impl SearchDashboardsOutput {
 pub struct SearchAnalysesOutput {
     /// <p>Metadata describing the analyses that you searched for.</p>
     pub analysis_summary_list: std::option::Option<std::vec::Vec<crate::model::AnalysisSummary>>,
-    /// <p>A pagination token that can be used in a subsequent request.
-    /// </p>
+    /// <p>A pagination token that can be used in a subsequent request. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -3467,8 +3388,7 @@ impl SearchAnalysesOutput {
     pub fn analysis_summary_list(&self) -> std::option::Option<&[crate::model::AnalysisSummary]> {
         self.analysis_summary_list.as_deref()
     }
-    /// <p>A pagination token that can be used in a subsequent request.
-    /// </p>
+    /// <p>A pagination token that can be used in a subsequent request. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3509,12 +3429,9 @@ pub mod search_analyses_output {
         /// To override the contents of this collection use [`set_analysis_summary_list`](Self::set_analysis_summary_list).
         ///
         /// <p>Metadata describing the analyses that you searched for.</p>
-        pub fn analysis_summary_list(
-            mut self,
-            input: impl Into<crate::model::AnalysisSummary>,
-        ) -> Self {
+        pub fn analysis_summary_list(mut self, input: crate::model::AnalysisSummary) -> Self {
             let mut v = self.analysis_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analysis_summary_list = Some(v);
             self
         }
@@ -3526,14 +3443,12 @@ pub mod search_analyses_output {
             self.analysis_summary_list = input;
             self
         }
-        /// <p>A pagination token that can be used in a subsequent request.
-        /// </p>
+        /// <p>A pagination token that can be used in a subsequent request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token that can be used in a subsequent request.
-        /// </p>
+        /// <p>A pagination token that can be used in a subsequent request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3584,8 +3499,7 @@ pub struct RestoreAnalysisOutput {
     pub status: i32,
     /// <p>The Amazon Resource Name (ARN) of the analysis that you're restoring.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the analysis that you're restoring.
-    /// </p>
+    /// <p>The ID of the analysis that you're restoring. </p>
     pub analysis_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -3599,8 +3513,7 @@ impl RestoreAnalysisOutput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ID of the analysis that you're restoring.
-    /// </p>
+    /// <p>The ID of the analysis that you're restoring. </p>
     pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
@@ -3651,14 +3564,12 @@ pub mod restore_analysis_output {
             self.arn = input;
             self
         }
-        /// <p>The ID of the analysis that you're restoring.
-        /// </p>
+        /// <p>The ID of the analysis that you're restoring. </p>
         pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.analysis_id = Some(input.into());
             self
         }
-        /// <p>The ID of the analysis that you're restoring.
-        /// </p>
+        /// <p>The ID of the analysis that you're restoring. </p>
         pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analysis_id = input;
             self
@@ -3697,8 +3608,7 @@ impl RestoreAnalysisOutput {
 pub struct RegisterUserOutput {
     /// <p>The user's user name.</p>
     pub user: std::option::Option<crate::model::User>,
-    /// <p>The URL the user visits to complete registration and provide a password. This is
-    /// returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
+    /// <p>The URL the user visits to complete registration and provide a password. This is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
     pub user_invitation_url: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -3710,8 +3620,7 @@ impl RegisterUserOutput {
     pub fn user(&self) -> std::option::Option<&crate::model::User> {
         self.user.as_ref()
     }
-    /// <p>The URL the user visits to complete registration and provide a password. This is
-    /// returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
+    /// <p>The URL the user visits to complete registration and provide a password. This is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
     pub fn user_invitation_url(&self) -> std::option::Option<&str> {
         self.user_invitation_url.as_deref()
     }
@@ -3756,14 +3665,12 @@ pub mod register_user_output {
             self.user = input;
             self
         }
-        /// <p>The URL the user visits to complete registration and provide a password. This is
-        /// returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
+        /// <p>The URL the user visits to complete registration and provide a password. This is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
         pub fn user_invitation_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_invitation_url = Some(input.into());
             self
         }
-        /// <p>The URL the user visits to complete registration and provide a password. This is
-        /// returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
+        /// <p>The URL the user visits to complete registration and provide a password. This is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
         pub fn set_user_invitation_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3867,9 +3774,9 @@ pub mod list_users_output {
         /// To override the contents of this collection use [`set_user_list`](Self::set_user_list).
         ///
         /// <p>The list of users.</p>
-        pub fn user_list(mut self, input: impl Into<crate::model::User>) -> Self {
+        pub fn user_list(mut self, input: crate::model::User) -> Self {
             let mut v = self.user_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_list = Some(v);
             self
         }
@@ -3987,9 +3894,9 @@ pub mod list_user_groups_output {
         /// To override the contents of this collection use [`set_group_list`](Self::set_group_list).
         ///
         /// <p>The list of groups the user is a member of.</p>
-        pub fn group_list(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn group_list(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_list = Some(v);
             self
         }
@@ -4116,10 +4023,10 @@ pub mod list_theme_versions_output {
         /// <p>A structure containing a list of all the versions of the specified theme.</p>
         pub fn theme_version_summary_list(
             mut self,
-            input: impl Into<crate::model::ThemeVersionSummary>,
+            input: crate::model::ThemeVersionSummary,
         ) -> Self {
             let mut v = self.theme_version_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.theme_version_summary_list = Some(v);
             self
         }
@@ -4238,9 +4145,9 @@ pub mod list_themes_output {
         /// To override the contents of this collection use [`set_theme_summary_list`](Self::set_theme_summary_list).
         ///
         /// <p>Information about the themes in the list.</p>
-        pub fn theme_summary_list(mut self, input: impl Into<crate::model::ThemeSummary>) -> Self {
+        pub fn theme_summary_list(mut self, input: crate::model::ThemeSummary) -> Self {
             let mut v = self.theme_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.theme_summary_list = Some(v);
             self
         }
@@ -4358,9 +4265,9 @@ pub mod list_theme_aliases_output {
         /// To override the contents of this collection use [`set_theme_alias_list`](Self::set_theme_alias_list).
         ///
         /// <p>A structure containing the list of the theme's aliases.</p>
-        pub fn theme_alias_list(mut self, input: impl Into<crate::model::ThemeAlias>) -> Self {
+        pub fn theme_alias_list(mut self, input: crate::model::ThemeAlias) -> Self {
             let mut v = self.theme_alias_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.theme_alias_list = Some(v);
             self
         }
@@ -4487,10 +4394,10 @@ pub mod list_template_versions_output {
         /// <p>A structure containing a list of all the versions of the specified template.</p>
         pub fn template_version_summary_list(
             mut self,
-            input: impl Into<crate::model::TemplateVersionSummary>,
+            input: crate::model::TemplateVersionSummary,
         ) -> Self {
             let mut v = self.template_version_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.template_version_summary_list = Some(v);
             self
         }
@@ -4609,12 +4516,9 @@ pub mod list_templates_output {
         /// To override the contents of this collection use [`set_template_summary_list`](Self::set_template_summary_list).
         ///
         /// <p>A structure containing information about the templates in the list.</p>
-        pub fn template_summary_list(
-            mut self,
-            input: impl Into<crate::model::TemplateSummary>,
-        ) -> Self {
+        pub fn template_summary_list(mut self, input: crate::model::TemplateSummary) -> Self {
             let mut v = self.template_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.template_summary_list = Some(v);
             self
         }
@@ -4733,12 +4637,9 @@ pub mod list_template_aliases_output {
         /// To override the contents of this collection use [`set_template_alias_list`](Self::set_template_alias_list).
         ///
         /// <p>A structure containing the list of the template's aliases.</p>
-        pub fn template_alias_list(
-            mut self,
-            input: impl Into<crate::model::TemplateAlias>,
-        ) -> Self {
+        pub fn template_alias_list(mut self, input: crate::model::TemplateAlias) -> Self {
             let mut v = self.template_alias_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.template_alias_list = Some(v);
             self
         }
@@ -4802,8 +4703,7 @@ impl ListTemplateAliasesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
-    /// resource.</p>
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -4811,8 +4711,7 @@ pub struct ListTagsForResourceOutput {
     pub status: i32,
 }
 impl ListTagsForResourceOutput {
-    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
-    /// resource.</p>
+    /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -4849,16 +4748,14 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
-        /// resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the
-        /// resource.</p>
+        /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4907,9 +4804,7 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamespacesOutput {
-    /// <p>The information about the namespaces in this Amazon Web Services account. The response includes
-    /// the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and
-    /// identity store.</p>
+    /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
     pub namespaces: std::option::Option<std::vec::Vec<crate::model::NamespaceInfoV2>>,
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -4919,9 +4814,7 @@ pub struct ListNamespacesOutput {
     pub status: i32,
 }
 impl ListNamespacesOutput {
-    /// <p>The information about the namespaces in this Amazon Web Services account. The response includes
-    /// the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and
-    /// identity store.</p>
+    /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
     pub fn namespaces(&self) -> std::option::Option<&[crate::model::NamespaceInfoV2]> {
         self.namespaces.as_deref()
     }
@@ -4964,18 +4857,14 @@ pub mod list_namespaces_output {
         ///
         /// To override the contents of this collection use [`set_namespaces`](Self::set_namespaces).
         ///
-        /// <p>The information about the namespaces in this Amazon Web Services account. The response includes
-        /// the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and
-        /// identity store.</p>
-        pub fn namespaces(mut self, input: impl Into<crate::model::NamespaceInfoV2>) -> Self {
+        /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
+        pub fn namespaces(mut self, input: crate::model::NamespaceInfoV2) -> Self {
             let mut v = self.namespaces.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.namespaces = Some(v);
             self
         }
-        /// <p>The information about the namespaces in this Amazon Web Services account. The response includes
-        /// the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and
-        /// identity store.</p>
+        /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
         pub fn set_namespaces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NamespaceInfoV2>>,
@@ -5089,9 +4978,9 @@ pub mod list_ingestions_output {
         /// To override the contents of this collection use [`set_ingestions`](Self::set_ingestions).
         ///
         /// <p>A list of the ingestions.</p>
-        pub fn ingestions(mut self, input: impl Into<crate::model::Ingestion>) -> Self {
+        pub fn ingestions(mut self, input: crate::model::Ingestion) -> Self {
             let mut v = self.ingestions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ingestions = Some(v);
             self
         }
@@ -5215,10 +5104,10 @@ pub mod list_iam_policy_assignments_for_user_output {
         /// <p>The active assignments for this user.</p>
         pub fn active_assignments(
             mut self,
-            input: impl Into<crate::model::ActiveIamPolicyAssignment>,
+            input: crate::model::ActiveIamPolicyAssignment,
         ) -> Self {
             let mut v = self.active_assignments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.active_assignments = Some(v);
             self
         }
@@ -5342,10 +5231,10 @@ pub mod list_iam_policy_assignments_output {
         /// <p>Information describing the IAM policy assignments.</p>
         pub fn iam_policy_assignments(
             mut self,
-            input: impl Into<crate::model::IamPolicyAssignmentSummary>,
+            input: crate::model::IamPolicyAssignmentSummary,
         ) -> Self {
             let mut v = self.iam_policy_assignments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.iam_policy_assignments = Some(v);
             self
         }
@@ -5463,9 +5352,9 @@ pub mod list_groups_output {
         /// To override the contents of this collection use [`set_group_list`](Self::set_group_list).
         ///
         /// <p>The list of the groups.</p>
-        pub fn group_list(mut self, input: impl Into<crate::model::Group>) -> Self {
+        pub fn group_list(mut self, input: crate::model::Group) -> Self {
             let mut v = self.group_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_list = Some(v);
             self
         }
@@ -5583,9 +5472,9 @@ pub mod list_group_memberships_output {
         /// To override the contents of this collection use [`set_group_member_list`](Self::set_group_member_list).
         ///
         /// <p>The list of the members of the group.</p>
-        pub fn group_member_list(mut self, input: impl Into<crate::model::GroupMember>) -> Self {
+        pub fn group_member_list(mut self, input: crate::model::GroupMember) -> Self {
             let mut v = self.group_member_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_member_list = Some(v);
             self
         }
@@ -5714,12 +5603,9 @@ pub mod list_folders_output {
         /// To override the contents of this collection use [`set_folder_summary_list`](Self::set_folder_summary_list).
         ///
         /// <p>A structure that contains all of the folders in the Amazon Web Services account. This structure provides basic information about the folders.</p>
-        pub fn folder_summary_list(
-            mut self,
-            input: impl Into<crate::model::FolderSummary>,
-        ) -> Self {
+        pub fn folder_summary_list(mut self, input: crate::model::FolderSummary) -> Self {
             let mut v = self.folder_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.folder_summary_list = Some(v);
             self
         }
@@ -5838,12 +5724,9 @@ pub mod list_folder_members_output {
         /// To override the contents of this collection use [`set_folder_member_list`](Self::set_folder_member_list).
         ///
         /// <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
-        pub fn folder_member_list(
-            mut self,
-            input: impl Into<crate::model::MemberIdArnPair>,
-        ) -> Self {
+        pub fn folder_member_list(mut self, input: crate::model::MemberIdArnPair) -> Self {
             let mut v = self.folder_member_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.folder_member_list = Some(v);
             self
         }
@@ -5951,9 +5834,9 @@ pub mod list_data_sources_output {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>A list of data sources.</p>
-        pub fn data_sources(mut self, input: impl Into<crate::model::DataSource>) -> Self {
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
             let mut v = self.data_sources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_sources = Some(v);
             self
         }
@@ -6072,12 +5955,9 @@ pub mod list_data_sets_output {
         /// To override the contents of this collection use [`set_data_set_summaries`](Self::set_data_set_summaries).
         ///
         /// <p>The list of dataset summaries.</p>
-        pub fn data_set_summaries(
-            mut self,
-            input: impl Into<crate::model::DataSetSummary>,
-        ) -> Self {
+        pub fn data_set_summaries(mut self, input: crate::model::DataSetSummary) -> Self {
             let mut v = self.data_set_summaries.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.data_set_summaries = Some(v);
             self
         }
@@ -6204,10 +6084,10 @@ pub mod list_dashboard_versions_output {
         /// <p>A structure that contains information about each version of the dashboard.</p>
         pub fn dashboard_version_summary_list(
             mut self,
-            input: impl Into<crate::model::DashboardVersionSummary>,
+            input: crate::model::DashboardVersionSummary,
         ) -> Self {
             let mut v = self.dashboard_version_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dashboard_version_summary_list = Some(v);
             self
         }
@@ -6271,8 +6151,7 @@ impl ListDashboardVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDashboardsOutput {
-    /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure
-    /// provides basic information about the dashboards.</p>
+    /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure provides basic information about the dashboards.</p>
     pub dashboard_summary_list: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -6282,8 +6161,7 @@ pub struct ListDashboardsOutput {
     pub request_id: std::option::Option<std::string::String>,
 }
 impl ListDashboardsOutput {
-    /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure
-    /// provides basic information about the dashboards.</p>
+    /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure provides basic information about the dashboards.</p>
     pub fn dashboard_summary_list(&self) -> std::option::Option<&[crate::model::DashboardSummary]> {
         self.dashboard_summary_list.as_deref()
     }
@@ -6327,19 +6205,14 @@ pub mod list_dashboards_output {
         ///
         /// To override the contents of this collection use [`set_dashboard_summary_list`](Self::set_dashboard_summary_list).
         ///
-        /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure
-        /// provides basic information about the dashboards.</p>
-        pub fn dashboard_summary_list(
-            mut self,
-            input: impl Into<crate::model::DashboardSummary>,
-        ) -> Self {
+        /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure provides basic information about the dashboards.</p>
+        pub fn dashboard_summary_list(mut self, input: crate::model::DashboardSummary) -> Self {
             let mut v = self.dashboard_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dashboard_summary_list = Some(v);
             self
         }
-        /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure
-        /// provides basic information about the dashboards.</p>
+        /// <p>A structure that contains all of the dashboards in your Amazon Web Services account. This structure provides basic information about the dashboards.</p>
         pub fn set_dashboard_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DashboardSummary>>,
@@ -6454,12 +6327,9 @@ pub mod list_analyses_output {
         /// To override the contents of this collection use [`set_analysis_summary_list`](Self::set_analysis_summary_list).
         ///
         /// <p>Metadata describing each of the analyses that are listed.</p>
-        pub fn analysis_summary_list(
-            mut self,
-            input: impl Into<crate::model::AnalysisSummary>,
-        ) -> Self {
+        pub fn analysis_summary_list(mut self, input: crate::model::AnalysisSummary) -> Self {
             let mut v = self.analysis_summary_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.analysis_summary_list = Some(v);
             self
         }
@@ -6523,10 +6393,7 @@ impl ListAnalysesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionEmbedUrlOutput {
-    /// <p>A single-use URL that you can put into your server-side web page to embed your
-    /// Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an
-    /// <code>auth_code</code> value that enables one (and only one) sign-on to a user session
-    /// that is valid for 10 hours. </p>
+    /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
     pub embed_url: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -6534,10 +6401,7 @@ pub struct GetSessionEmbedUrlOutput {
     pub request_id: std::option::Option<std::string::String>,
 }
 impl GetSessionEmbedUrlOutput {
-    /// <p>A single-use URL that you can put into your server-side web page to embed your
-    /// Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an
-    /// <code>auth_code</code> value that enables one (and only one) sign-on to a user session
-    /// that is valid for 10 hours. </p>
+    /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
     pub fn embed_url(&self) -> std::option::Option<&str> {
         self.embed_url.as_deref()
     }
@@ -6570,18 +6434,12 @@ pub mod get_session_embed_url_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A single-use URL that you can put into your server-side web page to embed your
-        /// Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an
-        /// <code>auth_code</code> value that enables one (and only one) sign-on to a user session
-        /// that is valid for 10 hours. </p>
+        /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
         pub fn embed_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.embed_url = Some(input.into());
             self
         }
-        /// <p>A single-use URL that you can put into your server-side web page to embed your
-        /// Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an
-        /// <code>auth_code</code> value that enables one (and only one) sign-on to a user session
-        /// that is valid for 10 hours. </p>
+        /// <p>A single-use URL that you can put into your server-side web page to embed your Amazon QuickSight session. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
         pub fn set_embed_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.embed_url = input;
             self
@@ -6627,10 +6485,7 @@ impl GetSessionEmbedUrlOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDashboardEmbedUrlOutput {
-    /// <p>A single-use URL that you can put into your server-side webpage to embed your
-    /// dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an
-    /// <code>auth_code</code> value that enables one (and only one) sign-on to a user session
-    /// that is valid for 10 hours. </p>
+    /// <p>A single-use URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
     pub embed_url: std::option::Option<std::string::String>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -6638,10 +6493,7 @@ pub struct GetDashboardEmbedUrlOutput {
     pub request_id: std::option::Option<std::string::String>,
 }
 impl GetDashboardEmbedUrlOutput {
-    /// <p>A single-use URL that you can put into your server-side webpage to embed your
-    /// dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an
-    /// <code>auth_code</code> value that enables one (and only one) sign-on to a user session
-    /// that is valid for 10 hours. </p>
+    /// <p>A single-use URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
     pub fn embed_url(&self) -> std::option::Option<&str> {
         self.embed_url.as_deref()
     }
@@ -6674,18 +6526,12 @@ pub mod get_dashboard_embed_url_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A single-use URL that you can put into your server-side webpage to embed your
-        /// dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an
-        /// <code>auth_code</code> value that enables one (and only one) sign-on to a user session
-        /// that is valid for 10 hours. </p>
+        /// <p>A single-use URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
         pub fn embed_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.embed_url = Some(input.into());
             self
         }
-        /// <p>A single-use URL that you can put into your server-side webpage to embed your
-        /// dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an
-        /// <code>auth_code</code> value that enables one (and only one) sign-on to a user session
-        /// that is valid for 10 hours. </p>
+        /// <p>A single-use URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
         pub fn set_embed_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.embed_url = input;
             self
@@ -7090,9 +6936,9 @@ pub mod describe_theme_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of resource permissions set on the theme. </p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -7417,9 +7263,9 @@ pub mod describe_template_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of resource permissions to be set on the template. </p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -7661,10 +7507,7 @@ impl DescribeTemplateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNamespaceOutput {
-    /// <p>The information about the namespace that you're describing. The response includes
-    /// the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also
-    /// works for namespaces that are in the process of being created. For incomplete namespaces,
-    /// this API operation lists the namespace error types and messages associated with the creation process.</p>
+    /// <p>The information about the namespace that you're describing. The response includes the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in the process of being created. For incomplete namespaces, this API operation lists the namespace error types and messages associated with the creation process.</p>
     pub namespace: std::option::Option<crate::model::NamespaceInfoV2>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -7672,10 +7515,7 @@ pub struct DescribeNamespaceOutput {
     pub status: i32,
 }
 impl DescribeNamespaceOutput {
-    /// <p>The information about the namespace that you're describing. The response includes
-    /// the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also
-    /// works for namespaces that are in the process of being created. For incomplete namespaces,
-    /// this API operation lists the namespace error types and messages associated with the creation process.</p>
+    /// <p>The information about the namespace that you're describing. The response includes the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in the process of being created. For incomplete namespaces, this API operation lists the namespace error types and messages associated with the creation process.</p>
     pub fn namespace(&self) -> std::option::Option<&crate::model::NamespaceInfoV2> {
         self.namespace.as_ref()
     }
@@ -7708,18 +7548,12 @@ pub mod describe_namespace_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The information about the namespace that you're describing. The response includes
-        /// the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also
-        /// works for namespaces that are in the process of being created. For incomplete namespaces,
-        /// this API operation lists the namespace error types and messages associated with the creation process.</p>
+        /// <p>The information about the namespace that you're describing. The response includes the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in the process of being created. For incomplete namespaces, this API operation lists the namespace error types and messages associated with the creation process.</p>
         pub fn namespace(mut self, input: crate::model::NamespaceInfoV2) -> Self {
             self.namespace = Some(input);
             self
         }
-        /// <p>The information about the namespace that you're describing. The response includes
-        /// the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also
-        /// works for namespaces that are in the process of being created. For incomplete namespaces,
-        /// this API operation lists the namespace error types and messages associated with the creation process.</p>
+        /// <p>The information about the namespace that you're describing. The response includes the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in the process of being created. For incomplete namespaces, this API operation lists the namespace error types and messages associated with the creation process.</p>
         pub fn set_namespace(
             mut self,
             input: std::option::Option<crate::model::NamespaceInfoV2>,
@@ -8297,9 +8131,9 @@ pub mod describe_folder_resolved_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>Information about the permissions for the folder.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -8437,9 +8271,9 @@ pub mod describe_folder_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>Information about the permissions on the folder.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -8665,9 +8499,9 @@ pub mod describe_data_source_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of resource permissions on the data source.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -8900,9 +8734,9 @@ pub mod describe_data_set_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A list of resource permissions on the dataset.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -9059,10 +8893,7 @@ pub struct DescribeDashboardPermissionsOutput {
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
-    /// <p>A structure that contains the configuration of a shareable link that grants access to
-    /// the dashboard. Your users can use the link to view and interact with the dashboard, if
-    /// the dashboard has been shared with them. For more information about sharing dashboards,
-    /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
+    /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
     pub link_sharing_configuration: std::option::Option<crate::model::LinkSharingConfiguration>,
 }
 impl DescribeDashboardPermissionsOutput {
@@ -9086,10 +8917,7 @@ impl DescribeDashboardPermissionsOutput {
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>A structure that contains the configuration of a shareable link that grants access to
-    /// the dashboard. Your users can use the link to view and interact with the dashboard, if
-    /// the dashboard has been shared with them. For more information about sharing dashboards,
-    /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
+    /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
     pub fn link_sharing_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LinkSharingConfiguration> {
@@ -9155,9 +8983,9 @@ pub mod describe_dashboard_permissions_output {
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
         /// <p>A structure that contains the permissions for the dashboard.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
@@ -9189,10 +9017,7 @@ pub mod describe_dashboard_permissions_output {
             self.request_id = input;
             self
         }
-        /// <p>A structure that contains the configuration of a shareable link that grants access to
-        /// the dashboard. Your users can use the link to view and interact with the dashboard, if
-        /// the dashboard has been shared with them. For more information about sharing dashboards,
-        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
+        /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
         pub fn link_sharing_configuration(
             mut self,
             input: crate::model::LinkSharingConfiguration,
@@ -9200,10 +9025,7 @@ pub mod describe_dashboard_permissions_output {
             self.link_sharing_configuration = Some(input);
             self
         }
-        /// <p>A structure that contains the configuration of a shareable link that grants access to
-        /// the dashboard. Your users can use the link to view and interact with the dashboard, if
-        /// the dashboard has been shared with them. For more information about sharing dashboards,
-        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
+        /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
         pub fn set_link_sharing_configuration(
             mut self,
             input: std::option::Option<crate::model::LinkSharingConfiguration>,
@@ -9332,11 +9154,9 @@ impl DescribeDashboardOutput {
 pub struct DescribeAnalysisPermissionsOutput {
     /// <p>The ID of the analysis whose permissions you're describing.</p>
     pub analysis_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're
-    /// describing.</p>
+    /// <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're describing.</p>
     pub analysis_arn: std::option::Option<std::string::String>,
-    /// <p>A structure that describes the principals and the resource-level permissions on an
-    /// analysis.</p>
+    /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
     pub permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -9348,13 +9168,11 @@ impl DescribeAnalysisPermissionsOutput {
     pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're
-    /// describing.</p>
+    /// <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're describing.</p>
     pub fn analysis_arn(&self) -> std::option::Option<&str> {
         self.analysis_arn.as_deref()
     }
-    /// <p>A structure that describes the principals and the resource-level permissions on an
-    /// analysis.</p>
+    /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
     pub fn permissions(&self) -> std::option::Option<&[crate::model::ResourcePermission]> {
         self.permissions.as_deref()
     }
@@ -9402,14 +9220,12 @@ pub mod describe_analysis_permissions_output {
             self.analysis_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're
-        /// describing.</p>
+        /// <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're describing.</p>
         pub fn analysis_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.analysis_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're
-        /// describing.</p>
+        /// <p>The Amazon Resource Name (ARN) of the analysis whose permissions you're describing.</p>
         pub fn set_analysis_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.analysis_arn = input;
             self
@@ -9418,16 +9234,14 @@ pub mod describe_analysis_permissions_output {
         ///
         /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
         ///
-        /// <p>A structure that describes the principals and the resource-level permissions on an
-        /// analysis.</p>
-        pub fn permissions(mut self, input: impl Into<crate::model::ResourcePermission>) -> Self {
+        /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
+        pub fn permissions(mut self, input: crate::model::ResourcePermission) -> Self {
             let mut v = self.permissions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.permissions = Some(v);
             self
         }
-        /// <p>A structure that describes the principals and the resource-level permissions on an
-        /// analysis.</p>
+        /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
         pub fn set_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -9478,8 +9292,7 @@ impl DescribeAnalysisPermissionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAnalysisOutput {
-    /// <p>A metadata structure that contains summary information for the analysis that you're
-    /// describing.</p>
+    /// <p>A metadata structure that contains summary information for the analysis that you're describing.</p>
     pub analysis: std::option::Option<crate::model::Analysis>,
     /// <p>The HTTP status of the request.</p>
     pub status: i32,
@@ -9487,8 +9300,7 @@ pub struct DescribeAnalysisOutput {
     pub request_id: std::option::Option<std::string::String>,
 }
 impl DescribeAnalysisOutput {
-    /// <p>A metadata structure that contains summary information for the analysis that you're
-    /// describing.</p>
+    /// <p>A metadata structure that contains summary information for the analysis that you're describing.</p>
     pub fn analysis(&self) -> std::option::Option<&crate::model::Analysis> {
         self.analysis.as_ref()
     }
@@ -9521,14 +9333,12 @@ pub mod describe_analysis_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A metadata structure that contains summary information for the analysis that you're
-        /// describing.</p>
+        /// <p>A metadata structure that contains summary information for the analysis that you're describing.</p>
         pub fn analysis(mut self, input: crate::model::Analysis) -> Self {
             self.analysis = Some(input);
             self
         }
-        /// <p>A metadata structure that contains summary information for the analysis that you're
-        /// describing.</p>
+        /// <p>A metadata structure that contains summary information for the analysis that you're describing.</p>
         pub fn set_analysis(mut self, input: std::option::Option<crate::model::Analysis>) -> Self {
             self.analysis = input;
             self
@@ -9574,12 +9384,7 @@ impl DescribeAnalysisOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountSettingsOutput {
-    /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon
-    /// Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
-    /// Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes
-    /// referred to as a QuickSight "account" even though it's technically not an account
-    /// by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The
-    /// edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
+    /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -9587,12 +9392,7 @@ pub struct DescribeAccountSettingsOutput {
     pub status: i32,
 }
 impl DescribeAccountSettingsOutput {
-    /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon
-    /// Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
-    /// Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes
-    /// referred to as a QuickSight "account" even though it's technically not an account
-    /// by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The
-    /// edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
+    /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
     pub fn account_settings(&self) -> std::option::Option<&crate::model::AccountSettings> {
         self.account_settings.as_ref()
     }
@@ -9625,22 +9425,12 @@ pub mod describe_account_settings_output {
         pub(crate) status: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon
-        /// Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
-        /// Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes
-        /// referred to as a QuickSight "account" even though it's technically not an account
-        /// by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The
-        /// edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
+        /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
         pub fn account_settings(mut self, input: crate::model::AccountSettings) -> Self {
             self.account_settings = Some(input);
             self
         }
-        /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon
-        /// Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the
-        /// Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes
-        /// referred to as a QuickSight "account" even though it's technically not an account
-        /// by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The
-        /// edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
+        /// <p>The Amazon QuickSight settings for this Amazon Web Services account. This information includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard or Enterprise) and the notification email for the Amazon QuickSight subscription. In the QuickSight console, the Amazon QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web Services account. The edition that you subscribe to applies to Amazon QuickSight in every Amazon Web Services Region where you use it.</p>
         pub fn set_account_settings(
             mut self,
             input: std::option::Option<crate::model::AccountSettings>,
@@ -11858,8 +11648,7 @@ impl CreateTemplateAliasOutput {
 pub struct CreateTemplateOutput {
     /// <p>The ARN for the template.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ARN for the template, including the version information of
-    /// the first version.</p>
+    /// <p>The ARN for the template, including the version information of the first version.</p>
     pub version_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the template.</p>
     pub template_id: std::option::Option<std::string::String>,
@@ -11875,8 +11664,7 @@ impl CreateTemplateOutput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ARN for the template, including the version information of
-    /// the first version.</p>
+    /// <p>The ARN for the template, including the version information of the first version.</p>
     pub fn version_arn(&self) -> std::option::Option<&str> {
         self.version_arn.as_deref()
     }
@@ -11933,14 +11721,12 @@ pub mod create_template_output {
             self.arn = input;
             self
         }
-        /// <p>The ARN for the template, including the version information of
-        /// the first version.</p>
+        /// <p>The ARN for the template, including the version information of the first version.</p>
         pub fn version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_arn = Some(input.into());
             self
         }
-        /// <p>The ARN for the template, including the version information of
-        /// the first version.</p>
+        /// <p>The ARN for the template, including the version information of the first version.</p>
         pub fn set_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_arn = input;
             self
@@ -12016,17 +11802,11 @@ pub struct CreateNamespaceOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the new namespace that you created.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace.
-    /// This is set to the region that you run CreateNamespace in. </p>
+    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
     pub capacity_region: std::option::Option<std::string::String>,
-    /// <p>The status of the creation of the namespace. This is an asynchronous process. A status
-    /// of <code>CREATED</code> means that your namespace is ready to use. If an error occurs,
-    /// it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In
-    /// the case of a non-retryable error, refer to the error message for follow-up
-    /// tasks.</p>
+    /// <p>The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error message for follow-up tasks.</p>
     pub creation_status: std::option::Option<crate::model::NamespaceStatus>,
-    /// <p>Specifies the type of your user identity directory. Currently, this supports users
-    /// with an identity type of <code>QUICKSIGHT</code>.</p>
+    /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
     pub identity_store: std::option::Option<crate::model::IdentityStore>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -12042,21 +11822,15 @@ impl CreateNamespaceOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace.
-    /// This is set to the region that you run CreateNamespace in. </p>
+    /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
     pub fn capacity_region(&self) -> std::option::Option<&str> {
         self.capacity_region.as_deref()
     }
-    /// <p>The status of the creation of the namespace. This is an asynchronous process. A status
-    /// of <code>CREATED</code> means that your namespace is ready to use. If an error occurs,
-    /// it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In
-    /// the case of a non-retryable error, refer to the error message for follow-up
-    /// tasks.</p>
+    /// <p>The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error message for follow-up tasks.</p>
     pub fn creation_status(&self) -> std::option::Option<&crate::model::NamespaceStatus> {
         self.creation_status.as_ref()
     }
-    /// <p>Specifies the type of your user identity directory. Currently, this supports users
-    /// with an identity type of <code>QUICKSIGHT</code>.</p>
+    /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
     pub fn identity_store(&self) -> std::option::Option<&crate::model::IdentityStore> {
         self.identity_store.as_ref()
     }
@@ -12117,14 +11891,12 @@ pub mod create_namespace_output {
             self.name = input;
             self
         }
-        /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace.
-        /// This is set to the region that you run CreateNamespace in. </p>
+        /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
         pub fn capacity_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.capacity_region = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace.
-        /// This is set to the region that you run CreateNamespace in. </p>
+        /// <p>The Amazon Web Services Region; that you want to use for the free SPICE capacity for the new namespace. This is set to the region that you run CreateNamespace in. </p>
         pub fn set_capacity_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12132,20 +11904,12 @@ pub mod create_namespace_output {
             self.capacity_region = input;
             self
         }
-        /// <p>The status of the creation of the namespace. This is an asynchronous process. A status
-        /// of <code>CREATED</code> means that your namespace is ready to use. If an error occurs,
-        /// it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In
-        /// the case of a non-retryable error, refer to the error message for follow-up
-        /// tasks.</p>
+        /// <p>The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error message for follow-up tasks.</p>
         pub fn creation_status(mut self, input: crate::model::NamespaceStatus) -> Self {
             self.creation_status = Some(input);
             self
         }
-        /// <p>The status of the creation of the namespace. This is an asynchronous process. A status
-        /// of <code>CREATED</code> means that your namespace is ready to use. If an error occurs,
-        /// it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In
-        /// the case of a non-retryable error, refer to the error message for follow-up
-        /// tasks.</p>
+        /// <p>The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error message for follow-up tasks.</p>
         pub fn set_creation_status(
             mut self,
             input: std::option::Option<crate::model::NamespaceStatus>,
@@ -12153,14 +11917,12 @@ pub mod create_namespace_output {
             self.creation_status = input;
             self
         }
-        /// <p>Specifies the type of your user identity directory. Currently, this supports users
-        /// with an identity type of <code>QUICKSIGHT</code>.</p>
+        /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
         pub fn identity_store(mut self, input: crate::model::IdentityStore) -> Self {
             self.identity_store = Some(input);
             self
         }
-        /// <p>Specifies the type of your user identity directory. Currently, this supports users
-        /// with an identity type of <code>QUICKSIGHT</code>.</p>
+        /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
         pub fn set_identity_store(
             mut self,
             input: std::option::Option<crate::model::IdentityStore>,
@@ -12352,20 +12114,9 @@ pub struct CreateIamPolicyAssignmentOutput {
     pub assignment_id: std::option::Option<std::string::String>,
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-    /// source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-    /// data source.</p>
-    /// </li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub assignment_status: std::option::Option<crate::model::AssignmentStatus>,
     /// <p>The ARN for the IAM policy that is applied to the Amazon QuickSight users and groups specified in this assignment.</p>
@@ -12390,20 +12141,9 @@ impl CreateIamPolicyAssignmentOutput {
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-    /// source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-    /// data source.</p>
-    /// </li>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
     /// </ul>
     pub fn assignment_status(&self) -> std::option::Option<&crate::model::AssignmentStatus> {
         self.assignment_status.as_ref()
@@ -12487,20 +12227,9 @@ pub mod create_iam_policy_assignment_output {
         }
         /// <p>The status of the assignment. Possible values are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-        /// source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-        /// data source.</p>
-        /// </li>
+        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
         /// </ul>
         pub fn assignment_status(mut self, input: crate::model::AssignmentStatus) -> Self {
             self.assignment_status = Some(input);
@@ -12508,20 +12237,9 @@ pub mod create_iam_policy_assignment_output {
         }
         /// <p>The status of the assignment. Possible values are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> - Anything specified in this assignment is used when creating the data
-        /// source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> - This assignment isn't used when creating the data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the
-        /// data source.</p>
-        /// </li>
+        /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+        /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+        /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
         /// </ul>
         pub fn set_assignment_status(
             mut self,
@@ -12548,10 +12266,10 @@ pub mod create_iam_policy_assignment_output {
         pub fn identities(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.identities.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.identities = Some(hash_map);
             self
         }
@@ -13143,11 +12861,9 @@ pub struct CreateDataSetOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub data_set_id: std::option::Option<std::string::String>,
-    /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import
-    /// mode is SPICE.</p>
+    /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
     pub ingestion_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import
-    /// mode is SPICE.</p>
+    /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
     pub ingestion_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: std::option::Option<std::string::String>,
@@ -13163,13 +12879,11 @@ impl CreateDataSetOutput {
     pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
-    /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import
-    /// mode is SPICE.</p>
+    /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
     pub fn ingestion_arn(&self) -> std::option::Option<&str> {
         self.ingestion_arn.as_deref()
     }
-    /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import
-    /// mode is SPICE.</p>
+    /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
     pub fn ingestion_id(&self) -> std::option::Option<&str> {
         self.ingestion_id.as_deref()
     }
@@ -13228,14 +12942,12 @@ pub mod create_data_set_output {
             self.data_set_id = input;
             self
         }
-        /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import
-        /// mode is SPICE.</p>
+        /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
         pub fn ingestion_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.ingestion_arn = Some(input.into());
             self
         }
-        /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import
-        /// mode is SPICE.</p>
+        /// <p>The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
         pub fn set_ingestion_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13243,14 +12955,12 @@ pub mod create_data_set_output {
             self.ingestion_arn = input;
             self
         }
-        /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import
-        /// mode is SPICE.</p>
+        /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
         pub fn ingestion_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ingestion_id = Some(input.into());
             self
         }
-        /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import
-        /// mode is SPICE.</p>
+        /// <p>The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.</p>
         pub fn set_ingestion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ingestion_id = input;
             self
@@ -13301,8 +13011,7 @@ impl CreateDataSetOutput {
 pub struct CreateDashboardOutput {
     /// <p>The ARN of the dashboard.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the dashboard, including the version number of the first version that is
-    /// created.</p>
+    /// <p>The ARN of the dashboard, including the version number of the first version that is created.</p>
     pub version_arn: std::option::Option<std::string::String>,
     /// <p>The ID for the dashboard.</p>
     pub dashboard_id: std::option::Option<std::string::String>,
@@ -13318,8 +13027,7 @@ impl CreateDashboardOutput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ARN of the dashboard, including the version number of the first version that is
-    /// created.</p>
+    /// <p>The ARN of the dashboard, including the version number of the first version that is created.</p>
     pub fn version_arn(&self) -> std::option::Option<&str> {
         self.version_arn.as_deref()
     }
@@ -13376,14 +13084,12 @@ pub mod create_dashboard_output {
             self.arn = input;
             self
         }
-        /// <p>The ARN of the dashboard, including the version number of the first version that is
-        /// created.</p>
+        /// <p>The ARN of the dashboard, including the version number of the first version that is created.</p>
         pub fn version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the dashboard, including the version number of the first version that is
-        /// created.</p>
+        /// <p>The ARN of the dashboard, including the version number of the first version that is created.</p>
         pub fn set_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_arn = input;
             self

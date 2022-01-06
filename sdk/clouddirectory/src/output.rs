@@ -169,11 +169,11 @@ impl UpdateTypedLinkFacetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSchemaOutput {
-    /// <p>The ARN that is associated with the updated schema. For more information, see <a>arns</a>.</p>
+    /// <p>The ARN that is associated with the updated schema. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSchemaOutput {
-    /// <p>The ARN that is associated with the updated schema. For more information, see <a>arns</a>.</p>
+    /// <p>The ARN that is associated with the updated schema. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -194,12 +194,12 @@ pub mod update_schema_output {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN that is associated with the updated schema. For more information, see <a>arns</a>.</p>
+        /// <p>The ARN that is associated with the updated schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The ARN that is associated with the updated schema. For more information, see <a>arns</a>.</p>
+        /// <p>The ARN that is associated with the updated schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -482,11 +482,11 @@ impl PutSchemaFromJsonOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishSchemaOutput {
-    /// <p>The ARN that is associated with the published schema. For more information, see <a>arns</a>.</p>
+    /// <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
     pub published_schema_arn: std::option::Option<std::string::String>,
 }
 impl PublishSchemaOutput {
-    /// <p>The ARN that is associated with the published schema. For more information, see <a>arns</a>.</p>
+    /// <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
     pub fn published_schema_arn(&self) -> std::option::Option<&str> {
         self.published_schema_arn.as_deref()
     }
@@ -507,12 +507,12 @@ pub mod publish_schema_output {
         pub(crate) published_schema_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN that is associated with the published schema. For more information, see <a>arns</a>.</p>
+        /// <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
         pub fn published_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.published_schema_arn = Some(input.into());
             self
         }
-        /// <p>The ARN that is associated with the published schema. For more information, see <a>arns</a>.</p>
+        /// <p>The ARN that is associated with the published schema. For more information, see <code>arns</code>.</p>
         pub fn set_published_schema_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -539,17 +539,13 @@ impl PublishSchemaOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LookupPolicyOutput {
-    /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
-    /// <code>PolicyType</code>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     pub policy_to_path_list: std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl LookupPolicyOutput {
-    /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
-    /// <code>PolicyType</code>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     pub fn policy_to_path_list(&self) -> std::option::Option<&[crate::model::PolicyToPath]> {
         self.policy_to_path_list.as_deref()
     }
@@ -581,18 +577,14 @@ pub mod lookup_policy_output {
         ///
         /// To override the contents of this collection use [`set_policy_to_path_list`](Self::set_policy_to_path_list).
         ///
-        /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
-        /// <code>PolicyType</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-        pub fn policy_to_path_list(mut self, input: impl Into<crate::model::PolicyToPath>) -> Self {
+        /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+        pub fn policy_to_path_list(mut self, input: crate::model::PolicyToPath) -> Self {
             let mut v = self.policy_to_path_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.policy_to_path_list = Some(v);
             self
         }
-        /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
-        /// <code>PolicyType</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+        /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
         pub fn set_policy_to_path_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
@@ -751,12 +743,9 @@ pub mod list_typed_link_facet_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>An ordered set of attributes associate with the typed link.</p>
-        pub fn attributes(
-            mut self,
-            input: impl Into<crate::model::TypedLinkAttributeDefinition>,
-        ) -> Self {
+        pub fn attributes(mut self, input: crate::model::TypedLinkAttributeDefinition) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -836,9 +825,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tag key value pairs that are associated with the response.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -1085,12 +1074,9 @@ pub mod list_outgoing_typed_links_output {
         /// To override the contents of this collection use [`set_typed_link_specifiers`](Self::set_typed_link_specifiers).
         ///
         /// <p>Returns a typed link specifier as output.</p>
-        pub fn typed_link_specifiers(
-            mut self,
-            input: impl Into<crate::model::TypedLinkSpecifier>,
-        ) -> Self {
+        pub fn typed_link_specifiers(mut self, input: crate::model::TypedLinkSpecifier) -> Self {
             let mut v = self.typed_link_specifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.typed_link_specifiers = Some(v);
             self
         }
@@ -1132,15 +1118,13 @@ impl ListOutgoingTypedLinksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectPoliciesOutput {
-    /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
-    /// object.</p>
+    /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
     pub attached_policy_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListObjectPoliciesOutput {
-    /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
-    /// object.</p>
+    /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
     pub fn attached_policy_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.attached_policy_ids.as_deref()
     }
@@ -1171,16 +1155,14 @@ pub mod list_object_policies_output {
         ///
         /// To override the contents of this collection use [`set_attached_policy_ids`](Self::set_attached_policy_ids).
         ///
-        /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
-        /// object.</p>
+        /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
         pub fn attached_policy_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attached_policy_ids.unwrap_or_default();
             v.push(input.into());
             self.attached_policy_ids = Some(v);
             self
         }
-        /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
-        /// object.</p>
+        /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
         pub fn set_attached_policy_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1218,8 +1200,7 @@ impl ListObjectPoliciesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectParentsOutput {
-    /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and
-    /// LinkName as the value.</p>
+    /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
     pub parents:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The pagination token.</p>
@@ -1229,8 +1210,7 @@ pub struct ListObjectParentsOutput {
         std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
 }
 impl ListObjectParentsOutput {
-    /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and
-    /// LinkName as the value.</p>
+    /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
     pub fn parents(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1275,8 +1255,7 @@ pub mod list_object_parents_output {
         ///
         /// To override the contents of this collection use [`set_parents`](Self::set_parents).
         ///
-        /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and
-        /// LinkName as the value.</p>
+        /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
         pub fn parents(
             mut self,
             k: impl Into<std::string::String>,
@@ -1287,8 +1266,7 @@ pub mod list_object_parents_output {
             self.parents = Some(hash_map);
             self
         }
-        /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and
-        /// LinkName as the value.</p>
+        /// <p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>
         pub fn set_parents(
             mut self,
             input: std::option::Option<
@@ -1315,10 +1293,10 @@ pub mod list_object_parents_output {
         /// <p>Returns a list of parent reference and LinkName Tuples.</p>
         pub fn parent_links(
             mut self,
-            input: impl Into<crate::model::ObjectIdentifierAndLinkNameTuple>,
+            input: crate::model::ObjectIdentifierAndLinkNameTuple,
         ) -> Self {
             let mut v = self.parent_links.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parent_links = Some(v);
             self
         }
@@ -1353,16 +1331,14 @@ impl ListObjectParentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectParentPathsOutput {
-    /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the
-    /// directory.</p>
+    /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
     pub path_to_object_identifiers_list:
         std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListObjectParentPathsOutput {
-    /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the
-    /// directory.</p>
+    /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
     pub fn path_to_object_identifiers_list(
         &self,
     ) -> std::option::Option<&[crate::model::PathToObjectIdentifiers]> {
@@ -1399,19 +1375,17 @@ pub mod list_object_parent_paths_output {
         ///
         /// To override the contents of this collection use [`set_path_to_object_identifiers_list`](Self::set_path_to_object_identifiers_list).
         ///
-        /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the
-        /// directory.</p>
+        /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
         pub fn path_to_object_identifiers_list(
             mut self,
-            input: impl Into<crate::model::PathToObjectIdentifiers>,
+            input: crate::model::PathToObjectIdentifiers,
         ) -> Self {
             let mut v = self.path_to_object_identifiers_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.path_to_object_identifiers_list = Some(v);
             self
         }
-        /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the
-        /// directory.</p>
+        /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
         pub fn set_path_to_object_identifiers_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
@@ -1449,16 +1423,14 @@ impl ListObjectParentPathsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectChildrenOutput {
-    /// <p>Children structure, which is a map with key as the <code>LinkName</code> and
-    /// <code>ObjectIdentifier</code> as the value.</p>
+    /// <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
     pub children:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListObjectChildrenOutput {
-    /// <p>Children structure, which is a map with key as the <code>LinkName</code> and
-    /// <code>ObjectIdentifier</code> as the value.</p>
+    /// <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
     pub fn children(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1494,8 +1466,7 @@ pub mod list_object_children_output {
         ///
         /// To override the contents of this collection use [`set_children`](Self::set_children).
         ///
-        /// <p>Children structure, which is a map with key as the <code>LinkName</code> and
-        /// <code>ObjectIdentifier</code> as the value.</p>
+        /// <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
         pub fn children(
             mut self,
             k: impl Into<std::string::String>,
@@ -1506,8 +1477,7 @@ pub mod list_object_children_output {
             self.children = Some(hash_map);
             self
         }
-        /// <p>Children structure, which is a map with key as the <code>LinkName</code> and
-        /// <code>ObjectIdentifier</code> as the value.</p>
+        /// <p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
         pub fn set_children(
             mut self,
             input: std::option::Option<
@@ -1547,15 +1517,13 @@ impl ListObjectChildrenOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListObjectAttributesOutput {
-    /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the
-    /// key, and attribute value is the value.</p>
+    /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListObjectAttributesOutput {
-    /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the
-    /// key, and attribute value is the value.</p>
+    /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
     pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
         self.attributes.as_deref()
     }
@@ -1587,16 +1555,14 @@ pub mod list_object_attributes_output {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the
-        /// key, and attribute value is the value.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::AttributeKeyAndValue>) -> Self {
+        /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
+        pub fn attributes(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
-        /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the
-        /// key, and attribute value is the value.</p>
+        /// <p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -1755,12 +1721,9 @@ pub mod list_index_output {
         /// To override the contents of this collection use [`set_index_attachments`](Self::set_index_attachments).
         ///
         /// <p>The objects and indexed values attached to the index.</p>
-        pub fn index_attachments(
-            mut self,
-            input: impl Into<crate::model::IndexAttachment>,
-        ) -> Self {
+        pub fn index_attachments(mut self, input: crate::model::IndexAttachment) -> Self {
             let mut v = self.index_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.index_attachments = Some(v);
             self
         }
@@ -1841,12 +1804,9 @@ pub mod list_incoming_typed_links_output {
         /// To override the contents of this collection use [`set_link_specifiers`](Self::set_link_specifiers).
         ///
         /// <p>Returns one or more typed link specifiers as output.</p>
-        pub fn link_specifiers(
-            mut self,
-            input: impl Into<crate::model::TypedLinkSpecifier>,
-        ) -> Self {
+        pub fn link_specifiers(mut self, input: crate::model::TypedLinkSpecifier) -> Self {
             let mut v = self.link_specifiers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.link_specifiers = Some(v);
             self
         }
@@ -2008,9 +1968,9 @@ pub mod list_facet_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes attached to the facet.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::FacetAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::FacetAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -2052,15 +2012,13 @@ impl ListFacetAttributesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDirectoriesOutput {
-    /// <p>Lists all directories that are associated with your account in pagination
-    /// fashion.</p>
+    /// <p>Lists all directories that are associated with your account in pagination fashion.</p>
     pub directories: std::option::Option<std::vec::Vec<crate::model::Directory>>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDirectoriesOutput {
-    /// <p>Lists all directories that are associated with your account in pagination
-    /// fashion.</p>
+    /// <p>Lists all directories that are associated with your account in pagination fashion.</p>
     pub fn directories(&self) -> std::option::Option<&[crate::model::Directory]> {
         self.directories.as_deref()
     }
@@ -2091,16 +2049,14 @@ pub mod list_directories_output {
         ///
         /// To override the contents of this collection use [`set_directories`](Self::set_directories).
         ///
-        /// <p>Lists all directories that are associated with your account in pagination
-        /// fashion.</p>
-        pub fn directories(mut self, input: impl Into<crate::model::Directory>) -> Self {
+        /// <p>Lists all directories that are associated with your account in pagination fashion.</p>
+        pub fn directories(mut self, input: crate::model::Directory) -> Self {
             let mut v = self.directories.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.directories = Some(v);
             self
         }
-        /// <p>Lists all directories that are associated with your account in pagination
-        /// fashion.</p>
+        /// <p>Lists all directories that are associated with your account in pagination fashion.</p>
         pub fn set_directories(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Directory>>,
@@ -2259,12 +2215,9 @@ pub mod list_attached_indices_output {
         /// To override the contents of this collection use [`set_index_attachments`](Self::set_index_attachments).
         ///
         /// <p>The indices attached to the specified object.</p>
-        pub fn index_attachments(
-            mut self,
-            input: impl Into<crate::model::IndexAttachment>,
-        ) -> Self {
+        pub fn index_attachments(mut self, input: crate::model::IndexAttachment) -> Self {
             let mut v = self.index_attachments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.index_attachments = Some(v);
             self
         }
@@ -2388,21 +2341,11 @@ impl ListAppliedSchemaArnsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTypedLinkFacetInformationOutput {
-    /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
-    /// links considers the order that the attributes are defined on the typed link facet. When
-    /// providing ranges to typed link selection, any inexact ranges must be specified at the end. Any
-    /// attributes that do not have a range specified are presumed to match the entire range. Filters
-    /// are interpreted in the order of the attributes on the typed link facet, not the order in which
-    /// they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub identity_attribute_order: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetTypedLinkFacetInformationOutput {
-    /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
-    /// links considers the order that the attributes are defined on the typed link facet. When
-    /// providing ranges to typed link selection, any inexact ranges must be specified at the end. Any
-    /// attributes that do not have a range specified are presumed to match the entire range. Filters
-    /// are interpreted in the order of the attributes on the typed link facet, not the order in which
-    /// they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn identity_attribute_order(&self) -> std::option::Option<&[std::string::String]> {
         self.identity_attribute_order.as_deref()
     }
@@ -2428,24 +2371,14 @@ pub mod get_typed_link_facet_information_output {
         ///
         /// To override the contents of this collection use [`set_identity_attribute_order`](Self::set_identity_attribute_order).
         ///
-        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
-        /// links considers the order that the attributes are defined on the typed link facet. When
-        /// providing ranges to typed link selection, any inexact ranges must be specified at the end. Any
-        /// attributes that do not have a range specified are presumed to match the entire range. Filters
-        /// are interpreted in the order of the attributes on the typed link facet, not the order in which
-        /// they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn identity_attribute_order(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identity_attribute_order.unwrap_or_default();
             v.push(input.into());
             self.identity_attribute_order = Some(v);
             self
         }
-        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
-        /// links considers the order that the attributes are defined on the typed link facet. When
-        /// providing ranges to typed link selection, any inexact ranges must be specified at the end. Any
-        /// attributes that do not have a range specified are presumed to match the entire range. Filters
-        /// are interpreted in the order of the attributes on the typed link facet, not the order in which
-        /// they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn set_identity_attribute_order(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2545,13 +2478,13 @@ impl GetSchemaAsJsonOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetObjectInformationOutput {
-    /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for details.</p>
+    /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
     pub schema_facets: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl GetObjectInformationOutput {
-    /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for details.</p>
+    /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
     pub fn schema_facets(&self) -> std::option::Option<&[crate::model::SchemaFacet]> {
         self.schema_facets.as_deref()
     }
@@ -2582,14 +2515,14 @@ pub mod get_object_information_output {
         ///
         /// To override the contents of this collection use [`set_schema_facets`](Self::set_schema_facets).
         ///
-        /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for details.</p>
-        pub fn schema_facets(mut self, input: impl Into<crate::model::SchemaFacet>) -> Self {
+        /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
+        pub fn schema_facets(mut self, input: crate::model::SchemaFacet) -> Self {
             let mut v = self.schema_facets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schema_facets = Some(v);
             self
         }
-        /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for details.</p>
+        /// <p>The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See <code>GetAppliedSchemaVersion</code> for details.</p>
         pub fn set_schema_facets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
@@ -2661,9 +2594,9 @@ pub mod get_object_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes that are associated with the object.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::AttributeKeyAndValue>) -> Self {
+        pub fn attributes(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -2725,9 +2658,9 @@ pub mod get_link_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The attributes that are associated with the typed link.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::AttributeKeyAndValue>) -> Self {
+        pub fn attributes(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -2758,11 +2691,11 @@ impl GetLinkAttributesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFacetOutput {
-    /// <p>The <a>Facet</a> structure that is associated with the facet.</p>
+    /// <p>The <code>Facet</code> structure that is associated with the facet.</p>
     pub facet: std::option::Option<crate::model::Facet>,
 }
 impl GetFacetOutput {
-    /// <p>The <a>Facet</a> structure that is associated with the facet.</p>
+    /// <p>The <code>Facet</code> structure that is associated with the facet.</p>
     pub fn facet(&self) -> std::option::Option<&crate::model::Facet> {
         self.facet.as_ref()
     }
@@ -2783,12 +2716,12 @@ pub mod get_facet_output {
         pub(crate) facet: std::option::Option<crate::model::Facet>,
     }
     impl Builder {
-        /// <p>The <a>Facet</a> structure that is associated with the facet.</p>
+        /// <p>The <code>Facet</code> structure that is associated with the facet.</p>
         pub fn facet(mut self, input: crate::model::Facet) -> Self {
             self.facet = Some(input);
             self
         }
-        /// <p>The <a>Facet</a> structure that is associated with the facet.</p>
+        /// <p>The <code>Facet</code> structure that is associated with the facet.</p>
         pub fn set_facet(mut self, input: std::option::Option<crate::model::Facet>) -> Self {
             self.facet = input;
             self
@@ -3248,13 +3181,11 @@ impl DeleteTypedLinkFacetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSchemaOutput {
-    /// <p>The input ARN that is returned as part of the response. For more information, see
-    /// <a>arns</a>.</p>
+    /// <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl DeleteSchemaOutput {
-    /// <p>The input ARN that is returned as part of the response. For more information, see
-    /// <a>arns</a>.</p>
+    /// <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -3275,14 +3206,12 @@ pub mod delete_schema_output {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The input ARN that is returned as part of the response. For more information, see
-        /// <a>arns</a>.</p>
+        /// <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The input ARN that is returned as part of the response. For more information, see
-        /// <a>arns</a>.</p>
+        /// <p>The input ARN that is returned as part of the response. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -3453,13 +3382,11 @@ impl CreateTypedLinkFacetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSchemaOutput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl CreateSchemaOutput {
-    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-    /// information, see <a>arns</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -3480,14 +3407,12 @@ pub mod create_schema_output {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -3655,25 +3580,21 @@ impl CreateFacetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDirectoryOutput {
-    /// <p>The ARN that is associated with the <a>Directory</a>. For more information,
-    /// see <a>arns</a>.</p>
+    /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the <a>Directory</a>.</p>
+    /// <p>The name of the <code>Directory</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The root object node of the created directory.</p>
     pub object_identifier: std::option::Option<std::string::String>,
-    /// <p>The ARN of the published schema in the <a>Directory</a>. Once a published
-    /// schema is copied into the directory, it has its own ARN, which is referred to applied schema
-    /// ARN. For more information, see <a>arns</a>.</p>
+    /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
     pub applied_schema_arn: std::option::Option<std::string::String>,
 }
 impl CreateDirectoryOutput {
-    /// <p>The ARN that is associated with the <a>Directory</a>. For more information,
-    /// see <a>arns</a>.</p>
+    /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
-    /// <p>The name of the <a>Directory</a>.</p>
+    /// <p>The name of the <code>Directory</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -3681,9 +3602,7 @@ impl CreateDirectoryOutput {
     pub fn object_identifier(&self) -> std::option::Option<&str> {
         self.object_identifier.as_deref()
     }
-    /// <p>The ARN of the published schema in the <a>Directory</a>. Once a published
-    /// schema is copied into the directory, it has its own ARN, which is referred to applied schema
-    /// ARN. For more information, see <a>arns</a>.</p>
+    /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
     pub fn applied_schema_arn(&self) -> std::option::Option<&str> {
         self.applied_schema_arn.as_deref()
     }
@@ -3710,14 +3629,12 @@ pub mod create_directory_output {
         pub(crate) applied_schema_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN that is associated with the <a>Directory</a>. For more information,
-        /// see <a>arns</a>.</p>
+        /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The ARN that is associated with the <a>Directory</a>. For more information,
-        /// see <a>arns</a>.</p>
+        /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3725,12 +3642,12 @@ pub mod create_directory_output {
             self.directory_arn = input;
             self
         }
-        /// <p>The name of the <a>Directory</a>.</p>
+        /// <p>The name of the <code>Directory</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the <a>Directory</a>.</p>
+        /// <p>The name of the <code>Directory</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3748,16 +3665,12 @@ pub mod create_directory_output {
             self.object_identifier = input;
             self
         }
-        /// <p>The ARN of the published schema in the <a>Directory</a>. Once a published
-        /// schema is copied into the directory, it has its own ARN, which is referred to applied schema
-        /// ARN. For more information, see <a>arns</a>.</p>
+        /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
         pub fn applied_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.applied_schema_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the published schema in the <a>Directory</a>. Once a published
-        /// schema is copied into the directory, it has its own ARN, which is referred to applied schema
-        /// ARN. For more information, see <a>arns</a>.</p>
+        /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
         pub fn set_applied_schema_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3818,12 +3731,9 @@ pub mod batch_write_output {
         /// To override the contents of this collection use [`set_responses`](Self::set_responses).
         ///
         /// <p>A list of all the responses for each batch write.</p>
-        pub fn responses(
-            mut self,
-            input: impl Into<crate::model::BatchWriteOperationResponse>,
-        ) -> Self {
+        pub fn responses(mut self, input: crate::model::BatchWriteOperationResponse) -> Self {
             let mut v = self.responses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.responses = Some(v);
             self
         }
@@ -3885,12 +3795,9 @@ pub mod batch_read_output {
         /// To override the contents of this collection use [`set_responses`](Self::set_responses).
         ///
         /// <p>A list of all the responses for each batch read.</p>
-        pub fn responses(
-            mut self,
-            input: impl Into<crate::model::BatchReadOperationResponse>,
-        ) -> Self {
+        pub fn responses(mut self, input: crate::model::BatchReadOperationResponse) -> Self {
             let mut v = self.responses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.responses = Some(v);
             self
         }
@@ -4068,13 +3975,11 @@ impl AttachPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachObjectOutput {
-    /// <p>The attached <code>ObjectIdentifier</code>, which is the child
-    /// <code>ObjectIdentifier</code>.</p>
+    /// <p>The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>
     pub attached_object_identifier: std::option::Option<std::string::String>,
 }
 impl AttachObjectOutput {
-    /// <p>The attached <code>ObjectIdentifier</code>, which is the child
-    /// <code>ObjectIdentifier</code>.</p>
+    /// <p>The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>
     pub fn attached_object_identifier(&self) -> std::option::Option<&str> {
         self.attached_object_identifier.as_deref()
     }
@@ -4098,14 +4003,12 @@ pub mod attach_object_output {
         pub(crate) attached_object_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The attached <code>ObjectIdentifier</code>, which is the child
-        /// <code>ObjectIdentifier</code>.</p>
+        /// <p>The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>
         pub fn attached_object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.attached_object_identifier = Some(input.into());
             self
         }
-        /// <p>The attached <code>ObjectIdentifier</code>, which is the child
-        /// <code>ObjectIdentifier</code>.</p>
+        /// <p>The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>
         pub fn set_attached_object_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4132,21 +4035,17 @@ impl AttachObjectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplySchemaOutput {
-    /// <p>The applied schema ARN that is associated with the copied schema in the <a>Directory</a>. You can use this ARN to describe the schema information applied on
-    /// this directory. For more information, see <a>arns</a>.</p>
+    /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
     pub applied_schema_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN that is associated with the <a>Directory</a>. For more information,
-    /// see <a>arns</a>.</p>
+    /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub directory_arn: std::option::Option<std::string::String>,
 }
 impl ApplySchemaOutput {
-    /// <p>The applied schema ARN that is associated with the copied schema in the <a>Directory</a>. You can use this ARN to describe the schema information applied on
-    /// this directory. For more information, see <a>arns</a>.</p>
+    /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
     pub fn applied_schema_arn(&self) -> std::option::Option<&str> {
         self.applied_schema_arn.as_deref()
     }
-    /// <p>The ARN that is associated with the <a>Directory</a>. For more information,
-    /// see <a>arns</a>.</p>
+    /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
@@ -4169,14 +4068,12 @@ pub mod apply_schema_output {
         pub(crate) directory_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The applied schema ARN that is associated with the copied schema in the <a>Directory</a>. You can use this ARN to describe the schema information applied on
-        /// this directory. For more information, see <a>arns</a>.</p>
+        /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
         pub fn applied_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.applied_schema_arn = Some(input.into());
             self
         }
-        /// <p>The applied schema ARN that is associated with the copied schema in the <a>Directory</a>. You can use this ARN to describe the schema information applied on
-        /// this directory. For more information, see <a>arns</a>.</p>
+        /// <p>The applied schema ARN that is associated with the copied schema in the <code>Directory</code>. You can use this ARN to describe the schema information applied on this directory. For more information, see <code>arns</code>.</p>
         pub fn set_applied_schema_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4184,14 +4081,12 @@ pub mod apply_schema_output {
             self.applied_schema_arn = input;
             self
         }
-        /// <p>The ARN that is associated with the <a>Directory</a>. For more information,
-        /// see <a>arns</a>.</p>
+        /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_arn = Some(input.into());
             self
         }
-        /// <p>The ARN that is associated with the <a>Directory</a>. For more information,
-        /// see <a>arns</a>.</p>
+        /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,

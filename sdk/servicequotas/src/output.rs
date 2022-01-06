@@ -221,9 +221,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A complex data type that contains zero or more tag elements.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -252,15 +252,13 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are
-    /// no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the services.</p>
     pub services: std::option::Option<std::vec::Vec<crate::model::ServiceInfo>>,
 }
 impl ListServicesOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are
-    /// no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -287,14 +285,12 @@ pub mod list_services_output {
         pub(crate) services: std::option::Option<std::vec::Vec<crate::model::ServiceInfo>>,
     }
     impl Builder {
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are
-        /// no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are
-        /// no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -304,9 +300,9 @@ pub mod list_services_output {
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
         /// <p>Information about the services.</p>
-        pub fn services(mut self, input: impl Into<crate::model::ServiceInfo>) -> Self {
+        pub fn services(mut self, input: crate::model::ServiceInfo) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.services = Some(v);
             self
         }
@@ -338,15 +334,13 @@ impl ListServicesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceQuotasOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are
-    /// no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the quotas.</p>
     pub quotas: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>,
 }
 impl ListServiceQuotasOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are
-    /// no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -373,14 +367,12 @@ pub mod list_service_quotas_output {
         pub(crate) quotas: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>,
     }
     impl Builder {
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are
-        /// no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are
-        /// no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -390,9 +382,9 @@ pub mod list_service_quotas_output {
         /// To override the contents of this collection use [`set_quotas`](Self::set_quotas).
         ///
         /// <p>Information about the quotas.</p>
-        pub fn quotas(mut self, input: impl Into<crate::model::ServiceQuota>) -> Self {
+        pub fn quotas(mut self, input: crate::model::ServiceQuota) -> Self {
             let mut v = self.quotas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.quotas = Some(v);
             self
         }
@@ -427,8 +419,7 @@ pub struct ListServiceQuotaIncreaseRequestsInTemplateOutput {
     /// <p>Information about the quota increase requests.</p>
     pub service_quota_increase_request_in_template_list:
         std::option::Option<std::vec::Vec<crate::model::ServiceQuotaIncreaseRequestInTemplate>>,
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are
-    /// no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
@@ -439,8 +430,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
         self.service_quota_increase_request_in_template_list
             .as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are
-    /// no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -474,12 +464,12 @@ pub mod list_service_quota_increase_requests_in_template_output {
         /// <p>Information about the quota increase requests.</p>
         pub fn service_quota_increase_request_in_template_list(
             mut self,
-            input: impl Into<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
+            input: crate::model::ServiceQuotaIncreaseRequestInTemplate,
         ) -> Self {
             let mut v = self
                 .service_quota_increase_request_in_template_list
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.service_quota_increase_request_in_template_list = Some(v);
             self
         }
@@ -493,14 +483,12 @@ pub mod list_service_quota_increase_requests_in_template_output {
             self.service_quota_increase_request_in_template_list = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are
-        /// no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are
-        /// no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -527,16 +515,14 @@ impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are
-    /// no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the quota increase requests.</p>
     pub requested_quotas:
         std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
 }
 impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are
-    /// no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -566,14 +552,12 @@ pub mod list_requested_service_quota_change_history_by_quota_output {
             std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
     }
     impl Builder {
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are
-        /// no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are
-        /// no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -585,10 +569,10 @@ pub mod list_requested_service_quota_change_history_by_quota_output {
         /// <p>Information about the quota increase requests.</p>
         pub fn requested_quotas(
             mut self,
-            input: impl Into<crate::model::RequestedServiceQuotaChange>,
+            input: crate::model::RequestedServiceQuotaChange,
         ) -> Self {
             let mut v = self.requested_quotas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.requested_quotas = Some(v);
             self
         }
@@ -622,16 +606,14 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRequestedServiceQuotaChangeHistoryOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are
-    /// no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the quota increase requests.</p>
     pub requested_quotas:
         std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
 }
 impl ListRequestedServiceQuotaChangeHistoryOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are
-    /// no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -661,14 +643,12 @@ pub mod list_requested_service_quota_change_history_output {
             std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
     }
     impl Builder {
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are
-        /// no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are
-        /// no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -680,10 +660,10 @@ pub mod list_requested_service_quota_change_history_output {
         /// <p>Information about the quota increase requests.</p>
         pub fn requested_quotas(
             mut self,
-            input: impl Into<crate::model::RequestedServiceQuotaChange>,
+            input: crate::model::RequestedServiceQuotaChange,
         ) -> Self {
             let mut v = self.requested_quotas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.requested_quotas = Some(v);
             self
         }
@@ -715,15 +695,13 @@ impl ListRequestedServiceQuotaChangeHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAwsDefaultServiceQuotasOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are
-    /// no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the quotas.</p>
     pub quotas: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>,
 }
 impl ListAwsDefaultServiceQuotasOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are
-    /// no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -750,14 +728,12 @@ pub mod list_aws_default_service_quotas_output {
         pub(crate) quotas: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>,
     }
     impl Builder {
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are
-        /// no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are
-        /// no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -767,9 +743,9 @@ pub mod list_aws_default_service_quotas_output {
         /// To override the contents of this collection use [`set_quotas`](Self::set_quotas).
         ///
         /// <p>Information about the quotas.</p>
-        pub fn quotas(mut self, input: impl Into<crate::model::ServiceQuota>) -> Self {
+        pub fn quotas(mut self, input: crate::model::ServiceQuota) -> Self {
             let mut v = self.quotas.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.quotas = Some(v);
             self
         }
@@ -1033,16 +1009,12 @@ impl GetAwsDefaultServiceQuotaOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssociationForServiceQuotaTemplateOutput {
-    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase
-    /// requests in the template are automatically applied to new accounts in your
-    /// organization.</p>
+    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
     pub service_quota_template_association_status:
         std::option::Option<crate::model::ServiceQuotaTemplateAssociationStatus>,
 }
 impl GetAssociationForServiceQuotaTemplateOutput {
-    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase
-    /// requests in the template are automatically applied to new accounts in your
-    /// organization.</p>
+    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
     pub fn service_quota_template_association_status(
         &self,
     ) -> std::option::Option<&crate::model::ServiceQuotaTemplateAssociationStatus> {
@@ -1069,9 +1041,7 @@ pub mod get_association_for_service_quota_template_output {
             std::option::Option<crate::model::ServiceQuotaTemplateAssociationStatus>,
     }
     impl Builder {
-        /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase
-        /// requests in the template are automatically applied to new accounts in your
-        /// organization.</p>
+        /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
         pub fn service_quota_template_association_status(
             mut self,
             input: crate::model::ServiceQuotaTemplateAssociationStatus,
@@ -1079,9 +1049,7 @@ pub mod get_association_for_service_quota_template_output {
             self.service_quota_template_association_status = Some(input);
             self
         }
-        /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase
-        /// requests in the template are automatically applied to new accounts in your
-        /// organization.</p>
+        /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
         pub fn set_service_quota_template_association_status(
             mut self,
             input: std::option::Option<crate::model::ServiceQuotaTemplateAssociationStatus>,

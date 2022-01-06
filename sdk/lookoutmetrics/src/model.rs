@@ -2126,8 +2126,7 @@ impl MetricSetSummary {
     }
 }
 
-/// <p>Details about a metric. A metric is an aggregation of the values of a measure for a dimension value, such as
-/// <i>availability</i> in the <i>us-east-1</i> Region.</p>
+/// <p>Details about a metric. A metric is an aggregation of the values of a measure for a dimension value, such as <i>availability</i> in the <i>us-east-1</i> Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeSeries {
@@ -2191,12 +2190,9 @@ pub mod time_series {
         /// To override the contents of this collection use [`set_dimension_list`](Self::set_dimension_list).
         ///
         /// <p>The dimensions of the metric.</p>
-        pub fn dimension_list(
-            mut self,
-            input: impl Into<crate::model::DimensionNameValue>,
-        ) -> Self {
+        pub fn dimension_list(mut self, input: crate::model::DimensionNameValue) -> Self {
             let mut v = self.dimension_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimension_list = Some(v);
             self
         }
@@ -2213,9 +2209,9 @@ pub mod time_series {
         /// To override the contents of this collection use [`set_metric_value_list`](Self::set_metric_value_list).
         ///
         /// <p>The values for the metric.</p>
-        pub fn metric_value_list(mut self, input: impl Into<f64>) -> Self {
+        pub fn metric_value_list(mut self, input: f64) -> Self {
             let mut v = self.metric_value_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_value_list = Some(v);
             self
         }
@@ -2405,10 +2401,10 @@ pub mod anomaly_group_statistics {
         /// <p>Statistics for individual metrics within the group.</p>
         pub fn itemized_metric_stats_list(
             mut self,
-            input: impl Into<crate::model::ItemizedMetricStats>,
+            input: crate::model::ItemizedMetricStats,
         ) -> Self {
             let mut v = self.itemized_metric_stats_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.itemized_metric_stats_list = Some(v);
             self
         }
@@ -2643,6 +2639,182 @@ impl AnomalyGroupSummary {
     /// Creates a new builder-style object to manufacture [`AnomalyGroupSummary`](crate::model::AnomalyGroupSummary)
     pub fn builder() -> crate::model::anomaly_group_summary::Builder {
         crate::model::anomaly_group_summary::Builder::default()
+    }
+}
+
+/// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
+/// <p></p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InterMetricImpactDetails {
+    /// <p>The name of the measure.</p>
+    pub metric_name: std::option::Option<std::string::String>,
+    /// <p>The ID of the anomaly group.</p>
+    pub anomaly_group_id: std::option::Option<std::string::String>,
+    /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
+    pub relationship_type: std::option::Option<crate::model::RelationshipType>,
+    /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
+    pub contribution_percentage: std::option::Option<f64>,
+}
+impl InterMetricImpactDetails {
+    /// <p>The name of the measure.</p>
+    pub fn metric_name(&self) -> std::option::Option<&str> {
+        self.metric_name.as_deref()
+    }
+    /// <p>The ID of the anomaly group.</p>
+    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+        self.anomaly_group_id.as_deref()
+    }
+    /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
+    pub fn relationship_type(&self) -> std::option::Option<&crate::model::RelationshipType> {
+        self.relationship_type.as_ref()
+    }
+    /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
+    pub fn contribution_percentage(&self) -> std::option::Option<f64> {
+        self.contribution_percentage
+    }
+}
+impl std::fmt::Debug for InterMetricImpactDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InterMetricImpactDetails");
+        formatter.field("metric_name", &self.metric_name);
+        formatter.field("anomaly_group_id", &self.anomaly_group_id);
+        formatter.field("relationship_type", &self.relationship_type);
+        formatter.field("contribution_percentage", &self.contribution_percentage);
+        formatter.finish()
+    }
+}
+/// See [`InterMetricImpactDetails`](crate::model::InterMetricImpactDetails)
+pub mod inter_metric_impact_details {
+    /// A builder for [`InterMetricImpactDetails`](crate::model::InterMetricImpactDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_name: std::option::Option<std::string::String>,
+        pub(crate) anomaly_group_id: std::option::Option<std::string::String>,
+        pub(crate) relationship_type: std::option::Option<crate::model::RelationshipType>,
+        pub(crate) contribution_percentage: std::option::Option<f64>,
+    }
+    impl Builder {
+        /// <p>The name of the measure.</p>
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
+            self
+        }
+        /// <p>The name of the measure.</p>
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// <p>The ID of the anomaly group.</p>
+        pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.anomaly_group_id = Some(input.into());
+            self
+        }
+        /// <p>The ID of the anomaly group.</p>
+        pub fn set_anomaly_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.anomaly_group_id = input;
+            self
+        }
+        /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
+        pub fn relationship_type(mut self, input: crate::model::RelationshipType) -> Self {
+            self.relationship_type = Some(input);
+            self
+        }
+        /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
+        pub fn set_relationship_type(
+            mut self,
+            input: std::option::Option<crate::model::RelationshipType>,
+        ) -> Self {
+            self.relationship_type = input;
+            self
+        }
+        /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
+        pub fn contribution_percentage(mut self, input: f64) -> Self {
+            self.contribution_percentage = Some(input);
+            self
+        }
+        /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
+        pub fn set_contribution_percentage(mut self, input: std::option::Option<f64>) -> Self {
+            self.contribution_percentage = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InterMetricImpactDetails`](crate::model::InterMetricImpactDetails)
+        pub fn build(self) -> crate::model::InterMetricImpactDetails {
+            crate::model::InterMetricImpactDetails {
+                metric_name: self.metric_name,
+                anomaly_group_id: self.anomaly_group_id,
+                relationship_type: self.relationship_type,
+                contribution_percentage: self.contribution_percentage,
+            }
+        }
+    }
+}
+impl InterMetricImpactDetails {
+    /// Creates a new builder-style object to manufacture [`InterMetricImpactDetails`](crate::model::InterMetricImpactDetails)
+    pub fn builder() -> crate::model::inter_metric_impact_details::Builder {
+        crate::model::inter_metric_impact_details::Builder::default()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RelationshipType {
+    #[allow(missing_docs)] // documentation missing in model
+    CauseOfInputAnomalyGroup,
+    #[allow(missing_docs)] // documentation missing in model
+    EffectOfInputAnomalyGroup,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RelationshipType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CAUSE_OF_INPUT_ANOMALY_GROUP" => RelationshipType::CauseOfInputAnomalyGroup,
+            "EFFECT_OF_INPUT_ANOMALY_GROUP" => RelationshipType::EffectOfInputAnomalyGroup,
+            other => RelationshipType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RelationshipType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RelationshipType::from(s))
+    }
+}
+impl RelationshipType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RelationshipType::CauseOfInputAnomalyGroup => "CAUSE_OF_INPUT_ANOMALY_GROUP",
+            RelationshipType::EffectOfInputAnomalyGroup => "EFFECT_OF_INPUT_ANOMALY_GROUP",
+            RelationshipType::Unknown(s) => s.as_ref(),
+        }
+    }
+    /// Returns all the `&str` values of the enum members.
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "CAUSE_OF_INPUT_ANOMALY_GROUP",
+            "EFFECT_OF_INPUT_ANOMALY_GROUP",
+        ]
+    }
+}
+impl AsRef<str> for RelationshipType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3731,12 +3903,9 @@ pub mod anomaly_group {
         /// To override the contents of this collection use [`set_metric_level_impact_list`](Self::set_metric_level_impact_list).
         ///
         /// <p>A list of measures affected by the anomaly.</p>
-        pub fn metric_level_impact_list(
-            mut self,
-            input: impl Into<crate::model::MetricLevelImpact>,
-        ) -> Self {
+        pub fn metric_level_impact_list(mut self, input: crate::model::MetricLevelImpact) -> Self {
             let mut v = self.metric_level_impact_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.metric_level_impact_list = Some(v);
             self
         }
@@ -3906,10 +4075,10 @@ pub mod contribution_matrix {
         /// <p>A list of contributing dimensions.</p>
         pub fn dimension_contribution_list(
             mut self,
-            input: impl Into<crate::model::DimensionContribution>,
+            input: crate::model::DimensionContribution,
         ) -> Self {
             let mut v = self.dimension_contribution_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimension_contribution_list = Some(v);
             self
         }
@@ -4000,10 +4169,10 @@ pub mod dimension_contribution {
         /// <p>A list of dimension values that contributed to the anomaly.</p>
         pub fn dimension_value_contribution_list(
             mut self,
-            input: impl Into<crate::model::DimensionValueContribution>,
+            input: crate::model::DimensionValueContribution,
         ) -> Self {
             let mut v = self.dimension_value_contribution_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.dimension_value_contribution_list = Some(v);
             self
         }
@@ -4736,8 +4905,7 @@ impl LambdaConfiguration {
     }
 }
 
-/// <p>Contains information about the SNS topic to which you want to send your alerts and the IAM role that has
-/// access to that topic.</p>
+/// <p>Contains information about the SNS topic to which you want to send your alerts and the IAM role that has access to that topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsConfiguration {

@@ -204,12 +204,9 @@ pub mod search_schema_summary {
         /// To override the contents of this collection use [`set_schema_versions`](Self::set_schema_versions).
         ///
         /// <p>An array of schema version summaries.</p>
-        pub fn schema_versions(
-            mut self,
-            input: impl Into<crate::model::SearchSchemaVersionSummary>,
-        ) -> Self {
+        pub fn schema_versions(mut self, input: crate::model::SearchSchemaVersionSummary) -> Self {
             let mut v = self.schema_versions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.schema_versions = Some(v);
             self
         }

@@ -171,33 +171,25 @@ impl RoleInfo {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoleCredentials {
-    /// <p>The identifier used for the temporary security credentials. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
-    /// <i>AWS IAM User Guide</i>.</p>
+    /// <p>The identifier used for the temporary security credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
     pub access_key_id: std::option::Option<std::string::String>,
-    /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
-    /// <i>AWS IAM User Guide</i>.</p>
+    /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
     pub secret_access_key: std::option::Option<std::string::String>,
-    /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
-    /// <i>AWS IAM User Guide</i>.</p>
+    /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
     pub session_token: std::option::Option<std::string::String>,
     /// <p>The date on which temporary security credentials expire.</p>
     pub expiration: i64,
 }
 impl RoleCredentials {
-    /// <p>The identifier used for the temporary security credentials. For more information, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
-    /// <i>AWS IAM User Guide</i>.</p>
+    /// <p>The identifier used for the temporary security credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
     pub fn access_key_id(&self) -> std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
-    /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
-    /// <i>AWS IAM User Guide</i>.</p>
+    /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
     pub fn secret_access_key(&self) -> std::option::Option<&str> {
         self.secret_access_key.as_deref()
     }
-    /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
-    /// <i>AWS IAM User Guide</i>.</p>
+    /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
     pub fn session_token(&self) -> std::option::Option<&str> {
         self.session_token.as_deref()
     }
@@ -228,16 +220,12 @@ pub mod role_credentials {
         pub(crate) expiration: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The identifier used for the temporary security credentials. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
-        /// <i>AWS IAM User Guide</i>.</p>
+        /// <p>The identifier used for the temporary security credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
         pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_key_id = Some(input.into());
             self
         }
-        /// <p>The identifier used for the temporary security credentials. For more information, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
-        /// <i>AWS IAM User Guide</i>.</p>
+        /// <p>The identifier used for the temporary security credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -245,14 +233,12 @@ pub mod role_credentials {
             self.access_key_id = input;
             self
         }
-        /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
-        /// <i>AWS IAM User Guide</i>.</p>
+        /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
         pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_access_key = Some(input.into());
             self
         }
-        /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
-        /// <i>AWS IAM User Guide</i>.</p>
+        /// <p>The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
         pub fn set_secret_access_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -260,14 +246,12 @@ pub mod role_credentials {
             self.secret_access_key = input;
             self
         }
-        /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
-        /// <i>AWS IAM User Guide</i>.</p>
+        /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
         pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_token = Some(input.into());
             self
         }
-        /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the
-        /// <i>AWS IAM User Guide</i>.</p>
+        /// <p>The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>
         pub fn set_session_token(
             mut self,
             input: std::option::Option<std::string::String>,

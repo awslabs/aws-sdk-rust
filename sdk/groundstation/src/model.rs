@@ -2418,9 +2418,7 @@ impl S3RecordingConfig {
 }
 
 /// <p>Information about an uplink echo <code>Config</code>.</p>
-/// <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the
-/// specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code>
-/// is used in a contact.</p>
+/// <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UplinkEchoConfig {
@@ -3211,15 +3209,9 @@ pub struct SpectrumConfig {
     pub center_frequency: std::option::Option<crate::model::Frequency>,
     /// <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
-    /// </li>
+    /// <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li>
+    /// <li> <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p> </li>
+    /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
     pub bandwidth: std::option::Option<crate::model::FrequencyBandwidth>,
     /// <p>Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
@@ -3232,15 +3224,9 @@ impl SpectrumConfig {
     }
     /// <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
-    /// </li>
+    /// <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li>
+    /// <li> <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p> </li>
+    /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
     pub fn bandwidth(&self) -> std::option::Option<&crate::model::FrequencyBandwidth> {
         self.bandwidth.as_ref()
@@ -3285,15 +3271,9 @@ pub mod spectrum_config {
         }
         /// <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
-        /// </li>
+        /// <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li>
+        /// <li> <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p> </li>
+        /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
         /// </ul>
         pub fn bandwidth(mut self, input: crate::model::FrequencyBandwidth) -> Self {
             self.bandwidth = Some(input);
@@ -3301,15 +3281,9 @@ pub mod spectrum_config {
         }
         /// <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
-        /// </li>
+        /// <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li>
+        /// <li> <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p> </li>
+        /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
         /// </ul>
         pub fn set_bandwidth(
             mut self,
@@ -3354,15 +3328,9 @@ impl SpectrumConfig {
 pub struct FrequencyBandwidth {
     /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
-    /// </li>
+    /// <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li>
+    /// <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
+    /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
     pub value: std::option::Option<f64>,
     /// <p>Frequency bandwidth units.</p>
@@ -3371,15 +3339,9 @@ pub struct FrequencyBandwidth {
 impl FrequencyBandwidth {
     /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
-    /// </li>
+    /// <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li>
+    /// <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
+    /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
     pub fn value(&self) -> std::option::Option<f64> {
         self.value
@@ -3409,15 +3371,9 @@ pub mod frequency_bandwidth {
     impl Builder {
         /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
-        /// </li>
+        /// <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li>
+        /// <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
+        /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
         /// </ul>
         pub fn value(mut self, input: f64) -> Self {
             self.value = Some(input);
@@ -3425,15 +3381,9 @@ pub mod frequency_bandwidth {
         }
         /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
-        /// </li>
+        /// <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li>
+        /// <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
+        /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
         /// </ul>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
@@ -3606,8 +3556,7 @@ impl DataflowEndpointConfig {
     }
 }
 
-/// <p>Object that determines whether tracking should be used during a contact
-/// executed with this <code>Config</code> in the mission profile.</p>
+/// <p>Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrackingConfig {
@@ -3723,8 +3672,7 @@ impl AsRef<str> for Criticality {
     }
 }
 
-/// <p>Information about how AWS Ground Station should configure an
-/// antenna for downlink during a contact.</p>
+/// <p>Information about how AWS Ground Station should configure an antenna for downlink during a contact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AntennaDownlinkConfig {

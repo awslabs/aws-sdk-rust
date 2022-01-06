@@ -12,13 +12,11 @@ pub struct BatchCheckLayerAvailabilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchCheckLayerAvailabilityErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The registry does not exist.</p>
     RegistryNotFoundException(crate::error::RegistryNotFoundException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -72,8 +70,6 @@ impl BatchCheckLayerAvailabilityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -150,11 +146,9 @@ pub struct BatchDeleteImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteImageErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -201,8 +195,6 @@ impl BatchDeleteImageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -268,11 +260,9 @@ pub struct CompleteLayerUploadError {
 pub enum CompleteLayerUploadErrorKind {
     /// <p>The specified layer upload does not contain any layer parts.</p>
     EmptyUploadException(crate::error::EmptyUploadException),
-    /// <p>The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not
-    /// match the digest specified.</p>
+    /// <p>The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not match the digest specified.</p>
     InvalidLayerException(crate::error::InvalidLayerException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The image layer already exists in the associated repository.</p>
     LayerAlreadyExistsException(crate::error::LayerAlreadyExistsException),
@@ -280,15 +270,13 @@ pub enum CompleteLayerUploadErrorKind {
     LayerPartTooSmallException(crate::error::LayerPartTooSmallException),
     /// <p>The registry does not exist.</p>
     RegistryNotFoundException(crate::error::RegistryNotFoundException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
     /// <p>The action is not supported in this Region.</p>
     UnsupportedCommandException(crate::error::UnsupportedCommandException),
-    /// <p>The upload could not be found, or the specified upload ID is not valid for this
-    /// repository.</p>
+    /// <p>The upload could not be found, or the specified upload ID is not valid for this repository.</p>
     UploadNotFoundException(crate::error::UploadNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -340,8 +328,6 @@ impl CompleteLayerUploadError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -461,21 +447,17 @@ pub struct CreateRepositoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRepositoryErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
-    /// <p>The operation did not succeed because it would have exceeded a service limit for your
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service Quotas</a> in the
-    /// Amazon Elastic Container Registry User Guide.</p>
+    /// <p>The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified repository already exists in the specified registry.</p>
     RepositoryAlreadyExistsException(crate::error::RepositoryAlreadyExistsException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-    /// can be applied to a repository is 50.</p>
+    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -523,8 +505,6 @@ impl CreateRepositoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -612,14 +592,11 @@ pub struct DeleteRepositoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRepositoryErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository contains images. To delete a repository that contains images,
-    /// you must force the deletion with the <code>force</code> parameter.</p>
+    /// <p>The specified repository contains images. To delete a repository that contains images, you must force the deletion with the <code>force</code> parameter.</p>
     RepositoryNotEmptyException(crate::error::RepositoryNotEmptyException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -667,8 +644,6 @@ impl DeleteRepositoryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -740,14 +715,11 @@ pub struct DeleteRepositoryPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRepositoryPolicyErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
-    /// <p>The specified repository and registry combination does not have an associated repository
-    /// policy.</p>
+    /// <p>The specified repository and registry combination does not have an associated repository policy.</p>
     RepositoryPolicyNotFoundException(crate::error::RepositoryPolicyNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -797,8 +769,6 @@ impl DeleteRepositoryPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -877,11 +847,9 @@ pub struct DescribeImagesError {
 pub enum DescribeImagesErrorKind {
     /// <p>The image requested does not exist in the specified repository.</p>
     ImageNotFoundException(crate::error::ImageNotFoundException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -929,8 +897,6 @@ impl DescribeImagesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1002,11 +968,9 @@ pub struct DescribeImageTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeImageTagsErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1053,8 +1017,6 @@ impl DescribeImageTagsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1118,8 +1080,7 @@ pub struct DescribeRegistriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRegistriesErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1168,8 +1129,6 @@ impl DescribeRegistriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1233,11 +1192,9 @@ pub struct DescribeRepositoriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRepositoriesErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1284,8 +1241,6 @@ impl DescribeRepositoriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1352,8 +1307,7 @@ pub struct GetAuthorizationTokenError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAuthorizationTokenErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1399,8 +1353,6 @@ impl GetAuthorizationTokenError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1505,8 +1457,6 @@ impl GetRegistryCatalogDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1565,11 +1515,9 @@ pub struct GetRepositoryCatalogDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRepositoryCatalogDataErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1616,8 +1564,6 @@ impl GetRepositoryCatalogDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1684,14 +1630,11 @@ pub struct GetRepositoryPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRepositoryPolicyErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
-    /// <p>The specified repository and registry combination does not have an associated repository
-    /// policy.</p>
+    /// <p>The specified repository and registry combination does not have an associated repository policy.</p>
     RepositoryPolicyNotFoundException(crate::error::RepositoryPolicyNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1741,8 +1684,6 @@ impl GetRepositoryPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1814,13 +1755,11 @@ pub struct InitiateLayerUploadError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum InitiateLayerUploadErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The registry does not exist.</p>
     RegistryNotFoundException(crate::error::RegistryNotFoundException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -1871,8 +1810,6 @@ impl InitiateLayerUploadError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1952,11 +1889,9 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2003,8 +1938,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2068,31 +2001,23 @@ pub struct PutImageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutImageErrorKind {
-    /// <p>The specified image has already been pushed, and there were no changes to the manifest
-    /// or image tag after the last push.</p>
+    /// <p>The specified image has already been pushed, and there were no changes to the manifest or image tag after the last push.</p>
     ImageAlreadyExistsException(crate::error::ImageAlreadyExistsException),
-    /// <p>The specified image digest does not match the digest that Amazon ECR calculated for the
-    /// image.</p>
+    /// <p>The specified image digest does not match the digest that Amazon ECR calculated for the image.</p>
     ImageDigestDoesNotMatchException(crate::error::ImageDigestDoesNotMatchException),
-    /// <p>The specified image is tagged with a tag that already exists. The repository is
-    /// configured for tag immutability.</p>
+    /// <p>The specified image is tagged with a tag that already exists. The repository is configured for tag immutability.</p>
     ImageTagAlreadyExistsException(crate::error::ImageTagAlreadyExistsException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified layers could not be found, or the specified layer is not valid for this
-    /// repository.</p>
+    /// <p>The specified layers could not be found, or the specified layer is not valid for this repository.</p>
     LayersNotFoundException(crate::error::LayersNotFoundException),
-    /// <p>The operation did not succeed because it would have exceeded a service limit for your
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service Quotas</a> in the
-    /// Amazon Elastic Container Registry User Guide.</p>
+    /// <p>The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The manifest list is referencing an image that does not exist.</p>
     ReferencedImagesNotFoundException(crate::error::ReferencedImagesNotFoundException),
     /// <p>The registry does not exist.</p>
     RegistryNotFoundException(crate::error::RegistryNotFoundException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2149,8 +2074,6 @@ impl PutImageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2266,8 +2189,7 @@ pub struct PutRegistryCatalogDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutRegistryCatalogDataErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2316,8 +2238,6 @@ impl PutRegistryCatalogDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2384,11 +2304,9 @@ pub struct PutRepositoryCatalogDataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutRepositoryCatalogDataErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2435,8 +2353,6 @@ impl PutRepositoryCatalogDataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2503,11 +2419,9 @@ pub struct SetRepositoryPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetRepositoryPolicyErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
@@ -2554,8 +2468,6 @@ impl SetRepositoryPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2619,18 +2531,15 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-    /// can be applied to a repository is 50.</p>
+    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2677,8 +2586,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2755,18 +2662,15 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
-    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-    /// can be applied to a repository is 50.</p>
+    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2813,8 +2717,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2891,27 +2793,21 @@ pub struct UploadLayerPartError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UploadLayerPartErrorKind {
-    /// <p>The layer part size is not valid, or the first byte specified is not consecutive to the
-    /// last byte of a previous layer part upload.</p>
+    /// <p>The layer part size is not valid, or the first byte specified is not consecutive to the last byte of a previous layer part upload.</p>
     InvalidLayerPartException(crate::error::InvalidLayerPartException),
-    /// <p>The specified parameter is invalid. Review the available parameters for the API
-    /// request.</p>
+    /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The operation did not succeed because it would have exceeded a service limit for your
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service Quotas</a> in the
-    /// Amazon Elastic Container Registry User Guide.</p>
+    /// <p>The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The registry does not exist.</p>
     RegistryNotFoundException(crate::error::RegistryNotFoundException),
-    /// <p>The specified repository could not be found. Check the spelling of the specified
-    /// repository and ensure that you are performing operations on the correct registry.</p>
+    /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::error::ServerException),
     /// <p>The action is not supported in this Region.</p>
     UnsupportedCommandException(crate::error::UnsupportedCommandException),
-    /// <p>The upload could not be found, or the specified upload ID is not valid for this
-    /// repository.</p>
+    /// <p>The upload could not be found, or the specified upload ID is not valid for this repository.</p>
     UploadNotFoundException(crate::error::UploadNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2961,8 +2857,6 @@ impl UploadLayerPartError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3053,8 +2947,7 @@ impl std::error::Error for UploadLayerPartError {
     }
 }
 
-/// <p>The upload could not be found, or the specified upload ID is not valid for this
-/// repository.</p>
+/// <p>The upload could not be found, or the specified upload ID is not valid for this repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadNotFoundException {
@@ -3246,8 +3139,7 @@ impl ServerException {
     }
 }
 
-/// <p>The specified repository could not be found. Check the spelling of the specified
-/// repository and ensure that you are performing operations on the correct registry.</p>
+/// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryNotFoundException {
@@ -3375,9 +3267,7 @@ impl RegistryNotFoundException {
     }
 }
 
-/// <p>The operation did not succeed because it would have exceeded a service limit for your
-/// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service Quotas</a> in the
-/// Amazon Elastic Container Registry User Guide.</p>
+/// <p>The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service Quotas</a> in the Amazon Elastic Container Registry User Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -3441,8 +3331,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>The specified parameter is invalid. Review the available parameters for the API
-/// request.</p>
+/// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
@@ -3506,8 +3395,7 @@ impl InvalidParameterException {
     }
 }
 
-/// <p>The layer part size is not valid, or the first byte specified is not consecutive to the
-/// last byte of a previous layer part upload.</p>
+/// <p>The layer part size is not valid, or the first byte specified is not consecutive to the last byte of a previous layer part upload.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLayerPartException {
@@ -3652,8 +3540,7 @@ impl InvalidLayerPartException {
     }
 }
 
-/// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-/// can be applied to a repository is 50.</p>
+/// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
@@ -3845,8 +3732,7 @@ impl ReferencedImagesNotFoundException {
     }
 }
 
-/// <p>The specified layers could not be found, or the specified layer is not valid for this
-/// repository.</p>
+/// <p>The specified layers could not be found, or the specified layer is not valid for this repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LayersNotFoundException {
@@ -3910,8 +3796,7 @@ impl LayersNotFoundException {
     }
 }
 
-/// <p>The specified image is tagged with a tag that already exists. The repository is
-/// configured for tag immutability.</p>
+/// <p>The specified image is tagged with a tag that already exists. The repository is configured for tag immutability.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageTagAlreadyExistsException {
@@ -3975,8 +3860,7 @@ impl ImageTagAlreadyExistsException {
     }
 }
 
-/// <p>The specified image digest does not match the digest that Amazon ECR calculated for the
-/// image.</p>
+/// <p>The specified image digest does not match the digest that Amazon ECR calculated for the image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageDigestDoesNotMatchException {
@@ -4040,8 +3924,7 @@ impl ImageDigestDoesNotMatchException {
     }
 }
 
-/// <p>The specified image has already been pushed, and there were no changes to the manifest
-/// or image tag after the last push.</p>
+/// <p>The specified image has already been pushed, and there were no changes to the manifest or image tag after the last push.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageAlreadyExistsException {
@@ -4105,8 +3988,7 @@ impl ImageAlreadyExistsException {
     }
 }
 
-/// <p>The specified repository and registry combination does not have an associated repository
-/// policy.</p>
+/// <p>The specified repository and registry combination does not have an associated repository policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryPolicyNotFoundException {
@@ -4234,8 +4116,7 @@ impl ImageNotFoundException {
     }
 }
 
-/// <p>The specified repository contains images. To delete a repository that contains images,
-/// you must force the deletion with the <code>force</code> parameter.</p>
+/// <p>The specified repository contains images. To delete a repository that contains images, you must force the deletion with the <code>force</code> parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RepositoryNotEmptyException {
@@ -4491,8 +4372,7 @@ impl LayerAlreadyExistsException {
     }
 }
 
-/// <p>The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not
-/// match the digest specified.</p>
+/// <p>The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not match the digest specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLayerException {

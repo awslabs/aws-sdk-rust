@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS CodeStar
@@ -221,7 +221,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateTeamMember`.
     ///
     /// <p>Adds an IAM user to the team for an AWS CodeStar project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTeamMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -266,10 +266,10 @@ pub mod fluent_builders {
                 crate::input::AssociateTeamMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -278,8 +278,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project to which you will add the IAM user.</p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project to which you will add the IAM user.</p>
@@ -287,14 +287,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_id(input);
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested the team
-        /// member association to the project. This token can be used to repeat the request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested the team
-        /// member association to the project. This token can be used to repeat the request.</p>
+        /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -302,38 +300,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar
-        /// project.</p>
-        pub fn user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.</p>
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar
-        /// project.</p>
+        /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_arn(input);
             self
         }
-        /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions
-        /// a user can take in an AWS CodeStar project.</p>
-        pub fn project_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_role(inp);
+        /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>
+        pub fn project_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_role(input.into());
             self
         }
-        /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions
-        /// a user can take in an AWS CodeStar project.</p>
+        /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>
         pub fn set_project_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_role(input);
             self
         }
-        /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely
-        /// access project resources, for example Amazon EC2 instances.</p>
-        pub fn remote_access_allowed(mut self, inp: bool) -> Self {
-            self.inner = self.inner.remote_access_allowed(inp);
+        /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>
+        pub fn remote_access_allowed(mut self, input: bool) -> Self {
+            self.inner = self.inner.remote_access_allowed(input);
             self
         }
-        /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely
-        /// access project resources, for example Amazon EC2 instances.</p>
+        /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>
         pub fn set_remote_access_allowed(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_remote_access_allowed(input);
             self
@@ -341,10 +333,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProject`.
     ///
-    /// <p>Creates a project, including project resources. This action creates a project based on
-    /// a submitted project request. A set of source code files and a toolchain template file
-    /// can be included with the project request. If these are not provided, an empty project is created.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a project, including project resources. This action creates a project based on a submitted project request. A set of source code files and a toolchain template file can be included with the project request. If these are not provided, an empty project is created.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -389,10 +379,10 @@ pub mod fluent_builders {
                 crate::input::CreateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -401,8 +391,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The display name for the project to be created in AWS CodeStar.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The display name for the project to be created in AWS CodeStar.</p>
@@ -411,8 +401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the project to be created in AWS CodeStar.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the project to be created in AWS CodeStar.</p>
@@ -421,8 +411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the project, if any.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the project, if any.</p>
@@ -430,14 +420,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested project
-        /// creation. This token can be used to repeat the request.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested project
-        /// creation. This token can be used to repeat the request.</p>
+        /// <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -449,14 +437,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_source_code`](Self::set_source_code).
         ///
-        /// <p>A list of the Code objects submitted with the project request. If this
-        /// parameter is specified, the request must also include the toolchain parameter.</p>
-        pub fn source_code(mut self, inp: impl Into<crate::model::Code>) -> Self {
-            self.inner = self.inner.source_code(inp);
+        /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
+        pub fn source_code(mut self, input: crate::model::Code) -> Self {
+            self.inner = self.inner.source_code(input);
             self
         }
-        /// <p>A list of the Code objects submitted with the project request. If this
-        /// parameter is specified, the request must also include the toolchain parameter.</p>
+        /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
         pub fn set_source_code(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Code>>,
@@ -464,14 +450,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_code(input);
             self
         }
-        /// <p>The name of the toolchain template file submitted with the project request. If
-        /// this parameter is specified, the request must also include the sourceCode parameter.</p>
-        pub fn toolchain(mut self, inp: crate::model::Toolchain) -> Self {
-            self.inner = self.inner.toolchain(inp);
+        /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
+        pub fn toolchain(mut self, input: crate::model::Toolchain) -> Self {
+            self.inner = self.inner.toolchain(input);
             self
         }
-        /// <p>The name of the toolchain template file submitted with the project request. If
-        /// this parameter is specified, the request must also include the sourceCode parameter.</p>
+        /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
         pub fn set_toolchain(
             mut self,
             input: std::option::Option<crate::model::Toolchain>,
@@ -489,7 +473,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags created for the project.</p>
@@ -505,11 +489,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateUserProfile`.
     ///
-    /// <p>Creates a profile for a user that includes user preferences, such as the display name
-    /// and email address assocciated with the user, in AWS CodeStar. The user profile is not
-    /// project-specific. Information in the user profile is displayed wherever the user's information
-    /// appears to other users in AWS CodeStar.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a profile for a user that includes user preferences, such as the display name and email address assocciated with the user, in AWS CodeStar. The user profile is not project-specific. Information in the user profile is displayed wherever the user's information appears to other users in AWS CodeStar.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -554,10 +535,10 @@ pub mod fluent_builders {
                 crate::input::CreateUserProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -566,8 +547,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
-        pub fn user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(inp);
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
@@ -576,8 +557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
@@ -585,14 +566,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>The email address that will be displayed as part of the user's profile in
-        /// AWS CodeStar.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        /// <p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
-        /// <p>The email address that will be displayed as part of the user's profile in
-        /// AWS CodeStar.</p>
+        /// <p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -600,16 +579,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_email_address(input);
             self
         }
-        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-        /// user remote access to project resources, this public key will be used along with the user's
-        /// private key for SSH access.</p>
-        pub fn ssh_public_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(inp);
+        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
-        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-        /// user remote access to project resources, this public key will be used along with the user's
-        /// private key for SSH access.</p>
+        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -620,9 +595,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteProject`.
     ///
-    /// <p>Deletes a project, including project resources. Does not delete users associated with
-    /// the project, but does delete the IAM roles that allowed access to the project.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a project, including project resources. Does not delete users associated with the project, but does delete the IAM roles that allowed access to the project.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -667,10 +641,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -679,8 +653,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
@@ -688,14 +662,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested project
-        /// deletion. This token can be used to repeat the request. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested project
-        /// deletion. This token can be used to repeat the request. </p>
+        /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -703,18 +675,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally
-        /// used to generate the project and its resources. This option will delete all AWS resources for
-        /// the project (except for any buckets in Amazon S3) as well as deleting the project itself.
-        /// Recommended for most use cases.</p>
-        pub fn delete_stack(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_stack(inp);
+        /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
+        pub fn delete_stack(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_stack(input);
             self
         }
-        /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally
-        /// used to generate the project and its resources. This option will delete all AWS resources for
-        /// the project (except for any buckets in Amazon S3) as well as deleting the project itself.
-        /// Recommended for most use cases.</p>
+        /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
         pub fn set_delete_stack(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_delete_stack(input);
             self
@@ -722,10 +688,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteUserProfile`.
     ///
-    /// <p>Deletes a user profile in AWS CodeStar, including all personal preference data associated with
-    /// that profile, such as display name and email address. It does not delete the history of that
-    /// user, for example the history of commits made by that user.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a user profile in AWS CodeStar, including all personal preference data associated with that profile, such as display name and email address. It does not delete the history of that user, for example the history of commits made by that user.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -770,10 +734,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUserProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -782,8 +746,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>
-        pub fn user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(inp);
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>
@@ -795,7 +759,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeProject`.
     ///
     /// <p>Describes a project and its resources.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -840,10 +804,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -852,8 +816,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the project.</p>
@@ -865,7 +829,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUserProfile`.
     ///
     /// <p>Describes a user in AWS CodeStar and the user attributes across all projects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -910,10 +874,10 @@ pub mod fluent_builders {
                 crate::input::DescribeUserProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -922,8 +886,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the user.</p>
-        pub fn user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(inp);
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user.</p>
@@ -934,11 +898,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateTeamMember`.
     ///
-    /// <p>Removes a user from a project. Removing a user from a project also removes the IAM
-    /// policies from that user that allowed access to the project and its resources. Disassociating a
-    /// team member does not remove that user's profile from AWS CodeStar. It does not remove the user from
-    /// IAM.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Removes a user from a project. Removing a user from a project also removes the IAM policies from that user that allowed access to the project and its resources. Disassociating a team member does not remove that user's profile from AWS CodeStar. It does not remove the user from IAM.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTeamMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -983,10 +944,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateTeamMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -995,8 +956,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
@@ -1004,14 +965,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from
-        /// the project.</p>
-        pub fn user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from
-        /// the project.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_arn(input);
             self
@@ -1020,7 +979,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProjects`.
     ///
     /// <p>Lists all projects in AWS CodeStar associated with your AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1065,10 +1024,10 @@ pub mod fluent_builders {
                 crate::input::ListProjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1076,21 +1035,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The continuation token to be used to return the next set of results, if the results
-        /// cannot be returned in one response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The continuation token to be used to return the next set of results, if the results
-        /// cannot be returned in one response.</p>
+        /// <p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum amount of data that can be contained in a single set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum amount of data that can be contained in a single set of results.</p>
@@ -1102,7 +1059,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListResources`.
     ///
     /// <p>Lists resources associated with a project in AWS CodeStar.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResources<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1147,10 +1104,10 @@ pub mod fluent_builders {
                 crate::input::ListResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1159,8 +1116,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project.</p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project.</p>
@@ -1168,21 +1125,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_id(input);
             self
         }
-        /// <p>The continuation token for the next set of results, if the results cannot be returned
-        /// in one response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The continuation token for the next set of results, if the results cannot be returned
-        /// in one response.</p>
+        /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum amount of data that can be contained in a single set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum amount of data that can be contained in a single set of results.</p>
@@ -1194,7 +1149,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForProject`.
     ///
     /// <p>Gets the tags for a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1239,10 +1194,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1251,8 +1206,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project to get tags for.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the project to get tags for.</p>
@@ -1261,8 +1216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Reserved for future use.</p>
@@ -1271,8 +1226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Reserved for future use.</p>
@@ -1284,7 +1239,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTeamMembers`.
     ///
     /// <p>Lists all team members associated with a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTeamMembers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1329,10 +1284,10 @@ pub mod fluent_builders {
                 crate::input::ListTeamMembersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1341,8 +1296,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project for which you want to list team members.</p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project for which you want to list team members.</p>
@@ -1350,21 +1305,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_id(input);
             self
         }
-        /// <p>The continuation token for the next set of results, if the results cannot be returned
-        /// in one response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The continuation token for the next set of results, if the results cannot be returned
-        /// in one response.</p>
+        /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of team members you want returned in a response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of team members you want returned in a response.</p>
@@ -1376,7 +1329,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUserProfiles`.
     ///
     /// <p>Lists all the user profiles configured for your AWS account in AWS CodeStar.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUserProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1421,10 +1374,10 @@ pub mod fluent_builders {
                 crate::input::ListUserProfilesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1432,21 +1385,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The continuation token for the next set of results, if the results cannot be returned
-        /// in one response.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The continuation token for the next set of results, if the results cannot be returned
-        /// in one response.</p>
+        /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to return in a response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a response.</p>
@@ -1458,7 +1409,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagProject`.
     ///
     /// <p>Adds tags to a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1503,10 +1454,10 @@ pub mod fluent_builders {
                 crate::input::TagProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1515,8 +1466,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project you want to add a tag to.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the project you want to add a tag to.</p>
@@ -1534,7 +1485,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags you want to add to the project.</p>
@@ -1551,7 +1502,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagProject`.
     ///
     /// <p>Removes tags from a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1596,10 +1547,10 @@ pub mod fluent_builders {
                 crate::input::UntagProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1608,8 +1559,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project to remove tags from.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the project to remove tags from.</p>
@@ -1622,8 +1573,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to remove from the project.</p>
-        pub fn tags(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tags(input.into());
             self
         }
         /// <p>The tags to remove from the project.</p>
@@ -1638,7 +1589,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateProject`.
     ///
     /// <p>Updates a project in AWS CodeStar.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1683,10 +1634,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1695,8 +1646,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project you want to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(inp);
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the project you want to update.</p>
@@ -1705,8 +1656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the project you want to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the project you want to update.</p>
@@ -1715,8 +1666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the project, if any.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the project, if any.</p>
@@ -1727,10 +1678,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateTeamMember`.
     ///
-    /// <p>Updates a team member's attributes in an AWS CodeStar project. For example, you can change a
-    /// team member's role in the project, or change whether they have remote access to project
-    /// resources.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a team member's attributes in an AWS CodeStar project. For example, you can change a team member's role in the project, or change whether they have remote access to project resources.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTeamMember<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1775,10 +1724,10 @@ pub mod fluent_builders {
                 crate::input::UpdateTeamMemberInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1787,8 +1736,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project.</p>
-        pub fn project_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(inp);
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project.</p>
@@ -1796,42 +1745,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_id(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership
-        /// attributes.</p>
-        pub fn user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership
-        /// attributes.</p>
+        /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_arn(input);
             self
         }
-        /// <p>The role assigned to the user in the project. Project roles have different levels of
-        /// access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
-        /// Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
-        pub fn project_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_role(inp);
+        /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+        pub fn project_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_role(input.into());
             self
         }
-        /// <p>The role assigned to the user in the project. Project roles have different levels of
-        /// access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
-        /// Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+        /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
         pub fn set_project_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_role(input);
             self
         }
-        /// <p>Whether a team member is allowed to remotely access project resources using the SSH
-        /// public key associated with the user's profile. Even if this is set to True, the user must
-        /// associate a public key with their profile before the user can access resources.</p>
-        pub fn remote_access_allowed(mut self, inp: bool) -> Self {
-            self.inner = self.inner.remote_access_allowed(inp);
+        /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>
+        pub fn remote_access_allowed(mut self, input: bool) -> Self {
+            self.inner = self.inner.remote_access_allowed(input);
             self
         }
-        /// <p>Whether a team member is allowed to remotely access project resources using the SSH
-        /// public key associated with the user's profile. Even if this is set to True, the user must
-        /// associate a public key with their profile before the user can access resources.</p>
+        /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>
         pub fn set_remote_access_allowed(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_remote_access_allowed(input);
             self
@@ -1839,10 +1778,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateUserProfile`.
     ///
-    /// <p>Updates a user's profile in AWS CodeStar. The user profile is not project-specific.
-    /// Information in the user profile is displayed wherever the user's information appears to other
-    /// users in AWS CodeStar. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updates a user's profile in AWS CodeStar. The user profile is not project-specific. Information in the user profile is displayed wherever the user's information appears to other users in AWS CodeStar. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1887,10 +1824,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUserProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1898,21 +1835,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name that will be displayed as the friendly name for the user in AWS
-        /// CodeStar.</p>
-        pub fn user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(inp);
+        /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
-        /// <p>The name that will be displayed as the friendly name for the user in AWS
-        /// CodeStar.</p>
+        /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_arn(input);
             self
         }
         /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
@@ -1920,14 +1855,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>The email address that is displayed as part of the user's profile in AWS
-        /// CodeStar.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(inp);
+        /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
-        /// <p>The email address that is displayed as part of the user's profile in AWS
-        /// CodeStar.</p>
+        /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1935,16 +1868,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_email_address(input);
             self
         }
-        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-        /// user remote access to project resources, this public key will be used along with the user's
-        /// private key for SSH access.</p>
-        pub fn ssh_public_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(inp);
+        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
-        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-        /// user remote access to project resources, this public key will be used along with the user's
-        /// private key for SSH access.</p>
+        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1954,6 +1883,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

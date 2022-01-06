@@ -12,11 +12,9 @@ pub struct ActivateGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ActivateGatewayErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -60,8 +58,6 @@ impl ActivateGatewayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -117,11 +113,9 @@ pub struct AddCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddCacheErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -165,8 +159,6 @@ impl AddCacheError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -222,11 +214,9 @@ pub struct AddTagsToResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddTagsToResourceErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -270,8 +260,6 @@ impl AddTagsToResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -330,11 +318,9 @@ pub struct AddUploadBufferError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddUploadBufferErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -378,8 +364,6 @@ impl AddUploadBufferError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -435,11 +419,9 @@ pub struct AddWorkingStorageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddWorkingStorageErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -483,8 +465,6 @@ impl AddWorkingStorageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -543,11 +523,9 @@ pub struct AssignTapePoolError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssignTapePoolErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -591,8 +569,6 @@ impl AssignTapePoolError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -648,11 +624,9 @@ pub struct AssociateFileSystemError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateFileSystemErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -696,8 +670,6 @@ impl AssociateFileSystemError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -756,11 +728,9 @@ pub struct AttachVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachVolumeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -804,8 +774,6 @@ impl AttachVolumeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -861,11 +829,9 @@ pub struct CancelArchivalError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelArchivalErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -909,8 +875,6 @@ impl CancelArchivalError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -966,11 +930,9 @@ pub struct CancelRetrievalError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelRetrievalErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1014,8 +976,6 @@ impl CancelRetrievalError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1071,11 +1031,9 @@ pub struct CreateCachediSCSIVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCachediSCSIVolumeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1121,8 +1079,6 @@ impl CreateCachediSCSIVolumeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1183,11 +1139,9 @@ pub struct CreateNFSFileShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNFSFileShareErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1231,8 +1185,6 @@ impl CreateNFSFileShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1291,11 +1243,9 @@ pub struct CreateSMBFileShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSMBFileShareErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1339,8 +1289,6 @@ impl CreateSMBFileShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1399,14 +1347,11 @@ pub struct CreateSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSnapshotErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// <p>An internal server error has occurred because the service is unavailable. For more
-    /// information, see the error and message fields.</p>
+    /// <p>An internal server error has occurred because the service is unavailable. For more information, see the error and message fields.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1451,8 +1396,6 @@ impl CreateSnapshotError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1516,14 +1459,11 @@ pub struct CreateSnapshotFromVolumeRecoveryPointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSnapshotFromVolumeRecoveryPointErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// <p>An internal server error has occurred because the service is unavailable. For more
-    /// information, see the error and message fields.</p>
+    /// <p>An internal server error has occurred because the service is unavailable. For more information, see the error and message fields.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1577,8 +1517,6 @@ impl CreateSnapshotFromVolumeRecoveryPointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1653,11 +1591,9 @@ pub struct CreateStorediSCSIVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStorediSCSIVolumeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1703,8 +1639,6 @@ impl CreateStorediSCSIVolumeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1765,11 +1699,9 @@ pub struct CreateTapePoolError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTapePoolErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1813,8 +1745,6 @@ impl CreateTapePoolError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1870,11 +1800,9 @@ pub struct CreateTapesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTapesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1918,8 +1846,6 @@ impl CreateTapesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1975,11 +1901,9 @@ pub struct CreateTapeWithBarcodeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTapeWithBarcodeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2023,8 +1947,6 @@ impl CreateTapeWithBarcodeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2083,11 +2005,9 @@ pub struct DeleteAutomaticTapeCreationPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAutomaticTapeCreationPolicyErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2138,8 +2058,6 @@ impl DeleteAutomaticTapeCreationPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2200,11 +2118,9 @@ pub struct DeleteBandwidthRateLimitError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBandwidthRateLimitErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2250,8 +2166,6 @@ impl DeleteBandwidthRateLimitError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2312,11 +2226,9 @@ pub struct DeleteChapCredentialsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteChapCredentialsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2360,8 +2272,6 @@ impl DeleteChapCredentialsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2420,11 +2330,9 @@ pub struct DeleteFileShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFileShareErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2468,8 +2376,6 @@ impl DeleteFileShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2525,11 +2431,9 @@ pub struct DeleteGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGatewayErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2573,8 +2477,6 @@ impl DeleteGatewayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2630,11 +2532,9 @@ pub struct DeleteSnapshotScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSnapshotScheduleErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2680,8 +2580,6 @@ impl DeleteSnapshotScheduleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2740,11 +2638,9 @@ pub struct DeleteTapeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTapeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2788,8 +2684,6 @@ impl DeleteTapeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2845,11 +2739,9 @@ pub struct DeleteTapeArchiveError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTapeArchiveErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2893,8 +2785,6 @@ impl DeleteTapeArchiveError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2953,11 +2843,9 @@ pub struct DeleteTapePoolError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTapePoolErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3001,8 +2889,6 @@ impl DeleteTapePoolError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3058,11 +2944,9 @@ pub struct DeleteVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVolumeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3106,8 +2990,6 @@ impl DeleteVolumeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3163,11 +3045,9 @@ pub struct DescribeAvailabilityMonitorTestError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAvailabilityMonitorTestErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3216,8 +3096,6 @@ impl DescribeAvailabilityMonitorTestError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3278,11 +3156,9 @@ pub struct DescribeBandwidthRateLimitError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBandwidthRateLimitErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3328,8 +3204,6 @@ impl DescribeBandwidthRateLimitError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3390,11 +3264,9 @@ pub struct DescribeBandwidthRateLimitScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBandwidthRateLimitScheduleErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3445,8 +3317,6 @@ impl DescribeBandwidthRateLimitScheduleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3509,11 +3379,9 @@ pub struct DescribeCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCacheErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3557,8 +3425,6 @@ impl DescribeCacheError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3614,11 +3480,9 @@ pub struct DescribeCachediSCSIVolumesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCachediSCSIVolumesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3664,8 +3528,6 @@ impl DescribeCachediSCSIVolumesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3726,11 +3588,9 @@ pub struct DescribeChapCredentialsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeChapCredentialsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3776,8 +3636,6 @@ impl DescribeChapCredentialsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3838,11 +3696,9 @@ pub struct DescribeFileSystemAssociationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFileSystemAssociationsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3891,8 +3747,6 @@ impl DescribeFileSystemAssociationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3953,11 +3807,9 @@ pub struct DescribeGatewayInformationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGatewayInformationErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4003,8 +3855,6 @@ impl DescribeGatewayInformationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4065,11 +3915,9 @@ pub struct DescribeMaintenanceStartTimeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMaintenanceStartTimeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4115,8 +3963,6 @@ impl DescribeMaintenanceStartTimeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4177,11 +4023,9 @@ pub struct DescribeNFSFileSharesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNFSFileSharesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4225,8 +4069,6 @@ impl DescribeNFSFileSharesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4285,11 +4127,9 @@ pub struct DescribeSMBFileSharesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSMBFileSharesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4333,8 +4173,6 @@ impl DescribeSMBFileSharesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4393,11 +4231,9 @@ pub struct DescribeSMBSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSMBSettingsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4441,8 +4277,6 @@ impl DescribeSMBSettingsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4501,11 +4335,9 @@ pub struct DescribeSnapshotScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSnapshotScheduleErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4551,8 +4383,6 @@ impl DescribeSnapshotScheduleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4613,11 +4443,9 @@ pub struct DescribeStorediSCSIVolumesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStorediSCSIVolumesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4663,8 +4491,6 @@ impl DescribeStorediSCSIVolumesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4725,11 +4551,9 @@ pub struct DescribeTapeArchivesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTapeArchivesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4773,8 +4597,6 @@ impl DescribeTapeArchivesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4833,11 +4655,9 @@ pub struct DescribeTapeRecoveryPointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTapeRecoveryPointsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4883,8 +4703,6 @@ impl DescribeTapeRecoveryPointsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4945,11 +4763,9 @@ pub struct DescribeTapesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTapesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4993,8 +4809,6 @@ impl DescribeTapesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5050,11 +4864,9 @@ pub struct DescribeUploadBufferError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeUploadBufferErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5098,8 +4910,6 @@ impl DescribeUploadBufferError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5158,11 +4968,9 @@ pub struct DescribeVTLDevicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVTLDevicesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5206,8 +5014,6 @@ impl DescribeVTLDevicesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5266,11 +5072,9 @@ pub struct DescribeWorkingStorageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeWorkingStorageErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5316,8 +5120,6 @@ impl DescribeWorkingStorageError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5376,11 +5178,9 @@ pub struct DetachVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachVolumeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5424,8 +5224,6 @@ impl DetachVolumeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5481,11 +5279,9 @@ pub struct DisableGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableGatewayErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5529,8 +5325,6 @@ impl DisableGatewayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5586,11 +5380,9 @@ pub struct DisassociateFileSystemError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateFileSystemErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5636,8 +5428,6 @@ impl DisassociateFileSystemError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5696,11 +5486,9 @@ pub struct JoinDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum JoinDomainErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5744,8 +5532,6 @@ impl JoinDomainError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5801,11 +5587,9 @@ pub struct ListAutomaticTapeCreationPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAutomaticTapeCreationPoliciesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5856,8 +5640,6 @@ impl ListAutomaticTapeCreationPoliciesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5918,11 +5700,9 @@ pub struct ListFileSharesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFileSharesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5966,8 +5746,6 @@ impl ListFileSharesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6023,11 +5801,9 @@ pub struct ListFileSystemAssociationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFileSystemAssociationsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6073,8 +5849,6 @@ impl ListFileSystemAssociationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6135,11 +5909,9 @@ pub struct ListGatewaysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGatewaysErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6183,8 +5955,6 @@ impl ListGatewaysError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6240,11 +6010,9 @@ pub struct ListLocalDisksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLocalDisksErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6288,8 +6056,6 @@ impl ListLocalDisksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6345,11 +6111,9 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6393,8 +6157,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6453,11 +6215,9 @@ pub struct ListTapePoolsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTapePoolsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6501,8 +6261,6 @@ impl ListTapePoolsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6558,11 +6316,9 @@ pub struct ListTapesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTapesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6606,8 +6362,6 @@ impl ListTapesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6663,11 +6417,9 @@ pub struct ListVolumeInitiatorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListVolumeInitiatorsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6711,8 +6463,6 @@ impl ListVolumeInitiatorsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6771,11 +6521,9 @@ pub struct ListVolumeRecoveryPointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListVolumeRecoveryPointsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6821,8 +6569,6 @@ impl ListVolumeRecoveryPointsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6883,11 +6629,9 @@ pub struct ListVolumesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListVolumesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6931,8 +6675,6 @@ impl ListVolumesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6988,11 +6730,9 @@ pub struct NotifyWhenUploadedError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum NotifyWhenUploadedErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7036,8 +6776,6 @@ impl NotifyWhenUploadedError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7096,11 +6834,9 @@ pub struct RefreshCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RefreshCacheErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7144,8 +6880,6 @@ impl RefreshCacheError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7201,11 +6935,9 @@ pub struct RemoveTagsFromResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsFromResourceErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7251,8 +6983,6 @@ impl RemoveTagsFromResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7311,11 +7041,9 @@ pub struct ResetCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetCacheErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7359,8 +7087,6 @@ impl ResetCacheError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7416,11 +7142,9 @@ pub struct RetrieveTapeArchiveError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RetrieveTapeArchiveErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7464,8 +7188,6 @@ impl RetrieveTapeArchiveError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7524,11 +7246,9 @@ pub struct RetrieveTapeRecoveryPointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RetrieveTapeRecoveryPointErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7574,8 +7294,6 @@ impl RetrieveTapeRecoveryPointError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7636,11 +7354,9 @@ pub struct SetLocalConsolePasswordError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetLocalConsolePasswordErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7686,8 +7402,6 @@ impl SetLocalConsolePasswordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7748,11 +7462,9 @@ pub struct SetSMBGuestPasswordError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetSMBGuestPasswordErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7796,8 +7508,6 @@ impl SetSMBGuestPasswordError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7856,11 +7566,9 @@ pub struct ShutdownGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ShutdownGatewayErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7904,8 +7612,6 @@ impl ShutdownGatewayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -7961,11 +7667,9 @@ pub struct StartAvailabilityMonitorTestError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartAvailabilityMonitorTestErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8011,8 +7715,6 @@ impl StartAvailabilityMonitorTestError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8073,11 +7775,9 @@ pub struct StartGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartGatewayErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8121,8 +7821,6 @@ impl StartGatewayError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8178,11 +7876,9 @@ pub struct UpdateAutomaticTapeCreationPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAutomaticTapeCreationPolicyErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8233,8 +7929,6 @@ impl UpdateAutomaticTapeCreationPolicyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8295,11 +7989,9 @@ pub struct UpdateBandwidthRateLimitError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBandwidthRateLimitErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8345,8 +8037,6 @@ impl UpdateBandwidthRateLimitError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8407,11 +8097,9 @@ pub struct UpdateBandwidthRateLimitScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBandwidthRateLimitScheduleErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8460,8 +8148,6 @@ impl UpdateBandwidthRateLimitScheduleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8522,11 +8208,9 @@ pub struct UpdateChapCredentialsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateChapCredentialsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8570,8 +8254,6 @@ impl UpdateChapCredentialsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8630,11 +8312,9 @@ pub struct UpdateFileSystemAssociationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFileSystemAssociationErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8680,8 +8360,6 @@ impl UpdateFileSystemAssociationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8742,11 +8420,9 @@ pub struct UpdateGatewayInformationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGatewayInformationErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8792,8 +8468,6 @@ impl UpdateGatewayInformationError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8854,11 +8528,9 @@ pub struct UpdateGatewaySoftwareNowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGatewaySoftwareNowErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8904,8 +8576,6 @@ impl UpdateGatewaySoftwareNowError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -8966,11 +8636,9 @@ pub struct UpdateMaintenanceStartTimeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMaintenanceStartTimeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9016,8 +8684,6 @@ impl UpdateMaintenanceStartTimeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9078,11 +8744,9 @@ pub struct UpdateNFSFileShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateNFSFileShareErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9126,8 +8790,6 @@ impl UpdateNFSFileShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9186,11 +8848,9 @@ pub struct UpdateSMBFileShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSMBFileShareErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9234,8 +8894,6 @@ impl UpdateSMBFileShareError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9294,11 +8952,9 @@ pub struct UpdateSMBFileShareVisibilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSMBFileShareVisibilityErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9344,8 +9000,6 @@ impl UpdateSMBFileShareVisibilityError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9406,11 +9060,9 @@ pub struct UpdateSMBLocalGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSMBLocalGroupsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9454,8 +9106,6 @@ impl UpdateSMBLocalGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9514,11 +9164,9 @@ pub struct UpdateSMBSecurityStrategyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSMBSecurityStrategyErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9564,8 +9212,6 @@ impl UpdateSMBSecurityStrategyError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9626,11 +9272,9 @@ pub struct UpdateSnapshotScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSnapshotScheduleErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9676,8 +9320,6 @@ impl UpdateSnapshotScheduleError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9736,11 +9378,9 @@ pub struct UpdateVTLDeviceTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateVTLDeviceTypeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9784,8 +9424,6 @@ impl UpdateVTLDeviceTypeError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -9831,20 +9469,17 @@ impl std::error::Error for UpdateVTLDeviceTypeError {
     }
 }
 
-/// <p>An exception occurred because an invalid gateway request was issued to the service. For
-/// more information, see the error and message fields.</p>
+/// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGatewayRequestException {
     /// <p>A human-readable message describing the error that occurred.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
-    /// error.</p>
+    /// <p>A <code>StorageGatewayError</code> that provides more detail about the cause of the error.</p>
     pub error: std::option::Option<crate::model::StorageGatewayError>,
 }
 impl InvalidGatewayRequestException {
-    /// <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
-    /// error.</p>
+    /// <p>A <code>StorageGatewayError</code> that provides more detail about the cause of the error.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::StorageGatewayError> {
         self.error.as_ref()
     }
@@ -9893,14 +9528,12 @@ pub mod invalid_gateway_request_exception {
             self.message = input;
             self
         }
-        /// <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
-        /// error.</p>
+        /// <p>A <code>StorageGatewayError</code> that provides more detail about the cause of the error.</p>
         pub fn error(mut self, input: crate::model::StorageGatewayError) -> Self {
             self.error = Some(input);
             self
         }
-        /// <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
-        /// error.</p>
+        /// <p>A <code>StorageGatewayError</code> that provides more detail about the cause of the error.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::StorageGatewayError>,
@@ -9924,20 +9557,17 @@ impl InvalidGatewayRequestException {
     }
 }
 
-/// <p>An internal server error has occurred during the request. For more information, see the
-/// error and message fields.</p>
+/// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
     /// <p>A human-readable message describing the error that occurred.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-    /// of the error.</p>
+    /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
     pub error: std::option::Option<crate::model::StorageGatewayError>,
 }
 impl InternalServerError {
-    /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-    /// of the error.</p>
+    /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::StorageGatewayError> {
         self.error.as_ref()
     }
@@ -9986,14 +9616,12 @@ pub mod internal_server_error {
             self.message = input;
             self
         }
-        /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-        /// of the error.</p>
+        /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
         pub fn error(mut self, input: crate::model::StorageGatewayError) -> Self {
             self.error = Some(input);
             self
         }
-        /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-        /// of the error.</p>
+        /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::StorageGatewayError>,
@@ -10017,20 +9645,17 @@ impl InternalServerError {
     }
 }
 
-/// <p>An internal server error has occurred because the service is unavailable. For more
-/// information, see the error and message fields.</p>
+/// <p>An internal server error has occurred because the service is unavailable. For more information, see the error and message fields.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableError {
     /// <p>A human-readable message describing the error that occurred.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-    /// of the error.</p>
+    /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
     pub error: std::option::Option<crate::model::StorageGatewayError>,
 }
 impl ServiceUnavailableError {
-    /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-    /// of the error.</p>
+    /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::StorageGatewayError> {
         self.error.as_ref()
     }
@@ -10079,14 +9704,12 @@ pub mod service_unavailable_error {
             self.message = input;
             self
         }
-        /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-        /// of the error.</p>
+        /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
         pub fn error(mut self, input: crate::model::StorageGatewayError) -> Self {
             self.error = Some(input);
             self
         }
-        /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-        /// of the error.</p>
+        /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::StorageGatewayError>,

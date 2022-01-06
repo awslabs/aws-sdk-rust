@@ -21,7 +21,7 @@ pub mod describe_report_creation_input {
 #[doc(hidden)]
 pub type DescribeReportCreationInputOperationOutputAlias = crate::operation::DescribeReportCreation;
 #[doc(hidden)]
-pub type DescribeReportCreationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeReportCreationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeReportCreationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeReportCreation`](crate::operation::DescribeReportCreation)>
     #[allow(clippy::let_and_return)]
@@ -32,7 +32,7 @@ impl DescribeReportCreationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeReportCreation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -119,7 +119,7 @@ impl DescribeReportCreationInput {
             "DescribeReportCreation",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -153,18 +153,14 @@ pub mod get_compliance_summary_input {
         ///
         /// To override the contents of this collection use [`set_target_id_filters`](Self::set_target_id_filters).
         ///
-        /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by.
-        /// If you use this parameter, the count of returned noncompliant resources includes only
-        /// resources with the specified target IDs.</p>
+        /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.</p>
         pub fn target_id_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_id_filters.unwrap_or_default();
             v.push(input.into());
             self.target_id_filters = Some(v);
             self
         }
-        /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by.
-        /// If you use this parameter, the count of returned noncompliant resources includes only
-        /// resources with the specified target IDs.</p>
+        /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.</p>
         pub fn set_target_id_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -176,18 +172,14 @@ pub mod get_compliance_summary_input {
         ///
         /// To override the contents of this collection use [`set_region_filters`](Self::set_region_filters).
         ///
-        /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter,
-        /// the count of returned noncompliant resources includes only resources in the specified
-        /// Regions.</p>
+        /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter, the count of returned noncompliant resources includes only resources in the specified Regions.</p>
         pub fn region_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.region_filters.unwrap_or_default();
             v.push(input.into());
             self.region_filters = Some(v);
             self
         }
-        /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter,
-        /// the count of returned noncompliant resources includes only resources in the specified
-        /// Regions.</p>
+        /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter, the count of returned noncompliant resources includes only resources in the specified Regions.</p>
         pub fn set_region_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -199,66 +191,28 @@ pub mod get_compliance_summary_input {
         ///
         /// To override the contents of this collection use [`set_resource_type_filters`](Self::set_resource_type_filters).
         ///
-        /// <p>Specifies that you want the response to include information for only resources of the
-        /// specified types. The format of each resource type is
-        /// <code>service[:resourceType]</code>. For example, specifying a resource type of
-        /// <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances).
-        /// Specifying a resource type of <code>ec2:instance</code> returns only EC2
-        /// instances.</p>
-        /// <p>The string for each service name and resource type is the same as that embedded in a
-        /// resource's Amazon Resource Name (ARN). Consult the <i>
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a>
-        /// </i>
-        /// for the following:</p>
+        /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+        /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a> </i> for the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
-        /// ARNs</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-        /// (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-        /// </li>
+        /// <li> <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a>.</p> </li>
+        /// <li> <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a>.</p> </li>
+        /// <li> <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
         /// </ul>
-        /// <p>You can specify multiple resource types by using a comma separated array. The array
-        /// can include up to 100 items. Note that the length constraint requirement applies to each
-        /// resource type filter. </p>
+        /// <p>You can specify multiple resource types by using a comma separated array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. </p>
         pub fn resource_type_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_type_filters.unwrap_or_default();
             v.push(input.into());
             self.resource_type_filters = Some(v);
             self
         }
-        /// <p>Specifies that you want the response to include information for only resources of the
-        /// specified types. The format of each resource type is
-        /// <code>service[:resourceType]</code>. For example, specifying a resource type of
-        /// <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances).
-        /// Specifying a resource type of <code>ec2:instance</code> returns only EC2
-        /// instances.</p>
-        /// <p>The string for each service name and resource type is the same as that embedded in a
-        /// resource's Amazon Resource Name (ARN). Consult the <i>
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a>
-        /// </i>
-        /// for the following:</p>
+        /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+        /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a> </i> for the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
-        /// ARNs</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-        /// (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-        /// </li>
+        /// <li> <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a>.</p> </li>
+        /// <li> <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a>.</p> </li>
+        /// <li> <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
         /// </ul>
-        /// <p>You can specify multiple resource types by using a comma separated array. The array
-        /// can include up to 100 items. Note that the length constraint requirement applies to each
-        /// resource type filter. </p>
+        /// <p>You can specify multiple resource types by using a comma separated array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. </p>
         pub fn set_resource_type_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -270,18 +224,14 @@ pub mod get_compliance_summary_input {
         ///
         /// To override the contents of this collection use [`set_tag_key_filters`](Self::set_tag_key_filters).
         ///
-        /// <p>Specifies that you want the response to include information for only resources that
-        /// have tags with the specified tag keys. If you use this parameter, the count of returned
-        /// noncompliant resources includes only resources that have the specified tag keys.</p>
+        /// <p>Specifies that you want the response to include information for only resources that have tags with the specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that have the specified tag keys.</p>
         pub fn tag_key_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_key_filters.unwrap_or_default();
             v.push(input.into());
             self.tag_key_filters = Some(v);
             self
         }
-        /// <p>Specifies that you want the response to include information for only resources that
-        /// have tags with the specified tag keys. If you use this parameter, the count of returned
-        /// noncompliant resources includes only resources that have the specified tag keys.</p>
+        /// <p>Specifies that you want the response to include information for only resources that have tags with the specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that have the specified tag keys.</p>
         pub fn set_tag_key_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -293,16 +243,14 @@ pub mod get_compliance_summary_input {
         ///
         /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
         ///
-        /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If
-        /// supplied, the counts are sorted by those attributes.</p>
-        pub fn group_by(mut self, input: impl Into<crate::model::GroupByAttribute>) -> Self {
+        /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by those attributes.</p>
+        pub fn group_by(mut self, input: crate::model::GroupByAttribute) -> Self {
             let mut v = self.group_by.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.group_by = Some(v);
             self
         }
-        /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If
-        /// supplied, the counts are sorted by those attributes.</p>
+        /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by those attributes.</p>
         pub fn set_group_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupByAttribute>>,
@@ -310,32 +258,22 @@ pub mod get_compliance_summary_input {
             self.group_by = input;
             self
         }
-        /// <p>Specifies the maximum number of results to be returned in each page. A
-        /// query can return fewer than this maximum, even if there are more results still to return. You
-        /// should always check the <code>PaginationToken</code> response value to see if there are more
-        /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
+        /// <p>Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Specifies the maximum number of results to be returned in each page. A
-        /// query can return fewer than this maximum, even if there are more results still to return. You
-        /// should always check the <code>PaginationToken</code> response value to see if there are more
-        /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
+        /// <p>Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>Specifies a <code>PaginationToken</code> response value from a
-        /// previous request to indicate that you want the next page of results. Leave this parameter empty
-        /// in your initial request.</p>
+        /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.pagination_token = Some(input.into());
             self
         }
-        /// <p>Specifies a <code>PaginationToken</code> response value from a
-        /// previous request to indicate that you want the next page of results. Leave this parameter empty
-        /// in your initial request.</p>
+        /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -365,7 +303,7 @@ pub mod get_compliance_summary_input {
 #[doc(hidden)]
 pub type GetComplianceSummaryInputOperationOutputAlias = crate::operation::GetComplianceSummary;
 #[doc(hidden)]
-pub type GetComplianceSummaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetComplianceSummaryInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetComplianceSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetComplianceSummary`](crate::operation::GetComplianceSummary)>
     #[allow(clippy::let_and_return)]
@@ -376,7 +314,7 @@ impl GetComplianceSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetComplianceSummary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -463,7 +401,7 @@ impl GetComplianceSummaryInput {
             "GetComplianceSummary",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -502,16 +440,12 @@ pub mod get_resources_input {
         pub(crate) resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Specifies a <code>PaginationToken</code> response value from a
-        /// previous request to indicate that you want the next page of results. Leave this parameter empty
-        /// in your initial request.</p>
+        /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.pagination_token = Some(input.into());
             self
         }
-        /// <p>Specifies a <code>PaginationToken</code> response value from a
-        /// previous request to indicate that you want the next page of results. Leave this parameter empty
-        /// in your initial request.</p>
+        /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -523,123 +457,39 @@ pub mod get_resources_input {
         ///
         /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
         ///
-        /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those
-        /// resources that have tags with the specified keys and, if included, the specified values.
-        /// Each <code>TagFilter</code> must contain a key with values optional. A request can
-        /// include up to 50 keys, and each key can include up to 20 values. </p>
+        /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have tags with the specified keys and, if included, the specified values. Each <code>TagFilter</code> must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values. </p>
         /// <p>Note the following when deciding how to use TagFilters:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the
-        /// response includes all resources that are currently tagged or ever had a tag.
-        /// Resources that currently don't have tags are shown with an empty tag set, like
-        /// this: <code>"Tags": []</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify more than one filter in a single request, the response returns
-        /// only those resources that satisfy all filters.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify a filter that contains more than one value for a key, the
-        /// response returns resources that match <i>any</i> of the specified
-        /// values for that key.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you don't specify a value for a key, the response returns all resources
-        /// that are tagged with that key, with any or no value.</p>
-        /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>,
-        /// <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
-        /// {keyC}</code>:</p>
+        /// <li> <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": []</code>.</p> </li>
+        /// <li> <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p> </li>
+        /// <li> <p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p> </li>
+        /// <li> <p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p> <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>GetResources({filter1})</code> returns resources tagged with
-        /// <code>key1=value1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GetResources({filter2})</code> returns resources tagged with
-        /// <code>key2=value2</code> or <code>key2=value3</code> or
-        /// <code>key2=value4</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GetResources({filter3})</code> returns resources tagged with any
-        /// tag with the key <code>key3</code>, and with any or no value</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GetResources({filter1,filter2,filter3})</code> returns resources
-        /// tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or
-        /// key2=value4) and (key3, any or no value)</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code> </p> </li>
+        /// <li> <p> <code>GetResources({filter2})</code> returns resources tagged with <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code> </p> </li>
+        /// <li> <p> <code>GetResources({filter3})</code> returns resources tagged with any tag with the key <code>key3</code>, and with any or no value</p> </li>
+        /// <li> <p> <code>GetResources({filter1,filter2,filter3})</code> returns resources tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
-        /// </li>
-        /// </ul>
-        pub fn tag_filters(mut self, input: impl Into<crate::model::TagFilter>) -> Self {
+        pub fn tag_filters(mut self, input: crate::model::TagFilter) -> Self {
             let mut v = self.tag_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_filters = Some(v);
             self
         }
-        /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those
-        /// resources that have tags with the specified keys and, if included, the specified values.
-        /// Each <code>TagFilter</code> must contain a key with values optional. A request can
-        /// include up to 50 keys, and each key can include up to 20 values. </p>
+        /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have tags with the specified keys and, if included, the specified values. Each <code>TagFilter</code> must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values. </p>
         /// <p>Note the following when deciding how to use TagFilters:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the
-        /// response includes all resources that are currently tagged or ever had a tag.
-        /// Resources that currently don't have tags are shown with an empty tag set, like
-        /// this: <code>"Tags": []</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify more than one filter in a single request, the response returns
-        /// only those resources that satisfy all filters.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify a filter that contains more than one value for a key, the
-        /// response returns resources that match <i>any</i> of the specified
-        /// values for that key.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you don't specify a value for a key, the response returns all resources
-        /// that are tagged with that key, with any or no value.</p>
-        /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>,
-        /// <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
-        /// {keyC}</code>:</p>
+        /// <li> <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": []</code>.</p> </li>
+        /// <li> <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p> </li>
+        /// <li> <p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p> </li>
+        /// <li> <p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p> <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>GetResources({filter1})</code> returns resources tagged with
-        /// <code>key1=value1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GetResources({filter2})</code> returns resources tagged with
-        /// <code>key2=value2</code> or <code>key2=value3</code> or
-        /// <code>key2=value4</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GetResources({filter3})</code> returns resources tagged with any
-        /// tag with the key <code>key3</code>, and with any or no value</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GetResources({filter1,filter2,filter3})</code> returns resources
-        /// tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or
-        /// key2=value4) and (key3, any or no value)</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code> </p> </li>
+        /// <li> <p> <code>GetResources({filter2})</code> returns resources tagged with <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code> </p> </li>
+        /// <li> <p> <code>GetResources({filter3})</code> returns resources tagged with any tag with the key <code>key3</code>, and with any or no value</p> </li>
+        /// <li> <p> <code>GetResources({filter1,filter2,filter3})</code> returns resources tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_tag_filters(
             mut self,
@@ -648,58 +498,28 @@ pub mod get_resources_input {
             self.tag_filters = input;
             self
         }
-        /// <p>Specifies the maximum number of results to be returned in each page. A
-        /// query can return fewer than this maximum, even if there are more results still to return. You
-        /// should always check the <code>PaginationToken</code> response value to see if there are more
-        /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
+        /// <p>Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p>
         pub fn resources_per_page(mut self, input: i32) -> Self {
             self.resources_per_page = Some(input);
             self
         }
-        /// <p>Specifies the maximum number of results to be returned in each page. A
-        /// query can return fewer than this maximum, even if there are more results still to return. You
-        /// should always check the <code>PaginationToken</code> response value to see if there are more
-        /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
+        /// <p>Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p>
         pub fn set_resources_per_page(mut self, input: std::option::Option<i32>) -> Self {
             self.resources_per_page = input;
             self
         }
         /// <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
-        /// <p>A limit that restricts the number of tags (key and value pairs) returned by
-        /// <code>GetResources</code> in paginated output. A resource with no tags is counted as
-        /// having one tag (one key and value pair).</p>
-        /// <p>
-        /// <code>GetResources</code> does not split a resource and its associated tags across
-        /// pages. If the specified <code>TagsPerPage</code> would cause such a break, a
-        /// <code>PaginationToken</code> is returned in place of the affected resource and its
-        /// tags. Use that token in another request to get the remaining data. For example, if you
-        /// specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources
-        /// with 10 tags each (meaning that each resource has 10 key and value pairs), the output
-        /// will consist of three pages. The first page displays the first 10 resources, each with
-        /// its 10 tags. The second page displays the next 10 resources, each with its 10 tags. The
-        /// third page displays the remaining 2 resources, each with its 10 tags.</p>
-        /// <p>You can set <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of 500
-        /// items.</p>
+        /// <p>A limit that restricts the number of tags (key and value pairs) returned by <code>GetResources</code> in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p>
+        /// <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of three pages. The first page displays the first 10 resources, each with its 10 tags. The second page displays the next 10 resources, each with its 10 tags. The third page displays the remaining 2 resources, each with its 10 tags.</p>
+        /// <p>You can set <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of 500 items.</p>
         pub fn tags_per_page(mut self, input: i32) -> Self {
             self.tags_per_page = Some(input);
             self
         }
         /// <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
-        /// <p>A limit that restricts the number of tags (key and value pairs) returned by
-        /// <code>GetResources</code> in paginated output. A resource with no tags is counted as
-        /// having one tag (one key and value pair).</p>
-        /// <p>
-        /// <code>GetResources</code> does not split a resource and its associated tags across
-        /// pages. If the specified <code>TagsPerPage</code> would cause such a break, a
-        /// <code>PaginationToken</code> is returned in place of the affected resource and its
-        /// tags. Use that token in another request to get the remaining data. For example, if you
-        /// specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources
-        /// with 10 tags each (meaning that each resource has 10 key and value pairs), the output
-        /// will consist of three pages. The first page displays the first 10 resources, each with
-        /// its 10 tags. The second page displays the next 10 resources, each with its 10 tags. The
-        /// third page displays the remaining 2 resources, each with its 10 tags.</p>
-        /// <p>You can set <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of 500
-        /// items.</p>
+        /// <p>A limit that restricts the number of tags (key and value pairs) returned by <code>GetResources</code> in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p>
+        /// <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of three pages. The first page displays the first 10 resources, each with its 10 tags. The second page displays the next 10 resources, each with its 10 tags. The third page displays the remaining 2 resources, each with its 10 tags.</p>
+        /// <p>You can set <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of 500 items.</p>
         pub fn set_tags_per_page(mut self, input: std::option::Option<i32>) -> Self {
             self.tags_per_page = input;
             self
@@ -708,42 +528,20 @@ pub mod get_resources_input {
         ///
         /// To override the contents of this collection use [`set_resource_type_filters`](Self::set_resource_type_filters).
         ///
-        /// <p>Specifies the resource types that you want included in the response. The format of
-        /// each resource type is <code>service[:resourceType]</code>. For example, specifying a
-        /// resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
-        /// instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2
-        /// instances. </p>
-        /// <p>The string for each service name and resource type is the same as that embedded in a
-        /// resource's Amazon Resource Name (ARN). For the list of services whose resources you can
-        /// use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
-        /// <p>You can specify multiple resource types by using an array. The array can include up to
-        /// 100 items. Note that the length constraint requirement applies to each resource type
-        /// filter. For example, the following string would limit the response to only Amazon EC2
-        /// instances, Amazon S3 buckets, or any Audit Manager resource:</p>
-        /// <p>
-        /// <code>ec2:instance,s3:bucket,auditmanager</code>
-        /// </p>
+        /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
+        /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). For the list of services whose resources you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
+        /// <p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p>
+        /// <p> <code>ec2:instance,s3:bucket,auditmanager</code> </p>
         pub fn resource_type_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_type_filters.unwrap_or_default();
             v.push(input.into());
             self.resource_type_filters = Some(v);
             self
         }
-        /// <p>Specifies the resource types that you want included in the response. The format of
-        /// each resource type is <code>service[:resourceType]</code>. For example, specifying a
-        /// resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
-        /// instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2
-        /// instances. </p>
-        /// <p>The string for each service name and resource type is the same as that embedded in a
-        /// resource's Amazon Resource Name (ARN). For the list of services whose resources you can
-        /// use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
-        /// <p>You can specify multiple resource types by using an array. The array can include up to
-        /// 100 items. Note that the length constraint requirement applies to each resource type
-        /// filter. For example, the following string would limit the response to only Amazon EC2
-        /// instances, Amazon S3 buckets, or any Audit Manager resource:</p>
-        /// <p>
-        /// <code>ec2:instance,s3:bucket,auditmanager</code>
-        /// </p>
+        /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
+        /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). For the list of services whose resources you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
+        /// <p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p>
+        /// <p> <code>ec2:instance,s3:bucket,auditmanager</code> </p>
         pub fn set_resource_type_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -751,34 +549,24 @@ pub mod get_resources_input {
             self.resource_type_filters = input;
             self
         }
-        /// <p>Specifies whether to include details regarding the compliance with the effective tag
-        /// policy. Set this to <code>true</code> to determine whether resources are compliant with
-        /// the tag policy and to get details.</p>
+        /// <p>Specifies whether to include details regarding the compliance with the effective tag policy. Set this to <code>true</code> to determine whether resources are compliant with the tag policy and to get details.</p>
         pub fn include_compliance_details(mut self, input: bool) -> Self {
             self.include_compliance_details = Some(input);
             self
         }
-        /// <p>Specifies whether to include details regarding the compliance with the effective tag
-        /// policy. Set this to <code>true</code> to determine whether resources are compliant with
-        /// the tag policy and to get details.</p>
+        /// <p>Specifies whether to include details regarding the compliance with the effective tag policy. Set this to <code>true</code> to determine whether resources are compliant with the tag policy and to get details.</p>
         pub fn set_include_compliance_details(mut self, input: std::option::Option<bool>) -> Self {
             self.include_compliance_details = input;
             self
         }
-        /// <p>Specifies whether to exclude resources that are compliant with the tag policy. Set
-        /// this to <code>true</code> if you are interested in retrieving information on
-        /// noncompliant resources only.</p>
-        /// <p>You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter
-        /// is also set to <code>true</code>.</p>
+        /// <p>Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
+        /// <p>You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to <code>true</code>.</p>
         pub fn exclude_compliant_resources(mut self, input: bool) -> Self {
             self.exclude_compliant_resources = Some(input);
             self
         }
-        /// <p>Specifies whether to exclude resources that are compliant with the tag policy. Set
-        /// this to <code>true</code> if you are interested in retrieving information on
-        /// noncompliant resources only.</p>
-        /// <p>You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter
-        /// is also set to <code>true</code>.</p>
+        /// <p>Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
+        /// <p>You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to <code>true</code>.</p>
         pub fn set_exclude_compliant_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_compliant_resources = input;
             self
@@ -787,34 +575,18 @@ pub mod get_resources_input {
         ///
         /// To override the contents of this collection use [`set_resource_arn_list`](Self::set_resource_arn_list).
         ///
-        /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You
-        /// can't specify both this parameter and any of the pagination parameters
-        /// (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>,
-        /// <code>PaginationToken</code>) in the same request. If you specify both, you get an
-        /// <code>Invalid Parameter</code> exception.</p>
-        /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error;
-        /// it simply isn't included in the response.</p>
-        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
-        /// <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you specify both, you get an <code>Invalid Parameter</code> exception.</p>
+        /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error; it simply isn't included in the response.</p>
+        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arn_list.unwrap_or_default();
             v.push(input.into());
             self.resource_arn_list = Some(v);
             self
         }
-        /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You
-        /// can't specify both this parameter and any of the pagination parameters
-        /// (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>,
-        /// <code>PaginationToken</code>) in the same request. If you specify both, you get an
-        /// <code>Invalid Parameter</code> exception.</p>
-        /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error;
-        /// it simply isn't included in the response.</p>
-        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
-        /// <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you specify both, you get an <code>Invalid Parameter</code> exception.</p>
+        /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error; it simply isn't included in the response.</p>
+        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -845,7 +617,7 @@ pub mod get_resources_input {
 #[doc(hidden)]
 pub type GetResourcesInputOperationOutputAlias = crate::operation::GetResources;
 #[doc(hidden)]
-pub type GetResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourcesInput {
     /// Consumes the builder and constructs an Operation<[`GetResources`](crate::operation::GetResources)>
     #[allow(clippy::let_and_return)]
@@ -856,7 +628,7 @@ impl GetResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -940,7 +712,7 @@ impl GetResourcesInput {
             "GetResources",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -972,16 +744,12 @@ pub mod get_tag_keys_input {
         pub(crate) pagination_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies a <code>PaginationToken</code> response value from a
-        /// previous request to indicate that you want the next page of results. Leave this parameter empty
-        /// in your initial request.</p>
+        /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.pagination_token = Some(input.into());
             self
         }
-        /// <p>Specifies a <code>PaginationToken</code> response value from a
-        /// previous request to indicate that you want the next page of results. Leave this parameter empty
-        /// in your initial request.</p>
+        /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1005,7 +773,7 @@ pub mod get_tag_keys_input {
 #[doc(hidden)]
 pub type GetTagKeysInputOperationOutputAlias = crate::operation::GetTagKeys;
 #[doc(hidden)]
-pub type GetTagKeysInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTagKeysInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTagKeysInput {
     /// Consumes the builder and constructs an Operation<[`GetTagKeys`](crate::operation::GetTagKeys)>
     #[allow(clippy::let_and_return)]
@@ -1016,7 +784,7 @@ impl GetTagKeysInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTagKeys,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1100,7 +868,7 @@ impl GetTagKeysInput {
             "GetTagKeys",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1133,16 +901,12 @@ pub mod get_tag_values_input {
         pub(crate) key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies a <code>PaginationToken</code> response value from a
-        /// previous request to indicate that you want the next page of results. Leave this parameter empty
-        /// in your initial request.</p>
+        /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.pagination_token = Some(input.into());
             self
         }
-        /// <p>Specifies a <code>PaginationToken</code> response value from a
-        /// previous request to indicate that you want the next page of results. Leave this parameter empty
-        /// in your initial request.</p>
+        /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
         pub fn set_pagination_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1150,14 +914,12 @@ pub mod get_tag_values_input {
             self.pagination_token = input;
             self
         }
-        /// <p>Specifies the tag key for which you want to list all existing values that are
-        /// currently used in the specified Amazon Web Services Region for the calling account.</p>
+        /// <p>Specifies the tag key for which you want to list all existing values that are currently used in the specified Amazon Web Services Region for the calling account.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>Specifies the tag key for which you want to list all existing values that are
-        /// currently used in the specified Amazon Web Services Region for the calling account.</p>
+        /// <p>Specifies the tag key for which you want to list all existing values that are currently used in the specified Amazon Web Services Region for the calling account.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1179,7 +941,7 @@ pub mod get_tag_values_input {
 #[doc(hidden)]
 pub type GetTagValuesInputOperationOutputAlias = crate::operation::GetTagValues;
 #[doc(hidden)]
-pub type GetTagValuesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTagValuesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTagValuesInput {
     /// Consumes the builder and constructs an Operation<[`GetTagValues`](crate::operation::GetTagValues)>
     #[allow(clippy::let_and_return)]
@@ -1190,7 +952,7 @@ impl GetTagValuesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTagValues,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1274,7 +1036,7 @@ impl GetTagValuesInput {
             "GetTagValues",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1307,21 +1069,15 @@ pub mod start_report_creation_input {
     }
     impl Builder {
         /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-        /// <p>
-        /// <code>awsexamplebucket</code>
-        /// </p>
-        /// <p>For more information on S3 bucket requirements, including an example bucket policy,
-        /// see the example S3 bucket policy on this page.</p>
+        /// <p> <code>awsexamplebucket</code> </p>
+        /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket = Some(input.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-        /// <p>
-        /// <code>awsexamplebucket</code>
-        /// </p>
-        /// <p>For more information on S3 bucket requirements, including an example bucket policy,
-        /// see the example S3 bucket policy on this page.</p>
+        /// <p> <code>awsexamplebucket</code> </p>
+        /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_bucket = input;
             self
@@ -1342,7 +1098,7 @@ pub mod start_report_creation_input {
 #[doc(hidden)]
 pub type StartReportCreationInputOperationOutputAlias = crate::operation::StartReportCreation;
 #[doc(hidden)]
-pub type StartReportCreationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartReportCreationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartReportCreationInput {
     /// Consumes the builder and constructs an Operation<[`StartReportCreation`](crate::operation::StartReportCreation)>
     #[allow(clippy::let_and_return)]
@@ -1353,7 +1109,7 @@ impl StartReportCreationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartReportCreation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1438,7 +1194,7 @@ impl StartReportCreationInput {
             "StartReportCreation",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1478,10 +1234,7 @@ pub mod tag_resources_input {
         /// To override the contents of this collection use [`set_resource_arn_list`](Self::set_resource_arn_list).
         ///
         /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
-        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
-        /// General Reference</i>.</p>
+        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arn_list.unwrap_or_default();
             v.push(input.into());
@@ -1489,10 +1242,7 @@ pub mod tag_resources_input {
             self
         }
         /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
-        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
-        /// General Reference</i>.</p>
+        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1504,8 +1254,7 @@ pub mod tag_resources_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Specifies a list of tags that you want to add to the specified resources. A tag
-        /// consists of a key and a value that you define.</p>
+        /// <p>Specifies a list of tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1516,8 +1265,7 @@ pub mod tag_resources_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Specifies a list of tags that you want to add to the specified resources. A tag
-        /// consists of a key and a value that you define.</p>
+        /// <p>Specifies a list of tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1544,7 +1292,7 @@ pub mod tag_resources_input {
 #[doc(hidden)]
 pub type TagResourcesInputOperationOutputAlias = crate::operation::TagResources;
 #[doc(hidden)]
-pub type TagResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourcesInput {
     /// Consumes the builder and constructs an Operation<[`TagResources`](crate::operation::TagResources)>
     #[allow(clippy::let_and_return)]
@@ -1555,7 +1303,7 @@ impl TagResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1639,7 +1387,7 @@ impl TagResourcesInput {
             "TagResources",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1677,10 +1425,7 @@ pub mod untag_resources_input {
         /// To override the contents of this collection use [`set_resource_arn_list`](Self::set_resource_arn_list).
         ///
         /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
-        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
-        /// General Reference</i>.</p>
+        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arn_list.unwrap_or_default();
             v.push(input.into());
@@ -1688,10 +1433,7 @@ pub mod untag_resources_input {
             self
         }
         /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
-        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
-        /// General Reference</i>.</p>
+        /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1703,16 +1445,14 @@ pub mod untag_resources_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>Specifies a list of tag keys that you want to remove from the specified
-        /// resources.</p>
+        /// <p>Specifies a list of tag keys that you want to remove from the specified resources.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>Specifies a list of tag keys that you want to remove from the specified
-        /// resources.</p>
+        /// <p>Specifies a list of tag keys that you want to remove from the specified resources.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1737,7 +1477,7 @@ pub mod untag_resources_input {
 #[doc(hidden)]
 pub type UntagResourcesInputOperationOutputAlias = crate::operation::UntagResources;
 #[doc(hidden)]
-pub type UntagResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourcesInput {
     /// Consumes the builder and constructs an Operation<[`UntagResources`](crate::operation::UntagResources)>
     #[allow(clippy::let_and_return)]
@@ -1748,7 +1488,7 @@ impl UntagResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1833,7 +1573,7 @@ impl UntagResourcesInput {
             "UntagResources",
             "resourcegroupstaggingapi",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1861,26 +1601,18 @@ impl UntagResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourcesInput {
     /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
-    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
-    /// General Reference</i>.</p>
+    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies a list of tag keys that you want to remove from the specified
-    /// resources.</p>
+    /// <p>Specifies a list of tag keys that you want to remove from the specified resources.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourcesInput {
     /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
-    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
-    /// General Reference</i>.</p>
+    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn resource_arn_list(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arn_list.as_deref()
     }
-    /// <p>Specifies a list of tag keys that you want to remove from the specified
-    /// resources.</p>
+    /// <p>Specifies a list of tag keys that you want to remove from the specified resources.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -1899,27 +1631,19 @@ impl std::fmt::Debug for UntagResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourcesInput {
     /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
-    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
-    /// General Reference</i>.</p>
+    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies a list of tags that you want to add to the specified resources. A tag
-    /// consists of a key and a value that you define.</p>
+    /// <p>Specifies a list of tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourcesInput {
     /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
-    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
-    /// General Reference</i>.</p>
+    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn resource_arn_list(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arn_list.as_deref()
     }
-    /// <p>Specifies a list of tags that you want to add to the specified resources. A tag
-    /// consists of a key and a value that you define.</p>
+    /// <p>Specifies a list of tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1941,20 +1665,14 @@ impl std::fmt::Debug for TagResourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReportCreationInput {
     /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-    /// <p>
-    /// <code>awsexamplebucket</code>
-    /// </p>
-    /// <p>For more information on S3 bucket requirements, including an example bucket policy,
-    /// see the example S3 bucket policy on this page.</p>
+    /// <p> <code>awsexamplebucket</code> </p>
+    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
 }
 impl StartReportCreationInput {
     /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-    /// <p>
-    /// <code>awsexamplebucket</code>
-    /// </p>
-    /// <p>For more information on S3 bucket requirements, including an example bucket policy,
-    /// see the example S3 bucket policy on this page.</p>
+    /// <p> <code>awsexamplebucket</code> </p>
+    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
     pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
@@ -1971,23 +1689,17 @@ impl std::fmt::Debug for StartReportCreationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagValuesInput {
-    /// <p>Specifies a <code>PaginationToken</code> response value from a
-    /// previous request to indicate that you want the next page of results. Leave this parameter empty
-    /// in your initial request.</p>
+    /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     pub pagination_token: std::option::Option<std::string::String>,
-    /// <p>Specifies the tag key for which you want to list all existing values that are
-    /// currently used in the specified Amazon Web Services Region for the calling account.</p>
+    /// <p>Specifies the tag key for which you want to list all existing values that are currently used in the specified Amazon Web Services Region for the calling account.</p>
     pub key: std::option::Option<std::string::String>,
 }
 impl GetTagValuesInput {
-    /// <p>Specifies a <code>PaginationToken</code> response value from a
-    /// previous request to indicate that you want the next page of results. Leave this parameter empty
-    /// in your initial request.</p>
+    /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
-    /// <p>Specifies the tag key for which you want to list all existing values that are
-    /// currently used in the specified Amazon Web Services Region for the calling account.</p>
+    /// <p>Specifies the tag key for which you want to list all existing values that are currently used in the specified Amazon Web Services Region for the calling account.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -2005,15 +1717,11 @@ impl std::fmt::Debug for GetTagValuesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagKeysInput {
-    /// <p>Specifies a <code>PaginationToken</code> response value from a
-    /// previous request to indicate that you want the next page of results. Leave this parameter empty
-    /// in your initial request.</p>
+    /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     pub pagination_token: std::option::Option<std::string::String>,
 }
 impl GetTagKeysInput {
-    /// <p>Specifies a <code>PaginationToken</code> response value from a
-    /// previous request to indicate that you want the next page of results. Leave this parameter empty
-    /// in your initial request.</p>
+    /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
@@ -2030,263 +1738,97 @@ impl std::fmt::Debug for GetTagKeysInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcesInput {
-    /// <p>Specifies a <code>PaginationToken</code> response value from a
-    /// previous request to indicate that you want the next page of results. Leave this parameter empty
-    /// in your initial request.</p>
+    /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     pub pagination_token: std::option::Option<std::string::String>,
-    /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those
-    /// resources that have tags with the specified keys and, if included, the specified values.
-    /// Each <code>TagFilter</code> must contain a key with values optional. A request can
-    /// include up to 50 keys, and each key can include up to 20 values. </p>
+    /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have tags with the specified keys and, if included, the specified values. Each <code>TagFilter</code> must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values. </p>
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the
-    /// response includes all resources that are currently tagged or ever had a tag.
-    /// Resources that currently don't have tags are shown with an empty tag set, like
-    /// this: <code>"Tags": []</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify more than one filter in a single request, the response returns
-    /// only those resources that satisfy all filters.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify a filter that contains more than one value for a key, the
-    /// response returns resources that match <i>any</i> of the specified
-    /// values for that key.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you don't specify a value for a key, the response returns all resources
-    /// that are tagged with that key, with any or no value.</p>
-    /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>,
-    /// <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
-    /// {keyC}</code>:</p>
+    /// <li> <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": []</code>.</p> </li>
+    /// <li> <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p> </li>
+    /// <li> <p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p> </li>
+    /// <li> <p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p> <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>GetResources({filter1})</code> returns resources tagged with
-    /// <code>key1=value1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GetResources({filter2})</code> returns resources tagged with
-    /// <code>key2=value2</code> or <code>key2=value3</code> or
-    /// <code>key2=value4</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GetResources({filter3})</code> returns resources tagged with any
-    /// tag with the key <code>key3</code>, and with any or no value</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GetResources({filter1,filter2,filter3})</code> returns resources
-    /// tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or
-    /// key2=value4) and (key3, any or no value)</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code> </p> </li>
+    /// <li> <p> <code>GetResources({filter2})</code> returns resources tagged with <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code> </p> </li>
+    /// <li> <p> <code>GetResources({filter3})</code> returns resources tagged with any tag with the key <code>key3</code>, and with any or no value</p> </li>
+    /// <li> <p> <code>GetResources({filter1,filter2,filter3})</code> returns resources tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub tag_filters: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
-    /// <p>Specifies the maximum number of results to be returned in each page. A
-    /// query can return fewer than this maximum, even if there are more results still to return. You
-    /// should always check the <code>PaginationToken</code> response value to see if there are more
-    /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
+    /// <p>Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p>
     pub resources_per_page: std::option::Option<i32>,
     /// <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
-    /// <p>A limit that restricts the number of tags (key and value pairs) returned by
-    /// <code>GetResources</code> in paginated output. A resource with no tags is counted as
-    /// having one tag (one key and value pair).</p>
-    /// <p>
-    /// <code>GetResources</code> does not split a resource and its associated tags across
-    /// pages. If the specified <code>TagsPerPage</code> would cause such a break, a
-    /// <code>PaginationToken</code> is returned in place of the affected resource and its
-    /// tags. Use that token in another request to get the remaining data. For example, if you
-    /// specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources
-    /// with 10 tags each (meaning that each resource has 10 key and value pairs), the output
-    /// will consist of three pages. The first page displays the first 10 resources, each with
-    /// its 10 tags. The second page displays the next 10 resources, each with its 10 tags. The
-    /// third page displays the remaining 2 resources, each with its 10 tags.</p>
-    /// <p>You can set <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of 500
-    /// items.</p>
+    /// <p>A limit that restricts the number of tags (key and value pairs) returned by <code>GetResources</code> in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p>
+    /// <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of three pages. The first page displays the first 10 resources, each with its 10 tags. The second page displays the next 10 resources, each with its 10 tags. The third page displays the remaining 2 resources, each with its 10 tags.</p>
+    /// <p>You can set <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of 500 items.</p>
     pub tags_per_page: std::option::Option<i32>,
-    /// <p>Specifies the resource types that you want included in the response. The format of
-    /// each resource type is <code>service[:resourceType]</code>. For example, specifying a
-    /// resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
-    /// instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2
-    /// instances. </p>
-    /// <p>The string for each service name and resource type is the same as that embedded in a
-    /// resource's Amazon Resource Name (ARN). For the list of services whose resources you can
-    /// use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
-    /// <p>You can specify multiple resource types by using an array. The array can include up to
-    /// 100 items. Note that the length constraint requirement applies to each resource type
-    /// filter. For example, the following string would limit the response to only Amazon EC2
-    /// instances, Amazon S3 buckets, or any Audit Manager resource:</p>
-    /// <p>
-    /// <code>ec2:instance,s3:bucket,auditmanager</code>
-    /// </p>
+    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
+    /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). For the list of services whose resources you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
+    /// <p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p>
+    /// <p> <code>ec2:instance,s3:bucket,auditmanager</code> </p>
     pub resource_type_filters: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies whether to include details regarding the compliance with the effective tag
-    /// policy. Set this to <code>true</code> to determine whether resources are compliant with
-    /// the tag policy and to get details.</p>
+    /// <p>Specifies whether to include details regarding the compliance with the effective tag policy. Set this to <code>true</code> to determine whether resources are compliant with the tag policy and to get details.</p>
     pub include_compliance_details: std::option::Option<bool>,
-    /// <p>Specifies whether to exclude resources that are compliant with the tag policy. Set
-    /// this to <code>true</code> if you are interested in retrieving information on
-    /// noncompliant resources only.</p>
-    /// <p>You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter
-    /// is also set to <code>true</code>.</p>
+    /// <p>Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
+    /// <p>You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to <code>true</code>.</p>
     pub exclude_compliant_resources: std::option::Option<bool>,
-    /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You
-    /// can't specify both this parameter and any of the pagination parameters
-    /// (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>,
-    /// <code>PaginationToken</code>) in the same request. If you specify both, you get an
-    /// <code>Invalid Parameter</code> exception.</p>
-    /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error;
-    /// it simply isn't included in the response.</p>
-    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you specify both, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error; it simply isn't included in the response.</p>
+    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub resource_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetResourcesInput {
-    /// <p>Specifies a <code>PaginationToken</code> response value from a
-    /// previous request to indicate that you want the next page of results. Leave this parameter empty
-    /// in your initial request.</p>
+    /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
-    /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those
-    /// resources that have tags with the specified keys and, if included, the specified values.
-    /// Each <code>TagFilter</code> must contain a key with values optional. A request can
-    /// include up to 50 keys, and each key can include up to 20 values. </p>
+    /// <p>Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have tags with the specified keys and, if included, the specified values. Each <code>TagFilter</code> must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values. </p>
     /// <p>Note the following when deciding how to use TagFilters:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you <i>don't</i> specify a <code>TagFilter</code>, the
-    /// response includes all resources that are currently tagged or ever had a tag.
-    /// Resources that currently don't have tags are shown with an empty tag set, like
-    /// this: <code>"Tags": []</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify more than one filter in a single request, the response returns
-    /// only those resources that satisfy all filters.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify a filter that contains more than one value for a key, the
-    /// response returns resources that match <i>any</i> of the specified
-    /// values for that key.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you don't specify a value for a key, the response returns all resources
-    /// that are tagged with that key, with any or no value.</p>
-    /// <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>,
-    /// <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3=
-    /// {keyC}</code>:</p>
+    /// <li> <p>If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources that are currently tagged or ever had a tag. Resources that currently don't have tags are shown with an empty tag set, like this: <code>"Tags": []</code>.</p> </li>
+    /// <li> <p>If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.</p> </li>
+    /// <li> <p>If you specify a filter that contains more than one value for a key, the response returns resources that match <i>any</i> of the specified values for that key.</p> </li>
+    /// <li> <p>If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.</p> <p>For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>, <code>filter3= {keyC}</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>GetResources({filter1})</code> returns resources tagged with
-    /// <code>key1=value1</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GetResources({filter2})</code> returns resources tagged with
-    /// <code>key2=value2</code> or <code>key2=value3</code> or
-    /// <code>key2=value4</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GetResources({filter3})</code> returns resources tagged with any
-    /// tag with the key <code>key3</code>, and with any or no value</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GetResources({filter1,filter2,filter3})</code> returns resources
-    /// tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or
-    /// key2=value4) and (key3, any or no value)</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code> </p> </li>
+    /// <li> <p> <code>GetResources({filter2})</code> returns resources tagged with <code>key2=value2</code> or <code>key2=value3</code> or <code>key2=value4</code> </p> </li>
+    /// <li> <p> <code>GetResources({filter3})</code> returns resources tagged with any tag with the key <code>key3</code>, and with any or no value</p> </li>
+    /// <li> <p> <code>GetResources({filter1,filter2,filter3})</code> returns resources tagged with <code>(key1=value1) and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)</code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn tag_filters(&self) -> std::option::Option<&[crate::model::TagFilter]> {
         self.tag_filters.as_deref()
     }
-    /// <p>Specifies the maximum number of results to be returned in each page. A
-    /// query can return fewer than this maximum, even if there are more results still to return. You
-    /// should always check the <code>PaginationToken</code> response value to see if there are more
-    /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
+    /// <p>Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p>
     pub fn resources_per_page(&self) -> std::option::Option<i32> {
         self.resources_per_page
     }
     /// <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
-    /// <p>A limit that restricts the number of tags (key and value pairs) returned by
-    /// <code>GetResources</code> in paginated output. A resource with no tags is counted as
-    /// having one tag (one key and value pair).</p>
-    /// <p>
-    /// <code>GetResources</code> does not split a resource and its associated tags across
-    /// pages. If the specified <code>TagsPerPage</code> would cause such a break, a
-    /// <code>PaginationToken</code> is returned in place of the affected resource and its
-    /// tags. Use that token in another request to get the remaining data. For example, if you
-    /// specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources
-    /// with 10 tags each (meaning that each resource has 10 key and value pairs), the output
-    /// will consist of three pages. The first page displays the first 10 resources, each with
-    /// its 10 tags. The second page displays the next 10 resources, each with its 10 tags. The
-    /// third page displays the remaining 2 resources, each with its 10 tags.</p>
-    /// <p>You can set <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of 500
-    /// items.</p>
+    /// <p>A limit that restricts the number of tags (key and value pairs) returned by <code>GetResources</code> in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p>
+    /// <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of three pages. The first page displays the first 10 resources, each with its 10 tags. The second page displays the next 10 resources, each with its 10 tags. The third page displays the remaining 2 resources, each with its 10 tags.</p>
+    /// <p>You can set <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of 500 items.</p>
     pub fn tags_per_page(&self) -> std::option::Option<i32> {
         self.tags_per_page
     }
-    /// <p>Specifies the resource types that you want included in the response. The format of
-    /// each resource type is <code>service[:resourceType]</code>. For example, specifying a
-    /// resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2
-    /// instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2
-    /// instances. </p>
-    /// <p>The string for each service name and resource type is the same as that embedded in a
-    /// resource's Amazon Resource Name (ARN). For the list of services whose resources you can
-    /// use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
-    /// <p>You can specify multiple resource types by using an array. The array can include up to
-    /// 100 items. Note that the length constraint requirement applies to each resource type
-    /// filter. For example, the following string would limit the response to only Amazon EC2
-    /// instances, Amazon S3 buckets, or any Audit Manager resource:</p>
-    /// <p>
-    /// <code>ec2:instance,s3:bucket,auditmanager</code>
-    /// </p>
+    /// <p>Specifies the resource types that you want included in the response. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances. </p>
+    /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). For the list of services whose resources you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
+    /// <p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p>
+    /// <p> <code>ec2:instance,s3:bucket,auditmanager</code> </p>
     pub fn resource_type_filters(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_type_filters.as_deref()
     }
-    /// <p>Specifies whether to include details regarding the compliance with the effective tag
-    /// policy. Set this to <code>true</code> to determine whether resources are compliant with
-    /// the tag policy and to get details.</p>
+    /// <p>Specifies whether to include details regarding the compliance with the effective tag policy. Set this to <code>true</code> to determine whether resources are compliant with the tag policy and to get details.</p>
     pub fn include_compliance_details(&self) -> std::option::Option<bool> {
         self.include_compliance_details
     }
-    /// <p>Specifies whether to exclude resources that are compliant with the tag policy. Set
-    /// this to <code>true</code> if you are interested in retrieving information on
-    /// noncompliant resources only.</p>
-    /// <p>You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter
-    /// is also set to <code>true</code>.</p>
+    /// <p>Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
+    /// <p>You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to <code>true</code>.</p>
     pub fn exclude_compliant_resources(&self) -> std::option::Option<bool> {
         self.exclude_compliant_resources
     }
-    /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You
-    /// can't specify both this parameter and any of the pagination parameters
-    /// (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>,
-    /// <code>PaginationToken</code>) in the same request. If you specify both, you get an
-    /// <code>Invalid Parameter</code> exception.</p>
-    /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error;
-    /// it simply isn't included in the response.</p>
-    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-    /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
-    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you specify both, you get an <code>Invalid Parameter</code> exception.</p>
+    /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error; it simply isn't included in the response.</p>
+    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn resource_arn_list(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arn_list.as_deref()
     }
@@ -2316,123 +1858,61 @@ impl std::fmt::Debug for GetResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetComplianceSummaryInput {
-    /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by.
-    /// If you use this parameter, the count of returned noncompliant resources includes only
-    /// resources with the specified target IDs.</p>
+    /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.</p>
     pub target_id_filters: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter,
-    /// the count of returned noncompliant resources includes only resources in the specified
-    /// Regions.</p>
+    /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter, the count of returned noncompliant resources includes only resources in the specified Regions.</p>
     pub region_filters: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies that you want the response to include information for only resources of the
-    /// specified types. The format of each resource type is
-    /// <code>service[:resourceType]</code>. For example, specifying a resource type of
-    /// <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances).
-    /// Specifying a resource type of <code>ec2:instance</code> returns only EC2
-    /// instances.</p>
-    /// <p>The string for each service name and resource type is the same as that embedded in a
-    /// resource's Amazon Resource Name (ARN). Consult the <i>
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a>
-    /// </i>
-    /// for the following:</p>
+    /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a> </i> for the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
-    /// ARNs</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-    /// (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    /// </li>
+    /// <li> <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a>.</p> </li>
+    /// <li> <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a>.</p> </li>
+    /// <li> <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
     /// </ul>
-    /// <p>You can specify multiple resource types by using a comma separated array. The array
-    /// can include up to 100 items. Note that the length constraint requirement applies to each
-    /// resource type filter. </p>
+    /// <p>You can specify multiple resource types by using a comma separated array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. </p>
     pub resource_type_filters: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies that you want the response to include information for only resources that
-    /// have tags with the specified tag keys. If you use this parameter, the count of returned
-    /// noncompliant resources includes only resources that have the specified tag keys.</p>
+    /// <p>Specifies that you want the response to include information for only resources that have tags with the specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that have the specified tag keys.</p>
     pub tag_key_filters: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If
-    /// supplied, the counts are sorted by those attributes.</p>
+    /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by those attributes.</p>
     pub group_by: std::option::Option<std::vec::Vec<crate::model::GroupByAttribute>>,
-    /// <p>Specifies the maximum number of results to be returned in each page. A
-    /// query can return fewer than this maximum, even if there are more results still to return. You
-    /// should always check the <code>PaginationToken</code> response value to see if there are more
-    /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
+    /// <p>Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Specifies a <code>PaginationToken</code> response value from a
-    /// previous request to indicate that you want the next page of results. Leave this parameter empty
-    /// in your initial request.</p>
+    /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     pub pagination_token: std::option::Option<std::string::String>,
 }
 impl GetComplianceSummaryInput {
-    /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by.
-    /// If you use this parameter, the count of returned noncompliant resources includes only
-    /// resources with the specified target IDs.</p>
+    /// <p>Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.</p>
     pub fn target_id_filters(&self) -> std::option::Option<&[std::string::String]> {
         self.target_id_filters.as_deref()
     }
-    /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter,
-    /// the count of returned noncompliant resources includes only resources in the specified
-    /// Regions.</p>
+    /// <p>Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter, the count of returned noncompliant resources includes only resources in the specified Regions.</p>
     pub fn region_filters(&self) -> std::option::Option<&[std::string::String]> {
         self.region_filters.as_deref()
     }
-    /// <p>Specifies that you want the response to include information for only resources of the
-    /// specified types. The format of each resource type is
-    /// <code>service[:resourceType]</code>. For example, specifying a resource type of
-    /// <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances).
-    /// Specifying a resource type of <code>ec2:instance</code> returns only EC2
-    /// instances.</p>
-    /// <p>The string for each service name and resource type is the same as that embedded in a
-    /// resource's Amazon Resource Name (ARN). Consult the <i>
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a>
-    /// </i>
-    /// for the following:</p>
+    /// <p>Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is <code>service[:resourceType]</code>. For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.</p>
+    /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the <i> <a href="https://docs.aws.amazon.com/general/latest/gr/">Amazon Web Services General Reference</a> </i> for the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
-    /// ARNs</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-    /// (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    /// </li>
+    /// <li> <p>For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services Service Namespaces</a>.</p> </li>
+    /// <li> <p>For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example ARNs</a>.</p> </li>
+    /// <li> <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p> </li>
     /// </ul>
-    /// <p>You can specify multiple resource types by using a comma separated array. The array
-    /// can include up to 100 items. Note that the length constraint requirement applies to each
-    /// resource type filter. </p>
+    /// <p>You can specify multiple resource types by using a comma separated array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. </p>
     pub fn resource_type_filters(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_type_filters.as_deref()
     }
-    /// <p>Specifies that you want the response to include information for only resources that
-    /// have tags with the specified tag keys. If you use this parameter, the count of returned
-    /// noncompliant resources includes only resources that have the specified tag keys.</p>
+    /// <p>Specifies that you want the response to include information for only resources that have tags with the specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that have the specified tag keys.</p>
     pub fn tag_key_filters(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_key_filters.as_deref()
     }
-    /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If
-    /// supplied, the counts are sorted by those attributes.</p>
+    /// <p>Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by those attributes.</p>
     pub fn group_by(&self) -> std::option::Option<&[crate::model::GroupByAttribute]> {
         self.group_by.as_deref()
     }
-    /// <p>Specifies the maximum number of results to be returned in each page. A
-    /// query can return fewer than this maximum, even if there are more results still to return. You
-    /// should always check the <code>PaginationToken</code> response value to see if there are more
-    /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
+    /// <p>Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Specifies a <code>PaginationToken</code> response value from a
-    /// previous request to indicate that you want the next page of results. Leave this parameter empty
-    /// in your initial request.</p>
+    /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }

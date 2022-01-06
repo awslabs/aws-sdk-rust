@@ -3,14 +3,13 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>The client token input parameter was matched one used with a previous call to the operation, but at least one of the other input parameters is different from the previous call.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>A client token is not valid.</p>
+    /// <p>The client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
-    /// <p>The specified value for MaxResults is not valid.</p>
+    /// <p>The specified value for <code>MaxResults</code> is not valid.</p>
     InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
-    /// <p>The specified value for NextToken is not valid.</p>
+    /// <p>The specified value for <code>NextToken</code> is not valid.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>A parameter is not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -24,32 +23,34 @@ pub enum Error {
     MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
     /// <p>The requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>An Amazon Resource Name (ARN) was not found.</p>
+    /// <p>The specified Amazon Resource Name (ARN) was not found.</p>
     ResourceArnNotFoundException(crate::error::ResourceArnNotFoundException),
-    /// <p>The invitation was already accepted.</p>
+    /// <p>The specified invitation was already accepted.</p>
     ResourceShareInvitationAlreadyAcceptedException(
         crate::error::ResourceShareInvitationAlreadyAcceptedException,
     ),
-    /// <p>The invitation was already rejected.</p>
+    /// <p>The specified invitation was already rejected.</p>
     ResourceShareInvitationAlreadyRejectedException(
         crate::error::ResourceShareInvitationAlreadyRejectedException,
     ),
-    /// <p>The Amazon Resource Name (ARN) for an invitation was not found.</p>
+    /// <p>The specified Amazon Resource Name (ARN) for an invitation was not found.</p>
     ResourceShareInvitationArnNotFoundException(
         crate::error::ResourceShareInvitationArnNotFoundException,
     ),
-    /// <p>The invitation is expired.</p>
+    /// <p>The specified invitation is expired.</p>
     ResourceShareInvitationExpiredException(crate::error::ResourceShareInvitationExpiredException),
-    /// <p>The requested resource share exceeds the limit for your account.</p>
+    /// <p>This request would exceed the limit for resource shares for your account.</p>
     ResourceShareLimitExceededException(crate::error::ResourceShareLimitExceededException),
     /// <p>The service could not respond to the request due to an internal problem.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The service is not available.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The requested tags exceed the limit for your account.</p>
+    /// <p>This request would exceed the limit for tags for your account.</p>
     TagLimitExceededException(crate::error::TagLimitExceededException),
-    /// <p>The specified tag is a reserved word and cannot be used.</p>
+    /// <p>The specified tag key is a reserved word and can't be used.</p>
     TagPolicyViolationException(crate::error::TagPolicyViolationException),
+    /// <p>You exceeded the rate at which you are allowed to perform this operation. Please try again later.</p>
+    ThrottlingException(crate::error::ThrottlingException),
     /// <p>A specified resource was not found.</p>
     UnknownResourceException(crate::error::UnknownResourceException),
     /// An unhandled error occurred.
@@ -78,6 +79,7 @@ impl std::fmt::Display for Error {
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::TagLimitExceededException(inner) => inner.fmt(f),
             Error::TagPolicyViolationException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::UnknownResourceException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
@@ -128,6 +130,7 @@ where
                 crate::error::AssociateResourceShareErrorKind::ResourceShareLimitExceededException(inner) => Error::ResourceShareLimitExceededException(inner),
                 crate::error::AssociateResourceShareErrorKind::ServerInternalException(inner) => Error::ServerInternalException(inner),
                 crate::error::AssociateResourceShareErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::AssociateResourceShareErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
                 crate::error::AssociateResourceShareErrorKind::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
                 crate::error::AssociateResourceShareErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }

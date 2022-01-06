@@ -12,16 +12,13 @@ pub struct AddAttachmentsToSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddAttachmentsToSetErrorKind {
-    /// <p>The limit for the number of attachment sets created in a short period of time has been
-    /// exceeded.</p>
+    /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
     AttachmentLimitExceeded(crate::error::AttachmentLimitExceeded),
-    /// <p>The expiration time of the attachment set has passed. The set expires 1 hour after it
-    /// is created.</p>
+    /// <p>The expiration time of the attachment set has passed. The set expires 1 hour after it is created.</p>
     AttachmentSetExpired(crate::error::AttachmentSetExpired),
     /// <p>An attachment set with the specified ID could not be found.</p>
     AttachmentSetIdNotFound(crate::error::AttachmentSetIdNotFound),
-    /// <p>A limit for the size of an attachment set has been exceeded. The limits are three
-    /// attachments and 5 MB per attachment.</p>
+    /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
     AttachmentSetSizeLimitExceeded(crate::error::AttachmentSetSizeLimitExceeded),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -70,8 +67,6 @@ impl AddAttachmentsToSetError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -154,8 +149,7 @@ pub struct AddCommunicationToCaseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddCommunicationToCaseErrorKind {
-    /// <p>The expiration time of the attachment set has passed. The set expires 1 hour after it
-    /// is created.</p>
+    /// <p>The expiration time of the attachment set has passed. The set expires 1 hour after it is created.</p>
     AttachmentSetExpired(crate::error::AttachmentSetExpired),
     /// <p>An attachment set with the specified ID could not be found.</p>
     AttachmentSetIdNotFound(crate::error::AttachmentSetIdNotFound),
@@ -207,8 +201,6 @@ impl AddCommunicationToCaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -283,8 +275,7 @@ pub struct CreateCaseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCaseErrorKind {
-    /// <p>The expiration time of the attachment set has passed. The set expires 1 hour after it
-    /// is created.</p>
+    /// <p>The expiration time of the attachment set has passed. The set expires 1 hour after it is created.</p>
     AttachmentSetExpired(crate::error::AttachmentSetExpired),
     /// <p>An attachment set with the specified ID could not be found.</p>
     AttachmentSetIdNotFound(crate::error::AttachmentSetIdNotFound),
@@ -336,8 +327,6 @@ impl CreateCaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -405,8 +394,7 @@ pub struct DescribeAttachmentError {
 pub enum DescribeAttachmentErrorKind {
     /// <p>An attachment with the specified ID could not be found.</p>
     AttachmentIdNotFound(crate::error::AttachmentIdNotFound),
-    /// <p>The limit for the number of <a>DescribeAttachment</a> requests in a short
-    /// period of time has been exceeded.</p>
+    /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
     DescribeAttachmentLimitExceeded(crate::error::DescribeAttachmentLimitExceeded),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -453,8 +441,6 @@ impl DescribeAttachmentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -567,8 +553,6 @@ impl DescribeCasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -667,8 +651,6 @@ impl DescribeCommunicationsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -770,8 +752,6 @@ impl DescribeServicesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -865,8 +845,6 @@ impl DescribeSeverityLevelsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -965,8 +943,6 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1069,8 +1045,6 @@ impl DescribeTrustedAdvisorCheckResultError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1164,8 +1138,6 @@ impl DescribeTrustedAdvisorChecksError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1264,8 +1236,6 @@ impl DescribeTrustedAdvisorCheckSummariesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1363,8 +1333,6 @@ impl RefreshTrustedAdvisorCheckError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1461,8 +1429,6 @@ impl ResolveCaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1630,13 +1596,11 @@ impl CaseIdNotFound {
     }
 }
 
-/// <p>The limit for the number of <a>DescribeAttachment</a> requests in a short
-/// period of time has been exceeded.</p>
+/// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAttachmentLimitExceeded {
-    /// <p>The limit for the number of <a>DescribeAttachment</a> requests in a short
-    /// period of time has been exceeded.</p>
+    /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeAttachmentLimitExceeded {
@@ -1671,14 +1635,12 @@ pub mod describe_attachment_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The limit for the number of <a>DescribeAttachment</a> requests in a short
-        /// period of time has been exceeded.</p>
+        /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The limit for the number of <a>DescribeAttachment</a> requests in a short
-        /// period of time has been exceeded.</p>
+        /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1766,8 +1728,7 @@ impl AttachmentIdNotFound {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaseCreationLimitExceeded {
-    /// <p>An error message that indicates that you have exceeded the number of cases you can
-    /// have open.</p>
+    /// <p>An error message that indicates that you have exceeded the number of cases you can have open.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CaseCreationLimitExceeded {
@@ -1802,14 +1763,12 @@ pub mod case_creation_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An error message that indicates that you have exceeded the number of cases you can
-        /// have open.</p>
+        /// <p>An error message that indicates that you have exceeded the number of cases you can have open.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>An error message that indicates that you have exceeded the number of cases you can
-        /// have open.</p>
+        /// <p>An error message that indicates that you have exceeded the number of cases you can have open.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1893,13 +1852,11 @@ impl AttachmentSetIdNotFound {
     }
 }
 
-/// <p>The expiration time of the attachment set has passed. The set expires 1 hour after it
-/// is created.</p>
+/// <p>The expiration time of the attachment set has passed. The set expires 1 hour after it is created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentSetExpired {
-    /// <p>The expiration time of the attachment set has passed. The set expires one hour after
-    /// it is created.</p>
+    /// <p>The expiration time of the attachment set has passed. The set expires one hour after it is created.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AttachmentSetExpired {
@@ -1934,14 +1891,12 @@ pub mod attachment_set_expired {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The expiration time of the attachment set has passed. The set expires one hour after
-        /// it is created.</p>
+        /// <p>The expiration time of the attachment set has passed. The set expires one hour after it is created.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The expiration time of the attachment set has passed. The set expires one hour after
-        /// it is created.</p>
+        /// <p>The expiration time of the attachment set has passed. The set expires one hour after it is created.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1961,13 +1916,11 @@ impl AttachmentSetExpired {
     }
 }
 
-/// <p>A limit for the size of an attachment set has been exceeded. The limits are three
-/// attachments and 5 MB per attachment.</p>
+/// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentSetSizeLimitExceeded {
-    /// <p>A limit for the size of an attachment set has been exceeded. The limits are three
-    /// attachments and 5 MB per attachment.</p>
+    /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AttachmentSetSizeLimitExceeded {
@@ -2002,14 +1955,12 @@ pub mod attachment_set_size_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A limit for the size of an attachment set has been exceeded. The limits are three
-        /// attachments and 5 MB per attachment.</p>
+        /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>A limit for the size of an attachment set has been exceeded. The limits are three
-        /// attachments and 5 MB per attachment.</p>
+        /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2029,13 +1980,11 @@ impl AttachmentSetSizeLimitExceeded {
     }
 }
 
-/// <p>The limit for the number of attachment sets created in a short period of time has been
-/// exceeded.</p>
+/// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentLimitExceeded {
-    /// <p>The limit for the number of attachment sets created in a short period of time has been
-    /// exceeded.</p>
+    /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AttachmentLimitExceeded {
@@ -2070,14 +2019,12 @@ pub mod attachment_limit_exceeded {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The limit for the number of attachment sets created in a short period of time has been
-        /// exceeded.</p>
+        /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The limit for the number of attachment sets created in a short period of time has been
-        /// exceeded.</p>
+        /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

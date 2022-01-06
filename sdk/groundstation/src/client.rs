@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Ground Station
@@ -184,6 +184,7 @@ where
     ///
     /// See [`ListConfigs`](crate::client::fluent_builders::ListConfigs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConfigs::into_paginator).
     pub fn list_configs(&self) -> fluent_builders::ListConfigs<C, M, R> {
         fluent_builders::ListConfigs::new(self.handle.clone())
     }
@@ -191,6 +192,7 @@ where
     ///
     /// See [`ListContacts`](crate::client::fluent_builders::ListContacts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContacts::into_paginator).
     pub fn list_contacts(&self) -> fluent_builders::ListContacts<C, M, R> {
         fluent_builders::ListContacts::new(self.handle.clone())
     }
@@ -198,6 +200,7 @@ where
     ///
     /// See [`ListDataflowEndpointGroups`](crate::client::fluent_builders::ListDataflowEndpointGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataflowEndpointGroups::into_paginator).
     pub fn list_dataflow_endpoint_groups(
         &self,
     ) -> fluent_builders::ListDataflowEndpointGroups<C, M, R> {
@@ -207,6 +210,7 @@ where
     ///
     /// See [`ListGroundStations`](crate::client::fluent_builders::ListGroundStations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGroundStations::into_paginator).
     pub fn list_ground_stations(&self) -> fluent_builders::ListGroundStations<C, M, R> {
         fluent_builders::ListGroundStations::new(self.handle.clone())
     }
@@ -214,6 +218,7 @@ where
     ///
     /// See [`ListMissionProfiles`](crate::client::fluent_builders::ListMissionProfiles) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMissionProfiles::into_paginator).
     pub fn list_mission_profiles(&self) -> fluent_builders::ListMissionProfiles<C, M, R> {
         fluent_builders::ListMissionProfiles::new(self.handle.clone())
     }
@@ -221,6 +226,7 @@ where
     ///
     /// See [`ListSatellites`](crate::client::fluent_builders::ListSatellites) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSatellites::into_paginator).
     pub fn list_satellites(&self) -> fluent_builders::ListSatellites<C, M, R> {
         fluent_builders::ListSatellites::new(self.handle.clone())
     }
@@ -278,7 +284,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelContact`.
     ///
     /// <p>Cancels a contact with a specified contact ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -323,10 +329,10 @@ pub mod fluent_builders {
                 crate::input::CancelContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -335,8 +341,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a contact.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>UUID of a contact.</p>
@@ -349,7 +355,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a <code>Config</code> with the specified <code>configData</code> parameters.</p>
     /// <p>Only one type of <code>configData</code> can be specified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -394,10 +400,10 @@ pub mod fluent_builders {
                 crate::input::CreateConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -406,8 +412,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of a <code>Config</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of a <code>Config</code>.</p>
@@ -416,8 +422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Parameters of a <code>Config</code>.</p>
-        pub fn config_data(mut self, inp: crate::model::ConfigTypeData) -> Self {
-            self.inner = self.inner.config_data(inp);
+        pub fn config_data(mut self, input: crate::model::ConfigTypeData) -> Self {
+            self.inner = self.inner.config_data(input);
             self
         }
         /// <p>Parameters of a <code>Config</code>.</p>
@@ -438,7 +444,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags assigned to a <code>Config</code>.</p>
@@ -455,11 +461,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataflowEndpointGroup`.
     ///
     /// <p>Creates a <code>DataflowEndpoint</code> group containing the specified list of <code>DataflowEndpoint</code> objects.</p>
-    /// <p>The <code>name</code> field in each endpoint is used in your mission profile <code>DataflowEndpointConfig</code>
-    /// to specify which endpoints to use during a contact.</p>
-    /// <p>When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code>
-    /// must match a <code>DataflowEndpoint</code> in the same group.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>The <code>name</code> field in each endpoint is used in your mission profile <code>DataflowEndpointConfig</code> to specify which endpoints to use during a contact.</p>
+    /// <p>When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code> must match a <code>DataflowEndpoint</code> in the same group.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataflowEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -504,10 +508,10 @@ pub mod fluent_builders {
                 crate::input::CreateDataflowEndpointGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -520,8 +524,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_endpoint_details`](Self::set_endpoint_details).
         ///
         /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
-        pub fn endpoint_details(mut self, inp: impl Into<crate::model::EndpointDetails>) -> Self {
-            self.inner = self.inner.endpoint_details(inp);
+        pub fn endpoint_details(mut self, input: crate::model::EndpointDetails) -> Self {
+            self.inner = self.inner.endpoint_details(input);
             self
         }
         /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
@@ -542,7 +546,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags of a dataflow endpoint group.</p>
@@ -559,10 +563,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMissionProfile`.
     ///
     /// <p>Creates a mission profile.</p>
-    /// <p>
-    /// <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of strings
-    /// has two elements: a <i>from</i> ARN and a <i>to</i> ARN.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of strings has two elements: a <i>from</i> ARN and a <i>to</i> ARN.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMissionProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -607,10 +609,10 @@ pub mod fluent_builders {
                 crate::input::CreateMissionProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -619,8 +621,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of a mission profile.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of a mission profile.</p>
@@ -629,8 +631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-        pub fn contact_pre_pass_duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.contact_pre_pass_duration_seconds(inp);
+        pub fn contact_pre_pass_duration_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.contact_pre_pass_duration_seconds(input);
             self
         }
         /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
@@ -642,8 +644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-        pub fn contact_post_pass_duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.contact_post_pass_duration_seconds(inp);
+        pub fn contact_post_pass_duration_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.contact_post_pass_duration_seconds(input);
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
@@ -655,8 +657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-        pub fn minimum_viable_contact_duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.minimum_viable_contact_duration_seconds(inp);
+        pub fn minimum_viable_contact_duration_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.minimum_viable_contact_duration_seconds(input);
             self
         }
         /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
@@ -673,19 +675,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_dataflow_edges`](Self::set_dataflow_edges).
         ///
-        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-        /// <code>Config</code> and a <i>to</i>
-        /// <code>Config</code>.</p>
-        pub fn dataflow_edges(
-            mut self,
-            inp: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.dataflow_edges(inp);
+        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+        pub fn dataflow_edges(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            self.inner = self.inner.dataflow_edges(input);
             self
         }
-        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-        /// <code>Config</code> and a <i>to</i>
-        /// <code>Config</code>.</p>
+        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
         pub fn set_dataflow_edges(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
@@ -694,8 +689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of a tracking <code>Config</code>.</p>
-        pub fn tracking_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracking_config_arn(inp);
+        pub fn tracking_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracking_config_arn(input.into());
             self
         }
         /// <p>ARN of a tracking <code>Config</code>.</p>
@@ -716,7 +711,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags assigned to a mission profile.</p>
@@ -733,7 +728,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteConfig`.
     ///
     /// <p>Deletes a <code>Config</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -778,10 +773,10 @@ pub mod fluent_builders {
                 crate::input::DeleteConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -790,8 +785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a <code>Config</code>.</p>
-        pub fn config_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_id(inp);
+        pub fn config_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_id(input.into());
             self
         }
         /// <p>UUID of a <code>Config</code>.</p>
@@ -800,8 +795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
-        pub fn config_type(mut self, inp: crate::model::ConfigCapabilityType) -> Self {
-            self.inner = self.inner.config_type(inp);
+        pub fn config_type(mut self, input: crate::model::ConfigCapabilityType) -> Self {
+            self.inner = self.inner.config_type(input);
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
@@ -816,7 +811,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDataflowEndpointGroup`.
     ///
     /// <p>Deletes a dataflow endpoint group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataflowEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -861,10 +856,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDataflowEndpointGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -873,8 +868,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a dataflow endpoint group.</p>
-        pub fn dataflow_endpoint_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataflow_endpoint_group_id(inp);
+        pub fn dataflow_endpoint_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataflow_endpoint_group_id(input.into());
             self
         }
         /// <p>UUID of a dataflow endpoint group.</p>
@@ -889,7 +884,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMissionProfile`.
     ///
     /// <p>Deletes a mission profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMissionProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -934,10 +929,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMissionProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -946,8 +941,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a mission profile.</p>
-        pub fn mission_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mission_profile_id(inp);
+        pub fn mission_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mission_profile_id(input.into());
             self
         }
         /// <p>UUID of a mission profile.</p>
@@ -962,7 +957,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeContact`.
     ///
     /// <p>Describes an existing contact.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1007,10 +1002,10 @@ pub mod fluent_builders {
                 crate::input::DescribeContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1019,8 +1014,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a contact.</p>
-        pub fn contact_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(inp);
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>UUID of a contact.</p>
@@ -1033,7 +1028,7 @@ pub mod fluent_builders {
     ///
     /// <p>Returns <code>Config</code> information.</p>
     /// <p>Only one <code>Config</code> response can be returned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1078,10 +1073,10 @@ pub mod fluent_builders {
                 crate::input::GetConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1090,8 +1085,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a <code>Config</code>.</p>
-        pub fn config_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_id(inp);
+        pub fn config_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_id(input.into());
             self
         }
         /// <p>UUID of a <code>Config</code>.</p>
@@ -1100,8 +1095,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
-        pub fn config_type(mut self, inp: crate::model::ConfigCapabilityType) -> Self {
-            self.inner = self.inner.config_type(inp);
+        pub fn config_type(mut self, input: crate::model::ConfigCapabilityType) -> Self {
+            self.inner = self.inner.config_type(input);
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
@@ -1116,7 +1111,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDataflowEndpointGroup`.
     ///
     /// <p>Returns the dataflow endpoint group.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataflowEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1161,10 +1156,10 @@ pub mod fluent_builders {
                 crate::input::GetDataflowEndpointGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1173,8 +1168,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a dataflow endpoint group.</p>
-        pub fn dataflow_endpoint_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataflow_endpoint_group_id(inp);
+        pub fn dataflow_endpoint_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataflow_endpoint_group_id(input.into());
             self
         }
         /// <p>UUID of a dataflow endpoint group.</p>
@@ -1189,7 +1184,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMinuteUsage`.
     ///
     /// <p>Returns the number of minutes used by account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMinuteUsage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1234,10 +1229,10 @@ pub mod fluent_builders {
                 crate::input::GetMinuteUsageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1246,8 +1241,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The month being requested, with a value of 1-12.</p>
-        pub fn month(mut self, inp: i32) -> Self {
-            self.inner = self.inner.month(inp);
+        pub fn month(mut self, input: i32) -> Self {
+            self.inner = self.inner.month(input);
             self
         }
         /// <p>The month being requested, with a value of 1-12.</p>
@@ -1256,8 +1251,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The year being requested, in the format of YYYY.</p>
-        pub fn year(mut self, inp: i32) -> Self {
-            self.inner = self.inner.year(inp);
+        pub fn year(mut self, input: i32) -> Self {
+            self.inner = self.inner.year(input);
             self
         }
         /// <p>The year being requested, in the format of YYYY.</p>
@@ -1269,7 +1264,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMissionProfile`.
     ///
     /// <p>Returns a mission profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMissionProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1314,10 +1309,10 @@ pub mod fluent_builders {
                 crate::input::GetMissionProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1326,8 +1321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a mission profile.</p>
-        pub fn mission_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mission_profile_id(inp);
+        pub fn mission_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mission_profile_id(input.into());
             self
         }
         /// <p>UUID of a mission profile.</p>
@@ -1342,7 +1337,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSatellite`.
     ///
     /// <p>Returns a satellite.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSatellite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1387,10 +1382,10 @@ pub mod fluent_builders {
                 crate::input::GetSatelliteInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1399,8 +1394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a satellite.</p>
-        pub fn satellite_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.satellite_id(inp);
+        pub fn satellite_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.satellite_id(input.into());
             self
         }
         /// <p>UUID of a satellite.</p>
@@ -1412,7 +1407,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListConfigs`.
     ///
     /// <p>Returns a list of <code>Config</code> objects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1457,10 +1452,10 @@ pub mod fluent_builders {
                 crate::input::ListConfigsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1468,9 +1463,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListConfigsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListConfigsPaginator<C, M, R> {
+            crate::paginator::ListConfigsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Maximum number of <code>Configs</code> returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of <code>Configs</code> returned.</p>
@@ -1479,8 +1480,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
@@ -1492,10 +1493,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContacts`.
     ///
     /// <p>Returns a list of contacts.</p>
-    /// <p>If <code>statusList</code> contains AVAILABLE, the request must include
-    /// <code>groundStation</code>, <code>missionprofileArn</code>, and <code>satelliteArn</code>.
-    /// </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>If <code>statusList</code> contains AVAILABLE, the request must include <code>groundStation</code>, <code>missionprofileArn</code>, and <code>satelliteArn</code>. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1540,10 +1539,10 @@ pub mod fluent_builders {
                 crate::input::ListContactsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1551,9 +1550,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListContactsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListContactsPaginator<C, M, R> {
+            crate::paginator::ListContactsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Maximum number of contacts returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of contacts returned.</p>
@@ -1562,8 +1567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
@@ -1576,8 +1581,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_status_list`](Self::set_status_list).
         ///
         /// <p>Status of a contact reservation.</p>
-        pub fn status_list(mut self, inp: impl Into<crate::model::ContactStatus>) -> Self {
-            self.inner = self.inner.status_list(inp);
+        pub fn status_list(mut self, input: crate::model::ContactStatus) -> Self {
+            self.inner = self.inner.status_list(input);
             self
         }
         /// <p>Status of a contact reservation.</p>
@@ -1589,8 +1594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Start time of a contact.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>Start time of a contact.</p>
@@ -1602,8 +1607,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>End time of a contact.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>End time of a contact.</p>
@@ -1615,8 +1620,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a ground station.</p>
-        pub fn ground_station(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ground_station(inp);
+        pub fn ground_station(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ground_station(input.into());
             self
         }
         /// <p>Name of a ground station.</p>
@@ -1628,8 +1633,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of a satellite.</p>
-        pub fn satellite_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.satellite_arn(inp);
+        pub fn satellite_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.satellite_arn(input.into());
             self
         }
         /// <p>ARN of a satellite.</p>
@@ -1641,8 +1646,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of a mission profile.</p>
-        pub fn mission_profile_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mission_profile_arn(inp);
+        pub fn mission_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mission_profile_arn(input.into());
             self
         }
         /// <p>ARN of a mission profile.</p>
@@ -1657,7 +1662,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDataflowEndpointGroups`.
     ///
     /// <p>Returns a list of <code>DataflowEndpoint</code> groups.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataflowEndpointGroups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1702,10 +1707,10 @@ pub mod fluent_builders {
                 crate::input::ListDataflowEndpointGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1713,9 +1718,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDataflowEndpointGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListDataflowEndpointGroupsPaginator<C, M, R> {
+            crate::paginator::ListDataflowEndpointGroupsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Maximum number of dataflow endpoint groups returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of dataflow endpoint groups returned.</p>
@@ -1724,8 +1737,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
@@ -1737,7 +1750,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGroundStations`.
     ///
     /// <p>Returns a list of ground stations. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroundStations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1782,10 +1795,10 @@ pub mod fluent_builders {
                 crate::input::ListGroundStationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1793,9 +1806,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListGroundStationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListGroundStationsPaginator<C, M, R> {
+            crate::paginator::ListGroundStationsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Satellite ID to retrieve on-boarded ground stations.</p>
-        pub fn satellite_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.satellite_id(inp);
+        pub fn satellite_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.satellite_id(input.into());
             self
         }
         /// <p>Satellite ID to retrieve on-boarded ground stations.</p>
@@ -1804,8 +1823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of ground stations returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of ground stations returned.</p>
@@ -1814,8 +1833,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
@@ -1827,7 +1846,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListMissionProfiles`.
     ///
     /// <p>Returns a list of mission profiles.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMissionProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1872,10 +1891,10 @@ pub mod fluent_builders {
                 crate::input::ListMissionProfilesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1883,9 +1902,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMissionProfilesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMissionProfilesPaginator<C, M, R> {
+            crate::paginator::ListMissionProfilesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Maximum number of mission profiles returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of mission profiles returned.</p>
@@ -1894,8 +1919,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
@@ -1907,7 +1932,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSatellites`.
     ///
     /// <p>Returns a list of satellites.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSatellites<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1952,10 +1977,10 @@ pub mod fluent_builders {
                 crate::input::ListSatellitesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1963,9 +1988,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSatellitesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSatellitesPaginator<C, M, R> {
+            crate::paginator::ListSatellitesPaginator::new(self.handle, self.inner)
+        }
         /// <p>Maximum number of satellites returned.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of satellites returned.</p>
@@ -1974,8 +2005,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
@@ -1987,7 +2018,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of tags for a specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2032,10 +2063,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2044,8 +2075,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of a resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>ARN of a resource.</p>
@@ -2057,7 +2088,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ReserveContact`.
     ///
     /// <p>Reserves a contact using specified parameters.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ReserveContact<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2102,10 +2133,10 @@ pub mod fluent_builders {
                 crate::input::ReserveContactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2114,8 +2145,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of a mission profile.</p>
-        pub fn mission_profile_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mission_profile_arn(inp);
+        pub fn mission_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mission_profile_arn(input.into());
             self
         }
         /// <p>ARN of a mission profile.</p>
@@ -2127,8 +2158,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of a satellite</p>
-        pub fn satellite_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.satellite_arn(inp);
+        pub fn satellite_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.satellite_arn(input.into());
             self
         }
         /// <p>ARN of a satellite</p>
@@ -2140,8 +2171,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Start time of a contact.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>Start time of a contact.</p>
@@ -2153,8 +2184,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>End time of a contact.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>End time of a contact.</p>
@@ -2166,8 +2197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a ground station.</p>
-        pub fn ground_station(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ground_station(inp);
+        pub fn ground_station(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ground_station(input.into());
             self
         }
         /// <p>Name of a ground station.</p>
@@ -2188,7 +2219,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags assigned to a contact.</p>
@@ -2205,7 +2236,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Assigns a tag to a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2250,10 +2281,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2262,8 +2293,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of a resource tag.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>ARN of a resource tag.</p>
@@ -2281,7 +2312,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>Tags assigned to a resource.</p>
@@ -2298,7 +2329,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deassigns a resource tag.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2343,10 +2374,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2355,8 +2386,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of a resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>ARN of a resource.</p>
@@ -2369,8 +2400,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>Keys of a resource tag.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>Keys of a resource tag.</p>
@@ -2385,9 +2416,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConfig`.
     ///
     /// <p>Updates the <code>Config</code> used when scheduling contacts.</p>
-    /// <p>Updating a <code>Config</code> will not update the execution parameters
-    /// for existing future contacts scheduled with this <code>Config</code>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updating a <code>Config</code> will not update the execution parameters for existing future contacts scheduled with this <code>Config</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2432,10 +2462,10 @@ pub mod fluent_builders {
                 crate::input::UpdateConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2444,8 +2474,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a <code>Config</code>.</p>
-        pub fn config_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_id(inp);
+        pub fn config_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_id(input.into());
             self
         }
         /// <p>UUID of a <code>Config</code>.</p>
@@ -2454,8 +2484,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a <code>Config</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of a <code>Config</code>.</p>
@@ -2464,8 +2494,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
-        pub fn config_type(mut self, inp: crate::model::ConfigCapabilityType) -> Self {
-            self.inner = self.inner.config_type(inp);
+        pub fn config_type(mut self, input: crate::model::ConfigCapabilityType) -> Self {
+            self.inner = self.inner.config_type(input);
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
@@ -2477,8 +2507,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Parameters of a <code>Config</code>.</p>
-        pub fn config_data(mut self, inp: crate::model::ConfigTypeData) -> Self {
-            self.inner = self.inner.config_data(inp);
+        pub fn config_data(mut self, input: crate::model::ConfigTypeData) -> Self {
+            self.inner = self.inner.config_data(input);
             self
         }
         /// <p>Parameters of a <code>Config</code>.</p>
@@ -2493,9 +2523,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMissionProfile`.
     ///
     /// <p>Updates a mission profile.</p>
-    /// <p>Updating a mission profile will not update the execution parameters
-    /// for existing future contacts.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Updating a mission profile will not update the execution parameters for existing future contacts.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMissionProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2540,10 +2569,10 @@ pub mod fluent_builders {
                 crate::input::UpdateMissionProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2552,8 +2581,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>UUID of a mission profile.</p>
-        pub fn mission_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mission_profile_id(inp);
+        pub fn mission_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mission_profile_id(input.into());
             self
         }
         /// <p>UUID of a mission profile.</p>
@@ -2565,8 +2594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a mission profile.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of a mission profile.</p>
@@ -2575,8 +2604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-        pub fn contact_pre_pass_duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.contact_pre_pass_duration_seconds(inp);
+        pub fn contact_pre_pass_duration_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.contact_pre_pass_duration_seconds(input);
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
@@ -2588,8 +2617,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-        pub fn contact_post_pass_duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.contact_post_pass_duration_seconds(inp);
+        pub fn contact_post_pass_duration_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.contact_post_pass_duration_seconds(input);
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
@@ -2601,8 +2630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-        pub fn minimum_viable_contact_duration_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.minimum_viable_contact_duration_seconds(inp);
+        pub fn minimum_viable_contact_duration_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.minimum_viable_contact_duration_seconds(input);
             self
         }
         /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
@@ -2619,19 +2648,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_dataflow_edges`](Self::set_dataflow_edges).
         ///
-        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-        /// <code>Config</code> and a <i>to</i>
-        /// <code>Config</code>.</p>
-        pub fn dataflow_edges(
-            mut self,
-            inp: impl Into<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.dataflow_edges(inp);
+        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+        pub fn dataflow_edges(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            self.inner = self.inner.dataflow_edges(input);
             self
         }
-        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-        /// <code>Config</code> and a <i>to</i>
-        /// <code>Config</code>.</p>
+        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
         pub fn set_dataflow_edges(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
@@ -2640,8 +2662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of a tracking <code>Config</code>.</p>
-        pub fn tracking_config_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracking_config_arn(inp);
+        pub fn tracking_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracking_config_arn(input.into());
             self
         }
         /// <p>ARN of a tracking <code>Config</code>.</p>
@@ -2654,6 +2676,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

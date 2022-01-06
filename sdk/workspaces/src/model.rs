@@ -72,9 +72,7 @@ impl IpRuleItem {
     }
 }
 
-/// <p>Describes the permissions for a connection alias. Connection aliases are used for cross-Region redirection.
-/// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
-/// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
+/// <p>Describes the permissions for a connection alias. Connection aliases are used for cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionAliasPermission {
@@ -150,9 +148,7 @@ impl ConnectionAliasPermission {
     }
 }
 
-/// <p>Describes a WorkSpace that could not be rebooted.
-/// (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), restored (<a>RestoreWorkspace</a>), terminated
-/// (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).</p>
+/// <p>Describes a WorkSpace that could not be rebooted. (<code>RebootWorkspaces</code>), rebuilt (<code>RebuildWorkspaces</code>), restored (<code>RestoreWorkspace</code>), terminated (<code>TerminateWorkspaces</code>), started (<code>StartWorkspaces</code>), or stopped (<code>StopWorkspaces</code>).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedWorkspaceChangeRequest {
@@ -160,8 +156,7 @@ pub struct FailedWorkspaceChangeRequest {
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
     pub error_code: std::option::Option<std::string::String>,
-    /// <p>The text of the error message that is returned if the WorkSpace cannot be
-    /// rebooted.</p>
+    /// <p>The text of the error message that is returned if the WorkSpace cannot be rebooted.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
 impl FailedWorkspaceChangeRequest {
@@ -173,8 +168,7 @@ impl FailedWorkspaceChangeRequest {
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>The text of the error message that is returned if the WorkSpace cannot be
-    /// rebooted.</p>
+    /// <p>The text of the error message that is returned if the WorkSpace cannot be rebooted.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -219,14 +213,12 @@ pub mod failed_workspace_change_request {
             self.error_code = input;
             self
         }
-        /// <p>The text of the error message that is returned if the WorkSpace cannot be
-        /// rebooted.</p>
+        /// <p>The text of the error message that is returned if the WorkSpace cannot be rebooted.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>The text of the error message that is returned if the WorkSpace cannot be
-        /// rebooted.</p>
+        /// <p>The text of the error message that is returned if the WorkSpace cannot be rebooted.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -708,24 +700,19 @@ impl AsRef<str> for TargetWorkspaceState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceProperties {
-    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
-    /// Mode</a>.</p>
+    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p>
     pub running_mode: std::option::Option<crate::model::RunningMode>,
     /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
     pub running_mode_auto_stop_timeout_in_minutes: std::option::Option<i32>,
-    /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
+    /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
     pub root_volume_size_gib: std::option::Option<i32>,
-    /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
+    /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
     pub user_volume_size_gib: std::option::Option<i32>,
-    /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces
-    /// Bundles</a>.</p>
+    /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
     pub compute_type_name: std::option::Option<crate::model::Compute>,
 }
 impl WorkspaceProperties {
-    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
-    /// Mode</a>.</p>
+    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p>
     pub fn running_mode(&self) -> std::option::Option<&crate::model::RunningMode> {
         self.running_mode.as_ref()
     }
@@ -733,18 +720,15 @@ impl WorkspaceProperties {
     pub fn running_mode_auto_stop_timeout_in_minutes(&self) -> std::option::Option<i32> {
         self.running_mode_auto_stop_timeout_in_minutes
     }
-    /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
+    /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
     pub fn root_volume_size_gib(&self) -> std::option::Option<i32> {
         self.root_volume_size_gib
     }
-    /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
+    /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
     pub fn user_volume_size_gib(&self) -> std::option::Option<i32> {
         self.user_volume_size_gib
     }
-    /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces
-    /// Bundles</a>.</p>
+    /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
     pub fn compute_type_name(&self) -> std::option::Option<&crate::model::Compute> {
         self.compute_type_name.as_ref()
     }
@@ -776,14 +760,12 @@ pub mod workspace_properties {
         pub(crate) compute_type_name: std::option::Option<crate::model::Compute>,
     }
     impl Builder {
-        /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
-        /// Mode</a>.</p>
+        /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p>
         pub fn running_mode(mut self, input: crate::model::RunningMode) -> Self {
             self.running_mode = Some(input);
             self
         }
-        /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
-        /// Mode</a>.</p>
+        /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p>
         pub fn set_running_mode(
             mut self,
             input: std::option::Option<crate::model::RunningMode>,
@@ -804,38 +786,32 @@ pub mod workspace_properties {
             self.running_mode_auto_stop_timeout_in_minutes = input;
             self
         }
-        /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
+        /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
         pub fn root_volume_size_gib(mut self, input: i32) -> Self {
             self.root_volume_size_gib = Some(input);
             self
         }
-        /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
+        /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
         pub fn set_root_volume_size_gib(mut self, input: std::option::Option<i32>) -> Self {
             self.root_volume_size_gib = input;
             self
         }
-        /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
+        /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
         pub fn user_volume_size_gib(mut self, input: i32) -> Self {
             self.user_volume_size_gib = Some(input);
             self
         }
-        /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
+        /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
         pub fn set_user_volume_size_gib(mut self, input: std::option::Option<i32>) -> Self {
             self.user_volume_size_gib = input;
             self
         }
-        /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces
-        /// Bundles</a>.</p>
+        /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
         pub fn compute_type_name(mut self, input: crate::model::Compute) -> Self {
             self.compute_type_name = Some(input);
             self
         }
-        /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces
-        /// Bundles</a>.</p>
+        /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
         pub fn set_compute_type_name(
             mut self,
             input: std::option::Option<crate::model::Compute>,
@@ -1001,45 +977,21 @@ impl AsRef<str> for RunningMode {
     }
 }
 
-/// <p>Describes the default properties that are used for creating WorkSpaces. For more
-/// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory
-/// Details for Your WorkSpaces</a>. </p>
+/// <p>Describes the default properties that are used for creating WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory Details for Your WorkSpaces</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceCreationProperties {
-    /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p>
-    ///
-    /// <note>         
-    /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the
-    /// directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless
-    /// you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs,
-    /// see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the
-    /// <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see
-    /// <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
-    /// <i>Amazon WorkDocs Administration Guide</i>.</p>
-    ///
-    /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any
-    /// new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
+    /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> <note>
+    /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p>
+    /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
     /// </note>
     pub enable_work_docs: std::option::Option<bool>,
     /// <p>Indicates whether internet access is enabled for your WorkSpaces.</p>
     pub enable_internet_access: std::option::Option<bool>,
-    /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight
-    /// Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form
-    /// <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>,
-    /// where <i>value</i> is any string of characters, and the number of domain components (DCs) is
-    /// two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
-    ///
-    /// <important>
+    /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters, and the number of domain components (DCs) is two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p> <important>
     /// <ul>
-    /// <li>
-    /// <p>To avoid errors, certain characters in the distinguished name must be escaped. For more information,
-    /// see <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
-    /// Distinguished Names</a> in the Microsoft documentation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The API doesn't validate whether the OU exists.</p>
-    /// </li>
+    /// <li> <p>To avoid errors, certain characters in the distinguished name must be escaped. For more information, see <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names"> Distinguished Names</a> in the Microsoft documentation.</p> </li>
+    /// <li> <p>The API doesn't validate whether the OU exists.</p> </li>
     /// </ul>
     /// </important>
     pub default_ou: std::option::Option<std::string::String>,
@@ -1047,25 +999,13 @@ pub struct WorkspaceCreationProperties {
     pub custom_security_group_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether users are local administrators of their WorkSpaces.</p>
     pub user_enabled_as_local_administrator: std::option::Option<bool>,
-    /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information,
-    /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
-    /// Maintenance</a>. </p>
+    /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>. </p>
     pub enable_maintenance_mode: std::option::Option<bool>,
 }
 impl WorkspaceCreationProperties {
-    /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p>
-    ///
-    /// <note>         
-    /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the
-    /// directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless
-    /// you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs,
-    /// see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the
-    /// <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see
-    /// <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
-    /// <i>Amazon WorkDocs Administration Guide</i>.</p>
-    ///
-    /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any
-    /// new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
+    /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> <note>
+    /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p>
+    /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
     /// </note>
     pub fn enable_work_docs(&self) -> std::option::Option<bool> {
         self.enable_work_docs
@@ -1074,22 +1014,10 @@ impl WorkspaceCreationProperties {
     pub fn enable_internet_access(&self) -> std::option::Option<bool> {
         self.enable_internet_access
     }
-    /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight
-    /// Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form
-    /// <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>,
-    /// where <i>value</i> is any string of characters, and the number of domain components (DCs) is
-    /// two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
-    ///
-    /// <important>
+    /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters, and the number of domain components (DCs) is two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p> <important>
     /// <ul>
-    /// <li>
-    /// <p>To avoid errors, certain characters in the distinguished name must be escaped. For more information,
-    /// see <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
-    /// Distinguished Names</a> in the Microsoft documentation.</p>
-    /// </li>
-    /// <li>
-    /// <p>The API doesn't validate whether the OU exists.</p>
-    /// </li>
+    /// <li> <p>To avoid errors, certain characters in the distinguished name must be escaped. For more information, see <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names"> Distinguished Names</a> in the Microsoft documentation.</p> </li>
+    /// <li> <p>The API doesn't validate whether the OU exists.</p> </li>
     /// </ul>
     /// </important>
     pub fn default_ou(&self) -> std::option::Option<&str> {
@@ -1103,9 +1031,7 @@ impl WorkspaceCreationProperties {
     pub fn user_enabled_as_local_administrator(&self) -> std::option::Option<bool> {
         self.user_enabled_as_local_administrator
     }
-    /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information,
-    /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
-    /// Maintenance</a>. </p>
+    /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>. </p>
     pub fn enable_maintenance_mode(&self) -> std::option::Option<bool> {
         self.enable_maintenance_mode
     }
@@ -1139,37 +1065,17 @@ pub mod workspace_creation_properties {
         pub(crate) enable_maintenance_mode: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p>
-        ///
-        /// <note>         
-        /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the
-        /// directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless
-        /// you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs,
-        /// see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the
-        /// <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see
-        /// <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
-        /// <i>Amazon WorkDocs Administration Guide</i>.</p>
-        ///
-        /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any
-        /// new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
+        /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> <note>
+        /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p>
+        /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
         /// </note>
         pub fn enable_work_docs(mut self, input: bool) -> Self {
             self.enable_work_docs = Some(input);
             self
         }
-        /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p>
-        ///
-        /// <note>         
-        /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the
-        /// directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless
-        /// you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs,
-        /// see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the
-        /// <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see
-        /// <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
-        /// <i>Amazon WorkDocs Administration Guide</i>.</p>
-        ///
-        /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any
-        /// new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
+        /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> <note>
+        /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p>
+        /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
         /// </note>
         pub fn set_enable_work_docs(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_work_docs = input;
@@ -1185,44 +1091,20 @@ pub mod workspace_creation_properties {
             self.enable_internet_access = input;
             self
         }
-        /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight
-        /// Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form
-        /// <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>,
-        /// where <i>value</i> is any string of characters, and the number of domain components (DCs) is
-        /// two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
-        ///
-        /// <important>
+        /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters, and the number of domain components (DCs) is two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p> <important>
         /// <ul>
-        /// <li>
-        /// <p>To avoid errors, certain characters in the distinguished name must be escaped. For more information,
-        /// see <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
-        /// Distinguished Names</a> in the Microsoft documentation.</p>
-        /// </li>
-        /// <li>
-        /// <p>The API doesn't validate whether the OU exists.</p>
-        /// </li>
+        /// <li> <p>To avoid errors, certain characters in the distinguished name must be escaped. For more information, see <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names"> Distinguished Names</a> in the Microsoft documentation.</p> </li>
+        /// <li> <p>The API doesn't validate whether the OU exists.</p> </li>
         /// </ul>
         /// </important>
         pub fn default_ou(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_ou = Some(input.into());
             self
         }
-        /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight
-        /// Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form
-        /// <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>,
-        /// where <i>value</i> is any string of characters, and the number of domain components (DCs) is
-        /// two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
-        ///
-        /// <important>
+        /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters, and the number of domain components (DCs) is two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p> <important>
         /// <ul>
-        /// <li>
-        /// <p>To avoid errors, certain characters in the distinguished name must be escaped. For more information,
-        /// see <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
-        /// Distinguished Names</a> in the Microsoft documentation.</p>
-        /// </li>
-        /// <li>
-        /// <p>The API doesn't validate whether the OU exists.</p>
-        /// </li>
+        /// <li> <p>To avoid errors, certain characters in the distinguished name must be escaped. For more information, see <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names"> Distinguished Names</a> in the Microsoft documentation.</p> </li>
+        /// <li> <p>The API doesn't validate whether the OU exists.</p> </li>
         /// </ul>
         /// </important>
         pub fn set_default_ou(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1255,16 +1137,12 @@ pub mod workspace_creation_properties {
             self.user_enabled_as_local_administrator = input;
             self
         }
-        /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information,
-        /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
-        /// Maintenance</a>. </p>
+        /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>. </p>
         pub fn enable_maintenance_mode(mut self, input: bool) -> Self {
             self.enable_maintenance_mode = Some(input);
             self
         }
-        /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information,
-        /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
-        /// Maintenance</a>. </p>
+        /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>. </p>
         pub fn set_enable_maintenance_mode(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_maintenance_mode = input;
             self
@@ -1289,9 +1167,7 @@ impl WorkspaceCreationProperties {
     }
 }
 
-/// <p>The device types and operating systems that can be used to access a WorkSpace. For more
-/// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html">Amazon
-/// WorkSpaces Client Network Requirements</a>.</p>
+/// <p>The device types and operating systems that can be used to access a WorkSpace. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html">Amazon WorkSpaces Client Network Requirements</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceAccessProperties {
@@ -1303,8 +1179,7 @@ pub struct WorkspaceAccessProperties {
     pub device_type_web: std::option::Option<crate::model::AccessPropertyValue>,
     /// <p>Indicates whether users can use iOS devices to access their WorkSpaces.</p>
     pub device_type_ios: std::option::Option<crate::model::AccessPropertyValue>,
-    /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices
-    /// to access their WorkSpaces.</p>
+    /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices to access their WorkSpaces.</p>
     pub device_type_android: std::option::Option<crate::model::AccessPropertyValue>,
     /// <p>Indicates whether users can use Chromebooks to access their WorkSpaces.</p>
     pub device_type_chrome_os: std::option::Option<crate::model::AccessPropertyValue>,
@@ -1330,8 +1205,7 @@ impl WorkspaceAccessProperties {
     pub fn device_type_ios(&self) -> std::option::Option<&crate::model::AccessPropertyValue> {
         self.device_type_ios.as_ref()
     }
-    /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices
-    /// to access their WorkSpaces.</p>
+    /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices to access their WorkSpaces.</p>
     pub fn device_type_android(&self) -> std::option::Option<&crate::model::AccessPropertyValue> {
         self.device_type_android.as_ref()
     }
@@ -1432,14 +1306,12 @@ pub mod workspace_access_properties {
             self.device_type_ios = input;
             self
         }
-        /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices
-        /// to access their WorkSpaces.</p>
+        /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices to access their WorkSpaces.</p>
         pub fn device_type_android(mut self, input: crate::model::AccessPropertyValue) -> Self {
             self.device_type_android = Some(input);
             self
         }
-        /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices
-        /// to access their WorkSpaces.</p>
+        /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices to access their WorkSpaces.</p>
         pub fn set_device_type_android(
             mut self,
             input: std::option::Option<crate::model::AccessPropertyValue>,
@@ -1569,15 +1441,13 @@ impl AsRef<str> for AccessPropertyValue {
 pub struct SelfservicePermissions {
     /// <p>Specifies whether users can restart their WorkSpace.</p>
     pub restart_workspace: std::option::Option<crate::model::ReconnectEnum>,
-    /// <p>Specifies whether users can increase the volume size of the drives on their
-    /// WorkSpace.</p>
+    /// <p>Specifies whether users can increase the volume size of the drives on their WorkSpace.</p>
     pub increase_volume_size: std::option::Option<crate::model::ReconnectEnum>,
     /// <p>Specifies whether users can change the compute type (bundle) for their WorkSpace.</p>
     pub change_compute_type: std::option::Option<crate::model::ReconnectEnum>,
     /// <p>Specifies whether users can switch the running mode of their WorkSpace.</p>
     pub switch_running_mode: std::option::Option<crate::model::ReconnectEnum>,
-    /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original
-    /// state.</p>
+    /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>
     pub rebuild_workspace: std::option::Option<crate::model::ReconnectEnum>,
 }
 impl SelfservicePermissions {
@@ -1585,8 +1455,7 @@ impl SelfservicePermissions {
     pub fn restart_workspace(&self) -> std::option::Option<&crate::model::ReconnectEnum> {
         self.restart_workspace.as_ref()
     }
-    /// <p>Specifies whether users can increase the volume size of the drives on their
-    /// WorkSpace.</p>
+    /// <p>Specifies whether users can increase the volume size of the drives on their WorkSpace.</p>
     pub fn increase_volume_size(&self) -> std::option::Option<&crate::model::ReconnectEnum> {
         self.increase_volume_size.as_ref()
     }
@@ -1598,8 +1467,7 @@ impl SelfservicePermissions {
     pub fn switch_running_mode(&self) -> std::option::Option<&crate::model::ReconnectEnum> {
         self.switch_running_mode.as_ref()
     }
-    /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original
-    /// state.</p>
+    /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>
     pub fn rebuild_workspace(&self) -> std::option::Option<&crate::model::ReconnectEnum> {
         self.rebuild_workspace.as_ref()
     }
@@ -1641,14 +1509,12 @@ pub mod selfservice_permissions {
             self.restart_workspace = input;
             self
         }
-        /// <p>Specifies whether users can increase the volume size of the drives on their
-        /// WorkSpace.</p>
+        /// <p>Specifies whether users can increase the volume size of the drives on their WorkSpace.</p>
         pub fn increase_volume_size(mut self, input: crate::model::ReconnectEnum) -> Self {
             self.increase_volume_size = Some(input);
             self
         }
-        /// <p>Specifies whether users can increase the volume size of the drives on their
-        /// WorkSpace.</p>
+        /// <p>Specifies whether users can increase the volume size of the drives on their WorkSpace.</p>
         pub fn set_increase_volume_size(
             mut self,
             input: std::option::Option<crate::model::ReconnectEnum>,
@@ -1682,14 +1548,12 @@ pub mod selfservice_permissions {
             self.switch_running_mode = input;
             self
         }
-        /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original
-        /// state.</p>
+        /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>
         pub fn rebuild_workspace(mut self, input: crate::model::ReconnectEnum) -> Self {
             self.rebuild_workspace = Some(input);
             self
         }
-        /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original
-        /// state.</p>
+        /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>
         pub fn set_rebuild_workspace(
             mut self,
             input: std::option::Option<crate::model::ReconnectEnum>,
@@ -1775,15 +1639,11 @@ impl AsRef<str> for ReconnectEnum {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientProperties {
-    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client.
-    /// When enabled, users can choose to reconnect to their WorkSpaces without re-entering their
-    /// credentials. </p>
+    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
     pub reconnect_enabled: std::option::Option<crate::model::ReconnectEnum>,
 }
 impl ClientProperties {
-    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client.
-    /// When enabled, users can choose to reconnect to their WorkSpaces without re-entering their
-    /// credentials. </p>
+    /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
     pub fn reconnect_enabled(&self) -> std::option::Option<&crate::model::ReconnectEnum> {
         self.reconnect_enabled.as_ref()
     }
@@ -1804,16 +1664,12 @@ pub mod client_properties {
         pub(crate) reconnect_enabled: std::option::Option<crate::model::ReconnectEnum>,
     }
     impl Builder {
-        /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client.
-        /// When enabled, users can choose to reconnect to their WorkSpaces without re-entering their
-        /// credentials. </p>
+        /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
         pub fn reconnect_enabled(mut self, input: crate::model::ReconnectEnum) -> Self {
             self.reconnect_enabled = Some(input);
             self
         }
-        /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client.
-        /// When enabled, users can choose to reconnect to their WorkSpaces without re-entering their
-        /// credentials. </p>
+        /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>
         pub fn set_reconnect_enabled(
             mut self,
             input: std::option::Option<crate::model::ReconnectEnum>,
@@ -2073,8 +1929,7 @@ impl Snapshot {
 pub struct WorkspaceConnectionStatus {
     /// <p>The identifier of the WorkSpace.</p>
     pub workspace_id: std::option::Option<std::string::String>,
-    /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace
-    /// is stopped.</p>
+    /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.</p>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The timestamp of the connection status check.</p>
     pub connection_state_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -2086,8 +1941,7 @@ impl WorkspaceConnectionStatus {
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
-    /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace
-    /// is stopped.</p>
+    /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.</p>
     pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
         self.connection_state.as_ref()
     }
@@ -2144,14 +1998,12 @@ pub mod workspace_connection_status {
             self.workspace_id = input;
             self
         }
-        /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace
-        /// is stopped.</p>
+        /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.</p>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
             self
         }
-        /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace
-        /// is stopped.</p>
+        /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.</p>
         pub fn set_connection_state(
             mut self,
             input: std::option::Option<crate::model::ConnectionState>,
@@ -2280,32 +2132,21 @@ pub struct Workspace {
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The IP address of the WorkSpace.</p>
     pub ip_address: std::option::Option<std::string::String>,
-    /// <p>The operational state of the WorkSpace.</p>
-    ///
-    /// <note>
-    /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
-    /// only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely
-    /// returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
-    /// DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has
-    /// been successfully terminated.</p>
+    /// <p>The operational state of the WorkSpace.</p> <note>
+    /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
     /// </note>
     pub state: std::option::Option<crate::model::WorkspaceState>,
     /// <p>The identifier of the bundle used to create the WorkSpace.</p>
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the subnet for the WorkSpace.</p>
     pub subnet_id: std::option::Option<std::string::String>,
-    /// <p>The text of the error message that is returned if the WorkSpace cannot be
-    /// created.</p>
+    /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
     pub error_code: std::option::Option<std::string::String>,
-    /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies.
-    /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
-    /// Launch a WorkSpace</a>. </p>
+    /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a WorkSpace</a>. </p>
     pub computer_name: std::option::Option<std::string::String>,
-    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
-    /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub volume_encryption_key: std::option::Option<std::string::String>,
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
     pub user_volume_encryption_enabled: std::option::Option<bool>,
@@ -2333,15 +2174,8 @@ impl Workspace {
     pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>The operational state of the WorkSpace.</p>
-    ///
-    /// <note>
-    /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
-    /// only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely
-    /// returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
-    /// DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has
-    /// been successfully terminated.</p>
+    /// <p>The operational state of the WorkSpace.</p> <note>
+    /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
     /// </note>
     pub fn state(&self) -> std::option::Option<&crate::model::WorkspaceState> {
         self.state.as_ref()
@@ -2354,8 +2188,7 @@ impl Workspace {
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The text of the error message that is returned if the WorkSpace cannot be
-    /// created.</p>
+    /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -2363,14 +2196,11 @@ impl Workspace {
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies.
-    /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
-    /// Launch a WorkSpace</a>. </p>
+    /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a WorkSpace</a>. </p>
     pub fn computer_name(&self) -> std::option::Option<&str> {
         self.computer_name.as_deref()
     }
-    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
-    /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub fn volume_encryption_key(&self) -> std::option::Option<&str> {
         self.volume_encryption_key.as_deref()
     }
@@ -2482,29 +2312,15 @@ pub mod workspace {
             self.ip_address = input;
             self
         }
-        /// <p>The operational state of the WorkSpace.</p>
-        ///
-        /// <note>
-        /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
-        /// only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely
-        /// returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
-        /// DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has
-        /// been successfully terminated.</p>
+        /// <p>The operational state of the WorkSpace.</p> <note>
+        /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
         /// </note>
         pub fn state(mut self, input: crate::model::WorkspaceState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The operational state of the WorkSpace.</p>
-        ///
-        /// <note>
-        /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
-        /// only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely
-        /// returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
-        /// DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has
-        /// been successfully terminated.</p>
+        /// <p>The operational state of the WorkSpace.</p> <note>
+        /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
         /// </note>
         pub fn set_state(
             mut self,
@@ -2533,14 +2349,12 @@ pub mod workspace {
             self.subnet_id = input;
             self
         }
-        /// <p>The text of the error message that is returned if the WorkSpace cannot be
-        /// created.</p>
+        /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>The text of the error message that is returned if the WorkSpace cannot be
-        /// created.</p>
+        /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2558,16 +2372,12 @@ pub mod workspace {
             self.error_code = input;
             self
         }
-        /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies.
-        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
-        /// Launch a WorkSpace</a>. </p>
+        /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a WorkSpace</a>. </p>
         pub fn computer_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.computer_name = Some(input.into());
             self
         }
-        /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies.
-        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
-        /// Launch a WorkSpace</a>. </p>
+        /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a WorkSpace</a>. </p>
         pub fn set_computer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2575,14 +2385,12 @@ pub mod workspace {
             self.computer_name = input;
             self
         }
-        /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
-        /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+        /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
         pub fn volume_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_encryption_key = Some(input.into());
             self
         }
-        /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
-        /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+        /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
         pub fn set_volume_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2634,12 +2442,9 @@ pub mod workspace {
         /// To override the contents of this collection use [`set_modification_states`](Self::set_modification_states).
         ///
         /// <p>The modification states of the WorkSpace.</p>
-        pub fn modification_states(
-            mut self,
-            input: impl Into<crate::model::ModificationState>,
-        ) -> Self {
+        pub fn modification_states(mut self, input: crate::model::ModificationState) -> Self {
             let mut v = self.modification_states.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.modification_states = Some(v);
             self
         }
@@ -3020,17 +2825,13 @@ pub struct WorkspaceImage {
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
     /// <p>The status of the image.</p>
     pub state: std::option::Option<crate::model::WorkspaceImageState>,
-    /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own
-    /// License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows
-    /// Desktop Images</a>.</p>
+    /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
     pub required_tenancy: std::option::Option<crate::model::WorkspaceImageRequiredTenancy>,
     /// <p>The error code that is returned for the image.</p>
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The text of the error message that is returned for the image.</p>
     pub error_message: std::option::Option<std::string::String>,
-    /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account
-    /// that the image has been shared with sees the original creation date of the image.</p>
+    /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account that the image has been shared with sees the original creation date of the image.</p>
     pub created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
     pub owner_account_id: std::option::Option<std::string::String>,
@@ -3058,10 +2859,7 @@ impl WorkspaceImage {
     pub fn state(&self) -> std::option::Option<&crate::model::WorkspaceImageState> {
         self.state.as_ref()
     }
-    /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own
-    /// License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows
-    /// Desktop Images</a>.</p>
+    /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
     pub fn required_tenancy(
         &self,
     ) -> std::option::Option<&crate::model::WorkspaceImageRequiredTenancy> {
@@ -3075,8 +2873,7 @@ impl WorkspaceImage {
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
-    /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account
-    /// that the image has been shared with sees the original creation date of the image.</p>
+    /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account that the image has been shared with sees the original creation date of the image.</p>
     pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
@@ -3182,10 +2979,7 @@ pub mod workspace_image {
             self.state = input;
             self
         }
-        /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own
-        /// License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows
-        /// Desktop Images</a>.</p>
+        /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
         pub fn required_tenancy(
             mut self,
             input: crate::model::WorkspaceImageRequiredTenancy,
@@ -3193,10 +2987,7 @@ pub mod workspace_image {
             self.required_tenancy = Some(input);
             self
         }
-        /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own
-        /// License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows
-        /// Desktop Images</a>.</p>
+        /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
         pub fn set_required_tenancy(
             mut self,
             input: std::option::Option<crate::model::WorkspaceImageRequiredTenancy>,
@@ -3227,14 +3018,12 @@ pub mod workspace_image {
             self.error_message = input;
             self
         }
-        /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account
-        /// that the image has been shared with sees the original creation date of the image.</p>
+        /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account that the image has been shared with sees the original creation date of the image.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created = Some(input);
             self
         }
-        /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account
-        /// that the image has been shared with sees the original creation date of the image.</p>
+        /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account that the image has been shared with sees the original creation date of the image.</p>
         pub fn set_created(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3293,10 +3082,7 @@ impl WorkspaceImage {
     }
 }
 
-/// <p>Describes whether a WorkSpace image needs to be updated with the latest
-/// drivers and other components required by Amazon WorkSpaces.</p>
-///
-/// <note>
+/// <p>Describes whether a WorkSpace image needs to be updated with the latest drivers and other components required by Amazon WorkSpaces.</p> <note>
 /// <p>Only Windows 10 WorkSpace images can be programmatically updated at this time.</p>
 /// </note>
 #[non_exhaustive]
@@ -3652,10 +3438,7 @@ impl AsRef<str> for ImageType {
     }
 }
 
-/// <p>Describes the Amazon Web Services accounts that have been granted permission to use a shared image.
-/// For more information about sharing images, see
-/// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
-/// Share or Unshare a Custom WorkSpaces Image</a>.</p>
+/// <p>Describes the Amazon Web Services accounts that have been granted permission to use a shared image. For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html"> Share or Unshare a Custom WorkSpaces Image</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImagePermission {
@@ -3722,8 +3505,7 @@ pub struct WorkspaceDirectory {
     pub alias: std::option::Option<std::string::String>,
     /// <p>The name of the directory.</p>
     pub directory_name: std::option::Option<std::string::String>,
-    /// <p>The registration code for the directory. This is the code that users enter in their
-    /// Amazon WorkSpaces client application to connect to the directory.</p>
+    /// <p>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</p>
     pub registration_code: std::option::Option<std::string::String>,
     /// <p>The identifiers of the subnets used with the directory.</p>
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3731,20 +3513,13 @@ pub struct WorkspaceDirectory {
     pub dns_ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user name for the service account.</p>
     pub customer_user_name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make
-    /// calls to other services, such as Amazon EC2, on your behalf.</p>
+    /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</p>
     pub iam_role_id: std::option::Option<std::string::String>,
     /// <p>The directory type.</p>
     pub directory_type: std::option::Option<crate::model::WorkspaceDirectoryType>,
     /// <p>The identifier of the security group that is assigned to new WorkSpaces.</p>
     pub workspace_security_group_id: std::option::Option<std::string::String>,
-    /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is
-    /// deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory
-    /// metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered,
-    /// check for the directory ID by using
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
-    /// DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been
-    /// successfully deregistered.</p>
+    /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html"> DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully deregistered.</p>
     pub state: std::option::Option<crate::model::WorkspaceDirectoryState>,
     /// <p>The default creation properties for all WorkSpaces in the directory.</p>
     pub workspace_creation_properties:
@@ -3753,9 +3528,7 @@ pub struct WorkspaceDirectory {
     pub ip_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The devices and operating systems that users can use to access WorkSpaces.</p>
     pub workspace_access_properties: std::option::Option<crate::model::WorkspaceAccessProperties>,
-    /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License
-    /// (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
-    /// Your Own Windows Desktop Images</a>.</p>
+    /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
     pub tenancy: std::option::Option<crate::model::Tenancy>,
     /// <p>The default self-service permissions for WorkSpaces in the directory.</p>
     pub selfservice_permissions: std::option::Option<crate::model::SelfservicePermissions>,
@@ -3773,8 +3546,7 @@ impl WorkspaceDirectory {
     pub fn directory_name(&self) -> std::option::Option<&str> {
         self.directory_name.as_deref()
     }
-    /// <p>The registration code for the directory. This is the code that users enter in their
-    /// Amazon WorkSpaces client application to connect to the directory.</p>
+    /// <p>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</p>
     pub fn registration_code(&self) -> std::option::Option<&str> {
         self.registration_code.as_deref()
     }
@@ -3790,8 +3562,7 @@ impl WorkspaceDirectory {
     pub fn customer_user_name(&self) -> std::option::Option<&str> {
         self.customer_user_name.as_deref()
     }
-    /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make
-    /// calls to other services, such as Amazon EC2, on your behalf.</p>
+    /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</p>
     pub fn iam_role_id(&self) -> std::option::Option<&str> {
         self.iam_role_id.as_deref()
     }
@@ -3803,13 +3574,7 @@ impl WorkspaceDirectory {
     pub fn workspace_security_group_id(&self) -> std::option::Option<&str> {
         self.workspace_security_group_id.as_deref()
     }
-    /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is
-    /// deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory
-    /// metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered,
-    /// check for the directory ID by using
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
-    /// DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been
-    /// successfully deregistered.</p>
+    /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html"> DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully deregistered.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::WorkspaceDirectoryState> {
         self.state.as_ref()
     }
@@ -3829,9 +3594,7 @@ impl WorkspaceDirectory {
     ) -> std::option::Option<&crate::model::WorkspaceAccessProperties> {
         self.workspace_access_properties.as_ref()
     }
-    /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License
-    /// (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
-    /// Your Own Windows Desktop Images</a>.</p>
+    /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
     pub fn tenancy(&self) -> std::option::Option<&crate::model::Tenancy> {
         self.tenancy.as_ref()
     }
@@ -3933,14 +3696,12 @@ pub mod workspace_directory {
             self.directory_name = input;
             self
         }
-        /// <p>The registration code for the directory. This is the code that users enter in their
-        /// Amazon WorkSpaces client application to connect to the directory.</p>
+        /// <p>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</p>
         pub fn registration_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.registration_code = Some(input.into());
             self
         }
-        /// <p>The registration code for the directory. This is the code that users enter in their
-        /// Amazon WorkSpaces client application to connect to the directory.</p>
+        /// <p>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</p>
         pub fn set_registration_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3999,14 +3760,12 @@ pub mod workspace_directory {
             self.customer_user_name = input;
             self
         }
-        /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make
-        /// calls to other services, such as Amazon EC2, on your behalf.</p>
+        /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</p>
         pub fn iam_role_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make
-        /// calls to other services, such as Amazon EC2, on your behalf.</p>
+        /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</p>
         pub fn set_iam_role_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_id = input;
             self
@@ -4040,24 +3799,12 @@ pub mod workspace_directory {
             self.workspace_security_group_id = input;
             self
         }
-        /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is
-        /// deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory
-        /// metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered,
-        /// check for the directory ID by using
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
-        /// DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been
-        /// successfully deregistered.</p>
+        /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html"> DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully deregistered.</p>
         pub fn state(mut self, input: crate::model::WorkspaceDirectoryState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is
-        /// deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory
-        /// metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered,
-        /// check for the directory ID by using
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
-        /// DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been
-        /// successfully deregistered.</p>
+        /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html"> DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully deregistered.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::WorkspaceDirectoryState>,
@@ -4116,16 +3863,12 @@ pub mod workspace_directory {
             self.workspace_access_properties = input;
             self
         }
-        /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License
-        /// (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
-        /// Your Own Windows Desktop Images</a>.</p>
+        /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
         pub fn tenancy(mut self, input: crate::model::Tenancy) -> Self {
             self.tenancy = Some(input);
             self
         }
-        /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License
-        /// (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
-        /// Your Own Windows Desktop Images</a>.</p>
+        /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
         pub fn set_tenancy(mut self, input: std::option::Option<crate::model::Tenancy>) -> Self {
             self.tenancy = input;
             self
@@ -4182,27 +3925,15 @@ impl WorkspaceDirectory {
 pub struct DefaultWorkspaceCreationProperties {
     /// <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
     pub enable_work_docs: std::option::Option<bool>,
-    /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default.
-    /// If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an
-    /// internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address
-    /// Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public
-    /// subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting
-    /// applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information,
-    /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html">
-    /// Configure a VPC for Amazon WorkSpaces</a>.</p>
+    /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default. If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html"> Configure a VPC for Amazon WorkSpaces</a>.</p>
     pub enable_internet_access: std::option::Option<bool>,
     /// <p>The organizational unit (OU) in the directory for the WorkSpace machine accounts.</p>
     pub default_ou: std::option::Option<std::string::String>,
-    /// <p>The identifier of the default security group to apply to WorkSpaces when they are created.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
-    /// Security Groups for Your WorkSpaces</a>.</p>
+    /// <p>The identifier of the default security group to apply to WorkSpaces when they are created. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html"> Security Groups for Your WorkSpaces</a>.</p>
     pub custom_security_group_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether WorkSpace users are local administrators on their WorkSpaces.</p>
     pub user_enabled_as_local_administrator: std::option::Option<bool>,
-    /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
-    /// Maintenance</a>.</p>
+    /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>.</p>
     pub enable_maintenance_mode: std::option::Option<bool>,
 }
 impl DefaultWorkspaceCreationProperties {
@@ -4210,14 +3941,7 @@ impl DefaultWorkspaceCreationProperties {
     pub fn enable_work_docs(&self) -> std::option::Option<bool> {
         self.enable_work_docs
     }
-    /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default.
-    /// If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an
-    /// internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address
-    /// Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public
-    /// subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting
-    /// applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information,
-    /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html">
-    /// Configure a VPC for Amazon WorkSpaces</a>.</p>
+    /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default. If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html"> Configure a VPC for Amazon WorkSpaces</a>.</p>
     pub fn enable_internet_access(&self) -> std::option::Option<bool> {
         self.enable_internet_access
     }
@@ -4225,10 +3949,7 @@ impl DefaultWorkspaceCreationProperties {
     pub fn default_ou(&self) -> std::option::Option<&str> {
         self.default_ou.as_deref()
     }
-    /// <p>The identifier of the default security group to apply to WorkSpaces when they are created.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
-    /// Security Groups for Your WorkSpaces</a>.</p>
+    /// <p>The identifier of the default security group to apply to WorkSpaces when they are created. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html"> Security Groups for Your WorkSpaces</a>.</p>
     pub fn custom_security_group_id(&self) -> std::option::Option<&str> {
         self.custom_security_group_id.as_deref()
     }
@@ -4236,9 +3957,7 @@ impl DefaultWorkspaceCreationProperties {
     pub fn user_enabled_as_local_administrator(&self) -> std::option::Option<bool> {
         self.user_enabled_as_local_administrator
     }
-    /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see
-    /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
-    /// Maintenance</a>.</p>
+    /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>.</p>
     pub fn enable_maintenance_mode(&self) -> std::option::Option<bool> {
         self.enable_maintenance_mode
     }
@@ -4282,26 +4001,12 @@ pub mod default_workspace_creation_properties {
             self.enable_work_docs = input;
             self
         }
-        /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default.
-        /// If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an
-        /// internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address
-        /// Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public
-        /// subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting
-        /// applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information,
-        /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html">
-        /// Configure a VPC for Amazon WorkSpaces</a>.</p>
+        /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default. If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html"> Configure a VPC for Amazon WorkSpaces</a>.</p>
         pub fn enable_internet_access(mut self, input: bool) -> Self {
             self.enable_internet_access = Some(input);
             self
         }
-        /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default.
-        /// If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an
-        /// internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address
-        /// Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public
-        /// subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting
-        /// applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information,
-        /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html">
-        /// Configure a VPC for Amazon WorkSpaces</a>.</p>
+        /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default. If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html"> Configure a VPC for Amazon WorkSpaces</a>.</p>
         pub fn set_enable_internet_access(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_internet_access = input;
             self
@@ -4316,18 +4021,12 @@ pub mod default_workspace_creation_properties {
             self.default_ou = input;
             self
         }
-        /// <p>The identifier of the default security group to apply to WorkSpaces when they are created.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
-        /// Security Groups for Your WorkSpaces</a>.</p>
+        /// <p>The identifier of the default security group to apply to WorkSpaces when they are created. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html"> Security Groups for Your WorkSpaces</a>.</p>
         pub fn custom_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_security_group_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the default security group to apply to WorkSpaces when they are created.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
-        /// Security Groups for Your WorkSpaces</a>.</p>
+        /// <p>The identifier of the default security group to apply to WorkSpaces when they are created. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html"> Security Groups for Your WorkSpaces</a>.</p>
         pub fn set_custom_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4348,16 +4047,12 @@ pub mod default_workspace_creation_properties {
             self.user_enabled_as_local_administrator = input;
             self
         }
-        /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
-        /// Maintenance</a>.</p>
+        /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>.</p>
         pub fn enable_maintenance_mode(mut self, input: bool) -> Self {
             self.enable_maintenance_mode = Some(input);
             self
         }
-        /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
-        /// Maintenance</a>.</p>
+        /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>.</p>
         pub fn set_enable_maintenance_mode(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_maintenance_mode = input;
             self
@@ -4518,8 +4213,7 @@ pub struct WorkspaceBundle {
     pub bundle_id: std::option::Option<std::string::String>,
     /// <p>The name of the bundle.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The owner of the bundle. This is the account identifier of the owner, or
-    /// <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
+    /// <p>The owner of the bundle. This is the account identifier of the owner, or <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The description of the bundle.</p>
     pub description: std::option::Option<std::string::String>,
@@ -4529,8 +4223,7 @@ pub struct WorkspaceBundle {
     pub root_storage: std::option::Option<crate::model::RootStorage>,
     /// <p>The size of the user volume.</p>
     pub user_storage: std::option::Option<crate::model::UserStorage>,
-    /// <p>The compute type of the bundle. For more information, see
-    /// <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
+    /// <p>The compute type of the bundle. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
     pub compute_type: std::option::Option<crate::model::ComputeType>,
     /// <p>The last time that the bundle was updated.</p>
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -4546,8 +4239,7 @@ impl WorkspaceBundle {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The owner of the bundle. This is the account identifier of the owner, or
-    /// <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
+    /// <p>The owner of the bundle. This is the account identifier of the owner, or <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
     pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -4567,8 +4259,7 @@ impl WorkspaceBundle {
     pub fn user_storage(&self) -> std::option::Option<&crate::model::UserStorage> {
         self.user_storage.as_ref()
     }
-    /// <p>The compute type of the bundle. For more information, see
-    /// <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
+    /// <p>The compute type of the bundle. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
     pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
         self.compute_type.as_ref()
     }
@@ -4635,14 +4326,12 @@ pub mod workspace_bundle {
             self.name = input;
             self
         }
-        /// <p>The owner of the bundle. This is the account identifier of the owner, or
-        /// <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
+        /// <p>The owner of the bundle. This is the account identifier of the owner, or <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
         }
-        /// <p>The owner of the bundle. This is the account identifier of the owner, or
-        /// <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
+        /// <p>The owner of the bundle. This is the account identifier of the owner, or <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -4693,14 +4382,12 @@ pub mod workspace_bundle {
             self.user_storage = input;
             self
         }
-        /// <p>The compute type of the bundle. For more information, see
-        /// <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
+        /// <p>The compute type of the bundle. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
         pub fn compute_type(mut self, input: crate::model::ComputeType) -> Self {
             self.compute_type = Some(input);
             self
         }
-        /// <p>The compute type of the bundle. For more information, see
-        /// <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
+        /// <p>The compute type of the bundle. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
         pub fn set_compute_type(
             mut self,
             input: std::option::Option<crate::model::ComputeType>,
@@ -5006,9 +4693,9 @@ pub mod workspaces_ip_group {
         /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
         ///
         /// <p>The rules.</p>
-        pub fn user_rules(mut self, input: impl Into<crate::model::IpRuleItem>) -> Self {
+        pub fn user_rules(mut self, input: crate::model::IpRuleItem) -> Self {
             let mut v = self.user_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_rules = Some(v);
             self
         }
@@ -5038,14 +4725,11 @@ impl WorkspacesIpGroup {
     }
 }
 
-/// <p>Describes a connection alias. Connection aliases are used for cross-Region redirection. For more information,
-/// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
-/// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
+/// <p>Describes a connection alias. Connection aliases are used for cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionAlias {
-    /// <p>The connection string specified for the connection alias. The connection string must be in the form of
-    /// a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
+    /// <p>The connection string specified for the connection alias. The connection string must be in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
     pub connection_string: std::option::Option<std::string::String>,
     /// <p>The identifier of the connection alias.</p>
     pub alias_id: std::option::Option<std::string::String>,
@@ -5057,8 +4741,7 @@ pub struct ConnectionAlias {
     pub associations: std::option::Option<std::vec::Vec<crate::model::ConnectionAliasAssociation>>,
 }
 impl ConnectionAlias {
-    /// <p>The connection string specified for the connection alias. The connection string must be in the form of
-    /// a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
+    /// <p>The connection string specified for the connection alias. The connection string must be in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
     pub fn connection_string(&self) -> std::option::Option<&str> {
         self.connection_string.as_deref()
     }
@@ -5104,14 +4787,12 @@ pub mod connection_alias {
             std::option::Option<std::vec::Vec<crate::model::ConnectionAliasAssociation>>,
     }
     impl Builder {
-        /// <p>The connection string specified for the connection alias. The connection string must be in the form of
-        /// a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
+        /// <p>The connection string specified for the connection alias. The connection string must be in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
         pub fn connection_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_string = Some(input.into());
             self
         }
-        /// <p>The connection string specified for the connection alias. The connection string must be in the form of
-        /// a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
+        /// <p>The connection string specified for the connection alias. The connection string must be in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
         pub fn set_connection_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5160,12 +4841,9 @@ pub mod connection_alias {
         /// To override the contents of this collection use [`set_associations`](Self::set_associations).
         ///
         /// <p>The association status of the connection alias.</p>
-        pub fn associations(
-            mut self,
-            input: impl Into<crate::model::ConnectionAliasAssociation>,
-        ) -> Self {
+        pub fn associations(mut self, input: crate::model::ConnectionAliasAssociation) -> Self {
             let mut v = self.associations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.associations = Some(v);
             self
         }
@@ -5196,9 +4874,7 @@ impl ConnectionAlias {
     }
 }
 
-/// <p>Describes a connection alias association that is used for cross-Region redirection. For more information, see
-/// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
-/// Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
+/// <p>Describes a connection alias association that is used for cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionAliasAssociation {
@@ -5208,8 +4884,7 @@ pub struct ConnectionAliasAssociation {
     pub associated_account_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the directory associated with a connection alias.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when
-    /// you're configuring your DNS routing policies.</p>
+    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
     pub connection_identifier: std::option::Option<std::string::String>,
 }
 impl ConnectionAliasAssociation {
@@ -5225,8 +4900,7 @@ impl ConnectionAliasAssociation {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when
-    /// you're configuring your DNS routing policies.</p>
+    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
     pub fn connection_identifier(&self) -> std::option::Option<&str> {
         self.connection_identifier.as_deref()
     }
@@ -5289,14 +4963,12 @@ pub mod connection_alias_association {
             self.resource_id = input;
             self
         }
-        /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when
-        /// you're configuring your DNS routing policies.</p>
+        /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
         pub fn connection_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_identifier = Some(input.into());
             self
         }
-        /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when
-        /// you're configuring your DNS routing policies.</p>
+        /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
         pub fn set_connection_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5530,8 +5202,7 @@ impl ClientPropertiesResult {
     }
 }
 
-/// <p>Describes a modification to the configuration of Bring Your Own License (BYOL) for the
-/// specified account. </p>
+/// <p>Describes a modification to the configuration of Bring Your Own License (BYOL) for the specified account. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountModification {
@@ -5541,15 +5212,13 @@ pub struct AccountModification {
     /// <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
     pub dedicated_tenancy_support:
         std::option::Option<crate::model::DedicatedTenancySupportResultEnum>,
-    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
-    /// interface used for the account.</p>
+    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
     pub dedicated_tenancy_management_cidr_range: std::option::Option<std::string::String>,
     /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
     pub error_code: std::option::Option<std::string::String>,
-    /// <p>The text of the error message that is returned if the configuration of BYOL cannot be
-    /// modified.</p>
+    /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
 impl AccountModification {
@@ -5565,8 +5234,7 @@ impl AccountModification {
     ) -> std::option::Option<&crate::model::DedicatedTenancySupportResultEnum> {
         self.dedicated_tenancy_support.as_ref()
     }
-    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
-    /// interface used for the account.</p>
+    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
     pub fn dedicated_tenancy_management_cidr_range(&self) -> std::option::Option<&str> {
         self.dedicated_tenancy_management_cidr_range.as_deref()
     }
@@ -5578,8 +5246,7 @@ impl AccountModification {
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>The text of the error message that is returned if the configuration of BYOL cannot be
-    /// modified.</p>
+    /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -5648,8 +5315,7 @@ pub mod account_modification {
             self.dedicated_tenancy_support = input;
             self
         }
-        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
-        /// interface used for the account.</p>
+        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
         pub fn dedicated_tenancy_management_cidr_range(
             mut self,
             input: impl Into<std::string::String>,
@@ -5657,8 +5323,7 @@ pub mod account_modification {
             self.dedicated_tenancy_management_cidr_range = Some(input.into());
             self
         }
-        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
-        /// interface used for the account.</p>
+        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
         pub fn set_dedicated_tenancy_management_cidr_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5689,14 +5354,12 @@ pub mod account_modification {
             self.error_code = input;
             self
         }
-        /// <p>The text of the error message that is returned if the configuration of BYOL cannot be
-        /// modified.</p>
+        /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>The text of the error message that is returned if the configuration of BYOL cannot be
-        /// modified.</p>
+        /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5847,8 +5510,7 @@ pub struct FailedCreateWorkspaceRequest {
     pub workspace_request: std::option::Option<crate::model::WorkspaceRequest>,
     /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
     pub error_code: std::option::Option<std::string::String>,
-    /// <p>The text of the error message that is returned if the WorkSpace cannot be
-    /// created.</p>
+    /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
     pub error_message: std::option::Option<std::string::String>,
 }
 impl FailedCreateWorkspaceRequest {
@@ -5860,8 +5522,7 @@ impl FailedCreateWorkspaceRequest {
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>The text of the error message that is returned if the WorkSpace cannot be
-    /// created.</p>
+    /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -5909,14 +5570,12 @@ pub mod failed_create_workspace_request {
             self.error_code = input;
             self
         }
-        /// <p>The text of the error message that is returned if the WorkSpace cannot be
-        /// created.</p>
+        /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>The text of the error message that is returned if the WorkSpace cannot be
-        /// created.</p>
+        /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5945,16 +5604,13 @@ impl FailedCreateWorkspaceRequest {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceRequest {
-    /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use
-    /// <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
+    /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service
-    /// directory for the WorkSpace.</p>
+    /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
+    /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
     pub bundle_id: std::option::Option<std::string::String>,
-    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
-    /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub volume_encryption_key: std::option::Option<std::string::String>,
     /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
     pub user_volume_encryption_enabled: std::option::Option<bool>,
@@ -5966,22 +5622,19 @@ pub struct WorkspaceRequest {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl WorkspaceRequest {
-    /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use
-    /// <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
+    /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
     pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
-    /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service
-    /// directory for the WorkSpace.</p>
+    /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
+    /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
     pub fn bundle_id(&self) -> std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
-    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
-    /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+    /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
     pub fn volume_encryption_key(&self) -> std::option::Option<&str> {
         self.volume_encryption_key.as_deref()
     }
@@ -6038,48 +5691,42 @@ pub mod workspace_request {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use
-        /// <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
+        /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use
-        /// <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
+        /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
         }
-        /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service
-        /// directory for the WorkSpace.</p>
+        /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
         }
-        /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service
-        /// directory for the WorkSpace.</p>
+        /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
         }
-        /// <p>The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
+        /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bundle_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
+        /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
         }
-        /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
-        /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+        /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
         pub fn volume_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_encryption_key = Some(input.into());
             self
         }
-        /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
-        /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
+        /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric KMS keys.</p>
         pub fn set_volume_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6131,9 +5778,9 @@ pub mod workspace_request {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the WorkSpace.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

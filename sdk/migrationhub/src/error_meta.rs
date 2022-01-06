@@ -5,32 +5,23 @@
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Exception raised to indicate a successfully authorized action when the
-    /// <code>DryRun</code> flag is set to "true".</p>
+    /// <p>Exception raised to indicate a successfully authorized action when the <code>DryRun</code> flag is set to "true".</p>
     DryRunOperation(crate::error::DryRunOperation),
     /// <p>The home region is not set. Set the home region to continue.</p>
     HomeRegionNotSetException(crate::error::HomeRegionNotSetException),
-    /// <p>Exception raised when an internal, configuration, or dependency error is
-    /// encountered.</p>
+    /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Exception raised when the provided input violates a policy constraint or is entered in
-    /// the wrong format or data type.</p>
+    /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>Exception raised when there are problems accessing Application Discovery Service
-    /// (Application Discovery Service); most likely due to a misconfigured policy or the
-    /// <code>migrationhub-discovery</code> role is missing or not configured correctly.</p>
+    /// <p>Exception raised when there are problems accessing Application Discovery Service (Application Discovery Service); most likely due to a misconfigured policy or the <code>migrationhub-discovery</code> role is missing or not configured correctly.</p>
     PolicyErrorException(crate::error::PolicyErrorException),
-    /// <p>Exception raised when the request references a resource (Application Discovery Service
-    /// configuration, update stream, migration task, etc.) that does not exist in Application
-    /// Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
+    /// <p>Exception raised when the request references a resource (Application Discovery Service configuration, update stream, migration task, etc.) that does not exist in Application Discovery Service (Application Discovery Service) or in Migration Hub's repository.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Exception raised when there is an internal, configuration, or dependency error
-    /// encountered.</p>
+    /// <p>Exception raised when there is an internal, configuration, or dependency error encountered.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code>
-    /// flag is set to "true".</p>
+    /// <p>Exception raised to indicate a request was not authorized when the <code>DryRun</code> flag is set to "true".</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

@@ -197,18 +197,15 @@ pub struct StartSyncExecutionOutput {
     pub input: std::option::Option<std::string::String>,
     /// <p>Provides details about execution input or output.</p>
     pub input_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    /// <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is
-    /// null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
     pub output: std::option::Option<std::string::String>,
     /// <p>Provides details about execution input or output.</p>
     pub output_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
     /// <p>The AWS X-Ray trace header that was passed to the execution.</p>
     pub trace_header: std::option::Option<std::string::String>,
-    /// <p>An object that describes workflow billing details, including billed duration
-    /// and memory use.</p>
+    /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
     pub billing_details: std::option::Option<crate::model::BillingDetails>,
 }
 impl StartSyncExecutionOutput {
@@ -254,10 +251,8 @@ impl StartSyncExecutionOutput {
     ) -> std::option::Option<&crate::model::CloudWatchEventsExecutionDataDetails> {
         self.input_details.as_ref()
     }
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    /// <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is
-    /// null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
     pub fn output(&self) -> std::option::Option<&str> {
         self.output.as_deref()
@@ -272,8 +267,7 @@ impl StartSyncExecutionOutput {
     pub fn trace_header(&self) -> std::option::Option<&str> {
         self.trace_header.as_deref()
     }
-    /// <p>An object that describes workflow billing details, including billed duration
-    /// and memory use.</p>
+    /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
     pub fn billing_details(&self) -> std::option::Option<&crate::model::BillingDetails> {
         self.billing_details.as_ref()
     }
@@ -443,19 +437,15 @@ pub mod start_sync_execution_output {
             self.input_details = input;
             self
         }
-        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-        /// <note>
-        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is
-        /// null.</p>
+        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
+        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
         /// </note>
         pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
             self.output = Some(input.into());
             self
         }
-        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-        /// <note>
-        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is
-        /// null.</p>
+        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
+        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
         /// </note>
         pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output = input;
@@ -487,14 +477,12 @@ pub mod start_sync_execution_output {
             self.trace_header = input;
             self
         }
-        /// <p>An object that describes workflow billing details, including billed duration
-        /// and memory use.</p>
+        /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
         pub fn billing_details(mut self, input: crate::model::BillingDetails) -> Self {
             self.billing_details = Some(input);
             self
         }
-        /// <p>An object that describes workflow billing details, including billed duration
-        /// and memory use.</p>
+        /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
         pub fn set_billing_details(
             mut self,
             input: std::option::Option<crate::model::BillingDetails>,
@@ -733,9 +721,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tags associated with the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -766,8 +754,7 @@ impl ListTagsForResourceOutput {
 pub struct ListStateMachinesOutput {
     #[allow(missing_docs)] // documentation missing in model
     pub state_machines: std::option::Option<std::vec::Vec<crate::model::StateMachineListItem>>,
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStateMachinesOutput {
@@ -775,8 +762,7 @@ impl ListStateMachinesOutput {
     pub fn state_machines(&self) -> std::option::Option<&[crate::model::StateMachineListItem]> {
         self.state_machines.as_deref()
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -804,12 +790,9 @@ pub mod list_state_machines_output {
         ///
         /// To override the contents of this collection use [`set_state_machines`](Self::set_state_machines).
         ///
-        pub fn state_machines(
-            mut self,
-            input: impl Into<crate::model::StateMachineListItem>,
-        ) -> Self {
+        pub fn state_machines(mut self, input: crate::model::StateMachineListItem) -> Self {
             let mut v = self.state_machines.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.state_machines = Some(v);
             self
         }
@@ -821,14 +804,12 @@ pub mod list_state_machines_output {
             self.state_machines = input;
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -855,8 +836,7 @@ impl ListStateMachinesOutput {
 pub struct ListExecutionsOutput {
     /// <p>The list of matching executions.</p>
     pub executions: std::option::Option<std::vec::Vec<crate::model::ExecutionListItem>>,
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExecutionsOutput {
@@ -864,8 +844,7 @@ impl ListExecutionsOutput {
     pub fn executions(&self) -> std::option::Option<&[crate::model::ExecutionListItem]> {
         self.executions.as_deref()
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -893,9 +872,9 @@ pub mod list_executions_output {
         /// To override the contents of this collection use [`set_executions`](Self::set_executions).
         ///
         /// <p>The list of matching executions.</p>
-        pub fn executions(mut self, input: impl Into<crate::model::ExecutionListItem>) -> Self {
+        pub fn executions(mut self, input: crate::model::ExecutionListItem) -> Self {
             let mut v = self.executions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.executions = Some(v);
             self
         }
@@ -907,14 +886,12 @@ pub mod list_executions_output {
             self.executions = input;
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -941,8 +918,7 @@ impl ListExecutionsOutput {
 pub struct ListActivitiesOutput {
     /// <p>The list of activities.</p>
     pub activities: std::option::Option<std::vec::Vec<crate::model::ActivityListItem>>,
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListActivitiesOutput {
@@ -950,8 +926,7 @@ impl ListActivitiesOutput {
     pub fn activities(&self) -> std::option::Option<&[crate::model::ActivityListItem]> {
         self.activities.as_deref()
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -979,9 +954,9 @@ pub mod list_activities_output {
         /// To override the contents of this collection use [`set_activities`](Self::set_activities).
         ///
         /// <p>The list of activities.</p>
-        pub fn activities(mut self, input: impl Into<crate::model::ActivityListItem>) -> Self {
+        pub fn activities(mut self, input: crate::model::ActivityListItem) -> Self {
             let mut v = self.activities.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.activities = Some(v);
             self
         }
@@ -993,14 +968,12 @@ pub mod list_activities_output {
             self.activities = input;
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1027,8 +1000,7 @@ impl ListActivitiesOutput {
 pub struct GetExecutionHistoryOutput {
     /// <p>The list of events that occurred in the execution.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>,
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetExecutionHistoryOutput {
@@ -1036,8 +1008,7 @@ impl GetExecutionHistoryOutput {
     pub fn events(&self) -> std::option::Option<&[crate::model::HistoryEvent]> {
         self.events.as_deref()
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1065,9 +1036,9 @@ pub mod get_execution_history_output {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The list of events that occurred in the execution.</p>
-        pub fn events(mut self, input: impl Into<crate::model::HistoryEvent>) -> Self {
+        pub fn events(mut self, input: crate::model::HistoryEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -1079,14 +1050,12 @@ pub mod get_execution_history_output {
             self.events = input;
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+        /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1111,19 +1080,13 @@ impl GetExecutionHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetActivityTaskOutput {
-    /// <p>A token that identifies the scheduled task. This token must be copied and included in
-    /// subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a> or
-    /// <a>SendTaskFailure</a> in order to report the progress or completion of the
-    /// task.</p>
+    /// <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
     pub task_token: std::option::Option<std::string::String>,
     /// <p>The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub input: std::option::Option<std::string::String>,
 }
 impl GetActivityTaskOutput {
-    /// <p>A token that identifies the scheduled task. This token must be copied and included in
-    /// subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a> or
-    /// <a>SendTaskFailure</a> in order to report the progress or completion of the
-    /// task.</p>
+    /// <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
     pub fn task_token(&self) -> std::option::Option<&str> {
         self.task_token.as_deref()
     }
@@ -1150,18 +1113,12 @@ pub mod get_activity_task_output {
         pub(crate) input: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token that identifies the scheduled task. This token must be copied and included in
-        /// subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a> or
-        /// <a>SendTaskFailure</a> in order to report the progress or completion of the
-        /// task.</p>
+        /// <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
         pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_token = Some(input.into());
             self
         }
-        /// <p>A token that identifies the scheduled task. This token must be copied and included in
-        /// subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a> or
-        /// <a>SendTaskFailure</a> in order to report the progress or completion of the
-        /// task.</p>
+        /// <p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <code>SendTaskHeartbeat</code>, <code>SendTaskSuccess</code> or <code>SendTaskFailure</code> in order to report the progress or completion of the task.</p>
         pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_token = input;
             self
@@ -1204,11 +1161,9 @@ pub struct DescribeStateMachineForExecutionOutput {
     pub definition: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the State Machine for the execution. </p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The date and time the state machine associated with an execution was updated. For a newly
-    /// created state machine, this is the creation date.</p>
+    /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
     pub update_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
-    /// options.</p>
+    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
     pub tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
@@ -1230,13 +1185,11 @@ impl DescribeStateMachineForExecutionOutput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The date and time the state machine associated with an execution was updated. For a newly
-    /// created state machine, this is the creation date.</p>
+    /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
     pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
-    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
-    /// options.</p>
+    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
     pub fn logging_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LoggingConfiguration> {
@@ -1320,14 +1273,12 @@ pub mod describe_state_machine_for_execution_output {
             self.role_arn = input;
             self
         }
-        /// <p>The date and time the state machine associated with an execution was updated. For a newly
-        /// created state machine, this is the creation date.</p>
+        /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
         pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_date = Some(input);
             self
         }
-        /// <p>The date and time the state machine associated with an execution was updated. For a newly
-        /// created state machine, this is the creation date.</p>
+        /// <p>The date and time the state machine associated with an execution was updated. For a newly created state machine, this is the creation date.</p>
         pub fn set_update_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1335,14 +1286,12 @@ pub mod describe_state_machine_for_execution_output {
             self.update_date = input;
             self
         }
-        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
-        /// options.</p>
+        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
             self.logging_configuration = Some(input);
             self
         }
-        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
-        /// options.</p>
+        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
         pub fn set_logging_configuration(
             mut self,
             input: std::option::Option<crate::model::LoggingConfiguration>,
@@ -1393,41 +1342,25 @@ pub struct DescribeStateMachineOutput {
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p>
-    /// </li>
-    /// <li>
-    /// <p>brackets <code>< > { } [ ]</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-    /// </li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
-    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the state machine.</p>
     pub status: std::option::Option<crate::model::StateMachineStatus>,
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub definition: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role
-    /// maintains security by granting Step Functions access to AWS resources.)</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or
-    /// <code>EXPRESS</code>).</p>
+    /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
     pub r#type: std::option::Option<crate::model::StateMachineType>,
     /// <p>The date the state machine is created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
-    /// options.</p>
+    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
     pub tracing_configuration: std::option::Option<crate::model::TracingConfiguration>,
@@ -1440,26 +1373,13 @@ impl DescribeStateMachineOutput {
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p>
-    /// </li>
-    /// <li>
-    /// <p>brackets <code>< > { } [ ]</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-    /// </li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
-    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -1471,13 +1391,11 @@ impl DescribeStateMachineOutput {
     pub fn definition(&self) -> std::option::Option<&str> {
         self.definition.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role
-    /// maintains security by granting Step Functions access to AWS resources.)</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or
-    /// <code>EXPRESS</code>).</p>
+    /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::StateMachineType> {
         self.r#type.as_ref()
     }
@@ -1485,8 +1403,7 @@ impl DescribeStateMachineOutput {
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
-    /// options.</p>
+    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
     pub fn logging_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LoggingConfiguration> {
@@ -1547,26 +1464,13 @@ pub mod describe_state_machine_output {
         /// <p>The name of the state machine.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -1574,26 +1478,13 @@ pub mod describe_state_machine_output {
         /// <p>The name of the state machine.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1621,26 +1512,22 @@ pub mod describe_state_machine_output {
             self.definition = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role
-        /// maintains security by granting Step Functions access to AWS resources.)</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role
-        /// maintains security by granting Step Functions access to AWS resources.)</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or
-        /// <code>EXPRESS</code>).</p>
+        /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
         pub fn r#type(mut self, input: crate::model::StateMachineType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or
-        /// <code>EXPRESS</code>).</p>
+        /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::StateMachineType>,
@@ -1661,14 +1548,12 @@ pub mod describe_state_machine_output {
             self.creation_date = input;
             self
         }
-        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
-        /// options.</p>
+        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
             self.logging_configuration = Some(input);
             self
         }
-        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
-        /// options.</p>
+        /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
         pub fn set_logging_configuration(
             mut self,
             input: std::option::Option<crate::model::LoggingConfiguration>,
@@ -1723,26 +1608,13 @@ pub struct DescribeExecutionOutput {
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p>
-    /// </li>
-    /// <li>
-    /// <p>brackets <code>< > { } [ ]</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-    /// </li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
-    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the execution.</p>
     pub status: std::option::Option<crate::model::ExecutionStatus>,
@@ -1754,10 +1626,8 @@ pub struct DescribeExecutionOutput {
     pub input: std::option::Option<std::string::String>,
     /// <p>Provides details about execution input or output.</p>
     pub input_details: std::option::Option<crate::model::CloudWatchEventsExecutionDataDetails>,
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    /// <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is
-    /// null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
     pub output: std::option::Option<std::string::String>,
     /// <p>Provides details about execution input or output.</p>
@@ -1777,26 +1647,13 @@ impl DescribeExecutionOutput {
     /// <p>The name of the execution.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p>
-    /// </li>
-    /// <li>
-    /// <p>brackets <code>< > { } [ ]</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-    /// </li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
-    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -1822,10 +1679,8 @@ impl DescribeExecutionOutput {
     ) -> std::option::Option<&crate::model::CloudWatchEventsExecutionDataDetails> {
         self.input_details.as_ref()
     }
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    /// <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is
-    /// null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
     /// </note>
     pub fn output(&self) -> std::option::Option<&str> {
         self.output.as_deref()
@@ -1908,26 +1763,13 @@ pub mod describe_execution_output {
         /// <p>The name of the execution.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -1935,26 +1777,13 @@ pub mod describe_execution_output {
         /// <p>The name of the execution.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2024,19 +1853,15 @@ pub mod describe_execution_output {
             self.input_details = input;
             self
         }
-        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-        /// <note>
-        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is
-        /// null.</p>
+        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
+        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
         /// </note>
         pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
             self.output = Some(input.into());
             self
         }
-        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-        /// <note>
-        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is
-        /// null.</p>
+        /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
+        /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
         /// </note>
         pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output = input;
@@ -2102,26 +1927,13 @@ pub struct DescribeActivityOutput {
     /// <p>The name of the activity.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p>
-    /// </li>
-    /// <li>
-    /// <p>brackets <code>< > { } [ ]</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-    /// </li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
-    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date the activity is created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2134,26 +1946,13 @@ impl DescribeActivityOutput {
     /// <p>The name of the activity.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
-    /// <li>
-    /// <p>white space</p>
-    /// </li>
-    /// <li>
-    /// <p>brackets <code>< > { } [ ]</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>wildcard characters <code>? *</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-    /// </li>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
-    /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -2195,26 +1994,13 @@ pub mod describe_activity_output {
         /// <p>The name of the activity.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -2222,26 +2008,13 @@ pub mod describe_activity_output {
         /// <p>The name of the activity.</p>
         /// <p>A name must <i>not</i> contain:</p>
         /// <ul>
-        /// <li>
-        /// <p>white space</p>
-        /// </li>
-        /// <li>
-        /// <p>brackets <code>< > { } [ ]</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>wildcard characters <code>? *</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-        /// </li>
+        /// <li> <p>white space</p> </li>
+        /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+        /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+        /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+        /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
         /// </ul>
-        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self

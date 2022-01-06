@@ -19,11 +19,7 @@ pub enum Error {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Specified application can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Discovery failed to get a record from the
-    /// streaming source because of the Amazon Kinesis Streams  
-    /// ProvisionedThroughputExceededException. For more information,
-    /// see <a href="https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a>
-    /// in the Amazon Kinesis Streams API Reference.</p>
+    /// <p>Discovery failed to get a record from the streaming source because of the Amazon Kinesis Streams ProvisionedThroughputExceededException. For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the Amazon Kinesis Streams API Reference.</p>
     ResourceProvisionedThroughputExceededException(
         crate::error::ResourceProvisionedThroughputExceededException,
     ),
@@ -31,8 +27,7 @@ pub enum Error {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>Data format is not valid. Amazon Kinesis Analytics is not able to detect schema for
-    /// the given streaming source.</p>
+    /// <p>Data format is not valid. Amazon Kinesis Analytics is not able to detect schema for the given streaming source.</p>
     UnableToDetectSchemaException(crate::error::UnableToDetectSchemaException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),

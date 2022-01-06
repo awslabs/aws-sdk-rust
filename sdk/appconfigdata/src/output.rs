@@ -3,20 +3,14 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartConfigurationSessionOutput {
-    /// <p>Token encapsulating state about the configuration session. Provide this token to the GetLatestConfiguration API to retrieve configuration data.</p>
-    /// <important>
-    /// <p>This token should only be used once in your first call to GetLatestConfiguration. You MUST use the
-    /// new token in the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to
-    /// GetLatestConfiguration.</p>
+    /// <p>Token encapsulating state about the configuration session. Provide this token to the GetLatestConfiguration API to retrieve configuration data.</p> <important>
+    /// <p>This token should only be used once in your first call to GetLatestConfiguration. You MUST use the new token in the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to GetLatestConfiguration.</p>
     /// </important>
     pub initial_configuration_token: std::option::Option<std::string::String>,
 }
 impl StartConfigurationSessionOutput {
-    /// <p>Token encapsulating state about the configuration session. Provide this token to the GetLatestConfiguration API to retrieve configuration data.</p>
-    /// <important>
-    /// <p>This token should only be used once in your first call to GetLatestConfiguration. You MUST use the
-    /// new token in the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to
-    /// GetLatestConfiguration.</p>
+    /// <p>Token encapsulating state about the configuration session. Provide this token to the GetLatestConfiguration API to retrieve configuration data.</p> <important>
+    /// <p>This token should only be used once in your first call to GetLatestConfiguration. You MUST use the new token in the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to GetLatestConfiguration.</p>
     /// </important>
     pub fn initial_configuration_token(&self) -> std::option::Option<&str> {
         self.initial_configuration_token.as_deref()
@@ -41,11 +35,8 @@ pub mod start_configuration_session_output {
         pub(crate) initial_configuration_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Token encapsulating state about the configuration session. Provide this token to the GetLatestConfiguration API to retrieve configuration data.</p>
-        /// <important>
-        /// <p>This token should only be used once in your first call to GetLatestConfiguration. You MUST use the
-        /// new token in the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to
-        /// GetLatestConfiguration.</p>
+        /// <p>Token encapsulating state about the configuration session. Provide this token to the GetLatestConfiguration API to retrieve configuration data.</p> <important>
+        /// <p>This token should only be used once in your first call to GetLatestConfiguration. You MUST use the new token in the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to GetLatestConfiguration.</p>
         /// </important>
         pub fn initial_configuration_token(
             mut self,
@@ -54,11 +45,8 @@ pub mod start_configuration_session_output {
             self.initial_configuration_token = Some(input.into());
             self
         }
-        /// <p>Token encapsulating state about the configuration session. Provide this token to the GetLatestConfiguration API to retrieve configuration data.</p>
-        /// <important>
-        /// <p>This token should only be used once in your first call to GetLatestConfiguration. You MUST use the
-        /// new token in the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to
-        /// GetLatestConfiguration.</p>
+        /// <p>Token encapsulating state about the configuration session. Provide this token to the GetLatestConfiguration API to retrieve configuration data.</p> <important>
+        /// <p>This token should only be used once in your first call to GetLatestConfiguration. You MUST use the new token in the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to GetLatestConfiguration.</p>
         /// </important>
         pub fn set_initial_configuration_token(
             mut self,

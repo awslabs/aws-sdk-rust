@@ -3,47 +3,37 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>You do not have access
-    /// required to perform this action.</p>
+    /// <p>You do not have access required to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>You are trying to
-    /// update a resource or configuration that is already being created or updated. Wait for the
-    /// previous operation to finish and try again.</p>
+    /// <p>You are trying to update a resource or configuration that is already being created or updated. Wait for the previous operation to finish and try again.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>One or more of of request parameters specified is not valid.</p>
     InvalidArgsException(crate::error::InvalidArgsException),
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>One or more values in the <a>DomainValidationOption</a> structure is
-    /// incorrect.</p>
+    /// <p>One or more values in the <code>DomainValidationOption</code> structure is incorrect.</p>
     InvalidDomainValidationOptionsException(crate::error::InvalidDomainValidationOptionsException),
     /// <p>An input parameter was invalid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Processing has reached an invalid state.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>One or both of the values that make up the key-value pair is not valid. For example, you
-    /// cannot specify a tag value that begins with <code>aws:</code>.</p>
+    /// <p>One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>.</p>
     InvalidTagException(crate::error::InvalidTagException),
     /// <p>An ACM quota has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The certificate request is in process and the certificate in your account has not yet been
-    /// issued.</p>
+    /// <p>The certificate request is in process and the certificate in your account has not yet been issued.</p>
     RequestInProgressException(crate::error::RequestInProgressException),
-    /// <p>The certificate is in use by another Amazon Web Services service in the caller's account. Remove the
-    /// association and try again.</p>
+    /// <p>The certificate is in use by another Amazon Web Services service in the caller's account. Remove the association and try again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The specified certificate cannot be found in the caller's account or the caller's account
-    /// cannot be found.</p>
+    /// <p>The specified certificate cannot be found in the caller's account or the caller's account cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>A specified tag did not comply with an existing tag policy and was rejected.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// <p>The request was denied
-    /// because it exceeded a quota.</p>
+    /// <p>The request was denied because it exceeded a quota.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>The request contains too many tags. Try the request again with fewer tags.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>The supplied input
-    /// failed to satisfy constraints of an Amazon Web Services service.</p>
+    /// <p>The supplied input failed to satisfy constraints of an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

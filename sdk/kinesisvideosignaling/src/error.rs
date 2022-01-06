@@ -12,8 +12,7 @@ pub struct GetIceServerConfigError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIceServerConfigErrorKind {
-    /// <p>Your request was throttled because you have exceeded the limit of allowed client
-    /// calls. Try making the call later.</p>
+    /// <p>Your request was throttled because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -23,9 +22,7 @@ pub enum GetIceServerConfigErrorKind {
     NotAuthorizedException(crate::error::NotAuthorizedException),
     /// <p>The specified resource is not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>If the client session is expired. Once the client is connected, the session is valid
-    /// for 45 minutes. Client should reconnect to the channel to continue sending/receiving
-    /// messages.</p>
+    /// <p>If the client session is expired. Once the client is connected, the session is valid for 45 minutes. Client should reconnect to the channel to continue sending/receiving messages.</p>
     SessionExpiredException(crate::error::SessionExpiredException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -73,8 +70,6 @@ impl GetIceServerConfigError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -165,8 +160,7 @@ pub struct SendAlexaOfferToMasterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendAlexaOfferToMasterErrorKind {
-    /// <p>Your request was throttled because you have exceeded the limit of allowed client
-    /// calls. Try making the call later.</p>
+    /// <p>Your request was throttled because you have exceeded the limit of allowed client calls. Try making the call later.</p>
     ClientLimitExceededException(crate::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -218,8 +212,6 @@ impl SendAlexaOfferToMasterError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -473,8 +465,7 @@ impl InvalidArgumentException {
     }
 }
 
-/// <p>Your request was throttled because you have exceeded the limit of allowed client
-/// calls. Try making the call later.</p>
+/// <p>Your request was throttled because you have exceeded the limit of allowed client calls. Try making the call later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClientLimitExceededException {
@@ -538,9 +529,7 @@ impl ClientLimitExceededException {
     }
 }
 
-/// <p>If the client session is expired. Once the client is connected, the session is valid
-/// for 45 minutes. Client should reconnect to the channel to continue sending/receiving
-/// messages.</p>
+/// <p>If the client session is expired. Once the client is connected, the session is valid for 45 minutes. Client should reconnect to the channel to continue sending/receiving messages.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionExpiredException {

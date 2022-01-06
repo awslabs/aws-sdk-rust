@@ -476,9 +476,7 @@ impl EmergencyContact {
     }
 }
 
-/// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
-/// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
-/// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+/// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseAction {
@@ -561,8 +559,7 @@ impl ResponseAction {
 
 /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. </p>
 /// <p>This is only used in the context of the <code>ResponseAction</code> setting. </p>
-/// <p>JSON specification: <code>"Count": {}</code>
-/// </p>
+/// <p>JSON specification: <code>"Count": {}</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CountAction {}
@@ -594,8 +591,7 @@ impl CountAction {
 
 /// <p>Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. </p>
 /// <p>This is only used in the context of the <code>ResponseAction</code> setting. </p>
-/// <p>JSON specification: <code>"Block": {}</code>
-/// </p>
+/// <p>JSON specification: <code>"Block": {}</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BlockAction {}
@@ -708,13 +704,11 @@ pub struct Protection {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
+    /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
     pub health_check_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ARN (Amazon Resource Name) of the protection.</p>
     pub protection_arn: std::option::Option<std::string::String>,
-    /// <p>The automatic application layer DDoS mitigation settings for the protection.
-    /// This configuration determines whether Shield Advanced automatically
-    /// manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+    /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
     pub application_layer_automatic_response_configuration:
         std::option::Option<crate::model::ApplicationLayerAutomaticResponseConfiguration>,
 }
@@ -731,7 +725,7 @@ impl Protection {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
+    /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
     pub fn health_check_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.health_check_ids.as_deref()
     }
@@ -739,9 +733,7 @@ impl Protection {
     pub fn protection_arn(&self) -> std::option::Option<&str> {
         self.protection_arn.as_deref()
     }
-    /// <p>The automatic application layer DDoS mitigation settings for the protection.
-    /// This configuration determines whether Shield Advanced automatically
-    /// manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+    /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
     pub fn application_layer_automatic_response_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ApplicationLayerAutomaticResponseConfiguration> {
@@ -813,14 +805,14 @@ pub mod protection {
         ///
         /// To override the contents of this collection use [`set_health_check_ids`](Self::set_health_check_ids).
         ///
-        /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
+        /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
         pub fn health_check_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.health_check_ids.unwrap_or_default();
             v.push(input.into());
             self.health_check_ids = Some(v);
             self
         }
-        /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
+        /// <p>The unique identifier (ID) for the Route&nbsp;53 health check that's associated with the protection. </p>
         pub fn set_health_check_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -841,9 +833,7 @@ pub mod protection {
             self.protection_arn = input;
             self
         }
-        /// <p>The automatic application layer DDoS mitigation settings for the protection.
-        /// This configuration determines whether Shield Advanced automatically
-        /// manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+        /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
         pub fn application_layer_automatic_response_configuration(
             mut self,
             input: crate::model::ApplicationLayerAutomaticResponseConfiguration,
@@ -851,9 +841,7 @@ pub mod protection {
             self.application_layer_automatic_response_configuration = Some(input);
             self
         }
-        /// <p>The automatic application layer DDoS mitigation settings for the protection.
-        /// This configuration determines whether Shield Advanced automatically
-        /// manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+        /// <p>The automatic application layer DDoS mitigation settings for the protection. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
         pub fn set_application_layer_automatic_response_configuration(
             mut self,
             input: std::option::Option<
@@ -884,17 +872,13 @@ impl Protection {
     }
 }
 
-/// <p>The automatic application layer DDoS mitigation settings for a <a>Protection</a>.
-/// This configuration determines whether Shield Advanced automatically
-/// manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
+/// <p>The automatic application layer DDoS mitigation settings for a <code>Protection</code>. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationLayerAutomaticResponseConfiguration {
     /// <p>Indicates whether automatic application layer DDoS mitigation is enabled for the protection. </p>
     pub status: std::option::Option<crate::model::ApplicationLayerAutomaticResponseStatus>,
-    /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
-    /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
-    /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
     pub action: std::option::Option<crate::model::ResponseAction>,
 }
 impl ApplicationLayerAutomaticResponseConfiguration {
@@ -904,9 +888,7 @@ impl ApplicationLayerAutomaticResponseConfiguration {
     ) -> std::option::Option<&crate::model::ApplicationLayerAutomaticResponseStatus> {
         self.status.as_ref()
     }
-    /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
-    /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
-    /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
     pub fn action(&self) -> std::option::Option<&crate::model::ResponseAction> {
         self.action.as_ref()
     }
@@ -946,16 +928,12 @@ pub mod application_layer_automatic_response_configuration {
             self.status = input;
             self
         }
-        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
-        /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
-        /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
         pub fn action(mut self, input: crate::model::ResponseAction) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
-        /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
-        /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::ResponseAction>,
@@ -1042,21 +1020,14 @@ pub struct ProtectionGroup {
     pub protection_group_id: std::option::Option<std::string::String>,
     /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
     /// <ul>
-    /// <li>
-    /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
-    /// </li>
-    /// <li>
-    /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
-    /// </li>
-    /// <li>
-    /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p>
-    /// </li>
+    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
+    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
+    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
     /// </ul>
     pub aggregation: std::option::Option<crate::model::ProtectionGroupAggregation>,
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.</p>
     pub pattern: std::option::Option<crate::model::ProtectionGroupPattern>,
-    /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group.
-    /// You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     pub resource_type: std::option::Option<crate::model::ProtectedResourceType>,
     /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     pub members: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1070,15 +1041,9 @@ impl ProtectionGroup {
     }
     /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
     /// <ul>
-    /// <li>
-    /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
-    /// </li>
-    /// <li>
-    /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
-    /// </li>
-    /// <li>
-    /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p>
-    /// </li>
+    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
+    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
+    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
     /// </ul>
     pub fn aggregation(&self) -> std::option::Option<&crate::model::ProtectionGroupAggregation> {
         self.aggregation.as_ref()
@@ -1087,8 +1052,7 @@ impl ProtectionGroup {
     pub fn pattern(&self) -> std::option::Option<&crate::model::ProtectionGroupPattern> {
         self.pattern.as_ref()
     }
-    /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group.
-    /// You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     pub fn resource_type(&self) -> std::option::Option<&crate::model::ProtectedResourceType> {
         self.resource_type.as_ref()
     }
@@ -1142,15 +1106,9 @@ pub mod protection_group {
         }
         /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
         /// <ul>
-        /// <li>
-        /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
-        /// </li>
-        /// <li>
-        /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
-        /// </li>
-        /// <li>
-        /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p>
-        /// </li>
+        /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
+        /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
+        /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
         /// </ul>
         pub fn aggregation(mut self, input: crate::model::ProtectionGroupAggregation) -> Self {
             self.aggregation = Some(input);
@@ -1158,15 +1116,9 @@ pub mod protection_group {
         }
         /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
         /// <ul>
-        /// <li>
-        /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
-        /// </li>
-        /// <li>
-        /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
-        /// </li>
-        /// <li>
-        /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p>
-        /// </li>
+        /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
+        /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
+        /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
         /// </ul>
         pub fn set_aggregation(
             mut self,
@@ -1188,14 +1140,12 @@ pub mod protection_group {
             self.pattern = input;
             self
         }
-        /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group.
-        /// You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+        /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
         pub fn resource_type(mut self, input: crate::model::ProtectedResourceType) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group.
-        /// You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+        /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ProtectedResourceType>,
@@ -1368,12 +1318,9 @@ pub mod attack_summary {
         /// To override the contents of this collection use [`set_attack_vectors`](Self::set_attack_vectors).
         ///
         /// <p>The list of attacks for a specified time period.</p>
-        pub fn attack_vectors(
-            mut self,
-            input: impl Into<crate::model::AttackVectorDescription>,
-        ) -> Self {
+        pub fn attack_vectors(mut self, input: crate::model::AttackVectorDescription) -> Self {
             let mut v = self.attack_vectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attack_vectors = Some(v);
             self
         }
@@ -1410,120 +1357,48 @@ impl AttackSummary {
 pub struct AttackVectorDescription {
     /// <p>The attack type. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>UDP_TRAFFIC</p>
-    /// </li>
-    /// <li>
-    /// <p>UDP_FRAGMENT</p>
-    /// </li>
-    /// <li>
-    /// <p>GENERIC_UDP_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>DNS_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>NTP_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>CHARGEN_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>SSDP_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>PORT_MAPPER</p>
-    /// </li>
-    /// <li>
-    /// <p>RIP_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>SNMP_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>MSSQL_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>NET_BIOS_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>SYN_FLOOD</p>
-    /// </li>
-    /// <li>
-    /// <p>ACK_FLOOD</p>
-    /// </li>
-    /// <li>
-    /// <p>REQUEST_FLOOD</p>
-    /// </li>
-    /// <li>
-    /// <p>HTTP_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>UDS_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>MEMCACHED_REFLECTION</p>
-    /// </li>
+    /// <li> <p>UDP_TRAFFIC</p> </li>
+    /// <li> <p>UDP_FRAGMENT</p> </li>
+    /// <li> <p>GENERIC_UDP_REFLECTION</p> </li>
+    /// <li> <p>DNS_REFLECTION</p> </li>
+    /// <li> <p>NTP_REFLECTION</p> </li>
+    /// <li> <p>CHARGEN_REFLECTION</p> </li>
+    /// <li> <p>SSDP_REFLECTION</p> </li>
+    /// <li> <p>PORT_MAPPER</p> </li>
+    /// <li> <p>RIP_REFLECTION</p> </li>
+    /// <li> <p>SNMP_REFLECTION</p> </li>
+    /// <li> <p>MSSQL_REFLECTION</p> </li>
+    /// <li> <p>NET_BIOS_REFLECTION</p> </li>
+    /// <li> <p>SYN_FLOOD</p> </li>
+    /// <li> <p>ACK_FLOOD</p> </li>
+    /// <li> <p>REQUEST_FLOOD</p> </li>
+    /// <li> <p>HTTP_REFLECTION</p> </li>
+    /// <li> <p>UDS_REFLECTION</p> </li>
+    /// <li> <p>MEMCACHED_REFLECTION</p> </li>
     /// </ul>
     pub vector_type: std::option::Option<std::string::String>,
 }
 impl AttackVectorDescription {
     /// <p>The attack type. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>UDP_TRAFFIC</p>
-    /// </li>
-    /// <li>
-    /// <p>UDP_FRAGMENT</p>
-    /// </li>
-    /// <li>
-    /// <p>GENERIC_UDP_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>DNS_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>NTP_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>CHARGEN_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>SSDP_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>PORT_MAPPER</p>
-    /// </li>
-    /// <li>
-    /// <p>RIP_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>SNMP_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>MSSQL_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>NET_BIOS_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>SYN_FLOOD</p>
-    /// </li>
-    /// <li>
-    /// <p>ACK_FLOOD</p>
-    /// </li>
-    /// <li>
-    /// <p>REQUEST_FLOOD</p>
-    /// </li>
-    /// <li>
-    /// <p>HTTP_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>UDS_REFLECTION</p>
-    /// </li>
-    /// <li>
-    /// <p>MEMCACHED_REFLECTION</p>
-    /// </li>
+    /// <li> <p>UDP_TRAFFIC</p> </li>
+    /// <li> <p>UDP_FRAGMENT</p> </li>
+    /// <li> <p>GENERIC_UDP_REFLECTION</p> </li>
+    /// <li> <p>DNS_REFLECTION</p> </li>
+    /// <li> <p>NTP_REFLECTION</p> </li>
+    /// <li> <p>CHARGEN_REFLECTION</p> </li>
+    /// <li> <p>SSDP_REFLECTION</p> </li>
+    /// <li> <p>PORT_MAPPER</p> </li>
+    /// <li> <p>RIP_REFLECTION</p> </li>
+    /// <li> <p>SNMP_REFLECTION</p> </li>
+    /// <li> <p>MSSQL_REFLECTION</p> </li>
+    /// <li> <p>NET_BIOS_REFLECTION</p> </li>
+    /// <li> <p>SYN_FLOOD</p> </li>
+    /// <li> <p>ACK_FLOOD</p> </li>
+    /// <li> <p>REQUEST_FLOOD</p> </li>
+    /// <li> <p>HTTP_REFLECTION</p> </li>
+    /// <li> <p>UDS_REFLECTION</p> </li>
+    /// <li> <p>MEMCACHED_REFLECTION</p> </li>
     /// </ul>
     pub fn vector_type(&self) -> std::option::Option<&str> {
         self.vector_type.as_deref()
@@ -1547,60 +1422,24 @@ pub mod attack_vector_description {
     impl Builder {
         /// <p>The attack type. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>UDP_TRAFFIC</p>
-        /// </li>
-        /// <li>
-        /// <p>UDP_FRAGMENT</p>
-        /// </li>
-        /// <li>
-        /// <p>GENERIC_UDP_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>DNS_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>NTP_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>CHARGEN_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>SSDP_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>PORT_MAPPER</p>
-        /// </li>
-        /// <li>
-        /// <p>RIP_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>SNMP_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>MSSQL_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>NET_BIOS_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>SYN_FLOOD</p>
-        /// </li>
-        /// <li>
-        /// <p>ACK_FLOOD</p>
-        /// </li>
-        /// <li>
-        /// <p>REQUEST_FLOOD</p>
-        /// </li>
-        /// <li>
-        /// <p>HTTP_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>UDS_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>MEMCACHED_REFLECTION</p>
-        /// </li>
+        /// <li> <p>UDP_TRAFFIC</p> </li>
+        /// <li> <p>UDP_FRAGMENT</p> </li>
+        /// <li> <p>GENERIC_UDP_REFLECTION</p> </li>
+        /// <li> <p>DNS_REFLECTION</p> </li>
+        /// <li> <p>NTP_REFLECTION</p> </li>
+        /// <li> <p>CHARGEN_REFLECTION</p> </li>
+        /// <li> <p>SSDP_REFLECTION</p> </li>
+        /// <li> <p>PORT_MAPPER</p> </li>
+        /// <li> <p>RIP_REFLECTION</p> </li>
+        /// <li> <p>SNMP_REFLECTION</p> </li>
+        /// <li> <p>MSSQL_REFLECTION</p> </li>
+        /// <li> <p>NET_BIOS_REFLECTION</p> </li>
+        /// <li> <p>SYN_FLOOD</p> </li>
+        /// <li> <p>ACK_FLOOD</p> </li>
+        /// <li> <p>REQUEST_FLOOD</p> </li>
+        /// <li> <p>HTTP_REFLECTION</p> </li>
+        /// <li> <p>UDS_REFLECTION</p> </li>
+        /// <li> <p>MEMCACHED_REFLECTION</p> </li>
         /// </ul>
         pub fn vector_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.vector_type = Some(input.into());
@@ -1608,60 +1447,24 @@ pub mod attack_vector_description {
         }
         /// <p>The attack type. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>UDP_TRAFFIC</p>
-        /// </li>
-        /// <li>
-        /// <p>UDP_FRAGMENT</p>
-        /// </li>
-        /// <li>
-        /// <p>GENERIC_UDP_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>DNS_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>NTP_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>CHARGEN_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>SSDP_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>PORT_MAPPER</p>
-        /// </li>
-        /// <li>
-        /// <p>RIP_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>SNMP_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>MSSQL_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>NET_BIOS_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>SYN_FLOOD</p>
-        /// </li>
-        /// <li>
-        /// <p>ACK_FLOOD</p>
-        /// </li>
-        /// <li>
-        /// <p>REQUEST_FLOOD</p>
-        /// </li>
-        /// <li>
-        /// <p>HTTP_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>UDS_REFLECTION</p>
-        /// </li>
-        /// <li>
-        /// <p>MEMCACHED_REFLECTION</p>
-        /// </li>
+        /// <li> <p>UDP_TRAFFIC</p> </li>
+        /// <li> <p>UDP_FRAGMENT</p> </li>
+        /// <li> <p>GENERIC_UDP_REFLECTION</p> </li>
+        /// <li> <p>DNS_REFLECTION</p> </li>
+        /// <li> <p>NTP_REFLECTION</p> </li>
+        /// <li> <p>CHARGEN_REFLECTION</p> </li>
+        /// <li> <p>SSDP_REFLECTION</p> </li>
+        /// <li> <p>PORT_MAPPER</p> </li>
+        /// <li> <p>RIP_REFLECTION</p> </li>
+        /// <li> <p>SNMP_REFLECTION</p> </li>
+        /// <li> <p>MSSQL_REFLECTION</p> </li>
+        /// <li> <p>NET_BIOS_REFLECTION</p> </li>
+        /// <li> <p>SYN_FLOOD</p> </li>
+        /// <li> <p>ACK_FLOOD</p> </li>
+        /// <li> <p>REQUEST_FLOOD</p> </li>
+        /// <li> <p>HTTP_REFLECTION</p> </li>
+        /// <li> <p>UDS_REFLECTION</p> </li>
+        /// <li> <p>MEMCACHED_REFLECTION</p> </li>
         /// </ul>
         pub fn set_vector_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vector_type = input;
@@ -1972,9 +1775,9 @@ pub mod subscription {
         /// To override the contents of this collection use [`set_limits`](Self::set_limits).
         ///
         /// <p>Specifies how many protections of a given type you can create.</p>
-        pub fn limits(mut self, input: impl Into<crate::model::Limit>) -> Self {
+        pub fn limits(mut self, input: crate::model::Limit) -> Self {
             let mut v = self.limits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.limits = Some(v);
             self
         }
@@ -2377,12 +2180,9 @@ pub mod protection_limits {
         /// To override the contents of this collection use [`set_protected_resource_type_limits`](Self::set_protected_resource_type_limits).
         ///
         /// <p>The maximum number of resource types that you can specify in a protection.</p>
-        pub fn protected_resource_type_limits(
-            mut self,
-            input: impl Into<crate::model::Limit>,
-        ) -> Self {
+        pub fn protected_resource_type_limits(mut self, input: crate::model::Limit) -> Self {
             let mut v = self.protected_resource_type_limits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protected_resource_type_limits = Some(v);
             self
         }
@@ -2541,7 +2341,7 @@ impl AsRef<str> for ProactiveEngagementStatus {
     }
 }
 
-/// <p>A single attack statistics data record. This is returned by <a>DescribeAttackStatistics</a> along with a time range indicating the time period that the attack statistics apply to.  </p>
+/// <p>A single attack statistics data record. This is returned by <code>DescribeAttackStatistics</code> along with a time range indicating the time period that the attack statistics apply to. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttackStatisticsDataItem {
@@ -2617,7 +2417,7 @@ impl AttackStatisticsDataItem {
     }
 }
 
-/// <p>Information about the volume of attacks during the time period, included in an <a>AttackStatisticsDataItem</a>. If the accompanying <code>AttackCount</code> in the statistics object is zero, this setting might be empty.</p>
+/// <p>Information about the volume of attacks during the time period, included in an <code>AttackStatisticsDataItem</code>. If the accompanying <code>AttackCount</code> in the statistics object is zero, this setting might be empty.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttackVolume {
@@ -2720,7 +2520,7 @@ impl AttackVolume {
     }
 }
 
-/// <p>Statistics objects for the various data types in <a>AttackVolume</a>. </p>
+/// <p>Statistics objects for the various data types in <code>AttackVolume</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttackVolumeStatistics {
@@ -2791,10 +2591,7 @@ pub struct AttackDetail {
     /// <p>List of counters that describe the attack for the specified time period.</p>
     pub attack_counters: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
     /// <p>The array of objects that provide details of the Shield event. </p>
-    /// <p>For infrastructure  
-    /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
-    /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
-    /// in the <i>WAF Developer Guide</i>. </p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
     pub attack_properties: std::option::Option<std::vec::Vec<crate::model::AttackProperty>>,
     /// <p>List of mitigation actions taken for the attack.</p>
     pub mitigations: std::option::Option<std::vec::Vec<crate::model::Mitigation>>,
@@ -2825,10 +2622,7 @@ impl AttackDetail {
         self.attack_counters.as_deref()
     }
     /// <p>The array of objects that provide details of the Shield event. </p>
-    /// <p>For infrastructure  
-    /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
-    /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
-    /// in the <i>WAF Developer Guide</i>. </p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn attack_properties(&self) -> std::option::Option<&[crate::model::AttackProperty]> {
         self.attack_properties.as_deref()
     }
@@ -2895,9 +2689,9 @@ pub mod attack_detail {
         /// To override the contents of this collection use [`set_sub_resources`](Self::set_sub_resources).
         ///
         /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
-        pub fn sub_resources(mut self, input: impl Into<crate::model::SubResourceSummary>) -> Self {
+        pub fn sub_resources(mut self, input: crate::model::SubResourceSummary) -> Self {
             let mut v = self.sub_resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.sub_resources = Some(v);
             self
         }
@@ -2940,12 +2734,9 @@ pub mod attack_detail {
         /// To override the contents of this collection use [`set_attack_counters`](Self::set_attack_counters).
         ///
         /// <p>List of counters that describe the attack for the specified time period.</p>
-        pub fn attack_counters(
-            mut self,
-            input: impl Into<crate::model::SummarizedCounter>,
-        ) -> Self {
+        pub fn attack_counters(mut self, input: crate::model::SummarizedCounter) -> Self {
             let mut v = self.attack_counters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attack_counters = Some(v);
             self
         }
@@ -2962,21 +2753,15 @@ pub mod attack_detail {
         /// To override the contents of this collection use [`set_attack_properties`](Self::set_attack_properties).
         ///
         /// <p>The array of objects that provide details of the Shield event. </p>
-        /// <p>For infrastructure  
-        /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
-        /// in the <i>WAF Developer Guide</i>. </p>
-        pub fn attack_properties(mut self, input: impl Into<crate::model::AttackProperty>) -> Self {
+        /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
+        pub fn attack_properties(mut self, input: crate::model::AttackProperty) -> Self {
             let mut v = self.attack_properties.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attack_properties = Some(v);
             self
         }
         /// <p>The array of objects that provide details of the Shield event. </p>
-        /// <p>For infrastructure  
-        /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
-        /// in the <i>WAF Developer Guide</i>. </p>
+        /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
         pub fn set_attack_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttackProperty>>,
@@ -2989,9 +2774,9 @@ pub mod attack_detail {
         /// To override the contents of this collection use [`set_mitigations`](Self::set_mitigations).
         ///
         /// <p>List of mitigation actions taken for the attack.</p>
-        pub fn mitigations(mut self, input: impl Into<crate::model::Mitigation>) -> Self {
+        pub fn mitigations(mut self, input: crate::model::Mitigation) -> Self {
             let mut v = self.mitigations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mitigations = Some(v);
             self
         }
@@ -3082,42 +2867,29 @@ impl Mitigation {
     }
 }
 
-/// <p>Details of a Shield event. This is provided as part of an <a>AttackDetail</a>.</p>
+/// <p>Details of a Shield event. This is provided as part of an <code>AttackDetail</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttackProperty {
-    /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code>
-    /// indicates layer 7 events.</p>
-    /// <p>For infrastructure  
-    /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
-    /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
-    /// in the <i>WAF Developer Guide</i>. </p>
+    /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
     pub attack_layer: std::option::Option<crate::model::AttackLayer>,
-    /// <p>Defines the Shield event property information that is provided. The
-    /// <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code>
-    /// values are valid only for WordPress reflective pingback events.</p>
+    /// <p>Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.</p>
     pub attack_property_identifier: std::option::Option<crate::model::AttackPropertyIdentifier>,
     /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
     pub top_contributors: std::option::Option<std::vec::Vec<crate::model::Contributor>>,
-    /// <p>The unit used for the <code>Contributor</code>
-    /// <code>Value</code> property. </p>
+    /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
     pub unit: std::option::Option<crate::model::Unit>,
     /// <p>The total contributions made to this Shield event by all contributors.</p>
     pub total: i64,
 }
 impl AttackProperty {
-    /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code>
-    /// indicates layer 7 events.</p>
-    /// <p>For infrastructure  
-    /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
-    /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
-    /// in the <i>WAF Developer Guide</i>. </p>
+    /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
+    /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn attack_layer(&self) -> std::option::Option<&crate::model::AttackLayer> {
         self.attack_layer.as_ref()
     }
-    /// <p>Defines the Shield event property information that is provided. The
-    /// <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code>
-    /// values are valid only for WordPress reflective pingback events.</p>
+    /// <p>Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.</p>
     pub fn attack_property_identifier(
         &self,
     ) -> std::option::Option<&crate::model::AttackPropertyIdentifier> {
@@ -3127,8 +2899,7 @@ impl AttackProperty {
     pub fn top_contributors(&self) -> std::option::Option<&[crate::model::Contributor]> {
         self.top_contributors.as_deref()
     }
-    /// <p>The unit used for the <code>Contributor</code>
-    /// <code>Value</code> property. </p>
+    /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
     pub fn unit(&self) -> std::option::Option<&crate::model::Unit> {
         self.unit.as_ref()
     }
@@ -3165,22 +2936,14 @@ pub mod attack_property {
         pub(crate) total: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code>
-        /// indicates layer 7 events.</p>
-        /// <p>For infrastructure  
-        /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
-        /// in the <i>WAF Developer Guide</i>. </p>
+        /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
+        /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
         pub fn attack_layer(mut self, input: crate::model::AttackLayer) -> Self {
             self.attack_layer = Some(input);
             self
         }
-        /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code>
-        /// indicates layer 7 events.</p>
-        /// <p>For infrastructure  
-        /// layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
-        /// in the <i>WAF Developer Guide</i>. </p>
+        /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
+        /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
         pub fn set_attack_layer(
             mut self,
             input: std::option::Option<crate::model::AttackLayer>,
@@ -3188,9 +2951,7 @@ pub mod attack_property {
             self.attack_layer = input;
             self
         }
-        /// <p>Defines the Shield event property information that is provided. The
-        /// <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code>
-        /// values are valid only for WordPress reflective pingback events.</p>
+        /// <p>Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.</p>
         pub fn attack_property_identifier(
             mut self,
             input: crate::model::AttackPropertyIdentifier,
@@ -3198,9 +2959,7 @@ pub mod attack_property {
             self.attack_property_identifier = Some(input);
             self
         }
-        /// <p>Defines the Shield event property information that is provided. The
-        /// <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code>
-        /// values are valid only for WordPress reflective pingback events.</p>
+        /// <p>Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.</p>
         pub fn set_attack_property_identifier(
             mut self,
             input: std::option::Option<crate::model::AttackPropertyIdentifier>,
@@ -3213,9 +2972,9 @@ pub mod attack_property {
         /// To override the contents of this collection use [`set_top_contributors`](Self::set_top_contributors).
         ///
         /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
-        pub fn top_contributors(mut self, input: impl Into<crate::model::Contributor>) -> Self {
+        pub fn top_contributors(mut self, input: crate::model::Contributor) -> Self {
             let mut v = self.top_contributors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.top_contributors = Some(v);
             self
         }
@@ -3227,14 +2986,12 @@ pub mod attack_property {
             self.top_contributors = input;
             self
         }
-        /// <p>The unit used for the <code>Contributor</code>
-        /// <code>Value</code> property. </p>
+        /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
         pub fn unit(mut self, input: crate::model::Unit) -> Self {
             self.unit = Some(input);
             self
         }
-        /// <p>The unit used for the <code>Contributor</code>
-        /// <code>Value</code> property. </p>
+        /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::Unit>) -> Self {
             self.unit = input;
             self
@@ -3337,7 +3094,7 @@ impl AsRef<str> for Unit {
 pub struct Contributor {
     /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The contribution of this contributor expressed in <a>Protection</a> units. For example <code>10,000</code>.</p>
+    /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
     pub value: i64,
 }
 impl Contributor {
@@ -3345,7 +3102,7 @@ impl Contributor {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The contribution of this contributor expressed in <a>Protection</a> units. For example <code>10,000</code>.</p>
+    /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
     pub fn value(&self) -> i64 {
         self.value
     }
@@ -3378,12 +3135,12 @@ pub mod contributor {
             self.name = input;
             self
         }
-        /// <p>The contribution of this contributor expressed in <a>Protection</a> units. For example <code>10,000</code>.</p>
+        /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
         pub fn value(mut self, input: i64) -> Self {
             self.value = Some(input);
             self
         }
-        /// <p>The contribution of this contributor expressed in <a>Protection</a> units. For example <code>10,000</code>.</p>
+        /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
             self.value = input;
             self
@@ -3778,12 +3535,9 @@ pub mod sub_resource_summary {
         /// To override the contents of this collection use [`set_attack_vectors`](Self::set_attack_vectors).
         ///
         /// <p>The list of attack types and associated counters.</p>
-        pub fn attack_vectors(
-            mut self,
-            input: impl Into<crate::model::SummarizedAttackVector>,
-        ) -> Self {
+        pub fn attack_vectors(mut self, input: crate::model::SummarizedAttackVector) -> Self {
             let mut v = self.attack_vectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attack_vectors = Some(v);
             self
         }
@@ -3800,9 +3554,9 @@ pub mod sub_resource_summary {
         /// To override the contents of this collection use [`set_counters`](Self::set_counters).
         ///
         /// <p>The counters that describe the details of the attack.</p>
-        pub fn counters(mut self, input: impl Into<crate::model::SummarizedCounter>) -> Self {
+        pub fn counters(mut self, input: crate::model::SummarizedCounter) -> Self {
             let mut v = self.counters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.counters = Some(v);
             self
         }
@@ -3885,12 +3639,9 @@ pub mod summarized_attack_vector {
         /// To override the contents of this collection use [`set_vector_counters`](Self::set_vector_counters).
         ///
         /// <p>The list of counters that describe the details of the attack.</p>
-        pub fn vector_counters(
-            mut self,
-            input: impl Into<crate::model::SummarizedCounter>,
-        ) -> Self {
+        pub fn vector_counters(mut self, input: crate::model::SummarizedCounter) -> Self {
             let mut v = self.vector_counters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vector_counters = Some(v);
             self
         }

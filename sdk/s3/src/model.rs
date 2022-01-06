@@ -598,9 +598,7 @@ impl SelectObjectContentEventStream {
     }
 }
 
-/// <p>A message that indicates the request is complete and no more messages will be sent. You
-/// should not assume that the request is complete until the client receives an
-/// <code>EndEvent</code>.</p>
+/// <p>A message that indicates the request is complete and no more messages will be sent. You should not assume that the request is complete until the client receives an <code>EndEvent</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndEvent {}
@@ -1006,42 +1004,41 @@ impl RecordsEvent {
     }
 }
 
-/// <p>Specifies the byte range of the object to get the records from. A record is processed
-/// when its first byte is contained by the range. This parameter is optional, but when
-/// specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the
-/// start and end of the range.</p>
+/// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScanRange {
-    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values:
-    /// non-negative integers. The default value is 0. If only start is supplied, it means scan
-    /// from that point to the end of the file.For example;
-    /// <code><scanrange><start>50</start></scanrange></code> means scan
-    /// from byte 50 until the end of the file.</p>
+    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only start is supplied, it means scan from that point to the end of the file.For example; <code>
+    /// <scanrange>
+    /// <start>
+    /// 50
+    /// </start>
+    /// </scanrange></code> means scan from byte 50 until the end of the file.</p>
     pub start: i64,
-    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values:
-    /// non-negative integers. The default value is one less than the size of the object being
-    /// queried. If only the End parameter is supplied, it is interpreted to mean scan the last N
-    /// bytes of the file. For example,
-    /// <code><scanrange><end>50</end></scanrange></code> means scan the
-    /// last 50 bytes.</p>
+    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code>
+    /// <scanrange>
+    /// <end>
+    /// 50
+    /// </end>
+    /// </scanrange></code> means scan the last 50 bytes.</p>
     pub end: i64,
 }
 impl ScanRange {
-    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values:
-    /// non-negative integers. The default value is 0. If only start is supplied, it means scan
-    /// from that point to the end of the file.For example;
-    /// <code><scanrange><start>50</start></scanrange></code> means scan
-    /// from byte 50 until the end of the file.</p>
+    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only start is supplied, it means scan from that point to the end of the file.For example; <code>
+    /// <scanrange>
+    /// <start>
+    /// 50
+    /// </start>
+    /// </scanrange></code> means scan from byte 50 until the end of the file.</p>
     pub fn start(&self) -> i64 {
         self.start
     }
-    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values:
-    /// non-negative integers. The default value is one less than the size of the object being
-    /// queried. If only the End parameter is supplied, it is interpreted to mean scan the last N
-    /// bytes of the file. For example,
-    /// <code><scanrange><end>50</end></scanrange></code> means scan the
-    /// last 50 bytes.</p>
+    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code>
+    /// <scanrange>
+    /// <end>
+    /// 50
+    /// </end>
+    /// </scanrange></code> means scan the last 50 bytes.</p>
     pub fn end(&self) -> i64 {
         self.end
     }
@@ -1064,40 +1061,42 @@ pub mod scan_range {
         pub(crate) end: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>Specifies the start of the byte range. This parameter is optional. Valid values:
-        /// non-negative integers. The default value is 0. If only start is supplied, it means scan
-        /// from that point to the end of the file.For example;
-        /// <code><scanrange><start>50</start></scanrange></code> means scan
-        /// from byte 50 until the end of the file.</p>
+        /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only start is supplied, it means scan from that point to the end of the file.For example; <code>
+        /// <scanrange>
+        /// <start>
+        /// 50
+        /// </start>
+        /// </scanrange></code> means scan from byte 50 until the end of the file.</p>
         pub fn start(mut self, input: i64) -> Self {
             self.start = Some(input);
             self
         }
-        /// <p>Specifies the start of the byte range. This parameter is optional. Valid values:
-        /// non-negative integers. The default value is 0. If only start is supplied, it means scan
-        /// from that point to the end of the file.For example;
-        /// <code><scanrange><start>50</start></scanrange></code> means scan
-        /// from byte 50 until the end of the file.</p>
+        /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only start is supplied, it means scan from that point to the end of the file.For example; <code>
+        /// <scanrange>
+        /// <start>
+        /// 50
+        /// </start>
+        /// </scanrange></code> means scan from byte 50 until the end of the file.</p>
         pub fn set_start(mut self, input: std::option::Option<i64>) -> Self {
             self.start = input;
             self
         }
-        /// <p>Specifies the end of the byte range. This parameter is optional. Valid values:
-        /// non-negative integers. The default value is one less than the size of the object being
-        /// queried. If only the End parameter is supplied, it is interpreted to mean scan the last N
-        /// bytes of the file. For example,
-        /// <code><scanrange><end>50</end></scanrange></code> means scan the
-        /// last 50 bytes.</p>
+        /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code>
+        /// <scanrange>
+        /// <end>
+        /// 50
+        /// </end>
+        /// </scanrange></code> means scan the last 50 bytes.</p>
         pub fn end(mut self, input: i64) -> Self {
             self.end = Some(input);
             self
         }
-        /// <p>Specifies the end of the byte range. This parameter is optional. Valid values:
-        /// non-negative integers. The default value is one less than the size of the object being
-        /// queried. If only the End parameter is supplied, it is interpreted to mean scan the last N
-        /// bytes of the file. For example,
-        /// <code><scanrange><end>50</end></scanrange></code> means scan the
-        /// last 50 bytes.</p>
+        /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code>
+        /// <scanrange>
+        /// <end>
+        /// 50
+        /// </end>
+        /// </scanrange></code> means scan the last 50 bytes.</p>
         pub fn set_end(mut self, input: std::option::Option<i64>) -> Self {
             self.end = input;
             self
@@ -1195,13 +1194,11 @@ impl OutputSerialization {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JsonOutput {
-    /// <p>The value used to separate individual records in the output. If no value is specified,
-    /// Amazon S3 uses a newline character ('\n').</p>
+    /// <p>The value used to separate individual records in the output. If no value is specified, Amazon S3 uses a newline character ('\n').</p>
     pub record_delimiter: std::option::Option<std::string::String>,
 }
 impl JsonOutput {
-    /// <p>The value used to separate individual records in the output. If no value is specified,
-    /// Amazon S3 uses a newline character ('\n').</p>
+    /// <p>The value used to separate individual records in the output. If no value is specified, Amazon S3 uses a newline character ('\n').</p>
     pub fn record_delimiter(&self) -> std::option::Option<&str> {
         self.record_delimiter.as_deref()
     }
@@ -1222,14 +1219,12 @@ pub mod json_output {
         pub(crate) record_delimiter: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The value used to separate individual records in the output. If no value is specified,
-        /// Amazon S3 uses a newline character ('\n').</p>
+        /// <p>The value used to separate individual records in the output. If no value is specified, Amazon S3 uses a newline character ('\n').</p>
         pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
             self.record_delimiter = Some(input.into());
             self
         }
-        /// <p>The value used to separate individual records in the output. If no value is specified,
-        /// Amazon S3 uses a newline character ('\n').</p>
+        /// <p>The value used to separate individual records in the output. If no value is specified, Amazon S3 uses a newline character ('\n').</p>
         pub fn set_record_delimiter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1252,70 +1247,47 @@ impl JsonOutput {
     }
 }
 
-/// <p>Describes how uncompressed comma-separated values (CSV)-formatted results are
-/// formatted.</p>
+/// <p>Describes how uncompressed comma-separated values (CSV)-formatted results are formatted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CsvOutput {
     /// <p>Indicates whether to use quotation marks around output fields. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALWAYS</code>: Always use quotation marks for output fields.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p>
-    /// </li>
+    /// <li> <p> <code>ALWAYS</code>: Always use quotation marks for output fields.</p> </li>
+    /// <li> <p> <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p> </li>
     /// </ul>
     pub quote_fields: std::option::Option<crate::model::QuoteFields>,
-    /// <p>The single character used for escaping the quote character inside an already escaped
-    /// value.</p>
+    /// <p>The single character used for escaping the quote character inside an already escaped value.</p>
     pub quote_escape_character: std::option::Option<std::string::String>,
-    /// <p>A single character used to separate individual records in the output. Instead of the
-    /// default value, you can specify an arbitrary delimiter.</p>
+    /// <p>A single character used to separate individual records in the output. Instead of the default value, you can specify an arbitrary delimiter.</p>
     pub record_delimiter: std::option::Option<std::string::String>,
-    /// <p>The value used to separate individual fields in a record. You can specify an arbitrary
-    /// delimiter.</p>
+    /// <p>The value used to separate individual fields in a record. You can specify an arbitrary delimiter.</p>
     pub field_delimiter: std::option::Option<std::string::String>,
-    /// <p>A single character used for escaping when the field delimiter is part of the value. For
-    /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
-    /// as follows: <code>" a , b "</code>.</p>
+    /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
     pub quote_character: std::option::Option<std::string::String>,
 }
 impl CsvOutput {
     /// <p>Indicates whether to use quotation marks around output fields. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALWAYS</code>: Always use quotation marks for output fields.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p>
-    /// </li>
+    /// <li> <p> <code>ALWAYS</code>: Always use quotation marks for output fields.</p> </li>
+    /// <li> <p> <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p> </li>
     /// </ul>
     pub fn quote_fields(&self) -> std::option::Option<&crate::model::QuoteFields> {
         self.quote_fields.as_ref()
     }
-    /// <p>The single character used for escaping the quote character inside an already escaped
-    /// value.</p>
+    /// <p>The single character used for escaping the quote character inside an already escaped value.</p>
     pub fn quote_escape_character(&self) -> std::option::Option<&str> {
         self.quote_escape_character.as_deref()
     }
-    /// <p>A single character used to separate individual records in the output. Instead of the
-    /// default value, you can specify an arbitrary delimiter.</p>
+    /// <p>A single character used to separate individual records in the output. Instead of the default value, you can specify an arbitrary delimiter.</p>
     pub fn record_delimiter(&self) -> std::option::Option<&str> {
         self.record_delimiter.as_deref()
     }
-    /// <p>The value used to separate individual fields in a record. You can specify an arbitrary
-    /// delimiter.</p>
+    /// <p>The value used to separate individual fields in a record. You can specify an arbitrary delimiter.</p>
     pub fn field_delimiter(&self) -> std::option::Option<&str> {
         self.field_delimiter.as_deref()
     }
-    /// <p>A single character used for escaping when the field delimiter is part of the value. For
-    /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
-    /// as follows: <code>" a , b "</code>.</p>
+    /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
     pub fn quote_character(&self) -> std::option::Option<&str> {
         self.quote_character.as_deref()
     }
@@ -1346,14 +1318,8 @@ pub mod csv_output {
     impl Builder {
         /// <p>Indicates whether to use quotation marks around output fields. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALWAYS</code>: Always use quotation marks for output fields.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p>
-        /// </li>
+        /// <li> <p> <code>ALWAYS</code>: Always use quotation marks for output fields.</p> </li>
+        /// <li> <p> <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p> </li>
         /// </ul>
         pub fn quote_fields(mut self, input: crate::model::QuoteFields) -> Self {
             self.quote_fields = Some(input);
@@ -1361,14 +1327,8 @@ pub mod csv_output {
         }
         /// <p>Indicates whether to use quotation marks around output fields. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALWAYS</code>: Always use quotation marks for output fields.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p>
-        /// </li>
+        /// <li> <p> <code>ALWAYS</code>: Always use quotation marks for output fields.</p> </li>
+        /// <li> <p> <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p> </li>
         /// </ul>
         pub fn set_quote_fields(
             mut self,
@@ -1377,14 +1337,12 @@ pub mod csv_output {
             self.quote_fields = input;
             self
         }
-        /// <p>The single character used for escaping the quote character inside an already escaped
-        /// value.</p>
+        /// <p>The single character used for escaping the quote character inside an already escaped value.</p>
         pub fn quote_escape_character(mut self, input: impl Into<std::string::String>) -> Self {
             self.quote_escape_character = Some(input.into());
             self
         }
-        /// <p>The single character used for escaping the quote character inside an already escaped
-        /// value.</p>
+        /// <p>The single character used for escaping the quote character inside an already escaped value.</p>
         pub fn set_quote_escape_character(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1392,14 +1350,12 @@ pub mod csv_output {
             self.quote_escape_character = input;
             self
         }
-        /// <p>A single character used to separate individual records in the output. Instead of the
-        /// default value, you can specify an arbitrary delimiter.</p>
+        /// <p>A single character used to separate individual records in the output. Instead of the default value, you can specify an arbitrary delimiter.</p>
         pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
             self.record_delimiter = Some(input.into());
             self
         }
-        /// <p>A single character used to separate individual records in the output. Instead of the
-        /// default value, you can specify an arbitrary delimiter.</p>
+        /// <p>A single character used to separate individual records in the output. Instead of the default value, you can specify an arbitrary delimiter.</p>
         pub fn set_record_delimiter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1407,14 +1363,12 @@ pub mod csv_output {
             self.record_delimiter = input;
             self
         }
-        /// <p>The value used to separate individual fields in a record. You can specify an arbitrary
-        /// delimiter.</p>
+        /// <p>The value used to separate individual fields in a record. You can specify an arbitrary delimiter.</p>
         pub fn field_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
             self.field_delimiter = Some(input.into());
             self
         }
-        /// <p>The value used to separate individual fields in a record. You can specify an arbitrary
-        /// delimiter.</p>
+        /// <p>The value used to separate individual fields in a record. You can specify an arbitrary delimiter.</p>
         pub fn set_field_delimiter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1422,16 +1376,12 @@ pub mod csv_output {
             self.field_delimiter = input;
             self
         }
-        /// <p>A single character used for escaping when the field delimiter is part of the value. For
-        /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
-        /// as follows: <code>" a , b "</code>.</p>
+        /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
         pub fn quote_character(mut self, input: impl Into<std::string::String>) -> Self {
             self.quote_character = Some(input.into());
             self
         }
-        /// <p>A single character used for escaping when the field delimiter is part of the value. For
-        /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
-        /// as follows: <code>" a , b "</code>.</p>
+        /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
         pub fn set_quote_character(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1519,8 +1469,7 @@ impl AsRef<str> for QuoteFields {
 pub struct InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
     pub csv: std::option::Option<crate::model::CsvInput>,
-    /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value:
-    /// NONE.</p>
+    /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
     pub compression_type: std::option::Option<crate::model::CompressionType>,
     /// <p>Specifies JSON as object's input serialization format.</p>
     pub json: std::option::Option<crate::model::JsonInput>,
@@ -1532,8 +1481,7 @@ impl InputSerialization {
     pub fn csv(&self) -> std::option::Option<&crate::model::CsvInput> {
         self.csv.as_ref()
     }
-    /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value:
-    /// NONE.</p>
+    /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
     pub fn compression_type(&self) -> std::option::Option<&crate::model::CompressionType> {
         self.compression_type.as_ref()
     }
@@ -1578,14 +1526,12 @@ pub mod input_serialization {
             self.csv = input;
             self
         }
-        /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value:
-        /// NONE.</p>
+        /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
         pub fn compression_type(mut self, input: crate::model::CompressionType) -> Self {
             self.compression_type = Some(input);
             self
         }
-        /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value:
-        /// NONE.</p>
+        /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
         pub fn set_compression_type(
             mut self,
             input: std::option::Option<crate::model::CompressionType>,
@@ -1832,114 +1778,67 @@ impl AsRef<str> for CompressionType {
     }
 }
 
-/// <p>Describes how an uncompressed comma-separated values (CSV)-formatted input object is
-/// formatted.</p>
+/// <p>Describes how an uncompressed comma-separated values (CSV)-formatted input object is formatted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CsvInput {
     /// <p>Describes the first line of input. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code>: First line is not a header.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IGNORE</code>: First line is a header, but you can't use the header values
-    /// to indicate the column in an expression. You can use column position (such as _1, _2,
-    /// …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Use</code>: First line is a header, and you can use the header value to
-    /// identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p>
-    /// </li>
+    /// <li> <p> <code>NONE</code>: First line is not a header.</p> </li>
+    /// <li> <p> <code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p> </li>
+    /// <li> <p> <code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p> </li>
     /// </ul>
     pub file_header_info: std::option::Option<crate::model::FileHeaderInfo>,
-    /// <p>A single character used to indicate that a row should be ignored when the character is
-    /// present at the start of that row. You can specify any character to indicate a comment
-    /// line.</p>
+    /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line.</p>
     pub comments: std::option::Option<std::string::String>,
-    /// <p>A single character used for escaping the quotation mark character inside an already
-    /// escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
+    /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
     pub quote_escape_character: std::option::Option<std::string::String>,
-    /// <p>A single character used to separate individual records in the input. Instead of the
-    /// default value, you can specify an arbitrary delimiter.</p>
+    /// <p>A single character used to separate individual records in the input. Instead of the default value, you can specify an arbitrary delimiter.</p>
     pub record_delimiter: std::option::Option<std::string::String>,
-    /// <p>A single character used to separate individual fields in a record. You can specify an
-    /// arbitrary delimiter.</p>
+    /// <p>A single character used to separate individual fields in a record. You can specify an arbitrary delimiter.</p>
     pub field_delimiter: std::option::Option<std::string::String>,
-    /// <p>A single character used for escaping when the field delimiter is part of the value. For
-    /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
-    /// as follows: <code>" a , b "</code>.</p>
+    /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
     /// <p>Type: String</p>
-    /// <p>Default: <code>"</code>
-    /// </p>
-    /// <p>Ancestors: <code>CSV</code>
-    /// </p>
+    /// <p>Default: <code>"</code> </p>
+    /// <p>Ancestors: <code>CSV</code> </p>
     pub quote_character: std::option::Option<std::string::String>,
-    /// <p>Specifies that CSV field values may contain quoted record delimiters and such records
-    /// should be allowed. Default value is FALSE. Setting this value to TRUE may lower
-    /// performance.</p>
+    /// <p>Specifies that CSV field values may contain quoted record delimiters and such records should be allowed. Default value is FALSE. Setting this value to TRUE may lower performance.</p>
     pub allow_quoted_record_delimiter: bool,
 }
 impl CsvInput {
     /// <p>Describes the first line of input. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code>: First line is not a header.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IGNORE</code>: First line is a header, but you can't use the header values
-    /// to indicate the column in an expression. You can use column position (such as _1, _2,
-    /// …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Use</code>: First line is a header, and you can use the header value to
-    /// identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p>
-    /// </li>
+    /// <li> <p> <code>NONE</code>: First line is not a header.</p> </li>
+    /// <li> <p> <code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p> </li>
+    /// <li> <p> <code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p> </li>
     /// </ul>
     pub fn file_header_info(&self) -> std::option::Option<&crate::model::FileHeaderInfo> {
         self.file_header_info.as_ref()
     }
-    /// <p>A single character used to indicate that a row should be ignored when the character is
-    /// present at the start of that row. You can specify any character to indicate a comment
-    /// line.</p>
+    /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line.</p>
     pub fn comments(&self) -> std::option::Option<&str> {
         self.comments.as_deref()
     }
-    /// <p>A single character used for escaping the quotation mark character inside an already
-    /// escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
+    /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
     pub fn quote_escape_character(&self) -> std::option::Option<&str> {
         self.quote_escape_character.as_deref()
     }
-    /// <p>A single character used to separate individual records in the input. Instead of the
-    /// default value, you can specify an arbitrary delimiter.</p>
+    /// <p>A single character used to separate individual records in the input. Instead of the default value, you can specify an arbitrary delimiter.</p>
     pub fn record_delimiter(&self) -> std::option::Option<&str> {
         self.record_delimiter.as_deref()
     }
-    /// <p>A single character used to separate individual fields in a record. You can specify an
-    /// arbitrary delimiter.</p>
+    /// <p>A single character used to separate individual fields in a record. You can specify an arbitrary delimiter.</p>
     pub fn field_delimiter(&self) -> std::option::Option<&str> {
         self.field_delimiter.as_deref()
     }
-    /// <p>A single character used for escaping when the field delimiter is part of the value. For
-    /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
-    /// as follows: <code>" a , b "</code>.</p>
+    /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
     /// <p>Type: String</p>
-    /// <p>Default: <code>"</code>
-    /// </p>
-    /// <p>Ancestors: <code>CSV</code>
-    /// </p>
+    /// <p>Default: <code>"</code> </p>
+    /// <p>Ancestors: <code>CSV</code> </p>
     pub fn quote_character(&self) -> std::option::Option<&str> {
         self.quote_character.as_deref()
     }
-    /// <p>Specifies that CSV field values may contain quoted record delimiters and such records
-    /// should be allowed. Default value is FALSE. Setting this value to TRUE may lower
-    /// performance.</p>
+    /// <p>Specifies that CSV field values may contain quoted record delimiters and such records should be allowed. Default value is FALSE. Setting this value to TRUE may lower performance.</p>
     pub fn allow_quoted_record_delimiter(&self) -> bool {
         self.allow_quoted_record_delimiter
     }
@@ -1977,21 +1876,9 @@ pub mod csv_input {
     impl Builder {
         /// <p>Describes the first line of input. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code>: First line is not a header.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IGNORE</code>: First line is a header, but you can't use the header values
-        /// to indicate the column in an expression. You can use column position (such as _1, _2,
-        /// …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Use</code>: First line is a header, and you can use the header value to
-        /// identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p>
-        /// </li>
+        /// <li> <p> <code>NONE</code>: First line is not a header.</p> </li>
+        /// <li> <p> <code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p> </li>
+        /// <li> <p> <code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p> </li>
         /// </ul>
         pub fn file_header_info(mut self, input: crate::model::FileHeaderInfo) -> Self {
             self.file_header_info = Some(input);
@@ -1999,21 +1886,9 @@ pub mod csv_input {
         }
         /// <p>Describes the first line of input. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code>: First line is not a header.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IGNORE</code>: First line is a header, but you can't use the header values
-        /// to indicate the column in an expression. You can use column position (such as _1, _2,
-        /// …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Use</code>: First line is a header, and you can use the header value to
-        /// identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p>
-        /// </li>
+        /// <li> <p> <code>NONE</code>: First line is not a header.</p> </li>
+        /// <li> <p> <code>IGNORE</code>: First line is a header, but you can't use the header values to indicate the column in an expression. You can use column position (such as _1, _2, …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p> </li>
+        /// <li> <p> <code>Use</code>: First line is a header, and you can use the header value to identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p> </li>
         /// </ul>
         pub fn set_file_header_info(
             mut self,
@@ -2022,28 +1897,22 @@ pub mod csv_input {
             self.file_header_info = input;
             self
         }
-        /// <p>A single character used to indicate that a row should be ignored when the character is
-        /// present at the start of that row. You can specify any character to indicate a comment
-        /// line.</p>
+        /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line.</p>
         pub fn comments(mut self, input: impl Into<std::string::String>) -> Self {
             self.comments = Some(input.into());
             self
         }
-        /// <p>A single character used to indicate that a row should be ignored when the character is
-        /// present at the start of that row. You can specify any character to indicate a comment
-        /// line.</p>
+        /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row. You can specify any character to indicate a comment line.</p>
         pub fn set_comments(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comments = input;
             self
         }
-        /// <p>A single character used for escaping the quotation mark character inside an already
-        /// escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
+        /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
         pub fn quote_escape_character(mut self, input: impl Into<std::string::String>) -> Self {
             self.quote_escape_character = Some(input.into());
             self
         }
-        /// <p>A single character used for escaping the quotation mark character inside an already
-        /// escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
+        /// <p>A single character used for escaping the quotation mark character inside an already escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
         pub fn set_quote_escape_character(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2051,14 +1920,12 @@ pub mod csv_input {
             self.quote_escape_character = input;
             self
         }
-        /// <p>A single character used to separate individual records in the input. Instead of the
-        /// default value, you can specify an arbitrary delimiter.</p>
+        /// <p>A single character used to separate individual records in the input. Instead of the default value, you can specify an arbitrary delimiter.</p>
         pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
             self.record_delimiter = Some(input.into());
             self
         }
-        /// <p>A single character used to separate individual records in the input. Instead of the
-        /// default value, you can specify an arbitrary delimiter.</p>
+        /// <p>A single character used to separate individual records in the input. Instead of the default value, you can specify an arbitrary delimiter.</p>
         pub fn set_record_delimiter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2066,14 +1933,12 @@ pub mod csv_input {
             self.record_delimiter = input;
             self
         }
-        /// <p>A single character used to separate individual fields in a record. You can specify an
-        /// arbitrary delimiter.</p>
+        /// <p>A single character used to separate individual fields in a record. You can specify an arbitrary delimiter.</p>
         pub fn field_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
             self.field_delimiter = Some(input.into());
             self
         }
-        /// <p>A single character used to separate individual fields in a record. You can specify an
-        /// arbitrary delimiter.</p>
+        /// <p>A single character used to separate individual fields in a record. You can specify an arbitrary delimiter.</p>
         pub fn set_field_delimiter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2081,26 +1946,18 @@ pub mod csv_input {
             self.field_delimiter = input;
             self
         }
-        /// <p>A single character used for escaping when the field delimiter is part of the value. For
-        /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
-        /// as follows: <code>" a , b "</code>.</p>
+        /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
         /// <p>Type: String</p>
-        /// <p>Default: <code>"</code>
-        /// </p>
-        /// <p>Ancestors: <code>CSV</code>
-        /// </p>
+        /// <p>Default: <code>"</code> </p>
+        /// <p>Ancestors: <code>CSV</code> </p>
         pub fn quote_character(mut self, input: impl Into<std::string::String>) -> Self {
             self.quote_character = Some(input.into());
             self
         }
-        /// <p>A single character used for escaping when the field delimiter is part of the value. For
-        /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
-        /// as follows: <code>" a , b "</code>.</p>
+        /// <p>A single character used for escaping when the field delimiter is part of the value. For example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks, as follows: <code>" a , b "</code>.</p>
         /// <p>Type: String</p>
-        /// <p>Default: <code>"</code>
-        /// </p>
-        /// <p>Ancestors: <code>CSV</code>
-        /// </p>
+        /// <p>Default: <code>"</code> </p>
+        /// <p>Ancestors: <code>CSV</code> </p>
         pub fn set_quote_character(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2108,16 +1965,12 @@ pub mod csv_input {
             self.quote_character = input;
             self
         }
-        /// <p>Specifies that CSV field values may contain quoted record delimiters and such records
-        /// should be allowed. Default value is FALSE. Setting this value to TRUE may lower
-        /// performance.</p>
+        /// <p>Specifies that CSV field values may contain quoted record delimiters and such records should be allowed. Default value is FALSE. Setting this value to TRUE may lower performance.</p>
         pub fn allow_quoted_record_delimiter(mut self, input: bool) -> Self {
             self.allow_quoted_record_delimiter = Some(input);
             self
         }
-        /// <p>Specifies that CSV field values may contain quoted record delimiters and such records
-        /// should be allowed. Default value is FALSE. Setting this value to TRUE may lower
-        /// performance.</p>
+        /// <p>Specifies that CSV field values may contain quoted record delimiters and such records should be allowed. Default value is FALSE. Setting this value to TRUE may lower performance.</p>
         pub fn set_allow_quoted_record_delimiter(
             mut self,
             input: std::option::Option<bool>,
@@ -2207,18 +2060,15 @@ impl AsRef<str> for FileHeaderInfo {
     }
 }
 
-/// <p>Container for specifying if periodic <code>QueryProgress</code> messages should be
-/// sent.</p>
+/// <p>Container for specifying if periodic <code>QueryProgress</code> messages should be sent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestProgress {
-    /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE,
-    /// FALSE. Default value: FALSE.</p>
+    /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE, FALSE. Default value: FALSE.</p>
     pub enabled: bool,
 }
 impl RequestProgress {
-    /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE,
-    /// FALSE. Default value: FALSE.</p>
+    /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE, FALSE. Default value: FALSE.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -2239,14 +2089,12 @@ pub mod request_progress {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE,
-        /// FALSE. Default value: FALSE.</p>
+        /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE, FALSE. Default value: FALSE.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE,
-        /// FALSE. Default value: FALSE.</p>
+        /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE, FALSE. Default value: FALSE.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -2321,13 +2169,10 @@ impl AsRef<str> for ExpressionType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreRequest {
-    /// <p>Lifetime of the active copy in days. Do not use with restores that specify
-    /// <code>OutputLocation</code>.</p>
-    /// <p>The Days element is required for regular restores, and must not be provided for select
-    /// requests.</p>
+    /// <p>Lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.</p>
+    /// <p>The Days element is required for regular restores, and must not be provided for select requests.</p>
     pub days: i32,
-    /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that
-    /// specify <code>OutputLocation</code>.</p>
+    /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
     pub glacier_job_parameters: std::option::Option<crate::model::GlacierJobParameters>,
     /// <p>Type of restore request.</p>
     pub r#type: std::option::Option<crate::model::RestoreRequestType>,
@@ -2341,15 +2186,12 @@ pub struct RestoreRequest {
     pub output_location: std::option::Option<crate::model::OutputLocation>,
 }
 impl RestoreRequest {
-    /// <p>Lifetime of the active copy in days. Do not use with restores that specify
-    /// <code>OutputLocation</code>.</p>
-    /// <p>The Days element is required for regular restores, and must not be provided for select
-    /// requests.</p>
+    /// <p>Lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.</p>
+    /// <p>The Days element is required for regular restores, and must not be provided for select requests.</p>
     pub fn days(&self) -> i32 {
         self.days
     }
-    /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that
-    /// specify <code>OutputLocation</code>.</p>
+    /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
     pub fn glacier_job_parameters(
         &self,
     ) -> std::option::Option<&crate::model::GlacierJobParameters> {
@@ -2404,30 +2246,24 @@ pub mod restore_request {
         pub(crate) output_location: std::option::Option<crate::model::OutputLocation>,
     }
     impl Builder {
-        /// <p>Lifetime of the active copy in days. Do not use with restores that specify
-        /// <code>OutputLocation</code>.</p>
-        /// <p>The Days element is required for regular restores, and must not be provided for select
-        /// requests.</p>
+        /// <p>Lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.</p>
+        /// <p>The Days element is required for regular restores, and must not be provided for select requests.</p>
         pub fn days(mut self, input: i32) -> Self {
             self.days = Some(input);
             self
         }
-        /// <p>Lifetime of the active copy in days. Do not use with restores that specify
-        /// <code>OutputLocation</code>.</p>
-        /// <p>The Days element is required for regular restores, and must not be provided for select
-        /// requests.</p>
+        /// <p>Lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.</p>
+        /// <p>The Days element is required for regular restores, and must not be provided for select requests.</p>
         pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
             self.days = input;
             self
         }
-        /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that
-        /// specify <code>OutputLocation</code>.</p>
+        /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
         pub fn glacier_job_parameters(mut self, input: crate::model::GlacierJobParameters) -> Self {
             self.glacier_job_parameters = Some(input);
             self
         }
-        /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that
-        /// specify <code>OutputLocation</code>.</p>
+        /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
         pub fn set_glacier_job_parameters(
             mut self,
             input: std::option::Option<crate::model::GlacierJobParameters>,
@@ -2703,9 +2539,9 @@ pub mod s3_location {
         /// To override the contents of this collection use [`set_access_control_list`](Self::set_access_control_list).
         ///
         /// <p>A list of grants that control access to the staged results.</p>
-        pub fn access_control_list(mut self, input: impl Into<crate::model::Grant>) -> Self {
+        pub fn access_control_list(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.access_control_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.access_control_list = Some(v);
             self
         }
@@ -2732,9 +2568,9 @@ pub mod s3_location {
         /// To override the contents of this collection use [`set_user_metadata`](Self::set_user_metadata).
         ///
         /// <p>A list of metadata to store with the restore results in S3.</p>
-        pub fn user_metadata(mut self, input: impl Into<crate::model::MetadataEntry>) -> Self {
+        pub fn user_metadata(mut self, input: crate::model::MetadataEntry) -> Self {
             let mut v = self.user_metadata.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.user_metadata = Some(v);
             self
         }
@@ -2888,9 +2724,9 @@ pub mod tagging {
         /// To override the contents of this collection use [`set_tag_set`](Self::set_tag_set).
         ///
         /// <p>A collection for a set of tags</p>
-        pub fn tag_set(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_set(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_set = Some(v);
             self
         }
@@ -3139,34 +2975,17 @@ impl AsRef<str> for Permission {
 pub struct Grantee {
     /// <p>Screen name of the grantee.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>Email address of the grantee.</p>
-    /// <note>
+    /// <p>Email address of the grantee.</p> <note>
     /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
     /// <ul>
-    /// <li>
-    /// <p>US East (N. Virginia)</p>
-    /// </li>
-    /// <li>
-    /// <p>US West (N. California)</p>
-    /// </li>
-    /// <li>
-    /// <p> US West (Oregon)</p>
-    /// </li>
-    /// <li>
-    /// <p> Asia Pacific (Singapore)</p>
-    /// </li>
-    /// <li>
-    /// <p>Asia Pacific (Sydney)</p>
-    /// </li>
-    /// <li>
-    /// <p>Asia Pacific (Tokyo)</p>
-    /// </li>
-    /// <li>
-    /// <p>Europe (Ireland)</p>
-    /// </li>
-    /// <li>
-    /// <p>South America (São Paulo)</p>
-    /// </li>
+    /// <li> <p>US East (N. Virginia)</p> </li>
+    /// <li> <p>US West (N. California)</p> </li>
+    /// <li> <p> US West (Oregon)</p> </li>
+    /// <li> <p> Asia Pacific (Singapore)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+    /// <li> <p>Europe (Ireland)</p> </li>
+    /// <li> <p>South America (São Paulo)</p> </li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
     /// </note>
@@ -3183,34 +3002,17 @@ impl Grantee {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>Email address of the grantee.</p>
-    /// <note>
+    /// <p>Email address of the grantee.</p> <note>
     /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
     /// <ul>
-    /// <li>
-    /// <p>US East (N. Virginia)</p>
-    /// </li>
-    /// <li>
-    /// <p>US West (N. California)</p>
-    /// </li>
-    /// <li>
-    /// <p> US West (Oregon)</p>
-    /// </li>
-    /// <li>
-    /// <p> Asia Pacific (Singapore)</p>
-    /// </li>
-    /// <li>
-    /// <p>Asia Pacific (Sydney)</p>
-    /// </li>
-    /// <li>
-    /// <p>Asia Pacific (Tokyo)</p>
-    /// </li>
-    /// <li>
-    /// <p>Europe (Ireland)</p>
-    /// </li>
-    /// <li>
-    /// <p>South America (São Paulo)</p>
-    /// </li>
+    /// <li> <p>US East (N. Virginia)</p> </li>
+    /// <li> <p>US West (N. California)</p> </li>
+    /// <li> <p> US West (Oregon)</p> </li>
+    /// <li> <p> Asia Pacific (Singapore)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+    /// <li> <p>Europe (Ireland)</p> </li>
+    /// <li> <p>South America (São Paulo)</p> </li>
     /// </ul>
     /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
     /// </note>
@@ -3264,34 +3066,17 @@ pub mod grantee {
             self.display_name = input;
             self
         }
-        /// <p>Email address of the grantee.</p>
-        /// <note>
+        /// <p>Email address of the grantee.</p> <note>
         /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
         /// <ul>
-        /// <li>
-        /// <p>US East (N. Virginia)</p>
-        /// </li>
-        /// <li>
-        /// <p>US West (N. California)</p>
-        /// </li>
-        /// <li>
-        /// <p> US West (Oregon)</p>
-        /// </li>
-        /// <li>
-        /// <p> Asia Pacific (Singapore)</p>
-        /// </li>
-        /// <li>
-        /// <p>Asia Pacific (Sydney)</p>
-        /// </li>
-        /// <li>
-        /// <p>Asia Pacific (Tokyo)</p>
-        /// </li>
-        /// <li>
-        /// <p>Europe (Ireland)</p>
-        /// </li>
-        /// <li>
-        /// <p>South America (São Paulo)</p>
-        /// </li>
+        /// <li> <p>US East (N. Virginia)</p> </li>
+        /// <li> <p>US West (N. California)</p> </li>
+        /// <li> <p> US West (Oregon)</p> </li>
+        /// <li> <p> Asia Pacific (Singapore)</p> </li>
+        /// <li> <p>Asia Pacific (Sydney)</p> </li>
+        /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+        /// <li> <p>Europe (Ireland)</p> </li>
+        /// <li> <p>South America (São Paulo)</p> </li>
         /// </ul>
         /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
         /// </note>
@@ -3299,34 +3084,17 @@ pub mod grantee {
             self.email_address = Some(input.into());
             self
         }
-        /// <p>Email address of the grantee.</p>
-        /// <note>
+        /// <p>Email address of the grantee.</p> <note>
         /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
         /// <ul>
-        /// <li>
-        /// <p>US East (N. Virginia)</p>
-        /// </li>
-        /// <li>
-        /// <p>US West (N. California)</p>
-        /// </li>
-        /// <li>
-        /// <p> US West (Oregon)</p>
-        /// </li>
-        /// <li>
-        /// <p> Asia Pacific (Singapore)</p>
-        /// </li>
-        /// <li>
-        /// <p>Asia Pacific (Sydney)</p>
-        /// </li>
-        /// <li>
-        /// <p>Asia Pacific (Tokyo)</p>
-        /// </li>
-        /// <li>
-        /// <p>Europe (Ireland)</p>
-        /// </li>
-        /// <li>
-        /// <p>South America (São Paulo)</p>
-        /// </li>
+        /// <li> <p>US East (N. Virginia)</p> </li>
+        /// <li> <p>US West (N. California)</p> </li>
+        /// <li> <p> US West (Oregon)</p> </li>
+        /// <li> <p> Asia Pacific (Singapore)</p> </li>
+        /// <li> <p>Asia Pacific (Sydney)</p> </li>
+        /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+        /// <li> <p>Europe (Ireland)</p> </li>
+        /// <li> <p>South America (São Paulo)</p> </li>
         /// </ul>
         /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
         /// </note>
@@ -3532,33 +3300,23 @@ impl AsRef<str> for ObjectCannedAcl {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Encryption {
-    /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example, AES256, aws:kms).</p>
     pub encryption_type: std::option::Option<crate::model::ServerSideEncryption>,
-    /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of
-    /// the symmetric customer managed key to use for encryption of job results. Amazon S3 only
-    /// supports symmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-    /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric customer managed key to use for encryption of job results. Amazon S3 only supports symmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to
-    /// specify the encryption context for the restore results.</p>
+    /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to specify the encryption context for the restore results.</p>
     pub kms_context: std::option::Option<std::string::String>,
 }
 impl Encryption {
-    /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example, AES256, aws:kms).</p>
     pub fn encryption_type(&self) -> std::option::Option<&crate::model::ServerSideEncryption> {
         self.encryption_type.as_ref()
     }
-    /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of
-    /// the symmetric customer managed key to use for encryption of job results. Amazon S3 only
-    /// supports symmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-    /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric customer managed key to use for encryption of job results. Amazon S3 only supports symmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to
-    /// specify the encryption context for the restore results.</p>
+    /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to specify the encryption context for the restore results.</p>
     pub fn kms_context(&self) -> std::option::Option<&str> {
         self.kms_context.as_deref()
     }
@@ -3583,14 +3341,12 @@ pub mod encryption {
         pub(crate) kms_context: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn encryption_type(mut self, input: crate::model::ServerSideEncryption) -> Self {
             self.encryption_type = Some(input);
             self
         }
-        /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn set_encryption_type(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryption>,
@@ -3598,30 +3354,22 @@ pub mod encryption {
             self.encryption_type = input;
             self
         }
-        /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of
-        /// the symmetric customer managed key to use for encryption of job results. Amazon S3 only
-        /// supports symmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-        /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric customer managed key to use for encryption of job results. Amazon S3 only supports symmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of
-        /// the symmetric customer managed key to use for encryption of job results. Amazon S3 only
-        /// supports symmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-        /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric customer managed key to use for encryption of job results. Amazon S3 only supports symmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
-        /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to
-        /// specify the encryption context for the restore results.</p>
+        /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to specify the encryption context for the restore results.</p>
         pub fn kms_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_context = Some(input.into());
             self
         }
-        /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to
-        /// specify the encryption context for the restore results.</p>
+        /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to specify the encryption context for the restore results.</p>
         pub fn set_kms_context(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_context = input;
             self
@@ -3925,91 +3673,51 @@ impl GlacierJobParameters {
     }
 }
 
-/// <p>The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can
-/// enable the configuration options in any combination. For more information about when Amazon S3
-/// considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
+/// <p>The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicAccessBlockConfiguration {
-    /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket
-    /// and objects in this bucket. Setting this element to <code>TRUE</code> causes the following
-    /// behavior:</p>
+    /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li>
-    /// <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is
-    /// public.</p>
-    /// </li>
-    /// <li>
-    /// <p>PUT Object calls fail if the request includes a public ACL.</p>
-    /// </li>
-    /// <li>
-    /// <p>PUT Bucket calls fail if the request includes a public ACL.</p>
-    /// </li>
+    /// <li> <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.</p> </li>
+    /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
+    /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     pub block_public_acls: bool,
-    /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this
-    /// bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on
-    /// this bucket and objects in this bucket.</p>
-    /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't
-    /// prevent new public ACLs from being set.</p>
+    /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on this bucket and objects in this bucket.</p>
+    /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
     pub ignore_public_acls: bool,
-    /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this
-    /// element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the
-    /// specified bucket policy allows public access. </p>
+    /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
     pub block_public_policy: bool,
-    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting
-    /// this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service
-    /// principals and authorized users within this account if the bucket has a public
-    /// policy.</p>
-    /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that
-    /// public and cross-account access within any public bucket policy, including non-public
-    /// delegation to specific accounts, is blocked.</p>
+    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service principals and authorized users within this account if the bucket has a public policy.</p>
+    /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
     pub restrict_public_buckets: bool,
 }
 impl PublicAccessBlockConfiguration {
-    /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket
-    /// and objects in this bucket. Setting this element to <code>TRUE</code> causes the following
-    /// behavior:</p>
+    /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li>
-    /// <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is
-    /// public.</p>
-    /// </li>
-    /// <li>
-    /// <p>PUT Object calls fail if the request includes a public ACL.</p>
-    /// </li>
-    /// <li>
-    /// <p>PUT Bucket calls fail if the request includes a public ACL.</p>
-    /// </li>
+    /// <li> <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.</p> </li>
+    /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
+    /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     pub fn block_public_acls(&self) -> bool {
         self.block_public_acls
     }
-    /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this
-    /// bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on
-    /// this bucket and objects in this bucket.</p>
-    /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't
-    /// prevent new public ACLs from being set.</p>
+    /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on this bucket and objects in this bucket.</p>
+    /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
     pub fn ignore_public_acls(&self) -> bool {
         self.ignore_public_acls
     }
-    /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this
-    /// element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the
-    /// specified bucket policy allows public access. </p>
+    /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
     pub fn block_public_policy(&self) -> bool {
         self.block_public_policy
     }
-    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting
-    /// this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service
-    /// principals and authorized users within this account if the bucket has a public
-    /// policy.</p>
-    /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that
-    /// public and cross-account access within any public bucket policy, including non-public
-    /// delegation to specific accounts, is blocked.</p>
+    /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service principals and authorized users within this account if the bucket has a public policy.</p>
+    /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
     pub fn restrict_public_buckets(&self) -> bool {
         self.restrict_public_buckets
     }
@@ -4036,98 +3744,60 @@ pub mod public_access_block_configuration {
         pub(crate) restrict_public_buckets: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket
-        /// and objects in this bucket. Setting this element to <code>TRUE</code> causes the following
-        /// behavior:</p>
+        /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes the following behavior:</p>
         /// <ul>
-        /// <li>
-        /// <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is
-        /// public.</p>
-        /// </li>
-        /// <li>
-        /// <p>PUT Object calls fail if the request includes a public ACL.</p>
-        /// </li>
-        /// <li>
-        /// <p>PUT Bucket calls fail if the request includes a public ACL.</p>
-        /// </li>
+        /// <li> <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.</p> </li>
+        /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
+        /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
         /// </ul>
         /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
         pub fn block_public_acls(mut self, input: bool) -> Self {
             self.block_public_acls = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket
-        /// and objects in this bucket. Setting this element to <code>TRUE</code> causes the following
-        /// behavior:</p>
+        /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes the following behavior:</p>
         /// <ul>
-        /// <li>
-        /// <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is
-        /// public.</p>
-        /// </li>
-        /// <li>
-        /// <p>PUT Object calls fail if the request includes a public ACL.</p>
-        /// </li>
-        /// <li>
-        /// <p>PUT Bucket calls fail if the request includes a public ACL.</p>
-        /// </li>
+        /// <li> <p>PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.</p> </li>
+        /// <li> <p>PUT Object calls fail if the request includes a public ACL.</p> </li>
+        /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
         /// </ul>
         /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
         pub fn set_block_public_acls(mut self, input: std::option::Option<bool>) -> Self {
             self.block_public_acls = input;
             self
         }
-        /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this
-        /// bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on
-        /// this bucket and objects in this bucket.</p>
-        /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't
-        /// prevent new public ACLs from being set.</p>
+        /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on this bucket and objects in this bucket.</p>
+        /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
         pub fn ignore_public_acls(mut self, input: bool) -> Self {
             self.ignore_public_acls = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this
-        /// bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on
-        /// this bucket and objects in this bucket.</p>
-        /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't
-        /// prevent new public ACLs from being set.</p>
+        /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on this bucket and objects in this bucket.</p>
+        /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
         pub fn set_ignore_public_acls(mut self, input: std::option::Option<bool>) -> Self {
             self.ignore_public_acls = input;
             self
         }
-        /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this
-        /// element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the
-        /// specified bucket policy allows public access. </p>
+        /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
         /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
         pub fn block_public_policy(mut self, input: bool) -> Self {
             self.block_public_policy = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this
-        /// element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the
-        /// specified bucket policy allows public access. </p>
+        /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
         /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
         pub fn set_block_public_policy(mut self, input: std::option::Option<bool>) -> Self {
             self.block_public_policy = input;
             self
         }
-        /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting
-        /// this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service
-        /// principals and authorized users within this account if the bucket has a public
-        /// policy.</p>
-        /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that
-        /// public and cross-account access within any public bucket policy, including non-public
-        /// delegation to specific accounts, is blocked.</p>
+        /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service principals and authorized users within this account if the bucket has a public policy.</p>
+        /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
         pub fn restrict_public_buckets(mut self, input: bool) -> Self {
             self.restrict_public_buckets = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting
-        /// this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service
-        /// principals and authorized users within this account if the bucket has a public
-        /// policy.</p>
-        /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that
-        /// public and cross-account access within any public bucket policy, including non-public
-        /// delegation to specific accounts, is blocked.</p>
+        /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service principals and authorized users within this account if the bucket has a public policy.</p>
+        /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
         pub fn set_restrict_public_buckets(mut self, input: std::option::Option<bool>) -> Self {
             self.restrict_public_buckets = input;
             self
@@ -4288,27 +3958,17 @@ impl AsRef<str> for ObjectLockRetentionMode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectLockConfiguration {
-    /// <p>Indicates whether this bucket has an Object Lock configuration enabled.
-    /// Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code>
-    /// to a bucket. </p>
+    /// <p>Indicates whether this bucket has an Object Lock configuration enabled. Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code> to a bucket. </p>
     pub object_lock_enabled: std::option::Option<crate::model::ObjectLockEnabled>,
-    /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply
-    /// <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period.
-    /// The period can be either <code>Days</code> or <code>Years</code> but you must select one.
-    /// You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
+    /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
     pub rule: std::option::Option<crate::model::ObjectLockRule>,
 }
 impl ObjectLockConfiguration {
-    /// <p>Indicates whether this bucket has an Object Lock configuration enabled.
-    /// Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code>
-    /// to a bucket. </p>
+    /// <p>Indicates whether this bucket has an Object Lock configuration enabled. Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code> to a bucket. </p>
     pub fn object_lock_enabled(&self) -> std::option::Option<&crate::model::ObjectLockEnabled> {
         self.object_lock_enabled.as_ref()
     }
-    /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply
-    /// <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period.
-    /// The period can be either <code>Days</code> or <code>Years</code> but you must select one.
-    /// You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
+    /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
     pub fn rule(&self) -> std::option::Option<&crate::model::ObjectLockRule> {
         self.rule.as_ref()
     }
@@ -4331,16 +3991,12 @@ pub mod object_lock_configuration {
         pub(crate) rule: std::option::Option<crate::model::ObjectLockRule>,
     }
     impl Builder {
-        /// <p>Indicates whether this bucket has an Object Lock configuration enabled.
-        /// Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code>
-        /// to a bucket. </p>
+        /// <p>Indicates whether this bucket has an Object Lock configuration enabled. Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code> to a bucket. </p>
         pub fn object_lock_enabled(mut self, input: crate::model::ObjectLockEnabled) -> Self {
             self.object_lock_enabled = Some(input);
             self
         }
-        /// <p>Indicates whether this bucket has an Object Lock configuration enabled.
-        /// Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code>
-        /// to a bucket. </p>
+        /// <p>Indicates whether this bucket has an Object Lock configuration enabled. Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code> to a bucket. </p>
         pub fn set_object_lock_enabled(
             mut self,
             input: std::option::Option<crate::model::ObjectLockEnabled>,
@@ -4348,18 +4004,12 @@ pub mod object_lock_configuration {
             self.object_lock_enabled = input;
             self
         }
-        /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply
-        /// <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period.
-        /// The period can be either <code>Days</code> or <code>Years</code> but you must select one.
-        /// You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
+        /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
         pub fn rule(mut self, input: crate::model::ObjectLockRule) -> Self {
             self.rule = Some(input);
             self
         }
-        /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply
-        /// <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period.
-        /// The period can be either <code>Days</code> or <code>Years</code> but you must select one.
-        /// You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
+        /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
         pub fn set_rule(
             mut self,
             input: std::option::Option<crate::model::ObjectLockRule>,
@@ -4387,17 +4037,11 @@ impl ObjectLockConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectLockRule {
-    /// <p>The default Object Lock retention mode and period that you want to apply to new objects
-    /// placed in the specified bucket. Bucket settings require both a mode and a period.
-    /// The period can be either <code>Days</code> or <code>Years</code> but you must select one.
-    /// You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
+    /// <p>The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
     pub default_retention: std::option::Option<crate::model::DefaultRetention>,
 }
 impl ObjectLockRule {
-    /// <p>The default Object Lock retention mode and period that you want to apply to new objects
-    /// placed in the specified bucket. Bucket settings require both a mode and a period.
-    /// The period can be either <code>Days</code> or <code>Years</code> but you must select one.
-    /// You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
+    /// <p>The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
     pub fn default_retention(&self) -> std::option::Option<&crate::model::DefaultRetention> {
         self.default_retention.as_ref()
     }
@@ -4418,18 +4062,12 @@ pub mod object_lock_rule {
         pub(crate) default_retention: std::option::Option<crate::model::DefaultRetention>,
     }
     impl Builder {
-        /// <p>The default Object Lock retention mode and period that you want to apply to new objects
-        /// placed in the specified bucket. Bucket settings require both a mode and a period.
-        /// The period can be either <code>Days</code> or <code>Years</code> but you must select one.
-        /// You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
+        /// <p>The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
         pub fn default_retention(mut self, input: crate::model::DefaultRetention) -> Self {
             self.default_retention = Some(input);
             self
         }
-        /// <p>The default Object Lock retention mode and period that you want to apply to new objects
-        /// placed in the specified bucket. Bucket settings require both a mode and a period.
-        /// The period can be either <code>Days</code> or <code>Years</code> but you must select one.
-        /// You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
+        /// <p>The default Object Lock retention mode and period that you want to apply to new objects placed in the specified bucket. Bucket settings require both a mode and a period. The period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
         pub fn set_default_retention(
             mut self,
             input: std::option::Option<crate::model::DefaultRetention>,
@@ -4452,47 +4090,32 @@ impl ObjectLockRule {
     }
 }
 
-/// <p>The container element for specifying the default Object Lock retention settings for new
-/// objects placed in the specified bucket.</p>
-/// <note>
+/// <p>The container element for specifying the default Object Lock retention settings for new objects placed in the specified bucket.</p> <note>
 /// <ul>
-/// <li>
-/// <p>The <code>DefaultRetention</code> settings require both a mode and a
-/// period.</p>
-/// </li>
-/// <li>
-/// <p>The <code>DefaultRetention</code> period can be either <code>Days</code>
-/// or <code>Years</code> but you must select one. You cannot specify <code>Days</code>
-/// and <code>Years</code> at the same time.</p>
-/// </li>
+/// <li> <p>The <code>DefaultRetention</code> settings require both a mode and a period.</p> </li>
+/// <li> <p>The <code>DefaultRetention</code> period can be either <code>Days</code> or <code>Years</code> but you must select one. You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p> </li>
 /// </ul>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefaultRetention {
-    /// <p>The default Object Lock retention mode you want to apply to new objects placed in the
-    /// specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
+    /// <p>The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
     pub mode: std::option::Option<crate::model::ObjectLockRetentionMode>,
-    /// <p>The number of days that you want to specify for the default retention period. Must be
-    /// used with <code>Mode</code>.</p>
+    /// <p>The number of days that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
     pub days: i32,
-    /// <p>The number of years that you want to specify for the default retention period. Must be
-    /// used with <code>Mode</code>.</p>
+    /// <p>The number of years that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
     pub years: i32,
 }
 impl DefaultRetention {
-    /// <p>The default Object Lock retention mode you want to apply to new objects placed in the
-    /// specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
+    /// <p>The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
     pub fn mode(&self) -> std::option::Option<&crate::model::ObjectLockRetentionMode> {
         self.mode.as_ref()
     }
-    /// <p>The number of days that you want to specify for the default retention period. Must be
-    /// used with <code>Mode</code>.</p>
+    /// <p>The number of days that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
     pub fn days(&self) -> i32 {
         self.days
     }
-    /// <p>The number of years that you want to specify for the default retention period. Must be
-    /// used with <code>Mode</code>.</p>
+    /// <p>The number of years that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
     pub fn years(&self) -> i32 {
         self.years
     }
@@ -4517,14 +4140,12 @@ pub mod default_retention {
         pub(crate) years: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The default Object Lock retention mode you want to apply to new objects placed in the
-        /// specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
+        /// <p>The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
         pub fn mode(mut self, input: crate::model::ObjectLockRetentionMode) -> Self {
             self.mode = Some(input);
             self
         }
-        /// <p>The default Object Lock retention mode you want to apply to new objects placed in the
-        /// specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
+        /// <p>The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
         pub fn set_mode(
             mut self,
             input: std::option::Option<crate::model::ObjectLockRetentionMode>,
@@ -4532,26 +4153,22 @@ pub mod default_retention {
             self.mode = input;
             self
         }
-        /// <p>The number of days that you want to specify for the default retention period. Must be
-        /// used with <code>Mode</code>.</p>
+        /// <p>The number of days that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
         pub fn days(mut self, input: i32) -> Self {
             self.days = Some(input);
             self
         }
-        /// <p>The number of days that you want to specify for the default retention period. Must be
-        /// used with <code>Mode</code>.</p>
+        /// <p>The number of days that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
         pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
             self.days = input;
             self
         }
-        /// <p>The number of years that you want to specify for the default retention period. Must be
-        /// used with <code>Mode</code>.</p>
+        /// <p>The number of years that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
         pub fn years(mut self, input: i32) -> Self {
             self.years = Some(input);
             self
         }
-        /// <p>The number of years that you want to specify for the default retention period. Must be
-        /// used with <code>Mode</code>.</p>
+        /// <p>The number of years that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
         pub fn set_years(mut self, input: std::option::Option<i32>) -> Self {
             self.years = input;
             self
@@ -4723,9 +4340,9 @@ pub mod access_control_policy {
         /// To override the contents of this collection use [`set_grants`](Self::set_grants).
         ///
         /// <p>A list of grants.</p>
-        pub fn grants(mut self, input: impl Into<crate::model::Grant>) -> Self {
+        pub fn grants(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.grants = Some(v);
             self
         }
@@ -4844,8 +4461,7 @@ pub struct WebsiteConfiguration {
     pub error_document: std::option::Option<crate::model::ErrorDocument>,
     /// <p>The name of the index document for the website.</p>
     pub index_document: std::option::Option<crate::model::IndexDocument>,
-    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p>
-    /// <important>
+    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
     /// <p>If you specify this property, you can't specify any other property.</p>
     /// </important>
     pub redirect_all_requests_to: std::option::Option<crate::model::RedirectAllRequestsTo>,
@@ -4861,8 +4477,7 @@ impl WebsiteConfiguration {
     pub fn index_document(&self) -> std::option::Option<&crate::model::IndexDocument> {
         self.index_document.as_ref()
     }
-    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p>
-    /// <important>
+    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
     /// <p>If you specify this property, you can't specify any other property.</p>
     /// </important>
     pub fn redirect_all_requests_to(
@@ -4924,8 +4539,7 @@ pub mod website_configuration {
             self.index_document = input;
             self
         }
-        /// <p>The redirect behavior for every request to this bucket's website endpoint.</p>
-        /// <important>
+        /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
         /// <p>If you specify this property, you can't specify any other property.</p>
         /// </important>
         pub fn redirect_all_requests_to(
@@ -4935,8 +4549,7 @@ pub mod website_configuration {
             self.redirect_all_requests_to = Some(input);
             self
         }
-        /// <p>The redirect behavior for every request to this bucket's website endpoint.</p>
-        /// <important>
+        /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
         /// <p>If you specify this property, you can't specify any other property.</p>
         /// </important>
         pub fn set_redirect_all_requests_to(
@@ -4951,9 +4564,9 @@ pub mod website_configuration {
         /// To override the contents of this collection use [`set_routing_rules`](Self::set_routing_rules).
         ///
         /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
-        pub fn routing_rules(mut self, input: impl Into<crate::model::RoutingRule>) -> Self {
+        pub fn routing_rules(mut self, input: crate::model::RoutingRule) -> Self {
             let mut v = self.routing_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.routing_rules = Some(v);
             self
         }
@@ -4983,33 +4596,21 @@ impl WebsiteConfiguration {
     }
 }
 
-/// <p>Specifies the redirect behavior and when a redirect is applied. For more information
-/// about routing rules, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#advanced-conditional-redirects">Configuring advanced conditional redirects</a> in the
-/// <i>Amazon S3 User Guide</i>.</p>
+/// <p>Specifies the redirect behavior and when a redirect is applied. For more information about routing rules, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#advanced-conditional-redirects">Configuring advanced conditional redirects</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoutingRule {
-    /// <p>A container for describing a condition that must be met for the specified redirect to
-    /// apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect
-    /// to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect
-    /// request to another host where you might process the error.</p>
+    /// <p>A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.</p>
     pub condition: std::option::Option<crate::model::Condition>,
-    /// <p>Container for redirect information. You can redirect requests to another host, to
-    /// another page, or with another protocol. In the event of an error, you can specify a
-    /// different error code to return.</p>
+    /// <p>Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can specify a different error code to return.</p>
     pub redirect: std::option::Option<crate::model::Redirect>,
 }
 impl RoutingRule {
-    /// <p>A container for describing a condition that must be met for the specified redirect to
-    /// apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect
-    /// to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect
-    /// request to another host where you might process the error.</p>
+    /// <p>A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.</p>
     pub fn condition(&self) -> std::option::Option<&crate::model::Condition> {
         self.condition.as_ref()
     }
-    /// <p>Container for redirect information. You can redirect requests to another host, to
-    /// another page, or with another protocol. In the event of an error, you can specify a
-    /// different error code to return.</p>
+    /// <p>Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can specify a different error code to return.</p>
     pub fn redirect(&self) -> std::option::Option<&crate::model::Redirect> {
         self.redirect.as_ref()
     }
@@ -5032,18 +4633,12 @@ pub mod routing_rule {
         pub(crate) redirect: std::option::Option<crate::model::Redirect>,
     }
     impl Builder {
-        /// <p>A container for describing a condition that must be met for the specified redirect to
-        /// apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect
-        /// to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect
-        /// request to another host where you might process the error.</p>
+        /// <p>A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.</p>
         pub fn condition(mut self, input: crate::model::Condition) -> Self {
             self.condition = Some(input);
             self
         }
-        /// <p>A container for describing a condition that must be met for the specified redirect to
-        /// apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect
-        /// to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect
-        /// request to another host where you might process the error.</p>
+        /// <p>A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.</p>
         pub fn set_condition(
             mut self,
             input: std::option::Option<crate::model::Condition>,
@@ -5051,16 +4646,12 @@ pub mod routing_rule {
             self.condition = input;
             self
         }
-        /// <p>Container for redirect information. You can redirect requests to another host, to
-        /// another page, or with another protocol. In the event of an error, you can specify a
-        /// different error code to return.</p>
+        /// <p>Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can specify a different error code to return.</p>
         pub fn redirect(mut self, input: crate::model::Redirect) -> Self {
             self.redirect = Some(input);
             self
         }
-        /// <p>Container for redirect information. You can redirect requests to another host, to
-        /// another page, or with another protocol. In the event of an error, you can specify a
-        /// different error code to return.</p>
+        /// <p>Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can specify a different error code to return.</p>
         pub fn set_redirect(mut self, input: std::option::Option<crate::model::Redirect>) -> Self {
             self.redirect = input;
             self
@@ -5081,38 +4672,22 @@ impl RoutingRule {
     }
 }
 
-/// <p>Specifies how requests are redirected. In the event of an error, you can specify a
-/// different error code to return.</p>
+/// <p>Specifies how requests are redirected. In the event of an error, you can specify a different error code to return.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Redirect {
     /// <p>The host name to use in the redirect request.</p>
     pub host_name: std::option::Option<std::string::String>,
-    /// <p>The HTTP redirect code to use on the response. Not required if one of the siblings is
-    /// present.</p>
+    /// <p>The HTTP redirect code to use on the response. Not required if one of the siblings is present.</p>
     pub http_redirect_code: std::option::Option<std::string::String>,
-    /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in
-    /// the original request.</p>
+    /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
     pub protocol: std::option::Option<crate::model::Protocol>,
-    /// <p>The object key prefix to use in the redirect request. For example, to redirect requests
-    /// for all pages with prefix <code>docs/</code> (objects in the <code>docs/</code> folder) to
-    /// <code>documents/</code>, you can set a condition block with <code>KeyPrefixEquals</code>
-    /// set to <code>docs/</code> and in the Redirect set <code>ReplaceKeyPrefixWith</code> to
-    /// <code>/documents</code>. Not required if one of the siblings is present. Can be present
-    /// only if <code>ReplaceKeyWith</code> is not provided.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix <code>docs/</code> (objects in the <code>docs/</code> folder) to <code>documents/</code>, you can set a condition block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not required if one of the siblings is present. Can be present only if <code>ReplaceKeyWith</code> is not provided.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub replace_key_prefix_with: std::option::Option<std::string::String>,
-    /// <p>The specific object key to use in the redirect request. For example, redirect request to
-    /// <code>error.html</code>. Not required if one of the siblings is present. Can be present
-    /// only if <code>ReplaceKeyPrefixWith</code> is not provided.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>The specific object key to use in the redirect request. For example, redirect request to <code>error.html</code>. Not required if one of the siblings is present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not provided.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub replace_key_with: std::option::Option<std::string::String>,
 }
@@ -5121,37 +4696,22 @@ impl Redirect {
     pub fn host_name(&self) -> std::option::Option<&str> {
         self.host_name.as_deref()
     }
-    /// <p>The HTTP redirect code to use on the response. Not required if one of the siblings is
-    /// present.</p>
+    /// <p>The HTTP redirect code to use on the response. Not required if one of the siblings is present.</p>
     pub fn http_redirect_code(&self) -> std::option::Option<&str> {
         self.http_redirect_code.as_deref()
     }
-    /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in
-    /// the original request.</p>
+    /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
         self.protocol.as_ref()
     }
-    /// <p>The object key prefix to use in the redirect request. For example, to redirect requests
-    /// for all pages with prefix <code>docs/</code> (objects in the <code>docs/</code> folder) to
-    /// <code>documents/</code>, you can set a condition block with <code>KeyPrefixEquals</code>
-    /// set to <code>docs/</code> and in the Redirect set <code>ReplaceKeyPrefixWith</code> to
-    /// <code>/documents</code>. Not required if one of the siblings is present. Can be present
-    /// only if <code>ReplaceKeyWith</code> is not provided.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix <code>docs/</code> (objects in the <code>docs/</code> folder) to <code>documents/</code>, you can set a condition block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not required if one of the siblings is present. Can be present only if <code>ReplaceKeyWith</code> is not provided.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub fn replace_key_prefix_with(&self) -> std::option::Option<&str> {
         self.replace_key_prefix_with.as_deref()
     }
-    /// <p>The specific object key to use in the redirect request. For example, redirect request to
-    /// <code>error.html</code>. Not required if one of the siblings is present. Can be present
-    /// only if <code>ReplaceKeyPrefixWith</code> is not provided.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>The specific object key to use in the redirect request. For example, redirect request to <code>error.html</code>. Not required if one of the siblings is present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not provided.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub fn replace_key_with(&self) -> std::option::Option<&str> {
         self.replace_key_with.as_deref()
@@ -5191,14 +4751,12 @@ pub mod redirect {
             self.host_name = input;
             self
         }
-        /// <p>The HTTP redirect code to use on the response. Not required if one of the siblings is
-        /// present.</p>
+        /// <p>The HTTP redirect code to use on the response. Not required if one of the siblings is present.</p>
         pub fn http_redirect_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.http_redirect_code = Some(input.into());
             self
         }
-        /// <p>The HTTP redirect code to use on the response. Not required if one of the siblings is
-        /// present.</p>
+        /// <p>The HTTP redirect code to use on the response. Not required if one of the siblings is present.</p>
         pub fn set_http_redirect_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5206,43 +4764,25 @@ pub mod redirect {
             self.http_redirect_code = input;
             self
         }
-        /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in
-        /// the original request.</p>
+        /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
         pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
             self.protocol = Some(input);
             self
         }
-        /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in
-        /// the original request.</p>
+        /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
             self.protocol = input;
             self
         }
-        /// <p>The object key prefix to use in the redirect request. For example, to redirect requests
-        /// for all pages with prefix <code>docs/</code> (objects in the <code>docs/</code> folder) to
-        /// <code>documents/</code>, you can set a condition block with <code>KeyPrefixEquals</code>
-        /// set to <code>docs/</code> and in the Redirect set <code>ReplaceKeyPrefixWith</code> to
-        /// <code>/documents</code>. Not required if one of the siblings is present. Can be present
-        /// only if <code>ReplaceKeyWith</code> is not provided.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix <code>docs/</code> (objects in the <code>docs/</code> folder) to <code>documents/</code>, you can set a condition block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not required if one of the siblings is present. Can be present only if <code>ReplaceKeyWith</code> is not provided.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn replace_key_prefix_with(mut self, input: impl Into<std::string::String>) -> Self {
             self.replace_key_prefix_with = Some(input.into());
             self
         }
-        /// <p>The object key prefix to use in the redirect request. For example, to redirect requests
-        /// for all pages with prefix <code>docs/</code> (objects in the <code>docs/</code> folder) to
-        /// <code>documents/</code>, you can set a condition block with <code>KeyPrefixEquals</code>
-        /// set to <code>docs/</code> and in the Redirect set <code>ReplaceKeyPrefixWith</code> to
-        /// <code>/documents</code>. Not required if one of the siblings is present. Can be present
-        /// only if <code>ReplaceKeyWith</code> is not provided.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>The object key prefix to use in the redirect request. For example, to redirect requests for all pages with prefix <code>docs/</code> (objects in the <code>docs/</code> folder) to <code>documents/</code>, you can set a condition block with <code>KeyPrefixEquals</code> set to <code>docs/</code> and in the Redirect set <code>ReplaceKeyPrefixWith</code> to <code>/documents</code>. Not required if one of the siblings is present. Can be present only if <code>ReplaceKeyWith</code> is not provided.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn set_replace_key_prefix_with(
             mut self,
@@ -5251,25 +4791,15 @@ pub mod redirect {
             self.replace_key_prefix_with = input;
             self
         }
-        /// <p>The specific object key to use in the redirect request. For example, redirect request to
-        /// <code>error.html</code>. Not required if one of the siblings is present. Can be present
-        /// only if <code>ReplaceKeyPrefixWith</code> is not provided.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>The specific object key to use in the redirect request. For example, redirect request to <code>error.html</code>. Not required if one of the siblings is present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not provided.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn replace_key_with(mut self, input: impl Into<std::string::String>) -> Self {
             self.replace_key_with = Some(input.into());
             self
         }
-        /// <p>The specific object key to use in the redirect request. For example, redirect request to
-        /// <code>error.html</code>. Not required if one of the siblings is present. Can be present
-        /// only if <code>ReplaceKeyPrefixWith</code> is not provided.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>The specific object key to use in the redirect request. For example, redirect request to <code>error.html</code>. Not required if one of the siblings is present. Can be present only if <code>ReplaceKeyPrefixWith</code> is not provided.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn set_replace_key_with(
             mut self,
@@ -5352,55 +4882,24 @@ impl AsRef<str> for Protocol {
     }
 }
 
-/// <p>A container for describing a condition that must be met for the specified redirect to
-/// apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect
-/// to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect
-/// request to another host where you might process the error.</p>
+/// <p>A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Condition {
-    /// <p>The HTTP error code when the redirect is applied. In the event of an error, if the error
-    /// code equals this value, then the specified redirect is applied. Required when parent
-    /// element <code>Condition</code> is specified and sibling <code>KeyPrefixEquals</code> is not
-    /// specified. If both are specified, then both must be true for the redirect to be
-    /// applied.</p>
+    /// <p>The HTTP error code when the redirect is applied. In the event of an error, if the error code equals this value, then the specified redirect is applied. Required when parent element <code>Condition</code> is specified and sibling <code>KeyPrefixEquals</code> is not specified. If both are specified, then both must be true for the redirect to be applied.</p>
     pub http_error_code_returned_equals: std::option::Option<std::string::String>,
-    /// <p>The object key name prefix when the redirect is applied. For example, to redirect
-    /// requests for <code>ExamplePage.html</code>, the key prefix will be
-    /// <code>ExamplePage.html</code>. To redirect request for all pages with the prefix
-    /// <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies all
-    /// objects in the <code>docs/</code> folder. Required when the parent element
-    /// <code>Condition</code> is specified and sibling <code>HttpErrorCodeReturnedEquals</code>
-    /// is not specified. If both conditions are specified, both must be true for the redirect to
-    /// be applied.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>The object key name prefix when the redirect is applied. For example, to redirect requests for <code>ExamplePage.html</code>, the key prefix will be <code>ExamplePage.html</code>. To redirect request for all pages with the prefix <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies all objects in the <code>docs/</code> folder. Required when the parent element <code>Condition</code> is specified and sibling <code>HttpErrorCodeReturnedEquals</code> is not specified. If both conditions are specified, both must be true for the redirect to be applied.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub key_prefix_equals: std::option::Option<std::string::String>,
 }
 impl Condition {
-    /// <p>The HTTP error code when the redirect is applied. In the event of an error, if the error
-    /// code equals this value, then the specified redirect is applied. Required when parent
-    /// element <code>Condition</code> is specified and sibling <code>KeyPrefixEquals</code> is not
-    /// specified. If both are specified, then both must be true for the redirect to be
-    /// applied.</p>
+    /// <p>The HTTP error code when the redirect is applied. In the event of an error, if the error code equals this value, then the specified redirect is applied. Required when parent element <code>Condition</code> is specified and sibling <code>KeyPrefixEquals</code> is not specified. If both are specified, then both must be true for the redirect to be applied.</p>
     pub fn http_error_code_returned_equals(&self) -> std::option::Option<&str> {
         self.http_error_code_returned_equals.as_deref()
     }
-    /// <p>The object key name prefix when the redirect is applied. For example, to redirect
-    /// requests for <code>ExamplePage.html</code>, the key prefix will be
-    /// <code>ExamplePage.html</code>. To redirect request for all pages with the prefix
-    /// <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies all
-    /// objects in the <code>docs/</code> folder. Required when the parent element
-    /// <code>Condition</code> is specified and sibling <code>HttpErrorCodeReturnedEquals</code>
-    /// is not specified. If both conditions are specified, both must be true for the redirect to
-    /// be applied.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>The object key name prefix when the redirect is applied. For example, to redirect requests for <code>ExamplePage.html</code>, the key prefix will be <code>ExamplePage.html</code>. To redirect request for all pages with the prefix <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies all objects in the <code>docs/</code> folder. Required when the parent element <code>Condition</code> is specified and sibling <code>HttpErrorCodeReturnedEquals</code> is not specified. If both conditions are specified, both must be true for the redirect to be applied.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub fn key_prefix_equals(&self) -> std::option::Option<&str> {
         self.key_prefix_equals.as_deref()
@@ -5427,11 +4926,7 @@ pub mod condition {
         pub(crate) key_prefix_equals: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The HTTP error code when the redirect is applied. In the event of an error, if the error
-        /// code equals this value, then the specified redirect is applied. Required when parent
-        /// element <code>Condition</code> is specified and sibling <code>KeyPrefixEquals</code> is not
-        /// specified. If both are specified, then both must be true for the redirect to be
-        /// applied.</p>
+        /// <p>The HTTP error code when the redirect is applied. In the event of an error, if the error code equals this value, then the specified redirect is applied. Required when parent element <code>Condition</code> is specified and sibling <code>KeyPrefixEquals</code> is not specified. If both are specified, then both must be true for the redirect to be applied.</p>
         pub fn http_error_code_returned_equals(
             mut self,
             input: impl Into<std::string::String>,
@@ -5439,11 +4934,7 @@ pub mod condition {
             self.http_error_code_returned_equals = Some(input.into());
             self
         }
-        /// <p>The HTTP error code when the redirect is applied. In the event of an error, if the error
-        /// code equals this value, then the specified redirect is applied. Required when parent
-        /// element <code>Condition</code> is specified and sibling <code>KeyPrefixEquals</code> is not
-        /// specified. If both are specified, then both must be true for the redirect to be
-        /// applied.</p>
+        /// <p>The HTTP error code when the redirect is applied. In the event of an error, if the error code equals this value, then the specified redirect is applied. Required when parent element <code>Condition</code> is specified and sibling <code>KeyPrefixEquals</code> is not specified. If both are specified, then both must be true for the redirect to be applied.</p>
         pub fn set_http_error_code_returned_equals(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5451,35 +4942,15 @@ pub mod condition {
             self.http_error_code_returned_equals = input;
             self
         }
-        /// <p>The object key name prefix when the redirect is applied. For example, to redirect
-        /// requests for <code>ExamplePage.html</code>, the key prefix will be
-        /// <code>ExamplePage.html</code>. To redirect request for all pages with the prefix
-        /// <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies all
-        /// objects in the <code>docs/</code> folder. Required when the parent element
-        /// <code>Condition</code> is specified and sibling <code>HttpErrorCodeReturnedEquals</code>
-        /// is not specified. If both conditions are specified, both must be true for the redirect to
-        /// be applied.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>The object key name prefix when the redirect is applied. For example, to redirect requests for <code>ExamplePage.html</code>, the key prefix will be <code>ExamplePage.html</code>. To redirect request for all pages with the prefix <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies all objects in the <code>docs/</code> folder. Required when the parent element <code>Condition</code> is specified and sibling <code>HttpErrorCodeReturnedEquals</code> is not specified. If both conditions are specified, both must be true for the redirect to be applied.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn key_prefix_equals(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_prefix_equals = Some(input.into());
             self
         }
-        /// <p>The object key name prefix when the redirect is applied. For example, to redirect
-        /// requests for <code>ExamplePage.html</code>, the key prefix will be
-        /// <code>ExamplePage.html</code>. To redirect request for all pages with the prefix
-        /// <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies all
-        /// objects in the <code>docs/</code> folder. Required when the parent element
-        /// <code>Condition</code> is specified and sibling <code>HttpErrorCodeReturnedEquals</code>
-        /// is not specified. If both conditions are specified, both must be true for the redirect to
-        /// be applied.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>The object key name prefix when the redirect is applied. For example, to redirect requests for <code>ExamplePage.html</code>, the key prefix will be <code>ExamplePage.html</code>. To redirect request for all pages with the prefix <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies all objects in the <code>docs/</code> folder. Required when the parent element <code>Condition</code> is specified and sibling <code>HttpErrorCodeReturnedEquals</code> is not specified. If both conditions are specified, both must be true for the redirect to be applied.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn set_key_prefix_equals(
             mut self,
@@ -5504,15 +4975,13 @@ impl Condition {
     }
 }
 
-/// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3
-/// bucket.</p>
+/// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedirectAllRequestsTo {
     /// <p>Name of the host where requests are redirected.</p>
     pub host_name: std::option::Option<std::string::String>,
-    /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in
-    /// the original request.</p>
+    /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
     pub protocol: std::option::Option<crate::model::Protocol>,
 }
 impl RedirectAllRequestsTo {
@@ -5520,8 +4989,7 @@ impl RedirectAllRequestsTo {
     pub fn host_name(&self) -> std::option::Option<&str> {
         self.host_name.as_deref()
     }
-    /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in
-    /// the original request.</p>
+    /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::Protocol> {
         self.protocol.as_ref()
     }
@@ -5554,14 +5022,12 @@ pub mod redirect_all_requests_to {
             self.host_name = input;
             self
         }
-        /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in
-        /// the original request.</p>
+        /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
         pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
             self.protocol = Some(input);
             self
         }
-        /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in
-        /// the original request.</p>
+        /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in the original request.</p>
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
             self.protocol = input;
             self
@@ -5586,26 +5052,14 @@ impl RedirectAllRequestsTo {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IndexDocument {
-    /// <p>A suffix that is appended to a request that is for a directory on the website endpoint
-    /// (for example,if the suffix is index.html and you make a request to samplebucket/images/ the
-    /// data that is returned will be for the object with the key name images/index.html) The
-    /// suffix must not be empty and must not include a slash character.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>A suffix that is appended to a request that is for a directory on the website endpoint (for example,if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub suffix: std::option::Option<std::string::String>,
 }
 impl IndexDocument {
-    /// <p>A suffix that is appended to a request that is for a directory on the website endpoint
-    /// (for example,if the suffix is index.html and you make a request to samplebucket/images/ the
-    /// data that is returned will be for the object with the key name images/index.html) The
-    /// suffix must not be empty and must not include a slash character.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>A suffix that is appended to a request that is for a directory on the website endpoint (for example,if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub fn suffix(&self) -> std::option::Option<&str> {
         self.suffix.as_deref()
@@ -5627,27 +5081,15 @@ pub mod index_document {
         pub(crate) suffix: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A suffix that is appended to a request that is for a directory on the website endpoint
-        /// (for example,if the suffix is index.html and you make a request to samplebucket/images/ the
-        /// data that is returned will be for the object with the key name images/index.html) The
-        /// suffix must not be empty and must not include a slash character.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>A suffix that is appended to a request that is for a directory on the website endpoint (for example,if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn suffix(mut self, input: impl Into<std::string::String>) -> Self {
             self.suffix = Some(input.into());
             self
         }
-        /// <p>A suffix that is appended to a request that is for a directory on the website endpoint
-        /// (for example,if the suffix is index.html and you make a request to samplebucket/images/ the
-        /// data that is returned will be for the object with the key name images/index.html) The
-        /// suffix must not be empty and must not include a slash character.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>A suffix that is appended to a request that is for a directory on the website endpoint (for example,if the suffix is index.html and you make a request to samplebucket/images/ the data that is returned will be for the object with the key name images/index.html) The suffix must not be empty and must not include a slash character.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn set_suffix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.suffix = input;
@@ -5672,20 +5114,14 @@ impl IndexDocument {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorDocument {
-    /// <p>The object key name to use when a 4XX class error occurs.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>The object key name to use when a 4XX class error occurs.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub key: std::option::Option<std::string::String>,
 }
 impl ErrorDocument {
-    /// <p>The object key name to use when a 4XX class error occurs.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>The object key name to use when a 4XX class error occurs.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
@@ -5707,21 +5143,15 @@ pub mod error_document {
         pub(crate) key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The object key name to use when a 4XX class error occurs.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>The object key name to use when a 4XX class error occurs.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The object key name to use when a 4XX class error occurs.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>The object key name to use when a 4XX class error occurs.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
@@ -5740,22 +5170,17 @@ impl ErrorDocument {
     }
 }
 
-/// <p>Describes the versioning state of an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html">PUT
-/// Bucket versioning</a> in the <i>Amazon S3 API Reference</i>.</p>
+/// <p>Describes the versioning state of an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html">PUT Bucket versioning</a> in the <i>Amazon S3 API Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VersioningConfiguration {
-    /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
-    /// element is only returned if the bucket has been configured with MFA delete. If the bucket
-    /// has never been so configured, this element is not returned.</p>
+    /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
     pub mfa_delete: std::option::Option<crate::model::MfaDelete>,
     /// <p>The versioning state of the bucket.</p>
     pub status: std::option::Option<crate::model::BucketVersioningStatus>,
 }
 impl VersioningConfiguration {
-    /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
-    /// element is only returned if the bucket has been configured with MFA delete. If the bucket
-    /// has never been so configured, this element is not returned.</p>
+    /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
     pub fn mfa_delete(&self) -> std::option::Option<&crate::model::MfaDelete> {
         self.mfa_delete.as_ref()
     }
@@ -5782,16 +5207,12 @@ pub mod versioning_configuration {
         pub(crate) status: std::option::Option<crate::model::BucketVersioningStatus>,
     }
     impl Builder {
-        /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
-        /// element is only returned if the bucket has been configured with MFA delete. If the bucket
-        /// has never been so configured, this element is not returned.</p>
+        /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
         pub fn mfa_delete(mut self, input: crate::model::MfaDelete) -> Self {
             self.mfa_delete = Some(input);
             self
         }
-        /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
-        /// element is only returned if the bucket has been configured with MFA delete. If the bucket
-        /// has never been so configured, this element is not returned.</p>
+        /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This element is only returned if the bucket has been configured with MFA delete. If the bucket has never been so configured, this element is not returned.</p>
         pub fn set_mfa_delete(
             mut self,
             input: std::option::Option<crate::model::MfaDelete>,
@@ -6045,28 +5466,21 @@ impl AsRef<str> for Payer {
     }
 }
 
-/// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a
-/// replication configuration is 2 MB.</p>
+/// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationConfiguration {
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
-    /// Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up
-    /// Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>A container for one or more replication rules. A replication configuration must have at
-    /// least one rule and can contain a maximum of 1,000 rules. </p>
+    /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain a maximum of 1,000 rules. </p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::ReplicationRule>>,
 }
 impl ReplicationConfiguration {
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
-    /// Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up
-    /// Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>A container for one or more replication rules. A replication configuration must have at
-    /// least one rule and can contain a maximum of 1,000 rules. </p>
+    /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain a maximum of 1,000 rules. </p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::ReplicationRule]> {
         self.rules.as_deref()
     }
@@ -6089,16 +5503,12 @@ pub mod replication_configuration {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::ReplicationRule>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
-        /// Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up
-        /// Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
-        /// Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up
-        /// Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -6107,16 +5517,14 @@ pub mod replication_configuration {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>A container for one or more replication rules. A replication configuration must have at
-        /// least one rule and can contain a maximum of 1,000 rules. </p>
-        pub fn rules(mut self, input: impl Into<crate::model::ReplicationRule>) -> Self {
+        /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain a maximum of 1,000 rules. </p>
+        pub fn rules(mut self, input: crate::model::ReplicationRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
-        /// <p>A container for one or more replication rules. A replication configuration must have at
-        /// least one rule and can contain a maximum of 1,000 rules. </p>
+        /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain a maximum of 1,000 rules. </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicationRule>>,
@@ -6146,51 +5554,26 @@ impl ReplicationConfiguration {
 pub struct ReplicationRule {
     /// <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The priority indicates which rule has precedence whenever two or more replication rules
-    /// conflict. Amazon S3 will attempt to replicate objects according to all replication rules.
-    /// However, if there are two or more rules with the same destination bucket, then objects will
-    /// be replicated according to the rule with the highest priority. The higher the number, the
-    /// higher the priority. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The priority indicates which rule has precedence whenever two or more replication rules conflict. Amazon S3 will attempt to replicate objects according to all replication rules. However, if there are two or more rules with the same destination bucket, then objects will be replicated according to the rule with the highest priority. The higher the number, the higher the priority. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub priority: i32,
-    /// <p>An object key name prefix that identifies the object or objects to which the rule
-    /// applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket,
-    /// specify an empty string. </p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>An object key name prefix that identifies the object or objects to which the rule applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket, specify an empty string. </p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>A filter that identifies the subset of objects to which the replication rule applies. A
-    /// <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or
-    /// an <code>And</code> child element.</p>
+    /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>
     pub filter: std::option::Option<crate::model::ReplicationRuleFilter>,
     /// <p>Specifies whether the rule is enabled.</p>
     pub status: std::option::Option<crate::model::ReplicationRuleStatus>,
-    /// <p>A container that describes additional filters for identifying the source objects that
-    /// you want to replicate. You can choose to enable or disable the replication of these
-    /// objects. Currently, Amazon S3 supports only the filter that you can specify for objects created
-    /// with server-side encryption using a customer managed key stored in Amazon Web Services Key Management
-    /// Service (SSE-KMS).</p>
+    /// <p>A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).</p>
     pub source_selection_criteria: std::option::Option<crate::model::SourceSelectionCriteria>,
     /// <p></p>
     pub existing_object_replication: std::option::Option<crate::model::ExistingObjectReplication>,
-    /// <p>A container for information about the replication destination and its configurations
-    /// including enabling the S3 Replication Time Control (S3 RTC).</p>
+    /// <p>A container for information about the replication destination and its configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
     pub destination: std::option::Option<crate::model::Destination>,
-    /// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code>
-    /// in your replication configuration, you must also include a
-    /// <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a
-    /// <code>Tag</code> element, the <code>DeleteMarkerReplication</code>
-    /// <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating
-    /// delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic Rule Configuration</a>. </p>
-    /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule
-    /// Configuration</a>. </p>
-    /// <note>
-    /// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles
-    /// replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
+    /// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code> in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic Rule Configuration</a>. </p>
+    /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule Configuration</a>. </p> <note>
+    /// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
     /// </note>
     pub delete_marker_replication: std::option::Option<crate::model::DeleteMarkerReplication>,
 }
@@ -6199,30 +5582,18 @@ impl ReplicationRule {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The priority indicates which rule has precedence whenever two or more replication rules
-    /// conflict. Amazon S3 will attempt to replicate objects according to all replication rules.
-    /// However, if there are two or more rules with the same destination bucket, then objects will
-    /// be replicated according to the rule with the highest priority. The higher the number, the
-    /// higher the priority. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The priority indicates which rule has precedence whenever two or more replication rules conflict. Amazon S3 will attempt to replicate objects according to all replication rules. However, if there are two or more rules with the same destination bucket, then objects will be replicated according to the rule with the highest priority. The higher the number, the higher the priority. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
-    /// <p>An object key name prefix that identifies the object or objects to which the rule
-    /// applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket,
-    /// specify an empty string. </p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>An object key name prefix that identifies the object or objects to which the rule applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket, specify an empty string. </p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>A filter that identifies the subset of objects to which the replication rule applies. A
-    /// <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or
-    /// an <code>And</code> child element.</p>
+    /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::ReplicationRuleFilter> {
         self.filter.as_ref()
     }
@@ -6230,11 +5601,7 @@ impl ReplicationRule {
     pub fn status(&self) -> std::option::Option<&crate::model::ReplicationRuleStatus> {
         self.status.as_ref()
     }
-    /// <p>A container that describes additional filters for identifying the source objects that
-    /// you want to replicate. You can choose to enable or disable the replication of these
-    /// objects. Currently, Amazon S3 supports only the filter that you can specify for objects created
-    /// with server-side encryption using a customer managed key stored in Amazon Web Services Key Management
-    /// Service (SSE-KMS).</p>
+    /// <p>A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).</p>
     pub fn source_selection_criteria(
         &self,
     ) -> std::option::Option<&crate::model::SourceSelectionCriteria> {
@@ -6246,22 +5613,13 @@ impl ReplicationRule {
     ) -> std::option::Option<&crate::model::ExistingObjectReplication> {
         self.existing_object_replication.as_ref()
     }
-    /// <p>A container for information about the replication destination and its configurations
-    /// including enabling the S3 Replication Time Control (S3 RTC).</p>
+    /// <p>A container for information about the replication destination and its configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
     pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
         self.destination.as_ref()
     }
-    /// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code>
-    /// in your replication configuration, you must also include a
-    /// <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a
-    /// <code>Tag</code> element, the <code>DeleteMarkerReplication</code>
-    /// <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating
-    /// delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic Rule Configuration</a>. </p>
-    /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule
-    /// Configuration</a>. </p>
-    /// <note>
-    /// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles
-    /// replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
+    /// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code> in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic Rule Configuration</a>. </p>
+    /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule Configuration</a>. </p> <note>
+    /// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
     /// </note>
     pub fn delete_marker_replication(
         &self,
@@ -6317,62 +5675,38 @@ pub mod replication_rule {
             self.id = input;
             self
         }
-        /// <p>The priority indicates which rule has precedence whenever two or more replication rules
-        /// conflict. Amazon S3 will attempt to replicate objects according to all replication rules.
-        /// However, if there are two or more rules with the same destination bucket, then objects will
-        /// be replicated according to the rule with the highest priority. The higher the number, the
-        /// higher the priority. </p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The priority indicates which rule has precedence whenever two or more replication rules conflict. Amazon S3 will attempt to replicate objects according to all replication rules. However, if there are two or more rules with the same destination bucket, then objects will be replicated according to the rule with the highest priority. The higher the number, the higher the priority. </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.priority = Some(input);
             self
         }
-        /// <p>The priority indicates which rule has precedence whenever two or more replication rules
-        /// conflict. Amazon S3 will attempt to replicate objects according to all replication rules.
-        /// However, if there are two or more rules with the same destination bucket, then objects will
-        /// be replicated according to the rule with the highest priority. The higher the number, the
-        /// higher the priority. </p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The priority indicates which rule has precedence whenever two or more replication rules conflict. Amazon S3 will attempt to replicate objects according to all replication rules. However, if there are two or more rules with the same destination bucket, then objects will be replicated according to the rule with the highest priority. The higher the number, the higher the priority. </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
         }
-        /// <p>An object key name prefix that identifies the object or objects to which the rule
-        /// applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket,
-        /// specify an empty string. </p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>An object key name prefix that identifies the object or objects to which the rule applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket, specify an empty string. </p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>An object key name prefix that identifies the object or objects to which the rule
-        /// applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket,
-        /// specify an empty string. </p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>An object key name prefix that identifies the object or objects to which the rule applies. The maximum prefix length is 1,024 characters. To include all objects in a bucket, specify an empty string. </p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
         }
-        /// <p>A filter that identifies the subset of objects to which the replication rule applies. A
-        /// <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or
-        /// an <code>And</code> child element.</p>
+        /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>
         pub fn filter(mut self, input: crate::model::ReplicationRuleFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>A filter that identifies the subset of objects to which the replication rule applies. A
-        /// <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or
-        /// an <code>And</code> child element.</p>
+        /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ReplicationRuleFilter>,
@@ -6393,11 +5727,7 @@ pub mod replication_rule {
             self.status = input;
             self
         }
-        /// <p>A container that describes additional filters for identifying the source objects that
-        /// you want to replicate. You can choose to enable or disable the replication of these
-        /// objects. Currently, Amazon S3 supports only the filter that you can specify for objects created
-        /// with server-side encryption using a customer managed key stored in Amazon Web Services Key Management
-        /// Service (SSE-KMS).</p>
+        /// <p>A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).</p>
         pub fn source_selection_criteria(
             mut self,
             input: crate::model::SourceSelectionCriteria,
@@ -6405,11 +5735,7 @@ pub mod replication_rule {
             self.source_selection_criteria = Some(input);
             self
         }
-        /// <p>A container that describes additional filters for identifying the source objects that
-        /// you want to replicate. You can choose to enable or disable the replication of these
-        /// objects. Currently, Amazon S3 supports only the filter that you can specify for objects created
-        /// with server-side encryption using a customer managed key stored in Amazon Web Services Key Management
-        /// Service (SSE-KMS).</p>
+        /// <p>A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).</p>
         pub fn set_source_selection_criteria(
             mut self,
             input: std::option::Option<crate::model::SourceSelectionCriteria>,
@@ -6433,14 +5759,12 @@ pub mod replication_rule {
             self.existing_object_replication = input;
             self
         }
-        /// <p>A container for information about the replication destination and its configurations
-        /// including enabling the S3 Replication Time Control (S3 RTC).</p>
+        /// <p>A container for information about the replication destination and its configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
         pub fn destination(mut self, input: crate::model::Destination) -> Self {
             self.destination = Some(input);
             self
         }
-        /// <p>A container for information about the replication destination and its configurations
-        /// including enabling the S3 Replication Time Control (S3 RTC).</p>
+        /// <p>A container for information about the replication destination and its configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::Destination>,
@@ -6448,17 +5772,9 @@ pub mod replication_rule {
             self.destination = input;
             self
         }
-        /// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code>
-        /// in your replication configuration, you must also include a
-        /// <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a
-        /// <code>Tag</code> element, the <code>DeleteMarkerReplication</code>
-        /// <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating
-        /// delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic Rule Configuration</a>. </p>
-        /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule
-        /// Configuration</a>. </p>
-        /// <note>
-        /// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles
-        /// replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
+        /// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code> in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic Rule Configuration</a>. </p>
+        /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule Configuration</a>. </p> <note>
+        /// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
         /// </note>
         pub fn delete_marker_replication(
             mut self,
@@ -6467,17 +5783,9 @@ pub mod replication_rule {
             self.delete_marker_replication = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code>
-        /// in your replication configuration, you must also include a
-        /// <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a
-        /// <code>Tag</code> element, the <code>DeleteMarkerReplication</code>
-        /// <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating
-        /// delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic Rule Configuration</a>. </p>
-        /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule
-        /// Configuration</a>. </p>
-        /// <note>
-        /// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles
-        /// replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
+        /// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code> in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic Rule Configuration</a>. </p>
+        /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule Configuration</a>. </p> <note>
+        /// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
         /// </note>
         pub fn set_delete_marker_replication(
             mut self,
@@ -6509,30 +5817,20 @@ impl ReplicationRule {
     }
 }
 
-/// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code>
-/// in your replication configuration, you must also include a
-/// <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a
-/// <code>Tag</code> element, the <code>DeleteMarkerReplication</code>
-/// <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating
-/// delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic Rule Configuration</a>. </p>
-/// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule
-/// Configuration</a>. </p>
-/// <note>
-/// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles
-/// replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
+/// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code> in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> <code>Status</code> must be set to Disabled, because Amazon S3 does not support replicating delete markers for tag-based rules. For an example configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic Rule Configuration</a>. </p>
+/// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule Configuration</a>. </p> <note>
+/// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMarkerReplication {
-    /// <p>Indicates whether to replicate delete markers.</p>
-    /// <note>
+    /// <p>Indicates whether to replicate delete markers.</p> <note>
     /// <p>Indicates whether to replicate delete markers.</p>
     /// </note>
     pub status: std::option::Option<crate::model::DeleteMarkerReplicationStatus>,
 }
 impl DeleteMarkerReplication {
-    /// <p>Indicates whether to replicate delete markers.</p>
-    /// <note>
+    /// <p>Indicates whether to replicate delete markers.</p> <note>
     /// <p>Indicates whether to replicate delete markers.</p>
     /// </note>
     pub fn status(&self) -> std::option::Option<&crate::model::DeleteMarkerReplicationStatus> {
@@ -6555,16 +5853,14 @@ pub mod delete_marker_replication {
         pub(crate) status: std::option::Option<crate::model::DeleteMarkerReplicationStatus>,
     }
     impl Builder {
-        /// <p>Indicates whether to replicate delete markers.</p>
-        /// <note>
+        /// <p>Indicates whether to replicate delete markers.</p> <note>
         /// <p>Indicates whether to replicate delete markers.</p>
         /// </note>
         pub fn status(mut self, input: crate::model::DeleteMarkerReplicationStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Indicates whether to replicate delete markers.</p>
-        /// <note>
+        /// <p>Indicates whether to replicate delete markers.</p> <note>
         /// <p>Indicates whether to replicate delete markers.</p>
         /// </note>
         pub fn set_status(
@@ -6644,39 +5940,24 @@ impl AsRef<str> for DeleteMarkerReplicationStatus {
     }
 }
 
-/// <p>Specifies information about where to publish analysis or configuration results for an
-/// Amazon S3 bucket and S3 Replication Time Control (S3 RTC).</p>
+/// <p>Specifies information about where to publish analysis or configuration results for an Amazon S3 bucket and S3 Replication Time Control (S3 RTC).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Destination {
     /// <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to store the results.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to
-    /// change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying
-    /// the <code>AccessControlTranslation</code> property, this is the account ID of the
-    /// destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional
-    /// Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying the <code>AccessControlTranslation</code> property, this is the account ID of the destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub account: std::option::Option<std::string::String>,
-    /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced
-    /// redundancy. By default, Amazon S3 uses the storage class of the source object to create the
-    /// object replica. </p>
-    /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket
-    /// replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
+    /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica. </p>
+    /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
-    /// <p>Specify this only in a cross-account scenario (where source and destination bucket
-    /// owners are not the same), and you want to change replica ownership to the Amazon Web Services account that
-    /// owns the destination bucket. If this is not specified in the replication configuration, the
-    /// replicas are owned by same Amazon Web Services account that owns the source object.</p>
+    /// <p>Specify this only in a cross-account scenario (where source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p>
     pub access_control_translation: std::option::Option<crate::model::AccessControlTranslation>,
-    /// <p>A container that provides information about encryption. If
-    /// <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
+    /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
-    /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time
-    /// when all objects and operations on objects must be replicated. Must be specified together
-    /// with a <code>Metrics</code> block. </p>
+    /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p>
     pub replication_time: std::option::Option<crate::model::ReplicationTime>,
-    /// <p> A container specifying replication metrics-related settings enabling replication
-    /// metrics and events. </p>
+    /// <p> A container specifying replication metrics-related settings enabling replication metrics and events. </p>
     pub metrics: std::option::Option<crate::model::Metrics>,
 }
 impl Destination {
@@ -6684,46 +5965,32 @@ impl Destination {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to
-    /// change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying
-    /// the <code>AccessControlTranslation</code> property, this is the account ID of the
-    /// destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional
-    /// Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying the <code>AccessControlTranslation</code> property, this is the account ID of the destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn account(&self) -> std::option::Option<&str> {
         self.account.as_deref()
     }
-    /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced
-    /// redundancy. By default, Amazon S3 uses the storage class of the source object to create the
-    /// object replica. </p>
-    /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket
-    /// replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
+    /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica. </p>
+    /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
     pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
         self.storage_class.as_ref()
     }
-    /// <p>Specify this only in a cross-account scenario (where source and destination bucket
-    /// owners are not the same), and you want to change replica ownership to the Amazon Web Services account that
-    /// owns the destination bucket. If this is not specified in the replication configuration, the
-    /// replicas are owned by same Amazon Web Services account that owns the source object.</p>
+    /// <p>Specify this only in a cross-account scenario (where source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p>
     pub fn access_control_translation(
         &self,
     ) -> std::option::Option<&crate::model::AccessControlTranslation> {
         self.access_control_translation.as_ref()
     }
-    /// <p>A container that provides information about encryption. If
-    /// <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
+    /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
     pub fn encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
-    /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time
-    /// when all objects and operations on objects must be replicated. Must be specified together
-    /// with a <code>Metrics</code> block. </p>
+    /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p>
     pub fn replication_time(&self) -> std::option::Option<&crate::model::ReplicationTime> {
         self.replication_time.as_ref()
     }
-    /// <p> A container specifying replication metrics-related settings enabling replication
-    /// metrics and events. </p>
+    /// <p> A container specifying replication metrics-related settings enabling replication metrics and events. </p>
     pub fn metrics(&self) -> std::option::Option<&crate::model::Metrics> {
         self.metrics.as_ref()
     }
@@ -6771,38 +6038,24 @@ pub mod destination {
             self.bucket = input;
             self
         }
-        /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to
-        /// change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying
-        /// the <code>AccessControlTranslation</code> property, this is the account ID of the
-        /// destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional
-        /// Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying the <code>AccessControlTranslation</code> property, this is the account ID of the destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.account = Some(input.into());
             self
         }
-        /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to
-        /// change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying
-        /// the <code>AccessControlTranslation</code> property, this is the account ID of the
-        /// destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional
-        /// Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying the <code>AccessControlTranslation</code> property, this is the account ID of the destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account = input;
             self
         }
-        /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced
-        /// redundancy. By default, Amazon S3 uses the storage class of the source object to create the
-        /// object replica. </p>
-        /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket
-        /// replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
+        /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica. </p>
+        /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
         pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
             self.storage_class = Some(input);
             self
         }
-        /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced
-        /// redundancy. By default, Amazon S3 uses the storage class of the source object to create the
-        /// object replica. </p>
-        /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket
-        /// replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
+        /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica. </p>
+        /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
         pub fn set_storage_class(
             mut self,
             input: std::option::Option<crate::model::StorageClass>,
@@ -6810,10 +6063,7 @@ pub mod destination {
             self.storage_class = input;
             self
         }
-        /// <p>Specify this only in a cross-account scenario (where source and destination bucket
-        /// owners are not the same), and you want to change replica ownership to the Amazon Web Services account that
-        /// owns the destination bucket. If this is not specified in the replication configuration, the
-        /// replicas are owned by same Amazon Web Services account that owns the source object.</p>
+        /// <p>Specify this only in a cross-account scenario (where source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p>
         pub fn access_control_translation(
             mut self,
             input: crate::model::AccessControlTranslation,
@@ -6821,10 +6071,7 @@ pub mod destination {
             self.access_control_translation = Some(input);
             self
         }
-        /// <p>Specify this only in a cross-account scenario (where source and destination bucket
-        /// owners are not the same), and you want to change replica ownership to the Amazon Web Services account that
-        /// owns the destination bucket. If this is not specified in the replication configuration, the
-        /// replicas are owned by same Amazon Web Services account that owns the source object.</p>
+        /// <p>Specify this only in a cross-account scenario (where source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p>
         pub fn set_access_control_translation(
             mut self,
             input: std::option::Option<crate::model::AccessControlTranslation>,
@@ -6832,8 +6079,7 @@ pub mod destination {
             self.access_control_translation = input;
             self
         }
-        /// <p>A container that provides information about encryption. If
-        /// <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
+        /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
         pub fn encryption_configuration(
             mut self,
             input: crate::model::EncryptionConfiguration,
@@ -6841,8 +6087,7 @@ pub mod destination {
             self.encryption_configuration = Some(input);
             self
         }
-        /// <p>A container that provides information about encryption. If
-        /// <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
+        /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
         pub fn set_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfiguration>,
@@ -6850,16 +6095,12 @@ pub mod destination {
             self.encryption_configuration = input;
             self
         }
-        /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time
-        /// when all objects and operations on objects must be replicated. Must be specified together
-        /// with a <code>Metrics</code> block. </p>
+        /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p>
         pub fn replication_time(mut self, input: crate::model::ReplicationTime) -> Self {
             self.replication_time = Some(input);
             self
         }
-        /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time
-        /// when all objects and operations on objects must be replicated. Must be specified together
-        /// with a <code>Metrics</code> block. </p>
+        /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p>
         pub fn set_replication_time(
             mut self,
             input: std::option::Option<crate::model::ReplicationTime>,
@@ -6867,14 +6108,12 @@ pub mod destination {
             self.replication_time = input;
             self
         }
-        /// <p> A container specifying replication metrics-related settings enabling replication
-        /// metrics and events. </p>
+        /// <p> A container specifying replication metrics-related settings enabling replication metrics and events. </p>
         pub fn metrics(mut self, input: crate::model::Metrics) -> Self {
             self.metrics = Some(input);
             self
         }
-        /// <p> A container specifying replication metrics-related settings enabling replication
-        /// metrics and events. </p>
+        /// <p> A container specifying replication metrics-related settings enabling replication metrics and events. </p>
         pub fn set_metrics(mut self, input: std::option::Option<crate::model::Metrics>) -> Self {
             self.metrics = input;
             self
@@ -6900,15 +6139,13 @@ impl Destination {
     }
 }
 
-/// <p> A container specifying replication metrics-related settings enabling replication
-/// metrics and events.</p>
+/// <p> A container specifying replication metrics-related settings enabling replication metrics and events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Metrics {
     /// <p> Specifies whether the replication metrics are enabled. </p>
     pub status: std::option::Option<crate::model::MetricsStatus>,
-    /// <p> A container specifying the time threshold for emitting the
-    /// <code>s3:Replication:OperationMissedThreshold</code> event. </p>
+    /// <p> A container specifying the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p>
     pub event_threshold: std::option::Option<crate::model::ReplicationTimeValue>,
 }
 impl Metrics {
@@ -6916,8 +6153,7 @@ impl Metrics {
     pub fn status(&self) -> std::option::Option<&crate::model::MetricsStatus> {
         self.status.as_ref()
     }
-    /// <p> A container specifying the time threshold for emitting the
-    /// <code>s3:Replication:OperationMissedThreshold</code> event. </p>
+    /// <p> A container specifying the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p>
     pub fn event_threshold(&self) -> std::option::Option<&crate::model::ReplicationTimeValue> {
         self.event_threshold.as_ref()
     }
@@ -6953,14 +6189,12 @@ pub mod metrics {
             self.status = input;
             self
         }
-        /// <p> A container specifying the time threshold for emitting the
-        /// <code>s3:Replication:OperationMissedThreshold</code> event. </p>
+        /// <p> A container specifying the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p>
         pub fn event_threshold(mut self, input: crate::model::ReplicationTimeValue) -> Self {
             self.event_threshold = Some(input);
             self
         }
-        /// <p> A container specifying the time threshold for emitting the
-        /// <code>s3:Replication:OperationMissedThreshold</code> event. </p>
+        /// <p> A container specifying the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p>
         pub fn set_event_threshold(
             mut self,
             input: std::option::Option<crate::model::ReplicationTimeValue>,
@@ -6984,8 +6218,7 @@ impl Metrics {
     }
 }
 
-/// <p> A container specifying the time value for S3 Replication Time Control (S3 RTC) and replication metrics
-/// <code>EventThreshold</code>. </p>
+/// <p> A container specifying the time value for S3 Replication Time Control (S3 RTC) and replication metrics <code>EventThreshold</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationTimeValue {
@@ -7098,16 +6331,13 @@ impl AsRef<str> for MetricsStatus {
     }
 }
 
-/// <p> A container specifying S3 Replication Time Control (S3 RTC) related information, including whether S3 RTC is
-/// enabled and the time when all objects and operations on objects must be replicated. Must be
-/// specified together with a <code>Metrics</code> block. </p>
+/// <p> A container specifying S3 Replication Time Control (S3 RTC) related information, including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationTime {
     /// <p> Specifies whether the replication time is enabled. </p>
     pub status: std::option::Option<crate::model::ReplicationTimeStatus>,
-    /// <p> A container specifying the time by which replication should be complete for all objects
-    /// and operations on objects. </p>
+    /// <p> A container specifying the time by which replication should be complete for all objects and operations on objects. </p>
     pub time: std::option::Option<crate::model::ReplicationTimeValue>,
 }
 impl ReplicationTime {
@@ -7115,8 +6345,7 @@ impl ReplicationTime {
     pub fn status(&self) -> std::option::Option<&crate::model::ReplicationTimeStatus> {
         self.status.as_ref()
     }
-    /// <p> A container specifying the time by which replication should be complete for all objects
-    /// and operations on objects. </p>
+    /// <p> A container specifying the time by which replication should be complete for all objects and operations on objects. </p>
     pub fn time(&self) -> std::option::Option<&crate::model::ReplicationTimeValue> {
         self.time.as_ref()
     }
@@ -7152,14 +6381,12 @@ pub mod replication_time {
             self.status = input;
             self
         }
-        /// <p> A container specifying the time by which replication should be complete for all objects
-        /// and operations on objects. </p>
+        /// <p> A container specifying the time by which replication should be complete for all objects and operations on objects. </p>
         pub fn time(mut self, input: crate::model::ReplicationTimeValue) -> Self {
             self.time = Some(input);
             self
         }
-        /// <p> A container specifying the time by which replication should be complete for all objects
-        /// and operations on objects. </p>
+        /// <p> A container specifying the time by which replication should be complete for all objects and operations on objects. </p>
         pub fn set_time(
             mut self,
             input: std::option::Option<crate::model::ReplicationTimeValue>,
@@ -7238,24 +6465,15 @@ impl AsRef<str> for ReplicationTimeStatus {
     }
 }
 
-/// <p>Specifies encryption-related information for an Amazon S3 bucket that is a destination for
-/// replicated objects.</p>
+/// <p>Specifies encryption-related information for an Amazon S3 bucket that is a destination for replicated objects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionConfiguration {
-    /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key
-    /// stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses
-    /// this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys.
-    /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-    /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub replica_kms_key_id: std::option::Option<std::string::String>,
 }
 impl EncryptionConfiguration {
-    /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key
-    /// stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses
-    /// this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys.
-    /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-    /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub fn replica_kms_key_id(&self) -> std::option::Option<&str> {
         self.replica_kms_key_id.as_deref()
     }
@@ -7276,20 +6494,12 @@ pub mod encryption_configuration {
         pub(crate) replica_kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key
-        /// stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses
-        /// this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-        /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn replica_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.replica_kms_key_id = Some(input.into());
             self
         }
-        /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key
-        /// stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses
-        /// this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-        /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn set_replica_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7316,13 +6526,11 @@ impl EncryptionConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessControlTranslation {
-    /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket
-    /// replication</a> in the <i>Amazon S3 API Reference</i>.</p>
+    /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
     pub owner: std::option::Option<crate::model::OwnerOverride>,
 }
 impl AccessControlTranslation {
-    /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket
-    /// replication</a> in the <i>Amazon S3 API Reference</i>.</p>
+    /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
     pub fn owner(&self) -> std::option::Option<&crate::model::OwnerOverride> {
         self.owner.as_ref()
     }
@@ -7343,14 +6551,12 @@ pub mod access_control_translation {
         pub(crate) owner: std::option::Option<crate::model::OwnerOverride>,
     }
     impl Builder {
-        /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket
-        /// replication</a> in the <i>Amazon S3 API Reference</i>.</p>
+        /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
         pub fn owner(mut self, input: crate::model::OwnerOverride) -> Self {
             self.owner = Some(input);
             self
         }
-        /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket
-        /// replication</a> in the <i>Amazon S3 API Reference</i>.</p>
+        /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
         pub fn set_owner(
             mut self,
             input: std::option::Option<crate::model::OwnerOverride>,
@@ -7422,9 +6628,7 @@ impl AsRef<str> for OwnerOverride {
     }
 }
 
-/// <p>Optional configuration to replicate existing source bucket objects. For more
-/// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>.
-/// </p>
+/// <p>Optional configuration to replicate existing source bucket objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating Existing Objects</a> in the <i>Amazon S3 User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExistingObjectReplication {
@@ -7536,46 +6740,26 @@ impl AsRef<str> for ExistingObjectReplicationStatus {
     }
 }
 
-/// <p>A container that describes additional filters for identifying the source objects that
-/// you want to replicate. You can choose to enable or disable the replication of these
-/// objects. Currently, Amazon S3 supports only the filter that you can specify for objects created
-/// with server-side encryption using a customer managed key stored in Amazon Web Services Key Management
-/// Service (SSE-KMS).</p>
+/// <p>A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceSelectionCriteria {
-    /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services
-    /// KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration,
-    /// this element is required. </p>
+    /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p>
     pub sse_kms_encrypted_objects: std::option::Option<crate::model::SseKmsEncryptedObjects>,
-    /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't
-    /// replicate replica modifications by default. In the latest version of replication
-    /// configuration (when <code>Filter</code> is specified), you can specify this element and set
-    /// the status to <code>Enabled</code> to replicate modifications on replicas. </p>
-    /// <note>
-    /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the
-    /// replication configuration is the earlier version, V1. In the earlier version, this
-    /// element is not allowed</p>
+    /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't replicate replica modifications by default. In the latest version of replication configuration (when <code>Filter</code> is specified), you can specify this element and set the status to <code>Enabled</code> to replicate modifications on replicas. </p> <note>
+    /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, this element is not allowed</p>
     /// </note>
     pub replica_modifications: std::option::Option<crate::model::ReplicaModifications>,
 }
 impl SourceSelectionCriteria {
-    /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services
-    /// KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration,
-    /// this element is required. </p>
+    /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p>
     pub fn sse_kms_encrypted_objects(
         &self,
     ) -> std::option::Option<&crate::model::SseKmsEncryptedObjects> {
         self.sse_kms_encrypted_objects.as_ref()
     }
-    /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't
-    /// replicate replica modifications by default. In the latest version of replication
-    /// configuration (when <code>Filter</code> is specified), you can specify this element and set
-    /// the status to <code>Enabled</code> to replicate modifications on replicas. </p>
-    /// <note>
-    /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the
-    /// replication configuration is the earlier version, V1. In the earlier version, this
-    /// element is not allowed</p>
+    /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't replicate replica modifications by default. In the latest version of replication configuration (when <code>Filter</code> is specified), you can specify this element and set the status to <code>Enabled</code> to replicate modifications on replicas. </p> <note>
+    /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, this element is not allowed</p>
     /// </note>
     pub fn replica_modifications(
         &self,
@@ -7602,9 +6786,7 @@ pub mod source_selection_criteria {
         pub(crate) replica_modifications: std::option::Option<crate::model::ReplicaModifications>,
     }
     impl Builder {
-        /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services
-        /// KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration,
-        /// this element is required. </p>
+        /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p>
         pub fn sse_kms_encrypted_objects(
             mut self,
             input: crate::model::SseKmsEncryptedObjects,
@@ -7612,9 +6794,7 @@ pub mod source_selection_criteria {
             self.sse_kms_encrypted_objects = Some(input);
             self
         }
-        /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services
-        /// KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration,
-        /// this element is required. </p>
+        /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p>
         pub fn set_sse_kms_encrypted_objects(
             mut self,
             input: std::option::Option<crate::model::SseKmsEncryptedObjects>,
@@ -7622,27 +6802,15 @@ pub mod source_selection_criteria {
             self.sse_kms_encrypted_objects = input;
             self
         }
-        /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't
-        /// replicate replica modifications by default. In the latest version of replication
-        /// configuration (when <code>Filter</code> is specified), you can specify this element and set
-        /// the status to <code>Enabled</code> to replicate modifications on replicas. </p>
-        /// <note>
-        /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the
-        /// replication configuration is the earlier version, V1. In the earlier version, this
-        /// element is not allowed</p>
+        /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't replicate replica modifications by default. In the latest version of replication configuration (when <code>Filter</code> is specified), you can specify this element and set the status to <code>Enabled</code> to replicate modifications on replicas. </p> <note>
+        /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, this element is not allowed</p>
         /// </note>
         pub fn replica_modifications(mut self, input: crate::model::ReplicaModifications) -> Self {
             self.replica_modifications = Some(input);
             self
         }
-        /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't
-        /// replicate replica modifications by default. In the latest version of replication
-        /// configuration (when <code>Filter</code> is specified), you can specify this element and set
-        /// the status to <code>Enabled</code> to replicate modifications on replicas. </p>
-        /// <note>
-        /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the
-        /// replication configuration is the earlier version, V1. In the earlier version, this
-        /// element is not allowed</p>
+        /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't replicate replica modifications by default. In the latest version of replication configuration (when <code>Filter</code> is specified), you can specify this element and set the status to <code>Enabled</code> to replicate modifications on replicas. </p> <note>
+        /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, this element is not allowed</p>
         /// </note>
         pub fn set_replica_modifications(
             mut self,
@@ -7667,14 +6835,8 @@ impl SourceSelectionCriteria {
     }
 }
 
-/// <p>A filter that you can specify for selection for modifications on replicas. Amazon S3 doesn't
-/// replicate replica modifications by default. In the latest version of replication
-/// configuration (when <code>Filter</code> is specified), you can specify this element and set
-/// the status to <code>Enabled</code> to replicate modifications on replicas. </p>
-/// <note>
-/// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the
-/// replication configuration is the earlier version, V1. In the earlier version, this
-/// element is not allowed.</p>
+/// <p>A filter that you can specify for selection for modifications on replicas. Amazon S3 doesn't replicate replica modifications by default. In the latest version of replication configuration (when <code>Filter</code> is specified), you can specify this element and set the status to <code>Enabled</code> to replicate modifications on replicas. </p> <note>
+/// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, this element is not allowed.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7787,18 +6949,15 @@ impl AsRef<str> for ReplicaModificationsStatus {
     }
 }
 
-/// <p>A container for filter information for the selection of S3 objects encrypted with Amazon Web Services
-/// KMS.</p>
+/// <p>A container for filter information for the selection of S3 objects encrypted with Amazon Web Services KMS.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SseKmsEncryptedObjects {
-    /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an
-    /// Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
+    /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
     pub status: std::option::Option<crate::model::SseKmsEncryptedObjectsStatus>,
 }
 impl SseKmsEncryptedObjects {
-    /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an
-    /// Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
+    /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::SseKmsEncryptedObjectsStatus> {
         self.status.as_ref()
     }
@@ -7819,14 +6978,12 @@ pub mod sse_kms_encrypted_objects {
         pub(crate) status: std::option::Option<crate::model::SseKmsEncryptedObjectsStatus>,
     }
     impl Builder {
-        /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an
-        /// Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
+        /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
         pub fn status(mut self, input: crate::model::SseKmsEncryptedObjectsStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an
-        /// Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
+        /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::SseKmsEncryptedObjectsStatus>,
@@ -7959,32 +7116,18 @@ impl AsRef<str> for ReplicationRuleStatus {
     }
 }
 
-/// <p>A filter that identifies the subset of objects to which the replication rule applies. A
-/// <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or
-/// an <code>And</code> child element.</p>
+/// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ReplicationRuleFilter {
-    /// <p>A container for specifying rule filters. The filters determine the subset of objects to
-    /// which the rule applies. This element is required only if you specify more than one filter.
-    /// For example: </p>
+    /// <p>A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap
-    /// these filters in an <code>And</code> tag.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements
-    /// in an <code>And</code> tag.</p>
-    /// </li>
+    /// <li> <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> tag.</p> </li>
+    /// <li> <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag.</p> </li>
     /// </ul>
     And(crate::model::ReplicationRuleAndOperator),
-    /// <p>An object key name prefix that identifies the subset of objects to which the rule
-    /// applies.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     Prefix(std::string::String),
     /// <p>A container for specifying a tag key and value. </p>
@@ -8046,31 +7189,22 @@ impl ReplicationRuleFilter {
     }
 }
 
-/// <p>A container for specifying rule filters. The filters determine the subset of objects to
-/// which the rule applies. This element is required only if you specify more than one filter. </p>
+/// <p>A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter. </p>
 /// <p>For example:</p>
 /// <ul>
-/// <li>
-/// <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap
-/// these filters in an <code>And</code> tag. </p>
-/// </li>
-/// <li>
-/// <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements
-/// in an <code>And</code> tag.</p>
-/// </li>
+/// <li> <p>If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an <code>And</code> tag. </p> </li>
+/// <li> <p>If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationRuleAndOperator {
-    /// <p>An object key name prefix that identifies the subset of objects to which the rule
-    /// applies.</p>
+    /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>An array of tags containing key and value pairs.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ReplicationRuleAndOperator {
-    /// <p>An object key name prefix that identifies the subset of objects to which the rule
-    /// applies.</p>
+    /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
@@ -8097,14 +7231,12 @@ pub mod replication_rule_and_operator {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>An object key name prefix that identifies the subset of objects to which the rule
-        /// applies.</p>
+        /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>An object key name prefix that identifies the subset of objects to which the rule
-        /// applies.</p>
+        /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -8114,9 +7246,9 @@ pub mod replication_rule_and_operator {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of tags containing key and value pairs.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8178,9 +7310,9 @@ pub mod ownership_controls {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The container element for an ownership control rule.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::OwnershipControlsRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::OwnershipControlsRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -8210,30 +7342,16 @@ impl OwnershipControls {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OwnershipControlsRule {
     /// <p>The container element for object ownership for a bucket's ownership controls.</p>
-    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket
-    /// owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned
-    /// ACL.</p>
-    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
-    /// the <code>bucket-owner-full-control</code> canned ACL.</p>
-    /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
-    /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
-    /// accepts PUT requests that don't specify an ACL or bucket owner full control
-    /// ACLs, such as the <code>bucket-owner-full-control</code> canned
-    /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
+    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
     pub object_ownership: std::option::Option<crate::model::ObjectOwnership>,
 }
 impl OwnershipControlsRule {
     /// <p>The container element for object ownership for a bucket's ownership controls.</p>
-    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket
-    /// owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned
-    /// ACL.</p>
-    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
-    /// the <code>bucket-owner-full-control</code> canned ACL.</p>
-    /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
-    /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
-    /// accepts PUT requests that don't specify an ACL or bucket owner full control
-    /// ACLs, such as the <code>bucket-owner-full-control</code> canned
-    /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
+    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
     pub fn object_ownership(&self) -> std::option::Option<&crate::model::ObjectOwnership> {
         self.object_ownership.as_ref()
     }
@@ -8255,31 +7373,17 @@ pub mod ownership_controls_rule {
     }
     impl Builder {
         /// <p>The container element for object ownership for a bucket's ownership controls.</p>
-        /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket
-        /// owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned
-        /// ACL.</p>
-        /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
-        /// the <code>bucket-owner-full-control</code> canned ACL.</p>
-        /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
-        /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
-        /// accepts PUT requests that don't specify an ACL or bucket owner full control
-        /// ACLs, such as the <code>bucket-owner-full-control</code> canned
-        /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
+        /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+        /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+        /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
         pub fn object_ownership(mut self, input: crate::model::ObjectOwnership) -> Self {
             self.object_ownership = Some(input);
             self
         }
         /// <p>The container element for object ownership for a bucket's ownership controls.</p>
-        /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket
-        /// owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned
-        /// ACL.</p>
-        /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
-        /// the <code>bucket-owner-full-control</code> canned ACL.</p>
-        /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
-        /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
-        /// accepts PUT requests that don't specify an ACL or bucket owner full control
-        /// ACLs, such as the <code>bucket-owner-full-control</code> canned
-        /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
+        /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+        /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+        /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
         pub fn set_object_ownership(
             mut self,
             input: std::option::Option<crate::model::ObjectOwnership>,
@@ -8375,37 +7479,30 @@ impl AsRef<str> for ObjectOwnership {
     }
 }
 
-/// <p>A container for specifying the notification configuration of the bucket. If this element
-/// is empty, notifications are turned off for the bucket.</p>
+/// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationConfiguration {
-    /// <p>The topic to which notifications are sent and the events for which notifications are
-    /// generated.</p>
+    /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
     pub topic_configurations: std::option::Option<std::vec::Vec<crate::model::TopicConfiguration>>,
-    /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which
-    /// to publish messages.</p>
+    /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
     pub queue_configurations: std::option::Option<std::vec::Vec<crate::model::QueueConfiguration>>,
-    /// <p>Describes the Lambda functions to invoke and the events for which to invoke
-    /// them.</p>
+    /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
     pub lambda_function_configurations:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
     /// <p>Enables delivery of events to Amazon EventBridge.</p>
     pub event_bridge_configuration: std::option::Option<crate::model::EventBridgeConfiguration>,
 }
 impl NotificationConfiguration {
-    /// <p>The topic to which notifications are sent and the events for which notifications are
-    /// generated.</p>
+    /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
     pub fn topic_configurations(&self) -> std::option::Option<&[crate::model::TopicConfiguration]> {
         self.topic_configurations.as_deref()
     }
-    /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which
-    /// to publish messages.</p>
+    /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
     pub fn queue_configurations(&self) -> std::option::Option<&[crate::model::QueueConfiguration]> {
         self.queue_configurations.as_deref()
     }
-    /// <p>Describes the Lambda functions to invoke and the events for which to invoke
-    /// them.</p>
+    /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
     pub fn lambda_function_configurations(
         &self,
     ) -> std::option::Option<&[crate::model::LambdaFunctionConfiguration]> {
@@ -8454,19 +7551,14 @@ pub mod notification_configuration {
         ///
         /// To override the contents of this collection use [`set_topic_configurations`](Self::set_topic_configurations).
         ///
-        /// <p>The topic to which notifications are sent and the events for which notifications are
-        /// generated.</p>
-        pub fn topic_configurations(
-            mut self,
-            input: impl Into<crate::model::TopicConfiguration>,
-        ) -> Self {
+        /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
+        pub fn topic_configurations(mut self, input: crate::model::TopicConfiguration) -> Self {
             let mut v = self.topic_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.topic_configurations = Some(v);
             self
         }
-        /// <p>The topic to which notifications are sent and the events for which notifications are
-        /// generated.</p>
+        /// <p>The topic to which notifications are sent and the events for which notifications are generated.</p>
         pub fn set_topic_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TopicConfiguration>>,
@@ -8478,19 +7570,14 @@ pub mod notification_configuration {
         ///
         /// To override the contents of this collection use [`set_queue_configurations`](Self::set_queue_configurations).
         ///
-        /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which
-        /// to publish messages.</p>
-        pub fn queue_configurations(
-            mut self,
-            input: impl Into<crate::model::QueueConfiguration>,
-        ) -> Self {
+        /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
+        pub fn queue_configurations(mut self, input: crate::model::QueueConfiguration) -> Self {
             let mut v = self.queue_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.queue_configurations = Some(v);
             self
         }
-        /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which
-        /// to publish messages.</p>
+        /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which to publish messages.</p>
         pub fn set_queue_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QueueConfiguration>>,
@@ -8502,19 +7589,17 @@ pub mod notification_configuration {
         ///
         /// To override the contents of this collection use [`set_lambda_function_configurations`](Self::set_lambda_function_configurations).
         ///
-        /// <p>Describes the Lambda functions to invoke and the events for which to invoke
-        /// them.</p>
+        /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
         pub fn lambda_function_configurations(
             mut self,
-            input: impl Into<crate::model::LambdaFunctionConfiguration>,
+            input: crate::model::LambdaFunctionConfiguration,
         ) -> Self {
             let mut v = self.lambda_function_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.lambda_function_configurations = Some(v);
             self
         }
-        /// <p>Describes the Lambda functions to invoke and the events for which to invoke
-        /// them.</p>
+        /// <p>Describes the Lambda functions to invoke and the events for which to invoke them.</p>
         pub fn set_lambda_function_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
@@ -8590,41 +7675,29 @@ impl EventBridgeConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionConfiguration {
-    /// <p>An optional unique identifier for configurations in a notification configuration. If you
-    /// don't provide one, Amazon S3 will assign an ID.</p>
+    /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the
-    /// specified event type occurs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the specified event type occurs.</p>
     pub lambda_function_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
-    /// Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
-    /// <p>Specifies object key name filtering rules. For information about key name filtering, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-    /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub filter: std::option::Option<crate::model::NotificationConfigurationFilter>,
 }
 impl LambdaFunctionConfiguration {
-    /// <p>An optional unique identifier for configurations in a notification configuration. If you
-    /// don't provide one, Amazon S3 will assign an ID.</p>
+    /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the
-    /// specified event type occurs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the specified event type occurs.</p>
     pub fn lambda_function_arn(&self) -> std::option::Option<&str> {
         self.lambda_function_arn.as_deref()
     }
-    /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
-    /// Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
         self.events.as_deref()
     }
-    /// <p>Specifies object key name filtering rules. For information about key name filtering, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-    /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::NotificationConfigurationFilter> {
         self.filter.as_ref()
     }
@@ -8651,26 +7724,22 @@ pub mod lambda_function_configuration {
         pub(crate) filter: std::option::Option<crate::model::NotificationConfigurationFilter>,
     }
     impl Builder {
-        /// <p>An optional unique identifier for configurations in a notification configuration. If you
-        /// don't provide one, Amazon S3 will assign an ID.</p>
+        /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>An optional unique identifier for configurations in a notification configuration. If you
-        /// don't provide one, Amazon S3 will assign an ID.</p>
+        /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the
-        /// specified event type occurs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the specified event type occurs.</p>
         pub fn lambda_function_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.lambda_function_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the
-        /// specified event type occurs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the specified event type occurs.</p>
         pub fn set_lambda_function_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8682,18 +7751,14 @@ pub mod lambda_function_configuration {
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
-        /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
-        /// Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
-        /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
-        /// Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -8701,16 +7766,12 @@ pub mod lambda_function_configuration {
             self.events = input;
             self
         }
-        /// <p>Specifies object key name filtering rules. For information about key name filtering, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-        /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn filter(mut self, input: crate::model::NotificationConfigurationFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Specifies object key name filtering rules. For information about key name filtering, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-        /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::NotificationConfigurationFilter>,
@@ -8736,9 +7797,7 @@ impl LambdaFunctionConfiguration {
     }
 }
 
-/// <p>Specifies object key name filtering rules. For information about key name filtering, see
-/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-/// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationConfigurationFilter {
@@ -8794,13 +7853,11 @@ impl NotificationConfigurationFilter {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3KeyFilter {
-    /// <p>A list of containers for the key-value pair that defines the criteria for the filter
-    /// rule.</p>
+    /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
     pub filter_rules: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
 impl S3KeyFilter {
-    /// <p>A list of containers for the key-value pair that defines the criteria for the filter
-    /// rule.</p>
+    /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
     pub fn filter_rules(&self) -> std::option::Option<&[crate::model::FilterRule]> {
         self.filter_rules.as_deref()
     }
@@ -8825,16 +7882,14 @@ pub mod s3_key_filter {
         ///
         /// To override the contents of this collection use [`set_filter_rules`](Self::set_filter_rules).
         ///
-        /// <p>A list of containers for the key-value pair that defines the criteria for the filter
-        /// rule.</p>
-        pub fn filter_rules(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
+        /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
+        pub fn filter_rules(mut self, input: crate::model::FilterRule) -> Self {
             let mut v = self.filter_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.filter_rules = Some(v);
             self
         }
-        /// <p>A list of containers for the key-value pair that defines the criteria for the filter
-        /// rule.</p>
+        /// <p>A list of containers for the key-value pair that defines the criteria for the filter rule.</p>
         pub fn set_filter_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -8857,24 +7912,17 @@ impl S3KeyFilter {
     }
 }
 
-/// <p>Specifies the Amazon S3 object key name to filter on and whether to filter on the suffix or
-/// prefix of the key name.</p>
+/// <p>Specifies the Amazon S3 object key name to filter on and whether to filter on the suffix or prefix of the key name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterRule {
-    /// <p>The object key name prefix or suffix identifying one or more objects to which the
-    /// filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and
-    /// suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a>
-    /// in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The object key name prefix or suffix identifying one or more objects to which the filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub name: std::option::Option<crate::model::FilterRuleName>,
     /// <p>The value that the filter searches for in object key names.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl FilterRule {
-    /// <p>The object key name prefix or suffix identifying one or more objects to which the
-    /// filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and
-    /// suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a>
-    /// in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The object key name prefix or suffix identifying one or more objects to which the filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn name(&self) -> std::option::Option<&crate::model::FilterRuleName> {
         self.name.as_ref()
     }
@@ -8901,18 +7949,12 @@ pub mod filter_rule {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The object key name prefix or suffix identifying one or more objects to which the
-        /// filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and
-        /// suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a>
-        /// in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The object key name prefix or suffix identifying one or more objects to which the filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn name(mut self, input: crate::model::FilterRuleName) -> Self {
             self.name = Some(input);
             self
         }
-        /// <p>The object key name prefix or suffix identifying one or more objects to which the
-        /// filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and
-        /// suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a>
-        /// in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The object key name prefix or suffix identifying one or more objects to which the filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::FilterRuleName>,
@@ -9060,32 +8102,25 @@ where
     }
 }
 
-/// <p>Specifies the configuration for publishing messages to an Amazon Simple Queue Service
-/// (Amazon SQS) queue when Amazon S3 detects specified events.</p>
+/// <p>Specifies the configuration for publishing messages to an Amazon Simple Queue Service (Amazon SQS) queue when Amazon S3 detects specified events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueueConfiguration {
-    /// <p>An optional unique identifier for configurations in a notification configuration. If you
-    /// don't provide one, Amazon S3 will assign an ID.</p>
+    /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message
-    /// when it detects events of the specified type.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message when it detects events of the specified type.</p>
     pub queue_arn: std::option::Option<std::string::String>,
     /// <p>A collection of bucket events for which to send notifications</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
-    /// <p>Specifies object key name filtering rules. For information about key name filtering, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-    /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub filter: std::option::Option<crate::model::NotificationConfigurationFilter>,
 }
 impl QueueConfiguration {
-    /// <p>An optional unique identifier for configurations in a notification configuration. If you
-    /// don't provide one, Amazon S3 will assign an ID.</p>
+    /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message
-    /// when it detects events of the specified type.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message when it detects events of the specified type.</p>
     pub fn queue_arn(&self) -> std::option::Option<&str> {
         self.queue_arn.as_deref()
     }
@@ -9093,9 +8128,7 @@ impl QueueConfiguration {
     pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
         self.events.as_deref()
     }
-    /// <p>Specifies object key name filtering rules. For information about key name filtering, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-    /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::NotificationConfigurationFilter> {
         self.filter.as_ref()
     }
@@ -9122,26 +8155,22 @@ pub mod queue_configuration {
         pub(crate) filter: std::option::Option<crate::model::NotificationConfigurationFilter>,
     }
     impl Builder {
-        /// <p>An optional unique identifier for configurations in a notification configuration. If you
-        /// don't provide one, Amazon S3 will assign an ID.</p>
+        /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>An optional unique identifier for configurations in a notification configuration. If you
-        /// don't provide one, Amazon S3 will assign an ID.</p>
+        /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message
-        /// when it detects events of the specified type.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message when it detects events of the specified type.</p>
         pub fn queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.queue_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message
-        /// when it detects events of the specified type.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message when it detects events of the specified type.</p>
         pub fn set_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_arn = input;
             self
@@ -9151,9 +8180,9 @@ pub mod queue_configuration {
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>A collection of bucket events for which to send notifications</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
@@ -9165,16 +8194,12 @@ pub mod queue_configuration {
             self.events = input;
             self
         }
-        /// <p>Specifies object key name filtering rules. For information about key name filtering, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-        /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn filter(mut self, input: crate::model::NotificationConfigurationFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Specifies object key name filtering rules. For information about key name filtering, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-        /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::NotificationConfigurationFilter>,
@@ -9200,46 +8225,33 @@ impl QueueConfiguration {
     }
 }
 
-/// <p>A container for specifying the configuration for publication of messages to an Amazon
-/// Simple Notification Service (Amazon SNS) topic when Amazon S3 detects specified events.</p>
+/// <p>A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS) topic when Amazon S3 detects specified events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TopicConfiguration {
-    /// <p>An optional unique identifier for configurations in a notification configuration. If you
-    /// don't provide one, Amazon S3 will assign an ID.</p>
+    /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message
-    /// when it detects events of the specified type.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message when it detects events of the specified type.</p>
     pub topic_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 bucket event about which to send notifications. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
-    /// Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Amazon S3 bucket event about which to send notifications. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
-    /// <p>Specifies object key name filtering rules. For information about key name filtering, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-    /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub filter: std::option::Option<crate::model::NotificationConfigurationFilter>,
 }
 impl TopicConfiguration {
-    /// <p>An optional unique identifier for configurations in a notification configuration. If you
-    /// don't provide one, Amazon S3 will assign an ID.</p>
+    /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message
-    /// when it detects events of the specified type.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message when it detects events of the specified type.</p>
     pub fn topic_arn(&self) -> std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
-    /// <p>The Amazon S3 bucket event about which to send notifications. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
-    /// Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Amazon S3 bucket event about which to send notifications. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
         self.events.as_deref()
     }
-    /// <p>Specifies object key name filtering rules. For information about key name filtering, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-    /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::NotificationConfigurationFilter> {
         self.filter.as_ref()
     }
@@ -9266,26 +8278,22 @@ pub mod topic_configuration {
         pub(crate) filter: std::option::Option<crate::model::NotificationConfigurationFilter>,
     }
     impl Builder {
-        /// <p>An optional unique identifier for configurations in a notification configuration. If you
-        /// don't provide one, Amazon S3 will assign an ID.</p>
+        /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>An optional unique identifier for configurations in a notification configuration. If you
-        /// don't provide one, Amazon S3 will assign an ID.</p>
+        /// <p>An optional unique identifier for configurations in a notification configuration. If you don't provide one, Amazon S3 will assign an ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message
-        /// when it detects events of the specified type.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message when it detects events of the specified type.</p>
         pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.topic_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message
-        /// when it detects events of the specified type.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message when it detects events of the specified type.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -9294,18 +8302,14 @@ pub mod topic_configuration {
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
-        /// <p>The Amazon S3 bucket event about which to send notifications. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
-        /// Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
+        /// <p>The Amazon S3 bucket event about which to send notifications. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.events = Some(v);
             self
         }
-        /// <p>The Amazon S3 bucket event about which to send notifications. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
-        /// Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The Amazon S3 bucket event about which to send notifications. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -9313,16 +8317,12 @@ pub mod topic_configuration {
             self.events = input;
             self
         }
-        /// <p>Specifies object key name filtering rules. For information about key name filtering, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-        /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn filter(mut self, input: crate::model::NotificationConfigurationFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Specifies object key name filtering rules. For information about key name filtering, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-        /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::NotificationConfigurationFilter>,
@@ -9348,19 +8348,13 @@ impl TopicConfiguration {
     }
 }
 
-/// <p>Specifies a metrics configuration for the CloudWatch request metrics (specified by the
-/// metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing metrics
-/// configuration, note that this is a full replacement of the existing metrics configuration.
-/// If you don't include the elements you want to keep, they are erased. For more information,
-/// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html">PutBucketMetricsConfiguration</a>.</p>
+/// <p>Specifies a metrics configuration for the CloudWatch request metrics (specified by the metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html">PutBucketMetricsConfiguration</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricsConfiguration {
     /// <p>The ID used to identify the metrics configuration.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>Specifies a metrics configuration filter. The metrics configuration will only include
-    /// objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction
-    /// (MetricsAndOperator).</p>
+    /// <p>Specifies a metrics configuration filter. The metrics configuration will only include objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
     pub filter: std::option::Option<crate::model::MetricsFilter>,
 }
 impl MetricsConfiguration {
@@ -9368,9 +8362,7 @@ impl MetricsConfiguration {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Specifies a metrics configuration filter. The metrics configuration will only include
-    /// objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction
-    /// (MetricsAndOperator).</p>
+    /// <p>Specifies a metrics configuration filter. The metrics configuration will only include objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::MetricsFilter> {
         self.filter.as_ref()
     }
@@ -9403,16 +8395,12 @@ pub mod metrics_configuration {
             self.id = input;
             self
         }
-        /// <p>Specifies a metrics configuration filter. The metrics configuration will only include
-        /// objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction
-        /// (MetricsAndOperator).</p>
+        /// <p>Specifies a metrics configuration filter. The metrics configuration will only include objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
         pub fn filter(mut self, input: crate::model::MetricsFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Specifies a metrics configuration filter. The metrics configuration will only include
-        /// objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction
-        /// (MetricsAndOperator).</p>
+        /// <p>Specifies a metrics configuration filter. The metrics configuration will only include objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::MetricsFilter>,
@@ -9436,17 +8424,13 @@ impl MetricsConfiguration {
     }
 }
 
-/// <p>Specifies a metrics configuration filter. The metrics configuration only includes
-/// objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction
-/// (MetricsAndOperator). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>.</p>
+/// <p>Specifies a metrics configuration filter. The metrics configuration only includes objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction (MetricsAndOperator). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum MetricsFilter {
     /// <p>The access point ARN used when evaluating a metrics filter.</p>
     AccessPointArn(std::string::String),
-    /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter.
-    /// The operator must have at least two predicates, and an object must match all of the
-    /// predicates in order for the filter to apply.</p>
+    /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates, and an object must match all of the predicates in order for the filter to apply.</p>
     And(crate::model::MetricsAndOperator),
     /// <p>The prefix used when evaluating a metrics filter.</p>
     Prefix(std::string::String),
@@ -9521,9 +8505,7 @@ impl MetricsFilter {
     }
 }
 
-/// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter.
-/// The operator must have at least two predicates, and an object must match all of the
-/// predicates in order for the filter to apply.</p>
+/// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates, and an object must match all of the predicates in order for the filter to apply.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetricsAndOperator {
@@ -9583,9 +8565,9 @@ pub mod metrics_and_operator {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags used when evaluating an AND predicate.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9631,15 +8613,11 @@ impl MetricsAndOperator {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketLoggingStatus {
-    /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys
-    /// for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the
-    /// <i>Amazon S3 API Reference</i>.</p>
+    /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
     pub logging_enabled: std::option::Option<crate::model::LoggingEnabled>,
 }
 impl BucketLoggingStatus {
-    /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys
-    /// for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the
-    /// <i>Amazon S3 API Reference</i>.</p>
+    /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
     pub fn logging_enabled(&self) -> std::option::Option<&crate::model::LoggingEnabled> {
         self.logging_enabled.as_ref()
     }
@@ -9660,16 +8638,12 @@ pub mod bucket_logging_status {
         pub(crate) logging_enabled: std::option::Option<crate::model::LoggingEnabled>,
     }
     impl Builder {
-        /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys
-        /// for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the
-        /// <i>Amazon S3 API Reference</i>.</p>
+        /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
         pub fn logging_enabled(mut self, input: crate::model::LoggingEnabled) -> Self {
             self.logging_enabled = Some(input);
             self
         }
-        /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys
-        /// for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the
-        /// <i>Amazon S3 API Reference</i>.</p>
+        /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
         pub fn set_logging_enabled(
             mut self,
             input: std::option::Option<crate::model::LoggingEnabled>,
@@ -9692,47 +8666,29 @@ impl BucketLoggingStatus {
     }
 }
 
-/// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys
-/// for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the
-/// <i>Amazon S3 API Reference</i>.</p>
+/// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingEnabled {
-    /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your
-    /// logs delivered to any bucket that you own, including the same bucket that is being logged.
-    /// You can also configure multiple buckets to deliver their logs to the same target bucket. In
-    /// this case, you should choose a different <code>TargetPrefix</code> for each source bucket
-    /// so that the delivered log files can be distinguished by key.</p>
+    /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your logs delivered to any bucket that you own, including the same bucket that is being logged. You can also configure multiple buckets to deliver their logs to the same target bucket. In this case, you should choose a different <code>TargetPrefix</code> for each source bucket so that the delivered log files can be distinguished by key.</p>
     pub target_bucket: std::option::Option<std::string::String>,
     /// <p>Container for granting information.</p>
-    /// <p>Buckets that use the bucket owner enforced setting for Object
-    /// Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Buckets that use the bucket owner enforced setting for Object Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub target_grants: std::option::Option<std::vec::Vec<crate::model::TargetGrant>>,
-    /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a
-    /// single bucket, you can use a prefix to distinguish which log files came from which
-    /// bucket.</p>
+    /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.</p>
     pub target_prefix: std::option::Option<std::string::String>,
 }
 impl LoggingEnabled {
-    /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your
-    /// logs delivered to any bucket that you own, including the same bucket that is being logged.
-    /// You can also configure multiple buckets to deliver their logs to the same target bucket. In
-    /// this case, you should choose a different <code>TargetPrefix</code> for each source bucket
-    /// so that the delivered log files can be distinguished by key.</p>
+    /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your logs delivered to any bucket that you own, including the same bucket that is being logged. You can also configure multiple buckets to deliver their logs to the same target bucket. In this case, you should choose a different <code>TargetPrefix</code> for each source bucket so that the delivered log files can be distinguished by key.</p>
     pub fn target_bucket(&self) -> std::option::Option<&str> {
         self.target_bucket.as_deref()
     }
     /// <p>Container for granting information.</p>
-    /// <p>Buckets that use the bucket owner enforced setting for Object
-    /// Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Buckets that use the bucket owner enforced setting for Object Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn target_grants(&self) -> std::option::Option<&[crate::model::TargetGrant]> {
         self.target_grants.as_deref()
     }
-    /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a
-    /// single bucket, you can use a prefix to distinguish which log files came from which
-    /// bucket.</p>
+    /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.</p>
     pub fn target_prefix(&self) -> std::option::Option<&str> {
         self.target_prefix.as_deref()
     }
@@ -9757,20 +8713,12 @@ pub mod logging_enabled {
         pub(crate) target_prefix: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your
-        /// logs delivered to any bucket that you own, including the same bucket that is being logged.
-        /// You can also configure multiple buckets to deliver their logs to the same target bucket. In
-        /// this case, you should choose a different <code>TargetPrefix</code> for each source bucket
-        /// so that the delivered log files can be distinguished by key.</p>
+        /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your logs delivered to any bucket that you own, including the same bucket that is being logged. You can also configure multiple buckets to deliver their logs to the same target bucket. In this case, you should choose a different <code>TargetPrefix</code> for each source bucket so that the delivered log files can be distinguished by key.</p>
         pub fn target_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_bucket = Some(input.into());
             self
         }
-        /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your
-        /// logs delivered to any bucket that you own, including the same bucket that is being logged.
-        /// You can also configure multiple buckets to deliver their logs to the same target bucket. In
-        /// this case, you should choose a different <code>TargetPrefix</code> for each source bucket
-        /// so that the delivered log files can be distinguished by key.</p>
+        /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your logs delivered to any bucket that you own, including the same bucket that is being logged. You can also configure multiple buckets to deliver their logs to the same target bucket. In this case, you should choose a different <code>TargetPrefix</code> for each source bucket so that the delivered log files can be distinguished by key.</p>
         pub fn set_target_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9783,19 +8731,15 @@ pub mod logging_enabled {
         /// To override the contents of this collection use [`set_target_grants`](Self::set_target_grants).
         ///
         /// <p>Container for granting information.</p>
-        /// <p>Buckets that use the bucket owner enforced setting for Object
-        /// Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
-        pub fn target_grants(mut self, input: impl Into<crate::model::TargetGrant>) -> Self {
+        /// <p>Buckets that use the bucket owner enforced setting for Object Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
+        pub fn target_grants(mut self, input: crate::model::TargetGrant) -> Self {
             let mut v = self.target_grants.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_grants = Some(v);
             self
         }
         /// <p>Container for granting information.</p>
-        /// <p>Buckets that use the bucket owner enforced setting for Object
-        /// Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Buckets that use the bucket owner enforced setting for Object Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_target_grants(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetGrant>>,
@@ -9803,16 +8747,12 @@ pub mod logging_enabled {
             self.target_grants = input;
             self
         }
-        /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a
-        /// single bucket, you can use a prefix to distinguish which log files came from which
-        /// bucket.</p>
+        /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.</p>
         pub fn target_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_prefix = Some(input.into());
             self
         }
-        /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a
-        /// single bucket, you can use a prefix to distinguish which log files came from which
-        /// bucket.</p>
+        /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.</p>
         pub fn set_target_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9838,9 +8778,7 @@ impl LoggingEnabled {
 }
 
 /// <p>Container for granting information.</p>
-/// <p>Buckets that use the bucket owner enforced setting for Object
-/// Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions server access log delivery</a> in the
-/// <i>Amazon S3 User Guide</i>.</p>
+/// <p>Buckets that use the bucket owner enforced setting for Object Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetGrant {
@@ -9975,9 +8913,7 @@ impl AsRef<str> for BucketLogsPermission {
     }
 }
 
-/// <p>Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more
-/// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object Lifecycle Management</a>
-/// in the <i>Amazon S3 User Guide</i>.</p>
+/// <p>Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object Lifecycle Management</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketLifecycleConfiguration {
@@ -10011,9 +8947,9 @@ pub mod bucket_lifecycle_configuration {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::LifecycleRule>) -> Self {
+        pub fn rules(mut self, input: crate::model::LifecycleRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -10042,52 +8978,32 @@ impl BucketLifecycleConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleRule {
-    /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and,
-    /// whether the object has a delete marker.</p>
+    /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
     pub expiration: std::option::Option<crate::model::LifecycleExpiration>,
     /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>Prefix identifying one or more objects to which the rule applies. This is
-    /// no longer used; use <code>Filter</code> instead.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A
-    /// <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or
-    /// <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code>
-    /// does not containt a <code>Prefix</code> element.</p>
+    /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not containt a <code>Prefix</code> element.</p>
     pub filter: std::option::Option<crate::model::LifecycleRuleFilter>,
-    /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not
-    /// currently being applied.</p>
+    /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
     pub status: std::option::Option<crate::model::ExpirationStatus>,
     /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p>
     pub transitions: std::option::Option<std::vec::Vec<crate::model::Transition>>,
-    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent
-    /// objects transition to a specific storage class. If your bucket is versioning-enabled (or
-    /// versioning is suspended), you can set this action to request that Amazon S3 transition
-    /// noncurrent object versions to a specific storage class at a set period in the object's
-    /// lifetime. </p>
+    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
     pub noncurrent_version_transitions:
         std::option::Option<std::vec::Vec<crate::model::NoncurrentVersionTransition>>,
-    /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently
-    /// deletes the noncurrent object versions. You set this lifecycle configuration action on a
-    /// bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent
-    /// object versions at a specific period in the object's lifetime.</p>
+    /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
     pub noncurrent_version_expiration:
         std::option::Option<crate::model::NoncurrentVersionExpiration>,
-    /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will
-    /// wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-    /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub abort_incomplete_multipart_upload:
         std::option::Option<crate::model::AbortIncompleteMultipartUpload>,
 }
 impl LifecycleRule {
-    /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and,
-    /// whether the object has a delete marker.</p>
+    /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
     pub fn expiration(&self) -> std::option::Option<&crate::model::LifecycleExpiration> {
         self.expiration.as_ref()
     }
@@ -10095,25 +9011,17 @@ impl LifecycleRule {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Prefix identifying one or more objects to which the rule applies. This is
-    /// no longer used; use <code>Filter</code> instead.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A
-    /// <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or
-    /// <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code>
-    /// does not containt a <code>Prefix</code> element.</p>
+    /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not containt a <code>Prefix</code> element.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::LifecycleRuleFilter> {
         self.filter.as_ref()
     }
-    /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not
-    /// currently being applied.</p>
+    /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ExpirationStatus> {
         self.status.as_ref()
     }
@@ -10121,29 +9029,19 @@ impl LifecycleRule {
     pub fn transitions(&self) -> std::option::Option<&[crate::model::Transition]> {
         self.transitions.as_deref()
     }
-    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent
-    /// objects transition to a specific storage class. If your bucket is versioning-enabled (or
-    /// versioning is suspended), you can set this action to request that Amazon S3 transition
-    /// noncurrent object versions to a specific storage class at a set period in the object's
-    /// lifetime. </p>
+    /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
     pub fn noncurrent_version_transitions(
         &self,
     ) -> std::option::Option<&[crate::model::NoncurrentVersionTransition]> {
         self.noncurrent_version_transitions.as_deref()
     }
-    /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently
-    /// deletes the noncurrent object versions. You set this lifecycle configuration action on a
-    /// bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent
-    /// object versions at a specific period in the object's lifetime.</p>
+    /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
     pub fn noncurrent_version_expiration(
         &self,
     ) -> std::option::Option<&crate::model::NoncurrentVersionExpiration> {
         self.noncurrent_version_expiration.as_ref()
     }
-    /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will
-    /// wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-    /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn abort_incomplete_multipart_upload(
         &self,
     ) -> std::option::Option<&crate::model::AbortIncompleteMultipartUpload> {
@@ -10194,14 +9092,12 @@ pub mod lifecycle_rule {
             std::option::Option<crate::model::AbortIncompleteMultipartUpload>,
     }
     impl Builder {
-        /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and,
-        /// whether the object has a delete marker.</p>
+        /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
         pub fn expiration(mut self, input: crate::model::LifecycleExpiration) -> Self {
             self.expiration = Some(input);
             self
         }
-        /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and,
-        /// whether the object has a delete marker.</p>
+        /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and, whether the object has a delete marker.</p>
         pub fn set_expiration(
             mut self,
             input: std::option::Option<crate::model::LifecycleExpiration>,
@@ -10219,40 +9115,26 @@ pub mod lifecycle_rule {
             self.id = input;
             self
         }
-        /// <p>Prefix identifying one or more objects to which the rule applies. This is
-        /// no longer used; use <code>Filter</code> instead.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>Prefix identifying one or more objects to which the rule applies. This is
-        /// no longer used; use <code>Filter</code> instead.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>Prefix identifying one or more objects to which the rule applies. This is no longer used; use <code>Filter</code> instead.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
         }
-        /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A
-        /// <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or
-        /// <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code>
-        /// does not containt a <code>Prefix</code> element.</p>
+        /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not containt a <code>Prefix</code> element.</p>
         pub fn filter(mut self, input: crate::model::LifecycleRuleFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A
-        /// <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or
-        /// <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code>
-        /// does not containt a <code>Prefix</code> element.</p>
+        /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code> does not containt a <code>Prefix</code> element.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::LifecycleRuleFilter>,
@@ -10260,14 +9142,12 @@ pub mod lifecycle_rule {
             self.filter = input;
             self
         }
-        /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not
-        /// currently being applied.</p>
+        /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
         pub fn status(mut self, input: crate::model::ExpirationStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not
-        /// currently being applied.</p>
+        /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ExpirationStatus>,
@@ -10280,9 +9160,9 @@ pub mod lifecycle_rule {
         /// To override the contents of this collection use [`set_transitions`](Self::set_transitions).
         ///
         /// <p>Specifies when an Amazon S3 object transitions to a specified storage class.</p>
-        pub fn transitions(mut self, input: impl Into<crate::model::Transition>) -> Self {
+        pub fn transitions(mut self, input: crate::model::Transition) -> Self {
             let mut v = self.transitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.transitions = Some(v);
             self
         }
@@ -10298,25 +9178,17 @@ pub mod lifecycle_rule {
         ///
         /// To override the contents of this collection use [`set_noncurrent_version_transitions`](Self::set_noncurrent_version_transitions).
         ///
-        /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent
-        /// objects transition to a specific storage class. If your bucket is versioning-enabled (or
-        /// versioning is suspended), you can set this action to request that Amazon S3 transition
-        /// noncurrent object versions to a specific storage class at a set period in the object's
-        /// lifetime. </p>
+        /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
         pub fn noncurrent_version_transitions(
             mut self,
-            input: impl Into<crate::model::NoncurrentVersionTransition>,
+            input: crate::model::NoncurrentVersionTransition,
         ) -> Self {
             let mut v = self.noncurrent_version_transitions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.noncurrent_version_transitions = Some(v);
             self
         }
-        /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent
-        /// objects transition to a specific storage class. If your bucket is versioning-enabled (or
-        /// versioning is suspended), you can set this action to request that Amazon S3 transition
-        /// noncurrent object versions to a specific storage class at a set period in the object's
-        /// lifetime. </p>
+        /// <p> Specifies the transition rule for the lifecycle rule that describes when noncurrent objects transition to a specific storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to a specific storage class at a set period in the object's lifetime. </p>
         pub fn set_noncurrent_version_transitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NoncurrentVersionTransition>>,
@@ -10324,10 +9196,7 @@ pub mod lifecycle_rule {
             self.noncurrent_version_transitions = input;
             self
         }
-        /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently
-        /// deletes the noncurrent object versions. You set this lifecycle configuration action on a
-        /// bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent
-        /// object versions at a specific period in the object's lifetime.</p>
+        /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
         pub fn noncurrent_version_expiration(
             mut self,
             input: crate::model::NoncurrentVersionExpiration,
@@ -10335,10 +9204,7 @@ pub mod lifecycle_rule {
             self.noncurrent_version_expiration = Some(input);
             self
         }
-        /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently
-        /// deletes the noncurrent object versions. You set this lifecycle configuration action on a
-        /// bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent
-        /// object versions at a specific period in the object's lifetime.</p>
+        /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
         pub fn set_noncurrent_version_expiration(
             mut self,
             input: std::option::Option<crate::model::NoncurrentVersionExpiration>,
@@ -10346,10 +9212,7 @@ pub mod lifecycle_rule {
             self.noncurrent_version_expiration = input;
             self
         }
-        /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will
-        /// wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-        /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn abort_incomplete_multipart_upload(
             mut self,
             input: crate::model::AbortIncompleteMultipartUpload,
@@ -10357,10 +9220,7 @@ pub mod lifecycle_rule {
             self.abort_incomplete_multipart_upload = Some(input);
             self
         }
-        /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will
-        /// wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-        /// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_abort_incomplete_multipart_upload(
             mut self,
             input: std::option::Option<crate::model::AbortIncompleteMultipartUpload>,
@@ -10391,20 +9251,15 @@ impl LifecycleRule {
     }
 }
 
-/// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will
-/// wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-/// Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the
-/// <i>Amazon S3 User Guide</i>.</p>
+/// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"> Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AbortIncompleteMultipartUpload {
-    /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart
-    /// upload.</p>
+    /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart upload.</p>
     pub days_after_initiation: i32,
 }
 impl AbortIncompleteMultipartUpload {
-    /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart
-    /// upload.</p>
+    /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart upload.</p>
     pub fn days_after_initiation(&self) -> i32 {
         self.days_after_initiation
     }
@@ -10425,14 +9280,12 @@ pub mod abort_incomplete_multipart_upload {
         pub(crate) days_after_initiation: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart
-        /// upload.</p>
+        /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart upload.</p>
         pub fn days_after_initiation(mut self, input: i32) -> Self {
             self.days_after_initiation = Some(input);
             self
         }
-        /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart
-        /// upload.</p>
+        /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart upload.</p>
         pub fn set_days_after_initiation(mut self, input: std::option::Option<i32>) -> Self {
             self.days_after_initiation = input;
             self
@@ -10452,34 +9305,21 @@ impl AbortIncompleteMultipartUpload {
     }
 }
 
-/// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently
-/// deletes the noncurrent object versions. You set this lifecycle configuration action on a
-/// bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent
-/// object versions at a specific period in the object's lifetime.</p>
+/// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoncurrentVersionExpiration {
-    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
-    /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
-    /// Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub noncurrent_days: i32,
-    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
-    /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
-    /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
-    /// in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub newer_noncurrent_versions: i32,
 }
 impl NoncurrentVersionExpiration {
-    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
-    /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
-    /// Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn noncurrent_days(&self) -> i32 {
         self.noncurrent_days
     }
-    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
-    /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
-    /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
-    /// in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn newer_noncurrent_versions(&self) -> i32 {
         self.newer_noncurrent_versions
     }
@@ -10502,32 +9342,22 @@ pub mod noncurrent_version_expiration {
         pub(crate) newer_noncurrent_versions: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
-        /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
-        /// Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn noncurrent_days(mut self, input: i32) -> Self {
             self.noncurrent_days = Some(input);
             self
         }
-        /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
-        /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
-        /// Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_noncurrent_days(mut self, input: std::option::Option<i32>) -> Self {
             self.noncurrent_days = input;
             self
         }
-        /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
-        /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
-        /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
-        /// in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn newer_noncurrent_versions(mut self, input: i32) -> Self {
             self.newer_noncurrent_versions = Some(input);
             self
         }
-        /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
-        /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
-        /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
-        /// in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_newer_noncurrent_versions(mut self, input: std::option::Option<i32>) -> Self {
             self.newer_noncurrent_versions = input;
             self
@@ -10548,35 +9378,19 @@ impl NoncurrentVersionExpiration {
     }
 }
 
-/// <p>Container for the transition rule that describes when noncurrent objects transition to
-/// the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>,
-/// <code>GLACIER_IR</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class. If your bucket is
-/// versioning-enabled (or versioning is suspended), you can set this action to request that
-/// Amazon S3 transition noncurrent object versions to the <code>STANDARD_IA</code>,
-/// <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER_IR</code>, <code>GLACIER</code>, or
-/// <code>DEEP_ARCHIVE</code> storage class at a specific period in the object's
-/// lifetime.</p>
+/// <p>Container for the transition rule that describes when noncurrent objects transition to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER_IR</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER_IR</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class at a specific period in the object's lifetime.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoncurrentVersionTransition {
-    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
-    /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
-    /// Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub noncurrent_days: i32,
     /// <p>The class of storage used to store the object.</p>
     pub storage_class: std::option::Option<crate::model::TransitionStorageClass>,
-    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
-    /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
-    /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
-    /// in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub newer_noncurrent_versions: i32,
 }
 impl NoncurrentVersionTransition {
-    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
-    /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
-    /// Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn noncurrent_days(&self) -> i32 {
         self.noncurrent_days
     }
@@ -10584,10 +9398,7 @@ impl NoncurrentVersionTransition {
     pub fn storage_class(&self) -> std::option::Option<&crate::model::TransitionStorageClass> {
         self.storage_class.as_ref()
     }
-    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
-    /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
-    /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
-    /// in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn newer_noncurrent_versions(&self) -> i32 {
         self.newer_noncurrent_versions
     }
@@ -10612,18 +9423,12 @@ pub mod noncurrent_version_transition {
         pub(crate) newer_noncurrent_versions: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
-        /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
-        /// Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn noncurrent_days(mut self, input: i32) -> Self {
             self.noncurrent_days = Some(input);
             self
         }
-        /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
-        /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
-        /// Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_noncurrent_days(mut self, input: std::option::Option<i32>) -> Self {
             self.noncurrent_days = input;
             self
@@ -10641,18 +9446,12 @@ pub mod noncurrent_version_transition {
             self.storage_class = input;
             self
         }
-        /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
-        /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
-        /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
-        /// in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn newer_noncurrent_versions(mut self, input: i32) -> Self {
             self.newer_noncurrent_versions = Some(input);
             self
         }
-        /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent
-        /// noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent
-        /// versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a>
-        /// in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_newer_noncurrent_versions(mut self, input: std::option::Option<i32>) -> Self {
             self.newer_noncurrent_versions = input;
             self
@@ -10752,29 +9551,23 @@ impl AsRef<str> for TransitionStorageClass {
     }
 }
 
-/// <p>Specifies when an object transitions to a specified storage class. For more information
-/// about Amazon S3 lifecycle configuration rules, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html">Transitioning
-/// Objects Using Amazon S3 Lifecycle</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <p>Specifies when an object transitions to a specified storage class. For more information about Amazon S3 lifecycle configuration rules, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html">Transitioning Objects Using Amazon S3 Lifecycle</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Transition {
-    /// <p>Indicates when objects are transitioned to the specified storage class. The date value
-    /// must be in ISO 8601 format. The time is always midnight UTC.</p>
+    /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
     pub date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates the number of days after creation when objects are transitioned to the
-    /// specified storage class. The value must be a positive integer.</p>
+    /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
     pub days: i32,
     /// <p>The storage class to which you want the object to transition.</p>
     pub storage_class: std::option::Option<crate::model::TransitionStorageClass>,
 }
 impl Transition {
-    /// <p>Indicates when objects are transitioned to the specified storage class. The date value
-    /// must be in ISO 8601 format. The time is always midnight UTC.</p>
+    /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
     pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
-    /// <p>Indicates the number of days after creation when objects are transitioned to the
-    /// specified storage class. The value must be a positive integer.</p>
+    /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
     pub fn days(&self) -> i32 {
         self.days
     }
@@ -10803,26 +9596,22 @@ pub mod transition {
         pub(crate) storage_class: std::option::Option<crate::model::TransitionStorageClass>,
     }
     impl Builder {
-        /// <p>Indicates when objects are transitioned to the specified storage class. The date value
-        /// must be in ISO 8601 format. The time is always midnight UTC.</p>
+        /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
         pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date = Some(input);
             self
         }
-        /// <p>Indicates when objects are transitioned to the specified storage class. The date value
-        /// must be in ISO 8601 format. The time is always midnight UTC.</p>
+        /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
         pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.date = input;
             self
         }
-        /// <p>Indicates the number of days after creation when objects are transitioned to the
-        /// specified storage class. The value must be a positive integer.</p>
+        /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
         pub fn days(mut self, input: i32) -> Self {
             self.days = Some(input);
             self
         }
-        /// <p>Indicates the number of days after creation when objects are transitioned to the
-        /// specified storage class. The value must be a positive integer.</p>
+        /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
         pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
             self.days = input;
             self
@@ -10912,25 +9701,18 @@ impl AsRef<str> for ExpirationStatus {
     }
 }
 
-/// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A
-/// <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or
-/// <code>And</code> specified.</p>
+/// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or <code>And</code> specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum LifecycleRuleFilter {
-    /// <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more
-    /// predicates. The Lifecycle Rule will apply to any object matching all of the predicates
-    /// configured inside the And operator.</p>
+    /// <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.</p>
     And(crate::model::LifecycleRuleAndOperator),
     /// <p>Minimum object size to which the rule applies.</p>
     ObjectSizeGreaterThan(i64),
     /// <p>Maximum object size to which the rule applies.</p>
     ObjectSizeLessThan(i64),
-    /// <p>Prefix identifying one or more objects to which the rule applies.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     Prefix(std::string::String),
     /// <p>This tag must exist in the object's tag set in order for the rule to apply.</p>
@@ -11017,16 +9799,13 @@ impl LifecycleRuleFilter {
     }
 }
 
-/// <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more
-/// predicates. The Lifecycle Rule will apply to any object matching all of the predicates
-/// configured inside the And operator.</p>
+/// <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleRuleAndOperator {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>All of these tags must exist in the object's tag set in order for the rule to
-    /// apply.</p>
+    /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Minimum object size to which the rule applies.</p>
     pub object_size_greater_than: i64,
@@ -11038,8 +9817,7 @@ impl LifecycleRuleAndOperator {
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>All of these tags must exist in the object's tag set in order for the rule to
-    /// apply.</p>
+    /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -11088,16 +9866,14 @@ pub mod lifecycle_rule_and_operator {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>All of these tags must exist in the object's tag set in order for the rule to
-        /// apply.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>All of these tags must exist in the object's tag set in order for the rule to
-        /// apply.</p>
+        /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11147,31 +9923,23 @@ impl LifecycleRuleAndOperator {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifecycleExpiration {
-    /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601
-    /// Format.</p>
+    /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.</p>
     pub date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value
-    /// must be a non-zero positive integer.</p>
+    /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
     pub days: i32,
-    /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set
-    /// to true, the delete marker will be expired; if set to false the policy takes no action.
-    /// This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
+    /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
     pub expired_object_delete_marker: bool,
 }
 impl LifecycleExpiration {
-    /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601
-    /// Format.</p>
+    /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.</p>
     pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
-    /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value
-    /// must be a non-zero positive integer.</p>
+    /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
     pub fn days(&self) -> i32 {
         self.days
     }
-    /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set
-    /// to true, the delete marker will be expired; if set to false the policy takes no action.
-    /// This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
+    /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
     pub fn expired_object_delete_marker(&self) -> bool {
         self.expired_object_delete_marker
     }
@@ -11199,40 +9967,32 @@ pub mod lifecycle_expiration {
         pub(crate) expired_object_delete_marker: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601
-        /// Format.</p>
+        /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.</p>
         pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.date = Some(input);
             self
         }
-        /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601
-        /// Format.</p>
+        /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.</p>
         pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.date = input;
             self
         }
-        /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value
-        /// must be a non-zero positive integer.</p>
+        /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
         pub fn days(mut self, input: i32) -> Self {
             self.days = Some(input);
             self
         }
-        /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value
-        /// must be a non-zero positive integer.</p>
+        /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
         pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
             self.days = input;
             self
         }
-        /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set
-        /// to true, the delete marker will be expired; if set to false the policy takes no action.
-        /// This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
+        /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
         pub fn expired_object_delete_marker(mut self, input: bool) -> Self {
             self.expired_object_delete_marker = Some(input);
             self
         }
-        /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set
-        /// to true, the delete marker will be expired; if set to false the policy takes no action.
-        /// This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
+        /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
         pub fn set_expired_object_delete_marker(
             mut self,
             input: std::option::Option<bool>,
@@ -11257,28 +10017,19 @@ impl LifecycleExpiration {
     }
 }
 
-/// <p>Specifies the inventory configuration for an Amazon S3 bucket. For more information, see
-/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html">GET Bucket inventory</a> in the <i>Amazon S3 API Reference</i>.
-/// </p>
+/// <p>Specifies the inventory configuration for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html">GET Bucket inventory</a> in the <i>Amazon S3 API Reference</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryConfiguration {
     /// <p>Contains information about where to publish the inventory results.</p>
     pub destination: std::option::Option<crate::model::InventoryDestination>,
-    /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an
-    /// inventory list is generated. If set to <code>False</code>, no inventory list is
-    /// generated.</p>
+    /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an inventory list is generated. If set to <code>False</code>, no inventory list is generated.</p>
     pub is_enabled: bool,
-    /// <p>Specifies an inventory filter. The inventory only includes objects that meet the
-    /// filter's criteria.</p>
+    /// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
     pub filter: std::option::Option<crate::model::InventoryFilter>,
     /// <p>The ID used to identify the inventory configuration.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list
-    /// includes all the object versions, which adds the version-related fields
-    /// <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the
-    /// list. If set to <code>Current</code>, the list does not contain these version-related
-    /// fields.</p>
+    /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list includes all the object versions, which adds the version-related fields <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the list. If set to <code>Current</code>, the list does not contain these version-related fields.</p>
     pub included_object_versions:
         std::option::Option<crate::model::InventoryIncludedObjectVersions>,
     /// <p>Contains the optional fields that are included in the inventory results.</p>
@@ -11291,14 +10042,11 @@ impl InventoryConfiguration {
     pub fn destination(&self) -> std::option::Option<&crate::model::InventoryDestination> {
         self.destination.as_ref()
     }
-    /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an
-    /// inventory list is generated. If set to <code>False</code>, no inventory list is
-    /// generated.</p>
+    /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an inventory list is generated. If set to <code>False</code>, no inventory list is generated.</p>
     pub fn is_enabled(&self) -> bool {
         self.is_enabled
     }
-    /// <p>Specifies an inventory filter. The inventory only includes objects that meet the
-    /// filter's criteria.</p>
+    /// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::InventoryFilter> {
         self.filter.as_ref()
     }
@@ -11306,11 +10054,7 @@ impl InventoryConfiguration {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list
-    /// includes all the object versions, which adds the version-related fields
-    /// <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the
-    /// list. If set to <code>Current</code>, the list does not contain these version-related
-    /// fields.</p>
+    /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list includes all the object versions, which adds the version-related fields <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the list. If set to <code>Current</code>, the list does not contain these version-related fields.</p>
     pub fn included_object_versions(
         &self,
     ) -> std::option::Option<&crate::model::InventoryIncludedObjectVersions> {
@@ -11368,28 +10112,22 @@ pub mod inventory_configuration {
             self.destination = input;
             self
         }
-        /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an
-        /// inventory list is generated. If set to <code>False</code>, no inventory list is
-        /// generated.</p>
+        /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an inventory list is generated. If set to <code>False</code>, no inventory list is generated.</p>
         pub fn is_enabled(mut self, input: bool) -> Self {
             self.is_enabled = Some(input);
             self
         }
-        /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an
-        /// inventory list is generated. If set to <code>False</code>, no inventory list is
-        /// generated.</p>
+        /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an inventory list is generated. If set to <code>False</code>, no inventory list is generated.</p>
         pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.is_enabled = input;
             self
         }
-        /// <p>Specifies an inventory filter. The inventory only includes objects that meet the
-        /// filter's criteria.</p>
+        /// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
         pub fn filter(mut self, input: crate::model::InventoryFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Specifies an inventory filter. The inventory only includes objects that meet the
-        /// filter's criteria.</p>
+        /// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::InventoryFilter>,
@@ -11407,11 +10145,7 @@ pub mod inventory_configuration {
             self.id = input;
             self
         }
-        /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list
-        /// includes all the object versions, which adds the version-related fields
-        /// <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the
-        /// list. If set to <code>Current</code>, the list does not contain these version-related
-        /// fields.</p>
+        /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list includes all the object versions, which adds the version-related fields <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the list. If set to <code>Current</code>, the list does not contain these version-related fields.</p>
         pub fn included_object_versions(
             mut self,
             input: crate::model::InventoryIncludedObjectVersions,
@@ -11419,11 +10153,7 @@ pub mod inventory_configuration {
             self.included_object_versions = Some(input);
             self
         }
-        /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list
-        /// includes all the object versions, which adds the version-related fields
-        /// <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the
-        /// list. If set to <code>Current</code>, the list does not contain these version-related
-        /// fields.</p>
+        /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list includes all the object versions, which adds the version-related fields <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the list. If set to <code>Current</code>, the list does not contain these version-related fields.</p>
         pub fn set_included_object_versions(
             mut self,
             input: std::option::Option<crate::model::InventoryIncludedObjectVersions>,
@@ -11436,12 +10166,9 @@ pub mod inventory_configuration {
         /// To override the contents of this collection use [`set_optional_fields`](Self::set_optional_fields).
         ///
         /// <p>Contains the optional fields that are included in the inventory results.</p>
-        pub fn optional_fields(
-            mut self,
-            input: impl Into<crate::model::InventoryOptionalField>,
-        ) -> Self {
+        pub fn optional_fields(mut self, input: crate::model::InventoryOptionalField) -> Self {
             let mut v = self.optional_fields.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.optional_fields = Some(v);
             self
         }
@@ -11762,8 +10489,7 @@ impl AsRef<str> for InventoryIncludedObjectVersions {
     }
 }
 
-/// <p>Specifies an inventory filter. The inventory only includes objects that meet the
-/// filter's criteria.</p>
+/// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryFilter {
@@ -11821,13 +10547,11 @@ impl InventoryFilter {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryDestination {
-    /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional)
-    /// where inventory results are published.</p>
+    /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
     pub s3_bucket_destination: std::option::Option<crate::model::InventoryS3BucketDestination>,
 }
 impl InventoryDestination {
-    /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional)
-    /// where inventory results are published.</p>
+    /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
     pub fn s3_bucket_destination(
         &self,
     ) -> std::option::Option<&crate::model::InventoryS3BucketDestination> {
@@ -11851,8 +10575,7 @@ pub mod inventory_destination {
             std::option::Option<crate::model::InventoryS3BucketDestination>,
     }
     impl Builder {
-        /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional)
-        /// where inventory results are published.</p>
+        /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
         pub fn s3_bucket_destination(
             mut self,
             input: crate::model::InventoryS3BucketDestination,
@@ -11860,8 +10583,7 @@ pub mod inventory_destination {
             self.s3_bucket_destination = Some(input);
             self
         }
-        /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional)
-        /// where inventory results are published.</p>
+        /// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
         pub fn set_s3_bucket_destination(
             mut self,
             input: std::option::Option<crate::model::InventoryS3BucketDestination>,
@@ -11884,41 +10606,31 @@ impl InventoryDestination {
     }
 }
 
-/// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional)
-/// where inventory results are published.</p>
+/// <p>Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryS3BucketDestination {
-    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the
-    /// owner is not validated before exporting data. </p>
-    /// <note>
-    /// <p> Although this value is optional, we strongly recommend that you set it to help
-    /// prevent problems if the destination bucket ownership changes. </p>
+    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data. </p> <note>
+    /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be
-    /// published.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be published.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Specifies the output format of the inventory results.</p>
     pub format: std::option::Option<crate::model::InventoryFormat>,
     /// <p>The prefix that is prepended to all inventory results.</p>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>Contains the type of server-side encryption used to encrypt the inventory
-    /// results.</p>
+    /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
     pub encryption: std::option::Option<crate::model::InventoryEncryption>,
 }
 impl InventoryS3BucketDestination {
-    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the
-    /// owner is not validated before exporting data. </p>
-    /// <note>
-    /// <p> Although this value is optional, we strongly recommend that you set it to help
-    /// prevent problems if the destination bucket ownership changes. </p>
+    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data. </p> <note>
+    /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be
-    /// published.</p>
+    /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be published.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -11930,8 +10642,7 @@ impl InventoryS3BucketDestination {
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>Contains the type of server-side encryption used to encrypt the inventory
-    /// results.</p>
+    /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
     pub fn encryption(&self) -> std::option::Option<&crate::model::InventoryEncryption> {
         self.encryption.as_ref()
     }
@@ -11960,34 +10671,26 @@ pub mod inventory_s3_bucket_destination {
         pub(crate) encryption: std::option::Option<crate::model::InventoryEncryption>,
     }
     impl Builder {
-        /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the
-        /// owner is not validated before exporting data. </p>
-        /// <note>
-        /// <p> Although this value is optional, we strongly recommend that you set it to help
-        /// prevent problems if the destination bucket ownership changes. </p>
+        /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data. </p> <note>
+        /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
         /// </note>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the
-        /// owner is not validated before exporting data. </p>
-        /// <note>
-        /// <p> Although this value is optional, we strongly recommend that you set it to help
-        /// prevent problems if the destination bucket ownership changes. </p>
+        /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data. </p> <note>
+        /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
         /// </note>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be
-        /// published.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be published.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be
-        /// published.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be published.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -12015,14 +10718,12 @@ pub mod inventory_s3_bucket_destination {
             self.prefix = input;
             self
         }
-        /// <p>Contains the type of server-side encryption used to encrypt the inventory
-        /// results.</p>
+        /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
         pub fn encryption(mut self, input: crate::model::InventoryEncryption) -> Self {
             self.encryption = Some(input);
             self
         }
-        /// <p>Contains the type of server-side encryption used to encrypt the inventory
-        /// results.</p>
+        /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
         pub fn set_encryption(
             mut self,
             input: std::option::Option<crate::model::InventoryEncryption>,
@@ -12049,8 +10750,7 @@ impl InventoryS3BucketDestination {
     }
 }
 
-/// <p>Contains the type of server-side encryption used to encrypt the inventory
-/// results.</p>
+/// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryEncryption {
@@ -12127,13 +10827,11 @@ impl InventoryEncryption {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ssekms {
-    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key
-    /// to use for encrypting inventory reports.</p>
+    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting inventory reports.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl Ssekms {
-    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key
-    /// to use for encrypting inventory reports.</p>
+    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting inventory reports.</p>
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
@@ -12154,14 +10852,12 @@ pub mod ssekms {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key
-        /// to use for encrypting inventory reports.</p>
+        /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting inventory reports.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
         }
-        /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key
-        /// to use for encrypting inventory reports.</p>
+        /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key to use for encrypting inventory reports.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_id = input;
             self
@@ -12271,15 +10967,13 @@ impl AsRef<str> for InventoryFormat {
 }
 
 /// <p>Specifies the S3 Intelligent-Tiering configuration for an Amazon S3 bucket.</p>
-/// <p>For information about the S3 Intelligent-Tiering storage class, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for
-/// automatically optimizing frequently and infrequently accessed objects</a>.</p>
+/// <p>For information about the S3 Intelligent-Tiering storage class, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntelligentTieringConfiguration {
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>Specifies a bucket filter. The configuration only includes objects that meet the
-    /// filter's criteria.</p>
+    /// <p>Specifies a bucket filter. The configuration only includes objects that meet the filter's criteria.</p>
     pub filter: std::option::Option<crate::model::IntelligentTieringFilter>,
     /// <p>Specifies the status of the configuration.</p>
     pub status: std::option::Option<crate::model::IntelligentTieringStatus>,
@@ -12291,8 +10985,7 @@ impl IntelligentTieringConfiguration {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Specifies a bucket filter. The configuration only includes objects that meet the
-    /// filter's criteria.</p>
+    /// <p>Specifies a bucket filter. The configuration only includes objects that meet the filter's criteria.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::IntelligentTieringFilter> {
         self.filter.as_ref()
     }
@@ -12337,14 +11030,12 @@ pub mod intelligent_tiering_configuration {
             self.id = input;
             self
         }
-        /// <p>Specifies a bucket filter. The configuration only includes objects that meet the
-        /// filter's criteria.</p>
+        /// <p>Specifies a bucket filter. The configuration only includes objects that meet the filter's criteria.</p>
         pub fn filter(mut self, input: crate::model::IntelligentTieringFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Specifies a bucket filter. The configuration only includes objects that meet the
-        /// filter's criteria.</p>
+        /// <p>Specifies a bucket filter. The configuration only includes objects that meet the filter's criteria.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::IntelligentTieringFilter>,
@@ -12370,9 +11061,9 @@ pub mod intelligent_tiering_configuration {
         /// To override the contents of this collection use [`set_tierings`](Self::set_tierings).
         ///
         /// <p>Specifies the S3 Intelligent-Tiering storage class tier of the configuration.</p>
-        pub fn tierings(mut self, input: impl Into<crate::model::Tiering>) -> Self {
+        pub fn tierings(mut self, input: crate::model::Tiering) -> Self {
             let mut v = self.tierings.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tierings = Some(v);
             self
         }
@@ -12402,33 +11093,21 @@ impl IntelligentTieringConfiguration {
     }
 }
 
-/// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by
-/// automatically moving data to the most cost-effective storage access tier, without
-/// additional operational overhead.</p>
+/// <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without additional operational overhead.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tiering {
-    /// <p>The number of consecutive days of no access after which an object will be eligible to be
-    /// transitioned to the corresponding tier. The minimum number of days specified for
-    /// Archive Access tier must be at least 90 days and Deep Archive Access tier must be at least
-    /// 180 days. The maximum can be up to 2 years (730 days).</p>
+    /// <p>The number of consecutive days of no access after which an object will be eligible to be transitioned to the corresponding tier. The minimum number of days specified for Archive Access tier must be at least 90 days and Deep Archive Access tier must be at least 180 days. The maximum can be up to 2 years (730 days).</p>
     pub days: i32,
-    /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for
-    /// automatically optimizing frequently and infrequently accessed objects</a> for a list
-    /// of access tiers in the S3 Intelligent-Tiering storage class.</p>
+    /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a> for a list of access tiers in the S3 Intelligent-Tiering storage class.</p>
     pub access_tier: std::option::Option<crate::model::IntelligentTieringAccessTier>,
 }
 impl Tiering {
-    /// <p>The number of consecutive days of no access after which an object will be eligible to be
-    /// transitioned to the corresponding tier. The minimum number of days specified for
-    /// Archive Access tier must be at least 90 days and Deep Archive Access tier must be at least
-    /// 180 days. The maximum can be up to 2 years (730 days).</p>
+    /// <p>The number of consecutive days of no access after which an object will be eligible to be transitioned to the corresponding tier. The minimum number of days specified for Archive Access tier must be at least 90 days and Deep Archive Access tier must be at least 180 days. The maximum can be up to 2 years (730 days).</p>
     pub fn days(&self) -> i32 {
         self.days
     }
-    /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for
-    /// automatically optimizing frequently and infrequently accessed objects</a> for a list
-    /// of access tiers in the S3 Intelligent-Tiering storage class.</p>
+    /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a> for a list of access tiers in the S3 Intelligent-Tiering storage class.</p>
     pub fn access_tier(&self) -> std::option::Option<&crate::model::IntelligentTieringAccessTier> {
         self.access_tier.as_ref()
     }
@@ -12451,32 +11130,22 @@ pub mod tiering {
         pub(crate) access_tier: std::option::Option<crate::model::IntelligentTieringAccessTier>,
     }
     impl Builder {
-        /// <p>The number of consecutive days of no access after which an object will be eligible to be
-        /// transitioned to the corresponding tier. The minimum number of days specified for
-        /// Archive Access tier must be at least 90 days and Deep Archive Access tier must be at least
-        /// 180 days. The maximum can be up to 2 years (730 days).</p>
+        /// <p>The number of consecutive days of no access after which an object will be eligible to be transitioned to the corresponding tier. The minimum number of days specified for Archive Access tier must be at least 90 days and Deep Archive Access tier must be at least 180 days. The maximum can be up to 2 years (730 days).</p>
         pub fn days(mut self, input: i32) -> Self {
             self.days = Some(input);
             self
         }
-        /// <p>The number of consecutive days of no access after which an object will be eligible to be
-        /// transitioned to the corresponding tier. The minimum number of days specified for
-        /// Archive Access tier must be at least 90 days and Deep Archive Access tier must be at least
-        /// 180 days. The maximum can be up to 2 years (730 days).</p>
+        /// <p>The number of consecutive days of no access after which an object will be eligible to be transitioned to the corresponding tier. The minimum number of days specified for Archive Access tier must be at least 90 days and Deep Archive Access tier must be at least 180 days. The maximum can be up to 2 years (730 days).</p>
         pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
             self.days = input;
             self
         }
-        /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for
-        /// automatically optimizing frequently and infrequently accessed objects</a> for a list
-        /// of access tiers in the S3 Intelligent-Tiering storage class.</p>
+        /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a> for a list of access tiers in the S3 Intelligent-Tiering storage class.</p>
         pub fn access_tier(mut self, input: crate::model::IntelligentTieringAccessTier) -> Self {
             self.access_tier = Some(input);
             self
         }
-        /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for
-        /// automatically optimizing frequently and infrequently accessed objects</a> for a list
-        /// of access tiers in the S3 Intelligent-Tiering storage class.</p>
+        /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a> for a list of access tiers in the S3 Intelligent-Tiering storage class.</p>
         pub fn set_access_tier(
             mut self,
             input: std::option::Option<crate::model::IntelligentTieringAccessTier>,
@@ -12610,33 +11279,22 @@ impl AsRef<str> for IntelligentTieringStatus {
     }
 }
 
-/// <p>The <code>Filter</code> is used to identify objects that the S3 Intelligent-Tiering
-/// configuration applies to.</p>
+/// <p>The <code>Filter</code> is used to identify objects that the S3 Intelligent-Tiering configuration applies to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntelligentTieringFilter {
-    /// <p>An object key name prefix that identifies the subset of objects to which the rule
-    /// applies.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A container of a key value name pair.</p>
     pub tag: std::option::Option<crate::model::Tag>,
-    /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter.
-    /// The operator must have at least two predicates, and an object must match all of the
-    /// predicates in order for the filter to apply.</p>
+    /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates, and an object must match all of the predicates in order for the filter to apply.</p>
     pub and: std::option::Option<crate::model::IntelligentTieringAndOperator>,
 }
 impl IntelligentTieringFilter {
-    /// <p>An object key name prefix that identifies the subset of objects to which the rule
-    /// applies.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
@@ -12645,9 +11303,7 @@ impl IntelligentTieringFilter {
     pub fn tag(&self) -> std::option::Option<&crate::model::Tag> {
         self.tag.as_ref()
     }
-    /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter.
-    /// The operator must have at least two predicates, and an object must match all of the
-    /// predicates in order for the filter to apply.</p>
+    /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates, and an object must match all of the predicates in order for the filter to apply.</p>
     pub fn and(&self) -> std::option::Option<&crate::model::IntelligentTieringAndOperator> {
         self.and.as_ref()
     }
@@ -12672,23 +11328,15 @@ pub mod intelligent_tiering_filter {
         pub(crate) and: std::option::Option<crate::model::IntelligentTieringAndOperator>,
     }
     impl Builder {
-        /// <p>An object key name prefix that identifies the subset of objects to which the rule
-        /// applies.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>An object key name prefix that identifies the subset of objects to which the rule
-        /// applies.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
@@ -12704,16 +11352,12 @@ pub mod intelligent_tiering_filter {
             self.tag = input;
             self
         }
-        /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter.
-        /// The operator must have at least two predicates, and an object must match all of the
-        /// predicates in order for the filter to apply.</p>
+        /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates, and an object must match all of the predicates in order for the filter to apply.</p>
         pub fn and(mut self, input: crate::model::IntelligentTieringAndOperator) -> Self {
             self.and = Some(input);
             self
         }
-        /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter.
-        /// The operator must have at least two predicates, and an object must match all of the
-        /// predicates in order for the filter to apply.</p>
+        /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates, and an object must match all of the predicates in order for the filter to apply.</p>
         pub fn set_and(
             mut self,
             input: std::option::Option<crate::model::IntelligentTieringAndOperator>,
@@ -12738,26 +11382,21 @@ impl IntelligentTieringFilter {
     }
 }
 
-/// <p>A container for specifying S3 Intelligent-Tiering filters. The filters determine the
-/// subset of objects to which the rule applies.</p>
+/// <p>A container for specifying S3 Intelligent-Tiering filters. The filters determine the subset of objects to which the rule applies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntelligentTieringAndOperator {
-    /// <p>An object key name prefix that identifies the subset of objects to which the
-    /// configuration applies.</p>
+    /// <p>An object key name prefix that identifies the subset of objects to which the configuration applies.</p>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>All of these tags must exist in the object's tag set in order for the configuration to
-    /// apply.</p>
+    /// <p>All of these tags must exist in the object's tag set in order for the configuration to apply.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl IntelligentTieringAndOperator {
-    /// <p>An object key name prefix that identifies the subset of objects to which the
-    /// configuration applies.</p>
+    /// <p>An object key name prefix that identifies the subset of objects to which the configuration applies.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>All of these tags must exist in the object's tag set in order for the configuration to
-    /// apply.</p>
+    /// <p>All of these tags must exist in the object's tag set in order for the configuration to apply.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -12780,14 +11419,12 @@ pub mod intelligent_tiering_and_operator {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>An object key name prefix that identifies the subset of objects to which the
-        /// configuration applies.</p>
+        /// <p>An object key name prefix that identifies the subset of objects to which the configuration applies.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>An object key name prefix that identifies the subset of objects to which the
-        /// configuration applies.</p>
+        /// <p>An object key name prefix that identifies the subset of objects to which the configuration applies.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -12796,16 +11433,14 @@ pub mod intelligent_tiering_and_operator {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>All of these tags must exist in the object's tag set in order for the configuration to
-        /// apply.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>All of these tags must exist in the object's tag set in order for the configuration to apply.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>All of these tags must exist in the object's tag set in order for the configuration to
-        /// apply.</p>
+        /// <p>All of these tags must exist in the object's tag set in order for the configuration to apply.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -12833,13 +11468,11 @@ impl IntelligentTieringAndOperator {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionConfiguration {
-    /// <p>Container for information about a particular server-side encryption configuration
-    /// rule.</p>
+    /// <p>Container for information about a particular server-side encryption configuration rule.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::ServerSideEncryptionRule>>,
 }
 impl ServerSideEncryptionConfiguration {
-    /// <p>Container for information about a particular server-side encryption configuration
-    /// rule.</p>
+    /// <p>Container for information about a particular server-side encryption configuration rule.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::ServerSideEncryptionRule]> {
         self.rules.as_deref()
     }
@@ -12865,16 +11498,14 @@ pub mod server_side_encryption_configuration {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>Container for information about a particular server-side encryption configuration
-        /// rule.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::ServerSideEncryptionRule>) -> Self {
+        /// <p>Container for information about a particular server-side encryption configuration rule.</p>
+        pub fn rules(mut self, input: crate::model::ServerSideEncryptionRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
-        /// <p>Container for information about a particular server-side encryption configuration
-        /// rule.</p>
+        /// <p>Container for information about a particular server-side encryption configuration rule.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServerSideEncryptionRule>>,
@@ -12899,9 +11530,7 @@ impl ServerSideEncryptionConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionRule {
-    /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a
-    /// PUT Object request doesn't specify any server-side encryption, this default encryption will
-    /// be applied.</p>
+    /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.</p>
     pub apply_server_side_encryption_by_default:
         std::option::Option<crate::model::ServerSideEncryptionByDefault>,
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Setting the <code>BucketKeyEnabled</code> element to <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3 Bucket Key is not enabled.</p>
@@ -12909,9 +11538,7 @@ pub struct ServerSideEncryptionRule {
     pub bucket_key_enabled: bool,
 }
 impl ServerSideEncryptionRule {
-    /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a
-    /// PUT Object request doesn't specify any server-side encryption, this default encryption will
-    /// be applied.</p>
+    /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.</p>
     pub fn apply_server_side_encryption_by_default(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryptionByDefault> {
@@ -12945,9 +11572,7 @@ pub mod server_side_encryption_rule {
         pub(crate) bucket_key_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a
-        /// PUT Object request doesn't specify any server-side encryption, this default encryption will
-        /// be applied.</p>
+        /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.</p>
         pub fn apply_server_side_encryption_by_default(
             mut self,
             input: crate::model::ServerSideEncryptionByDefault,
@@ -12955,9 +11580,7 @@ pub mod server_side_encryption_rule {
             self.apply_server_side_encryption_by_default = Some(input);
             self
         }
-        /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a
-        /// PUT Object request doesn't specify any server-side encryption, this default encryption will
-        /// be applied.</p>
+        /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.</p>
         pub fn set_apply_server_side_encryption_by_default(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionByDefault>,
@@ -12994,39 +11617,20 @@ impl ServerSideEncryptionRule {
     }
 }
 
-/// <p>Describes the default server-side encryption to apply to new objects in the bucket. If a
-/// PUT Object request doesn't specify any server-side encryption, this default encryption will
-/// be applied. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html">PUT Bucket encryption</a> in
-/// the <i>Amazon S3 API Reference</i>.</p>
+/// <p>Describes the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied. If you don't specify a customer managed key at configuration, Amazon S3 automatically creates an Amazon Web Services KMS key in your Amazon Web Services account the first time that you add an object encrypted with SSE-KMS to a bucket. By default, Amazon S3 uses this KMS key for SSE-KMS. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html">PUT Bucket encryption</a> in the <i>Amazon S3 API Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionByDefault {
     /// <p>Server-side encryption algorithm to use for the default encryption.</p>
     pub sse_algorithm: std::option::Option<crate::model::ServerSideEncryption>,
-    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default
-    /// encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to
-    /// <code>aws:kms</code>.</p>
-    /// <p>You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. However, if you
-    /// are using encryption with cross-account operations, you must use a fully qualified KMS key ARN.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using encryption for cross-account operations</a>. </p>
-    /// <p>
-    /// <b>For example:</b>
-    /// </p>
+    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p>
+    /// <p>You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. However, if you are using encryption with cross-account or Amazon Web Services service operations you must use a fully qualified KMS key ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using encryption for cross-account operations</a>. </p>
+    /// <p> <b>For example:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Key ARN:
-    /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <important>
-    /// <p>Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-    /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// </ul> <important>
+    /// <p>Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     /// </important>
     pub kms_master_key_id: std::option::Option<std::string::String>,
 }
@@ -13035,30 +11639,14 @@ impl ServerSideEncryptionByDefault {
     pub fn sse_algorithm(&self) -> std::option::Option<&crate::model::ServerSideEncryption> {
         self.sse_algorithm.as_ref()
     }
-    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default
-    /// encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to
-    /// <code>aws:kms</code>.</p>
-    /// <p>You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. However, if you
-    /// are using encryption with cross-account operations, you must use a fully qualified KMS key ARN.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using encryption for cross-account operations</a>. </p>
-    /// <p>
-    /// <b>For example:</b>
-    /// </p>
+    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p>
+    /// <p>You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. However, if you are using encryption with cross-account or Amazon Web Services service operations you must use a fully qualified KMS key ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using encryption for cross-account operations</a>. </p>
+    /// <p> <b>For example:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Key ARN:
-    /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <important>
-    /// <p>Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-    /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// </ul> <important>
+    /// <p>Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     /// </important>
     pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
         self.kms_master_key_id.as_deref()
@@ -13095,59 +11683,27 @@ pub mod server_side_encryption_by_default {
             self.sse_algorithm = input;
             self
         }
-        /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default
-        /// encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to
-        /// <code>aws:kms</code>.</p>
-        /// <p>You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. However, if you
-        /// are using encryption with cross-account operations, you must use a fully qualified KMS key ARN.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using encryption for cross-account operations</a>. </p>
-        /// <p>
-        /// <b>For example:</b>
-        /// </p>
+        /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p>
+        /// <p>You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. However, if you are using encryption with cross-account or Amazon Web Services service operations you must use a fully qualified KMS key ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using encryption for cross-account operations</a>. </p>
+        /// <p> <b>For example:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Key ARN:
-        /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <important>
-        /// <p>Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-        /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// </ul> <important>
+        /// <p>Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         /// </important>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
             self
         }
-        /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default
-        /// encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to
-        /// <code>aws:kms</code>.</p>
-        /// <p>You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. However, if you
-        /// are using encryption with cross-account operations, you must use a fully qualified KMS key ARN.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using encryption for cross-account operations</a>. </p>
-        /// <p>
-        /// <b>For example:</b>
-        /// </p>
+        /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p>
+        /// <p>You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. However, if you are using encryption with cross-account or Amazon Web Services service operations you must use a fully qualified KMS key ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using encryption for cross-account operations</a>. </p>
+        /// <p> <b>For example:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Key ARN:
-        /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <important>
-        /// <p>Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-        /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// </ul> <important>
+        /// <p>Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         /// </important>
         pub fn set_kms_master_key_id(
             mut self,
@@ -13172,19 +11728,15 @@ impl ServerSideEncryptionByDefault {
     }
 }
 
-/// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more
-/// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
-/// Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CorsConfiguration {
-    /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add
-    /// up to 100 rules to the configuration.</p>
+    /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
     pub cors_rules: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
 }
 impl CorsConfiguration {
-    /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add
-    /// up to 100 rules to the configuration.</p>
+    /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
     pub fn cors_rules(&self) -> std::option::Option<&[crate::model::CorsRule]> {
         self.cors_rules.as_deref()
     }
@@ -13209,16 +11761,14 @@ pub mod cors_configuration {
         ///
         /// To override the contents of this collection use [`set_cors_rules`](Self::set_cors_rules).
         ///
-        /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add
-        /// up to 100 rules to the configuration.</p>
-        pub fn cors_rules(mut self, input: impl Into<crate::model::CorsRule>) -> Self {
+        /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
+        pub fn cors_rules(mut self, input: crate::model::CorsRule) -> Self {
             let mut v = self.cors_rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cors_rules = Some(v);
             self
         }
-        /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add
-        /// up to 100 rules to the configuration.</p>
+        /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
         pub fn set_cors_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CorsRule>>,
@@ -13247,21 +11797,15 @@ impl CorsConfiguration {
 pub struct CorsRule {
     /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header.
-    /// These headers are allowed in a preflight OPTIONS request. In response to any preflight
-    /// OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
+    /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header. These headers are allowed in a preflight OPTIONS request. In response to any preflight OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
     pub allowed_headers: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>,
-    /// <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
+    /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
     pub allowed_methods: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>One or more origins you want customers to be able to access the bucket from.</p>
     pub allowed_origins: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>One or more headers in the response that you want customers to be able to access from
-    /// their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
-    /// object).</p>
+    /// <p>One or more headers in the response that you want customers to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     pub expose_headers: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The time in seconds that your browser is to cache the preflight response for the
-    /// specified resource.</p>
+    /// <p>The time in seconds that your browser is to cache the preflight response for the specified resource.</p>
     pub max_age_seconds: i32,
 }
 impl CorsRule {
@@ -13269,14 +11813,11 @@ impl CorsRule {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header.
-    /// These headers are allowed in a preflight OPTIONS request. In response to any preflight
-    /// OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
+    /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header. These headers are allowed in a preflight OPTIONS request. In response to any preflight OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
     pub fn allowed_headers(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_headers.as_deref()
     }
-    /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>,
-    /// <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
+    /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
     pub fn allowed_methods(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_methods.as_deref()
     }
@@ -13284,14 +11825,11 @@ impl CorsRule {
     pub fn allowed_origins(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_origins.as_deref()
     }
-    /// <p>One or more headers in the response that you want customers to be able to access from
-    /// their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
-    /// object).</p>
+    /// <p>One or more headers in the response that you want customers to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     pub fn expose_headers(&self) -> std::option::Option<&[std::string::String]> {
         self.expose_headers.as_deref()
     }
-    /// <p>The time in seconds that your browser is to cache the preflight response for the
-    /// specified resource.</p>
+    /// <p>The time in seconds that your browser is to cache the preflight response for the specified resource.</p>
     pub fn max_age_seconds(&self) -> i32 {
         self.max_age_seconds
     }
@@ -13336,18 +11874,14 @@ pub mod cors_rule {
         ///
         /// To override the contents of this collection use [`set_allowed_headers`](Self::set_allowed_headers).
         ///
-        /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header.
-        /// These headers are allowed in a preflight OPTIONS request. In response to any preflight
-        /// OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
+        /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header. These headers are allowed in a preflight OPTIONS request. In response to any preflight OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
         pub fn allowed_headers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_headers.unwrap_or_default();
             v.push(input.into());
             self.allowed_headers = Some(v);
             self
         }
-        /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header.
-        /// These headers are allowed in a preflight OPTIONS request. In response to any preflight
-        /// OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
+        /// <p>Headers that are specified in the <code>Access-Control-Request-Headers</code> header. These headers are allowed in a preflight OPTIONS request. In response to any preflight OPTIONS request, Amazon S3 returns any requested headers that are allowed.</p>
         pub fn set_allowed_headers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13359,16 +11893,14 @@ pub mod cors_rule {
         ///
         /// To override the contents of this collection use [`set_allowed_methods`](Self::set_allowed_methods).
         ///
-        /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>,
-        /// <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
+        /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
         pub fn allowed_methods(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_methods.unwrap_or_default();
             v.push(input.into());
             self.allowed_methods = Some(v);
             self
         }
-        /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>,
-        /// <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
+        /// <p>An HTTP method that you allow the origin to execute. Valid values are <code>GET</code>, <code>PUT</code>, <code>HEAD</code>, <code>POST</code>, and <code>DELETE</code>.</p>
         pub fn set_allowed_methods(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13399,18 +11931,14 @@ pub mod cors_rule {
         ///
         /// To override the contents of this collection use [`set_expose_headers`](Self::set_expose_headers).
         ///
-        /// <p>One or more headers in the response that you want customers to be able to access from
-        /// their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
-        /// object).</p>
+        /// <p>One or more headers in the response that you want customers to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
         pub fn expose_headers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.expose_headers.unwrap_or_default();
             v.push(input.into());
             self.expose_headers = Some(v);
             self
         }
-        /// <p>One or more headers in the response that you want customers to be able to access from
-        /// their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
-        /// object).</p>
+        /// <p>One or more headers in the response that you want customers to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
         pub fn set_expose_headers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13418,14 +11946,12 @@ pub mod cors_rule {
             self.expose_headers = input;
             self
         }
-        /// <p>The time in seconds that your browser is to cache the preflight response for the
-        /// specified resource.</p>
+        /// <p>The time in seconds that your browser is to cache the preflight response for the specified resource.</p>
         pub fn max_age_seconds(mut self, input: i32) -> Self {
             self.max_age_seconds = Some(input);
             self
         }
-        /// <p>The time in seconds that your browser is to cache the preflight response for the
-        /// specified resource.</p>
+        /// <p>The time in seconds that your browser is to cache the preflight response for the specified resource.</p>
         pub fn set_max_age_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.max_age_seconds = input;
             self
@@ -13456,12 +11982,9 @@ impl CorsRule {
 pub struct AnalyticsConfiguration {
     /// <p>The ID that identifies the analytics configuration.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly
-    /// one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided,
-    /// all objects will be considered in any analysis.</p>
+    /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
     pub filter: std::option::Option<crate::model::AnalyticsFilter>,
-    /// <p> Contains data related to access patterns to be collected and made available to analyze
-    /// the tradeoffs between different storage classes. </p>
+    /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
     pub storage_class_analysis: std::option::Option<crate::model::StorageClassAnalysis>,
 }
 impl AnalyticsConfiguration {
@@ -13469,14 +11992,11 @@ impl AnalyticsConfiguration {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly
-    /// one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided,
-    /// all objects will be considered in any analysis.</p>
+    /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::AnalyticsFilter> {
         self.filter.as_ref()
     }
-    /// <p> Contains data related to access patterns to be collected and made available to analyze
-    /// the tradeoffs between different storage classes. </p>
+    /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
     pub fn storage_class_analysis(
         &self,
     ) -> std::option::Option<&crate::model::StorageClassAnalysis> {
@@ -13513,16 +12033,12 @@ pub mod analytics_configuration {
             self.id = input;
             self
         }
-        /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly
-        /// one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided,
-        /// all objects will be considered in any analysis.</p>
+        /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
         pub fn filter(mut self, input: crate::model::AnalyticsFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly
-        /// one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided,
-        /// all objects will be considered in any analysis.</p>
+        /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::AnalyticsFilter>,
@@ -13530,14 +12046,12 @@ pub mod analytics_configuration {
             self.filter = input;
             self
         }
-        /// <p> Contains data related to access patterns to be collected and made available to analyze
-        /// the tradeoffs between different storage classes. </p>
+        /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
         pub fn storage_class_analysis(mut self, input: crate::model::StorageClassAnalysis) -> Self {
             self.storage_class_analysis = Some(input);
             self
         }
-        /// <p> Contains data related to access patterns to be collected and made available to analyze
-        /// the tradeoffs between different storage classes. </p>
+        /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
         pub fn set_storage_class_analysis(
             mut self,
             input: std::option::Option<crate::model::StorageClassAnalysis>,
@@ -13562,18 +12076,15 @@ impl AnalyticsConfiguration {
     }
 }
 
-/// <p>Specifies data related to access patterns to be collected and made available to analyze
-/// the tradeoffs between different storage classes for an Amazon S3 bucket.</p>
+/// <p>Specifies data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes for an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageClassAnalysis {
-    /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be
-    /// exported.</p>
+    /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.</p>
     pub data_export: std::option::Option<crate::model::StorageClassAnalysisDataExport>,
 }
 impl StorageClassAnalysis {
-    /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be
-    /// exported.</p>
+    /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.</p>
     pub fn data_export(
         &self,
     ) -> std::option::Option<&crate::model::StorageClassAnalysisDataExport> {
@@ -13596,14 +12107,12 @@ pub mod storage_class_analysis {
         pub(crate) data_export: std::option::Option<crate::model::StorageClassAnalysisDataExport>,
     }
     impl Builder {
-        /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be
-        /// exported.</p>
+        /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.</p>
         pub fn data_export(mut self, input: crate::model::StorageClassAnalysisDataExport) -> Self {
             self.data_export = Some(input);
             self
         }
-        /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be
-        /// exported.</p>
+        /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.</p>
         pub fn set_data_export(
             mut self,
             input: std::option::Option<crate::model::StorageClassAnalysisDataExport>,
@@ -13626,20 +12135,17 @@ impl StorageClassAnalysis {
     }
 }
 
-/// <p>Container for data related to the storage class analysis for an Amazon S3 bucket for
-/// export.</p>
+/// <p>Container for data related to the storage class analysis for an Amazon S3 bucket for export.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageClassAnalysisDataExport {
-    /// <p>The version of the output schema to use when exporting data. Must be
-    /// <code>V_1</code>.</p>
+    /// <p>The version of the output schema to use when exporting data. Must be <code>V_1</code>.</p>
     pub output_schema_version: std::option::Option<crate::model::StorageClassAnalysisSchemaVersion>,
     /// <p>The place to store the data for an analysis.</p>
     pub destination: std::option::Option<crate::model::AnalyticsExportDestination>,
 }
 impl StorageClassAnalysisDataExport {
-    /// <p>The version of the output schema to use when exporting data. Must be
-    /// <code>V_1</code>.</p>
+    /// <p>The version of the output schema to use when exporting data. Must be <code>V_1</code>.</p>
     pub fn output_schema_version(
         &self,
     ) -> std::option::Option<&crate::model::StorageClassAnalysisSchemaVersion> {
@@ -13669,8 +12175,7 @@ pub mod storage_class_analysis_data_export {
         pub(crate) destination: std::option::Option<crate::model::AnalyticsExportDestination>,
     }
     impl Builder {
-        /// <p>The version of the output schema to use when exporting data. Must be
-        /// <code>V_1</code>.</p>
+        /// <p>The version of the output schema to use when exporting data. Must be <code>V_1</code>.</p>
         pub fn output_schema_version(
             mut self,
             input: crate::model::StorageClassAnalysisSchemaVersion,
@@ -13678,8 +12183,7 @@ pub mod storage_class_analysis_data_export {
             self.output_schema_version = Some(input);
             self
         }
-        /// <p>The version of the output schema to use when exporting data. Must be
-        /// <code>V_1</code>.</p>
+        /// <p>The version of the output schema to use when exporting data. Must be <code>V_1</code>.</p>
         pub fn set_output_schema_version(
             mut self,
             input: std::option::Option<crate::model::StorageClassAnalysisSchemaVersion>,
@@ -13785,11 +12289,8 @@ impl AnalyticsExportDestination {
 pub struct AnalyticsS3BucketDestination {
     /// <p>Specifies the file format used when exporting data to Amazon S3.</p>
     pub format: std::option::Option<crate::model::AnalyticsS3ExportFileFormat>,
-    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the
-    /// owner is not validated before exporting data.</p>
-    /// <note>
-    /// <p> Although this value is optional, we strongly recommend that you set it to help
-    /// prevent problems if the destination bucket ownership changes. </p>
+    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
+    /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
     pub bucket_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
@@ -13802,11 +12303,8 @@ impl AnalyticsS3BucketDestination {
     pub fn format(&self) -> std::option::Option<&crate::model::AnalyticsS3ExportFileFormat> {
         self.format.as_ref()
     }
-    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the
-    /// owner is not validated before exporting data.</p>
-    /// <note>
-    /// <p> Although this value is optional, we strongly recommend that you set it to help
-    /// prevent problems if the destination bucket ownership changes. </p>
+    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
+    /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
     /// </note>
     pub fn bucket_account_id(&self) -> std::option::Option<&str> {
         self.bucket_account_id.as_deref()
@@ -13855,21 +12353,15 @@ pub mod analytics_s3_bucket_destination {
             self.format = input;
             self
         }
-        /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the
-        /// owner is not validated before exporting data.</p>
-        /// <note>
-        /// <p> Although this value is optional, we strongly recommend that you set it to help
-        /// prevent problems if the destination bucket ownership changes. </p>
+        /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
+        /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
         /// </note>
         pub fn bucket_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_account_id = Some(input.into());
             self
         }
-        /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the
-        /// owner is not validated before exporting data.</p>
-        /// <note>
-        /// <p> Although this value is optional, we strongly recommend that you set it to help
-        /// prevent problems if the destination bucket ownership changes. </p>
+        /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data.</p> <note>
+        /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
         /// </note>
         pub fn set_bucket_account_id(
             mut self,
@@ -14018,14 +12510,11 @@ impl AsRef<str> for StorageClassAnalysisSchemaVersion {
     }
 }
 
-/// <p>The filter used to describe a set of objects for analyses. A filter must have exactly
-/// one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided,
-/// all objects will be considered in any analysis.</p>
+/// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AnalyticsFilter {
-    /// <p>A conjunction (logical AND) of predicates, which is used in evaluating an analytics
-    /// filter. The operator must have at least two predicates.</p>
+    /// <p>A conjunction (logical AND) of predicates, which is used in evaluating an analytics filter. The operator must have at least two predicates.</p>
     And(crate::model::AnalyticsAndOperator),
     /// <p>The prefix to use when evaluating an analytics filter.</p>
     Prefix(std::string::String),
@@ -14087,21 +12576,17 @@ impl AnalyticsFilter {
     }
 }
 
-/// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter.
-/// The operator must have at least two predicates in any combination, and an object must match
-/// all of the predicates for the filter to apply.</p>
+/// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates in any combination, and an object must match all of the predicates for the filter to apply.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyticsAndOperator {
-    /// <p>The prefix to use when evaluating an AND predicate: The prefix that an object must have
-    /// to be included in the metrics results.</p>
+    /// <p>The prefix to use when evaluating an AND predicate: The prefix that an object must have to be included in the metrics results.</p>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>The list of tags to use when evaluating an AND predicate.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl AnalyticsAndOperator {
-    /// <p>The prefix to use when evaluating an AND predicate: The prefix that an object must have
-    /// to be included in the metrics results.</p>
+    /// <p>The prefix to use when evaluating an AND predicate: The prefix that an object must have to be included in the metrics results.</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
@@ -14128,14 +12613,12 @@ pub mod analytics_and_operator {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The prefix to use when evaluating an AND predicate: The prefix that an object must have
-        /// to be included in the metrics results.</p>
+        /// <p>The prefix to use when evaluating an AND predicate: The prefix that an object must have to be included in the metrics results.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>The prefix to use when evaluating an AND predicate: The prefix that an object must have
-        /// to be included in the metrics results.</p>
+        /// <p>The prefix to use when evaluating an AND predicate: The prefix that an object must have to be included in the metrics results.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -14145,9 +12628,9 @@ pub mod analytics_and_operator {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tags to use when evaluating an AND predicate.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -14243,9 +12726,7 @@ impl AsRef<str> for BucketCannedAcl {
     }
 }
 
-/// <p>Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see
-/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Amazon S3
-/// Transfer Acceleration</a> in the <i>Amazon S3 User Guide</i>.</p>
+/// <p>Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Amazon S3 Transfer Acceleration</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccelerateConfiguration {
@@ -14361,15 +12842,13 @@ impl AsRef<str> for BucketAccelerateStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Initiator {
-    /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal
-    /// is an IAM User, it provides a user ARN value.</p>
+    /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>Name of the Principal.</p>
     pub display_name: std::option::Option<std::string::String>,
 }
 impl Initiator {
-    /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal
-    /// is an IAM User, it provides a user ARN value.</p>
+    /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -14396,14 +12875,12 @@ pub mod initiator {
         pub(crate) display_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal
-        /// is an IAM User, it provides a user ARN value.</p>
+        /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal
-        /// is an IAM User, it provides a user ARN value.</p>
+        /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal is an IAM User, it provides a user ARN value.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -14438,8 +12915,7 @@ impl Initiator {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Part {
-    /// <p>Part number identifying the part. This is a positive integer between 1 and
-    /// 10,000.</p>
+    /// <p>Part number identifying the part. This is a positive integer between 1 and 10,000.</p>
     pub part_number: i32,
     /// <p>Date and time at which the part was uploaded.</p>
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -14449,8 +12925,7 @@ pub struct Part {
     pub size: i64,
 }
 impl Part {
-    /// <p>Part number identifying the part. This is a positive integer between 1 and
-    /// 10,000.</p>
+    /// <p>Part number identifying the part. This is a positive integer between 1 and 10,000.</p>
     pub fn part_number(&self) -> i32 {
         self.part_number
     }
@@ -14489,14 +12964,12 @@ pub mod part {
         pub(crate) size: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>Part number identifying the part. This is a positive integer between 1 and
-        /// 10,000.</p>
+        /// <p>Part number identifying the part. This is a positive integer between 1 and 10,000.</p>
         pub fn part_number(mut self, input: i32) -> Self {
             self.part_number = Some(input);
             self
         }
-        /// <p>Part number identifying the part. This is a positive integer between 1 and
-        /// 10,000.</p>
+        /// <p>Part number identifying the part. This is a positive integer between 1 and 10,000.</p>
         pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
             self.part_number = input;
             self
@@ -14607,10 +13080,7 @@ impl AsRef<str> for EncodingType {
     }
 }
 
-/// <p>Container for all (if there are any) keys between Prefix and the next occurrence of the
-/// string specified by a delimiter. CommonPrefixes lists keys that act like subdirectories in
-/// the directory specified by Prefix. For example, if the prefix is notes/ and the delimiter
-/// is a slash (/) as in notes/summer/july, the common prefix is notes/summer/. </p>
+/// <p>Container for all (if there are any) keys between Prefix and the next occurrence of the string specified by a delimiter. CommonPrefixes lists keys that act like subdirectories in the directory specified by Prefix. For example, if the prefix is notes/ and the delimiter is a slash (/) as in notes/summer/july, the common prefix is notes/summer/. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommonPrefix {
@@ -14668,20 +13138,19 @@ impl CommonPrefix {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMarkerEntry {
-    /// <p>The account that created the delete marker.></p>
+    /// <p>The account that created the delete marker.&gt;</p>
     pub owner: std::option::Option<crate::model::Owner>,
     /// <p>The object key.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>Version ID of an object.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the object is (true) or is not (false) the latest version of an
-    /// object.</p>
+    /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
     pub is_latest: bool,
     /// <p>Date and time the object was last modified.</p>
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteMarkerEntry {
-    /// <p>The account that created the delete marker.></p>
+    /// <p>The account that created the delete marker.&gt;</p>
     pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
         self.owner.as_ref()
     }
@@ -14693,8 +13162,7 @@ impl DeleteMarkerEntry {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Specifies whether the object is (true) or is not (false) the latest version of an
-    /// object.</p>
+    /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
     pub fn is_latest(&self) -> bool {
         self.is_latest
     }
@@ -14727,12 +13195,12 @@ pub mod delete_marker_entry {
         pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The account that created the delete marker.></p>
+        /// <p>The account that created the delete marker.&gt;</p>
         pub fn owner(mut self, input: crate::model::Owner) -> Self {
             self.owner = Some(input);
             self
         }
-        /// <p>The account that created the delete marker.></p>
+        /// <p>The account that created the delete marker.&gt;</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
             self.owner = input;
             self
@@ -14757,14 +13225,12 @@ pub mod delete_marker_entry {
             self.version_id = input;
             self
         }
-        /// <p>Specifies whether the object is (true) or is not (false) the latest version of an
-        /// object.</p>
+        /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
         pub fn is_latest(mut self, input: bool) -> Self {
             self.is_latest = Some(input);
             self
         }
-        /// <p>Specifies whether the object is (true) or is not (false) the latest version of an
-        /// object.</p>
+        /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
         pub fn set_is_latest(mut self, input: std::option::Option<bool>) -> Self {
             self.is_latest = input;
             self
@@ -14815,8 +13281,7 @@ pub struct ObjectVersion {
     pub key: std::option::Option<std::string::String>,
     /// <p>Version ID of an object.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the object is (true) or is not (false) the latest version of an
-    /// object.</p>
+    /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
     pub is_latest: bool,
     /// <p>Date and time the object was last modified.</p>
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -14844,8 +13309,7 @@ impl ObjectVersion {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Specifies whether the object is (true) or is not (false) the latest version of an
-    /// object.</p>
+    /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
     pub fn is_latest(&self) -> bool {
         self.is_latest
     }
@@ -14941,14 +13405,12 @@ pub mod object_version {
             self.version_id = input;
             self
         }
-        /// <p>Specifies whether the object is (true) or is not (false) the latest version of an
-        /// object.</p>
+        /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
         pub fn is_latest(mut self, input: bool) -> Self {
             self.is_latest = Some(input);
             self
         }
-        /// <p>Specifies whether the object is (true) or is not (false) the latest version of an
-        /// object.</p>
+        /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
         pub fn set_is_latest(mut self, input: std::option::Option<bool>) -> Self {
             self.is_latest = input;
             self
@@ -15053,30 +13515,15 @@ impl AsRef<str> for ObjectVersionStorageClass {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Object {
-    /// <p>The name that you assign to an object. You use the object key to retrieve the
-    /// object.</p>
+    /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>Creation date of the object.</p>
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents
-    /// of an object, not its metadata. The ETag may or may not be an MD5 digest of the object
-    /// data. Whether or not it is depends on how the object was created and how it is encrypted as
-    /// described below:</p>
+    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p>
     /// <ul>
-    /// <li>
-    /// <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the
-    /// Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are
-    /// an MD5 digest of their object data.</p>
-    /// </li>
-    /// <li>
-    /// <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the
-    /// Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are
-    /// not an MD5 digest of their object data.</p>
-    /// </li>
-    /// <li>
-    /// <p>If an object is created by either the Multipart Upload or Part Copy operation, the
-    /// ETag is not an MD5 digest, regardless of the method of encryption.</p>
-    /// </li>
+    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li>
+    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
+    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
     /// </ul>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Size in bytes of the object</p>
@@ -15087,8 +13534,7 @@ pub struct Object {
     pub owner: std::option::Option<crate::model::Owner>,
 }
 impl Object {
-    /// <p>The name that you assign to an object. You use the object key to retrieve the
-    /// object.</p>
+    /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -15096,25 +13542,11 @@ impl Object {
     pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
-    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents
-    /// of an object, not its metadata. The ETag may or may not be an MD5 digest of the object
-    /// data. Whether or not it is depends on how the object was created and how it is encrypted as
-    /// described below:</p>
+    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p>
     /// <ul>
-    /// <li>
-    /// <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the
-    /// Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are
-    /// an MD5 digest of their object data.</p>
-    /// </li>
-    /// <li>
-    /// <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the
-    /// Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are
-    /// not an MD5 digest of their object data.</p>
-    /// </li>
-    /// <li>
-    /// <p>If an object is created by either the Multipart Upload or Part Copy operation, the
-    /// ETag is not an MD5 digest, regardless of the method of encryption.</p>
-    /// </li>
+    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li>
+    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
+    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
     /// </ul>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
@@ -15158,14 +13590,12 @@ pub mod object {
         pub(crate) owner: std::option::Option<crate::model::Owner>,
     }
     impl Builder {
-        /// <p>The name that you assign to an object. You use the object key to retrieve the
-        /// object.</p>
+        /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The name that you assign to an object. You use the object key to retrieve the
-        /// object.</p>
+        /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -15183,49 +13613,21 @@ pub mod object {
             self.last_modified = input;
             self
         }
-        /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents
-        /// of an object, not its metadata. The ETag may or may not be an MD5 digest of the object
-        /// data. Whether or not it is depends on how the object was created and how it is encrypted as
-        /// described below:</p>
+        /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p>
         /// <ul>
-        /// <li>
-        /// <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the
-        /// Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are
-        /// an MD5 digest of their object data.</p>
-        /// </li>
-        /// <li>
-        /// <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the
-        /// Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are
-        /// not an MD5 digest of their object data.</p>
-        /// </li>
-        /// <li>
-        /// <p>If an object is created by either the Multipart Upload or Part Copy operation, the
-        /// ETag is not an MD5 digest, regardless of the method of encryption.</p>
-        /// </li>
+        /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li>
+        /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
+        /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
         /// </ul>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents
-        /// of an object, not its metadata. The ETag may or may not be an MD5 digest of the object
-        /// data. Whether or not it is depends on how the object was created and how it is encrypted as
-        /// described below:</p>
+        /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p>
         /// <ul>
-        /// <li>
-        /// <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the
-        /// Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are
-        /// an MD5 digest of their object data.</p>
-        /// </li>
-        /// <li>
-        /// <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the
-        /// Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are
-        /// not an MD5 digest of their object data.</p>
-        /// </li>
-        /// <li>
-        /// <p>If an object is created by either the Multipart Upload or Part Copy operation, the
-        /// ETag is not an MD5 digest, regardless of the method of encryption.</p>
-        /// </li>
+        /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li>
+        /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
+        /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption.</p> </li>
         /// </ul>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
@@ -15535,8 +13937,7 @@ impl MultipartUpload {
     }
 }
 
-/// <p> In terms of implementation, a Bucket is a resource. An Amazon S3 bucket name is globally
-/// unique, and the namespace is shared by all Amazon Web Services accounts. </p>
+/// <p> In terms of implementation, a Bucket is a resource. An Amazon S3 bucket name is globally unique, and the namespace is shared by all Amazon Web Services accounts. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Bucket {
@@ -15726,13 +14127,11 @@ impl AsRef<str> for MfaDeleteStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyStatus {
-    /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is
-    /// public. <code>FALSE</code> indicates that the bucket is not public.</p>
+    /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
     pub is_public: bool,
 }
 impl PolicyStatus {
-    /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is
-    /// public. <code>FALSE</code> indicates that the bucket is not public.</p>
+    /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
     pub fn is_public(&self) -> bool {
         self.is_public
     }
@@ -15753,14 +14152,12 @@ pub mod policy_status {
         pub(crate) is_public: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is
-        /// public. <code>FALSE</code> indicates that the bucket is not public.</p>
+        /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
         pub fn is_public(mut self, input: bool) -> Self {
             self.is_public = Some(input);
             self
         }
-        /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is
-        /// public. <code>FALSE</code> indicates that the bucket is not public.</p>
+        /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
         pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
             self.is_public = input;
             self
@@ -15961,1876 +14358,629 @@ pub struct Error {
     pub key: std::option::Option<std::string::String>,
     /// <p>The version ID of the error.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to
-    /// be read and understood by programs that detect and handle errors by type. </p>
-    /// <p class="title">
-    /// <b>Amazon S3 error codes</b>
-    /// </p>
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+    /// <p class="title"> <b>Amazon S3 error codes</b> </p>
     /// <ul>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> AccessDenied </p> </li>
+    /// <li> <p> <i>Description:</i> Access Denied</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> AccessDenied </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Access Denied</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> AccountProblem</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> AccountProblem</p> </li>
+    /// <li> <p> <i>Description:</i> There is a problem with your Amazon Web Services account that prevents the action from completing successfully. Contact Amazon Web Services Support for further assistance.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> There is a problem with your Amazon Web Services account
-    /// that prevents the action from completing successfully. Contact Amazon Web Services Support
-    /// for further assistance.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> AllAccessDisabled</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> All access to this Amazon S3 resource has been
-    /// disabled. Contact Amazon Web Services Support for further assistance.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> AllAccessDisabled</p> </li>
+    /// <li> <p> <i>Description:</i> All access to this Amazon S3 resource has been disabled. Contact Amazon Web Services Support for further assistance.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> AmbiguousGrantByEmailAddress</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The email address you provided is
-    /// associated with more than one account.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p> </li>
+    /// <li> <p> <i>Description:</i> The email address you provided is associated with more than one account.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li>
+    /// <li> <p> <i>Description:</i> The authorization header you provided is invalid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> AuthorizationHeaderMalformed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The authorization header you provided is
-    /// invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> BadDigest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The Content-MD5 you specified did not
-    /// match what we received.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> BadDigest</p> </li>
+    /// <li> <p> <i>Description:</i> The Content-MD5 you specified did not match what we received.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> BucketAlreadyExists</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The requested bucket name is not
-    /// available. The bucket namespace is shared by all users of the system. Please
-    /// select a different name and try again.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 409 Conflict</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li>
+    /// <li> <p> <i>Description:</i> The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> BucketAlreadyOwnedByYou</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The bucket you tried to create already
-    /// exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in
-    /// the North Virginia Region. For legacy compatibility, if you re-create an
-    /// existing bucket that you already own in the North Virginia Region, Amazon S3 returns
-    /// 200 OK and resets the bucket access control lists (ACLs).</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li>
+    /// <li> <p> <i>Description:</i> The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p> </li>
+    /// <li> <p> <i>Code:</i> 409 Conflict (in all Regions except the North Virginia Region) </p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> 409 Conflict (in all Regions except the North
-    /// Virginia Region) </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> BucketNotEmpty</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> BucketNotEmpty</p> </li>
+    /// <li> <p> <i>Description:</i> The bucket you tried to delete is not empty.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> The bucket you tried to delete is not
-    /// empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 409 Conflict</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> CredentialsNotSupported</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> This request does not support
-    /// credentials.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> CredentialsNotSupported</p> </li>
+    /// <li> <p> <i>Description:</i> This request does not support credentials.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> CrossLocationLoggingProhibited</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Cross-location logging not allowed.
-    /// Buckets in one geographic location cannot log information to a bucket in
-    /// another location.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> CrossLocationLoggingProhibited</p> </li>
+    /// <li> <p> <i>Description:</i> Cross-location logging not allowed. Buckets in one geographic location cannot log information to a bucket in another location.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> EntityTooSmall</p> </li>
+    /// <li> <p> <i>Description:</i> Your proposed upload is smaller than the minimum allowed object size.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> EntityTooSmall</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Your proposed upload is smaller than the
-    /// minimum allowed object size.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> EntityTooLarge</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> EntityTooLarge</p> </li>
+    /// <li> <p> <i>Description:</i> Your proposed upload exceeds the maximum allowed object size.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> Your proposed upload exceeds the maximum
-    /// allowed object size.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> ExpiredToken</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The provided token has expired.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> ExpiredToken</p> </li>
+    /// <li> <p> <i>Description:</i> The provided token has expired.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> IllegalVersioningConfigurationException </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Indicates that the versioning
-    /// configuration specified in the request is invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> IllegalVersioningConfigurationException </p> </li>
+    /// <li> <p> <i>Description:</i> Indicates that the versioning configuration specified in the request is invalid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> IncompleteBody</p> </li>
+    /// <li> <p> <i>Description:</i> You did not provide the number of bytes specified by the Content-Length HTTP header</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> IncompleteBody</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> You did not provide the number of bytes
-    /// specified by the Content-Length HTTP header</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> IncorrectNumberOfFilesInPostRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> POST requires exactly one file upload per
-    /// request.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> IncorrectNumberOfFilesInPostRequest</p> </li>
+    /// <li> <p> <i>Description:</i> POST requires exactly one file upload per request.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InlineDataTooLarge</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Inline data exceeds the maximum allowed
-    /// size.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InlineDataTooLarge</p> </li>
+    /// <li> <p> <i>Description:</i> Inline data exceeds the maximum allowed size.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InternalError</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> We encountered an internal error. Please
-    /// try again.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InternalError</p> </li>
+    /// <li> <p> <i>Description:</i> We encountered an internal error. Please try again.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 500 Internal Server Error</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 500 Internal Server Error</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Server</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidAccessKeyId</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidAccessKeyId</p> </li>
+    /// <li> <p> <i>Description:</i> The Amazon Web Services access key ID you provided does not exist in our records.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> The Amazon Web Services access key ID you provided does
-    /// not exist in our records.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidAddressingHeader</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> You must specify the Anonymous
-    /// role.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li>
+    /// <li> <p> <i>Description:</i> You must specify the Anonymous role.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> N/A</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> N/A</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidArgument</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Invalid Argument</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidArgument</p> </li>
+    /// <li> <p> <i>Description:</i> Invalid Argument</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> InvalidBucketName</p> </li>
+    /// <li> <p> <i>Description:</i> The specified bucket is not valid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidBucketName</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The specified bucket is not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidBucketState</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidBucketState</p> </li>
+    /// <li> <p> <i>Description:</i> The request is not valid with the current state of the bucket.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> The request is not valid with the current
-    /// state of the bucket.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 409 Conflict</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidDigest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The Content-MD5 you specified is not
-    /// valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidDigest</p> </li>
+    /// <li> <p> <i>Description:</i> The Content-MD5 you specified is not valid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidEncryptionAlgorithmError</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The encryption request you specified is
-    /// not valid. The valid value is AES256.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidEncryptionAlgorithmError</p> </li>
+    /// <li> <p> <i>Description:</i> The encryption request you specified is not valid. The valid value is AES256.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> InvalidLocationConstraint</p> </li>
+    /// <li> <p> <i>Description:</i> The specified location constraint is not valid. For more information about Regions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How to Select a Region for Your Buckets</a>. </p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidLocationConstraint</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The specified location constraint is not
-    /// valid. For more information about Regions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How to Select a
-    /// Region for Your Buckets</a>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidObjectState</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The action is not valid for the current
-    /// state of the object.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidObjectState</p> </li>
+    /// <li> <p> <i>Description:</i> The action is not valid for the current state of the object.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidPart</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> One or more of the specified parts could
-    /// not be found. The part might not have been uploaded, or the specified entity
-    /// tag might not have matched the part's entity tag.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidPart</p> </li>
+    /// <li> <p> <i>Description:</i> One or more of the specified parts could not be found. The part might not have been uploaded, or the specified entity tag might not have matched the part's entity tag.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidPartOrder</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The list of parts was not in ascending
-    /// order. Parts list must be specified in order by part number.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidPartOrder</p> </li>
+    /// <li> <p> <i>Description:</i> The list of parts was not in ascending order. Parts list must be specified in order by part number.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidPayer</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidPayer</p> </li>
+    /// <li> <p> <i>Description:</i> All access to this object has been disabled. Please contact Amazon Web Services Support for further assistance.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> All access to this object has been
-    /// disabled. Please contact Amazon Web Services Support for further assistance.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidPolicyDocument</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The content of the form does not meet the
-    /// conditions specified in the policy document.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li>
+    /// <li> <p> <i>Description:</i> The content of the form does not meet the conditions specified in the policy document.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRange</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The requested range cannot be
-    /// satisfied.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 416 Requested Range Not
-    /// Satisfiable</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRange</p> </li>
+    /// <li> <p> <i>Description:</i> The requested range cannot be satisfied.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Please use <code>AWS4-HMAC-SHA256</code>.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Please use <code>AWS4-HMAC-SHA256</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> SOAP requests must be made over an HTTPS connection.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> SOAP requests must be made over an HTTPS
-    /// connection.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
-    /// supported for buckets with non-DNS compliant names.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration is not supported for buckets with non-DNS compliant names.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
-    /// supported for buckets with periods (.) in their names.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration is not supported for buckets with periods (.) in their names.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Amazon S3 Transfer Accelerate endpoint only supports virtual style requests.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Amazon S3 Transfer Accelerate endpoint only
-    /// supports virtual style requests.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Amazon S3 Transfer Accelerate is not configured
-    /// on this bucket.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Amazon S3 Transfer Accelerate is not configured on this bucket.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Amazon S3 Transfer Accelerate is disabled on
-    /// this bucket.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Amazon S3 Transfer Accelerate is disabled on this bucket.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
-    /// supported on this bucket. Contact Amazon Web Services Support for more information.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration is not supported on this bucket. Contact Amazon Web Services Support for more information.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration cannot be enabled on this bucket. Contact Amazon Web Services Support for more information.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
-    /// enabled on this bucket. Contact Amazon Web Services Support for more information.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidSecurity</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The provided security credentials are not
-    /// valid.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidSecurity</p> </li>
+    /// <li> <p> <i>Description:</i> The provided security credentials are not valid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidSOAPRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The SOAP request body is invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidSOAPRequest</p> </li>
+    /// <li> <p> <i>Description:</i> The SOAP request body is invalid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> InvalidStorageClass</p> </li>
+    /// <li> <p> <i>Description:</i> The storage class you specified is not valid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidStorageClass</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The storage class you specified is not
-    /// valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidTargetBucketForLogging</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidTargetBucketForLogging</p> </li>
+    /// <li> <p> <i>Description:</i> The target bucket for logging does not exist, is not owned by you, or does not have the appropriate grants for the log-delivery group. </p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> The target bucket for logging does not
-    /// exist, is not owned by you, or does not have the appropriate grants for the
-    /// log-delivery group. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidToken</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The provided token is malformed or
-    /// otherwise invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidToken</p> </li>
+    /// <li> <p> <i>Description:</i> The provided token is malformed or otherwise invalid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidURI</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Couldn't parse the specified URI.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidURI</p> </li>
+    /// <li> <p> <i>Description:</i> Couldn't parse the specified URI.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> KeyTooLongError</p> </li>
+    /// <li> <p> <i>Description:</i> Your key is too long.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> KeyTooLongError</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Your key is too long.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MalformedACLError</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The XML you provided was not well-formed
-    /// or did not validate against our published schema.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MalformedACLError</p> </li>
+    /// <li> <p> <i>Description:</i> The XML you provided was not well-formed or did not validate against our published schema.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MalformedPOSTRequest </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The body of your POST request is not
-    /// well-formed multipart/form-data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li>
+    /// <li> <p> <i>Description:</i> The body of your POST request is not well-formed multipart/form-data.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MalformedXML</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> This happens when the user sends malformed
-    /// XML (XML that doesn't conform to the published XSD) for the configuration. The
-    /// error message is, "The XML you provided was not well-formed or did not validate
-    /// against our published schema." </p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MalformedXML</p> </li>
+    /// <li> <p> <i>Description:</i> This happens when the user sends malformed XML (XML that doesn't conform to the published XSD) for the configuration. The error message is, "The XML you provided was not well-formed or did not validate against our published schema." </p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MaxMessageLengthExceeded</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MaxMessageLengthExceeded</p> </li>
+    /// <li> <p> <i>Description:</i> Your request was too big.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> Your request was too big.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MaxPostPreDataLengthExceededError</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Your POST request fields preceding the
-    /// upload file were too large.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MaxPostPreDataLengthExceededError</p> </li>
+    /// <li> <p> <i>Description:</i> Your POST request fields preceding the upload file were too large.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MetadataTooLarge</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Your metadata headers exceed the maximum
-    /// allowed metadata size.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MetadataTooLarge</p> </li>
+    /// <li> <p> <i>Description:</i> Your metadata headers exceed the maximum allowed metadata size.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> MethodNotAllowed</p> </li>
+    /// <li> <p> <i>Description:</i> The specified method is not allowed against this resource.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 405 Method Not Allowed</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> MethodNotAllowed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The specified method is not allowed
-    /// against this resource.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 405 Method Not Allowed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MissingAttachment</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MissingAttachment</p> </li>
+    /// <li> <p> <i>Description:</i> A SOAP attachment was expected, but none were found.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> N/A</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> A SOAP attachment was expected, but none
-    /// were found.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> N/A</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MissingContentLength</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> You must provide the Content-Length HTTP
-    /// header.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 411 Length Required</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MissingContentLength</p> </li>
+    /// <li> <p> <i>Description:</i> You must provide the Content-Length HTTP header.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 411 Length Required</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MissingRequestBodyError</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> This happens when the user sends an empty
-    /// XML document as a request. The error message is, "Request body is empty."
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MissingRequestBodyError</p> </li>
+    /// <li> <p> <i>Description:</i> This happens when the user sends an empty XML document as a request. The error message is, "Request body is empty." </p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> MissingSecurityElement</p> </li>
+    /// <li> <p> <i>Description:</i> The SOAP 1.1 request is missing a security element.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> MissingSecurityElement</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The SOAP 1.1 request is missing a security
-    /// element.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MissingSecurityHeader</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Your request is missing a required
-    /// header.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MissingSecurityHeader</p> </li>
+    /// <li> <p> <i>Description:</i> Your request is missing a required header.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NoLoggingStatusForKey</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> There is no such thing as a logging status
-    /// subresource for a key.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NoLoggingStatusForKey</p> </li>
+    /// <li> <p> <i>Description:</i> There is no such thing as a logging status subresource for a key.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NoSuchBucket</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The specified bucket does not
-    /// exist.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NoSuchBucket</p> </li>
+    /// <li> <p> <i>Description:</i> The specified bucket does not exist.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 404 Not Found</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NoSuchBucketPolicy</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NoSuchBucketPolicy</p> </li>
+    /// <li> <p> <i>Description:</i> The specified bucket does not have a bucket policy.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> The specified bucket does not have a
-    /// bucket policy.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 404 Not Found</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NoSuchKey</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The specified key does not exist.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NoSuchKey</p> </li>
+    /// <li> <p> <i>Description:</i> The specified key does not exist.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 404 Not Found</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NoSuchLifecycleConfiguration</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The lifecycle configuration does not
-    /// exist. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 404 Not Found</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NoSuchLifecycleConfiguration</p> </li>
+    /// <li> <p> <i>Description:</i> The lifecycle configuration does not exist. </p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> NoSuchUpload</p> </li>
+    /// <li> <p> <i>Description:</i> The specified multipart upload does not exist. The upload ID might be invalid, or the multipart upload might have been aborted or completed.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> NoSuchUpload</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The specified multipart upload does not
-    /// exist. The upload ID might be invalid, or the multipart upload might have been
-    /// aborted or completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 404 Not Found</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NoSuchVersion </p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NoSuchVersion </p> </li>
+    /// <li> <p> <i>Description:</i> Indicates that the version ID specified in the request does not match an existing version.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> Indicates that the version ID specified in
-    /// the request does not match an existing version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 404 Not Found</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NotImplemented</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> A header you provided implies
-    /// functionality that is not implemented.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 501 Not Implemented</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NotImplemented</p> </li>
+    /// <li> <p> <i>Description:</i> A header you provided implies functionality that is not implemented.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 501 Not Implemented</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Server</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NotSignedUp</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Your account is not signed up for the Amazon S3
-    /// service. You must sign up before you can use Amazon S3. You can sign up at the
-    /// following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NotSignedUp</p> </li>
+    /// <li> <p> <i>Description:</i> Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a> </p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> OperationAborted</p> </li>
+    /// <li> <p> <i>Description:</i> A conflicting conditional action is currently in progress against this resource. Try again.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> OperationAborted</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> A conflicting conditional action is
-    /// currently in progress against this resource. Try again.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 409 Conflict</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> PermanentRedirect</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The bucket you are attempting to access
-    /// must be addressed using the specified endpoint. Send all future requests to
-    /// this endpoint.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> PermanentRedirect</p> </li>
+    /// <li> <p> <i>Description:</i> The bucket you are attempting to access must be addressed using the specified endpoint. Send all future requests to this endpoint.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 301 Moved Permanently</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 301 Moved Permanently</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> PreconditionFailed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> At least one of the preconditions you
-    /// specified did not hold.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 412 Precondition Failed</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> PreconditionFailed</p> </li>
+    /// <li> <p> <i>Description:</i> At least one of the preconditions you specified did not hold.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 412 Precondition Failed</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> Redirect</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Temporary redirect.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> Redirect</p> </li>
+    /// <li> <p> <i>Description:</i> Temporary redirect.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 307 Moved Temporarily</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> RestoreAlreadyInProgress</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> RestoreAlreadyInProgress</p> </li>
+    /// <li> <p> <i>Description:</i> Object restore is already in progress.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> Object restore is already in
-    /// progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 409 Conflict</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> RequestIsNotMultiPartContent</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Bucket POST must be of the enclosure-type
-    /// multipart/form-data.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> RequestIsNotMultiPartContent</p> </li>
+    /// <li> <p> <i>Description:</i> Bucket POST must be of the enclosure-type multipart/form-data.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> RequestTimeout</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Your socket connection to the server was
-    /// not read from or written to within the timeout period.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> RequestTimeout</p> </li>
+    /// <li> <p> <i>Description:</i> Your socket connection to the server was not read from or written to within the timeout period.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> RequestTimeTooSkewed</p> </li>
+    /// <li> <p> <i>Description:</i> The difference between the request time and the server's time is too large.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> RequestTimeTooSkewed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The difference between the request time
-    /// and the server's time is too large.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> RequestTorrentOfBucketError</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> RequestTorrentOfBucketError</p> </li>
+    /// <li> <p> <i>Description:</i> Requesting the torrent file of a bucket is not permitted.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> Requesting the torrent file of a bucket is
-    /// not permitted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> SignatureDoesNotMatch</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The request signature we calculated does
-    /// not match the signature you provided. Check your Amazon Web Services secret access key and
-    /// signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a>
-    /// for details.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> SignatureDoesNotMatch</p> </li>
+    /// <li> <p> <i>Description:</i> The request signature we calculated does not match the signature you provided. Check your Amazon Web Services secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a> for details.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> ServiceUnavailable</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Reduce your request rate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 503 Service Unavailable</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Server</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> ServiceUnavailable</p> </li>
+    /// <li> <p> <i>Description:</i> Reduce your request rate.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> SlowDown</p> </li>
+    /// <li> <p> <i>Description:</i> Reduce your request rate.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> SlowDown</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Reduce your request rate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 503 Slow Down</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Server</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> TemporaryRedirect</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> You are being redirected to the bucket
-    /// while DNS updates.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> TemporaryRedirect</p> </li>
+    /// <li> <p> <i>Description:</i> You are being redirected to the bucket while DNS updates.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 307 Moved Temporarily</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> TokenRefreshRequired</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The provided token must be
-    /// refreshed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> TokenRefreshRequired</p> </li>
+    /// <li> <p> <i>Description:</i> The provided token must be refreshed.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> TooManyBuckets</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> You have attempted to create more buckets
-    /// than allowed.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> TooManyBuckets</p> </li>
+    /// <li> <p> <i>Description:</i> You have attempted to create more buckets than allowed.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> UnexpectedContent</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> UnexpectedContent</p> </li>
+    /// <li> <p> <i>Description:</i> This request does not support content.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> This request does not support
-    /// content.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> UnresolvableGrantByEmailAddress</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The email address you provided does not
-    /// match any account on record.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> UnresolvableGrantByEmailAddress</p> </li>
+    /// <li> <p> <i>Description:</i> The email address you provided does not match any account on record.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> UserKeyMustBeSpecified</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The bucket POST must contain the specified
-    /// field name. If it is specified, check the order of the fields.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> UserKeyMustBeSpecified</p> </li>
+    /// <li> <p> <i>Description:</i> The bucket POST must contain the specified field name. If it is specified, check the order of the fields.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// </ul>
     /// <p></p>
     pub code: std::option::Option<std::string::String>,
-    /// <p>The error message contains a generic description of the error condition in English. It
-    /// is intended for a human audience. Simple programs display the message directly to the end
-    /// user if they encounter an error condition they don't know how or don't care to handle.
-    /// Sophisticated programs with more exhaustive error handling and proper internationalization
-    /// are more likely to ignore the error message.</p>
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl Error {
@@ -17842,1878 +14992,631 @@ impl Error {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to
-    /// be read and understood by programs that detect and handle errors by type. </p>
-    /// <p class="title">
-    /// <b>Amazon S3 error codes</b>
-    /// </p>
+    /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+    /// <p class="title"> <b>Amazon S3 error codes</b> </p>
     /// <ul>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> AccessDenied </p> </li>
+    /// <li> <p> <i>Description:</i> Access Denied</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> AccessDenied </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Access Denied</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> AccountProblem</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> AccountProblem</p> </li>
+    /// <li> <p> <i>Description:</i> There is a problem with your Amazon Web Services account that prevents the action from completing successfully. Contact Amazon Web Services Support for further assistance.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> There is a problem with your Amazon Web Services account
-    /// that prevents the action from completing successfully. Contact Amazon Web Services Support
-    /// for further assistance.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> AllAccessDisabled</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> All access to this Amazon S3 resource has been
-    /// disabled. Contact Amazon Web Services Support for further assistance.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> AllAccessDisabled</p> </li>
+    /// <li> <p> <i>Description:</i> All access to this Amazon S3 resource has been disabled. Contact Amazon Web Services Support for further assistance.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> AmbiguousGrantByEmailAddress</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The email address you provided is
-    /// associated with more than one account.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p> </li>
+    /// <li> <p> <i>Description:</i> The email address you provided is associated with more than one account.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li>
+    /// <li> <p> <i>Description:</i> The authorization header you provided is invalid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> AuthorizationHeaderMalformed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The authorization header you provided is
-    /// invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> BadDigest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The Content-MD5 you specified did not
-    /// match what we received.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> BadDigest</p> </li>
+    /// <li> <p> <i>Description:</i> The Content-MD5 you specified did not match what we received.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> BucketAlreadyExists</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The requested bucket name is not
-    /// available. The bucket namespace is shared by all users of the system. Please
-    /// select a different name and try again.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 409 Conflict</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li>
+    /// <li> <p> <i>Description:</i> The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> BucketAlreadyOwnedByYou</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The bucket you tried to create already
-    /// exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in
-    /// the North Virginia Region. For legacy compatibility, if you re-create an
-    /// existing bucket that you already own in the North Virginia Region, Amazon S3 returns
-    /// 200 OK and resets the bucket access control lists (ACLs).</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li>
+    /// <li> <p> <i>Description:</i> The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p> </li>
+    /// <li> <p> <i>Code:</i> 409 Conflict (in all Regions except the North Virginia Region) </p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> 409 Conflict (in all Regions except the North
-    /// Virginia Region) </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> BucketNotEmpty</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> BucketNotEmpty</p> </li>
+    /// <li> <p> <i>Description:</i> The bucket you tried to delete is not empty.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> The bucket you tried to delete is not
-    /// empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 409 Conflict</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> CredentialsNotSupported</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> This request does not support
-    /// credentials.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> CredentialsNotSupported</p> </li>
+    /// <li> <p> <i>Description:</i> This request does not support credentials.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> CrossLocationLoggingProhibited</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Cross-location logging not allowed.
-    /// Buckets in one geographic location cannot log information to a bucket in
-    /// another location.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> CrossLocationLoggingProhibited</p> </li>
+    /// <li> <p> <i>Description:</i> Cross-location logging not allowed. Buckets in one geographic location cannot log information to a bucket in another location.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> EntityTooSmall</p> </li>
+    /// <li> <p> <i>Description:</i> Your proposed upload is smaller than the minimum allowed object size.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> EntityTooSmall</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Your proposed upload is smaller than the
-    /// minimum allowed object size.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> EntityTooLarge</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> EntityTooLarge</p> </li>
+    /// <li> <p> <i>Description:</i> Your proposed upload exceeds the maximum allowed object size.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> Your proposed upload exceeds the maximum
-    /// allowed object size.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> ExpiredToken</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The provided token has expired.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> ExpiredToken</p> </li>
+    /// <li> <p> <i>Description:</i> The provided token has expired.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> IllegalVersioningConfigurationException </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Indicates that the versioning
-    /// configuration specified in the request is invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> IllegalVersioningConfigurationException </p> </li>
+    /// <li> <p> <i>Description:</i> Indicates that the versioning configuration specified in the request is invalid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> IncompleteBody</p> </li>
+    /// <li> <p> <i>Description:</i> You did not provide the number of bytes specified by the Content-Length HTTP header</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> IncompleteBody</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> You did not provide the number of bytes
-    /// specified by the Content-Length HTTP header</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> IncorrectNumberOfFilesInPostRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> POST requires exactly one file upload per
-    /// request.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> IncorrectNumberOfFilesInPostRequest</p> </li>
+    /// <li> <p> <i>Description:</i> POST requires exactly one file upload per request.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InlineDataTooLarge</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Inline data exceeds the maximum allowed
-    /// size.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InlineDataTooLarge</p> </li>
+    /// <li> <p> <i>Description:</i> Inline data exceeds the maximum allowed size.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InternalError</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> We encountered an internal error. Please
-    /// try again.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InternalError</p> </li>
+    /// <li> <p> <i>Description:</i> We encountered an internal error. Please try again.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 500 Internal Server Error</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 500 Internal Server Error</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Server</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidAccessKeyId</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidAccessKeyId</p> </li>
+    /// <li> <p> <i>Description:</i> The Amazon Web Services access key ID you provided does not exist in our records.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> The Amazon Web Services access key ID you provided does
-    /// not exist in our records.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidAddressingHeader</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> You must specify the Anonymous
-    /// role.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li>
+    /// <li> <p> <i>Description:</i> You must specify the Anonymous role.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> N/A</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> N/A</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidArgument</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Invalid Argument</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidArgument</p> </li>
+    /// <li> <p> <i>Description:</i> Invalid Argument</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> InvalidBucketName</p> </li>
+    /// <li> <p> <i>Description:</i> The specified bucket is not valid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidBucketName</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The specified bucket is not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidBucketState</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidBucketState</p> </li>
+    /// <li> <p> <i>Description:</i> The request is not valid with the current state of the bucket.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> The request is not valid with the current
-    /// state of the bucket.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 409 Conflict</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidDigest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The Content-MD5 you specified is not
-    /// valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidDigest</p> </li>
+    /// <li> <p> <i>Description:</i> The Content-MD5 you specified is not valid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidEncryptionAlgorithmError</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The encryption request you specified is
-    /// not valid. The valid value is AES256.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidEncryptionAlgorithmError</p> </li>
+    /// <li> <p> <i>Description:</i> The encryption request you specified is not valid. The valid value is AES256.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> InvalidLocationConstraint</p> </li>
+    /// <li> <p> <i>Description:</i> The specified location constraint is not valid. For more information about Regions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How to Select a Region for Your Buckets</a>. </p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidLocationConstraint</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The specified location constraint is not
-    /// valid. For more information about Regions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How to Select a
-    /// Region for Your Buckets</a>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidObjectState</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The action is not valid for the current
-    /// state of the object.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidObjectState</p> </li>
+    /// <li> <p> <i>Description:</i> The action is not valid for the current state of the object.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidPart</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> One or more of the specified parts could
-    /// not be found. The part might not have been uploaded, or the specified entity
-    /// tag might not have matched the part's entity tag.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidPart</p> </li>
+    /// <li> <p> <i>Description:</i> One or more of the specified parts could not be found. The part might not have been uploaded, or the specified entity tag might not have matched the part's entity tag.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidPartOrder</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The list of parts was not in ascending
-    /// order. Parts list must be specified in order by part number.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidPartOrder</p> </li>
+    /// <li> <p> <i>Description:</i> The list of parts was not in ascending order. Parts list must be specified in order by part number.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidPayer</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidPayer</p> </li>
+    /// <li> <p> <i>Description:</i> All access to this object has been disabled. Please contact Amazon Web Services Support for further assistance.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> All access to this object has been
-    /// disabled. Please contact Amazon Web Services Support for further assistance.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidPolicyDocument</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The content of the form does not meet the
-    /// conditions specified in the policy document.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li>
+    /// <li> <p> <i>Description:</i> The content of the form does not meet the conditions specified in the policy document.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRange</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The requested range cannot be
-    /// satisfied.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 416 Requested Range Not
-    /// Satisfiable</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRange</p> </li>
+    /// <li> <p> <i>Description:</i> The requested range cannot be satisfied.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Please use <code>AWS4-HMAC-SHA256</code>.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Please use <code>AWS4-HMAC-SHA256</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> SOAP requests must be made over an HTTPS connection.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> SOAP requests must be made over an HTTPS
-    /// connection.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
-    /// supported for buckets with non-DNS compliant names.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration is not supported for buckets with non-DNS compliant names.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
-    /// supported for buckets with periods (.) in their names.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration is not supported for buckets with periods (.) in their names.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Amazon S3 Transfer Accelerate endpoint only supports virtual style requests.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Amazon S3 Transfer Accelerate endpoint only
-    /// supports virtual style requests.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Amazon S3 Transfer Accelerate is not configured
-    /// on this bucket.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Amazon S3 Transfer Accelerate is not configured on this bucket.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Amazon S3 Transfer Accelerate is disabled on
-    /// this bucket.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Amazon S3 Transfer Accelerate is disabled on this bucket.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
-    /// supported on this bucket. Contact Amazon Web Services Support for more information.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration is not supported on this bucket. Contact Amazon Web Services Support for more information.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidRequest</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+    /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration cannot be enabled on this bucket. Contact Amazon Web Services Support for more information.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>Code:</i> N/A</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
-    /// enabled on this bucket. Contact Amazon Web Services Support for more information.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> N/A</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidSecurity</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The provided security credentials are not
-    /// valid.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidSecurity</p> </li>
+    /// <li> <p> <i>Description:</i> The provided security credentials are not valid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidSOAPRequest</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The SOAP request body is invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidSOAPRequest</p> </li>
+    /// <li> <p> <i>Description:</i> The SOAP request body is invalid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> InvalidStorageClass</p> </li>
+    /// <li> <p> <i>Description:</i> The storage class you specified is not valid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidStorageClass</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The storage class you specified is not
-    /// valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidTargetBucketForLogging</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidTargetBucketForLogging</p> </li>
+    /// <li> <p> <i>Description:</i> The target bucket for logging does not exist, is not owned by you, or does not have the appropriate grants for the log-delivery group. </p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> The target bucket for logging does not
-    /// exist, is not owned by you, or does not have the appropriate grants for the
-    /// log-delivery group. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidToken</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The provided token is malformed or
-    /// otherwise invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidToken</p> </li>
+    /// <li> <p> <i>Description:</i> The provided token is malformed or otherwise invalid.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> InvalidURI</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Couldn't parse the specified URI.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> InvalidURI</p> </li>
+    /// <li> <p> <i>Description:</i> Couldn't parse the specified URI.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> KeyTooLongError</p> </li>
+    /// <li> <p> <i>Description:</i> Your key is too long.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> KeyTooLongError</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Your key is too long.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MalformedACLError</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The XML you provided was not well-formed
-    /// or did not validate against our published schema.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MalformedACLError</p> </li>
+    /// <li> <p> <i>Description:</i> The XML you provided was not well-formed or did not validate against our published schema.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MalformedPOSTRequest </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The body of your POST request is not
-    /// well-formed multipart/form-data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li>
+    /// <li> <p> <i>Description:</i> The body of your POST request is not well-formed multipart/form-data.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MalformedXML</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> This happens when the user sends malformed
-    /// XML (XML that doesn't conform to the published XSD) for the configuration. The
-    /// error message is, "The XML you provided was not well-formed or did not validate
-    /// against our published schema." </p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MalformedXML</p> </li>
+    /// <li> <p> <i>Description:</i> This happens when the user sends malformed XML (XML that doesn't conform to the published XSD) for the configuration. The error message is, "The XML you provided was not well-formed or did not validate against our published schema." </p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MaxMessageLengthExceeded</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MaxMessageLengthExceeded</p> </li>
+    /// <li> <p> <i>Description:</i> Your request was too big.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> Your request was too big.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MaxPostPreDataLengthExceededError</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Your POST request fields preceding the
-    /// upload file were too large.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MaxPostPreDataLengthExceededError</p> </li>
+    /// <li> <p> <i>Description:</i> Your POST request fields preceding the upload file were too large.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MetadataTooLarge</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Your metadata headers exceed the maximum
-    /// allowed metadata size.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MetadataTooLarge</p> </li>
+    /// <li> <p> <i>Description:</i> Your metadata headers exceed the maximum allowed metadata size.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> MethodNotAllowed</p> </li>
+    /// <li> <p> <i>Description:</i> The specified method is not allowed against this resource.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 405 Method Not Allowed</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> MethodNotAllowed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The specified method is not allowed
-    /// against this resource.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 405 Method Not Allowed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MissingAttachment</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MissingAttachment</p> </li>
+    /// <li> <p> <i>Description:</i> A SOAP attachment was expected, but none were found.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> N/A</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> A SOAP attachment was expected, but none
-    /// were found.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> N/A</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MissingContentLength</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> You must provide the Content-Length HTTP
-    /// header.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 411 Length Required</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MissingContentLength</p> </li>
+    /// <li> <p> <i>Description:</i> You must provide the Content-Length HTTP header.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 411 Length Required</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MissingRequestBodyError</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> This happens when the user sends an empty
-    /// XML document as a request. The error message is, "Request body is empty."
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MissingRequestBodyError</p> </li>
+    /// <li> <p> <i>Description:</i> This happens when the user sends an empty XML document as a request. The error message is, "Request body is empty." </p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> MissingSecurityElement</p> </li>
+    /// <li> <p> <i>Description:</i> The SOAP 1.1 request is missing a security element.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> MissingSecurityElement</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The SOAP 1.1 request is missing a security
-    /// element.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> MissingSecurityHeader</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Your request is missing a required
-    /// header.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> MissingSecurityHeader</p> </li>
+    /// <li> <p> <i>Description:</i> Your request is missing a required header.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NoLoggingStatusForKey</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> There is no such thing as a logging status
-    /// subresource for a key.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NoLoggingStatusForKey</p> </li>
+    /// <li> <p> <i>Description:</i> There is no such thing as a logging status subresource for a key.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NoSuchBucket</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The specified bucket does not
-    /// exist.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NoSuchBucket</p> </li>
+    /// <li> <p> <i>Description:</i> The specified bucket does not exist.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 404 Not Found</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NoSuchBucketPolicy</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NoSuchBucketPolicy</p> </li>
+    /// <li> <p> <i>Description:</i> The specified bucket does not have a bucket policy.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> The specified bucket does not have a
-    /// bucket policy.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 404 Not Found</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NoSuchKey</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The specified key does not exist.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NoSuchKey</p> </li>
+    /// <li> <p> <i>Description:</i> The specified key does not exist.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 404 Not Found</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NoSuchLifecycleConfiguration</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The lifecycle configuration does not
-    /// exist. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 404 Not Found</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NoSuchLifecycleConfiguration</p> </li>
+    /// <li> <p> <i>Description:</i> The lifecycle configuration does not exist. </p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> NoSuchUpload</p> </li>
+    /// <li> <p> <i>Description:</i> The specified multipart upload does not exist. The upload ID might be invalid, or the multipart upload might have been aborted or completed.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> NoSuchUpload</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The specified multipart upload does not
-    /// exist. The upload ID might be invalid, or the multipart upload might have been
-    /// aborted or completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 404 Not Found</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NoSuchVersion </p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NoSuchVersion </p> </li>
+    /// <li> <p> <i>Description:</i> Indicates that the version ID specified in the request does not match an existing version.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> Indicates that the version ID specified in
-    /// the request does not match an existing version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 404 Not Found</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NotImplemented</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> A header you provided implies
-    /// functionality that is not implemented.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 501 Not Implemented</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NotImplemented</p> </li>
+    /// <li> <p> <i>Description:</i> A header you provided implies functionality that is not implemented.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 501 Not Implemented</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Server</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> NotSignedUp</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Your account is not signed up for the Amazon S3
-    /// service. You must sign up before you can use Amazon S3. You can sign up at the
-    /// following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> NotSignedUp</p> </li>
+    /// <li> <p> <i>Description:</i> Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a> </p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> OperationAborted</p> </li>
+    /// <li> <p> <i>Description:</i> A conflicting conditional action is currently in progress against this resource. Try again.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> OperationAborted</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> A conflicting conditional action is
-    /// currently in progress against this resource. Try again.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 409 Conflict</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> PermanentRedirect</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The bucket you are attempting to access
-    /// must be addressed using the specified endpoint. Send all future requests to
-    /// this endpoint.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> PermanentRedirect</p> </li>
+    /// <li> <p> <i>Description:</i> The bucket you are attempting to access must be addressed using the specified endpoint. Send all future requests to this endpoint.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 301 Moved Permanently</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 301 Moved Permanently</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> PreconditionFailed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> At least one of the preconditions you
-    /// specified did not hold.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 412 Precondition Failed</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> PreconditionFailed</p> </li>
+    /// <li> <p> <i>Description:</i> At least one of the preconditions you specified did not hold.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 412 Precondition Failed</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> Redirect</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Temporary redirect.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> Redirect</p> </li>
+    /// <li> <p> <i>Description:</i> Temporary redirect.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 307 Moved Temporarily</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> RestoreAlreadyInProgress</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> RestoreAlreadyInProgress</p> </li>
+    /// <li> <p> <i>Description:</i> Object restore is already in progress.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> Object restore is already in
-    /// progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 409 Conflict</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> RequestIsNotMultiPartContent</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Bucket POST must be of the enclosure-type
-    /// multipart/form-data.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> RequestIsNotMultiPartContent</p> </li>
+    /// <li> <p> <i>Description:</i> Bucket POST must be of the enclosure-type multipart/form-data.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> RequestTimeout</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Your socket connection to the server was
-    /// not read from or written to within the timeout period.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> RequestTimeout</p> </li>
+    /// <li> <p> <i>Description:</i> Your socket connection to the server was not read from or written to within the timeout period.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> RequestTimeTooSkewed</p> </li>
+    /// <li> <p> <i>Description:</i> The difference between the request time and the server's time is too large.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> RequestTimeTooSkewed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The difference between the request time
-    /// and the server's time is too large.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> RequestTorrentOfBucketError</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> RequestTorrentOfBucketError</p> </li>
+    /// <li> <p> <i>Description:</i> Requesting the torrent file of a bucket is not permitted.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> Requesting the torrent file of a bucket is
-    /// not permitted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> SignatureDoesNotMatch</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The request signature we calculated does
-    /// not match the signature you provided. Check your Amazon Web Services secret access key and
-    /// signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a>
-    /// for details.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> SignatureDoesNotMatch</p> </li>
+    /// <li> <p> <i>Description:</i> The request signature we calculated does not match the signature you provided. Check your Amazon Web Services secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a> for details.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> ServiceUnavailable</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Reduce your request rate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 503 Service Unavailable</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Server</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> ServiceUnavailable</p> </li>
+    /// <li> <p> <i>Description:</i> Reduce your request rate.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+    /// </ul> </li>
     /// <li>
     /// <ul>
+    /// <li> <p> <i>Code:</i> SlowDown</p> </li>
+    /// <li> <p> <i>Description:</i> Reduce your request rate.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Code:</i> SlowDown</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> Reduce your request rate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 503 Slow Down</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Server</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> TemporaryRedirect</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> You are being redirected to the bucket
-    /// while DNS updates.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> TemporaryRedirect</p> </li>
+    /// <li> <p> <i>Description:</i> You are being redirected to the bucket while DNS updates.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 307 Moved Temporarily</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> TokenRefreshRequired</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The provided token must be
-    /// refreshed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> TokenRefreshRequired</p> </li>
+    /// <li> <p> <i>Description:</i> The provided token must be refreshed.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> TooManyBuckets</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> You have attempted to create more buckets
-    /// than allowed.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> TooManyBuckets</p> </li>
+    /// <li> <p> <i>Description:</i> You have attempted to create more buckets than allowed.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> UnexpectedContent</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> UnexpectedContent</p> </li>
+    /// <li> <p> <i>Description:</i> This request does not support content.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>Description:</i> This request does not support
-    /// content.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> UnresolvableGrantByEmailAddress</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The email address you provided does not
-    /// match any account on record.</p>
-    /// </li>
+    /// <li> <p> <i>Code:</i> UnresolvableGrantByEmailAddress</p> </li>
+    /// <li> <p> <i>Description:</i> The email address you provided does not match any account on record.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Code:</i> UserKeyMustBeSpecified</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Description:</i> The bucket POST must contain the specified
-    /// field name. If it is specified, check the order of the fields.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>SOAP Fault Code Prefix:</i> Client</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <i>Code:</i> UserKeyMustBeSpecified</p> </li>
+    /// <li> <p> <i>Description:</i> The bucket POST must contain the specified field name. If it is specified, check the order of the fields.</p> </li>
+    /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+    /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+    /// </ul> </li>
     /// </ul>
     /// <p></p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p>The error message contains a generic description of the error condition in English. It
-    /// is intended for a human audience. Simple programs display the message directly to the end
-    /// user if they encounter an error condition they don't know how or don't care to handle.
-    /// Sophisticated programs with more exhaustive error handling and proper internationalization
-    /// are more likely to ignore the error message.</p>
+    /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -19760,3756 +15663,1262 @@ pub mod error {
             self.version_id = input;
             self
         }
-        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to
-        /// be read and understood by programs that detect and handle errors by type. </p>
-        /// <p class="title">
-        /// <b>Amazon S3 error codes</b>
-        /// </p>
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+        /// <p class="title"> <b>Amazon S3 error codes</b> </p>
         /// <ul>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> AccessDenied </p> </li>
+        /// <li> <p> <i>Description:</i> Access Denied</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> AccessDenied </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Access Denied</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> AccountProblem</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> AccountProblem</p> </li>
+        /// <li> <p> <i>Description:</i> There is a problem with your Amazon Web Services account that prevents the action from completing successfully. Contact Amazon Web Services Support for further assistance.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> There is a problem with your Amazon Web Services account
-        /// that prevents the action from completing successfully. Contact Amazon Web Services Support
-        /// for further assistance.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> AllAccessDisabled</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> All access to this Amazon S3 resource has been
-        /// disabled. Contact Amazon Web Services Support for further assistance.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> AllAccessDisabled</p> </li>
+        /// <li> <p> <i>Description:</i> All access to this Amazon S3 resource has been disabled. Contact Amazon Web Services Support for further assistance.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> AmbiguousGrantByEmailAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The email address you provided is
-        /// associated with more than one account.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p> </li>
+        /// <li> <p> <i>Description:</i> The email address you provided is associated with more than one account.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li>
+        /// <li> <p> <i>Description:</i> The authorization header you provided is invalid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> AuthorizationHeaderMalformed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The authorization header you provided is
-        /// invalid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> BadDigest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The Content-MD5 you specified did not
-        /// match what we received.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> BadDigest</p> </li>
+        /// <li> <p> <i>Description:</i> The Content-MD5 you specified did not match what we received.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> BucketAlreadyExists</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The requested bucket name is not
-        /// available. The bucket namespace is shared by all users of the system. Please
-        /// select a different name and try again.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 409 Conflict</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li>
+        /// <li> <p> <i>Description:</i> The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> BucketAlreadyOwnedByYou</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The bucket you tried to create already
-        /// exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in
-        /// the North Virginia Region. For legacy compatibility, if you re-create an
-        /// existing bucket that you already own in the North Virginia Region, Amazon S3 returns
-        /// 200 OK and resets the bucket access control lists (ACLs).</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li>
+        /// <li> <p> <i>Description:</i> The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p> </li>
+        /// <li> <p> <i>Code:</i> 409 Conflict (in all Regions except the North Virginia Region) </p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> 409 Conflict (in all Regions except the North
-        /// Virginia Region) </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> BucketNotEmpty</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> BucketNotEmpty</p> </li>
+        /// <li> <p> <i>Description:</i> The bucket you tried to delete is not empty.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> The bucket you tried to delete is not
-        /// empty.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 409 Conflict</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> CredentialsNotSupported</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> This request does not support
-        /// credentials.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> CredentialsNotSupported</p> </li>
+        /// <li> <p> <i>Description:</i> This request does not support credentials.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> CrossLocationLoggingProhibited</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Cross-location logging not allowed.
-        /// Buckets in one geographic location cannot log information to a bucket in
-        /// another location.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> CrossLocationLoggingProhibited</p> </li>
+        /// <li> <p> <i>Description:</i> Cross-location logging not allowed. Buckets in one geographic location cannot log information to a bucket in another location.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> EntityTooSmall</p> </li>
+        /// <li> <p> <i>Description:</i> Your proposed upload is smaller than the minimum allowed object size.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> EntityTooSmall</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Your proposed upload is smaller than the
-        /// minimum allowed object size.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> EntityTooLarge</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> EntityTooLarge</p> </li>
+        /// <li> <p> <i>Description:</i> Your proposed upload exceeds the maximum allowed object size.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> Your proposed upload exceeds the maximum
-        /// allowed object size.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> ExpiredToken</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The provided token has expired.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> ExpiredToken</p> </li>
+        /// <li> <p> <i>Description:</i> The provided token has expired.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> IllegalVersioningConfigurationException </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Indicates that the versioning
-        /// configuration specified in the request is invalid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> IllegalVersioningConfigurationException </p> </li>
+        /// <li> <p> <i>Description:</i> Indicates that the versioning configuration specified in the request is invalid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> IncompleteBody</p> </li>
+        /// <li> <p> <i>Description:</i> You did not provide the number of bytes specified by the Content-Length HTTP header</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> IncompleteBody</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> You did not provide the number of bytes
-        /// specified by the Content-Length HTTP header</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> IncorrectNumberOfFilesInPostRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> POST requires exactly one file upload per
-        /// request.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> IncorrectNumberOfFilesInPostRequest</p> </li>
+        /// <li> <p> <i>Description:</i> POST requires exactly one file upload per request.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InlineDataTooLarge</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Inline data exceeds the maximum allowed
-        /// size.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InlineDataTooLarge</p> </li>
+        /// <li> <p> <i>Description:</i> Inline data exceeds the maximum allowed size.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InternalError</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> We encountered an internal error. Please
-        /// try again.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InternalError</p> </li>
+        /// <li> <p> <i>Description:</i> We encountered an internal error. Please try again.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 500 Internal Server Error</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 500 Internal Server Error</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Server</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidAccessKeyId</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidAccessKeyId</p> </li>
+        /// <li> <p> <i>Description:</i> The Amazon Web Services access key ID you provided does not exist in our records.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> The Amazon Web Services access key ID you provided does
-        /// not exist in our records.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidAddressingHeader</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> You must specify the Anonymous
-        /// role.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li>
+        /// <li> <p> <i>Description:</i> You must specify the Anonymous role.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> N/A</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> N/A</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidArgument</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Invalid Argument</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidArgument</p> </li>
+        /// <li> <p> <i>Description:</i> Invalid Argument</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> InvalidBucketName</p> </li>
+        /// <li> <p> <i>Description:</i> The specified bucket is not valid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidBucketName</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The specified bucket is not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidBucketState</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidBucketState</p> </li>
+        /// <li> <p> <i>Description:</i> The request is not valid with the current state of the bucket.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> The request is not valid with the current
-        /// state of the bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 409 Conflict</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidDigest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The Content-MD5 you specified is not
-        /// valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidDigest</p> </li>
+        /// <li> <p> <i>Description:</i> The Content-MD5 you specified is not valid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidEncryptionAlgorithmError</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The encryption request you specified is
-        /// not valid. The valid value is AES256.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidEncryptionAlgorithmError</p> </li>
+        /// <li> <p> <i>Description:</i> The encryption request you specified is not valid. The valid value is AES256.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> InvalidLocationConstraint</p> </li>
+        /// <li> <p> <i>Description:</i> The specified location constraint is not valid. For more information about Regions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How to Select a Region for Your Buckets</a>. </p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidLocationConstraint</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The specified location constraint is not
-        /// valid. For more information about Regions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How to Select a
-        /// Region for Your Buckets</a>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidObjectState</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The action is not valid for the current
-        /// state of the object.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidObjectState</p> </li>
+        /// <li> <p> <i>Description:</i> The action is not valid for the current state of the object.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidPart</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> One or more of the specified parts could
-        /// not be found. The part might not have been uploaded, or the specified entity
-        /// tag might not have matched the part's entity tag.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidPart</p> </li>
+        /// <li> <p> <i>Description:</i> One or more of the specified parts could not be found. The part might not have been uploaded, or the specified entity tag might not have matched the part's entity tag.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidPartOrder</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The list of parts was not in ascending
-        /// order. Parts list must be specified in order by part number.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidPartOrder</p> </li>
+        /// <li> <p> <i>Description:</i> The list of parts was not in ascending order. Parts list must be specified in order by part number.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidPayer</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidPayer</p> </li>
+        /// <li> <p> <i>Description:</i> All access to this object has been disabled. Please contact Amazon Web Services Support for further assistance.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> All access to this object has been
-        /// disabled. Please contact Amazon Web Services Support for further assistance.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidPolicyDocument</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The content of the form does not meet the
-        /// conditions specified in the policy document.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li>
+        /// <li> <p> <i>Description:</i> The content of the form does not meet the conditions specified in the policy document.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRange</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The requested range cannot be
-        /// satisfied.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 416 Requested Range Not
-        /// Satisfiable</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRange</p> </li>
+        /// <li> <p> <i>Description:</i> The requested range cannot be satisfied.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Please use <code>AWS4-HMAC-SHA256</code>.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Please use <code>AWS4-HMAC-SHA256</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> SOAP requests must be made over an HTTPS connection.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> SOAP requests must be made over an HTTPS
-        /// connection.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
-        /// supported for buckets with non-DNS compliant names.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration is not supported for buckets with non-DNS compliant names.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
-        /// supported for buckets with periods (.) in their names.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration is not supported for buckets with periods (.) in their names.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Amazon S3 Transfer Accelerate endpoint only supports virtual style requests.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Amazon S3 Transfer Accelerate endpoint only
-        /// supports virtual style requests.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Amazon S3 Transfer Accelerate is not configured
-        /// on this bucket.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Amazon S3 Transfer Accelerate is not configured on this bucket.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Amazon S3 Transfer Accelerate is disabled on
-        /// this bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Amazon S3 Transfer Accelerate is disabled on this bucket.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
-        /// supported on this bucket. Contact Amazon Web Services Support for more information.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration is not supported on this bucket. Contact Amazon Web Services Support for more information.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration cannot be enabled on this bucket. Contact Amazon Web Services Support for more information.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
-        /// enabled on this bucket. Contact Amazon Web Services Support for more information.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidSecurity</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The provided security credentials are not
-        /// valid.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidSecurity</p> </li>
+        /// <li> <p> <i>Description:</i> The provided security credentials are not valid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidSOAPRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The SOAP request body is invalid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidSOAPRequest</p> </li>
+        /// <li> <p> <i>Description:</i> The SOAP request body is invalid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> InvalidStorageClass</p> </li>
+        /// <li> <p> <i>Description:</i> The storage class you specified is not valid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidStorageClass</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The storage class you specified is not
-        /// valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidTargetBucketForLogging</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidTargetBucketForLogging</p> </li>
+        /// <li> <p> <i>Description:</i> The target bucket for logging does not exist, is not owned by you, or does not have the appropriate grants for the log-delivery group. </p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> The target bucket for logging does not
-        /// exist, is not owned by you, or does not have the appropriate grants for the
-        /// log-delivery group. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidToken</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The provided token is malformed or
-        /// otherwise invalid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidToken</p> </li>
+        /// <li> <p> <i>Description:</i> The provided token is malformed or otherwise invalid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidURI</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Couldn't parse the specified URI.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidURI</p> </li>
+        /// <li> <p> <i>Description:</i> Couldn't parse the specified URI.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> KeyTooLongError</p> </li>
+        /// <li> <p> <i>Description:</i> Your key is too long.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> KeyTooLongError</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Your key is too long.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MalformedACLError</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The XML you provided was not well-formed
-        /// or did not validate against our published schema.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MalformedACLError</p> </li>
+        /// <li> <p> <i>Description:</i> The XML you provided was not well-formed or did not validate against our published schema.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MalformedPOSTRequest </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The body of your POST request is not
-        /// well-formed multipart/form-data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li>
+        /// <li> <p> <i>Description:</i> The body of your POST request is not well-formed multipart/form-data.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MalformedXML</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> This happens when the user sends malformed
-        /// XML (XML that doesn't conform to the published XSD) for the configuration. The
-        /// error message is, "The XML you provided was not well-formed or did not validate
-        /// against our published schema." </p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MalformedXML</p> </li>
+        /// <li> <p> <i>Description:</i> This happens when the user sends malformed XML (XML that doesn't conform to the published XSD) for the configuration. The error message is, "The XML you provided was not well-formed or did not validate against our published schema." </p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MaxMessageLengthExceeded</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MaxMessageLengthExceeded</p> </li>
+        /// <li> <p> <i>Description:</i> Your request was too big.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> Your request was too big.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MaxPostPreDataLengthExceededError</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Your POST request fields preceding the
-        /// upload file were too large.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MaxPostPreDataLengthExceededError</p> </li>
+        /// <li> <p> <i>Description:</i> Your POST request fields preceding the upload file were too large.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MetadataTooLarge</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Your metadata headers exceed the maximum
-        /// allowed metadata size.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MetadataTooLarge</p> </li>
+        /// <li> <p> <i>Description:</i> Your metadata headers exceed the maximum allowed metadata size.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> MethodNotAllowed</p> </li>
+        /// <li> <p> <i>Description:</i> The specified method is not allowed against this resource.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 405 Method Not Allowed</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> MethodNotAllowed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The specified method is not allowed
-        /// against this resource.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 405 Method Not Allowed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MissingAttachment</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MissingAttachment</p> </li>
+        /// <li> <p> <i>Description:</i> A SOAP attachment was expected, but none were found.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> N/A</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> A SOAP attachment was expected, but none
-        /// were found.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> N/A</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MissingContentLength</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> You must provide the Content-Length HTTP
-        /// header.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 411 Length Required</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MissingContentLength</p> </li>
+        /// <li> <p> <i>Description:</i> You must provide the Content-Length HTTP header.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 411 Length Required</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MissingRequestBodyError</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> This happens when the user sends an empty
-        /// XML document as a request. The error message is, "Request body is empty."
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MissingRequestBodyError</p> </li>
+        /// <li> <p> <i>Description:</i> This happens when the user sends an empty XML document as a request. The error message is, "Request body is empty." </p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> MissingSecurityElement</p> </li>
+        /// <li> <p> <i>Description:</i> The SOAP 1.1 request is missing a security element.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> MissingSecurityElement</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The SOAP 1.1 request is missing a security
-        /// element.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MissingSecurityHeader</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Your request is missing a required
-        /// header.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MissingSecurityHeader</p> </li>
+        /// <li> <p> <i>Description:</i> Your request is missing a required header.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NoLoggingStatusForKey</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> There is no such thing as a logging status
-        /// subresource for a key.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NoLoggingStatusForKey</p> </li>
+        /// <li> <p> <i>Description:</i> There is no such thing as a logging status subresource for a key.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NoSuchBucket</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The specified bucket does not
-        /// exist.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NoSuchBucket</p> </li>
+        /// <li> <p> <i>Description:</i> The specified bucket does not exist.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 404 Not Found</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NoSuchBucketPolicy</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NoSuchBucketPolicy</p> </li>
+        /// <li> <p> <i>Description:</i> The specified bucket does not have a bucket policy.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> The specified bucket does not have a
-        /// bucket policy.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 404 Not Found</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NoSuchKey</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The specified key does not exist.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NoSuchKey</p> </li>
+        /// <li> <p> <i>Description:</i> The specified key does not exist.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 404 Not Found</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NoSuchLifecycleConfiguration</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The lifecycle configuration does not
-        /// exist. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 404 Not Found</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NoSuchLifecycleConfiguration</p> </li>
+        /// <li> <p> <i>Description:</i> The lifecycle configuration does not exist. </p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> NoSuchUpload</p> </li>
+        /// <li> <p> <i>Description:</i> The specified multipart upload does not exist. The upload ID might be invalid, or the multipart upload might have been aborted or completed.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> NoSuchUpload</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The specified multipart upload does not
-        /// exist. The upload ID might be invalid, or the multipart upload might have been
-        /// aborted or completed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 404 Not Found</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NoSuchVersion </p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NoSuchVersion </p> </li>
+        /// <li> <p> <i>Description:</i> Indicates that the version ID specified in the request does not match an existing version.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> Indicates that the version ID specified in
-        /// the request does not match an existing version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 404 Not Found</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NotImplemented</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> A header you provided implies
-        /// functionality that is not implemented.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 501 Not Implemented</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NotImplemented</p> </li>
+        /// <li> <p> <i>Description:</i> A header you provided implies functionality that is not implemented.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 501 Not Implemented</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Server</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NotSignedUp</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Your account is not signed up for the Amazon S3
-        /// service. You must sign up before you can use Amazon S3. You can sign up at the
-        /// following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NotSignedUp</p> </li>
+        /// <li> <p> <i>Description:</i> Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a> </p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> OperationAborted</p> </li>
+        /// <li> <p> <i>Description:</i> A conflicting conditional action is currently in progress against this resource. Try again.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> OperationAborted</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> A conflicting conditional action is
-        /// currently in progress against this resource. Try again.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 409 Conflict</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> PermanentRedirect</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The bucket you are attempting to access
-        /// must be addressed using the specified endpoint. Send all future requests to
-        /// this endpoint.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> PermanentRedirect</p> </li>
+        /// <li> <p> <i>Description:</i> The bucket you are attempting to access must be addressed using the specified endpoint. Send all future requests to this endpoint.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 301 Moved Permanently</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 301 Moved Permanently</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> PreconditionFailed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> At least one of the preconditions you
-        /// specified did not hold.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 412 Precondition Failed</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> PreconditionFailed</p> </li>
+        /// <li> <p> <i>Description:</i> At least one of the preconditions you specified did not hold.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 412 Precondition Failed</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> Redirect</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Temporary redirect.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> Redirect</p> </li>
+        /// <li> <p> <i>Description:</i> Temporary redirect.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 307 Moved Temporarily</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> RestoreAlreadyInProgress</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> RestoreAlreadyInProgress</p> </li>
+        /// <li> <p> <i>Description:</i> Object restore is already in progress.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> Object restore is already in
-        /// progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 409 Conflict</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> RequestIsNotMultiPartContent</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Bucket POST must be of the enclosure-type
-        /// multipart/form-data.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> RequestIsNotMultiPartContent</p> </li>
+        /// <li> <p> <i>Description:</i> Bucket POST must be of the enclosure-type multipart/form-data.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> RequestTimeout</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Your socket connection to the server was
-        /// not read from or written to within the timeout period.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> RequestTimeout</p> </li>
+        /// <li> <p> <i>Description:</i> Your socket connection to the server was not read from or written to within the timeout period.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> RequestTimeTooSkewed</p> </li>
+        /// <li> <p> <i>Description:</i> The difference between the request time and the server's time is too large.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> RequestTimeTooSkewed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The difference between the request time
-        /// and the server's time is too large.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> RequestTorrentOfBucketError</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> RequestTorrentOfBucketError</p> </li>
+        /// <li> <p> <i>Description:</i> Requesting the torrent file of a bucket is not permitted.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> Requesting the torrent file of a bucket is
-        /// not permitted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> SignatureDoesNotMatch</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The request signature we calculated does
-        /// not match the signature you provided. Check your Amazon Web Services secret access key and
-        /// signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a>
-        /// for details.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> SignatureDoesNotMatch</p> </li>
+        /// <li> <p> <i>Description:</i> The request signature we calculated does not match the signature you provided. Check your Amazon Web Services secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a> for details.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> ServiceUnavailable</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Reduce your request rate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 503 Service Unavailable</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Server</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> ServiceUnavailable</p> </li>
+        /// <li> <p> <i>Description:</i> Reduce your request rate.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> SlowDown</p> </li>
+        /// <li> <p> <i>Description:</i> Reduce your request rate.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> SlowDown</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Reduce your request rate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 503 Slow Down</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Server</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> TemporaryRedirect</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> You are being redirected to the bucket
-        /// while DNS updates.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> TemporaryRedirect</p> </li>
+        /// <li> <p> <i>Description:</i> You are being redirected to the bucket while DNS updates.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 307 Moved Temporarily</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> TokenRefreshRequired</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The provided token must be
-        /// refreshed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> TokenRefreshRequired</p> </li>
+        /// <li> <p> <i>Description:</i> The provided token must be refreshed.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> TooManyBuckets</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> You have attempted to create more buckets
-        /// than allowed.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> TooManyBuckets</p> </li>
+        /// <li> <p> <i>Description:</i> You have attempted to create more buckets than allowed.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> UnexpectedContent</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> UnexpectedContent</p> </li>
+        /// <li> <p> <i>Description:</i> This request does not support content.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> This request does not support
-        /// content.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> UnresolvableGrantByEmailAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The email address you provided does not
-        /// match any account on record.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> UnresolvableGrantByEmailAddress</p> </li>
+        /// <li> <p> <i>Description:</i> The email address you provided does not match any account on record.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> UserKeyMustBeSpecified</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The bucket POST must contain the specified
-        /// field name. If it is specified, check the order of the fields.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> UserKeyMustBeSpecified</p> </li>
+        /// <li> <p> <i>Description:</i> The bucket POST must contain the specified field name. If it is specified, check the order of the fields.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// </ul>
         /// <p></p>
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
             self.code = Some(input.into());
             self
         }
-        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to
-        /// be read and understood by programs that detect and handle errors by type. </p>
-        /// <p class="title">
-        /// <b>Amazon S3 error codes</b>
-        /// </p>
+        /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. </p>
+        /// <p class="title"> <b>Amazon S3 error codes</b> </p>
         /// <ul>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> AccessDenied </p> </li>
+        /// <li> <p> <i>Description:</i> Access Denied</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> AccessDenied </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Access Denied</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> AccountProblem</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> AccountProblem</p> </li>
+        /// <li> <p> <i>Description:</i> There is a problem with your Amazon Web Services account that prevents the action from completing successfully. Contact Amazon Web Services Support for further assistance.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> There is a problem with your Amazon Web Services account
-        /// that prevents the action from completing successfully. Contact Amazon Web Services Support
-        /// for further assistance.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> AllAccessDisabled</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> All access to this Amazon S3 resource has been
-        /// disabled. Contact Amazon Web Services Support for further assistance.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> AllAccessDisabled</p> </li>
+        /// <li> <p> <i>Description:</i> All access to this Amazon S3 resource has been disabled. Contact Amazon Web Services Support for further assistance.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> AmbiguousGrantByEmailAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The email address you provided is
-        /// associated with more than one account.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p> </li>
+        /// <li> <p> <i>Description:</i> The email address you provided is associated with more than one account.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li>
+        /// <li> <p> <i>Description:</i> The authorization header you provided is invalid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> AuthorizationHeaderMalformed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The authorization header you provided is
-        /// invalid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> BadDigest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The Content-MD5 you specified did not
-        /// match what we received.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> BadDigest</p> </li>
+        /// <li> <p> <i>Description:</i> The Content-MD5 you specified did not match what we received.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> BucketAlreadyExists</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The requested bucket name is not
-        /// available. The bucket namespace is shared by all users of the system. Please
-        /// select a different name and try again.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 409 Conflict</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li>
+        /// <li> <p> <i>Description:</i> The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> BucketAlreadyOwnedByYou</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The bucket you tried to create already
-        /// exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in
-        /// the North Virginia Region. For legacy compatibility, if you re-create an
-        /// existing bucket that you already own in the North Virginia Region, Amazon S3 returns
-        /// 200 OK and resets the bucket access control lists (ACLs).</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li>
+        /// <li> <p> <i>Description:</i> The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p> </li>
+        /// <li> <p> <i>Code:</i> 409 Conflict (in all Regions except the North Virginia Region) </p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> 409 Conflict (in all Regions except the North
-        /// Virginia Region) </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> BucketNotEmpty</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> BucketNotEmpty</p> </li>
+        /// <li> <p> <i>Description:</i> The bucket you tried to delete is not empty.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> The bucket you tried to delete is not
-        /// empty.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 409 Conflict</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> CredentialsNotSupported</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> This request does not support
-        /// credentials.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> CredentialsNotSupported</p> </li>
+        /// <li> <p> <i>Description:</i> This request does not support credentials.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> CrossLocationLoggingProhibited</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Cross-location logging not allowed.
-        /// Buckets in one geographic location cannot log information to a bucket in
-        /// another location.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> CrossLocationLoggingProhibited</p> </li>
+        /// <li> <p> <i>Description:</i> Cross-location logging not allowed. Buckets in one geographic location cannot log information to a bucket in another location.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> EntityTooSmall</p> </li>
+        /// <li> <p> <i>Description:</i> Your proposed upload is smaller than the minimum allowed object size.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> EntityTooSmall</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Your proposed upload is smaller than the
-        /// minimum allowed object size.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> EntityTooLarge</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> EntityTooLarge</p> </li>
+        /// <li> <p> <i>Description:</i> Your proposed upload exceeds the maximum allowed object size.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> Your proposed upload exceeds the maximum
-        /// allowed object size.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> ExpiredToken</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The provided token has expired.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> ExpiredToken</p> </li>
+        /// <li> <p> <i>Description:</i> The provided token has expired.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> IllegalVersioningConfigurationException </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Indicates that the versioning
-        /// configuration specified in the request is invalid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> IllegalVersioningConfigurationException </p> </li>
+        /// <li> <p> <i>Description:</i> Indicates that the versioning configuration specified in the request is invalid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> IncompleteBody</p> </li>
+        /// <li> <p> <i>Description:</i> You did not provide the number of bytes specified by the Content-Length HTTP header</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> IncompleteBody</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> You did not provide the number of bytes
-        /// specified by the Content-Length HTTP header</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> IncorrectNumberOfFilesInPostRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> POST requires exactly one file upload per
-        /// request.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> IncorrectNumberOfFilesInPostRequest</p> </li>
+        /// <li> <p> <i>Description:</i> POST requires exactly one file upload per request.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InlineDataTooLarge</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Inline data exceeds the maximum allowed
-        /// size.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InlineDataTooLarge</p> </li>
+        /// <li> <p> <i>Description:</i> Inline data exceeds the maximum allowed size.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InternalError</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> We encountered an internal error. Please
-        /// try again.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InternalError</p> </li>
+        /// <li> <p> <i>Description:</i> We encountered an internal error. Please try again.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 500 Internal Server Error</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 500 Internal Server Error</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Server</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidAccessKeyId</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidAccessKeyId</p> </li>
+        /// <li> <p> <i>Description:</i> The Amazon Web Services access key ID you provided does not exist in our records.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> The Amazon Web Services access key ID you provided does
-        /// not exist in our records.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidAddressingHeader</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> You must specify the Anonymous
-        /// role.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidAddressingHeader</p> </li>
+        /// <li> <p> <i>Description:</i> You must specify the Anonymous role.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> N/A</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> N/A</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidArgument</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Invalid Argument</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidArgument</p> </li>
+        /// <li> <p> <i>Description:</i> Invalid Argument</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> InvalidBucketName</p> </li>
+        /// <li> <p> <i>Description:</i> The specified bucket is not valid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidBucketName</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The specified bucket is not valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidBucketState</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidBucketState</p> </li>
+        /// <li> <p> <i>Description:</i> The request is not valid with the current state of the bucket.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> The request is not valid with the current
-        /// state of the bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 409 Conflict</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidDigest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The Content-MD5 you specified is not
-        /// valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidDigest</p> </li>
+        /// <li> <p> <i>Description:</i> The Content-MD5 you specified is not valid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidEncryptionAlgorithmError</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The encryption request you specified is
-        /// not valid. The valid value is AES256.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidEncryptionAlgorithmError</p> </li>
+        /// <li> <p> <i>Description:</i> The encryption request you specified is not valid. The valid value is AES256.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> InvalidLocationConstraint</p> </li>
+        /// <li> <p> <i>Description:</i> The specified location constraint is not valid. For more information about Regions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How to Select a Region for Your Buckets</a>. </p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidLocationConstraint</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The specified location constraint is not
-        /// valid. For more information about Regions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How to Select a
-        /// Region for Your Buckets</a>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidObjectState</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The action is not valid for the current
-        /// state of the object.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidObjectState</p> </li>
+        /// <li> <p> <i>Description:</i> The action is not valid for the current state of the object.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidPart</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> One or more of the specified parts could
-        /// not be found. The part might not have been uploaded, or the specified entity
-        /// tag might not have matched the part's entity tag.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidPart</p> </li>
+        /// <li> <p> <i>Description:</i> One or more of the specified parts could not be found. The part might not have been uploaded, or the specified entity tag might not have matched the part's entity tag.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidPartOrder</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The list of parts was not in ascending
-        /// order. Parts list must be specified in order by part number.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidPartOrder</p> </li>
+        /// <li> <p> <i>Description:</i> The list of parts was not in ascending order. Parts list must be specified in order by part number.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidPayer</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidPayer</p> </li>
+        /// <li> <p> <i>Description:</i> All access to this object has been disabled. Please contact Amazon Web Services Support for further assistance.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> All access to this object has been
-        /// disabled. Please contact Amazon Web Services Support for further assistance.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidPolicyDocument</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The content of the form does not meet the
-        /// conditions specified in the policy document.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidPolicyDocument</p> </li>
+        /// <li> <p> <i>Description:</i> The content of the form does not meet the conditions specified in the policy document.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRange</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The requested range cannot be
-        /// satisfied.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 416 Requested Range Not
-        /// Satisfiable</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRange</p> </li>
+        /// <li> <p> <i>Description:</i> The requested range cannot be satisfied.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Please use <code>AWS4-HMAC-SHA256</code>.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Please use <code>AWS4-HMAC-SHA256</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> SOAP requests must be made over an HTTPS connection.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> SOAP requests must be made over an HTTPS
-        /// connection.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
-        /// supported for buckets with non-DNS compliant names.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration is not supported for buckets with non-DNS compliant names.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
-        /// supported for buckets with periods (.) in their names.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration is not supported for buckets with periods (.) in their names.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Amazon S3 Transfer Accelerate endpoint only supports virtual style requests.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Amazon S3 Transfer Accelerate endpoint only
-        /// supports virtual style requests.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Amazon S3 Transfer Accelerate is not configured
-        /// on this bucket.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Amazon S3 Transfer Accelerate is not configured on this bucket.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Amazon S3 Transfer Accelerate is disabled on
-        /// this bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Amazon S3 Transfer Accelerate is disabled on this bucket.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
-        /// supported on this bucket. Contact Amazon Web Services Support for more information.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration is not supported on this bucket. Contact Amazon Web Services Support for more information.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidRequest</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidRequest</p> </li>
+        /// <li> <p> <i>Description:</i> Amazon S3 Transfer Acceleration cannot be enabled on this bucket. Contact Amazon Web Services Support for more information.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>Code:</i> N/A</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
-        /// enabled on this bucket. Contact Amazon Web Services Support for more information.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> N/A</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidSecurity</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The provided security credentials are not
-        /// valid.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidSecurity</p> </li>
+        /// <li> <p> <i>Description:</i> The provided security credentials are not valid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidSOAPRequest</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The SOAP request body is invalid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidSOAPRequest</p> </li>
+        /// <li> <p> <i>Description:</i> The SOAP request body is invalid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> InvalidStorageClass</p> </li>
+        /// <li> <p> <i>Description:</i> The storage class you specified is not valid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidStorageClass</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The storage class you specified is not
-        /// valid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidTargetBucketForLogging</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidTargetBucketForLogging</p> </li>
+        /// <li> <p> <i>Description:</i> The target bucket for logging does not exist, is not owned by you, or does not have the appropriate grants for the log-delivery group. </p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> The target bucket for logging does not
-        /// exist, is not owned by you, or does not have the appropriate grants for the
-        /// log-delivery group. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidToken</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The provided token is malformed or
-        /// otherwise invalid.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidToken</p> </li>
+        /// <li> <p> <i>Description:</i> The provided token is malformed or otherwise invalid.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> InvalidURI</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Couldn't parse the specified URI.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> InvalidURI</p> </li>
+        /// <li> <p> <i>Description:</i> Couldn't parse the specified URI.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> KeyTooLongError</p> </li>
+        /// <li> <p> <i>Description:</i> Your key is too long.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> KeyTooLongError</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Your key is too long.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MalformedACLError</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The XML you provided was not well-formed
-        /// or did not validate against our published schema.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MalformedACLError</p> </li>
+        /// <li> <p> <i>Description:</i> The XML you provided was not well-formed or did not validate against our published schema.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MalformedPOSTRequest </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The body of your POST request is not
-        /// well-formed multipart/form-data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MalformedPOSTRequest </p> </li>
+        /// <li> <p> <i>Description:</i> The body of your POST request is not well-formed multipart/form-data.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MalformedXML</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> This happens when the user sends malformed
-        /// XML (XML that doesn't conform to the published XSD) for the configuration. The
-        /// error message is, "The XML you provided was not well-formed or did not validate
-        /// against our published schema." </p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MalformedXML</p> </li>
+        /// <li> <p> <i>Description:</i> This happens when the user sends malformed XML (XML that doesn't conform to the published XSD) for the configuration. The error message is, "The XML you provided was not well-formed or did not validate against our published schema." </p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MaxMessageLengthExceeded</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MaxMessageLengthExceeded</p> </li>
+        /// <li> <p> <i>Description:</i> Your request was too big.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> Your request was too big.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MaxPostPreDataLengthExceededError</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Your POST request fields preceding the
-        /// upload file were too large.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MaxPostPreDataLengthExceededError</p> </li>
+        /// <li> <p> <i>Description:</i> Your POST request fields preceding the upload file were too large.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MetadataTooLarge</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Your metadata headers exceed the maximum
-        /// allowed metadata size.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MetadataTooLarge</p> </li>
+        /// <li> <p> <i>Description:</i> Your metadata headers exceed the maximum allowed metadata size.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> MethodNotAllowed</p> </li>
+        /// <li> <p> <i>Description:</i> The specified method is not allowed against this resource.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 405 Method Not Allowed</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> MethodNotAllowed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The specified method is not allowed
-        /// against this resource.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 405 Method Not Allowed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MissingAttachment</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MissingAttachment</p> </li>
+        /// <li> <p> <i>Description:</i> A SOAP attachment was expected, but none were found.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> N/A</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> A SOAP attachment was expected, but none
-        /// were found.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> N/A</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MissingContentLength</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> You must provide the Content-Length HTTP
-        /// header.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 411 Length Required</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MissingContentLength</p> </li>
+        /// <li> <p> <i>Description:</i> You must provide the Content-Length HTTP header.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 411 Length Required</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MissingRequestBodyError</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> This happens when the user sends an empty
-        /// XML document as a request. The error message is, "Request body is empty."
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MissingRequestBodyError</p> </li>
+        /// <li> <p> <i>Description:</i> This happens when the user sends an empty XML document as a request. The error message is, "Request body is empty." </p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> MissingSecurityElement</p> </li>
+        /// <li> <p> <i>Description:</i> The SOAP 1.1 request is missing a security element.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> MissingSecurityElement</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The SOAP 1.1 request is missing a security
-        /// element.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> MissingSecurityHeader</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Your request is missing a required
-        /// header.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> MissingSecurityHeader</p> </li>
+        /// <li> <p> <i>Description:</i> Your request is missing a required header.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NoLoggingStatusForKey</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> There is no such thing as a logging status
-        /// subresource for a key.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NoLoggingStatusForKey</p> </li>
+        /// <li> <p> <i>Description:</i> There is no such thing as a logging status subresource for a key.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NoSuchBucket</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The specified bucket does not
-        /// exist.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NoSuchBucket</p> </li>
+        /// <li> <p> <i>Description:</i> The specified bucket does not exist.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 404 Not Found</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NoSuchBucketPolicy</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NoSuchBucketPolicy</p> </li>
+        /// <li> <p> <i>Description:</i> The specified bucket does not have a bucket policy.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> The specified bucket does not have a
-        /// bucket policy.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 404 Not Found</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NoSuchKey</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The specified key does not exist.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NoSuchKey</p> </li>
+        /// <li> <p> <i>Description:</i> The specified key does not exist.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 404 Not Found</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NoSuchLifecycleConfiguration</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The lifecycle configuration does not
-        /// exist. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 404 Not Found</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NoSuchLifecycleConfiguration</p> </li>
+        /// <li> <p> <i>Description:</i> The lifecycle configuration does not exist. </p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> NoSuchUpload</p> </li>
+        /// <li> <p> <i>Description:</i> The specified multipart upload does not exist. The upload ID might be invalid, or the multipart upload might have been aborted or completed.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> NoSuchUpload</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The specified multipart upload does not
-        /// exist. The upload ID might be invalid, or the multipart upload might have been
-        /// aborted or completed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 404 Not Found</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NoSuchVersion </p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NoSuchVersion </p> </li>
+        /// <li> <p> <i>Description:</i> Indicates that the version ID specified in the request does not match an existing version.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 404 Not Found</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> Indicates that the version ID specified in
-        /// the request does not match an existing version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 404 Not Found</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NotImplemented</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> A header you provided implies
-        /// functionality that is not implemented.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 501 Not Implemented</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NotImplemented</p> </li>
+        /// <li> <p> <i>Description:</i> A header you provided implies functionality that is not implemented.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 501 Not Implemented</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Server</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> NotSignedUp</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Your account is not signed up for the Amazon S3
-        /// service. You must sign up before you can use Amazon S3. You can sign up at the
-        /// following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> NotSignedUp</p> </li>
+        /// <li> <p> <i>Description:</i> Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a> </p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> OperationAborted</p> </li>
+        /// <li> <p> <i>Description:</i> A conflicting conditional action is currently in progress against this resource. Try again.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> OperationAborted</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> A conflicting conditional action is
-        /// currently in progress against this resource. Try again.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 409 Conflict</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> PermanentRedirect</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The bucket you are attempting to access
-        /// must be addressed using the specified endpoint. Send all future requests to
-        /// this endpoint.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> PermanentRedirect</p> </li>
+        /// <li> <p> <i>Description:</i> The bucket you are attempting to access must be addressed using the specified endpoint. Send all future requests to this endpoint.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 301 Moved Permanently</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 301 Moved Permanently</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> PreconditionFailed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> At least one of the preconditions you
-        /// specified did not hold.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 412 Precondition Failed</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> PreconditionFailed</p> </li>
+        /// <li> <p> <i>Description:</i> At least one of the preconditions you specified did not hold.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 412 Precondition Failed</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> Redirect</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Temporary redirect.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> Redirect</p> </li>
+        /// <li> <p> <i>Description:</i> Temporary redirect.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 307 Moved Temporarily</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> RestoreAlreadyInProgress</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> RestoreAlreadyInProgress</p> </li>
+        /// <li> <p> <i>Description:</i> Object restore is already in progress.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> Object restore is already in
-        /// progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 409 Conflict</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> RequestIsNotMultiPartContent</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Bucket POST must be of the enclosure-type
-        /// multipart/form-data.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> RequestIsNotMultiPartContent</p> </li>
+        /// <li> <p> <i>Description:</i> Bucket POST must be of the enclosure-type multipart/form-data.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> RequestTimeout</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Your socket connection to the server was
-        /// not read from or written to within the timeout period.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> RequestTimeout</p> </li>
+        /// <li> <p> <i>Description:</i> Your socket connection to the server was not read from or written to within the timeout period.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> RequestTimeTooSkewed</p> </li>
+        /// <li> <p> <i>Description:</i> The difference between the request time and the server's time is too large.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> RequestTimeTooSkewed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The difference between the request time
-        /// and the server's time is too large.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> RequestTorrentOfBucketError</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> RequestTorrentOfBucketError</p> </li>
+        /// <li> <p> <i>Description:</i> Requesting the torrent file of a bucket is not permitted.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> Requesting the torrent file of a bucket is
-        /// not permitted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> SignatureDoesNotMatch</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The request signature we calculated does
-        /// not match the signature you provided. Check your Amazon Web Services secret access key and
-        /// signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a>
-        /// for details.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 403 Forbidden</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> SignatureDoesNotMatch</p> </li>
+        /// <li> <p> <i>Description:</i> The request signature we calculated does not match the signature you provided. Check your Amazon Web Services secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a> for details.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> ServiceUnavailable</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Reduce your request rate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 503 Service Unavailable</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Server</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> ServiceUnavailable</p> </li>
+        /// <li> <p> <i>Description:</i> Reduce your request rate.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+        /// </ul> </li>
         /// <li>
         /// <ul>
+        /// <li> <p> <i>Code:</i> SlowDown</p> </li>
+        /// <li> <p> <i>Description:</i> Reduce your request rate.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Code:</i> SlowDown</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> Reduce your request rate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 503 Slow Down</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Server</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> TemporaryRedirect</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> You are being redirected to the bucket
-        /// while DNS updates.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> TemporaryRedirect</p> </li>
+        /// <li> <p> <i>Description:</i> You are being redirected to the bucket while DNS updates.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 307 Moved Temporarily</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 307 Moved Temporarily</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> TokenRefreshRequired</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The provided token must be
-        /// refreshed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> TokenRefreshRequired</p> </li>
+        /// <li> <p> <i>Description:</i> The provided token must be refreshed.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> TooManyBuckets</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> You have attempted to create more buckets
-        /// than allowed.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> TooManyBuckets</p> </li>
+        /// <li> <p> <i>Description:</i> You have attempted to create more buckets than allowed.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> UnexpectedContent</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> UnexpectedContent</p> </li>
+        /// <li> <p> <i>Description:</i> This request does not support content.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>Description:</i> This request does not support
-        /// content.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> UnresolvableGrantByEmailAddress</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The email address you provided does not
-        /// match any account on record.</p>
-        /// </li>
+        /// <li> <p> <i>Code:</i> UnresolvableGrantByEmailAddress</p> </li>
+        /// <li> <p> <i>Description:</i> The email address you provided does not match any account on record.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>Code:</i> UserKeyMustBeSpecified</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>Description:</i> The bucket POST must contain the specified
-        /// field name. If it is specified, check the order of the fields.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>HTTP Status Code:</i> 400 Bad Request</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>SOAP Fault Code Prefix:</i> Client</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <i>Code:</i> UserKeyMustBeSpecified</p> </li>
+        /// <li> <p> <i>Description:</i> The bucket POST must contain the specified field name. If it is specified, check the order of the fields.</p> </li>
+        /// <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+        /// <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
+        /// </ul> </li>
         /// </ul>
         /// <p></p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
         }
-        /// <p>The error message contains a generic description of the error condition in English. It
-        /// is intended for a human audience. Simple programs display the message directly to the end
-        /// user if they encounter an error condition they don't know how or don't care to handle.
-        /// Sophisticated programs with more exhaustive error handling and proper internationalization
-        /// are more likely to ignore the error message.</p>
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The error message contains a generic description of the error condition in English. It
-        /// is intended for a human audience. Simple programs display the message directly to the end
-        /// user if they encounter an error condition they don't know how or don't care to handle.
-        /// Sophisticated programs with more exhaustive error handling and proper internationalization
-        /// are more likely to ignore the error message.</p>
+        /// <p>The error message contains a generic description of the error condition in English. It is intended for a human audience. Simple programs display the message directly to the end user if they encounter an error condition they don't know how or don't care to handle. Sophisticated programs with more exhaustive error handling and proper internationalization are more likely to ignore the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -23540,13 +16949,9 @@ pub struct DeletedObject {
     pub key: std::option::Option<std::string::String>,
     /// <p>The version ID of the deleted object.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was
-    /// not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or
-    /// not (false) a delete marker was created.</p>
+    /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete marker was created.</p>
     pub delete_marker: bool,
-    /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you
-    /// delete a specific object version, the value returned by this header is the version ID of
-    /// the object version deleted.</p>
+    /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p>
     pub delete_marker_version_id: std::option::Option<std::string::String>,
 }
 impl DeletedObject {
@@ -23558,15 +16963,11 @@ impl DeletedObject {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was
-    /// not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or
-    /// not (false) a delete marker was created.</p>
+    /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete marker was created.</p>
     pub fn delete_marker(&self) -> bool {
         self.delete_marker
     }
-    /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you
-    /// delete a specific object version, the value returned by this header is the version ID of
-    /// the object version deleted.</p>
+    /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p>
     pub fn delete_marker_version_id(&self) -> std::option::Option<&str> {
         self.delete_marker_version_id.as_deref()
     }
@@ -23613,30 +17014,22 @@ pub mod deleted_object {
             self.version_id = input;
             self
         }
-        /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was
-        /// not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or
-        /// not (false) a delete marker was created.</p>
+        /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete marker was created.</p>
         pub fn delete_marker(mut self, input: bool) -> Self {
             self.delete_marker = Some(input);
             self
         }
-        /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was
-        /// not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or
-        /// not (false) a delete marker was created.</p>
+        /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete marker was created.</p>
         pub fn set_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_marker = input;
             self
         }
-        /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you
-        /// delete a specific object version, the value returned by this header is the version ID of
-        /// the object version deleted.</p>
+        /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p>
         pub fn delete_marker_version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.delete_marker_version_id = Some(input.into());
             self
         }
-        /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you
-        /// delete a specific object version, the value returned by this header is the version ID of
-        /// the object version deleted.</p>
+        /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p>
         pub fn set_delete_marker_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23668,8 +17061,7 @@ impl DeletedObject {
 pub struct Delete {
     /// <p>The objects to delete.</p>
     pub objects: std::option::Option<std::vec::Vec<crate::model::ObjectIdentifier>>,
-    /// <p>Element to enable quiet mode for the request. When you add this element, you must set
-    /// its value to true.</p>
+    /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
     pub quiet: bool,
 }
 impl Delete {
@@ -23677,8 +17069,7 @@ impl Delete {
     pub fn objects(&self) -> std::option::Option<&[crate::model::ObjectIdentifier]> {
         self.objects.as_deref()
     }
-    /// <p>Element to enable quiet mode for the request. When you add this element, you must set
-    /// its value to true.</p>
+    /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
     pub fn quiet(&self) -> bool {
         self.quiet
     }
@@ -23706,9 +17097,9 @@ pub mod delete {
         /// To override the contents of this collection use [`set_objects`](Self::set_objects).
         ///
         /// <p>The objects to delete.</p>
-        pub fn objects(mut self, input: impl Into<crate::model::ObjectIdentifier>) -> Self {
+        pub fn objects(mut self, input: crate::model::ObjectIdentifier) -> Self {
             let mut v = self.objects.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.objects = Some(v);
             self
         }
@@ -23720,14 +17111,12 @@ pub mod delete {
             self.objects = input;
             self
         }
-        /// <p>Element to enable quiet mode for the request. When you add this element, you must set
-        /// its value to true.</p>
+        /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
         pub fn quiet(mut self, input: bool) -> Self {
             self.quiet = Some(input);
             self
         }
-        /// <p>Element to enable quiet mode for the request. When you add this element, you must set
-        /// its value to true.</p>
+        /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
         pub fn set_quiet(mut self, input: std::option::Option<bool>) -> Self {
             self.quiet = input;
             self
@@ -23752,22 +17141,16 @@ impl Delete {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectIdentifier {
-    /// <p>Key name of the object.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>Key name of the object.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub key: std::option::Option<std::string::String>,
     /// <p>VersionId for the specific version of the object to delete.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
 impl ObjectIdentifier {
-    /// <p>Key name of the object.</p>
-    /// <important>
-    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-    /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-    /// XML related object key constraints</a>.</p>
+    /// <p>Key name of the object.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
@@ -23795,21 +17178,15 @@ pub mod object_identifier {
         pub(crate) version_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Key name of the object.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>Key name of the object.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>Key name of the object.</p>
-        /// <important>
-        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using
-        /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
-        /// XML related object key constraints</a>.</p>
+        /// <p>Key name of the object.</p> <important>
+        /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
         /// </important>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
@@ -23845,13 +17222,11 @@ impl ObjectIdentifier {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBucketConfiguration {
-    /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region,
-    /// the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
+    /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
     pub location_constraint: std::option::Option<crate::model::BucketLocationConstraint>,
 }
 impl CreateBucketConfiguration {
-    /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region,
-    /// the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
+    /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
     pub fn location_constraint(
         &self,
     ) -> std::option::Option<&crate::model::BucketLocationConstraint> {
@@ -23874,8 +17249,7 @@ pub mod create_bucket_configuration {
         pub(crate) location_constraint: std::option::Option<crate::model::BucketLocationConstraint>,
     }
     impl Builder {
-        /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region,
-        /// the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
+        /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
         pub fn location_constraint(
             mut self,
             input: crate::model::BucketLocationConstraint,
@@ -23883,8 +17257,7 @@ pub mod create_bucket_configuration {
             self.location_constraint = Some(input);
             self
         }
-        /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region,
-        /// the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
+        /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
         pub fn set_location_constraint(
             mut self,
             input: std::option::Option<crate::model::BucketLocationConstraint>,
@@ -24098,14 +17471,12 @@ impl AsRef<str> for MetadataDirective {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompletedMultipartUpload {
     /// <p>Array of CompletedPart data types.</p>
-    /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP
-    /// 400 response.</p>
+    /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP 400 response.</p>
     pub parts: std::option::Option<std::vec::Vec<crate::model::CompletedPart>>,
 }
 impl CompletedMultipartUpload {
     /// <p>Array of CompletedPart data types.</p>
-    /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP
-    /// 400 response.</p>
+    /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP 400 response.</p>
     pub fn parts(&self) -> std::option::Option<&[crate::model::CompletedPart]> {
         self.parts.as_deref()
     }
@@ -24131,17 +17502,15 @@ pub mod completed_multipart_upload {
         /// To override the contents of this collection use [`set_parts`](Self::set_parts).
         ///
         /// <p>Array of CompletedPart data types.</p>
-        /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP
-        /// 400 response.</p>
-        pub fn parts(mut self, input: impl Into<crate::model::CompletedPart>) -> Self {
+        /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP 400 response.</p>
+        pub fn parts(mut self, input: crate::model::CompletedPart) -> Self {
             let mut v = self.parts.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.parts = Some(v);
             self
         }
         /// <p>Array of CompletedPart data types.</p>
-        /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP
-        /// 400 response.</p>
+        /// <p>If you do not supply a valid <code>Part</code> with your request, the service sends back an HTTP 400 response.</p>
         pub fn set_parts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CompletedPart>>,
@@ -24168,8 +17537,7 @@ impl CompletedMultipartUpload {
 pub struct CompletedPart {
     /// <p>Entity tag returned when the part was uploaded.</p>
     pub e_tag: std::option::Option<std::string::String>,
-    /// <p>Part number that identifies the part. This is a positive integer between 1 and
-    /// 10,000.</p>
+    /// <p>Part number that identifies the part. This is a positive integer between 1 and 10,000.</p>
     pub part_number: i32,
 }
 impl CompletedPart {
@@ -24177,8 +17545,7 @@ impl CompletedPart {
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
-    /// <p>Part number that identifies the part. This is a positive integer between 1 and
-    /// 10,000.</p>
+    /// <p>Part number that identifies the part. This is a positive integer between 1 and 10,000.</p>
     pub fn part_number(&self) -> i32 {
         self.part_number
     }
@@ -24211,14 +17578,12 @@ pub mod completed_part {
             self.e_tag = input;
             self
         }
-        /// <p>Part number that identifies the part. This is a positive integer between 1 and
-        /// 10,000.</p>
+        /// <p>Part number that identifies the part. This is a positive integer between 1 and 10,000.</p>
         pub fn part_number(mut self, input: i32) -> Self {
             self.part_number = Some(input);
             self
         }
-        /// <p>Part number that identifies the part. This is a positive integer between 1 and
-        /// 10,000.</p>
+        /// <p>Part number that identifies the part. This is a positive integer between 1 and 10,000.</p>
         pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
             self.part_number = input;
             self

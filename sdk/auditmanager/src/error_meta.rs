@@ -3,11 +3,9 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p> Your account isn't registered with Audit Manager. Check the delegated
-    /// administrator setup on the Audit Manager settings page, and try again. </p>
+    /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> An internal service error occurred during the processing of your request. Try again
-    /// later. </p>
+    /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),

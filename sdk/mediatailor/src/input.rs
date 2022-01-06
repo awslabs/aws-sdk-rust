@@ -10,12 +10,14 @@ pub mod configure_logs_for_playback_configuration_input {
         pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: 0 - 100</p>
+        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+        /// <p>Valid values: 0 - 100</p>
         pub fn percent_enabled(mut self, input: i32) -> Self {
             self.percent_enabled = Some(input);
             self
         }
-        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: 0 - 100</p>
+        /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+        /// <p>Valid values: 0 - 100</p>
         pub fn set_percent_enabled(mut self, input: std::option::Option<i32>) -> Self {
             self.percent_enabled = input;
             self
@@ -55,7 +57,7 @@ pub type ConfigureLogsForPlaybackConfigurationInputOperationOutputAlias =
     crate::operation::ConfigureLogsForPlaybackConfiguration;
 #[doc(hidden)]
 pub type ConfigureLogsForPlaybackConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ConfigureLogsForPlaybackConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`ConfigureLogsForPlaybackConfiguration`](crate::operation::ConfigureLogsForPlaybackConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -66,7 +68,7 @@ impl ConfigureLogsForPlaybackConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfigureLogsForPlaybackConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -148,7 +150,7 @@ impl ConfigureLogsForPlaybackConfigurationInput {
             "ConfigureLogsForPlaybackConfiguration",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -214,9 +216,9 @@ pub mod create_channel_input {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>The channel's output properties.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::RequestOutputItem>) -> Self {
+        pub fn outputs(mut self, input: crate::model::RequestOutputItem) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -228,12 +230,16 @@ pub mod create_channel_input {
             self.outputs = input;
             self
         }
-        /// <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+        /// <p>The type of playback mode to use for this channel.</p>
+        /// <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>
+        /// <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
         pub fn playback_mode(mut self, input: crate::model::PlaybackMode) -> Self {
             self.playback_mode = Some(input);
             self
         }
-        /// <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+        /// <p>The type of playback mode to use for this channel.</p>
+        /// <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>
+        /// <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
         pub fn set_playback_mode(
             mut self,
             input: std::option::Option<crate::model::PlaybackMode>,
@@ -286,7 +292,7 @@ pub mod create_channel_input {
 #[doc(hidden)]
 pub type CreateChannelInputOperationOutputAlias = crate::operation::CreateChannel;
 #[doc(hidden)]
-pub type CreateChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateChannelInput {
     /// Consumes the builder and constructs an Operation<[`CreateChannel`](crate::operation::CreateChannel)>
     #[allow(clippy::let_and_return)]
@@ -297,7 +303,7 @@ impl CreateChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -392,7 +398,7 @@ impl CreateChannelInput {
             "CreateChannel",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -510,7 +516,7 @@ pub mod create_prefetch_schedule_input {
 #[doc(hidden)]
 pub type CreatePrefetchScheduleInputOperationOutputAlias = crate::operation::CreatePrefetchSchedule;
 #[doc(hidden)]
-pub type CreatePrefetchScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePrefetchScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePrefetchScheduleInput {
     /// Consumes the builder and constructs an Operation<[`CreatePrefetchSchedule`](crate::operation::CreatePrefetchSchedule)>
     #[allow(clippy::let_and_return)]
@@ -521,7 +527,7 @@ impl CreatePrefetchScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePrefetchSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -639,7 +645,7 @@ impl CreatePrefetchScheduleInput {
             "CreatePrefetchSchedule",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -681,9 +687,9 @@ pub mod create_program_input {
         /// To override the contents of this collection use [`set_ad_breaks`](Self::set_ad_breaks).
         ///
         /// <p>The ad break configuration settings.</p>
-        pub fn ad_breaks(mut self, input: impl Into<crate::model::AdBreak>) -> Self {
+        pub fn ad_breaks(mut self, input: crate::model::AdBreak) -> Self {
             let mut v = self.ad_breaks.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ad_breaks = Some(v);
             self
         }
@@ -778,7 +784,7 @@ pub mod create_program_input {
 #[doc(hidden)]
 pub type CreateProgramInputOperationOutputAlias = crate::operation::CreateProgram;
 #[doc(hidden)]
-pub type CreateProgramInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProgramInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProgramInput {
     /// Consumes the builder and constructs an Operation<[`CreateProgram`](crate::operation::CreateProgram)>
     #[allow(clippy::let_and_return)]
@@ -789,7 +795,7 @@ impl CreateProgramInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProgram,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -904,7 +910,7 @@ impl CreateProgramInput {
             "CreateProgram",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1043,7 +1049,7 @@ pub mod create_source_location_input {
 #[doc(hidden)]
 pub type CreateSourceLocationInputOperationOutputAlias = crate::operation::CreateSourceLocation;
 #[doc(hidden)]
-pub type CreateSourceLocationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSourceLocationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSourceLocationInput {
     /// Consumes the builder and constructs an Operation<[`CreateSourceLocation`](crate::operation::CreateSourceLocation)>
     #[allow(clippy::let_and_return)]
@@ -1054,7 +1060,7 @@ impl CreateSourceLocationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSourceLocation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1156,7 +1162,7 @@ impl CreateSourceLocationInput {
             "CreateSourceLocation",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1201,10 +1207,10 @@ pub mod create_vod_source_input {
         /// <p>An array of HTTP package configuration parameters for this VOD source.</p>
         pub fn http_package_configurations(
             mut self,
-            input: impl Into<crate::model::HttpPackageConfiguration>,
+            input: crate::model::HttpPackageConfiguration,
         ) -> Self {
             let mut v = self.http_package_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.http_package_configurations = Some(v);
             self
         }
@@ -1286,7 +1292,7 @@ pub mod create_vod_source_input {
 #[doc(hidden)]
 pub type CreateVodSourceInputOperationOutputAlias = crate::operation::CreateVodSource;
 #[doc(hidden)]
-pub type CreateVodSourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateVodSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateVodSourceInput {
     /// Consumes the builder and constructs an Operation<[`CreateVodSource`](crate::operation::CreateVodSource)>
     #[allow(clippy::let_and_return)]
@@ -1297,7 +1303,7 @@ impl CreateVodSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateVodSource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1413,7 +1419,7 @@ impl CreateVodSourceInput {
             "CreateVodSource",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1471,7 +1477,7 @@ pub mod delete_channel_input {
 #[doc(hidden)]
 pub type DeleteChannelInputOperationOutputAlias = crate::operation::DeleteChannel;
 #[doc(hidden)]
-pub type DeleteChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannel`](crate::operation::DeleteChannel)>
     #[allow(clippy::let_and_return)]
@@ -1482,7 +1488,7 @@ impl DeleteChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1572,7 +1578,7 @@ impl DeleteChannelInput {
             "DeleteChannel",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1622,7 +1628,7 @@ pub mod delete_channel_policy_input {
 #[doc(hidden)]
 pub type DeleteChannelPolicyInputOperationOutputAlias = crate::operation::DeleteChannelPolicy;
 #[doc(hidden)]
-pub type DeleteChannelPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteChannelPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteChannelPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeleteChannelPolicy`](crate::operation::DeleteChannelPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1633,7 +1639,7 @@ impl DeleteChannelPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteChannelPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1727,7 +1733,7 @@ impl DeleteChannelPolicyInput {
             "DeleteChannelPolicy",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1776,7 +1782,7 @@ pub mod delete_playback_configuration_input {
 pub type DeletePlaybackConfigurationInputOperationOutputAlias =
     crate::operation::DeletePlaybackConfiguration;
 #[doc(hidden)]
-pub type DeletePlaybackConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePlaybackConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePlaybackConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeletePlaybackConfiguration`](crate::operation::DeletePlaybackConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1787,7 +1793,7 @@ impl DeletePlaybackConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePlaybackConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1877,7 +1883,7 @@ impl DeletePlaybackConfigurationInput {
             "DeletePlaybackConfiguration",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1945,7 +1951,7 @@ pub mod delete_prefetch_schedule_input {
 #[doc(hidden)]
 pub type DeletePrefetchScheduleInputOperationOutputAlias = crate::operation::DeletePrefetchSchedule;
 #[doc(hidden)]
-pub type DeletePrefetchScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePrefetchScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePrefetchScheduleInput {
     /// Consumes the builder and constructs an Operation<[`DeletePrefetchSchedule`](crate::operation::DeletePrefetchSchedule)>
     #[allow(clippy::let_and_return)]
@@ -1956,7 +1962,7 @@ impl DeletePrefetchScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePrefetchSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2066,7 +2072,7 @@ impl DeletePrefetchScheduleInput {
             "DeletePrefetchSchedule",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2128,7 +2134,7 @@ pub mod delete_program_input {
 #[doc(hidden)]
 pub type DeleteProgramInputOperationOutputAlias = crate::operation::DeleteProgram;
 #[doc(hidden)]
-pub type DeleteProgramInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProgramInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProgramInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProgram`](crate::operation::DeleteProgram)>
     #[allow(clippy::let_and_return)]
@@ -2139,7 +2145,7 @@ impl DeleteProgramInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProgram,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2249,7 +2255,7 @@ impl DeleteProgramInput {
             "DeleteProgram",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2302,7 +2308,7 @@ pub mod delete_source_location_input {
 #[doc(hidden)]
 pub type DeleteSourceLocationInputOperationOutputAlias = crate::operation::DeleteSourceLocation;
 #[doc(hidden)]
-pub type DeleteSourceLocationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSourceLocationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSourceLocationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSourceLocation`](crate::operation::DeleteSourceLocation)>
     #[allow(clippy::let_and_return)]
@@ -2313,7 +2319,7 @@ impl DeleteSourceLocationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSourceLocation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2407,7 +2413,7 @@ impl DeleteSourceLocationInput {
             "DeleteSourceLocation",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2475,7 +2481,7 @@ pub mod delete_vod_source_input {
 #[doc(hidden)]
 pub type DeleteVodSourceInputOperationOutputAlias = crate::operation::DeleteVodSource;
 #[doc(hidden)]
-pub type DeleteVodSourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteVodSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteVodSourceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteVodSource`](crate::operation::DeleteVodSource)>
     #[allow(clippy::let_and_return)]
@@ -2486,7 +2492,7 @@ impl DeleteVodSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteVodSource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2596,7 +2602,7 @@ impl DeleteVodSourceInput {
             "DeleteVodSource",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2646,7 +2652,7 @@ pub mod describe_channel_input {
 #[doc(hidden)]
 pub type DescribeChannelInputOperationOutputAlias = crate::operation::DescribeChannel;
 #[doc(hidden)]
-pub type DescribeChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeChannelInput {
     /// Consumes the builder and constructs an Operation<[`DescribeChannel`](crate::operation::DescribeChannel)>
     #[allow(clippy::let_and_return)]
@@ -2657,7 +2663,7 @@ impl DescribeChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2747,7 +2753,7 @@ impl DescribeChannelInput {
             "DescribeChannel",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2809,7 +2815,7 @@ pub mod describe_program_input {
 #[doc(hidden)]
 pub type DescribeProgramInputOperationOutputAlias = crate::operation::DescribeProgram;
 #[doc(hidden)]
-pub type DescribeProgramInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeProgramInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProgramInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProgram`](crate::operation::DescribeProgram)>
     #[allow(clippy::let_and_return)]
@@ -2820,7 +2826,7 @@ impl DescribeProgramInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProgram,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2930,7 +2936,7 @@ impl DescribeProgramInput {
             "DescribeProgram",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2983,7 +2989,7 @@ pub mod describe_source_location_input {
 #[doc(hidden)]
 pub type DescribeSourceLocationInputOperationOutputAlias = crate::operation::DescribeSourceLocation;
 #[doc(hidden)]
-pub type DescribeSourceLocationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSourceLocationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSourceLocationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSourceLocation`](crate::operation::DescribeSourceLocation)>
     #[allow(clippy::let_and_return)]
@@ -2994,7 +3000,7 @@ impl DescribeSourceLocationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSourceLocation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3088,7 +3094,7 @@ impl DescribeSourceLocationInput {
             "DescribeSourceLocation",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3156,7 +3162,7 @@ pub mod describe_vod_source_input {
 #[doc(hidden)]
 pub type DescribeVodSourceInputOperationOutputAlias = crate::operation::DescribeVodSource;
 #[doc(hidden)]
-pub type DescribeVodSourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeVodSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeVodSourceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeVodSource`](crate::operation::DescribeVodSource)>
     #[allow(clippy::let_and_return)]
@@ -3167,7 +3173,7 @@ impl DescribeVodSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeVodSource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3277,7 +3283,7 @@ impl DescribeVodSourceInput {
             "DescribeVodSource",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3327,7 +3333,7 @@ pub mod get_channel_policy_input {
 #[doc(hidden)]
 pub type GetChannelPolicyInputOperationOutputAlias = crate::operation::GetChannelPolicy;
 #[doc(hidden)]
-pub type GetChannelPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetChannelPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChannelPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetChannelPolicy`](crate::operation::GetChannelPolicy)>
     #[allow(clippy::let_and_return)]
@@ -3338,7 +3344,7 @@ impl GetChannelPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChannelPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3432,7 +3438,7 @@ impl GetChannelPolicyInput {
             "GetChannelPolicy",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3521,7 +3527,7 @@ pub mod get_channel_schedule_input {
 #[doc(hidden)]
 pub type GetChannelScheduleInputOperationOutputAlias = crate::operation::GetChannelSchedule;
 #[doc(hidden)]
-pub type GetChannelScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetChannelScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetChannelScheduleInput {
     /// Consumes the builder and constructs an Operation<[`GetChannelSchedule`](crate::operation::GetChannelSchedule)>
     #[allow(clippy::let_and_return)]
@@ -3532,7 +3538,7 @@ impl GetChannelScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetChannelSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3649,7 +3655,7 @@ impl GetChannelScheduleInput {
             "GetChannelSchedule",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3698,7 +3704,7 @@ pub mod get_playback_configuration_input {
 pub type GetPlaybackConfigurationInputOperationOutputAlias =
     crate::operation::GetPlaybackConfiguration;
 #[doc(hidden)]
-pub type GetPlaybackConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPlaybackConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPlaybackConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetPlaybackConfiguration`](crate::operation::GetPlaybackConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -3709,7 +3715,7 @@ impl GetPlaybackConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPlaybackConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3799,7 +3805,7 @@ impl GetPlaybackConfigurationInput {
             "GetPlaybackConfiguration",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3867,7 +3873,7 @@ pub mod get_prefetch_schedule_input {
 #[doc(hidden)]
 pub type GetPrefetchScheduleInputOperationOutputAlias = crate::operation::GetPrefetchSchedule;
 #[doc(hidden)]
-pub type GetPrefetchScheduleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPrefetchScheduleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPrefetchScheduleInput {
     /// Consumes the builder and constructs an Operation<[`GetPrefetchSchedule`](crate::operation::GetPrefetchSchedule)>
     #[allow(clippy::let_and_return)]
@@ -3878,7 +3884,7 @@ impl GetPrefetchScheduleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPrefetchSchedule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3988,7 +3994,7 @@ impl GetPrefetchScheduleInput {
             "GetPrefetchSchedule",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4062,7 +4068,7 @@ pub mod list_alerts_input {
 #[doc(hidden)]
 pub type ListAlertsInputOperationOutputAlias = crate::operation::ListAlerts;
 #[doc(hidden)]
-pub type ListAlertsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAlertsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAlertsInput {
     /// Consumes the builder and constructs an Operation<[`ListAlerts`](crate::operation::ListAlerts)>
     #[allow(clippy::let_and_return)]
@@ -4073,7 +4079,7 @@ impl ListAlertsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAlerts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4170,7 +4176,7 @@ impl ListAlertsInput {
             "ListAlerts",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4232,7 +4238,7 @@ pub mod list_channels_input {
 #[doc(hidden)]
 pub type ListChannelsInputOperationOutputAlias = crate::operation::ListChannels;
 #[doc(hidden)]
-pub type ListChannelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListChannelsInput {
     /// Consumes the builder and constructs an Operation<[`ListChannels`](crate::operation::ListChannels)>
     #[allow(clippy::let_and_return)]
@@ -4243,7 +4249,7 @@ impl ListChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListChannels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4334,7 +4340,7 @@ impl ListChannelsInput {
             "ListChannels",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4397,7 +4403,7 @@ pub mod list_playback_configurations_input {
 pub type ListPlaybackConfigurationsInputOperationOutputAlias =
     crate::operation::ListPlaybackConfigurations;
 #[doc(hidden)]
-pub type ListPlaybackConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPlaybackConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPlaybackConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListPlaybackConfigurations`](crate::operation::ListPlaybackConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -4408,7 +4414,7 @@ impl ListPlaybackConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPlaybackConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4499,7 +4505,7 @@ impl ListPlaybackConfigurationsInput {
             "ListPlaybackConfigurations",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4536,12 +4542,18 @@ pub mod list_prefetch_schedules_input {
             self.max_results = input;
             self
         }
-        /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p> <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p> <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p> <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+        /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>
+        /// <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>
+        /// <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>
+        /// <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p> <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p> <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p> <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+        /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>
+        /// <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>
+        /// <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>
+        /// <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4591,7 +4603,7 @@ pub mod list_prefetch_schedules_input {
 #[doc(hidden)]
 pub type ListPrefetchSchedulesInputOperationOutputAlias = crate::operation::ListPrefetchSchedules;
 #[doc(hidden)]
-pub type ListPrefetchSchedulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPrefetchSchedulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPrefetchSchedulesInput {
     /// Consumes the builder and constructs an Operation<[`ListPrefetchSchedules`](crate::operation::ListPrefetchSchedules)>
     #[allow(clippy::let_and_return)]
@@ -4602,7 +4614,7 @@ impl ListPrefetchSchedulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPrefetchSchedules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4704,7 +4716,7 @@ impl ListPrefetchSchedulesInput {
             "ListPrefetchSchedules",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4774,7 +4786,7 @@ pub mod list_source_locations_input {
 #[doc(hidden)]
 pub type ListSourceLocationsInputOperationOutputAlias = crate::operation::ListSourceLocations;
 #[doc(hidden)]
-pub type ListSourceLocationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSourceLocationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSourceLocationsInput {
     /// Consumes the builder and constructs an Operation<[`ListSourceLocations`](crate::operation::ListSourceLocations)>
     #[allow(clippy::let_and_return)]
@@ -4785,7 +4797,7 @@ impl ListSourceLocationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSourceLocations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4876,7 +4888,7 @@ impl ListSourceLocationsInput {
             "ListSourceLocations",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4926,7 +4938,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -4937,7 +4949,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5027,7 +5039,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5104,7 +5116,7 @@ pub mod list_vod_sources_input {
 #[doc(hidden)]
 pub type ListVodSourcesInputOperationOutputAlias = crate::operation::ListVodSources;
 #[doc(hidden)]
-pub type ListVodSourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListVodSourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListVodSourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListVodSources`](crate::operation::ListVodSources)>
     #[allow(clippy::let_and_return)]
@@ -5115,7 +5127,7 @@ impl ListVodSourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListVodSources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5226,7 +5238,7 @@ impl ListVodSourcesInput {
             "ListVodSources",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5288,7 +5300,7 @@ pub mod put_channel_policy_input {
 #[doc(hidden)]
 pub type PutChannelPolicyInputOperationOutputAlias = crate::operation::PutChannelPolicy;
 #[doc(hidden)]
-pub type PutChannelPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutChannelPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutChannelPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutChannelPolicy`](crate::operation::PutChannelPolicy)>
     #[allow(clippy::let_and_return)]
@@ -5299,7 +5311,7 @@ impl PutChannelPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutChannelPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5399,7 +5411,7 @@ impl PutChannelPolicyInput {
             "PutChannelPolicy",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5510,10 +5522,10 @@ pub mod put_playback_configuration_input {
         pub fn configuration_aliases(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
+            v: std::collections::HashMap<std::string::String, std::string::String>,
         ) -> Self {
             let mut hash_map = self.configuration_aliases.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.configuration_aliases = Some(hash_map);
             self
         }
@@ -5691,7 +5703,7 @@ pub mod put_playback_configuration_input {
 pub type PutPlaybackConfigurationInputOperationOutputAlias =
     crate::operation::PutPlaybackConfiguration;
 #[doc(hidden)]
-pub type PutPlaybackConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutPlaybackConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPlaybackConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutPlaybackConfiguration`](crate::operation::PutPlaybackConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -5702,7 +5714,7 @@ impl PutPlaybackConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPlaybackConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5784,7 +5796,7 @@ impl PutPlaybackConfigurationInput {
             "PutPlaybackConfiguration",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5842,7 +5854,7 @@ pub mod start_channel_input {
 #[doc(hidden)]
 pub type StartChannelInputOperationOutputAlias = crate::operation::StartChannel;
 #[doc(hidden)]
-pub type StartChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartChannelInput {
     /// Consumes the builder and constructs an Operation<[`StartChannel`](crate::operation::StartChannel)>
     #[allow(clippy::let_and_return)]
@@ -5853,7 +5865,7 @@ impl StartChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5947,7 +5959,7 @@ impl StartChannelInput {
             "StartChannel",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5997,7 +6009,7 @@ pub mod stop_channel_input {
 #[doc(hidden)]
 pub type StopChannelInputOperationOutputAlias = crate::operation::StopChannel;
 #[doc(hidden)]
-pub type StopChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopChannelInput {
     /// Consumes the builder and constructs an Operation<[`StopChannel`](crate::operation::StopChannel)>
     #[allow(clippy::let_and_return)]
@@ -6008,7 +6020,7 @@ impl StopChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6102,7 +6114,7 @@ impl StopChannelInput {
             "StopChannel",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6181,7 +6193,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -6192,7 +6204,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6287,7 +6299,7 @@ impl TagResourceInput {
             "TagResource",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6366,7 +6378,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -6377,7 +6389,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6480,7 +6492,7 @@ impl UntagResourceInput {
             "UntagResource",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6520,9 +6532,9 @@ pub mod update_channel_input {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>The channel's output properties.</p>
-        pub fn outputs(mut self, input: impl Into<crate::model::RequestOutputItem>) -> Self {
+        pub fn outputs(mut self, input: crate::model::RequestOutputItem) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.outputs = Some(v);
             self
         }
@@ -6551,7 +6563,7 @@ pub mod update_channel_input {
 #[doc(hidden)]
 pub type UpdateChannelInputOperationOutputAlias = crate::operation::UpdateChannel;
 #[doc(hidden)]
-pub type UpdateChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateChannelInput {
     /// Consumes the builder and constructs an Operation<[`UpdateChannel`](crate::operation::UpdateChannel)>
     #[allow(clippy::let_and_return)]
@@ -6562,7 +6574,7 @@ impl UpdateChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6657,7 +6669,7 @@ impl UpdateChannelInput {
             "UpdateChannel",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6767,7 +6779,7 @@ pub mod update_source_location_input {
 #[doc(hidden)]
 pub type UpdateSourceLocationInputOperationOutputAlias = crate::operation::UpdateSourceLocation;
 #[doc(hidden)]
-pub type UpdateSourceLocationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSourceLocationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSourceLocationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSourceLocation`](crate::operation::UpdateSourceLocation)>
     #[allow(clippy::let_and_return)]
@@ -6778,7 +6790,7 @@ impl UpdateSourceLocationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSourceLocation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6880,7 +6892,7 @@ impl UpdateSourceLocationInput {
             "UpdateSourceLocation",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6922,10 +6934,10 @@ pub mod update_vod_source_input {
         /// <p>An array of HTTP package configurations for the VOD source on this account.</p>
         pub fn http_package_configurations(
             mut self,
-            input: impl Into<crate::model::HttpPackageConfiguration>,
+            input: crate::model::HttpPackageConfiguration,
         ) -> Self {
             let mut v = self.http_package_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.http_package_configurations = Some(v);
             self
         }
@@ -6981,7 +6993,7 @@ pub mod update_vod_source_input {
 #[doc(hidden)]
 pub type UpdateVodSourceInputOperationOutputAlias = crate::operation::UpdateVodSource;
 #[doc(hidden)]
-pub type UpdateVodSourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateVodSourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateVodSourceInput {
     /// Consumes the builder and constructs an Operation<[`UpdateVodSource`](crate::operation::UpdateVodSource)>
     #[allow(clippy::let_and_return)]
@@ -6992,7 +7004,7 @@ impl UpdateVodSourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateVodSource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7108,7 +7120,7 @@ impl UpdateVodSourceInput {
             "UpdateVodSource",
             "mediatailor",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7608,7 +7620,10 @@ impl std::fmt::Debug for ListSourceLocationsInput {
 pub struct ListPrefetchSchedulesInput {
     /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
     pub max_results: i32,
-    /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p> <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p> <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p> <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+    /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>
+    /// <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>
+    /// <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>
+    /// <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The name of the playback configuration.</p>
     pub playback_configuration_name: std::option::Option<std::string::String>,
@@ -7620,7 +7635,10 @@ impl ListPrefetchSchedulesInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p> <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p> <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p> <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+    /// <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>
+    /// <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>
+    /// <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>
+    /// <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8353,7 +8371,9 @@ pub struct CreateChannelInput {
     pub filler_slate: std::option::Option<crate::model::SlateSource>,
     /// <p>The channel's output properties.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::RequestOutputItem>>,
-    /// <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+    /// <p>The type of playback mode to use for this channel.</p>
+    /// <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>
+    /// <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
     pub playback_mode: std::option::Option<crate::model::PlaybackMode>,
     /// <p>The tags to assign to the channel.</p>
     pub tags:
@@ -8372,7 +8392,9 @@ impl CreateChannelInput {
     pub fn outputs(&self) -> std::option::Option<&[crate::model::RequestOutputItem]> {
         self.outputs.as_deref()
     }
-    /// <p>The type of playback mode to use for this channel.</p> <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p> <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+    /// <p>The type of playback mode to use for this channel.</p>
+    /// <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>
+    /// <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
     pub fn playback_mode(&self) -> std::option::Option<&crate::model::PlaybackMode> {
         self.playback_mode.as_ref()
     }
@@ -8400,13 +8422,15 @@ impl std::fmt::Debug for CreateChannelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigureLogsForPlaybackConfigurationInput {
-    /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: 0 - 100</p>
+    /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+    /// <p>Valid values: 0 - 100</p>
     pub percent_enabled: i32,
     /// <p>The name of the playback configuration.</p>
     pub playback_configuration_name: std::option::Option<std::string::String>,
 }
 impl ConfigureLogsForPlaybackConfigurationInput {
-    /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p> <p>Valid values: 0 - 100</p>
+    /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
+    /// <p>Valid values: 0 - 100</p>
     pub fn percent_enabled(&self) -> i32 {
         self.percent_enabled
     }

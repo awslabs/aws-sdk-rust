@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS CloudHSM V2
@@ -129,6 +129,7 @@ where
     ///
     /// See [`DescribeBackups`](crate::client::fluent_builders::DescribeBackups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBackups::into_paginator).
     pub fn describe_backups(&self) -> fluent_builders::DescribeBackups<C, M, R> {
         fluent_builders::DescribeBackups::new(self.handle.clone())
     }
@@ -136,6 +137,7 @@ where
     ///
     /// See [`DescribeClusters`](crate::client::fluent_builders::DescribeClusters) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeClusters::into_paginator).
     pub fn describe_clusters(&self) -> fluent_builders::DescribeClusters<C, M, R> {
         fluent_builders::DescribeClusters::new(self.handle.clone())
     }
@@ -150,6 +152,7 @@ where
     ///
     /// See [`ListTags`](crate::client::fluent_builders::ListTags) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
     pub fn list_tags(&self) -> fluent_builders::ListTags<C, M, R> {
         fluent_builders::ListTags::new(self.handle.clone())
     }
@@ -200,7 +203,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CopyBackupToRegion`.
     ///
     /// <p>Copy an AWS CloudHSM cluster backup to a different region.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyBackupToRegion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -245,10 +248,10 @@ pub mod fluent_builders {
                 crate::input::CopyBackupToRegionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -257,8 +260,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
-        pub fn destination_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_region(inp);
+        pub fn destination_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_region(input.into());
             self
         }
         /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
@@ -270,8 +273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the backup that will be copied to the destination region. </p>
-        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(inp);
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(input.into());
             self
         }
         /// <p>The ID of the backup that will be copied to the destination region. </p>
@@ -284,8 +287,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
             self
         }
         /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
@@ -300,7 +303,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCluster`.
     ///
     /// <p>Creates a new AWS CloudHSM cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -345,10 +348,10 @@ pub mod fluent_builders {
                 crate::input::CreateClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -357,8 +360,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A policy that defines how the service retains backups.</p>
-        pub fn backup_retention_policy(mut self, inp: crate::model::BackupRetentionPolicy) -> Self {
-            self.inner = self.inner.backup_retention_policy(inp);
+        pub fn backup_retention_policy(
+            mut self,
+            input: crate::model::BackupRetentionPolicy,
+        ) -> Self {
+            self.inner = self.inner.backup_retention_policy(input);
             self
         }
         /// <p>A policy that defines how the service retains backups.</p>
@@ -369,26 +375,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_retention_policy(input);
             self
         }
-        /// <p>The type of HSM to use in the cluster. Currently the only allowed value is
-        /// <code>hsm1.medium</code>.</p>
-        pub fn hsm_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hsm_type(inp);
+        /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
+        pub fn hsm_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hsm_type(input.into());
             self
         }
-        /// <p>The type of HSM to use in the cluster. Currently the only allowed value is
-        /// <code>hsm1.medium</code>.</p>
+        /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
         pub fn set_hsm_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_hsm_type(input);
             self
         }
-        /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the
-        /// cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.</p>
-        pub fn source_backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_backup_id(inp);
+        /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
+        pub fn source_backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_backup_id(input.into());
             self
         }
-        /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the
-        /// cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.</p>
+        /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
         pub fn set_source_backup_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -400,31 +402,19 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
-        /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must
-        /// specify at least one subnet. If you specify multiple subnets, they must meet the following
-        /// criteria:</p>
+        /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
         /// <ul>
-        /// <li>
-        /// <p>All subnets must be in the same virtual private cloud (VPC).</p>
-        /// </li>
-        /// <li>
-        /// <p>You can specify only one subnet per Availability Zone.</p>
-        /// </li>
+        /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
+        /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
         /// </ul>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
-        /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must
-        /// specify at least one subnet. If you specify multiple subnets, they must meet the following
-        /// criteria:</p>
+        /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
         /// <ul>
-        /// <li>
-        /// <p>All subnets must be in the same virtual private cloud (VPC).</p>
-        /// </li>
-        /// <li>
-        /// <p>You can specify only one subnet per Availability Zone.</p>
-        /// </li>
+        /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
+        /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
         /// </ul>
         pub fn set_subnet_ids(
             mut self,
@@ -438,8 +428,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
             self
         }
         /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
@@ -453,9 +443,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateHsm`.
     ///
-    /// <p>Creates a new hardware security module (HSM) in the specified AWS CloudHSM
-    /// cluster.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new hardware security module (HSM) in the specified AWS CloudHSM cluster.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHsm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -500,10 +489,10 @@ pub mod fluent_builders {
                 crate::input::CreateHsmInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -511,24 +500,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
-        /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <a>DescribeClusters</a>.</p>
+        /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_id(input);
             self
         }
-        /// <p>The Availability Zone where you are creating the HSM. To find the cluster's
-        /// Availability Zones, use <a>DescribeClusters</a>.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        /// <p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <code>DescribeClusters</code>.</p>
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
-        /// <p>The Availability Zone where you are creating the HSM. To find the cluster's
-        /// Availability Zones, use <a>DescribeClusters</a>.</p>
+        /// <p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <code>DescribeClusters</code>.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -536,16 +523,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zone(input);
             self
         }
-        /// <p>The HSM's IP address. If you specify an IP address, use an available address from the
-        /// subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify
-        /// an IP address, one is chosen for you from that subnet.</p>
-        pub fn ip_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ip_address(inp);
+        /// <p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ip_address(input.into());
             self
         }
-        /// <p>The HSM's IP address. If you specify an IP address, use an available address from the
-        /// subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify
-        /// an IP address, one is chosen for you from that subnet.</p>
+        /// <p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ip_address(input);
             self
@@ -553,10 +536,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBackup`.
     ///
-    /// <p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days
-    /// after the DeleteBackup request is made. For more information on restoring a backup, see
-    /// <a>RestoreBackup</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request is made. For more information on restoring a backup, see <code>RestoreBackup</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -601,10 +582,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBackupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -612,12 +593,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
-        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(inp);
+        /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(input.into());
             self
         }
-        /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+        /// <p>The ID of the backup to be deleted. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_backup_id(input);
             self
@@ -625,9 +606,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCluster`.
     ///
-    /// <p>Deletes the specified AWS CloudHSM cluster. Before you can delete a cluster, you must
-    /// delete all HSMs in the cluster. To see if the cluster contains any HSMs, use <a>DescribeClusters</a>. To delete an HSM, use <a>DeleteHsm</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified AWS CloudHSM cluster. Before you can delete a cluster, you must delete all HSMs in the cluster. To see if the cluster contains any HSMs, use <code>DescribeClusters</code>. To delete an HSM, use <code>DeleteHsm</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -672,10 +652,10 @@ pub mod fluent_builders {
                 crate::input::DeleteClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -683,14 +663,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use
-        /// <a>DescribeClusters</a>.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
-        /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use
-        /// <a>DescribeClusters</a>.</p>
+        /// <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_id(input);
             self
@@ -698,10 +676,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteHsm`.
     ///
-    /// <p>Deletes the specified HSM. To specify an HSM, you can use its identifier (ID), the IP
-    /// address of the HSM's elastic network interface (ENI), or the ID of the HSM's ENI. You need to
-    /// specify only one of these values. To find these values, use <a>DescribeClusters</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified HSM. To specify an HSM, you can use its identifier (ID), the IP address of the HSM's elastic network interface (ENI), or the ID of the HSM's ENI. You need to specify only one of these values. To find these values, use <code>DescribeClusters</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHsm<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -746,10 +722,10 @@ pub mod fluent_builders {
                 crate::input::DeleteHsmInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -757,21 +733,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier (ID) of the cluster that contains the HSM that you are
-        /// deleting.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
-        /// <p>The identifier (ID) of the cluster that contains the HSM that you are
-        /// deleting.</p>
+        /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_id(input);
             self
         }
         /// <p>The identifier (ID) of the HSM that you are deleting.</p>
-        pub fn hsm_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hsm_id(inp);
+        pub fn hsm_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hsm_id(input.into());
             self
         }
         /// <p>The identifier (ID) of the HSM that you are deleting.</p>
@@ -779,26 +753,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hsm_id(input);
             self
         }
-        /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are
-        /// deleting.</p>
-        pub fn eni_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eni_id(inp);
+        /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
+        pub fn eni_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eni_id(input.into());
             self
         }
-        /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are
-        /// deleting.</p>
+        /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
         pub fn set_eni_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_eni_id(input);
             self
         }
-        /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are
-        /// deleting.</p>
-        pub fn eni_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eni_ip(inp);
+        /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
+        pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eni_ip(input.into());
             self
         }
-        /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are
-        /// deleting.</p>
+        /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
         pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_eni_ip(input);
             self
@@ -807,12 +777,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeBackups`.
     ///
     /// <p>Gets information about backups of AWS CloudHSM clusters.</p>
-    /// <p>This is a paginated operation, which means that each response might contain only a
-    /// subset of all the backups. When the response contains only a subset of backups, it includes a
-    /// <code>NextToken</code> value. Use this value in a subsequent <code>DescribeBackups</code>
-    /// request to get more backups. When you receive a response with no <code>NextToken</code> (or an
-    /// empty or null value), that means there are no more backups to get.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This is a paginated operation, which means that each response might contain only a subset of all the backups. When the response contains only a subset of backups, it includes a <code>NextToken</code> value. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups. When you receive a response with no <code>NextToken</code> (or an empty or null value), that means there are no more backups to get.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBackups<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -857,10 +823,10 @@ pub mod fluent_builders {
                 crate::input::DescribeBackupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -868,26 +834,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-        /// value to get more backups.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeBackupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeBackupsPaginator<C, M, R> {
+            crate::paginator::DescribeBackupsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-        /// value to get more backups.</p>
+        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of backups to return in the response. When there are more backups
-        /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of backups to return in the response. When there are more backups
-        /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
+        /// <p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -897,39 +865,25 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>One or more filters to limit the items returned in the response.</p>
-        /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify
-        /// backups by their backup identifier (ID).</p>
-        /// <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a
-        /// source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p>
-        /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified
-        /// clusters. Specify clusters by their cluster identifier (ID).</p>
-        /// <p>Use the <code>states</code> filter to return only backups that match the specified
-        /// state.</p>
-        /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the
-        /// <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the
-        /// backup retention policy. <code>False</code> returns all backups with a backup retention policy
-        /// defined at the cluster.</p>
+        /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p>
+        /// <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <code>CopyBackupToRegion</code> operation.</p>
+        /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+        /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
+        /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
         pub fn filters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.filters(k, v);
+            self.inner = self.inner.filters(k.into(), v);
             self
         }
         /// <p>One or more filters to limit the items returned in the response.</p>
-        /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify
-        /// backups by their backup identifier (ID).</p>
-        /// <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a
-        /// source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p>
-        /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified
-        /// clusters. Specify clusters by their cluster identifier (ID).</p>
-        /// <p>Use the <code>states</code> filter to return only backups that match the specified
-        /// state.</p>
-        /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the
-        /// <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the
-        /// backup retention policy. <code>False</code> returns all backups with a backup retention policy
-        /// defined at the cluster.</p>
+        /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p>
+        /// <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <code>CopyBackupToRegion</code> operation.</p>
+        /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+        /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
+        /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -939,14 +893,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>Designates whether or not to sort the return backups by ascending chronological order
-        /// of generation.</p>
-        pub fn sort_ascending(mut self, inp: bool) -> Self {
-            self.inner = self.inner.sort_ascending(inp);
+        /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
+        pub fn sort_ascending(mut self, input: bool) -> Self {
+            self.inner = self.inner.sort_ascending(input);
             self
         }
-        /// <p>Designates whether or not to sort the return backups by ascending chronological order
-        /// of generation.</p>
+        /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
         pub fn set_sort_ascending(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_sort_ascending(input);
             self
@@ -955,12 +907,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeClusters`.
     ///
     /// <p>Gets information about AWS CloudHSM clusters.</p>
-    /// <p>This is a paginated operation, which means that each response might contain only a
-    /// subset of all the clusters. When the response contains only a subset of clusters, it includes
-    /// a <code>NextToken</code> value. Use this value in a subsequent <code>DescribeClusters</code>
-    /// request to get more clusters. When you receive a response with no <code>NextToken</code> (or
-    /// an empty or null value), that means there are no more clusters to get.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This is a paginated operation, which means that each response might contain only a subset of all the clusters. When the response contains only a subset of clusters, it includes a <code>NextToken</code> value. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters. When you receive a response with no <code>NextToken</code> (or an empty or null value), that means there are no more clusters to get.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1005,10 +953,10 @@ pub mod fluent_builders {
                 crate::input::DescribeClustersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1016,32 +964,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeClustersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeClustersPaginator<C, M, R> {
+            crate::paginator::DescribeClustersPaginator::new(self.handle, self.inner)
+        }
         /// Adds a key-value pair to `Filters`.
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>One or more filters to limit the items returned in the response.</p>
-        /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify
-        /// clusters by their cluster identifier (ID).</p>
-        /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual
-        /// private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
-        /// <p>Use the <code>states</code> filter to return only clusters that match the specified
-        /// state.</p>
+        /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+        /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
+        /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
         pub fn filters(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.filters(k, v);
+            self.inner = self.inner.filters(k.into(), v);
             self
         }
         /// <p>One or more filters to limit the items returned in the response.</p>
-        /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify
-        /// clusters by their cluster identifier (ID).</p>
-        /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual
-        /// private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
-        /// <p>Use the <code>states</code> filter to return only clusters that match the specified
-        /// state.</p>
+        /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+        /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
+        /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -1051,26 +999,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-        /// value to get more clusters.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-        /// value to get more clusters.</p>
+        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of clusters to return in the response. When there are more clusters
-        /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of clusters to return in the response. When there are more clusters
-        /// than the number you specify, the response contains a <code>NextToken</code> value.</p>
+        /// <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1078,11 +1022,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `InitializeCluster`.
     ///
-    /// <p>Claims an AWS CloudHSM cluster by submitting the cluster certificate issued by your
-    /// issuing certificate authority (CA) and the CA's root certificate. Before you can claim a
-    /// cluster, you must sign the cluster's certificate signing request (CSR) with your issuing CA.
-    /// To get the cluster's CSR, use <a>DescribeClusters</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Claims an AWS CloudHSM cluster by submitting the cluster certificate issued by your issuing certificate authority (CA) and the CA's root certificate. Before you can claim a cluster, you must sign the cluster's certificate signing request (CSR) with your issuing CA. To get the cluster's CSR, use <code>DescribeClusters</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InitializeCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1127,10 +1068,10 @@ pub mod fluent_builders {
                 crate::input::InitializeClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1138,42 +1079,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use
-        /// <a>DescribeClusters</a>.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
-        /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use
-        /// <a>DescribeClusters</a>.</p>
+        /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_id(input);
             self
         }
-        /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The
-        /// certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
-        pub fn signed_cert(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.signed_cert(inp);
+        /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+        pub fn signed_cert(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.signed_cert(input.into());
             self
         }
-        /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The
-        /// certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+        /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
         pub fn set_signed_cert(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_signed_cert(input);
             self
         }
-        /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed)
-        /// the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the
-        /// root certificate. The certificate must be in PEM format and can contain a
-        /// maximum of 5000 characters.</p>
-        pub fn trust_anchor(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_anchor(inp);
+        /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+        pub fn trust_anchor(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_anchor(input.into());
             self
         }
-        /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed)
-        /// the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the
-        /// root certificate. The certificate must be in PEM format and can contain a
-        /// maximum of 5000 characters.</p>
+        /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
         pub fn set_trust_anchor(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_trust_anchor(input);
             self
@@ -1182,12 +1113,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTags`.
     ///
     /// <p>Gets a list of tags for the specified AWS CloudHSM cluster.</p>
-    /// <p>This is a paginated operation, which means that each response might contain only a
-    /// subset of all the tags. When the response contains only a subset of tags, it includes a
-    /// <code>NextToken</code> value. Use this value in a subsequent <code>ListTags</code> request to
-    /// get more tags. When you receive a response with no <code>NextToken</code> (or an empty or null
-    /// value), that means there are no more tags to get.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>This is a paginated operation, which means that each response might contain only a subset of all the tags. When the response contains only a subset of tags, it includes a <code>NextToken</code> value. Use this value in a subsequent <code>ListTags</code> request to get more tags. When you receive a response with no <code>NextToken</code> (or an empty or null value), that means there are no more tags to get.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1232,10 +1159,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1243,38 +1170,38 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the
-        /// cluster ID, use <a>DescribeClusters</a>.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagsPaginator<C, M, R> {
+            crate::paginator::ListTagsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the
-        /// cluster ID, use <a>DescribeClusters</a>.</p>
+        /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-        /// value to get more tags.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this
-        /// value to get more tags.</p>
+        /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of tags to return in the response. When there are more tags than the
-        /// number you specify, the response contains a <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of tags to return in the response. When there are more tags than the
-        /// number you specify, the response contains a <code>NextToken</code> value.</p>
+        /// <p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1283,7 +1210,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyBackupAttributes`.
     ///
     /// <p>Modifies attributes for AWS CloudHSM backup.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyBackupAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1328,10 +1255,10 @@ pub mod fluent_builders {
                 crate::input::ModifyBackupAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1339,24 +1266,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
-        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(inp);
+        /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(input.into());
             self
         }
-        /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+        /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_backup_id(input);
             self
         }
-        /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
-        /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
-        pub fn never_expires(mut self, inp: bool) -> Self {
-            self.inner = self.inner.never_expires(inp);
+        /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+        pub fn never_expires(mut self, input: bool) -> Self {
+            self.inner = self.inner.never_expires(input);
             self
         }
-        /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
-        /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+        /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
         pub fn set_never_expires(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_never_expires(input);
             self
@@ -1365,7 +1290,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ModifyCluster`.
     ///
     /// <p>Modifies AWS CloudHSM cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1410,10 +1335,10 @@ pub mod fluent_builders {
                 crate::input::ModifyClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1422,8 +1347,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A policy that defines how the service retains backups.</p>
-        pub fn backup_retention_policy(mut self, inp: crate::model::BackupRetentionPolicy) -> Self {
-            self.inner = self.inner.backup_retention_policy(inp);
+        pub fn backup_retention_policy(
+            mut self,
+            input: crate::model::BackupRetentionPolicy,
+        ) -> Self {
+            self.inner = self.inner.backup_retention_policy(input);
             self
         }
         /// <p>A policy that defines how the service retains backups.</p>
@@ -1434,14 +1362,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_retention_policy(input);
             self
         }
-        /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use
-        /// <a>DescribeClusters</a>.</p>
-        pub fn cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(inp);
+        /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
-        /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use
-        /// <a>DescribeClusters</a>.</p>
+        /// <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_id(input);
             self
@@ -1449,10 +1375,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RestoreBackup`.
     ///
-    /// <p>Restores a specified AWS CloudHSM backup that is in the
-    /// <code>PENDING_DELETION</code> state. For mor information on deleting a backup, see
-    /// <a>DeleteBackup</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For mor information on deleting a backup, see <code>DeleteBackup</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestoreBackup<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1497,10 +1421,10 @@ pub mod fluent_builders {
                 crate::input::RestoreBackupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1508,12 +1432,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
-        pub fn backup_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(inp);
+        /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(input.into());
             self
         }
-        /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>
+        /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_backup_id(input);
             self
@@ -1522,7 +1446,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or overwrites one or more tags for the specified AWS CloudHSM cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1567,10 +1491,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1578,14 +1502,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster
-        /// ID, use <a>DescribeClusters</a>.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster
-        /// ID, use <a>DescribeClusters</a>.</p>
+        /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
@@ -1595,8 +1517,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
         ///
         /// <p>A list of one or more tags.</p>
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tag_list(inp);
+        pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tag_list(input);
             self
         }
         /// <p>A list of one or more tags.</p>
@@ -1611,7 +1533,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tag or tags from the specified AWS CloudHSM cluster.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1656,10 +1578,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1667,14 +1589,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the
-        /// cluster ID, use <a>DescribeClusters</a>.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(inp);
+        /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the
-        /// cluster ID, use <a>DescribeClusters</a>.</p>
+        /// <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <code>DescribeClusters</code>.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
@@ -1683,14 +1603,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
         ///
-        /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag
-        /// keys, not the tag values.</p>
-        pub fn tag_key_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_key_list(inp);
+        /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>
+        pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_key_list(input.into());
             self
         }
-        /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag
-        /// keys, not the tag values.</p>
+        /// <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>
         pub fn set_tag_key_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1700,6 +1618,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

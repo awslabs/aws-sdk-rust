@@ -64,7 +64,7 @@ pub mod get_clip_input {
 #[doc(hidden)]
 pub type GetClipInputOperationOutputAlias = crate::operation::GetClip;
 #[doc(hidden)]
-pub type GetClipInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetClipInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetClipInput {
     /// Consumes the builder and constructs an Operation<[`GetClip`](crate::operation::GetClip)>
     #[allow(clippy::let_and_return)]
@@ -75,7 +75,7 @@ impl GetClipInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetClip,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -152,7 +152,7 @@ impl GetClipInput {
                     "GetClip",
                     "kinesisvideoarchivedmedia",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -194,31 +194,25 @@ pub mod get_dash_streaming_session_url_input {
     }
     impl Builder {
         /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
-        /// <p>You must specify either the <code>StreamName</code> or the
-        /// <code>StreamARN</code>.</p>
+        /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
         pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(input.into());
             self
         }
         /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
-        /// <p>You must specify either the <code>StreamName</code> or the
-        /// <code>StreamARN</code>.</p>
+        /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH
-        /// manifest URL.</p>
-        /// <p>You must specify either the <code>StreamName</code> or the
-        /// <code>StreamARN</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
+        /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH
-        /// manifest URL.</p>
-        /// <p>You must specify either the <code>StreamName</code> or the
-        /// <code>StreamARN</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
+        /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -226,62 +220,13 @@ pub mod get_dash_streaming_session_url_input {
         /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
         /// <p>Features of the three types of sessions include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>LIVE</code>
-        /// </b>: For sessions of this type, the MPEG-DASH manifest is continually
-        /// updated with the latest fragments as they become available. We recommend that
-        /// the media player retrieve a new manifest on a one-second interval. When this
-        /// type of session is played in a media player, the user interface typically
-        /// displays a "live" notification, with no scrubber control for choosing the
-        /// position in the playback window to display.</p>
-        /// <note>
-        /// <p>In <code>LIVE</code> mode, the newest available fragments are included in
-        /// an MPEG-DASH manifest, even if there is a gap between fragments (that is, if
-        /// a fragment is missing). A gap like this might cause a media player to halt
-        /// or cause a jump in playback. In this mode, fragments are not added to the
-        /// MPEG-DASH manifest if they are older than the newest fragment in the
-        /// playlist. If the missing fragment becomes available after a subsequent
-        /// fragment is added to the manifest, the older fragment is not added, and the
-        /// gap is not filled.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>LIVE_REPLAY</code>
-        /// </b>: For sessions of this type, the MPEG-DASH manifest is updated
-        /// similarly to how it is updated for <code>LIVE</code> mode except that it starts
-        /// by including fragments from a given start time. Instead of fragments being added
-        /// as they are ingested, fragments are added as the duration of the next fragment
-        /// elapses. For example, if the fragments in the session are two seconds long, then
-        /// a new fragment is added to the manifest every two seconds. This mode is useful
-        /// to be able to start playback from when an event is detected and continue live
-        /// streaming media that has not yet been ingested as of the time of the session
-        /// creation. This mode is also useful to stream previously archived media without
-        /// being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>ON_DEMAND</code>
-        /// </b>: For sessions of this type, the MPEG-DASH manifest contains all the
-        /// fragments for the session, up to the number that is specified in
-        /// <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only
-        /// once for each session. When this type of session is played in a media player,
-        /// the user interface typically displays a scrubber control for choosing the
-        /// position in the playback window to display.</p>
-        /// </li>
+        /// <li> <p> <b> <code>LIVE</code> </b>: For sessions of this type, the MPEG-DASH manifest is continually updated with the latest fragments as they become available. We recommend that the media player retrieve a new manifest on a one-second interval. When this type of session is played in a media player, the user interface typically displays a "live" notification, with no scrubber control for choosing the position in the playback window to display.</p> <note>
+        /// <p>In <code>LIVE</code> mode, the newest available fragments are included in an MPEG-DASH manifest, even if there is a gap between fragments (that is, if a fragment is missing). A gap like this might cause a media player to halt or cause a jump in playback. In this mode, fragments are not added to the MPEG-DASH manifest if they are older than the newest fragment in the playlist. If the missing fragment becomes available after a subsequent fragment is added to the manifest, the older fragment is not added, and the gap is not filled.</p>
+        /// </note> </li>
+        /// <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the MPEG-DASH manifest is updated similarly to how it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time. Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the manifest every two seconds. This mode is useful to be able to start playback from when an event is detected and continue live streaming media that has not yet been ingested as of the time of the session creation. This mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode. </p> </li>
+        /// <li> <p> <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest contains all the fragments for the session, up to the number that is specified in <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only once for each session. When this type of session is played in a media player, the user interface typically displays a scrubber control for choosing the position in the playback window to display.</p> </li>
         /// </ul>
-        /// <p>In all playback modes, if <code>FragmentSelectorType</code> is
-        /// <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same
-        /// start timestamp, the fragment that has the larger fragment number (that is, the newer
-        /// fragment) is included in the MPEG-DASH manifest. The other fragments are not included.
-        /// Fragments that have different timestamps but have overlapping durations are still
-        /// included in the MPEG-DASH manifest. This can lead to unexpected behavior in the media
-        /// player.</p>
+        /// <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the newer fragment) is included in the MPEG-DASH manifest. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the MPEG-DASH manifest. This can lead to unexpected behavior in the media player.</p>
         /// <p>The default is <code>LIVE</code>.</p>
         pub fn playback_mode(mut self, input: crate::model::DashPlaybackMode) -> Self {
             self.playback_mode = Some(input);
@@ -290,62 +235,13 @@ pub mod get_dash_streaming_session_url_input {
         /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
         /// <p>Features of the three types of sessions include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>LIVE</code>
-        /// </b>: For sessions of this type, the MPEG-DASH manifest is continually
-        /// updated with the latest fragments as they become available. We recommend that
-        /// the media player retrieve a new manifest on a one-second interval. When this
-        /// type of session is played in a media player, the user interface typically
-        /// displays a "live" notification, with no scrubber control for choosing the
-        /// position in the playback window to display.</p>
-        /// <note>
-        /// <p>In <code>LIVE</code> mode, the newest available fragments are included in
-        /// an MPEG-DASH manifest, even if there is a gap between fragments (that is, if
-        /// a fragment is missing). A gap like this might cause a media player to halt
-        /// or cause a jump in playback. In this mode, fragments are not added to the
-        /// MPEG-DASH manifest if they are older than the newest fragment in the
-        /// playlist. If the missing fragment becomes available after a subsequent
-        /// fragment is added to the manifest, the older fragment is not added, and the
-        /// gap is not filled.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>LIVE_REPLAY</code>
-        /// </b>: For sessions of this type, the MPEG-DASH manifest is updated
-        /// similarly to how it is updated for <code>LIVE</code> mode except that it starts
-        /// by including fragments from a given start time. Instead of fragments being added
-        /// as they are ingested, fragments are added as the duration of the next fragment
-        /// elapses. For example, if the fragments in the session are two seconds long, then
-        /// a new fragment is added to the manifest every two seconds. This mode is useful
-        /// to be able to start playback from when an event is detected and continue live
-        /// streaming media that has not yet been ingested as of the time of the session
-        /// creation. This mode is also useful to stream previously archived media without
-        /// being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>ON_DEMAND</code>
-        /// </b>: For sessions of this type, the MPEG-DASH manifest contains all the
-        /// fragments for the session, up to the number that is specified in
-        /// <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only
-        /// once for each session. When this type of session is played in a media player,
-        /// the user interface typically displays a scrubber control for choosing the
-        /// position in the playback window to display.</p>
-        /// </li>
+        /// <li> <p> <b> <code>LIVE</code> </b>: For sessions of this type, the MPEG-DASH manifest is continually updated with the latest fragments as they become available. We recommend that the media player retrieve a new manifest on a one-second interval. When this type of session is played in a media player, the user interface typically displays a "live" notification, with no scrubber control for choosing the position in the playback window to display.</p> <note>
+        /// <p>In <code>LIVE</code> mode, the newest available fragments are included in an MPEG-DASH manifest, even if there is a gap between fragments (that is, if a fragment is missing). A gap like this might cause a media player to halt or cause a jump in playback. In this mode, fragments are not added to the MPEG-DASH manifest if they are older than the newest fragment in the playlist. If the missing fragment becomes available after a subsequent fragment is added to the manifest, the older fragment is not added, and the gap is not filled.</p>
+        /// </note> </li>
+        /// <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the MPEG-DASH manifest is updated similarly to how it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time. Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the manifest every two seconds. This mode is useful to be able to start playback from when an event is detected and continue live streaming media that has not yet been ingested as of the time of the session creation. This mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode. </p> </li>
+        /// <li> <p> <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest contains all the fragments for the session, up to the number that is specified in <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only once for each session. When this type of session is played in a media player, the user interface typically displays a scrubber control for choosing the position in the playback window to display.</p> </li>
         /// </ul>
-        /// <p>In all playback modes, if <code>FragmentSelectorType</code> is
-        /// <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same
-        /// start timestamp, the fragment that has the larger fragment number (that is, the newer
-        /// fragment) is included in the MPEG-DASH manifest. The other fragments are not included.
-        /// Fragments that have different timestamps but have overlapping durations are still
-        /// included in the MPEG-DASH manifest. This can lead to unexpected behavior in the media
-        /// player.</p>
+        /// <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the newer fragment) is included in the MPEG-DASH manifest. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the MPEG-DASH manifest. This can lead to unexpected behavior in the media player.</p>
         /// <p>The default is <code>LIVE</code>.</p>
         pub fn set_playback_mode(
             mut self,
@@ -354,20 +250,8 @@ pub mod get_dash_streaming_session_url_input {
             self.playback_mode = input;
             self
         }
-        /// <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file
-        /// can be derived using attributes in the manifest itself. However, typically, MPEG-DASH
-        /// compatible media players do not properly handle gaps in the media timeline. Kinesis
-        /// Video Streams adjusts the media timeline in the manifest file to enable playback of
-        /// media with discontinuities. Therefore, the wall-clock time derived from the manifest
-        /// file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>, the
-        /// accurate fragment timestamp is added to each S element in the manifest file with the
-        /// attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this
-        /// custom attribute.</p>
-        /// <p>The default value is <code>NEVER</code>. When <a>DASHFragmentSelector</a>
-        /// is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps.
-        /// Similarly, when <a>DASHFragmentSelector</a> is
-        /// <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start
-        /// timestamps. </p>
+        /// <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file can be derived using attributes in the manifest itself. However, typically, MPEG-DASH compatible media players do not properly handle gaps in the media timeline. Kinesis Video Streams adjusts the media timeline in the manifest file to enable playback of media with discontinuities. Therefore, the wall-clock time derived from the manifest file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>, the accurate fragment timestamp is added to each S element in the manifest file with the attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this custom attribute.</p>
+        /// <p>The default value is <code>NEVER</code>. When <code>DASHFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>DASHFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p>
         pub fn display_fragment_timestamp(
             mut self,
             input: crate::model::DashDisplayFragmentTimestamp,
@@ -375,20 +259,8 @@ pub mod get_dash_streaming_session_url_input {
             self.display_fragment_timestamp = Some(input);
             self
         }
-        /// <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file
-        /// can be derived using attributes in the manifest itself. However, typically, MPEG-DASH
-        /// compatible media players do not properly handle gaps in the media timeline. Kinesis
-        /// Video Streams adjusts the media timeline in the manifest file to enable playback of
-        /// media with discontinuities. Therefore, the wall-clock time derived from the manifest
-        /// file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>, the
-        /// accurate fragment timestamp is added to each S element in the manifest file with the
-        /// attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this
-        /// custom attribute.</p>
-        /// <p>The default value is <code>NEVER</code>. When <a>DASHFragmentSelector</a>
-        /// is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps.
-        /// Similarly, when <a>DASHFragmentSelector</a> is
-        /// <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start
-        /// timestamps. </p>
+        /// <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file can be derived using attributes in the manifest itself. However, typically, MPEG-DASH compatible media players do not properly handle gaps in the media timeline. Kinesis Video Streams adjusts the media timeline in the manifest file to enable playback of media with discontinuities. Therefore, the wall-clock time derived from the manifest file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>, the accurate fragment timestamp is added to each S element in the manifest file with the attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this custom attribute.</p>
+        /// <p>The default value is <code>NEVER</code>. When <code>DASHFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>DASHFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p>
         pub fn set_display_fragment_timestamp(
             mut self,
             input: std::option::Option<crate::model::DashDisplayFragmentTimestamp>,
@@ -396,13 +268,7 @@ pub mod get_dash_streaming_session_url_input {
             self.display_fragment_timestamp = input;
             self
         }
-        /// <p>Fragments are identified in the manifest file based on their sequence number in the
-        /// session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video
-        /// Streams fragment number is added to each S element in the manifest file with the
-        /// attribute name “kvs:fn”. These fragment numbers can be used for logging or for use with
-        /// other APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A
-        /// custom MPEG-DASH media player is necessary to leverage these this custom
-        /// attribute.</p>
+        /// <p>Fragments are identified in the manifest file based on their sequence number in the session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video Streams fragment number is added to each S element in the manifest file with the attribute name “kvs:fn”. These fragment numbers can be used for logging or for use with other APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A custom MPEG-DASH media player is necessary to leverage these this custom attribute.</p>
         /// <p>The default value is <code>NEVER</code>.</p>
         pub fn display_fragment_number(
             mut self,
@@ -411,13 +277,7 @@ pub mod get_dash_streaming_session_url_input {
             self.display_fragment_number = Some(input);
             self
         }
-        /// <p>Fragments are identified in the manifest file based on their sequence number in the
-        /// session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video
-        /// Streams fragment number is added to each S element in the manifest file with the
-        /// attribute name “kvs:fn”. These fragment numbers can be used for logging or for use with
-        /// other APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A
-        /// custom MPEG-DASH media player is necessary to leverage these this custom
-        /// attribute.</p>
+        /// <p>Fragments are identified in the manifest file based on their sequence number in the session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video Streams fragment number is added to each S element in the manifest file with the attribute name “kvs:fn”. These fragment numbers can be used for logging or for use with other APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A custom MPEG-DASH media player is necessary to leverage these this custom attribute.</p>
         /// <p>The default value is <code>NEVER</code>.</p>
         pub fn set_display_fragment_number(
             mut self,
@@ -427,25 +287,13 @@ pub mod get_dash_streaming_session_url_input {
             self
         }
         /// <p>The time range of the requested fragment and the source of the timestamps.</p>
-        /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-        /// <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code>
-        /// <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
-        /// <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code>
-        /// should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-        /// <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and
-        /// <code>TimestampRange</code> must be set.</p>
+        /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
         pub fn dash_fragment_selector(mut self, input: crate::model::DashFragmentSelector) -> Self {
             self.dash_fragment_selector = Some(input);
             self
         }
         /// <p>The time range of the requested fragment and the source of the timestamps.</p>
-        /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-        /// <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code>
-        /// <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
-        /// <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code>
-        /// should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-        /// <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and
-        /// <code>TimestampRange</code> must be set.</p>
+        /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
         pub fn set_dash_fragment_selector(
             mut self,
             input: std::option::Option<crate::model::DashFragmentSelector>,
@@ -453,60 +301,34 @@ pub mod get_dash_streaming_session_url_input {
             self.dash_fragment_selector = input;
             self
         }
-        /// <p>The time in seconds until the requested session expires. This value can be between 300
-        /// (5 minutes) and 43200 (12 hours).</p>
-        /// <p>When a session expires, no new calls to <code>GetDashManifest</code>,
-        /// <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for
-        /// that session.</p>
+        /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
+        /// <p>When a session expires, no new calls to <code>GetDashManifest</code>, <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for that session.</p>
         /// <p>The default is 300 (5 minutes).</p>
         pub fn expires(mut self, input: i32) -> Self {
             self.expires = Some(input);
             self
         }
-        /// <p>The time in seconds until the requested session expires. This value can be between 300
-        /// (5 minutes) and 43200 (12 hours).</p>
-        /// <p>When a session expires, no new calls to <code>GetDashManifest</code>,
-        /// <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for
-        /// that session.</p>
+        /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
+        /// <p>When a session expires, no new calls to <code>GetDashManifest</code>, <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for that session.</p>
         /// <p>The default is 300 (5 minutes).</p>
         pub fn set_expires(mut self, input: std::option::Option<i32>) -> Self {
             self.expires = input;
             self
         }
         /// <p>The maximum number of fragments that are returned in the MPEG-DASH manifest.</p>
-        /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are
-        /// returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>,
-        /// the oldest fragments are returned, up to this maximum number.</p>
-        /// <p>When there are a higher number of fragments available in a live MPEG-DASH manifest,
-        /// video players often buffer content before starting playback. Increasing the buffer size
-        /// increases the playback latency, but it decreases the likelihood that rebuffering will
-        /// occur during playback. We recommend that a live MPEG-DASH manifest have a minimum of 3
-        /// fragments and a maximum of 10 fragments.</p>
-        /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or
-        /// <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is
-        /// <code>ON_DEMAND</code>. </p>
-        /// <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on
-        /// streams with 1-second fragments, and more than 2 1/2 hours of video on streams with
-        /// 10-second fragments.</p>
+        /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p>
+        /// <p>When there are a higher number of fragments available in a live MPEG-DASH manifest, video players often buffer content before starting playback. Increasing the buffer size increases the playback latency, but it decreases the likelihood that rebuffering will occur during playback. We recommend that a live MPEG-DASH manifest have a minimum of 3 fragments and a maximum of 10 fragments.</p>
+        /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p>
+        /// <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.</p>
         pub fn max_manifest_fragment_results(mut self, input: i64) -> Self {
             self.max_manifest_fragment_results = Some(input);
             self
         }
         /// <p>The maximum number of fragments that are returned in the MPEG-DASH manifest.</p>
-        /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are
-        /// returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>,
-        /// the oldest fragments are returned, up to this maximum number.</p>
-        /// <p>When there are a higher number of fragments available in a live MPEG-DASH manifest,
-        /// video players often buffer content before starting playback. Increasing the buffer size
-        /// increases the playback latency, but it decreases the likelihood that rebuffering will
-        /// occur during playback. We recommend that a live MPEG-DASH manifest have a minimum of 3
-        /// fragments and a maximum of 10 fragments.</p>
-        /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or
-        /// <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is
-        /// <code>ON_DEMAND</code>. </p>
-        /// <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on
-        /// streams with 1-second fragments, and more than 2 1/2 hours of video on streams with
-        /// 10-second fragments.</p>
+        /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p>
+        /// <p>When there are a higher number of fragments available in a live MPEG-DASH manifest, video players often buffer content before starting playback. Increasing the buffer size increases the playback latency, but it decreases the likelihood that rebuffering will occur during playback. We recommend that a live MPEG-DASH manifest have a minimum of 3 fragments and a maximum of 10 fragments.</p>
+        /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p>
+        /// <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.</p>
         pub fn set_max_manifest_fragment_results(
             mut self,
             input: std::option::Option<i64>,
@@ -538,7 +360,7 @@ pub mod get_dash_streaming_session_url_input {
 pub type GetDashStreamingSessionUrlInputOperationOutputAlias =
     crate::operation::GetDASHStreamingSessionURL;
 #[doc(hidden)]
-pub type GetDashStreamingSessionUrlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetDashStreamingSessionUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetDashStreamingSessionUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetDASHStreamingSessionURL`](crate::operation::GetDASHStreamingSessionURL)>
     #[allow(clippy::let_and_return)]
@@ -549,7 +371,7 @@ impl GetDashStreamingSessionUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetDASHStreamingSessionURL,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -630,7 +452,7 @@ impl GetDashStreamingSessionUrlInput {
             "GetDASHStreamingSessionURL",
             "kinesisvideoarchivedmedia",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -672,31 +494,25 @@ pub mod get_hls_streaming_session_url_input {
     }
     impl Builder {
         /// <p>The name of the stream for which to retrieve the HLS master playlist URL.</p>
-        /// <p>You must specify either the <code>StreamName</code> or the
-        /// <code>StreamARN</code>.</p>
+        /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
         pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_name = Some(input.into());
             self
         }
         /// <p>The name of the stream for which to retrieve the HLS master playlist URL.</p>
-        /// <p>You must specify either the <code>StreamName</code> or the
-        /// <code>StreamARN</code>.</p>
+        /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master
-        /// playlist URL.</p>
-        /// <p>You must specify either the <code>StreamName</code> or the
-        /// <code>StreamARN</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master playlist URL.</p>
+        /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
         pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master
-        /// playlist URL.</p>
-        /// <p>You must specify either the <code>StreamName</code> or the
-        /// <code>StreamARN</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master playlist URL.</p>
+        /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -704,62 +520,13 @@ pub mod get_hls_streaming_session_url_input {
         /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
         /// <p>Features of the three types of sessions include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>LIVE</code>
-        /// </b>: For sessions of this type, the HLS media playlist is continually
-        /// updated with the latest fragments as they become available. We recommend that
-        /// the media player retrieve a new playlist on a one-second interval. When this
-        /// type of session is played in a media player, the user interface typically
-        /// displays a "live" notification, with no scrubber control for choosing the
-        /// position in the playback window to display.</p>
-        /// <note>
-        /// <p>In <code>LIVE</code> mode, the newest available fragments are included in
-        /// an HLS media playlist, even if there is a gap between fragments (that is, if
-        /// a fragment is missing). A gap like this might cause a media player to halt
-        /// or cause a jump in playback. In this mode, fragments are not added to the
-        /// HLS media playlist if they are older than the newest fragment in the
-        /// playlist. If the missing fragment becomes available after a subsequent
-        /// fragment is added to the playlist, the older fragment is not added, and the
-        /// gap is not filled.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>LIVE_REPLAY</code>
-        /// </b>: For sessions of this type, the HLS media playlist is updated
-        /// similarly to how it is updated for <code>LIVE</code> mode except that it starts
-        /// by including fragments from a given start time. Instead of fragments being added
-        /// as they are ingested, fragments are added as the duration of the next fragment
-        /// elapses. For example, if the fragments in the session are two seconds long, then
-        /// a new fragment is added to the media playlist every two seconds. This mode is
-        /// useful to be able to start playback from when an event is detected and continue
-        /// live streaming media that has not yet been ingested as of the time of the
-        /// session creation. This mode is also useful to stream previously archived media
-        /// without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code>
-        /// mode. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>ON_DEMAND</code>
-        /// </b>: For sessions of this type, the HLS media playlist contains all the
-        /// fragments for the session, up to the number that is specified in
-        /// <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved
-        /// only once for each session. When this type of session is played in a media
-        /// player, the user interface typically displays a scrubber control for choosing
-        /// the position in the playback window to display.</p>
-        /// </li>
+        /// <li> <p> <b> <code>LIVE</code> </b>: For sessions of this type, the HLS media playlist is continually updated with the latest fragments as they become available. We recommend that the media player retrieve a new playlist on a one-second interval. When this type of session is played in a media player, the user interface typically displays a "live" notification, with no scrubber control for choosing the position in the playback window to display.</p> <note>
+        /// <p>In <code>LIVE</code> mode, the newest available fragments are included in an HLS media playlist, even if there is a gap between fragments (that is, if a fragment is missing). A gap like this might cause a media player to halt or cause a jump in playback. In this mode, fragments are not added to the HLS media playlist if they are older than the newest fragment in the playlist. If the missing fragment becomes available after a subsequent fragment is added to the playlist, the older fragment is not added, and the gap is not filled.</p>
+        /// </note> </li>
+        /// <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist is updated similarly to how it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time. Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the media playlist every two seconds. This mode is useful to be able to start playback from when an event is detected and continue live streaming media that has not yet been ingested as of the time of the session creation. This mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode. </p> </li>
+        /// <li> <p> <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist contains all the fragments for the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved only once for each session. When this type of session is played in a media player, the user interface typically displays a scrubber control for choosing the position in the playback window to display.</p> </li>
         /// </ul>
-        /// <p>In all playback modes, if <code>FragmentSelectorType</code> is
-        /// <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same
-        /// start timestamp, the fragment that has the largest fragment number (that is, the newest
-        /// fragment) is included in the HLS media playlist. The other fragments are not included.
-        /// Fragments that have different timestamps but have overlapping durations are still
-        /// included in the HLS media playlist. This can lead to unexpected behavior in the media
-        /// player.</p>
+        /// <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the largest fragment number (that is, the newest fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead to unexpected behavior in the media player.</p>
         /// <p>The default is <code>LIVE</code>.</p>
         pub fn playback_mode(mut self, input: crate::model::HlsPlaybackMode) -> Self {
             self.playback_mode = Some(input);
@@ -768,62 +535,13 @@ pub mod get_hls_streaming_session_url_input {
         /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
         /// <p>Features of the three types of sessions include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>LIVE</code>
-        /// </b>: For sessions of this type, the HLS media playlist is continually
-        /// updated with the latest fragments as they become available. We recommend that
-        /// the media player retrieve a new playlist on a one-second interval. When this
-        /// type of session is played in a media player, the user interface typically
-        /// displays a "live" notification, with no scrubber control for choosing the
-        /// position in the playback window to display.</p>
-        /// <note>
-        /// <p>In <code>LIVE</code> mode, the newest available fragments are included in
-        /// an HLS media playlist, even if there is a gap between fragments (that is, if
-        /// a fragment is missing). A gap like this might cause a media player to halt
-        /// or cause a jump in playback. In this mode, fragments are not added to the
-        /// HLS media playlist if they are older than the newest fragment in the
-        /// playlist. If the missing fragment becomes available after a subsequent
-        /// fragment is added to the playlist, the older fragment is not added, and the
-        /// gap is not filled.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>LIVE_REPLAY</code>
-        /// </b>: For sessions of this type, the HLS media playlist is updated
-        /// similarly to how it is updated for <code>LIVE</code> mode except that it starts
-        /// by including fragments from a given start time. Instead of fragments being added
-        /// as they are ingested, fragments are added as the duration of the next fragment
-        /// elapses. For example, if the fragments in the session are two seconds long, then
-        /// a new fragment is added to the media playlist every two seconds. This mode is
-        /// useful to be able to start playback from when an event is detected and continue
-        /// live streaming media that has not yet been ingested as of the time of the
-        /// session creation. This mode is also useful to stream previously archived media
-        /// without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code>
-        /// mode. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>ON_DEMAND</code>
-        /// </b>: For sessions of this type, the HLS media playlist contains all the
-        /// fragments for the session, up to the number that is specified in
-        /// <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved
-        /// only once for each session. When this type of session is played in a media
-        /// player, the user interface typically displays a scrubber control for choosing
-        /// the position in the playback window to display.</p>
-        /// </li>
+        /// <li> <p> <b> <code>LIVE</code> </b>: For sessions of this type, the HLS media playlist is continually updated with the latest fragments as they become available. We recommend that the media player retrieve a new playlist on a one-second interval. When this type of session is played in a media player, the user interface typically displays a "live" notification, with no scrubber control for choosing the position in the playback window to display.</p> <note>
+        /// <p>In <code>LIVE</code> mode, the newest available fragments are included in an HLS media playlist, even if there is a gap between fragments (that is, if a fragment is missing). A gap like this might cause a media player to halt or cause a jump in playback. In this mode, fragments are not added to the HLS media playlist if they are older than the newest fragment in the playlist. If the missing fragment becomes available after a subsequent fragment is added to the playlist, the older fragment is not added, and the gap is not filled.</p>
+        /// </note> </li>
+        /// <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist is updated similarly to how it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time. Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the media playlist every two seconds. This mode is useful to be able to start playback from when an event is detected and continue live streaming media that has not yet been ingested as of the time of the session creation. This mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode. </p> </li>
+        /// <li> <p> <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist contains all the fragments for the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved only once for each session. When this type of session is played in a media player, the user interface typically displays a scrubber control for choosing the position in the playback window to display.</p> </li>
         /// </ul>
-        /// <p>In all playback modes, if <code>FragmentSelectorType</code> is
-        /// <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same
-        /// start timestamp, the fragment that has the largest fragment number (that is, the newest
-        /// fragment) is included in the HLS media playlist. The other fragments are not included.
-        /// Fragments that have different timestamps but have overlapping durations are still
-        /// included in the HLS media playlist. This can lead to unexpected behavior in the media
-        /// player.</p>
+        /// <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the largest fragment number (that is, the newest fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead to unexpected behavior in the media player.</p>
         /// <p>The default is <code>LIVE</code>.</p>
         pub fn set_playback_mode(
             mut self,
@@ -833,25 +551,13 @@ pub mod get_hls_streaming_session_url_input {
             self
         }
         /// <p>The time range of the requested fragment and the source of the timestamps.</p>
-        /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-        /// <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code>
-        /// <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
-        /// <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code>
-        /// should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-        /// <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and
-        /// <code>TimestampRange</code> must be set.</p>
+        /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
         pub fn hls_fragment_selector(mut self, input: crate::model::HlsFragmentSelector) -> Self {
             self.hls_fragment_selector = Some(input);
             self
         }
         /// <p>The time range of the requested fragment and the source of the timestamps.</p>
-        /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-        /// <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code>
-        /// <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
-        /// <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code>
-        /// should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-        /// <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and
-        /// <code>TimestampRange</code> must be set.</p>
+        /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
         pub fn set_hls_fragment_selector(
             mut self,
             input: std::option::Option<crate::model::HlsFragmentSelector>,
@@ -859,25 +565,13 @@ pub mod get_hls_streaming_session_url_input {
             self.hls_fragment_selector = input;
             self
         }
-        /// <p>Specifies which format should be used for packaging the media. Specifying the
-        /// <code>FRAGMENTED_MP4</code> container format packages the media into MP4 fragments
-        /// (fMP4 or CMAF). This is the recommended packaging because there is minimal packaging
-        /// overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported
-        /// MPEG TS chunks since it was released and is sometimes the only supported packaging on
-        /// older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means
-        /// MPEG TS typically requires 5-25 percent more bandwidth and cost than fMP4.</p>
+        /// <p>Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code> container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging because there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was released and is sometimes the only supported packaging on older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires 5-25 percent more bandwidth and cost than fMP4.</p>
         /// <p>The default is <code>FRAGMENTED_MP4</code>.</p>
         pub fn container_format(mut self, input: crate::model::ContainerFormat) -> Self {
             self.container_format = Some(input);
             self
         }
-        /// <p>Specifies which format should be used for packaging the media. Specifying the
-        /// <code>FRAGMENTED_MP4</code> container format packages the media into MP4 fragments
-        /// (fMP4 or CMAF). This is the recommended packaging because there is minimal packaging
-        /// overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported
-        /// MPEG TS chunks since it was released and is sometimes the only supported packaging on
-        /// older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means
-        /// MPEG TS typically requires 5-25 percent more bandwidth and cost than fMP4.</p>
+        /// <p>Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code> container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging because there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was released and is sometimes the only supported packaging on older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires 5-25 percent more bandwidth and cost than fMP4.</p>
         /// <p>The default is <code>FRAGMENTED_MP4</code>.</p>
         pub fn set_container_format(
             mut self,
@@ -886,86 +580,28 @@ pub mod get_hls_streaming_session_url_input {
             self.container_format = input;
             self
         }
-        /// <p>Specifies when flags marking discontinuities between fragments are added to the media
-        /// playlists.</p>
-        /// <p>Media players typically build a timeline of media content to play, based on the
-        /// timestamps of each fragment. This means that if there is any overlap or gap between
-        /// fragments (as is typical if <a>HLSFragmentSelector</a> is set to
-        /// <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps
-        /// between fragments in some places, and will overwrite frames in other places. Gaps in the
-        /// media player timeline can cause playback to stall and overlaps can cause playback to be
-        /// jittery. When there are discontinuity flags between fragments, the media player is
-        /// expected to reset the timeline, resulting in the next fragment being played immediately
-        /// after the previous fragment. </p>
+        /// <p>Specifies when flags marking discontinuities between fragments are added to the media playlists.</p>
+        /// <p>Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This means that if there is any overlap or gap between fragments (as is typical if <code>HLSFragmentSelector</code> is set to <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps between fragments in some places, and will overwrite frames in other places. Gaps in the media player timeline can cause playback to stall and overlaps can cause playback to be jittery. When there are discontinuity flags between fragments, the media player is expected to reset the timeline, resulting in the next fragment being played immediately after the previous fragment. </p>
         /// <p>The following modes are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in
-        /// the HLS media playlist. It is recommended to use a value of <code>ALWAYS</code>
-        /// if the fragment timestamps are not accurate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
-        /// recommended to use a value of <code>NEVER</code> to ensure the media player
-        /// timeline most accurately maps to the producer timestamps. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
-        /// fragments that have a gap or overlap of more than 50 milliseconds. For most
-        /// playback scenarios, it is recommended to use a value of
-        /// <code>ON_DISCONTINUITY</code> so that the media player timeline is only
-        /// reset when there is a significant issue with the media timeline (e.g. a missing
-        /// fragment).</p>
-        /// </li>
+        /// <li> <p> <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the HLS media playlist. It is recommended to use a value of <code>ALWAYS</code> if the fragment timestamps are not accurate.</p> </li>
+        /// <li> <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended to use a value of <code>NEVER</code> to ensure the media player timeline most accurately maps to the producer timestamps. </p> </li>
+        /// <li> <p> <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between fragments that have a gap or overlap of more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant issue with the media timeline (e.g. a missing fragment).</p> </li>
         /// </ul>
-        /// <p>The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set
-        /// to <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is set to
-        /// <code>PRODUCER_TIMESTAMP</code>.</p>
+        /// <p>The default is <code>ALWAYS</code> when <code>HLSFragmentSelector</code> is set to <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.</p>
         pub fn discontinuity_mode(mut self, input: crate::model::HlsDiscontinuityMode) -> Self {
             self.discontinuity_mode = Some(input);
             self
         }
-        /// <p>Specifies when flags marking discontinuities between fragments are added to the media
-        /// playlists.</p>
-        /// <p>Media players typically build a timeline of media content to play, based on the
-        /// timestamps of each fragment. This means that if there is any overlap or gap between
-        /// fragments (as is typical if <a>HLSFragmentSelector</a> is set to
-        /// <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps
-        /// between fragments in some places, and will overwrite frames in other places. Gaps in the
-        /// media player timeline can cause playback to stall and overlaps can cause playback to be
-        /// jittery. When there are discontinuity flags between fragments, the media player is
-        /// expected to reset the timeline, resulting in the next fragment being played immediately
-        /// after the previous fragment. </p>
+        /// <p>Specifies when flags marking discontinuities between fragments are added to the media playlists.</p>
+        /// <p>Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This means that if there is any overlap or gap between fragments (as is typical if <code>HLSFragmentSelector</code> is set to <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps between fragments in some places, and will overwrite frames in other places. Gaps in the media player timeline can cause playback to stall and overlaps can cause playback to be jittery. When there are discontinuity flags between fragments, the media player is expected to reset the timeline, resulting in the next fragment being played immediately after the previous fragment. </p>
         /// <p>The following modes are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in
-        /// the HLS media playlist. It is recommended to use a value of <code>ALWAYS</code>
-        /// if the fragment timestamps are not accurate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
-        /// recommended to use a value of <code>NEVER</code> to ensure the media player
-        /// timeline most accurately maps to the producer timestamps. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
-        /// fragments that have a gap or overlap of more than 50 milliseconds. For most
-        /// playback scenarios, it is recommended to use a value of
-        /// <code>ON_DISCONTINUITY</code> so that the media player timeline is only
-        /// reset when there is a significant issue with the media timeline (e.g. a missing
-        /// fragment).</p>
-        /// </li>
+        /// <li> <p> <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the HLS media playlist. It is recommended to use a value of <code>ALWAYS</code> if the fragment timestamps are not accurate.</p> </li>
+        /// <li> <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended to use a value of <code>NEVER</code> to ensure the media player timeline most accurately maps to the producer timestamps. </p> </li>
+        /// <li> <p> <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between fragments that have a gap or overlap of more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant issue with the media timeline (e.g. a missing fragment).</p> </li>
         /// </ul>
-        /// <p>The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set
-        /// to <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is set to
-        /// <code>PRODUCER_TIMESTAMP</code>.</p>
+        /// <p>The default is <code>ALWAYS</code> when <code>HLSFragmentSelector</code> is set to <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.</p>
         pub fn set_discontinuity_mode(
             mut self,
             input: std::option::Option<crate::model::HlsDiscontinuityMode>,
@@ -973,18 +609,8 @@ pub mod get_hls_streaming_session_url_input {
             self.discontinuity_mode = input;
             self
         }
-        /// <p>Specifies when the fragment start timestamps should be included in the HLS media
-        /// playlist. Typically, media players report the playhead position as a time relative to
-        /// the start of the first fragment in the playback session. However, when the start
-        /// timestamps are included in the HLS media playlist, some media players might report the
-        /// current playhead as an absolute time based on the fragment timestamps. This can be
-        /// useful for creating a playback experience that shows viewers the wall-clock time of the
-        /// media.</p>
-        /// <p>The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is
-        /// <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps.
-        /// Similarly, when <a>HLSFragmentSelector</a> is
-        /// <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
-        /// </p>
+        /// <p>Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically, media players report the playhead position as a time relative to the start of the first fragment in the playback session. However, when the start timestamps are included in the HLS media playlist, some media players might report the current playhead as an absolute time based on the fragment timestamps. This can be useful for creating a playback experience that shows viewers the wall-clock time of the media.</p>
+        /// <p>The default is <code>NEVER</code>. When <code>HLSFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>HLSFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p>
         pub fn display_fragment_timestamp(
             mut self,
             input: crate::model::HlsDisplayFragmentTimestamp,
@@ -992,18 +618,8 @@ pub mod get_hls_streaming_session_url_input {
             self.display_fragment_timestamp = Some(input);
             self
         }
-        /// <p>Specifies when the fragment start timestamps should be included in the HLS media
-        /// playlist. Typically, media players report the playhead position as a time relative to
-        /// the start of the first fragment in the playback session. However, when the start
-        /// timestamps are included in the HLS media playlist, some media players might report the
-        /// current playhead as an absolute time based on the fragment timestamps. This can be
-        /// useful for creating a playback experience that shows viewers the wall-clock time of the
-        /// media.</p>
-        /// <p>The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is
-        /// <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps.
-        /// Similarly, when <a>HLSFragmentSelector</a> is
-        /// <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
-        /// </p>
+        /// <p>Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically, media players report the playhead position as a time relative to the start of the first fragment in the playback session. However, when the start timestamps are included in the HLS media playlist, some media players might report the current playhead as an absolute time based on the fragment timestamps. This can be useful for creating a playback experience that shows viewers the wall-clock time of the media.</p>
+        /// <p>The default is <code>NEVER</code>. When <code>HLSFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>HLSFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p>
         pub fn set_display_fragment_timestamp(
             mut self,
             input: std::option::Option<crate::model::HlsDisplayFragmentTimestamp>,
@@ -1011,62 +627,34 @@ pub mod get_hls_streaming_session_url_input {
             self.display_fragment_timestamp = input;
             self
         }
-        /// <p>The time in seconds until the requested session expires. This value can be between 300
-        /// (5 minutes) and 43200 (12 hours).</p>
-        /// <p>When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>,
-        /// <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>,
-        /// <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for that
-        /// session.</p>
+        /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
+        /// <p>When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>, <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for that session.</p>
         /// <p>The default is 300 (5 minutes).</p>
         pub fn expires(mut self, input: i32) -> Self {
             self.expires = Some(input);
             self
         }
-        /// <p>The time in seconds until the requested session expires. This value can be between 300
-        /// (5 minutes) and 43200 (12 hours).</p>
-        /// <p>When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>,
-        /// <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>,
-        /// <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for that
-        /// session.</p>
+        /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
+        /// <p>When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>, <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for that session.</p>
         /// <p>The default is 300 (5 minutes).</p>
         pub fn set_expires(mut self, input: std::option::Option<i32>) -> Self {
             self.expires = input;
             self
         }
         /// <p>The maximum number of fragments that are returned in the HLS media playlists.</p>
-        /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are
-        /// returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>,
-        /// the oldest fragments are returned, up to this maximum number.</p>
-        /// <p>When there are a higher number of fragments available in a live HLS media playlist,
-        /// video players often buffer content before starting playback. Increasing the buffer size
-        /// increases the playback latency, but it decreases the likelihood that rebuffering will
-        /// occur during playback. We recommend that a live HLS media playlist have a minimum of 3
-        /// fragments and a maximum of 10 fragments.</p>
-        /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or
-        /// <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is
-        /// <code>ON_DEMAND</code>. </p>
-        /// <p>The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on
-        /// streams with 1-second fragments, and more than 13 hours of video on streams with
-        /// 10-second fragments.</p>
+        /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p>
+        /// <p>When there are a higher number of fragments available in a live HLS media playlist, video players often buffer content before starting playback. Increasing the buffer size increases the playback latency, but it decreases the likelihood that rebuffering will occur during playback. We recommend that a live HLS media playlist have a minimum of 3 fragments and a maximum of 10 fragments.</p>
+        /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p>
+        /// <p>The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on streams with 1-second fragments, and more than 13 hours of video on streams with 10-second fragments.</p>
         pub fn max_media_playlist_fragment_results(mut self, input: i64) -> Self {
             self.max_media_playlist_fragment_results = Some(input);
             self
         }
         /// <p>The maximum number of fragments that are returned in the HLS media playlists.</p>
-        /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are
-        /// returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>,
-        /// the oldest fragments are returned, up to this maximum number.</p>
-        /// <p>When there are a higher number of fragments available in a live HLS media playlist,
-        /// video players often buffer content before starting playback. Increasing the buffer size
-        /// increases the playback latency, but it decreases the likelihood that rebuffering will
-        /// occur during playback. We recommend that a live HLS media playlist have a minimum of 3
-        /// fragments and a maximum of 10 fragments.</p>
-        /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or
-        /// <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is
-        /// <code>ON_DEMAND</code>. </p>
-        /// <p>The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on
-        /// streams with 1-second fragments, and more than 13 hours of video on streams with
-        /// 10-second fragments.</p>
+        /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p>
+        /// <p>When there are a higher number of fragments available in a live HLS media playlist, video players often buffer content before starting playback. Increasing the buffer size increases the playback latency, but it decreases the likelihood that rebuffering will occur during playback. We recommend that a live HLS media playlist have a minimum of 3 fragments and a maximum of 10 fragments.</p>
+        /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p>
+        /// <p>The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on streams with 1-second fragments, and more than 13 hours of video on streams with 10-second fragments.</p>
         pub fn set_max_media_playlist_fragment_results(
             mut self,
             input: std::option::Option<i64>,
@@ -1099,7 +687,7 @@ pub mod get_hls_streaming_session_url_input {
 pub type GetHlsStreamingSessionUrlInputOperationOutputAlias =
     crate::operation::GetHLSStreamingSessionURL;
 #[doc(hidden)]
-pub type GetHlsStreamingSessionUrlInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetHlsStreamingSessionUrlInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetHlsStreamingSessionUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetHLSStreamingSessionURL`](crate::operation::GetHLSStreamingSessionURL)>
     #[allow(clippy::let_and_return)]
@@ -1110,7 +698,7 @@ impl GetHlsStreamingSessionUrlInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetHLSStreamingSessionURL,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1191,7 +779,7 @@ impl GetHlsStreamingSessionUrlInput {
             "GetHLSStreamingSessionURL",
             "kinesisvideoarchivedmedia",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1249,16 +837,14 @@ pub mod get_media_for_fragment_list_input {
         ///
         /// To override the contents of this collection use [`set_fragments`](Self::set_fragments).
         ///
-        /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these
-        /// values with <a>ListFragments</a>.</p>
+        /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
         pub fn fragments(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fragments.unwrap_or_default();
             v.push(input.into());
             self.fragments = Some(v);
             self
         }
-        /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these
-        /// values with <a>ListFragments</a>.</p>
+        /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
         pub fn set_fragments(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1285,7 +871,7 @@ pub mod get_media_for_fragment_list_input {
 pub type GetMediaForFragmentListInputOperationOutputAlias =
     crate::operation::GetMediaForFragmentList;
 #[doc(hidden)]
-pub type GetMediaForFragmentListInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetMediaForFragmentListInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetMediaForFragmentListInput {
     /// Consumes the builder and constructs an Operation<[`GetMediaForFragmentList`](crate::operation::GetMediaForFragmentList)>
     #[allow(clippy::let_and_return)]
@@ -1296,7 +882,7 @@ impl GetMediaForFragmentListInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetMediaForFragmentList,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1378,7 +964,7 @@ impl GetMediaForFragmentListInput {
             "GetMediaForFragmentList",
             "kinesisvideoarchivedmedia",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1434,40 +1020,32 @@ pub mod list_fragments_input {
             self.stream_arn = input;
             self
         }
-        /// <p>The total number of fragments to return. If the total number of fragments available is
-        /// more than the value specified in <code>max-results</code>, then a <a>ListFragmentsOutput$NextToken</a> is provided in the output that you can use
-        /// to resume pagination.</p>
+        /// <p>The total number of fragments to return. If the total number of fragments available is more than the value specified in <code>max-results</code>, then a <code>ListFragmentsOutput$NextToken</code> is provided in the output that you can use to resume pagination.</p>
         pub fn max_results(mut self, input: i64) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of fragments to return. If the total number of fragments available is
-        /// more than the value specified in <code>max-results</code>, then a <a>ListFragmentsOutput$NextToken</a> is provided in the output that you can use
-        /// to resume pagination.</p>
+        /// <p>The total number of fragments to return. If the total number of fragments available is more than the value specified in <code>max-results</code>, then a <code>ListFragmentsOutput$NextToken</code> is provided in the output that you can use to resume pagination.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i64>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>A token to specify where to start paginating. This is the <a>ListFragmentsOutput$NextToken</a> from a previously truncated
-        /// response.</p>
+        /// <p>A token to specify where to start paginating. This is the <code>ListFragmentsOutput$NextToken</code> from a previously truncated response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to specify where to start paginating. This is the <a>ListFragmentsOutput$NextToken</a> from a previously truncated
-        /// response.</p>
+        /// <p>A token to specify where to start paginating. This is the <code>ListFragmentsOutput$NextToken</code> from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Describes the timestamp range and timestamp origin for the range of fragments to
-        /// return.</p>
+        /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
         pub fn fragment_selector(mut self, input: crate::model::FragmentSelector) -> Self {
             self.fragment_selector = Some(input);
             self
         }
-        /// <p>Describes the timestamp range and timestamp origin for the range of fragments to
-        /// return.</p>
+        /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
         pub fn set_fragment_selector(
             mut self,
             input: std::option::Option<crate::model::FragmentSelector>,
@@ -1495,7 +1073,7 @@ pub mod list_fragments_input {
 #[doc(hidden)]
 pub type ListFragmentsInputOperationOutputAlias = crate::operation::ListFragments;
 #[doc(hidden)]
-pub type ListFragmentsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFragmentsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFragmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListFragments`](crate::operation::ListFragments)>
     #[allow(clippy::let_and_return)]
@@ -1506,7 +1084,7 @@ impl ListFragmentsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFragments,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1585,7 +1163,7 @@ impl ListFragmentsInput {
             "ListFragments",
             "kinesisvideoarchivedmedia",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1616,15 +1194,11 @@ pub struct ListFragmentsInput {
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamName</code> parameter.</p>
     pub stream_arn: std::option::Option<std::string::String>,
-    /// <p>The total number of fragments to return. If the total number of fragments available is
-    /// more than the value specified in <code>max-results</code>, then a <a>ListFragmentsOutput$NextToken</a> is provided in the output that you can use
-    /// to resume pagination.</p>
+    /// <p>The total number of fragments to return. If the total number of fragments available is more than the value specified in <code>max-results</code>, then a <code>ListFragmentsOutput$NextToken</code> is provided in the output that you can use to resume pagination.</p>
     pub max_results: std::option::Option<i64>,
-    /// <p>A token to specify where to start paginating. This is the <a>ListFragmentsOutput$NextToken</a> from a previously truncated
-    /// response.</p>
+    /// <p>A token to specify where to start paginating. This is the <code>ListFragmentsOutput$NextToken</code> from a previously truncated response.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to
-    /// return.</p>
+    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
     pub fragment_selector: std::option::Option<crate::model::FragmentSelector>,
 }
 impl ListFragmentsInput {
@@ -1636,19 +1210,15 @@ impl ListFragmentsInput {
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
-    /// <p>The total number of fragments to return. If the total number of fragments available is
-    /// more than the value specified in <code>max-results</code>, then a <a>ListFragmentsOutput$NextToken</a> is provided in the output that you can use
-    /// to resume pagination.</p>
+    /// <p>The total number of fragments to return. If the total number of fragments available is more than the value specified in <code>max-results</code>, then a <code>ListFragmentsOutput$NextToken</code> is provided in the output that you can use to resume pagination.</p>
     pub fn max_results(&self) -> std::option::Option<i64> {
         self.max_results
     }
-    /// <p>A token to specify where to start paginating. This is the <a>ListFragmentsOutput$NextToken</a> from a previously truncated
-    /// response.</p>
+    /// <p>A token to specify where to start paginating. This is the <code>ListFragmentsOutput$NextToken</code> from a previously truncated response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to
-    /// return.</p>
+    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
     pub fn fragment_selector(&self) -> std::option::Option<&crate::model::FragmentSelector> {
         self.fragment_selector.as_ref()
     }
@@ -1673,8 +1243,7 @@ pub struct GetMediaForFragmentListInput {
     pub stream_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.</p>
     pub stream_arn: std::option::Option<std::string::String>,
-    /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these
-    /// values with <a>ListFragments</a>.</p>
+    /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
     pub fragments: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetMediaForFragmentListInput {
@@ -1686,8 +1255,7 @@ impl GetMediaForFragmentListInput {
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
-    /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these
-    /// values with <a>ListFragments</a>.</p>
+    /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
     pub fn fragments(&self) -> std::option::Option<&[std::string::String]> {
         self.fragments.as_deref()
     }
@@ -1707,352 +1275,118 @@ impl std::fmt::Debug for GetMediaForFragmentListInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHlsStreamingSessionUrlInput {
     /// <p>The name of the stream for which to retrieve the HLS master playlist URL.</p>
-    /// <p>You must specify either the <code>StreamName</code> or the
-    /// <code>StreamARN</code>.</p>
+    /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master
-    /// playlist URL.</p>
-    /// <p>You must specify either the <code>StreamName</code> or the
-    /// <code>StreamARN</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master playlist URL.</p>
+    /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
     /// <p>Features of the three types of sessions include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>LIVE</code>
-    /// </b>: For sessions of this type, the HLS media playlist is continually
-    /// updated with the latest fragments as they become available. We recommend that
-    /// the media player retrieve a new playlist on a one-second interval. When this
-    /// type of session is played in a media player, the user interface typically
-    /// displays a "live" notification, with no scrubber control for choosing the
-    /// position in the playback window to display.</p>
-    /// <note>
-    /// <p>In <code>LIVE</code> mode, the newest available fragments are included in
-    /// an HLS media playlist, even if there is a gap between fragments (that is, if
-    /// a fragment is missing). A gap like this might cause a media player to halt
-    /// or cause a jump in playback. In this mode, fragments are not added to the
-    /// HLS media playlist if they are older than the newest fragment in the
-    /// playlist. If the missing fragment becomes available after a subsequent
-    /// fragment is added to the playlist, the older fragment is not added, and the
-    /// gap is not filled.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>LIVE_REPLAY</code>
-    /// </b>: For sessions of this type, the HLS media playlist is updated
-    /// similarly to how it is updated for <code>LIVE</code> mode except that it starts
-    /// by including fragments from a given start time. Instead of fragments being added
-    /// as they are ingested, fragments are added as the duration of the next fragment
-    /// elapses. For example, if the fragments in the session are two seconds long, then
-    /// a new fragment is added to the media playlist every two seconds. This mode is
-    /// useful to be able to start playback from when an event is detected and continue
-    /// live streaming media that has not yet been ingested as of the time of the
-    /// session creation. This mode is also useful to stream previously archived media
-    /// without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code>
-    /// mode. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>ON_DEMAND</code>
-    /// </b>: For sessions of this type, the HLS media playlist contains all the
-    /// fragments for the session, up to the number that is specified in
-    /// <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved
-    /// only once for each session. When this type of session is played in a media
-    /// player, the user interface typically displays a scrubber control for choosing
-    /// the position in the playback window to display.</p>
-    /// </li>
+    /// <li> <p> <b> <code>LIVE</code> </b>: For sessions of this type, the HLS media playlist is continually updated with the latest fragments as they become available. We recommend that the media player retrieve a new playlist on a one-second interval. When this type of session is played in a media player, the user interface typically displays a "live" notification, with no scrubber control for choosing the position in the playback window to display.</p> <note>
+    /// <p>In <code>LIVE</code> mode, the newest available fragments are included in an HLS media playlist, even if there is a gap between fragments (that is, if a fragment is missing). A gap like this might cause a media player to halt or cause a jump in playback. In this mode, fragments are not added to the HLS media playlist if they are older than the newest fragment in the playlist. If the missing fragment becomes available after a subsequent fragment is added to the playlist, the older fragment is not added, and the gap is not filled.</p>
+    /// </note> </li>
+    /// <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist is updated similarly to how it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time. Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the media playlist every two seconds. This mode is useful to be able to start playback from when an event is detected and continue live streaming media that has not yet been ingested as of the time of the session creation. This mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode. </p> </li>
+    /// <li> <p> <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist contains all the fragments for the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved only once for each session. When this type of session is played in a media player, the user interface typically displays a scrubber control for choosing the position in the playback window to display.</p> </li>
     /// </ul>
-    /// <p>In all playback modes, if <code>FragmentSelectorType</code> is
-    /// <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same
-    /// start timestamp, the fragment that has the largest fragment number (that is, the newest
-    /// fragment) is included in the HLS media playlist. The other fragments are not included.
-    /// Fragments that have different timestamps but have overlapping durations are still
-    /// included in the HLS media playlist. This can lead to unexpected behavior in the media
-    /// player.</p>
+    /// <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the largest fragment number (that is, the newest fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead to unexpected behavior in the media player.</p>
     /// <p>The default is <code>LIVE</code>.</p>
     pub playback_mode: std::option::Option<crate::model::HlsPlaybackMode>,
     /// <p>The time range of the requested fragment and the source of the timestamps.</p>
-    /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-    /// <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code>
-    /// <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
-    /// <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code>
-    /// should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-    /// <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and
-    /// <code>TimestampRange</code> must be set.</p>
+    /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
     pub hls_fragment_selector: std::option::Option<crate::model::HlsFragmentSelector>,
-    /// <p>Specifies which format should be used for packaging the media. Specifying the
-    /// <code>FRAGMENTED_MP4</code> container format packages the media into MP4 fragments
-    /// (fMP4 or CMAF). This is the recommended packaging because there is minimal packaging
-    /// overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported
-    /// MPEG TS chunks since it was released and is sometimes the only supported packaging on
-    /// older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means
-    /// MPEG TS typically requires 5-25 percent more bandwidth and cost than fMP4.</p>
+    /// <p>Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code> container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging because there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was released and is sometimes the only supported packaging on older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires 5-25 percent more bandwidth and cost than fMP4.</p>
     /// <p>The default is <code>FRAGMENTED_MP4</code>.</p>
     pub container_format: std::option::Option<crate::model::ContainerFormat>,
-    /// <p>Specifies when flags marking discontinuities between fragments are added to the media
-    /// playlists.</p>
-    /// <p>Media players typically build a timeline of media content to play, based on the
-    /// timestamps of each fragment. This means that if there is any overlap or gap between
-    /// fragments (as is typical if <a>HLSFragmentSelector</a> is set to
-    /// <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps
-    /// between fragments in some places, and will overwrite frames in other places. Gaps in the
-    /// media player timeline can cause playback to stall and overlaps can cause playback to be
-    /// jittery. When there are discontinuity flags between fragments, the media player is
-    /// expected to reset the timeline, resulting in the next fragment being played immediately
-    /// after the previous fragment. </p>
+    /// <p>Specifies when flags marking discontinuities between fragments are added to the media playlists.</p>
+    /// <p>Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This means that if there is any overlap or gap between fragments (as is typical if <code>HLSFragmentSelector</code> is set to <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps between fragments in some places, and will overwrite frames in other places. Gaps in the media player timeline can cause playback to stall and overlaps can cause playback to be jittery. When there are discontinuity flags between fragments, the media player is expected to reset the timeline, resulting in the next fragment being played immediately after the previous fragment. </p>
     /// <p>The following modes are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in
-    /// the HLS media playlist. It is recommended to use a value of <code>ALWAYS</code>
-    /// if the fragment timestamps are not accurate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
-    /// recommended to use a value of <code>NEVER</code> to ensure the media player
-    /// timeline most accurately maps to the producer timestamps. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
-    /// fragments that have a gap or overlap of more than 50 milliseconds. For most
-    /// playback scenarios, it is recommended to use a value of
-    /// <code>ON_DISCONTINUITY</code> so that the media player timeline is only
-    /// reset when there is a significant issue with the media timeline (e.g. a missing
-    /// fragment).</p>
-    /// </li>
+    /// <li> <p> <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the HLS media playlist. It is recommended to use a value of <code>ALWAYS</code> if the fragment timestamps are not accurate.</p> </li>
+    /// <li> <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended to use a value of <code>NEVER</code> to ensure the media player timeline most accurately maps to the producer timestamps. </p> </li>
+    /// <li> <p> <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between fragments that have a gap or overlap of more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant issue with the media timeline (e.g. a missing fragment).</p> </li>
     /// </ul>
-    /// <p>The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set
-    /// to <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is set to
-    /// <code>PRODUCER_TIMESTAMP</code>.</p>
+    /// <p>The default is <code>ALWAYS</code> when <code>HLSFragmentSelector</code> is set to <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.</p>
     pub discontinuity_mode: std::option::Option<crate::model::HlsDiscontinuityMode>,
-    /// <p>Specifies when the fragment start timestamps should be included in the HLS media
-    /// playlist. Typically, media players report the playhead position as a time relative to
-    /// the start of the first fragment in the playback session. However, when the start
-    /// timestamps are included in the HLS media playlist, some media players might report the
-    /// current playhead as an absolute time based on the fragment timestamps. This can be
-    /// useful for creating a playback experience that shows viewers the wall-clock time of the
-    /// media.</p>
-    /// <p>The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is
-    /// <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps.
-    /// Similarly, when <a>HLSFragmentSelector</a> is
-    /// <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
-    /// </p>
+    /// <p>Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically, media players report the playhead position as a time relative to the start of the first fragment in the playback session. However, when the start timestamps are included in the HLS media playlist, some media players might report the current playhead as an absolute time based on the fragment timestamps. This can be useful for creating a playback experience that shows viewers the wall-clock time of the media.</p>
+    /// <p>The default is <code>NEVER</code>. When <code>HLSFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>HLSFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p>
     pub display_fragment_timestamp: std::option::Option<crate::model::HlsDisplayFragmentTimestamp>,
-    /// <p>The time in seconds until the requested session expires. This value can be between 300
-    /// (5 minutes) and 43200 (12 hours).</p>
-    /// <p>When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>,
-    /// <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>,
-    /// <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for that
-    /// session.</p>
+    /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
+    /// <p>When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>, <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for that session.</p>
     /// <p>The default is 300 (5 minutes).</p>
     pub expires: std::option::Option<i32>,
     /// <p>The maximum number of fragments that are returned in the HLS media playlists.</p>
-    /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are
-    /// returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>,
-    /// the oldest fragments are returned, up to this maximum number.</p>
-    /// <p>When there are a higher number of fragments available in a live HLS media playlist,
-    /// video players often buffer content before starting playback. Increasing the buffer size
-    /// increases the playback latency, but it decreases the likelihood that rebuffering will
-    /// occur during playback. We recommend that a live HLS media playlist have a minimum of 3
-    /// fragments and a maximum of 10 fragments.</p>
-    /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or
-    /// <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is
-    /// <code>ON_DEMAND</code>. </p>
-    /// <p>The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on
-    /// streams with 1-second fragments, and more than 13 hours of video on streams with
-    /// 10-second fragments.</p>
+    /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p>
+    /// <p>When there are a higher number of fragments available in a live HLS media playlist, video players often buffer content before starting playback. Increasing the buffer size increases the playback latency, but it decreases the likelihood that rebuffering will occur during playback. We recommend that a live HLS media playlist have a minimum of 3 fragments and a maximum of 10 fragments.</p>
+    /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p>
+    /// <p>The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on streams with 1-second fragments, and more than 13 hours of video on streams with 10-second fragments.</p>
     pub max_media_playlist_fragment_results: std::option::Option<i64>,
 }
 impl GetHlsStreamingSessionUrlInput {
     /// <p>The name of the stream for which to retrieve the HLS master playlist URL.</p>
-    /// <p>You must specify either the <code>StreamName</code> or the
-    /// <code>StreamARN</code>.</p>
+    /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master
-    /// playlist URL.</p>
-    /// <p>You must specify either the <code>StreamName</code> or the
-    /// <code>StreamARN</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master playlist URL.</p>
+    /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
     /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
     /// <p>Features of the three types of sessions include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>LIVE</code>
-    /// </b>: For sessions of this type, the HLS media playlist is continually
-    /// updated with the latest fragments as they become available. We recommend that
-    /// the media player retrieve a new playlist on a one-second interval. When this
-    /// type of session is played in a media player, the user interface typically
-    /// displays a "live" notification, with no scrubber control for choosing the
-    /// position in the playback window to display.</p>
-    /// <note>
-    /// <p>In <code>LIVE</code> mode, the newest available fragments are included in
-    /// an HLS media playlist, even if there is a gap between fragments (that is, if
-    /// a fragment is missing). A gap like this might cause a media player to halt
-    /// or cause a jump in playback. In this mode, fragments are not added to the
-    /// HLS media playlist if they are older than the newest fragment in the
-    /// playlist. If the missing fragment becomes available after a subsequent
-    /// fragment is added to the playlist, the older fragment is not added, and the
-    /// gap is not filled.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>LIVE_REPLAY</code>
-    /// </b>: For sessions of this type, the HLS media playlist is updated
-    /// similarly to how it is updated for <code>LIVE</code> mode except that it starts
-    /// by including fragments from a given start time. Instead of fragments being added
-    /// as they are ingested, fragments are added as the duration of the next fragment
-    /// elapses. For example, if the fragments in the session are two seconds long, then
-    /// a new fragment is added to the media playlist every two seconds. This mode is
-    /// useful to be able to start playback from when an event is detected and continue
-    /// live streaming media that has not yet been ingested as of the time of the
-    /// session creation. This mode is also useful to stream previously archived media
-    /// without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code>
-    /// mode. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>ON_DEMAND</code>
-    /// </b>: For sessions of this type, the HLS media playlist contains all the
-    /// fragments for the session, up to the number that is specified in
-    /// <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved
-    /// only once for each session. When this type of session is played in a media
-    /// player, the user interface typically displays a scrubber control for choosing
-    /// the position in the playback window to display.</p>
-    /// </li>
+    /// <li> <p> <b> <code>LIVE</code> </b>: For sessions of this type, the HLS media playlist is continually updated with the latest fragments as they become available. We recommend that the media player retrieve a new playlist on a one-second interval. When this type of session is played in a media player, the user interface typically displays a "live" notification, with no scrubber control for choosing the position in the playback window to display.</p> <note>
+    /// <p>In <code>LIVE</code> mode, the newest available fragments are included in an HLS media playlist, even if there is a gap between fragments (that is, if a fragment is missing). A gap like this might cause a media player to halt or cause a jump in playback. In this mode, fragments are not added to the HLS media playlist if they are older than the newest fragment in the playlist. If the missing fragment becomes available after a subsequent fragment is added to the playlist, the older fragment is not added, and the gap is not filled.</p>
+    /// </note> </li>
+    /// <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist is updated similarly to how it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time. Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the media playlist every two seconds. This mode is useful to be able to start playback from when an event is detected and continue live streaming media that has not yet been ingested as of the time of the session creation. This mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode. </p> </li>
+    /// <li> <p> <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist contains all the fragments for the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved only once for each session. When this type of session is played in a media player, the user interface typically displays a scrubber control for choosing the position in the playback window to display.</p> </li>
     /// </ul>
-    /// <p>In all playback modes, if <code>FragmentSelectorType</code> is
-    /// <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same
-    /// start timestamp, the fragment that has the largest fragment number (that is, the newest
-    /// fragment) is included in the HLS media playlist. The other fragments are not included.
-    /// Fragments that have different timestamps but have overlapping durations are still
-    /// included in the HLS media playlist. This can lead to unexpected behavior in the media
-    /// player.</p>
+    /// <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the largest fragment number (that is, the newest fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead to unexpected behavior in the media player.</p>
     /// <p>The default is <code>LIVE</code>.</p>
     pub fn playback_mode(&self) -> std::option::Option<&crate::model::HlsPlaybackMode> {
         self.playback_mode.as_ref()
     }
     /// <p>The time range of the requested fragment and the source of the timestamps.</p>
-    /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-    /// <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code>
-    /// <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
-    /// <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code>
-    /// should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-    /// <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and
-    /// <code>TimestampRange</code> must be set.</p>
+    /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
     pub fn hls_fragment_selector(&self) -> std::option::Option<&crate::model::HlsFragmentSelector> {
         self.hls_fragment_selector.as_ref()
     }
-    /// <p>Specifies which format should be used for packaging the media. Specifying the
-    /// <code>FRAGMENTED_MP4</code> container format packages the media into MP4 fragments
-    /// (fMP4 or CMAF). This is the recommended packaging because there is minimal packaging
-    /// overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported
-    /// MPEG TS chunks since it was released and is sometimes the only supported packaging on
-    /// older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means
-    /// MPEG TS typically requires 5-25 percent more bandwidth and cost than fMP4.</p>
+    /// <p>Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code> container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging because there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was released and is sometimes the only supported packaging on older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires 5-25 percent more bandwidth and cost than fMP4.</p>
     /// <p>The default is <code>FRAGMENTED_MP4</code>.</p>
     pub fn container_format(&self) -> std::option::Option<&crate::model::ContainerFormat> {
         self.container_format.as_ref()
     }
-    /// <p>Specifies when flags marking discontinuities between fragments are added to the media
-    /// playlists.</p>
-    /// <p>Media players typically build a timeline of media content to play, based on the
-    /// timestamps of each fragment. This means that if there is any overlap or gap between
-    /// fragments (as is typical if <a>HLSFragmentSelector</a> is set to
-    /// <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps
-    /// between fragments in some places, and will overwrite frames in other places. Gaps in the
-    /// media player timeline can cause playback to stall and overlaps can cause playback to be
-    /// jittery. When there are discontinuity flags between fragments, the media player is
-    /// expected to reset the timeline, resulting in the next fragment being played immediately
-    /// after the previous fragment. </p>
+    /// <p>Specifies when flags marking discontinuities between fragments are added to the media playlists.</p>
+    /// <p>Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This means that if there is any overlap or gap between fragments (as is typical if <code>HLSFragmentSelector</code> is set to <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps between fragments in some places, and will overwrite frames in other places. Gaps in the media player timeline can cause playback to stall and overlaps can cause playback to be jittery. When there are discontinuity flags between fragments, the media player is expected to reset the timeline, resulting in the next fragment being played immediately after the previous fragment. </p>
     /// <p>The following modes are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in
-    /// the HLS media playlist. It is recommended to use a value of <code>ALWAYS</code>
-    /// if the fragment timestamps are not accurate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NEVER</code>: no discontinuity markers are placed anywhere. It is
-    /// recommended to use a value of <code>NEVER</code> to ensure the media player
-    /// timeline most accurately maps to the producer timestamps. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between
-    /// fragments that have a gap or overlap of more than 50 milliseconds. For most
-    /// playback scenarios, it is recommended to use a value of
-    /// <code>ON_DISCONTINUITY</code> so that the media player timeline is only
-    /// reset when there is a significant issue with the media timeline (e.g. a missing
-    /// fragment).</p>
-    /// </li>
+    /// <li> <p> <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the HLS media playlist. It is recommended to use a value of <code>ALWAYS</code> if the fragment timestamps are not accurate.</p> </li>
+    /// <li> <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended to use a value of <code>NEVER</code> to ensure the media player timeline most accurately maps to the producer timestamps. </p> </li>
+    /// <li> <p> <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between fragments that have a gap or overlap of more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant issue with the media timeline (e.g. a missing fragment).</p> </li>
     /// </ul>
-    /// <p>The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set
-    /// to <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is set to
-    /// <code>PRODUCER_TIMESTAMP</code>.</p>
+    /// <p>The default is <code>ALWAYS</code> when <code>HLSFragmentSelector</code> is set to <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.</p>
     pub fn discontinuity_mode(&self) -> std::option::Option<&crate::model::HlsDiscontinuityMode> {
         self.discontinuity_mode.as_ref()
     }
-    /// <p>Specifies when the fragment start timestamps should be included in the HLS media
-    /// playlist. Typically, media players report the playhead position as a time relative to
-    /// the start of the first fragment in the playback session. However, when the start
-    /// timestamps are included in the HLS media playlist, some media players might report the
-    /// current playhead as an absolute time based on the fragment timestamps. This can be
-    /// useful for creating a playback experience that shows viewers the wall-clock time of the
-    /// media.</p>
-    /// <p>The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is
-    /// <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps.
-    /// Similarly, when <a>HLSFragmentSelector</a> is
-    /// <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
-    /// </p>
+    /// <p>Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically, media players report the playhead position as a time relative to the start of the first fragment in the playback session. However, when the start timestamps are included in the HLS media playlist, some media players might report the current playhead as an absolute time based on the fragment timestamps. This can be useful for creating a playback experience that shows viewers the wall-clock time of the media.</p>
+    /// <p>The default is <code>NEVER</code>. When <code>HLSFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>HLSFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p>
     pub fn display_fragment_timestamp(
         &self,
     ) -> std::option::Option<&crate::model::HlsDisplayFragmentTimestamp> {
         self.display_fragment_timestamp.as_ref()
     }
-    /// <p>The time in seconds until the requested session expires. This value can be between 300
-    /// (5 minutes) and 43200 (12 hours).</p>
-    /// <p>When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>,
-    /// <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>,
-    /// <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for that
-    /// session.</p>
+    /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
+    /// <p>When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>, <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for that session.</p>
     /// <p>The default is 300 (5 minutes).</p>
     pub fn expires(&self) -> std::option::Option<i32> {
         self.expires
     }
     /// <p>The maximum number of fragments that are returned in the HLS media playlists.</p>
-    /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are
-    /// returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>,
-    /// the oldest fragments are returned, up to this maximum number.</p>
-    /// <p>When there are a higher number of fragments available in a live HLS media playlist,
-    /// video players often buffer content before starting playback. Increasing the buffer size
-    /// increases the playback latency, but it decreases the likelihood that rebuffering will
-    /// occur during playback. We recommend that a live HLS media playlist have a minimum of 3
-    /// fragments and a maximum of 10 fragments.</p>
-    /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or
-    /// <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is
-    /// <code>ON_DEMAND</code>. </p>
-    /// <p>The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on
-    /// streams with 1-second fragments, and more than 13 hours of video on streams with
-    /// 10-second fragments.</p>
+    /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p>
+    /// <p>When there are a higher number of fragments available in a live HLS media playlist, video players often buffer content before starting playback. Increasing the buffer size increases the playback latency, but it decreases the likelihood that rebuffering will occur during playback. We recommend that a live HLS media playlist have a minimum of 3 fragments and a maximum of 10 fragments.</p>
+    /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p>
+    /// <p>The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on streams with 1-second fragments, and more than 13 hours of video on streams with 10-second fragments.</p>
     pub fn max_media_playlist_fragment_results(&self) -> std::option::Option<i64> {
         self.max_media_playlist_fragment_results
     }
@@ -2084,235 +1418,76 @@ impl std::fmt::Debug for GetHlsStreamingSessionUrlInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDashStreamingSessionUrlInput {
     /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
-    /// <p>You must specify either the <code>StreamName</code> or the
-    /// <code>StreamARN</code>.</p>
+    /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub stream_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH
-    /// manifest URL.</p>
-    /// <p>You must specify either the <code>StreamName</code> or the
-    /// <code>StreamARN</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
+    /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
     /// <p>Features of the three types of sessions include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>LIVE</code>
-    /// </b>: For sessions of this type, the MPEG-DASH manifest is continually
-    /// updated with the latest fragments as they become available. We recommend that
-    /// the media player retrieve a new manifest on a one-second interval. When this
-    /// type of session is played in a media player, the user interface typically
-    /// displays a "live" notification, with no scrubber control for choosing the
-    /// position in the playback window to display.</p>
-    /// <note>
-    /// <p>In <code>LIVE</code> mode, the newest available fragments are included in
-    /// an MPEG-DASH manifest, even if there is a gap between fragments (that is, if
-    /// a fragment is missing). A gap like this might cause a media player to halt
-    /// or cause a jump in playback. In this mode, fragments are not added to the
-    /// MPEG-DASH manifest if they are older than the newest fragment in the
-    /// playlist. If the missing fragment becomes available after a subsequent
-    /// fragment is added to the manifest, the older fragment is not added, and the
-    /// gap is not filled.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>LIVE_REPLAY</code>
-    /// </b>: For sessions of this type, the MPEG-DASH manifest is updated
-    /// similarly to how it is updated for <code>LIVE</code> mode except that it starts
-    /// by including fragments from a given start time. Instead of fragments being added
-    /// as they are ingested, fragments are added as the duration of the next fragment
-    /// elapses. For example, if the fragments in the session are two seconds long, then
-    /// a new fragment is added to the manifest every two seconds. This mode is useful
-    /// to be able to start playback from when an event is detected and continue live
-    /// streaming media that has not yet been ingested as of the time of the session
-    /// creation. This mode is also useful to stream previously archived media without
-    /// being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>ON_DEMAND</code>
-    /// </b>: For sessions of this type, the MPEG-DASH manifest contains all the
-    /// fragments for the session, up to the number that is specified in
-    /// <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only
-    /// once for each session. When this type of session is played in a media player,
-    /// the user interface typically displays a scrubber control for choosing the
-    /// position in the playback window to display.</p>
-    /// </li>
+    /// <li> <p> <b> <code>LIVE</code> </b>: For sessions of this type, the MPEG-DASH manifest is continually updated with the latest fragments as they become available. We recommend that the media player retrieve a new manifest on a one-second interval. When this type of session is played in a media player, the user interface typically displays a "live" notification, with no scrubber control for choosing the position in the playback window to display.</p> <note>
+    /// <p>In <code>LIVE</code> mode, the newest available fragments are included in an MPEG-DASH manifest, even if there is a gap between fragments (that is, if a fragment is missing). A gap like this might cause a media player to halt or cause a jump in playback. In this mode, fragments are not added to the MPEG-DASH manifest if they are older than the newest fragment in the playlist. If the missing fragment becomes available after a subsequent fragment is added to the manifest, the older fragment is not added, and the gap is not filled.</p>
+    /// </note> </li>
+    /// <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the MPEG-DASH manifest is updated similarly to how it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time. Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the manifest every two seconds. This mode is useful to be able to start playback from when an event is detected and continue live streaming media that has not yet been ingested as of the time of the session creation. This mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode. </p> </li>
+    /// <li> <p> <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest contains all the fragments for the session, up to the number that is specified in <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only once for each session. When this type of session is played in a media player, the user interface typically displays a scrubber control for choosing the position in the playback window to display.</p> </li>
     /// </ul>
-    /// <p>In all playback modes, if <code>FragmentSelectorType</code> is
-    /// <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same
-    /// start timestamp, the fragment that has the larger fragment number (that is, the newer
-    /// fragment) is included in the MPEG-DASH manifest. The other fragments are not included.
-    /// Fragments that have different timestamps but have overlapping durations are still
-    /// included in the MPEG-DASH manifest. This can lead to unexpected behavior in the media
-    /// player.</p>
+    /// <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the newer fragment) is included in the MPEG-DASH manifest. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the MPEG-DASH manifest. This can lead to unexpected behavior in the media player.</p>
     /// <p>The default is <code>LIVE</code>.</p>
     pub playback_mode: std::option::Option<crate::model::DashPlaybackMode>,
-    /// <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file
-    /// can be derived using attributes in the manifest itself. However, typically, MPEG-DASH
-    /// compatible media players do not properly handle gaps in the media timeline. Kinesis
-    /// Video Streams adjusts the media timeline in the manifest file to enable playback of
-    /// media with discontinuities. Therefore, the wall-clock time derived from the manifest
-    /// file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>, the
-    /// accurate fragment timestamp is added to each S element in the manifest file with the
-    /// attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this
-    /// custom attribute.</p>
-    /// <p>The default value is <code>NEVER</code>. When <a>DASHFragmentSelector</a>
-    /// is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps.
-    /// Similarly, when <a>DASHFragmentSelector</a> is
-    /// <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start
-    /// timestamps. </p>
+    /// <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file can be derived using attributes in the manifest itself. However, typically, MPEG-DASH compatible media players do not properly handle gaps in the media timeline. Kinesis Video Streams adjusts the media timeline in the manifest file to enable playback of media with discontinuities. Therefore, the wall-clock time derived from the manifest file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>, the accurate fragment timestamp is added to each S element in the manifest file with the attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this custom attribute.</p>
+    /// <p>The default value is <code>NEVER</code>. When <code>DASHFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>DASHFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p>
     pub display_fragment_timestamp: std::option::Option<crate::model::DashDisplayFragmentTimestamp>,
-    /// <p>Fragments are identified in the manifest file based on their sequence number in the
-    /// session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video
-    /// Streams fragment number is added to each S element in the manifest file with the
-    /// attribute name “kvs:fn”. These fragment numbers can be used for logging or for use with
-    /// other APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A
-    /// custom MPEG-DASH media player is necessary to leverage these this custom
-    /// attribute.</p>
+    /// <p>Fragments are identified in the manifest file based on their sequence number in the session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video Streams fragment number is added to each S element in the manifest file with the attribute name “kvs:fn”. These fragment numbers can be used for logging or for use with other APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A custom MPEG-DASH media player is necessary to leverage these this custom attribute.</p>
     /// <p>The default value is <code>NEVER</code>.</p>
     pub display_fragment_number: std::option::Option<crate::model::DashDisplayFragmentNumber>,
     /// <p>The time range of the requested fragment and the source of the timestamps.</p>
-    /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-    /// <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code>
-    /// <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
-    /// <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code>
-    /// should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-    /// <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and
-    /// <code>TimestampRange</code> must be set.</p>
+    /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
     pub dash_fragment_selector: std::option::Option<crate::model::DashFragmentSelector>,
-    /// <p>The time in seconds until the requested session expires. This value can be between 300
-    /// (5 minutes) and 43200 (12 hours).</p>
-    /// <p>When a session expires, no new calls to <code>GetDashManifest</code>,
-    /// <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for
-    /// that session.</p>
+    /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
+    /// <p>When a session expires, no new calls to <code>GetDashManifest</code>, <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for that session.</p>
     /// <p>The default is 300 (5 minutes).</p>
     pub expires: std::option::Option<i32>,
     /// <p>The maximum number of fragments that are returned in the MPEG-DASH manifest.</p>
-    /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are
-    /// returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>,
-    /// the oldest fragments are returned, up to this maximum number.</p>
-    /// <p>When there are a higher number of fragments available in a live MPEG-DASH manifest,
-    /// video players often buffer content before starting playback. Increasing the buffer size
-    /// increases the playback latency, but it decreases the likelihood that rebuffering will
-    /// occur during playback. We recommend that a live MPEG-DASH manifest have a minimum of 3
-    /// fragments and a maximum of 10 fragments.</p>
-    /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or
-    /// <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is
-    /// <code>ON_DEMAND</code>. </p>
-    /// <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on
-    /// streams with 1-second fragments, and more than 2 1/2 hours of video on streams with
-    /// 10-second fragments.</p>
+    /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p>
+    /// <p>When there are a higher number of fragments available in a live MPEG-DASH manifest, video players often buffer content before starting playback. Increasing the buffer size increases the playback latency, but it decreases the likelihood that rebuffering will occur during playback. We recommend that a live MPEG-DASH manifest have a minimum of 3 fragments and a maximum of 10 fragments.</p>
+    /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p>
+    /// <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.</p>
     pub max_manifest_fragment_results: std::option::Option<i64>,
 }
 impl GetDashStreamingSessionUrlInput {
     /// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
-    /// <p>You must specify either the <code>StreamName</code> or the
-    /// <code>StreamARN</code>.</p>
+    /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH
-    /// manifest URL.</p>
-    /// <p>You must specify either the <code>StreamName</code> or the
-    /// <code>StreamARN</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH manifest URL.</p>
+    /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
     /// <p>Whether to retrieve live, live replay, or archived, on-demand data.</p>
     /// <p>Features of the three types of sessions include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>LIVE</code>
-    /// </b>: For sessions of this type, the MPEG-DASH manifest is continually
-    /// updated with the latest fragments as they become available. We recommend that
-    /// the media player retrieve a new manifest on a one-second interval. When this
-    /// type of session is played in a media player, the user interface typically
-    /// displays a "live" notification, with no scrubber control for choosing the
-    /// position in the playback window to display.</p>
-    /// <note>
-    /// <p>In <code>LIVE</code> mode, the newest available fragments are included in
-    /// an MPEG-DASH manifest, even if there is a gap between fragments (that is, if
-    /// a fragment is missing). A gap like this might cause a media player to halt
-    /// or cause a jump in playback. In this mode, fragments are not added to the
-    /// MPEG-DASH manifest if they are older than the newest fragment in the
-    /// playlist. If the missing fragment becomes available after a subsequent
-    /// fragment is added to the manifest, the older fragment is not added, and the
-    /// gap is not filled.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>LIVE_REPLAY</code>
-    /// </b>: For sessions of this type, the MPEG-DASH manifest is updated
-    /// similarly to how it is updated for <code>LIVE</code> mode except that it starts
-    /// by including fragments from a given start time. Instead of fragments being added
-    /// as they are ingested, fragments are added as the duration of the next fragment
-    /// elapses. For example, if the fragments in the session are two seconds long, then
-    /// a new fragment is added to the manifest every two seconds. This mode is useful
-    /// to be able to start playback from when an event is detected and continue live
-    /// streaming media that has not yet been ingested as of the time of the session
-    /// creation. This mode is also useful to stream previously archived media without
-    /// being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>ON_DEMAND</code>
-    /// </b>: For sessions of this type, the MPEG-DASH manifest contains all the
-    /// fragments for the session, up to the number that is specified in
-    /// <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only
-    /// once for each session. When this type of session is played in a media player,
-    /// the user interface typically displays a scrubber control for choosing the
-    /// position in the playback window to display.</p>
-    /// </li>
+    /// <li> <p> <b> <code>LIVE</code> </b>: For sessions of this type, the MPEG-DASH manifest is continually updated with the latest fragments as they become available. We recommend that the media player retrieve a new manifest on a one-second interval. When this type of session is played in a media player, the user interface typically displays a "live" notification, with no scrubber control for choosing the position in the playback window to display.</p> <note>
+    /// <p>In <code>LIVE</code> mode, the newest available fragments are included in an MPEG-DASH manifest, even if there is a gap between fragments (that is, if a fragment is missing). A gap like this might cause a media player to halt or cause a jump in playback. In this mode, fragments are not added to the MPEG-DASH manifest if they are older than the newest fragment in the playlist. If the missing fragment becomes available after a subsequent fragment is added to the manifest, the older fragment is not added, and the gap is not filled.</p>
+    /// </note> </li>
+    /// <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the MPEG-DASH manifest is updated similarly to how it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time. Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the manifest every two seconds. This mode is useful to be able to start playback from when an event is detected and continue live streaming media that has not yet been ingested as of the time of the session creation. This mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode. </p> </li>
+    /// <li> <p> <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest contains all the fragments for the session, up to the number that is specified in <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only once for each session. When this type of session is played in a media player, the user interface typically displays a scrubber control for choosing the position in the playback window to display.</p> </li>
     /// </ul>
-    /// <p>In all playback modes, if <code>FragmentSelectorType</code> is
-    /// <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same
-    /// start timestamp, the fragment that has the larger fragment number (that is, the newer
-    /// fragment) is included in the MPEG-DASH manifest. The other fragments are not included.
-    /// Fragments that have different timestamps but have overlapping durations are still
-    /// included in the MPEG-DASH manifest. This can lead to unexpected behavior in the media
-    /// player.</p>
+    /// <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the newer fragment) is included in the MPEG-DASH manifest. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the MPEG-DASH manifest. This can lead to unexpected behavior in the media player.</p>
     /// <p>The default is <code>LIVE</code>.</p>
     pub fn playback_mode(&self) -> std::option::Option<&crate::model::DashPlaybackMode> {
         self.playback_mode.as_ref()
     }
-    /// <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file
-    /// can be derived using attributes in the manifest itself. However, typically, MPEG-DASH
-    /// compatible media players do not properly handle gaps in the media timeline. Kinesis
-    /// Video Streams adjusts the media timeline in the manifest file to enable playback of
-    /// media with discontinuities. Therefore, the wall-clock time derived from the manifest
-    /// file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>, the
-    /// accurate fragment timestamp is added to each S element in the manifest file with the
-    /// attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this
-    /// custom attribute.</p>
-    /// <p>The default value is <code>NEVER</code>. When <a>DASHFragmentSelector</a>
-    /// is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps.
-    /// Similarly, when <a>DASHFragmentSelector</a> is
-    /// <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start
-    /// timestamps. </p>
+    /// <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file can be derived using attributes in the manifest itself. However, typically, MPEG-DASH compatible media players do not properly handle gaps in the media timeline. Kinesis Video Streams adjusts the media timeline in the manifest file to enable playback of media with discontinuities. Therefore, the wall-clock time derived from the manifest file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>, the accurate fragment timestamp is added to each S element in the manifest file with the attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this custom attribute.</p>
+    /// <p>The default value is <code>NEVER</code>. When <code>DASHFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>DASHFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p>
     pub fn display_fragment_timestamp(
         &self,
     ) -> std::option::Option<&crate::model::DashDisplayFragmentTimestamp> {
         self.display_fragment_timestamp.as_ref()
     }
-    /// <p>Fragments are identified in the manifest file based on their sequence number in the
-    /// session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video
-    /// Streams fragment number is added to each S element in the manifest file with the
-    /// attribute name “kvs:fn”. These fragment numbers can be used for logging or for use with
-    /// other APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A
-    /// custom MPEG-DASH media player is necessary to leverage these this custom
-    /// attribute.</p>
+    /// <p>Fragments are identified in the manifest file based on their sequence number in the session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video Streams fragment number is added to each S element in the manifest file with the attribute name “kvs:fn”. These fragment numbers can be used for logging or for use with other APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A custom MPEG-DASH media player is necessary to leverage these this custom attribute.</p>
     /// <p>The default value is <code>NEVER</code>.</p>
     pub fn display_fragment_number(
         &self,
@@ -2320,42 +1495,23 @@ impl GetDashStreamingSessionUrlInput {
         self.display_fragment_number.as_ref()
     }
     /// <p>The time range of the requested fragment and the source of the timestamps.</p>
-    /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-    /// <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code>
-    /// <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
-    /// <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code>
-    /// should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or
-    /// <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and
-    /// <code>TimestampRange</code> must be set.</p>
+    /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
     pub fn dash_fragment_selector(
         &self,
     ) -> std::option::Option<&crate::model::DashFragmentSelector> {
         self.dash_fragment_selector.as_ref()
     }
-    /// <p>The time in seconds until the requested session expires. This value can be between 300
-    /// (5 minutes) and 43200 (12 hours).</p>
-    /// <p>When a session expires, no new calls to <code>GetDashManifest</code>,
-    /// <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for
-    /// that session.</p>
+    /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
+    /// <p>When a session expires, no new calls to <code>GetDashManifest</code>, <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for that session.</p>
     /// <p>The default is 300 (5 minutes).</p>
     pub fn expires(&self) -> std::option::Option<i32> {
         self.expires
     }
     /// <p>The maximum number of fragments that are returned in the MPEG-DASH manifest.</p>
-    /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are
-    /// returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>,
-    /// the oldest fragments are returned, up to this maximum number.</p>
-    /// <p>When there are a higher number of fragments available in a live MPEG-DASH manifest,
-    /// video players often buffer content before starting playback. Increasing the buffer size
-    /// increases the playback latency, but it decreases the likelihood that rebuffering will
-    /// occur during playback. We recommend that a live MPEG-DASH manifest have a minimum of 3
-    /// fragments and a maximum of 10 fragments.</p>
-    /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or
-    /// <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is
-    /// <code>ON_DEMAND</code>. </p>
-    /// <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on
-    /// streams with 1-second fragments, and more than 2 1/2 hours of video on streams with
-    /// 10-second fragments.</p>
+    /// <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p>
+    /// <p>When there are a higher number of fragments available in a live MPEG-DASH manifest, video players often buffer content before starting playback. Increasing the buffer size increases the playback latency, but it decreases the likelihood that rebuffering will occur during playback. We recommend that a live MPEG-DASH manifest have a minimum of 3 fragments and a maximum of 10 fragments.</p>
+    /// <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p>
+    /// <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.</p>
     pub fn max_manifest_fragment_results(&self) -> std::option::Option<i64> {
         self.max_manifest_fragment_results
     }

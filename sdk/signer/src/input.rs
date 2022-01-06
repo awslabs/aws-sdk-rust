@@ -47,14 +47,12 @@ pub mod add_profile_permission_input {
             self.action = input;
             self
         }
-        /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or
-        /// another AWS account ID.</p>
+        /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or
-        /// another AWS account ID.</p>
+        /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -100,7 +98,7 @@ pub mod add_profile_permission_input {
 #[doc(hidden)]
 pub type AddProfilePermissionInputOperationOutputAlias = crate::operation::AddProfilePermission;
 #[doc(hidden)]
-pub type AddProfilePermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddProfilePermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddProfilePermissionInput {
     /// Consumes the builder and constructs an Operation<[`AddProfilePermission`](crate::operation::AddProfilePermission)>
     #[allow(clippy::let_and_return)]
@@ -111,7 +109,7 @@ impl AddProfilePermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddProfilePermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -213,7 +211,7 @@ impl AddProfilePermissionInput {
             "AddProfilePermission",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -271,7 +269,7 @@ pub mod cancel_signing_profile_input {
 #[doc(hidden)]
 pub type CancelSigningProfileInputOperationOutputAlias = crate::operation::CancelSigningProfile;
 #[doc(hidden)]
-pub type CancelSigningProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelSigningProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelSigningProfileInput {
     /// Consumes the builder and constructs an Operation<[`CancelSigningProfile`](crate::operation::CancelSigningProfile)>
     #[allow(clippy::let_and_return)]
@@ -282,7 +280,7 @@ impl CancelSigningProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelSigningProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -376,7 +374,7 @@ impl CancelSigningProfileInput {
             "CancelSigningProfile",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -426,7 +424,7 @@ pub mod describe_signing_job_input {
 #[doc(hidden)]
 pub type DescribeSigningJobInputOperationOutputAlias = crate::operation::DescribeSigningJob;
 #[doc(hidden)]
-pub type DescribeSigningJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSigningJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSigningJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSigningJob`](crate::operation::DescribeSigningJob)>
     #[allow(clippy::let_and_return)]
@@ -437,7 +435,7 @@ impl DescribeSigningJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSigningJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -527,7 +525,7 @@ impl DescribeSigningJobInput {
             "DescribeSigningJob",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -577,7 +575,7 @@ pub mod get_signing_platform_input {
 #[doc(hidden)]
 pub type GetSigningPlatformInputOperationOutputAlias = crate::operation::GetSigningPlatform;
 #[doc(hidden)]
-pub type GetSigningPlatformInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSigningPlatformInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSigningPlatformInput {
     /// Consumes the builder and constructs an Operation<[`GetSigningPlatform`](crate::operation::GetSigningPlatform)>
     #[allow(clippy::let_and_return)]
@@ -588,7 +586,7 @@ impl GetSigningPlatformInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSigningPlatform,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -682,7 +680,7 @@ impl GetSigningPlatformInput {
             "GetSigningPlatform",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -747,7 +745,7 @@ pub mod get_signing_profile_input {
 #[doc(hidden)]
 pub type GetSigningProfileInputOperationOutputAlias = crate::operation::GetSigningProfile;
 #[doc(hidden)]
-pub type GetSigningProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSigningProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSigningProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetSigningProfile`](crate::operation::GetSigningProfile)>
     #[allow(clippy::let_and_return)]
@@ -758,7 +756,7 @@ impl GetSigningProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSigningProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -866,7 +864,7 @@ impl GetSigningProfileInput {
             "GetSigningProfile",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -928,7 +926,7 @@ pub mod list_profile_permissions_input {
 #[doc(hidden)]
 pub type ListProfilePermissionsInputOperationOutputAlias = crate::operation::ListProfilePermissions;
 #[doc(hidden)]
-pub type ListProfilePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProfilePermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProfilePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ListProfilePermissions`](crate::operation::ListProfilePermissions)>
     #[allow(clippy::let_and_return)]
@@ -939,7 +937,7 @@ impl ListProfilePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProfilePermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1044,7 +1042,7 @@ impl ListProfilePermissionsInput {
             "ListProfilePermissions",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1089,14 +1087,12 @@ pub mod list_signing_jobs_input {
             self.status = input;
             self
         }
-        /// <p>The ID of microcontroller platform that you specified for the distribution of your
-        /// code image.</p>
+        /// <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
         pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_id = Some(input.into());
             self
         }
-        /// <p>The ID of microcontroller platform that you specified for the distribution of your
-        /// code image.</p>
+        /// <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
         pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform_id = input;
             self
@@ -1111,34 +1107,22 @@ pub mod list_signing_jobs_input {
             self.requested_by = input;
             self
         }
-        /// <p>Specifies the maximum number of items to return in the response. Use this parameter
-        /// when paginating results. If additional items exist beyond the number you specify, the
-        /// <code>nextToken</code> element is set in the response. Use the
-        /// <code>nextToken</code> value in a subsequent request to retrieve additional items.
-        /// </p>
+        /// <p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Specifies the maximum number of items to return in the response. Use this parameter
-        /// when paginating results. If additional items exist beyond the number you specify, the
-        /// <code>nextToken</code> element is set in the response. Use the
-        /// <code>nextToken</code> value in a subsequent request to retrieve additional items.
-        /// </p>
+        /// <p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>String for specifying the next set of paginated results to return. After you receive a
-        /// response with truncated results, use this parameter in a subsequent request. Set it to
-        /// the value of <code>nextToken</code> from the response that you just received.</p>
+        /// <p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>String for specifying the next set of paginated results to return. After you receive a
-        /// response with truncated results, use this parameter in a subsequent request. Set it to
-        /// the value of <code>nextToken</code> from the response that you just received.</p>
+        /// <p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1153,14 +1137,12 @@ pub mod list_signing_jobs_input {
             self.is_revoked = input;
             self
         }
-        /// <p>Filters results to return only signing jobs with signatures expiring before a
-        /// specified timestamp.</p>
+        /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
         pub fn signature_expires_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.signature_expires_before = Some(input);
             self
         }
-        /// <p>Filters results to return only signing jobs with signatures expiring before a
-        /// specified timestamp.</p>
+        /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
         pub fn set_signature_expires_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1168,14 +1150,12 @@ pub mod list_signing_jobs_input {
             self.signature_expires_before = input;
             self
         }
-        /// <p>Filters results to return only signing jobs with signatures expiring after a specified
-        /// timestamp.</p>
+        /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
         pub fn signature_expires_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.signature_expires_after = Some(input);
             self
         }
-        /// <p>Filters results to return only signing jobs with signatures expiring after a specified
-        /// timestamp.</p>
+        /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
         pub fn set_signature_expires_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1183,14 +1163,12 @@ pub mod list_signing_jobs_input {
             self.signature_expires_after = input;
             self
         }
-        /// <p>Filters results to return only signing jobs initiated by a specified IAM
-        /// entity.</p>
+        /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
         pub fn job_invoker(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_invoker = Some(input.into());
             self
         }
-        /// <p>Filters results to return only signing jobs initiated by a specified IAM
-        /// entity.</p>
+        /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
         pub fn set_job_invoker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_invoker = input;
             self
@@ -1219,7 +1197,7 @@ pub mod list_signing_jobs_input {
 #[doc(hidden)]
 pub type ListSigningJobsInputOperationOutputAlias = crate::operation::ListSigningJobs;
 #[doc(hidden)]
-pub type ListSigningJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSigningJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSigningJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListSigningJobs`](crate::operation::ListSigningJobs)>
     #[allow(clippy::let_and_return)]
@@ -1230,7 +1208,7 @@ impl ListSigningJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSigningJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1360,7 +1338,7 @@ impl ListSigningJobsInput {
             "ListSigningJobs",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1428,16 +1406,12 @@ pub mod list_signing_platforms_input {
             self.max_results = input;
             self
         }
-        /// <p>Value for specifying the next set of paginated results to return. After you receive a
-        /// response with truncated results, use this parameter in a subsequent request. Set it to
-        /// the value of <code>nextToken</code> from the response that you just received.</p>
+        /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Value for specifying the next set of paginated results to return. After you receive a
-        /// response with truncated results, use this parameter in a subsequent request. Set it to
-        /// the value of <code>nextToken</code> from the response that you just received.</p>
+        /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1462,7 +1436,7 @@ pub mod list_signing_platforms_input {
 #[doc(hidden)]
 pub type ListSigningPlatformsInputOperationOutputAlias = crate::operation::ListSigningPlatforms;
 #[doc(hidden)]
-pub type ListSigningPlatformsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSigningPlatformsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSigningPlatformsInput {
     /// Consumes the builder and constructs an Operation<[`ListSigningPlatforms`](crate::operation::ListSigningPlatforms)>
     #[allow(clippy::let_and_return)]
@@ -1473,7 +1447,7 @@ impl ListSigningPlatformsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSigningPlatforms,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1573,7 +1547,7 @@ impl ListSigningPlatformsInput {
             "ListSigningPlatforms",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1601,14 +1575,12 @@ pub mod list_signing_profiles_input {
         pub(crate) statuses: std::option::Option<std::vec::Vec<crate::model::SigningProfileStatus>>,
     }
     impl Builder {
-        /// <p>Designates whether to include profiles with the status of
-        /// <code>CANCELED</code>.</p>
+        /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
         pub fn include_canceled(mut self, input: bool) -> Self {
             self.include_canceled = Some(input);
             self
         }
-        /// <p>Designates whether to include profiles with the status of
-        /// <code>CANCELED</code>.</p>
+        /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
         pub fn set_include_canceled(mut self, input: std::option::Option<bool>) -> Self {
             self.include_canceled = input;
             self
@@ -1623,28 +1595,22 @@ pub mod list_signing_profiles_input {
             self.max_results = input;
             self
         }
-        /// <p>Value for specifying the next set of paginated results to return. After you receive a
-        /// response with truncated results, use this parameter in a subsequent request. Set it to
-        /// the value of <code>nextToken</code> from the response that you just received.</p>
+        /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Value for specifying the next set of paginated results to return. After you receive a
-        /// response with truncated results, use this parameter in a subsequent request. Set it to
-        /// the value of <code>nextToken</code> from the response that you just received.</p>
+        /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Filters results to return only signing jobs initiated for a specified signing
-        /// platform.</p>
+        /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
         pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_id = Some(input.into());
             self
         }
-        /// <p>Filters results to return only signing jobs initiated for a specified signing
-        /// platform.</p>
+        /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
         pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform_id = input;
             self
@@ -1653,16 +1619,14 @@ pub mod list_signing_profiles_input {
         ///
         /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
         ///
-        /// <p>Filters results to return only signing jobs with statuses in the specified
-        /// list.</p>
-        pub fn statuses(mut self, input: impl Into<crate::model::SigningProfileStatus>) -> Self {
+        /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
+        pub fn statuses(mut self, input: crate::model::SigningProfileStatus) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.statuses = Some(v);
             self
         }
-        /// <p>Filters results to return only signing jobs with statuses in the specified
-        /// list.</p>
+        /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
         pub fn set_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SigningProfileStatus>>,
@@ -1690,7 +1654,7 @@ pub mod list_signing_profiles_input {
 #[doc(hidden)]
 pub type ListSigningProfilesInputOperationOutputAlias = crate::operation::ListSigningProfiles;
 #[doc(hidden)]
-pub type ListSigningProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSigningProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSigningProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListSigningProfiles`](crate::operation::ListSigningProfiles)>
     #[allow(clippy::let_and_return)]
@@ -1701,7 +1665,7 @@ impl ListSigningProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSigningProfiles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1806,7 +1770,7 @@ impl ListSigningProfilesInput {
             "ListSigningProfiles",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1856,7 +1820,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -1867,7 +1831,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1957,7 +1921,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2002,14 +1966,12 @@ pub mod put_signing_profile_input {
             self.profile_name = input;
             self
         }
-        /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing
-        /// profile.</p>
+        /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>
         pub fn signing_material(mut self, input: crate::model::SigningMaterial) -> Self {
             self.signing_material = Some(input);
             self
         }
-        /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing
-        /// profile.</p>
+        /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>
         pub fn set_signing_material(
             mut self,
             input: std::option::Option<crate::model::SigningMaterial>,
@@ -2017,8 +1979,7 @@ pub mod put_signing_profile_input {
             self.signing_material = input;
             self
         }
-        /// <p>The default validity period override for any signature generated using this signing
-        /// profile. If unspecified, the default is 135 months.</p>
+        /// <p>The default validity period override for any signature generated using this signing profile. If unspecified, the default is 135 months.</p>
         pub fn signature_validity_period(
             mut self,
             input: crate::model::SignatureValidityPeriod,
@@ -2026,8 +1987,7 @@ pub mod put_signing_profile_input {
             self.signature_validity_period = Some(input);
             self
         }
-        /// <p>The default validity period override for any signature generated using this signing
-        /// profile. If unspecified, the default is 135 months.</p>
+        /// <p>The default validity period override for any signature generated using this signing profile. If unspecified, the default is 135 months.</p>
         pub fn set_signature_validity_period(
             mut self,
             input: std::option::Option<crate::model::SignatureValidityPeriod>,
@@ -2045,16 +2005,12 @@ pub mod put_signing_profile_input {
             self.platform_id = input;
             self
         }
-        /// <p>A subfield of <code>platform</code>. This specifies any different configuration
-        /// options that you want to apply to the chosen platform (such as a different
-        /// <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
+        /// <p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
         pub fn overrides(mut self, input: crate::model::SigningPlatformOverrides) -> Self {
             self.overrides = Some(input);
             self
         }
-        /// <p>A subfield of <code>platform</code>. This specifies any different configuration
-        /// options that you want to apply to the chosen platform (such as a different
-        /// <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
+        /// <p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
         pub fn set_overrides(
             mut self,
             input: std::option::Option<crate::model::SigningPlatformOverrides>,
@@ -2066,8 +2022,7 @@ pub mod put_signing_profile_input {
         ///
         /// To override the contents of this collection use [`set_signing_parameters`](Self::set_signing_parameters).
         ///
-        /// <p>Map of key-value pairs for signing. These can include any information that you want to
-        /// use during signing.</p>
+        /// <p>Map of key-value pairs for signing. These can include any information that you want to use during signing.</p>
         pub fn signing_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2078,8 +2033,7 @@ pub mod put_signing_profile_input {
             self.signing_parameters = Some(hash_map);
             self
         }
-        /// <p>Map of key-value pairs for signing. These can include any information that you want to
-        /// use during signing.</p>
+        /// <p>Map of key-value pairs for signing. These can include any information that you want to use during signing.</p>
         pub fn set_signing_parameters(
             mut self,
             input: std::option::Option<
@@ -2136,7 +2090,7 @@ pub mod put_signing_profile_input {
 #[doc(hidden)]
 pub type PutSigningProfileInputOperationOutputAlias = crate::operation::PutSigningProfile;
 #[doc(hidden)]
-pub type PutSigningProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutSigningProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutSigningProfileInput {
     /// Consumes the builder and constructs an Operation<[`PutSigningProfile`](crate::operation::PutSigningProfile)>
     #[allow(clippy::let_and_return)]
@@ -2147,7 +2101,7 @@ impl PutSigningProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutSigningProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2247,7 +2201,7 @@ impl PutSigningProfileInput {
             "PutSigningProfile",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2330,7 +2284,7 @@ pub mod remove_profile_permission_input {
 pub type RemoveProfilePermissionInputOperationOutputAlias =
     crate::operation::RemoveProfilePermission;
 #[doc(hidden)]
-pub type RemoveProfilePermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveProfilePermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveProfilePermissionInput {
     /// Consumes the builder and constructs an Operation<[`RemoveProfilePermission`](crate::operation::RemoveProfilePermission)>
     #[allow(clippy::let_and_return)]
@@ -2341,7 +2295,7 @@ impl RemoveProfilePermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveProfilePermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2462,7 +2416,7 @@ impl RemoveProfilePermissionInput {
             "RemoveProfilePermission",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2536,7 +2490,7 @@ pub mod revoke_signature_input {
 #[doc(hidden)]
 pub type RevokeSignatureInputOperationOutputAlias = crate::operation::RevokeSignature;
 #[doc(hidden)]
-pub type RevokeSignatureInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RevokeSignatureInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeSignatureInput {
     /// Consumes the builder and constructs an Operation<[`RevokeSignature`](crate::operation::RevokeSignature)>
     #[allow(clippy::let_and_return)]
@@ -2547,7 +2501,7 @@ impl RevokeSignatureInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RevokeSignature,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2643,7 +2597,7 @@ impl RevokeSignatureInput {
             "RevokeSignature",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2711,16 +2665,12 @@ pub mod revoke_signing_profile_input {
             self.reason = input;
             self
         }
-        /// <p>A timestamp for when revocation of a Signing Profile should become effective.
-        /// Signatures generated using the signing profile after this timestamp are not
-        /// trusted.</p>
+        /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
         pub fn effective_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.effective_time = Some(input);
             self
         }
-        /// <p>A timestamp for when revocation of a Signing Profile should become effective.
-        /// Signatures generated using the signing profile after this timestamp are not
-        /// trusted.</p>
+        /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
         pub fn set_effective_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2747,7 +2697,7 @@ pub mod revoke_signing_profile_input {
 #[doc(hidden)]
 pub type RevokeSigningProfileInputOperationOutputAlias = crate::operation::RevokeSigningProfile;
 #[doc(hidden)]
-pub type RevokeSigningProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RevokeSigningProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeSigningProfileInput {
     /// Consumes the builder and constructs an Operation<[`RevokeSigningProfile`](crate::operation::RevokeSigningProfile)>
     #[allow(clippy::let_and_return)]
@@ -2758,7 +2708,7 @@ impl RevokeSigningProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RevokeSigningProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2860,7 +2810,7 @@ impl RevokeSigningProfileInput {
             "RevokeSigningProfile",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2896,26 +2846,22 @@ pub mod start_signing_job_input {
         pub(crate) profile_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw
-        /// code.</p>
+        /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
         pub fn source(mut self, input: crate::model::Source) -> Self {
             self.source = Some(input);
             self
         }
-        /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw
-        /// code.</p>
+        /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
             self.source = input;
             self
         }
-        /// <p>The S3 bucket in which to save your signed object. The destination contains the name
-        /// of your bucket and an optional prefix.</p>
+        /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
         pub fn destination(mut self, input: crate::model::Destination) -> Self {
             self.destination = Some(input);
             self
         }
-        /// <p>The S3 bucket in which to save your signed object. The destination contains the name
-        /// of your bucket and an optional prefix.</p>
+        /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::Destination>,
@@ -2933,14 +2879,12 @@ pub mod start_signing_job_input {
             self.profile_name = input;
             self
         }
-        /// <p>String that identifies the signing request. All calls after the first that use this
-        /// token return the same response as the first call.</p>
+        /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>String that identifies the signing request. All calls after the first that use this
-        /// token return the same response as the first call.</p>
+        /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2981,7 +2925,7 @@ pub mod start_signing_job_input {
 #[doc(hidden)]
 pub type StartSigningJobInputOperationOutputAlias = crate::operation::StartSigningJob;
 #[doc(hidden)]
-pub type StartSigningJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartSigningJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartSigningJobInput {
     /// Consumes the builder and constructs an Operation<[`StartSigningJob`](crate::operation::StartSigningJob)>
     #[allow(clippy::let_and_return)]
@@ -2992,7 +2936,7 @@ impl StartSigningJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartSigningJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3075,7 +3019,7 @@ impl StartSigningJobInput {
             "StartSigningJob",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3162,7 +3106,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3173,7 +3117,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3268,7 +3212,7 @@ impl TagResourceInput {
             "TagResource",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3347,7 +3291,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -3358,7 +3302,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3461,7 +3405,7 @@ impl UntagResourceInput {
             "UntagResource",
             "signer",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3540,28 +3484,23 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSigningJobInput {
-    /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw
-    /// code.</p>
+    /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
     pub source: std::option::Option<crate::model::Source>,
-    /// <p>The S3 bucket in which to save your signed object. The destination contains the name
-    /// of your bucket and an optional prefix.</p>
+    /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
     pub destination: std::option::Option<crate::model::Destination>,
     /// <p>The name of the signing profile.</p>
     pub profile_name: std::option::Option<std::string::String>,
-    /// <p>String that identifies the signing request. All calls after the first that use this
-    /// token return the same response as the first call.</p>
+    /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The AWS account ID of the signing profile owner.</p>
     pub profile_owner: std::option::Option<std::string::String>,
 }
 impl StartSigningJobInput {
-    /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw
-    /// code.</p>
+    /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
     pub fn source(&self) -> std::option::Option<&crate::model::Source> {
         self.source.as_ref()
     }
-    /// <p>The S3 bucket in which to save your signed object. The destination contains the name
-    /// of your bucket and an optional prefix.</p>
+    /// <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
     pub fn destination(&self) -> std::option::Option<&crate::model::Destination> {
         self.destination.as_ref()
     }
@@ -3569,8 +3508,7 @@ impl StartSigningJobInput {
     pub fn profile_name(&self) -> std::option::Option<&str> {
         self.profile_name.as_deref()
     }
-    /// <p>String that identifies the signing request. All calls after the first that use this
-    /// token return the same response as the first call.</p>
+    /// <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -3601,9 +3539,7 @@ pub struct RevokeSigningProfileInput {
     pub profile_version: std::option::Option<std::string::String>,
     /// <p>The reason for revoking a signing profile.</p>
     pub reason: std::option::Option<std::string::String>,
-    /// <p>A timestamp for when revocation of a Signing Profile should become effective.
-    /// Signatures generated using the signing profile after this timestamp are not
-    /// trusted.</p>
+    /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
     pub effective_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl RevokeSigningProfileInput {
@@ -3619,9 +3555,7 @@ impl RevokeSigningProfileInput {
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
-    /// <p>A timestamp for when revocation of a Signing Profile should become effective.
-    /// Signatures generated using the signing profile after this timestamp are not
-    /// trusted.</p>
+    /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
     pub fn effective_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.effective_time.as_ref()
     }
@@ -3713,20 +3647,15 @@ impl std::fmt::Debug for RemoveProfilePermissionInput {
 pub struct PutSigningProfileInput {
     /// <p>The name of the signing profile to be created.</p>
     pub profile_name: std::option::Option<std::string::String>,
-    /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing
-    /// profile.</p>
+    /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>
     pub signing_material: std::option::Option<crate::model::SigningMaterial>,
-    /// <p>The default validity period override for any signature generated using this signing
-    /// profile. If unspecified, the default is 135 months.</p>
+    /// <p>The default validity period override for any signature generated using this signing profile. If unspecified, the default is 135 months.</p>
     pub signature_validity_period: std::option::Option<crate::model::SignatureValidityPeriod>,
     /// <p>The ID of the signing platform to be created.</p>
     pub platform_id: std::option::Option<std::string::String>,
-    /// <p>A subfield of <code>platform</code>. This specifies any different configuration
-    /// options that you want to apply to the chosen platform (such as a different
-    /// <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
+    /// <p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
     pub overrides: std::option::Option<crate::model::SigningPlatformOverrides>,
-    /// <p>Map of key-value pairs for signing. These can include any information that you want to
-    /// use during signing.</p>
+    /// <p>Map of key-value pairs for signing. These can include any information that you want to use during signing.</p>
     pub signing_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Tags to be associated with the signing profile that is being created.</p>
@@ -3738,13 +3667,11 @@ impl PutSigningProfileInput {
     pub fn profile_name(&self) -> std::option::Option<&str> {
         self.profile_name.as_deref()
     }
-    /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing
-    /// profile.</p>
+    /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>
     pub fn signing_material(&self) -> std::option::Option<&crate::model::SigningMaterial> {
         self.signing_material.as_ref()
     }
-    /// <p>The default validity period override for any signature generated using this signing
-    /// profile. If unspecified, the default is 135 months.</p>
+    /// <p>The default validity period override for any signature generated using this signing profile. If unspecified, the default is 135 months.</p>
     pub fn signature_validity_period(
         &self,
     ) -> std::option::Option<&crate::model::SignatureValidityPeriod> {
@@ -3754,14 +3681,11 @@ impl PutSigningProfileInput {
     pub fn platform_id(&self) -> std::option::Option<&str> {
         self.platform_id.as_deref()
     }
-    /// <p>A subfield of <code>platform</code>. This specifies any different configuration
-    /// options that you want to apply to the chosen platform (such as a different
-    /// <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
+    /// <p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
     pub fn overrides(&self) -> std::option::Option<&crate::model::SigningPlatformOverrides> {
         self.overrides.as_ref()
     }
-    /// <p>Map of key-value pairs for signing. These can include any information that you want to
-    /// use during signing.</p>
+    /// <p>Map of key-value pairs for signing. These can include any information that you want to use during signing.</p>
     pub fn signing_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3815,25 +3739,19 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSigningProfilesInput {
-    /// <p>Designates whether to include profiles with the status of
-    /// <code>CANCELED</code>.</p>
+    /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
     pub include_canceled: bool,
     /// <p>The maximum number of profiles to be returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Value for specifying the next set of paginated results to return. After you receive a
-    /// response with truncated results, use this parameter in a subsequent request. Set it to
-    /// the value of <code>nextToken</code> from the response that you just received.</p>
+    /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Filters results to return only signing jobs initiated for a specified signing
-    /// platform.</p>
+    /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
     pub platform_id: std::option::Option<std::string::String>,
-    /// <p>Filters results to return only signing jobs with statuses in the specified
-    /// list.</p>
+    /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
     pub statuses: std::option::Option<std::vec::Vec<crate::model::SigningProfileStatus>>,
 }
 impl ListSigningProfilesInput {
-    /// <p>Designates whether to include profiles with the status of
-    /// <code>CANCELED</code>.</p>
+    /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
     pub fn include_canceled(&self) -> bool {
         self.include_canceled
     }
@@ -3841,19 +3759,15 @@ impl ListSigningProfilesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Value for specifying the next set of paginated results to return. After you receive a
-    /// response with truncated results, use this parameter in a subsequent request. Set it to
-    /// the value of <code>nextToken</code> from the response that you just received.</p>
+    /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Filters results to return only signing jobs initiated for a specified signing
-    /// platform.</p>
+    /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
     pub fn platform_id(&self) -> std::option::Option<&str> {
         self.platform_id.as_deref()
     }
-    /// <p>Filters results to return only signing jobs with statuses in the specified
-    /// list.</p>
+    /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
     pub fn statuses(&self) -> std::option::Option<&[crate::model::SigningProfileStatus]> {
         self.statuses.as_deref()
     }
@@ -3882,9 +3796,7 @@ pub struct ListSigningPlatformsInput {
     pub target: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned by this operation.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Value for specifying the next set of paginated results to return. After you receive a
-    /// response with truncated results, use this parameter in a subsequent request. Set it to
-    /// the value of <code>nextToken</code> from the response that you just received.</p>
+    /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSigningPlatformsInput {
@@ -3904,9 +3816,7 @@ impl ListSigningPlatformsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Value for specifying the next set of paginated results to return. After you receive a
-    /// response with truncated results, use this parameter in a subsequent request. Set it to
-    /// the value of <code>nextToken</code> from the response that you just received.</p>
+    /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3929,31 +3839,21 @@ impl std::fmt::Debug for ListSigningPlatformsInput {
 pub struct ListSigningJobsInput {
     /// <p>A status value with which to filter your results.</p>
     pub status: std::option::Option<crate::model::SigningStatus>,
-    /// <p>The ID of microcontroller platform that you specified for the distribution of your
-    /// code image.</p>
+    /// <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
     pub platform_id: std::option::Option<std::string::String>,
     /// <p>The IAM principal that requested the signing job.</p>
     pub requested_by: std::option::Option<std::string::String>,
-    /// <p>Specifies the maximum number of items to return in the response. Use this parameter
-    /// when paginating results. If additional items exist beyond the number you specify, the
-    /// <code>nextToken</code> element is set in the response. Use the
-    /// <code>nextToken</code> value in a subsequent request to retrieve additional items.
-    /// </p>
+    /// <p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>String for specifying the next set of paginated results to return. After you receive a
-    /// response with truncated results, use this parameter in a subsequent request. Set it to
-    /// the value of <code>nextToken</code> from the response that you just received.</p>
+    /// <p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Filters results to return only signing jobs with revoked signatures.</p>
     pub is_revoked: bool,
-    /// <p>Filters results to return only signing jobs with signatures expiring before a
-    /// specified timestamp.</p>
+    /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
     pub signature_expires_before: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Filters results to return only signing jobs with signatures expiring after a specified
-    /// timestamp.</p>
+    /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
     pub signature_expires_after: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Filters results to return only signing jobs initiated by a specified IAM
-    /// entity.</p>
+    /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
     pub job_invoker: std::option::Option<std::string::String>,
 }
 impl ListSigningJobsInput {
@@ -3961,8 +3861,7 @@ impl ListSigningJobsInput {
     pub fn status(&self) -> std::option::Option<&crate::model::SigningStatus> {
         self.status.as_ref()
     }
-    /// <p>The ID of microcontroller platform that you specified for the distribution of your
-    /// code image.</p>
+    /// <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
     pub fn platform_id(&self) -> std::option::Option<&str> {
         self.platform_id.as_deref()
     }
@@ -3970,17 +3869,11 @@ impl ListSigningJobsInput {
     pub fn requested_by(&self) -> std::option::Option<&str> {
         self.requested_by.as_deref()
     }
-    /// <p>Specifies the maximum number of items to return in the response. Use this parameter
-    /// when paginating results. If additional items exist beyond the number you specify, the
-    /// <code>nextToken</code> element is set in the response. Use the
-    /// <code>nextToken</code> value in a subsequent request to retrieve additional items.
-    /// </p>
+    /// <p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>String for specifying the next set of paginated results to return. After you receive a
-    /// response with truncated results, use this parameter in a subsequent request. Set it to
-    /// the value of <code>nextToken</code> from the response that you just received.</p>
+    /// <p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3988,18 +3881,15 @@ impl ListSigningJobsInput {
     pub fn is_revoked(&self) -> bool {
         self.is_revoked
     }
-    /// <p>Filters results to return only signing jobs with signatures expiring before a
-    /// specified timestamp.</p>
+    /// <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
     pub fn signature_expires_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.signature_expires_before.as_ref()
     }
-    /// <p>Filters results to return only signing jobs with signatures expiring after a specified
-    /// timestamp.</p>
+    /// <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
     pub fn signature_expires_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.signature_expires_after.as_ref()
     }
-    /// <p>Filters results to return only signing jobs initiated by a specified IAM
-    /// entity.</p>
+    /// <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
     pub fn job_invoker(&self) -> std::option::Option<&str> {
         self.job_invoker.as_deref()
     }
@@ -4149,8 +4039,7 @@ pub struct AddProfilePermissionInput {
     pub profile_version: std::option::Option<std::string::String>,
     /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
     pub action: std::option::Option<std::string::String>,
-    /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or
-    /// another AWS account ID.</p>
+    /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
     pub principal: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the current profile revision.</p>
     pub revision_id: std::option::Option<std::string::String>,
@@ -4170,8 +4059,7 @@ impl AddProfilePermissionInput {
     pub fn action(&self) -> std::option::Option<&str> {
         self.action.as_deref()
     }
-    /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or
-    /// another AWS account ID.</p>
+    /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }

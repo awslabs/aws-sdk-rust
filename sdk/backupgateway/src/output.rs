@@ -3,25 +3,17 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHypervisorsOutput {
-    /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names
-    /// (ARNs).</p>
+    /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     pub hypervisors: std::option::Option<std::vec::Vec<crate::model::Hypervisor>>,
-    /// <p>The next item following a partial list of returned resources. For example, if a request is
-    /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHypervisorsOutput {
-    /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names
-    /// (ARNs).</p>
+    /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     pub fn hypervisors(&self) -> std::option::Option<&[crate::model::Hypervisor]> {
         self.hypervisors.as_deref()
     }
-    /// <p>The next item following a partial list of returned resources. For example, if a request is
-    /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -48,16 +40,14 @@ pub mod list_hypervisors_output {
         ///
         /// To override the contents of this collection use [`set_hypervisors`](Self::set_hypervisors).
         ///
-        /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names
-        /// (ARNs).</p>
-        pub fn hypervisors(mut self, input: impl Into<crate::model::Hypervisor>) -> Self {
+        /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
+        pub fn hypervisors(mut self, input: crate::model::Hypervisor) -> Self {
             let mut v = self.hypervisors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hypervisors = Some(v);
             self
         }
-        /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names
-        /// (ARNs).</p>
+        /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
         pub fn set_hypervisors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Hypervisor>>,
@@ -65,18 +55,12 @@ pub mod list_hypervisors_output {
             self.hypervisors = input;
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -302,13 +286,11 @@ impl TestHypervisorConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMaintenanceStartTimeOutput {
-    /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start
-    /// time.</p>
+    /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start time.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl PutMaintenanceStartTimeOutput {
-    /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start
-    /// time.</p>
+    /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start time.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
@@ -329,14 +311,12 @@ pub mod put_maintenance_start_time_output {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start
-        /// time.</p>
+        /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start time.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start
-        /// time.</p>
+        /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start time.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gateway_arn = input;
             self
@@ -470,10 +450,7 @@ impl AssociateGatewayToServerOutput {
 pub struct ListGatewaysOutput {
     /// <p>A list of your gateways.</p>
     pub gateways: std::option::Option<std::vec::Vec<crate::model::Gateway>>,
-    /// <p>The next item following a partial list of returned resources. For example, if a request is
-    /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGatewaysOutput {
@@ -481,10 +458,7 @@ impl ListGatewaysOutput {
     pub fn gateways(&self) -> std::option::Option<&[crate::model::Gateway]> {
         self.gateways.as_deref()
     }
-    /// <p>The next item following a partial list of returned resources. For example, if a request is
-    /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -512,9 +486,9 @@ pub mod list_gateways_output {
         /// To override the contents of this collection use [`set_gateways`](Self::set_gateways).
         ///
         /// <p>A list of your gateways.</p>
-        pub fn gateways(mut self, input: impl Into<crate::model::Gateway>) -> Self {
+        pub fn gateways(mut self, input: crate::model::Gateway) -> Self {
             let mut v = self.gateways.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.gateways = Some(v);
             self
         }
@@ -526,18 +500,12 @@ pub mod list_gateways_output {
             self.gateways = input;
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -832,25 +800,17 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualMachinesOutput {
-    /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names
-    /// (ARNs).</p>
+    /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     pub virtual_machines: std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>,
-    /// <p>The next item following a partial list of returned resources. For example, if a request is
-    /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVirtualMachinesOutput {
-    /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names
-    /// (ARNs).</p>
+    /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     pub fn virtual_machines(&self) -> std::option::Option<&[crate::model::VirtualMachine]> {
         self.virtual_machines.as_deref()
     }
-    /// <p>The next item following a partial list of returned resources. For example, if a request is
-    /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -878,16 +838,14 @@ pub mod list_virtual_machines_output {
         ///
         /// To override the contents of this collection use [`set_virtual_machines`](Self::set_virtual_machines).
         ///
-        /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names
-        /// (ARNs).</p>
-        pub fn virtual_machines(mut self, input: impl Into<crate::model::VirtualMachine>) -> Self {
+        /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
+        pub fn virtual_machines(mut self, input: crate::model::VirtualMachine) -> Self {
             let mut v = self.virtual_machines.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.virtual_machines = Some(v);
             self
         }
-        /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names
-        /// (ARNs).</p>
+        /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
         pub fn set_virtual_machines(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>,
@@ -895,18 +853,12 @@ pub mod list_virtual_machines_output {
             self.virtual_machines = input;
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -979,9 +931,9 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of the resource's tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }

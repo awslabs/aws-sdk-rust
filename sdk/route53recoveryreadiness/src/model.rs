@@ -677,9 +677,9 @@ pub mod resource_set_output {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// A list of Resource objects
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -1575,9 +1575,9 @@ pub mod rule_result {
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
         /// Details about the resource's readiness
-        pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
+        pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.messages = Some(v);
             self
         }

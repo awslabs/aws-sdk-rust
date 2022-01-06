@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Pinpoint
@@ -958,7 +958,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApp`.
     ///
     /// <p>Creates an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1003,10 +1003,10 @@ pub mod fluent_builders {
                 crate::input::CreateAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1017,9 +1017,9 @@ pub mod fluent_builders {
         /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
         pub fn create_application_request(
             mut self,
-            inp: crate::model::CreateApplicationRequest,
+            input: crate::model::CreateApplicationRequest,
         ) -> Self {
-            self.inner = self.inner.create_application_request(inp);
+            self.inner = self.inner.create_application_request(input);
             self
         }
         /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
@@ -1034,7 +1034,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateCampaign`.
     ///
     /// <p>Creates a new campaign for an application or updates the settings of an existing campaign for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1079,10 +1079,10 @@ pub mod fluent_builders {
                 crate::input::CreateCampaignInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1091,8 +1091,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -1104,8 +1104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration and other settings for a campaign.</p>
-        pub fn write_campaign_request(mut self, inp: crate::model::WriteCampaignRequest) -> Self {
-            self.inner = self.inner.write_campaign_request(inp);
+        pub fn write_campaign_request(mut self, input: crate::model::WriteCampaignRequest) -> Self {
+            self.inner = self.inner.write_campaign_request(input);
             self
         }
         /// <p>Specifies the configuration and other settings for a campaign.</p>
@@ -1120,7 +1120,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateEmailTemplate`.
     ///
     /// <p>Creates a message template for messages that are sent through the email channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1165,10 +1165,10 @@ pub mod fluent_builders {
                 crate::input::CreateEmailTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1177,8 +1177,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-        pub fn email_template_request(mut self, inp: crate::model::EmailTemplateRequest) -> Self {
-            self.inner = self.inner.email_template_request(inp);
+        pub fn email_template_request(mut self, input: crate::model::EmailTemplateRequest) -> Self {
+            self.inner = self.inner.email_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
@@ -1190,8 +1190,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -1206,7 +1206,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateExportJob`.
     ///
     /// <p>Creates an export job for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1251,10 +1251,10 @@ pub mod fluent_builders {
                 crate::input::CreateExportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1263,8 +1263,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -1276,8 +1276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
-        pub fn export_job_request(mut self, inp: crate::model::ExportJobRequest) -> Self {
-            self.inner = self.inner.export_job_request(inp);
+        pub fn export_job_request(mut self, input: crate::model::ExportJobRequest) -> Self {
+            self.inner = self.inner.export_job_request(input);
             self
         }
         /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
@@ -1292,7 +1292,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateImportJob`.
     ///
     /// <p>Creates an import job for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1337,10 +1337,10 @@ pub mod fluent_builders {
                 crate::input::CreateImportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1349,8 +1349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -1362,8 +1362,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
-        pub fn import_job_request(mut self, inp: crate::model::ImportJobRequest) -> Self {
-            self.inner = self.inner.import_job_request(inp);
+        pub fn import_job_request(mut self, input: crate::model::ImportJobRequest) -> Self {
+            self.inner = self.inner.import_job_request(input);
             self
         }
         /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
@@ -1378,7 +1378,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateInAppTemplate`.
     ///
     /// <p>Creates a new message template for messages using the in-app message channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInAppTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1423,10 +1423,10 @@ pub mod fluent_builders {
                 crate::input::CreateInAppTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1435,8 +1435,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>InApp Template Request.</p>
-        pub fn in_app_template_request(mut self, inp: crate::model::InAppTemplateRequest) -> Self {
-            self.inner = self.inner.in_app_template_request(inp);
+        pub fn in_app_template_request(
+            mut self,
+            input: crate::model::InAppTemplateRequest,
+        ) -> Self {
+            self.inner = self.inner.in_app_template_request(input);
             self
         }
         /// <p>InApp Template Request.</p>
@@ -1448,8 +1451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -1464,7 +1467,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateJourney`.
     ///
     /// <p>Creates a journey for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateJourney<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1509,10 +1512,10 @@ pub mod fluent_builders {
                 crate::input::CreateJourneyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1521,8 +1524,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -1534,8 +1537,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration and other settings for a journey.</p>
-        pub fn write_journey_request(mut self, inp: crate::model::WriteJourneyRequest) -> Self {
-            self.inner = self.inner.write_journey_request(inp);
+        pub fn write_journey_request(mut self, input: crate::model::WriteJourneyRequest) -> Self {
+            self.inner = self.inner.write_journey_request(input);
             self
         }
         /// <p>Specifies the configuration and other settings for a journey.</p>
@@ -1550,7 +1553,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePushTemplate`.
     ///
     /// <p>Creates a message template for messages that are sent through a push notification channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePushTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1595,10 +1598,10 @@ pub mod fluent_builders {
                 crate::input::CreatePushTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1609,9 +1612,9 @@ pub mod fluent_builders {
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
         pub fn push_notification_template_request(
             mut self,
-            inp: crate::model::PushNotificationTemplateRequest,
+            input: crate::model::PushNotificationTemplateRequest,
         ) -> Self {
-            self.inner = self.inner.push_notification_template_request(inp);
+            self.inner = self.inner.push_notification_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
@@ -1623,8 +1626,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -1639,7 +1642,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRecommenderConfiguration`.
     ///
     /// <p>Creates an Amazon Pinpoint configuration for a recommender model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRecommenderConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1684,10 +1687,10 @@ pub mod fluent_builders {
                 crate::input::CreateRecommenderConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1698,9 +1701,9 @@ pub mod fluent_builders {
         /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
         pub fn create_recommender_configuration(
             mut self,
-            inp: crate::model::CreateRecommenderConfigurationShape,
+            input: crate::model::CreateRecommenderConfigurationShape,
         ) -> Self {
-            self.inner = self.inner.create_recommender_configuration(inp);
+            self.inner = self.inner.create_recommender_configuration(input);
             self
         }
         /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
@@ -1715,7 +1718,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSegment`.
     ///
     /// <p>Creates a new segment for an application or updates the configuration, dimension, and other settings for an existing segment that's associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSegment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1760,10 +1763,10 @@ pub mod fluent_builders {
                 crate::input::CreateSegmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1772,8 +1775,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -1785,8 +1788,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
-        pub fn write_segment_request(mut self, inp: crate::model::WriteSegmentRequest) -> Self {
-            self.inner = self.inner.write_segment_request(inp);
+        pub fn write_segment_request(mut self, input: crate::model::WriteSegmentRequest) -> Self {
+            self.inner = self.inner.write_segment_request(input);
             self
         }
         /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
@@ -1801,7 +1804,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSmsTemplate`.
     ///
     /// <p>Creates a message template for messages that are sent through the SMS channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSmsTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1846,10 +1849,10 @@ pub mod fluent_builders {
                 crate::input::CreateSmsTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1858,8 +1861,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-        pub fn sms_template_request(mut self, inp: crate::model::SmsTemplateRequest) -> Self {
-            self.inner = self.inner.sms_template_request(inp);
+        pub fn sms_template_request(mut self, input: crate::model::SmsTemplateRequest) -> Self {
+            self.inner = self.inner.sms_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
@@ -1871,8 +1874,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -1887,7 +1890,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateVoiceTemplate`.
     ///
     /// <p>Creates a message template for messages that are sent through the voice channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVoiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1932,10 +1935,10 @@ pub mod fluent_builders {
                 crate::input::CreateVoiceTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1944,8 +1947,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -1957,8 +1960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-        pub fn voice_template_request(mut self, inp: crate::model::VoiceTemplateRequest) -> Self {
-            self.inner = self.inner.voice_template_request(inp);
+        pub fn voice_template_request(mut self, input: crate::model::VoiceTemplateRequest) -> Self {
+            self.inner = self.inner.voice_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
@@ -1973,7 +1976,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAdmChannel`.
     ///
     /// <p>Disables the ADM channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAdmChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2018,10 +2021,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAdmChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2030,8 +2033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2046,7 +2049,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApnsChannel`.
     ///
     /// <p>Disables the APNs channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApnsChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2091,10 +2094,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApnsChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2103,8 +2106,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2119,7 +2122,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApnsSandboxChannel`.
     ///
     /// <p>Disables the APNs sandbox channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApnsSandboxChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2164,10 +2167,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApnsSandboxChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2176,8 +2179,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2192,7 +2195,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApnsVoipChannel`.
     ///
     /// <p>Disables the APNs VoIP channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApnsVoipChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2237,10 +2240,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApnsVoipChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2249,8 +2252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2265,7 +2268,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApnsVoipSandboxChannel`.
     ///
     /// <p>Disables the APNs VoIP sandbox channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApnsVoipSandboxChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2310,10 +2313,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApnsVoipSandboxChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2322,8 +2325,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2338,7 +2341,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApp`.
     ///
     /// <p>Deletes an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2383,10 +2386,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2395,8 +2398,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2411,7 +2414,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBaiduChannel`.
     ///
     /// <p>Disables the Baidu channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBaiduChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2456,10 +2459,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBaiduChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2468,8 +2471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2484,7 +2487,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteCampaign`.
     ///
     /// <p>Deletes a campaign from an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2529,10 +2532,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCampaignInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2541,8 +2544,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2554,8 +2557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the campaign.</p>
-        pub fn campaign_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(inp);
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The unique identifier for the campaign.</p>
@@ -2567,7 +2570,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEmailChannel`.
     ///
     /// <p>Disables the email channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEmailChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2612,10 +2615,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEmailChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2624,8 +2627,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2640,7 +2643,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEmailTemplate`.
     ///
     /// <p>Deletes a message template for messages that were sent through the email channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2685,10 +2688,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEmailTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2697,8 +2700,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -2709,12 +2712,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -2723,7 +2742,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEndpoint`.
     ///
     /// <p>Deletes an endpoint from an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2768,10 +2787,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2780,8 +2799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2793,8 +2812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
@@ -2806,7 +2825,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteEventStream`.
     ///
     /// <p>Deletes the event stream for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2851,10 +2870,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEventStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2863,8 +2882,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2879,7 +2898,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteGcmChannel`.
     ///
     /// <p>Disables the GCM channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGcmChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2924,10 +2943,10 @@ pub mod fluent_builders {
                 crate::input::DeleteGcmChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2936,8 +2955,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2952,7 +2971,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInAppTemplate`.
     ///
     /// <p>Deletes a message template for messages sent using the in-app message channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInAppTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2997,10 +3016,10 @@ pub mod fluent_builders {
                 crate::input::DeleteInAppTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3009,8 +3028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -3021,12 +3040,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -3035,7 +3070,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteJourney`.
     ///
     /// <p>Deletes a journey from an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteJourney<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3080,10 +3115,10 @@ pub mod fluent_builders {
                 crate::input::DeleteJourneyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3092,8 +3127,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3105,8 +3140,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey.</p>
-        pub fn journey_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_id(inp);
+        pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey.</p>
@@ -3118,7 +3153,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePushTemplate`.
     ///
     /// <p>Deletes a message template for messages that were sent through a push notification channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePushTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3163,10 +3198,10 @@ pub mod fluent_builders {
                 crate::input::DeletePushTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3175,8 +3210,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -3187,12 +3222,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -3201,7 +3252,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRecommenderConfiguration`.
     ///
     /// <p>Deletes an Amazon Pinpoint configuration for a recommender model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecommenderConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3246,10 +3297,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRecommenderConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3258,8 +3309,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-        pub fn recommender_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommender_id(inp);
+        pub fn recommender_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommender_id(input.into());
             self
         }
         /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
@@ -3274,7 +3325,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSegment`.
     ///
     /// <p>Deletes a segment from an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSegment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3319,10 +3370,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSegmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3331,8 +3382,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3344,8 +3395,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the segment.</p>
-        pub fn segment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.segment_id(inp);
+        pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment_id(input.into());
             self
         }
         /// <p>The unique identifier for the segment.</p>
@@ -3357,7 +3408,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSmsChannel`.
     ///
     /// <p>Disables the SMS channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSmsChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3402,10 +3453,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSmsChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3414,8 +3465,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3430,7 +3481,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteSmsTemplate`.
     ///
     /// <p>Deletes a message template for messages that were sent through the SMS channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSmsTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3475,10 +3526,10 @@ pub mod fluent_builders {
                 crate::input::DeleteSmsTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3487,8 +3538,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -3499,12 +3550,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -3513,7 +3580,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUserEndpoints`.
     ///
     /// <p>Deletes all the endpoints that are associated with a specific user ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3558,10 +3625,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUserEndpointsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3570,8 +3637,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3583,8 +3650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the user.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The unique identifier for the user.</p>
@@ -3596,7 +3663,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVoiceChannel`.
     ///
     /// <p>Disables the voice channel for an application and deletes any existing settings for the channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVoiceChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3641,10 +3708,10 @@ pub mod fluent_builders {
                 crate::input::DeleteVoiceChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3653,8 +3720,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3669,7 +3736,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVoiceTemplate`.
     ///
     /// <p>Deletes a message template for messages that were sent through the voice channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVoiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3714,10 +3781,10 @@ pub mod fluent_builders {
                 crate::input::DeleteVoiceTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3726,8 +3793,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -3738,12 +3805,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -3752,7 +3835,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetAdmChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the ADM channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAdmChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3797,10 +3880,10 @@ pub mod fluent_builders {
                 crate::input::GetAdmChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3809,8 +3892,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3825,7 +3908,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApnsChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the APNs channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApnsChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3870,10 +3953,10 @@ pub mod fluent_builders {
                 crate::input::GetApnsChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3882,8 +3965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3898,7 +3981,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApnsSandboxChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the APNs sandbox channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApnsSandboxChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3943,10 +4026,10 @@ pub mod fluent_builders {
                 crate::input::GetApnsSandboxChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3955,8 +4038,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3971,7 +4054,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApnsVoipChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the APNs VoIP channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApnsVoipChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4016,10 +4099,10 @@ pub mod fluent_builders {
                 crate::input::GetApnsVoipChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4028,8 +4111,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4044,7 +4127,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApnsVoipSandboxChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the APNs VoIP sandbox channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApnsVoipSandboxChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4089,10 +4172,10 @@ pub mod fluent_builders {
                 crate::input::GetApnsVoipSandboxChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4101,8 +4184,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4117,7 +4200,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApp`.
     ///
     /// <p>Retrieves information about an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4162,10 +4245,10 @@ pub mod fluent_builders {
                 crate::input::GetAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4174,8 +4257,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4190,7 +4273,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApplicationDateRangeKpi`.
     ///
     /// <p>Retrieves (queries) pre-aggregated data for a standard metric that applies to an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplicationDateRangeKpi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4235,10 +4318,10 @@ pub mod fluent_builders {
                 crate::input::GetApplicationDateRangeKpiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4247,8 +4330,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4260,8 +4343,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
@@ -4273,8 +4356,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-        pub fn kpi_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kpi_name(inp);
+        pub fn kpi_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kpi_name(input.into());
             self
         }
         /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
@@ -4282,19 +4365,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kpi_name(input);
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -4303,8 +4386,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
@@ -4319,7 +4402,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApplicationSettings`.
     ///
     /// <p>Retrieves information about the settings for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplicationSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4364,10 +4447,10 @@ pub mod fluent_builders {
                 crate::input::GetApplicationSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4376,8 +4459,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4392,7 +4475,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetApps`.
     ///
     /// <p>Retrieves information about all the applications that are associated with your Amazon Pinpoint account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4437,10 +4520,10 @@ pub mod fluent_builders {
                 crate::input::GetAppsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4449,8 +4532,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -4459,8 +4542,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4472,7 +4555,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBaiduChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the Baidu channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBaiduChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4517,10 +4600,10 @@ pub mod fluent_builders {
                 crate::input::GetBaiduChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4529,8 +4612,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4545,7 +4628,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCampaign`.
     ///
     /// <p>Retrieves information about the status, configuration, and other settings for a campaign.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4590,10 +4673,10 @@ pub mod fluent_builders {
                 crate::input::GetCampaignInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4602,8 +4685,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4615,8 +4698,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the campaign.</p>
-        pub fn campaign_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(inp);
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The unique identifier for the campaign.</p>
@@ -4628,7 +4711,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCampaignActivities`.
     ///
     /// <p>Retrieves information about all the activities for a campaign.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCampaignActivities<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4673,10 +4756,10 @@ pub mod fluent_builders {
                 crate::input::GetCampaignActivitiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4685,8 +4768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4698,8 +4781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the campaign.</p>
-        pub fn campaign_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(inp);
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The unique identifier for the campaign.</p>
@@ -4708,8 +4791,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -4718,8 +4801,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4731,7 +4814,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCampaignDateRangeKpi`.
     ///
     /// <p>Retrieves (queries) pre-aggregated data for a standard metric that applies to a campaign.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCampaignDateRangeKpi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4776,10 +4859,10 @@ pub mod fluent_builders {
                 crate::input::GetCampaignDateRangeKpiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4788,8 +4871,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4801,8 +4884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the campaign.</p>
-        pub fn campaign_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(inp);
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The unique identifier for the campaign.</p>
@@ -4811,8 +4894,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
@@ -4824,8 +4907,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-        pub fn kpi_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kpi_name(inp);
+        pub fn kpi_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kpi_name(input.into());
             self
         }
         /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
@@ -4833,19 +4916,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kpi_name(input);
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -4854,8 +4937,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
@@ -4870,7 +4953,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCampaigns`.
     ///
     /// <p>Retrieves information about the status, configuration, and other settings for all the campaigns that are associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCampaigns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4915,10 +4998,10 @@ pub mod fluent_builders {
                 crate::input::GetCampaignsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4927,8 +5010,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4940,8 +5023,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -4950,8 +5033,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4963,7 +5046,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCampaignVersion`.
     ///
     /// <p>Retrieves information about the status, configuration, and other settings for a specific version of a campaign.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCampaignVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5008,10 +5091,10 @@ pub mod fluent_builders {
                 crate::input::GetCampaignVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5020,8 +5103,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5033,8 +5116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the campaign.</p>
-        pub fn campaign_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(inp);
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The unique identifier for the campaign.</p>
@@ -5043,8 +5126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique version number (Version property) for the campaign version.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique version number (Version property) for the campaign version.</p>
@@ -5056,7 +5139,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCampaignVersions`.
     ///
     /// <p>Retrieves information about the status, configuration, and other settings for all versions of a campaign.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCampaignVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5101,10 +5184,10 @@ pub mod fluent_builders {
                 crate::input::GetCampaignVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5113,8 +5196,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5126,8 +5209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the campaign.</p>
-        pub fn campaign_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(inp);
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The unique identifier for the campaign.</p>
@@ -5136,8 +5219,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -5146,8 +5229,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -5159,7 +5242,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetChannels`.
     ///
     /// <p>Retrieves information about the history and status of each channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannels<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5204,10 +5287,10 @@ pub mod fluent_builders {
                 crate::input::GetChannelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5216,8 +5299,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5232,7 +5315,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEmailChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the email channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEmailChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5277,10 +5360,10 @@ pub mod fluent_builders {
                 crate::input::GetEmailChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5289,8 +5372,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5305,7 +5388,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEmailTemplate`.
     ///
     /// <p>Retrieves the content and settings of a message template for messages that are sent through the email channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5350,10 +5433,10 @@ pub mod fluent_builders {
                 crate::input::GetEmailTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5362,8 +5445,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -5374,12 +5457,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -5388,7 +5487,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEndpoint`.
     ///
     /// <p>Retrieves information about the settings and attributes of a specific endpoint for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5433,10 +5532,10 @@ pub mod fluent_builders {
                 crate::input::GetEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5445,8 +5544,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5458,8 +5557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
@@ -5471,7 +5570,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetEventStream`.
     ///
     /// <p>Retrieves information about the event stream settings for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEventStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5516,10 +5615,10 @@ pub mod fluent_builders {
                 crate::input::GetEventStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5528,8 +5627,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5544,7 +5643,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetExportJob`.
     ///
     /// <p>Retrieves information about the status and settings of a specific export job for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5589,10 +5688,10 @@ pub mod fluent_builders {
                 crate::input::GetExportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5601,8 +5700,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5614,8 +5713,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier for the job.</p>
@@ -5627,7 +5726,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetExportJobs`.
     ///
     /// <p>Retrieves information about the status and settings of all the export jobs for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5672,10 +5771,10 @@ pub mod fluent_builders {
                 crate::input::GetExportJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5684,8 +5783,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5697,8 +5796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -5707,8 +5806,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -5720,7 +5819,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGcmChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the GCM channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGcmChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5765,10 +5864,10 @@ pub mod fluent_builders {
                 crate::input::GetGcmChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5777,8 +5876,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5793,7 +5892,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImportJob`.
     ///
     /// <p>Retrieves information about the status and settings of a specific import job for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImportJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5838,10 +5937,10 @@ pub mod fluent_builders {
                 crate::input::GetImportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5850,8 +5949,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5863,8 +5962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier for the job.</p>
@@ -5876,7 +5975,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetImportJobs`.
     ///
     /// <p>Retrieves information about the status and settings of all the import jobs for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5921,10 +6020,10 @@ pub mod fluent_builders {
                 crate::input::GetImportJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5933,8 +6032,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5946,8 +6045,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -5956,8 +6055,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -5969,7 +6068,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInAppMessages`.
     ///
     /// <p>Retrieves the in-app messages targeted for the provided endpoint ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInAppMessages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6014,10 +6113,10 @@ pub mod fluent_builders {
                 crate::input::GetInAppMessagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6026,8 +6125,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -6039,8 +6138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
@@ -6052,7 +6151,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInAppTemplate`.
     ///
     /// <p>Retrieves the content and settings of a message template for messages sent through the in-app channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInAppTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6097,10 +6196,10 @@ pub mod fluent_builders {
                 crate::input::GetInAppTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6109,8 +6208,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -6121,12 +6220,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -6135,7 +6250,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJourney`.
     ///
     /// <p>Retrieves information about the status, configuration, and other settings for a journey.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJourney<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6180,10 +6295,10 @@ pub mod fluent_builders {
                 crate::input::GetJourneyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6192,8 +6307,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -6205,8 +6320,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey.</p>
-        pub fn journey_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_id(inp);
+        pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey.</p>
@@ -6218,7 +6333,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJourneyDateRangeKpi`.
     ///
     /// <p>Retrieves (queries) pre-aggregated data for a standard engagement metric that applies to a journey.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJourneyDateRangeKpi<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6263,10 +6378,10 @@ pub mod fluent_builders {
                 crate::input::GetJourneyDateRangeKpiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6275,8 +6390,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -6288,8 +6403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
-        pub fn end_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(inp);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
@@ -6301,8 +6416,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey.</p>
-        pub fn journey_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_id(inp);
+        pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey.</p>
@@ -6311,8 +6426,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-        pub fn kpi_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kpi_name(inp);
+        pub fn kpi_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kpi_name(input.into());
             self
         }
         /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
@@ -6320,19 +6435,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kpi_name(input);
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -6341,8 +6456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
-        pub fn start_time(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(inp);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
@@ -6357,7 +6472,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJourneyExecutionActivityMetrics`.
     ///
     /// <p>Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey activity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJourneyExecutionActivityMetrics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6404,10 +6519,10 @@ pub mod fluent_builders {
                 crate::input::GetJourneyExecutionActivityMetricsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6416,8 +6531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -6429,8 +6544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey activity.</p>
-        pub fn journey_activity_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_activity_id(inp);
+        pub fn journey_activity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_activity_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey activity.</p>
@@ -6442,8 +6557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey.</p>
-        pub fn journey_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_id(inp);
+        pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey.</p>
@@ -6451,19 +6566,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_journey_id(input);
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -6475,7 +6590,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJourneyExecutionMetrics`.
     ///
     /// <p>Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJourneyExecutionMetrics<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6520,10 +6635,10 @@ pub mod fluent_builders {
                 crate::input::GetJourneyExecutionMetricsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6532,8 +6647,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -6545,8 +6660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey.</p>
-        pub fn journey_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_id(inp);
+        pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey.</p>
@@ -6554,19 +6669,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_journey_id(input);
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -6578,7 +6693,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPushTemplate`.
     ///
     /// <p>Retrieves the content and settings of a message template for messages that are sent through a push notification channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPushTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6623,10 +6738,10 @@ pub mod fluent_builders {
                 crate::input::GetPushTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6635,8 +6750,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -6647,12 +6762,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -6661,7 +6792,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRecommenderConfiguration`.
     ///
     /// <p>Retrieves information about an Amazon Pinpoint configuration for a recommender model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecommenderConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6706,10 +6837,10 @@ pub mod fluent_builders {
                 crate::input::GetRecommenderConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6718,8 +6849,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-        pub fn recommender_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommender_id(inp);
+        pub fn recommender_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommender_id(input.into());
             self
         }
         /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
@@ -6734,7 +6865,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRecommenderConfigurations`.
     ///
     /// <p>Retrieves information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecommenderConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6779,10 +6910,10 @@ pub mod fluent_builders {
                 crate::input::GetRecommenderConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6791,8 +6922,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -6801,8 +6932,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -6814,7 +6945,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSegment`.
     ///
     /// <p>Retrieves information about the configuration, dimension, and other settings for a specific segment that's associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSegment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6859,10 +6990,10 @@ pub mod fluent_builders {
                 crate::input::GetSegmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6871,8 +7002,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -6884,8 +7015,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the segment.</p>
-        pub fn segment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.segment_id(inp);
+        pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment_id(input.into());
             self
         }
         /// <p>The unique identifier for the segment.</p>
@@ -6897,7 +7028,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSegmentExportJobs`.
     ///
     /// <p>Retrieves information about the status and settings of the export jobs for a segment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSegmentExportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6942,10 +7073,10 @@ pub mod fluent_builders {
                 crate::input::GetSegmentExportJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6954,8 +7085,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -6967,8 +7098,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -6977,8 +7108,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the segment.</p>
-        pub fn segment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.segment_id(inp);
+        pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment_id(input.into());
             self
         }
         /// <p>The unique identifier for the segment.</p>
@@ -6987,8 +7118,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -7000,7 +7131,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSegmentImportJobs`.
     ///
     /// <p>Retrieves information about the status and settings of the import jobs for a segment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSegmentImportJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7045,10 +7176,10 @@ pub mod fluent_builders {
                 crate::input::GetSegmentImportJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7057,8 +7188,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7070,8 +7201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -7080,8 +7211,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the segment.</p>
-        pub fn segment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.segment_id(inp);
+        pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment_id(input.into());
             self
         }
         /// <p>The unique identifier for the segment.</p>
@@ -7090,8 +7221,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -7103,7 +7234,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSegments`.
     ///
     /// <p>Retrieves information about the configuration, dimension, and other settings for all the segments that are associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSegments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7148,10 +7279,10 @@ pub mod fluent_builders {
                 crate::input::GetSegmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7160,8 +7291,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7173,8 +7304,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -7183,8 +7314,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -7196,7 +7327,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSegmentVersion`.
     ///
     /// <p>Retrieves information about the configuration, dimension, and other settings for a specific version of a segment that's associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSegmentVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7241,10 +7372,10 @@ pub mod fluent_builders {
                 crate::input::GetSegmentVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7253,8 +7384,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7266,8 +7397,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the segment.</p>
-        pub fn segment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.segment_id(inp);
+        pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment_id(input.into());
             self
         }
         /// <p>The unique identifier for the segment.</p>
@@ -7276,8 +7407,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique version number (Version property) for the campaign version.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique version number (Version property) for the campaign version.</p>
@@ -7289,7 +7420,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSegmentVersions`.
     ///
     /// <p>Retrieves information about the configuration, dimension, and other settings for all the versions of a specific segment that's associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSegmentVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7334,10 +7465,10 @@ pub mod fluent_builders {
                 crate::input::GetSegmentVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7346,8 +7477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7359,8 +7490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -7369,8 +7500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the segment.</p>
-        pub fn segment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.segment_id(inp);
+        pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment_id(input.into());
             self
         }
         /// <p>The unique identifier for the segment.</p>
@@ -7379,8 +7510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -7392,7 +7523,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSmsChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the SMS channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSmsChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7437,10 +7568,10 @@ pub mod fluent_builders {
                 crate::input::GetSmsChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7449,8 +7580,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7465,7 +7596,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSmsTemplate`.
     ///
     /// <p>Retrieves the content and settings of a message template for messages that are sent through the SMS channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSmsTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7510,10 +7641,10 @@ pub mod fluent_builders {
                 crate::input::GetSmsTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7522,8 +7653,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -7534,12 +7665,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -7548,7 +7695,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUserEndpoints`.
     ///
     /// <p>Retrieves information about all the endpoints that are associated with a specific user ID.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUserEndpoints<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7593,10 +7740,10 @@ pub mod fluent_builders {
                 crate::input::GetUserEndpointsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7605,8 +7752,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7618,8 +7765,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the user.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The unique identifier for the user.</p>
@@ -7631,7 +7778,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetVoiceChannel`.
     ///
     /// <p>Retrieves information about the status and settings of the voice channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7676,10 +7823,10 @@ pub mod fluent_builders {
                 crate::input::GetVoiceChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7688,8 +7835,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7704,7 +7851,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetVoiceTemplate`.
     ///
     /// <p>Retrieves the content and settings of a message template for messages that are sent through the voice channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7749,10 +7896,10 @@ pub mod fluent_builders {
                 crate::input::GetVoiceTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7761,8 +7908,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -7773,12 +7920,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -7787,7 +7950,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJourneys`.
     ///
     /// <p>Retrieves information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJourneys<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7832,10 +7995,10 @@ pub mod fluent_builders {
                 crate::input::ListJourneysInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7844,8 +8007,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7857,8 +8020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -7867,8 +8030,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(inp);
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -7880,7 +8043,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves all the tags (keys and values) that are associated with an application, campaign, message template, or segment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7925,10 +8088,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7937,8 +8100,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -7950,7 +8113,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTemplates`.
     ///
     /// <p>Retrieves information about all the message templates that are associated with your Amazon Pinpoint account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTemplates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7995,10 +8158,10 @@ pub mod fluent_builders {
                 crate::input::ListTemplatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8006,19 +8169,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -8027,8 +8190,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The substring to match in the names of the message templates to include in the results. If you specify this value, Amazon Pinpoint returns only those templates whose names begin with the value that you specify.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix(inp);
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix(input.into());
             self
         }
         /// <p>The substring to match in the names of the message templates to include in the results. If you specify this value, Amazon Pinpoint returns only those templates whose names begin with the value that you specify.</p>
@@ -8037,8 +8200,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
-        pub fn template_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_type(inp);
+        pub fn template_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_type(input.into());
             self
         }
         /// <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
@@ -8053,7 +8216,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTemplateVersions`.
     ///
     /// <p>Retrieves information about all the versions of a specific message template.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTemplateVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8098,10 +8261,10 @@ pub mod fluent_builders {
                 crate::input::ListTemplateVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8109,19 +8272,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+        /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(inp);
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -8130,8 +8293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -8143,8 +8306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
-        pub fn template_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_type(inp);
+        pub fn template_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_type(input.into());
             self
         }
         /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
@@ -8159,7 +8322,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PhoneNumberValidate`.
     ///
     /// <p>Retrieves information about a phone number.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PhoneNumberValidate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8204,10 +8367,10 @@ pub mod fluent_builders {
                 crate::input::PhoneNumberValidateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8216,8 +8379,11 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies a phone number to validate and retrieve information about.</p>
-        pub fn number_validate_request(mut self, inp: crate::model::NumberValidateRequest) -> Self {
-            self.inner = self.inner.number_validate_request(inp);
+        pub fn number_validate_request(
+            mut self,
+            input: crate::model::NumberValidateRequest,
+        ) -> Self {
+            self.inner = self.inner.number_validate_request(input);
             self
         }
         /// <p>Specifies a phone number to validate and retrieve information about.</p>
@@ -8232,7 +8398,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutEvents`.
     ///
     /// <p>Creates a new event to record for endpoints, or creates or updates endpoint data that existing events are associated with.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEvents<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8277,10 +8443,10 @@ pub mod fluent_builders {
                 crate::input::PutEventsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8289,8 +8455,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -8302,8 +8468,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a batch of events to process.</p>
-        pub fn events_request(mut self, inp: crate::model::EventsRequest) -> Self {
-            self.inner = self.inner.events_request(inp);
+        pub fn events_request(mut self, input: crate::model::EventsRequest) -> Self {
+            self.inner = self.inner.events_request(input);
             self
         }
         /// <p>Specifies a batch of events to process.</p>
@@ -8318,7 +8484,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutEventStream`.
     ///
     /// <p>Creates a new event stream for an application or updates the settings of an existing event stream for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEventStream<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8363,10 +8529,10 @@ pub mod fluent_builders {
                 crate::input::PutEventStreamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8375,8 +8541,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -8388,8 +8554,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
-        pub fn write_event_stream(mut self, inp: crate::model::WriteEventStream) -> Self {
-            self.inner = self.inner.write_event_stream(inp);
+        pub fn write_event_stream(mut self, input: crate::model::WriteEventStream) -> Self {
+            self.inner = self.inner.write_event_stream(input);
             self
         }
         /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
@@ -8404,7 +8570,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RemoveAttributes`.
     ///
     /// <p>Removes one or more attributes, of the same attribute type, from all the endpoints that are associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RemoveAttributes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8449,10 +8615,10 @@ pub mod fluent_builders {
                 crate::input::RemoveAttributesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8461,8 +8627,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -8473,12 +8639,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>The type of attribute or attributes to remove. Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li> <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li></ul>
-        pub fn attribute_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_type(inp);
+        /// <p>The type of attribute or attributes to remove. Valid values are:</p>
+        /// <ul>
+        /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>
+        /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
+        /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
+        /// </ul>
+        pub fn attribute_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_type(input.into());
             self
         }
-        /// <p>The type of attribute or attributes to remove. Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li> <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li></ul>
+        /// <p>The type of attribute or attributes to remove. Valid values are:</p>
+        /// <ul>
+        /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li>
+        /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li>
+        /// <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li>
+        /// </ul>
         pub fn set_attribute_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8489,9 +8665,9 @@ pub mod fluent_builders {
         /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
         pub fn update_attributes_request(
             mut self,
-            inp: crate::model::UpdateAttributesRequest,
+            input: crate::model::UpdateAttributesRequest,
         ) -> Self {
-            self.inner = self.inner.update_attributes_request(inp);
+            self.inner = self.inner.update_attributes_request(input);
             self
         }
         /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
@@ -8506,7 +8682,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendMessages`.
     ///
     /// <p>Creates and sends a direct message.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendMessages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8551,10 +8727,10 @@ pub mod fluent_builders {
                 crate::input::SendMessagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8563,8 +8739,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -8576,8 +8752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration and other settings for a message.</p>
-        pub fn message_request(mut self, inp: crate::model::MessageRequest) -> Self {
-            self.inner = self.inner.message_request(inp);
+        pub fn message_request(mut self, input: crate::model::MessageRequest) -> Self {
+            self.inner = self.inner.message_request(input);
             self
         }
         /// <p>Specifies the configuration and other settings for a message.</p>
@@ -8592,7 +8768,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendOTPMessage`.
     ///
     /// <p>Send an OTP message</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendOTPMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8637,10 +8813,10 @@ pub mod fluent_builders {
                 crate::input::SendOtpMessageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8649,8 +8825,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of your Amazon Pinpoint application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique ID of your Amazon Pinpoint application.</p>
@@ -8664,9 +8840,9 @@ pub mod fluent_builders {
         /// <p>Send OTP message request parameters.</p>
         pub fn send_otp_message_request_parameters(
             mut self,
-            inp: crate::model::SendOtpMessageRequestParameters,
+            input: crate::model::SendOtpMessageRequestParameters,
         ) -> Self {
-            self.inner = self.inner.send_otp_message_request_parameters(inp);
+            self.inner = self.inner.send_otp_message_request_parameters(input);
             self
         }
         /// <p>Send OTP message request parameters.</p>
@@ -8681,7 +8857,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SendUsersMessages`.
     ///
     /// <p>Creates and sends a message to a list of users.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendUsersMessages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8726,10 +8902,10 @@ pub mod fluent_builders {
                 crate::input::SendUsersMessagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8738,8 +8914,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -8753,9 +8929,9 @@ pub mod fluent_builders {
         /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
         pub fn send_users_message_request(
             mut self,
-            inp: crate::model::SendUsersMessageRequest,
+            input: crate::model::SendUsersMessageRequest,
         ) -> Self {
-            self.inner = self.inner.send_users_message_request(inp);
+            self.inner = self.inner.send_users_message_request(input);
             self
         }
         /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
@@ -8770,7 +8946,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds one or more tags (keys and values) to an application, campaign, message template, or segment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8815,10 +8991,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8827,8 +9003,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -8837,8 +9013,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
-        pub fn tags_model(mut self, inp: crate::model::TagsModel) -> Self {
-            self.inner = self.inner.tags_model(inp);
+        pub fn tags_model(mut self, input: crate::model::TagsModel) -> Self {
+            self.inner = self.inner.tags_model(input);
             self
         }
         /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
@@ -8853,7 +9029,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags (keys and values) from an application, campaign, message template, or segment.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8898,10 +9074,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8910,8 +9086,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -8924,8 +9100,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
@@ -8940,7 +9116,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateAdmChannel`.
     ///
     /// <p>Enables the ADM channel for an application or updates the status and settings of the ADM channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAdmChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8985,10 +9161,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAdmChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8997,8 +9173,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-        pub fn adm_channel_request(mut self, inp: crate::model::AdmChannelRequest) -> Self {
-            self.inner = self.inner.adm_channel_request(inp);
+        pub fn adm_channel_request(mut self, input: crate::model::AdmChannelRequest) -> Self {
+            self.inner = self.inner.adm_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
@@ -9010,8 +9186,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9026,7 +9202,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApnsChannel`.
     ///
     /// <p>Enables the APNs channel for an application or updates the status and settings of the APNs channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApnsChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9071,10 +9247,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApnsChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9083,8 +9259,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-        pub fn apns_channel_request(mut self, inp: crate::model::ApnsChannelRequest) -> Self {
-            self.inner = self.inner.apns_channel_request(inp);
+        pub fn apns_channel_request(mut self, input: crate::model::ApnsChannelRequest) -> Self {
+            self.inner = self.inner.apns_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
@@ -9096,8 +9272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9112,7 +9288,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApnsSandboxChannel`.
     ///
     /// <p>Enables the APNs sandbox channel for an application or updates the status and settings of the APNs sandbox channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApnsSandboxChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9157,10 +9333,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApnsSandboxChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9171,9 +9347,9 @@ pub mod fluent_builders {
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
         pub fn apns_sandbox_channel_request(
             mut self,
-            inp: crate::model::ApnsSandboxChannelRequest,
+            input: crate::model::ApnsSandboxChannelRequest,
         ) -> Self {
-            self.inner = self.inner.apns_sandbox_channel_request(inp);
+            self.inner = self.inner.apns_sandbox_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
@@ -9185,8 +9361,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9201,7 +9377,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApnsVoipChannel`.
     ///
     /// <p>Enables the APNs VoIP channel for an application or updates the status and settings of the APNs VoIP channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApnsVoipChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9246,10 +9422,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApnsVoipChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9260,9 +9436,9 @@ pub mod fluent_builders {
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
         pub fn apns_voip_channel_request(
             mut self,
-            inp: crate::model::ApnsVoipChannelRequest,
+            input: crate::model::ApnsVoipChannelRequest,
         ) -> Self {
-            self.inner = self.inner.apns_voip_channel_request(inp);
+            self.inner = self.inner.apns_voip_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
@@ -9274,8 +9450,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9290,7 +9466,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApnsVoipSandboxChannel`.
     ///
     /// <p>Enables the APNs VoIP sandbox channel for an application or updates the status and settings of the APNs VoIP sandbox channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApnsVoipSandboxChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9335,10 +9511,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApnsVoipSandboxChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9349,9 +9525,9 @@ pub mod fluent_builders {
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
         pub fn apns_voip_sandbox_channel_request(
             mut self,
-            inp: crate::model::ApnsVoipSandboxChannelRequest,
+            input: crate::model::ApnsVoipSandboxChannelRequest,
         ) -> Self {
-            self.inner = self.inner.apns_voip_sandbox_channel_request(inp);
+            self.inner = self.inner.apns_voip_sandbox_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
@@ -9363,8 +9539,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9379,7 +9555,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplicationSettings`.
     ///
     /// <p>Updates the settings for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplicationSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9424,10 +9600,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApplicationSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9436,8 +9612,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9451,9 +9627,9 @@ pub mod fluent_builders {
         /// <p>Specifies the default settings for an application.</p>
         pub fn write_application_settings_request(
             mut self,
-            inp: crate::model::WriteApplicationSettingsRequest,
+            input: crate::model::WriteApplicationSettingsRequest,
         ) -> Self {
-            self.inner = self.inner.write_application_settings_request(inp);
+            self.inner = self.inner.write_application_settings_request(input);
             self
         }
         /// <p>Specifies the default settings for an application.</p>
@@ -9468,7 +9644,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBaiduChannel`.
     ///
     /// <p>Enables the Baidu channel for an application or updates the status and settings of the Baidu channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBaiduChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9513,10 +9689,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBaiduChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9525,8 +9701,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9538,8 +9714,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-        pub fn baidu_channel_request(mut self, inp: crate::model::BaiduChannelRequest) -> Self {
-            self.inner = self.inner.baidu_channel_request(inp);
+        pub fn baidu_channel_request(mut self, input: crate::model::BaiduChannelRequest) -> Self {
+            self.inner = self.inner.baidu_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
@@ -9554,7 +9730,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateCampaign`.
     ///
     /// <p>Updates the configuration and other settings for a campaign.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCampaign<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9599,10 +9775,10 @@ pub mod fluent_builders {
                 crate::input::UpdateCampaignInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9611,8 +9787,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9624,8 +9800,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the campaign.</p>
-        pub fn campaign_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(inp);
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The unique identifier for the campaign.</p>
@@ -9634,8 +9810,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration and other settings for a campaign.</p>
-        pub fn write_campaign_request(mut self, inp: crate::model::WriteCampaignRequest) -> Self {
-            self.inner = self.inner.write_campaign_request(inp);
+        pub fn write_campaign_request(mut self, input: crate::model::WriteCampaignRequest) -> Self {
+            self.inner = self.inner.write_campaign_request(input);
             self
         }
         /// <p>Specifies the configuration and other settings for a campaign.</p>
@@ -9650,7 +9826,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEmailChannel`.
     ///
     /// <p>Enables the email channel for an application or updates the status and settings of the email channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEmailChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9695,10 +9871,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEmailChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9707,8 +9883,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9720,8 +9896,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the status and settings of the email channel for an application.</p>
-        pub fn email_channel_request(mut self, inp: crate::model::EmailChannelRequest) -> Self {
-            self.inner = self.inner.email_channel_request(inp);
+        pub fn email_channel_request(mut self, input: crate::model::EmailChannelRequest) -> Self {
+            self.inner = self.inner.email_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the email channel for an application.</p>
@@ -9736,7 +9912,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEmailTemplate`.
     ///
     /// <p>Updates an existing message template for messages that are sent through the email channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEmailTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9781,10 +9957,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEmailTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9792,19 +9968,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-        pub fn create_new_version(mut self, inp: bool) -> Self {
-            self.inner = self.inner.create_new_version(inp);
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        pub fn create_new_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_new_version(input);
             self
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn set_create_new_version(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_create_new_version(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-        pub fn email_template_request(mut self, inp: crate::model::EmailTemplateRequest) -> Self {
-            self.inner = self.inner.email_template_request(inp);
+        pub fn email_template_request(mut self, input: crate::model::EmailTemplateRequest) -> Self {
+            self.inner = self.inner.email_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
@@ -9816,8 +9994,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -9828,12 +10006,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -9842,7 +10036,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEndpoint`.
     ///
     /// <p>Creates a new endpoint for an application or updates the settings and attributes of an existing endpoint for an application. You can also use this operation to define custom attributes for an endpoint. If an update includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the new values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEndpoint<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9887,10 +10081,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9899,8 +10093,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9912,8 +10106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
-        pub fn endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(inp);
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
@@ -9922,8 +10116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the channel type and other settings for an endpoint.</p>
-        pub fn endpoint_request(mut self, inp: crate::model::EndpointRequest) -> Self {
-            self.inner = self.inner.endpoint_request(inp);
+        pub fn endpoint_request(mut self, input: crate::model::EndpointRequest) -> Self {
+            self.inner = self.inner.endpoint_request(input);
             self
         }
         /// <p>Specifies the channel type and other settings for an endpoint.</p>
@@ -9938,7 +10132,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateEndpointsBatch`.
     ///
     /// <p>Creates a new batch of endpoints for an application or updates the settings and attributes of a batch of existing endpoints for an application. You can also use this operation to define custom attributes for a batch of endpoints. If an update includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the new values.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEndpointsBatch<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9983,10 +10177,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEndpointsBatchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9995,8 +10189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -10008,8 +10202,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
-        pub fn endpoint_batch_request(mut self, inp: crate::model::EndpointBatchRequest) -> Self {
-            self.inner = self.inner.endpoint_batch_request(inp);
+        pub fn endpoint_batch_request(mut self, input: crate::model::EndpointBatchRequest) -> Self {
+            self.inner = self.inner.endpoint_batch_request(input);
             self
         }
         /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
@@ -10024,7 +10218,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateGcmChannel`.
     ///
     /// <p>Enables the GCM channel for an application or updates the status and settings of the GCM channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGcmChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10069,10 +10263,10 @@ pub mod fluent_builders {
                 crate::input::UpdateGcmChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10081,8 +10275,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -10094,8 +10288,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
-        pub fn gcm_channel_request(mut self, inp: crate::model::GcmChannelRequest) -> Self {
-            self.inner = self.inner.gcm_channel_request(inp);
+        pub fn gcm_channel_request(mut self, input: crate::model::GcmChannelRequest) -> Self {
+            self.inner = self.inner.gcm_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
@@ -10110,7 +10304,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInAppTemplate`.
     ///
     /// <p>Updates an existing message template for messages sent through the in-app message channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInAppTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10155,10 +10349,10 @@ pub mod fluent_builders {
                 crate::input::UpdateInAppTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10166,19 +10360,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-        pub fn create_new_version(mut self, inp: bool) -> Self {
-            self.inner = self.inner.create_new_version(inp);
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        pub fn create_new_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_new_version(input);
             self
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn set_create_new_version(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_create_new_version(input);
             self
         }
         /// <p>InApp Template Request.</p>
-        pub fn in_app_template_request(mut self, inp: crate::model::InAppTemplateRequest) -> Self {
-            self.inner = self.inner.in_app_template_request(inp);
+        pub fn in_app_template_request(
+            mut self,
+            input: crate::model::InAppTemplateRequest,
+        ) -> Self {
+            self.inner = self.inner.in_app_template_request(input);
             self
         }
         /// <p>InApp Template Request.</p>
@@ -10190,8 +10389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -10202,12 +10401,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -10216,7 +10431,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateJourney`.
     ///
     /// <p>Updates the configuration and other settings for a journey.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateJourney<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10261,10 +10476,10 @@ pub mod fluent_builders {
                 crate::input::UpdateJourneyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10273,8 +10488,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -10286,8 +10501,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey.</p>
-        pub fn journey_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_id(inp);
+        pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey.</p>
@@ -10296,8 +10511,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration and other settings for a journey.</p>
-        pub fn write_journey_request(mut self, inp: crate::model::WriteJourneyRequest) -> Self {
-            self.inner = self.inner.write_journey_request(inp);
+        pub fn write_journey_request(mut self, input: crate::model::WriteJourneyRequest) -> Self {
+            self.inner = self.inner.write_journey_request(input);
             self
         }
         /// <p>Specifies the configuration and other settings for a journey.</p>
@@ -10312,7 +10527,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateJourneyState`.
     ///
     /// <p>Cancels (stops) an active journey.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateJourneyState<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10357,10 +10572,10 @@ pub mod fluent_builders {
                 crate::input::UpdateJourneyStateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10369,8 +10584,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -10382,8 +10597,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey.</p>
-        pub fn journey_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_id(inp);
+        pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey.</p>
@@ -10392,8 +10607,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Changes the status of a journey.</p>
-        pub fn journey_state_request(mut self, inp: crate::model::JourneyStateRequest) -> Self {
-            self.inner = self.inner.journey_state_request(inp);
+        pub fn journey_state_request(mut self, input: crate::model::JourneyStateRequest) -> Self {
+            self.inner = self.inner.journey_state_request(input);
             self
         }
         /// <p>Changes the status of a journey.</p>
@@ -10408,7 +10623,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePushTemplate`.
     ///
     /// <p>Updates an existing message template for messages that are sent through a push notification channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePushTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10453,10 +10668,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePushTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10464,12 +10679,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-        pub fn create_new_version(mut self, inp: bool) -> Self {
-            self.inner = self.inner.create_new_version(inp);
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        pub fn create_new_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_new_version(input);
             self
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn set_create_new_version(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_create_new_version(input);
             self
@@ -10477,9 +10694,9 @@ pub mod fluent_builders {
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
         pub fn push_notification_template_request(
             mut self,
-            inp: crate::model::PushNotificationTemplateRequest,
+            input: crate::model::PushNotificationTemplateRequest,
         ) -> Self {
-            self.inner = self.inner.push_notification_template_request(inp);
+            self.inner = self.inner.push_notification_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
@@ -10491,8 +10708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -10503,12 +10720,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -10517,7 +10750,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRecommenderConfiguration`.
     ///
     /// <p>Updates an Amazon Pinpoint configuration for a recommender model.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRecommenderConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10562,10 +10795,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRecommenderConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10574,8 +10807,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-        pub fn recommender_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommender_id(inp);
+        pub fn recommender_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommender_id(input.into());
             self
         }
         /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
@@ -10589,9 +10822,9 @@ pub mod fluent_builders {
         /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
         pub fn update_recommender_configuration(
             mut self,
-            inp: crate::model::UpdateRecommenderConfigurationShape,
+            input: crate::model::UpdateRecommenderConfigurationShape,
         ) -> Self {
-            self.inner = self.inner.update_recommender_configuration(inp);
+            self.inner = self.inner.update_recommender_configuration(input);
             self
         }
         /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
@@ -10606,7 +10839,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSegment`.
     ///
     /// <p>Creates a new segment for an application or updates the configuration, dimension, and other settings for an existing segment that's associated with an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSegment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10651,10 +10884,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSegmentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10663,8 +10896,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -10676,8 +10909,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the segment.</p>
-        pub fn segment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.segment_id(inp);
+        pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment_id(input.into());
             self
         }
         /// <p>The unique identifier for the segment.</p>
@@ -10686,8 +10919,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
-        pub fn write_segment_request(mut self, inp: crate::model::WriteSegmentRequest) -> Self {
-            self.inner = self.inner.write_segment_request(inp);
+        pub fn write_segment_request(mut self, input: crate::model::WriteSegmentRequest) -> Self {
+            self.inner = self.inner.write_segment_request(input);
             self
         }
         /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
@@ -10702,7 +10935,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSmsChannel`.
     ///
     /// <p>Enables the SMS channel for an application or updates the status and settings of the SMS channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSmsChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10747,10 +10980,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSmsChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10759,8 +10992,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -10772,8 +11005,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the status and settings of the SMS channel for an application.</p>
-        pub fn sms_channel_request(mut self, inp: crate::model::SmsChannelRequest) -> Self {
-            self.inner = self.inner.sms_channel_request(inp);
+        pub fn sms_channel_request(mut self, input: crate::model::SmsChannelRequest) -> Self {
+            self.inner = self.inner.sms_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the SMS channel for an application.</p>
@@ -10788,7 +11021,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateSmsTemplate`.
     ///
     /// <p>Updates an existing message template for messages that are sent through the SMS channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSmsTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10833,10 +11066,10 @@ pub mod fluent_builders {
                 crate::input::UpdateSmsTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10844,19 +11077,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-        pub fn create_new_version(mut self, inp: bool) -> Self {
-            self.inner = self.inner.create_new_version(inp);
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        pub fn create_new_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_new_version(input);
             self
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn set_create_new_version(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_create_new_version(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-        pub fn sms_template_request(mut self, inp: crate::model::SmsTemplateRequest) -> Self {
-            self.inner = self.inner.sms_template_request(inp);
+        pub fn sms_template_request(mut self, input: crate::model::SmsTemplateRequest) -> Self {
+            self.inner = self.inner.sms_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
@@ -10868,8 +11103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -10880,12 +11115,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -10894,7 +11145,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTemplateActiveVersion`.
     ///
     /// <p>Changes the status of a specific version of a message template to <i>active</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTemplateActiveVersion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10939,10 +11190,10 @@ pub mod fluent_builders {
                 crate::input::UpdateTemplateActiveVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10953,9 +11204,9 @@ pub mod fluent_builders {
         /// <p>Specifies which version of a message template to use as the active version of the template.</p>
         pub fn template_active_version_request(
             mut self,
-            inp: crate::model::TemplateActiveVersionRequest,
+            input: crate::model::TemplateActiveVersionRequest,
         ) -> Self {
-            self.inner = self.inner.template_active_version_request(inp);
+            self.inner = self.inner.template_active_version_request(input);
             self
         }
         /// <p>Specifies which version of a message template to use as the active version of the template.</p>
@@ -10967,8 +11218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -10980,8 +11231,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
-        pub fn template_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_type(inp);
+        pub fn template_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_type(input.into());
             self
         }
         /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
@@ -10996,7 +11247,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVoiceChannel`.
     ///
     /// <p>Enables the voice channel for an application or updates the status and settings of the voice channel for an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVoiceChannel<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11041,10 +11292,10 @@ pub mod fluent_builders {
                 crate::input::UpdateVoiceChannelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11053,8 +11304,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -11066,8 +11317,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the status and settings of the voice channel for an application.</p>
-        pub fn voice_channel_request(mut self, inp: crate::model::VoiceChannelRequest) -> Self {
-            self.inner = self.inner.voice_channel_request(inp);
+        pub fn voice_channel_request(mut self, input: crate::model::VoiceChannelRequest) -> Self {
+            self.inner = self.inner.voice_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the voice channel for an application.</p>
@@ -11082,7 +11333,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVoiceTemplate`.
     ///
     /// <p>Updates an existing message template for messages that are sent through the voice channel.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVoiceTemplate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11127,10 +11378,10 @@ pub mod fluent_builders {
                 crate::input::UpdateVoiceTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11138,19 +11389,21 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-        pub fn create_new_version(mut self, inp: bool) -> Self {
-            self.inner = self.inner.create_new_version(inp);
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        pub fn create_new_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_new_version(input);
             self
         }
-        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
+        /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
         pub fn set_create_new_version(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_create_new_version(input);
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(inp);
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -11161,19 +11414,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_template_name(input);
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(inp);
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
+        /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the
+        /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+        /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
+        /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
+        /// <ul>
+        /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
+        /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+        /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-        pub fn voice_template_request(mut self, inp: crate::model::VoiceTemplateRequest) -> Self {
-            self.inner = self.inner.voice_template_request(inp);
+        pub fn voice_template_request(mut self, input: crate::model::VoiceTemplateRequest) -> Self {
+            self.inner = self.inner.voice_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
@@ -11188,7 +11457,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `VerifyOTPMessage`.
     ///
     /// <p>Verify an OTP</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct VerifyOTPMessage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -11233,10 +11502,10 @@ pub mod fluent_builders {
                 crate::input::VerifyOtpMessageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11245,8 +11514,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of your Amazon Pinpoint application.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique ID of your Amazon Pinpoint application.</p>
@@ -11260,9 +11529,9 @@ pub mod fluent_builders {
         /// <p>Verify OTP message request.</p>
         pub fn verify_otp_message_request_parameters(
             mut self,
-            inp: crate::model::VerifyOtpMessageRequestParameters,
+            input: crate::model::VerifyOtpMessageRequestParameters,
         ) -> Self {
-            self.inner = self.inner.verify_otp_message_request_parameters(inp);
+            self.inner = self.inner.verify_otp_message_request_parameters(input);
             self
         }
         /// <p>Verify OTP message request.</p>
@@ -11275,6 +11544,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

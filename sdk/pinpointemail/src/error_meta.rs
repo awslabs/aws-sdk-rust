@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The message can't be sent because the account's ability to send email has been
-    /// permanently restricted.</p>
+    /// <p>The message can't be sent because the account's ability to send email has been permanently restricted.</p>
     AccountSuspendedException(crate::error::AccountSuspendedException),
     /// <p>The resource specified in your request already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
@@ -20,8 +19,7 @@ pub enum Error {
     MessageRejected(crate::error::MessageRejected),
     /// <p>The resource you attempted to access doesn't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The message can't be sent because the account's ability to send email is currently
-    /// paused.</p>
+    /// <p>The message can't be sent because the account's ability to send email is currently paused.</p>
     SendingPausedException(crate::error::SendingPausedException),
     /// <p>Too many requests have been made to the operation.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),

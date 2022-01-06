@@ -10,14 +10,12 @@ pub mod accept_certificate_transfer_input {
         pub(crate) set_as_active: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -53,7 +51,7 @@ pub mod accept_certificate_transfer_input {
 pub type AcceptCertificateTransferInputOperationOutputAlias =
     crate::operation::AcceptCertificateTransfer;
 #[doc(hidden)]
-pub type AcceptCertificateTransferInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptCertificateTransferInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptCertificateTransferInput {
     /// Consumes the builder and constructs an Operation<[`AcceptCertificateTransfer`](crate::operation::AcceptCertificateTransfer)>
     #[allow(clippy::let_and_return)]
@@ -64,7 +62,7 @@ impl AcceptCertificateTransferInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptCertificateTransfer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -172,7 +170,7 @@ impl AcceptCertificateTransferInput {
             "AcceptCertificateTransfer",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -199,16 +197,14 @@ pub mod add_thing_to_billing_group_input {
         pub(crate) thing_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the billing group.</p>
-        /// <note>
+        /// <p>The name of the billing group.</p> <note>
         /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
         /// </note>
         pub fn billing_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.billing_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the billing group.</p>
-        /// <note>
+        /// <p>The name of the billing group.</p> <note>
         /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
         /// </note>
         pub fn set_billing_group_name(
@@ -270,7 +266,7 @@ pub mod add_thing_to_billing_group_input {
 #[doc(hidden)]
 pub type AddThingToBillingGroupInputOperationOutputAlias = crate::operation::AddThingToBillingGroup;
 #[doc(hidden)]
-pub type AddThingToBillingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddThingToBillingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddThingToBillingGroupInput {
     /// Consumes the builder and constructs an Operation<[`AddThingToBillingGroup`](crate::operation::AddThingToBillingGroup)>
     #[allow(clippy::let_and_return)]
@@ -281,7 +277,7 @@ impl AddThingToBillingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddThingToBillingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -364,7 +360,7 @@ impl AddThingToBillingGroupInput {
             "AddThingToBillingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -446,18 +442,12 @@ pub mod add_thing_to_thing_group_input {
             self.thing_arn = input;
             self
         }
-        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-        /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-        /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-        /// dynamic group.</p>
+        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
         pub fn override_dynamic_groups(mut self, input: bool) -> Self {
             self.override_dynamic_groups = Some(input);
             self
         }
-        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-        /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-        /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-        /// dynamic group.</p>
+        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
         pub fn set_override_dynamic_groups(mut self, input: std::option::Option<bool>) -> Self {
             self.override_dynamic_groups = input;
             self
@@ -482,7 +472,7 @@ pub mod add_thing_to_thing_group_input {
 #[doc(hidden)]
 pub type AddThingToThingGroupInputOperationOutputAlias = crate::operation::AddThingToThingGroup;
 #[doc(hidden)]
-pub type AddThingToThingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddThingToThingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddThingToThingGroupInput {
     /// Consumes the builder and constructs an Operation<[`AddThingToThingGroup`](crate::operation::AddThingToThingGroup)>
     #[allow(clippy::let_and_return)]
@@ -493,7 +483,7 @@ impl AddThingToThingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddThingToThingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -576,7 +566,7 @@ impl AddThingToThingGroupInput {
             "AddThingToThingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -651,12 +641,8 @@ pub mod associate_targets_with_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -664,12 +650,8 @@ pub mod associate_targets_with_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -696,7 +678,7 @@ pub mod associate_targets_with_job_input {
 pub type AssociateTargetsWithJobInputOperationOutputAlias =
     crate::operation::AssociateTargetsWithJob;
 #[doc(hidden)]
-pub type AssociateTargetsWithJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateTargetsWithJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateTargetsWithJobInput {
     /// Consumes the builder and constructs an Operation<[`AssociateTargetsWithJob`](crate::operation::AssociateTargetsWithJob)>
     #[allow(clippy::let_and_return)]
@@ -707,7 +689,7 @@ impl AssociateTargetsWithJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateTargetsWithJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -816,7 +798,7 @@ impl AssociateTargetsWithJobInput {
             "AssociateTargetsWithJob",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -886,7 +868,7 @@ pub mod attach_policy_input {
 #[doc(hidden)]
 pub type AttachPolicyInputOperationOutputAlias = crate::operation::AttachPolicy;
 #[doc(hidden)]
-pub type AttachPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AttachPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachPolicyInput {
     /// Consumes the builder and constructs an Operation<[`AttachPolicy`](crate::operation::AttachPolicy)>
     #[allow(clippy::let_and_return)]
@@ -897,7 +879,7 @@ impl AttachPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AttachPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -996,7 +978,7 @@ impl AttachPolicyInput {
             "AttachPolicy",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1039,14 +1021,12 @@ pub mod attach_principal_policy_input {
             self.policy_name = input;
             self
         }
-        /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate
-        /// operation) or an Amazon Cognito ID.</p>
+        /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate
-        /// operation) or an Amazon Cognito ID.</p>
+        /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -1068,7 +1048,7 @@ pub mod attach_principal_policy_input {
 #[doc(hidden)]
 pub type AttachPrincipalPolicyInputOperationOutputAlias = crate::operation::AttachPrincipalPolicy;
 #[doc(hidden)]
-pub type AttachPrincipalPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AttachPrincipalPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachPrincipalPolicyInput {
     /// Consumes the builder and constructs an Operation<[`AttachPrincipalPolicy`](crate::operation::AttachPrincipalPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1079,7 +1059,7 @@ impl AttachPrincipalPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AttachPrincipalPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1197,7 +1177,7 @@ impl AttachPrincipalPolicyInput {
             "AttachPrincipalPolicy",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1268,7 +1248,7 @@ pub mod attach_security_profile_input {
 #[doc(hidden)]
 pub type AttachSecurityProfileInputOperationOutputAlias = crate::operation::AttachSecurityProfile;
 #[doc(hidden)]
-pub type AttachSecurityProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AttachSecurityProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachSecurityProfileInput {
     /// Consumes the builder and constructs an Operation<[`AttachSecurityProfile`](crate::operation::AttachSecurityProfile)>
     #[allow(clippy::let_and_return)]
@@ -1279,7 +1259,7 @@ impl AttachSecurityProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AttachSecurityProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1387,7 +1367,7 @@ impl AttachSecurityProfileInput {
             "AttachSecurityProfile",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1422,14 +1402,12 @@ pub mod attach_thing_principal_input {
             self.thing_name = input;
             self
         }
-        /// <p>The principal, which can be a certificate ARN (as returned from the
-        /// CreateCertificate operation) or an Amazon Cognito ID.</p>
+        /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The principal, which can be a certificate ARN (as returned from the
-        /// CreateCertificate operation) or an Amazon Cognito ID.</p>
+        /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -1451,7 +1429,7 @@ pub mod attach_thing_principal_input {
 #[doc(hidden)]
 pub type AttachThingPrincipalInputOperationOutputAlias = crate::operation::AttachThingPrincipal;
 #[doc(hidden)]
-pub type AttachThingPrincipalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AttachThingPrincipalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AttachThingPrincipalInput {
     /// Consumes the builder and constructs an Operation<[`AttachThingPrincipal`](crate::operation::AttachThingPrincipal)>
     #[allow(clippy::let_and_return)]
@@ -1462,7 +1440,7 @@ impl AttachThingPrincipalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AttachThingPrincipal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1580,7 +1558,7 @@ impl AttachThingPrincipalInput {
             "AttachThingPrincipal",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1631,7 +1609,8 @@ pub mod cancel_audit_mitigation_actions_task_input {
 pub type CancelAuditMitigationActionsTaskInputOperationOutputAlias =
     crate::operation::CancelAuditMitigationActionsTask;
 #[doc(hidden)]
-pub type CancelAuditMitigationActionsTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelAuditMitigationActionsTaskInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CancelAuditMitigationActionsTaskInput {
     /// Consumes the builder and constructs an Operation<[`CancelAuditMitigationActionsTask`](crate::operation::CancelAuditMitigationActionsTask)>
     #[allow(clippy::let_and_return)]
@@ -1642,7 +1621,7 @@ impl CancelAuditMitigationActionsTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelAuditMitigationActionsTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1736,7 +1715,7 @@ impl CancelAuditMitigationActionsTaskInput {
             "CancelAuditMitigationActionsTask",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1760,14 +1739,12 @@ pub mod cancel_audit_task_input {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the audit you want to cancel. You can only cancel an
-        /// audit that is "IN_PROGRESS".</p>
+        /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>The ID of the audit you want to cancel. You can only cancel an
-        /// audit that is "IN_PROGRESS".</p>
+        /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -1788,7 +1765,7 @@ pub mod cancel_audit_task_input {
 #[doc(hidden)]
 pub type CancelAuditTaskInputOperationOutputAlias = crate::operation::CancelAuditTask;
 #[doc(hidden)]
-pub type CancelAuditTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelAuditTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelAuditTaskInput {
     /// Consumes the builder and constructs an Operation<[`CancelAuditTask`](crate::operation::CancelAuditTask)>
     #[allow(clippy::let_and_return)]
@@ -1799,7 +1776,7 @@ impl CancelAuditTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelAuditTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1889,7 +1866,7 @@ impl CancelAuditTaskInput {
             "CancelAuditTask",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1913,14 +1890,12 @@ pub mod cancel_certificate_transfer_input {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1945,7 +1920,7 @@ pub mod cancel_certificate_transfer_input {
 pub type CancelCertificateTransferInputOperationOutputAlias =
     crate::operation::CancelCertificateTransfer;
 #[doc(hidden)]
-pub type CancelCertificateTransferInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelCertificateTransferInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelCertificateTransferInput {
     /// Consumes the builder and constructs an Operation<[`CancelCertificateTransfer`](crate::operation::CancelCertificateTransfer)>
     #[allow(clippy::let_and_return)]
@@ -1956,7 +1931,7 @@ impl CancelCertificateTransferInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelCertificateTransfer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2050,7 +2025,7 @@ impl CancelCertificateTransferInput {
             "CancelCertificateTransfer",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2074,16 +2049,12 @@ pub mod cancel_detect_mitigation_actions_task_input {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -2105,7 +2076,8 @@ pub mod cancel_detect_mitigation_actions_task_input {
 pub type CancelDetectMitigationActionsTaskInputOperationOutputAlias =
     crate::operation::CancelDetectMitigationActionsTask;
 #[doc(hidden)]
-pub type CancelDetectMitigationActionsTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelDetectMitigationActionsTaskInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CancelDetectMitigationActionsTaskInput {
     /// Consumes the builder and constructs an Operation<[`CancelDetectMitigationActionsTask`](crate::operation::CancelDetectMitigationActionsTask)>
     #[allow(clippy::let_and_return)]
@@ -2116,7 +2088,7 @@ impl CancelDetectMitigationActionsTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelDetectMitigationActionsTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2210,7 +2182,7 @@ impl CancelDetectMitigationActionsTaskInput {
             "CancelDetectMitigationActionsTask",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2267,22 +2239,14 @@ pub mod cancel_job_input {
             self.comment = input;
             self
         }
-        /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED"
-        /// are canceled, otherwise only job executions with status "QUEUED" are canceled. The default
-        /// is <code>false</code>.</p>
-        /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing
-        /// the job to be unable to update the job execution status.  Use caution and ensure that each
-        /// device executing a job which is canceled is able to recover to a valid state.</p>
+        /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
+        /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED"
-        /// are canceled, otherwise only job executions with status "QUEUED" are canceled. The default
-        /// is <code>false</code>.</p>
-        /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing
-        /// the job to be unable to update the job execution status.  Use caution and ensure that each
-        /// device executing a job which is canceled is able to recover to a valid state.</p>
+        /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
+        /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -2304,7 +2268,7 @@ pub mod cancel_job_input {
 #[doc(hidden)]
 pub type CancelJobInputOperationOutputAlias = crate::operation::CancelJob;
 #[doc(hidden)]
-pub type CancelJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelJob`](crate::operation::CancelJob)>
     #[allow(clippy::let_and_return)]
@@ -2315,7 +2279,7 @@ impl CancelJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2422,7 +2386,7 @@ impl CancelJobInput {
                     "CancelJob",
                     "iot",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2480,46 +2444,24 @@ pub mod cancel_job_execution_input {
             self.thing_name = input;
             self
         }
-        /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status
-        /// IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status
-        /// QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set
-        /// <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code>
-        /// will be thrown. The default is <code>false</code>.</p>
-        /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable
-        /// to update the job execution status.  Use caution and ensure that the device is able to
-        /// recover to a valid state.</p>
+        /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>
+        /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status
-        /// IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status
-        /// QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set
-        /// <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code>
-        /// will be thrown. The default is <code>false</code>.</p>
-        /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable
-        /// to update the job execution status.  Use caution and ensure that the device is able to
-        /// recover to a valid state.</p>
+        /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>
+        /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
         }
-        /// <p>(Optional) The expected current version of the job execution. Each time you update the job
-        /// execution, its version is incremented. If the version of the job execution stored in Jobs does
-        /// not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that
-        /// contains the current job execution status data is returned. (This makes it unnecessary to
-        /// perform a separate DescribeJobExecution request in order to obtain the job execution status
-        /// data.)</p>
+        /// <p>(Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>(Optional) The expected current version of the job execution. Each time you update the job
-        /// execution, its version is incremented. If the version of the job execution stored in Jobs does
-        /// not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that
-        /// contains the current job execution status data is returned. (This makes it unnecessary to
-        /// perform a separate DescribeJobExecution request in order to obtain the job execution status
-        /// data.)</p>
+        /// <p>(Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
@@ -2528,8 +2470,7 @@ pub mod cancel_job_execution_input {
         ///
         /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
         ///
-        /// <p>A collection of name/value pairs that describe the status of the job execution. If not
-        /// specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
+        /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
         pub fn status_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -2540,8 +2481,7 @@ pub mod cancel_job_execution_input {
             self.status_details = Some(hash_map);
             self
         }
-        /// <p>A collection of name/value pairs that describe the status of the job execution. If not
-        /// specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
+        /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
         pub fn set_status_details(
             mut self,
             input: std::option::Option<
@@ -2571,7 +2511,7 @@ pub mod cancel_job_execution_input {
 #[doc(hidden)]
 pub type CancelJobExecutionInputOperationOutputAlias = crate::operation::CancelJobExecution;
 #[doc(hidden)]
-pub type CancelJobExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelJobExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`CancelJobExecution`](crate::operation::CancelJobExecution)>
     #[allow(clippy::let_and_return)]
@@ -2582,7 +2522,7 @@ impl CancelJobExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelJobExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2712,7 +2652,7 @@ impl CancelJobExecutionInput {
             "CancelJobExecution",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2756,7 +2696,7 @@ pub mod clear_default_authorizer_input {
 #[doc(hidden)]
 pub type ClearDefaultAuthorizerInputOperationOutputAlias = crate::operation::ClearDefaultAuthorizer;
 #[doc(hidden)]
-pub type ClearDefaultAuthorizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ClearDefaultAuthorizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ClearDefaultAuthorizerInput {
     /// Consumes the builder and constructs an Operation<[`ClearDefaultAuthorizer`](crate::operation::ClearDefaultAuthorizer)>
     #[allow(clippy::let_and_return)]
@@ -2767,7 +2707,7 @@ impl ClearDefaultAuthorizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ClearDefaultAuthorizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2841,7 +2781,7 @@ impl ClearDefaultAuthorizerInput {
             "ClearDefaultAuthorizer",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2895,7 +2835,7 @@ pub mod confirm_topic_rule_destination_input {
 pub type ConfirmTopicRuleDestinationInputOperationOutputAlias =
     crate::operation::ConfirmTopicRuleDestination;
 #[doc(hidden)]
-pub type ConfirmTopicRuleDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ConfirmTopicRuleDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfirmTopicRuleDestinationInput {
     /// Consumes the builder and constructs an Operation<[`ConfirmTopicRuleDestination`](crate::operation::ConfirmTopicRuleDestination)>
     #[allow(clippy::let_and_return)]
@@ -2906,7 +2846,7 @@ impl ConfirmTopicRuleDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfirmTopicRuleDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3000,7 +2940,7 @@ impl ConfirmTopicRuleDestinationInput {
             "ConfirmTopicRuleDestination",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3029,18 +2969,12 @@ pub mod create_audit_suppression_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_name = Some(input.into());
             self
         }
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_name = input;
             self
@@ -3058,16 +2992,12 @@ pub mod create_audit_suppression_input {
             self.resource_identifier = input;
             self
         }
-        /// <p>
-        /// The epoch timestamp in seconds at which this suppression expires.
-        /// </p>
+        /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
         pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
-        /// <p>
-        /// The epoch timestamp in seconds at which this suppression expires.
-        /// </p>
+        /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
         pub fn set_expiration_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3075,46 +3005,32 @@ pub mod create_audit_suppression_input {
             self.expiration_date = input;
             self
         }
-        /// <p>
-        /// Indicates whether a suppression should exist indefinitely or not.
-        /// </p>
+        /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
         pub fn suppress_indefinitely(mut self, input: bool) -> Self {
             self.suppress_indefinitely = Some(input);
             self
         }
-        /// <p>
-        /// Indicates whether a suppression should exist indefinitely or not.
-        /// </p>
+        /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
         pub fn set_suppress_indefinitely(mut self, input: std::option::Option<bool>) -> Self {
             self.suppress_indefinitely = input;
             self
         }
-        /// <p>
-        /// The description of the audit suppression.
-        /// </p>
+        /// <p> The description of the audit suppression. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>
-        /// The description of the audit suppression.
-        /// </p>
+        /// <p> The description of the audit suppression. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>
-        /// Each audit supression must have a unique client request token. If you try to create a new audit
-        /// suppression with the same token as one that already exists, an exception occurs. If you omit this
-        /// value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+        /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>
-        /// Each audit supression must have a unique client request token. If you try to create a new audit
-        /// suppression with the same token as one that already exists, an exception occurs. If you omit this
-        /// value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+        /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3143,7 +3059,7 @@ pub mod create_audit_suppression_input {
 #[doc(hidden)]
 pub type CreateAuditSuppressionInputOperationOutputAlias = crate::operation::CreateAuditSuppression;
 #[doc(hidden)]
-pub type CreateAuditSuppressionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAuditSuppressionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAuditSuppressionInput {
     /// Consumes the builder and constructs an Operation<[`CreateAuditSuppression`](crate::operation::CreateAuditSuppression)>
     #[allow(clippy::let_and_return)]
@@ -3154,7 +3070,7 @@ impl CreateAuditSuppressionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAuditSuppression,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3239,7 +3155,7 @@ impl CreateAuditSuppressionInput {
             "CreateAuditSuppression",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3277,6 +3193,7 @@ pub mod create_authorizer_input {
         pub(crate) status: std::option::Option<crate::model::AuthorizerStatus>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) signing_disabled: std::option::Option<bool>,
+        pub(crate) enable_caching_for_http: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The authorizer name.</p>
@@ -3322,8 +3239,7 @@ pub mod create_authorizer_input {
         ///
         /// To override the contents of this collection use [`set_token_signing_public_keys`](Self::set_token_signing_public_keys).
         ///
-        /// <p>The public keys used to verify the digital signature returned by your custom
-        /// authentication service.</p>
+        /// <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
         pub fn token_signing_public_keys(
             mut self,
             k: impl Into<std::string::String>,
@@ -3334,8 +3250,7 @@ pub mod create_authorizer_input {
             self.token_signing_public_keys = Some(hash_map);
             self
         }
-        /// <p>The public keys used to verify the digital signature returned by your custom
-        /// authentication service.</p>
+        /// <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
         pub fn set_token_signing_public_keys(
             mut self,
             input: std::option::Option<
@@ -3362,27 +3277,21 @@ pub mod create_authorizer_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata which can be used to manage the custom authorizer.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Metadata which can be used to manage the custom authorizer.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -3401,6 +3310,18 @@ pub mod create_authorizer_input {
             self.signing_disabled = input;
             self
         }
+        /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p>
+        /// <p>The default value is <code>false</code>.</p>
+        pub fn enable_caching_for_http(mut self, input: bool) -> Self {
+            self.enable_caching_for_http = Some(input);
+            self
+        }
+        /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p>
+        /// <p>The default value is <code>false</code>.</p>
+        pub fn set_enable_caching_for_http(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_caching_for_http = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAuthorizerInput`](crate::input::CreateAuthorizerInput)
         pub fn build(
             self,
@@ -3416,6 +3337,7 @@ pub mod create_authorizer_input {
                 status: self.status,
                 tags: self.tags,
                 signing_disabled: self.signing_disabled,
+                enable_caching_for_http: self.enable_caching_for_http,
             })
         }
     }
@@ -3423,7 +3345,7 @@ pub mod create_authorizer_input {
 #[doc(hidden)]
 pub type CreateAuthorizerInputOperationOutputAlias = crate::operation::CreateAuthorizer;
 #[doc(hidden)]
-pub type CreateAuthorizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAuthorizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAuthorizerInput {
     /// Consumes the builder and constructs an Operation<[`CreateAuthorizer`](crate::operation::CreateAuthorizer)>
     #[allow(clippy::let_and_return)]
@@ -3434,7 +3356,7 @@ impl CreateAuthorizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateAuthorizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3534,7 +3456,7 @@ impl CreateAuthorizerInput {
             "CreateAuthorizer",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3603,9 +3525,9 @@ pub mod create_billing_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the billing group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -3635,7 +3557,7 @@ pub mod create_billing_group_input {
 #[doc(hidden)]
 pub type CreateBillingGroupInputOperationOutputAlias = crate::operation::CreateBillingGroup;
 #[doc(hidden)]
-pub type CreateBillingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBillingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBillingGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateBillingGroup`](crate::operation::CreateBillingGroup)>
     #[allow(clippy::let_and_return)]
@@ -3646,7 +3568,7 @@ impl CreateBillingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBillingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3746,7 +3668,7 @@ impl CreateBillingGroupInput {
             "CreateBillingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3823,7 +3745,7 @@ pub mod create_certificate_from_csr_input {
 pub type CreateCertificateFromCsrInputOperationOutputAlias =
     crate::operation::CreateCertificateFromCsr;
 #[doc(hidden)]
-pub type CreateCertificateFromCsrInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCertificateFromCsrInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCertificateFromCsrInput {
     /// Consumes the builder and constructs an Operation<[`CreateCertificateFromCsr`](crate::operation::CreateCertificateFromCsr)>
     #[allow(clippy::let_and_return)]
@@ -3834,7 +3756,7 @@ impl CreateCertificateFromCsrInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCertificateFromCsr,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3930,7 +3852,7 @@ impl CreateCertificateFromCsrInput {
             "CreateCertificateFromCsr",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3966,50 +3888,32 @@ pub mod create_custom_metric_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>.
-        /// Cannot be updated
-        /// once defined.</p>
+        /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>. Cannot be updated once defined.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>.
-        /// Cannot be updated
-        /// once defined.</p>
+        /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>. Cannot be updated once defined.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
-        /// <p>
-        /// Field
-        /// represents a friendly name in the console for the custom metric;
-        /// it
-        /// doesn't have to be unique. Don't use this name as the metric identifier in
-        /// the device metric report. Can be updated once defined.</p>
+        /// <p> Field represents a friendly name in the console for the custom metric; it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated once defined.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
         }
-        /// <p>
-        /// Field
-        /// represents a friendly name in the console for the custom metric;
-        /// it
-        /// doesn't have to be unique. Don't use this name as the metric identifier in
-        /// the device metric report. Can be updated once defined.</p>
+        /// <p> Field represents a friendly name in the console for the custom metric; it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated once defined.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
         }
-        /// <p>
-        /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-        /// </p>
+        /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
         pub fn metric_type(mut self, input: crate::model::CustomMetricType) -> Self {
             self.metric_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-        /// </p>
+        /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
         pub fn set_metric_type(
             mut self,
             input: std::option::Option<crate::model::CustomMetricType>,
@@ -4021,18 +3925,14 @@ pub mod create_custom_metric_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// Metadata that can be used to manage the custom metric.
-        /// </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p> Metadata that can be used to manage the custom metric. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>
-        /// Metadata that can be used to manage the custom metric.
-        /// </p>
+        /// <p> Metadata that can be used to manage the custom metric. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4040,20 +3940,12 @@ pub mod create_custom_metric_input {
             self.tags = input;
             self
         }
-        /// <p>Each custom
-        /// metric must have a unique client request token. If you try to create a new custom metric that
-        /// already exists with a different token,
-        /// an exception
-        /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+        /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Each custom
-        /// metric must have a unique client request token. If you try to create a new custom metric that
-        /// already exists with a different token,
-        /// an exception
-        /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+        /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4081,7 +3973,7 @@ pub mod create_custom_metric_input {
 #[doc(hidden)]
 pub type CreateCustomMetricInputOperationOutputAlias = crate::operation::CreateCustomMetric;
 #[doc(hidden)]
-pub type CreateCustomMetricInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateCustomMetricInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateCustomMetricInput {
     /// Consumes the builder and constructs an Operation<[`CreateCustomMetric`](crate::operation::CreateCustomMetric)>
     #[allow(clippy::let_and_return)]
@@ -4092,7 +3984,7 @@ impl CreateCustomMetricInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomMetric,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4195,7 +4087,7 @@ impl CreateCustomMetricInput {
             "CreateCustomMetric",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4241,14 +4133,12 @@ pub mod create_dimension_input {
             self.name = input;
             self
         }
-        /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code>
-        /// </p>
+        /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
         pub fn r#type(mut self, input: crate::model::DimensionType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code>
-        /// </p>
+        /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::DimensionType>) -> Self {
             self.r#type = input;
             self
@@ -4277,9 +4167,9 @@ pub mod create_dimension_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata that can be used to manage the dimension.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4291,14 +4181,12 @@ pub mod create_dimension_input {
             self.tags = input;
             self
         }
-        /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs.
-        /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+        /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs.
-        /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+        /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4326,7 +4214,7 @@ pub mod create_dimension_input {
 #[doc(hidden)]
 pub type CreateDimensionInputOperationOutputAlias = crate::operation::CreateDimension;
 #[doc(hidden)]
-pub type CreateDimensionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDimensionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDimensionInput {
     /// Consumes the builder and constructs an Operation<[`CreateDimension`](crate::operation::CreateDimension)>
     #[allow(clippy::let_and_return)]
@@ -4337,7 +4225,7 @@ impl CreateDimensionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDimension,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4435,7 +4323,7 @@ impl CreateDimensionInput {
             "CreateDimension",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4500,16 +4388,14 @@ pub mod create_domain_configuration_input {
         ///
         /// To override the contents of this collection use [`set_server_certificate_arns`](Self::set_server_certificate_arns).
         ///
-        /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN.
-        /// This value is not required for Amazon Web Services-managed domains.</p>
+        /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
         pub fn server_certificate_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.server_certificate_arns.unwrap_or_default();
             v.push(input.into());
             self.server_certificate_arns = Some(v);
             self
         }
-        /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN.
-        /// This value is not required for Amazon Web Services-managed domains.</p>
+        /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
         pub fn set_server_certificate_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4517,14 +4403,12 @@ pub mod create_domain_configuration_input {
             self.server_certificate_arns = input;
             self
         }
-        /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority.
-        /// This value is not required for Amazon Web Services-managed domains.</p>
+        /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
         pub fn validation_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.validation_certificate_arn = Some(input.into());
             self
         }
-        /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority.
-        /// This value is not required for Amazon Web Services-managed domains.</p>
+        /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
         pub fn set_validation_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4545,16 +4429,14 @@ pub mod create_domain_configuration_input {
             self.authorizer_config = input;
             self
         }
-        /// <p>The type of service delivered by the endpoint.</p>
-        /// <note>
+        /// <p>The type of service delivered by the endpoint.</p> <note>
         /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
         /// </note>
         pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
             self.service_type = Some(input);
             self
         }
-        /// <p>The type of service delivered by the endpoint.</p>
-        /// <note>
+        /// <p>The type of service delivered by the endpoint.</p> <note>
         /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
         /// </note>
         pub fn set_service_type(
@@ -4568,27 +4450,21 @@ pub mod create_domain_configuration_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata which can be used to manage the domain configuration.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Metadata which can be used to manage the domain configuration.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -4620,7 +4496,7 @@ pub mod create_domain_configuration_input {
 pub type CreateDomainConfigurationInputOperationOutputAlias =
     crate::operation::CreateDomainConfiguration;
 #[doc(hidden)]
-pub type CreateDomainConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDomainConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDomainConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDomainConfiguration`](crate::operation::CreateDomainConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4631,7 +4507,7 @@ impl CreateDomainConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDomainConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4733,7 +4609,7 @@ impl CreateDomainConfigurationInput {
             "CreateDomainConfiguration",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4796,16 +4672,14 @@ pub mod create_dynamic_thing_group_input {
             self.thing_group_properties = input;
             self
         }
-        /// <p>The dynamic thing group index name.</p>
-        /// <note>
+        /// <p>The dynamic thing group index name.</p> <note>
         /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
         /// </note>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_name = Some(input.into());
             self
         }
-        /// <p>The dynamic thing group index name.</p>
-        /// <note>
+        /// <p>The dynamic thing group index name.</p> <note>
         /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
         /// </note>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -4824,19 +4698,15 @@ pub mod create_dynamic_thing_group_input {
             self.query_string = input;
             self
         }
-        /// <p>The dynamic thing group query version.</p>
-        /// <note>
-        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-        /// query version defaults to this value.</p>
+        /// <p>The dynamic thing group query version.</p> <note>
+        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
         /// </note>
         pub fn query_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_version = Some(input.into());
             self
         }
-        /// <p>The dynamic thing group query version.</p>
-        /// <note>
-        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-        /// query version defaults to this value.</p>
+        /// <p>The dynamic thing group query version.</p> <note>
+        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
         /// </note>
         pub fn set_query_version(
             mut self,
@@ -4850,9 +4720,9 @@ pub mod create_dynamic_thing_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the dynamic thing group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -4886,7 +4756,7 @@ pub mod create_dynamic_thing_group_input {
 pub type CreateDynamicThingGroupInputOperationOutputAlias =
     crate::operation::CreateDynamicThingGroup;
 #[doc(hidden)]
-pub type CreateDynamicThingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateDynamicThingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateDynamicThingGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateDynamicThingGroup`](crate::operation::CreateDynamicThingGroup)>
     #[allow(clippy::let_and_return)]
@@ -4897,7 +4767,7 @@ impl CreateDynamicThingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateDynamicThingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4999,7 +4869,7 @@ impl CreateDynamicThingGroupInput {
             "CreateDynamicThingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5129,14 +4999,12 @@ pub mod create_fleet_metric_input {
             self.index_name = input;
             self
         }
-        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-        /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
         pub fn unit(mut self, input: crate::model::FleetMetricUnit) -> Self {
             self.unit = Some(input);
             self
         }
-        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-        /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
         pub fn set_unit(
             mut self,
             input: std::option::Option<crate::model::FleetMetricUnit>,
@@ -5149,9 +5017,9 @@ pub mod create_fleet_metric_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata, which can be used to manage the fleet metric.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5188,7 +5056,7 @@ pub mod create_fleet_metric_input {
 #[doc(hidden)]
 pub type CreateFleetMetricInputOperationOutputAlias = crate::operation::CreateFleetMetric;
 #[doc(hidden)]
-pub type CreateFleetMetricInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFleetMetricInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFleetMetricInput {
     /// Consumes the builder and constructs an Operation<[`CreateFleetMetric`](crate::operation::CreateFleetMetric)>
     #[allow(clippy::let_and_return)]
@@ -5199,7 +5067,7 @@ impl CreateFleetMetricInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFleetMetric,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5299,7 +5167,7 @@ impl CreateFleetMetricInput {
             "CreateFleetMetric",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5342,19 +5210,19 @@ pub mod create_job_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) namespace_id: std::option::Option<std::string::String>,
         pub(crate) job_template_arn: std::option::Option<std::string::String>,
+        pub(crate) job_executions_retry_config:
+            std::option::Option<crate::model::JobExecutionsRetryConfig>,
         pub(crate) document_parameters: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     }
     impl Builder {
-        /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric
-        /// characters, "-" and "_" are valid for use here.</p>
+        /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric
-        /// characters, "-" and "_" are valid for use here.</p>
+        /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -5378,26 +5246,20 @@ pub mod create_job_input {
             self.targets = input;
             self
         }
-        /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
-        /// <note>
+        /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note>
         /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
         /// <p>The placeholder link is of the following form:</p>
-        /// <p>
-        /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-        /// </p>
+        /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
         /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
         /// </note>
         pub fn document_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_source = Some(input.into());
             self
         }
-        /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
-        /// <note>
+        /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note>
         /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
         /// <p>The placeholder link is of the following form:</p>
-        /// <p>
-        /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-        /// </p>
+        /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
         /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
         /// </note>
         pub fn set_document_source(
@@ -5440,18 +5302,12 @@ pub mod create_job_input {
             self.presigned_url_config = input;
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-        /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-        /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-        /// target group, even after the job was completed by all things originally in the group.</p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
         pub fn target_selection(mut self, input: crate::model::TargetSelection) -> Self {
             self.target_selection = Some(input);
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-        /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-        /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-        /// target group, even after the job was completed by all things originally in the group.</p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
         pub fn set_target_selection(
             mut self,
             input: std::option::Option<crate::model::TargetSelection>,
@@ -5475,12 +5331,12 @@ pub mod create_job_input {
             self.job_executions_rollout_config = input;
             self
         }
-        /// <p>Allows you to create criteria to abort a job.</p>
+        /// <p>Allows you to create the criteria to abort a job.</p>
         pub fn abort_config(mut self, input: crate::model::AbortConfig) -> Self {
             self.abort_config = Some(input);
             self
         }
-        /// <p>Allows you to create criteria to abort a job.</p>
+        /// <p>Allows you to create the criteria to abort a job.</p>
         pub fn set_abort_config(
             mut self,
             input: std::option::Option<crate::model::AbortConfig>,
@@ -5488,18 +5344,12 @@ pub mod create_job_input {
             self.abort_config = input;
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer
-        /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-        /// execution status is not set to another terminal state before the time expires, it will be
-        /// automatically set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn timeout_config(mut self, input: crate::model::TimeoutConfig) -> Self {
             self.timeout_config = Some(input);
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer
-        /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-        /// execution status is not set to another terminal state before the time expires, it will be
-        /// automatically set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn set_timeout_config(
             mut self,
             input: std::option::Option<crate::model::TimeoutConfig>,
@@ -5512,9 +5362,9 @@ pub mod create_job_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the job.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5527,12 +5377,8 @@ pub mod create_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5540,12 +5386,8 @@ pub mod create_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5563,6 +5405,22 @@ pub mod create_job_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.job_template_arn = input;
+            self
+        }
+        /// <p>Allows you to create the criteria to retry a job.</p>
+        pub fn job_executions_retry_config(
+            mut self,
+            input: crate::model::JobExecutionsRetryConfig,
+        ) -> Self {
+            self.job_executions_retry_config = Some(input);
+            self
+        }
+        /// <p>Allows you to create the criteria to retry a job.</p>
+        pub fn set_job_executions_retry_config(
+            mut self,
+            input: std::option::Option<crate::model::JobExecutionsRetryConfig>,
+        ) -> Self {
+            self.job_executions_retry_config = input;
             self
         }
         /// Adds a key-value pair to `document_parameters`.
@@ -5609,6 +5467,7 @@ pub mod create_job_input {
                 tags: self.tags,
                 namespace_id: self.namespace_id,
                 job_template_arn: self.job_template_arn,
+                job_executions_retry_config: self.job_executions_retry_config,
                 document_parameters: self.document_parameters,
             })
         }
@@ -5617,7 +5476,7 @@ pub mod create_job_input {
 #[doc(hidden)]
 pub type CreateJobInputOperationOutputAlias = crate::operation::CreateJob;
 #[doc(hidden)]
-pub type CreateJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateJob`](crate::operation::CreateJob)>
     #[allow(clippy::let_and_return)]
@@ -5628,7 +5487,7 @@ impl CreateJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5720,7 +5579,7 @@ impl CreateJobInput {
                     "CreateJob",
                     "iot",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5760,16 +5619,16 @@ pub mod create_job_template_input {
         pub(crate) abort_config: std::option::Option<crate::model::AbortConfig>,
         pub(crate) timeout_config: std::option::Option<crate::model::TimeoutConfig>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) job_executions_retry_config:
+            std::option::Option<crate::model::JobExecutionsRetryConfig>,
     }
     impl Builder {
-        /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric
-        /// characters, "-", and "_" are valid for use here.</p>
+        /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
         pub fn job_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_template_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric
-        /// characters, "-", and "_" are valid for use here.</p>
+        /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
         pub fn set_job_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5787,26 +5646,20 @@ pub mod create_job_template_input {
             self.job_arn = input;
             self
         }
-        /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p>
-        /// <note>
+        /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
         /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
         /// <p>The placeholder link is of the following form:</p>
-        /// <p>
-        /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-        /// </p>
+        /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
         /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
         /// </note>
         pub fn document_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_source = Some(input.into());
             self
         }
-        /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p>
-        /// <note>
+        /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
         /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
         /// <p>The placeholder link is of the following form:</p>
-        /// <p>
-        /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-        /// </p>
+        /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
         /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
         /// </note>
         pub fn set_document_source(
@@ -5878,18 +5731,12 @@ pub mod create_job_template_input {
             self.abort_config = input;
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-        /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-        /// execution status is not set to another terminal state before the timer expires, it will
-        /// be automatically set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn timeout_config(mut self, input: crate::model::TimeoutConfig) -> Self {
             self.timeout_config = Some(input);
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-        /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-        /// execution status is not set to another terminal state before the timer expires, it will
-        /// be automatically set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn set_timeout_config(
             mut self,
             input: std::option::Option<crate::model::TimeoutConfig>,
@@ -5902,9 +5749,9 @@ pub mod create_job_template_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata that can be used to manage the job template.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5914,6 +5761,22 @@ pub mod create_job_template_input {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.tags = input;
+            self
+        }
+        /// <p>Allows you to create the criteria to retry a job.</p>
+        pub fn job_executions_retry_config(
+            mut self,
+            input: crate::model::JobExecutionsRetryConfig,
+        ) -> Self {
+            self.job_executions_retry_config = Some(input);
+            self
+        }
+        /// <p>Allows you to create the criteria to retry a job.</p>
+        pub fn set_job_executions_retry_config(
+            mut self,
+            input: std::option::Option<crate::model::JobExecutionsRetryConfig>,
+        ) -> Self {
+            self.job_executions_retry_config = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateJobTemplateInput`](crate::input::CreateJobTemplateInput)
@@ -5934,6 +5797,7 @@ pub mod create_job_template_input {
                 abort_config: self.abort_config,
                 timeout_config: self.timeout_config,
                 tags: self.tags,
+                job_executions_retry_config: self.job_executions_retry_config,
             })
         }
     }
@@ -5941,7 +5805,7 @@ pub mod create_job_template_input {
 #[doc(hidden)]
 pub type CreateJobTemplateInputOperationOutputAlias = crate::operation::CreateJobTemplate;
 #[doc(hidden)]
-pub type CreateJobTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateJobTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateJobTemplate`](crate::operation::CreateJobTemplate)>
     #[allow(clippy::let_and_return)]
@@ -5952,7 +5816,7 @@ impl CreateJobTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateJobTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6052,7 +5916,7 @@ impl CreateJobTemplateInput {
             "CreateJobTemplate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6111,7 +5975,7 @@ pub mod create_keys_and_certificate_input {
 pub type CreateKeysAndCertificateInputOperationOutputAlias =
     crate::operation::CreateKeysAndCertificate;
 #[doc(hidden)]
-pub type CreateKeysAndCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateKeysAndCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateKeysAndCertificateInput {
     /// Consumes the builder and constructs an Operation<[`CreateKeysAndCertificate`](crate::operation::CreateKeysAndCertificate)>
     #[allow(clippy::let_and_return)]
@@ -6122,7 +5986,7 @@ impl CreateKeysAndCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateKeysAndCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6210,7 +6074,7 @@ impl CreateKeysAndCertificateInput {
             "CreateKeysAndCertificate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6275,9 +6139,9 @@ pub mod create_mitigation_action_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata that can be used to manage the mitigation action.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6308,7 +6172,7 @@ pub mod create_mitigation_action_input {
 #[doc(hidden)]
 pub type CreateMitigationActionInputOperationOutputAlias = crate::operation::CreateMitigationAction;
 #[doc(hidden)]
-pub type CreateMitigationActionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateMitigationActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateMitigationActionInput {
     /// Consumes the builder and constructs an Operation<[`CreateMitigationAction`](crate::operation::CreateMitigationAction)>
     #[allow(clippy::let_and_return)]
@@ -6319,7 +6183,7 @@ impl CreateMitigationActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateMitigationAction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6421,7 +6285,7 @@ impl CreateMitigationActionInput {
             "CreateMitigationAction",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6515,16 +6379,14 @@ pub mod create_ota_update_input {
         ///
         /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
         ///
-        /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
-        /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
-        pub fn protocols(mut self, input: impl Into<crate::model::Protocol>) -> Self {
+        /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
+        pub fn protocols(mut self, input: crate::model::Protocol) -> Self {
             let mut v = self.protocols.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.protocols = Some(v);
             self
         }
-        /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
-        /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
+        /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
         pub fn set_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
@@ -6532,20 +6394,12 @@ pub mod create_ota_update_input {
             self.protocols = input;
             self
         }
-        /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things
-        /// specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a
-        /// thing when a change is detected in a target. For example, an update will run on a thing when the thing is
-        /// added to a target group, even after the update was completed by all things originally in the group. Valid
-        /// values: CONTINUOUS | SNAPSHOT.</p>
+        /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
         pub fn target_selection(mut self, input: crate::model::TargetSelection) -> Self {
             self.target_selection = Some(input);
             self
         }
-        /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things
-        /// specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a
-        /// thing when a change is detected in a target. For example, an update will run on a thing when the thing is
-        /// added to a target group, even after the update was completed by all things originally in the group. Valid
-        /// values: CONTINUOUS | SNAPSHOT.</p>
+        /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
         pub fn set_target_selection(
             mut self,
             input: std::option::Option<crate::model::TargetSelection>,
@@ -6598,18 +6452,12 @@ pub mod create_ota_update_input {
             self.aws_job_abort_config = input;
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer is
-        /// started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution
-        /// status is not set to another terminal state before the timer expires, it will be automatically
-        /// set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn aws_job_timeout_config(mut self, input: crate::model::AwsJobTimeoutConfig) -> Self {
             self.aws_job_timeout_config = Some(input);
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer is
-        /// started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution
-        /// status is not set to another terminal state before the timer expires, it will be automatically
-        /// set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn set_aws_job_timeout_config(
             mut self,
             input: std::option::Option<crate::model::AwsJobTimeoutConfig>,
@@ -6622,9 +6470,9 @@ pub mod create_ota_update_input {
         /// To override the contents of this collection use [`set_files`](Self::set_files).
         ///
         /// <p>The files to be streamed by the OTA update.</p>
-        pub fn files(mut self, input: impl Into<crate::model::OtaUpdateFile>) -> Self {
+        pub fn files(mut self, input: crate::model::OtaUpdateFile) -> Self {
             let mut v = self.files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.files = Some(v);
             self
         }
@@ -6636,14 +6484,12 @@ pub mod create_ota_update_input {
             self.files = input;
             self
         }
-        /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources
-        /// to create an OTA update job.</p>
+        /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources
-        /// to create an OTA update job.</p>
+        /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -6678,9 +6524,9 @@ pub mod create_ota_update_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage updates.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -6720,7 +6566,7 @@ pub mod create_ota_update_input {
 #[doc(hidden)]
 pub type CreateOtaUpdateInputOperationOutputAlias = crate::operation::CreateOTAUpdate;
 #[doc(hidden)]
-pub type CreateOtaUpdateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateOtaUpdateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateOtaUpdateInput {
     /// Consumes the builder and constructs an Operation<[`CreateOTAUpdate`](crate::operation::CreateOTAUpdate)>
     #[allow(clippy::let_and_return)]
@@ -6731,7 +6577,7 @@ impl CreateOtaUpdateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateOTAUpdate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6831,7 +6677,7 @@ impl CreateOtaUpdateInput {
             "CreateOTAUpdate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6875,14 +6721,12 @@ pub mod create_policy_input {
             self.policy_name = input;
             self
         }
-        /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of
-        /// 2048, excluding whitespace.</p>
+        /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_document = Some(input.into());
             self
         }
-        /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of
-        /// 2048, excluding whitespace.</p>
+        /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
         pub fn set_policy_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6894,27 +6738,21 @@ pub mod create_policy_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata which can be used to manage the policy.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the policy.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Metadata which can be used to manage the policy.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the policy.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -6941,7 +6779,7 @@ pub mod create_policy_input {
 #[doc(hidden)]
 pub type CreatePolicyInputOperationOutputAlias = crate::operation::CreatePolicy;
 #[doc(hidden)]
-pub type CreatePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePolicyInput {
     /// Consumes the builder and constructs an Operation<[`CreatePolicy`](crate::operation::CreatePolicy)>
     #[allow(clippy::let_and_return)]
@@ -6952,7 +6790,7 @@ impl CreatePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7047,7 +6885,7 @@ impl CreatePolicyInput {
             "CreatePolicy",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7091,14 +6929,12 @@ pub mod create_policy_version_input {
             self.policy_name = input;
             self
         }
-        /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of
-        /// 2048, excluding whitespace.</p>
+        /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_document = Some(input.into());
             self
         }
-        /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of
-        /// 2048, excluding whitespace.</p>
+        /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
         pub fn set_policy_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7106,16 +6942,12 @@ pub mod create_policy_version_input {
             self.policy_document = input;
             self
         }
-        /// <p>Specifies whether the policy version is set as the default. When this parameter is
-        /// true, the new policy version becomes the operative version (that is, the version that is in
-        /// effect for the certificates to which the policy is attached).</p>
+        /// <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
         pub fn set_as_default(mut self, input: bool) -> Self {
             self.set_as_default = Some(input);
             self
         }
-        /// <p>Specifies whether the policy version is set as the default. When this parameter is
-        /// true, the new policy version becomes the operative version (that is, the version that is in
-        /// effect for the certificates to which the policy is attached).</p>
+        /// <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
         pub fn set_set_as_default(mut self, input: std::option::Option<bool>) -> Self {
             self.set_as_default = input;
             self
@@ -7138,7 +6970,7 @@ pub mod create_policy_version_input {
 #[doc(hidden)]
 pub type CreatePolicyVersionInputOperationOutputAlias = crate::operation::CreatePolicyVersion;
 #[doc(hidden)]
-pub type CreatePolicyVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePolicyVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePolicyVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreatePolicyVersion`](crate::operation::CreatePolicyVersion)>
     #[allow(clippy::let_and_return)]
@@ -7149,7 +6981,7 @@ impl CreatePolicyVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePolicyVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7263,7 +7095,7 @@ impl CreatePolicyVersionInput {
             "CreatePolicyVersion",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7325,7 +7157,7 @@ pub mod create_provisioning_claim_input {
 pub type CreateProvisioningClaimInputOperationOutputAlias =
     crate::operation::CreateProvisioningClaim;
 #[doc(hidden)]
-pub type CreateProvisioningClaimInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProvisioningClaimInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProvisioningClaimInput {
     /// Consumes the builder and constructs an Operation<[`CreateProvisioningClaim`](crate::operation::CreateProvisioningClaim)>
     #[allow(clippy::let_and_return)]
@@ -7336,7 +7168,7 @@ impl CreateProvisioningClaimInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProvisioningClaim,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7430,7 +7262,7 @@ impl CreateProvisioningClaimInput {
             "CreateProvisioningClaim",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7506,14 +7338,12 @@ pub mod create_provisioning_template_input {
             self.enabled = input;
             self
         }
-        /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role
-        /// grants permission to provision a device.</p>
+        /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
         pub fn provisioning_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioning_role_arn = Some(input.into());
             self
         }
-        /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role
-        /// grants permission to provision a device.</p>
+        /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
         pub fn set_provisioning_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7538,27 +7368,21 @@ pub mod create_provisioning_template_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata which can be used to manage the fleet provisioning template.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Metadata which can be used to manage the fleet provisioning template.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -7590,7 +7414,7 @@ pub mod create_provisioning_template_input {
 pub type CreateProvisioningTemplateInputOperationOutputAlias =
     crate::operation::CreateProvisioningTemplate;
 #[doc(hidden)]
-pub type CreateProvisioningTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProvisioningTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProvisioningTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateProvisioningTemplate`](crate::operation::CreateProvisioningTemplate)>
     #[allow(clippy::let_and_return)]
@@ -7601,7 +7425,7 @@ impl CreateProvisioningTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProvisioningTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7683,7 +7507,7 @@ impl CreateProvisioningTemplateInput {
             "CreateProvisioningTemplate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7772,7 +7596,8 @@ pub mod create_provisioning_template_version_input {
 pub type CreateProvisioningTemplateVersionInputOperationOutputAlias =
     crate::operation::CreateProvisioningTemplateVersion;
 #[doc(hidden)]
-pub type CreateProvisioningTemplateVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProvisioningTemplateVersionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProvisioningTemplateVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateProvisioningTemplateVersion`](crate::operation::CreateProvisioningTemplateVersion)>
     #[allow(clippy::let_and_return)]
@@ -7783,7 +7608,7 @@ impl CreateProvisioningTemplateVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProvisioningTemplateVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -7898,7 +7723,7 @@ impl CreateProvisioningTemplateVersionInput {
             "CreateProvisioningTemplateVersion",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -7933,14 +7758,12 @@ pub mod create_role_alias_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The role alias that points to a role ARN. This allows you to change the role without
-        /// having to update the device.</p>
+        /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
         pub fn role_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_alias = Some(input.into());
             self
         }
-        /// <p>The role alias that points to a role ARN. This allows you to change the role without
-        /// having to update the device.</p>
+        /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
         pub fn set_role_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_alias = input;
             self
@@ -7969,27 +7792,21 @@ pub mod create_role_alias_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata which can be used to manage the role alias.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the role alias.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Metadata which can be used to manage the role alias.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the role alias.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -8017,7 +7834,7 @@ pub mod create_role_alias_input {
 #[doc(hidden)]
 pub type CreateRoleAliasInputOperationOutputAlias = crate::operation::CreateRoleAlias;
 #[doc(hidden)]
-pub type CreateRoleAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateRoleAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateRoleAliasInput {
     /// Consumes the builder and constructs an Operation<[`CreateRoleAlias`](crate::operation::CreateRoleAlias)>
     #[allow(clippy::let_and_return)]
@@ -8028,7 +7845,7 @@ impl CreateRoleAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateRoleAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8124,7 +7941,7 @@ impl CreateRoleAliasInput {
             "CreateRoleAlias",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8161,20 +7978,12 @@ pub mod create_scheduled_audit_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>How often the scheduled audit takes
-        /// place, either
-        /// <code>DAILY</code>,
-        /// <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is
-        /// determined by the system.</p>
+        /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
         pub fn frequency(mut self, input: crate::model::AuditFrequency) -> Self {
             self.frequency = Some(input);
             self
         }
-        /// <p>How often the scheduled audit takes
-        /// place, either
-        /// <code>DAILY</code>,
-        /// <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is
-        /// determined by the system.</p>
+        /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
         pub fn set_frequency(
             mut self,
             input: std::option::Option<crate::model::AuditFrequency>,
@@ -8182,46 +7991,22 @@ pub mod create_scheduled_audit_input {
             self.frequency = input;
             self
         }
-        /// <p>The day of the month on which the scheduled audit takes place.
-        /// This
-        /// can be "1" through "31" or "LAST". This field is required if the "frequency"
-        /// parameter is set to <code>MONTHLY</code>. If days
-        /// 29
-        /// to 31 are specified, and the month
-        /// doesn't
-        /// have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
+        /// <p>The day of the month on which the scheduled audit takes place. This can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month doesn't have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
         pub fn day_of_month(mut self, input: impl Into<std::string::String>) -> Self {
             self.day_of_month = Some(input.into());
             self
         }
-        /// <p>The day of the month on which the scheduled audit takes place.
-        /// This
-        /// can be "1" through "31" or "LAST". This field is required if the "frequency"
-        /// parameter is set to <code>MONTHLY</code>. If days
-        /// 29
-        /// to 31 are specified, and the month
-        /// doesn't
-        /// have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
+        /// <p>The day of the month on which the scheduled audit takes place. This can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month doesn't have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
         pub fn set_day_of_month(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.day_of_month = input;
             self
         }
-        /// <p>The day of the week on which the scheduled audit takes
-        /// place,
-        /// either
-        /// <code>SUN</code>,
-        /// <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code>
-        /// parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+        /// <p>The day of the week on which the scheduled audit takes place, either <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
         pub fn day_of_week(mut self, input: crate::model::DayOfWeek) -> Self {
             self.day_of_week = Some(input);
             self
         }
-        /// <p>The day of the week on which the scheduled audit takes
-        /// place,
-        /// either
-        /// <code>SUN</code>,
-        /// <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code>
-        /// parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+        /// <p>The day of the week on which the scheduled audit takes place, either <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
         pub fn set_day_of_week(
             mut self,
             input: std::option::Option<crate::model::DayOfWeek>,
@@ -8233,20 +8018,14 @@ pub mod create_scheduled_audit_input {
         ///
         /// To override the contents of this collection use [`set_target_check_names`](Self::set_target_check_names).
         ///
-        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn target_check_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_check_names.unwrap_or_default();
             v.push(input.into());
             self.target_check_names = Some(v);
             self
         }
-        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_target_check_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8272,9 +8051,9 @@ pub mod create_scheduled_audit_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata that can be used to manage the scheduled audit.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8307,7 +8086,7 @@ pub mod create_scheduled_audit_input {
 #[doc(hidden)]
 pub type CreateScheduledAuditInputOperationOutputAlias = crate::operation::CreateScheduledAudit;
 #[doc(hidden)]
-pub type CreateScheduledAuditInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateScheduledAuditInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateScheduledAuditInput {
     /// Consumes the builder and constructs an Operation<[`CreateScheduledAudit`](crate::operation::CreateScheduledAudit)>
     #[allow(clippy::let_and_return)]
@@ -8318,7 +8097,7 @@ impl CreateScheduledAuditInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateScheduledAudit,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8420,7 +8199,7 @@ impl CreateScheduledAuditInput {
             "CreateScheduledAudit",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8496,9 +8275,9 @@ pub mod create_security_profile_input {
         /// To override the contents of this collection use [`set_behaviors`](Self::set_behaviors).
         ///
         /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-        pub fn behaviors(mut self, input: impl Into<crate::model::Behavior>) -> Self {
+        pub fn behaviors(mut self, input: crate::model::Behavior) -> Self {
             let mut v = self.behaviors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.behaviors = Some(v);
             self
         }
@@ -8514,20 +8293,18 @@ pub mod create_security_profile_input {
         ///
         /// To override the contents of this collection use [`set_alert_targets`](Self::set_alert_targets).
         ///
-        /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the
-        /// console.) Alerts are generated when a device (thing) violates a behavior.</p>
+        /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
         pub fn alert_targets(
             mut self,
-            k: impl Into<crate::model::AlertTargetType>,
-            v: impl Into<crate::model::AlertTarget>,
+            k: crate::model::AlertTargetType,
+            v: crate::model::AlertTarget,
         ) -> Self {
             let mut hash_map = self.alert_targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.alert_targets = Some(hash_map);
             self
         }
-        /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the
-        /// console.) Alerts are generated when a device (thing) violates a behavior.</p>
+        /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
         pub fn set_alert_targets(
             mut self,
             input: std::option::Option<
@@ -8541,12 +8318,8 @@ pub mod create_security_profile_input {
         ///
         /// To override the contents of this collection use [`set_additional_metrics_to_retain`](Self::set_additional_metrics_to_retain).
         ///
-        /// <p>
-        /// <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
-        /// </p>
-        /// <p>A list of metrics whose data is retained (stored). By default, data is retained
-        /// for any metric used in the profile's <code>behaviors</code>, but it is also retained for
-        /// any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
         pub fn additional_metrics_to_retain(
             mut self,
             input: impl Into<std::string::String>,
@@ -8556,12 +8329,8 @@ pub mod create_security_profile_input {
             self.additional_metrics_to_retain = Some(v);
             self
         }
-        /// <p>
-        /// <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
-        /// </p>
-        /// <p>A list of metrics whose data is retained (stored). By default, data is retained
-        /// for any metric used in the profile's <code>behaviors</code>, but it is also retained for
-        /// any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
         pub fn set_additional_metrics_to_retain(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8576,10 +8345,10 @@ pub mod create_security_profile_input {
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
         pub fn additional_metrics_to_retain_v2(
             mut self,
-            input: impl Into<crate::model::MetricToRetain>,
+            input: crate::model::MetricToRetain,
         ) -> Self {
             let mut v = self.additional_metrics_to_retain_v2.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_metrics_to_retain_v2 = Some(v);
             self
         }
@@ -8596,9 +8365,9 @@ pub mod create_security_profile_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata that can be used to manage the security profile.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8632,7 +8401,7 @@ pub mod create_security_profile_input {
 #[doc(hidden)]
 pub type CreateSecurityProfileInputOperationOutputAlias = crate::operation::CreateSecurityProfile;
 #[doc(hidden)]
-pub type CreateSecurityProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSecurityProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSecurityProfileInput {
     /// Consumes the builder and constructs an Operation<[`CreateSecurityProfile`](crate::operation::CreateSecurityProfile)>
     #[allow(clippy::let_and_return)]
@@ -8643,7 +8412,7 @@ impl CreateSecurityProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSecurityProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8745,7 +8514,7 @@ impl CreateSecurityProfileInput {
             "CreateSecurityProfile",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -8806,9 +8575,9 @@ pub mod create_stream_input {
         /// To override the contents of this collection use [`set_files`](Self::set_files).
         ///
         /// <p>The files to stream.</p>
-        pub fn files(mut self, input: impl Into<crate::model::StreamFile>) -> Self {
+        pub fn files(mut self, input: crate::model::StreamFile) -> Self {
             let mut v = self.files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.files = Some(v);
             self
         }
@@ -8835,9 +8604,9 @@ pub mod create_stream_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage streams.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -8869,7 +8638,7 @@ pub mod create_stream_input {
 #[doc(hidden)]
 pub type CreateStreamInputOperationOutputAlias = crate::operation::CreateStream;
 #[doc(hidden)]
-pub type CreateStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateStreamInput {
     /// Consumes the builder and constructs an Operation<[`CreateStream`](crate::operation::CreateStream)>
     #[allow(clippy::let_and_return)]
@@ -8880,7 +8649,7 @@ impl CreateStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -8975,7 +8744,7 @@ impl CreateStreamInput {
             "CreateStream",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9011,15 +8780,13 @@ pub mod create_thing_input {
     }
     impl Builder {
         /// <p>The name of the thing to create.</p>
-        /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a
-        /// new thing, give it the new name, and then delete the old thing.</p>
+        /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_name = Some(input.into());
             self
         }
         /// <p>The name of the thing to create.</p>
-        /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a
-        /// new thing, give it the new name, and then delete the old thing.</p>
+        /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
@@ -9037,20 +8804,14 @@ pub mod create_thing_input {
             self.thing_type_name = input;
             self
         }
-        /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON
-        /// document. For example:</p>
-        /// <p>
-        /// <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
-        /// </p>
+        /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
+        /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
         pub fn attribute_payload(mut self, input: crate::model::AttributePayload) -> Self {
             self.attribute_payload = Some(input);
             self
         }
-        /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON
-        /// document. For example:</p>
-        /// <p>
-        /// <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
-        /// </p>
+        /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
+        /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
         pub fn set_attribute_payload(
             mut self,
             input: std::option::Option<crate::model::AttributePayload>,
@@ -9090,7 +8851,7 @@ pub mod create_thing_input {
 #[doc(hidden)]
 pub type CreateThingInputOperationOutputAlias = crate::operation::CreateThing;
 #[doc(hidden)]
-pub type CreateThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateThingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateThingInput {
     /// Consumes the builder and constructs an Operation<[`CreateThing`](crate::operation::CreateThing)>
     #[allow(clippy::let_and_return)]
@@ -9101,7 +8862,7 @@ impl CreateThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9196,7 +8957,7 @@ impl CreateThingInput {
             "CreateThing",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9275,9 +9036,9 @@ pub mod create_thing_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the thing group.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9308,7 +9069,7 @@ pub mod create_thing_group_input {
 #[doc(hidden)]
 pub type CreateThingGroupInputOperationOutputAlias = crate::operation::CreateThingGroup;
 #[doc(hidden)]
-pub type CreateThingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateThingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateThingGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateThingGroup`](crate::operation::CreateThingGroup)>
     #[allow(clippy::let_and_return)]
@@ -9319,7 +9080,7 @@ impl CreateThingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateThingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9419,7 +9180,7 @@ impl CreateThingGroupInput {
             "CreateThingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9466,16 +9227,12 @@ pub mod create_thing_type_input {
             self.thing_type_name = input;
             self
         }
-        /// <p>The ThingTypeProperties for the thing type to create. It contains information about
-        /// the new thing type including a description, and a list of searchable thing attribute
-        /// names.</p>
+        /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
         pub fn thing_type_properties(mut self, input: crate::model::ThingTypeProperties) -> Self {
             self.thing_type_properties = Some(input);
             self
         }
-        /// <p>The ThingTypeProperties for the thing type to create. It contains information about
-        /// the new thing type including a description, and a list of searchable thing attribute
-        /// names.</p>
+        /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
         pub fn set_thing_type_properties(
             mut self,
             input: std::option::Option<crate::model::ThingTypeProperties>,
@@ -9488,9 +9245,9 @@ pub mod create_thing_type_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata which can be used to manage the thing type.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -9520,7 +9277,7 @@ pub mod create_thing_type_input {
 #[doc(hidden)]
 pub type CreateThingTypeInputOperationOutputAlias = crate::operation::CreateThingType;
 #[doc(hidden)]
-pub type CreateThingTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateThingTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateThingTypeInput {
     /// Consumes the builder and constructs an Operation<[`CreateThingType`](crate::operation::CreateThingType)>
     #[allow(clippy::let_and_return)]
@@ -9531,7 +9288,7 @@ impl CreateThingTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateThingType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9631,7 +9388,7 @@ impl CreateThingTypeInput {
             "CreateThingType",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9688,25 +9445,19 @@ pub mod create_topic_rule_input {
             self.topic_rule_payload = input;
             self
         }
-        /// <p>Metadata which can be used to manage the topic rule.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: --tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the topic rule.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn tags(mut self, input: impl Into<std::string::String>) -> Self {
             self.tags = Some(input.into());
             self
         }
-        /// <p>Metadata which can be used to manage the topic rule.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: --tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the topic rule.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn set_tags(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tags = input;
@@ -9730,7 +9481,7 @@ pub mod create_topic_rule_input {
 #[doc(hidden)]
 pub type CreateTopicRuleInputOperationOutputAlias = crate::operation::CreateTopicRule;
 #[doc(hidden)]
-pub type CreateTopicRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTopicRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTopicRuleInput {
     /// Consumes the builder and constructs an Operation<[`CreateTopicRule`](crate::operation::CreateTopicRule)>
     #[allow(clippy::let_and_return)]
@@ -9741,7 +9492,7 @@ impl CreateTopicRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTopicRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -9861,7 +9612,7 @@ impl CreateTopicRuleInput {
             "CreateTopicRule",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -9927,7 +9678,7 @@ pub mod create_topic_rule_destination_input {
 pub type CreateTopicRuleDestinationInputOperationOutputAlias =
     crate::operation::CreateTopicRuleDestination;
 #[doc(hidden)]
-pub type CreateTopicRuleDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateTopicRuleDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateTopicRuleDestinationInput {
     /// Consumes the builder and constructs an Operation<[`CreateTopicRuleDestination`](crate::operation::CreateTopicRuleDestination)>
     #[allow(clippy::let_and_return)]
@@ -9938,7 +9689,7 @@ impl CreateTopicRuleDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateTopicRuleDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10019,7 +9770,7 @@ impl CreateTopicRuleDestinationInput {
             "CreateTopicRuleDestination",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10078,7 +9829,8 @@ pub mod delete_account_audit_configuration_input {
 pub type DeleteAccountAuditConfigurationInputOperationOutputAlias =
     crate::operation::DeleteAccountAuditConfiguration;
 #[doc(hidden)]
-pub type DeleteAccountAuditConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAccountAuditConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAccountAuditConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAccountAuditConfiguration`](crate::operation::DeleteAccountAuditConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -10089,7 +9841,7 @@ impl DeleteAccountAuditConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccountAuditConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10178,7 +9930,7 @@ impl DeleteAccountAuditConfigurationInput {
             "DeleteAccountAuditConfiguration",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10203,18 +9955,12 @@ pub mod delete_audit_suppression_input {
         pub(crate) resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
     }
     impl Builder {
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_name = Some(input.into());
             self
         }
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_name = input;
             self
@@ -10249,7 +9995,7 @@ pub mod delete_audit_suppression_input {
 #[doc(hidden)]
 pub type DeleteAuditSuppressionInputOperationOutputAlias = crate::operation::DeleteAuditSuppression;
 #[doc(hidden)]
-pub type DeleteAuditSuppressionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAuditSuppressionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAuditSuppressionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAuditSuppression`](crate::operation::DeleteAuditSuppression)>
     #[allow(clippy::let_and_return)]
@@ -10260,7 +10006,7 @@ impl DeleteAuditSuppressionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAuditSuppression,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10342,7 +10088,7 @@ impl DeleteAuditSuppressionInput {
             "DeleteAuditSuppression",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10403,7 +10149,7 @@ pub mod delete_authorizer_input {
 #[doc(hidden)]
 pub type DeleteAuthorizerInputOperationOutputAlias = crate::operation::DeleteAuthorizer;
 #[doc(hidden)]
-pub type DeleteAuthorizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAuthorizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAuthorizerInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAuthorizer`](crate::operation::DeleteAuthorizer)>
     #[allow(clippy::let_and_return)]
@@ -10414,7 +10160,7 @@ impl DeleteAuthorizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAuthorizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10508,7 +10254,7 @@ impl DeleteAuthorizerInput {
             "DeleteAuthorizer",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10546,18 +10292,12 @@ pub mod delete_billing_group_input {
             self.billing_group_name = input;
             self
         }
-        /// <p>The expected version of the billing group. If the version of the billing group does
-        /// not match the expected version specified in the request, the
-        /// <code>DeleteBillingGroup</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>The expected version of the billing group. If the version of the billing group does
-        /// not match the expected version specified in the request, the
-        /// <code>DeleteBillingGroup</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
@@ -10579,7 +10319,7 @@ pub mod delete_billing_group_input {
 #[doc(hidden)]
 pub type DeleteBillingGroupInputOperationOutputAlias = crate::operation::DeleteBillingGroup;
 #[doc(hidden)]
-pub type DeleteBillingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBillingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBillingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBillingGroup`](crate::operation::DeleteBillingGroup)>
     #[allow(clippy::let_and_return)]
@@ -10590,7 +10330,7 @@ impl DeleteBillingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBillingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10698,7 +10438,7 @@ impl DeleteBillingGroupInput {
             "DeleteBillingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10722,14 +10462,12 @@ pub mod delete_ca_certificate_input {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains
-        /// the certificate ID.)</p>
+        /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains
-        /// the certificate ID.)</p>
+        /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10753,7 +10491,7 @@ pub mod delete_ca_certificate_input {
 #[doc(hidden)]
 pub type DeleteCaCertificateInputOperationOutputAlias = crate::operation::DeleteCACertificate;
 #[doc(hidden)]
-pub type DeleteCaCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCaCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCaCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCACertificate`](crate::operation::DeleteCACertificate)>
     #[allow(clippy::let_and_return)]
@@ -10764,7 +10502,7 @@ impl DeleteCaCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCACertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -10858,7 +10596,7 @@ impl DeleteCaCertificateInput {
             "DeleteCACertificate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -10883,14 +10621,12 @@ pub mod delete_certificate_input {
         pub(crate) force_delete: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10898,14 +10634,12 @@ pub mod delete_certificate_input {
             self.certificate_id = input;
             self
         }
-        /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT
-        /// thing.</p>
+        /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
         pub fn force_delete(mut self, input: bool) -> Self {
             self.force_delete = Some(input);
             self
         }
-        /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT
-        /// thing.</p>
+        /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.force_delete = input;
             self
@@ -10927,7 +10661,7 @@ pub mod delete_certificate_input {
 #[doc(hidden)]
 pub type DeleteCertificateInputOperationOutputAlias = crate::operation::DeleteCertificate;
 #[doc(hidden)]
-pub type DeleteCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCertificate`](crate::operation::DeleteCertificate)>
     #[allow(clippy::let_and_return)]
@@ -10938,7 +10672,7 @@ impl DeleteCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11046,7 +10780,7 @@ impl DeleteCertificateInput {
             "DeleteCertificate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11070,16 +10804,12 @@ pub mod delete_custom_metric_input {
         pub(crate) metric_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the custom metric.
-        /// </p>
+        /// <p> The name of the custom metric. </p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the custom metric.
-        /// </p>
+        /// <p> The name of the custom metric. </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -11100,7 +10830,7 @@ pub mod delete_custom_metric_input {
 #[doc(hidden)]
 pub type DeleteCustomMetricInputOperationOutputAlias = crate::operation::DeleteCustomMetric;
 #[doc(hidden)]
-pub type DeleteCustomMetricInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteCustomMetricInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteCustomMetricInput {
     /// Consumes the builder and constructs an Operation<[`DeleteCustomMetric`](crate::operation::DeleteCustomMetric)>
     #[allow(clippy::let_and_return)]
@@ -11111,7 +10841,7 @@ impl DeleteCustomMetricInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomMetric,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11205,7 +10935,7 @@ impl DeleteCustomMetricInput {
             "DeleteCustomMetric",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11253,7 +10983,7 @@ pub mod delete_dimension_input {
 #[doc(hidden)]
 pub type DeleteDimensionInputOperationOutputAlias = crate::operation::DeleteDimension;
 #[doc(hidden)]
-pub type DeleteDimensionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDimensionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDimensionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDimension`](crate::operation::DeleteDimension)>
     #[allow(clippy::let_and_return)]
@@ -11264,7 +10994,7 @@ impl DeleteDimensionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDimension,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11353,7 +11083,7 @@ impl DeleteDimensionInput {
             "DeleteDimension",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11407,7 +11137,7 @@ pub mod delete_domain_configuration_input {
 pub type DeleteDomainConfigurationInputOperationOutputAlias =
     crate::operation::DeleteDomainConfiguration;
 #[doc(hidden)]
-pub type DeleteDomainConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDomainConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDomainConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDomainConfiguration`](crate::operation::DeleteDomainConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -11418,7 +11148,7 @@ impl DeleteDomainConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDomainConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11512,7 +11242,7 @@ impl DeleteDomainConfigurationInput {
             "DeleteDomainConfiguration",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11578,7 +11308,7 @@ pub mod delete_dynamic_thing_group_input {
 pub type DeleteDynamicThingGroupInputOperationOutputAlias =
     crate::operation::DeleteDynamicThingGroup;
 #[doc(hidden)]
-pub type DeleteDynamicThingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteDynamicThingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteDynamicThingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDynamicThingGroup`](crate::operation::DeleteDynamicThingGroup)>
     #[allow(clippy::let_and_return)]
@@ -11589,7 +11319,7 @@ impl DeleteDynamicThingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteDynamicThingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11697,7 +11427,7 @@ impl DeleteDynamicThingGroupInput {
             "DeleteDynamicThingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11759,7 +11489,7 @@ pub mod delete_fleet_metric_input {
 #[doc(hidden)]
 pub type DeleteFleetMetricInputOperationOutputAlias = crate::operation::DeleteFleetMetric;
 #[doc(hidden)]
-pub type DeleteFleetMetricInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFleetMetricInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFleetMetricInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFleetMetric`](crate::operation::DeleteFleetMetric)>
     #[allow(clippy::let_and_return)]
@@ -11770,7 +11500,7 @@ impl DeleteFleetMetricInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFleetMetric,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -11878,7 +11608,7 @@ impl DeleteFleetMetricInput {
             "DeleteFleetMetric",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -11905,54 +11635,34 @@ pub mod delete_job_input {
     }
     impl Builder {
         /// <p>The ID of the job to be deleted.</p>
-        /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job.
-        /// However, this is not recommended, and you must ensure that your devices are not using the
-        /// jobId to refer to the deleted job.</p>
+        /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
         /// <p>The ID of the job to be deleted.</p>
-        /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job.
-        /// However, this is not recommended, and you must ensure that your devices are not using the
-        /// jobId to refer to the deleted job.</p>
+        /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can
-        /// only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception
-        /// will occur. The default is false.</p>
-        /// <note>
-        /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing
-        /// the job to be unable to access job information or update the job execution status.
-        /// Use caution and ensure that each device executing a job which is deleted is able to recover to
-        /// a valid state.</p>
+        /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+        /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p>
         /// </note>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can
-        /// only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception
-        /// will occur. The default is false.</p>
-        /// <note>
-        /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing
-        /// the job to be unable to access job information or update the job execution status.
-        /// Use caution and ensure that each device executing a job which is deleted is able to recover to
-        /// a valid state.</p>
+        /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+        /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p>
         /// </note>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11960,12 +11670,8 @@ pub mod delete_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -11988,7 +11694,7 @@ pub mod delete_job_input {
 #[doc(hidden)]
 pub type DeleteJobInputOperationOutputAlias = crate::operation::DeleteJob;
 #[doc(hidden)]
-pub type DeleteJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJob`](crate::operation::DeleteJob)>
     #[allow(clippy::let_and_return)]
@@ -11999,7 +11705,7 @@ impl DeleteJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12106,7 +11812,7 @@ impl DeleteJobInput {
                     "DeleteJob",
                     "iot",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12154,53 +11860,35 @@ pub mod delete_job_execution_input {
             self.thing_name = input;
             self
         }
-        /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the
-        /// execution of a particular job on a particular device.</p>
-        /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused
-        /// by IoT, so be sure you get and use the correct value here.</p>
+        /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>
+        /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
         pub fn execution_number(mut self, input: i64) -> Self {
             self.execution_number = Some(input);
             self
         }
-        /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the
-        /// execution of a particular job on a particular device.</p>
-        /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused
-        /// by IoT, so be sure you get and use the correct value here.</p>
+        /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>
+        /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
         pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
             self.execution_number = input;
             self
         }
-        /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise,
-        /// you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED",
-        /// "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p>
-        /// <note>
-        /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device
-        /// to be unable to access job information or update the job execution status.
-        /// Use caution and ensure that the device is able to recover to a valid state.</p>
+        /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+        /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
         /// </note>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise,
-        /// you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED",
-        /// "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p>
-        /// <note>
-        /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device
-        /// to be unable to access job information or update the job execution status.
-        /// Use caution and ensure that the device is able to recover to a valid state.</p>
+        /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+        /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
         /// </note>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12208,12 +11896,8 @@ pub mod delete_job_execution_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -12240,7 +11924,7 @@ pub mod delete_job_execution_input {
 #[doc(hidden)]
 pub type DeleteJobExecutionInputOperationOutputAlias = crate::operation::DeleteJobExecution;
 #[doc(hidden)]
-pub type DeleteJobExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteJobExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJobExecution`](crate::operation::DeleteJobExecution)>
     #[allow(clippy::let_and_return)]
@@ -12251,7 +11935,7 @@ impl DeleteJobExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteJobExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12399,7 +12083,7 @@ impl DeleteJobExecutionInput {
             "DeleteJobExecution",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12452,7 +12136,7 @@ pub mod delete_job_template_input {
 #[doc(hidden)]
 pub type DeleteJobTemplateInputOperationOutputAlias = crate::operation::DeleteJobTemplate;
 #[doc(hidden)]
-pub type DeleteJobTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteJobTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJobTemplate`](crate::operation::DeleteJobTemplate)>
     #[allow(clippy::let_and_return)]
@@ -12463,7 +12147,7 @@ impl DeleteJobTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteJobTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12557,7 +12241,7 @@ impl DeleteJobTemplateInput {
             "DeleteJobTemplate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12607,7 +12291,7 @@ pub mod delete_mitigation_action_input {
 #[doc(hidden)]
 pub type DeleteMitigationActionInputOperationOutputAlias = crate::operation::DeleteMitigationAction;
 #[doc(hidden)]
-pub type DeleteMitigationActionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteMitigationActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteMitigationActionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMitigationAction`](crate::operation::DeleteMitigationAction)>
     #[allow(clippy::let_and_return)]
@@ -12618,7 +12302,7 @@ impl DeleteMitigationActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteMitigationAction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12712,7 +12396,7 @@ impl DeleteMitigationActionInput {
             "DeleteMitigationAction",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12751,26 +12435,22 @@ pub mod delete_ota_update_input {
             self.ota_update_id = input;
             self
         }
-        /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted.
-        /// Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
+        /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
         pub fn delete_stream(mut self, input: bool) -> Self {
             self.delete_stream = Some(input);
             self
         }
-        /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted.
-        /// Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
+        /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
         pub fn set_delete_stream(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_stream = input;
             self
         }
-        /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
-        /// job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
+        /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
         pub fn force_delete_aws_job(mut self, input: bool) -> Self {
             self.force_delete_aws_job = Some(input);
             self
         }
-        /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
-        /// job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
+        /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
         pub fn set_force_delete_aws_job(mut self, input: std::option::Option<bool>) -> Self {
             self.force_delete_aws_job = input;
             self
@@ -12793,7 +12473,7 @@ pub mod delete_ota_update_input {
 #[doc(hidden)]
 pub type DeleteOtaUpdateInputOperationOutputAlias = crate::operation::DeleteOTAUpdate;
 #[doc(hidden)]
-pub type DeleteOtaUpdateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteOtaUpdateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOtaUpdateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOTAUpdate`](crate::operation::DeleteOTAUpdate)>
     #[allow(clippy::let_and_return)]
@@ -12804,7 +12484,7 @@ impl DeleteOtaUpdateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOTAUpdate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -12919,7 +12599,7 @@ impl DeleteOtaUpdateInput {
             "DeleteOTAUpdate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -12969,7 +12649,7 @@ pub mod delete_policy_input {
 #[doc(hidden)]
 pub type DeletePolicyInputOperationOutputAlias = crate::operation::DeletePolicy;
 #[doc(hidden)]
-pub type DeletePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeletePolicy`](crate::operation::DeletePolicy)>
     #[allow(clippy::let_and_return)]
@@ -12980,7 +12660,7 @@ impl DeletePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13070,7 +12750,7 @@ impl DeletePolicyInput {
             "DeletePolicy",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13135,7 +12815,7 @@ pub mod delete_policy_version_input {
 #[doc(hidden)]
 pub type DeletePolicyVersionInputOperationOutputAlias = crate::operation::DeletePolicyVersion;
 #[doc(hidden)]
-pub type DeletePolicyVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePolicyVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePolicyVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeletePolicyVersion`](crate::operation::DeletePolicyVersion)>
     #[allow(clippy::let_and_return)]
@@ -13146,7 +12826,7 @@ impl DeletePolicyVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePolicyVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13256,7 +12936,7 @@ impl DeletePolicyVersionInput {
             "DeletePolicyVersion",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13310,7 +12990,7 @@ pub mod delete_provisioning_template_input {
 pub type DeleteProvisioningTemplateInputOperationOutputAlias =
     crate::operation::DeleteProvisioningTemplate;
 #[doc(hidden)]
-pub type DeleteProvisioningTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProvisioningTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProvisioningTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProvisioningTemplate`](crate::operation::DeleteProvisioningTemplate)>
     #[allow(clippy::let_and_return)]
@@ -13321,7 +13001,7 @@ impl DeleteProvisioningTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProvisioningTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13415,7 +13095,7 @@ impl DeleteProvisioningTemplateInput {
             "DeleteProvisioningTemplate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13481,7 +13161,8 @@ pub mod delete_provisioning_template_version_input {
 pub type DeleteProvisioningTemplateVersionInputOperationOutputAlias =
     crate::operation::DeleteProvisioningTemplateVersion;
 #[doc(hidden)]
-pub type DeleteProvisioningTemplateVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProvisioningTemplateVersionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProvisioningTemplateVersionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProvisioningTemplateVersion`](crate::operation::DeleteProvisioningTemplateVersion)>
     #[allow(clippy::let_and_return)]
@@ -13492,7 +13173,7 @@ impl DeleteProvisioningTemplateVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProvisioningTemplateVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13603,7 +13284,7 @@ impl DeleteProvisioningTemplateVersionInput {
             "DeleteProvisioningTemplateVersion",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13639,7 +13320,7 @@ pub mod delete_registration_code_input {
 #[doc(hidden)]
 pub type DeleteRegistrationCodeInputOperationOutputAlias = crate::operation::DeleteRegistrationCode;
 #[doc(hidden)]
-pub type DeleteRegistrationCodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRegistrationCodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRegistrationCodeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRegistrationCode`](crate::operation::DeleteRegistrationCode)>
     #[allow(clippy::let_and_return)]
@@ -13650,7 +13331,7 @@ impl DeleteRegistrationCodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRegistrationCode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13724,7 +13405,7 @@ impl DeleteRegistrationCodeInput {
             "DeleteRegistrationCode",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13774,7 +13455,7 @@ pub mod delete_role_alias_input {
 #[doc(hidden)]
 pub type DeleteRoleAliasInputOperationOutputAlias = crate::operation::DeleteRoleAlias;
 #[doc(hidden)]
-pub type DeleteRoleAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteRoleAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteRoleAliasInput {
     /// Consumes the builder and constructs an Operation<[`DeleteRoleAlias`](crate::operation::DeleteRoleAlias)>
     #[allow(clippy::let_and_return)]
@@ -13785,7 +13466,7 @@ impl DeleteRoleAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteRoleAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -13875,7 +13556,7 @@ impl DeleteRoleAliasInput {
             "DeleteRoleAlias",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -13928,7 +13609,7 @@ pub mod delete_scheduled_audit_input {
 #[doc(hidden)]
 pub type DeleteScheduledAuditInputOperationOutputAlias = crate::operation::DeleteScheduledAudit;
 #[doc(hidden)]
-pub type DeleteScheduledAuditInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteScheduledAuditInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteScheduledAuditInput {
     /// Consumes the builder and constructs an Operation<[`DeleteScheduledAudit`](crate::operation::DeleteScheduledAudit)>
     #[allow(clippy::let_and_return)]
@@ -13939,7 +13620,7 @@ impl DeleteScheduledAuditInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteScheduledAudit,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14033,7 +13714,7 @@ impl DeleteScheduledAuditInput {
             "DeleteScheduledAudit",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14071,16 +13752,12 @@ pub mod delete_security_profile_input {
             self.security_profile_name = input;
             self
         }
-        /// <p>The expected version of the security profile. A new version is generated whenever
-        /// the security profile is updated. If you specify a value that is different from the actual
-        /// version, a <code>VersionConflictException</code> is thrown.</p>
+        /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>The expected version of the security profile. A new version is generated whenever
-        /// the security profile is updated. If you specify a value that is different from the actual
-        /// version, a <code>VersionConflictException</code> is thrown.</p>
+        /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
@@ -14102,7 +13779,7 @@ pub mod delete_security_profile_input {
 #[doc(hidden)]
 pub type DeleteSecurityProfileInputOperationOutputAlias = crate::operation::DeleteSecurityProfile;
 #[doc(hidden)]
-pub type DeleteSecurityProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSecurityProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSecurityProfileInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSecurityProfile`](crate::operation::DeleteSecurityProfile)>
     #[allow(clippy::let_and_return)]
@@ -14113,7 +13790,7 @@ impl DeleteSecurityProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSecurityProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14221,7 +13898,7 @@ impl DeleteSecurityProfileInput {
             "DeleteSecurityProfile",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14271,7 +13948,7 @@ pub mod delete_stream_input {
 #[doc(hidden)]
 pub type DeleteStreamInputOperationOutputAlias = crate::operation::DeleteStream;
 #[doc(hidden)]
-pub type DeleteStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteStreamInput {
     /// Consumes the builder and constructs an Operation<[`DeleteStream`](crate::operation::DeleteStream)>
     #[allow(clippy::let_and_return)]
@@ -14282,7 +13959,7 @@ impl DeleteStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14372,7 +14049,7 @@ impl DeleteStreamInput {
             "DeleteStream",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14407,18 +14084,12 @@ pub mod delete_thing_input {
             self.thing_name = input;
             self
         }
-        /// <p>The expected version of the thing record in the registry. If the version of the
-        /// record in the registry does not match the expected version specified in the request, the
-        /// <code>DeleteThing</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>The expected version of the thing record in the registry. If the version of the
-        /// record in the registry does not match the expected version specified in the request, the
-        /// <code>DeleteThing</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
@@ -14440,7 +14111,7 @@ pub mod delete_thing_input {
 #[doc(hidden)]
 pub type DeleteThingInputOperationOutputAlias = crate::operation::DeleteThing;
 #[doc(hidden)]
-pub type DeleteThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteThingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteThingInput {
     /// Consumes the builder and constructs an Operation<[`DeleteThing`](crate::operation::DeleteThing)>
     #[allow(clippy::let_and_return)]
@@ -14451,7 +14122,7 @@ impl DeleteThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14555,7 +14226,7 @@ impl DeleteThingInput {
             "DeleteThing",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14620,7 +14291,7 @@ pub mod delete_thing_group_input {
 #[doc(hidden)]
 pub type DeleteThingGroupInputOperationOutputAlias = crate::operation::DeleteThingGroup;
 #[doc(hidden)]
-pub type DeleteThingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteThingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteThingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteThingGroup`](crate::operation::DeleteThingGroup)>
     #[allow(clippy::let_and_return)]
@@ -14631,7 +14302,7 @@ impl DeleteThingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteThingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14739,7 +14410,7 @@ impl DeleteThingGroupInput {
             "DeleteThingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14792,7 +14463,7 @@ pub mod delete_thing_type_input {
 #[doc(hidden)]
 pub type DeleteThingTypeInputOperationOutputAlias = crate::operation::DeleteThingType;
 #[doc(hidden)]
-pub type DeleteThingTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteThingTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteThingTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeleteThingType`](crate::operation::DeleteThingType)>
     #[allow(clippy::let_and_return)]
@@ -14803,7 +14474,7 @@ impl DeleteThingTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteThingType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -14897,7 +14568,7 @@ impl DeleteThingTypeInput {
             "DeleteThingType",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -14947,7 +14618,7 @@ pub mod delete_topic_rule_input {
 #[doc(hidden)]
 pub type DeleteTopicRuleInputOperationOutputAlias = crate::operation::DeleteTopicRule;
 #[doc(hidden)]
-pub type DeleteTopicRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTopicRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTopicRuleInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTopicRule`](crate::operation::DeleteTopicRule)>
     #[allow(clippy::let_and_return)]
@@ -14958,7 +14629,7 @@ impl DeleteTopicRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTopicRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15048,7 +14719,7 @@ impl DeleteTopicRuleInput {
             "DeleteTopicRule",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15097,7 +14768,7 @@ pub mod delete_topic_rule_destination_input {
 pub type DeleteTopicRuleDestinationInputOperationOutputAlias =
     crate::operation::DeleteTopicRuleDestination;
 #[doc(hidden)]
-pub type DeleteTopicRuleDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteTopicRuleDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteTopicRuleDestinationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTopicRuleDestination`](crate::operation::DeleteTopicRuleDestination)>
     #[allow(clippy::let_and_return)]
@@ -15108,7 +14779,7 @@ impl DeleteTopicRuleDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteTopicRuleDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15197,7 +14868,7 @@ impl DeleteTopicRuleDestinationInput {
             "DeleteTopicRuleDestination",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15222,14 +14893,12 @@ pub mod delete_v2_logging_level_input {
         pub(crate) target_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of resource for which you are configuring logging. Must be
-        /// <code>THING_Group</code>.</p>
+        /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
         pub fn target_type(mut self, input: crate::model::LogTargetType) -> Self {
             self.target_type = Some(input);
             self
         }
-        /// <p>The type of resource for which you are configuring logging. Must be
-        /// <code>THING_Group</code>.</p>
+        /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
         pub fn set_target_type(
             mut self,
             input: std::option::Option<crate::model::LogTargetType>,
@@ -15264,7 +14933,7 @@ pub mod delete_v2_logging_level_input {
 #[doc(hidden)]
 pub type DeleteV2LoggingLevelInputOperationOutputAlias = crate::operation::DeleteV2LoggingLevel;
 #[doc(hidden)]
-pub type DeleteV2LoggingLevelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteV2LoggingLevelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteV2LoggingLevelInput {
     /// Consumes the builder and constructs an Operation<[`DeleteV2LoggingLevel`](crate::operation::DeleteV2LoggingLevel)>
     #[allow(clippy::let_and_return)]
@@ -15275,7 +14944,7 @@ impl DeleteV2LoggingLevelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteV2LoggingLevel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15363,7 +15032,7 @@ impl DeleteV2LoggingLevelInput {
             "DeleteV2LoggingLevel",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15401,14 +15070,12 @@ pub mod deprecate_thing_type_input {
             self.thing_type_name = input;
             self
         }
-        /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can
-        /// associate it with things.</p>
+        /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
         pub fn undo_deprecate(mut self, input: bool) -> Self {
             self.undo_deprecate = Some(input);
             self
         }
-        /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can
-        /// associate it with things.</p>
+        /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
         pub fn set_undo_deprecate(mut self, input: std::option::Option<bool>) -> Self {
             self.undo_deprecate = input;
             self
@@ -15430,7 +15097,7 @@ pub mod deprecate_thing_type_input {
 #[doc(hidden)]
 pub type DeprecateThingTypeInputOperationOutputAlias = crate::operation::DeprecateThingType;
 #[doc(hidden)]
-pub type DeprecateThingTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeprecateThingTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeprecateThingTypeInput {
     /// Consumes the builder and constructs an Operation<[`DeprecateThingType`](crate::operation::DeprecateThingType)>
     #[allow(clippy::let_and_return)]
@@ -15441,7 +15108,7 @@ impl DeprecateThingTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeprecateThingType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15541,7 +15208,7 @@ impl DeprecateThingTypeInput {
             "DeprecateThingType",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15586,7 +15253,8 @@ pub mod describe_account_audit_configuration_input {
 pub type DescribeAccountAuditConfigurationInputOperationOutputAlias =
     crate::operation::DescribeAccountAuditConfiguration;
 #[doc(hidden)]
-pub type DescribeAccountAuditConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAccountAuditConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAccountAuditConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAccountAuditConfiguration`](crate::operation::DescribeAccountAuditConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -15597,7 +15265,7 @@ impl DescribeAccountAuditConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountAuditConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15671,7 +15339,7 @@ impl DescribeAccountAuditConfigurationInput {
             "DescribeAccountAuditConfiguration",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15721,7 +15389,7 @@ pub mod describe_audit_finding_input {
 #[doc(hidden)]
 pub type DescribeAuditFindingInputOperationOutputAlias = crate::operation::DescribeAuditFinding;
 #[doc(hidden)]
-pub type DescribeAuditFindingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAuditFindingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAuditFindingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAuditFinding`](crate::operation::DescribeAuditFinding)>
     #[allow(clippy::let_and_return)]
@@ -15732,7 +15400,7 @@ impl DescribeAuditFindingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAuditFinding,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15826,7 +15494,7 @@ impl DescribeAuditFindingInput {
             "DescribeAuditFinding",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -15877,7 +15545,8 @@ pub mod describe_audit_mitigation_actions_task_input {
 pub type DescribeAuditMitigationActionsTaskInputOperationOutputAlias =
     crate::operation::DescribeAuditMitigationActionsTask;
 #[doc(hidden)]
-pub type DescribeAuditMitigationActionsTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAuditMitigationActionsTaskInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAuditMitigationActionsTaskInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAuditMitigationActionsTask`](crate::operation::DescribeAuditMitigationActionsTask)>
     #[allow(clippy::let_and_return)]
@@ -15888,7 +15557,7 @@ impl DescribeAuditMitigationActionsTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAuditMitigationActionsTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -15982,7 +15651,7 @@ impl DescribeAuditMitigationActionsTaskInput {
             "DescribeAuditMitigationActionsTask",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16007,18 +15676,12 @@ pub mod describe_audit_suppression_input {
         pub(crate) resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
     }
     impl Builder {
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_name = Some(input.into());
             self
         }
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_name = input;
             self
@@ -16054,7 +15717,7 @@ pub mod describe_audit_suppression_input {
 pub type DescribeAuditSuppressionInputOperationOutputAlias =
     crate::operation::DescribeAuditSuppression;
 #[doc(hidden)]
-pub type DescribeAuditSuppressionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAuditSuppressionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAuditSuppressionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAuditSuppression`](crate::operation::DescribeAuditSuppression)>
     #[allow(clippy::let_and_return)]
@@ -16065,7 +15728,7 @@ impl DescribeAuditSuppressionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAuditSuppression,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16147,7 +15810,7 @@ impl DescribeAuditSuppressionInput {
             "DescribeAuditSuppression",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16205,7 +15868,7 @@ pub mod describe_audit_task_input {
 #[doc(hidden)]
 pub type DescribeAuditTaskInputOperationOutputAlias = crate::operation::DescribeAuditTask;
 #[doc(hidden)]
-pub type DescribeAuditTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAuditTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAuditTaskInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAuditTask`](crate::operation::DescribeAuditTask)>
     #[allow(clippy::let_and_return)]
@@ -16216,7 +15879,7 @@ impl DescribeAuditTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAuditTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16306,7 +15969,7 @@ impl DescribeAuditTaskInput {
             "DescribeAuditTask",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16359,7 +16022,7 @@ pub mod describe_authorizer_input {
 #[doc(hidden)]
 pub type DescribeAuthorizerInputOperationOutputAlias = crate::operation::DescribeAuthorizer;
 #[doc(hidden)]
-pub type DescribeAuthorizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAuthorizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAuthorizerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAuthorizer`](crate::operation::DescribeAuthorizer)>
     #[allow(clippy::let_and_return)]
@@ -16370,7 +16033,7 @@ impl DescribeAuthorizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAuthorizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16464,7 +16127,7 @@ impl DescribeAuthorizerInput {
             "DescribeAuthorizer",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16517,7 +16180,7 @@ pub mod describe_billing_group_input {
 #[doc(hidden)]
 pub type DescribeBillingGroupInputOperationOutputAlias = crate::operation::DescribeBillingGroup;
 #[doc(hidden)]
-pub type DescribeBillingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBillingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBillingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBillingGroup`](crate::operation::DescribeBillingGroup)>
     #[allow(clippy::let_and_return)]
@@ -16528,7 +16191,7 @@ impl DescribeBillingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBillingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16622,7 +16285,7 @@ impl DescribeBillingGroupInput {
             "DescribeBillingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16675,7 +16338,7 @@ pub mod describe_ca_certificate_input {
 #[doc(hidden)]
 pub type DescribeCaCertificateInputOperationOutputAlias = crate::operation::DescribeCACertificate;
 #[doc(hidden)]
-pub type DescribeCaCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCaCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCaCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCACertificate`](crate::operation::DescribeCACertificate)>
     #[allow(clippy::let_and_return)]
@@ -16686,7 +16349,7 @@ impl DescribeCaCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCACertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16780,7 +16443,7 @@ impl DescribeCaCertificateInput {
             "DescribeCACertificate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16804,14 +16467,12 @@ pub mod describe_certificate_input {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16835,7 +16496,7 @@ pub mod describe_certificate_input {
 #[doc(hidden)]
 pub type DescribeCertificateInputOperationOutputAlias = crate::operation::DescribeCertificate;
 #[doc(hidden)]
-pub type DescribeCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCertificate`](crate::operation::DescribeCertificate)>
     #[allow(clippy::let_and_return)]
@@ -16846,7 +16507,7 @@ impl DescribeCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -16940,7 +16601,7 @@ impl DescribeCertificateInput {
             "DescribeCertificate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -16964,16 +16625,12 @@ pub mod describe_custom_metric_input {
         pub(crate) metric_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the custom metric.
-        /// </p>
+        /// <p> The name of the custom metric. </p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the custom metric.
-        /// </p>
+        /// <p> The name of the custom metric. </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -16994,7 +16651,7 @@ pub mod describe_custom_metric_input {
 #[doc(hidden)]
 pub type DescribeCustomMetricInputOperationOutputAlias = crate::operation::DescribeCustomMetric;
 #[doc(hidden)]
-pub type DescribeCustomMetricInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeCustomMetricInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCustomMetricInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCustomMetric`](crate::operation::DescribeCustomMetric)>
     #[allow(clippy::let_and_return)]
@@ -17005,7 +16662,7 @@ impl DescribeCustomMetricInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomMetric,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17099,7 +16756,7 @@ impl DescribeCustomMetricInput {
             "DescribeCustomMetric",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17136,7 +16793,7 @@ pub mod describe_default_authorizer_input {
 pub type DescribeDefaultAuthorizerInputOperationOutputAlias =
     crate::operation::DescribeDefaultAuthorizer;
 #[doc(hidden)]
-pub type DescribeDefaultAuthorizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDefaultAuthorizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDefaultAuthorizerInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDefaultAuthorizer`](crate::operation::DescribeDefaultAuthorizer)>
     #[allow(clippy::let_and_return)]
@@ -17147,7 +16804,7 @@ impl DescribeDefaultAuthorizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDefaultAuthorizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17221,7 +16878,7 @@ impl DescribeDefaultAuthorizerInput {
             "DescribeDefaultAuthorizer",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17245,16 +16902,12 @@ pub mod describe_detect_mitigation_actions_task_input {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -17277,7 +16930,7 @@ pub type DescribeDetectMitigationActionsTaskInputOperationOutputAlias =
     crate::operation::DescribeDetectMitigationActionsTask;
 #[doc(hidden)]
 pub type DescribeDetectMitigationActionsTaskInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDetectMitigationActionsTaskInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDetectMitigationActionsTask`](crate::operation::DescribeDetectMitigationActionsTask)>
     #[allow(clippy::let_and_return)]
@@ -17288,7 +16941,7 @@ impl DescribeDetectMitigationActionsTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDetectMitigationActionsTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17382,7 +17035,7 @@ impl DescribeDetectMitigationActionsTaskInput {
             "DescribeDetectMitigationActionsTask",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17430,7 +17083,7 @@ pub mod describe_dimension_input {
 #[doc(hidden)]
 pub type DescribeDimensionInputOperationOutputAlias = crate::operation::DescribeDimension;
 #[doc(hidden)]
-pub type DescribeDimensionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDimensionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDimensionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDimension`](crate::operation::DescribeDimension)>
     #[allow(clippy::let_and_return)]
@@ -17441,7 +17094,7 @@ impl DescribeDimensionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDimension,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17530,7 +17183,7 @@ impl DescribeDimensionInput {
             "DescribeDimension",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17584,7 +17237,7 @@ pub mod describe_domain_configuration_input {
 pub type DescribeDomainConfigurationInputOperationOutputAlias =
     crate::operation::DescribeDomainConfiguration;
 #[doc(hidden)]
-pub type DescribeDomainConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDomainConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDomainConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDomainConfiguration`](crate::operation::DescribeDomainConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -17595,7 +17248,7 @@ impl DescribeDomainConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomainConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17689,7 +17342,7 @@ impl DescribeDomainConfigurationInput {
             "DescribeDomainConfiguration",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17715,66 +17368,36 @@ pub mod describe_endpoint_input {
     impl Builder {
         /// <p>The endpoint type. Valid endpoint types include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API
-        /// endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:Jobs</code> - Returns an IoT device management Jobs API
-        /// endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
         /// </ul>
-        /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid
-        /// issues related to the widespread distrust of Symantec certificate authorities.</p>
+        /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
         pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_type = Some(input.into());
             self
         }
         /// <p>The endpoint type. Valid endpoint types include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API
-        /// endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>iot:Jobs</code> - Returns an IoT device management Jobs API
-        /// endpoint.</p>
-        /// </li>
+        /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
         /// </ul>
-        /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid
-        /// issues related to the widespread distrust of Symantec certificate authorities.</p>
+        /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
         pub fn set_endpoint_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17798,7 +17421,7 @@ pub mod describe_endpoint_input {
 #[doc(hidden)]
 pub type DescribeEndpointInputOperationOutputAlias = crate::operation::DescribeEndpoint;
 #[doc(hidden)]
-pub type DescribeEndpointInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEndpointInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpoint`](crate::operation::DescribeEndpoint)>
     #[allow(clippy::let_and_return)]
@@ -17809,7 +17432,7 @@ impl DescribeEndpointInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpoint,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -17897,7 +17520,7 @@ impl DescribeEndpointInput {
             "DescribeEndpoint",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -17934,7 +17557,7 @@ pub mod describe_event_configurations_input {
 pub type DescribeEventConfigurationsInputOperationOutputAlias =
     crate::operation::DescribeEventConfigurations;
 #[doc(hidden)]
-pub type DescribeEventConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEventConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEventConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEventConfigurations`](crate::operation::DescribeEventConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -17945,7 +17568,7 @@ impl DescribeEventConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEventConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18019,7 +17642,7 @@ impl DescribeEventConfigurationsInput {
             "DescribeEventConfigurations",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18069,7 +17692,7 @@ pub mod describe_fleet_metric_input {
 #[doc(hidden)]
 pub type DescribeFleetMetricInputOperationOutputAlias = crate::operation::DescribeFleetMetric;
 #[doc(hidden)]
-pub type DescribeFleetMetricInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFleetMetricInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetMetricInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetMetric`](crate::operation::DescribeFleetMetric)>
     #[allow(clippy::let_and_return)]
@@ -18080,7 +17703,7 @@ impl DescribeFleetMetricInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetMetric,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18174,7 +17797,7 @@ impl DescribeFleetMetricInput {
             "DescribeFleetMetric",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18224,7 +17847,7 @@ pub mod describe_index_input {
 #[doc(hidden)]
 pub type DescribeIndexInputOperationOutputAlias = crate::operation::DescribeIndex;
 #[doc(hidden)]
-pub type DescribeIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIndexInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIndex`](crate::operation::DescribeIndex)>
     #[allow(clippy::let_and_return)]
@@ -18235,7 +17858,7 @@ impl DescribeIndexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIndex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18325,7 +17948,7 @@ impl DescribeIndexInput {
             "DescribeIndex",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18375,7 +17998,7 @@ pub mod describe_job_input {
 #[doc(hidden)]
 pub type DescribeJobInputOperationOutputAlias = crate::operation::DescribeJob;
 #[doc(hidden)]
-pub type DescribeJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJob`](crate::operation::DescribeJob)>
     #[allow(clippy::let_and_return)]
@@ -18386,7 +18009,7 @@ impl DescribeJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18475,7 +18098,7 @@ impl DescribeJobInput {
             "DescribeJob",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18521,14 +18144,12 @@ pub mod describe_job_execution_input {
             self.thing_name = input;
             self
         }
-        /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution
-        /// on a particular device.</p>
+        /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
         pub fn execution_number(mut self, input: i64) -> Self {
             self.execution_number = Some(input);
             self
         }
-        /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution
-        /// on a particular device.</p>
+        /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
         pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
             self.execution_number = input;
             self
@@ -18551,7 +18172,7 @@ pub mod describe_job_execution_input {
 #[doc(hidden)]
 pub type DescribeJobExecutionInputOperationOutputAlias = crate::operation::DescribeJobExecution;
 #[doc(hidden)]
-pub type DescribeJobExecutionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeJobExecutionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobExecutionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobExecution`](crate::operation::DescribeJobExecution)>
     #[allow(clippy::let_and_return)]
@@ -18562,7 +18183,7 @@ impl DescribeJobExecutionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeJobExecution,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18686,7 +18307,7 @@ impl DescribeJobExecutionInput {
             "DescribeJobExecution",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18739,7 +18360,7 @@ pub mod describe_job_template_input {
 #[doc(hidden)]
 pub type DescribeJobTemplateInputOperationOutputAlias = crate::operation::DescribeJobTemplate;
 #[doc(hidden)]
-pub type DescribeJobTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeJobTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeJobTemplate`](crate::operation::DescribeJobTemplate)>
     #[allow(clippy::let_and_return)]
@@ -18750,7 +18371,7 @@ impl DescribeJobTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeJobTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -18844,7 +18465,7 @@ impl DescribeJobTemplateInput {
             "DescribeJobTemplate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -18882,14 +18503,12 @@ pub mod describe_managed_job_template_input {
             self.template_name = input;
             self
         }
-        /// <p>An optional parameter to specify version of a managed template. If not specified, the
-        /// pre-defined default version is returned.</p>
+        /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
         pub fn template_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_version = Some(input.into());
             self
         }
-        /// <p>An optional parameter to specify version of a managed template. If not specified, the
-        /// pre-defined default version is returned.</p>
+        /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
         pub fn set_template_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18915,7 +18534,7 @@ pub mod describe_managed_job_template_input {
 pub type DescribeManagedJobTemplateInputOperationOutputAlias =
     crate::operation::DescribeManagedJobTemplate;
 #[doc(hidden)]
-pub type DescribeManagedJobTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeManagedJobTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeManagedJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeManagedJobTemplate`](crate::operation::DescribeManagedJobTemplate)>
     #[allow(clippy::let_and_return)]
@@ -18926,7 +18545,7 @@ impl DescribeManagedJobTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeManagedJobTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19034,7 +18653,7 @@ impl DescribeManagedJobTemplateInput {
             "DescribeManagedJobTemplate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19085,7 +18704,7 @@ pub mod describe_mitigation_action_input {
 pub type DescribeMitigationActionInputOperationOutputAlias =
     crate::operation::DescribeMitigationAction;
 #[doc(hidden)]
-pub type DescribeMitigationActionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeMitigationActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeMitigationActionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeMitigationAction`](crate::operation::DescribeMitigationAction)>
     #[allow(clippy::let_and_return)]
@@ -19096,7 +18715,7 @@ impl DescribeMitigationActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeMitigationAction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19190,7 +18809,7 @@ impl DescribeMitigationActionInput {
             "DescribeMitigationAction",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19244,7 +18863,8 @@ pub mod describe_provisioning_template_input {
 pub type DescribeProvisioningTemplateInputOperationOutputAlias =
     crate::operation::DescribeProvisioningTemplate;
 #[doc(hidden)]
-pub type DescribeProvisioningTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeProvisioningTemplateInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProvisioningTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProvisioningTemplate`](crate::operation::DescribeProvisioningTemplate)>
     #[allow(clippy::let_and_return)]
@@ -19255,7 +18875,7 @@ impl DescribeProvisioningTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProvisioningTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19349,7 +18969,7 @@ impl DescribeProvisioningTemplateInput {
             "DescribeProvisioningTemplate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19416,7 +19036,7 @@ pub type DescribeProvisioningTemplateVersionInputOperationOutputAlias =
     crate::operation::DescribeProvisioningTemplateVersion;
 #[doc(hidden)]
 pub type DescribeProvisioningTemplateVersionInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProvisioningTemplateVersionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProvisioningTemplateVersion`](crate::operation::DescribeProvisioningTemplateVersion)>
     #[allow(clippy::let_and_return)]
@@ -19427,7 +19047,7 @@ impl DescribeProvisioningTemplateVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProvisioningTemplateVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19538,7 +19158,7 @@ impl DescribeProvisioningTemplateVersionInput {
             "DescribeProvisioningTemplateVersion",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19588,7 +19208,7 @@ pub mod describe_role_alias_input {
 #[doc(hidden)]
 pub type DescribeRoleAliasInputOperationOutputAlias = crate::operation::DescribeRoleAlias;
 #[doc(hidden)]
-pub type DescribeRoleAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeRoleAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeRoleAliasInput {
     /// Consumes the builder and constructs an Operation<[`DescribeRoleAlias`](crate::operation::DescribeRoleAlias)>
     #[allow(clippy::let_and_return)]
@@ -19599,7 +19219,7 @@ impl DescribeRoleAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeRoleAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19689,7 +19309,7 @@ impl DescribeRoleAliasInput {
             "DescribeRoleAlias",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19742,7 +19362,7 @@ pub mod describe_scheduled_audit_input {
 #[doc(hidden)]
 pub type DescribeScheduledAuditInputOperationOutputAlias = crate::operation::DescribeScheduledAudit;
 #[doc(hidden)]
-pub type DescribeScheduledAuditInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeScheduledAuditInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeScheduledAuditInput {
     /// Consumes the builder and constructs an Operation<[`DescribeScheduledAudit`](crate::operation::DescribeScheduledAudit)>
     #[allow(clippy::let_and_return)]
@@ -19753,7 +19373,7 @@ impl DescribeScheduledAuditInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeScheduledAudit,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -19847,7 +19467,7 @@ impl DescribeScheduledAuditInput {
             "DescribeScheduledAudit",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -19871,14 +19491,12 @@ pub mod describe_security_profile_input {
         pub(crate) security_profile_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the security profile
-        /// whose information you want to get.</p>
+        /// <p>The name of the security profile whose information you want to get.</p>
         pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_profile_name = Some(input.into());
             self
         }
-        /// <p>The name of the security profile
-        /// whose information you want to get.</p>
+        /// <p>The name of the security profile whose information you want to get.</p>
         pub fn set_security_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19903,7 +19521,7 @@ pub mod describe_security_profile_input {
 pub type DescribeSecurityProfileInputOperationOutputAlias =
     crate::operation::DescribeSecurityProfile;
 #[doc(hidden)]
-pub type DescribeSecurityProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSecurityProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSecurityProfileInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSecurityProfile`](crate::operation::DescribeSecurityProfile)>
     #[allow(clippy::let_and_return)]
@@ -19914,7 +19532,7 @@ impl DescribeSecurityProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSecurityProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20008,7 +19626,7 @@ impl DescribeSecurityProfileInput {
             "DescribeSecurityProfile",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20058,7 +19676,7 @@ pub mod describe_stream_input {
 #[doc(hidden)]
 pub type DescribeStreamInputOperationOutputAlias = crate::operation::DescribeStream;
 #[doc(hidden)]
-pub type DescribeStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeStreamInput {
     /// Consumes the builder and constructs an Operation<[`DescribeStream`](crate::operation::DescribeStream)>
     #[allow(clippy::let_and_return)]
@@ -20069,7 +19687,7 @@ impl DescribeStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20159,7 +19777,7 @@ impl DescribeStreamInput {
             "DescribeStream",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20209,7 +19827,7 @@ pub mod describe_thing_input {
 #[doc(hidden)]
 pub type DescribeThingInputOperationOutputAlias = crate::operation::DescribeThing;
 #[doc(hidden)]
-pub type DescribeThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeThingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeThingInput {
     /// Consumes the builder and constructs an Operation<[`DescribeThing`](crate::operation::DescribeThing)>
     #[allow(clippy::let_and_return)]
@@ -20220,7 +19838,7 @@ impl DescribeThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20310,7 +19928,7 @@ impl DescribeThingInput {
             "DescribeThing",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20363,7 +19981,7 @@ pub mod describe_thing_group_input {
 #[doc(hidden)]
 pub type DescribeThingGroupInputOperationOutputAlias = crate::operation::DescribeThingGroup;
 #[doc(hidden)]
-pub type DescribeThingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeThingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeThingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeThingGroup`](crate::operation::DescribeThingGroup)>
     #[allow(clippy::let_and_return)]
@@ -20374,7 +19992,7 @@ impl DescribeThingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeThingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20468,7 +20086,7 @@ impl DescribeThingGroupInput {
             "DescribeThingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20519,7 +20137,8 @@ pub mod describe_thing_registration_task_input {
 pub type DescribeThingRegistrationTaskInputOperationOutputAlias =
     crate::operation::DescribeThingRegistrationTask;
 #[doc(hidden)]
-pub type DescribeThingRegistrationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeThingRegistrationTaskInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeThingRegistrationTaskInput {
     /// Consumes the builder and constructs an Operation<[`DescribeThingRegistrationTask`](crate::operation::DescribeThingRegistrationTask)>
     #[allow(clippy::let_and_return)]
@@ -20530,7 +20149,7 @@ impl DescribeThingRegistrationTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeThingRegistrationTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20624,7 +20243,7 @@ impl DescribeThingRegistrationTaskInput {
             "DescribeThingRegistrationTask",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20677,7 +20296,7 @@ pub mod describe_thing_type_input {
 #[doc(hidden)]
 pub type DescribeThingTypeInputOperationOutputAlias = crate::operation::DescribeThingType;
 #[doc(hidden)]
-pub type DescribeThingTypeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeThingTypeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeThingTypeInput {
     /// Consumes the builder and constructs an Operation<[`DescribeThingType`](crate::operation::DescribeThingType)>
     #[allow(clippy::let_and_return)]
@@ -20688,7 +20307,7 @@ impl DescribeThingTypeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeThingType,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20782,7 +20401,7 @@ impl DescribeThingTypeInput {
             "DescribeThingType",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -20844,7 +20463,7 @@ pub mod detach_policy_input {
 #[doc(hidden)]
 pub type DetachPolicyInputOperationOutputAlias = crate::operation::DetachPolicy;
 #[doc(hidden)]
-pub type DetachPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetachPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetachPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DetachPolicy`](crate::operation::DetachPolicy)>
     #[allow(clippy::let_and_return)]
@@ -20855,7 +20474,7 @@ impl DetachPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetachPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -20954,7 +20573,7 @@ impl DetachPolicyInput {
             "DetachPolicy",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21026,7 +20645,7 @@ pub mod detach_principal_policy_input {
 #[doc(hidden)]
 pub type DetachPrincipalPolicyInputOperationOutputAlias = crate::operation::DetachPrincipalPolicy;
 #[doc(hidden)]
-pub type DetachPrincipalPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetachPrincipalPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetachPrincipalPolicyInput {
     /// Consumes the builder and constructs an Operation<[`DetachPrincipalPolicy`](crate::operation::DetachPrincipalPolicy)>
     #[allow(clippy::let_and_return)]
@@ -21037,7 +20656,7 @@ impl DetachPrincipalPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetachPrincipalPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21155,7 +20774,7 @@ impl DetachPrincipalPolicyInput {
             "DetachPrincipalPolicy",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21226,7 +20845,7 @@ pub mod detach_security_profile_input {
 #[doc(hidden)]
 pub type DetachSecurityProfileInputOperationOutputAlias = crate::operation::DetachSecurityProfile;
 #[doc(hidden)]
-pub type DetachSecurityProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetachSecurityProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetachSecurityProfileInput {
     /// Consumes the builder and constructs an Operation<[`DetachSecurityProfile`](crate::operation::DetachSecurityProfile)>
     #[allow(clippy::let_and_return)]
@@ -21237,7 +20856,7 @@ impl DetachSecurityProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetachSecurityProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21345,7 +20964,7 @@ impl DetachSecurityProfileInput {
             "DetachSecurityProfile",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21380,16 +20999,12 @@ pub mod detach_thing_principal_input {
             self.thing_name = input;
             self
         }
-        /// <p>If the principal is a certificate, this value must be ARN of the certificate. If
-        /// the principal is an Amazon Cognito identity, this value must be the ID of the Amazon
-        /// Cognito identity.</p>
+        /// <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>If the principal is a certificate, this value must be ARN of the certificate. If
-        /// the principal is an Amazon Cognito identity, this value must be the ID of the Amazon
-        /// Cognito identity.</p>
+        /// <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -21411,7 +21026,7 @@ pub mod detach_thing_principal_input {
 #[doc(hidden)]
 pub type DetachThingPrincipalInputOperationOutputAlias = crate::operation::DetachThingPrincipal;
 #[doc(hidden)]
-pub type DetachThingPrincipalInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetachThingPrincipalInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DetachThingPrincipalInput {
     /// Consumes the builder and constructs an Operation<[`DetachThingPrincipal`](crate::operation::DetachThingPrincipal)>
     #[allow(clippy::let_and_return)]
@@ -21422,7 +21037,7 @@ impl DetachThingPrincipalInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DetachThingPrincipal,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21540,7 +21155,7 @@ impl DetachThingPrincipalInput {
             "DetachThingPrincipal",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21590,7 +21205,7 @@ pub mod disable_topic_rule_input {
 #[doc(hidden)]
 pub type DisableTopicRuleInputOperationOutputAlias = crate::operation::DisableTopicRule;
 #[doc(hidden)]
-pub type DisableTopicRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisableTopicRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisableTopicRuleInput {
     /// Consumes the builder and constructs an Operation<[`DisableTopicRule`](crate::operation::DisableTopicRule)>
     #[allow(clippy::let_and_return)]
@@ -21601,7 +21216,7 @@ impl DisableTopicRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisableTopicRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21691,7 +21306,7 @@ impl DisableTopicRuleInput {
             "DisableTopicRule",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21741,7 +21356,7 @@ pub mod enable_topic_rule_input {
 #[doc(hidden)]
 pub type EnableTopicRuleInputOperationOutputAlias = crate::operation::EnableTopicRule;
 #[doc(hidden)]
-pub type EnableTopicRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableTopicRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl EnableTopicRuleInput {
     /// Consumes the builder and constructs an Operation<[`EnableTopicRule`](crate::operation::EnableTopicRule)>
     #[allow(clippy::let_and_return)]
@@ -21752,7 +21367,7 @@ impl EnableTopicRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableTopicRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -21842,7 +21457,7 @@ impl EnableTopicRuleInput {
             "EnableTopicRule",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -21868,16 +21483,12 @@ pub mod get_behavior_model_training_summaries_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the security profile.
-        /// </p>
+        /// <p> The name of the security profile. </p>
         pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_profile_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the security profile.
-        /// </p>
+        /// <p> The name of the security profile. </p>
         pub fn set_security_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21885,30 +21496,22 @@ pub mod get_behavior_model_training_summaries_input {
             self.security_profile_name = input;
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -21932,7 +21535,8 @@ pub mod get_behavior_model_training_summaries_input {
 pub type GetBehaviorModelTrainingSummariesInputOperationOutputAlias =
     crate::operation::GetBehaviorModelTrainingSummaries;
 #[doc(hidden)]
-pub type GetBehaviorModelTrainingSummariesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBehaviorModelTrainingSummariesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetBehaviorModelTrainingSummariesInput {
     /// Consumes the builder and constructs an Operation<[`GetBehaviorModelTrainingSummaries`](crate::operation::GetBehaviorModelTrainingSummaries)>
     #[allow(clippy::let_and_return)]
@@ -21943,7 +21547,7 @@ impl GetBehaviorModelTrainingSummariesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBehaviorModelTrainingSummaries,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22041,7 +21645,7 @@ impl GetBehaviorModelTrainingSummariesInput {
             "GetBehaviorModelTrainingSummaries",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22152,7 +21756,7 @@ pub mod get_buckets_aggregation_input {
 #[doc(hidden)]
 pub type GetBucketsAggregationInputOperationOutputAlias = crate::operation::GetBucketsAggregation;
 #[doc(hidden)]
-pub type GetBucketsAggregationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetBucketsAggregationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetBucketsAggregationInput {
     /// Consumes the builder and constructs an Operation<[`GetBucketsAggregation`](crate::operation::GetBucketsAggregation)>
     #[allow(clippy::let_and_return)]
@@ -22163,7 +21767,7 @@ impl GetBucketsAggregationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetBucketsAggregation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22245,7 +21849,7 @@ impl GetBucketsAggregationInput {
             "GetBucketsAggregation",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22345,7 +21949,7 @@ pub mod get_cardinality_input {
 #[doc(hidden)]
 pub type GetCardinalityInputOperationOutputAlias = crate::operation::GetCardinality;
 #[doc(hidden)]
-pub type GetCardinalityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCardinalityInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCardinalityInput {
     /// Consumes the builder and constructs an Operation<[`GetCardinality`](crate::operation::GetCardinality)>
     #[allow(clippy::let_and_return)]
@@ -22356,7 +21960,7 @@ impl GetCardinalityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCardinality,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22436,7 +22040,7 @@ impl GetCardinalityInput {
             "GetCardinality",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22521,7 +22125,7 @@ pub mod get_effective_policies_input {
 #[doc(hidden)]
 pub type GetEffectivePoliciesInputOperationOutputAlias = crate::operation::GetEffectivePolicies;
 #[doc(hidden)]
-pub type GetEffectivePoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetEffectivePoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetEffectivePoliciesInput {
     /// Consumes the builder and constructs an Operation<[`GetEffectivePolicies`](crate::operation::GetEffectivePolicies)>
     #[allow(clippy::let_and_return)]
@@ -22532,7 +22136,7 @@ impl GetEffectivePoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetEffectivePolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22625,7 +22229,7 @@ impl GetEffectivePoliciesInput {
             "GetEffectivePolicies",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22670,7 +22274,7 @@ pub mod get_indexing_configuration_input {
 pub type GetIndexingConfigurationInputOperationOutputAlias =
     crate::operation::GetIndexingConfiguration;
 #[doc(hidden)]
-pub type GetIndexingConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetIndexingConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetIndexingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetIndexingConfiguration`](crate::operation::GetIndexingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -22681,7 +22285,7 @@ impl GetIndexingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetIndexingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22755,7 +22359,7 @@ impl GetIndexingConfigurationInput {
             "GetIndexingConfiguration",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22805,7 +22409,7 @@ pub mod get_job_document_input {
 #[doc(hidden)]
 pub type GetJobDocumentInputOperationOutputAlias = crate::operation::GetJobDocument;
 #[doc(hidden)]
-pub type GetJobDocumentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJobDocumentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobDocumentInput {
     /// Consumes the builder and constructs an Operation<[`GetJobDocument`](crate::operation::GetJobDocument)>
     #[allow(clippy::let_and_return)]
@@ -22816,7 +22420,7 @@ impl GetJobDocumentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJobDocument,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -22906,7 +22510,7 @@ impl GetJobDocumentInput {
             "GetJobDocument",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -22942,7 +22546,7 @@ pub mod get_logging_options_input {
 #[doc(hidden)]
 pub type GetLoggingOptionsInputOperationOutputAlias = crate::operation::GetLoggingOptions;
 #[doc(hidden)]
-pub type GetLoggingOptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetLoggingOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetLoggingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`GetLoggingOptions`](crate::operation::GetLoggingOptions)>
     #[allow(clippy::let_and_return)]
@@ -22953,7 +22557,7 @@ impl GetLoggingOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetLoggingOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23027,7 +22631,7 @@ impl GetLoggingOptionsInput {
             "GetLoggingOptions",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -23080,7 +22684,7 @@ pub mod get_ota_update_input {
 #[doc(hidden)]
 pub type GetOtaUpdateInputOperationOutputAlias = crate::operation::GetOTAUpdate;
 #[doc(hidden)]
-pub type GetOtaUpdateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetOtaUpdateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOtaUpdateInput {
     /// Consumes the builder and constructs an Operation<[`GetOTAUpdate`](crate::operation::GetOTAUpdate)>
     #[allow(clippy::let_and_return)]
@@ -23091,7 +22695,7 @@ impl GetOtaUpdateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOTAUpdate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23185,7 +22789,7 @@ impl GetOtaUpdateInput {
             "GetOTAUpdate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -23264,9 +22868,9 @@ pub mod get_percentiles_input {
         /// To override the contents of this collection use [`set_percents`](Self::set_percents).
         ///
         /// <p>The percentile groups returned.</p>
-        pub fn percents(mut self, input: impl Into<f64>) -> Self {
+        pub fn percents(mut self, input: f64) -> Self {
             let mut v = self.percents.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.percents = Some(v);
             self
         }
@@ -23295,7 +22899,7 @@ pub mod get_percentiles_input {
 #[doc(hidden)]
 pub type GetPercentilesInputOperationOutputAlias = crate::operation::GetPercentiles;
 #[doc(hidden)]
-pub type GetPercentilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPercentilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPercentilesInput {
     /// Consumes the builder and constructs an Operation<[`GetPercentiles`](crate::operation::GetPercentiles)>
     #[allow(clippy::let_and_return)]
@@ -23306,7 +22910,7 @@ impl GetPercentilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPercentiles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23386,7 +22990,7 @@ impl GetPercentilesInput {
             "GetPercentiles",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -23442,7 +23046,7 @@ pub mod get_policy_input {
 #[doc(hidden)]
 pub type GetPolicyInputOperationOutputAlias = crate::operation::GetPolicy;
 #[doc(hidden)]
-pub type GetPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetPolicy`](crate::operation::GetPolicy)>
     #[allow(clippy::let_and_return)]
@@ -23453,7 +23057,7 @@ impl GetPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23541,7 +23145,7 @@ impl GetPolicyInput {
                     "GetPolicy",
                     "iot",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -23606,7 +23210,7 @@ pub mod get_policy_version_input {
 #[doc(hidden)]
 pub type GetPolicyVersionInputOperationOutputAlias = crate::operation::GetPolicyVersion;
 #[doc(hidden)]
-pub type GetPolicyVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPolicyVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPolicyVersionInput {
     /// Consumes the builder and constructs an Operation<[`GetPolicyVersion`](crate::operation::GetPolicyVersion)>
     #[allow(clippy::let_and_return)]
@@ -23617,7 +23221,7 @@ impl GetPolicyVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPolicyVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23727,7 +23331,7 @@ impl GetPolicyVersionInput {
             "GetPolicyVersion",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -23763,7 +23367,7 @@ pub mod get_registration_code_input {
 #[doc(hidden)]
 pub type GetRegistrationCodeInputOperationOutputAlias = crate::operation::GetRegistrationCode;
 #[doc(hidden)]
-pub type GetRegistrationCodeInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRegistrationCodeInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRegistrationCodeInput {
     /// Consumes the builder and constructs an Operation<[`GetRegistrationCode`](crate::operation::GetRegistrationCode)>
     #[allow(clippy::let_and_return)]
@@ -23774,7 +23378,7 @@ impl GetRegistrationCodeInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRegistrationCode,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -23848,7 +23452,7 @@ impl GetRegistrationCodeInput {
             "GetRegistrationCode",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -23885,14 +23489,12 @@ pub mod get_statistics_input {
             self.index_name = input;
             self
         }
-        /// <p>The query used to search. You can specify "*" for the query string to get the count of all
-        /// indexed things in your Amazon Web Services account.</p>
+        /// <p>The query used to search. You can specify "*" for the query string to get the count of all indexed things in your Amazon Web Services account.</p>
         pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_string = Some(input.into());
             self
         }
-        /// <p>The query used to search. You can specify "*" for the query string to get the count of all
-        /// indexed things in your Amazon Web Services account.</p>
+        /// <p>The query used to search. You can specify "*" for the query string to get the count of all indexed things in your Amazon Web Services account.</p>
         pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_string = input;
             self
@@ -23942,7 +23544,7 @@ pub mod get_statistics_input {
 #[doc(hidden)]
 pub type GetStatisticsInputOperationOutputAlias = crate::operation::GetStatistics;
 #[doc(hidden)]
-pub type GetStatisticsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetStatisticsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetStatistics`](crate::operation::GetStatistics)>
     #[allow(clippy::let_and_return)]
@@ -23953,7 +23555,7 @@ impl GetStatisticsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetStatistics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24032,7 +23634,7 @@ impl GetStatisticsInput {
             "GetStatistics",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -24090,7 +23692,7 @@ pub mod get_topic_rule_input {
 #[doc(hidden)]
 pub type GetTopicRuleInputOperationOutputAlias = crate::operation::GetTopicRule;
 #[doc(hidden)]
-pub type GetTopicRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTopicRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTopicRuleInput {
     /// Consumes the builder and constructs an Operation<[`GetTopicRule`](crate::operation::GetTopicRule)>
     #[allow(clippy::let_and_return)]
@@ -24101,7 +23703,7 @@ impl GetTopicRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTopicRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24191,7 +23793,7 @@ impl GetTopicRuleInput {
             "GetTopicRule",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -24240,7 +23842,7 @@ pub mod get_topic_rule_destination_input {
 pub type GetTopicRuleDestinationInputOperationOutputAlias =
     crate::operation::GetTopicRuleDestination;
 #[doc(hidden)]
-pub type GetTopicRuleDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetTopicRuleDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetTopicRuleDestinationInput {
     /// Consumes the builder and constructs an Operation<[`GetTopicRuleDestination`](crate::operation::GetTopicRuleDestination)>
     #[allow(clippy::let_and_return)]
@@ -24251,7 +23853,7 @@ impl GetTopicRuleDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetTopicRuleDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24340,7 +23942,7 @@ impl GetTopicRuleDestinationInput {
             "GetTopicRuleDestination",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -24376,7 +23978,7 @@ pub mod get_v2_logging_options_input {
 #[doc(hidden)]
 pub type GetV2LoggingOptionsInputOperationOutputAlias = crate::operation::GetV2LoggingOptions;
 #[doc(hidden)]
-pub type GetV2LoggingOptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetV2LoggingOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetV2LoggingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`GetV2LoggingOptions`](crate::operation::GetV2LoggingOptions)>
     #[allow(clippy::let_and_return)]
@@ -24387,7 +23989,7 @@ impl GetV2LoggingOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetV2LoggingOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24461,7 +24063,7 @@ impl GetV2LoggingOptionsInput {
             "GetV2LoggingOptions",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -24514,16 +24116,12 @@ pub mod list_active_violations_input {
             self.security_profile_name = input;
             self
         }
-        /// <p>
-        /// The criteria for a behavior.
-        /// </p>
+        /// <p> The criteria for a behavior. </p>
         pub fn behavior_criteria_type(mut self, input: crate::model::BehaviorCriteriaType) -> Self {
             self.behavior_criteria_type = Some(input);
             self
         }
-        /// <p>
-        /// The criteria for a behavior.
-        /// </p>
+        /// <p> The criteria for a behavior. </p>
         pub fn set_behavior_criteria_type(
             mut self,
             input: std::option::Option<crate::model::BehaviorCriteriaType>,
@@ -24531,16 +24129,12 @@ pub mod list_active_violations_input {
             self.behavior_criteria_type = input;
             self
         }
-        /// <p>
-        /// A list of all suppressed alerts.
-        /// </p>
+        /// <p> A list of all suppressed alerts. </p>
         pub fn list_suppressed_alerts(mut self, input: bool) -> Self {
             self.list_suppressed_alerts = Some(input);
             self
         }
-        /// <p>
-        /// A list of all suppressed alerts.
-        /// </p>
+        /// <p> A list of all suppressed alerts. </p>
         pub fn set_list_suppressed_alerts(mut self, input: std::option::Option<bool>) -> Self {
             self.list_suppressed_alerts = input;
             self
@@ -24600,7 +24194,7 @@ pub mod list_active_violations_input {
 #[doc(hidden)]
 pub type ListActiveViolationsInputOperationOutputAlias = crate::operation::ListActiveViolations;
 #[doc(hidden)]
-pub type ListActiveViolationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListActiveViolationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListActiveViolationsInput {
     /// Consumes the builder and constructs an Operation<[`ListActiveViolations`](crate::operation::ListActiveViolations)>
     #[allow(clippy::let_and_return)]
@@ -24611,7 +24205,7 @@ impl ListActiveViolationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListActiveViolations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24729,7 +24323,7 @@ impl ListActiveViolationsInput {
             "ListActiveViolations",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -24815,7 +24409,7 @@ pub mod list_attached_policies_input {
 #[doc(hidden)]
 pub type ListAttachedPoliciesInputOperationOutputAlias = crate::operation::ListAttachedPolicies;
 #[doc(hidden)]
-pub type ListAttachedPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAttachedPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAttachedPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListAttachedPolicies`](crate::operation::ListAttachedPolicies)>
     #[allow(clippy::let_and_return)]
@@ -24826,7 +24420,7 @@ impl ListAttachedPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAttachedPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -24939,7 +24533,7 @@ impl ListAttachedPoliciesInput {
             "ListAttachedPolicies",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -24970,14 +24564,12 @@ pub mod list_audit_findings_input {
         pub(crate) list_suppressed_findings: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>A filter to limit results to the audit with the specified ID. You must
-        /// specify either the taskId or the startTime and endTime, but not both.</p>
+        /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>A filter to limit results to the audit with the specified ID. You must
-        /// specify either the taskId or the startTime and endTime, but not both.</p>
+        /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -25025,14 +24617,12 @@ pub mod list_audit_findings_input {
             self.next_token = input;
             self
         }
-        /// <p>A filter to limit results to those found after the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.</p>
+        /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>A filter to limit results to those found after the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.</p>
+        /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25040,14 +24630,12 @@ pub mod list_audit_findings_input {
             self.start_time = input;
             self
         }
-        /// <p>A filter to limit results to those found before the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.</p>
+        /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>A filter to limit results to those found before the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.</p>
+        /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25055,16 +24643,12 @@ pub mod list_audit_findings_input {
             self.end_time = input;
             self
         }
-        /// <p>
-        /// Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.
-        /// </p>
+        /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
         pub fn list_suppressed_findings(mut self, input: bool) -> Self {
             self.list_suppressed_findings = Some(input);
             self
         }
-        /// <p>
-        /// Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.
-        /// </p>
+        /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
         pub fn set_list_suppressed_findings(mut self, input: std::option::Option<bool>) -> Self {
             self.list_suppressed_findings = input;
             self
@@ -25092,7 +24676,7 @@ pub mod list_audit_findings_input {
 #[doc(hidden)]
 pub type ListAuditFindingsInputOperationOutputAlias = crate::operation::ListAuditFindings;
 #[doc(hidden)]
-pub type ListAuditFindingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAuditFindingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAuditFindingsInput {
     /// Consumes the builder and constructs an Operation<[`ListAuditFindings`](crate::operation::ListAuditFindings)>
     #[allow(clippy::let_and_return)]
@@ -25103,7 +24687,7 @@ impl ListAuditFindingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAuditFindings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25183,7 +24767,7 @@ impl ListAuditFindingsInput {
             "ListAuditFindings",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -25298,7 +24882,7 @@ pub type ListAuditMitigationActionsExecutionsInputOperationOutputAlias =
     crate::operation::ListAuditMitigationActionsExecutions;
 #[doc(hidden)]
 pub type ListAuditMitigationActionsExecutionsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAuditMitigationActionsExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListAuditMitigationActionsExecutions`](crate::operation::ListAuditMitigationActionsExecutions)>
     #[allow(clippy::let_and_return)]
@@ -25309,7 +24893,7 @@ impl ListAuditMitigationActionsExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAuditMitigationActionsExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25413,7 +24997,7 @@ impl ListAuditMitigationActionsExecutionsInput {
             "ListAuditMitigationActionsExecutions",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -25551,7 +25135,8 @@ pub mod list_audit_mitigation_actions_tasks_input {
 pub type ListAuditMitigationActionsTasksInputOperationOutputAlias =
     crate::operation::ListAuditMitigationActionsTasks;
 #[doc(hidden)]
-pub type ListAuditMitigationActionsTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAuditMitigationActionsTasksInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListAuditMitigationActionsTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListAuditMitigationActionsTasks`](crate::operation::ListAuditMitigationActionsTasks)>
     #[allow(clippy::let_and_return)]
@@ -25562,7 +25147,7 @@ impl ListAuditMitigationActionsTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAuditMitigationActionsTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25686,7 +25271,7 @@ impl ListAuditMitigationActionsTasksInput {
             "ListAuditMitigationActionsTasks",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -25714,18 +25299,12 @@ pub mod list_audit_suppressions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_name = Some(input.into());
             self
         }
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_name = input;
             self
@@ -25743,44 +25322,32 @@ pub mod list_audit_suppressions_input {
             self.resource_identifier = input;
             self
         }
-        /// <p>
-        /// Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>.
-        /// </p>
+        /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
         pub fn ascending_order(mut self, input: bool) -> Self {
             self.ascending_order = Some(input);
             self
         }
-        /// <p>
-        /// Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>.
-        /// </p>
+        /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
         pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
             self.ascending_order = input;
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -25805,7 +25372,7 @@ pub mod list_audit_suppressions_input {
 #[doc(hidden)]
 pub type ListAuditSuppressionsInputOperationOutputAlias = crate::operation::ListAuditSuppressions;
 #[doc(hidden)]
-pub type ListAuditSuppressionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAuditSuppressionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAuditSuppressionsInput {
     /// Consumes the builder and constructs an Operation<[`ListAuditSuppressions`](crate::operation::ListAuditSuppressions)>
     #[allow(clippy::let_and_return)]
@@ -25816,7 +25383,7 @@ impl ListAuditSuppressionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAuditSuppressions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -25898,7 +25465,7 @@ impl ListAuditSuppressionsInput {
             "ListAuditSuppressions",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -25935,16 +25502,12 @@ pub mod list_audit_tasks_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The beginning of the time period. Audit information is retained for a
-        /// limited time (90 days). Requesting a start time prior to what is retained
-        /// results in an "InvalidRequestException".</p>
+        /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The beginning of the time period. Audit information is retained for a
-        /// limited time (90 days). Requesting a start time prior to what is retained
-        /// results in an "InvalidRequestException".</p>
+        /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25965,14 +25528,12 @@ pub mod list_audit_tasks_input {
             self.end_time = input;
             self
         }
-        /// <p>A filter to limit the output to the specified type of audit: can be one of
-        /// "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
+        /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
         pub fn task_type(mut self, input: crate::model::AuditTaskType) -> Self {
             self.task_type = Some(input);
             self
         }
-        /// <p>A filter to limit the output to the specified type of audit: can be one of
-        /// "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
+        /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
         pub fn set_task_type(
             mut self,
             input: std::option::Option<crate::model::AuditTaskType>,
@@ -25980,14 +25541,12 @@ pub mod list_audit_tasks_input {
             self.task_type = input;
             self
         }
-        /// <p>A filter to limit the output to audits with the specified completion
-        /// status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
+        /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
         pub fn task_status(mut self, input: crate::model::AuditTaskStatus) -> Self {
             self.task_status = Some(input);
             self
         }
-        /// <p>A filter to limit the output to audits with the specified completion
-        /// status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
+        /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
         pub fn set_task_status(
             mut self,
             input: std::option::Option<crate::model::AuditTaskStatus>,
@@ -26036,7 +25595,7 @@ pub mod list_audit_tasks_input {
 #[doc(hidden)]
 pub type ListAuditTasksInputOperationOutputAlias = crate::operation::ListAuditTasks;
 #[doc(hidden)]
-pub type ListAuditTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAuditTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAuditTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListAuditTasks`](crate::operation::ListAuditTasks)>
     #[allow(clippy::let_and_return)]
@@ -26047,7 +25606,7 @@ impl ListAuditTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAuditTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26165,7 +25724,7 @@ impl ListAuditTasksInput {
             "ListAuditTasks",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -26254,7 +25813,7 @@ pub mod list_authorizers_input {
 #[doc(hidden)]
 pub type ListAuthorizersInputOperationOutputAlias = crate::operation::ListAuthorizers;
 #[doc(hidden)]
-pub type ListAuthorizersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAuthorizersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAuthorizersInput {
     /// Consumes the builder and constructs an Operation<[`ListAuthorizers`](crate::operation::ListAuthorizers)>
     #[allow(clippy::let_and_return)]
@@ -26265,7 +25824,7 @@ impl ListAuthorizersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListAuthorizers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26365,7 +25924,7 @@ impl ListAuthorizersInput {
             "ListAuthorizers",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -26391,16 +25950,12 @@ pub mod list_billing_groups_input {
         pub(crate) name_prefix_filter: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -26446,7 +26001,7 @@ pub mod list_billing_groups_input {
 #[doc(hidden)]
 pub type ListBillingGroupsInputOperationOutputAlias = crate::operation::ListBillingGroups;
 #[doc(hidden)]
-pub type ListBillingGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListBillingGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListBillingGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListBillingGroups`](crate::operation::ListBillingGroups)>
     #[allow(clippy::let_and_return)]
@@ -26457,7 +26012,7 @@ impl ListBillingGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListBillingGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26554,7 +26109,7 @@ impl ListBillingGroupsInput {
             "ListBillingGroups",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -26628,7 +26183,7 @@ pub mod list_ca_certificates_input {
 #[doc(hidden)]
 pub type ListCaCertificatesInputOperationOutputAlias = crate::operation::ListCACertificates;
 #[doc(hidden)]
-pub type ListCaCertificatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCaCertificatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCaCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`ListCACertificates`](crate::operation::ListCACertificates)>
     #[allow(clippy::let_and_return)]
@@ -26639,7 +26194,7 @@ impl ListCaCertificatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCACertificates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26736,7 +26291,7 @@ impl ListCaCertificatesInput {
             "ListCACertificates",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -26782,14 +26337,12 @@ pub mod list_certificates_input {
             self.marker = input;
             self
         }
-        /// <p>Specifies the order for results. If True, the results are returned in ascending
-        /// order, based on the creation date.</p>
+        /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
         pub fn ascending_order(mut self, input: bool) -> Self {
             self.ascending_order = Some(input);
             self
         }
-        /// <p>Specifies the order for results. If True, the results are returned in ascending
-        /// order, based on the creation date.</p>
+        /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
         pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
             self.ascending_order = input;
             self
@@ -26812,7 +26365,7 @@ pub mod list_certificates_input {
 #[doc(hidden)]
 pub type ListCertificatesInputOperationOutputAlias = crate::operation::ListCertificates;
 #[doc(hidden)]
-pub type ListCertificatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCertificatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`ListCertificates`](crate::operation::ListCertificates)>
     #[allow(clippy::let_and_return)]
@@ -26823,7 +26376,7 @@ impl ListCertificatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCertificates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -26920,7 +26473,7 @@ impl ListCertificatesInput {
             "ListCertificates",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -26947,14 +26500,12 @@ pub mod list_certificates_by_ca_input {
         pub(crate) ascending_order: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID of the CA certificate. This operation will list all registered device
-        /// certificate that were signed by this CA certificate.</p>
+        /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
         pub fn ca_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ca_certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the CA certificate. This operation will list all registered device
-        /// certificate that were signed by this CA certificate.</p>
+        /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
         pub fn set_ca_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26982,14 +26533,12 @@ pub mod list_certificates_by_ca_input {
             self.marker = input;
             self
         }
-        /// <p>Specifies the order for results. If True, the results are returned in ascending
-        /// order, based on the creation date.</p>
+        /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
         pub fn ascending_order(mut self, input: bool) -> Self {
             self.ascending_order = Some(input);
             self
         }
-        /// <p>Specifies the order for results. If True, the results are returned in ascending
-        /// order, based on the creation date.</p>
+        /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
         pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
             self.ascending_order = input;
             self
@@ -27013,7 +26562,7 @@ pub mod list_certificates_by_ca_input {
 #[doc(hidden)]
 pub type ListCertificatesByCaInputOperationOutputAlias = crate::operation::ListCertificatesByCA;
 #[doc(hidden)]
-pub type ListCertificatesByCaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCertificatesByCaInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCertificatesByCaInput {
     /// Consumes the builder and constructs an Operation<[`ListCertificatesByCA`](crate::operation::ListCertificatesByCA)>
     #[allow(clippy::let_and_return)]
@@ -27024,7 +26573,7 @@ impl ListCertificatesByCaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCertificatesByCA,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27141,7 +26690,7 @@ impl ListCertificatesByCaInput {
             "ListCertificatesByCA",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -27166,30 +26715,22 @@ pub mod list_custom_metrics_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -27211,7 +26752,7 @@ pub mod list_custom_metrics_input {
 #[doc(hidden)]
 pub type ListCustomMetricsInputOperationOutputAlias = crate::operation::ListCustomMetrics;
 #[doc(hidden)]
-pub type ListCustomMetricsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCustomMetricsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCustomMetricsInput {
     /// Consumes the builder and constructs an Operation<[`ListCustomMetrics`](crate::operation::ListCustomMetrics)>
     #[allow(clippy::let_and_return)]
@@ -27222,7 +26763,7 @@ impl ListCustomMetricsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCustomMetrics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27313,7 +26854,7 @@ impl ListCustomMetricsInput {
             "ListCustomMetrics",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -27343,60 +26884,42 @@ pub mod list_detect_mitigation_actions_executions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
         }
-        /// <p>
-        /// The unique identifier of the violation.
-        /// </p>
+        /// <p> The unique identifier of the violation. </p>
         pub fn violation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.violation_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the violation.
-        /// </p>
+        /// <p> The unique identifier of the violation. </p>
         pub fn set_violation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.violation_id = input;
             self
         }
-        /// <p>
-        /// The name of the thing whose mitigation actions are listed.
-        /// </p>
+        /// <p> The name of the thing whose mitigation actions are listed. </p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the thing whose mitigation actions are listed.
-        /// </p>
+        /// <p> The name of the thing whose mitigation actions are listed. </p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
         }
-        /// <p>
-        /// A filter to limit results to those found after the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.
-        /// </p>
+        /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>
-        /// A filter to limit results to those found after the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.
-        /// </p>
+        /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -27404,16 +26927,12 @@ pub mod list_detect_mitigation_actions_executions_input {
             self.start_time = input;
             self
         }
-        /// <p>
-        /// The end of the time period for which ML Detect mitigation actions executions are returned.
-        /// </p>
+        /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>
-        /// The end of the time period for which ML Detect mitigation actions executions are returned.
-        /// </p>
+        /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -27421,30 +26940,22 @@ pub mod list_detect_mitigation_actions_executions_input {
             self.end_time = input;
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to return at one time. The default is 25.
-        /// </p>
+        /// <p> The maximum number of results to return at one time. The default is 25. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -27473,7 +26984,7 @@ pub type ListDetectMitigationActionsExecutionsInputOperationOutputAlias =
     crate::operation::ListDetectMitigationActionsExecutions;
 #[doc(hidden)]
 pub type ListDetectMitigationActionsExecutionsInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDetectMitigationActionsExecutionsInput {
     /// Consumes the builder and constructs an Operation<[`ListDetectMitigationActionsExecutions`](crate::operation::ListDetectMitigationActionsExecutions)>
     #[allow(clippy::let_and_return)]
@@ -27484,7 +26995,7 @@ impl ListDetectMitigationActionsExecutionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDetectMitigationActionsExecutions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27606,7 +27117,7 @@ impl ListDetectMitigationActionsExecutionsInput {
             "ListDetectMitigationActionsExecutions",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -27643,32 +27154,22 @@ pub mod list_detect_mitigation_actions_tasks_input {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// A filter to limit results to those found after the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.
-        /// </p>
+        /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>
-        /// A filter to limit results to those found after the specified time. You must
-        /// specify either the startTime and endTime or the taskId, but not both.
-        /// </p>
+        /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -27676,16 +27177,12 @@ pub mod list_detect_mitigation_actions_tasks_input {
             self.start_time = input;
             self
         }
-        /// <p>
-        /// The end of the time period for which ML Detect mitigation actions tasks are returned.
-        /// </p>
+        /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>
-        /// The end of the time period for which ML Detect mitigation actions tasks are returned.
-        /// </p>
+        /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -27713,7 +27210,8 @@ pub mod list_detect_mitigation_actions_tasks_input {
 pub type ListDetectMitigationActionsTasksInputOperationOutputAlias =
     crate::operation::ListDetectMitigationActionsTasks;
 #[doc(hidden)]
-pub type ListDetectMitigationActionsTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDetectMitigationActionsTasksInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListDetectMitigationActionsTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListDetectMitigationActionsTasks`](crate::operation::ListDetectMitigationActionsTasks)>
     #[allow(clippy::let_and_return)]
@@ -27724,7 +27222,7 @@ impl ListDetectMitigationActionsTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDetectMitigationActionsTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27833,7 +27331,7 @@ impl ListDetectMitigationActionsTasksInput {
             "ListDetectMitigationActionsTasks",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -27895,7 +27393,7 @@ pub mod list_dimensions_input {
 #[doc(hidden)]
 pub type ListDimensionsInputOperationOutputAlias = crate::operation::ListDimensions;
 #[doc(hidden)]
-pub type ListDimensionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDimensionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDimensionsInput {
     /// Consumes the builder and constructs an Operation<[`ListDimensions`](crate::operation::ListDimensions)>
     #[allow(clippy::let_and_return)]
@@ -27906,7 +27404,7 @@ impl ListDimensionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDimensions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -27997,7 +27495,7 @@ impl ListDimensionsInput {
             "ListDimensions",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -28075,7 +27573,7 @@ pub mod list_domain_configurations_input {
 pub type ListDomainConfigurationsInputOperationOutputAlias =
     crate::operation::ListDomainConfigurations;
 #[doc(hidden)]
-pub type ListDomainConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDomainConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomainConfigurations`](crate::operation::ListDomainConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -28086,7 +27584,7 @@ impl ListDomainConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomainConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28183,7 +27681,7 @@ impl ListDomainConfigurationsInput {
             "ListDomainConfigurations",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -28208,14 +27706,12 @@ pub mod list_fleet_metrics_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response;
-        /// otherwise <code>null</code> to receive the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response;
-        /// otherwise <code>null</code> to receive the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -28247,7 +27743,7 @@ pub mod list_fleet_metrics_input {
 #[doc(hidden)]
 pub type ListFleetMetricsInputOperationOutputAlias = crate::operation::ListFleetMetrics;
 #[doc(hidden)]
-pub type ListFleetMetricsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFleetMetricsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFleetMetricsInput {
     /// Consumes the builder and constructs an Operation<[`ListFleetMetrics`](crate::operation::ListFleetMetrics)>
     #[allow(clippy::let_and_return)]
@@ -28258,7 +27754,7 @@ impl ListFleetMetricsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFleetMetrics,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28349,7 +27845,7 @@ impl ListFleetMetricsInput {
             "ListFleetMetrics",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -28374,14 +27870,12 @@ pub mod list_indices_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-        /// results.</p>
+        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-        /// results.</p>
+        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -28413,7 +27907,7 @@ pub mod list_indices_input {
 #[doc(hidden)]
 pub type ListIndicesInputOperationOutputAlias = crate::operation::ListIndices;
 #[doc(hidden)]
-pub type ListIndicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIndicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListIndicesInput {
     /// Consumes the builder and constructs an Operation<[`ListIndices`](crate::operation::ListIndices)>
     #[allow(clippy::let_and_return)]
@@ -28424,7 +27918,7 @@ impl ListIndicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListIndices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28515,7 +28009,7 @@ impl ListIndicesInput {
             "ListIndices",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -28605,7 +28099,7 @@ pub mod list_job_executions_for_job_input {
 pub type ListJobExecutionsForJobInputOperationOutputAlias =
     crate::operation::ListJobExecutionsForJob;
 #[doc(hidden)]
-pub type ListJobExecutionsForJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListJobExecutionsForJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobExecutionsForJobInput {
     /// Consumes the builder and constructs an Operation<[`ListJobExecutionsForJob`](crate::operation::ListJobExecutionsForJob)>
     #[allow(clippy::let_and_return)]
@@ -28616,7 +28110,7 @@ impl ListJobExecutionsForJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobExecutionsForJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28726,7 +28220,7 @@ impl ListJobExecutionsForJobInput {
             "ListJobExecutionsForJob",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -28752,6 +28246,7 @@ pub mod list_job_executions_for_thing_input {
         pub(crate) namespace_id: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The thing name.</p>
@@ -28778,12 +28273,8 @@ pub mod list_job_executions_for_thing_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -28791,12 +28282,8 @@ pub mod list_job_executions_for_thing_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -28823,6 +28310,16 @@ pub mod list_job_executions_for_thing_input {
             self.next_token = input;
             self
         }
+        /// <p>The unique identifier you assigned to this job when it was created.</p>
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
+            self
+        }
+        /// <p>The unique identifier you assigned to this job when it was created.</p>
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListJobExecutionsForThingInput`](crate::input::ListJobExecutionsForThingInput)
         pub fn build(
             self,
@@ -28836,6 +28333,7 @@ pub mod list_job_executions_for_thing_input {
                 namespace_id: self.namespace_id,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                job_id: self.job_id,
             })
         }
     }
@@ -28844,7 +28342,7 @@ pub mod list_job_executions_for_thing_input {
 pub type ListJobExecutionsForThingInputOperationOutputAlias =
     crate::operation::ListJobExecutionsForThing;
 #[doc(hidden)]
-pub type ListJobExecutionsForThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListJobExecutionsForThingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobExecutionsForThingInput {
     /// Consumes the builder and constructs an Operation<[`ListJobExecutionsForThing`](crate::operation::ListJobExecutionsForThing)>
     #[allow(clippy::let_and_return)]
@@ -28855,7 +28353,7 @@ impl ListJobExecutionsForThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobExecutionsForThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -28904,6 +28402,9 @@ impl ListJobExecutionsForThingInput {
             }
             if let Some(inner_214) = &_input.next_token {
                 query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_214));
+            }
+            if let Some(inner_215) = &_input.job_id {
+                query.push_kv("jobId", &aws_smithy_http::query::fmt_string(&inner_215));
             }
             Ok(())
         }
@@ -28971,7 +28472,7 @@ impl ListJobExecutionsForThingInput {
             "ListJobExecutionsForThing",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -29011,18 +28512,12 @@ pub mod list_jobs_input {
             self.status = input;
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-        /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-        /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-        /// target group, even after the job was completed by all things originally in the group. </p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
         pub fn target_selection(mut self, input: crate::model::TargetSelection) -> Self {
             self.target_selection = Some(input);
             self
         }
-        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-        /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-        /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-        /// target group, even after the job was completed by all things originally in the group. </p>
+        /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
         pub fn set_target_selection(
             mut self,
             input: std::option::Option<crate::model::TargetSelection>,
@@ -29077,12 +28572,8 @@ pub mod list_jobs_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -29090,12 +28581,8 @@ pub mod list_jobs_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -29122,7 +28609,7 @@ pub mod list_jobs_input {
 #[doc(hidden)]
 pub type ListJobsInputOperationOutputAlias = crate::operation::ListJobs;
 #[doc(hidden)]
-pub type ListJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(clippy::let_and_return)]
@@ -29133,7 +28620,7 @@ impl ListJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -29149,40 +28636,40 @@ impl ListJobsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_215) = &_input.status {
-                query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_215));
+            if let Some(inner_216) = &_input.status {
+                query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_216));
             }
-            if let Some(inner_216) = &_input.target_selection {
+            if let Some(inner_217) = &_input.target_selection {
                 query.push_kv(
                     "targetSelection",
-                    &aws_smithy_http::query::fmt_string(&inner_216),
+                    &aws_smithy_http::query::fmt_string(&inner_217),
                 );
             }
-            if let Some(inner_217) = &_input.max_results {
+            if let Some(inner_218) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_217).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_218).encode(),
                 );
             }
-            if let Some(inner_218) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_218));
+            if let Some(inner_219) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_219));
             }
-            if let Some(inner_219) = &_input.thing_group_name {
+            if let Some(inner_220) = &_input.thing_group_name {
                 query.push_kv(
                     "thingGroupName",
-                    &aws_smithy_http::query::fmt_string(&inner_219),
-                );
-            }
-            if let Some(inner_220) = &_input.thing_group_id {
-                query.push_kv(
-                    "thingGroupId",
                     &aws_smithy_http::query::fmt_string(&inner_220),
                 );
             }
-            if let Some(inner_221) = &_input.namespace_id {
+            if let Some(inner_221) = &_input.thing_group_id {
+                query.push_kv(
+                    "thingGroupId",
+                    &aws_smithy_http::query::fmt_string(&inner_221),
+                );
+            }
+            if let Some(inner_222) = &_input.namespace_id {
                 query.push_kv(
                     "namespaceId",
-                    &aws_smithy_http::query::fmt_string(&inner_221),
+                    &aws_smithy_http::query::fmt_string(&inner_222),
                 );
             }
             Ok(())
@@ -29246,7 +28733,7 @@ impl ListJobsInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::ListJobs::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("ListJobs", "iot"));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -29308,7 +28795,7 @@ pub mod list_job_templates_input {
 #[doc(hidden)]
 pub type ListJobTemplatesInputOperationOutputAlias = crate::operation::ListJobTemplates;
 #[doc(hidden)]
-pub type ListJobTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListJobTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListJobTemplates`](crate::operation::ListJobTemplates)>
     #[allow(clippy::let_and_return)]
@@ -29319,7 +28806,7 @@ impl ListJobTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -29335,14 +28822,14 @@ impl ListJobTemplatesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_222) = &_input.max_results {
+            if let Some(inner_223) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_222).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_223).encode(),
                 );
             }
-            if let Some(inner_223) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_223));
+            if let Some(inner_224) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_224));
             }
             Ok(())
         }
@@ -29410,7 +28897,7 @@ impl ListJobTemplatesInput {
             "ListJobTemplates",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -29436,14 +28923,12 @@ pub mod list_managed_job_templates_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An optional parameter for template name. If specified, only the versions of the
-        /// managed job templates that have the specified template name will be returned.</p>
+        /// <p>An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>An optional parameter for template name. If specified, only the versions of the
-        /// managed job templates that have the specified template name will be returned.</p>
+        /// <p>An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -29490,7 +28975,7 @@ pub mod list_managed_job_templates_input {
 pub type ListManagedJobTemplatesInputOperationOutputAlias =
     crate::operation::ListManagedJobTemplates;
 #[doc(hidden)]
-pub type ListManagedJobTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListManagedJobTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListManagedJobTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListManagedJobTemplates`](crate::operation::ListManagedJobTemplates)>
     #[allow(clippy::let_and_return)]
@@ -29501,7 +28986,7 @@ impl ListManagedJobTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListManagedJobTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -29517,20 +29002,20 @@ impl ListManagedJobTemplatesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_224) = &_input.template_name {
+            if let Some(inner_225) = &_input.template_name {
                 query.push_kv(
                     "templateName",
-                    &aws_smithy_http::query::fmt_string(&inner_224),
+                    &aws_smithy_http::query::fmt_string(&inner_225),
                 );
             }
-            if let Some(inner_225) = &_input.max_results {
+            if let Some(inner_226) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_225).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_226).encode(),
                 );
             }
-            if let Some(inner_226) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_226));
+            if let Some(inner_227) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_227));
             }
             Ok(())
         }
@@ -29598,7 +29083,7 @@ impl ListManagedJobTemplatesInput {
             "ListManagedJobTemplates",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -29675,7 +29160,7 @@ pub mod list_mitigation_actions_input {
 #[doc(hidden)]
 pub type ListMitigationActionsInputOperationOutputAlias = crate::operation::ListMitigationActions;
 #[doc(hidden)]
-pub type ListMitigationActionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListMitigationActionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListMitigationActionsInput {
     /// Consumes the builder and constructs an Operation<[`ListMitigationActions`](crate::operation::ListMitigationActions)>
     #[allow(clippy::let_and_return)]
@@ -29686,7 +29171,7 @@ impl ListMitigationActionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListMitigationActions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -29702,20 +29187,20 @@ impl ListMitigationActionsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_227) = &_input.action_type {
+            if let Some(inner_228) = &_input.action_type {
                 query.push_kv(
                     "actionType",
-                    &aws_smithy_http::query::fmt_string(&inner_227),
+                    &aws_smithy_http::query::fmt_string(&inner_228),
                 );
             }
-            if let Some(inner_228) = &_input.max_results {
+            if let Some(inner_229) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_228).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_229).encode(),
                 );
             }
-            if let Some(inner_229) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_229));
+            if let Some(inner_230) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_230));
             }
             Ok(())
         }
@@ -29783,7 +29268,7 @@ impl ListMitigationActionsInput {
             "ListMitigationActions",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -29860,7 +29345,7 @@ pub mod list_ota_updates_input {
 #[doc(hidden)]
 pub type ListOtaUpdatesInputOperationOutputAlias = crate::operation::ListOTAUpdates;
 #[doc(hidden)]
-pub type ListOtaUpdatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOtaUpdatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOtaUpdatesInput {
     /// Consumes the builder and constructs an Operation<[`ListOTAUpdates`](crate::operation::ListOTAUpdates)>
     #[allow(clippy::let_and_return)]
@@ -29871,7 +29356,7 @@ impl ListOtaUpdatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOTAUpdates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -29887,19 +29372,19 @@ impl ListOtaUpdatesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_230) = &_input.max_results {
+            if let Some(inner_231) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_230).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_231).encode(),
                 );
             }
-            if let Some(inner_231) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_231));
+            if let Some(inner_232) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_232));
             }
-            if let Some(inner_232) = &_input.ota_update_status {
+            if let Some(inner_233) = &_input.ota_update_status {
                 query.push_kv(
                     "otaUpdateStatus",
-                    &aws_smithy_http::query::fmt_string(&inner_232),
+                    &aws_smithy_http::query::fmt_string(&inner_233),
                 );
             }
             Ok(())
@@ -29968,7 +29453,7 @@ impl ListOtaUpdatesInput {
             "ListOTAUpdates",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -30014,14 +29499,12 @@ pub mod list_outgoing_certificates_input {
             self.marker = input;
             self
         }
-        /// <p>Specifies the order for results. If True, the results are returned in ascending
-        /// order, based on the creation date.</p>
+        /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
         pub fn ascending_order(mut self, input: bool) -> Self {
             self.ascending_order = Some(input);
             self
         }
-        /// <p>Specifies the order for results. If True, the results are returned in ascending
-        /// order, based on the creation date.</p>
+        /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
         pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
             self.ascending_order = input;
             self
@@ -30045,7 +29528,7 @@ pub mod list_outgoing_certificates_input {
 pub type ListOutgoingCertificatesInputOperationOutputAlias =
     crate::operation::ListOutgoingCertificates;
 #[doc(hidden)]
-pub type ListOutgoingCertificatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOutgoingCertificatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOutgoingCertificatesInput {
     /// Consumes the builder and constructs an Operation<[`ListOutgoingCertificates`](crate::operation::ListOutgoingCertificates)>
     #[allow(clippy::let_and_return)]
@@ -30056,7 +29539,7 @@ impl ListOutgoingCertificatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOutgoingCertificates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -30072,14 +29555,14 @@ impl ListOutgoingCertificatesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_233) = &_input.page_size {
+            if let Some(inner_234) = &_input.page_size {
                 query.push_kv(
                     "pageSize",
-                    aws_smithy_types::primitive::Encoder::from(*inner_233).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_234).encode(),
                 );
             }
-            if let Some(inner_234) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_234));
+            if let Some(inner_235) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_235));
             }
             if _input.ascending_order {
                 query.push_kv(
@@ -30153,7 +29636,7 @@ impl ListOutgoingCertificatesInput {
             "ListOutgoingCertificates",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -30199,14 +29682,12 @@ pub mod list_policies_input {
             self.page_size = input;
             self
         }
-        /// <p>Specifies the order for results. If true, the results are returned in ascending
-        /// creation order.</p>
+        /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
         pub fn ascending_order(mut self, input: bool) -> Self {
             self.ascending_order = Some(input);
             self
         }
-        /// <p>Specifies the order for results. If true, the results are returned in ascending
-        /// creation order.</p>
+        /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
         pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
             self.ascending_order = input;
             self
@@ -30229,7 +29710,7 @@ pub mod list_policies_input {
 #[doc(hidden)]
 pub type ListPoliciesInputOperationOutputAlias = crate::operation::ListPolicies;
 #[doc(hidden)]
-pub type ListPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListPolicies`](crate::operation::ListPolicies)>
     #[allow(clippy::let_and_return)]
@@ -30240,7 +29721,7 @@ impl ListPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -30256,13 +29737,13 @@ impl ListPoliciesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_235) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_235));
+            if let Some(inner_236) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_236));
             }
-            if let Some(inner_236) = &_input.page_size {
+            if let Some(inner_237) = &_input.page_size {
                 query.push_kv(
                     "pageSize",
-                    aws_smithy_types::primitive::Encoder::from(*inner_236).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_237).encode(),
                 );
             }
             if _input.ascending_order {
@@ -30337,7 +29818,7 @@ impl ListPoliciesInput {
             "ListPolicies",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -30394,14 +29875,12 @@ pub mod list_policy_principals_input {
             self.page_size = input;
             self
         }
-        /// <p>Specifies the order for results. If true, the results are returned in ascending
-        /// creation order.</p>
+        /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
         pub fn ascending_order(mut self, input: bool) -> Self {
             self.ascending_order = Some(input);
             self
         }
-        /// <p>Specifies the order for results. If true, the results are returned in ascending
-        /// creation order.</p>
+        /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
         pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
             self.ascending_order = input;
             self
@@ -30425,7 +29904,7 @@ pub mod list_policy_principals_input {
 #[doc(hidden)]
 pub type ListPolicyPrincipalsInputOperationOutputAlias = crate::operation::ListPolicyPrincipals;
 #[doc(hidden)]
-pub type ListPolicyPrincipalsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPolicyPrincipalsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPolicyPrincipalsInput {
     /// Consumes the builder and constructs an Operation<[`ListPolicyPrincipals`](crate::operation::ListPolicyPrincipals)>
     #[allow(clippy::let_and_return)]
@@ -30436,7 +29915,7 @@ impl ListPolicyPrincipalsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPolicyPrincipals,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -30452,11 +29931,11 @@ impl ListPolicyPrincipalsInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_237) = &_input.policy_name {
-                let formatted_238 = AsRef::<str>::as_ref(inner_237);
-                if !formatted_238.is_empty() {
+            if let Some(inner_238) = &_input.policy_name {
+                let formatted_239 = AsRef::<str>::as_ref(inner_238);
+                if !formatted_239.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_238;
+                    let header_value = formatted_239;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "policy_name",
@@ -30475,13 +29954,13 @@ impl ListPolicyPrincipalsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_239) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_239));
+            if let Some(inner_240) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_240));
             }
-            if let Some(inner_240) = &_input.page_size {
+            if let Some(inner_241) = &_input.page_size {
                 query.push_kv(
                     "pageSize",
-                    aws_smithy_types::primitive::Encoder::from(*inner_240).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_241).encode(),
                 );
             }
             if _input.ascending_order {
@@ -30557,7 +30036,7 @@ impl ListPolicyPrincipalsInput {
             "ListPolicyPrincipals",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -30607,7 +30086,7 @@ pub mod list_policy_versions_input {
 #[doc(hidden)]
 pub type ListPolicyVersionsInputOperationOutputAlias = crate::operation::ListPolicyVersions;
 #[doc(hidden)]
-pub type ListPolicyVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPolicyVersionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPolicyVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListPolicyVersions`](crate::operation::ListPolicyVersions)>
     #[allow(clippy::let_and_return)]
@@ -30618,7 +30097,7 @@ impl ListPolicyVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPolicyVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -30626,15 +30105,15 @@ impl ListPolicyVersionsInput {
             _input: &crate::input::ListPolicyVersionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_241 = &_input.policy_name;
-            let input_241 =
-                input_241
+            let input_242 = &_input.policy_name;
+            let input_242 =
+                input_242
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_name",
                         details: "cannot be empty or unset",
                     })?;
-            let policy_name = aws_smithy_http::label::fmt_string(input_241, false);
+            let policy_name = aws_smithy_http::label::fmt_string(input_242, false);
             if policy_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "policy_name",
@@ -30712,7 +30191,7 @@ impl ListPolicyVersionsInput {
             "ListPolicyVersions",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -30769,14 +30248,12 @@ pub mod list_principal_policies_input {
             self.page_size = input;
             self
         }
-        /// <p>Specifies the order for results. If true, results are returned in ascending creation
-        /// order.</p>
+        /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
         pub fn ascending_order(mut self, input: bool) -> Self {
             self.ascending_order = Some(input);
             self
         }
-        /// <p>Specifies the order for results. If true, results are returned in ascending creation
-        /// order.</p>
+        /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
         pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
             self.ascending_order = input;
             self
@@ -30800,7 +30277,7 @@ pub mod list_principal_policies_input {
 #[doc(hidden)]
 pub type ListPrincipalPoliciesInputOperationOutputAlias = crate::operation::ListPrincipalPolicies;
 #[doc(hidden)]
-pub type ListPrincipalPoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPrincipalPoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPrincipalPoliciesInput {
     /// Consumes the builder and constructs an Operation<[`ListPrincipalPolicies`](crate::operation::ListPrincipalPolicies)>
     #[allow(clippy::let_and_return)]
@@ -30811,7 +30288,7 @@ impl ListPrincipalPoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPrincipalPolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -30827,11 +30304,11 @@ impl ListPrincipalPoliciesInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_242) = &_input.principal {
-                let formatted_243 = AsRef::<str>::as_ref(inner_242);
-                if !formatted_243.is_empty() {
+            if let Some(inner_243) = &_input.principal {
+                let formatted_244 = AsRef::<str>::as_ref(inner_243);
+                if !formatted_244.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_243;
+                    let header_value = formatted_244;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "principal",
@@ -30850,13 +30327,13 @@ impl ListPrincipalPoliciesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_244) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_244));
+            if let Some(inner_245) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_245));
             }
-            if let Some(inner_245) = &_input.page_size {
+            if let Some(inner_246) = &_input.page_size {
                 query.push_kv(
                     "pageSize",
-                    aws_smithy_types::primitive::Encoder::from(*inner_245).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_246).encode(),
                 );
             }
             if _input.ascending_order {
@@ -30932,7 +30409,7 @@ impl ListPrincipalPoliciesInput {
             "ListPrincipalPolicies",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -30958,16 +30435,12 @@ pub mod list_principal_things_input {
         pub(crate) principal: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -31010,7 +30483,7 @@ pub mod list_principal_things_input {
 #[doc(hidden)]
 pub type ListPrincipalThingsInputOperationOutputAlias = crate::operation::ListPrincipalThings;
 #[doc(hidden)]
-pub type ListPrincipalThingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPrincipalThingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPrincipalThingsInput {
     /// Consumes the builder and constructs an Operation<[`ListPrincipalThings`](crate::operation::ListPrincipalThings)>
     #[allow(clippy::let_and_return)]
@@ -31021,7 +30494,7 @@ impl ListPrincipalThingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPrincipalThings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31037,11 +30510,11 @@ impl ListPrincipalThingsInput {
             mut builder: http::request::Builder,
         ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
-            if let Some(inner_246) = &_input.principal {
-                let formatted_247 = AsRef::<str>::as_ref(inner_246);
-                if !formatted_247.is_empty() {
+            if let Some(inner_247) = &_input.principal {
+                let formatted_248 = AsRef::<str>::as_ref(inner_247);
+                if !formatted_248.is_empty() {
                     use std::convert::TryFrom;
-                    let header_value = formatted_247;
+                    let header_value = formatted_248;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
                         .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "principal",
@@ -31060,13 +30533,13 @@ impl ListPrincipalThingsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_248) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_248));
+            if let Some(inner_249) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_249));
             }
-            if let Some(inner_249) = &_input.max_results {
+            if let Some(inner_250) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_249).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_250).encode(),
                 );
             }
             Ok(())
@@ -31136,7 +30609,7 @@ impl ListPrincipalThingsInput {
             "ListPrincipalThings",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -31199,7 +30672,7 @@ pub mod list_provisioning_templates_input {
 pub type ListProvisioningTemplatesInputOperationOutputAlias =
     crate::operation::ListProvisioningTemplates;
 #[doc(hidden)]
-pub type ListProvisioningTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProvisioningTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProvisioningTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListProvisioningTemplates`](crate::operation::ListProvisioningTemplates)>
     #[allow(clippy::let_and_return)]
@@ -31210,7 +30683,7 @@ impl ListProvisioningTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProvisioningTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31226,14 +30699,14 @@ impl ListProvisioningTemplatesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_250) = &_input.max_results {
+            if let Some(inner_251) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_250).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_251).encode(),
                 );
             }
-            if let Some(inner_251) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_251));
+            if let Some(inner_252) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_252));
             }
             Ok(())
         }
@@ -31301,7 +30774,7 @@ impl ListProvisioningTemplatesInput {
             "ListProvisioningTemplates",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -31379,7 +30852,8 @@ pub mod list_provisioning_template_versions_input {
 pub type ListProvisioningTemplateVersionsInputOperationOutputAlias =
     crate::operation::ListProvisioningTemplateVersions;
 #[doc(hidden)]
-pub type ListProvisioningTemplateVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProvisioningTemplateVersionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListProvisioningTemplateVersionsInput {
     /// Consumes the builder and constructs an Operation<[`ListProvisioningTemplateVersions`](crate::operation::ListProvisioningTemplateVersions)>
     #[allow(clippy::let_and_return)]
@@ -31390,7 +30864,7 @@ impl ListProvisioningTemplateVersionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProvisioningTemplateVersions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31398,15 +30872,15 @@ impl ListProvisioningTemplateVersionsInput {
             _input: &crate::input::ListProvisioningTemplateVersionsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_252 = &_input.template_name;
-            let input_252 =
-                input_252
+            let input_253 = &_input.template_name;
+            let input_253 =
+                input_253
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_name",
                         details: "cannot be empty or unset",
                     })?;
-            let template_name = aws_smithy_http::label::fmt_string(input_252, false);
+            let template_name = aws_smithy_http::label::fmt_string(input_253, false);
             if template_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
@@ -31426,14 +30900,14 @@ impl ListProvisioningTemplateVersionsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_253) = &_input.max_results {
+            if let Some(inner_254) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_253).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_254).encode(),
                 );
             }
-            if let Some(inner_254) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_254));
+            if let Some(inner_255) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_255));
             }
             Ok(())
         }
@@ -31501,7 +30975,7 @@ impl ListProvisioningTemplateVersionsInput {
             "ListProvisioningTemplateVersions",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -31575,7 +31049,7 @@ pub mod list_role_aliases_input {
 #[doc(hidden)]
 pub type ListRoleAliasesInputOperationOutputAlias = crate::operation::ListRoleAliases;
 #[doc(hidden)]
-pub type ListRoleAliasesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListRoleAliasesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListRoleAliasesInput {
     /// Consumes the builder and constructs an Operation<[`ListRoleAliases`](crate::operation::ListRoleAliases)>
     #[allow(clippy::let_and_return)]
@@ -31586,7 +31060,7 @@ impl ListRoleAliasesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListRoleAliases,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31602,14 +31076,14 @@ impl ListRoleAliasesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_255) = &_input.page_size {
+            if let Some(inner_256) = &_input.page_size {
                 query.push_kv(
                     "pageSize",
-                    aws_smithy_types::primitive::Encoder::from(*inner_255).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_256).encode(),
                 );
             }
-            if let Some(inner_256) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_256));
+            if let Some(inner_257) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_257));
             }
             if _input.ascending_order {
                 query.push_kv(
@@ -31683,7 +31157,7 @@ impl ListRoleAliasesInput {
             "ListRoleAliases",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -31745,7 +31219,7 @@ pub mod list_scheduled_audits_input {
 #[doc(hidden)]
 pub type ListScheduledAuditsInputOperationOutputAlias = crate::operation::ListScheduledAudits;
 #[doc(hidden)]
-pub type ListScheduledAuditsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListScheduledAuditsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListScheduledAuditsInput {
     /// Consumes the builder and constructs an Operation<[`ListScheduledAudits`](crate::operation::ListScheduledAudits)>
     #[allow(clippy::let_and_return)]
@@ -31756,7 +31230,7 @@ impl ListScheduledAuditsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListScheduledAudits,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31772,13 +31246,13 @@ impl ListScheduledAuditsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_257) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_257));
+            if let Some(inner_258) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_258));
             }
-            if let Some(inner_258) = &_input.max_results {
+            if let Some(inner_259) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_258).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_259).encode(),
                 );
             }
             Ok(())
@@ -31847,7 +31321,7 @@ impl ListScheduledAuditsInput {
             "ListScheduledAudits",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -31894,16 +31368,12 @@ pub mod list_security_profiles_input {
             self.max_results = input;
             self
         }
-        /// <p>A filter to limit results to the security profiles that use the defined dimension.
-        /// Cannot be used with <code>metricName</code>
-        /// </p>
+        /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
         pub fn dimension_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dimension_name = Some(input.into());
             self
         }
-        /// <p>A filter to limit results to the security profiles that use the defined dimension.
-        /// Cannot be used with <code>metricName</code>
-        /// </p>
+        /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
         pub fn set_dimension_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -31911,14 +31381,12 @@ pub mod list_security_profiles_input {
             self.dimension_name = input;
             self
         }
-        /// <p> The name of the custom metric.
-        /// Cannot be used with <code>dimensionName</code>. </p>
+        /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p> The name of the custom metric.
-        /// Cannot be used with <code>dimensionName</code>. </p>
+        /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -31942,7 +31410,7 @@ pub mod list_security_profiles_input {
 #[doc(hidden)]
 pub type ListSecurityProfilesInputOperationOutputAlias = crate::operation::ListSecurityProfiles;
 #[doc(hidden)]
-pub type ListSecurityProfilesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSecurityProfilesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSecurityProfilesInput {
     /// Consumes the builder and constructs an Operation<[`ListSecurityProfiles`](crate::operation::ListSecurityProfiles)>
     #[allow(clippy::let_and_return)]
@@ -31953,7 +31421,7 @@ impl ListSecurityProfilesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSecurityProfiles,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -31969,25 +31437,25 @@ impl ListSecurityProfilesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_259) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_259));
+            if let Some(inner_260) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_260));
             }
-            if let Some(inner_260) = &_input.max_results {
+            if let Some(inner_261) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_260).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_261).encode(),
                 );
             }
-            if let Some(inner_261) = &_input.dimension_name {
+            if let Some(inner_262) = &_input.dimension_name {
                 query.push_kv(
                     "dimensionName",
-                    &aws_smithy_http::query::fmt_string(&inner_261),
+                    &aws_smithy_http::query::fmt_string(&inner_262),
                 );
             }
-            if let Some(inner_262) = &_input.metric_name {
+            if let Some(inner_263) = &_input.metric_name {
                 query.push_kv(
                     "metricName",
-                    &aws_smithy_http::query::fmt_string(&inner_262),
+                    &aws_smithy_http::query::fmt_string(&inner_263),
                 );
             }
             Ok(())
@@ -32056,7 +31524,7 @@ impl ListSecurityProfilesInput {
             "ListSecurityProfiles",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -32149,7 +31617,8 @@ pub mod list_security_profiles_for_target_input {
 pub type ListSecurityProfilesForTargetInputOperationOutputAlias =
     crate::operation::ListSecurityProfilesForTarget;
 #[doc(hidden)]
-pub type ListSecurityProfilesForTargetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSecurityProfilesForTargetInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListSecurityProfilesForTargetInput {
     /// Consumes the builder and constructs an Operation<[`ListSecurityProfilesForTarget`](crate::operation::ListSecurityProfilesForTarget)>
     #[allow(clippy::let_and_return)]
@@ -32160,7 +31629,7 @@ impl ListSecurityProfilesForTargetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSecurityProfilesForTarget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -32176,13 +31645,13 @@ impl ListSecurityProfilesForTargetInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_263) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_263));
+            if let Some(inner_264) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_264));
             }
-            if let Some(inner_264) = &_input.max_results {
+            if let Some(inner_265) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_264).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_265).encode(),
                 );
             }
             if _input.recursive {
@@ -32191,10 +31660,10 @@ impl ListSecurityProfilesForTargetInput {
                     aws_smithy_types::primitive::Encoder::from(_input.recursive).encode(),
                 );
             }
-            if let Some(inner_265) = &_input.security_profile_target_arn {
+            if let Some(inner_266) = &_input.security_profile_target_arn {
                 query.push_kv(
                     "securityProfileTargetArn",
-                    &aws_smithy_http::query::fmt_string(&inner_265),
+                    &aws_smithy_http::query::fmt_string(&inner_266),
                 );
             }
             Ok(())
@@ -32263,7 +31732,7 @@ impl ListSecurityProfilesForTargetInput {
             "ListSecurityProfilesForTarget",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -32337,7 +31806,7 @@ pub mod list_streams_input {
 #[doc(hidden)]
 pub type ListStreamsInputOperationOutputAlias = crate::operation::ListStreams;
 #[doc(hidden)]
-pub type ListStreamsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListStreamsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListStreams`](crate::operation::ListStreams)>
     #[allow(clippy::let_and_return)]
@@ -32348,7 +31817,7 @@ impl ListStreamsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListStreams,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -32364,14 +31833,14 @@ impl ListStreamsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_266) = &_input.max_results {
+            if let Some(inner_267) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_266).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_267).encode(),
                 );
             }
-            if let Some(inner_267) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_267));
+            if let Some(inner_268) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_268));
             }
             if _input.ascending_order {
                 query.push_kv(
@@ -32445,7 +31914,7 @@ impl ListStreamsInput {
             "ListStreams",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -32480,16 +31949,12 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -32511,7 +31976,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -32522,7 +31987,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -32538,14 +32003,14 @@ impl ListTagsForResourceInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_268) = &_input.resource_arn {
+            if let Some(inner_269) = &_input.resource_arn {
                 query.push_kv(
                     "resourceArn",
-                    &aws_smithy_http::query::fmt_string(&inner_268),
+                    &aws_smithy_http::query::fmt_string(&inner_269),
                 );
             }
-            if let Some(inner_269) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_269));
+            if let Some(inner_270) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_270));
             }
             Ok(())
         }
@@ -32613,7 +32078,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -32687,7 +32152,7 @@ pub mod list_targets_for_policy_input {
 #[doc(hidden)]
 pub type ListTargetsForPolicyInputOperationOutputAlias = crate::operation::ListTargetsForPolicy;
 #[doc(hidden)]
-pub type ListTargetsForPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTargetsForPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTargetsForPolicyInput {
     /// Consumes the builder and constructs an Operation<[`ListTargetsForPolicy`](crate::operation::ListTargetsForPolicy)>
     #[allow(clippy::let_and_return)]
@@ -32698,7 +32163,7 @@ impl ListTargetsForPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTargetsForPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -32706,15 +32171,15 @@ impl ListTargetsForPolicyInput {
             _input: &crate::input::ListTargetsForPolicyInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_270 = &_input.policy_name;
-            let input_270 =
-                input_270
+            let input_271 = &_input.policy_name;
+            let input_271 =
+                input_271
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_name",
                         details: "cannot be empty or unset",
                     })?;
-            let policy_name = aws_smithy_http::label::fmt_string(input_270, false);
+            let policy_name = aws_smithy_http::label::fmt_string(input_271, false);
             if policy_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "policy_name",
@@ -32734,13 +32199,13 @@ impl ListTargetsForPolicyInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_271) = &_input.marker {
-                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_271));
+            if let Some(inner_272) = &_input.marker {
+                query.push_kv("marker", &aws_smithy_http::query::fmt_string(&inner_272));
             }
-            if let Some(inner_272) = &_input.page_size {
+            if let Some(inner_273) = &_input.page_size {
                 query.push_kv(
                     "pageSize",
-                    aws_smithy_types::primitive::Encoder::from(*inner_272).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_273).encode(),
                 );
             }
             Ok(())
@@ -32809,7 +32274,7 @@ impl ListTargetsForPolicyInput {
             "ListTargetsForPolicy",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -32887,7 +32352,8 @@ pub mod list_targets_for_security_profile_input {
 pub type ListTargetsForSecurityProfileInputOperationOutputAlias =
     crate::operation::ListTargetsForSecurityProfile;
 #[doc(hidden)]
-pub type ListTargetsForSecurityProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTargetsForSecurityProfileInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListTargetsForSecurityProfileInput {
     /// Consumes the builder and constructs an Operation<[`ListTargetsForSecurityProfile`](crate::operation::ListTargetsForSecurityProfile)>
     #[allow(clippy::let_and_return)]
@@ -32898,7 +32364,7 @@ impl ListTargetsForSecurityProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTargetsForSecurityProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -32906,15 +32372,15 @@ impl ListTargetsForSecurityProfileInput {
             _input: &crate::input::ListTargetsForSecurityProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_273 = &_input.security_profile_name;
-            let input_273 =
-                input_273
+            let input_274 = &_input.security_profile_name;
+            let input_274 =
+                input_274
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "security_profile_name",
                         details: "cannot be empty or unset",
                     })?;
-            let security_profile_name = aws_smithy_http::label::fmt_string(input_273, false);
+            let security_profile_name = aws_smithy_http::label::fmt_string(input_274, false);
             if security_profile_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "security_profile_name",
@@ -32934,13 +32400,13 @@ impl ListTargetsForSecurityProfileInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_274) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_274));
+            if let Some(inner_275) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_275));
             }
-            if let Some(inner_275) = &_input.max_results {
+            if let Some(inner_276) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_275).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_276).encode(),
                 );
             }
             Ok(())
@@ -33009,7 +32475,7 @@ impl ListTargetsForSecurityProfileInput {
             "ListTargetsForSecurityProfile",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -33037,16 +32503,12 @@ pub mod list_thing_groups_input {
         pub(crate) recursive: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -33114,7 +32576,7 @@ pub mod list_thing_groups_input {
 #[doc(hidden)]
 pub type ListThingGroupsInputOperationOutputAlias = crate::operation::ListThingGroups;
 #[doc(hidden)]
-pub type ListThingGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListThingGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListThingGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListThingGroups`](crate::operation::ListThingGroups)>
     #[allow(clippy::let_and_return)]
@@ -33125,7 +32587,7 @@ impl ListThingGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListThingGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -33141,31 +32603,31 @@ impl ListThingGroupsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_276) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_276));
+            if let Some(inner_277) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_277));
             }
-            if let Some(inner_277) = &_input.max_results {
+            if let Some(inner_278) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_277).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_278).encode(),
                 );
             }
-            if let Some(inner_278) = &_input.parent_group {
+            if let Some(inner_279) = &_input.parent_group {
                 query.push_kv(
                     "parentGroup",
-                    &aws_smithy_http::query::fmt_string(&inner_278),
-                );
-            }
-            if let Some(inner_279) = &_input.name_prefix_filter {
-                query.push_kv(
-                    "namePrefixFilter",
                     &aws_smithy_http::query::fmt_string(&inner_279),
                 );
             }
-            if let Some(inner_280) = &_input.recursive {
+            if let Some(inner_280) = &_input.name_prefix_filter {
+                query.push_kv(
+                    "namePrefixFilter",
+                    &aws_smithy_http::query::fmt_string(&inner_280),
+                );
+            }
+            if let Some(inner_281) = &_input.recursive {
                 query.push_kv(
                     "recursive",
-                    aws_smithy_types::primitive::Encoder::from(*inner_280).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_281).encode(),
                 );
             }
             Ok(())
@@ -33234,7 +32696,7 @@ impl ListThingGroupsInput {
             "ListThingGroups",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -33270,16 +32732,12 @@ pub mod list_thing_groups_for_thing_input {
             self.thing_name = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -33313,7 +32771,7 @@ pub mod list_thing_groups_for_thing_input {
 pub type ListThingGroupsForThingInputOperationOutputAlias =
     crate::operation::ListThingGroupsForThing;
 #[doc(hidden)]
-pub type ListThingGroupsForThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListThingGroupsForThingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListThingGroupsForThingInput {
     /// Consumes the builder and constructs an Operation<[`ListThingGroupsForThing`](crate::operation::ListThingGroupsForThing)>
     #[allow(clippy::let_and_return)]
@@ -33324,7 +32782,7 @@ impl ListThingGroupsForThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListThingGroupsForThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -33332,15 +32790,15 @@ impl ListThingGroupsForThingInput {
             _input: &crate::input::ListThingGroupsForThingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_281 = &_input.thing_name;
-            let input_281 =
-                input_281
+            let input_282 = &_input.thing_name;
+            let input_282 =
+                input_282
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
                         details: "cannot be empty or unset",
                     })?;
-            let thing_name = aws_smithy_http::label::fmt_string(input_281, false);
+            let thing_name = aws_smithy_http::label::fmt_string(input_282, false);
             if thing_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "thing_name",
@@ -33360,13 +32818,13 @@ impl ListThingGroupsForThingInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_282) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_282));
+            if let Some(inner_283) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_283));
             }
-            if let Some(inner_283) = &_input.max_results {
+            if let Some(inner_284) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_283).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_284).encode(),
                 );
             }
             Ok(())
@@ -33435,7 +32893,7 @@ impl ListThingGroupsForThingInput {
             "ListThingGroupsForThing",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -33461,16 +32919,12 @@ pub mod list_thing_principals_input {
         pub(crate) thing_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -33513,7 +32967,7 @@ pub mod list_thing_principals_input {
 #[doc(hidden)]
 pub type ListThingPrincipalsInputOperationOutputAlias = crate::operation::ListThingPrincipals;
 #[doc(hidden)]
-pub type ListThingPrincipalsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListThingPrincipalsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListThingPrincipalsInput {
     /// Consumes the builder and constructs an Operation<[`ListThingPrincipals`](crate::operation::ListThingPrincipals)>
     #[allow(clippy::let_and_return)]
@@ -33524,7 +32978,7 @@ impl ListThingPrincipalsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListThingPrincipals,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -33532,15 +32986,15 @@ impl ListThingPrincipalsInput {
             _input: &crate::input::ListThingPrincipalsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_284 = &_input.thing_name;
-            let input_284 =
-                input_284
+            let input_285 = &_input.thing_name;
+            let input_285 =
+                input_285
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
                         details: "cannot be empty or unset",
                     })?;
-            let thing_name = aws_smithy_http::label::fmt_string(input_284, false);
+            let thing_name = aws_smithy_http::label::fmt_string(input_285, false);
             if thing_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "thing_name",
@@ -33560,13 +33014,13 @@ impl ListThingPrincipalsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_285) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_285));
+            if let Some(inner_286) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_286));
             }
-            if let Some(inner_286) = &_input.max_results {
+            if let Some(inner_287) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_286).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_287).encode(),
                 );
             }
             Ok(())
@@ -33635,7 +33089,7 @@ impl ListThingPrincipalsInput {
             "ListThingPrincipals",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -33685,16 +33139,12 @@ pub mod list_thing_registration_task_reports_input {
             self.report_type = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -33729,7 +33179,8 @@ pub mod list_thing_registration_task_reports_input {
 pub type ListThingRegistrationTaskReportsInputOperationOutputAlias =
     crate::operation::ListThingRegistrationTaskReports;
 #[doc(hidden)]
-pub type ListThingRegistrationTaskReportsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListThingRegistrationTaskReportsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListThingRegistrationTaskReportsInput {
     /// Consumes the builder and constructs an Operation<[`ListThingRegistrationTaskReports`](crate::operation::ListThingRegistrationTaskReports)>
     #[allow(clippy::let_and_return)]
@@ -33740,7 +33191,7 @@ impl ListThingRegistrationTaskReportsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListThingRegistrationTaskReports,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -33748,15 +33199,15 @@ impl ListThingRegistrationTaskReportsInput {
             _input: &crate::input::ListThingRegistrationTaskReportsInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_287 = &_input.task_id;
-            let input_287 =
-                input_287
+            let input_288 = &_input.task_id;
+            let input_288 =
+                input_288
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "task_id",
                         details: "cannot be empty or unset",
                     })?;
-            let task_id = aws_smithy_http::label::fmt_string(input_287, false);
+            let task_id = aws_smithy_http::label::fmt_string(input_288, false);
             if task_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "task_id",
@@ -33776,19 +33227,19 @@ impl ListThingRegistrationTaskReportsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_288) = &_input.report_type {
+            if let Some(inner_289) = &_input.report_type {
                 query.push_kv(
                     "reportType",
-                    &aws_smithy_http::query::fmt_string(&inner_288),
+                    &aws_smithy_http::query::fmt_string(&inner_289),
                 );
             }
-            if let Some(inner_289) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_289));
+            if let Some(inner_290) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_290));
             }
-            if let Some(inner_290) = &_input.max_results {
+            if let Some(inner_291) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_290).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_291).encode(),
                 );
             }
             Ok(())
@@ -33857,7 +33308,7 @@ impl ListThingRegistrationTaskReportsInput {
             "ListThingRegistrationTaskReports",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -33883,16 +33334,12 @@ pub mod list_thing_registration_tasks_input {
         pub(crate) status: std::option::Option<crate::model::Status>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -33936,7 +33383,7 @@ pub mod list_thing_registration_tasks_input {
 pub type ListThingRegistrationTasksInputOperationOutputAlias =
     crate::operation::ListThingRegistrationTasks;
 #[doc(hidden)]
-pub type ListThingRegistrationTasksInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListThingRegistrationTasksInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListThingRegistrationTasksInput {
     /// Consumes the builder and constructs an Operation<[`ListThingRegistrationTasks`](crate::operation::ListThingRegistrationTasks)>
     #[allow(clippy::let_and_return)]
@@ -33947,7 +33394,7 @@ impl ListThingRegistrationTasksInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListThingRegistrationTasks,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -33963,17 +33410,17 @@ impl ListThingRegistrationTasksInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_291) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_291));
+            if let Some(inner_292) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_292));
             }
-            if let Some(inner_292) = &_input.max_results {
+            if let Some(inner_293) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_292).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_293).encode(),
                 );
             }
-            if let Some(inner_293) = &_input.status {
-                query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_293));
+            if let Some(inner_294) = &_input.status {
+                query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_294));
             }
             Ok(())
         }
@@ -34041,7 +33488,7 @@ impl ListThingRegistrationTasksInput {
             "ListThingRegistrationTasks",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -34070,16 +33517,12 @@ pub mod list_things_input {
         pub(crate) use_prefix_attribute_value: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -34133,20 +33576,14 @@ pub mod list_things_input {
             self.thing_type_name = input;
             self
         }
-        /// <p>When <code>true</code>, the action returns the thing resources with attribute values
-        /// that start with the <code>attributeValue</code> provided.</p>
-        /// <p>When <code>false</code>, or not present, the action returns only the thing
-        /// resources with attribute values that match the entire <code>attributeValue</code>
-        /// provided. </p>
+        /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
+        /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
         pub fn use_prefix_attribute_value(mut self, input: bool) -> Self {
             self.use_prefix_attribute_value = Some(input);
             self
         }
-        /// <p>When <code>true</code>, the action returns the thing resources with attribute values
-        /// that start with the <code>attributeValue</code> provided.</p>
-        /// <p>When <code>false</code>, or not present, the action returns only the thing
-        /// resources with attribute values that match the entire <code>attributeValue</code>
-        /// provided. </p>
+        /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
+        /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
         pub fn set_use_prefix_attribute_value(mut self, input: std::option::Option<bool>) -> Self {
             self.use_prefix_attribute_value = input;
             self
@@ -34172,7 +33609,7 @@ pub mod list_things_input {
 #[doc(hidden)]
 pub type ListThingsInputOperationOutputAlias = crate::operation::ListThings;
 #[doc(hidden)]
-pub type ListThingsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListThingsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListThingsInput {
     /// Consumes the builder and constructs an Operation<[`ListThings`](crate::operation::ListThings)>
     #[allow(clippy::let_and_return)]
@@ -34183,7 +33620,7 @@ impl ListThingsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListThings,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -34199,31 +33636,31 @@ impl ListThingsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_294) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_294));
+            if let Some(inner_295) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_295));
             }
-            if let Some(inner_295) = &_input.max_results {
+            if let Some(inner_296) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_295).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_296).encode(),
                 );
             }
-            if let Some(inner_296) = &_input.attribute_name {
+            if let Some(inner_297) = &_input.attribute_name {
                 query.push_kv(
                     "attributeName",
-                    &aws_smithy_http::query::fmt_string(&inner_296),
-                );
-            }
-            if let Some(inner_297) = &_input.attribute_value {
-                query.push_kv(
-                    "attributeValue",
                     &aws_smithy_http::query::fmt_string(&inner_297),
                 );
             }
-            if let Some(inner_298) = &_input.thing_type_name {
+            if let Some(inner_298) = &_input.attribute_value {
+                query.push_kv(
+                    "attributeValue",
+                    &aws_smithy_http::query::fmt_string(&inner_298),
+                );
+            }
+            if let Some(inner_299) = &_input.thing_type_name {
                 query.push_kv(
                     "thingTypeName",
-                    &aws_smithy_http::query::fmt_string(&inner_298),
+                    &aws_smithy_http::query::fmt_string(&inner_299),
                 );
             }
             if _input.use_prefix_attribute_value {
@@ -34299,7 +33736,7 @@ impl ListThingsInput {
             "ListThings",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -34338,16 +33775,12 @@ pub mod list_things_in_billing_group_input {
             self.billing_group_name = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -34381,7 +33814,7 @@ pub mod list_things_in_billing_group_input {
 pub type ListThingsInBillingGroupInputOperationOutputAlias =
     crate::operation::ListThingsInBillingGroup;
 #[doc(hidden)]
-pub type ListThingsInBillingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListThingsInBillingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListThingsInBillingGroupInput {
     /// Consumes the builder and constructs an Operation<[`ListThingsInBillingGroup`](crate::operation::ListThingsInBillingGroup)>
     #[allow(clippy::let_and_return)]
@@ -34392,7 +33825,7 @@ impl ListThingsInBillingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListThingsInBillingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -34400,15 +33833,15 @@ impl ListThingsInBillingGroupInput {
             _input: &crate::input::ListThingsInBillingGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_299 = &_input.billing_group_name;
-            let input_299 =
-                input_299
+            let input_300 = &_input.billing_group_name;
+            let input_300 =
+                input_300
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "billing_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let billing_group_name = aws_smithy_http::label::fmt_string(input_299, false);
+            let billing_group_name = aws_smithy_http::label::fmt_string(input_300, false);
             if billing_group_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "billing_group_name",
@@ -34428,13 +33861,13 @@ impl ListThingsInBillingGroupInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_300) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_300));
+            if let Some(inner_301) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_301));
             }
-            if let Some(inner_301) = &_input.max_results {
+            if let Some(inner_302) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_301).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_302).encode(),
                 );
             }
             Ok(())
@@ -34503,7 +33936,7 @@ impl ListThingsInBillingGroupInput {
             "ListThingsInBillingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -34543,28 +33976,22 @@ pub mod list_things_in_thing_group_input {
             self.thing_group_name = input;
             self
         }
-        /// <p>When true, list things in this thing group and in all child groups as
-        /// well.</p>
+        /// <p>When true, list things in this thing group and in all child groups as well.</p>
         pub fn recursive(mut self, input: bool) -> Self {
             self.recursive = Some(input);
             self
         }
-        /// <p>When true, list things in this thing group and in all child groups as
-        /// well.</p>
+        /// <p>When true, list things in this thing group and in all child groups as well.</p>
         pub fn set_recursive(mut self, input: std::option::Option<bool>) -> Self {
             self.recursive = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -34598,7 +34025,7 @@ pub mod list_things_in_thing_group_input {
 #[doc(hidden)]
 pub type ListThingsInThingGroupInputOperationOutputAlias = crate::operation::ListThingsInThingGroup;
 #[doc(hidden)]
-pub type ListThingsInThingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListThingsInThingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListThingsInThingGroupInput {
     /// Consumes the builder and constructs an Operation<[`ListThingsInThingGroup`](crate::operation::ListThingsInThingGroup)>
     #[allow(clippy::let_and_return)]
@@ -34609,7 +34036,7 @@ impl ListThingsInThingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListThingsInThingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -34617,15 +34044,15 @@ impl ListThingsInThingGroupInput {
             _input: &crate::input::ListThingsInThingGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_302 = &_input.thing_group_name;
-            let input_302 =
-                input_302
+            let input_303 = &_input.thing_group_name;
+            let input_303 =
+                input_303
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let thing_group_name = aws_smithy_http::label::fmt_string(input_302, false);
+            let thing_group_name = aws_smithy_http::label::fmt_string(input_303, false);
             if thing_group_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "thing_group_name",
@@ -34651,13 +34078,13 @@ impl ListThingsInThingGroupInput {
                     aws_smithy_types::primitive::Encoder::from(_input.recursive).encode(),
                 );
             }
-            if let Some(inner_303) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_303));
+            if let Some(inner_304) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_304));
             }
-            if let Some(inner_304) = &_input.max_results {
+            if let Some(inner_305) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_304).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_305).encode(),
                 );
             }
             Ok(())
@@ -34726,7 +34153,7 @@ impl ListThingsInThingGroupInput {
             "ListThingsInThingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -34752,16 +34179,12 @@ pub mod list_thing_types_input {
         pub(crate) thing_type_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -34807,7 +34230,7 @@ pub mod list_thing_types_input {
 #[doc(hidden)]
 pub type ListThingTypesInputOperationOutputAlias = crate::operation::ListThingTypes;
 #[doc(hidden)]
-pub type ListThingTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListThingTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListThingTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListThingTypes`](crate::operation::ListThingTypes)>
     #[allow(clippy::let_and_return)]
@@ -34818,7 +34241,7 @@ impl ListThingTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListThingTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -34834,19 +34257,19 @@ impl ListThingTypesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_305) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_305));
+            if let Some(inner_306) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_306));
             }
-            if let Some(inner_306) = &_input.max_results {
+            if let Some(inner_307) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_306).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_307).encode(),
                 );
             }
-            if let Some(inner_307) = &_input.thing_type_name {
+            if let Some(inner_308) = &_input.thing_type_name {
                 query.push_kv(
                     "thingTypeName",
-                    &aws_smithy_http::query::fmt_string(&inner_307),
+                    &aws_smithy_http::query::fmt_string(&inner_308),
                 );
             }
             Ok(())
@@ -34915,7 +34338,7 @@ impl ListThingTypesInput {
             "ListThingTypes",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -34950,16 +34373,12 @@ pub mod list_topic_rule_destinations_input {
             self.max_results = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -34982,7 +34401,7 @@ pub mod list_topic_rule_destinations_input {
 pub type ListTopicRuleDestinationsInputOperationOutputAlias =
     crate::operation::ListTopicRuleDestinations;
 #[doc(hidden)]
-pub type ListTopicRuleDestinationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTopicRuleDestinationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTopicRuleDestinationsInput {
     /// Consumes the builder and constructs an Operation<[`ListTopicRuleDestinations`](crate::operation::ListTopicRuleDestinations)>
     #[allow(clippy::let_and_return)]
@@ -34993,7 +34412,7 @@ impl ListTopicRuleDestinationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTopicRuleDestinations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -35009,14 +34428,14 @@ impl ListTopicRuleDestinationsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_308) = &_input.max_results {
+            if let Some(inner_309) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_308).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_309).encode(),
                 );
             }
-            if let Some(inner_309) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_309));
+            if let Some(inner_310) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_310));
             }
             Ok(())
         }
@@ -35084,7 +34503,7 @@ impl ListTopicRuleDestinationsInput {
             "ListTopicRuleDestinations",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -35131,16 +34550,12 @@ pub mod list_topic_rules_input {
             self.max_results = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -35174,7 +34589,7 @@ pub mod list_topic_rules_input {
 #[doc(hidden)]
 pub type ListTopicRulesInputOperationOutputAlias = crate::operation::ListTopicRules;
 #[doc(hidden)]
-pub type ListTopicRulesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTopicRulesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTopicRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListTopicRules`](crate::operation::ListTopicRules)>
     #[allow(clippy::let_and_return)]
@@ -35185,7 +34600,7 @@ impl ListTopicRulesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTopicRules,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -35201,22 +34616,22 @@ impl ListTopicRulesInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_310) = &_input.topic {
-                query.push_kv("topic", &aws_smithy_http::query::fmt_string(&inner_310));
+            if let Some(inner_311) = &_input.topic {
+                query.push_kv("topic", &aws_smithy_http::query::fmt_string(&inner_311));
             }
-            if let Some(inner_311) = &_input.max_results {
+            if let Some(inner_312) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_311).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_312).encode(),
                 );
             }
-            if let Some(inner_312) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_312));
+            if let Some(inner_313) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_313));
             }
-            if let Some(inner_313) = &_input.rule_disabled {
+            if let Some(inner_314) = &_input.rule_disabled {
                 query.push_kv(
                     "ruleDisabled",
-                    aws_smithy_types::primitive::Encoder::from(*inner_313).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_314).encode(),
                 );
             }
             Ok(())
@@ -35285,7 +34700,7 @@ impl ListTopicRulesInput {
             "ListTopicRules",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -35311,14 +34726,12 @@ pub mod list_v2_logging_levels_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The type of resource for which you are configuring logging. Must be
-        /// <code>THING_Group</code>.</p>
+        /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
         pub fn target_type(mut self, input: crate::model::LogTargetType) -> Self {
             self.target_type = Some(input);
             self
         }
-        /// <p>The type of resource for which you are configuring logging. Must be
-        /// <code>THING_Group</code>.</p>
+        /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
         pub fn set_target_type(
             mut self,
             input: std::option::Option<crate::model::LogTargetType>,
@@ -35326,16 +34739,12 @@ pub mod list_v2_logging_levels_input {
             self.target_type = input;
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -35368,7 +34777,7 @@ pub mod list_v2_logging_levels_input {
 #[doc(hidden)]
 pub type ListV2LoggingLevelsInputOperationOutputAlias = crate::operation::ListV2LoggingLevels;
 #[doc(hidden)]
-pub type ListV2LoggingLevelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListV2LoggingLevelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListV2LoggingLevelsInput {
     /// Consumes the builder and constructs an Operation<[`ListV2LoggingLevels`](crate::operation::ListV2LoggingLevels)>
     #[allow(clippy::let_and_return)]
@@ -35379,7 +34788,7 @@ impl ListV2LoggingLevelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListV2LoggingLevels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -35395,19 +34804,19 @@ impl ListV2LoggingLevelsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_314) = &_input.target_type {
+            if let Some(inner_315) = &_input.target_type {
                 query.push_kv(
                     "targetType",
-                    &aws_smithy_http::query::fmt_string(&inner_314),
+                    &aws_smithy_http::query::fmt_string(&inner_315),
                 );
             }
-            if let Some(inner_315) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_315));
+            if let Some(inner_316) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_316));
             }
-            if let Some(inner_316) = &_input.max_results {
+            if let Some(inner_317) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_316).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_317).encode(),
                 );
             }
             Ok(())
@@ -35476,7 +34885,7 @@ impl ListV2LoggingLevelsInput {
             "ListV2LoggingLevels",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -35557,16 +34966,12 @@ pub mod list_violation_events_input {
             self.security_profile_name = input;
             self
         }
-        /// <p>
-        /// The criteria for a behavior.
-        /// </p>
+        /// <p> The criteria for a behavior. </p>
         pub fn behavior_criteria_type(mut self, input: crate::model::BehaviorCriteriaType) -> Self {
             self.behavior_criteria_type = Some(input);
             self
         }
-        /// <p>
-        /// The criteria for a behavior.
-        /// </p>
+        /// <p> The criteria for a behavior. </p>
         pub fn set_behavior_criteria_type(
             mut self,
             input: std::option::Option<crate::model::BehaviorCriteriaType>,
@@ -35574,16 +34979,12 @@ pub mod list_violation_events_input {
             self.behavior_criteria_type = input;
             self
         }
-        /// <p>
-        /// A list of all suppressed alerts.
-        /// </p>
+        /// <p> A list of all suppressed alerts. </p>
         pub fn list_suppressed_alerts(mut self, input: bool) -> Self {
             self.list_suppressed_alerts = Some(input);
             self
         }
-        /// <p>
-        /// A list of all suppressed alerts.
-        /// </p>
+        /// <p> A list of all suppressed alerts. </p>
         pub fn set_list_suppressed_alerts(mut self, input: std::option::Option<bool>) -> Self {
             self.list_suppressed_alerts = input;
             self
@@ -35645,7 +35046,7 @@ pub mod list_violation_events_input {
 #[doc(hidden)]
 pub type ListViolationEventsInputOperationOutputAlias = crate::operation::ListViolationEvents;
 #[doc(hidden)]
-pub type ListViolationEventsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListViolationEventsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListViolationEventsInput {
     /// Consumes the builder and constructs an Operation<[`ListViolationEvents`](crate::operation::ListViolationEvents)>
     #[allow(clippy::let_and_return)]
@@ -35656,7 +35057,7 @@ impl ListViolationEventsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListViolationEvents,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -35672,58 +35073,58 @@ impl ListViolationEventsInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_317) = &_input.start_time {
+            if let Some(inner_318) = &_input.start_time {
                 query.push_kv(
                     "startTime",
-                    &aws_smithy_http::query::fmt_timestamp(
-                        inner_317,
-                        aws_smithy_types::date_time::Format::DateTime,
-                    )?,
-                );
-            }
-            if let Some(inner_318) = &_input.end_time {
-                query.push_kv(
-                    "endTime",
                     &aws_smithy_http::query::fmt_timestamp(
                         inner_318,
                         aws_smithy_types::date_time::Format::DateTime,
                     )?,
                 );
             }
-            if let Some(inner_319) = &_input.thing_name {
-                query.push_kv("thingName", &aws_smithy_http::query::fmt_string(&inner_319));
-            }
-            if let Some(inner_320) = &_input.security_profile_name {
+            if let Some(inner_319) = &_input.end_time {
                 query.push_kv(
-                    "securityProfileName",
-                    &aws_smithy_http::query::fmt_string(&inner_320),
+                    "endTime",
+                    &aws_smithy_http::query::fmt_timestamp(
+                        inner_319,
+                        aws_smithy_types::date_time::Format::DateTime,
+                    )?,
                 );
             }
-            if let Some(inner_321) = &_input.behavior_criteria_type {
+            if let Some(inner_320) = &_input.thing_name {
+                query.push_kv("thingName", &aws_smithy_http::query::fmt_string(&inner_320));
+            }
+            if let Some(inner_321) = &_input.security_profile_name {
                 query.push_kv(
-                    "behaviorCriteriaType",
+                    "securityProfileName",
                     &aws_smithy_http::query::fmt_string(&inner_321),
                 );
             }
-            if let Some(inner_322) = &_input.list_suppressed_alerts {
+            if let Some(inner_322) = &_input.behavior_criteria_type {
+                query.push_kv(
+                    "behaviorCriteriaType",
+                    &aws_smithy_http::query::fmt_string(&inner_322),
+                );
+            }
+            if let Some(inner_323) = &_input.list_suppressed_alerts {
                 query.push_kv(
                     "listSuppressedAlerts",
-                    aws_smithy_types::primitive::Encoder::from(*inner_322).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_323).encode(),
                 );
             }
-            if let Some(inner_323) = &_input.verification_state {
+            if let Some(inner_324) = &_input.verification_state {
                 query.push_kv(
                     "verificationState",
-                    &aws_smithy_http::query::fmt_string(&inner_323),
+                    &aws_smithy_http::query::fmt_string(&inner_324),
                 );
             }
-            if let Some(inner_324) = &_input.next_token {
-                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_324));
+            if let Some(inner_325) = &_input.next_token {
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_325));
             }
-            if let Some(inner_325) = &_input.max_results {
+            if let Some(inner_326) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    aws_smithy_types::primitive::Encoder::from(*inner_325).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_326).encode(),
                 );
             }
             Ok(())
@@ -35792,7 +35193,7 @@ impl ListViolationEventsInput {
             "ListViolationEvents",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -35876,7 +35277,8 @@ pub mod put_verification_state_on_violation_input {
 pub type PutVerificationStateOnViolationInputOperationOutputAlias =
     crate::operation::PutVerificationStateOnViolation;
 #[doc(hidden)]
-pub type PutVerificationStateOnViolationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutVerificationStateOnViolationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutVerificationStateOnViolationInput {
     /// Consumes the builder and constructs an Operation<[`PutVerificationStateOnViolation`](crate::operation::PutVerificationStateOnViolation)>
     #[allow(clippy::let_and_return)]
@@ -35887,7 +35289,7 @@ impl PutVerificationStateOnViolationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutVerificationStateOnViolation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -35895,15 +35297,15 @@ impl PutVerificationStateOnViolationInput {
             _input: &crate::input::PutVerificationStateOnViolationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_326 = &_input.violation_id;
-            let input_326 =
-                input_326
+            let input_327 = &_input.violation_id;
+            let input_327 =
+                input_327
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "violation_id",
                         details: "cannot be empty or unset",
                     })?;
-            let violation_id = aws_smithy_http::label::fmt_string(input_326, false);
+            let violation_id = aws_smithy_http::label::fmt_string(input_327, false);
             if violation_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "violation_id",
@@ -35988,7 +35390,7 @@ impl PutVerificationStateOnViolationInput {
             "PutVerificationStateOnViolation",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -36061,14 +35463,12 @@ pub mod register_ca_certificate_input {
             self.set_as_active = input;
             self
         }
-        /// <p>Allows this CA certificate to be used for auto registration of device
-        /// certificates.</p>
+        /// <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
         pub fn allow_auto_registration(mut self, input: bool) -> Self {
             self.allow_auto_registration = Some(input);
             self
         }
-        /// <p>Allows this CA certificate to be used for auto registration of device
-        /// certificates.</p>
+        /// <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
         pub fn set_allow_auto_registration(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_auto_registration = input;
             self
@@ -36090,27 +35490,21 @@ pub mod register_ca_certificate_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata which can be used to manage the CA certificate.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Metadata which can be used to manage the CA certificate.</p>
-        /// <note>
-        /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-        /// <p>For the CLI command-line parameter use format: &&tags
-        /// "key1=value1&key2=value2..."</p>
-        /// <p>For the cli-input-json file use format: "tags":
-        /// "key1=value1&key2=value2..."</p>
+        /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+        /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+        /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+        /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -36140,7 +35534,7 @@ pub mod register_ca_certificate_input {
 #[doc(hidden)]
 pub type RegisterCaCertificateInputOperationOutputAlias = crate::operation::RegisterCACertificate;
 #[doc(hidden)]
-pub type RegisterCaCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterCaCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterCaCertificateInput {
     /// Consumes the builder and constructs an Operation<[`RegisterCACertificate`](crate::operation::RegisterCACertificate)>
     #[allow(clippy::let_and_return)]
@@ -36151,7 +35545,7 @@ impl RegisterCaCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterCACertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -36254,7 +35648,7 @@ impl RegisterCaCertificateInput {
             "RegisterCACertificate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -36357,7 +35751,7 @@ pub mod register_certificate_input {
 #[doc(hidden)]
 pub type RegisterCertificateInputOperationOutputAlias = crate::operation::RegisterCertificate;
 #[doc(hidden)]
-pub type RegisterCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterCertificateInput {
     /// Consumes the builder and constructs an Operation<[`RegisterCertificate`](crate::operation::RegisterCertificate)>
     #[allow(clippy::let_and_return)]
@@ -36368,7 +35762,7 @@ impl RegisterCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -36384,10 +35778,10 @@ impl RegisterCertificateInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_327) = &_input.set_as_active {
+            if let Some(inner_328) = &_input.set_as_active {
                 query.push_kv(
                     "setAsActive",
-                    aws_smithy_types::primitive::Encoder::from(*inner_327).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_328).encode(),
                 );
             }
             Ok(())
@@ -36462,7 +35856,7 @@ impl RegisterCertificateInput {
             "RegisterCertificate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -36539,7 +35933,8 @@ pub mod register_certificate_without_ca_input {
 pub type RegisterCertificateWithoutCaInputOperationOutputAlias =
     crate::operation::RegisterCertificateWithoutCA;
 #[doc(hidden)]
-pub type RegisterCertificateWithoutCaInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterCertificateWithoutCaInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterCertificateWithoutCaInput {
     /// Consumes the builder and constructs an Operation<[`RegisterCertificateWithoutCA`](crate::operation::RegisterCertificateWithoutCA)>
     #[allow(clippy::let_and_return)]
@@ -36550,7 +35945,7 @@ impl RegisterCertificateWithoutCaInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterCertificateWithoutCA,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -36631,7 +36026,7 @@ impl RegisterCertificateWithoutCaInput {
             "RegisterCertificateWithoutCA",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -36721,7 +36116,7 @@ pub mod register_thing_input {
 #[doc(hidden)]
 pub type RegisterThingInputOperationOutputAlias = crate::operation::RegisterThing;
 #[doc(hidden)]
-pub type RegisterThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RegisterThingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RegisterThingInput {
     /// Consumes the builder and constructs an Operation<[`RegisterThing`](crate::operation::RegisterThing)>
     #[allow(clippy::let_and_return)]
@@ -36732,7 +36127,7 @@ impl RegisterThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RegisterThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -36811,7 +36206,7 @@ impl RegisterThingInput {
             "RegisterThing",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -36844,14 +36239,12 @@ pub mod reject_certificate_transfer_input {
         pub(crate) reject_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -36890,7 +36283,7 @@ pub mod reject_certificate_transfer_input {
 pub type RejectCertificateTransferInputOperationOutputAlias =
     crate::operation::RejectCertificateTransfer;
 #[doc(hidden)]
-pub type RejectCertificateTransferInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RejectCertificateTransferInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RejectCertificateTransferInput {
     /// Consumes the builder and constructs an Operation<[`RejectCertificateTransfer`](crate::operation::RejectCertificateTransfer)>
     #[allow(clippy::let_and_return)]
@@ -36901,7 +36294,7 @@ impl RejectCertificateTransferInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectCertificateTransfer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -36909,15 +36302,15 @@ impl RejectCertificateTransferInput {
             _input: &crate::input::RejectCertificateTransferInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_328 = &_input.certificate_id;
-            let input_328 =
-                input_328
+            let input_329 = &_input.certificate_id;
+            let input_329 =
+                input_329
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "certificate_id",
                         details: "cannot be empty or unset",
                     })?;
-            let certificate_id = aws_smithy_http::label::fmt_string(input_328, false);
+            let certificate_id = aws_smithy_http::label::fmt_string(input_329, false);
             if certificate_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "certificate_id",
@@ -37003,7 +36396,7 @@ impl RejectCertificateTransferInput {
             "RejectCertificateTransfer",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -37104,7 +36497,7 @@ pub mod remove_thing_from_billing_group_input {
 pub type RemoveThingFromBillingGroupInputOperationOutputAlias =
     crate::operation::RemoveThingFromBillingGroup;
 #[doc(hidden)]
-pub type RemoveThingFromBillingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveThingFromBillingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveThingFromBillingGroupInput {
     /// Consumes the builder and constructs an Operation<[`RemoveThingFromBillingGroup`](crate::operation::RemoveThingFromBillingGroup)>
     #[allow(clippy::let_and_return)]
@@ -37115,7 +36508,7 @@ impl RemoveThingFromBillingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveThingFromBillingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -37197,7 +36590,7 @@ impl RemoveThingFromBillingGroupInput {
             "RemoveThingFromBillingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -37298,7 +36691,7 @@ pub mod remove_thing_from_thing_group_input {
 pub type RemoveThingFromThingGroupInputOperationOutputAlias =
     crate::operation::RemoveThingFromThingGroup;
 #[doc(hidden)]
-pub type RemoveThingFromThingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveThingFromThingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveThingFromThingGroupInput {
     /// Consumes the builder and constructs an Operation<[`RemoveThingFromThingGroup`](crate::operation::RemoveThingFromThingGroup)>
     #[allow(clippy::let_and_return)]
@@ -37309,7 +36702,7 @@ impl RemoveThingFromThingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveThingFromThingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -37391,7 +36784,7 @@ impl RemoveThingFromThingGroupInput {
             "RemoveThingFromThingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -37464,7 +36857,7 @@ pub mod replace_topic_rule_input {
 #[doc(hidden)]
 pub type ReplaceTopicRuleInputOperationOutputAlias = crate::operation::ReplaceTopicRule;
 #[doc(hidden)]
-pub type ReplaceTopicRuleInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ReplaceTopicRuleInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ReplaceTopicRuleInput {
     /// Consumes the builder and constructs an Operation<[`ReplaceTopicRule`](crate::operation::ReplaceTopicRule)>
     #[allow(clippy::let_and_return)]
@@ -37475,7 +36868,7 @@ impl ReplaceTopicRuleInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ReplaceTopicRule,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -37483,15 +36876,15 @@ impl ReplaceTopicRuleInput {
             _input: &crate::input::ReplaceTopicRuleInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_329 = &_input.rule_name;
-            let input_329 =
-                input_329
+            let input_330 = &_input.rule_name;
+            let input_330 =
+                input_330
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "rule_name",
                         details: "cannot be empty or unset",
                     })?;
-            let rule_name = aws_smithy_http::label::fmt_string(input_329, false);
+            let rule_name = aws_smithy_http::label::fmt_string(input_330, false);
             if rule_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "rule_name",
@@ -37571,7 +36964,7 @@ impl ReplaceTopicRuleInput {
             "ReplaceTopicRule",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -37627,14 +37020,12 @@ pub mod search_index_input {
             self.query_string = input;
             self
         }
-        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-        /// results.</p>
+        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-        /// results.</p>
+        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -37682,7 +37073,7 @@ pub mod search_index_input {
 #[doc(hidden)]
 pub type SearchIndexInputOperationOutputAlias = crate::operation::SearchIndex;
 #[doc(hidden)]
-pub type SearchIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SearchIndexInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SearchIndexInput {
     /// Consumes the builder and constructs an Operation<[`SearchIndex`](crate::operation::SearchIndex)>
     #[allow(clippy::let_and_return)]
@@ -37693,7 +37084,7 @@ impl SearchIndexInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SearchIndex,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -37772,7 +37163,7 @@ impl SearchIndexInput {
             "SearchIndex",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -37833,7 +37224,7 @@ pub mod set_default_authorizer_input {
 #[doc(hidden)]
 pub type SetDefaultAuthorizerInputOperationOutputAlias = crate::operation::SetDefaultAuthorizer;
 #[doc(hidden)]
-pub type SetDefaultAuthorizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetDefaultAuthorizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetDefaultAuthorizerInput {
     /// Consumes the builder and constructs an Operation<[`SetDefaultAuthorizer`](crate::operation::SetDefaultAuthorizer)>
     #[allow(clippy::let_and_return)]
@@ -37844,7 +37235,7 @@ impl SetDefaultAuthorizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetDefaultAuthorizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -37926,7 +37317,7 @@ impl SetDefaultAuthorizerInput {
             "SetDefaultAuthorizer",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -38000,7 +37391,7 @@ pub mod set_default_policy_version_input {
 pub type SetDefaultPolicyVersionInputOperationOutputAlias =
     crate::operation::SetDefaultPolicyVersion;
 #[doc(hidden)]
-pub type SetDefaultPolicyVersionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetDefaultPolicyVersionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetDefaultPolicyVersionInput {
     /// Consumes the builder and constructs an Operation<[`SetDefaultPolicyVersion`](crate::operation::SetDefaultPolicyVersion)>
     #[allow(clippy::let_and_return)]
@@ -38011,7 +37402,7 @@ impl SetDefaultPolicyVersionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetDefaultPolicyVersion,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -38019,30 +37410,30 @@ impl SetDefaultPolicyVersionInput {
             _input: &crate::input::SetDefaultPolicyVersionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_330 = &_input.policy_name;
-            let input_330 =
-                input_330
+            let input_331 = &_input.policy_name;
+            let input_331 =
+                input_331
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_name",
                         details: "cannot be empty or unset",
                     })?;
-            let policy_name = aws_smithy_http::label::fmt_string(input_330, false);
+            let policy_name = aws_smithy_http::label::fmt_string(input_331, false);
             if policy_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "policy_name",
                     details: "cannot be empty or unset",
                 });
             }
-            let input_331 = &_input.policy_version_id;
-            let input_331 =
-                input_331
+            let input_332 = &_input.policy_version_id;
+            let input_332 =
+                input_332
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "policy_version_id",
                         details: "cannot be empty or unset",
                     })?;
-            let policy_version_id = aws_smithy_http::label::fmt_string(input_331, false);
+            let policy_version_id = aws_smithy_http::label::fmt_string(input_332, false);
             if policy_version_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "policy_version_id",
@@ -38121,7 +37512,7 @@ impl SetDefaultPolicyVersionInput {
             "SetDefaultPolicyVersion",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -38178,7 +37569,7 @@ pub mod set_logging_options_input {
 #[doc(hidden)]
 pub type SetLoggingOptionsInputOperationOutputAlias = crate::operation::SetLoggingOptions;
 #[doc(hidden)]
-pub type SetLoggingOptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetLoggingOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetLoggingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`SetLoggingOptions`](crate::operation::SetLoggingOptions)>
     #[allow(clippy::let_and_return)]
@@ -38189,7 +37580,7 @@ impl SetLoggingOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetLoggingOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -38270,7 +37661,7 @@ impl SetLoggingOptionsInput {
             "SetLoggingOptions",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -38343,7 +37734,7 @@ pub mod set_v2_logging_level_input {
 #[doc(hidden)]
 pub type SetV2LoggingLevelInputOperationOutputAlias = crate::operation::SetV2LoggingLevel;
 #[doc(hidden)]
-pub type SetV2LoggingLevelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetV2LoggingLevelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetV2LoggingLevelInput {
     /// Consumes the builder and constructs an Operation<[`SetV2LoggingLevel`](crate::operation::SetV2LoggingLevel)>
     #[allow(clippy::let_and_return)]
@@ -38354,7 +37745,7 @@ impl SetV2LoggingLevelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetV2LoggingLevel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -38434,7 +37825,7 @@ impl SetV2LoggingLevelInput {
             "SetV2LoggingLevel",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -38519,7 +37910,7 @@ pub mod set_v2_logging_options_input {
 #[doc(hidden)]
 pub type SetV2LoggingOptionsInputOperationOutputAlias = crate::operation::SetV2LoggingOptions;
 #[doc(hidden)]
-pub type SetV2LoggingOptionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SetV2LoggingOptionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SetV2LoggingOptionsInput {
     /// Consumes the builder and constructs an Operation<[`SetV2LoggingOptions`](crate::operation::SetV2LoggingOptions)>
     #[allow(clippy::let_and_return)]
@@ -38530,7 +37921,7 @@ impl SetV2LoggingOptionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SetV2LoggingOptions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -38612,7 +38003,7 @@ impl SetV2LoggingOptionsInput {
             "SetV2LoggingOptions",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -38659,18 +38050,12 @@ pub mod start_audit_mitigation_actions_task_input {
             self.task_id = input;
             self
         }
-        /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply
-        /// them to a type of audit check, to all findings from an audit, or to a
-        /// specific set of
-        /// findings.</p>
+        /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
         pub fn target(mut self, input: crate::model::AuditMitigationActionsTaskTarget) -> Self {
             self.target = Some(input);
             self
         }
-        /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply
-        /// them to a type of audit check, to all findings from an audit, or to a
-        /// specific set of
-        /// findings.</p>
+        /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
         pub fn set_target(
             mut self,
             input: std::option::Option<crate::model::AuditMitigationActionsTaskTarget>,
@@ -38686,10 +38071,10 @@ pub mod start_audit_mitigation_actions_task_input {
         pub fn audit_check_to_actions_mapping(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<std::vec::Vec<std::string::String>>,
+            v: std::vec::Vec<std::string::String>,
         ) -> Self {
             let mut hash_map = self.audit_check_to_actions_mapping.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audit_check_to_actions_mapping = Some(hash_map);
             self
         }
@@ -38736,7 +38121,8 @@ pub mod start_audit_mitigation_actions_task_input {
 pub type StartAuditMitigationActionsTaskInputOperationOutputAlias =
     crate::operation::StartAuditMitigationActionsTask;
 #[doc(hidden)]
-pub type StartAuditMitigationActionsTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartAuditMitigationActionsTaskInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartAuditMitigationActionsTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartAuditMitigationActionsTask`](crate::operation::StartAuditMitigationActionsTask)>
     #[allow(clippy::let_and_return)]
@@ -38747,7 +38133,7 @@ impl StartAuditMitigationActionsTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartAuditMitigationActionsTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -38755,15 +38141,15 @@ impl StartAuditMitigationActionsTaskInput {
             _input: &crate::input::StartAuditMitigationActionsTaskInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_332 = &_input.task_id;
-            let input_332 =
-                input_332
+            let input_333 = &_input.task_id;
+            let input_333 =
+                input_333
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "task_id",
                         details: "cannot be empty or unset",
                     })?;
-            let task_id = aws_smithy_http::label::fmt_string(input_332, false);
+            let task_id = aws_smithy_http::label::fmt_string(input_333, false);
             if task_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "task_id",
@@ -38851,7 +38237,7 @@ impl StartAuditMitigationActionsTaskInput {
             "StartAuditMitigationActionsTask",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -38890,30 +38276,22 @@ pub mod start_detect_mitigation_actions_task_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
         }
-        /// <p>
-        /// Specifies the ML Detect findings to which the mitigation actions are applied.
-        /// </p>
+        /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
         pub fn target(mut self, input: crate::model::DetectMitigationActionsTaskTarget) -> Self {
             self.target = Some(input);
             self
         }
-        /// <p>
-        /// Specifies the ML Detect findings to which the mitigation actions are applied.
-        /// </p>
+        /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
         pub fn set_target(
             mut self,
             input: std::option::Option<crate::model::DetectMitigationActionsTaskTarget>,
@@ -38925,18 +38303,14 @@ pub mod start_detect_mitigation_actions_task_input {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>
-        /// The actions to be performed when a device has unexpected behavior.
-        /// </p>
+        /// <p> The actions to be performed when a device has unexpected behavior. </p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
-        /// <p>
-        /// The actions to be performed when a device has unexpected behavior.
-        /// </p>
+        /// <p> The actions to be performed when a device has unexpected behavior. </p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -38944,9 +38318,7 @@ pub mod start_detect_mitigation_actions_task_input {
             self.actions = input;
             self
         }
-        /// <p>
-        /// Specifies the time period of which violation events occurred between.
-        /// </p>
+        /// <p> Specifies the time period of which violation events occurred between. </p>
         pub fn violation_event_occurrence_range(
             mut self,
             input: crate::model::ViolationEventOccurrenceRange,
@@ -38954,9 +38326,7 @@ pub mod start_detect_mitigation_actions_task_input {
             self.violation_event_occurrence_range = Some(input);
             self
         }
-        /// <p>
-        /// Specifies the time period of which violation events occurred between.
-        /// </p>
+        /// <p> Specifies the time period of which violation events occurred between. </p>
         pub fn set_violation_event_occurrence_range(
             mut self,
             input: std::option::Option<crate::model::ViolationEventOccurrenceRange>,
@@ -38964,16 +38334,12 @@ pub mod start_detect_mitigation_actions_task_input {
             self.violation_event_occurrence_range = input;
             self
         }
-        /// <p>
-        /// Specifies to list only active violations.
-        /// </p>
+        /// <p> Specifies to list only active violations. </p>
         pub fn include_only_active_violations(mut self, input: bool) -> Self {
             self.include_only_active_violations = Some(input);
             self
         }
-        /// <p>
-        /// Specifies to list only active violations.
-        /// </p>
+        /// <p> Specifies to list only active violations. </p>
         pub fn set_include_only_active_violations(
             mut self,
             input: std::option::Option<bool>,
@@ -38981,30 +38347,22 @@ pub mod start_detect_mitigation_actions_task_input {
             self.include_only_active_violations = input;
             self
         }
-        /// <p>
-        /// Specifies to include suppressed alerts.
-        /// </p>
+        /// <p> Specifies to include suppressed alerts. </p>
         pub fn include_suppressed_alerts(mut self, input: bool) -> Self {
             self.include_suppressed_alerts = Some(input);
             self
         }
-        /// <p>
-        /// Specifies to include suppressed alerts.
-        /// </p>
+        /// <p> Specifies to include suppressed alerts. </p>
         pub fn set_include_suppressed_alerts(mut self, input: std::option::Option<bool>) -> Self {
             self.include_suppressed_alerts = input;
             self
         }
-        /// <p>
-        /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
-        /// </p>
+        /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>
-        /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
-        /// </p>
+        /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -39035,7 +38393,8 @@ pub mod start_detect_mitigation_actions_task_input {
 pub type StartDetectMitigationActionsTaskInputOperationOutputAlias =
     crate::operation::StartDetectMitigationActionsTask;
 #[doc(hidden)]
-pub type StartDetectMitigationActionsTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartDetectMitigationActionsTaskInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl StartDetectMitigationActionsTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartDetectMitigationActionsTask`](crate::operation::StartDetectMitigationActionsTask)>
     #[allow(clippy::let_and_return)]
@@ -39046,7 +38405,7 @@ impl StartDetectMitigationActionsTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartDetectMitigationActionsTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -39054,15 +38413,15 @@ impl StartDetectMitigationActionsTaskInput {
             _input: &crate::input::StartDetectMitigationActionsTaskInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_333 = &_input.task_id;
-            let input_333 =
-                input_333
+            let input_334 = &_input.task_id;
+            let input_334 =
+                input_334
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "task_id",
                         details: "cannot be empty or unset",
                     })?;
-            let task_id = aws_smithy_http::label::fmt_string(input_333, false);
+            let task_id = aws_smithy_http::label::fmt_string(input_334, false);
             if task_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "task_id",
@@ -39150,7 +38509,7 @@ impl StartDetectMitigationActionsTaskInput {
             "StartDetectMitigationActionsTask",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -39186,20 +38545,14 @@ pub mod start_on_demand_audit_task_input {
         ///
         /// To override the contents of this collection use [`set_target_check_names`](Self::set_target_check_names).
         ///
-        /// <p>Which checks are performed during the audit. The checks you specify must be enabled
-        /// for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code>
-        /// to see the list of all checks, including those that are enabled or
-        /// <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
+        /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
         pub fn target_check_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_check_names.unwrap_or_default();
             v.push(input.into());
             self.target_check_names = Some(v);
             self
         }
-        /// <p>Which checks are performed during the audit. The checks you specify must be enabled
-        /// for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code>
-        /// to see the list of all checks, including those that are enabled or
-        /// <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
+        /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
         pub fn set_target_check_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -39223,7 +38576,7 @@ pub mod start_on_demand_audit_task_input {
 #[doc(hidden)]
 pub type StartOnDemandAuditTaskInputOperationOutputAlias = crate::operation::StartOnDemandAuditTask;
 #[doc(hidden)]
-pub type StartOnDemandAuditTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartOnDemandAuditTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartOnDemandAuditTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartOnDemandAuditTask`](crate::operation::StartOnDemandAuditTask)>
     #[allow(clippy::let_and_return)]
@@ -39234,7 +38587,7 @@ impl StartOnDemandAuditTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartOnDemandAuditTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -39316,7 +38669,7 @@ impl StartOnDemandAuditTaskInput {
             "StartOnDemandAuditTask",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -39377,16 +38730,12 @@ pub mod start_thing_registration_task_input {
             self.input_file_bucket = input;
             self
         }
-        /// <p>The name of input file within the S3 bucket. This file contains a newline delimited
-        /// JSON file. Each line contains the parameter values to provision one device
-        /// (thing).</p>
+        /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
         pub fn input_file_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_file_key = Some(input.into());
             self
         }
-        /// <p>The name of input file within the S3 bucket. This file contains a newline delimited
-        /// JSON file. Each line contains the parameter values to provision one device
-        /// (thing).</p>
+        /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
         pub fn set_input_file_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -39424,7 +38773,7 @@ pub mod start_thing_registration_task_input {
 pub type StartThingRegistrationTaskInputOperationOutputAlias =
     crate::operation::StartThingRegistrationTask;
 #[doc(hidden)]
-pub type StartThingRegistrationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartThingRegistrationTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartThingRegistrationTaskInput {
     /// Consumes the builder and constructs an Operation<[`StartThingRegistrationTask`](crate::operation::StartThingRegistrationTask)>
     #[allow(clippy::let_and_return)]
@@ -39435,7 +38784,7 @@ impl StartThingRegistrationTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartThingRegistrationTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -39516,7 +38865,7 @@ impl StartThingRegistrationTaskInput {
             "StartThingRegistrationTask",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -39575,7 +38924,7 @@ pub mod stop_thing_registration_task_input {
 pub type StopThingRegistrationTaskInputOperationOutputAlias =
     crate::operation::StopThingRegistrationTask;
 #[doc(hidden)]
-pub type StopThingRegistrationTaskInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopThingRegistrationTaskInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopThingRegistrationTaskInput {
     /// Consumes the builder and constructs an Operation<[`StopThingRegistrationTask`](crate::operation::StopThingRegistrationTask)>
     #[allow(clippy::let_and_return)]
@@ -39586,7 +38935,7 @@ impl StopThingRegistrationTaskInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopThingRegistrationTask,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -39594,15 +38943,15 @@ impl StopThingRegistrationTaskInput {
             _input: &crate::input::StopThingRegistrationTaskInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_334 = &_input.task_id;
-            let input_334 =
-                input_334
+            let input_335 = &_input.task_id;
+            let input_335 =
+                input_335
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "task_id",
                         details: "cannot be empty or unset",
                     })?;
-            let task_id = aws_smithy_http::label::fmt_string(input_334, false);
+            let task_id = aws_smithy_http::label::fmt_string(input_335, false);
             if task_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "task_id",
@@ -39680,7 +39029,7 @@ impl StopThingRegistrationTaskInput {
             "StopThingRegistrationTask",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -39720,9 +39069,9 @@ pub mod tag_resource_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The new or modified tags for the resource.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -39751,7 +39100,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -39762,7 +39111,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -39841,7 +39190,7 @@ impl TagResourceInput {
             "TagResource",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -39905,16 +39254,14 @@ pub mod test_authorization_input {
         ///
         /// To override the contents of this collection use [`set_auth_infos`](Self::set_auth_infos).
         ///
-        /// <p>A list of authorization info objects. Simulating authorization will create a response
-        /// for each <code>authInfo</code> object in the list.</p>
-        pub fn auth_infos(mut self, input: impl Into<crate::model::AuthInfo>) -> Self {
+        /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
+        pub fn auth_infos(mut self, input: crate::model::AuthInfo) -> Self {
             let mut v = self.auth_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.auth_infos = Some(v);
             self
         }
-        /// <p>A list of authorization info objects. Simulating authorization will create a response
-        /// for each <code>authInfo</code> object in the list.</p>
+        /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
         pub fn set_auth_infos(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AuthInfo>>,
@@ -39936,16 +39283,14 @@ pub mod test_authorization_input {
         ///
         /// To override the contents of this collection use [`set_policy_names_to_add`](Self::set_policy_names_to_add).
         ///
-        /// <p>When testing custom authorization, the policies specified here are treated as if they
-        /// are attached to the principal being authorized.</p>
+        /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
         pub fn policy_names_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names_to_add.unwrap_or_default();
             v.push(input.into());
             self.policy_names_to_add = Some(v);
             self
         }
-        /// <p>When testing custom authorization, the policies specified here are treated as if they
-        /// are attached to the principal being authorized.</p>
+        /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
         pub fn set_policy_names_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -39957,16 +39302,14 @@ pub mod test_authorization_input {
         ///
         /// To override the contents of this collection use [`set_policy_names_to_skip`](Self::set_policy_names_to_skip).
         ///
-        /// <p>When testing custom authorization, the policies specified here are treated as if they
-        /// are not attached to the principal being authorized.</p>
+        /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
         pub fn policy_names_to_skip(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names_to_skip.unwrap_or_default();
             v.push(input.into());
             self.policy_names_to_skip = Some(v);
             self
         }
-        /// <p>When testing custom authorization, the policies specified here are treated as if they
-        /// are not attached to the principal being authorized.</p>
+        /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
         pub fn set_policy_names_to_skip(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -39995,7 +39338,7 @@ pub mod test_authorization_input {
 #[doc(hidden)]
 pub type TestAuthorizationInputOperationOutputAlias = crate::operation::TestAuthorization;
 #[doc(hidden)]
-pub type TestAuthorizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TestAuthorizationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TestAuthorizationInput {
     /// Consumes the builder and constructs an Operation<[`TestAuthorization`](crate::operation::TestAuthorization)>
     #[allow(clippy::let_and_return)]
@@ -40006,7 +39349,7 @@ impl TestAuthorizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestAuthorization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -40022,8 +39365,8 @@ impl TestAuthorizationInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_335) = &_input.client_id {
-                query.push_kv("clientId", &aws_smithy_http::query::fmt_string(&inner_335));
+            if let Some(inner_336) = &_input.client_id {
+                query.push_kv("clientId", &aws_smithy_http::query::fmt_string(&inner_336));
             }
             Ok(())
         }
@@ -40097,7 +39440,7 @@ impl TestAuthorizationInput {
             "TestAuthorization",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -40157,14 +39500,12 @@ pub mod test_invoke_authorizer_input {
             self.token = input;
             self
         }
-        /// <p>The signature made with the token and your custom authentication service's private
-        /// key. This value must be Base-64-encoded.</p>
+        /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
         pub fn token_signature(mut self, input: impl Into<std::string::String>) -> Self {
             self.token_signature = Some(input.into());
             self
         }
-        /// <p>The signature made with the token and your custom authentication service's private
-        /// key. This value must be Base-64-encoded.</p>
+        /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
         pub fn set_token_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -40232,7 +39573,7 @@ pub mod test_invoke_authorizer_input {
 #[doc(hidden)]
 pub type TestInvokeAuthorizerInputOperationOutputAlias = crate::operation::TestInvokeAuthorizer;
 #[doc(hidden)]
-pub type TestInvokeAuthorizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TestInvokeAuthorizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TestInvokeAuthorizerInput {
     /// Consumes the builder and constructs an Operation<[`TestInvokeAuthorizer`](crate::operation::TestInvokeAuthorizer)>
     #[allow(clippy::let_and_return)]
@@ -40243,7 +39584,7 @@ impl TestInvokeAuthorizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TestInvokeAuthorizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -40251,15 +39592,15 @@ impl TestInvokeAuthorizerInput {
             _input: &crate::input::TestInvokeAuthorizerInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_336 = &_input.authorizer_name;
-            let input_336 =
-                input_336
+            let input_337 = &_input.authorizer_name;
+            let input_337 =
+                input_337
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "authorizer_name",
                         details: "cannot be empty or unset",
                     })?;
-            let authorizer_name = aws_smithy_http::label::fmt_string(input_336, false);
+            let authorizer_name = aws_smithy_http::label::fmt_string(input_337, false);
             if authorizer_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "authorizer_name",
@@ -40345,7 +39686,7 @@ impl TestInvokeAuthorizerInput {
             "TestInvokeAuthorizer",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -40379,14 +39720,12 @@ pub mod transfer_certificate_input {
         pub(crate) transfer_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -40438,7 +39777,7 @@ pub mod transfer_certificate_input {
 #[doc(hidden)]
 pub type TransferCertificateInputOperationOutputAlias = crate::operation::TransferCertificate;
 #[doc(hidden)]
-pub type TransferCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TransferCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TransferCertificateInput {
     /// Consumes the builder and constructs an Operation<[`TransferCertificate`](crate::operation::TransferCertificate)>
     #[allow(clippy::let_and_return)]
@@ -40449,7 +39788,7 @@ impl TransferCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TransferCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -40457,15 +39796,15 @@ impl TransferCertificateInput {
             _input: &crate::input::TransferCertificateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_337 = &_input.certificate_id;
-            let input_337 =
-                input_337
+            let input_338 = &_input.certificate_id;
+            let input_338 =
+                input_338
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "certificate_id",
                         details: "cannot be empty or unset",
                     })?;
-            let certificate_id = aws_smithy_http::label::fmt_string(input_337, false);
+            let certificate_id = aws_smithy_http::label::fmt_string(input_338, false);
             if certificate_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "certificate_id",
@@ -40485,10 +39824,10 @@ impl TransferCertificateInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_338) = &_input.target_aws_account {
+            if let Some(inner_339) = &_input.target_aws_account {
                 query.push_kv(
                     "targetAwsAccount",
-                    &aws_smithy_http::query::fmt_string(&inner_338),
+                    &aws_smithy_http::query::fmt_string(&inner_339),
                 );
             }
             Ok(())
@@ -40563,7 +39902,7 @@ impl TransferCertificateInput {
             "TransferCertificate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -40642,7 +39981,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -40653,7 +39992,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -40732,7 +40071,7 @@ impl UntagResourceInput {
             "UntagResource",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -40773,26 +40112,12 @@ pub mod update_account_audit_configuration_input {
         >,
     }
     impl Builder {
-        /// <p>The Amazon
-        /// Resource Name
-        /// (ARN)
-        /// of the role that grants permission
-        /// to
-        /// IoT to access information about your devices, policies,
-        /// certificates,
-        /// and other items as required when performing an audit.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon
-        /// Resource Name
-        /// (ARN)
-        /// of the role that grants permission
-        /// to
-        /// IoT to access information about your devices, policies,
-        /// certificates,
-        /// and other items as required when performing an audit.</p>
+        /// <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -40804,13 +40129,13 @@ pub mod update_account_audit_configuration_input {
         /// <p>Information about the targets to which audit notifications are sent.</p>
         pub fn audit_notification_target_configurations(
             mut self,
-            k: impl Into<crate::model::AuditNotificationType>,
-            v: impl Into<crate::model::AuditNotificationTarget>,
+            k: crate::model::AuditNotificationType,
+            v: crate::model::AuditNotificationTarget,
         ) -> Self {
             let mut hash_map = self
                 .audit_notification_target_configurations
                 .unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.audit_notification_target_configurations = Some(hash_map);
             self
         }
@@ -40831,42 +40156,24 @@ pub mod update_account_audit_configuration_input {
         ///
         /// To override the contents of this collection use [`set_audit_check_configurations`](Self::set_audit_check_configurations).
         ///
-        /// <p>Specifies which audit checks are enabled and disabled for this account. Use
-        /// <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those
-        /// that are currently enabled.</p>
-        /// <p>Some data collection might start immediately when certain checks are enabled.
-        /// When a check is disabled, any data collected so far in relation to the check is deleted.</p>
-        /// <p>You
-        /// cannot
-        /// disable a check if
-        /// it's
-        /// used by any scheduled audit. You must first delete the check from the scheduled audit or
-        /// delete the scheduled audit itself.</p>
-        /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
-        /// this parameter is required and must specify at least one enabled check.</p>
+        /// <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>
+        /// <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p>
+        /// <p>You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p>
+        /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
         pub fn audit_check_configurations(
             mut self,
             k: impl Into<std::string::String>,
-            v: impl Into<crate::model::AuditCheckConfiguration>,
+            v: crate::model::AuditCheckConfiguration,
         ) -> Self {
             let mut hash_map = self.audit_check_configurations.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k.into(), v);
             self.audit_check_configurations = Some(hash_map);
             self
         }
-        /// <p>Specifies which audit checks are enabled and disabled for this account. Use
-        /// <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those
-        /// that are currently enabled.</p>
-        /// <p>Some data collection might start immediately when certain checks are enabled.
-        /// When a check is disabled, any data collected so far in relation to the check is deleted.</p>
-        /// <p>You
-        /// cannot
-        /// disable a check if
-        /// it's
-        /// used by any scheduled audit. You must first delete the check from the scheduled audit or
-        /// delete the scheduled audit itself.</p>
-        /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
-        /// this parameter is required and must specify at least one enabled check.</p>
+        /// <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>
+        /// <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p>
+        /// <p>You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p>
+        /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
         pub fn set_audit_check_configurations(
             mut self,
             input: std::option::Option<
@@ -40899,7 +40206,8 @@ pub mod update_account_audit_configuration_input {
 pub type UpdateAccountAuditConfigurationInputOperationOutputAlias =
     crate::operation::UpdateAccountAuditConfiguration;
 #[doc(hidden)]
-pub type UpdateAccountAuditConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAccountAuditConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAccountAuditConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAccountAuditConfiguration`](crate::operation::UpdateAccountAuditConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -40910,7 +40218,7 @@ impl UpdateAccountAuditConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAccountAuditConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -40991,7 +40299,7 @@ impl UpdateAccountAuditConfigurationInput {
             "UpdateAccountAuditConfiguration",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -41027,18 +40335,12 @@ pub mod update_audit_suppression_input {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_name = Some(input.into());
             self
         }
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_name = input;
             self
@@ -41056,16 +40358,12 @@ pub mod update_audit_suppression_input {
             self.resource_identifier = input;
             self
         }
-        /// <p>
-        /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
-        /// </p>
+        /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
         pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
-        /// <p>
-        /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
-        /// </p>
+        /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
         pub fn set_expiration_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -41073,30 +40371,22 @@ pub mod update_audit_suppression_input {
             self.expiration_date = input;
             self
         }
-        /// <p>
-        /// Indicates whether a suppression should exist indefinitely or not.
-        /// </p>
+        /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
         pub fn suppress_indefinitely(mut self, input: bool) -> Self {
             self.suppress_indefinitely = Some(input);
             self
         }
-        /// <p>
-        /// Indicates whether a suppression should exist indefinitely or not.
-        /// </p>
+        /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
         pub fn set_suppress_indefinitely(mut self, input: std::option::Option<bool>) -> Self {
             self.suppress_indefinitely = input;
             self
         }
-        /// <p>
-        /// The description of the audit suppression.
-        /// </p>
+        /// <p> The description of the audit suppression. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>
-        /// The description of the audit suppression.
-        /// </p>
+        /// <p> The description of the audit suppression. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -41121,7 +40411,7 @@ pub mod update_audit_suppression_input {
 #[doc(hidden)]
 pub type UpdateAuditSuppressionInputOperationOutputAlias = crate::operation::UpdateAuditSuppression;
 #[doc(hidden)]
-pub type UpdateAuditSuppressionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAuditSuppressionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAuditSuppressionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAuditSuppression`](crate::operation::UpdateAuditSuppression)>
     #[allow(clippy::let_and_return)]
@@ -41132,7 +40422,7 @@ impl UpdateAuditSuppressionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAuditSuppression,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -41214,7 +40504,7 @@ impl UpdateAuditSuppressionInput {
             "UpdateAuditSuppression",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -41250,6 +40540,7 @@ pub mod update_authorizer_input {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) status: std::option::Option<crate::model::AuthorizerStatus>,
+        pub(crate) enable_caching_for_http: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The authorizer name.</p>
@@ -41329,6 +40620,16 @@ pub mod update_authorizer_input {
             self.status = input;
             self
         }
+        /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
+        pub fn enable_caching_for_http(mut self, input: bool) -> Self {
+            self.enable_caching_for_http = Some(input);
+            self
+        }
+        /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
+        pub fn set_enable_caching_for_http(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_caching_for_http = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAuthorizerInput`](crate::input::UpdateAuthorizerInput)
         pub fn build(
             self,
@@ -41342,6 +40643,7 @@ pub mod update_authorizer_input {
                 token_key_name: self.token_key_name,
                 token_signing_public_keys: self.token_signing_public_keys,
                 status: self.status,
+                enable_caching_for_http: self.enable_caching_for_http,
             })
         }
     }
@@ -41349,7 +40651,7 @@ pub mod update_authorizer_input {
 #[doc(hidden)]
 pub type UpdateAuthorizerInputOperationOutputAlias = crate::operation::UpdateAuthorizer;
 #[doc(hidden)]
-pub type UpdateAuthorizerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAuthorizerInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAuthorizerInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAuthorizer`](crate::operation::UpdateAuthorizer)>
     #[allow(clippy::let_and_return)]
@@ -41360,7 +40662,7 @@ impl UpdateAuthorizerInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAuthorizer,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -41368,15 +40670,15 @@ impl UpdateAuthorizerInput {
             _input: &crate::input::UpdateAuthorizerInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_339 = &_input.authorizer_name;
-            let input_339 =
-                input_339
+            let input_340 = &_input.authorizer_name;
+            let input_340 =
+                input_340
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "authorizer_name",
                         details: "cannot be empty or unset",
                     })?;
-            let authorizer_name = aws_smithy_http::label::fmt_string(input_339, false);
+            let authorizer_name = aws_smithy_http::label::fmt_string(input_340, false);
             if authorizer_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "authorizer_name",
@@ -41460,7 +40762,7 @@ impl UpdateAuthorizerInput {
             "UpdateAuthorizer",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -41524,18 +40826,12 @@ pub mod update_billing_group_input {
             self.billing_group_properties = input;
             self
         }
-        /// <p>The expected version of the billing group. If the version of the billing group does
-        /// not match the expected version specified in the request, the
-        /// <code>UpdateBillingGroup</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>The expected version of the billing group. If the version of the billing group does
-        /// not match the expected version specified in the request, the
-        /// <code>UpdateBillingGroup</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
@@ -41558,7 +40854,7 @@ pub mod update_billing_group_input {
 #[doc(hidden)]
 pub type UpdateBillingGroupInputOperationOutputAlias = crate::operation::UpdateBillingGroup;
 #[doc(hidden)]
-pub type UpdateBillingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBillingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBillingGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBillingGroup`](crate::operation::UpdateBillingGroup)>
     #[allow(clippy::let_and_return)]
@@ -41569,7 +40865,7 @@ impl UpdateBillingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBillingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -41577,15 +40873,15 @@ impl UpdateBillingGroupInput {
             _input: &crate::input::UpdateBillingGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_340 = &_input.billing_group_name;
-            let input_340 =
-                input_340
+            let input_341 = &_input.billing_group_name;
+            let input_341 =
+                input_341
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "billing_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let billing_group_name = aws_smithy_http::label::fmt_string(input_340, false);
+            let billing_group_name = aws_smithy_http::label::fmt_string(input_341, false);
             if billing_group_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "billing_group_name",
@@ -41669,7 +40965,7 @@ impl UpdateBillingGroupInput {
             "UpdateBillingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -41720,17 +41016,13 @@ pub mod update_ca_certificate_input {
             self
         }
         /// <p>The updated status of the CA certificate.</p>
-        /// <p>
-        /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-        /// should not be used.</p>
+        /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
         pub fn new_status(mut self, input: crate::model::CaCertificateStatus) -> Self {
             self.new_status = Some(input);
             self
         }
         /// <p>The updated status of the CA certificate.</p>
-        /// <p>
-        /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-        /// should not be used.</p>
+        /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
         pub fn set_new_status(
             mut self,
             input: std::option::Option<crate::model::CaCertificateStatus>,
@@ -41738,8 +41030,7 @@ pub mod update_ca_certificate_input {
             self.new_status = input;
             self
         }
-        /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or
-        /// "DISABLE".</p>
+        /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
         pub fn new_auto_registration_status(
             mut self,
             input: crate::model::AutoRegistrationStatus,
@@ -41747,8 +41038,7 @@ pub mod update_ca_certificate_input {
             self.new_auto_registration_status = Some(input);
             self
         }
-        /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or
-        /// "DISABLE".</p>
+        /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
         pub fn set_new_auto_registration_status(
             mut self,
             input: std::option::Option<crate::model::AutoRegistrationStatus>,
@@ -41799,7 +41089,7 @@ pub mod update_ca_certificate_input {
 #[doc(hidden)]
 pub type UpdateCaCertificateInputOperationOutputAlias = crate::operation::UpdateCACertificate;
 #[doc(hidden)]
-pub type UpdateCaCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCaCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCaCertificateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCACertificate`](crate::operation::UpdateCACertificate)>
     #[allow(clippy::let_and_return)]
@@ -41810,7 +41100,7 @@ impl UpdateCaCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCACertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -41818,15 +41108,15 @@ impl UpdateCaCertificateInput {
             _input: &crate::input::UpdateCaCertificateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_341 = &_input.certificate_id;
-            let input_341 =
-                input_341
+            let input_342 = &_input.certificate_id;
+            let input_342 =
+                input_342
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "certificate_id",
                         details: "cannot be empty or unset",
                     })?;
-            let certificate_id = aws_smithy_http::label::fmt_string(input_341, false);
+            let certificate_id = aws_smithy_http::label::fmt_string(input_342, false);
             if certificate_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "certificate_id",
@@ -41846,13 +41136,13 @@ impl UpdateCaCertificateInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_342) = &_input.new_status {
-                query.push_kv("newStatus", &aws_smithy_http::query::fmt_string(&inner_342));
+            if let Some(inner_343) = &_input.new_status {
+                query.push_kv("newStatus", &aws_smithy_http::query::fmt_string(&inner_343));
             }
-            if let Some(inner_343) = &_input.new_auto_registration_status {
+            if let Some(inner_344) = &_input.new_auto_registration_status {
                 query.push_kv(
                     "newAutoRegistrationStatus",
-                    &aws_smithy_http::query::fmt_string(&inner_343),
+                    &aws_smithy_http::query::fmt_string(&inner_344),
                 );
             }
             Ok(())
@@ -41927,7 +41217,7 @@ impl UpdateCaCertificateInput {
             "UpdateCACertificate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -41960,14 +41250,12 @@ pub mod update_certificate_input {
         pub(crate) new_status: std::option::Option<crate::model::CertificateStatus>,
     }
     impl Builder {
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.)</p>
+        /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -41976,25 +41264,15 @@ pub mod update_certificate_input {
             self
         }
         /// <p>The new status.</p>
-        /// <p>
-        /// <b>Note:</b> Setting the status to PENDING_TRANSFER  or PENDING_ACTIVATION will result
-        /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They
-        /// are not intended for developer use.</p>
-        /// <p>
-        /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-        /// should not be used.</p>
+        /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
+        /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
         pub fn new_status(mut self, input: crate::model::CertificateStatus) -> Self {
             self.new_status = Some(input);
             self
         }
         /// <p>The new status.</p>
-        /// <p>
-        /// <b>Note:</b> Setting the status to PENDING_TRANSFER  or PENDING_ACTIVATION will result
-        /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They
-        /// are not intended for developer use.</p>
-        /// <p>
-        /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-        /// should not be used.</p>
+        /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
+        /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
         pub fn set_new_status(
             mut self,
             input: std::option::Option<crate::model::CertificateStatus>,
@@ -42019,7 +41297,7 @@ pub mod update_certificate_input {
 #[doc(hidden)]
 pub type UpdateCertificateInputOperationOutputAlias = crate::operation::UpdateCertificate;
 #[doc(hidden)]
-pub type UpdateCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCertificateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCertificate`](crate::operation::UpdateCertificate)>
     #[allow(clippy::let_and_return)]
@@ -42030,7 +41308,7 @@ impl UpdateCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -42038,15 +41316,15 @@ impl UpdateCertificateInput {
             _input: &crate::input::UpdateCertificateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_344 = &_input.certificate_id;
-            let input_344 =
-                input_344
+            let input_345 = &_input.certificate_id;
+            let input_345 =
+                input_345
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "certificate_id",
                         details: "cannot be empty or unset",
                     })?;
-            let certificate_id = aws_smithy_http::label::fmt_string(input_344, false);
+            let certificate_id = aws_smithy_http::label::fmt_string(input_345, false);
             if certificate_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "certificate_id",
@@ -42066,8 +41344,8 @@ impl UpdateCertificateInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_345) = &_input.new_status {
-                query.push_kv("newStatus", &aws_smithy_http::query::fmt_string(&inner_345));
+            if let Some(inner_346) = &_input.new_status {
+                query.push_kv("newStatus", &aws_smithy_http::query::fmt_string(&inner_346));
             }
             Ok(())
         }
@@ -42135,7 +41413,7 @@ impl UpdateCertificateInput {
             "UpdateCertificate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -42160,38 +41438,22 @@ pub mod update_custom_metric_input {
         pub(crate) display_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The name of the custom metric.
-        /// Cannot be updated. </p>
+        /// <p> The name of the custom metric. Cannot be updated. </p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p> The name of the custom metric.
-        /// Cannot be updated. </p>
+        /// <p> The name of the custom metric. Cannot be updated. </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
-        /// <p>
-        /// Field
-        /// represents a friendly name in the console for the custom metric,
-        /// it
-        /// doesn't have to be unique. Don't use this name as the metric identifier in
-        /// the device metric report.
-        /// Can
-        /// be updated. </p>
+        /// <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
         }
-        /// <p>
-        /// Field
-        /// represents a friendly name in the console for the custom metric,
-        /// it
-        /// doesn't have to be unique. Don't use this name as the metric identifier in
-        /// the device metric report.
-        /// Can
-        /// be updated. </p>
+        /// <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -42213,7 +41475,7 @@ pub mod update_custom_metric_input {
 #[doc(hidden)]
 pub type UpdateCustomMetricInputOperationOutputAlias = crate::operation::UpdateCustomMetric;
 #[doc(hidden)]
-pub type UpdateCustomMetricInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCustomMetricInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCustomMetricInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCustomMetric`](crate::operation::UpdateCustomMetric)>
     #[allow(clippy::let_and_return)]
@@ -42224,7 +41486,7 @@ impl UpdateCustomMetricInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCustomMetric,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -42232,15 +41494,15 @@ impl UpdateCustomMetricInput {
             _input: &crate::input::UpdateCustomMetricInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_346 = &_input.metric_name;
-            let input_346 =
-                input_346
+            let input_347 = &_input.metric_name;
+            let input_347 =
+                input_347
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "metric_name",
                         details: "cannot be empty or unset",
                     })?;
-            let metric_name = aws_smithy_http::label::fmt_string(input_346, false);
+            let metric_name = aws_smithy_http::label::fmt_string(input_347, false);
             if metric_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "metric_name",
@@ -42324,7 +41586,7 @@ impl UpdateCustomMetricInput {
             "UpdateCustomMetric",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -42403,7 +41665,7 @@ pub mod update_dimension_input {
 #[doc(hidden)]
 pub type UpdateDimensionInputOperationOutputAlias = crate::operation::UpdateDimension;
 #[doc(hidden)]
-pub type UpdateDimensionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDimensionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDimensionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDimension`](crate::operation::UpdateDimension)>
     #[allow(clippy::let_and_return)]
@@ -42414,7 +41676,7 @@ impl UpdateDimensionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDimension,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -42422,15 +41684,15 @@ impl UpdateDimensionInput {
             _input: &crate::input::UpdateDimensionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_347 = &_input.name;
-            let input_347 =
-                input_347
+            let input_348 = &_input.name;
+            let input_348 =
+                input_348
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = aws_smithy_http::label::fmt_string(input_347, false);
+            let name = aws_smithy_http::label::fmt_string(input_348, false);
             if name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
@@ -42509,7 +41771,7 @@ impl UpdateDimensionInput {
             "UpdateDimension",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -42617,7 +41879,7 @@ pub mod update_domain_configuration_input {
 pub type UpdateDomainConfigurationInputOperationOutputAlias =
     crate::operation::UpdateDomainConfiguration;
 #[doc(hidden)]
-pub type UpdateDomainConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDomainConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDomainConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomainConfiguration`](crate::operation::UpdateDomainConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -42628,7 +41890,7 @@ impl UpdateDomainConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -42636,15 +41898,15 @@ impl UpdateDomainConfigurationInput {
             _input: &crate::input::UpdateDomainConfigurationInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_348 = &_input.domain_configuration_name;
-            let input_348 =
-                input_348
+            let input_349 = &_input.domain_configuration_name;
+            let input_349 =
+                input_349
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_configuration_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_configuration_name = aws_smithy_http::label::fmt_string(input_348, false);
+            let domain_configuration_name = aws_smithy_http::label::fmt_string(input_349, false);
             if domain_configuration_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_configuration_name",
@@ -42730,7 +41992,7 @@ impl UpdateDomainConfigurationInput {
             "UpdateDomainConfiguration",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -42803,16 +42065,14 @@ pub mod update_dynamic_thing_group_input {
             self.expected_version = input;
             self
         }
-        /// <p>The dynamic thing group index to update.</p>
-        /// <note>
+        /// <p>The dynamic thing group index to update.</p> <note>
         /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
         /// </note>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_name = Some(input.into());
             self
         }
-        /// <p>The dynamic thing group index to update.</p>
-        /// <note>
+        /// <p>The dynamic thing group index to update.</p> <note>
         /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
         /// </note>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -42829,19 +42089,15 @@ pub mod update_dynamic_thing_group_input {
             self.query_string = input;
             self
         }
-        /// <p>The dynamic thing group query version to update.</p>
-        /// <note>
-        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-        /// query version defaults to this value.</p>
+        /// <p>The dynamic thing group query version to update.</p> <note>
+        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
         /// </note>
         pub fn query_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_version = Some(input.into());
             self
         }
-        /// <p>The dynamic thing group query version to update.</p>
-        /// <note>
-        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-        /// query version defaults to this value.</p>
+        /// <p>The dynamic thing group query version to update.</p> <note>
+        /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
         /// </note>
         pub fn set_query_version(
             mut self,
@@ -42872,7 +42128,7 @@ pub mod update_dynamic_thing_group_input {
 pub type UpdateDynamicThingGroupInputOperationOutputAlias =
     crate::operation::UpdateDynamicThingGroup;
 #[doc(hidden)]
-pub type UpdateDynamicThingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDynamicThingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDynamicThingGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDynamicThingGroup`](crate::operation::UpdateDynamicThingGroup)>
     #[allow(clippy::let_and_return)]
@@ -42883,7 +42139,7 @@ impl UpdateDynamicThingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDynamicThingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -42891,15 +42147,15 @@ impl UpdateDynamicThingGroupInput {
             _input: &crate::input::UpdateDynamicThingGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_349 = &_input.thing_group_name;
-            let input_349 =
-                input_349
+            let input_350 = &_input.thing_group_name;
+            let input_350 =
+                input_350
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let thing_group_name = aws_smithy_http::label::fmt_string(input_349, false);
+            let thing_group_name = aws_smithy_http::label::fmt_string(input_350, false);
             if thing_group_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "thing_group_name",
@@ -42985,7 +42241,7 @@ impl UpdateDynamicThingGroupInput {
             "UpdateDynamicThingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -43026,11 +42282,11 @@ pub mod update_event_configurations_input {
         /// <p>The new event configuration values.</p>
         pub fn event_configurations(
             mut self,
-            k: impl Into<crate::model::EventType>,
-            v: impl Into<crate::model::Configuration>,
+            k: crate::model::EventType,
+            v: crate::model::Configuration,
         ) -> Self {
             let mut hash_map = self.event_configurations.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.event_configurations = Some(hash_map);
             self
         }
@@ -43061,7 +42317,7 @@ pub mod update_event_configurations_input {
 pub type UpdateEventConfigurationsInputOperationOutputAlias =
     crate::operation::UpdateEventConfigurations;
 #[doc(hidden)]
-pub type UpdateEventConfigurationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateEventConfigurationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateEventConfigurationsInput {
     /// Consumes the builder and constructs an Operation<[`UpdateEventConfigurations`](crate::operation::UpdateEventConfigurations)>
     #[allow(clippy::let_and_return)]
@@ -43072,7 +42328,7 @@ impl UpdateEventConfigurationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateEventConfigurations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -43154,7 +42410,7 @@ impl UpdateEventConfigurationsInput {
             "UpdateEventConfigurations",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -43284,14 +42540,12 @@ pub mod update_fleet_metric_input {
             self.index_name = input;
             self
         }
-        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-        /// supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
         pub fn unit(mut self, input: crate::model::FleetMetricUnit) -> Self {
             self.unit = Some(input);
             self
         }
-        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-        /// supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
         pub fn set_unit(
             mut self,
             input: std::option::Option<crate::model::FleetMetricUnit>,
@@ -43334,7 +42588,7 @@ pub mod update_fleet_metric_input {
 #[doc(hidden)]
 pub type UpdateFleetMetricInputOperationOutputAlias = crate::operation::UpdateFleetMetric;
 #[doc(hidden)]
-pub type UpdateFleetMetricInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFleetMetricInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFleetMetricInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFleetMetric`](crate::operation::UpdateFleetMetric)>
     #[allow(clippy::let_and_return)]
@@ -43345,7 +42599,7 @@ impl UpdateFleetMetricInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFleetMetric,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -43353,15 +42607,15 @@ impl UpdateFleetMetricInput {
             _input: &crate::input::UpdateFleetMetricInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_350 = &_input.metric_name;
-            let input_350 =
-                input_350
+            let input_351 = &_input.metric_name;
+            let input_351 =
+                input_351
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "metric_name",
                         details: "cannot be empty or unset",
                     })?;
-            let metric_name = aws_smithy_http::label::fmt_string(input_350, false);
+            let metric_name = aws_smithy_http::label::fmt_string(input_351, false);
             if metric_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "metric_name",
@@ -43445,7 +42699,7 @@ impl UpdateFleetMetricInput {
             "UpdateFleetMetric",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -43530,7 +42784,7 @@ pub mod update_indexing_configuration_input {
 pub type UpdateIndexingConfigurationInputOperationOutputAlias =
     crate::operation::UpdateIndexingConfiguration;
 #[doc(hidden)]
-pub type UpdateIndexingConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateIndexingConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIndexingConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIndexingConfiguration`](crate::operation::UpdateIndexingConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -43541,7 +42795,7 @@ impl UpdateIndexingConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateIndexingConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -43622,7 +42876,7 @@ impl UpdateIndexingConfigurationInput {
             "UpdateIndexingConfiguration",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -43659,6 +42913,8 @@ pub mod update_job_input {
         pub(crate) abort_config: std::option::Option<crate::model::AbortConfig>,
         pub(crate) timeout_config: std::option::Option<crate::model::TimeoutConfig>,
         pub(crate) namespace_id: std::option::Option<std::string::String>,
+        pub(crate) job_executions_retry_config:
+            std::option::Option<crate::model::JobExecutionsRetryConfig>,
     }
     impl Builder {
         /// <p>The ID of the job to be updated.</p>
@@ -43723,14 +42979,12 @@ pub mod update_job_input {
             self.abort_config = input;
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
-        /// If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
         pub fn timeout_config(mut self, input: crate::model::TimeoutConfig) -> Self {
             self.timeout_config = Some(input);
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
-        /// If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
         pub fn set_timeout_config(
             mut self,
             input: std::option::Option<crate::model::TimeoutConfig>,
@@ -43739,12 +42993,8 @@ pub mod update_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -43752,16 +43002,28 @@ pub mod update_job_input {
             self
         }
         /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-        /// contain the value in the following format.</p>
-        /// <p>
-        /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-        /// </p>
-        /// <note>
+        /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+        /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
         /// <p>The <code>namespaceId</code> feature is in public preview.</p>
         /// </note>
         pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace_id = input;
+            self
+        }
+        /// <p>Allows you to create the criteria to retry a job.</p>
+        pub fn job_executions_retry_config(
+            mut self,
+            input: crate::model::JobExecutionsRetryConfig,
+        ) -> Self {
+            self.job_executions_retry_config = Some(input);
+            self
+        }
+        /// <p>Allows you to create the criteria to retry a job.</p>
+        pub fn set_job_executions_retry_config(
+            mut self,
+            input: std::option::Option<crate::model::JobExecutionsRetryConfig>,
+        ) -> Self {
+            self.job_executions_retry_config = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateJobInput`](crate::input::UpdateJobInput)
@@ -43777,6 +43039,7 @@ pub mod update_job_input {
                 abort_config: self.abort_config,
                 timeout_config: self.timeout_config,
                 namespace_id: self.namespace_id,
+                job_executions_retry_config: self.job_executions_retry_config,
             })
         }
     }
@@ -43784,7 +43047,7 @@ pub mod update_job_input {
 #[doc(hidden)]
 pub type UpdateJobInputOperationOutputAlias = crate::operation::UpdateJob;
 #[doc(hidden)]
-pub type UpdateJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJob`](crate::operation::UpdateJob)>
     #[allow(clippy::let_and_return)]
@@ -43795,7 +43058,7 @@ impl UpdateJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -43803,15 +43066,15 @@ impl UpdateJobInput {
             _input: &crate::input::UpdateJobInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_351 = &_input.job_id;
-            let input_351 =
-                input_351
+            let input_352 = &_input.job_id;
+            let input_352 =
+                input_352
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let job_id = aws_smithy_http::label::fmt_string(input_351, false);
+            let job_id = aws_smithy_http::label::fmt_string(input_352, false);
             if job_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "job_id",
@@ -43826,10 +43089,10 @@ impl UpdateJobInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_352) = &_input.namespace_id {
+            if let Some(inner_353) = &_input.namespace_id {
                 query.push_kv(
                     "namespaceId",
-                    &aws_smithy_http::query::fmt_string(&inner_352),
+                    &aws_smithy_http::query::fmt_string(&inner_353),
                 );
             }
             Ok(())
@@ -43901,7 +43164,7 @@ impl UpdateJobInput {
                     "UpdateJob",
                     "iot",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -43935,18 +43198,12 @@ pub mod update_mitigation_action_input {
         pub(crate) action_params: std::option::Option<crate::model::MitigationActionParams>,
     }
     impl Builder {
-        /// <p>The friendly name for the mitigation action. You cannot change the name by using
-        /// <code>UpdateMitigationAction</code>. Instead, you must delete and
-        /// recreate the
-        /// mitigation action with the new name.</p>
+        /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
         pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_name = Some(input.into());
             self
         }
-        /// <p>The friendly name for the mitigation action. You cannot change the name by using
-        /// <code>UpdateMitigationAction</code>. Instead, you must delete and
-        /// recreate the
-        /// mitigation action with the new name.</p>
+        /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_name = input;
             self
@@ -43992,7 +43249,7 @@ pub mod update_mitigation_action_input {
 #[doc(hidden)]
 pub type UpdateMitigationActionInputOperationOutputAlias = crate::operation::UpdateMitigationAction;
 #[doc(hidden)]
-pub type UpdateMitigationActionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateMitigationActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateMitigationActionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateMitigationAction`](crate::operation::UpdateMitigationAction)>
     #[allow(clippy::let_and_return)]
@@ -44003,7 +43260,7 @@ impl UpdateMitigationActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateMitigationAction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -44011,15 +43268,15 @@ impl UpdateMitigationActionInput {
             _input: &crate::input::UpdateMitigationActionInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_353 = &_input.action_name;
-            let input_353 =
-                input_353
+            let input_354 = &_input.action_name;
+            let input_354 =
+                input_354
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "action_name",
                         details: "cannot be empty or unset",
                     })?;
-            let action_name = aws_smithy_http::label::fmt_string(input_353, false);
+            let action_name = aws_smithy_http::label::fmt_string(input_354, false);
             if action_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "action_name",
@@ -44105,7 +43362,7 @@ impl UpdateMitigationActionInput {
             "UpdateMitigationAction",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -44186,14 +43443,12 @@ pub mod update_provisioning_template_input {
             self.default_version_id = input;
             self
         }
-        /// <p>The ARN of the role associated with the provisioning template. This IoT role grants
-        /// permission to provision a device.</p>
+        /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
         pub fn provisioning_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioning_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role associated with the provisioning template. This IoT role grants
-        /// permission to provision a device.</p>
+        /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
         pub fn set_provisioning_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -44250,7 +43505,7 @@ pub mod update_provisioning_template_input {
 pub type UpdateProvisioningTemplateInputOperationOutputAlias =
     crate::operation::UpdateProvisioningTemplate;
 #[doc(hidden)]
-pub type UpdateProvisioningTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateProvisioningTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProvisioningTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProvisioningTemplate`](crate::operation::UpdateProvisioningTemplate)>
     #[allow(clippy::let_and_return)]
@@ -44261,7 +43516,7 @@ impl UpdateProvisioningTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateProvisioningTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -44269,15 +43524,15 @@ impl UpdateProvisioningTemplateInput {
             _input: &crate::input::UpdateProvisioningTemplateInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_354 = &_input.template_name;
-            let input_354 =
-                input_354
+            let input_355 = &_input.template_name;
+            let input_355 =
+                input_355
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "template_name",
                         details: "cannot be empty or unset",
                     })?;
-            let template_name = aws_smithy_http::label::fmt_string(input_354, false);
+            let template_name = aws_smithy_http::label::fmt_string(input_355, false);
             if template_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "template_name",
@@ -44363,7 +43618,7 @@ impl UpdateProvisioningTemplateInput {
             "UpdateProvisioningTemplate",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -44445,7 +43700,7 @@ pub mod update_role_alias_input {
 #[doc(hidden)]
 pub type UpdateRoleAliasInputOperationOutputAlias = crate::operation::UpdateRoleAlias;
 #[doc(hidden)]
-pub type UpdateRoleAliasInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateRoleAliasInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateRoleAliasInput {
     /// Consumes the builder and constructs an Operation<[`UpdateRoleAlias`](crate::operation::UpdateRoleAlias)>
     #[allow(clippy::let_and_return)]
@@ -44456,7 +43711,7 @@ impl UpdateRoleAliasInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateRoleAlias,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -44464,15 +43719,15 @@ impl UpdateRoleAliasInput {
             _input: &crate::input::UpdateRoleAliasInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_355 = &_input.role_alias;
-            let input_355 =
-                input_355
+            let input_356 = &_input.role_alias;
+            let input_356 =
+                input_356
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "role_alias",
                         details: "cannot be empty or unset",
                     })?;
-            let role_alias = aws_smithy_http::label::fmt_string(input_355, false);
+            let role_alias = aws_smithy_http::label::fmt_string(input_356, false);
             if role_alias.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "role_alias",
@@ -44552,7 +43807,7 @@ impl UpdateRoleAliasInput {
             "UpdateRoleAlias",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -44588,20 +43843,12 @@ pub mod update_scheduled_audit_input {
         pub(crate) scheduled_audit_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>How often the scheduled audit takes
-        /// place,
-        /// either <code>DAILY</code>,
-        /// <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the
-        /// system.</p>
+        /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
         pub fn frequency(mut self, input: crate::model::AuditFrequency) -> Self {
             self.frequency = Some(input);
             self
         }
-        /// <p>How often the scheduled audit takes
-        /// place,
-        /// either <code>DAILY</code>,
-        /// <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the
-        /// system.</p>
+        /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
         pub fn set_frequency(
             mut self,
             input: std::option::Option<crate::model::AuditFrequency>,
@@ -44609,40 +43856,22 @@ pub mod update_scheduled_audit_input {
             self.frequency = input;
             self
         }
-        /// <p>The day of the month on which the scheduled audit takes place.
-        /// This
-        /// can
-        /// be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to
-        /// <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit
-        /// takes place on the "LAST" day of the month.</p>
+        /// <p>The day of the month on which the scheduled audit takes place. This can be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
         pub fn day_of_month(mut self, input: impl Into<std::string::String>) -> Self {
             self.day_of_month = Some(input.into());
             self
         }
-        /// <p>The day of the month on which the scheduled audit takes place.
-        /// This
-        /// can
-        /// be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to
-        /// <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit
-        /// takes place on the "LAST" day of the month.</p>
+        /// <p>The day of the month on which the scheduled audit takes place. This can be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
         pub fn set_day_of_month(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.day_of_month = input;
             self
         }
-        /// <p>The day of the week on which the scheduled audit takes place.
-        /// This
-        /// can
-        /// be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the
-        /// "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+        /// <p>The day of the week on which the scheduled audit takes place. This can be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
         pub fn day_of_week(mut self, input: crate::model::DayOfWeek) -> Self {
             self.day_of_week = Some(input);
             self
         }
-        /// <p>The day of the week on which the scheduled audit takes place.
-        /// This
-        /// can
-        /// be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the
-        /// "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+        /// <p>The day of the week on which the scheduled audit takes place. This can be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
         pub fn set_day_of_week(
             mut self,
             input: std::option::Option<crate::model::DayOfWeek>,
@@ -44654,20 +43883,14 @@ pub mod update_scheduled_audit_input {
         ///
         /// To override the contents of this collection use [`set_target_check_names`](Self::set_target_check_names).
         ///
-        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn target_check_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_check_names.unwrap_or_default();
             v.push(input.into());
             self.target_check_names = Some(v);
             self
         }
-        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_target_check_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -44708,7 +43931,7 @@ pub mod update_scheduled_audit_input {
 #[doc(hidden)]
 pub type UpdateScheduledAuditInputOperationOutputAlias = crate::operation::UpdateScheduledAudit;
 #[doc(hidden)]
-pub type UpdateScheduledAuditInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateScheduledAuditInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateScheduledAuditInput {
     /// Consumes the builder and constructs an Operation<[`UpdateScheduledAudit`](crate::operation::UpdateScheduledAudit)>
     #[allow(clippy::let_and_return)]
@@ -44719,7 +43942,7 @@ impl UpdateScheduledAuditInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateScheduledAudit,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -44727,15 +43950,15 @@ impl UpdateScheduledAuditInput {
             _input: &crate::input::UpdateScheduledAuditInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_356 = &_input.scheduled_audit_name;
-            let input_356 =
-                input_356
+            let input_357 = &_input.scheduled_audit_name;
+            let input_357 =
+                input_357
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "scheduled_audit_name",
                         details: "cannot be empty or unset",
                     })?;
-            let scheduled_audit_name = aws_smithy_http::label::fmt_string(input_356, false);
+            let scheduled_audit_name = aws_smithy_http::label::fmt_string(input_357, false);
             if scheduled_audit_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "scheduled_audit_name",
@@ -44821,7 +44044,7 @@ impl UpdateScheduledAuditInput {
             "UpdateScheduledAudit",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -44900,9 +44123,9 @@ pub mod update_security_profile_input {
         /// To override the contents of this collection use [`set_behaviors`](Self::set_behaviors).
         ///
         /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-        pub fn behaviors(mut self, input: impl Into<crate::model::Behavior>) -> Self {
+        pub fn behaviors(mut self, input: crate::model::Behavior) -> Self {
             let mut v = self.behaviors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.behaviors = Some(v);
             self
         }
@@ -44921,11 +44144,11 @@ pub mod update_security_profile_input {
         /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
         pub fn alert_targets(
             mut self,
-            k: impl Into<crate::model::AlertTargetType>,
-            v: impl Into<crate::model::AlertTarget>,
+            k: crate::model::AlertTargetType,
+            v: crate::model::AlertTarget,
         ) -> Self {
             let mut hash_map = self.alert_targets.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v);
             self.alert_targets = Some(hash_map);
             self
         }
@@ -44943,16 +44166,8 @@ pub mod update_security_profile_input {
         ///
         /// To override the contents of this collection use [`set_additional_metrics_to_retain`](Self::set_additional_metrics_to_retain).
         ///
-        /// <p>
-        /// <i>Please use
-        /// <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a>
-        /// instead.</i>
-        /// </p>
-        /// <p>A list of metrics
-        /// whose data is retained (stored). By default, data is retained for any metric
-        /// used in the profile's <code>behaviors</code>, but
-        /// it is
-        /// also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
         pub fn additional_metrics_to_retain(
             mut self,
             input: impl Into<std::string::String>,
@@ -44962,16 +44177,8 @@ pub mod update_security_profile_input {
             self.additional_metrics_to_retain = Some(v);
             self
         }
-        /// <p>
-        /// <i>Please use
-        /// <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a>
-        /// instead.</i>
-        /// </p>
-        /// <p>A list of metrics
-        /// whose data is retained (stored). By default, data is retained for any metric
-        /// used in the profile's <code>behaviors</code>, but
-        /// it is
-        /// also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+        /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
         pub fn set_additional_metrics_to_retain(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -44986,10 +44193,10 @@ pub mod update_security_profile_input {
         /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
         pub fn additional_metrics_to_retain_v2(
             mut self,
-            input: impl Into<crate::model::MetricToRetain>,
+            input: crate::model::MetricToRetain,
         ) -> Self {
             let mut v = self.additional_metrics_to_retain_v2.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_metrics_to_retain_v2 = Some(v);
             self
         }
@@ -45001,40 +44208,32 @@ pub mod update_security_profile_input {
             self.additional_metrics_to_retain_v2 = input;
             self
         }
-        /// <p>If true, delete all <code>behaviors</code> defined for this security profile.
-        /// If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
+        /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
         pub fn delete_behaviors(mut self, input: bool) -> Self {
             self.delete_behaviors = Some(input);
             self
         }
-        /// <p>If true, delete all <code>behaviors</code> defined for this security profile.
-        /// If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
+        /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
         pub fn set_delete_behaviors(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_behaviors = input;
             self
         }
-        /// <p>If true, delete all <code>alertTargets</code> defined for this security profile.
-        /// If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
+        /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
         pub fn delete_alert_targets(mut self, input: bool) -> Self {
             self.delete_alert_targets = Some(input);
             self
         }
-        /// <p>If true, delete all <code>alertTargets</code> defined for this security profile.
-        /// If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
+        /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
         pub fn set_delete_alert_targets(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_alert_targets = input;
             self
         }
-        /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this
-        /// security profile. If any <code>additionalMetricsToRetain</code> are defined in the current
-        /// invocation, an exception occurs.</p>
+        /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
         pub fn delete_additional_metrics_to_retain(mut self, input: bool) -> Self {
             self.delete_additional_metrics_to_retain = Some(input);
             self
         }
-        /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this
-        /// security profile. If any <code>additionalMetricsToRetain</code> are defined in the current
-        /// invocation, an exception occurs.</p>
+        /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
         pub fn set_delete_additional_metrics_to_retain(
             mut self,
             input: std::option::Option<bool>,
@@ -45042,16 +44241,12 @@ pub mod update_security_profile_input {
             self.delete_additional_metrics_to_retain = input;
             self
         }
-        /// <p>The expected version of the security profile. A new version is generated whenever
-        /// the security profile is updated. If you specify a value that is different from the actual
-        /// version, a <code>VersionConflictException</code> is thrown.</p>
+        /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>The expected version of the security profile. A new version is generated whenever
-        /// the security profile is updated. If you specify a value that is different from the actual
-        /// version, a <code>VersionConflictException</code> is thrown.</p>
+        /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
@@ -45083,7 +44278,7 @@ pub mod update_security_profile_input {
 #[doc(hidden)]
 pub type UpdateSecurityProfileInputOperationOutputAlias = crate::operation::UpdateSecurityProfile;
 #[doc(hidden)]
-pub type UpdateSecurityProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSecurityProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSecurityProfileInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSecurityProfile`](crate::operation::UpdateSecurityProfile)>
     #[allow(clippy::let_and_return)]
@@ -45094,7 +44289,7 @@ impl UpdateSecurityProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSecurityProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -45102,15 +44297,15 @@ impl UpdateSecurityProfileInput {
             _input: &crate::input::UpdateSecurityProfileInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_357 = &_input.security_profile_name;
-            let input_357 =
-                input_357
+            let input_358 = &_input.security_profile_name;
+            let input_358 =
+                input_358
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "security_profile_name",
                         details: "cannot be empty or unset",
                     })?;
-            let security_profile_name = aws_smithy_http::label::fmt_string(input_357, false);
+            let security_profile_name = aws_smithy_http::label::fmt_string(input_358, false);
             if security_profile_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "security_profile_name",
@@ -45130,10 +44325,10 @@ impl UpdateSecurityProfileInput {
             mut output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let mut query = aws_smithy_http::query::Writer::new(&mut output);
-            if let Some(inner_358) = &_input.expected_version {
+            if let Some(inner_359) = &_input.expected_version {
                 query.push_kv(
                     "expectedVersion",
-                    aws_smithy_types::primitive::Encoder::from(*inner_358).encode(),
+                    aws_smithy_types::primitive::Encoder::from(*inner_359).encode(),
                 );
             }
             Ok(())
@@ -45210,7 +44405,7 @@ impl UpdateSecurityProfileInput {
             "UpdateSecurityProfile",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -45270,9 +44465,9 @@ pub mod update_stream_input {
         /// To override the contents of this collection use [`set_files`](Self::set_files).
         ///
         /// <p>The files associated with the stream.</p>
-        pub fn files(mut self, input: impl Into<crate::model::StreamFile>) -> Self {
+        pub fn files(mut self, input: crate::model::StreamFile) -> Self {
             let mut v = self.files.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.files = Some(v);
             self
         }
@@ -45313,7 +44508,7 @@ pub mod update_stream_input {
 #[doc(hidden)]
 pub type UpdateStreamInputOperationOutputAlias = crate::operation::UpdateStream;
 #[doc(hidden)]
-pub type UpdateStreamInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateStreamInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateStreamInput {
     /// Consumes the builder and constructs an Operation<[`UpdateStream`](crate::operation::UpdateStream)>
     #[allow(clippy::let_and_return)]
@@ -45324,7 +44519,7 @@ impl UpdateStreamInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateStream,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -45332,15 +44527,15 @@ impl UpdateStreamInput {
             _input: &crate::input::UpdateStreamInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_359 = &_input.stream_id;
-            let input_359 =
-                input_359
+            let input_360 = &_input.stream_id;
+            let input_360 =
+                input_360
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "stream_id",
                         details: "cannot be empty or unset",
                     })?;
-            let stream_id = aws_smithy_http::label::fmt_string(input_359, false);
+            let stream_id = aws_smithy_http::label::fmt_string(input_360, false);
             if stream_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "stream_id",
@@ -45419,7 +44614,7 @@ impl UpdateStreamInput {
             "UpdateStream",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -45456,15 +44651,13 @@ pub mod update_thing_input {
     }
     impl Builder {
         /// <p>The name of the thing to update.</p>
-        /// <p>You can't change a thing's name. To change a thing's name, you must create a
-        /// new thing, give it the new name, and then delete the old thing.</p>
+        /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_name = Some(input.into());
             self
         }
         /// <p>The name of the thing to update.</p>
-        /// <p>You can't change a thing's name. To change a thing's name, you must create a
-        /// new thing, give it the new name, and then delete the old thing.</p>
+        /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
@@ -45482,21 +44675,15 @@ pub mod update_thing_input {
             self.thing_type_name = input;
             self
         }
-        /// <p>A list of thing attributes, a JSON string containing name-value pairs. For
-        /// example:</p>
-        /// <p>
-        /// <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
-        /// </p>
+        /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
+        /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
         /// <p>This data is used to add new attributes or update existing attributes.</p>
         pub fn attribute_payload(mut self, input: crate::model::AttributePayload) -> Self {
             self.attribute_payload = Some(input);
             self
         }
-        /// <p>A list of thing attributes, a JSON string containing name-value pairs. For
-        /// example:</p>
-        /// <p>
-        /// <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
-        /// </p>
+        /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
+        /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
         /// <p>This data is used to add new attributes or update existing attributes.</p>
         pub fn set_attribute_payload(
             mut self,
@@ -45505,30 +44692,22 @@ pub mod update_thing_input {
             self.attribute_payload = input;
             self
         }
-        /// <p>The expected version of the thing record in the registry. If the version of the
-        /// record in the registry does not match the expected version specified in the request, the
-        /// <code>UpdateThing</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>The expected version of the thing record in the registry. If the version of the
-        /// record in the registry does not match the expected version specified in the request, the
-        /// <code>UpdateThing</code> request is rejected with a
-        /// <code>VersionConflictException</code>.</p>
+        /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
         }
-        /// <p>Remove a thing type association. If <b>true</b>, the
-        /// association is removed.</p>
+        /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
         pub fn remove_thing_type(mut self, input: bool) -> Self {
             self.remove_thing_type = Some(input);
             self
         }
-        /// <p>Remove a thing type association. If <b>true</b>, the
-        /// association is removed.</p>
+        /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
         pub fn set_remove_thing_type(mut self, input: std::option::Option<bool>) -> Self {
             self.remove_thing_type = input;
             self
@@ -45553,7 +44732,7 @@ pub mod update_thing_input {
 #[doc(hidden)]
 pub type UpdateThingInputOperationOutputAlias = crate::operation::UpdateThing;
 #[doc(hidden)]
-pub type UpdateThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateThingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateThingInput {
     /// Consumes the builder and constructs an Operation<[`UpdateThing`](crate::operation::UpdateThing)>
     #[allow(clippy::let_and_return)]
@@ -45564,7 +44743,7 @@ impl UpdateThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -45572,15 +44751,15 @@ impl UpdateThingInput {
             _input: &crate::input::UpdateThingInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_360 = &_input.thing_name;
-            let input_360 =
-                input_360
+            let input_361 = &_input.thing_name;
+            let input_361 =
+                input_361
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_name",
                         details: "cannot be empty or unset",
                     })?;
-            let thing_name = aws_smithy_http::label::fmt_string(input_360, false);
+            let thing_name = aws_smithy_http::label::fmt_string(input_361, false);
             if thing_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "thing_name",
@@ -45659,7 +44838,7 @@ impl UpdateThingInput {
             "UpdateThing",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -45719,14 +44898,12 @@ pub mod update_thing_group_input {
             self.thing_group_properties = input;
             self
         }
-        /// <p>The expected version of the thing group. If this does not match the version of the
-        /// thing group being updated, the update will fail.</p>
+        /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.expected_version = Some(input);
             self
         }
-        /// <p>The expected version of the thing group. If this does not match the version of the
-        /// thing group being updated, the update will fail.</p>
+        /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.expected_version = input;
             self
@@ -45749,7 +44926,7 @@ pub mod update_thing_group_input {
 #[doc(hidden)]
 pub type UpdateThingGroupInputOperationOutputAlias = crate::operation::UpdateThingGroup;
 #[doc(hidden)]
-pub type UpdateThingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateThingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateThingGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateThingGroup`](crate::operation::UpdateThingGroup)>
     #[allow(clippy::let_and_return)]
@@ -45760,7 +44937,7 @@ impl UpdateThingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateThingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -45768,15 +44945,15 @@ impl UpdateThingGroupInput {
             _input: &crate::input::UpdateThingGroupInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_361 = &_input.thing_group_name;
-            let input_361 =
-                input_361
+            let input_362 = &_input.thing_group_name;
+            let input_362 =
+                input_362
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "thing_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let thing_group_name = aws_smithy_http::label::fmt_string(input_361, false);
+            let thing_group_name = aws_smithy_http::label::fmt_string(input_362, false);
             if thing_group_name.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "thing_group_name",
@@ -45860,7 +45037,7 @@ impl UpdateThingGroupInput {
             "UpdateThingGroup",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -45943,18 +45120,12 @@ pub mod update_thing_groups_for_thing_input {
             self.thing_groups_to_remove = input;
             self
         }
-        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-        /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-        /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-        /// dynamic group.</p>
+        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
         pub fn override_dynamic_groups(mut self, input: bool) -> Self {
             self.override_dynamic_groups = Some(input);
             self
         }
-        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-        /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-        /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-        /// dynamic group.</p>
+        /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
         pub fn set_override_dynamic_groups(mut self, input: std::option::Option<bool>) -> Self {
             self.override_dynamic_groups = input;
             self
@@ -45979,7 +45150,7 @@ pub mod update_thing_groups_for_thing_input {
 pub type UpdateThingGroupsForThingInputOperationOutputAlias =
     crate::operation::UpdateThingGroupsForThing;
 #[doc(hidden)]
-pub type UpdateThingGroupsForThingInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateThingGroupsForThingInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateThingGroupsForThingInput {
     /// Consumes the builder and constructs an Operation<[`UpdateThingGroupsForThing`](crate::operation::UpdateThingGroupsForThing)>
     #[allow(clippy::let_and_return)]
@@ -45990,7 +45161,7 @@ impl UpdateThingGroupsForThingInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateThingGroupsForThing,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -46072,7 +45243,7 @@ impl UpdateThingGroupsForThingInput {
             "UpdateThingGroupsForThing",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -46117,34 +45288,29 @@ pub mod update_topic_rule_destination_input {
         }
         /// <p>The status of the topic rule destination. Valid values are:</p>
         /// <dl>
-        /// <dt>IN_PROGRESS</dt>
+        /// <dt>
+        /// IN_PROGRESS
+        /// </dt>
         /// <dd>
-        /// <p>A topic rule destination was created but has not been confirmed. You can set
-        /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
-        /// <dt>ENABLED</dt>
+        /// <dt>
+        /// ENABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-        /// set <code>status</code> to <code>DISABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>DISABLED</dt>
+        /// <dt>
+        /// DISABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-        /// can set <code>status</code> to <code>ENABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>ERROR</dt>
+        /// <dt>
+        /// ERROR
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-        /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-        /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
         /// </dl>
         pub fn status(mut self, input: crate::model::TopicRuleDestinationStatus) -> Self {
@@ -46153,34 +45319,29 @@ pub mod update_topic_rule_destination_input {
         }
         /// <p>The status of the topic rule destination. Valid values are:</p>
         /// <dl>
-        /// <dt>IN_PROGRESS</dt>
+        /// <dt>
+        /// IN_PROGRESS
+        /// </dt>
         /// <dd>
-        /// <p>A topic rule destination was created but has not been confirmed. You can set
-        /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
-        /// <dt>ENABLED</dt>
+        /// <dt>
+        /// ENABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-        /// set <code>status</code> to <code>DISABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>DISABLED</dt>
+        /// <dt>
+        /// DISABLED
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-        /// can set <code>status</code> to <code>ENABLED</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>.</p>
+        /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
         /// </dd>
-        /// <dt>ERROR</dt>
+        /// <dt>
+        /// ERROR
+        /// </dt>
         /// <dd>
-        /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-        /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-        /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-        /// <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-        /// be sent to your confirmation endpoint.</p>
+        /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
         /// </dd>
         /// </dl>
         pub fn set_status(
@@ -46208,7 +45369,7 @@ pub mod update_topic_rule_destination_input {
 pub type UpdateTopicRuleDestinationInputOperationOutputAlias =
     crate::operation::UpdateTopicRuleDestination;
 #[doc(hidden)]
-pub type UpdateTopicRuleDestinationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateTopicRuleDestinationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateTopicRuleDestinationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTopicRuleDestination`](crate::operation::UpdateTopicRuleDestination)>
     #[allow(clippy::let_and_return)]
@@ -46219,7 +45380,7 @@ impl UpdateTopicRuleDestinationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateTopicRuleDestination,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -46300,7 +45461,7 @@ impl UpdateTopicRuleDestinationInput {
             "UpdateTopicRuleDestination",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -46337,9 +45498,9 @@ pub mod validate_security_profile_behaviors_input {
         /// To override the contents of this collection use [`set_behaviors`](Self::set_behaviors).
         ///
         /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-        pub fn behaviors(mut self, input: impl Into<crate::model::Behavior>) -> Self {
+        pub fn behaviors(mut self, input: crate::model::Behavior) -> Self {
             let mut v = self.behaviors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.behaviors = Some(v);
             self
         }
@@ -46368,7 +45529,8 @@ pub mod validate_security_profile_behaviors_input {
 pub type ValidateSecurityProfileBehaviorsInputOperationOutputAlias =
     crate::operation::ValidateSecurityProfileBehaviors;
 #[doc(hidden)]
-pub type ValidateSecurityProfileBehaviorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ValidateSecurityProfileBehaviorsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ValidateSecurityProfileBehaviorsInput {
     /// Consumes the builder and constructs an Operation<[`ValidateSecurityProfileBehaviors`](crate::operation::ValidateSecurityProfileBehaviors)>
     #[allow(clippy::let_and_return)]
@@ -46379,7 +45541,7 @@ impl ValidateSecurityProfileBehaviorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ValidateSecurityProfileBehaviors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -46461,7 +45623,7 @@ impl ValidateSecurityProfileBehaviorsInput {
             "ValidateSecurityProfileBehaviors",
             "iot",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -46513,34 +45675,29 @@ pub struct UpdateTopicRuleDestinationInput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The status of the topic rule destination. Valid values are:</p>
     /// <dl>
-    /// <dt>IN_PROGRESS</dt>
+    /// <dt>
+    /// IN_PROGRESS
+    /// </dt>
     /// <dd>
-    /// <p>A topic rule destination was created but has not been confirmed. You can set
-    /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
-    /// <dt>ENABLED</dt>
+    /// <dt>
+    /// ENABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-    /// set <code>status</code> to <code>DISABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>DISABLED</dt>
+    /// <dt>
+    /// DISABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-    /// can set <code>status</code> to <code>ENABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>ERROR</dt>
+    /// <dt>
+    /// ERROR
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-    /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-    /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
     pub status: std::option::Option<crate::model::TopicRuleDestinationStatus>,
@@ -46552,34 +45709,29 @@ impl UpdateTopicRuleDestinationInput {
     }
     /// <p>The status of the topic rule destination. Valid values are:</p>
     /// <dl>
-    /// <dt>IN_PROGRESS</dt>
+    /// <dt>
+    /// IN_PROGRESS
+    /// </dt>
     /// <dd>
-    /// <p>A topic rule destination was created but has not been confirmed. You can set
-    /// <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
-    /// <dt>ENABLED</dt>
+    /// <dt>
+    /// ENABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can
-    /// set <code>status</code> to <code>DISABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>DISABLED</dt>
+    /// <dt>
+    /// DISABLED
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You
-    /// can set <code>status</code> to <code>ENABLED</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>.</p>
+    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
     /// </dd>
-    /// <dt>ERROR</dt>
+    /// <dt>
+    /// ERROR
+    /// </dt>
     /// <dd>
-    /// <p>Confirmation could not be completed, for example if the confirmation timed out.
-    /// You can call <code>GetTopicRuleDestination</code> for details about the error. You
-    /// can set <code>status</code> to <code>IN_PROGRESS</code> by calling
-    /// <code>UpdateTopicRuleDestination</code>. Calling
-    /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to
-    /// be sent to your confirmation endpoint.</p>
+    /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
     /// </dd>
     /// </dl>
     pub fn status(&self) -> std::option::Option<&crate::model::TopicRuleDestinationStatus> {
@@ -46605,10 +45757,7 @@ pub struct UpdateThingGroupsForThingInput {
     pub thing_groups_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The groups from which the thing will be removed.</p>
     pub thing_groups_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-    /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-    /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-    /// dynamic group.</p>
+    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     pub override_dynamic_groups: bool,
 }
 impl UpdateThingGroupsForThingInput {
@@ -46624,10 +45773,7 @@ impl UpdateThingGroupsForThingInput {
     pub fn thing_groups_to_remove(&self) -> std::option::Option<&[std::string::String]> {
         self.thing_groups_to_remove.as_deref()
     }
-    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-    /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-    /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-    /// dynamic group.</p>
+    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     pub fn override_dynamic_groups(&self) -> bool {
         self.override_dynamic_groups
     }
@@ -46651,8 +45797,7 @@ pub struct UpdateThingGroupInput {
     pub thing_group_name: std::option::Option<std::string::String>,
     /// <p>The thing group properties.</p>
     pub thing_group_properties: std::option::Option<crate::model::ThingGroupProperties>,
-    /// <p>The expected version of the thing group. If this does not match the version of the
-    /// thing group being updated, the update will fail.</p>
+    /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
     pub expected_version: std::option::Option<i64>,
 }
 impl UpdateThingGroupInput {
@@ -46666,8 +45811,7 @@ impl UpdateThingGroupInput {
     ) -> std::option::Option<&crate::model::ThingGroupProperties> {
         self.thing_group_properties.as_ref()
     }
-    /// <p>The expected version of the thing group. If this does not match the version of the
-    /// thing group being updated, the update will fail.</p>
+    /// <p>The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
@@ -46687,31 +45831,22 @@ impl std::fmt::Debug for UpdateThingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThingInput {
     /// <p>The name of the thing to update.</p>
-    /// <p>You can't change a thing's name. To change a thing's name, you must create a
-    /// new thing, give it the new name, and then delete the old thing.</p>
+    /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The name of the thing type.</p>
     pub thing_type_name: std::option::Option<std::string::String>,
-    /// <p>A list of thing attributes, a JSON string containing name-value pairs. For
-    /// example:</p>
-    /// <p>
-    /// <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
-    /// </p>
+    /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
+    /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub attribute_payload: std::option::Option<crate::model::AttributePayload>,
-    /// <p>The expected version of the thing record in the registry. If the version of the
-    /// record in the registry does not match the expected version specified in the request, the
-    /// <code>UpdateThing</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub expected_version: std::option::Option<i64>,
-    /// <p>Remove a thing type association. If <b>true</b>, the
-    /// association is removed.</p>
+    /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
     pub remove_thing_type: bool,
 }
 impl UpdateThingInput {
     /// <p>The name of the thing to update.</p>
-    /// <p>You can't change a thing's name. To change a thing's name, you must create a
-    /// new thing, give it the new name, and then delete the old thing.</p>
+    /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
@@ -46719,24 +45854,17 @@ impl UpdateThingInput {
     pub fn thing_type_name(&self) -> std::option::Option<&str> {
         self.thing_type_name.as_deref()
     }
-    /// <p>A list of thing attributes, a JSON string containing name-value pairs. For
-    /// example:</p>
-    /// <p>
-    /// <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
-    /// </p>
+    /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
+    /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub fn attribute_payload(&self) -> std::option::Option<&crate::model::AttributePayload> {
         self.attribute_payload.as_ref()
     }
-    /// <p>The expected version of the thing record in the registry. If the version of the
-    /// record in the registry does not match the expected version specified in the request, the
-    /// <code>UpdateThing</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
-    /// <p>Remove a thing type association. If <b>true</b>, the
-    /// association is removed.</p>
+    /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
     pub fn remove_thing_type(&self) -> bool {
         self.remove_thing_type
     }
@@ -46809,33 +45937,19 @@ pub struct UpdateSecurityProfileInput {
     pub alert_targets: std::option::Option<
         std::collections::HashMap<crate::model::AlertTargetType, crate::model::AlertTarget>,
     >,
-    /// <p>
-    /// <i>Please use
-    /// <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a>
-    /// instead.</i>
-    /// </p>
-    /// <p>A list of metrics
-    /// whose data is retained (stored). By default, data is retained for any metric
-    /// used in the profile's <code>behaviors</code>, but
-    /// it is
-    /// also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub additional_metrics_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub additional_metrics_to_retain_v2:
         std::option::Option<std::vec::Vec<crate::model::MetricToRetain>>,
-    /// <p>If true, delete all <code>behaviors</code> defined for this security profile.
-    /// If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
+    /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
     pub delete_behaviors: bool,
-    /// <p>If true, delete all <code>alertTargets</code> defined for this security profile.
-    /// If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
+    /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
     pub delete_alert_targets: bool,
-    /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this
-    /// security profile. If any <code>additionalMetricsToRetain</code> are defined in the current
-    /// invocation, an exception occurs.</p>
+    /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
     pub delete_additional_metrics_to_retain: bool,
-    /// <p>The expected version of the security profile. A new version is generated whenever
-    /// the security profile is updated. If you specify a value that is different from the actual
-    /// version, a <code>VersionConflictException</code> is thrown.</p>
+    /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub expected_version: std::option::Option<i64>,
 }
 impl UpdateSecurityProfileInput {
@@ -46859,16 +45973,8 @@ impl UpdateSecurityProfileInput {
     > {
         self.alert_targets.as_ref()
     }
-    /// <p>
-    /// <i>Please use
-    /// <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a>
-    /// instead.</i>
-    /// </p>
-    /// <p>A list of metrics
-    /// whose data is retained (stored). By default, data is retained for any metric
-    /// used in the profile's <code>behaviors</code>, but
-    /// it is
-    /// also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub fn additional_metrics_to_retain(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_metrics_to_retain.as_deref()
     }
@@ -46878,25 +45984,19 @@ impl UpdateSecurityProfileInput {
     ) -> std::option::Option<&[crate::model::MetricToRetain]> {
         self.additional_metrics_to_retain_v2.as_deref()
     }
-    /// <p>If true, delete all <code>behaviors</code> defined for this security profile.
-    /// If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
+    /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
     pub fn delete_behaviors(&self) -> bool {
         self.delete_behaviors
     }
-    /// <p>If true, delete all <code>alertTargets</code> defined for this security profile.
-    /// If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
+    /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
     pub fn delete_alert_targets(&self) -> bool {
         self.delete_alert_targets
     }
-    /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this
-    /// security profile. If any <code>additionalMetricsToRetain</code> are defined in the current
-    /// invocation, an exception occurs.</p>
+    /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
     pub fn delete_additional_metrics_to_retain(&self) -> bool {
         self.delete_additional_metrics_to_retain
     }
-    /// <p>The expected version of the security profile. A new version is generated whenever
-    /// the security profile is updated. If you specify a value that is different from the actual
-    /// version, a <code>VersionConflictException</code> is thrown.</p>
+    /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
@@ -46934,63 +46034,31 @@ impl std::fmt::Debug for UpdateSecurityProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateScheduledAuditInput {
-    /// <p>How often the scheduled audit takes
-    /// place,
-    /// either <code>DAILY</code>,
-    /// <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the
-    /// system.</p>
+    /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
     pub frequency: std::option::Option<crate::model::AuditFrequency>,
-    /// <p>The day of the month on which the scheduled audit takes place.
-    /// This
-    /// can
-    /// be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to
-    /// <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit
-    /// takes place on the "LAST" day of the month.</p>
+    /// <p>The day of the month on which the scheduled audit takes place. This can be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
     pub day_of_month: std::option::Option<std::string::String>,
-    /// <p>The day of the week on which the scheduled audit takes place.
-    /// This
-    /// can
-    /// be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the
-    /// "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+    /// <p>The day of the week on which the scheduled audit takes place. This can be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
     pub day_of_week: std::option::Option<crate::model::DayOfWeek>,
-    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub target_check_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the scheduled audit. (Max. 128 chars)</p>
     pub scheduled_audit_name: std::option::Option<std::string::String>,
 }
 impl UpdateScheduledAuditInput {
-    /// <p>How often the scheduled audit takes
-    /// place,
-    /// either <code>DAILY</code>,
-    /// <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the
-    /// system.</p>
+    /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
     pub fn frequency(&self) -> std::option::Option<&crate::model::AuditFrequency> {
         self.frequency.as_ref()
     }
-    /// <p>The day of the month on which the scheduled audit takes place.
-    /// This
-    /// can
-    /// be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to
-    /// <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit
-    /// takes place on the "LAST" day of the month.</p>
+    /// <p>The day of the month on which the scheduled audit takes place. This can be <code>1</code> through <code>31</code> or <code>LAST</code>. This field is required if the <code>frequency</code> parameter is set to <code>MONTHLY</code>. If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.</p>
     pub fn day_of_month(&self) -> std::option::Option<&str> {
         self.day_of_month.as_deref()
     }
-    /// <p>The day of the week on which the scheduled audit takes place.
-    /// This
-    /// can
-    /// be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the
-    /// "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+    /// <p>The day of the week on which the scheduled audit takes place. This can be one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the "frequency" parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
     pub fn day_of_week(&self) -> std::option::Option<&crate::model::DayOfWeek> {
         self.day_of_week.as_ref()
     }
-    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn target_check_names(&self) -> std::option::Option<&[std::string::String]> {
         self.target_check_names.as_deref()
     }
@@ -47061,8 +46129,7 @@ pub struct UpdateProvisioningTemplateInput {
     pub enabled: bool,
     /// <p>The ID of the default provisioning template version.</p>
     pub default_version_id: std::option::Option<i32>,
-    /// <p>The ARN of the role associated with the provisioning template. This IoT role grants
-    /// permission to provision a device.</p>
+    /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub provisioning_role_arn: std::option::Option<std::string::String>,
     /// <p>Updates the pre-provisioning hook template.</p>
     pub pre_provisioning_hook: std::option::Option<crate::model::ProvisioningHook>,
@@ -47086,8 +46153,7 @@ impl UpdateProvisioningTemplateInput {
     pub fn default_version_id(&self) -> std::option::Option<i32> {
         self.default_version_id
     }
-    /// <p>The ARN of the role associated with the provisioning template. This IoT role grants
-    /// permission to provision a device.</p>
+    /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub fn provisioning_role_arn(&self) -> std::option::Option<&str> {
         self.provisioning_role_arn.as_deref()
     }
@@ -47121,10 +46187,7 @@ impl std::fmt::Debug for UpdateProvisioningTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMitigationActionInput {
-    /// <p>The friendly name for the mitigation action. You cannot change the name by using
-    /// <code>UpdateMitigationAction</code>. Instead, you must delete and
-    /// recreate the
-    /// mitigation action with the new name.</p>
+    /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
     pub action_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -47132,10 +46195,7 @@ pub struct UpdateMitigationActionInput {
     pub action_params: std::option::Option<crate::model::MitigationActionParams>,
 }
 impl UpdateMitigationActionInput {
-    /// <p>The friendly name for the mitigation action. You cannot change the name by using
-    /// <code>UpdateMitigationAction</code>. Instead, you must delete and
-    /// recreate the
-    /// mitigation action with the new name.</p>
+    /// <p>The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.</p>
     pub fn action_name(&self) -> std::option::Option<&str> {
         self.action_name.as_deref()
     }
@@ -47173,19 +46233,16 @@ pub struct UpdateJobInput {
         std::option::Option<crate::model::JobExecutionsRolloutConfig>,
     /// <p>Allows you to create criteria to abort a job.</p>
     pub abort_config: std::option::Option<crate::model::AbortConfig>,
-    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
-    /// If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
+    /// <p>Allows you to create the criteria to retry a job.</p>
+    pub job_executions_retry_config: std::option::Option<crate::model::JobExecutionsRetryConfig>,
 }
 impl UpdateJobInput {
     /// <p>The ID of the job to be updated.</p>
@@ -47210,22 +46267,23 @@ impl UpdateJobInput {
     pub fn abort_config(&self) -> std::option::Option<&crate::model::AbortConfig> {
         self.abort_config.as_ref()
     }
-    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
-    /// If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
     pub fn timeout_config(&self) -> std::option::Option<&crate::model::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
         self.namespace_id.as_deref()
+    }
+    /// <p>Allows you to create the criteria to retry a job.</p>
+    pub fn job_executions_retry_config(
+        &self,
+    ) -> std::option::Option<&crate::model::JobExecutionsRetryConfig> {
+        self.job_executions_retry_config.as_ref()
     }
 }
 impl std::fmt::Debug for UpdateJobInput {
@@ -47241,6 +46299,10 @@ impl std::fmt::Debug for UpdateJobInput {
         formatter.field("abort_config", &self.abort_config);
         formatter.field("timeout_config", &self.timeout_config);
         formatter.field("namespace_id", &self.namespace_id);
+        formatter.field(
+            "job_executions_retry_config",
+            &self.job_executions_retry_config,
+        );
         formatter.finish()
     }
 }
@@ -47304,8 +46366,7 @@ pub struct UpdateFleetMetricInput {
     pub query_version: std::option::Option<std::string::String>,
     /// <p>The name of the index to search.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-    /// supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
     pub unit: std::option::Option<crate::model::FleetMetricUnit>,
     /// <p>The expected version of the fleet metric record in the registry.</p>
     pub expected_version: std::option::Option<i64>,
@@ -47343,8 +46404,7 @@ impl UpdateFleetMetricInput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-    /// supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::FleetMetricUnit> {
         self.unit.as_ref()
     }
@@ -47407,17 +46467,14 @@ pub struct UpdateDynamicThingGroupInput {
     pub thing_group_properties: std::option::Option<crate::model::ThingGroupProperties>,
     /// <p>The expected version of the dynamic thing group to update.</p>
     pub expected_version: std::option::Option<i64>,
-    /// <p>The dynamic thing group index to update.</p>
-    /// <note>
+    /// <p>The dynamic thing group index to update.</p> <note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group search query string to update.</p>
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>The dynamic thing group query version to update.</p>
-    /// <note>
-    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-    /// query version defaults to this value.</p>
+    /// <p>The dynamic thing group query version to update.</p> <note>
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
     pub query_version: std::option::Option<std::string::String>,
 }
@@ -47436,8 +46493,7 @@ impl UpdateDynamicThingGroupInput {
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
-    /// <p>The dynamic thing group index to update.</p>
-    /// <note>
+    /// <p>The dynamic thing group index to update.</p> <note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub fn index_name(&self) -> std::option::Option<&str> {
@@ -47447,10 +46503,8 @@ impl UpdateDynamicThingGroupInput {
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>The dynamic thing group query version to update.</p>
-    /// <note>
-    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-    /// query version defaults to this value.</p>
+    /// <p>The dynamic thing group query version to update.</p> <note>
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
     pub fn query_version(&self) -> std::option::Option<&str> {
         self.query_version.as_deref()
@@ -47548,33 +46602,17 @@ impl std::fmt::Debug for UpdateDimensionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomMetricInput {
-    /// <p> The name of the custom metric.
-    /// Cannot be updated. </p>
+    /// <p> The name of the custom metric. Cannot be updated. </p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Field
-    /// represents a friendly name in the console for the custom metric,
-    /// it
-    /// doesn't have to be unique. Don't use this name as the metric identifier in
-    /// the device metric report.
-    /// Can
-    /// be updated. </p>
+    /// <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
     pub display_name: std::option::Option<std::string::String>,
 }
 impl UpdateCustomMetricInput {
-    /// <p> The name of the custom metric.
-    /// Cannot be updated. </p>
+    /// <p> The name of the custom metric. Cannot be updated. </p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>
-    /// Field
-    /// represents a friendly name in the console for the custom metric,
-    /// it
-    /// doesn't have to be unique. Don't use this name as the metric identifier in
-    /// the device metric report.
-    /// Can
-    /// be updated. </p>
+    /// <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -47592,33 +46630,21 @@ impl std::fmt::Debug for UpdateCustomMetricInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The new status.</p>
-    /// <p>
-    /// <b>Note:</b> Setting the status to PENDING_TRANSFER  or PENDING_ACTIVATION will result
-    /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They
-    /// are not intended for developer use.</p>
-    /// <p>
-    /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-    /// should not be used.</p>
+    /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub new_status: std::option::Option<crate::model::CertificateStatus>,
 }
 impl UpdateCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
     /// <p>The new status.</p>
-    /// <p>
-    /// <b>Note:</b> Setting the status to PENDING_TRANSFER  or PENDING_ACTIVATION will result
-    /// in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They
-    /// are not intended for developer use.</p>
-    /// <p>
-    /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-    /// should not be used.</p>
+    /// <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn new_status(&self) -> std::option::Option<&crate::model::CertificateStatus> {
         self.new_status.as_ref()
     }
@@ -47639,12 +46665,9 @@ pub struct UpdateCaCertificateInput {
     /// <p>The CA certificate identifier.</p>
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The updated status of the CA certificate.</p>
-    /// <p>
-    /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-    /// should not be used.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub new_status: std::option::Option<crate::model::CaCertificateStatus>,
-    /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or
-    /// "DISABLE".</p>
+    /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
     pub new_auto_registration_status: std::option::Option<crate::model::AutoRegistrationStatus>,
     /// <p>Information about the registration configuration.</p>
     pub registration_config: std::option::Option<crate::model::RegistrationConfig>,
@@ -47657,14 +46680,11 @@ impl UpdateCaCertificateInput {
         self.certificate_id.as_deref()
     }
     /// <p>The updated status of the CA certificate.</p>
-    /// <p>
-    /// <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and
-    /// should not be used.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn new_status(&self) -> std::option::Option<&crate::model::CaCertificateStatus> {
         self.new_status.as_ref()
     }
-    /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or
-    /// "DISABLE".</p>
+    /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
     pub fn new_auto_registration_status(
         &self,
     ) -> std::option::Option<&crate::model::AutoRegistrationStatus> {
@@ -47702,10 +46722,7 @@ pub struct UpdateBillingGroupInput {
     pub billing_group_name: std::option::Option<std::string::String>,
     /// <p>The properties of the billing group.</p>
     pub billing_group_properties: std::option::Option<crate::model::BillingGroupProperties>,
-    /// <p>The expected version of the billing group. If the version of the billing group does
-    /// not match the expected version specified in the request, the
-    /// <code>UpdateBillingGroup</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub expected_version: std::option::Option<i64>,
 }
 impl UpdateBillingGroupInput {
@@ -47719,10 +46736,7 @@ impl UpdateBillingGroupInput {
     ) -> std::option::Option<&crate::model::BillingGroupProperties> {
         self.billing_group_properties.as_ref()
     }
-    /// <p>The expected version of the billing group. If the version of the billing group does
-    /// not match the expected version specified in the request, the
-    /// <code>UpdateBillingGroup</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
@@ -47752,6 +46766,8 @@ pub struct UpdateAuthorizerInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the update authorizer request.</p>
     pub status: std::option::Option<crate::model::AuthorizerStatus>,
+    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
+    pub enable_caching_for_http: std::option::Option<bool>,
 }
 impl UpdateAuthorizerInput {
     /// <p>The authorizer name.</p>
@@ -47777,6 +46793,10 @@ impl UpdateAuthorizerInput {
     pub fn status(&self) -> std::option::Option<&crate::model::AuthorizerStatus> {
         self.status.as_ref()
     }
+    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
+    pub fn enable_caching_for_http(&self) -> std::option::Option<bool> {
+        self.enable_caching_for_http
+    }
 }
 impl std::fmt::Debug for UpdateAuthorizerInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47786,6 +46806,7 @@ impl std::fmt::Debug for UpdateAuthorizerInput {
         formatter.field("token_key_name", &self.token_key_name);
         formatter.field("token_signing_public_keys", &self.token_signing_public_keys);
         formatter.field("status", &self.status);
+        formatter.field("enable_caching_for_http", &self.enable_caching_for_http);
         formatter.finish()
     }
 }
@@ -47794,31 +46815,19 @@ impl std::fmt::Debug for UpdateAuthorizerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub check_name: std::option::Option<std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
-    /// <p>
-    /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
-    /// </p>
+    /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// Indicates whether a suppression should exist indefinitely or not.
-    /// </p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub suppress_indefinitely: std::option::Option<bool>,
-    /// <p>
-    /// The description of the audit suppression.
-    /// </p>
+    /// <p> The description of the audit suppression. </p>
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn check_name(&self) -> std::option::Option<&str> {
         self.check_name.as_deref()
     }
@@ -47826,21 +46835,15 @@ impl UpdateAuditSuppressionInput {
     pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
-    /// <p>
-    /// The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to.
-    /// </p>
+    /// <p> The expiration date (epoch timestamp in seconds) that you want the suppression to adhere to. </p>
     pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
-    /// <p>
-    /// Indicates whether a suppression should exist indefinitely or not.
-    /// </p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn suppress_indefinitely(&self) -> std::option::Option<bool> {
         self.suppress_indefinitely
     }
-    /// <p>
-    /// The description of the audit suppression.
-    /// </p>
+    /// <p> The description of the audit suppression. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -47861,14 +46864,7 @@ impl std::fmt::Debug for UpdateAuditSuppressionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountAuditConfigurationInput {
-    /// <p>The Amazon
-    /// Resource Name
-    /// (ARN)
-    /// of the role that grants permission
-    /// to
-    /// IoT to access information about your devices, policies,
-    /// certificates,
-    /// and other items as required when performing an audit.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Information about the targets to which audit notifications are sent.</p>
     pub audit_notification_target_configurations: std::option::Option<
@@ -47877,32 +46873,16 @@ pub struct UpdateAccountAuditConfigurationInput {
             crate::model::AuditNotificationTarget,
         >,
     >,
-    /// <p>Specifies which audit checks are enabled and disabled for this account. Use
-    /// <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those
-    /// that are currently enabled.</p>
-    /// <p>Some data collection might start immediately when certain checks are enabled.
-    /// When a check is disabled, any data collected so far in relation to the check is deleted.</p>
-    /// <p>You
-    /// cannot
-    /// disable a check if
-    /// it's
-    /// used by any scheduled audit. You must first delete the check from the scheduled audit or
-    /// delete the scheduled audit itself.</p>
-    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
-    /// this parameter is required and must specify at least one enabled check.</p>
+    /// <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>
+    /// <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p>
+    /// <p>You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p>
+    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
     pub audit_check_configurations: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::AuditCheckConfiguration>,
     >,
 }
 impl UpdateAccountAuditConfigurationInput {
-    /// <p>The Amazon
-    /// Resource Name
-    /// (ARN)
-    /// of the role that grants permission
-    /// to
-    /// IoT to access information about your devices, policies,
-    /// certificates,
-    /// and other items as required when performing an audit.</p>
+    /// <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -47917,19 +46897,10 @@ impl UpdateAccountAuditConfigurationInput {
     > {
         self.audit_notification_target_configurations.as_ref()
     }
-    /// <p>Specifies which audit checks are enabled and disabled for this account. Use
-    /// <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those
-    /// that are currently enabled.</p>
-    /// <p>Some data collection might start immediately when certain checks are enabled.
-    /// When a check is disabled, any data collected so far in relation to the check is deleted.</p>
-    /// <p>You
-    /// cannot
-    /// disable a check if
-    /// it's
-    /// used by any scheduled audit. You must first delete the check from the scheduled audit or
-    /// delete the scheduled audit itself.</p>
-    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
-    /// this parameter is required and must specify at least one enabled check.</p>
+    /// <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>
+    /// <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p>
+    /// <p>You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p>
+    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
     pub fn audit_check_configurations(
         &self,
     ) -> std::option::Option<
@@ -47986,8 +46957,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account.</p>
     pub target_aws_account: std::option::Option<std::string::String>,
@@ -47995,8 +46965,7 @@ pub struct TransferCertificateInput {
     pub transfer_message: std::option::Option<std::string::String>,
 }
 impl TransferCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -48027,8 +46996,7 @@ pub struct TestInvokeAuthorizerInput {
     pub authorizer_name: std::option::Option<std::string::String>,
     /// <p>The token returned by your custom authentication service.</p>
     pub token: std::option::Option<std::string::String>,
-    /// <p>The signature made with the token and your custom authentication service's private
-    /// key. This value must be Base-64-encoded.</p>
+    /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
     pub token_signature: std::option::Option<std::string::String>,
     /// <p>Specifies a test HTTP authorization request.</p>
     pub http_context: std::option::Option<crate::model::HttpContext>,
@@ -48046,8 +47014,7 @@ impl TestInvokeAuthorizerInput {
     pub fn token(&self) -> std::option::Option<&str> {
         self.token.as_deref()
     }
-    /// <p>The signature made with the token and your custom authentication service's private
-    /// key. This value must be Base-64-encoded.</p>
+    /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
     pub fn token_signature(&self) -> std::option::Option<&str> {
         self.token_signature.as_deref()
     }
@@ -48085,16 +47052,13 @@ pub struct TestAuthorizationInput {
     pub principal: std::option::Option<std::string::String>,
     /// <p>The Cognito identity pool ID.</p>
     pub cognito_identity_pool_id: std::option::Option<std::string::String>,
-    /// <p>A list of authorization info objects. Simulating authorization will create a response
-    /// for each <code>authInfo</code> object in the list.</p>
+    /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
     pub auth_infos: std::option::Option<std::vec::Vec<crate::model::AuthInfo>>,
     /// <p>The MQTT client ID.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>When testing custom authorization, the policies specified here are treated as if they
-    /// are attached to the principal being authorized.</p>
+    /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
     pub policy_names_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>When testing custom authorization, the policies specified here are treated as if they
-    /// are not attached to the principal being authorized.</p>
+    /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
     pub policy_names_to_skip: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TestAuthorizationInput {
@@ -48106,8 +47070,7 @@ impl TestAuthorizationInput {
     pub fn cognito_identity_pool_id(&self) -> std::option::Option<&str> {
         self.cognito_identity_pool_id.as_deref()
     }
-    /// <p>A list of authorization info objects. Simulating authorization will create a response
-    /// for each <code>authInfo</code> object in the list.</p>
+    /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
     pub fn auth_infos(&self) -> std::option::Option<&[crate::model::AuthInfo]> {
         self.auth_infos.as_deref()
     }
@@ -48115,13 +47078,11 @@ impl TestAuthorizationInput {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>When testing custom authorization, the policies specified here are treated as if they
-    /// are attached to the principal being authorized.</p>
+    /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
     pub fn policy_names_to_add(&self) -> std::option::Option<&[std::string::String]> {
         self.policy_names_to_add.as_deref()
     }
-    /// <p>When testing custom authorization, the policies specified here are treated as if they
-    /// are not attached to the principal being authorized.</p>
+    /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
     pub fn policy_names_to_skip(&self) -> std::option::Option<&[std::string::String]> {
         self.policy_names_to_skip.as_deref()
     }
@@ -48196,9 +47157,7 @@ pub struct StartThingRegistrationTaskInput {
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The S3 bucket that contains the input file.</p>
     pub input_file_bucket: std::option::Option<std::string::String>,
-    /// <p>The name of input file within the S3 bucket. This file contains a newline delimited
-    /// JSON file. Each line contains the parameter values to provision one device
-    /// (thing).</p>
+    /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
     pub input_file_key: std::option::Option<std::string::String>,
     /// <p>The IAM role ARN that grants permission the input file.</p>
     pub role_arn: std::option::Option<std::string::String>,
@@ -48212,9 +47171,7 @@ impl StartThingRegistrationTaskInput {
     pub fn input_file_bucket(&self) -> std::option::Option<&str> {
         self.input_file_bucket.as_deref()
     }
-    /// <p>The name of input file within the S3 bucket. This file contains a newline delimited
-    /// JSON file. Each line contains the parameter values to provision one device
-    /// (thing).</p>
+    /// <p>The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).</p>
     pub fn input_file_key(&self) -> std::option::Option<&str> {
         self.input_file_key.as_deref()
     }
@@ -48238,17 +47195,11 @@ impl std::fmt::Debug for StartThingRegistrationTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartOnDemandAuditTaskInput {
-    /// <p>Which checks are performed during the audit. The checks you specify must be enabled
-    /// for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code>
-    /// to see the list of all checks, including those that are enabled or
-    /// <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
+    /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
     pub target_check_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartOnDemandAuditTaskInput {
-    /// <p>Which checks are performed during the audit. The checks you specify must be enabled
-    /// for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code>
-    /// to see the list of all checks, including those that are enabled or
-    /// <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
+    /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
     pub fn target_check_names(&self) -> std::option::Option<&[std::string::String]> {
         self.target_check_names.as_deref()
     }
@@ -48265,78 +47216,50 @@ impl std::fmt::Debug for StartOnDemandAuditTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDetectMitigationActionsTaskInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub task_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// Specifies the ML Detect findings to which the mitigation actions are applied.
-    /// </p>
+    /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
     pub target: std::option::Option<crate::model::DetectMitigationActionsTaskTarget>,
-    /// <p>
-    /// The actions to be performed when a device has unexpected behavior.
-    /// </p>
+    /// <p> The actions to be performed when a device has unexpected behavior. </p>
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// Specifies the time period of which violation events occurred between.
-    /// </p>
+    /// <p> Specifies the time period of which violation events occurred between. </p>
     pub violation_event_occurrence_range:
         std::option::Option<crate::model::ViolationEventOccurrenceRange>,
-    /// <p>
-    /// Specifies to list only active violations.
-    /// </p>
+    /// <p> Specifies to list only active violations. </p>
     pub include_only_active_violations: std::option::Option<bool>,
-    /// <p>
-    /// Specifies to include suppressed alerts.
-    /// </p>
+    /// <p> Specifies to include suppressed alerts. </p>
     pub include_suppressed_alerts: std::option::Option<bool>,
-    /// <p>
-    /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
-    /// </p>
+    /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl StartDetectMitigationActionsTaskInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
-    /// <p>
-    /// Specifies the ML Detect findings to which the mitigation actions are applied.
-    /// </p>
+    /// <p> Specifies the ML Detect findings to which the mitigation actions are applied. </p>
     pub fn target(&self) -> std::option::Option<&crate::model::DetectMitigationActionsTaskTarget> {
         self.target.as_ref()
     }
-    /// <p>
-    /// The actions to be performed when a device has unexpected behavior.
-    /// </p>
+    /// <p> The actions to be performed when a device has unexpected behavior. </p>
     pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
     }
-    /// <p>
-    /// Specifies the time period of which violation events occurred between.
-    /// </p>
+    /// <p> Specifies the time period of which violation events occurred between. </p>
     pub fn violation_event_occurrence_range(
         &self,
     ) -> std::option::Option<&crate::model::ViolationEventOccurrenceRange> {
         self.violation_event_occurrence_range.as_ref()
     }
-    /// <p>
-    /// Specifies to list only active violations.
-    /// </p>
+    /// <p> Specifies to list only active violations. </p>
     pub fn include_only_active_violations(&self) -> std::option::Option<bool> {
         self.include_only_active_violations
     }
-    /// <p>
-    /// Specifies to include suppressed alerts.
-    /// </p>
+    /// <p> Specifies to include suppressed alerts. </p>
     pub fn include_suppressed_alerts(&self) -> std::option::Option<bool> {
         self.include_suppressed_alerts
     }
-    /// <p>
-    /// Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
-    /// </p>
+    /// <p> Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -48367,10 +47290,7 @@ impl std::fmt::Debug for StartDetectMitigationActionsTaskInput {
 pub struct StartAuditMitigationActionsTaskInput {
     /// <p>A unique identifier for the task. You can use this identifier to check the status of the task or to cancel it.</p>
     pub task_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply
-    /// them to a type of audit check, to all findings from an audit, or to a
-    /// specific set of
-    /// findings.</p>
+    /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
     pub target: std::option::Option<crate::model::AuditMitigationActionsTaskTarget>,
     /// <p>For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your Amazon Web Services accounts.</p>
     pub audit_check_to_actions_mapping: std::option::Option<
@@ -48384,10 +47304,7 @@ impl StartAuditMitigationActionsTaskInput {
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
-    /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply
-    /// them to a type of audit check, to all findings from an audit, or to a
-    /// specific set of
-    /// findings.</p>
+    /// <p>Specifies the audit findings to which the mitigation actions are applied. You can apply them to a type of audit check, to all findings from an audit, or to a specific set of findings.</p>
     pub fn target(&self) -> std::option::Option<&crate::model::AuditMitigationActionsTaskTarget> {
         self.target.as_ref()
     }
@@ -48561,8 +47478,7 @@ pub struct SearchIndexInput {
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The search query string.</p>
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-    /// results.</p>
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
@@ -48578,8 +47494,7 @@ impl SearchIndexInput {
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-    /// results.</p>
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -48720,15 +47635,13 @@ impl std::fmt::Debug for RemoveThingFromBillingGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectCertificateTransferInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The reason the certificate transfer was rejected.</p>
     pub reject_reason: std::option::Option<std::string::String>,
 }
 impl RejectCertificateTransferInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -48858,18 +47771,14 @@ pub struct RegisterCaCertificateInput {
     pub verification_certificate: std::option::Option<std::string::String>,
     /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
     pub set_as_active: bool,
-    /// <p>Allows this CA certificate to be used for auto registration of device
-    /// certificates.</p>
+    /// <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
     pub allow_auto_registration: bool,
     /// <p>Information about the registration configuration.</p>
     pub registration_config: std::option::Option<crate::model::RegistrationConfig>,
-    /// <p>Metadata which can be used to manage the CA certificate.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -48886,8 +47795,7 @@ impl RegisterCaCertificateInput {
     pub fn set_as_active(&self) -> bool {
         self.set_as_active
     }
-    /// <p>Allows this CA certificate to be used for auto registration of device
-    /// certificates.</p>
+    /// <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
     pub fn allow_auto_registration(&self) -> bool {
         self.allow_auto_registration
     }
@@ -48895,13 +47803,10 @@ impl RegisterCaCertificateInput {
     pub fn registration_config(&self) -> std::option::Option<&crate::model::RegistrationConfig> {
         self.registration_config.as_ref()
     }
-    /// <p>Metadata which can be used to manage the CA certificate.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the CA certificate.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -48970,13 +47875,9 @@ pub struct ListViolationEventsInput {
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>A filter to limit results to those alerts generated by the specified security profile.</p>
     pub security_profile_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The criteria for a behavior.
-    /// </p>
+    /// <p> The criteria for a behavior. </p>
     pub behavior_criteria_type: std::option::Option<crate::model::BehaviorCriteriaType>,
-    /// <p>
-    /// A list of all suppressed alerts.
-    /// </p>
+    /// <p> A list of all suppressed alerts. </p>
     pub list_suppressed_alerts: std::option::Option<bool>,
     /// <p>The verification state of the violation (detect alarm).</p>
     pub verification_state: std::option::Option<crate::model::VerificationState>,
@@ -49002,17 +47903,13 @@ impl ListViolationEventsInput {
     pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
-    /// <p>
-    /// The criteria for a behavior.
-    /// </p>
+    /// <p> The criteria for a behavior. </p>
     pub fn behavior_criteria_type(
         &self,
     ) -> std::option::Option<&crate::model::BehaviorCriteriaType> {
         self.behavior_criteria_type.as_ref()
     }
-    /// <p>
-    /// A list of all suppressed alerts.
-    /// </p>
+    /// <p> A list of all suppressed alerts. </p>
     pub fn list_suppressed_alerts(&self) -> std::option::Option<bool> {
         self.list_suppressed_alerts
     }
@@ -49049,25 +47946,19 @@ impl std::fmt::Debug for ListViolationEventsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListV2LoggingLevelsInput {
-    /// <p>The type of resource for which you are configuring logging. Must be
-    /// <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
     pub target_type: std::option::Option<crate::model::LogTargetType>,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListV2LoggingLevelsInput {
-    /// <p>The type of resource for which you are configuring logging. Must be
-    /// <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
     pub fn target_type(&self) -> std::option::Option<&crate::model::LogTargetType> {
         self.target_type.as_ref()
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49094,9 +47985,7 @@ pub struct ListTopicRulesInput {
     pub topic: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Specifies whether the rule is disabled.</p>
     pub rule_disabled: std::option::Option<bool>,
@@ -49110,9 +47999,7 @@ impl ListTopicRulesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49138,9 +48025,7 @@ impl std::fmt::Debug for ListTopicRulesInput {
 pub struct ListTopicRuleDestinationsInput {
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTopicRuleDestinationsInput {
@@ -49148,9 +48033,7 @@ impl ListTopicRuleDestinationsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49168,9 +48051,7 @@ impl std::fmt::Debug for ListTopicRuleDestinationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingTypesInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: std::option::Option<i32>,
@@ -49178,9 +48059,7 @@ pub struct ListThingTypesInput {
     pub thing_type_name: std::option::Option<std::string::String>,
 }
 impl ListThingTypesInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49209,12 +48088,9 @@ impl std::fmt::Debug for ListThingTypesInput {
 pub struct ListThingsInThingGroupInput {
     /// <p>The thing group name.</p>
     pub thing_group_name: std::option::Option<std::string::String>,
-    /// <p>When true, list things in this thing group and in all child groups as
-    /// well.</p>
+    /// <p>When true, list things in this thing group and in all child groups as well.</p>
     pub recursive: bool,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
@@ -49224,14 +48100,11 @@ impl ListThingsInThingGroupInput {
     pub fn thing_group_name(&self) -> std::option::Option<&str> {
         self.thing_group_name.as_deref()
     }
-    /// <p>When true, list things in this thing group and in all child groups as
-    /// well.</p>
+    /// <p>When true, list things in this thing group and in all child groups as well.</p>
     pub fn recursive(&self) -> bool {
         self.recursive
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49257,9 +48130,7 @@ impl std::fmt::Debug for ListThingsInThingGroupInput {
 pub struct ListThingsInBillingGroupInput {
     /// <p>The name of the billing group.</p>
     pub billing_group_name: std::option::Option<std::string::String>,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per request.</p>
     pub max_results: std::option::Option<i32>,
@@ -49269,9 +48140,7 @@ impl ListThingsInBillingGroupInput {
     pub fn billing_group_name(&self) -> std::option::Option<&str> {
         self.billing_group_name.as_deref()
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49294,9 +48163,7 @@ impl std::fmt::Debug for ListThingsInBillingGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: std::option::Option<i32>,
@@ -49306,17 +48173,12 @@ pub struct ListThingsInput {
     pub attribute_value: std::option::Option<std::string::String>,
     /// <p>The name of the thing type used to search for things.</p>
     pub thing_type_name: std::option::Option<std::string::String>,
-    /// <p>When <code>true</code>, the action returns the thing resources with attribute values
-    /// that start with the <code>attributeValue</code> provided.</p>
-    /// <p>When <code>false</code>, or not present, the action returns only the thing
-    /// resources with attribute values that match the entire <code>attributeValue</code>
-    /// provided. </p>
+    /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
+    /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
     pub use_prefix_attribute_value: bool,
 }
 impl ListThingsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49336,11 +48198,8 @@ impl ListThingsInput {
     pub fn thing_type_name(&self) -> std::option::Option<&str> {
         self.thing_type_name.as_deref()
     }
-    /// <p>When <code>true</code>, the action returns the thing resources with attribute values
-    /// that start with the <code>attributeValue</code> provided.</p>
-    /// <p>When <code>false</code>, or not present, the action returns only the thing
-    /// resources with attribute values that match the entire <code>attributeValue</code>
-    /// provided. </p>
+    /// <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p>
+    /// <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
     pub fn use_prefix_attribute_value(&self) -> bool {
         self.use_prefix_attribute_value
     }
@@ -49365,9 +48224,7 @@ impl std::fmt::Debug for ListThingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingRegistrationTasksInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
@@ -49375,9 +48232,7 @@ pub struct ListThingRegistrationTasksInput {
     pub status: std::option::Option<crate::model::Status>,
 }
 impl ListThingRegistrationTasksInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49408,9 +48263,7 @@ pub struct ListThingRegistrationTaskReportsInput {
     pub task_id: std::option::Option<std::string::String>,
     /// <p>The type of task report.</p>
     pub report_type: std::option::Option<crate::model::ReportType>,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per request.</p>
     pub max_results: std::option::Option<i32>,
@@ -49424,9 +48277,7 @@ impl ListThingRegistrationTaskReportsInput {
     pub fn report_type(&self) -> std::option::Option<&crate::model::ReportType> {
         self.report_type.as_ref()
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49450,9 +48301,7 @@ impl std::fmt::Debug for ListThingRegistrationTaskReportsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingPrincipalsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: std::option::Option<i32>,
@@ -49460,9 +48309,7 @@ pub struct ListThingPrincipalsInput {
     pub thing_name: std::option::Option<std::string::String>,
 }
 impl ListThingPrincipalsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49491,9 +48338,7 @@ impl std::fmt::Debug for ListThingPrincipalsInput {
 pub struct ListThingGroupsForThingInput {
     /// <p>The thing name.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
@@ -49503,9 +48348,7 @@ impl ListThingGroupsForThingInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49528,9 +48371,7 @@ impl std::fmt::Debug for ListThingGroupsForThingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThingGroupsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
@@ -49542,9 +48383,7 @@ pub struct ListThingGroupsInput {
     pub recursive: std::option::Option<bool>,
 }
 impl ListThingGroupsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49653,9 +48492,7 @@ impl std::fmt::Debug for ListTargetsForPolicyInput {
 pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
@@ -49663,9 +48500,7 @@ impl ListTagsForResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49767,12 +48602,9 @@ pub struct ListSecurityProfilesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A filter to limit results to the security profiles that use the defined dimension.
-    /// Cannot be used with <code>metricName</code>
-    /// </p>
+    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
     pub dimension_name: std::option::Option<std::string::String>,
-    /// <p> The name of the custom metric.
-    /// Cannot be used with <code>dimensionName</code>. </p>
+    /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
     pub metric_name: std::option::Option<std::string::String>,
 }
 impl ListSecurityProfilesInput {
@@ -49784,14 +48616,11 @@ impl ListSecurityProfilesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A filter to limit results to the security profiles that use the defined dimension.
-    /// Cannot be used with <code>metricName</code>
-    /// </p>
+    /// <p>A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> </p>
     pub fn dimension_name(&self) -> std::option::Option<&str> {
         self.dimension_name.as_deref()
     }
-    /// <p> The name of the custom metric.
-    /// Cannot be used with <code>dimensionName</code>. </p>
+    /// <p> The name of the custom metric. Cannot be used with <code>dimensionName</code>. </p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
@@ -49937,9 +48766,7 @@ impl std::fmt::Debug for ListProvisioningTemplatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPrincipalThingsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: std::option::Option<i32>,
@@ -49947,9 +48774,7 @@ pub struct ListPrincipalThingsInput {
     pub principal: std::option::Option<std::string::String>,
 }
 impl ListPrincipalThingsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49982,8 +48807,7 @@ pub struct ListPrincipalPoliciesInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The result page size.</p>
     pub page_size: std::option::Option<i32>,
-    /// <p>Specifies the order for results. If true, results are returned in ascending creation
-    /// order.</p>
+    /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
     pub ascending_order: bool,
 }
 impl ListPrincipalPoliciesInput {
@@ -49999,8 +48823,7 @@ impl ListPrincipalPoliciesInput {
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
-    /// <p>Specifies the order for results. If true, results are returned in ascending creation
-    /// order.</p>
+    /// <p>Specifies the order for results. If true, results are returned in ascending creation order.</p>
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
@@ -50047,8 +48870,7 @@ pub struct ListPolicyPrincipalsInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The result page size.</p>
     pub page_size: std::option::Option<i32>,
-    /// <p>Specifies the order for results. If true, the results are returned in ascending
-    /// creation order.</p>
+    /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     pub ascending_order: bool,
 }
 impl ListPolicyPrincipalsInput {
@@ -50064,8 +48886,7 @@ impl ListPolicyPrincipalsInput {
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
-    /// <p>Specifies the order for results. If true, the results are returned in ascending
-    /// creation order.</p>
+    /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
@@ -50089,8 +48910,7 @@ pub struct ListPoliciesInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The result page size.</p>
     pub page_size: std::option::Option<i32>,
-    /// <p>Specifies the order for results. If true, the results are returned in ascending
-    /// creation order.</p>
+    /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     pub ascending_order: bool,
 }
 impl ListPoliciesInput {
@@ -50102,8 +48922,7 @@ impl ListPoliciesInput {
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
     }
-    /// <p>Specifies the order for results. If true, the results are returned in ascending
-    /// creation order.</p>
+    /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
@@ -50126,8 +48945,7 @@ pub struct ListOutgoingCertificatesInput {
     pub page_size: std::option::Option<i32>,
     /// <p>The marker for the next set of results.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the order for results. If True, the results are returned in ascending
-    /// order, based on the creation date.</p>
+    /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub ascending_order: bool,
 }
 impl ListOutgoingCertificatesInput {
@@ -50139,8 +48957,7 @@ impl ListOutgoingCertificatesInput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Specifies the order for results. If True, the results are returned in ascending
-    /// order, based on the creation date.</p>
+    /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
@@ -50229,8 +49046,7 @@ impl std::fmt::Debug for ListMitigationActionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedJobTemplatesInput {
-    /// <p>An optional parameter for template name. If specified, only the versions of the
-    /// managed job templates that have the specified template name will be returned.</p>
+    /// <p>An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Maximum number of entries that can be returned.</p>
     pub max_results: std::option::Option<i32>,
@@ -50238,8 +49054,7 @@ pub struct ListManagedJobTemplatesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListManagedJobTemplatesInput {
-    /// <p>An optional parameter for template name. If specified, only the versions of the
-    /// managed job templates that have the specified template name will be returned.</p>
+    /// <p>An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -50296,10 +49111,7 @@ impl std::fmt::Debug for ListJobTemplatesInput {
 pub struct ListJobsInput {
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
     pub status: std::option::Option<crate::model::JobStatus>,
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-    /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-    /// target group, even after the job was completed by all things originally in the group. </p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
     pub target_selection: std::option::Option<crate::model::TargetSelection>,
     /// <p>The maximum number of results to return per request.</p>
     pub max_results: std::option::Option<i32>,
@@ -50310,12 +49122,8 @@ pub struct ListJobsInput {
     /// <p>A filter that limits the returned jobs to those for the specified group.</p>
     pub thing_group_id: std::option::Option<std::string::String>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
@@ -50325,10 +49133,7 @@ impl ListJobsInput {
     pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.status.as_ref()
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-    /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-    /// target group, even after the job was completed by all things originally in the group. </p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p>
     pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
         self.target_selection.as_ref()
     }
@@ -50349,12 +49154,8 @@ impl ListJobsInput {
         self.thing_group_id.as_deref()
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
@@ -50384,12 +49185,8 @@ pub struct ListJobExecutionsForThingInput {
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
     pub status: std::option::Option<crate::model::JobExecutionStatus>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
@@ -50397,6 +49194,8 @@ pub struct ListJobExecutionsForThingInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub job_id: std::option::Option<std::string::String>,
 }
 impl ListJobExecutionsForThingInput {
     /// <p>The thing name.</p>
@@ -50408,12 +49207,8 @@ impl ListJobExecutionsForThingInput {
         self.status.as_ref()
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
@@ -50427,6 +49222,10 @@ impl ListJobExecutionsForThingInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
 }
 impl std::fmt::Debug for ListJobExecutionsForThingInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50436,6 +49235,7 @@ impl std::fmt::Debug for ListJobExecutionsForThingInput {
         formatter.field("namespace_id", &self.namespace_id);
         formatter.field("max_results", &self.max_results);
         formatter.field("next_token", &self.next_token);
+        formatter.field("job_id", &self.job_id);
         formatter.finish()
     }
 }
@@ -50486,15 +49286,13 @@ impl std::fmt::Debug for ListJobExecutionsForJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIndicesInput {
-    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-    /// results.</p>
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListIndicesInput {
-    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-    /// results.</p>
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -50516,15 +49314,13 @@ impl std::fmt::Debug for ListIndicesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFleetMetricsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response;
-    /// otherwise <code>null</code> to receive the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this operation.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListFleetMetricsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response;
-    /// otherwise <code>null</code> to receive the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -50611,18 +49407,11 @@ impl std::fmt::Debug for ListDimensionsInput {
 pub struct ListDetectMitigationActionsTasksInput {
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// A filter to limit results to those found after the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.
-    /// </p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The end of the time period for which ML Detect mitigation actions tasks are returned.
-    /// </p>
+    /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListDetectMitigationActionsTasksInput {
@@ -50630,22 +49419,15 @@ impl ListDetectMitigationActionsTasksInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// A filter to limit results to those found after the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.
-    /// </p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>
-    /// The end of the time period for which ML Detect mitigation actions tasks are returned.
-    /// </p>
+    /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -50665,77 +49447,47 @@ impl std::fmt::Debug for ListDetectMitigationActionsTasksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectMitigationActionsExecutionsInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub task_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The unique identifier of the violation.
-    /// </p>
+    /// <p> The unique identifier of the violation. </p>
     pub violation_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the thing whose mitigation actions are listed.
-    /// </p>
+    /// <p> The name of the thing whose mitigation actions are listed. </p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A filter to limit results to those found after the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.
-    /// </p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The end of the time period for which ML Detect mitigation actions executions are returned.
-    /// </p>
+    /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectMitigationActionsExecutionsInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
-    /// <p>
-    /// The unique identifier of the violation.
-    /// </p>
+    /// <p> The unique identifier of the violation. </p>
     pub fn violation_id(&self) -> std::option::Option<&str> {
         self.violation_id.as_deref()
     }
-    /// <p>
-    /// The name of the thing whose mitigation actions are listed.
-    /// </p>
+    /// <p> The name of the thing whose mitigation actions are listed. </p>
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>
-    /// A filter to limit results to those found after the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.
-    /// </p>
+    /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>
-    /// The end of the time period for which ML Detect mitigation actions executions are returned.
-    /// </p>
+    /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -50758,25 +49510,17 @@ impl std::fmt::Debug for ListDetectMitigationActionsExecutionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomMetricsInput {
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListCustomMetricsInput {
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -50794,20 +49538,17 @@ impl std::fmt::Debug for ListCustomMetricsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificatesByCaInput {
-    /// <p>The ID of the CA certificate. This operation will list all registered device
-    /// certificate that were signed by this CA certificate.</p>
+    /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
     pub ca_certificate_id: std::option::Option<std::string::String>,
     /// <p>The result page size.</p>
     pub page_size: std::option::Option<i32>,
     /// <p>The marker for the next set of results.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the order for results. If True, the results are returned in ascending
-    /// order, based on the creation date.</p>
+    /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub ascending_order: bool,
 }
 impl ListCertificatesByCaInput {
-    /// <p>The ID of the CA certificate. This operation will list all registered device
-    /// certificate that were signed by this CA certificate.</p>
+    /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
     pub fn ca_certificate_id(&self) -> std::option::Option<&str> {
         self.ca_certificate_id.as_deref()
     }
@@ -50819,8 +49560,7 @@ impl ListCertificatesByCaInput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Specifies the order for results. If True, the results are returned in ascending
-    /// order, based on the creation date.</p>
+    /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
@@ -50844,8 +49584,7 @@ pub struct ListCertificatesInput {
     pub page_size: std::option::Option<i32>,
     /// <p>The marker for the next set of results.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the order for results. If True, the results are returned in ascending
-    /// order, based on the creation date.</p>
+    /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub ascending_order: bool,
 }
 impl ListCertificatesInput {
@@ -50857,8 +49596,7 @@ impl ListCertificatesInput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Specifies the order for results. If True, the results are returned in ascending
-    /// order, based on the creation date.</p>
+    /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
@@ -50912,9 +49650,7 @@ impl std::fmt::Debug for ListCaCertificatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBillingGroupsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per request.</p>
     pub max_results: std::option::Option<i32>,
@@ -50922,9 +49658,7 @@ pub struct ListBillingGroupsInput {
     pub name_prefix_filter: std::option::Option<std::string::String>,
 }
 impl ListBillingGroupsInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -50993,17 +49727,13 @@ impl std::fmt::Debug for ListAuthorizersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAuditTasksInput {
-    /// <p>The beginning of the time period. Audit information is retained for a
-    /// limited time (90 days). Requesting a start time prior to what is retained
-    /// results in an "InvalidRequestException".</p>
+    /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end of the time period.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A filter to limit the output to the specified type of audit: can be one of
-    /// "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
+    /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
     pub task_type: std::option::Option<crate::model::AuditTaskType>,
-    /// <p>A filter to limit the output to audits with the specified completion
-    /// status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
+    /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
     pub task_status: std::option::Option<crate::model::AuditTaskStatus>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -51011,9 +49741,7 @@ pub struct ListAuditTasksInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListAuditTasksInput {
-    /// <p>The beginning of the time period. Audit information is retained for a
-    /// limited time (90 days). Requesting a start time prior to what is retained
-    /// results in an "InvalidRequestException".</p>
+    /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -51021,13 +49749,11 @@ impl ListAuditTasksInput {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>A filter to limit the output to the specified type of audit: can be one of
-    /// "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
+    /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
     pub fn task_type(&self) -> std::option::Option<&crate::model::AuditTaskType> {
         self.task_type.as_ref()
     }
-    /// <p>A filter to limit the output to audits with the specified completion
-    /// status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
+    /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
     pub fn task_status(&self) -> std::option::Option<&crate::model::AuditTaskStatus> {
         self.task_status.as_ref()
     }
@@ -51057,31 +49783,19 @@ impl std::fmt::Debug for ListAuditTasksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAuditSuppressionsInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub check_name: std::option::Option<std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
-    /// <p>
-    /// Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>.
-    /// </p>
+    /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
     pub ascending_order: bool,
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAuditSuppressionsInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn check_name(&self) -> std::option::Option<&str> {
         self.check_name.as_deref()
     }
@@ -51089,21 +49803,15 @@ impl ListAuditSuppressionsInput {
     pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
-    /// <p>
-    /// Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>.
-    /// </p>
+    /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
     pub fn ascending_order(&self) -> bool {
         self.ascending_order
     }
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -51240,8 +49948,7 @@ impl std::fmt::Debug for ListAuditMitigationActionsExecutionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAuditFindingsInput {
-    /// <p>A filter to limit results to the audit with the specified ID. You must
-    /// specify either the taskId or the startTime and endTime, but not both.</p>
+    /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
     pub task_id: std::option::Option<std::string::String>,
     /// <p>A filter to limit results to the findings for the specified audit check.</p>
     pub check_name: std::option::Option<std::string::String>,
@@ -51251,20 +49958,15 @@ pub struct ListAuditFindingsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A filter to limit results to those found after the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A filter to limit results to those found before the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.
-    /// </p>
+    /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
     pub list_suppressed_findings: bool,
 }
 impl ListAuditFindingsInput {
-    /// <p>A filter to limit results to the audit with the specified ID. You must
-    /// specify either the taskId or the startTime and endTime, but not both.</p>
+    /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -51284,19 +49986,15 @@ impl ListAuditFindingsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A filter to limit results to those found after the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>A filter to limit results to those found before the specified time. You must
-    /// specify either the startTime and endTime or the taskId, but not both.</p>
+    /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>
-    /// Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings.
-    /// </p>
+    /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
     pub fn list_suppressed_findings(&self) -> bool {
         self.list_suppressed_findings
     }
@@ -51366,13 +50064,9 @@ pub struct ListActiveViolationsInput {
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The name of the Device Defender security profile for which violations are listed.</p>
     pub security_profile_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The criteria for a behavior.
-    /// </p>
+    /// <p> The criteria for a behavior. </p>
     pub behavior_criteria_type: std::option::Option<crate::model::BehaviorCriteriaType>,
-    /// <p>
-    /// A list of all suppressed alerts.
-    /// </p>
+    /// <p> A list of all suppressed alerts. </p>
     pub list_suppressed_alerts: std::option::Option<bool>,
     /// <p>The verification state of the violation (detect alarm).</p>
     pub verification_state: std::option::Option<crate::model::VerificationState>,
@@ -51390,17 +50084,13 @@ impl ListActiveViolationsInput {
     pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
-    /// <p>
-    /// The criteria for a behavior.
-    /// </p>
+    /// <p> The criteria for a behavior. </p>
     pub fn behavior_criteria_type(
         &self,
     ) -> std::option::Option<&crate::model::BehaviorCriteriaType> {
         self.behavior_criteria_type.as_ref()
     }
-    /// <p>
-    /// A list of all suppressed alerts.
-    /// </p>
+    /// <p> A list of all suppressed alerts. </p>
     pub fn list_suppressed_alerts(&self) -> std::option::Option<bool> {
         self.list_suppressed_alerts
     }
@@ -51490,8 +50180,7 @@ impl std::fmt::Debug for GetTopicRuleInput {
 pub struct GetStatisticsInput {
     /// <p>The name of the index to search. The default value is <code>AWS_Things</code>.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The query used to search. You can specify "*" for the query string to get the count of all
-    /// indexed things in your Amazon Web Services account.</p>
+    /// <p>The query used to search. You can specify "*" for the query string to get the count of all indexed things in your Amazon Web Services account.</p>
     pub query_string: std::option::Option<std::string::String>,
     /// <p>The aggregation field name.</p>
     pub aggregation_field: std::option::Option<std::string::String>,
@@ -51503,8 +50192,7 @@ impl GetStatisticsInput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The query used to search. You can specify "*" for the query string to get the count of all
-    /// indexed things in your Amazon Web Services account.</p>
+    /// <p>The query used to search. You can specify "*" for the query string to get the count of all indexed things in your Amazon Web Services account.</p>
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
@@ -51833,35 +50521,23 @@ impl std::fmt::Debug for GetBucketsAggregationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBehaviorModelTrainingSummariesInput {
-    /// <p>
-    /// The name of the security profile.
-    /// </p>
+    /// <p> The name of the security profile. </p>
     pub security_profile_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBehaviorModelTrainingSummariesInput {
-    /// <p>
-    /// The name of the security profile.
-    /// </p>
+    /// <p> The name of the security profile. </p>
     pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
-    /// <p>
-    /// The maximum number of results to return at one time. The default is 25.
-    /// </p>
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// The token for the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -51924,9 +50600,7 @@ impl std::fmt::Debug for DisableTopicRuleInput {
 pub struct DetachThingPrincipalInput {
     /// <p>The name of the thing.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>If the principal is a certificate, this value must be ARN of the certificate. If
-    /// the principal is an Amazon Cognito identity, this value must be the ID of the Amazon
-    /// Cognito identity.</p>
+    /// <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
     pub principal: std::option::Option<std::string::String>,
 }
 impl DetachThingPrincipalInput {
@@ -51934,9 +50608,7 @@ impl DetachThingPrincipalInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>If the principal is a certificate, this value must be ARN of the certificate. If
-    /// the principal is an Amazon Cognito identity, this value must be the ID of the Amazon
-    /// Cognito identity.</p>
+    /// <p>If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
@@ -52148,13 +50820,11 @@ impl std::fmt::Debug for DescribeStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityProfileInput {
-    /// <p>The name of the security profile
-    /// whose information you want to get.</p>
+    /// <p>The name of the security profile whose information you want to get.</p>
     pub security_profile_name: std::option::Option<std::string::String>,
 }
 impl DescribeSecurityProfileInput {
-    /// <p>The name of the security profile
-    /// whose information you want to get.</p>
+    /// <p>The name of the security profile whose information you want to get.</p>
     pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
@@ -52285,8 +50955,7 @@ impl std::fmt::Debug for DescribeMitigationActionInput {
 pub struct DescribeManagedJobTemplateInput {
     /// <p>The unique name of a managed job template, which is required.</p>
     pub template_name: std::option::Option<std::string::String>,
-    /// <p>An optional parameter to specify version of a managed template. If not specified, the
-    /// pre-defined default version is returned.</p>
+    /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
     pub template_version: std::option::Option<std::string::String>,
 }
 impl DescribeManagedJobTemplateInput {
@@ -52294,8 +50963,7 @@ impl DescribeManagedJobTemplateInput {
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>An optional parameter to specify version of a managed template. If not specified, the
-    /// pre-defined default version is returned.</p>
+    /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
     pub fn template_version(&self) -> std::option::Option<&str> {
         self.template_version.as_deref()
     }
@@ -52338,8 +51006,7 @@ pub struct DescribeJobExecutionInput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing on which the job execution is running.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution
-    /// on a particular device.</p>
+    /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
     pub execution_number: std::option::Option<i64>,
 }
 impl DescribeJobExecutionInput {
@@ -52351,8 +51018,7 @@ impl DescribeJobExecutionInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution
-    /// on a particular device.</p>
+    /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
     pub fn execution_number(&self) -> std::option::Option<i64> {
         self.execution_number
     }
@@ -52447,65 +51113,35 @@ impl std::fmt::Debug for DescribeEventConfigurationsInput {
 pub struct DescribeEndpointInput {
     /// <p>The endpoint type. Valid endpoint types include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API
-    /// endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:Jobs</code> - Returns an IoT device management Jobs API
-    /// endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
     /// </ul>
-    /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid
-    /// issues related to the widespread distrust of Symantec certificate authorities.</p>
+    /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
     pub endpoint_type: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointInput {
     /// <p>The endpoint type. Valid endpoint types include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API
-    /// endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li>
     /// </ul>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>iot:Jobs</code> - Returns an IoT device management Jobs API
-    /// endpoint.</p>
-    /// </li>
+    /// <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li>
     /// </ul>
-    /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid
-    /// issues related to the widespread distrust of Symantec certificate authorities.</p>
+    /// <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
     pub fn endpoint_type(&self) -> std::option::Option<&str> {
         self.endpoint_type.as_deref()
     }
@@ -52564,15 +51200,11 @@ impl std::fmt::Debug for DescribeDimensionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDetectMitigationActionsTaskInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub task_id: std::option::Option<std::string::String>,
 }
 impl DescribeDetectMitigationActionsTaskInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -52600,15 +51232,11 @@ impl std::fmt::Debug for DescribeDefaultAuthorizerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomMetricInput {
-    /// <p>
-    /// The name of the custom metric.
-    /// </p>
+    /// <p> The name of the custom metric. </p>
     pub metric_name: std::option::Option<std::string::String>,
 }
 impl DescribeCustomMetricInput {
-    /// <p>
-    /// The name of the custom metric.
-    /// </p>
+    /// <p> The name of the custom metric. </p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
@@ -52625,13 +51253,11 @@ impl std::fmt::Debug for DescribeCustomMetricInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl DescribeCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -52732,19 +51358,13 @@ impl std::fmt::Debug for DescribeAuditTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub check_name: std::option::Option<std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
 }
 impl DescribeAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn check_name(&self) -> std::option::Option<&str> {
         self.check_name.as_deref()
     }
@@ -52821,8 +51441,7 @@ impl std::fmt::Debug for DescribeAccountAuditConfigurationInput {
 pub struct DeprecateThingTypeInput {
     /// <p>The name of the thing type to deprecate.</p>
     pub thing_type_name: std::option::Option<std::string::String>,
-    /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can
-    /// associate it with things.</p>
+    /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     pub undo_deprecate: bool,
 }
 impl DeprecateThingTypeInput {
@@ -52830,8 +51449,7 @@ impl DeprecateThingTypeInput {
     pub fn thing_type_name(&self) -> std::option::Option<&str> {
         self.thing_type_name.as_deref()
     }
-    /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can
-    /// associate it with things.</p>
+    /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     pub fn undo_deprecate(&self) -> bool {
         self.undo_deprecate
     }
@@ -52849,15 +51467,13 @@ impl std::fmt::Debug for DeprecateThingTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteV2LoggingLevelInput {
-    /// <p>The type of resource for which you are configuring logging. Must be
-    /// <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
     pub target_type: std::option::Option<crate::model::LogTargetType>,
     /// <p>The name of the resource for which you are configuring logging.</p>
     pub target_name: std::option::Option<std::string::String>,
 }
 impl DeleteV2LoggingLevelInput {
-    /// <p>The type of resource for which you are configuring logging. Must be
-    /// <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
     pub fn target_type(&self) -> std::option::Option<&crate::model::LogTargetType> {
         self.target_type.as_ref()
     }
@@ -52972,10 +51588,7 @@ impl std::fmt::Debug for DeleteThingGroupInput {
 pub struct DeleteThingInput {
     /// <p>The name of the thing to delete.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>The expected version of the thing record in the registry. If the version of the
-    /// record in the registry does not match the expected version specified in the request, the
-    /// <code>DeleteThing</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub expected_version: std::option::Option<i64>,
 }
 impl DeleteThingInput {
@@ -52983,10 +51596,7 @@ impl DeleteThingInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>The expected version of the thing record in the registry. If the version of the
-    /// record in the registry does not match the expected version specified in the request, the
-    /// <code>DeleteThing</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
@@ -53027,9 +51637,7 @@ impl std::fmt::Debug for DeleteStreamInput {
 pub struct DeleteSecurityProfileInput {
     /// <p>The name of the security profile to be deleted.</p>
     pub security_profile_name: std::option::Option<std::string::String>,
-    /// <p>The expected version of the security profile. A new version is generated whenever
-    /// the security profile is updated. If you specify a value that is different from the actual
-    /// version, a <code>VersionConflictException</code> is thrown.</p>
+    /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub expected_version: std::option::Option<i64>,
 }
 impl DeleteSecurityProfileInput {
@@ -53037,9 +51645,7 @@ impl DeleteSecurityProfileInput {
     pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
-    /// <p>The expected version of the security profile. A new version is generated whenever
-    /// the security profile is updated. If you specify a value that is different from the actual
-    /// version, a <code>VersionConflictException</code> is thrown.</p>
+    /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
@@ -53210,11 +51816,9 @@ impl std::fmt::Debug for DeletePolicyInput {
 pub struct DeleteOtaUpdateInput {
     /// <p>The ID of the OTA update to delete.</p>
     pub ota_update_id: std::option::Option<std::string::String>,
-    /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted.
-    /// Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
+    /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
     pub delete_stream: bool,
-    /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
-    /// job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
+    /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
     pub force_delete_aws_job: bool,
 }
 impl DeleteOtaUpdateInput {
@@ -53222,13 +51826,11 @@ impl DeleteOtaUpdateInput {
     pub fn ota_update_id(&self) -> std::option::Option<&str> {
         self.ota_update_id.as_deref()
     }
-    /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted.
-    /// Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
+    /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
     pub fn delete_stream(&self) -> bool {
         self.delete_stream
     }
-    /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
-    /// job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
+    /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
     pub fn force_delete_aws_job(&self) -> bool {
         self.force_delete_aws_job
     }
@@ -53293,27 +51895,16 @@ pub struct DeleteJobExecutionInput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing whose job execution will be deleted.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the
-    /// execution of a particular job on a particular device.</p>
-    /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused
-    /// by IoT, so be sure you get and use the correct value here.</p>
+    /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>
+    /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
     pub execution_number: std::option::Option<i64>,
-    /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise,
-    /// you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED",
-    /// "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p>
-    /// <note>
-    /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device
-    /// to be unable to access job information or update the job execution status.
-    /// Use caution and ensure that the device is able to recover to a valid state.</p>
+    /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+    /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
     /// </note>
     pub force: bool,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
@@ -53327,31 +51918,20 @@ impl DeleteJobExecutionInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the
-    /// execution of a particular job on a particular device.</p>
-    /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused
-    /// by IoT, so be sure you get and use the correct value here.</p>
+    /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>
+    /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
     pub fn execution_number(&self) -> std::option::Option<i64> {
         self.execution_number
     }
-    /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise,
-    /// you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED",
-    /// "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p>
-    /// <note>
-    /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device
-    /// to be unable to access job information or update the job execution status.
-    /// Use caution and ensure that the device is able to recover to a valid state.</p>
+    /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+    /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
     /// </note>
     pub fn force(&self) -> bool {
         self.force
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
@@ -53375,58 +51955,34 @@ impl std::fmt::Debug for DeleteJobExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteJobInput {
     /// <p>The ID of the job to be deleted.</p>
-    /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job.
-    /// However, this is not recommended, and you must ensure that your devices are not using the
-    /// jobId to refer to the deleted job.</p>
+    /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can
-    /// only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception
-    /// will occur. The default is false.</p>
-    /// <note>
-    /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing
-    /// the job to be unable to access job information or update the job execution status.
-    /// Use caution and ensure that each device executing a job which is deleted is able to recover to
-    /// a valid state.</p>
+    /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+    /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p>
     /// </note>
     pub force: bool,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
 }
 impl DeleteJobInput {
     /// <p>The ID of the job to be deleted.</p>
-    /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job.
-    /// However, this is not recommended, and you must ensure that your devices are not using the
-    /// jobId to refer to the deleted job.</p>
+    /// <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can
-    /// only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception
-    /// will occur. The default is false.</p>
-    /// <note>
-    /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing
-    /// the job to be unable to access job information or update the job execution status.
-    /// Use caution and ensure that each device executing a job which is deleted is able to recover to
-    /// a valid state.</p>
+    /// <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+    /// <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p>
     /// </note>
     pub fn force(&self) -> bool {
         self.force
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
@@ -53545,15 +52101,11 @@ impl std::fmt::Debug for DeleteDimensionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomMetricInput {
-    /// <p>
-    /// The name of the custom metric.
-    /// </p>
+    /// <p> The name of the custom metric. </p>
     pub metric_name: std::option::Option<std::string::String>,
 }
 impl DeleteCustomMetricInput {
-    /// <p>
-    /// The name of the custom metric.
-    /// </p>
+    /// <p> The name of the custom metric. </p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
@@ -53570,21 +52122,17 @@ impl std::fmt::Debug for DeleteCustomMetricInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
-    /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT
-    /// thing.</p>
+    /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
     pub force_delete: bool,
 }
 impl DeleteCertificateInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
-    /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT
-    /// thing.</p>
+    /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
     pub fn force_delete(&self) -> bool {
         self.force_delete
     }
@@ -53602,13 +52150,11 @@ impl std::fmt::Debug for DeleteCertificateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCaCertificateInput {
-    /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains
-    /// the certificate ID.)</p>
+    /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl DeleteCaCertificateInput {
-    /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains
-    /// the certificate ID.)</p>
+    /// <p>The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -53627,10 +52173,7 @@ impl std::fmt::Debug for DeleteCaCertificateInput {
 pub struct DeleteBillingGroupInput {
     /// <p>The name of the billing group.</p>
     pub billing_group_name: std::option::Option<std::string::String>,
-    /// <p>The expected version of the billing group. If the version of the billing group does
-    /// not match the expected version specified in the request, the
-    /// <code>DeleteBillingGroup</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub expected_version: std::option::Option<i64>,
 }
 impl DeleteBillingGroupInput {
@@ -53638,10 +52181,7 @@ impl DeleteBillingGroupInput {
     pub fn billing_group_name(&self) -> std::option::Option<&str> {
         self.billing_group_name.as_deref()
     }
-    /// <p>The expected version of the billing group. If the version of the billing group does
-    /// not match the expected version specified in the request, the
-    /// <code>DeleteBillingGroup</code> request is rejected with a
-    /// <code>VersionConflictException</code>.</p>
+    /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
@@ -53680,19 +52220,13 @@ impl std::fmt::Debug for DeleteAuthorizerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub check_name: std::option::Option<std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
 }
 impl DeleteAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn check_name(&self) -> std::option::Option<&str> {
         self.check_name.as_deref()
     }
@@ -53763,13 +52297,10 @@ pub struct CreateTopicRuleInput {
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The rule payload.</p>
     pub topic_rule_payload: std::option::Option<crate::model::TopicRulePayload>,
-    /// <p>Metadata which can be used to manage the topic rule.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: --tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the topic rule.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::string::String>,
 }
@@ -53782,13 +52313,10 @@ impl CreateTopicRuleInput {
     pub fn topic_rule_payload(&self) -> std::option::Option<&crate::model::TopicRulePayload> {
         self.topic_rule_payload.as_ref()
     }
-    /// <p>Metadata which can be used to manage the topic rule.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: --tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the topic rule.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: --tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&str> {
         self.tags.as_deref()
@@ -53810,9 +52338,7 @@ impl std::fmt::Debug for CreateTopicRuleInput {
 pub struct CreateThingTypeInput {
     /// <p>The name of the thing type.</p>
     pub thing_type_name: std::option::Option<std::string::String>,
-    /// <p>The ThingTypeProperties for the thing type to create. It contains information about
-    /// the new thing type including a description, and a list of searchable thing attribute
-    /// names.</p>
+    /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
     pub thing_type_properties: std::option::Option<crate::model::ThingTypeProperties>,
     /// <p>Metadata which can be used to manage the thing type.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -53822,9 +52348,7 @@ impl CreateThingTypeInput {
     pub fn thing_type_name(&self) -> std::option::Option<&str> {
         self.thing_type_name.as_deref()
     }
-    /// <p>The ThingTypeProperties for the thing type to create. It contains information about
-    /// the new thing type including a description, and a list of searchable thing attribute
-    /// names.</p>
+    /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
     pub fn thing_type_properties(&self) -> std::option::Option<&crate::model::ThingTypeProperties> {
         self.thing_type_properties.as_ref()
     }
@@ -53892,24 +52416,19 @@ impl std::fmt::Debug for CreateThingGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateThingInput {
     /// <p>The name of the thing to create.</p>
-    /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a
-    /// new thing, give it the new name, and then delete the old thing.</p>
+    /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The name of the thing type associated with the new thing.</p>
     pub thing_type_name: std::option::Option<std::string::String>,
-    /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON
-    /// document. For example:</p>
-    /// <p>
-    /// <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
-    /// </p>
+    /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub attribute_payload: std::option::Option<crate::model::AttributePayload>,
     /// <p>The name of the billing group the thing will be added to.</p>
     pub billing_group_name: std::option::Option<std::string::String>,
 }
 impl CreateThingInput {
     /// <p>The name of the thing to create.</p>
-    /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a
-    /// new thing, give it the new name, and then delete the old thing.</p>
+    /// <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
@@ -53917,11 +52436,8 @@ impl CreateThingInput {
     pub fn thing_type_name(&self) -> std::option::Option<&str> {
         self.thing_type_name.as_deref()
     }
-    /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON
-    /// document. For example:</p>
-    /// <p>
-    /// <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
-    /// </p>
+    /// <p>The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
+    /// <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
     pub fn attribute_payload(&self) -> std::option::Option<&crate::model::AttributePayload> {
         self.attribute_payload.as_ref()
     }
@@ -54000,17 +52516,12 @@ pub struct CreateSecurityProfileInput {
     pub security_profile_description: std::option::Option<std::string::String>,
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
     pub behaviors: std::option::Option<std::vec::Vec<crate::model::Behavior>>,
-    /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the
-    /// console.) Alerts are generated when a device (thing) violates a behavior.</p>
+    /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
     pub alert_targets: std::option::Option<
         std::collections::HashMap<crate::model::AlertTargetType, crate::model::AlertTarget>,
     >,
-    /// <p>
-    /// <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
-    /// </p>
-    /// <p>A list of metrics whose data is retained (stored). By default, data is retained
-    /// for any metric used in the profile's <code>behaviors</code>, but it is also retained for
-    /// any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub additional_metrics_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub additional_metrics_to_retain_v2:
@@ -54031,8 +52542,7 @@ impl CreateSecurityProfileInput {
     pub fn behaviors(&self) -> std::option::Option<&[crate::model::Behavior]> {
         self.behaviors.as_deref()
     }
-    /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the
-    /// console.) Alerts are generated when a device (thing) violates a behavior.</p>
+    /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
     pub fn alert_targets(
         &self,
     ) -> std::option::Option<
@@ -54040,12 +52550,8 @@ impl CreateSecurityProfileInput {
     > {
         self.alert_targets.as_ref()
     }
-    /// <p>
-    /// <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
-    /// </p>
-    /// <p>A list of metrics whose data is retained (stored). By default, data is retained
-    /// for any metric used in the profile's <code>behaviors</code>, but it is also retained for
-    /// any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub fn additional_metrics_to_retain(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_metrics_to_retain.as_deref()
     }
@@ -54087,32 +52593,13 @@ impl std::fmt::Debug for CreateSecurityProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateScheduledAuditInput {
-    /// <p>How often the scheduled audit takes
-    /// place, either
-    /// <code>DAILY</code>,
-    /// <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is
-    /// determined by the system.</p>
+    /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
     pub frequency: std::option::Option<crate::model::AuditFrequency>,
-    /// <p>The day of the month on which the scheduled audit takes place.
-    /// This
-    /// can be "1" through "31" or "LAST". This field is required if the "frequency"
-    /// parameter is set to <code>MONTHLY</code>. If days
-    /// 29
-    /// to 31 are specified, and the month
-    /// doesn't
-    /// have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
+    /// <p>The day of the month on which the scheduled audit takes place. This can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month doesn't have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
     pub day_of_month: std::option::Option<std::string::String>,
-    /// <p>The day of the week on which the scheduled audit takes
-    /// place,
-    /// either
-    /// <code>SUN</code>,
-    /// <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code>
-    /// parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+    /// <p>The day of the week on which the scheduled audit takes place, either <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
     pub day_of_week: std::option::Option<crate::model::DayOfWeek>,
-    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub target_check_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
     pub scheduled_audit_name: std::option::Option<std::string::String>,
@@ -54120,38 +52607,19 @@ pub struct CreateScheduledAuditInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateScheduledAuditInput {
-    /// <p>How often the scheduled audit takes
-    /// place, either
-    /// <code>DAILY</code>,
-    /// <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is
-    /// determined by the system.</p>
+    /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
     pub fn frequency(&self) -> std::option::Option<&crate::model::AuditFrequency> {
         self.frequency.as_ref()
     }
-    /// <p>The day of the month on which the scheduled audit takes place.
-    /// This
-    /// can be "1" through "31" or "LAST". This field is required if the "frequency"
-    /// parameter is set to <code>MONTHLY</code>. If days
-    /// 29
-    /// to 31 are specified, and the month
-    /// doesn't
-    /// have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
+    /// <p>The day of the month on which the scheduled audit takes place. This can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month doesn't have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
     pub fn day_of_month(&self) -> std::option::Option<&str> {
         self.day_of_month.as_deref()
     }
-    /// <p>The day of the week on which the scheduled audit takes
-    /// place,
-    /// either
-    /// <code>SUN</code>,
-    /// <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code>
-    /// parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
+    /// <p>The day of the week on which the scheduled audit takes place, either <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
     pub fn day_of_week(&self) -> std::option::Option<&crate::model::DayOfWeek> {
         self.day_of_week.as_ref()
     }
-    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn target_check_names(&self) -> std::option::Option<&[std::string::String]> {
         self.target_check_names.as_deref()
     }
@@ -54181,26 +52649,21 @@ impl std::fmt::Debug for CreateScheduledAuditInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRoleAliasInput {
-    /// <p>The role alias that points to a role ARN. This allows you to change the role without
-    /// having to update the device.</p>
+    /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
     pub role_alias: std::option::Option<std::string::String>,
     /// <p>The role ARN.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>How long (in seconds) the credentials will be valid. The default value is 3,600 seconds.</p>
     pub credential_duration_seconds: std::option::Option<i32>,
-    /// <p>Metadata which can be used to manage the role alias.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the role alias.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRoleAliasInput {
-    /// <p>The role alias that points to a role ARN. This allows you to change the role without
-    /// having to update the device.</p>
+    /// <p>The role alias that points to a role ARN. This allows you to change the role without having to update the device.</p>
     pub fn role_alias(&self) -> std::option::Option<&str> {
         self.role_alias.as_deref()
     }
@@ -54212,13 +52675,10 @@ impl CreateRoleAliasInput {
     pub fn credential_duration_seconds(&self) -> std::option::Option<i32> {
         self.credential_duration_seconds
     }
-    /// <p>Metadata which can be used to manage the role alias.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the role alias.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -54285,18 +52745,14 @@ pub struct CreateProvisioningTemplateInput {
     pub template_body: std::option::Option<std::string::String>,
     /// <p>True to enable the fleet provisioning template, otherwise false.</p>
     pub enabled: bool,
-    /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role
-    /// grants permission to provision a device.</p>
+    /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
     pub provisioning_role_arn: std::option::Option<std::string::String>,
     /// <p>Creates a pre-provisioning hook template.</p>
     pub pre_provisioning_hook: std::option::Option<crate::model::ProvisioningHook>,
-    /// <p>Metadata which can be used to manage the fleet provisioning template.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -54317,8 +52773,7 @@ impl CreateProvisioningTemplateInput {
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role
-    /// grants permission to provision a device.</p>
+    /// <p>The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.</p>
     pub fn provisioning_role_arn(&self) -> std::option::Option<&str> {
         self.provisioning_role_arn.as_deref()
     }
@@ -54326,13 +52781,10 @@ impl CreateProvisioningTemplateInput {
     pub fn pre_provisioning_hook(&self) -> std::option::Option<&crate::model::ProvisioningHook> {
         self.pre_provisioning_hook.as_ref()
     }
-    /// <p>Metadata which can be used to manage the fleet provisioning template.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the fleet provisioning template.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -54379,12 +52831,9 @@ impl std::fmt::Debug for CreateProvisioningClaimInput {
 pub struct CreatePolicyVersionInput {
     /// <p>The policy name.</p>
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of
-    /// 2048, excluding whitespace.</p>
+    /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
     pub policy_document: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the policy version is set as the default. When this parameter is
-    /// true, the new policy version becomes the operative version (that is, the version that is in
-    /// effect for the certificates to which the policy is attached).</p>
+    /// <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
     pub set_as_default: bool,
 }
 impl CreatePolicyVersionInput {
@@ -54392,14 +52841,11 @@ impl CreatePolicyVersionInput {
     pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of
-    /// 2048, excluding whitespace.</p>
+    /// <p>The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.</p>
     pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
     }
-    /// <p>Specifies whether the policy version is set as the default. When this parameter is
-    /// true, the new policy version becomes the operative version (that is, the version that is in
-    /// effect for the certificates to which the policy is attached).</p>
+    /// <p>Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>
     pub fn set_as_default(&self) -> bool {
         self.set_as_default
     }
@@ -54420,16 +52866,12 @@ impl std::fmt::Debug for CreatePolicyVersionInput {
 pub struct CreatePolicyInput {
     /// <p>The policy name.</p>
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of
-    /// 2048, excluding whitespace.</p>
+    /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
     pub policy_document: std::option::Option<std::string::String>,
-    /// <p>Metadata which can be used to manage the policy.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the policy.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -54438,18 +52880,14 @@ impl CreatePolicyInput {
     pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of
-    /// 2048, excluding whitespace.</p>
+    /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
     pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
     }
-    /// <p>Metadata which can be used to manage the policy.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the policy.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -54475,14 +52913,9 @@ pub struct CreateOtaUpdateInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The devices targeted to receive OTA updates.</p>
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
-    /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     pub protocols: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
-    /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things
-    /// specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a
-    /// thing when a change is detected in a target. For example, an update will run on a thing when the thing is
-    /// added to a target group, even after the update was completed by all things originally in the group. Valid
-    /// values: CONTINUOUS | SNAPSHOT.</p>
+    /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
     pub target_selection: std::option::Option<crate::model::TargetSelection>,
     /// <p>Configuration for the rollout of OTA updates.</p>
     pub aws_job_executions_rollout_config:
@@ -54491,15 +52924,11 @@ pub struct CreateOtaUpdateInput {
     pub aws_job_presigned_url_config: std::option::Option<crate::model::AwsJobPresignedUrlConfig>,
     /// <p>The criteria that determine when and how a job abort takes place.</p>
     pub aws_job_abort_config: std::option::Option<crate::model::AwsJobAbortConfig>,
-    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer is
-    /// started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution
-    /// status is not set to another terminal state before the timer expires, it will be automatically
-    /// set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub aws_job_timeout_config: std::option::Option<crate::model::AwsJobTimeoutConfig>,
     /// <p>The files to be streamed by the OTA update.</p>
     pub files: std::option::Option<std::vec::Vec<crate::model::OtaUpdateFile>>,
-    /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources
-    /// to create an OTA update job.</p>
+    /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
     pub additional_parameters:
@@ -54520,16 +52949,11 @@ impl CreateOtaUpdateInput {
     pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
         self.targets.as_deref()
     }
-    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both
-    /// HTTP and MQTT are specified, the target device can choose the protocol.</p>
+    /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     pub fn protocols(&self) -> std::option::Option<&[crate::model::Protocol]> {
         self.protocols.as_deref()
     }
-    /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things
-    /// specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a
-    /// thing when a change is detected in a target. For example, an update will run on a thing when the thing is
-    /// added to a target group, even after the update was completed by all things originally in the group. Valid
-    /// values: CONTINUOUS | SNAPSHOT.</p>
+    /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
     pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
         self.target_selection.as_ref()
     }
@@ -54549,10 +52973,7 @@ impl CreateOtaUpdateInput {
     pub fn aws_job_abort_config(&self) -> std::option::Option<&crate::model::AwsJobAbortConfig> {
         self.aws_job_abort_config.as_ref()
     }
-    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer is
-    /// started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution
-    /// status is not set to another terminal state before the timer expires, it will be automatically
-    /// set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn aws_job_timeout_config(
         &self,
     ) -> std::option::Option<&crate::model::AwsJobTimeoutConfig> {
@@ -54562,8 +52983,7 @@ impl CreateOtaUpdateInput {
     pub fn files(&self) -> std::option::Option<&[crate::model::OtaUpdateFile]> {
         self.files.as_deref()
     }
-    /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources
-    /// to create an OTA update job.</p>
+    /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -54673,18 +53093,14 @@ impl std::fmt::Debug for CreateKeysAndCertificateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobTemplateInput {
-    /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric
-    /// characters, "-", and "_" are valid for use here.</p>
+    /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
     pub job_template_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the job to use as the basis for the job template.</p>
     pub job_arn: std::option::Option<std::string::String>,
-    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p>
-    /// <note>
+    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
     /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
     /// <p>The placeholder link is of the following form:</p>
-    /// <p>
-    /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-    /// </p>
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
     /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
     /// </note>
     pub document_source: std::option::Option<std::string::String>,
@@ -54699,17 +53115,15 @@ pub struct CreateJobTemplateInput {
         std::option::Option<crate::model::JobExecutionsRolloutConfig>,
     /// <p>The criteria that determine when and how a job abort takes place.</p>
     pub abort_config: std::option::Option<crate::model::AbortConfig>,
-    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-    /// execution status is not set to another terminal state before the timer expires, it will
-    /// be automatically set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
     /// <p>Metadata that can be used to manage the job template.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Allows you to create the criteria to retry a job.</p>
+    pub job_executions_retry_config: std::option::Option<crate::model::JobExecutionsRetryConfig>,
 }
 impl CreateJobTemplateInput {
-    /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric
-    /// characters, "-", and "_" are valid for use here.</p>
+    /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
     pub fn job_template_id(&self) -> std::option::Option<&str> {
         self.job_template_id.as_deref()
     }
@@ -54717,13 +53131,10 @@ impl CreateJobTemplateInput {
     pub fn job_arn(&self) -> std::option::Option<&str> {
         self.job_arn.as_deref()
     }
-    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p>
-    /// <note>
+    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
     /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
     /// <p>The placeholder link is of the following form:</p>
-    /// <p>
-    /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-    /// </p>
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
     /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
     /// </note>
     pub fn document_source(&self) -> std::option::Option<&str> {
@@ -54751,16 +53162,19 @@ impl CreateJobTemplateInput {
     pub fn abort_config(&self) -> std::option::Option<&crate::model::AbortConfig> {
         self.abort_config.as_ref()
     }
-    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-    /// execution status is not set to another terminal state before the timer expires, it will
-    /// be automatically set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn timeout_config(&self) -> std::option::Option<&crate::model::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
     /// <p>Metadata that can be used to manage the job template.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+    /// <p>Allows you to create the criteria to retry a job.</p>
+    pub fn job_executions_retry_config(
+        &self,
+    ) -> std::option::Option<&crate::model::JobExecutionsRetryConfig> {
+        self.job_executions_retry_config.as_ref()
     }
 }
 impl std::fmt::Debug for CreateJobTemplateInput {
@@ -54779,6 +53193,10 @@ impl std::fmt::Debug for CreateJobTemplateInput {
         formatter.field("abort_config", &self.abort_config);
         formatter.field("timeout_config", &self.timeout_config);
         formatter.field("tags", &self.tags);
+        formatter.field(
+            "job_executions_retry_config",
+            &self.job_executions_retry_config,
+        );
         formatter.finish()
     }
 }
@@ -54787,18 +53205,14 @@ impl std::fmt::Debug for CreateJobTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobInput {
-    /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric
-    /// characters, "-" and "_" are valid for use here.</p>
+    /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
     pub job_id: std::option::Option<std::string::String>,
     /// <p>A list of things and thing groups to which the job should be sent.</p>
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
-    /// <note>
+    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note>
     /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
     /// <p>The placeholder link is of the following form:</p>
-    /// <p>
-    /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-    /// </p>
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
     /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
     /// </note>
     pub document_source: std::option::Option<std::string::String>,
@@ -54808,42 +53222,33 @@ pub struct CreateJobInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Configuration information for pre-signed S3 URLs.</p>
     pub presigned_url_config: std::option::Option<crate::model::PresignedUrlConfig>,
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-    /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-    /// target group, even after the job was completed by all things originally in the group.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
     pub target_selection: std::option::Option<crate::model::TargetSelection>,
     /// <p>Allows you to create a staged rollout of the job.</p>
     pub job_executions_rollout_config:
         std::option::Option<crate::model::JobExecutionsRolloutConfig>,
-    /// <p>Allows you to create criteria to abort a job.</p>
+    /// <p>Allows you to create the criteria to abort a job.</p>
     pub abort_config: std::option::Option<crate::model::AbortConfig>,
-    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer
-    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-    /// execution status is not set to another terminal state before the time expires, it will be
-    /// automatically set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
     /// <p>Metadata which can be used to manage the job.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the job template used to create the job.</p>
     pub job_template_arn: std::option::Option<std::string::String>,
+    /// <p>Allows you to create the criteria to retry a job.</p>
+    pub job_executions_retry_config: std::option::Option<crate::model::JobExecutionsRetryConfig>,
     /// <p>Parameters of a managed template that you can specify to create the job document.</p>
     pub document_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateJobInput {
-    /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric
-    /// characters, "-" and "_" are valid for use here.</p>
+    /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -54851,13 +53256,10 @@ impl CreateJobInput {
     pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
         self.targets.as_deref()
     }
-    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
-    /// <note>
+    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note>
     /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
     /// <p>The placeholder link is of the following form:</p>
-    /// <p>
-    /// <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-    /// </p>
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
     /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
     /// </note>
     pub fn document_source(&self) -> std::option::Option<&str> {
@@ -54875,10 +53277,7 @@ impl CreateJobInput {
     pub fn presigned_url_config(&self) -> std::option::Option<&crate::model::PresignedUrlConfig> {
         self.presigned_url_config.as_ref()
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things
-    /// specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing
-    /// when a change is detected in a target. For example, a job will run on a thing when the thing is added to a
-    /// target group, even after the job was completed by all things originally in the group.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p>
     pub fn target_selection(&self) -> std::option::Option<&crate::model::TargetSelection> {
         self.target_selection.as_ref()
     }
@@ -54888,14 +53287,11 @@ impl CreateJobInput {
     ) -> std::option::Option<&crate::model::JobExecutionsRolloutConfig> {
         self.job_executions_rollout_config.as_ref()
     }
-    /// <p>Allows you to create criteria to abort a job.</p>
+    /// <p>Allows you to create the criteria to abort a job.</p>
     pub fn abort_config(&self) -> std::option::Option<&crate::model::AbortConfig> {
         self.abort_config.as_ref()
     }
-    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer
-    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-    /// execution status is not set to another terminal state before the time expires, it will be
-    /// automatically set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn timeout_config(&self) -> std::option::Option<&crate::model::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
@@ -54904,12 +53300,8 @@ impl CreateJobInput {
         self.tags.as_deref()
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
@@ -54918,6 +53310,12 @@ impl CreateJobInput {
     /// <p>The ARN of the job template used to create the job.</p>
     pub fn job_template_arn(&self) -> std::option::Option<&str> {
         self.job_template_arn.as_deref()
+    }
+    /// <p>Allows you to create the criteria to retry a job.</p>
+    pub fn job_executions_retry_config(
+        &self,
+    ) -> std::option::Option<&crate::model::JobExecutionsRetryConfig> {
+        self.job_executions_retry_config.as_ref()
     }
     /// <p>Parameters of a managed template that you can specify to create the job document.</p>
     pub fn document_parameters(
@@ -54946,6 +53344,10 @@ impl std::fmt::Debug for CreateJobInput {
         formatter.field("tags", &self.tags);
         formatter.field("namespace_id", &self.namespace_id);
         formatter.field("job_template_arn", &self.job_template_arn);
+        formatter.field(
+            "job_executions_retry_config",
+            &self.job_executions_retry_config,
+        );
         formatter.field("document_parameters", &self.document_parameters);
         formatter.finish()
     }
@@ -54971,8 +53373,7 @@ pub struct CreateFleetMetricInput {
     pub query_version: std::option::Option<std::string::String>,
     /// <p>The name of the index to search.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-    /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
     pub unit: std::option::Option<crate::model::FleetMetricUnit>,
     /// <p>Metadata, which can be used to manage the fleet metric.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -55010,8 +53411,7 @@ impl CreateFleetMetricInput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-    /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. Default to null.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::FleetMetricUnit> {
         self.unit.as_ref()
     }
@@ -55045,18 +53445,15 @@ pub struct CreateDynamicThingGroupInput {
     pub thing_group_name: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group properties.</p>
     pub thing_group_properties: std::option::Option<crate::model::ThingGroupProperties>,
-    /// <p>The dynamic thing group index name.</p>
-    /// <note>
+    /// <p>The dynamic thing group index name.</p> <note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group search query string.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>The dynamic thing group query version.</p>
-    /// <note>
-    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-    /// query version defaults to this value.</p>
+    /// <p>The dynamic thing group query version.</p> <note>
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
     pub query_version: std::option::Option<std::string::String>,
     /// <p>Metadata which can be used to manage the dynamic thing group.</p>
@@ -55073,8 +53470,7 @@ impl CreateDynamicThingGroupInput {
     ) -> std::option::Option<&crate::model::ThingGroupProperties> {
         self.thing_group_properties.as_ref()
     }
-    /// <p>The dynamic thing group index name.</p>
-    /// <note>
+    /// <p>The dynamic thing group index name.</p> <note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub fn index_name(&self) -> std::option::Option<&str> {
@@ -55085,10 +53481,8 @@ impl CreateDynamicThingGroupInput {
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>The dynamic thing group query version.</p>
-    /// <note>
-    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the
-    /// query version defaults to this value.</p>
+    /// <p>The dynamic thing group query version.</p> <note>
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
     pub fn query_version(&self) -> std::option::Option<&str> {
         self.query_version.as_deref()
@@ -55119,26 +53513,20 @@ pub struct CreateDomainConfigurationInput {
     pub domain_configuration_name: std::option::Option<std::string::String>,
     /// <p>The name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN.
-    /// This value is not required for Amazon Web Services-managed domains.</p>
+    /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
     pub server_certificate_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority.
-    /// This value is not required for Amazon Web Services-managed domains.</p>
+    /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
     pub validation_certificate_arn: std::option::Option<std::string::String>,
     /// <p>An object that specifies the authorization service for a domain.</p>
     pub authorizer_config: std::option::Option<crate::model::AuthorizerConfig>,
-    /// <p>The type of service delivered by the endpoint.</p>
-    /// <note>
+    /// <p>The type of service delivered by the endpoint.</p> <note>
     /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     pub service_type: std::option::Option<crate::model::ServiceType>,
-    /// <p>Metadata which can be used to manage the domain configuration.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -55151,13 +53539,11 @@ impl CreateDomainConfigurationInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN.
-    /// This value is not required for Amazon Web Services-managed domains.</p>
+    /// <p>The ARNs of the certificates that IoT passes to the device during the TLS handshake. Currently you can specify only one certificate ARN. This value is not required for Amazon Web Services-managed domains.</p>
     pub fn server_certificate_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.server_certificate_arns.as_deref()
     }
-    /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority.
-    /// This value is not required for Amazon Web Services-managed domains.</p>
+    /// <p>The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.</p>
     pub fn validation_certificate_arn(&self) -> std::option::Option<&str> {
         self.validation_certificate_arn.as_deref()
     }
@@ -55165,20 +53551,16 @@ impl CreateDomainConfigurationInput {
     pub fn authorizer_config(&self) -> std::option::Option<&crate::model::AuthorizerConfig> {
         self.authorizer_config.as_ref()
     }
-    /// <p>The type of service delivered by the endpoint.</p>
-    /// <note>
+    /// <p>The type of service delivered by the endpoint.</p> <note>
     /// <p>Amazon Web Services IoT Core currently supports only the <code>DATA</code> service type.</p>
     /// </note>
     pub fn service_type(&self) -> std::option::Option<&crate::model::ServiceType> {
         self.service_type.as_ref()
     }
-    /// <p>Metadata which can be used to manage the domain configuration.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the domain configuration.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -55207,15 +53589,13 @@ impl std::fmt::Debug for CreateDomainConfigurationInput {
 pub struct CreateDimensionInput {
     /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code>
-    /// </p>
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub r#type: std::option::Option<crate::model::DimensionType>,
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
     pub string_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Metadata that can be used to manage the dimension.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs.
-    /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateDimensionInput {
@@ -55223,8 +53603,7 @@ impl CreateDimensionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code>
-    /// </p>
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DimensionType> {
         self.r#type.as_ref()
     }
@@ -55236,8 +53615,7 @@ impl CreateDimensionInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs.
-    /// If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -55258,65 +53636,35 @@ impl std::fmt::Debug for CreateDimensionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomMetricInput {
-    /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>.
-    /// Cannot be updated
-    /// once defined.</p>
+    /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>. Cannot be updated once defined.</p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Field
-    /// represents a friendly name in the console for the custom metric;
-    /// it
-    /// doesn't have to be unique. Don't use this name as the metric identifier in
-    /// the device metric report. Can be updated once defined.</p>
+    /// <p> Field represents a friendly name in the console for the custom metric; it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated once defined.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-    /// </p>
+    /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
     pub metric_type: std::option::Option<crate::model::CustomMetricType>,
-    /// <p>
-    /// Metadata that can be used to manage the custom metric.
-    /// </p>
+    /// <p> Metadata that can be used to manage the custom metric. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Each custom
-    /// metric must have a unique client request token. If you try to create a new custom metric that
-    /// already exists with a different token,
-    /// an exception
-    /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+    /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateCustomMetricInput {
-    /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>.
-    /// Cannot be updated
-    /// once defined.</p>
+    /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. Shouldn't begin with <code>aws:</code>. Cannot be updated once defined.</p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>
-    /// Field
-    /// represents a friendly name in the console for the custom metric;
-    /// it
-    /// doesn't have to be unique. Don't use this name as the metric identifier in
-    /// the device metric report. Can be updated once defined.</p>
+    /// <p> Field represents a friendly name in the console for the custom metric; it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated once defined.</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>
-    /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-    /// </p>
+    /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
     pub fn metric_type(&self) -> std::option::Option<&crate::model::CustomMetricType> {
         self.metric_type.as_ref()
     }
-    /// <p>
-    /// Metadata that can be used to manage the custom metric.
-    /// </p>
+    /// <p> Metadata that can be used to manage the custom metric. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Each custom
-    /// metric must have a unique client request token. If you try to create a new custom metric that
-    /// already exists with a different token,
-    /// an exception
-    /// occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+    /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -55411,23 +53759,22 @@ pub struct CreateAuthorizerInput {
     pub authorizer_function_arn: std::option::Option<std::string::String>,
     /// <p>The name of the token key used to extract the token from the HTTP headers.</p>
     pub token_key_name: std::option::Option<std::string::String>,
-    /// <p>The public keys used to verify the digital signature returned by your custom
-    /// authentication service.</p>
+    /// <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
     pub token_signing_public_keys:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the create authorizer request.</p>
     pub status: std::option::Option<crate::model::AuthorizerStatus>,
-    /// <p>Metadata which can be used to manage the custom authorizer.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
     pub signing_disabled: std::option::Option<bool>,
+    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub enable_caching_for_http: std::option::Option<bool>,
 }
 impl CreateAuthorizerInput {
     /// <p>The authorizer name.</p>
@@ -55442,8 +53789,7 @@ impl CreateAuthorizerInput {
     pub fn token_key_name(&self) -> std::option::Option<&str> {
         self.token_key_name.as_deref()
     }
-    /// <p>The public keys used to verify the digital signature returned by your custom
-    /// authentication service.</p>
+    /// <p>The public keys used to verify the digital signature returned by your custom authentication service.</p>
     pub fn token_signing_public_keys(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -55454,13 +53800,10 @@ impl CreateAuthorizerInput {
     pub fn status(&self) -> std::option::Option<&crate::model::AuthorizerStatus> {
         self.status.as_ref()
     }
-    /// <p>Metadata which can be used to manage the custom authorizer.</p>
-    /// <note>
-    /// <p>For URI Request parameters use format: ...key1=value1&key2=value2...</p>
-    /// <p>For the CLI command-line parameter use format: &&tags
-    /// "key1=value1&key2=value2..."</p>
-    /// <p>For the cli-input-json file use format: "tags":
-    /// "key1=value1&key2=value2..."</p>
+    /// <p>Metadata which can be used to manage the custom authorizer.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -55468,6 +53811,11 @@ impl CreateAuthorizerInput {
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
     pub fn signing_disabled(&self) -> std::option::Option<bool> {
         self.signing_disabled
+    }
+    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for clients that use persistent HTTP connections. The results are cached for the time specified by the Lambda function in <code>refreshAfterInSeconds</code>. This value does not affect authorization of clients that use MQTT connections.</p>
+    /// <p>The default value is <code>false</code>.</p>
+    pub fn enable_caching_for_http(&self) -> std::option::Option<bool> {
+        self.enable_caching_for_http
     }
 }
 impl std::fmt::Debug for CreateAuthorizerInput {
@@ -55480,6 +53828,7 @@ impl std::fmt::Debug for CreateAuthorizerInput {
         formatter.field("status", &self.status);
         formatter.field("tags", &self.tags);
         formatter.field("signing_disabled", &self.signing_disabled);
+        formatter.field("enable_caching_for_http", &self.enable_caching_for_http);
         formatter.finish()
     }
 }
@@ -55488,36 +53837,21 @@ impl std::fmt::Debug for CreateAuthorizerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub check_name: std::option::Option<std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
-    /// <p>
-    /// The epoch timestamp in seconds at which this suppression expires.
-    /// </p>
+    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// Indicates whether a suppression should exist indefinitely or not.
-    /// </p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub suppress_indefinitely: std::option::Option<bool>,
-    /// <p>
-    /// The description of the audit suppression.
-    /// </p>
+    /// <p> The description of the audit suppression. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>
-    /// Each audit supression must have a unique client request token. If you try to create a new audit
-    /// suppression with the same token as one that already exists, an exception occurs. If you omit this
-    /// value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateAuditSuppressionInput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn check_name(&self) -> std::option::Option<&str> {
         self.check_name.as_deref()
     }
@@ -55525,28 +53859,19 @@ impl CreateAuditSuppressionInput {
     pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
-    /// <p>
-    /// The epoch timestamp in seconds at which this suppression expires.
-    /// </p>
+    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
     pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
-    /// <p>
-    /// Indicates whether a suppression should exist indefinitely or not.
-    /// </p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn suppress_indefinitely(&self) -> std::option::Option<bool> {
         self.suppress_indefinitely
     }
-    /// <p>
-    /// The description of the audit suppression.
-    /// </p>
+    /// <p> The description of the audit suppression. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>
-    /// Each audit supression must have a unique client request token. If you try to create a new audit
-    /// suppression with the same token as one that already exists, an exception occurs. If you omit this
-    /// value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -55604,24 +53929,12 @@ pub struct CancelJobExecutionInput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing whose execution of the job will be canceled.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status
-    /// IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status
-    /// QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set
-    /// <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code>
-    /// will be thrown. The default is <code>false</code>.</p>
-    /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable
-    /// to update the job execution status.  Use caution and ensure that the device is able to
-    /// recover to a valid state.</p>
+    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>
+    /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
     pub force: bool,
-    /// <p>(Optional) The expected current version of the job execution. Each time you update the job
-    /// execution, its version is incremented. If the version of the job execution stored in Jobs does
-    /// not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that
-    /// contains the current job execution status data is returned. (This makes it unnecessary to
-    /// perform a separate DescribeJobExecution request in order to obtain the job execution status
-    /// data.)</p>
+    /// <p>(Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
     pub expected_version: std::option::Option<i64>,
-    /// <p>A collection of name/value pairs that describe the status of the job execution. If not
-    /// specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
+    /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
     pub status_details:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -55634,28 +53947,16 @@ impl CancelJobExecutionInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status
-    /// IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status
-    /// QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set
-    /// <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code>
-    /// will be thrown. The default is <code>false</code>.</p>
-    /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable
-    /// to update the job execution status.  Use caution and ensure that the device is able to
-    /// recover to a valid state.</p>
+    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>
+    /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
     pub fn force(&self) -> bool {
         self.force
     }
-    /// <p>(Optional) The expected current version of the job execution. Each time you update the job
-    /// execution, its version is incremented. If the version of the job execution stored in Jobs does
-    /// not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that
-    /// contains the current job execution status data is returned. (This makes it unnecessary to
-    /// perform a separate DescribeJobExecution request in order to obtain the job execution status
-    /// data.)</p>
+    /// <p>(Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
-    /// <p>A collection of name/value pairs that describe the status of the job execution. If not
-    /// specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
+    /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
     pub fn status_details(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -55685,12 +53986,8 @@ pub struct CancelJobInput {
     pub reason_code: std::option::Option<std::string::String>,
     /// <p>An optional comment string describing why the job was canceled.</p>
     pub comment: std::option::Option<std::string::String>,
-    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED"
-    /// are canceled, otherwise only job executions with status "QUEUED" are canceled. The default
-    /// is <code>false</code>.</p>
-    /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing
-    /// the job to be unable to update the job execution status.  Use caution and ensure that each
-    /// device executing a job which is canceled is able to recover to a valid state.</p>
+    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
+    /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
     pub force: bool,
 }
 impl CancelJobInput {
@@ -55706,12 +54003,8 @@ impl CancelJobInput {
     pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
     }
-    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED"
-    /// are canceled, otherwise only job executions with status "QUEUED" are canceled. The default
-    /// is <code>false</code>.</p>
-    /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing
-    /// the job to be unable to update the job execution status.  Use caution and ensure that each
-    /// device executing a job which is canceled is able to recover to a valid state.</p>
+    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
+    /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
     pub fn force(&self) -> bool {
         self.force
     }
@@ -55731,15 +54024,11 @@ impl std::fmt::Debug for CancelJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelDetectMitigationActionsTaskInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CancelDetectMitigationActionsTaskInput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -55756,13 +54045,11 @@ impl std::fmt::Debug for CancelDetectMitigationActionsTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelCertificateTransferInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl CancelCertificateTransferInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -55779,13 +54066,11 @@ impl std::fmt::Debug for CancelCertificateTransferInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelAuditTaskInput {
-    /// <p>The ID of the audit you want to cancel. You can only cancel an
-    /// audit that is "IN_PROGRESS".</p>
+    /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CancelAuditTaskInput {
-    /// <p>The ID of the audit you want to cancel. You can only cancel an
-    /// audit that is "IN_PROGRESS".</p>
+    /// <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -55825,8 +54110,7 @@ impl std::fmt::Debug for CancelAuditMitigationActionsTaskInput {
 pub struct AttachThingPrincipalInput {
     /// <p>The name of the thing.</p>
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>The principal, which can be a certificate ARN (as returned from the
-    /// CreateCertificate operation) or an Amazon Cognito ID.</p>
+    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub principal: std::option::Option<std::string::String>,
 }
 impl AttachThingPrincipalInput {
@@ -55834,8 +54118,7 @@ impl AttachThingPrincipalInput {
     pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>The principal, which can be a certificate ARN (as returned from the
-    /// CreateCertificate operation) or an Amazon Cognito ID.</p>
+    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
@@ -55886,8 +54169,7 @@ impl std::fmt::Debug for AttachSecurityProfileInput {
 pub struct AttachPrincipalPolicyInput {
     /// <p>The policy name.</p>
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate
-    /// operation) or an Amazon Cognito ID.</p>
+    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub principal: std::option::Option<std::string::String>,
 }
 impl AttachPrincipalPolicyInput {
@@ -55895,8 +54177,7 @@ impl AttachPrincipalPolicyInput {
     pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate
-    /// operation) or an Amazon Cognito ID.</p>
+    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
@@ -55949,12 +54230,8 @@ pub struct AssociateTargetsWithJobInput {
     /// <p>An optional comment string describing why the job was associated with the targets.</p>
     pub comment: std::option::Option<std::string::String>,
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub namespace_id: std::option::Option<std::string::String>,
@@ -55973,12 +54250,8 @@ impl AssociateTargetsWithJobInput {
         self.comment.as_deref()
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that
-    /// contain the value in the following format.</p>
-    /// <p>
-    /// <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-    /// </p>
-    /// <note>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
     pub fn namespace_id(&self) -> std::option::Option<&str> {
@@ -56008,10 +54281,7 @@ pub struct AddThingToThingGroupInput {
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the thing to add to a group.</p>
     pub thing_arn: std::option::Option<std::string::String>,
-    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-    /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-    /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-    /// dynamic group.</p>
+    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     pub override_dynamic_groups: bool,
 }
 impl AddThingToThingGroupInput {
@@ -56031,10 +54301,7 @@ impl AddThingToThingGroupInput {
     pub fn thing_arn(&self) -> std::option::Option<&str> {
         self.thing_arn.as_deref()
     }
-    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is
-    /// reached. If a thing belongs to 10 thing groups, and one or more of those groups are
-    /// dynamic thing groups, adding a thing to a static group removes the thing from the last
-    /// dynamic group.</p>
+    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     pub fn override_dynamic_groups(&self) -> bool {
         self.override_dynamic_groups
     }
@@ -56055,8 +54322,7 @@ impl std::fmt::Debug for AddThingToThingGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddThingToBillingGroupInput {
-    /// <p>The name of the billing group.</p>
-    /// <note>
+    /// <p>The name of the billing group.</p> <note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
     pub billing_group_name: std::option::Option<std::string::String>,
@@ -56068,8 +54334,7 @@ pub struct AddThingToBillingGroupInput {
     pub thing_arn: std::option::Option<std::string::String>,
 }
 impl AddThingToBillingGroupInput {
-    /// <p>The name of the billing group.</p>
-    /// <note>
+    /// <p>The name of the billing group.</p> <note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
     pub fn billing_group_name(&self) -> std::option::Option<&str> {
@@ -56103,15 +54368,13 @@ impl std::fmt::Debug for AddThingToBillingGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptCertificateTransferInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the certificate is active.</p>
     pub set_as_active: bool,
 }
 impl AcceptCertificateTransferInput {
-    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.)</p>
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }

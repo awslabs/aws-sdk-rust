@@ -99,6 +99,40 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationEfs {
     }
 }
 
+/// Operation shape for `CreateLocationFsxLustre`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`create_location_fsx_lustre`](crate::client::Client::create_location_fsx_lustre).
+///
+/// See [`crate::client::fluent_builders::CreateLocationFsxLustre`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateLocationFsxLustre {
+    _private: (),
+}
+impl CreateLocationFsxLustre {
+    /// Creates a new builder-style object to manufacture [`CreateLocationFsxLustreInput`](crate::input::CreateLocationFsxLustreInput)
+    pub fn builder() -> crate::input::create_location_fsx_lustre_input::Builder {
+        crate::input::create_location_fsx_lustre_input::Builder::default()
+    }
+    /// Creates a new `CreateLocationFsxLustre` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for CreateLocationFsxLustre {
+    type Output = std::result::Result<
+        crate::output::CreateLocationFsxLustreOutput,
+        crate::error::CreateLocationFsxLustreError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_location_fsx_lustre_error(response)
+        } else {
+            crate::operation_deser::parse_create_location_fsx_lustre_response(response)
+        }
+    }
+}
+
 /// Operation shape for `CreateLocationFsxWindows`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
@@ -493,6 +527,40 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationEfs {
             crate::operation_deser::parse_describe_location_efs_error(response)
         } else {
             crate::operation_deser::parse_describe_location_efs_response(response)
+        }
+    }
+}
+
+/// Operation shape for `DescribeLocationFsxLustre`.
+///
+/// This is usually constructed for you using the the fluent builder returned by
+/// [`describe_location_fsx_lustre`](crate::client::Client::describe_location_fsx_lustre).
+///
+/// See [`crate::client::fluent_builders::DescribeLocationFsxLustre`] for more details about the operation.
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeLocationFsxLustre {
+    _private: (),
+}
+impl DescribeLocationFsxLustre {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxLustreInput`](crate::input::DescribeLocationFsxLustreInput)
+    pub fn builder() -> crate::input::describe_location_fsx_lustre_input::Builder {
+        crate::input::describe_location_fsx_lustre_input::Builder::default()
+    }
+    /// Creates a new `DescribeLocationFsxLustre` operation.
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxLustre {
+    type Output = std::result::Result<
+        crate::output::DescribeLocationFsxLustreOutput,
+        crate::error::DescribeLocationFsxLustreError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_location_fsx_lustre_error(response)
+        } else {
+            crate::operation_deser::parse_describe_location_fsx_lustre_response(response)
         }
     }
 }

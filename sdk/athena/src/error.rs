@@ -12,11 +12,9 @@ pub struct BatchGetNamedQueryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchGetNamedQueryErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -60,8 +58,6 @@ impl BatchGetNamedQueryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -120,11 +116,9 @@ pub struct BatchGetQueryExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchGetQueryExecutionErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -168,8 +162,6 @@ impl BatchGetQueryExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -228,11 +220,9 @@ pub struct CreateDataCatalogError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDataCatalogErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -276,8 +266,6 @@ impl CreateDataCatalogError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -336,11 +324,9 @@ pub struct CreateNamedQueryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNamedQueryErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -384,8 +370,6 @@ impl CreateNamedQueryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -444,11 +428,9 @@ pub struct CreatePreparedStatementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePreparedStatementErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -492,8 +474,6 @@ impl CreatePreparedStatementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -552,11 +532,9 @@ pub struct CreateWorkGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateWorkGroupErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -600,8 +578,6 @@ impl CreateWorkGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -660,11 +636,9 @@ pub struct DeleteDataCatalogError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDataCatalogErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -708,8 +682,6 @@ impl DeleteDataCatalogError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -768,11 +740,9 @@ pub struct DeleteNamedQueryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNamedQueryErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -816,8 +786,6 @@ impl DeleteNamedQueryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -876,11 +844,9 @@ pub struct DeletePreparedStatementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePreparedStatementErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource, such as a workgroup, was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -927,8 +893,6 @@ impl DeletePreparedStatementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -995,11 +959,9 @@ pub struct DeleteWorkGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteWorkGroupErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1043,8 +1005,6 @@ impl DeleteWorkGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1103,18 +1063,11 @@ pub struct GetDatabaseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDatabaseErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>An exception that Athena received when it called a custom metastore.
-    /// Occurs if the error is not caused by user input (<code>InvalidRequestException</code>)
-    /// or from the Athena platform (<code>InternalServerException</code>). For
-    /// example, if a user-created Lambda function is missing permissions, the
-    /// Lambda
-    /// <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
+    /// <p>An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by user input (<code>InvalidRequestException</code>) or from the Athena platform (<code>InternalServerException</code>). For example, if a user-created Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
     MetadataException(crate::error::MetadataException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1159,8 +1112,6 @@ impl GetDatabaseError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1218,11 +1169,9 @@ pub struct GetDataCatalogError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDataCatalogErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1266,8 +1215,6 @@ impl GetDataCatalogError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1326,11 +1273,9 @@ pub struct GetNamedQueryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetNamedQueryErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1374,8 +1319,6 @@ impl GetNamedQueryError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1434,11 +1377,9 @@ pub struct GetPreparedStatementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPreparedStatementErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource, such as a workgroup, was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1485,8 +1426,6 @@ impl GetPreparedStatementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1553,11 +1492,9 @@ pub struct GetQueryExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetQueryExecutionErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1601,8 +1538,6 @@ impl GetQueryExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1661,11 +1596,9 @@ pub struct GetQueryResultsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetQueryResultsErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1709,8 +1642,6 @@ impl GetQueryResultsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1769,18 +1700,11 @@ pub struct GetTableMetadataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetTableMetadataErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>An exception that Athena received when it called a custom metastore.
-    /// Occurs if the error is not caused by user input (<code>InvalidRequestException</code>)
-    /// or from the Athena platform (<code>InternalServerException</code>). For
-    /// example, if a user-created Lambda function is missing permissions, the
-    /// Lambda
-    /// <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
+    /// <p>An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by user input (<code>InvalidRequestException</code>) or from the Athena platform (<code>InternalServerException</code>). For example, if a user-created Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
     MetadataException(crate::error::MetadataException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1825,8 +1749,6 @@ impl GetTableMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1890,11 +1812,9 @@ pub struct GetWorkGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetWorkGroupErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1938,8 +1858,6 @@ impl GetWorkGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1998,18 +1916,11 @@ pub struct ListDatabasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDatabasesErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>An exception that Athena received when it called a custom metastore.
-    /// Occurs if the error is not caused by user input (<code>InvalidRequestException</code>)
-    /// or from the Athena platform (<code>InternalServerException</code>). For
-    /// example, if a user-created Lambda function is missing permissions, the
-    /// Lambda
-    /// <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
+    /// <p>An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by user input (<code>InvalidRequestException</code>) or from the Athena platform (<code>InternalServerException</code>). For example, if a user-created Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
     MetadataException(crate::error::MetadataException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2054,8 +1965,6 @@ impl ListDatabasesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2119,11 +2028,9 @@ pub struct ListDataCatalogsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDataCatalogsErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2167,8 +2074,6 @@ impl ListDataCatalogsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2227,11 +2132,9 @@ pub struct ListEngineVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEngineVersionsErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2275,8 +2178,6 @@ impl ListEngineVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2335,11 +2236,9 @@ pub struct ListNamedQueriesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListNamedQueriesErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2383,8 +2282,6 @@ impl ListNamedQueriesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2443,11 +2340,9 @@ pub struct ListPreparedStatementsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPreparedStatementsErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2491,8 +2386,6 @@ impl ListPreparedStatementsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2551,11 +2444,9 @@ pub struct ListQueryExecutionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListQueryExecutionsErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2599,8 +2490,6 @@ impl ListQueryExecutionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2659,18 +2548,11 @@ pub struct ListTableMetadataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTableMetadataErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>An exception that Athena received when it called a custom metastore.
-    /// Occurs if the error is not caused by user input (<code>InvalidRequestException</code>)
-    /// or from the Athena platform (<code>InternalServerException</code>). For
-    /// example, if a user-created Lambda function is missing permissions, the
-    /// Lambda
-    /// <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
+    /// <p>An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by user input (<code>InvalidRequestException</code>) or from the Athena platform (<code>InternalServerException</code>). For example, if a user-created Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
     MetadataException(crate::error::MetadataException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2715,8 +2597,6 @@ impl ListTableMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2780,11 +2660,9 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource, such as a workgroup, was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2831,8 +2709,6 @@ impl ListTagsForResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2899,11 +2775,9 @@ pub struct ListWorkGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListWorkGroupsErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2947,8 +2821,6 @@ impl ListWorkGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3007,11 +2879,9 @@ pub struct StartQueryExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartQueryExecutionErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Indicates that the request was throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -3058,8 +2928,6 @@ impl StartQueryExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3126,11 +2994,9 @@ pub struct StopQueryExecutionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopQueryExecutionErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3174,8 +3040,6 @@ impl StopQueryExecutionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3234,11 +3098,9 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource, such as a workgroup, was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3285,8 +3147,6 @@ impl TagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3347,11 +3207,9 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource, such as a workgroup, was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3398,8 +3256,6 @@ impl UntagResourceError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3466,11 +3322,9 @@ pub struct UpdateDataCatalogError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDataCatalogErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3514,8 +3368,6 @@ impl UpdateDataCatalogError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3574,11 +3426,9 @@ pub struct UpdatePreparedStatementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdatePreparedStatementErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A resource, such as a workgroup, was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3625,8 +3475,6 @@ impl UpdatePreparedStatementError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3693,11 +3541,9 @@ pub struct UpdateWorkGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateWorkGroupErrorKind {
-    /// <p>Indicates a platform issue, which may be due to a transient condition or
-    /// outage.</p>
+    /// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Indicates that something is wrong with the input to the request. For example, a
-    /// required parameter may be missing or out of range.</p>
+    /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3741,8 +3587,6 @@ impl UpdateWorkGroupError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3788,20 +3632,17 @@ impl std::error::Error for UpdateWorkGroupError {
     }
 }
 
-/// <p>Indicates that something is wrong with the input to the request. For example, a
-/// required parameter may be missing or out of range.</p>
+/// <p>Indicates that something is wrong with the input to the request. For example, a required parameter may be missing or out of range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
-    /// <p>The error code returned when the query execution failed to process, or when the
-    /// processing request for the named query failed.</p>
+    /// <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>
     pub athena_error_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidRequestException {
-    /// <p>The error code returned when the query execution failed to process, or when the
-    /// processing request for the named query failed.</p>
+    /// <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>
     pub fn athena_error_code(&self) -> std::option::Option<&str> {
         self.athena_error_code.as_deref()
     }
@@ -3840,14 +3681,12 @@ pub mod invalid_request_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The error code returned when the query execution failed to process, or when the
-        /// processing request for the named query failed.</p>
+        /// <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>
         pub fn athena_error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.athena_error_code = Some(input.into());
             self
         }
-        /// <p>The error code returned when the query execution failed to process, or when the
-        /// processing request for the named query failed.</p>
+        /// <p>The error code returned when the query execution failed to process, or when the processing request for the named query failed.</p>
         pub fn set_athena_error_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3881,8 +3720,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>Indicates a platform issue, which may be due to a transient condition or
-/// outage.</p>
+/// <p>Indicates a platform issue, which may be due to a transient condition or outage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -4040,13 +3878,11 @@ impl ResourceNotFoundException {
 pub struct TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>The reason for the query throttling, for example, when it exceeds the concurrent query
-    /// limit.</p>
+    /// <p>The reason for the query throttling, for example, when it exceeds the concurrent query limit.</p>
     pub reason: std::option::Option<crate::model::ThrottleReason>,
 }
 impl TooManyRequestsException {
-    /// <p>The reason for the query throttling, for example, when it exceeds the concurrent query
-    /// limit.</p>
+    /// <p>The reason for the query throttling, for example, when it exceeds the concurrent query limit.</p>
     pub fn reason(&self) -> std::option::Option<&crate::model::ThrottleReason> {
         self.reason.as_ref()
     }
@@ -4095,14 +3931,12 @@ pub mod too_many_requests_exception {
             self.message = input;
             self
         }
-        /// <p>The reason for the query throttling, for example, when it exceeds the concurrent query
-        /// limit.</p>
+        /// <p>The reason for the query throttling, for example, when it exceeds the concurrent query limit.</p>
         pub fn reason(mut self, input: crate::model::ThrottleReason) -> Self {
             self.reason = Some(input);
             self
         }
-        /// <p>The reason for the query throttling, for example, when it exceeds the concurrent query
-        /// limit.</p>
+        /// <p>The reason for the query throttling, for example, when it exceeds the concurrent query limit.</p>
         pub fn set_reason(
             mut self,
             input: std::option::Option<crate::model::ThrottleReason>,
@@ -4126,12 +3960,7 @@ impl TooManyRequestsException {
     }
 }
 
-/// <p>An exception that Athena received when it called a custom metastore.
-/// Occurs if the error is not caused by user input (<code>InvalidRequestException</code>)
-/// or from the Athena platform (<code>InternalServerException</code>). For
-/// example, if a user-created Lambda function is missing permissions, the
-/// Lambda
-/// <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
+/// <p>An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by user input (<code>InvalidRequestException</code>) or from the Athena platform (<code>InternalServerException</code>). For example, if a user-created Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MetadataException {

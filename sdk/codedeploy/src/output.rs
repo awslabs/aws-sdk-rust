@@ -3,19 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDeploymentGroupOutput {
-    /// <p>If the output contains no data, and the corresponding deployment group contained at
-    /// least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto
-    /// Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS
-    /// CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS
-    /// account.</p>
+    /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
     pub hooks_not_cleaned_up: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
 }
 impl UpdateDeploymentGroupOutput {
-    /// <p>If the output contains no data, and the corresponding deployment group contained at
-    /// least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto
-    /// Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS
-    /// CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS
-    /// account.</p>
+    /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
     pub fn hooks_not_cleaned_up(&self) -> std::option::Option<&[crate::model::AutoScalingGroup]> {
         self.hooks_not_cleaned_up.as_deref()
     }
@@ -41,25 +33,14 @@ pub mod update_deployment_group_output {
         ///
         /// To override the contents of this collection use [`set_hooks_not_cleaned_up`](Self::set_hooks_not_cleaned_up).
         ///
-        /// <p>If the output contains no data, and the corresponding deployment group contained at
-        /// least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto
-        /// Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS
-        /// CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS
-        /// account.</p>
-        pub fn hooks_not_cleaned_up(
-            mut self,
-            input: impl Into<crate::model::AutoScalingGroup>,
-        ) -> Self {
+        /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
+        pub fn hooks_not_cleaned_up(mut self, input: crate::model::AutoScalingGroup) -> Self {
             let mut v = self.hooks_not_cleaned_up.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hooks_not_cleaned_up = Some(v);
             self
         }
-        /// <p>If the output contains no data, and the corresponding deployment group contained at
-        /// least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto
-        /// Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS
-        /// CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS
-        /// account.</p>
+        /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the AWS account. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the AWS account.</p>
         pub fn set_hooks_not_cleaned_up(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
@@ -178,12 +159,8 @@ impl TagResourceOutput {
 pub struct StopDeploymentOutput {
     /// <p>The status of the stop deployment operation:</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending: The stop operation is pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>Succeeded: The stop operation was successful.</p>
-    /// </li>
+    /// <li> <p>Pending: The stop operation is pending.</p> </li>
+    /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::StopStatus>,
     /// <p>An accompanying status message.</p>
@@ -192,12 +169,8 @@ pub struct StopDeploymentOutput {
 impl StopDeploymentOutput {
     /// <p>The status of the stop deployment operation:</p>
     /// <ul>
-    /// <li>
-    /// <p>Pending: The stop operation is pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>Succeeded: The stop operation was successful.</p>
-    /// </li>
+    /// <li> <p>Pending: The stop operation is pending.</p> </li>
+    /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::StopStatus> {
         self.status.as_ref()
@@ -227,12 +200,8 @@ pub mod stop_deployment_output {
     impl Builder {
         /// <p>The status of the stop deployment operation:</p>
         /// <ul>
-        /// <li>
-        /// <p>Pending: The stop operation is pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>Succeeded: The stop operation was successful.</p>
-        /// </li>
+        /// <li> <p>Pending: The stop operation is pending.</p> </li>
+        /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::StopStatus) -> Self {
             self.status = Some(input);
@@ -240,12 +209,8 @@ pub mod stop_deployment_output {
         }
         /// <p>The status of the stop deployment operation:</p>
         /// <ul>
-        /// <li>
-        /// <p>Pending: The stop operation is pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>Succeeded: The stop operation was successful.</p>
-        /// </li>
+        /// <li> <p>Pending: The stop operation is pending.</p> </li>
+        /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StopStatus>) -> Self {
             self.status = input;
@@ -404,13 +369,11 @@ impl RegisterApplicationRevisionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLifecycleEventHookExecutionStatusOutput {
-    /// <p>The execution ID of the lifecycle event hook. A hook is specified in the
-    /// <code>hooks</code> section of the deployment's AppSpec file.</p>
+    /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
     pub lifecycle_event_hook_execution_id: std::option::Option<std::string::String>,
 }
 impl PutLifecycleEventHookExecutionStatusOutput {
-    /// <p>The execution ID of the lifecycle event hook. A hook is specified in the
-    /// <code>hooks</code> section of the deployment's AppSpec file.</p>
+    /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
     pub fn lifecycle_event_hook_execution_id(&self) -> std::option::Option<&str> {
         self.lifecycle_event_hook_execution_id.as_deref()
     }
@@ -434,8 +397,7 @@ pub mod put_lifecycle_event_hook_execution_status_output {
         pub(crate) lifecycle_event_hook_execution_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The execution ID of the lifecycle event hook. A hook is specified in the
-        /// <code>hooks</code> section of the deployment's AppSpec file.</p>
+        /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
         pub fn lifecycle_event_hook_execution_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -443,8 +405,7 @@ pub mod put_lifecycle_event_hook_execution_status_output {
             self.lifecycle_event_hook_execution_id = Some(input.into());
             self
         }
-        /// <p>The execution ID of the lifecycle event hook. A hook is specified in the
-        /// <code>hooks</code> section of the deployment's AppSpec file.</p>
+        /// <p>The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file.</p>
         pub fn set_lifecycle_event_hook_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -471,23 +432,17 @@ impl PutLifecycleEventHookExecutionStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated
-    /// with the resource identified by the input <code>ResourceArn</code> parameter. </p>
+    /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated with the resource identified by the input <code>ResourceArn</code> parameter. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list application revisions call to return the next set of
-    /// application revisions in the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
-    /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated
-    /// with the resource identified by the input <code>ResourceArn</code> parameter. </p>
+    /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated with the resource identified by the input <code>ResourceArn</code> parameter. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list application revisions call to return the next set of
-    /// application revisions in the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -514,16 +469,14 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated
-        /// with the resource identified by the input <code>ResourceArn</code> parameter. </p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated with the resource identified by the input <code>ResourceArn</code> parameter. </p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated
-        /// with the resource identified by the input <code>ResourceArn</code> parameter. </p>
+        /// <p> A list of tags returned by <code>ListTagsForResource</code>. The tags are associated with the resource identified by the input <code>ResourceArn</code> parameter. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -531,16 +484,12 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list application revisions call to return the next set of
-        /// application revisions in the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list application revisions call to return the next set of
-        /// application revisions in the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -567,9 +516,7 @@ impl ListTagsForResourceOutput {
 pub struct ListOnPremisesInstancesOutput {
     /// <p>The list of matching on-premises instance names.</p>
     pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list on-premises instances call to return the next set of
-    /// on-premises instances in the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOnPremisesInstancesOutput {
@@ -577,9 +524,7 @@ impl ListOnPremisesInstancesOutput {
     pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_names.as_deref()
     }
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list on-premises instances call to return the next set of
-    /// on-premises instances in the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -621,16 +566,12 @@ pub mod list_on_premises_instances_output {
             self.instance_names = input;
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list on-premises instances call to return the next set of
-        /// on-premises instances in the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list on-premises instances call to return the next set of
-        /// on-premises instances in the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list on-premises instances call to return the next set of on-premises instances in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -657,9 +598,7 @@ impl ListOnPremisesInstancesOutput {
 pub struct ListGitHubAccountTokenNamesOutput {
     /// <p>A list of names of connections to GitHub accounts.</p>
     pub token_name_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next
-    /// set of names in the list. </p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next set of names in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGitHubAccountTokenNamesOutput {
@@ -667,9 +606,7 @@ impl ListGitHubAccountTokenNamesOutput {
     pub fn token_name_list(&self) -> std::option::Option<&[std::string::String]> {
         self.token_name_list.as_deref()
     }
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next
-    /// set of names in the list. </p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next set of names in the list. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -711,16 +648,12 @@ pub mod list_git_hub_account_token_names_output {
             self.token_name_list = input;
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next
-        /// set of names in the list. </p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next set of names in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next
-        /// set of names in the list. </p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to return the next set of names in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -747,9 +680,7 @@ impl ListGitHubAccountTokenNamesOutput {
 pub struct ListDeploymentTargetsOutput {
     /// <p> The unique IDs of deployment targets. </p>
     pub target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> If a large amount of information is returned, a token identifier is also returned. It
-    /// can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next
-    /// set of deployment targets in the list. </p>
+    /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentTargetsOutput {
@@ -757,9 +688,7 @@ impl ListDeploymentTargetsOutput {
     pub fn target_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.target_ids.as_deref()
     }
-    /// <p> If a large amount of information is returned, a token identifier is also returned. It
-    /// can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next
-    /// set of deployment targets in the list. </p>
+    /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -801,16 +730,12 @@ pub mod list_deployment_targets_output {
             self.target_ids = input;
             self
         }
-        /// <p> If a large amount of information is returned, a token identifier is also returned. It
-        /// can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next
-        /// set of deployment targets in the list. </p>
+        /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> If a large amount of information is returned, a token identifier is also returned. It
-        /// can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next
-        /// set of deployment targets in the list. </p>
+        /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -837,9 +762,7 @@ impl ListDeploymentTargetsOutput {
 pub struct ListDeploymentsOutput {
     /// <p>A list of deployment IDs.</p>
     pub deployments: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list deployments call to return the next set of deployments in
-    /// the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentsOutput {
@@ -847,9 +770,7 @@ impl ListDeploymentsOutput {
     pub fn deployments(&self) -> std::option::Option<&[std::string::String]> {
         self.deployments.as_deref()
     }
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list deployments call to return the next set of deployments in
-    /// the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -891,16 +812,12 @@ pub mod list_deployments_output {
             self.deployments = input;
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list deployments call to return the next set of deployments in
-        /// the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list deployments call to return the next set of deployments in
-        /// the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployments call to return the next set of deployments in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -927,9 +844,7 @@ impl ListDeploymentsOutput {
 pub struct ListDeploymentInstancesOutput {
     /// <p>A list of instance IDs.</p>
     pub instances_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list deployment instances call to return the next set of
-    /// deployment instances in the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentInstancesOutput {
@@ -937,9 +852,7 @@ impl ListDeploymentInstancesOutput {
     pub fn instances_list(&self) -> std::option::Option<&[std::string::String]> {
         self.instances_list.as_deref()
     }
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list deployment instances call to return the next set of
-    /// deployment instances in the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -981,16 +894,12 @@ pub mod list_deployment_instances_output {
             self.instances_list = input;
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list deployment instances call to return the next set of
-        /// deployment instances in the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list deployment instances call to return the next set of
-        /// deployment instances in the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1019,9 +928,7 @@ pub struct ListDeploymentGroupsOutput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>A list of deployment group names.</p>
     pub deployment_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list deployment groups call to return the next set of deployment
-    /// groups in the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentGroupsOutput {
@@ -1033,9 +940,7 @@ impl ListDeploymentGroupsOutput {
     pub fn deployment_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.deployment_groups.as_deref()
     }
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list deployment groups call to return the next set of deployment
-    /// groups in the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1092,16 +997,12 @@ pub mod list_deployment_groups_output {
             self.deployment_groups = input;
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list deployment groups call to return the next set of deployment
-        /// groups in the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list deployment groups call to return the next set of deployment
-        /// groups in the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1127,23 +1028,17 @@ impl ListDeploymentGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentConfigsOutput {
-    /// <p>A list of deployment configurations, including built-in configurations such as
-    /// <code>CodeDeployDefault.OneAtATime</code>.</p>
+    /// <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
     pub deployment_configs_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list deployment configurations call to return the next set of
-    /// deployment configurations in the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentConfigsOutput {
-    /// <p>A list of deployment configurations, including built-in configurations such as
-    /// <code>CodeDeployDefault.OneAtATime</code>.</p>
+    /// <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
     pub fn deployment_configs_list(&self) -> std::option::Option<&[std::string::String]> {
         self.deployment_configs_list.as_deref()
     }
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list deployment configurations call to return the next set of
-    /// deployment configurations in the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1170,16 +1065,14 @@ pub mod list_deployment_configs_output {
         ///
         /// To override the contents of this collection use [`set_deployment_configs_list`](Self::set_deployment_configs_list).
         ///
-        /// <p>A list of deployment configurations, including built-in configurations such as
-        /// <code>CodeDeployDefault.OneAtATime</code>.</p>
+        /// <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
         pub fn deployment_configs_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.deployment_configs_list.unwrap_or_default();
             v.push(input.into());
             self.deployment_configs_list = Some(v);
             self
         }
-        /// <p>A list of deployment configurations, including built-in configurations such as
-        /// <code>CodeDeployDefault.OneAtATime</code>.</p>
+        /// <p>A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.</p>
         pub fn set_deployment_configs_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1187,16 +1080,12 @@ pub mod list_deployment_configs_output {
             self.deployment_configs_list = input;
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list deployment configurations call to return the next set of
-        /// deployment configurations in the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list deployment configurations call to return the next set of
-        /// deployment configurations in the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment configurations call to return the next set of deployment configurations in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1223,9 +1112,7 @@ impl ListDeploymentConfigsOutput {
 pub struct ListApplicationsOutput {
     /// <p>A list of application names.</p>
     pub applications: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list applications call to return the next set of applications in
-    /// the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list applications call to return the next set of applications in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
@@ -1233,9 +1120,7 @@ impl ListApplicationsOutput {
     pub fn applications(&self) -> std::option::Option<&[std::string::String]> {
         self.applications.as_deref()
     }
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list applications call to return the next set of applications in
-    /// the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list applications call to return the next set of applications in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1277,16 +1162,12 @@ pub mod list_applications_output {
             self.applications = input;
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list applications call to return the next set of applications in
-        /// the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list applications call to return the next set of applications in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list applications call to return the next set of applications in
-        /// the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list applications call to return the next set of applications in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1313,9 +1194,7 @@ impl ListApplicationsOutput {
 pub struct ListApplicationRevisionsOutput {
     /// <p>A list of locations that contain the matching revisions.</p>
     pub revisions: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>,
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list application revisions call to return the next set of
-    /// application revisions in the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationRevisionsOutput {
@@ -1323,9 +1202,7 @@ impl ListApplicationRevisionsOutput {
     pub fn revisions(&self) -> std::option::Option<&[crate::model::RevisionLocation]> {
         self.revisions.as_deref()
     }
-    /// <p>If a large amount of information is returned, an identifier is also returned. It can
-    /// be used in a subsequent list application revisions call to return the next set of
-    /// application revisions in the list.</p>
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1353,9 +1230,9 @@ pub mod list_application_revisions_output {
         /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
         ///
         /// <p>A list of locations that contain the matching revisions.</p>
-        pub fn revisions(mut self, input: impl Into<crate::model::RevisionLocation>) -> Self {
+        pub fn revisions(mut self, input: crate::model::RevisionLocation) -> Self {
             let mut v = self.revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revisions = Some(v);
             self
         }
@@ -1367,16 +1244,12 @@ pub mod list_application_revisions_output {
             self.revisions = input;
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list application revisions call to return the next set of
-        /// application revisions in the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a large amount of information is returned, an identifier is also returned. It can
-        /// be used in a subsequent list application revisions call to return the next set of
-        /// application revisions in the list.</p>
+        /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1458,19 +1331,11 @@ impl GetOnPremisesInstanceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentTargetOutput {
-    /// <p> A deployment target that contains information about a deployment such as its status,
-    /// lifecycle events, and when it was last updated. It also contains metadata about the
-    /// deployment target. The deployment target metadata depends on the deployment target's
-    /// type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
-    /// <code>ecsTarget</code>). </p>
+    /// <p> A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
     pub deployment_target: std::option::Option<crate::model::DeploymentTarget>,
 }
 impl GetDeploymentTargetOutput {
-    /// <p> A deployment target that contains information about a deployment such as its status,
-    /// lifecycle events, and when it was last updated. It also contains metadata about the
-    /// deployment target. The deployment target metadata depends on the deployment target's
-    /// type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
-    /// <code>ecsTarget</code>). </p>
+    /// <p> A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
     pub fn deployment_target(&self) -> std::option::Option<&crate::model::DeploymentTarget> {
         self.deployment_target.as_ref()
     }
@@ -1491,20 +1356,12 @@ pub mod get_deployment_target_output {
         pub(crate) deployment_target: std::option::Option<crate::model::DeploymentTarget>,
     }
     impl Builder {
-        /// <p> A deployment target that contains information about a deployment such as its status,
-        /// lifecycle events, and when it was last updated. It also contains metadata about the
-        /// deployment target. The deployment target metadata depends on the deployment target's
-        /// type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
-        /// <code>ecsTarget</code>). </p>
+        /// <p> A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
         pub fn deployment_target(mut self, input: crate::model::DeploymentTarget) -> Self {
             self.deployment_target = Some(input);
             self
         }
-        /// <p> A deployment target that contains information about a deployment such as its status,
-        /// lifecycle events, and when it was last updated. It also contains metadata about the
-        /// deployment target. The deployment target metadata depends on the deployment target's
-        /// type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
-        /// <code>ecsTarget</code>). </p>
+        /// <p> A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
         pub fn set_deployment_target(
             mut self,
             input: std::option::Option<crate::model::DeploymentTarget>,
@@ -2033,19 +1890,11 @@ impl DeleteGitHubAccountTokenOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeploymentGroupOutput {
-    /// <p>If the output contains no data, and the corresponding deployment group contained at
-    /// least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto
-    /// Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.
-    /// If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle
-    /// event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
+    /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
     pub hooks_not_cleaned_up: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
 }
 impl DeleteDeploymentGroupOutput {
-    /// <p>If the output contains no data, and the corresponding deployment group contained at
-    /// least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto
-    /// Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.
-    /// If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle
-    /// event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
+    /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
     pub fn hooks_not_cleaned_up(&self) -> std::option::Option<&[crate::model::AutoScalingGroup]> {
         self.hooks_not_cleaned_up.as_deref()
     }
@@ -2071,25 +1920,14 @@ pub mod delete_deployment_group_output {
         ///
         /// To override the contents of this collection use [`set_hooks_not_cleaned_up`](Self::set_hooks_not_cleaned_up).
         ///
-        /// <p>If the output contains no data, and the corresponding deployment group contained at
-        /// least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto
-        /// Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.
-        /// If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle
-        /// event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
-        pub fn hooks_not_cleaned_up(
-            mut self,
-            input: impl Into<crate::model::AutoScalingGroup>,
-        ) -> Self {
+        /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
+        pub fn hooks_not_cleaned_up(mut self, input: crate::model::AutoScalingGroup) -> Self {
             let mut v = self.hooks_not_cleaned_up.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hooks_not_cleaned_up = Some(v);
             self
         }
-        /// <p>If the output contains no data, and the corresponding deployment group contained at
-        /// least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto
-        /// Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.
-        /// If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle
-        /// event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
+        /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, AWS CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group.</p>
         pub fn set_hooks_not_cleaned_up(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
@@ -2464,9 +2302,9 @@ pub mod batch_get_on_premises_instances_output {
         /// To override the contents of this collection use [`set_instance_infos`](Self::set_instance_infos).
         ///
         /// <p>Information about the on-premises instances.</p>
-        pub fn instance_infos(mut self, input: impl Into<crate::model::InstanceInfo>) -> Self {
+        pub fn instance_infos(mut self, input: crate::model::InstanceInfo) -> Self {
             let mut v = self.instance_infos.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instance_infos = Some(v);
             self
         }
@@ -2497,58 +2335,22 @@ impl BatchGetOnPremisesInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDeploymentTargetsOutput {
-    /// <p> A list of target objects for a deployment. Each target object contains details about
-    /// the target, such as its status and lifecycle events. The type of the target objects
-    /// depends on the deployment' compute platform. </p>
+    /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>EC2/On-premises</b>: Each target object is an EC2
-    /// or on-premises instance. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>AWS Lambda</b>: The target object is a specific
-    /// version of an AWS Lambda function. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon ECS</b>: The target object is an Amazon ECS
-    /// service. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>CloudFormation</b>: The target object is an AWS
-    /// CloudFormation blue/green deployment. </p>
-    /// </li>
+    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance. </p> </li>
+    /// <li> <p> <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function. </p> </li>
+    /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
+    /// <li> <p> <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment. </p> </li>
     /// </ul>
     pub deployment_targets: std::option::Option<std::vec::Vec<crate::model::DeploymentTarget>>,
 }
 impl BatchGetDeploymentTargetsOutput {
-    /// <p> A list of target objects for a deployment. Each target object contains details about
-    /// the target, such as its status and lifecycle events. The type of the target objects
-    /// depends on the deployment' compute platform. </p>
+    /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>EC2/On-premises</b>: Each target object is an EC2
-    /// or on-premises instance. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>AWS Lambda</b>: The target object is a specific
-    /// version of an AWS Lambda function. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon ECS</b>: The target object is an Amazon ECS
-    /// service. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>CloudFormation</b>: The target object is an AWS
-    /// CloudFormation blue/green deployment. </p>
-    /// </li>
+    /// <li> <p> <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance. </p> </li>
+    /// <li> <p> <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function. </p> </li>
+    /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
+    /// <li> <p> <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment. </p> </li>
     /// </ul>
     pub fn deployment_targets(&self) -> std::option::Option<&[crate::model::DeploymentTarget]> {
         self.deployment_targets.as_deref()
@@ -2575,64 +2377,25 @@ pub mod batch_get_deployment_targets_output {
         ///
         /// To override the contents of this collection use [`set_deployment_targets`](Self::set_deployment_targets).
         ///
-        /// <p> A list of target objects for a deployment. Each target object contains details about
-        /// the target, such as its status and lifecycle events. The type of the target objects
-        /// depends on the deployment' compute platform. </p>
+        /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>EC2/On-premises</b>: Each target object is an EC2
-        /// or on-premises instance. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AWS Lambda</b>: The target object is a specific
-        /// version of an AWS Lambda function. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon ECS</b>: The target object is an Amazon ECS
-        /// service. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>CloudFormation</b>: The target object is an AWS
-        /// CloudFormation blue/green deployment. </p>
-        /// </li>
+        /// <li> <p> <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance. </p> </li>
+        /// <li> <p> <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function. </p> </li>
+        /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
+        /// <li> <p> <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment. </p> </li>
         /// </ul>
-        pub fn deployment_targets(
-            mut self,
-            input: impl Into<crate::model::DeploymentTarget>,
-        ) -> Self {
+        pub fn deployment_targets(mut self, input: crate::model::DeploymentTarget) -> Self {
             let mut v = self.deployment_targets.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_targets = Some(v);
             self
         }
-        /// <p> A list of target objects for a deployment. Each target object contains details about
-        /// the target, such as its status and lifecycle events. The type of the target objects
-        /// depends on the deployment' compute platform. </p>
+        /// <p> A list of target objects for a deployment. Each target object contains details about the target, such as its status and lifecycle events. The type of the target objects depends on the deployment' compute platform. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>EC2/On-premises</b>: Each target object is an EC2
-        /// or on-premises instance. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AWS Lambda</b>: The target object is a specific
-        /// version of an AWS Lambda function. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon ECS</b>: The target object is an Amazon ECS
-        /// service. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>CloudFormation</b>: The target object is an AWS
-        /// CloudFormation blue/green deployment. </p>
-        /// </li>
+        /// <li> <p> <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance. </p> </li>
+        /// <li> <p> <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function. </p> </li>
+        /// <li> <p> <b>Amazon ECS</b>: The target object is an Amazon ECS service. </p> </li>
+        /// <li> <p> <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment. </p> </li>
         /// </ul>
         pub fn set_deployment_targets(
             mut self,
@@ -2691,9 +2454,9 @@ pub mod batch_get_deployments_output {
         /// To override the contents of this collection use [`set_deployments_info`](Self::set_deployments_info).
         ///
         /// <p> Information about the deployments. </p>
-        pub fn deployments_info(mut self, input: impl Into<crate::model::DeploymentInfo>) -> Self {
+        pub fn deployments_info(mut self, input: crate::model::DeploymentInfo) -> Self {
             let mut v = self.deployments_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployments_info = Some(v);
             self
         }
@@ -2763,12 +2526,9 @@ pub mod batch_get_deployment_instances_output {
         /// To override the contents of this collection use [`set_instances_summary`](Self::set_instances_summary).
         ///
         /// <p>Information about the instance.</p>
-        pub fn instances_summary(
-            mut self,
-            input: impl Into<crate::model::InstanceSummary>,
-        ) -> Self {
+        pub fn instances_summary(mut self, input: crate::model::InstanceSummary) -> Self {
             let mut v = self.instances_summary.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.instances_summary = Some(v);
             self
         }
@@ -2855,12 +2615,9 @@ pub mod batch_get_deployment_groups_output {
         /// To override the contents of this collection use [`set_deployment_groups_info`](Self::set_deployment_groups_info).
         ///
         /// <p>Information about the deployment groups.</p>
-        pub fn deployment_groups_info(
-            mut self,
-            input: impl Into<crate::model::DeploymentGroupInfo>,
-        ) -> Self {
+        pub fn deployment_groups_info(mut self, input: crate::model::DeploymentGroupInfo) -> Self {
             let mut v = self.deployment_groups_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.deployment_groups_info = Some(v);
             self
         }
@@ -2936,12 +2693,9 @@ pub mod batch_get_applications_output {
         /// To override the contents of this collection use [`set_applications_info`](Self::set_applications_info).
         ///
         /// <p>Information about the applications.</p>
-        pub fn applications_info(
-            mut self,
-            input: impl Into<crate::model::ApplicationInfo>,
-        ) -> Self {
+        pub fn applications_info(mut self, input: crate::model::ApplicationInfo) -> Self {
             let mut v = self.applications_info.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.applications_info = Some(v);
             self
         }
@@ -3044,9 +2798,9 @@ pub mod batch_get_application_revisions_output {
         /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
         ///
         /// <p>Additional information about the revisions, including the type and location.</p>
-        pub fn revisions(mut self, input: impl Into<crate::model::RevisionInfo>) -> Self {
+        pub fn revisions(mut self, input: crate::model::RevisionInfo) -> Self {
             let mut v = self.revisions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.revisions = Some(v);
             self
         }

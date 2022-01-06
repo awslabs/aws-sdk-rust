@@ -10,7 +10,7 @@ pub mod accept_resource_share_invitation_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to accept.</p>
         pub fn resource_share_invitation_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -18,7 +18,7 @@ pub mod accept_resource_share_invitation_input {
             self.resource_share_invitation_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to accept.</p>
         pub fn set_resource_share_invitation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26,12 +26,14 @@ pub mod accept_resource_share_invitation_input {
             self.resource_share_invitation_arn = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -54,7 +56,8 @@ pub mod accept_resource_share_invitation_input {
 pub type AcceptResourceShareInvitationInputOperationOutputAlias =
     crate::operation::AcceptResourceShareInvitation;
 #[doc(hidden)]
-pub type AcceptResourceShareInvitationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AcceptResourceShareInvitationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AcceptResourceShareInvitationInput {
     /// Consumes the builder and constructs an Operation<[`AcceptResourceShareInvitation`](crate::operation::AcceptResourceShareInvitation)>
     #[allow(clippy::let_and_return)]
@@ -65,7 +68,7 @@ impl AcceptResourceShareInvitationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AcceptResourceShareInvitation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -146,7 +149,7 @@ impl AcceptResourceShareInvitationInput {
             "AcceptResourceShareInvitation",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -181,12 +184,12 @@ pub mod associate_resource_share_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add principals or resources to.</p>
         pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_share_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add principals or resources to.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -198,14 +201,14 @@ pub mod associate_resource_share_input {
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+        /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only principals.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+        /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only principals.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -217,28 +220,17 @@ pub mod associate_resource_share_input {
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
-        /// <p>The principals to associate with the resource share. The possible values are:</p>
+        /// <p>Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if you want to add only resources.</p>
+        /// <p>What the principals can do with the resources in the share is determined by the RAM permissions that you associate with the resource share. See <code>AssociateResourceSharePermission</code>.</p>
+        /// <p>You can include the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
@@ -246,28 +238,17 @@ pub mod associate_resource_share_input {
             self.principals = Some(v);
             self
         }
-        /// <p>The principals to associate with the resource share. The possible values are:</p>
+        /// <p>Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if you want to add only resources.</p>
+        /// <p>What the principals can do with the resources in the share is determined by the RAM permissions that you associate with the resource share. See <code>AssociateResourceSharePermission</code>.</p>
+        /// <p>You can include the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
         pub fn set_principals(
             mut self,
@@ -276,12 +257,14 @@ pub mod associate_resource_share_input {
             self.principals = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -305,7 +288,7 @@ pub mod associate_resource_share_input {
 #[doc(hidden)]
 pub type AssociateResourceShareInputOperationOutputAlias = crate::operation::AssociateResourceShare;
 #[doc(hidden)]
-pub type AssociateResourceShareInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateResourceShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`AssociateResourceShare`](crate::operation::AssociateResourceShare)>
     #[allow(clippy::let_and_return)]
@@ -316,7 +299,7 @@ impl AssociateResourceShareInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateResourceShare,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -398,7 +381,7 @@ impl AssociateResourceShareInput {
             "AssociateResourceShare",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -434,12 +417,12 @@ pub mod associate_resource_share_permission_input {
         pub(crate) permission_version: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.</p>
         pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_share_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -447,14 +430,12 @@ pub mod associate_resource_share_permission_input {
             self.resource_share_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
-        /// resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
         pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
-        /// resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -462,36 +443,38 @@ pub mod associate_resource_share_permission_input {
             self.permission_arn = input;
             self
         }
-        /// <p>Indicates whether the permission should replace the permissions that are currently
-        /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
-        /// <code>false</code> to add the permission to the current permission.</p>
+        /// <p>Specifies whether the specified permission should replace or add to the existing permission associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission. The default value is <code>false</code>.</p> <note>
+        /// <p>A resource share can have only one permission per resource type. If a resource share already has a permission for the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation returns an error. This helps prevent accidental overwriting of a permission.</p>
+        /// </note>
         pub fn replace(mut self, input: bool) -> Self {
             self.replace = Some(input);
             self
         }
-        /// <p>Indicates whether the permission should replace the permissions that are currently
-        /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
-        /// <code>false</code> to add the permission to the current permission.</p>
+        /// <p>Specifies whether the specified permission should replace or add to the existing permission associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission. The default value is <code>false</code>.</p> <note>
+        /// <p>A resource share can have only one permission per resource type. If a resource share already has a permission for the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation returns an error. This helps prevent accidental overwriting of a permission.</p>
+        /// </note>
         pub fn set_replace(mut self, input: std::option::Option<bool>) -> Self {
             self.replace = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The version of the RAM permissions to associate with the resource share.</p>
+        /// <p>Specifies the version of the RAM permission to associate with the resource share. If you don't specify this parameter, the operation uses the version designated as the default.</p>
         pub fn permission_version(mut self, input: i32) -> Self {
             self.permission_version = Some(input);
             self
         }
-        /// <p>The version of the RAM permissions to associate with the resource share.</p>
+        /// <p>Specifies the version of the RAM permission to associate with the resource share. If you don't specify this parameter, the operation uses the version designated as the default.</p>
         pub fn set_permission_version(mut self, input: std::option::Option<i32>) -> Self {
             self.permission_version = input;
             self
@@ -517,7 +500,8 @@ pub mod associate_resource_share_permission_input {
 pub type AssociateResourceSharePermissionInputOperationOutputAlias =
     crate::operation::AssociateResourceSharePermission;
 #[doc(hidden)]
-pub type AssociateResourceSharePermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateResourceSharePermissionInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateResourceSharePermissionInput {
     /// Consumes the builder and constructs an Operation<[`AssociateResourceSharePermission`](crate::operation::AssociateResourceSharePermission)>
     #[allow(clippy::let_and_return)]
@@ -528,7 +512,7 @@ impl AssociateResourceSharePermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateResourceSharePermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -609,7 +593,7 @@ impl AssociateResourceSharePermissionInput {
             "AssociateResourceSharePermission",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -647,12 +631,12 @@ pub mod create_resource_share_input {
         pub(crate) permission_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The name of the resource share.</p>
+        /// <p>Specifies the name of the resource share.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the resource share.</p>
+        /// <p>Specifies the name of the resource share.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -661,14 +645,14 @@ pub mod create_resource_share_input {
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The ARNs of the resources to associate with the resource share.</p>
+        /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
-        /// <p>The ARNs of the resources to associate with the resource share.</p>
+        /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -680,28 +664,16 @@ pub mod create_resource_share_input {
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
-        /// <p>The principals to associate with the resource share. The possible values are:</p>
+        /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
+        /// <p>You can include the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
@@ -709,28 +681,16 @@ pub mod create_resource_share_input {
             self.principals = Some(v);
             self
         }
-        /// <p>The principals to associate with the resource share. The possible values are:</p>
+        /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
+        /// <p>You can include the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
         pub fn set_principals(
             mut self,
@@ -743,14 +703,14 @@ pub mod create_resource_share_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -758,24 +718,24 @@ pub mod create_resource_share_input {
             self.tags = input;
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
+        /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
         pub fn allow_external_principals(mut self, input: bool) -> Self {
             self.allow_external_principals = Some(input);
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
+        /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
         pub fn set_allow_external_principals(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_external_principals = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -784,20 +744,14 @@ pub mod create_resource_share_input {
         ///
         /// To override the contents of this collection use [`set_permission_arns`](Self::set_permission_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
-        /// do not specify an ARN for the permission, RAM automatically attaches the default
-        /// version of the permission for each resource type. Only one permission can be associated
-        /// with each resource type in a resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
         pub fn permission_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.permission_arns.unwrap_or_default();
             v.push(input.into());
             self.permission_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
-        /// do not specify an ARN for the permission, RAM automatically attaches the default
-        /// version of the permission for each resource type. Only one permission can be associated
-        /// with each resource type in a resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
         pub fn set_permission_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -827,7 +781,7 @@ pub mod create_resource_share_input {
 #[doc(hidden)]
 pub type CreateResourceShareInputOperationOutputAlias = crate::operation::CreateResourceShare;
 #[doc(hidden)]
-pub type CreateResourceShareInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateResourceShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`CreateResourceShare`](crate::operation::CreateResourceShare)>
     #[allow(clippy::let_and_return)]
@@ -838,7 +792,7 @@ impl CreateResourceShareInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateResourceShare,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -918,7 +872,7 @@ impl CreateResourceShareInput {
             "CreateResourceShare",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -951,12 +905,12 @@ pub mod delete_resource_share_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to delete.</p>
         pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_share_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to delete.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -964,12 +918,14 @@ pub mod delete_resource_share_input {
             self.resource_share_arn = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -991,7 +947,7 @@ pub mod delete_resource_share_input {
 #[doc(hidden)]
 pub type DeleteResourceShareInputOperationOutputAlias = crate::operation::DeleteResourceShare;
 #[doc(hidden)]
-pub type DeleteResourceShareInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteResourceShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`DeleteResourceShare`](crate::operation::DeleteResourceShare)>
     #[allow(clippy::let_and_return)]
@@ -1002,7 +958,7 @@ impl DeleteResourceShareInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourceShare,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1093,7 +1049,7 @@ impl DeleteResourceShareInput {
             "DeleteResourceShare",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1120,12 +1076,12 @@ pub mod disassociate_resource_share_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove resources from.</p>
         pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_share_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove resources from.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1137,14 +1093,14 @@ pub mod disassociate_resource_share_input {
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+        /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account that created the resources.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+        /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account that created the resources.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1156,14 +1112,34 @@ pub mod disassociate_resource_share_input {
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
-        /// <p>The principals.</p>
+        /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p>
+        /// <p>You can include the following values:</p>
+        /// <ul>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+        /// </note>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
             v.push(input.into());
             self.principals = Some(v);
             self
         }
-        /// <p>The principals.</p>
+        /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p>
+        /// <p>You can include the following values:</p>
+        /// <ul>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+        /// </note>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1171,12 +1147,14 @@ pub mod disassociate_resource_share_input {
             self.principals = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1201,7 +1179,7 @@ pub mod disassociate_resource_share_input {
 pub type DisassociateResourceShareInputOperationOutputAlias =
     crate::operation::DisassociateResourceShare;
 #[doc(hidden)]
-pub type DisassociateResourceShareInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateResourceShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateResourceShare`](crate::operation::DisassociateResourceShare)>
     #[allow(clippy::let_and_return)]
@@ -1212,7 +1190,7 @@ impl DisassociateResourceShareInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateResourceShare,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1294,7 +1272,7 @@ impl DisassociateResourceShareInput {
             "DisassociateResourceShare",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1328,12 +1306,12 @@ pub mod disassociate_resource_share_permission_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share from which you want to disassociate a permission.</p>
         pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_share_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share from which you want to disassociate a permission.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1341,12 +1319,12 @@ pub mod disassociate_resource_share_permission_input {
             self.resource_share_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission to disassociate from the resource share. Changes to permissions take effect immediately.</p>
         pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission to disassociate from the resource share. Changes to permissions take effect immediately.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1354,12 +1332,14 @@ pub mod disassociate_resource_share_permission_input {
             self.permission_arn = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1384,7 +1364,7 @@ pub type DisassociateResourceSharePermissionInputOperationOutputAlias =
     crate::operation::DisassociateResourceSharePermission;
 #[doc(hidden)]
 pub type DisassociateResourceSharePermissionInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateResourceSharePermissionInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateResourceSharePermission`](crate::operation::DisassociateResourceSharePermission)>
     #[allow(clippy::let_and_return)]
@@ -1395,7 +1375,7 @@ impl DisassociateResourceSharePermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateResourceSharePermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1477,7 +1457,7 @@ impl DisassociateResourceSharePermissionInput {
             "DisassociateResourceSharePermission",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1522,7 +1502,8 @@ pub mod enable_sharing_with_aws_organization_input {
 pub type EnableSharingWithAwsOrganizationInputOperationOutputAlias =
     crate::operation::EnableSharingWithAwsOrganization;
 #[doc(hidden)]
-pub type EnableSharingWithAwsOrganizationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type EnableSharingWithAwsOrganizationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl EnableSharingWithAwsOrganizationInput {
     /// Consumes the builder and constructs an Operation<[`EnableSharingWithAwsOrganization`](crate::operation::EnableSharingWithAwsOrganization)>
     #[allow(clippy::let_and_return)]
@@ -1533,7 +1514,7 @@ impl EnableSharingWithAwsOrganizationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::EnableSharingWithAwsOrganization,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1607,7 +1588,7 @@ impl EnableSharingWithAwsOrganizationInput {
             "EnableSharingWithAwsOrganization",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1632,12 +1613,12 @@ pub mod get_permission_input {
         pub(crate) permission_version: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the permission.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
         pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the permission.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1645,12 +1626,12 @@ pub mod get_permission_input {
             self.permission_arn = input;
             self
         }
-        /// <p>The identifier for the version of the permission.</p>
+        /// <p>Specifies identifier for the version of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p>
         pub fn permission_version(mut self, input: i32) -> Self {
             self.permission_version = Some(input);
             self
         }
-        /// <p>The identifier for the version of the permission.</p>
+        /// <p>Specifies identifier for the version of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p>
         pub fn set_permission_version(mut self, input: std::option::Option<i32>) -> Self {
             self.permission_version = input;
             self
@@ -1672,7 +1653,7 @@ pub mod get_permission_input {
 #[doc(hidden)]
 pub type GetPermissionInputOperationOutputAlias = crate::operation::GetPermission;
 #[doc(hidden)]
-pub type GetPermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPermissionInput {
     /// Consumes the builder and constructs an Operation<[`GetPermission`](crate::operation::GetPermission)>
     #[allow(clippy::let_and_return)]
@@ -1683,7 +1664,7 @@ impl GetPermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1762,7 +1743,7 @@ impl GetPermissionInput {
             "GetPermission",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1801,14 +1782,14 @@ pub mod get_resource_policies_input {
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1816,34 +1797,32 @@ pub mod get_resource_policies_input {
             self.resource_arns = input;
             self
         }
-        /// <p>The principal.</p>
+        /// <p>Specifies the principal.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The principal.</p>
+        /// <p>Specifies the principal.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1867,7 +1846,7 @@ pub mod get_resource_policies_input {
 #[doc(hidden)]
 pub type GetResourcePoliciesInputOperationOutputAlias = crate::operation::GetResourcePolicies;
 #[doc(hidden)]
-pub type GetResourcePoliciesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourcePoliciesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourcePoliciesInput {
     /// Consumes the builder and constructs an Operation<[`GetResourcePolicies`](crate::operation::GetResourcePolicies)>
     #[allow(clippy::let_and_return)]
@@ -1878,7 +1857,7 @@ impl GetResourcePoliciesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourcePolicies,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1958,7 +1937,7 @@ impl GetResourcePoliciesInput {
             "GetResourcePolicies",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1998,9 +1977,11 @@ pub mod get_resource_share_associations_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-        /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
-        /// that are associated with the specified resource share.</p>
+        /// <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>
+        /// <ul>
+        /// <li> <p> <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.</p> </li>
+        /// <li> <p> <code>RESOURCE</code> – list the resources that are associated with the specified resource share.</p> </li>
+        /// </ul>
         pub fn association_type(
             mut self,
             input: crate::model::ResourceShareAssociationType,
@@ -2008,9 +1989,11 @@ pub mod get_resource_share_associations_input {
             self.association_type = Some(input);
             self
         }
-        /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-        /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
-        /// that are associated with the specified resource share.</p>
+        /// <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>
+        /// <ul>
+        /// <li> <p> <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.</p> </li>
+        /// <li> <p> <code>RESOURCE</code> – list the resources that are associated with the specified resource share.</p> </li>
+        /// </ul>
         pub fn set_association_type(
             mut self,
             input: std::option::Option<crate::model::ResourceShareAssociationType>,
@@ -2022,14 +2005,14 @@ pub mod get_resource_share_associations_input {
         ///
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+        /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
         pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_share_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_share_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+        /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2037,31 +2020,31 @@ pub mod get_resource_share_associations_input {
             self.resource_share_arns = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
-        /// the association type is <code>PRINCIPAL</code>.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.</p>
+        /// <p>You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
-        /// the association type is <code>PRINCIPAL</code>.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.</p>
+        /// <p>You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>The principal. You cannot specify this parameter if the association type is
-        /// <code>RESOURCE</code>.</p>
+        /// <p>Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services account ID, an organization ID, an organizational unit ID, or the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an individual IAM user or role.</p>
+        /// <p>You cannot specify this parameter if the association type is <code>RESOURCE</code>.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The principal. You cannot specify this parameter if the association type is
-        /// <code>RESOURCE</code>.</p>
+        /// <p>Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services account ID, an organization ID, an organizational unit ID, or the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an individual IAM user or role.</p>
+        /// <p>You cannot specify this parameter if the association type is <code>RESOURCE</code>.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
         }
-        /// <p>The association status.</p>
+        /// <p>Specifies that you want to retrieve only associations with this status.</p>
         pub fn association_status(
             mut self,
             input: crate::model::ResourceShareAssociationStatus,
@@ -2069,7 +2052,7 @@ pub mod get_resource_share_associations_input {
             self.association_status = Some(input);
             self
         }
-        /// <p>The association status.</p>
+        /// <p>Specifies that you want to retrieve only associations with this status.</p>
         pub fn set_association_status(
             mut self,
             input: std::option::Option<crate::model::ResourceShareAssociationStatus>,
@@ -2077,24 +2060,22 @@ pub mod get_resource_share_associations_input {
             self.association_status = input;
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2122,7 +2103,8 @@ pub mod get_resource_share_associations_input {
 pub type GetResourceShareAssociationsInputOperationOutputAlias =
     crate::operation::GetResourceShareAssociations;
 #[doc(hidden)]
-pub type GetResourceShareAssociationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourceShareAssociationsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceShareAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceShareAssociations`](crate::operation::GetResourceShareAssociations)>
     #[allow(clippy::let_and_return)]
@@ -2133,7 +2115,7 @@ impl GetResourceShareAssociationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceShareAssociations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2214,7 +2196,7 @@ impl GetResourceShareAssociationsInput {
             "GetResourceShareAssociations",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2254,7 +2236,7 @@ pub mod get_resource_share_invitations_input {
         ///
         /// To override the contents of this collection use [`set_resource_share_invitation_arns`](Self::set_resource_share_invitation_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the invitations.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
         pub fn resource_share_invitation_arns(
             mut self,
             input: impl Into<std::string::String>,
@@ -2264,7 +2246,7 @@ pub mod get_resource_share_invitations_input {
             self.resource_share_invitation_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the invitations.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
         pub fn set_resource_share_invitation_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2276,14 +2258,14 @@ pub mod get_resource_share_invitations_input {
         ///
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+        /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
         pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_share_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_share_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+        /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2291,24 +2273,22 @@ pub mod get_resource_share_invitations_input {
             self.resource_share_arns = input;
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2333,7 +2313,7 @@ pub mod get_resource_share_invitations_input {
 pub type GetResourceShareInvitationsInputOperationOutputAlias =
     crate::operation::GetResourceShareInvitations;
 #[doc(hidden)]
-pub type GetResourceShareInvitationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourceShareInvitationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceShareInvitationsInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceShareInvitations`](crate::operation::GetResourceShareInvitations)>
     #[allow(clippy::let_and_return)]
@@ -2344,7 +2324,7 @@ impl GetResourceShareInvitationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceShareInvitations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2425,7 +2405,7 @@ impl GetResourceShareInvitationsInput {
             "GetResourceShareInvitations",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2468,14 +2448,14 @@ pub mod get_resource_shares_input {
         ///
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the resource shares.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
         pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_share_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_share_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the resource shares.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2483,12 +2463,12 @@ pub mod get_resource_shares_input {
             self.resource_share_arns = input;
             self
         }
-        /// <p>The status of the resource share.</p>
+        /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
         pub fn resource_share_status(mut self, input: crate::model::ResourceShareStatus) -> Self {
             self.resource_share_status = Some(input);
             self
         }
-        /// <p>The status of the resource share.</p>
+        /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
         pub fn set_resource_share_status(
             mut self,
             input: std::option::Option<crate::model::ResourceShareStatus>,
@@ -2496,12 +2476,20 @@ pub mod get_resource_shares_input {
             self.resource_share_status = input;
             self
         }
-        /// <p>The type of owner.</p>
+        /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// </ul>
         pub fn resource_owner(mut self, input: crate::model::ResourceOwner) -> Self {
             self.resource_owner = Some(input);
             self
         }
-        /// <p>The type of owner.</p>
+        /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// </ul>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<crate::model::ResourceOwner>,
@@ -2509,12 +2497,12 @@ pub mod get_resource_shares_input {
             self.resource_owner = input;
             self
         }
-        /// <p>The name of the resource share.</p>
+        /// <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the resource share.</p>
+        /// <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2523,14 +2511,14 @@ pub mod get_resource_shares_input {
         ///
         /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
         ///
-        /// <p>One or more tag filters.</p>
-        pub fn tag_filters(mut self, input: impl Into<crate::model::TagFilter>) -> Self {
+        /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
+        pub fn tag_filters(mut self, input: crate::model::TagFilter) -> Self {
             let mut v = self.tag_filters.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_filters = Some(v);
             self
         }
-        /// <p>One or more tag filters.</p>
+        /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
         pub fn set_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -2538,36 +2526,32 @@ pub mod get_resource_shares_input {
             self.tag_filters = input;
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
-        /// resource share.</p>
+        /// <p>Specifies that you want to retrieve details of only those resource shares that use the RAM permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
         pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.permission_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
-        /// resource share.</p>
+        /// <p>Specifies that you want to retrieve details of only those resource shares that use the RAM permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2598,7 +2582,7 @@ pub mod get_resource_shares_input {
 #[doc(hidden)]
 pub type GetResourceSharesInputOperationOutputAlias = crate::operation::GetResourceShares;
 #[doc(hidden)]
-pub type GetResourceSharesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetResourceSharesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetResourceSharesInput {
     /// Consumes the builder and constructs an Operation<[`GetResourceShares`](crate::operation::GetResourceShares)>
     #[allow(clippy::let_and_return)]
@@ -2609,7 +2593,7 @@ impl GetResourceSharesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetResourceShares,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2689,7 +2673,7 @@ impl GetResourceSharesInput {
             "GetResourceShares",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2721,9 +2705,11 @@ pub mod list_pending_invitation_resources_input {
         pub(crate) resource_share_invitation_arn: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) resource_region_scope:
+            std::option::Option<crate::model::ResourceRegionScopeFilter>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
         pub fn resource_share_invitation_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -2731,7 +2717,7 @@ pub mod list_pending_invitation_resources_input {
             self.resource_share_invitation_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
         pub fn set_resource_share_invitation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2739,26 +2725,52 @@ pub mod list_pending_invitation_resources_input {
             self.resource_share_invitation_arn = input;
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
+            self
+        }
+        /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+        /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+        /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+        /// </ul>
+        /// <p>The default value is <code>ALL</code>.</p>
+        pub fn resource_region_scope(
+            mut self,
+            input: crate::model::ResourceRegionScopeFilter,
+        ) -> Self {
+            self.resource_region_scope = Some(input);
+            self
+        }
+        /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+        /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+        /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+        /// </ul>
+        /// <p>The default value is <code>ALL</code>.</p>
+        pub fn set_resource_region_scope(
+            mut self,
+            input: std::option::Option<crate::model::ResourceRegionScopeFilter>,
+        ) -> Self {
+            self.resource_region_scope = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPendingInvitationResourcesInput`](crate::input::ListPendingInvitationResourcesInput)
@@ -2772,6 +2784,7 @@ pub mod list_pending_invitation_resources_input {
                 resource_share_invitation_arn: self.resource_share_invitation_arn,
                 next_token: self.next_token,
                 max_results: self.max_results,
+                resource_region_scope: self.resource_region_scope,
             })
         }
     }
@@ -2780,7 +2793,8 @@ pub mod list_pending_invitation_resources_input {
 pub type ListPendingInvitationResourcesInputOperationOutputAlias =
     crate::operation::ListPendingInvitationResources;
 #[doc(hidden)]
-pub type ListPendingInvitationResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPendingInvitationResourcesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListPendingInvitationResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListPendingInvitationResources`](crate::operation::ListPendingInvitationResources)>
     #[allow(clippy::let_and_return)]
@@ -2791,7 +2805,7 @@ impl ListPendingInvitationResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPendingInvitationResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2872,7 +2886,7 @@ impl ListPendingInvitationResourcesInput {
             "ListPendingInvitationResources",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2906,14 +2920,12 @@ pub mod list_permissions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Specifies the resource type for which to list permissions. For example, to list only
-        /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
+        /// <p>Specifies that you want to list permissions for only the specified resource type. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>Specifies the resource type for which to list permissions. For example, to list only
-        /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
+        /// <p>Specifies that you want to list permissions for only the specified resource type. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2921,24 +2933,22 @@ pub mod list_permissions_input {
             self.resource_type = input;
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2961,7 +2971,7 @@ pub mod list_permissions_input {
 #[doc(hidden)]
 pub type ListPermissionsInputOperationOutputAlias = crate::operation::ListPermissions;
 #[doc(hidden)]
-pub type ListPermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPermissionsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ListPermissions`](crate::operation::ListPermissions)>
     #[allow(clippy::let_and_return)]
@@ -2972,7 +2982,7 @@ impl ListPermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3052,7 +3062,7 @@ impl ListPermissionsInput {
             "ListPermissions",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3090,12 +3100,20 @@ pub mod list_principals_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The type of owner.</p>
+        /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// </ul>
         pub fn resource_owner(mut self, input: crate::model::ResourceOwner) -> Self {
             self.resource_owner = Some(input);
             self
         }
-        /// <p>The type of owner.</p>
+        /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// </ul>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<crate::model::ResourceOwner>,
@@ -3103,12 +3121,12 @@ pub mod list_principals_input {
             self.resource_owner = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+        /// <p>Specifies that you want to list principal information for the resource share with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+        /// <p>Specifies that you want to list principal information for the resource share with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3117,14 +3135,34 @@ pub mod list_principals_input {
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
-        /// <p>The principals.</p>
+        /// <p>Specifies that you want to list information for only the listed principals.</p>
+        /// <p>You can include the following values:</p>
+        /// <ul>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+        /// </note>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
             v.push(input.into());
             self.principals = Some(v);
             self
         }
-        /// <p>The principals.</p>
+        /// <p>Specifies that you want to list information for only the listed principals.</p>
+        /// <p>You can include the following values:</p>
+        /// <ul>
+        /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+        /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+        /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+        /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+        /// </note>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3132,16 +3170,14 @@ pub mod list_principals_input {
             self.principals = input;
             self
         }
-        /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
+        /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>
+        /// <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
+        /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>
+        /// <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3153,14 +3189,14 @@ pub mod list_principals_input {
         ///
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+        /// <p>Specifies that you want to list information for only principals associated with the resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_share_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_share_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+        /// <p>Specifies that you want to list information for only principals associated with the resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3168,24 +3204,22 @@ pub mod list_principals_input {
             self.resource_share_arns = input;
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3212,7 +3246,7 @@ pub mod list_principals_input {
 #[doc(hidden)]
 pub type ListPrincipalsInputOperationOutputAlias = crate::operation::ListPrincipals;
 #[doc(hidden)]
-pub type ListPrincipalsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPrincipalsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPrincipalsInput {
     /// Consumes the builder and constructs an Operation<[`ListPrincipals`](crate::operation::ListPrincipals)>
     #[allow(clippy::let_and_return)]
@@ -3223,7 +3257,7 @@ impl ListPrincipalsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPrincipals,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3303,7 +3337,7 @@ impl ListPrincipalsInput {
             "ListPrincipals",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3339,14 +3373,24 @@ pub mod list_resources_input {
         pub(crate) resource_share_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) resource_region_scope:
+            std::option::Option<crate::model::ResourceRegionScopeFilter>,
     }
     impl Builder {
-        /// <p>The type of owner.</p>
+        /// <p>Specifies that you want to list only the resource shares that match the following:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// </ul>
         pub fn resource_owner(mut self, input: crate::model::ResourceOwner) -> Self {
             self.resource_owner = Some(input);
             self
         }
-        /// <p>The type of owner.</p>
+        /// <p>Specifies that you want to list only the resource shares that match the following:</p>
+        /// <ul>
+        /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+        /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+        /// </ul>
         pub fn set_resource_owner(
             mut self,
             input: std::option::Option<crate::model::ResourceOwner>,
@@ -3354,26 +3398,24 @@ pub mod list_resources_input {
             self.resource_owner = input;
             self
         }
-        /// <p>The principal.</p>
+        /// <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The principal.</p>
+        /// <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
         }
-        /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
+        /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
+        /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
+        /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
+        /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3385,14 +3427,14 @@ pub mod list_resources_input {
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+        /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+        /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3404,14 +3446,14 @@ pub mod list_resources_input {
         ///
         /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+        /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn resource_share_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_share_arns.unwrap_or_default();
             v.push(input.into());
             self.resource_share_arns = Some(v);
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+        /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_resource_share_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3419,26 +3461,52 @@ pub mod list_resources_input {
             self.resource_share_arns = input;
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
+            self
+        }
+        /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+        /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+        /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+        /// </ul>
+        /// <p>The default value is <code>ALL</code>.</p>
+        pub fn resource_region_scope(
+            mut self,
+            input: crate::model::ResourceRegionScopeFilter,
+        ) -> Self {
+            self.resource_region_scope = Some(input);
+            self
+        }
+        /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+        /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+        /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+        /// </ul>
+        /// <p>The default value is <code>ALL</code>.</p>
+        pub fn set_resource_region_scope(
+            mut self,
+            input: std::option::Option<crate::model::ResourceRegionScopeFilter>,
+        ) -> Self {
+            self.resource_region_scope = input;
             self
         }
         /// Consumes the builder and constructs a [`ListResourcesInput`](crate::input::ListResourcesInput)
@@ -3456,6 +3524,7 @@ pub mod list_resources_input {
                 resource_share_arns: self.resource_share_arns,
                 next_token: self.next_token,
                 max_results: self.max_results,
+                resource_region_scope: self.resource_region_scope,
             })
         }
     }
@@ -3463,7 +3532,7 @@ pub mod list_resources_input {
 #[doc(hidden)]
 pub type ListResourcesInputOperationOutputAlias = crate::operation::ListResources;
 #[doc(hidden)]
-pub type ListResourcesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListResourcesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourcesInput {
     /// Consumes the builder and constructs an Operation<[`ListResources`](crate::operation::ListResources)>
     #[allow(clippy::let_and_return)]
@@ -3474,7 +3543,7 @@ impl ListResourcesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResources,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3553,7 +3622,7 @@ impl ListResourcesInput {
             "ListResources",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3587,12 +3656,12 @@ pub mod list_resource_share_permissions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.</p>
         pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_share_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3600,24 +3669,22 @@ pub mod list_resource_share_permissions_input {
             self.resource_share_arn = input;
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3641,7 +3708,8 @@ pub mod list_resource_share_permissions_input {
 pub type ListResourceSharePermissionsInputOperationOutputAlias =
     crate::operation::ListResourceSharePermissions;
 #[doc(hidden)]
-pub type ListResourceSharePermissionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListResourceSharePermissionsInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourceSharePermissionsInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceSharePermissions`](crate::operation::ListResourceSharePermissions)>
     #[allow(clippy::let_and_return)]
@@ -3652,7 +3720,7 @@ impl ListResourceSharePermissionsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResourceSharePermissions,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3733,7 +3801,7 @@ impl ListResourceSharePermissionsInput {
             "ListResourceSharePermissions",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3764,28 +3832,56 @@ pub mod list_resource_types_input {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
+        pub(crate) resource_region_scope:
+            std::option::Option<crate::model::ResourceRegionScopeFilter>,
     }
     impl Builder {
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next page of results.</p>
+        /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
+            self
+        }
+        /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+        /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+        /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+        /// </ul>
+        /// <p>The default value is <code>ALL</code>.</p>
+        pub fn resource_region_scope(
+            mut self,
+            input: crate::model::ResourceRegionScopeFilter,
+        ) -> Self {
+            self.resource_region_scope = Some(input);
+            self
+        }
+        /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+        /// <ul>
+        /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+        /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+        /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+        /// </ul>
+        /// <p>The default value is <code>ALL</code>.</p>
+        pub fn set_resource_region_scope(
+            mut self,
+            input: std::option::Option<crate::model::ResourceRegionScopeFilter>,
+        ) -> Self {
+            self.resource_region_scope = input;
             self
         }
         /// Consumes the builder and constructs a [`ListResourceTypesInput`](crate::input::ListResourceTypesInput)
@@ -3798,6 +3894,7 @@ pub mod list_resource_types_input {
             Ok(crate::input::ListResourceTypesInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
+                resource_region_scope: self.resource_region_scope,
             })
         }
     }
@@ -3805,7 +3902,7 @@ pub mod list_resource_types_input {
 #[doc(hidden)]
 pub type ListResourceTypesInputOperationOutputAlias = crate::operation::ListResourceTypes;
 #[doc(hidden)]
-pub type ListResourceTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListResourceTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListResourceTypesInput {
     /// Consumes the builder and constructs an Operation<[`ListResourceTypes`](crate::operation::ListResourceTypes)>
     #[allow(clippy::let_and_return)]
@@ -3816,7 +3913,7 @@ impl ListResourceTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListResourceTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3896,7 +3993,7 @@ impl ListResourceTypesInput {
             "ListResourceTypes",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3928,12 +4025,12 @@ pub mod promote_resource_share_created_from_policy_input {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource share to promote.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to promote.</p>
         pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_share_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share to promote.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to promote.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3959,7 +4056,7 @@ pub type PromoteResourceShareCreatedFromPolicyInputOperationOutputAlias =
     crate::operation::PromoteResourceShareCreatedFromPolicy;
 #[doc(hidden)]
 pub type PromoteResourceShareCreatedFromPolicyInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PromoteResourceShareCreatedFromPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PromoteResourceShareCreatedFromPolicy`](crate::operation::PromoteResourceShareCreatedFromPolicy)>
     #[allow(clippy::let_and_return)]
@@ -3970,7 +4067,7 @@ impl PromoteResourceShareCreatedFromPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PromoteResourceShareCreatedFromPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4059,7 +4156,7 @@ impl PromoteResourceShareCreatedFromPolicyInput {
             "PromoteResourceShareCreatedFromPolicy",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4084,7 +4181,7 @@ pub mod reject_resource_share_invitation_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
         pub fn resource_share_invitation_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -4092,7 +4189,7 @@ pub mod reject_resource_share_invitation_input {
             self.resource_share_invitation_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
         pub fn set_resource_share_invitation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4100,12 +4197,14 @@ pub mod reject_resource_share_invitation_input {
             self.resource_share_invitation_arn = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -4128,7 +4227,8 @@ pub mod reject_resource_share_invitation_input {
 pub type RejectResourceShareInvitationInputOperationOutputAlias =
     crate::operation::RejectResourceShareInvitation;
 #[doc(hidden)]
-pub type RejectResourceShareInvitationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RejectResourceShareInvitationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl RejectResourceShareInvitationInput {
     /// Consumes the builder and constructs an Operation<[`RejectResourceShareInvitation`](crate::operation::RejectResourceShareInvitation)>
     #[allow(clippy::let_and_return)]
@@ -4139,7 +4239,7 @@ impl RejectResourceShareInvitationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RejectResourceShareInvitation,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4220,7 +4320,7 @@ impl RejectResourceShareInvitationInput {
             "RejectResourceShareInvitation",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4253,12 +4353,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
         pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_share_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4270,14 +4370,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        /// <p>A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The tag value must be present but can be an empty string.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>One or more tags.</p>
+        /// <p>A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The tag value must be present but can be an empty string.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4302,7 +4402,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4313,7 +4413,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4392,7 +4492,7 @@ impl TagResourceInput {
             "TagResource",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4425,12 +4525,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share.</p>
         pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_share_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4442,14 +4542,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tag keys of the tags to remove.</p>
+        /// <p>Specifies a list of one or more tag keys that you want to remove.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>The tag keys of the tags to remove.</p>
+        /// <p>Specifies a list of one or more tag keys that you want to remove.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4474,7 +4574,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4485,7 +4585,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4564,7 +4664,7 @@ impl UntagResourceInput {
             "UntagResource",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4599,12 +4699,12 @@ pub mod update_resource_share_input {
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
         pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_share_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+        /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
         pub fn set_resource_share_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4612,34 +4712,34 @@ pub mod update_resource_share_input {
             self.resource_share_arn = input;
             self
         }
-        /// <p>The name of the resource share.</p>
+        /// <p>If specified, the new name that you want to attach to the resource share.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the resource share.</p>
+        /// <p>If specified, the new name that you want to attach to the resource share.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
+        /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share.</p>
         pub fn allow_external_principals(mut self, input: bool) -> Self {
             self.allow_external_principals = Some(input);
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
+        /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share.</p>
         pub fn set_allow_external_principals(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_external_principals = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+        /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+        /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -4663,7 +4763,7 @@ pub mod update_resource_share_input {
 #[doc(hidden)]
 pub type UpdateResourceShareInputOperationOutputAlias = crate::operation::UpdateResourceShare;
 #[doc(hidden)]
-pub type UpdateResourceShareInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateResourceShareInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateResourceShareInput {
     /// Consumes the builder and constructs an Operation<[`UpdateResourceShare`](crate::operation::UpdateResourceShare)>
     #[allow(clippy::let_and_return)]
@@ -4674,7 +4774,7 @@ impl UpdateResourceShareInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateResourceShare,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4754,7 +4854,7 @@ impl UpdateResourceShareInput {
             "UpdateResourceShare",
             "ram",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4781,31 +4881,31 @@ impl UpdateResourceShareInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceShareInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the resource share.</p>
+    /// <p>If specified, the new name that you want to attach to the resource share.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether principals outside your organization in Organizations can be associated
-    /// with a resource share.</p>
+    /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share.</p>
     pub allow_external_principals: std::option::Option<bool>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateResourceShareInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
     pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
-    /// <p>The name of the resource share.</p>
+    /// <p>If specified, the new name that you want to attach to the resource share.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Indicates whether principals outside your organization in Organizations can be associated
-    /// with a resource share.</p>
+    /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share.</p>
     pub fn allow_external_principals(&self) -> std::option::Option<bool> {
         self.allow_external_principals
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -4825,17 +4925,17 @@ impl std::fmt::Debug for UpdateResourceShareInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>The tag keys of the tags to remove.</p>
+    /// <p>Specifies a list of one or more tag keys that you want to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share.</p>
     pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
-    /// <p>The tag keys of the tags to remove.</p>
+    /// <p>Specifies a list of one or more tag keys that you want to remove.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -4853,17 +4953,17 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>One or more tags.</p>
+    /// <p>A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The tag value must be present but can be an empty string.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
     pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The tag value must be present but can be an empty string.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -4881,17 +4981,19 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectResourceShareInvitationInput {
-    /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
     pub resource_share_invitation_arn: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl RejectResourceShareInvitationInput {
-    /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
     pub fn resource_share_invitation_arn(&self) -> std::option::Option<&str> {
         self.resource_share_invitation_arn.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -4912,11 +5014,11 @@ impl std::fmt::Debug for RejectResourceShareInvitationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PromoteResourceShareCreatedFromPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share to promote.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to promote.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
 }
 impl PromoteResourceShareCreatedFromPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share to promote.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to promote.</p>
     pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
@@ -4933,21 +5035,39 @@ impl std::fmt::Debug for PromoteResourceShareCreatedFromPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceTypesInput {
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
+    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// </ul>
+    /// <p>The default value is <code>ALL</code>.</p>
+    pub resource_region_scope: std::option::Option<crate::model::ResourceRegionScopeFilter>,
 }
 impl ListResourceTypesInput {
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// </ul>
+    /// <p>The default value is <code>ALL</code>.</p>
+    pub fn resource_region_scope(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceRegionScopeFilter> {
+        self.resource_region_scope.as_ref()
     }
 }
 impl std::fmt::Debug for ListResourceTypesInput {
@@ -4955,6 +5075,7 @@ impl std::fmt::Debug for ListResourceTypesInput {
         let mut formatter = f.debug_struct("ListResourceTypesInput");
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("resource_region_scope", &self.resource_region_scope);
         formatter.finish()
     }
 }
@@ -4963,25 +5084,23 @@ impl std::fmt::Debug for ListResourceTypesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceSharePermissionsInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListResourceSharePermissionsInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.</p>
     pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5000,55 +5119,79 @@ impl std::fmt::Debug for ListResourceSharePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourcesInput {
-    /// <p>The type of owner.</p>
+    /// <p>Specifies that you want to list only the resource shares that match the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+    /// </ul>
     pub resource_owner: std::option::Option<crate::model::ResourceOwner>,
-    /// <p>The principal.</p>
+    /// <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
     pub principal: std::option::Option<std::string::String>,
-    /// <p>The resource type.</p>
-    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-    /// </p>
+    /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
+    /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+    /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub resource_share_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
+    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// </ul>
+    /// <p>The default value is <code>ALL</code>.</p>
+    pub resource_region_scope: std::option::Option<crate::model::ResourceRegionScopeFilter>,
 }
 impl ListResourcesInput {
-    /// <p>The type of owner.</p>
+    /// <p>Specifies that you want to list only the resource shares that match the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+    /// </ul>
     pub fn resource_owner(&self) -> std::option::Option<&crate::model::ResourceOwner> {
         self.resource_owner.as_ref()
     }
-    /// <p>The principal.</p>
+    /// <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
-    /// <p>The resource type.</p>
-    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-    /// </p>
+    /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
+    /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arns.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+    /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn resource_share_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_share_arns.as_deref()
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// </ul>
+    /// <p>The default value is <code>ALL</code>.</p>
+    pub fn resource_region_scope(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceRegionScopeFilter> {
+        self.resource_region_scope.as_ref()
     }
 }
 impl std::fmt::Debug for ListResourcesInput {
@@ -5061,6 +5204,7 @@ impl std::fmt::Debug for ListResourcesInput {
         formatter.field("resource_share_arns", &self.resource_share_arns);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("resource_region_scope", &self.resource_region_scope);
         formatter.finish()
     }
 }
@@ -5069,53 +5213,77 @@ impl std::fmt::Debug for ListResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPrincipalsInput {
-    /// <p>The type of owner.</p>
+    /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+    /// </ul>
     pub resource_owner: std::option::Option<crate::model::ResourceOwner>,
-    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// <p>Specifies that you want to list principal information for the resource share with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The principals.</p>
+    /// <p>Specifies that you want to list information for only the listed principals.</p>
+    /// <p>You can include the following values:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+    /// </note>
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The resource type.</p>
-    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-    /// </p>
+    /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>
+    /// <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+    /// <p>Specifies that you want to list information for only principals associated with the resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub resource_share_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListPrincipalsInput {
-    /// <p>The type of owner.</p>
+    /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+    /// </ul>
     pub fn resource_owner(&self) -> std::option::Option<&crate::model::ResourceOwner> {
         self.resource_owner.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// <p>Specifies that you want to list principal information for the resource share with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The principals.</p>
+    /// <p>Specifies that you want to list information for only the listed principals.</p>
+    /// <p>You can include the following values:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+    /// </note>
     pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
         self.principals.as_deref()
     }
-    /// <p>The resource type.</p>
-    /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-    /// </p>
+    /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>
+    /// <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+    /// <p>Specifies that you want to list information for only principals associated with the resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub fn resource_share_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_share_arns.as_deref()
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5138,27 +5306,23 @@ impl std::fmt::Debug for ListPrincipalsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPermissionsInput {
-    /// <p>Specifies the resource type for which to list permissions. For example, to list only
-    /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
+    /// <p>Specifies that you want to list permissions for only the specified resource type. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListPermissionsInput {
-    /// <p>Specifies the resource type for which to list permissions. For example, to list only
-    /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
+    /// <p>Specifies that you want to list permissions for only the specified resource type. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5177,27 +5341,45 @@ impl std::fmt::Debug for ListPermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPendingInvitationResourcesInput {
-    /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
     pub resource_share_invitation_arn: std::option::Option<std::string::String>,
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
+    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// </ul>
+    /// <p>The default value is <code>ALL</code>.</p>
+    pub resource_region_scope: std::option::Option<crate::model::ResourceRegionScopeFilter>,
 }
 impl ListPendingInvitationResourcesInput {
-    /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
     pub fn resource_share_invitation_arn(&self) -> std::option::Option<&str> {
         self.resource_share_invitation_arn.as_deref()
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// </ul>
+    /// <p>The default value is <code>ALL</code>.</p>
+    pub fn resource_region_scope(
+        &self,
+    ) -> std::option::Option<&crate::model::ResourceRegionScopeFilter> {
+        self.resource_region_scope.as_ref()
     }
 }
 impl std::fmt::Debug for ListPendingInvitationResourcesInput {
@@ -5209,6 +5391,7 @@ impl std::fmt::Debug for ListPendingInvitationResourcesInput {
         );
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
+        formatter.field("resource_region_scope", &self.resource_region_scope);
         formatter.finish()
     }
 }
@@ -5217,57 +5400,61 @@ impl std::fmt::Debug for ListPendingInvitationResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceSharesInput {
-    /// <p>The Amazon Resource Names (ARNs) of the resource shares.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
     pub resource_share_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The status of the resource share.</p>
+    /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
     pub resource_share_status: std::option::Option<crate::model::ResourceShareStatus>,
-    /// <p>The type of owner.</p>
+    /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+    /// </ul>
     pub resource_owner: std::option::Option<crate::model::ResourceOwner>,
-    /// <p>The name of the resource share.</p>
+    /// <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>One or more tag filters.</p>
+    /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
     pub tag_filters: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
-    /// resource share.</p>
+    /// <p>Specifies that you want to retrieve details of only those resource shares that use the RAM permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
     pub permission_arn: std::option::Option<std::string::String>,
 }
 impl GetResourceSharesInput {
-    /// <p>The Amazon Resource Names (ARNs) of the resource shares.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
     pub fn resource_share_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_share_arns.as_deref()
     }
-    /// <p>The status of the resource share.</p>
+    /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
     pub fn resource_share_status(&self) -> std::option::Option<&crate::model::ResourceShareStatus> {
         self.resource_share_status.as_ref()
     }
-    /// <p>The type of owner.</p>
+    /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>
+    /// </ul>
     pub fn resource_owner(&self) -> std::option::Option<&crate::model::ResourceOwner> {
         self.resource_owner.as_ref()
     }
-    /// <p>The name of the resource share.</p>
+    /// <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>One or more tag filters.</p>
+    /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
     pub fn tag_filters(&self) -> std::option::Option<&[crate::model::TagFilter]> {
         self.tag_filters.as_deref()
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
-    /// resource share.</p>
+    /// <p>Specifies that you want to retrieve details of only those resource shares that use the RAM permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
     pub fn permission_arn(&self) -> std::option::Option<&str> {
         self.permission_arn.as_deref()
     }
@@ -5291,31 +5478,29 @@ impl std::fmt::Debug for GetResourceSharesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceShareInvitationsInput {
-    /// <p>The Amazon Resource Names (ARN) of the invitations.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
     pub resource_share_invitation_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+    /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
     pub resource_share_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl GetResourceShareInvitationsInput {
-    /// <p>The Amazon Resource Names (ARN) of the invitations.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
     pub fn resource_share_invitation_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_share_invitation_arns.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+    /// <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
     pub fn resource_share_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_share_arns.as_deref()
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5338,61 +5523,63 @@ impl std::fmt::Debug for GetResourceShareInvitationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceShareAssociationsInput {
-    /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-    /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
-    /// that are associated with the specified resource share.</p>
+    /// <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>
+    /// <ul>
+    /// <li> <p> <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.</p> </li>
+    /// <li> <p> <code>RESOURCE</code> – list the resources that are associated with the specified resource share.</p> </li>
+    /// </ul>
     pub association_type: std::option::Option<crate::model::ResourceShareAssociationType>,
-    /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+    /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
     pub resource_share_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
-    /// the association type is <code>PRINCIPAL</code>.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.</p>
+    /// <p>You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The principal. You cannot specify this parameter if the association type is
-    /// <code>RESOURCE</code>.</p>
+    /// <p>Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services account ID, an organization ID, an organizational unit ID, or the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an individual IAM user or role.</p>
+    /// <p>You cannot specify this parameter if the association type is <code>RESOURCE</code>.</p>
     pub principal: std::option::Option<std::string::String>,
-    /// <p>The association status.</p>
+    /// <p>Specifies that you want to retrieve only associations with this status.</p>
     pub association_status: std::option::Option<crate::model::ResourceShareAssociationStatus>,
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl GetResourceShareAssociationsInput {
-    /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-    /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
-    /// that are associated with the specified resource share.</p>
+    /// <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>
+    /// <ul>
+    /// <li> <p> <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.</p> </li>
+    /// <li> <p> <code>RESOURCE</code> – list the resources that are associated with the specified resource share.</p> </li>
+    /// </ul>
     pub fn association_type(
         &self,
     ) -> std::option::Option<&crate::model::ResourceShareAssociationType> {
         self.association_type.as_ref()
     }
-    /// <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+    /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
     pub fn resource_share_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_share_arns.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
-    /// the association type is <code>PRINCIPAL</code>.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.</p>
+    /// <p>You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The principal. You cannot specify this parameter if the association type is
-    /// <code>RESOURCE</code>.</p>
+    /// <p>Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services account ID, an organization ID, an organizational unit ID, or the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an individual IAM user or role.</p>
+    /// <p>You cannot specify this parameter if the association type is <code>RESOURCE</code>.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
-    /// <p>The association status.</p>
+    /// <p>Specifies that you want to retrieve only associations with this status.</p>
     pub fn association_status(
         &self,
     ) -> std::option::Option<&crate::model::ResourceShareAssociationStatus> {
         self.association_status.as_ref()
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5415,31 +5602,29 @@ impl std::fmt::Debug for GetResourceShareAssociationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourcePoliciesInput {
-    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The principal.</p>
+    /// <p>Specifies the principal.</p>
     pub principal: std::option::Option<std::string::String>,
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl GetResourcePoliciesInput {
-    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
     pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arns.as_deref()
     }
-    /// <p>The principal.</p>
+    /// <p>Specifies the principal.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
-    /// <p>The token for the next page of results.</p>
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5459,17 +5644,17 @@ impl std::fmt::Debug for GetResourcePoliciesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionInput {
-    /// <p>The Amazon Resource Name (ARN) of the permission.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
     pub permission_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier for the version of the permission.</p>
+    /// <p>Specifies identifier for the version of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p>
     pub permission_version: std::option::Option<i32>,
 }
 impl GetPermissionInput {
-    /// <p>The Amazon Resource Name (ARN) of the permission.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
     pub fn permission_arn(&self) -> std::option::Option<&str> {
         self.permission_arn.as_deref()
     }
-    /// <p>The identifier for the version of the permission.</p>
+    /// <p>Specifies identifier for the version of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p>
     pub fn permission_version(&self) -> std::option::Option<i32> {
         self.permission_version
     }
@@ -5498,23 +5683,25 @@ impl std::fmt::Debug for EnableSharingWithAwsOrganizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResourceSharePermissionInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share from which you want to disassociate a permission.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission to disassociate from the resource share. Changes to permissions take effect immediately.</p>
     pub permission_arn: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateResourceSharePermissionInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share from which you want to disassociate a permission.</p>
     pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the permission to disassociate from the resource share.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission to disassociate from the resource share. Changes to permissions take effect immediately.</p>
     pub fn permission_arn(&self) -> std::option::Option<&str> {
         self.permission_arn.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5533,29 +5720,51 @@ impl std::fmt::Debug for DisassociateResourceSharePermissionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateResourceShareInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove resources from.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account that created the resources.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The principals.</p>
+    /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p>
+    /// <p>You can include the following values:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+    /// </note>
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateResourceShareInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove resources from.</p>
     pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account that created the resources.</p>
     pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arns.as_deref()
     }
-    /// <p>The principals.</p>
+    /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p>
+    /// <p>You can include the following values:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+    /// </note>
     pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
         self.principals.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5575,17 +5784,19 @@ impl std::fmt::Debug for DisassociateResourceShareInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceShareInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to delete.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DeleteResourceShareInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to delete.</p>
     pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5603,99 +5814,69 @@ impl std::fmt::Debug for DeleteResourceShareInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceShareInput {
-    /// <p>The name of the resource share.</p>
+    /// <p>Specifies the name of the resource share.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ARNs of the resources to associate with the resource share.</p>
+    /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The principals to associate with the resource share. The possible values are:</p>
+    /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
+    /// <p>You can include the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon Web Services account ID</p>
-    /// </li>
-    /// <li>
-    /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM role</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM user</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-    /// Guide</i>.</p>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>One or more tags.</p>
+    /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Indicates whether principals outside your organization in Organizations can be associated
-    /// with a resource share.</p>
+    /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
     pub allow_external_principals: std::option::Option<bool>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
-    /// do not specify an ARN for the permission, RAM automatically attaches the default
-    /// version of the permission for each resource type. Only one permission can be associated
-    /// with each resource type in a resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
     pub permission_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateResourceShareInput {
-    /// <p>The name of the resource share.</p>
+    /// <p>Specifies the name of the resource share.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ARNs of the resources to associate with the resource share.</p>
+    /// <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
     pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arns.as_deref()
     }
-    /// <p>The principals to associate with the resource share. The possible values are:</p>
+    /// <p>Specifies a list of one or more principals to associate with the resource share.</p>
+    /// <p>You can include the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon Web Services account ID</p>
-    /// </li>
-    /// <li>
-    /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM role</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM user</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-    /// Guide</i>.</p>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
         self.principals.as_deref()
     }
-    /// <p>One or more tags.</p>
+    /// <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Indicates whether principals outside your organization in Organizations can be associated
-    /// with a resource share.</p>
+    /// <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
     pub fn allow_external_principals(&self) -> std::option::Option<bool> {
         self.allow_external_principals
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
-    /// do not specify an ARN for the permission, RAM automatically attaches the default
-    /// version of the permission for each resource type. Only one permission can be associated
-    /// with each resource type in a resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
     pub fn permission_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.permission_arns.as_deref()
     }
@@ -5718,41 +5899,41 @@ impl std::fmt::Debug for CreateResourceShareInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResourceSharePermissionInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
-    /// resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
     pub permission_arn: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the permission should replace the permissions that are currently
-    /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
-    /// <code>false</code> to add the permission to the current permission.</p>
+    /// <p>Specifies whether the specified permission should replace or add to the existing permission associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission. The default value is <code>false</code>.</p> <note>
+    /// <p>A resource share can have only one permission per resource type. If a resource share already has a permission for the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation returns an error. This helps prevent accidental overwriting of a permission.</p>
+    /// </note>
     pub replace: std::option::Option<bool>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The version of the RAM permissions to associate with the resource share.</p>
+    /// <p>Specifies the version of the RAM permission to associate with the resource share. If you don't specify this parameter, the operation uses the version designated as the default.</p>
     pub permission_version: std::option::Option<i32>,
 }
 impl AssociateResourceSharePermissionInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.</p>
     pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
-    /// resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
     pub fn permission_arn(&self) -> std::option::Option<&str> {
         self.permission_arn.as_deref()
     }
-    /// <p>Indicates whether the permission should replace the permissions that are currently
-    /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
-    /// <code>false</code> to add the permission to the current permission.</p>
+    /// <p>Specifies whether the specified permission should replace or add to the existing permission associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission. The default value is <code>false</code>.</p> <note>
+    /// <p>A resource share can have only one permission per resource type. If a resource share already has a permission for the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation returns an error. This helps prevent accidental overwriting of a permission.</p>
+    /// </note>
     pub fn replace(&self) -> std::option::Option<bool> {
         self.replace
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The version of the RAM permissions to associate with the resource share.</p>
+    /// <p>Specifies the version of the RAM permission to associate with the resource share. If you don't specify this parameter, the operation uses the version designated as the default.</p>
     pub fn permission_version(&self) -> std::option::Option<i32> {
         self.permission_version
     }
@@ -5773,73 +5954,53 @@ impl std::fmt::Debug for AssociateResourceSharePermissionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateResourceShareInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add principals or resources to.</p>
     pub resource_share_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only principals.</p>
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The principals to associate with the resource share. The possible values are:</p>
+    /// <p>Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if you want to add only resources.</p>
+    /// <p>What the principals can do with the resources in the share is determined by the RAM permissions that you associate with the resource share. See <code>AssociateResourceSharePermission</code>.</p>
+    /// <p>You can include the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon Web Services account ID</p>
-    /// </li>
-    /// <li>
-    /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM role</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM user</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-    /// Guide</i>.</p>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AssociateResourceShareInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource share.</p>
+    /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add principals or resources to.</p>
     pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only principals.</p>
     pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arns.as_deref()
     }
-    /// <p>The principals to associate with the resource share. The possible values are:</p>
+    /// <p>Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if you want to add only resources.</p>
+    /// <p>What the principals can do with the resources in the share is determined by the RAM permissions that you associate with the resource share. See <code>AssociateResourceSharePermission</code>.</p>
+    /// <p>You can include the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon Web Services account ID</p>
-    /// </li>
-    /// <li>
-    /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM role</p>
-    /// </li>
-    /// <li>
-    /// <p>An ARN of an IAM user</p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-    /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-    /// Guide</i>.</p>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
         self.principals.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5859,17 +6020,19 @@ impl std::fmt::Debug for AssociateResourceShareInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptResourceShareInvitationInput {
-    /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to accept.</p>
     pub resource_share_invitation_arn: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AcceptResourceShareInvitationInput {
-    /// <p>The Amazon Resource Name (ARN) of the invitation.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to accept.</p>
     pub fn resource_share_invitation_arn(&self) -> std::option::Option<&str> {
         self.resource_share_invitation_arn.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }

@@ -14,15 +14,11 @@ pub struct DescribeEntitiesDetectionV2JobError {
 pub enum DescribeEntitiesDetectionV2JobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -79,8 +75,6 @@ impl DescribeEntitiesDetectionV2JobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -165,15 +159,11 @@ pub struct DescribeICD10CMInferenceJobError {
 pub enum DescribeICD10CMInferenceJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -221,8 +211,6 @@ impl DescribeICD10CMInferenceJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -299,15 +287,11 @@ pub struct DescribePHIDetectionJobError {
 pub enum DescribePHIDetectionJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -353,8 +337,6 @@ impl DescribePHIDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -431,15 +413,11 @@ pub struct DescribeRxNormInferenceJobError {
 pub enum DescribeRxNormInferenceJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -485,8 +463,6 @@ impl DescribeRxNormInferenceJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -548,6 +524,138 @@ impl std::error::Error for DescribeRxNormInferenceJobError {
     }
 }
 
+/// Error type for the `DescribeSNOMEDCTInferenceJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeSNOMEDCTInferenceJobError {
+    /// Kind of error that occurred.
+    pub kind: DescribeSNOMEDCTInferenceJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `DescribeSNOMEDCTInferenceJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeSNOMEDCTInferenceJobErrorKind {
+    /// <p> An internal server error occurred. Retry your request. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeSNOMEDCTInferenceJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeSNOMEDCTInferenceJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DescribeSNOMEDCTInferenceJobErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeSNOMEDCTInferenceJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeSNOMEDCTInferenceJobError {
+    fn code(&self) -> Option<&str> {
+        DescribeSNOMEDCTInferenceJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeSNOMEDCTInferenceJobError {
+    /// Creates a new `DescribeSNOMEDCTInferenceJobError`.
+    pub fn new(kind: DescribeSNOMEDCTInferenceJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `DescribeSNOMEDCTInferenceJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeSNOMEDCTInferenceJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `DescribeSNOMEDCTInferenceJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeSNOMEDCTInferenceJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `DescribeSNOMEDCTInferenceJobErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeSNOMEDCTInferenceJobErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeSNOMEDCTInferenceJobErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeSNOMEDCTInferenceJobErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `DescribeSNOMEDCTInferenceJobErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeSNOMEDCTInferenceJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeSNOMEDCTInferenceJobErrorKind::InternalServerException(_inner) => Some(_inner),
+            DescribeSNOMEDCTInferenceJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            DescribeSNOMEDCTInferenceJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `DetectEntities` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -563,21 +671,15 @@ pub struct DetectEntitiesError {
 pub enum DetectEntitiesErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your
-    /// request.</p>
+    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
     InvalidEncodingException(crate::error::InvalidEncodingException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
-    /// </p>
+    /// <p> The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-    /// use a smaller document and then retry your request. </p>
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -625,8 +727,6 @@ impl DetectEntitiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -719,21 +819,15 @@ pub struct DetectEntitiesV2Error {
 pub enum DetectEntitiesV2ErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your
-    /// request.</p>
+    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
     InvalidEncodingException(crate::error::InvalidEncodingException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
-    /// </p>
+    /// <p> The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-    /// use a smaller document and then retry your request. </p>
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -781,8 +875,6 @@ impl DetectEntitiesV2Error {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -875,21 +967,15 @@ pub struct DetectPHIError {
 pub enum DetectPHIErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your
-    /// request.</p>
+    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
     InvalidEncodingException(crate::error::InvalidEncodingException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
-    /// </p>
+    /// <p> The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-    /// use a smaller document and then retry your request. </p>
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -937,8 +1023,6 @@ impl DetectPHIError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1019,21 +1103,15 @@ pub struct InferICD10CMError {
 pub enum InferICD10CMErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your
-    /// request.</p>
+    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
     InvalidEncodingException(crate::error::InvalidEncodingException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
-    /// </p>
+    /// <p> The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-    /// use a smaller document and then retry your request. </p>
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1081,8 +1159,6 @@ impl InferICD10CMError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1175,21 +1251,15 @@ pub struct InferRxNormError {
 pub enum InferRxNormErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your
-    /// request.</p>
+    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
     InvalidEncodingException(crate::error::InvalidEncodingException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
-    /// </p>
+    /// <p> The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-    /// use a smaller document and then retry your request. </p>
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1237,8 +1307,6 @@ impl InferRxNormError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1310,6 +1378,154 @@ impl std::error::Error for InferRxNormError {
     }
 }
 
+/// Error type for the `InferSNOMEDCT` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct InferSNOMEDCTError {
+    /// Kind of error that occurred.
+    pub kind: InferSNOMEDCTErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `InferSNOMEDCT` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum InferSNOMEDCTErrorKind {
+    /// <p> An internal server error occurred. Retry your request. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
+    InvalidEncodingException(crate::error::InvalidEncodingException),
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p> The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request. </p>
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
+    TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for InferSNOMEDCTError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            InferSNOMEDCTErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            InferSNOMEDCTErrorKind::InvalidEncodingException(_inner) => _inner.fmt(f),
+            InferSNOMEDCTErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            InferSNOMEDCTErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            InferSNOMEDCTErrorKind::TextSizeLimitExceededException(_inner) => _inner.fmt(f),
+            InferSNOMEDCTErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            InferSNOMEDCTErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for InferSNOMEDCTError {
+    fn code(&self) -> Option<&str> {
+        InferSNOMEDCTError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl InferSNOMEDCTError {
+    /// Creates a new `InferSNOMEDCTError`.
+    pub fn new(kind: InferSNOMEDCTErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `InferSNOMEDCTError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: InferSNOMEDCTErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `InferSNOMEDCTError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: InferSNOMEDCTErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `InferSNOMEDCTErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InferSNOMEDCTErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `InferSNOMEDCTErrorKind::InvalidEncodingException`.
+    pub fn is_invalid_encoding_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InferSNOMEDCTErrorKind::InvalidEncodingException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `InferSNOMEDCTErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InferSNOMEDCTErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `InferSNOMEDCTErrorKind::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InferSNOMEDCTErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `InferSNOMEDCTErrorKind::TextSizeLimitExceededException`.
+    pub fn is_text_size_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InferSNOMEDCTErrorKind::TextSizeLimitExceededException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `InferSNOMEDCTErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            InferSNOMEDCTErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for InferSNOMEDCTError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            InferSNOMEDCTErrorKind::InternalServerException(_inner) => Some(_inner),
+            InferSNOMEDCTErrorKind::InvalidEncodingException(_inner) => Some(_inner),
+            InferSNOMEDCTErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            InferSNOMEDCTErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            InferSNOMEDCTErrorKind::TextSizeLimitExceededException(_inner) => Some(_inner),
+            InferSNOMEDCTErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            InferSNOMEDCTErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `ListEntitiesDetectionV2Jobs` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1325,15 +1541,11 @@ pub struct ListEntitiesDetectionV2JobsError {
 pub enum ListEntitiesDetectionV2JobsErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The filter that you specified for the operation is invalid. Check the filter values that
-    /// you entered and try your request again.</p>
+    /// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1379,8 +1591,6 @@ impl ListEntitiesDetectionV2JobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1457,15 +1667,11 @@ pub struct ListICD10CMInferenceJobsError {
 pub enum ListICD10CMInferenceJobsErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The filter that you specified for the operation is invalid. Check the filter values that
-    /// you entered and try your request again.</p>
+    /// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1511,8 +1717,6 @@ impl ListICD10CMInferenceJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1589,15 +1793,11 @@ pub struct ListPHIDetectionJobsError {
 pub enum ListPHIDetectionJobsErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The filter that you specified for the operation is invalid. Check the filter values that
-    /// you entered and try your request again.</p>
+    /// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1643,8 +1843,6 @@ impl ListPHIDetectionJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1721,15 +1919,11 @@ pub struct ListRxNormInferenceJobsError {
 pub enum ListRxNormInferenceJobsErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The filter that you specified for the operation is invalid. Check the filter values that
-    /// you entered and try your request again.</p>
+    /// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1775,8 +1969,6 @@ impl ListRxNormInferenceJobsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1838,6 +2030,132 @@ impl std::error::Error for ListRxNormInferenceJobsError {
     }
 }
 
+/// Error type for the `ListSNOMEDCTInferenceJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListSNOMEDCTInferenceJobsError {
+    /// Kind of error that occurred.
+    pub kind: ListSNOMEDCTInferenceJobsErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `ListSNOMEDCTInferenceJobs` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListSNOMEDCTInferenceJobsErrorKind {
+    /// <p> An internal server error occurred. Retry your request. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListSNOMEDCTInferenceJobsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListSNOMEDCTInferenceJobsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            ListSNOMEDCTInferenceJobsErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListSNOMEDCTInferenceJobsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            ListSNOMEDCTInferenceJobsErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListSNOMEDCTInferenceJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for ListSNOMEDCTInferenceJobsError {
+    fn code(&self) -> Option<&str> {
+        ListSNOMEDCTInferenceJobsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListSNOMEDCTInferenceJobsError {
+    /// Creates a new `ListSNOMEDCTInferenceJobsError`.
+    pub fn new(kind: ListSNOMEDCTInferenceJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `ListSNOMEDCTInferenceJobsError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListSNOMEDCTInferenceJobsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `ListSNOMEDCTInferenceJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListSNOMEDCTInferenceJobsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `ListSNOMEDCTInferenceJobsErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSNOMEDCTInferenceJobsErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSNOMEDCTInferenceJobsErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSNOMEDCTInferenceJobsErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSNOMEDCTInferenceJobsErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSNOMEDCTInferenceJobsErrorKind::TooManyRequestsException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `ListSNOMEDCTInferenceJobsErrorKind::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSNOMEDCTInferenceJobsErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListSNOMEDCTInferenceJobsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListSNOMEDCTInferenceJobsErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListSNOMEDCTInferenceJobsErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListSNOMEDCTInferenceJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            ListSNOMEDCTInferenceJobsErrorKind::ValidationException(_inner) => Some(_inner),
+            ListSNOMEDCTInferenceJobsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StartEntitiesDetectionV2Job` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1853,15 +2171,11 @@ pub struct StartEntitiesDetectionV2JobError {
 pub enum StartEntitiesDetectionV2JobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1909,8 +2223,6 @@ impl StartEntitiesDetectionV2JobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1987,15 +2299,11 @@ pub struct StartICD10CMInferenceJobError {
 pub enum StartICD10CMInferenceJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2041,8 +2349,6 @@ impl StartICD10CMInferenceJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2119,15 +2425,11 @@ pub struct StartPHIDetectionJobError {
 pub enum StartPHIDetectionJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2173,8 +2475,6 @@ impl StartPHIDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2251,15 +2551,11 @@ pub struct StartRxNormInferenceJobError {
 pub enum StartRxNormInferenceJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2305,8 +2601,6 @@ impl StartRxNormInferenceJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2368,6 +2662,132 @@ impl std::error::Error for StartRxNormInferenceJobError {
     }
 }
 
+/// Error type for the `StartSNOMEDCTInferenceJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StartSNOMEDCTInferenceJobError {
+    /// Kind of error that occurred.
+    pub kind: StartSNOMEDCTInferenceJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StartSNOMEDCTInferenceJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartSNOMEDCTInferenceJobErrorKind {
+    /// <p> An internal server error occurred. Retry your request. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartSNOMEDCTInferenceJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartSNOMEDCTInferenceJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            StartSNOMEDCTInferenceJobErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            StartSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StartSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            StartSNOMEDCTInferenceJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StartSNOMEDCTInferenceJobError {
+    fn code(&self) -> Option<&str> {
+        StartSNOMEDCTInferenceJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartSNOMEDCTInferenceJobError {
+    /// Creates a new `StartSNOMEDCTInferenceJobError`.
+    pub fn new(kind: StartSNOMEDCTInferenceJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StartSNOMEDCTInferenceJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartSNOMEDCTInferenceJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StartSNOMEDCTInferenceJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartSNOMEDCTInferenceJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StartSNOMEDCTInferenceJobErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSNOMEDCTInferenceJobErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartSNOMEDCTInferenceJobErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSNOMEDCTInferenceJobErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StartSNOMEDCTInferenceJobErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for StartSNOMEDCTInferenceJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartSNOMEDCTInferenceJobErrorKind::InternalServerException(_inner) => Some(_inner),
+            StartSNOMEDCTInferenceJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            StartSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StartSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            StartSNOMEDCTInferenceJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// Error type for the `StopEntitiesDetectionV2Job` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2383,11 +2803,9 @@ pub struct StopEntitiesDetectionV2JobError {
 pub enum StopEntitiesDetectionV2JobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2432,8 +2850,6 @@ impl StopEntitiesDetectionV2JobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2502,11 +2918,9 @@ pub struct StopICD10CMInferenceJobError {
 pub enum StopICD10CMInferenceJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2551,8 +2965,6 @@ impl StopICD10CMInferenceJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2621,11 +3033,9 @@ pub struct StopPHIDetectionJobError {
 pub enum StopPHIDetectionJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2670,8 +3080,6 @@ impl StopPHIDetectionJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2740,11 +3148,9 @@ pub struct StopRxNormInferenceJobError {
 pub enum StopRxNormInferenceJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2789,8 +3195,6 @@ impl StopRxNormInferenceJobError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2844,8 +3248,197 @@ impl std::error::Error for StopRxNormInferenceJobError {
     }
 }
 
-/// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-/// the ARN and try your request again.</p>
+/// Error type for the `StopSNOMEDCTInferenceJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StopSNOMEDCTInferenceJobError {
+    /// Kind of error that occurred.
+    pub kind: StopSNOMEDCTInferenceJobErrorKind,
+    /// Additional metadata about the error, including error code, message, and request ID.
+    pub(crate) meta: aws_smithy_types::Error,
+}
+/// Types of errors that can occur for the `StopSNOMEDCTInferenceJob` operation.
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StopSNOMEDCTInferenceJobErrorKind {
+    /// <p> An internal server error occurred. Retry your request. </p>
+    InternalServerException(crate::error::InternalServerException),
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
+    InvalidRequestException(crate::error::InvalidRequestException),
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
+    TooManyRequestsException(crate::error::TooManyRequestsException),
+    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StopSNOMEDCTInferenceJobError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StopSNOMEDCTInferenceJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            StopSNOMEDCTInferenceJobErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            StopSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            StopSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            StopSNOMEDCTInferenceJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl aws_smithy_types::retry::ProvideErrorKind for StopSNOMEDCTInferenceJobError {
+    fn code(&self) -> Option<&str> {
+        StopSNOMEDCTInferenceJobError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StopSNOMEDCTInferenceJobError {
+    /// Creates a new `StopSNOMEDCTInferenceJobError`.
+    pub fn new(kind: StopSNOMEDCTInferenceJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    /// Creates the `StopSNOMEDCTInferenceJobError::Unhandled` variant from any error type.
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StopSNOMEDCTInferenceJobErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    /// Creates the `StopSNOMEDCTInferenceJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+    pub fn generic(err: aws_smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StopSNOMEDCTInferenceJobErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    /// Returns the error message if one is available.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    pub fn meta(&self) -> &aws_smithy_types::Error {
+        &self.meta
+    }
+
+    /// Returns the request ID if it's available.
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    /// Returns the error code if it's available.
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    /// Returns `true` if the error kind is `StopSNOMEDCTInferenceJobErrorKind::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopSNOMEDCTInferenceJobErrorKind::InternalServerException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopSNOMEDCTInferenceJobErrorKind::InvalidRequestException`.
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopSNOMEDCTInferenceJobErrorKind::InvalidRequestException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    /// Returns `true` if the error kind is `StopSNOMEDCTInferenceJobErrorKind::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(_)
+        )
+    }
+}
+impl std::error::Error for StopSNOMEDCTInferenceJobError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StopSNOMEDCTInferenceJobErrorKind::InternalServerException(_inner) => Some(_inner),
+            StopSNOMEDCTInferenceJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            StopSNOMEDCTInferenceJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            StopSNOMEDCTInferenceJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            StopSNOMEDCTInferenceJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+/// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TooManyRequestsException {
+    #[allow(missing_docs)] // documentation missing in model
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TooManyRequestsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TooManyRequestsException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl TooManyRequestsException {
+    /// Returns the error message.
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyRequestsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyRequestsException")?;
+        if let Some(inner_1) = &self.message {
+            write!(f, ": {}", inner_1)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyRequestsException {}
+/// See [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+pub mod too_many_requests_exception {
+    /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        #[allow(missing_docs)] // documentation missing in model
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+        pub fn build(self) -> crate::error::TooManyRequestsException {
+            crate::error::TooManyRequestsException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl TooManyRequestsException {
+    /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException)
+    pub fn builder() -> crate::error::too_many_requests_exception::Builder {
+        crate::error::too_many_requests_exception::Builder::default()
+    }
+}
+
+/// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -2868,8 +3461,8 @@ impl ResourceNotFoundException {
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_1) = &self.message {
-            write!(f, ": {}", inner_1)?;
+        if let Some(inner_2) = &self.message {
+            write!(f, ": {}", inner_2)?;
         }
         Ok(())
     }
@@ -2909,8 +3502,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p> The request that you made is invalid. Check your request to determine why it's invalid
-/// and then retry the request.</p>
+/// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
@@ -2933,8 +3525,8 @@ impl InvalidRequestException {
 impl std::fmt::Display for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRequestException")?;
-        if let Some(inner_2) = &self.message {
-            write!(f, ": {}", inner_2)?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
         }
         Ok(())
     }
@@ -2997,8 +3589,8 @@ impl InternalServerException {
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -3038,74 +3630,7 @@ impl InternalServerException {
     }
 }
 
-/// <p> You have made too many requests within a short period of time. Wait for a short time and
-/// then try your request again. Contact customer support for more information about a service
-/// limit increase. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TooManyRequestsException {
-    #[allow(missing_docs)] // documentation missing in model
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TooManyRequestsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TooManyRequestsException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl TooManyRequestsException {
-    /// Returns the error message.
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyRequestsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyRequestsException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyRequestsException {}
-/// See [`TooManyRequestsException`](crate::error::TooManyRequestsException)
-pub mod too_many_requests_exception {
-    /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        #[allow(missing_docs)] // documentation missing in model
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException)
-        pub fn build(self) -> crate::error::TooManyRequestsException {
-            crate::error::TooManyRequestsException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl TooManyRequestsException {
-    /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException)
-    pub fn builder() -> crate::error::too_many_requests_exception::Builder {
-        crate::error::too_many_requests_exception::Builder::default()
-    }
-}
-
-/// <p>The filter that you specified for the operation is invalid. Check the filter values that
-/// you entered and try your request again.</p>
+/// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -3169,8 +3694,7 @@ impl ValidationException {
     }
 }
 
-/// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-/// use a smaller document and then retry your request. </p>
+/// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextSizeLimitExceededException {
@@ -3234,8 +3758,7 @@ impl TextSizeLimitExceededException {
     }
 }
 
-/// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
-/// </p>
+/// <p> The Comprehend Medical; service is temporarily unavailable. Please wait and then retry your request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
@@ -3299,8 +3822,7 @@ impl ServiceUnavailableException {
     }
 }
 
-/// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your
-/// request.</p>
+/// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEncodingException {

@@ -3,12 +3,9 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The user-provided application code (query) is not valid. This can be a simple syntax
-    /// error.</p>
+    /// <p>The user-provided application code (query) is not valid. This can be a simple syntax error.</p>
     CodeValidationException(crate::error::CodeValidationException),
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can
-    /// be the result of attempting to modify an application without using the current application
-    /// ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The user-provided application configuration is not valid.</p>
     InvalidApplicationConfigurationException(
@@ -24,21 +21,17 @@ pub enum Error {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>Specified application can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Discovery failed to get a record from the streaming source because of the Kinesis
-    /// Streams <code>ProvisionedThroughputExceededException</code>. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the Amazon Kinesis Streams API Reference.</p>
+    /// <p>Discovery failed to get a record from the streaming source because of the Kinesis Streams <code>ProvisionedThroughputExceededException</code>. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the Amazon Kinesis Streams API Reference.</p>
     ResourceProvisionedThroughputExceededException(
         crate::error::ResourceProvisionedThroughputExceededException,
     ),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum
-    /// number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
+    /// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>The data format is not valid. Kinesis Data Analytics cannot detect the schema for
-    /// the given streaming source.</p>
+    /// <p>The data format is not valid. Kinesis Data Analytics cannot detect the schema for the given streaming source.</p>
     UnableToDetectSchemaException(crate::error::UnableToDetectSchemaException),
-    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this
-    /// operation. </p>
+    /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation. </p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

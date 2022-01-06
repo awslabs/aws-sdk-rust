@@ -33,7 +33,7 @@ pub mod associate_certificate_input {
 #[doc(hidden)]
 pub type AssociateCertificateInputOperationOutputAlias = crate::operation::AssociateCertificate;
 #[doc(hidden)]
-pub type AssociateCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateCertificateInput {
     /// Consumes the builder and constructs an Operation<[`AssociateCertificate`](crate::operation::AssociateCertificate)>
     #[allow(clippy::let_and_return)]
@@ -44,7 +44,7 @@ impl AssociateCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -124,7 +124,7 @@ impl AssociateCertificateInput {
             "AssociateCertificate",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -178,7 +178,7 @@ pub mod cancel_job_input {
 #[doc(hidden)]
 pub type CancelJobInputOperationOutputAlias = crate::operation::CancelJob;
 #[doc(hidden)]
-pub type CancelJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelJobInput {
     /// Consumes the builder and constructs an Operation<[`CancelJob`](crate::operation::CancelJob)>
     #[allow(clippy::let_and_return)]
@@ -189,7 +189,7 @@ impl CancelJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -276,7 +276,7 @@ impl CancelJobInput {
                     "CancelJob",
                     "mediaconvert",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -362,9 +362,9 @@ pub mod create_job_input {
         /// To override the contents of this collection use [`set_hop_destinations`](Self::set_hop_destinations).
         ///
         /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
-        pub fn hop_destinations(mut self, input: impl Into<crate::model::HopDestination>) -> Self {
+        pub fn hop_destinations(mut self, input: crate::model::HopDestination) -> Self {
             let mut v = self.hop_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hop_destinations = Some(v);
             self
         }
@@ -462,7 +462,7 @@ pub mod create_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.  Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations and workflows.
+        /// Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations and workflows.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -473,7 +473,7 @@ pub mod create_job_input {
             self.tags = Some(hash_map);
             self
         }
-        /// Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.  Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations and workflows.
+        /// Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations and workflows.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -487,7 +487,7 @@ pub mod create_job_input {
         ///
         /// To override the contents of this collection use [`set_user_metadata`](Self::set_user_metadata).
         ///
-        /// Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs.  Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we recommend that you use standard AWS tags.
+        /// Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we recommend that you use standard AWS tags.
         pub fn user_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -498,7 +498,7 @@ pub mod create_job_input {
             self.user_metadata = Some(hash_map);
             self
         }
-        /// Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs.  Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we recommend that you use standard AWS tags.
+        /// Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we recommend that you use standard AWS tags.
         pub fn set_user_metadata(
             mut self,
             input: std::option::Option<
@@ -534,7 +534,7 @@ pub mod create_job_input {
 #[doc(hidden)]
 pub type CreateJobInputOperationOutputAlias = crate::operation::CreateJob;
 #[doc(hidden)]
-pub type CreateJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateJob`](crate::operation::CreateJob)>
     #[allow(clippy::let_and_return)]
@@ -545,7 +545,7 @@ impl CreateJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -625,7 +625,7 @@ impl CreateJobInput {
                     "CreateJob",
                     "mediaconvert",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -707,9 +707,9 @@ pub mod create_job_template_input {
         /// To override the contents of this collection use [`set_hop_destinations`](Self::set_hop_destinations).
         ///
         /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
-        pub fn hop_destinations(mut self, input: impl Into<crate::model::HopDestination>) -> Self {
+        pub fn hop_destinations(mut self, input: crate::model::HopDestination) -> Self {
             let mut v = self.hop_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hop_destinations = Some(v);
             self
         }
@@ -827,7 +827,7 @@ pub mod create_job_template_input {
 #[doc(hidden)]
 pub type CreateJobTemplateInputOperationOutputAlias = crate::operation::CreateJobTemplate;
 #[doc(hidden)]
-pub type CreateJobTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateJobTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`CreateJobTemplate`](crate::operation::CreateJobTemplate)>
     #[allow(clippy::let_and_return)]
@@ -838,7 +838,7 @@ impl CreateJobTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateJobTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -918,7 +918,7 @@ impl CreateJobTemplateInput {
             "CreateJobTemplate",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1044,7 +1044,7 @@ pub mod create_preset_input {
 #[doc(hidden)]
 pub type CreatePresetInputOperationOutputAlias = crate::operation::CreatePreset;
 #[doc(hidden)]
-pub type CreatePresetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreatePresetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreatePresetInput {
     /// Consumes the builder and constructs an Operation<[`CreatePreset`](crate::operation::CreatePreset)>
     #[allow(clippy::let_and_return)]
@@ -1055,7 +1055,7 @@ impl CreatePresetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreatePreset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1134,7 +1134,7 @@ impl CreatePresetInput {
             "CreatePreset",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1279,7 +1279,7 @@ pub mod create_queue_input {
 #[doc(hidden)]
 pub type CreateQueueInputOperationOutputAlias = crate::operation::CreateQueue;
 #[doc(hidden)]
-pub type CreateQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateQueueInput {
     /// Consumes the builder and constructs an Operation<[`CreateQueue`](crate::operation::CreateQueue)>
     #[allow(clippy::let_and_return)]
@@ -1290,7 +1290,7 @@ impl CreateQueueInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateQueue,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1369,7 +1369,7 @@ impl CreateQueueInput {
             "CreateQueue",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1425,7 +1425,7 @@ pub mod delete_job_template_input {
 #[doc(hidden)]
 pub type DeleteJobTemplateInputOperationOutputAlias = crate::operation::DeleteJobTemplate;
 #[doc(hidden)]
-pub type DeleteJobTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteJobTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJobTemplate`](crate::operation::DeleteJobTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1436,7 +1436,7 @@ impl DeleteJobTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteJobTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1526,7 +1526,7 @@ impl DeleteJobTemplateInput {
             "DeleteJobTemplate",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1562,7 +1562,7 @@ pub mod delete_policy_input {
 #[doc(hidden)]
 pub type DeletePolicyInputOperationOutputAlias = crate::operation::DeletePolicy;
 #[doc(hidden)]
-pub type DeletePolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePolicyInput {
     /// Consumes the builder and constructs an Operation<[`DeletePolicy`](crate::operation::DeletePolicy)>
     #[allow(clippy::let_and_return)]
@@ -1573,7 +1573,7 @@ impl DeletePolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1647,7 +1647,7 @@ impl DeletePolicyInput {
             "DeletePolicy",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1695,7 +1695,7 @@ pub mod delete_preset_input {
 #[doc(hidden)]
 pub type DeletePresetInputOperationOutputAlias = crate::operation::DeletePreset;
 #[doc(hidden)]
-pub type DeletePresetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeletePresetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeletePresetInput {
     /// Consumes the builder and constructs an Operation<[`DeletePreset`](crate::operation::DeletePreset)>
     #[allow(clippy::let_and_return)]
@@ -1706,7 +1706,7 @@ impl DeletePresetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeletePreset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1796,7 +1796,7 @@ impl DeletePresetInput {
             "DeletePreset",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1844,7 +1844,7 @@ pub mod delete_queue_input {
 #[doc(hidden)]
 pub type DeleteQueueInputOperationOutputAlias = crate::operation::DeleteQueue;
 #[doc(hidden)]
-pub type DeleteQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteQueueInput {
     /// Consumes the builder and constructs an Operation<[`DeleteQueue`](crate::operation::DeleteQueue)>
     #[allow(clippy::let_and_return)]
@@ -1855,7 +1855,7 @@ impl DeleteQueueInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteQueue,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1945,7 +1945,7 @@ impl DeleteQueueInput {
             "DeleteQueue",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2022,7 +2022,7 @@ pub mod describe_endpoints_input {
 #[doc(hidden)]
 pub type DescribeEndpointsInputOperationOutputAlias = crate::operation::DescribeEndpoints;
 #[doc(hidden)]
-pub type DescribeEndpointsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeEndpointsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeEndpointsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeEndpoints`](crate::operation::DescribeEndpoints)>
     #[allow(clippy::let_and_return)]
@@ -2033,7 +2033,7 @@ impl DescribeEndpointsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpoints,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2113,7 +2113,7 @@ impl DescribeEndpointsInput {
             "DescribeEndpoints",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2170,7 +2170,7 @@ pub mod disassociate_certificate_input {
 pub type DisassociateCertificateInputOperationOutputAlias =
     crate::operation::DisassociateCertificate;
 #[doc(hidden)]
-pub type DisassociateCertificateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateCertificateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateCertificateInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateCertificate`](crate::operation::DisassociateCertificate)>
     #[allow(clippy::let_and_return)]
@@ -2181,7 +2181,7 @@ impl DisassociateCertificateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateCertificate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2271,7 +2271,7 @@ impl DisassociateCertificateInput {
             "DisassociateCertificate",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2317,7 +2317,7 @@ pub mod get_job_input {
 #[doc(hidden)]
 pub type GetJobInputOperationOutputAlias = crate::operation::GetJob;
 #[doc(hidden)]
-pub type GetJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobInput {
     /// Consumes the builder and constructs an Operation<[`GetJob`](crate::operation::GetJob)>
     #[allow(clippy::let_and_return)]
@@ -2328,7 +2328,7 @@ impl GetJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2415,7 +2415,7 @@ impl GetJobInput {
                     "GetJob",
                     "mediaconvert",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2463,7 +2463,7 @@ pub mod get_job_template_input {
 #[doc(hidden)]
 pub type GetJobTemplateInputOperationOutputAlias = crate::operation::GetJobTemplate;
 #[doc(hidden)]
-pub type GetJobTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetJobTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GetJobTemplate`](crate::operation::GetJobTemplate)>
     #[allow(clippy::let_and_return)]
@@ -2474,7 +2474,7 @@ impl GetJobTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetJobTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2564,7 +2564,7 @@ impl GetJobTemplateInput {
             "GetJobTemplate",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2598,7 +2598,7 @@ pub mod get_policy_input {
 #[doc(hidden)]
 pub type GetPolicyInputOperationOutputAlias = crate::operation::GetPolicy;
 #[doc(hidden)]
-pub type GetPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetPolicy`](crate::operation::GetPolicy)>
     #[allow(clippy::let_and_return)]
@@ -2609,7 +2609,7 @@ impl GetPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2681,7 +2681,7 @@ impl GetPolicyInput {
                     "GetPolicy",
                     "mediaconvert",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2727,7 +2727,7 @@ pub mod get_preset_input {
 #[doc(hidden)]
 pub type GetPresetInputOperationOutputAlias = crate::operation::GetPreset;
 #[doc(hidden)]
-pub type GetPresetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPresetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPresetInput {
     /// Consumes the builder and constructs an Operation<[`GetPreset`](crate::operation::GetPreset)>
     #[allow(clippy::let_and_return)]
@@ -2738,7 +2738,7 @@ impl GetPresetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPreset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2826,7 +2826,7 @@ impl GetPresetInput {
                     "GetPreset",
                     "mediaconvert",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2872,7 +2872,7 @@ pub mod get_queue_input {
 #[doc(hidden)]
 pub type GetQueueInputOperationOutputAlias = crate::operation::GetQueue;
 #[doc(hidden)]
-pub type GetQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetQueueInput {
     /// Consumes the builder and constructs an Operation<[`GetQueue`](crate::operation::GetQueue)>
     #[allow(clippy::let_and_return)]
@@ -2883,7 +2883,7 @@ impl GetQueueInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetQueue,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2971,7 +2971,7 @@ impl GetQueueInput {
                     "GetQueue",
                     "mediaconvert",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3067,7 +3067,7 @@ pub mod list_jobs_input {
 #[doc(hidden)]
 pub type ListJobsInputOperationOutputAlias = crate::operation::ListJobs;
 #[doc(hidden)]
-pub type ListJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(clippy::let_and_return)]
@@ -3078,7 +3078,7 @@ impl ListJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3176,7 +3176,7 @@ impl ListJobsInput {
                     "ListJobs",
                     "mediaconvert",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3277,7 +3277,7 @@ pub mod list_job_templates_input {
 #[doc(hidden)]
 pub type ListJobTemplatesInputOperationOutputAlias = crate::operation::ListJobTemplates;
 #[doc(hidden)]
-pub type ListJobTemplatesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListJobTemplatesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListJobTemplatesInput {
     /// Consumes the builder and constructs an Operation<[`ListJobTemplates`](crate::operation::ListJobTemplates)>
     #[allow(clippy::let_and_return)]
@@ -3288,7 +3288,7 @@ impl ListJobTemplatesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListJobTemplates,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3388,7 +3388,7 @@ impl ListJobTemplatesInput {
             "ListJobTemplates",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3489,7 +3489,7 @@ pub mod list_presets_input {
 #[doc(hidden)]
 pub type ListPresetsInputOperationOutputAlias = crate::operation::ListPresets;
 #[doc(hidden)]
-pub type ListPresetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPresetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListPresetsInput {
     /// Consumes the builder and constructs an Operation<[`ListPresets`](crate::operation::ListPresets)>
     #[allow(clippy::let_and_return)]
@@ -3500,7 +3500,7 @@ impl ListPresetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListPresets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3600,7 +3600,7 @@ impl ListPresetsInput {
             "ListPresets",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3689,7 +3689,7 @@ pub mod list_queues_input {
 #[doc(hidden)]
 pub type ListQueuesInputOperationOutputAlias = crate::operation::ListQueues;
 #[doc(hidden)]
-pub type ListQueuesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListQueuesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListQueuesInput {
     /// Consumes the builder and constructs an Operation<[`ListQueues`](crate::operation::ListQueues)>
     #[allow(clippy::let_and_return)]
@@ -3700,7 +3700,7 @@ impl ListQueuesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListQueues,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3797,7 +3797,7 @@ impl ListQueuesInput {
             "ListQueues",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3845,7 +3845,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3856,7 +3856,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3945,7 +3945,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3993,7 +3993,7 @@ pub mod put_policy_input {
 #[doc(hidden)]
 pub type PutPolicyInputOperationOutputAlias = crate::operation::PutPolicy;
 #[doc(hidden)]
-pub type PutPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPolicyInput {
     /// Consumes the builder and constructs an Operation<[`PutPolicy`](crate::operation::PutPolicy)>
     #[allow(clippy::let_and_return)]
@@ -4004,7 +4004,7 @@ impl PutPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4081,7 +4081,7 @@ impl PutPolicyInput {
                     "PutPolicy",
                     "mediaconvert",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4168,7 +4168,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4179,7 +4179,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4258,7 +4258,7 @@ impl TagResourceInput {
             "TagResource",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4337,7 +4337,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4348,7 +4348,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4442,7 +4442,7 @@ impl UntagResourceInput {
             "UntagResource",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4521,9 +4521,9 @@ pub mod update_job_template_input {
         /// To override the contents of this collection use [`set_hop_destinations`](Self::set_hop_destinations).
         ///
         /// Optional list of hop destinations.
-        pub fn hop_destinations(mut self, input: impl Into<crate::model::HopDestination>) -> Self {
+        pub fn hop_destinations(mut self, input: crate::model::HopDestination) -> Self {
             let mut v = self.hop_destinations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.hop_destinations = Some(v);
             self
         }
@@ -4615,7 +4615,7 @@ pub mod update_job_template_input {
 #[doc(hidden)]
 pub type UpdateJobTemplateInputOperationOutputAlias = crate::operation::UpdateJobTemplate;
 #[doc(hidden)]
-pub type UpdateJobTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateJobTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateJobTemplateInput {
     /// Consumes the builder and constructs an Operation<[`UpdateJobTemplate`](crate::operation::UpdateJobTemplate)>
     #[allow(clippy::let_and_return)]
@@ -4626,7 +4626,7 @@ impl UpdateJobTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateJobTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4722,7 +4722,7 @@ impl UpdateJobTemplateInput {
             "UpdateJobTemplate",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4819,7 +4819,7 @@ pub mod update_preset_input {
 #[doc(hidden)]
 pub type UpdatePresetInputOperationOutputAlias = crate::operation::UpdatePreset;
 #[doc(hidden)]
-pub type UpdatePresetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdatePresetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdatePresetInput {
     /// Consumes the builder and constructs an Operation<[`UpdatePreset`](crate::operation::UpdatePreset)>
     #[allow(clippy::let_and_return)]
@@ -4830,7 +4830,7 @@ impl UpdatePresetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdatePreset,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4925,7 +4925,7 @@ impl UpdatePresetInput {
             "UpdatePreset",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5026,7 +5026,7 @@ pub mod update_queue_input {
 #[doc(hidden)]
 pub type UpdateQueueInputOperationOutputAlias = crate::operation::UpdateQueue;
 #[doc(hidden)]
-pub type UpdateQueueInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateQueueInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateQueueInput {
     /// Consumes the builder and constructs an Operation<[`UpdateQueue`](crate::operation::UpdateQueue)>
     #[allow(clippy::let_and_return)]
@@ -5037,7 +5037,7 @@ impl UpdateQueueInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateQueue,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5132,7 +5132,7 @@ impl UpdateQueueInput {
             "UpdateQueue",
             "mediaconvert",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6071,10 +6071,10 @@ pub struct CreateJobInput {
     pub simulate_reserved_queue: std::option::Option<crate::model::SimulateReservedQueue>,
     /// Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
     pub status_update_interval: std::option::Option<crate::model::StatusUpdateInterval>,
-    /// Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.  Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations and workflows.
+    /// Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations and workflows.
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs.  Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we recommend that you use standard AWS tags.
+    /// Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we recommend that you use standard AWS tags.
     pub user_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6129,14 +6129,14 @@ impl CreateJobInput {
     ) -> std::option::Option<&crate::model::StatusUpdateInterval> {
         self.status_update_interval.as_ref()
     }
-    /// Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.  Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations and workflows.
+    /// Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations and workflows.
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs.  Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we recommend that you use standard AWS tags.
+    /// Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we recommend that you use standard AWS tags.
     pub fn user_metadata(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

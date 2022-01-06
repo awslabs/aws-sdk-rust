@@ -41,10 +41,7 @@ pub struct UpdateEnvironmentOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the environment.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The state of the environment. An environment can be in one of the following states:
-    /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-    /// <code>ROLLED_BACK</code>
-    /// </p>
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub state: std::option::Option<crate::model::EnvironmentState>,
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
     pub monitors: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
@@ -66,10 +63,7 @@ impl UpdateEnvironmentOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The state of the environment. An environment can be in one of the following states:
-    /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-    /// <code>ROLLED_BACK</code>
-    /// </p>
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub fn state(&self) -> std::option::Option<&crate::model::EnvironmentState> {
         self.state.as_ref()
     }
@@ -147,18 +141,12 @@ pub mod update_environment_output {
             self.description = input;
             self
         }
-        /// <p>The state of the environment. An environment can be in one of the following states:
-        /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-        /// <code>ROLLED_BACK</code>
-        /// </p>
+        /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
         pub fn state(mut self, input: crate::model::EnvironmentState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the environment. An environment can be in one of the following states:
-        /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-        /// <code>ROLLED_BACK</code>
-        /// </p>
+        /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::EnvironmentState>,
@@ -171,9 +159,9 @@ pub mod update_environment_output {
         /// To override the contents of this collection use [`set_monitors`](Self::set_monitors).
         ///
         /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-        pub fn monitors(mut self, input: impl Into<crate::model::Monitor>) -> Self {
+        pub fn monitors(mut self, input: crate::model::Monitor) -> Self {
             let mut v = self.monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.monitors = Some(v);
             self
         }
@@ -219,11 +207,9 @@ pub struct UpdateDeploymentStrategyOutput {
     pub deployment_duration_in_minutes: i32,
     /// <p>The algorithm used to define how percentage grew over time.</p>
     pub growth_type: std::option::Option<crate::model::GrowthType>,
-    /// <p>The percentage of targets that received a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
     pub growth_factor: f32,
-    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub replicate_to: std::option::Option<crate::model::ReplicateTo>,
@@ -249,13 +235,11 @@ impl UpdateDeploymentStrategyOutput {
     pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
-    /// <p>The percentage of targets that received a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
     pub fn growth_factor(&self) -> f32 {
         self.growth_factor
     }
-    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
@@ -356,26 +340,22 @@ pub mod update_deployment_strategy_output {
             self.growth_type = input;
             self
         }
-        /// <p>The percentage of targets that received a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
             self.growth_factor = Some(input);
             self
         }
-        /// <p>The percentage of targets that received a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
             self.growth_factor = input;
             self
         }
-        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -431,14 +411,11 @@ pub struct UpdateConfigurationProfileOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The URI location of the configuration.</p>
     pub location_uri: std::option::Option<std::string::String>,
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// <code>LocationUri</code>.</p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     pub retrieval_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
-    /// <p>The type of configurations that the configuration profile contains. A configuration can
-    /// be a feature flag used for enabling or disabling new features or a free-form configuration
-    /// used for distributing configurations to your application. </p>
+    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl UpdateConfigurationProfileOutput {
@@ -462,8 +439,7 @@ impl UpdateConfigurationProfileOutput {
     pub fn location_uri(&self) -> std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// <code>LocationUri</code>.</p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
         self.retrieval_role_arn.as_deref()
     }
@@ -471,9 +447,7 @@ impl UpdateConfigurationProfileOutput {
     pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
         self.validators.as_deref()
     }
-    /// <p>The type of configurations that the configuration profile contains. A configuration can
-    /// be a feature flag used for enabling or disabling new features or a free-form configuration
-    /// used for distributing configurations to your application. </p>
+    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -561,14 +535,12 @@ pub mod update_configuration_profile_output {
             self.location_uri = input;
             self
         }
-        /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.</p>
+        /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.retrieval_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.</p>
+        /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
         pub fn set_retrieval_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -581,9 +553,9 @@ pub mod update_configuration_profile_output {
         /// To override the contents of this collection use [`set_validators`](Self::set_validators).
         ///
         /// <p>A list of methods for validating the configuration.</p>
-        pub fn validators(mut self, input: impl Into<crate::model::Validator>) -> Self {
+        pub fn validators(mut self, input: crate::model::Validator) -> Self {
             let mut v = self.validators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validators = Some(v);
             self
         }
@@ -595,16 +567,12 @@ pub mod update_configuration_profile_output {
             self.validators = input;
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can
-        /// be a feature flag used for enabling or disabling new features or a free-form configuration
-        /// used for distributing configurations to your application. </p>
+        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can
-        /// be a feature flag used for enabling or disabling new features or a free-form configuration
-        /// used for distributing configurations to your application. </p>
+        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -809,16 +777,13 @@ pub struct StopDeploymentOutput {
     pub deployment_duration_in_minutes: i32,
     /// <p>The algorithm used to define how percentage grew over time.</p>
     pub growth_type: std::option::Option<crate::model::GrowthType>,
-    /// <p>The percentage of targets to receive a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub growth_factor: f32,
-    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>The state of the deployment.</p>
     pub state: std::option::Option<crate::model::DeploymentState>,
-    /// <p>A list containing all events related to a deployment. The most recent events are
-    /// displayed first.</p>
+    /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
     pub event_log: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>,
     /// <p>The percentage of targets for which the deployment is available.</p>
     pub percentage_complete: f32,
@@ -872,13 +837,11 @@ impl StopDeploymentOutput {
     pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
-    /// <p>The percentage of targets to receive a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn growth_factor(&self) -> f32 {
         self.growth_factor
     }
-    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
@@ -886,8 +849,7 @@ impl StopDeploymentOutput {
     pub fn state(&self) -> std::option::Option<&crate::model::DeploymentState> {
         self.state.as_ref()
     }
-    /// <p>A list containing all events related to a deployment. The most recent events are
-    /// displayed first.</p>
+    /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
     pub fn event_log(&self) -> std::option::Option<&[crate::model::DeploymentEvent]> {
         self.event_log.as_deref()
     }
@@ -1100,26 +1062,22 @@ pub mod stop_deployment_output {
             self.growth_type = input;
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
             self.growth_factor = Some(input);
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
             self.growth_factor = input;
             self
         }
-        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -1141,16 +1099,14 @@ pub mod stop_deployment_output {
         ///
         /// To override the contents of this collection use [`set_event_log`](Self::set_event_log).
         ///
-        /// <p>A list containing all events related to a deployment. The most recent events are
-        /// displayed first.</p>
-        pub fn event_log(mut self, input: impl Into<crate::model::DeploymentEvent>) -> Self {
+        /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
+        pub fn event_log(mut self, input: crate::model::DeploymentEvent) -> Self {
             let mut v = self.event_log.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_log = Some(v);
             self
         }
-        /// <p>A list containing all events related to a deployment. The most recent events are
-        /// displayed first.</p>
+        /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
         pub fn set_event_log(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>,
@@ -1254,16 +1210,13 @@ pub struct StartDeploymentOutput {
     pub deployment_duration_in_minutes: i32,
     /// <p>The algorithm used to define how percentage grew over time.</p>
     pub growth_type: std::option::Option<crate::model::GrowthType>,
-    /// <p>The percentage of targets to receive a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub growth_factor: f32,
-    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>The state of the deployment.</p>
     pub state: std::option::Option<crate::model::DeploymentState>,
-    /// <p>A list containing all events related to a deployment. The most recent events are
-    /// displayed first.</p>
+    /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
     pub event_log: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>,
     /// <p>The percentage of targets for which the deployment is available.</p>
     pub percentage_complete: f32,
@@ -1317,13 +1270,11 @@ impl StartDeploymentOutput {
     pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
-    /// <p>The percentage of targets to receive a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn growth_factor(&self) -> f32 {
         self.growth_factor
     }
-    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
@@ -1331,8 +1282,7 @@ impl StartDeploymentOutput {
     pub fn state(&self) -> std::option::Option<&crate::model::DeploymentState> {
         self.state.as_ref()
     }
-    /// <p>A list containing all events related to a deployment. The most recent events are
-    /// displayed first.</p>
+    /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
     pub fn event_log(&self) -> std::option::Option<&[crate::model::DeploymentEvent]> {
         self.event_log.as_deref()
     }
@@ -1545,26 +1495,22 @@ pub mod start_deployment_output {
             self.growth_type = input;
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
             self.growth_factor = Some(input);
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
             self.growth_factor = input;
             self
         }
-        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -1586,16 +1532,14 @@ pub mod start_deployment_output {
         ///
         /// To override the contents of this collection use [`set_event_log`](Self::set_event_log).
         ///
-        /// <p>A list containing all events related to a deployment. The most recent events are
-        /// displayed first.</p>
-        pub fn event_log(mut self, input: impl Into<crate::model::DeploymentEvent>) -> Self {
+        /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
+        pub fn event_log(mut self, input: crate::model::DeploymentEvent) -> Self {
             let mut v = self.event_log.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_log = Some(v);
             self
         }
-        /// <p>A list containing all events related to a deployment. The most recent events are
-        /// displayed first.</p>
+        /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
         pub fn set_event_log(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>,
@@ -1677,16 +1621,12 @@ impl StartDeploymentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>Metadata to assign to AppConfig resources. Tags help organize and categorize your
-    /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>Metadata to assign to AppConfig resources. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>Metadata to assign to AppConfig resources. Tags help organize and categorize your
-    /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>Metadata to assign to AppConfig resources. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1716,9 +1656,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata to assign to AppConfig resources. Tags help organize and categorize your
-        /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to AppConfig resources. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1729,9 +1667,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Metadata to assign to AppConfig resources. Tags help organize and categorize your
-        /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to AppConfig resources. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1760,8 +1696,7 @@ impl ListTagsForResourceOutput {
 pub struct ListHostedConfigurationVersionsOutput {
     /// <p>The elements from this collection.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::HostedConfigurationVersionSummary>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHostedConfigurationVersionsOutput {
@@ -1769,8 +1704,7 @@ impl ListHostedConfigurationVersionsOutput {
     pub fn items(&self) -> std::option::Option<&[crate::model::HostedConfigurationVersionSummary]> {
         self.items.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1799,12 +1733,9 @@ pub mod list_hosted_configuration_versions_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::HostedConfigurationVersionSummary>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::HostedConfigurationVersionSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1818,14 +1749,12 @@ pub mod list_hosted_configuration_versions_output {
             self.items = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1852,8 +1781,7 @@ impl ListHostedConfigurationVersionsOutput {
 pub struct ListEnvironmentsOutput {
     /// <p>The elements from this collection.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::Environment>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentsOutput {
@@ -1861,8 +1789,7 @@ impl ListEnvironmentsOutput {
     pub fn items(&self) -> std::option::Option<&[crate::model::Environment]> {
         self.items.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1890,9 +1817,9 @@ pub mod list_environments_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Environment>) -> Self {
+        pub fn items(mut self, input: crate::model::Environment) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1904,14 +1831,12 @@ pub mod list_environments_output {
             self.items = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1938,8 +1863,7 @@ impl ListEnvironmentsOutput {
 pub struct ListDeploymentStrategiesOutput {
     /// <p>The elements from this collection.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::DeploymentStrategy>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentStrategiesOutput {
@@ -1947,8 +1871,7 @@ impl ListDeploymentStrategiesOutput {
     pub fn items(&self) -> std::option::Option<&[crate::model::DeploymentStrategy]> {
         self.items.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1976,9 +1899,9 @@ pub mod list_deployment_strategies_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::DeploymentStrategy>) -> Self {
+        pub fn items(mut self, input: crate::model::DeploymentStrategy) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -1990,14 +1913,12 @@ pub mod list_deployment_strategies_output {
             self.items = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2024,8 +1945,7 @@ impl ListDeploymentStrategiesOutput {
 pub struct ListDeploymentsOutput {
     /// <p>The elements from this collection.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::DeploymentSummary>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentsOutput {
@@ -2033,8 +1953,7 @@ impl ListDeploymentsOutput {
     pub fn items(&self) -> std::option::Option<&[crate::model::DeploymentSummary]> {
         self.items.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2062,9 +1981,9 @@ pub mod list_deployments_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::DeploymentSummary>) -> Self {
+        pub fn items(mut self, input: crate::model::DeploymentSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -2076,14 +1995,12 @@ pub mod list_deployments_output {
             self.items = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2110,8 +2027,7 @@ impl ListDeploymentsOutput {
 pub struct ListConfigurationProfilesOutput {
     /// <p>The elements from this collection.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::ConfigurationProfileSummary>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationProfilesOutput {
@@ -2119,8 +2035,7 @@ impl ListConfigurationProfilesOutput {
     pub fn items(&self) -> std::option::Option<&[crate::model::ConfigurationProfileSummary]> {
         self.items.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2149,12 +2064,9 @@ pub mod list_configuration_profiles_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(
-            mut self,
-            input: impl Into<crate::model::ConfigurationProfileSummary>,
-        ) -> Self {
+        pub fn items(mut self, input: crate::model::ConfigurationProfileSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -2166,14 +2078,12 @@ pub mod list_configuration_profiles_output {
             self.items = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2200,8 +2110,7 @@ impl ListConfigurationProfilesOutput {
 pub struct ListApplicationsOutput {
     /// <p>The elements from this collection.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::Application>>,
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
@@ -2209,8 +2118,7 @@ impl ListApplicationsOutput {
     pub fn items(&self) -> std::option::Option<&[crate::model::Application]> {
         self.items.as_deref()
     }
-    /// <p>The token for the next set of items to return. Use this token to get the next set of
-    /// results.</p>
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2238,9 +2146,9 @@ pub mod list_applications_output {
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
         /// <p>The elements from this collection.</p>
-        pub fn items(mut self, input: impl Into<crate::model::Application>) -> Self {
+        pub fn items(mut self, input: crate::model::Application) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.items = Some(v);
             self
         }
@@ -2252,14 +2160,12 @@ pub mod list_applications_output {
             self.items = input;
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. Use this token to get the next set of
-        /// results.</p>
+        /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2294,8 +2200,7 @@ pub struct GetHostedConfigurationVersionOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The content of the configuration or the configuration data.</p>
     pub content: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub content_type: std::option::Option<std::string::String>,
 }
 impl GetHostedConfigurationVersionOutput {
@@ -2319,8 +2224,7 @@ impl GetHostedConfigurationVersionOutput {
     pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.content.as_ref()
     }
-    /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -2407,14 +2311,12 @@ pub mod get_hosted_configuration_version_output {
             self.content = input;
             self
         }
-        /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -2451,10 +2353,7 @@ pub struct GetEnvironmentOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the environment.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The state of the environment. An environment can be in one of the following states:
-    /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-    /// <code>ROLLED_BACK</code>
-    /// </p>
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub state: std::option::Option<crate::model::EnvironmentState>,
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
     pub monitors: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
@@ -2476,10 +2375,7 @@ impl GetEnvironmentOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The state of the environment. An environment can be in one of the following states:
-    /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-    /// <code>ROLLED_BACK</code>
-    /// </p>
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub fn state(&self) -> std::option::Option<&crate::model::EnvironmentState> {
         self.state.as_ref()
     }
@@ -2557,18 +2453,12 @@ pub mod get_environment_output {
             self.description = input;
             self
         }
-        /// <p>The state of the environment. An environment can be in one of the following states:
-        /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-        /// <code>ROLLED_BACK</code>
-        /// </p>
+        /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
         pub fn state(mut self, input: crate::model::EnvironmentState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the environment. An environment can be in one of the following states:
-        /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-        /// <code>ROLLED_BACK</code>
-        /// </p>
+        /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::EnvironmentState>,
@@ -2581,9 +2471,9 @@ pub mod get_environment_output {
         /// To override the contents of this collection use [`set_monitors`](Self::set_monitors).
         ///
         /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-        pub fn monitors(mut self, input: impl Into<crate::model::Monitor>) -> Self {
+        pub fn monitors(mut self, input: crate::model::Monitor) -> Self {
             let mut v = self.monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.monitors = Some(v);
             self
         }
@@ -2629,11 +2519,9 @@ pub struct GetDeploymentStrategyOutput {
     pub deployment_duration_in_minutes: i32,
     /// <p>The algorithm used to define how percentage grew over time.</p>
     pub growth_type: std::option::Option<crate::model::GrowthType>,
-    /// <p>The percentage of targets that received a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
     pub growth_factor: f32,
-    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub replicate_to: std::option::Option<crate::model::ReplicateTo>,
@@ -2659,13 +2547,11 @@ impl GetDeploymentStrategyOutput {
     pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
-    /// <p>The percentage of targets that received a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
     pub fn growth_factor(&self) -> f32 {
         self.growth_factor
     }
-    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
@@ -2766,26 +2652,22 @@ pub mod get_deployment_strategy_output {
             self.growth_type = input;
             self
         }
-        /// <p>The percentage of targets that received a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
             self.growth_factor = Some(input);
             self
         }
-        /// <p>The percentage of targets that received a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
             self.growth_factor = input;
             self
         }
-        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -2853,16 +2735,13 @@ pub struct GetDeploymentOutput {
     pub deployment_duration_in_minutes: i32,
     /// <p>The algorithm used to define how percentage grew over time.</p>
     pub growth_type: std::option::Option<crate::model::GrowthType>,
-    /// <p>The percentage of targets to receive a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub growth_factor: f32,
-    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>The state of the deployment.</p>
     pub state: std::option::Option<crate::model::DeploymentState>,
-    /// <p>A list containing all events related to a deployment. The most recent events are
-    /// displayed first.</p>
+    /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
     pub event_log: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>,
     /// <p>The percentage of targets for which the deployment is available.</p>
     pub percentage_complete: f32,
@@ -2916,13 +2795,11 @@ impl GetDeploymentOutput {
     pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
-    /// <p>The percentage of targets to receive a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn growth_factor(&self) -> f32 {
         self.growth_factor
     }
-    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
@@ -2930,8 +2807,7 @@ impl GetDeploymentOutput {
     pub fn state(&self) -> std::option::Option<&crate::model::DeploymentState> {
         self.state.as_ref()
     }
-    /// <p>A list containing all events related to a deployment. The most recent events are
-    /// displayed first.</p>
+    /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
     pub fn event_log(&self) -> std::option::Option<&[crate::model::DeploymentEvent]> {
         self.event_log.as_deref()
     }
@@ -3144,26 +3020,22 @@ pub mod get_deployment_output {
             self.growth_type = input;
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
             self.growth_factor = Some(input);
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
             self.growth_factor = input;
             self
         }
-        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -3185,16 +3057,14 @@ pub mod get_deployment_output {
         ///
         /// To override the contents of this collection use [`set_event_log`](Self::set_event_log).
         ///
-        /// <p>A list containing all events related to a deployment. The most recent events are
-        /// displayed first.</p>
-        pub fn event_log(mut self, input: impl Into<crate::model::DeploymentEvent>) -> Self {
+        /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
+        pub fn event_log(mut self, input: crate::model::DeploymentEvent) -> Self {
             let mut v = self.event_log.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.event_log = Some(v);
             self
         }
-        /// <p>A list containing all events related to a deployment. The most recent events are
-        /// displayed first.</p>
+        /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
         pub fn set_event_log(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>,
@@ -3286,14 +3156,11 @@ pub struct GetConfigurationProfileOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The URI location of the configuration.</p>
     pub location_uri: std::option::Option<std::string::String>,
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// <code>LocationUri</code>.</p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     pub retrieval_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
-    /// <p>The type of configurations that the configuration profile contains. A configuration can
-    /// be a feature flag used for enabling or disabling new features or a free-form configuration
-    /// used for distributing configurations to your application. </p>
+    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl GetConfigurationProfileOutput {
@@ -3317,8 +3184,7 @@ impl GetConfigurationProfileOutput {
     pub fn location_uri(&self) -> std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// <code>LocationUri</code>.</p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
         self.retrieval_role_arn.as_deref()
     }
@@ -3326,9 +3192,7 @@ impl GetConfigurationProfileOutput {
     pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
         self.validators.as_deref()
     }
-    /// <p>The type of configurations that the configuration profile contains. A configuration can
-    /// be a feature flag used for enabling or disabling new features or a free-form configuration
-    /// used for distributing configurations to your application. </p>
+    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -3416,14 +3280,12 @@ pub mod get_configuration_profile_output {
             self.location_uri = input;
             self
         }
-        /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.</p>
+        /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.retrieval_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.</p>
+        /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
         pub fn set_retrieval_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3436,9 +3298,9 @@ pub mod get_configuration_profile_output {
         /// To override the contents of this collection use [`set_validators`](Self::set_validators).
         ///
         /// <p>A list of methods for validating the configuration.</p>
-        pub fn validators(mut self, input: impl Into<crate::model::Validator>) -> Self {
+        pub fn validators(mut self, input: crate::model::Validator) -> Self {
             let mut v = self.validators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validators = Some(v);
             self
         }
@@ -3450,16 +3312,12 @@ pub mod get_configuration_profile_output {
             self.validators = input;
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can
-        /// be a feature flag used for enabling or disabling new features or a free-form configuration
-        /// used for distributing configurations to your application. </p>
+        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can
-        /// be a feature flag used for enabling or disabling new features or a free-form configuration
-        /// used for distributing configurations to your application. </p>
+        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -3490,31 +3348,18 @@ impl GetConfigurationProfileOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationOutput {
-    /// <p>The content of the configuration or the configuration data.</p>
-    /// <important>
-    /// <p>Compare the configuration version numbers of the configuration cached locally on your
-    /// machine and the configuration number in the the header. If the configuration numbers are
-    /// the same, the content can be ignored. The <code>Content</code> section only appears if
-    /// the system finds new or updated configuration data. If the system doesn't find new or
-    /// updated configuration data, then the <code>Content</code> section is not
-    /// returned.</p>
+    /// <p>The content of the configuration or the configuration data.</p> <important>
+    /// <p>Compare the configuration version numbers of the configuration cached locally on your machine and the configuration number in the the header. If the configuration numbers are the same, the content can be ignored. The <code>Content</code> section only appears if the system finds new or updated configuration data. If the system doesn't find new or updated configuration data, then the <code>Content</code> section is not returned.</p>
     /// </important>
     pub content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The configuration version.</p>
     pub configuration_version: std::option::Option<std::string::String>,
-    /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub content_type: std::option::Option<std::string::String>,
 }
 impl GetConfigurationOutput {
-    /// <p>The content of the configuration or the configuration data.</p>
-    /// <important>
-    /// <p>Compare the configuration version numbers of the configuration cached locally on your
-    /// machine and the configuration number in the the header. If the configuration numbers are
-    /// the same, the content can be ignored. The <code>Content</code> section only appears if
-    /// the system finds new or updated configuration data. If the system doesn't find new or
-    /// updated configuration data, then the <code>Content</code> section is not
-    /// returned.</p>
+    /// <p>The content of the configuration or the configuration data.</p> <important>
+    /// <p>Compare the configuration version numbers of the configuration cached locally on your machine and the configuration number in the the header. If the configuration numbers are the same, the content can be ignored. The <code>Content</code> section only appears if the system finds new or updated configuration data. If the system doesn't find new or updated configuration data, then the <code>Content</code> section is not returned.</p>
     /// </important>
     pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.content.as_ref()
@@ -3523,8 +3368,7 @@ impl GetConfigurationOutput {
     pub fn configuration_version(&self) -> std::option::Option<&str> {
         self.configuration_version.as_deref()
     }
-    /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -3549,27 +3393,15 @@ pub mod get_configuration_output {
         pub(crate) content_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The content of the configuration or the configuration data.</p>
-        /// <important>
-        /// <p>Compare the configuration version numbers of the configuration cached locally on your
-        /// machine and the configuration number in the the header. If the configuration numbers are
-        /// the same, the content can be ignored. The <code>Content</code> section only appears if
-        /// the system finds new or updated configuration data. If the system doesn't find new or
-        /// updated configuration data, then the <code>Content</code> section is not
-        /// returned.</p>
+        /// <p>The content of the configuration or the configuration data.</p> <important>
+        /// <p>Compare the configuration version numbers of the configuration cached locally on your machine and the configuration number in the the header. If the configuration numbers are the same, the content can be ignored. The <code>Content</code> section only appears if the system finds new or updated configuration data. If the system doesn't find new or updated configuration data, then the <code>Content</code> section is not returned.</p>
         /// </important>
         pub fn content(mut self, input: aws_smithy_types::Blob) -> Self {
             self.content = Some(input);
             self
         }
-        /// <p>The content of the configuration or the configuration data.</p>
-        /// <important>
-        /// <p>Compare the configuration version numbers of the configuration cached locally on your
-        /// machine and the configuration number in the the header. If the configuration numbers are
-        /// the same, the content can be ignored. The <code>Content</code> section only appears if
-        /// the system finds new or updated configuration data. If the system doesn't find new or
-        /// updated configuration data, then the <code>Content</code> section is not
-        /// returned.</p>
+        /// <p>The content of the configuration or the configuration data.</p> <important>
+        /// <p>Compare the configuration version numbers of the configuration cached locally on your machine and the configuration number in the the header. If the configuration numbers are the same, the content can be ignored. The <code>Content</code> section only appears if the system finds new or updated configuration data. If the system doesn't find new or updated configuration data, then the <code>Content</code> section is not returned.</p>
         /// </important>
         pub fn set_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.content = input;
@@ -3588,14 +3420,12 @@ pub mod get_configuration_output {
             self.configuration_version = input;
             self
         }
-        /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -3873,8 +3703,7 @@ pub struct CreateHostedConfigurationVersionOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The content of the configuration or the configuration data.</p>
     pub content: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub content_type: std::option::Option<std::string::String>,
 }
 impl CreateHostedConfigurationVersionOutput {
@@ -3898,8 +3727,7 @@ impl CreateHostedConfigurationVersionOutput {
     pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.content.as_ref()
     }
-    /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -3986,14 +3814,12 @@ pub mod create_hosted_configuration_version_output {
             self.content = input;
             self
         }
-        /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -4030,10 +3856,7 @@ pub struct CreateEnvironmentOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the environment.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The state of the environment. An environment can be in one of the following states:
-    /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-    /// <code>ROLLED_BACK</code>
-    /// </p>
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub state: std::option::Option<crate::model::EnvironmentState>,
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
     pub monitors: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
@@ -4055,10 +3878,7 @@ impl CreateEnvironmentOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The state of the environment. An environment can be in one of the following states:
-    /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-    /// <code>ROLLED_BACK</code>
-    /// </p>
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub fn state(&self) -> std::option::Option<&crate::model::EnvironmentState> {
         self.state.as_ref()
     }
@@ -4136,18 +3956,12 @@ pub mod create_environment_output {
             self.description = input;
             self
         }
-        /// <p>The state of the environment. An environment can be in one of the following states:
-        /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-        /// <code>ROLLED_BACK</code>
-        /// </p>
+        /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
         pub fn state(mut self, input: crate::model::EnvironmentState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the environment. An environment can be in one of the following states:
-        /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-        /// <code>ROLLED_BACK</code>
-        /// </p>
+        /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::EnvironmentState>,
@@ -4160,9 +3974,9 @@ pub mod create_environment_output {
         /// To override the contents of this collection use [`set_monitors`](Self::set_monitors).
         ///
         /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-        pub fn monitors(mut self, input: impl Into<crate::model::Monitor>) -> Self {
+        pub fn monitors(mut self, input: crate::model::Monitor) -> Self {
             let mut v = self.monitors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.monitors = Some(v);
             self
         }
@@ -4208,11 +4022,9 @@ pub struct CreateDeploymentStrategyOutput {
     pub deployment_duration_in_minutes: i32,
     /// <p>The algorithm used to define how percentage grew over time.</p>
     pub growth_type: std::option::Option<crate::model::GrowthType>,
-    /// <p>The percentage of targets that received a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
     pub growth_factor: f32,
-    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub replicate_to: std::option::Option<crate::model::ReplicateTo>,
@@ -4238,13 +4050,11 @@ impl CreateDeploymentStrategyOutput {
     pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
-    /// <p>The percentage of targets that received a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
     pub fn growth_factor(&self) -> f32 {
         self.growth_factor
     }
-    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
@@ -4345,26 +4155,22 @@ pub mod create_deployment_strategy_output {
             self.growth_type = input;
             self
         }
-        /// <p>The percentage of targets that received a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
             self.growth_factor = Some(input);
             self
         }
-        /// <p>The percentage of targets that received a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
             self.growth_factor = input;
             self
         }
-        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -4420,14 +4226,11 @@ pub struct CreateConfigurationProfileOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The URI location of the configuration.</p>
     pub location_uri: std::option::Option<std::string::String>,
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// <code>LocationUri</code>.</p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     pub retrieval_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
-    /// <p>The type of configurations that the configuration profile contains. A configuration can
-    /// be a feature flag used for enabling or disabling new features or a free-form configuration
-    /// used for distributing configurations to your application. </p>
+    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl CreateConfigurationProfileOutput {
@@ -4451,8 +4254,7 @@ impl CreateConfigurationProfileOutput {
     pub fn location_uri(&self) -> std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// <code>LocationUri</code>.</p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
         self.retrieval_role_arn.as_deref()
     }
@@ -4460,9 +4262,7 @@ impl CreateConfigurationProfileOutput {
     pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
         self.validators.as_deref()
     }
-    /// <p>The type of configurations that the configuration profile contains. A configuration can
-    /// be a feature flag used for enabling or disabling new features or a free-form configuration
-    /// used for distributing configurations to your application. </p>
+    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -4550,14 +4350,12 @@ pub mod create_configuration_profile_output {
             self.location_uri = input;
             self
         }
-        /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.</p>
+        /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.retrieval_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.</p>
+        /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
         pub fn set_retrieval_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4570,9 +4368,9 @@ pub mod create_configuration_profile_output {
         /// To override the contents of this collection use [`set_validators`](Self::set_validators).
         ///
         /// <p>A list of methods for validating the configuration.</p>
-        pub fn validators(mut self, input: impl Into<crate::model::Validator>) -> Self {
+        pub fn validators(mut self, input: crate::model::Validator) -> Self {
             let mut v = self.validators.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.validators = Some(v);
             self
         }
@@ -4584,16 +4382,12 @@ pub mod create_configuration_profile_output {
             self.validators = input;
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can
-        /// be a feature flag used for enabling or disabling new features or a free-form configuration
-        /// used for distributing configurations to your application. </p>
+        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can
-        /// be a feature flag used for enabling or disabling new features or a free-form configuration
-        /// used for distributing configurations to your application. </p>
+        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application. </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self

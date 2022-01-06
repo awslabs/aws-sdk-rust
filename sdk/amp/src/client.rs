@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Prometheus Service
@@ -162,6 +162,7 @@ where
     ///
     /// See [`ListRuleGroupsNamespaces`](crate::client::fluent_builders::ListRuleGroupsNamespaces) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRuleGroupsNamespaces::into_paginator).
     pub fn list_rule_groups_namespaces(
         &self,
     ) -> fluent_builders::ListRuleGroupsNamespaces<C, M, R> {
@@ -178,6 +179,7 @@ where
     ///
     /// See [`ListWorkspaces`](crate::client::fluent_builders::ListWorkspaces) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkspaces::into_paginator).
     pub fn list_workspaces(&self) -> fluent_builders::ListWorkspaces<C, M, R> {
         fluent_builders::ListWorkspaces::new(self.handle.clone())
     }
@@ -230,7 +232,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAlertManagerDefinition`.
     ///
     /// Create an alert manager definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlertManagerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -275,10 +277,10 @@ pub mod fluent_builders {
                 crate::input::CreateAlertManagerDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -287,8 +289,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace in which to create the alert manager definition.
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace in which to create the alert manager definition.
@@ -297,8 +299,8 @@ pub mod fluent_builders {
             self
         }
         /// The alert manager definition data.
-        pub fn data(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(inp);
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(input);
             self
         }
         /// The alert manager definition data.
@@ -307,8 +309,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -320,7 +322,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRuleGroupsNamespace`.
     ///
     /// Create a rule group namespace.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRuleGroupsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -365,10 +367,10 @@ pub mod fluent_builders {
                 crate::input::CreateRuleGroupsNamespaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -377,8 +379,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace in which to create the rule group namespace.
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace in which to create the rule group namespace.
@@ -387,8 +389,8 @@ pub mod fluent_builders {
             self
         }
         /// The rule groups namespace name.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The rule groups namespace name.
@@ -397,8 +399,8 @@ pub mod fluent_builders {
             self
         }
         /// The namespace data that define the rule groups.
-        pub fn data(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(inp);
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(input);
             self
         }
         /// The namespace data that define the rule groups.
@@ -407,8 +409,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -426,7 +428,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// Optional, user-provided tags for this rule groups namespace.
@@ -443,7 +445,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateWorkspace`.
     ///
     /// Creates a new AMP workspace.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -488,10 +490,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorkspaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -500,8 +502,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
@@ -510,8 +512,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -529,7 +531,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// Optional, user-provided tags for this workspace.
@@ -546,7 +548,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAlertManagerDefinition`.
     ///
     /// Deletes an alert manager definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlertManagerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -591,10 +593,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAlertManagerDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -603,8 +605,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace in which to delete the alert manager definition.
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace in which to delete the alert manager definition.
@@ -613,8 +615,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -626,7 +628,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRuleGroupsNamespace`.
     ///
     /// Delete a rule groups namespace.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRuleGroupsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -671,10 +673,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRuleGroupsNamespaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -683,8 +685,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace to delete rule group definition.
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace to delete rule group definition.
@@ -693,8 +695,8 @@ pub mod fluent_builders {
             self
         }
         /// The rule groups namespace name.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The rule groups namespace name.
@@ -703,8 +705,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -716,7 +718,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkspace`.
     ///
     /// Deletes an AMP workspace.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -761,10 +763,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWorkspaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -773,8 +775,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace to delete.
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace to delete.
@@ -783,8 +785,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -796,7 +798,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAlertManagerDefinition`.
     ///
     /// Describes an alert manager definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAlertManagerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -841,10 +843,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAlertManagerDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -853,8 +855,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace to describe.
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace to describe.
@@ -866,7 +868,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRuleGroupsNamespace`.
     ///
     /// Describe a rule groups namespace.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRuleGroupsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -911,10 +913,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRuleGroupsNamespaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -923,8 +925,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace to describe.
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace to describe.
@@ -933,8 +935,8 @@ pub mod fluent_builders {
             self
         }
         /// The rule groups namespace.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The rule groups namespace.
@@ -946,7 +948,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWorkspace`.
     ///
     /// Describes an existing AMP workspace.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkspace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -991,10 +993,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorkspaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1003,8 +1005,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace to describe.
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace to describe.
@@ -1016,7 +1018,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRuleGroupsNamespaces`.
     ///
     /// Lists rule groups namespaces.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRuleGroupsNamespaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1061,10 +1063,10 @@ pub mod fluent_builders {
                 crate::input::ListRuleGroupsNamespacesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1072,9 +1074,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRuleGroupsNamespacesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListRuleGroupsNamespacesPaginator<C, M, R> {
+            crate::paginator::ListRuleGroupsNamespacesPaginator::new(self.handle, self.inner)
+        }
         /// The ID of the workspace.
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace.
@@ -1083,8 +1093,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
@@ -1093,8 +1103,8 @@ pub mod fluent_builders {
             self
         }
         /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
@@ -1103,8 +1113,8 @@ pub mod fluent_builders {
             self
         }
         /// Maximum results to return in response (default=100, maximum=1000).
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Maximum results to return in response (default=100, maximum=1000).
@@ -1116,7 +1126,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// Lists the tags you have assigned to the resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1161,10 +1171,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1173,8 +1183,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The ARN of the resource.
@@ -1186,7 +1196,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListWorkspaces`.
     ///
     /// Lists all AMP workspaces, including workspaces being created or deleted.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkspaces<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1231,10 +1241,10 @@ pub mod fluent_builders {
                 crate::input::ListWorkspacesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1242,9 +1252,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorkspacesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWorkspacesPaginator<C, M, R> {
+            crate::paginator::ListWorkspacesPaginator::new(self.handle, self.inner)
+        }
         /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.
@@ -1253,8 +1269,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
@@ -1263,8 +1279,8 @@ pub mod fluent_builders {
             self
         }
         /// Maximum results to return in response (default=100, maximum=1000).
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Maximum results to return in response (default=100, maximum=1000).
@@ -1276,7 +1292,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutAlertManagerDefinition`.
     ///
     /// Update an alert manager definition.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAlertManagerDefinition<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1321,10 +1337,10 @@ pub mod fluent_builders {
                 crate::input::PutAlertManagerDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1333,8 +1349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace in which to update the alert manager definition.
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace in which to update the alert manager definition.
@@ -1343,8 +1359,8 @@ pub mod fluent_builders {
             self
         }
         /// The alert manager definition data.
-        pub fn data(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(inp);
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(input);
             self
         }
         /// The alert manager definition data.
@@ -1353,8 +1369,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -1366,7 +1382,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutRuleGroupsNamespace`.
     ///
     /// Update a rule groups namespace.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRuleGroupsNamespace<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1411,10 +1427,10 @@ pub mod fluent_builders {
                 crate::input::PutRuleGroupsNamespaceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1423,8 +1439,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace in which to update the rule group namespace.
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace in which to update the rule group namespace.
@@ -1433,8 +1449,8 @@ pub mod fluent_builders {
             self
         }
         /// The rule groups namespace name.
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The rule groups namespace name.
@@ -1443,8 +1459,8 @@ pub mod fluent_builders {
             self
         }
         /// The namespace data that define the rule groups.
-        pub fn data(mut self, inp: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(inp);
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(input);
             self
         }
         /// The namespace data that define the rule groups.
@@ -1453,8 +1469,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -1466,7 +1482,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// Creates tags for the specified resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1511,10 +1527,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1523,8 +1539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The ARN of the resource.
@@ -1542,7 +1558,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// The list of tags assigned to the resource.
@@ -1559,7 +1575,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// Deletes tags from the specified resource.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1604,10 +1620,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1616,8 +1632,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the resource.
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The ARN of the resource.
@@ -1630,8 +1646,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// One or more tag keys
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// One or more tag keys
@@ -1646,7 +1662,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateWorkspaceAlias`.
     ///
     /// Updates an AMP workspace alias.
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateWorkspaceAlias<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1691,10 +1707,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWorkspaceAliasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1703,8 +1719,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace being updated.
-        pub fn workspace_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(inp);
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace being updated.
@@ -1713,8 +1729,8 @@ pub mod fluent_builders {
             self
         }
         /// The new alias of the workspace.
-        pub fn alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(inp);
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// The new alias of the workspace.
@@ -1723,8 +1739,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -1734,6 +1750,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

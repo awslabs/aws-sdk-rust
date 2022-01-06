@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon AppStream
@@ -92,6 +92,15 @@ where
     ) -> fluent_builders::AssociateApplicationFleet<C, M, R> {
         fluent_builders::AssociateApplicationFleet::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `AssociateApplicationToEntitlement` operation.
+    ///
+    /// See [`AssociateApplicationToEntitlement`](crate::client::fluent_builders::AssociateApplicationToEntitlement) for more information about the
+    /// operation and its arguments.
+    pub fn associate_application_to_entitlement(
+        &self,
+    ) -> fluent_builders::AssociateApplicationToEntitlement<C, M, R> {
+        fluent_builders::AssociateApplicationToEntitlement::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `AssociateFleet` operation.
     ///
     /// See [`AssociateFleet`](crate::client::fluent_builders::AssociateFleet) for more information about the
@@ -142,6 +151,13 @@ where
     /// operation and its arguments.
     pub fn create_directory_config(&self) -> fluent_builders::CreateDirectoryConfig<C, M, R> {
         fluent_builders::CreateDirectoryConfig::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `CreateEntitlement` operation.
+    ///
+    /// See [`CreateEntitlement`](crate::client::fluent_builders::CreateEntitlement) for more information about the
+    /// operation and its arguments.
+    pub fn create_entitlement(&self) -> fluent_builders::CreateEntitlement<C, M, R> {
+        fluent_builders::CreateEntitlement::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `CreateFleet` operation.
     ///
@@ -224,6 +240,13 @@ where
     pub fn delete_directory_config(&self) -> fluent_builders::DeleteDirectoryConfig<C, M, R> {
         fluent_builders::DeleteDirectoryConfig::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DeleteEntitlement` operation.
+    ///
+    /// See [`DeleteEntitlement`](crate::client::fluent_builders::DeleteEntitlement) for more information about the
+    /// operation and its arguments.
+    pub fn delete_entitlement(&self) -> fluent_builders::DeleteEntitlement<C, M, R> {
+        fluent_builders::DeleteEntitlement::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DeleteFleet` operation.
     ///
     /// See [`DeleteFleet`](crate::client::fluent_builders::DeleteFleet) for more information about the
@@ -305,6 +328,13 @@ where
     pub fn describe_directory_configs(&self) -> fluent_builders::DescribeDirectoryConfigs<C, M, R> {
         fluent_builders::DescribeDirectoryConfigs::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DescribeEntitlements` operation.
+    ///
+    /// See [`DescribeEntitlements`](crate::client::fluent_builders::DescribeEntitlements) for more information about the
+    /// operation and its arguments.
+    pub fn describe_entitlements(&self) -> fluent_builders::DescribeEntitlements<C, M, R> {
+        fluent_builders::DescribeEntitlements::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DescribeFleets` operation.
     ///
     /// See [`DescribeFleets`](crate::client::fluent_builders::DescribeFleets) for more information about the
@@ -323,6 +353,7 @@ where
     ///
     /// See [`DescribeImagePermissions`](crate::client::fluent_builders::DescribeImagePermissions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeImagePermissions::into_paginator).
     pub fn describe_image_permissions(&self) -> fluent_builders::DescribeImagePermissions<C, M, R> {
         fluent_builders::DescribeImagePermissions::new(self.handle.clone())
     }
@@ -330,6 +361,7 @@ where
     ///
     /// See [`DescribeImages`](crate::client::fluent_builders::DescribeImages) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeImages::into_paginator).
     pub fn describe_images(&self) -> fluent_builders::DescribeImages<C, M, R> {
         fluent_builders::DescribeImages::new(self.handle.clone())
     }
@@ -388,6 +420,15 @@ where
     ) -> fluent_builders::DisassociateApplicationFleet<C, M, R> {
         fluent_builders::DisassociateApplicationFleet::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `DisassociateApplicationFromEntitlement` operation.
+    ///
+    /// See [`DisassociateApplicationFromEntitlement`](crate::client::fluent_builders::DisassociateApplicationFromEntitlement) for more information about the
+    /// operation and its arguments.
+    pub fn disassociate_application_from_entitlement(
+        &self,
+    ) -> fluent_builders::DisassociateApplicationFromEntitlement<C, M, R> {
+        fluent_builders::DisassociateApplicationFromEntitlement::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `DisassociateFleet` operation.
     ///
     /// See [`DisassociateFleet`](crate::client::fluent_builders::DisassociateFleet) for more information about the
@@ -422,6 +463,13 @@ where
     /// operation and its arguments.
     pub fn list_associated_stacks(&self) -> fluent_builders::ListAssociatedStacks<C, M, R> {
         fluent_builders::ListAssociatedStacks::new(self.handle.clone())
+    }
+    /// Constructs a fluent builder for the `ListEntitledApplications` operation.
+    ///
+    /// See [`ListEntitledApplications`](crate::client::fluent_builders::ListEntitledApplications) for more information about the
+    /// operation and its arguments.
+    pub fn list_entitled_applications(&self) -> fluent_builders::ListEntitledApplications<C, M, R> {
+        fluent_builders::ListEntitledApplications::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the `ListTagsForResource` operation.
     ///
@@ -486,6 +534,13 @@ where
     pub fn update_directory_config(&self) -> fluent_builders::UpdateDirectoryConfig<C, M, R> {
         fluent_builders::UpdateDirectoryConfig::new(self.handle.clone())
     }
+    /// Constructs a fluent builder for the `UpdateEntitlement` operation.
+    ///
+    /// See [`UpdateEntitlement`](crate::client::fluent_builders::UpdateEntitlement) for more information about the
+    /// operation and its arguments.
+    pub fn update_entitlement(&self) -> fluent_builders::UpdateEntitlement<C, M, R> {
+        fluent_builders::UpdateEntitlement::new(self.handle.clone())
+    }
     /// Constructs a fluent builder for the `UpdateFleet` operation.
     ///
     /// See [`UpdateFleet`](crate::client::fluent_builders::UpdateFleet) for more information about the
@@ -519,7 +574,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateApplicationFleet`.
     ///
     /// <p>Associates the specified application with the specified fleet. This is only supported for Elastic fleets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateApplicationFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -564,10 +619,10 @@ pub mod fluent_builders {
                 crate::input::AssociateApplicationFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -576,8 +631,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -586,8 +641,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the application.</p>
-        pub fn application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_arn(inp);
+        pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_arn(input.into());
             self
         }
         /// <p>The ARN of the application.</p>
@@ -599,10 +654,106 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `AssociateApplicationToEntitlement`.
+    ///
+    /// <p>Associates an application to entitle.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct AssociateApplicationToEntitlement<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::associate_application_to_entitlement_input::Builder,
+    }
+    impl<C, M, R> AssociateApplicationToEntitlement<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `AssociateApplicationToEntitlement`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateApplicationToEntitlementOutput,
+            aws_smithy_http::result::SdkError<crate::error::AssociateApplicationToEntitlementError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::AssociateApplicationToEntitlementInputOperationOutputAlias,
+                crate::output::AssociateApplicationToEntitlementOutput,
+                crate::error::AssociateApplicationToEntitlementError,
+                crate::input::AssociateApplicationToEntitlementInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the stack.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
+            self
+        }
+        /// <p>The name of the stack.</p>
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn entitlement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entitlement_name(input.into());
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn set_entitlement_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_entitlement_name(input);
+            self
+        }
+        /// <p>The identifier of the application.</p>
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_identifier(input.into());
+            self
+        }
+        /// <p>The identifier of the application.</p>
+        pub fn set_application_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_identifier(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `AssociateFleet`.
     ///
     /// <p>Associates the specified fleet with the specified stack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -647,10 +798,10 @@ pub mod fluent_builders {
                 crate::input::AssociateFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -659,8 +810,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet. </p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet. </p>
@@ -669,8 +820,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
             self
         }
         /// <p>The name of the stack.</p>
@@ -682,7 +833,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchAssociateUserStack`.
     ///
     /// <p>Associates the specified users with the specified stacks. Users in a user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAssociateUserStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -727,10 +878,10 @@ pub mod fluent_builders {
                 crate::input::BatchAssociateUserStackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -745,9 +896,9 @@ pub mod fluent_builders {
         /// <p>The list of UserStackAssociation objects.</p>
         pub fn user_stack_associations(
             mut self,
-            inp: impl Into<crate::model::UserStackAssociation>,
+            input: crate::model::UserStackAssociation,
         ) -> Self {
-            self.inner = self.inner.user_stack_associations(inp);
+            self.inner = self.inner.user_stack_associations(input);
             self
         }
         /// <p>The list of UserStackAssociation objects.</p>
@@ -762,7 +913,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDisassociateUserStack`.
     ///
     /// <p>Disassociates the specified users from the specified stacks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisassociateUserStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -807,10 +958,10 @@ pub mod fluent_builders {
                 crate::input::BatchDisassociateUserStackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -825,9 +976,9 @@ pub mod fluent_builders {
         /// <p>The list of UserStackAssociation objects.</p>
         pub fn user_stack_associations(
             mut self,
-            inp: impl Into<crate::model::UserStackAssociation>,
+            input: crate::model::UserStackAssociation,
         ) -> Self {
-            self.inner = self.inner.user_stack_associations(inp);
+            self.inner = self.inner.user_stack_associations(input);
             self
         }
         /// <p>The list of UserStackAssociation objects.</p>
@@ -842,7 +993,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CopyImage`.
     ///
     /// <p>Copies the image within the same region or to a new region within the same AWS account. Note that any tags you added to the image will not be copied.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CopyImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -887,10 +1038,10 @@ pub mod fluent_builders {
                 crate::input::CopyImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -899,8 +1050,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image to copy.</p>
-        pub fn source_image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_image_name(inp);
+        pub fn source_image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_image_name(input.into());
             self
         }
         /// <p>The name of the image to copy.</p>
@@ -912,8 +1063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that the image will have when it is copied to the destination.</p>
-        pub fn destination_image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_image_name(inp);
+        pub fn destination_image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_image_name(input.into());
             self
         }
         /// <p>The name that the image will have when it is copied to the destination.</p>
@@ -925,8 +1076,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
-        pub fn destination_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_region(inp);
+        pub fn destination_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_region(input.into());
             self
         }
         /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
@@ -940,9 +1091,9 @@ pub mod fluent_builders {
         /// <p>The description that the image will have when it is copied to the destination.</p>
         pub fn destination_image_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.destination_image_description(inp);
+            self.inner = self.inner.destination_image_description(input.into());
             self
         }
         /// <p>The description that the image will have when it is copied to the destination.</p>
@@ -957,13 +1108,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAppBlock`.
     ///
     /// <p>Creates an app block.</p>
-    /// <p>App blocks are an Amazon AppStream 2.0 resource that stores the details about the
-    /// virtual hard disk in an S3 bucket. It also stores the setup script with details about
-    /// how to mount the virtual hard disk. The virtual hard disk includes the application
-    /// binaries and other files necessary to launch your applications. Multiple applications
-    /// can be assigned to a single app block.</p>
+    /// <p>App blocks are an Amazon AppStream 2.0 resource that stores the details about the virtual hard disk in an S3 bucket. It also stores the setup script with details about how to mount the virtual hard disk. The virtual hard disk includes the application binaries and other files necessary to launch your applications. Multiple applications can be assigned to a single app block.</p>
     /// <p>This is only supported for Elastic fleets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1008,10 +1155,10 @@ pub mod fluent_builders {
                 crate::input::CreateAppBlockInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1020,8 +1167,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the app block.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the app block.</p>
@@ -1030,8 +1177,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the app block.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the app block.</p>
@@ -1040,8 +1187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name of the app block. This is not displayed to the user.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The display name of the app block. This is not displayed to the user.</p>
@@ -1050,8 +1197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source S3 location of the app block.</p>
-        pub fn source_s3_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.source_s3_location(inp);
+        pub fn source_s3_location(mut self, input: crate::model::S3Location) -> Self {
+            self.inner = self.inner.source_s3_location(input);
             self
         }
         /// <p>The source S3 location of the app block.</p>
@@ -1063,8 +1210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The setup script details of the app block.</p>
-        pub fn setup_script_details(mut self, inp: crate::model::ScriptDetails) -> Self {
-            self.inner = self.inner.setup_script_details(inp);
+        pub fn setup_script_details(mut self, input: crate::model::ScriptDetails) -> Self {
+            self.inner = self.inner.setup_script_details(input);
             self
         }
         /// <p>The setup script details of the app block.</p>
@@ -1085,7 +1232,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags assigned to the app block.</p>
@@ -1102,13 +1249,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
     /// <p>Creates an application.</p>
-    /// <p>Applications are an Amazon AppStream 2.0 resource that stores the details about how to
-    /// launch applications on Elastic fleet streaming instances. An application consists of the
-    /// launch details, icon, and display name. Applications are associated with an app block
-    /// that contains the application binaries and other files. The applications assigned to an
-    /// Elastic fleet are the applications users can launch. </p>
+    /// <p>Applications are an Amazon AppStream 2.0 resource that stores the details about how to launch applications on Elastic fleet streaming instances. An application consists of the launch details, icon, and display name. Applications are associated with an app block that contains the application binaries and other files. The applications assigned to an Elastic fleet are the applications users can launch. </p>
     /// <p>This is only supported for Elastic fleets.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1153,10 +1296,10 @@ pub mod fluent_builders {
                 crate::input::CreateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1165,8 +1308,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
@@ -1175,8 +1318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
@@ -1185,8 +1328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the application.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the application.</p>
@@ -1195,8 +1338,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location in S3 of the application icon.</p>
-        pub fn icon_s3_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.icon_s3_location(inp);
+        pub fn icon_s3_location(mut self, input: crate::model::S3Location) -> Self {
+            self.inner = self.inner.icon_s3_location(input);
             self
         }
         /// <p>The location in S3 of the application icon.</p>
@@ -1208,8 +1351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The launch path of the application.</p>
-        pub fn launch_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_path(inp);
+        pub fn launch_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_path(input.into());
             self
         }
         /// <p>The launch path of the application.</p>
@@ -1218,8 +1361,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The working directory of the application.</p>
-        pub fn working_directory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.working_directory(inp);
+        pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.working_directory(input.into());
             self
         }
         /// <p>The working directory of the application.</p>
@@ -1231,8 +1374,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The launch parameters of the application.</p>
-        pub fn launch_parameters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_parameters(inp);
+        pub fn launch_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_parameters(input.into());
             self
         }
         /// <p>The launch parameters of the application.</p>
@@ -1248,8 +1391,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
         ///
         /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
-        pub fn platforms(mut self, inp: impl Into<crate::model::PlatformType>) -> Self {
-            self.inner = self.inner.platforms(inp);
+        pub fn platforms(mut self, input: crate::model::PlatformType) -> Self {
+            self.inner = self.inner.platforms(input);
             self
         }
         /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
@@ -1265,8 +1408,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_families`](Self::set_instance_families).
         ///
         /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
-        pub fn instance_families(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_families(inp);
+        pub fn instance_families(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_families(input.into());
             self
         }
         /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
@@ -1278,8 +1421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app block ARN to which the application should be associated</p>
-        pub fn app_block_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_block_arn(inp);
+        pub fn app_block_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_block_arn(input.into());
             self
         }
         /// <p>The app block ARN to which the application should be associated</p>
@@ -1300,7 +1443,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags assigned to the application.</p>
@@ -1317,7 +1460,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDirectoryConfig`.
     ///
     /// <p>Creates a Directory Config object in AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDirectoryConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1362,10 +1505,10 @@ pub mod fluent_builders {
                 crate::input::CreateDirectoryConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1374,8 +1517,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
-        pub fn directory_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_name(inp);
+        pub fn directory_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_name(input.into());
             self
         }
         /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
@@ -1393,9 +1536,11 @@ pub mod fluent_builders {
         /// <p>The distinguished names of the organizational units for computer accounts.</p>
         pub fn organizational_unit_distinguished_names(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organizational_unit_distinguished_names(inp);
+            self.inner = self
+                .inner
+                .organizational_unit_distinguished_names(input.into());
             self
         }
         /// <p>The distinguished names of the organizational units for computer accounts.</p>
@@ -1411,9 +1556,9 @@ pub mod fluent_builders {
         /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
         pub fn service_account_credentials(
             mut self,
-            inp: crate::model::ServiceAccountCredentials,
+            input: crate::model::ServiceAccountCredentials,
         ) -> Self {
-            self.inner = self.inner.service_account_credentials(inp);
+            self.inner = self.inner.service_account_credentials(input);
             self
         }
         /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
@@ -1425,10 +1570,130 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `CreateEntitlement`.
+    ///
+    /// <p>Creates a new entitlement. Entitlements control access to specific applications within a stack, based on user attributes. Entitlements apply to SAML 2.0 federated user identities. Amazon AppStream 2.0 user pool and streaming URL users are entitled to all applications in a stack. Entitlements don't apply to the desktop stream view application, or to applications managed by a dynamic app provider using the Dynamic Application Framework.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct CreateEntitlement<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::create_entitlement_input::Builder,
+    }
+    impl<C, M, R> CreateEntitlement<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `CreateEntitlement`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateEntitlementOutput,
+            aws_smithy_http::result::SdkError<crate::error::CreateEntitlementError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::CreateEntitlementInputOperationOutputAlias,
+                crate::output::CreateEntitlementOutput,
+                crate::error::CreateEntitlementError,
+                crate::input::CreateEntitlementInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
+            self
+        }
+        /// <p>The description of the entitlement.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>The description of the entitlement.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>Specifies whether all or selected apps are entitled.</p>
+        pub fn app_visibility(mut self, input: crate::model::AppVisibility) -> Self {
+            self.inner = self.inner.app_visibility(input);
+            self
+        }
+        /// <p>Specifies whether all or selected apps are entitled.</p>
+        pub fn set_app_visibility(
+            mut self,
+            input: std::option::Option<crate::model::AppVisibility>,
+        ) -> Self {
+            self.inner = self.inner.set_app_visibility(input);
+            self
+        }
+        /// Appends an item to `Attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attributes of the entitlement.</p>
+        pub fn attributes(mut self, input: crate::model::EntitlementAttribute) -> Self {
+            self.inner = self.inner.attributes(input);
+            self
+        }
+        /// <p>The attributes of the entitlement.</p>
+        pub fn set_attributes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>,
+        ) -> Self {
+            self.inner = self.inner.set_attributes(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `CreateFleet`.
     ///
     /// <p>Creates a fleet. A fleet consists of streaming instances that run a specified image when using Always-On or On-Demand.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1473,10 +1738,10 @@ pub mod fluent_builders {
                 crate::input::CreateFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1485,8 +1750,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the fleet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A unique name for the fleet.</p>
@@ -1495,8 +1760,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the image used to create the fleet.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
             self
         }
         /// <p>The name of the image used to create the fleet.</p>
@@ -1505,8 +1770,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the public, private, or shared image to use.</p>
-        pub fn image_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_arn(inp);
+        pub fn image_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_arn(input.into());
             self
         }
         /// <p>The ARN of the public, private, or shared image to use.</p>
@@ -1514,231 +1779,91 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_arn(input);
             self
         }
-        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         /// <p>The following instance types are available for Elastic fleets:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
         /// </ul>
-        pub fn instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_type(inp);
+        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_type(input.into());
             self
         }
-        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         /// <p>The following instance types are available for Elastic fleets:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,
@@ -1749,34 +1874,36 @@ pub mod fluent_builders {
         }
         /// <p>The fleet type.</p>
         /// <dl>
-        /// <dt>ALWAYS_ON</dt>
+        /// <dt>
+        /// ALWAYS_ON
+        /// </dt>
         /// <dd>
-        /// <p>Provides users with instant-on access to their apps.
-        /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+        /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
         /// </dd>
-        /// <dt>ON_DEMAND</dt>
+        /// <dt>
+        /// ON_DEMAND
+        /// </dt>
         /// <dd>
-        /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
-        /// You are charged for instance streaming when users are connected and a
-        /// small hourly fee for instances that are not streaming apps.</p>
+        /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
         /// </dd>
         /// </dl>
-        pub fn fleet_type(mut self, inp: crate::model::FleetType) -> Self {
-            self.inner = self.inner.fleet_type(inp);
+        pub fn fleet_type(mut self, input: crate::model::FleetType) -> Self {
+            self.inner = self.inner.fleet_type(input);
             self
         }
         /// <p>The fleet type.</p>
         /// <dl>
-        /// <dt>ALWAYS_ON</dt>
+        /// <dt>
+        /// ALWAYS_ON
+        /// </dt>
         /// <dd>
-        /// <p>Provides users with instant-on access to their apps.
-        /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+        /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
         /// </dd>
-        /// <dt>ON_DEMAND</dt>
+        /// <dt>
+        /// ON_DEMAND
+        /// </dt>
         /// <dd>
-        /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
-        /// You are charged for instance streaming when users are connected and a
-        /// small hourly fee for instances that are not streaming apps.</p>
+        /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
         /// </dd>
         /// </dl>
         pub fn set_fleet_type(
@@ -1787,8 +1914,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic fleets, specify MaxConcurrentSessions instead.</p>
-        pub fn compute_capacity(mut self, inp: crate::model::ComputeCapacity) -> Self {
-            self.inner = self.inner.compute_capacity(inp);
+        pub fn compute_capacity(mut self, input: crate::model::ComputeCapacity) -> Self {
+            self.inner = self.inner.compute_capacity(input);
             self
         }
         /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic fleets, specify MaxConcurrentSessions instead.</p>
@@ -1800,8 +1927,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
         /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
@@ -1814,8 +1941,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
         /// <p>Specify a value between 600 and 360000.</p>
-        pub fn max_user_duration_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_user_duration_in_seconds(inp);
+        pub fn max_user_duration_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_user_duration_in_seconds(input);
             self
         }
         /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
@@ -1826,8 +1953,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
         /// <p>Specify a value between 60 and 360000.</p>
-        pub fn disconnect_timeout_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.disconnect_timeout_in_seconds(inp);
+        pub fn disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.disconnect_timeout_in_seconds(input);
             self
         }
         /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
@@ -1840,8 +1967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description to display.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description to display.</p>
@@ -1850,8 +1977,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The fleet name to display.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The fleet name to display.</p>
@@ -1860,8 +1987,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables or disables default internet access for the fleet.</p>
-        pub fn enable_default_internet_access(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_default_internet_access(inp);
+        pub fn enable_default_internet_access(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_default_internet_access(input);
             self
         }
         /// <p>Enables or disables default internet access for the fleet.</p>
@@ -1873,8 +2000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets. </p>
-        pub fn domain_join_info(mut self, inp: crate::model::DomainJoinInfo) -> Self {
-            self.inner = self.inner.domain_join_info(inp);
+        pub fn domain_join_info(mut self, input: crate::model::DomainJoinInfo) -> Self {
+            self.inner = self.inner.domain_join_info(input);
             self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets. </p>
@@ -1890,28 +2017,22 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_tags(
             mut self,
@@ -1922,36 +2043,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity. If
-        /// they try to reconnect to the streaming session before the time interval specified in
-        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-        /// previous session. Users are considered idle when they stop providing keyboard or mouse
-        /// input during their streaming session. File uploads and downloads, audio in, audio out,
-        /// and pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected.</p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-        /// <note>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
-        pub fn idle_disconnect_timeout_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.idle_disconnect_timeout_in_seconds(inp);
+        pub fn idle_disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.idle_disconnect_timeout_in_seconds(input);
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity. If
-        /// they try to reconnect to the streaming session before the time interval specified in
-        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-        /// previous session. Users are considered idle when they stop providing keyboard or mouse
-        /// input during their streaming session. File uploads and downloads, audio in, audio out,
-        /// and pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected.</p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-        /// <note>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
         pub fn set_idle_disconnect_timeout_in_seconds(
@@ -1962,28 +2063,24 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(inp);
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-        ///
         /// <p>The default value is <code>APP</code>.</p>
-        pub fn stream_view(mut self, inp: crate::model::StreamView) -> Self {
-            self.inner = self.inner.stream_view(inp);
+        pub fn stream_view(mut self, input: crate::model::StreamView) -> Self {
+            self.inner = self.inner.stream_view(input);
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-        ///
         /// <p>The default value is <code>APP</code>.</p>
         pub fn set_stream_view(
             mut self,
@@ -1992,14 +2089,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stream_view(input);
             self
         }
-        /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic
-        /// fleets. </p>
-        pub fn platform(mut self, inp: crate::model::PlatformType) -> Self {
-            self.inner = self.inner.platform(inp);
+        /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
+        pub fn platform(mut self, input: crate::model::PlatformType) -> Self {
+            self.inner = self.inner.platform(input);
             self
         }
-        /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic
-        /// fleets. </p>
+        /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::PlatformType>,
@@ -2007,14 +2102,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_platform(input);
             self
         }
-        /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic
-        /// fleets, and not allowed for other fleet types.</p>
-        pub fn max_concurrent_sessions(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_concurrent_sessions(inp);
+        /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
+        pub fn max_concurrent_sessions(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_concurrent_sessions(input);
             self
         }
-        /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic
-        /// fleets, and not allowed for other fleet types.</p>
+        /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
         pub fn set_max_concurrent_sessions(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_concurrent_sessions(input);
             self
@@ -2024,8 +2117,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_usb_device_filter_strings`](Self::set_usb_device_filter_strings).
         ///
         /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
-        pub fn usb_device_filter_strings(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usb_device_filter_strings(inp);
+        pub fn usb_device_filter_strings(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usb_device_filter_strings(input.into());
             self
         }
         /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
@@ -2041,7 +2134,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an image builder. An image builder is a virtual machine that is used to create an image.</p>
     /// <p>The initial state of the builder is <code>PENDING</code>. When it is ready, the state is <code>RUNNING</code>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImageBuilder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2086,10 +2179,10 @@ pub mod fluent_builders {
                 crate::input::CreateImageBuilderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2098,8 +2191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the image builder.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A unique name for the image builder.</p>
@@ -2108,8 +2201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the image used to create the image builder.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
             self
         }
         /// <p>The name of the image used to create the image builder.</p>
@@ -2118,8 +2211,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the public, private, or shared image to use.</p>
-        pub fn image_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_arn(inp);
+        pub fn image_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_arn(input.into());
             self
         }
         /// <p>The ARN of the public, private, or shared image to use.</p>
@@ -2127,213 +2220,81 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_arn(input);
             self
         }
-        /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>   
+        /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
-        pub fn instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_type(inp);
+        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_type(input.into());
             self
         }
-        /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>   
+        /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,
@@ -2343,8 +2304,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description to display.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description to display.</p>
@@ -2353,8 +2314,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The image builder name to display.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The image builder name to display.</p>
@@ -2363,8 +2324,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
         /// <p>The VPC configuration for the image builder. You can specify only one subnet.</p>
@@ -2376,22 +2337,20 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(inp);
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
             self
         }
         /// <p>Enables or disables default internet access for the image builder.</p>
-        pub fn enable_default_internet_access(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_default_internet_access(inp);
+        pub fn enable_default_internet_access(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_default_internet_access(input);
             self
         }
         /// <p>Enables or disables default internet access for the image builder.</p>
@@ -2403,8 +2362,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
-        pub fn domain_join_info(mut self, inp: crate::model::DomainJoinInfo) -> Self {
-            self.inner = self.inner.domain_join_info(inp);
+        pub fn domain_join_info(mut self, input: crate::model::DomainJoinInfo) -> Self {
+            self.inner = self.inner.domain_join_info(input);
             self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>
@@ -2416,8 +2375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-        pub fn appstream_agent_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.appstream_agent_version(inp);
+        pub fn appstream_agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.appstream_agent_version(input.into());
             self
         }
         /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
@@ -2433,28 +2392,22 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_tags(
             mut self,
@@ -2470,8 +2423,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
         ///
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
-        pub fn access_endpoints(mut self, inp: impl Into<crate::model::AccessEndpoint>) -> Self {
-            self.inner = self.inner.access_endpoints(inp);
+        pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
+            self.inner = self.inner.access_endpoints(input);
             self
         }
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.</p>
@@ -2486,7 +2439,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateImageBuilderStreamingURL`.
     ///
     /// <p>Creates a URL to start an image builder streaming session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImageBuilderStreamingURL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2531,10 +2484,10 @@ pub mod fluent_builders {
                 crate::input::CreateImageBuilderStreamingUrlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2543,8 +2496,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image builder.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the image builder.</p>
@@ -2552,14 +2505,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The time that the streaming URL will be valid, in seconds.
-        /// Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
-        pub fn validity(mut self, inp: i64) -> Self {
-            self.inner = self.inner.validity(inp);
+        /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
+        pub fn validity(mut self, input: i64) -> Self {
+            self.inner = self.inner.validity(input);
             self
         }
-        /// <p>The time that the streaming URL will be valid, in seconds.
-        /// Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
+        /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
         pub fn set_validity(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_validity(input);
             self
@@ -2568,7 +2519,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStack`.
     ///
     /// <p>Creates a stack to start streaming applications to users. A stack consists of an associated fleet, user access policies, and storage configurations. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2613,10 +2564,10 @@ pub mod fluent_builders {
                 crate::input::CreateStackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2625,8 +2576,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the stack.</p>
@@ -2635,8 +2586,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description to display.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description to display.</p>
@@ -2645,8 +2596,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stack name to display.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The stack name to display.</p>
@@ -2659,11 +2610,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_storage_connectors`](Self::set_storage_connectors).
         ///
         /// <p>The storage connectors to enable.</p>
-        pub fn storage_connectors(
-            mut self,
-            inp: impl Into<crate::model::StorageConnector>,
-        ) -> Self {
-            self.inner = self.inner.storage_connectors(inp);
+        pub fn storage_connectors(mut self, input: crate::model::StorageConnector) -> Self {
+            self.inner = self.inner.storage_connectors(input);
             self
         }
         /// <p>The storage connectors to enable.</p>
@@ -2675,8 +2623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL that users are redirected to after their streaming session ends.</p>
-        pub fn redirect_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.redirect_url(inp);
+        pub fn redirect_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.redirect_url(input.into());
             self
         }
         /// <p>The URL that users are redirected to after their streaming session ends.</p>
@@ -2685,8 +2633,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
-        pub fn feedback_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feedback_url(inp);
+        pub fn feedback_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feedback_url(input.into());
             self
         }
         /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
@@ -2699,8 +2647,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_settings`](Self::set_user_settings).
         ///
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
-        pub fn user_settings(mut self, inp: impl Into<crate::model::UserSetting>) -> Self {
-            self.inner = self.inner.user_settings(inp);
+        pub fn user_settings(mut self, input: crate::model::UserSetting) -> Self {
+            self.inner = self.inner.user_settings(input);
             self
         }
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
@@ -2712,8 +2660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
-        pub fn application_settings(mut self, inp: crate::model::ApplicationSettings) -> Self {
-            self.inner = self.inner.application_settings(inp);
+        pub fn application_settings(mut self, input: crate::model::ApplicationSettings) -> Self {
+            self.inner = self.inner.application_settings(input);
             self
         }
         /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
@@ -2729,28 +2677,22 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_tags(
             mut self,
@@ -2766,8 +2708,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
         ///
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-        pub fn access_endpoints(mut self, inp: impl Into<crate::model::AccessEndpoint>) -> Self {
-            self.inner = self.inner.access_endpoints(inp);
+        pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
+            self.inner = self.inner.access_endpoints(input);
             self
         }
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
@@ -2783,8 +2725,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_embed_host_domains`](Self::set_embed_host_domains).
         ///
         /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
-        pub fn embed_host_domains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.embed_host_domains(inp);
+        pub fn embed_host_domains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.embed_host_domains(input.into());
             self
         }
         /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
@@ -2799,7 +2741,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateStreamingURL`.
     ///
     /// <p>Creates a temporary URL to start an AppStream 2.0 streaming session for the specified user. A streaming URL enables application streaming to be tested without user setup. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStreamingURL<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2844,10 +2786,10 @@ pub mod fluent_builders {
                 crate::input::CreateStreamingUrlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2856,8 +2798,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
             self
         }
         /// <p>The name of the stack.</p>
@@ -2866,8 +2808,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the fleet.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -2876,8 +2818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user.</p>
@@ -2885,14 +2827,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_id(input);
             self
         }
-        /// <p>The name of the application to launch after the session starts. This is the name that you specified
-        /// as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
-        pub fn application_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(inp);
+        /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
-        /// <p>The name of the application to launch after the session starts. This is the name that you specified
-        /// as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
+        /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2900,21 +2840,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>The time that the streaming URL will be valid, in seconds.
-        /// Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
-        pub fn validity(mut self, inp: i64) -> Self {
-            self.inner = self.inner.validity(inp);
+        /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
+        pub fn validity(mut self, input: i64) -> Self {
+            self.inner = self.inner.validity(input);
             self
         }
-        /// <p>The time that the streaming URL will be valid, in seconds.
-        /// Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
+        /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
         pub fn set_validity(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_validity(input);
             self
         }
         /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-        pub fn session_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_context(inp);
+        pub fn session_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_context(input.into());
             self
         }
         /// <p>The session context. For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters">Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
@@ -2929,10 +2867,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUpdatedImage`.
     ///
     /// <p>Creates a new image with the latest Windows operating system updates, driver updates, and AppStream 2.0 agent software.</p>
-    ///
-    /// <p>For more information, see the "Update an Image by Using
-    /// Managed AppStream 2.0 Image Updates" section in <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer Your AppStream 2.0 Images</a>, in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see the "Update an Image by Using Managed AppStream 2.0 Image Updates" section in <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer Your AppStream 2.0 Images</a>, in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUpdatedImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2977,10 +2913,10 @@ pub mod fluent_builders {
                 crate::input::CreateUpdatedImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2989,8 +2925,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image to update.</p>
-        pub fn existing_image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.existing_image_name(inp);
+        pub fn existing_image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.existing_image_name(input.into());
             self
         }
         /// <p>The name of the image to update.</p>
@@ -3002,8 +2938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new image. The name must be unique within the AWS account and Region.</p>
-        pub fn new_image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_image_name(inp);
+        pub fn new_image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_image_name(input.into());
             self
         }
         /// <p>The name of the new image. The name must be unique within the AWS account and Region.</p>
@@ -3015,8 +2951,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description to display for the new image.</p>
-        pub fn new_image_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_image_description(inp);
+        pub fn new_image_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_image_description(input.into());
             self
         }
         /// <p>The description to display for the new image.</p>
@@ -3028,8 +2964,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name to display for the new image.</p>
-        pub fn new_image_display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_image_display_name(inp);
+        pub fn new_image_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_image_display_name(input.into());
             self
         }
         /// <p>The name to display for the new image.</p>
@@ -3054,7 +2990,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.new_image_tags(k, v);
+            self.inner = self.inner.new_image_tags(k.into(), v.into());
             self
         }
         /// <p>The tags to associate with the new image. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
@@ -3072,8 +3008,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
-        pub fn dry_run(mut self, inp: bool) -> Self {
-            self.inner = self.inner.dry_run(inp);
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
         /// <p>Indicates whether to display the status of image update availability before AppStream 2.0 initiates the process of creating a new updated image. If this value is set to <code>true</code>, AppStream 2.0 displays whether image updates are available. If this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating a new updated image without displaying whether image updates are available.</p>
@@ -3085,7 +3021,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUsageReportSubscription`.
     ///
     /// <p>Creates a usage report subscription. Usage reports are generated daily.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUsageReportSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3130,10 +3066,10 @@ pub mod fluent_builders {
                 crate::input::CreateUsageReportSubscriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3145,7 +3081,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUser`.
     ///
     /// <p>Creates a new user in the user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3190,10 +3126,10 @@ pub mod fluent_builders {
                 crate::input::CreateUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3201,36 +3137,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
         /// </note>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_name(input);
             self
         }
-        /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p>
-        ///
-        /// <note>
+        /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note>
         /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
         /// </note>
-        pub fn message_action(mut self, inp: crate::model::MessageAction) -> Self {
-            self.inner = self.inner.message_action(inp);
+        pub fn message_action(mut self, input: crate::model::MessageAction) -> Self {
+            self.inner = self.inner.message_action(input);
             self
         }
-        /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p>
-        ///
-        /// <note>
+        /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note>
         /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
         /// </note>
         pub fn set_message_action(
@@ -3241,8 +3169,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The first name, or given name, of the user.</p>
-        pub fn first_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.first_name(inp);
+        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.first_name(input.into());
             self
         }
         /// <p>The first name, or given name, of the user.</p>
@@ -3251,8 +3179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The last name, or surname, of the user.</p>
-        pub fn last_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.last_name(inp);
+        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.last_name(input.into());
             self
         }
         /// <p>The last name, or surname, of the user.</p>
@@ -3261,8 +3189,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL. </p>
-        pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(inp);
+        pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(input);
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL. </p>
@@ -3277,7 +3205,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAppBlock`.
     ///
     /// <p>Deletes an app block.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppBlock<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3322,10 +3250,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAppBlockInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3334,8 +3262,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the app block.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the app block.</p>
@@ -3347,7 +3275,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
     /// <p>Deletes an application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3392,10 +3320,10 @@ pub mod fluent_builders {
                 crate::input::DeleteApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3404,8 +3332,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the application.</p>
@@ -3417,7 +3345,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteDirectoryConfig`.
     ///
     /// <p>Deletes the specified Directory Config object from AppStream 2.0. This object includes the information required to join streaming instances to an Active Directory domain.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDirectoryConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3462,10 +3390,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDirectoryConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3474,8 +3402,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the directory configuration.</p>
-        pub fn directory_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_name(inp);
+        pub fn directory_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_name(input.into());
             self
         }
         /// <p>The name of the directory configuration.</p>
@@ -3487,10 +3415,90 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DeleteEntitlement`.
+    ///
+    /// <p>Deletes the specified entitlement.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DeleteEntitlement<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::delete_entitlement_input::Builder,
+    }
+    impl<C, M, R> DeleteEntitlement<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DeleteEntitlement`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteEntitlementOutput,
+            aws_smithy_http::result::SdkError<crate::error::DeleteEntitlementError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DeleteEntitlementInputOperationOutputAlias,
+                crate::output::DeleteEntitlementOutput,
+                crate::error::DeleteEntitlementError,
+                crate::input::DeleteEntitlementInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DeleteFleet`.
     ///
     /// <p>Deletes the specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3535,10 +3543,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3547,8 +3555,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -3559,9 +3567,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteImage`.
     ///
-    /// <p>Deletes the specified image. You cannot delete an image when it is in use.  
-    /// After you delete an image, you cannot provision new capacity using the image.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes the specified image. You cannot delete an image when it is in use. After you delete an image, you cannot provision new capacity using the image.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImage<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3606,10 +3613,10 @@ pub mod fluent_builders {
                 crate::input::DeleteImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3618,8 +3625,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the image.</p>
@@ -3631,7 +3638,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteImageBuilder`.
     ///
     /// <p>Deletes the specified image builder and releases the capacity.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImageBuilder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3676,10 +3683,10 @@ pub mod fluent_builders {
                 crate::input::DeleteImageBuilderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3688,8 +3695,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image builder.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the image builder.</p>
@@ -3701,7 +3708,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteImagePermissions`.
     ///
     /// <p>Deletes permissions for the specified private image. After you delete permissions for an image, AWS accounts to which you previously granted these permissions can no longer use the image.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImagePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3746,10 +3753,10 @@ pub mod fluent_builders {
                 crate::input::DeleteImagePermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3758,8 +3765,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the private image.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the private image.</p>
@@ -3768,8 +3775,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
-        pub fn shared_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_account_id(inp);
+        pub fn shared_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_account_id(input.into());
             self
         }
         /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
@@ -3784,7 +3791,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteStack`.
     ///
     /// <p>Deletes the specified stack. After the stack is deleted, the application streaming environment provided by the stack is no longer available to users. Also, any reservations made for application streaming sessions for the stack are released.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3829,10 +3836,10 @@ pub mod fluent_builders {
                 crate::input::DeleteStackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3841,8 +3848,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the stack.</p>
@@ -3854,7 +3861,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUsageReportSubscription`.
     ///
     /// <p>Disables usage report generation.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUsageReportSubscription<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3899,10 +3906,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUsageReportSubscriptionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3914,7 +3921,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUser`.
     ///
     /// <p>Deletes a user from the user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3959,10 +3966,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3970,18 +3977,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -3989,8 +3992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL.</p>
-        pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(inp);
+        pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(input);
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL.</p>
@@ -4005,7 +4008,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAppBlocks`.
     ///
     /// <p>Retrieves a list that describes one or more app blocks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAppBlocks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4050,10 +4053,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAppBlocksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4066,8 +4069,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_arns`](Self::set_arns).
         ///
         /// <p>The ARNs of the app blocks.</p>
-        pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arns(inp);
+        pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arns(input.into());
             self
         }
         /// <p>The ARNs of the app blocks.</p>
@@ -4078,21 +4081,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arns(input);
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -4104,7 +4105,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplicationFleetAssociations`.
     ///
     /// <p>Retrieves a list that describes one or more application fleet associations. Either ApplicationArn or FleetName must be specified.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplicationFleetAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4151,10 +4152,10 @@ pub mod fluent_builders {
                 crate::input::DescribeApplicationFleetAssociationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4163,8 +4164,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -4173,8 +4174,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the application.</p>
-        pub fn application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_arn(inp);
+        pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_arn(input.into());
             self
         }
         /// <p>The ARN of the application.</p>
@@ -4186,8 +4187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -4195,14 +4196,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4211,7 +4210,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeApplications`.
     ///
     /// <p>Retrieves a list that describes one or more applications.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApplications<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4256,10 +4255,10 @@ pub mod fluent_builders {
                 crate::input::DescribeApplicationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4272,8 +4271,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_arns`](Self::set_arns).
         ///
         /// <p>The ARNs for the applications.</p>
-        pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arns(inp);
+        pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arns(input.into());
             self
         }
         /// <p>The ARNs for the applications.</p>
@@ -4284,21 +4283,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arns(input);
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -4309,10 +4306,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDirectoryConfigs`.
     ///
-    /// <p>Retrieves a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. These objects include the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
-    /// </p>
+    /// <p>Retrieves a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. These objects include the configuration information required to join fleets and image builders to Microsoft Active Directory domains. </p>
     /// <p>Although the response syntax in this topic includes the account password, this password is not returned in the actual response.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDirectoryConfigs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4357,10 +4353,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDirectoryConfigsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4373,8 +4369,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_directory_names`](Self::set_directory_names).
         ///
         /// <p>The directory names.</p>
-        pub fn directory_names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_names(inp);
+        pub fn directory_names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_names(input.into());
             self
         }
         /// <p>The directory names.</p>
@@ -4386,8 +4382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -4396,8 +4392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -4406,10 +4402,110 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DescribeEntitlements`.
+    ///
+    /// <p>Retrieves a list that describes one of more entitlements.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DescribeEntitlements<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::describe_entitlements_input::Builder,
+    }
+    impl<C, M, R> DescribeEntitlements<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DescribeEntitlements`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeEntitlementsOutput,
+            aws_smithy_http::result::SdkError<crate::error::DescribeEntitlementsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DescribeEntitlementsInputOperationOutputAlias,
+                crate::output::DescribeEntitlementsOutput,
+                crate::error::DescribeEntitlementsError,
+                crate::input::DescribeEntitlementsInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum size of each page of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum size of each page of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DescribeFleets`.
     ///
     /// <p>Retrieves a list that describes one or more specified fleets, if the fleet names are provided. Otherwise, all fleets in the account are described.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4454,10 +4550,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFleetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4470,8 +4566,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>The names of the fleets to describe.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The names of the fleets to describe.</p>
@@ -4483,8 +4579,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -4496,7 +4592,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeImageBuilders`.
     ///
     /// <p>Retrieves a list that describes one or more specified image builders, if the image builder names are provided. Otherwise, all image builders in the account are described.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImageBuilders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4541,10 +4637,10 @@ pub mod fluent_builders {
                 crate::input::DescribeImageBuildersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4557,8 +4653,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>The names of the image builders to describe.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The names of the image builders to describe.</p>
@@ -4570,8 +4666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -4580,8 +4676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -4593,7 +4689,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeImagePermissions`.
     ///
     /// <p>Retrieves a list that describes the permissions for shared AWS account IDs on a private image that you own. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImagePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4638,10 +4734,10 @@ pub mod fluent_builders {
                 crate::input::DescribeImagePermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4649,9 +4745,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeImagePermissionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::DescribeImagePermissionsPaginator<C, M, R> {
+            crate::paginator::DescribeImagePermissionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the private image for which to describe permissions. The image must be one that you own. </p>
@@ -4660,8 +4764,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -4674,8 +4778,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_shared_aws_account_ids`](Self::set_shared_aws_account_ids).
         ///
         /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
-        pub fn shared_aws_account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_aws_account_ids(inp);
+        pub fn shared_aws_account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_aws_account_ids(input.into());
             self
         }
         /// <p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>
@@ -4687,8 +4791,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -4700,7 +4804,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeImages`.
     ///
     /// <p>Retrieves a list that describes one or more specified images, if the image names or image ARNs are provided. Otherwise, all images in the account are described.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImages<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4745,10 +4849,10 @@ pub mod fluent_builders {
                 crate::input::DescribeImagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4756,13 +4860,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeImagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeImagesPaginator<C, M, R> {
+            crate::paginator::DescribeImagesPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `Names`.
         ///
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>The names of the public or private images to describe.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The names of the public or private images to describe.</p>
@@ -4778,8 +4888,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_arns`](Self::set_arns).
         ///
         /// <p>The ARNs of the public, private, and shared images to describe.</p>
-        pub fn arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arns(inp);
+        pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arns(input.into());
             self
         }
         /// <p>The ARNs of the public, private, and shared images to describe.</p>
@@ -4791,8 +4901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of image (public, private, or shared) to describe. </p>
-        pub fn r#type(mut self, inp: crate::model::VisibilityType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::VisibilityType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of image (public, private, or shared) to describe. </p>
@@ -4804,8 +4914,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -4814,8 +4924,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -4826,10 +4936,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSessions`.
     ///
-    /// <p>Retrieves a list that describes the streaming sessions for a specified stack and fleet. If a UserId is provided for the stack and fleet,
-    /// only streaming sessions for that user are described. If an authentication type is not provided,
-    /// the default is to authenticate users using a streaming URL.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list that describes the streaming sessions for a specified stack and fleet. If a UserId is provided for the stack and fleet, only streaming sessions for that user are described. If an authentication type is not provided, the default is to authenticate users using a streaming URL.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4874,10 +4982,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSessionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4886,8 +4994,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack. This value is case-sensitive.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
             self
         }
         /// <p>The name of the stack. This value is case-sensitive.</p>
@@ -4896,8 +5004,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the fleet. This value is case-sensitive.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet. This value is case-sensitive.</p>
@@ -4906,8 +5014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user identifier (ID). If you specify a user ID, you must also specify the authentication type.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(inp);
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The user identifier (ID). If you specify a user ID, you must also specify the authentication type.</p>
@@ -4916,8 +5024,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -4926,8 +5034,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The size of each page of results. The default value is 20 and the maximum value is 50.</p>
@@ -4935,16 +5043,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The authentication method. Specify <code>API</code> for a user
-        /// authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
-        /// The default is to authenticate users using a streaming URL.</p>
-        pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(inp);
+        /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
+        pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(input);
             self
         }
-        /// <p>The authentication method. Specify <code>API</code> for a user
-        /// authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
-        /// The default is to authenticate users using a streaming URL.</p>
+        /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
         pub fn set_authentication_type(
             mut self,
             input: std::option::Option<crate::model::AuthenticationType>,
@@ -4956,7 +5060,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStacks`.
     ///
     /// <p>Retrieves a list that describes one or more specified stacks, if the stack names are provided. Otherwise, all stacks in the account are described.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStacks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5001,10 +5105,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStacksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5017,8 +5121,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>The names of the stacks to describe.</p>
-        pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.names(inp);
+        pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.names(input.into());
             self
         }
         /// <p>The names of the stacks to describe.</p>
@@ -5030,8 +5134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -5043,7 +5147,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUsageReportSubscriptions`.
     ///
     /// <p>Retrieves a list that describes one or more usage report subscriptions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUsageReportSubscriptions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5088,10 +5192,10 @@ pub mod fluent_builders {
                 crate::input::DescribeUsageReportSubscriptionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5100,8 +5204,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -5110,8 +5214,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -5123,7 +5227,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUsers`.
     ///
     /// <p>Retrieves a list that describes one or more specified users in the user pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUsers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5168,10 +5272,10 @@ pub mod fluent_builders {
                 crate::input::DescribeUsersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5180,8 +5284,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
-        pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(inp);
+        pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(input);
             self
         }
         /// <p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>
@@ -5193,8 +5297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -5203,8 +5307,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -5217,14 +5321,10 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list that describes the UserStackAssociation objects. You must specify either or both of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The stack name</p>
-    /// </li>
-    /// <li>
-    /// <p>The user name (email address of the user associated with the stack) and the authentication type for the user</p>
-    /// </li>
+    /// <li> <p>The stack name</p> </li>
+    /// <li> <p>The user name (email address of the user associated with the stack) and the authentication type for the user</p> </li>
     /// </ul>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserStackAssociations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5269,10 +5369,10 @@ pub mod fluent_builders {
                 crate::input::DescribeUserStackAssociationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5281,8 +5381,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack that is associated with the user.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
             self
         }
         /// <p>The name of the stack that is associated with the user.</p>
@@ -5290,18 +5390,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stack_name(input);
             self
         }
-        /// <p>The email address of the user who is associated with the stack.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user who is associated with the stack.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
-        /// <p>The email address of the user who is associated with the stack.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user who is associated with the stack.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5309,8 +5405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
-        pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(inp);
+        pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(input);
             self
         }
         /// <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
@@ -5322,8 +5418,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of each page of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of each page of results.</p>
@@ -5332,8 +5428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -5345,7 +5441,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisableUser`.
     ///
     /// <p>Disables the specified user in the user pool. Users can't sign in to AppStream 2.0 until they are re-enabled. This action does not delete the user. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5390,10 +5486,10 @@ pub mod fluent_builders {
                 crate::input::DisableUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5401,18 +5497,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5420,8 +5512,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL.</p>
-        pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(inp);
+        pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(input);
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL.</p>
@@ -5436,7 +5528,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateApplicationFleet`.
     ///
     /// <p>Disassociates the specified application from the fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateApplicationFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5481,10 +5573,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateApplicationFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5493,8 +5585,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -5503,8 +5595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the application.</p>
-        pub fn application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_arn(inp);
+        pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_arn(input.into());
             self
         }
         /// <p>The ARN of the application.</p>
@@ -5516,10 +5608,108 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `DisassociateApplicationFromEntitlement`.
+    ///
+    /// <p>Deletes the specified application from the specified entitlement.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct DisassociateApplicationFromEntitlement<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::disassociate_application_from_entitlement_input::Builder,
+    }
+    impl<C, M, R> DisassociateApplicationFromEntitlement<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `DisassociateApplicationFromEntitlement`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DisassociateApplicationFromEntitlementOutput,
+            aws_smithy_http::result::SdkError<
+                crate::error::DisassociateApplicationFromEntitlementError,
+            >,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::DisassociateApplicationFromEntitlementInputOperationOutputAlias,
+                crate::output::DisassociateApplicationFromEntitlementOutput,
+                crate::error::DisassociateApplicationFromEntitlementError,
+                crate::input::DisassociateApplicationFromEntitlementInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn entitlement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entitlement_name(input.into());
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn set_entitlement_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_entitlement_name(input);
+            self
+        }
+        /// <p>The identifier of the application to remove from the entitlement.</p>
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_identifier(input.into());
+            self
+        }
+        /// <p>The identifier of the application to remove from the entitlement.</p>
+        pub fn set_application_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_application_identifier(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `DisassociateFleet`.
     ///
     /// <p>Disassociates the specified fleet from the specified stack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5564,10 +5754,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5576,8 +5766,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -5586,8 +5776,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
             self
         }
         /// <p>The name of the stack.</p>
@@ -5599,7 +5789,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnableUser`.
     ///
     /// <p>Enables a user in the user pool. After being enabled, users can sign in to AppStream 2.0 and open applications from the stacks to which they are assigned.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableUser<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5644,10 +5834,10 @@ pub mod fluent_builders {
                 crate::input::EnableUserInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5655,18 +5845,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
         /// </note>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(inp);
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5674,8 +5860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL.</p>
-        pub fn authentication_type(mut self, inp: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(inp);
+        pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(input);
             self
         }
         /// <p>The authentication type for the user. You must specify USERPOOL.</p>
@@ -5690,7 +5876,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExpireSession`.
     ///
     /// <p>Immediately stops the specified streaming session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExpireSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5735,10 +5921,10 @@ pub mod fluent_builders {
                 crate::input::ExpireSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5747,8 +5933,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the streaming session.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The identifier of the streaming session.</p>
@@ -5760,7 +5946,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssociatedFleets`.
     ///
     /// <p>Retrieves the name of the fleet that is associated with the specified stack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociatedFleets<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5805,10 +5991,10 @@ pub mod fluent_builders {
                 crate::input::ListAssociatedFleetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5817,8 +6003,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
             self
         }
         /// <p>The name of the stack.</p>
@@ -5827,8 +6013,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -5840,7 +6026,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListAssociatedStacks`.
     ///
     /// <p>Retrieves the name of the stack with which the specified fleet is associated.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociatedStacks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5885,10 +6071,10 @@ pub mod fluent_builders {
                 crate::input::ListAssociatedStacksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5897,8 +6083,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn fleet_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(inp);
+        pub fn fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -5907,8 +6093,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -5917,11 +6103,114 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `ListEntitledApplications`.
+    ///
+    /// <p>Retrieves a list of entitled applications.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct ListEntitledApplications<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::list_entitled_applications_input::Builder,
+    }
+    impl<C, M, R> ListEntitledApplications<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `ListEntitledApplications`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListEntitledApplicationsOutput,
+            aws_smithy_http::result::SdkError<crate::error::ListEntitledApplicationsError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::ListEntitledApplicationsInputOperationOutputAlias,
+                crate::output::ListEntitledApplicationsOutput,
+                crate::error::ListEntitledApplicationsError,
+                crate::input::ListEntitledApplicationsInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn entitlement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entitlement_name(input.into());
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn set_entitlement_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_entitlement_name(input);
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
+            self
+        }
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum size of each page of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        /// <p>The maximum size of each page of results.</p>
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves a list of all tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image builders, images, fleets, and stacks.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5966,10 +6255,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5978,8 +6267,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -5991,7 +6280,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartFleet`.
     ///
     /// <p>Starts the specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6036,10 +6325,10 @@ pub mod fluent_builders {
                 crate::input::StartFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6048,8 +6337,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -6061,7 +6350,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartImageBuilder`.
     ///
     /// <p>Starts the specified image builder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImageBuilder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6106,10 +6395,10 @@ pub mod fluent_builders {
                 crate::input::StartImageBuilderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6118,8 +6407,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image builder.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the image builder.</p>
@@ -6128,8 +6417,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-        pub fn appstream_agent_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.appstream_agent_version(inp);
+        pub fn appstream_agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.appstream_agent_version(input.into());
             self
         }
         /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
@@ -6144,7 +6433,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopFleet`.
     ///
     /// <p>Stops the specified fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6189,10 +6478,10 @@ pub mod fluent_builders {
                 crate::input::StopFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6201,8 +6490,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -6214,7 +6503,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopImageBuilder`.
     ///
     /// <p>Stops the specified image builder.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopImageBuilder<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6259,10 +6548,10 @@ pub mod fluent_builders {
                 crate::input::StopImageBuilderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6271,8 +6560,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image builder.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the image builder.</p>
@@ -6284,13 +6573,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or overwrites one or more tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image builders, images, fleets, and stacks.</p>
-    /// <p>Each tag consists of a key and an optional value. If a resource already has a tag with the same key,
-    /// this operation updates its value.</p>
-    ///
-    /// <p>To list the current tags for your resources, use <a>ListTagsForResource</a>.
-    /// To disassociate tags from your resources, use <a>UntagResource</a>.</p>
+    /// <p>Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this operation updates its value.</p>
+    /// <p>To list the current tags for your resources, use <code>ListTagsForResource</code>. To disassociate tags from your resources, use <code>UntagResource</code>.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6335,10 +6621,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6347,8 +6633,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -6361,9 +6647,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
         pub fn tags(
@@ -6371,13 +6655,11 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
         pub fn set_tags(
@@ -6393,9 +6675,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Disassociates one or more specified tags from the specified AppStream 2.0 resource.</p>
-    /// <p>To list the current tags for your resources, use <a>ListTagsForResource</a>.</p>
+    /// <p>To list the current tags for your resources, use <code>ListTagsForResource</code>.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6440,10 +6722,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6452,8 +6734,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -6466,8 +6748,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The tag keys for the tags to disassociate.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The tag keys for the tags to disassociate.</p>
@@ -6482,7 +6764,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApplication`.
     ///
     /// <p>Updates the specified application.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApplication<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6527,10 +6809,10 @@ pub mod fluent_builders {
                 crate::input::UpdateApplicationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6539,8 +6821,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
@@ -6549,8 +6831,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
@@ -6559,8 +6841,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the application.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the application.</p>
@@ -6569,8 +6851,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The icon S3 location of the application.</p>
-        pub fn icon_s3_location(mut self, inp: crate::model::S3Location) -> Self {
-            self.inner = self.inner.icon_s3_location(inp);
+        pub fn icon_s3_location(mut self, input: crate::model::S3Location) -> Self {
+            self.inner = self.inner.icon_s3_location(input);
             self
         }
         /// <p>The icon S3 location of the application.</p>
@@ -6582,8 +6864,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The launch path of the application.</p>
-        pub fn launch_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_path(inp);
+        pub fn launch_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_path(input.into());
             self
         }
         /// <p>The launch path of the application.</p>
@@ -6592,8 +6874,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The working directory of the application.</p>
-        pub fn working_directory(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.working_directory(inp);
+        pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.working_directory(input.into());
             self
         }
         /// <p>The working directory of the application.</p>
@@ -6605,8 +6887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The launch parameters of the application.</p>
-        pub fn launch_parameters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch_parameters(inp);
+        pub fn launch_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch_parameters(input.into());
             self
         }
         /// <p>The launch parameters of the application.</p>
@@ -6618,8 +6900,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the app block.</p>
-        pub fn app_block_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_block_arn(inp);
+        pub fn app_block_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_block_arn(input.into());
             self
         }
         /// <p>The ARN of the app block.</p>
@@ -6635,11 +6917,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
         ///
         /// <p>The attributes to delete for an application.</p>
-        pub fn attributes_to_delete(
-            mut self,
-            inp: impl Into<crate::model::ApplicationAttribute>,
-        ) -> Self {
-            self.inner = self.inner.attributes_to_delete(inp);
+        pub fn attributes_to_delete(mut self, input: crate::model::ApplicationAttribute) -> Self {
+            self.inner = self.inner.attributes_to_delete(input);
             self
         }
         /// <p>The attributes to delete for an application.</p>
@@ -6654,7 +6933,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDirectoryConfig`.
     ///
     /// <p>Updates the specified Directory Config object in AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDirectoryConfig<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6699,10 +6978,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDirectoryConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6711,8 +6990,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Directory Config object.</p>
-        pub fn directory_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_name(inp);
+        pub fn directory_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_name(input.into());
             self
         }
         /// <p>The name of the Directory Config object.</p>
@@ -6730,9 +7009,11 @@ pub mod fluent_builders {
         /// <p>The distinguished names of the organizational units for computer accounts.</p>
         pub fn organizational_unit_distinguished_names(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organizational_unit_distinguished_names(inp);
+            self.inner = self
+                .inner
+                .organizational_unit_distinguished_names(input.into());
             self
         }
         /// <p>The distinguished names of the organizational units for computer accounts.</p>
@@ -6748,9 +7029,9 @@ pub mod fluent_builders {
         /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
         pub fn service_account_credentials(
             mut self,
-            inp: crate::model::ServiceAccountCredentials,
+            input: crate::model::ServiceAccountCredentials,
         ) -> Self {
-            self.inner = self.inner.service_account_credentials(inp);
+            self.inner = self.inner.service_account_credentials(input);
             self
         }
         /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
@@ -6762,31 +7043,137 @@ pub mod fluent_builders {
             self
         }
     }
+    /// Fluent builder constructing a request to `UpdateEntitlement`.
+    ///
+    /// <p>Updates the specified entitlement.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
+    pub struct UpdateEntitlement<
+        C = aws_smithy_client::erase::DynConnector,
+        M = crate::middleware::DefaultMiddleware,
+        R = aws_smithy_client::retry::Standard,
+    > {
+        handle: std::sync::Arc<super::Handle<C, M, R>>,
+        inner: crate::input::update_entitlement_input::Builder,
+    }
+    impl<C, M, R> UpdateEntitlement<C, M, R>
+    where
+        C: aws_smithy_client::bounds::SmithyConnector,
+        M: aws_smithy_client::bounds::SmithyMiddleware<C>,
+        R: aws_smithy_client::retry::NewRequestPolicy,
+    {
+        /// Creates a new `UpdateEntitlement`.
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C, M, R>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        /// Sends the request and returns the response.
+        ///
+        /// If an error occurs, an `SdkError` will be returned with additional details that
+        /// can be matched against.
+        ///
+        /// By default, any retryable failures will be retried twice. Retry behavior
+        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+        /// set when configuring the client.
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateEntitlementOutput,
+            aws_smithy_http::result::SdkError<crate::error::UpdateEntitlementError>,
+        >
+        where
+            R::Policy: aws_smithy_client::bounds::SmithyRetryPolicy<
+                crate::input::UpdateEntitlementInputOperationOutputAlias,
+                crate::output::UpdateEntitlementOutput,
+                crate::error::UpdateEntitlementError,
+                crate::input::UpdateEntitlementInputOperationRetryAlias,
+            >,
+        {
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
+                .make_operation(&self.handle.conf)
+                .await
+                .map_err(|err| {
+                    aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
+                })?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
+            self
+        }
+        /// <p>The name of the entitlement.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
+            self
+        }
+        /// <p>The name of the stack with which the entitlement is associated.</p>
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
+            self
+        }
+        /// <p>The description of the entitlement.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
+            self
+        }
+        /// <p>The description of the entitlement.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>Specifies whether all or only selected apps are entitled.</p>
+        pub fn app_visibility(mut self, input: crate::model::AppVisibility) -> Self {
+            self.inner = self.inner.app_visibility(input);
+            self
+        }
+        /// <p>Specifies whether all or only selected apps are entitled.</p>
+        pub fn set_app_visibility(
+            mut self,
+            input: std::option::Option<crate::model::AppVisibility>,
+        ) -> Self {
+            self.inner = self.inner.set_app_visibility(input);
+            self
+        }
+        /// Appends an item to `Attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attributes of the entitlement.</p>
+        pub fn attributes(mut self, input: crate::model::EntitlementAttribute) -> Self {
+            self.inner = self.inner.attributes(input);
+            self
+        }
+        /// <p>The attributes of the entitlement.</p>
+        pub fn set_attributes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::EntitlementAttribute>>,
+        ) -> Self {
+            self.inner = self.inner.set_attributes(input);
+            self
+        }
+    }
     /// Fluent builder constructing a request to `UpdateFleet`.
     ///
     /// <p>Updates the specified fleet.</p>
-    /// <p>If the fleet is in the <code>STOPPED</code> state, you can update any attribute except
-    /// the fleet name.</p>
-    /// <p>If the fleet is in the <code>RUNNING</code> state, you can update the following based
-    /// on the fleet type:</p>
+    /// <p>If the fleet is in the <code>STOPPED</code> state, you can update any attribute except the fleet name.</p>
+    /// <p>If the fleet is in the <code>RUNNING</code> state, you can update the following based on the fleet type:</p>
     /// <ul>
-    /// <li>
-    /// <p>Always-On and On-Demand fleet types</p>
-    /// <p>You can update the  <code>DisplayName</code>, <code>ComputeCapacity</code>,
-    /// <code>ImageARN</code>, <code>ImageName</code>,
-    /// <code>IdleDisconnectTimeoutInSeconds</code>, and
-    /// <code>DisconnectTimeoutInSeconds</code> attributes.</p>
-    /// </li>
-    /// <li>
-    /// <p>Elastic fleet type</p>
-    /// <p>You can update the  <code>DisplayName</code>,
-    /// <code>IdleDisconnectTimeoutInSeconds</code>,
-    /// <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>,
-    /// and <code>UsbDeviceFilterStrings</code> attributes.</p>
-    /// </li>
+    /// <li> <p>Always-On and On-Demand fleet types</p> <p>You can update the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>, <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code> attributes.</p> </li>
+    /// <li> <p>Elastic fleet type</p> <p>You can update the <code>DisplayName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, and <code>UsbDeviceFilterStrings</code> attributes.</p> </li>
     /// </ul>
     /// <p>If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't update it.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFleet<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6831,10 +7218,10 @@ pub mod fluent_builders {
                 crate::input::UpdateFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6843,8 +7230,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image used to create the fleet.</p>
-        pub fn image_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(inp);
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
             self
         }
         /// <p>The name of the image used to create the fleet.</p>
@@ -6853,8 +7240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the public, private, or shared image to use.</p>
-        pub fn image_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_arn(inp);
+        pub fn image_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_arn(input.into());
             self
         }
         /// <p>The ARN of the public, private, or shared image to use.</p>
@@ -6863,8 +7250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique name for the fleet.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A unique name for the fleet.</p>
@@ -6874,229 +7261,89 @@ pub mod fluent_builders {
         }
         /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         /// <p>The following instance types are available for Elastic fleets:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
         /// </ul>
-        pub fn instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_type(inp);
+        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_type(input.into());
             self
         }
         /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         /// <p>The following instance types are available for Elastic fleets:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,
@@ -7106,8 +7353,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.</p>
-        pub fn compute_capacity(mut self, inp: crate::model::ComputeCapacity) -> Self {
-            self.inner = self.inner.compute_capacity(inp);
+        pub fn compute_capacity(mut self, input: crate::model::ComputeCapacity) -> Self {
+            self.inner = self.inner.compute_capacity(input);
             self
         }
         /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.</p>
@@ -7119,8 +7366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones. </p>
-        pub fn vpc_config(mut self, inp: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
         /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones. </p>
@@ -7133,8 +7380,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
         /// <p>Specify a value between 600 and 360000.</p>
-        pub fn max_user_duration_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_user_duration_in_seconds(inp);
+        pub fn max_user_duration_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_user_duration_in_seconds(input);
             self
         }
         /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
@@ -7145,8 +7392,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
         /// <p>Specify a value between 60 and 360000.</p>
-        pub fn disconnect_timeout_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.disconnect_timeout_in_seconds(inp);
+        pub fn disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.disconnect_timeout_in_seconds(input);
             self
         }
         /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
@@ -7159,8 +7406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Deletes the VPC association for the specified fleet.</p>
-        pub fn delete_vpc_config(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_vpc_config(inp);
+        pub fn delete_vpc_config(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_vpc_config(input);
             self
         }
         /// <p>Deletes the VPC association for the specified fleet.</p>
@@ -7169,8 +7416,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description to display.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description to display.</p>
@@ -7179,8 +7426,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The fleet name to display.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The fleet name to display.</p>
@@ -7189,8 +7436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables or disables default internet access for the fleet.</p>
-        pub fn enable_default_internet_access(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_default_internet_access(inp);
+        pub fn enable_default_internet_access(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_default_internet_access(input);
             self
         }
         /// <p>Enables or disables default internet access for the fleet.</p>
@@ -7202,8 +7449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
-        pub fn domain_join_info(mut self, inp: crate::model::DomainJoinInfo) -> Self {
-            self.inner = self.inner.domain_join_info(inp);
+        pub fn domain_join_info(mut self, input: crate::model::DomainJoinInfo) -> Self {
+            self.inner = self.inner.domain_join_info(input);
             self
         }
         /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
@@ -7214,38 +7461,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_join_info(input);
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity. If
-        /// users try to reconnect to the streaming session before the time interval specified in
-        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-        /// previous session. Users are considered idle when they stop providing keyboard or mouse
-        /// input during their streaming session. File uploads and downloads, audio in, audio out,
-        /// and pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected. </p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-        ///
-        /// <note>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
-        pub fn idle_disconnect_timeout_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.idle_disconnect_timeout_in_seconds(inp);
+        pub fn idle_disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.idle_disconnect_timeout_in_seconds(input);
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity. If
-        /// users try to reconnect to the streaming session before the time interval specified in
-        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-        /// previous session. Users are considered idle when they stop providing keyboard or mouse
-        /// input during their streaming session. File uploads and downloads, audio in, audio out,
-        /// and pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected. </p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-        ///
-        /// <note>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
         pub fn set_idle_disconnect_timeout_in_seconds(
@@ -7260,11 +7485,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
         ///
         /// <p>The fleet attributes to delete.</p>
-        pub fn attributes_to_delete(
-            mut self,
-            inp: impl Into<crate::model::FleetAttribute>,
-        ) -> Self {
-            self.inner = self.inner.attributes_to_delete(inp);
+        pub fn attributes_to_delete(mut self, input: crate::model::FleetAttribute) -> Self {
+            self.inner = self.inner.attributes_to_delete(input);
             self
         }
         /// <p>The fleet attributes to delete.</p>
@@ -7276,28 +7498,24 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(inp);
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-        ///
         /// <p>The default value is <code>APP</code>.</p>
-        pub fn stream_view(mut self, inp: crate::model::StreamView) -> Self {
-            self.inner = self.inner.stream_view(inp);
+        pub fn stream_view(mut self, input: crate::model::StreamView) -> Self {
+            self.inner = self.inner.stream_view(input);
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-        ///
         /// <p>The default value is <code>APP</code>.</p>
         pub fn set_stream_view(
             mut self,
@@ -7307,8 +7525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
-        pub fn platform(mut self, inp: crate::model::PlatformType) -> Self {
-            self.inner = self.inner.platform(inp);
+        pub fn platform(mut self, input: crate::model::PlatformType) -> Self {
+            self.inner = self.inner.platform(input);
             self
         }
         /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
@@ -7320,8 +7538,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of concurrent sessions for a fleet.</p>
-        pub fn max_concurrent_sessions(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_concurrent_sessions(inp);
+        pub fn max_concurrent_sessions(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_concurrent_sessions(input);
             self
         }
         /// <p>The maximum number of concurrent sessions for a fleet.</p>
@@ -7334,8 +7552,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_usb_device_filter_strings`](Self::set_usb_device_filter_strings).
         ///
         /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
-        pub fn usb_device_filter_strings(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usb_device_filter_strings(inp);
+        pub fn usb_device_filter_strings(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usb_device_filter_strings(input.into());
             self
         }
         /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
@@ -7350,7 +7568,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateImagePermissions`.
     ///
     /// <p>Adds or updates permissions for the specified private image. </p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateImagePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7395,10 +7613,10 @@ pub mod fluent_builders {
                 crate::input::UpdateImagePermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7407,8 +7625,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the private image.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the private image.</p>
@@ -7417,8 +7635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
-        pub fn shared_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_account_id(inp);
+        pub fn shared_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_account_id(input.into());
             self
         }
         /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
@@ -7430,8 +7648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The permissions for the image.</p>
-        pub fn image_permissions(mut self, inp: crate::model::ImagePermissions) -> Self {
-            self.inner = self.inner.image_permissions(inp);
+        pub fn image_permissions(mut self, input: crate::model::ImagePermissions) -> Self {
+            self.inner = self.inner.image_permissions(input);
             self
         }
         /// <p>The permissions for the image.</p>
@@ -7446,7 +7664,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateStack`.
     ///
     /// <p>Updates the specified fields for the specified stack.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7491,10 +7709,10 @@ pub mod fluent_builders {
                 crate::input::UpdateStackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7503,8 +7721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack name to display.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The stack name to display.</p>
@@ -7513,8 +7731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description to display.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description to display.</p>
@@ -7523,8 +7741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stack.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the stack.</p>
@@ -7537,11 +7755,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_storage_connectors`](Self::set_storage_connectors).
         ///
         /// <p>The storage connectors to enable.</p>
-        pub fn storage_connectors(
-            mut self,
-            inp: impl Into<crate::model::StorageConnector>,
-        ) -> Self {
-            self.inner = self.inner.storage_connectors(inp);
+        pub fn storage_connectors(mut self, input: crate::model::StorageConnector) -> Self {
+            self.inner = self.inner.storage_connectors(input);
             self
         }
         /// <p>The storage connectors to enable.</p>
@@ -7553,8 +7768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Deletes the storage connectors currently enabled for the stack.</p>
-        pub fn delete_storage_connectors(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_storage_connectors(inp);
+        pub fn delete_storage_connectors(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_storage_connectors(input);
             self
         }
         /// <p>Deletes the storage connectors currently enabled for the stack.</p>
@@ -7563,8 +7778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL that users are redirected to after their streaming session ends.</p>
-        pub fn redirect_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.redirect_url(inp);
+        pub fn redirect_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.redirect_url(input.into());
             self
         }
         /// <p>The URL that users are redirected to after their streaming session ends.</p>
@@ -7573,8 +7788,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
-        pub fn feedback_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feedback_url(inp);
+        pub fn feedback_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feedback_url(input.into());
             self
         }
         /// <p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
@@ -7587,11 +7802,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
         ///
         /// <p>The stack attributes to delete.</p>
-        pub fn attributes_to_delete(
-            mut self,
-            inp: impl Into<crate::model::StackAttribute>,
-        ) -> Self {
-            self.inner = self.inner.attributes_to_delete(inp);
+        pub fn attributes_to_delete(mut self, input: crate::model::StackAttribute) -> Self {
+            self.inner = self.inner.attributes_to_delete(input);
             self
         }
         /// <p>The stack attributes to delete.</p>
@@ -7607,8 +7819,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_user_settings`](Self::set_user_settings).
         ///
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
-        pub fn user_settings(mut self, inp: impl Into<crate::model::UserSetting>) -> Self {
-            self.inner = self.inner.user_settings(inp);
+        pub fn user_settings(mut self, input: crate::model::UserSetting) -> Self {
+            self.inner = self.inner.user_settings(input);
             self
         }
         /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>
@@ -7620,8 +7832,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
-        pub fn application_settings(mut self, inp: crate::model::ApplicationSettings) -> Self {
-            self.inner = self.inner.application_settings(inp);
+        pub fn application_settings(mut self, input: crate::model::ApplicationSettings) -> Self {
+            self.inner = self.inner.application_settings(input);
             self
         }
         /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
@@ -7637,8 +7849,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_access_endpoints`](Self::set_access_endpoints).
         ///
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
-        pub fn access_endpoints(mut self, inp: impl Into<crate::model::AccessEndpoint>) -> Self {
-            self.inner = self.inner.access_endpoints(inp);
+        pub fn access_endpoints(mut self, input: crate::model::AccessEndpoint) -> Self {
+            self.inner = self.inner.access_endpoints(input);
             self
         }
         /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
@@ -7654,8 +7866,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_embed_host_domains`](Self::set_embed_host_domains).
         ///
         /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
-        pub fn embed_host_domains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.embed_host_domains(inp);
+        pub fn embed_host_domains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.embed_host_domains(input.into());
             self
         }
         /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
@@ -7668,6 +7880,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

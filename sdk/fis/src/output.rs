@@ -351,10 +351,10 @@ pub mod list_experiment_templates_output {
         /// <p>The experiment templates.</p>
         pub fn experiment_templates(
             mut self,
-            input: impl Into<crate::model::ExperimentTemplateSummary>,
+            input: crate::model::ExperimentTemplateSummary,
         ) -> Self {
             let mut v = self.experiment_templates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.experiment_templates = Some(v);
             self
         }
@@ -434,9 +434,9 @@ pub mod list_experiments_output {
         /// To override the contents of this collection use [`set_experiments`](Self::set_experiments).
         ///
         /// <p>The experiments.</p>
-        pub fn experiments(mut self, input: impl Into<crate::model::ExperimentSummary>) -> Self {
+        pub fn experiments(mut self, input: crate::model::ExperimentSummary) -> Self {
             let mut v = self.experiments.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.experiments = Some(v);
             self
         }
@@ -516,9 +516,9 @@ pub mod list_actions_output {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions.</p>
-        pub fn actions(mut self, input: impl Into<crate::model::ActionSummary>) -> Self {
+        pub fn actions(mut self, input: crate::model::ActionSummary) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.actions = Some(v);
             self
         }

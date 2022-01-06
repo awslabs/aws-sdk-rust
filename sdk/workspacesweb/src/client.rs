@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon WorkSpaces Web
@@ -291,6 +291,7 @@ where
     ///
     /// See [`ListBrowserSettings`](crate::client::fluent_builders::ListBrowserSettings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBrowserSettings::into_paginator).
     pub fn list_browser_settings(&self) -> fluent_builders::ListBrowserSettings<C, M, R> {
         fluent_builders::ListBrowserSettings::new(self.handle.clone())
     }
@@ -298,6 +299,7 @@ where
     ///
     /// See [`ListIdentityProviders`](crate::client::fluent_builders::ListIdentityProviders) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIdentityProviders::into_paginator).
     pub fn list_identity_providers(&self) -> fluent_builders::ListIdentityProviders<C, M, R> {
         fluent_builders::ListIdentityProviders::new(self.handle.clone())
     }
@@ -305,6 +307,7 @@ where
     ///
     /// See [`ListNetworkSettings`](crate::client::fluent_builders::ListNetworkSettings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNetworkSettings::into_paginator).
     pub fn list_network_settings(&self) -> fluent_builders::ListNetworkSettings<C, M, R> {
         fluent_builders::ListNetworkSettings::new(self.handle.clone())
     }
@@ -312,6 +315,7 @@ where
     ///
     /// See [`ListPortals`](crate::client::fluent_builders::ListPortals) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPortals::into_paginator).
     pub fn list_portals(&self) -> fluent_builders::ListPortals<C, M, R> {
         fluent_builders::ListPortals::new(self.handle.clone())
     }
@@ -326,6 +330,7 @@ where
     ///
     /// See [`ListTrustStoreCertificates`](crate::client::fluent_builders::ListTrustStoreCertificates) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTrustStoreCertificates::into_paginator).
     pub fn list_trust_store_certificates(
         &self,
     ) -> fluent_builders::ListTrustStoreCertificates<C, M, R> {
@@ -335,6 +340,7 @@ where
     ///
     /// See [`ListTrustStores`](crate::client::fluent_builders::ListTrustStores) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTrustStores::into_paginator).
     pub fn list_trust_stores(&self) -> fluent_builders::ListTrustStores<C, M, R> {
         fluent_builders::ListTrustStores::new(self.handle.clone())
     }
@@ -342,6 +348,7 @@ where
     ///
     /// See [`ListUserSettings`](crate::client::fluent_builders::ListUserSettings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUserSettings::into_paginator).
     pub fn list_user_settings(&self) -> fluent_builders::ListUserSettings<C, M, R> {
         fluent_builders::ListUserSettings::new(self.handle.clone())
     }
@@ -413,7 +420,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateBrowserSettings`.
     ///
     /// <p>Associates a browser settings resource with a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateBrowserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -458,10 +465,10 @@ pub mod fluent_builders {
                 crate::input::AssociateBrowserSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -470,8 +477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(input.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -480,8 +487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the browser settings.</p>
-        pub fn browser_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.browser_settings_arn(inp);
+        pub fn browser_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.browser_settings_arn(input.into());
             self
         }
         /// <p>The ARN of the browser settings.</p>
@@ -496,7 +503,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateNetworkSettings`.
     ///
     /// <p>Associates a network settings resource with a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateNetworkSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -541,10 +548,10 @@ pub mod fluent_builders {
                 crate::input::AssociateNetworkSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -553,8 +560,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(input.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -563,8 +570,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the network settings.</p>
-        pub fn network_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_settings_arn(inp);
+        pub fn network_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_settings_arn(input.into());
             self
         }
         /// <p>The ARN of the network settings.</p>
@@ -579,7 +586,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateTrustStore`.
     ///
     /// <p>Associates a trust store with a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTrustStore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -624,10 +631,10 @@ pub mod fluent_builders {
                 crate::input::AssociateTrustStoreInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -636,8 +643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(input.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -646,8 +653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the trust store.</p>
-        pub fn trust_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_store_arn(inp);
+        pub fn trust_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_store_arn(input.into());
             self
         }
         /// <p>The ARN of the trust store.</p>
@@ -662,7 +669,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateUserSettings`.
     ///
     /// <p>Associates a user settings resource with a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -707,10 +714,10 @@ pub mod fluent_builders {
                 crate::input::AssociateUserSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -719,8 +726,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(input.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -729,8 +736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the user settings.</p>
-        pub fn user_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_settings_arn(inp);
+        pub fn user_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_settings_arn(input.into());
             self
         }
         /// <p>The ARN of the user settings.</p>
@@ -744,10 +751,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBrowserSettings`.
     ///
-    /// <p>Creates a browser settings resource that can be associated with a web portal. Once
-    /// associated with a web portal, browser settings control how the browser will behave once a
-    /// user starts a streaming session for the web portal. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a browser settings resource that can be associated with a web portal. Once associated with a web portal, browser settings control how the browser will behave once a user starts a streaming session for the web portal. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBrowserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -792,10 +797,10 @@ pub mod fluent_builders {
                 crate::input::CreateBrowserSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -808,8 +813,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
@@ -821,8 +826,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The custom managed key of the browser settings.</p>
-        pub fn customer_managed_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_managed_key(inp);
+        pub fn customer_managed_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_managed_key(input.into());
             self
         }
         /// <p>The custom managed key of the browser settings.</p>
@@ -843,7 +848,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.additional_encryption_context(k, v);
+            self.inner = self.inner.additional_encryption_context(k.into(), v.into());
             self
         }
         /// <p>Additional encryption context of the browser settings.</p>
@@ -856,14 +861,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_additional_encryption_context(input);
             self
         }
-        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-        /// streaming sessions.</p>
-        pub fn browser_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.browser_policy(inp);
+        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
+        pub fn browser_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.browser_policy(input.into());
             self
         }
-        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-        /// streaming sessions.</p>
+        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
         pub fn set_browser_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -871,19 +874,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_browser_policy(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK. </p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>
         /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
@@ -893,7 +890,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateIdentityProvider`.
     ///
     /// <p>Creates an identity provider resource that is then associated with a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIdentityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -938,10 +935,10 @@ pub mod fluent_builders {
                 crate::input::CreateIdentityProviderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -950,8 +947,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(input.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -960,8 +957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity provider name.</p>
-        pub fn identity_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_provider_name(inp);
+        pub fn identity_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_provider_name(input.into());
             self
         }
         /// <p>The identity provider name.</p>
@@ -973,8 +970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity provider type.</p>
-        pub fn identity_provider_type(mut self, inp: crate::model::IdentityProviderType) -> Self {
-            self.inner = self.inner.identity_provider_type(inp);
+        pub fn identity_provider_type(mut self, input: crate::model::IdentityProviderType) -> Self {
+            self.inner = self.inner.identity_provider_type(input);
             self
         }
         /// <p>The identity provider type.</p>
@@ -989,319 +986,95 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_identity_provider_details`](Self::set_identity_provider_details).
         ///
-        /// <p>The identity provider details. The following list describes the provider detail keys for
-        /// each identity provider type. </p>
+        /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For Google and Login with Amazon:</p>      
+        /// <li> <p>For Google and Login with Amazon:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Facebook:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Facebook:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>api_version</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Sign in with Apple:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>api_version</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Sign in with Apple:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>team_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>key_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>private_key</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For OIDC providers:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>team_id</code> </p> </li>
+        /// <li> <p> <code>key_id</code> </p> </li>
+        /// <li> <p> <code>private_key</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For OIDC providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>attributes_request_method</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oidc_issuer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_url</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>token_url</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>attributes_url</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jwks_uri</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For SAML providers:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>attributes_request_method</code> </p> </li>
+        /// <li> <p> <code>oidc_issuer</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For SAML providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>MetadataFile</code> OR <code>MetadataURL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IDPSignout</code>
-        /// <i>optional</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
+        /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn identity_provider_details(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.identity_provider_details(k, v);
+            self.inner = self.inner.identity_provider_details(k.into(), v.into());
             self
         }
-        /// <p>The identity provider details. The following list describes the provider detail keys for
-        /// each identity provider type. </p>
+        /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
         /// <ul>
-        /// <li>
-        /// <p>For Google and Login with Amazon:</p>      
+        /// <li> <p>For Google and Login with Amazon:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Facebook:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Facebook:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>api_version</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For Sign in with Apple:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>api_version</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For Sign in with Apple:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>team_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>key_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>private_key</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For OIDC providers:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>team_id</code> </p> </li>
+        /// <li> <p> <code>key_id</code> </p> </li>
+        /// <li> <p> <code>private_key</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For OIDC providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>client_id</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client_secret</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>attributes_request_method</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>oidc_issuer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_scopes</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>authorize_url</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>token_url</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>attributes_url</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>jwks_uri</code>
-        /// <i>if not available from discovery URL specified by
-        /// <code>oidc_issuer</code> key</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>For SAML providers:</p>      
+        /// <li> <p> <code>client_id</code> </p> </li>
+        /// <li> <p> <code>client_secret</code> </p> </li>
+        /// <li> <p> <code>attributes_request_method</code> </p> </li>
+        /// <li> <p> <code>oidc_issuer</code> </p> </li>
+        /// <li> <p> <code>authorize_scopes</code> </p> </li>
+        /// <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>
+        /// </ul> </li>
+        /// <li> <p>For SAML providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>MetadataFile</code> OR <code>MetadataURL</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IDPSignout</code>
-        /// <i>optional</i>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>
+        /// <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_identity_provider_details(
             mut self,
@@ -1312,22 +1085,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_provider_details(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request.</p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request.</p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1335,10 +1100,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateNetworkSettings`.
     ///
-    /// <p>Creates a network settings resource that can be associated with a web portal. Once
-    /// associated with a web portal, network settings define how streaming instances will connect
-    /// with your specified VPC. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a network settings resource that can be associated with a web portal. Once associated with a web portal, network settings define how streaming instances will connect with your specified VPC. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNetworkSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1383,10 +1146,10 @@ pub mod fluent_builders {
                 crate::input::CreateNetworkSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1395,8 +1158,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The VPC that streaming instances will connect to.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The VPC that streaming instances will connect to.</p>
@@ -1409,8 +1172,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
@@ -1426,8 +1189,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
         /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
@@ -1443,8 +1206,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the network settings resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to the network settings resource. A tag is a key-value pair.</p>
@@ -1455,22 +1218,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1479,7 +1234,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreatePortal`.
     ///
     /// <p>Creates a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1524,10 +1279,10 @@ pub mod fluent_builders {
                 crate::input::CreatePortalInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1536,8 +1291,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
@@ -1550,8 +1305,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the web portal. A tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to the web portal. A tag is a key-value pair.</p>
@@ -1563,8 +1318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The customer managed key of the web portal.</p>
-        pub fn customer_managed_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_managed_key(inp);
+        pub fn customer_managed_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_managed_key(input.into());
             self
         }
         /// <p>The customer managed key of the web portal.</p>
@@ -1585,7 +1340,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.additional_encryption_context(k, v);
+            self.inner = self.inner.additional_encryption_context(k.into(), v.into());
             self
         }
         /// <p>The additional encryption context of the portal.</p>
@@ -1598,22 +1353,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_additional_encryption_context(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1621,12 +1368,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTrustStore`.
     ///
-    /// <p>Creates a trust store that can be associated with a web portal. A trust store contains
-    /// certificate authority (CA) certificates. Once associated with a web portal, the browser in
-    /// a streaming session will recognize certificates that have been issued using any of the CAs
-    /// in the trust store. If your organization has internal websites that use certificates issued
-    /// by private CAs, you should add the private CA certificate to the trust store. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a trust store that can be associated with a web portal. A trust store contains certificate authority (CA) certificates. Once associated with a web portal, the browser in a streaming session will recognize certificates that have been issued using any of the CAs in the trust store. If your organization has internal websites that use certificates issued by private CAs, you should add the private CA certificate to the trust store. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrustStore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1671,10 +1414,10 @@ pub mod fluent_builders {
                 crate::input::CreateTrustStoreInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1687,8 +1430,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_certificate_list`](Self::set_certificate_list).
         ///
         /// <p>A list of CA certificates to be added to the trust store.</p>
-        pub fn certificate_list(mut self, inp: impl Into<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.certificate_list(inp);
+        pub fn certificate_list(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.certificate_list(input);
             self
         }
         /// <p>A list of CA certificates to be added to the trust store.</p>
@@ -1704,8 +1447,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the trust store. A tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to the trust store. A tag is a key-value pair.</p>
@@ -1716,22 +1459,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1739,10 +1474,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateUserSettings`.
     ///
-    /// <p>Creates a user settings resource that can be associated with a web portal. Once
-    /// associated with a web portal, user settings control how users can transfer data between a
-    /// streaming session and the their local devices. </p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a user settings resource that can be associated with a web portal. Once associated with a web portal, user settings control how users can transfer data between a streaming session and the their local devices. </p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1787,10 +1520,10 @@ pub mod fluent_builders {
                 crate::input::CreateUserSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1798,14 +1531,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether the user can copy text from the streaming session to the local
-        /// device.</p>
-        pub fn copy_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.copy_allowed(inp);
+        /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
+        pub fn copy_allowed(mut self, input: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.copy_allowed(input);
             self
         }
-        /// <p>Specifies whether the user can copy text from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
         pub fn set_copy_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -1813,14 +1544,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_copy_allowed(input);
             self
         }
-        /// <p>Specifies whether the user can paste text from the local device to the streaming
-        /// session.</p>
-        pub fn paste_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.paste_allowed(inp);
+        /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
+        pub fn paste_allowed(mut self, input: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.paste_allowed(input);
             self
         }
-        /// <p>Specifies whether the user can paste text from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
         pub fn set_paste_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -1828,14 +1557,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_paste_allowed(input);
             self
         }
-        /// <p>Specifies whether the user can download files from the streaming session to the local
-        /// device.</p>
-        pub fn download_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.download_allowed(inp);
+        /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
+        pub fn download_allowed(mut self, input: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.download_allowed(input);
             self
         }
-        /// <p>Specifies whether the user can download files from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
         pub fn set_download_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -1843,14 +1570,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_download_allowed(input);
             self
         }
-        /// <p>Specifies whether the user can upload files from the local device to the streaming
-        /// session.</p>
-        pub fn upload_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.upload_allowed(inp);
+        /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
+        pub fn upload_allowed(mut self, input: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.upload_allowed(input);
             self
         }
-        /// <p>Specifies whether the user can upload files from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
         pub fn set_upload_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -1859,8 +1584,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the user can print to the local device.</p>
-        pub fn print_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.print_allowed(inp);
+        pub fn print_allowed(mut self, input: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.print_allowed(input);
             self
         }
         /// <p>Specifies whether the user can print to the local device.</p>
@@ -1876,8 +1601,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
@@ -1888,22 +1613,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1912,7 +1629,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBrowserSettings`.
     ///
     /// <p>Deletes browser settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBrowserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1957,10 +1674,10 @@ pub mod fluent_builders {
                 crate::input::DeleteBrowserSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1969,8 +1686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the browser settings.</p>
-        pub fn browser_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.browser_settings_arn(inp);
+        pub fn browser_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.browser_settings_arn(input.into());
             self
         }
         /// <p>The ARN of the browser settings.</p>
@@ -1985,7 +1702,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteIdentityProvider`.
     ///
     /// <p>Deletes the identity provider.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIdentityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2030,10 +1747,10 @@ pub mod fluent_builders {
                 crate::input::DeleteIdentityProviderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2042,8 +1759,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the identity provider.</p>
-        pub fn identity_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_provider_arn(inp);
+        pub fn identity_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_provider_arn(input.into());
             self
         }
         /// <p>The ARN of the identity provider.</p>
@@ -2058,7 +1775,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNetworkSettings`.
     ///
     /// <p>Deletes network settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNetworkSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2103,10 +1820,10 @@ pub mod fluent_builders {
                 crate::input::DeleteNetworkSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2115,8 +1832,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the network settings.</p>
-        pub fn network_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_settings_arn(inp);
+        pub fn network_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_settings_arn(input.into());
             self
         }
         /// <p>The ARN of the network settings.</p>
@@ -2131,7 +1848,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePortal`.
     ///
     /// <p>Deletes a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2176,10 +1893,10 @@ pub mod fluent_builders {
                 crate::input::DeletePortalInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2188,8 +1905,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(input.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -2201,7 +1918,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTrustStore`.
     ///
     /// <p>Deletes the trust store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrustStore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2246,10 +1963,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTrustStoreInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2258,8 +1975,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the trust store.</p>
-        pub fn trust_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_store_arn(inp);
+        pub fn trust_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_store_arn(input.into());
             self
         }
         /// <p>The ARN of the trust store.</p>
@@ -2274,7 +1991,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUserSettings`.
     ///
     /// <p>Deletes user settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2319,10 +2036,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUserSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2331,8 +2048,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user settings.</p>
-        pub fn user_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_settings_arn(inp);
+        pub fn user_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_settings_arn(input.into());
             self
         }
         /// <p>The ARN of the user settings.</p>
@@ -2347,7 +2064,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateBrowserSettings`.
     ///
     /// <p>Disassociates browser settings from a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateBrowserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2392,10 +2109,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateBrowserSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2404,8 +2121,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(input.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -2417,7 +2134,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateNetworkSettings`.
     ///
     /// <p>Disassociates network settings from a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateNetworkSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2462,10 +2179,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateNetworkSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2474,8 +2191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(input.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -2487,7 +2204,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateTrustStore`.
     ///
     /// <p>Disassociates a trust store from a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTrustStore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2532,10 +2249,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateTrustStoreInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2544,8 +2261,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(input.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -2557,7 +2274,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateUserSettings`.
     ///
     /// <p>Disassociates user settings from a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2602,10 +2319,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateUserSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2614,8 +2331,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(input.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -2627,7 +2344,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBrowserSettings`.
     ///
     /// <p>Gets browser settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBrowserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2672,10 +2389,10 @@ pub mod fluent_builders {
                 crate::input::GetBrowserSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2684,8 +2401,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the browser settings.</p>
-        pub fn browser_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.browser_settings_arn(inp);
+        pub fn browser_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.browser_settings_arn(input.into());
             self
         }
         /// <p>The ARN of the browser settings.</p>
@@ -2700,7 +2417,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIdentityProvider`.
     ///
     /// <p>Gets the identity provider.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIdentityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2745,10 +2462,10 @@ pub mod fluent_builders {
                 crate::input::GetIdentityProviderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2757,8 +2474,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the identity provider.</p>
-        pub fn identity_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_provider_arn(inp);
+        pub fn identity_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_provider_arn(input.into());
             self
         }
         /// <p>The ARN of the identity provider.</p>
@@ -2773,7 +2490,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkSettings`.
     ///
     /// <p>Gets the network settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2818,10 +2535,10 @@ pub mod fluent_builders {
                 crate::input::GetNetworkSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2830,8 +2547,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the network settings.</p>
-        pub fn network_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_settings_arn(inp);
+        pub fn network_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_settings_arn(input.into());
             self
         }
         /// <p>The ARN of the network settings.</p>
@@ -2846,7 +2563,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPortal`.
     ///
     /// <p>Gets the web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2891,10 +2608,10 @@ pub mod fluent_builders {
                 crate::input::GetPortalInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2903,8 +2620,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(input.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -2916,7 +2633,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPortalServiceProviderMetadata`.
     ///
     /// <p>Gets the service provider metadata.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPortalServiceProviderMetadata<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2961,10 +2678,10 @@ pub mod fluent_builders {
                 crate::input::GetPortalServiceProviderMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2973,8 +2690,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(input.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -2986,7 +2703,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTrustStore`.
     ///
     /// <p>Gets the trust store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTrustStore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3031,10 +2748,10 @@ pub mod fluent_builders {
                 crate::input::GetTrustStoreInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3043,8 +2760,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the trust store.</p>
-        pub fn trust_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_store_arn(inp);
+        pub fn trust_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_store_arn(input.into());
             self
         }
         /// <p>The ARN of the trust store.</p>
@@ -3059,7 +2776,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTrustStoreCertificate`.
     ///
     /// <p>Gets the trust store certificate.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTrustStoreCertificate<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3104,10 +2821,10 @@ pub mod fluent_builders {
                 crate::input::GetTrustStoreCertificateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3116,8 +2833,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the trust store certificate.</p>
-        pub fn trust_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_store_arn(inp);
+        pub fn trust_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_store_arn(input.into());
             self
         }
         /// <p>The ARN of the trust store certificate.</p>
@@ -3129,8 +2846,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The thumbprint of the trust store certificate.</p>
-        pub fn thumbprint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thumbprint(inp);
+        pub fn thumbprint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thumbprint(input.into());
             self
         }
         /// <p>The thumbprint of the trust store certificate.</p>
@@ -3142,7 +2859,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUserSettings`.
     ///
     /// <p>Gets user settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3187,10 +2904,10 @@ pub mod fluent_builders {
                 crate::input::GetUserSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3199,8 +2916,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user settings.</p>
-        pub fn user_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_settings_arn(inp);
+        pub fn user_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_settings_arn(input.into());
             self
         }
         /// <p>The ARN of the user settings.</p>
@@ -3215,7 +2932,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListBrowserSettings`.
     ///
     /// <p>Retrieves a list of browser settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBrowserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3260,10 +2977,10 @@ pub mod fluent_builders {
                 crate::input::ListBrowserSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3271,9 +2988,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListBrowserSettingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListBrowserSettingsPaginator<C, M, R> {
+            crate::paginator::ListBrowserSettingsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -3282,8 +3005,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -3295,7 +3018,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListIdentityProviders`.
     ///
     /// <p>Retrieves a list of identity providers for a specific web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIdentityProviders<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3340,10 +3063,10 @@ pub mod fluent_builders {
                 crate::input::ListIdentityProvidersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3351,9 +3074,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListIdentityProvidersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListIdentityProvidersPaginator<C, M, R> {
+            crate::paginator::ListIdentityProvidersPaginator::new(self.handle, self.inner)
+        }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -3362,8 +3091,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -3372,8 +3101,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(input.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -3385,7 +3114,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNetworkSettings`.
     ///
     /// <p>Retrieves a list of network settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNetworkSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3430,10 +3159,10 @@ pub mod fluent_builders {
                 crate::input::ListNetworkSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3441,9 +3170,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListNetworkSettingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListNetworkSettingsPaginator<C, M, R> {
+            crate::paginator::ListNetworkSettingsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -3452,8 +3187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -3465,7 +3200,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListPortals`.
     ///
     /// <p>Retrieves a list or web portals.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPortals<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3510,10 +3245,10 @@ pub mod fluent_builders {
                 crate::input::ListPortalsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3521,9 +3256,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPortalsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPortalsPaginator<C, M, R> {
+            crate::paginator::ListPortalsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
@@ -3532,8 +3273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -3545,7 +3286,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Retrieves a list of tags for a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3590,10 +3331,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3602,8 +3343,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -3615,7 +3356,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTrustStoreCertificates`.
     ///
     /// <p>Retrieves a list of trust store certificates.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrustStoreCertificates<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3660,10 +3401,10 @@ pub mod fluent_builders {
                 crate::input::ListTrustStoreCertificatesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3671,9 +3412,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTrustStoreCertificatesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListTrustStoreCertificatesPaginator<C, M, R> {
+            crate::paginator::ListTrustStoreCertificatesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the trust store</p>
-        pub fn trust_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_store_arn(inp);
+        pub fn trust_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_store_arn(input.into());
             self
         }
         /// <p>The ARN of the trust store</p>
@@ -3685,8 +3434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -3695,8 +3444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -3708,7 +3457,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTrustStores`.
     ///
     /// <p>Retrieves a list of trust stores.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrustStores<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3753,10 +3502,10 @@ pub mod fluent_builders {
                 crate::input::ListTrustStoresInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3764,9 +3513,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTrustStoresPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTrustStoresPaginator<C, M, R> {
+            crate::paginator::ListTrustStoresPaginator::new(self.handle, self.inner)
+        }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
@@ -3775,8 +3530,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -3788,7 +3543,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUserSettings`.
     ///
     /// <p>Retrieves a list of user settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3833,10 +3588,10 @@ pub mod fluent_builders {
                 crate::input::ListUserSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3844,9 +3599,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListUserSettingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListUserSettingsPaginator<C, M, R> {
+            crate::paginator::ListUserSettingsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
@@ -3855,8 +3616,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -3868,7 +3629,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or overwrites one or more tags for the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3913,10 +3674,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3925,8 +3686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -3939,8 +3700,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags of the resource.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p>The tags of the resource.</p>
@@ -3951,22 +3712,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token returns the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -3975,7 +3728,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes one or more tags from the specified resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4020,10 +3773,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4032,8 +3785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -4046,8 +3799,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The list of tag keys to remove from the resource.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The list of tag keys to remove from the resource.</p>
@@ -4062,7 +3815,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateBrowserSettings`.
     ///
     /// <p>Updates browser settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBrowserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4107,10 +3860,10 @@ pub mod fluent_builders {
                 crate::input::UpdateBrowserSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4119,8 +3872,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the browser settings.</p>
-        pub fn browser_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.browser_settings_arn(inp);
+        pub fn browser_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.browser_settings_arn(input.into());
             self
         }
         /// <p>The ARN of the browser settings.</p>
@@ -4131,14 +3884,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_browser_settings_arn(input);
             self
         }
-        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-        /// streaming sessions. </p>
-        pub fn browser_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.browser_policy(inp);
+        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions. </p>
+        pub fn browser_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.browser_policy(input.into());
             self
         }
-        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all
-        /// streaming sessions. </p>
+        /// <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions. </p>
         pub fn set_browser_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4146,22 +3897,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_browser_policy(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -4170,7 +3913,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateIdentityProvider`.
     ///
     /// <p>Updates the identity provider.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIdentityProvider<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4215,10 +3958,10 @@ pub mod fluent_builders {
                 crate::input::UpdateIdentityProviderInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4227,8 +3970,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the identity provider.</p>
-        pub fn identity_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_provider_arn(inp);
+        pub fn identity_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_provider_arn(input.into());
             self
         }
         /// <p>The ARN of the identity provider.</p>
@@ -4240,8 +3983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the identity provider.</p>
-        pub fn identity_provider_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_provider_name(inp);
+        pub fn identity_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_provider_name(input.into());
             self
         }
         /// <p>The name of the identity provider.</p>
@@ -4253,8 +3996,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the identity provider.</p>
-        pub fn identity_provider_type(mut self, inp: crate::model::IdentityProviderType) -> Self {
-            self.inner = self.inner.identity_provider_type(inp);
+        pub fn identity_provider_type(mut self, input: crate::model::IdentityProviderType) -> Self {
+            self.inner = self.inner.identity_provider_type(input);
             self
         }
         /// <p>The type of the identity provider.</p>
@@ -4275,7 +4018,7 @@ pub mod fluent_builders {
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.identity_provider_details(k, v);
+            self.inner = self.inner.identity_provider_details(k.into(), v.into());
             self
         }
         /// <p>The details of the identity provider.</p>
@@ -4288,22 +4031,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_provider_details(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -4312,7 +4047,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateNetworkSettings`.
     ///
     /// <p>Updates network settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNetworkSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4357,10 +4092,10 @@ pub mod fluent_builders {
                 crate::input::UpdateNetworkSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4369,8 +4104,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the network settings.</p>
-        pub fn network_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_settings_arn(inp);
+        pub fn network_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_settings_arn(input.into());
             self
         }
         /// <p>The ARN of the network settings.</p>
@@ -4382,8 +4117,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC that streaming instances will connect to.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The VPC that streaming instances will connect to.</p>
@@ -4396,8 +4131,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
         ///
         /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
-        pub fn subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_ids(inp);
+        pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_ids(input.into());
             self
         }
         /// <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
@@ -4413,8 +4148,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
         /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_group_ids(inp);
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_group_ids(input.into());
             self
         }
         /// <p>One or more security groups used to control access from streaming instances to your VPC.</p>
@@ -4425,22 +4160,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_group_ids(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -4449,7 +4176,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdatePortal`.
     ///
     /// <p>Updates a web portal.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePortal<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4494,10 +4221,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePortalInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4506,8 +4233,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the web portal.</p>
-        pub fn portal_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_arn(inp);
+        pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_arn(input.into());
             self
         }
         /// <p>The ARN of the web portal.</p>
@@ -4516,8 +4243,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(inp);
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
@@ -4529,7 +4256,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTrustStore`.
     ///
     /// <p>Updates the trust store.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTrustStore<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4574,10 +4301,10 @@ pub mod fluent_builders {
                 crate::input::UpdateTrustStoreInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4586,8 +4313,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the trust store.</p>
-        pub fn trust_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_store_arn(inp);
+        pub fn trust_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_store_arn(input.into());
             self
         }
         /// <p>The ARN of the trust store.</p>
@@ -4603,8 +4330,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_certificates_to_add`](Self::set_certificates_to_add).
         ///
         /// <p>A list of CA certificates to add to the trust store.</p>
-        pub fn certificates_to_add(mut self, inp: impl Into<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.certificates_to_add(inp);
+        pub fn certificates_to_add(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.certificates_to_add(input);
             self
         }
         /// <p>A list of CA certificates to add to the trust store.</p>
@@ -4620,8 +4347,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_certificates_to_delete`](Self::set_certificates_to_delete).
         ///
         /// <p>A list of CA certificates to delete from a trust store.</p>
-        pub fn certificates_to_delete(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificates_to_delete(inp);
+        pub fn certificates_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificates_to_delete(input.into());
             self
         }
         /// <p>A list of CA certificates to delete from a trust store.</p>
@@ -4632,22 +4359,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificates_to_delete(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -4656,7 +4375,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserSettings`.
     ///
     /// <p>Updates the user settings.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4701,10 +4420,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUserSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4713,8 +4432,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user settings.</p>
-        pub fn user_settings_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_settings_arn(inp);
+        pub fn user_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_settings_arn(input.into());
             self
         }
         /// <p>The ARN of the user settings.</p>
@@ -4725,14 +4444,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_settings_arn(input);
             self
         }
-        /// <p>Specifies whether the user can copy text from the streaming session to the local
-        /// device.</p>
-        pub fn copy_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.copy_allowed(inp);
+        /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
+        pub fn copy_allowed(mut self, input: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.copy_allowed(input);
             self
         }
-        /// <p>Specifies whether the user can copy text from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
         pub fn set_copy_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -4740,14 +4457,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_copy_allowed(input);
             self
         }
-        /// <p>Specifies whether the user can paste text from the local device to the streaming
-        /// session.</p>
-        pub fn paste_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.paste_allowed(inp);
+        /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
+        pub fn paste_allowed(mut self, input: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.paste_allowed(input);
             self
         }
-        /// <p>Specifies whether the user can paste text from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
         pub fn set_paste_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -4755,14 +4470,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_paste_allowed(input);
             self
         }
-        /// <p>Specifies whether the user can download files from the streaming session to the local
-        /// device.</p>
-        pub fn download_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.download_allowed(inp);
+        /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
+        pub fn download_allowed(mut self, input: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.download_allowed(input);
             self
         }
-        /// <p>Specifies whether the user can download files from the streaming session to the local
-        /// device.</p>
+        /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
         pub fn set_download_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -4770,14 +4483,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_download_allowed(input);
             self
         }
-        /// <p>Specifies whether the user can upload files from the local device to the streaming
-        /// session.</p>
-        pub fn upload_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.upload_allowed(inp);
+        /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
+        pub fn upload_allowed(mut self, input: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.upload_allowed(input);
             self
         }
-        /// <p>Specifies whether the user can upload files from the local device to the streaming
-        /// session.</p>
+        /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
         pub fn set_upload_allowed(
             mut self,
             input: std::option::Option<crate::model::EnabledType>,
@@ -4786,8 +4497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the user can print to the local device.</p>
-        pub fn print_allowed(mut self, inp: crate::model::EnabledType) -> Self {
-            self.inner = self.inner.print_allowed(inp);
+        pub fn print_allowed(mut self, input: crate::model::EnabledType) -> Self {
+            self.inner = self.inner.print_allowed(input);
             self
         }
         /// <p>Specifies whether the user can print to the local device.</p>
@@ -4798,28 +4509,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_print_allowed(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, subsequent retries with the same
-        /// client token return the result from the original successful request. </p>
-        /// <p>If you do not specify a client token, one is automatically generated by the AWS
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
+        /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -1363,9 +1363,9 @@ pub mod bulk_deployment_result {
         /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
         ///
         /// Details about the error.
-        pub fn error_details(mut self, input: impl Into<crate::model::ErrorDetail>) -> Self {
+        pub fn error_details(mut self, input: crate::model::ErrorDetail) -> Self {
             let mut v = self.error_details.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.error_details = Some(v);
             self
         }
@@ -1659,9 +1659,9 @@ pub mod subscription_definition_version {
         /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
         ///
         /// A list of subscriptions.
-        pub fn subscriptions(mut self, input: impl Into<crate::model::Subscription>) -> Self {
+        pub fn subscriptions(mut self, input: crate::model::Subscription) -> Self {
             let mut v = self.subscriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscriptions = Some(v);
             self
         }
@@ -1833,9 +1833,9 @@ pub mod resource_definition_version {
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
         /// A list of resources.
-        pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
+        pub fn resources(mut self, input: crate::model::Resource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resources = Some(v);
             self
         }
@@ -2868,9 +2868,9 @@ pub mod logger_definition_version {
         /// To override the contents of this collection use [`set_loggers`](Self::set_loggers).
         ///
         /// A list of loggers.
-        pub fn loggers(mut self, input: impl Into<crate::model::Logger>) -> Self {
+        pub fn loggers(mut self, input: crate::model::Logger) -> Self {
             let mut v = self.loggers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.loggers = Some(v);
             self
         }
@@ -3493,9 +3493,9 @@ pub mod function_definition_version {
         /// To override the contents of this collection use [`set_functions`](Self::set_functions).
         ///
         /// A list of Lambda functions in this function definition version.
-        pub fn functions(mut self, input: impl Into<crate::model::Function>) -> Self {
+        pub fn functions(mut self, input: crate::model::Function) -> Self {
             let mut v = self.functions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.functions = Some(v);
             self
         }
@@ -3895,10 +3895,10 @@ pub mod function_configuration_environment {
         /// A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda function can have at most 10 resources. ResourceAccessPolicies apply only when you run the Lambda function in a Greengrass container.
         pub fn resource_access_policies(
             mut self,
-            input: impl Into<crate::model::ResourceAccessPolicy>,
+            input: crate::model::ResourceAccessPolicy,
         ) -> Self {
             let mut v = self.resource_access_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.resource_access_policies = Some(v);
             self
         }
@@ -4461,9 +4461,9 @@ pub mod device_definition_version {
         /// To override the contents of this collection use [`set_devices`](Self::set_devices).
         ///
         /// A list of devices in the definition version.
-        pub fn devices(mut self, input: impl Into<crate::model::Device>) -> Self {
+        pub fn devices(mut self, input: crate::model::Device) -> Self {
             let mut v = self.devices.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.devices = Some(v);
             self
         }
@@ -4638,9 +4638,9 @@ pub mod core_definition_version {
         /// To override the contents of this collection use [`set_cores`](Self::set_cores).
         ///
         /// A list of cores in the core definition version.
-        pub fn cores(mut self, input: impl Into<crate::model::Core>) -> Self {
+        pub fn cores(mut self, input: crate::model::Core) -> Self {
             let mut v = self.cores.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.cores = Some(v);
             self
         }
@@ -4813,9 +4813,9 @@ pub mod connector_definition_version {
         /// To override the contents of this collection use [`set_connectors`](Self::set_connectors).
         ///
         /// A list of references to connectors in this version, with their corresponding configuration settings.
-        pub fn connectors(mut self, input: impl Into<crate::model::Connector>) -> Self {
+        pub fn connectors(mut self, input: crate::model::Connector) -> Self {
             let mut v = self.connectors.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.connectors = Some(v);
             self
         }

@@ -173,12 +173,9 @@ pub mod backend_storage_permissions {
         /// To override the contents of this collection use [`set_authenticated`](Self::set_authenticated).
         ///
         /// <p>Lists all authenticated user read, write, and delete permissions for your S3 bucket.</p>
-        pub fn authenticated(
-            mut self,
-            input: impl Into<crate::model::AuthenticatedElement>,
-        ) -> Self {
+        pub fn authenticated(mut self, input: crate::model::AuthenticatedElement) -> Self {
             let mut v = self.authenticated.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.authenticated = Some(v);
             self
         }
@@ -195,12 +192,9 @@ pub mod backend_storage_permissions {
         /// To override the contents of this collection use [`set_un_authenticated`](Self::set_un_authenticated).
         ///
         /// <p>Lists all unauthenticated user read, write, and delete permissions for your S3 bucket.</p>
-        pub fn un_authenticated(
-            mut self,
-            input: impl Into<crate::model::UnAuthenticatedElement>,
-        ) -> Self {
+        pub fn un_authenticated(mut self, input: crate::model::UnAuthenticatedElement) -> Self {
             let mut v = self.un_authenticated.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.un_authenticated = Some(v);
             self
         }
@@ -797,10 +791,10 @@ pub mod update_backend_auth_password_policy_config {
         /// <p>Describes additional constraints on password requirements to sign in to the auth resource, configured as a part of your Amplify project.</p>
         pub fn additional_constraints(
             mut self,
-            input: impl Into<crate::model::AdditionalConstraintsElement>,
+            input: crate::model::AdditionalConstraintsElement,
         ) -> Self {
             let mut v = self.additional_constraints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_constraints = Some(v);
             self
         }
@@ -1010,9 +1004,9 @@ pub mod update_backend_auth_o_auth_config {
         /// To override the contents of this collection use [`set_o_auth_scopes`](Self::set_o_auth_scopes).
         ///
         /// <p>The list of OAuth-related flows that can allow users to authenticate from your Amplify app.</p>
-        pub fn o_auth_scopes(mut self, input: impl Into<crate::model::OAuthScopesElement>) -> Self {
+        pub fn o_auth_scopes(mut self, input: crate::model::OAuthScopesElement) -> Self {
             let mut v = self.o_auth_scopes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.o_auth_scopes = Some(v);
             self
         }
@@ -1663,9 +1657,9 @@ pub mod settings {
         /// To override the contents of this collection use [`set_mfa_types`](Self::set_mfa_types).
         ///
         /// <p>The supported MFA types.</p>
-        pub fn mfa_types(mut self, input: impl Into<crate::model::MfaTypesElement>) -> Self {
+        pub fn mfa_types(mut self, input: crate::model::MfaTypesElement) -> Self {
             let mut v = self.mfa_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.mfa_types = Some(v);
             self
         }
@@ -2346,12 +2340,9 @@ pub mod backend_api_resource_config {
         /// To override the contents of this collection use [`set_additional_auth_types`](Self::set_additional_auth_types).
         ///
         /// <p>Additional authentication methods used to interact with your data models.</p>
-        pub fn additional_auth_types(
-            mut self,
-            input: impl Into<crate::model::BackendApiAuthType>,
-        ) -> Self {
+        pub fn additional_auth_types(mut self, input: crate::model::BackendApiAuthType) -> Self {
             let mut v = self.additional_auth_types.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_auth_types = Some(v);
             self
         }
@@ -3585,10 +3576,10 @@ pub mod create_backend_auth_user_pool_config {
         /// <p>The required attributes to sign up new users in the user pool.</p>
         pub fn required_sign_up_attributes(
             mut self,
-            input: impl Into<crate::model::RequiredSignUpAttributesElement>,
+            input: crate::model::RequiredSignUpAttributesElement,
         ) -> Self {
             let mut v = self.required_sign_up_attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.required_sign_up_attributes = Some(v);
             self
         }
@@ -3898,10 +3889,10 @@ pub mod create_backend_auth_password_policy_config {
         /// <p>Additional constraints for the password used to access the backend of your Amplify project.</p>
         pub fn additional_constraints(
             mut self,
-            input: impl Into<crate::model::AdditionalConstraintsElement>,
+            input: crate::model::AdditionalConstraintsElement,
         ) -> Self {
             let mut v = self.additional_constraints.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.additional_constraints = Some(v);
             self
         }
@@ -4043,9 +4034,9 @@ pub mod create_backend_auth_o_auth_config {
         /// To override the contents of this collection use [`set_o_auth_scopes`](Self::set_o_auth_scopes).
         ///
         /// <p>List of OAuth-related flows used to allow your app users to authenticate from your Amplify app.</p>
-        pub fn o_auth_scopes(mut self, input: impl Into<crate::model::OAuthScopesElement>) -> Self {
+        pub fn o_auth_scopes(mut self, input: crate::model::OAuthScopesElement) -> Self {
             let mut v = self.o_auth_scopes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.o_auth_scopes = Some(v);
             self
         }

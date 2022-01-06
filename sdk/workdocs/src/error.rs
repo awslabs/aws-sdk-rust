@@ -14,9 +14,7 @@ pub struct AbortDocumentVersionUploadError {
 pub enum AbortDocumentVersionUploadErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
@@ -78,8 +76,6 @@ impl AbortDocumentVersionUploadError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -178,9 +174,7 @@ pub struct ActivateUserError {
 pub enum ActivateUserErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -233,8 +227,6 @@ impl ActivateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -317,9 +309,7 @@ pub struct AddResourcePermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddResourcePermissionsErrorKind {
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -375,8 +365,6 @@ impl AddResourcePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -453,14 +441,11 @@ pub struct CreateCommentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCommentErrorKind {
-    /// <p>This exception is thrown when the document is locked for comments and user tries to
-    /// create or delete a comment on that document.</p>
+    /// <p>This exception is thrown when the document is locked for comments and user tries to create or delete a comment on that document.</p>
     DocumentLockedForCommentsException(crate::error::DocumentLockedForCommentsException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The requested operation is not allowed on the specified comment object.</p>
     InvalidCommentOperationException(crate::error::InvalidCommentOperationException),
@@ -520,8 +505,6 @@ impl CreateCommentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -628,14 +611,11 @@ pub struct CreateCustomMetadataError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCustomMetadataErrorKind {
-    /// <p>The limit has been reached on the number of custom properties for the specified
-    /// resource.</p>
+    /// <p>The limit has been reached on the number of custom properties for the specified resource.</p>
     CustomMetadataLimitExceededException(crate::error::CustomMetadataLimitExceededException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
@@ -696,8 +676,6 @@ impl CreateCustomMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -806,9 +784,7 @@ pub enum CreateFolderErrorKind {
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -869,8 +845,6 @@ impl CreateFolderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -984,14 +958,11 @@ pub struct CreateLabelsError {
 pub enum CreateLabelsErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>The limit has been reached on the number of labels for the specified
-    /// resource.</p>
+    /// <p>The limit has been reached on the number of labels for the specified resource.</p>
     TooManyLabelsException(crate::error::TooManyLabelsException),
     /// <p>The operation is not permitted.</p>
     UnauthorizedOperationException(crate::error::UnauthorizedOperationException),
@@ -1043,8 +1014,6 @@ impl CreateLabelsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1134,8 +1103,7 @@ pub struct CreateNotificationSubscriptionError {
 pub enum CreateNotificationSubscriptionErrorKind {
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p>You've reached the limit on the number of subscriptions for the WorkDocs
-    /// instance.</p>
+    /// <p>You've reached the limit on the number of subscriptions for the WorkDocs instance.</p>
     TooManySubscriptionsException(crate::error::TooManySubscriptionsException),
     /// <p>The caller does not have access to perform the action on the resource.</p>
     UnauthorizedResourceAccessException(crate::error::UnauthorizedResourceAccessException),
@@ -1191,8 +1159,6 @@ impl CreateNotificationSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1267,9 +1233,7 @@ pub struct CreateUserError {
 pub enum CreateUserErrorKind {
     /// <p>The resource already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1322,8 +1286,6 @@ impl CreateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1408,9 +1370,7 @@ pub struct DeactivateUserError {
 pub enum DeactivateUserErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -1463,8 +1423,6 @@ impl DeactivateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1547,14 +1505,11 @@ pub struct DeleteCommentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteCommentErrorKind {
-    /// <p>This exception is thrown when the document is locked for comments and user tries to
-    /// create or delete a comment on that document.</p>
+    /// <p>This exception is thrown when the document is locked for comments and user tries to create or delete a comment on that document.</p>
     DocumentLockedForCommentsException(crate::error::DocumentLockedForCommentsException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
@@ -1611,8 +1566,6 @@ impl DeleteCommentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1713,9 +1666,7 @@ pub struct DeleteCustomMetadataError {
 pub enum DeleteCustomMetadataErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
@@ -1773,8 +1724,6 @@ impl DeleteCustomMetadataError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -1873,9 +1822,7 @@ pub enum DeleteDocumentErrorKind {
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
@@ -1933,8 +1880,6 @@ impl DeleteDocumentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2047,9 +1992,7 @@ pub enum DeleteFolderErrorKind {
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
@@ -2107,8 +2050,6 @@ impl DeleteFolderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2219,9 +2160,7 @@ pub enum DeleteFolderContentsErrorKind {
     ConflictingOperationException(crate::error::ConflictingOperationException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
@@ -2280,8 +2219,6 @@ impl DeleteFolderContentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2384,9 +2321,7 @@ pub struct DeleteLabelsError {
 pub enum DeleteLabelsErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2439,8 +2374,6 @@ impl DeleteLabelsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2586,8 +2519,6 @@ impl DeleteNotificationSubscriptionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2672,9 +2603,7 @@ pub struct DeleteUserError {
 pub enum DeleteUserErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2727,8 +2656,6 @@ impl DeleteUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2808,9 +2735,7 @@ pub struct DescribeActivitiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeActivitiesErrorKind {
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The pagination marker or limit fields are not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -2867,8 +2792,6 @@ impl DescribeActivitiesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -2955,9 +2878,7 @@ pub struct DescribeCommentsError {
 pub enum DescribeCommentsErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
@@ -3013,8 +2934,6 @@ impl DescribeCommentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3107,9 +3026,7 @@ pub struct DescribeDocumentVersionsError {
 pub enum DescribeDocumentVersionsErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The pagination marker or limit fields are not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3172,8 +3089,6 @@ impl DescribeDocumentVersionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3278,9 +3193,7 @@ pub struct DescribeFolderContentsError {
 pub enum DescribeFolderContentsErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The pagination marker or limit fields are not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3338,8 +3251,6 @@ impl DescribeFolderContentsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3432,9 +3343,7 @@ pub struct DescribeGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGroupsErrorKind {
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3486,8 +3395,6 @@ impl DescribeGroupsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3620,8 +3527,6 @@ impl DescribeNotificationSubscriptionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3694,9 +3599,7 @@ pub struct DescribeResourcePermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeResourcePermissionsErrorKind {
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3756,8 +3659,6 @@ impl DescribeResourcePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3838,9 +3739,7 @@ pub struct DescribeRootFoldersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRootFoldersErrorKind {
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The pagination marker or limit fields are not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -3897,8 +3796,6 @@ impl DescribeRootFoldersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -3985,9 +3882,7 @@ pub struct DescribeUsersError {
 pub enum DescribeUsersErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The pagination marker or limit fields are not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -4046,8 +3941,6 @@ impl DescribeUsersError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4148,9 +4041,7 @@ pub struct GetCurrentUserError {
 pub enum GetCurrentUserErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -4203,8 +4094,6 @@ impl GetCurrentUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4289,9 +4178,7 @@ pub struct GetDocumentError {
 pub enum GetDocumentErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The pagination marker or limit fields are not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -4350,8 +4237,6 @@ impl GetDocumentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4452,9 +4337,7 @@ pub struct GetDocumentPathError {
 pub enum GetDocumentPathErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -4507,8 +4390,6 @@ impl GetDocumentPathError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4593,9 +4474,7 @@ pub struct GetDocumentVersionError {
 pub enum GetDocumentVersionErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The password is invalid.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
@@ -4656,8 +4535,6 @@ impl GetDocumentVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4760,9 +4637,7 @@ pub struct GetFolderError {
 pub enum GetFolderErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The pagination marker or limit fields are not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -4821,8 +4696,6 @@ impl GetFolderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -4911,9 +4784,7 @@ pub struct GetFolderPathError {
 pub enum GetFolderPathErrorKind {
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -4966,8 +4837,6 @@ impl GetFolderPathError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5050,9 +4919,7 @@ pub struct GetResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetResourcesErrorKind {
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The pagination marker or limit fields are not valid.</p>
     InvalidArgumentException(crate::error::InvalidArgumentException),
@@ -5107,8 +4974,6 @@ impl GetResourcesError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5191,16 +5056,13 @@ pub struct InitiateDocumentVersionUploadError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum InitiateDocumentVersionUploadErrorKind {
-    /// <p>This exception is thrown when a valid checkout ID is not presented on document
-    /// version upload calls for a document that has been checked out from Web client.</p>
+    /// <p>This exception is thrown when a valid checkout ID is not presented on document version upload calls for a document that has been checked out from Web client.</p>
     DraftUploadOutOfSyncException(crate::error::DraftUploadOutOfSyncException),
     /// <p>The resource already exists.</p>
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The specified document version is not in the INITIALIZED state.</p>
     ProhibitedStateException(crate::error::ProhibitedStateException),
@@ -5292,8 +5154,6 @@ impl InitiateDocumentVersionUploadError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5446,9 +5306,7 @@ pub struct RemoveAllResourcePermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveAllResourcePermissionsErrorKind {
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -5508,8 +5366,6 @@ impl RemoveAllResourcePermissionsError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5592,9 +5448,7 @@ pub struct RemoveResourcePermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveResourcePermissionErrorKind {
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>One or more of the dependencies is unavailable.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -5650,8 +5504,6 @@ impl RemoveResourcePermissionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5738,9 +5590,7 @@ pub enum UpdateDocumentErrorKind {
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -5802,8 +5652,6 @@ impl UpdateDocumentError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -5930,9 +5778,7 @@ pub enum UpdateDocumentVersionErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The operation is invalid.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
@@ -5996,8 +5842,6 @@ impl UpdateDocumentVersionError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6114,9 +5958,7 @@ pub enum UpdateFolderErrorKind {
     EntityAlreadyExistsException(crate::error::EntityAlreadyExistsException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -6178,8 +6020,6 @@ impl UpdateFolderError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6303,9 +6143,7 @@ pub enum UpdateUserErrorKind {
     DeactivatingLastSystemUserException(crate::error::DeactivatingLastSystemUserException),
     /// <p>The resource does not exist.</p>
     EntityNotExistsException(crate::error::EntityNotExistsException),
-    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-    /// under the control of the organization is failing, such as a connected Active
-    /// Directory.</p>
+    /// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
     /// <p>The user is undergoing transfer of ownership.</p>
     IllegalUserStateException(crate::error::IllegalUserStateException),
@@ -6365,8 +6203,6 @@ impl UpdateUserError {
         }
     }
 
-    // TODO: Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
-    // as implemented by std::Error to generate a message in that case.
     /// Returns the error message if one is available.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
@@ -6795,9 +6631,7 @@ impl IllegalUserStateException {
     }
 }
 
-/// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency
-/// under the control of the organization is failing, such as a connected Active
-/// Directory.</p>
+/// <p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailedDependencyException {
@@ -7615,8 +7449,7 @@ impl ResourceAlreadyCheckedOutException {
     }
 }
 
-/// <p>This exception is thrown when a valid checkout ID is not presented on document
-/// version upload calls for a document that has been checked out from Web client.</p>
+/// <p>This exception is thrown when a valid checkout ID is not presented on document version upload calls for a document that has been checked out from Web client.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DraftUploadOutOfSyncException {
@@ -7808,8 +7641,7 @@ impl RequestedEntityTooLargeException {
     }
 }
 
-/// <p>This exception is thrown when the document is locked for comments and user tries to
-/// create or delete a comment on that document.</p>
+/// <p>This exception is thrown when the document is locked for comments and user tries to create or delete a comment on that document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentLockedForCommentsException {
@@ -7873,8 +7705,7 @@ impl DocumentLockedForCommentsException {
     }
 }
 
-/// <p>You've reached the limit on the number of subscriptions for the WorkDocs
-/// instance.</p>
+/// <p>You've reached the limit on the number of subscriptions for the WorkDocs instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManySubscriptionsException {
@@ -7938,8 +7769,7 @@ impl TooManySubscriptionsException {
     }
 }
 
-/// <p>The limit has been reached on the number of labels for the specified
-/// resource.</p>
+/// <p>The limit has been reached on the number of labels for the specified resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyLabelsException {
@@ -8003,8 +7833,7 @@ impl TooManyLabelsException {
     }
 }
 
-/// <p>The limit has been reached on the number of custom properties for the specified
-/// resource.</p>
+/// <p>The limit has been reached on the number of custom properties for the specified resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomMetadataLimitExceededException {

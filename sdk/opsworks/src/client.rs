@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS OpsWorks
@@ -264,6 +264,7 @@ where
     ///
     /// See [`DescribeEcsClusters`](crate::client::fluent_builders::DescribeEcsClusters) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEcsClusters::into_paginator).
     pub fn describe_ecs_clusters(&self) -> fluent_builders::DescribeEcsClusters<C, M, R> {
         fluent_builders::DescribeEcsClusters::new(self.handle.clone())
     }
@@ -626,23 +627,12 @@ pub mod fluent_builders {
     ///
     /// <p>Assign a registered instance to a layer.</p>
     /// <ul>
-    /// <li>
-    /// <p>You can assign registered on-premises instances to any layer type.</p>
-    /// </li>
-    /// <li>
-    /// <p>You can assign registered Amazon EC2 instances only to custom layers.</p>
-    /// </li>
-    /// <li>
-    /// <p>You cannot use this action with instances that were created with AWS OpsWorks Stacks.</p>
-    /// </li>
+    /// <li> <p>You can assign registered on-premises instances to any layer type.</p> </li>
+    /// <li> <p>You can assign registered Amazon EC2 instances only to custom layers.</p> </li>
+    /// <li> <p>You cannot use this action with instances that were created with AWS OpsWorks Stacks.</p> </li>
     /// </ul>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an AWS Identity and Access Management
-    /// (IAM) user must have a Manage permissions
-    /// level for the stack or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an AWS Identity and Access Management (IAM) user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssignInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -687,10 +677,10 @@ pub mod fluent_builders {
                 crate::input::AssignInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -699,8 +689,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -713,8 +703,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
         ///
         /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
-        pub fn layer_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_ids(inp);
+        pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_ids(input.into());
             self
         }
         /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
@@ -728,16 +718,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssignVolume`.
     ///
-    /// <p>Assigns one of the stack's registered Amazon EBS volumes to a specified instance. The volume must
-    /// first be registered with the stack by calling <a>RegisterVolume</a>. After you register the
-    /// volume, you must call <a>UpdateVolume</a> to specify a mount point before calling
-    /// <code>AssignVolume</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Assigns one of the stack's registered Amazon EBS volumes to a specified instance. The volume must first be registered with the stack by calling <code>RegisterVolume</code>. After you register the volume, you must call <code>UpdateVolume</code> to specify a mount point before calling <code>AssignVolume</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssignVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -782,10 +765,10 @@ pub mod fluent_builders {
                 crate::input::AssignVolumeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -794,8 +777,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The volume ID.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(inp);
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(input.into());
             self
         }
         /// <p>The volume ID.</p>
@@ -804,8 +787,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -816,16 +799,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateElasticIp`.
     ///
-    /// <p>Associates one of the stack's registered Elastic IP addresses with a specified instance. The
-    /// address must first be registered with the stack by calling <a>RegisterElasticIp</a>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
-    /// Management</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates one of the stack's registered Elastic IP addresses with a specified instance. The address must first be registered with the stack by calling <code>RegisterElasticIp</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateElasticIp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -870,10 +846,10 @@ pub mod fluent_builders {
                 crate::input::AssociateElasticIpInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -882,8 +858,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Elastic IP address.</p>
-        pub fn elastic_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_ip(inp);
+        pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_ip(input.into());
             self
         }
         /// <p>The Elastic IP address.</p>
@@ -892,8 +868,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -904,21 +880,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AttachElasticLoadBalancer`.
     ///
-    /// <p>Attaches an Elastic Load Balancing load balancer to a specified layer. AWS OpsWorks Stacks does not support
-    /// Application Load Balancer. You can only use Classic Load Balancer with AWS OpsWorks Stacks.
-    /// For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic Load
-    /// Balancing</a>.</p>
-    /// <note>
-    /// <p>You must create the Elastic Load Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For
-    /// more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html"> Elastic
-    /// Load Balancing Developer Guide</a>.</p>
+    /// <p>Attaches an Elastic Load Balancing load balancer to a specified layer. AWS OpsWorks Stacks does not support Application Load Balancer. You can only use Classic Load Balancer with AWS OpsWorks Stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic Load Balancing</a>.</p> <note>
+    /// <p>You must create the Elastic Load Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html"> Elastic Load Balancing Developer Guide</a>.</p>
     /// </note>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachElasticLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -963,10 +929,10 @@ pub mod fluent_builders {
                 crate::input::AttachElasticLoadBalancerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -975,8 +941,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Elastic Load Balancing instance's name.</p>
-        pub fn elastic_load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_load_balancer_name(inp);
+        pub fn elastic_load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_load_balancer_name(input.into());
             self
         }
         /// <p>The Elastic Load Balancing instance's name.</p>
@@ -988,8 +954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the layer to which the Elastic Load Balancing instance is to be attached.</p>
-        pub fn layer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_id(inp);
+        pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_id(input.into());
             self
         }
         /// <p>The ID of the layer to which the Elastic Load Balancing instance is to be attached.</p>
@@ -1000,13 +966,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CloneStack`.
     ///
-    /// <p>Creates a clone of a specified stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone a
-    /// Stack</a>. By default, all parameters are set to the values used by the parent stack.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy
-    /// that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a clone of a specified stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone a Stack</a>. By default, all parameters are set to the values used by the parent stack.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CloneStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1051,10 +1013,10 @@ pub mod fluent_builders {
                 crate::input::CloneStackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1063,8 +1025,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The source stack ID.</p>
-        pub fn source_stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_stack_id(inp);
+        pub fn source_stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_stack_id(input.into());
             self
         }
         /// <p>The source stack ID.</p>
@@ -1076,8 +1038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The cloned stack name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The cloned stack name.</p>
@@ -1085,76 +1047,44 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region(inp);
+        /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region(input.into());
             self
         }
-        /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
+        /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_region(input);
             self
         }
-        /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All
-        /// instances are launched into this VPC, and you cannot change the ID later.</p>
+        /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All instances are launched into this VPC, and you cannot change the ID later.</p>
         /// <ul>
-        /// <li>
-        /// <p>If your account supports EC2 Classic, the default value is no VPC.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p>
-        /// </li>
+        /// <li> <p>If your account supports EC2 Classic, the default value is no VPC.</p> </li>
+        /// <li> <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p> </li>
         /// </ul>
-        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
-        /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
-        /// AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
-        /// these parameters to the first valid Availability Zone for the specified region and the
-        /// corresponding default VPC subnet ID, respectively. </p>
+        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets these parameters to the first valid Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively. </p>
         /// <p>If you specify a nondefault VPC ID, note the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>It must belong to a VPC in your account that is in the specified region.</p>
-        /// </li>
-        /// <li>
-        /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
-        /// </li>
+        /// <li> <p>It must belong to a VPC in your account that is in the specified region.</p> </li>
+        /// <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-        /// VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-        /// Platforms</a>. </p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
-        /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All
-        /// instances are launched into this VPC, and you cannot change the ID later.</p>
+        /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All instances are launched into this VPC, and you cannot change the ID later.</p>
         /// <ul>
-        /// <li>
-        /// <p>If your account supports EC2 Classic, the default value is no VPC.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p>
-        /// </li>
+        /// <li> <p>If your account supports EC2 Classic, the default value is no VPC.</p> </li>
+        /// <li> <p>If your account does not support EC2 Classic, the default value is the default VPC for the specified region.</p> </li>
         /// </ul>
-        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
-        /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
-        /// AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
-        /// these parameters to the first valid Availability Zone for the specified region and the
-        /// corresponding default VPC subnet ID, respectively. </p>
+        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets these parameters to the first valid Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively. </p>
         /// <p>If you specify a nondefault VPC ID, note the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>It must belong to a VPC in your account that is in the specified region.</p>
-        /// </li>
-        /// <li>
-        /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
-        /// </li>
+        /// <li> <p>It must belong to a VPC in your account that is in the specified region.</p> </li>
+        /// <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-        /// VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-        /// Platforms</a>. </p>
+        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_vpc_id(input);
             self
@@ -1166,10 +1096,10 @@ pub mod fluent_builders {
         /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::StackAttributesKeys>,
+            k: crate::model::StackAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k, v.into());
             self
         }
         /// <p>A list of stack attributes and values as key/value pairs to be added to the cloned stack.</p>
@@ -1182,26 +1112,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attributes(input);
             self
         }
-        /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
-        /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
-        /// existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for
-        /// you. You can obtain an existing stack's IAM ARN programmatically by calling
-        /// <a>DescribePermissions</a>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
-        /// <note>
+        /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p> <note>
         /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
         /// </note>
-        pub fn service_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(inp);
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
-        /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
-        /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
-        /// existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for
-        /// you. You can obtain an existing stack's IAM ARN programmatically by calling
-        /// <a>DescribePermissions</a>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
-        /// <note>
+        /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. If you create a stack by using the AWS OpsWorks Stacks console, it creates the role for you. You can obtain an existing stack's IAM ARN programmatically by calling <code>DescribePermissions</code>. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p> <note>
         /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
         /// </note>
         pub fn set_service_role_arn(
@@ -1211,16 +1129,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_role_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
-        pub fn default_instance_profile_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_instance_profile_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+        pub fn default_instance_profile_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.default_instance_profile_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_default_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1230,214 +1147,70 @@ pub mod fluent_builders {
         }
         /// <p>The stack's operating system, which must be set to one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
-        /// 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
         /// </ul>
-        /// <p>The default option is the parent stack's operating system.
-        /// For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        /// <note>
+        /// <p>The default option is the parent stack's operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p> <note>
         /// <p>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
         /// </note>
-        pub fn default_os(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_os(inp);
+        pub fn default_os(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_os(input.into());
             self
         }
         /// <p>The stack's operating system, which must be set to one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
-        /// 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
         /// </ul>
-        /// <p>The default option is the parent stack's operating system.
-        /// For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        /// <note>
+        /// <p>The default option is the parent stack's operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p> <note>
         /// <p>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
         /// </note>
         pub fn set_default_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_default_os(input);
             self
         }
-        /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to
-        /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
-        /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
-        /// short name. The other themes are:</p>
+        /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Baked_Goods</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Clouds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Europe_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fruits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Greek_Deities_and_Titans</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Legendary_creatures_from_Japan</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Planets_and_Moons</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Roman_Deities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Scottish_Islands</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>US_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Wild_Cats</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Baked_Goods</code> </p> </li>
+        /// <li> <p> <code>Clouds</code> </p> </li>
+        /// <li> <p> <code>Europe_Cities</code> </p> </li>
+        /// <li> <p> <code>Fruits</code> </p> </li>
+        /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+        /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+        /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+        /// <li> <p> <code>Roman_Deities</code> </p> </li>
+        /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+        /// <li> <p> <code>US_Cities</code> </p> </li>
+        /// <li> <p> <code>Wild_Cats</code> </p> </li>
         /// </ul>
-        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-        /// host name based on the current theme.</p>
-        pub fn hostname_theme(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname_theme(inp);
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
+        pub fn hostname_theme(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname_theme(input.into());
             self
         }
-        /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to
-        /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
-        /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
-        /// short name. The other themes are:</p>
+        /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Baked_Goods</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Clouds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Europe_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fruits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Greek_Deities_and_Titans</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Legendary_creatures_from_Japan</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Planets_and_Moons</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Roman_Deities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Scottish_Islands</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>US_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Wild_Cats</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Baked_Goods</code> </p> </li>
+        /// <li> <p> <code>Clouds</code> </p> </li>
+        /// <li> <p> <code>Europe_Cities</code> </p> </li>
+        /// <li> <p> <code>Fruits</code> </p> </li>
+        /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+        /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+        /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+        /// <li> <p> <code>Roman_Deities</code> </p> </li>
+        /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+        /// <li> <p> <code>US_Cities</code> </p> </li>
+        /// <li> <p> <code>Wild_Cats</code> </p> </li>
         /// </ul>
-        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-        /// host name based on the current theme.</p>
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
         pub fn set_hostname_theme(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1445,20 +1218,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hostname_theme(input);
             self
         }
-        /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-        /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
-        /// </p>
-        pub fn default_availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_availability_zone(inp);
+        /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
+        pub fn default_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_availability_zone(input.into());
             self
         }
-        /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-        /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
-        /// </p>
+        /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
         pub fn set_default_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1466,22 +1231,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_availability_zone(input);
             self
         }
-        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-        /// otherwise when you create the instance. If you also specify a value for
-        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-        /// description. </p>
-        pub fn default_subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_subnet_id(inp);
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
+        pub fn default_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_subnet_id(input.into());
             self
         }
-        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-        /// otherwise when you create the instance. If you also specify a value for
-        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-        /// description. </p>
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
         pub fn set_default_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1490,23 +1245,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>
-        /// </p>
-        pub fn custom_json(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_json(inp);
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> </p>
+        pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_json(input.into());
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>
-        /// </p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> </p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_custom_json(input);
             self
@@ -1514,9 +1261,9 @@ pub mod fluent_builders {
         /// <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
         pub fn configuration_manager(
             mut self,
-            inp: crate::model::StackConfigurationManager,
+            input: crate::model::StackConfigurationManager,
         ) -> Self {
-            self.inner = self.inner.configuration_manager(inp);
+            self.inner = self.inner.configuration_manager(input);
             self
         }
         /// <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
@@ -1527,14 +1274,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_manager(input);
             self
         }
-        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-        pub fn chef_configuration(mut self, inp: crate::model::ChefConfiguration) -> Self {
-            self.inner = self.inner.chef_configuration(inp);
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        pub fn chef_configuration(mut self, input: crate::model::ChefConfiguration) -> Self {
+            self.inner = self.inner.chef_configuration(input);
             self
         }
-        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_chef_configuration(
             mut self,
             input: std::option::Option<crate::model::ChefConfiguration>,
@@ -1543,8 +1288,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to use custom cookbooks.</p>
-        pub fn use_custom_cookbooks(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_custom_cookbooks(inp);
+        pub fn use_custom_cookbooks(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_custom_cookbooks(input);
             self
         }
         /// <p>Whether to use custom cookbooks.</p>
@@ -1553,39 +1298,23 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-        /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
-        /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
-        /// following settings: </p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
         /// <ul>
-        /// <li>
-        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p>
-        /// </li>
-        /// <li>
-        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
-        /// </li>
+        /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p> </li>
+        /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-        /// Stack</a>.</p>
-        pub fn use_opsworks_security_groups(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_opsworks_security_groups(inp);
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        pub fn use_opsworks_security_groups(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_opsworks_security_groups(input);
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-        /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
-        /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
-        /// following settings: </p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
         /// <ul>
-        /// <li>
-        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p>
-        /// </li>
-        /// <li>
-        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
-        /// </li>
+        /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it but you cannot delete the built-in security group.</p> </li>
+        /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate Amazon Elastic Compute Cloud (Amazon EC2) security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-        /// Stack</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_use_opsworks_security_groups(
             mut self,
             input: std::option::Option<bool>,
@@ -1593,14 +1322,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_use_opsworks_security_groups(input);
             self
         }
-        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
-        pub fn custom_cookbooks_source(mut self, inp: crate::model::Source) -> Self {
-            self.inner = self.inner.custom_cookbooks_source(inp);
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+        pub fn custom_cookbooks_source(mut self, input: crate::model::Source) -> Self {
+            self.inner = self.inner.custom_cookbooks_source(input);
             self
         }
-        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn set_custom_cookbooks_source(
             mut self,
             input: std::option::Option<crate::model::Source>,
@@ -1608,24 +1335,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_cookbooks_source(input);
             self
         }
-        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
-        /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
-        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-        /// Access</a>. You can override this setting by specifying a different key pair, or no key
-        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-        /// create an instance</a>. </p>
-        pub fn default_ssh_key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_ssh_key_name(inp);
+        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
+        pub fn default_ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_ssh_key_name(input.into());
             self
         }
-        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
-        /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
-        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-        /// Access</a>. You can override this setting by specifying a different key pair, or no key
-        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-        /// create an instance</a>. </p>
+        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
         pub fn set_default_ssh_key_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1634,8 +1349,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to clone the source stack's permissions.</p>
-        pub fn clone_permissions(mut self, inp: bool) -> Self {
-            self.inner = self.inner.clone_permissions(inp);
+        pub fn clone_permissions(mut self, input: bool) -> Self {
+            self.inner = self.inner.clone_permissions(input);
             self
         }
         /// <p>Whether to clone the source stack's permissions.</p>
@@ -1648,8 +1363,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_clone_app_ids`](Self::set_clone_app_ids).
         ///
         /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
-        pub fn clone_app_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.clone_app_ids(inp);
+        pub fn clone_app_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.clone_app_ids(input.into());
             self
         }
         /// <p>A list of source stack app IDs to be included in the cloned stack.</p>
@@ -1660,14 +1375,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_clone_app_ids(input);
             self
         }
-        /// <p>The default root device type. This value is used by default for all instances in the cloned
-        /// stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-        pub fn default_root_device_type(mut self, inp: crate::model::RootDeviceType) -> Self {
-            self.inner = self.inner.default_root_device_type(inp);
+        /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+        pub fn default_root_device_type(mut self, input: crate::model::RootDeviceType) -> Self {
+            self.inner = self.inner.default_root_device_type(input);
             self
         }
-        /// <p>The default root device type. This value is used by default for all instances in the cloned
-        /// stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+        /// <p>The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn set_default_root_device_type(
             mut self,
             input: std::option::Option<crate::model::RootDeviceType>,
@@ -1677,44 +1390,22 @@ pub mod fluent_builders {
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-        /// automatically installs new agent versions on the stack's instances as soon as
-        /// they are available.</p>
-        /// </li>
-        /// <li>
-        /// <p>Fixed version - Set this parameter to your preferred agent version. To update
-        /// the agent version, you must edit the stack configuration and specify a new version.
-        /// AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-        /// </li>
+        /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+        /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
-        /// <note>
+        /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
-        pub fn agent_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(inp);
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_version(input.into());
             self
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-        /// automatically installs new agent versions on the stack's instances as soon as
-        /// they are available.</p>
-        /// </li>
-        /// <li>
-        /// <p>Fixed version - Set this parameter to your preferred agent version. To update
-        /// the agent version, you must edit the stack configuration and specify a new version.
-        /// AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-        /// </li>
+        /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+        /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
-        /// <note>
+        /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
         pub fn set_agent_version(
@@ -1727,14 +1418,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateApp`.
     ///
-    /// <p>Creates an app for a specified stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
-    /// Apps</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an app for a specified stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1779,10 +1465,10 @@ pub mod fluent_builders {
                 crate::input::CreateAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1791,8 +1477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -1801,8 +1487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app's short name.</p>
-        pub fn shortname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shortname(inp);
+        pub fn shortname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shortname(input.into());
             self
         }
         /// <p>The app's short name.</p>
@@ -1811,8 +1497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The app name.</p>
@@ -1821,8 +1507,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the app.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the app.</p>
@@ -1835,8 +1521,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The app's data source.</p>
-        pub fn data_sources(mut self, inp: impl Into<crate::model::DataSource>) -> Self {
-            self.inner = self.inner.data_sources(inp);
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
+            self.inner = self.inner.data_sources(input);
             self
         }
         /// <p>The app's data source.</p>
@@ -1847,25 +1533,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_sources(input);
             self
         }
-        /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP
-        /// applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances
-        /// that are members of the corresponding layer. If your app isn't one of the standard types, or
-        /// you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::AppType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+        pub fn r#type(mut self, input: crate::model::AppType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP
-        /// applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances
-        /// that are members of the corresponding layer. If your app isn't one of the standard types, or
-        /// you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
+        /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::AppType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
         /// <p>A <code>Source</code> object that specifies the app repository.</p>
-        pub fn app_source(mut self, inp: crate::model::Source) -> Self {
-            self.inner = self.inner.app_source(inp);
+        pub fn app_source(mut self, input: crate::model::Source) -> Self {
+            self.inner = self.inner.app_source(input);
             self
         }
         /// <p>A <code>Source</code> object that specifies the app repository.</p>
@@ -1877,16 +1557,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
-        /// <p>The app virtual host settings, with multiple domains separated by commas. For example:
-        /// <code>'www.example.com, example.com'</code>
-        /// </p>
-        pub fn domains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domains(inp);
+        /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
+        pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domains(input.into());
             self
         }
-        /// <p>The app virtual host settings, with multiple domains separated by commas. For example:
-        /// <code>'www.example.com, example.com'</code>
-        /// </p>
+        /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
         pub fn set_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1895,8 +1571,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to enable SSL for the app.</p>
-        pub fn enable_ssl(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_ssl(inp);
+        pub fn enable_ssl(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_ssl(input);
             self
         }
         /// <p>Whether to enable SSL for the app.</p>
@@ -1905,8 +1581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
-        pub fn ssl_configuration(mut self, inp: crate::model::SslConfiguration) -> Self {
-            self.inner = self.inner.ssl_configuration(inp);
+        pub fn ssl_configuration(mut self, input: crate::model::SslConfiguration) -> Self {
+            self.inner = self.inner.ssl_configuration(input);
             self
         }
         /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
@@ -1924,10 +1600,10 @@ pub mod fluent_builders {
         /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::AppAttributesKeys>,
+            k: crate::model::AppAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k, v.into());
             self
         }
         /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
@@ -1944,22 +1620,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_environment`](Self::set_environment).
         ///
-        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-        /// associated with the app. After you deploy the app, these variables are defined on the
-        /// associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p>
-        /// <note>
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
         /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
         /// </note>
-        pub fn environment(mut self, inp: impl Into<crate::model::EnvironmentVariable>) -> Self {
-            self.inner = self.inner.environment(inp);
+        pub fn environment(mut self, input: crate::model::EnvironmentVariable) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
-        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-        /// associated with the app. After you deploy the app, these variables are defined on the
-        /// associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p>
-        /// <note>
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20KB)."</p> <note>
         /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
         /// </note>
         pub fn set_environment(
@@ -1972,14 +1642,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDeployment`.
     ///
-    /// <p>Runs deployment or stack commands. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying
-    /// Apps</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">Run Stack Commands</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or Manage
-    /// permissions level for the stack, or an attached policy that explicitly grants permissions. For
-    /// more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Runs deployment or stack commands. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying Apps</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">Run Stack Commands</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeployment<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2024,10 +1689,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeploymentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2036,8 +1701,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -2046,8 +1711,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
@@ -2060,8 +1725,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
         /// <p>The instance IDs for the deployment targets.</p>
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_ids(inp);
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_ids(input.into());
             self
         }
         /// <p>The instance IDs for the deployment targets.</p>
@@ -2077,8 +1742,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
         ///
         /// <p>The layer IDs for the deployment targets.</p>
-        pub fn layer_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_ids(inp);
+        pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_ids(input.into());
             self
         }
         /// <p>The layer IDs for the deployment targets.</p>
@@ -2089,14 +1754,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_layer_ids(input);
             self
         }
-        /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any
-        /// associated arguments.</p>
-        pub fn command(mut self, inp: crate::model::DeploymentCommand) -> Self {
-            self.inner = self.inner.command(inp);
+        /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
+        pub fn command(mut self, input: crate::model::DeploymentCommand) -> Self {
+            self.inner = self.inner.command(input);
             self
         }
-        /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any
-        /// associated arguments.</p>
+        /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
         pub fn set_command(
             mut self,
             input: std::option::Option<crate::model::DeploymentCommand>,
@@ -2105,8 +1768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-defined comment.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(inp);
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input.into());
             self
         }
         /// <p>A user-defined comment.</p>
@@ -2115,23 +1778,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a> and
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
-        pub fn custom_json(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_json(inp);
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
+        pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_json(input.into());
             self
         }
         /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a> and
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_custom_json(input);
             self
@@ -2139,14 +1794,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateInstance`.
     ///
-    /// <p>Creates an instance in a specified stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding an
-    /// Instance to a Layer</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates an instance in a specified stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding an Instance to a Layer</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2191,10 +1841,10 @@ pub mod fluent_builders {
                 crate::input::CreateInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2203,8 +1853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -2217,8 +1867,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
         ///
         /// <p>An array that contains the instance's layer IDs.</p>
-        pub fn layer_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_ids(inp);
+        pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_ids(input.into());
             self
         }
         /// <p>An array that contains the instance's layer IDs.</p>
@@ -2229,20 +1879,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_layer_ids(input);
             self
         }
-        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
-        /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
-        /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>. The parameter values that you use to specify the various types are
-        /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
-        pub fn instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_type(inp);
+        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_type(input.into());
             self
         }
-        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
-        /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
-        /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>. The parameter values that you use to specify the various types are
-        /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2251,8 +1893,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
-        pub fn auto_scaling_type(mut self, inp: crate::model::AutoScalingType) -> Self {
-            self.inner = self.inner.auto_scaling_type(inp);
+        pub fn auto_scaling_type(mut self, input: crate::model::AutoScalingType) -> Self {
+            self.inner = self.inner.auto_scaling_type(input);
             self
         }
         /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
@@ -2264,8 +1906,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance host name.</p>
-        pub fn hostname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname(inp);
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname(input.into());
             self
         }
         /// <p>The instance host name.</p>
@@ -2275,96 +1917,42 @@ pub mod fluent_builders {
         }
         /// <p>The instance's operating system, which must be set to one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about the supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        /// <p>The default option is the current Amazon Linux version. If you set this parameter to
-        /// <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to
-        /// specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating
-        /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
-        pub fn os(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.os(inp);
+        /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
+        pub fn os(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.os(input.into());
             self
         }
         /// <p>The instance's operating system, which must be set to one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about the supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        /// <p>The default option is the current Amazon Linux version. If you set this parameter to
-        /// <code>Custom</code>, you must use the <a>CreateInstance</a> action's AmiId parameter to
-        /// specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating
-        /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
+        /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
         pub fn set_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_os(input);
             self
         }
-        /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the
-        /// supported operating systems.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
-        /// <note>
+        /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
         /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
         /// </note>
-        pub fn ami_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ami_id(inp);
+        pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ami_id(input.into());
             self
         }
-        /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the
-        /// supported operating systems.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
-        /// <note>
+        /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
         /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
         /// </note>
         pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2372,8 +1960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance's Amazon EC2 key-pair name.</p>
-        pub fn ssh_key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_key_name(inp);
+        pub fn ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_key_name(input.into());
             self
         }
         /// <p>The instance's Amazon EC2 key-pair name.</p>
@@ -2382,8 +1970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(inp);
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
         /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
@@ -2395,8 +1983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
-        pub fn virtualization_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtualization_type(inp);
+        pub fn virtualization_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtualization_type(input.into());
             self
         }
         /// <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
@@ -2408,8 +1996,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
-        pub fn subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(inp);
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(input.into());
             self
         }
         /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
@@ -2417,18 +2005,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subnet_id(input);
             self
         }
-        /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not
-        /// necessarily support both architectures. For a list of the architectures that are supported by
-        /// the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
-        /// Types</a>.</p>
-        pub fn architecture(mut self, inp: crate::model::Architecture) -> Self {
-            self.inner = self.inner.architecture(inp);
+        /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
+        pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
+            self.inner = self.inner.architecture(input);
             self
         }
-        /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not
-        /// necessarily support both architectures. For a list of the architectures that are supported by
-        /// the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
-        /// Types</a>.</p>
+        /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
         pub fn set_architecture(
             mut self,
             input: std::option::Option<crate::model::Architecture>,
@@ -2437,8 +2019,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-        pub fn root_device_type(mut self, inp: crate::model::RootDeviceType) -> Self {
-            self.inner = self.inner.root_device_type(inp);
+        pub fn root_device_type(mut self, input: crate::model::RootDeviceType) -> Self {
+            self.inner = self.inner.root_device_type(input);
             self
         }
         /// <p>The instance root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
@@ -2453,19 +2035,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
         ///
-        /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
-        /// devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-        /// Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
-        pub fn block_device_mappings(
-            mut self,
-            inp: impl Into<crate::model::BlockDeviceMapping>,
-        ) -> Self {
-            self.inner = self.inner.block_device_mappings(inp);
+        /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
+        pub fn block_device_mappings(mut self, input: crate::model::BlockDeviceMapping) -> Self {
+            self.inner = self.inner.block_device_mappings(input);
             self
         }
-        /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
-        /// devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-        /// Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
+        /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
         pub fn set_block_device_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
@@ -2473,37 +2048,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_block_device_mappings(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
         /// </note>
-        pub fn install_updates_on_boot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.install_updates_on_boot(inp);
+        pub fn install_updates_on_boot(mut self, input: bool) -> Self {
+            self.inner = self.inner.install_updates_on_boot(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
         /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_install_updates_on_boot(input);
             self
         }
         /// <p>Whether to create an Amazon EBS-optimized instance.</p>
-        pub fn ebs_optimized(mut self, inp: bool) -> Self {
-            self.inner = self.inner.ebs_optimized(inp);
+        pub fn ebs_optimized(mut self, input: bool) -> Self {
+            self.inner = self.inner.ebs_optimized(input);
             self
         }
         /// <p>Whether to create an Amazon EBS-optimized instance.</p>
@@ -2513,44 +2074,20 @@ pub mod fluent_builders {
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>version_number</i> - Use the specified agent version.
-        /// This value overrides the stack's default setting.
-        /// To update the agent version, edit the instance configuration and specify a
-        /// new version.
-        /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
-        /// </li>
+        /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
+        /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
-        pub fn agent_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(inp);
+        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_version(input.into());
             self
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>version_number</i> - Use the specified agent version.
-        /// This value overrides the stack's default setting.
-        /// To update the agent version, edit the instance configuration and specify a
-        /// new version.
-        /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
-        /// </li>
+        /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
+        /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
+        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
         pub fn set_agent_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2558,12 +2095,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_agent_version(input);
             self
         }
-        /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter:  <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
-        pub fn tenancy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tenancy(inp);
+        /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
+        pub fn tenancy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tenancy(input.into());
             self
         }
-        /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter:  <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
+        /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
         pub fn set_tenancy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_tenancy(input);
             self
@@ -2571,21 +2108,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateLayer`.
     ///
-    /// <p>Creates a layer. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How to
-    /// Create a Layer</a>.</p>
-    /// <note>
-    /// <p>You should use <b>CreateLayer</b> for noncustom layer types such as PHP App Server only if the stack
-    /// does not have an existing layer of that type. A stack can have at most one instance of each
-    /// noncustom layer; if you attempt to create a second instance, <b>CreateLayer</b> fails. A
-    /// stack can have an arbitrary number of custom layers, so you can call <b>CreateLayer</b> as
-    /// many times as you like for that layer type.</p>
+    /// <p>Creates a layer. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How to Create a Layer</a>.</p> <note>
+    /// <p>You should use <b>CreateLayer</b> for noncustom layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, <b>CreateLayer</b> fails. A stack can have an arbitrary number of custom layers, so you can call <b>CreateLayer</b> as many times as you like for that layer type.</p>
     /// </note>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLayer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2630,10 +2157,10 @@ pub mod fluent_builders {
                 crate::input::CreateLayerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2642,8 +2169,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The layer stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The layer stack ID.</p>
@@ -2652,8 +2179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers. Built-in layers are not available in Chef 12 stacks.</p>
-        pub fn r#type(mut self, inp: crate::model::LayerType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::LayerType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers. Built-in layers are not available in Chef 12 stacks.</p>
@@ -2662,8 +2189,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The layer name, which is used by the console.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The layer name, which is used by the console.</p>
@@ -2673,8 +2200,8 @@ pub mod fluent_builders {
         }
         /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p>
         /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.</p>
-        pub fn shortname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shortname(inp);
+        pub fn shortname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shortname(input.into());
             self
         }
         /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p>
@@ -2691,10 +2218,10 @@ pub mod fluent_builders {
         /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::LayerAttributesKeys>,
+            k: crate::model::LayerAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k, v.into());
             self
         }
         /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
@@ -2708,15 +2235,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attributes(input);
             self
         }
-        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
+        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
         pub fn cloud_watch_logs_configuration(
             mut self,
-            inp: crate::model::CloudWatchLogsConfiguration,
+            input: crate::model::CloudWatchLogsConfiguration,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logs_configuration(inp);
+            self.inner = self.inner.cloud_watch_logs_configuration(input);
             self
         }
-        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
+        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
         pub fn set_cloud_watch_logs_configuration(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsConfiguration>,
@@ -2724,14 +2251,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cloud_watch_logs_configuration(input);
             self
         }
-        /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information
-        /// about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-        pub fn custom_instance_profile_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_instance_profile_arn(inp);
+        /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+        pub fn custom_instance_profile_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.custom_instance_profile_arn(input.into());
             self
         }
-        /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information
-        /// about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+        /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_custom_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2739,20 +2267,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_instance_profile_arn(input);
             self
         }
-        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
-        /// to be installed on the layer's instances. For more information, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-        /// Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
-        /// </p>
-        pub fn custom_json(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_json(inp);
+        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI. </p>
+        pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_json(input.into());
             self
         }
-        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
-        /// to be installed on the layer's instances. For more information, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-        /// Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
-        /// </p>
+        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI. </p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_custom_json(input);
             self
@@ -2762,8 +2282,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_custom_security_group_ids`](Self::set_custom_security_group_ids).
         ///
         /// <p>An array containing the layer custom security group IDs.</p>
-        pub fn custom_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_security_group_ids(inp);
+        pub fn custom_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_security_group_ids(input.into());
             self
         }
         /// <p>An array containing the layer custom security group IDs.</p>
@@ -2779,8 +2299,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_packages`](Self::set_packages).
         ///
         /// <p>An array of <code>Package</code> objects that describes the layer packages.</p>
-        pub fn packages(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.packages(inp);
+        pub fn packages(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.packages(input.into());
             self
         }
         /// <p>An array of <code>Package</code> objects that describes the layer packages.</p>
@@ -2796,11 +2316,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
         ///
         /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-        pub fn volume_configurations(
-            mut self,
-            inp: impl Into<crate::model::VolumeConfiguration>,
-        ) -> Self {
-            self.inner = self.inner.volume_configurations(inp);
+        pub fn volume_configurations(mut self, input: crate::model::VolumeConfiguration) -> Self {
+            self.inner = self.inner.volume_configurations(input);
             self
         }
         /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
@@ -2812,8 +2329,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to disable auto healing for the layer.</p>
-        pub fn enable_auto_healing(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_auto_healing(inp);
+        pub fn enable_auto_healing(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_healing(input);
             self
         }
         /// <p>Whether to disable auto healing for the layer.</p>
@@ -2821,37 +2338,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_auto_healing(input);
             self
         }
-        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-        /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
-        pub fn auto_assign_elastic_ips(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_assign_elastic_ips(inp);
+        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+        pub fn auto_assign_elastic_ips(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_assign_elastic_ips(input);
             self
         }
-        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-        /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn set_auto_assign_elastic_ips(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_assign_elastic_ips(input);
             self
         }
-        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-        /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
-        pub fn auto_assign_public_ips(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_assign_public_ips(inp);
+        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+        pub fn auto_assign_public_ips(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_assign_public_ips(input);
             self
         }
-        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-        /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn set_auto_assign_public_ips(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_assign_public_ips(input);
             self
         }
         /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.</p>
-        pub fn custom_recipes(mut self, inp: crate::model::Recipes) -> Self {
-            self.inner = self.inner.custom_recipes(inp);
+        pub fn custom_recipes(mut self, input: crate::model::Recipes) -> Self {
+            self.inner = self.inner.custom_recipes(input);
             self
         }
         /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.</p>
@@ -2862,37 +2371,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_recipes(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>To ensure that your
-        /// instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>To ensure that your instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
         /// </note>
-        pub fn install_updates_on_boot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.install_updates_on_boot(inp);
+        pub fn install_updates_on_boot(mut self, input: bool) -> Self {
+            self.inner = self.inner.install_updates_on_boot(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>To ensure that your
-        /// instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>To ensure that your instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
         /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_install_updates_on_boot(input);
             self
         }
         /// <p>Whether to use Amazon EBS-optimized instances.</p>
-        pub fn use_ebs_optimized_instances(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_ebs_optimized_instances(inp);
+        pub fn use_ebs_optimized_instances(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_ebs_optimized_instances(input);
             self
         }
         /// <p>Whether to use Amazon EBS-optimized instances.</p>
@@ -2900,19 +2395,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_use_ebs_optimized_instances(input);
             self
         }
-        /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to
-        /// specify an execution timeout and enable or disable Elastic Load Balancer connection
-        /// draining.</p>
+        /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
         pub fn lifecycle_event_configuration(
             mut self,
-            inp: crate::model::LifecycleEventConfiguration,
+            input: crate::model::LifecycleEventConfiguration,
         ) -> Self {
-            self.inner = self.inner.lifecycle_event_configuration(inp);
+            self.inner = self.inner.lifecycle_event_configuration(input);
             self
         }
-        /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to
-        /// specify an execution timeout and enable or disable Elastic Load Balancer connection
-        /// draining.</p>
+        /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
         pub fn set_lifecycle_event_configuration(
             mut self,
             input: std::option::Option<crate::model::LifecycleEventConfiguration>,
@@ -2923,13 +2414,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateStack`.
     ///
-    /// <p>Creates a new stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">Create a New
-    /// Stack</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy
-    /// that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a new stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">Create a New Stack</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2974,10 +2461,10 @@ pub mod fluent_builders {
                 crate::input::CreateStackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2986,8 +2473,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The stack name.</p>
@@ -2995,51 +2482,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about
-        /// Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-        /// <note>
-        /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the
-        /// <code>--stack-region</code> parameter and the AWS CLI common parameter
-        /// <code>--region</code> are set to the same value, the stack uses a
-        /// <i>regional</i> endpoint. If the <code>--stack-region</code>
-        /// parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also
-        /// results in a stack with a <i>regional</i> endpoint. However, if the
-        /// <code>--region</code> parameter is set to <code>us-east-1</code>, and the
-        /// <code>--stack-region</code> parameter is set to one of the following, then the
-        /// stack uses a legacy or <i>classic</i> region: <code>us-west-1,
-        /// us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1,
-        /// ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in
-        /// <code>us-east-1</code>. Only the preceding regions are supported as classic
-        /// regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to
-        /// choose the regional endpoint that is closest to where you manage AWS, we recommend
-        /// that you use regional endpoints for new stacks. The AWS CLI common
-        /// <code>--region</code> parameter always specifies a regional API endpoint; it
-        /// cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+        /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p> <note>
+        /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set to one of the following, then the stack uses a legacy or <i>classic</i> region: <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
         /// </note>
-        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region(inp);
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region(input.into());
             self
         }
-        /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about
-        /// Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-        /// <note>
-        /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the
-        /// <code>--stack-region</code> parameter and the AWS CLI common parameter
-        /// <code>--region</code> are set to the same value, the stack uses a
-        /// <i>regional</i> endpoint. If the <code>--stack-region</code>
-        /// parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also
-        /// results in a stack with a <i>regional</i> endpoint. However, if the
-        /// <code>--region</code> parameter is set to <code>us-east-1</code>, and the
-        /// <code>--stack-region</code> parameter is set to one of the following, then the
-        /// stack uses a legacy or <i>classic</i> region: <code>us-west-1,
-        /// us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1,
-        /// ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in
-        /// <code>us-east-1</code>. Only the preceding regions are supported as classic
-        /// regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to
-        /// choose the regional endpoint that is closest to where you manage AWS, we recommend
-        /// that you use regional endpoints for new stacks. The AWS CLI common
-        /// <code>--region</code> parameter always specifies a regional API endpoint; it
-        /// cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+        /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p> <note>
+        /// <p>In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set to one of the following, then the stack uses a legacy or <i>classic</i> region: <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
         /// </note>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_region(input);
@@ -3047,62 +2498,32 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the VPC that the stack is to be launched into. The VPC must be in the stack's region. All instances are launched into this VPC. You cannot change the ID later.</p>
         /// <ul>
-        /// <li>
-        /// <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p>
-        /// </li>
+        /// <li> <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p> </li>
+        /// <li> <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p> </li>
         /// </ul>
-        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
-        /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
-        /// AWS OpsWorks Stacks infers the value of the
-        /// other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
-        /// these parameters to the first valid Availability Zone for the specified region and the
-        /// corresponding default VPC subnet ID, respectively.</p>
+        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets these parameters to the first valid Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively.</p>
         /// <p>If you specify a nondefault VPC ID, note the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>It must belong to a VPC in your account that is in the specified region.</p>
-        /// </li>
-        /// <li>
-        /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
-        /// </li>
+        /// <li> <p>It must belong to a VPC in your account that is in the specified region.</p> </li>
+        /// <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-        /// VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-        /// Platforms</a>. </p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(inp);
+        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The ID of the VPC that the stack is to be launched into. The VPC must be in the stack's region. All instances are launched into this VPC. You cannot change the ID later.</p>
         /// <ul>
-        /// <li>
-        /// <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p>
-        /// </li>
+        /// <li> <p>If your account supports EC2-Classic, the default value is <code>no VPC</code>.</p> </li>
+        /// <li> <p>If your account does not support EC2-Classic, the default value is the default VPC for the specified region.</p> </li>
         /// </ul>
-        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the
-        /// <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only,
-        /// AWS OpsWorks Stacks infers the value of the
-        /// other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
-        /// these parameters to the first valid Availability Zone for the specified region and the
-        /// corresponding default VPC subnet ID, respectively.</p>
+        /// <p>If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code> or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets these parameters to the first valid Availability Zone for the specified region and the corresponding default VPC subnet ID, respectively.</p>
         /// <p>If you specify a nondefault VPC ID, note the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>It must belong to a VPC in your account that is in the specified region.</p>
-        /// </li>
-        /// <li>
-        /// <p>You must specify a value for <code>DefaultSubnetId</code>.</p>
-        /// </li>
+        /// <li> <p>It must belong to a VPC in your account that is in the specified region.</p> </li>
+        /// <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-        /// VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-        /// Platforms</a>. </p>
+        /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_vpc_id(input);
             self
@@ -3114,10 +2535,10 @@ pub mod fluent_builders {
         /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::StackAttributesKeys>,
+            k: crate::model::StackAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k, v.into());
             self
         }
         /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
@@ -3130,18 +2551,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attributes(input);
             self
         }
-        /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
-        /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
-        /// existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
-        pub fn service_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(inp);
+        /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
-        /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
-        /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
-        /// existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3149,16 +2564,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_role_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
-        pub fn default_instance_profile_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_instance_profile_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+        pub fn default_instance_profile_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.default_instance_profile_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_default_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3168,212 +2582,66 @@ pub mod fluent_builders {
         }
         /// <p>The stack's default operating system, which is installed on every instance unless you specify a different operating system when you create the instance. You can specify one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
-        /// Using Custom AMIs</a>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"> Using Custom AMIs</a>.</p> </li>
         /// </ul>
-        /// <p>The default option is the current Amazon Linux version.
-        /// For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        pub fn default_os(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_os(inp);
+        /// <p>The default option is the current Amazon Linux version. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        pub fn default_os(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_os(input.into());
             self
         }
         /// <p>The stack's default operating system, which is installed on every instance unless you specify a different operating system when you create the instance. You can specify one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
-        /// Using Custom AMIs</a>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"> Using Custom AMIs</a>.</p> </li>
         /// </ul>
-        /// <p>The default option is the current Amazon Linux version.
-        /// For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the current Amazon Linux version. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
         pub fn set_default_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_default_os(input);
             self
         }
-        /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to
-        /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
-        /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
-        /// short name. The other themes are:</p>
+        /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Baked_Goods</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Clouds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Europe_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fruits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Greek_Deities_and_Titans</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Legendary_creatures_from_Japan</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Planets_and_Moons</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Roman_Deities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Scottish_Islands</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>US_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Wild_Cats</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Baked_Goods</code> </p> </li>
+        /// <li> <p> <code>Clouds</code> </p> </li>
+        /// <li> <p> <code>Europe_Cities</code> </p> </li>
+        /// <li> <p> <code>Fruits</code> </p> </li>
+        /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+        /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+        /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+        /// <li> <p> <code>Roman_Deities</code> </p> </li>
+        /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+        /// <li> <p> <code>US_Cities</code> </p> </li>
+        /// <li> <p> <code>Wild_Cats</code> </p> </li>
         /// </ul>
-        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-        /// host name based on the current theme.</p>
-        pub fn hostname_theme(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname_theme(inp);
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
+        pub fn hostname_theme(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname_theme(input.into());
             self
         }
-        /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to
-        /// generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set
-        /// to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's
-        /// short name. The other themes are:</p>
+        /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Baked_Goods</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Clouds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Europe_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fruits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Greek_Deities_and_Titans</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Legendary_creatures_from_Japan</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Planets_and_Moons</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Roman_Deities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Scottish_Islands</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>US_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Wild_Cats</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Baked_Goods</code> </p> </li>
+        /// <li> <p> <code>Clouds</code> </p> </li>
+        /// <li> <p> <code>Europe_Cities</code> </p> </li>
+        /// <li> <p> <code>Fruits</code> </p> </li>
+        /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+        /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+        /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+        /// <li> <p> <code>Roman_Deities</code> </p> </li>
+        /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+        /// <li> <p> <code>US_Cities</code> </p> </li>
+        /// <li> <p> <code>Wild_Cats</code> </p> </li>
         /// </ul>
-        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-        /// host name based on the current theme.</p>
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
         pub fn set_hostname_theme(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3381,20 +2649,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hostname_theme(input);
             self
         }
-        /// <p>The stack's default Availability Zone, which must be in the specified region. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-        /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
-        /// </p>
-        pub fn default_availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_availability_zone(inp);
+        /// <p>The stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
+        pub fn default_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_availability_zone(input.into());
             self
         }
-        /// <p>The stack's default Availability Zone, which must be in the specified region. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-        /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
-        /// </p>
+        /// <p>The stack's default Availability Zone, which must be in the specified region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see the <code>VpcId</code> parameter description. </p>
         pub fn set_default_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3402,22 +2662,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_availability_zone(input);
             self
         }
-        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-        /// otherwise when you create the instance. If you also specify a value for
-        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-        /// description. </p>
-        pub fn default_subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_subnet_id(inp);
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
+        pub fn default_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_subnet_id(input.into());
             self
         }
-        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-        /// otherwise when you create the instance. If you also specify a value for
-        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-        /// description. </p>
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
         pub fn set_default_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3426,21 +2676,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>.</p>
-        pub fn custom_json(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_json(inp);
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+        pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_json(input.into());
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>.</p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_custom_json(input);
             self
@@ -3448,9 +2692,9 @@ pub mod fluent_builders {
         /// <p>The configuration manager. When you create a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
         pub fn configuration_manager(
             mut self,
-            inp: crate::model::StackConfigurationManager,
+            input: crate::model::StackConfigurationManager,
         ) -> Self {
-            self.inner = self.inner.configuration_manager(inp);
+            self.inner = self.inner.configuration_manager(input);
             self
         }
         /// <p>The configuration manager. When you create a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
@@ -3461,14 +2705,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_manager(input);
             self
         }
-        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-        pub fn chef_configuration(mut self, inp: crate::model::ChefConfiguration) -> Self {
-            self.inner = self.inner.chef_configuration(inp);
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        pub fn chef_configuration(mut self, input: crate::model::ChefConfiguration) -> Self {
+            self.inner = self.inner.chef_configuration(input);
             self
         }
-        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_chef_configuration(
             mut self,
             input: std::option::Option<crate::model::ChefConfiguration>,
@@ -3477,8 +2719,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether the stack uses custom cookbooks.</p>
-        pub fn use_custom_cookbooks(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_custom_cookbooks(inp);
+        pub fn use_custom_cookbooks(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_custom_cookbooks(input);
             self
         }
         /// <p>Whether the stack uses custom cookbooks.</p>
@@ -3487,39 +2729,23 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-        /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
-        /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
-        /// following settings: </p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
         /// <ul>
-        /// <li>
-        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
-        /// </li>
-        /// <li>
-        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
-        /// </li>
+        /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p> </li>
+        /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-        /// Stack</a>.</p>
-        pub fn use_opsworks_security_groups(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_opsworks_security_groups(inp);
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        pub fn use_opsworks_security_groups(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_opsworks_security_groups(input);
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-        /// associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead
-        /// provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the
-        /// following settings: </p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code> you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
         /// <ul>
-        /// <li>
-        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
-        /// </li>
-        /// <li>
-        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p>
-        /// </li>
+        /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p> </li>
+        /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are required only for those layers that need custom settings.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-        /// Stack</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_use_opsworks_security_groups(
             mut self,
             input: std::option::Option<bool>,
@@ -3527,16 +2753,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_use_opsworks_security_groups(input);
             self
         }
-        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
-        pub fn custom_cookbooks_source(mut self, inp: crate::model::Source) -> Self {
-            self.inner = self.inner.custom_cookbooks_source(inp);
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+        pub fn custom_cookbooks_source(mut self, input: crate::model::Source) -> Self {
+            self.inner = self.inner.custom_cookbooks_source(input);
             self
         }
-        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn set_custom_cookbooks_source(
             mut self,
             input: std::option::Option<crate::model::Source>,
@@ -3544,24 +2766,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_cookbooks_source(input);
             self
         }
-        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
-        /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
-        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-        /// Access</a>. You can override this setting by specifying a different key pair, or no key
-        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-        /// create an instance</a>. </p>
-        pub fn default_ssh_key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_ssh_key_name(inp);
+        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
+        pub fn default_ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_ssh_key_name(input.into());
             self
         }
-        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
-        /// OpsWorks installs the public key on the instance and you can use the private key with an SSH
-        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-        /// Access</a>. You can override this setting by specifying a different key pair, or no key
-        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-        /// create an instance</a>. </p>
+        /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS OpsWorks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
         pub fn set_default_ssh_key_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3569,16 +2779,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_ssh_key_name(input);
             self
         }
-        /// <p>The default root device type. This value is the default for all instances in the stack,
-        /// but you can override it when you create an instance. The default option is
-        /// <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-        pub fn default_root_device_type(mut self, inp: crate::model::RootDeviceType) -> Self {
-            self.inner = self.inner.default_root_device_type(inp);
+        /// <p>The default root device type. This value is the default for all instances in the stack, but you can override it when you create an instance. The default option is <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+        pub fn default_root_device_type(mut self, input: crate::model::RootDeviceType) -> Self {
+            self.inner = self.inner.default_root_device_type(input);
             self
         }
-        /// <p>The default root device type. This value is the default for all instances in the stack,
-        /// but you can override it when you create an instance. The default option is
-        /// <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+        /// <p>The default root device type. This value is the default for all instances in the stack, but you can override it when you create an instance. The default option is <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn set_default_root_device_type(
             mut self,
             input: std::option::Option<crate::model::RootDeviceType>,
@@ -3588,40 +2794,22 @@ pub mod fluent_builders {
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-        /// automatically installs new agent versions on the stack's instances as soon as
-        /// they are available.</p>
-        /// </li>
-        /// <li>
-        /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-        /// </li>
+        /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+        /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
         /// </ul>
-        /// <p>The default setting is the most recent release of the agent. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
-        /// <note>
+        /// <p>The default setting is the most recent release of the agent. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
-        pub fn agent_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(inp);
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_version(input.into());
             self
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-        /// automatically installs new agent versions on the stack's instances as soon as
-        /// they are available.</p>
-        /// </li>
-        /// <li>
-        /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-        /// </li>
+        /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+        /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
         /// </ul>
-        /// <p>The default setting is the most recent release of the agent. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
-        /// <note>
+        /// <p>The default setting is the most recent release of the agent. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
         pub fn set_agent_version(
@@ -3635,11 +2823,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUserProfile`.
     ///
     /// <p>Creates a new user profile.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy
-    /// that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3684,10 +2869,10 @@ pub mod fluent_builders {
                 crate::input::CreateUserProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3696,8 +2881,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user's IAM ARN; this can also be a federated user's ARN.</p>
-        pub fn iam_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_user_arn(inp);
+        pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_user_arn(input.into());
             self
         }
         /// <p>The user's IAM ARN; this can also be a federated user's ARN.</p>
@@ -3705,25 +2890,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_iam_user_arn(input);
             self
         }
-        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
-        /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
-        /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
-        /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
-        pub fn ssh_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_username(inp);
+        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+        pub fn ssh_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_username(input.into());
             self
         }
-        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
-        /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
-        /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
-        /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
         pub fn set_ssh_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ssh_username(input);
             self
         }
         /// <p>The user's public SSH key.</p>
-        pub fn ssh_public_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(inp);
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
         /// <p>The user's public SSH key.</p>
@@ -3734,16 +2913,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ssh_public_key(input);
             self
         }
-        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM
-        /// User's Public SSH Key</a>.</p>
-        pub fn allow_self_management(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_self_management(inp);
+        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM User's Public SSH Key</a>.</p>
+        pub fn allow_self_management(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_self_management(input);
             self
         }
-        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM
-        /// User's Public SSH Key</a>.</p>
+        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM User's Public SSH Key</a>.</p>
         pub fn set_allow_self_management(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_self_management(input);
             self
@@ -3752,12 +2927,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteApp`.
     ///
     /// <p>Deletes a specified app.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3802,10 +2973,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3814,8 +2985,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -3827,14 +2998,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInstance`.
     ///
     /// <p>Deletes a specified instance, which terminates the associated Amazon EC2 instance. You must stop an instance before you can delete it.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">Deleting
-    /// Instances</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">Deleting Instances</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3879,10 +3045,10 @@ pub mod fluent_builders {
                 crate::input::DeleteInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3891,8 +3057,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -3901,8 +3067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to delete the instance Elastic IP address.</p>
-        pub fn delete_elastic_ip(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_elastic_ip(inp);
+        pub fn delete_elastic_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_elastic_ip(input);
             self
         }
         /// <p>Whether to delete the instance Elastic IP address.</p>
@@ -3911,8 +3077,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to delete the instance's Amazon EBS volumes.</p>
-        pub fn delete_volumes(mut self, inp: bool) -> Self {
-            self.inner = self.inner.delete_volumes(inp);
+        pub fn delete_volumes(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_volumes(input);
             self
         }
         /// <p>Whether to delete the instance's Amazon EBS volumes.</p>
@@ -3923,15 +3089,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteLayer`.
     ///
-    /// <p>Deletes a specified layer. You must first stop and then delete all associated instances or
-    /// unassign registered instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">How to
-    /// Delete a Layer</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a specified layer. You must first stop and then delete all associated instances or unassign registered instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">How to Delete a Layer</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLayer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3976,10 +3136,10 @@ pub mod fluent_builders {
                 crate::input::DeleteLayerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3988,8 +3148,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The layer ID.</p>
-        pub fn layer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_id(inp);
+        pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_id(input.into());
             self
         }
         /// <p>The layer ID.</p>
@@ -4000,15 +3160,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteStack`.
     ///
-    /// <p>Deletes a specified stack. You must first delete all instances, layers, and apps or
-    /// deregister registered instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut Down a
-    /// Stack</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a specified stack. You must first delete all instances, layers, and apps or deregister registered instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut Down a Stack</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4053,10 +3207,10 @@ pub mod fluent_builders {
                 crate::input::DeleteStackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4065,8 +3219,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -4078,11 +3232,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUserProfile`.
     ///
     /// <p>Deletes a user profile.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy
-    /// that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4127,10 +3278,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUserProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4139,8 +3290,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
-        pub fn iam_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_user_arn(inp);
+        pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_user_arn(input.into());
             self
         }
         /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
@@ -4151,16 +3302,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterEcsCluster`.
     ///
-    /// <p>Deregisters a specified Amazon ECS cluster from a stack.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete">
-    /// Resource Management</a>.</p>  
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deregisters a specified Amazon ECS cluster from a stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete"> Resource Management</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterEcsCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4205,10 +3349,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterEcsClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4217,8 +3361,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster's Amazon Resource Number (ARN).</p>
-        pub fn ecs_cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ecs_cluster_arn(inp);
+        pub fn ecs_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ecs_cluster_arn(input.into());
             self
         }
         /// <p>The cluster's Amazon Resource Number (ARN).</p>
@@ -4232,14 +3376,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterElasticIp`.
     ///
-    /// <p>Deregisters a specified Elastic IP address. The address can then be registered by another
-    /// stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deregisters a specified Elastic IP address. The address can then be registered by another stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterElasticIp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4284,10 +3423,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterElasticIpInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4296,8 +3435,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Elastic IP address.</p>
-        pub fn elastic_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_ip(inp);
+        pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_ip(input.into());
             self
         }
         /// <p>The Elastic IP address.</p>
@@ -4308,15 +3447,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterInstance`.
     ///
-    /// <p>Deregister a registered Amazon EC2 or on-premises instance. This action removes the
-    /// instance from the stack and returns it to your control. This action cannot be used with
-    /// instances that were created with AWS OpsWorks Stacks.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deregister a registered Amazon EC2 or on-premises instance. This action removes the instance from the stack and returns it to your control. This action cannot be used with instances that were created with AWS OpsWorks Stacks.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4361,10 +3494,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4373,8 +3506,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -4386,12 +3519,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeregisterRdsDbInstance`.
     ///
     /// <p>Deregisters an Amazon RDS instance.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterRdsDbInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4436,10 +3565,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterRdsDbInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4448,8 +3577,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon RDS instance's ARN.</p>
-        pub fn rds_db_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rds_db_instance_arn(inp);
+        pub fn rds_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rds_db_instance_arn(input.into());
             self
         }
         /// <p>The Amazon RDS instance's ARN.</p>
@@ -4463,15 +3592,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterVolume`.
     ///
-    /// <p>Deregisters an Amazon EBS volume. The volume can then be registered by another stack. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
-    /// Management</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deregisters an Amazon EBS volume. The volume can then be registered by another stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4516,10 +3639,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterVolumeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4528,8 +3651,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(inp);
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(input.into());
             self
         }
         /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
@@ -4540,10 +3663,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAgentVersions`.
     ///
-    /// <p>Describes the available AWS OpsWorks Stacks agent versions. You must specify a stack ID or a
-    /// configuration manager. <code>DescribeAgentVersions</code> returns a list of available
-    /// agent versions for the specified stack or configuration manager.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the available AWS OpsWorks Stacks agent versions. You must specify a stack ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list of available agent versions for the specified stack or configuration manager.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAgentVersions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4588,10 +3709,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAgentVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4600,8 +3721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -4612,9 +3733,9 @@ pub mod fluent_builders {
         /// <p>The configuration manager.</p>
         pub fn configuration_manager(
             mut self,
-            inp: crate::model::StackConfigurationManager,
+            input: crate::model::StackConfigurationManager,
         ) -> Self {
-            self.inner = self.inner.configuration_manager(inp);
+            self.inner = self.inner.configuration_manager(input);
             self
         }
         /// <p>The configuration manager.</p>
@@ -4628,16 +3749,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeApps`.
     ///
-    /// <p>Requests a description of a specified set of apps.</p>
-    /// <note>
+    /// <p>Requests a description of a specified set of apps.</p> <note>
     /// <p>This call accepts only one resource-identifying parameter.</p>
     /// </note>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeApps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4682,10 +3798,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAppsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4693,14 +3809,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description
-        /// of the apps in the specified stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
-        /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description
-        /// of the apps in the specified stack.</p>
+        /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stack_id(input);
             self
@@ -4709,16 +3823,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_app_ids`](Self::set_app_ids).
         ///
-        /// <p>An array of app IDs for the apps to be described. If you use this parameter,
-        /// <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns
-        /// a description of every app.</p>
-        pub fn app_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_ids(inp);
+        /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
+        pub fn app_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_ids(input.into());
             self
         }
-        /// <p>An array of app IDs for the apps to be described. If you use this parameter,
-        /// <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns
-        /// a description of every app.</p>
+        /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
         pub fn set_app_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4729,16 +3839,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeCommands`.
     ///
-    /// <p>Describes the results of specified commands.</p>
-    /// <note>
+    /// <p>Describes the results of specified commands.</p> <note>
     /// <p>This call accepts only one resource-identifying parameter.</p>
     /// </note>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCommands<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4783,10 +3888,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCommandsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4794,14 +3899,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a
-        /// description of the commands associated with the specified deployment.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(inp);
+        /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
-        /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a
-        /// description of the commands associated with the specified deployment.</p>
+        /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4809,14 +3912,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_id(input);
             self
         }
-        /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a
-        /// description of the commands associated with the specified instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a
-        /// description of the commands associated with the specified instance.</p>
+        /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -4825,16 +3926,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_command_ids`](Self::set_command_ids).
         ///
-        /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns
-        /// a description of the specified commands. Otherwise, it returns a description of every
-        /// command.</p>
-        pub fn command_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.command_ids(inp);
+        /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
+        pub fn command_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.command_ids(input.into());
             self
         }
-        /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns
-        /// a description of the specified commands. Otherwise, it returns a description of every
-        /// command.</p>
+        /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
         pub fn set_command_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4845,16 +3942,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDeployments`.
     ///
-    /// <p>Requests a description of a specified set of deployments.</p>
-    /// <note>
+    /// <p>Requests a description of a specified set of deployments.</p> <note>
     /// <p>This call accepts only one resource-identifying parameter.</p>
     /// </note>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDeployments<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4899,10 +3991,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDeploymentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4910,26 +4002,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The stack ID. If you include this parameter, the command returns a
-        /// description of the commands associated with the specified stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        /// <p>The stack ID. If you include this parameter, the command returns a description of the commands associated with the specified stack.</p>
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
-        /// <p>The stack ID. If you include this parameter, the command returns a
-        /// description of the commands associated with the specified stack.</p>
+        /// <p>The stack ID. If you include this parameter, the command returns a description of the commands associated with the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stack_id(input);
             self
         }
-        /// <p>The app ID. If you include this parameter, the command returns a
-        /// description of the commands associated with the specified app.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        /// <p>The app ID. If you include this parameter, the command returns a description of the commands associated with the specified app.</p>
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
-        /// <p>The app ID. If you include this parameter, the command returns a
-        /// description of the commands associated with the specified app.</p>
+        /// <p>The app ID. If you include this parameter, the command returns a description of the commands associated with the specified app.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_id(input);
             self
@@ -4938,16 +4026,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_deployment_ids`](Self::set_deployment_ids).
         ///
-        /// <p>An array of deployment IDs to be described. If you include this parameter,
-        /// the command returns a description of the specified deployments.
-        /// Otherwise, it returns a description of every deployment.</p>
-        pub fn deployment_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_ids(inp);
+        /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
+        pub fn deployment_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_ids(input.into());
             self
         }
-        /// <p>An array of deployment IDs to be described. If you include this parameter,
-        /// the command returns a description of the specified deployments.
-        /// Otherwise, it returns a description of every deployment.</p>
+        /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
         pub fn set_deployment_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4958,17 +4042,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEcsClusters`.
     ///
-    /// <p>Describes Amazon ECS clusters that are registered with a stack. If you specify only a stack ID,
-    /// you can use the <code>MaxResults</code> and <code>NextToken</code> parameters to paginate the
-    /// response. However, AWS OpsWorks Stacks currently supports only one cluster per layer, so the result
-    /// set has a maximum of one element.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack or an attached policy that explicitly grants
-    /// permission. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
+    /// <p>Describes Amazon ECS clusters that are registered with a stack. If you specify only a stack ID, you can use the <code>MaxResults</code> and <code>NextToken</code> parameters to paginate the response. However, AWS OpsWorks Stacks currently supports only one cluster per layer, so the result set has a maximum of one element.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack or an attached policy that explicitly grants permission. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     /// <p>This call accepts only one resource-identifying parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEcsClusters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5013,10 +4090,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEcsClustersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5024,13 +4101,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeEcsClustersPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeEcsClustersPaginator<C, M, R> {
+            crate::paginator::DescribeEcsClustersPaginator::new(self.handle, self.inner)
+        }
         /// Appends an item to `EcsClusterArns`.
         ///
         /// To override the contents of this collection use [`set_ecs_cluster_arns`](Self::set_ecs_cluster_arns).
         ///
         /// <p>A list of ARNs, one for each cluster to be described.</p>
-        pub fn ecs_cluster_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ecs_cluster_arns(inp);
+        pub fn ecs_cluster_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ecs_cluster_arns(input.into());
             self
         }
         /// <p>A list of ARNs, one for each cluster to be described.</p>
@@ -5041,50 +4124,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ecs_cluster_arns(input);
             self
         }
-        /// <p>A stack ID.
-        /// <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
-        /// <p>A stack ID.
-        /// <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
+        /// <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stack_id(input);
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results,
-        /// the response object's<code>NextToken</code> parameter value is set to a token.
-        /// To retrieve the next set of results, call <code>DescribeEcsClusters</code>
-        /// again and assign that token to the request object's <code>NextToken</code> parameter.
-        /// If there are no remaining results, the previous response
-        /// object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's<code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>DescribeEcsClusters</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results,
-        /// the response object's<code>NextToken</code> parameter value is set to a token.
-        /// To retrieve the next set of results, call <code>DescribeEcsClusters</code>
-        /// again and assign that token to the request object's <code>NextToken</code> parameter.
-        /// If there are no remaining results, the previous response
-        /// object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's<code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>DescribeEcsClusters</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>To receive a paginated response, use this parameter to specify the maximum number
-        /// of results to be returned with a single call. If the number of available results exceeds this maximum, the
-        /// response includes a <code>NextToken</code> value that you can assign
-        /// to the <code>NextToken</code> request parameter to get the next set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>To receive a paginated response, use this parameter to specify the maximum number
-        /// of results to be returned with a single call. If the number of available results exceeds this maximum, the
-        /// response includes a <code>NextToken</code> value that you can assign
-        /// to the <code>NextToken</code> request parameter to get the next set of results.</p>
+        /// <p>To receive a paginated response, use this parameter to specify the maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5092,16 +4157,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeElasticIps`.
     ///
-    /// <p>Describes <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP addresses</a>.</p>
-    /// <note>
+    /// <p>Describes <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP addresses</a>.</p> <note>
     /// <p>This call accepts only one resource-identifying parameter.</p>
     /// </note>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeElasticIps<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5146,10 +4206,10 @@ pub mod fluent_builders {
                 crate::input::DescribeElasticIpsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5157,26 +4217,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
-        /// description of the Elastic IP addresses associated with the specified instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses associated with the specified instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
-        /// description of the Elastic IP addresses associated with the specified instance.</p>
+        /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses associated with the specified instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
-        /// description of the Elastic IP addresses that are registered with the specified stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses that are registered with the specified stack.</p>
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
-        /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
-        /// description of the Elastic IP addresses that are registered with the specified stack.</p>
+        /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the Elastic IP addresses that are registered with the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stack_id(input);
             self
@@ -5185,16 +4241,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ips`](Self::set_ips).
         ///
-        /// <p>An array of Elastic IP addresses to be described. If you include this parameter,
-        /// <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses.
-        /// Otherwise, it returns a description of every Elastic IP address.</p>
-        pub fn ips(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ips(inp);
+        /// <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
+        pub fn ips(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ips(input.into());
             self
         }
-        /// <p>An array of Elastic IP addresses to be described. If you include this parameter,
-        /// <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses.
-        /// Otherwise, it returns a description of every Elastic IP address.</p>
+        /// <p>An array of Elastic IP addresses to be described. If you include this parameter, <code>DescribeElasticIps</code> returns a description of the specified Elastic IP addresses. Otherwise, it returns a description of every Elastic IP address.</p>
         pub fn set_ips(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5205,16 +4257,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeElasticLoadBalancers`.
     ///
-    /// <p>Describes a stack's Elastic Load Balancing instances.</p>
-    /// <note>
+    /// <p>Describes a stack's Elastic Load Balancing instances.</p> <note>
     /// <p>This call accepts only one resource-identifying parameter.</p>
     /// </note>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeElasticLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5259,10 +4306,10 @@ pub mod fluent_builders {
                 crate::input::DescribeElasticLoadBalancersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5271,8 +4318,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
@@ -5285,8 +4332,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
         ///
         /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
-        pub fn layer_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_ids(inp);
+        pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_ids(input.into());
             self
         }
         /// <p>A list of layer IDs. The action describes the Elastic Load Balancing instances for the specified layers.</p>
@@ -5300,16 +4347,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInstances`.
     ///
-    /// <p>Requests a description of a set of instances.</p>
-    /// <note>
+    /// <p>Requests a description of a set of instances.</p> <note>
     /// <p>This call accepts only one resource-identifying parameter.</p>
     /// </note>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5354,10 +4396,10 @@ pub mod fluent_builders {
                 crate::input::DescribeInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5365,26 +4407,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
-        /// the instances associated with the specified stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified stack.</p>
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
-        /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
-        /// the instances associated with the specified stack.</p>
+        /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stack_id(input);
             self
         }
-        /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
-        /// the instances associated with the specified layer.</p>
-        pub fn layer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_id(inp);
+        /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified layer.</p>
+        pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_id(input.into());
             self
         }
-        /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
-        /// the instances associated with the specified layer.</p>
+        /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified layer.</p>
         pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_layer_id(input);
             self
@@ -5393,16 +4431,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>An array of instance IDs to be described. If you use this parameter,
-        /// <code>DescribeInstances</code> returns a description of the specified instances. Otherwise,
-        /// it returns a description of every instance.</p>
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_ids(inp);
+        /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_ids(input.into());
             self
         }
-        /// <p>An array of instance IDs to be described. If you use this parameter,
-        /// <code>DescribeInstances</code> returns a description of the specified instances. Otherwise,
-        /// it returns a description of every instance.</p>
+        /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5413,16 +4447,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLayers`.
     ///
-    /// <p>Requests a description of one or more layers in a specified stack.</p>
-    /// <note>
+    /// <p>Requests a description of one or more layers in a specified stack.</p> <note>
     /// <p>This call accepts only one resource-identifying parameter.</p>
     /// </note>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLayers<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5467,10 +4496,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLayersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5479,8 +4508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -5492,14 +4521,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
         ///
-        /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter,
-        /// <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
-        pub fn layer_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_ids(inp);
+        /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+        pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_ids(input.into());
             self
         }
-        /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter,
-        /// <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
+        /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
         pub fn set_layer_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5510,16 +4537,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLoadBasedAutoScaling`.
     ///
-    /// <p>Describes load-based auto scaling configurations for specified layers.</p>
-    /// <note>
+    /// <p>Describes load-based auto scaling configurations for specified layers.</p> <note>
     /// <p>You must specify at least one of the parameters.</p>
     /// </note>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBasedAutoScaling<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5564,10 +4586,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLoadBasedAutoScalingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5580,8 +4602,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
         ///
         /// <p>An array of layer IDs.</p>
-        pub fn layer_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_ids(inp);
+        pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_ids(input.into());
             self
         }
         /// <p>An array of layer IDs.</p>
@@ -5596,12 +4618,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMyUserProfile`.
     ///
     /// <p>Describes a user's SSH information.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
-    /// enabled or an attached policy that explicitly grants permissions. For more information about user
-    /// permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have self-management enabled or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMyUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5646,10 +4664,10 @@ pub mod fluent_builders {
                 crate::input::DescribeMyUserProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5661,7 +4679,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeOperatingSystems`.
     ///
     /// <p>Describes the operating systems that are supported by AWS OpsWorks Stacks.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOperatingSystems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5706,10 +4724,10 @@ pub mod fluent_builders {
                 crate::input::DescribeOperatingSystemsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5721,12 +4739,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribePermissions`.
     ///
     /// <p>Describes the permissions for a specified stack.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePermissions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5771,10 +4785,10 @@ pub mod fluent_builders {
                 crate::input::DescribePermissionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5782,21 +4796,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
-        pub fn iam_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_user_arn(inp);
+        /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+        pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_user_arn(input.into());
             self
         }
-        /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_user_arn(input);
             self
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -5807,16 +4819,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRaidArrays`.
     ///
-    /// <p>Describe an instance's RAID arrays.</p>
-    /// <note>
+    /// <p>Describe an instance's RAID arrays.</p> <note>
     /// <p>This call accepts only one resource-identifying parameter.</p>
     /// </note>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRaidArrays<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5861,10 +4868,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRaidArraysInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5872,21 +4879,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns
-        /// descriptions of the RAID arrays associated with the specified instance. </p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns
-        /// descriptions of the RAID arrays associated with the specified instance. </p>
+        /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -5898,16 +4903,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_raid_array_ids`](Self::set_raid_array_ids).
         ///
-        /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code>
-        /// returns descriptions of the specified arrays. Otherwise, it returns a description of every
-        /// array.</p>
-        pub fn raid_array_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.raid_array_ids(inp);
+        /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
+        pub fn raid_array_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.raid_array_ids(input.into());
             self
         }
-        /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code>
-        /// returns descriptions of the specified arrays. Otherwise, it returns a description of every
-        /// array.</p>
+        /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
         pub fn set_raid_array_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5919,13 +4920,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeRdsDbInstances`.
     ///
     /// <p>Describes Amazon RDS instances.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     /// <p>This call accepts only one resource-identifying parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRdsDbInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5970,10 +4967,10 @@ pub mod fluent_builders {
                 crate::input::DescribeRdsDbInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5982,8 +4979,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
@@ -5996,8 +4993,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rds_db_instance_arns`](Self::set_rds_db_instance_arns).
         ///
         /// <p>An array containing the ARNs of the instances to be described.</p>
-        pub fn rds_db_instance_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rds_db_instance_arns(inp);
+        pub fn rds_db_instance_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rds_db_instance_arns(input.into());
             self
         }
         /// <p>An array containing the ARNs of the instances to be described.</p>
@@ -6012,13 +5009,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeServiceErrors`.
     ///
     /// <p>Describes AWS OpsWorks Stacks service errors.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
     /// <p>This call accepts only one resource-identifying parameter.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeServiceErrors<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6063,10 +5056,10 @@ pub mod fluent_builders {
                 crate::input::DescribeServiceErrorsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6074,26 +5067,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
-        /// descriptions of the errors associated with the specified stack.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
-        /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
-        /// descriptions of the errors associated with the specified stack.</p>
+        /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_stack_id(input);
             self
         }
-        /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
-        /// descriptions of the errors associated with the specified instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
-        /// descriptions of the errors associated with the specified instance.</p>
+        /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -6102,16 +5091,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_service_error_ids`](Self::set_service_error_ids).
         ///
-        /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code>
-        /// returns descriptions of the specified errors. Otherwise, it returns a description of every
-        /// error.</p>
-        pub fn service_error_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_error_ids(inp);
+        /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
+        pub fn service_error_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_error_ids(input.into());
             self
         }
-        /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code>
-        /// returns descriptions of the specified errors. Otherwise, it returns a description of every
-        /// error.</p>
+        /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
         pub fn set_service_error_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6123,12 +5108,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStackProvisioningParameters`.
     ///
     /// <p>Requests a description of a stack's provisioning parameters.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStackProvisioningParameters<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6175,10 +5156,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStackProvisioningParametersInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6187,8 +5168,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -6200,12 +5181,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeStacks`.
     ///
     /// <p>Requests a description of one or more stacks.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStacks<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6250,10 +5227,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStacksInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6265,14 +5242,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_stack_ids`](Self::set_stack_ids).
         ///
-        /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter,
-        /// <code>DescribeStacks</code> returns a description of every stack.</p>
-        pub fn stack_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_ids(inp);
+        /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
+        pub fn stack_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_ids(input.into());
             self
         }
-        /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter,
-        /// <code>DescribeStacks</code> returns a description of every stack.</p>
+        /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
         pub fn set_stack_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6283,14 +5258,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeStackSummary`.
     ///
-    /// <p>Describes the number of layers and apps in a specified stack, and the number of instances in
-    /// each state, such as <code>running_setup</code> or <code>online</code>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Describes the number of layers and apps in a specified stack, and the number of instances in each state, such as <code>running_setup</code> or <code>online</code>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeStackSummary<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6335,10 +5305,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStackSummaryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6347,8 +5317,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -6359,16 +5329,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeTimeBasedAutoScaling`.
     ///
-    /// <p>Describes time-based auto scaling configurations for specified instances.</p>
-    /// <note>
+    /// <p>Describes time-based auto scaling configurations for specified instances.</p> <note>
     /// <p>You must specify at least one of the parameters.</p>
     /// </note>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTimeBasedAutoScaling<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6413,10 +5378,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTimeBasedAutoScalingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6429,8 +5394,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
         /// <p>An array of instance IDs.</p>
-        pub fn instance_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_ids(inp);
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_ids(input.into());
             self
         }
         /// <p>An array of instance IDs.</p>
@@ -6445,11 +5410,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeUserProfiles`.
     ///
     /// <p>Describe specified users.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy
-    /// that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6494,10 +5456,10 @@ pub mod fluent_builders {
                 crate::input::DescribeUserProfilesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6510,8 +5472,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_iam_user_arns`](Self::set_iam_user_arns).
         ///
         /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
-        pub fn iam_user_arns(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_user_arns(inp);
+        pub fn iam_user_arns(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_user_arns(input.into());
             self
         }
         /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
@@ -6525,16 +5487,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeVolumes`.
     ///
-    /// <p>Describes an instance's Amazon EBS volumes.</p>
-    /// <note>
+    /// <p>Describes an instance's Amazon EBS volumes.</p> <note>
     /// <p>This call accepts only one resource-identifying parameter.</p>
     /// </note>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
-    /// Manage permissions level for the stack, or an attached policy that explicitly grants
-    /// permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeVolumes<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6579,10 +5536,10 @@ pub mod fluent_builders {
                 crate::input::DescribeVolumesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6590,21 +5547,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions
-        /// of the volumes associated with the specified instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions
-        /// of the volumes associated with the specified instance.</p>
+        /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
         }
         /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
@@ -6612,14 +5567,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stack_id(input);
             self
         }
-        /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns
-        /// descriptions of the volumes associated with the specified RAID array.</p>
-        pub fn raid_array_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.raid_array_id(inp);
+        /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
+        pub fn raid_array_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.raid_array_id(input.into());
             self
         }
-        /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns
-        /// descriptions of the volumes associated with the specified RAID array.</p>
+        /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
         pub fn set_raid_array_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6631,16 +5584,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_volume_ids`](Self::set_volume_ids).
         ///
-        /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns
-        /// descriptions of the specified volumes. Otherwise, it returns a description of every
-        /// volume.</p>
-        pub fn volume_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_ids(inp);
+        /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
+        pub fn volume_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_ids(input.into());
             self
         }
-        /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns
-        /// descriptions of the specified volumes. Otherwise, it returns a description of every
-        /// volume.</p>
+        /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
         pub fn set_volume_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6652,12 +5601,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachElasticLoadBalancer`.
     ///
     /// <p>Detaches a specified Elastic Load Balancing instance from its layer.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachElasticLoadBalancer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6702,10 +5647,10 @@ pub mod fluent_builders {
                 crate::input::DetachElasticLoadBalancerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6714,8 +5659,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Elastic Load Balancing instance's name.</p>
-        pub fn elastic_load_balancer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_load_balancer_name(inp);
+        pub fn elastic_load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_load_balancer_name(input.into());
             self
         }
         /// <p>The Elastic Load Balancing instance's name.</p>
@@ -6727,8 +5672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
-        pub fn layer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_id(inp);
+        pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_id(input.into());
             self
         }
         /// <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
@@ -6739,14 +5684,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateElasticIp`.
     ///
-    /// <p>Disassociates an Elastic IP address from its instance. The address remains registered with
-    /// the stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Disassociates an Elastic IP address from its instance. The address remains registered with the stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateElasticIp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6791,10 +5731,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateElasticIpInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6803,8 +5743,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Elastic IP address.</p>
-        pub fn elastic_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_ip(inp);
+        pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_ip(input.into());
             self
         }
         /// <p>The Elastic IP address.</p>
@@ -6816,12 +5756,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetHostnameSuggestion`.
     ///
     /// <p>Gets a generated host name for the specified layer, based on the current host name theme.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHostnameSuggestion<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6866,10 +5802,10 @@ pub mod fluent_builders {
                 crate::input::GetHostnameSuggestionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6878,8 +5814,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The layer ID.</p>
-        pub fn layer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_id(inp);
+        pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_id(input.into());
             self
         }
         /// <p>The layer ID.</p>
@@ -6894,7 +5830,7 @@ pub mod fluent_builders {
     /// <p>This action can be used only with Windows stacks.</p>
     /// </note>
     /// <p>Grants RDP access to a Windows instance for a specified time period.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GrantAccess<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6939,10 +5875,10 @@ pub mod fluent_builders {
                 crate::input::GrantAccessInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6951,8 +5887,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance's AWS OpsWorks Stacks ID.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance's AWS OpsWorks Stacks ID.</p>
@@ -6961,8 +5897,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
-        pub fn valid_for_in_minutes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.valid_for_in_minutes(inp);
+        pub fn valid_for_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.valid_for_in_minutes(input);
             self
         }
         /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
@@ -6974,7 +5910,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTags`.
     ///
     /// <p>Returns a list of tags that are applied to the specified stack or layer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7019,10 +5955,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7031,8 +5967,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
@@ -7040,26 +5976,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call.
-        /// </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call.
-        /// </p>
+        /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call.
-        /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call.
-        /// </p>
+        /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -7067,14 +5999,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RebootInstance`.
     ///
-    /// <p>Reboots a specified instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
-    /// Stopping, and Rebooting Instances</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Reboots a specified instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7119,10 +6046,10 @@ pub mod fluent_builders {
                 crate::input::RebootInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7131,8 +6058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -7143,18 +6070,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterEcsCluster`.
     ///
-    /// <p>Registers a specified Amazon ECS cluster with a stack. You can register only one
-    /// cluster with a stack. A cluster can be registered with only one stack.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html">
-    /// Resource Management</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see
-    /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">
-    /// Managing User Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Registers a specified Amazon ECS cluster with a stack. You can register only one cluster with a stack. A cluster can be registered with only one stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html"> Resource Management</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterEcsCluster<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7199,10 +6117,10 @@ pub mod fluent_builders {
                 crate::input::RegisterEcsClusterInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7211,8 +6129,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster's ARN.</p>
-        pub fn ecs_cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ecs_cluster_arn(inp);
+        pub fn ecs_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ecs_cluster_arn(input.into());
             self
         }
         /// <p>The cluster's ARN.</p>
@@ -7224,8 +6142,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -7236,15 +6154,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterElasticIp`.
     ///
-    /// <p>Registers an Elastic IP address with a specified stack. An address can be registered with
-    /// only one stack at a time. If the address is already registered, you must first deregister it
-    /// by calling <a>DeregisterElasticIp</a>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Registers an Elastic IP address with a specified stack. An address can be registered with only one stack at a time. If the address is already registered, you must first deregister it by calling <code>DeregisterElasticIp</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterElasticIp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7289,10 +6201,10 @@ pub mod fluent_builders {
                 crate::input::RegisterElasticIpInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7301,8 +6213,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Elastic IP address.</p>
-        pub fn elastic_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_ip(inp);
+        pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_ip(input.into());
             self
         }
         /// <p>The Elastic IP address.</p>
@@ -7311,8 +6223,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -7323,26 +6235,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterInstance`.
     ///
-    /// <p>Registers instances that were created outside of AWS OpsWorks Stacks with a specified stack.</p>
-    /// <note>
-    /// <p>We do not recommend using this action to register instances. The complete registration
-    /// operation includes two tasks: installing the AWS OpsWorks Stacks agent on the instance, and registering
-    /// the instance with the stack. <code>RegisterInstance</code> handles only the second step. You
-    /// should instead use the AWS CLI <code>register</code> command, which performs the entire
-    /// registration operation. For more information,
-    /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
-    /// Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p>
+    /// <p>Registers instances that were created outside of AWS OpsWorks Stacks with a specified stack.</p> <note>
+    /// <p>We do not recommend using this action to register instances. The complete registration operation includes two tasks: installing the AWS OpsWorks Stacks agent on the instance, and registering the instance with the stack. <code>RegisterInstance</code> handles only the second step. You should instead use the AWS CLI <code>register</code> command, which performs the entire registration operation. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"> Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p>
     /// </note>
-    /// <p>Registered instances have the same requirements as instances that are created by using the <a>CreateInstance</a> API.
-    /// For example, registered instances must be running a supported Linux-based operating system, and they must have a supported instance
-    /// type. For more information about requirements for instances that you want to register, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register-registering-preparer.html">
-    /// Preparing the Instance</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Registered instances have the same requirements as instances that are created by using the <code>CreateInstance</code> API. For example, registered instances must be running a supported Linux-based operating system, and they must have a supported instance type. For more information about requirements for instances that you want to register, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register-registering-preparer.html"> Preparing the Instance</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7387,10 +6285,10 @@ pub mod fluent_builders {
                 crate::input::RegisterInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7399,8 +6297,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the stack that the instance is to be registered with.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The ID of the stack that the instance is to be registered with.</p>
@@ -7409,8 +6307,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance's hostname.</p>
-        pub fn hostname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname(inp);
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname(input.into());
             self
         }
         /// <p>The instance's hostname.</p>
@@ -7419,8 +6317,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance's public IP address.</p>
-        pub fn public_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.public_ip(inp);
+        pub fn public_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_ip(input.into());
             self
         }
         /// <p>The instance's public IP address.</p>
@@ -7429,8 +6327,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance's private IP address.</p>
-        pub fn private_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.private_ip(inp);
+        pub fn private_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.private_ip(input.into());
             self
         }
         /// <p>The instance's private IP address.</p>
@@ -7439,8 +6337,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
-        pub fn rsa_public_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rsa_public_key(inp);
+        pub fn rsa_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rsa_public_key(input.into());
             self
         }
         /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
@@ -7452,8 +6350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instances public RSA key fingerprint.</p>
-        pub fn rsa_public_key_fingerprint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rsa_public_key_fingerprint(inp);
+        pub fn rsa_public_key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rsa_public_key_fingerprint(input.into());
             self
         }
         /// <p>The instances public RSA key fingerprint.</p>
@@ -7465,8 +6363,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An InstanceIdentity object that contains the instance's identity.</p>
-        pub fn instance_identity(mut self, inp: crate::model::InstanceIdentity) -> Self {
-            self.inner = self.inner.instance_identity(inp);
+        pub fn instance_identity(mut self, input: crate::model::InstanceIdentity) -> Self {
+            self.inner = self.inner.instance_identity(input);
             self
         }
         /// <p>An InstanceIdentity object that contains the instance's identity.</p>
@@ -7481,12 +6379,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterRdsDbInstance`.
     ///
     /// <p>Registers an Amazon RDS instance with a stack.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterRdsDbInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7531,10 +6425,10 @@ pub mod fluent_builders {
                 crate::input::RegisterRdsDbInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7543,8 +6437,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -7553,8 +6447,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon RDS instance's ARN.</p>
-        pub fn rds_db_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rds_db_instance_arn(inp);
+        pub fn rds_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rds_db_instance_arn(input.into());
             self
         }
         /// <p>The Amazon RDS instance's ARN.</p>
@@ -7566,8 +6460,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database's master user name.</p>
-        pub fn db_user(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_user(inp);
+        pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_user(input.into());
             self
         }
         /// <p>The database's master user name.</p>
@@ -7576,8 +6470,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database password.</p>
-        pub fn db_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_password(inp);
+        pub fn db_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_password(input.into());
             self
         }
         /// <p>The database password.</p>
@@ -7588,15 +6482,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterVolume`.
     ///
-    /// <p>Registers an Amazon EBS volume with a specified stack. A volume can be registered with only one
-    /// stack at a time. If the volume is already registered, you must first deregister it by calling
-    /// <a>DeregisterVolume</a>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Registers an Amazon EBS volume with a specified stack. A volume can be registered with only one stack at a time. If the volume is already registered, you must first deregister it by calling <code>DeregisterVolume</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7641,10 +6529,10 @@ pub mod fluent_builders {
                 crate::input::RegisterVolumeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7653,8 +6541,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon EBS volume ID.</p>
-        pub fn ec2_volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_volume_id(inp);
+        pub fn ec2_volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_volume_id(input.into());
             self
         }
         /// <p>The Amazon EBS volume ID.</p>
@@ -7666,8 +6554,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -7678,18 +6566,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetLoadBasedAutoScaling`.
     ///
-    /// <p>Specify the load-based auto scaling configuration for a specified layer. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
-    /// Load with Time-based and Load-based Instances</a>.</p>
-    /// <note>
+    /// <p>Specify the load-based auto scaling configuration for a specified layer. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p> <note>
     /// <p>To use load-based auto scaling, you must create a set of load-based auto scaling instances. Load-based auto scaling operates only on the instances from that set, so you must ensure that you have created enough instances to handle the maximum anticipated load.</p>
     /// </note>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetLoadBasedAutoScaling<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7734,10 +6615,10 @@ pub mod fluent_builders {
                 crate::input::SetLoadBasedAutoScalingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7746,8 +6627,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The layer ID.</p>
-        pub fn layer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_id(inp);
+        pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_id(input.into());
             self
         }
         /// <p>The layer ID.</p>
@@ -7756,8 +6637,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables load-based auto scaling for the layer.</p>
-        pub fn enable(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable(inp);
+        pub fn enable(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable(input);
             self
         }
         /// <p>Enables load-based auto scaling for the layer.</p>
@@ -7765,16 +6646,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable(input);
             self
         }
-        /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If
-        /// the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified
-        /// number of instances.</p>
-        pub fn up_scaling(mut self, inp: crate::model::AutoScalingThresholds) -> Self {
-            self.inner = self.inner.up_scaling(inp);
+        /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+        pub fn up_scaling(mut self, input: crate::model::AutoScalingThresholds) -> Self {
+            self.inner = self.inner.up_scaling(input);
             self
         }
-        /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If
-        /// the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified
-        /// number of instances.</p>
+        /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
         pub fn set_up_scaling(
             mut self,
             input: std::option::Option<crate::model::AutoScalingThresholds>,
@@ -7782,16 +6659,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_up_scaling(input);
             self
         }
-        /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If
-        /// the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified
-        /// number of instances.</p>
-        pub fn down_scaling(mut self, inp: crate::model::AutoScalingThresholds) -> Self {
-            self.inner = self.inner.down_scaling(inp);
+        /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+        pub fn down_scaling(mut self, input: crate::model::AutoScalingThresholds) -> Self {
+            self.inner = self.inner.down_scaling(input);
             self
         }
-        /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If
-        /// the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified
-        /// number of instances.</p>
+        /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
         pub fn set_down_scaling(
             mut self,
             input: std::option::Option<crate::model::AutoScalingThresholds>,
@@ -7802,14 +6675,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetPermission`.
     ///
-    /// <p>Specifies a user's permissions. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security and
-    /// Permissions</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Specifies a user's permissions. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security and Permissions</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetPermission<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7854,10 +6722,10 @@ pub mod fluent_builders {
                 crate::input::SetPermissionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7866,8 +6734,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -7876,8 +6744,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
-        pub fn iam_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_user_arn(inp);
+        pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_user_arn(input.into());
             self
         }
         /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
@@ -7886,8 +6754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user is allowed to use SSH to communicate with the instance.</p>
-        pub fn allow_ssh(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_ssh(inp);
+        pub fn allow_ssh(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_ssh(input);
             self
         }
         /// <p>The user is allowed to use SSH to communicate with the instance.</p>
@@ -7896,8 +6764,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
-        pub fn allow_sudo(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_sudo(inp);
+        pub fn allow_sudo(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_sudo(input);
             self
         }
         /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
@@ -7907,64 +6775,24 @@ pub mod fluent_builders {
         }
         /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deny</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>show</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deploy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>manage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>iam_only</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>deny</code> </p> </li>
+        /// <li> <p> <code>show</code> </p> </li>
+        /// <li> <p> <code>deploy</code> </p> </li>
+        /// <li> <p> <code>manage</code> </p> </li>
+        /// <li> <p> <code>iam_only</code> </p> </li>
         /// </ul>
         /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-        pub fn level(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.level(inp);
+        pub fn level(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.level(input.into());
             self
         }
         /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deny</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>show</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deploy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>manage</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>iam_only</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>deny</code> </p> </li>
+        /// <li> <p> <code>show</code> </p> </li>
+        /// <li> <p> <code>deploy</code> </p> </li>
+        /// <li> <p> <code>manage</code> </p> </li>
+        /// <li> <p> <code>iam_only</code> </p> </li>
         /// </ul>
         /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
         pub fn set_level(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -7974,15 +6802,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetTimeBasedAutoScaling`.
     ///
-    /// <p>Specify the time-based auto scaling configuration for a specified instance. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing
-    /// Load with Time-based and Load-based Instances</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Specify the time-based auto scaling configuration for a specified instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetTimeBasedAutoScaling<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8027,10 +6849,10 @@ pub mod fluent_builders {
                 crate::input::SetTimeBasedAutoScalingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8039,8 +6861,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -8051,9 +6873,9 @@ pub mod fluent_builders {
         /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
         pub fn auto_scaling_schedule(
             mut self,
-            inp: crate::model::WeeklyAutoScalingSchedule,
+            input: crate::model::WeeklyAutoScalingSchedule,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_schedule(inp);
+            self.inner = self.inner.auto_scaling_schedule(input);
             self
         }
         /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
@@ -8067,14 +6889,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartInstance`.
     ///
-    /// <p>Starts a specified instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
-    /// Stopping, and Rebooting Instances</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Starts a specified instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8119,10 +6936,10 @@ pub mod fluent_builders {
                 crate::input::StartInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8131,8 +6948,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -8144,12 +6961,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartStack`.
     ///
     /// <p>Starts a stack's instances.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8194,10 +7007,10 @@ pub mod fluent_builders {
                 crate::input::StartStackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8206,8 +7019,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -8218,16 +7031,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopInstance`.
     ///
-    /// <p>Stops a specified instance. When you stop a standard instance, the data disappears and must
-    /// be reinstalled when you restart the instance. You can stop an Amazon EBS-backed instance without
-    /// losing data. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting,
-    /// Stopping, and Rebooting Instances</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8272,10 +7078,10 @@ pub mod fluent_builders {
                 crate::input::StopInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8284,8 +7090,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -8293,16 +7099,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed,
-        /// adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance.
-        /// You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
-        pub fn force(mut self, inp: bool) -> Self {
-            self.inner = self.inner.force(inp);
+        /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance. You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
-        /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed,
-        /// adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance.
-        /// You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
+        /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance. You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force(input);
             self
@@ -8311,12 +7113,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopStack`.
     ///
     /// <p>Stops a specified stack.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8361,10 +7159,10 @@ pub mod fluent_builders {
                 crate::input::StopStackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8373,8 +7171,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -8386,7 +7184,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks Stacks. For more information about how tagging works, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a> in the AWS OpsWorks User Guide.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8431,10 +7229,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8443,8 +7241,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
@@ -8458,51 +7256,27 @@ pub mod fluent_builders {
         ///
         /// <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>
         /// <ul>
-        /// <li>
-        /// <p>The key cannot be empty.</p>
-        /// </li>
-        /// <li>
-        /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-        /// </li>
-        /// <li>
-        /// <p>A maximum of 40 tags is allowed for any resource.</p>
-        /// </li>
+        /// <li> <p>The key cannot be empty.</p> </li>
+        /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+        /// <li> <p>A maximum of 40 tags is allowed for any resource.</p> </li>
         /// </ul>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.tags(k, v);
+            self.inner = self.inner.tags(k.into(), v.into());
             self
         }
         /// <p>A map that contains tag keys and tag values that are attached to a stack or layer.</p>
         /// <ul>
-        /// <li>
-        /// <p>The key cannot be empty.</p>
-        /// </li>
-        /// <li>
-        /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p>
-        /// </li>
-        /// <li>
-        /// <p>A maximum of 40 tags is allowed for any resource.</p>
-        /// </li>
+        /// <li> <p>The key cannot be empty.</p> </li>
+        /// <li> <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p> </li>
+        /// <li> <p>Leading and trailing white spaces are trimmed from both the key and value.</p> </li>
+        /// <li> <p>A maximum of 40 tags is allowed for any resource.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -8516,16 +7290,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UnassignInstance`.
     ///
-    /// <p>Unassigns a registered instance from all layers that are using the instance.
-    /// The instance remains in the stack as an unassigned instance, and can be assigned to
-    /// another layer as needed. You cannot use this action with instances that were created
-    /// with AWS OpsWorks Stacks.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must
-    /// have a Manage permissions level for the stack or an attached policy that explicitly
-    /// grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Unassigns a registered instance from all layers that are using the instance. The instance remains in the stack as an unassigned instance, and can be assigned to another layer as needed. You cannot use this action with instances that were created with AWS OpsWorks Stacks.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnassignInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8570,10 +7337,10 @@ pub mod fluent_builders {
                 crate::input::UnassignInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8582,8 +7349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -8594,15 +7361,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UnassignVolume`.
     ///
-    /// <p>Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack. For more
-    /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
-    /// Management</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UnassignVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8647,10 +7408,10 @@ pub mod fluent_builders {
                 crate::input::UnassignVolumeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8659,8 +7420,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The volume ID.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(inp);
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(input.into());
             self
         }
         /// <p>The volume ID.</p>
@@ -8672,7 +7433,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes tags from a specified stack or layer.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8717,10 +7478,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8729,8 +7490,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
@@ -8743,8 +7504,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>A list of the keys of tags to be removed from a stack or layer.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>A list of the keys of tags to be removed from a stack or layer.</p>
@@ -8759,12 +7520,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateApp`.
     ///
     /// <p>Updates a specified app.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or Manage
-    /// permissions level for the stack, or an attached policy that explicitly grants permissions. For
-    /// more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateApp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8809,10 +7566,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8821,8 +7578,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(inp);
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -8831,8 +7588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The app name.</p>
@@ -8841,8 +7598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the app.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the app.</p>
@@ -8855,8 +7612,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
         /// <p>The app's data sources.</p>
-        pub fn data_sources(mut self, inp: impl Into<crate::model::DataSource>) -> Self {
-            self.inner = self.inner.data_sources(inp);
+        pub fn data_sources(mut self, input: crate::model::DataSource) -> Self {
+            self.inner = self.inner.data_sources(input);
             self
         }
         /// <p>The app's data sources.</p>
@@ -8868,8 +7625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app type.</p>
-        pub fn r#type(mut self, inp: crate::model::AppType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::AppType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The app type.</p>
@@ -8878,8 +7635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>Source</code> object that specifies the app repository.</p>
-        pub fn app_source(mut self, inp: crate::model::Source) -> Self {
-            self.inner = self.inner.app_source(inp);
+        pub fn app_source(mut self, input: crate::model::Source) -> Self {
+            self.inner = self.inner.app_source(input);
             self
         }
         /// <p>A <code>Source</code> object that specifies the app repository.</p>
@@ -8891,16 +7648,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
-        /// <p>The app's virtual host settings, with multiple domains separated by commas. For example:
-        /// <code>'www.example.com, example.com'</code>
-        /// </p>
-        pub fn domains(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domains(inp);
+        /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
+        pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domains(input.into());
             self
         }
-        /// <p>The app's virtual host settings, with multiple domains separated by commas. For example:
-        /// <code>'www.example.com, example.com'</code>
-        /// </p>
+        /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
         pub fn set_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8909,8 +7662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether SSL is enabled for the app.</p>
-        pub fn enable_ssl(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_ssl(inp);
+        pub fn enable_ssl(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_ssl(input);
             self
         }
         /// <p>Whether SSL is enabled for the app.</p>
@@ -8919,8 +7672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
-        pub fn ssl_configuration(mut self, inp: crate::model::SslConfiguration) -> Self {
-            self.inner = self.inner.ssl_configuration(inp);
+        pub fn ssl_configuration(mut self, input: crate::model::SslConfiguration) -> Self {
+            self.inner = self.inner.ssl_configuration(input);
             self
         }
         /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
@@ -8938,10 +7691,10 @@ pub mod fluent_builders {
         /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::AppAttributesKeys>,
+            k: crate::model::AppAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k, v.into());
             self
         }
         /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
@@ -8958,22 +7711,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_environment`](Self::set_environment).
         ///
-        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-        /// associated with the app. After you deploy the app, these variables are defined on the
-        /// associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p>
-        /// <note>
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note>
         /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
         /// </note>
-        pub fn environment(mut self, inp: impl Into<crate::model::EnvironmentVariable>) -> Self {
-            self.inner = self.inner.environment(inp);
+        pub fn environment(mut self, input: crate::model::EnvironmentVariable) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
-        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be
-        /// associated with the app. After you deploy the app, these variables are defined on the
-        /// associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p>
-        /// <note>
+        /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
+        /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note>
         /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
         /// </note>
         pub fn set_environment(
@@ -8987,12 +7734,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateElasticIp`.
     ///
     /// <p>Updates a registered Elastic IP address's name. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateElasticIp<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9037,10 +7780,10 @@ pub mod fluent_builders {
                 crate::input::UpdateElasticIpInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9049,8 +7792,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The IP address for which you want to update the name.</p>
-        pub fn elastic_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_ip(inp);
+        pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_ip(input.into());
             self
         }
         /// <p>The IP address for which you want to update the name.</p>
@@ -9059,8 +7802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name.</p>
@@ -9072,12 +7815,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInstance`.
     ///
     /// <p>Updates a specified instance.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9122,10 +7861,10 @@ pub mod fluent_builders {
                 crate::input::UpdateInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9134,8 +7873,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(inp);
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -9148,8 +7887,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
         ///
         /// <p>The instance's layer IDs.</p>
-        pub fn layer_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_ids(inp);
+        pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_ids(input.into());
             self
         }
         /// <p>The instance's layer IDs.</p>
@@ -9160,20 +7899,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_layer_ids(input);
             self
         }
-        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
-        /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
-        /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>. The parameter values that you use to specify the various types are
-        /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
-        pub fn instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_type(inp);
+        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_type(input.into());
             self
         }
-        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
-        /// open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>.
-        /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>. The parameter values that you use to specify the various types are
-        /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
+        /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9182,8 +7913,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
-        pub fn auto_scaling_type(mut self, inp: crate::model::AutoScalingType) -> Self {
-            self.inner = self.inner.auto_scaling_type(inp);
+        pub fn auto_scaling_type(mut self, input: crate::model::AutoScalingType) -> Self {
+            self.inner = self.inner.auto_scaling_type(input);
             self
         }
         /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
@@ -9195,8 +7926,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance host name.</p>
-        pub fn hostname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname(inp);
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname(input.into());
             self
         }
         /// <p>The instance host name.</p>
@@ -9206,97 +7937,49 @@ pub mod fluent_builders {
         }
         /// <p>The instance's operating system, which must be set to one of the following. You cannot update an instance that is using a custom AMI.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-        /// 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        /// <p>The default option is the current Amazon Linux version. If you set this parameter to
-        /// <code>Custom</code>, you must use the AmiId parameter to
-        /// specify the custom AMI that you want to use. For more information about supported operating
-        /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
-        /// <note>
+        /// <p>For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
         /// <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
         /// </note>
-        pub fn os(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.os(inp);
+        pub fn os(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.os(input.into());
             self
         }
         /// <p>The instance's operating system, which must be set to one of the following. You cannot update an instance that is using a custom AMI.</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-        /// 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
         /// </ul>
-        /// <p>For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        /// <p>The default option is the current Amazon Linux version. If you set this parameter to
-        /// <code>Custom</code>, you must use the AmiId parameter to
-        /// specify the custom AMI that you want to use. For more information about supported operating
-        /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
-        /// <note>
+        /// <p>For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
         /// <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
         /// </note>
         pub fn set_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_os(input);
             self
         }
-        /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using.
-        /// You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs.
-        /// </p>
-        pub fn ami_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ami_id(inp);
+        /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs. </p>
+        pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ami_id(input.into());
             self
         }
-        /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using.
-        /// You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs.
-        /// </p>
+        /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs. </p>
         pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ami_id(input);
             self
         }
         /// <p>The instance's Amazon EC2 key name.</p>
-        pub fn ssh_key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_key_name(inp);
+        pub fn ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_key_name(input.into());
             self
         }
         /// <p>The instance's Amazon EC2 key name.</p>
@@ -9304,16 +7987,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ssh_key_name(input);
             self
         }
-        /// <p>The instance architecture. Instance types do not necessarily support both architectures. For
-        /// a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>.</p>
-        pub fn architecture(mut self, inp: crate::model::Architecture) -> Self {
-            self.inner = self.inner.architecture(inp);
+        /// <p>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
+        pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
+            self.inner = self.inner.architecture(input);
             self
         }
-        /// <p>The instance architecture. Instance types do not necessarily support both architectures. For
-        /// a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Families and Types</a>.</p>
+        /// <p>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
         pub fn set_architecture(
             mut self,
             input: std::option::Option<crate::model::Architecture>,
@@ -9321,37 +8000,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_architecture(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
         /// </note>
-        pub fn install_updates_on_boot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.install_updates_on_boot(inp);
+        pub fn install_updates_on_boot(mut self, input: bool) -> Self {
+            self.inner = self.inner.install_updates_on_boot(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
         /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_install_updates_on_boot(input);
             self
         }
         /// <p>This property cannot be updated.</p>
-        pub fn ebs_optimized(mut self, inp: bool) -> Self {
-            self.inner = self.inner.ebs_optimized(inp);
+        pub fn ebs_optimized(mut self, input: bool) -> Self {
+            self.inner = self.inner.ebs_optimized(input);
             self
         }
         /// <p>This property cannot be updated.</p>
@@ -9361,45 +8026,21 @@ pub mod fluent_builders {
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>version_number</i> - Use the specified agent version.
-        /// This value overrides the stack's default setting.
-        /// To update the agent version, you must edit the instance configuration and specify a
-        /// new version.
-        /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
-        /// </li>
+        /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
+        /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
+        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>
         /// <p>AgentVersion cannot be set to Chef 12.2.</p>
-        pub fn agent_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(inp);
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_version(input.into());
             self
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>INHERIT</code> - Use the stack's default agent version setting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>version_number</i> - Use the specified agent version.
-        /// This value overrides the stack's default setting.
-        /// To update the agent version, you must edit the instance configuration and specify a
-        /// new version.
-        /// AWS OpsWorks Stacks then automatically installs that version on the instance.</p>
-        /// </li>
+        /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
+        /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
+        /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>
         /// <p>AgentVersion cannot be set to Chef 12.2.</p>
         pub fn set_agent_version(
             mut self,
@@ -9412,12 +8053,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateLayer`.
     ///
     /// <p>Updates a specified layer.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLayer<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9462,10 +8099,10 @@ pub mod fluent_builders {
                 crate::input::UpdateLayerInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9474,8 +8111,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The layer ID.</p>
-        pub fn layer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_id(inp);
+        pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_id(input.into());
             self
         }
         /// <p>The layer ID.</p>
@@ -9484,8 +8121,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The layer name, which is used by the console.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The layer name, which is used by the console.</p>
@@ -9494,15 +8131,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
-        /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
-        /// </p>
-        pub fn shortname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shortname(inp);
+        /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a> </p>
+        pub fn shortname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shortname(input.into());
             self
         }
         /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
-        /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
-        /// </p>
+        /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a> </p>
         pub fn set_shortname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_shortname(input);
             self
@@ -9514,10 +8149,10 @@ pub mod fluent_builders {
         /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::LayerAttributesKeys>,
+            k: crate::model::LayerAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k, v.into());
             self
         }
         /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
@@ -9530,15 +8165,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attributes(input);
             self
         }
-        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
+        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
         pub fn cloud_watch_logs_configuration(
             mut self,
-            inp: crate::model::CloudWatchLogsConfiguration,
+            input: crate::model::CloudWatchLogsConfiguration,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logs_configuration(inp);
+            self.inner = self.inner.cloud_watch_logs_configuration(input);
             self
         }
-        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
+        /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
         pub fn set_cloud_watch_logs_configuration(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsConfiguration>,
@@ -9546,16 +8181,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cloud_watch_logs_configuration(input);
             self
         }
-        /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more
-        /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
-        pub fn custom_instance_profile_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_instance_profile_arn(inp);
+        /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+        pub fn custom_instance_profile_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.custom_instance_profile_arn(input.into());
             self
         }
-        /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more
-        /// information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_custom_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9563,20 +8197,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_instance_profile_arn(input);
             self
         }
-        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
-        /// to be installed on the layer's instances. For more information, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-        /// Using Custom JSON</a>.
-        /// </p>
-        pub fn custom_json(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_json(inp);
+        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
+        pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_json(input.into());
             self
         }
-        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
-        /// to be installed on the layer's instances. For more information, see
-        /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
-        /// Using Custom JSON</a>.
-        /// </p>
+        /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_custom_json(input);
             self
@@ -9586,8 +8212,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_custom_security_group_ids`](Self::set_custom_security_group_ids).
         ///
         /// <p>An array containing the layer's custom security group IDs.</p>
-        pub fn custom_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_security_group_ids(inp);
+        pub fn custom_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_security_group_ids(input.into());
             self
         }
         /// <p>An array containing the layer's custom security group IDs.</p>
@@ -9603,8 +8229,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_packages`](Self::set_packages).
         ///
         /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
-        pub fn packages(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.packages(inp);
+        pub fn packages(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.packages(input.into());
             self
         }
         /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
@@ -9620,11 +8246,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
         ///
         /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
-        pub fn volume_configurations(
-            mut self,
-            inp: impl Into<crate::model::VolumeConfiguration>,
-        ) -> Self {
-            self.inner = self.inner.volume_configurations(inp);
+        pub fn volume_configurations(mut self, input: crate::model::VolumeConfiguration) -> Self {
+            self.inner = self.inner.volume_configurations(input);
             self
         }
         /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
@@ -9636,8 +8259,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to disable auto healing for the layer.</p>
-        pub fn enable_auto_healing(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_auto_healing(inp);
+        pub fn enable_auto_healing(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_healing(input);
             self
         }
         /// <p>Whether to disable auto healing for the layer.</p>
@@ -9645,37 +8268,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_auto_healing(input);
             self
         }
-        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-        /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
-        pub fn auto_assign_elastic_ips(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_assign_elastic_ips(inp);
+        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+        pub fn auto_assign_elastic_ips(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_assign_elastic_ips(input);
             self
         }
-        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-        /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn set_auto_assign_elastic_ips(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_assign_elastic_ips(input);
             self
         }
-        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-        /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
-        pub fn auto_assign_public_ips(mut self, inp: bool) -> Self {
-            self.inner = self.inner.auto_assign_public_ips(inp);
+        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+        pub fn auto_assign_public_ips(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_assign_public_ips(input);
             self
         }
-        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
-        /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
-        /// a Layer</a>.</p>
+        /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
         pub fn set_auto_assign_public_ips(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_assign_public_ips(input);
             self
         }
         /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
-        pub fn custom_recipes(mut self, inp: crate::model::Recipes) -> Self {
-            self.inner = self.inner.custom_recipes(inp);
+        pub fn custom_recipes(mut self, input: crate::model::Recipes) -> Self {
+            self.inner = self.inner.custom_recipes(input);
             self
         }
         /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
@@ -9686,37 +8301,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_recipes(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
         /// </note>
-        pub fn install_updates_on_boot(mut self, inp: bool) -> Self {
-            self.inner = self.inner.install_updates_on_boot(inp);
+        pub fn install_updates_on_boot(mut self, input: bool) -> Self {
+            self.inner = self.inner.install_updates_on_boot(input);
             self
         }
-        /// <p>Whether to install operating system and package updates when the instance boots. The default
-        /// value is <code>true</code>. To control when updates are installed, set this value to
-        /// <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or
-        /// manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
-        /// instances. </p>
-        /// <note>
-        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
-        /// instances have the latest security updates.</p>
+        /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+        /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
         /// </note>
         pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_install_updates_on_boot(input);
             self
         }
         /// <p>Whether to use Amazon EBS-optimized instances.</p>
-        pub fn use_ebs_optimized_instances(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_ebs_optimized_instances(inp);
+        pub fn use_ebs_optimized_instances(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_ebs_optimized_instances(input);
             self
         }
         /// <p>Whether to use Amazon EBS-optimized instances.</p>
@@ -9727,9 +8328,9 @@ pub mod fluent_builders {
         /// <p></p>
         pub fn lifecycle_event_configuration(
             mut self,
-            inp: crate::model::LifecycleEventConfiguration,
+            input: crate::model::LifecycleEventConfiguration,
         ) -> Self {
-            self.inner = self.inner.lifecycle_event_configuration(inp);
+            self.inner = self.inner.lifecycle_event_configuration(input);
             self
         }
         /// <p></p>
@@ -9744,12 +8345,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMyUserProfile`.
     ///
     /// <p>Updates a user's SSH public key.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have self-management
-    /// enabled or an attached policy that explicitly grants permissions. For more information about user
-    /// permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have self-management enabled or an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMyUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9794,10 +8391,10 @@ pub mod fluent_builders {
                 crate::input::UpdateMyUserProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9806,8 +8403,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user's SSH public key.</p>
-        pub fn ssh_public_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(inp);
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
         /// <p>The user's SSH public key.</p>
@@ -9822,12 +8419,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRdsDbInstance`.
     ///
     /// <p>Updates an Amazon RDS instance.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRdsDbInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9872,10 +8465,10 @@ pub mod fluent_builders {
                 crate::input::UpdateRdsDbInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9884,8 +8477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon RDS instance's ARN.</p>
-        pub fn rds_db_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rds_db_instance_arn(inp);
+        pub fn rds_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rds_db_instance_arn(input.into());
             self
         }
         /// <p>The Amazon RDS instance's ARN.</p>
@@ -9897,8 +8490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The master user name.</p>
-        pub fn db_user(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_user(inp);
+        pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_user(input.into());
             self
         }
         /// <p>The master user name.</p>
@@ -9907,8 +8500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database password.</p>
-        pub fn db_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_password(inp);
+        pub fn db_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_password(input.into());
             self
         }
         /// <p>The database password.</p>
@@ -9920,12 +8513,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateStack`.
     ///
     /// <p>Updates a specified stack.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateStack<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -9970,10 +8559,10 @@ pub mod fluent_builders {
                 crate::input::UpdateStackInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9982,8 +8571,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(inp);
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -9992,8 +8581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stack's new name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The stack's new name.</p>
@@ -10008,10 +8597,10 @@ pub mod fluent_builders {
         /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
         pub fn attributes(
             mut self,
-            k: impl Into<crate::model::StackAttributesKeys>,
+            k: crate::model::StackAttributesKeys,
             v: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.attributes(k, v);
+            self.inner = self.inner.attributes(k, v.into());
             self
         }
         /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
@@ -10025,8 +8614,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Do not use this parameter. You cannot update a stack's service role.</p>
-        pub fn service_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(inp);
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
         /// <p>Do not use this parameter. You cannot update a stack's service role.</p>
@@ -10037,16 +8626,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_role_arn(input);
             self
         }
-        /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
-        pub fn default_instance_profile_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_instance_profile_arn(inp);
+        /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+        pub fn default_instance_profile_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.default_instance_profile_arn(input.into());
             self
         }
-        /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
-        /// For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-        /// Identifiers</a>.</p>
+        /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn set_default_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10056,206 +8644,66 @@ pub mod fluent_builders {
         }
         /// <p>The stack's operating system, which must be set to one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
         /// </ul>
-        /// <p>The default option is the stack's current operating system.
-        /// For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        pub fn default_os(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_os(inp);
+        /// <p>The default option is the stack's current operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        pub fn default_os(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_os(input.into());
             self
         }
         /// <p>The stack's operating system, which must be set to one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-        /// <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CentOS Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Red Hat Enterprise Linux 7</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
-        /// Custom AMIs</a>.</p>
-        /// </li>
+        /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
+        /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
+        /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
+        /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+        /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+        /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
         /// </ul>
-        /// <p>The default option is the stack's current operating system.
-        /// For more information about supported operating systems,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+        /// <p>The default option is the stack's current operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
         pub fn set_default_os(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_default_os(input);
             self
         }
-        /// <p>The stack's new host name theme, with spaces replaced by underscores.
-        /// The theme is used to generate host names for the stack's instances.
-        /// By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the
-        /// layer's short name. The other themes are:</p>
+        /// <p>The stack's new host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Baked_Goods</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Clouds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Europe_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fruits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Greek_Deities_and_Titans</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Legendary_creatures_from_Japan</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Planets_and_Moons</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Roman_Deities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Scottish_Islands</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>US_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Wild_Cats</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Baked_Goods</code> </p> </li>
+        /// <li> <p> <code>Clouds</code> </p> </li>
+        /// <li> <p> <code>Europe_Cities</code> </p> </li>
+        /// <li> <p> <code>Fruits</code> </p> </li>
+        /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+        /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+        /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+        /// <li> <p> <code>Roman_Deities</code> </p> </li>
+        /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+        /// <li> <p> <code>US_Cities</code> </p> </li>
+        /// <li> <p> <code>Wild_Cats</code> </p> </li>
         /// </ul>
-        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-        /// host name based on the current theme.</p>
-        pub fn hostname_theme(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname_theme(inp);
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
+        pub fn hostname_theme(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname_theme(input.into());
             self
         }
-        /// <p>The stack's new host name theme, with spaces replaced by underscores.
-        /// The theme is used to generate host names for the stack's instances.
-        /// By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the
-        /// layer's short name. The other themes are:</p>
+        /// <p>The stack's new host name theme, with spaces replaced by underscores. The theme is used to generate host names for the stack's instances. By default, <code>HostnameTheme</code> is set to <code>Layer_Dependent</code>, which creates host names by appending integers to the layer's short name. The other themes are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Baked_Goods</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Clouds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Europe_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fruits</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Greek_Deities_and_Titans</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Legendary_creatures_from_Japan</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Planets_and_Moons</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Roman_Deities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Scottish_Islands</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>US_Cities</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Wild_Cats</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Baked_Goods</code> </p> </li>
+        /// <li> <p> <code>Clouds</code> </p> </li>
+        /// <li> <p> <code>Europe_Cities</code> </p> </li>
+        /// <li> <p> <code>Fruits</code> </p> </li>
+        /// <li> <p> <code>Greek_Deities_and_Titans</code> </p> </li>
+        /// <li> <p> <code>Legendary_creatures_from_Japan</code> </p> </li>
+        /// <li> <p> <code>Planets_and_Moons</code> </p> </li>
+        /// <li> <p> <code>Roman_Deities</code> </p> </li>
+        /// <li> <p> <code>Scottish_Islands</code> </p> </li>
+        /// <li> <p> <code>US_Cities</code> </p> </li>
+        /// <li> <p> <code>Wild_Cats</code> </p> </li>
         /// </ul>
-        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
-        /// host name based on the current theme.</p>
+        /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
         pub fn set_hostname_theme(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10263,20 +8711,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hostname_theme(input);
             self
         }
-        /// <p>The stack's default Availability Zone, which must be in the
-        /// stack's region. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-        /// be in the same zone. For more information, see <a>CreateStack</a>. </p>
-        pub fn default_availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_availability_zone(inp);
+        /// <p>The stack's default Availability Zone, which must be in the stack's region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see <code>CreateStack</code>. </p>
+        pub fn default_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_availability_zone(input.into());
             self
         }
-        /// <p>The stack's default Availability Zone, which must be in the
-        /// stack's region. For more
-        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
-        /// be in the same zone. For more information, see <a>CreateStack</a>. </p>
+        /// <p>The stack's default Availability Zone, which must be in the stack's region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see <code>CreateStack</code>. </p>
         pub fn set_default_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10284,22 +8724,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_availability_zone(input);
             self
         }
-        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-        /// otherwise when you create the instance. If you also specify a value for
-        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-        /// description. </p>
-        pub fn default_subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_subnet_id(inp);
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
+        pub fn default_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_subnet_id(input.into());
             self
         }
-        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
-        /// <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify
-        /// otherwise when you create the instance. If you also specify a value for
-        /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
-        /// default values and when this parameter is required, see the <code>VpcId</code> parameter
-        /// description. </p>
+        /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
         pub fn set_default_subnet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10308,21 +8738,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>.</p>
-        pub fn custom_json(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_json(inp);
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+        pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_json(input.into());
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format:</p>
-        /// <p>
-        /// <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
-        /// </p>
-        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
-        /// Modify the Stack Configuration Attributes</a>.</p>
+        /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+        /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
         pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_custom_json(input);
             self
@@ -10330,9 +8754,9 @@ pub mod fluent_builders {
         /// <p>The configuration manager. When you update a stack, we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
         pub fn configuration_manager(
             mut self,
-            inp: crate::model::StackConfigurationManager,
+            input: crate::model::StackConfigurationManager,
         ) -> Self {
-            self.inner = self.inner.configuration_manager(inp);
+            self.inner = self.inner.configuration_manager(input);
             self
         }
         /// <p>The configuration manager. When you update a stack, we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
@@ -10343,14 +8767,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_manager(input);
             self
         }
-        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-        pub fn chef_configuration(mut self, inp: crate::model::ChefConfiguration) -> Self {
-            self.inner = self.inner.chef_configuration(inp);
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        pub fn chef_configuration(mut self, input: crate::model::ChefConfiguration) -> Self {
+            self.inner = self.inner.chef_configuration(input);
             self
         }
-        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
-        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_chef_configuration(
             mut self,
             input: std::option::Option<crate::model::ChefConfiguration>,
@@ -10359,8 +8781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether the stack uses custom cookbooks.</p>
-        pub fn use_custom_cookbooks(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_custom_cookbooks(inp);
+        pub fn use_custom_cookbooks(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_custom_cookbooks(input);
             self
         }
         /// <p>Whether the stack uses custom cookbooks.</p>
@@ -10368,14 +8790,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_use_custom_cookbooks(input);
             self
         }
-        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
-        pub fn custom_cookbooks_source(mut self, inp: crate::model::Source) -> Self {
-            self.inner = self.inner.custom_cookbooks_source(inp);
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+        pub fn custom_cookbooks_source(mut self, input: crate::model::Source) -> Self {
+            self.inner = self.inner.custom_cookbooks_source(input);
             self
         }
-        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
+        /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
         pub fn set_custom_cookbooks_source(
             mut self,
             input: std::option::Option<crate::model::Source>,
@@ -10383,26 +8803,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_cookbooks_source(input);
             self
         }
-        /// <p>A default Amazon EC2 key-pair name. The default value is
-        /// <code>none</code>. If you specify a key-pair name,
-        /// AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH
-        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-        /// Access</a>. You can override this setting by specifying a different key pair, or no key
-        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-        /// create an instance</a>. </p>
-        pub fn default_ssh_key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_ssh_key_name(inp);
+        /// <p>A default Amazon EC2 key-pair name. The default value is <code>none</code>. If you specify a key-pair name, AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
+        pub fn default_ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_ssh_key_name(input.into());
             self
         }
-        /// <p>A default Amazon EC2 key-pair name. The default value is
-        /// <code>none</code>. If you specify a key-pair name,
-        /// AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH
-        /// client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to
-        /// Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH
-        /// Access</a>. You can override this setting by specifying a different key pair, or no key
-        /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
-        /// create an instance</a>. </p>
+        /// <p>A default Amazon EC2 key-pair name. The default value is <code>none</code>. If you specify a key-pair name, AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
         pub fn set_default_ssh_key_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10410,14 +8816,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_ssh_key_name(input);
             self
         }
-        /// <p>The default root device type. This value is used by default for all instances in the stack,
-        /// but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-        pub fn default_root_device_type(mut self, inp: crate::model::RootDeviceType) -> Self {
-            self.inner = self.inner.default_root_device_type(inp);
+        /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+        pub fn default_root_device_type(mut self, input: crate::model::RootDeviceType) -> Self {
+            self.inner = self.inner.default_root_device_type(input);
             self
         }
-        /// <p>The default root device type. This value is used by default for all instances in the stack,
-        /// but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
+        /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
         pub fn set_default_root_device_type(
             mut self,
             input: std::option::Option<crate::model::RootDeviceType>,
@@ -10426,41 +8830,23 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-        /// associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to
-        /// provide your own custom security groups
-        /// instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has
-        /// the following settings: </p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to provide your own custom security groups instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
         /// <ul>
-        /// <li>
-        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
-        /// </li>
-        /// <li>
-        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p>
-        /// </li>
+        /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p> </li>
+        /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-        /// Stack</a>.</p>
-        pub fn use_opsworks_security_groups(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_opsworks_security_groups(inp);
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
+        pub fn use_opsworks_security_groups(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_opsworks_security_groups(input);
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
-        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are
-        /// associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to
-        /// provide your own custom security groups
-        /// instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has
-        /// the following settings: </p>
+        /// <p>AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each layer, which are associated with layers by default. <code>UseOpsworksSecurityGroups</code> allows you to provide your own custom security groups instead of using the built-in groups. <code>UseOpsworksSecurityGroups</code> has the following settings: </p>
         /// <ul>
-        /// <li>
-        /// <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p>
-        /// </li>
-        /// <li>
-        /// <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p>
-        /// </li>
+        /// <li> <p>True - AWS OpsWorks Stacks automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security groups with a layer after you create it, but you cannot delete the built-in security group.</p> </li>
+        /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
-        /// Stack</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
         pub fn set_use_opsworks_security_groups(
             mut self,
             input: std::option::Option<bool>,
@@ -10470,42 +8856,22 @@ pub mod fluent_builders {
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-        /// automatically installs new agent versions on the stack's instances as soon as
-        /// they are available.</p>
-        /// </li>
-        /// <li>
-        /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-        /// </li>
+        /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+        /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.
-        /// AgentVersion cannot be set to Chef 12.2.</p>
-        /// <note>
+        /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
-        pub fn agent_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(inp);
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_version(input.into());
             self
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks
-        /// automatically installs new agent versions on the stack's instances as soon as
-        /// they are available.</p>
-        /// </li>
-        /// <li>
-        /// <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p>
-        /// </li>
+        /// <li> <p>Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically installs new agent versions on the stack's instances as soon as they are available.</p> </li>
+        /// <li> <p>Fixed version - Set this parameter to your preferred agent version. To update the agent version, you must edit the stack configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the stack's instances.</p> </li>
         /// </ul>
-        /// <p>The default setting is <code>LATEST</code>. To specify an agent version,
-        /// you must use the complete version number, not the abbreviated number shown on the console.
-        /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.
-        /// AgentVersion cannot be set to Chef 12.2.</p>
-        /// <note>
+        /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
         pub fn set_agent_version(
@@ -10519,11 +8885,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUserProfile`.
     ///
     /// <p>Updates a specified user profile.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy
-    /// that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUserProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10568,10 +8931,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUserProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10580,8 +8943,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
-        pub fn iam_user_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_user_arn(inp);
+        pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_user_arn(input.into());
             self
         }
         /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
@@ -10589,25 +8952,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_iam_user_arn(input);
             self
         }
-        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
-        /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
-        /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
-        /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
-        pub fn ssh_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_username(inp);
+        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+        pub fn ssh_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_username(input.into());
             self
         }
-        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
-        /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
-        /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
-        /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
+        /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
         pub fn set_ssh_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ssh_username(input);
             self
         }
         /// <p>The user's new SSH public key.</p>
-        pub fn ssh_public_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(inp);
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
         /// <p>The user's new SSH public key.</p>
@@ -10618,16 +8975,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ssh_public_key(input);
             self
         }
-        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
-        /// Permissions</a>.</p>
-        pub fn allow_self_management(mut self, inp: bool) -> Self {
-            self.inner = self.inner.allow_self_management(inp);
+        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
+        pub fn allow_self_management(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_self_management(input);
             self
         }
-        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
-        /// Permissions</a>.</p>
+        /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
         pub fn set_allow_self_management(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_self_management(input);
             self
@@ -10636,12 +8989,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVolume`.
     ///
     /// <p>Updates an Amazon EBS volume's name or mount point. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-    /// <p>
-    /// <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
-    /// level for the stack, or an attached policy that explicitly grants permissions. For more
-    /// information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
-    /// Permissions</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVolume<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -10686,10 +9035,10 @@ pub mod fluent_builders {
                 crate::input::UpdateVolumeInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10698,8 +9047,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The volume ID.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(inp);
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(input.into());
             self
         }
         /// <p>The volume ID.</p>
@@ -10708,8 +9057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name.</p>
@@ -10718,8 +9067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new mount point.</p>
-        pub fn mount_point(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mount_point(inp);
+        pub fn mount_point(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mount_point(input.into());
             self
         }
         /// <p>The new mount point.</p>
@@ -10729,6 +9078,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

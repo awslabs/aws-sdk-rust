@@ -902,6 +902,44 @@ pub fn deser_operation_crate_operation_list_tags_for_resource(
     Ok(builder)
 }
 
+pub fn deser_operation_crate_operation_update_outpost(
+    value: &[u8],
+    mut builder: crate::output::update_outpost_output::Builder,
+) -> Result<crate::output::update_outpost_output::Builder, aws_smithy_json::deserialize::Error> {
+    let mut tokens_owned =
+        aws_smithy_json::deserialize::json_token_iter(crate::json_deser::or_empty_doc(value))
+            .peekable();
+    let tokens = &mut tokens_owned;
+    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "Outpost" => {
+                        builder = builder.set_outpost(
+                            crate::json_deser::deser_structure_crate_model_outpost(tokens)?,
+                        );
+                    }
+                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                }
+            }
+            other => {
+                return Err(aws_smithy_json::deserialize::Error::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(aws_smithy_json::deserialize::Error::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
+}
+
 pub fn deser_operation_crate_operation_update_site(
     value: &[u8],
     mut builder: crate::output::update_site_output::Builder,

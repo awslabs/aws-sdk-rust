@@ -34,24 +34,22 @@ pub mod create_app_input {
             self.description = input;
             self
         }
-        /// <p>The name of the service role in the customer's account to be used by AWS SMS.</p>
+        /// <p>The name of the service role in the customer's account to be used by Server Migration Service.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_name = Some(input.into());
             self
         }
-        /// <p>The name of the service role in the customer's account to be used by AWS SMS.</p>
+        /// <p>The name of the service role in the customer's account to be used by Server Migration Service.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// application creation.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// application creation.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -61,9 +59,9 @@ pub mod create_app_input {
         /// To override the contents of this collection use [`set_server_groups`](Self::set_server_groups).
         ///
         /// <p>The server groups to include in the application.</p>
-        pub fn server_groups(mut self, input: impl Into<crate::model::ServerGroup>) -> Self {
+        pub fn server_groups(mut self, input: crate::model::ServerGroup) -> Self {
             let mut v = self.server_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_groups = Some(v);
             self
         }
@@ -80,9 +78,9 @@ pub mod create_app_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to be associated with the application.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -113,7 +111,7 @@ pub mod create_app_input {
 #[doc(hidden)]
 pub type CreateAppInputOperationOutputAlias = crate::operation::CreateApp;
 #[doc(hidden)]
-pub type CreateAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateAppInput {
     /// Consumes the builder and constructs an Operation<[`CreateApp`](crate::operation::CreateApp)>
     #[allow(clippy::let_and_return)]
@@ -124,7 +122,7 @@ impl CreateAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -206,7 +204,7 @@ impl CreateAppInput {
                     "CreateApp",
                     "sms",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -290,14 +288,12 @@ pub mod create_replication_job_input {
             self.run_once = input;
             self
         }
-        /// <p>The license type to be used for the AMI created by a successful replication
-        /// run.</p>
+        /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
             self.license_type = Some(input);
             self
         }
-        /// <p>The license type to be used for the AMI created by a successful replication
-        /// run.</p>
+        /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn set_license_type(
             mut self,
             input: std::option::Option<crate::model::LicenseType>,
@@ -305,12 +301,12 @@ pub mod create_replication_job_input {
             self.license_type = input;
             self
         }
-        /// <p>The name of the IAM role to be used by the AWS SMS.</p>
+        /// <p>The name of the IAM role to be used by the Server Migration Service.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_name = Some(input.into());
             self
         }
-        /// <p>The name of the IAM role to be used by the AWS SMS.</p>
+        /// <p>The name of the IAM role to be used by the Server Migration Service.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -325,14 +321,12 @@ pub mod create_replication_job_input {
             self.description = input;
             self
         }
-        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-        /// maximum number is reached and a new AMI is created.</p>
+        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
         pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
             self.number_of_recent_amis_to_keep = Some(input);
             self
         }
-        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-        /// maximum number is reached and a new AMI is created.</p>
+        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
         pub fn set_number_of_recent_amis_to_keep(
             mut self,
             input: std::option::Option<i32>,
@@ -350,46 +344,26 @@ pub mod create_replication_job_input {
             self.encrypted = input;
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used. </p>
+        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used. </p>
+        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -419,7 +393,7 @@ pub mod create_replication_job_input {
 #[doc(hidden)]
 pub type CreateReplicationJobInputOperationOutputAlias = crate::operation::CreateReplicationJob;
 #[doc(hidden)]
-pub type CreateReplicationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateReplicationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateReplicationJobInput {
     /// Consumes the builder and constructs an Operation<[`CreateReplicationJob`](crate::operation::CreateReplicationJob)>
     #[allow(clippy::let_and_return)]
@@ -430,7 +404,7 @@ impl CreateReplicationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateReplicationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -517,7 +491,7 @@ impl CreateReplicationJobInput {
             "CreateReplicationJob",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -561,26 +535,22 @@ pub mod delete_app_input {
             self.app_id = input;
             self
         }
-        /// <p>Indicates whether to stop all replication jobs corresponding to the servers
-        /// in the application while deleting the application.</p>
+        /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
         pub fn force_stop_app_replication(mut self, input: bool) -> Self {
             self.force_stop_app_replication = Some(input);
             self
         }
-        /// <p>Indicates whether to stop all replication jobs corresponding to the servers
-        /// in the application while deleting the application.</p>
+        /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
         pub fn set_force_stop_app_replication(mut self, input: std::option::Option<bool>) -> Self {
             self.force_stop_app_replication = input;
             self
         }
-        /// <p>Indicates whether to terminate the stack corresponding to the
-        /// application while deleting the application.</p>
+        /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
         pub fn force_terminate_app(mut self, input: bool) -> Self {
             self.force_terminate_app = Some(input);
             self
         }
-        /// <p>Indicates whether to terminate the stack corresponding to the
-        /// application while deleting the application.</p>
+        /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
         pub fn set_force_terminate_app(mut self, input: std::option::Option<bool>) -> Self {
             self.force_terminate_app = input;
             self
@@ -601,7 +571,7 @@ pub mod delete_app_input {
 #[doc(hidden)]
 pub type DeleteAppInputOperationOutputAlias = crate::operation::DeleteApp;
 #[doc(hidden)]
-pub type DeleteAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApp`](crate::operation::DeleteApp)>
     #[allow(clippy::let_and_return)]
@@ -612,7 +582,7 @@ impl DeleteAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -694,7 +664,7 @@ impl DeleteAppInput {
                     "DeleteApp",
                     "sms",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -753,7 +723,8 @@ pub mod delete_app_launch_configuration_input {
 pub type DeleteAppLaunchConfigurationInputOperationOutputAlias =
     crate::operation::DeleteAppLaunchConfiguration;
 #[doc(hidden)]
-pub type DeleteAppLaunchConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppLaunchConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppLaunchConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppLaunchConfiguration`](crate::operation::DeleteAppLaunchConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -764,7 +735,7 @@ impl DeleteAppLaunchConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppLaunchConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -850,7 +821,7 @@ impl DeleteAppLaunchConfigurationInput {
             "DeleteAppLaunchConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -909,7 +880,8 @@ pub mod delete_app_replication_configuration_input {
 pub type DeleteAppReplicationConfigurationInputOperationOutputAlias =
     crate::operation::DeleteAppReplicationConfiguration;
 #[doc(hidden)]
-pub type DeleteAppReplicationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppReplicationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppReplicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppReplicationConfiguration`](crate::operation::DeleteAppReplicationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -920,7 +892,7 @@ impl DeleteAppReplicationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppReplicationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1006,7 +978,7 @@ impl DeleteAppReplicationConfigurationInput {
             "DeleteAppReplicationConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1065,7 +1037,8 @@ pub mod delete_app_validation_configuration_input {
 pub type DeleteAppValidationConfigurationInputOperationOutputAlias =
     crate::operation::DeleteAppValidationConfiguration;
 #[doc(hidden)]
-pub type DeleteAppValidationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteAppValidationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteAppValidationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAppValidationConfiguration`](crate::operation::DeleteAppValidationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1076,7 +1049,7 @@ impl DeleteAppValidationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteAppValidationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1162,7 +1135,7 @@ impl DeleteAppValidationConfigurationInput {
             "DeleteAppValidationConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1223,7 +1196,7 @@ pub mod delete_replication_job_input {
 #[doc(hidden)]
 pub type DeleteReplicationJobInputOperationOutputAlias = crate::operation::DeleteReplicationJob;
 #[doc(hidden)]
-pub type DeleteReplicationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteReplicationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteReplicationJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteReplicationJob`](crate::operation::DeleteReplicationJob)>
     #[allow(clippy::let_and_return)]
@@ -1234,7 +1207,7 @@ impl DeleteReplicationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteReplicationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1321,7 +1294,7 @@ impl DeleteReplicationJobInput {
             "DeleteReplicationJob",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1365,7 +1338,7 @@ pub mod delete_server_catalog_input {
 #[doc(hidden)]
 pub type DeleteServerCatalogInputOperationOutputAlias = crate::operation::DeleteServerCatalog;
 #[doc(hidden)]
-pub type DeleteServerCatalogInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteServerCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteServerCatalogInput {
     /// Consumes the builder and constructs an Operation<[`DeleteServerCatalog`](crate::operation::DeleteServerCatalog)>
     #[allow(clippy::let_and_return)]
@@ -1376,7 +1349,7 @@ impl DeleteServerCatalogInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteServerCatalog,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1461,7 +1434,7 @@ impl DeleteServerCatalogInput {
             "DeleteServerCatalog",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1511,7 +1484,7 @@ pub mod disassociate_connector_input {
 #[doc(hidden)]
 pub type DisassociateConnectorInputOperationOutputAlias = crate::operation::DisassociateConnector;
 #[doc(hidden)]
-pub type DisassociateConnectorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateConnectorInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateConnectorInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateConnector`](crate::operation::DisassociateConnector)>
     #[allow(clippy::let_and_return)]
@@ -1522,7 +1495,7 @@ impl DisassociateConnectorInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateConnector,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1609,7 +1582,7 @@ impl DisassociateConnectorInput {
             "DisassociateConnector",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1682,7 +1655,7 @@ pub mod generate_change_set_input {
 #[doc(hidden)]
 pub type GenerateChangeSetInputOperationOutputAlias = crate::operation::GenerateChangeSet;
 #[doc(hidden)]
-pub type GenerateChangeSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GenerateChangeSetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GenerateChangeSetInput {
     /// Consumes the builder and constructs an Operation<[`GenerateChangeSet`](crate::operation::GenerateChangeSet)>
     #[allow(clippy::let_and_return)]
@@ -1693,7 +1666,7 @@ impl GenerateChangeSetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GenerateChangeSet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1778,7 +1751,7 @@ impl GenerateChangeSetInput {
             "GenerateChangeSet",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1811,22 +1784,22 @@ pub mod generate_template_input {
         pub(crate) template_format: std::option::Option<crate::model::OutputFormat>,
     }
     impl Builder {
-        /// <p>The ID of the application associated with the AWS CloudFormation template.</p>
+        /// <p>The ID of the application associated with the CloudFormation template.</p>
         pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_id = Some(input.into());
             self
         }
-        /// <p>The ID of the application associated with the AWS CloudFormation template.</p>
+        /// <p>The ID of the application associated with the CloudFormation template.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_id = input;
             self
         }
-        /// <p>The format for generating the AWS CloudFormation template.</p>
+        /// <p>The format for generating the CloudFormation template.</p>
         pub fn template_format(mut self, input: crate::model::OutputFormat) -> Self {
             self.template_format = Some(input);
             self
         }
-        /// <p>The format for generating the AWS CloudFormation template.</p>
+        /// <p>The format for generating the CloudFormation template.</p>
         pub fn set_template_format(
             mut self,
             input: std::option::Option<crate::model::OutputFormat>,
@@ -1851,7 +1824,7 @@ pub mod generate_template_input {
 #[doc(hidden)]
 pub type GenerateTemplateInputOperationOutputAlias = crate::operation::GenerateTemplate;
 #[doc(hidden)]
-pub type GenerateTemplateInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GenerateTemplateInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GenerateTemplateInput {
     /// Consumes the builder and constructs an Operation<[`GenerateTemplate`](crate::operation::GenerateTemplate)>
     #[allow(clippy::let_and_return)]
@@ -1862,7 +1835,7 @@ impl GenerateTemplateInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GenerateTemplate,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1947,7 +1920,7 @@ impl GenerateTemplateInput {
             "GenerateTemplate",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2003,7 +1976,7 @@ pub mod get_app_input {
 #[doc(hidden)]
 pub type GetAppInputOperationOutputAlias = crate::operation::GetApp;
 #[doc(hidden)]
-pub type GetAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppInput {
     /// Consumes the builder and constructs an Operation<[`GetApp`](crate::operation::GetApp)>
     #[allow(clippy::let_and_return)]
@@ -2014,7 +1987,7 @@ impl GetAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2093,7 +2066,7 @@ impl GetAppInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::GetApp::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("GetApp", "sms"));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2152,7 +2125,7 @@ pub mod get_app_launch_configuration_input {
 pub type GetAppLaunchConfigurationInputOperationOutputAlias =
     crate::operation::GetAppLaunchConfiguration;
 #[doc(hidden)]
-pub type GetAppLaunchConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppLaunchConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppLaunchConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetAppLaunchConfiguration`](crate::operation::GetAppLaunchConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2163,7 +2136,7 @@ impl GetAppLaunchConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAppLaunchConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2250,7 +2223,7 @@ impl GetAppLaunchConfigurationInput {
             "GetAppLaunchConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2309,7 +2282,8 @@ pub mod get_app_replication_configuration_input {
 pub type GetAppReplicationConfigurationInputOperationOutputAlias =
     crate::operation::GetAppReplicationConfiguration;
 #[doc(hidden)]
-pub type GetAppReplicationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppReplicationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppReplicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetAppReplicationConfiguration`](crate::operation::GetAppReplicationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2320,7 +2294,7 @@ impl GetAppReplicationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAppReplicationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2406,7 +2380,7 @@ impl GetAppReplicationConfigurationInput {
             "GetAppReplicationConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2465,7 +2439,8 @@ pub mod get_app_validation_configuration_input {
 pub type GetAppValidationConfigurationInputOperationOutputAlias =
     crate::operation::GetAppValidationConfiguration;
 #[doc(hidden)]
-pub type GetAppValidationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppValidationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppValidationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetAppValidationConfiguration`](crate::operation::GetAppValidationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -2476,7 +2451,7 @@ impl GetAppValidationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAppValidationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2562,7 +2537,7 @@ impl GetAppValidationConfigurationInput {
             "GetAppValidationConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2620,7 +2595,7 @@ pub mod get_app_validation_output_input {
 #[doc(hidden)]
 pub type GetAppValidationOutputInputOperationOutputAlias = crate::operation::GetAppValidationOutput;
 #[doc(hidden)]
-pub type GetAppValidationOutputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetAppValidationOutputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetAppValidationOutputInput {
     /// Consumes the builder and constructs an Operation<[`GetAppValidationOutput`](crate::operation::GetAppValidationOutput)>
     #[allow(clippy::let_and_return)]
@@ -2631,7 +2606,7 @@ impl GetAppValidationOutputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetAppValidationOutput,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2718,7 +2693,7 @@ impl GetAppValidationOutputInput {
             "GetAppValidationOutput",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2761,16 +2736,12 @@ pub mod get_connectors_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2792,7 +2763,7 @@ pub mod get_connectors_input {
 #[doc(hidden)]
 pub type GetConnectorsInputOperationOutputAlias = crate::operation::GetConnectors;
 #[doc(hidden)]
-pub type GetConnectorsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetConnectorsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetConnectorsInput {
     /// Consumes the builder and constructs an Operation<[`GetConnectors`](crate::operation::GetConnectors)>
     #[allow(clippy::let_and_return)]
@@ -2803,7 +2774,7 @@ impl GetConnectorsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetConnectors,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2887,7 +2858,7 @@ impl GetConnectorsInput {
             "GetConnectors",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2944,16 +2915,12 @@ pub mod get_replication_jobs_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2976,7 +2943,7 @@ pub mod get_replication_jobs_input {
 #[doc(hidden)]
 pub type GetReplicationJobsInputOperationOutputAlias = crate::operation::GetReplicationJobs;
 #[doc(hidden)]
-pub type GetReplicationJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetReplicationJobsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetReplicationJobsInput {
     /// Consumes the builder and constructs an Operation<[`GetReplicationJobs`](crate::operation::GetReplicationJobs)>
     #[allow(clippy::let_and_return)]
@@ -2987,7 +2954,7 @@ impl GetReplicationJobsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReplicationJobs,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3072,7 +3039,7 @@ impl GetReplicationJobsInput {
             "GetReplicationJobs",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3129,16 +3096,12 @@ pub mod get_replication_runs_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3161,7 +3124,7 @@ pub mod get_replication_runs_input {
 #[doc(hidden)]
 pub type GetReplicationRunsInputOperationOutputAlias = crate::operation::GetReplicationRuns;
 #[doc(hidden)]
-pub type GetReplicationRunsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetReplicationRunsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetReplicationRunsInput {
     /// Consumes the builder and constructs an Operation<[`GetReplicationRuns`](crate::operation::GetReplicationRuns)>
     #[allow(clippy::let_and_return)]
@@ -3172,7 +3135,7 @@ impl GetReplicationRunsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetReplicationRuns,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3257,7 +3220,7 @@ impl GetReplicationRunsInput {
             "GetReplicationRuns",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3302,16 +3265,12 @@ pub mod get_servers_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3321,12 +3280,9 @@ pub mod get_servers_input {
         /// To override the contents of this collection use [`set_vm_server_address_list`](Self::set_vm_server_address_list).
         ///
         /// <p>The server addresses.</p>
-        pub fn vm_server_address_list(
-            mut self,
-            input: impl Into<crate::model::VmServerAddress>,
-        ) -> Self {
+        pub fn vm_server_address_list(mut self, input: crate::model::VmServerAddress) -> Self {
             let mut v = self.vm_server_address_list.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.vm_server_address_list = Some(v);
             self
         }
@@ -3356,7 +3312,7 @@ pub mod get_servers_input {
 #[doc(hidden)]
 pub type GetServersInputOperationOutputAlias = crate::operation::GetServers;
 #[doc(hidden)]
-pub type GetServersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetServersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetServersInput {
     /// Consumes the builder and constructs an Operation<[`GetServers`](crate::operation::GetServers)>
     #[allow(clippy::let_and_return)]
@@ -3367,7 +3323,7 @@ impl GetServersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetServers,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3451,7 +3407,7 @@ impl GetServersInput {
             "GetServers",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3483,16 +3439,12 @@ pub mod import_app_catalog_input {
         pub(crate) role_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the service role. If you omit this parameter, we create a service-linked role
-        /// for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy
-        /// and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
+        /// <p>The name of the service role. If you omit this parameter, we create a service-linked role for Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>Migration Hub User Guide</i>.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_name = Some(input.into());
             self
         }
-        /// <p>The name of the service role. If you omit this parameter, we create a service-linked role
-        /// for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy
-        /// and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
+        /// <p>The name of the service role. If you omit this parameter, we create a service-linked role for Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>Migration Hub User Guide</i>.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -3513,7 +3465,7 @@ pub mod import_app_catalog_input {
 #[doc(hidden)]
 pub type ImportAppCatalogInputOperationOutputAlias = crate::operation::ImportAppCatalog;
 #[doc(hidden)]
-pub type ImportAppCatalogInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportAppCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportAppCatalogInput {
     /// Consumes the builder and constructs an Operation<[`ImportAppCatalog`](crate::operation::ImportAppCatalog)>
     #[allow(clippy::let_and_return)]
@@ -3524,7 +3476,7 @@ impl ImportAppCatalogInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportAppCatalog,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3609,7 +3561,7 @@ impl ImportAppCatalogInput {
             "ImportAppCatalog",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3653,7 +3605,7 @@ pub mod import_server_catalog_input {
 #[doc(hidden)]
 pub type ImportServerCatalogInputOperationOutputAlias = crate::operation::ImportServerCatalog;
 #[doc(hidden)]
-pub type ImportServerCatalogInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ImportServerCatalogInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ImportServerCatalogInput {
     /// Consumes the builder and constructs an Operation<[`ImportServerCatalog`](crate::operation::ImportServerCatalog)>
     #[allow(clippy::let_and_return)]
@@ -3664,7 +3616,7 @@ impl ImportServerCatalogInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ImportServerCatalog,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3749,7 +3701,7 @@ impl ImportServerCatalogInput {
             "ImportServerCatalog",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3797,7 +3749,7 @@ pub mod launch_app_input {
 #[doc(hidden)]
 pub type LaunchAppInputOperationOutputAlias = crate::operation::LaunchApp;
 #[doc(hidden)]
-pub type LaunchAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type LaunchAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl LaunchAppInput {
     /// Consumes the builder and constructs an Operation<[`LaunchApp`](crate::operation::LaunchApp)>
     #[allow(clippy::let_and_return)]
@@ -3808,7 +3760,7 @@ impl LaunchAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::LaunchApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3890,7 +3842,7 @@ impl LaunchAppInput {
                     "LaunchApp",
                     "sms",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3953,16 +3905,12 @@ pub mod list_apps_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 100. To
-        /// retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value. </p>
+        /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 100. To
-        /// retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value. </p>
+        /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3983,7 +3931,7 @@ pub mod list_apps_input {
 #[doc(hidden)]
 pub type ListAppsInputOperationOutputAlias = crate::operation::ListApps;
 #[doc(hidden)]
-pub type ListAppsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListAppsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListAppsInput {
     /// Consumes the builder and constructs an Operation<[`ListApps`](crate::operation::ListApps)>
     #[allow(clippy::let_and_return)]
@@ -3994,7 +3942,7 @@ impl ListAppsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListApps,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4073,7 +4021,7 @@ impl ListAppsInput {
         let op =
             aws_smithy_http::operation::Operation::new(request, crate::operation::ListApps::new())
                 .with_metadata(aws_smithy_http::operation::Metadata::new("ListApps", "sms"));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4147,7 +4095,7 @@ pub mod notify_app_validation_output_input {
 pub type NotifyAppValidationOutputInputOperationOutputAlias =
     crate::operation::NotifyAppValidationOutput;
 #[doc(hidden)]
-pub type NotifyAppValidationOutputInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type NotifyAppValidationOutputInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl NotifyAppValidationOutputInput {
     /// Consumes the builder and constructs an Operation<[`NotifyAppValidationOutput`](crate::operation::NotifyAppValidationOutput)>
     #[allow(clippy::let_and_return)]
@@ -4158,7 +4106,7 @@ impl NotifyAppValidationOutputInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::NotifyAppValidationOutput,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4245,7 +4193,7 @@ impl NotifyAppValidationOutputInput {
             "NotifyAppValidationOutput",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4291,14 +4239,12 @@ pub mod put_app_launch_configuration_input {
             self.app_id = input;
             self
         }
-        /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the
-        /// application.</p>
+        /// <p>The name of service role in the customer's account that CloudFormation uses to launch the application.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_name = Some(input.into());
             self
         }
-        /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the
-        /// application.</p>
+        /// <p>The name of service role in the customer's account that CloudFormation uses to launch the application.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -4320,10 +4266,10 @@ pub mod put_app_launch_configuration_input {
         /// <p>Information about the launch configurations for server groups in the application.</p>
         pub fn server_group_launch_configurations(
             mut self,
-            input: impl Into<crate::model::ServerGroupLaunchConfiguration>,
+            input: crate::model::ServerGroupLaunchConfiguration,
         ) -> Self {
             let mut v = self.server_group_launch_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_group_launch_configurations = Some(v);
             self
         }
@@ -4355,7 +4301,7 @@ pub mod put_app_launch_configuration_input {
 pub type PutAppLaunchConfigurationInputOperationOutputAlias =
     crate::operation::PutAppLaunchConfiguration;
 #[doc(hidden)]
-pub type PutAppLaunchConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAppLaunchConfigurationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutAppLaunchConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutAppLaunchConfiguration`](crate::operation::PutAppLaunchConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4366,7 +4312,7 @@ impl PutAppLaunchConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAppLaunchConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4453,7 +4399,7 @@ impl PutAppLaunchConfigurationInput {
             "PutAppLaunchConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4504,12 +4450,12 @@ pub mod put_app_replication_configuration_input {
         /// <p>Information about the replication configurations for server groups in the application.</p>
         pub fn server_group_replication_configurations(
             mut self,
-            input: impl Into<crate::model::ServerGroupReplicationConfiguration>,
+            input: crate::model::ServerGroupReplicationConfiguration,
         ) -> Self {
             let mut v = self
                 .server_group_replication_configurations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_group_replication_configurations = Some(v);
             self
         }
@@ -4542,7 +4488,8 @@ pub mod put_app_replication_configuration_input {
 pub type PutAppReplicationConfigurationInputOperationOutputAlias =
     crate::operation::PutAppReplicationConfiguration;
 #[doc(hidden)]
-pub type PutAppReplicationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAppReplicationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutAppReplicationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutAppReplicationConfiguration`](crate::operation::PutAppReplicationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4553,7 +4500,7 @@ impl PutAppReplicationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAppReplicationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4639,7 +4586,7 @@ impl PutAppReplicationConfigurationInput {
             "PutAppReplicationConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4692,10 +4639,10 @@ pub mod put_app_validation_configuration_input {
         /// <p>The configuration for application validation.</p>
         pub fn app_validation_configurations(
             mut self,
-            input: impl Into<crate::model::AppValidationConfiguration>,
+            input: crate::model::AppValidationConfiguration,
         ) -> Self {
             let mut v = self.app_validation_configurations.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.app_validation_configurations = Some(v);
             self
         }
@@ -4714,12 +4661,12 @@ pub mod put_app_validation_configuration_input {
         /// <p>The configuration for instance validation.</p>
         pub fn server_group_validation_configurations(
             mut self,
-            input: impl Into<crate::model::ServerGroupValidationConfiguration>,
+            input: crate::model::ServerGroupValidationConfiguration,
         ) -> Self {
             let mut v = self
                 .server_group_validation_configurations
                 .unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_group_validation_configurations = Some(v);
             self
         }
@@ -4752,7 +4699,8 @@ pub mod put_app_validation_configuration_input {
 pub type PutAppValidationConfigurationInputOperationOutputAlias =
     crate::operation::PutAppValidationConfiguration;
 #[doc(hidden)]
-pub type PutAppValidationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutAppValidationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl PutAppValidationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`PutAppValidationConfiguration`](crate::operation::PutAppValidationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4763,7 +4711,7 @@ impl PutAppValidationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutAppValidationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4849,7 +4797,7 @@ impl PutAppValidationConfigurationInput {
             "PutAppValidationConfiguration",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4907,7 +4855,7 @@ pub mod start_app_replication_input {
 #[doc(hidden)]
 pub type StartAppReplicationInputOperationOutputAlias = crate::operation::StartAppReplication;
 #[doc(hidden)]
-pub type StartAppReplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartAppReplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartAppReplicationInput {
     /// Consumes the builder and constructs an Operation<[`StartAppReplication`](crate::operation::StartAppReplication)>
     #[allow(clippy::let_and_return)]
@@ -4918,7 +4866,7 @@ impl StartAppReplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartAppReplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5003,7 +4951,7 @@ impl StartAppReplicationInput {
             "StartAppReplication",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5074,7 +5022,7 @@ pub mod start_on_demand_app_replication_input {
 pub type StartOnDemandAppReplicationInputOperationOutputAlias =
     crate::operation::StartOnDemandAppReplication;
 #[doc(hidden)]
-pub type StartOnDemandAppReplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartOnDemandAppReplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartOnDemandAppReplicationInput {
     /// Consumes the builder and constructs an Operation<[`StartOnDemandAppReplication`](crate::operation::StartOnDemandAppReplication)>
     #[allow(clippy::let_and_return)]
@@ -5085,7 +5033,7 @@ impl StartOnDemandAppReplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartOnDemandAppReplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5171,7 +5119,7 @@ impl StartOnDemandAppReplicationInput {
             "StartOnDemandAppReplication",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5245,7 +5193,7 @@ pub mod start_on_demand_replication_run_input {
 pub type StartOnDemandReplicationRunInputOperationOutputAlias =
     crate::operation::StartOnDemandReplicationRun;
 #[doc(hidden)]
-pub type StartOnDemandReplicationRunInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartOnDemandReplicationRunInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StartOnDemandReplicationRunInput {
     /// Consumes the builder and constructs an Operation<[`StartOnDemandReplicationRun`](crate::operation::StartOnDemandReplicationRun)>
     #[allow(clippy::let_and_return)]
@@ -5256,7 +5204,7 @@ impl StartOnDemandReplicationRunInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StartOnDemandReplicationRun,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5342,7 +5290,7 @@ impl StartOnDemandReplicationRunInput {
             "StartOnDemandReplicationRun",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5400,7 +5348,7 @@ pub mod stop_app_replication_input {
 #[doc(hidden)]
 pub type StopAppReplicationInputOperationOutputAlias = crate::operation::StopAppReplication;
 #[doc(hidden)]
-pub type StopAppReplicationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopAppReplicationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl StopAppReplicationInput {
     /// Consumes the builder and constructs an Operation<[`StopAppReplication`](crate::operation::StopAppReplication)>
     #[allow(clippy::let_and_return)]
@@ -5411,7 +5359,7 @@ impl StopAppReplicationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::StopAppReplication,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5496,7 +5444,7 @@ impl StopAppReplicationInput {
             "StopAppReplication",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5554,7 +5502,7 @@ pub mod terminate_app_input {
 #[doc(hidden)]
 pub type TerminateAppInputOperationOutputAlias = crate::operation::TerminateApp;
 #[doc(hidden)]
-pub type TerminateAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TerminateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TerminateAppInput {
     /// Consumes the builder and constructs an Operation<[`TerminateApp`](crate::operation::TerminateApp)>
     #[allow(clippy::let_and_return)]
@@ -5565,7 +5513,7 @@ impl TerminateAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TerminateApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5649,7 +5597,7 @@ impl TerminateAppInput {
             "TerminateApp",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5716,12 +5664,12 @@ pub mod update_app_input {
             self.description = input;
             self
         }
-        /// <p>The name of the service role in the customer's account used by AWS SMS.</p>
+        /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_name = Some(input.into());
             self
         }
-        /// <p>The name of the service role in the customer's account used by AWS SMS.</p>
+        /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -5731,9 +5679,9 @@ pub mod update_app_input {
         /// To override the contents of this collection use [`set_server_groups`](Self::set_server_groups).
         ///
         /// <p>The server groups in the application to update.</p>
-        pub fn server_groups(mut self, input: impl Into<crate::model::ServerGroup>) -> Self {
+        pub fn server_groups(mut self, input: crate::model::ServerGroup) -> Self {
             let mut v = self.server_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.server_groups = Some(v);
             self
         }
@@ -5750,9 +5698,9 @@ pub mod update_app_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the application.</p>
-        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tags = Some(v);
             self
         }
@@ -5783,7 +5731,7 @@ pub mod update_app_input {
 #[doc(hidden)]
 pub type UpdateAppInputOperationOutputAlias = crate::operation::UpdateApp;
 #[doc(hidden)]
-pub type UpdateAppInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAppInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAppInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApp`](crate::operation::UpdateApp)>
     #[allow(clippy::let_and_return)]
@@ -5794,7 +5742,7 @@ impl UpdateAppInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateApp,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5876,7 +5824,7 @@ impl UpdateAppInput {
                     "UpdateApp",
                     "sms",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5955,14 +5903,12 @@ pub mod update_replication_job_input {
             self.next_replication_run_start_time = input;
             self
         }
-        /// <p>The license type to be used for the AMI created by a successful replication
-        /// run.</p>
+        /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
             self.license_type = Some(input);
             self
         }
-        /// <p>The license type to be used for the AMI created by a successful replication
-        /// run.</p>
+        /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn set_license_type(
             mut self,
             input: std::option::Option<crate::model::LicenseType>,
@@ -5970,12 +5916,12 @@ pub mod update_replication_job_input {
             self.license_type = input;
             self
         }
-        /// <p>The name of the IAM role to be used by AWS SMS.</p>
+        /// <p>The name of the IAM role to be used by Server Migration Service.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_name = Some(input.into());
             self
         }
-        /// <p>The name of the IAM role to be used by AWS SMS.</p>
+        /// <p>The name of the IAM role to be used by Server Migration Service.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -5990,14 +5936,12 @@ pub mod update_replication_job_input {
             self.description = input;
             self
         }
-        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-        /// maximum number is reached and a new AMI is created.</p>
+        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
         pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
             self.number_of_recent_amis_to_keep = Some(input);
             self
         }
-        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-        /// maximum number is reached and a new AMI is created.</p>
+        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
         pub fn set_number_of_recent_amis_to_keep(
             mut self,
             input: std::option::Option<i32>,
@@ -6005,58 +5949,36 @@ pub mod update_replication_job_input {
             self.number_of_recent_amis_to_keep = input;
             self
         }
-        /// <p>When true, the replication job produces encrypted AMIs. For more information,
-        /// <code>KmsKeyId</code>.</p>
+        /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.encrypted = Some(input);
             self
         }
-        /// <p>When true, the replication job produces encrypted AMIs. For more information,
-        /// <code>KmsKeyId</code>.</p>
+        /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used.</p>
+        /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used.</p>
+        /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -6085,7 +6007,7 @@ pub mod update_replication_job_input {
 #[doc(hidden)]
 pub type UpdateReplicationJobInputOperationOutputAlias = crate::operation::UpdateReplicationJob;
 #[doc(hidden)]
-pub type UpdateReplicationJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateReplicationJobInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateReplicationJobInput {
     /// Consumes the builder and constructs an Operation<[`UpdateReplicationJob`](crate::operation::UpdateReplicationJob)>
     #[allow(clippy::let_and_return)]
@@ -6096,7 +6018,7 @@ impl UpdateReplicationJobInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateReplicationJob,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -6183,7 +6105,7 @@ impl UpdateReplicationJobInput {
             "UpdateReplicationJob",
             "sms",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -6216,37 +6138,24 @@ pub struct UpdateReplicationJobInput {
     pub frequency: std::option::Option<i32>,
     /// <p>The start time of the next replication run.</p>
     pub next_replication_run_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The license type to be used for the AMI created by a successful replication
-    /// run.</p>
+    /// <p>The license type to be used for the AMI created by a successful replication run.</p>
     pub license_type: std::option::Option<crate::model::LicenseType>,
-    /// <p>The name of the IAM role to be used by AWS SMS.</p>
+    /// <p>The name of the IAM role to be used by Server Migration Service.</p>
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The description of the replication job.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-    /// maximum number is reached and a new AMI is created.</p>
+    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
     pub number_of_recent_amis_to_keep: std::option::Option<i32>,
-    /// <p>When true, the replication job produces encrypted AMIs. For more information,
-    /// <code>KmsKeyId</code>.</p>
+    /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-    /// This value can be any of the following:</p>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>KMS key alias</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p>
-    /// </li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
-    /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-    /// customer's default KMS key for Amazon EBS is used.</p>
+    /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl UpdateReplicationJobInput {
@@ -6264,12 +6173,11 @@ impl UpdateReplicationJobInput {
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.next_replication_run_start_time.as_ref()
     }
-    /// <p>The license type to be used for the AMI created by a successful replication
-    /// run.</p>
+    /// <p>The license type to be used for the AMI created by a successful replication run.</p>
     pub fn license_type(&self) -> std::option::Option<&crate::model::LicenseType> {
         self.license_type.as_ref()
     }
-    /// <p>The name of the IAM role to be used by AWS SMS.</p>
+    /// <p>The name of the IAM role to be used by Server Migration Service.</p>
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
@@ -6277,34 +6185,22 @@ impl UpdateReplicationJobInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-    /// maximum number is reached and a new AMI is created.</p>
+    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
     pub fn number_of_recent_amis_to_keep(&self) -> std::option::Option<i32> {
         self.number_of_recent_amis_to_keep
     }
-    /// <p>When true, the replication job produces encrypted AMIs. For more information,
-    /// <code>KmsKeyId</code>.</p>
+    /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-    /// This value can be any of the following:</p>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>KMS key alias</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p>
-    /// </li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
-    /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-    /// customer's default KMS key for Amazon EBS is used.</p>
+    /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -6341,7 +6237,7 @@ pub struct UpdateAppInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The new description of the application.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The name of the service role in the customer's account used by AWS SMS.</p>
+    /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The server groups in the application to update.</p>
     pub server_groups: std::option::Option<std::vec::Vec<crate::model::ServerGroup>>,
@@ -6361,7 +6257,7 @@ impl UpdateAppInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The name of the service role in the customer's account used by AWS SMS.</p>
+    /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
@@ -6593,8 +6489,7 @@ impl std::fmt::Debug for PutAppReplicationConfigurationInput {
 pub struct PutAppLaunchConfigurationInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
-    /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the
-    /// application.</p>
+    /// <p>The name of service role in the customer's account that CloudFormation uses to launch the application.</p>
     pub role_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
     pub auto_launch: std::option::Option<bool>,
@@ -6607,8 +6502,7 @@ impl PutAppLaunchConfigurationInput {
     pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the
-    /// application.</p>
+    /// <p>The name of service role in the customer's account that CloudFormation uses to launch the application.</p>
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
@@ -6673,9 +6567,7 @@ pub struct ListAppsInput {
     pub app_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. The default value is 100. To
-    /// retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value. </p>
+    /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListAppsInput {
@@ -6687,9 +6579,7 @@ impl ListAppsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. The default value is 100. To
-    /// retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value. </p>
+    /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6740,15 +6630,11 @@ impl std::fmt::Debug for ImportServerCatalogInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportAppCatalogInput {
-    /// <p>The name of the service role. If you omit this parameter, we create a service-linked role
-    /// for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy
-    /// and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
+    /// <p>The name of the service role. If you omit this parameter, we create a service-linked role for Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>Migration Hub User Guide</i>.</p>
     pub role_name: std::option::Option<std::string::String>,
 }
 impl ImportAppCatalogInput {
-    /// <p>The name of the service role. If you omit this parameter, we create a service-linked role
-    /// for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy
-    /// and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
+    /// <p>The name of the service role. If you omit this parameter, we create a service-linked role for Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>Migration Hub User Guide</i>.</p>
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
@@ -6767,9 +6653,7 @@ impl std::fmt::Debug for ImportAppCatalogInput {
 pub struct GetServersInput {
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The server addresses.</p>
     pub vm_server_address_list: std::option::Option<std::vec::Vec<crate::model::VmServerAddress>>,
@@ -6779,9 +6663,7 @@ impl GetServersInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6808,9 +6690,7 @@ pub struct GetReplicationRunsInput {
     pub replication_job_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl GetReplicationRunsInput {
@@ -6822,9 +6702,7 @@ impl GetReplicationRunsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6847,9 +6725,7 @@ pub struct GetReplicationJobsInput {
     pub replication_job_id: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl GetReplicationJobsInput {
@@ -6861,9 +6737,7 @@ impl GetReplicationJobsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6884,9 +6758,7 @@ impl std::fmt::Debug for GetReplicationJobsInput {
 pub struct GetConnectorsInput {
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl GetConnectorsInput {
@@ -6894,9 +6766,7 @@ impl GetConnectorsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. The default value is 50.
-    /// To retrieve the remaining results, make another call with the returned
-    /// <code>NextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7019,17 +6889,17 @@ impl std::fmt::Debug for GetAppInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateTemplateInput {
-    /// <p>The ID of the application associated with the AWS CloudFormation template.</p>
+    /// <p>The ID of the application associated with the CloudFormation template.</p>
     pub app_id: std::option::Option<std::string::String>,
-    /// <p>The format for generating the AWS CloudFormation template.</p>
+    /// <p>The format for generating the CloudFormation template.</p>
     pub template_format: std::option::Option<crate::model::OutputFormat>,
 }
 impl GenerateTemplateInput {
-    /// <p>The ID of the application associated with the AWS CloudFormation template.</p>
+    /// <p>The ID of the application associated with the CloudFormation template.</p>
     pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p>The format for generating the AWS CloudFormation template.</p>
+    /// <p>The format for generating the CloudFormation template.</p>
     pub fn template_format(&self) -> std::option::Option<&crate::model::OutputFormat> {
         self.template_format.as_ref()
     }
@@ -7193,11 +7063,9 @@ impl std::fmt::Debug for DeleteAppLaunchConfigurationInput {
 pub struct DeleteAppInput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether to stop all replication jobs corresponding to the servers
-    /// in the application while deleting the application.</p>
+    /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
     pub force_stop_app_replication: std::option::Option<bool>,
-    /// <p>Indicates whether to terminate the stack corresponding to the
-    /// application while deleting the application.</p>
+    /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
     pub force_terminate_app: std::option::Option<bool>,
 }
 impl DeleteAppInput {
@@ -7205,13 +7073,11 @@ impl DeleteAppInput {
     pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p>Indicates whether to stop all replication jobs corresponding to the servers
-    /// in the application while deleting the application.</p>
+    /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
     pub fn force_stop_app_replication(&self) -> std::option::Option<bool> {
         self.force_stop_app_replication
     }
-    /// <p>Indicates whether to terminate the stack corresponding to the
-    /// application while deleting the application.</p>
+    /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
     pub fn force_terminate_app(&self) -> std::option::Option<bool> {
         self.force_terminate_app
     }
@@ -7241,36 +7107,24 @@ pub struct CreateReplicationJobInput {
     pub frequency: std::option::Option<i32>,
     /// <p>Indicates whether to run the replication job one time.</p>
     pub run_once: std::option::Option<bool>,
-    /// <p>The license type to be used for the AMI created by a successful replication
-    /// run.</p>
+    /// <p>The license type to be used for the AMI created by a successful replication run.</p>
     pub license_type: std::option::Option<crate::model::LicenseType>,
-    /// <p>The name of the IAM role to be used by the AWS SMS.</p>
+    /// <p>The name of the IAM role to be used by the Server Migration Service.</p>
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The description of the replication job.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-    /// maximum number is reached and a new AMI is created.</p>
+    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
     pub number_of_recent_amis_to_keep: std::option::Option<i32>,
     /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-    /// This value can be any of the following:</p>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>KMS key alias</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p>
-    /// </li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
-    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
-    /// customer's default KMS key for Amazon EBS is used. </p>
+    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl CreateReplicationJobInput {
@@ -7290,12 +7144,11 @@ impl CreateReplicationJobInput {
     pub fn run_once(&self) -> std::option::Option<bool> {
         self.run_once
     }
-    /// <p>The license type to be used for the AMI created by a successful replication
-    /// run.</p>
+    /// <p>The license type to be used for the AMI created by a successful replication run.</p>
     pub fn license_type(&self) -> std::option::Option<&crate::model::LicenseType> {
         self.license_type.as_ref()
     }
-    /// <p>The name of the IAM role to be used by the AWS SMS.</p>
+    /// <p>The name of the IAM role to be used by the Server Migration Service.</p>
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
@@ -7303,8 +7156,7 @@ impl CreateReplicationJobInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-    /// maximum number is reached and a new AMI is created.</p>
+    /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
     pub fn number_of_recent_amis_to_keep(&self) -> std::option::Option<i32> {
         self.number_of_recent_amis_to_keep
     }
@@ -7312,24 +7164,14 @@ impl CreateReplicationJobInput {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-    /// This value can be any of the following:</p>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>KMS key alias</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p>
-    /// </li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
-    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
-    /// customer's default KMS key for Amazon EBS is used. </p>
+    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -7362,10 +7204,9 @@ pub struct CreateAppInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the new application</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The name of the service role in the customer's account to be used by AWS SMS.</p>
+    /// <p>The name of the service role in the customer's account to be used by Server Migration Service.</p>
     pub role_name: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of
-    /// application creation.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The server groups to include in the application.</p>
     pub server_groups: std::option::Option<std::vec::Vec<crate::model::ServerGroup>>,
@@ -7381,12 +7222,11 @@ impl CreateAppInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The name of the service role in the customer's account to be used by AWS SMS.</p>
+    /// <p>The name of the service role in the customer's account to be used by Server Migration Service.</p>
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of
-    /// application creation.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }

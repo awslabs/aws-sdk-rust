@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Device Farm
@@ -275,6 +275,7 @@ where
     ///
     /// See [`GetOfferingStatus`](crate::client::fluent_builders::GetOfferingStatus) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetOfferingStatus::into_paginator).
     pub fn get_offering_status(&self) -> fluent_builders::GetOfferingStatus<C, M, R> {
         fluent_builders::GetOfferingStatus::new(self.handle.clone())
     }
@@ -354,6 +355,7 @@ where
     ///
     /// See [`ListArtifacts`](crate::client::fluent_builders::ListArtifacts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListArtifacts::into_paginator).
     pub fn list_artifacts(&self) -> fluent_builders::ListArtifacts<C, M, R> {
         fluent_builders::ListArtifacts::new(self.handle.clone())
     }
@@ -368,6 +370,7 @@ where
     ///
     /// See [`ListDevicePools`](crate::client::fluent_builders::ListDevicePools) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevicePools::into_paginator).
     pub fn list_device_pools(&self) -> fluent_builders::ListDevicePools<C, M, R> {
         fluent_builders::ListDevicePools::new(self.handle.clone())
     }
@@ -375,6 +378,7 @@ where
     ///
     /// See [`ListDevices`](crate::client::fluent_builders::ListDevices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevices::into_paginator).
     pub fn list_devices(&self) -> fluent_builders::ListDevices<C, M, R> {
         fluent_builders::ListDevices::new(self.handle.clone())
     }
@@ -389,6 +393,7 @@ where
     ///
     /// See [`ListJobs`](crate::client::fluent_builders::ListJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
     }
@@ -410,6 +415,7 @@ where
     ///
     /// See [`ListOfferings`](crate::client::fluent_builders::ListOfferings) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOfferings::into_paginator).
     pub fn list_offerings(&self) -> fluent_builders::ListOfferings<C, M, R> {
         fluent_builders::ListOfferings::new(self.handle.clone())
     }
@@ -417,6 +423,7 @@ where
     ///
     /// See [`ListOfferingTransactions`](crate::client::fluent_builders::ListOfferingTransactions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOfferingTransactions::into_paginator).
     pub fn list_offering_transactions(&self) -> fluent_builders::ListOfferingTransactions<C, M, R> {
         fluent_builders::ListOfferingTransactions::new(self.handle.clone())
     }
@@ -424,6 +431,7 @@ where
     ///
     /// See [`ListProjects`](crate::client::fluent_builders::ListProjects) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
     }
@@ -440,6 +448,7 @@ where
     ///
     /// See [`ListRuns`](crate::client::fluent_builders::ListRuns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRuns::into_paginator).
     pub fn list_runs(&self) -> fluent_builders::ListRuns<C, M, R> {
         fluent_builders::ListRuns::new(self.handle.clone())
     }
@@ -447,6 +456,7 @@ where
     ///
     /// See [`ListSamples`](crate::client::fluent_builders::ListSamples) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSamples::into_paginator).
     pub fn list_samples(&self) -> fluent_builders::ListSamples<C, M, R> {
         fluent_builders::ListSamples::new(self.handle.clone())
     }
@@ -454,6 +464,7 @@ where
     ///
     /// See [`ListSuites`](crate::client::fluent_builders::ListSuites) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSuites::into_paginator).
     pub fn list_suites(&self) -> fluent_builders::ListSuites<C, M, R> {
         fluent_builders::ListSuites::new(self.handle.clone())
     }
@@ -468,6 +479,7 @@ where
     ///
     /// See [`ListTestGridProjects`](crate::client::fluent_builders::ListTestGridProjects) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTestGridProjects::into_paginator).
     pub fn list_test_grid_projects(&self) -> fluent_builders::ListTestGridProjects<C, M, R> {
         fluent_builders::ListTestGridProjects::new(self.handle.clone())
     }
@@ -475,6 +487,7 @@ where
     ///
     /// See [`ListTestGridSessionActions`](crate::client::fluent_builders::ListTestGridSessionActions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTestGridSessionActions::into_paginator).
     pub fn list_test_grid_session_actions(
         &self,
     ) -> fluent_builders::ListTestGridSessionActions<C, M, R> {
@@ -484,6 +497,7 @@ where
     ///
     /// See [`ListTestGridSessionArtifacts`](crate::client::fluent_builders::ListTestGridSessionArtifacts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTestGridSessionArtifacts::into_paginator).
     pub fn list_test_grid_session_artifacts(
         &self,
     ) -> fluent_builders::ListTestGridSessionArtifacts<C, M, R> {
@@ -493,6 +507,7 @@ where
     ///
     /// See [`ListTestGridSessions`](crate::client::fluent_builders::ListTestGridSessions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTestGridSessions::into_paginator).
     pub fn list_test_grid_sessions(&self) -> fluent_builders::ListTestGridSessions<C, M, R> {
         fluent_builders::ListTestGridSessions::new(self.handle.clone())
     }
@@ -500,6 +515,7 @@ where
     ///
     /// See [`ListTests`](crate::client::fluent_builders::ListTests) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTests::into_paginator).
     pub fn list_tests(&self) -> fluent_builders::ListTests<C, M, R> {
         fluent_builders::ListTests::new(self.handle.clone())
     }
@@ -507,6 +523,7 @@ where
     ///
     /// See [`ListUniqueProblems`](crate::client::fluent_builders::ListUniqueProblems) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUniqueProblems::into_paginator).
     pub fn list_unique_problems(&self) -> fluent_builders::ListUniqueProblems<C, M, R> {
         fluent_builders::ListUniqueProblems::new(self.handle.clone())
     }
@@ -514,6 +531,7 @@ where
     ///
     /// See [`ListUploads`](crate::client::fluent_builders::ListUploads) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUploads::into_paginator).
     pub fn list_uploads(&self) -> fluent_builders::ListUploads<C, M, R> {
         fluent_builders::ListUploads::new(self.handle.clone())
     }
@@ -648,7 +666,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDevicePool`.
     ///
     /// <p>Creates a device pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDevicePool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -693,10 +711,10 @@ pub mod fluent_builders {
                 crate::input::CreateDevicePoolInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -705,8 +723,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the project for the device pool.</p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>The ARN of the project for the device pool.</p>
@@ -715,8 +733,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device pool's name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The device pool's name.</p>
@@ -725,8 +743,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device pool's description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The device pool's description.</p>
@@ -739,8 +757,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>The device pool's rules.</p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
         /// <p>The device pool's rules.</p>
@@ -751,22 +769,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rules(input);
             self
         }
-        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
-        /// available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many
-        /// devices meet these constraints, your device pool might contain fewer devices than the value for this
-        /// parameter.</p>
-        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-        /// by running tests.</p>
-        pub fn max_devices(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_devices(inp);
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
+        pub fn max_devices(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_devices(input);
             self
         }
-        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
-        /// available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many
-        /// devices meet these constraints, your device pool might contain fewer devices than the value for this
-        /// parameter.</p>
-        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-        /// by running tests.</p>
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
         pub fn set_max_devices(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_devices(input);
             self
@@ -774,9 +784,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateInstanceProfile`.
     ///
-    /// <p>Creates a profile that can be applied to one or more private fleet device
-    /// instances.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a profile that can be applied to one or more private fleet device instances.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstanceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -821,10 +830,10 @@ pub mod fluent_builders {
                 crate::input::CreateInstanceProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -833,8 +842,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your instance profile.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of your instance profile.</p>
@@ -843,8 +852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of your instance profile.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of your instance profile.</p>
@@ -852,14 +861,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
-        /// <code>false</code> for private devices.</p>
-        pub fn package_cleanup(mut self, inp: bool) -> Self {
-            self.inner = self.inner.package_cleanup(inp);
+        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
+        pub fn package_cleanup(mut self, input: bool) -> Self {
+            self.inner = self.inner.package_cleanup(input);
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
-        /// <code>false</code> for private devices.</p>
+        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
         pub fn set_package_cleanup(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_package_cleanup(input);
             self
@@ -868,21 +875,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_exclude_app_packages_from_cleanup`](Self::set_exclude_app_packages_from_cleanup).
         ///
-        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-        /// after a test run.</p>
-        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
-        /// <code>true</code>.</p>
+        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
+        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
         pub fn exclude_app_packages_from_cleanup(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.exclude_app_packages_from_cleanup(inp);
+            self.inner = self.inner.exclude_app_packages_from_cleanup(input.into());
             self
         }
-        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-        /// after a test run.</p>
-        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
-        /// <code>true</code>.</p>
+        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
+        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
         pub fn set_exclude_app_packages_from_cleanup(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -890,14 +893,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_exclude_app_packages_from_cleanup(input);
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
-        /// <code>true</code>.</p>
-        pub fn reboot_after_use(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reboot_after_use(inp);
+        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
+        pub fn reboot_after_use(mut self, input: bool) -> Self {
+            self.inner = self.inner.reboot_after_use(input);
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
-        /// <code>true</code>.</p>
+        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
         pub fn set_reboot_after_use(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reboot_after_use(input);
             self
@@ -906,7 +907,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateNetworkProfile`.
     ///
     /// <p>Creates a network profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNetworkProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -951,10 +952,10 @@ pub mod fluent_builders {
                 crate::input::CreateNetworkProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -962,21 +963,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a
-        /// network profile.</p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a network profile.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a
-        /// network profile.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a network profile.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
             self
         }
         /// <p>The name for the new network profile.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the new network profile.</p>
@@ -985,8 +984,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the network profile.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the network profile.</p>
@@ -995,8 +994,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of network profile to create. Valid values are listed here.</p>
-        pub fn r#type(mut self, inp: crate::model::NetworkProfileType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::NetworkProfileType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of network profile to create. Valid values are listed here.</p>
@@ -1007,93 +1006,79 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
-        pub fn uplink_bandwidth_bits(mut self, inp: i64) -> Self {
-            self.inner = self.inner.uplink_bandwidth_bits(inp);
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+        pub fn uplink_bandwidth_bits(mut self, input: i64) -> Self {
+            self.inner = self.inner.uplink_bandwidth_bits(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn set_uplink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_uplink_bandwidth_bits(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
-        pub fn downlink_bandwidth_bits(mut self, inp: i64) -> Self {
-            self.inner = self.inner.downlink_bandwidth_bits(inp);
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+        pub fn downlink_bandwidth_bits(mut self, input: i64) -> Self {
+            self.inner = self.inner.downlink_bandwidth_bits(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn set_downlink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_downlink_bandwidth_bits(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
-        pub fn uplink_delay_ms(mut self, inp: i64) -> Self {
-            self.inner = self.inner.uplink_delay_ms(inp);
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+        pub fn uplink_delay_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.uplink_delay_ms(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_uplink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_uplink_delay_ms(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
-        pub fn downlink_delay_ms(mut self, inp: i64) -> Self {
-            self.inner = self.inner.downlink_delay_ms(inp);
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+        pub fn downlink_delay_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.downlink_delay_ms(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_downlink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_downlink_delay_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
-        pub fn uplink_jitter_ms(mut self, inp: i64) -> Self {
-            self.inner = self.inner.uplink_jitter_ms(inp);
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+        pub fn uplink_jitter_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.uplink_jitter_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_uplink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_uplink_jitter_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
-        pub fn downlink_jitter_ms(mut self, inp: i64) -> Self {
-            self.inner = self.inner.downlink_jitter_ms(inp);
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+        pub fn downlink_jitter_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.downlink_jitter_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_downlink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_downlink_jitter_ms(input);
             self
         }
-        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-        /// percent.</p>
-        pub fn uplink_loss_percent(mut self, inp: i32) -> Self {
-            self.inner = self.inner.uplink_loss_percent(inp);
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
+        pub fn uplink_loss_percent(mut self, input: i32) -> Self {
+            self.inner = self.inner.uplink_loss_percent(input);
             self
         }
-        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-        /// percent.</p>
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
         pub fn set_uplink_loss_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_uplink_loss_percent(input);
             self
         }
         /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
-        pub fn downlink_loss_percent(mut self, inp: i32) -> Self {
-            self.inner = self.inner.downlink_loss_percent(inp);
+        pub fn downlink_loss_percent(mut self, input: i32) -> Self {
+            self.inner = self.inner.downlink_loss_percent(input);
             self
         }
         /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
@@ -1105,7 +1090,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProject`.
     ///
     /// <p>Creates a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1150,10 +1135,10 @@ pub mod fluent_builders {
                 crate::input::CreateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1162,8 +1147,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The project's name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The project's name.</p>
@@ -1171,14 +1156,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
-        /// specified execution timeout value unless overridden when scheduling a run.</p>
-        pub fn default_job_timeout_minutes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.default_job_timeout_minutes(inp);
+        /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
+        pub fn default_job_timeout_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.default_job_timeout_minutes(input);
             self
         }
-        /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
-        /// specified execution timeout value unless overridden when scheduling a run.</p>
+        /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
         pub fn set_default_job_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_default_job_timeout_minutes(input);
             self
@@ -1187,7 +1170,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRemoteAccessSession`.
     ///
     /// <p>Specifies and starts a remote access session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRemoteAccessSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1232,10 +1215,10 @@ pub mod fluent_builders {
                 crate::input::CreateRemoteAccessSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1243,21 +1226,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote
-        /// access session.</p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote
-        /// access session.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
             self
         }
         /// <p>The ARN of the device for which you want to create a remote access session.</p>
-        pub fn device_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(inp);
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The ARN of the device for which you want to create a remote access session.</p>
@@ -1265,32 +1246,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a
-        /// remote access session.</p>
-        pub fn instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a
-        /// remote access session.</p>
+        /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote
-        /// devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is
-        /// set to <code>true</code>.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
-        pub fn ssh_public_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(inp);
+        /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
-        /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote
-        /// devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is
-        /// set to <code>true</code>.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1298,42 +1271,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ssh_public_key(input);
             self
         }
-        /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in
-        /// your remote access session.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
-        pub fn remote_debug_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.remote_debug_enabled(inp);
+        /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+        pub fn remote_debug_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.remote_debug_enabled(input);
             self
         }
-        /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in
-        /// your remote access session.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn set_remote_debug_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_remote_debug_enabled(input);
             self
         }
-        /// <p>Set to <code>true</code> to enable remote recording for the remote access
-        /// session.</p>
-        pub fn remote_record_enabled(mut self, inp: bool) -> Self {
-            self.inner = self.inner.remote_record_enabled(inp);
+        /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
+        pub fn remote_record_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.remote_record_enabled(input);
             self
         }
-        /// <p>Set to <code>true</code> to enable remote recording for the remote access
-        /// session.</p>
+        /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
         pub fn set_remote_record_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_remote_record_enabled(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access
-        /// session.</p>
-        pub fn remote_record_app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.remote_record_app_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
+        pub fn remote_record_app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remote_record_app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access
-        /// session.</p>
+        /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
         pub fn set_remote_record_app_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1342,8 +1307,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the remote access session to create.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the remote access session to create.</p>
@@ -1351,20 +1316,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should
-        /// pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This
-        /// identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
-        pub fn client_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(inp);
+        /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
-        /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should
-        /// pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This
-        /// identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_id(input);
             self
@@ -1372,9 +1331,9 @@ pub mod fluent_builders {
         /// <p>The configuration information for the remote access session request.</p>
         pub fn configuration(
             mut self,
-            inp: crate::model::CreateRemoteAccessSessionConfiguration,
+            input: crate::model::CreateRemoteAccessSessionConfiguration,
         ) -> Self {
-            self.inner = self.inner.configuration(inp);
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>The configuration information for the remote access session request.</p>
@@ -1387,41 +1346,19 @@ pub mod fluent_builders {
         }
         /// <p>The interaction mode of the remote access session. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and
-        /// rotating the screen. You cannot run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This
-        /// mode has the fastest test execution speed. You can run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
-        /// framework-based tests and watch the screen in this mode.</p>
-        /// </li>
+        /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
         /// </ul>
-        pub fn interaction_mode(mut self, inp: crate::model::InteractionMode) -> Self {
-            self.inner = self.inner.interaction_mode(inp);
+        pub fn interaction_mode(mut self, input: crate::model::InteractionMode) -> Self {
+            self.inner = self.inner.interaction_mode(input);
             self
         }
         /// <p>The interaction mode of the remote access session. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and
-        /// rotating the screen. You cannot run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This
-        /// mode has the fastest test execution speed. You can run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
-        /// framework-based tests and watch the screen in this mode.</p>
-        /// </li>
+        /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
         /// </ul>
         pub fn set_interaction_mode(
             mut self,
@@ -1430,18 +1367,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_interaction_mode(input);
             self
         }
-        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-        /// devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
-        /// </p>
-        pub fn skip_app_resign(mut self, inp: bool) -> Self {
-            self.inner = self.inner.skip_app_resign(inp);
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
+        pub fn skip_app_resign(mut self, input: bool) -> Self {
+            self.inner = self.inner.skip_app_resign(input);
             self
         }
-        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-        /// devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
-        /// </p>
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_skip_app_resign(input);
             self
@@ -1449,9 +1382,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTestGridProject`.
     ///
-    /// <p>Creates a Selenium testing project. Projects are used to track <a>TestGridSession</a>
-    /// instances.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a Selenium testing project. Projects are used to track <code>TestGridSession</code> instances.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTestGridProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1496,10 +1428,10 @@ pub mod fluent_builders {
                 crate::input::CreateTestGridProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1508,8 +1440,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Human-readable name of the Selenium testing project.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Human-readable name of the Selenium testing project.</p>
@@ -1518,8 +1450,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Human-readable description of the project.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Human-readable description of the project.</p>
@@ -1528,8 +1460,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC security groups and subnets that are attached to a project.</p>
-        pub fn vpc_config(mut self, inp: crate::model::TestGridVpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, input: crate::model::TestGridVpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
         /// <p>The VPC security groups and subnets that are attached to a project.</p>
@@ -1543,9 +1475,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTestGridUrl`.
     ///
-    /// <p>Creates a signed, short-term URL that can be passed to a Selenium <code>RemoteWebDriver</code>
-    /// constructor.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a signed, short-term URL that can be passed to a Selenium <code>RemoteWebDriver</code> constructor.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTestGridUrl<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1590,10 +1521,10 @@ pub mod fluent_builders {
                 crate::input::CreateTestGridUrlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1601,21 +1532,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>ARN (from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>) to associate
-        /// with the short-term URL. </p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
-        /// <p>ARN (from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>) to associate
-        /// with the short-term URL. </p>
+        /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
             self
         }
         /// <p>Lifetime, in seconds, of the URL.</p>
-        pub fn expires_in_seconds(mut self, inp: i32) -> Self {
-            self.inner = self.inner.expires_in_seconds(inp);
+        pub fn expires_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.expires_in_seconds(input);
             self
         }
         /// <p>Lifetime, in seconds, of the URL.</p>
@@ -1627,7 +1556,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUpload`.
     ///
     /// <p>Uploads an app or test scripts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1672,10 +1601,10 @@ pub mod fluent_builders {
                 crate::input::CreateUploadInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1684,8 +1613,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the project for the upload.</p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>The ARN of the project for the upload.</p>
@@ -1693,18 +1622,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_arn(input);
             self
         }
-        /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are
-        /// uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an
-        /// Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must
-        /// end with the <code>.zip</code> file extension.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are
-        /// uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an
-        /// Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must
-        /// end with the <code>.zip</code> file extension.</p>
+        /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1712,218 +1635,88 @@ pub mod fluent_builders {
         /// <p>The upload's upload type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>WEB_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>EXTERNAL_DATA</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_SPEC</p>
-        /// </li>
+        /// <li> <p>ANDROID_APP</p> </li>
+        /// <li> <p>IOS_APP</p> </li>
+        /// <li> <p>WEB_APP</p> </li>
+        /// <li> <p>EXTERNAL_DATA</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
         /// </ul>
-        /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS
-        /// Device Farm throws an <code>ArgumentException</code> error.</p>
-        pub fn r#type(mut self, inp: crate::model::UploadType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
+        pub fn r#type(mut self, input: crate::model::UploadType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The upload's upload type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>WEB_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>EXTERNAL_DATA</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_SPEC</p>
-        /// </li>
+        /// <li> <p>ANDROID_APP</p> </li>
+        /// <li> <p>IOS_APP</p> </li>
+        /// <li> <p>WEB_APP</p> </li>
+        /// <li> <p>EXTERNAL_DATA</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
         /// </ul>
-        /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS
-        /// Device Farm throws an <code>ArgumentException</code> error.</p>
+        /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UploadType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
         /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
@@ -1934,9 +1727,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateVPCEConfiguration`.
     ///
-    /// <p>Creates a configuration record in Device Farm for your Amazon Virtual Private Cloud
-    /// (VPC) endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Creates a configuration record in Device Farm for your Amazon Virtual Private Cloud (VPC) endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVPCEConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -1981,10 +1773,10 @@ pub mod fluent_builders {
                 crate::input::CreateVpceConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1992,14 +1784,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The friendly name you give to your VPC endpoint configuration, to manage your
-        /// configurations more easily.</p>
-        pub fn vpce_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpce_configuration_name(inp);
+        /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
+        pub fn vpce_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpce_configuration_name(input.into());
             self
         }
-        /// <p>The friendly name you give to your VPC endpoint configuration, to manage your
-        /// configurations more easily.</p>
+        /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
         pub fn set_vpce_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2008,8 +1798,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
-        pub fn vpce_service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpce_service_name(inp);
+        pub fn vpce_service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpce_service_name(input.into());
             self
         }
         /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
@@ -2020,14 +1810,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpce_service_name(input);
             self
         }
-        /// <p>The DNS name of the service running in your VPC that you want Device Farm to
-        /// test.</p>
-        pub fn service_dns_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_dns_name(inp);
+        /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
+        pub fn service_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_dns_name(input.into());
             self
         }
-        /// <p>The DNS name of the service running in your VPC that you want Device Farm to
-        /// test.</p>
+        /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
         pub fn set_service_dns_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2038,9 +1826,9 @@ pub mod fluent_builders {
         /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
         pub fn vpce_configuration_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.vpce_configuration_description(inp);
+            self.inner = self.inner.vpce_configuration_description(input.into());
             self
         }
         /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
@@ -2054,9 +1842,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDevicePool`.
     ///
-    /// <p>Deletes a device pool given the pool ARN. Does not allow deletion of curated pools
-    /// owned by the system.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Deletes a device pool given the pool ARN. Does not allow deletion of curated pools owned by the system.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDevicePool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2101,10 +1888,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDevicePoolInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2113,8 +1900,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
@@ -2126,7 +1913,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteInstanceProfile`.
     ///
     /// <p>Deletes a profile that can be applied to one or more private device instances.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInstanceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2171,10 +1958,10 @@ pub mod fluent_builders {
                 crate::input::DeleteInstanceProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2182,14 +1969,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to
-        /// delete.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -2198,7 +1983,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteNetworkProfile`.
     ///
     /// <p>Deletes a network profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNetworkProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2243,10 +2028,10 @@ pub mod fluent_builders {
                 crate::input::DeleteNetworkProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2255,8 +2040,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the network profile to delete.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN of the network profile to delete.</p>
@@ -2269,7 +2054,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes an AWS Device Farm project, given the project ARN.</p>
     /// <p> Deleting this resource does not stop an in-progress run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2314,10 +2099,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2326,8 +2111,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.</p>
@@ -2339,7 +2124,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRemoteAccessSession`.
     ///
     /// <p>Deletes a completed remote access session and its results.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRemoteAccessSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2384,10 +2169,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRemoteAccessSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2395,14 +2180,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote
-        /// access.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote
-        /// access.</p>
+        /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -2412,7 +2195,7 @@ pub mod fluent_builders {
     ///
     /// <p>Deletes the run, given the run ARN.</p>
     /// <p> Deleting this resource does not stop an in-progress run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2457,10 +2240,10 @@ pub mod fluent_builders {
                 crate::input::DeleteRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2469,8 +2252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the run to delete.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the run to delete.</p>
@@ -2481,14 +2264,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTestGridProject`.
     ///
-    /// <p> Deletes a Selenium testing project and all content generated under it. </p>
-    /// <important>
+    /// <p> Deletes a Selenium testing project and all content generated under it. </p> <important>
     /// <p>You cannot undo this operation.</p>
-    /// </important>
-    /// <note>
+    /// </important> <note>
     /// <p>You cannot delete a project if it has active sessions.</p>
     /// </note>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTestGridProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2533,10 +2314,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTestGridProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2544,12 +2325,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the project to delete, from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
-        /// <p>The ARN of the project to delete, from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
             self
@@ -2558,7 +2339,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUpload`.
     ///
     /// <p>Deletes an upload given the upload ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2603,10 +2384,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUploadInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2615,8 +2396,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
@@ -2628,7 +2409,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVPCEConfiguration`.
     ///
     /// <p>Deletes a configuration for your Amazon Virtual Private Cloud (VPC) endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVPCEConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2673,10 +2454,10 @@ pub mod fluent_builders {
                 crate::input::DeleteVpceConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2684,14 +2465,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// delete.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -2699,9 +2478,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccountSettings`.
     ///
-    /// <p>Returns the number of unmetered iOS or unmetered Android devices that have been purchased by the
-    /// account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns the number of unmetered iOS or unmetered Android devices that have been purchased by the account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2746,10 +2524,10 @@ pub mod fluent_builders {
                 crate::input::GetAccountSettingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2761,7 +2539,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDevice`.
     ///
     /// <p>Gets information about a unique device type.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevice<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2806,10 +2584,10 @@ pub mod fluent_builders {
                 crate::input::GetDeviceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2818,8 +2596,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The device type's ARN.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The device type's ARN.</p>
@@ -2831,7 +2609,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDeviceInstance`.
     ///
     /// <p>Returns information about a device instance that belongs to a private device fleet.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeviceInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2876,10 +2654,10 @@ pub mod fluent_builders {
                 crate::input::GetDeviceInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2887,14 +2665,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information
-        /// about.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information
-        /// about.</p>
+        /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -2903,7 +2679,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDevicePool`.
     ///
     /// <p>Gets information about a device pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevicePool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -2948,10 +2724,10 @@ pub mod fluent_builders {
                 crate::input::GetDevicePoolInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2960,8 +2736,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The device pool's ARN.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The device pool's ARN.</p>
@@ -2973,7 +2749,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetDevicePoolCompatibility`.
     ///
     /// <p>Gets information about compatibility with a device pool.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevicePoolCompatibility<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3018,10 +2794,10 @@ pub mod fluent_builders {
                 crate::input::GetDevicePoolCompatibilityInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3030,8 +2806,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The device pool's ARN.</p>
-        pub fn device_pool_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_pool_arn(inp);
+        pub fn device_pool_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_pool_arn(input.into());
             self
         }
         /// <p>The device pool's ARN.</p>
@@ -3043,8 +2819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the app that is associated with the specified device pool.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The ARN of the app that is associated with the specified device pool.</p>
@@ -3055,132 +2831,58 @@ pub mod fluent_builders {
         /// <p>The test type for the specified device pool.</p>
         /// <p>Allowed values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ.</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with
-        /// it and capturing screenshots at the same time.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY.</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION.</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION.</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR.</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST.</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI.</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ.</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
+        /// <li> <p>APPIUM_PYTHON.</p> </li>
+        /// <li> <p>APPIUM_NODE.</p> </li>
+        /// <li> <p>APPIUM_RUBY.</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE.</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
+        /// <li> <p>CALABASH.</p> </li>
+        /// <li> <p>INSTRUMENTATION.</p> </li>
+        /// <li> <p>UIAUTOMATION.</p> </li>
+        /// <li> <p>UIAUTOMATOR.</p> </li>
+        /// <li> <p>XCTEST.</p> </li>
+        /// <li> <p>XCTEST_UI.</p> </li>
         /// </ul>
-        pub fn test_type(mut self, inp: crate::model::TestType) -> Self {
-            self.inner = self.inner.test_type(inp);
+        pub fn test_type(mut self, input: crate::model::TestType) -> Self {
+            self.inner = self.inner.test_type(input);
             self
         }
         /// <p>The test type for the specified device pool.</p>
         /// <p>Allowed values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ.</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with
-        /// it and capturing screenshots at the same time.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY.</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION.</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION.</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR.</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST.</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI.</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ.</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
+        /// <li> <p>APPIUM_PYTHON.</p> </li>
+        /// <li> <p>APPIUM_NODE.</p> </li>
+        /// <li> <p>APPIUM_RUBY.</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE.</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
+        /// <li> <p>CALABASH.</p> </li>
+        /// <li> <p>INSTRUMENTATION.</p> </li>
+        /// <li> <p>UIAUTOMATION.</p> </li>
+        /// <li> <p>UIAUTOMATOR.</p> </li>
+        /// <li> <p>XCTEST.</p> </li>
+        /// <li> <p>XCTEST_UI.</p> </li>
         /// </ul>
         pub fn set_test_type(mut self, input: std::option::Option<crate::model::TestType>) -> Self {
             self.inner = self.inner.set_test_type(input);
             self
         }
         /// <p>Information about the uploaded test to be run against the device pool.</p>
-        pub fn test(mut self, inp: crate::model::ScheduleRunTest) -> Self {
-            self.inner = self.inner.test(inp);
+        pub fn test(mut self, input: crate::model::ScheduleRunTest) -> Self {
+            self.inner = self.inner.test(input);
             self
         }
         /// <p>Information about the uploaded test to be run against the device pool.</p>
@@ -3192,8 +2894,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that contains information about the settings for a run.</p>
-        pub fn configuration(mut self, inp: crate::model::ScheduleRunConfiguration) -> Self {
-            self.inner = self.inner.configuration(inp);
+        pub fn configuration(mut self, input: crate::model::ScheduleRunConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>An object that contains information about the settings for a run.</p>
@@ -3208,7 +2910,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetInstanceProfile`.
     ///
     /// <p>Returns information about the specified instance profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInstanceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3253,10 +2955,10 @@ pub mod fluent_builders {
                 crate::input::GetInstanceProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3265,8 +2967,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of an instance profile.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an instance profile.</p>
@@ -3278,7 +2980,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetJob`.
     ///
     /// <p>Gets information about a job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3323,10 +3025,10 @@ pub mod fluent_builders {
                 crate::input::GetJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3335,8 +3037,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The job's ARN.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The job's ARN.</p>
@@ -3348,7 +3050,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetNetworkProfile`.
     ///
     /// <p>Returns information about a network profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetNetworkProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3393,10 +3095,10 @@ pub mod fluent_builders {
                 crate::input::GetNetworkProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3405,8 +3107,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the network profile to return information about.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN of the network profile to return information about.</p>
@@ -3417,11 +3119,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOfferingStatus`.
     ///
-    /// <p>Gets the current status and future status of all offerings purchased by an AWS account. The response
-    /// indicates how many offerings are currently available and the offerings that will be available in the next
-    /// period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the
-    /// operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Gets the current status and future status of all offerings purchased by an AWS account. The response indicates how many offerings are currently available and the offerings that will be available in the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOfferingStatus<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3466,10 +3165,10 @@ pub mod fluent_builders {
                 crate::input::GetOfferingStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3477,14 +3176,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetOfferingStatusPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetOfferingStatusPaginator<C, M, R> {
+            crate::paginator::GetOfferingStatusPaginator::new(self.handle, self.inner)
+        }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3493,7 +3196,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProject`.
     ///
     /// <p>Gets information about a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3538,10 +3241,10 @@ pub mod fluent_builders {
                 crate::input::GetProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3550,8 +3253,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The project's ARN.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The project's ARN.</p>
@@ -3563,7 +3266,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRemoteAccessSession`.
     ///
     /// <p>Returns a link to a currently running remote access session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRemoteAccessSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3608,10 +3311,10 @@ pub mod fluent_builders {
                 crate::input::GetRemoteAccessSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3619,14 +3322,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to
-        /// get session information.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to
-        /// get session information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -3635,7 +3336,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetRun`.
     ///
     /// <p>Gets information about a run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3680,10 +3381,10 @@ pub mod fluent_builders {
                 crate::input::GetRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3692,8 +3393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The run's ARN.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The run's ARN.</p>
@@ -3705,7 +3406,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSuite`.
     ///
     /// <p>Gets information about a suite.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSuite<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3750,10 +3451,10 @@ pub mod fluent_builders {
                 crate::input::GetSuiteInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3762,8 +3463,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The suite's ARN.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The suite's ARN.</p>
@@ -3775,7 +3476,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTest`.
     ///
     /// <p>Gets information about a test.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTest<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3820,10 +3521,10 @@ pub mod fluent_builders {
                 crate::input::GetTestInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3832,8 +3533,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The test's ARN.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The test's ARN.</p>
@@ -3845,7 +3546,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetTestGridProject`.
     ///
     /// <p>Retrieves information about a Selenium testing project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTestGridProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3890,10 +3591,10 @@ pub mod fluent_builders {
                 crate::input::GetTestGridProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3901,12 +3602,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Selenium testing project, from either <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
-        /// <p>The ARN of the Selenium testing project, from either <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
             self
@@ -3914,17 +3615,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTestGridSession`.
     ///
-    /// <p>A session is an instance of a browser created through a <code>RemoteWebDriver</code> with the URL from <a>CreateTestGridUrlResult$url</a>. You can use the following to look up sessions:</p>
+    /// <p>A session is an instance of a browser created through a <code>RemoteWebDriver</code> with the URL from <code>CreateTestGridUrlResult$url</code>. You can use the following to look up sessions:</p>
     /// <ul>
-    /// <li>
-    /// <p>The session ARN (<a>GetTestGridSessionRequest$sessionArn</a>).</p>
-    /// </li>
-    /// <li>
-    /// <p>The project ARN and a session ID (<a>GetTestGridSessionRequest$projectArn</a> and <a>GetTestGridSessionRequest$sessionId</a>).</p>
-    /// </li>
+    /// <li> <p>The session ARN (<code>GetTestGridSessionRequest$sessionArn</code>).</p> </li>
+    /// <li> <p>The project ARN and a session ID (<code>GetTestGridSessionRequest$projectArn</code> and <code>GetTestGridSessionRequest$sessionId</code>).</p> </li>
     /// </ul>
     /// <p></p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTestGridSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -3969,10 +3666,10 @@ pub mod fluent_builders {
                 crate::input::GetTestGridSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3980,19 +3677,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN for the project that this session belongs to. See <a>CreateTestGridProject</a> and <a>ListTestGridProjects</a>.</p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
-        /// <p>The ARN for the project that this session belongs to. See <a>CreateTestGridProject</a> and <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
             self
         }
         /// <p>An ID associated with this session.</p>
-        pub fn session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(inp);
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>An ID associated with this session.</p>
@@ -4000,12 +3697,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_session_id(input);
             self
         }
-        /// <p>An ARN that uniquely identifies a <a>TestGridSession</a>.</p>
-        pub fn session_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_arn(inp);
+        /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
+        pub fn session_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_arn(input.into());
             self
         }
-        /// <p>An ARN that uniquely identifies a <a>TestGridSession</a>.</p>
+        /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
         pub fn set_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_arn(input);
             self
@@ -4014,7 +3711,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUpload`.
     ///
     /// <p>Gets information about an upload.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4059,10 +3756,10 @@ pub mod fluent_builders {
                 crate::input::GetUploadInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4071,8 +3768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The upload's ARN.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The upload's ARN.</p>
@@ -4083,9 +3780,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetVPCEConfiguration`.
     ///
-    /// <p>Returns information about the configuration settings for your Amazon Virtual Private
-    /// Cloud (VPC) endpoint.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about the configuration settings for your Amazon Virtual Private Cloud (VPC) endpoint.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVPCEConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4130,10 +3826,10 @@ pub mod fluent_builders {
                 crate::input::GetVpceConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4141,14 +3837,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// describe.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// describe.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -4156,10 +3850,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `InstallToRemoteAccessSession`.
     ///
-    /// <p>Installs an application to the device in a remote access session. For Android
-    /// applications, the file must be in .apk format. For iOS applications, the file must be in
-    /// .ipa format.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Installs an application to the device in a remote access session. For Android applications, the file must be in .apk format. For iOS applications, the file must be in .ipa format.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InstallToRemoteAccessSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4204,10 +3896,10 @@ pub mod fluent_builders {
                 crate::input::InstallToRemoteAccessSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4215,14 +3907,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are
-        /// requesting information.</p>
-        pub fn remote_access_session_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.remote_access_session_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
+        pub fn remote_access_session_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remote_access_session_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are
-        /// requesting information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
         pub fn set_remote_access_session_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4231,8 +3921,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the app about which you are requesting information.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The ARN of the app about which you are requesting information.</p>
@@ -4244,7 +3934,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListArtifacts`.
     ///
     /// <p>Gets information about artifacts.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListArtifacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4289,10 +3979,10 @@ pub mod fluent_builders {
                 crate::input::ListArtifactsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4300,9 +3990,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListArtifactsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListArtifactsPaginator<C, M, R> {
+            crate::paginator::ListArtifactsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The run, job, suite, or test ARN.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The run, job, suite, or test ARN.</p>
@@ -4313,32 +4009,20 @@ pub mod fluent_builders {
         /// <p>The artifacts' type.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>FILE</p>
-        /// </li>
-        /// <li>
-        /// <p>LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>SCREENSHOT</p>
-        /// </li>
+        /// <li> <p>FILE</p> </li>
+        /// <li> <p>LOG</p> </li>
+        /// <li> <p>SCREENSHOT</p> </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::ArtifactCategory) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::ArtifactCategory) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The artifacts' type.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>FILE</p>
-        /// </li>
-        /// <li>
-        /// <p>LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>SCREENSHOT</p>
-        /// </li>
+        /// <li> <p>FILE</p> </li>
+        /// <li> <p>LOG</p> </li>
+        /// <li> <p>SCREENSHOT</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -4347,14 +4031,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4362,9 +4044,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeviceInstances`.
     ///
-    /// <p>Returns information about the private device instances associated with one or more AWS
-    /// accounts.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about the private device instances associated with one or more AWS accounts.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceInstances<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4409,10 +4090,10 @@ pub mod fluent_builders {
                 crate::input::ListDeviceInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4421,8 +4102,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
@@ -4430,14 +4111,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4446,7 +4125,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDevicePools`.
     ///
     /// <p>Gets information about device pools.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevicePools<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4491,10 +4170,10 @@ pub mod fluent_builders {
                 crate::input::ListDevicePoolsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4502,9 +4181,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDevicePoolsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDevicePoolsPaginator<C, M, R> {
+            crate::paginator::ListDevicePoolsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The project ARN.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The project ARN.</p>
@@ -4515,30 +4200,18 @@ pub mod fluent_builders {
         /// <p>The device pools' type.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>CURATED: A device pool that is created and managed by AWS Device
-        /// Farm.</p>
-        /// </li>
-        /// <li>
-        /// <p>PRIVATE: A device pool that is created and managed by the device pool
-        /// developer.</p>
-        /// </li>
+        /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+        /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::DevicePoolType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::DevicePoolType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The device pools' type.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>CURATED: A device pool that is created and managed by AWS Device
-        /// Farm.</p>
-        /// </li>
-        /// <li>
-        /// <p>PRIVATE: A device pool that is created and managed by the device pool
-        /// developer.</p>
-        /// </li>
+        /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+        /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -4547,14 +4220,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4563,7 +4234,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListDevices`.
     ///
     /// <p>Gets information about unique device types.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevices<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4608,10 +4279,10 @@ pub mod fluent_builders {
                 crate::input::ListDevicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4619,9 +4290,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDevicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDevicesPaginator<C, M, R> {
+            crate::paginator::ListDevicesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the project.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the project.</p>
@@ -4629,14 +4306,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4645,191 +4320,71 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and
-        /// one or more values.</p>
+        /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and one or more values.</p>
         /// <ul>
-        /// <li>
-        /// <p>Attribute: The aspect of a device such as platform or model used as the
-        /// selection criteria in a device filter.</p>
-        /// <p>Allowed values include:</p>
+        /// <li> <p>Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
-        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p>
-        /// </li>
-        /// <li>
-        /// <p>OS_VERSION: The operating system version (for example, 10.3.2).</p>
-        /// </li>
-        /// <li>
-        /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
-        /// </li>
-        /// <li>
-        /// <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// <li>
-        /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p>
-        /// </li>
-        /// <li>
-        /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
-        /// are TRUE or FALSE.</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-        /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>, this attribute is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
-        /// instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_LABELS: The label of the device instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Operator: The filter operator.</p>
+        /// <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li>
+        /// <li> <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>
+        /// <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p> </li>
+        /// <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>
+        /// <li> <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// <li> <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p> </li>
+        /// <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p> </li>
+        /// <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p> </li>
+        /// <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this attribute is ignored.</p> </li>
+        /// <li> <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p> </li>
+        /// <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li>
+        /// <li> <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Operator: The filter operator.</p>
         /// <ul>
-        /// <li>
-        /// <p>The EQUALS operator is available for every attribute except
-        /// INSTANCE_LABELS.</p>
-        /// </li>
-        /// <li>
-        /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-        /// attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
-        /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-        /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-        /// attribute.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Values: An array of one or more filter values.</p>
+        /// <li> <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p> </li>
+        /// <li> <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+        /// <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
+        /// <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION attribute.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Values: An array of one or more filter values.</p>
         /// <ul>
-        /// <li>
-        /// <p>The IN and NOT_IN operators take a values array that has one or more
-        /// elements.</p>
-        /// </li>
-        /// <li>
-        /// <p>The other operators require an array with a single element.</p>
-        /// </li>
-        /// <li>
-        /// <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
+        /// <li> <p>The IN and NOT_IN operators take a values array that has one or more elements.</p> </li>
+        /// <li> <p>The other operators require an array with a single element.</p> </li>
+        /// <li> <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// </ul> </li>
         /// </ul>
-        /// </li>
-        /// </ul>
-        pub fn filters(mut self, inp: impl Into<crate::model::DeviceFilter>) -> Self {
-            self.inner = self.inner.filters(inp);
+        pub fn filters(mut self, input: crate::model::DeviceFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and
-        /// one or more values.</p>
+        /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and one or more values.</p>
         /// <ul>
-        /// <li>
-        /// <p>Attribute: The aspect of a device such as platform or model used as the
-        /// selection criteria in a device filter.</p>
-        /// <p>Allowed values include:</p>
+        /// <li> <p>Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
-        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p>
-        /// </li>
-        /// <li>
-        /// <p>OS_VERSION: The operating system version (for example, 10.3.2).</p>
-        /// </li>
-        /// <li>
-        /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
-        /// </li>
-        /// <li>
-        /// <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// <li>
-        /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p>
-        /// </li>
-        /// <li>
-        /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
-        /// are TRUE or FALSE.</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-        /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>, this attribute is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
-        /// instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_LABELS: The label of the device instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Operator: The filter operator.</p>
+        /// <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li>
+        /// <li> <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>
+        /// <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p> </li>
+        /// <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>
+        /// <li> <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// <li> <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p> </li>
+        /// <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p> </li>
+        /// <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p> </li>
+        /// <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this attribute is ignored.</p> </li>
+        /// <li> <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p> </li>
+        /// <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li>
+        /// <li> <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Operator: The filter operator.</p>
         /// <ul>
-        /// <li>
-        /// <p>The EQUALS operator is available for every attribute except
-        /// INSTANCE_LABELS.</p>
-        /// </li>
-        /// <li>
-        /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-        /// attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
-        /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-        /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-        /// attribute.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Values: An array of one or more filter values.</p>
+        /// <li> <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p> </li>
+        /// <li> <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+        /// <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
+        /// <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION attribute.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Values: An array of one or more filter values.</p>
         /// <ul>
-        /// <li>
-        /// <p>The IN and NOT_IN operators take a values array that has one or more
-        /// elements.</p>
-        /// </li>
-        /// <li>
-        /// <p>The other operators require an array with a single element.</p>
-        /// </li>
-        /// <li>
-        /// <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The IN and NOT_IN operators take a values array that has one or more elements.</p> </li>
+        /// <li> <p>The other operators require an array with a single element.</p> </li>
+        /// <li> <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4842,7 +4397,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListInstanceProfiles`.
     ///
     /// <p>Returns information about all the instance profiles in an AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInstanceProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4887,10 +4442,10 @@ pub mod fluent_builders {
                 crate::input::ListInstanceProfilesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4899,8 +4454,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
@@ -4908,14 +4463,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4924,7 +4477,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJobs`.
     ///
     /// <p>Gets information about jobs for a given test run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -4969,10 +4522,10 @@ pub mod fluent_builders {
                 crate::input::ListJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4980,9 +4533,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListJobsPaginator<C, M, R> {
+            crate::paginator::ListJobsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The run's Amazon Resource Name (ARN).</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The run's Amazon Resource Name (ARN).</p>
@@ -4990,14 +4549,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5006,7 +4563,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListNetworkProfiles`.
     ///
     /// <p>Returns the list of available network profiles.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNetworkProfiles<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5051,10 +4608,10 @@ pub mod fluent_builders {
                 crate::input::ListNetworkProfilesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5062,21 +4619,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network
-        /// profiles.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network
-        /// profiles.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
         }
         /// <p>The type of network profile to return information about. Valid values are listed here.</p>
-        pub fn r#type(mut self, inp: crate::model::NetworkProfileType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::NetworkProfileType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of network profile to return information about. Valid values are listed here.</p>
@@ -5087,14 +4642,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5102,10 +4655,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOfferingPromotions`.
     ///
-    /// <p>Returns a list of offering promotions. Each offering promotion record contains the ID and description
-    /// of the promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke
-    /// the operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you must be able to invoke this operation.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of offering promotions. Each offering promotion record contains the ID and description of the promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke the operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you must be able to invoke this operation.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOfferingPromotions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5150,10 +4701,10 @@ pub mod fluent_builders {
                 crate::input::ListOfferingPromotionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5161,14 +4712,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5176,11 +4725,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOfferings`.
     ///
-    /// <p>Returns a list of products or offerings that the user can manage through the API. Each offering record
-    /// indicates the recurring price per unit and the frequency for that offering. The API returns a
-    /// <code>NotEligible</code> error if the user is not permitted to invoke the operation.  If you must be
-    /// able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of products or offerings that the user can manage through the API. Each offering record indicates the recurring price per unit and the frequency for that offering. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOfferings<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5225,10 +4771,10 @@ pub mod fluent_builders {
                 crate::input::ListOfferingsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5236,14 +4782,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListOfferingsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListOfferingsPaginator<C, M, R> {
+            crate::paginator::ListOfferingsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5251,11 +4801,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOfferingTransactions`.
     ///
-    /// <p>Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS
-    /// account. The list is paginated and ordered by a descending timestamp (most recent transactions are first).
-    /// The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If
-    /// you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS account. The list is paginated and ordered by a descending timestamp (most recent transactions are first). The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOfferingTransactions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5300,10 +4847,10 @@ pub mod fluent_builders {
                 crate::input::ListOfferingTransactionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5311,14 +4858,20 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListOfferingTransactionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListOfferingTransactionsPaginator<C, M, R> {
+            crate::paginator::ListOfferingTransactionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5327,7 +4880,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListProjects`.
     ///
     /// <p>Gets information about projects.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5372,10 +4925,10 @@ pub mod fluent_builders {
                 crate::input::ListProjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5383,28 +4936,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
-        /// returns a list of all projects for the AWS account. You can also specify a project
-        /// ARN.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProjectsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProjectsPaginator<C, M, R> {
+            crate::paginator::ListProjectsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for the AWS account. You can also specify a project ARN.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
-        /// returns a list of all projects for the AWS account. You can also specify a project
-        /// ARN.</p>
+        /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for the AWS account. You can also specify a project ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5413,7 +4966,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRemoteAccessSessions`.
     ///
     /// <p>Returns a list of all currently running remote access sessions.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRemoteAccessSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5458,10 +5011,10 @@ pub mod fluent_builders {
                 crate::input::ListRemoteAccessSessionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5469,26 +5022,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting
-        /// information.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting information.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting
-        /// information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting information.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5497,7 +5046,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListRuns`.
     ///
     /// <p>Gets information about runs, given an AWS Device Farm project ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRuns<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5542,10 +5091,10 @@ pub mod fluent_builders {
                 crate::input::ListRunsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5553,26 +5102,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-        /// runs.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRunsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListRunsPaginator<C, M, R> {
+            crate::paginator::ListRunsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list runs.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-        /// runs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list runs.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5581,7 +5132,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSamples`.
     ///
     /// <p>Gets information about samples, given an AWS Device Farm job ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSamples<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5626,10 +5177,10 @@ pub mod fluent_builders {
                 crate::input::ListSamplesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5637,9 +5188,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSamplesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSamplesPaginator<C, M, R> {
+            crate::paginator::ListSamplesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The Amazon Resource Name (ARN) of the job used to list samples.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the job used to list samples.</p>
@@ -5647,14 +5204,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5663,7 +5218,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListSuites`.
     ///
     /// <p>Gets information about test suites for a given job.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSuites<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5708,10 +5263,10 @@ pub mod fluent_builders {
                 crate::input::ListSuitesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5719,9 +5274,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSuitesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSuitesPaginator<C, M, R> {
+            crate::paginator::ListSuitesPaginator::new(self.handle, self.inner)
+        }
         /// <p>The job's Amazon Resource Name (ARN).</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The job's Amazon Resource Name (ARN).</p>
@@ -5729,14 +5290,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5745,7 +5304,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>List the tags for an AWS Device Farm resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5790,10 +5349,10 @@ pub mod fluent_builders {
                 crate::input::ListTagsForResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5801,20 +5360,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags
-        /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags
-        /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -5823,7 +5374,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTestGridProjects`.
     ///
     /// <p>Gets a list of all Selenium testing projects in your account.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTestGridProjects<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5868,10 +5419,10 @@ pub mod fluent_builders {
                 crate::input::ListTestGridProjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5879,9 +5430,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTestGridProjectsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTestGridProjectsPaginator<C, M, R> {
+            crate::paginator::ListTestGridProjectsPaginator::new(self.handle, self.inner)
+        }
         /// <p>Return no more than this number of results.</p>
-        pub fn max_result(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_result(inp);
+        pub fn max_result(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_result(input);
             self
         }
         /// <p>Return no more than this number of results.</p>
@@ -5890,8 +5447,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>From a response, used to continue a paginated listing. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>From a response, used to continue a paginated listing. </p>
@@ -5902,8 +5459,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTestGridSessionActions`.
     ///
-    /// <p>Returns a list of the actions taken in a <a>TestGridSession</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns a list of the actions taken in a <code>TestGridSession</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTestGridSessionActions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -5948,10 +5505,10 @@ pub mod fluent_builders {
                 crate::input::ListTestGridSessionActionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5959,9 +5516,17 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTestGridSessionActionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListTestGridSessionActionsPaginator<C, M, R> {
+            crate::paginator::ListTestGridSessionActionsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The ARN of the session to retrieve.</p>
-        pub fn session_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_arn(inp);
+        pub fn session_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_arn(input.into());
             self
         }
         /// <p>The ARN of the session to retrieve.</p>
@@ -5970,8 +5535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of sessions to return per response.</p>
-        pub fn max_result(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_result(inp);
+        pub fn max_result(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_result(input);
             self
         }
         /// <p>The maximum number of sessions to return per response.</p>
@@ -5980,8 +5545,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -5993,7 +5558,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTestGridSessionArtifacts`.
     ///
     /// <p>Retrieves a list of artifacts created during the session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTestGridSessionArtifacts<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6038,10 +5603,10 @@ pub mod fluent_builders {
                 crate::input::ListTestGridSessionArtifactsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6049,19 +5614,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of a <a>TestGridSession</a>. </p>
-        pub fn session_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTestGridSessionArtifactsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListTestGridSessionArtifactsPaginator<C, M, R> {
+            crate::paginator::ListTestGridSessionArtifactsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The ARN of a <code>TestGridSession</code>. </p>
+        pub fn session_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_arn(input.into());
             self
         }
-        /// <p>The ARN of a <a>TestGridSession</a>. </p>
+        /// <p>The ARN of a <code>TestGridSession</code>. </p>
         pub fn set_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_arn(input);
             self
         }
         /// <p>Limit results to a specified type of artifact.</p>
-        pub fn r#type(mut self, inp: crate::model::TestGridSessionArtifactCategory) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::TestGridSessionArtifactCategory) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>Limit results to a specified type of artifact.</p>
@@ -6073,8 +5646,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned by a request.</p>
-        pub fn max_result(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_result(inp);
+        pub fn max_result(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_result(input);
             self
         }
         /// <p>The maximum number of results to be returned by a request.</p>
@@ -6083,8 +5656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -6095,8 +5668,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTestGridSessions`.
     ///
-    /// <p>Retrieves a list of sessions for a <a>TestGridProject</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Retrieves a list of sessions for a <code>TestGridProject</code>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTestGridSessions<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6141,10 +5714,10 @@ pub mod fluent_builders {
                 crate::input::ListTestGridSessionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6152,19 +5725,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>ARN of a <a>TestGridProject</a>.</p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTestGridSessionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTestGridSessionsPaginator<C, M, R> {
+            crate::paginator::ListTestGridSessionsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>ARN of a <code>TestGridProject</code>.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
-        /// <p>ARN of a <a>TestGridProject</a>.</p>
+        /// <p>ARN of a <code>TestGridProject</code>.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
             self
         }
         /// <p>Return only sessions in this state.</p>
-        pub fn status(mut self, inp: crate::model::TestGridSessionStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::TestGridSessionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>Return only sessions in this state.</p>
@@ -6176,8 +5755,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Return only sessions created after this time.</p>
-        pub fn creation_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>Return only sessions created after this time.</p>
@@ -6188,12 +5767,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p>Return only  sessions created before this time.</p>
-        pub fn creation_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        /// <p>Return only sessions created before this time.</p>
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>Return only  sessions created before this time.</p>
+        /// <p>Return only sessions created before this time.</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6202,8 +5781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Return only sessions that ended after this time.</p>
-        pub fn end_time_after(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time_after(inp);
+        pub fn end_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time_after(input);
             self
         }
         /// <p>Return only sessions that ended after this time.</p>
@@ -6215,8 +5794,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Return only sessions that ended before this time.</p>
-        pub fn end_time_before(mut self, inp: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time_before(inp);
+        pub fn end_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time_before(input);
             self
         }
         /// <p>Return only sessions that ended before this time.</p>
@@ -6228,8 +5807,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Return only this many results at a time.</p>
-        pub fn max_result(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_result(inp);
+        pub fn max_result(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_result(input);
             self
         }
         /// <p>Return only this many results at a time.</p>
@@ -6238,8 +5817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -6251,7 +5830,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTests`.
     ///
     /// <p>Gets information about tests in a given test suite.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTests<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6296,10 +5875,10 @@ pub mod fluent_builders {
                 crate::input::ListTestsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6307,9 +5886,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTestsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTestsPaginator<C, M, R> {
+            crate::paginator::ListTestsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The test suite's Amazon Resource Name (ARN).</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The test suite's Amazon Resource Name (ARN).</p>
@@ -6317,14 +5902,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6333,11 +5916,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUniqueProblems`.
     ///
     /// <p>Gets information about unique problems, such as exceptions or crashes.</p>
-    /// <p>Unique problems are defined as a single instance of an error across a run, job, or suite. For example,
-    /// if a call in your application consistently raises an exception (<code>OutOfBoundsException in
-    /// MyActivity.java:386</code>), <code>ListUniqueProblems</code> returns a single entry instead of many
-    /// individual entries for that exception.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Unique problems are defined as a single instance of an error across a run, job, or suite. For example, if a call in your application consistently raises an exception (<code>OutOfBoundsException in MyActivity.java:386</code>), <code>ListUniqueProblems</code> returns a single entry instead of many individual entries for that exception.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUniqueProblems<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6382,10 +5962,10 @@ pub mod fluent_builders {
                 crate::input::ListUniqueProblemsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6393,9 +5973,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListUniqueProblemsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListUniqueProblemsPaginator<C, M, R> {
+            crate::paginator::ListUniqueProblemsPaginator::new(self.handle, self.inner)
+        }
         /// <p>The unique problems' ARNs.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The unique problems' ARNs.</p>
@@ -6403,14 +5989,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6419,7 +6003,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUploads`.
     ///
     /// <p>Gets information about uploads, given an AWS Device Farm project ARN.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUploads<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6464,10 +6048,10 @@ pub mod fluent_builders {
                 crate::input::ListUploadsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6475,14 +6059,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-        /// uploads.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListUploadsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListUploadsPaginator<C, M, R> {
+            crate::paginator::ListUploadsPaginator::new(self.handle, self.inner)
+        }
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-        /// uploads.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -6490,219 +6078,89 @@ pub mod fluent_builders {
         /// <p>The type of upload.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>WEB_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>EXTERNAL_DATA</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p> APPIUM_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_SPEC</p>
-        /// </li>
+        /// <li> <p>ANDROID_APP</p> </li>
+        /// <li> <p>IOS_APP</p> </li>
+        /// <li> <p>WEB_APP</p> </li>
+        /// <li> <p>EXTERNAL_DATA</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+        /// <li> <p> APPIUM_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::UploadType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::UploadType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of upload.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>WEB_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>EXTERNAL_DATA</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p> APPIUM_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_SPEC</p>
-        /// </li>
+        /// <li> <p>ANDROID_APP</p> </li>
+        /// <li> <p>IOS_APP</p> </li>
+        /// <li> <p>WEB_APP</p> </li>
+        /// <li> <p>EXTERNAL_DATA</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+        /// <li> <p> APPIUM_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UploadType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6710,9 +6168,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListVPCEConfigurations`.
     ///
-    /// <p>Returns information about all Amazon Virtual Private Cloud (VPC) endpoint
-    /// configurations in the AWS account.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Returns information about all Amazon Virtual Private Cloud (VPC) endpoint configurations in the AWS account.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVPCEConfigurations<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6757,10 +6214,10 @@ pub mod fluent_builders {
                 crate::input::ListVpceConfigurationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6769,8 +6226,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
@@ -6778,14 +6235,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6793,11 +6248,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PurchaseOffering`.
     ///
-    /// <p>Immediately purchases offerings for an AWS account. Offerings renew with the latest total purchased
-    /// quantity for an offering, unless the renewal was overridden. The API returns a <code>NotEligible</code>
-    /// error if the user is not permitted to invoke the operation. If you must be able to invoke this operation,
-    /// contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Immediately purchases offerings for an AWS account. Offerings renew with the latest total purchased quantity for an offering, unless the renewal was overridden. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6842,10 +6294,10 @@ pub mod fluent_builders {
                 crate::input::PurchaseOfferingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6854,8 +6306,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the offering.</p>
-        pub fn offering_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_id(inp);
+        pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_id(input.into());
             self
         }
         /// <p>The ID of the offering.</p>
@@ -6864,8 +6316,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of device slots to purchase in an offering request.</p>
-        pub fn quantity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.quantity(inp);
+        pub fn quantity(mut self, input: i32) -> Self {
+            self.inner = self.inner.quantity(input);
             self
         }
         /// <p>The number of device slots to purchase in an offering request.</p>
@@ -6874,8 +6326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the offering promotion to be applied to the purchase.</p>
-        pub fn offering_promotion_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_promotion_id(inp);
+        pub fn offering_promotion_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_promotion_id(input.into());
             self
         }
         /// <p>The ID of the offering promotion to be applied to the purchase.</p>
@@ -6889,10 +6341,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RenewOffering`.
     ///
-    /// <p>Explicitly sets the quantity of devices to renew for an offering, starting from the
-    /// <code>effectiveDate</code> of the next period. The API returns a <code>NotEligible</code> error if the
-    /// user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Explicitly sets the quantity of devices to renew for an offering, starting from the <code>effectiveDate</code> of the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RenewOffering<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -6937,10 +6387,10 @@ pub mod fluent_builders {
                 crate::input::RenewOfferingInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6949,8 +6399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a request to renew an offering.</p>
-        pub fn offering_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_id(inp);
+        pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_id(input.into());
             self
         }
         /// <p>The ID of a request to renew an offering.</p>
@@ -6959,8 +6409,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quantity requested in an offering renewal.</p>
-        pub fn quantity(mut self, inp: i32) -> Self {
-            self.inner = self.inner.quantity(inp);
+        pub fn quantity(mut self, input: i32) -> Self {
+            self.inner = self.inner.quantity(input);
             self
         }
         /// <p>The quantity requested in an offering renewal.</p>
@@ -6972,7 +6422,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ScheduleRun`.
     ///
     /// <p>Schedules a run.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ScheduleRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7017,10 +6467,10 @@ pub mod fluent_builders {
                 crate::input::ScheduleRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7029,8 +6479,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the project for the run to be scheduled.</p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>The ARN of the project for the run to be scheduled.</p>
@@ -7038,21 +6488,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_arn(input);
             self
         }
-        /// <p>The ARN of an application package to run tests against, created with <a>CreateUpload</a>.
-        /// See <a>ListUploads</a>.</p>
-        pub fn app_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(inp);
+        /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The ARN of an application package to run tests against, created with <a>CreateUpload</a>.
-        /// See <a>ListUploads</a>.</p>
+        /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
         }
         /// <p>The ARN of the device pool for the run to be scheduled.</p>
-        pub fn device_pool_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_pool_arn(inp);
+        pub fn device_pool_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_pool_arn(input.into());
             self
         }
         /// <p>The ARN of the device pool for the run to be scheduled.</p>
@@ -7063,29 +6511,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_pool_arn(input);
             self
         }
-        /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of
-        /// devices to be included in the run.</p>
-        /// <p>Either <b>
-        /// <code>devicePoolArn</code>
-        /// </b> or <b>
-        /// <code>deviceSelectionConfiguration</code>
-        /// </b> is required in a
-        /// request.</p>
+        /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
+        /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
         pub fn device_selection_configuration(
             mut self,
-            inp: crate::model::DeviceSelectionConfiguration,
+            input: crate::model::DeviceSelectionConfiguration,
         ) -> Self {
-            self.inner = self.inner.device_selection_configuration(inp);
+            self.inner = self.inner.device_selection_configuration(input);
             self
         }
-        /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of
-        /// devices to be included in the run.</p>
-        /// <p>Either <b>
-        /// <code>devicePoolArn</code>
-        /// </b> or <b>
-        /// <code>deviceSelectionConfiguration</code>
-        /// </b> is required in a
-        /// request.</p>
+        /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
+        /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
         pub fn set_device_selection_configuration(
             mut self,
             input: std::option::Option<crate::model::DeviceSelectionConfiguration>,
@@ -7094,8 +6530,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the run to be scheduled.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the run to be scheduled.</p>
@@ -7104,8 +6540,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the test for the run to be scheduled.</p>
-        pub fn test(mut self, inp: crate::model::ScheduleRunTest) -> Self {
-            self.inner = self.inner.test(inp);
+        pub fn test(mut self, input: crate::model::ScheduleRunTest) -> Self {
+            self.inner = self.inner.test(input);
             self
         }
         /// <p>Information about the test for the run to be scheduled.</p>
@@ -7117,8 +6553,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the settings for the run to be scheduled.</p>
-        pub fn configuration(mut self, inp: crate::model::ScheduleRunConfiguration) -> Self {
-            self.inner = self.inner.configuration(inp);
+        pub fn configuration(mut self, input: crate::model::ScheduleRunConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>Information about the settings for the run to be scheduled.</p>
@@ -7129,17 +6565,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>Specifies configuration information about a test run, such as the execution timeout
-        /// (in minutes).</p>
+        /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
         pub fn execution_configuration(
             mut self,
-            inp: crate::model::ExecutionConfiguration,
+            input: crate::model::ExecutionConfiguration,
         ) -> Self {
-            self.inner = self.inner.execution_configuration(inp);
+            self.inner = self.inner.execution_configuration(input);
             self
         }
-        /// <p>Specifies configuration information about a test run, such as the execution timeout
-        /// (in minutes).</p>
+        /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
         pub fn set_execution_configuration(
             mut self,
             input: std::option::Option<crate::model::ExecutionConfiguration>,
@@ -7150,11 +6584,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopJob`.
     ///
-    /// <p>Initiates a stop request for the current job. AWS Device Farm immediately stops the job on the device
-    /// where tests have not started. You are not billed for this device. On the device where tests have started,
-    /// setup suite and teardown suite tests run to completion on the device. You are billed for setup, teardown,
-    /// and any tests that were in progress or already completed.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Initiates a stop request for the current job. AWS Device Farm immediately stops the job on the device where tests have not started. You are not billed for this device. On the device where tests have started, setup suite and teardown suite tests run to completion on the device. You are billed for setup, teardown, and any tests that were in progress or already completed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopJob<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7199,10 +6630,10 @@ pub mod fluent_builders {
                 crate::input::StopJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7211,8 +6642,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm job to stop.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm job to stop.</p>
@@ -7224,7 +6655,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopRemoteAccessSession`.
     ///
     /// <p>Ends a specified remote access session.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopRemoteAccessSession<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7269,10 +6700,10 @@ pub mod fluent_builders {
                 crate::input::StopRemoteAccessSessionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7281,8 +6712,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
@@ -7293,11 +6724,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopRun`.
     ///
-    /// <p>Initiates a stop request for the current test run. AWS Device Farm immediately stops the run on devices
-    /// where tests have not started. You are not billed for these devices. On devices where tests have started
-    /// executing, setup suite and teardown suite tests run to completion on those devices. You are billed for
-    /// setup, teardown, and any tests that were in progress or already completed.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Initiates a stop request for the current test run. AWS Device Farm immediately stops the run on devices where tests have not started. You are not billed for these devices. On devices where tests have started executing, setup suite and teardown suite tests run to completion on those devices. You are billed for setup, teardown, and any tests that were in progress or already completed.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopRun<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7342,10 +6770,10 @@ pub mod fluent_builders {
                 crate::input::StopRunInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7354,8 +6782,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
@@ -7366,10 +6794,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags
-    /// on a resource are not specified in the request parameters, they are not changed. When a resource is deleted,
-    /// the tags associated with that resource are also deleted.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are also deleted.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7414,10 +6840,10 @@ pub mod fluent_builders {
                 crate::input::TagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7425,20 +6851,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags
-        /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags
-        /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -7447,14 +6865,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-        /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
-            self.inner = self.inner.tags(inp);
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+        pub fn tags(mut self, input: crate::model::Tag) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-        /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7466,7 +6882,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Deletes the specified tags from a resource.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7511,10 +6927,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7522,20 +6938,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate
-        /// tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate
-        /// tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -7545,8 +6953,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
         /// <p>The keys of the tags to be removed.</p>
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(inp);
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_keys(input.into());
             self
         }
         /// <p>The keys of the tags to be removed.</p>
@@ -7561,7 +6969,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateDeviceInstance`.
     ///
     /// <p>Updates information about a private device instance.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeviceInstance<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7606,10 +7014,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDeviceInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7618,8 +7026,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
@@ -7628,8 +7036,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the profile that you want to associate with the device instance.</p>
-        pub fn profile_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_arn(inp);
+        pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_arn(input.into());
             self
         }
         /// <p>The ARN of the profile that you want to associate with the device instance.</p>
@@ -7642,8 +7050,8 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_labels`](Self::set_labels).
         ///
         /// <p>An array of strings that you want to associate with the device instance.</p>
-        pub fn labels(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.labels(inp);
+        pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.labels(input.into());
             self
         }
         /// <p>An array of strings that you want to associate with the device instance.</p>
@@ -7657,10 +7065,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDevicePool`.
     ///
-    /// <p>Modifies the name, description, and rules in a device pool given the attributes and
-    /// the pool ARN. Rule updates are all-or-nothing, meaning they can only be updated as a
-    /// whole (or not at all).</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies the name, description, and rules in a device pool given the attributes and the pool ARN. Rule updates are all-or-nothing, meaning they can only be updated as a whole (or not at all).</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDevicePool<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7705,10 +7111,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDevicePoolInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7717,8 +7123,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Device Farm device pool to update.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Device Farm device pool to update.</p>
@@ -7727,8 +7133,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that represents the name of the device pool to update.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A string that represents the name of the device pool to update.</p>
@@ -7737,8 +7143,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the device pool to update.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the device pool to update.</p>
@@ -7750,14 +7156,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for
-        /// your request, the update replaces the existing rules.</p>
-        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
-            self.inner = self.inner.rules(inp);
+        /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
+            self.inner = self.inner.rules(input);
             self
         }
-        /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for
-        /// your request, the update replaces the existing rules.</p>
+        /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -7765,46 +7169,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rules(input);
             self
         }
-        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds
-        /// devices that are available and that meet the criteria that you assign for the
-        /// <code>rules</code> parameter. Depending on how many devices meet these constraints,
-        /// your device pool might contain fewer devices than the value for this parameter.</p>
-        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-        /// by running tests.</p>
-        /// <p>If you use this parameter in your request, you cannot use the
-        /// <code>clearMaxDevices</code> parameter in the same request.</p>
-        pub fn max_devices(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_devices(inp);
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
+        /// <p>If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code> parameter in the same request.</p>
+        pub fn max_devices(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_devices(input);
             self
         }
-        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds
-        /// devices that are available and that meet the criteria that you assign for the
-        /// <code>rules</code> parameter. Depending on how many devices meet these constraints,
-        /// your device pool might contain fewer devices than the value for this parameter.</p>
-        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-        /// by running tests.</p>
-        /// <p>If you use this parameter in your request, you cannot use the
-        /// <code>clearMaxDevices</code> parameter in the same request.</p>
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
+        /// <p>If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code> parameter in the same request.</p>
         pub fn set_max_devices(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_devices(input);
             self
         }
-        /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter
-        /// to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit
-        /// the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices
-        /// that meet the criteria specified in the <code>rules</code> parameter.</p>
-        /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code>
-        /// parameter in the same request.</p>
-        pub fn clear_max_devices(mut self, inp: bool) -> Self {
-            self.inner = self.inner.clear_max_devices(inp);
+        /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
+        /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same request.</p>
+        pub fn clear_max_devices(mut self, input: bool) -> Self {
+            self.inner = self.inner.clear_max_devices(input);
             self
         }
-        /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter
-        /// to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit
-        /// the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices
-        /// that meet the criteria specified in the <code>rules</code> parameter.</p>
-        /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code>
-        /// parameter in the same request.</p>
+        /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
+        /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same request.</p>
         pub fn set_clear_max_devices(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_clear_max_devices(input);
             self
@@ -7813,7 +7199,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateInstanceProfile`.
     ///
     /// <p>Updates information about an existing private device instance profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateInstanceProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7858,10 +7244,10 @@ pub mod fluent_builders {
                 crate::input::UpdateInstanceProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7870,8 +7256,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
@@ -7880,8 +7266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name for your instance profile.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The updated name for your instance profile.</p>
@@ -7890,8 +7276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description for your instance profile.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description for your instance profile.</p>
@@ -7899,14 +7285,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The updated choice for whether you want to specify package cleanup. The default value
-        /// is <code>false</code> for private devices.</p>
-        pub fn package_cleanup(mut self, inp: bool) -> Self {
-            self.inner = self.inner.package_cleanup(inp);
+        /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
+        pub fn package_cleanup(mut self, input: bool) -> Self {
+            self.inner = self.inner.package_cleanup(input);
             self
         }
-        /// <p>The updated choice for whether you want to specify package cleanup. The default value
-        /// is <code>false</code> for private devices.</p>
+        /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
         pub fn set_package_cleanup(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_package_cleanup(input);
             self
@@ -7915,21 +7299,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_exclude_app_packages_from_cleanup`](Self::set_exclude_app_packages_from_cleanup).
         ///
-        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-        /// after a test run is over.</p>
-        /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to
-        /// <code>true</code>.</p>
+        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
+        /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
         pub fn exclude_app_packages_from_cleanup(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.exclude_app_packages_from_cleanup(inp);
+            self.inner = self.inner.exclude_app_packages_from_cleanup(input.into());
             self
         }
-        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-        /// after a test run is over.</p>
-        /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to
-        /// <code>true</code>.</p>
+        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
+        /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
         pub fn set_exclude_app_packages_from_cleanup(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7937,14 +7317,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_exclude_app_packages_from_cleanup(input);
             self
         }
-        /// <p>The updated choice for whether you want to reboot the device after use. The default
-        /// value is <code>true</code>.</p>
-        pub fn reboot_after_use(mut self, inp: bool) -> Self {
-            self.inner = self.inner.reboot_after_use(inp);
+        /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
+        pub fn reboot_after_use(mut self, input: bool) -> Self {
+            self.inner = self.inner.reboot_after_use(input);
             self
         }
-        /// <p>The updated choice for whether you want to reboot the device after use. The default
-        /// value is <code>true</code>.</p>
+        /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
         pub fn set_reboot_after_use(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reboot_after_use(input);
             self
@@ -7953,7 +7331,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateNetworkProfile`.
     ///
     /// <p>Updates the network profile.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNetworkProfile<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -7998,10 +7376,10 @@ pub mod fluent_builders {
                 crate::input::UpdateNetworkProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8009,45 +7387,39 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network
-        /// profile settings.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network
-        /// profile settings.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>The name of the network profile about which you are returning
-        /// information.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The name of the network profile about which you are returning information.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the network profile about which you are returning
-        /// information.</p>
+        /// <p>The name of the network profile about which you are returning information.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The description of the network profile about which you are returning
-        /// information.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        /// <p>The description of the network profile about which you are returning information.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the network profile about which you are returning
-        /// information.</p>
+        /// <p>The description of the network profile about which you are returning information.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The type of network profile to return information about. Valid values are listed here.</p>
-        pub fn r#type(mut self, inp: crate::model::NetworkProfileType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::NetworkProfileType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of network profile to return information about. Valid values are listed here.</p>
@@ -8058,93 +7430,79 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
-        pub fn uplink_bandwidth_bits(mut self, inp: i64) -> Self {
-            self.inner = self.inner.uplink_bandwidth_bits(inp);
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+        pub fn uplink_bandwidth_bits(mut self, input: i64) -> Self {
+            self.inner = self.inner.uplink_bandwidth_bits(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn set_uplink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_uplink_bandwidth_bits(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
-        pub fn downlink_bandwidth_bits(mut self, inp: i64) -> Self {
-            self.inner = self.inner.downlink_bandwidth_bits(inp);
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+        pub fn downlink_bandwidth_bits(mut self, input: i64) -> Self {
+            self.inner = self.inner.downlink_bandwidth_bits(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn set_downlink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_downlink_bandwidth_bits(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
-        pub fn uplink_delay_ms(mut self, inp: i64) -> Self {
-            self.inner = self.inner.uplink_delay_ms(inp);
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+        pub fn uplink_delay_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.uplink_delay_ms(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_uplink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_uplink_delay_ms(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
-        pub fn downlink_delay_ms(mut self, inp: i64) -> Self {
-            self.inner = self.inner.downlink_delay_ms(inp);
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+        pub fn downlink_delay_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.downlink_delay_ms(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_downlink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_downlink_delay_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
-        pub fn uplink_jitter_ms(mut self, inp: i64) -> Self {
-            self.inner = self.inner.uplink_jitter_ms(inp);
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+        pub fn uplink_jitter_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.uplink_jitter_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_uplink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_uplink_jitter_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
-        pub fn downlink_jitter_ms(mut self, inp: i64) -> Self {
-            self.inner = self.inner.downlink_jitter_ms(inp);
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+        pub fn downlink_jitter_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.downlink_jitter_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_downlink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_downlink_jitter_ms(input);
             self
         }
-        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-        /// percent.</p>
-        pub fn uplink_loss_percent(mut self, inp: i32) -> Self {
-            self.inner = self.inner.uplink_loss_percent(inp);
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
+        pub fn uplink_loss_percent(mut self, input: i32) -> Self {
+            self.inner = self.inner.uplink_loss_percent(input);
             self
         }
-        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-        /// percent.</p>
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
         pub fn set_uplink_loss_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_uplink_loss_percent(input);
             self
         }
         /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
-        pub fn downlink_loss_percent(mut self, inp: i32) -> Self {
-            self.inner = self.inner.downlink_loss_percent(inp);
+        pub fn downlink_loss_percent(mut self, input: i32) -> Self {
+            self.inner = self.inner.downlink_loss_percent(input);
             self
         }
         /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
@@ -8155,9 +7513,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateProject`.
     ///
-    /// <p>Modifies the specified project name, given the project ARN and a new
-    /// name.</p>
-    #[derive(std::fmt::Debug)]
+    /// <p>Modifies the specified project name, given the project ARN and a new name.</p>
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8202,10 +7559,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8214,8 +7571,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
@@ -8224,8 +7581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that represents the new name of the project that you are updating.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A string that represents the new name of the project that you are updating.</p>
@@ -8234,8 +7591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of minutes a test run in the project executes before it times out.</p>
-        pub fn default_job_timeout_minutes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.default_job_timeout_minutes(inp);
+        pub fn default_job_timeout_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.default_job_timeout_minutes(input);
             self
         }
         /// <p>The number of minutes a test run in the project executes before it times out.</p>
@@ -8247,7 +7604,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTestGridProject`.
     ///
     /// <p>Change details of a project.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTestGridProject<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8292,10 +7649,10 @@ pub mod fluent_builders {
                 crate::input::UpdateTestGridProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8304,8 +7661,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the project to update.</p>
-        pub fn project_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(inp);
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>ARN of the project to update.</p>
@@ -8314,8 +7671,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Human-readable name for the project.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Human-readable name for the project.</p>
@@ -8324,8 +7681,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Human-readable description for the project.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Human-readable description for the project.</p>
@@ -8334,8 +7691,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC security groups and subnets that are attached to a project.</p>
-        pub fn vpc_config(mut self, inp: crate::model::TestGridVpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(inp);
+        pub fn vpc_config(mut self, input: crate::model::TestGridVpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
         /// <p>The VPC security groups and subnets that are attached to a project.</p>
@@ -8350,7 +7707,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateUpload`.
     ///
     /// <p>Updates an uploaded test spec.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateUpload<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8395,10 +7752,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUploadInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8407,8 +7764,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
@@ -8416,21 +7773,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file
-        /// name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file
-        /// name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
+        /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
@@ -8439,8 +7794,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
-        pub fn edit_content(mut self, inp: bool) -> Self {
-            self.inner = self.inner.edit_content(inp);
+        pub fn edit_content(mut self, input: bool) -> Self {
+            self.inner = self.inner.edit_content(input);
             self
         }
         /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
@@ -8452,7 +7807,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateVPCEConfiguration`.
     ///
     /// <p>Updates information about an Amazon Virtual Private Cloud (VPC) endpoint configuration.</p>
-    #[derive(std::fmt::Debug)]
+    #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVPCEConfiguration<
         C = aws_smithy_client::erase::DynConnector,
         M = crate::middleware::DefaultMiddleware,
@@ -8497,10 +7852,10 @@ pub mod fluent_builders {
                 crate::input::UpdateVpceConfigurationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8508,26 +7863,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// update.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
-        /// easily.</p>
-        pub fn vpce_configuration_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpce_configuration_name(inp);
+        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
+        pub fn vpce_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpce_configuration_name(input.into());
             self
         }
-        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
-        /// easily.</p>
+        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
         pub fn set_vpce_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8536,8 +7887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
-        pub fn vpce_service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpce_service_name(inp);
+        pub fn vpce_service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpce_service_name(input.into());
             self
         }
         /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
@@ -8548,14 +7899,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpce_service_name(input);
             self
         }
-        /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already
-        /// be in use on the internet.</p>
-        pub fn service_dns_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_dns_name(inp);
+        /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
+        pub fn service_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_dns_name(input.into());
             self
         }
-        /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already
-        /// be in use on the internet.</p>
+        /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
         pub fn set_service_dns_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8566,9 +7915,9 @@ pub mod fluent_builders {
         /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
         pub fn vpce_configuration_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.vpce_configuration_description(inp);
+            self.inner = self.inner.vpce_configuration_description(input.into());
             self
         }
         /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
@@ -8581,6 +7930,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

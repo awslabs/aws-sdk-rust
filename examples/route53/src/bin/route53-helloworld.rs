@@ -67,6 +67,16 @@ async fn main() -> Result<(), aws_sdk_route53::Error> {
         let zone_id = hz.id.as_deref().unwrap_or_default();
 
         println!("Zone ID : {}, Zone Name : {}", zone_id, zone_name);
+
+        let record_sets = client
+            .list_resource_record_sets()
+            .hosted_zone_id(zone_id)
+            .send()
+            .await?;
+        println!("  Record sets:");
+        for set in record_sets.resource_record_sets().unwrap_or_default() {
+            println!("    {:?}: {:?}", set.name, set.r#type)
+        }
     }
 
     Ok(())

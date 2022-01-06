@@ -39,10 +39,10 @@ pub mod create_budget_input {
         /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.</p>
         pub fn notifications_with_subscribers(
             mut self,
-            input: impl Into<crate::model::NotificationWithSubscribers>,
+            input: crate::model::NotificationWithSubscribers,
         ) -> Self {
             let mut v = self.notifications_with_subscribers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.notifications_with_subscribers = Some(v);
             self
         }
@@ -72,7 +72,7 @@ pub mod create_budget_input {
 #[doc(hidden)]
 pub type CreateBudgetInputOperationOutputAlias = crate::operation::CreateBudget;
 #[doc(hidden)]
-pub type CreateBudgetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBudgetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBudgetInput {
     /// Consumes the builder and constructs an Operation<[`CreateBudget`](crate::operation::CreateBudget)>
     #[allow(clippy::let_and_return)]
@@ -83,7 +83,7 @@ impl CreateBudgetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBudget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -167,7 +167,7 @@ impl CreateBudgetInput {
             "CreateBudget",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -240,16 +240,12 @@ pub mod create_budget_action_input {
             self.notification_type = input;
             self
         }
-        /// <p>
-        /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-        /// </p>
+        /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
         pub fn action_type(mut self, input: crate::model::ActionType) -> Self {
             self.action_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-        /// </p>
+        /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
         pub fn set_action_type(
             mut self,
             input: std::option::Option<crate::model::ActionType>,
@@ -257,16 +253,12 @@ pub mod create_budget_action_input {
             self.action_type = input;
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
             self.action_threshold = Some(input);
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -274,16 +266,12 @@ pub mod create_budget_action_input {
             self.action_threshold = input;
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
+        /// <p> Specifies all of the type-specific parameters. </p>
         pub fn definition(mut self, input: crate::model::Definition) -> Self {
             self.definition = Some(input);
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
+        /// <p> Specifies all of the type-specific parameters. </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -291,16 +279,12 @@ pub mod create_budget_action_input {
             self.definition = input;
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -308,16 +292,12 @@ pub mod create_budget_action_input {
             self.execution_role_arn = input;
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn approval_model(mut self, input: crate::model::ApprovalModel) -> Self {
             self.approval_model = Some(input);
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn set_approval_model(
             mut self,
             input: std::option::Option<crate::model::ApprovalModel>,
@@ -330,9 +310,9 @@ pub mod create_budget_action_input {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// <p> A list of subscribers.</p>
-        pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
+        pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscribers = Some(v);
             self
         }
@@ -368,7 +348,7 @@ pub mod create_budget_action_input {
 #[doc(hidden)]
 pub type CreateBudgetActionInputOperationOutputAlias = crate::operation::CreateBudgetAction;
 #[doc(hidden)]
-pub type CreateBudgetActionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateBudgetActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`CreateBudgetAction`](crate::operation::CreateBudgetAction)>
     #[allow(clippy::let_and_return)]
@@ -379,7 +359,7 @@ impl CreateBudgetActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateBudgetAction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -464,7 +444,7 @@ impl CreateBudgetActionInput {
             "CreateBudgetAction",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -537,9 +517,9 @@ pub mod create_notification_input {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// <p>A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.</p>
-        pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
+        pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscribers = Some(v);
             self
         }
@@ -570,7 +550,7 @@ pub mod create_notification_input {
 #[doc(hidden)]
 pub type CreateNotificationInputOperationOutputAlias = crate::operation::CreateNotification;
 #[doc(hidden)]
-pub type CreateNotificationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateNotificationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateNotificationInput {
     /// Consumes the builder and constructs an Operation<[`CreateNotification`](crate::operation::CreateNotification)>
     #[allow(clippy::let_and_return)]
@@ -581,7 +561,7 @@ impl CreateNotificationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateNotification,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -666,7 +646,7 @@ impl CreateNotificationInput {
             "CreateNotification",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -766,7 +746,7 @@ pub mod create_subscriber_input {
 #[doc(hidden)]
 pub type CreateSubscriberInputOperationOutputAlias = crate::operation::CreateSubscriber;
 #[doc(hidden)]
-pub type CreateSubscriberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSubscriberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSubscriberInput {
     /// Consumes the builder and constructs an Operation<[`CreateSubscriber`](crate::operation::CreateSubscriber)>
     #[allow(clippy::let_and_return)]
@@ -777,7 +757,7 @@ impl CreateSubscriberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSubscriber,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -862,7 +842,7 @@ impl CreateSubscriberInput {
             "CreateSubscriber",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -932,7 +912,7 @@ pub mod delete_budget_input {
 #[doc(hidden)]
 pub type DeleteBudgetInputOperationOutputAlias = crate::operation::DeleteBudget;
 #[doc(hidden)]
-pub type DeleteBudgetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBudgetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBudgetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBudget`](crate::operation::DeleteBudget)>
     #[allow(clippy::let_and_return)]
@@ -943,7 +923,7 @@ impl DeleteBudgetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBudget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1027,7 +1007,7 @@ impl DeleteBudgetInput {
             "DeleteBudget",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1081,16 +1061,12 @@ pub mod delete_budget_action_input {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -1113,7 +1089,7 @@ pub mod delete_budget_action_input {
 #[doc(hidden)]
 pub type DeleteBudgetActionInputOperationOutputAlias = crate::operation::DeleteBudgetAction;
 #[doc(hidden)]
-pub type DeleteBudgetActionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteBudgetActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBudgetAction`](crate::operation::DeleteBudgetAction)>
     #[allow(clippy::let_and_return)]
@@ -1124,7 +1100,7 @@ impl DeleteBudgetActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteBudgetAction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1209,7 +1185,7 @@ impl DeleteBudgetActionInput {
             "DeleteBudgetAction",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1294,7 +1270,7 @@ pub mod delete_notification_input {
 #[doc(hidden)]
 pub type DeleteNotificationInputOperationOutputAlias = crate::operation::DeleteNotification;
 #[doc(hidden)]
-pub type DeleteNotificationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteNotificationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteNotificationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteNotification`](crate::operation::DeleteNotification)>
     #[allow(clippy::let_and_return)]
@@ -1305,7 +1281,7 @@ impl DeleteNotificationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteNotification,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1390,7 +1366,7 @@ impl DeleteNotificationInput {
             "DeleteNotification",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1490,7 +1466,7 @@ pub mod delete_subscriber_input {
 #[doc(hidden)]
 pub type DeleteSubscriberInputOperationOutputAlias = crate::operation::DeleteSubscriber;
 #[doc(hidden)]
-pub type DeleteSubscriberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSubscriberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSubscriberInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSubscriber`](crate::operation::DeleteSubscriber)>
     #[allow(clippy::let_and_return)]
@@ -1501,7 +1477,7 @@ impl DeleteSubscriberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSubscriber,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1586,7 +1562,7 @@ impl DeleteSubscriberInput {
             "DeleteSubscriber",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1656,7 +1632,7 @@ pub mod describe_budget_input {
 #[doc(hidden)]
 pub type DescribeBudgetInputOperationOutputAlias = crate::operation::DescribeBudget;
 #[doc(hidden)]
-pub type DescribeBudgetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBudgetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudget`](crate::operation::DescribeBudget)>
     #[allow(clippy::let_and_return)]
@@ -1667,7 +1643,7 @@ impl DescribeBudgetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1752,7 +1728,7 @@ impl DescribeBudgetInput {
             "DescribeBudget",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1806,16 +1782,12 @@ pub mod describe_budget_action_input {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -1838,7 +1810,7 @@ pub mod describe_budget_action_input {
 #[doc(hidden)]
 pub type DescribeBudgetActionInputOperationOutputAlias = crate::operation::DescribeBudgetAction;
 #[doc(hidden)]
-pub type DescribeBudgetActionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBudgetActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetAction`](crate::operation::DescribeBudgetAction)>
     #[allow(clippy::let_and_return)]
@@ -1849,7 +1821,7 @@ impl DescribeBudgetActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetAction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1936,7 +1908,7 @@ impl DescribeBudgetActionInput {
             "DescribeBudgetAction",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1993,16 +1965,12 @@ pub mod describe_budget_action_histories_input {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -2062,7 +2030,8 @@ pub mod describe_budget_action_histories_input {
 pub type DescribeBudgetActionHistoriesInputOperationOutputAlias =
     crate::operation::DescribeBudgetActionHistories;
 #[doc(hidden)]
-pub type DescribeBudgetActionHistoriesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBudgetActionHistoriesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetActionHistoriesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetActionHistories`](crate::operation::DescribeBudgetActionHistories)>
     #[allow(clippy::let_and_return)]
@@ -2073,7 +2042,7 @@ impl DescribeBudgetActionHistoriesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetActionHistories,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2159,7 +2128,7 @@ impl DescribeBudgetActionHistoriesInput {
             "DescribeBudgetActionHistories",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2242,7 +2211,8 @@ pub mod describe_budget_actions_for_account_input {
 pub type DescribeBudgetActionsForAccountInputOperationOutputAlias =
     crate::operation::DescribeBudgetActionsForAccount;
 #[doc(hidden)]
-pub type DescribeBudgetActionsForAccountInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBudgetActionsForAccountInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetActionsForAccountInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetActionsForAccount`](crate::operation::DescribeBudgetActionsForAccount)>
     #[allow(clippy::let_and_return)]
@@ -2253,7 +2223,7 @@ impl DescribeBudgetActionsForAccountInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetActionsForAccount,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2339,7 +2309,7 @@ impl DescribeBudgetActionsForAccountInput {
             "DescribeBudgetActionsForAccount",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2434,7 +2404,8 @@ pub mod describe_budget_actions_for_budget_input {
 pub type DescribeBudgetActionsForBudgetInputOperationOutputAlias =
     crate::operation::DescribeBudgetActionsForBudget;
 #[doc(hidden)]
-pub type DescribeBudgetActionsForBudgetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBudgetActionsForBudgetInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetActionsForBudgetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetActionsForBudget`](crate::operation::DescribeBudgetActionsForBudget)>
     #[allow(clippy::let_and_return)]
@@ -2445,7 +2416,7 @@ impl DescribeBudgetActionsForBudgetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetActionsForBudget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2531,7 +2502,7 @@ impl DescribeBudgetActionsForBudgetInput {
             "DescribeBudgetActionsForBudget",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2641,7 +2612,8 @@ pub mod describe_budget_performance_history_input {
 pub type DescribeBudgetPerformanceHistoryInputOperationOutputAlias =
     crate::operation::DescribeBudgetPerformanceHistory;
 #[doc(hidden)]
-pub type DescribeBudgetPerformanceHistoryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBudgetPerformanceHistoryInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetPerformanceHistoryInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgetPerformanceHistory`](crate::operation::DescribeBudgetPerformanceHistory)>
     #[allow(clippy::let_and_return)]
@@ -2652,7 +2624,7 @@ impl DescribeBudgetPerformanceHistoryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgetPerformanceHistory,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2738,7 +2710,7 @@ impl DescribeBudgetPerformanceHistoryInput {
             "DescribeBudgetPerformanceHistory",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2820,7 +2792,7 @@ pub mod describe_budgets_input {
 #[doc(hidden)]
 pub type DescribeBudgetsInputOperationOutputAlias = crate::operation::DescribeBudgets;
 #[doc(hidden)]
-pub type DescribeBudgetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeBudgetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeBudgetsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeBudgets`](crate::operation::DescribeBudgets)>
     #[allow(clippy::let_and_return)]
@@ -2831,7 +2803,7 @@ impl DescribeBudgetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeBudgets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2916,7 +2888,7 @@ impl DescribeBudgetsInput {
             "DescribeBudgets",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3011,7 +2983,8 @@ pub mod describe_notifications_for_budget_input {
 pub type DescribeNotificationsForBudgetInputOperationOutputAlias =
     crate::operation::DescribeNotificationsForBudget;
 #[doc(hidden)]
-pub type DescribeNotificationsForBudgetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeNotificationsForBudgetInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeNotificationsForBudgetInput {
     /// Consumes the builder and constructs an Operation<[`DescribeNotificationsForBudget`](crate::operation::DescribeNotificationsForBudget)>
     #[allow(clippy::let_and_return)]
@@ -3022,7 +2995,7 @@ impl DescribeNotificationsForBudgetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeNotificationsForBudget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3108,7 +3081,7 @@ impl DescribeNotificationsForBudgetInput {
             "DescribeNotificationsForBudget",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3218,7 +3191,8 @@ pub mod describe_subscribers_for_notification_input {
 pub type DescribeSubscribersForNotificationInputOperationOutputAlias =
     crate::operation::DescribeSubscribersForNotification;
 #[doc(hidden)]
-pub type DescribeSubscribersForNotificationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeSubscribersForNotificationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeSubscribersForNotificationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeSubscribersForNotification`](crate::operation::DescribeSubscribersForNotification)>
     #[allow(clippy::let_and_return)]
@@ -3229,7 +3203,7 @@ impl DescribeSubscribersForNotificationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeSubscribersForNotification,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3315,7 +3289,7 @@ impl DescribeSubscribersForNotificationInput {
             "DescribeSubscribersForNotification",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3370,30 +3344,22 @@ pub mod execute_budget_action_input {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
         }
-        /// <p>
-        /// The type of execution.
-        /// </p>
+        /// <p> The type of execution. </p>
         pub fn execution_type(mut self, input: crate::model::ExecutionType) -> Self {
             self.execution_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of execution.
-        /// </p>
+        /// <p> The type of execution. </p>
         pub fn set_execution_type(
             mut self,
             input: std::option::Option<crate::model::ExecutionType>,
@@ -3420,7 +3386,7 @@ pub mod execute_budget_action_input {
 #[doc(hidden)]
 pub type ExecuteBudgetActionInputOperationOutputAlias = crate::operation::ExecuteBudgetAction;
 #[doc(hidden)]
-pub type ExecuteBudgetActionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ExecuteBudgetActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ExecuteBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`ExecuteBudgetAction`](crate::operation::ExecuteBudgetAction)>
     #[allow(clippy::let_and_return)]
@@ -3431,7 +3397,7 @@ impl ExecuteBudgetActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ExecuteBudgetAction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3516,7 +3482,7 @@ impl ExecuteBudgetActionInput {
             "ExecuteBudgetAction",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3586,7 +3552,7 @@ pub mod update_budget_input {
 #[doc(hidden)]
 pub type UpdateBudgetInputOperationOutputAlias = crate::operation::UpdateBudget;
 #[doc(hidden)]
-pub type UpdateBudgetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBudgetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBudgetInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBudget`](crate::operation::UpdateBudget)>
     #[allow(clippy::let_and_return)]
@@ -3597,7 +3563,7 @@ impl UpdateBudgetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBudget,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3681,7 +3647,7 @@ impl UpdateBudgetInput {
             "UpdateBudget",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3741,16 +3707,12 @@ pub mod update_budget_action_input {
             self.budget_name = input;
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -3768,16 +3730,12 @@ pub mod update_budget_action_input {
             self.notification_type = input;
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
             self.action_threshold = Some(input);
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -3785,16 +3743,12 @@ pub mod update_budget_action_input {
             self.action_threshold = input;
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
+        /// <p> Specifies all of the type-specific parameters. </p>
         pub fn definition(mut self, input: crate::model::Definition) -> Self {
             self.definition = Some(input);
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
+        /// <p> Specifies all of the type-specific parameters. </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -3802,16 +3756,12 @@ pub mod update_budget_action_input {
             self.definition = input;
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3819,16 +3769,12 @@ pub mod update_budget_action_input {
             self.execution_role_arn = input;
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn approval_model(mut self, input: crate::model::ApprovalModel) -> Self {
             self.approval_model = Some(input);
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn set_approval_model(
             mut self,
             input: std::option::Option<crate::model::ApprovalModel>,
@@ -3841,9 +3787,9 @@ pub mod update_budget_action_input {
         /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
         ///
         /// <p> A list of subscribers.</p>
-        pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
+        pub fn subscribers(mut self, input: crate::model::Subscriber) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.subscribers = Some(v);
             self
         }
@@ -3879,7 +3825,7 @@ pub mod update_budget_action_input {
 #[doc(hidden)]
 pub type UpdateBudgetActionInputOperationOutputAlias = crate::operation::UpdateBudgetAction;
 #[doc(hidden)]
-pub type UpdateBudgetActionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateBudgetActionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateBudgetActionInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBudgetAction`](crate::operation::UpdateBudgetAction)>
     #[allow(clippy::let_and_return)]
@@ -3890,7 +3836,7 @@ impl UpdateBudgetActionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateBudgetAction,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3975,7 +3921,7 @@ impl UpdateBudgetActionInput {
             "UpdateBudgetAction",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4075,7 +4021,7 @@ pub mod update_notification_input {
 #[doc(hidden)]
 pub type UpdateNotificationInputOperationOutputAlias = crate::operation::UpdateNotification;
 #[doc(hidden)]
-pub type UpdateNotificationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateNotificationInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateNotificationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateNotification`](crate::operation::UpdateNotification)>
     #[allow(clippy::let_and_return)]
@@ -4086,7 +4032,7 @@ impl UpdateNotificationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateNotification,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4171,7 +4117,7 @@ impl UpdateNotificationInput {
             "UpdateNotification",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4286,7 +4232,7 @@ pub mod update_subscriber_input {
 #[doc(hidden)]
 pub type UpdateSubscriberInputOperationOutputAlias = crate::operation::UpdateSubscriber;
 #[doc(hidden)]
-pub type UpdateSubscriberInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSubscriberInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSubscriberInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSubscriber`](crate::operation::UpdateSubscriber)>
     #[allow(clippy::let_and_return)]
@@ -4297,7 +4243,7 @@ impl UpdateSubscriberInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSubscriber,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4382,7 +4328,7 @@ impl UpdateSubscriberInput {
             "UpdateSubscriber",
             "budgets",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4504,27 +4450,17 @@ pub struct UpdateBudgetActionInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: std::option::Option<std::string::String>,
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub notification_type: std::option::Option<crate::model::NotificationType>,
-    /// <p>
-    /// The trigger threshold of the action.
-    /// </p>
+    /// <p> The trigger threshold of the action. </p>
     pub action_threshold: std::option::Option<crate::model::ActionThreshold>,
-    /// <p>
-    /// Specifies all of the type-specific parameters.
-    /// </p>
+    /// <p> Specifies all of the type-specific parameters. </p>
     pub definition: std::option::Option<crate::model::Definition>,
-    /// <p>
-    /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-    /// </p>
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub execution_role_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// This specifies if the action needs manual or automatic approval.
-    /// </p>
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub approval_model: std::option::Option<crate::model::ApprovalModel>,
     /// <p> A list of subscribers.</p>
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
@@ -4538,9 +4474,7 @@ impl UpdateBudgetActionInput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
@@ -4548,27 +4482,19 @@ impl UpdateBudgetActionInput {
     pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
         self.notification_type.as_ref()
     }
-    /// <p>
-    /// The trigger threshold of the action.
-    /// </p>
+    /// <p> The trigger threshold of the action. </p>
     pub fn action_threshold(&self) -> std::option::Option<&crate::model::ActionThreshold> {
         self.action_threshold.as_ref()
     }
-    /// <p>
-    /// Specifies all of the type-specific parameters.
-    /// </p>
+    /// <p> Specifies all of the type-specific parameters. </p>
     pub fn definition(&self) -> std::option::Option<&crate::model::Definition> {
         self.definition.as_ref()
     }
-    /// <p>
-    /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-    /// </p>
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>
-    /// This specifies if the action needs manual or automatic approval.
-    /// </p>
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub fn approval_model(&self) -> std::option::Option<&crate::model::ApprovalModel> {
         self.approval_model.as_ref()
     }
@@ -4629,13 +4555,9 @@ pub struct ExecuteBudgetActionInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of execution.
-    /// </p>
+    /// <p> The type of execution. </p>
     pub execution_type: std::option::Option<crate::model::ExecutionType>,
 }
 impl ExecuteBudgetActionInput {
@@ -4647,15 +4569,11 @@ impl ExecuteBudgetActionInput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
-    /// <p>
-    /// The type of execution.
-    /// </p>
+    /// <p> The type of execution. </p>
     pub fn execution_type(&self) -> std::option::Option<&crate::model::ExecutionType> {
         self.execution_type.as_ref()
     }
@@ -4931,9 +4849,7 @@ pub struct DescribeBudgetActionHistoriesInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: std::option::Option<std::string::String>,
     /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
     pub time_period: std::option::Option<crate::model::TimePeriod>,
@@ -4951,9 +4867,7 @@ impl DescribeBudgetActionHistoriesInput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
@@ -4991,9 +4905,7 @@ pub struct DescribeBudgetActionInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: std::option::Option<std::string::String>,
 }
 impl DescribeBudgetActionInput {
@@ -5005,9 +4917,7 @@ impl DescribeBudgetActionInput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
@@ -5135,9 +5045,7 @@ pub struct DeleteBudgetActionInput {
     pub account_id: std::option::Option<std::string::String>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub budget_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub action_id: std::option::Option<std::string::String>,
 }
 impl DeleteBudgetActionInput {
@@ -5149,9 +5057,7 @@ impl DeleteBudgetActionInput {
     pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
-    /// <p>
-    /// A system-generated universally unique identifier (UUID) for the action.
-    /// </p>
+    /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
@@ -5288,25 +5194,15 @@ pub struct CreateBudgetActionInput {
     pub budget_name: std::option::Option<std::string::String>,
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub notification_type: std::option::Option<crate::model::NotificationType>,
-    /// <p>
-    /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-    /// </p>
+    /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub action_type: std::option::Option<crate::model::ActionType>,
-    /// <p>
-    /// The trigger threshold of the action.
-    /// </p>
+    /// <p> The trigger threshold of the action. </p>
     pub action_threshold: std::option::Option<crate::model::ActionThreshold>,
-    /// <p>
-    /// Specifies all of the type-specific parameters.
-    /// </p>
+    /// <p> Specifies all of the type-specific parameters. </p>
     pub definition: std::option::Option<crate::model::Definition>,
-    /// <p>
-    /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-    /// </p>
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub execution_role_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// This specifies if the action needs manual or automatic approval.
-    /// </p>
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub approval_model: std::option::Option<crate::model::ApprovalModel>,
     /// <p> A list of subscribers.</p>
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
@@ -5324,33 +5220,23 @@ impl CreateBudgetActionInput {
     pub fn notification_type(&self) -> std::option::Option<&crate::model::NotificationType> {
         self.notification_type.as_ref()
     }
-    /// <p>
-    /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-    /// </p>
+    /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
         self.action_type.as_ref()
     }
-    /// <p>
-    /// The trigger threshold of the action.
-    /// </p>
+    /// <p> The trigger threshold of the action. </p>
     pub fn action_threshold(&self) -> std::option::Option<&crate::model::ActionThreshold> {
         self.action_threshold.as_ref()
     }
-    /// <p>
-    /// Specifies all of the type-specific parameters.
-    /// </p>
+    /// <p> Specifies all of the type-specific parameters. </p>
     pub fn definition(&self) -> std::option::Option<&crate::model::Definition> {
         self.definition.as_ref()
     }
-    /// <p>
-    /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-    /// </p>
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
-    /// <p>
-    /// This specifies if the action needs manual or automatic approval.
-    /// </p>
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub fn approval_model(&self) -> std::option::Option<&crate::model::ApprovalModel> {
         self.approval_model.as_ref()
     }

@@ -3,54 +3,33 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN)
-    /// of an authorized user or IAM role to perform the operation.</p>
+    /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Amazon Textract isn't able to read the document. For more information on the document
-    /// limits in Amazon Textract, see <a>limits</a>.</p>
+    /// <p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <code>limits</code>.</p>
     BadDocumentException(crate::error::BadDocumentException),
-    /// <p>The document can't be processed because it's too large. The maximum document size for
-    /// synchronous operations 10 MB. The maximum document size for asynchronous operations is 500
-    /// MB for PDF files.</p>
+    /// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
     DocumentTooLargeException(crate::error::DocumentTooLargeException),
     /// <p>Indicates you have exceeded the maximum number of active human in the loop workflows available</p>
     HumanLoopQuotaExceededException(crate::error::HumanLoopQuotaExceededException),
-    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at
-    /// least one of the other input parameters is different from the previous call to the
-    /// operation. </p>
+    /// <p>A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>Amazon Textract experienced a service issue. Try your call again.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to
-    /// <a>GetDocumentAnalysis</a>.</p>
+    /// <p>An invalid job identifier was passed to <code>GetDocumentAnalysis</code> or to <code>GetDocumentAnalysis</code>.</p>
     InvalidJobIdException(crate::error::InvalidJobIdException),
-    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key
-    /// was entered incorrectly. </p>
+    /// <p> Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered incorrectly. </p>
     InvalidKmsKeyException(crate::error::InvalidKmsKeyException),
-    /// <p>An input parameter violated a constraint. For example, in synchronous operations,
-    /// an <code>InvalidParameterException</code> exception occurs
-    /// when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code>
-    /// request parameter.
-    /// Validate your parameter before calling the API operation again.</p>
+    /// <p>An input parameter violated a constraint. For example, in synchronous operations, an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your parameter before calling the API operation again.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request.
-    /// for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a>
-    /// For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
-    /// </p>
+    /// <p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For troubleshooting information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a> </p>
     InvalidS3ObjectException(crate::error::InvalidS3ObjectException),
-    /// <p>An Amazon Textract service limit was exceeded. For example, if you start too many
-    /// asynchronous jobs concurrently, calls to start operations
-    /// (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException
-    /// exception (HTTP status code: 400) until the number of concurrently running jobs is below
-    /// the Amazon Textract service limit. </p>
+    /// <p>An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Textract service limit. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit,
-    /// contact Amazon Textract.</p>
+    /// <p>The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon Textract.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
     /// <p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in
-    /// PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
+    /// <p>The format of the input document isn't supported. Documents for synchronous operations can be in PNG or JPEG format only. Documents for asynchronous operations can be in PDF format.</p>
     UnsupportedDocumentException(crate::error::UnsupportedDocumentException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

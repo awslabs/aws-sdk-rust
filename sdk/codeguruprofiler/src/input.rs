@@ -28,9 +28,9 @@ pub mod add_notification_channels_input {
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
         /// <p>One or 2 channels to report to when anomalies are detected.</p>
-        pub fn channels(mut self, input: impl Into<crate::model::Channel>) -> Self {
+        pub fn channels(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.channels = Some(v);
             self
         }
@@ -60,7 +60,7 @@ pub mod add_notification_channels_input {
 pub type AddNotificationChannelsInputOperationOutputAlias =
     crate::operation::AddNotificationChannels;
 #[doc(hidden)]
-pub type AddNotificationChannelsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AddNotificationChannelsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AddNotificationChannelsInput {
     /// Consumes the builder and constructs an Operation<[`AddNotificationChannels`](crate::operation::AddNotificationChannels)>
     #[allow(clippy::let_and_return)]
@@ -71,7 +71,7 @@ impl AddNotificationChannelsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AddNotificationChannels,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -173,7 +173,7 @@ impl AddNotificationChannelsInput {
             "AddNotificationChannels",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -210,18 +210,12 @@ pub mod batch_get_frame_metric_data_input {
         pub(crate) frame_metrics: std::option::Option<std::vec::Vec<crate::model::FrameMetric>>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the profiling group associated with the
-        /// the frame metrics used to return the time series values.
-        /// </p>
+        /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
         pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.profiling_group_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the profiling group associated with the
-        /// the frame metrics used to return the time series values.
-        /// </p>
+        /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -229,22 +223,12 @@ pub mod batch_get_frame_metric_data_input {
             self.profiling_group_name = input;
             self
         }
-        /// <p>
-        /// The start time of the time period for the frame metrics used to return the time series values.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>
-        /// The start time of the time period for the frame metrics used to return the time series values.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -252,22 +236,12 @@ pub mod batch_get_frame_metric_data_input {
             self.start_time = input;
             self
         }
-        /// <p>
-        /// The end time of the time period for the returned time series values.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>
-        /// The end time of the time period for the returned time series values.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -275,71 +249,31 @@ pub mod batch_get_frame_metric_data_input {
             self.end_time = input;
             self
         }
-        /// <p>
-        /// The duration of the frame metrics used to return the time series values.
-        /// Specify using the ISO 8601 format. The maximum period duration
-        /// is one day (<code>PT24H</code> or <code>P1D</code>).
-        /// </p>
+        /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
         pub fn period(mut self, input: impl Into<std::string::String>) -> Self {
             self.period = Some(input.into());
             self
         }
-        /// <p>
-        /// The duration of the frame metrics used to return the time series values.
-        /// Specify using the ISO 8601 format. The maximum period duration
-        /// is one day (<code>PT24H</code> or <code>P1D</code>).
-        /// </p>
+        /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
         pub fn set_period(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.period = input;
             self
         }
-        /// <p>The requested resolution of time steps for the returned time series of values.
-        /// If the requested target resolution is not available due to data not being retained we provide a best effort
-        /// result by falling back to the most granular available resolution after the target resolution.
-        /// There are 3 valid values.
-        /// </p>
+        /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>P1D</code> — 1 day
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT1H</code> — 1 hour
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT5M</code> — 5 minutes
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
         /// </ul>
         pub fn target_resolution(mut self, input: crate::model::AggregationPeriod) -> Self {
             self.target_resolution = Some(input);
             self
         }
-        /// <p>The requested resolution of time steps for the returned time series of values.
-        /// If the requested target resolution is not available due to data not being retained we provide a best effort
-        /// result by falling back to the most granular available resolution after the target resolution.
-        /// There are 3 valid values.
-        /// </p>
+        /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>P1D</code> — 1 day
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT1H</code> — 1 hour
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT5M</code> — 5 minutes
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
         /// </ul>
         pub fn set_target_resolution(
             mut self,
@@ -352,20 +286,14 @@ pub mod batch_get_frame_metric_data_input {
         ///
         /// To override the contents of this collection use [`set_frame_metrics`](Self::set_frame_metrics).
         ///
-        /// <p>
-        /// The details of the metrics that are used to request a time series of values. The metric includes
-        /// the name of the frame, the aggregation type to calculate the metric value for the
-        /// frame, and the thread states to use to get the count for the metric value of the frame.</p>
-        pub fn frame_metrics(mut self, input: impl Into<crate::model::FrameMetric>) -> Self {
+        /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
+        pub fn frame_metrics(mut self, input: crate::model::FrameMetric) -> Self {
             let mut v = self.frame_metrics.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.frame_metrics = Some(v);
             self
         }
-        /// <p>
-        /// The details of the metrics that are used to request a time series of values. The metric includes
-        /// the name of the frame, the aggregation type to calculate the metric value for the
-        /// frame, and the thread states to use to get the count for the metric value of the frame.</p>
+        /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
         pub fn set_frame_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FrameMetric>>,
@@ -395,7 +323,7 @@ pub mod batch_get_frame_metric_data_input {
 pub type BatchGetFrameMetricDataInputOperationOutputAlias =
     crate::operation::BatchGetFrameMetricData;
 #[doc(hidden)]
-pub type BatchGetFrameMetricDataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type BatchGetFrameMetricDataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl BatchGetFrameMetricDataInput {
     /// Consumes the builder and constructs an Operation<[`BatchGetFrameMetricData`](crate::operation::BatchGetFrameMetricData)>
     #[allow(clippy::let_and_return)]
@@ -406,7 +334,7 @@ impl BatchGetFrameMetricDataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::BatchGetFrameMetricData,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -543,7 +471,7 @@ impl BatchGetFrameMetricDataInput {
             "BatchGetFrameMetricData",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -579,16 +507,12 @@ pub mod configure_agent_input {
         >,
     }
     impl Builder {
-        /// <p>
-        /// The name of the profiling group for which the configured agent is collecting profiling data.
-        /// </p>
+        /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
         pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.profiling_group_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the profiling group for which the configured agent is collecting profiling data.
-        /// </p>
+        /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -596,16 +520,12 @@ pub mod configure_agent_input {
             self.profiling_group_name = input;
             self
         }
-        /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the
-        /// profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS
-        /// Fargate container, it is the container's task ID. </p>
+        /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
         pub fn fleet_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.fleet_instance_id = Some(input.into());
             self
         }
-        /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the
-        /// profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS
-        /// Fargate container, it is the container's task ID. </p>
+        /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
         pub fn set_fleet_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -617,113 +537,39 @@ pub mod configure_agent_input {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p> Metadata captured about the compute platform the agent is running on. It includes
-        /// information about sampling and reporting. The valid fields are:</p>
+        /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AGENT_ID</code> - The ID for an agent instance.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li>
+        /// <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li>
+        /// <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li>
+        /// <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li>
+        /// <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li>
+        /// <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li>
+        /// <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li>
+        /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
+        /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
         /// </ul>
         pub fn metadata(
             mut self,
-            k: impl Into<crate::model::MetadataField>,
+            k: crate::model::MetadataField,
             v: impl Into<std::string::String>,
         ) -> Self {
             let mut hash_map = self.metadata.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
+            hash_map.insert(k, v.into());
             self.metadata = Some(hash_map);
             self
         }
-        /// <p> Metadata captured about the compute platform the agent is running on. It includes
-        /// information about sampling and reporting. The valid fields are:</p>
+        /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AGENT_ID</code> - The ID for an agent instance.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li>
+        /// <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li>
+        /// <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li>
+        /// <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li>
+        /// <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li>
+        /// <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li>
+        /// <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li>
+        /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
+        /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
         /// </ul>
         pub fn set_metadata(
             mut self,
@@ -752,7 +598,7 @@ pub mod configure_agent_input {
 #[doc(hidden)]
 pub type ConfigureAgentInputOperationOutputAlias = crate::operation::ConfigureAgent;
 #[doc(hidden)]
-pub type ConfigureAgentInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ConfigureAgentInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ConfigureAgentInput {
     /// Consumes the builder and constructs an Operation<[`ConfigureAgent`](crate::operation::ConfigureAgent)>
     #[allow(clippy::let_and_return)]
@@ -763,7 +609,7 @@ impl ConfigureAgentInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ConfigureAgent,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -863,7 +709,7 @@ impl ConfigureAgentInput {
             "ConfigureAgent",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -915,22 +761,12 @@ pub mod create_profiling_group_input {
             self.profiling_group_name = input;
             self
         }
-        /// <p>
-        /// The compute platform of the profiling group. Use <code>AWSLambda</code> if your application
-        /// runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that
-        /// is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform.
-        /// If not specified, <code>Default</code> is used.         
-        /// </p>
+        /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
         pub fn compute_platform(mut self, input: crate::model::ComputePlatform) -> Self {
             self.compute_platform = Some(input);
             self
         }
-        /// <p>
-        /// The compute platform of the profiling group. Use <code>AWSLambda</code> if your application
-        /// runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that
-        /// is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform.
-        /// If not specified, <code>Default</code> is used.         
-        /// </p>
+        /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
         pub fn set_compute_platform(
             mut self,
             input: std::option::Option<crate::model::ComputePlatform>,
@@ -938,21 +774,17 @@ pub mod create_profiling_group_input {
             self.compute_platform = input;
             self
         }
-        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
-        /// accidental creation of duplicate profiling groups if there are failures and retries. </p>
+        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
-        /// accidental creation of duplicate profiling groups if there are failures and retries. </p>
+        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>
-        /// Specifies whether profiling is enabled or disabled for the created profiling group.
-        /// </p>
+        /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
         pub fn agent_orchestration_config(
             mut self,
             input: crate::model::AgentOrchestrationConfig,
@@ -960,9 +792,7 @@ pub mod create_profiling_group_input {
             self.agent_orchestration_config = Some(input);
             self
         }
-        /// <p>
-        /// Specifies whether profiling is enabled or disabled for the created profiling group.
-        /// </p>
+        /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
         pub fn set_agent_orchestration_config(
             mut self,
             input: std::option::Option<crate::model::AgentOrchestrationConfig>,
@@ -974,9 +804,7 @@ pub mod create_profiling_group_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// A list of tags to add to the created profiling group.
-        /// </p>
+        /// <p> A list of tags to add to the created profiling group. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -987,9 +815,7 @@ pub mod create_profiling_group_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// A list of tags to add to the created profiling group.
-        /// </p>
+        /// <p> A list of tags to add to the created profiling group. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1019,7 +845,7 @@ pub mod create_profiling_group_input {
 #[doc(hidden)]
 pub type CreateProfilingGroupInputOperationOutputAlias = crate::operation::CreateProfilingGroup;
 #[doc(hidden)]
-pub type CreateProfilingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateProfilingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`CreateProfilingGroup`](crate::operation::CreateProfilingGroup)>
     #[allow(clippy::let_and_return)]
@@ -1030,7 +856,7 @@ impl CreateProfilingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateProfilingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1126,7 +952,7 @@ impl CreateProfilingGroupInput {
             "CreateProfilingGroup",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1187,7 +1013,7 @@ pub mod delete_profiling_group_input {
 #[doc(hidden)]
 pub type DeleteProfilingGroupInputOperationOutputAlias = crate::operation::DeleteProfilingGroup;
 #[doc(hidden)]
-pub type DeleteProfilingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteProfilingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DeleteProfilingGroup`](crate::operation::DeleteProfilingGroup)>
     #[allow(clippy::let_and_return)]
@@ -1198,7 +1024,7 @@ impl DeleteProfilingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteProfilingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1292,7 +1118,7 @@ impl DeleteProfilingGroupInput {
             "DeleteProfilingGroup",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1316,16 +1142,12 @@ pub mod describe_profiling_group_input {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the profiling group to get information about.
-        /// </p>
+        /// <p> The name of the profiling group to get information about. </p>
         pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.profiling_group_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the profiling group to get information about.
-        /// </p>
+        /// <p> The name of the profiling group to get information about. </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1349,7 +1171,7 @@ pub mod describe_profiling_group_input {
 #[doc(hidden)]
 pub type DescribeProfilingGroupInputOperationOutputAlias = crate::operation::DescribeProfilingGroup;
 #[doc(hidden)]
-pub type DescribeProfilingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeProfilingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`DescribeProfilingGroup`](crate::operation::DescribeProfilingGroup)>
     #[allow(clippy::let_and_return)]
@@ -1360,7 +1182,7 @@ impl DescribeProfilingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeProfilingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1454,7 +1276,7 @@ impl DescribeProfilingGroupInput {
             "DescribeProfilingGroup",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1480,58 +1302,36 @@ pub mod get_findings_report_account_summary_input {
         pub(crate) daily_reports_only: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-        /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-        /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output.
-        /// When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial
-        /// request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned
-        /// <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output.
-        /// When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial
-        /// request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned
-        /// <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
-        /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
-        /// analysis data is returned from smaller time windows (for example, one hour).</p>
+        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
         pub fn daily_reports_only(mut self, input: bool) -> Self {
             self.daily_reports_only = Some(input);
             self
         }
-        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
-        /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
-        /// analysis data is returned from smaller time windows (for example, one hour).</p>
+        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
         pub fn set_daily_reports_only(mut self, input: std::option::Option<bool>) -> Self {
             self.daily_reports_only = input;
             self
@@ -1555,7 +1355,8 @@ pub mod get_findings_report_account_summary_input {
 pub type GetFindingsReportAccountSummaryInputOperationOutputAlias =
     crate::operation::GetFindingsReportAccountSummary;
 #[doc(hidden)]
-pub type GetFindingsReportAccountSummaryInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetFindingsReportAccountSummaryInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetFindingsReportAccountSummaryInput {
     /// Consumes the builder and constructs an Operation<[`GetFindingsReportAccountSummary`](crate::operation::GetFindingsReportAccountSummary)>
     #[allow(clippy::let_and_return)]
@@ -1566,7 +1367,7 @@ impl GetFindingsReportAccountSummaryInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetFindingsReportAccountSummary,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1663,7 +1464,7 @@ impl GetFindingsReportAccountSummaryInput {
             "GetFindingsReportAccountSummary",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1717,7 +1518,8 @@ pub mod get_notification_configuration_input {
 pub type GetNotificationConfigurationInputOperationOutputAlias =
     crate::operation::GetNotificationConfiguration;
 #[doc(hidden)]
-pub type GetNotificationConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetNotificationConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl GetNotificationConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`GetNotificationConfiguration`](crate::operation::GetNotificationConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1728,7 +1530,7 @@ impl GetNotificationConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetNotificationConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1822,7 +1624,7 @@ impl GetNotificationConfigurationInput {
             "GetNotificationConfiguration",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1873,7 +1675,7 @@ pub mod get_policy_input {
 #[doc(hidden)]
 pub type GetPolicyInputOperationOutputAlias = crate::operation::GetPolicy;
 #[doc(hidden)]
-pub type GetPolicyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetPolicyInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetPolicyInput {
     /// Consumes the builder and constructs an Operation<[`GetPolicy`](crate::operation::GetPolicy)>
     #[allow(clippy::let_and_return)]
@@ -1884,7 +1686,7 @@ impl GetPolicyInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetPolicy,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1976,7 +1778,7 @@ impl GetPolicyInput {
                     "GetPolicy",
                     "codeguruprofiler",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2018,26 +1820,14 @@ pub mod get_profile_input {
             self.profiling_group_name = input;
             self
         }
-        /// <p>The start time of the profile to get. Specify using
-        /// the ISO 8601 format. For example,
-        /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-        ///
-        /// <p>
-        /// If you specify <code>startTime</code>, then you must also specify <code>period</code>
-        /// or <code>endTime</code>, but not both.
-        /// </p>
+        /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+        /// <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start time of the profile to get. Specify using
-        /// the ISO 8601 format. For example,
-        /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-        ///
-        /// <p>
-        /// If you specify <code>startTime</code>, then you must also specify <code>period</code>
-        /// or <code>endTime</code>, but not both.
-        /// </p>
+        /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+        /// <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2045,54 +1835,26 @@ pub mod get_profile_input {
             self.start_time = input;
             self
         }
-        /// <p>
-        /// Used with <code>startTime</code> or <code>endTime</code> to specify
-        /// the time range for the returned aggregated profile. Specify using
-        /// the ISO 8601 format. For example, <code>P1DT1H1M1S</code>.
-        /// </p>
-        ///
-        /// <p>
-        /// To get the latest aggregated profile, specify only <code>period</code>.
-        /// </p>
+        /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
+        /// <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
         pub fn period(mut self, input: impl Into<std::string::String>) -> Self {
             self.period = Some(input.into());
             self
         }
-        /// <p>
-        /// Used with <code>startTime</code> or <code>endTime</code> to specify
-        /// the time range for the returned aggregated profile. Specify using
-        /// the ISO 8601 format. For example, <code>P1DT1H1M1S</code>.
-        /// </p>
-        ///
-        /// <p>
-        /// To get the latest aggregated profile, specify only <code>period</code>.
-        /// </p>
+        /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
+        /// <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
         pub fn set_period(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.period = input;
             self
         }
-        /// <p>
-        /// The end time of the requested profile. Specify using
-        /// the ISO 8601 format. For example,
-        /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
-        /// <p>
-        /// If you specify <code>endTime</code>, then you must also specify <code>period</code>
-        /// or <code>startTime</code>, but not both.
-        /// </p>
+        /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+        /// <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>
-        /// The end time of the requested profile. Specify using
-        /// the ISO 8601 format. For example,
-        /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
-        /// <p>
-        /// If you specify <code>endTime</code>, then you must also specify <code>period</code>
-        /// or <code>startTime</code>, but not both.
-        /// </p>
+        /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+        /// <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2100,73 +1862,29 @@ pub mod get_profile_input {
             self.end_time = input;
             self
         }
-        /// <p>
-        /// The maximum depth of the stacks in the code that is represented in
-        /// the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>,
-        /// which calls method <code>B</code>, which calls method <code>C</code>, which
-        /// calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is
-        /// set to 2, then the aggregated profile contains representations of methods <code>A</code>
-        /// and <code>B</code>.
-        /// </p>
+        /// <p> The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. </p>
         pub fn max_depth(mut self, input: i32) -> Self {
             self.max_depth = Some(input);
             self
         }
-        /// <p>
-        /// The maximum depth of the stacks in the code that is represented in
-        /// the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>,
-        /// which calls method <code>B</code>, which calls method <code>C</code>, which
-        /// calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is
-        /// set to 2, then the aggregated profile contains representations of methods <code>A</code>
-        /// and <code>B</code>.
-        /// </p>
+        /// <p> The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. </p>
         pub fn set_max_depth(mut self, input: std::option::Option<i32>) -> Self {
             self.max_depth = input;
             self
         }
-        /// <p>
-        /// The format of the returned profiling data. The format maps to the
-        /// <code>Accept</code> and <code>Content-Type</code> headers of the
-        /// HTTP request. You can specify one of the following:
-        /// or the default .
-        /// </p>
-        ///
+        /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>application/json</code> — standard JSON format
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information,
-        /// see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
+        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
         /// </ul>
         pub fn accept(mut self, input: impl Into<std::string::String>) -> Self {
             self.accept = Some(input.into());
             self
         }
-        /// <p>
-        /// The format of the returned profiling data. The format maps to the
-        /// <code>Accept</code> and <code>Content-Type</code> headers of the
-        /// HTTP request. You can specify one of the following:
-        /// or the default .
-        /// </p>
-        ///
+        /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>application/json</code> — standard JSON format
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information,
-        /// see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
+        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
         /// </ul>
         pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.accept = input;
@@ -2193,7 +1911,7 @@ pub mod get_profile_input {
 #[doc(hidden)]
 pub type GetProfileInputOperationOutputAlias = crate::operation::GetProfile;
 #[doc(hidden)]
-pub type GetProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetProfileInput {
     /// Consumes the builder and constructs an Operation<[`GetProfile`](crate::operation::GetProfile)>
     #[allow(clippy::let_and_return)]
@@ -2204,7 +1922,7 @@ impl GetProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2357,7 +2075,7 @@ impl GetProfileInput {
             "GetProfile",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2384,16 +2102,12 @@ pub mod get_recommendations_input {
         pub(crate) locale: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the profiling group to get analysis data about.
-        /// </p>
+        /// <p> The name of the profiling group to get analysis data about. </p>
         pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.profiling_group_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the profiling group to get analysis data about.
-        /// </p>
+        /// <p> The name of the profiling group to get analysis data about. </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2401,22 +2115,12 @@ pub mod get_recommendations_input {
             self.profiling_group_name = input;
             self
         }
-        /// <p>
-        /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>
-        /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2424,22 +2128,12 @@ pub mod get_recommendations_input {
             self.start_time = input;
             self
         }
-        /// <p>
-        /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>
-        /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2447,131 +2141,37 @@ pub mod get_recommendations_input {
             self.end_time = input;
             self
         }
-        /// <p>
-        /// The language used to provide analysis. Specify using a string that is one
-        /// of the following <code>BCP 47</code> language codes.
-        /// </p>
+        /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>de-DE</code> - German, Germany
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>en-GB</code> - English, United Kingdom
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>en-US</code> - English, United States
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>es-ES</code> - Spanish, Spain
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>fr-FR</code> - French, France
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>it-IT</code> - Italian, Italy
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ja-JP</code> - Japanese, Japan
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ko-KR</code> - Korean, Republic of Korea
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pt-BR</code> - Portugese, Brazil
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh-CN</code> - Chinese, China
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh-TW</code> - Chinese, Taiwan
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
+        /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
+        /// <li> <p> <code>en-US</code> - English, United States </p> </li>
+        /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
+        /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
+        /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
+        /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
+        /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
+        /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
+        /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
+        /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
         /// </ul>
         pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
             self.locale = Some(input.into());
             self
         }
-        /// <p>
-        /// The language used to provide analysis. Specify using a string that is one
-        /// of the following <code>BCP 47</code> language codes.
-        /// </p>
+        /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>de-DE</code> - German, Germany
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>en-GB</code> - English, United Kingdom
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>en-US</code> - English, United States
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>es-ES</code> - Spanish, Spain
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>fr-FR</code> - French, France
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>it-IT</code> - Italian, Italy
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ja-JP</code> - Japanese, Japan
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ko-KR</code> - Korean, Republic of Korea
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pt-BR</code> - Portugese, Brazil
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh-CN</code> - Chinese, China
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>zh-TW</code> - Chinese, Taiwan
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
+        /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
+        /// <li> <p> <code>en-US</code> - English, United States </p> </li>
+        /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
+        /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
+        /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
+        /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
+        /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
+        /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
+        /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
+        /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
         /// </ul>
         pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale = input;
@@ -2596,7 +2196,7 @@ pub mod get_recommendations_input {
 #[doc(hidden)]
 pub type GetRecommendationsInputOperationOutputAlias = crate::operation::GetRecommendations;
 #[doc(hidden)]
-pub type GetRecommendationsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetRecommendationsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetRecommendationsInput {
     /// Consumes the builder and constructs an Operation<[`GetRecommendations`](crate::operation::GetRecommendations)>
     #[allow(clippy::let_and_return)]
@@ -2607,7 +2207,7 @@ impl GetRecommendationsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetRecommendations,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2730,7 +2330,7 @@ impl GetRecommendationsInput {
             "GetRecommendations",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2772,22 +2372,12 @@ pub mod list_findings_reports_input {
             self.profiling_group_name = input;
             self
         }
-        /// <p>
-        /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>
-        /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2795,22 +2385,12 @@ pub mod list_findings_reports_input {
             self.start_time = input;
             self
         }
-        /// <p>
-        /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>
-        /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-        /// This is specified
-        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-        /// millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// </p>
+        /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2818,60 +2398,36 @@ pub mod list_findings_reports_input {
             self.end_time = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-        /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-        /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of report results returned by <code>ListFindingsReports</code>
-        /// in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code> response
-        /// element. The remaining results of the initial request
-        /// can be seen by sending another <code>ListFindingsReports</code> request with the returned
-        /// <code>nextToken</code> value.</p>
+        /// <p>The maximum number of report results returned by <code>ListFindingsReports</code> in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFindingsReports</code> request with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of report results returned by <code>ListFindingsReports</code>
-        /// in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code> response
-        /// element. The remaining results of the initial request
-        /// can be seen by sending another <code>ListFindingsReports</code> request with the returned
-        /// <code>nextToken</code> value.</p>
+        /// <p>The maximum number of report results returned by <code>ListFindingsReports</code> in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFindingsReports</code> request with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
-        /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
-        /// analysis data is returned from smaller time windows (for example, one hour).</p>
+        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
         pub fn daily_reports_only(mut self, input: bool) -> Self {
             self.daily_reports_only = Some(input);
             self
         }
-        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
-        /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
-        /// analysis data is returned from smaller time windows (for example, one hour).</p>
+        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
         pub fn set_daily_reports_only(mut self, input: std::option::Option<bool>) -> Self {
             self.daily_reports_only = input;
             self
@@ -2897,7 +2453,7 @@ pub mod list_findings_reports_input {
 #[doc(hidden)]
 pub type ListFindingsReportsInputOperationOutputAlias = crate::operation::ListFindingsReports;
 #[doc(hidden)]
-pub type ListFindingsReportsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFindingsReportsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFindingsReportsInput {
     /// Consumes the builder and constructs an Operation<[`ListFindingsReports`](crate::operation::ListFindingsReports)>
     #[allow(clippy::let_and_return)]
@@ -2908,7 +2464,7 @@ impl ListFindingsReportsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFindingsReports,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3043,7 +2599,7 @@ impl ListFindingsReportsInput {
             "ListFindingsReports",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3112,51 +2668,21 @@ pub mod list_profile_times_input {
             self.end_time = input;
             self
         }
-        /// <p>
-        /// The aggregation period. This specifies the period during which an aggregation profile
-        /// collects posted agent profiles for a profiling group. There are 3 valid values.
-        /// </p>
+        /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>P1D</code> — 1 day
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT1H</code> — 1 hour
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT5M</code> — 5 minutes
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
         /// </ul>
         pub fn period(mut self, input: crate::model::AggregationPeriod) -> Self {
             self.period = Some(input);
             self
         }
-        /// <p>
-        /// The aggregation period. This specifies the period during which an aggregation profile
-        /// collects posted agent profiles for a profiling group. There are 3 valid values.
-        /// </p>
+        /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>P1D</code> — 1 day
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT1H</code> — 1 hour
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PT5M</code> — 5 minutes
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+        /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+        /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
         /// </ul>
         pub fn set_period(
             mut self,
@@ -3165,63 +2691,35 @@ pub mod list_profile_times_input {
             self.period = input;
             self
         }
-        /// <p>The order (ascending or descending by start time of the profile) to
-        /// use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>.
-        /// </p>
+        /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. </p>
         pub fn order_by(mut self, input: crate::model::OrderBy) -> Self {
             self.order_by = Some(input);
             self
         }
-        /// <p>The order (ascending or descending by start time of the profile) to
-        /// use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>.
-        /// </p>
+        /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. </p>
         pub fn set_order_by(mut self, input: std::option::Option<crate::model::OrderBy>) -> Self {
             self.order_by = input;
             self
         }
-        /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code>
-        /// in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns
-        /// <code>maxResults</code> results in a single page with a <code>nextToken</code> response
-        /// element. The remaining results of the initial request
-        /// can be seen by sending another <code>ListProfileTimes</code> request with the returned
-        /// <code>nextToken</code> value.
-        /// </p>
+        /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code>
-        /// in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns
-        /// <code>maxResults</code> results in a single page with a <code>nextToken</code> response
-        /// element. The remaining results of the initial request
-        /// can be seen by sending another <code>ListProfileTimes</code> request with the returned
-        /// <code>nextToken</code> value.
-        /// </p>
+        /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-        /// that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-        /// that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -3249,7 +2747,7 @@ pub mod list_profile_times_input {
 #[doc(hidden)]
 pub type ListProfileTimesInputOperationOutputAlias = crate::operation::ListProfileTimes;
 #[doc(hidden)]
-pub type ListProfileTimesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProfileTimesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProfileTimesInput {
     /// Consumes the builder and constructs an Operation<[`ListProfileTimes`](crate::operation::ListProfileTimes)>
     #[allow(clippy::let_and_return)]
@@ -3260,7 +2758,7 @@ impl ListProfileTimesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProfileTimes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3395,7 +2893,7 @@ impl ListProfileTimesInput {
             "ListProfileTimes",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3421,72 +2919,36 @@ pub mod list_profiling_groups_input {
         pub(crate) include_description: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-        /// that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-        /// that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code>
-        /// in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code> response
-        /// element. The remaining results of the initial request
-        /// can be seen by sending another <code>ListProfilingGroups</code> request with the returned
-        /// <code>nextToken</code> value.
-        /// </p>
+        /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code> value. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code>
-        /// in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code> response
-        /// element. The remaining results of the initial request
-        /// can be seen by sending another <code>ListProfilingGroups</code> request with the returned
-        /// <code>nextToken</code> value.
-        /// </p>
+        /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>,
-        /// then a list of
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-        /// <code>ProfilingGroupDescription</code>
-        /// </a> objects
-        /// that contain detailed information about profiling groups is returned. If <code>false</code>, then
-        /// a list of profiling group names is returned.</p>
+        /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is returned. If <code>false</code>, then a list of profiling group names is returned.</p>
         pub fn include_description(mut self, input: bool) -> Self {
             self.include_description = Some(input);
             self
         }
-        /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>,
-        /// then a list of
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-        /// <code>ProfilingGroupDescription</code>
-        /// </a> objects
-        /// that contain detailed information about profiling groups is returned. If <code>false</code>, then
-        /// a list of profiling group names is returned.</p>
+        /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is returned. If <code>false</code>, then a list of profiling group names is returned.</p>
         pub fn set_include_description(mut self, input: std::option::Option<bool>) -> Self {
             self.include_description = input;
             self
@@ -3509,7 +2971,7 @@ pub mod list_profiling_groups_input {
 #[doc(hidden)]
 pub type ListProfilingGroupsInputOperationOutputAlias = crate::operation::ListProfilingGroups;
 #[doc(hidden)]
-pub type ListProfilingGroupsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListProfilingGroupsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListProfilingGroupsInput {
     /// Consumes the builder and constructs an Operation<[`ListProfilingGroups`](crate::operation::ListProfilingGroups)>
     #[allow(clippy::let_and_return)]
@@ -3520,7 +2982,7 @@ impl ListProfilingGroupsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListProfilingGroups,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3617,7 +3079,7 @@ impl ListProfilingGroupsInput {
             "ListProfilingGroups",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3641,16 +3103,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the resource that contains the tags to return.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to return. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the resource that contains the tags to return.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to return. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3671,7 +3129,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3682,7 +3140,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3772,7 +3230,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3799,18 +3257,12 @@ pub mod post_agent_profile_input {
         pub(crate) content_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the profiling group with the aggregated profile that receives the
-        /// submitted profiling data.
-        /// </p>
+        /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
         pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.profiling_group_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the profiling group with the aggregated profile that receives the
-        /// submitted profiling data.
-        /// </p>
+        /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3818,16 +3270,12 @@ pub mod post_agent_profile_input {
             self.profiling_group_name = input;
             self
         }
-        /// <p>
-        /// The submitted profiling data.
-        /// </p>
+        /// <p> The submitted profiling data. </p>
         pub fn agent_profile(mut self, input: aws_smithy_types::Blob) -> Self {
             self.agent_profile = Some(input);
             self
         }
-        /// <p>
-        /// The submitted profiling data.
-        /// </p>
+        /// <p> The submitted profiling data. </p>
         pub fn set_agent_profile(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -3835,14 +3283,12 @@ pub mod post_agent_profile_input {
             self.agent_profile = input;
             self
         }
-        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
-        /// accidental submission of duplicate profiling data if there are failures and retries. </p>
+        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
         pub fn profile_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.profile_token = Some(input.into());
             self
         }
-        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
-        /// accidental submission of duplicate profiling data if there are failures and retries. </p>
+        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
         pub fn set_profile_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3850,49 +3296,19 @@ pub mod post_agent_profile_input {
             self.profile_token = input;
             self
         }
-        /// <p>
-        /// The format of the submitted profiling data. The format maps to the
-        /// <code>Accept</code> and <code>Content-Type</code> headers of the
-        /// HTTP request. You can specify one of the following:
-        /// or the default .
-        /// </p>
-        ///
+        /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>application/json</code> — standard JSON format
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information,
-        /// see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
+        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
         /// </ul>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>
-        /// The format of the submitted profiling data. The format maps to the
-        /// <code>Accept</code> and <code>Content-Type</code> headers of the
-        /// HTTP request. You can specify one of the following:
-        /// or the default .
-        /// </p>
-        ///
+        /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>application/json</code> — standard JSON format
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information,
-        /// see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
+        /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
         /// </ul>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
@@ -3917,7 +3333,7 @@ pub mod post_agent_profile_input {
 #[doc(hidden)]
 pub type PostAgentProfileInputOperationOutputAlias = crate::operation::PostAgentProfile;
 #[doc(hidden)]
-pub type PostAgentProfileInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PostAgentProfileInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PostAgentProfileInput {
     /// Consumes the builder and constructs an Operation<[`PostAgentProfile`](crate::operation::PostAgentProfile)>
     #[allow(clippy::let_and_return)]
@@ -3928,7 +3344,7 @@ impl PostAgentProfileInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PostAgentProfile,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4068,7 +3484,7 @@ impl PostAgentProfileInput {
             "PostAgentProfile",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4116,22 +3532,12 @@ pub mod put_permission_input {
             self.profiling_group_name = input;
             self
         }
-        /// <p>
-        /// Specifies an action group that contains permissions to add to
-        /// a profiling group resource. One action group is supported, <code>agentPermissions</code>, which
-        /// grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code>
-        /// and <code>PostAgentProfile</code> permissions.
-        /// </p>
+        /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
         pub fn action_group(mut self, input: crate::model::ActionGroup) -> Self {
             self.action_group = Some(input);
             self
         }
-        /// <p>
-        /// Specifies an action group that contains permissions to add to
-        /// a profiling group resource. One action group is supported, <code>agentPermissions</code>, which
-        /// grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code>
-        /// and <code>PostAgentProfile</code> permissions.
-        /// </p>
+        /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
         pub fn set_action_group(
             mut self,
             input: std::option::Option<crate::model::ActionGroup>,
@@ -4143,20 +3549,14 @@ pub mod put_permission_input {
         ///
         /// To override the contents of this collection use [`set_principals`](Self::set_principals).
         ///
-        /// <p>
-        /// A list ARNs for the roles and users you want to grant access to the profiling group.
-        /// Wildcards are not are supported in the ARNs.
-        /// </p>
+        /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
             v.push(input.into());
             self.principals = Some(v);
             self
         }
-        /// <p>
-        /// A list ARNs for the roles and users you want to grant access to the profiling group.
-        /// Wildcards are not are supported in the ARNs.
-        /// </p>
+        /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4164,22 +3564,12 @@ pub mod put_permission_input {
             self.principals = input;
             self
         }
-        /// <p>
-        /// A universally unique identifier (UUID) for the revision of the policy you
-        /// are adding to the profiling group. Do not specify
-        /// this when you add permissions to a profiling group for the first time. If a policy already exists on the
-        /// profiling group, you must specify the <code>revisionId</code>.
-        /// </p>
+        /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.revision_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A universally unique identifier (UUID) for the revision of the policy you
-        /// are adding to the profiling group. Do not specify
-        /// this when you add permissions to a profiling group for the first time. If a policy already exists on the
-        /// profiling group, you must specify the <code>revisionId</code>.
-        /// </p>
+        /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -4203,7 +3593,7 @@ pub mod put_permission_input {
 #[doc(hidden)]
 pub type PutPermissionInputOperationOutputAlias = crate::operation::PutPermission;
 #[doc(hidden)]
-pub type PutPermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type PutPermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl PutPermissionInput {
     /// Consumes the builder and constructs an Operation<[`PutPermission`](crate::operation::PutPermission)>
     #[allow(clippy::let_and_return)]
@@ -4214,7 +3604,7 @@ impl PutPermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::PutPermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4329,7 +3719,7 @@ impl PutPermissionInput {
             "PutPermission",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4403,7 +3793,7 @@ pub mod remove_notification_channel_input {
 pub type RemoveNotificationChannelInputOperationOutputAlias =
     crate::operation::RemoveNotificationChannel;
 #[doc(hidden)]
-pub type RemoveNotificationChannelInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemoveNotificationChannelInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemoveNotificationChannelInput {
     /// Consumes the builder and constructs an Operation<[`RemoveNotificationChannel`](crate::operation::RemoveNotificationChannel)>
     #[allow(clippy::let_and_return)]
@@ -4414,7 +3804,7 @@ impl RemoveNotificationChannelInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemoveNotificationChannel,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4524,7 +3914,7 @@ impl RemoveNotificationChannelInput {
             "RemoveNotificationChannel",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4563,20 +3953,12 @@ pub mod remove_permission_input {
             self.profiling_group_name = input;
             self
         }
-        /// <p>
-        /// Specifies an action group that contains the permissions to remove from
-        /// a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which
-        /// grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
-        /// </p>
+        /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
         pub fn action_group(mut self, input: crate::model::ActionGroup) -> Self {
             self.action_group = Some(input);
             self
         }
-        /// <p>
-        /// Specifies an action group that contains the permissions to remove from
-        /// a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which
-        /// grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
-        /// </p>
+        /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
         pub fn set_action_group(
             mut self,
             input: std::option::Option<crate::model::ActionGroup>,
@@ -4584,18 +3966,12 @@ pub mod remove_permission_input {
             self.action_group = input;
             self
         }
-        /// <p>
-        /// A universally unique identifier (UUID) for the revision of the resource-based policy from which
-        /// you want to remove permissions.
-        /// </p>
+        /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.revision_id = Some(input.into());
             self
         }
-        /// <p>
-        /// A universally unique identifier (UUID) for the revision of the resource-based policy from which
-        /// you want to remove permissions.
-        /// </p>
+        /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -4618,7 +3994,7 @@ pub mod remove_permission_input {
 #[doc(hidden)]
 pub type RemovePermissionInputOperationOutputAlias = crate::operation::RemovePermission;
 #[doc(hidden)]
-pub type RemovePermissionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RemovePermissionInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RemovePermissionInput {
     /// Consumes the builder and constructs an Operation<[`RemovePermission`](crate::operation::RemovePermission)>
     #[allow(clippy::let_and_return)]
@@ -4629,7 +4005,7 @@ impl RemovePermissionInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RemovePermission,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4750,7 +4126,7 @@ impl RemovePermissionInput {
             "RemovePermission",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4790,20 +4166,12 @@ pub mod submit_feedback_input {
             self.profiling_group_name = input;
             self
         }
-        /// <p>The universally unique identifier (UUID) of the
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html">
-        /// <code>AnomalyInstance</code>
-        /// </a> object
-        /// that is included in the analysis data.</p>
+        /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
         pub fn anomaly_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.anomaly_instance_id = Some(input.into());
             self
         }
-        /// <p>The universally unique identifier (UUID) of the
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html">
-        /// <code>AnomalyInstance</code>
-        /// </a> object
-        /// that is included in the analysis data.</p>
+        /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
         pub fn set_anomaly_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4811,16 +4179,12 @@ pub mod submit_feedback_input {
             self.anomaly_instance_id = input;
             self
         }
-        /// <p>
-        /// The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.
-        /// </p>
+        /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
         pub fn r#type(mut self, input: crate::model::FeedbackType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>
-        /// The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.
-        /// </p>
+        /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::FeedbackType>) -> Self {
             self.r#type = input;
             self
@@ -4854,7 +4218,7 @@ pub mod submit_feedback_input {
 #[doc(hidden)]
 pub type SubmitFeedbackInputOperationOutputAlias = crate::operation::SubmitFeedback;
 #[doc(hidden)]
-pub type SubmitFeedbackInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SubmitFeedbackInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SubmitFeedbackInput {
     /// Consumes the builder and constructs an Operation<[`SubmitFeedback`](crate::operation::SubmitFeedback)>
     #[allow(clippy::let_and_return)]
@@ -4865,7 +4229,7 @@ impl SubmitFeedbackInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SubmitFeedback,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4975,7 +4339,7 @@ impl SubmitFeedbackInput {
             "SubmitFeedback",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5010,16 +4374,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the resource that the tags are added to.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the resource that the tags are added to. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the resource that the tags are added to.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the resource that the tags are added to. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5028,9 +4388,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The list of tags that are added to the specified resource.
-        /// </p>
+        /// <p> The list of tags that are added to the specified resource. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5041,9 +4399,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// The list of tags that are added to the specified resource.
-        /// </p>
+        /// <p> The list of tags that are added to the specified resource. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5070,7 +4426,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -5081,7 +4437,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5176,7 +4532,7 @@ impl TagResourceInput {
             "TagResource",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5209,16 +4565,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the resource that contains the tags to remove.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to remove. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the resource that contains the tags to remove.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to remove. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5227,20 +4579,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>
-        /// A list of tag keys. Existing tags of resources with keys in this list are removed from
-        /// the specified resource.
-        /// </p>
+        /// <p> A list of tag keys. Existing tags of resources with keys in this list are removed from the specified resource. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>
-        /// A list of tag keys. Existing tags of resources with keys in this list are removed from
-        /// the specified resource.
-        /// </p>
+        /// <p> A list of tag keys. Existing tags of resources with keys in this list are removed from the specified resource. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5265,7 +4611,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -5276,7 +4622,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5379,7 +4725,7 @@ impl UntagResourceInput {
             "UntagResource",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5418,9 +4764,7 @@ pub mod update_profiling_group_input {
             self.profiling_group_name = input;
             self
         }
-        /// <p>
-        /// Specifies whether profiling is enabled or disabled for a profiling group.
-        /// </p>
+        /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
         pub fn agent_orchestration_config(
             mut self,
             input: crate::model::AgentOrchestrationConfig,
@@ -5428,9 +4772,7 @@ pub mod update_profiling_group_input {
             self.agent_orchestration_config = Some(input);
             self
         }
-        /// <p>
-        /// Specifies whether profiling is enabled or disabled for a profiling group.
-        /// </p>
+        /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
         pub fn set_agent_orchestration_config(
             mut self,
             input: std::option::Option<crate::model::AgentOrchestrationConfig>,
@@ -5455,7 +4797,7 @@ pub mod update_profiling_group_input {
 #[doc(hidden)]
 pub type UpdateProfilingGroupInputOperationOutputAlias = crate::operation::UpdateProfilingGroup;
 #[doc(hidden)]
-pub type UpdateProfilingGroupInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateProfilingGroupInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateProfilingGroupInput {
     /// Consumes the builder and constructs an Operation<[`UpdateProfilingGroup`](crate::operation::UpdateProfilingGroup)>
     #[allow(clippy::let_and_return)]
@@ -5466,7 +4808,7 @@ impl UpdateProfilingGroupInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateProfilingGroup,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5568,7 +4910,7 @@ impl UpdateProfilingGroupInput {
             "UpdateProfilingGroup",
             "codeguruprofiler",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5597,15 +4939,9 @@ impl UpdateProfilingGroupInput {
 pub struct SubmitFeedbackInput {
     /// <p>The name of the profiling group that is associated with the analysis data.</p>
     pub profiling_group_name: std::option::Option<std::string::String>,
-    /// <p>The universally unique identifier (UUID) of the
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html">
-    /// <code>AnomalyInstance</code>
-    /// </a> object
-    /// that is included in the analysis data.</p>
+    /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
     pub anomaly_instance_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.
-    /// </p>
+    /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
     pub r#type: std::option::Option<crate::model::FeedbackType>,
     /// <p>Optional feedback about this anomaly.</p>
     pub comment: std::option::Option<std::string::String>,
@@ -5615,17 +4951,11 @@ impl SubmitFeedbackInput {
     pub fn profiling_group_name(&self) -> std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
-    /// <p>The universally unique identifier (UUID) of the
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html">
-    /// <code>AnomalyInstance</code>
-    /// </a> object
-    /// that is included in the analysis data.</p>
+    /// <p>The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</p>
     pub fn anomaly_instance_id(&self) -> std::option::Option<&str> {
         self.anomaly_instance_id.as_deref()
     }
-    /// <p>
-    /// The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.
-    /// </p>
+    /// <p> The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::FeedbackType> {
         self.r#type.as_ref()
     }
@@ -5645,24 +4975,15 @@ impl std::fmt::Debug for SubmitFeedbackInput {
     }
 }
 
-/// <p>
-///
-/// The structure representing the <code>removePermissionRequest</code>.</p>
+/// <p> The structure representing the <code>removePermissionRequest</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemovePermissionInput {
     /// <p>The name of the profiling group.</p>
     pub profiling_group_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Specifies an action group that contains the permissions to remove from
-    /// a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which
-    /// grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
-    /// </p>
+    /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
     pub action_group: std::option::Option<crate::model::ActionGroup>,
-    /// <p>
-    /// A universally unique identifier (UUID) for the revision of the resource-based policy from which
-    /// you want to remove permissions.
-    /// </p>
+    /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl RemovePermissionInput {
@@ -5670,18 +4991,11 @@ impl RemovePermissionInput {
     pub fn profiling_group_name(&self) -> std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
-    /// <p>
-    /// Specifies an action group that contains the permissions to remove from
-    /// a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which
-    /// grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
-    /// </p>
+    /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
     pub fn action_group(&self) -> std::option::Option<&crate::model::ActionGroup> {
         self.action_group.as_ref()
     }
-    /// <p>
-    /// A universally unique identifier (UUID) for the revision of the resource-based policy from which
-    /// you want to remove permissions.
-    /// </p>
+    /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
@@ -5730,24 +5044,11 @@ impl std::fmt::Debug for RemoveNotificationChannelInput {
 pub struct PutPermissionInput {
     /// <p>The name of the profiling group to grant access to.</p>
     pub profiling_group_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Specifies an action group that contains permissions to add to
-    /// a profiling group resource. One action group is supported, <code>agentPermissions</code>, which
-    /// grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code>
-    /// and <code>PostAgentProfile</code> permissions.
-    /// </p>
+    /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
     pub action_group: std::option::Option<crate::model::ActionGroup>,
-    /// <p>
-    /// A list ARNs for the roles and users you want to grant access to the profiling group.
-    /// Wildcards are not are supported in the ARNs.
-    /// </p>
+    /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// A universally unique identifier (UUID) for the revision of the policy you
-    /// are adding to the profiling group. Do not specify
-    /// this when you add permissions to a profiling group for the first time. If a policy already exists on the
-    /// profiling group, you must specify the <code>revisionId</code>.
-    /// </p>
+    /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl PutPermissionInput {
@@ -5755,28 +5056,15 @@ impl PutPermissionInput {
     pub fn profiling_group_name(&self) -> std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
-    /// <p>
-    /// Specifies an action group that contains permissions to add to
-    /// a profiling group resource. One action group is supported, <code>agentPermissions</code>, which
-    /// grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code>
-    /// and <code>PostAgentProfile</code> permissions.
-    /// </p>
+    /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
     pub fn action_group(&self) -> std::option::Option<&crate::model::ActionGroup> {
         self.action_group.as_ref()
     }
-    /// <p>
-    /// A list ARNs for the roles and users you want to grant access to the profiling group.
-    /// Wildcards are not are supported in the ARNs.
-    /// </p>
+    /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
     pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
         self.principals.as_deref()
     }
-    /// <p>
-    /// A universally unique identifier (UUID) for the revision of the policy you
-    /// are adding to the profiling group. Do not specify
-    /// this when you add permissions to a profiling group for the first time. If a policy already exists on the
-    /// profiling group, you must specify the <code>revisionId</code>.
-    /// </p>
+    /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
@@ -5796,78 +5084,36 @@ impl std::fmt::Debug for PutPermissionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PostAgentProfileInput {
-    /// <p>
-    /// The name of the profiling group with the aggregated profile that receives the
-    /// submitted profiling data.
-    /// </p>
+    /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
     pub profiling_group_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The submitted profiling data.
-    /// </p>
+    /// <p> The submitted profiling data. </p>
     pub agent_profile: std::option::Option<aws_smithy_types::Blob>,
-    /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
-    /// accidental submission of duplicate profiling data if there are failures and retries. </p>
+    /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
     pub profile_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The format of the submitted profiling data. The format maps to the
-    /// <code>Accept</code> and <code>Content-Type</code> headers of the
-    /// HTTP request. You can specify one of the following:
-    /// or the default .
-    /// </p>
-    ///
+    /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>application/json</code> — standard JSON format
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information,
-    /// see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
+    /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
     pub content_type: std::option::Option<std::string::String>,
 }
 impl PostAgentProfileInput {
-    /// <p>
-    /// The name of the profiling group with the aggregated profile that receives the
-    /// submitted profiling data.
-    /// </p>
+    /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
     pub fn profiling_group_name(&self) -> std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
-    /// <p>
-    /// The submitted profiling data.
-    /// </p>
+    /// <p> The submitted profiling data. </p>
     pub fn agent_profile(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.agent_profile.as_ref()
     }
-    /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
-    /// accidental submission of duplicate profiling data if there are failures and retries. </p>
+    /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
     pub fn profile_token(&self) -> std::option::Option<&str> {
         self.profile_token.as_deref()
     }
-    /// <p>
-    /// The format of the submitted profiling data. The format maps to the
-    /// <code>Accept</code> and <code>Content-Type</code> headers of the
-    /// HTTP request. You can specify one of the following:
-    /// or the default .
-    /// </p>
-    ///
+    /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>application/json</code> — standard JSON format
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information,
-    /// see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
+    /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
@@ -5894,48 +5140,19 @@ pub struct ListProfileTimesInput {
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time of the time range from which to list the profiles.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The aggregation period. This specifies the period during which an aggregation profile
-    /// collects posted agent profiles for a profiling group. There are 3 valid values.
-    /// </p>
+    /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>P1D</code> — 1 day
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PT1H</code> — 1 hour
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PT5M</code> — 5 minutes
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
     pub period: std::option::Option<crate::model::AggregationPeriod>,
-    /// <p>The order (ascending or descending by start time of the profile) to
-    /// use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>.
-    /// </p>
+    /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. </p>
     pub order_by: std::option::Option<crate::model::OrderBy>,
-    /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code>
-    /// in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns
-    /// <code>maxResults</code> results in a single page with a <code>nextToken</code> response
-    /// element. The remaining results of the initial request
-    /// can be seen by sending another <code>ListProfileTimes</code> request with the returned
-    /// <code>nextToken</code> value.
-    /// </p>
+    /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results
-    /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-    /// that returned the <code>nextToken</code> value.
-    /// </p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-    /// the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -5952,54 +5169,25 @@ impl ListProfileTimesInput {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>
-    /// The aggregation period. This specifies the period during which an aggregation profile
-    /// collects posted agent profiles for a profiling group. There are 3 valid values.
-    /// </p>
+    /// <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>P1D</code> — 1 day
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PT1H</code> — 1 hour
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PT5M</code> — 5 minutes
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
     pub fn period(&self) -> std::option::Option<&crate::model::AggregationPeriod> {
         self.period.as_ref()
     }
-    /// <p>The order (ascending or descending by start time of the profile) to
-    /// use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>.
-    /// </p>
+    /// <p>The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. </p>
     pub fn order_by(&self) -> std::option::Option<&crate::model::OrderBy> {
         self.order_by.as_ref()
     }
-    /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code>
-    /// in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns
-    /// <code>maxResults</code> results in a single page with a <code>nextToken</code> response
-    /// element. The remaining results of the initial request
-    /// can be seen by sending another <code>ListProfileTimes</code> request with the returned
-    /// <code>nextToken</code> value.
-    /// </p>
+    /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results
-    /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-    /// that returned the <code>nextToken</code> value.
-    /// </p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-    /// the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -6025,39 +5213,17 @@ impl std::fmt::Debug for ListProfileTimesInput {
 pub struct ListFindingsReportsInput {
     /// <p>The name of the profiling group from which to search for analysis data.</p>
     pub profiling_group_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-    /// This is specified
-    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-    /// millisecond past June 1, 2020 1:15:02 PM UTC.
-    /// </p>
+    /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-    /// This is specified
-    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-    /// millisecond past June 1, 2020 1:15:02 PM UTC.
-    /// </p>
+    /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code>
-    /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-    /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-    /// </p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-    /// the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of report results returned by <code>ListFindingsReports</code>
-    /// in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code> response
-    /// element. The remaining results of the initial request
-    /// can be seen by sending another <code>ListFindingsReports</code> request with the returned
-    /// <code>nextToken</code> value.</p>
+    /// <p>The maximum number of report results returned by <code>ListFindingsReports</code> in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFindingsReports</code> request with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
-    /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
-    /// analysis data is returned from smaller time windows (for example, one hour).</p>
+    /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
     pub daily_reports_only: std::option::Option<bool>,
 }
 impl ListFindingsReportsInput {
@@ -6065,47 +5231,25 @@ impl ListFindingsReportsInput {
     pub fn profiling_group_name(&self) -> std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
-    /// <p>
-    /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-    /// This is specified
-    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-    /// millisecond past June 1, 2020 1:15:02 PM UTC.
-    /// </p>
+    /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>
-    /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-    /// This is specified
-    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-    /// millisecond past June 1, 2020 1:15:02 PM UTC.
-    /// </p>
+    /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code>
-    /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-    /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-    /// </p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-    /// the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of report results returned by <code>ListFindingsReports</code>
-    /// in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code> response
-    /// element. The remaining results of the initial request
-    /// can be seen by sending another <code>ListFindingsReports</code> request with the returned
-    /// <code>nextToken</code> value.</p>
+    /// <p>The maximum number of report results returned by <code>ListFindingsReports</code> in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFindingsReports</code> request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
-    /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
-    /// analysis data is returned from smaller time windows (for example, one hour).</p>
+    /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
     pub fn daily_reports_only(&self) -> std::option::Option<bool> {
         self.daily_reports_only
     }
@@ -6127,172 +5271,54 @@ impl std::fmt::Debug for ListFindingsReportsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommendationsInput {
-    /// <p>
-    /// The name of the profiling group to get analysis data about.
-    /// </p>
+    /// <p> The name of the profiling group to get analysis data about. </p>
     pub profiling_group_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-    /// This is specified
-    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-    /// millisecond past June 1, 2020 1:15:02 PM UTC.
-    /// </p>
+    /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-    /// This is specified
-    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-    /// millisecond past June 1, 2020 1:15:02 PM UTC.
-    /// </p>
+    /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The language used to provide analysis. Specify using a string that is one
-    /// of the following <code>BCP 47</code> language codes.
-    /// </p>
+    /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>de-DE</code> - German, Germany
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>en-GB</code> - English, United Kingdom
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>en-US</code> - English, United States
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>es-ES</code> - Spanish, Spain
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>fr-FR</code> - French, France
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>it-IT</code> - Italian, Italy
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ja-JP</code> - Japanese, Japan
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ko-KR</code> - Korean, Republic of Korea
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pt-BR</code> - Portugese, Brazil
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh-CN</code> - Chinese, China
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh-TW</code> - Chinese, Taiwan
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
+    /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
+    /// <li> <p> <code>en-US</code> - English, United States </p> </li>
+    /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
+    /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
+    /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
+    /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
+    /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
+    /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
+    /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
+    /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
     /// </ul>
     pub locale: std::option::Option<std::string::String>,
 }
 impl GetRecommendationsInput {
-    /// <p>
-    /// The name of the profiling group to get analysis data about.
-    /// </p>
+    /// <p> The name of the profiling group to get analysis data about. </p>
     pub fn profiling_group_name(&self) -> std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
-    /// <p>
-    /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-    /// This is specified
-    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-    /// millisecond past June 1, 2020 1:15:02 PM UTC.
-    /// </p>
+    /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>
-    /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
-    /// This is specified
-    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-    /// millisecond past June 1, 2020 1:15:02 PM UTC.
-    /// </p>
+    /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>
-    /// The language used to provide analysis. Specify using a string that is one
-    /// of the following <code>BCP 47</code> language codes.
-    /// </p>
+    /// <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>de-DE</code> - German, Germany
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>en-GB</code> - English, United Kingdom
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>en-US</code> - English, United States
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>es-ES</code> - Spanish, Spain
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>fr-FR</code> - French, France
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>it-IT</code> - Italian, Italy
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ja-JP</code> - Japanese, Japan
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ko-KR</code> - Korean, Republic of Korea
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pt-BR</code> - Portugese, Brazil
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh-CN</code> - Chinese, China
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>zh-TW</code> - Chinese, Taiwan
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>de-DE</code> - German, Germany </p> </li>
+    /// <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li>
+    /// <li> <p> <code>en-US</code> - English, United States </p> </li>
+    /// <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li>
+    /// <li> <p> <code>fr-FR</code> - French, France </p> </li>
+    /// <li> <p> <code>it-IT</code> - Italian, Italy </p> </li>
+    /// <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li>
+    /// <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li>
+    /// <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li>
+    /// <li> <p> <code>zh-CN</code> - Chinese, China </p> </li>
+    /// <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li>
     /// </ul>
     pub fn locale(&self) -> std::option::Option<&str> {
         self.locale.as_deref()
@@ -6315,63 +5341,21 @@ impl std::fmt::Debug for GetRecommendationsInput {
 pub struct GetProfileInput {
     /// <p>The name of the profiling group to get.</p>
     pub profiling_group_name: std::option::Option<std::string::String>,
-    /// <p>The start time of the profile to get. Specify using
-    /// the ISO 8601 format. For example,
-    /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    ///
-    /// <p>
-    /// If you specify <code>startTime</code>, then you must also specify <code>period</code>
-    /// or <code>endTime</code>, but not both.
-    /// </p>
+    /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// Used with <code>startTime</code> or <code>endTime</code> to specify
-    /// the time range for the returned aggregated profile. Specify using
-    /// the ISO 8601 format. For example, <code>P1DT1H1M1S</code>.
-    /// </p>
-    ///
-    /// <p>
-    /// To get the latest aggregated profile, specify only <code>period</code>.
-    /// </p>
+    /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
+    /// <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
     pub period: std::option::Option<std::string::String>,
-    /// <p>
-    /// The end time of the requested profile. Specify using
-    /// the ISO 8601 format. For example,
-    /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
-    /// </p>
-    /// <p>
-    /// If you specify <code>endTime</code>, then you must also specify <code>period</code>
-    /// or <code>startTime</code>, but not both.
-    /// </p>
+    /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The maximum depth of the stacks in the code that is represented in
-    /// the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>,
-    /// which calls method <code>B</code>, which calls method <code>C</code>, which
-    /// calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is
-    /// set to 2, then the aggregated profile contains representations of methods <code>A</code>
-    /// and <code>B</code>.
-    /// </p>
+    /// <p> The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. </p>
     pub max_depth: std::option::Option<i32>,
-    /// <p>
-    /// The format of the returned profiling data. The format maps to the
-    /// <code>Accept</code> and <code>Content-Type</code> headers of the
-    /// HTTP request. You can specify one of the following:
-    /// or the default .
-    /// </p>
-    ///
+    /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>application/json</code> — standard JSON format
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information,
-    /// see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
+    /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
     pub accept: std::option::Option<std::string::String>,
 }
@@ -6380,71 +5364,29 @@ impl GetProfileInput {
     pub fn profiling_group_name(&self) -> std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
-    /// <p>The start time of the profile to get. Specify using
-    /// the ISO 8601 format. For example,
-    /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
-    ///
-    /// <p>
-    /// If you specify <code>startTime</code>, then you must also specify <code>period</code>
-    /// or <code>endTime</code>, but not both.
-    /// </p>
+    /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>
-    /// Used with <code>startTime</code> or <code>endTime</code> to specify
-    /// the time range for the returned aggregated profile. Specify using
-    /// the ISO 8601 format. For example, <code>P1DT1H1M1S</code>.
-    /// </p>
-    ///
-    /// <p>
-    /// To get the latest aggregated profile, specify only <code>period</code>.
-    /// </p>
+    /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
+    /// <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
     pub fn period(&self) -> std::option::Option<&str> {
         self.period.as_deref()
     }
-    /// <p>
-    /// The end time of the requested profile. Specify using
-    /// the ISO 8601 format. For example,
-    /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
-    /// </p>
-    /// <p>
-    /// If you specify <code>endTime</code>, then you must also specify <code>period</code>
-    /// or <code>startTime</code>, but not both.
-    /// </p>
+    /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>
-    /// The maximum depth of the stacks in the code that is represented in
-    /// the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>,
-    /// which calls method <code>B</code>, which calls method <code>C</code>, which
-    /// calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is
-    /// set to 2, then the aggregated profile contains representations of methods <code>A</code>
-    /// and <code>B</code>.
-    /// </p>
+    /// <p> The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. </p>
     pub fn max_depth(&self) -> std::option::Option<i32> {
         self.max_depth
     }
-    /// <p>
-    /// The format of the returned profiling data. The format maps to the
-    /// <code>Accept</code> and <code>Content-Type</code> headers of the
-    /// HTTP request. You can specify one of the following:
-    /// or the default .
-    /// </p>
-    ///
+    /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>application/json</code> — standard JSON format
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information,
-    /// see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
+    /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
     pub fn accept(&self) -> std::option::Option<&str> {
         self.accept.as_deref()
@@ -6463,9 +5405,7 @@ impl std::fmt::Debug for GetProfileInput {
     }
 }
 
-/// <p>
-/// The structure representing the <code>getPolicyRequest</code>.
-/// </p>
+/// <p> The structure representing the <code>getPolicyRequest</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyInput {
@@ -6511,128 +5451,46 @@ impl std::fmt::Debug for GetNotificationConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigureAgentInput {
-    /// <p>
-    /// The name of the profiling group for which the configured agent is collecting profiling data.
-    /// </p>
+    /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
     pub profiling_group_name: std::option::Option<std::string::String>,
-    /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the
-    /// profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS
-    /// Fargate container, it is the container's task ID. </p>
+    /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
     pub fleet_instance_id: std::option::Option<std::string::String>,
-    /// <p> Metadata captured about the compute platform the agent is running on. It includes
-    /// information about sampling and reporting. The valid fields are:</p>
+    /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AGENT_ID</code> - The ID for an agent instance.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li>
+    /// <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li>
+    /// <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li>
+    /// <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li>
+    /// <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li>
+    /// <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li>
+    /// <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li>
+    /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
+    /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
     /// </ul>
     pub metadata: std::option::Option<
         std::collections::HashMap<crate::model::MetadataField, std::string::String>,
     >,
 }
 impl ConfigureAgentInput {
-    /// <p>
-    /// The name of the profiling group for which the configured agent is collecting profiling data.
-    /// </p>
+    /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
     pub fn profiling_group_name(&self) -> std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
-    /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the
-    /// profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS
-    /// Fargate container, it is the container's task ID. </p>
+    /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
     pub fn fleet_instance_id(&self) -> std::option::Option<&str> {
         self.fleet_instance_id.as_deref()
     }
-    /// <p> Metadata captured about the compute platform the agent is running on. It includes
-    /// information about sampling and reporting. The valid fields are:</p>
+    /// <p> Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AGENT_ID</code> - The ID for an agent instance.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running </p> </li>
+    /// <li> <p> <code>AGENT_ID</code> - The ID for an agent instance. </p> </li>
+    /// <li> <p> <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation. </p> </li>
+    /// <li> <p> <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on. </p> </li>
+    /// <li> <p> <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function. </p> </li>
+    /// <li> <p> <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function. </p> </li>
+    /// <li> <p> <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out. </p> </li>
+    /// <li> <p> <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function. </p> </li>
+    /// <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation. </p> </li>
     /// </ul>
     pub fn metadata(
         &self,
@@ -6656,123 +5514,51 @@ impl std::fmt::Debug for ConfigureAgentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetFrameMetricDataInput {
-    /// <p>
-    /// The name of the profiling group associated with the
-    /// the frame metrics used to return the time series values.
-    /// </p>
+    /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
     pub profiling_group_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The start time of the time period for the frame metrics used to return the time series values.
-    /// This is specified
-    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-    /// millisecond past June 1, 2020 1:15:02 PM UTC.
-    /// </p>
+    /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The end time of the time period for the returned time series values.
-    /// This is specified
-    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-    /// millisecond past June 1, 2020 1:15:02 PM UTC.
-    /// </p>
+    /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The duration of the frame metrics used to return the time series values.
-    /// Specify using the ISO 8601 format. The maximum period duration
-    /// is one day (<code>PT24H</code> or <code>P1D</code>).
-    /// </p>
+    /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
     pub period: std::option::Option<std::string::String>,
-    /// <p>The requested resolution of time steps for the returned time series of values.
-    /// If the requested target resolution is not available due to data not being retained we provide a best effort
-    /// result by falling back to the most granular available resolution after the target resolution.
-    /// There are 3 valid values.
-    /// </p>
+    /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>P1D</code> — 1 day
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PT1H</code> — 1 hour
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PT5M</code> — 5 minutes
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
     pub target_resolution: std::option::Option<crate::model::AggregationPeriod>,
-    /// <p>
-    /// The details of the metrics that are used to request a time series of values. The metric includes
-    /// the name of the frame, the aggregation type to calculate the metric value for the
-    /// frame, and the thread states to use to get the count for the metric value of the frame.</p>
+    /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
     pub frame_metrics: std::option::Option<std::vec::Vec<crate::model::FrameMetric>>,
 }
 impl BatchGetFrameMetricDataInput {
-    /// <p>
-    /// The name of the profiling group associated with the
-    /// the frame metrics used to return the time series values.
-    /// </p>
+    /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
     pub fn profiling_group_name(&self) -> std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
-    /// <p>
-    /// The start time of the time period for the frame metrics used to return the time series values.
-    /// This is specified
-    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-    /// millisecond past June 1, 2020 1:15:02 PM UTC.
-    /// </p>
+    /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>
-    /// The end time of the time period for the returned time series values.
-    /// This is specified
-    /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
-    /// millisecond past June 1, 2020 1:15:02 PM UTC.
-    /// </p>
+    /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>
-    /// The duration of the frame metrics used to return the time series values.
-    /// Specify using the ISO 8601 format. The maximum period duration
-    /// is one day (<code>PT24H</code> or <code>P1D</code>).
-    /// </p>
+    /// <p> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). </p>
     pub fn period(&self) -> std::option::Option<&str> {
         self.period.as_deref()
     }
-    /// <p>The requested resolution of time steps for the returned time series of values.
-    /// If the requested target resolution is not available due to data not being retained we provide a best effort
-    /// result by falling back to the most granular available resolution after the target resolution.
-    /// There are 3 valid values.
-    /// </p>
+    /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>P1D</code> — 1 day
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PT1H</code> — 1 hour
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PT5M</code> — 5 minutes
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>P1D</code> — 1 day </p> </li>
+    /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
+    /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
     pub fn target_resolution(&self) -> std::option::Option<&crate::model::AggregationPeriod> {
         self.target_resolution.as_ref()
     }
-    /// <p>
-    /// The details of the metrics that are used to request a time series of values. The metric includes
-    /// the name of the frame, the aggregation type to calculate the metric value for the
-    /// frame, and the thread states to use to get the count for the metric value of the frame.</p>
+    /// <p> The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
     pub fn frame_metrics(&self) -> std::option::Option<&[crate::model::FrameMetric]> {
         self.frame_metrics.as_deref()
     }
@@ -6822,63 +5608,27 @@ impl std::fmt::Debug for AddNotificationChannelsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProfilingGroupsInput {
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results
-    /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-    /// that returned the <code>nextToken</code> value.
-    /// </p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-    /// the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code>
-    /// in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code> response
-    /// element. The remaining results of the initial request
-    /// can be seen by sending another <code>ListProfilingGroups</code> request with the returned
-    /// <code>nextToken</code> value.
-    /// </p>
+    /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code> value. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>,
-    /// then a list of
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-    /// <code>ProfilingGroupDescription</code>
-    /// </a> objects
-    /// that contain detailed information about profiling groups is returned. If <code>false</code>, then
-    /// a list of profiling group names is returned.</p>
+    /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is returned. If <code>false</code>, then a list of profiling group names is returned.</p>
     pub include_description: std::option::Option<bool>,
 }
 impl ListProfilingGroupsInput {
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results
-    /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-    /// that returned the <code>nextToken</code> value.
-    /// </p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-    /// the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code>
-    /// in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code> response
-    /// element. The remaining results of the initial request
-    /// can be seen by sending another <code>ListProfilingGroups</code> request with the returned
-    /// <code>nextToken</code> value.
-    /// </p>
+    /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code> value. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>,
-    /// then a list of
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-    /// <code>ProfilingGroupDescription</code>
-    /// </a> objects
-    /// that contain detailed information about profiling groups is returned. If <code>false</code>, then
-    /// a list of profiling group names is returned.</p>
+    /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is returned. If <code>false</code>, then a list of profiling group names is returned.</p>
     pub fn include_description(&self) -> std::option::Option<bool> {
         self.include_description
     }
@@ -6899,23 +5649,13 @@ impl std::fmt::Debug for ListProfilingGroupsInput {
 pub struct CreateProfilingGroupInput {
     /// <p>The name of the profiling group to create.</p>
     pub profiling_group_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The compute platform of the profiling group. Use <code>AWSLambda</code> if your application
-    /// runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that
-    /// is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform.
-    /// If not specified, <code>Default</code> is used.         
-    /// </p>
+    /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
-    /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
-    /// accidental creation of duplicate profiling groups if there are failures and retries. </p>
+    /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// Specifies whether profiling is enabled or disabled for the created profiling group.
-    /// </p>
+    /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
     pub agent_orchestration_config: std::option::Option<crate::model::AgentOrchestrationConfig>,
-    /// <p>
-    /// A list of tags to add to the created profiling group.
-    /// </p>
+    /// <p> A list of tags to add to the created profiling group. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -6924,31 +5664,21 @@ impl CreateProfilingGroupInput {
     pub fn profiling_group_name(&self) -> std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
-    /// <p>
-    /// The compute platform of the profiling group. Use <code>AWSLambda</code> if your application
-    /// runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that
-    /// is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform.
-    /// If not specified, <code>Default</code> is used.         
-    /// </p>
+    /// <p> The compute platform of the profiling group. Use <code>AWSLambda</code> if your application runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform. If not specified, <code>Default</code> is used. </p>
     pub fn compute_platform(&self) -> std::option::Option<&crate::model::ComputePlatform> {
         self.compute_platform.as_ref()
     }
-    /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
-    /// accidental creation of duplicate profiling groups if there are failures and retries. </p>
+    /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. </p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>
-    /// Specifies whether profiling is enabled or disabled for the created profiling group.
-    /// </p>
+    /// <p> Specifies whether profiling is enabled or disabled for the created profiling group. </p>
     pub fn agent_orchestration_config(
         &self,
     ) -> std::option::Option<&crate::model::AgentOrchestrationConfig> {
         self.agent_orchestration_config.as_ref()
     }
-    /// <p>
-    /// A list of tags to add to the created profiling group.
-    /// </p>
+    /// <p> A list of tags to add to the created profiling group. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -6998,9 +5728,7 @@ impl std::fmt::Debug for DeleteProfilingGroupInput {
 pub struct UpdateProfilingGroupInput {
     /// <p>The name of the profiling group to update.</p>
     pub profiling_group_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Specifies whether profiling is enabled or disabled for a profiling group.
-    /// </p>
+    /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
     pub agent_orchestration_config: std::option::Option<crate::model::AgentOrchestrationConfig>,
 }
 impl UpdateProfilingGroupInput {
@@ -7008,9 +5736,7 @@ impl UpdateProfilingGroupInput {
     pub fn profiling_group_name(&self) -> std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
-    /// <p>
-    /// Specifies whether profiling is enabled or disabled for a profiling group.
-    /// </p>
+    /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
     pub fn agent_orchestration_config(
         &self,
     ) -> std::option::Option<&crate::model::AgentOrchestrationConfig> {
@@ -7033,15 +5759,11 @@ impl std::fmt::Debug for UpdateProfilingGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProfilingGroupInput {
-    /// <p>
-    /// The name of the profiling group to get information about.
-    /// </p>
+    /// <p> The name of the profiling group to get information about. </p>
     pub profiling_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeProfilingGroupInput {
-    /// <p>
-    /// The name of the profiling group to get information about.
-    /// </p>
+    /// <p> The name of the profiling group to get information about. </p>
     pub fn profiling_group_name(&self) -> std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
@@ -7058,27 +5780,17 @@ impl std::fmt::Debug for DescribeProfilingGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the resource that contains the tags to remove.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to remove. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// A list of tag keys. Existing tags of resources with keys in this list are removed from
-    /// the specified resource.
-    /// </p>
+    /// <p> A list of tag keys. Existing tags of resources with keys in this list are removed from the specified resource. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the resource that contains the tags to remove.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to remove. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>
-    /// A list of tag keys. Existing tags of resources with keys in this list are removed from
-    /// the specified resource.
-    /// </p>
+    /// <p> A list of tag keys. Existing tags of resources with keys in this list are removed from the specified resource. </p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -7096,26 +5808,18 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the resource that the tags are added to.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the resource that the tags are added to. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The list of tags that are added to the specified resource.
-    /// </p>
+    /// <p> The list of tags that are added to the specified resource. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the resource that the tags are added to.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the resource that the tags are added to. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>
-    /// The list of tags that are added to the specified resource.
-    /// </p>
+    /// <p> The list of tags that are added to the specified resource. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -7136,15 +5840,11 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the resource that contains the tags to return.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to return. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the resource that contains the tags to return.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the resource that contains the tags to return. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -7161,49 +5861,27 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsReportAccountSummaryInput {
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code>
-    /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-    /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-    /// </p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-    /// the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output.
-    /// When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code>
-    /// results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial
-    /// request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned
-    /// <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
-    /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
-    /// analysis data is returned from smaller time windows (for example, one hour).</p>
+    /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
     pub daily_reports_only: std::option::Option<bool>,
 }
 impl GetFindingsReportAccountSummaryInput {
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code>
-    /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-    /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-    /// </p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-    /// the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output.
-    /// When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code>
-    /// results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial
-    /// request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned
-    /// <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
-    /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
-    /// analysis data is returned from smaller time windows (for example, one hour).</p>
+    /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).</p>
     pub fn daily_reports_only(&self) -> std::option::Option<bool> {
         self.daily_reports_only
     }

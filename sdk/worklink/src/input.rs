@@ -74,7 +74,7 @@ pub mod associate_domain_input {
 #[doc(hidden)]
 pub type AssociateDomainInputOperationOutputAlias = crate::operation::AssociateDomain;
 #[doc(hidden)]
-pub type AssociateDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type AssociateDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateDomainInput {
     /// Consumes the builder and constructs an Operation<[`AssociateDomain`](crate::operation::AssociateDomain)>
     #[allow(clippy::let_and_return)]
@@ -85,7 +85,7 @@ impl AssociateDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -165,7 +165,7 @@ impl AssociateDomainInput {
             "AssociateDomain",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -226,14 +226,12 @@ pub mod associate_website_authorization_provider_input {
             self.authorization_provider_type = input;
             self
         }
-        /// <p>The domain name of the authorization provider. This applies only to SAML-based
-        /// authorization providers.</p>
+        /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The domain name of the authorization provider. This applies only to SAML-based
-        /// authorization providers.</p>
+        /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -258,7 +256,7 @@ pub type AssociateWebsiteAuthorizationProviderInputOperationOutputAlias =
     crate::operation::AssociateWebsiteAuthorizationProvider;
 #[doc(hidden)]
 pub type AssociateWebsiteAuthorizationProviderInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateWebsiteAuthorizationProviderInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWebsiteAuthorizationProvider`](crate::operation::AssociateWebsiteAuthorizationProvider)>
     #[allow(clippy::let_and_return)]
@@ -269,7 +267,7 @@ impl AssociateWebsiteAuthorizationProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateWebsiteAuthorizationProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -351,7 +349,7 @@ impl AssociateWebsiteAuthorizationProviderInput {
             "AssociateWebsiteAuthorizationProvider",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -435,7 +433,7 @@ pub type AssociateWebsiteCertificateAuthorityInputOperationOutputAlias =
     crate::operation::AssociateWebsiteCertificateAuthority;
 #[doc(hidden)]
 pub type AssociateWebsiteCertificateAuthorityInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl AssociateWebsiteCertificateAuthorityInput {
     /// Consumes the builder and constructs an Operation<[`AssociateWebsiteCertificateAuthority`](crate::operation::AssociateWebsiteCertificateAuthority)>
     #[allow(clippy::let_and_return)]
@@ -446,7 +444,7 @@ impl AssociateWebsiteCertificateAuthorityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::AssociateWebsiteCertificateAuthority,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -528,7 +526,7 @@ impl AssociateWebsiteCertificateAuthorityInput {
             "AssociateWebsiteCertificateAuthority",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -585,14 +583,12 @@ pub mod create_fleet_input {
             self.display_name = input;
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
             self.optimize_for_end_user_location = Some(input);
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn set_optimize_for_end_user_location(
             mut self,
             input: std::option::Option<bool>,
@@ -644,7 +640,7 @@ pub mod create_fleet_input {
 #[doc(hidden)]
 pub type CreateFleetInputOperationOutputAlias = crate::operation::CreateFleet;
 #[doc(hidden)]
-pub type CreateFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateFleetInput {
     /// Consumes the builder and constructs an Operation<[`CreateFleet`](crate::operation::CreateFleet)>
     #[allow(clippy::let_and_return)]
@@ -655,7 +651,7 @@ impl CreateFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -734,7 +730,7 @@ impl CreateFleetInput {
             "CreateFleet",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -792,7 +788,7 @@ pub mod delete_fleet_input {
 #[doc(hidden)]
 pub type DeleteFleetInputOperationOutputAlias = crate::operation::DeleteFleet;
 #[doc(hidden)]
-pub type DeleteFleetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteFleetInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteFleetInput {
     /// Consumes the builder and constructs an Operation<[`DeleteFleet`](crate::operation::DeleteFleet)>
     #[allow(clippy::let_and_return)]
@@ -803,7 +799,7 @@ impl DeleteFleetInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteFleet,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -882,7 +878,7 @@ impl DeleteFleetInput {
             "DeleteFleet",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -941,7 +937,8 @@ pub mod describe_audit_stream_configuration_input {
 pub type DescribeAuditStreamConfigurationInputOperationOutputAlias =
     crate::operation::DescribeAuditStreamConfiguration;
 #[doc(hidden)]
-pub type DescribeAuditStreamConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeAuditStreamConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeAuditStreamConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAuditStreamConfiguration`](crate::operation::DescribeAuditStreamConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -952,7 +949,7 @@ impl DescribeAuditStreamConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeAuditStreamConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1033,7 +1030,7 @@ impl DescribeAuditStreamConfigurationInput {
             "DescribeAuditStreamConfiguration",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1093,7 +1090,7 @@ pub type DescribeCompanyNetworkConfigurationInputOperationOutputAlias =
     crate::operation::DescribeCompanyNetworkConfiguration;
 #[doc(hidden)]
 pub type DescribeCompanyNetworkConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeCompanyNetworkConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeCompanyNetworkConfiguration`](crate::operation::DescribeCompanyNetworkConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1104,7 +1101,7 @@ impl DescribeCompanyNetworkConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeCompanyNetworkConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1186,7 +1183,7 @@ impl DescribeCompanyNetworkConfigurationInput {
             "DescribeCompanyNetworkConfiguration",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1256,7 +1253,7 @@ pub mod describe_device_input {
 #[doc(hidden)]
 pub type DescribeDeviceInputOperationOutputAlias = crate::operation::DescribeDevice;
 #[doc(hidden)]
-pub type DescribeDeviceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDeviceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDeviceInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDevice`](crate::operation::DescribeDevice)>
     #[allow(clippy::let_and_return)]
@@ -1267,7 +1264,7 @@ impl DescribeDeviceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDevice,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1347,7 +1344,7 @@ impl DescribeDeviceInput {
             "DescribeDevice",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1406,7 +1403,8 @@ pub mod describe_device_policy_configuration_input {
 pub type DescribeDevicePolicyConfigurationInputOperationOutputAlias =
     crate::operation::DescribeDevicePolicyConfiguration;
 #[doc(hidden)]
-pub type DescribeDevicePolicyConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDevicePolicyConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDevicePolicyConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDevicePolicyConfiguration`](crate::operation::DescribeDevicePolicyConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1417,7 +1415,7 @@ impl DescribeDevicePolicyConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDevicePolicyConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1499,7 +1497,7 @@ impl DescribeDevicePolicyConfigurationInput {
             "DescribeDevicePolicyConfiguration",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1569,7 +1567,7 @@ pub mod describe_domain_input {
 #[doc(hidden)]
 pub type DescribeDomainInputOperationOutputAlias = crate::operation::DescribeDomain;
 #[doc(hidden)]
-pub type DescribeDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeDomainInput {
     /// Consumes the builder and constructs an Operation<[`DescribeDomain`](crate::operation::DescribeDomain)>
     #[allow(clippy::let_and_return)]
@@ -1580,7 +1578,7 @@ impl DescribeDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1660,7 +1658,7 @@ impl DescribeDomainInput {
             "DescribeDomain",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1718,7 +1716,7 @@ pub mod describe_fleet_metadata_input {
 #[doc(hidden)]
 pub type DescribeFleetMetadataInputOperationOutputAlias = crate::operation::DescribeFleetMetadata;
 #[doc(hidden)]
-pub type DescribeFleetMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeFleetMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeFleetMetadataInput {
     /// Consumes the builder and constructs an Operation<[`DescribeFleetMetadata`](crate::operation::DescribeFleetMetadata)>
     #[allow(clippy::let_and_return)]
@@ -1729,7 +1727,7 @@ impl DescribeFleetMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeFleetMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1811,7 +1809,7 @@ impl DescribeFleetMetadataInput {
             "DescribeFleetMetadata",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1871,7 +1869,7 @@ pub type DescribeIdentityProviderConfigurationInputOperationOutputAlias =
     crate::operation::DescribeIdentityProviderConfiguration;
 #[doc(hidden)]
 pub type DescribeIdentityProviderConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeIdentityProviderConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`DescribeIdentityProviderConfiguration`](crate::operation::DescribeIdentityProviderConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -1882,7 +1880,7 @@ impl DescribeIdentityProviderConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeIdentityProviderConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1964,7 +1962,7 @@ impl DescribeIdentityProviderConfigurationInput {
             "DescribeIdentityProviderConfiguration",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2039,7 +2037,7 @@ pub type DescribeWebsiteCertificateAuthorityInputOperationOutputAlias =
     crate::operation::DescribeWebsiteCertificateAuthority;
 #[doc(hidden)]
 pub type DescribeWebsiteCertificateAuthorityInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DescribeWebsiteCertificateAuthorityInput {
     /// Consumes the builder and constructs an Operation<[`DescribeWebsiteCertificateAuthority`](crate::operation::DescribeWebsiteCertificateAuthority)>
     #[allow(clippy::let_and_return)]
@@ -2050,7 +2048,7 @@ impl DescribeWebsiteCertificateAuthorityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DescribeWebsiteCertificateAuthority,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2132,7 +2130,7 @@ impl DescribeWebsiteCertificateAuthorityInput {
             "DescribeWebsiteCertificateAuthority",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2202,7 +2200,7 @@ pub mod disassociate_domain_input {
 #[doc(hidden)]
 pub type DisassociateDomainInputOperationOutputAlias = crate::operation::DisassociateDomain;
 #[doc(hidden)]
-pub type DisassociateDomainInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DisassociateDomainInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateDomainInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateDomain`](crate::operation::DisassociateDomain)>
     #[allow(clippy::let_and_return)]
@@ -2213,7 +2211,7 @@ impl DisassociateDomainInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateDomain,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2293,7 +2291,7 @@ impl DisassociateDomainInput {
             "DisassociateDomain",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2370,7 +2368,7 @@ pub type DisassociateWebsiteAuthorizationProviderInputOperationOutputAlias =
     crate::operation::DisassociateWebsiteAuthorizationProvider;
 #[doc(hidden)]
 pub type DisassociateWebsiteAuthorizationProviderInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateWebsiteAuthorizationProviderInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWebsiteAuthorizationProvider`](crate::operation::DisassociateWebsiteAuthorizationProvider)>
     #[allow(clippy::let_and_return)]
@@ -2381,7 +2379,7 @@ impl DisassociateWebsiteAuthorizationProviderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateWebsiteAuthorizationProvider,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2463,7 +2461,7 @@ impl DisassociateWebsiteAuthorizationProviderInput {
             "DisassociateWebsiteAuthorizationProvider",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2538,7 +2536,7 @@ pub type DisassociateWebsiteCertificateAuthorityInputOperationOutputAlias =
     crate::operation::DisassociateWebsiteCertificateAuthority;
 #[doc(hidden)]
 pub type DisassociateWebsiteCertificateAuthorityInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl DisassociateWebsiteCertificateAuthorityInput {
     /// Consumes the builder and constructs an Operation<[`DisassociateWebsiteCertificateAuthority`](crate::operation::DisassociateWebsiteCertificateAuthority)>
     #[allow(clippy::let_and_return)]
@@ -2549,7 +2547,7 @@ impl DisassociateWebsiteCertificateAuthorityInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DisassociateWebsiteCertificateAuthority,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2631,7 +2629,7 @@ impl DisassociateWebsiteCertificateAuthorityInput {
             "DisassociateWebsiteCertificateAuthority",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2675,14 +2673,12 @@ pub mod list_devices_input {
             self.fleet_arn = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2715,7 +2711,7 @@ pub mod list_devices_input {
 #[doc(hidden)]
 pub type ListDevicesInputOperationOutputAlias = crate::operation::ListDevices;
 #[doc(hidden)]
-pub type ListDevicesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDevicesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDevicesInput {
     /// Consumes the builder and constructs an Operation<[`ListDevices`](crate::operation::ListDevices)>
     #[allow(clippy::let_and_return)]
@@ -2726,7 +2722,7 @@ impl ListDevicesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDevices,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2805,7 +2801,7 @@ impl ListDevicesInput {
             "ListDevices",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2849,14 +2845,12 @@ pub mod list_domains_input {
             self.fleet_arn = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2889,7 +2883,7 @@ pub mod list_domains_input {
 #[doc(hidden)]
 pub type ListDomainsInputOperationOutputAlias = crate::operation::ListDomains;
 #[doc(hidden)]
-pub type ListDomainsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListDomainsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListDomainsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomains`](crate::operation::ListDomains)>
     #[allow(clippy::let_and_return)]
@@ -2900,7 +2894,7 @@ impl ListDomainsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListDomains,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2979,7 +2973,7 @@ impl ListDomainsInput {
             "ListDomains",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3012,14 +3006,12 @@ pub mod list_fleets_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3051,7 +3043,7 @@ pub mod list_fleets_input {
 #[doc(hidden)]
 pub type ListFleetsInputOperationOutputAlias = crate::operation::ListFleets;
 #[doc(hidden)]
-pub type ListFleetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListFleetsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListFleetsInput {
     /// Consumes the builder and constructs an Operation<[`ListFleets`](crate::operation::ListFleets)>
     #[allow(clippy::let_and_return)]
@@ -3062,7 +3054,7 @@ impl ListFleetsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListFleets,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3141,7 +3133,7 @@ impl ListFleetsInput {
             "ListFleets",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3199,7 +3191,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3210,7 +3202,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3300,7 +3292,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3375,7 +3367,8 @@ pub mod list_website_authorization_providers_input {
 pub type ListWebsiteAuthorizationProvidersInputOperationOutputAlias =
     crate::operation::ListWebsiteAuthorizationProviders;
 #[doc(hidden)]
-pub type ListWebsiteAuthorizationProvidersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWebsiteAuthorizationProvidersInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListWebsiteAuthorizationProvidersInput {
     /// Consumes the builder and constructs an Operation<[`ListWebsiteAuthorizationProviders`](crate::operation::ListWebsiteAuthorizationProviders)>
     #[allow(clippy::let_and_return)]
@@ -3386,7 +3379,7 @@ impl ListWebsiteAuthorizationProvidersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWebsiteAuthorizationProviders,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3468,7 +3461,7 @@ impl ListWebsiteAuthorizationProvidersInput {
             "ListWebsiteAuthorizationProviders",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3522,14 +3515,12 @@ pub mod list_website_certificate_authorities_input {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3553,7 +3544,8 @@ pub mod list_website_certificate_authorities_input {
 pub type ListWebsiteCertificateAuthoritiesInputOperationOutputAlias =
     crate::operation::ListWebsiteCertificateAuthorities;
 #[doc(hidden)]
-pub type ListWebsiteCertificateAuthoritiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListWebsiteCertificateAuthoritiesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl ListWebsiteCertificateAuthoritiesInput {
     /// Consumes the builder and constructs an Operation<[`ListWebsiteCertificateAuthorities`](crate::operation::ListWebsiteCertificateAuthorities)>
     #[allow(clippy::let_and_return)]
@@ -3564,7 +3556,7 @@ impl ListWebsiteCertificateAuthoritiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListWebsiteCertificateAuthorities,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3646,7 +3638,7 @@ impl ListWebsiteCertificateAuthoritiesInput {
             "ListWebsiteCertificateAuthorities",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3716,7 +3708,7 @@ pub mod restore_domain_access_input {
 #[doc(hidden)]
 pub type RestoreDomainAccessInputOperationOutputAlias = crate::operation::RestoreDomainAccess;
 #[doc(hidden)]
-pub type RestoreDomainAccessInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RestoreDomainAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RestoreDomainAccessInput {
     /// Consumes the builder and constructs an Operation<[`RestoreDomainAccess`](crate::operation::RestoreDomainAccess)>
     #[allow(clippy::let_and_return)]
@@ -3727,7 +3719,7 @@ impl RestoreDomainAccessInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RestoreDomainAccess,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3807,7 +3799,7 @@ impl RestoreDomainAccessInput {
             "RestoreDomainAccess",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3877,7 +3869,7 @@ pub mod revoke_domain_access_input {
 #[doc(hidden)]
 pub type RevokeDomainAccessInputOperationOutputAlias = crate::operation::RevokeDomainAccess;
 #[doc(hidden)]
-pub type RevokeDomainAccessInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type RevokeDomainAccessInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl RevokeDomainAccessInput {
     /// Consumes the builder and constructs an Operation<[`RevokeDomainAccess`](crate::operation::RevokeDomainAccess)>
     #[allow(clippy::let_and_return)]
@@ -3888,7 +3880,7 @@ impl RevokeDomainAccessInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::RevokeDomainAccess,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3968,7 +3960,7 @@ impl RevokeDomainAccessInput {
             "RevokeDomainAccess",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4038,7 +4030,7 @@ pub mod sign_out_user_input {
 #[doc(hidden)]
 pub type SignOutUserInputOperationOutputAlias = crate::operation::SignOutUser;
 #[doc(hidden)]
-pub type SignOutUserInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SignOutUserInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl SignOutUserInput {
     /// Consumes the builder and constructs an Operation<[`SignOutUser`](crate::operation::SignOutUser)>
     #[allow(clippy::let_and_return)]
@@ -4049,7 +4041,7 @@ impl SignOutUserInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::SignOutUser,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4128,7 +4120,7 @@ impl SignOutUserInput {
             "SignOutUser",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4215,7 +4207,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -4226,7 +4218,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4321,7 +4313,7 @@ impl TagResourceInput {
             "TagResource",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4400,7 +4392,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -4411,7 +4403,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4514,7 +4506,7 @@ impl UntagResourceInput {
             "UntagResource",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4580,7 +4572,8 @@ pub mod update_audit_stream_configuration_input {
 pub type UpdateAuditStreamConfigurationInputOperationOutputAlias =
     crate::operation::UpdateAuditStreamConfiguration;
 #[doc(hidden)]
-pub type UpdateAuditStreamConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateAuditStreamConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateAuditStreamConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateAuditStreamConfiguration`](crate::operation::UpdateAuditStreamConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4591,7 +4584,7 @@ impl UpdateAuditStreamConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateAuditStreamConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4672,7 +4665,7 @@ impl UpdateAuditStreamConfigurationInput {
             "UpdateAuditStreamConfiguration",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4785,7 +4778,8 @@ pub mod update_company_network_configuration_input {
 pub type UpdateCompanyNetworkConfigurationInputOperationOutputAlias =
     crate::operation::UpdateCompanyNetworkConfiguration;
 #[doc(hidden)]
-pub type UpdateCompanyNetworkConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateCompanyNetworkConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateCompanyNetworkConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateCompanyNetworkConfiguration`](crate::operation::UpdateCompanyNetworkConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4796,7 +4790,7 @@ impl UpdateCompanyNetworkConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateCompanyNetworkConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4878,7 +4872,7 @@ impl UpdateCompanyNetworkConfigurationInput {
             "UpdateCompanyNetworkConfiguration",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4952,7 +4946,8 @@ pub mod update_device_policy_configuration_input {
 pub type UpdateDevicePolicyConfigurationInputOperationOutputAlias =
     crate::operation::UpdateDevicePolicyConfiguration;
 #[doc(hidden)]
-pub type UpdateDevicePolicyConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDevicePolicyConfigurationInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDevicePolicyConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDevicePolicyConfiguration`](crate::operation::UpdateDevicePolicyConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -4963,7 +4958,7 @@ impl UpdateDevicePolicyConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDevicePolicyConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5044,7 +5039,7 @@ impl UpdateDevicePolicyConfigurationInput {
             "UpdateDevicePolicyConfiguration",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5126,7 +5121,7 @@ pub mod update_domain_metadata_input {
 #[doc(hidden)]
 pub type UpdateDomainMetadataInputOperationOutputAlias = crate::operation::UpdateDomainMetadata;
 #[doc(hidden)]
-pub type UpdateDomainMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateDomainMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateDomainMetadataInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomainMetadata`](crate::operation::UpdateDomainMetadata)>
     #[allow(clippy::let_and_return)]
@@ -5137,7 +5132,7 @@ impl UpdateDomainMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5219,7 +5214,7 @@ impl UpdateDomainMetadataInput {
             "UpdateDomainMetadata",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5273,14 +5268,12 @@ pub mod update_fleet_metadata_input {
             self.display_name = input;
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
             self.optimize_for_end_user_location = Some(input);
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn set_optimize_for_end_user_location(
             mut self,
             input: std::option::Option<bool>,
@@ -5306,7 +5299,7 @@ pub mod update_fleet_metadata_input {
 #[doc(hidden)]
 pub type UpdateFleetMetadataInputOperationOutputAlias = crate::operation::UpdateFleetMetadata;
 #[doc(hidden)]
-pub type UpdateFleetMetadataInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateFleetMetadataInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateFleetMetadataInput {
     /// Consumes the builder and constructs an Operation<[`UpdateFleetMetadata`](crate::operation::UpdateFleetMetadata)>
     #[allow(clippy::let_and_return)]
@@ -5317,7 +5310,7 @@ impl UpdateFleetMetadataInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateFleetMetadata,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5397,7 +5390,7 @@ impl UpdateFleetMetadataInput {
             "UpdateFleetMetadata",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5454,8 +5447,7 @@ pub mod update_identity_provider_configuration_input {
             self.identity_provider_type = input;
             self
         }
-        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing
-        /// IdentityProviderSamlMetadata is unset if null is passed.</p>
+        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
         pub fn identity_provider_saml_metadata(
             mut self,
             input: impl Into<std::string::String>,
@@ -5463,8 +5455,7 @@ pub mod update_identity_provider_configuration_input {
             self.identity_provider_saml_metadata = Some(input.into());
             self
         }
-        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing
-        /// IdentityProviderSamlMetadata is unset if null is passed.</p>
+        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
         pub fn set_identity_provider_saml_metadata(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5492,7 +5483,7 @@ pub type UpdateIdentityProviderConfigurationInputOperationOutputAlias =
     crate::operation::UpdateIdentityProviderConfiguration;
 #[doc(hidden)]
 pub type UpdateIdentityProviderConfigurationInputOperationRetryAlias =
-    aws_http::AwsErrorRetryPolicy;
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateIdentityProviderConfigurationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateIdentityProviderConfiguration`](crate::operation::UpdateIdentityProviderConfiguration)>
     #[allow(clippy::let_and_return)]
@@ -5503,7 +5494,7 @@ impl UpdateIdentityProviderConfigurationInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateIdentityProviderConfiguration,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -5585,7 +5576,7 @@ impl UpdateIdentityProviderConfigurationInput {
             "UpdateIdentityProviderConfiguration",
             "worklink",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -5616,8 +5607,7 @@ pub struct UpdateIdentityProviderConfigurationInput {
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The type of identity provider.</p>
     pub identity_provider_type: std::option::Option<crate::model::IdentityProviderType>,
-    /// <p>The SAML metadata document provided by the customer’s identity provider. The existing
-    /// IdentityProviderSamlMetadata is unset if null is passed.</p>
+    /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
     pub identity_provider_saml_metadata: std::option::Option<std::string::String>,
 }
 impl UpdateIdentityProviderConfigurationInput {
@@ -5631,8 +5621,7 @@ impl UpdateIdentityProviderConfigurationInput {
     ) -> std::option::Option<&crate::model::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
-    /// <p>The SAML metadata document provided by the customer’s identity provider. The existing
-    /// IdentityProviderSamlMetadata is unset if null is passed.</p>
+    /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
     pub fn identity_provider_saml_metadata(&self) -> std::option::Option<&str> {
         self.identity_provider_saml_metadata.as_deref()
     }
@@ -5658,8 +5647,7 @@ pub struct UpdateFleetMetadataInput {
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The option to optimize for better performance by routing traffic through the closest
-    /// AWS Region to users, which may be outside of your home Region.</p>
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub optimize_for_end_user_location: std::option::Option<bool>,
 }
 impl UpdateFleetMetadataInput {
@@ -5671,8 +5659,7 @@ impl UpdateFleetMetadataInput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The option to optimize for better performance by routing traffic through the closest
-    /// AWS Region to users, which may be outside of your home Region.</p>
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub fn optimize_for_end_user_location(&self) -> std::option::Option<bool> {
         self.optimize_for_end_user_location
     }
@@ -5975,8 +5962,7 @@ pub struct ListWebsiteCertificateAuthoritiesInput {
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWebsiteCertificateAuthoritiesInput {
@@ -5988,8 +5974,7 @@ impl ListWebsiteCertificateAuthoritiesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6064,15 +6049,13 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFleetsInput {
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListFleetsInput {
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6096,8 +6079,7 @@ impl std::fmt::Debug for ListFleetsInput {
 pub struct ListDomainsInput {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: std::option::Option<std::string::String>,
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
     pub max_results: std::option::Option<i32>,
@@ -6107,8 +6089,7 @@ impl ListDomainsInput {
     pub fn fleet_arn(&self) -> std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6133,8 +6114,7 @@ impl std::fmt::Debug for ListDomainsInput {
 pub struct ListDevicesInput {
     /// <p>The ARN of the fleet.</p>
     pub fleet_arn: std::option::Option<std::string::String>,
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be included in the next page.</p>
     pub max_results: std::option::Option<i32>,
@@ -6144,8 +6124,7 @@ impl ListDevicesInput {
     pub fn fleet_arn(&self) -> std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// this value is null, it retrieves the first page.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6466,8 +6445,7 @@ pub struct CreateFleetInput {
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The fleet name to display.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The option to optimize for better performance by routing traffic through the closest
-    /// AWS Region to users, which may be outside of your home Region.</p>
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub optimize_for_end_user_location: std::option::Option<bool>,
     /// <p> The tags to add to the resource. A tag is a key-value pair.</p>
     pub tags:
@@ -6482,8 +6460,7 @@ impl CreateFleetInput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The option to optimize for better performance by routing traffic through the closest
-    /// AWS Region to users, which may be outside of your home Region.</p>
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub fn optimize_for_end_user_location(&self) -> std::option::Option<bool> {
         self.optimize_for_end_user_location
     }
@@ -6552,8 +6529,7 @@ pub struct AssociateWebsiteAuthorizationProviderInput {
     pub fleet_arn: std::option::Option<std::string::String>,
     /// <p>The authorization provider type.</p>
     pub authorization_provider_type: std::option::Option<crate::model::AuthorizationProviderType>,
-    /// <p>The domain name of the authorization provider. This applies only to SAML-based
-    /// authorization providers.</p>
+    /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl AssociateWebsiteAuthorizationProviderInput {
@@ -6567,8 +6543,7 @@ impl AssociateWebsiteAuthorizationProviderInput {
     ) -> std::option::Option<&crate::model::AuthorizationProviderType> {
         self.authorization_provider_type.as_ref()
     }
-    /// <p>The domain name of the authorization provider. This applies only to SAML-based
-    /// authorization providers.</p>
+    /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }

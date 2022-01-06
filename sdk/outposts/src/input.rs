@@ -9,16 +9,12 @@ pub mod cancel_order_input {
         pub(crate) order_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the order to cancel.
-        /// </p>
+        /// <p> The ID of the order to cancel. </p>
         pub fn order_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.order_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the order to cancel.
-        /// </p>
+        /// <p> The ID of the order to cancel. </p>
         pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.order_id = input;
             self
@@ -39,7 +35,7 @@ pub mod cancel_order_input {
 #[doc(hidden)]
 pub type CancelOrderInputOperationOutputAlias = crate::operation::CancelOrder;
 #[doc(hidden)]
-pub type CancelOrderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CancelOrderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CancelOrderInput {
     /// Consumes the builder and constructs an Operation<[`CancelOrder`](crate::operation::CancelOrder)>
     #[allow(clippy::let_and_return)]
@@ -50,7 +46,7 @@ impl CancelOrderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CancelOrder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -140,7 +136,7 @@ impl CancelOrderInput {
             "CancelOrder",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -167,16 +163,12 @@ pub mod create_order_input {
         pub(crate) payment_term: std::option::Option<crate::model::PaymentTerm>,
     }
     impl Builder {
-        /// <p>
-        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn outpost_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_identifier = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn set_outpost_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -189,9 +181,9 @@ pub mod create_order_input {
         /// To override the contents of this collection use [`set_line_items`](Self::set_line_items).
         ///
         /// <p>The line items that make up the order.</p>
-        pub fn line_items(mut self, input: impl Into<crate::model::LineItemRequest>) -> Self {
+        pub fn line_items(mut self, input: crate::model::LineItemRequest) -> Self {
             let mut v = self.line_items.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.line_items = Some(v);
             self
         }
@@ -248,7 +240,7 @@ pub mod create_order_input {
 #[doc(hidden)]
 pub type CreateOrderInputOperationOutputAlias = crate::operation::CreateOrder;
 #[doc(hidden)]
-pub type CreateOrderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateOrderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateOrderInput {
     /// Consumes the builder and constructs an Operation<[`CreateOrder`](crate::operation::CreateOrder)>
     #[allow(clippy::let_and_return)]
@@ -259,7 +251,7 @@ impl CreateOrderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateOrder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -338,7 +330,7 @@ impl CreateOrderInput {
             "CreateOrder",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -399,12 +391,12 @@ pub mod create_outpost_input {
             self.description = input;
             self
         }
-        /// <p>The ID of the site.</p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.site_id = Some(input.into());
             self
         }
-        /// <p>The ID of the site.</p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
@@ -460,9 +452,7 @@ pub mod create_outpost_input {
             self.tags = input;
             self
         }
-        /// <p>
-        /// The type of hardware for this Outpost.
-        /// </p>
+        /// <p> The type of hardware for this Outpost. </p>
         pub fn supported_hardware_type(
             mut self,
             input: crate::model::SupportedHardwareType,
@@ -470,9 +460,7 @@ pub mod create_outpost_input {
             self.supported_hardware_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of hardware for this Outpost.
-        /// </p>
+        /// <p> The type of hardware for this Outpost. </p>
         pub fn set_supported_hardware_type(
             mut self,
             input: std::option::Option<crate::model::SupportedHardwareType>,
@@ -502,7 +490,7 @@ pub mod create_outpost_input {
 #[doc(hidden)]
 pub type CreateOutpostInputOperationOutputAlias = crate::operation::CreateOutpost;
 #[doc(hidden)]
-pub type CreateOutpostInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateOutpostInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateOutpostInput {
     /// Consumes the builder and constructs an Operation<[`CreateOutpost`](crate::operation::CreateOutpost)>
     #[allow(clippy::let_and_return)]
@@ -513,7 +501,7 @@ impl CreateOutpostInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateOutpost,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -592,7 +580,7 @@ impl CreateOutpostInput {
             "CreateOutpost",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -653,16 +641,12 @@ pub mod create_site_input {
             self.description = input;
             self
         }
-        /// <p>Additional information that you provide about site access requirements, electrician
-        /// scheduling, personal protective equipment, or regulation of equipment materials that could
-        /// affect your installation process. </p>
+        /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
         pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.notes = Some(input.into());
             self
         }
-        /// <p>Additional information that you provide about site access requirements, electrician
-        /// scheduling, personal protective equipment, or regulation of equipment materials that could
-        /// affect your installation process. </p>
+        /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
@@ -671,9 +655,7 @@ pub mod create_site_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The tags to apply to a site.
-        /// </p>
+        /// <p> The tags to apply to a site. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -684,9 +666,7 @@ pub mod create_site_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// The tags to apply to a site.
-        /// </p>
+        /// <p> The tags to apply to a site. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -696,18 +676,12 @@ pub mod create_site_input {
             self.tags = input;
             self
         }
-        /// <p>
-        /// The location to install and power on the hardware. This address might be
-        /// different from the shipping address.
-        /// </p>
+        /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
         pub fn operating_address(mut self, input: crate::model::Address) -> Self {
             self.operating_address = Some(input);
             self
         }
-        /// <p>
-        /// The location to install and power on the hardware. This address might be
-        /// different from the shipping address.
-        /// </p>
+        /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
         pub fn set_operating_address(
             mut self,
             input: std::option::Option<crate::model::Address>,
@@ -715,18 +689,12 @@ pub mod create_site_input {
             self.operating_address = input;
             self
         }
-        /// <p>
-        /// The location to ship the hardware. This address might be different
-        /// from the operating address.
-        /// </p>
+        /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
         pub fn shipping_address(mut self, input: crate::model::Address) -> Self {
             self.shipping_address = Some(input);
             self
         }
-        /// <p>
-        /// The location to ship the hardware. This address might be different
-        /// from the operating address.
-        /// </p>
+        /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
         pub fn set_shipping_address(
             mut self,
             input: std::option::Option<crate::model::Address>,
@@ -734,11 +702,7 @@ pub mod create_site_input {
             self.shipping_address = input;
             self
         }
-        /// <p> Information about the physical and logistical details for the rack at this site.
-        /// For more information
-        /// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
-        /// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
-        /// </p>
+        /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
         pub fn rack_physical_properties(
             mut self,
             input: crate::model::RackPhysicalProperties,
@@ -746,11 +710,7 @@ pub mod create_site_input {
             self.rack_physical_properties = Some(input);
             self
         }
-        /// <p> Information about the physical and logistical details for the rack at this site.
-        /// For more information
-        /// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
-        /// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
-        /// </p>
+        /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
         pub fn set_rack_physical_properties(
             mut self,
             input: std::option::Option<crate::model::RackPhysicalProperties>,
@@ -780,7 +740,7 @@ pub mod create_site_input {
 #[doc(hidden)]
 pub type CreateSiteInputOperationOutputAlias = crate::operation::CreateSite;
 #[doc(hidden)]
-pub type CreateSiteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type CreateSiteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl CreateSiteInput {
     /// Consumes the builder and constructs an Operation<[`CreateSite`](crate::operation::CreateSite)>
     #[allow(clippy::let_and_return)]
@@ -791,7 +751,7 @@ impl CreateSiteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::CreateSite,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -870,7 +830,7 @@ impl CreateSiteInput {
             "CreateSite",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -902,16 +862,12 @@ pub mod delete_outpost_input {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self
@@ -932,7 +888,7 @@ pub mod delete_outpost_input {
 #[doc(hidden)]
 pub type DeleteOutpostInputOperationOutputAlias = crate::operation::DeleteOutpost;
 #[doc(hidden)]
-pub type DeleteOutpostInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteOutpostInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteOutpostInput {
     /// Consumes the builder and constructs an Operation<[`DeleteOutpost`](crate::operation::DeleteOutpost)>
     #[allow(clippy::let_and_return)]
@@ -943,7 +899,7 @@ impl DeleteOutpostInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteOutpost,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1033,7 +989,7 @@ impl DeleteOutpostInput {
             "DeleteOutpost",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1057,12 +1013,12 @@ pub mod delete_site_input {
         pub(crate) site_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the site.</p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.site_id = Some(input.into());
             self
         }
-        /// <p>The ID of the site.</p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
@@ -1083,7 +1039,7 @@ pub mod delete_site_input {
 #[doc(hidden)]
 pub type DeleteSiteInputOperationOutputAlias = crate::operation::DeleteSite;
 #[doc(hidden)]
-pub type DeleteSiteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DeleteSiteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl DeleteSiteInput {
     /// Consumes the builder and constructs an Operation<[`DeleteSite`](crate::operation::DeleteSite)>
     #[allow(clippy::let_and_return)]
@@ -1094,7 +1050,7 @@ impl DeleteSiteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::DeleteSite,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1183,7 +1139,7 @@ impl DeleteSiteInput {
             "DeleteSite",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1236,7 +1192,7 @@ pub mod get_catalog_item_input {
 #[doc(hidden)]
 pub type GetCatalogItemInputOperationOutputAlias = crate::operation::GetCatalogItem;
 #[doc(hidden)]
-pub type GetCatalogItemInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetCatalogItemInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetCatalogItemInput {
     /// Consumes the builder and constructs an Operation<[`GetCatalogItem`](crate::operation::GetCatalogItem)>
     #[allow(clippy::let_and_return)]
@@ -1247,7 +1203,7 @@ impl GetCatalogItemInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetCatalogItem,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1341,7 +1297,7 @@ impl GetCatalogItemInput {
             "GetCatalogItem",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1389,7 +1345,7 @@ pub mod get_order_input {
 #[doc(hidden)]
 pub type GetOrderInputOperationOutputAlias = crate::operation::GetOrder;
 #[doc(hidden)]
-pub type GetOrderInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetOrderInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOrderInput {
     /// Consumes the builder and constructs an Operation<[`GetOrder`](crate::operation::GetOrder)>
     #[allow(clippy::let_and_return)]
@@ -1400,7 +1356,7 @@ impl GetOrderInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOrder,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1487,7 +1443,7 @@ impl GetOrderInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetOrder", "outposts",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1511,16 +1467,12 @@ pub mod get_outpost_input {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self
@@ -1541,7 +1493,7 @@ pub mod get_outpost_input {
 #[doc(hidden)]
 pub type GetOutpostInputOperationOutputAlias = crate::operation::GetOutpost;
 #[doc(hidden)]
-pub type GetOutpostInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetOutpostInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOutpostInput {
     /// Consumes the builder and constructs an Operation<[`GetOutpost`](crate::operation::GetOutpost)>
     #[allow(clippy::let_and_return)]
@@ -1552,7 +1504,7 @@ impl GetOutpostInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOutpost,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1642,7 +1594,7 @@ impl GetOutpostInput {
             "GetOutpost",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1668,16 +1620,12 @@ pub mod get_outpost_instance_types_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self
@@ -1721,7 +1669,7 @@ pub mod get_outpost_instance_types_input {
 pub type GetOutpostInstanceTypesInputOperationOutputAlias =
     crate::operation::GetOutpostInstanceTypes;
 #[doc(hidden)]
-pub type GetOutpostInstanceTypesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetOutpostInstanceTypesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetOutpostInstanceTypesInput {
     /// Consumes the builder and constructs an Operation<[`GetOutpostInstanceTypes`](crate::operation::GetOutpostInstanceTypes)>
     #[allow(clippy::let_and_return)]
@@ -1732,7 +1680,7 @@ impl GetOutpostInstanceTypesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetOutpostInstanceTypes,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1843,7 +1791,7 @@ impl GetOutpostInstanceTypesInput {
             "GetOutpostInstanceTypes",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -1867,12 +1815,12 @@ pub mod get_site_input {
         pub(crate) site_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the site.</p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.site_id = Some(input.into());
             self
         }
-        /// <p>The ID of the site.</p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
@@ -1891,7 +1839,7 @@ pub mod get_site_input {
 #[doc(hidden)]
 pub type GetSiteInputOperationOutputAlias = crate::operation::GetSite;
 #[doc(hidden)]
-pub type GetSiteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSiteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSiteInput {
     /// Consumes the builder and constructs an Operation<[`GetSite`](crate::operation::GetSite)>
     #[allow(clippy::let_and_return)]
@@ -1902,7 +1850,7 @@ impl GetSiteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSite,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -1988,7 +1936,7 @@ impl GetSiteInput {
                 .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetSite", "outposts",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2013,12 +1961,12 @@ pub mod get_site_address_input {
         pub(crate) address_type: std::option::Option<crate::model::AddressType>,
     }
     impl Builder {
-        /// <p>The ID of the site.</p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.site_id = Some(input.into());
             self
         }
-        /// <p>The ID of the site.</p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
@@ -2053,7 +2001,7 @@ pub mod get_site_address_input {
 #[doc(hidden)]
 pub type GetSiteAddressInputOperationOutputAlias = crate::operation::GetSiteAddress;
 #[doc(hidden)]
-pub type GetSiteAddressInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type GetSiteAddressInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl GetSiteAddressInput {
     /// Consumes the builder and constructs an Operation<[`GetSiteAddress`](crate::operation::GetSiteAddress)>
     #[allow(clippy::let_and_return)]
@@ -2064,7 +2012,7 @@ impl GetSiteAddressInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::GetSiteAddress,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2168,7 +2116,7 @@ impl GetSiteAddressInput {
             "GetSiteAddress",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2222,27 +2170,16 @@ pub mod list_catalog_items_input {
         ///
         /// To override the contents of this collection use [`set_item_class_filter`](Self::set_item_class_filter).
         ///
-        /// <p>
-        /// A filter for the class of items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
-        pub fn item_class_filter(
-            mut self,
-            input: impl Into<crate::model::CatalogItemClass>,
-        ) -> Self {
+        /// <p> A filter for the class of items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+        pub fn item_class_filter(mut self, input: crate::model::CatalogItemClass) -> Self {
             let mut v = self.item_class_filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.item_class_filter = Some(v);
             self
         }
-        /// <p>
-        /// A filter for the class of items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the class of items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_item_class_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CatalogItemClass>>,
@@ -2254,27 +2191,19 @@ pub mod list_catalog_items_input {
         ///
         /// To override the contents of this collection use [`set_supported_storage_filter`](Self::set_supported_storage_filter).
         ///
-        /// <p>
-        /// A filter for the storage options of items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the storage options of items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn supported_storage_filter(
             mut self,
-            input: impl Into<crate::model::SupportedStorageEnum>,
+            input: crate::model::SupportedStorageEnum,
         ) -> Self {
             let mut v = self.supported_storage_filter.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.supported_storage_filter = Some(v);
             self
         }
-        /// <p>
-        /// A filter for the storage options of items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the storage options of items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_supported_storage_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
@@ -2286,24 +2215,16 @@ pub mod list_catalog_items_input {
         ///
         /// To override the contents of this collection use [`set_ec2_family_filter`](Self::set_ec2_family_filter).
         ///
-        /// <p>
-        /// A filter for EC2 family options for items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for EC2 family options for items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn ec2_family_filter(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ec2_family_filter.unwrap_or_default();
             v.push(input.into());
             self.ec2_family_filter = Some(v);
             self
         }
-        /// <p>
-        /// A filter for EC2 family options for items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for EC2 family options for items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_ec2_family_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2331,7 +2252,7 @@ pub mod list_catalog_items_input {
 #[doc(hidden)]
 pub type ListCatalogItemsInputOperationOutputAlias = crate::operation::ListCatalogItems;
 #[doc(hidden)]
-pub type ListCatalogItemsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListCatalogItemsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListCatalogItemsInput {
     /// Consumes the builder and constructs an Operation<[`ListCatalogItems`](crate::operation::ListCatalogItems)>
     #[allow(clippy::let_and_return)]
@@ -2342,7 +2263,7 @@ impl ListCatalogItemsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListCatalogItems,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2457,7 +2378,7 @@ impl ListCatalogItemsInput {
             "ListCatalogItems",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2483,16 +2404,12 @@ pub mod list_orders_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>
-        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn outpost_identifier_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_identifier_filter = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn set_outpost_identifier_filter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2538,7 +2455,7 @@ pub mod list_orders_input {
 #[doc(hidden)]
 pub type ListOrdersInputOperationOutputAlias = crate::operation::ListOrders;
 #[doc(hidden)]
-pub type ListOrdersInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOrdersInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOrdersInput {
     /// Consumes the builder and constructs an Operation<[`ListOrders`](crate::operation::ListOrders)>
     #[allow(clippy::let_and_return)]
@@ -2549,7 +2466,7 @@ impl ListOrdersInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOrders,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2646,7 +2563,7 @@ impl ListOrdersInput {
             "ListOrders",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2701,24 +2618,16 @@ pub mod list_outposts_input {
         ///
         /// To override the contents of this collection use [`set_life_cycle_status_filter`](Self::set_life_cycle_status_filter).
         ///
-        /// <p>
-        /// A filter for the lifecycle status of the Outpost.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the lifecycle status of the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn life_cycle_status_filter(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.life_cycle_status_filter.unwrap_or_default();
             v.push(input.into());
             self.life_cycle_status_filter = Some(v);
             self
         }
-        /// <p>
-        /// A filter for the lifecycle status of the Outpost.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the lifecycle status of the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_life_cycle_status_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2731,10 +2640,7 @@ pub mod list_outposts_input {
         /// To override the contents of this collection use [`set_availability_zone_filter`](Self::set_availability_zone_filter).
         ///
         /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-        ///
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn availability_zone_filter(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zone_filter.unwrap_or_default();
             v.push(input.into());
@@ -2742,10 +2648,7 @@ pub mod list_outposts_input {
             self
         }
         /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-        ///
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_availability_zone_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2757,13 +2660,8 @@ pub mod list_outposts_input {
         ///
         /// To override the contents of this collection use [`set_availability_zone_id_filter`](Self::set_availability_zone_id_filter).
         ///
-        /// <p>
-        /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-        /// </p>
-        ///
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn availability_zone_id_filter(
             mut self,
             input: impl Into<std::string::String>,
@@ -2773,13 +2671,8 @@ pub mod list_outposts_input {
             self.availability_zone_id_filter = Some(v);
             self
         }
-        /// <p>
-        /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-        /// </p>
-        ///
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_availability_zone_id_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2807,7 +2700,7 @@ pub mod list_outposts_input {
 #[doc(hidden)]
 pub type ListOutpostsInputOperationOutputAlias = crate::operation::ListOutposts;
 #[doc(hidden)]
-pub type ListOutpostsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListOutpostsInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListOutpostsInput {
     /// Consumes the builder and constructs an Operation<[`ListOutposts`](crate::operation::ListOutposts)>
     #[allow(clippy::let_and_return)]
@@ -2818,7 +2711,7 @@ impl ListOutpostsInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListOutposts,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -2933,7 +2826,7 @@ impl ListOutpostsInput {
             "ListOutposts",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -2993,7 +2886,7 @@ pub mod list_sites_input {
 #[doc(hidden)]
 pub type ListSitesInputOperationOutputAlias = crate::operation::ListSites;
 #[doc(hidden)]
-pub type ListSitesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListSitesInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListSitesInput {
     /// Consumes the builder and constructs an Operation<[`ListSites`](crate::operation::ListSites)>
     #[allow(clippy::let_and_return)]
@@ -3004,7 +2897,7 @@ impl ListSitesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListSites,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3093,7 +2986,7 @@ impl ListSitesInput {
                     "ListSites",
                     "outposts",
                 ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3143,7 +3036,7 @@ pub mod list_tags_for_resource_input {
 #[doc(hidden)]
 pub type ListTagsForResourceInputOperationOutputAlias = crate::operation::ListTagsForResource;
 #[doc(hidden)]
-pub type ListTagsForResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListTagsForResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(clippy::let_and_return)]
@@ -3154,7 +3047,7 @@ impl ListTagsForResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3244,7 +3137,7 @@ impl ListTagsForResourceInput {
             "ListTagsForResource",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3323,7 +3216,7 @@ pub mod tag_resource_input {
 #[doc(hidden)]
 pub type TagResourceInputOperationOutputAlias = crate::operation::TagResource;
 #[doc(hidden)]
-pub type TagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type TagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(clippy::let_and_return)]
@@ -3334,7 +3227,7 @@ impl TagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3429,7 +3322,7 @@ impl TagResourceInput {
             "TagResource",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3508,7 +3401,7 @@ pub mod untag_resource_input {
 #[doc(hidden)]
 pub type UntagResourceInputOperationOutputAlias = crate::operation::UntagResource;
 #[doc(hidden)]
-pub type UntagResourceInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UntagResourceInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(clippy::let_and_return)]
@@ -3519,7 +3412,7 @@ impl UntagResourceInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3622,7 +3515,7 @@ impl UntagResourceInput {
             "UntagResource",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3634,6 +3527,213 @@ impl UntagResourceInput {
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
+    }
+}
+
+/// See [`UpdateOutpostInput`](crate::input::UpdateOutpostInput)
+pub mod update_outpost_input {
+    /// A builder for [`UpdateOutpostInput`](crate::input::UpdateOutpostInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) outpost_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) supported_hardware_type:
+            std::option::Option<crate::model::SupportedHardwareType>,
+    }
+    impl Builder {
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+        pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.outpost_id = Some(input.into());
+            self
+        }
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+        pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.outpost_id = input;
+            self
+        }
+        /// <p>The name of the Outpost.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        /// <p>The name of the Outpost.</p>
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the Outpost.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        /// <p>The description of the Outpost.</p>
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p> The type of hardware for this Outpost. </p>
+        pub fn supported_hardware_type(
+            mut self,
+            input: crate::model::SupportedHardwareType,
+        ) -> Self {
+            self.supported_hardware_type = Some(input);
+            self
+        }
+        /// <p> The type of hardware for this Outpost. </p>
+        pub fn set_supported_hardware_type(
+            mut self,
+            input: std::option::Option<crate::model::SupportedHardwareType>,
+        ) -> Self {
+            self.supported_hardware_type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateOutpostInput`](crate::input::UpdateOutpostInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateOutpostInput,
+            aws_smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateOutpostInput {
+                outpost_id: self.outpost_id,
+                name: self.name,
+                description: self.description,
+                supported_hardware_type: self.supported_hardware_type,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateOutpostInputOperationOutputAlias = crate::operation::UpdateOutpost;
+#[doc(hidden)]
+pub type UpdateOutpostInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
+impl UpdateOutpostInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateOutpost`](crate::operation::UpdateOutpost)>
+    #[allow(clippy::let_and_return)]
+    #[allow(clippy::needless_borrow)]
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::UpdateOutpost,
+            aws_http::retry::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
+    > {
+        fn uri_base(
+            _input: &crate::input::UpdateOutpostInput,
+            output: &mut String,
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
+            let input_39 = &_input.outpost_id;
+            let input_39 =
+                input_39
+                    .as_ref()
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
+                        field: "outpost_id",
+                        details: "cannot be empty or unset",
+                    })?;
+            let outpost_id = aws_smithy_http::label::fmt_string(input_39, false);
+            if outpost_id.is_empty() {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
+                    field: "outpost_id",
+                    details: "cannot be empty or unset",
+                });
+            }
+            write!(output, "/outposts/{OutpostId}", OutpostId = outpost_id)
+                .expect("formatting should succeed");
+            Ok(())
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn update_http_builder(
+            input: &crate::input::UpdateOutpostInput,
+            builder: http::request::Builder,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            let mut uri = String::new();
+            uri_base(input, &mut uri)?;
+            Ok(builder.method("PATCH").uri(uri))
+        }
+        #[allow(clippy::unnecessary_wraps)]
+        fn request_builder_base(
+            input: &crate::input::UpdateOutpostInput,
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
+        {
+            #[allow(unused_mut)]
+            let mut builder = update_http_builder(input, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::HeaderName::from_static("content-type"),
+                "application/json",
+            );
+            Ok(builder)
+        }
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let request = request_builder_base(&self)?;
+        let body = crate::operation_ser::serialize_operation_crate_operation_update_outpost(&self)?;
+        let request = Self::assemble(request, body);
+        #[allow(unused_mut)]
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
+            properties,
+        );
+        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
+            aws_types::os_shim_internal::Env::real(),
+            crate::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
+        #[allow(unused_mut)]
+        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        request.properties_mut().insert(signing_config);
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
+        aws_endpoint::set_endpoint_resolver(
+            &mut request.properties_mut(),
+            _config.endpoint_resolver.clone(),
+        );
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_provider(
+            &mut request.properties_mut(),
+            _config.credentials_provider.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateOutpost::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateOutpost",
+            "outposts",
+        ));
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
+        Ok(op)
+    }
+    fn assemble(
+        builder: http::request::Builder,
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
+        let mut builder = builder;
+        if let Some(content_length) = body.content_length() {
+            builder = aws_smithy_http::header::set_header_if_absent(
+                builder,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateOutpostInput`](crate::input::UpdateOutpostInput)
+    pub fn builder() -> crate::input::update_outpost_input::Builder {
+        crate::input::update_outpost_input::Builder::default()
     }
 }
 
@@ -3649,12 +3749,12 @@ pub mod update_site_input {
         pub(crate) notes: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the site.</p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.site_id = Some(input.into());
             self
         }
-        /// <p>The ID of the site.</p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
@@ -3679,16 +3779,12 @@ pub mod update_site_input {
             self.description = input;
             self
         }
-        /// <p>
-        /// Notes about a site.
-        /// </p>
+        /// <p> Notes about a site. </p>
         pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.notes = Some(input.into());
             self
         }
-        /// <p>
-        /// Notes about a site.
-        /// </p>
+        /// <p> Notes about a site. </p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
@@ -3712,7 +3808,7 @@ pub mod update_site_input {
 #[doc(hidden)]
 pub type UpdateSiteInputOperationOutputAlias = crate::operation::UpdateSite;
 #[doc(hidden)]
-pub type UpdateSiteInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSiteInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSiteInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSite`](crate::operation::UpdateSite)>
     #[allow(clippy::let_and_return)]
@@ -3723,7 +3819,7 @@ impl UpdateSiteInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSite,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3731,15 +3827,15 @@ impl UpdateSiteInput {
             _input: &crate::input::UpdateSiteInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_39 = &_input.site_id;
-            let input_39 =
-                input_39
+            let input_40 = &_input.site_id;
+            let input_40 =
+                input_40
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
                         details: "cannot be empty or unset",
                     })?;
-            let site_id = aws_smithy_http::label::fmt_string(input_39, false);
+            let site_id = aws_smithy_http::label::fmt_string(input_40, false);
             if site_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "site_id",
@@ -3817,7 +3913,7 @@ impl UpdateSiteInput {
             "UpdateSite",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -3851,26 +3947,22 @@ pub mod update_site_address_input {
         pub(crate) address: std::option::Option<crate::model::Address>,
     }
     impl Builder {
-        /// <p>The ID of the site.</p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.site_id = Some(input.into());
             self
         }
-        /// <p>The ID of the site.</p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
         }
-        /// <p>
-        /// The type of the address.
-        /// </p>
+        /// <p> The type of the address. </p>
         pub fn address_type(mut self, input: crate::model::AddressType) -> Self {
             self.address_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of the address.
-        /// </p>
+        /// <p> The type of the address. </p>
         pub fn set_address_type(
             mut self,
             input: std::option::Option<crate::model::AddressType>,
@@ -3878,16 +3970,12 @@ pub mod update_site_address_input {
             self.address_type = input;
             self
         }
-        /// <p>
-        /// The address for the site.
-        /// </p>
+        /// <p> The address for the site. </p>
         pub fn address(mut self, input: crate::model::Address) -> Self {
             self.address = Some(input);
             self
         }
-        /// <p>
-        /// The address for the site.
-        /// </p>
+        /// <p> The address for the site. </p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.address = input;
             self
@@ -3910,7 +3998,7 @@ pub mod update_site_address_input {
 #[doc(hidden)]
 pub type UpdateSiteAddressInputOperationOutputAlias = crate::operation::UpdateSiteAddress;
 #[doc(hidden)]
-pub type UpdateSiteAddressInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSiteAddressInputOperationRetryAlias = aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSiteAddressInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSiteAddress`](crate::operation::UpdateSiteAddress)>
     #[allow(clippy::let_and_return)]
@@ -3921,7 +4009,7 @@ impl UpdateSiteAddressInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSiteAddress,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -3929,15 +4017,15 @@ impl UpdateSiteAddressInput {
             _input: &crate::input::UpdateSiteAddressInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_40 = &_input.site_id;
-            let input_40 =
-                input_40
+            let input_41 = &_input.site_id;
+            let input_41 =
+                input_41
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
                         details: "cannot be empty or unset",
                     })?;
-            let site_id = aws_smithy_http::label::fmt_string(input_40, false);
+            let site_id = aws_smithy_http::label::fmt_string(input_41, false);
             if site_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "site_id",
@@ -4017,7 +4105,7 @@ impl UpdateSiteAddressInput {
             "UpdateSiteAddress",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4059,24 +4147,22 @@ pub mod update_site_rack_physical_properties_input {
             std::option::Option<crate::model::MaximumSupportedWeightLbs>,
     }
     impl Builder {
-        /// <p>The ID of the site.</p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.site_id = Some(input.into());
             self
         }
-        /// <p>The ID of the site.</p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
         }
-        /// <p>Specify in kVA the power draw available at the hardware placement position for the
-        /// rack.</p>
+        /// <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
         pub fn power_draw_kva(mut self, input: crate::model::PowerDrawKva) -> Self {
             self.power_draw_kva = Some(input);
             self
         }
-        /// <p>Specify in kVA the power draw available at the hardware placement position for the
-        /// rack.</p>
+        /// <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
         pub fn set_power_draw_kva(
             mut self,
             input: std::option::Option<crate::model::PowerDrawKva>,
@@ -4086,12 +4172,8 @@ pub mod update_site_rack_physical_properties_input {
         }
         /// <p> Specify the power option that you can provide for hardware. </p>
         /// <ul>
-        /// <li>
-        /// <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p>
-        /// </li>
-        /// <li>
-        /// <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p>
-        /// </li>
+        /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
+        /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
         /// </ul>
         pub fn power_phase(mut self, input: crate::model::PowerPhase) -> Self {
             self.power_phase = Some(input);
@@ -4099,12 +4181,8 @@ pub mod update_site_rack_physical_properties_input {
         }
         /// <p> Specify the power option that you can provide for hardware. </p>
         /// <ul>
-        /// <li>
-        /// <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p>
-        /// </li>
-        /// <li>
-        /// <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p>
-        /// </li>
+        /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
+        /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
         /// </ul>
         pub fn set_power_phase(
             mut self,
@@ -4113,77 +4191,35 @@ pub mod update_site_rack_physical_properties_input {
             self.power_phase = input;
             self
         }
-        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the
-        /// hardware. Note the correlation between <code>PowerPhase</code> and
-        /// <code>PowerConnector</code>. </p>
+        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>Single-phase AC feed</p>
+        /// <li> <p>Single-phase AC feed</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>L6-30P</b> – (common in US); 30A; single phase</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
-        /// phase</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Three-phase AC feed</p>
+        /// <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li>
+        /// <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Three-phase AC feed</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three
-        /// phase</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three
-        /// phase</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li>
+        /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn power_connector(mut self, input: crate::model::PowerConnector) -> Self {
             self.power_connector = Some(input);
             self
         }
-        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the
-        /// hardware. Note the correlation between <code>PowerPhase</code> and
-        /// <code>PowerConnector</code>. </p>
+        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>Single-phase AC feed</p>
+        /// <li> <p>Single-phase AC feed</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>L6-30P</b> – (common in US); 30A; single phase</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
-        /// phase</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Three-phase AC feed</p>
+        /// <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li>
+        /// <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Three-phase AC feed</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three
-        /// phase</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three
-        /// phase</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li>
+        /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_power_connector(
             mut self,
@@ -4205,14 +4241,12 @@ pub mod update_site_rack_physical_properties_input {
             self.power_feed_drop = input;
             self
         }
-        /// <p> Specify the uplink speed the rack should support for the connection to the Region.
-        /// </p>
+        /// <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
         pub fn uplink_gbps(mut self, input: crate::model::UplinkGbps) -> Self {
             self.uplink_gbps = Some(input);
             self
         }
-        /// <p> Specify the uplink speed the rack should support for the connection to the Region.
-        /// </p>
+        /// <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
         pub fn set_uplink_gbps(
             mut self,
             input: std::option::Option<crate::model::UplinkGbps>,
@@ -4220,39 +4254,21 @@ pub mod update_site_rack_physical_properties_input {
             self.uplink_gbps = input;
             self
         }
-        /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at
-        /// the site, the Outpost network devices provide a variable number of uplinks. Specify the number
-        /// of uplinks for each Outpost network device that you intend to use to connect the rack to your
-        /// network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
+        /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p>
-        /// </li>
-        /// <li>
-        /// <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p>
-        /// </li>
-        /// <li>
-        /// <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p>
-        /// </li>
+        /// <li> <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p> </li>
+        /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
+        /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
         /// </ul>
         pub fn uplink_count(mut self, input: crate::model::UplinkCount) -> Self {
             self.uplink_count = Some(input);
             self
         }
-        /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at
-        /// the site, the Outpost network devices provide a variable number of uplinks. Specify the number
-        /// of uplinks for each Outpost network device that you intend to use to connect the rack to your
-        /// network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
+        /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p>
-        /// </li>
-        /// <li>
-        /// <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p>
-        /// </li>
-        /// <li>
-        /// <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p>
-        /// </li>
+        /// <li> <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p> </li>
+        /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
+        /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
         /// </ul>
         pub fn set_uplink_count(
             mut self,
@@ -4261,14 +4277,12 @@ pub mod update_site_rack_physical_properties_input {
             self.uplink_count = input;
             self
         }
-        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network.
-        /// </p>
+        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
         pub fn fiber_optic_cable_type(mut self, input: crate::model::FiberOpticCableType) -> Self {
             self.fiber_optic_cable_type = Some(input);
             self
         }
-        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network.
-        /// </p>
+        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
         pub fn set_fiber_optic_cable_type(
             mut self,
             input: std::option::Option<crate::model::FiberOpticCableType>,
@@ -4276,129 +4290,41 @@ pub mod update_site_rack_physical_properties_input {
             self.fiber_optic_cable_type = input;
             self
         }
-        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your
-        /// network. This field is dependent on uplink speed, fiber type, and distance to the upstream
-        /// device. For more information
-        /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
-        /// in the Amazon Web Services Outposts User Guide.
-        /// </p>
+        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p>
-        /// </li>
+        /// <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>
+        /// <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>
+        /// <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li>
+        /// <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li>
+        /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
+        /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
         /// </ul>
         pub fn optical_standard(mut self, input: crate::model::OpticalStandard) -> Self {
             self.optical_standard = Some(input);
             self
         }
-        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your
-        /// network. This field is dependent on uplink speed, fiber type, and distance to the upstream
-        /// device. For more information
-        /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
-        /// in the Amazon Web Services Outposts User Guide.
-        /// </p>
+        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p>
-        /// </li>
+        /// <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>
+        /// <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>
+        /// <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li>
+        /// <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li>
+        /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
+        /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
         /// </ul>
         pub fn set_optical_standard(
             mut self,
@@ -4407,8 +4333,7 @@ pub mod update_site_rack_physical_properties_input {
             self.optical_standard = input;
             self
         }
-        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over
-        /// 2000lbs. </p>
+        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
         pub fn maximum_supported_weight_lbs(
             mut self,
             input: crate::model::MaximumSupportedWeightLbs,
@@ -4416,8 +4341,7 @@ pub mod update_site_rack_physical_properties_input {
             self.maximum_supported_weight_lbs = Some(input);
             self
         }
-        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over
-        /// 2000lbs. </p>
+        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
         pub fn set_maximum_supported_weight_lbs(
             mut self,
             input: std::option::Option<crate::model::MaximumSupportedWeightLbs>,
@@ -4451,7 +4375,8 @@ pub mod update_site_rack_physical_properties_input {
 pub type UpdateSiteRackPhysicalPropertiesInputOperationOutputAlias =
     crate::operation::UpdateSiteRackPhysicalProperties;
 #[doc(hidden)]
-pub type UpdateSiteRackPhysicalPropertiesInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type UpdateSiteRackPhysicalPropertiesInputOperationRetryAlias =
+    aws_http::retry::AwsErrorRetryPolicy;
 impl UpdateSiteRackPhysicalPropertiesInput {
     /// Consumes the builder and constructs an Operation<[`UpdateSiteRackPhysicalProperties`](crate::operation::UpdateSiteRackPhysicalProperties)>
     #[allow(clippy::let_and_return)]
@@ -4462,7 +4387,7 @@ impl UpdateSiteRackPhysicalPropertiesInput {
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
             crate::operation::UpdateSiteRackPhysicalProperties,
-            aws_http::AwsErrorRetryPolicy,
+            aws_http::retry::AwsErrorRetryPolicy,
         >,
         aws_smithy_http::operation::BuildError,
     > {
@@ -4470,15 +4395,15 @@ impl UpdateSiteRackPhysicalPropertiesInput {
             _input: &crate::input::UpdateSiteRackPhysicalPropertiesInput,
             output: &mut String,
         ) -> Result<(), aws_smithy_http::operation::BuildError> {
-            let input_41 = &_input.site_id;
-            let input_41 =
-                input_41
+            let input_42 = &_input.site_id;
+            let input_42 =
+                input_42
                     .as_ref()
                     .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "site_id",
                         details: "cannot be empty or unset",
                     })?;
-            let site_id = aws_smithy_http::label::fmt_string(input_41, false);
+            let site_id = aws_smithy_http::label::fmt_string(input_42, false);
             if site_id.is_empty() {
                 return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "site_id",
@@ -4563,7 +4488,7 @@ impl UpdateSiteRackPhysicalPropertiesInput {
             "UpdateSiteRackPhysicalProperties",
             "outposts",
         ));
-        let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+        let op = op.with_retry_policy(aws_http::retry::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
@@ -4590,200 +4515,92 @@ impl UpdateSiteRackPhysicalPropertiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSiteRackPhysicalPropertiesInput {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub site_id: std::option::Option<std::string::String>,
-    /// <p>Specify in kVA the power draw available at the hardware placement position for the
-    /// rack.</p>
+    /// <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
     pub power_draw_kva: std::option::Option<crate::model::PowerDrawKva>,
     /// <p> Specify the power option that you can provide for hardware. </p>
     /// <ul>
-    /// <li>
-    /// <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p>
-    /// </li>
-    /// <li>
-    /// <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p>
-    /// </li>
+    /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
+    /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
     /// </ul>
     pub power_phase: std::option::Option<crate::model::PowerPhase>,
-    /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the
-    /// hardware. Note the correlation between <code>PowerPhase</code> and
-    /// <code>PowerConnector</code>. </p>
+    /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>Single-phase AC feed</p>
+    /// <li> <p>Single-phase AC feed</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>L6-30P</b> – (common in US); 30A; single phase</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
-    /// phase</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Three-phase AC feed</p>
+    /// <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li>
+    /// <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Three-phase AC feed</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three
-    /// phase</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three
-    /// phase</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li>
+    /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub power_connector: std::option::Option<crate::model::PowerConnector>,
     /// <p> Specify whether the power feed comes above or below the rack. </p>
     pub power_feed_drop: std::option::Option<crate::model::PowerFeedDrop>,
-    /// <p> Specify the uplink speed the rack should support for the connection to the Region.
-    /// </p>
+    /// <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
     pub uplink_gbps: std::option::Option<crate::model::UplinkGbps>,
-    /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at
-    /// the site, the Outpost network devices provide a variable number of uplinks. Specify the number
-    /// of uplinks for each Outpost network device that you intend to use to connect the rack to your
-    /// network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
+    /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p>
-    /// </li>
-    /// <li>
-    /// <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p>
-    /// </li>
-    /// <li>
-    /// <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p>
-    /// </li>
+    /// <li> <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p> </li>
+    /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
+    /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
     /// </ul>
     pub uplink_count: std::option::Option<crate::model::UplinkCount>,
-    /// <p> Specify the type of fiber that you will use to attach the Outpost to your network.
-    /// </p>
+    /// <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
     pub fiber_optic_cable_type: std::option::Option<crate::model::FiberOpticCableType>,
-    /// <p>Specify the type of optical standard that you will use to attach the Outpost to your
-    /// network. This field is dependent on uplink speed, fiber type, and distance to the upstream
-    /// device. For more information
-    /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
-    /// in the Amazon Web Services Outposts User Guide.
-    /// </p>
+    /// <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p>
-    /// </li>
+    /// <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>
+    /// <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>
+    /// <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li>
+    /// <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li>
+    /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
+    /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
     /// </ul>
     pub optical_standard: std::option::Option<crate::model::OpticalStandard>,
-    /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over
-    /// 2000lbs. </p>
+    /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
     pub maximum_supported_weight_lbs: std::option::Option<crate::model::MaximumSupportedWeightLbs>,
 }
 impl UpdateSiteRackPhysicalPropertiesInput {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
-    /// <p>Specify in kVA the power draw available at the hardware placement position for the
-    /// rack.</p>
+    /// <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
     pub fn power_draw_kva(&self) -> std::option::Option<&crate::model::PowerDrawKva> {
         self.power_draw_kva.as_ref()
     }
     /// <p> Specify the power option that you can provide for hardware. </p>
     /// <ul>
-    /// <li>
-    /// <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p>
-    /// </li>
-    /// <li>
-    /// <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p>
-    /// </li>
+    /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
+    /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
     /// </ul>
     pub fn power_phase(&self) -> std::option::Option<&crate::model::PowerPhase> {
         self.power_phase.as_ref()
     }
-    /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the
-    /// hardware. Note the correlation between <code>PowerPhase</code> and
-    /// <code>PowerConnector</code>. </p>
+    /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>Single-phase AC feed</p>
+    /// <li> <p>Single-phase AC feed</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>L6-30P</b> – (common in US); 30A; single phase</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
-    /// phase</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Three-phase AC feed</p>
+    /// <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li>
+    /// <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Three-phase AC feed</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three
-    /// phase</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three
-    /// phase</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li>
+    /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn power_connector(&self) -> std::option::Option<&crate::model::PowerConnector> {
         self.power_connector.as_ref()
@@ -4792,101 +4609,45 @@ impl UpdateSiteRackPhysicalPropertiesInput {
     pub fn power_feed_drop(&self) -> std::option::Option<&crate::model::PowerFeedDrop> {
         self.power_feed_drop.as_ref()
     }
-    /// <p> Specify the uplink speed the rack should support for the connection to the Region.
-    /// </p>
+    /// <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
     pub fn uplink_gbps(&self) -> std::option::Option<&crate::model::UplinkGbps> {
         self.uplink_gbps.as_ref()
     }
-    /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at
-    /// the site, the Outpost network devices provide a variable number of uplinks. Specify the number
-    /// of uplinks for each Outpost network device that you intend to use to connect the rack to your
-    /// network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
+    /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p>
-    /// </li>
-    /// <li>
-    /// <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p>
-    /// </li>
-    /// <li>
-    /// <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p>
-    /// </li>
+    /// <li> <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p> </li>
+    /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
+    /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
     /// </ul>
     pub fn uplink_count(&self) -> std::option::Option<&crate::model::UplinkCount> {
         self.uplink_count.as_ref()
     }
-    /// <p> Specify the type of fiber that you will use to attach the Outpost to your network.
-    /// </p>
+    /// <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
     pub fn fiber_optic_cable_type(
         &self,
     ) -> std::option::Option<&crate::model::FiberOpticCableType> {
         self.fiber_optic_cable_type.as_ref()
     }
-    /// <p>Specify the type of optical standard that you will use to attach the Outpost to your
-    /// network. This field is dependent on uplink speed, fiber type, and distance to the upstream
-    /// device. For more information
-    /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
-    /// in the Amazon Web Services Outposts User Guide.
-    /// </p>
+    /// <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p>
-    /// </li>
+    /// <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>
+    /// <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>
+    /// <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li>
+    /// <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li>
+    /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
+    /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
     /// </ul>
     pub fn optical_standard(&self) -> std::option::Option<&crate::model::OpticalStandard> {
         self.optical_standard.as_ref()
     }
-    /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over
-    /// 2000lbs. </p>
+    /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
     pub fn maximum_supported_weight_lbs(
         &self,
     ) -> std::option::Option<&crate::model::MaximumSupportedWeightLbs> {
@@ -4917,31 +4678,23 @@ impl std::fmt::Debug for UpdateSiteRackPhysicalPropertiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSiteAddressInput {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub site_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of the address.
-    /// </p>
+    /// <p> The type of the address. </p>
     pub address_type: std::option::Option<crate::model::AddressType>,
-    /// <p>
-    /// The address for the site.
-    /// </p>
+    /// <p> The address for the site. </p>
     pub address: std::option::Option<crate::model::Address>,
 }
 impl UpdateSiteAddressInput {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
-    /// <p>
-    /// The type of the address.
-    /// </p>
+    /// <p> The type of the address. </p>
     pub fn address_type(&self) -> std::option::Option<&crate::model::AddressType> {
         self.address_type.as_ref()
     }
-    /// <p>
-    /// The address for the site.
-    /// </p>
+    /// <p> The address for the site. </p>
     pub fn address(&self) -> std::option::Option<&crate::model::Address> {
         self.address.as_ref()
     }
@@ -4960,19 +4713,17 @@ impl std::fmt::Debug for UpdateSiteAddressInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSiteInput {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The name of the site.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the site.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>
-    /// Notes about a site.
-    /// </p>
+    /// <p> Notes about a site. </p>
     pub notes: std::option::Option<std::string::String>,
 }
 impl UpdateSiteInput {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
@@ -4984,9 +4735,7 @@ impl UpdateSiteInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>
-    /// Notes about a site.
-    /// </p>
+    /// <p> Notes about a site. </p>
     pub fn notes(&self) -> std::option::Option<&str> {
         self.notes.as_deref()
     }
@@ -4998,6 +4747,50 @@ impl std::fmt::Debug for UpdateSiteInput {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("notes", &self.notes);
+        formatter.finish()
+    }
+}
+
+#[allow(missing_docs)] // documentation missing in model
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateOutpostInput {
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    pub outpost_id: std::option::Option<std::string::String>,
+    /// <p>The name of the Outpost.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the Outpost.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p> The type of hardware for this Outpost. </p>
+    pub supported_hardware_type: std::option::Option<crate::model::SupportedHardwareType>,
+}
+impl UpdateOutpostInput {
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    pub fn outpost_id(&self) -> std::option::Option<&str> {
+        self.outpost_id.as_deref()
+    }
+    /// <p>The name of the Outpost.</p>
+    pub fn name(&self) -> std::option::Option<&str> {
+        self.name.as_deref()
+    }
+    /// <p>The description of the Outpost.</p>
+    pub fn description(&self) -> std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p> The type of hardware for this Outpost. </p>
+    pub fn supported_hardware_type(
+        &self,
+    ) -> std::option::Option<&crate::model::SupportedHardwareType> {
+        self.supported_hardware_type.as_ref()
+    }
+}
+impl std::fmt::Debug for UpdateOutpostInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateOutpostInput");
+        formatter.field("outpost_id", &self.outpost_id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("supported_hardware_type", &self.supported_hardware_type);
         formatter.finish()
     }
 }
@@ -5119,26 +4912,14 @@ pub struct ListOutpostsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum page size.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// A filter for the lifecycle status of the Outpost.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the lifecycle status of the Outpost. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub life_cycle_status_filter: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-    ///
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub availability_zone_filter: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-    /// </p>
-    ///
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub availability_zone_id_filter: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListOutpostsInput {
@@ -5150,30 +4931,18 @@ impl ListOutpostsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// A filter for the lifecycle status of the Outpost.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the lifecycle status of the Outpost. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn life_cycle_status_filter(&self) -> std::option::Option<&[std::string::String]> {
         self.life_cycle_status_filter.as_deref()
     }
     /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-    ///
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn availability_zone_filter(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zone_filter.as_deref()
     }
-    /// <p>
-    /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-    /// </p>
-    ///
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn availability_zone_id_filter(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zone_id_filter.as_deref()
     }
@@ -5197,9 +4966,7 @@ impl std::fmt::Debug for ListOutpostsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrdersInput {
-    /// <p>
-    /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-    /// </p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub outpost_identifier_filter: std::option::Option<std::string::String>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -5207,9 +4974,7 @@ pub struct ListOrdersInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListOrdersInput {
-    /// <p>
-    /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-    /// </p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_identifier_filter(&self) -> std::option::Option<&str> {
         self.outpost_identifier_filter.as_deref()
     }
@@ -5240,27 +5005,15 @@ pub struct ListCatalogItemsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum page size.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// A filter for the class of items in the catalog.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the class of items in the catalog. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub item_class_filter: std::option::Option<std::vec::Vec<crate::model::CatalogItemClass>>,
-    /// <p>
-    /// A filter for the storage options of items in the catalog.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the storage options of items in the catalog. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub supported_storage_filter:
         std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
-    /// <p>
-    /// A filter for EC2 family options for items in the catalog.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for EC2 family options for items in the catalog. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub ec2_family_filter: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListCatalogItemsInput {
@@ -5272,32 +5025,20 @@ impl ListCatalogItemsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// A filter for the class of items in the catalog.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the class of items in the catalog. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn item_class_filter(&self) -> std::option::Option<&[crate::model::CatalogItemClass]> {
         self.item_class_filter.as_deref()
     }
-    /// <p>
-    /// A filter for the storage options of items in the catalog.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the storage options of items in the catalog. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn supported_storage_filter(
         &self,
     ) -> std::option::Option<&[crate::model::SupportedStorageEnum]> {
         self.supported_storage_filter.as_deref()
     }
-    /// <p>
-    /// A filter for EC2 family options for items in the catalog.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for EC2 family options for items in the catalog. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn ec2_family_filter(&self) -> std::option::Option<&[std::string::String]> {
         self.ec2_family_filter.as_deref()
     }
@@ -5318,13 +5059,13 @@ impl std::fmt::Debug for ListCatalogItemsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSiteAddressInput {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub site_id: std::option::Option<std::string::String>,
     /// <p> The type of the address you request. </p>
     pub address_type: std::option::Option<crate::model::AddressType>,
 }
 impl GetSiteAddressInput {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
@@ -5346,11 +5087,11 @@ impl std::fmt::Debug for GetSiteAddressInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSiteInput {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub site_id: std::option::Option<std::string::String>,
 }
 impl GetSiteInput {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
@@ -5367,9 +5108,7 @@ impl std::fmt::Debug for GetSiteInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOutpostInstanceTypesInput {
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -5377,9 +5116,7 @@ pub struct GetOutpostInstanceTypesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl GetOutpostInstanceTypesInput {
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
@@ -5406,15 +5143,11 @@ impl std::fmt::Debug for GetOutpostInstanceTypesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOutpostInput {
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub outpost_id: std::option::Option<std::string::String>,
 }
 impl GetOutpostInput {
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
@@ -5473,11 +5206,11 @@ impl std::fmt::Debug for GetCatalogItemInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSiteInput {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub site_id: std::option::Option<std::string::String>,
 }
 impl DeleteSiteInput {
-    /// <p>The ID of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
@@ -5494,15 +5227,11 @@ impl std::fmt::Debug for DeleteSiteInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOutpostInput {
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub outpost_id: std::option::Option<std::string::String>,
 }
 impl DeleteOutpostInput {
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
@@ -5523,30 +5252,16 @@ pub struct CreateSiteInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the site.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Additional information that you provide about site access requirements, electrician
-    /// scheduling, personal protective equipment, or regulation of equipment materials that could
-    /// affect your installation process. </p>
+    /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
     pub notes: std::option::Option<std::string::String>,
-    /// <p>
-    /// The tags to apply to a site.
-    /// </p>
+    /// <p> The tags to apply to a site. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>
-    /// The location to install and power on the hardware. This address might be
-    /// different from the shipping address.
-    /// </p>
+    /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
     pub operating_address: std::option::Option<crate::model::Address>,
-    /// <p>
-    /// The location to ship the hardware. This address might be different
-    /// from the operating address.
-    /// </p>
+    /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
     pub shipping_address: std::option::Option<crate::model::Address>,
-    /// <p> Information about the physical and logistical details for the rack at this site.
-    /// For more information
-    /// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
-    /// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
-    /// </p>
+    /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
     pub rack_physical_properties: std::option::Option<crate::model::RackPhysicalProperties>,
 }
 impl CreateSiteInput {
@@ -5558,40 +5273,26 @@ impl CreateSiteInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Additional information that you provide about site access requirements, electrician
-    /// scheduling, personal protective equipment, or regulation of equipment materials that could
-    /// affect your installation process. </p>
+    /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
     pub fn notes(&self) -> std::option::Option<&str> {
         self.notes.as_deref()
     }
-    /// <p>
-    /// The tags to apply to a site.
-    /// </p>
+    /// <p> The tags to apply to a site. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>
-    /// The location to install and power on the hardware. This address might be
-    /// different from the shipping address.
-    /// </p>
+    /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
     pub fn operating_address(&self) -> std::option::Option<&crate::model::Address> {
         self.operating_address.as_ref()
     }
-    /// <p>
-    /// The location to ship the hardware. This address might be different
-    /// from the operating address.
-    /// </p>
+    /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
     pub fn shipping_address(&self) -> std::option::Option<&crate::model::Address> {
         self.shipping_address.as_ref()
     }
-    /// <p> Information about the physical and logistical details for the rack at this site.
-    /// For more information
-    /// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
-    /// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
-    /// </p>
+    /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
     pub fn rack_physical_properties(
         &self,
     ) -> std::option::Option<&crate::model::RackPhysicalProperties> {
@@ -5620,7 +5321,7 @@ pub struct CreateOutpostInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the Outpost.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ID of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub site_id: std::option::Option<std::string::String>,
     /// <p>The Availability Zone.</p>
     pub availability_zone: std::option::Option<std::string::String>,
@@ -5629,9 +5330,7 @@ pub struct CreateOutpostInput {
     /// <p>The tags to apply to the Outpost.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>
-    /// The type of hardware for this Outpost.
-    /// </p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub supported_hardware_type: std::option::Option<crate::model::SupportedHardwareType>,
 }
 impl CreateOutpostInput {
@@ -5643,7 +5342,7 @@ impl CreateOutpostInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ID of the site.</p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
@@ -5662,9 +5361,7 @@ impl CreateOutpostInput {
     {
         self.tags.as_ref()
     }
-    /// <p>
-    /// The type of hardware for this Outpost.
-    /// </p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub fn supported_hardware_type(
         &self,
     ) -> std::option::Option<&crate::model::SupportedHardwareType> {
@@ -5689,9 +5386,7 @@ impl std::fmt::Debug for CreateOutpostInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOrderInput {
-    /// <p>
-    /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-    /// </p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub outpost_identifier: std::option::Option<std::string::String>,
     /// <p>The line items that make up the order.</p>
     pub line_items: std::option::Option<std::vec::Vec<crate::model::LineItemRequest>>,
@@ -5701,9 +5396,7 @@ pub struct CreateOrderInput {
     pub payment_term: std::option::Option<crate::model::PaymentTerm>,
 }
 impl CreateOrderInput {
-    /// <p>
-    /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-    /// </p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_identifier(&self) -> std::option::Option<&str> {
         self.outpost_identifier.as_deref()
     }
@@ -5735,15 +5428,11 @@ impl std::fmt::Debug for CreateOrderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelOrderInput {
-    /// <p>
-    /// The ID of the order to cancel.
-    /// </p>
+    /// <p> The ID of the order to cancel. </p>
     pub order_id: std::option::Option<std::string::String>,
 }
 impl CancelOrderInput {
-    /// <p>
-    /// The ID of the order to cancel.
-    /// </p>
+    /// <p> The ID of the order to cancel. </p>
     pub fn order_id(&self) -> std::option::Option<&str> {
         self.order_id.as_deref()
     }

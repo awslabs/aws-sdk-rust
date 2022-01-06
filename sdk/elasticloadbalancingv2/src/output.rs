@@ -42,12 +42,9 @@ pub mod set_subnets_output {
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
         /// <p>Information about the subnets.</p>
-        pub fn availability_zones(
-            mut self,
-            input: impl Into<crate::model::AvailabilityZone>,
-        ) -> Self {
+        pub fn availability_zones(mut self, input: crate::model::AvailabilityZone) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.availability_zones = Some(v);
             self
         }
@@ -185,9 +182,9 @@ pub mod set_rule_priorities_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>Information about the rules.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -394,9 +391,9 @@ pub mod modify_target_group_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>Information about the attributes.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::TargetGroupAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::TargetGroupAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -457,9 +454,9 @@ pub mod modify_target_group_output {
         /// To override the contents of this collection use [`set_target_groups`](Self::set_target_groups).
         ///
         /// <p>Information about the modified target group.</p>
-        pub fn target_groups(mut self, input: impl Into<crate::model::TargetGroup>) -> Self {
+        pub fn target_groups(mut self, input: crate::model::TargetGroup) -> Self {
             let mut v = self.target_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_groups = Some(v);
             self
         }
@@ -520,9 +517,9 @@ pub mod modify_rule_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>Information about the modified rule.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -582,9 +579,9 @@ pub mod modify_load_balancer_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>Information about the load balancer attributes.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::LoadBalancerAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::LoadBalancerAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -645,9 +642,9 @@ pub mod modify_listener_output {
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
         /// <p>Information about the modified listener.</p>
-        pub fn listeners(mut self, input: impl Into<crate::model::Listener>) -> Self {
+        pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listeners = Some(v);
             self
         }
@@ -717,10 +714,10 @@ pub mod describe_target_health_output {
         /// <p>Information about the health of the targets.</p>
         pub fn target_health_descriptions(
             mut self,
-            input: impl Into<crate::model::TargetHealthDescription>,
+            input: crate::model::TargetHealthDescription,
         ) -> Self {
             let mut v = self.target_health_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_health_descriptions = Some(v);
             self
         }
@@ -753,8 +750,7 @@ impl DescribeTargetHealthOutput {
 pub struct DescribeTargetGroupsOutput {
     /// <p>Information about the target groups.</p>
     pub target_groups: std::option::Option<std::vec::Vec<crate::model::TargetGroup>>,
-    /// <p>If there are additional results, this is the marker for the next set of results.
-    /// Otherwise, this is null.</p>
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeTargetGroupsOutput {
@@ -762,8 +758,7 @@ impl DescribeTargetGroupsOutput {
     pub fn target_groups(&self) -> std::option::Option<&[crate::model::TargetGroup]> {
         self.target_groups.as_deref()
     }
-    /// <p>If there are additional results, this is the marker for the next set of results.
-    /// Otherwise, this is null.</p>
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -791,9 +786,9 @@ pub mod describe_target_groups_output {
         /// To override the contents of this collection use [`set_target_groups`](Self::set_target_groups).
         ///
         /// <p>Information about the target groups.</p>
-        pub fn target_groups(mut self, input: impl Into<crate::model::TargetGroup>) -> Self {
+        pub fn target_groups(mut self, input: crate::model::TargetGroup) -> Self {
             let mut v = self.target_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_groups = Some(v);
             self
         }
@@ -805,14 +800,12 @@ pub mod describe_target_groups_output {
             self.target_groups = input;
             self
         }
-        /// <p>If there are additional results, this is the marker for the next set of results.
-        /// Otherwise, this is null.</p>
+        /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If there are additional results, this is the marker for the next set of results.
-        /// Otherwise, this is null.</p>
+        /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -868,9 +861,9 @@ pub mod describe_target_group_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>Information about the target group attributes</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::TargetGroupAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::TargetGroupAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -932,9 +925,9 @@ pub mod describe_tags_output {
         /// To override the contents of this collection use [`set_tag_descriptions`](Self::set_tag_descriptions).
         ///
         /// <p>Information about the tags.</p>
-        pub fn tag_descriptions(mut self, input: impl Into<crate::model::TagDescription>) -> Self {
+        pub fn tag_descriptions(mut self, input: crate::model::TagDescription) -> Self {
             let mut v = self.tag_descriptions.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.tag_descriptions = Some(v);
             self
         }
@@ -967,8 +960,7 @@ impl DescribeTagsOutput {
 pub struct DescribeSslPoliciesOutput {
     /// <p>Information about the security policies.</p>
     pub ssl_policies: std::option::Option<std::vec::Vec<crate::model::SslPolicy>>,
-    /// <p>If there are additional results, this is the marker for the next set of results.
-    /// Otherwise, this is null.</p>
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeSslPoliciesOutput {
@@ -976,8 +968,7 @@ impl DescribeSslPoliciesOutput {
     pub fn ssl_policies(&self) -> std::option::Option<&[crate::model::SslPolicy]> {
         self.ssl_policies.as_deref()
     }
-    /// <p>If there are additional results, this is the marker for the next set of results.
-    /// Otherwise, this is null.</p>
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -1005,9 +996,9 @@ pub mod describe_ssl_policies_output {
         /// To override the contents of this collection use [`set_ssl_policies`](Self::set_ssl_policies).
         ///
         /// <p>Information about the security policies.</p>
-        pub fn ssl_policies(mut self, input: impl Into<crate::model::SslPolicy>) -> Self {
+        pub fn ssl_policies(mut self, input: crate::model::SslPolicy) -> Self {
             let mut v = self.ssl_policies.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.ssl_policies = Some(v);
             self
         }
@@ -1019,14 +1010,12 @@ pub mod describe_ssl_policies_output {
             self.ssl_policies = input;
             self
         }
-        /// <p>If there are additional results, this is the marker for the next set of results.
-        /// Otherwise, this is null.</p>
+        /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If there are additional results, this is the marker for the next set of results.
-        /// Otherwise, this is null.</p>
+        /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1053,8 +1042,7 @@ impl DescribeSslPoliciesOutput {
 pub struct DescribeRulesOutput {
     /// <p>Information about the rules.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
-    /// <p>If there are additional results, this is the marker for the next set of results.
-    /// Otherwise, this is null.</p>
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeRulesOutput {
@@ -1062,8 +1050,7 @@ impl DescribeRulesOutput {
     pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
         self.rules.as_deref()
     }
-    /// <p>If there are additional results, this is the marker for the next set of results.
-    /// Otherwise, this is null.</p>
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -1091,9 +1078,9 @@ pub mod describe_rules_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>Information about the rules.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1105,14 +1092,12 @@ pub mod describe_rules_output {
             self.rules = input;
             self
         }
-        /// <p>If there are additional results, this is the marker for the next set of results.
-        /// Otherwise, this is null.</p>
+        /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If there are additional results, this is the marker for the next set of results.
-        /// Otherwise, this is null.</p>
+        /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1139,8 +1124,7 @@ impl DescribeRulesOutput {
 pub struct DescribeLoadBalancersOutput {
     /// <p>Information about the load balancers.</p>
     pub load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancer>>,
-    /// <p>If there are additional results, this is the marker for the next set of results.
-    /// Otherwise, this is null.</p>
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeLoadBalancersOutput {
@@ -1148,8 +1132,7 @@ impl DescribeLoadBalancersOutput {
     pub fn load_balancers(&self) -> std::option::Option<&[crate::model::LoadBalancer]> {
         self.load_balancers.as_deref()
     }
-    /// <p>If there are additional results, this is the marker for the next set of results.
-    /// Otherwise, this is null.</p>
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -1177,9 +1160,9 @@ pub mod describe_load_balancers_output {
         /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
         ///
         /// <p>Information about the load balancers.</p>
-        pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
+        pub fn load_balancers(mut self, input: crate::model::LoadBalancer) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_balancers = Some(v);
             self
         }
@@ -1191,14 +1174,12 @@ pub mod describe_load_balancers_output {
             self.load_balancers = input;
             self
         }
-        /// <p>If there are additional results, this is the marker for the next set of results.
-        /// Otherwise, this is null.</p>
+        /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If there are additional results, this is the marker for the next set of results.
-        /// Otherwise, this is null.</p>
+        /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1254,9 +1235,9 @@ pub mod describe_load_balancer_attributes_output {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>Information about the load balancer attributes.</p>
-        pub fn attributes(mut self, input: impl Into<crate::model::LoadBalancerAttribute>) -> Self {
+        pub fn attributes(mut self, input: crate::model::LoadBalancerAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.attributes = Some(v);
             self
         }
@@ -1289,8 +1270,7 @@ impl DescribeLoadBalancerAttributesOutput {
 pub struct DescribeListenersOutput {
     /// <p>Information about the listeners.</p>
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
-    /// <p>If there are additional results, this is the marker for the next set of results.
-    /// Otherwise, this is null.</p>
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeListenersOutput {
@@ -1298,8 +1278,7 @@ impl DescribeListenersOutput {
     pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
         self.listeners.as_deref()
     }
-    /// <p>If there are additional results, this is the marker for the next set of results.
-    /// Otherwise, this is null.</p>
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -1327,9 +1306,9 @@ pub mod describe_listeners_output {
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
         /// <p>Information about the listeners.</p>
-        pub fn listeners(mut self, input: impl Into<crate::model::Listener>) -> Self {
+        pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listeners = Some(v);
             self
         }
@@ -1341,14 +1320,12 @@ pub mod describe_listeners_output {
             self.listeners = input;
             self
         }
-        /// <p>If there are additional results, this is the marker for the next set of results.
-        /// Otherwise, this is null.</p>
+        /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If there are additional results, this is the marker for the next set of results.
-        /// Otherwise, this is null.</p>
+        /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1375,8 +1352,7 @@ impl DescribeListenersOutput {
 pub struct DescribeListenerCertificatesOutput {
     /// <p>Information about the certificates.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
-    /// <p>If there are additional results, this is the marker for the next set of results.
-    /// Otherwise, this is null.</p>
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeListenerCertificatesOutput {
@@ -1384,8 +1360,7 @@ impl DescribeListenerCertificatesOutput {
     pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
         self.certificates.as_deref()
     }
-    /// <p>If there are additional results, this is the marker for the next set of results.
-    /// Otherwise, this is null.</p>
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -1413,9 +1388,9 @@ pub mod describe_listener_certificates_output {
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
         /// <p>Information about the certificates.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }
@@ -1427,14 +1402,12 @@ pub mod describe_listener_certificates_output {
             self.certificates = input;
             self
         }
-        /// <p>If there are additional results, this is the marker for the next set of results.
-        /// Otherwise, this is null.</p>
+        /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If there are additional results, this is the marker for the next set of results.
-        /// Otherwise, this is null.</p>
+        /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1461,8 +1434,7 @@ impl DescribeListenerCertificatesOutput {
 pub struct DescribeAccountLimitsOutput {
     /// <p>Information about the limits.</p>
     pub limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
-    /// <p>If there are additional results, this is the marker for the next set of results.
-    /// Otherwise, this is null.</p>
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl DescribeAccountLimitsOutput {
@@ -1470,8 +1442,7 @@ impl DescribeAccountLimitsOutput {
     pub fn limits(&self) -> std::option::Option<&[crate::model::Limit]> {
         self.limits.as_deref()
     }
-    /// <p>If there are additional results, this is the marker for the next set of results.
-    /// Otherwise, this is null.</p>
+    /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -1499,9 +1470,9 @@ pub mod describe_account_limits_output {
         /// To override the contents of this collection use [`set_limits`](Self::set_limits).
         ///
         /// <p>Information about the limits.</p>
-        pub fn limits(mut self, input: impl Into<crate::model::Limit>) -> Self {
+        pub fn limits(mut self, input: crate::model::Limit) -> Self {
             let mut v = self.limits.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.limits = Some(v);
             self
         }
@@ -1513,14 +1484,12 @@ pub mod describe_account_limits_output {
             self.limits = input;
             self
         }
-        /// <p>If there are additional results, this is the marker for the next set of results.
-        /// Otherwise, this is null.</p>
+        /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If there are additional results, this is the marker for the next set of results.
-        /// Otherwise, this is null.</p>
+        /// <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1725,9 +1694,9 @@ pub mod create_target_group_output {
         /// To override the contents of this collection use [`set_target_groups`](Self::set_target_groups).
         ///
         /// <p>Information about the target group.</p>
-        pub fn target_groups(mut self, input: impl Into<crate::model::TargetGroup>) -> Self {
+        pub fn target_groups(mut self, input: crate::model::TargetGroup) -> Self {
             let mut v = self.target_groups.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.target_groups = Some(v);
             self
         }
@@ -1788,9 +1757,9 @@ pub mod create_rule_output {
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
         /// <p>Information about the rule.</p>
-        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+        pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.rules = Some(v);
             self
         }
@@ -1849,9 +1818,9 @@ pub mod create_load_balancer_output {
         /// To override the contents of this collection use [`set_load_balancers`](Self::set_load_balancers).
         ///
         /// <p>Information about the load balancer.</p>
-        pub fn load_balancers(mut self, input: impl Into<crate::model::LoadBalancer>) -> Self {
+        pub fn load_balancers(mut self, input: crate::model::LoadBalancer) -> Self {
             let mut v = self.load_balancers.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.load_balancers = Some(v);
             self
         }
@@ -1912,9 +1881,9 @@ pub mod create_listener_output {
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
         /// <p>Information about the listener.</p>
-        pub fn listeners(mut self, input: impl Into<crate::model::Listener>) -> Self {
+        pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.listeners = Some(v);
             self
         }
@@ -2005,9 +1974,9 @@ pub mod add_listener_certificates_output {
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
         /// <p>Information about the certificates in the certificate list.</p>
-        pub fn certificates(mut self, input: impl Into<crate::model::Certificate>) -> Self {
+        pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input.into());
+            v.push(input);
             self.certificates = Some(v);
             self
         }

@@ -84,6 +84,30 @@ where
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxLustreError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxLustreError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateLocationFsxLustreErrorKind::InternalException(inner) => {
+                    Error::InternalException(inner)
+                }
+                crate::error::CreateLocationFsxLustreErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::CreateLocationFsxLustreErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxWindowsError, R>>
     for Error
 where
@@ -335,6 +359,30 @@ where
                     Error::InvalidRequestException(inner)
                 }
                 crate::error::DescribeLocationEfsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxLustreError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxLustreError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeLocationFsxLustreErrorKind::InternalException(inner) => {
+                    Error::InternalException(inner)
+                }
+                crate::error::DescribeLocationFsxLustreErrorKind::InvalidRequestException(
+                    inner,
+                ) => Error::InvalidRequestException(inner),
+                crate::error::DescribeLocationFsxLustreErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
